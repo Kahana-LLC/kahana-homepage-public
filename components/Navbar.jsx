@@ -14,12 +14,12 @@ const navigation = [
 
 function Navbar() {
   return (
-    <header className="backdrop-blur-sm bg-white/90 sticky top-0 bg-white  mx-auto px-2 position-fixed  ">
+    <header className="backdrop-blur-sm bg-white/90 bg-white  mx-auto px-2">
       <nav>
         <div className="flex w-full items-center justify-between border-b  py-2 px-10">
           <div className="flex items-center">
             <a href="#">
-              <span className="sr-only">Your Company</span>
+              <span className="sr-only"> Company</span>
               <Image
                 className="h-10 "
                 src={whiteKahanaLogo}

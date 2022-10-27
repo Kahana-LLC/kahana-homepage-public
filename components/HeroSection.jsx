@@ -35,42 +35,42 @@ export default function HeroSection() {
                     />
                   </a> */}
 
-                  <a
-                    href="#"
-                    className="inline-flex items-center rounded-full bg-white p-1 pr-2 text-white drop-shadow-2xl hover:text-gray-200 sm:text-base lg:text-sm xl:text-base"
-                  >
-                    <span className="rounded-full bg-[#038270] px-3 py-0.5 text-sm font-semibold leading-5 text-white drop-shadow-2xl">
-                      Monetization coming soon
-                    </span>
-                    <span className="ml-4 text-sm text-slate-900 drop-shadow-2xll">
-                      Join the waitlist
-                    </span>
-                    <ChevronRightIcon
-                      className="ml-2 h-5 w-5 text-gray-500"
-                      aria-hidden="true"
-                    />
-                  </a>
-
                   {/* animated background left blob*/}
-                  <div className="invisible md:visible absolute top-15 -left-7 w-40 h-40 bg-[#038270] rounded-full filter blur-3xl opacity-60 animate-blob"></div>
+                  <div className="invisible md:visible absolute top-15 -left-7 w-40 h-40 bg-[#038270] rounded-full filter blur-3xl opacity-50 animate-blob"></div>
+                  <div>
+                    <a
+                      href="#"
+                      className="shadow-2xl inline-flex items-center rounded-full bg-white p-1 pr-2 text-white hover:text-gray-200 sm:text-base lg:text-sm xl:text-base border-solid border-2 border-slate-200 hover:shadow-none"
+                    >
+                      <span className=" rounded-full bg-[#038270] px-3 py-0.5 text-sm font-semibold leading-5 text-white ">
+                        Monetization coming soon
+                      </span>
+                      <span className="ml-4 text-sm text-slate-900 drop-shadow-2xll">
+                        Join the waitlist
+                      </span>
+                      <ChevronRightIcon
+                        className="ml-2 h-5 w-5 text-gray-500"
+                        aria-hidden="true"
+                      />
+                    </a>
 
-                  <h1 className="py-4  bg-clip-text text-transparent bg-gradient-to-r from-[#024324] to-teal-300 text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
-                    Helping Creators Monetize
-                  </h1>
+                    <h1 className="py-4  bg-clip-text text-transparent bg-gradient-to-r from-[#024324] to-teal-300 text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
+                      Helping Creators Monetize
+                    </h1>
 
-                  <p className="mt-3 text-base text-slate-900 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
-                    Kahana is the platform for creators and experts to create
-                    content, monetize, and collaborate all in one place.
-                  </p>
-
+                    <p className="mt-3 text-base text-slate-900 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
+                      Kahana is the platform for creators and experts to create
+                      content, monetize, and collaborate all in one place.
+                    </p>
+                  </div>
                   {/* right animated blob */}
 
                   <div className="absolute -right-1 w-40 h-20 bg-cyan-300 rounded-full filter blur-3xl animate-blob"></div>
                 </div>
               </div>
               <div className="mt-16 sm:mt-24 lg:col-span-6 lg:mt-0 ">
-                <div className="bg-white sm:mx-auto sm:w-full sm:max-w-md sm:overflow-hidden sm:rounded-lg drop-shadow-2xl">
-                  <div className="px-4 py-8 sm:px-10">
+                <div className="bg-white sm:mx-auto sm:w-full sm:max-w-md sm:overflow-hidden sm:rounded-lg shadow-2xl">
+                  <div className="px-4 py-8 sm:px-10 ">
                     <div>
                       <div className="mt-1 ">
                         <div>
