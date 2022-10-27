@@ -3,7 +3,9 @@ import Head from 'next/head';
 
 import HeroSection from '../components/HeroSection';
 import Navbar from '../components/Navbar';
+import Pricing from '../components/Pricing';
 import ProductDemoSection from '../components/ProductDemoSection';
+import SimpleHeader from '../components/SImpleHeader';
 
 //components
 
@@ -11,7 +13,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Kahana - Accounting made simple for small businesses</title>
+        <title>Kahana - some detail</title>
         <meta
           name="description"
           content="Most bookkeeping software is accurate, but hard to use. We make the opposite trade-off, and hope you don’t get audited."
@@ -24,6 +26,8 @@ export default function Home() {
         <main>
           <HeroSection />
           <ProductDemoSection />
+          <SimpleHeader />
+          <Pricing />
         </main>
       </div>
     </>
