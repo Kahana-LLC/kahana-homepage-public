@@ -52,7 +52,7 @@ export default function ProductDemoSection() {
     <section
       id="features"
       aria-label="Features for running your books"
-      className=" overflow-hidden bg-blue-600 pt-20 pb-28 sm:py-32"
+      className=" overflow-hidden  bg-gradient-to-l from-green-200 via-[#038270] to-[#338161] pt-20 pb-28 sm:py-32 "
     >
       {/* <Image
         className="absolute top-1/2 left-1/2 max-w-none translate-x-[-44%] translate-y-[-42%]"
@@ -65,9 +65,9 @@ export default function ProductDemoSection() {
       <Container>
         <div className="max-w-2xl md:mx-auto md:text-center xl:max-w-none">
           <h2 className="font-display text-3xl tracking-tight text-white sm:text-4xl md:text-5xl">
-            A platform built by creators for creators
+            A Platform Built by Creators for Creators
           </h2>
-          <p className="mt-6 text-lg tracking-tight text-blue-100">
+          <p className="mt-6 text-xl tracking-tight text-white">
             A hub to create, monetize, collaborate, and engage like never
             before.
           </p>
@@ -94,10 +94,10 @@ export default function ProductDemoSection() {
                       <h3>
                         <Tab
                           className={clsx(
-                            'font-display text-lg [&:not(:focus-visible)]:focus:outline-none',
+                            'font-display text-lg focus:outline-none',
                             selectedIndex === featureIndex
-                              ? 'text-blue-600 lg:text-white'
-                              : 'text-blue-100 hover:text-white lg:text-white'
+                              ? 'text-[#338161] lg:text-white'
+                              : 'text-white hover:text-white lg:text-white'
                           )}
                         >
                           <span className="absolute inset-0 rounded-full lg:rounded-r-none lg:rounded-l-xl" />
@@ -109,7 +109,7 @@ export default function ProductDemoSection() {
                           'mt-2 hidden text-sm lg:block',
                           selectedIndex === featureIndex
                             ? 'text-white'
-                            : 'text-blue-100 group-hover:text-white'
+                            : 'text-white group-hover:text-white'
                         )}
                       >
                         {feature.description}
