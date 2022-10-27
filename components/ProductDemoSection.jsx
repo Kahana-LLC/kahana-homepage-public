@@ -13,19 +13,19 @@ const features = [
   {
     title: 'Create',
     description:
-      'Hi Adam, we need some awesome description here, as you can see I just put dummy data here for the time being. word limit max 20.',
+      'Create digital products faster than ever. Bulk upload content and files into hubs. Organize with folders, subfolders, and smart links.',
     image: create,
   },
   {
     title: 'Monetize',
     description:
-      'Hi Adam, we need some awesome description here, as you can see I just put dummy data here for the time being. word limit max 20.',
+      'Money appears in your bank account like magic. Create a delightfully casual subscription flow. Connect through Stripe to receive payouts.',
     image: monetize,
   },
   {
     title: 'Collaborate',
     description:
-      'Hi Adam, we need some awesome description here, as you can see I just put dummy data here for the time being. word limit max 20.',
+      'Engage with your audience more deeply. No need to create alone - invite and collaborate with other doers, creators, and experts.',
     image: collaborate,
   },
 ];
@@ -68,8 +68,9 @@ export default function ProductDemoSection() {
             A Platform Built by Creators for Creators
           </h2>
           <p className="mt-6 text-xl tracking-tight text-white">
-            A hub to create, monetize, collaborate, and engage like never
-            before.
+            It’s a lonely world for creators - creators work too long and hard
+            without seeing results. <br />
+            That’s why we created Kahana.
           </p>
         </div>
         <Tab.Group
