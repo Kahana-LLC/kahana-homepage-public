@@ -6,10 +6,15 @@ import HeroSection from '../components/HeroSection';
 import Navbar from '../components/Navbar';
 import Pricing from '../components/Pricing';
 import ProductDemoSection from '../components/ProductDemoSection';
+import RealitySection from '../components/RealitySection';
 import SimpleHeader from '../components/SimpleHeader';
+import { Testimonial } from '../components/Testimonial';
 
 //components
-
+//images
+import avatarImage1 from '../assets/images/avatars/avatar-10.png';
+import Faq from '../components/Faq';
+//
 export default function Home() {
   return (
     <>
@@ -28,7 +33,22 @@ export default function Home() {
           <HeroSection />
           <ProductDemoSection />
           <SimpleHeader />
+          <RealitySection />
+          <Testimonial
+            id="testimonial-from-kahana-user"
+            author={{
+              name: 'Someone Lastname',
+              role: 'Front-end developer',
+              image: avatarImage1,
+            }}
+          >
+            <p>
+              “ I am creating, monetizing, and collaborating so effortlessly
+              that people think I am a sorcerer!”
+            </p>
+          </Testimonial>
           <Pricing />
+          <Faq />
         </main>
         <Footer />
       </div>

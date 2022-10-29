@@ -104,7 +104,7 @@ const navigation = {
 
 export default function Example() {
   return (
-    <footer className="bg-gray-800" aria-labelledby="footer-heading">
+    <footer className="bg-[#038270]" aria-labelledby="footer-heading">
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>
@@ -119,7 +119,7 @@ export default function Example() {
                     <li key={item.name}>
                       <a
                         href={item.href}
-                        className="text-base text-gray-300 hover:text-white"
+                        className="text-base text-white hover:text-white"
                       >
                         {item.name}
                       </a>
@@ -134,7 +134,7 @@ export default function Example() {
                     <li key={item.name}>
                       <a
                         href={item.href}
-                        className="text-base text-gray-300 hover:text-white"
+                        className="text-base text-white hover:text-white"
                       >
                         {item.name}
                       </a>
@@ -151,7 +151,7 @@ export default function Example() {
                     <li key={item.name}>
                       <a
                         href={item.href}
-                        className="text-base text-gray-300 hover:text-white"
+                        className="text-base text-white hover:text-white"
                       >
                         {item.name}
                       </a>
@@ -166,7 +166,7 @@ export default function Example() {
                     <li key={item.name}>
                       <a
                         href={item.href}
-                        className="text-base text-gray-300 hover:text-white"
+                        className="text-base text-white hover:text-white"
                       >
                         {item.name}
                       </a>
@@ -180,7 +180,7 @@ export default function Example() {
             <h3 className="text-base font-medium text-white">
               Subscribe to our newsletter
             </h3>
-            <p className="mt-4 text-base text-gray-300">
+            <p className="mt-4 text-base text-white">
               The latest news, articles, and resources, sent to your inbox
               weekly.
             </p>
@@ -194,13 +194,13 @@ export default function Example() {
                 id="email-address"
                 autoComplete="email"
                 required
-                className="w-full min-w-0 appearance-none rounded-md border border-transparent bg-white py-2 px-4 text-base text-gray-900 placeholder-gray-500 focus:border-white focus:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                className="w-full min-w-0 appearance-none rounded-md border border-transparent bg-white py-2 px-4 text-base text-white first-letter:placeholder-gray-500 focus:border-white focus:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                 placeholder="Enter your email"
               />
               <div className="mt-3 rounded-md sm:mt-0 sm:ml-3 sm:flex-shrink-0">
                 <button
                   type="submit"
-                  className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-500 py-2 px-4 text-base font-medium text-white hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-800"
+                  className="flex w-full items-center justify-center rounded-md border border-transparent bg-white py-2 px-4 text-base font-medium text-slate-800 hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-800"
                 >
                   Subscribe
                 </button>
@@ -214,15 +214,15 @@ export default function Example() {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-gray-400 hover:text-gray-300"
+                className="text-white hover:text-gray-300"
               >
                 <span className="sr-only">{item.name}</span>
                 <item.icon className="h-6 w-6" aria-hidden="true" />
               </a>
             ))}
           </div>
-          <p className="mt-8 text-base text-gray-400 md:order-1 md:mt-0">
-            &copy; 2020 Your Company, Inc. All rights reserved.
+          <p className="mt-8 text-base text-white md:order-1 md:mt-0">
+            &copy; 2022 Kahana LLC. All rights reserved.
           </p>
         </div>
       </div>

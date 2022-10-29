@@ -1,15 +1,16 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 //images
 import whiteKahanaLogo from '../assets/kahana_logo_wide_light.svg';
 
 //navigation items
 const navigation = [
-  { name: 'Learn', href: '#' },
-  { name: 'Pricing', href: '#' },
-  { name: 'Explore', href: '#' },
-  { name: 'About', href: '#' },
-  { name: 'Blog', href: '#' },
+  { name: 'Learn', href: 'learn' },
+  { name: 'Pricing', href: 'pricing' },
+  { name: 'Explore', href: 'explore' },
+  { name: 'About', href: 'about' },
+  { name: 'Blog', href: ' https://blog.kahana.co' },
 ];
 
 function Navbar() {
@@ -18,7 +19,7 @@ function Navbar() {
       <nav>
         <div className="flex w-full items-center justify-between border-b  py-2 px-10">
           <div className="flex items-center">
-            <a href="#">
+            <Link href="/" aria-label="Home">
               <span className="sr-only"> Company</span>
               <Image
                 className="h-10 "
@@ -28,16 +29,16 @@ function Navbar() {
                 // height={20}
                 alt="navbar-logo"
               />
-            </a>
+            </Link>
             <div className="ml-10 hidden space-x-8 lg:block">
               {navigation.map((link) => (
-                <a
-                  key={link.name}
+                <Link
                   href={link.href}
+                  key={link.name}
                   className="text-base font-small text-gray-600  hover:text-gray-800"
                 >
                   {link.name}
-                </a>
+                </Link>
               ))}
             </div>
           </div>
