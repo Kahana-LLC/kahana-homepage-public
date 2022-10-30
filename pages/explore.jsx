@@ -5,7 +5,63 @@ import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 
 //components
-
+const posts = [
+  {
+    title: 'The state of the Metaverse',
+    href: '#',
+    category: { name: 'Concept', href: '#' },
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.',
+    date: 'Mar 16, 2020',
+    datetime: '2020-03-16',
+    imageUrl:
+      'https://images.unsplash.com/photo-1593508512255-86ab42a8e620?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2378&q=80',
+    readingTime: '6 min',
+    author: {
+      name: 'Roel Aufderehar',
+      href: '#',
+      imageUrl:
+        'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    },
+  },
+  {
+    title: 'Workind',
+    href: '#',
+    category: { name: 'Concept', href: '#' },
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit facilis asperiores porro quaerat doloribus, eveniet dolore. Adipisci tempora aut inventore optio animi., tempore temporibus quo laudantium.',
+    date: 'Mar 10, 2020',
+    datetime: '2020-03-10',
+    imageUrl:
+      'https://images.unsplash.com/photo-1547586696-ea22b4d4235d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
+    readingTime: '4 min',
+    author: {
+      name: 'Brenna Goyette',
+      href: '#',
+      imageUrl:
+        'https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    },
+  },
+  {
+    title: 'Fanatsy Football 2022',
+    href: '#',
+    category: { name: 'Sports', href: '#' },
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.',
+    date: 'Feb 12, 2020',
+    datetime: '2020-02-12',
+    imageUrl:
+      'https://images.unsplash.com/photo-1566577739112-5180d4bf9390?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2526&q=80',
+    readingTime: '11 min',
+    author: {
+      name: 'Daniela Metz',
+      href: '#',
+      imageUrl:
+        'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    },
+  },
+];
+//
 export default function Explore() {
   return (
     <>
@@ -20,7 +76,85 @@ export default function Explore() {
         <div className="sticky top-0">
           <Navbar />
         </div>
-        <main>Explore</main>
+        <div className=" bg-gray-50 px-4 pt-6 pb-20 sm:px-6 lg:px-8 lg:pt-20 lg:pb-28">
+          <div className=" inset-0">
+            <div className="h-1/3 bg-white sm:h-2/3" />
+          </div>
+          <div className=" mx-auto max-w-7xl">
+            <div className="text-center">
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                🔥 Trending Hubs
+              </h2>
+              <p className="mx-auto mt-3 max-w-2xl text-xl text-gray-500 sm:mt-4">
+                Trending hubs are hubs that become featured at the top of
+                Kahana&apos;s Explore page and category pages.
+              </p>
+            </div>
+            <div className="mx-auto mt-12 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3">
+              {posts.map((post) => (
+                <div
+                  key={post.title}
+                  className="flex flex-col overflow-hidden rounded-lg shadow-2xl hover:shadow-none border-2 border-slate-100"
+                >
+                  <div className="flex-shrink-0">
+                    <img
+                      className="h-48 w-full object-cover"
+                      src={post.imageUrl}
+                      alt=""
+                    />
+                  </div>
+                  <div className="flex flex-1 flex-col justify-between bg-white p-6">
+                    <div className="flex-1">
+                      <p className="text-sm font-medium text-indigo-600">
+                        <a
+                          href={post.category.href}
+                          className="hover:underline"
+                        >
+                          {post.category.name}
+                        </a>
+                      </p>
+                      <a href={post.href} className="mt-2 block">
+                        <p className="text-xl font-semibold text-gray-900">
+                          {post.title}
+                        </p>
+                        <p className="mt-3 text-base text-gray-500">
+                          {post.description}
+                        </p>
+                      </a>
+                    </div>
+                    <div className="mt-6 flex items-center">
+                      <div className="flex-shrink-0">
+                        <a href={post.author.href}>
+                          <span className="sr-only">{post.author.name}</span>
+                          <img
+                            className="h-10 w-10 rounded-full"
+                            src={post.author.imageUrl}
+                            alt=""
+                          />
+                        </a>
+                      </div>
+                      <div className="ml-3">
+                        <p className="text-sm font-medium text-gray-900">
+                          <a
+                            href={post.author.href}
+                            className="hover:underline"
+                          >
+                            {post.author.name}
+                          </a>
+                        </p>
+                        <div className="flex space-x-1 text-sm text-gray-500">
+                          <time dateTime={post.datetime}>{post.date}</time>
+                          <span aria-hidden="true">&middot;</span>
+                          <span>{post.readingTime} read</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
         <Footer />
       </div>
     </>

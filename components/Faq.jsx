@@ -1,34 +1,25 @@
 const faqs = [
   {
-    question: 'How do you make holy water?',
+    question: 'What does Kahana do?',
     answer:
-      'You boil the hell out of it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.',
+      'Kahana is an online platform that provides infrastructure for content creation, collaboration, knowledge sharing, and subscription revenue. It allows users to curate content into hubs that they can share and monetize.',
   },
   {
-    question: 'How do you make holy water?',
+    question: 'How much does Kahana cost?',
     answer:
-      'You boil the hell out of it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.',
+      'There is no out-of-pocket cost for signing up for Kahana. In addition, no credit card or payment information is required for the free plan. Kahana also offers paid plans for premium features. While there is no upfront cost to monetize, Kahana takes a small percentage of earnings as users earn money through monetized hubs.',
   },
   {
-    question: 'How do you make holy water?',
+    question: 'Can I use Kahana for free?',
     answer:
-      'You boil the hell out of it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.',
+      "Kahana is totally free to use forever. In fact, if you remain on Kahana's free plan and never get a subscriber on a hub, you'll never pay a dime.",
   },
   {
-    question: 'How do you make holy water?',
+    question: 'How do I get paid from Kahana?',
     answer:
-      'You boil the hell out of it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.',
+      'To get paid from Kahana, connect your Stripe account. Once the connection is confirmed, you can manage your payouts to occur automatically or manually through Stripe. In a nutshell, you earn money when people subscribe to your monetized hubs.',
   },
-  {
-    question: 'How do you make holy water?',
-    answer:
-      'You boil the hell out of it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.',
-  },
-  {
-    question: 'How do you make holy water?',
-    answer:
-      'You boil the hell out of it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.',
-  },
+
   // More questions...
 ];
 
@@ -43,7 +34,7 @@ export default function Faq() {
             </h2>
             <p className="mt-4 text-lg text-gray-500">
               Can’t find the answer you’re looking for? Reach out to our{' '}
-              <a href="#" className="font-medium text-blue-600 hover:text-[]">
+              <a href="#" className="font-medium text-[#038270]">
                 customer support
               </a>{' '}
               team.

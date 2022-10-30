@@ -14,6 +14,7 @@ import { Testimonial } from '../components/Testimonial';
 //images
 import avatarImage1 from '../assets/images/avatars/avatar-10.png';
 import Faq from '../components/Faq';
+import { Reviews } from '../components/Reviews';
 //
 export default function Home() {
   return (
@@ -48,6 +49,8 @@ export default function Home() {
             </p>
           </Testimonial>
           <Pricing />
+          <Reviews />
+
           <Faq />
         </main>
         <Footer />

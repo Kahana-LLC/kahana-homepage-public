@@ -6,11 +6,10 @@ import whiteKahanaLogo from '../assets/kahana_logo_wide_light.svg';
 
 //navigation items
 const navigation = [
-  { name: 'Learn', href: 'learn' },
-  { name: 'Pricing', href: 'pricing' },
   { name: 'Explore', href: 'explore' },
   { name: 'About', href: 'about' },
-  { name: 'Blog', href: ' https://blog.kahana.co' },
+  { name: 'Pricing', href: 'pricing' },
+  { name: 'Blog', href: ' https:/blog.kahana.co' },
 ];
 
 function Navbar() {
