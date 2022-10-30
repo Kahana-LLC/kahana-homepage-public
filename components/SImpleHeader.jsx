@@ -7,8 +7,8 @@ export default function SimpleHeader() {
             We now live in a creator economy
           </p>
           <p className="mx-auto mt-5 max-w-xl text-xl text-gray-500">
-            YouTube coined the term &quot;creators&quot; in 2011. Today,
-            Linktree reports over 200,000,000 creators counted globally.
+            YouTube coined the term &quot;creators&quot; in 2011. Today Linktree
+            reports over 200,000,000 creators counted globally.
           </p>
         </div>
       </div>
