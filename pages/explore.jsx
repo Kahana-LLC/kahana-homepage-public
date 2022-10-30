@@ -83,10 +83,10 @@ export default function Explore() {
           <div className=" mx-auto max-w-7xl">
             <div className="text-center">
               <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                🔥 Trending Hubs
+                🔥 Flaming Hubs
               </h2>
               <p className="mx-auto mt-3 max-w-2xl text-xl text-gray-500 sm:mt-4">
-                Trending hubs are hubs that become featured at the top of
+                Flaming hubs are hubs that become featured at the top of
                 Kahana&apos;s Explore page and category pages.
               </p>
             </div>

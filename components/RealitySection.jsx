@@ -48,7 +48,7 @@ export default function RealitySection() {
   return (
     <div className="bg-white">
       <main>
-        <div className="relative bg-gray-900">
+        <div className="relative bg-slate-600">
           <div className="absolute inset-x-0 bottom-0 h-80 xl:top-0 xl:h-full">
             <div className="h-full w-full xl:grid xl:grid-cols-2">
               <div className="h-full xl:relative xl:col-start-2">
@@ -59,7 +59,7 @@ export default function RealitySection() {
                 />
                 <div
                   aria-hidden="true"
-                  className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-gray-900 xl:inset-y-0 xl:left-0 xl:h-full xl:w-32 xl:bg-gradient-to-r"
+                  className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-slate-600 xl:inset-y-0 xl:left-0 xl:h-full xl:w-32 xl:bg-gradient-to-r"
                 />
               </div>
             </div>

@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { ChevronRightIcon } from '@heroicons/react/20/solid';
 //images
 import googleLogo from '../assets/googleLogo.svg';
+import { CheckIcon } from './CheckIcon';
 
 const navigation = [
   { name: 'Product', href: '#' },
@@ -62,6 +63,21 @@ export default function HeroSection() {
                       Kahana is the platform for creators and experts to create
                       content, monetize, and collaborate all in one place.
                     </p>
+
+                    <div className="grid grid-cols-2 gap-4 mt-6 tracking-tight">
+                      {' '}
+                      <ul role="list" className=" space-y-3">
+                        {[
+                          'No Credit Card required  ',
+                          'Takes less than a minute',
+                        ].map((feature) => (
+                          <li key={feature} className="flex items-center">
+                            <CheckIcon className="h-8 w-8 flex-none fill-green-700" />
+                            <span className="ml-4">{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                   {/* right animated blob */}
 

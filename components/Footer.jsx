@@ -25,8 +25,9 @@ const navigation = {
     { name: 'Twitter', href: '#' },
   ],
   legal: [
-    { name: 'Privacy', href: '#' },
-    { name: 'Terms', href: '#' },
+    { name: 'Privacy Policy', href: '#' },
+    { name: 'Terms & Conditions', href: '#' },
+    { name: 'Cookies Policy', href: '#' },
   ],
 };
 

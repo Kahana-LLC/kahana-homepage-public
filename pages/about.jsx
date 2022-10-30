@@ -1,8 +1,10 @@
 import Head from 'next/head';
+import AboutCard from '../components/AboutCard';
 // import Image from 'next/image';
 
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
+import TeamSection from '../components/TeamSection';
 
 //components
 
@@ -20,7 +22,11 @@ export default function About() {
         <div className="sticky top-0">
           <Navbar />
         </div>
-        <main>About</main>
+        <main>
+          <AboutCard classnName="relative" />
+          {/* <FriendsOfKahana /> */}
+          <TeamSection />
+        </main>
         <Footer />
       </div>
     </>
