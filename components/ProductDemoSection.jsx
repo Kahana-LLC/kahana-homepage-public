@@ -64,9 +64,9 @@ export default function ProductDemoSection() {
       /> */}
       <Container>
         <div className="max-w-2xl md:mx-auto md:text-center xl:max-w-none">
-          <h2 className="font-display text-3xl tracking-tight text-white sm:text-4xl md:text-5xl">
+          <h1 className="py-4  bg-clip-text text-white text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
             A Platform Built by Creators for Creators
-          </h2>
+          </h1>
           <p className="mt-6 text-xl tracking-tight text-white">
             It’s a lonely world for creators - creators work too long and hard
             without seeing results. <br />
