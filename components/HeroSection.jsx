@@ -1,10 +1,11 @@
-import Image from 'next/image';
+import React, { useState } from 'react';
 
 //icons
 import { ChevronRightIcon } from '@heroicons/react/20/solid';
 //images
-import googleLogo from '../assets/googleLogo.svg';
+// import googleLogo from '../assets/googleLogo.svg';
 import { CheckIcon } from './CheckIcon';
+import ConfirmationModal from './ConfirmationModal';
 
 const navigation = [
   { name: 'Product', href: '#' },
@@ -13,7 +14,34 @@ const navigation = [
   { name: 'Company', href: '#' },
 ];
 
+// const handleSubmit = (event) => {
+//   event.preventDefault();
+//   console.log('You clicked submit.');
+// };
+
+if (typeof window !== 'undefined') {
+  window.addEventListener('load', function () {
+    const form = document.getElementById('myform');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const data = new FormData(form);
+      const action = e.target.action;
+      fetch(action, {
+        method: 'POST',
+        body: data,
+      }).then(() => {
+        <></>;
+      });
+    });
+  });
+}
+
+// function handleSubmit(e) {
+//   e.preventDefault();
+//   console.log('You clicked submit.');
+// }
 export default function HeroSection() {
+  const [showModal, setShowModal] = useState(false);
   return (
     <div className=" bg-[#f8fafc]">
       <div className="pt-1 pb-16 sm:pb-24">
@@ -37,6 +65,7 @@ export default function HeroSection() {
                   </a> */}
 
                   {/* animated background left blob*/}
+
                   <div className="invisible md:visible absolute top-15 -left-7 w-40 h-40 bg-[#038270] rounded-full filter blur-3xl opacity-50 animate-blob"></div>
                   <div>
                     <a
@@ -47,7 +76,7 @@ export default function HeroSection() {
                         Monetization coming soon
                       </span>
                       <span className="ml-4 text-sm text-slate-900 drop-shadow-2xll">
-                        Join the waitlist
+                        Reserve your account
                       </span>
                       <ChevronRightIcon
                         className="ml-2 h-5 w-5 text-gray-500"
@@ -84,11 +113,13 @@ export default function HeroSection() {
                   <div className="absolute -right-1 w-40 h-20 bg-cyan-300 rounded-full filter blur-3xl animate-blob"></div>
                 </div>
               </div>
+
+              {/* Sign up form starts here */}
               <div className="mt-16 sm:mt-24 lg:col-span-6 lg:mt-0 ">
-                <div className="bg-white sm:mx-auto sm:w-full sm:max-w-md sm:overflow-hidden sm:rounded-lg shadow-2xl">
+                <div className=" bg-white sm:mx-auto sm:w-full sm:max-w-md sm:overflow-hidden sm:rounded-lg shadow-2xl">
                   <div className="px-4 py-8 sm:px-10 ">
                     <div>
-                      <div className="mt-1 ">
+                      {/* <div className="mt-1 ">
                         <div>
                           <a
                             href="#"
@@ -103,9 +134,9 @@ export default function HeroSection() {
                             />
                             Sign in with Google
                           </a>
-                        </div>
+                        </div> */}
 
-                        {/* <div>
+                      {/* <div>
                           <a
                             href="#"
                             className="inline-flex w-full justify-center rounded-md border border-gray-300 bg-white py-2 px-4 text-sm font-medium text-gray-500 shadow-sm hover:bg-gray-50"
@@ -143,7 +174,7 @@ export default function HeroSection() {
                               />
                             </svg>
                           </a> */}
-                      </div>
+                      {/* </div> */}
                     </div>
 
                     <div className="relative mt-6 ">
@@ -151,15 +182,21 @@ export default function HeroSection() {
                         className="absolute inset-0 flex items-center"
                         aria-hidden="true"
                       >
-                        <div className="w-full border-t border-gray-300" />
+                        {/* <div className="w-full border-t border-gray-300" /> */}
                       </div>
-                      <div className="relative flex justify-center text-sm">
+                      {/* <div className="relative flex justify-center text-sm">
                         <span className="bg-white px-2 text-gray-500">Or</span>
-                      </div>
+                      </div> */}
                     </div>
 
                     <div className="mt-6">
-                      <form action="#" method="POST" className="space-y-6">
+                      {/* form starts  here */}
+                      <form
+                        action="https://script.google.com/macros/s/AKfycbwl44LRVat8eGmhqXP3HQm1xktp5WQEDuIXsyZ5Sz0huUnVRTDGeNt5V61YIOfaUsf-/exec"
+                        method="POST"
+                        className="space-y-6"
+                        id="myform"
+                      >
                         {/* <div>
                           <label htmlFor="name" className="sr-only">
                             Full name
@@ -176,32 +213,31 @@ export default function HeroSection() {
                         </div> */}
 
                         <div>
-                          <label htmlFor="mobile-or-email" className="sr-only">
-                            Mobile number or email
+                          <label htmlFor="first-name" className="sr-only">
+                            First name
                           </label>
                           <input
                             type="text"
-                            name="mobile-or-email"
-                            id="mobile-or-email"
-                            autoComplete="email"
-                            placeholder="Mobile number or email"
-                            required
-                            className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                            name="Name"
+                            id="name"
+                            autoComplete="name"
+                            placeholder="First name"
+                            className="block w-full rounded-md border-gray-300 shadow-sm focus:border-[#038270] focus:ring-[#038270] sm:text-sm"
                           />
                         </div>
 
                         <div>
                           <label htmlFor="password" className="sr-only">
-                            Password
+                            Email
                           </label>
                           <input
-                            id="password"
-                            name="password"
-                            type="password"
-                            placeholder="Password"
-                            autoComplete="current-password"
+                            id="email"
+                            name="Email"
+                            type="email"
+                            autoComplete="email"
+                            placeholder="Email"
                             required
-                            className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                            className="block w-full rounded-md border-gray-300 shadow-sm focus:border-[#038270] focus:ring-[#038270] sm:text-sm"
                           />
                         </div>
 
@@ -209,9 +245,11 @@ export default function HeroSection() {
                           <button
                             type="submit"
                             className="flex w-full justify-center rounded-md border border-transparent bg-[#038270] py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-[#024324] focus:outline-none focus:ring-2 focus:ring-[#024324] focus:ring-offset-2 mb-3"
+                            onClick={() => setShowModal(true)}
                           >
-                            Create My First Hub
+                            Reserve My Account
                           </button>
+                          {showModal ? <ConfirmationModal /> : <></>}
                         </div>
                       </form>
                     </div>
