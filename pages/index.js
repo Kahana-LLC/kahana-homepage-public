@@ -7,7 +7,7 @@ import Navbar from '../components/Navbar';
 import Pricing from '../components/Pricing';
 import ProductDemoSection from '../components/ProductDemoSection';
 import RealitySection from '../components/RealitySection';
-import SimpleHeader from '../components/SimpleHeader.jsx';
+import SimpleHeader from '../components/SimpleHeader';
 import { Testimonial } from '../components/Testimonial';
 
 //components
