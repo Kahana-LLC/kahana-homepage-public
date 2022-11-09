@@ -9,7 +9,7 @@ const navigation = [
   { name: 'Explore', href: 'explore' },
   { name: 'About', href: 'about' },
   { name: 'Pricing', href: 'pricing' },
-  { name: 'Blog', href: ' https:/blog.kahana.co' },
+  { name: 'Blog', href: ' https://blog.kahana.co' },
 ];
 
 function Navbar() {
@@ -54,13 +54,13 @@ function Navbar() {
 
         <div className="flex flex-wrap justify-center space-x-6 py-4 lg:hidden">
           {navigation.map((link) => (
-            <a
-              key={link.name}
+            <Link
               href={link.href}
+              key={link.name}
               className="text-base font-small text-slate-600  hover:text-slate-900"
             >
               {link.name}
-            </a>
+            </Link>
           ))}
         </div>
       </nav>
