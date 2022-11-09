@@ -17,7 +17,7 @@ const navigation = {
     { name: 'Live Chat', href: 'https://kahana.tawk.help/' },
   ],
   social: [
-    { name: 'Linkedin', href: 'https://www.linkedin.com/company/kahana-co/' },
+    { name: 'LinkedIn', href: 'https://www.linkedin.com/company/kahana-co/' },
     {
       name: 'YouTube',
       href: 'https://www.youtube.com/channel/UCwsf3DOnt3uQdrqf-NRZ2_w',
