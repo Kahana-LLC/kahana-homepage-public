@@ -5,29 +5,36 @@ const navigation = {
   important: [
     { name: 'Explore', href: '/explore' },
 
-    { name: 'Blog', href: '#' },
-    { name: 'About', href: '#' },
+    { name: 'Blog', href: 'https://blog.kahana.co' },
+    { name: 'About', href: '/about' },
     { name: 'Home', href: '/' },
-    { name: 'Log in', href: '#' },
-    { name: 'Sign up', href: '#' },
+    // { name: 'Log in', href: '#' },
+    // { name: 'Sign up', href: '#' },
   ],
   support: [
-    { name: 'Help center', href: '#' },
-    { name: 'Vote for features', href: '#' },
-    { name: 'Live Chat', href: '#' },
-    { name: 'Help center', href: '#' },
+    { name: 'Help center', href: 'https://kahana.tawk.help/' },
+    { name: 'Vote for features', href: 'https://productific.com/@Kahana' },
+    { name: 'Live Chat', href: 'https://kahana.tawk.help/' },
   ],
   social: [
-    { name: 'Linkedin', href: '#' },
-    { name: 'YouTube', href: '#' },
-    { name: 'Instagram', href: '#' },
-    { name: 'TikTok', href: '#' },
-    { name: 'Twitter', href: '#' },
+    { name: 'Linkedin', href: 'https://www.linkedin.com/company/kahana-co/' },
+    {
+      name: 'YouTube',
+      href: 'https://www.youtube.com/channel/UCwsf3DOnt3uQdrqf-NRZ2_w',
+    },
+    {
+      name: 'Instagram',
+      href: 'https://instagram.com/kahanahq',
+    },
+    {
+      name: 'TikTok',
+      href: 'https://www.tiktok.com/@kahanahub',
+    },
+    { name: 'Twitter', href: 'https://twitter.com/KahanaHQ' },
   ],
   legal: [
-    { name: 'Privacy Policy', href: '#' },
-    { name: 'Terms & Conditions', href: '#' },
-    { name: 'Cookies Policy', href: '#' },
+    { name: 'Privacy Policy', href: '/privacy-policy' },
+    { name: 'Terms & Conditions', href: '/terms-and-conditions' },
   ],
 };
 

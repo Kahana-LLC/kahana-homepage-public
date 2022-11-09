@@ -8,10 +8,10 @@ import Navbar from '../components/Navbar';
 const posts = [
   {
     title: 'The state of the Metaverse',
-    href: '#',
+    href: 'https://app.kahana.co/hub/yV0jD3syvEdefIFpGv9w',
     category: { name: 'Concept', href: '#' },
     description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.',
+      'This hub is a part of the open-source knowledge base of information that The Kindness Corporation and Kahana are building to support the Manifesto for Working in the Metaverse Project.',
     date: 'Mar 16, 2020',
     datetime: '2020-03-16',
     imageUrl:
@@ -25,11 +25,11 @@ const posts = [
     },
   },
   {
-    title: 'Workind',
-    href: '#',
+    title: 'Founders Keepers',
+    href: 'https://app.kahana.co/hub/G6EwC3tBS6T0PKcLMumx',
     category: { name: 'Concept', href: '#' },
     description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit facilis asperiores porro quaerat doloribus, eveniet dolore. Adipisci tempora aut inventore optio animi., tempore temporibus quo laudantium.',
+      'The entrepreneurial road, while exhilarating and inspiring, is certainly challenging. That is why we wanted to crowdsource a free hub of advice, content, resources, tips, etc. that is accessible to anyone who is interested.',
     date: 'Mar 10, 2020',
     datetime: '2020-03-10',
     imageUrl:
@@ -43,15 +43,15 @@ const posts = [
     },
   },
   {
-    title: 'Fanatsy Football 2022',
-    href: '#',
-    category: { name: 'Sports', href: '#' },
+    title: 'Psychology and You',
+    href: 'https://app.kahana.co/hub/2Q4PPOmn7lyCKbX9gDwt',
+    category: { name: 'Research', href: '#' },
     description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.',
+      'Writing and research on the intersection between people and technology. Explore my curated resources on psychology and mental health research.',
     date: 'Feb 12, 2020',
     datetime: '2020-02-12',
     imageUrl:
-      'https://images.unsplash.com/photo-1566577739112-5180d4bf9390?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2526&q=80',
+      'https://images.unsplash.com/photo-1573511860302-28c524319d2a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80',
     readingTime: '11 min',
     author: {
       name: 'Daniela Metz',
@@ -73,56 +73,57 @@ export default function Explore() {
         />
       </Head>
       <div>
-        <div className="sticky top-0">
+        <div style={{ zIndex: '1' }} className="sticky top-0">
           <Navbar />
         </div>
-        <div className=" bg-gray-50 px-4 pt-6 pb-20 sm:px-6 lg:px-8 lg:pt-20 lg:pb-28">
-          <div className=" inset-0">
-            <div className="h-1/3 bg-white sm:h-2/3" />
-          </div>
-          <div className=" mx-auto max-w-7xl">
-            <div className="text-center">
-              <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                🔥 Flaming Hubs
-              </h2>
-              <p className="mx-auto mt-3 max-w-2xl text-xl text-gray-500 sm:mt-4">
-                Flaming hubs are hubs that become featured at the top of
-                Kahana&apos;s Explore page and category pages.
-              </p>
+        <main>
+          <div className=" bg-gray-50 px-4 pt-6 pb-20 sm:px-6 lg:px-8 lg:pt-20 lg:pb-28">
+            <div className=" inset-0">
+              <div className="h-1/3 bg-white sm:h-2/3" />
             </div>
-            <div className="mx-auto mt-12 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3">
-              {posts.map((post) => (
-                <div
-                  key={post.title}
-                  className="flex flex-col overflow-hidden rounded-lg shadow-2xl hover:shadow-none border-2 border-slate-100"
-                >
-                  <div className="flex-shrink-0">
-                    <img
-                      className="h-48 w-full object-cover"
-                      src={post.imageUrl}
-                      alt=""
-                    />
-                  </div>
-                  <div className="flex flex-1 flex-col justify-between bg-white p-6">
-                    <div className="flex-1">
-                      <p className="text-sm font-medium text-indigo-600">
-                        <a
-                          href={post.category.href}
-                          className="hover:underline"
-                        >
-                          {post.category.name}
-                        </a>
-                      </p>
-                      <a href={post.href} className="mt-2 block">
-                        <p className="text-xl font-semibold text-gray-900">
-                          {post.title}
-                        </p>
-                        <p className="mt-3 text-base text-gray-500">
-                          {post.description}
-                        </p>
-                      </a>
+            <div className=" mx-auto max-w-7xl">
+              <div className="text-center">
+                <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                  🔥 Flaming Hubs
+                </h2>
+                <p className="mx-auto mt-3 max-w-2xl text-xl text-gray-500 sm:mt-4">
+                  Flaming hubs are hubs that become featured at the top of
+                  Kahana&apos;s Explore page and category pages.
+                </p>
+              </div>
+              <div className="mx-auto mt-12 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3">
+                {posts.map((post) => (
+                  <div
+                    key={post.title}
+                    className="flex flex-col overflow-hidden rounded-lg shadow-2xl hover:shadow-none border-2 border-slate-100"
+                  >
+                    <div className="flex-shrink-0">
+                      <img
+                        className="h-48 w-full object-cover"
+                        src={post.imageUrl}
+                        alt=""
+                      />
                     </div>
-                    <div className="mt-6 flex items-center">
+                    <div className="flex flex-1 flex-col justify-between bg-white p-6">
+                      <div className="flex-1">
+                        <p className="text-sm font-medium text-indigo-600">
+                          <a
+                            href={post.category.href}
+                            className="hover:underline"
+                          >
+                            {post.category.name}
+                          </a>
+                        </p>
+                        <a href={post.href} className="mt-2 block">
+                          <p className="text-xl font-semibold text-gray-900">
+                            {post.title}
+                          </p>
+                          <p className="mt-3 text-base text-gray-500">
+                            {post.description}
+                          </p>
+                        </a>
+                      </div>
+                      {/* <div className="mt-6 flex items-center">
                       <div className="flex-shrink-0">
                         <a href={post.author.href}>
                           <span className="sr-only">{post.author.name}</span>
@@ -147,14 +148,15 @@ export default function Explore() {
                           <span aria-hidden="true">&middot;</span>
                           <span>{post.readingTime} read</span>
                         </div>
-                      </div>
+                      </div> 
+                    </div>*/}
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
-        </div>
+        </main>
         <Footer />
       </div>
     </>

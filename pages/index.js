@@ -12,9 +12,8 @@ import { Testimonial } from '../components/Testimonial';
 
 //components
 //images
-import avatarImage1 from '../assets/images/avatars/avatar-10.png';
+import avatarImage1 from '../assets/images/avatars/avatar-10.jpeg';
 import Faq from '../components/Faq';
-import { Reviews } from '../components/Reviews';
 //
 export default function Home() {
   return (
@@ -27,7 +26,7 @@ export default function Home() {
         />
       </Head>
       <div>
-        <div className="sticky top-0">
+        <div style={{ zIndex: '1' }} className="sticky top-0">
           <Navbar />
         </div>
         <main>
@@ -38,18 +37,19 @@ export default function Home() {
           <Testimonial
             id="testimonial-from-kahana-user"
             author={{
-              name: 'Someone Lastname',
-              role: 'Front-end developer',
+              name: 'Fantasy Flock Network',
+              role: 'YouTuber - 147K subscribers',
               image: avatarImage1,
             }}
           >
             <p>
-              “ I am creating, monetizing, and collaborating so effortlessly
-              that people think I am a sorcerer!”
+              “ The flexibility is a huge differentiator in that you can just
+              have monetized hubs and put them anywhere as opposed to Patreon,
+              which is a whole thing.”
             </p>
           </Testimonial>
           <Pricing />
-          <Reviews />
+          {/* <Reviews /> */}
 
           <Faq />
         </main>

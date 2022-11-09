@@ -69,8 +69,7 @@ export default function ProductDemoSection() {
           </h1>
           <p className="mt-6 text-xl tracking-tight text-white">
             It’s a lonely world for creators - creators work too long and hard
-            without seeing results. <br />
-            That’s why we created Kahana.
+            without seeing results. That’s why we created Kahana.
           </p>
         </div>
         <Tab.Group

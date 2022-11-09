@@ -7,46 +7,51 @@ const tiers = [
     priceMonthly: 0,
     description: 'All the basics for starting a new business',
     includedFeatures: [
-      'Potenti felis, in cras at at ligula nunc.',
-      'Orci neque eget pellentesque.',
+      'Monetize your hubs.',
+      'Number of hubs - 2',
+      'Storage - 1 GB',
     ],
   },
   {
     name: 'Premium',
     href: '#',
-    priceMonthly: 10,
+    priceMonthly: 9.99,
     description: 'All the basics for starting a new business',
     includedFeatures: [
-      'Potenti felis, in cras at at ligula nunc. ',
-      'Orci neque eget pellentesque.',
-      'Donec mauris sit in eu tincidunt etiam.',
+      'Monetize your hubs.',
+      'Number of hubs - Unlimited',
+      'Storage - 5 GB',
     ],
   },
   {
     name: 'Teams',
     href: '#',
-    priceMonthly: 25,
+    priceMonthly: 19.99,
     description: 'All the basics for starting a new business',
     includedFeatures: [
-      'Potenti felis, in cras at at ligula nunc. ',
-      'Orci neque eget pellentesque.',
-      'Donec mauris sit in eu tincidunt etiam.',
-      'Faucibus volutpat magna.',
+      'Monetize your hubs.',
+      'Number of hubs - Unlimited',
+      'Storage - 50 GB',
+      'Admin permissions & control',
     ],
   },
   {
     name: 'Enterprise',
     href: '#',
-    priceMonthly: 999,
+    priceMonthly: 29.99,
     description: 'All the basics for starting a new business',
     includedFeatures: [
-      'Potenti felis, in cras at at ligula nunc. ',
-      'Orci neque eget pellentesque.',
-      'Donec mauris sit in eu tincidunt etiam.',
-      'Faucibus volutpat magna.',
-      'Id sed tellus in varius quisque.',
-      'Risus egestas faucibus.',
-      'Risus cursus ullamcorper.',
+      'Monetize your hubs.',
+      'Number of hubs - Unlimited',
+      'Storage - As needed',
+      'Admin permissions & control',
+      'Customized billing',
+      'Enterprise time & usage reporting',
+      'SAML, Single-Sign On (SSO)',
+      'White labeling',
+      'White glove 24/7 support',
+      'Customized and advanced reporting',
+      'Custom development & templates',
     ],
   },
 ];
@@ -63,7 +68,9 @@ export default function Pricing() {
             Start building for free, then add a site plan to go live. Account
             plans unlock additional features.
           </p>
-          <div className="relative mt-6 flex self-center rounded-lg bg-gray-100 p-0.5 sm:mt-8">
+
+          {/* monthly vs yearly  */}
+          {/* <div className="relative mt-6 flex self-center rounded-lg bg-gray-100 p-0.5 sm:mt-8">
             <button
               type="button"
               className="relative w-1/2 whitespace-nowrap rounded-md border-gray-200 bg-white py-2 text-sm font-medium text-gray-900 shadow-sm focus:z-10 focus:outline-none focus:ring-2 focus:ring-indigo-500 sm:w-auto sm:px-8"
@@ -76,7 +83,7 @@ export default function Pricing() {
             >
               Yearly billing
             </button>
-          </div>
+          </div> */}
         </div>
         <div className="mt-12 space-y-4 sm:mt-16 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:mx-auto lg:max-w-4xl xl:mx-0 xl:max-w-none xl:grid-cols-4">
           {tiers.map((tier) => (
@@ -94,15 +101,15 @@ export default function Pricing() {
                     ${tier.priceMonthly}
                   </span>{' '}
                   <span className="text-base font-medium text-gray-500">
-                    /mo
+                    /mo/seat
                   </span>
                 </p>
-                <a
+                {/* <a
                   href={tier.href}
                   className="mt-8 block w-full rounded-md border border-[#038270] bg-[#038270] py-2 text-center text-sm font-semibold text-white hover:bg-[#024324]"
                 >
                   Get {tier.name}
-                </a>
+                </a> */}
               </div>
               <div className="px-6 pt-6 pb-8">
                 <h3 className="text-sm font-medium text-gray-900">

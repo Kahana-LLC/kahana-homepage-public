@@ -25,7 +25,7 @@ if (typeof window !== 'undefined') {
         method: 'POST',
         body: data,
       }).then(() => {
-        console.log('form submitted!');
+        '';
       });
     });
   });
@@ -64,7 +64,7 @@ export default function HeroSection() {
                   <div className="invisible md:visible absolute top-15 -left-7 w-40 h-40 bg-[#038270] rounded-full filter blur-3xl opacity-50 animate-blob"></div>
                   <div>
                     <a
-                      href="#"
+                      href="https://7hkdcfzbmr0.typeform.com/to/Jc06T9OV?typeform-source=kahana.tawk.help"
                       className="shadow-2xl inline-flex items-center rounded-full bg-white p-1 pr-2 text-white hover:text-gray-200 sm:text-base lg:text-sm xl:text-base border-solid border-2 border-slate-200 hover:shadow-none"
                     >
                       <span className=" rounded-full bg-[#038270] px-3 py-0.5 text-sm font-semibold leading-5 text-white ">
@@ -91,10 +91,7 @@ export default function HeroSection() {
                     <div className="grid grid-cols-2 gap-4 mt-6 tracking-tight">
                       {' '}
                       <ul role="list" className=" space-y-3">
-                        {[
-                          'No Credit Card required  ',
-                          'Takes less than a minute',
-                        ].map((feature) => (
+                        {['No credit card required  '].map((feature) => (
                           <li key={feature} className="flex items-center">
                             <CheckIcon className="h-8 w-8 flex-none fill-green-700" />
                             <span className="ml-4">{feature}</span>

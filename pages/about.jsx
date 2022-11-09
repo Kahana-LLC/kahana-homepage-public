@@ -19,7 +19,7 @@ export default function About() {
         />
       </Head>
       <div>
-        <div className="sticky top-0">
+        <div style={{ zIndex: '1' }} className="sticky top-0">
           <Navbar />
         </div>
         <main>
