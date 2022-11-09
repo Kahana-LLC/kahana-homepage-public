@@ -249,24 +249,17 @@ export default function HeroSection() {
                     <p className="text-xs leading-5 text-gray-500">
                       By signing up, you agree to our{' '}
                       <a
-                        href="#"
+                        href="/terms-and-conditions"
                         className="font-medium text-gray-900 hover:underline"
                       >
-                        Terms
+                        Terms of Use
                       </a>
-                      ,{' '}
+                      , and{' '}
                       <a
-                        href="#"
+                        href="/privacy-policy"
                         className="font-medium text-gray-900 hover:underline"
                       >
-                        Data Policy
-                      </a>{' '}
-                      and{' '}
-                      <a
-                        href="#"
-                        className="font-medium text-gray-900 hover:underline"
-                      >
-                        Cookies Policy
+                        Privacy Policy
                       </a>
                       .
                     </p>
