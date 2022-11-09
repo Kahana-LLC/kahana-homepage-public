@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React, { useState } from 'react';
 
 //icons
@@ -248,19 +249,19 @@ export default function HeroSection() {
                   <div className="border-t-2 border-gray-200 bg-gray-50 px-4 py-6 sm:px-10">
                     <p className="text-xs leading-5 text-gray-500">
                       By signing up, you agree to our{' '}
-                      <a
+                      <Link
                         href="/terms-and-conditions"
                         className="font-medium text-gray-900 hover:underline"
                       >
                         Terms of Use
-                      </a>
+                      </Link>
                       , and{' '}
-                      <a
+                      <Link
                         href="/privacy-policy"
                         className="font-medium text-gray-900 hover:underline"
                       >
                         Privacy Policy
-                      </a>
+                      </Link>
                       .
                     </p>
                   </div>
