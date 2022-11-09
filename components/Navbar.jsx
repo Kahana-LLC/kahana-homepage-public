@@ -9,7 +9,7 @@ const navigation = [
   { name: 'Explore', href: 'explore' },
   { name: 'About', href: 'about' },
   { name: 'Pricing', href: 'pricing' },
-  { name: 'Blog', href: ' https:/blog.kahana.co' },
+  { name: 'Blog', href: ' https://blog.kahana.co' },
 ];
 
 function Navbar() {
