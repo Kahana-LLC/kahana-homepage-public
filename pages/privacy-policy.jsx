@@ -356,7 +356,8 @@ export default function PrivacyPolicy() {
                 Inc. at:
                 <br />
                 Kahana Group Inc. <br />
-                1111 N Dearborn St, Apt 2805 <br />
+                1550 N Lake Shore Dr, Apt 19E
+                <br />
                 Chicago, Illinois 60610 <br />
                 Email Address: jonathan@kahana.co Effective as of November 08,
                 2022

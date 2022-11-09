@@ -85,7 +85,7 @@ export default function AboutCard() {
 
                       <footer className="mt-4">
                         <p className="text-base  text-white">
-                          Jonathan Gans, Co-Founder & CEO at Kahana
+                          Jonathan, Co-Founder & CEO at Kahana
                         </p>
                       </footer>
                     </blockquote>
@@ -107,7 +107,7 @@ export default function AboutCard() {
                     Executive Officer (CEO) and Chief Product Officer (Head of
                     Product), respectively, as of July 2019. Gans and Kershner
                     originally met at Duke University in 2014, where they were
-                    1st-year roommates. In spring 2020, Gans and Kershner met
+                    1st-year roommates. In February 2020, Jonathan and Adam met
                     Eugene Kaminksy, a developer, through CoFoundersLab.com.
                     Kaminsky then became the technical cofounder and Chief
                     Technology Officer (CTO) of Kahana. The original inspiration

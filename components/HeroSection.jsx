@@ -65,8 +65,8 @@ export default function HeroSection() {
                   <div className="invisible md:visible absolute top-15 -left-7 w-40 h-40 bg-[#038270] rounded-full filter blur-3xl opacity-50 animate-blob"></div>
                   <div>
                     <a
-                      href="https://7hkdcfzbmr0.typeform.com/to/Jc06T9OV?typeform-source=kahana.tawk.help"
-                      className="shadow-2xl inline-flex items-center rounded-full bg-white p-1 pr-2 text-white hover:text-gray-200 sm:text-base lg:text-sm xl:text-base border-solid border-2 border-slate-200 hover:shadow-none"
+                      href=""
+                      className="cursor-default shadow-2xl inline-flex items-center rounded-full bg-white p-1 pr-2 text-white hover:text-gray-200 sm:text-base lg:text-sm xl:text-base border-solid border-2 border-slate-200 "
                     >
                       <span className=" rounded-full bg-[#038270] px-3 py-0.5 text-sm font-semibold leading-5 text-white ">
                         Monetization coming soon

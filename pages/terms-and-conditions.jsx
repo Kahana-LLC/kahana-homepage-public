@@ -531,7 +531,7 @@ export default function TermsAndConditions() {
               <br />
               Kahana Group Inc.
               <br />
-              1111 N Dearborn St, Apt 2805
+              1550 N Lake Shore Dr, Apt 19E
               <br />
               Chicago, Illinois 60610
               <br />

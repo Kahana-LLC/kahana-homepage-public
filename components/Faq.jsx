@@ -33,11 +33,14 @@ export default function Faq() {
               Frequently asked questions
             </h2>
             <p className="mt-4 text-lg text-gray-500">
-              Can’t find the answer you’re looking for? Reach out to our{' '}
-              <a href="#" className="font-medium text-[#038270]">
-                customer support
+              Can’t find the answer you’re looking for? Email to our customer
+              support{' '}
+              <a
+                href="mailto:info@kahana.co"
+                className="font-medium text-[#038270]"
+              >
+                info@kahana.co
               </a>{' '}
-              team.
             </p>
           </div>
           <div className="mt-12 lg:col-span-2 lg:mt-0">
