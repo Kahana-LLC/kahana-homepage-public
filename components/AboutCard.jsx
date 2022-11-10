@@ -103,13 +103,13 @@ export default function AboutCard() {
                 <div className="mt-6 space-y-6 text-gray-500">
                   <p className="text-lg">
                     Kahana was founded in 2019 by Jonathan Gans and Adam
-                    Kershner. Jonathan Gans and Adam Kershner operate as Chief
-                    Executive Officer (CEO) and Chief Product Officer (Head of
-                    Product), respectively, as of July 2019. Gans and Kershner
-                    originally met at Duke University in 2014, where they were
-                    1st-year roommates. In February 2020, Jonathan and Adam met
-                    Eugene Kaminksy, a developer, through CoFoundersLab.com.
-                    Kaminsky then became the technical cofounder and Chief
+                    Kershner. Jonathan and Adam operate as Chief Executive
+                    Officer (CEO) and Chief Product Officer (Head of Product),
+                    respectively, as of July 2019. Jonathan and Adam originally
+                    met at Duke University in 2014, where they were 1st-year
+                    roommates. In February 2020, Jonathan and Adam met Eugene, a
+                    developer, through CoFoundersLab.com and grabbed dinner in
+                    NYC. Eugene then became the technical cofounder and Chief
                     Technology Officer (CTO) of Kahana. The original inspiration
                     and idea for Kahana came, in part, from GitHub, and how it
                     allowed developers to discover and collaborate with

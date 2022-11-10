@@ -33,7 +33,7 @@ export default function Faq() {
               Frequently asked questions
             </h2>
             <p className="mt-4 text-lg text-gray-500">
-              Can’t find the answer you’re looking for? Email to our customer
+              Can’t find the answer you’re looking for? Email our customer
               support{' '}
               <a
                 href="mailto:info@kahana.co"
