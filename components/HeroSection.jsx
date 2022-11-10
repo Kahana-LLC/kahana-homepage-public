@@ -103,7 +103,7 @@ export default function HeroSection() {
                   </div>
                   {/* right animated blob */}
 
-                  <div className="absolute -right-1 w-40 h-20 bg-cyan-300 rounded-full filter blur-3xl animate-blob"></div>
+                  {/* <div className="absolute -right-1 w-40 h-20 bg-cyan-300 rounded-full filter blur-3xl animate-blob"></div> */}
                 </div>
               </div>
 
