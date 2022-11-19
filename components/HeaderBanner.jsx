@@ -4,10 +4,8 @@ export default function HeaderBanner() {
       <div className="mx-auto max-w-7xl py-3 px-3 sm:px-6 lg:px-8">
         <div className="pr-16 sm:px-16 sm:text-center">
           <p className="text-base text-white">
-            <span className="md:hidden">We announced a new product!</span>
-            <span className="hidden md:inline">
-              Already have a Kahana account?
-            </span>
+            {/* <span className="md:hidden">We announced a new product!</span> */}
+            <span>Already have a Kahana account?</span>
             <span className="block sm:ml-2 sm:inline-block">
               <a
                 href="https://kahana.tawk.help/article/how-to-log-in"
