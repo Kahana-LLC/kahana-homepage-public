@@ -69,10 +69,10 @@ export default function HeroSection() {
                       className="cursor-default shadow-2xl inline-flex items-center rounded-full bg-white p-1 pr-2 text-white hover:text-gray-200 sm:text-base lg:text-sm xl:text-base border-solid border-2 border-slate-200 "
                     >
                       <span className=" rounded-full bg-[#038270] px-3 py-0.5 text-sm font-semibold leading-5 text-white ">
-                        Monetization coming soon
+                        Coming soon
                       </span>
                       <span className="ml-4 text-sm text-slate-900 drop-shadow-2xll">
-                        Reserve your account
+                        Reserve now
                       </span>
                       <ChevronRightIcon
                         className="ml-2 h-5 w-5 text-gray-500"
@@ -81,22 +81,30 @@ export default function HeroSection() {
                     </a>
 
                     <h1 className="py-4  bg-clip-text text-transparent bg-gradient-to-r from-[#024324] to-teal-300 text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
-                      Helping Creators Monetize
+                      Monetize your expertise
                     </h1>
 
                     <p className="mt-3 text-base text-slate-900 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
-                      Kahana is the platform for creators and experts to create
-                      content, monetize, and collaborate all in one place.
+                      You have unique knowledge. Kahana is a platform to help
+                      you monetize quickly. The average person takes 6.5 months
+                      to monetize online - with Kahana you earn your first $1
+                      and get recurring revenue 10X faster.
                     </p>
 
                     <div className="grid grid-cols-2 gap-4 mt-6 tracking-tight">
                       {' '}
                       <ul role="list" className=" space-y-3">
-                        {['No credit card required  '].map((feature) => (
-                          <li key={feature} className="flex items-center">
-                            <CheckIcon className="h-8 w-8 flex-none fill-green-700" />
-                            <span className="ml-4">{feature}</span>
-                          </li>
+                        {[
+                          'No credit card required  ',
+                          'Monetize in 20 minutes',
+                        ].map((feature) => (
+                          <>
+                            {' '}
+                            <li key={feature} className="flex items-center">
+                              <CheckIcon className="h-8 w-8 flex-none fill-green-700" />
+                              <span className="ml-4">{feature}</span>
+                            </li>
+                          </>
                         ))}
                       </ul>
                     </div>

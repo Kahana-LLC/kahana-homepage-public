@@ -20,7 +20,7 @@ const navigation = {
     { name: 'LinkedIn', href: 'https://www.linkedin.com/company/kahana-co/' },
     {
       name: 'YouTube',
-      href: 'https://www.youtube.com/channel/UCwsf3DOnt3uQdrqf-NRZ2_w',
+      href: 'https://www.youtube.com/channel/UCwsf3DOnt3uQdrqf-NRZ2_w?sub_confirmation=1',
     },
     {
       name: 'Instagram',
@@ -57,8 +57,9 @@ export default function Footer() {
               alt="navbar-logo"
             />
             <p className="text-base text-gray-500">
-              Kahana is the platform for creators and experts to create content,
-              monetize, and collaborate all in one place.
+              Reserve your account and join 2000+ others learning to monetize
+              their expertise. Reservers also get early-bird access to tips,
+              tricks, templates, plus more.
             </p>
           </div>
           <div className="mt-12 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
