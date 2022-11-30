@@ -2,21 +2,24 @@ import { CheckIcon } from '@heroicons/react/20/solid';
 
 const tiers = [
   {
-    name: 'Free',
+    name: 'Starter',
     href: '#',
     priceMonthly: 0,
-    description: 'All the basics for starting a new business',
+    description: 'Get all the basics to monetize your expertise',
     includedFeatures: [
-      'Monetize your hubs.',
-      'Number of hubs - 2',
-      'Storage - 1 GB',
+      'Get subscription revenue',
+      'Real-time collaboration',
+      'Admin tools',
+      'Sync across devices',
+      '2 hubs',
+      '1 GB storage',
     ],
   },
   {
     name: 'Premium',
     href: '#',
     priceMonthly: 9.99,
-    description: 'All the basics for starting a new business',
+    description: 'For power users who want unlimited revenue streams.',
     includedFeatures: [
       'Monetize your hubs.',
       'Number of hubs - Unlimited',
@@ -65,8 +68,8 @@ export default function Pricing() {
             Pricing Plans
           </h1>
           <p className="mt-5 text-xl text-gray-500 sm:text-center">
-            Start building for free, then add a site plan to go live. Account
-            plans unlock additional features.
+            We only win when you win. It’s completely free to get started. We
+            only receive a small percentage once you start earning on Kahana.
           </p>
 
           {/* monthly vs yearly  */}
@@ -86,49 +89,298 @@ export default function Pricing() {
           </div> */}
         </div>
         <div className="mt-12 space-y-4 sm:mt-16 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:mx-auto lg:max-w-4xl xl:mx-0 xl:max-w-none xl:grid-cols-4">
-          {tiers.map((tier) => (
-            <div
-              key={tier.name}
-              className="divide-y divide-gray-200 rounded-lg border border-gray-200 shadow-sm"
-            >
-              <div className="p-6">
-                <h2 className="text-lg font-medium leading-6 text-[#038270]">
-                  {tier.name}
-                </h2>
-                <p className="mt-4 text-sm text-gray-500">{tier.description}</p>
-                <p className="mt-8">
-                  <span className="text-4xl font-bold tracking-tight text-[#038270]">
-                    ${tier.priceMonthly}
-                  </span>{' '}
-                  <span className="text-base font-medium text-gray-500">
-                    /mo/seat
-                  </span>
-                </p>
-                {/* <a
+          {/* Start adding different pricing plans from here  */}
+          <div className="divide-y divide-gray-200 rounded-lg border border-gray-200 shadow-sm">
+            <div className="p-6">
+              <h2 className="text-lg font-medium leading-6 text-[#038270]">
+                Starter
+              </h2>
+              <p className="mt-4 text-sm text-gray-500">
+                Get all the basics to monetize your expertise.
+              </p>
+              <p className="mt-8">
+                <span className="text-4xl font-bold tracking-tight text-[#038270]">
+                  $0
+                </span>{' '}
+                <span className="text-base font-medium text-gray-500">
+                  /mo/seat
+                </span>
+              </p>
+              {/* <a
                   href={tier.href}
                   className="mt-8 block w-full rounded-md border border-[#038270] bg-[#038270] py-2 text-center text-sm font-semibold text-white hover:bg-[#024324]"
                 >
                   Get {tier.name}
                 </a> */}
-              </div>
-              <div className="px-6 pt-6 pb-8">
-                <h3 className="text-sm font-medium text-gray-900">
-                  Whats included
-                </h3>
-                <ul role="list" className="mt-6 space-y-4">
-                  {tier.includedFeatures.map((feature) => (
-                    <li key={feature} className="flex space-x-3">
-                      <CheckIcon
-                        className="h-5 w-5 flex-shrink-0 text-green-500"
-                        aria-hidden="true"
-                      />
-                      <span className="text-sm text-gray-500">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
             </div>
-          ))}
+            <div className="px-6 pt-6 pb-8">
+              <h3 className="text-sm font-medium text-gray-900">
+                Whats included
+              </h3>
+              <ul role="list" className="mt-6 space-y-4">
+                <li className="flex space-x-3">
+                  <CheckIcon
+                    className="h-5 w-5 flex-shrink-0 text-green-500"
+                    aria-hidden="true"
+                  />
+                  <span className="text-sm text-gray-500">
+                    Get subscription revenue
+                  </span>
+                </li>
+                <li className="flex space-x-3">
+                  <CheckIcon
+                    className="h-5 w-5 flex-shrink-0 text-green-500"
+                    aria-hidden="true"
+                  />
+                  <span className="text-sm text-gray-500">
+                    Real-time collaboration
+                  </span>
+                </li>
+                <li className="flex space-x-3">
+                  <CheckIcon
+                    className="h-5 w-5 flex-shrink-0 text-green-500"
+                    aria-hidden="true"
+                  />
+                  <span className="text-sm text-gray-500">Admin tools</span>
+                </li>
+                <li className="flex space-x-3">
+                  <CheckIcon
+                    className="h-5 w-5 flex-shrink-0 text-green-500"
+                    aria-hidden="true"
+                  />
+                  <span className="text-sm text-gray-500">
+                    Sync across devices
+                  </span>
+                </li>
+                <li className="flex space-x-3">
+                  <CheckIcon
+                    className="h-5 w-5 flex-shrink-0 text-green-500"
+                    aria-hidden="true"
+                  />
+                  <span className="text-sm text-gray-500">2 hubs</span>
+                </li>
+                <li className="flex space-x-3">
+                  <CheckIcon
+                    className="h-5 w-5 flex-shrink-0 text-green-500"
+                    aria-hidden="true"
+                  />
+                  <span className="text-sm text-gray-500">1 GB storage</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="divide-y divide-gray-200 rounded-lg border border-gray-200 shadow-sm">
+            <div className="p-6">
+              <h2 className="text-lg font-medium leading-6 text-[#038270]">
+                Doer
+              </h2>
+              <p className="mt-4 text-sm text-gray-500">
+                For power users who want unlimited revenue streams.
+              </p>
+              <p className="mt-8">
+                <span className="text-4xl font-bold tracking-tight text-[#038270]">
+                  $9.99
+                </span>{' '}
+                <span className="text-base font-medium text-gray-500">
+                  /mo/seat
+                </span>
+              </p>
+              {/* <a
+                  href={tier.href}
+                  className="mt-8 block w-full rounded-md border border-[#038270] bg-[#038270] py-2 text-center text-sm font-semibold text-white hover:bg-[#024324]"
+                >
+                  Get {tier.name}
+                </a> */}
+            </div>
+            <div className="px-6 pt-6 pb-8">
+              <h3 className="text-sm font-medium text-gray-900">
+                Everything in Starter, plus
+              </h3>
+              <ul role="list" className="mt-6 space-y-4">
+                <li className="flex space-x-3">
+                  <CheckIcon
+                    className="h-5 w-5 flex-shrink-0 text-green-500"
+                    aria-hidden="true"
+                  />
+                  <span className="text-sm text-gray-500">Unlimited hubs</span>
+                </li>
+                <li className="flex space-x-3">
+                  <CheckIcon
+                    className="h-5 w-5 flex-shrink-0 text-green-500"
+                    aria-hidden="true"
+                  />
+                  <span className="text-sm text-gray-500">5 GB storage</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="divide-y divide-gray-200 rounded-lg border border-gray-200 shadow-sm">
+            <div className="p-6">
+              <h2 className="text-lg font-medium leading-6 text-[#038270]">
+                Team
+              </h2>
+              <p className="mt-4 text-sm text-gray-500">
+                Create, collaborate, and monetize with your team.
+              </p>
+              <p className="mt-8">
+                <span className="text-4xl font-bold tracking-tight text-[#038270]">
+                  $19.99
+                </span>{' '}
+                <span className="text-base font-medium text-gray-500">
+                  /mo/seat
+                </span>
+              </p>
+              {/* <a
+                  href={tier.href}
+                  className="mt-8 block w-full rounded-md border border-[#038270] bg-[#038270] py-2 text-center text-sm font-semibold text-white hover:bg-[#024324]"
+                >
+                  Get {tier.name}
+                </a> */}
+            </div>
+            <div className="px-6 pt-6 pb-8">
+              <h3 className="text-sm font-medium text-gray-900">
+                Everything in Doer, plus
+              </h3>
+              <ul role="list" className="mt-6 space-y-4">
+                <li className="flex space-x-3">
+                  <CheckIcon
+                    className="h-5 w-5 flex-shrink-0 text-green-500"
+                    aria-hidden="true"
+                  />
+                  <span className="text-sm text-gray-500">50 GB storage</span>
+                </li>
+                <li className="flex space-x-3">
+                  <CheckIcon
+                    className="h-5 w-5 flex-shrink-0 text-green-500"
+                    aria-hidden="true"
+                  />
+                  <span className="text-sm text-gray-500">
+                    Advanced permissions & controls
+                  </span>
+                </li>
+                <li className="flex space-x-3">
+                  <CheckIcon
+                    className="h-5 w-5 flex-shrink-0 text-green-500"
+                    aria-hidden="true"
+                  />
+                  <span className="text-sm text-gray-500">
+                    Pay as you grow, you’ll be able to reconcile costs for
+                    anyone who’s joined your team before each billing cycle
+                  </span>
+                </li>
+                <li className="flex space-x-3">
+                  <CheckIcon
+                    className="h-5 w-5 flex-shrink-0 text-green-500"
+                    aria-hidden="true"
+                  />
+                  <span className="text-sm text-gray-500">
+                    Designed for expanded collaboration controls to ensure your
+                    hubs adhere to community guidelines
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="divide-y divide-gray-200 rounded-lg border border-gray-200 shadow-sm">
+            <div className="p-6">
+              <h2 className="text-lg font-medium leading-6 text-[#038270]">
+                Enterprise
+              </h2>
+              <p className="mt-4 text-sm text-gray-500">
+                Advanced controls & support to run your entire organization.
+              </p>
+              <p className="mt-8">
+                <span className="text-4xl font-bold tracking-tight text-[#038270]">
+                  $29.99
+                </span>{' '}
+                <span className="text-base font-medium text-gray-500">
+                  /mo/seat
+                </span>
+              </p>
+              {/* <a
+                  href={tier.href}
+                  className="mt-8 block w-full rounded-md border border-[#038270] bg-[#038270] py-2 text-center text-sm font-semibold text-white hover:bg-[#024324]"
+                >
+                  Get {tier.name}
+                </a> */}
+            </div>
+            <div className="px-6 pt-6 pb-8">
+              <h3 className="text-sm font-medium text-gray-900">
+                Everything in Team, plus
+              </h3>
+              <ul role="list" className="mt-6 space-y-4">
+                <li className="flex space-x-3">
+                  <CheckIcon
+                    className="h-5 w-5 flex-shrink-0 text-green-500"
+                    aria-hidden="true"
+                  />
+                  <span className="text-sm text-gray-500">
+                    SAML, Single-Sign On (SSO)
+                  </span>
+                </li>
+                <li className="flex space-x-3">
+                  <CheckIcon
+                    className="h-5 w-5 flex-shrink-0 text-green-500"
+                    aria-hidden="true"
+                  />
+                  <span className="text-sm text-gray-500">
+                    White glove 24/7 support
+                  </span>
+                </li>
+                <li className="flex space-x-3">
+                  <CheckIcon
+                    className="h-5 w-5 flex-shrink-0 text-green-500"
+                    aria-hidden="true"
+                  />
+                  <span className="text-sm text-gray-500">
+                    Dedicated success manager (100+ seats)
+                  </span>
+                </li>
+                <li className="flex space-x-3">
+                  <CheckIcon
+                    className="h-5 w-5 flex-shrink-0 text-green-500"
+                    aria-hidden="true"
+                  />
+                  <span className="text-sm text-gray-500">
+                    Custom & Advanced Reporting
+                  </span>
+                </li>
+                <li className="flex space-x-3">
+                  <CheckIcon
+                    className="h-5 w-5 flex-shrink-0 text-green-500"
+                    aria-hidden="true"
+                  />
+                  <span className="text-sm text-gray-500">
+                    Time & Usage Reporting
+                  </span>
+                </li>
+                <li className="flex space-x-3">
+                  <CheckIcon
+                    className="h-5 w-5 flex-shrink-0 text-green-500"
+                    aria-hidden="true"
+                  />
+                  <span className="text-sm text-gray-500">
+                    Custom Integrations
+                  </span>
+                </li>
+                <li className="flex space-x-3">
+                  <CheckIcon
+                    className="h-5 w-5 flex-shrink-0 text-green-500"
+                    aria-hidden="true"
+                  />
+                  <span className="text-sm text-gray-500">
+                    Storage as needed
+                  </span>
+                </li>
+              </ul>
+              <a
+                href="https://7hkdcfzbmr0.typeform.com/to/ZYLHazEf"
+                className="mt-8 block w-full rounded-md border border-[#038270] bg-[#038270] py-2 text-center text-sm font-semibold text-white hover:bg-[#024324]"
+              >
+                Contact Us
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
