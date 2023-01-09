@@ -537,7 +537,7 @@ export default function TermsAndConditions() {
               <br />
               Email Address: jonathan@kahana.co
               <br />
-              Effective as of November 08, 2022
+              Effective as of November 08, 2023
             </div>
           </div>
         </div>
