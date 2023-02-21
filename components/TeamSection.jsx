@@ -33,7 +33,7 @@ const people = [
   },
   {
     name: 'Emilio V Abelmann',
-    role: 'Operations',
+    role: 'Strategic Partnerships',
     imageUrl: emilio,
 
     linkedinUrl: 'https://www.linkedin.com/in/emilio-abelmann-617182107/',
