@@ -19,17 +19,10 @@ const people = [
   },
   {
     name: 'Adam Kershner',
-    role: 'Co-founder and Chief Product Officer',
+    role: 'Co-Founder & Chief Product Officer',
     imageUrl: adam,
     twitterUrl: 'https://twitter.com/adam_kershner',
     linkedinUrl: 'https://www.linkedin.com/in/adam-kershner/',
-  },
-  {
-    name: 'Eugene Kaminsky',
-    role: 'Technical Co-founder and Advisor',
-    imageUrl: eugene,
-    twitterUrl: 'https://twitter.com/KahanaHQ',
-    linkedinUrl: 'https://www.linkedin.com/company/kahana-co/',
   },
   {
     name: 'William Reehil',
@@ -46,6 +39,13 @@ const people = [
     linkedinUrl: 'https://www.linkedin.com/in/emilio-abelmann-617182107/',
   },
   {
+    name: 'Eugene Kaminsky',
+    role: 'Technical Co-Founder & Advisor',
+    imageUrl: eugene,
+    twitterUrl: 'https://twitter.com/KahanaHQ',
+    linkedinUrl: 'https://www.linkedin.com/company/kahana-co/',
+  },
+  {
     name: 'Carl Nordgren',
     role: 'Business Advisor',
     imageUrl: carl,
@@ -54,7 +54,7 @@ const people = [
   },
   {
     name: 'Hugh Molotsi',
-    role: 'Technical Advisor',
+    role: 'Innovation Advisor',
     imageUrl: hugh,
     twitterUrl: 'https://twitter.com/KahanaHQ',
     linkedinUrl: 'https://www.linkedin.com/company/kahana-co/',
