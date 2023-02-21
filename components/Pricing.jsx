@@ -93,7 +93,7 @@ export default function Pricing() {
           <div className="divide-y divide-gray-200 rounded-lg border border-gray-200 shadow-sm">
             <div className="p-6">
               <h2 className="text-lg font-medium leading-6 text-[#038270]">
-                Creator
+                Creator (Free Forever)
               </h2>
               <p className="mt-4 text-sm text-gray-500">
                 Get all the basics to monetize your expertise.
