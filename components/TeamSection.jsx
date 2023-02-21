@@ -40,7 +40,7 @@ const people = [
   },
   {
     name: 'Eugene Kaminsky',
-    role: 'Technical Co-Founder & Advisor',
+    role: 'Technical Advisor & Co-Founder',
     imageUrl: eugene,
     twitterUrl: 'https://twitter.com/KahanaHQ',
     linkedinUrl: 'https://www.linkedin.com/company/kahana-co/',
