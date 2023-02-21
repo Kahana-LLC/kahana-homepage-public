@@ -93,7 +93,7 @@ export default function Pricing() {
           <div className="divide-y divide-gray-200 rounded-lg border border-gray-200 shadow-sm">
             <div className="p-6">
               <h2 className="text-lg font-medium leading-6 text-[#038270]">
-                Starter
+                Creator
               </h2>
               <p className="mt-4 text-sm text-gray-500">
                 Get all the basics to monetize your expertise.
@@ -172,7 +172,7 @@ export default function Pricing() {
           <div className="divide-y divide-gray-200 rounded-lg border border-gray-200 shadow-sm">
             <div className="p-6">
               <h2 className="text-lg font-medium leading-6 text-[#038270]">
-                Doer
+                Expert
               </h2>
               <p className="mt-4 text-sm text-gray-500">
                 For power users who want unlimited revenue streams.
@@ -194,7 +194,7 @@ export default function Pricing() {
             </div>
             <div className="px-6 pt-6 pb-8">
               <h3 className="text-sm font-medium text-gray-900">
-                Everything in Starter, plus
+                Everything in Creator, plus
               </h3>
               <ul role="list" className="mt-6 space-y-4">
                 <li className="flex space-x-3">
@@ -217,7 +217,7 @@ export default function Pricing() {
           <div className="divide-y divide-gray-200 rounded-lg border border-gray-200 shadow-sm">
             <div className="p-6">
               <h2 className="text-lg font-medium leading-6 text-[#038270]">
-                Team
+                Team Collaboration
               </h2>
               <p className="mt-4 text-sm text-gray-500">
                 Create, collaborate, and monetize with your team.
@@ -239,7 +239,7 @@ export default function Pricing() {
             </div>
             <div className="px-6 pt-6 pb-8">
               <h3 className="text-sm font-medium text-gray-900">
-                Everything in Doer, plus
+                Everything in Expert, plus
               </h3>
               <ul role="list" className="mt-6 space-y-4">
                 <li className="flex space-x-3">
@@ -306,7 +306,7 @@ export default function Pricing() {
             </div>
             <div className="px-6 pt-6 pb-8">
               <h3 className="text-sm font-medium text-gray-900">
-                Everything in Team, plus
+                Everything in Team Collaboration, plus
               </h3>
               <ul role="list" className="mt-6 space-y-4">
                 <li className="flex space-x-3">
