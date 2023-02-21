@@ -2,10 +2,10 @@ import { CheckIcon } from '@heroicons/react/20/solid';
 
 const tiers = [
   {
-    name: 'Starter',
+    name: 'Creator',
     href: '#',
     priceMonthly: 0,
-    description: 'Get all the basics to monetize your expertise',
+    description: 'Get all the basics to monetize your expertise.',
     includedFeatures: [
       'Get subscription revenue',
       'Real-time collaboration',
@@ -16,7 +16,7 @@ const tiers = [
     ],
   },
   {
-    name: 'Premium',
+    name: 'Expert',
     href: '#',
     priceMonthly: 9.99,
     description: 'For power users who want unlimited revenue streams.',
@@ -27,10 +27,10 @@ const tiers = [
     ],
   },
   {
-    name: 'Teams',
+    name: 'Team Collaboration',
     href: '#',
     priceMonthly: 19.99,
-    description: 'All the basics for starting a new business',
+    description: 'Create, collaborate, and monetize with your team.',
     includedFeatures: [
       'Monetize your hubs.',
       'Number of hubs - Unlimited',
@@ -42,7 +42,7 @@ const tiers = [
     name: 'Enterprise',
     href: '#',
     priceMonthly: 29.99,
-    description: 'All the basics for starting a new business',
+    description: 'Advanced controls & support to run your entire organization.',
     includedFeatures: [
       'Monetize your hubs.',
       'Number of hubs - Unlimited',
