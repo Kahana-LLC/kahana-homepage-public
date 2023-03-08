@@ -11,7 +11,7 @@ const posts = [
     href: 'https://app.kahana.co/hub/nHxv8vCZBv6i0bVPunyp',
     category: { name: 'Olivia Mancuso', href: 'https://www.tiktok.com/@oliviamancuso__' },
     description:
-      'This hub is for those who are dipping their toes into manifesting but don&apos;t want to spend thousands of dollars on a program or retreat to start their journey. Since implementing the manifesting and vision boarding strategies I share in this hub, I went from making $40K a year to consistent 5-figure months, lost 20 lbs in less than 4 months, and more.',
+      'This hub is for those who are dipping their toes into manifesting but don\'t want to spend thousands of dollars on a program or retreat to start their journey. Since implementing the manifesting and vision boarding strategies I share in this hub, I went from making $40K a year to consistent 5-figure months, lost 20 lbs in less than 4 months, and more.',
     //date: 'Mar 16, 2020',
     //datetime: '2020-03-16',
     imageUrl:
@@ -65,7 +65,7 @@ const posts = [
     href: 'https://app.kahana.co/hub/ohTF2nOQTEWCW7PIsSYX',
     category: { name: 'Kate Herman', href: 'https://www.tiktok.com/@kate.instates' },
     description:
-      'Struggling to come up with content ideas and can&apos;t grow your TikTok account? Welcome to the TikTok Content Hub! Here you&apos;ll find weekly TikTok trending sounds, content ideas, and a content strategy guide.',
+      'Struggling to come up with content ideas and can\'t grow your TikTok account? Welcome to the TikTok Content Hub! Here you\'ll find weekly TikTok trending sounds, content ideas, and a content strategy guide.',
     //date: 'Feb 12, 2020',
     //datetime: '2020-02-12',
     imageUrl:
@@ -83,7 +83,7 @@ const posts = [
     href: 'https://app.kahana.co/hub/PY1KHuxIWoJ7fB7930ZF',
     category: { name: 'Eden Gold', href: 'https://www.tiktok.com/@edengold_' },
     description:
-      'Did you know that the average American alone wastes about $18,000 per year? What could YOU do with an extra $18,000? Let&apos;s talk about it. Welcome to the Adulting 102 Community Hub for Gen Z&apos;s & Millennials who want to thrive. In this community hub, we believe in setting you up for success in your personal life, professional life, and financial life.',
+      'Did you know that the average American alone wastes about $18,000 per year? What could YOU do with an extra $18,000? Let\';s talk about it. Welcome to the Adulting 102 Community Hub for Gen Z\'s & Millennials who want to thrive. In this community hub, we believe in setting you up for success in your personal life, professional life, and financial life.',
     //date: 'Feb 12, 2020',
     //datetime: '2020-02-12',
     imageUrl:
