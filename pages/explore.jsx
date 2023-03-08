@@ -7,22 +7,22 @@ import Navbar from '../components/Navbar';
 //components
 const posts = [
   {
-    title: 'The state of the Metaverse',
-    href: 'https://app.kahana.co/hub/yV0jD3syvEdefIFpGv9w',
-    category: { name: 'Concept', href: '#' },
+    title: 'Your Guide to Manifesting Anything',
+    href: 'https://app.kahana.co/hub/nHxv8vCZBv6i0bVPunyp',
+    category: { name: 'Olivia Mancuso', href: 'https://www.tiktok.com/@oliviamancuso__' },
     description:
-      'This hub is a part of the open-source knowledge base of information that The Kindness Corporation and Kahana are building to support the Manifesto for Working in the Metaverse Project.',
-    date: 'Mar 16, 2020',
-    datetime: '2020-03-16',
+      'This hub is for those who are dipping their toes into manifesting but don not want to spend thousands of dollars on a program or retreat to start their journey.',
+    //date: 'Mar 16, 2020',
+    //datetime: '2020-03-16',
     imageUrl:
       'https://images.unsplash.com/photo-1593508512255-86ab42a8e620?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2378&q=80',
     readingTime: '6 min',
-    author: {
-      name: 'Roel Aufderehar',
-      href: '#',
-      imageUrl:
-        'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    },
+    //author: {
+      //name: 'Roel Aufderehar',
+      //href: '#',
+      //imageUrl:
+        //'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    //},
   },
   {
     title: 'Founders Keepers',
