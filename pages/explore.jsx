@@ -3,7 +3,6 @@ import Head from 'next/head';
 
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
-import oliviaMancuso from '../assets/images/oliviaMancuso.png';
 
 //components
 const posts = [
@@ -15,9 +14,8 @@ const posts = [
       'This hub is for those who are dipping their toes into manifesting but don not want to spend thousands of dollars on a program or retreat to start their journey.',
     //date: 'Mar 16, 2020',
     //datetime: '2020-03-16',
-    image: oliviaMancuso,
-    //imageUrl:
-      //'https://images.unsplash.com/photo-1593508512255-86ab42a8e620?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2378&q=80',
+    imageUrl:
+      'https://kahana-website-images.s3.us-east-2.amazonaws.com/oliviaMancuso.png',
     //readingTime: '6 min',
     //author: {
       //name: 'Roel Aufderehar',
