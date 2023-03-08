@@ -25,40 +25,40 @@ const posts = [
     //},
   },
   {
-    title: 'Founders Keepers',
-    href: 'https://app.kahana.co/hub/G6EwC3tBS6T0PKcLMumx',
-    category: { name: 'Concept', href: '#' },
+    title: '👸🏼 Lazy Girl Job Bootcamp',
+    href: 'https://app.kahana.co/hub/0xoAwd6Uq7KdKO0pdQ4j',
+    category: { name: 'Gabrielle Judge', href: 'https://www.tiktok.com/@gabrielle_judge' },
     description:
-      'The entrepreneurial road, while exhilarating and inspiring, is certainly challenging. That is why we wanted to crowdsource a free hub of advice, content, resources, tips, etc. that is accessible to anyone who is interested.',
-    date: 'Mar 10, 2020',
-    datetime: '2020-03-10',
+      'This hub will help you land a job with the help of ChatGPT. It is a collection of my pre-existing ChatGPT configurations and inputs organized into functional categories: prep, applying, interviewing, negotiating. I’ve spent hours going through the trial error to create inputs that work.',
+    //date: 'Mar 10, 2020',
+   //datetime: '2020-03-10',
     imageUrl:
-      'https://images.unsplash.com/photo-1547586696-ea22b4d4235d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
-    readingTime: '4 min',
-    author: {
-      name: 'Brenna Goyette',
-      href: '#',
-      imageUrl:
-        'https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    },
+      'https://kahana-website-images.s3.us-east-2.amazonaws.com/gabrielleJudge.png',
+    //readingTime: '4 min',
+    //author: {
+      //name: 'Brenna Goyette',
+      //href: '#',
+      //imageUrl:
+        //'https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    //},
   },
   {
-    title: 'Psychology and You',
-    href: 'https://app.kahana.co/hub/2Q4PPOmn7lyCKbX9gDwt',
-    category: { name: 'Research', href: '#' },
+    title: 'TikTok for Business',
+    href: 'https://app.kahana.co/hub/2svUpfVnrxHFJHMn6UIG',
+    category: { name: 'Josh Slavin', href: 'https://www.tiktok.com/@slavinjoshua' },
     description:
-      'Writing and research on the intersection between people and technology. Explore my curated resources on psychology and mental health research.',
-    date: 'Feb 12, 2020',
-    datetime: '2020-02-12',
+      'In this hub, I plan to take you through the key decision I made when building my platform of almost 800K followers, why I made them, and the factors you must take into consideration when doing the same. It’s time. Short form content is the future of social media, and I look forward to helping you capitalize on this unprecedented opportunity!',
+    //date: 'Feb 12, 2020',
+    //datetime: '2020-02-12',
     imageUrl:
-      'https://images.unsplash.com/photo-1573511860302-28c524319d2a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80',
-    readingTime: '11 min',
-    author: {
-      name: 'Daniela Metz',
-      href: '#',
-      imageUrl:
-        'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    },
+      'https://kahana-website-images.s3.us-east-2.amazonaws.com/joshSlavin.png',
+    //readingTime: '11 min',
+    //author: {
+      //name: 'Daniela Metz',
+      //href: '#',
+      //imageUrl:
+        //'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    //},
   },
 ];
 //
@@ -99,7 +99,7 @@ export default function Explore() {
                   >
                     <div className="flex-shrink-0">
                       <img
-                        className="h-144 w-full object-cover"
+                        className="h-96 w-full object-cover"
                         src={post.imageUrl}
                         alt=""
                       />
