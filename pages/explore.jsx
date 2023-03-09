@@ -83,7 +83,7 @@ const posts = [
     href: 'https://app.kahana.co/hub/PY1KHuxIWoJ7fB7930ZF',
     category: { name: 'Eden Gold', href: 'https://www.tiktok.com/@edengold_' },
     description:
-      'Did you know that the average American alone wastes about $18,000 per year? What could YOU do with an extra $18,000? Let\';s talk about it. Welcome to the Adulting 102 Community Hub for Gen Z\'s & Millennials who want to thrive. In this community hub, we believe in setting you up for success in your personal life, professional life, and financial life.',
+      'Did you know that the average American alone wastes about $18,000 per year? What could YOU do with an extra $18,000? Let\'s talk about it. Welcome to the Adulting 102 Community Hub for Gen Z\'s & Millennials who want to thrive. In this community hub, we believe in setting you up for success in your personal life, professional life, and financial life.',
     //date: 'Feb 12, 2020',
     //datetime: '2020-02-12',
     imageUrl:
@@ -120,11 +120,10 @@ export default function Explore() {
             <div className=" mx-auto max-w-7xl">
               <div className="text-center">
                 <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                  🔥 Flaming Hubs
+                  Featured Hubs 🔥
                 </h2>
                 <p className="mx-auto mt-3 max-w-2xl text-xl text-gray-500 sm:mt-4">
-                  Flaming hubs are hubs that become featured at the top of
-                  Kahana&apos;s Explore page and category pages.
+                  Learn from and build with creators in the Kahana Ohana!
                 </p>
               </div>
               <div className="mx-auto mt-12 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3">
