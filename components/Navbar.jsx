@@ -11,7 +11,7 @@ const navigation = [
   { name: 'About', href: 'about' },
   { name: 'Pricing', href: 'pricing' },
   { name: 'Blog', href: ' https://blog.kahana.co' },
-  { name: 'Community 🧙', href: ' https://nas.io/creators-and-experts' },
+  { name: 'Join Community 🧙', href: ' https://nas.io/creators-and-experts' },
 ];
 
 function Navbar() {
@@ -56,12 +56,12 @@ function Navbar() {
           </div>
           {/* mobile menu */}
 
-          <div className="flex flex-wrap justify-start space-x-5 py-4 lg:hidden">
+          <div className="flex flex-wrap justify-start space-x-6 py-6 lg:hidden">
             {navigation.map((link) => (
               <Link
                 href={link.href}
                 key={link.name}
-                className="text-sm text-slate-600  hover:text-slate-900"
+                className="text-base font-small text-slate-600  hover:text-slate-900"
               >
                 {link.name}
               </Link>
