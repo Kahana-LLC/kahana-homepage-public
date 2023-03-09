@@ -11,7 +11,7 @@ const navigation = [
   { name: 'About', href: 'about' },
   { name: 'Pricing', href: 'pricing' },
   { name: 'Blog', href: ' https://blog.kahana.co' },
-  { name: 'Join Community 🧙', href: ' https://nas.io/creators-and-experts' },
+  { name: 'Community 🧙', href: ' https://nas.io/creators-and-experts' },
 ];
 
 function Navbar() {
@@ -56,7 +56,7 @@ function Navbar() {
           </div>
           {/* mobile menu */}
 
-          <div className="flex flex-wrap justify-evenly space-x-6 py-4 lg:hidden">
+          <div className="flex flex-nowrap justify-evenly space-x-6 py-4 lg:hidden">
             {navigation.map((link) => (
               <Link
                 href={link.href}
