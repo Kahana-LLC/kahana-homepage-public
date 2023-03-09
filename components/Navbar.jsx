@@ -61,7 +61,7 @@ function Navbar() {
               <Link
                 href={link.href}
                 key={link.name}
-                className="text-base font-small text-slate-600  hover:text-slate-900"
+                className="text-sm text-slate-600  hover:text-slate-900"
               >
                 {link.name}
               </Link>
