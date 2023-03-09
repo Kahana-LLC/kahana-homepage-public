@@ -56,13 +56,12 @@ function Navbar() {
           </div>
           {/* mobile menu */}
 
-          <div className="relative flex items-center lg:hidden">
-          //<div className="flex flex-wrap justify-center space-x-6 py-4 lg:hidden">
+          <div className="flex flex-wrap justify-center space-x-6 py-4 lg:hidden">
             {navigation.map((link) => (
               <Link
                 href={link.href}
                 key={link.name}
-                className="text-base font-small text-slate-600  hover:text-slate-900"
+                className="text-sm text-slate-600  hover:text-slate-900"
               >
                 {link.name}
               </Link>
