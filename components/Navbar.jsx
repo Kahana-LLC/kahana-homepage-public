@@ -56,7 +56,7 @@ function Navbar() {
           </div>
           {/* mobile menu */}
 
-          <div className="flex flex-nowrap justify-center space-x-6 py-4 lg:hidden">
+          <div className="flex flex-nowrap space-x-6 py-4 lg:hidden">
             {navigation.map((link) => (
               <Link
                 href={link.href}
