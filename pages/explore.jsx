@@ -96,6 +96,24 @@ const posts = [
         //'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
     //},
   },
+  {
+    title: 'Pinterest Success Session',
+    href: 'https://app.kahana.co/hub/tHwAYvYPzqVwGPGzh10k',
+    category: { name: 'Kelsey Vetter', href: 'https://www.tiktok.com/@kelseyvetterco' },
+    description:
+      'Are you missing out on the massive potential of the traffic-driving powerhouse, Pinterest? This comprehensive Pinterest Success Session will teach you how to master Pinterest Marketing in less than 1 hour so you can start driving traffic to your website, growing your audience and increasing your sales.',
+    //date: 'Feb 12, 2020',
+    //datetime: '2020-02-12',
+    imageUrl:
+      'https://kahana-website-images.s3.us-east-2.amazonaws.com/kelseyVetter.png',
+    //readingTime: '11 min',
+    //author: {
+      //name: 'Daniela Metz',
+      //href: '#',
+      //imageUrl:
+        //'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    //},
+  },
 ];
 //
 export default function Explore() {
