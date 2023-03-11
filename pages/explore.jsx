@@ -47,7 +47,7 @@ const posts = [
     href: 'https://app.kahana.co/hub/2svUpfVnrxHFJHMn6UIG',
     category: { name: 'Josh Slavin', href: 'https://www.tiktok.com/@slavinjoshua' },
     description:
-      'In this hub, I plan to take you through the key decision I made when building my platform of almost 800K followers, why I made them, and the factors you must take into consideration when doing the same. It’s time. Short form content is the future of social media, and I look forward to helping you capitalize on this unprecedented opportunity!',
+      'In this hub, I plan to take you through the key decisions I made when building my platform of almost 800K followers, why I made them, and the factors you must take into consideration when doing the same. It’s time. Short form content is the future of social media, and I look forward to helping you capitalize on this unprecedented opportunity!',
     //date: 'Feb 12, 2020',
     //datetime: '2020-02-12',
     imageUrl:
