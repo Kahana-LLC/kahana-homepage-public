@@ -60,24 +60,6 @@ const posts = [
         //'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
     //},
   },
-  //{
-    //title: 'TikTok Trends',
-    //href: 'https://app.kahana.co/hub/ohTF2nOQTEWCW7PIsSYX',
-    //category: { name: 'Kate Herman', href: 'https://www.tiktok.com/@kate.instates' },
-    //description:
-      //'Struggling to come up with content ideas and can\'t grow your TikTok account? Welcome to the TikTok Content Hub! Here you\'ll find weekly TikTok trending sounds, content ideas, and a content strategy guide.',
-    //date: 'Feb 12, 2020',
-    //datetime: '2020-02-12',
-    //imageUrl:
-      //'https://kahana-website-images.s3.us-east-2.amazonaws.com/kateHerman.png',
-    //readingTime: '11 min',
-    //author: {
-      //name: 'Daniela Metz',
-      //href: '#',
-      //imageUrl:
-        //'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    //},
-  //},
   {
     title: 'Adulting 102: How to Thrive in Adulthood - For Life',
     href: 'https://app.kahana.co/hub/PY1KHuxIWoJ7fB7930ZF',
@@ -88,6 +70,24 @@ const posts = [
     //datetime: '2020-02-12',
     imageUrl:
       'https://kahana-website-images.s3.us-east-2.amazonaws.com/edenGold.png',
+    //readingTime: '11 min',
+    //author: {
+      //name: 'Daniela Metz',
+      //href: '#',
+      //imageUrl:
+        //'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    //},
+  },
+  {
+    title: 'TikTok Trends',
+    href: 'https://app.kahana.co/hub/ohTF2nOQTEWCW7PIsSYX',
+    category: { name: 'Kate Herman', href: 'https://www.tiktok.com/@kate.instates' },
+    description:
+      'Struggling to come up with content ideas and can\'t grow your TikTok account? Welcome to the TikTok Content Hub! Here you\'ll find weekly TikTok trending sounds, content ideas, and a content strategy guide.',
+    //date: 'Feb 12, 2020',
+    //datetime: '2020-02-12',
+    imageUrl:
+      'https://kahana-website-images.s3.us-east-2.amazonaws.com/kateHerman.png',
     //readingTime: '11 min',
     //author: {
       //name: 'Daniela Metz',
