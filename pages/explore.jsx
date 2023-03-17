@@ -24,16 +24,16 @@ const posts = [
         //'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
     //},
   },
-  //{
-    //title: '👸🏼 Lazy Girl Job Bootcamp',
-    //href: 'https://app.kahana.co/hub/0xoAwd6Uq7KdKO0pdQ4j',
-    //category: { name: 'Gabrielle Judge', href: 'https://www.tiktok.com/@gabrielle_judge' },
-    //description:
-      //'This hub will help you land a job with the help of ChatGPT. It is a collection of my pre-existing ChatGPT configurations and inputs organized into functional categories: prep, applying, interviewing, negotiating. I’ve spent hours going through the trial error to create inputs that work.',
+  {
+    title: '👸🏼 Lazy Girl Job Bootcamp',
+    href: 'https://app.kahana.co/hub/0xoAwd6Uq7KdKO0pdQ4j',
+    category: { name: 'Gabrielle Judge', href: 'https://www.tiktok.com/@gabrielle_judge' },
+    description:
+      'Learn how to land a job and give yourself a raise on your own terms, the "lazy way", with AI. This hub is a collection of my pre-existing ChatGPT configurations and inputs organized into functional categories in the job: prep, applying, interviewing, negotiating. I’ve spent hours going through the trial error to create inputs that work so that you don't have to!',
     //date: 'Mar 10, 2020',
    //datetime: '2020-03-10',
-    //imageUrl:
-      //'https://kahana-website-images.s3.us-east-2.amazonaws.com/gabrielleJudge.png',
+    imageUrl:
+      'https://kahana-website-images.s3.us-east-2.amazonaws.com/gabrielleJudge.png',
     //readingTime: '4 min',
     //author: {
       //name: 'Brenna Goyette',
@@ -41,7 +41,7 @@ const posts = [
       //imageUrl:
         //'https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
     //},
-  //},
+  },
   {
     title: 'TikTok for Business',
     href: 'https://app.kahana.co/hub/2svUpfVnrxHFJHMn6UIG',
