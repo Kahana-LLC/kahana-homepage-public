@@ -29,7 +29,7 @@ const posts = [
     href: 'https://app.kahana.co/hub/0xoAwd6Uq7KdKO0pdQ4j',
     category: { name: 'Gabrielle Judge', href: 'https://www.tiktok.com/@gabrielle_judge' },
     description:
-      'Learn how to land a job and give yourself a raise on your own terms, the "lazy way", with AI. This hub is a collection of my pre-existing ChatGPT configurations and inputs organized into functional categories in the job: prep, applying, interviewing, negotiating. I’ve spent hours going through the trial error to create inputs that work so that you don't have to!',
+      'Learn how to land a job and give yourself a raise on your own terms, the "lazy way", with AI. This hub is a collection of my pre-existing ChatGPT configurations and inputs organized into functional categories in the job: prep, applying, interviewing, negotiating. I’ve spent hours going through the trial error to create inputs that work so that you don\'t have to!',
     //date: 'Mar 10, 2020',
    //datetime: '2020-03-10',
     imageUrl:
