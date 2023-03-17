@@ -114,6 +114,24 @@ const posts = [
         //'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
     //},
   },
+  {
+    title: 'Vision Story',
+    href: 'https://app.kahana.co/hub/VarpGpuDHdukrW4IG4Ki',
+    category: { name: 'Gregory Gray', href: 'https://www.linkedin.com/in/gregorygray00/' },
+    description:
+      'The Vision Story hub will give you clarity on your life and business. It is a powerful process that will enliven you to fulfill your purpose and build the lifestyle you desire. Come join us in the process of building the life you deserve.',
+    //date: 'Feb 12, 2020',
+    //datetime: '2020-02-12',
+    imageUrl:
+      'https://kahana-website-images.s3.us-east-2.amazonaws.com/gregoryGray.png',
+    //readingTime: '11 min',
+    //author: {
+      //name: 'Daniela Metz',
+      //href: '#',
+      //imageUrl:
+        //'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    //},
+  },
 ];
 //
 export default function Explore() {
