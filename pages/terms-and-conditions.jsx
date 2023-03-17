@@ -116,428 +116,142 @@ export default function TermsAndConditions() {
           <div className="mx-auto max-w-prose text-lg">
             <h1>
               <span className="mt-2 block text-center text-3xl font-bold leading-8 tracking-tight text-gray-900 sm:text-4xl">
-                Terms of Use
+                Terms & Conditions
               </span>
             </h1>
             <div className="mt-8 text-xl leading-8 text-gray-500">
-              Agreement between User and Kahana.co <br />
-              <br />
-              Welcome to Kahana.co. The Kahana.co website (the "Site") is
-              comprised of various web pages operated by Kahana Group Inc..
-              Kahana.co is offered to you conditioned on your acceptance without
-              modification of the terms, conditions, and notices contained
-              herein (the "Terms"). Your use of kahana.co constitutes your
-              agreement to all such Terms. Please read these terms carefully,
-              and keep a copy of them for your reference. Kahana.co is a SaaS
-              Site.
-              <br />
-              <br />
-              The purpose of this website is to provide paid access to Kahana, a
-              virtual environment that allows people to collect and organize
-              their resources and thoughts, and create written content, all in
-              one place.
-              <br />
-              <br />
-              Electronic Communications
-              <br />
-              <br />
-              Visiting Kahana.co or sending emails to Kahana Group Inc.
-              constitutes electronic communications. You consent to receive
-              electronic communications and you agree that all agreements,
-              notices, disclosures and other communications that we provide to
-              you electronically, via email and on the Site, satisfy any legal
-              requirement that such communications be in writing.
-              <br />
-              <br />
-              Your Account
-              <br />
-              <br />
-              If you use the Site, you are responsible for maintaining the
-              confidentiality of your account and password and for restricting
-              access to your computer, and you agree to accept responsibility
-              for all activities that occur under your account or password. You
-              may not assign or otherwise transfer your account to any other
-              person or entity. You acknowledge that Kahana Group Inc. is not
-              responsible for third party access to your account that results
-              from theft or misappropriation of your account. Kahana Group Inc.
-              and its associates reserve the right to refuse or cancel service,
-              terminate accounts, or remove or edit content in our sole
-              discretion.
-              <br />
-              <br />
-              Children Under Thirteen
-              <br />
-              <br />
-              Kahana Group Inc. does not knowingly collect, either online or
-              offline, personal information from persons under the age of
-              thirteen. If you are under 18, you may use Kahana.co only with
-              permission of a parent or guardian.
-              <br />
-              <br />
-              Links to Third Party Sites/Third Party Services
-              <br />
-              <br />
-              Kahana.co may contain links to other websites ("Linked Sites").
-              The Linked Sites are not under the control of Kahana Group Inc.
-              and Kahana Group Inc. is not responsible for the contents of any
-              Linked Site, including without limitation any link contained in a
-              Linked Site, or any changes or updates to a Linked Site. Kahana
-              Group Inc. is providing these links to you only as a convenience,
-              and the inclusion of any link does not imply endorsement by Kahana
-              Group Inc. of the site or any association with its operators.
-              <br />
-              <br />
-              Certain services made available via Kahana.co are delivered by
-              third party sites and organizations.
-              <br />
-              <br />
-              By using any product, service or functionality originating from
-              the Kahana.co domain, you hereby acknowledge and consent that
-              Kahana Group Inc. may share such information and data with any
-              third party with whom Kahana Group Inc. has a contractual
-              relationship to provide the requested product, service or
-              functionality on behalf of Kahana.co users and customers.
-              <br />
-              <br />
-              No Unlawful or Prohibited Use/Intellectual Property
-              <br />
-              <br />
-              You are granted a non-exclusive,non-transferable, revocable
-              license to access and use Kahana.co strictly in accordance with
-              these terms of use. As a condition of your use of the Site, you
-              warrant to Kahana Group Inc. that you will not use the Site for
-              any purpose that is unlawful or prohibited by these Terms. You may
-              not use the Site in any manner which could damage, disable,
-              overburden, or impair the Site or interfere with any other party's
-              use and enjoyment of the Site. You may not obtain or attempt to
-              obtain any materials or information through any means not
-              intentionally made available or provided for through the Site.
-              <br />
-              <br />
-              All content included as part of the Service, such as text,
-              graphics, logos, images, as well as the compilation thereof, and
-              any software used on the Site, is the property of Kahana Group
-              Inc. or its suppliers and protected by copyright and other laws
-              that protect intellectual property and proprietary rights. You
-              agree to observe and abide by all copyright and other proprietary
-              notices, legends or other restrictions contained in any such
-              content and will not make any changes thereto.
-              <br />
-              <br />
-              You will not modify, publish, transmit, reverse engineer,
-              participate in the transfer or sale, create derivative works, or
-              in any way exploit any of the content, in whole or in part, found
-              on the Site. Kahana Group Inc. content is not for resale. Your use
-              of the Site does not entitle you to make any unauthorized use of
-              any protected content, and in particular you will not delete or
-              alter any proprietary rights or attribution notices in any
-              content. You will use protected content solely for your personal
-              use, and will make no other use of the content without the express
-              written permission of Kahana Group Inc. and the copyright owner.
-              You agree that you do not acquire any ownership rights in any
-              protected content. We do not grant you any licenses, express or
-              implied, to the intellectual property of Kahana Group Inc. or our
-              licensors except as expressly authorized by these Terms.
-              <br />
-              <br />
-              Use of Communication Services
-              <br />
-              <br />
-              The Site may contain bulletin board services, chat areas, news
-              groups, forums, communities, personal web pages, calendars, and/or
-              other message or communication facilities designed to enable you
-              to communicate with the public at large or with a group
-              (collectively, "Communication Services"). You agree to use the
-              Communication Services only to post, send and receive messages and
-              material that are proper and related to the particular
-              Communication Service.
-              <br />
-              <br />
-              By way of example, and not as a limitation, you agree that when
-              using a Communication Service, you will not: defame, abuse,
-              harass, stalk, threaten or otherwise violate the legal rights
-              (such as rights of privacy and publicity) of others; publish,
-              post, upload, distribute or disseminate any inappropriate,
-              profane, defamatory, infringing, obscene, indecent or unlawful
-              topic, name, material or information; upload files that contain
-              software or other material protected by intellectual property laws
-              (or by rights of privacy of publicity) unless you own or control
-              the rights thereto or have received all necessary consents; upload
-              files that contain viruses, corrupted files, or any other similar
-              software or programs that may damage the operation of another's
-              computer; advertise or offer to sell or buy any goods or services
-              for any business purpose, unless such Communication Service
-              specifically allows such messages; conduct or forward surveys,
-              contests, pyramid schemes or chain letters; download any file
-              posted by another user of a Communication Service that you know,
-              or reasonably should know, cannot be legally distributed in such
-              manner; falsify or delete any author attributions, legal or other
-              proper notices or proprietary designations or labels of the origin
-              or source of software or other material contained in a file that
-              is uploaded; restrict or inhibit any other user from using and
-              enjoying the Communication Services; violate any code of conduct
-              or other guidelines which may be applicable for any particular
-              Communication Service; harvest or otherwise collect information
-              about others, including e-mail addresses, without their consent;
-              violate any applicable laws or regulations.
-              <br />
-              <br />
-              Kahana Group Inc. has no obligation to monitor the Communication
-              Services. However, Kahana Group Inc. reserves the right to review
-              materials posted to a Communication Service and to remove any
-              materials in its sole discretion. Kahana Group Inc. reserves the
-              right to terminate your access to any or all of the Communication
-              Services at any time without notice for any reason whatsoever.
-              <br />
-              <br />
-              Kahana Group Inc. reserves the right at all times to disclose any
-              information as necessary to satisfy any applicable law,
-              regulation, legal process or governmental request, or to edit,
-              refuse to post or to remove any information or materials, in whole
-              or in part, in Kahana Group Inc.'s sole discretion.
-              <br />
-              <br />
-              Always use caution when giving out any personally identifying
-              information about yourself or your children in any Communication
-              Service. Kahana Group Inc. does not control or endorse the
-              content, messages or information found in any Communication
-              Service and, therefore, Kahana Group Inc. specifically disclaims
-              any liability with regard to the Communication Services and any
-              actions resulting from your participation in any Communication
-              Service. Managers and hosts are not authorized Kahana Group Inc.
-              spokespersons, and their views do not necessarily reflect those of
-              Kahana Group Inc.
-              <br />
-              <br />
-              Materials uploaded to a Communication Service may be subject to
-              posted limitations on usage, reproduction and/or dissemination.
-              You are responsible for adhering to such limitations if you upload
-              the materials.
-              <br />
-              <br />
-              Materials Provided to Kahana.co or Posted on Any Kahana Group Inc.
-              Web Page
-              <br />
-              <br />
-              Kahana Group Inc. does not claim ownership of the materials you
-              provide to Kahana.co (including feedback and suggestions) or post,
-              upload, input or submit to any Kahana Group Inc. Site or our
-              associated services (collectively "Submissions"). However, by
-              posting, uploading, inputting, providing or submitting your
-              Submission you are granting Kahana Group Inc., our affiliated
-              companies and necessary sublicensees permission to use your
-              Submission in connection with the operation of their Internet
-              businesses including, without limitation, the rights to: copy,
-              distribute, transmit, publicly display, publicly perform,
-              reproduce, edit, translate and reformat your Submission; and to
-              publish your name in connection with your Submission.
-              <br />
-              <br />
-              No compensation will be paid with respect to the use of your
-              Submission, as provided herein. Kahana Group Inc. is under no
-              obligation to post or use any Submission you may provide and may
-              remove any Submission at any time in Kahana Group Inc.'s sole
-              discretion.
-              <br />
-              <br />
-              By posting, uploading, inputting, providing or submitting your
-              Submission you warrant and represent that you own or otherwise
-              control all of the rights to your Submission as described in this
-              section including, without limitation, all the rights necessary
-              for you to provide, post, upload, input or submit the Submissions.
-              <br />
-              <br />
-              International Users
-              <br />
-              <br />
-              The Service is controlled, operated and administered by Kahana
-              Group Inc. from our offices within the USA. If you access the
-              Service from a location outside the USA, you are responsible for
-              compliance with all local laws. You agree that you will not use
-              the Kahana Group Inc. Content accessed through Kahana.co in any
-              country or in any manner prohibited by any applicable laws,
-              restrictions or regulations.
-              <br />
-              <br />
-              Indemnification
-              <br />
-              <br />
-              You agree to indemnify, defend and hold harmless Kahana Group
-              Inc., its officers, directors, employees, agents and third
-              parties, for any losses, costs, liabilities and expenses
-              (including reasonable attorney's fees) relating to or arising out
-              of your use of or inability to use the Site or services, any user
-              postings made by you, your violation of any terms of this
-              Agreement or your violation of any rights of a third party, or
-              your violation of any applicable laws, rules or regulations.
-              Kahana Group Inc. reserves the right, at its own cost, to assume
-              the exclusive defense and control of any matter otherwise subject
-              to indemnification by you, in which event you will fully cooperate
-              with Kahana Group Inc. in asserting any available defenses.
-              <br />
-              <br />
-              Arbitration
-              <br />
-              <br />
-              In the event the parties are not able to resolve any dispute
-              between them arising out of or concerning these Terms and
-              Conditions, or any provisions hereof, whether in contract, tort,
-              or otherwise at law or in equity for damages or any other relief,
-              then such dispute shall be resolved only by final and binding
-              arbitration pursuant to the Federal Arbitration Act, conducted by
-              a single neutral arbitrator and administered by the American
-              Arbitration Association, or a similar arbitration service selected
-              by the parties, in a location mutually agreed upon by the parties.
-              The arbitrator's award shall be final, and judgment may be entered
-              upon it in any court having jurisdiction. In the event that any
-              legal or equitable action, proceeding or arbitration arises out of
-              or concerns these Terms and Conditions, the prevailing party shall
-              be entitled to recover its costs and reasonable attorney's fees.
-              The parties agree to arbitrate all disputes and claims in regards
-              to these Terms and Conditions or any disputes arising as a result
-              of these Terms and Conditions, whether directly or indirectly,
-              including Tort claims that are a result of these Terms and
-              Conditions. The parties agree that the Federal Arbitration Act
-              governs the interpretation and enforcement of this provision. The
-              entire dispute, including the scope and enforceability of this
-              arbitration provision shall be determined by the Arbitrator. This
-              arbitration provision shall survive the termination of these Terms
-              and Conditions.
-              <br />
-              <br />
-              Class Action Waiver
-              <br />
-              <br />
-              Any arbitration under these Terms and Conditions will take place
-              on an individual basis; class arbitrations and
-              class/representative/collective actions are not permitted. THE
-              PARTIES AGREE THAT A PARTY MAY BRING CLAIMS AGAINST THE OTHER ONLY
-              IN EACH'S INDIVIDUAL CAPACITY, AND NOT AS A PLAINTIFF OR CLASS
-              MEMBER IN ANY PUTATIVE CLASS, COLLECTIVE AND/ OR REPRESENTATIVE
-              PROCEEDING, SUCH AS IN THE FORM OF A PRIVATE ATTORNEY GENERAL
-              ACTION AGAINST THE OTHER. Further, unless both you and Kahana
-              Group Inc. agree otherwise, the arbitrator may not consolidate
-              more than one person's claims, and may not otherwise preside over
-              any form of a representative or class proceeding.
-              <br />
-              <br />
-              Liability Disclaimer
-              <br />
-              <br />
-              THE INFORMATION, SOFTWARE, PRODUCTS, AND SERVICES INCLUDED IN OR
-              AVAILABLE THROUGH THE SITE MAY INCLUDE INACCURACIES OR
-              TYPOGRAPHICAL ERRORS. CHANGES ARE PERIODICALLY ADDED TO THE
-              INFORMATION HEREIN. KAHANA GROUP INC. AND/OR ITS SUPPLIERS MAY
-              MAKE IMPROVEMENTS AND/OR CHANGES IN THE SITE AT ANY TIME.
-              <br />
-              <br />
-              KAHANA GROUP INC. AND/OR ITS SUPPLIERS MAKE NO REPRESENTATIONS
-              ABOUT THE SUITABILITY, RELIABILITY, AVAILABILITY, TIMELINESS, AND
-              ACCURACY OF THE INFORMATION, SOFTWARE, PRODUCTS, SERVICES AND
-              RELATED GRAPHICS CONTAINED ON THE SITE FOR ANY PURPOSE. TO THE
-              MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, ALL SUCH INFORMATION,
-              SOFTWARE, PRODUCTS, SERVICES AND RELATED GRAPHICS ARE PROVIDED "AS
-              IS" WITHOUT WARRANTY OR CONDITION OF ANY KIND. KAHANA GROUP INC.
-              AND/OR ITS SUPPLIERS HEREBY DISCLAIM ALL WARRANTIES AND CONDITIONS
-              WITH REGARD TO THIS INFORMATION, SOFTWARE, PRODUCTS, SERVICES AND
-              RELATED GRAPHICS, INCLUDING ALL IMPLIED WARRANTIES OR CONDITIONS
-              OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE AND
-              NON-INFRINGEMENT.
-              <br />
-              <br />
-              TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT
-              SHALL KAHANA GROUP INC. AND/OR ITS SUPPLIERS BE LIABLE FOR ANY
-              DIRECT, INDIRECT, PUNITIVE, INCIDENTAL, SPECIAL, CONSEQUENTIAL
-              DAMAGES OR ANY DAMAGES WHATSOEVER INCLUDING, WITHOUT LIMITATION,
-              DAMAGES FOR LOSS OF USE, DATA OR PROFITS, ARISING OUT OF OR IN ANY
-              WAY CONNECTED WITH THE USE OR PERFORMANCE OF THE SITE, WITH THE
-              DELAY OR INABILITY TO USE THE SITE OR RELATED SERVICES, THE
-              PROVISION OF OR FAILURE TO PROVIDE SERVICES, OR FOR ANY
-              INFORMATION, SOFTWARE, PRODUCTS, SERVICES AND RELATED GRAPHICS
-              OBTAINED THROUGH THE SITE, OR OTHERWISE ARISING OUT OF THE USE OF
-              THE SITE, WHETHER BASED ON CONTRACT, TORT, NEGLIGENCE, STRICT
-              LIABILITY OR OTHERWISE, EVEN IF KAHANA LLC OR ANY OF ITS SUPPLIERS
-              HAS BEEN ADVISED OF THE POSSIBILITY OF DAMAGES. BECAUSE SOME
-              STATES/JURISDICTIONS DO NOT ALLOW THE EXCLUSION OR LIMITATION OF
-              LIABILITY FOR CONSEQUENTIAL OR INCIDENTAL DAMAGES, THE ABOVE
-              LIMITATION MAY NOT APPLY TO YOU. IF YOU ARE DISSATISFIED WITH ANY
-              PORTION OF THE SITE, OR WITH ANY OF THESE TERMS OF USE, YOUR SOLE
-              AND EXCLUSIVE REMEDY IS TO DISCONTINUE USING THE SITE.
-              <br />
-              <br />
-              Termination/Access Restriction
-              <br />
-              <br />
-              Kahana Group Inc. reserves the right, in its sole discretion, to
-              terminate your access to the Site and the related services or any
-              portion thereof at any time, without notice. To the maximum extent
-              permitted by law, this agreement is governed by the laws of the
-              State of Illinois and you hereby consent to the exclusive
-              jurisdiction and venue of courts in Illinois in all disputes
-              arising out of or relating to the use of the Site. Use of the Site
-              is unauthorized in any jurisdiction that does not give effect to
-              all provisions of these Terms, including, without limitation, this
-              section.
-              <br />
-              <br />
-              You agree that no joint venture, partnership, employment, or
-              agency relationship exists between you and Kahana Group Inc. as a
-              result of this agreement or use of the Site. Kahana Group Inc.'s
-              performance of this agreement is subject to existing laws and
-              legal process, and nothing contained in this agreement is in
-              derogation of Kahana Group Inc.'s right to comply with
-              governmental, court and law enforcement requests or requirements
-              relating to your use of the Site or information provided to or
-              gathered by Kahana Group Inc. with respect to such use. If any
-              part of this agreement is determined to be invalid or
-              unenforceable pursuant to applicable law including, but not
-              limited to, the warranty disclaimers and liability limitations set
-              forth above, then the invalid or unenforceable provision will be
-              deemed superseded by a valid, enforceable provision that most
-              closely matches the intent of the original provision and the
-              remainder of the agreement shall continue in effect.
-              <br />
-              <br />
-              Unless otherwise specified herein, this agreement constitutes the
-              entire agreement between the user and Kahana Group Inc. with
-              respect to the Site and it supersedes all prior or contemporaneous
-              communications and proposals, whether electronic, oral or written,
-              between the user and Kahana Group Inc. with respect to the Site. A
-              printed version of this agreement and of any notice given in
-              electronic form shall be admissible in judicial or administrative
-              proceedings based upon or relating to this agreement to the same
-              extent and subject to the same conditions as other business
-              documents and records originally generated and maintained in
-              printed form. It is the express wish to the parties that this
-              agreement and all related documents be written in English.
-              <br />
-              <br />
-              Changes to Terms
-              <br />
-              <br />
-              Kahana Group Inc. reserves the right, in its sole discretion, to
-              change the Terms under which Kahana.co is offered. The most
-              current version of the Terms will supersede all previous versions.
-              Kahana Group Inc. encourages you to periodically review the Terms
-              to stay informed of our updates.
-              <br />
-              <br />
-              Contact Us
-              <br />
-              <br />
-              Kahana Group Inc. welcomes your questions or comments regarding
-              the Terms:
-              <br />
-              <br />
-              Kahana Group Inc.
-              <br />
-              1550 N Lake Shore Dr, Apt 19E
-              <br />
-              Chicago, Illinois 60610
-              <br />
-              Email Address: jonathan@kahana.co
-              <br />
-              Effective as of November 08, 2023
+              Please read these terms and conditions carefully before using Our Service.
+              <h2>Interpretation and Definitions</h2>
+              <h3>Interpretation</h3>
+              The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or in plural.
+              <h3>Definitions</h3>
+              For the purposes of these Terms and Conditions:
+              Affiliate means an entity that controls, is controlled by or is under common control with a party, where "control" means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.
+              Account means a unique account created for You to access our Service or parts of our Service. Your account will be accessible from https://app.kahana.co/
+              Country refers to: Illinois, United States
+              Company (referred to as either  “Kahana”, ”the Company", "We", "Us" or "Our" in this Agreement) refers to Kahana Group Inc., 1550 N Lake Shore Dr, Apt 19E Chicago, Illinois 60610.
+              Content refers to content such as text, images, or other information that can be posted, uploaded, linked to or otherwise made available by You, regardless of the form of that content.
+              Creator refers to any individual who makes content on the Service for any purpose, including for the purpose of monetization.
+              Device means any device that can access the Service such as a computer, a cellphone or a digital tablet.
+              Feedback means feedback, innovations or suggestions sent by You regarding the attributes, performance or features of our Service.
+              Hub refers to where Your content is displayed.
+              Service refers to the Website.
+              Subscriber refers to any individual who pays for another individual’s content on the Service.
+              Subscriptions refer to the services or access to the Service offered on a subscription basis by the Company to You.
+              Terms and Conditions (also referred as "Terms") mean these Terms and Conditions that form the entire agreement between You and the Company regarding the use of the Service.
+              Third-party Social Media Service means any services or content (including data, information, products or services) provided by a third-party that may be displayed, included or made available by the Service.
+              Website refers to Kahana, accessible from https://kahana.co/
+              You means the individual (Subscriber or Creator) accessing or using the Service, or the Company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.
+              <h2>Acknowledgment</h2>
+              These are the Terms and Conditions governing the use of this Service and the agreement that operates between You and the Company. These Terms and Conditions set out the rights and obligations of all users regarding the use of the Service.
+              Your access to and use of the Service is conditioned on Your acceptance of and compliance with these Terms and Conditions. These Terms and Conditions apply to all visitors, users and others who access or use the Service.
+              By accessing or using the Service You agree to be bound by these Terms and Conditions. If You disagree with any part of these Terms and Conditions then You may not access the Service.
+              You represent that you are at least 13 years old. If You are under the age of 18, You must have Your parent’s permission to use the Service. The Company does not permit those under 13 to use the Service.
+              Your access to and use of the Service is also conditioned on Your acceptance of and compliance with the Privacy Policy of the Company. Our Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your personal information when You use the Website and tells You about Your privacy rights and how the law protects You. Please read Our Privacy Policy carefully before using Our Service.
+              <h2>Subscriptions</h2>
+              <h3>Payments</h3>
+              The Company uses Stripe Standard Connect to ensure that You get paid for content that You monetize. This means that as a Creator, You have a direct relationship with Stripe. The Company is removed from billing process, and You will work with Stripe to handle payment issues such as fraud, chargeback, and resolution of payment disputes. You will have timely access to Your funds, but You may occasionally experience delays in accessing Your funds. Payments may be blocked or held for policy violations or for compliance reasons, including collecting tax reporting information. If You have questions about a payments block, please reach out to Stripe support. Sometimes activities like refunds can put Your account balance into the negative. If Your balance becomes negative then Stripe may reserve the right to recover those funds from future payments. If You are a creator of 18+content, to comply with payment processing rules You must verify that participants in Your content are the age of majority, and You must store their consent to participate.
+              <h3>Fees</h3>
+              As a creator, the minimum price that You can set for any Hub that You create is $1.00. You will be charged 5% of the Hub price for each transaction, which goes to Kahana, and you will also be charged for Stripe’s payment processing fees, which are as follows: The payment processing fee in US dollars is 2.9% plus $0.30 per successful transaction, as well as 0.5% if it is a recurring subscription payment. 1% is added to the 2.9% for international cards/if currency conversion is required.
+              <h3>Tax</h3>
+              Tax identification information may be collected and reported to tax authorities as legally required. You are responsible for reporting any income or withholding taxes that may be due as a result of payments received.
+              <h3>Subscription period</h3>
+              The Service or some parts of the Service are available only with a paid Subscription. You will be billed in advance on a recurring and periodic basis (such as daily, weekly, monthly or annually), depending on the type of Subscription plan You select when purchasing the Subscription. The timing and amount of each Subscription depend on the Hub that You are paying to access. You can see the details as You join, as well as in the receipt sent to You after each successful payment.
+              At the end of each period, Your Subscription will automatically renew under the exact same conditions unless You cancel it or the Company cancels it.
+              <h3>Subscription cancellations</h3>
+              For recurring Subscription Hubs, You may cancel Your Subscription at any time. You may cancel Your Subscription renewal either through Your Manage Subscription page or by contacting the Company. Terminating Your Subscription will go into effect in the subsequent payment term. You will not receive a refund for the fees You already paid for Your current Subscription period and You will be able to access the Service until the end of Your current Subscription period. This includes when You cancel Your Subscription, Your payment method fails, the Creator blocks You, or the Creator deletes their account.
+              <h3>Fee Changes</h3>
+              The Creator has sole discretion to modify the Subscription fees at any time. Any Subscription fee change will become effective at the end of the then-current Subscription period.
+              The Creator will provide You with reasonable prior notice of any change in Subscription fees to give You an opportunity to terminate Your Subscription before such change becomes effective.
+              Your continued use of the Hub after the Subscription fee change comes into effect constitutes Your agreement to pay the modified Subscription fee amount.
+              <h3>Refunds</h3>
+               The Company is not involved in the refund process. The refund policy will be up to the Creator of any particular Hub and Stripe, meaning that each Hub will have its own refund policy.
+              <h2>User Accounts</h2>
+              When You create an account with Us, You must provide Us information that is accurate, complete, and current at all times. Failure to do so constitutes a breach of the Terms, which may result in immediate termination of Your account on Our Service.
+              You are responsible for safeguarding the password that You use to access the Service and for any activities or actions under Your password, whether Your password is with Our Service or a Third-Party Social Media Service.
+              You agree not to disclose Your password to any third party. You must notify Us immediately upon becoming aware of any breach of security or unauthorized use of Your account.
+              You may not use as a username the name of another person or entity or that is not lawfully available for use, a name or trademark that is subject to any rights of another person or entity other than You without appropriate authorization, or a name that is otherwise offensive, vulgar or obscene.
+              <h2>Content</h2>
+              <h3>Your Right to Post Content</h3>
+              Our Service allows You to post Content. You are responsible for the Content that You post to the Service, including its legality, reliability, and appropriateness.
+              By posting Content to the Service, You grant Us the right and license to use, modify, publicly perform, publicly display, reproduce, and distribute such Content on and through the Service. You retain any and all of Your rights to any Content You submit, post or display on or through the Service and You are responsible for protecting those rights. You agree that this license includes the right for Us to make Your Content available to other users of the Service, who may also use Your Content subject to these Terms.
+              You represent and warrant that: (i) the Content is Yours (You own it) or You have the right to use it and grant Us the rights and license as provided in these Terms, and (ii) the posting of Your Content on or through the Service does not violate the privacy rights, publicity rights, copyrights, contract rights or any other rights of any person.
+              <h3>Content Restrictions</h3>
+              The Company is not responsible for the content of the Service's users. You expressly understand and agree that You are solely responsible for the Content and for all activity that occurs under your account, whether done so by You or any third person using Your account.
+              You may not transmit any Content that is unlawful, offensive, upsetting, intended to disgust, threatening, libelous, defamatory, obscene or otherwise objectionable. Examples of such objectionable Content include, but are not limited to, the following:
+              Unlawful or promoting unlawful activity.
+              Defamatory, discriminatory, or mean-spirited content, including references or commentary about religion, race, sexual orientation, gender, national/ethnic origin, or other targeted groups.
+              Spam, machine – or randomly – generated, constituting unauthorized or unsolicited advertising, chain letters, any other form of unauthorized solicitation, or any form of lottery or gambling.
+              Containing or installing any viruses, worms, malware, trojan horses, or other content that is designed or intended to disrupt, damage, or limit the functioning of any software, hardware or telecommunications equipment or to damage or obtain unauthorized access to any data or other information of a third person.
+              Infringing on any proprietary rights of any party, including patent, trademark, trade secret, copyright, right of publicity or other rights.
+              Impersonating any person or entity including the Company and its employees or representatives.
+              Violating the privacy of any third person.
+              Content with real people engaging in sexual acts.
+              False information and features.
+              The Company reserves the right, but not the obligation, to, in its sole discretion, determine whether or not any Content is appropriate and complies with this Terms, refuse or remove this Content. The Company can also limit or revoke the use of the Service if You post such objectionable Content. As the Company cannot control all content posted by users and/or third parties on the Service, you agree to use the Service at your own risk. You understand that by using the Service You may be exposed to content that You may find offensive, indecent, incorrect or objectionable, and You agree that under no circumstances will the Company be liable in any way for any content, including any errors or omissions in any content, or any loss or damage of any kind incurred as a result of your use of any content.
+              <h3>Content Backups</h3>
+              Although regular backups of Content are performed, the Company does not guarantee there will be no loss or corruption of data.
+              Corrupt or invalid backup points may be caused by, without limitation, Content that is corrupted prior to being backed up or that changes during the time a backup is performed.
+              The Company will provide support and attempt to troubleshoot any known or discovered issues that may affect the backups of Content. But You acknowledge that the Company has no liability related to the integrity of Content or the failure to successfully restore Content to a usable state.
+              You agree to maintain a complete and accurate copy of any Content in a location independent of the Service.
+              <h2>Copyright Policy</h2>
+              <h3>Intellectual Property Infringement</h3>
+              We respect the intellectual property rights of others. It is Our policy to respond to any claim that Content posted on the Service infringes a copyright or other intellectual property infringement of any person.
+              If You are a copyright owner, or authorized on behalf of one, and You believe that the copyrighted work has been copied in a way that constitutes copyright infringement that is taking place through the Service, You must submit Your notice in writing to the attention of our copyright agent via email at info@kahana.co and include in Your notice a detailed description of the alleged infringement.
+              You may be held accountable for damages (including costs and attorneys' fees) for misrepresenting that any Content is infringing Your copyright.
+              <h3>DMCA Notice and DMCA Procedure for Copyright Infringement Claims</h3>
+              You may submit a notification pursuant to the Digital Millennium Copyright Act (DMCA) by providing our Copyright Agent with the following information in writing (see 17 U.S.C 512(c)(3) for further detail):
+              An electronic or physical signature of the person authorized to act on behalf of the owner of the copyright's interest.
+              A description of the copyrighted work that You claim has been infringed, including the URL (i.e., web page address) of the location where the copyrighted work exists or a copy of the copyrighted work.
+              Identification of the URL or other specific location on the Service where the material that You claim is infringing is located.
+              Your address, telephone number, and email address.
+              A statement by You that You have a good faith belief that the disputed use is not authorized by the copyright owner, its agent, or the law.
+              A statement by You, made under penalty of perjury, that the above information in Your notice is accurate and that You are the copyright owner or authorized to act on the copyright owner's behalf.
+              You can contact our copyright agent via email at info@kahana.co. Upon receipt of a notification, the Company will take whatever action, in its sole discretion, it deems appropriate, including removal of the challenged content from the Service.
+              <h2>Intellectual Property</h2>
+              The Service and its original content (excluding Content provided by You or other users), features and functionality are and will remain the exclusive property of the Company and its licensors.
+              The Service is protected by copyright, trademark, and other laws of both the Country and foreign countries.
+              Our trademarks and trade dress may not be used in connection with any product or service without the prior written consent of the Company.
+              <h2>Your Feedback to Us</h2>
+              You assign all rights, title and interest in any Feedback You provide the Company. If for any reason such assignment is ineffective, You agree to grant the Company a non-exclusive, perpetual, irrevocable, royalty free, worldwide right and license to use, reproduce, disclose, sub-license, distribute, modify and exploit such Feedback without restriction.
+              <h2>Links to Other Websites</h2>
+              Our Service may contain links to third-party web sites or services that are not owned or controlled by the Company.
+              The Company has no control over, and assumes no responsibility for, the content, privacy policies, or practices of any third party web sites or services. You further acknowledge and agree that the Company shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with the use of or reliance on any such content, goods or services available on or through any such web sites or services.
+              We strongly advise You to read the terms and conditions and privacy policies of any third-party web sites or services that You visit.
+              <h2>Termination</h2>
+              We may terminate or suspend Your Account immediately, without prior notice or liability, for any reason whatsoever, including without limitation if You breach these Terms and Conditions.
+              Upon termination, Your right to use the Service will cease immediately. If You wish to terminate Your Account, You may simply discontinue using the Service.
+              <h2>Limitation of Liability</h2>
+              Notwithstanding any damages that You might incur, the entire liability of the Company and any of its suppliers under any provision of this Terms and Your exclusive remedy for all of the foregoing shall be limited to the amount actually paid by You through the Service or 100 USD if You haven't purchased anything through the Service.
+              To the maximum extent permitted by applicable law, in no event shall the Company or its suppliers be liable for any special, incidental, indirect, or consequential damages whatsoever (including, but not limited to, damages for loss of profits, loss of data or other information, for business interruption, for personal injury, loss of privacy arising out of or in any way related to the use of or inability to use the Service, third-party software and/or third-party hardware used with the Service, or otherwise in connection with any provision of this Terms), even if the Company or any supplier has been advised of the possibility of such damages and even if the remedy fails of its essential purpose.
+              Some states do not allow the exclusion of implied warranties or limitation of liability for incidental or consequential damages, which means that some of the above limitations may not apply. In these states, each party's liability will be limited to the greatest extent permitted by law.
+              <h2>"AS IS" and "AS AVAILABLE" Disclaimer</h2>
+              The Service is provided to You "AS IS" and "AS AVAILABLE" and with all faults and defects without warranty of any kind. To the maximum extent permitted under applicable law, the Company, on its own behalf and on behalf of its Affiliates and its and their respective licensors and service providers, expressly disclaims all warranties, whether express, implied, statutory or otherwise, with respect to the Service, including all implied warranties of merchantability, fitness for a particular purpose, title and non-infringement, and warranties that may arise out of course of dealing, course of performance, usage or trade practice. Without limitation to the foregoing, the Company provides no warranty or undertaking, and makes no representation of any kind that the Service will meet Your requirements, achieve any intended results, be compatible or work with any other software, applications, systems or services, operate without interruption, meet any performance or reliability standards or be error free or that any errors or defects can or will be corrected.
+              Without limiting the foregoing, neither the Company nor any of the company's provider makes any representation or warranty of any kind, express or implied: (i) as to the operation or availability of the Service, or the information, content, and materials or products included thereon; (ii) that the Service will be uninterrupted or error-free; (iii) as to the accuracy, reliability, or currency of any information or content provided through the Service; or (iv) that the Service, its servers, the content, or e-mails sent from or on behalf of the Company are free of viruses, scripts, trojan horses, worms, malware, timebombs or other harmful components.
+              Some jurisdictions do not allow the exclusion of certain types of warranties or limitations on applicable statutory rights of a consumer, so some or all of the above exclusions and limitations may not apply to You. But in such a case the exclusions and limitations set forth in this section shall be applied to the greatest extent enforceable under applicable law.
+              <h2>Governing Law</h2>
+              The laws of the Country, excluding its conflicts of law rules, shall govern this Terms and Your use of the Service. Your use of the Service may also be subject to other local, state, national, or international laws.
+              <h2>Disputes Resolution</h2>
+              If You have any concern or dispute about the Service, You agree to first try to resolve the dispute informally by contacting the Company.
+              <h2>For European Union (EU) Users</h2>
+              If You are a European Union consumer, you will benefit from any mandatory provisions of the law of the country in which you are resident in.
+              <h2>United States Federal Government End Use Provisions</h2>
+              If You are a U.S. federal government end user, our Service is a "Commercial Item" as that term is defined at 48 C.F.R. §2.101.
+              <h2>United States Legal Compliance</h2>
+              You represent and warrant that (i) You are not located in a country that is subject to the United States government embargo, or that has been designated by the United States government as a "terrorist supporting" country, and (ii) You are not listed on any United States government list of prohibited or restricted parties.
+              <h2>Severability and Waiver</h2>
+              <h3>Severability</h3>
+              If any provision of these Terms is held to be unenforceable or invalid, such provision will be changed and interpreted to accomplish the objectives of such provision to the greatest extent possible under applicable law and the remaining provisions will continue in full force and effect.
+              <h3>Waiver</h3>
+              Except as provided herein, the failure to exercise a right or to require performance of an obligation under these Terms shall not effect a party's ability to exercise such right or require such performance at any time thereafter nor shall the waiver of a breach constitute a waiver of any subsequent breach.
+              <h2>Translation Interpretation</h2>
+              These Terms and Conditions may have been translated if We have made them available to You on our Service. You agree that the original English text shall prevail in the case of a dispute.
+              <h2>Changes to These Terms and Conditions</h2>
+              We reserve the right, at Our sole discretion, to modify or replace these Terms at any time. If a revision is material We will make reasonable efforts to provide at least 30 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at Our sole discretion.
+              By continuing to access or use Our Service after those revisions become effective, You agree to be bound by the revised terms. If You do not agree to the new terms, in whole or in part, please stop using the website and the Service.
+              <h2>Contact Us</h2>
+              If you have any questions about these Terms and Conditions, You can contact us:
+              By email: info@kahana.co
             </div>
           </div>
         </div>
