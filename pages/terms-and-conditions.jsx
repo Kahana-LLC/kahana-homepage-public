@@ -119,7 +119,7 @@ export default function TermsAndConditions() {
                 Terms & Conditions
               </span>
             </h1>
-            /* <div className="mt-8 text-xl leading-8 text-gray-500"> */
+
               Please read these terms and conditions carefully before using Our Service.
               <h2>Interpretation and Definitions</h2>
               <h3>Interpretation</h3>
@@ -252,7 +252,7 @@ export default function TermsAndConditions() {
               <h2>Contact Us</h2>
               If you have any questions about these Terms and Conditions, You can contact us:
               By email: info@kahana.co
-            /* </div> */
+
           </div>
         </div>
       </div>
