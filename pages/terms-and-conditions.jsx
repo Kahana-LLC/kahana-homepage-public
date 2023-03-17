@@ -112,8 +112,7 @@ export default function TermsAndConditions() {
           </div>
         </div>
 
-        <div className="relative px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-prose text-lg">
+     
             <h1>
               <span className="mt-2 block text-center text-3xl font-bold leading-8 tracking-tight text-gray-900 sm:text-4xl">
                 Terms & Conditions
@@ -253,8 +252,7 @@ export default function TermsAndConditions() {
               If you have any questions about these Terms and Conditions, You can contact us:
               By email: info@kahana.co
 
-          </div>
-        </div>
+
       </div>
     </div>
   );
