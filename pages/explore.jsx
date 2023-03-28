@@ -115,6 +115,24 @@ const posts = [
     //},
   },
   {
+    title: 'Email Templates for Content Creators',
+    href: 'https://app.kahana.co/hub/u1ln3CfdaZTUGyb8pSK2',
+    category: { name: 'The Corporate Creator', href: 'https://tiktok.com/@thecorporatedogmom' },
+    description:
+      'Sharing tips for multi-passionate creators, including email templates for negotiating with brands and navigating brand deal contracts.',
+    //date: 'Feb 12, 2020',
+    //datetime: '2020-02-12',
+    imageUrl:
+      'https://kahana-website-images.s3.us-east-2.amazonaws.com/tayLadd.png',
+    //readingTime: '11 min',
+    //author: {
+      //name: 'Daniela Metz',
+      //href: '#',
+      //imageUrl:
+        //'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    //},
+  },
+  {
     title: 'Vision Story',
     href: 'https://app.kahana.co/hub/VarpGpuDHdukrW4IG4Ki',
     category: { name: 'Gregory Gray', href: 'https://www.linkedin.com/in/gregorygray00/' },
