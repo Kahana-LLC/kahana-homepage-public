@@ -85,18 +85,18 @@ export default function HeroSection() {
                     </h1>
 
                     <p className="mt-3 text-base text-slate-900 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
-                      You have unique knowledge. Kahana is a platform to help
-                      you monetize quickly. The average person takes 6.5 months
-                      to monetize online - with Kahana you earn your first $1
-                      and get recurring revenue 10X faster.
+                      You have unique knowledge. Kahana is a platform that helps
+                      you turn it into revenue quickly. The average person takes 6.5
+                      months to monetize online - with Kahana, you can earn your first
+                      $1 and get recurring revenue 10X faster.
                     </p>
 
                     <div className="grid grid-cols-2 gap-4 mt-6 tracking-tight">
                       {' '}
                       <ul role="list" className=" space-y-3">
                         {[
-                          'No credit card required  ',
-                          'Monetize in 20 minutes',
+                          'No credit card required',
+                          'Start monetizing in 20 minutes',
                         ].map((feature) => (
                           <>
                             {' '}
