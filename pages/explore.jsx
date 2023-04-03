@@ -150,6 +150,24 @@ const posts = [
         //'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
     //},
   },
+  {
+    title: 'How I work extra with TikTok as a full time medical student :stethoscope:',
+    href: 'https://app.kahana.co/hub/dhJXTqv1Jj0GWIr65vuJ',
+    category: { name: 'Medical Elina', href: 'https://www.tiktok.com/@medical.elina' },
+    description:
+      'I didn\'t have time to work extra in the beginning of my education, even though I needed the money. Since I\'ve always loved being creative, cinematography, photography, I started a TikTok to document my medical school journey. Soon I realized people loved the content, I loved making it - and I could make money off of it too!',
+    //date: 'Feb 12, 2020',
+    //datetime: '2020-02-12',
+    imageUrl:
+      'https://kahana-website-images.s3.us-east-2.amazonaws.com/medicalElina.png',
+    //readingTime: '11 min',
+    //author: {
+      //name: 'Daniela Metz',
+      //href: '#',
+      //imageUrl:
+        //'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    //},
+  },
 ];
 //
 export default function Explore() {
