@@ -151,7 +151,7 @@ const posts = [
     //},
   },
   {
-    title: 'How I work extra with TikTok as a full time medical student :stethoscope:',
+    title: 'How I work extra with TikTok as a full time medical student 🩺',
     href: 'https://app.kahana.co/hub/dhJXTqv1Jj0GWIr65vuJ',
     category: { name: 'Medical Elina', href: 'https://www.tiktok.com/@medical.elina' },
     description:
