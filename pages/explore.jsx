@@ -168,6 +168,24 @@ const posts = [
         //'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
     //},
   },
+  {
+    title: 'Event Planning Hub | All you need to know to plan and go!',
+    href: 'https://app.kahana.co/hub/2bXcGh2ROEvMAEdmUhOX',
+    category: { name: 'Alexandria Tomayko', href: 'https://www.pinterest.com/NomadPlanner/' },
+    description:
+      'So you want to plan a retreat & don\'t know where to start? I have over 17 years of experience in the field and have gathered tips, tricks, workbooks, and templates to help you every step of the way!',
+    //date: 'Feb 12, 2020',
+    //datetime: '2020-02-12',
+    imageUrl:
+      'https://kahana-website-images.s3.us-east-2.amazonaws.com/alexandriaTomayko.png',
+    //readingTime: '11 min',
+    //author: {
+      //name: 'Daniela Metz',
+      //href: '#',
+      //imageUrl:
+        //'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    //},
+  },
 ];
 //
 export default function Explore() {
