@@ -62,7 +62,7 @@ export default function HeroSection() {
 
                   {/* animated background left blob*/}
 
-                  <div className="invisible md:visible absolute top-15 -left-7 w-40 h-40 bg-[#038270] rounded-full filter blur-3xl opacity-50 animate-blob"></div>
+                  //<div className="invisible md:visible absolute top-15 -left-7 w-40 h-40 bg-[#038270] rounded-full filter blur-3xl opacity-50 animate-blob"></div>
                   //<div>
                     //<a
                       //href=""
