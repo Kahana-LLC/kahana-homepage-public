@@ -2,7 +2,7 @@ const faqs = [
   {
     question: 'What does Kahana do?',
     answer:
-      'Kahana is an online platform that provides infrastructure for content creation, collaboration, knowledge sharing, and subscription revenue. It allows users to curate content into hubs that they can share and monetize.',
+      'Kahana is a collaborative SaaS platform that enables users to build and charge for access to hubs of content. These hubs typically include files, notes, methodologies, best practices, templates, research, etc. that users have curated and created.',
   },
   {
     question: 'How much does Kahana cost?',
