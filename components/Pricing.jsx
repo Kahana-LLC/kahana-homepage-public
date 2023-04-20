@@ -310,6 +310,7 @@ export default function Pricing() {
                 className="mt-8 block w-full rounded-md border border-[#038270] bg-[#038270] py-2 text-center text-sm font-semibold text-white hover:bg-[#024324]"
               >
                 Contact Us
+              </a>  
             </div>
           </div>
           <div className="divide-y divide-gray-200 rounded-lg border border-gray-200 shadow-sm">
