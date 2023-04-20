@@ -70,12 +70,12 @@ export default function RealitySection() {
                 <span className="text-white bg-clip-text ">Reality</span>
               </h2>
               <p className="mt-3 text-3xl font-bold tracking-tight text-white">
-                Creators struggle to monetize
+                Creators and experts struggle to monetize
               </p>
               <p className="mt-5 text-lg text-gray-300">
-                Regardless of follower base size, monetization is a challenge
-                for many creators. Fee events are typically tied to product
-                launches that can take months to create.
+                Regardless of follower base size, monetization is a challenge. 
+                Fee events are typically tied to product launches that can take
+                months to create.
               </p>
               <div className="mt-12 grid grid-cols-1 gap-y-12 gap-x-6 sm:grid-cols-2">
                 {metrics.map((item) => (
