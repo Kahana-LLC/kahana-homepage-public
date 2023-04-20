@@ -85,8 +85,8 @@ export default function HeroSection() {
                     </h1>
 
                     <p className="mt-3 text-base text-slate-900 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
-                      You have years of valuable information and resources sitting
-                      in your brain or collecting dust in a Drive/Teams folder.
+                      You have years of valuable information sitting in your brain
+                      and resources collecting dust in a (digital) folder.
                       Kahana helps you turn it into hubs you can charge for access
                       to within minutes. 
                     </p>
@@ -96,6 +96,7 @@ export default function HeroSection() {
                       <ul role="list" className=" space-y-3">
                         {[
                           'No credit card required',
+                          'Upload your best stuff'
                           'Start monetizing in less than 1 hour',
                         ].map((feature) => (
                           <>
