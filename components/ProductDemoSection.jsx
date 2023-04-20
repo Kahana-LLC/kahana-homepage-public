@@ -65,11 +65,11 @@ export default function ProductDemoSection() {
       <Container>
         <div className="max-w-2xl md:mx-auto md:text-center xl:max-w-none">
           <h1 className="py-4  bg-clip-text text-white text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
-            A Platform Built by Creators for Creators
+            Built for Creators and Experts
           </h1>
           <p className="mt-6 text-xl tracking-tight text-white">
-            It’s a lonely world for creators - creators work too long and hard
-            without seeing results. That’s why we created Kahana.
+            Let’s be real - people want ongoing access to your best stuff. 
+            That’s why we created Kahana.
           </p>
         </div>
         <Tab.Group
