@@ -167,6 +167,12 @@ export default function Pricing() {
                   <span className="text-sm text-gray-500">1 GB storage</span>
                 </li>
               </ul>
+              <a
+                href="https://app.kahana.co/signup"
+                className="mt-8 block w-full rounded-md border border-[#038270] bg-[#038270] py-2 text-center text-sm font-semibold text-white hover:bg-[#024324]"
+              >
+                Start Free
+              </a>
             </div>
           </div>
           <div className="divide-y divide-gray-200 rounded-lg border border-gray-200 shadow-sm">
@@ -209,9 +215,29 @@ export default function Pricing() {
                     className="h-5 w-5 flex-shrink-0 text-green-500"
                     aria-hidden="true"
                   />
+                  <span className="text-sm text-gray-500">Unlimited revenue streams</span>
+                </li>
+                <li className="flex space-x-3">
+                  <CheckIcon
+                    className="h-5 w-5 flex-shrink-0 text-green-500"
+                    aria-hidden="true"
+                  />
                   <span className="text-sm text-gray-500">5 GB storage</span>
                 </li>
+                <li className="flex space-x-3">
+                  <CheckIcon
+                    className="h-5 w-5 flex-shrink-0 text-green-500"
+                    aria-hidden="true"
+                  />
+                  <span className="text-sm text-gray-500">Priority support</span>
+                </li>
               </ul>
+              <a
+                href="https://app.kahana.co/signup"
+                className="mt-8 block w-full rounded-md border border-[#038270] bg-[#038270] py-2 text-center text-sm font-semibold text-white hover:bg-[#024324]"
+              >
+                Buy Now
+              </a>
             </div>
           </div>
           <div className="divide-y divide-gray-200 rounded-lg border border-gray-200 shadow-sm">
@@ -279,6 +305,11 @@ export default function Pricing() {
                   </span>
                 </li>
               </ul>
+              <a
+                href="https://7hkdcfzbmr0.typeform.com/to/ZYLHazEf"
+                className="mt-8 block w-full rounded-md border border-[#038270] bg-[#038270] py-2 text-center text-sm font-semibold text-white hover:bg-[#024324]"
+              >
+                Contact Us
             </div>
           </div>
           <div className="divide-y divide-gray-200 rounded-lg border border-gray-200 shadow-sm">
