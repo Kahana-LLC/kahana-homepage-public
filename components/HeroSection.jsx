@@ -97,7 +97,7 @@ export default function HeroSection() {
                         {[
                           'No credit card required',
                           'Upload your best stuff',
-                          'Start monetizing in less than 1 hour',
+                          'Start monetizing in 1 hour',
                         ].map((feature) => (
                           <>
                             {' '}
