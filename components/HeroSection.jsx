@@ -96,7 +96,7 @@ export default function HeroSection() {
                       <ul role="list" className=" space-y-3">
                         {[
                           'No credit card required',
-                          'Upload your best stuff'
+                          'Upload your best stuff',
                           'Start monetizing in less than 1 hour',
                         ].map((feature) => (
                           <>
