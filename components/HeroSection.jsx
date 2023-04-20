@@ -72,7 +72,7 @@ export default function HeroSection() {
                         Coming soon
                       </span>
                       <span className="ml-4 text-sm text-slate-900 drop-shadow-2xll">
-                        //Reserve now
+                        Reserve now
                       </span>
                       <ChevronRightIcon
                         className="ml-2 h-5 w-5 text-gray-500"
