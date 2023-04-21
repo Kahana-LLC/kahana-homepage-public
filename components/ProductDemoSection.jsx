@@ -69,7 +69,7 @@ export default function ProductDemoSection() {
           </h1>
           <p className="mt-6 text-xl tracking-tight text-white">
             You have year of valuable information sitting in your brain 
-            and resources collecting dust in a (digital) folder. Kahana 
+            and resources gathering dust in a (digital) folder. Kahana 
             helps you turn your collective knowledge into hubs that generate 
             income for you.                  
           </p>
