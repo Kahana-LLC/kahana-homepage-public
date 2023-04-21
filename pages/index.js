@@ -5,7 +5,7 @@ import Footer from '../components/Footer';
 import HeroSection from '../components/HeroSection';
 import Navbar from '../components/Navbar';
 import Pricing from '../components/Pricing';
-import Reviews from '../components/Reviews';
+//import Reviews from '../components/Reviews';
 import ProductDemoSection from '../components/ProductDemoSection';
 //import RealitySection from '../components/RealitySection';
 //import SimpleHeader from '../components/SimpleHeader';
@@ -35,7 +35,7 @@ export default function Home() {
           <ProductDemoSection />
           {/* <SimpleHeader /> */}
           {/* <RealitySection /> */}
-          <Reviews />
+          {/* <Reviews /> */}
             {/* <Testimonial
             id="testimonial-from-kahana-user"
             author={{
