@@ -6,8 +6,8 @@ import HeroSection from '../components/HeroSection';
 import Navbar from '../components/Navbar';
 import Pricing from '../components/Pricing';
 import ProductDemoSection from '../components/ProductDemoSection';
-import RealitySection from '../components/RealitySection';
-import SimpleHeader from '../components/SimpleHeader';
+//import RealitySection from '../components/RealitySection';
+//import SimpleHeader from '../components/SimpleHeader';
 import { Testimonial } from '../components/Testimonial';
 
 //components
@@ -32,8 +32,8 @@ export default function Home() {
         <main>
           <HeroSection />
           <ProductDemoSection />
-          <SimpleHeader />
-          <RealitySection />
+          //<SimpleHeader />
+          //<RealitySection />
           <Testimonial
             id="testimonial-from-kahana-user"
             author={{
