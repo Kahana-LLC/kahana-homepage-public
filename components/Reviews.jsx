@@ -80,10 +80,9 @@ export default function Reviews() {
           <p className="mt-1 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
             Our Community
           </p>
-          {/* <p className="mt-4 text-lg tracking-tight text-slate-700">
-            Kahana is so simple that creators can’t help but fall in love with
-            it.
-          </p> */}
+          <p className="mt-4 text-lg tracking-tight text-slate-700">
+            Multi-passionate creators and experts from all over the world 🌎
+          </p>
         </div>
         <ul
           role="list"
