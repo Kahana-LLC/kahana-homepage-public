@@ -2,6 +2,8 @@ import Image from 'next/image';
 
 import avatarImage2 from '../assets/images/avatars/avatar-1.png';
 
+import avatarImage1 from '../assets/images/avatars/oliviaMancusoHeadshot.png';
+
 import { Container } from './Container';
 
 const testimonials = [
@@ -11,10 +13,8 @@ const testimonials = [
         "I can honestly say that I've never worked with a team that was as helpful and dedicated as the team at Kahana. If you're a digital creator looking for a platform that not only supports your content creation but also helps you achieve your goals, then Kahana is the answer. Jonathan and Adam are truly amazing, and I can't thank them enough for all that they've done for me.",
       author: {
         name: 'Olivia Mancuso',
-        //role: 'Soul Story Creative',
-        //image: avatarImage2,
-        imageUrl:
-           'https://kahana-website-images.s3.us-east-2.amazonaws.com/oliviaMancusoHeadshot.png',
+        role: 'Manifestation Coach - 135K on TikTok',
+        image: avatarImage1, 
       },
     },
   ],
