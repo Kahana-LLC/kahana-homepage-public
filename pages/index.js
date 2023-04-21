@@ -32,8 +32,8 @@ export default function Home() {
         <main>
           <HeroSection />
           <ProductDemoSection />
-          //<SimpleHeader />
-          //<RealitySection />
+          {/* <SimpleHeader /> */}
+          {/* <RealitySection /> */}
           <Testimonial
             id="testimonial-from-kahana-user"
             author={{
