@@ -1,8 +1,10 @@
 import Image from 'next/image';
 
-import avatarImage2 from '../assets/images/avatars/avatar-1.png';
+import avatarImage2 from '../assets/images/avatars/joshSlavinHeadshot.png';
 
 import avatarImage1 from '../assets/images/avatars/oliviaMancusoHeadshot.png';
+
+import avatarImage3 from '../assets/images/avatars/edenGoldHeadshot.png';
 
 import { Container } from './Container';
 
@@ -21,20 +23,20 @@ const testimonials = [
   [
     {
       content:
-        'I can create hubs for clients and for my own newsletters, blog posts, andnd age that leads to disorganization and chaos. Kahana wrangles that in.',
+        'Thanks for helping me build out something special!',
       author: {
-        name: 'Content Creator',
-        role: 'Soul Story Creative',
+        name: 'Josh Slavin',
+        role: 'Short Form Content Expert - 800K across TikTok, Instagram, YouTube',
         image: avatarImage2,
       },
     },
     {
       content:
-        'I can create hubs for clients and for my own newsletters, blog posts, and shat leads to disorganization and chaos. Kahana wrangles that in.',
+        'I have had a lot of different startups and software companies reach out to me, but there was something about Kahana that really intrigued me. People are paying for access to your brain... to be able to follow along someone&apos;s journey and see what&apos;s working for them, I believe can make such a greater impact and bigger connections with my audience.',
       author: {
-        name: 'Content Creator',
-        role: 'Soul Story Creative',
-        image: avatarImage2,
+        name: 'Eden Gold',
+        role: 'Adulting Creator - 50K on TikTok',
+        image: avatarImage3,
       },
     },
   ],
