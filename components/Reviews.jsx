@@ -8,6 +8,10 @@ import avatarImage3 from '../assets/images/avatars/edenGoldHeadshot.png';
 
 import avatarImage4 from '../assets/images/avatars/vivianneJagtHeadshot.png';
 
+import avatarImage5 from '../assets/images/avatars/medicalElinaHeadshot.png';
+
+import avatarImage6 from '../assets/images/avatars/gabrielleJudgeHeadshot.png';
+
 import { Container } from './Container';
 
 const testimonials = [
@@ -19,6 +23,15 @@ const testimonials = [
         name: 'Olivia Mancuso',
         role: 'Manifestation Coach - 135K on TikTok',
         image: avatarImage1, 
+      },
+    },
+    {
+      content:
+        "I'm really excited about my hub. I bet Kahana will grow and become really big. Excited to be a part of it!",
+      author: {
+        name: 'Medical Elina',
+        role: 'Med Student & Creator  - 70K on TikTok',
+        image: avatarImage5, 
       },
     },
   ],
@@ -52,15 +65,15 @@ const testimonials = [
         image: avatarImage4,
       },
     },
-    //{
-      //content:
-        //"I can create hubs for clients and for my own newsletters, blog posts, and scripts for webinars. There's so much information overload in Kahana wrangles that in.",
-      //author: {
-        //name: 'Content Creator',
-        //role: 'Soul Story Creative',
-        //image: avatarImage2,
-      //},
-    //},
+    {
+      content:
+        "This looks awesome! I am pumped to get this going and am super grateful for your help!",
+      author: {
+        name: 'Gabrielle Judge',
+        role: 'Expert on Future of Work - 90K on TikTok',
+        image: avatarImage6,
+      },
+    },
   ],
 ];
 
