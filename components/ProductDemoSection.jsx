@@ -68,8 +68,10 @@ export default function ProductDemoSection() {
             Built for Creators and Experts
           </h1>
           <p className="mt-6 text-xl tracking-tight text-white">
-            Let’s be real - people want ongoing access to your best stuff. 
-            That’s why we created Kahana.
+            You have year of valuable information sitting in your brain 
+            and resources collecting dust in a (digital) folder. Kahana 
+            helps you turn your collective knowledge into hubs that generate 
+            income for you.                  
           </p>
         </div>
         <Tab.Group
