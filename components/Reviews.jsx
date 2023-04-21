@@ -26,7 +26,7 @@ const testimonials = [
         'Thanks for helping me build out something special!',
       author: {
         name: 'Josh Slavin',
-        role: 'Short Form Content Expert - 800K across TikTok, Instagram, YouTube',
+        role: 'Short Form Expert - 800K total followers',
         image: avatarImage2,
       },
     },
