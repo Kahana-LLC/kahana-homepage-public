@@ -8,15 +8,6 @@ const testimonials = [
   [
     {
       content:
-        "I can create hubs for clients and for my own newslettoverload in today's day and age that leads to disorganization and chaos. Kahana wrangles that in.",
-      author: {
-        name: 'Content Creator',
-        role: 'Soul Story Creative',
-        image: avatarImage2,
-      },
-    },
-    {
-      content:
         "I can honestly say that I've never worked with a team that was as helpful and dedicated as the team at Kahana. If you're a digital creator looking for a platform that not only supports your content creation but also helps you achieve your goals, then Kahana is the answer. Jonathan and Adam are truly amazing, and I can't thank them enough for all that they've done for me.",
       author: {
         name: 'Olivia Mancuso',
