@@ -34,7 +34,8 @@ export default function Home() {
           <ProductDemoSection />
           {/* <SimpleHeader /> */}
           {/* <RealitySection /> */}
-          <Testimonial
+          <Reviews />
+            {/* <Testimonial
             id="testimonial-from-kahana-user"
             author={{
               name: 'Fantasy Flock Network',
@@ -47,9 +48,8 @@ export default function Home() {
               have monetized hubs and put them anywhere as opposed to Patreon,
               which is a whole thing.”
             </p>
-          </Testimonial>
+          </Testimonial> */}
           <Pricing />
-          {/* <Reviews /> */}
 
           <Faq />
         </main>
