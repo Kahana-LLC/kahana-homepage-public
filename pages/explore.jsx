@@ -186,6 +186,24 @@ const posts = [
         //'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
     //},
   },
+  {
+    title: 'Solo Entrepreneurs: You\'re not alone',
+    href: 'https://app.kahana.co/hub/2tXld437NBOOjOrwpjQm',
+    category: { name: 'Carl Nordgren', href: 'https://www.linkedin.com/in/carl-nordgren-0bb3b621/' },
+    description:
+      '40 years an entrepreneur; taught at Duke for 14; determined to serve Creators and Solo Entrepreneurs with proven content',
+    //date: 'Feb 12, 2020',
+    //datetime: '2020-02-12',
+    imageUrl:
+      'https://kahana-website-images.s3.us-east-2.amazonaws.com/carlNordgren.png',
+    //readingTime: '11 min',
+    //author: {
+      //name: 'Daniela Metz',
+      //href: '#',
+      //imageUrl:
+        //'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    //},
+  },
 ];
 //
 export default function Explore() {
