@@ -6,6 +6,8 @@ import avatarImage1 from '../assets/images/avatars/oliviaMancusoHeadshot.png';
 
 import avatarImage3 from '../assets/images/avatars/edenGoldHeadshot.png';
 
+import avatarImage4 from '../assets/images/avatars/vivianneJagtHeadshot.png';
+
 import { Container } from './Container';
 
 const testimonials = [
@@ -32,10 +34,10 @@ const testimonials = [
     },
     {
       content:
-        'I have had a lot of different startups and software companies reach out to me, but there was something about Kahana that really intrigued me. People are paying for access to your brain... to be able to follow along someone&apos;s journey and see what&apos;s working for them, I believe can make such a greater impact and bigger connections with my audience.',
+        'I have had a lot of different startups and software companies reach out to me, but there was something about Kahana that really intrigued me. People are paying for access to your brain... to be able to follow along someone\'s journey and see what\'s working for them, I believe can make such a greater impact and bigger connections with my audience.',
       author: {
         name: 'Eden Gold',
-        role: 'Adulting Creator - 50K on TikTok',
+        role: 'Adulting Coach - 50K on TikTok',
         image: avatarImage3,
       },
     },
@@ -43,22 +45,22 @@ const testimonials = [
   [
     {
       content:
-        'I can create hubs for clients and for my own ganization and chaos. Kahana wrangles that in.',
+        'I think the Kahana team is onto something here - very exciting to be a part of your community!',
       author: {
-        name: 'Content Creator',
-        role: 'Soul Story Creative',
-        image: avatarImage2,
+        name: 'Vivianne Jagt',
+        role: 'MD & Health Creator - 25K on TikTok',
+        image: avatarImage4,
       },
     },
-    {
-      content:
-        "I can create hubs for clients and for my own newsletters, blog posts, and scripts for webinars. There's so much information overload in Kahana wrangles that in.",
-      author: {
-        name: 'Content Creator',
-        role: 'Soul Story Creative',
-        image: avatarImage2,
-      },
-    },
+    //{
+      //content:
+        //"I can create hubs for clients and for my own newsletters, blog posts, and scripts for webinars. There's so much information overload in Kahana wrangles that in.",
+      //author: {
+        //name: 'Content Creator',
+        //role: 'Soul Story Creative',
+        //image: avatarImage2,
+      //},
+    //},
   ],
 ];
 
