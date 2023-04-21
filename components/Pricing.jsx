@@ -123,8 +123,15 @@ export default function Pricing() {
                     className="h-5 w-5 flex-shrink-0 text-green-500"
                     aria-hidden="true"
                   />
+                  <span className="text-sm text-gray-500">2 hubs</span>
+                </li>
+                <li className="flex space-x-3">
+                  <CheckIcon
+                    className="h-5 w-5 flex-shrink-0 text-green-500"
+                    aria-hidden="true"
+                  />
                   <span className="text-sm text-gray-500">
-                    Get subscription revenue
+                    Start generating revenue
                   </span>
                 </li>
                 <li className="flex space-x-3">
@@ -151,13 +158,6 @@ export default function Pricing() {
                   <span className="text-sm text-gray-500">
                     Sync across devices
                   </span>
-                </li>
-                <li className="flex space-x-3">
-                  <CheckIcon
-                    className="h-5 w-5 flex-shrink-0 text-green-500"
-                    aria-hidden="true"
-                  />
-                  <span className="text-sm text-gray-500">2 hubs</span>
                 </li>
                 <li className="flex space-x-3">
                   <CheckIcon
