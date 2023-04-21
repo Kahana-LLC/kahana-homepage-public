@@ -12,7 +12,9 @@ const testimonials = [
       author: {
         name: 'Olivia Mancuso',
         //role: 'Soul Story Creative',
-        image: avatarImage2,
+        //image: avatarImage2,
+        imageUrl:
+           'https://kahana-website-images.s3.us-east-2.amazonaws.com/oliviaMancusoHeadshot.png',
       },
     },
   ],
