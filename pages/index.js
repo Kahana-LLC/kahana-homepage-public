@@ -5,10 +5,11 @@ import Footer from '../components/Footer';
 import HeroSection from '../components/HeroSection';
 import Navbar from '../components/Navbar';
 import Pricing from '../components/Pricing';
+import Reviews from '../components/Reviews';
 import ProductDemoSection from '../components/ProductDemoSection';
 //import RealitySection from '../components/RealitySection';
 //import SimpleHeader from '../components/SimpleHeader';
-import { Testimonial } from '../components/Testimonial';
+//import { Testimonial } from '../components/Testimonial';
 
 //components
 //images
