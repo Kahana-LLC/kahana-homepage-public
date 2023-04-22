@@ -7,11 +7,11 @@ import HeaderBanner from './HeaderBanner';
 
 //navigation items
 const navigation = [
-  { name: 'Featured Hubs 🔥', href: 'explore' },
+  { name: 'Featured Hubs', href: 'explore' },
   { name: 'About', href: 'about' },
   { name: 'Pricing', href: 'pricing' },
   { name: 'Blog', href: ' https://blog.kahana.co' },
-  { name: 'Community 🧙', href: ' https://nas.io/creators-and-experts' },
+  { name: 'Community', href: ' https://nas.io/creators-and-experts' },
 ];
 
 function Navbar() {
