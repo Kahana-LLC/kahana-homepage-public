@@ -32,8 +32,8 @@ const testimonials = [
         "I saw Kahana as an opportunity to share my corporate knowledge because it can help someone avoid needing to get an agent just because they didn't know how to respond to brands.",
       author: {
         name: 'Tay Ladd',
-        role: 'The Corporate Creator  - 75K total followers',
-        image: avatarImage5, 
+        role: 'The Corporate Creator  - 70K on TikTok',
+        image: avatarImage7, 
       },
     },
   ],
