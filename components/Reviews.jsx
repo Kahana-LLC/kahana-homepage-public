@@ -18,7 +18,7 @@ const testimonials = [
   [
     {
       content:
-        "I can honestly say that I've never worked with a team that was as helpful and dedicated as the team at Kahana. If you're a digital creator looking for a platform that not only supports your content creation but also helps you achieve your goals, then Kahana is the answer. Jonathan and Adam are truly amazing, and I can't thank them enough for all that they've done for me.",
+        "I can honestly say that I've never worked with a team that was as helpful and dedicated as the team at Kahana. If you're a digital creator looking for a platform that not only supports your content creation but also helps you achieve your goals, then Kahana is the answer.",
       author: {
         name: 'Olivia Mancuso',
         role: 'Manifestation Coach - 135K on TikTok',
@@ -47,7 +47,7 @@ const testimonials = [
     },
     {
       content:
-        'I have had a lot of different startups and software companies reach out to me, but there was something about Kahana that really intrigued me. People are paying for access to your brain... to be able to follow along someone\'s journey and see what\'s working for them, I believe can make such a greater impact and bigger connections with my audience.',
+        'I have had a lot of different software companies reach out to me, but there was something about Kahana that really intrigued me. To be able to have people follow along my journey and see what\'s working for me can make such a greater impact for my audience.',
       author: {
         name: 'Eden Gold',
         role: 'Adulting Coach - 50K on TikTok',
