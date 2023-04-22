@@ -12,6 +12,8 @@ import avatarImage5 from '../assets/images/avatars/medicalElinaHeadshot.png';
 
 import avatarImage6 from '../assets/images/avatars/gabrielleJudgeHeadshot.png';
 
+import avatarImage7 from '../assets/images/avatars/tayLaddHeadshot.png';
+
 import { Container } from './Container';
 
 const testimonials = [
@@ -27,6 +29,26 @@ const testimonials = [
     },
     {
       content:
+        "I saw Kahana as an opportunity to share my corporate knowledge because it can help someone avoid needing to get an agent just because they didn't know how to respond to brands.",
+      author: {
+        name: 'Tay Ladd',
+        role: 'The Corporate Creator  - 75K total followers',
+        image: avatarImage5, 
+      },
+    },
+  ],
+  [
+    {
+      content:
+        'I have had a lot of different software companies reach out to me, but there was something about Kahana that really intrigued me. To be able to have people follow along my journey and see what\'s working for me can make such a greater impact for my audience.',
+      author: {
+        name: 'Eden Gold',
+        role: 'Adulting Coach - 50K on TikTok',
+        image: avatarImage3,
+      },
+    },
+    {
+      content:
         "I'm really excited about my hub. I bet Kahana will grow and become really big. Excited to be a part of it!",
       author: {
         name: 'Medical Elina',
@@ -38,31 +60,20 @@ const testimonials = [
   [
     {
       content:
-        'Thanks for helping me build out something special!',
-      author: {
-        name: 'Josh Slavin',
-        role: 'Short Form Expert - 800K total followers',
-        image: avatarImage2,
-      },
-    },
-    {
-      content:
-        'I have had a lot of different software companies reach out to me, but there was something about Kahana that really intrigued me. To be able to have people follow along my journey and see what\'s working for me can make such a greater impact for my audience.',
-      author: {
-        name: 'Eden Gold',
-        role: 'Adulting Coach - 50K on TikTok',
-        image: avatarImage3,
-      },
-    },
-  ],
-  [
-    {
-      content:
         'I think the Kahana team is onto something here - very exciting to be a part of your community!',
       author: {
         name: 'Vivianne Jagt',
         role: 'MD & Health Creator - 25K on TikTok',
         image: avatarImage4,
+      },
+    },
+    {
+      content:
+        'Thanks for helping me build out something special!',
+      author: {
+        name: 'Josh Slavin',
+        role: 'Short Form Expert - 800K total followers',
+        image: avatarImage2,
       },
     },
     {
