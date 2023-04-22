@@ -8,6 +8,8 @@ import eugene from '../assets/headshots/Eugene Kaminsky.png';
 import hugh from '../assets/headshots/Hugh Molotsi.png';
 import jonathan from '../assets/headshots/Jonathan Gans.png';
 import william from '../assets/headshots/William Reehil.png';
+import greg from '../assets/headshots/gregoryGray.png';
+import denali from '../assets/headshots/denaliKeefe.jpeg';
 
 const people = [
   {
@@ -28,38 +30,52 @@ const people = [
     name: 'William Reehil',
     role: 'Technical Lead',
     imageUrl: william,
-    twitterUrl: 'https://twitter.com/KahanaHQ',
-    linkedinUrl: 'https://www.linkedin.com/company/kahana-co/',
+    //twitterUrl: 'https://twitter.com/KahanaHQ',
+    //linkedinUrl: 'https://www.linkedin.com/company/kahana-co/',
   },
   {
     name: 'Emilio V Abelmann',
     role: 'Strategic Partnerships',
     imageUrl: emilio,
-
-    linkedinUrl: 'https://www.linkedin.com/in/emilio-abelmann-617182107/',
+    //twitterUrl: 'https://twitter.com/KahanaHQ',
+    //linkedinUrl: 'https://www.linkedin.com/in/emilio-abelmann-617182107/',
   },
   {
     name: 'Eugene Kaminsky',
     role: 'Technical Advisor & Co-Founder',
     imageUrl: eugene,
-    twitterUrl: 'https://twitter.com/KahanaHQ',
-    linkedinUrl: 'https://www.linkedin.com/company/kahana-co/',
+    //twitterUrl: 'https://twitter.com/KahanaHQ',
+    //linkedinUrl: 'https://www.linkedin.com/company/kahana-co/',
   },
   {
     name: 'Carl Nordgren',
     role: 'Business Advisor',
     imageUrl: carl,
-    twitterUrl: '#https://twitter.com/KahanaHQ',
-    linkedinUrl: 'https://www.linkedin.com/company/kahana-co/',
+    //twitterUrl: 'https://twitter.com/KahanaHQ',
+    //linkedinUrl: 'https://www.linkedin.com/in/carl-nordgren-0bb3b621/',
   },
   {
     name: 'Hugh Molotsi',
     role: 'Innovation Advisor',
     imageUrl: hugh,
-    twitterUrl: 'https://twitter.com/KahanaHQ',
-    linkedinUrl: 'https://www.linkedin.com/company/kahana-co/',
+    twitterUrl: 'https://twitter.com/hughmolotsi',
+    linkedinUrl: 'https://www.linkedin.com/in/hughie/',
   },
-  // More people...
+  {
+    name: 'Gregory Gray',
+    role: 'Strategy',
+    imageUrl: greg,
+    //twitterUrl: 'https://twitter.com/KahanaHQ',
+    //linkedinUrl: 'https://www.linkedin.com/in/gregorygray00/',
+  },
+  {
+    name: 'Denali Keefe',
+    role: 'Marketing',
+    imageUrl: denali,
+    //twitterUrl: 'https://twitter.com/KahanaHQ',
+    //linkedinUrl: 'https://www.linkedin.com/in/denali-keefe/',
+  },
+  
 ];
 
 export default function TeamSection() {
