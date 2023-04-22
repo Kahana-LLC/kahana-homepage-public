@@ -81,7 +81,7 @@ export default function HeroSection() {
                     </a>
 
                     <h1 className="py-4  bg-clip-text text-transparent bg-gradient-to-r from-[#024324] to-teal-300 text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
-                      Give people access to your best stuff and get paid
+                      Get paid for your best stuff
                     </h1>
 
                     <p className="mt-3 text-base text-slate-900 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
@@ -95,7 +95,7 @@ export default function HeroSection() {
                       <ul role="list" className=" space-y-3">
                         {[
                           'No credit card required',
-                          'Upload your best stuff',
+                          'Organize your files',
                           'Start monetizing within 1 hour',
                         ].map((feature) => (
                           <>
