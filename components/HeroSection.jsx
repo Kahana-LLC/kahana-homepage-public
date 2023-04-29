@@ -64,7 +64,7 @@ export default function HeroSection() {
 
                   <div className="invisible md:visible absolute top-15 -left-7 w-40 h-40 bg-[#038270] rounded-full filter blur-3xl opacity-50 animate-blob"></div>
                   <div>
-                    <a
+                    {/* <a
                       href=""
                       className="cursor-default shadow-2xl inline-flex items-center rounded-full bg-white p-1 pr-2 text-white hover:text-gray-200 sm:text-base lg:text-sm xl:text-base border-solid border-2 border-slate-200 "
                     >
@@ -78,7 +78,7 @@ export default function HeroSection() {
                         className="ml-2 h-5 w-5 text-gray-500"
                         aria-hidden="true"
                       />
-                    </a>
+                    </a> */}
 
                     <h1 className="py-4  bg-clip-text text-transparent bg-gradient-to-r from-[#024324] to-teal-300 text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
                       Get paid for your best stuff
