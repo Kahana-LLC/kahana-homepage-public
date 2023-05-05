@@ -5,13 +5,13 @@ export default function HeaderBanner() {
         <div className="pr-16 sm:px-16 sm:text-center">
           <p className="text-base text-white">
             {/* <span className="md:hidden">We announced a new product!</span> */}
-            <span>Check out today&apos;s</span>
+            {/* <span>Check out today&apos;s</span> */}
             <span className="block sm:ml-2 sm:inline-block">
               <a
                 href="https://app.kahana.co/hub/nHxv8vCZBv6i0bVPunyp"
                 className=" text-base text-white underline"
               >
-                hub of the day!
+                Check out today&apos;s hub of the day!
                   {/* <span aria-hidden="true"> &rarr;</span> */}
               </a>
             </span>
