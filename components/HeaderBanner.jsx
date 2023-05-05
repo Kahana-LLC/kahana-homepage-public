@@ -5,13 +5,13 @@ export default function HeaderBanner() {
         <div className="pr-16 sm:px-16 sm:text-center">
           <p className="text-base text-white">
             {/* <span className="md:hidden">We announced a new product!</span> */}
-            <span>Already have a Kahana account?</span>
+            <span>Check out today&apos;s</span>
             <span className="block sm:ml-2 sm:inline-block">
               <a
-                href="https://kahana.tawk.help/article/how-to-log-in"
+                href="https://app.kahana.co/hub/nHxv8vCZBv6i0bVPunyp"
                 className=" text-base text-white underline"
               >
-                Here’s how to login
+                hub of the day!
                 <span aria-hidden="true"> &rarr;</span>
               </a>
             </span>
