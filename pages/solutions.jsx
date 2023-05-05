@@ -9,13 +9,13 @@ const posts = [
   {
     title: 'Hub Creation Services',
     href: 'https://7hkdcfzbmr0.typeform.com/to/ZYLHazEf?utm_source=xxxxx&utm_medium=xxxxx&utm_campaign=xxxxx&utm_term=xxxxx&utm_content=xxxxx',
-    //category: { name: 'Olivia Mancuso', href: 'https://www.tiktok.com/@oliviamancuso__' },
+    category: { name: 'Olivia Mancuso', href: 'https://www.tiktok.com/@oliviamancuso__' },
     description:
       'Have a ton of knowledge and IP assets, but don\'t have the time or resources to turn it into a digital product? We\'ve got you covered. Our team of experts can build hubs for you.',
     //date: 'Mar 16, 2020',
     //datetime: '2020-03-16',
-    //imageUrl:
-      //'https://kahana-website-images.s3.us-east-2.amazonaws.com/oliviaMancuso.png',
+    imageUrl:
+      'https://kahana-website-images.s3.us-east-2.amazonaws.com/oliviaMancuso.png',
     //readingTime: '6 min',
     //author: {
       //name: 'Roel Aufderehar',
