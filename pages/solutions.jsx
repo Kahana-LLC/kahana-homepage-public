@@ -9,13 +9,13 @@ const posts = [
   {
     title: 'Hub Creation Services',
     href: 'https://7hkdcfzbmr0.typeform.com/to/ZYLHazEf?utm_source=xxxxx&utm_medium=xxxxx&utm_campaign=xxxxx&utm_term=xxxxx&utm_content=xxxxx',
-    category: { name: 'Olivia Mancuso', href: 'https://www.tiktok.com/@oliviamancuso__' },
+    //category: { name: 'Olivia Mancuso', href: 'https://www.tiktok.com/@oliviamancuso__' },
     description:
       'Have a ton of knowledge and IP assets, but don\'t have the time or resources to turn it into a digital product? We\'ve got you covered. Our team of experts can build hubs for you.',
     //date: 'Mar 16, 2020',
     //datetime: '2020-03-16',
-    imageUrl:
-      'https://kahana-website-images.s3.us-east-2.amazonaws.com/oliviaMancuso.png',
+    //imageUrl:
+      //'https://kahana-website-images.s3.us-east-2.amazonaws.com/oliviaMancuso.png',
     //readingTime: '6 min',
     //author: {
       //name: 'Roel Aufderehar',
@@ -27,13 +27,13 @@ const posts = [
   {
     title: '👸🏼 Lazy Girl Job Bootcamp',
     href: 'https://app.kahana.co/hub/0xoAwd6Uq7KdKO0pdQ4j',
-    category: { name: 'Gabrielle Judge', href: 'https://www.tiktok.com/@gabrielle_judge' },
+    //category: { name: 'Gabrielle Judge', href: 'https://www.tiktok.com/@gabrielle_judge' },
     description:
       'Learn how to land a job and give yourself a raise on your own terms, the "lazy way", with AI. This hub is a collection of my pre-existing ChatGPT configurations and inputs organized into functional categories in the job: prep, applying, interviewing, negotiating. I’ve spent hours going through the trial error to create inputs that work so that you don\'t have to!',
     //date: 'Mar 10, 2020',
    //datetime: '2020-03-10',
-    imageUrl:
-      'https://kahana-website-images.s3.us-east-2.amazonaws.com/gabrielleJudge.png',
+    //imageUrl:
+      //'https://kahana-website-images.s3.us-east-2.amazonaws.com/gabrielleJudge.png',
     //readingTime: '4 min',
     //author: {
       //name: 'Brenna Goyette',
@@ -45,13 +45,13 @@ const posts = [
   {
     title: 'TikTok for Business',
     href: 'https://app.kahana.co/hub/2svUpfVnrxHFJHMn6UIG',
-    category: { name: 'Josh Slavin', href: 'https://www.tiktok.com/@slavinjoshua' },
+    //category: { name: 'Josh Slavin', href: 'https://www.tiktok.com/@slavinjoshua' },
     description:
       'In this hub, I plan to take you through the key decisions I made when building my platform of almost 800K followers, why I made them, and the factors you must take into consideration when doing the same. It’s time. Short form content is the future of social media, and I look forward to helping you capitalize on this unprecedented opportunity!',
     //date: 'Feb 12, 2020',
     //datetime: '2020-02-12',
-    imageUrl:
-      'https://kahana-website-images.s3.us-east-2.amazonaws.com/joshSlavin.png',
+    //imageUrl:
+      //'https://kahana-website-images.s3.us-east-2.amazonaws.com/joshSlavin.png',
     //readingTime: '11 min',
     //author: {
       //name: 'Daniela Metz',
@@ -63,13 +63,13 @@ const posts = [
   {
     title: 'Adulting 102: How to Thrive in Adulthood - For Life',
     href: 'https://app.kahana.co/hub/PY1KHuxIWoJ7fB7930ZF',
-    category: { name: 'Eden Gold', href: 'https://www.tiktok.com/@edengold_' },
+    //category: { name: 'Eden Gold', href: 'https://www.tiktok.com/@edengold_' },
     description:
       'Did you know that the average American alone wastes about $18,000 per year? What could YOU do with an extra $18,000? Let\'s talk about it. Welcome to the Adulting 102 Community Hub for Gen Z\'s & Millennials who want to thrive. In this community hub, we believe in setting you up for success in your personal life, professional life, and financial life.',
     //date: 'Feb 12, 2020',
     //datetime: '2020-02-12',
-    imageUrl:
-      'https://kahana-website-images.s3.us-east-2.amazonaws.com/edenGold.png',
+    //imageUrl:
+      //'https://kahana-website-images.s3.us-east-2.amazonaws.com/edenGold.png',
     //readingTime: '11 min',
     //author: {
       //name: 'Daniela Metz',
@@ -114,23 +114,23 @@ export default function Explore() {
                     key={post.title}
                     className="flex flex-col overflow-hidden rounded-lg shadow-2xl hover:shadow-none border-2 border-slate-100"
                   >
-                    <div className="flex-shrink-0">
+                      {/* <div className="flex-shrink-0">
                       <img
                         className="h-96 w-full object-cover"
                         src={post.imageUrl}
                         alt=""
-                      />
-                    </div>
+                      /> 
+                    </div> */}
                     <div className="flex flex-1 flex-col justify-between bg-white p-6">
                       <div className="flex-1">
-                        <p className="text-sm font-medium text-indigo-600">
+                        {/* <p className="text-sm font-medium text-indigo-600">
                           <a
                             href={post.category.href}
                             className="hover:underline"
                           >
                             {post.category.name}
                           </a>
-                        </p>
+                        </p> */}
                         <a href={post.href} className="mt-2 block">
                           <p className="text-xl font-semibold text-gray-900">
                             {post.title}
