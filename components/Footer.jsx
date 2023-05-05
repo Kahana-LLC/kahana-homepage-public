@@ -15,7 +15,8 @@ const navigation = {
   support: [
     { name: 'Help center', href: 'https://kahana.tawk.help/' },
     { name: 'Vote for features', href: 'https://productific.com/@Kahana' },
-    { name: 'Live Chat', href: 'https://kahana.tawk.help/' },
+    { name: 'Live chat', href: 'https://kahana.tawk.help/' },
+    { name: 'Join the community', href: 'https://nas.io/creators-and-experts' },
   ],
   social: [
     { name: 'LinkedIn', href: 'https://www.linkedin.com/company/kahana-co/' },
