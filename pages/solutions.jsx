@@ -25,11 +25,11 @@ const posts = [
     //},
   },
   {
-    title: '👸🏼 Lazy Girl Job Bootcamp',
-    href: 'https://app.kahana.co/hub/0xoAwd6Uq7KdKO0pdQ4j',
+    title: 'Custom Development',
+    href: 'https://7hkdcfzbmr0.typeform.com/to/ZYLHazEf?utm_source=xxxxx&utm_medium=xxxxx&utm_campaign=xxxxx&utm_term=xxxxx&utm_content=xxxxx',
     //category: { name: 'Gabrielle Judge', href: 'https://www.tiktok.com/@gabrielle_judge' },
     description:
-      'Learn how to land a job and give yourself a raise on your own terms, the "lazy way", with AI. This hub is a collection of my pre-existing ChatGPT configurations and inputs organized into functional categories in the job: prep, applying, interviewing, negotiating. I’ve spent hours going through the trial error to create inputs that work so that you don\'t have to!',
+      'Want to start using Kahana for your team, but need specific features/functionality? We can build a custom solution that meets your needs.',
     //date: 'Mar 10, 2020',
    //datetime: '2020-03-10',
     //imageUrl:
@@ -43,11 +43,11 @@ const posts = [
     //},
   },
   {
-    title: 'TikTok for Business',
-    href: 'https://app.kahana.co/hub/2svUpfVnrxHFJHMn6UIG',
+    title: 'Recurring Revenue Pilot Program',
+    href: 'https://7hkdcfzbmr0.typeform.com/to/ZYLHazEf?utm_source=xxxxx&utm_medium=xxxxx&utm_campaign=xxxxx&utm_term=xxxxx&utm_content=xxxxx',
     //category: { name: 'Josh Slavin', href: 'https://www.tiktok.com/@slavinjoshua' },
     description:
-      'In this hub, I plan to take you through the key decisions I made when building my platform of almost 800K followers, why I made them, and the factors you must take into consideration when doing the same. It’s time. Short form content is the future of social media, and I look forward to helping you capitalize on this unprecedented opportunity!',
+      'Looking for specific features and need help building hubs? Our pilot program gives you the best of both.',
     //date: 'Feb 12, 2020',
     //datetime: '2020-02-12',
     //imageUrl:
