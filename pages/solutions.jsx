@@ -60,24 +60,6 @@ const posts = [
         //'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
     //},
   },
-  {
-    title: 'Adulting 102: How to Thrive in Adulthood - For Life',
-    href: 'https://app.kahana.co/hub/PY1KHuxIWoJ7fB7930ZF',
-    //category: { name: 'Eden Gold', href: 'https://www.tiktok.com/@edengold_' },
-    description:
-      'Did you know that the average American alone wastes about $18,000 per year? What could YOU do with an extra $18,000? Let\'s talk about it. Welcome to the Adulting 102 Community Hub for Gen Z\'s & Millennials who want to thrive. In this community hub, we believe in setting you up for success in your personal life, professional life, and financial life.',
-    //date: 'Feb 12, 2020',
-    //datetime: '2020-02-12',
-    //imageUrl:
-      //'https://kahana-website-images.s3.us-east-2.amazonaws.com/edenGold.png',
-    //readingTime: '11 min',
-    //author: {
-      //name: 'Daniela Metz',
-      //href: '#',
-      //imageUrl:
-        //'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    //},
-  },
 ];
 //
 export default function Explore() {
