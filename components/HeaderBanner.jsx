@@ -12,7 +12,7 @@ export default function HeaderBanner() {
                 className=" text-base text-white underline"
               >
                 hub of the day!
-                <span aria-hidden="true"> &rarr;</span>
+                  {/* <span aria-hidden="true"> &rarr;</span> */}
               </a>
             </span>
           </p>
