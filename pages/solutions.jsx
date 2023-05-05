@@ -7,15 +7,15 @@ import Navbar from '../components/Navbar';
 //components
 const posts = [
   {
-    title: 'Your Guide to Manifesting Anything',
-    href: 'https://app.kahana.co/hub/nHxv8vCZBv6i0bVPunyp',
-    category: { name: 'Olivia Mancuso', href: 'https://www.tiktok.com/@oliviamancuso__' },
+    title: 'Hub Creation Services',
+    href: 'https://7hkdcfzbmr0.typeform.com/to/ZYLHazEf?utm_source=xxxxx&utm_medium=xxxxx&utm_campaign=xxxxx&utm_term=xxxxx&utm_content=xxxxx',
+    //category: { name: 'Olivia Mancuso', href: 'https://www.tiktok.com/@oliviamancuso__' },
     description:
-      'This hub is for those who are dipping their toes into manifesting but don\'t want to spend thousands of dollars on a program or retreat to start their journey. Since implementing the manifesting and vision boarding strategies I share in this hub, I went from making $40K a year to consistent 5-figure months, lost 20 lbs in less than 4 months, and more.',
+      'Have a ton of knowledge and IP assets, but don\'t have the time or resources to turn it into a digital product? We\'ve got you covered. Our team of experts can build hubs for you.',
     //date: 'Mar 16, 2020',
     //datetime: '2020-03-16',
-    imageUrl:
-      'https://kahana-website-images.s3.us-east-2.amazonaws.com/oliviaMancuso.png',
+    //imageUrl:
+      //'https://kahana-website-images.s3.us-east-2.amazonaws.com/oliviaMancuso.png',
     //readingTime: '6 min',
     //author: {
       //name: 'Roel Aufderehar',
@@ -78,132 +78,6 @@ const posts = [
         //'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
     //},
   },
-  {
-    title: 'TikTok Trends',
-    href: 'https://app.kahana.co/hub/ohTF2nOQTEWCW7PIsSYX',
-    category: { name: 'Kate Herman', href: 'https://www.tiktok.com/@kate.instates' },
-    description:
-      'Struggling to come up with content ideas and can\'t grow your TikTok account? Welcome to the TikTok Content Hub! Here you\'ll find weekly TikTok trending sounds, content ideas, and a content strategy guide.',
-    //date: 'Feb 12, 2020',
-    //datetime: '2020-02-12',
-    imageUrl:
-      'https://kahana-website-images.s3.us-east-2.amazonaws.com/kateHerman.png',
-    //readingTime: '11 min',
-    //author: {
-      //name: 'Daniela Metz',
-      //href: '#',
-      //imageUrl:
-        //'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    //},
-  },
-  {
-    title: 'Pinterest Success Session',
-    href: 'https://app.kahana.co/hub/tHwAYvYPzqVwGPGzh10k',
-    category: { name: 'Kelsey Vetter', href: 'https://www.tiktok.com/@kelseyvetterco' },
-    description:
-      'Are you missing out on the massive potential of the traffic-driving powerhouse, Pinterest? This comprehensive Pinterest Success Session will teach you how to master Pinterest Marketing in less than 1 hour so you can start driving traffic to your website, growing your audience and increasing your sales.',
-    //date: 'Feb 12, 2020',
-    //datetime: '2020-02-12',
-    imageUrl:
-      'https://kahana-website-images.s3.us-east-2.amazonaws.com/kelseyVetter.png',
-    //readingTime: '11 min',
-    //author: {
-      //name: 'Daniela Metz',
-      //href: '#',
-      //imageUrl:
-        //'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    //},
-  },
-  {
-    title: 'Email Templates for Content Creators',
-    href: 'https://app.kahana.co/hub/u1ln3CfdaZTUGyb8pSK2',
-    category: { name: 'The Corporate Creator', href: 'https://tiktok.com/@thecorporatedogmom' },
-    description:
-      'Sharing tips for multi-passionate creators, including email templates for negotiating with brands and navigating brand deal contracts.',
-    //date: 'Feb 12, 2020',
-    //datetime: '2020-02-12',
-    imageUrl:
-      'https://kahana-website-images.s3.us-east-2.amazonaws.com/tayLadd.png',
-    //readingTime: '11 min',
-    //author: {
-      //name: 'Daniela Metz',
-      //href: '#',
-      //imageUrl:
-        //'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    //},
-  },
-  {
-    title: 'Vision Story',
-    href: 'https://app.kahana.co/hub/VarpGpuDHdukrW4IG4Ki',
-    category: { name: 'Gregory Gray', href: 'https://www.linkedin.com/in/gregorygray00/' },
-    description:
-      'The Vision Story hub will give you clarity on your life and business. It is a powerful process that will enliven you to fulfill your purpose and build the lifestyle you desire. Come join us in the process of building the life you deserve.',
-    //date: 'Feb 12, 2020',
-    //datetime: '2020-02-12',
-    imageUrl:
-      'https://kahana-website-images.s3.us-east-2.amazonaws.com/gregoryGray.png',
-    //readingTime: '11 min',
-    //author: {
-      //name: 'Daniela Metz',
-      //href: '#',
-      //imageUrl:
-        //'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    //},
-  },
-  {
-    title: 'How I work extra with TikTok as a full time medical student 🩺',
-    href: 'https://app.kahana.co/hub/dhJXTqv1Jj0GWIr65vuJ',
-    category: { name: 'Medical Elina', href: 'https://www.tiktok.com/@medical.elina' },
-    description:
-      'I didn\'t have time to work extra in the beginning of my education, even though I needed the money. Since I\'ve always loved being creative, cinematography, photography, I started a TikTok to document my medical school journey. Soon I realized people loved the content, I loved making it - and I could make money off of it too!',
-    //date: 'Feb 12, 2020',
-    //datetime: '2020-02-12',
-    imageUrl:
-      'https://kahana-website-images.s3.us-east-2.amazonaws.com/medicalElina.png',
-    //readingTime: '11 min',
-    //author: {
-      //name: 'Daniela Metz',
-      //href: '#',
-      //imageUrl:
-        //'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    //},
-  },
-  {
-    title: 'Event Planning Hub | All you need to know to plan and go!',
-    href: 'https://app.kahana.co/hub/2bXcGh2ROEvMAEdmUhOX',
-    category: { name: 'Alexandria Tomayko', href: 'https://www.pinterest.com/NomadPlanner/' },
-    description:
-      'So you want to plan a retreat & don\'t know where to start? I have over 17 years of experience in the field and have gathered tips, tricks, workbooks, and templates to help you every step of the way!',
-    //date: 'Feb 12, 2020',
-    //datetime: '2020-02-12',
-    imageUrl:
-      'https://kahana-website-images.s3.us-east-2.amazonaws.com/alexandriaTomayko.png',
-    //readingTime: '11 min',
-    //author: {
-      //name: 'Daniela Metz',
-      //href: '#',
-      //imageUrl:
-        //'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    //},
-  },
-  {
-    title: 'Solo Entrepreneurs: You\'re not alone',
-    href: 'https://app.kahana.co/hub/2tXld437NBOOjOrwpjQm',
-    category: { name: 'Carl Nordgren', href: 'https://www.linkedin.com/in/carl-nordgren-0bb3b621/' },
-    description:
-      '40 years an entrepreneur; taught at Duke for 14; determined to serve Creators and Solo Entrepreneurs with proven content',
-    //date: 'Feb 12, 2020',
-    //datetime: '2020-02-12',
-    imageUrl:
-      'https://kahana-website-images.s3.us-east-2.amazonaws.com/carlNordgren.png',
-    //readingTime: '11 min',
-    //author: {
-      //name: 'Daniela Metz',
-      //href: '#',
-      //imageUrl:
-        //'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    //},
-  },
 ];
 //
 export default function Explore() {
@@ -228,10 +102,10 @@ export default function Explore() {
             <div className=" mx-auto max-w-7xl">
               <div className="text-center">
                 <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                  Featured Hubs 🔥
+                  Ready to start getting recurring revenue?
                 </h2>
                 <p className="mx-auto mt-3 max-w-2xl text-xl text-gray-500 sm:mt-4">
-                  Learn from and build with creators in the Kahana Ohana!
+                  Here are all the different ways we can help you make it happen
                 </p>
               </div>
               <div className="mx-auto mt-12 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3">
