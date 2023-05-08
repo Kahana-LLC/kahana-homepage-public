@@ -11,7 +11,7 @@ const posts = [
     href: 'https://7hkdcfzbmr0.typeform.com/to/ZYLHazEf?utm_source=xxxxx&utm_medium=xxxxx&utm_campaign=xxxxx&utm_term=xxxxx&utm_content=xxxxx',
     //category: { name: 'Olivia Mancuso', href: 'https://www.tiktok.com/@oliviamancuso__' },
     description:
-      'Have a ton of knowledge and IP assets, but don\'t have the time or resources to turn it into a digital product? We\'ve got you covered. Our team of experts can build hubs for you.',
+      'Quick and easy. It’s like ordering Domino’s for recurring revenue. Choose the number of hubs you want, add specific requests, and submit existing content you’d like to include. Our team will handle all the graphic design, formatting, and content creation you don’t want to touch. Track the progress of your hubs in real-time as they’re built right before your eyes. Finished hubs are delivered in as little as 5 business days.',
     //date: 'Mar 16, 2020',
     //datetime: '2020-03-16',
     imageUrl:
@@ -29,7 +29,7 @@ const posts = [
     href: 'https://7hkdcfzbmr0.typeform.com/to/ZYLHazEf?utm_source=xxxxx&utm_medium=xxxxx&utm_campaign=xxxxx&utm_term=xxxxx&utm_content=xxxxx',
     //category: { name: 'Gabrielle Judge', href: 'https://www.tiktok.com/@gabrielle_judge' },
     description:
-      'Want to start using Kahana for your team, but need specific features/functionality? We can build a custom solution that meets your needs.',
+      'Want to create something special? We’ll collaborate with you closely to develop tailor-made features, add-ons, and integrations that are specific to the needs of your organization.',
     //date: 'Mar 10, 2020',
    //datetime: '2020-03-10',
     imageUrl:
@@ -47,7 +47,7 @@ const posts = [
     href: 'https://7hkdcfzbmr0.typeform.com/to/ZYLHazEf?utm_source=xxxxx&utm_medium=xxxxx&utm_campaign=xxxxx&utm_term=xxxxx&utm_content=xxxxx',
     //category: { name: 'Josh Slavin', href: 'https://www.tiktok.com/@slavinjoshua' },
     description:
-      'Looking for specific features and need help building hubs? Our pilot program gives you the best of both.',
+      'Our recurring revenue implementation program combines on-demand hub creation, custom development, and tailored training to help organizations create profitable hubs from existing assets, templates, and methodologies.',
     //date: 'Feb 12, 2020',
     //datetime: '2020-02-12',
     imageUrl:
