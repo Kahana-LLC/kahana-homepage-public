@@ -79,6 +79,7 @@ export default function AboutCard() {
                           their collective knowledge and IP assets into a product 
                           quickly, without having to trudge through the challenging
                           and exhausting process of creating a course. 
+                        </p>
                       </div>
 
                       <footer className="mt-4">
