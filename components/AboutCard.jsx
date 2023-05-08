@@ -73,14 +73,12 @@ export default function AboutCard() {
                           <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
                         </svg>
                         <p className="relative">
-                          On average, it takes 6.5 months for creators to earn
-                          their first dollar - this is WAY too long, and it
-                          breaks our hearts. At Kahana, we want to lower the
-                          barrier to entry for people to access the benefits of
-                          the creator economy. Kahana helps you monetize faster
-                          by allowing you to quickly turn your best content,
-                          files, and information into a digital product.
-                        </p>
+                          We built Kahana because we saw a huge problem -
+                          creators and experts were struggling to make recurring
+                          revenue. We saw an opportunity to help people turn
+                          their collective knowledge and IP assets into a product 
+                          quickly, without having to trudge through the challenging
+                          and exhausting process of creating a course. 
                       </div>
 
                       <footer className="mt-4">
@@ -104,12 +102,12 @@ export default function AboutCard() {
                   <p className="text-lg">
                     Hi there! If you&apos;re reading this, you&apos;re probably 
                     an expert. You&apos;ve spent years serving clients and gaining 
-                    unique knowledge. {'\n'}{'\n'} But when you&apos;re not with a client, 
+                    unique knowledge. <br><br> But when you&apos;re not with a client, 
                     that knowledge is sitting in your brain or collecting dust in a folder. 
-                    What if it didn&apos;t have to? {'\n'}{'\n'} Kahana lets you take
+                    What if it didn&apos;t have to? <br><br> Kahana lets you take
                     existing information you&apos;ve already curated or created -
                     files, notes, methodologies, best practices, templates, research, etc. -
-                    and charge for access to it through hubs of knowledge. {'\n'}{'\n'}
+                    and charge for access to it through hubs of knowledge. <br><br>
                     Whether you&pos;re solo creator or part of a large organization, we
                     started Kahana to help you create profitable recurring revenue streams
                     quickly.
