@@ -111,7 +111,7 @@ export default function AboutCard() {
                     and charge for access to it through hubs of knowledge. <br/><br/>
                     Whether you&apos;re a solo creator or part of a large organization, we
                     started Kahana to help you create profitable recurring revenue streams
-                    quickly.
+                    faster.
                   </p>
                 </div>
               </div>
