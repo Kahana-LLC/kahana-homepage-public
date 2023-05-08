@@ -98,26 +98,21 @@ export default function AboutCard() {
               {/* Content area */}
               <div className="pt-12 sm:pt-16 lg:pt-20">
                 <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                  On a mission to empower creators
+                  Empowering creators and experts
                 </h2>
                 <div className="mt-6 space-y-6 text-gray-500">
                   <p className="text-lg">
-                    Kahana was founded in 2019 by Jonathan Gans and Adam
-                    Kershner. Jonathan and Adam operate as Chief Executive
-                    Officer (CEO) and Chief Product Officer (Head of Product),
-                    respectively, as of July 2019. Jonathan and Adam originally
-                    met at Duke University in 2014, where they were 1st-year
-                    roommates. In February 2020, Jonathan and Adam met Eugene, a
-                    developer, through CoFoundersLab.com and grabbed dinner in
-                    NYC. Eugene then became the technical cofounder and Chief
-                    Technology Officer (CTO) of Kahana. The original inspiration
-                    and idea for Kahana came, in part, from GitHub, and how it
-                    allowed developers to discover and collaborate with
-                    like-minded developers, fork off of each other&rsquo;s work,
-                    and avoid duplication. Kahana&rsquo;s founding team wanted
-                    to solve a similar problem inherent to the process of
-                    collaboration and content creation across the Internet,
-                    specifically for creators.
+                    Hi there! If you&apos;re reading this, you&apos;re probably 
+                    an expert. You&apos;ve spent years serving clients and gaining 
+                    unique knowledge. {'\n'}{'\n'} But when you&apos;re not with a client, 
+                    that knowledge is sitting in your brain or collecting dust in a folder. 
+                    What if it didn&apos;t have to? {'\n'}{'\n'} Kahana lets you take
+                    existing information you&apos;ve already curated or created -
+                    files, notes, methodologies, best practices, templates, research, etc. -
+                    and charge for access to it through hubs of knowledge. {'\n'}{'\n'}
+                    Whether you&pos;re solo creator or part of a large organization, we
+                    started Kahana to help you create profitable recurring revenue streams
+                    quickly.
                   </p>
                 </div>
               </div>
