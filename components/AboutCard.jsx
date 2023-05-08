@@ -109,7 +109,7 @@ export default function AboutCard() {
                     existing information you&apos;ve already curated or created -
                     files, notes, methodologies, best practices, templates, research, etc. -
                     and charge for access to it through hubs of knowledge. <br/><br/>
-                    Whether you&pos;re solo creator or part of a large organization, we
+                    Whether you&apos;re a solo creator or part of a large organization, we
                     started Kahana to help you create profitable recurring revenue streams
                     quickly.
                   </p>
