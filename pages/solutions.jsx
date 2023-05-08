@@ -7,15 +7,15 @@ import Navbar from '../components/Navbar';
 //components
 const posts = [
   {
-    title: 'Hub Creation Services',
+    title: 'On-Demand Hub Creation',
     href: 'https://7hkdcfzbmr0.typeform.com/to/ZYLHazEf?utm_source=xxxxx&utm_medium=xxxxx&utm_campaign=xxxxx&utm_term=xxxxx&utm_content=xxxxx',
     //category: { name: 'Olivia Mancuso', href: 'https://www.tiktok.com/@oliviamancuso__' },
     description:
       'Have a ton of knowledge and IP assets, but don\'t have the time or resources to turn it into a digital product? We\'ve got you covered. Our team of experts can build hubs for you.',
     //date: 'Mar 16, 2020',
     //datetime: '2020-03-16',
-    //imageUrl:
-      //'https://kahana-website-images.s3.us-east-2.amazonaws.com/oliviaMancuso.png',
+    imageUrl:
+      'https://kahana-website-images.s3.us-east-2.amazonaws.com/On-Demand+Hub+Creation.webp',
     //readingTime: '6 min',
     //author: {
       //name: 'Roel Aufderehar',
@@ -32,8 +32,8 @@ const posts = [
       'Want to start using Kahana for your team, but need specific features/functionality? We can build a custom solution that meets your needs.',
     //date: 'Mar 10, 2020',
    //datetime: '2020-03-10',
-    //imageUrl:
-      //'https://kahana-website-images.s3.us-east-2.amazonaws.com/gabrielleJudge.png',
+    imageUrl:
+      'https://kahana-website-images.s3.us-east-2.amazonaws.com/Custom+Development.webp',
     //readingTime: '4 min',
     //author: {
       //name: 'Brenna Goyette',
@@ -43,15 +43,15 @@ const posts = [
     //},
   },
   {
-    title: 'Recurring Revenue Pilot Program',
+    title: 'Recurring Revenue Implementation',
     href: 'https://7hkdcfzbmr0.typeform.com/to/ZYLHazEf?utm_source=xxxxx&utm_medium=xxxxx&utm_campaign=xxxxx&utm_term=xxxxx&utm_content=xxxxx',
     //category: { name: 'Josh Slavin', href: 'https://www.tiktok.com/@slavinjoshua' },
     description:
       'Looking for specific features and need help building hubs? Our pilot program gives you the best of both.',
     //date: 'Feb 12, 2020',
     //datetime: '2020-02-12',
-    //imageUrl:
-      //'https://kahana-website-images.s3.us-east-2.amazonaws.com/joshSlavin.png',
+    imageUrl:
+      'https://kahana-website-images.s3.us-east-2.amazonaws.com/Recurring+Revenue+Implementation.webp',
     //readingTime: '11 min',
     //author: {
       //name: 'Daniela Metz',
@@ -96,13 +96,13 @@ export default function Explore() {
                     key={post.title}
                     className="flex flex-col overflow-hidden rounded-lg shadow-2xl hover:shadow-none border-2 border-slate-100"
                   >
-                      {/* <div className="flex-shrink-0">
+                    <div className="flex-shrink-0">
                       <img
                         className="h-96 w-full object-cover"
                         src={post.imageUrl}
                         alt=""
                       /> 
-                    </div> */}
+                    </div>
                     <div className="flex flex-1 flex-col justify-between bg-white p-6">
                       <div className="flex-1">
                         {/* <p className="text-sm font-medium text-indigo-600">
