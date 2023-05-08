@@ -66,7 +66,7 @@ export default function Explore() {
   return (
     <>
       <Head>
-        <title>Kahana - Helping Creators Monetize</title>
+        <title>Kahana - Get paid for your best stuff</title>
         <meta
           name="Kahana"
           content="Kahana is the easiest way to monetize your content and research. Transform knowledge and expertise into subscription revenue. Sign up for free today! "
@@ -98,7 +98,7 @@ export default function Explore() {
                   >
                     <div className="flex-shrink-0">
                       <img
-                        className="h-96 w-full object-cover"
+                        className="h-48 w-full object-cover"
                         src={post.imageUrl}
                         alt=""
                       /> 
