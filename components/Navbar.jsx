@@ -14,6 +14,11 @@ const navigation = [
   { name: 'Solutions', href: 'solutions' },
 ];
 
+const navigation1 = [
+  { name: 'Request a demo', href: 'https://7hkdcfzbmr0.typeform.com/to/ZYLHazEf?utm_source=xxxxx&utm_medium=xxxxx&utm_campaign=xxxxx&utm_term=xxxxx&utm_content=xxxxx' },
+  { name: 'Log in', href: 'https://app.kahana.co/login' },
+];
+
 function Navbar() {
   return (
     <>
