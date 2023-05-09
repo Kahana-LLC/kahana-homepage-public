@@ -3,7 +3,7 @@ import Head from 'next/head';
 
 import Footer from '../components/Footer';
 import HeroSection from '../components/HeroSection';
-import Navbar from '../components/Navbar';
+import NavbarDup from '../components/NavbarDup';
 import Pricing from '../components/Pricing';
 import Reviews from '../components/Reviews';
 import ProductDemoSection from '../components/ProductDemoSection';
@@ -28,7 +28,7 @@ export default function Home() {
       </Head>
       <div>
         <div style={{ zIndex: '1' }} className="sticky top-0">
-          <Navbar />
+          <NavbarDup />
         </div>
         <main>
           <HeroSection />
