@@ -101,17 +101,13 @@ export default function AboutCard() {
                 </h2>
                 <div className="mt-6 space-y-6 text-gray-500">
                   <p className="text-lg">
-                    Hi there! If you&apos;re reading this, you&apos;re probably 
-                    an expert. You&apos;ve spent years serving clients and gaining 
-                    unique knowledge. <br/><br/> But when you&apos;re not with a client, 
-                    that knowledge is sitting in your brain or collecting dust in a folder. 
-                    What if it didn&apos;t have to? <br/><br/> Kahana lets you take
-                    existing information you&apos;ve already curated or created -
-                    files, notes, methodologies, best practices, templates, research, etc. -
-                    and charge for access to it through hubs of knowledge. <br/><br/>
-                    Whether you&apos;re a solo creator or part of a large organization, we
-                    started Kahana to help you create profitable recurring revenue streams
-                    faster.
+                    Share your collective knowledge with the world - get income back.
+                    <br/><br/> Kahana lets you take existing information you&apos;ve 
+                    already curated or created - files, notes, methodologies, best 
+                    practices, templates, research, etc. - and charge for access to it 
+                    through hubs of knowledge. <br/><br/> Whether you&apos;re a solo creator 
+                    or part of a large organization, we started Kahana to help you create 
+                    profitable recurring revenue streams faster.
                   </p>
                 </div>
               </div>
