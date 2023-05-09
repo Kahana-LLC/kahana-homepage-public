@@ -47,8 +47,8 @@ export default function Navbar() {
             className="h-10 "
             src={whiteKahanaLogo}
             w
-            {/* width={10} */}
-            {/* height={20} */}
+            // width={10}
+            // height={20} 
             alt="navbar-logo"
          />
       </Link>
