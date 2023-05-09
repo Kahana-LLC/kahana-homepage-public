@@ -99,7 +99,7 @@ function Navbar() {
               <li><a href="https://app.kahana.co/login">Log in</a></li>
             </ul>    
           </div>
-          <style jsx> {'
+          <style jsx> {
               .navi{
                   width: 100%;
                   height: 50px;
@@ -116,7 +116,7 @@ function Navbar() {
                   list-style-type: none;
                   padding-right: 10px;
               }
-          '}</style>
+          }</style>
         </nav>
       </header>
     </>
