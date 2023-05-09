@@ -2,7 +2,7 @@ import Head from 'next/head';
 // import Image from 'next/image';
 
 import Footer from '../components/Footer';
-import Navbar from '../components/Navbar';
+import NavbarDup from '../components/NavbarDup';
 
 //components
 const posts = [
@@ -74,7 +74,7 @@ export default function Solutions() {
       </Head>
       <div>
         <div style={{ zIndex: '1' }} className="sticky top-0">
-          <Navbar />
+          <NavbarDup />
         </div>
         <main>
           <div className=" bg-gray-50 px-4 pt-6 pb-20 sm:px-6 lg:px-8 lg:pt-20 lg:pb-28">
