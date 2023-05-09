@@ -3,7 +3,7 @@ import AboutCard from '../components/AboutCard';
 // import Image from 'next/image';
 
 import Footer from '../components/Footer';
-import Navbar from '../components/Navbar';
+import NavbarDup from '../components/NavbarDup';
 import TeamSection from '../components/TeamSection';
 
 //components
@@ -20,7 +20,7 @@ export default function About() {
       </Head>
       <div>
         <div style={{ zIndex: '1' }} className="sticky top-0">
-          <Navbar />
+          <NavbarDup />
         </div>
         <main>
           <AboutCard classnName="relative" />
