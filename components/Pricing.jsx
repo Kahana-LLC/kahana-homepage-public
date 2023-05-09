@@ -168,7 +168,7 @@ export default function Pricing() {
                 </li>
               </ul>
               <a
-                href="https://app.kahana.co/signup"
+                href="https://7hkdcfzbmr0.typeform.com/to/SGVF6cS6?utm_source=xxxxx&utm_medium=xxxxx&utm_campaign=xxxxx&utm_term=xxxxx&utm_content=xxxxx"
                 className="mt-8 block w-full rounded-md border border-[#038270] bg-[#038270] py-2 text-center text-sm font-semibold text-white hover:bg-[#024324]"
               >
                 Start Free
@@ -233,7 +233,7 @@ export default function Pricing() {
                 </li>
               </ul>
               <a
-                href="https://app.kahana.co/signup"
+                href="https://7hkdcfzbmr0.typeform.com/to/SGVF6cS6?utm_source=xxxxx&utm_medium=xxxxx&utm_campaign=xxxxx&utm_term=xxxxx&utm_content=xxxxx"
                 className="mt-8 block w-full rounded-md border border-[#038270] bg-[#038270] py-2 text-center text-sm font-semibold text-white hover:bg-[#024324]"
               >
                 Buy Now
