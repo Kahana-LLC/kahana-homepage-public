@@ -2,7 +2,7 @@ import Head from 'next/head';
 // import Image from 'next/image';
 
 import Footer from '../components/Footer';
-import Navbar from '../components/Navbar';
+import NavbarDup from '../components/NavbarDup';
 import Pricing from '../components/Pricing';
 
 //components
@@ -19,7 +19,7 @@ export default function PricingPage() {
       </Head>
       <div>
         <div className="sticky top-0">
-          <Navbar />
+          <NavbarDup />
         </div>
         <main>
           <Pricing />
