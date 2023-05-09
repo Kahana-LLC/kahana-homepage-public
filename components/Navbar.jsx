@@ -244,7 +244,7 @@ export default function Navbar() {
         </nav>
       </header>
     </>
-  ); /*}
+  );
 }
 
-{/* export default Navbar */}
+export default Navbar; */}
