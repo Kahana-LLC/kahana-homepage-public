@@ -81,44 +81,16 @@ export default function NavbarDup() {
                 <line x1="6" y1="6" x2="18" y2="18" />
               </svg>
             </div>
-            {/* <li><a href="explore">Featured Hubs</a></li>
-                <li><a href="about">About</a></li>
-                <li><a href="pricing">Pricing</a></li>
-                <li><a href="https://blog.kahana.co">Blog</a></li>
-                <li><a href="solutions">Solutions</a></li>
-                <li><a href="https://7hkdcfzbmr0.typeform.com/to/ZYLHazEf?utm_source=xxxxx&utm_medium=xxxxx&utm_campaign=xxxxx&utm_term=xxxxx&utm_content=xxxxx">Request a demo</a></li>
-                <li><a href="https://app.kahana.co/login">Log in</a></li>*/}
             <ul className="MENU-LINK-MOBILE-OPEN flex flex-col items-center justify-between min-h-[250px]">
               {navigationAll.map((link) => (
                 <Link
                   href={link.href}
                   key={link.name}
-                  className="text-xs text-slate-600  hover:text-slate-900"
+                  className="text-base font-small text-gray-600  hover:text-gray-800"
                 >
                   {link.name}
                 </Link>
               ))}
-              {/* <li className="border-b border-gray-400 my-8 uppercase">
-                <a href="/explore">Featured Hubs</a>
-              </li>
-              <li className="border-b border-gray-400 my-8 uppercase">
-                <a href="/about">About</a>
-              </li>
-              <li className="border-b border-gray-400 my-8 uppercase">
-                <a href="/pricing">Pricing</a>
-              </li>
-              <li className="border-b border-gray-400 my-8 uppercase">
-                <a href="https://blog.kahana.co">Blog</a>
-              </li>
-              <li className="border-b border-gray-400 my-8 uppercase">
-                <a href="/solutions">Solutions</a>
-              </li>
-              <li className="border-b border-gray-400 my-8 uppercase">
-                <a href="https://7hkdcfzbmr0.typeform.com/to/ZYLHazEf?utm_source=xxxxx&utm_medium=xxxxx&utm_campaign=xxxxx&utm_term=xxxxx&utm_content=xxxxx">Request a demo</a>
-              </li>
-              <li className="border-b border-gray-400 my-8 uppercase">
-                <a href="https://app.kahana.co/login">Log in</a>
-              </li> */}
             </ul>
           </div>
         </section>
@@ -128,32 +100,11 @@ export default function NavbarDup() {
              <Link
                 href={link.href}
                 key={link.name}
-                className="text-xs text-slate-600  hover:text-slate-900"
+                className="text-base font-small text-gray-600  hover:text-gray-800"
               >
                 {link.name}
               </Link>
            ))}
-          {/* <li className="border-b border-gray-400 my-8 uppercase">
-            <a href="/explore">Featured Hubs</a>
-          </li>
-          <li className="border-b border-gray-400 my-8 uppercase">
-            <a href="/about">About</a>
-          </li>
-          <li className="border-b border-gray-400 my-8 uppercase">
-            <a href="/pricing">Pricing</a>
-          </li>
-          <li className="border-b border-gray-400 my-8 uppercase">
-            <a href="https://blog.kahana.co">Blog</a>
-          </li>
-          <li className="border-b border-gray-400 my-8 uppercase">
-            <a href="/solutions">Solutions</a>
-          </li>
-          <li className="border-b border-gray-400 my-8 uppercase">
-            <a href="https://7hkdcfzbmr0.typeform.com/to/ZYLHazEf?utm_source=xxxxx&utm_medium=xxxxx&utm_campaign=xxxxx&utm_term=xxxxx&utm_content=xxxxx">Request a demo</a>
-          </li>
-          <li className="border-b border-gray-400 my-8 uppercase">
-            <a href="https://app.kahana.co/login">Log in</a>
-          </li> */}
         </ul>
       </nav>
       <style>{`
