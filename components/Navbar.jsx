@@ -47,8 +47,8 @@ export default function Navbar() {
             className="h-10 "
             src={whiteKahanaLogo}
             w
-            // width={10}
-            // height={20}
+            {/* width={10} */}
+            {/* height={20} */}
             alt="navbar-logo"
          />
       </Link>
@@ -63,10 +63,10 @@ export default function Navbar() {
             <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
           </div>
 
-          <div className={isNavOpen ? "showMenuNav" : "hideMenuNav"}> // toggle class based on isNavOpen state
+          <div className={isNavOpen ? "showMenuNav" : "hideMenuNav"}> {/* toggle class based on isNavOpen state */}
             <div
               className="CROSS-ICON absolute top-0 right-0 px-8 py-8"
-              onClick={() => setIsNavOpen(false)} // change isNavOpen state to false to close the menu
+              onClick={() => setIsNavOpen(false)} {/* change isNavOpen state to false to close the menu */}
             >
               <svg
                 className="h-8 w-8 text-gray-600"
@@ -89,7 +89,16 @@ export default function Navbar() {
                 <li><a href="https://7hkdcfzbmr0.typeform.com/to/ZYLHazEf?utm_source=xxxxx&utm_medium=xxxxx&utm_campaign=xxxxx&utm_term=xxxxx&utm_content=xxxxx">Request a demo</a></li>
                 <li><a href="https://app.kahana.co/login">Log in</a></li>*/}
             <ul className="MENU-LINK-MOBILE-OPEN flex flex-col items-center justify-between min-h-[250px]">
-              <li className="border-b border-gray-400 my-8 uppercase">
+              {navigationAll.map((link) => (
+                <Link
+                  href={link.href}
+                  key={link.name}
+                  className="text-xs text-slate-600  hover:text-slate-900"
+                >
+                  {link.name}
+                </Link>
+              ))}
+              {/* <li className="border-b border-gray-400 my-8 uppercase">
                 <a href="/explore">Featured Hubs</a>
               </li>
               <li className="border-b border-gray-400 my-8 uppercase">
@@ -109,13 +118,22 @@ export default function Navbar() {
               </li>
               <li className="border-b border-gray-400 my-8 uppercase">
                 <a href="https://app.kahana.co/login">Log in</a>
-              </li>
+              </li> */}
             </ul>
           </div>
         </section>
 
         <ul className="DESKTOP-MENU hidden space-x-8 lg:flex">
-          <li className="border-b border-gray-400 my-8 uppercase">
+          {navigationAll.map((link) => (
+             <Link
+                href={link.href}
+                key={link.name}
+                className="text-xs text-slate-600  hover:text-slate-900"
+              >
+                {link.name}
+              </Link>
+           ))}
+          {/* <li className="border-b border-gray-400 my-8 uppercase">
             <a href="/explore">Featured Hubs</a>
           </li>
           <li className="border-b border-gray-400 my-8 uppercase">
@@ -135,7 +153,7 @@ export default function Navbar() {
           </li>
           <li className="border-b border-gray-400 my-8 uppercase">
             <a href="https://app.kahana.co/login">Log in</a>
-          </li>
+          </li> */}
         </ul>
       </nav>
       <style>{`
