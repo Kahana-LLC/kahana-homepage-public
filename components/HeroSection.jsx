@@ -191,12 +191,12 @@ export default function HeroSection() {
 
                     <div className="mt-6">
                       {/* form starts  here */}
-                      <form
+                      {/* <form
                         action="https://script.google.com/macros/s/AKfycbwl44LRVat8eGmhqXP3HQm1xktp5WQEDuIXsyZ5Sz0huUnVRTDGeNt5V61YIOfaUsf-/exec"
                         method="POST"
                         className="space-y-6"
                         id="myform"
-                      >
+                      > */}
                         {/* <div>
                           <label htmlFor="name" className="sr-only">
                             Full name
@@ -212,7 +212,7 @@ export default function HeroSection() {
                           />
                         </div> */}
 
-                        <div>
+                        {/* <div>
                           <label htmlFor="first-name" className="sr-only">
                             First name
                           </label>
@@ -224,9 +224,9 @@ export default function HeroSection() {
                             placeholder="First name"
                             className="block w-full rounded-md border-gray-300 shadow-sm focus:border-[#038270] focus:ring-[#038270] sm:text-sm"
                           />
-                        </div>
+                        </div> */}
 
-                        <div>
+                        {/* <div>
                           <label htmlFor="password" className="sr-only">
                             Email
                           </label>
@@ -239,19 +239,25 @@ export default function HeroSection() {
                             required
                             className="block w-full rounded-md border-gray-300 shadow-sm focus:border-[#038270] focus:ring-[#038270] sm:text-sm"
                           />
-                        </div>
+                        </div> */}
 
                         <div>
-                          <button
+                          <a
+                            href="https://7hkdcfzbmr0.typeform.com/to/SGVF6cS6?utm_source=xxxxx&utm_medium=xxxxx&utm_campaign=xxxxx&utm_term=xxxxx&utm_content=xxxxx"
+                            className="flex w-full justify-center rounded-md border border-transparent bg-[#038270] py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-[#024324] focus:outline-none focus:ring-2 focus:ring-[#024324] focus:ring-offset-2 mb-3"
+                          >
+                            Start making recurring revenue
+                          </a>
+                          {/* <button
                             type="submit"
                             className="flex w-full justify-center rounded-md border border-transparent bg-[#038270] py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-[#024324] focus:outline-none focus:ring-2 focus:ring-[#024324] focus:ring-offset-2 mb-3"
                             onClick={() => setShowModal(true)}
                           >
                             Start making recurring revenue
                           </button>
-                          {showModal ? <ConfirmationModal /> : <></>}
+                          {showModal ? <ConfirmationModal /> : <></>} */}
                         </div>
-                      </form>
+                      {/* </form> */}
                     </div>
                   </div>
                   <div className="border-t-2 border-gray-200 bg-gray-50 px-4 py-6 sm:px-10">
