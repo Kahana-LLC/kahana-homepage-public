@@ -37,6 +37,7 @@ export default function Navbar() {
   const [isNavOpen, setIsNavOpen] = useState(false); // initiate isNavOpen state with false
 
   return (
+    <HeaderBanner />
     <div className="flex items-center justify-between border-b border-gray-400 py-8">
       {/* <a href="/">
         <img src="https://designbygio.it/images/logo.png" alt="logo" />
