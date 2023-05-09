@@ -35,7 +35,7 @@ export default function NavbarDup() {
   return (
     <>
       <HeaderBanner />
-      <div className="flex items-center justify-between border-b border-gray-400 py-8">
+      <div className="flex items-center justify-between border-b py-2 px-10">
       {/* <a href="/">
         <img src="https://designbygio.it/images/logo.png" alt="logo" />
       </a> */}
