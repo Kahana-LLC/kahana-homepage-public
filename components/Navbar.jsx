@@ -180,7 +180,7 @@ export default function Navbar() {
     </div>
     <>
   );
-}
+};
 
 {/* function Navbar() {
   return (
@@ -245,6 +245,6 @@ export default function Navbar() {
       </header>
     </>
   );
-}
+} */}
 
-export default Navbar; */}
+// export default Navbar;
