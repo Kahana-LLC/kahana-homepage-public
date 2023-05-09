@@ -20,7 +20,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Kahana - Get paid to share your best stuff</title>
+        <title>Kahana - Get paid for your best stuff</title>
         <meta
           name="Kahana"
           content="Kahana is the easiest way to turn your knowledge into subscription revenue. Sign up for free today!"
