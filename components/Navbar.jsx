@@ -77,7 +77,7 @@ function Navbar() {
           </div>
           {/* mobile menu */}
 
-          <div className="flex flex-nowrap justify-start space-x-2 py-4 lg:hidden">
+          {/* <div className="flex flex-nowrap justify-start space-x-2 py-4 lg:hidden">
             {navigation.map((link) => (
               <Link
                 href={link.href}
@@ -87,7 +87,36 @@ function Navbar() {
                 {link.name}
               </Link>
             ))}
+          </div> */}
+          <div className="navi">
+            <ul>
+              <li><a href="explore">Featured Hubs</a></li>
+              <li><a href="about">About</a></li>
+              <li><a href="pricing">Pricing</a></li>
+              <li><a href="https://blog.kahana.co">Blog</a></li>
+              <li><a href="solutions">Solutions</a></li>
+              <li><a href="https://7hkdcfzbmr0.typeform.com/to/ZYLHazEf?utm_source=xxxxx&utm_medium=xxxxx&utm_campaign=xxxxx&utm_term=xxxxx&utm_content=xxxxx">Request a demo</a></li>
+              <li><a href="https://app.kahana.co/login">Log in</a></li>
+            </ul>    
           </div>
+          <style jsx> {'
+              .navi{
+                  width: 100%;
+                  height: 50px;
+              }
+
+              .navi ul{
+                  display:flex;
+                  flex-wrap: nowrap;
+                  float: left;
+                  margin: 20 0px;
+                  padding: 0 25 px;
+              }
+              .navi ul li{
+                  list-style-type: none;
+                  padding-right: 10px;
+              }
+          '}</style>
         </nav>
       </header>
     </>
