@@ -16,6 +16,10 @@ const posts = [
     //datetime: '2020-03-16',
     imageUrl:
       'https://kahana-website-images.s3.us-east-2.amazonaws.com/On-Demand+Hub+Creation.webp',
+    buttonQuote:
+      'Request a quote',
+    buttonLink:
+      'https://7hkdcfzbmr0.typeform.com/to/K9srs4OE?utm_source=xxxxx&utm_medium=xxxxx&utm_campaign=xxxxx&utm_term=xxxxx&utm_content=xxxxx#hubspot_utk=xxxxx&hubspot_page_name=xxxxx&hubspot_page_url=xxxxx',
     //readingTime: '6 min',
     //author: {
       //name: 'Roel Aufderehar',
@@ -34,6 +38,10 @@ const posts = [
    //datetime: '2020-03-10',
     imageUrl:
       'https://kahana-website-images.s3.us-east-2.amazonaws.com/Custom+Development.webp',
+    buttonQuote:
+      'Let\'s chat',
+    buttonLink:
+      'https://7hkdcfzbmr0.typeform.com/to/ya2MITnT?utm_source=xxxxx&utm_medium=xxxxx&utm_campaign=xxxxx&utm_term=xxxxx&utm_content=xxxxx#hubspot_utk=xxxxx&hubspot_page_name=xxxxx&hubspot_page_url=xxxxx',
     //readingTime: '4 min',
     //author: {
       //name: 'Brenna Goyette',
@@ -52,6 +60,10 @@ const posts = [
     //datetime: '2020-02-12',
     imageUrl:
       'https://kahana-website-images.s3.us-east-2.amazonaws.com/Recurring+Revenue+Implementation.webp',
+    buttonQuote:
+      'Let\'s chat',
+    buttonLink:
+      'https://7hkdcfzbmr0.typeform.com/to/NvNSzKPE?utm_source=xxxxx&utm_medium=xxxxx&utm_campaign=xxxxx&utm_term=xxxxx&utm_content=xxxxx#hubspot_utk=xxxxx&hubspot_page_name=xxxxx&hubspot_page_url=xxxxx',
     //readingTime: '11 min',
     //author: {
       //name: 'Daniela Metz',
@@ -149,6 +161,14 @@ export default function Solutions() {
                         </div>
                       </div> 
                     </div>*/}
+                    </div>
+                    <div>
+                      <a
+                        href={post.buttonLink}
+                        className="flex w-full justify-center rounded-md border border-transparent bg-[#038270] py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-[#024324] focus:outline-none focus:ring-2 focus:ring-[#024324] focus:ring-offset-2 mb-3"
+                      >
+                          {post.buttonQuote}
+                      </a>
                     </div>
                   </div>
                 ))}
