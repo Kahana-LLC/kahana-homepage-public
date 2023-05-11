@@ -242,7 +242,7 @@ export default function HeroSection() {
                             className="block w-full rounded-md border-gray-300 shadow-sm focus:border-[#038270] focus:ring-[#038270] sm:text-sm"
                           />
                         </div> */}
-                        <div className="flex-shrink-0">
+                        <div className="flex-shrink-0 justify-content: center">
                           <Image
                             className="h-24 w-full justify-content: center object-scale-down"
                             src={flowerIcon}
