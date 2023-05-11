@@ -113,14 +113,14 @@ export default function Solutions() {
                             {post.category.name}
                           </a>
                         </p> */}
-                        <a href={post.href} className="mt-2 block">
+                        {/* <a href={post.href} className="mt-2 block"> */}
                           <p className="text-xl font-semibold text-gray-900">
                             {post.title}
                           </p>
                           <p className="mt-3 text-base text-gray-500">
                             {post.description}
                           </p>
-                        </a>
+                        {/*</a> */}
                       </div>
                       {/* <div className="mt-6 flex items-center">
                       <div className="flex-shrink-0">
