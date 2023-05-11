@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import React, { useState } from 'react';
+import Image from 'next/image';
+import flowerIcon from '../assets/images/flowerIcon.webp';
 
 //icons
 import { ChevronRightIcon } from '@heroicons/react/20/solid';
@@ -212,7 +214,7 @@ export default function HeroSection() {
                           />
                         </div> */}
 
-                        <div>
+                        {/* <div>
                           <label htmlFor="first-name" className="sr-only">
                             First name
                           </label>
@@ -238,6 +240,15 @@ export default function HeroSection() {
                             placeholder="Email"
                             required
                             className="block w-full rounded-md border-gray-300 shadow-sm focus:border-[#038270] focus:ring-[#038270] sm:text-sm"
+                          />
+                        </div> */}
+                        <div>
+                          <Image
+                            className="w-full justify-content: center"
+                            src={flowerIcon}
+                            alt=""
+                            priority
+                            {/* sizes="(min-width: 1024px) 67.8125rem, (min-width: 640px) 100vw, 45rem" */}
                           />
                         </div>
 
