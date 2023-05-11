@@ -248,7 +248,7 @@ export default function HeroSection() {
                             src={flowerIcon}
                             alt=""
                             priority
-                            {/* sizes="(min-width: 1024px) 67.8125rem, (min-width: 640px) 100vw, 45rem" */}
+                            sizes="(min-width: 1024px) 67.8125rem, (min-width: 640px) 100vw, 45rem"
                           />
                         </div>
 
