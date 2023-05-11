@@ -191,7 +191,7 @@ export default function HeroSection() {
                       </div> */}
                     </div>
 
-                    <div className="mt-6">
+                    <div className="mt-3">
                       {/* form starts  here */}
                       {/* <form
                         action="https://script.google.com/macros/s/AKfycbwl44LRVat8eGmhqXP3HQm1xktp5WQEDuIXsyZ5Sz0huUnVRTDGeNt5V61YIOfaUsf-/exec"
