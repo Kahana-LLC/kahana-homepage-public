@@ -179,7 +179,7 @@ export default function HeroSection() {
                       {/* </div> */}
                     </div>
 
-                    <div className="relative mt-3 ">
+                    <div className="relative mt-1 ">
                       <div
                         className="absolute inset-0 flex items-center"
                         aria-hidden="true"
@@ -191,7 +191,7 @@ export default function HeroSection() {
                       </div> */}
                     </div>
 
-                    <div className="mt-3">
+                    <div className="mt-2">
                       {/* form starts  here */}
                       {/* <form
                         action="https://script.google.com/macros/s/AKfycbwl44LRVat8eGmhqXP3HQm1xktp5WQEDuIXsyZ5Sz0huUnVRTDGeNt5V61YIOfaUsf-/exec"
@@ -242,7 +242,7 @@ export default function HeroSection() {
                             className="block w-full rounded-md border-gray-300 shadow-sm focus:border-[#038270] focus:ring-[#038270] sm:text-sm"
                           />
                         </div> */}
-                        <div className="flex-shrink-0 justify-content: center mb-8">
+                        <div className="flex-shrink-0 justify-content: center mb-6">
                           <Image
                             className="h-24 w-full justify-content: center object-scale-down"
                             src={flowerIcon}
