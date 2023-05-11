@@ -244,11 +244,11 @@ export default function HeroSection() {
                         </div> */}
                         <div>
                           <Image
-                            className="w-full justify-content: center"
+                            className="w-full justify-content: center object-scale-down"
                             src={flowerIcon}
                             alt=""
                             priority
-                            sizes="(min-width: 1024px) 67.8125rem, (min-width: 640px) 100vw, 45rem"
+                            sizes="(min-width: 512px) 67.8125rem, (min-width: 320px) 100vw, 45rem"
                           />
                         </div>
 
