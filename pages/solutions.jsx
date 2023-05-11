@@ -162,10 +162,10 @@ export default function Solutions() {
                       </div> 
                     </div>*/}
                     </div>
-                    <div class="flex justify-center">
+                    <div class="flex justify-center py-4 px-4">
                       <a
                         href={post.buttonLink}
-                        className="flex w-1/2 justify-center rounded-md border border-transparent bg-[#038270] py-6 px-6 text-sm font-medium text-white shadow-sm hover:bg-[#024324]"
+                        className="flex w-1/2 justify-center rounded-md border border-transparent bg-[#038270] py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-[#024324]"
                       >
                           {post.buttonQuote}
                       </a>
