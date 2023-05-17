@@ -213,7 +213,7 @@ const posts = [
     //date: 'Feb 12, 2020',
     //datetime: '2020-02-12',
     imageUrl:
-      'https://kahana-website-images.s3.us-east-2.amazonaws.com/joannaRajendranHeadshot.jpeg',
+      'https://kahana-website-images.s3.us-east-2.amazonaws.com/joannaRajendranHeadshot.png',
     //readingTime: '11 min',
     //author: {
       //name: 'Daniela Metz',
