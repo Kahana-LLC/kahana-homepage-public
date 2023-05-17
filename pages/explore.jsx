@@ -204,6 +204,24 @@ const posts = [
         //'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
     //},
   },
+  {
+    title: 'BEST.LIFE.EVER. the self-guided version',
+    href: 'https://app.kahana.co/hub/CWisLtwTnlvZh82pYrE8',
+    category: { name: 'Joanna Rajendran', href: 'https://www.joannarajendran.com/' },
+    description:
+      'How would it feel to stop REACTING to life & begin CREATING it with purpose, power & passion?  If you are ready to live the version of your life you have dreamed about- you’re in the right spot.  In BEST.LIFE.EVER you will play with new habits of happiness & success and experience transformative results at your own pace.',
+    //date: 'Feb 12, 2020',
+    //datetime: '2020-02-12',
+    imageUrl:
+      'https://kahana-website-images.s3.us-east-2.amazonaws.com/joannaRajendranHeadshot.jpeg',
+    //readingTime: '11 min',
+    //author: {
+      //name: 'Daniela Metz',
+      //href: '#',
+      //imageUrl:
+        //'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    //},
+  },
 ];
 //
 export default function Explore() {
