@@ -22,7 +22,7 @@ export default function Document() {
         />
         {/* End of hotjar script */}
 
-        {/* <!-- Google tag (gtag.js) --> */}
+        {/* <!-- Google tag (gtag.js) --> 
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-KQHFL9605P"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
@@ -30,7 +30,7 @@ export default function Document() {
             gtag('js', new Date());
 
             gtag('config', 'G-KQHFL9605P');
-        </script>
+        </script> */}
 
       </Head>
       <body>
