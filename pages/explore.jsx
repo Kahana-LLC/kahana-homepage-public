@@ -222,6 +222,24 @@ const posts = [
         //'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
     //},
   },
+  {
+    title: 'A More Affordable Way To Become A SWE',
+    href: 'https://app.kahana.co/hub/gGhFFLYlY5VppWIiCccX',
+    category: { name: 'Imaad Uddin', href: 'https://solo.to/imaaduddin' },
+    description:
+      'Ever since I was little, I always had an interest in tech. As I get older, my interest broadened into software engineering. I taught myself a lot these past few years and learned over time that my biggest passion is the ability to help others. With my Hubs, you\'ll find amazing tech, software engineering, and entrepreneurship information. I\'ll share everything I\'ve learned and my mistakes (even more important) to help you succeed in your field of interest.',
+    //date: 'Feb 12, 2020',
+    //datetime: '2020-02-12',
+    imageUrl:
+      'https://kahana-website-images.s3.us-east-2.amazonaws.com/joannaRajendranHeadshot.png',
+    //readingTime: '11 min',
+    //author: {
+      //name: 'Daniela Metz',
+      //href: '#',
+      //imageUrl:
+        //'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    //},
+  },
 ];
 //
 export default function Explore() {
