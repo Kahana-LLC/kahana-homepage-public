@@ -14,8 +14,8 @@
           content="Kahana is the easiest way to monetize your content and research. Transform knowledge and expertise into subscription revenue. Sign up for free today! "
         />
        </Head>
+       <NavbarDup />
         <div>
-          <NavbarDup />
           <style>{`
             h1 {
               font-size: 24px;
@@ -158,8 +158,8 @@
 <li><a href="https://blog.kahana.co/author/jonathan/">Author - Jonathan</a></li>
 <li><a href="https://blog.kahana.co/thoughts-on-the-state-of-the-consulting-industry/">Thoughts On The State Of The Consulting Industry</a></li>
           </ul>
-          <Footer />
         </div>
+        <Footer />
        </>
       );
 
