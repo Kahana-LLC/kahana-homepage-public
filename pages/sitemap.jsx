@@ -5,14 +5,15 @@
 
       import React from 'react';
 
-      const MySitemap = () => (
+    const MySitemap = () => (
+      <>
        <Head>
         <title>Kahana - Get paid for your best stuff</title>
         <meta
           name="Kahana"
           content="Kahana is the easiest way to monetize your content and research. Transform knowledge and expertise into subscription revenue. Sign up for free today! "
         />
-      </Head>
+       </Head>
         <div>
           <div style={{ zIndex: '1' }} className="sticky top-0">
             <NavbarDup />
@@ -161,6 +162,7 @@
           </ul>
           <Footer />
         </div>
+       </>
       );
 
       export default MySitemap;
