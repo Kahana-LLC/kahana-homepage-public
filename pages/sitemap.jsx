@@ -6,23 +6,34 @@ const MySitemap = () => {
     color: '#333',
     fontSize: '14px',
     lineHeight: '1.5',
+    maxWidth: '800px',
+    margin: '0 auto',
+    padding: '20px',
+  };
+
+  const headingStyle = {
+    fontSize: '28px',
+    fontWeight: 'bold',
+    marginBottom: '10px',
+  };
+
+  const listStyle = {
+    listStyle: 'none',
+    padding: '0',
+    margin: '0',
+  };
+
+  const listItemStyle = {
+    marginBottom: '5px',
   };
 
   return (
     <div style={style}>
       <style>{`
-        h1 {
-          font-size: 28px;
-          font-weight: bold;
-          margin-bottom: 10px;
-        }
-        ul {
-          list-style: none;
-          padding: 0;
-          margin: 0;
-        }
-        ul li {
-          margin-bottom: 5px;
+        @media (max-width: 600px) {
+          div {
+            padding: 10px;
+          }
         }
       `}</style>
       <div dangerouslySetInnerHTML={{ __html: `
