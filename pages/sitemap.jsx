@@ -1,8 +1,22 @@
+      import Head from 'next/head';
+
+      import Footer from '../components/Footer';
+      import NavbarDup from '../components/NavbarDup';
 
       import React from 'react';
 
       const MySitemap = () => (
+       <Head>
+        <title>Kahana - Get paid for your best stuff</title>
+        <meta
+          name="Kahana"
+          content="Kahana is the easiest way to monetize your content and research. Transform knowledge and expertise into subscription revenue. Sign up for free today! "
+        />
+      </Head>
         <div>
+          <div style={{ zIndex: '1' }} className="sticky top-0">
+            <NavbarDup />
+          </div>
           <style>{`
             h1 {
               font-size: 24px;
@@ -145,6 +159,7 @@
 <li><a href="https://blog.kahana.co/author/jonathan/">Author - Jonathan</a></li>
 <li><a href="https://blog.kahana.co/thoughts-on-the-state-of-the-consulting-industry/">Thoughts On The State Of The Consulting Industry</a></li>
           </ul>
+          <Footer />
         </div>
       );
 
