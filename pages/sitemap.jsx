@@ -5,8 +5,7 @@
 
       import React from 'react';
 
-      const Sitemap = () => {
-       return (
+      const Sitemap = {
         <div>
           <style>{`
             h1 {
@@ -149,7 +148,6 @@
 <li><a href="https://blog.kahana.co/thoughts-on-the-state-of-the-consulting-industry/">Thoughts On The State Of The Consulting Industry</a></li>
           </ul>
         </div>
-      );
      };
 
     export default function MySitemap() {
