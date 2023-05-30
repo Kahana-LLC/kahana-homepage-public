@@ -1,4 +1,7 @@
-<>
+import React from 'react';
+
+const MySitemap = () => (
+  <div dangerouslySetInnerHTML={{ __html: `
     <!DOCTYPE html>
     <html>
     <head>
@@ -47,4 +50,7 @@
         </ul>
       </div>
     </body>
-    </html></>
+    </html>` }} />
+);
+
+export default MySitemap;
