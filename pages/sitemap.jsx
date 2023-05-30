@@ -1,7 +1,9 @@
 import React from 'react';
 
 const MySitemap = () => (
-  <div dangerouslySetInnerHTML={{ __html: `
+  <div style={{ fontFamily: 'Helvetica, Arial, sans-serif', color: '#333' }}>
+    <h1 style={{ marginBottom: '10px' }}>Sitemap</h1>
+    <div dangerouslySetInnerHTML={{ __html: `
     <!DOCTYPE html>
     <html>
     <head>
@@ -51,6 +53,7 @@ const MySitemap = () => (
       </div>
     </body>
     </html>` }} />
+  </div>
 );
 
 export default MySitemap;
