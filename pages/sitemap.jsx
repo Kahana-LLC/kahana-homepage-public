@@ -7,7 +7,7 @@
             h1 {
               font-size: 24px;
               font-weight: bold;
-              margin: 20px 0;
+              margin: 20px 0 10px;
               padding: 10px;
             }
           
@@ -23,7 +23,6 @@
               padding-left: 30px;
               margin-bottom: 20px;
               padding-right: 10px;
-              margin-left: 20px;
             }
           
             li {
@@ -141,8 +140,9 @@
 <li><a href="https://blog.kahana.co/author/jonathan/">Author - Jonathan</a></li>
 <li><a href="https://blog.kahana.co/thoughts-on-the-state-of-the-consulting-industry/">Thoughts On The State Of The Consulting Industry</a></li>
           </ul>
+
+          <div style="padding-bottom: 20px;"></div>
         </div>
       );
 
       export default MySitemap;
-    
