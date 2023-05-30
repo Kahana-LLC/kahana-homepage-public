@@ -15,9 +15,7 @@
         />
        </Head>
         <div>
-          <div style={{ zIndex: '1' }} className="sticky top-0">
-            <NavbarDup />
-          </div>
+          <NavbarDup />
           <style>{`
             h1 {
               font-size: 24px;
