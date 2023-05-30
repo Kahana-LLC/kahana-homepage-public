@@ -4,7 +4,8 @@ const MySitemap = () => (
   <div style={{ fontFamily: 'Arial, sans-serif', color: '#333', fontSize: '14px', lineHeight: '1.5' }}>
     <style>{`
       h1 {
-        font-size: 24px;
+        font-size: 28px;
+        font-weight: bold;
         margin-bottom: 10px;
       }
       ul {
@@ -16,7 +17,6 @@ const MySitemap = () => (
         margin-bottom: 5px;
       }
     `}</style>
-    <h1>Sitemap</h1>
     <div dangerouslySetInnerHTML={{ __html: `
     <!DOCTYPE html>
     <html>
@@ -70,4 +70,4 @@ const MySitemap = () => (
   </div>
 );
 
-export default MySitemap;
+export default MySi
