@@ -14,7 +14,7 @@
             h2 {
               font-size: 18px;
               font-weight: bold;
-              margin: 10px 0;
+              margin: 20px 0 10px;
               padding: 10px;
             }
           
@@ -37,6 +37,10 @@
           
             a:hover {
               text-decoration: underline;
+            }
+
+            .blog-section {
+              margin-bottom: 30px;
             }
           `}</style>
 
@@ -80,7 +84,7 @@
 <li><a href="https://app.kahana.co/hub/ohTF2nOQTEWCW7PIsSYX">Enter Text</a></li>
           </ul>
 
-          <h2>Blog</h2>
+          <h2 class="blog-section">Blog</h2>
           <ul>
             <li><a href="https://blog.kahana.co/">Blog Homepage</a></li>
 <li><a href="https://blog.kahana.co/hub-inspiration/">Hub Inspiration</a></li>
