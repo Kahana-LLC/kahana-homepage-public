@@ -138,7 +138,6 @@ export default function Footer() {
           <p className="text-base text-gray-400 xl:text-center">
             &copy; 2023 Kahana Group Inc. All rights reserved.   
           </p>
-          <a href='/explore'> Sitemap </a>
         </div>
       </div>
     </footer>
