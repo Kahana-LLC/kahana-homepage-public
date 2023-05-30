@@ -140,4 +140,10 @@
 <li><a href="https://blog.kahana.co/tag/company/">https://blog.kahana.co/tag/company/</a></li>
 <li><a href="https://blog.kahana.co/charging-for-hubs/">https://blog.kahana.co/charging-for-hubs/</a></li>
 <li><a href="https://blog.kahana.co/kahana-vs-teachable/">https://blog.kahana.co/kahana-vs-teachable/</a></li>
-<li><a href="https://blog.kahana.co/author/jonathan/">https://blog.
+<li><a href="https://blog.kahana.co/author/jonathan/">https://blog.kahana.co/author/jonathan/</a></li>
+<li><a href="https://blog.kahana.co/thoughts-on-the-state-of-the-consulting-industry/">https://blog.kahana.co/thoughts-on-the-state-of-the-consulting-industry/</a></li>
+          </ul>
+        </div>
+      );
+
+      export default MySitemap;
