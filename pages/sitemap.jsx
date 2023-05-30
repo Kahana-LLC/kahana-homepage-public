@@ -1,23 +1,31 @@
 import React from 'react';
 
-const MySitemap = () => (
-  <div style={{ fontFamily: 'Arial, sans-serif', color: '#333', fontSize: '14px', lineHeight: '1.5' }}>
-    <style>{`
-      h1 {
-        font-size: 28px;
-        font-weight: bold;
-        margin-bottom: 10px;
-      }
-      ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-      }
-      ul li {
-        margin-bottom: 5px;
-      }
-    `}</style>
-    <div dangerouslySetInnerHTML={{ __html: `
+const MySitemap = () => {
+  const style = {
+    fontFamily: 'Arial, sans-serif',
+    color: '#333',
+    fontSize: '14px',
+    lineHeight: '1.5',
+  };
+
+  return (
+    <div style={style}>
+      <style>{`
+        h1 {
+          font-size: 28px;
+          font-weight: bold;
+          margin-bottom: 10px;
+        }
+        ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+        }
+        ul li {
+          margin-bottom: 5px;
+        }
+      `}</style>
+      <div dangerouslySetInnerHTML={{ __html: `
     <!DOCTYPE html>
     <html>
     <head>
@@ -67,7 +75,8 @@ const MySitemap = () => (
       </div>
     </body>
     </html>` }} />
-  </div>
-);
+    </div>
+  );
+};
 
-export default MySi
+export default MySitemap;
