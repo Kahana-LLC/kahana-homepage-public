@@ -10,6 +10,7 @@
               margin: 20px 0;
               padding-left: 10px;
               padding-right: 10px;
+              padding-bottom: 10px;
             }
           
             h2 {
@@ -23,22 +24,17 @@
             ul {
               list-style-type: disc;
               padding-left: 30px;
-              margin-bottom: 20px;
+              margin-bottom: 10px;
               padding-right: 10px;
             }
           
             li {
               margin-bottom: 5px;
-              padding-left: 5px;
             }
           
             a {
               color: #0366d6;
               text-decoration: none;
-              word-break: break-all;
-              display: block;
-              padding-left: 5px;
-              padding-right: 5px;
             }
           
             a:hover {
@@ -60,7 +56,7 @@
 
           <h2>About Kahana</h2>
           <ul>
-            <li><a href="https://kahana.co/"></a></li>
+            <li><a href="https://kahana.co/">Homepage</a></li>
 <li><a href="https://kahana.co/about">About</a></li>
 <li><a href="https://kahana.co/solutions">Solutions</a></li>
 <li><a href="https://kahana.co/privacy-policy">Privacy Policy</a></li>
@@ -88,64 +84,64 @@
 
           <h2>Blog</h2>
           <ul>
-            <li><a href="https://blog.kahana.co/"></a></li>
-<li><a href="https://blog.kahana.co/hub-inspiration/">Hub Inspiration/</a></li>
-<li><a href="https://blog.kahana.co/creator-platforms/">Creator Platforms/</a></li>
-<li><a href="https://blog.kahana.co/tag/recurring-revenue/">Recurring Revenue/</a></li>
-<li><a href="https://blog.kahana.co/signin/">Signin/</a></li>
-<li><a href="https://blog.kahana.co/signup/">Signup/</a></li>
-<li><a href="https://blog.kahana.co/connect-stripe/">Connect Stripe/</a></li>
-<li><a href="https://blog.kahana.co/hub-pricing/">Hub Pricing/</a></li>
-<li><a href="https://blog.kahana.co/add-hub-content/">Add Hub Content/</a></li>
-<li><a href="https://blog.kahana.co/author/kahanateam/">Author/Kahanateam/</a></li>
-<li><a href="https://blog.kahana.co/eden-gold/">Eden Gold/</a></li>
-<li><a href="https://blog.kahana.co/monetization-platforms/">Monetization Platforms/</a></li>
-<li><a href="https://blog.kahana.co/tag/software/">Software/</a></li>
-<li><a href="https://blog.kahana.co/tag/kahana-tutorials/">Kahana Tutorials/</a></li>
-<li><a href="https://blog.kahana.co/update-hub-info/">Update Hub Info/</a></li>
-<li><a href="https://blog.kahana.co/tag/podcast/">Podcast/</a></li>
-<li><a href="https://blog.kahana.co/tag/sales-and-marketing/">Sales And Marketing/</a></li>
-<li><a href="https://blog.kahana.co/kahana-vs-gumroad/">Kahana Vs Gumroad/</a></li>
-<li><a href="https://blog.kahana.co/tag/experts/">Experts/</a></li>
-<li><a href="https://blog.kahana.co/kahana-vs-stan/">Kahana Vs Stan/</a></li>
-<li><a href="https://blog.kahana.co/creating-templates-with-kahana/">Creating Templates With Kahana/</a></li>
-<li><a href="https://blog.kahana.co/supercharge-marketing/">Supercharge Marketing/</a></li>
-<li><a href="https://blog.kahana.co/tag/creators/">Creators/</a></li>
-<li><a href="https://blog.kahana.co/tag/inspiration/">Inspiration/</a></li>
-<li><a href="https://blog.kahana.co/update-profile/">Update Profile/</a></li>
-<li><a href="https://blog.kahana.co/kelsey-vetter-pinterest-success-session/">Kelsey Vetter Pinterest Success Session/</a></li>
-<li><a href="https://blog.kahana.co/email-templates-for-creators/">Email Templates For Creators/</a></li>
-<li><a href="https://blog.kahana.co/tag/creator-economy/">Creator Economy/</a></li>
-<li><a href="https://blog.kahana.co/track-sales/">Track Sales/</a></li>
-<li><a href="https://blog.kahana.co/tag/solopreneur/">Solopreneur/</a></li>
-<li><a href="https://blog.kahana.co/carl-nordgren/">Carl Nordgren/</a></li>
-<li><a href="https://blog.kahana.co/organize-research/">Organize Research/</a></li>
-<li><a href="https://blog.kahana.co/joanna-rajendran-best-life-ever-self-guided-course/">Joanna Rajendran Best Life Ever Self Guided Course/</a></li>
-<li><a href="https://blog.kahana.co/join-the-creator-economy/">Join The Creator Economy/</a></li>
-<li><a href="https://blog.kahana.co/kahana-vs-discord/">Kahana Vs Discord/</a></li>
-<li><a href="https://blog.kahana.co/kahana-vs-thinkific/">Kahana Vs Thinkific/</a></li>
-<li><a href="https://blog.kahana.co/kahana-supported-devices/">Kahana Supported Devices/</a></li>
-<li><a href="https://blog.kahana.co/side-hustles/">Side Hustles/</a></li>
-<li><a href="https://blog.kahana.co/kahana-vs-onlyfans/">Kahana Vs Onlyfans/</a></li>
-<li><a href="https://blog.kahana.co/kate-instates-tiktok-trends/">Kate Instates Tiktok Trends/</a></li>
-<li><a href="https://blog.kahana.co/tag/knowledge-economy/">Knowledge Economy/</a></li>
-<li><a href="https://blog.kahana.co/tag/templates/">Templates/</a></li>
-<li><a href="https://blog.kahana.co/how-to-monetize-a-hub/">How To Monetize A Hub/</a></li>
-<li><a href="https://blog.kahana.co/tag/technical/">Technical/</a></li>
-<li><a href="https://blog.kahana.co/kahana-vs-patreon/">Kahana Vs Patreon/</a></li>
-<li><a href="https://blog.kahana.co/kahana-vs-kartra/">Kahana Vs Kartra/</a></li>
-<li><a href="https://blog.kahana.co/tag/storytelling/">Storytelling/</a></li>
-<li><a href="https://blog.kahana.co/storytelling-in-business/">Storytelling In Business/</a></li>
-<li><a href="https://blog.kahana.co/kahana-vs-coursera/">Kahana Vs Coursera/</a></li>
-<li><a href="https://blog.kahana.co/kahana-vs-kajabi/">Kahana Vs Kajabi/</a></li>
-<li><a href="https://blog.kahana.co/tag/knowledge-management/">Knowledge Management/</a></li>
-<li><a href="https://blog.kahana.co/content-research/">Content Research/</a></li>
-<li><a href="https://blog.kahana.co/tag/market-research/">Market Research/</a></li>
-<li><a href="https://blog.kahana.co/tag/company/">Company/</a></li>
-<li><a href="https://blog.kahana.co/charging-for-hubs/">Charging For Hubs/</a></li>
-<li><a href="https://blog.kahana.co/kahana-vs-teachable/">Kahana Vs Teachable/</a></li>
-<li><a href="https://blog.kahana.co/author/jonathan/">Author/Jonathan/</a></li>
-<li><a href="https://blog.kahana.co/thoughts-on-the-state-of-the-consulting-industry/">Thoughts On The State Of The Consulting Industry/</a></li>
+            <li><a href="https://blog.kahana.co/">Blog Homepage</a></li>
+<li><a href="https://blog.kahana.co/hub-inspiration/">Hub Inspiration</a></li>
+<li><a href="https://blog.kahana.co/creator-platforms/">Creator Platforms</a></li>
+<li><a href="https://blog.kahana.co/tag/recurring-revenue/">Posts about Recurring Revenue/</a></li>
+<li><a href="https://blog.kahana.co/signin/">Signin</a></li>
+<li><a href="https://blog.kahana.co/signup/">Signup</a></li>
+<li><a href="https://blog.kahana.co/connect-stripe/">Connect Stripe</a></li>
+<li><a href="https://blog.kahana.co/hub-pricing/">Hub Pricing</a></li>
+<li><a href="https://blog.kahana.co/add-hub-content/">Add Hub Content</a></li>
+<li><a href="https://blog.kahana.co/author/kahanateam/">Author - Kahanateam</a></li>
+<li><a href="https://blog.kahana.co/eden-gold/">Eden Gold</a></li>
+<li><a href="https://blog.kahana.co/monetization-platforms/">Monetization Platforms</a></li>
+<li><a href="https://blog.kahana.co/tag/software/">Posts about Software/</a></li>
+<li><a href="https://blog.kahana.co/tag/kahana-tutorials/">Posts about Kahana Tutorials/</a></li>
+<li><a href="https://blog.kahana.co/update-hub-info/">Update Hub Info</a></li>
+<li><a href="https://blog.kahana.co/tag/podcast/">Posts about Podcast/</a></li>
+<li><a href="https://blog.kahana.co/tag/sales-and-marketing/">Posts about Sales And Marketing/</a></li>
+<li><a href="https://blog.kahana.co/kahana-vs-gumroad/">Kahana Vs Gumroad</a></li>
+<li><a href="https://blog.kahana.co/tag/experts/">Posts about Experts/</a></li>
+<li><a href="https://blog.kahana.co/kahana-vs-stan/">Kahana Vs Stan</a></li>
+<li><a href="https://blog.kahana.co/creating-templates-with-kahana/">Creating Templates With Kahana</a></li>
+<li><a href="https://blog.kahana.co/supercharge-marketing/">Supercharge Marketing</a></li>
+<li><a href="https://blog.kahana.co/tag/creators/">Posts about Creators/</a></li>
+<li><a href="https://blog.kahana.co/tag/inspiration/">Posts about Inspiration/</a></li>
+<li><a href="https://blog.kahana.co/update-profile/">Update Profile</a></li>
+<li><a href="https://blog.kahana.co/kelsey-vetter-pinterest-success-session/">Kelsey Vetter Pinterest Success Session</a></li>
+<li><a href="https://blog.kahana.co/email-templates-for-creators/">Email Templates For Creators</a></li>
+<li><a href="https://blog.kahana.co/tag/creator-economy/">Posts about Creator Economy/</a></li>
+<li><a href="https://blog.kahana.co/track-sales/">Track Sales</a></li>
+<li><a href="https://blog.kahana.co/tag/solopreneur/">Posts about Solopreneur/</a></li>
+<li><a href="https://blog.kahana.co/carl-nordgren/">Carl Nordgren</a></li>
+<li><a href="https://blog.kahana.co/organize-research/">Organize Research</a></li>
+<li><a href="https://blog.kahana.co/joanna-rajendran-best-life-ever-self-guided-course/">Joanna Rajendran Best Life Ever Self Guided Course</a></li>
+<li><a href="https://blog.kahana.co/join-the-creator-economy/">Join The Creator Economy</a></li>
+<li><a href="https://blog.kahana.co/kahana-vs-discord/">Kahana Vs Discord</a></li>
+<li><a href="https://blog.kahana.co/kahana-vs-thinkific/">Kahana Vs Thinkific</a></li>
+<li><a href="https://blog.kahana.co/kahana-supported-devices/">Kahana Supported Devices</a></li>
+<li><a href="https://blog.kahana.co/side-hustles/">Side Hustles</a></li>
+<li><a href="https://blog.kahana.co/kahana-vs-onlyfans/">Kahana Vs Onlyfans</a></li>
+<li><a href="https://blog.kahana.co/kate-instates-tiktok-trends/">Kate Instates Tiktok Trends</a></li>
+<li><a href="https://blog.kahana.co/tag/knowledge-economy/">Posts about Knowledge Economy/</a></li>
+<li><a href="https://blog.kahana.co/tag/templates/">Posts about Templates/</a></li>
+<li><a href="https://blog.kahana.co/how-to-monetize-a-hub/">How To Monetize A Hub</a></li>
+<li><a href="https://blog.kahana.co/tag/technical/">Posts about Technical/</a></li>
+<li><a href="https://blog.kahana.co/kahana-vs-patreon/">Kahana Vs Patreon</a></li>
+<li><a href="https://blog.kahana.co/kahana-vs-kartra/">Kahana Vs Kartra</a></li>
+<li><a href="https://blog.kahana.co/tag/storytelling/">Posts about Storytelling/</a></li>
+<li><a href="https://blog.kahana.co/storytelling-in-business/">Storytelling In Business</a></li>
+<li><a href="https://blog.kahana.co/kahana-vs-coursera/">Kahana Vs Coursera</a></li>
+<li><a href="https://blog.kahana.co/kahana-vs-kajabi/">Kahana Vs Kajabi</a></li>
+<li><a href="https://blog.kahana.co/tag/knowledge-management/">Posts about Knowledge Management/</a></li>
+<li><a href="https://blog.kahana.co/content-research/">Content Research</a></li>
+<li><a href="https://blog.kahana.co/tag/market-research/">Posts about Market Research/</a></li>
+<li><a href="https://blog.kahana.co/tag/company/">Posts about Company/</a></li>
+<li><a href="https://blog.kahana.co/charging-for-hubs/">Charging For Hubs</a></li>
+<li><a href="https://blog.kahana.co/kahana-vs-teachable/">Kahana Vs Teachable</a></li>
+<li><a href="https://blog.kahana.co/author/jonathan/">Author - Jonathan</a></li>
+<li><a href="https://blog.kahana.co/thoughts-on-the-state-of-the-consulting-industry/">Thoughts On The State Of The Consulting Industry</a></li>
           </ul>
         </div>
       );
