@@ -17,12 +17,13 @@
             }
           
             ul {
-              list-style-type: none;
-              padding: 0;
+              list-style-type: disc;
+              padding-left: 20px;
             }
           
             li {
               margin-bottom: 5px;
+              padding-left: 10px;
             }
           
             a {
@@ -39,14 +40,23 @@
 
           <h2>Create Kahana Account</h2>
           <ul>
-            <li><a href="https://blog.kahana.co/signup/">https://blog.kahana.co/signup/</a></li>
-<li><a href="https://app.kahana.co/signup/?utm_source=blog">https://app.kahana.co/signup/?utm_source=blog</a></li>
+            
           </ul>
 
           <h2>Kahana Login</h2>
           <ul>
             <li><a href="https://app.kahana.co/login">https://app.kahana.co/login</a></li>
-<li><a href="https://app.kahana.co/login/?utm_source=blog">https://app.kahana.co/login/?utm_source=blog</a></li>
+          </ul>
+
+          <h2>About Kahana</h2>
+          <ul>
+            <li><a href="https://kahana.co/">https://kahana.co/</a></li>
+<li><a href="https://kahana.co/about">https://kahana.co/about</a></li>
+<li><a href="https://kahana.co/solutions">https://kahana.co/solutions</a></li>
+<li><a href="https://kahana.co/privacy-policy">https://kahana.co/privacy-policy</a></li>
+<li><a href="https://kahana.co/explore">https://kahana.co/explore</a></li>
+<li><a href="https://kahana.co/pricing">https://kahana.co/pricing</a></li>
+<li><a href="https://kahana.co/terms-and-conditions">https://kahana.co/terms-and-conditions</a></li>
           </ul>
 
           <h2>Hubs</h2>
@@ -54,12 +64,9 @@
             <li><a href="https://app.kahana.co/hub/nHxv8vCZBv6i0bVPunyp">https://app.kahana.co/hub/nHxv8vCZBv6i0bVPunyp</a></li>
 <li><a href="https://app.kahana.co/hub/2tXld437NBOOjOrwpjQm">https://app.kahana.co/hub/2tXld437NBOOjOrwpjQm</a></li>
 <li><a href="https://app.kahana.co/hub/tHwAYvYPzqVwGPGzh10k">https://app.kahana.co/hub/tHwAYvYPzqVwGPGzh10k</a></li>
-<li><a href="https://blog.kahana.co/hub-inspiration/">https://blog.kahana.co/hub-inspiration/</a></li>
 <li><a href="https://app.kahana.co/hub/2svUpfVnrxHFJHMn6UIG">https://app.kahana.co/hub/2svUpfVnrxHFJHMn6UIG</a></li>
 <li><a href="https://app.kahana.co/hub/2bXcGh2ROEvMAEdmUhOX">https://app.kahana.co/hub/2bXcGh2ROEvMAEdmUhOX</a></li>
-<li><a href="https://blog.kahana.co/hub-pricing/">https://blog.kahana.co/hub-pricing/</a></li>
 <li><a href="https://app.kahana.co/hub/VarpGpuDHdukrW4IG4Ki">https://app.kahana.co/hub/VarpGpuDHdukrW4IG4Ki</a></li>
-<li><a href="https://blog.kahana.co/add-hub-content/">https://blog.kahana.co/add-hub-content/</a></li>
 <li><a href="https://app.kahana.co/hub/0xoAwd6Uq7KdKO0pdQ4j">https://app.kahana.co/hub/0xoAwd6Uq7KdKO0pdQ4j</a></li>
 <li><a href="https://app.kahana.co/hub/PY1KHuxIWoJ7fB7930ZF">https://app.kahana.co/hub/PY1KHuxIWoJ7fB7930ZF</a></li>
 <li><a href="https://app.kahana.co/hub/CWisLtwTnlvZh82pYrE8">https://app.kahana.co/hub/CWisLtwTnlvZh82pYrE8</a></li>
@@ -67,24 +74,25 @@
 <li><a href="https://app.kahana.co/hub/u1ln3CfdaZTUGyb8pSK2">https://app.kahana.co/hub/u1ln3CfdaZTUGyb8pSK2</a></li>
 <li><a href="https://app.kahana.co/hub/gGhFFLYlY5VppWIiCccX">https://app.kahana.co/hub/gGhFFLYlY5VppWIiCccX</a></li>
 <li><a href="https://app.kahana.co/hub/ohTF2nOQTEWCW7PIsSYX">https://app.kahana.co/hub/ohTF2nOQTEWCW7PIsSYX</a></li>
-<li><a href="https://blog.kahana.co/update-hub-info/">https://blog.kahana.co/update-hub-info/</a></li>
-<li><a href="https://blog.kahana.co/how-to-monetize-a-hub/">https://blog.kahana.co/how-to-monetize-a-hub/</a></li>
-<li><a href="https://blog.kahana.co/charging-for-hubs/">https://blog.kahana.co/charging-for-hubs/</a></li>
           </ul>
 
           <h2>Blog</h2>
           <ul>
             <li><a href="https://blog.kahana.co/">https://blog.kahana.co/</a></li>
-<li><a href="https://kahana.co/?utm_source=blog">https://kahana.co/?utm_source=blog</a></li>
+<li><a href="https://blog.kahana.co/hub-inspiration/">https://blog.kahana.co/hub-inspiration/</a></li>
 <li><a href="https://blog.kahana.co/creator-platforms/">https://blog.kahana.co/creator-platforms/</a></li>
 <li><a href="https://blog.kahana.co/tag/recurring-revenue/">https://blog.kahana.co/tag/recurring-revenue/</a></li>
 <li><a href="https://blog.kahana.co/signin/">https://blog.kahana.co/signin/</a></li>
+<li><a href="https://blog.kahana.co/signup/">https://blog.kahana.co/signup/</a></li>
 <li><a href="https://blog.kahana.co/connect-stripe/">https://blog.kahana.co/connect-stripe/</a></li>
+<li><a href="https://blog.kahana.co/hub-pricing/">https://blog.kahana.co/hub-pricing/</a></li>
+<li><a href="https://blog.kahana.co/add-hub-content/">https://blog.kahana.co/add-hub-content/</a></li>
 <li><a href="https://blog.kahana.co/author/kahanateam/">https://blog.kahana.co/author/kahanateam/</a></li>
 <li><a href="https://blog.kahana.co/eden-gold/">https://blog.kahana.co/eden-gold/</a></li>
 <li><a href="https://blog.kahana.co/monetization-platforms/">https://blog.kahana.co/monetization-platforms/</a></li>
 <li><a href="https://blog.kahana.co/tag/software/">https://blog.kahana.co/tag/software/</a></li>
 <li><a href="https://blog.kahana.co/tag/kahana-tutorials/">https://blog.kahana.co/tag/kahana-tutorials/</a></li>
+<li><a href="https://blog.kahana.co/update-hub-info/">https://blog.kahana.co/update-hub-info/</a></li>
 <li><a href="https://blog.kahana.co/tag/podcast/">https://blog.kahana.co/tag/podcast/</a></li>
 <li><a href="https://blog.kahana.co/tag/sales-and-marketing/">https://blog.kahana.co/tag/sales-and-marketing/</a></li>
 <li><a href="https://blog.kahana.co/kahana-vs-gumroad/">https://blog.kahana.co/kahana-vs-gumroad/</a></li>
@@ -112,6 +120,7 @@
 <li><a href="https://blog.kahana.co/kate-instates-tiktok-trends/">https://blog.kahana.co/kate-instates-tiktok-trends/</a></li>
 <li><a href="https://blog.kahana.co/tag/knowledge-economy/">https://blog.kahana.co/tag/knowledge-economy/</a></li>
 <li><a href="https://blog.kahana.co/tag/templates/">https://blog.kahana.co/tag/templates/</a></li>
+<li><a href="https://blog.kahana.co/how-to-monetize-a-hub/">https://blog.kahana.co/how-to-monetize-a-hub/</a></li>
 <li><a href="https://blog.kahana.co/tag/technical/">https://blog.kahana.co/tag/technical/</a></li>
 <li><a href="https://blog.kahana.co/kahana-vs-patreon/">https://blog.kahana.co/kahana-vs-patreon/</a></li>
 <li><a href="https://blog.kahana.co/kahana-vs-kartra/">https://blog.kahana.co/kahana-vs-kartra/</a></li>
@@ -123,20 +132,10 @@
 <li><a href="https://blog.kahana.co/content-research/">https://blog.kahana.co/content-research/</a></li>
 <li><a href="https://blog.kahana.co/tag/market-research/">https://blog.kahana.co/tag/market-research/</a></li>
 <li><a href="https://blog.kahana.co/tag/company/">https://blog.kahana.co/tag/company/</a></li>
+<li><a href="https://blog.kahana.co/charging-for-hubs/">https://blog.kahana.co/charging-for-hubs/</a></li>
 <li><a href="https://blog.kahana.co/kahana-vs-teachable/">https://blog.kahana.co/kahana-vs-teachable/</a></li>
 <li><a href="https://blog.kahana.co/author/jonathan/">https://blog.kahana.co/author/jonathan/</a></li>
 <li><a href="https://blog.kahana.co/thoughts-on-the-state-of-the-consulting-industry/">https://blog.kahana.co/thoughts-on-the-state-of-the-consulting-industry/</a></li>
-          </ul>
-
-          <h2>About Kahana</h2>
-          <ul>
-            <li><a href="https://kahana.co/">https://kahana.co/</a></li>
-<li><a href="https://kahana.co/about">https://kahana.co/about</a></li>
-<li><a href="https://kahana.co/solutions">https://kahana.co/solutions</a></li>
-<li><a href="https://kahana.co/privacy-policy">https://kahana.co/privacy-policy</a></li>
-<li><a href="https://kahana.co/explore">https://kahana.co/explore</a></li>
-<li><a href="https://kahana.co/pricing">https://kahana.co/pricing</a></li>
-<li><a href="https://kahana.co/terms-and-conditions">https://kahana.co/terms-and-conditions</a></li>
           </ul>
         </div>
       );
