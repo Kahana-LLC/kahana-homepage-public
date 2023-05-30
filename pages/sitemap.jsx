@@ -7,14 +7,14 @@
             h1 {
               font-size: 24px;
               font-weight: bold;
-              margin: 20px 0;
+              margin: 20px 20px;
               padding: 10px;
             }
           
             h2 {
               font-size: 18px;
               font-weight: bold;
-              margin: 10px 0;
+              margin: 10px 20px;
               padding: 10px;
             }
           
@@ -37,6 +37,10 @@
           
             a:hover {
               text-decoration: underline;
+            }
+
+            .blog-links {
+              margin-bottom: 30px;
             }
           `}</style>
 
@@ -81,7 +85,7 @@
           </ul>
 
           <h2>Blog</h2>
-          <ul>
+          <ul class="blog-links">
             <li><a href="https://blog.kahana.co/">Blog Homepage</a></li>
 <li><a href="https://blog.kahana.co/hub-inspiration/">Hub Inspiration</a></li>
 <li><a href="https://blog.kahana.co/creator-platforms/">Creator Platforms</a></li>
