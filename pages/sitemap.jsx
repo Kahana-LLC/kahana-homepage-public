@@ -8,27 +8,33 @@
               font-size: 24px;
               font-weight: bold;
               margin: 20px 0;
+              padding-left: 10px;
             }
           
             h2 {
               font-size: 18px;
               font-weight: bold;
               margin: 10px 0;
+              padding-left: 10px;
             }
           
             ul {
               list-style-type: disc;
-              padding-left: 20px;
+              padding-left: 30px;
+              margin-bottom: 20px;
             }
           
             li {
               margin-bottom: 5px;
-              padding-left: 10px;
+              padding-left: 5px;
             }
           
             a {
               color: #0366d6;
               text-decoration: none;
+              word-break: break-all;
+              display: block;
+              padding-left: 5px;
             }
           
             a:hover {
@@ -40,7 +46,7 @@
 
           <h2>Create Kahana Account</h2>
           <ul>
-            
+            <li><a href="https://app.kahana.co/signup">https://app.kahana.co/signup</a></li>
           </ul>
 
           <h2>Kahana Login</h2>
@@ -134,11 +140,4 @@
 <li><a href="https://blog.kahana.co/tag/company/">https://blog.kahana.co/tag/company/</a></li>
 <li><a href="https://blog.kahana.co/charging-for-hubs/">https://blog.kahana.co/charging-for-hubs/</a></li>
 <li><a href="https://blog.kahana.co/kahana-vs-teachable/">https://blog.kahana.co/kahana-vs-teachable/</a></li>
-<li><a href="https://blog.kahana.co/author/jonathan/">https://blog.kahana.co/author/jonathan/</a></li>
-<li><a href="https://blog.kahana.co/thoughts-on-the-state-of-the-consulting-industry/">https://blog.kahana.co/thoughts-on-the-state-of-the-consulting-industry/</a></li>
-          </ul>
-        </div>
-      );
-
-      export default MySitemap;
-    
+<li><a href="https://blog.kahana.co/author/jonathan/">https://blog.
