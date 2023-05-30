@@ -7,7 +7,7 @@ import Link from 'next/link';
 //images
 import whiteKahanaLogo from '../assets/kahana_logo_wide_light.svg';
 import grayKahanaLogo from '../assets/kahana_logo_wide_gray.svg';
-import HeaderBanner from './HeaderBanner';
+import HeaderBanner from '../components/HeaderBanner';
 import { useState } from "react"; // import state
 
 //navigation items
