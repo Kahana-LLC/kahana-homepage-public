@@ -5,7 +5,8 @@
 
       import React from 'react';
 
-    const MySitemap = () => (
+    export default function const MySitemap() {
+     return (
       <>
        <Head>
         <title>Kahana - Get paid for your best stuff</title>
@@ -162,6 +163,5 @@
         <Footer />
        </>
       );
-
-      export default MySitemap;
+}
     
