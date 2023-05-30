@@ -136,7 +136,7 @@ export default function Footer() {
         </div>
         <div className="mt-12 border-t border-gray-200 pt-8">
           <p className="text-base text-gray-400 xl:text-center">
-            &copy; 2023 Kahana Group Inc. All rights reserved.   
+            &copy; 2023 Kahana Group Inc. All rights reserved. <a href="/sitemap">Sitemap</a>
           </p>
         </div>
       </div>
