@@ -1,8 +1,22 @@
 import React from 'react';
 
 const MySitemap = () => (
-  <div style={{ fontFamily: 'Helvetica, Arial, sans-serif', color: '#333' }}>
-    <h1 style={{ marginBottom: '10px' }}>Sitemap</h1>
+  <div style={{ fontFamily: 'Arial, sans-serif', color: '#333', fontSize: '14px', lineHeight: '1.5' }}>
+    <style>{`
+      h1 {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      ul li {
+        margin-bottom: 5px;
+      }
+    `}</style>
+    <h1>Sitemap</h1>
     <div dangerouslySetInnerHTML={{ __html: `
     <!DOCTYPE html>
     <html>
