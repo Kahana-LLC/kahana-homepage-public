@@ -24,7 +24,7 @@
             }
           
             ul {
-              list-style-type: disc;
+              /* list-style-type: disc; */
               padding-left: 30px;
               margin-bottom: 20px;
               padding-right: 10px;
