@@ -5,7 +5,7 @@
 
       import React from 'react';
 
-    export default function const MySitemap() {
+    export default function MySitemap() {
      return (
       <>
        <Head>
