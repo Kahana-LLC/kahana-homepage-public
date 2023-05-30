@@ -167,7 +167,9 @@
        <div>
          <NavbarDup />
        </div>
-       <Sitemap />
+       <div>
+         <Sitemap />
+       </div>    
        <div>
         <Footer />
        </div>
