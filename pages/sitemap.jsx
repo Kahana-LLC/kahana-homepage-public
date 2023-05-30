@@ -74,7 +74,7 @@ const navigationFooter = {
   ],
 };
 
-cost Header = () => {
+const Header = () => {
   const [isNavOpen, setIsNavOpen] = useState(false); // initiate isNavOpen state with false
   return (
     <>
