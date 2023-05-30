@@ -164,10 +164,14 @@
           content="Kahana is the easiest way to monetize your content and research. Transform knowledge and expertise into subscription revenue. Sign up for free today! "
         />
        </Head>
-       <NavbarDup />
+       <div>
+         <NavbarDup />
+       </div>
        <Sitemap />
+       <div>
         <Footer />
-       </>
-      );
+       </div>
+      </>
+     );
 }
     
