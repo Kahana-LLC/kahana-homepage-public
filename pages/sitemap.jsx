@@ -21,13 +21,13 @@
             ul {
               list-style-type: disc;
               padding-left: 30px;
-              margin-bottom: 10px;
+              margin-bottom: 20px;
               padding-right: 10px;
+              margin-left: 20px;
             }
           
             li {
               margin-bottom: 5px;
-              word-break: break-word;
             }
           
             a {
