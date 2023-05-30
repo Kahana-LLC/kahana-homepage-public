@@ -26,9 +26,7 @@
             ul {
               /* list-style-type: disc; */
               padding-left: 30px;
-              margin-bottom: 20px;
-              padding-right: 10px;
-              margin-left: 20px;
+              margin: 10px 20px;
             }
           
             li {
