@@ -26,7 +26,7 @@ import Head from 'next/head';
           
             ul {
               list-style-type: disc;
-              padding-left: 10px;
+              padding-left: 30px;
               margin: 10px 20px;
             }
           
