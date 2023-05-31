@@ -95,7 +95,7 @@ import Head from 'next/head';
 <li><a href="https://blog.kahana.co/connect-stripe/">Connect Stripe</a></li>
 <li><a href="https://blog.kahana.co/hub-pricing/">Hub Pricing</a></li>
 <li><a href="https://blog.kahana.co/add-hub-content/">Add Hub Content</a></li>
-<li><a href="https://blog.kahana.co/author/kahanateam/">Author - Kahanateam</a></li>
+<li><a href="https://blog.kahana.co/author/kahanateam/">Author - Kahana Team</a></li>
 <li><a href="https://blog.kahana.co/eden-gold/">Eden Gold</a></li>
 <li><a href="https://blog.kahana.co/monetization-platforms/">Monetization Platforms</a></li>
 <li><a href="https://blog.kahana.co/tag/software/">Software</a></li>
