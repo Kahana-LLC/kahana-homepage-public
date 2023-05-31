@@ -4,7 +4,7 @@ import Head from 'next/head';
       import NavbarDup from '../components/NavbarDup';
 
       import React from 'react';
-      import './sitemap.modules.css';
+      import './sitemap.module.css';
 
       const Sitemap = () => {
        return (
