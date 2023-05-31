@@ -9,7 +9,7 @@ import Head from 'next/head';
       const Sitemap = () => {
        return (
          <div>
-          <style>{`
+          <style jsx>{`
             h1 {
               font-size: 24px;
               font-weight: bold;
