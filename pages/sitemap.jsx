@@ -4,49 +4,11 @@ import Head from 'next/head';
       import NavbarDup from '../components/NavbarDup';
 
       import React from 'react';
+      import './sitemap.modules.css';
 
       const Sitemap = () => {
        return (
-        <div>
-          <style>{`
-            h1 {
-              font-size: 24px;
-              font-weight: bold;
-              margin: 20px 20px;
-              padding: 10px;
-            }
-          
-            h2 {
-              font-size: 18px;
-              font-weight: bold;
-              margin: 10px 20px;
-              padding: 10px;
-            }
-          
-            ul {
-              /* list-style-type: disc; */
-              padding-left: 10px;
-              margin: 10px 20px;
-            }
-          
-            li {
-              margin-bottom: 5px;
-            }
-          
-            a {
-              color: #0366d6;
-              text-decoration: none;
-            }
-          
-            a:hover {
-              text-decoration: underline;
-            }
-
-            .blog-links {
-              margin-bottom: 30px;
-            }
-          `}</style>
-
+        <div className="sitemap">
           <h1>Sitemap</h1>
 
           <h2>Create Kahana Account</h2>
