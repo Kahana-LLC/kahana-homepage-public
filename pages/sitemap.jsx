@@ -69,19 +69,19 @@ import Head from 'next/head';
 
           <h2>Hubs</h2>
           <ul>
-            <li><a href="https://app.kahana.co/hub/nHxv8vCZBv6i0bVPunyp">Enter Text</a></li>
-<li><a href="https://app.kahana.co/hub/2tXld437NBOOjOrwpjQm">Enter Text</a></li>
-<li><a href="https://app.kahana.co/hub/tHwAYvYPzqVwGPGzh10k">Enter Text</a></li>
-<li><a href="https://app.kahana.co/hub/2svUpfVnrxHFJHMn6UIG">Enter Text</a></li>
-<li><a href="https://app.kahana.co/hub/2bXcGh2ROEvMAEdmUhOX">Enter Text</a></li>
-<li><a href="https://app.kahana.co/hub/VarpGpuDHdukrW4IG4Ki">Enter Text</a></li>
-<li><a href="https://app.kahana.co/hub/0xoAwd6Uq7KdKO0pdQ4j">Enter Text</a></li>
-<li><a href="https://app.kahana.co/hub/PY1KHuxIWoJ7fB7930ZF">Enter Text</a></li>
-<li><a href="https://app.kahana.co/hub/CWisLtwTnlvZh82pYrE8">Enter Text</a></li>
-<li><a href="https://app.kahana.co/hub/dhJXTqv1Jj0GWIr65vuJ">Enter Text</a></li>
-<li><a href="https://app.kahana.co/hub/u1ln3CfdaZTUGyb8pSK2">Enter Text</a></li>
-<li><a href="https://app.kahana.co/hub/gGhFFLYlY5VppWIiCccX">Enter Text</a></li>
-<li><a href="https://app.kahana.co/hub/ohTF2nOQTEWCW7PIsSYX">Enter Text</a></li>
+            <li><a href="https://app.kahana.co/hub/nHxv8vCZBv6i0bVPunyp">Hub of vision board and manifestation guides, templates, and PDFs</a></li>
+<li><a href="https://app.kahana.co/hub/2tXld437NBOOjOrwpjQm">Hub of advice, videos, and best practices for solopreneurs</a></li>
+<li><a href="https://app.kahana.co/hub/tHwAYvYPzqVwGPGzh10k">Pinterest course: how to master Pinterest marketing in less than 1 hour</a></li>
+<li><a href="https://app.kahana.co/hub/2svUpfVnrxHFJHMn6UIG">Hub of guides, templates, and PDFs to build a great TikTok brand for your business</a></li>
+<li><a href="https://app.kahana.co/hub/2bXcGh2ROEvMAEdmUhOX">Hub of checklists, PDFs, and templates to plan a great retreat</a></li>
+<li><a href="https://app.kahana.co/hub/VarpGpuDHdukrW4IG4Ki">Hub of vision story guides, templates, and PDFs</a></li>
+<li><a href="https://app.kahana.co/hub/0xoAwd6Uq7KdKO0pdQ4j">Hub of ChatGPT prompts to help you land a job</a></li>
+<li><a href="https://app.kahana.co/hub/PY1KHuxIWoJ7fB7930ZF">Hub of adulting guides, PDFs, and best practices</a></li>
+<li><a href="https://app.kahana.co/hub/CWisLtwTnlvZh82pYrE8">Manifestation course: how to live your best life ever</a></li>
+<li><a href="https://app.kahana.co/hub/dhJXTqv1Jj0GWIr65vuJ">Hub of videos and practical to make money on TikTok as a student</a></li>
+<li><a href="https://app.kahana.co/hub/u1ln3CfdaZTUGyb8pSK2">Hub of email templates for content creators</a></li>
+<li><a href="https://app.kahana.co/hub/gGhFFLYlY5VppWIiCccX">Hub of advice to become an SWE without breaking the bank and a resume template</a></li>
+<li><a href="https://app.kahana.co/hub/ohTF2nOQTEWCW7PIsSYX">Hub of up-to-date TikTok Trends</a></li>
           </ul>
 
           <h2>Blog</h2>
