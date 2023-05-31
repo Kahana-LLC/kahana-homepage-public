@@ -42,10 +42,6 @@ import Head from 'next/head';
             a:hover {
               text-decoration: underline;
             }
-
-            .blog-links {
-              margin-bottom: 30px;
-            }
           `}</style>
 
           <h1>Sitemap</h1>
@@ -89,7 +85,7 @@ import Head from 'next/head';
           </ul>
 
           <h2>Blog</h2>
-          <ul class="blog-links">
+          <ul>
             <li><a href="https://blog.kahana.co/">Blog Homepage</a></li>
 <li><a href="https://blog.kahana.co/hub-inspiration/">Hub Inspiration</a></li>
 <li><a href="https://blog.kahana.co/creator-platforms/">Creator Platforms</a></li>
