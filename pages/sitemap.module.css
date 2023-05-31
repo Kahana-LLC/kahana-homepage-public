@@ -1,0 +1,36 @@
+.sitemap {
+  /* styles for the sitemap container */
+}
+
+.sitemap h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 20px 20px;
+    padding: 10px;
+}
+
+.sitemap h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 20px;
+    padding: 10px;
+}
+
+.sitemap ul {
+    list-style-type: disc;
+    padding-left: 10px;
+    margin: 10px 20px;
+}
+
+.sitemap li {
+    margin-bottom: 5px;
+}
+
+.sitemap a {
+    color: #0366d6;
+    text-decoration: none;
+}
+
+.sitemap a:hover {
+    text-decoration: underline;
+}
