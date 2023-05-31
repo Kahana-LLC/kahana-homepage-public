@@ -8,17 +8,56 @@ import Head from 'next/head';
 
       const Sitemap = () => {
        return (
-        <div className="sitemap">
-          <h1 className="sitemap">Sitemap</h1>
+         <div>
+          <style>{`
+            h1 {
+              font-size: 24px;
+              font-weight: bold;
+              margin: 20px 20px;
+              padding: 10px;
+            }
+          
+            h2 {
+              font-size: 18px;
+              font-weight: bold;
+              margin: 10px 20px;
+              padding: 10px;
+            }
+          
+            ul {
+              /*list-style-type: disc; */
+              padding-left: 10px;
+              margin: 10px 20px;
+            }
+          
+            li {
+              margin-bottom: 5px;
+            }
+          
+            a {
+              color: #0366d6;
+              text-decoration: none;
+            }
+          
+            a:hover {
+              text-decoration: underline;
+            }
 
-          <h2 className="sitemap">Create Kahana Account</h2>
-          <ul className="sitemap">
-            <li className="sitemap"><a href="https://app.kahana.co/signup">Create a Free Account</a></li>
+            .blog-links {
+              margin-bottom: 30px;
+            }
+          `}</style>
+
+          <h1>Sitemap</h1>
+
+          <h2>Create Kahana Account</h2>
+          <ul>
+            <li><a href="https://app.kahana.co/signup">Create a Free Account</a></li>
           </ul>
 
-          <h2 className="sitemap">Kahana Login</h2>
-          <ul className="sitemap">
-            <li className="sitemap"><a href="https://app.kahana.co/login">Log in</a></li>
+          <h2>Kahana Login</h2>
+          <ul>
+            <li><a href="https://app.kahana.co/login">Log in</a></li>
           </ul>
 
           <h2>About Kahana</h2>
