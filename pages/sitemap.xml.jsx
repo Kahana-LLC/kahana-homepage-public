@@ -7,7 +7,7 @@ const Sitemap = () => {
 
   return (
     <div>
-      <p>Please wait while you're being redirected...</p>
+      <p>Please wait while you&apos;re being redirected...</p>
     </div>
   );
 };
