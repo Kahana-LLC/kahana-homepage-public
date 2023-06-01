@@ -1,5 +1,4 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 const xmlContent = `
   <?xml version="1.0" encoding="utf-8"?>
@@ -479,14 +478,21 @@ const SitemapXml = () => {
 
 const App = () => {
   return (
-    <Router>
-      <Switch>
-        {/* Other routes */}
-        <Route path="/sitemap.xml" component={SitemapXml} />
-      </Switch>
-    </Router>
+    <React.Fragment>
+      {/* React Router DOM CDN link */}
+      <script src="https://unpkg.com/react-router-dom/umd/react-router-dom.min.js"></script>
+
+      {/* JSX code */}
+      <Router>
+        <Switch>
+          {/* Other routes */}
+          <Route path="/sitemap.xml" component={SitemapXml} />
+        </Switch>
+      </Router>
+    </React.Fragment>
   );
 };
 
 export default App;
+
 
