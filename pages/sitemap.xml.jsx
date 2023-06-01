@@ -1,13 +1,17 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const Sitemap = () => {
+  const [xmlContent, setXmlContent] = useState('');
+
   useEffect(() => {
-    window.location.href = 'https://kahana-sitemap-xml.s3.us-east-2.amazonaws.com/sitemap.xml';
+    fetch('https://kahana-sitemap-xml.s3.us-east-2.amazonaws.com/sitemap.xml')
+      .then(response => response.text())
+      .then(data => setXmlContent(data));
   }, []);
 
   return (
     <div>
-      <p>Please wait while you&apos;re being redirected...</p>
+      <pre>{xmlContent}</pre>
     </div>
   );
 };
