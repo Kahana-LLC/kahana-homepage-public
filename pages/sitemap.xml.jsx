@@ -1,25 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 
-const SitemapXml = () => {
-  const [xmlContent, setXmlContent] = useState('');
-
+const SitemapRedirect = () => {
   useEffect(() => {
-    const fetchXmlContent = async () => {
-      try {
-        const response = await fetch('https://kahana-sitemap-xml.s3.us-east-2.amazonaws.com/sitemap.xml');
-        const xml = await response.text();
-        setXmlContent(xml);
-      } catch (error) {
-        console.error('Error fetching XML content:', error);
-      }
-    };
-
-    fetchXmlContent();
+    window.location.href = 'https://kahana-sitemap-xml.s3.us-east-2.amazonaws.com/sitemap.xml';
   }, []);
 
-  return (
-    <pre>{xmlContent}</pre>
-  );
+  return null;
 };
 
-export default SitemapXml;
+export default SitemapRedirect;
