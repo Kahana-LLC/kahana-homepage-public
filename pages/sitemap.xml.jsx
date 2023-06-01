@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import XMLViewer from 'react-xml-viewer';
 
 const SitemapXml = () => {
   const [xmlContent, setXmlContent] = useState('');
@@ -19,14 +20,9 @@ const SitemapXml = () => {
 
   return (
     <div>
-      <pre className="xml-viewer-style">
-        <code className="webkit-xml-viewer-source-xml">
-          {xmlContent}
-        </code>
-      </pre>
+      <XMLViewer xml={xmlContent} />
     </div>
   );
 };
 
 export default SitemapXml;
-
