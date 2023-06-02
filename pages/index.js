@@ -25,7 +25,7 @@ export default function Home() {
           name="Kahana"
           content="Kahana is the easiest way to turn your knowledge into subscription revenue. Sign up for free today!"
         />
-        <!-- Google tag (gtag.js) -->
+        /* Google tag (gtag.js) */
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-KQHFL9605P"></script>
         <script>
           window.dataLayer = window.dataLayer || [];
