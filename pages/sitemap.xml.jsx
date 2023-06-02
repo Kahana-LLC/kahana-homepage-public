@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import XMLParser from 'react-xml-parser';
+import { parse } from 'fast-xml-parser';
 
 const SitemapXml = () => {
   const [xmlContent, setXmlContent] = useState('');
@@ -18,12 +18,12 @@ const SitemapXml = () => {
     fetchXmlContent();
   }, []);
 
-  const parsedXml = new XMLParser().parseFromString(xmlContent);
+  const parsedXml = parse(xmlContent);
 
   return (
     <div>
       {parsedXml && (
-        <pre>{parsedXml.toString({ indent: '    ' })}</pre>
+        <pre>{JSON.stringify(parsedXml, null, 4)}</pre>
       )}
     </div>
   );
