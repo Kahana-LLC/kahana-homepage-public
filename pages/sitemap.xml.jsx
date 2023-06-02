@@ -9,7 +9,7 @@ const SitemapXml = () => {
       try {
         const response = await fetch('https://kahana-sitemap-xml.s3.us-east-2.amazonaws.com/sitemap.xml');
         const xml = await response.text();
-        const parsedXml = fastXmlParser.parse(xml);
+        const parsedXml = fastXmlParser.parse(xml, { ignoreAttributes: false, parseAttributeValue: true });
         setXmlContent(parsedXml);
       } catch (error) {
         console.error('Error fetching XML content:', error);
@@ -28,4 +28,5 @@ const SitemapXml = () => {
 };
 
 export default SitemapXml;
+
 
