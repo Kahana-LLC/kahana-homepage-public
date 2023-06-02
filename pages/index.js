@@ -25,6 +25,15 @@ export default function Home() {
           name="Kahana"
           content="Kahana is the easiest way to turn your knowledge into subscription revenue. Sign up for free today!"
         />
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-KQHFL9605P"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-KQHFL9605P');
+        </script>
       </Head>
       <div>
         <div style={{ zIndex: '1' }} className="sticky top-0">
