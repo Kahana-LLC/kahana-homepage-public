@@ -18,10 +18,11 @@ function SitemapViewer() {
   }, []);
 
   return (
-    <div>
-      <pre>{xmlContent}</pre>
+    <div style={{ whiteSpace: 'pre-wrap' }}>
+      {xmlContent}
     </div>
   );
 }
 
 export default SitemapViewer;
+
