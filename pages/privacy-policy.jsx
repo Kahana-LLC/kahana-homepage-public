@@ -2,13 +2,13 @@
 // import Image from 'next/image';
 
 import Footer from '../components/Footer';
-import Navbar from '../components/Navbar';
+import NavbarDup from '../components/NavbarDup';
 
 export default function PrivacyPolicy() {
   return (
     <>
       <div style={{ zIndex: '2' }} className="sticky top-0">
-        <Navbar />
+        <NavbarDup />
       </div>
       <div>
         <div className="relative overflow-hidden bg-white py-16">
