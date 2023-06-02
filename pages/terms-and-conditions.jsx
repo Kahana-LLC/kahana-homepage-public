@@ -1,11 +1,11 @@
 /* eslint-disable react/no-unescaped-entities */
-import Navbar from '../components/Navbar';
+import NavbarDup from '../components/NavbarDup';
 
 export default function TermsAndConditions() {
   return (
     <div>
       <div style={{ zIndex: '2' }} className="sticky top-0">
-        <Navbar />
+        <NavbarDup />
       </div>
       <div className="relative overflow-hidden bg-white py-16">
         <div className="hidden lg:absolute lg:inset-y-0 lg:block lg:h-full lg:w-full lg:[overflow-anchor:none]">
