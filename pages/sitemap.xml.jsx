@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { twilight } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 const SitemapXml = () => {
   const [xmlContent, setXmlContent] = useState('');
@@ -21,15 +19,10 @@ const SitemapXml = () => {
 
   return (
     <div>
-      {/* Render the XML content with syntax highlighting */}
-      <SyntaxHighlighter language="xml" style={twilight}>
-        {xmlContent}
-      </SyntaxHighlighter>
+      {/* Render the XML content */}
+      <pre>{xmlContent}</pre>
     </div>
   );
 };
 
 export default SitemapXml;
-
-
-
