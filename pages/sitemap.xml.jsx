@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import XMLParser from 'react-xml-parser';
+import fastXmlParser from 'fast-xml-parser';
 
 const SitemapXml = () => {
   const [xmlContent, setXmlContent] = useState('');
@@ -9,7 +9,8 @@ const SitemapXml = () => {
       try {
         const response = await fetch('https://kahana-sitemap-xml.s3.us-east-2.amazonaws.com/sitemap.xml');
         const xml = await response.text();
-        setXmlContent(xml);
+        const parsedXml = fastXmlParser.parse(xml, { ignoreAttributes: false, parseAttributeValue: true });
+        setXmlContent(parsedXml);
       } catch (error) {
         console.error('Error fetching XML content:', error);
       }
@@ -18,15 +19,14 @@ const SitemapXml = () => {
     fetchXmlContent();
   }, []);
 
-  const parsedXml = new XMLParser().parseFromString(xmlContent);
-
   return (
     <div>
-      {parsedXml && (
-        <pre>{parsedXml.toString({ indent: '    ' })}</pre>
-      )}
+      {/* Render the parsed XML content */}
+      <pre>{JSON.stringify(xmlContent, null, 2)}</pre>
     </div>
   );
 };
 
 export default SitemapXml;
+
+
