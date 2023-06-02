@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { a11yDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 const SitemapXml = () => {
   const [xmlContent, setXmlContent] = useState('');
@@ -19,8 +21,10 @@ const SitemapXml = () => {
 
   return (
     <div>
-      {/* Render the XML content */}
-      <pre>{xmlContent}</pre>
+      {/* Render the XML content with syntax highlighting */}
+      <SyntaxHighlighter language="xml" style={a11yDark}>
+        {xmlContent}
+      </SyntaxHighlighter>
     </div>
   );
 };
