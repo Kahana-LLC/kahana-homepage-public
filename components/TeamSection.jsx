@@ -10,7 +10,7 @@ import jonathan from '../assets/headshots/Jonathan Gans.png';
 import william from '../assets/headshots/William Reehil.png';
 import greg from '../assets/headshots/gregoryGray.png';
 import denali from '../assets/headshots/denaliKeefe.jpeg';
-import benjamin from '../assets/headshots/BSJheadshot.jpg'
+import benjamin from '../assets/headshots/BSJheadshot.png'
 
 const people = [
   {
