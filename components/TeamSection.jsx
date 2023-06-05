@@ -44,7 +44,7 @@ const people = [
   {
     name: 'Benjamin St-Juste',
     role: 'Creative Partner',
-    imageUrl: emilio,
+    imageUrl: benjamin,
     twitterUrl: 'https://twitter.com/Benj_Juice',
     linkedinUrl: 'https://www.linkedin.com/in/benjamin-st-juste-2849ab189/',
   },
