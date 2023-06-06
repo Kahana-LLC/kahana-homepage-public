@@ -28,6 +28,13 @@ const people = [
     linkedinUrl: 'https://www.linkedin.com/in/adam-kershner/',
   },
   {
+    name: 'Benjamin St-Juste',
+    role: 'Creative Partner',
+    imageUrl: benjamin,
+    twitterUrl: 'https://twitter.com/Benj_Juice',
+    linkedinUrl: 'https://www.linkedin.com/in/benjamin-st-juste-2849ab189/',
+  },
+  {
     name: 'William Reehil',
     role: 'Technical Lead',
     imageUrl: william,
@@ -40,13 +47,6 @@ const people = [
     imageUrl: emilio,
     twitterUrl: 'https://twitter.com/KahanaHQ',
     linkedinUrl: 'https://www.linkedin.com/in/emilio-abelmann-617182107/',
-  },
-  {
-    name: 'Benjamin St-Juste',
-    role: 'Creative Partner',
-    imageUrl: benjamin,
-    twitterUrl: 'https://twitter.com/Benj_Juice',
-    linkedinUrl: 'https://www.linkedin.com/in/benjamin-st-juste-2849ab189/',
   },
   {
     name: 'Eugene Kaminsky',
