@@ -1,23 +1,28 @@
 const faqs = [
   {
-    question: 'What does Kahana do?',
+    question: 'What is Kahana?',
     answer:
-      'Kahana is a collaborative SaaS platform that enables users to build and charge for access to hubs of content. These hubs typically include files, notes, methodologies, best practices, templates, research, etc. that users have curated and created.',
+      'You can think of Kahana as Patreon meets Google Drive - it\'s a collaborative platform that lets you create hubs of knowledge with other creators & experts and monetize <i>together</i>. You can upload your best knowledge (information you\'ve learned, notes, methodologies, best practices, and templates you\'ve curated and created, etc.) and charge for access to it without having to build something from scratch.',
   },
   {
-    question: 'How much does Kahana cost?',
+    question: 'Is Kahana free to use?',
     answer:
-      'There is no out-of-pocket cost for signing up for Kahana. In addition, no credit card or payment information is required for the free plan. Kahana also offers paid plans for premium features. While there is no upfront cost to monetize, Kahana takes a small percentage of earnings as users earn money through monetized hubs.',
+      'Yes! You can use Kahana for free, forever.',
   },
   {
-    question: 'Can I use Kahana for free?',
+    question: 'What does a hub look like?',
     answer:
-      "Kahana is totally free to use forever. In fact, if you remain on Kahana's free plan and never get a subscriber on a hub, you'll never pay a dime.",
+      'You can check out our <a href="https://kahana.co/explore" class="text-[#038270] font-medium">Featured Hubs</a> page for examples of what a hub looks like.',
+  },
+  {
+    question: 'How do I think about starting a hub?',
+    answer:
+      'The first step is to recognize that you have unique knowledge! Everyone has a topic, field, or skill that they could teach someone who was in their shoes two years ago, a year ago, or even six months ago. If you need help finding yours, we put together a <a href="https://blog.kahana.co/how-to-create-your-first-digital-product/" class="text-[#038270] font-medium">step-by-step guide</a> to show you how you can quickly identify something you know a lot about and are passionate about, and turn it into a hub.',
   },
   {
     question: 'How do I get paid from Kahana?',
     answer:
-      'To get paid from Kahana, connect your Stripe account. Once the connection is confirmed, you can manage your payouts to occur automatically or manually through Stripe. In a nutshell, you earn money when people subscribe to your monetized hubs.',
+      'In a nutshell, you earn money when people subscribe to your monetized hubs. In order to charge for access to your hubs, you can connect to Stripe, which you can do by following <a href="https://blog.kahana.co/connect-stripe/" class="text-[#038270] font-medium">these steps</a>.',
   },
 
   // More questions...
