@@ -8,10 +8,10 @@ export default function HeaderBanner() {
             {/* <span>Check out today&apos;s</span> */}
             <span className="block sm:ml-2 sm:inline-block">
               <a
-                href="https://app.kahana.co/hub/nHxv8vCZBv6i0bVPunyp"
+                href="https://app.kahana.co/signup"
                 className=" text-base text-white underline"
               >
-                Check out today&apos;s hub of the day!
+                Sign up for free
                   {/* <span aria-hidden="true"> &rarr;</span> */}
               </a>
             </span>
