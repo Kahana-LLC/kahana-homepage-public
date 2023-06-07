@@ -61,7 +61,7 @@ export default function Footer() {
               alt="navbar-logo"
             />
             <p className="text-base text-gray-500">
-              Reserve your account and join 2000+ others learning to monetize
+              Join 2500+ others learning to monetize
               their expertise. Reservers also get early-bird access to tips,
               tricks, templates, plus more.
             </p>
