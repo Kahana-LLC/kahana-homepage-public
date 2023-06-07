@@ -25,7 +25,7 @@ const features = [
   {
     title: 'Collaborate',
     description:
-      'Engage with your audience more deeply. No need to create alone - invite and collaborate with other doers, creators, and experts.',
+      'No need to create alone - build hubs together. Invite and collaborate with other creators and experts to make something special.',
     image: collaborate,
   },
 ];
