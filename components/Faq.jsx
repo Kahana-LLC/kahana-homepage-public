@@ -5,7 +5,7 @@ const faqs = [
     question: 'What is Kahana?',
     answer: (
       <span>
-        You can think of Kahana as Patreon meets Google Drive - it's a collaborative platform that lets you create hubs of knowledge with other creators & experts and monetize <i>together</i>. You can upload your best knowledge (information you've learned, notes, methodologies, best practices, and templates you've curated and created, etc.) and charge for access to it without having to build something from scratch.
+        You can think of Kahana as Patreon meets Google Drive - it&apos;s a collaborative platform that lets you create hubs of knowledge with other creators & experts and monetize <i>together</i>. You can upload your best knowledge (information you&apos;ve learned, notes, methodologies, best practices, and templates you&apos;ve curated and created, etc.) and charge for access to it without having to build something from scratch.
       </span>
     ),
   },
@@ -33,7 +33,7 @@ const faqs = [
         <a href="https://blog.kahana.co/how-to-create-your-first-digital-product/" className="text-[#038270] font-medium">
           step-by-step guide
         </a>{' '}
-        to show you how you can quickly identify something you know a lot about and are passionate about, and turn it into a hub.
+        to show you how you can quickly identify something you know a lot about and are passionate about and turn it into a hub.
       </span>
     ),
   },
