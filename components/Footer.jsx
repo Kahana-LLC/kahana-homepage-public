@@ -8,6 +8,7 @@ const navigation = {
 
     { name: 'Blog', href: 'https://blog.kahana.co' },
     { name: 'About', href: '/about' },
+    { name: 'FAQ', href: '/faq' },
     { name: 'Home', href: '/' },
     { name: 'Careers', href: 'https://7hkdcfzbmr0.typeform.com/to/RQ99b3Bp' },
     { name: 'Invest in seed round', href: 'https://7hkdcfzbmr0.typeform.com/to/wYCUMm54' },
