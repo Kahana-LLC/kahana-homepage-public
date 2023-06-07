@@ -96,8 +96,8 @@ const faqs = [
         <a href="https://7hkdcfzbmr0.typeform.com/to/cO7LxhV1" className="text-[#038270] font-medium">
           this form
         </a>,{' '}
-        and to set up your interview, please reach out to info@kahana.co
-        <a href="mailto:" className="font-medium text-[#038270]">
+        and to set up your interview, please reach out to{' '}
+        <a href="mailto:info@kahana.co" className="font-medium text-[#038270]">
           info@kahana.co
         </a>
         .
