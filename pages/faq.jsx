@@ -91,15 +91,13 @@ const faqs = [
         Great question! We offer plenty of support to help you drive traffic to your hubs - we can feature your hub on our{' '}
         <a href="https://kahana.co/explore" className="text-[#038270] font-medium">
           Explore page
-        </a>{' '}
-        , and we can interview you about your hub to create both a blog post and a YouTube video for you. To have your hub featured, please fill out{' '}
+        </a>{' '},
+         and we can interview you about your hub to create both a blog post and a YouTube video for you. To have your hub featured, please fill out{' '}
         <a href="https://7hkdcfzbmr0.typeform.com/to/cO7LxhV1" className="text-[#038270] font-medium">
           this form
-        </a>{' '}
-        , and to set up your interview, please reach out to info@kahana.co
-        <a href="mailto:info@kahana.co" className="font-medium text-[#038270]">
-          info@kahana.co
-        </a>
+        </a>{' '},
+         and to set up your interview, please reach out to info@kahana.co
+        <a href="mailto:info@kahana.co" className="font-medium text-[#038270]"</a>
         .
       </span>
     ),
@@ -154,7 +152,9 @@ export default function FaqPage() {
         />
       </Head>
       <div>
-        <NavbarDup />
+        <div className="sticky top-0">
+          <NavbarDup />
+        </div>
         <div className="bg-white py-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <h1 className="text-3xl font-bold mb-8 text-gray-900">
@@ -164,7 +164,7 @@ export default function FaqPage() {
               {faqs.map((faq, index) => (
                 <div key={index} className="border border-gray-200 rounded-lg">
                   <button
-                    className="w-full flex justify-between items-center p-4 focus:outline-none"
+                    className="w-full flex justify-start items-center p-4 focus:outline-none"
                     onClick={() => toggleAccordion(index)}
                   >
                     <span className="text-lg font-medium text-gray-900">
