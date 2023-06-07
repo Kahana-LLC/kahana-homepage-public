@@ -62,6 +62,7 @@ import Head from 'next/head';
 <li><a href="https://kahana.co/solutions">Solutions</a></li>
 <li><a href="https://kahana.co/privacy-policy">Privacy Policy</a></li>
 <li><a href="https://kahana.co/explore">Explore</a></li>
+<li><a href="https://kahana.co/faq">FAQ</a></li>
 <li><a href="https://kahana.co/pricing">Pricing</a></li>
 <li><a href="https://kahana.co/terms-and-conditions">Terms And Conditions</a></li>
           </ul>
