@@ -54,7 +54,7 @@ const faqs = [
   },
   {
     question: 'How many hubs can I create?',
-    answer: 'You can create 2 hubs for free, and you upgrade to a paid plan, you can create unlimited hubs.',
+    answer: 'You can create 2 hubs for free, and if you upgrade to a paid plan, you can create unlimited hubs.',
   },
   {
     question: 'How is Kahana different from other platforms?',
