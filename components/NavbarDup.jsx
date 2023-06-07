@@ -26,6 +26,7 @@ const navigationAll = [
   { name: 'Pricing', href: 'pricing' },
   { name: 'Blog', href: ' https://blog.kahana.co' },
   { name: 'Solutions', href: 'solutions' },
+  { name: 'FAQ', href: 'faq' },
   { name: 'Request a demo', href: 'https://7hkdcfzbmr0.typeform.com/to/ZYLHazEf?utm_content=landing_page_header' },
   { name: 'Log in', href: 'https://app.kahana.co/login' },
 ];
