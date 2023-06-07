@@ -61,9 +61,8 @@ export default function Footer() {
               alt="navbar-logo"
             />
             <p className="text-base text-gray-500">
-              Join 2500+ others learning to monetize
-              their expertise. Reservers also get early-bird access to tips,
-              tricks, templates, plus more.
+              Join a community of 2500+ creators and experts collaborating and
+              monetizing their expertise together.
             </p>
           </div>
           <div className="mt-12 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
