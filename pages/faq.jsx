@@ -91,13 +91,15 @@ const faqs = [
         Great question! We offer plenty of support to help you drive traffic to your hubs - we can feature your hub on our{' '}
         <a href="https://kahana.co/explore" className="text-[#038270] font-medium">
           Explore page
-        </a>{' '},
-         and we can interview you about your hub to create both a blog post and a YouTube video for you. To have your hub featured, please fill out{' '}
+        </a>,{' '}
+        and we can interview you about your hub to create both a blog post and a YouTube video for you. To have your hub featured, please fill out{' '}
         <a href="https://7hkdcfzbmr0.typeform.com/to/cO7LxhV1" className="text-[#038270] font-medium">
           this form
-        </a>{' '},
-         and to set up your interview, please reach out to info@kahana.co
-        <a href="mailto:info@kahana.co" className="font-medium text-[#038270]"></a>
+        </a>,{' '}
+        and to set up your interview, please reach out to info@kahana.co
+        <a href="mailto:info@kahana.co" className="font-medium text-[#038270]">
+          info@kahana.co
+        </a>
         .
       </span>
     ),
@@ -167,13 +169,13 @@ export default function FaqPage() {
                     className="w-full flex justify-between items-center p-4 focus:outline-none"
                     onClick={() => toggleAccordion(index)}
                   >
-                    <span className="text-lg font-medium text-gray-900 text-left">
+                    <span className="text-lg font-medium text-gray-900 text-left flex-1">
                       {faq.question}
                     </span>
                     <svg
                       className={`${
                         activeIndex === index ? 'transform rotate-180' : ''
-                      } w-5 h-5 text-gray-500`}
+                      } w-5 h-5 text-gray-500 flex-shrink-0`}
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 20 20"
                       fill="currentColor"
