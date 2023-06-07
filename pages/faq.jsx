@@ -97,7 +97,7 @@ const faqs = [
           this form
         </a>,{' '}
         and to set up your interview, please reach out to info@kahana.co
-        <a href="mailto:info@kahana.co" className="font-medium text-[#038270]">
+        <a href="mailto:" className="font-medium text-[#038270]">
           info@kahana.co
         </a>
         .
