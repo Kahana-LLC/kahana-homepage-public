@@ -83,13 +83,13 @@ export default function HeroSection() {
                     </a> */}
 
                     <h1 className="py-4  bg-clip-text text-transparent bg-gradient-to-r from-[#024324] to-teal-300 text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
-                      Get paid for your best stuff
+                      Why build alone when you could collaborate?
                     </h1>
 
                     <p className="mt-3 text-base text-slate-900 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
-                      Recurring revenue doesn&apos;t have to be complicated. 
-                      Kahana helps creators and experts build profitable hubs of
-                      knowledge within minutes.
+                      Share your passions and expertise, collaborate with others
+                      to create something new, and monetize together - all in 
+                      one place.
                     </p>
 
                     <div className="grid grid-cols-2 gap-4 mt-6 tracking-tight">
@@ -97,7 +97,7 @@ export default function HeroSection() {
                       <ul role="list" className=" space-y-3">
                         {[
                           'No credit card required',
-                          'Organize your files',
+                          'Share your unique knowledge',
                           'Start monetizing within 1 hour',
                         ].map((feature) => (
                           <>
