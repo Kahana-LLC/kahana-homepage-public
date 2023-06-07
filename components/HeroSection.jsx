@@ -255,7 +255,7 @@ export default function HeroSection() {
                             href="https://7hkdcfzbmr0.typeform.com/to/SGVF6cS6?utm_source=xxxxx&utm_medium=xxxxx&utm_campaign=xxxxx&utm_term=xxxxx&utm_content=xxxxx"
                             className="flex w-full justify-center rounded-md border border-transparent bg-[#038270] py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-[#024324] focus:outline-none focus:ring-2 focus:ring-[#024324] focus:ring-offset-2 mb-3"
                           >
-                              Get started for free
+                              Sign up for free
                           </a>
                           {/* <button
                             type="submit"
