@@ -164,10 +164,10 @@ export default function FaqPage() {
               {faqs.map((faq, index) => (
                 <div key={index} className="border border-gray-200 rounded-lg">
                   <button
-                    className="w-full flex justify-start items-center p-4 focus:outline-none"
+                    className="w-full flex justify-between items-center p-4 focus:outline-none"
                     onClick={() => toggleAccordion(index)}
                   >
-                    <span className="text-lg font-medium text-gray-900">
+                    <span className="text-lg font-medium text-gray-900 text-left">
                       {faq.question}
                     </span>
                     <svg
