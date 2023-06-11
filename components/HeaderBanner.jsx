@@ -18,12 +18,10 @@ export default function HeaderBanner() {
           </p>
         </div>
       </div>
-      <div
-        className="absolute inset-x-0 bottom-0 h-1"
-        style={{
-          backgroundImage: 'linear-gradient(to right, #074526, #59E1CB)',
-        }}
-      ></div>
+      <div className="absolute inset-x-0 bottom-0 h-1">
+        <div className="h-full bg-gradient-to-r from-green-900 to-green-300"></div>
+      </div>
     </div>
   );
 }
+
