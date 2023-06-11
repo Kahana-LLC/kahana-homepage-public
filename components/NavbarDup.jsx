@@ -32,7 +32,7 @@ export default function NavbarDup() {
           <div className="flex items-center justify-between border-b py-2 px-10">
             <Link href="/" aria-label="Home">
               <span className="sr-only">Company</span>
-              <Image className="h-10" src={whiteKahanaLogo} w alt="navbar-logo" />
+              <Image className="h-10" src={whiteKahanaLogo} alt="navbar-logo" />
             </Link>
             <nav>
               <section className="MOBILE-MENU flex lg:hidden">
@@ -51,11 +51,11 @@ export default function NavbarDup() {
                       <li key={link.name}>
                         <Link
                           href={link.href}
-                          className="text-base font-small text-gray-600 hover:text-gray-800 flex items-center"
+                          className="text-lg font-semibold text-gray-900 hover:text-gray-700 flex items-center"
                         >
                           <span>{link.name}</span>
                           <svg
-                            className="w-3 h-3 ml-1 text-gray-400"
+                            className="w-4 h-4 ml-2 text-gray-600"
                             fill="none"
                             viewBox="0 0 24 24"
                             stroke="currentColor"
@@ -79,7 +79,7 @@ export default function NavbarDup() {
                   <li key={link.name}>
                     <Link
                       href={link.href}
-                      className="text-base font-small text-gray-600 hover:text-gray-800"
+                      className="text-lg font-semibold text-gray-900 hover:text-gray-700"
                     >
                       {link.name}
                     </Link>
@@ -119,10 +119,12 @@ export default function NavbarDup() {
               position: absolute;
               top: 100%;
               left: 0;
+              width: 100vw;
               padding: 0.5rem 0;
               background-color: white;
               box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
               border-radius: 4px;
+              z-index: 10;
             }
 
             .MENU-LINK-MOBILE.open {
@@ -145,6 +147,7 @@ export default function NavbarDup() {
               font-size: 16px;
               color: #4b5563;
               transition: color 0.2s;
+              padding: 0.75rem 1rem;
             }
 
             .MENU-LINKS a:hover {
