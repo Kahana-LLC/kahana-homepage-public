@@ -40,8 +40,8 @@ export default function NavbarDup() {
                   className={`HAMBURGER-ICON ${isNavOpen ? 'open' : ''}`}
                   onClick={() => setIsNavOpen((prev) => !prev)}
                 >
-                  <span className="block h-0.5 w-5 bg-gray-600 mb-1"></span>
-                  <span className="block h-0.5 w-5 bg-gray-600 mb-1"></span>
+                  <span className="block h-0.5 w-5 bg-gray-600"></span>
+                  <span className="block h-0.5 w-5 bg-gray-600"></span>
                   <span className="block h-0.5 w-5 bg-gray-600"></span>
                 </div>
 
@@ -51,11 +51,11 @@ export default function NavbarDup() {
                       <li key={link.name}>
                         <Link
                           href={link.href}
-                          className="text-lg font-semibold text-gray-900 hover:text-gray-700 flex items-center"
+                          className="text-lg font-semibold text-gray-900 hover:text-gray-700 flex items-center justify-between"
                         >
                           <span>{link.name}</span>
                           <svg
-                            className="w-4 h-4 ml-2 text-gray-600"
+                            className="w-4 h-4 ml-2 text-gray-600 transform rotate-90"
                             fill="none"
                             viewBox="0 0 24 24"
                             stroke="currentColor"
@@ -64,7 +64,7 @@ export default function NavbarDup() {
                               strokeLinecap="round"
                               strokeLinejoin="round"
                               strokeWidth={2}
-                              d="M19 9l-7 7-7-7"
+                              d="M9 5l7 7-7 7"
                             />
                           </svg>
                         </Link>
@@ -79,7 +79,7 @@ export default function NavbarDup() {
                   <li key={link.name}>
                     <Link
                       href={link.href}
-                      className="text-lg font-semibold text-gray-900 hover:text-gray-700"
+                      className="text-base font-small text-gray-600 hover:text-gray-800"
                     >
                       {link.name}
                     </Link>
@@ -99,7 +99,7 @@ export default function NavbarDup() {
             }
 
             .HAMBURGER-ICON.open span:nth-child(1) {
-              transform: rotate(45deg) translate(0, 1px);
+              transform: rotate(-45deg) translate(-1px, 1px);
             }
 
             .HAMBURGER-ICON.open span:nth-child(2) {
@@ -107,7 +107,7 @@ export default function NavbarDup() {
             }
 
             .HAMBURGER-ICON.open span:last-child {
-              transform: rotate(-45deg) translate(0, -1px);
+              transform: rotate(45deg) translate(-1px, -1px);
             }
 
             .MOBILE-MENU {
@@ -118,13 +118,12 @@ export default function NavbarDup() {
               display: none;
               position: absolute;
               top: 100%;
-              left: 0;
-              width: 100vw;
+              right: 0;
               padding: 0.5rem 0;
               background-color: white;
               box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
               border-radius: 4px;
-              z-index: 10;
+              z-index: 100;
             }
 
             .MENU-LINK-MOBILE.open {
@@ -147,7 +146,6 @@ export default function NavbarDup() {
               font-size: 16px;
               color: #4b5563;
               transition: color 0.2s;
-              padding: 0.75rem 1rem;
             }
 
             .MENU-LINKS a:hover {
