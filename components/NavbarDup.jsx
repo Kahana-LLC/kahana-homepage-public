@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState, useEffect } from "react";
+import { useState } from 'react';
 
 //images
 import whiteKahanaLogo from '../assets/kahana_logo_wide_light.svg';
@@ -11,7 +11,7 @@ const navigationAll = [
   { name: 'Featured Hubs', href: 'explore' },
   { name: 'About', href: 'about' },
   { name: 'Pricing', href: 'pricing' },
-  { name: 'Blog', href: ' https://blog.kahana.co' },
+  { name: 'Blog', href: 'https://blog.kahana.co' },
   { name: 'Solutions', href: 'solutions' },
   { name: 'FAQ', href: 'faq' },
   { name: 'Request a demo', href: 'https://7hkdcfzbmr0.typeform.com/to/ZYLHazEf?utm_content=landing_page_header' },
@@ -19,16 +19,7 @@ const navigationAll = [
 ];
 
 export default function NavbarDup() {
-  const [isNavOpen, setIsNavOpen] = useState(false);
-
-  useEffect(() => {
-    if (isNavOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-  }, [isNavOpen]);
-
+  const [isNavOpen, setIsNavOpen] = useState(false); // initiate isNavOpen state with false
   return (
     <>
       <HeaderBanner />
@@ -37,40 +28,28 @@ export default function NavbarDup() {
           <div className="flex items-center justify-between border-b py-2 px-10">
             <Link href="/" aria-label="Home">
               <span className="sr-only">Company</span>
-              <Image
-                className="h-10"
-                src={whiteKahanaLogo}
-                alt="navbar-logo"
-              />
+              <Image className="h-10" src={whiteKahanaLogo} alt="navbar-logo" />
             </Link>
             <nav>
               <section className="MOBILE-MENU flex lg:hidden">
                 <div
                   className="HAMBURGER-ICON space-y-2"
-                  onClick={() => setIsNavOpen((prev) => !prev)}
+                  onClick={() => setIsNavOpen((prev) => !prev)} // toggle isNavOpen state on click
                 >
-                  <span className="block h-0.5 w-8 bg-gray-600"></span>
-                  <span className="block h-0.5 w-8 bg-gray-600"></span>
-                  <span className="block h-0.5 w-8 bg-gray-600"></span>
+                  <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
+                  <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
+                  <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
                 </div>
 
                 {isNavOpen && (
-                  <div className="MOBILE-MENU-OVERLAY fixed inset-0 bg-white z-10 overflow-y-auto">
-                    <div className="flex items-center justify-between border-b py-2 px-10">
-                      <Link href="/" aria-label="Home">
-                        <span className="sr-only">Company</span>
-                        <Image
-                          className="h-10"
-                          src={whiteKahanaLogo}
-                          alt="navbar-logo"
-                        />
-                      </Link>
+                  <div className="MOBILE-MENU-OVERLAY fixed inset-0 bg-white z-10">
+                    <div className="flex items-center justify-between py-2 px-10">
                       <div
-                        className="CROSS-ICON px-4"
-                        onClick={() => setIsNavOpen(false)}
+                        className="CROSS-ICON"
+                        onClick={() => setIsNavOpen(false)} // change isNavOpen state to false to close the menu
                       >
                         <svg
-                          className="h-6 w-6 text-gray-600"
+                          className="h-8 w-8 text-gray-600"
                           viewBox="0 0 24 24"
                           fill="none"
                           stroke="currentColor"
@@ -83,15 +62,13 @@ export default function NavbarDup() {
                         </svg>
                       </div>
                     </div>
-                    <ul className="MENU-LINK-MOBILE-OPEN flex flex-col items-start justify-center min-h-screen py-16 px-10">
+                    <ul className="MENU-LINK-MOBILE-OPEN flex flex-col items-start justify-center min-h-[calc(100vh-64px)]">
                       {navigationAll.map((link) => (
-                        <Link
-                          href={link.href}
-                          key={link.name}
-                          className="text-base font-small text-gray-600 hover:text-gray-800"
-                        >
-                          {link.name}
-                        </Link>
+                        <li key={link.name}>
+                          <Link href={link.href}>
+                            <a className="block px-8 py-4 text-base text-gray-600 hover:text-gray-800">{link.name}</a>
+                          </Link>
+                        </li>
                       ))}
                     </ul>
                   </div>
@@ -100,19 +77,50 @@ export default function NavbarDup() {
 
               <ul className="DESKTOP-MENU hidden space-x-8 lg:flex">
                 {navigationAll.map((link) => (
-                  <Link
-                    href={link.href}
-                    key={link.name}
-                    className="text-base font-small text-gray-600 hover:text-gray-800"
-                  >
-                    {link.name}
-                  </Link>
+                  <li key={link.name}>
+                    <Link href={link.href}>
+                      <a className="text-base font-small text-gray-600 hover:text-gray-800">{link.name}</a>
+                    </Link>
+                  </li>
                 ))}
               </ul>
             </nav>
           </div>
         </nav>
       </header>
+      <style jsx>{`
+        .MOBILE-MENU-OVERLAY {
+          position: fixed;
+          top: 64px;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          z-index: 10;
+          background: white;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: flex-start;
+          overflow: hidden;
+        }
+
+        .CROSS-ICON {
+          cursor: pointer;
+        }
+
+        .MENU-LINK-MOBILE-OPEN {
+          flex: 1;
+          padding: 0;
+          margin: 0;
+          list-style-type: none;
+        }
+
+        @media (min-width: 1024px) {
+          .MOBILE-MENU-OVERLAY {
+            display: none;
+          }
+        }
+      `}</style>
     </>
   );
 }
