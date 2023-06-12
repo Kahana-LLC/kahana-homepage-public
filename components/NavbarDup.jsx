@@ -1,33 +1,33 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState } from "react";
 
-//images
 import whiteKahanaLogo from '../assets/kahana_logo_wide_light.svg';
 import HeaderBanner from './HeaderBanner';
 
-//navigation items
-const navigationAll = [
+const navigation = [
   { name: 'Featured Hubs', href: 'explore' },
   { name: 'About', href: 'about' },
   { name: 'Pricing', href: 'pricing' },
   { name: 'Blog', href: 'https://blog.kahana.co' },
   { name: 'Solutions', href: 'solutions' },
-  { name: 'FAQ', href: 'faq' },
+];
+
+const navigation1 = [
   { name: 'Request a demo', href: 'https://7hkdcfzbmr0.typeform.com/to/ZYLHazEf?utm_content=landing_page_header' },
   { name: 'Log in', href: 'https://app.kahana.co/login' },
 ];
 
-export default function NavbarDup() {
-  const [isNavOpen, setIsNavOpen] = useState(false); // initiate isNavOpen state with false
+const navigationAll = [
+  ...navigation,
+  ...navigation1,
+];
 
-  const toggleNav = () => {
-    setIsNavOpen((prev) => !prev);
-    if (!isNavOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'auto';
-    }
+export default function NavbarDup() {
+  const [isNavOpen, setIsNavOpen] = useState(false);
+
+  const toggleNavOpen = () => {
+    setIsNavOpen((prevState) => !prevState);
   };
 
   return (
@@ -38,78 +38,77 @@ export default function NavbarDup() {
           <div className="flex items-center justify-between border-b py-2 px-10">
             <Link href="/" aria-label="Home">
               <span className="sr-only">Company</span>
-              <Image className="h-10" src={whiteKahanaLogo} alt="navbar-logo" />
+              <Image
+                className="h-10"
+                src={whiteKahanaLogo}
+                alt="navbar-logo"
+              />
             </Link>
-            <nav>
-              <section className="MOBILE-MENU flex lg:hidden">
-                <div
-                  className="HAMBURGER-ICON space-y-2"
-                  onClick={toggleNav} // toggle isNavOpen state on click
-                >
-                  <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
-                  <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
-                  <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
-                </div>
-              </section>
+
+            <section className="MOBILE-MENU flex lg:hidden">
+              <div className="HAMBURGER-ICON space-y-2" onClick={toggleNavOpen}>
+                <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
+                <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
+                <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
+              </div>
 
               {isNavOpen && (
-                <section className="MOBILE-MENU-OVERLAY fixed inset-0 bg-white z-10 overflow-hidden">
-                  <div className="flex items-center justify-between py-2 px-10">
-                    <div className="HAMBURGER-ICON cursor-pointer" onClick={toggleNav}>
-                      <svg
-                        className="h-8 w-8 text-gray-600"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <line x1="18" y1="6" x2="6" y2="18" />
-                        <line x1="6" y1="6" x2="18" y2="18" />
-                      </svg>
-                    </div>
+                <div className="MOBILE-MENU-OVERLAY absolute top-0 left-0 w-full h-full bg-white z-10">
+                  <div className="CROSS-ICON absolute top-0 right-0 px-8 py-8" onClick={toggleNavOpen}>
+                    <svg
+                      className="h-8 w-8 text-gray-600"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <line x1="18" y1="6" x2="6" y2="18" />
+                      <line x1="6" y1="6" x2="18" y2="18" />
+                    </svg>
                   </div>
-                  <div className="MENU-LINK-MOBILE-OPEN flex flex-col items-start justify-start min-h-[calc(100vh-64px)]">
+                  <ul className="MENU-LINK-MOBILE-OPEN flex flex-col items-center justify-between min-h-[250px]">
                     {navigationAll.map((link) => (
-                      <Link href={link.href} key={link.name}>
-                        <a className="block py-4 px-8 text-base font-small text-gray-600 hover:text-gray-800">
-                          {link.name}
-                        </a>
+                      <Link
+                        href={link.href}
+                        key={link.name}
+                        className="text-base font-small text-gray-600 hover:text-gray-800"
+                      >
+                        {link.name}
                       </Link>
                     ))}
-                  </div>
-                </section>
+                  </ul>
+                </div>
               )}
+            </section>
 
-              <ul className="DESKTOP-MENU hidden space-x-8 lg:flex">
-                {navigationAll.map((link) => (
-                  <li key={link.name}>
-                    <Link href={link.href}>
-                      <a className="text-base font-small text-gray-600 hover:text-gray-800">{link.name}</a>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </nav>
+            <ul className="DESKTOP-MENU hidden space-x-8 lg:flex">
+              {navigationAll.map((link) => (
+                <Link
+                  href={link.href}
+                  key={link.name}
+                  className="text-base font-small text-gray-600 hover:text-gray-800"
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </ul>
           </div>
         </nav>
       </header>
       <style jsx>{`
         .MOBILE-MENU-OVERLAY {
+          position: absolute;
           top: 100%;
           left: 0;
-          right: 0;
-          bottom: 0;
-        }
-
-        @media (min-width: 1024px) {
-          .MOBILE-MENU-OVERLAY {
-            display: none;
-          }
+          width: 100%;
+          max-height: calc(100vh - 48px);
+          overflow-y: auto;
         }
       `}</style>
     </>
   );
 }
+
 
