@@ -35,7 +35,7 @@ export default function NavbarDup() {
               <Image className="h-10" src={whiteKahanaLogo} alt="navbar-logo" />
             </Link>
             <nav>
-              <section className="MOBILE-MENU flex lg:hidden relative">
+              <section className="MOBILE-MENU absolute top-14 lg:hidden">
                 <div
                   className={`HAMBURGER-ICON ${isNavOpen ? 'open' : ''}`}
                   onClick={() => setIsNavOpen((prev) => !prev)}
@@ -46,13 +46,13 @@ export default function NavbarDup() {
                 </div>
 
                 {isNavOpen && (
-                  <div className="MENU-LINK-MOBILE absolute top-full left-0 mt-2 w-screen bg-white rounded shadow-lg overflow-hidden">
-                    <ul className="MENU-LINKS p-4">
+                  <div className="MENU-LINK-MOBILE absolute right-0 mt-2 w-72 bg-white rounded shadow-lg">
+                    <ul className="MENU-LINKS">
                       {navigationAll.map((link) => (
                         <li key={link.name}>
                           <Link
                             href={link.href}
-                            className="text-base font-semibold text-gray-900 py-2 block hover:bg-gray-100"
+                            className="text-base font-semibold text-gray-900 py-2 px-4 block hover:bg-gray-100"
                           >
                             {link.name}
                           </Link>
@@ -88,7 +88,7 @@ export default function NavbarDup() {
             }
 
             .HAMBURGER-ICON.open span:nth-child(1) {
-              transform: rotate(-45deg) translate(-2px, 5px);
+              transform: rotate(-45deg) translate(-1px, 1px);
             }
 
             .HAMBURGER-ICON.open span:nth-child(2) {
@@ -96,7 +96,7 @@ export default function NavbarDup() {
             }
 
             .HAMBURGER-ICON.open span:last-child {
-              transform: rotate(45deg) translate(-2px, -5px);
+              transform: rotate(45deg) translate(-1px, -1px);
             }
 
             .MOBILE-MENU {
@@ -105,6 +105,8 @@ export default function NavbarDup() {
 
             .MENU-LINK-MOBILE {
               display: block;
+              padding: 1rem;
+              max-width: calc(100vw - 2rem);
             }
 
             .MENU-LINKS {
@@ -114,7 +116,7 @@ export default function NavbarDup() {
             }
 
             .MENU-LINKS li:not(:last-child) {
-              margin-bottom: 1rem;
+              margin-bottom: 0.5rem;
             }
 
             .MENU-LINKS a {
@@ -133,4 +135,5 @@ export default function NavbarDup() {
     </>
   );
 }
+
 
