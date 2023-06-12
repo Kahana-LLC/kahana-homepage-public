@@ -23,7 +23,11 @@ export default function NavbarDup() {
 
   const toggleNav = () => {
     setIsNavOpen((prev) => !prev);
-    document.body.style.overflow = isNavOpen ? 'auto' : 'hidden';
+    if (!isNavOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
   };
 
   return (
@@ -46,40 +50,37 @@ export default function NavbarDup() {
                   <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
                   <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
                 </div>
+              </section>
 
-                {isNavOpen && (
-                  <div className="MOBILE-MENU-OVERLAY fixed inset-0 bg-white z-10 overflow-hidden">
-                    <div className="flex items-center justify-between py-2 px-10">
-                      <div
-                        className="HAMBURGER-ICON cursor-pointer"
-                        onClick={toggleNav} // toggle isNavOpen state on click
+              {isNavOpen && (
+                <section className="MOBILE-MENU-OVERLAY fixed inset-0 bg-white z-10 overflow-hidden">
+                  <div className="flex items-center justify-between py-2 px-10">
+                    <div className="HAMBURGER-ICON cursor-pointer" onClick={toggleNav}>
+                      <svg
+                        className="h-8 w-8 text-gray-600"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       >
-                        <svg
-                          className="h-8 w-8 text-gray-600"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        >
-                          <line x1="18" y1="6" x2="6" y2="18" />
-                          <line x1="6" y1="6" x2="18" y2="18" />
-                        </svg>
-                      </div>
-                    </div>
-                    <div className="MENU-LINK-MOBILE-OPEN flex flex-col items-start justify-start min-h-[calc(100vh-64px)]">
-                      {navigationAll.map((link) => (
-                        <Link href={link.href} key={link.name}>
-                          <a className="block py-4 px-8 text-base font-small text-gray-600 hover:text-gray-800">
-                            {link.name}
-                          </a>
-                        </Link>
-                      ))}
+                        <line x1="18" y1="6" x2="6" y2="18" />
+                        <line x1="6" y1="6" x2="18" y2="18" />
+                      </svg>
                     </div>
                   </div>
-                )}
-              </section>
+                  <div className="MENU-LINK-MOBILE-OPEN flex flex-col items-start justify-start min-h-[calc(100vh-64px)]">
+                    {navigationAll.map((link) => (
+                      <Link href={link.href} key={link.name}>
+                        <a className="block py-4 px-8 text-base font-small text-gray-600 hover:text-gray-800">
+                          {link.name}
+                        </a>
+                      </Link>
+                    ))}
+                  </div>
+                </section>
+              )}
 
               <ul className="DESKTOP-MENU hidden space-x-8 lg:flex">
                 {navigationAll.map((link) => (
@@ -96,7 +97,7 @@ export default function NavbarDup() {
       </header>
       <style jsx>{`
         .MOBILE-MENU-OVERLAY {
-          top: 64px;
+          top: 100%;
           left: 0;
           right: 0;
           bottom: 0;
@@ -111,3 +112,4 @@ export default function NavbarDup() {
     </>
   );
 }
+
