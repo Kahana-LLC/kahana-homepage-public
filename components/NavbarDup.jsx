@@ -40,13 +40,13 @@ export default function NavbarDup() {
                   className={`HAMBURGER-ICON ${isNavOpen ? 'open' : ''}`}
                   onClick={() => setIsNavOpen((prev) => !prev)}
                 >
-                  <span className="block h-0.5 w-5 bg-gray-600 mb-1"></span>
-                  <span className="block h-0.5 w-5 bg-gray-600 mb-1"></span>
-                  <span className="block h-0.5 w-5 bg-gray-600"></span>
+                  <span className="block h-1 w-6 bg-gray-600 mb-1"></span>
+                  <span className="block h-1 w-6 bg-gray-600 mb-1"></span>
+                  <span className="block h-1 w-6 bg-gray-600"></span>
                 </div>
 
                 {isNavOpen && (
-                  <div className="MENU-LINK-MOBILE absolute right-0 mt-2 w-64 bg-white rounded shadow-lg">
+                  <div className="MENU-LINK-MOBILE absolute right-0 mt-16 w-screen max-w-screen bg-white rounded shadow-lg z-10">
                     <ul className="MENU-LINKS">
                       {navigationAll.map((link) => (
                         <li key={link.name}>
@@ -83,12 +83,12 @@ export default function NavbarDup() {
               flex-direction: column;
               justify-content: space-between;
               cursor: pointer;
-              height: 20px;
-              width: 20px;
+              height: 16px;
+              width: 16px;
             }
 
             .HAMBURGER-ICON.open span:nth-child(1) {
-              transform: rotate(-45deg) translate(-1px, 1px);
+              transform: rotate(-45deg) translate(-2px, 2px);
             }
 
             .HAMBURGER-ICON.open span:nth-child(2) {
@@ -96,7 +96,7 @@ export default function NavbarDup() {
             }
 
             .HAMBURGER-ICON.open span:last-child {
-              transform: rotate(45deg) translate(-1px, -1px);
+              transform: rotate(45deg) translate(-2px, -2px);
             }
 
             .MOBILE-MENU {
@@ -106,9 +106,9 @@ export default function NavbarDup() {
             .MENU-LINK-MOBILE {
               display: block;
               padding: 1rem;
-              width: calc(100vw - 4rem);
-              max-width: 640px;
-              margin: 0 auto;
+              width: 100vw;
+              max-width: 100%;
+              margin-top: 8px;
               z-index: 10;
             }
 
@@ -138,5 +138,4 @@ export default function NavbarDup() {
     </>
   );
 }
-
 
