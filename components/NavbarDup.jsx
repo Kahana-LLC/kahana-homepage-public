@@ -78,7 +78,7 @@ export default function NavbarDup() {
             </section>
 
             {!isNavOpen && (
-              <div className="HAMBURGER-ICON space-y-2" onClick={toggleNavOpen}>
+              <div className="MOBILE-ICON HAMBURGER-ICON" onClick={toggleNavOpen}>
                 <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
                 <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
                 <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
@@ -86,7 +86,7 @@ export default function NavbarDup() {
             )}
 
             {isNavOpen && (
-              <div className="CROSS-ICON absolute top-4 right-4 px-2 py-2" onClick={toggleNavOpen}>
+              <div className="MOBILE-ICON CROSS-ICON" onClick={toggleNavOpen}>
                 <svg
                   className="h-8 w-8 text-gray-600"
                   viewBox="0 0 24 24"
@@ -119,7 +119,7 @@ export default function NavbarDup() {
           display: none;
         }
         .showMenuNav {
-          display: block;
+          display: flex;
           position: absolute;
           width: 100%;
           height: 100vh;
@@ -127,7 +127,6 @@ export default function NavbarDup() {
           left: 0;
           background: white;
           z-index: 10;
-          display: flex;
           flex-direction: column;
           justify-content: space-evenly;
           align-items: center;
@@ -145,8 +144,47 @@ export default function NavbarDup() {
           padding-top: 2rem;
         }
 
+        .HAMBURGER-ICON,
         .CROSS-ICON {
           cursor: pointer;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          position: absolute;
+          top: 4px;
+          right: 4px;
+          padding: 2px;
+          background-color: white;
+          border-radius: 50%;
+        }
+
+        .CROSS-ICON {
+          z-index: 1;
+        }
+
+        .MOBILE-ICON {
+          position: absolute;
+          top: 0;
+          right: 0;
+        }
+
+        .MOBILE-ICON svg {
+          display: block;
+          height: 8px;
+          width: 8px;
+          color: gray;
+        }
+
+        .MOBILE-ICON span {
+          display: block;
+          height: 0.5px;
+          width: 8px;
+          background-color: gray;
+        }
+
+        .MOBILE-ICON span:not(:last-child) {
+          margin-bottom: 2px;
         }
 
         .MOBILE-MENU-CONTENT {
@@ -162,4 +200,3 @@ export default function NavbarDup() {
     </>
   );
 }
-
