@@ -46,7 +46,7 @@ export default function NavbarDup() {
                 </div>
 
                 {isNavOpen && (
-                  <div className="MENU-LINK-MOBILE absolute right-0 top-14 bottom-0 w-screen max-w-screen bg-white rounded shadow-lg overflow-y-auto">
+                  <div className="MENU-LINK-MOBILE absolute right-0 top-14 bottom-0 w-screen max-w-full bg-white rounded shadow-lg overflow-y-auto">
                     <ul className="MENU-LINKS">
                       {navigationAll.map((link) => (
                         <li key={link.name}>
@@ -88,7 +88,7 @@ export default function NavbarDup() {
             }
 
             .HAMBURGER-ICON.open span:nth-child(1) {
-              transform: rotate(-45deg) translate(-2px, 2px);
+              transform: rotate(-45deg) translate(-1px, 1px);
             }
 
             .HAMBURGER-ICON.open span:nth-child(2) {
@@ -96,7 +96,7 @@ export default function NavbarDup() {
             }
 
             .HAMBURGER-ICON.open span:last-child {
-              transform: rotate(45deg) translate(-2px, -2px);
+              transform: rotate(45deg) translate(-1px, -1px);
             }
 
             .MOBILE-MENU {
