@@ -20,6 +20,12 @@ const navigationAll = [
 
 export default function NavbarDup() {
   const [isNavOpen, setIsNavOpen] = useState(false); // initiate isNavOpen state with false
+
+  const toggleNav = () => {
+    setIsNavOpen((prev) => !prev);
+    document.body.style.overflow = isNavOpen ? 'auto' : 'hidden';
+  };
+
   return (
     <>
       <HeaderBanner />
@@ -34,7 +40,7 @@ export default function NavbarDup() {
               <section className="MOBILE-MENU flex lg:hidden">
                 <div
                   className="HAMBURGER-ICON space-y-2"
-                  onClick={() => setIsNavOpen((prev) => !prev)} // toggle isNavOpen state on click
+                  onClick={toggleNav} // toggle isNavOpen state on click
                 >
                   <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
                   <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
@@ -46,7 +52,7 @@ export default function NavbarDup() {
                     <div className="flex items-center justify-between py-2 px-10">
                       <div
                         className="HAMBURGER-ICON cursor-pointer"
-                        onClick={() => setIsNavOpen(false)} // change isNavOpen state to false to close the menu
+                        onClick={toggleNav} // toggle isNavOpen state on click
                       >
                         <svg
                           className="h-8 w-8 text-gray-600"
@@ -105,4 +111,3 @@ export default function NavbarDup() {
     </>
   );
 }
-
