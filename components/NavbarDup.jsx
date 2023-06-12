@@ -60,76 +60,61 @@ export default function NavbarDup() {
                 alt="navbar-logo"
               />
             </Link>
-
-            <section className="MOBILE-MENU relative flex lg:hidden">
-              <div className={`MOBILE-MENU-OVERLAY fixed top-0 left-0 w-full ${isNavOpen ? 'showMenuNav' : 'hideMenuNav'}`}>
-                <div className="CROSS-ICON absolute top-4 right-4 px-2 py-2" onClick={toggleNavOpen}>
-                  <svg
-                    className="h-8 w-8 text-gray-600"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <line x1="18" y1="6" x2="6" y2="18" />
-                    <line x1="6" y1="6" x2="18" y2="18" />
-                  </svg>
-                </div>
-                <div className="MOBILE-MENU-CONTENT flex flex-col items-start justify-start h-full p-8">
-                  <ul className="MENU-LINK-MOBILE-OPEN space-y-4 text-lg">
-                    {navigationAll.map((link) => (
-                      <li key={link.name}>
-                        <Link href={link.href} className="text-gray-600 hover:text-gray-800">
-                          {link.name}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-
-              <div className="HAMBURGER-ICON space-y-2" onClick={toggleNavOpen} style={{ display: isNavOpen ? 'none' : 'block' }}>
-                <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
-                <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
-                <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
-              </div>
-            </section>
-
-            <ul className="DESKTOP-MENU hidden space-x-8 lg:flex">
-              {navigationAll.map((link) => (
-                <li key={link.name}>
-                  <Link href={link.href} className="text-base font-small text-gray-600 hover:text-gray-800">
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
           </div>
         </nav>
       </header>
+      <div className="mobile-menu-container">
+        <section className="MOBILE-MENU relative flex lg:hidden">
+          <div className={`HAMBURGER-ICON ${isNavOpen ? 'hideMenuNav' : 'showMenuNav'}`} onClick={toggleNavOpen}>
+            <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
+            <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
+            <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
+          </div>
+          <div className={`MOBILE-MENU-OVERLAY fixed top-full left-0 w-full ${isNavOpen ? 'showMenuNav' : 'hideMenuNav'}`}>
+            <div className="CROSS-ICON absolute top-4 right-4 px-2 py-2" onClick={toggleNavOpen}>
+              <svg
+                className="h-8 w-8 text-gray-600"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+            </div>
+            <div className="MOBILE-MENU-CONTENT flex flex-col items-start justify-start h-full p-8">
+              <ul className="MENU-LINK-MOBILE-OPEN space-y-4 text-lg">
+                {navigationAll.map((link) => (
+                  <li key={link.name}>
+                    <Link href={link.href} className="text-gray-600 hover:text-gray-800">
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
       <style jsx>{`
         .hideMenuNav {
           display: none;
         }
         .showMenuNav {
           display: block;
-          position: fixed;
-          width: 100%;
-          height: calc(100vh - 64px - 6rem); /* Adjust the values based on the height of your navigation bar and HeaderBanner */
-          top: calc(64px + 6rem); /* Adjust the values based on the height of your navigation bar and HeaderBanner */
-          left: 0;
-          background: white;
-          z-index: 10;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-evenly;
-          align-items: center;
+        }
+
+        .mobile-menu-container {
+          position: relative;
+          z-index: 1;
         }
 
         .MOBILE-MENU-OVERLAY {
-          top: 0;
+          position: fixed;
+          top: 100%;
           left: 0;
           width: 100%;
           height: 100vh;
