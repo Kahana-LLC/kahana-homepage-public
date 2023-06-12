@@ -48,21 +48,38 @@ export default function NavbarDup() {
 
   return (
     <>
-      <HeaderBanner />
       <header className="backdrop-blur-sm bg-white/90 bg-white mx-auto px-2">
+        <HeaderBanner />
+
+        <div className="logo-container">
+          <Link href="/" aria-label="Home">
+            <span className="sr-only">Company</span>
+            <Image
+              className="h-10"
+              src={whiteKahanaLogo}
+              alt="navbar-logo"
+            />
+          </Link>
+        </div>
+
         <nav>
           <div className="flex items-center justify-between border-b py-2 px-10">
-            <Link href="/" aria-label="Home">
-              <span className="sr-only">Company</span>
-              <Image
-                className="h-10"
-                src={whiteKahanaLogo}
-                alt="navbar-logo"
-              />
-            </Link>
-
             <section className="MOBILE-MENU relative flex lg:hidden">
-              <div className={`MOBILE-MENU-OVERLAY fixed top-0 left-0 w-full h-screen bg-white z-10 ${isNavOpen ? 'showMenuNav' : 'hideMenuNav'}`}>
+              <div className="MOBILE-MENU-OVERLAY fixed top-0 left-0 w-full h-screen bg-white z-10" style={{ display: isNavOpen ? 'flex' : 'none' }}>
+                <div className="CROSS-ICON absolute top-4 right-4 px-2 py-2" onClick={toggleNavOpen}>
+                  <svg
+                    className="h-8 w-8 text-gray-600"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                  </svg>
+                </div>
                 <div className="MOBILE-MENU-CONTENT flex flex-col items-start justify-start h-full p-8">
                   <ul className="MENU-LINK-MOBILE-OPEN space-y-4 text-lg">
                     {navigationAll.map((link) => (
@@ -75,32 +92,13 @@ export default function NavbarDup() {
                   </ul>
                 </div>
               </div>
+
+              <div className="HAMBURGER-ICON space-y-2" onClick={toggleNavOpen} style={{ display: isNavOpen ? 'none' : 'block' }}>
+                <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
+                <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
+                <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
+              </div>
             </section>
-
-            {!isNavOpen && (
-              <div className="MOBILE-ICON HAMBURGER-ICON" onClick={toggleNavOpen}>
-                <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
-                <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
-                <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
-              </div>
-            )}
-
-            {isNavOpen && (
-              <div className="MOBILE-ICON CROSS-ICON" onClick={toggleNavOpen}>
-                <svg
-                  className="h-8 w-8 text-gray-600"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <line x1="18" y1="6" x2="6" y2="18" />
-                  <line x1="6" y1="6" x2="18" y2="18" />
-                </svg>
-              </div>
-            )}
 
             <ul className="DESKTOP-MENU hidden space-x-8 lg:flex">
               {navigationAll.map((link) => (
@@ -119,7 +117,7 @@ export default function NavbarDup() {
           display: none;
         }
         .showMenuNav {
-          display: flex;
+          display: block;
           position: absolute;
           width: 100%;
           height: 100vh;
@@ -127,13 +125,20 @@ export default function NavbarDup() {
           left: 0;
           background: white;
           z-index: 10;
+          display: flex;
           flex-direction: column;
           justify-content: space-evenly;
           align-items: center;
         }
 
+        .logo-container {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
         .MOBILE-MENU-OVERLAY {
-          top: 0;
+          top: 100%;
           left: 0;
           width: 100%;
           height: 100vh;
@@ -144,51 +149,13 @@ export default function NavbarDup() {
           padding-top: 2rem;
         }
 
-        .HAMBURGER-ICON,
         .CROSS-ICON {
           cursor: pointer;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          position: absolute;
-          top: 4px;
-          right: 4px;
-          padding: 2px;
-          background-color: white;
-          border-radius: 50%;
-        }
-
-        .CROSS-ICON {
-          z-index: 1;
-        }
-
-        .MOBILE-ICON {
-          position: absolute;
-          top: 0;
-          right: 0;
-        }
-
-        .MOBILE-ICON svg {
-          display: block;
-          height: 8px;
-          width: 8px;
-          color: gray;
-        }
-
-        .MOBILE-ICON span {
-          display: block;
-          height: 0.5px;
-          width: 8px;
-          background-color: gray;
-        }
-
-        .MOBILE-ICON span:not(:last-child) {
-          margin-bottom: 2px;
         }
 
         .MOBILE-MENU-CONTENT {
           width: 100%;
+          position: absolute;
         }
 
         .MENU-LINK-MOBILE-OPEN {
