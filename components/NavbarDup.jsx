@@ -62,7 +62,7 @@ export default function NavbarDup() {
             </Link>
 
             <section className="MOBILE-MENU relative flex lg:hidden">
-              <div className="MOBILE-MENU-OVERLAY fixed top-0 left-0 w-full h-screen bg-white z-10" style={{ display: isNavOpen ? 'flex' : 'none' }}>
+              <div className={`MOBILE-MENU-OVERLAY fixed top-0 left-0 w-full ${isNavOpen ? 'showMenuNav' : 'hideMenuNav'}`}>
                 <div className="CROSS-ICON absolute top-4 right-4 px-2 py-2" onClick={toggleNavOpen}>
                   <svg
                     className="h-8 w-8 text-gray-600"
@@ -115,10 +115,10 @@ export default function NavbarDup() {
         }
         .showMenuNav {
           display: block;
-          position: absolute;
+          position: fixed;
           width: 100%;
-          height: 100vh;
-          top: 0;
+          height: calc(100vh - 64px - 6rem); /* Adjust the values based on the height of your navigation bar and HeaderBanner */
+          top: calc(64px + 6rem); /* Adjust the values based on the height of your navigation bar and HeaderBanner */
           left: 0;
           background: white;
           z-index: 10;
