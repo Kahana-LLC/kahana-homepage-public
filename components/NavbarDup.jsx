@@ -64,7 +64,7 @@ export default function NavbarDup() {
             <section className="MOBILE-MENU relative flex lg:hidden">
               {isNavOpen ? (
                 <>
-                  <div className="MOBILE-MENU-OVERLAY fixed top-35 left-0 w-full h-screen bg-white z-10" onClick={toggleNavOpen}>
+                  <div className="MOBILE-MENU-OVERLAY fixed top-48 left-0 w-full h-screen bg-white z-10" onClick={toggleNavOpen}>
                     <div className="MOBILE-MENU-CONTENT flex flex-col items-start justify-start h-full p-8">
                       <ul className="MENU-LINK-MOBILE-OPEN space-y-4 text-lg">
                         {navigationAll.map((link) => (
