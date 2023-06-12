@@ -35,7 +35,7 @@ export default function NavbarDup() {
               <Image className="h-10" src={whiteKahanaLogo} alt="navbar-logo" />
             </Link>
             <nav>
-              <section className="MOBILE-MENU absolute top-14 lg:hidden">
+              <section className="MOBILE-MENU relative lg:hidden">
                 <div
                   className={`HAMBURGER-ICON ${isNavOpen ? 'open' : ''}`}
                   onClick={() => setIsNavOpen((prev) => !prev)}
@@ -46,7 +46,7 @@ export default function NavbarDup() {
                 </div>
 
                 {isNavOpen && (
-                  <div className="MENU-LINK-MOBILE absolute right-0 mt-2 w-72 bg-white rounded shadow-lg">
+                  <div className="MENU-LINK-MOBILE absolute right-0 mt-2 w-64 bg-white rounded shadow-lg">
                     <ul className="MENU-LINKS">
                       {navigationAll.map((link) => (
                         <li key={link.name}>
@@ -106,7 +106,10 @@ export default function NavbarDup() {
             .MENU-LINK-MOBILE {
               display: block;
               padding: 1rem;
-              max-width: calc(100vw - 2rem);
+              width: calc(100vw - 4rem);
+              max-width: 640px;
+              margin: 0 auto;
+              z-index: 10;
             }
 
             .MENU-LINKS {
