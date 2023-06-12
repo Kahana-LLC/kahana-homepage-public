@@ -35,43 +35,32 @@ export default function NavbarDup() {
               <Image className="h-10" src={whiteKahanaLogo} alt="navbar-logo" />
             </Link>
             <nav>
-              <section className="MOBILE-MENU flex lg:hidden">
+              <section className="MOBILE-MENU flex lg:hidden relative">
                 <div
                   className={`HAMBURGER-ICON ${isNavOpen ? 'open' : ''}`}
                   onClick={() => setIsNavOpen((prev) => !prev)}
                 >
-                  <span className="block h-0.5 w-5 bg-gray-600"></span>
-                  <span className="block h-0.5 w-5 bg-gray-600"></span>
+                  <span className="block h-0.5 w-5 bg-gray-600 mb-1"></span>
+                  <span className="block h-0.5 w-5 bg-gray-600 mb-1"></span>
                   <span className="block h-0.5 w-5 bg-gray-600"></span>
                 </div>
 
-                <div className={`MENU-LINK-MOBILE ${isNavOpen ? 'open' : ''}`}>
-                  <ul className="MENU-LINKS">
-                    {navigationAll.map((link) => (
-                      <li key={link.name}>
-                        <Link
-                          href={link.href}
-                          className="text-lg font-semibold text-gray-900 hover:text-gray-700 flex items-center justify-between"
-                        >
-                          <span>{link.name}</span>
-                          <svg
-                            className="w-4 h-4 ml-2 text-gray-600 transform rotate-90"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
+                {isNavOpen && (
+                  <div className="MENU-LINK-MOBILE absolute right-0 mt-2 w-64 bg-white rounded shadow-lg">
+                    <ul className="MENU-LINKS">
+                      {navigationAll.map((link) => (
+                        <li key={link.name}>
+                          <Link
+                            href={link.href}
+                            className="text-base font-semibold text-gray-900 py-2 px-4 block hover:bg-gray-100"
                           >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M9 5l7 7-7 7"
-                            />
-                          </svg>
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                            {link.name}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </section>
 
               <ul className="DESKTOP-MENU hidden space-x-8 lg:flex">
@@ -115,19 +104,8 @@ export default function NavbarDup() {
             }
 
             .MENU-LINK-MOBILE {
-              display: none;
-              position: absolute;
-              top: 100%;
-              right: 0;
-              padding: 0.5rem 0;
-              background-color: white;
-              box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-              border-radius: 4px;
-              z-index: 100;
-            }
-
-            .MENU-LINK-MOBILE.open {
               display: block;
+              padding: 1rem;
             }
 
             .MENU-LINKS {
@@ -141,8 +119,7 @@ export default function NavbarDup() {
             }
 
             .MENU-LINKS a {
-              display: flex;
-              align-items: center;
+              display: block;
               font-size: 16px;
               color: #4b5563;
               transition: color 0.2s;
@@ -151,18 +128,10 @@ export default function NavbarDup() {
             .MENU-LINKS a:hover {
               color: #1f2937;
             }
-
-            .MENU-LINKS svg {
-              width: 12px;
-              height: 12px;
-              fill: none;
-              stroke: currentColor;
-              stroke-width: 2;
-              transition: transform 0.2s;
-            }
           `}</style>
         </nav>
       </header>
     </>
   );
 }
+
