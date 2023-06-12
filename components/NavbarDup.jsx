@@ -32,7 +32,7 @@ export default function NavbarDup() {
   return (
     <>
       <HeaderBanner />
-      <header className="backdrop-blur-sm bg-white/90 bg-white  mx-auto px-2">
+      <header className="backdrop-blur-sm bg-white/90 bg-white mx-auto px-2">
         <nav>
           <div className="flex items-center justify-between border-b py-2 px-10">
             <Link href="/" aria-label="Home">
@@ -65,7 +65,10 @@ export default function NavbarDup() {
                           alt="navbar-logo"
                         />
                       </Link>
-                      <div className="CROSS-ICON px-4" onClick={() => setIsNavOpen(false)}>
+                      <div
+                        className="CROSS-ICON px-4"
+                        onClick={() => setIsNavOpen(false)}
+                      >
                         <svg
                           className="h-6 w-6 text-gray-600"
                           viewBox="0 0 24 24"
@@ -113,5 +116,3 @@ export default function NavbarDup() {
     </>
   );
 }
-
-
