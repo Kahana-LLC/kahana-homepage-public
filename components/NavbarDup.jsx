@@ -64,7 +64,7 @@ export default function NavbarDup() {
             <section className="MOBILE-MENU relative flex lg:hidden">
               {isNavOpen ? (
                 <>
-                  <div className="MOBILE-MENU-OVERLAY fixed top-48 left-0 w-full h-screen bg-white z-10" onClick={toggleNavOpen}>
+                  <div className="MOBILE-MENU-OVERLAY fixed top-42 left-0 w-full h-screen bg-white z-10" onClick={toggleNavOpen}>
                     <div className="MOBILE-MENU-CONTENT flex flex-col items-start justify-start h-full p-8">
                       <ul className="MENU-LINK-MOBILE-OPEN space-y-4 text-lg">
                         {navigationAll.map((link) => (
@@ -77,19 +77,10 @@ export default function NavbarDup() {
                       </ul>
                     </div>
                   </div>
-                  <div className="CROSS-ICON absolute top-12 right-6 px-2 py-2" onClick={toggleNavOpen}>
-                    <svg
-                      className="h-8 w-8 text-gray-600"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <line x1="18" y1="6" x2="6" y2="18" />
-                      <line x1="6" y1="6" x2="18" y2="18" />
-                    </svg>
+                  <div className="HAMBURGER-ICON absolute top-12 right-6 px-2 py-2" onClick={toggleNavOpen}>
+                    <span className="block h-0.5 w-8 bg-gray-600"></span>
+                    <span className="block h-0.5 w-8 bg-gray-600"></span>
+                    <span className="block h-0.5 w-8 bg-gray-600"></span>
                   </div>
                 </>
               ) : (
@@ -154,4 +145,3 @@ export default function NavbarDup() {
     </>
   );
 }
-
