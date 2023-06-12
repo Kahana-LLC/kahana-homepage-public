@@ -46,7 +46,7 @@ export default function NavbarDup() {
                 </div>
 
                 {isNavOpen && (
-                  <div className="MENU-LINK-MOBILE absolute top-full left-0 mt-2 w-screen bg-white rounded shadow-lg">
+                  <div className="MENU-LINK-MOBILE absolute top-full left-0 mt-2 w-screen bg-white rounded shadow-lg overflow-hidden">
                     <ul className="MENU-LINKS p-4">
                       {navigationAll.map((link) => (
                         <li key={link.name}>
@@ -105,7 +105,6 @@ export default function NavbarDup() {
 
             .MENU-LINK-MOBILE {
               display: block;
-              padding: 1rem;
             }
 
             .MENU-LINKS {
