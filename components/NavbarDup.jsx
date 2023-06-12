@@ -46,15 +46,9 @@ export default function NavbarDup() {
             </Link>
 
             <section className="MOBILE-MENU flex lg:hidden">
-              <div className="HAMBURGER-ICON space-y-2" onClick={toggleNavOpen}>
-                <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
-                <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
-                <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
-              </div>
-
-              {isNavOpen && (
+              {isNavOpen ? (
                 <div className="MOBILE-MENU-OVERLAY absolute top-0 left-0 w-full h-full bg-white z-10">
-                  <div className="CROSS-ICON absolute top-0 right-0 px-8 py-8" onClick={toggleNavOpen}>
+                  <div className="CROSS-ICON absolute top-4 right-4 px-2 py-2" onClick={toggleNavOpen}>
                     <svg
                       className="h-8 w-8 text-gray-600"
                       viewBox="0 0 24 24"
@@ -68,30 +62,34 @@ export default function NavbarDup() {
                       <line x1="6" y1="6" x2="18" y2="18" />
                     </svg>
                   </div>
-                  <ul className="MENU-LINK-MOBILE-OPEN flex flex-col items-center justify-between min-h-[250px]">
-                    {navigationAll.map((link) => (
-                      <Link
-                        href={link.href}
-                        key={link.name}
-                        className="text-base font-small text-gray-600 hover:text-gray-800"
-                      >
-                        {link.name}
-                      </Link>
-                    ))}
-                  </ul>
+                  <div className="MOBILE-MENU-CONTENT flex flex-col items-center justify-center h-screen">
+                    <ul className="MENU-LINK-MOBILE-OPEN space-y-4 text-2xl">
+                      {navigationAll.map((link) => (
+                        <li key={link.name}>
+                          <Link href={link.href} className="text-gray-600 hover:text-gray-800">
+                            {link.name}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              ) : (
+                <div className="HAMBURGER-ICON space-y-2" onClick={toggleNavOpen}>
+                  <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
+                  <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
+                  <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
                 </div>
               )}
             </section>
 
             <ul className="DESKTOP-MENU hidden space-x-8 lg:flex">
               {navigationAll.map((link) => (
-                <Link
-                  href={link.href}
-                  key={link.name}
-                  className="text-base font-small text-gray-600 hover:text-gray-800"
-                >
-                  {link.name}
-                </Link>
+                <li key={link.name}>
+                  <Link href={link.href} className="text-base font-small text-gray-600 hover:text-gray-800">
+                    {link.name}
+                  </Link>
+                </li>
               ))}
             </ul>
           </div>
@@ -99,12 +97,42 @@ export default function NavbarDup() {
       </header>
       <style jsx>{`
         .MOBILE-MENU-OVERLAY {
-          position: absolute;
-          top: 100%;
+          position: fixed;
+          top: 48px;
           left: 0;
           width: 100%;
-          max-height: calc(100vh - 48px);
-          overflow-y: auto;
+          height: calc(100vh - 48px);
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .CROSS-ICON {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          cursor: pointer;
+        }
+
+        .MOBILE-MENU-CONTENT {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 100%;
+        }
+
+        .MENU-LINK-MOBILE-OPEN {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          text-align: center;
+        }
+
+        .MENU-LINK-MOBILE-OPEN li {
+          margin-bottom: 10px;
         }
       `}</style>
     </>
