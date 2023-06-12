@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import whiteKahanaLogo from '../assets/kahana_logo_wide_light.svg';
 import HeaderBanner from './HeaderBanner';
@@ -30,13 +30,21 @@ export default function NavbarDup() {
     setIsNavOpen((prevState) => !prevState);
   };
 
-  const bodyScrollLock = () => {
-    if (isNavOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
+  useEffect(() => {
+    const bodyScrollLock = () => {
+      if (isNavOpen) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = 'auto';
+      }
+    };
+
+    bodyScrollLock();
+
+    return () => {
       document.body.style.overflow = 'auto';
-    }
-  };
+    };
+  }, [isNavOpen]);
 
   return (
     <>
@@ -55,8 +63,21 @@ export default function NavbarDup() {
 
             <section className="MOBILE-MENU relative flex lg:hidden">
               {isNavOpen ? (
-                <div className="MOBILE-MENU-OVERLAY fixed top-16 left-0 w-full h-screen bg-white z-10" onClick={toggleNavOpen}>
-                  <div className="CROSS-ICON absolute top-4 right-4 px-2 py-2">
+                <>
+                  <div className="MOBILE-MENU-OVERLAY fixed top-35 left-0 w-full h-screen bg-white z-10" onClick={toggleNavOpen}>
+                    <div className="MOBILE-MENU-CONTENT flex flex-col items-start justify-start h-full p-8">
+                      <ul className="MENU-LINK-MOBILE-OPEN space-y-4 text-lg">
+                        {navigationAll.map((link) => (
+                          <li key={link.name}>
+                            <Link href={link.href} className="text-gray-600 hover:text-gray-800">
+                              {link.name}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                  <div className="CROSS-ICON absolute top-12 right-6 px-2 py-2" onClick={toggleNavOpen}>
                     <svg
                       className="h-8 w-8 text-gray-600"
                       viewBox="0 0 24 24"
@@ -70,18 +91,7 @@ export default function NavbarDup() {
                       <line x1="6" y1="6" x2="18" y2="18" />
                     </svg>
                   </div>
-                  <div className="MOBILE-MENU-CONTENT flex flex-col items-start justify-start h-full p-8">
-                    <ul className="MENU-LINK-MOBILE-OPEN space-y-4 text-lg">
-                      {navigationAll.map((link) => (
-                        <li key={link.name}>
-                          <Link href={link.href} className="text-gray-600 hover:text-gray-800">
-                            {link.name}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
+                </>
               ) : (
                 <div className="HAMBURGER-ICON space-y-2" onClick={toggleNavOpen}>
                   <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
@@ -123,15 +133,8 @@ export default function NavbarDup() {
         }
 
         .MOBILE-MENU-OVERLAY {
-          top: 48px;
-          left: 0;
           width: 100%;
-          height: calc(100vh - 48px);
-          display: flex;
-          flex-direction: column;
-          justify-content: flex-start;
-          align-items: flex-start;
-          padding-top: 2rem;
+          height: 100%;
         }
 
         .CROSS-ICON {
@@ -151,3 +154,4 @@ export default function NavbarDup() {
     </>
   );
 }
+
