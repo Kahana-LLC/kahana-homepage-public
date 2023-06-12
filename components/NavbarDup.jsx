@@ -14,16 +14,16 @@ const NavigationBar = () => {
   useEffect(() => {
     const bodyScrollLock = () => {
       if (isNavOpen) {
-        document.body.style.overflow = 'hidden';
+        document.documentElement.style.overflow = 'hidden';
       } else {
-        document.body.style.overflow = 'auto';
+        document.documentElement.style.overflow = 'auto';
       }
     };
 
     bodyScrollLock();
 
     return () => {
-      document.body.style.overflow = 'auto';
+      document.documentElement.style.overflow = 'auto';
     };
   }, [isNavOpen]);
 
@@ -105,8 +105,8 @@ const NavigationBar = () => {
           </div>
           {/* Mobile Menu Overlay */}
           {isNavOpen && (
-            <div className="fixed inset-0 flex items-center justify-center bg-white/90">
-              <div className="bg-white px-8 py-4 space-y-4">
+            <div className="fixed inset-0 flex items-start justify-center bg-white/90">
+              <div className="bg-white px-8 py-4 space-y-4 w-full">
                 {navigationAll.map((link) => (
                   <Link href={link.href} key={link.name} className="block text-xl font-medium text-gray-600 hover:text-gray-800">
                     {link.name}
@@ -122,4 +122,3 @@ const NavigationBar = () => {
 };
 
 export default NavigationBar;
-
