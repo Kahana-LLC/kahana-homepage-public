@@ -40,19 +40,19 @@ export default function NavbarDup() {
                   className={`HAMBURGER-ICON ${isNavOpen ? 'open' : ''}`}
                   onClick={() => setIsNavOpen((prev) => !prev)}
                 >
-                  <span className="block h-1 w-6 bg-gray-600 mb-1"></span>
-                  <span className="block h-1 w-6 bg-gray-600 mb-1"></span>
-                  <span className="block h-1 w-6 bg-gray-600"></span>
+                  <span className="block h-0.5 w-5 bg-gray-600 mb-1"></span>
+                  <span className="block h-0.5 w-5 bg-gray-600 mb-1"></span>
+                  <span className="block h-0.5 w-5 bg-gray-600"></span>
                 </div>
 
                 {isNavOpen && (
-                  <div className="MENU-LINK-MOBILE absolute top-full left-0 mt-2 w-full bg-white rounded shadow-lg">
-                    <ul className="MENU-LINKS">
+                  <div className="MENU-LINK-MOBILE absolute top-full left-0 mt-2 w-screen bg-white rounded shadow-lg">
+                    <ul className="MENU-LINKS p-4">
                       {navigationAll.map((link) => (
                         <li key={link.name}>
                           <Link
                             href={link.href}
-                            className="text-base font-semibold text-gray-900 py-2 px-4 block hover:bg-gray-100"
+                            className="text-base font-semibold text-gray-900 py-2 block hover:bg-gray-100"
                           >
                             {link.name}
                           </Link>
@@ -87,22 +87,16 @@ export default function NavbarDup() {
               width: 20px;
             }
 
-            .HAMBURGER-ICON span {
-              height: 2px;
-              background-color: #4b5563;
-              transition: transform 0.2s, opacity 0.2s;
-            }
-
             .HAMBURGER-ICON.open span:nth-child(1) {
-              transform: translateY(6px) rotate(45deg);
+              transform: rotate(-45deg) translate(-2px, 5px);
             }
 
             .HAMBURGER-ICON.open span:nth-child(2) {
               opacity: 0;
             }
 
-            .HAMBURGER-ICON.open span:nth-child(3) {
-              transform: translateY(-6px) rotate(-45deg);
+            .HAMBURGER-ICON.open span:last-child {
+              transform: rotate(45deg) translate(-2px, -5px);
             }
 
             .MOBILE-MENU {
