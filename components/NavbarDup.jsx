@@ -42,10 +42,10 @@ export default function NavbarDup() {
                 </div>
 
                 {isNavOpen && (
-                  <div className="MOBILE-MENU-OVERLAY fixed inset-0 bg-white z-10">
+                  <div className="MOBILE-MENU-OVERLAY fixed inset-0 bg-white z-10 overflow-hidden">
                     <div className="flex items-center justify-between py-2 px-10">
                       <div
-                        className="CROSS-ICON"
+                        className="HAMBURGER-ICON cursor-pointer"
                         onClick={() => setIsNavOpen(false)} // change isNavOpen state to false to close the menu
                       >
                         <svg
@@ -62,15 +62,15 @@ export default function NavbarDup() {
                         </svg>
                       </div>
                     </div>
-                    <ul className="MENU-LINK-MOBILE-OPEN flex flex-col items-start justify-center min-h-[calc(100vh-64px)]">
+                    <div className="MENU-LINK-MOBILE-OPEN flex flex-col items-start justify-start min-h-[calc(100vh-64px)]">
                       {navigationAll.map((link) => (
-                        <li key={link.name}>
-                          <Link href={link.href}>
-                            <a className="block px-8 py-4 text-base text-gray-600 hover:text-gray-800">{link.name}</a>
-                          </Link>
-                        </li>
+                        <Link href={link.href} key={link.name}>
+                          <a className="block py-4 px-8 text-base font-small text-gray-600 hover:text-gray-800">
+                            {link.name}
+                          </a>
+                        </Link>
                       ))}
-                    </ul>
+                    </div>
                   </div>
                 )}
               </section>
@@ -90,29 +90,10 @@ export default function NavbarDup() {
       </header>
       <style jsx>{`
         .MOBILE-MENU-OVERLAY {
-          position: fixed;
           top: 64px;
           left: 0;
           right: 0;
           bottom: 0;
-          z-index: 10;
-          background: white;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          align-items: flex-start;
-          overflow: hidden;
-        }
-
-        .CROSS-ICON {
-          cursor: pointer;
-        }
-
-        .MENU-LINK-MOBILE-OPEN {
-          flex: 1;
-          padding: 0;
-          margin: 0;
-          list-style-type: none;
         }
 
         @media (min-width: 1024px) {
@@ -124,3 +105,4 @@ export default function NavbarDup() {
     </>
   );
 }
+
