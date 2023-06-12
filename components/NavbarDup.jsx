@@ -40,10 +40,10 @@ const NavigationBar = () => {
 
   return (
     <>
-      <div className="absolute w-full">
+      <div className="absolute w-full z-50">
         <HeaderBanner /> {/* Import and use the HeaderBanner component */}
       </div>
-      <header className="backdrop-blur-sm bg-white/90 bg-white mx-auto px-2">
+      <header className="backdrop-blur-sm bg-white/90 bg-white mx-auto px-2 relative z-50">
         <nav>
           <div className="flex items-center justify-between border-b py-2 px-10">
             <Link href="/" aria-label="Home">
@@ -107,7 +107,7 @@ const NavigationBar = () => {
           </div>
           {/* Mobile Menu Overlay */}
           {isNavOpen && (
-            <div className="fixed inset-0 bg-white z-50">
+            <div className="fixed inset-0 bg-white z-40">
               <div className="px-8 py-4 space-y-4 mt-20">
                 {navigationAll.map((link) => (
                   <Link href={link.href} key={link.name} className="block text-xl font-medium text-gray-600 hover:text-gray-800">
@@ -124,4 +124,5 @@ const NavigationBar = () => {
 };
 
 export default NavigationBar;
+
 
