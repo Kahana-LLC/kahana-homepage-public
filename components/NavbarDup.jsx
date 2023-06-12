@@ -30,6 +30,14 @@ export default function NavbarDup() {
     setIsNavOpen((prevState) => !prevState);
   };
 
+  const bodyScrollLock = () => {
+    if (isNavOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+  };
+
   return (
     <>
       <HeaderBanner />
@@ -45,10 +53,10 @@ export default function NavbarDup() {
               />
             </Link>
 
-            <section className="MOBILE-MENU flex lg:hidden">
+            <section className="MOBILE-MENU relative flex lg:hidden">
               {isNavOpen ? (
-                <div className="MOBILE-MENU-OVERLAY absolute top-0 left-0 w-full h-full bg-white z-10">
-                  <div className="CROSS-ICON absolute top-4 right-4 px-2 py-2" onClick={toggleNavOpen}>
+                <div className="MOBILE-MENU-OVERLAY fixed top-16 left-0 w-full h-screen bg-white z-10" onClick={toggleNavOpen}>
+                  <div className="CROSS-ICON absolute top-4 right-4 px-2 py-2">
                     <svg
                       className="h-8 w-8 text-gray-600"
                       viewBox="0 0 24 24"
@@ -62,8 +70,8 @@ export default function NavbarDup() {
                       <line x1="6" y1="6" x2="18" y2="18" />
                     </svg>
                   </div>
-                  <div className="MOBILE-MENU-CONTENT flex flex-col items-center justify-center h-screen">
-                    <ul className="MENU-LINK-MOBILE-OPEN space-y-4 text-2xl">
+                  <div className="MOBILE-MENU-CONTENT flex flex-col items-start justify-start h-full p-8">
+                    <ul className="MENU-LINK-MOBILE-OPEN space-y-4 text-lg">
                       {navigationAll.map((link) => (
                         <li key={link.name}>
                           <Link href={link.href} className="text-gray-600 hover:text-gray-800">
@@ -96,47 +104,50 @@ export default function NavbarDup() {
         </nav>
       </header>
       <style jsx>{`
+        .hideMenuNav {
+          display: none;
+        }
+        .showMenuNav {
+          display: block;
+          position: absolute;
+          width: 100%;
+          height: 100vh;
+          top: 0;
+          left: 0;
+          background: white;
+          z-index: 10;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          align-items: center;
+        }
+
         .MOBILE-MENU-OVERLAY {
-          position: fixed;
           top: 48px;
           left: 0;
           width: 100%;
           height: calc(100vh - 48px);
           display: flex;
           flex-direction: column;
-          justify-content: center;
-          align-items: center;
+          justify-content: flex-start;
+          align-items: flex-start;
+          padding-top: 2rem;
         }
 
         .CROSS-ICON {
-          position: absolute;
-          top: 10px;
-          right: 10px;
           cursor: pointer;
         }
 
         .MOBILE-MENU-CONTENT {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
           width: 100%;
-          height: 100%;
         }
 
         .MENU-LINK-MOBILE-OPEN {
           list-style: none;
           padding: 0;
           margin: 0;
-          text-align: center;
-        }
-
-        .MENU-LINK-MOBILE-OPEN li {
-          margin-bottom: 10px;
         }
       `}</style>
     </>
   );
 }
-
-
