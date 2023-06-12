@@ -61,49 +61,46 @@ export default function NavbarDup() {
               />
             </Link>
 
-            <div className="MOBILE-ICON-CONTAINER">
-              <section className="MOBILE-MENU relative flex lg:hidden">
-                <div className={`MOBILE-MENU-OVERLAY fixed top-0 left-0 w-full h-screen bg-white z-10 ${isNavOpen ? 'showMenuNav' : 'hideMenuNav'}`}>
-                  <div className="MOBILE-MENU-CONTENT flex flex-col items-start justify-start h-full p-8">
-                    <ul className="MENU-LINK-MOBILE-OPEN space-y-4 text-lg">
-                      {navigationAll.map((link) => (
-                        <li key={link.name}>
-                          <Link href={link.href} className="text-gray-600 hover:text-gray-800">
-                            {link.name}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+            <section className="MOBILE-MENU relative flex lg:hidden">
+              <div className={`MOBILE-MENU-OVERLAY fixed top-0 left-0 w-full h-screen bg-white z-10 ${isNavOpen ? 'showMenuNav' : 'hideMenuNav'}`}>
+                <div className="MOBILE-MENU-CONTENT flex flex-col items-start justify-start h-full p-8">
+                  <ul className="MENU-LINK-MOBILE-OPEN space-y-4 text-lg">
+                    {navigationAll.map((link) => (
+                      <li key={link.name}>
+                        <Link href={link.href} className="text-gray-600 hover:text-gray-800">
+                          {link.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-              </section>
-
-              <div className="MOBILE-ICON" onClick={toggleNavOpen}>
-                {!isNavOpen && (
-                  <div className="HAMBURGER-ICON space-y-2">
-                    <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
-                    <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
-                    <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
-                  </div>
-                )}
-                {isNavOpen && (
-                  <div className="CROSS-ICON absolute top-4 right-4 px-2 py-2">
-                    <svg
-                      className="h-8 w-8 text-gray-600"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <line x1="18" y1="6" x2="6" y2="18" />
-                      <line x1="6" y1="6" x2="18" y2="18" />
-                    </svg>
-                  </div>
-                )}
               </div>
-            </div>
+            </section>
+
+            {!isNavOpen && (
+              <div className="HAMBURGER-ICON space-y-2" onClick={toggleNavOpen}>
+                <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
+                <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
+                <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
+              </div>
+            )}
+
+            {isNavOpen && (
+              <div className="CROSS-ICON absolute top-4 right-4 px-2 py-2" onClick={toggleNavOpen}>
+                <svg
+                  className="h-8 w-8 text-gray-600"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <line x1="18" y1="6" x2="6" y2="18" />
+                  <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+              </div>
+            )}
 
             <ul className="DESKTOP-MENU hidden space-x-8 lg:flex">
               {navigationAll.map((link) => (
@@ -161,57 +158,8 @@ export default function NavbarDup() {
           padding: 0;
           margin: 0;
         }
-
-        .MOBILE-ICON-CONTAINER {
-          position: relative;
-        }
-
-        .MOBILE-ICON {
-          position: absolute;
-          top: 0;
-          right: 0;
-          cursor: pointer;
-        }
-
-        .HAMBURGER-ICON,
-        .CROSS-ICON {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          width: 24px;
-          height: 24px;
-        }
-
-        .HAMBURGER-ICON span,
-        .CROSS-ICON svg {
-          display: block;
-          height: 2px;
-          width: 100%;
-          background-color: #000;
-          transition: transform 0.3s ease;
-        }
-
-        .HAMBURGER-ICON span:not(:last-child) {
-          margin-bottom: 4px;
-        }
-
-        .CROSS-ICON svg {
-          transform: rotate(45deg);
-        }
-
-        .showMenuNav .HAMBURGER-ICON span:nth-child(1) {
-          transform: translateY(8px) rotate(45deg);
-        }
-
-        .showMenuNav .HAMBURGER-ICON span:nth-child(2) {
-          opacity: 0;
-        }
-
-        .showMenuNav .HAMBURGER-ICON span:nth-child(3) {
-          transform: translateY(-8px) rotate(-45deg);
-        }
       `}</style>
     </>
   );
 }
+
