@@ -40,82 +40,84 @@ const NavigationBar = () => {
 
   return (
     <>
-      <HeaderBanner /> {/* Import and use the HeaderBanner component */}
       <header className="backdrop-blur-sm bg-white/90 bg-white mx-auto px-2">
-        <nav>
-          <div className="flex items-center justify-between border-b py-2 px-10">
-            <Link href="/" aria-label="Home">
-              <span className="sr-only">Company</span>
-              <Image
-                className="h-10"
-                src={whiteKahanaLogo}
-                alt="navbar-logo"
-              />
-            </Link>
-            {/* Desktop Menu */}
-            <ul className="DESKTOP-MENU hidden space-x-8 lg:flex">
-              {navigationAll.map((link) => (
-                <li key={link.name}>
-                  <Link href={link.href} className="text-base font-small text-gray-600 hover:text-gray-800">
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            {/* Mobile Menu */}
-            <div className="lg:hidden">
-              <button
-                type="button"
-                onClick={toggleNavOpen}
-                className="text-gray-600 hover:text-gray-800 focus:outline-none"
-              >
-                {isNavOpen ? (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M6 18L18 6M6 6l12 12"
-                    />
-                  </svg>
-                ) : (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M4 6h16M4 12h16m-7 6h7"
-                    />
-                  </svg>
-                )}
-              </button>
-            </div>
-          </div>
-          {/* Mobile Menu Overlay */}
-          {isNavOpen && (
-            <div className="fixed inset-0 flex items-start justify-center bg-white/90">
-              <div className="bg-white px-8 py-4 space-y-4 w-full">
+        <div className="relative">
+          <HeaderBanner /> {/* Import and use the HeaderBanner component */}
+          <nav>
+            <div className="flex items-center justify-between border-b py-2 px-10">
+              <Link href="/" aria-label="Home">
+                <span className="sr-only">Company</span>
+                <Image
+                  className="h-10"
+                  src={whiteKahanaLogo}
+                  alt="navbar-logo"
+                />
+              </Link>
+              {/* Desktop Menu */}
+              <ul className="DESKTOP-MENU hidden space-x-8 lg:flex">
                 {navigationAll.map((link) => (
-                  <Link href={link.href} key={link.name} className="block text-xl font-medium text-gray-600 hover:text-gray-800">
-                    {link.name}
-                  </Link>
+                  <li key={link.name}>
+                    <Link href={link.href} className="text-base font-small text-gray-600 hover:text-gray-800">
+                      {link.name}
+                    </Link>
+                  </li>
                 ))}
+              </ul>
+              {/* Mobile Menu */}
+              <div className="lg:hidden">
+                <button
+                  type="button"
+                  onClick={toggleNavOpen}
+                  className="text-gray-600 hover:text-gray-800 focus:outline-none"
+                >
+                  {isNavOpen ? (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M6 18L18 6M6 6l12 12"
+                      />
+                    </svg>
+                  ) : (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M4 6h16M4 12h16m-7 6h7"
+                      />
+                    </svg>
+                  )}
+                </button>
               </div>
             </div>
-          )}
-        </nav>
+            {/* Mobile Menu Overlay */}
+            {isNavOpen && (
+              <div className="fixed inset-0 z-50 bg-white">
+                <div className="px-8 py-4 space-y-4">
+                  {navigationAll.map((link) => (
+                    <Link href={link.href} key={link.name} className="block text-xl font-medium text-gray-600 hover:text-gray-800">
+                      {link.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+          </nav>
+        </div>
       </header>
     </>
   );
