@@ -40,13 +40,13 @@ export default function NavbarDup() {
                   className={`HAMBURGER-ICON ${isNavOpen ? 'open' : ''}`}
                   onClick={() => setIsNavOpen((prev) => !prev)}
                 >
-                  <span className="block h-1 w-6 bg-gray-600 mb-1"></span>
-                  <span className="block h-1 w-6 bg-gray-600 mb-1"></span>
-                  <span className="block h-1 w-6 bg-gray-600"></span>
+                  <span className="block h-0.5 w-4 bg-gray-600 mb-1"></span>
+                  <span className="block h-0.5 w-4 bg-gray-600 mb-1"></span>
+                  <span className="block h-0.5 w-4 bg-gray-600"></span>
                 </div>
 
                 {isNavOpen && (
-                  <div className="MENU-LINK-MOBILE absolute right-0 mt-16 w-screen max-w-screen bg-white rounded shadow-lg z-10">
+                  <div className="MENU-LINK-MOBILE absolute right-0 mt-14 w-screen max-w-screen bg-white rounded shadow-lg">
                     <ul className="MENU-LINKS">
                       {navigationAll.map((link) => (
                         <li key={link.name}>
@@ -84,7 +84,7 @@ export default function NavbarDup() {
               justify-content: space-between;
               cursor: pointer;
               height: 16px;
-              width: 16px;
+              width: 20px;
             }
 
             .HAMBURGER-ICON.open span:nth-child(1) {
@@ -106,10 +106,6 @@ export default function NavbarDup() {
             .MENU-LINK-MOBILE {
               display: block;
               padding: 1rem;
-              width: 100vw;
-              max-width: 100%;
-              margin-top: 8px;
-              z-index: 10;
             }
 
             .MENU-LINKS {
@@ -138,4 +134,3 @@ export default function NavbarDup() {
     </>
   );
 }
-
