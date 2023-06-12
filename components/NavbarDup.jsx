@@ -56,7 +56,20 @@ export default function NavbarDup() {
 
             <section className="MOBILE-MENU relative flex lg:hidden">
               {isNavOpen ? (
-                <div className="MOBILE-MENU-OVERLAY fixed top-16 left-0 w-full h-screen bg-white z-10">
+                <>
+                  <div className="MOBILE-MENU-OVERLAY fixed top-16 left-0 w-full h-screen bg-white z-10">
+                    <div className="MOBILE-MENU-CONTENT flex flex-col items-start justify-start h-full p-8">
+                      <ul className="MENU-LINK-MOBILE-OPEN space-y-4 text-lg">
+                        {navigationAll.map((link) => (
+                          <li key={link.name}>
+                            <Link href={link.href} className="text-gray-600 hover:text-gray-800">
+                              {link.name}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
                   <div className="CROSS-ICON absolute top-4 right-4 px-2 py-2" onClick={toggleNavOpen}>
                     <svg
                       className="h-8 w-8 text-gray-600"
@@ -71,18 +84,7 @@ export default function NavbarDup() {
                       <line x1="6" y1="6" x2="18" y2="18" />
                     </svg>
                   </div>
-                  <div className="MOBILE-MENU-CONTENT flex flex-col items-start justify-start h-full p-8">
-                    <ul className="MENU-LINK-MOBILE-OPEN space-y-4 text-lg">
-                      {navigationAll.map((link) => (
-                        <li key={link.name}>
-                          <Link href={link.href} className="text-gray-600 hover:text-gray-800">
-                            {link.name}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
+                </>
               ) : (
                 <div className="HAMBURGER-ICON space-y-2" onClick={toggleNavOpen}>
                   <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
@@ -124,10 +126,10 @@ export default function NavbarDup() {
         }
 
         .MOBILE-MENU-OVERLAY {
-          top: 64px;
+          top: 64px; /* Adjusted the top position to 64px */
           left: 0;
           width: 100%;
-          height: calc(100vh - 64px);
+          height: calc(100vh - 64px); /* Adjusted the height to account for the header */
           display: flex;
           flex-direction: column;
           justify-content: flex-start;
