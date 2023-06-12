@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 //images
 import whiteKahanaLogo from '../assets/kahana_logo_wide_light.svg';
@@ -20,7 +20,15 @@ const navigationAll = [
 
 export default function NavbarDup() {
   const [isNavOpen, setIsNavOpen] = useState(false);
-  
+
+  useEffect(() => {
+    if (isNavOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [isNavOpen]);
+
   return (
     <>
       <HeaderBanner />
@@ -47,7 +55,7 @@ export default function NavbarDup() {
                 </div>
 
                 {isNavOpen && (
-                  <div className="MOBILE-MENU-OVERLAY fixed inset-0 bg-white z-10">
+                  <div className="MOBILE-MENU-OVERLAY fixed inset-0 bg-white z-10 overflow-y-auto">
                     <div className="flex items-center justify-between border-b py-2 px-10">
                       <Link href="/" aria-label="Home">
                         <span className="sr-only">Company</span>
@@ -72,13 +80,12 @@ export default function NavbarDup() {
                         </svg>
                       </div>
                     </div>
-
-                    <ul className="MENU-LINK-MOBILE-OPEN space-y-2 p-8">
+                    <ul className="MENU-LINK-MOBILE-OPEN flex flex-col items-start justify-center min-h-screen py-16 px-10">
                       {navigationAll.map((link) => (
                         <Link
                           href={link.href}
                           key={link.name}
-                          className="block text-base font-small text-gray-600 hover:text-gray-800"
+                          className="text-base font-small text-gray-600 hover:text-gray-800"
                         >
                           {link.name}
                         </Link>
@@ -106,4 +113,5 @@ export default function NavbarDup() {
     </>
   );
 }
+
 
