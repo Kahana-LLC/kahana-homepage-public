@@ -64,18 +64,17 @@ export default function NavbarDup() {
             <section className="MOBILE-MENU relative flex lg:hidden">
               {isNavOpen ? (
                 <>
-                  <div className="MOBILE-MENU-OVERLAY fixed top-42 left-0 w-full h-screen bg-white z-10" onClick={toggleNavOpen}>
-                    <div className="MOBILE-MENU-CONTENT flex flex-col items-start justify-start h-full p-8">
-                      <ul className="MENU-LINK-MOBILE-OPEN space-y-4 text-lg">
-                        {navigationAll.map((link) => (
-                          <li key={link.name}>
-                            <Link href={link.href} className="text-gray-600 hover:text-gray-800">
-                              {link.name}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                  <div className="MOBILE-MENU-OVERLAY fixed top-45 left-0 w-full h-screen bg-white z-10" onClick={toggleNavOpen}></div>
+                  <div className="MOBILE-MENU-CONTENT absolute top-45 left-0 w-full h-screen flex flex-col items-start justify-start p-8 bg-white z-20">
+                    <ul className="MENU-LINK-MOBILE-OPEN space-y-4 text-lg">
+                      {navigationAll.map((link) => (
+                        <li key={link.name}>
+                          <Link href={link.href} className="text-gray-600 hover:text-gray-800">
+                            {link.name}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                   <div className="HAMBURGER-ICON absolute top-12 right-6 px-2 py-2" onClick={toggleNavOpen}>
                     <span className="block h-0.5 w-8 bg-gray-600"></span>
@@ -85,9 +84,9 @@ export default function NavbarDup() {
                 </>
               ) : (
                 <div className="HAMBURGER-ICON space-y-2" onClick={toggleNavOpen}>
-                  <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
-                  <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
-                  <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
+                  <span className="block h-0.5 w-8 bg-gray-600"></span>
+                  <span className="block h-0.5 w-8 bg-gray-600"></span>
+                  <span className="block h-0.5 w-8 bg-gray-600"></span>
                 </div>
               )}
             </section>
@@ -104,44 +103,6 @@ export default function NavbarDup() {
           </div>
         </nav>
       </header>
-      <style jsx>{`
-        .hideMenuNav {
-          display: none;
-        }
-        .showMenuNav {
-          display: block;
-          position: absolute;
-          width: 100%;
-          height: 100vh;
-          top: 0;
-          left: 0;
-          background: white;
-          z-index: 10;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-evenly;
-          align-items: center;
-        }
-
-        .MOBILE-MENU-OVERLAY {
-          width: 100%;
-          height: 100%;
-        }
-
-        .CROSS-ICON {
-          cursor: pointer;
-        }
-
-        .MOBILE-MENU-CONTENT {
-          width: 100%;
-        }
-
-        .MENU-LINK-MOBILE-OPEN {
-          list-style: none;
-          padding: 0;
-          margin: 0;
-        }
-      `}</style>
     </>
   );
 }
