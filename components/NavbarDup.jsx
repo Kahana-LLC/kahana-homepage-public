@@ -40,13 +40,13 @@ export default function NavbarDup() {
                   className={`HAMBURGER-ICON ${isNavOpen ? 'open' : ''}`}
                   onClick={() => setIsNavOpen((prev) => !prev)}
                 >
-                  <span className="block h-0.5 w-5 bg-gray-600 mb-1"></span>
-                  <span className="block h-0.5 w-5 bg-gray-600 mb-1"></span>
-                  <span className="block h-0.5 w-5 bg-gray-600"></span>
+                  <span className="block h-1 w-6 bg-gray-600 mb-1"></span>
+                  <span className="block h-1 w-6 bg-gray-600 mb-1"></span>
+                  <span className="block h-1 w-6 bg-gray-600"></span>
                 </div>
 
                 {isNavOpen && (
-                  <div className="MENU-LINK-MOBILE absolute right-0 mt-2 w-64 bg-white rounded shadow-lg">
+                  <div className="MENU-LINK-MOBILE absolute top-full left-0 mt-2 w-full bg-white rounded shadow-lg">
                     <ul className="MENU-LINKS">
                       {navigationAll.map((link) => (
                         <li key={link.name}>
@@ -87,16 +87,22 @@ export default function NavbarDup() {
               width: 20px;
             }
 
+            .HAMBURGER-ICON span {
+              height: 2px;
+              background-color: #4b5563;
+              transition: transform 0.2s, opacity 0.2s;
+            }
+
             .HAMBURGER-ICON.open span:nth-child(1) {
-              transform: rotate(-45deg) translate(-1px, 1px);
+              transform: translateY(6px) rotate(45deg);
             }
 
             .HAMBURGER-ICON.open span:nth-child(2) {
               opacity: 0;
             }
 
-            .HAMBURGER-ICON.open span:last-child {
-              transform: rotate(45deg) translate(-1px, -1px);
+            .HAMBURGER-ICON.open span:nth-child(3) {
+              transform: translateY(-6px) rotate(-45deg);
             }
 
             .MOBILE-MENU {
@@ -115,7 +121,7 @@ export default function NavbarDup() {
             }
 
             .MENU-LINKS li:not(:last-child) {
-              margin-bottom: 0.5rem;
+              margin-bottom: 1rem;
             }
 
             .MENU-LINKS a {
@@ -134,4 +140,5 @@ export default function NavbarDup() {
     </>
   );
 }
+
 
