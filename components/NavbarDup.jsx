@@ -48,22 +48,19 @@ export default function NavbarDup() {
 
   return (
     <>
+      <HeaderBanner />
       <header className="backdrop-blur-sm bg-white/90 bg-white mx-auto px-2">
-        <HeaderBanner />
-
-        <div className="logo-container">
-          <Link href="/" aria-label="Home">
-            <span className="sr-only">Company</span>
-            <Image
-              className="h-10"
-              src={whiteKahanaLogo}
-              alt="navbar-logo"
-            />
-          </Link>
-        </div>
-
         <nav>
           <div className="flex items-center justify-between border-b py-2 px-10">
+            <Link href="/" aria-label="Home">
+              <span className="sr-only">Company</span>
+              <Image
+                className="h-10"
+                src={whiteKahanaLogo}
+                alt="navbar-logo"
+              />
+            </Link>
+
             <section className="MOBILE-MENU relative flex lg:hidden">
               <div className="MOBILE-MENU-OVERLAY fixed top-0 left-0 w-full h-screen bg-white z-10" style={{ display: isNavOpen ? 'flex' : 'none' }}>
                 <div className="CROSS-ICON absolute top-4 right-4 px-2 py-2" onClick={toggleNavOpen}>
@@ -131,14 +128,8 @@ export default function NavbarDup() {
           align-items: center;
         }
 
-        .logo-container {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-
         .MOBILE-MENU-OVERLAY {
-          top: 100%;
+          top: 0;
           left: 0;
           width: 100%;
           height: 100vh;
@@ -155,7 +146,6 @@ export default function NavbarDup() {
 
         .MOBILE-MENU-CONTENT {
           width: 100%;
-          position: absolute;
         }
 
         .MENU-LINK-MOBILE-OPEN {
