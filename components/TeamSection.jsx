@@ -2,7 +2,6 @@ import Image from 'next/image';
 
 //images
 import adam from '../assets/headshots/Adam Kershner.png';
-import carl from '../assets/headshots/Carl Nordgren.png';
 import emilio from '../assets/headshots/emilio.jpeg';
 import eugene from '../assets/headshots/Eugene Kaminsky.png';
 import hugh from '../assets/headshots/Hugh Molotsi.png';
@@ -54,13 +53,6 @@ const people = [
     imageUrl: eugene,
     twitterUrl: 'https://twitter.com/KahanaHQ',
     linkedinUrl: 'https://www.linkedin.com/company/kahana-co/',
-  },
-  {
-    name: 'Carl Nordgren',
-    role: 'Business Advisor',
-    imageUrl: carl,
-    twitterUrl: 'https://twitter.com/KahanaHQ',
-    linkedinUrl: 'https://www.linkedin.com/in/carl-nordgren-0bb3b621/',
   },
   {
     name: 'Hugh Molotsi',
