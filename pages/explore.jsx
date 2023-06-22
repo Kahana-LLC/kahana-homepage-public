@@ -25,6 +25,24 @@ const posts = [
     //},
   },
   {
+    title: 'What it\'s like being an NFL player',
+    href: 'https://app.kahana.co/hub/smGioNXlSDH9Kh9cjg0A',
+    category: { name: 'Benjamin St-Juste', href: 'https://www.tiktok.com/@benj_juice?lang=en' },
+    description:
+      'What you see on Sundays is only 1% of the story: our performance is the result of months of training, prehab, and mental prep that we put in year-round. Join me and explore what goes on behind the scenes of the grind.',
+    //date: 'Mar 16, 2020',
+    //datetime: '2020-03-16',
+    imageUrl:
+      'https://kahana-website-images.s3.us-east-2.amazonaws.com/benjaminStJuste.png',
+    //readingTime: '6 min',
+    //author: {
+      //name: 'Roel Aufderehar',
+      //href: '#',
+      //imageUrl:
+        //'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    //},
+  },
+  {
     title: '👸🏼 Lazy Girl Job Bootcamp',
     href: 'https://app.kahana.co/hub/0xoAwd6Uq7KdKO0pdQ4j',
     category: { name: 'Gabrielle Judge', href: 'https://www.tiktok.com/@gabrielle_judge' },
