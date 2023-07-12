@@ -5,16 +5,16 @@ import { useEffect, useState } from 'react';
 
 // import backgroundImage from '../assets/images/background-features.jpg';
 import collaborate from '../assets/images/collaborate.webp';
-import create from '../assets/images/create.png';
+import explore from '../assets/images/explore.webp';
 import monetize from '../assets/images/monetize.webp';
 import { Container } from './Container';
 
 const features = [
   {
-    title: 'Create',
+    title: 'Get Discovered',
     description:
-      'Create digital products faster than ever. Bulk upload content and files into hubs. Organize with folders, subfolders, and smart links.',
-    image: create,
+      'Flip a switch and get in front of viewers all over the world. Get exposure to folks who can’t wait for your stuff.',
+    image: explore,
   },
   {
     title: 'Monetize',
