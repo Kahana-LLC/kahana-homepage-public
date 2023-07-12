@@ -75,7 +75,7 @@ export default function Footer() {
               Join a community of 2500+ creators and experts collaborating and monetizing their expertise together.
             </p>
             {/* Badge code */}
-            <div className="sf-root" data-id="3652674" data-badge="heart-badge-white" data-variant-id="sf" style={{ width: '125px' }}></div>
+            <div className="sf-root" data-id="3652674" data-badge="heart-badge-white" data-variant-id="sf" style={{ width: '75px' }}></div>
           </div>
           <div className="mt-12 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
             <div className="md:grid md:grid-cols-2 md:gap-8">
