@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
 // import backgroundImage from '../assets/images/background-features.jpg';
-import collaborate from '../assets/images/collaborate.png';
+import collaborate from '../assets/images/collaborate.webp';
 import create from '../assets/images/create.png';
 import monetize from '../assets/images/monetize.png';
 import { Container } from './Container';
