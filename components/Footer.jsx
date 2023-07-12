@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react';
 import Link from 'next/link'
 import Image from 'next/image';
 import grayKahanaLogo from '../assets/kahana_logo_wide_gray.svg';
@@ -44,6 +45,17 @@ const navigation = {
 };
 
 export default function Footer() {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://b.sf-syn.com/badge_js?sf_id=3652674&variant_id=sf';
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   return (
     <footer className="bg-white" aria-labelledby="footer-heading">
       <hr className="my-8 h-px bg-slate-300 border-0 mx-8" />
@@ -54,26 +66,16 @@ export default function Footer() {
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-8 xl:col-span-1">
             <Image
-              className="h-10 "
+              className="h-10"
               src={grayKahanaLogo}
               w
-              // width={10}
-              // height={20}
               alt="navbar-logo"
             />
             <p className="text-base text-gray-500">
-              Join a community of 2500+ creators and experts collaborating and
-              monetizing their expertise together.
+              Join a community of 2500+ creators and experts collaborating and monetizing their expertise together.
             </p>
             {/* Badge code */}
-            <div className="sf-root" data-id="3652674" data-badge="heart-badge-white" data-variant-id="sf" style={{ width: '125px' }}>
-              <a href="https://sourceforge.net/software/product/Kahana/" target="_blank" rel="noopener noreferrer">Kahana Reviews</a>
-            </div>
-            <script
-              dangerouslySetInnerHTML={{
-                __html: `(function () {var sc=document.createElement('script');sc.async=true;sc.src='https://b.sf-syn.com/badge_js?sf_id=3652674&variant_id=sf';var p=document.getElementsByTagName('script')[0];p.parentNode.insertBefore(sc, p);})();`,
-              }}
-            />
+            <div className="sf-root" data-id="3652674" data-badge="heart-badge-white" data-variant-id="sf" style={{ width: '125px' }}></div>
           </div>
           <div className="mt-12 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
             <div className="md:grid md:grid-cols-2 md:gap-8">
