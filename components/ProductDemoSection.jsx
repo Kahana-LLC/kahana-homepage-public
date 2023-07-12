@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 // import backgroundImage from '../assets/images/background-features.jpg';
 import collaborate from '../assets/images/collaborate.webp';
 import create from '../assets/images/create.png';
-import monetize from '../assets/images/monetize.png';
+import monetize from '../assets/images/monetize.webp';
 import { Container } from './Container';
 
 const features = [
