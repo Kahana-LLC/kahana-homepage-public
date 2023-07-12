@@ -67,7 +67,7 @@ export default function Footer() {
             </p>
             {/* Badge code */}
             <div className="sf-root" data-id="3652674" data-badge="heart-badge-white" data-variant-id="sf" style={{ width: '125px' }}>
-              <a href="https://sourceforge.net/software/product/Kahana/" target="_blank">Kahana Reviews</a>
+              <a href="https://sourceforge.net/software/product/Kahana/" target="_blank" rel="noopener noreferrer">Kahana Reviews</a>
             </div>
             <script
               dangerouslySetInnerHTML={{
