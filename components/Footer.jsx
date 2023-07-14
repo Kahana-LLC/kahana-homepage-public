@@ -77,7 +77,7 @@ export default function Footer() {
             {/* Badge code */}
             <div className="sf-root" data-id="3652674" data-badge="heart-badge-white" data-variant-id="sf" style={{ width: '75px' }}></div>
             <a href="https://www.capterra.com/reviews/342047/Kahana?utm_source=vendor&utm_medium=badge&utm_campaign=capterra_reviews_badge">
-              <div style={{ maxWidth: '150px', maxHeight: '150px' }}>
+              <div style={{ maxWidth: '300px', maxHeight: '300px' }}>
                 <Image
                   src="https://assets.capterra.com/badge/14c0b2030cba21f2961e6c6aed65228b.svg?v=2289101&p=342047"
                   alt="Capterra Badge"
