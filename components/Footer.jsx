@@ -82,8 +82,6 @@ export default function Footer() {
                   src="https://assets.capterra.com/badge/14c0b2030cba21f2961e6c6aed65228b.svg?v=2289101&p=342047"
                   alt="Capterra Badge"
                   layout="responsive"
-                  width={1}
-                  height={1}
                 />
               </div>
             </a>
