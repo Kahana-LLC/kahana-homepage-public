@@ -76,7 +76,9 @@ export default function Footer() {
             </p>
             {/* Badge code */}
             <div className="sf-root" data-id="3652674" data-badge="heart-badge-white" data-variant-id="sf" style={{ width: '75px' }}></div>
-            <a href="https://www.capterra.com/reviews/342047/Kahana?utm_source=vendor&utm_medium=badge&utm_campaign=capterra_reviews_badge"> <img border="0" src="https://assets.capterra.com/badge/14c0b2030cba21f2961e6c6aed65228b.svg?v=2289101&p=342047" /> </a>
+            <a href="https://www.capterra.com/reviews/342047/Kahana?utm_source=vendor&utm_medium=badge&utm_campaign=capterra_reviews_badge">
+              <img border="0" src="https://assets.capterra.com/badge/14c0b2030cba21f2961e6c6aed65228b.svg?v=2289101&p=342047" style="width: 75px; height: auto;" />
+            </a>
           </div>
           <div className="mt-12 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
             <div className="md:grid md:grid-cols-2 md:gap-8">
