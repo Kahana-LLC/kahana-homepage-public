@@ -10,18 +10,18 @@ const CustomLoader = ({ src, width, quality }) => {
 const navigation = {
   important: [
     { name: 'Explore', href: '/explore' },
-
     { name: 'Blog', href: 'https://blog.kahana.co' },
     { name: 'About', href: '/about' },
-    { name: 'FAQ', href: '/faq' },
     { name: 'Home', href: '/' },
     { name: 'Careers', href: 'https://7hkdcfzbmr0.typeform.com/to/RQ99b3Bp' },
     { name: 'Invest in seed round', href: 'https://7hkdcfzbmr0.typeform.com/to/wYCUMm54' },
+    { name: 'Become an affiliate', href: 'https://7hkdcfzbmr0.typeform.com/to/M8FkUQl7' },
     // { name: 'Log in', href: '#' },
     // { name: 'Sign up', href: '#' },
   ],
   support: [
     { name: 'Help center', href: 'https://kahana.tawk.help/' },
+    { name: 'FAQ', href: '/faq' },
     { name: 'Vote for features', href: 'https://productific.com/@Kahana' },
     { name: 'Live chat', href: 'https://kahana.tawk.help/' },
     { name: 'Join the community', href: 'https://nas.io/creators-and-experts' },
@@ -86,8 +86,8 @@ export default function Footer() {
                   loader={CustomLoader}
                   src="capterra-badge"
                   alt="Capterra Badge"
-                  width={100} // Adjust the width here as per your requirement
-                  height={40} // Adjust the height here as per your requirement
+                  width={120} // Adjust the width here as per your requirement
+                  height={48} // Adjust the height here as per your requirement
                 />
               </a>
             </div>
