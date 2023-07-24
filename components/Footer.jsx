@@ -89,7 +89,7 @@ export default function Footer() {
                   width={100} // Adjust the width here as per your requirement
                   height={40} // Adjust the height here as per your requirement
                 />
-              </a
+              </a>
             </div>
           </div>
           <div className="mt-12 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
