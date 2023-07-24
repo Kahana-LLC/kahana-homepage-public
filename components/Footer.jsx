@@ -78,18 +78,19 @@ export default function Footer() {
             <p className="text-base text-gray-500">
               Join a community of 2500+ creators and experts collaborating and monetizing their expertise together.
             </p>
-            {/* Badge code */}
-            <div className="sf-root" data-id="3652674" data-badge="heart-badge-white" data-variant-id="sf" style={{ width: '75px' }}></div>
-            <div style={{ width: '20px' }} /> {/* Add some space between the elements */}
-            <a href="https://www.capterra.com/reviews/342047/Kahana?utm_source=vendor&utm_medium=badge&utm_campaign=capterra_reviews_badge">
-              <Image
-                loader={CustomLoader}
-                src="capterra-badge"
-                alt="Capterra Badge"
-                width={100} // Adjust the width here as per your requirement
-                height={40} // Adjust the height here as per your requirement
-              />
-            </a>
+            {/* Badge container */}
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+              <div className="sf-root" data-id="3652674" data-badge="heart-badge-white" data-variant-id="sf" style={{ width: '75px' }}></div>
+              <a href="https://www.capterra.com/reviews/342047/Kahana?utm_source=vendor&utm_medium=badge&utm_campaign=capterra_reviews_badge">
+                <Image
+                  loader={CustomLoader}
+                  src="capterra-badge"
+                  alt="Capterra Badge"
+                  width={100} // Adjust the width here as per your requirement
+                  height={40} // Adjust the height here as per your requirement
+                />
+              </a
+            </div>
           </div>
           <div className="mt-12 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
             <div className="md:grid md:grid-cols-2 md:gap-8">
