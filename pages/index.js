@@ -37,6 +37,8 @@ export default function Home() {
             `,
           }}
         />
+      {/* Reditus affiliate tracking script */}
+      <script> (function(w, d, s, p, t) { w.gr = w.gr || function() { w.gr.q = w.gr.q || []; w.gr.q.push(arguments); }; p = d.getElementsByTagName(s)[0]; t = d.createElement(s); t.async = true; t.src = "https://app.getreditus.com/gr.js?_ce=90"; p.parentNode.insertBefore(t, p); })(window, document, "script"); gr("track", "pageview"); </script>
       </Head>
       <div>
         <div style={{ zIndex: '1' }} className="sticky top-0">
