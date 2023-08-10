@@ -109,13 +109,13 @@ export default function AffiliateProgramPage() {
             <Image
               src={AffiliateBanner}
               alt="Affiliate Program Image"
-              layout="fill"
-              objectFit="cover"
+              layout="responsive"
+              objectFit="fill"
               className="hidden md:block"
             />
           </section>
         )}
-        <section className={`py-16 px-4 sm:px-6 lg:px-8 bg-white ${showImage ? 'mt-0' : 'mt-3'}`}>
+        <section className={`py-16 px-4 sm:px-6 lg:px-8 bg-white ${showImage ? 'mt-0' : 'mt-0'}`}>
           <div className="max-w-7xl mx-auto text-center">
             <h2 className={`text-3xl font-bold ${showImage ? 'mb-2' : 'mb-4'} text-gray-900`}>
               It pays to be a partner of Kahana
