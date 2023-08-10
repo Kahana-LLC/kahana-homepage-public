@@ -112,6 +112,7 @@ export default function AffiliateProgramPage() {
               layout="responsive"
               objectFit="cover"
               className="hidden md:block"
+              style={{ height: '500px' }}
             />
           </section>
         )}
