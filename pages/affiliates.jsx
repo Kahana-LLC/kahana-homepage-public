@@ -100,10 +100,9 @@ export default function AffiliateProgramPage() {
         />
       </Head>
       <div>
-        <div className="sticky top-0">
+        <div className="sticky top-0 z-50">
           <NavbarDup />
         </div>
-        {/* New Image Section */}
         <section className="relative">
           {/* Image Section */}
           {showImage && (
@@ -118,11 +117,10 @@ export default function AffiliateProgramPage() {
           {/* It pays to be a partner section */}
           <section
             className={`absolute inset-x-0 mx-auto bg-green-200 text-center p-4 ${
-              showImage ? 'md:bottom-0 md:w-1/2' : 'bottom-0 w-full'
+              showImage ? 'md:w-1/2' : 'w-full'
             } rounded-t-lg`}
             style={{
-              marginTop: showImage ? '0' : '3.75rem',
-              top: showImage ? 'auto' : 'calc(4rem + 3.75rem)',
+              marginTop: showImage ? 'calc(75vh - 2rem)' : '3.75rem',
             }}
           >
             <div className="max-w-7xl mx-auto">
