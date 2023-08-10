@@ -15,7 +15,7 @@ const navigation = {
     { name: 'Home', href: '/' },
     { name: 'Careers', href: 'https://7hkdcfzbmr0.typeform.com/to/RQ99b3Bp' },
     { name: 'Invest in seed round', href: 'https://7hkdcfzbmr0.typeform.com/to/wYCUMm54' },
-    { name: 'Become an affiliate', href: 'https://7hkdcfzbmr0.typeform.com/to/M8FkUQl7' },
+    { name: 'Become an affiliate', href: '/affiliates' },
     // { name: 'Log in', href: '#' },
     // { name: 'Sign up', href: '#' },
   ],
