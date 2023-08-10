@@ -47,6 +47,12 @@ const faqs = [
 
 
 export default function AffiliateProgramPage() {
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  const toggleAccordion = (index) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
+
   return (
     <>
       <Head>
@@ -69,7 +75,7 @@ export default function AffiliateProgramPage() {
             `,
           }}
         />
-      </Head>     
+      </Head>
       <div>
         <div className="sticky top-0">
           <NavbarDup />
