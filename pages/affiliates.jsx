@@ -160,7 +160,7 @@ export default function AffiliateProgramPage() {
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#F7FAFC]">
           <div className="max-w-7xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-4 text-gray-900">
-              Sign Up Below to join Kahana's Affiliate Program
+              Sign Up Below to join Kahana&apos;s Affiliate Program
             </h2>
             <button className="mt-8 px-6 py-3 bg-[#038270] text-white rounded-md shadow-md hover:bg-[#046856]">
               Sign Up Here
