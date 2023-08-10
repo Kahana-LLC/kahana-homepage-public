@@ -117,9 +117,10 @@ export default function AffiliateProgramPage() {
           )}
           {/* It pays to be a partner section */}
           <section
-            className={`absolute inset-0 flex flex-col justify-center px-4 sm:px-6 lg:px-8 bg-green-200 text-center ${
-              showImage ? 'md:w-1/2' : ''
+            className={`absolute inset-x-0 mx-auto bg-green-200 text-center p-4 ${
+              showImage ? 'md:bottom-0 md:w-1/2' : 'bottom-0 w-full'
             }`}
+            style={{ marginTop: showImage ? '0' : '3.75rem' }}
           >
             <div className="max-w-7xl mx-auto">
               <h2 className="text-3xl font-bold mb-4 text-gray-900">
