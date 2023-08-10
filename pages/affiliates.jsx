@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Head from 'next/head';
 import Footer from '../components/Footer';
 import NavbarDup from '../components/NavbarDup';
+import AffiliateBanner from '../assets/images/AffiliateBanner.webp';
 
 const features = [
   {
@@ -100,7 +101,7 @@ export default function AffiliateProgramPage() {
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
           <div className="max-w-7xl mx-auto text-center">
             <img
-              src="../assets/images/AffiliateBanner.webp" 
+              src={AffiliateBanner}
               alt="Affiliate Program Image"
               className="mx-auto mb-6"
             />
