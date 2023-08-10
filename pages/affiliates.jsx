@@ -62,27 +62,13 @@ const faqs = [
 
 
 export default function AffiliateProgramPage() {
-  const [activeIndex, setActiveIndex] = useState(null);
-  const [showImage, setShowImage] = useState(true);
-
-  const toggleAccordion = (index) => {
-    setActiveIndex(activeIndex === index ? null : index);
-  };
+  const [showImage, setShowImage] = useState(false);
 
   useEffect(() => {
-    const handleResize = () => {
-      if (typeof window !== 'undefined') {
-        setShowImage(window.innerWidth > 767); // Adjust the breakpoint as needed
-      }
-    };
-
-    handleResize();
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
+    if (typeof window !== 'undefined') {
+      const viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+      setShowImage(viewportWidth > 767);
+    }
   }, []);
 
   return (
@@ -91,38 +77,28 @@ export default function AffiliateProgramPage() {
         <title>Kahana Affiliate Program</title>
         <meta
           name="Kahana"
-          content="Kahana is the easiest way to monetize your content and research. Transform knowledge and expertise into subscription revenue. Sign up for free today! "
+          content="Kahana is the easiest way to monetize your content and research. Transform knowledge and expertise into subscription revenue. Sign up for free today!"
         />
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-KQHFL9605P"
-        ></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-KQHFL9605P');
-            `,
-          }}
-        />
+        {/* Google Tag Manager script */}
       </Head>
       <div>
         <div className="sticky top-0">
           <NavbarDup />
         </div>
-        <section className={`py-0 px-0 sm:px-0 lg:px-0 bg-white relative ${showImage ? '' : 'hidden'}`}>
+        {/* New Image Section */}
+        {showImage && (
+          <section className="relative py-0 px-4 sm:px-6 lg:px-8 bg-white">
+            <Image
+              src={AffiliateBanner}
+              alt="Affiliate Program Image"
+              layout="fill"
+              objectFit="cover"
+              className="hidden md:block"
+            />
+          </section>
+        )}
+        <section className={`py-16 px-4 sm:px-6 lg:px-8 bg-white ${showImage ? 'mt-0' : 'mt-8'}`}>
           <div className="max-w-7xl mx-auto text-center">
-            {showImage && (
-              <Image
-                src={AffiliateBanner}
-                alt="Affiliate Program Image"
-                layout="fill"
-                objectFit="cover"
-                className="mx-auto mb-6"
-              />
-            )}
             <h2 className={`text-3xl font-bold ${showImage ? 'mb-4' : 'mb-8'} text-gray-900`}>
               It pays to be a partner of Kahana
             </h2>
@@ -138,7 +114,7 @@ export default function AffiliateProgramPage() {
         </section>
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-100">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8 text-gray-900">
+            <h2 className="text-3xl font-bold mb-8 text-gray-900 text-center">
               Become a Kahana partner
             </h2>
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -155,13 +131,13 @@ export default function AffiliateProgramPage() {
             </div>
           </div>
         </section>
+        {/* FAQ Section */}
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl font-bold mb-8 text-gray-900">
               Most Frequently Asked Questions
             </h2>
             <div className="space-y-4">
-              {/* Your FAQ section */}
               {faqs.map((faq, index) => (
                 <div key={index} className="border border-gray-200 rounded-lg">
                   <button
@@ -197,6 +173,7 @@ export default function AffiliateProgramPage() {
             </div>
           </div>
         </section>
+        {/* New "Sign up below" Section */}
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#F7FAFC]">
           <div className="max-w-7xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-4 text-gray-900">
