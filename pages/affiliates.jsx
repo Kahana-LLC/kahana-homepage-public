@@ -104,32 +104,37 @@ export default function AffiliateProgramPage() {
           <NavbarDup />
         </div>
         {/* New Image Section */}
-        {showImage && (
-          <section className="relative py-0 px-0 sm:px-0 lg:px-0 bg-white">
+        <section className="relative">
+          {/* Image Section */}
+          {showImage && (
             <Image
               src={AffiliateBanner}
               alt="Affiliate Program Image"
-              layout="responsive"
+              layout="fill"
               objectFit="cover"
               className="hidden md:block"
             />
+          )}
+          {/* It pays to be a partner section */}
+          <section
+            className={`absolute inset-0 flex flex-col justify-center px-4 sm:px-6 lg:px-8 bg-green-200 text-center ${
+              showImage ? 'hidden md:flex' : 'flex'
+            }`}
+          >
+            <div className="max-w-7xl mx-auto">
+              <h2 className="text-3xl font-bold mb-4 text-gray-900">
+                It pays to be a partner of Kahana
+              </h2>
+              <p className="text-gray-700">
+                Refer people to Kahana and earn up to a 30% commission by joining our partner program.
+              </p>
+              <a href="https://app.getreditus.com/marketplace/kahana" className="block mt-6">
+                <button className="px-6 py-3 bg-black text-white rounded-md shadow-md hover:bg-gray-900">
+                  Sign Up Now
+                </button>
+              </a>
+            </div>
           </section>
-        )}
-        {/* It pays to be a partner section */}
-        <section className={`py-16 px-4 sm:px-6 lg:px-8 bg-white ${showImage ? 'mt-0' : 'mt-4'}`}>
-          <div className="max-w-7xl mx-auto text-center" style={{ padding: showImage ? '0' : '2rem 0' }}>
-            <h2 className={`text-3xl font-bold ${showImage ? 'mb-2' : 'mb-4'} text-gray-900`}>
-              It pays to be a partner of Kahana
-            </h2>
-            <p className="text-gray-700">
-              Refer people to Kahana and earn up to a 30% commission by joining our partner program.
-            </p>
-            <a href="https://app.getreditus.com/marketplace/kahana" className="block mt-8">
-              <button className="px-6 py-3 bg-[#038270] text-white rounded-md shadow-md hover:bg-[#046856]">
-                Sign Up Now
-              </button>
-            </a>
-          </div>
         </section>
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-100">
           <div className="max-w-7xl mx-auto">
