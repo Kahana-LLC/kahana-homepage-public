@@ -115,7 +115,7 @@ export default function AffiliateProgramPage() {
             />
           </section>
         )}
-        <section className={`py-16 px-4 sm:px-6 lg:px-8 bg-white ${showImage ? 'mt-0' : 'mt-8'}`}>
+        <section className={`py-16 px-4 sm:px-6 lg:px-8 bg-white ${showImage ? 'mt-0' : 'mt-3'}`}>
           <div className="max-w-7xl mx-auto text-center">
             <h2 className={`text-3xl font-bold ${showImage ? 'mb-4' : 'mb-8'} text-gray-900`}>
               It pays to be a partner of Kahana
@@ -153,7 +153,7 @@ export default function AffiliateProgramPage() {
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl font-bold mb-8 text-gray-900">
-              Most Frequently Asked Questions
+              Most frequently asked questions
             </h2>
             <div className="space-y-4">
               {faqs.map((faq, index) => (
