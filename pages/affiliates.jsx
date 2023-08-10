@@ -105,18 +105,18 @@ export default function AffiliateProgramPage() {
         </div>
         {/* New Image Section */}
         {showImage && (
-          <section className="relative py-0 px-4 sm:px-6 lg:px-8 bg-white">
+          <section className="relative py-0 px-0 sm:px-0 lg:px-0 bg-white">
             <Image
               src={AffiliateBanner}
               alt="Affiliate Program Image"
               layout="responsive"
-              objectFit="fill"
+              objectFit="cover"
               className="hidden md:block"
             />
           </section>
         )}
-        <section className={`py-16 px-4 sm:px-6 lg:px-8 bg-white ${showImage ? 'mt-0' : 'mt-0'}`}>
-          <div className="max-w-7xl mx-auto text-center">
+       <section className={`py-16 px-4 sm:px-6 lg:px-8 bg-white ${showImage ? 'mt-0' : 'mt-4'}`}>
+          <div className="max-w-7xl mx-auto text-center" style={{ padding: showImage ? '0' : '2rem 0' }}>
             <h2 className={`text-3xl font-bold ${showImage ? 'mb-2' : 'mb-4'} text-gray-900`}>
               It pays to be a partner of Kahana
             </h2>
