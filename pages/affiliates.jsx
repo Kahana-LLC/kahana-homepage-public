@@ -6,27 +6,27 @@ import NavbarDup from '../components/NavbarDup';
 const features = [
   {
     title: 'High Commissions',
-    description: 'Earn competitive commissions on every sale.',
+    description: 'High Commissions: We understand that affiliates like programs with the potential for substantial earnings. Our partner program\'s competitive 30% commission structure, particularly with high-ticket SaaS and project-based sales ($5,000-$100,000+ per project), is an incentive for affiliates to promote Kahana.',
   },
   {
-    title: 'Advanced Tracking',
-    description: 'Track your referrals and earnings with our advanced analytics.',
+    title: 'Recurring Revenue',
+    description: 'Once you refer someone to us, you earn a recurring commission for the entire first year they are on Kahana.',
   },
   {
-    title: 'Advanced Tracking',
-    description: 'Track your referrals and earnings with our advanced analytics.',
+    title: 'Quality and Reputation',
+    description: 'As an affiliate, you should be cautious about the products you endorse. We are proud to be a software platform that is used daily by experts, teams, and organizations across the world. Simply put, it\'s in our DNA to continue to seek ways to improve our platform from our users and customers, so that as an affiliate, you know you will be sharing a platform that is hungry to deliver substantial value in the short-term and long-term for users. You can see reviews from our happy customers on <a href="https://www.capterra.com/p/10009805/Kahana/">Capterra</a> and <a href=https://www.linkedin.com/feed/update/urn:li:activity:7049745436105994240/">LinkedIn</a>.',
   },
   {
-    title: 'Advanced Tracking',
-    description: 'Track your referrals and earnings with our advanced analytics.',
+    title: 'High Conversion Rate',
+    description: 'You want to partner with a platform with a proven track record of converting leads into paying customers. When users sign up on Kahana, they have plenty of options to get a lot of value out of the platform and the ecosystem. For example, they can create hubs for and monetize them. They can increase the exposure of their hubs through our paid Boost Program. Organizations can bring Kahana to their teams right away through the Enterprise plan. Our sales funnel and onboarding experience are designed to educate and help people find the best solution for them as quickly as possible.',
   },
   {
-    title: 'Advanced Tracking',
-    description: 'Track your referrals and earnings with our advanced analytics.',
+    title: 'Support and Resources,
+    description: 'As an affiliate, you will receive full access to a comprehensive Google Drive folder of marketing materials, resources, and support from Kahana. This includes high-converting banners, email templates, landing pages, videos, and other materials to help you best share Kahana. We encourage you to be creative, and if you have ideas for new types of collateral that would help you, we are happy to create them for you.',
   },
   {
-    title: 'Advanced Tracking',
-    description: 'Track your referrals and earnings with our advanced analytics.',
+    title: 'Transparent Tracking and Reporting',
+    description: 'When you become an affiliate, you will get your own highly-organized affiliate dashboard that provides real-time insights into clicks, conversions, commissions earned, and more.',
   },
 ];
 
@@ -92,10 +92,10 @@ export default function AffiliateProgramPage() {
               className="mx-auto mb-6"
             />
             <h2 className="text-3xl font-bold mb-4 text-gray-900">
-              It pays to partner with Kahana.
+              It pays to be a partner of Kahana
             </h2>
             <p className="text-gray-700">
-              Refer creators to Kahana and earn to 30% commission by joining our partner program.
+              Refer people to Kahana and earn to 30% commission by joining our partner program.
             </p>
             <button className="mt-8 px-6 py-3 bg-[#038270] text-white rounded-md shadow-md hover:bg-[#046856]">
               Sign Up Now
@@ -105,7 +105,7 @@ export default function AffiliateProgramPage() {
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-100">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl font-bold mb-8 text-gray-900">
-              Why Join Our Affiliate Program?
+              Become a Kahana partner
             </h2>
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {features.map((feature, index) => (
@@ -166,7 +166,7 @@ export default function AffiliateProgramPage() {
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#F7FAFC]">
           <div className="max-w-7xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-4 text-gray-900">
-              Sign Up Below to join Kahana&apos;s Affiliate Program
+              Sign up below to join Kahana&apos;s partner program
             </h2>
             <button className="mt-8 px-6 py-3 bg-[#038270] text-white rounded-md shadow-md hover:bg-[#046856]">
               Sign Up Here
