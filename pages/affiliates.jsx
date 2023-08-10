@@ -14,7 +14,20 @@ const features = [
   },
   {
     title: 'Quality and Reputation',
-    description: 'As an affiliate, you should be cautious about the products you endorse. We are proud to be a software platform that is used daily by experts, teams, and organizations across the world. Simply put, it\'s in our DNA to continue to seek ways to improve our platform from our users and customers, so that as an affiliate, you know you will be sharing a platform that is hungry to deliver substantial value in the short-term and long-term for users. You can see reviews from our happy customers on <a href="https://www.capterra.com/p/10009805/Kahana/">Capterra</a> and <a href=https://www.linkedin.com/feed/update/urn:li:activity:7049745436105994240/">LinkedIn</a>.',
+    description: (
+      <span>
+        As an affiliate, you should be cautious about the products you endorse. We are proud to be a software platform that is used daily by experts, teams, and organizations across the world. Simply put, it\'s in our DNA to continue to seek ways to improve our platform from our users and customers, so that as an affiliate, you know you will be sharing a platform that is hungry to deliver substantial value in the short-term and long-term for users. You can see reviews from our happy customers on{' '}
+        <a href="https://www.capterra.com/p/10009805/Kahana/" className="text-[#038270] font-medium">
+          Capterra
+        </a>{' '}
+        and{' '}
+        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7049745436105994240/" className="text-[#038270] font-medium">
+          LinkedIn
+        </a>
+        .
+      </span>
+
+    ),
   },
   {
     title: 'High Conversion Rate',
