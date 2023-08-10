@@ -118,7 +118,7 @@ export default function AffiliateProgramPage() {
           {/* It pays to be a partner section */}
           <section
             className={`absolute inset-0 flex flex-col justify-center px-4 sm:px-6 lg:px-8 bg-green-200 text-center ${
-              showImage ? 'hidden md:flex' : 'flex'
+              showImage ? 'md:w-1/2' : ''
             }`}
           >
             <div className="max-w-7xl mx-auto">
