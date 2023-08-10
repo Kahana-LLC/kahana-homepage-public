@@ -72,7 +72,7 @@ export default function AffiliateProgramPage() {
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const viewportWidth = window.innerWidth || document.documentElement.clientWidth;
-      setShowImage(viewportWidth > 767);
+      setShowImage(viewportWidth > 1150);
     }
   }, []);
 
@@ -119,8 +119,11 @@ export default function AffiliateProgramPage() {
           <section
             className={`absolute inset-x-0 mx-auto bg-green-200 text-center p-4 ${
               showImage ? 'md:bottom-0 md:w-1/2' : 'bottom-0 w-full'
-            }`}
-            style={{ marginTop: showImage ? '0' : '3.75rem' }}
+            } rounded-t-lg`}
+            style={{
+              marginTop: showImage ? '0' : '3.75rem',
+              top: showImage ? 'auto' : 'calc(4rem + 3.75rem)',
+            }}
           >
             <div className="max-w-7xl mx-auto">
               <h2 className="text-3xl font-bold mb-4 text-gray-900">
