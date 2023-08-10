@@ -100,7 +100,7 @@ export default function AffiliateProgramPage() {
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
           <div className="max-w-7xl mx-auto text-center">
             <img
-              src="/your-image-path.jpg"  // Replace with your actual image path
+              src="../assets/images/AffiliateBanner.webp" 
               alt="Affiliate Program Image"
               className="mx-auto mb-6"
             />
