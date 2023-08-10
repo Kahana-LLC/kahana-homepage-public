@@ -63,10 +63,27 @@ const faqs = [
 
 export default function AffiliateProgramPage() {
   const [activeIndex, setActiveIndex] = useState(null);
+  const [showImage, setShowImage] = useState(true);
 
   const toggleAccordion = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (typeof window !== 'undefined') {
+        setShowImage(window.innerWidth > 767); // Adjust the breakpoint as needed
+      }
+    };
+
+    handleResize();
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   return (
     <>
@@ -95,19 +112,18 @@ export default function AffiliateProgramPage() {
         <div className="sticky top-0">
           <NavbarDup />
         </div>
-        {/* New Image Section */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <section className={`py-0 px-0 sm:px-0 lg:px-0 bg-white relative ${showImage ? '' : 'hidden'}`}>
           <div className="max-w-7xl mx-auto text-center">
-            <div className="hidden md:block"> {/* Only show on medium (md) and larger screens */}
+            {showImage && (
               <Image
                 src={AffiliateBanner}
                 alt="Affiliate Program Image"
                 layout="fill"
-                objectFit="cover" // Stretch the image to cover the container
+                objectFit="cover"
                 className="mx-auto mb-6"
               />
-            </div>
-            <h2 className="text-3xl font-bold mb-4 text-gray-900">
+            )}
+            <h2 className={`text-3xl font-bold ${showImage ? 'mb-4' : 'mb-8'} text-gray-900`}>
               It pays to be a partner of Kahana
             </h2>
             <p className="text-gray-700">
@@ -126,6 +142,7 @@ export default function AffiliateProgramPage() {
               Become a Kahana partner
             </h2>
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {/* Your feature section */}
               {features.map((feature, index) => (
                 <div
                   key={index}
@@ -138,13 +155,13 @@ export default function AffiliateProgramPage() {
             </div>
           </div>
         </section>
-        {/* FAQ Section */}
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl font-bold mb-8 text-gray-900">
               Most Frequently Asked Questions
             </h2>
             <div className="space-y-4">
+              {/* Your FAQ section */}
               {faqs.map((faq, index) => (
                 <div key={index} className="border border-gray-200 rounded-lg">
                   <button
@@ -180,7 +197,6 @@ export default function AffiliateProgramPage() {
             </div>
           </div>
         </section>
-        {/* New "Sign up below" Section */}
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#F7FAFC]">
           <div className="max-w-7xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-4 text-gray-900">
