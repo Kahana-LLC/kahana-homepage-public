@@ -104,7 +104,7 @@ export default function AffiliateProgramPage() {
             <Image
               src={AffiliateBanner}
               alt="Affiliate Program Image"
-              width=100%
+              width="100%"
               layout="responsive" 
               className="mx-auto mb-6"
             />
