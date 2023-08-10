@@ -21,7 +21,7 @@ const features = [
     description: 'You want to partner with a platform with a proven track record of converting leads into paying customers. When users sign up on Kahana, they have plenty of options to get a lot of value out of the platform and the ecosystem. For example, they can create hubs for and monetize them. They can increase the exposure of their hubs through our paid Boost Program. Organizations can bring Kahana to their teams right away through the Enterprise plan. Our sales funnel and onboarding experience are designed to educate and help people find the best solution for them as quickly as possible.',
   },
   {
-    title: 'Support and Resources,
+    title: 'Support and Resources',
     description: 'As an affiliate, you will receive full access to a comprehensive Google Drive folder of marketing materials, resources, and support from Kahana. This includes high-converting banners, email templates, landing pages, videos, and other materials to help you best share Kahana. We encourage you to be creative, and if you have ideas for new types of collateral that would help you, we are happy to create them for you.',
   },
   {
