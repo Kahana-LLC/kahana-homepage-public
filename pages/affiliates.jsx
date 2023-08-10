@@ -16,7 +16,7 @@ const features = [
     title: 'Quality and Reputation',
     description: (
       <span>
-        As an affiliate, you should be cautious about the products you endorse. We are proud to be a software platform that is used daily by experts, teams, and organizations across the world. Simply put, it\'s in our DNA to continue to seek ways to improve our platform from our users and customers, so that as an affiliate, you know you will be sharing a platform that is hungry to deliver substantial value in the short-term and long-term for users. You can see reviews from our happy customers on{' '}
+        As an affiliate, you should be cautious about the products you endorse. We are proud to be a software platform that is used daily by experts, teams, and organizations across the world. Simply put, it&apos;s in our DNA to continue to seek ways to improve our platform from our users and customers, so that as an affiliate, you know you will be sharing a platform that is hungry to deliver substantial value in the short-term and long-term for users. You can see reviews from our happy customers on{' '}
         <a href="https://www.capterra.com/p/10009805/Kahana/" className="text-[#038270] font-medium">
           Capterra
         </a>{' '}
