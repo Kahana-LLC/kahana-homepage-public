@@ -101,18 +101,22 @@ export default function AffiliateProgramPage() {
         {/* New Image Section */}
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
           <div className="max-w-7xl mx-auto text-center">
-            <Image
-              src={AffiliateBanner}
-              alt="Affiliate Program Image"
-              width="100%"
-              layout="responsive" 
-              className="mx-auto mb-6"
-            />
+            <div className="hidden md:block"> {/* Only show on medium (md) and larger screens */}
+              <Image
+                src={AffiliateBanner}
+                alt="Affiliate Program Image"
+                width="100%"
+                height="200" // Set the desired height here
+                layout="responsive"
+                objectFit="cover" // Stretch the image to cover the container
+                className="mx-auto mb-6"
+              />
+            </div>
             <h2 className="text-3xl font-bold mb-4 text-gray-900">
               It pays to be a partner of Kahana
             </h2>
             <p className="text-gray-700">
-              Refer people to Kahana and earn to 30% commission by joining our partner program.
+              Refer people to Kahana and earn up to a 30% commission by joining our partner program.
             </p>
             <a href="https://app.getreditus.com/marketplace/kahana" className="block mt-8">
               <button className="px-6 py-3 bg-[#038270] text-white rounded-md shadow-md hover:bg-[#046856]">
