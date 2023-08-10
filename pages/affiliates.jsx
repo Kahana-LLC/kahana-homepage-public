@@ -110,9 +110,11 @@ export default function AffiliateProgramPage() {
             <p className="text-gray-700">
               Refer people to Kahana and earn to 30% commission by joining our partner program.
             </p>
-            <button className="mt-8 px-6 py-3 bg-[#038270] text-white rounded-md shadow-md hover:bg-[#046856]">
-              Sign Up Now
-            </button>
+            <a href="https://app.getreditus.com/marketplace/kahana" className="block mt-8">
+              <button className="px-6 py-3 bg-[#038270] text-white rounded-md shadow-md hover:bg-[#046856]">
+                Sign Up Now
+              </button>
+            </a>
           </div>
         </section>
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-100">
@@ -181,9 +183,11 @@ export default function AffiliateProgramPage() {
             <h2 className="text-3xl font-bold mb-4 text-gray-900">
               Sign up below to join Kahana&apos;s partner program
             </h2>
-            <button className="mt-8 px-6 py-3 bg-[#038270] text-white rounded-md shadow-md hover:bg-[#046856]">
-              Sign Up Here
-            </button>
+              <a href="https://app.getreditus.com/marketplace/kahana" className="block mt-8">
+                <button className="px-6 py-3 bg-[#038270] text-white rounded-md shadow-md hover:bg-[#046856]">
+                  Sign Up Here
+                </button>
+              </a>
           </div>
         </section>
         <Footer />
