@@ -105,9 +105,7 @@ export default function AffiliateProgramPage() {
               <Image
                 src={AffiliateBanner}
                 alt="Affiliate Program Image"
-                width="100%"
-                height="200" // Set the desired height here
-                layout="responsive"
+                layout="fill"
                 objectFit="cover" // Stretch the image to cover the container
                 className="mx-auto mb-6"
               />
