@@ -7,14 +7,27 @@ const features = [
   {
     title: 'High Commissions',
     description: 'Earn competitive commissions on every sale.',
-    icon: '/your-icon-path1.png', // Replace with your actual image path
   },
   {
     title: 'Advanced Tracking',
     description: 'Track your referrals and earnings with our advanced analytics.',
-    icon: '/your-icon-path2.png',
   },
-  // Add more features...
+  {
+    title: 'Advanced Tracking',
+    description: 'Track your referrals and earnings with our advanced analytics.',
+  },
+  {
+    title: 'Advanced Tracking',
+    description: 'Track your referrals and earnings with our advanced analytics.',
+  },
+  {
+    title: 'Advanced Tracking',
+    description: 'Track your referrals and earnings with our advanced analytics.',
+  },
+  {
+    title: 'Advanced Tracking',
+    description: 'Track your referrals and earnings with our advanced analytics.',
+  },
 ];
 
 export default function AffiliateProgramPage() {
@@ -59,11 +72,6 @@ export default function AffiliateProgramPage() {
                   key={index}
                   className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center space-y-4"
                 >
-                  <img
-                    src={feature.icon}
-                    alt={`${feature.title} Icon`}
-                    className="w-12 h-12"
-                  />
                   <h3 className="text-xl font-semibold">{feature.title}</h3>
                   <p className="text-gray-700">{feature.description}</p>
                 </div>
