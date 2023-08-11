@@ -244,7 +244,7 @@ export default function Pricing() {
                 Enterprise
               </h2>
               <p className="mt-4 text-sm text-gray-500">
-                Advanced controls & support to monetize your organization's collective knowledge.
+                Advanced controls & support to monetize your organization&apos;s collective knowledge.
               </p>
               <p className="mt-8">
                 <span className="text-4xl font-bold tracking-tight text-[#038270]">
@@ -338,11 +338,11 @@ export default function Pricing() {
               </a>
             </div>
           </div>
-          <div className="sm:align-center sm:flex sm:flex-col">
-            <p className="mt-5 text-xl text-gray-500 sm:text-center">
-              Note: Kahana takes a 5% transaction fee every time someone pays to access your hub. For example, if you set a $10 price point for your hub and someone pays for access, Kahana will earn $0.50
-            </p>
-          </div>
+        </div>
+        <div className="sm:align-center sm:flex sm:flex-col">
+          <p className="mt-5 text-xl text-gray-500 sm:text-center">
+            Note: Kahana takes a 5% transaction fee every time someone pays to access your hub. For example, if you set a $10 price point for your hub and someone pays for access, Kahana will earn $0.50.
+          </p>
         </div>
       </div>
     </div>
