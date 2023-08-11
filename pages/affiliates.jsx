@@ -8,7 +8,7 @@ import AffiliateBanner from '../assets/images/AffiliateBanner.webp';
 const features = [
   {
     title: 'High Commissions',
-    description: 'High Commissions: We understand that affiliates like programs with the potential for substantial earnings. Our partner program\'s competitive 30% commission structure, particularly with high-ticket SaaS and project-based sales ($5,000-$100,000+ per project), is an incentive for affiliates to promote Kahana.',
+    description: 'Our partner program\'s competitive 30% commission structure, particularly with high-ticket SaaS and project-based sales ($5,000-$100,000+ per project), is an incentive for affiliates to promote Kahana.',
   },
   {
     title: 'Recurring Revenue',
@@ -18,7 +18,7 @@ const features = [
     title: 'Quality and Reputation',
     description: (
       <span>
-        As an affiliate, you should be cautious about the products you endorse. We are proud to be a software platform that is used daily by experts, teams, and organizations across the world. Simply put, it&apos;s in our DNA to continue to seek ways to improve our platform from our users and customers, so that as an affiliate, you know you will be sharing a platform that is hungry to deliver substantial value in the short-term and long-term for users. You can see reviews from our happy customers on{' '}
+        We are proud to be a software platform that is used daily by experts, teams, and organizations across the world. You can see reviews from our happy customers on{' '}
         <a href="https://www.capterra.com/p/10009805/Kahana/#reviews" className="text-[#038270] font-medium">
           Capterra
         </a>{' '}
@@ -32,11 +32,11 @@ const features = [
   },
   {
     title: 'High Conversion Rate',
-    description: 'You want to partner with a platform with a proven track record of converting leads into paying customers. When users sign up on Kahana, they have plenty of options to get a lot of value out of the platform and the ecosystem. For example, they can create hubs for and monetize them. They can increase the exposure of their hubs through our paid Boost Program. Organizations can bring Kahana to their teams right away through the Enterprise plan. Our sales funnel and onboarding experience are designed to educate and help people find the best solution for them as quickly as possible.',
+    description: 'When users sign up on Kahana, they have plenty of options to get a lot of value out of the platform and the ecosystem. Our sales funnel and onboarding experience are designed to educate and help people find the best solution for them as quickly as possible.',
   },
   {
     title: 'Support and Resources',
-    description: 'As an affiliate, you will receive full access to a comprehensive Google Drive folder of marketing materials, resources, and support from Kahana. This includes high-converting banners, email templates, landing pages, videos, and other materials to help you best share Kahana. We encourage you to be creative, and if you have ideas for new types of collateral that would help you, we are happy to create them for you.',
+    description: 'As an affiliate, you will receive full access to marketing materials and resources, including high-converting banners, email templates, landing pages, videos, and other collateral to help you best share Kahana. If you have ideas for new types of collateral that would help you, we are happy to create them for you.',
   },
   {
     title: 'Transparent Tracking and Reporting',
