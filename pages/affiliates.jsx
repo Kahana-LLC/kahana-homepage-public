@@ -74,6 +74,14 @@ const faqs = [
     ),
   },
   {
+    question: 'How do I calculate my revenue as an affiliate?',
+    answer: (
+      <span>
+        Here&apos;s a formula you can use to calculate your average monthly earnings:<br /><br /><b>(Total Earnings from Boost Program + Total Earnings from Hub Services + Total Earnings from Enterprise + Total Earnings from Premium Upgrades) / 12<br />For any service that is purchased, you earn both 30% of any one-time payments (e.g., setup fees), as well as 30% of any recurring revenue Kahana gains from the service (e.g., revenue share on hub sales).
+      </span>
+    ),
+  },
+  {
     question: 'How and when do I receive my commissions?',
     answer: 'We process all payouts on the 1st of every month. This means you\'ll receive your commissions on a monthly basis.',
   },
@@ -96,14 +104,6 @@ const faqs = [
   {
     question: 'How long do my affiliate links stay active?',
     answer: '90 days. So if a customer clicks on your affiliate link and goes on to make a purchase or take a desired action within the following 90 days, you will receive credit for that conversion.',
-  },
-  {
-    question: 'How do I calculate my revenue as an affiliate?',
-    answer: (
-      <span>
-        Here&apos;s a formula you can use to calculate your average monthly earnings:<br></br><br></br><b>(Total Earnings from Boost Program + Total Earnings from Hub Services + Total Earnings from Enterprise + Total Earnings from Premium Upgrades) / 12</b><br></br><br></br><b>For any service that is purchased, you earn both 30% of any one-time payments (e.g., setup fees), as well as 30% of any recurring revenue Kahana gains from the service (e.g., revenue share on hub sales).
-      </span>
-    ),
   },
   {
     question: 'Are there any rules I should be aware of?',
