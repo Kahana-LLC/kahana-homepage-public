@@ -7,70 +7,48 @@ import NavbarDup from '../components/NavbarDup';
 //components
 const posts = [
   {
+    title: 'Boost Program',
+    description:
+      'Don\'t have the time or energy to market your hubs? We have you covered. Our team will create a tailored email campaign on your behalf and put your hub in front of thousands of potential customers per month that match your ideal customer profile. We take care of the entire process so that you generate recurring revenue on autopilot.',
+    imageUrl:
+      'https://kahana-website-images.s3.us-east-2.amazonaws.com/BoostProgram.webp',
+    buttonQuote:
+      'Apply now',
+    buttonLink:
+      'https://7hkdcfzbmr0.typeform.com/to/c9lwNpNb?utm_source=solutions_page',
+  },
+  {
     title: 'On-Demand Hub Creation',
-    //href: 'https://7hkdcfzbmr0.typeform.com/to/ZYLHazEf?utm_source=xxxxx&utm_medium=xxxxx&utm_campaign=xxxxx&utm_term=xxxxx&utm_content=xxxxx',
-    //category: { name: 'Olivia Mancuso', href: 'https://www.tiktok.com/@oliviamancuso__' },
     description:
       'Quick and easy. It’s like ordering Domino’s for recurring revenue. Choose the number of hubs you want, add specific requests, and submit existing content you’d like to include. Our team will handle all the graphic design, formatting, and content creation you don’t want to touch. Track the progress of your hubs in real-time as they’re built right before your eyes. Finished hubs are delivered in as little as 5 business days.',
-    //date: 'Mar 16, 2020',
-    //datetime: '2020-03-16',
     imageUrl:
       'https://kahana-website-images.s3.us-east-2.amazonaws.com/On-Demand+Hub+Creation.webp',
     buttonQuote:
       'Request a quote',
     buttonLink:
-      'https://7hkdcfzbmr0.typeform.com/to/K9srs4OE?utm_source=xxxxx&utm_medium=xxxxx&utm_campaign=xxxxx&utm_term=xxxxx&utm_content=xxxxx#hubspot_utk=xxxxx&hubspot_page_name=xxxxx&hubspot_page_url=xxxxx',
-    //readingTime: '6 min',
-    //author: {
-      //name: 'Roel Aufderehar',
-      //href: '#',
-      //imageUrl:
-        //'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    //},
+      'https://7hkdcfzbmr0.typeform.com/to/K9srs4OE?utm_source=solutions_page',
   },
   {
     title: 'Custom Development',
-    //href: 'https://7hkdcfzbmr0.typeform.com/to/ZYLHazEf?utm_source=xxxxx&utm_medium=xxxxx&utm_campaign=xxxxx&utm_term=xxxxx&utm_content=xxxxx',
-    //category: { name: 'Gabrielle Judge', href: 'https://www.tiktok.com/@gabrielle_judge' },
     description:
       'Want to create something special? We’ll collaborate with you closely to develop tailor-made features, add-ons, and integrations that are specific to the needs of your organization.',
-    //date: 'Mar 10, 2020',
-   //datetime: '2020-03-10',
     imageUrl:
       'https://kahana-website-images.s3.us-east-2.amazonaws.com/Custom+Development.webp',
     buttonQuote:
       'Let\'s chat',
     buttonLink:
-      'https://7hkdcfzbmr0.typeform.com/to/ya2MITnT?utm_source=xxxxx&utm_medium=xxxxx&utm_campaign=xxxxx&utm_term=xxxxx&utm_content=xxxxx#hubspot_utk=xxxxx&hubspot_page_name=xxxxx&hubspot_page_url=xxxxx',
-    //readingTime: '4 min',
-    //author: {
-      //name: 'Brenna Goyette',
-      //href: '#',
-      //imageUrl:
-        //'https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    //},
+      'https://7hkdcfzbmr0.typeform.com/to/ya2MITnT?utm_source=solutions_page',
   },
   {
     title: 'Recurring Revenue Implementation',
-    //href: 'https://7hkdcfzbmr0.typeform.com/to/ZYLHazEf?utm_source=xxxxx&utm_medium=xxxxx&utm_campaign=xxxxx&utm_term=xxxxx&utm_content=xxxxx',
-    //category: { name: 'Josh Slavin', href: 'https://www.tiktok.com/@slavinjoshua' },
     description:
       'Our recurring revenue implementation program combines on-demand hub creation, custom development, and tailored training to help organizations create profitable hubs from existing assets, templates, and methodologies.',
-    //date: 'Feb 12, 2020',
-    //datetime: '2020-02-12',
     imageUrl:
       'https://kahana-website-images.s3.us-east-2.amazonaws.com/Recurring+Revenue+Implementation.webp',
     buttonQuote:
       'Let\'s chat',
     buttonLink:
-      'https://7hkdcfzbmr0.typeform.com/to/NvNSzKPE?utm_source=xxxxx&utm_medium=xxxxx&utm_campaign=xxxxx&utm_term=xxxxx&utm_content=xxxxx#hubspot_utk=xxxxx&hubspot_page_name=xxxxx&hubspot_page_url=xxxxx',
-    //readingTime: '11 min',
-    //author: {
-      //name: 'Daniela Metz',
-      //href: '#',
-      //imageUrl:
-        //'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    //},
+      'https://7hkdcfzbmr0.typeform.com/to/NvNSzKPE?utm_source=solutions_page',
   },
 ];
 //
