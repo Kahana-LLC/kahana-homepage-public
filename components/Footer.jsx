@@ -14,7 +14,7 @@ const navigation = {
     { name: 'About', href: '/about' },
     { name: 'Home', href: '/' },
     { name: 'Careers', href: 'https://7hkdcfzbmr0.typeform.com/to/RQ99b3Bp' },
-    { name: 'Invest in Seed Round', href: 'https://7hkdcfzbmr0.typeform.com/to/wYCUMm54' },
+    { name: 'Invest in seed round', href: 'https://7hkdcfzbmr0.typeform.com/to/wYCUMm54' },
     { name: 'Kahana Affiliate Program', href: '/affiliates' },
     // { name: 'Log in', href: '#' },
     // { name: 'Sign up', href: '#' },
