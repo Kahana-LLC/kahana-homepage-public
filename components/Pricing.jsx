@@ -86,7 +86,7 @@ export default function Pricing() {
             </button>
           </div> */}
         </div>
-        <div className="mt-12 space-y-4 sm:mt-16 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:mx-auto lg:max-w-4xl xl:mx-0 xl:max-w-none xl:grid-cols-4">
+        <div className="mt-12 space-y-4 sm:mt-16 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:mx-auto lg:max-w-4xl xl:mx-0 xl:max-w-none xl:grid-cols-3">
           {/* Start adding different pricing plans from here  */}
           <div className="divide-y divide-gray-200 rounded-lg border border-gray-200 shadow-sm">
             <div className="p-6">
@@ -248,11 +248,7 @@ export default function Pricing() {
               </p>
               <p className="mt-8">
                 <span className="text-4xl font-bold tracking-tight text-[#038270]">
-                  $29.99
-                </span>{' '}
-                <span className="text-base font-medium text-gray-500">
-                  /mo/seat
-                </span>
+                  Custom Contract
               </p>
               {/* <a
                   href={tier.href}
