@@ -47,7 +47,7 @@ const features = [
 const faqs = [
   {
     question: 'Can you really make money?',
-    answer: 'Yes. You can make a 30% commission when anyone purchases a Kahana subscription or service. Plus, you continue to get the commission for the first year they're on the platform. ',
+    answer: 'Yes. You can make a 30% commission when anyone purchases a Kahana subscription or service. Plus, you continue to get the commission for the first year they're on the platform.',
   },
   {
     question: 'What kind of support do I get?',
