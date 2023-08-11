@@ -28,7 +28,6 @@ const features = [
         </a>
         .
       </span>
-
     ),
   },
   {
@@ -48,15 +47,67 @@ const features = [
 const faqs = [
   {
     question: 'Can you really make money?',
-    answer: 'Yes. Our partners earn $450 per month on average, and many earn $1,000 or more every month. With a 30-day cookie, you make a 30% commission when anyone purchases a Teachable subscription. Plus, you continue to get the commission for the first year they’re on the platform.',
+    answer: 'Yes. You can make a 30% commission when anyone purchases a Kahana subscription or service. Plus, you continue to get the commission for the first year they're on the platform. ',
   },
   {
     question: 'What kind of support do I get?',
-    answer: 'We’ll provide you with tracking links and marketing language that has performed well for affiliates in the past. Plus, you’ll also get monthly emails about updates to our platform that might interest you and your audience.',
+    answer: 'We\’ll provide you with tracking links and marketing materials that you can use to share Kahana. You can join the Kahana Discord for community support and you\'ll also get the option to see a public view of our product roadmap for updates to our platform that might interest you and your audience.',
   },
   {
     question: 'How do I get started?',
-    answer: 'Sign up to be a partner below. We’ll follow up with you and take care of the next steps.',
+    answer: 'Sign up to be an affiliate below. There\'s a quick form to fill out in order to create your Affiliate Account and get access to resources, and then our team will follow up with you and take care of the next steps. We have partnered with Reditus to provide you with a Partner Account and portal that you can use to track the status of your referrals, access resources, and see all your revenue stats in one place.',
+  },
+  {
+    question: 'What subscriptions and services can I earn revenue from?',
+    answer: (
+      <span>
+        You can earn revenue from any of the subscriptions or services that we offer. You can check out our{' '}
+        <a href="https://kahana.co/pricing" className="text-[#038270] font-medium">
+          Pricing page
+        </a>{' '}
+        for more information about the subscriptions people can purchase and you can check out our{' '}
+        <a href="https://kahana.co/solutions" className="text-[#038270] font-medium">
+          Solutions page
+        </a>{' '}
+        for more information about the services that are available.
+      </span>
+    ),
+  },
+  {
+    question: 'How and when do I receive my commissions?',
+    answer: 'We process all payouts on the 1st of every month. This means you\'ll receive your commissions on a monthly basis.',
+  },
+  {
+    question: 'What is the minimum amount required for a payout?',
+    answer: 'To be eligible for a payout, you need to have accumulated at least $50 in due commissions. Once your commissions reach or exceed this threshold, you\'ll qualify for a payout in the next scheduled payout cycle.',
+  },
+  {
+    question: 'What happens if my commissions don\'t meet the minimum threshold in a given month?',
+    answer: 'If your commissions haven\'t reached the $50 minimum threshold by the 1st of the month, they will continue to accrue. Once your commissions cross the threshold in a subsequent month and have completed the 30-day waiting period, they will become eligible for payout.',
+  },
+  {
+    question: 'How will I receive my commissions?',
+    answer: 'We offer various payment methods, including PayPal, direct bank transfer, or other options. You can select your preferred payment method in your account settings.',
+  },
+  {
+    question: 'Can I track my commission earnings and payout status?',
+    answer: 'Yes, you can easily monitor your commission earnings and payout status through your affiliate dashboard. This dashboard provides you with real-time insights into your performance, pending commissions, and upcoming payouts.',
+  },
+  {
+    question: 'How long do my affiliate links stay active?',
+    answer: '90 days. So if a customer clicks on your affiliate link and goes on to make a purchase or take a desired action within the following 90 days, you will receive credit for that conversion.',
+  },
+  {
+    question: 'How do I calculate my revenue as an affiliate?',
+    answer: (
+      <span>
+        Here&apos;s a formula you can use to calculate your average monthly earnings:<br></br><br></br><b>(Total Earnings from Boost Program + Total Earnings from Hub Services + Total Earnings from Enterprise + Total Earnings from Premium Upgrades) / 12</b><br></br><br></br><b>For any service that is purchased, you earn both 30% of any one-time payments (e.g., setup fees), as well as 30% of any recurring revenue Kahana gains from the service (e.g., revenue share on hub sales).
+      </span>
+    ),
+  },
+  {
+    question: 'Are there any rules I should be aware of?',
+    answer: 'It is forbidden to run paid ads or sponsorships for Kahana. That includes any type of paid ad, with any kind of targeting. If you do want to run paid ads, please reach out to us to get our approval. Running paid ads will immediately lead to the suspension of your account and deletion of all commissions and sales associated with it. Should you be generating a suspicious number of sales, we may ask for proof of where/how you are generating them.',
   },
 ];
 
