@@ -249,6 +249,7 @@ export default function Pricing() {
               <p className="mt-8">
                 <span className="text-4xl font-bold tracking-tight text-[#038270]">
                   Custom Contract
+                </span>
               </p>
               {/* <a
                   href={tier.href}
