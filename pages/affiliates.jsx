@@ -10,7 +10,7 @@ const features = [
     title: 'High Commissions',
     description: (
       <span>
-        Our partner program's competitive 30% commission structure, particularly with{' '}
+        Our partner program&apos;s competitive 30% commission structure, particularly with{' '}
         <a href="https://kahana.co/pricing" className="text-[#038270] font-medium" target="_blank" rel="noopener noreferrer">
           high-ticket SaaS
         </a>{' '}
