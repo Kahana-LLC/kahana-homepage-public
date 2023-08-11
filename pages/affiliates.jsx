@@ -83,7 +83,7 @@ const faqs = [
         <b>(Total Earnings from Boost Program + Total Earnings from Hub Services + Total Earnings from Enterprise + Total Earnings from Premium Upgrades) / 12</b>
         <br />
         <br />
-        <b>For any service that is purchased, you earn both 30% of any one-time payments (e.g., setup fees), as well as 30% of any recurring revenue Kahana gains from the service (e.g., revenue share on hub sales).</b>
+        For any service that is purchased, you earn both 30% of any one-time payments (e.g., setup fees), as well as 30% of any recurring revenue Kahana gains from the service (e.g., revenue share on hub sales).
       </span>
     ),
   },
