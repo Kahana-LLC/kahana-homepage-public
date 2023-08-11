@@ -8,7 +8,19 @@ import AffiliateBanner from '../assets/images/AffiliateBanner.webp';
 const features = [
   {
     title: 'High Commissions',
-    description: 'Our partner program\'s competitive 30% commission structure, particularly with high-ticket SaaS and project-based sales ($5,000-$100,000+ per project), is an incentive for affiliates to promote Kahana.',
+    description: (
+      <span>
+        Our partner programapos&;s competitive 30% commission structure, particularly with{' '}
+        <a href="https://kahana.co/pricing" className="text-[#038270] font-medium" target="_blank" rel="noopener noreferrer">
+          high-ticket SaaS
+        </a>{' '}
+        and{' '}
+        <a href="https://kahana.co/solutions" className="text-[#038270] font-medium" target="_blank" rel="noopener noreferrer">
+          project-based sales
+        </a>{' '}
+        ($5,000-$100,000+ per project), is an incentive for affiliates to promote Kahana.
+      </span>
+    ),
   },
   {
     title: 'Recurring Revenue',
