@@ -105,7 +105,7 @@ const ResourcesPage = () => {
                 <a href={tile.link} className="block bg-white p-6 rounded-lg shadow-md text-center">
                   <h3 className="text-xl font-semibold mb-1">{tile.title}</h3>
                 </a>
-                <p className="text-gray-600 mt-1">{tile.description}</p>
+                <p className="text-gray-600 mt-2">{tile.description}</p>
               </div>
             ))}
           </div>
@@ -118,7 +118,7 @@ const ResourcesPage = () => {
           <h2 className="text-2xl font-semibold mb-2">
             Want to start monetizing your knowledge?
           </h2>
-          <p className="text-gray-600 my-4">
+          <p className="text-gray-600 my-4 px-4">
             Start charging for access to your best assets in minutes with Kahana.
           </p>
           <div className="mt-4">
@@ -126,7 +126,7 @@ const ResourcesPage = () => {
               href="https://app.kahana.co/signup"
               className="inline-block px-6 py-3 bg-black text-white rounded-md"
             >
-              Get Started
+              Use Kahana for free
             </a>
           </div>
         </div>
