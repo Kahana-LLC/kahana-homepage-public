@@ -99,11 +99,11 @@ const ResourcesPage = () => {
           <p className="text-gray-600">
             Learning and material to help you monetize.
           </p>
-          <div className="flex flex-wrap justify-center mt-6">
+          <div className="flex flex-wrap justify-center mt-6 space-y-4 sm:space-y-0 sm:gap-4">
             {clickableTiles.map((tile, index) => (
               <div key={index} className="w-full sm:w-1/2 md:w-1/4 p-2">
-                <a href={tile.link} className="block bg-white p-6 rounded-lg shadow-md text-center">
-                  <h3 className="text-xl font-semibold mb-1">{tile.title}</h3>
+                <a href={tile.link} className="block bg-green-800 p-6 rounded-lg shadow-md text-center">
+                  <h3 className="text-xl font-semibold text-white mb-1">{tile.title}</h3>
                 </a>
                 <p className="text-gray-600 mt-2">{tile.description}</p>
               </div>
