@@ -155,9 +155,9 @@ const ResourcesPage = () => {
       <section className="bg-gray-100 py-10">
         <div className="max-w-7xl mx-auto text-center">
           <h2 className="text-2xl font-semibold mb-2">
-            Most frequently asked questions
+            Questions?
           </h2>
-          <div className="space-y-4">
+          <div className="space-y-8">
             {faqs.map((faq, index) => (
               <div key={index} className="border border-gray-200 rounded-lg">
                 <button
