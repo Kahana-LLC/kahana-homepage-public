@@ -15,14 +15,17 @@ const ResourcesPage = () => {
     {
       title: 'Resource Category 1',
       description: 'Explore our selection of articles and guides.',
+      link: '/resource-category-1' // Update this with the actual link
     },
     {
       title: 'Resource Category 2',
       description: 'Unlock insights with our video tutorials.',
+      link: '/resource-category-2' // Update this with the actual link
     },
     {
       title: 'Resource Category 3',
       description: 'Stay informed with our latest industry reports.',
+      link: '/resource-category-3' // Update this with the actual link
     },
   ];
 
@@ -98,11 +101,17 @@ const ResourcesPage = () => {
           </p>
           <div className="flex flex-wrap justify-center mt-6">
             {clickableTiles.map((tile, index) => (
-              <div key={index} className="w-full sm:w-1/2 md:w-1/3 p-4">
+              <a key={index} href={tile.link} className="w-full sm:w-1/2 md:w-1/3 p-4">
                 <div className="bg-white p-6 rounded-lg shadow-md text-center">
                   <h3 className="text-xl font-semibold mb-2">{tile.title}</h3>
-                  <p className="text-gray-600">{tile.description}</p>
                 </div>
+              </a>
+            ))}
+          </div>
+          <div className="flex flex-wrap justify-center mt-4">
+            {clickableTiles.map((tile, index) => (
+              <div key={index} className="w-full sm:w-1/2 md:w-1/3 p-4">
+                <p className="text-gray-600">{tile.description}</p>
               </div>
             ))}
           </div>
