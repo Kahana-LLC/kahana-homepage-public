@@ -8,6 +8,7 @@ import HeaderBanner from './HeaderBanner';
 const navigation = [
   { name: 'Pricing', href: 'pricing' },
   { name: 'Blog', href: 'https://blog.kahana.co' },
+  { name: 'Resources', href: 'resources' },
   { name: 'Solutions', href: 'solutions' },
 ];
 
