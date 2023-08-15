@@ -162,7 +162,7 @@ const ResourcesPage = () => {
           </h2>
           <div className="space-y-4">
             {faqs.map((faq, index) => (
-              <div key={index} className="border border-gray-200 rounded-lg">
+              <div key={index} className="bg-white border border-transparent rounded-lg">
                 <button
                   className="w-full flex justify-between items-center p-4 focus:outline-none"
                   onClick={() => toggleAccordion(index)}
