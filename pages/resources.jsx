@@ -27,18 +27,10 @@ const ResourcesPage = () => {
   ];
 
   const links = [
-    {
-      title: 'Useful Link 1',
-      description: 'Check out this valuable resource.',
-    },
-    {
-      title: 'Helpful Link 2',
-      description: 'Learn more with this insightful article.',
-    },
-    {
-      title: 'Informative Link 3',
-      description: 'Stay updated with the latest news.',
-    },
+    'Useful Link 1',
+    'Helpful Link 2',
+    'Informative Link 3',
+    // ... add more links as needed
   ];
 
   const faqs = [
@@ -85,8 +77,9 @@ const ResourcesPage = () => {
         <NavbarDup />
       </div>
 
-      <section className="header-section">
-        <div className="header-text">
+      {/* Header Section */}
+      <section className="bg-gray-100 py-10">
+        <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-3xl font-bold mb-4">
             Top Resources to Monetize Your Knowledge
           </h1>
@@ -96,65 +89,77 @@ const ResourcesPage = () => {
         </div>
       </section>
 
-      <section className="clickable-tiles-section bg-gray-100 py-12">
-        <h2 className="text-2xl font-semibold mb-2">📍 Guides</h2>
-        <p className="text-gray-600">
-          Step-by-step roadmaps to help you monetize.
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
-          {clickableTiles.map((tile, index) => (
-            <div
-              key={index}
-              className="bg-white p-6 rounded-lg shadow-md text-center"
-            >
-              <h3 className="text-xl font-semibold mb-2">{tile.title}</h3>
-              <p className="text-gray-600">{tile.description}</p>
-            </div>
-          ))}
+      {/* Clickable Tiles Section */}
+      <section className="bg-gray-100 py-10">
+        <div className="max-w-7xl mx-auto text-center">
+          <h2 className="text-2xl font-semibold mb-2">Guides</h2>
+          <p className="text-gray-600">
+            Learning and material to help you monetize.
+          </p>
+          <div className="flex flex-wrap justify-center mt-6">
+            {clickableTiles.map((tile, index) => (
+              <div key={index} className="w-full sm:w-1/2 md:w-1/3 p-4">
+                <div className="bg-white p-6 rounded-lg shadow-md text-center">
+                  <h3 className="text-xl font-semibold mb-2">{tile.title}</h3>
+                  <p className="text-gray-600">{tile.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      <section className="cta-section bg-gray-100 py-12">
-        <h2 className="text-2xl font-semibold mb-2">
-          Want to start monetizing your knowledge?
-        </h2>
-        <p className="text-gray-600">
-          Start charging for access to your best assets in minutes with Kahana.
-        </p>
-        <button className="bg-black text-white px-6 py-3 rounded-md mt-4">
-          <a href="https://app.kahana.co/signup">Get Started</a>
-        </button>
-      </section>
-
-      <section className="links-section bg-gray-100 py-12">
-        <h2 className="text-2xl font-semibold mb-2">More Collections</h2>
-        <p className="text-gray-600">
-          Discover additional resources for your success.
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
-          {links.map((link, index) => (
-            <div
-              key={index}
-              className="bg-white p-6 rounded-lg shadow-md text-center"
+      {/* Call to Action Section */}
+      <section className="bg-gray-100 py-10">
+        <div className="max-w-7xl mx-auto text-center">
+          <h2 className="text-2xl font-semibold mb-2">
+            Want to start monetizing your knowledge?
+          </h2>
+          <p className="text-gray-600">
+            Start charging for access to your best assets in minutes with Kahana.
+          </p>
+          <div className="mt-4">
+            <a
+              href="https://app.kahana.co/signup"
+              className="inline-block px-6 py-3 bg-black text-white rounded-md"
             >
-              <h3 className="text-xl font-semibold mb-2">{link.title}</h3>
-              <p className="text-gray-600">{link.description}</p>
-            </div>
-          ))}
+              Get Started
+            </a>
+          </div>
         </div>
       </section>
 
-      <section className="faq-section bg-white py-16 px-4 sm:px-6 lg:px-8">
+      {/* Links Section */}
+      <section className="bg-gray-100 py-10">
+        <div className="max-w-7xl mx-auto text-center">
+          <h2 className="text-2xl font-semibold mb-2">More Collections</h2>
+          <p className="text-gray-600">
+            Discover additional resources for your success.
+          </p>
+          <div className="flex flex-wrap justify-center mt-6">
+            {links.map((link, index) => (
+              <div key={index} className="w-full sm:w-1/2 md:w-1/3 p-4">
+                <a
+                  href="#"
+                  className="block bg-white p-6 rounded-lg shadow-md text-center"
+                >
+                  {link}
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="bg-gray-100 py-10">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-bold mb-8 text-gray-900 text-center">
             Most frequently asked questions
           </h2>
           <div className="space-y-4">
             {faqs.map((faq, index) => (
-              <div
-                key={index}
-                className="border border-gray-200 rounded-lg"
-              >
+              <div key={index} className="border border-gray-200 rounded-lg">
                 <button
                   className="w-full flex justify-between items-center p-4 focus:outline-none"
                   onClick={() => toggleAccordion(index)}
