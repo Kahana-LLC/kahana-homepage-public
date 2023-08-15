@@ -153,8 +153,8 @@ const ResourcesPage = () => {
 
       {/* FAQ Section */}
       <section className="bg-gray-100 py-10">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold mb-8 text-gray-900 text-center">
+        <div className="max-w-7xl mx-auto text-center">
+          <h2 className="text-2xl font-semibold mb-2">
             Most frequently asked questions
           </h2>
           <div className="space-y-4">
