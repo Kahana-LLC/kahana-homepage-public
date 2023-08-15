@@ -108,9 +108,9 @@ const ResourcesPage = () => {
               </a>
             ))}
           </div>
-          <div className="flex flex-wrap justify-center mt-2">
+          <div className="flex flex-wrap justify-center mt-1">
             {clickableTiles.map((tile, index) => (
-              <div key={index} className="w-full sm:w-1/2 md:w-1/3 p-2">
+              <div key={index} className="w-full sm:w-1/2 md:w-1/3 p-1">
                 <p className="text-gray-600">{tile.description}</p>
               </div>
             ))}
