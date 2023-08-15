@@ -96,27 +96,21 @@ const ResourcesPage = () => {
       <section className="bg-gray-100 py-10">
         <div className="max-w-7xl mx-auto text-center">
           <h2 className="text-2xl font-semibold mb-2">Guides</h2>
-          <p className="text-gray-600">
-            Learning and material to help you monetize.
-          </p>
-          <div className="flex flex-wrap justify-center mt-6">
-            {clickableTiles.map((tile, index) => (
-              <a key={index} href={tile.link} className="w-full sm:w-1/2 md:w-1/3 p-4">
-                <div className="bg-white p-6 rounded-lg shadow-md text-center">
-                  <h3 className="text-xl font-semibold mb-2">{tile.title}</h3>
+            <p className="text-gray-600">
+              Learning and material to help you monetize.
+            </p>
+            <div className="flex flex-wrap justify-center mt-6">
+              {clickableTiles.map((tile, index) => (
+                <div key={index} className="w-full sm:w-1/2 md:w-1/4 p-2">
+                  <a href={tile.link} className="block bg-white p-6 rounded-lg shadow-md text-center">
+                    <h3 className="text-xl font-semibold mb-2">{tile.title}</h3>
+                  </a>
+                  <p className="text-gray-600">{tile.description}</p>
                 </div>
-              </a>
-            ))}
+              ))}
+            </div>
           </div>
-          <div className="flex flex-wrap justify-center mt-1">
-            {clickableTiles.map((tile, index) => (
-              <div key={index} className="w-full sm:w-1/2 md:w-1/3 p-1">
-                <p className="text-gray-600">{tile.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+        </section>
 
       {/* Call to Action Section */}
       <section className="bg-gray-100 py-10">
@@ -124,7 +118,7 @@ const ResourcesPage = () => {
           <h2 className="text-2xl font-semibold mb-2">
             Want to start monetizing your knowledge?
           </h2>
-          <p className="text-gray-600">
+          <p className="text-gray-600 my-4">
             Start charging for access to your best assets in minutes with Kahana.
           </p>
           <div className="mt-4">
@@ -147,7 +141,7 @@ const ResourcesPage = () => {
           </p>
           <div className="flex flex-wrap justify-center mt-6">
             {links.map((link, index) => (
-              <div key={index} className="w-full sm:w-1/2 md:w-1/3 p-4">
+              <div key={index} className="w-full sm:w-1/2 md:w-1/4 p-4">
                 <a
                   href="#"
                   className="block bg-white p-6 rounded-lg shadow-md text-center"
