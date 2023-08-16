@@ -8,14 +8,17 @@ const DigitalProductsResources = () => {
       link: '/resources/best-ways-to-prevent-customers-from-sharing-a-notion-link'
     },
     {
-      title: 'Helpful Link 2',
-      link: '/resources/helpful-link-2'
+      title: 'Ultimate Guide to Sell Information Products',
+      link: '/resources/ultimate-guide-to-sell-information-products'
     },
     {
-      title: 'Informative Link 3',
-      link: '/resources/informative-link-3'
+      title: 'Best ways to sell knowledge-based products',
+      link: '/resources/best-ways-to-sell-knowledge-based-products'
     },
-    // Add more links as needed
+    {
+      title: 'Best ways to prevent stealing content & information in digital products',
+      link: '/resources/best-ways-to-prevent-stealing-content-information-in-digital-products'
+    },
   ];
 
   return (
