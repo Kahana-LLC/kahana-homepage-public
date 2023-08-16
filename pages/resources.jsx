@@ -18,19 +18,16 @@ const ResourcesPage = () => {
 
   const clickableTiles = [
     {
-      title: 'Resource Category 1',
-      description: 'Explore our selection of articles and guides.',
-      link: '/resource-category-1' // Update this with the actual link
+      title: 'Resources to Sell Knowledge-Based Digital Products',
+      link: '#digital-products',
     },
     {
-      title: 'Resource Category 2',
-      description: 'Unlock insights with our video tutorials.',
-      link: '/resource-category-2' // Update this with the actual link
+      title: 'Resources to Monetize Google Drive',
+      link: '#google-drive',
     },
     {
-      title: 'Resource Category 3',
-      description: 'Stay informed with our latest industry reports.',
-      link: '/resource-category-3' // Update this with the actual link
+      title: 'Resources to Monetize Notion',
+      link: '#notion',
     },
   ];
   
@@ -100,10 +97,14 @@ const ResourcesPage = () => {
           <div className="flex flex-wrap justify-center mt-6 space-y-4 sm:space-y-0 sm:gap-4">
             {clickableTiles.map((tile, index) => (
               <div key={index} className="w-full sm:w-1/2 md:w-1/4 p-2">
-                <a href={tile.link} className="block bg-green-800 p-6 rounded-lg shadow-md text-center">
-                  <h3 className="text-xl font-semibold text-white mb-1">{tile.title}</h3>
+                <a
+                  href={tile.link}
+                  className="block bg-green-800 p-6 rounded-lg shadow-md text-center"
+                >
+                  <h3 className="text-xl font-semibold text-white mb-1">
+                    {tile.title}
+                  </h3>
                 </a>
-                <p className="text-gray-600 mt-2">{tile.description}</p>
               </div>
             ))}
           </div>
@@ -114,9 +115,9 @@ const ResourcesPage = () => {
       <ResourcesCalltoAction />
 
       {/* Links Section */}
-      <DigitalProductsResources />
-      <GoogleDriveResources />
-      <NotionResources />
+      <DigitalProductsResources id="digital-products" />
+      <GoogleDriveResources id="google-drive" />
+      <NotionResources id="notion" />
 
       {/* FAQ Section */}
       {/*
