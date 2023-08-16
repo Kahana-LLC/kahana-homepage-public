@@ -25,10 +25,10 @@ function Navbar() {
             </div>
             <div className="ml-10 space-x-4 ">
               <a
-                href="https://kahana.co?utm_source=resources"
-                className="underlined text-back"
+                href="https://kahana.co/resources"
+                className="underline text-back"
               >
-                Learn more
+                Back to Resources
               </a>
             </div>
           </div>
