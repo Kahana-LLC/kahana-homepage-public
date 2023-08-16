@@ -48,17 +48,17 @@ const Page = () => {
           }}
         >
           <h1 className="text-3xl font-semibold mb-4">
-            <strong>Best ways to sell a Notion page</strong>
+            Best ways to sell a Notion page
           </h1>
         </section>
         
         <p className="text-gray-600 mb-6">
-          <strong>Selling your Notion pages can be a rewarding venture, especially when you employ strategies that safeguard your content and optimize distribution. By embedding your Notion page link into a Kahana hub, you can protect your valuable content and ensure it&apos;s accessible only to paying customers. Here&apos;s how to do it effectively, along with best practices for distributing your Kahana hub link to reach your target audience.</strong>
+          Selling your Notion pages can be a rewarding venture, especially when you employ strategies that safeguard your content and optimize distribution. By embedding your Notion page link into a Kahana hub, you can protect your valuable content and ensure it&apos;s accessible only to paying customers. Here&apos;s how to do it effectively, along with best practices for distributing your Kahana hub link to reach your target audience.
         </p>
         
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">
-            <strong>Embedding Notion Page into a Secure Kahana Hub:</strong>
+            Embedding Notion Page into a Secure Kahana Hub:
           </h2>
           <p className="text-gray-600">
             <strong>1. Create a Kahana Hub:</strong>
@@ -85,7 +85,7 @@ const Page = () => {
         
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">
-            <strong>Best Practices for Distributing Your Kahana Hub Link:</strong>
+            Best Practices for Distributing Your Kahana Hub Link:
           </h2>
           <p className="text-gray-600">
             <strong>1. Engage on Quora and Reddit:</strong>
@@ -115,7 +115,7 @@ const Page = () => {
         </section>
 
         <p className="text-gray-600 mb-6">
-          <strong>By embedding your Notion page link into a secure Kahana hub, you ensure that your content remains protected while accessible to your paying customers. When distributing your Kahana hub link, focus on delivering value and providing solutions to your target audience&apos;s pain points. This approach will not only drive sales but also establish you as an authority in your niche.</strong>
+          By embedding your Notion page link into a secure Kahana hub, you ensure that your content remains protected while accessible to your paying customers. When distributing your Kahana hub link, focus on delivering value and providing solutions to your target audience&apos;s pain points. This approach will not only drive sales but also establish you as an authority in your niche.
         </p>
         
         <ResourcesCalltoAction/>
