@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 import Footer from '../components/Footer';
 import NavbarDup from '../components/NavbarDup';
 import Image from 'next/image';
@@ -30,12 +31,21 @@ const ResourcesPage = () => {
   ];
 
   const links = [
-    'Useful Link 1',
-    'Helpful Link 2',
-    'Informative Link 3',
-    // ... add more links as needed
+    {
+      title: 'Useful Link 1',
+      link: '/resources/best-ways-to-prevent-customers-from-sharing-a-notion-link'
+    },
+    {
+      title: 'Helpful Link 2',
+      link: '/resources/helpful-link-2'
+    },
+    {
+      title: 'Informative Link 3',
+      link: '/resources/informative-link-3'
+    },
+    // Add more links as needed
   ];
-
+  
   const faqs = [
     {
       question: 'Question 1?',
@@ -142,12 +152,11 @@ const ResourcesPage = () => {
           <div className="flex flex-wrap justify-center mt-6">
             {links.map((link, index) => (
               <div key={index} className="w-full sm:w-1/2 md:w-1/4 p-4">
-                <a
-                  href="#"
-                  className="block bg-white p-6 rounded-lg shadow-md text-center"
-                >
-                  {link}
-                </a>
+                <Link href={link.link}> {/* Use Link component */}
+                  <a className="block bg-white p-6 rounded-lg shadow-md text-center">
+                    {link.title}
+                  </a>
+                </Link>
               </div>
             ))}
           </div>
