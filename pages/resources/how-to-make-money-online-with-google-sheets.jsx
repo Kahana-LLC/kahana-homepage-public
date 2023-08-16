@@ -53,7 +53,7 @@ const Page = () => {
         </section>
         
         <p className="text-gray-600 mb-6">
-          Google Sheets isn't just a tool for number crunching—it's a valuable platform for monetizing your data-driven expertise. In this guide, we'll show you how to turn Google Sheets into a revenue-generating asset by utilizing Kahana's capabilities for secure distribution and sales.
+          Google Sheets isn&apos;t just a tool for number crunching—it&apos;s a valuable platform for monetizing your data-driven expertise. In this guide, we&apos;ll show you how to turn Google Sheets into a revenue-generating asset by utilizing Kahana&apos;s capabilities for secure distribution and sales.
         </p>
         
         <section className="mb-8">
@@ -79,7 +79,7 @@ const Page = () => {
           <p className="text-gray-600">
             1. <strong>Creating a Kahana Hub</strong>: Establish a Kahana hub as your platform for showcasing and selling your Google Sheets securely.
             <br />
-            2. <strong>Paywalls and Controlled Access</strong>: Utilize Kahana's paywall feature to control access to your Google Sheets, ensuring only paying customers can access your valuable data.
+            2. <strong>Paywalls and Controlled Access</strong>: Utilize Kahana&apos;s paywall feature to control access to your Google Sheets, ensuring only paying customers can access your valuable data.
           </p>
         </section>
         
@@ -104,7 +104,7 @@ const Page = () => {
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">Step 6: Engagement and Support</h2>
           <p className="text-gray-600">
-            1. <strong>Communication via Kahana</strong>: Utilize Kahana's communication tools to engage with customers, address queries, and build a sense of community.
+            1. <strong>Communication via Kahana</strong>: Utilize Kahana&apos;s communication tools to engage with customers, address queries, and build a sense of community.
             <br />
             2. <strong>Customer Assistance</strong>: Provide excellent customer support to guide potential buyers through the purchasing process.
           </p>
