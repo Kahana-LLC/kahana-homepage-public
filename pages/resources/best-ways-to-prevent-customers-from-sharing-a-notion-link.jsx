@@ -1,9 +1,8 @@
 import React from 'react';
 import Head from 'next/head';
-import Footer from '../components/Footer';
-import NavbarDup from '../components/NavbarDup';
+import Footer from '../../components/Footer';
+import NavbarDup from '../../components/NavbarDup';
 import Image from 'next/image';
-import AffiliateBanner from '../assets/images/AffiliateBanner.webp';
 
 const Page = () => {
   return (
