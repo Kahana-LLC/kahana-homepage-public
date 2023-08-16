@@ -17,7 +17,7 @@ const DigitalProductsResources = () => {
     },
     {
       title: 'Best ways to prevent stealing content & information in digital products',
-      link: '/resources/best-ways-to-prevent-stealing-content-information-in-digital-products'
+      link: '/resources/best-ways-to-prevent-stealing-content-and-information-in-digital-products'
     },
   ];
 
