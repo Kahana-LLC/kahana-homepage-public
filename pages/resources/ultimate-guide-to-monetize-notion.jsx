@@ -7,7 +7,7 @@ import ResourcesCalltoAction from '../../components/ResourcesCalltoAction';
 
 const Page = () => {
   return (
-    <div className="bg-white">
+    <div className="bg-gray-100">
       <Head>
         <title>Ultimate Guide to Monetize Notion</title>
         <meta
