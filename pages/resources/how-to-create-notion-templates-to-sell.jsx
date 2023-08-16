@@ -53,12 +53,12 @@ const Page = () => {
         </section>
         
         <p className="text-gray-600 mb-6">
-          <strong>Creating and selling Notion templates can be a rewarding endeavor, offering both a creative outlet and a potential income stream. To succeed in this venture, it&apos;s essential to create templates that provide real value to your customers. Here&apos;s a comprehensive guide on how to create marketable Notion templates that you can sell effectively.</strong>
+          Creating and selling Notion templates can be a rewarding endeavor, offering both a creative outlet and a potential income stream. To succeed in this venture, it&apos;s essential to create templates that provide real value to your customers. Here&apos;s a comprehensive guide on how to create marketable Notion templates that you can sell effectively.
         </p>
         
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">
-            <strong>1. Identify Your Niche:</strong>
+            1. Identify Your Niche:
           </h2>
           <p className="text-gray-600">
              Determine your target audience and niche. Are you designing templates for personal productivity, business management, education, or creative endeavors? Understanding your audience&apos;s needs is key to creating templates that resonate.
@@ -67,7 +67,7 @@ const Page = () => {
         
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">
-            <strong>2. Choose Template Types:</strong>
+            2. Choose Template Types:
           </h2>
           <p className="text-gray-600">
              Select the types of Notion templates you want to create. These could range from project management systems and databases to study planners and creative brainstorming tools.
@@ -76,7 +76,7 @@ const Page = () => {
         
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">
-            <strong>3. Research and Plan:</strong>
+            3. Research and Plan:
           </h2>
           <p className="text-gray-600">
              Research what types of templates are in demand within your chosen niche. Understand the pain points your templates can address and plan how your templates can provide practical solutions.
@@ -85,7 +85,7 @@ const Page = () => {
         
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">
-            <strong>4. Structure and Layout:</strong>
+            4. Structure and Layout:
           </h2>
           <p className="text-gray-600">
              Design templates with a clear and intuitive structure. Organize content blocks logically and ensure that your templates are easy to navigate.
@@ -94,7 +94,7 @@ const Page = () => {
         
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">
-            <strong>5. Use Notion Features:</strong>
+            5. Use Notion Features:
           </h2>
           <p className="text-gray-600">
              Leverage Notion&apos;s features such as databases, tables, boards, and inline databases to create dynamic and interactive templates.
@@ -103,7 +103,7 @@ const Page = () => {
         
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">
-            <strong>6. Customize for Versatility:</strong>
+            6. Customize for Versatility:
           </h2>
           <p className="text-gray-600">
              Design templates that are flexible and adaptable. Provide customization options so users can tailor the templates to their specific needs.
@@ -112,7 +112,7 @@ const Page = () => {
         
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">
-            <strong>7. Visual Appeal:</strong>
+            7. Visual Appeal:
           </h2>
           <p className="text-gray-600">
              Incorporate appealing visuals, icons, and color schemes that enhance the overall look of your templates.
@@ -121,7 +121,7 @@ const Page = () => {
         
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">
-            <strong>8. Test and Refine:</strong>
+            8. Test and Refine:
           </h2>
           <p className="text-gray-600">
              Test your templates thoroughly to identify any usability issues or improvements. Incorporate user feedback to refine your designs.
@@ -130,7 +130,7 @@ const Page = () => {
         
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">
-            <strong>9. Kahana Monetization Integration:</strong>
+            9. Kahana Monetization Integration:
           </h2>
           <p className="text-gray-600">
              Consider using Kahana to monetize your Notion templates. By embedding the templates within a Kahana hub, you can securely sell your content and protect it from unauthorized access.
@@ -139,7 +139,7 @@ const Page = () => {
         
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">
-            <strong>10. Craft a Sales Page:</strong>
+            10. Craft a Sales Page:
           </h2>
           <p className="text-gray-600">
              Create a compelling sales page that showcases the benefits of your Notion templates. Highlight how your templates can enhance productivity, streamline processes, or achieve specific goals.
@@ -148,7 +148,7 @@ const Page = () => {
         
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">
-            <strong>11. Set Appropriate Pricing:</strong>
+            11. Set Appropriate Pricing:
           </h2>
           <p className="text-gray-600">
              Determine a fair pricing strategy for your templates. Consider factors such as the complexity of the template, the value it provides, and the market rates for similar products.
@@ -157,7 +157,7 @@ const Page = () => {
         
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">
-            <strong>12. Offer Bundles and Upgrades:</strong>
+            12. Offer Bundles and Upgrades:
           </h2>
           <p className="text-gray-600">
              Provide bundle options or premium upgrades to offer customers added value and encourage larger purchases.
@@ -166,7 +166,7 @@ const Page = () => {
         
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">
-            <strong>13. Marketing and Distribution:</strong>
+            13. Marketing and Distribution:
           </h2>
           <p className="text-gray-600">
              Promote your templates across social media platforms, relevant online communities, and through email marketing. Leverage the secure Kahana link to distribute your templates.
@@ -175,7 +175,7 @@ const Page = () => {
         
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">
-            <strong>14. Continuously Update:</strong>
+            14. Continuously Update:
           </h2>
           <p className="text-gray-600">
              Keep your templates up to date and relevant. Offer updates to existing customers, demonstrating your commitment to their success.
@@ -184,7 +184,7 @@ const Page = () => {
         
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">
-            <strong>15. Provide Customer Support:</strong>
+            15. Provide Customer Support:
           </h2>
           <p className="text-gray-600">
              Offer customer support to assist users who may have questions or need help with customization.
@@ -192,7 +192,7 @@ const Page = () => {
         </section>
         
         <p className="text-gray-600 mb-6">
-          <strong>Creating Notion templates to sell requires a balance of creativity, functionality, and market awareness. By utilizing Notion&apos;s features and the secure monetization tools of Kahana, you can build a successful template business that offers value to your customers and generates revenue for you. Remember, the key is to create templates that genuinely address user needs and empower them to achieve their goals.</strong>
+          Creating Notion templates to sell requires a balance of creativity, functionality, and market awareness. By utilizing Notion&apos;s features and the secure monetization tools of Kahana, you can build a successful template business that offers value to your customers and generates revenue for you. Remember, the key is to create templates that genuinely address user needs and empower them to achieve their goals.
         </p>
         
         <ResourcesCalltoAction/>
