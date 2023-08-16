@@ -19,7 +19,12 @@ const ResourcesPage = () => {
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
     if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
+      const titleHeight = 60; // Adjust this value to match the height of your section title
+      const offsetTop = section.offsetTop - titleHeight;
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth',
+      });
     }
   };
   
