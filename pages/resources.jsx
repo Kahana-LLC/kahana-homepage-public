@@ -99,6 +99,17 @@ const ResourcesPage = () => {
               <div key={index} className="w-full sm:w-1/2 md:w-1/4 p-2">
                 <a
                   href={tile.link}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const targetId = tile.link.substring(1); // Remove the '#'
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                      window.scrollTo({
+                        behavior: 'smooth',
+                        top: targetElement.offsetTop,
+                      });
+                    }
+                  }}
                   className="block bg-green-800 p-6 rounded-lg shadow-md text-center"
                 >
                   <h3 className="text-xl font-semibold text-white mb-1">
