@@ -44,7 +44,7 @@ const Page = () => {
           }}
         >
           <h1 className="text-3xl font-semibold mb-4">
-            Best Practices & Tips for a Great LinkedIn Profile
+            How to make money with Google Docs
           </h1>
         </section>
         
