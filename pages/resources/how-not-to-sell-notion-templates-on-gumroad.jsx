@@ -48,17 +48,17 @@ const Page = () => {
           }}
         >
           <h1 className="text-3xl font-semibold mb-4">
-            <strong>How NOT to sell Notion templates on Gumroad</strong>
+            How NOT to sell Notion templates on Gumroad
           </h1>
         </section>
         
         <p className="text-gray-600 mb-6">
-          <strong>Gumroad is a popular platform for selling digital products, but when it comes to selling Notion templates, there are significant limitations that can impact the security and exclusivity of your content. Here&apos;s why Gumroad might not be the ideal platform for selling Notion templates and what alternatives you should consider.</strong>
+          Gumroad is a popular platform for selling digital products, but when it comes to selling Notion templates, there are significant limitations that can impact the security and exclusivity of your content. Here&apos;s why Gumroad might not be the ideal platform for selling Notion templates and what alternatives you should consider.
         </p>
         
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">
-            <strong>The Issue with Notion Templates on Gumroad:</strong>
+            The Issue with Notion Templates on Gumroad:
           </h2>
           <p className="text-gray-600">
             <strong>1. Lack of Link Protection:</strong>
@@ -77,10 +77,10 @@ const Page = () => {
         
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">
-            <strong>A Secure Alternative: Kahana for Selling Notion Templates:</strong>
+            A Secure Alternative: Kahana for Selling Notion Templates:
           </h2>
           <p className="text-gray-600">
-            <strong>To overcome the limitations posed by Gumroad, consider leveraging Kahana as a platform to sell your Notion templates. Kahana offers several advantages that ensure the security and exclusivity of your content:</strong>
+            To overcome the limitations posed by Gumroad, consider leveraging Kahana as a platform to sell your Notion templates. Kahana offers several advantages that ensure the security and exclusivity of your content:
             <br /><br />
             <strong>1. Secure Monetized Links:</strong>
             <br />
@@ -98,7 +98,7 @@ const Page = () => {
 
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">
-            <strong>How to Successfully Sell Notion Templates with Kahana:</strong>
+            How to Successfully Sell Notion Templates with Kahana:
           </h2>
           <p className="text-gray-600">
             <strong>1. Create a Kahana Hub:</strong>
@@ -116,7 +116,7 @@ const Page = () => {
         </section>
 
         <p className="text-gray-600 mb-6">
-          <strong>By opting for Kahana&apos;s secure platform, you can sell your Notion templates with confidence, knowing that your content is protected from unauthorized sharing. Embrace a solution that prioritizes both security and the value of your work, allowing you to maximize your revenue while providing a seamless and secure experience for your customers.</strong>
+          By opting for Kahana&apos;s secure platform, you can sell your Notion templates with confidence, knowing that your content is protected from unauthorized sharing. Embrace a solution that prioritizes both security and the value of your work, allowing you to maximize your revenue while providing a seamless and secure experience for your customers.
         </p>
         
         <ResourcesCalltoAction/>
