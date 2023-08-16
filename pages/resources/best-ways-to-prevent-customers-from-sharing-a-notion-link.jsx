@@ -85,14 +85,14 @@ const Page = () => {
         </section>
 
         <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-2">4. Restricted Sharing Permissions</h2>
+          <h2 className="text-2xl font-semibold mb-2">5. Restricted Sharing Permissions</h2>
           <p className="text-gray-600">
             Utilize Notion&apos;s built-in sharing settings to restrict access. Instead of providing editing or full access rights, choose the "View Only" option. While this won&apos;t prevent screen capturing or manual sharing, it adds an extra layer of difficulty for those attempting to share the content.
           </p>
         </section>
 
         <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-2">4. Educational Campaigns</h2>
+          <h2 className="text-2xl font-semibold mb-2">6. Educational Campaigns</h2>
           <p className="text-gray-600">
             Educate your customers about the importance of respecting content ownership and the implications of sharing copyrighted material without permission. Raise awareness about the value of your work and how piracy can impact your ability to create quality content.
           </p>
