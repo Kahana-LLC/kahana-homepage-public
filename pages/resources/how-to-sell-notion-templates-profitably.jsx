@@ -59,34 +59,34 @@ const Page = () => {
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">Step 1: Understand Your Audience</h2>
           <p className="text-gray-600">
-            Identify Niche Needs: Determine the specific pain points and needs of your target audience. Tailor your Notion templates to address these challenges effectively.
+            <strong>Identify Niche Needs:</strong> Determine the specific pain points and needs of your target audience. Tailor your Notion templates to address these challenges effectively.
           </p>
         </section>
 
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">Step 2: Create Valuable and Unique Templates</h2>
           <p className="text-gray-600">
-            Craft Comprehensive Templates: Design templates that provide comprehensive solutions to specific problems. Whether it&apos;s project management, content planning, or goal tracking, ensure your templates offer a holistic approach.
+            <strong>Craft Comprehensive Templates:</strong> Design templates that provide comprehensive solutions to specific problems. Whether it&apos;s project management, content planning, or goal tracking, ensure your templates offer a holistic approach.
           </p>
         </section>
 
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">Step 3: Showcase the Value</h2>
           <p className="text-gray-600">
-            Provide Demonstrations: Showcase the functionality of your Notion templates through demos or videos. Highlight how your templates can simplify tasks, enhance organization, and boost productivity.
+            <strong>Provide Demonstrations:</strong> Showcase the functionality of your Notion templates through demos or videos. Highlight how your templates can simplify tasks, enhance organization, and boost productivity.
           </p>
         </section>
 
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">Step 4: Deeply Analyze Your Pricing Strategy</h2>
           <p className="text-gray-600">
-            Understand Your Costs: Evaluate the time, effort, and resources invested in creating each Notion template. Factor in design, research, and development to ensure your pricing covers your expenses.
+            <strong>Understand Your Costs:</strong> Evaluate the time, effort, and resources invested in creating each Notion template. Factor in design, research, and development to ensure your pricing covers your expenses.
             
-            Competitor Analysis: Research your competitors&apos; pricing strategies to position your templates competitively while offering unique value.
+            <strong>Competitor Analysis:</strong> Research your competitors&apos; pricing strategies to position your templates competitively while offering unique value.
             
-            Pricing Tiers: Offer tiered pricing to cater to different customer segments. Basic, standard, and premium options can accommodate varied budgets and needs.
+            <strong>Pricing Tiers:</strong>  Offer tiered pricing to cater to different customer segments. Basic, standard, and premium options can accommodate varied budgets and needs.
             
-            Value-Based Pricing: Consider the value your Notion templates bring to customers&apos; lives. Price according to the impact and benefits your templates offer.
+            <strong>Value-Based Pricing:</strong>  Consider the value your Notion templates bring to customers&apos; lives. Price according to the impact and benefits your templates offer.
           </p>
         </section>
 
