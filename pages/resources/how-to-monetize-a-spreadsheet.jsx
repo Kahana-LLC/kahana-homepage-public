@@ -53,7 +53,7 @@ const Page = () => {
         </section>
         
         <p className="text-gray-600 mb-6">
-          Monetizing a spreadsheet might seem unconventional, but with the right strategy, it can be a lucrative endeavor. In this guide, we'll walk you through the steps to effectively monetize your spreadsheets, utilizing Kahana to ensure secure distribution and successful sales.
+          Monetizing a spreadsheet might seem unconventional, but with the right strategy, it can be a lucrative endeavor. In this guide, we&apos;ll walk you through the steps to effectively monetize your spreadsheets, utilizing Kahana to ensure secure distribution and successful sales.
         </p>
         
         <section className="mb-8">
@@ -79,7 +79,7 @@ const Page = () => {
           <p className="text-gray-600">
             1. <strong>Establish a Kahana Hub</strong>: Create a Kahana hub as the central platform for showcasing and selling your monetized spreadsheet securely.
             <br />
-            2. <strong>Implement Paywalls and Access Control</strong>: Utilize Kahana's paywall feature to restrict access to your spreadsheet's valuable content, ensuring only paying customers can view it.
+            2. <strong>Implement Paywalls and Access Control</strong>: Utilize Kahana&apos;s paywall feature to restrict access to your spreadsheet&apos;s valuable content, ensuring only paying customers can view it.
           </p>
         </section>
         
@@ -95,7 +95,7 @@ const Page = () => {
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">Step 5: Effective Marketing and Promotion</h2>
           <p className="text-gray-600">
-            1. <strong>Preview Teasers</strong>: Share snippets or visual representations of your spreadsheet's data on social media or your website to generate interest.
+            1. <strong>Preview Teasers</strong>: Share snippets or visual representations of your spreadsheet&apos;s data on social media or your website to generate interest.
             <br />
             2. <strong>Email Campaigns</strong>: Utilize email marketing to inform your subscribers about your monetized spreadsheet and the benefits it offers.
           </p>
@@ -104,7 +104,7 @@ const Page = () => {
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">Step 6: Engage Your Audience</h2>
           <p className="text-gray-600">
-            1. <strong>Discussion Threads</strong>: Interact with potential customers through Kahana's discussion threads, addressing inquiries and building a sense of community.
+            1. <strong>Discussion Threads</strong>: Interact with potential customers through Kahana&apos;s discussion threads, addressing inquiries and building a sense of community.
             <br />
             2. <strong>Responsive Support</strong>: Provide excellent customer support to guide buyers through the purchasing process and answer their questions.
           </p>
@@ -118,11 +118,11 @@ const Page = () => {
         </section>
         
         <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-2">Step 8: Embracing Kahana's Advantages</h2>
+          <h2 className="text-2xl font-semibold mb-2">Step 8: Embracing Kahana&apos;s Advantages</h2>
           <p className="text-gray-600">
-            1. <strong>Secure Integration</strong>: Rely on Kahana's integration to ensure a secure environment for selling your spreadsheet's insights.
+            1. <strong>Secure Integration</strong>: Rely on Kahana&apos;s integration to ensure a secure environment for selling your spreadsheet&apos;s insights.
             <br />
-            2. <strong>Access Control</strong>: Utilize Kahana's features to maintain control over who can access your spreadsheet's content, protecting your valuable data.
+            2. <strong>Access Control</strong>: Utilize Kahana&apos;s features to maintain control over who can access your spreadsheet&apos;s content, protecting your valuable data.
           </p>
         </section>
         
