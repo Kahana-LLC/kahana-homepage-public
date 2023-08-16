@@ -132,10 +132,8 @@ const Page = () => {
             Participate in Slack and Discord communities focused on productivity, entrepreneurship, or digital tools. Engage with members, showcase your templates, and provide value before mentioning your offerings.
           </p>
         </section>
-
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-2">Creating and selling Notion templates involves securing them using Kahana and strategically showcasing them on platforms that resonate with your target audience. By following these steps, you can ensure your templates gain the attention they deserve and generate a consistent stream of income.</h2>
-        </section>
+        <p className="text-gray-600">
+            Creating and selling Notion templates involves securing them using Kahana and strategically showcasing them on platforms that resonate with your target audience. By following these steps, you can ensure your templates gain the attention they deserve and generate a consistent stream of income.
 
         <ResourcesCalltoAction/>
         <DigitalProductsResources/>
