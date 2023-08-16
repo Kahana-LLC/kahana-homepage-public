@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Footer from '../components/Footer';
 import NavbarDup from '../components/NavbarDup';
 import Image from 'next/image';
+import DigitalProductsResources from '../components/DigitalProductsResources';
 
 const ResourcesPage = () => {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -28,22 +29,6 @@ const ResourcesPage = () => {
       description: 'Stay informed with our latest industry reports.',
       link: '/resource-category-3' // Update this with the actual link
     },
-  ];
-
-  const links = [
-    {
-      title: 'Useful Link 1',
-      link: '/resources/best-ways-to-prevent-customers-from-sharing-a-notion-link'
-    },
-    {
-      title: 'Helpful Link 2',
-      link: '/resources/helpful-link-2'
-    },
-    {
-      title: 'Informative Link 3',
-      link: '/resources/informative-link-3'
-    },
-    // Add more links as needed
   ];
   
   const faqs = [
@@ -143,25 +128,7 @@ const ResourcesPage = () => {
       </section>
 
       {/* Links Section */}
-      <section className="bg-gray-100 py-10">
-        <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-2xl font-semibold mb-2">More Collections</h2>
-          <p className="text-gray-600">
-            Discover additional resources for your success.
-          </p>
-          <div className="flex flex-wrap justify-center mt-6">
-            {links.map((link, index) => (
-              <div key={index} className="w-full sm:w-1/2 md:w-1/4 p-4">
-                <Link href={link.link}> {/* Use Link component */}
-                  <a className="block bg-white p-6 rounded-lg shadow-md text-center">
-                    {link.title}
-                  </a>
-                </Link>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <DigitalProductsResources />
 
       {/* FAQ Section */}
       <section className="bg-gray-100 py-10">
