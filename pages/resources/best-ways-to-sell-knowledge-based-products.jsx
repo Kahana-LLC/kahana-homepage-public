@@ -53,7 +53,7 @@ const Page = () => {
         </section>
         
         <p className="text-gray-600 mb-6">
-          Are you an expert in your field with a wealth of knowledge to share? Selling knowledge-based products can be a rewarding endeavor that not only generates income but also positions you as a respected authority. In this guide, we'll explore the top strategies to effectively sell your knowledge-based products and maximize your success.
+          Are you an expert in your field with a wealth of knowledge to share? Selling knowledge-based products can be a rewarding endeavor that not only generates income but also positions you as a respected authority. In this guide, we&apos;ll explore the top strategies to effectively sell your knowledge-based products and maximize your success.
         </p>
         
         <section className="mb-8">
@@ -61,7 +61,7 @@ const Page = () => {
           <p className="text-gray-600">
             1. <strong>Identify Your Specialization</strong>: Pinpoint the specific area where your expertise shines. It could be business coaching, personal development, fitness training, language learning, or any other field.
             <br />
-            2. <strong>Understand Your Audience</strong>: Get to know your target audience's pain points, challenges, and aspirations. Tailor your knowledge-based products to address their needs.
+            2. <strong>Understand Your Audience</strong>: Get to know your target audience&apos;s pain points, challenges, and aspirations. Tailor your knowledge-based products to address their needs.
           </p>
         </section>
         
@@ -73,13 +73,13 @@ const Page = () => {
             2. <strong>Structured Learning Paths</strong>: Organize your content into structured learning paths. Start with foundational concepts and gradually progress to more advanced topics.
           </p>
         </section>
-
+        
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">Step 3: Choosing the Right Platform</h2>
           <p className="text-gray-600">
             1. <strong>Online Courses Platforms</strong>: Consider using online course platforms like Udemy, Teachable, or Thinkific to host and sell your knowledge-based courses.
             <br />
-            2. <strong>Kahana Integration</strong>: For added security and control, leverage Kahana to sell access to your knowledge-based products. Kahana's paywall feature ensures only paying customers can access your content.
+            2. <strong>Kahana Integration</strong>: For added security and control, leverage Kahana to sell access to your knowledge-based products. Kahana&apos;s paywall feature ensures only paying customers can access your content.
           </p>
         </section>
         
@@ -120,9 +120,9 @@ const Page = () => {
             2. <strong>Engage with Customers</strong>: Foster a sense of community by engaging with your customers through discussion forums, Q&A sessions, and online groups.
           </p>
         </section>
-
+        
         <p className="text-gray-600 mb-6">
-          Selling knowledge-based products requires not only expertise but also effective marketing and a commitment to delivering value. By following these strategies, you'll be well on your way to monetizing your knowledge, expanding your reach, and creating a lasting impact in your field. Remember, your passion for sharing knowledge can inspire others to learn, grow, and achieve their goals.
+          Selling knowledge-based products requires not only expertise but also effective marketing and a commitment to delivering value. By following these strategies, you&apos;ll be well on your way to monetizing your knowledge, expanding your reach, and creating a lasting impact in your field. Remember, your passion for sharing knowledge can inspire others to learn, grow, and achieve their goals.
         </p>
         
         <ResourcesCalltoAction/>
