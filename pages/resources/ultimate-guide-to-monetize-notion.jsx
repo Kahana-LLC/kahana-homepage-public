@@ -68,7 +68,7 @@ const Page = () => {
         </section>
         
         {/* Add more sections as needed */}
-        <ResourcesCallToAction />
+        <ResourcesCalltoAction />
         
       </div>
       <Footer />
