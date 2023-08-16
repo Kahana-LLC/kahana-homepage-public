@@ -53,7 +53,7 @@ const Page = () => {
         </section>
         
         <p className="text-gray-600 mb-6">
-          Monetizing your Google Sheets expertise opens up a realm of opportunities. In this guide, we'll explore the best methods to effectively sell your Google Sheets creations while ensuring secure distribution and a seamless experience for both you and your customers.
+          Monetizing your Google Sheets expertise opens up a realm of opportunities. In this guide, we&apos;ll explore the best methods to effectively sell your Google Sheets creations while ensuring secure distribution and a seamless experience for both you and your customers.
         </p>
         
         <section className="mb-8">
@@ -66,7 +66,7 @@ const Page = () => {
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">Step 2: Online Communities and Social Platforms</h2>
           <p className="text-gray-600">
-            1. <strong>Quora and Reddit</strong>: Participate in discussions, share your expertise, and offer your Google Sheets as solutions to users' problems.
+            1. <strong>Quora and Reddit</strong>: Participate in discussions, share your expertise, and offer your Google Sheets as solutions to users&apos; problems.
             <br />
             2. <strong>TikTok</strong>: Create short, engaging videos demonstrating the value of your Google Sheets and direct viewers to your dedicated Kahana hub.
             <br />
@@ -104,12 +104,12 @@ const Page = () => {
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">Step 6: Secure Distribution</h2>
           <p className="text-gray-600">
-            <strong>Kahana's Access Control</strong>: If you're using Kahana, take advantage of its access control features to ensure that only paying customers can access your Google Sheets.
+            <strong>Kahana&apos;s Access Control</strong>: If you&apos;re using Kahana, take advantage of its access control features to ensure that only paying customers can access your Google Sheets.
           </p>
         </section>
         
         <p className="text-gray-600 mb-6">
-          By strategically selecting platforms, focusing on value-based pricing, and embracing secure distribution methods, you can successfully sell your Google Sheets. Whether through dedicated hubs, engagement in online communities, or leveraging your existing online presence, the key lies in delivering exceptional value to your customers while safeguarding your content's exclusivity. With Kahana, you have a robust tool that empowers you to monetize your Google Sheets expertise while ensuring a secure and seamless experience for both creators and customers.
+          By strategically selecting platforms, focusing on value-based pricing, and embracing secure distribution methods, you can successfully sell your Google Sheets. Whether through dedicated hubs, engagement in online communities, or leveraging your existing online presence, the key lies in delivering exceptional value to your customers while safeguarding your content&apos;s exclusivity. With Kahana, you have a robust tool that empowers you to monetize your Google Sheets expertise while ensuring a secure and seamless experience for both creators and customers.
         </p>
         
         <ResourcesCalltoAction/>
