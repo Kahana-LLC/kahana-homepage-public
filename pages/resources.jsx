@@ -5,6 +5,7 @@ import Footer from '../components/Footer';
 import NavbarDup from '../components/NavbarDup';
 import Image from 'next/image';
 import DigitalProductsResources from '../components/DigitalProductsResources';
+import GoogleDriveResources from '../components/GoogleDriveResources';
 
 const ResourcesPage = () => {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -129,6 +130,7 @@ const ResourcesPage = () => {
 
       {/* Links Section */}
       <DigitalProductsResources />
+      <GoogleDriveResources />
 
       {/* FAQ Section */}
       <section className="bg-gray-100 py-10">
