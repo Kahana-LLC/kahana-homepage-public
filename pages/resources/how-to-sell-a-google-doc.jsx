@@ -53,7 +53,7 @@ const Page = () => {
         </section>
         
         <p className="text-gray-600 mb-6">
-          Google Docs isn't just for collaboration and documentation—it can also be a lucrative platform for monetizing your expertise. This guide will walk you through the steps to successfully sell your Google Docs, ensuring secure distribution and leveraging Kahana's capabilities for a seamless selling experience.
+          Google Docs isn&apos;t just for collaboration and documentation—it can also be a lucrative platform for monetizing your expertise. This guide will walk you through the steps to successfully sell your Google Docs, ensuring secure distribution and leveraging Kahana&apos;s capabilities for a seamless selling experience.
         </p>
         
         <section className="mb-8">
@@ -77,7 +77,7 @@ const Page = () => {
           <p className="text-gray-600">
             1. <strong>Creating a Kahana Hub</strong>: Establish a Kahana hub as your platform for showcasing and selling your Google Docs securely.
             <br />
-            2. <strong>Paywalls and Controlled Access</strong>: Utilize Kahana's paywall feature to control access to your Google Docs, making sure only paying customers can access your valuable content.
+            2. <strong>Paywalls and Controlled Access</strong>: Utilize Kahana&apos;s paywall feature to control access to your Google Docs, making sure only paying customers can access your valuable content.
           </p>
         </section>
         
@@ -102,7 +102,7 @@ const Page = () => {
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">Step 6: Engage with Your Audience</h2>
           <p className="text-gray-600">
-            1. <strong>Communication through Kahana</strong>: Use Kahana's communication tools to engage with customers, answer questions, and create a sense of community.
+            1. <strong>Communication through Kahana</strong>: Use Kahana&apos;s communication tools to engage with customers, answer questions, and create a sense of community.
             <br />
             2. <strong>Exceptional Support</strong>: Provide excellent customer support to guide potential buyers through the purchasing process.
           </p>
@@ -118,9 +118,9 @@ const Page = () => {
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">Step 8: The Kahana Advantage</h2>
           <p className="text-gray-600">
-            1. <strong>Integrated Platform</strong>: Benefit from Kahana's seamless integration with Google Docs, providing a secure environment for selling your content.
+            1. <strong>Integrated Platform</strong>: Benefit from Kahana&apos;s seamless integration with Google Docs, providing a secure environment for selling your content.
             <br />
-            2. <strong>Access Control</strong>: Kahana's features allow you to maintain control over access, ensuring your Google Docs are accessible only to those who have purchased them.
+            2. <strong>Access Control</strong>: Kahana&apos;s features allow you to maintain control over access, ensuring your Google Docs are accessible only to those who have purchased them.
           </p>
         </section>
         
