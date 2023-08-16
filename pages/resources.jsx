@@ -6,6 +6,7 @@ import NavbarDup from '../components/NavbarDup';
 import Image from 'next/image';
 import DigitalProductsResources from '../components/DigitalProductsResources';
 import GoogleDriveResources from '../components/GoogleDriveResources';
+import NotionResources from '../components/NotionResources';
 
 const ResourcesPage = () => {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -131,6 +132,7 @@ const ResourcesPage = () => {
       {/* Links Section */}
       <DigitalProductsResources />
       <GoogleDriveResources />
+      <NotionResources />
 
       {/* FAQ Section */}
       <section className="bg-gray-100 py-10">
