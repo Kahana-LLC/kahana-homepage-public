@@ -8,8 +8,8 @@ const NotionResources = () => {
       link: '/resources/how-to-limit-access-to-a-notion-workspace-link'
     },
     {
-      title: 'Helpful Link 2',
-      link: '/resources/helpful-link-2'
+      title: 'Best ways to prevent customers from sharing a Notion link',
+      link: '/resources/best-ways-to-prevent-customers-from-sharing-a-notion-link''
     },
     {
       title: 'Informative Link 3',
