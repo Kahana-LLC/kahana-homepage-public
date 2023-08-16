@@ -21,8 +21,8 @@ const NotionResources = () => {
   return (
     <section className="bg-gray-100 py-10">
       <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-2xl font-semibold mb-2">Resources to Monetize Notion</h2>
-        <p className="text-gray-600">
+        <h2 className="text-2xl font-semibold mb-2 px-2">Resources to Monetize Notion</h2>
+        <p className="text-gray-600 px-2">
           Learn how to securely monetize your best knowledge, information, and templates that live in Notion.
         </p>
         <div className="flex flex-wrap justify-center mt-6">
