@@ -9,7 +9,7 @@ const NotionResources = () => {
     },
     {
       title: 'Best ways to prevent customers from sharing a Notion link',
-      link: '/resources/best-ways-to-prevent-customers-from-sharing-a-notion-link''
+      link: '/resources/best-ways-to-prevent-customers-from-sharing-a-notion-link'
     },
     {
       title: 'Informative Link 3',
