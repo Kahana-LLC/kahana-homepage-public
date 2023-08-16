@@ -134,7 +134,8 @@ const ResourcesPage = () => {
       <GoogleDriveResources />
       <NotionResources />
 
-      {/*{/* FAQ Section */}
+      {/* FAQ Section */}
+      {/*
       <section className="bg-gray-100 py-10">
         <div className="max-w-7xl mx-auto text-center">
           <h2 className="text-2xl font-semibold mb-8">
