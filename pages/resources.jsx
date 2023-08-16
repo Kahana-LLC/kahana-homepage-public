@@ -18,15 +18,15 @@ const ResourcesPage = () => {
 
   const clickableTiles = [
     {
-      title: 'Resources to Sell Knowledge-Based Digital Products',
+      title: 'I want to learn more about selling knowledge-based digital products in general',
       link: '#digital-products',
     },
     {
-      title: 'Resources to Monetize Google Drive',
+      title: 'I want to learn how I can monetize my knowledge and assets in Google Drive',
       link: '#google-drive',
     },
     {
-      title: 'Resources to Monetize Notion',
+      title: 'I want to learn how I can monetize my knowledge, information, and templates in Notion',
       link: '#notion',
     },
   ];
@@ -90,10 +90,10 @@ const ResourcesPage = () => {
       {/* Clickable Tiles Section */}
       <section className="bg-gray-100 py-10">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-2xl font-semibold mb-2">Guides</h2>
-          <p className="text-gray-600">
-            Learning and material to help you monetize.
-          </p>
+          <h2 className="text-2xl font-semibold mb-2">Which of the following best describes you?</h2>
+          {/* <p className="text-gray-600">
+            Explore all of our Learning and material to help you monetize.
+          </p> */}
           <div className="flex flex-wrap justify-center mt-6 space-y-4 sm:space-y-0 sm:gap-4">
             {clickableTiles.map((tile, index) => (
               <div key={index} className="w-full sm:w-1/2 md:w-1/4 p-2">
