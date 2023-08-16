@@ -53,13 +53,13 @@ const Page = () => {
         </section>
         
         <p className="text-gray-600 mb-6">
-          Creating spreadsheets that not only provide valuable insights but also generate substantial sales requires a combination of expertise and strategic thinking. In this guide, we'll explore the key attributes that contribute to the success of best-selling spreadsheets.
+          Creating spreadsheets that not only provide valuable insights but also generate substantial sales requires a combination of expertise and strategic thinking. In this guide, we&apos;ll explore the key attributes that contribute to the success of best-selling spreadsheets.
         </p>
         
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">Attribute 1: Clear Problem Solving</h2>
           <p className="text-gray-600">
-            Best-selling spreadsheets address a specific problem or challenge that their target audience faces. Whether it's financial analysis, project management, or data visualization, your spreadsheet should offer a clear solution that users are actively seeking.
+            Best-selling spreadsheets address a specific problem or challenge that their target audience faces. Whether it&apos;s financial analysis, project management, or data visualization, your spreadsheet should offer a clear solution that users are actively seeking.
           </p>
         </section>
         
@@ -87,7 +87,7 @@ const Page = () => {
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">Attribute 5: Accurate Data</h2>
           <p className="text-gray-600">
-            Data accuracy is non-negotiable. Ensure that your spreadsheet's data sources are reliable and up-to-date, providing users with trustworthy information.
+            Data accuracy is non-negotiable. Ensure that your spreadsheet&apos;s data sources are reliable and up-to-date, providing users with trustworthy information.
           </p>
         </section>
         
@@ -108,7 +108,7 @@ const Page = () => {
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">Attribute 8: Regular Updates</h2>
           <p className="text-gray-600">
-            To maintain relevance, update your spreadsheet periodically, incorporating new data sources, insights, or features that align with your users' evolving needs.
+            To maintain relevance, update your spreadsheet periodically, incorporating new data sources, insights, or features that align with your users&apos; evolving needs.
           </p>
         </section>
         
