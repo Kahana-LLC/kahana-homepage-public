@@ -25,7 +25,7 @@ function Navbar() {
             </div>
             <div className="ml-10 space-x-4 ">
               <a
-                href="https://kahana.co/resources"
+                href="/resources"
                 className="underline text-back"
               >
                 Back to Resources
