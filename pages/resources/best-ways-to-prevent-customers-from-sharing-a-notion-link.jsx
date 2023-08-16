@@ -47,14 +47,14 @@ const Page = () => {
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">Optimize Your Profile Picture</h2>
           <p className="text-gray-600">
-            Your profile picture is the first impression you make on LinkedIn. Make sure it's clear and professional.
+            Your profile picture is the first impression you make on LinkedIn. Make sure it&apos;s clear and professional.
           </p>
         </section>
         
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">Craft a Compelling Headline</h2>
           <p className="text-gray-600">
-            Your headline should showcase your expertise and catch the reader's attention.
+            Your headline should showcase your expertise and catch the reader&apos;s attention.
           </p>
         </section>
         
