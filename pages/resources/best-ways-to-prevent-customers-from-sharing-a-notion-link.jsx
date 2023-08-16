@@ -29,15 +29,24 @@ const Page = () => {
         />
       </Head>
       
-      {/* <div className="bg-cover bg-center h-64" style={{ backgroundImage: 'url(/cover-image.jpg)' }} /> */}
       <div className="sticky top-0 z-50">
         <NavbarDup />
       </div>
       
       <div className="max-w-7xl mx-auto p-8">
-        <h1 className="text-3xl font-semibold mb-4">
-          Best Practices & Tips for a Great LinkedIn Profile
-        </h1>
+        <section
+          className="bg-gradient-to-b from-gray-700 to-gray-500 text-white p-8 rounded-lg mb-8"
+          style={{
+            paddingTop: '100px', // Adjust as needed
+            paddingBottom: '20px', // Adjust as needed
+            paddingLeft: '20px', // Adjust as needed
+            paddingRight: '20px', // Adjust as needed
+          }}
+        >
+          <h1 className="text-3xl font-semibold mb-4">
+            Best Practices & Tips for a Great LinkedIn Profile
+          </h1>
+        </section>
         
         <p className="text-gray-600 mb-6">
           Enhance your LinkedIn presence with these valuable tips and best practices.
