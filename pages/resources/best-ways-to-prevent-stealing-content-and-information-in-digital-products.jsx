@@ -59,7 +59,7 @@ const Page = () => {
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">Step 1: Secure Hosting and Distribution Platforms</h2>
           <p className="text-gray-600">
-            1. <strong>Kahana's Paywall Protection</strong>: Capitalize on Kahana&apos;s paywall feature to ensure only paying customers can access your digital products. This layer of security discourages unauthorized access.
+            1. <strong>Kahana&apos;s Paywall Protection</strong>: Capitalize on Kahana&apos;s paywall feature to ensure only paying customers can access your digital products. This layer of security discourages unauthorized access.
             <br />
             2. <strong>Choose Kahana for Distribution</strong>: Utilize Kahana&apos;s platform for secure distribution, mitigating the risks associated with unprotected content sharing.
           </p>
@@ -84,14 +84,14 @@ const Page = () => {
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">Step 4: Licensing and Copyright</h2>
           <p className="text-gray-600">
-            <strong>Kahana's Copyright Guidelines</strong>: Utilize Kahana to communicate copyright information and terms of use, ensuring customers are aware of your content's protected status.
+            <strong>Kahana&apos;s Copyright Guidelines</strong>: Utilize Kahana to communicate copyright information and terms of use, ensuring customers are aware of your content&apos;s protected status.
           </p>
         </section>
         
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">Step 5: Education and Communication</h2>
           <p className="text-gray-600">
-            <strong>Educate Customers with Kahana</strong>: Utilize Kahana's communication features to educate your audience on copyright, reinforcing the importance of respecting content ownership.
+            <strong>Educate Customers with Kahana</strong>: Utilize Kahana&apos;s communication features to educate your audience on copyright, reinforcing the importance of respecting content ownership.
           </p>
         </section>
         
@@ -110,7 +110,7 @@ const Page = () => {
         </section>
         
         <p className="text-gray-600 mb-6">
-          Remember, while Kahana provides strong security features, combining them with industry best practices enhances your content's protection. By using Kahana as a central tool in your content protection strategy, you&apos;re taking a proactive step towards safeguarding your creations and promoting a secure digital environment.
+          Remember, while Kahana provides strong security features, combining them with industry best practices enhances your content&apos;s protection. By using Kahana as a central tool in your content protection strategy, you&apos;re taking a proactive step towards safeguarding your creations and promoting a secure digital environment.
         </p>
         
         <ResourcesCalltoAction/>
