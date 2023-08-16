@@ -58,7 +58,7 @@ const Page = () => {
         
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">
-            <strong>Step 1:</strong> Choose Your Niche and Product
+            Step 1: Choose Your Niche and Product
           </h2>
           <p className="text-gray-600">
             <strong>1.1 Identify Your Expertise:</strong> Start by understanding your strengths and areas of expertise. What valuable insights or skills do you possess that people are willing to pay for?<br />
@@ -71,7 +71,7 @@ const Page = () => {
         
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">
-            <strong>Step 2:</strong> Content Creation and Packaging
+            Step 2: Content Creation and Packaging
           </h2>
           <p className="text-gray-600">
             <strong>2.1 High-Quality Content:</strong> Create content that provides real value to your audience. Your information product should solve a problem, answer questions, or teach new skills.<br />
@@ -82,7 +82,7 @@ const Page = () => {
         
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">
-            <strong>Step 3:</strong> Choosing the Right Platform
+            Step 3: Choosing the Right Platform
           </h2>
           <p className="text-gray-600">
             <strong>3.1 Select a Distribution Platform:</strong> Choose a platform that aligns with your goals and audience. Platforms like Teachable, Thinkific, or even your own website can be excellent options for hosting your information product.<br />
@@ -92,7 +92,7 @@ const Page = () => {
         
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">
-            <strong>Step 4:</strong> Pricing Strategy
+            Step 4: Pricing Strategy
           </h2>
           <p className="text-gray-600">
             <strong>4.1 Research:</strong> Research similar products in your niche to understand the pricing landscape. Consider the value you&apos;re providing and the market demand.<br />
@@ -102,7 +102,7 @@ const Page = () => {
         
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">
-            <strong>Step 5:</strong> Marketing and Promotion
+            Step 5: Marketing and Promotion
           </h2>
           <p className="text-gray-600">
             <strong>5.1 Build a Website or Landing Page:</strong> Create a dedicated website or landing page for your information product. Highlight the benefits, features, and testimonials to convince potential buyers.<br />
@@ -114,7 +114,7 @@ const Page = () => {
         
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">
-            <strong>Step 6:</strong> Launch and Sales
+            Step 6: Launch and Sales
           </h2>
           <p className="text-gray-600">
             <strong>6.1 Pre-Launch Buzz:</strong> Generate excitement by teasing your product before the launch. Offer exclusive discounts to early adopters.<br />
@@ -125,7 +125,7 @@ const Page = () => {
         
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">
-            <strong>Conclusion:</strong>
+            Conclusion:
           </h2>
           <p className="text-gray-600 mb-6">
             Selling information products requires dedication, strategy, and continuous refinement. By following this ultimate guide, you&apos;ll be well-equipped to create, market, and sell information products that not only generate revenue but also establish you as an authority in your niche. Remember, consistency and genuine value are key to building a loyal customer base and achieving long-term success.
