@@ -53,7 +53,7 @@ const Page = () => {
         </section>
 
         <p className="text-gray-600 mb-6">
-          In the digital age, information products have become a powerful way to monetize your expertise and knowledge. Whether you're an industry expert, consultant, educator, or creative entrepreneur, selling information products can open new revenue streams and establish you as a thought leader. This comprehensive guide will walk you through the steps to effectively sell information products and maximize your success.
+          In the digital age, information products have become a powerful way to monetize your expertise and knowledge. Whether you&apos;re an industry expert, consultant, educator, or creative entrepreneur, selling information products can open new revenue streams and establish you as a thought leader. This comprehensive guide will walk you through the steps to effectively sell information products and maximize your success.
         </p>
 
         <section className="mb-8">
@@ -83,14 +83,14 @@ const Page = () => {
           <p className="text-gray-600">
             1. Select a Distribution Platform: Choose a platform that aligns with your goals and audience. Platforms like Teachable, Thinkific, or even your own website can be excellent options for hosting your information product.
             <br />
-            2. Kahana Integration: For added security and monetization control, consider using Kahana to sell access to your information products. Kahana's paywall feature ensures only paying customers can access your content.
+            2. Kahana Integration: For added security and monetization control, consider using Kahana to sell access to your information products. Kahana&apos;s paywall feature ensures only paying customers can access your content.
           </p>
         </section>
 
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">Step 4: Pricing Strategy</h2>
           <p className="text-gray-600">
-            1. Research: Research similar products in your niche to understand the pricing landscape. Consider the value you're providing and the market demand.
+            1. Research: Research similar products in your niche to understand the pricing landscape. Consider the value you&apos;re providing and the market demand.
             <br />
             2. Tiered Pricing: Offer different pricing tiers to cater to various customer segments. This can include basic packages with essential content and premium packages with additional resources.
           </p>
@@ -101,7 +101,7 @@ const Page = () => {
           <p className="text-gray-600">
             1. Build a Website or Landing Page: Create a dedicated website or landing page for your information product. Highlight the benefits, features, and testimonials to convince potential buyers.
             <br />
-            2. Content Marketing: Utilize content marketing to showcase your expertise. Write blog posts, create videos, or host webinars related to your product's topic.
+            2. Content Marketing: Utilize content marketing to showcase your expertise. Write blog posts, create videos, or host webinars related to your product&apos;s topic.
             <br />
             3. Social Media: Leverage social media platforms to share teasers, behind-the-scenes content, and success stories related to your information product.
             <br />
@@ -121,7 +121,7 @@ const Page = () => {
         </section>
 
         <p className="text-gray-600 mb-6">
-          Selling information products requires dedication, strategy, and continuous refinement. By following this ultimate guide, you'll be well-equipped to create, market, and sell information products that not only generate revenue but also establish you as an authority in your niche. Remember, consistency and genuine value are key to building a loyal customer base and achieving long-term success.
+          Selling information products requires dedication, strategy, and continuous refinement. By following this ultimate guide, you&apos;ll be well-equipped to create, market, and sell information products that not only generate revenue but also establish you as an authority in your niche. Remember, consistency and genuine value are key to building a loyal customer base and achieving long-term success.
         </p>
 
         <ResourcesCalltoAction />
