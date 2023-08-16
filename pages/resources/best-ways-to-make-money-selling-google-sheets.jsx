@@ -53,7 +53,7 @@ const Page = () => {
         </section>
         
         <p className="text-gray-600 mb-6">
-          Google Sheets have evolved beyond simple spreadsheet tools into powerful solutions for businesses, entrepreneurs, and creators alike. If you're looking to turn your expertise into revenue streams, here are the best ways to make money by selling Google Sheets:
+          Google Sheets have evolved beyond simple spreadsheet tools into powerful solutions for businesses, entrepreneurs, and creators alike. If you&apos;re looking to turn your expertise into revenue streams, here are the best ways to make money by selling Google Sheets:
         </p>
         
         <section className="mb-8">
