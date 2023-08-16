@@ -1,9 +1,12 @@
 import React from 'react';
 import Head from 'next/head';
 import Footer from '../../components/Footer';
-import NavbarDup from '../../components/NavbarDup';
+import NavbarDup from '../../components/NavbarResources';
 import Image from 'next/image';
 import ResourcesCalltoAction from '../../components/ResourcesCalltoAction';
+import DigitalProductsResources from '../../components/DigitalProductsResources';
+import GoogleDriveResources from '../../components/GoogleDriveResources';
+import NotionResources from '../../components/NotionResources';
 
 const Page = () => {
   return (
@@ -30,7 +33,7 @@ const Page = () => {
         />
       </Head>
       
-      <div className="sticky top-0 z-50">
+      <div>
         <NavbarDup />
       </div>
       
@@ -68,8 +71,10 @@ const Page = () => {
         </section>
         
         {/* Add more sections as needed */}
-        <ResourcesCalltoAction />
-        
+        <ResourcesCalltoAction/>
+        <DigitalProductsResources/>
+        <GoogleDriveResources/>
+        <NotionResources/>
       </div>
       <Footer />
     </div>
