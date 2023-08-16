@@ -26,7 +26,7 @@ function Navbar() {
             <div className="ml-10 space-x-4 ">
               <a
                 href="https://kahana.co?utm_source=resources"
-                className="font-bold"
+                className="font-bold text-back"
               >
                 Learn more
               </a>
