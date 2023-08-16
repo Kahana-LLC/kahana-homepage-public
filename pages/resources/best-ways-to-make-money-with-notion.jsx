@@ -57,70 +57,70 @@ const Page = () => {
         </p>
         
         <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-2">1. **Notion Template Marketplace:**</h2>
+          <h2 className="text-2xl font-semibold mb-2">1. Notion Template Marketplace:</h2>
           <p className="text-gray-600">
             Design and sell Notion templates that cater to various needs, such as project management, personal organization, content planning, and more. With Kahana, embed these templates in secure hubs and charge customers for access, ensuring your hard work is valued and protected.
           </p>
         </section>
         
         <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-2">2. **Educational Content Creation:**</h2>
+          <h2 className="text-2xl font-semibold mb-2">2. Educational Content Creation:</h2>
           <p className="text-gray-600">
             Use Notion to develop educational resources like online courses, study guides, and e-books. Monetize these valuable materials through Kahana by offering exclusive access to paying subscribers.
           </p>
         </section>
         
         <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-2">3. **Digital Consulting and Services:**</h2>
+          <h2 className="text-2xl font-semibold mb-2">3. Digital Consulting and Services:</h2>
           <p className="text-gray-600">
             Provide consulting services using Notion&apos;s collaborative features. Assist businesses and individuals with project management, content planning, workflow optimization, and more, monetizing your expertise.
           </p>
         </section>
         
         <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-2">4. **Premium Resource Hub:**</h2>
+          <h2 className="text-2xl font-semibold mb-2">4. Premium Resource Hub:</h2>
           <p className="text-gray-600">
             Curate a collection of resources, guides, and insights using Notion. With Kahana, offer secure access to your premium hub, allowing subscribers to benefit from your valuable content.
           </p>
         </section>
         
         <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-2">5. **Personalized Productivity Solutions:**</h2>
+          <h2 className="text-2xl font-semibold mb-2">5. Personalized Productivity Solutions:</h2>
           <p className="text-gray-600">
             Create customized Notion workspaces tailored to individuals&apos; productivity needs. Monetize these solutions through Kahana, offering secure access to customers seeking optimized workflows.
           </p>
         </section>
         
         <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-2">6. **Digital Planners and Journals:**</h2>
+          <h2 className="text-2xl font-semibold mb-2">6. Digital Planners and Journals:</h2>
           <p className="text-gray-600">
             Design digital planners, journals, and diaries using Notion. Utilize Kahana&apos;s secure hubs to monetize these products, providing a safe platform for users to access and utilize their purchases.
           </p>
         </section>
         
         <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-2">7. **Study and Learning Resources:**</h2>
+          <h2 className="text-2xl font-semibold mb-2">7. Study and Learning Resources:</h2>
           <p className="text-gray-600">
             Develop study guides, language learning resources, and educational materials using Notion. Through Kahana, offer secure access to paying students seeking valuable learning tools.
           </p>
         </section>
         
         <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-2">8. **Specialized Workshops and Classes:**</h2>
+          <h2 className="text-2xl font-semibold mb-2">8. Specialized Workshops and Classes:</h2>
           <p className="text-gray-600">
             Organize online workshops and classes using Notion&apos;s collaborative features. Monetize these events by embedding access in secure Kahana hubs, ensuring only registered participants can engage.
           </p>
         </section>
         
         <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-2">9. **Professional Portfolio Showcasing:**</h2>
+          <h2 className="text-2xl font-semibold mb-2">9. Professional Portfolio Showcasing:</h2>
           <p className="text-gray-600">
             Craft impressive portfolios showcasing your skills and accomplishments using Notion. Securely distribute access through Kahana, allowing potential clients or employers to view your work.
           </p>
         </section>
         
         <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-2">10. **Creative Collaborative Spaces:**</h2>
+          <h2 className="text-2xl font-semibold mb-2">10. Creative Collaborative Spaces:</h2>
           <p className="text-gray-600">
             Create collaborative spaces for creative projects, fostering community engagement. Use Kahana to protect your spaces and offer secure access to contributors or members.
           </p>
@@ -152,10 +152,10 @@ const Page = () => {
             <strong>6. Security and Protection:</strong><br />
             Utilize Kahana to safeguard your Notion products, ensuring only paying customers have access.
           </p>
-          <p className="text-gray-600">
-            By merging Notion&apos;s creative potential with Kahana&apos;s secure monetization platform, you can transform your ideas into profitable ventures. Whether you&apos;re designing templates, offering consulting, or creating educational content, the possibilities for generating income with Notion are boundless.
-          </p>
         </section>
+        <p className="text-gray-600">
+            By merging Notion&apos;s creative potential with Kahana&apos;s secure monetization platform, you can transform your ideas into profitable ventures. Whether you&apos;re designing templates, offering consulting, or creating educational content, the possibilities for generating income with Notion are boundless.
+        </p>
         
         <ResourcesCalltoAction/>
         <DigitalProductsResources/>
