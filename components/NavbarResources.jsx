@@ -24,12 +24,11 @@ function Navbar() {
               </Link>
             </div>
             <div className="ml-10 space-x-4 ">
-              <a
-                href="/resources"
-                className="underline text-back"
-              >
-                Back to Resources
-              </a>
+              <Link href="/resources">
+                <a className="underline text-back">
+                  Back to Resources
+                </a>
+              </Link>
             </div>
           </div>
         </nav>
