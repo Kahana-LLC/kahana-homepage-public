@@ -134,7 +134,7 @@ const Page = () => {
         </section>
         <p className="text-gray-600">
             Creating and selling Notion templates involves securing them using Kahana and strategically showcasing them on platforms that resonate with your target audience. By following these steps, you can ensure your templates gain the attention they deserve and generate a consistent stream of income.
-
+        </p>
         <ResourcesCalltoAction/>
         <DigitalProductsResources/>
         <GoogleDriveResources/>
