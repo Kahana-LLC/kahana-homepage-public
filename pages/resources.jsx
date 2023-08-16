@@ -7,6 +7,7 @@ import Image from 'next/image';
 import DigitalProductsResources from '../components/DigitalProductsResources';
 import GoogleDriveResources from '../components/GoogleDriveResources';
 import NotionResources from '../components/NotionResources';
+import ResourcesCalltoAction from '../components/ResourcesCalltoAction';
 
 const ResourcesPage = () => {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -110,24 +111,7 @@ const ResourcesPage = () => {
       </section>
 
       {/* Call to Action Section */}
-      <section className="bg-gray-100 py-10">
-        <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-2xl font-semibold mb-2">
-            Want to start monetizing your knowledge?
-          </h2>
-          <p className="text-gray-600 my-4 px-4">
-            Start charging for access to your best assets in minutes with Kahana.
-          </p>
-          <div className="mt-4">
-            <a
-              href="https://app.kahana.co/signup"
-              className="inline-block px-6 py-3 bg-green-800 text-white rounded-md"
-            >
-              Use Kahana for free
-            </a>
-          </div>
-        </div>
-      </section>
+      <ResourcesCalltoAction />
 
       {/* Links Section */}
       <DigitalProductsResources />
