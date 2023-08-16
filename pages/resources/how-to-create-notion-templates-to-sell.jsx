@@ -48,7 +48,7 @@ const Page = () => {
           }}
         >
           <h1 className="text-3xl font-semibold mb-4">
-            <strong>How to create Notion templates to sell</strong>
+            How to create Notion templates to sell
           </h1>
         </section>
         
