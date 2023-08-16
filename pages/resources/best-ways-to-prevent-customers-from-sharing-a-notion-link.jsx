@@ -35,7 +35,7 @@ const Page = () => {
       
       <div className="max-w-7xl mx-auto p-8">
         <section
-          className="bg-gradient-to-b from-#3B4041 to-#3B675E text-white p-8 rounded-lg mb-8"
+          className="bg-gradient-to-b from-3B4041 to-3B675E text-white p-8 rounded-lg mb-8"
           style={{
             paddingTop: '20px', // Adjust as needed
             paddingBottom: '20px', // Adjust as needed
