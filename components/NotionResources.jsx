@@ -4,8 +4,8 @@ import Link from 'next/link';
 const NotionResources = () => {
   const links = [
     {
-      title: 'Ultimate Guide to Monetize Notion',
-      link: '/resources/ultimate-guide-to-monetize-notion'
+      title: 'How to limit access to a Notion workspace link',
+      link: '/resources/how-to-limit-access-to-a-notion-workspace-link'
     },
     {
       title: 'Helpful Link 2',
