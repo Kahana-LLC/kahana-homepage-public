@@ -57,9 +57,9 @@ const Page = () => {
         </p>
         
         <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-2">1. Kahana's Paywall Protection</h2>
+          <h2 className="text-2xl font-semibold mb-2">1. Kahana&apos;s Paywall Protection</h2>
           <p className="text-gray-600">
-             One of the most effective ways to prevent unauthorized sharing of Notion links is by using Kahana's advanced paywall protection. Kahana empowers you to set up a secure paywall for your Notion workspaces, enabling you to monetize your content while ensuring that only those who have paid can access it. This feature eliminates the risk of link leakage and unauthorized distribution.
+             One of the most effective ways to prevent unauthorized sharing of Notion links is by using Kahana&apos;s advanced paywall protection. Kahana empowers you to set up a secure paywall for your Notion workspaces, enabling you to monetize your content while ensuring that only those who have paid can access it. This feature eliminates the risk of link leakage and unauthorized distribution.
           </p>
         </section>
         
@@ -80,14 +80,14 @@ const Page = () => {
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">4. Watermarking and Identification</h2>
           <p className="text-gray-600">
-            Another approach is to watermark your content with the customer's name or email address. This makes it clear who the content belongs to and acts as a deterrent against unauthorized sharing. Additionally, if the content leaks, you can trace it back to the source.
+            Another approach is to watermark your content with the customer&apos;s name or email address. This makes it clear who the content belongs to and acts as a deterrent against unauthorized sharing. Additionally, if the content leaks, you can trace it back to the source.
           </p>
         </section>
 
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">5. Restricted Sharing Permissions</h2>
           <p className="text-gray-600">
-            Utilize Notion&apos;s built-in sharing settings to restrict access. Instead of providing editing or full access rights, choose the "View Only" option. While this won&apos;t prevent screen capturing or manual sharing, it adds an extra layer of difficulty for those attempting to share the content.
+            Utilize Notion&apos;s built-in sharing settings to restrict access. Instead of providing editing or full access rights, choose the &quot;View Only&quot; option. While this won&apos;t prevent screen capturing or manual sharing, it adds an extra layer of difficulty for those attempting to share the content.
           </p>
         </section>
 
