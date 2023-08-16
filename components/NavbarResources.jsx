@@ -26,7 +26,7 @@ function Navbar() {
             <div className="ml-10 space-x-4 ">
               <a
                 href="https://kahana.co?utm_source=resources"
-                className="inline-block justify-center rounded-md border border-transparent bg-[#038270] py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-[#024324] drop-shadow-2xl"
+                className="font-bold"
               >
                 Learn more
               </a>
