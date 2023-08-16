@@ -53,7 +53,7 @@ const Page = () => {
         </section>
         
         <p className="text-gray-600 mb-6">
-          Monetizing your spreadsheets can be a profitable endeavor when approached strategically. In this guide, we'll delve into the art of effectively charging for your spreadsheet creations, emphasizing quality, value justification, compelling descriptions, and secure distribution through Kahana.
+          Monetizing your spreadsheets can be a profitable endeavor when approached strategically. In this guide, we&apos;ll delve into the art of effectively charging for your spreadsheet creations, emphasizing quality, value justification, compelling descriptions, and secure distribution through Kahana.
         </p>
         
         <section className="mb-8">
@@ -61,12 +61,12 @@ const Page = () => {
           <p className="text-gray-600">
             1. <strong>Quality Data Selection</strong>: Choose spreadsheets containing meticulously gathered and accurate data that your target audience will find indispensable.
             <br />
-            2. <strong>Highlight Uniqueness</strong>: Showcase your spreadsheet's uniqueness—whether it's a proprietary model, custom analysis, or exclusive insights.
+            2. <strong>Highlight Uniqueness</strong>: Showcase your spreadsheet&apos;s uniqueness—whether it&apos;s a proprietary model, custom analysis, or exclusive insights.
           </p>
         </section>
         
         <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-2">Step 2: Elevate Your Spreadsheet's Worth</h2>
+          <h2 className="text-2xl font-semibold mb-2">Step 2: Elevate Your Spreadsheet&apos;s Worth</h2>
           <p className="text-gray-600">
             1. <strong>Quality Justification</strong>: Ensure your spreadsheet is a cut above the rest by delivering superior data quality, robust analysis, and actionable insights.
             <br />
@@ -88,7 +88,7 @@ const Page = () => {
           <p className="text-gray-600">
             1. <strong>Creating a Kahana Hub</strong>: Establish a Kahana hub as the platform for showcasing and selling your spreadsheets, ensuring secure access.
             <br />
-            2. <strong>Controlled Access</strong>: Utilize Kahana's access control to restrict access to paying customers only, preventing unauthorized distribution.
+            2. <strong>Controlled Access</strong>: Utilize Kahana&apos;s access control to restrict access to paying customers only, preventing unauthorized distribution.
           </p>
         </section>
         
@@ -113,7 +113,7 @@ const Page = () => {
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">Step 7: Customer Interaction and Support</h2>
           <p className="text-gray-600">
-            1. <strong>Discussion Threads</strong>: Engage with potential buyers through Kahana's discussion threads, answering queries and providing additional context.
+            1. <strong>Discussion Threads</strong>: Engage with potential buyers through Kahana&apos;s discussion threads, answering queries and providing additional context.
             <br />
             2. <strong>Support Availability</strong>: Offer dedicated customer support to guide customers through the purchasing process and answer their questions.
           </p>
@@ -122,7 +122,7 @@ const Page = () => {
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">Step 8: The Kahana Security Edge</h2>
           <p className="text-gray-600">
-            1. <strong>Access Control Assurance</strong>: Rely on Kahana's access control features to maintain a secure environment for your spreadsheet content.
+            1. <strong>Access Control Assurance</strong>: Rely on Kahana&apos;s access control features to maintain a secure environment for your spreadsheet content.
             <br />
             2. <strong>Distribution Prevention</strong>: With Kahana, prevent unauthorized distribution and ensure your spreadsheet remains exclusively accessible to paying customers.
           </p>
