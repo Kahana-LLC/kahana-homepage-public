@@ -23,11 +23,9 @@ function Navbar() {
                 />
               </Link>
             </div>
-            <div className="ml-10 space-x-4 ">
+            <div className="ml-10 space-x-4">
               <Link href="/resources">
-                <a className="underline text-back">
-                  Back to Resources
-                </a>
+                <a className="underline text-back text-sm">Back to Resources</a>
               </Link>
             </div>
           </div>
