@@ -11,6 +11,7 @@ const navigation = {
   important: [
     { name: 'Explore', href: '/explore' },
     { name: 'Blog', href: 'https://blog.kahana.co' },
+    { name: 'Resources', href: '/resources' },
     { name: 'About', href: '/about' },
     { name: 'Home', href: '/' },
     { name: 'Careers', href: 'https://7hkdcfzbmr0.typeform.com/to/RQ99b3Bp' },
