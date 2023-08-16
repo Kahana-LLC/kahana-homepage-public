@@ -33,7 +33,7 @@ const Page = () => {
         />
       </Head>
       
-      <div className="sticky top-0 z-50">
+      <div>
         <NavbarDup />
       </div>
       
