@@ -4,8 +4,8 @@ import Link from 'next/link';
 const DigitalProductsResources = () => {
   const links = [
     {
-      title: 'Best ways to prevent customers from sharing a Notion link',
-      link: '/resources/best-ways-to-prevent-customers-from-sharing-a-notion-link'
+      title: 'Best ways to make money from selling digital templates',
+      link: '/resources/best-ways-to-make-money-from-selling-digital-templates'
     },
     {
       title: 'Ultimate Guide to Sell Information Products',
