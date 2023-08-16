@@ -57,9 +57,9 @@ const Page = () => {
         </p>
         
         <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-2">Method 1: Using Kahana's Access Control</h2>
+          <h2 className="text-2xl font-semibold mb-2">Method 1: Using Kahana&apos;s Access Control</h2>
           <p className="text-gray-600">
-            <strong>Utilize Kahana's Advanced Access Control Features</strong>: If you're looking for a comprehensive solution, Kahana offers advanced access control features that allow you to monetize your Notion workspace effectively. By embedding your Notion workspace into a Kahana hub, you can set up paywalls and restrict access to only those who have paid or been granted permission.
+            <strong>Utilize Kahana&apos;s Advanced Access Control Features</strong>: If you&apos;re looking for a comprehensive solution, Kahana offers advanced access control features that allow you to monetize your Notion workspace effectively. By embedding your Notion workspace into a Kahana hub, you can set up paywalls and restrict access to only those who have paid or been granted permission.
           </p>
         </section>
         
@@ -94,13 +94,13 @@ const Page = () => {
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">Best Practices for Limiting Access:</h2>
           <p className="text-gray-600 mb-6">
-            <strong>1. Clear Communication:</strong> Clearly communicate the access restrictions to your audience or potential customers. This transparency helps set expectations and ensures a smooth user experience.
-            <br />
-            <strong>2. Kahana&apos;s Secure Payment Processing:</strong> If you're monetizing your Notion workspace, Kahana offers a secure payment processing system that is well-integrated into its platform. Grant access only after the payment process is successfully completed through Kahana's streamlined payment system.
-            <br />
-            <strong>3. Regular Monitoring:</strong> Regularly monitor your access controls to ensure that they're working as intended. Address any issues promptly to maintain the exclusivity of your content.
-            <br />
-            <strong>4. Balancing Security and Convenience:</strong> While it's important to limit access, strike a balance between security and user convenience. Ensure that the access process is user-friendly and doesn't deter potential customers.
+          <strong>1. Clear Communication:</strong> Clearly communicate the access restrictions to your audience or potential customers. This transparency helps set expectations and ensures a smooth user experience.
+          <br />
+          <strong>2. Kahana&apos;s Secure Payment Processing:</strong> If you&apos;re monetizing your Notion workspace, Kahana offers a secure payment processing system that is well-integrated into its platform. Grant access only after the payment process is successfully completed through Kahana&apos;s streamlined payment system.
+          <br />
+          <strong>3. Regular Monitoring:</strong> Regularly monitor your access controls to ensure that they&apos;re working as intended. Address any issues promptly to maintain the exclusivity of your content.
+          <br />
+          <strong>4. Balancing Security and Convenience:</strong> While it&apos;s important to limit access, strike a balance between security and user convenience. Ensure that the access process is user-friendly and doesn&apos;t deter potential customers.
           </p>
         </section>
         <ResourcesCalltoAction/>
