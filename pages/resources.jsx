@@ -15,21 +15,6 @@ const ResourcesPage = () => {
   const toggleAccordion = (index) => {
     setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
   };
-
-  const clickableTiles = [
-    {
-      title: 'Selling knowledge-based digital products in general',
-      target: 'digital-products',
-    },
-    {
-      title: 'Monetizing Google Drive',
-      target: 'google-drive',
-    },
-    {
-      title: 'Monetizing Notion',
-      target: 'notion',
-    },
-  ];
   
   {/* const faqs = [
     {
@@ -90,37 +75,36 @@ const ResourcesPage = () => {
       {/* Clickable Tiles Section */}
       <section className="bg-gray-100 py-10">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-2xl font-semibold mb-2">Which of the following would you like to learn more about?</h2>
+          <h2 className="text-2xl font-semibold mb-2">What topic would you like to learn more about?</h2>
           {/* <p className="text-gray-600">
             Learning and material to help you monetize.
           </p> */}
           <div className="flex flex-wrap justify-center mt-6 space-y-4 sm:space-y-0 sm:gap-4">
-            {clickableTiles.map((tile, index) => (
-              <div key={index} className="w-full sm:w-1/2 md:w-1/4 p-2">
-                <a
-                  href={`#${tile.target}`}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    const targetId = tile.target;
-                    const targetElement = document.getElementById(targetId);
-                    if (targetElement) {
-                      window.scrollTo({
-                        behavior: 'smooth',
-                        top: targetElement.offsetTop,
-                      });
-                    }
-                  }}
-                  className="block bg-green-800 p-6 rounded-lg shadow-md text-center"
-                >
-                  <h3 className="text-xl font-semibold text-white mb-1">
-                    {tile.title}
-                  </h3>
-                </a>
-              </div>
-            ))}
+            <div className="w-full sm:w-1/2 md:w-1/4 p-2">
+              <a href="#digital-products" className="block bg-green-800 p-6 rounded-lg shadow-md text-center">
+                <h3 className="text-xl font-semibold text-white mb-1">
+                  Selling knowledge-based digital products in general
+                </h3>
+              </a>
+            </div>
+            <div className="w-full sm:w-1/2 md:w-1/4 p-2">
+              <a href="#google-drive" className="block bg-green-800 p-6 rounded-lg shadow-md text-center">
+                <h3 className="text-xl font-semibold text-white mb-1">
+                  Monetizing your knowledge and assets in Google Drive
+                </h3>
+              </a>
+            </div>
+            <div className="w-full sm:w-1/2 md:w-1/4 p-2">
+              <a href="#notion" className="block bg-green-800 p-6 rounded-lg shadow-md text-center">
+                <h3 className="text-xl font-semibold text-white mb-1">
+                  Monetizing your knowledge and assets in Notion
+                </h3>
+              </a>
+            </div>
           </div>
         </div>
       </section>
+
 
       {/* Call to Action Section */}
       <ResourcesCalltoAction />
