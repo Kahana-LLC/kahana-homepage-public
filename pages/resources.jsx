@@ -15,6 +15,13 @@ const ResourcesPage = () => {
   const toggleAccordion = (index) => {
     setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
   };
+
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   
   {/* const faqs = [
     {
@@ -76,43 +83,49 @@ const ResourcesPage = () => {
       <section className="bg-gray-100 py-10">
         <div className="max-w-7xl mx-auto text-center">
           <h2 className="text-2xl font-semibold mb-2">What topic would you like to learn more about?</h2>
-          {/* <p className="text-gray-600">
-            Learning and material to help you monetize.
-          </p> */}
           <div className="flex flex-wrap justify-center mt-6 space-y-4 sm:space-y-0 sm:gap-4">
             <div className="w-full sm:w-1/2 md:w-1/4 p-2">
-              <a href="#digital-products" className="block bg-green-800 p-6 rounded-lg shadow-md text-center">
+              <button onClick={() => scrollToSection('digital-products')} className="block bg-green-800 p-6 rounded-lg shadow-md text-center">
                 <h3 className="text-xl font-semibold text-white mb-1">
                   Selling knowledge-based digital products in general
                 </h3>
-              </a>
+              </button>
             </div>
             <div className="w-full sm:w-1/2 md:w-1/4 p-2">
-              <a href="#google-drive" className="block bg-green-800 p-6 rounded-lg shadow-md text-center">
+              <button onClick={() => scrollToSection('google-drive')} className="block bg-green-800 p-6 rounded-lg shadow-md text-center">
                 <h3 className="text-xl font-semibold text-white mb-1">
                   Monetizing your knowledge and assets in Google Drive
                 </h3>
-              </a>
+              </button>
             </div>
             <div className="w-full sm:w-1/2 md:w-1/4 p-2">
-              <a href="#notion" className="block bg-green-800 p-6 rounded-lg shadow-md text-center">
+              <button onClick={() => scrollToSection('notion')} className="block bg-green-800 p-6 rounded-lg shadow-md text-center">
                 <h3 className="text-xl font-semibold text-white mb-1">
                   Monetizing your knowledge and assets in Notion
                 </h3>
-              </a>
+              </button>
             </div>
           </div>
         </div>
       </section>
 
-
       {/* Call to Action Section */}
       <ResourcesCalltoAction />
 
-      {/* Links Section */}
-      <DigitalProductsResources id="digital-products" />
-      <GoogleDriveResources id="google-drive" />
-      <NotionResources id="notion" />
+      {/* Digital Products Resources Section */}
+      <div id="digital-products">
+        <DigitalProductsResources />
+      </div>
+
+      {/* Google Drive Resources Section */}
+      <div id="google-drive">
+        <GoogleDriveResources />
+      </div>
+
+      {/* Notion Resources Section */}
+      <div id="notion">
+        <NotionResources />
+      </div>
 
       {/* FAQ Section */}
       {/*
