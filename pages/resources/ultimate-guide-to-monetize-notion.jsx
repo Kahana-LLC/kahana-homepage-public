@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Footer from '../../components/Footer';
 import NavbarDup from '../../components/NavbarDup';
 import Image from 'next/image';
+import ResourcesCallToAction from '../../ResourcesCallToAction';
 
 const Page = () => {
   return (
@@ -67,6 +68,7 @@ const Page = () => {
         </section>
         
         {/* Add more sections as needed */}
+        <ResourcesCallToAction />
         
       </div>
       <Footer />
