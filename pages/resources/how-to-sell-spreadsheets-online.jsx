@@ -53,20 +53,20 @@ const Page = () => {
         </section>
         
         <p className="text-gray-600 mb-6">
-          Selling spreadsheets online offers a lucrative opportunity to monetize your expertise and provide valuable solutions to a wide audience. In this comprehensive guide, we'll navigate through the key steps to effectively sell spreadsheets online and build a thriving revenue stream.
+          Selling spreadsheets online offers a lucrative opportunity to monetize your expertise and provide valuable solutions to a wide audience. In this comprehensive guide, we&apos;ll navigate through the key steps to effectively sell spreadsheets online and build a thriving revenue stream.
         </p>
         
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">Step 1: Identify Your Niche</h2>
           <p className="text-gray-600">
-            Define your niche or expertise area. Whether it's financial modeling, data analysis, project management, or any other field, pinpointing your specialty will help you create targeted and appealing spreadsheet products.
+            Define your niche or expertise area. Whether it&apos;s financial modeling, data analysis, project management, or any other field, pinpointing your specialty will help you create targeted and appealing spreadsheet products.
           </p>
         </section>
         
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">Step 2: Develop High-Quality Spreadsheets</h2>
           <p className="text-gray-600">
-            Craft high-quality spreadsheets that cater to your niche's needs. Ensure they are well-designed, error-free, and deliver actionable insights that resonate with potential buyers.
+            Craft high-quality spreadsheets that cater to your niche&apos;s needs. Ensure they are well-designed, error-free, and deliver actionable insights that resonate with potential buyers.
           </p>
         </section>
         
@@ -148,7 +148,7 @@ const Page = () => {
         </section>
 
         <p className="text-gray-600 mb-6">
-          Selling spreadsheets online demands a combination of quality products, effective marketing, customer-centric practices, and a deep understanding of your target audience's needs. By following these steps and utilizing tools like Kahana for secure distribution, you can establish a successful online presence and capitalize on the demand for valuable digital solutions.
+          Selling spreadsheets online demands a combination of quality products, effective marketing, customer-centric practices, and a deep understanding of your target audience&apos;s needs. By following these steps and utilizing tools like Kahana for secure distribution, you can establish a successful online presence and capitalize on the demand for valuable digital solutions.
         </p>
         
         <ResourcesCalltoAction/>
