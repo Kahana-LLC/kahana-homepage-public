@@ -81,11 +81,11 @@ const Page = () => {
           <h2 className="text-2xl font-semibold mb-2">Step 4: Deeply Analyze Your Pricing Strategy</h2>
           <p className="text-gray-600">
             <strong>Understand Your Costs:</strong> Evaluate the time, effort, and resources invested in creating each Notion template. Factor in design, research, and development to ensure your pricing covers your expenses.
-            
+            <br />
             <strong>Competitor Analysis:</strong> Research your competitors&apos; pricing strategies to position your templates competitively while offering unique value.
-            
+            <br />
             <strong>Pricing Tiers:</strong>  Offer tiered pricing to cater to different customer segments. Basic, standard, and premium options can accommodate varied budgets and needs.
-            
+            <br />
             <strong>Value-Based Pricing:</strong>  Consider the value your Notion templates bring to customers&apos; lives. Price according to the impact and benefits your templates offer.
           </p>
         </section>
@@ -93,63 +93,63 @@ const Page = () => {
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">Step 5: Utilize Kahana for Monetization</h2>
           <p className="text-gray-600">
-            Embed in Kahana Hubs: Leverage Kahana&apos;s platform to embed your Notion templates within monetized hubs. This protects your templates from unauthorized distribution while granting access to paying customers.
+            <strong>Embed in Kahana Hubs::</strong> Leverage Kahana&apos;s platform to embed your Notion templates within monetized hubs. This protects your templates from unauthorized distribution while granting access to paying customers.
           </p>
         </section>
 
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">Step 6: Create Compelling Sales Pages</h2>
           <p className="text-gray-600">
-            Highlight Benefits: Craft engaging sales pages that clearly communicate the benefits of your Notion templates. Explain how they can save time, enhance efficiency, and deliver tangible results.
+            <strong>Highlight Benefits:</strong> Craft engaging sales pages that clearly communicate the benefits of your Notion templates. Explain how they can save time, enhance efficiency, and deliver tangible results.
           </p>
         </section>
 
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">Step 7: Offer Bundles and Upsells</h2>
           <p className="text-gray-600">
-            Bundle Packages: Package complementary templates together at a discounted price. This encourages customers to purchase more templates and increases the average order value.
+            <strong>Bundle Packages:</strong> Package complementary templates together at a discounted price. This encourages customers to purchase more templates and increases the average order value.
           </p>
         </section>
 
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">Step 8: Provide Customer Support</h2>
           <p className="text-gray-600">
-            Responsive Assistance: Offer exceptional customer support to address inquiries, troubleshoot issues, and ensure a positive buying experience. This builds customer trust and loyalty.
+            <strong>Responsive Assistance:</strong> Offer exceptional customer support to address inquiries, troubleshoot issues, and ensure a positive buying experience. This builds customer trust and loyalty.
           </p>
         </section>
 
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">Step 9: Collect Customer Feedback</h2>
           <p className="text-gray-600">
-            Continuous Improvement: Gather feedback from customers and use it to refine and enhance your Notion templates. Addressing customer suggestions shows a commitment to quality.
+            <strong>Continuous Improvement:</strong> Gather feedback from customers and use it to refine and enhance your Notion templates. Addressing customer suggestions shows a commitment to quality.
           </p>
         </section>
 
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">Step 10: Leverage Social Media and Online Communities</h2>
           <p className="text-gray-600">
-            Promote through Platforms: Share your Notion templates on social media platforms, Reddit, Quora, and relevant online communities. Engage with potential customers and offer value through discussions.
+            <strong>Promote through Platforms:</strong>  Share your Notion templates on social media platforms, Reddit, Quora, and relevant online communities. Engage with potential customers and offer value through discussions.
           </p>
         </section>
 
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">Step 11: Utilize Content Marketing</h2>
           <p className="text-gray-600">
-            Educational Content: Create blog posts, videos, or webinars that showcase the versatility and usage of your Notion templates. This positions you as an expert and drives traffic to your offerings.
+            <strong>Educational Content:</strong>  Create blog posts, videos, or webinars that showcase the versatility and usage of your Notion templates. This positions you as an expert and drives traffic to your offerings.
           </p>
         </section>
 
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">Step 12: Limited-Time Offers and Discounts</h2>
           <p className="text-gray-600">
-            Create Urgency: Implement limited-time offers or discounts to incentivize immediate purchases. Scarcity can prompt buyers to make a decision quickly.
+            <strong>Create Urgency:</strong> Implement limited-time offers or discounts to incentivize immediate purchases. Scarcity can prompt buyers to make a decision quickly.
           </p>
         </section>
 
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">Step 13: Continuously Update and Innovate</h2>
           <p className="text-gray-600">
-            Stay Relevant: Regularly update your Notion templates to align with the latest trends, software updates, and customer demands. Innovation keeps your offerings competitive.
+            <strong>Stay Relevant:</strong> Regularly update your Notion templates to align with the latest trends, software updates, and customer demands. Innovation keeps your offerings competitive.
           </p>
         </section>
 
