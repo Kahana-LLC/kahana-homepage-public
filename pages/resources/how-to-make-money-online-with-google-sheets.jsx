@@ -120,9 +120,9 @@ const Page = () => {
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">Step 8: The Kahana Advantage</h2>
           <p className="text-gray-600">
-            1. <strong>Integrated Data Monetization</strong>: Benefit from Kahana's integration with Google Sheets, creating a secure platform to sell your data-driven content.
+            1. <strong>Integrated Data Monetization</strong>: Benefit from Kahana&apos;s integration with Google Sheets, creating a secure platform to sell your data-driven content.
             <br />
-            2. <strong>Access Control</strong>: Kahana's features ensure that your Google Sheets are accessible only to paying customers, safeguarding your valuable data.
+            2. <strong>Access Control</strong>: Kahana&apos;s features ensure that your Google Sheets are accessible only to paying customers, safeguarding your valuable data.
           </p>
         </section>
         
