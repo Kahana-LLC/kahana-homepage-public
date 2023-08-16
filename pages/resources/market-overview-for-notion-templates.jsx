@@ -12,7 +12,7 @@ const Page = () => {
   return (
     <div className="bg-gray-100">
       <Head>
-        <title>Market Overview for Notion templates</title>
+        <title>Market Overview for Notion Templates</title>
         <meta
           name="Kahana"
           content="Kahana is the easiest way to monetize your content and research. Transform knowledge and expertise into subscription revenue. Sign up for free today!"
@@ -48,7 +48,7 @@ const Page = () => {
           }}
         >
           <h1 className="text-3xl font-semibold mb-4">
-            Market Overview for Notion templates
+            Market Overview for Notion Templates
           </h1>
         </section>
         
