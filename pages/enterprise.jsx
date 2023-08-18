@@ -52,11 +52,14 @@ const EnterprisePage = () => {
             <iframe
               src="https://app.kahana.co/hub/tHwAYvYPzqVwGPGzh10k"
               width="100%"
-              height="1000"
+              height="750"
               frameBorder="0"
               title="Kahana Hub"
               allowFullScreen
             ></iframe>
+          </div>
+          <div className="md:px-12 lg:px-24 mt-4 text-gray-500 text-center">
+            Create and charge for access to a living and breathing repository of your best research, insights, best practices, methodologies, templates, etc.
           </div>
         </div>
       </section>
