@@ -48,6 +48,16 @@ const EnterprisePage = () => {
           >
             Request a demo
           </a>
+          <div className="mt-8">
+            <iframe
+              src="https://app.kahana.co/hub/tHwAYvYPzqVwGPGzh10k"
+              width="100%"
+              height="500"
+              frameBorder="0"
+              title="Kahana Hub"
+              allowFullScreen
+            ></iframe>
+          </div>
         </div>
       </section>
 
