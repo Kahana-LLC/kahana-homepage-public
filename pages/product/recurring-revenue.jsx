@@ -43,7 +43,7 @@ const WikisPage = () => {
             Build dynamic hubs of all your templates, insights, research, methodologies, and best practices. It&apos;s like charging for access to your brain. 
           </p>
           <a
-            href="https://7hkdcfzbmr0.typeform.com/to/ZYLHazEf?utm_content=wikis_page"
+            href="https://app.kahana.co/signup"
             className="bg-[#3B675E] text-white py-2 px-6 rounded-md text-center inline-block"
           >
             Get Kahana free
