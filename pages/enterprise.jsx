@@ -37,7 +37,7 @@ const EnterprisePage = () => {
       {/* Hero section */}
       <section className="py-16 md:py-18">
         <div className="container mx-auto px-4 md:px-8 text-center">
-          <h1 className="text-4xl font-bold mb-4 md:px-12 lg:px-24">
+          <h1 className="text-5xl font-bold mb-4 md:px-12 lg:px-24">
             Turn your company&apos;s best assets into recurring revenue
           </h1>
           <p className="text-lg mb-8 md:px-12 lg:px-24">
@@ -68,9 +68,9 @@ const EnterprisePage = () => {
       {/* Feature section */}
       <section className="py-16 md:py-18">
         <div className="container mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-8">
-            Manage your recurring revenue streams, collaborate with your team, and gather customer feedback in one place.
-          </h2>
+          <h1 className="text-5xl font-bold mb-4 md:px-12 lg:px-24">
+            Manage your recurring revenue streams, collaborate with your team, and gather customer feedback, all in one place.
+          </h1>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-4 md:px-0">
             {/* Add "px-4 md:px-0" to the grid container */}
             <div className="bg-white p-6 rounded-lg shadow-md">
@@ -116,11 +116,11 @@ const EnterprisePage = () => {
     <section className="py-16 md:py-18">
       <div className="mx-auto max-w-7xl py-24 px-4 sm:px-6 lg:px-8">
         <div className="sm:align-center sm:flex sm:flex-col">
-          <h1 className="text-5xl font-bold tracking-tight text-gray-900 sm:text-center">
+          <h1 className="text-5xl font-bold mb-4 md:px-12 lg:px-24">
             What you get with Enterprise
           </h1>
         </div>
-        <div className="mt-12 space-y-4 sm:mt-16 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:mx-auto lg:max-w-4xl xl:mx-0 xl:max-w-none xl:grid-cols-3">
+        <div className="mt-12 space-y-4 sm:mt-16 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:mx-auto lg:max-w-4xl xl:mx-0 xl:max-w-none xl:grid-cols-1">
           <div className="divide-y divide-gray-200 rounded-lg border border-gray-200 shadow-sm">
             <div className="px-6 pt-6 pb-8">
               <ul role="list" className="mt-6 space-y-4">
