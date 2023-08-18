@@ -45,7 +45,7 @@ const EnterprisePage = () => {
           </p>
           <a
             href="https://7hkdcfzbmr0.typeform.com/to/ZYLHazEf?utm_content=enterprise_page"
-            className="bg-[#3B675E] text-white py-2 px-6 rounded-md text-center inline-block"
+            className="bg-[#3B675E] text-white py-2 px-6 rounded-md text-center inline-block mx-auto max-w-md"
           >
             Request a demo
           </a>
@@ -196,7 +196,7 @@ const EnterprisePage = () => {
           <p className="mb-4">Talk to a human to understand how Kahana can help your org.</p>
           <a
             href="https://7hkdcfzbmr0.typeform.com/to/ZYLHazEf?utm_content=enterprise_page"
-            className="bg-[#3B675E] text-white py-2 px-6 rounded-md text-center inline-block"
+            className="bg-[#3B675E] text-white py-2 px-6 rounded-md text-center inline-block mx-auto max-w-md"
           >
             Request a demo
           </a>
