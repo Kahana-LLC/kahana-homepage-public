@@ -34,7 +34,7 @@ const EnterprisePage = () => {
       </div>
 
       {/* Hero section */}
-      <section className="py-20">
+      <section className="py-16 md:py-18">
         <div className="container mx-auto px-4 md:px-8 text-center">
           <h1 className="text-4xl font-bold mb-4 md:px-12 lg:px-24">
             Turn your company&apos;s best assets into recurring revenue
@@ -65,7 +65,7 @@ const EnterprisePage = () => {
       </section>
 
       {/* Feature section */}
-      <section className="py-20">
+      <section className="py-16 md:py-18">
         <div className="container mx-auto text-center">
           <h2 className="text-3xl font-bold mb-8">
             Why Choose Kahana Enterprise?
@@ -90,7 +90,7 @@ const EnterprisePage = () => {
       </section>
 
       {/* Testimonial section */}
-      <section className="bg-gray-100 py-20">
+      <section className="py-16 md:py-18">
         <div className="container mx-auto text-center">
           <h2 className="text-3xl font-bold mb-8">What Our Clients Say</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-4 md:px-0">
@@ -107,7 +107,7 @@ const EnterprisePage = () => {
       </section>
 
       {/* Contact section */}
-      <section className="py-20">
+      <section className="py-16 md:py-18">
         <div className="container mx-auto text-center">
           <h2 className="text-3xl font-bold mb-8">Get a demo</h2>
           <p className="mb-4">Talk to a human to understand how Kahana can help your org.</p>
