@@ -40,7 +40,7 @@ const WikisPage = () => {
             Turn your knowledge into recurring revenue
           </h1>
           <p className="text-lg mb-8 md:px-12 lg:px-24">
-            Build dynamic hubs of all your templates, insights, reserach, methodologies, and best practices. It's like charging for access to your brain. 
+            Build dynamic hubs of all your templates, insights, research, methodologies, and best practices. It&apos;s like charging for access to your brain. 
           </p>
           <a
             href="https://7hkdcfzbmr0.typeform.com/to/ZYLHazEf?utm_content=wikis_page"
