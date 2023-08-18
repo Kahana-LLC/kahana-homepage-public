@@ -52,7 +52,7 @@ const EnterprisePage = () => {
             <iframe
               src="https://app.kahana.co/hub/tHwAYvYPzqVwGPGzh10k"
               width="100%"
-              height="500"
+              height="1000"
               frameBorder="0"
               title="Kahana Hub"
               allowFullScreen
