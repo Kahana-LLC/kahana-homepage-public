@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Footer from '../components/Footer';
 import NavbarDup from '../components/NavbarDup';
 import Image from 'next/image';
+import { CheckIcon } from '@heroicons/react/20/solid';
 
 const EnterprisePage = () => {
   return (
@@ -81,7 +82,7 @@ const EnterprisePage = () => {
               />
               <h3 className="text-xl font-semibold mt-4">Recurring Revenue</h3>
               <p className="mt-2">
-                Build dynamic hubs of all your best data, templates, insights, research, methodologies, and best practices. It's like charging for access to your firm's brain. 
+                Build dynamic hubs of all your best data, templates, insights, research, methodologies, and best practices. It&apos;s like charging for access to your firm's brain. 
               </p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md">
