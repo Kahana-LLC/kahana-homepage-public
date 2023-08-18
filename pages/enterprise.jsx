@@ -79,7 +79,7 @@ const EnterprisePage = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white p-6 rounded-lg shadow-md">
               <p className="text-lg italic mb-4">
-                "Kahana has revolutionized the way we do business. Our subscription revenue has skyrocketed!"
+                &quot;Kahana has revolutionized the way we do business. Our subscription revenue has skyrocketed!&quot;
               </p>
               <p className="font-semibold">John Doe, CEO at TechCorp</p>
             </div>
