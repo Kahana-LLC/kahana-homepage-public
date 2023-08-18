@@ -37,14 +37,17 @@ const EnterprisePage = () => {
       <section className="bg-gray-900 text-white py-20">
         <div className="container mx-auto text-center">
           <h1 className="text-4xl font-bold mb-4">
-            Transform Your Business with Kahana Enterprise
+            Turn your company's collective knowledge and IP into recurring revenue
           </h1>
           <p className="text-lg mb-8">
-            Monetize your content and research like never before.
+            After a project is completed, companies often fail to monetize the value they created during the project. Much of the research, insights, best practices, methodologies, templates, etc. that were delivered to the client is grossly underutilized and doesn&apos;t get leveraged at all beyond the project. Kahana helps companies leverage these assets to create recurring revenue streams so that they can continue to monetize all of the value they create from project-based work on an ongoing basis.  
           </p>
-          <button className="bg-blue-500 text-white py-2 px-6 rounded-full">
-            Get Started
-          </button>
+          <a
+            href="https://7hkdcfzbmr0.typeform.com/to/ZYLHazEf?utm_content=enterprise_page"
+            className="bg-[#3B675E] text-white py-2 px-6 rounded-md text-center inline-block"
+          >
+            Request a demo
+          </a>
         </div>
       </section>
 
@@ -93,11 +96,14 @@ const EnterprisePage = () => {
       {/* Contact section */}
       <section className="py-20">
         <div className="container mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-8">Get in Touch</h2>
-          <p className="mb-4">Have questions? Reach out to our team.</p>
-          <button className="bg-blue-500 text-white py-2 px-6 rounded-full">
-            Contact Us
-          </button>
+          <h2 className="text-3xl font-bold mb-8">Get a demo</h2>
+          <p className="mb-4">Talk to a human to understand how Kahana can help your org.</p>
+          <a
+            href="https://7hkdcfzbmr0.typeform.com/to/ZYLHazEf?utm_content=enterprise_page"
+            className="bg-[#3B675E] text-white py-2 px-6 rounded-md text-center inline-block"
+          >
+            Request a demo
+          </a>
         </div>
       </section>
 
