@@ -130,15 +130,7 @@ const EnterprisePage = () => {
                 </li>
                 <li className="flex items-center space-x-3">
                   <CheckIcon className="h-5 w-5 text-green-500" aria-hidden="true" />
-                  <span className="text-sm text-gray-500">Unlimited hubs</span>
-                </li>
-                <li className="flex items-center space-x-3">
-                  <CheckIcon className="h-5 w-5 text-green-500" aria-hidden="true" />
                   <span className="text-sm text-gray-500">Unlimited revenue streams</span>
-                </li>
-                <li className="flex items-center space-x-3">
-                  <CheckIcon className="h-5 w-5 text-green-500" aria-hidden="true" />
-                  <span className="text-sm text-gray-500">5 GB storage</span>
                 </li>
                 <li className="flex items-center space-x-3">
                   <CheckIcon className="h-5 w-5 text-green-500" aria-hidden="true" />
