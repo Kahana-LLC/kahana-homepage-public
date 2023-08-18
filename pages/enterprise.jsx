@@ -54,7 +54,8 @@ const EnterprisePage = () => {
           <h2 className="text-3xl font-bold mb-8">
             Why Choose Kahana Enterprise?
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-4 md:px-0">
+            {/* Add "px-4 md:px-0" to the grid container */}
             <div className="bg-white p-6 rounded-lg shadow-md">
               <Image
                 src="/feature-1.png"
@@ -76,7 +77,8 @@ const EnterprisePage = () => {
       <section className="bg-gray-100 py-20">
         <div className="container mx-auto text-center">
           <h2 className="text-3xl font-bold mb-8">What Our Clients Say</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-4 md:px-0">
+            {/* Add "px-4 md:px-0" to the grid container */}
             <div className="bg-white p-6 rounded-lg shadow-md">
               <p className="text-lg italic mb-4">
                 &quot;Kahana has revolutionized the way we do business. Our subscription revenue has skyrocketed!&quot;
