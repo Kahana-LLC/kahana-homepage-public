@@ -34,13 +34,13 @@ const EnterprisePage = () => {
       </div>
 
       {/* Hero section */}
-      <section className="bg-gray-900 text-white py-20">
-        <div className="container mx-auto text-center">
-          <h1 className="text-4xl font-bold mb-4">
-            Turn your company&apos;s collective knowledge and IP into recurring revenue
+      <section className="py-20">
+        <div className="container mx-auto px-4 md:px-8 text-center">
+          <h1 className="text-4xl font-bold mb-4 md:px-12 lg:px-24">
+            Turn your company&apos;s best assets into recurring revenue
           </h1>
-          <p className="text-lg mb-8">
-            After a project is completed, companies often fail to monetize the value they created during the project. Much of the research, insights, best practices, methodologies, templates, etc. that were delivered to the client is grossly underutilized and doesn&apos;t get leveraged at all beyond the project. Kahana helps companies leverage these assets to create recurring revenue streams so that they can continue to monetize all of the value they create from project-based work on an ongoing basis.  
+          <p className="text-lg mb-8 md:px-12 lg:px-24">
+            Monetize the value you deliver and the knowledge you gain from projects on an ongoing basis.
           </p>
           <a
             href="https://7hkdcfzbmr0.typeform.com/to/ZYLHazEf?utm_content=enterprise_page"
