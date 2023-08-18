@@ -40,7 +40,7 @@ const WikisPage = () => {
             Build communities through hubs of knowledge
           </h1>
           <p className="text-lg mb-8 md:px-12 lg:px-24">
-            Collaborate with subscribers to gather feedback and create an engaging environment where subscribers can connect with one another, all in one place.
+            Collaborate with customers to gather feedback and create an engaging environment where customers can connect with one another, all in one place.
           </p>
           <a
             href="https://app.kahana.co/signup"
