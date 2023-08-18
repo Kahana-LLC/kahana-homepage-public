@@ -59,7 +59,7 @@ const EnterprisePage = () => {
             ></iframe>
           </div>
           <div className="md:px-12 lg:px-24 mt-4 text-gray-500 text-center">
-            Create and charge for access to a living and breathing repository of your best research, insights, best practices, methodologies, templates, etc.
+            Create and charge for access to an up-to-date repository of your best research, insights, best practices, methodologies, templates, etc.
           </div>
         </div>
       </section>
