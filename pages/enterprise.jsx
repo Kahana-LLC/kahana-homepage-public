@@ -68,7 +68,7 @@ const EnterprisePage = () => {
       <section className="py-16 md:py-18">
         <div className="container mx-auto text-center">
           <h2 className="text-3xl font-bold mb-8">
-            Why Choose Kahana Enterprise?
+            Manage your recurring revenue streams, collaborate with your team, and gather customer feedback in one place.
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-4 md:px-0">
             {/* Add "px-4 md:px-0" to the grid container */}
@@ -79,15 +79,158 @@ const EnterprisePage = () => {
                 width={64}
                 height={64}
               />
-              <h3 className="text-xl font-semibold mt-4">Subscription Revenue</h3>
+              <h3 className="text-xl font-semibold mt-4">Recurring Revenue</h3>
               <p className="mt-2">
-                Generate recurring revenue by monetizing your knowledge and expertise through subscriptions.
+                Build dynamic hubs of all your best data, templates, insights, research, methodologies, and best practices. It's like charging for access to your firm's brain. 
               </p>
             </div>
-            {/* Repeat similar blocks for other features */}
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <Image
+                src="/feature-1.png"
+                alt="Feature 1"
+                width={64}
+                height={64}
+              />
+              <h3 className="text-xl font-semibold mt-4">Collaboration Tools</h3>
+              <p className="mt-2">
+                Enable colleagues and experts across your organization to contribute and build hubs together.
+              </p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <Image
+                src="/feature-1.png"
+                alt="Feature 1"
+                width={64}
+                height={64}
+              />
+              <h3 className="text-xl font-semibold mt-4">Community Engagement</h3>
+              <p className="mt-2">
+                Collaborate with customers to gather feedback and create an engaging environment where customers can connect with one another.
+              </p>
+            </div>
           </div>
         </div>
       </section>
+
+    <section className="py-16 md:py-18">
+      <div className="mx-auto max-w-7xl py-24 px-4 sm:px-6 lg:px-8">
+        <div className="sm:align-center sm:flex sm:flex-col">
+          <h1 className="text-5xl font-bold tracking-tight text-gray-900 sm:text-center">
+            What you get with Enterprise
+          </h1>
+        </div>
+        <div className="mt-12 space-y-4 sm:mt-16 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:mx-auto lg:max-w-4xl xl:mx-0 xl:max-w-none xl:grid-cols-3">
+          <div className="divide-y divide-gray-200 rounded-lg border border-gray-200 shadow-sm">
+            <div className="px-6 pt-6 pb-8">
+              <ul role="list" className="mt-6 space-y-4">
+                <li className="flex space-x-3">
+                  <CheckIcon
+                    className="h-5 w-5 flex-shrink-0 text-green-500"
+                    aria-hidden="true"
+                  />
+                  <span className="text-sm text-gray-500">
+                    Real-time collaboration
+                  </span>
+                </li>
+                <li className="flex space-x-3">
+                  <CheckIcon
+                    className="h-5 w-5 flex-shrink-0 text-green-500"
+                    aria-hidden="true"
+                  />
+                  <span className="text-sm text-gray-500">
+                    Sync across devices
+                  </span>
+                </li>
+                <li className="flex space-x-3">
+                  <CheckIcon
+                    className="h-5 w-5 flex-shrink-0 text-green-500"
+                    aria-hidden="true"
+                  />
+                  <span className="text-sm text-gray-500">Unlimited hubs</span>
+                </li>
+                <li className="flex space-x-3">
+                  <CheckIcon
+                    className="h-5 w-5 flex-shrink-0 text-green-500"
+                    aria-hidden="true"
+                  />
+                  <span className="text-sm text-gray-500">Unlimited revenue streams</span>
+                </li>
+                <li className="flex space-x-3">
+                  <CheckIcon
+                    className="h-5 w-5 flex-shrink-0 text-green-500"
+                    aria-hidden="true"
+                  />
+                  <span className="text-sm text-gray-500">5 GB storage</span>
+                </li>
+                <li className="flex space-x-3">
+                  <CheckIcon
+                    className="h-5 w-5 flex-shrink-0 text-green-500"
+                    aria-hidden="true"
+                  />
+                  <span className="text-sm text-gray-500">
+                    100 GB storage
+                  </span>
+                </li>
+                <li className="flex space-x-3">
+                  <CheckIcon
+                    className="h-5 w-5 flex-shrink-0 text-green-500"
+                    aria-hidden="true"
+                  />
+                  <span className="text-sm text-gray-500">
+                    Advanced permissions & controls
+                  </span>
+                </li>
+                <li className="flex space-x-3">
+                  <CheckIcon
+                    className="h-5 w-5 flex-shrink-0 text-green-500"
+                    aria-hidden="true"
+                  />
+                  <span className="text-sm text-gray-500">
+                    SAML, Single-Sign On (SSO)
+                  </span>
+                </li>
+                <li className="flex space-x-3">
+                  <CheckIcon
+                    className="h-5 w-5 flex-shrink-0 text-green-500"
+                    aria-hidden="true"
+                  />
+                  <span className="text-sm text-gray-500">
+                    White glove 24/7 support
+                  </span>
+                </li>
+                <li className="flex space-x-3">
+                  <CheckIcon
+                    className="h-5 w-5 flex-shrink-0 text-green-500"
+                    aria-hidden="true"
+                  />
+                  <span className="text-sm text-gray-500">
+                    Custom & advanced reporting
+                  </span>
+                </li>
+                <li className="flex space-x-3">
+                  <CheckIcon
+                    className="h-5 w-5 flex-shrink-0 text-green-500"
+                    aria-hidden="true"
+                  />
+                  <span className="text-sm text-gray-500">
+                    Time & usage reporting
+                  </span>
+                </li>
+                <li className="flex space-x-3">
+                  <CheckIcon
+                    className="h-5 w-5 flex-shrink-0 text-green-500"
+                    aria-hidden="true"
+                  />
+                  <span className="text-sm text-gray-500">
+                    Custom integrations
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
       {/* Testimonial section */}
       <section className="py-16 md:py-18">
