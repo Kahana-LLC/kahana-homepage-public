@@ -68,9 +68,9 @@ const EnterprisePage = () => {
       {/* Feature section */}
       <section className="py-16 md:py-18">
         <div className="container mx-auto text-center">
-          <h1 className="text-5xl font-bold mb-4 md:px-12 lg:px-24">
+          <h2 className="text-3xl font-bold mb-4 md:px-12 lg:px-24">
             Manage your recurring revenue streams, collaborate with your team, and gather customer feedback, all in one place.
-          </h1>
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-4 md:px-0">
             {/* Add "px-4 md:px-0" to the grid container */}
             <div className="bg-white p-6 rounded-lg shadow-md">
@@ -112,126 +112,126 @@ const EnterprisePage = () => {
           </div>
         </div>
       </section>
-
-    <section className="py-16 md:py-18">
-      <div className="mx-auto max-w-7xl py-24 px-4 sm:px-6 lg:px-8">
-        <div className="sm:align-center sm:flex sm:flex-col">
-          <h1 className="text-5xl font-bold mb-4 md:px-12 lg:px-24">
-            What you get with Enterprise
-          </h1>
-        </div>
-        <div className="mt-12 space-y-4 sm:mt-16 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:mx-auto lg:max-w-4xl xl:mx-0 xl:max-w-none xl:grid-cols-1">
-          <div className="divide-y divide-gray-200 rounded-lg border border-gray-200 shadow-sm">
-            <div className="px-6 pt-6 pb-8">
-              <ul role="list" className="mt-6 space-y-4">
-                <li className="flex space-x-3">
-                  <CheckIcon
-                    className="h-5 w-5 flex-shrink-0 text-green-500"
-                    aria-hidden="true"
-                  />
-                  <span className="text-sm text-gray-500">
-                    Real-time collaboration
-                  </span>
-                </li>
-                <li className="flex space-x-3">
-                  <CheckIcon
-                    className="h-5 w-5 flex-shrink-0 text-green-500"
-                    aria-hidden="true"
-                  />
-                  <span className="text-sm text-gray-500">
-                    Sync across devices
-                  </span>
-                </li>
-                <li className="flex space-x-3">
-                  <CheckIcon
-                    className="h-5 w-5 flex-shrink-0 text-green-500"
-                    aria-hidden="true"
-                  />
-                  <span className="text-sm text-gray-500">Unlimited hubs</span>
-                </li>
-                <li className="flex space-x-3">
-                  <CheckIcon
-                    className="h-5 w-5 flex-shrink-0 text-green-500"
-                    aria-hidden="true"
-                  />
-                  <span className="text-sm text-gray-500">Unlimited revenue streams</span>
-                </li>
-                <li className="flex space-x-3">
-                  <CheckIcon
-                    className="h-5 w-5 flex-shrink-0 text-green-500"
-                    aria-hidden="true"
-                  />
-                  <span className="text-sm text-gray-500">5 GB storage</span>
-                </li>
-                <li className="flex space-x-3">
-                  <CheckIcon
-                    className="h-5 w-5 flex-shrink-0 text-green-500"
-                    aria-hidden="true"
-                  />
-                  <span className="text-sm text-gray-500">
-                    100 GB storage
-                  </span>
-                </li>
-                <li className="flex space-x-3">
-                  <CheckIcon
-                    className="h-5 w-5 flex-shrink-0 text-green-500"
-                    aria-hidden="true"
-                  />
-                  <span className="text-sm text-gray-500">
-                    Advanced permissions & controls
-                  </span>
-                </li>
-                <li className="flex space-x-3">
-                  <CheckIcon
-                    className="h-5 w-5 flex-shrink-0 text-green-500"
-                    aria-hidden="true"
-                  />
-                  <span className="text-sm text-gray-500">
-                    SAML, Single-Sign On (SSO)
-                  </span>
-                </li>
-                <li className="flex space-x-3">
-                  <CheckIcon
-                    className="h-5 w-5 flex-shrink-0 text-green-500"
-                    aria-hidden="true"
-                  />
-                  <span className="text-sm text-gray-500">
-                    White glove 24/7 support
-                  </span>
-                </li>
-                <li className="flex space-x-3">
-                  <CheckIcon
-                    className="h-5 w-5 flex-shrink-0 text-green-500"
-                    aria-hidden="true"
-                  />
-                  <span className="text-sm text-gray-500">
-                    Custom & advanced reporting
-                  </span>
-                </li>
-                <li className="flex space-x-3">
-                  <CheckIcon
-                    className="h-5 w-5 flex-shrink-0 text-green-500"
-                    aria-hidden="true"
-                  />
-                  <span className="text-sm text-gray-500">
-                    Time & usage reporting
-                  </span>
-                </li>
-                <li className="flex space-x-3">
-                  <CheckIcon
-                    className="h-5 w-5 flex-shrink-0 text-green-500"
-                    aria-hidden="true"
-                  />
-                  <span className="text-sm text-gray-500">
-                    Custom integrations
-                  </span>
-                </li>
-              </ul>
+      {/* What you get section */}
+      <section className="py-16 md:py-18">
+        <div className="mx-auto max-w-7xl py-24 px-4 sm:px-6 lg:px-8">
+          <div className="sm:align-center sm:flex sm:flex-col">
+            <h2 className="text-3xl font-bold mb-4 md:px-12 lg:px-24 text-center">
+              What you get with Enterprise
+            </h2>
+          </div>
+          <div className="mt-12 space-y-4 sm:mt-16 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:mx-auto lg:max-w-4xl xl:mx-0 xl:max-w-none xl:grid-cols-3 mx-auto">
+            <div className="divide-y divide-gray-200 rounded-lg border border-gray-200 shadow-sm">
+              <div className="px-6 pt-6 pb-8">
+                <ul role="list" className="mt-6 space-y-4">
+                  <li className="flex space-x-3">
+                    <CheckIcon
+                      className="h-5 w-5 flex-shrink-0 text-green-500"
+                      aria-hidden="true"
+                    />
+                    <span className="text-sm text-gray-500">
+                      Real-time collaboration
+                    </span>
+                  </li>
+                  <li className="flex space-x-3">
+                    <CheckIcon
+                      className="h-5 w-5 flex-shrink-0 text-green-500"
+                      aria-hidden="true"
+                    />
+                    <span className="text-sm text-gray-500">
+                      Sync across devices
+                    </span>
+                  </li>
+                  <li className="flex space-x-3">
+                    <CheckIcon
+                      className="h-5 w-5 flex-shrink-0 text-green-500"
+                      aria-hidden="true"
+                    />
+                    <span className="text-sm text-gray-500">Unlimited hubs</span>
+                  </li>
+                  <li className="flex space-x-3">
+                    <CheckIcon
+                      className="h-5 w-5 flex-shrink-0 text-green-500"
+                      aria-hidden="true"
+                    />
+                    <span className="text-sm text-gray-500">Unlimited revenue streams</span>
+                  </li>
+                  <li className="flex space-x-3">
+                    <CheckIcon
+                      className="h-5 w-5 flex-shrink-0 text-green-500"
+                      aria-hidden="true"
+                    />
+                    <span className="text-sm text-gray-500">5 GB storage</span>
+                  </li>
+                  <li className="flex space-x-3">
+                    <CheckIcon
+                      className="h-5 w-5 flex-shrink-0 text-green-500"
+                      aria-hidden="true"
+                    />
+                    <span className="text-sm text-gray-500">
+                      100 GB storage
+                    </span>
+                  </li>
+                  <li className="flex space-x-3">
+                    <CheckIcon
+                      className="h-5 w-5 flex-shrink-0 text-green-500"
+                      aria-hidden="true"
+                    />
+                    <span className="text-sm text-gray-500">
+                      Advanced permissions & controls
+                    </span>
+                  </li>
+                  <li className="flex space-x-3">
+                    <CheckIcon
+                      className="h-5 w-5 flex-shrink-0 text-green-500"
+                      aria-hidden="true"
+                    />
+                    <span className="text-sm text-gray-500">
+                      SAML, Single-Sign On (SSO)
+                    </span>
+                  </li>
+                  <li className="flex space-x-3">
+                    <CheckIcon
+                      className="h-5 w-5 flex-shrink-0 text-green-500"
+                      aria-hidden="true"
+                    />
+                    <span className="text-sm text-gray-500">
+                      White glove 24/7 support
+                    </span>
+                  </li>
+                  <li className="flex space-x-3">
+                    <CheckIcon
+                      className="h-5 w-5 flex-shrink-0 text-green-500"
+                      aria-hidden="true"
+                    />
+                    <span className="text-sm text-gray-500">
+                      Custom & advanced reporting
+                    </span>
+                  </li>
+                  <li className="flex space-x-3">
+                    <CheckIcon
+                      className="h-5 w-5 flex-shrink-0 text-green-500"
+                      aria-hidden="true"
+                    />
+                    <span className="text-sm text-gray-500">
+                      Time & usage reporting
+                    </span>
+                  </li>
+                  <li className="flex space-x-3">
+                    <CheckIcon
+                      className="h-5 w-5 flex-shrink-0 text-green-500"
+                      aria-hidden="true"
+                    />
+                    <span className="text-sm text-gray-500">
+                      Custom integrations
+                    </span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
       {/* Testimonial section */}
       <section className="py-16 md:py-18">
