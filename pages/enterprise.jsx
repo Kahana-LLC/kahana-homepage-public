@@ -112,15 +112,14 @@ const EnterprisePage = () => {
           </div>
         </div>
       </section>
+      
       {/* What you get section */}
-      <section className="py-16 md:py-18">
-        <div className="mx-auto max-w-7xl py-24 px-4 sm:px-6 lg:px-8">
-          <div className="sm:align-center sm:flex sm:flex-col">
-            <h2 className="text-3xl font-bold mb-4 md:px-12 lg:px-24 text-center">
-              What you get with Enterprise
-            </h2>
-          </div>
-          <div className="mt-12 space-y-4 sm:mt-16 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:mx-auto lg:max-w-4xl xl:mx-0 xl:max-w-none xl:grid-cols-3 mx-auto">
+      <section className="py-12 md:py-16">
+        <div className="container mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-8">What you get with Enterprise</h2>
+        </div>
+        <div className="flex justify-center">
+          <div className="mt-6 space-y-4 sm:mt-8 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:mx-auto lg:max-w-4xl xl:mx-0 xl:max-w-none xl:grid-cols-3 mx-auto">
             <div className="divide-y divide-gray-200 rounded-lg border border-gray-200 shadow-sm">
               <div className="px-6 pt-6 pb-8">
                 <ul role="list" className="mt-6 space-y-4">
@@ -154,7 +153,9 @@ const EnterprisePage = () => {
                       className="h-5 w-5 flex-shrink-0 text-green-500"
                       aria-hidden="true"
                     />
-                    <span className="text-sm text-gray-500">Unlimited revenue streams</span>
+                    <span className="text-sm text-gray-500">
+                      Unlimited revenue streams
+                    </span>
                   </li>
                   <li className="flex space-x-3">
                     <CheckIcon
