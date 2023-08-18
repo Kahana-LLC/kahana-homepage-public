@@ -54,7 +54,8 @@ const WikisPage = () => {
       {/* Features section */}
       <section className="bg-gray-100 py-20">
         <div className="container mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:px-4 lg:px-0">
+            {/* First row */}
             <div className="md:col-span-1">
               <Image
                 src="/wiki-feature-1.png"
@@ -64,24 +65,52 @@ const WikisPage = () => {
               />
             </div>
             <div className="md:col-span-1">
-              <h2 className="text-3xl font-semibold mb-4">
+              <h2 className="text-3xl font-semibold mb-4 md:px-12 lg:px-24">
                 Collaborative Wikis
               </h2>
-              <p className="text-lg mb-6">
+              <p className="text-lg mb-6 md:px-12 lg:px-24">
                 Create and collaborate on wikis with your team. Share knowledge, documentation, and best practices.
               </p>
-              <p className="text-lg">
-                <a href="#" className="text-blue-500 underline">
-                  Learn more
-                </a>
+            </div>
+
+            {/* Second row */}
+            <div className="md:col-span-1 md:order-3">
+              <Image
+                src="/wiki-feature-2.png"
+                alt="Feature 2"
+                width={360}
+                height={240}
+              />
+            </div>
+            <div className="md:col-span-1 md:order-2">
+              <h2 className="text-3xl font-semibold mb-4 md:px-12 lg:px-24">
+                Enhanced Search
+              </h2>
+              <p className="text-lg mb-6 md:px-12 lg:px-24">
+                Quickly find relevant information using our powerful search capabilities.
+              </p>
+            </div>
+
+            {/* Third row */}
+            <div className="md:col-span-1">
+              <Image
+                src="/wiki-feature-3.png"
+                alt="Feature 3"
+                width={360}
+                height={240}
+              />
+            </div>
+            <div className="md:col-span-1">
+              <h2 className="text-3xl font-semibold mb-4 md:px-12 lg:px-24">
+                Mobile Friendly
+              </h2>
+              <p className="text-lg mb-6 md:px-12 lg:px-24">
+                Access your wikis and knowledge on the go with our mobile-friendly design.
               </p>
             </div>
           </div>
         </div>
       </section>
-
-      {/* More feature sections can be added similarly */}
-
       <Footer />
     </div>
   );
