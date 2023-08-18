@@ -21,6 +21,10 @@ export default function Document() {
           }}
         />
         {/* End of hotjar script */}
+        <link
+          href="https://cdn.jsdelivr.net/npm/tabler-icons@1.39.1/icons/tabler-icons.min.css"
+          rel="stylesheet"
+        />
 
         {/* <!-- Google tag (gtag.js) --> 
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-KQHFL9605P"></script>
