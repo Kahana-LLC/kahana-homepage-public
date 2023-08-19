@@ -68,10 +68,7 @@ export default function ProductDemoSection() {
             Built for Creators and Experts
           </h1>
           <p className="mt-6 text-xl tracking-tight text-white">
-            You have years of valuable information sitting in your brain 
-            and resources gathering dust in a (digital) folder. Kahana 
-            helps you turn your collective knowledge into hubs that generate 
-            income for you.                  
+            You have years of valuable information sitting in your brain and resources gathering dust in a (digital) folder. Kahana helps you turn your collective knowledge into hubs that generate income for you.
           </p>
         </div>
         <Tab.Group
@@ -81,6 +78,34 @@ export default function ProductDemoSection() {
         >
           {({ selectedIndex }) => (
             <>
+              {/* Mobile layout - Separate sections */}
+              <div className="sm:hidden">
+                {features.map((feature, featureIndex) => (
+                  <div
+                    key={feature.title}
+                    className={clsx(
+                      'relative sm:px-6 lg:hidden',
+                      selectedIndex === featureIndex
+                        ? 'block'
+                        : 'hidden'
+                    )}
+                  >
+                    <div className="mt-10 w-[45rem] overflow-hidden rounded-xl bg-slate-50 shadow-xl sm:w-auto">
+                      <Image
+                        className="w-full"
+                        src={feature.image}
+                        alt=""
+                        priority
+                        sizes="(min-width: 1024px) 67.8125rem, (min-width: 640px) 100vw, 45rem"
+                      />
+                    </div>
+                    <div className="relative mx-auto max-w-2xl text-base text-white sm:text-center">
+                      <p>{feature.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
               <div className="-mx-4 flex overflow-hidden pb-4 sm:mx-0 sm:overflow-hidden sm:pb-0 lg:col-span-5">
                 <Tab.List className="relative z-10 flex gap-x-4 whitespace-nowrap px-4 sm:mx-auto sm:px-0 lg:mx-0 lg:block lg:gap-x-0 lg:gap-y-1 lg:whitespace-normal">
                   {features.map((feature, featureIndex) => (
@@ -120,27 +145,6 @@ export default function ProductDemoSection() {
                   ))}
                 </Tab.List>
               </div>
-              <Tab.Panels className="lg:col-span-7">
-                {features.map((feature) => (
-                  <Tab.Panel key={feature.title} unmount={false}>
-                    <div className="relative sm:px-6 lg:hidden">
-                      <div className="absolute -inset-x-4 top-[-6.5rem] bottom-[-4.25rem] bg-white/10 ring-1 ring-inset ring-white/10 sm:inset-x-0 sm:rounded-t-xl" />
-                      <p className="relative mx-auto max-w-2xl text-base text-white sm:text-center">
-                        {feature.description}
-                      </p>
-                    </div>
-                    <div className="mt-10 w-[45rem] overflow-hidden rounded-xl bg-slate-50 shadow-xl sm:w-auto lg:mt-0 lg:w-[67.8125rem]">
-                      <Image
-                        className="w-full"
-                        src={feature.image}
-                        alt=""
-                        priority
-                        sizes="(min-width: 1024px) 67.8125rem, (min-width: 640px) 100vw, 45rem"
-                      />
-                    </div>
-                  </Tab.Panel>
-                ))}
-              </Tab.Panels>
             </>
           )}
         </Tab.Group>
