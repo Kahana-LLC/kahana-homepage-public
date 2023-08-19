@@ -2,6 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import Footer from '../components/Footer';
 import NavbarDup from '../components/NavbarDup';
+import ProductDemoSectionEnterprise from '../components/ProductDemoSectionEnterprise';
 import Image from 'next/image';
 import { CheckIcon } from '@heroicons/react/20/solid';
 
@@ -64,6 +65,8 @@ const EnterprisePage = () => {
           </div>
         </div>
       </section>
+
+      <ProductDemoSectionEnterprise />
 
       {/* Feature section */}
       <section className="py-16 md:py-18">
@@ -196,7 +199,7 @@ const EnterprisePage = () => {
           </a>
         </div>
       </section>
-
+      
       <Footer />
     </div>
   );
