@@ -130,13 +130,13 @@ const EnterprisePage = () => {
             {/* Add "px-4 md:px-0" to the grid container */}
             <div className="bg-white p-6 rounded-lg shadow-md">
               <p className="text-lg italic mb-4">
-                &quot;You took my brain and turned it into a phenomenal asset. I could not do this at all without Kahana - I wouldn't even know where to start.&quot;
+                &quot;You took my brain and turned it into a phenomenal asset. I could not do this at all without Kahana - I wouldn&apos;t even know where to start.&quot;
               </p>
               <p className="font-semibold">Tay L., CEO at TheCorporateCreator LLC</p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md">
               <p className="text-lg italic mb-4">
-                &quot;It's finally out of my head! It's such a relief to have all my knowledge in Kahana hubs.&quot;
+                &quot;It&apos;s finally out of my head! I&apos;ve been wanting to build digital products for months and couldn&apos;t make any progress; Kahana streamlined it and made it so much easier.&quot;
               </p>
               <p className="font-semibold">Gregory G., CEO at Gray Solutions, LLC</p>
             </div>
