@@ -58,6 +58,7 @@ const EnterprisePage = () => {
               frameBorder="0"
               title="Kahana Hub"
               allowFullScreen
+              loading="lazy"
             ></iframe>
           </div>
           <div className="md:px-12 lg:px-24 mt-4 text-gray-500 text-center">
