@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react';
 import clsx from 'clsx';
 import Image from 'next/image';
 
-import collaborate from '../assets/images/collaborate.webp';
-import explore from '../assets/images/explore.webp';
-import monetize from '../assets/images/monetize.webp';
+import community from '../assets/images/collaborate.webp';
+import collaboration from '../assets/images/explore.webp';
+import revenue from '../assets/images/revenue.png';
 import { Container } from './Container';
 
 const features = [
@@ -12,21 +12,21 @@ const features = [
     title: 'Recurring Revenue',
     description:
       'Build dynamic hubs of all your best data, templates, insights, research, methodologies, and best practices. It\'s like charging for access to your firm\'s brain.',
-    image: explore,
+    image: revenue,
     link: '/product/recurring-revenue', // Add the link for Recurring Revenue
   },
   {
     title: 'Collaboration Tools',
     description:
       'Enable colleagues and experts across your organization to contribute and build hubs together.',
-    image: monetize,
+    image: collaboration,
     link: '/product/collaboration-tools', // Add the link for Collaboration Tools
   },
   {
     title: 'Community Engagement',
     description:
       'Collaborate with customers to gather feedback and create an engaging environment where customers can connect with one another.',
-    image: collaborate,
+    image: community,
     link: '/product/community-engagement', // Add the link for Community Engagement
   },
 ];
