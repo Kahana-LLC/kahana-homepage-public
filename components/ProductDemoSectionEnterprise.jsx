@@ -93,26 +93,30 @@ export default function ProductDemoSection() {
           <div className="mt-16 space-y-12">
             {features.map((feature) => (
               <div key={feature.title} className="space-y-6 flex flex-col lg:flex-row lg:space-x-6">
-                <div className="max-w-[45rem] mx-auto lg:w-1/2">
-                  <h2 className="text-2xl font-semibold text-black">
-                    {feature.title}
-                  </h2>
-                  <p className="mt-2 text-lg text-black">
-                    {feature.description}
-                    <br /><br />
-                    <a href={feature.link} className="underline" style={{ pointerEvents: 'auto' }}>
-                      Learn more
-                    </a>
-                  </p>
-                </div>
-                <div className="max-w-[45rem] mx-auto lg:w-1/2">
-                  <Image
-                    className="w-full"
-                    src={feature.image}
-                    alt=""
-                    priority
-                    sizes="(min-width: 1024px) 45rem, (min-width: 640px) 100vw, 90vw"
-                  />
+                <div className="max-w-[45rem] mx-auto rounded-lg bg-gray-100 p-4">
+                  <div className="flex items-center space-x-6">
+                    <div className="w-1/2">
+                      <h2 className="text-2xl font-semibold text-black">
+                        {feature.title}
+                      </h2>
+                      <p className="mt-2 text-lg text-black">
+                        {feature.description}
+                        <br /><br />
+                        <a href={feature.link} className="underline" style={{ pointerEvents: 'auto' }}>
+                          Learn more
+                        </a>
+                      </p>
+                    </div>
+                    <div className="w-1/2">
+                      <Image
+                        className="w-full"
+                        src={feature.image}
+                        alt=""
+                        priority
+                        sizes="(min-width: 1024px) 45rem, (min-width: 640px) 100vw, 90vw"
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}
