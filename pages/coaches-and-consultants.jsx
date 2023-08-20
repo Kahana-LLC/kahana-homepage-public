@@ -106,7 +106,7 @@ const CoachesPage = () => {
                 </li>
                 <li className="flex items-center space-x-3">
                   <CheckIcon className="h-5 w-5 text-green-500" aria-hidden="true" />
-                  <span className="text-sm text-gray-500">And More!</span>
+                  <span className="text-sm text-gray-500">And more!</span>
                 </li>
               </ul>
             </div>
@@ -117,7 +117,7 @@ const CoachesPage = () => {
       {/* Testimonial section */}
       <section className="py-16 md:py-18">
         <div className="container mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-8">What Our Clients Say</h2>
+          <h2 className="text-3xl font-bold mb-8">What our clients say</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-4 md:px-0">
             {/* Add "px-4 md:px-0" to the grid container */}
             <div className="bg-white p-6 rounded-lg shadow-md">
