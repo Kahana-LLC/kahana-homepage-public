@@ -1,6 +1,10 @@
 import Image from 'next/image';
 import { Container } from './Container';
 
+import collaborate from '../assets/images/collaborate.webp';
+import explore from '../assets/images/explore.webp';
+import monetize from '../assets/images/monetize.webp';
+
 const features = [
   {
     title: 'Share',
