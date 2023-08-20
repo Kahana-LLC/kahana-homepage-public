@@ -72,10 +72,14 @@ const EnterprisePage = () => {
       {/* What you get section */}
       <section className="py-12 md:py-16">
         <div className="container mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-8 md:px-12 lg:px-24">What you get with Enterprise</h2>
+          <h2 className="text-3xl font-bold mb-8 md:px-12 lg:px-24 px-4">What you get with Enterprise</h2>
           <div className="flex justify-center">
             <div className="mx-auto max-w-md p-6 bg-gray-100 rounded-lg">
               <ul className="space-y-4">
+                <li className="flex items-center space-x-3">
+                  <CheckIcon className="h-5 w-5 text-green-500" aria-hidden="true" />
+                  <span className="text-sm text-gray-500">Unlimited revenue streams</span>
+                </li>
                 <li className="flex items-center space-x-3">
                   <CheckIcon className="h-5 w-5 text-green-500" aria-hidden="true" />
                   <span className="text-sm text-gray-500">Real-time collaboration</span>
@@ -83,10 +87,6 @@ const EnterprisePage = () => {
                 <li className="flex items-center space-x-3">
                   <CheckIcon className="h-5 w-5 text-green-500" aria-hidden="true" />
                   <span className="text-sm text-gray-500">Sync across devices</span>
-                </li>
-                <li className="flex items-center space-x-3">
-                  <CheckIcon className="h-5 w-5 text-green-500" aria-hidden="true" />
-                  <span className="text-sm text-gray-500">Unlimited revenue streams</span>
                 </li>
                 <li className="flex items-center space-x-3">
                   <CheckIcon className="h-5 w-5 text-green-500" aria-hidden="true" />
@@ -155,7 +155,7 @@ const EnterprisePage = () => {
       <section className="py-16 md:py-18">
         <div className="container mx-auto text-center">
           <h2 className="text-3xl font-bold mb-8 md:px-12 lg:px-24">Get a demo</h2>
-          <p className="mb-4 md:px-12 lg:px-24">Talk to a human to understand how Kahana can help your org.</p>
+          <p className="mb-4 px-4">Talk to a human to understand how Kahana can help your org.</p>
           <a
             href="https://7hkdcfzbmr0.typeform.com/to/ZYLHazEf?utm_content=enterprise_page"
             className="bg-[#3B675E] text-white py-2 px-6 rounded-md text-center inline-block mx-auto max-w-md"
