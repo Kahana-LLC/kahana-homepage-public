@@ -68,54 +68,6 @@ const EnterprisePage = () => {
       </section>
 
       <ProductDemoSectionEnterprise />
-
-      {/* Feature section */}
-      <section className="py-16 md:py-18">
-        <div className="container mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-4 md:px-12 lg:px-24">
-            Manage your recurring revenue streams, collaborate with your team, and gather customer feedback, all in one place.
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-4 md:px-0">
-            {/* Add "px-4 md:px-0" to the grid container */}
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <Image
-                src="/feature-1.png"
-                alt="Feature 1"
-                width={64}
-                height={64}
-              />
-              <h3 className="text-xl font-semibold mt-4">Recurring Revenue</h3>
-              <p className="mt-2">
-                Build dynamic hubs of all your best data, templates, insights, research, methodologies, and best practices. It&apos;s like charging for access to your firm&apos;s brain. 
-              </p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <Image
-                src="/feature-1.png"
-                alt="Feature 1"
-                width={64}
-                height={64}
-              />
-              <h3 className="text-xl font-semibold mt-4">Collaboration Tools</h3>
-              <p className="mt-2">
-                Enable colleagues and experts across your organization to contribute and build hubs together.
-              </p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <Image
-                src="/feature-1.png"
-                alt="Feature 1"
-                width={64}
-                height={64}
-              />
-              <h3 className="text-xl font-semibold mt-4">Community Engagement</h3>
-              <p className="mt-2">
-                Collaborate with customers to gather feedback and create an engaging environment where customers can connect with one another.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
       
       {/* What you get section */}
       <section className="py-12 md:py-16">
