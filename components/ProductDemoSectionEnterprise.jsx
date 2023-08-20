@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import Image from 'next/image';
 
 import collaborate from '../assets/images/collaborate.webp';
-import revenue from '../assets/images/explore.webp';
+import explore from '../assets/images/explore.webp';
 import monetize from '../assets/images/monetize.webp';
 import { Container } from './Container';
 
@@ -12,7 +12,7 @@ const features = [
     title: 'Recurring Revenue',
     description:
       'Build dynamic hubs of all your best data, templates, insights, research, methodologies, and best practices. It\'s like charging for access to your firm\'s brain.',
-    image: revenue,
+    image: explore,
     link: '/product/recurring-revenue', // Add the link for Recurring Revenue
   },
   {
@@ -92,8 +92,8 @@ export default function ProductDemoSection() {
         ) : (
           <div className="mt-16 space-y-12">
             {features.map((feature) => (
-              <div key={feature.title} className="space-y-6 lg:flex lg:space-x-6">
-                <div className="max-w-[45rem] mx-auto lg:w-1/2 p-6 bg-gray-100 rounded-lg">
+              <div key={feature.title} className="space-y-6 bg-gray-100 rounded-lg p-6">
+                <div className="max-w-[45rem] mx-auto">
                   <h2 className="text-2xl font-semibold text-black">
                     {feature.title}
                   </h2>
@@ -105,13 +105,13 @@ export default function ProductDemoSection() {
                     </a>
                   </p>
                 </div>
-                <div className="max-w-[45rem] mx-auto lg:w-1/2 relative">
+                <div className="max-w-[45rem] mx-auto">
                   <Image
-                    className="w-full absolute left-0"
+                    className="w-full"
                     src={feature.image}
                     alt=""
                     priority
-                    sizes="(min-width: 1024px) 80%, (min-width: 640px) 100vw, 90vw"
+                    sizes="(min-width: 1024px) 45rem, (min-width: 640px) 100vw, 90vw"
                   />
                 </div>
               </div>
