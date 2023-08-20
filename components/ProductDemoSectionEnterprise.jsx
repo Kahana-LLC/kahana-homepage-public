@@ -39,8 +39,8 @@ export default function ProductDemoSection() {
       className="overflow-hidden py-16 md:py-18"
     >
       <Container>
-        <div className="max-w-2xl md:mx-auto md:text-center xl:max-w-none text-center">
-          <h2 className="text-3xl font-bold mb-4 md:px-12 lg:px-24">
+        <div className="max-w-2xl md:mx-auto md:text-center xl:max-w-none">
+          <h2 className="text-3xl font-bold mb-4 md:px-12 lg:px-24 text-center">
             Manage your recurring revenue streams, collaborate with your team, and gather customer feedback, all in one place.
           </h2>
         </div>
@@ -49,10 +49,10 @@ export default function ProductDemoSection() {
             <div key={feature.title} className="space-y-6">
               <div className="max-w-[45rem] mx-auto flex flex-col md:flex-row items-center space-x-8">
                 <div className="md:w-1/2">
-                  <h2 className="text-2xl font-semibold text-black">
+                  <h2 className="text-2xl font-semibold text-black text-center md:text-left">
                     {feature.title}
                   </h2>
-                  <p className="mt-4 md:mt-0 text-lg text-black md:w-4/5">
+                  <p className="mt-4 md:mt-0 text-lg text-black md:w-4/5 text-center md:text-left">
                     {feature.description}
                     <br /><br />
                     <a href={feature.link} className="underline">
