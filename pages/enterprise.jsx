@@ -72,7 +72,7 @@ const EnterprisePage = () => {
       {/* What you get section */}
       <section className="py-12 md:py-16">
         <div className="container mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-8">What you get with Enterprise</h2>
+          <h2 className="text-3xl font-bold mb-8 md:px-12 lg:px-24">What you get with Enterprise</h2>
           <div className="flex justify-center">
             <div className="mx-auto max-w-md p-6 bg-gray-100 rounded-lg">
               <ul className="space-y-4">
@@ -136,15 +136,15 @@ const EnterprisePage = () => {
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md">
               <p className="text-lg italic mb-4">
-                &quot;It&apos;s finally out of my head! I&apos;ve been wanting to build digital products for months and couldn&apos;t make any progress; Kahana streamlined it and made it so much easier.&quot;
-              </p>
-              <p className="font-semibold">Gregory G., CEO at Gray Solutions, LLC</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <p className="text-lg italic mb-4">
                 &quot;I love how easy it is to set-up, make changes, add value & connect with your audience. The platform has allowed me to monetize my knowledge, and added a passive revenue stream to my small business.&quot;
               </p>
               <p className="font-semibold">Kelsey V., CEO at Kelsey Vetter Co LLC</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <p className="text-lg italic mb-4">
+                &quot;It&apos;s finally out of my head! I&apos;ve been wanting to build digital products for months and couldn&apos;t make any progress; Kahana streamlined it and made it so much easier.&quot;
+              </p>
+              <p className="font-semibold">Gregory G., CEO at Gray Solutions, LLC</p>
             </div>
             {/* Repeat similar blocks for other testimonials */}
           </div>
@@ -154,8 +154,8 @@ const EnterprisePage = () => {
       {/* Contact section */}
       <section className="py-16 md:py-18">
         <div className="container mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-8">Get a demo</h2>
-          <p className="mb-4">Talk to a human to understand how Kahana can help your org.</p>
+          <h2 className="text-3xl font-bold mb-8 md:px-12 lg:px-24">Get a demo</h2>
+          <p className="mb-4 md:px-12 lg:px-24">Talk to a human to understand how Kahana can help your org.</p>
           <a
             href="https://7hkdcfzbmr0.typeform.com/to/ZYLHazEf?utm_content=enterprise_page"
             className="bg-[#3B675E] text-white py-2 px-6 rounded-md text-center inline-block mx-auto max-w-md"
