@@ -65,7 +65,31 @@ export default function ProductDemoSection() {
             you.
           </p>
         </div>
-        {tabOrientation === 'horizontal' ? (
+        {tabOrientation === 'vertical' ? (
+          <div className="mt-16 space-y-12">
+            {features.map((feature) => (
+              <div key={feature.title} className="space-y-6">
+                <div className="max-w-[45rem] mx-auto">
+                  <h2 className="text-2xl font-semibold text-white">
+                    {feature.title}
+                  </h2>
+                  <p className="mt-2 text-lg text-white">
+                    {feature.description}
+                  </p>
+                </div>
+                <div className="max-w-[45rem] mx-auto">
+                  <Image
+                    className="w-full"
+                    src={feature.image}
+                    alt=""
+                    priority
+                    sizes="(min-width: 1024px) 45rem, (min-width: 640px) 100vw, 90vw"
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : (
           <Tab.Group
             as="div"
             className="mt-16 grid grid-cols-1 items-center gap-y-2 pt-10 sm:gap-y-6 md:mt-20 lg:grid-cols-12 lg:pt-0"
@@ -136,30 +160,6 @@ export default function ProductDemoSection() {
               </>
             )}
           </Tab.Group>
-        ) : (
-          <div className="mt-16 space-y-12">
-            {features.map((feature) => (
-              <div key={feature.title} className="space-y-6">
-                <div className="max-w-[45rem] mx-auto">
-                  <h2 className="text-2xl font-semibold text-white">
-                    {feature.title}
-                  </h2>
-                  <p className="mt-2 text-lg text-white">
-                    {feature.description}
-                  </p>
-                </div>
-                <div className="max-w-[45rem] mx-auto">
-                  <Image
-                    className="w-full"
-                    src={feature.image}
-                    alt=""
-                    priority
-                    sizes="(min-width: 1024px) 45rem, (min-width: 640px) 100vw, 90vw"
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
         )}
       </Container>
     </section>
