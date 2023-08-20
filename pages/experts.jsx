@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Footer from '../components/Footer';
 import NavbarDup from '../components/NavbarDup';
-import ProductDemoSectionCoaches from '../components/ProductDemoSectionExperts';
+import ProductDemoSectionExperts from '../components/ProductDemoSectionExperts';
 import Image from 'next/image';
 import { CheckIcon } from '@heroicons/react/20/solid';
 
