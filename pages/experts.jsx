@@ -137,7 +137,7 @@ const ExpertsPage = () => {
               <p className="text-lg italic mb-4">
                 &quot;It&apos;s finally out of my head! I&apos;ve been wanting to build digital products for months and couldn&apos;t make any progress; Kahana streamlined it and made it so much easier.&quot;
               </p>
-              <p className="font-semibold">Gregory G., Executive Coach & Business Consultant</p>
+              <p className="font-semibold">Gregory G., Business Process Expert</p>
             </div>
             {/* Repeat similar blocks for other testimonials */}
           </div>
