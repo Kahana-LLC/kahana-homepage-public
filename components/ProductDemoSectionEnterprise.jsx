@@ -97,7 +97,7 @@ export default function ProductDemoSection() {
                   <h2 className="text-2xl font-semibold text-black">
                     {feature.title}
                   </h2>
-                  <p className="mt-2 text-lg text-black">
+                  <p className="mt-2 text-lg text-black lg:w-3/4">
                     {feature.description}
                     <br /><br />
                     <a href={feature.link} className="underline" style={{ pointerEvents: 'auto' }}>
@@ -111,7 +111,7 @@ export default function ProductDemoSection() {
                     src={feature.image}
                     alt=""
                     priority
-                    sizes="(min-width: 1024px) 45rem, (min-width: 640px) 100vw, 90vw"
+                    sizes="(min-width: 1024px) 70%, (min-width: 640px) 100vw, 90vw"
                   />
                 </div>
               </div>
