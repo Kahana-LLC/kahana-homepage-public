@@ -1,6 +1,7 @@
 import { Tab } from '@headlessui/react';
 import clsx from 'clsx';
 import Image from 'next/image';
+import Link from 'next/link'; // Import Link from Next.js
 import { useEffect, useState } from 'react';
 
 import collaborate from '../assets/images/collaborate.webp';
@@ -12,31 +13,34 @@ const features = [
   {
     title: 'Recurring Revenue',
     description:
-      'Build dynamic hubs of all your best data, templates, insights, research, methodologies, and best practices. It\'s like charging for access to your firm\'s brain.',
+      'Build dynamic hubs of all your best data, templates, insights, research, methodologies, and best practices. It\'s like charging for access to your firm\'s brain. Learn more',
     image: explore,
+    link: '/product/recurring-revenue', // Add the link for Recurring Revenue
   },
   {
     title: 'Collaboration Tools',
     description:
-      'Enable colleagues and experts across your organization to contribute and build hubs together.',
+      'Enable colleagues and experts across your organization to contribute and build hubs together. Learn more',
     image: monetize,
+    link: '/product/collaboration-tools', // Add the link for Collaboration Tools
   },
   {
     title: 'Community Engagement',
     description:
-      'Collaborate with customers to gather feedback and create an engaging environment where customers can connect with one another.',
+      'Collaborate with customers to gather feedback and create an engaging environment where customers can connect with one another. Learn more',
     image: collaborate,
+    link: '/product/community-engagement', // Add the link for Community Engagement
   },
 ];
 
 export default function ProductDemoSection() {
-  let [tabOrientation, setTabOrientation] = useState('vertical'); // Change the initial value
+  let [tabOrientation, setTabOrientation] = useState('vertical');
 
   useEffect(() => {
     let lgMediaQuery = window.matchMedia('(min-width: 1024px)');
 
     function onMediaQueryChange({ matches }) {
-      setTabOrientation(matches ? 'horizontal' : 'vertical'); // Switch the values here
+      setTabOrientation(matches ? 'horizontal' : 'vertical');
     }
 
     onMediaQueryChange(lgMediaQuery);
@@ -64,11 +68,15 @@ export default function ProductDemoSection() {
             {features.map((feature) => (
               <div key={feature.title} className="space-y-6">
                 <div className="max-w-[45rem] mx-auto">
-                  <h2 className="text-2xl font-semibold text-white">
+                  <h2 className="text-2xl font-semibold text-black"> {/* Change text color to black */}
                     {feature.title}
                   </h2>
-                  <p className="mt-2 text-lg text-white">
+                  <p className="mt-2 text-lg text-black"> {/* Change text color to black */}
                     {feature.description}
+                    <br /><br /> {/* Add line breaks */}
+                    <Link href={feature.link}>
+                      <a className="underline">Learn more</a> {/* Add Learn more link */}
+                    </Link>
                   </p>
                 </div>
                 <div className="max-w-[45rem] mx-auto">
@@ -99,8 +107,8 @@ export default function ProductDemoSection() {
                         className={clsx(
                           'group relative rounded-full py-1 px-4 lg:rounded-r-none lg:rounded-l-xl lg:p-6',
                           selectedIndex === featureIndex
-                            ? 'bg-white lg:bg-white/10 lg:ring-1 lg:ring-inset lg:ring-white/10'
-                            : 'hover:bg-white/10 lg:hover:bg-white/5'
+                            ? 'bg-black lg:bg-black/10 lg:ring-1 lg:ring-inset lg:ring-black/10' // Change border color to black
+                            : 'hover:bg-black/10 lg:hover:bg-black/5' // Change hover border color to black
                         )}
                       >
                         <h3>
@@ -108,8 +116,8 @@ export default function ProductDemoSection() {
                             className={clsx(
                               'font-display text-lg focus:outline-none',
                               selectedIndex === featureIndex
-                                ? 'text-[#338161] lg:text-white'
-                                : 'text-white hover:text-white lg:text-white'
+                                ? 'text-[#338161] lg:text-black' // Change tab text color to black
+                                : 'text-black hover:text-black lg:text-black' // Change tab hover text color to black
                             )}
                           >
                             <span className="absolute inset-0 rounded-full lg:rounded-r-none lg:rounded-l-xl" />
@@ -120,11 +128,15 @@ export default function ProductDemoSection() {
                           className={clsx(
                             'mt-2 hidden text-sm lg:block',
                             selectedIndex === featureIndex
-                              ? 'text-white'
-                              : 'text-white group-hover:text-white'
+                              ? 'text-black' // Change description text color to black
+                              : 'text-black group-hover:text-black' // Change description hover text color to black
                           )}
                         >
                           {feature.description}
+                          <br /><br /> {/* Add line breaks */}
+                          <Link href={feature.link}>
+                            <a className="underline">Learn more</a> {/* Add Learn more link */}
+                          </Link>
                         </p>
                       </div>
                     ))}
@@ -134,9 +146,13 @@ export default function ProductDemoSection() {
                   {features.map((feature) => (
                     <Tab.Panel key={feature.title} unmount={false}>
                       <div className="relative sm:px-6 lg:hidden">
-                        <div className="absolute -inset-x-4 top-[-6.5rem] bottom-[-4.25rem] bg-white/10 ring-1 ring-inset ring-white/10 sm:inset-x-0 sm:rounded-t-xl" />
-                        <p className="relative mx-auto max-w-2xl text-base text-white sm:text-center">
+                        <div className="absolute -inset-x-4 top-[-6.5rem] bottom-[-4.25rem] bg-black/10 ring-1 ring-inset ring-black/10 sm:inset-x-0 sm:rounded-t-xl" /> {/* Change background and border color to black */}
+                        <p className="relative mx-auto max-w-2xl text-base text-black sm:text-center">
                           {feature.description}
+                          <br /><br /> {/* Add line breaks */}
+                          <Link href={feature.link}>
+                            <a className="underline">Learn more</a> {/* Add Learn more link */}
+                          </Link>
                         </p>
                       </div>
                       <div className="mt-10 w-[45rem] overflow-hidden rounded-xl bg-slate-50 shadow-xl sm:w-auto lg:mt-0 lg:w-[67.8125rem]">
