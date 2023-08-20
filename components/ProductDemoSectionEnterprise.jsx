@@ -1,7 +1,6 @@
 import { Tab } from '@headlessui/react';
 import clsx from 'clsx';
 import Image from 'next/image';
-import Link from 'next/link'; // Import Link from Next.js
 import { useEffect, useState } from 'react';
 
 import collaborate from '../assets/images/collaborate.webp';
@@ -51,6 +50,11 @@ export default function ProductDemoSection() {
     };
   }, []);
 
+  const handleLearnMoreClick = (link) => {
+    // Navigate to the Learn More link
+    window.location.href = link;
+  };
+
   return (
     <section
       id="features"
@@ -74,9 +78,12 @@ export default function ProductDemoSection() {
                   <p className="mt-2 text-lg text-black">
                     {feature.description}
                     <br /><br />
-                    <Link href={feature.link}>
-                      <a className="underline">Learn more</a>
-                    </Link>
+                    <button
+                      className="underline"
+                      onClick={() => handleLearnMoreClick(feature.link)}
+                    >
+                      Learn more
+                    </button>
                   </p>
                 </div>
                 <div className="max-w-[45rem] mx-auto">
@@ -134,9 +141,12 @@ export default function ProductDemoSection() {
                         >
                           {feature.description}
                           <br /><br />
-                          <Link href={feature.link}>
-                            <a className="underline">Learn more</a>
-                          </Link>
+                          <button
+                            className="underline"
+                            onClick={() => handleLearnMoreClick(feature.link)}
+                          >
+                            Learn more
+                          </button>
                         </p>
                       </div>
                     ))}
@@ -150,9 +160,12 @@ export default function ProductDemoSection() {
                         <p className="relative mx-auto max-w-2xl text-base text-black sm:text-center">
                           {feature.description}
                           <br /><br />
-                          <Link href={feature.link}>
-                            <a className="underline">Learn more</a>
-                          </Link>
+                          <button
+                            className="underline"
+                            onClick={() => handleLearnMoreClick(feature.link)}
+                          >
+                            Learn more
+                          </button>
                         </p>
                       </div>
                       <div className="mt-10 w-[45rem] overflow-hidden rounded-xl bg-slate-50 shadow-xl sm:w-auto lg:mt-0 lg:w-[67.8125rem]">
