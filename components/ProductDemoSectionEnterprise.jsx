@@ -10,21 +10,21 @@ import { Container } from './Container';
 
 const features = [
   {
-    title: 'Share',
+    title: 'Recurring Revenue',
     description:
-      'Flip a switch and get in front of viewers all over the world. Get exposure to folks who can’t wait for your stuff.',
+      'Build dynamic hubs of all your best data, templates, insights, research, methodologies, and best practices. It\'s like charging for access to your firm\'s brain.',
     image: explore,
   },
   {
-    title: 'Monetize',
+    title: 'Collaboration Tools',
     description:
-      'Money appears in your bank account like magic. Create a delightfully casual subscription flow. Connect through Stripe to receive payments.',
+      'Enable colleagues and experts across your organization to contribute and build hubs together.',
     image: monetize,
   },
   {
-    title: 'Collaborate',
+    title: 'Community Engagement',
     description:
-      'No need to create alone - build hubs together. Invite and collaborate with other creators and experts to make something special.',
+      'Collaborate with customers to gather feedback and create an engaging environment where customers can connect with one another.',
     image: collaborate,
   },
 ];
@@ -51,19 +51,13 @@ export default function ProductDemoSection() {
     <section
       id="features"
       aria-label="Features for running your books"
-      className="overflow-hidden bg-gradient-to-l from-green-200 via-[#038270] to-[#338161] pt-20 pb-28 sm:py-32"
+      className="overflow-hidden py-16 md:py-18"
     >
       <Container>
         <div className="max-w-2xl md:mx-auto md:text-center xl:max-w-none">
-          <h1 className="py-4 bg-clip-text text-white text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
-            Built for Creators and Experts
-          </h1>
-          <p className="mt-6 text-xl tracking-tight text-white">
-            You have years of valuable information sitting in your brain and
-            resources gathering dust in a (digital) folder. Kahana helps you
-            turn your collective knowledge into hubs that generate income for
-            you.
-          </p>
+          <h2 className="text-3xl font-bold mb-4 md:px-12 lg:px-24">
+            Manage your recurring revenue streams, collaborate with your team, and gather customer feedback, all in one place.
+          </h2>
         </div>
         {tabOrientation === 'vertical' ? (
           <div className="mt-16 space-y-12">
