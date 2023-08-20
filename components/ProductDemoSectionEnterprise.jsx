@@ -39,7 +39,7 @@ export default function ProductDemoSection() {
       className="overflow-hidden py-16 md:py-18"
     >
       <Container>
-        <div className="max-w-2xl md:mx-auto md:text-center xl:max-w-none">
+        <div className="max-w-2xl md:mx-auto md:text-center xl:max-w-none text-center">
           <h2 className="text-3xl font-bold mb-4 md:px-12 lg:px-24">
             Manage your recurring revenue streams, collaborate with your team, and gather customer feedback, all in one place.
           </h2>
@@ -52,7 +52,7 @@ export default function ProductDemoSection() {
                   <h2 className="text-2xl font-semibold text-black">
                     {feature.title}
                   </h2>
-                  <p className="mt-2 text-lg text-black">
+                  <p className="mt-4 md:mt-0 text-lg text-black md:w-4/5">
                     {feature.description}
                     <br /><br />
                     <a href={feature.link} className="underline">
@@ -61,13 +61,15 @@ export default function ProductDemoSection() {
                   </p>
                 </div>
                 <div className="md:w-1/2">
-                  <Image
-                    className="w-full"
-                    src={feature.image}
-                    alt=""
-                    priority
-                    sizes="(min-width: 1024px) 45rem, (min-width: 640px) 100vw, 90vw"
-                  />
+                  <div className="md:pl-8"> {/* Add some padding */}
+                    <Image
+                      className="w-full"
+                      src={feature.image}
+                      alt=""
+                      priority
+                      sizes="(min-width: 1024px) 45rem, (min-width: 640px) 100vw, 90vw"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
