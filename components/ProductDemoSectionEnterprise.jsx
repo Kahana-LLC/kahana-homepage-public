@@ -93,7 +93,7 @@ export default function ProductDemoSection() {
           <div className="mt-16 space-y-12">
             {features.map((feature) => (
               <div key={feature.title} className="space-y-6 flex flex-col lg:flex-row lg:space-x-6">
-                <div className="max-w-[45rem] mx-auto lg:w-1/2">
+                <div className="max-w-[45rem] mx-auto lg:w-1/2 p-6 bg-gray-100 rounded-lg">
                   <h2 className="text-2xl font-semibold text-black">
                     {feature.title}
                   </h2>
