@@ -7,7 +7,7 @@ import ProductDemoSectionCoaches from '../components/ProductDemoSectionExperts';
 import Image from 'next/image';
 import { CheckIcon } from '@heroicons/react/20/solid';
 
-const CoachesPage = () => {
+const ExpertsPage = () => {
   return (
     <div>
       <Head>
@@ -162,4 +162,4 @@ const CoachesPage = () => {
   );
 };
 
-export default CoachesPage;
+export default ExpertsPage;
