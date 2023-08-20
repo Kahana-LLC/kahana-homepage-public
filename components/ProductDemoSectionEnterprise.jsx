@@ -1,9 +1,11 @@
+import { Tab } from '@headlessui/react';
 import Image from 'next/image';
-import { Container } from './Container';
+import { useEffect, useState } from 'react';
 
 import collaborate from '../assets/images/collaborate.webp';
 import explore from '../assets/images/explore.webp';
 import monetize from '../assets/images/monetize.webp';
+import { Container } from './Container';
 
 const features = [
   {
@@ -27,6 +29,23 @@ const features = [
 ];
 
 export default function ProductDemoSection() {
+  let [tabOrientation, setTabOrientation] = useState('horizontal');
+
+  useEffect(() => {
+    let lgMediaQuery = window.matchMedia('(min-width: 1024px)');
+
+    function onMediaQueryChange({ matches }) {
+      setTabOrientation(matches ? 'vertical' : 'horizontal');
+    }
+
+    onMediaQueryChange(lgMediaQuery);
+    lgMediaQuery.addEventListener('change', onMediaQueryChange);
+
+    return () => {
+      lgMediaQuery.removeEventListener('change', onMediaQueryChange);
+    };
+  }, []);
+
   return (
     <section
       id="features"
@@ -39,27 +58,107 @@ export default function ProductDemoSection() {
             Built for Creators and Experts
           </h1>
           <p className="mt-6 text-xl tracking-tight text-white">
-            You have years of valuable information sitting in your brain and resources gathering dust in a (digital) folder. Kahana helps you turn your collective knowledge into hubs that generate income for you.
+            You have years of valuable information sitting in your brain and
+            resources gathering dust in a (digital) folder. Kahana helps you
+            turn your collective knowledge into hubs that generate income for
+            you.
           </p>
         </div>
-        <div className="grid grid-cols-1 gap-8 mt-12">
-          {features.map((feature) => (
-            <div key={feature.title} className="text-white">
-              <h2 className="text-3xl font-semibold mb-2">{feature.title}</h2>
-              <p className="text-lg mb-4">{feature.description}</p>
-              <div className="w-[45rem] overflow-hidden rounded-xl bg-slate-50 shadow-xl sm:w-auto">
-                <Image
-                  className="w-full"
-                  src={feature.image}
-                  alt=""
-                  priority
-                  sizes="(min-width: 1024px) 67.8125rem, (min-width: 640px) 100vw, 45rem"
-                />
+        {tabOrientation === 'horizontal' ? (
+          <Tab.Group
+            as="div"
+            className="mt-16 grid grid-cols-1 items-center gap-y-2 pt-10 sm:gap-y-6 md:mt-20 lg:grid-cols-12 lg:pt-0"
+            vertical={tabOrientation === 'vertical'}
+          >
+            {({ selectedIndex }) => (
+              <>
+                <div className="-mx-4 flex overflow-hidden pb-4 sm:mx-0 sm:overflow-hidden sm:pb-0 lg:col-span-5">
+                  <Tab.List className="relative z-10 flex gap-x-4 whitespace-nowrap px-4 sm:mx-auto sm:px-0 lg:mx-0 lg:block lg:gap-x-0 lg:gap-y-1 lg:whitespace-normal">
+                    {features.map((feature, featureIndex) => (
+                      <div
+                        key={feature.title}
+                        className={`${
+                          selectedIndex === featureIndex
+                            ? 'bg-white lg:bg-white/10 lg:ring-1 lg:ring-inset lg:ring-white/10'
+                            : 'hover:bg-white/10 lg:hover:bg-white/5'
+                        } group relative rounded-full py-1 px-4 lg:rounded-r-none lg:rounded-l-xl lg:p-6`}
+                      >
+                        <h3>
+                          <Tab
+                            className={`${
+                              selectedIndex === featureIndex
+                                ? 'text-[#338161] lg:text-white'
+                                : 'text-white hover:text-white lg:text-white'
+                            } font-display text-lg focus:outline-none`}
+                          >
+                            <span className="absolute inset-0 rounded-full lg:rounded-r-none lg:rounded-l-xl" />
+                            {feature.title}
+                          </Tab>
+                        </h3>
+                        <p
+                          className={`${
+                            selectedIndex === featureIndex
+                              ? 'text-white'
+                              : 'text-white group-hover:text-white'
+                          } mt-2 hidden text-sm lg:block`}
+                        >
+                          {feature.description}
+                        </p>
+                      </div>
+                    ))}
+                  </Tab.List>
+                </div>
+                <Tab.Panels className="lg:col-span-7">
+                  {features.map((feature) => (
+                    <Tab.Panel key={feature.title} unmount={false}>
+                      <div className="relative sm:px-6 lg:hidden">
+                        <div className="absolute -inset-x-4 top-[-6.5rem] bottom-[-4.25rem] bg-white/10 ring-1 ring-inset ring-white/10 sm:inset-x-0 sm:rounded-t-xl" />
+                        <p className="relative mx-auto max-w-2xl text-base text-white sm:text-center">
+                          {feature.description}
+                        </p>
+                      </div>
+                      <div className="mt-10 w-[45rem] overflow-hidden rounded-xl bg-slate-50 shadow-xl sm:w-auto lg:mt-0 lg:w-[67.8125rem]">
+                        <Image
+                          className="w-full"
+                          src={feature.image}
+                          alt=""
+                          priority
+                          sizes="(min-width: 1024px) 67.8125rem, (min-width: 640px) 100vw, 45rem"
+                        />
+                      </div>
+                    </Tab.Panel>
+                  ))}
+                </Tab.Panels>
+              </>
+            )}
+          </Tab.Group>
+        ) : (
+          <div className="mt-16 space-y-12">
+            {features.map((feature) => (
+              <div key={feature.title} className="space-y-6">
+                <div className="max-w-[45rem] mx-auto">
+                  <h2 className="text-2xl font-semibold text-white">
+                    {feature.title}
+                  </h2>
+                  <p className="mt-2 text-lg text-white">
+                    {feature.description}
+                  </p>
+                </div>
+                <div className="max-w-[45rem] mx-auto">
+                  <Image
+                    className="w-full"
+                    src={feature.image}
+                    alt=""
+                    priority
+                    sizes="(min-width: 1024px) 45rem, (min-width: 640px) 100vw, 90vw"
+                  />
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
       </Container>
     </section>
   );
 }
+
