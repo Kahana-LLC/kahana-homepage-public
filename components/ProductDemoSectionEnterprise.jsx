@@ -50,11 +50,6 @@ export default function ProductDemoSection() {
     };
   }, []);
 
-  const handleLearnMoreClick = (link) => {
-    // Navigate to the Learn More link
-    window.location.href = link;
-  };
-
   return (
     <section
       id="features"
@@ -62,7 +57,7 @@ export default function ProductDemoSection() {
       className="overflow-hidden py-16 md:py-18"
     >
       <Container>
-        <div className="max-w-2xl md:mx-auto md:text-center xl:max-w-none text-center">
+        <div className="max-w-2xl md:mx-auto md:text-center xl:max-w-none">
           <h2 className="text-3xl font-bold mb-4 md:px-12 lg:px-24">
             Manage your recurring revenue streams, collaborate with your team, and gather customer feedback, all in one place.
           </h2>
@@ -78,12 +73,9 @@ export default function ProductDemoSection() {
                   <p className="mt-2 text-lg text-black">
                     {feature.description}
                     <br /><br />
-                    <button
-                      className="underline"
-                      onClick={() => handleLearnMoreClick(feature.link)}
-                    >
+                    <a href={feature.link} className="underline" style={{ pointerEvents: 'auto' }}>
                       Learn more
-                    </button>
+                    </a>
                   </p>
                 </div>
                 <div className="max-w-[45rem] mx-auto">
@@ -141,12 +133,9 @@ export default function ProductDemoSection() {
                         >
                           {feature.description}
                           <br /><br />
-                          <button
-                            className="underline"
-                            onClick={() => handleLearnMoreClick(feature.link)}
-                          >
+                          <a href={feature.link} className="underline" style={{ pointerEvents: 'auto' }}>
                             Learn more
-                          </button>
+                          </a>
                         </p>
                       </div>
                     ))}
@@ -160,12 +149,9 @@ export default function ProductDemoSection() {
                         <p className="relative mx-auto max-w-2xl text-base text-black sm:text-center">
                           {feature.description}
                           <br /><br />
-                          <button
-                            className="underline"
-                            onClick={() => handleLearnMoreClick(feature.link)}
-                          >
+                          <a href={feature.link} className="underline" style={{ pointerEvents: 'auto' }}>
                             Learn more
-                          </button>
+                          </a>
                         </p>
                       </div>
                       <div className="mt-10 w-[45rem] overflow-hidden rounded-xl bg-slate-50 shadow-xl sm:w-auto lg:mt-0 lg:w-[67.8125rem]">
