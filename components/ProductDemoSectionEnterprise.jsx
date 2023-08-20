@@ -93,7 +93,7 @@ export default function ProductDemoSection() {
           <div className="mt-16 space-y-12">
             {features.map((feature) => (
               <div key={feature.title} className="space-y-6 flex flex-col lg:flex-row lg:space-x-6">
-                <div className="max-w-[45rem] mx-auto rounded-lg bg-gray-100 p-4">
+                <div className="max-w-[75rem] mx-auto rounded-lg bg-gray-100 p-4">
                   <div className="flex items-center space-x-6">
                     <div className="w-1/2">
                       <h2 className="text-2xl font-semibold text-black">
@@ -113,7 +113,7 @@ export default function ProductDemoSection() {
                         src={feature.image}
                         alt=""
                         priority
-                        sizes="(min-width: 1024px) 45rem, (min-width: 640px) 100vw, 90vw"
+                        sizes="(min-width: 1024px) 75rem, (min-width: 640px) 100vw, 90vw"
                       />
                     </div>
                   </div>
