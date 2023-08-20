@@ -95,7 +95,7 @@ export default function ProductDemoSection() {
               <div key={feature.title} className="space-y-6 flex flex-col lg:flex-row lg:space-x-6">
                 <div className="max-w-[70rem] mx-auto rounded-lg bg-gray-100 p-4">
                   <div className="flex items-center space-x-6">
-                    <div className="w-1/3">
+                    <div className="w-1/3 pl-4">
                       <h2 className="text-2xl font-semibold text-black">
                         {feature.title}
                       </h2>
