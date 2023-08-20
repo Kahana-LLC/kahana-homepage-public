@@ -13,21 +13,21 @@ const features = [
   {
     title: 'Recurring Revenue',
     description:
-      'Build dynamic hubs of all your best data, templates, insights, research, methodologies, and best practices. It\'s like charging for access to your firm\'s brain. Learn more',
+      'Build dynamic hubs of all your best data, templates, insights, research, methodologies, and best practices. It\'s like charging for access to your firm\'s brain.',
     image: explore,
     link: '/product/recurring-revenue', // Add the link for Recurring Revenue
   },
   {
     title: 'Collaboration Tools',
     description:
-      'Enable colleagues and experts across your organization to contribute and build hubs together. Learn more',
+      'Enable colleagues and experts across your organization to contribute and build hubs together.',
     image: monetize,
     link: '/product/collaboration-tools', // Add the link for Collaboration Tools
   },
   {
     title: 'Community Engagement',
     description:
-      'Collaborate with customers to gather feedback and create an engaging environment where customers can connect with one another. Learn more',
+      'Collaborate with customers to gather feedback and create an engaging environment where customers can connect with one another.',
     image: collaborate,
     link: '/product/community-engagement', // Add the link for Community Engagement
   },
@@ -58,7 +58,7 @@ export default function ProductDemoSection() {
       className="overflow-hidden py-16 md:py-18"
     >
       <Container>
-        <div className="max-w-2xl md:mx-auto md:text-center xl:max-w-none text-center">
+        <div className="max-w-2xl md:mx-auto md:text-center xl:max-w-none">
           <h2 className="text-3xl font-bold mb-4 md:px-12 lg:px-24">
             Manage your recurring revenue streams, collaborate with your team, and gather customer feedback, all in one place.
           </h2>
@@ -68,14 +68,14 @@ export default function ProductDemoSection() {
             {features.map((feature) => (
               <div key={feature.title} className="space-y-6">
                 <div className="max-w-[45rem] mx-auto">
-                  <h2 className="text-2xl font-semibold text-black"> {/* Change text color to black */}
+                  <h2 className="text-2xl font-semibold text-black">
                     {feature.title}
                   </h2>
-                  <p className="mt-2 text-lg text-black"> {/* Change text color to black */}
+                  <p className="mt-2 text-lg text-black">
                     {feature.description}
-                    <br /><br /> {/* Add line breaks */}
+                    <br /><br />
                     <Link href={feature.link}>
-                      <a className="underline">Learn more</a> {/* Add Learn more link */}
+                      <a className="underline">Learn more</a>
                     </Link>
                   </p>
                 </div>
@@ -133,9 +133,9 @@ export default function ProductDemoSection() {
                           )}
                         >
                           {feature.description}
-                          <br /><br /> {/* Add line breaks */}
+                          <br /><br />
                           <Link href={feature.link}>
-                            <a className="underline">Learn more</a> {/* Add Learn more link */}
+                            <a className="underline">Learn more</a>
                           </Link>
                         </p>
                       </div>
@@ -146,12 +146,12 @@ export default function ProductDemoSection() {
                   {features.map((feature) => (
                     <Tab.Panel key={feature.title} unmount={false}>
                       <div className="relative sm:px-6 lg:hidden">
-                        <div className="absolute -inset-x-4 top-[-6.5rem] bottom-[-4.25rem] bg-black/10 ring-1 ring-inset ring-black/10 sm:inset-x-0 sm:rounded-t-xl" /> {/* Change background and border color to black */}
+                        <div className="absolute -inset-x-4 top-[-6.5rem] bottom-[-4.25rem] bg-black/10 ring-1 ring-inset ring-black/10 sm:inset-x-0 sm:rounded-t-xl" />
                         <p className="relative mx-auto max-w-2xl text-base text-black sm:text-center">
                           {feature.description}
-                          <br /><br /> {/* Add line breaks */}
+                          <br /><br />
                           <Link href={feature.link}>
-                            <a className="underline">Learn more</a> {/* Add Learn more link */}
+                            <a className="underline">Learn more</a>
                           </Link>
                         </p>
                       </div>
