@@ -39,7 +39,7 @@ const CoachesPage = () => {
       <section className="py-16 md:py-18">
         <div className="container mx-auto px-4 md:px-8 text-center">
           <h1 className="text-5xl font-bold mb-4 md:px-12 lg:px-24">
-            Turn the knowledge you share with clients into recurring revenue streams 
+            Turn the knowledge you share with clients into recurring revenue 
           </h1>
           <p className="text-lg mb-8 md:px-12 lg:px-24 px-4">
             Don&apos;t just charge for your time. Charge for access to all the valuable information you&apos;ve learned from working with clients so you can earn passive income while you sleep.
