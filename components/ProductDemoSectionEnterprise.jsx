@@ -104,8 +104,10 @@ export default function ProductDemoSection() {
                       Learn more
                     </a>
                   </p>
+                </div>
+                <div className="max-w-[45rem] mx-auto lg:w-1/2 rounded-lg bg-gray-100 p-4">
                   <Image
-                    className="w-full mt-4"
+                    className="w-full"
                     src={feature.image}
                     alt=""
                     priority
@@ -120,4 +122,3 @@ export default function ProductDemoSection() {
     </section>
   );
 }
-
