@@ -56,7 +56,7 @@ export default function ProductDemoSection() {
       className="overflow-hidden py-16 md:py-18"
     >
       <Container>
-        <div className="max-w-2xl md:mx-auto md:text-center xl:max-w-none">
+        <div className="max-w-2xl md:mx-auto md:text-center xl:max-w-none text-center">
           <h2 className="text-3xl font-bold mb-4 md:px-12 lg:px-24">
             Manage your recurring revenue streams, collaborate with your team, and gather customer feedback, all in one place.
           </h2>
