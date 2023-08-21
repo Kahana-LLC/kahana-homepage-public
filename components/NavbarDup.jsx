@@ -6,10 +6,10 @@ import whiteKahanaLogo from '../assets/kahana_logo_wide_light.svg';
 import HeaderBanner from './HeaderBanner';
 
 const navigation = [
-  { name: 'Pricing', href: 'pricing' },
+  { name: 'Pricing', href: '/pricing' },
   { name: 'Blog', href: 'https://blog.kahana.co' },
-  { name: 'Resources', href: 'resources' },
-  { name: 'Solutions', href: 'solutions' },
+  { name: 'Resources', href: '/resources' },
+  { name: 'Solutions', href: '/solutions' },
 ];
 
 const navigation1 = [
