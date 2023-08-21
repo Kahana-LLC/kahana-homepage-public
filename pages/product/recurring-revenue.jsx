@@ -4,6 +4,7 @@ import Footer from '../../components/Footer';
 import NavbarDup from '../../components/NavbarDup';
 import Image from 'next/image';
 import bulkUpload from '../../assets/images/bulkUpload.gif';
+import connectStripe from '../../assets/images/connectStripe.gif';
 
 const features = [
   {
@@ -16,7 +17,7 @@ const features = [
     title: 'Connect to Stripe',
     description:
       'Connect to a new or existing Stripe account so that you can securely and seamlessly accept payments that go straight to your bank account for access to your hubs.',
-    image: '/wiki-feature-2.png',
+    image: connectStripe,
   },
   {
     title: 'Choose Your Price Point & Payment Type',
