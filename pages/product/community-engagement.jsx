@@ -3,39 +3,31 @@ import Head from 'next/head';
 import Footer from '../../components/Footer';
 import NavbarDup from '../../components/NavbarDup';
 import Image from 'next/image';
-import bulkUpload from '../../assets/images/bulkUpload.gif';
-import connectStripe from '../../assets/images/connectStripe.gif';
-import choosePricePoint from '../../assets/images/choosePricePoint.gif';
-import startEarning from '../../assets/images/startEarning.gif';
+import commentThread from '../../assets/images/commentThread.gif';
+import commentNotification from '../../assets/images/commentNotification.gif';
+import keepCustomersInformed from '../../assets/images/keepCustomersInformed.gif';
 
 const features = [
   {
-    title: 'Bulk Upload',
+    title: 'Connect with Your Customers',
     description:
-      'Add existing materials you\'ve already created or curated (e.g., PDFs, Notion pages, Google Docs, web pages, videos, etc.) and create notes with ease to quickly build repositories of knowledge.',
-    image: bulkUpload,
-    alt: 'How to bulk upload materials with Kahana',
+      'Each hub has a comment thread associated with it, where you can allow customers to ask questions, interact with one another, and share feedback/suggestions.',
+    image: commentThread,
+    alt: 'Comment thread in Kahana hubs where customers can connect',
   },
   {
-    title: 'Connect to Stripe',
+    title: 'Stay in the Loop',
     description:
-      'Connect to a new or existing Stripe account so that you can securely and seamlessly accept payments that go straight to your bank account for access to your hubs.',
-    image: connectStripe,
-    alt: 'How to connect your Kahana account to Stripe',
+      'Receive regular email notifications (limited to one per hour to spare your inbox) when new comments are left in your hub or a hub you&apos;re a part of so that you can stay informed and keep the conversation going.',
+    image: commentNotification,
+    alt: 'Email notification when your Kahana hub has a new comment',
   },
   {
-    title: 'Choose Your Price Point & Payment Type',
+    title: 'Keep Customers Informed & Happy',
     description:
-      'For each hub, choose how much you want to charge and whether it\'s a one-time payment or a recurring subscription to access.',
-    image: choosePricePoint,
-    alt: 'How to select your price point & payment type for Kahana hubs',
-  },
-  {
-    title: 'Start Earning!',
-    description:
-      'After you set your payment terms, a paywall will automatically be generated for you that you can begin sharing! Be sure to add a title, cover photo, and description to each hub to improve the experience for potential customers.',
-    image: startEarning,
-    alt: 'Sharing your Kahana hub link',
+      'Leave comments to notify customers of any updates you make to the hub, answer questions, and respond to requests.',
+    image: keepCustomersInformed,
+    alt: 'Leave comments in your hub when you make an update',
   },
 ];
 
