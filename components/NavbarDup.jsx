@@ -65,12 +65,68 @@ export default function NavbarDup() {
               />
             </Link>
 
+            <section className="MOBILE-MENU relative flex lg:hidden">
+              <div className="HAMBURGER-ICON space-y-2" onClick={toggleNavOpen}>
+                <span className={`block h-0.5 w-8 bg-gray-600 ${isNavOpen ? 'rotate-45 translate-y-1.5' : ''}`}></span>
+                <span className={`block h-0.5 w-8 bg-gray-600 ${isNavOpen ? 'opacity-0' : ''}`}></span>
+                <span className={`block h-0.5 w-8 bg-gray-600 ${isNavOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></span>
+              </div>
+              <div className="MOBILE-MENU-OVERLAY fixed top-0 left-0 w-full h-screen bg-white z-10" style={{ display: isNavOpen ? 'flex' : 'none' }}>
+                <div className="CROSS-ICON absolute top-4 right-4 px-2 py-2" onClick={toggleNavOpen}>
+                  <svg
+                    className="h-8 w-8 text-gray-600"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                  </svg>
+                </div>
+                <div className="MOBILE-MENU-CONTENT flex flex-col items-start justify-start h-full p-8">
+                  <ul className="MENU-LINK-MOBILE-OPEN space-y-4 text-lg">
+                    {navigation1.map((link) => (
+                      <li key={link.name}>
+                        <Link href={link.href} className="text-gray-600 hover:text-gray-800">
+                          {link.name}
+                        </Link>
+                      </li>
+                    ))}
+                    {navigation.map((link) => (
+                      <li key={link.name}>
+                        <Link href={link.href} className="text-gray-600 hover:text-gray-800">
+                          {link.name}
+                        </Link>
+                      </li>
+                    ))}
+                    <li key="Solutions" className="relative group">
+                      <span className="text-gray-600 hover:text-gray-800 cursor-pointer" onClick={toggleSolutionsDropdown}>
+                        Solutions
+                      </span>
+                      <ul className={`absolute left-0 w-screen bg-white border border-gray-300 ${isSolutionsDropdownOpen ? 'block' : 'hidden'}`} style={{ zIndex: 999 }}>
+                        {solutionsDropdown.map((link) => (
+                          <li key={link.name}>
+                            <Link href={link.href} className="block px-4 py-3 text-gray-600 hover:text-gray-800">
+                              {link.name}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+
             <ul className="DESKTOP-MENU hidden space-x-8 lg:flex">
               <li key="Solutions" className="relative group" onMouseEnter={toggleSolutionsDropdown} onMouseLeave={toggleSolutionsDropdown}>
                 <span className="text-base font-small text-gray-600 hover:text-gray-800 cursor-pointer">
                   Solutions
                 </span>
-                <ul className={`absolute left-0 w-full bg-white border border-gray-300 ${isSolutionsDropdownOpen ? 'block' : 'hidden'}`} style={{ zIndex: 999 }}>
+                <ul className={`absolute left-0 w-screen bg-white border border-gray-300 ${isSolutionsDropdownOpen ? 'block' : 'hidden'}`} style={{ zIndex: 999 }}>
                   {solutionsDropdown.map((link) => (
                     <li key={link.name}>
                       <Link href={link.href} className="block px-4 py-3 text-gray-600 hover:text-gray-800">
