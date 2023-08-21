@@ -3,39 +3,39 @@ import Head from 'next/head';
 import Footer from '../../components/Footer';
 import NavbarDup from '../../components/NavbarDup';
 import Image from 'next/image';
-import bulkUpload from '../../assets/images/bulkUpload.gif';
-import connectStripe from '../../assets/images/connectStripe.gif';
-import choosePricePoint from '../../assets/images/choosePricePoint.gif';
-import startEarning from '../../assets/images/startEarning.gif';
+import inviteToHub from '../../assets/images/inviteToHub.gif';
+import permissionsAndControls from '../../assets/images/permissionsAndControls.gif';
+import chooseCollaborationState from '../../assets/images/chooseCollaborationState.gif';
+import accessYourHubs from '../../assets/images/accessYourHubs.gif';
 
 const features = [
   {
-    title: 'Bulk Upload',
+    title: 'Divide & Conquer',
     description:
-      'Add existing materials you\'ve already created or curated (e.g., PDFs, Notion pages, Google Docs, web pages, videos, etc.) and create notes with ease to quickly build repositories of knowledge.',
-    image: bulkUpload,
-    alt: 'How to bulk upload materials with Kahana',
+      'Invite others to any hub you create as a Viewer, Commenter, Editor, or Admin, and build your hub together.',
+    image: inviteToHub,
+    alt: 'How to invite people to your Kahana hub',
   },
   {
-    title: 'Connect to Stripe',
+    title: 'Advanced Permissions & Controls',
     description:
-      'Connect to a new or existing Stripe account so that you can securely and seamlessly accept payments that go straight to your bank account for access to your hubs.',
-    image: connectStripe,
-    alt: 'How to connect your Kahana account to Stripe',
+      'As the Owner or Admin of a hub, you have the ability to add new members to the hub, change the roles/permissions of current hub members, and remove members from the hub. You are in complete control!',
+    image: permissionsAndControls,
+    alt: 'How to manage collaborator permissions in your hub',
   },
   {
-    title: 'Choose Your Price Point & Payment Type',
+    title: 'Pick & Choose',
     description:
-      'For each hub, choose how much you want to charge and whether it\'s a one-time payment or a recurring subscription to access.',
-    image: choosePricePoint,
-    alt: 'How to select your price point & payment type for Kahana hubs',
+      'For any given hub, you can choose whether to be the sole Owner/Admin or invite others to join and contribute (and who you invite).',
+    image: chooseCollaborationState,
+    alt: 'Make your Kahana hub private or collaborative',
   },
   {
-    title: 'Start Earning!',
+    title: 'Seamlessly Access All Your Hubs',
     description:
-      'After you set your payment terms, a paywall will automatically be generated for you that you can begin sharing! Be sure to add a title, cover photo, and description to each hub to improve the experience for potential customers.',
-    image: startEarning,
-    alt: 'Sharing your Kahana hub link',
+      'Easily access and view your role for any hub that you created or that you&apos;re a collaborator on.',
+    image: accessYourHubs,
+    alt: 'How to access all of your hubs',
   },
 ];
 
