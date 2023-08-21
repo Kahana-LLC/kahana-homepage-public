@@ -5,6 +5,8 @@ import NavbarDup from '../../components/NavbarDup';
 import Image from 'next/image';
 import bulkUpload from '../../assets/images/bulkUpload.gif';
 import connectStripe from '../../assets/images/connectStripe.gif';
+import choosePricePoint from '../../assets/images/choosePricePoint.gif';
+import startEarning from '../../assets/images/startEarning.gif';
 
 const features = [
   {
@@ -25,14 +27,14 @@ const features = [
     title: 'Choose Your Price Point & Payment Type',
     description:
       'For each hub, choose how much you want to charge and whether it\'s a one-time payment or a recurring subscription to access.',
-    image: '/wiki-feature-3.png',
+    image: choosePricePoint,
     alt: 'How to select your price point & payment type for Kahana hubs',
   },
   {
     title: 'Start Earning!',
     description:
       'After you set your payment terms, a paywall will automatically be generated for you that you can begin sharing! Be sure to add a title, cover photo, and description to each hub to improve the experience for potential customers.',
-    image: '/wiki-feature-3.png',
+    image: startEarning,
     alt: 'Sharing your Kahana hub link',
   },
 ];
@@ -104,7 +106,7 @@ const RecurringRevenue = () => {
       {/* Features section */}
       <section className="overflow-hidden py-16 md:py-18">
         {tabOrientation === 'vertical' ? (
-          <div className="mt-16 space-y-12 mx-4">
+          <div className="mt-12 space-y-12 mx-4">
             {features.map((feature, index) => (
               <div key={index} className="space-y-6">
                 <div className="max-w-[45rem] mx-auto">
@@ -128,7 +130,7 @@ const RecurringRevenue = () => {
             ))}
           </div>
         ) : (
-          <div className="mt-16 space-y-6">
+          <div className="mt-12 space-y-6">
             {features.map((feature, index) => (
               <div key={index} className="space-y-6 flex flex-col lg:flex-row lg:space-x-6">
                 <div className="max-w-[70rem] mx-auto rounded-lg bg-gray-100 p-4">
