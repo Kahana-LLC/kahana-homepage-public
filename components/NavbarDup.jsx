@@ -30,12 +30,8 @@ export default function NavbarDup() {
     setIsNavOpen((prevState) => !prevState);
   };
 
-  const openSolutionsDropdown = () => {
-    setIsSolutionsDropdownOpen(true);
-  };
-
-  const closeSolutionsDropdown = () => {
-    setIsSolutionsDropdownOpen(false);
+  const toggleSolutionsDropdown = () => {
+    setIsSolutionsDropdownOpen((prevState) => !prevState);
   };
 
   useEffect(() => {
