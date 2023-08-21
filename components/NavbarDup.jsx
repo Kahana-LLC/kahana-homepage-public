@@ -6,10 +6,9 @@ import whiteKahanaLogo from '../assets/kahana_logo_wide_light.svg';
 import HeaderBanner from './HeaderBanner';
 
 const navigation = [
-  { name: 'Pricing', href: '/pricing' }, // Corrected the href
+  { name: 'Pricing', href: '/pricing' },
   { name: 'Blog', href: 'https://blog.kahana.co' },
-  { name: 'Resources', href: '/resources' }, // Corrected the href
-  { name: 'Solutions', href: '#' }, // Solutions now has a placeholder href
+  { name: 'Resources', href: '/resources' },
 ];
 
 const solutionsDropdown = [
@@ -23,11 +22,6 @@ const navigation1 = [
   { name: 'Log in', href: 'https://app.kahana.co/login' },
 ];
 
-const navigationAll = [
-  ...navigation,
-  ...navigation1,
-];
-
 export default function NavbarDup() {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
@@ -35,9 +29,16 @@ export default function NavbarDup() {
     setIsNavOpen((prevState) => !prevState);
   };
 
+  const toggleSolutionsDropdown = () => {
+    setIsNavOpen(false); // Close the main navigation menu if open
+    setIsSolutionsDropdownOpen((prevState) => !prevState);
+  };
+
+  const [isSolutionsDropdownOpen, setIsSolutionsDropdownOpen] = useState(false);
+
   useEffect(() => {
     const bodyScrollLock = () => {
-      if (isNavOpen) {
+      if (isNavOpen || isSolutionsDropdownOpen) {
         document.body.style.overflow = 'hidden';
       } else {
         document.body.style.overflow = 'auto';
@@ -49,7 +50,7 @@ export default function NavbarDup() {
     return () => {
       document.body.style.overflow = 'auto';
     };
-  }, [isNavOpen]);
+  }, [isNavOpen, isSolutionsDropdownOpen]);
 
   return (
     <>
@@ -84,7 +85,7 @@ export default function NavbarDup() {
                 </div>
                 <div className="MOBILE-MENU-CONTENT flex flex-col items-start justify-start h-full p-8">
                   <ul className="MENU-LINK-MOBILE-OPEN space-y-4 text-lg">
-                    {navigationAll.map((link) => (
+                    {navigation.map((link) => (
                       <li key={link.name}>
                         <Link href={link.href} className="text-gray-600 hover:text-gray-800">
                           {link.name}
@@ -92,10 +93,10 @@ export default function NavbarDup() {
                       </li>
                     ))}
                     <li key="Solutions" className="relative group">
-                      <a href="#" className="text-gray-600 hover:text-gray-800">
+                      <a href="#" className="text-gray-600 hover:text-gray-800" onClick={toggleSolutionsDropdown}>
                         Solutions
                       </a>
-                      <ul className="absolute left-0 top-full bg-white border border-gray-300 hidden group-hover:block">
+                      <ul className={`absolute left-0 top-full bg-white border border-gray-300 ${isSolutionsDropdownOpen ? 'block' : 'hidden'}`}>
                         {solutionsDropdown.map((link) => (
                           <li key={link.name}>
                             <Link href={link.href} className="block px-4 py-2 text-gray-600 hover:text-gray-800">
@@ -117,7 +118,7 @@ export default function NavbarDup() {
             </section>
 
             <ul className="DESKTOP-MENU hidden space-x-8 lg:flex">
-              {navigationAll.map((link) => (
+              {navigation.map((link) => (
                 <li key={link.name}>
                   <Link href={link.href} className="text-base font-small text-gray-600 hover:text-gray-800">
                     {link.name}
@@ -125,10 +126,10 @@ export default function NavbarDup() {
                 </li>
               ))}
               <li key="Solutions" className="relative group">
-                <a href="#" className="text-base font-small text-gray-600 hover:text-gray-800">
+                <a href="#" className="text-base font-small text-gray-600 hover:text-gray-800" onClick={toggleSolutionsDropdown}>
                   Solutions
                 </a>
-                <ul className="absolute left-0 top-full bg-white border border-gray-300 hidden group-hover:block">
+                <ul className={`absolute left-0 top-full bg-white border border-gray-300 ${isSolutionsDropdownOpen ? 'block' : 'hidden'}`}>
                   {solutionsDropdown.map((link) => (
                     <li key={link.name}>
                       <Link href={link.href} className="block px-4 py-2 text-gray-600 hover:text-gray-800">
