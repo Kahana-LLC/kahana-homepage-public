@@ -121,12 +121,12 @@ export default function NavbarDup() {
               </div>
             </section>
 
-            <ul className="DESKTOP-MENU hidden space-x-8 lg:flex">
+            <ul className="DESKTOP-MENU hidden space-x-8 lg:flex ml-4">
               <li key="Solutions" className="relative group" onMouseEnter={toggleSolutionsDropdown} onMouseLeave={toggleSolutionsDropdown}>
                 <span className="text-base font-small text-gray-600 hover:text-gray-800 cursor-pointer">
                   Solutions
                 </span>
-                <ul className={`absolute left-0 w-1000 bg-white border border-gray-300 ${isSolutionsDropdownOpen ? 'block' : 'hidden'}`} style={{ zIndex: 999 }}>
+                <ul className={`absolute left-0 w-1200 bg-white border border-gray-300 ${isSolutionsDropdownOpen ? 'block' : 'hidden'}`} style={{ zIndex: 999 }}>
                   {solutionsDropdown.map((link) => (
                     <li key={link.name}>
                       <Link href={link.href} className="block px-4 py-3 text-gray-600 hover:text-gray-800">
@@ -205,4 +205,3 @@ export default function NavbarDup() {
     </>
   );
 }
-
