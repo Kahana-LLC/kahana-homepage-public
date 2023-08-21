@@ -126,7 +126,7 @@ export default function NavbarDup() {
                 <span className="text-base font-small text-gray-600 hover:text-gray-800 cursor-pointer">
                   Solutions
                 </span>
-                <ul className={`absolute left-0 w-600 bg-white border border-gray-300 ${isSolutionsDropdownOpen ? 'block' : 'hidden'}`} style={{ zIndex: 999 }}>
+                <ul className={`absolute left-0 w-1000 bg-white border border-gray-300 ${isSolutionsDropdownOpen ? 'block' : 'hidden'}`} style={{ zIndex: 999 }}>
                   {solutionsDropdown.map((link) => (
                     <li key={link.name}>
                       <Link href={link.href} className="block px-4 py-3 text-gray-600 hover:text-gray-800">
