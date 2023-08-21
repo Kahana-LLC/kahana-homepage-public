@@ -92,7 +92,7 @@ const CollaborationTools = () => {
             Collaborate with others and monetize together
           </h1>
           <p className="text-lg mb-8 md:px-12 lg:px-24">
-            You don't have to do it alone. Invite team members, colleagues, and experts to contribute to your hubs and share the profits.
+            You don&apos;t have to do it alone. Invite team members, colleagues, and experts to contribute to your hubs and share the profits.
           </p>
           <a
             href="https://app.kahana.co/signup"
