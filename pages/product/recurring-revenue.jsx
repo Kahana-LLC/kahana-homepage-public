@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Footer from '../../components/Footer';
 import NavbarDup from '../../components/NavbarDup';
 import Image from 'next/image';
+import bulkUpload from '../../assets/images/bulkUpload.gif'
 
 const WikisPage = () => {
   return (
@@ -59,18 +60,18 @@ const WikisPage = () => {
                {/* First row */}
                <div className="md:col-span-1">
                   <Image
-                     src="/wiki-feature-1.png"
-                     alt="Feature 1"
+                     src={bulkUpload}
+                     alt="Bulk Upload"
                      width={360}
                      height={240}
                   />
                </div>
                <div className="md:col-span-1">
                   <h2 className="text-3xl font-semibold mb-4 md:px-12 lg:px-24">
-                     Collaborative Wikis
+                     Bulk Upload
                   </h2>
                   <p className="text-lg mb-6 md:px-12 lg:px-24">
-                     Create and collaborate on wikis with your team. Share knowledge, documentation, and best practices.
+                     Add existing materials you&apos;ve already created or curated (e.g., PDFs, Notion pages, Google Docs, web pages, videos, etc.) and create notes with ease to quickly build repositories of knowledge. 
                   </p>
                </div>
                
@@ -85,10 +86,10 @@ const WikisPage = () => {
                </div>
                <div className="md:col-span-1">
                   <h2 className="text-3xl font-semibold mb-4 md:px-12 lg:px-24">
-                     Enhanced Search
+                     Connect to Stripe
                   </h2>
                   <p className="text-lg mb-6 md:px-12 lg:px-24">
-                     Quickly find relevant information using our powerful search capabilities.
+                     Connect to a new or existing Stripe account so that you can securely and seamlessly accept payments that go straight to your bank account for access to your hubs.
                   </p>
                </div>
                
@@ -103,10 +104,28 @@ const WikisPage = () => {
                </div>
                <div className="md:col-span-1">
                   <h2 className="text-3xl font-semibold mb-4 md:px-12 lg:px-24">
-                     Mobile Friendly
+                     Choose Your Price Point & Payment Type  
                   </h2>
                   <p className="text-lg mb-6 md:px-12 lg:px-24">
-                     Access your wikis and knowledge on the go with our mobile-friendly design.
+                     For each hub, choose how much you want to charge and whether it&apos;s a one-time payment or a recurring subscription to access.  
+                  </p>
+               </div>
+
+               {/* Fourth row */}
+               <div className="md:col-span-1">
+                  <Image
+                     src="/wiki-feature-3.png"
+                     alt="Feature 3"
+                     width={360}
+                     height={240}
+                  />
+               </div>
+               <div className="md:col-span-1">
+                  <h2 className="text-3xl font-semibold mb-4 md:px-12 lg:px-24">
+                     Start Earning!  
+                  </h2>
+                  <p className="text-lg mb-6 md:px-12 lg:px-24">
+                     After you set your payment terms, a paywall will automatically be generated for you that you can begin sharing! Be sure to add a title, cover photo, and description to each hub to improve the experience for potential customers. 
                   </p>
                </div>
             </div>
