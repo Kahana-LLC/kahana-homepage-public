@@ -24,17 +24,15 @@ const navigation1 = [
 
 export default function NavbarDup() {
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const [isSolutionsDropdownOpen, setIsSolutionsDropdownOpen] = useState(false);
 
   const toggleNavOpen = () => {
     setIsNavOpen((prevState) => !prevState);
   };
 
   const toggleSolutionsDropdown = () => {
-    setIsNavOpen(false); // Close the main navigation menu if open
     setIsSolutionsDropdownOpen((prevState) => !prevState);
   };
-
-  const [isSolutionsDropdownOpen, setIsSolutionsDropdownOpen] = useState(false);
 
   useEffect(() => {
     const bodyScrollLock = () => {
@@ -93,13 +91,13 @@ export default function NavbarDup() {
                       </li>
                     ))}
                     <li key="Solutions" className="relative group">
-                      <a href="#" className="text-gray-600 hover:text-gray-800" onClick={toggleSolutionsDropdown}>
+                      <a href="#" className="text-gray-600 hover:text-gray-800" onMouseEnter={toggleSolutionsDropdown}>
                         Solutions
                       </a>
-                      <ul className={`absolute left-0 top-full bg-white border border-gray-300 ${isSolutionsDropdownOpen ? 'block' : 'hidden'}`}>
+                      <ul className={`absolute left-0 w-full bg-white border border-gray-300 ${isSolutionsDropdownOpen ? 'block' : 'hidden'}`} style={{ zIndex: 999 }}>
                         {solutionsDropdown.map((link) => (
                           <li key={link.name}>
-                            <Link href={link.href} className="block px-4 py-2 text-gray-600 hover:text-gray-800">
+                            <Link href={link.href} className="block px-8 py-3 text-gray-600 hover:text-gray-800">
                               {link.name}
                             </Link>
                           </li>
@@ -126,19 +124,28 @@ export default function NavbarDup() {
                 </li>
               ))}
               <li key="Solutions" className="relative group">
-                <a href="#" className="text-base font-small text-gray-600 hover:text-gray-800" onClick={toggleSolutionsDropdown}>
+                <a href="#" className="text-base font-small text-gray-600 hover:text-gray-800" onMouseEnter={toggleSolutionsDropdown}>
                   Solutions
                 </a>
-                <ul className={`absolute left-0 top-full bg-white border border-gray-300 ${isSolutionsDropdownOpen ? 'block' : 'hidden'}`}>
+                <ul className={`absolute left-0 w-full bg-white border border-gray-300 ${isSolutionsDropdownOpen ? 'block' : 'hidden'}`} style={{ zIndex: 999 }}>
                   {solutionsDropdown.map((link) => (
                     <li key={link.name}>
-                      <Link href={link.href} className="block px-4 py-2 text-gray-600 hover:text-gray-800">
+                      <Link href={link.href} className="block px-8 py-3 text-gray-600 hover:text-gray-800">
                         {link.name}
                       </Link>
                     </li>
                   ))}
                 </ul>
               </li>
+            </ul>
+            <ul className="DESKTOP-MENU hidden space-x-8 lg:flex">
+              {navigation1.map((link) => (
+                <li key={link.name}>
+                  <Link href={link.href} className="text-base font-small text-gray-600 hover:text-gray-800">
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </nav>
