@@ -3,7 +3,6 @@ import Head from 'next/head';
 import Footer from '../../components/Footer';
 import NavbarDup from '../../components/NavbarDup';
 import Image from 'next/image';
-import Container from '../../components/Container';
 import bulkUpload from '../../assets/images/bulkUpload.gif';
 
 const features = [
