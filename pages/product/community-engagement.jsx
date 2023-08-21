@@ -18,7 +18,7 @@ const features = [
   {
     title: 'Stay in the Loop',
     description:
-      'Receive regular email notifications (limited to one per hour to spare your inbox) when new comments are left in your hub or a hub you&apos;re a part of so that you can stay informed and keep the conversation going.',
+      'Receive regular email notifications (limited to one per hour to spare your inbox) when new comments are left in your hub or a hub you\'re a part of so that you can stay informed and keep the conversation going.',
     image: commentNotification,
     alt: 'Email notification when your Kahana hub has a new comment',
   },
