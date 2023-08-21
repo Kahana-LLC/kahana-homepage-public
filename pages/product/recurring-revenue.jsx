@@ -91,7 +91,7 @@ const RecurringRevenue = () => {
           <h1 className="text-4xl font-bold mb-4 md:px-12 lg:px-24">
             Turn your knowledge into recurring revenue
           </h1>
-          <p className="text-lg mb-2 md:px-12 lg:px-24">
+          <p className="text-lg mb-8 md:px-12 lg:px-24">
             Build dynamic hubs of all your best data, templates, insights, research, methodologies, and best practices. It&apos;s like charging for access to your brain.
           </p>
           <a
@@ -104,7 +104,7 @@ const RecurringRevenue = () => {
       </section>
 
       {/* Features section */}
-      <section className="overflow-hidden py-8 md:py-12">
+      <section className="overflow-hidden py-2 md:py-5">
         {tabOrientation === 'vertical' ? (
           <div className="mt-16 space-y-12 mx-4">
             {features.map((feature, index) => (
