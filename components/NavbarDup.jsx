@@ -30,8 +30,12 @@ export default function NavbarDup() {
     setIsNavOpen((prevState) => !prevState);
   };
 
-  const toggleSolutionsDropdown = () => {
-    setIsSolutionsDropdownOpen((prevState) => !prevState);
+  const openSolutionsDropdown = () => {
+    setIsSolutionsDropdownOpen(true);
+  };
+
+  const closeSolutionsDropdown = () => {
+    setIsSolutionsDropdownOpen(false);
   };
 
   useEffect(() => {
@@ -122,11 +126,18 @@ export default function NavbarDup() {
             </section>
 
             <ul className="DESKTOP-MENU hidden space-x-8 lg:flex ml-4">
-              <li className="relative group">
-                <span className="text-base font-small text-gray-600 hover:text-gray-800 cursor-pointer" onClick={toggleSolutionsDropdown}>
+              <li
+                className="relative group"
+                onMouseEnter={openSolutionsDropdown}
+                onMouseLeave={closeSolutionsDropdown}
+              >
+                <span className="text-base font-small text-gray-600 cursor-pointer">
                   Solutions
                 </span>
-                <ul className={`absolute left-0 w-full bg-white border border-gray-300 ${isSolutionsDropdownOpen ? 'block' : 'hidden'}`} style={{ zIndex: 999 }}>
+                <ul
+                  className={`absolute left-0 w-auto bg-white border border-gray-300 ${isSolutionsDropdownOpen ? 'block' : 'hidden'}`}
+                  style={{ zIndex: 999 }}
+                >
                   {solutionsDropdown.map((link) => (
                     <li key={link.name}>
                       <Link href={link.href} className="block px-4 py-3 text-gray-600 hover:text-gray-800">
