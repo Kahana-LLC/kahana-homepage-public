@@ -9,17 +9,18 @@ const navigation = [
   { name: 'Pricing', href: '/pricing' },
   { name: 'Blog', href: 'https://blog.kahana.co' },
   { name: 'Resources', href: '/resources' },
+  { name: 'Solutions', href: '/solutions' }, // Moved Solutions ahead of others
 ];
 
 const solutionsDropdown = [
   { name: 'Enterprise', href: '/enterprise' },
-  { name: 'Coaches and Consultants', href: '/coaches-and-consultants' },
+  { name: 'Coaches & Consultants', href: '/coaches-and-consultants' }, // Updated to "Coaches & Consultants"
   { name: 'Experts', href: '/experts' },
 ];
 
 const navigation1 = [
   { name: 'Request a demo', href: 'https://7hkdcfzbmr0.typeform.com/to/ZYLHazEf?utm_content=landing_page_header' },
-  { name: 'Log in', href: 'https://app.kahana.co/login' },
+  { name: 'Log In', href: 'https://app.kahana.co/login' },
 ];
 
 export default function NavbarDup() {
@@ -65,9 +66,49 @@ export default function NavbarDup() {
               />
             </Link>
 
+            {/* Desktop Menu */}
+            <ul className="DESKTOP-MENU hidden space-x-8 lg:flex ml-auto"> {/* ml-auto to push it to the left */}
+              {navigation.map((link) => (
+                <li key={link.name}>
+                  <Link href={link.href} className="text-base font-small text-gray-600 hover:text-gray-800">
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+              <li
+                key="Solutions"
+                className="relative group"
+                onMouseEnter={toggleSolutionsDropdown}
+                onMouseLeave={toggleSolutionsDropdown}
+              >
+                <span className="text-base font-small text-gray-600 hover:text-gray-800 cursor-pointer">
+                  Solutions
+                </span>
+                <ul
+                  className={`absolute left-0 w-[200px] bg-white border border-gray-300 ${
+                    isSolutionsDropdownOpen ? 'block' : 'hidden'
+                  }`}
+                  style={{ zIndex: 999 }}
+                >
+                  {solutionsDropdown.map((link) => (
+                    <li key={link.name} className="border-t border-gray-300">
+                      <Link href={link.href} className="block px-4 py-3 text-gray-600 hover:text-gray-800">
+                        {link.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            </ul>
+
+            {/* Mobile Menu */}
             <section className="MOBILE-MENU relative flex lg:hidden">
-              <div className="MOBILE-MENU-OVERLAY fixed top-0 left-0 w-full h-screen bg-white z-10" style={{ display: isNavOpen ? 'flex' : 'none' }}>
-                <div className="CROSS-ICON absolute top-4 right-4 px-2 py-2" onClick={toggleNavOpen}>
+              <div
+                className="MOBILE-MENU-OVERLAY fixed top-0 left-0 w-full h-screen bg-white z-10"
+                style={{ display: isNavOpen ? 'flex' : 'none' }}
+                onClick={toggleNavOpen}
+              >
+                <div className="CROSS-ICON absolute top-4 right-4 px-2 py-2">
                   <svg
                     className="h-8 w-8 text-gray-600"
                     viewBox="0 0 24 24"
@@ -90,6 +131,30 @@ export default function NavbarDup() {
                         </Link>
                       </li>
                     ))}
+                    <li
+                      key="Solutions"
+                      className="relative group"
+                      onMouseEnter={toggleSolutionsDropdown}
+                      onMouseLeave={toggleSolutionsDropdown}
+                    >
+                      <span className="text-gray-600 hover:text-gray-800 cursor-pointer">
+                        Solutions
+                      </span>
+                      <ul
+                        className={`absolute left-0 w-full bg-white border border-gray-300 ${
+                          isSolutionsDropdownOpen ? 'block' : 'hidden'
+                        }`}
+                        style={{ zIndex: 999 }}
+                      >
+                        {solutionsDropdown.map((link) => (
+                          <li key={link.name}>
+                            <Link href={link.href} className="block px-8 py-3 text-gray-600 hover:text-gray-800">
+                              {link.name}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </li>
                     {navigation1.map((link) => (
                       <li key={link.name}>
                         <Link href={link.href} className="text-gray-600 hover:text-gray-800">
@@ -97,20 +162,6 @@ export default function NavbarDup() {
                         </Link>
                       </li>
                     ))}
-                    <li key="Solutions" className="relative group">
-                      <span className="text-gray-600 hover:text-gray-800 cursor-pointer" onMouseEnter={toggleSolutionsDropdown}>
-                        Solutions
-                      </span>
-                      <ul className={`absolute left-0 w-[200px] bg-white border border-gray-300 ${isSolutionsDropdownOpen ? 'block' : 'hidden'}`} style={{ zIndex: 999 }}>
-                        {solutionsDropdown.map((link) => (
-                          <li key={link.name} className="border-t border-gray-300">
-                            <Link href={link.href} className="block px-4 py-3 text-gray-600 hover:text-gray-800">
-                              {link.name}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </li>
                   </ul>
                 </div>
               </div>
@@ -121,30 +172,6 @@ export default function NavbarDup() {
                 <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
               </div>
             </section>
-
-            <ul className="DESKTOP-MENU hidden space-x-8 lg:flex">
-              {navigation.map((link) => (
-                <li key={link.name}>
-                  <Link href={link.href} className="text-base font-small text-gray-600 hover:text-gray-800">
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-              <li key="Solutions" className="relative group" onMouseEnter={toggleSolutionsDropdown} onMouseLeave={toggleSolutionsDropdown}>
-                <span className="text-base font-small text-gray-600 hover:text-gray-800 cursor-pointer">
-                  Solutions
-                </span>
-                <ul className={`absolute left-0 w-[200px] bg-white border border-gray-300 ${isSolutionsDropdownOpen ? 'block' : 'hidden'}`} style={{ zIndex: 999 }}>
-                  {solutionsDropdown.map((link) => (
-                    <li key={link.name} className="border-t border-gray-300">
-                      <Link href={link.href} className="block px-4 py-3 text-gray-600 hover:text-gray-800">
-                        {link.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </li>
-            </ul>
           </div>
         </nav>
       </header>
