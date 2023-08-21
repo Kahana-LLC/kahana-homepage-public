@@ -6,10 +6,16 @@ import whiteKahanaLogo from '../assets/kahana_logo_wide_light.svg';
 import HeaderBanner from './HeaderBanner';
 
 const navigation = [
-  { name: 'Pricing', href: 'pricing' },
+  { name: 'Pricing', href: '/pricing' }, // Corrected the href
   { name: 'Blog', href: 'https://blog.kahana.co' },
-  { name: 'Resources', href: 'resources' },
-  { name: 'Solutions', href: 'solutions' },
+  { name: 'Resources', href: '/resources' }, // Corrected the href
+  { name: 'Solutions', href: '#' }, // Solutions now has a placeholder href
+];
+
+const solutionsDropdown = [
+  { name: 'Enterprise', href: '/enterprise' },
+  { name: 'Coaches and Consultants', href: '/coaches-and-consultants' },
+  { name: 'Experts', href: '/experts' },
 ];
 
 const navigation1 = [
@@ -85,6 +91,20 @@ export default function NavbarDup() {
                         </Link>
                       </li>
                     ))}
+                    <li key="Solutions" className="relative group">
+                      <a href="#" className="text-gray-600 hover:text-gray-800">
+                        Solutions
+                      </a>
+                      <ul className="absolute left-0 top-full bg-white border border-gray-300 hidden group-hover:block">
+                        {solutionsDropdown.map((link) => (
+                          <li key={link.name}>
+                            <Link href={link.href} className="block px-4 py-2 text-gray-600 hover:text-gray-800">
+                              {link.name}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -104,6 +124,20 @@ export default function NavbarDup() {
                   </Link>
                 </li>
               ))}
+              <li key="Solutions" className="relative group">
+                <a href="#" className="text-base font-small text-gray-600 hover:text-gray-800">
+                  Solutions
+                </a>
+                <ul className="absolute left-0 top-full bg-white border border-gray-300 hidden group-hover:block">
+                  {solutionsDropdown.map((link) => (
+                    <li key={link.name}>
+                      <Link href={link.href} className="block px-4 py-2 text-gray-600 hover:text-gray-800">
+                        {link.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </li>
             </ul>
           </div>
         </nav>
