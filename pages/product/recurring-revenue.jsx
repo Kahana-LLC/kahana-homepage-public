@@ -12,24 +12,28 @@ const features = [
     description:
       'Add existing materials you\'ve already created or curated (e.g., PDFs, Notion pages, Google Docs, web pages, videos, etc.) and create notes with ease to quickly build repositories of knowledge.',
     image: bulkUpload,
+    alt: 'How to bulk upload materials with Kahana',
   },
   {
     title: 'Connect to Stripe',
     description:
       'Connect to a new or existing Stripe account so that you can securely and seamlessly accept payments that go straight to your bank account for access to your hubs.',
     image: connectStripe,
+    alt: 'How to connect your Kahana account to Stripe',
   },
   {
     title: 'Choose Your Price Point & Payment Type',
     description:
       'For each hub, choose how much you want to charge and whether it\'s a one-time payment or a recurring subscription to access.',
     image: '/wiki-feature-3.png',
+    alt: 'How to select your price point & payment type for Kahana hubs',
   },
   {
     title: 'Start Earning!',
     description:
       'After you set your payment terms, a paywall will automatically be generated for you that you can begin sharing! Be sure to add a title, cover photo, and description to each hub to improve the experience for potential customers.',
     image: '/wiki-feature-3.png',
+    alt: 'Sharing your Kahana hub link',
   },
 ];
 
@@ -115,7 +119,7 @@ const RecurringRevenue = () => {
                   <Image
                     className="w-full"
                     src={feature.image}
-                    alt=""
+                    alt={feature.alt}
                     priority
                     sizes="(min-width: 1024px) 45rem, (min-width: 640px) 100vw, 90vw"
                   />
