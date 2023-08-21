@@ -98,61 +98,59 @@ const RecurringRevenue = () => {
 
       {/* Features section */}
       <section className="overflow-hidden py-16 md:py-18">
-        <Container>
-          {tabOrientation === 'vertical' ? (
-            <div className="mt-16 space-y-12">
-              {features.map((feature, index) => (
-                <div key={index} className="space-y-6">
-                  <div className="max-w-[45rem] mx-auto">
-                    <h2 className="text-2xl font-semibold text-black">
-                      {feature.title}
-                    </h2>
-                    <p className="mt-2 text-lg text-black">
-                      {feature.description}
-                    </p>
-                  </div>
-                  <div className="max-w-[45rem] mx-auto">
-                    <Image
-                      className="w-full"
-                      src={feature.image}
-                      alt=""
-                      priority
-                      sizes="(min-width: 1024px) 45rem, (min-width: 640px) 100vw, 90vw"
-                    />
-                  </div>
+        {tabOrientation === 'vertical' ? (
+          <div className="mt-16 space-y-12">
+            {features.map((feature, index) => (
+              <div key={index} className="space-y-6">
+                <div className="max-w-[45rem] mx-auto">
+                  <h2 className="text-2xl font-semibold text-black">
+                    {feature.title}
+                  </h2>
+                  <p className="mt-2 text-lg text-black">
+                    {feature.description}
+                  </p>
                 </div>
-              ))}
-            </div>
-          ) : (
-            <div className="mt-16 space-y-6">
-              {features.map((feature, index) => (
-                <div key={index} className="space-y-6 flex flex-col lg:flex-row lg:space-x-6">
-                  <div className="max-w-[70rem] mx-auto rounded-lg bg-gray-100 p-4">
-                    <div className="flex items-center space-x-6">
-                      <div className="w-1/3 pl-4">
-                        <h2 className="text-2xl font-semibold text-black">
-                          {feature.title}
-                        </h2>
-                        <p className="mt-2 text-lg text-black">
-                          {feature.description}
-                        </p>
-                      </div>
-                      <div className="w-2/3">
-                        <Image
-                          className="w-full"
-                          src={feature.image}
-                          alt=""
-                          priority
-                          sizes="(min-width: 1024px) 70rem, (min-width: 640px) 100vw, 90vw"
-                        />
-                      </div>
+                <div className="max-w-[45rem] mx-auto">
+                  <Image
+                    className="w-full"
+                    src={feature.image}
+                    alt=""
+                    priority
+                    sizes="(min-width: 1024px) 45rem, (min-width: 640px) 100vw, 90vw"
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="mt-16 space-y-6">
+            {features.map((feature, index) => (
+              <div key={index} className="space-y-6 flex flex-col lg:flex-row lg:space-x-6">
+                <div className="max-w-[70rem] mx-auto rounded-lg bg-gray-100 p-4">
+                  <div className="flex items-center space-x-6">
+                    <div className="w-1/3 pl-4">
+                      <h2 className="text-2xl font-semibold text-black">
+                        {feature.title}
+                      </h2>
+                      <p className="mt-2 text-lg text-black">
+                        {feature.description}
+                      </p>
+                    </div>
+                    <div className="w-2/3">
+                      <Image
+                        className="w-full"
+                        src={feature.image}
+                        alt=""
+                        priority
+                        sizes="(min-width: 1024px) 70rem, (min-width: 640px) 100vw, 90vw"
+                      />
                     </div>
                   </div>
                 </div>
-              ))}
-            </div>
-          )}
-        </Container>
+              </div>
+            ))}
+          </div>
+        )}
       </section>
       <Footer />
     </div>
