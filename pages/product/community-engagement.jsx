@@ -1,10 +1,62 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Footer from '../../components/Footer';
 import NavbarDup from '../../components/NavbarDup';
 import Image from 'next/image';
+import bulkUpload from '../../assets/images/bulkUpload.gif';
+import connectStripe from '../../assets/images/connectStripe.gif';
+import choosePricePoint from '../../assets/images/choosePricePoint.gif';
+import startEarning from '../../assets/images/startEarning.gif';
 
-const WikisPage = () => {
+const features = [
+  {
+    title: 'Bulk Upload',
+    description:
+      'Add existing materials you\'ve already created or curated (e.g., PDFs, Notion pages, Google Docs, web pages, videos, etc.) and create notes with ease to quickly build repositories of knowledge.',
+    image: bulkUpload,
+    alt: 'How to bulk upload materials with Kahana',
+  },
+  {
+    title: 'Connect to Stripe',
+    description:
+      'Connect to a new or existing Stripe account so that you can securely and seamlessly accept payments that go straight to your bank account for access to your hubs.',
+    image: connectStripe,
+    alt: 'How to connect your Kahana account to Stripe',
+  },
+  {
+    title: 'Choose Your Price Point & Payment Type',
+    description:
+      'For each hub, choose how much you want to charge and whether it\'s a one-time payment or a recurring subscription to access.',
+    image: choosePricePoint,
+    alt: 'How to select your price point & payment type for Kahana hubs',
+  },
+  {
+    title: 'Start Earning!',
+    description:
+      'After you set your payment terms, a paywall will automatically be generated for you that you can begin sharing! Be sure to add a title, cover photo, and description to each hub to improve the experience for potential customers.',
+    image: startEarning,
+    alt: 'Sharing your Kahana hub link',
+  },
+];
+
+const CommunityEngagement = () => {
+  const [tabOrientation, setTabOrientation] = useState('vertical');
+
+  useEffect(() => {
+    const lgMediaQuery = window.matchMedia('(min-width: 1024px)');
+
+    function onMediaQueryChange({ matches }) {
+      setTabOrientation(matches ? 'horizontal' : 'vertical');
+    }
+
+    onMediaQueryChange(lgMediaQuery);
+    lgMediaQuery.addEventListener('change', onMediaQueryChange);
+
+    return () => {
+      lgMediaQuery.removeEventListener('change', onMediaQueryChange);
+    };
+  }, []);
+
   return (
     <div>
       <Head>
@@ -52,69 +104,64 @@ const WikisPage = () => {
       </section>
 
       {/* Features section */}
-      <section className="py-20">
-         <div className="container mx-auto px-4 md:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:px-4 lg:px-0">
-               
-               {/* First row */}
-               <div className="md:col-span-1">
-                  <Image
-                     src="/wiki-feature-1.png"
-                     alt="Feature 1"
-                     width={360}
-                     height={240}
-                  />
-               </div>
-               <div className="md:col-span-1">
-                  <h2 className="text-3xl font-semibold mb-4 md:px-12 lg:px-24">
-                     Collaborative Wikis
+      <section className="overflow-hidden py-12 md:py-15">
+        {tabOrientation === 'vertical' ? (
+          <div className="mt-16 space-y-12 mx-4">
+            {features.map((feature, index) => (
+              <div key={index} className="space-y-6">
+                <div className="max-w-[45rem] mx-auto">
+                  <h2 className="text-2xl font-semibold text-black">
+                    {feature.title}
                   </h2>
-                  <p className="text-lg mb-6 md:px-12 lg:px-24">
-                     Create and collaborate on wikis with your team. Share knowledge, documentation, and best practices.
+                  <p className="mt-2 text-lg text-black">
+                    {feature.description}
                   </p>
-               </div>
-               
-               {/* Second row */}
-               <div className="md:col-span-1">
+                </div>
+                <div className="max-w-[45rem] mx-auto">
                   <Image
-                     src="/wiki-feature-2.png"
-                     alt="Feature 2"
-                     width={360}
-                     height={240}
+                    className="w-full"
+                    src={feature.image}
+                    alt={feature.alt}
+                    priority
+                    sizes="(min-width: 1024px) 45rem, (min-width: 640px) 100vw, 90vw"
                   />
-               </div>
-               <div className="md:col-span-1">
-                  <h2 className="text-3xl font-semibold mb-4 md:px-12 lg:px-24">
-                     Enhanced Search
-                  </h2>
-                  <p className="text-lg mb-6 md:px-12 lg:px-24">
-                     Quickly find relevant information using our powerful search capabilities.
-                  </p>
-               </div>
-               
-               {/* Third row */}
-               <div className="md:col-span-1">
-                  <Image
-                     src="/wiki-feature-3.png"
-                     alt="Feature 3"
-                     width={360}
-                     height={240}
-                  />
-               </div>
-               <div className="md:col-span-1">
-                  <h2 className="text-3xl font-semibold mb-4 md:px-12 lg:px-24">
-                     Mobile Friendly
-                  </h2>
-                  <p className="text-lg mb-6 md:px-12 lg:px-24">
-                     Access your wikis and knowledge on the go with our mobile-friendly design.
-                  </p>
-               </div>
-            </div>
-         </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="mt-16 space-y-6">
+            {features.map((feature, index) => (
+              <div key={index} className="space-y-6 flex flex-col lg:flex-row lg:space-x-6">
+                <div className="max-w-[70rem] mx-auto rounded-lg bg-gray-100 p-4">
+                  <div className="flex items-center space-x-6">
+                    <div className="w-1/3 pl-4">
+                      <h2 className="text-2xl font-semibold text-black">
+                        {feature.title}
+                      </h2>
+                      <p className="mt-2 text-lg text-black">
+                        {feature.description}
+                      </p>
+                    </div>
+                    <div className="w-2/3">
+                      <Image
+                        className="w-full"
+                        src={feature.image}
+                        alt=""
+                        priority
+                        sizes="(min-width: 1024px) 70rem, (min-width: 640px) 100vw, 90vw"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
       </section>
       <Footer />
     </div>
   );
 };
 
-export default WikisPage;
+export default CommunityEngagement;
