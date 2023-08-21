@@ -33,7 +33,7 @@ const features = [
   {
     title: 'Seamlessly Access All Your Hubs',
     description:
-      'Easily access and view your role for any hub that you created or that you&apos;re a collaborator on.',
+      'Easily access and view your role for any hub that you created or that you\'re a collaborator on.',
     image: accessYourHubs,
     alt: 'How to access all of your hubs',
   },
