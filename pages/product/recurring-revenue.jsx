@@ -99,7 +99,7 @@ const RecurringRevenue = () => {
       {/* Features section */}
       <section className="overflow-hidden py-16 md:py-18">
         {tabOrientation === 'vertical' ? (
-          <div className="mt-16 space-y-12">
+          <div className="mt-16 space-y-12 mx-4">
             {features.map((feature, index) => (
               <div key={index} className="space-y-6">
                 <div className="max-w-[45rem] mx-auto">
