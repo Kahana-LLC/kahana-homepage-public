@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import Footer from '../../components/Footer';
-import NavbarDup from '../../components/NavbarResources';
+import NavbarDup from '../../components/NavbarDup';
 import Image from 'next/image';
 import ResourcesCalltoAction from '../../components/ResourcesCalltoAction';
 import DigitalProductsResources from '../../components/DigitalProductsResources';
@@ -33,7 +33,7 @@ const Page = () => {
         />
       </Head>
       
-      <div>
+      <div className="sticky top-0 z-50">
         <NavbarDup />
       </div>
       
