@@ -19,7 +19,7 @@ const features = [
   {
     title: 'Monetize',
     description:
-      'Money appears in your bank account like magic. Create a delightfully casual subscription flow. Connect through Stripe to receive payments.',
+      'Create a delightfully casual subscription flow by charging access to your hubs. Connect through Stripe to receive payments.',
     image: monetize,
   },
   {
