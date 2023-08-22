@@ -84,16 +84,16 @@ export default function Footer() {
                   loader={CustomLoader}
                   src="capterra-badge"
                   alt="Capterra Badge"
-                  width={120} // Adjust the width here as per your requirement
-                  height={48} // Adjust the height here as per your requirement
+                  width={120}
+                  height={48}
                 />
               </a>
             </div>
           </div>
           <div className="mt-12 sm:mt-0">
-          <div className="grid grid-cols-3 gap-8">
+            <div className="grid gap-8">
               {Object.keys(navigation).map((category) => (
-                <div key={category} className="flex-grow">
+                <div key={category} className="flex-grow xl:w-1/3">
                   <h3 className="text-base font-medium text-gray-900 capitalize">
                     {category === 'kahana-for' ? 'Kahana for' : category}
                   </h3>
