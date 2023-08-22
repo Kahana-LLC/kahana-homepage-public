@@ -159,16 +159,16 @@ export default function NavbarDup() {
           margin: 0;
         }
         .login-button {
-          background-color: #00ff00; /* Green color */
+          background-color: #038270; /* Green color */
           color: white; /* Text color */
-          padding: 10px 20px; /* Add padding to make it look like a button */
+          padding: 8px 16px; /* Add padding to make it look like a button */
           border: none; /* Remove the default button border */
           border-radius: 5px; /* Add some rounded corners */
           text-decoration: none; /* Remove underline */
         }
       
         .login-button:hover {
-          background-color: #00cc00; /* Change color on hover */
+          background-color: #024324; /* Change color on hover */
         }
       `}</style>
     </>
