@@ -105,13 +105,11 @@ export default function NavbarDup() {
                   </Link>
                 </li>
               ))}
-              {navigation1.map((link) => (
-                <li key={link.name}>
-                  <Link href={link.href} className={`text-base font-small text-gray-600 hover:text-gray-800 ${link.className}`}>
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <a href="https://app.kahana.co/login" className="login-button">
+                  Log in
+                </a>
+              </li>
             </ul>
           </div>
         </nav>
