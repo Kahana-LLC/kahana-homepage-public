@@ -2,12 +2,12 @@ import React from 'react';
 import Head from 'next/head';
 import Footer from '../components/Footer';
 import NavbarDup from '../components/NavbarDup';
-import ProductDemoSectionCoaches from '../components/ProductDemoSectionCoaches';
+import ProductDemoSectionConsultants from '../components/ProductDemoSectionCoaches';
 import Image from 'next/image';
 import { CheckIcon } from '@heroicons/react/20/solid';
-import coachesAndConsultantsHub from '../assets/images/coachesAndConsultantsHub.png';
+import consultantsHub from '../assets/images/consultantsHub.png';
 
-const CoachesPage = () => {
+const ConsultantsPage = () => {
   return (
     <div>
       <Head>
@@ -55,7 +55,7 @@ const CoachesPage = () => {
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
               <a href="https://app.kahana.co/hub/ch5qBlIsKh4CynJjpOEK" target="_blank" rel="noopener noreferrer">
                 <Image
-                  src={coachesAndConsultantsHub}
+                  src={consultantsHub}
                   alt="Kahana Hub"
                   width={750}
                   height={750}
@@ -70,7 +70,7 @@ const CoachesPage = () => {
         </div>
       </section>
 
-      <ProductDemoSectionCoaches />
+      <ProductDemoSectionConsultants />
       
       {/* What you get section */}
       <section className="py-12 md:py-16">
@@ -127,7 +127,7 @@ const CoachesPage = () => {
               <p className="text-lg italic mb-4">
                 &quot;You took my brain and turned it into a phenomenal asset. I could not do this at all without Kahana - I wouldn&apos;t even know where to start.&quot;
               </p>
-              <p className="font-semibold">Tay L., Brand Deal Coach</p>
+              <p className="font-semibold">Tay L., Brand Deal Consultant</p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md">
               <p className="text-lg italic mb-4">
@@ -139,7 +139,7 @@ const CoachesPage = () => {
               <p className="text-lg italic mb-4">
                 &quot;It&apos;s finally out of my head! I&apos;ve been wanting to build digital products for months and couldn&apos;t make any progress; Kahana streamlined it and made it so much easier.&quot;
               </p>
-              <p className="font-semibold">Gregory G., Executive Coach & Business Consultant</p>
+              <p className="font-semibold">Gregory G., Business Consultant</p>
             </div>
             {/* Repeat similar blocks for other testimonials */}
           </div>
@@ -165,4 +165,4 @@ const CoachesPage = () => {
   );
 };
 
-export default CoachesPage;
+export default ConsultantsPage;
