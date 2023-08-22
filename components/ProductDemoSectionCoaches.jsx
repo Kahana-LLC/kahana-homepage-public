@@ -9,23 +9,23 @@ import { Container } from './Container';
 
 const features = [
   {
-    title: 'Recurring Revenue',
+    title: 'Monetize Your Expertise',
     description:
-      'Build dynamic hubs of all your best frameworks, insights, templates, and methodologies. It\'s like charging for access to your brain.',
+      'Transform your coaching wisdom into curated hubs containing your top frameworks, insights, templates, and methodologies. Turn your knowledge into a new revenue stream.',
     image: revenue,
     link: '/product/recurring-revenue', // Add the link for Recurring Revenue
   },
   {
-    title: 'Collaboration Tools',
+    title: 'Collaborate with Your Peers',
     description:
-      'Invite fellow coaches and consultants to contribute and build hubs together.',
+      'Invite fellow coaches to join forces, co-create content, and build comprehensive coaching resources together.',
     image: collaboration,
     link: '/product/collaboration-tools', // Add the link for Collaboration Tools
   },
   {
-    title: 'Community Engagement',
+    title: 'Engage Your Community',
     description:
-      'Collaborate with customers to gather feedback and create an engaging environment where customers can connect with one another.',
+      'Engage with your coaching community to gather valuable feedback, foster connections, and create a thriving environment for mutual growth and learning.',
     image: community,
     link: '/product/community-engagement', // Add the link for Community Engagement
   },
@@ -58,7 +58,7 @@ export default function ProductDemoSection() {
       <Container>
         <div className="max-w-2xl md:mx-auto md:text-center xl:max-w-none text-center">
           <h2 className="text-3xl font-bold mb-4 md:px-12 lg:px-24">
-            Manage your recurring revenue streams, collaborate with peers and team members, and gather customer feedback, all in one place.
+            Scale your coaching business with powerful features
           </h2>
         </div>
         {tabOrientation === 'vertical' ? (
