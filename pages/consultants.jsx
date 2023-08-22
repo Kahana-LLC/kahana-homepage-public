@@ -89,6 +89,14 @@ const ConsultantsPage = () => {
                 </li>
                 <li className="flex items-center space-x-3">
                   <CheckIcon className="h-5 w-5 text-green-500" aria-hidden="true" />
+                  <span className="text-sm text-gray-500">Google Sheets</span>
+                </li>
+                <li className="flex items-center space-x-3">
+                  <CheckIcon className="h-5 w-5 text-green-500" aria-hidden="true" />
+                  <span className="text-sm text-gray-500">Google Drive Assets</span>
+                </li>
+                <li className="flex items-center space-x-3">
+                  <CheckIcon className="h-5 w-5 text-green-500" aria-hidden="true" />
                   <span className="text-sm text-gray-500">Canva Docs</span>
                 </li>
                 <li className="flex items-center space-x-3">
