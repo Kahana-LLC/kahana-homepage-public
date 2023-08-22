@@ -90,8 +90,8 @@ export default function Footer() {
               </a>
             </div>
           </div>
-          <div className="mt-12 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
-            <div className="md:grid md:grid-cols-2 md:gap-8">
+          <div className="mt-12 sm:mt-0">
+            <div className="grid grid-cols-4 gap-8"">
               {Object.keys(navigation).map((category) => (
                 <div key={category} className="flex-grow xl:w-2/3">
                   <h3 className="text-base font-medium text-gray-900 capitalize">
