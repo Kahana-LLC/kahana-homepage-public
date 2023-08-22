@@ -15,7 +15,7 @@ const navigation = [
 ];
 
 const navigation1 = [
-  { name: 'Log in', href: 'https://app.kahana.co/login' },
+  { name: 'Log in', href: 'https://app.kahana.co/login', className: 'login-button' }
 ];
 
 const navigationAll = [
@@ -152,6 +152,18 @@ export default function NavbarDup() {
           list-style: none;
           padding: 0;
           margin: 0;
+        }
+        .login-button {
+          background-color: #00ff00; /* Green color */
+          color: white; /* Text color */
+          padding: 10px 20px; /* Add padding to make it look like a button */
+          border: none; /* Remove the default button border */
+          border-radius: 5px; /* Add some rounded corners */
+          text-decoration: none; /* Remove underline */
+        }
+      
+        .login-button:hover {
+          background-color: #00cc00; /* Change color on hover */
         }
       `}</style>
     </>
