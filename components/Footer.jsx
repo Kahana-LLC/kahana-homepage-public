@@ -93,11 +93,11 @@ export default function Footer() {
           </div>
           <div className="mt-12 sm:mt-0">
             <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
-              {['Product', 'Kahana for', 'Social', 'Build', 'Learn', 'Resources'].map((category) => (
+              {Object.keys(navigation).map((category) => (
                 <div key={category}>
                   <h3 className="text-base font-medium text-gray-900 capitalize">{category}</h3>
                   <ul role="list" className="mt-4 space-y-4">
-                    {navigation[category.toLowerCase()].map((item) => (
+                    {navigation[category].map((item) => (
                       <li key={item.name}>
                         <a
                           href={item.href}
