@@ -52,7 +52,7 @@ const EnterprisePage = () => {
           >
             Request a demo
           </a>
-          <div className="mt-8">
+          <div className="mt-8 mx-auto">
             <a href="https://app.kahana.co/hub/tHwAYvYPzqVwGPGzh10k" target="_blank" rel="noopener noreferrer">
               <Image
                 src={enterpriseHub}
@@ -64,7 +64,7 @@ const EnterprisePage = () => {
             </a>
           </div>
           <div className="md:px-12 lg:px-24 mt-4 text-gray-500 text-center">
-            Create and charge for access to an up-to-date repository of your best data, research, insights, best practices, methodologies, templates, etc.
+            Create and charge for access to an up-to-date repository of your best data, research, insights, best practices, methodologies, templates, etc., like this hub
           </div>
         </div>
       </section>
