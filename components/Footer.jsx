@@ -97,7 +97,7 @@ export default function Footer() {
               </a>
             </div>
           </div>
-          <div className="mt-12 grid grid-cols-1 gap-8 sm:gap-6 xl:grid-cols-3">
+          <div className="mt-12 grid grid-cols-2 gap-8 sm:gap-6 xl:grid-cols-3">
             <div className="flex">
               <div className="flex-1">
                 <h3 className="text-base font-medium text-gray-900">Product</h3>
