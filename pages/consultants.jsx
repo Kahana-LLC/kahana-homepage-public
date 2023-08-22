@@ -2,7 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import Footer from '../components/Footer';
 import NavbarDup from '../components/NavbarDup';
-import ProductDemoSectionConsultants from '../components/ProductDemoSectionCoaches';
+import ProductDemoSectionConsultants from '../components/ProductDemoSectionConsultants';
 import Image from 'next/image';
 import { CheckIcon } from '@heroicons/react/20/solid';
 import consultantsHub from '../assets/images/consultantsHub.png';
