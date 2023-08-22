@@ -106,7 +106,7 @@ export default function Reviews() {
       <Container>
         <div className="mx-auto max-w-2xl md:text-center">
           <p className="mt-1 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
-            Our Community
+            Why People Love Kahana
           </p>
           <p className="mt-4 text-lg tracking-tight text-slate-700">
             Multi-passionate creators and experts from all over the world 🌎
