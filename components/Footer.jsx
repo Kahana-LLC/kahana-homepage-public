@@ -73,8 +73,13 @@ export default function Footer() {
       </h2>
       <div className="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
-          <div className="space-y-8 xl:col-span-1">
-            <Image className="h-10" src={grayKahanaLogo} alt="navbar-logo" />
+          <div className="space-y-8 xl:col-span-1"> 
+            <Image
+              className="h-10"
+              src={grayKahanaLogo}
+              w
+              alt="navbar-logo"
+            />
             <p className="text-base text-gray-500">
               Join a community of 2500+ creators and experts collaborating and monetizing their expertise together.
             </p>
@@ -82,78 +87,106 @@ export default function Footer() {
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
               <div className="sf-root" data-id="3652674" data-badge="heart-badge-white" data-variant-id="sf" style={{ width: '75px' }}></div>
               <a href="https://www.capterra.com/reviews/342047/Kahana?utm_source=vendor&utm_medium=badge&utm_campaign=capterra_reviews_badge">
-                <Image loader={CustomLoader} src="capterra-badge" alt="Capterra Badge" width={120} height={48} />
+                <Image
+                  loader={CustomLoader}
+                  src="capterra-badge"
+                  alt="Capterra Badge"
+                  width={120} // Adjust the width here as per your requirement
+                  height={48} // Adjust the height here as per your requirement
+                />
               </a>
             </div>
           </div>
-          <div className="mt-12 xl:mt-0 xl:col-span-2">
-            <div className="md:grid md:grid-cols-2 md:gap-8 lg:grid-cols-4">
+          <div className="mt-12 grid grid-cols-3 gap-8 xl:col-span-2 xl:mt-0">
+            <div className="md:grid md:grid-cols-3 md:gap-8">
               <div>
-                <h3 className="text-base font-medium text-gray-900">Product</h3>
+                <h3 className="text-base font-medium text-gray-900">
+                  Product
+                </h3>
                 <ul role="list" className="mt-4 space-y-4">
                   {navigation.product.map((item) => (
                     <li key={item.name}>
-                      <a href={item.href} className="text-base text-gray-500 hover:text-gray-900">
+                      <a
+                        href={item.href}
+                        className="text-base text-gray-500 hover:text-gray-900"
+                      >
                         {item.name}
                       </a>
                     </li>
                   ))}
                 </ul>
               </div>
-              <div>
+              <div className="mt-12 md:mt-0">
                 <h3 className="text-base font-medium text-gray-900">Kahana for</h3>
                 <ul role="list" className="mt-4 space-y-4">
                   {navigation.solutions.map((item) => (
                     <li key={item.name}>
-                      <a href={item.href} className="text-base text-gray-500 hover:text-gray-900">
+                      <a
+                        href={item.href}
+                        className="text-base text-gray-500 hover:text-gray-900"
+                      >
                         {item.name}
                       </a>
                     </li>
                   ))}
                 </ul>
               </div>
+            </div>
+            <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
                 <h3 className="text-base font-medium text-gray-900">Social</h3>
                 <ul role="list" className="mt-4 space-y-4">
                   {navigation.social.map((item) => (
                     <li key={item.name}>
-                      <a href={item.href} className="text-base text-gray-500 hover:text-gray-900">
+                      <a
+                        href={item.href}
+                        className="text-base text-gray-500 hover:text-gray-900"
+                      >
                         {item.name}
                       </a>
                     </li>
                   ))}
                 </ul>
               </div>
-              <div>
+              <div className="mt-12 md:mt-0">
                 <h3 className="text-base font-medium text-gray-900">Build</h3>
                 <ul role="list" className="mt-4 space-y-4">
                   {navigation.build.map((item) => (
                     <li key={item.name}>
-                      <a href={item.href} className="text-base text-gray-500 hover:text-gray-900">
+                      <a
+                        href={item.href}
+                        className="text-base text-gray-500 hover:text-gray-900"
+                      >
                         {item.name}
                       </a>
                     </li>
                   ))}
                 </ul>
               </div>
-              <div>
+              <div className="mt-12 md:mt-0">
                 <h3 className="text-base font-medium text-gray-900">Learn</h3>
                 <ul role="list" className="mt-4 space-y-4">
                   {navigation.learn.map((item) => (
                     <li key={item.name}>
-                      <a href={item.href} className="text-base text-gray-500 hover:text-gray-900">
+                      <a
+                        href={item.href}
+                        className="text-base text-gray-500 hover:text-gray-900"
+                      >
                         {item.name}
                       </a>
                     </li>
                   ))}
                 </ul>
               </div>
-              <div>
+              <div className="mt-12 md:mt-0">
                 <h3 className="text-base font-medium text-gray-900">Resources</h3>
                 <ul role="list" className="mt-4 space-y-4">
                   {navigation.resources.map((item) => (
                     <li key={item.name}>
-                      <a href={item.href} className="text-base text-gray-500 hover:text-gray-900">
+                      <a
+                        href={item.href}
+                        className="text-base text-gray-500 hover:text-gray-900"
+                      >
                         {item.name}
                       </a>
                     </li>
