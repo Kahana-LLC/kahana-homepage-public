@@ -6,14 +6,15 @@ import whiteKahanaLogo from '../assets/kahana_logo_wide_light.svg';
 import HeaderBanner from './HeaderBanner';
 
 const navigation = [
-  { name: 'Pricing', href: '/pricing' },
-  { name: 'Blog', href: 'https://blog.kahana.co' },
-  { name: 'Resources', href: '/resources' },
+  { name: 'About', href: '/about' },
+  { name: 'Examples', href: '/explore' },
   { name: 'Solutions', href: '/solutions' },
+  { name: 'Resources', href: '/resources' },
+  { name: 'Blog', href: 'https://blog.kahana.co' },
+  { name: 'Pricing', href: '/pricing' },
 ];
 
 const navigation1 = [
-  { name: 'Request a demo', href: 'https://7hkdcfzbmr0.typeform.com/to/ZYLHazEf?utm_content=landing_page_header' },
   { name: 'Log in', href: 'https://app.kahana.co/login' },
 ];
 
