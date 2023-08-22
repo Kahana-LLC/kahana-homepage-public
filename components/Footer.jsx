@@ -15,7 +15,8 @@ const navigation = {
   ],
   solutions: [
     { name: 'Enterprise', href: '/enterprise' },
-    { name: 'Coaches & Consultants', href: '/coaches-and-consultants' },
+    { name: 'Coaches', href: '/coaches' },
+    { name: 'Consultants', href: '/consultants' },
     { name: 'Experts', href: '/experts' },
   ],
   social: [
