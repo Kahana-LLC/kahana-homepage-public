@@ -69,9 +69,8 @@ export default function ProductDemoSection() {
           </h1>
           <p className="mt-6 text-xl tracking-tight text-white">
             You have years of valuable information sitting in your brain 
-            and resources gathering dust in a (digital) folder. Kahana 
-            helps you turn your collective knowledge into hubs that generate 
-            income for you.                  
+            and on your computer. Kahana helps you turn your collective 
+            knowledge into hubs that generate income for you.    
           </p>
         </div>
         <Tab.Group
