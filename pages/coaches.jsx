@@ -43,7 +43,7 @@ const CoachesPage = () => {
             Elevate your coaching business with Kahana
           </h1>
           <p className="text-lg mb-8 md:px-12 lg:px-24 px-4">
-            Transform your coaching knowledge into a new revenue stream. Monetize your insights and expertise effortlessly.
+            Transform your coaching knowledge into new revenue streams. Monetize your insights and expertise effortlessly.
           </p>
           <a
             href="https://app.kahana.co/signup"
