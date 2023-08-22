@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import Link from 'next/link'
+import Link from 'next/link';
 import Image from 'next/image';
 import grayKahanaLogo from '../assets/kahana_logo_wide_gray.svg';
 
@@ -13,7 +13,7 @@ const navigation = {
     { name: 'Collaboration Tools', href: '/product/collaboration-tools', category: 'Product' },
     { name: 'Community Engagement', href: '/product/community-engagement', category: 'Product' },
   ],
-  solutions: [
+  'kahana-for': [ // Renamed 'solutions' to 'kahana-for'
     { name: 'Enterprise', href: '/enterprise', category: 'Kahana for' },
     { name: 'Coaches & Consultants', href: '/coaches-and-consultants', category: 'Kahana for' },
     { name: 'Experts', href: '/experts', category: 'Kahana for' },
@@ -67,11 +67,10 @@ export default function Footer() {
       </h2>
       <div className="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
-          <div className="space-y-8 xl:col-span-1"> 
+          <div className="space-y-8 xl:col-span-1">
             <Image
               className="h-10"
               src={grayKahanaLogo}
-              w
               alt="navbar-logo"
             />
             <p className="text-base text-gray-500">
@@ -92,10 +91,12 @@ export default function Footer() {
             </div>
           </div>
           <div className="mt-12 sm:mt-0">
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-3 gap-8">
               {Object.keys(navigation).map((category) => (
                 <div key={category}>
-                  <h3 className="text-base font-medium text-gray-900 capitalize">{category}</h3>
+                  <h3 className="text-base font-medium text-gray-900 capitalize">
+                    {category === 'kahana-for' ? 'Kahana for' : category}
+                  </h3>
                   <ul role="list" className="mt-4 space-y-4">
                     {navigation[category].map((item) => (
                       <li key={item.name}>
