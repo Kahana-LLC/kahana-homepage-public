@@ -6,6 +6,7 @@ import NavbarDup from '../components/NavbarDup';
 import ProductDemoSectionExperts from '../components/ProductDemoSectionExperts';
 import Image from 'next/image';
 import { CheckIcon } from '@heroicons/react/20/solid';
+import expertsHub from '../assets/images/expertsHub.png';
 
 const ExpertsPage = () => {
   return (
@@ -52,15 +53,17 @@ const ExpertsPage = () => {
             Use Kahana free
           </a>
           <div className="mt-8">
-            <iframe
-              src="https://app.kahana.co/hub/TEdBTfY10Dd9H7QIBgQc"
-              width="100%"
-              height="750"
-              frameBorder="0"
-              title="Kahana Hub"
-              allowFullScreen
-              loading="lazy"
-            ></iframe>
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+              <a href="https://app.kahana.co/hub/TEdBTfY10Dd9H7QIBgQc" target="_blank" rel="noopener noreferrer">
+                <Image
+                  src={expertsHub}
+                  alt="Kahana Hub"
+                  width={750}
+                  height={750}
+                  layout="responsive"
+                />
+              </a>
+            </div>
           </div>
           <div className="md:px-12 lg:px-24 mt-4 text-gray-500 text-center">
             Create and charge for access to an up-to-date repository of your best insights, frameworks, methodologies, etc.
