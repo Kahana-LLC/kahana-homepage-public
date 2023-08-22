@@ -98,7 +98,6 @@ export default function Footer() {
             </div>
           </div>
           <div className="mt-12 grid grid-cols-3 gap-8 xl:col-span-2 xl:mt-0">
-            <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
                 <h3 className="text-base font-medium text-gray-900">
                   Product
@@ -191,7 +190,6 @@ export default function Footer() {
                   ))}
                 </ul>
               </div>
-            </div>
           </div>
         </div>
         <div className="mt-12 border-t border-gray-200 pt-8">
