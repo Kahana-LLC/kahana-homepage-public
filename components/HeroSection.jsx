@@ -45,7 +45,7 @@ export default function HeroSection() {
       <div className="pt-1 pb-16 sm:pb-24">
         <main className="mt-10 sm:mt-24">
           <div className="mx-auto max-w-7xl">
-            <div className="lg:grid lg:grid-cols-12 lg:gap-8">
+            <div className="lg:grid lg:grid-cols-12 lg:gap-8 lg:items-center">
               <div className=" px-4 sm:px-6 sm:text-center md:mx-auto md:max-w-2xl lg:col-span-6 lg:flex lg:items-center lg:text-left">
                 <div>
 
@@ -104,7 +104,7 @@ export default function HeroSection() {
                           <a
                             href="https://app.kahana.co/signup"
                             className="flex-1 rounded-md border border-transparent bg-[#038270] py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-[#024324] focus:outline-none focus:ring-2 focus:ring-[#024324] focus:ring-offset-2 text-center"
-                            style={{ maxWidth: "40%", marginLeft: "30px" }}
+                            style={{ maxWidth: "40%", marginLeft: "40px" }}
                           >
                             Sign up for free
                           </a>
