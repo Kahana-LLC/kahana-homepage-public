@@ -97,7 +97,7 @@ export default function Footer() {
               </a>
             </div>
           </div>
-          <div className="mt-12 grid grid-cols-3 gap-8 xl:col-span-2 xl:mt-0 sm:grid-cols-2">
+          <div className="mt-12 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0 md:grid-cols-3">
               <div>
                 <h3 className="text-base font-medium text-gray-900">
                   Product
