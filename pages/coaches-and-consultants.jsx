@@ -5,6 +5,7 @@ import NavbarDup from '../components/NavbarDup';
 import ProductDemoSectionCoaches from '../components/ProductDemoSectionCoaches';
 import Image from 'next/image';
 import { CheckIcon } from '@heroicons/react/20/solid';
+import coachesAndConsultantsHub from '../assets/images/coachesAndConsultantsHub.png';
 
 const CoachesPage = () => {
   return (
@@ -51,18 +52,20 @@ const CoachesPage = () => {
             Use Kahana free
           </a>
           <div className="mt-8">
-            <iframe
-              src="https://app.kahana.co/hub/ch5qBlIsKh4CynJjpOEK"
-              width="100%"
-              height="750"
-              frameBorder="0"
-              title="Kahana Hub"
-              allowFullScreen
-              loading="lazy"
-            ></iframe>
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+              <a href="https://app.kahana.co/hub/ch5qBlIsKh4CynJjpOEK" target="_blank" rel="noopener noreferrer">
+                <Image
+                  src={coachesAndConsultantsHub}
+                  alt="Kahana Hub"
+                  width={750}
+                  height={750}
+                  layout="responsive"
+                />
+              </a>
+            </div>
           </div>
           <div className="md:px-12 lg:px-24 mt-4 text-gray-500 text-center">
-            Create and charge for access to an up-to-date repository of your best insights, frameworks, methodologies, etc.
+            Create and charge for access to an up-to-date repository of your best insights, frameworks, methodologies, etc., like this hub
           </div>
         </div>
       </section>
