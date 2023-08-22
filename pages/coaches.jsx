@@ -11,7 +11,7 @@ const CoachesPage = () => {
   return (
     <div>
       <Head>
-        <title>Kahana for coaches</title>
+        <title>Kahana for Coaches</title>
         <meta
           name="Kahana"
           content="Kahana is the easiest way to monetize your content and research. Transform knowledge and expertise into subscription revenue. Sign up for free today!"
@@ -40,10 +40,10 @@ const CoachesPage = () => {
       <section className="py-16 md:py-18">
         <div className="container mx-auto px-4 md:px-8 text-center">
           <h1 className="text-5xl font-bold mb-4 md:px-12 lg:px-24">
-            Turn the knowledge you share with clients into recurring revenue 
+            Elevate your coaching business with Kahana
           </h1>
           <p className="text-lg mb-8 md:px-12 lg:px-24 px-4">
-            Don&apos;t just charge for your time. Charge for access to all the valuable information you&apos;ve learned from working with clients so you can earn passive income while you sleep.
+            Transform your coaching knowledge into a new revenue stream. Monetize your insights and expertise effortlessly.
           </p>
           <a
             href="https://app.kahana.co/signup"
@@ -65,7 +65,7 @@ const CoachesPage = () => {
             </div>
           </div>
           <div className="md:px-12 lg:px-24 mt-4 text-gray-500 text-center">
-            Create and charge for access to an up-to-date repository of your best insights, frameworks, methodologies, etc., like this hub
+            Create and monetize curated coaching hubs with Kahana
           </div>
         </div>
       </section>
@@ -120,7 +120,7 @@ const CoachesPage = () => {
       {/* Testimonial section */}
       <section className="py-16 md:py-18">
         <div className="container mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-8">What our clients say</h2>
+          <h2 className="text-3xl font-bold mb-8">What coaches are saying</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-4 md:px-0">
             {/* Add "px-4 md:px-0" to the grid container */}
             <div className="bg-white p-6 rounded-lg shadow-md">
@@ -133,13 +133,13 @@ const CoachesPage = () => {
               <p className="text-lg italic mb-4">
                 &quot;I love how easy it is to set-up, make changes, add value & connect with your audience. The platform has allowed me to monetize my knowledge, and added a passive revenue stream to my small business.&quot;
               </p>
-              <p className="font-semibold">Kelsey V., Pinterest Consultant</p>
+              <p className="font-semibold">Kelsey V., Pinterest Coach</p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md">
               <p className="text-lg italic mb-4">
                 &quot;It&apos;s finally out of my head! I&apos;ve been wanting to build digital products for months and couldn&apos;t make any progress; Kahana streamlined it and made it so much easier.&quot;
               </p>
-              <p className="font-semibold">Gregory G., Executive Coach & Business Consultant</p>
+              <p className="font-semibold">Gregory G., Executive Coach</p>
             </div>
             {/* Repeat similar blocks for other testimonials */}
           </div>
