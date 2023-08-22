@@ -98,7 +98,7 @@ export default function HeroSection() {
                       </div>
                     </div>
 
-                    <div className="mt-2">
+                    <div className="mt-2 items-center">
                         <div className="flex-shrink-0 justify-content: center mb-6">
                           <Image
                             className="h-24 w-full justify-content: center object-scale-down"
