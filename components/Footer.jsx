@@ -93,7 +93,7 @@ export default function Footer() {
           <div className="mt-12 sm:mt-0">
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-8">
               {Object.keys(navigation).map((category) => (
-                <div key={category} className="flex-grow w-full">
+                <div key={category} className="w-full">
                   <h3 className="text-base font-medium text-gray-900 capitalize">
                     {category === 'kahana-for' ? 'Kahana for' : category}
                   </h3>
