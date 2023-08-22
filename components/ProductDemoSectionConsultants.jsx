@@ -58,7 +58,7 @@ export default function ProductDemoSection() {
       <Container>
         <div className="max-w-2xl md:mx-auto md:text-center xl:max-w-none text-center">
           <h2 className="text-3xl font-bold mb-4 md:px-12 lg:px-24">
-            Scale your coaching business with powerful features
+            Elevate your consultancy with powerful features
           </h2>
         </div>
         {tabOrientation === 'vertical' ? (
