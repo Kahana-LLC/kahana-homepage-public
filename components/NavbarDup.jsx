@@ -98,9 +98,16 @@ export default function NavbarDup() {
             </section>
 
             <ul className="DESKTOP-MENU hidden space-x-8 lg:flex">
-              {navigationAll.map((link) => (
+              {navigation.map((link) => (
                 <li key={link.name}>
                   <Link href={link.href} className="text-base font-small text-gray-600 hover:text-gray-800">
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+              {navigation1.map((link) => (
+                <li key={link.name}>
+                  <Link href={link.href} className={`text-base font-small text-gray-600 hover:text-gray-800 ${link.className}`}>
                     {link.name}
                   </Link>
                 </li>
