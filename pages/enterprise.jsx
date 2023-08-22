@@ -5,6 +5,8 @@ import NavbarDup from '../components/NavbarDup';
 import ProductDemoSectionEnterprise from '../components/ProductDemoSectionEnterprise';
 import Image from 'next/image';
 import { CheckIcon } from '@heroicons/react/20/solid';
+import enterpriseHub from '../assets/images/enterpriseHub.png';
+
 
 const EnterprisePage = () => {
   return (
@@ -51,15 +53,15 @@ const EnterprisePage = () => {
             Request a demo
           </a>
           <div className="mt-8">
-            <iframe
-              src="https://app.kahana.co/hub/tHwAYvYPzqVwGPGzh10k"
-              width="100%"
-              height="750"
-              frameBorder="0"
-              title="Kahana Hub"
-              allowFullScreen
-              loading="lazy"
-            ></iframe>
+            <a href="https://app.kahana.co/hub/tHwAYvYPzqVwGPGzh10k" target="_blank" rel="noopener noreferrer">
+              <Image
+                src={enterpriseHub}
+                alt="Kahana Hub"
+                width={750}
+                height={750}
+                layout="responsive"
+              />
+            </a>
           </div>
           <div className="md:px-12 lg:px-24 mt-4 text-gray-500 text-center">
             Create and charge for access to an up-to-date repository of your best data, research, insights, best practices, methodologies, templates, etc.
