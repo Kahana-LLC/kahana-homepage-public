@@ -97,96 +97,102 @@ export default function Footer() {
               </a>
             </div>
           </div>
-          <div className={`mt-12 grid grid-cols-3 gap-8 sm:gap-6`}>
-            <div>
-              <h3 className="text-base font-medium text-gray-900">Product</h3>
-              <ul role="list" className="mt-4 space-y-4">
-                {navigation.product.map((item) => (
-                  <li key={item.name}>
-                    <a
-                      href={item.href}
-                      className="text-base text-gray-500 hover:text-gray-900"
-                    >
-                      {item.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-base font-medium text-gray-900">Kahana for</h3>
-              <ul role="list" className="mt-4 space-y-4">
-                {navigation.solutions.map((item) => (
-                  <li key={item.name}>
-                    <a
-                      href={item.href}
-                      className="text-base text-gray-500 hover:text-gray-900"
-                    >
-                      {item.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-base font-medium text-gray-900">Social</h3>
-              <ul role="list" className="mt-4 space-y-4">
-                {navigation.social.map((item) => (
-                  <li key={item.name}>
-                    <a
-                      href={item.href}
-                      className="text-base text-gray-500 hover:text-gray-900"
-                    >
-                      {item.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-base font-medium text-gray-900">Build</h3>
-              <ul role="list" className="mt-4 space-y-4">
-                {navigation.build.map((item) => (
-                  <li key={item.name}>
-                    <a
-                      href={item.href}
-                      className="text-base text-gray-500 hover:text-gray-900"
-                    >
-                      {item.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            {navigation.learn.map((item) => (
-              <div key={item.name}>
-                <h3 className="text-base font-medium text-gray-900">Learn</h3>
+          <div className="mt-12 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
+            <div className="md:grid md:grid-cols-2 md:gap-8">
+              <div>
+                <h3 className="text-base font-medium text-gray-900">
+                  Product
+                </h3>
                 <ul role="list" className="mt-4 space-y-4">
-                  <li>
-                    <a
-                      href={item.href}
-                      className="text-base text-gray-500 hover:text-gray-900"
-                    >
-                      {item.name}
-                    </a>
-                  </li>
+                  {navigation.product.map((item) => (
+                    <li key={item.name}>
+                      <a
+                        href={item.href}
+                        className="text-base text-gray-500 hover:text-gray-900"
+                      >
+                        {item.name}
+                      </a>
+                    </li>
+                  ))}
                 </ul>
               </div>
-            ))}
-            <div>
-              <h3 className="text-base font-medium text-gray-900">Resources</h3>
-              <ul role="list" className="mt-4 space-y-4">
-                {navigation.resources.map((item) => (
-                  <li key={item.name}>
-                    <a
-                      href={item.href}
-                      className="text-base text-gray-500 hover:text-gray-900"
-                    >
-                      {item.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
+              <div>
+                <h3 className="text-base font-medium text-gray-900">Kahana for</h3>
+                <ul role="list" className="mt-4 space-y-4">
+                  {navigation.solutions.map((item) => (
+                    <li key={item.name}>
+                      <a
+                        href={item.href}
+                        className="text-base text-gray-500 hover:text-gray-900"
+                      >
+                        {item.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+            <div className="md:grid md:grid-cols-2 md:gap-8">
+              <div>
+                <h3 className="text-base font-medium text-gray-900">Social</h3>
+                <ul role="list" className="mt-4 space-y-4">
+                  {navigation.social.map((item) => (
+                    <li key={item.name}>
+                      <a
+                        href={item.href}
+                        className="text-base text-gray-500 hover:text-gray-900"
+                      >
+                        {item.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-base font-medium text-gray-900">Build</h3>
+                <ul role="list" className="mt-4 space-y-4">
+                  {navigation.build.map((item) => (
+                    <li key={item.name}>
+                      <a
+                        href={item.href}
+                        className="text-base text-gray-500 hover:text-gray-900"
+                      >
+                        {item.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-base font-medium text-gray-900">Learn</h3>
+                <ul role="list" className="mt-4 space-y-4">
+                  {navigation.learn.map((item) => (
+                    <li key={item.name}>
+                      <a
+                        href={item.href}
+                        className="text-base text-gray-500 hover:text-gray-900"
+                      >
+                        {item.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-base font-medium text-gray-900">Resources</h3>
+                <ul role="list" className="mt-4 space-y-4">
+                  {navigation.resources.map((item) => (
+                    <li key={item.name}>
+                      <a
+                        href={item.href}
+                        className="text-base text-gray-500 hover:text-gray-900"
+                      >
+                        {item.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
         </div>
