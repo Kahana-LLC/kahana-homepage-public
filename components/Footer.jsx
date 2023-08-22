@@ -9,47 +9,41 @@ const CustomLoader = ({ src, width, quality }) => {
 
 const navigation = {
   product: [
-    { name: 'Recurring Revenue', href: '/product/recurring-revenue' },
-    { name: 'Collaboration Tools', href: '/product/collaboration-tools' },
-    { name: 'Community Engagement', href: '/product/community-engagement' },
+    { name: 'Recurring Revenue', href: '/product/recurring-revenue', category: 'Product' },
+    { name: 'Collaboration Tools', href: '/product/collaboration-tools', category: 'Product' },
+    { name: 'Community Engagement', href: '/product/community-engagement', category: 'Product' },
   ],
   solutions: [
-    { name: 'Enterprise', href: '/enterprise' },
-    { name: 'Coaches & Consultants', href: '/coaches-and-consultants' },
-    { name: 'Experts', href: '/experts' },
+    { name: 'Enterprise', href: '/enterprise', category: 'Kahana for' },
+    { name: 'Coaches & Consultants', href: '/coaches-and-consultants', category: 'Kahana for' },
+    { name: 'Experts', href: '/experts', category: 'Kahana for' },
   ],
   social: [
-    { name: 'LinkedIn', href: 'https://www.linkedin.com/company/kahana-co/' },
-    {
-      name: 'YouTube',
-      href: 'https://www.youtube.com/channel/UCwsf3DOnt3uQdrqf-NRZ2_w?sub_confirmation=1',
-    },
-    {
-      name: 'Instagram',
-      href: 'https://instagram.com/kahanahq',
-    },
-    { name: 'Twitter', href: 'https://twitter.com/KahanaHQ' },
+    { name: 'LinkedIn', href: 'https://www.linkedin.com/company/kahana-co/', category: 'Social' },
+    { name: 'YouTube', href: 'https://www.youtube.com/channel/UCwsf3DOnt3uQdrqf-NRZ2_w?sub_confirmation=1', category: 'Social' },
+    { name: 'Instagram', href: 'https://instagram.com/kahanahq', category: 'Social' },
+    { name: 'Twitter', href: 'https://twitter.com/KahanaHQ', category: 'Social' },
   ],
   build: [
-    { name: 'Guides & tutorials', href: '/resources' },
-    { name: 'Templates', href: 'https://templates.kahana.co' },
-    { name: 'Invest in seed round', href: 'https://7hkdcfzbmr0.typeform.com/to/wYCUMm54' },
-    { name: 'Become an affiliate', href: '/affiliates' }, 
+    { name: 'Guides & tutorials', href: '/resources', category: 'Build' },
+    { name: 'Templates', href: 'https://templates.kahana.co', category: 'Build' },
+    { name: 'Invest in seed round', href: 'https://7hkdcfzbmr0.typeform.com/to/wYCUMm54', category: 'Build' },
+    { name: 'Become an affiliate', href: '/affiliates', category: 'Build' },
   ],
   learn: [
-    { name: 'Help center', href: 'https://kahana.tawk.help/' },
-    { name: 'Blog', href: 'https://blog.kahana.co' },
-    { name: 'FAQ', href: '/faq' },
-    { name: 'Community', href: 'https://nas.io/creators-and-experts' },
-    { name: 'Explore', href: '/explore' },
+    { name: 'Help center', href: 'https://kahana.tawk.help/', category: 'Learn' },
+    { name: 'Blog', href: 'https://blog.kahana.co', category: 'Learn' },
+    { name: 'FAQ', href: '/faq', category: 'Learn' },
+    { name: 'Community', href: 'https://nas.io/creators-and-experts', category: 'Learn' },
+    { name: 'Explore', href: '/explore', category: 'Learn' },
   ],
   resources: [
-    { name: 'Pricing', href: '/pricing' },
-    { name: 'About us', href: '/about' },
-    { name: 'Careers', href: 'https://7hkdcfzbmr0.typeform.com/to/RQ99b3Bp' },
-    { name: 'Email us', href: 'mailto:info@kahana.co' },
-    { name: 'Privacy Policy', href: '/privacy-policy' },
-    { name: 'Terms & Conditions', href: '/terms-and-conditions' },
+    { name: 'Pricing', href: '/pricing', category: 'Resources' },
+    { name: 'About us', href: '/about', category: 'Resources' },
+    { name: 'Careers', href: 'https://7hkdcfzbmr0.typeform.com/to/RQ99b3Bp', category: 'Resources' },
+    { name: 'Email us', href: 'mailto:info@kahana.co', category: 'Resources' },
+    { name: 'Privacy Policy', href: '/privacy-policy', category: 'Resources' },
+    { name: 'Terms & Conditions', href: '/terms-and-conditions', category: 'Resources' },
   ],
 };
 
@@ -97,14 +91,12 @@ export default function Footer() {
               </a>
             </div>
           </div>
-          <div className="mt-12 grid grid-cols-2 md:grid-cols-3 gap-8 xl:col-span-2 xl:mt-0">
-            <div className="md:grid md:grid-cols-2 md:gap-8">
-              <div>
-                <h3 className="text-base font-medium text-gray-900">
-                  Product
-                </h3>
+          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 xl:col-span-2 xl:mt-0">
+            {['product', 'solutions', 'social', 'build', 'learn', 'resources'].map((category) => (
+              <div key={category}>
+                <h3 className="text-base font-medium text-gray-900 capitalize">{category}</h3>
                 <ul role="list" className="mt-4 space-y-4">
-                  {navigation.product.map((item) => (
+                  {navigation[category].map((item) => (
                     <li key={item.name}>
                       <a
                         href={item.href}
@@ -116,84 +108,7 @@ export default function Footer() {
                   ))}
                 </ul>
               </div>
-              <div className="mt-12 md:mt-0">
-                <h3 className="text-base font-medium text-gray-900">Kahana for</h3>
-                <ul role="list" className="mt-4 space-y-4">
-                  {navigation.solutions.map((item) => (
-                    <li key={item.name}>
-                      <a
-                        href={item.href}
-                        className="text-base text-gray-500 hover:text-gray-900"
-                      >
-                        {item.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-            <div className="md:grid md:grid-cols-2 md:gap-8">
-              <div>
-                <h3 className="text-base font-medium text-gray-900">Social</h3>
-                <ul role="list" className="mt-4 space-y-4">
-                  {navigation.social.map((item) => (
-                    <li key={item.name}>
-                      <a
-                        href={item.href}
-                        className="text-base text-gray-500 hover:text-gray-900"
-                      >
-                        {item.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="mt-12 md:mt-0">
-                <h3 className="text-base font-medium text-gray-900">Build</h3>
-                <ul role="list" className="mt-4 space-y-4">
-                  {navigation.build.map((item) => (
-                    <li key={item.name}>
-                      <a
-                        href={item.href}
-                        className="text-base text-gray-500 hover:text-gray-900"
-                      >
-                        {item.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="mt-12 md:mt-0">
-                <h3 className="text-base font-medium text-gray-900">Learn</h3>
-                <ul role="list" className="mt-4 space-y-4">
-                  {navigation.learn.map((item) => (
-                    <li key={item.name}>
-                      <a
-                        href={item.href}
-                        className="text-base text-gray-500 hover:text-gray-900"
-                      >
-                        {item.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="mt-12 md:mt-0">
-                <h3 className="text-base font-medium text-gray-900">Resources</h3>
-                <ul role="list" className="mt-4 space-y-4">
-                  {navigation.resources.map((item) => (
-                    <li key={item.name}>
-                      <a
-                        href={item.href}
-                        className="text-base text-gray-500 hover:text-gray-900"
-                      >
-                        {item.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
         <div className="mt-12 border-t border-gray-200 pt-8">
