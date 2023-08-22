@@ -5,7 +5,7 @@ import NavbarDup from '../components/NavbarDup';
 import ProductDemoSectionCoaches from '../components/ProductDemoSectionCoaches';
 import Image from 'next/image';
 import { CheckIcon } from '@heroicons/react/20/solid';
-import coachesAndConsultantsHub from '../assets/images/coachesAndConsultantsHub.png';
+import coachesHub from '../assets/images/coachesHub.png';
 
 const CoachesPage = () => {
   return (
@@ -53,9 +53,9 @@ const CoachesPage = () => {
           </a>
           <div className="mt-8">
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-              <a href="https://app.kahana.co/hub/ch5qBlIsKh4CynJjpOEK" target="_blank" rel="noopener noreferrer">
+              <a href="https://app.kahana.co/hub/elQ1iO0Nbb1wMu6u3dDj" target="_blank" rel="noopener noreferrer">
                 <Image
-                  src={coachesAndConsultantsHub}
+                  src={coachesHub}
                   alt="Kahana Hub"
                   width={750}
                   height={750}
