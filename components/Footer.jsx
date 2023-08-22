@@ -97,7 +97,7 @@ export default function Footer() {
               </a>
             </div>
           </div>
-          <div className={`mt-12 grid grid-cols-${navigation.product.length + navigation.solutions.length + navigation.social.length + navigation.build.length + navigation.learn.length + navigation.resources.length === 15 ? '4' : '3'} gap-8 sm:gap-6`}>
+          <div className={`mt-12 grid grid-cols-3 gap-8 sm:gap-6`}>
             <div>
               <h3 className="text-base font-medium text-gray-900">Product</h3>
               <ul role="list" className="mt-4 space-y-4">
@@ -158,11 +158,11 @@ export default function Footer() {
                 ))}
               </ul>
             </div>
-            <div>
-              <h3 className="text-base font-medium text-gray-900">Learn</h3>
-              <ul role="list" className="mt-4 space-y-4">
-                {navigation.learn.map((item) => (
-                  <li key={item.name}>
+            {navigation.learn.map((item) => (
+              <div key={item.name}>
+                <h3 className="text-base font-medium text-gray-900">Learn</h3>
+                <ul role="list" className="mt-4 space-y-4">
+                  <li>
                     <a
                       href={item.href}
                       className="text-base text-gray-500 hover:text-gray-900"
@@ -170,9 +170,9 @@ export default function Footer() {
                       {item.name}
                     </a>
                   </li>
-                ))}
-              </ul>
-            </div>
+                </ul>
+              </div>
+            ))}
             <div>
               <h3 className="text-base font-medium text-gray-900">Resources</h3>
               <ul role="list" className="mt-4 space-y-4">
