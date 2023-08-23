@@ -30,7 +30,7 @@ const testimonials = [
         "You took my brain and turned it into a phenomenal asset. I could not do this at all without Kahana - I wouldn't even know where to start.",
       author: {
         name: 'Tay Ladd',
-        role: 'Corporate Lawyer, Creator, & Brand Deal Expert',
+        role: 'Corporate Lawyer, Creator & Brand Deal Expert',
         image: avatarImage7, 
       },
     },
