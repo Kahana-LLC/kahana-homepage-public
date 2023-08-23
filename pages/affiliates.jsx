@@ -11,7 +11,11 @@ const features = [
     title: 'On-Demand Hub Creation',
     description: (
       <span>
-        <strong>What it is:</strong> An add-on service we provide for individuals and organizations who have a ton of expertise but don&apos;t have the time or energy to build hubs themselves. It&apos;s like ordering Domino&apos;s for recurring revenue: customers get to choose the number of hubs they want, add specific requests, and submit existing content they&apos;d like to include. Our team will handle all the graphic design, formatting, and content creation to turn their knowledge into hubs and deliver them in as little as 5 business days.
+        <strong>What it is:</strong> An add-on service we provide for individuals and organizations who have a ton of expertise but don&apos;t have the time or energy to build hubs themselves. It&apos;s like ordering Domino&apos;s for recurring revenue: customers get to choose the number of hubs they want, add specific requests, and submit existing content they&apos;d like to include. Our team will handle all the graphic design, formatting, and content creation to turn their knowledge into hubs and deliver them in as little as 5 business days. For more details, check out{' '}
+        <a href="https://7hkdcfzbmr0.typeform.com/to/K9srs4OE?utm_source=solutions_page&typeform-source=kahana.co" className="text-[#038270] font-medium">
+          this form
+        </a>
+        .
         <br />
         <br />
         <strong>What you earn:</strong> 30% of the total project fee. For example, if you refer someone who orders two hubs, this will come out to $7K total ($4K for the first hub, $3K for the second). Of that $7K, <strong>you earn a total of $2.1K</strong> ($7K x 30%).
