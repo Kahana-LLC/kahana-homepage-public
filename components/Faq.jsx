@@ -5,7 +5,7 @@ const faqs = [
     question: 'What is Kahana?',
     answer: (
       <span>
-        You can think of Kahana as Patreon meets Google Drive - it&apos;s a collaborative platform that lets you create hubs of knowledge with other creators & experts and monetize <i>together</i>. You can upload your best insights (notes, videos, files, etc.) you&apos;ve curated and created and charge for access to them without having to build a course from scratch.
+        You can think of Kahana as Patreon meets Google Drive - it&apos;s a collaborative platform that lets you create hubs of knowledge with other creators & experts and monetize <i>together</i>. You can upload your best insights (notes, videos, files, templates, etc.) you&apos;ve curated and created and charge for access to them without having to build a course from scratch.
       </span>
     ),
   },
