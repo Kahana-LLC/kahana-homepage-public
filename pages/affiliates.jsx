@@ -33,7 +33,7 @@ const features = [
         .
         <br />
         <br />
-        <strong>What you earn:</strong> 30% of the setup fee and any custom development fees, as well as 30% of the company&apos;s subscription for the first 12 months. For example, if you refer an organization whose Enterprise contract is $300 per month, and their setup fee & custom development adds up to $50K, <strong>you earn a total of $16.08K</strong> ([$300 x 12] x 30% + $50K x 30%).
+        <strong>What you earn:</strong> 30% of the setup fee and any custom development fees, as well as 30% of the company&apos;s subscription for the first 12 months. For example, if you refer an organization whose Enterprise contract is $300 per month, and their setup fee & custom development add up to $50K, <strong>you earn a total of $16.08K</strong> ([$300 x 12] x 30% + $50K x 30%).
       </span>
     ),
   },
