@@ -6,6 +6,7 @@ import ProductDemoSectionCoaches from '../components/ProductDemoSectionCoaches';
 import Image from 'next/image';
 import { CheckIcon } from '@heroicons/react/20/solid';
 import coachesHub from '../assets/images/coachesHub.png';
+import Link from 'next/link';
 
 const CoachesPage = () => {
   return (
