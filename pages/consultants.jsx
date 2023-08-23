@@ -6,6 +6,7 @@ import ProductDemoSectionConsultants from '../components/ProductDemoSectionConsu
 import Image from 'next/image';
 import { CheckIcon } from '@heroicons/react/20/solid';
 import consultantsHub from '../assets/images/consultantsHub.png';
+import Link from 'next/link';
 
 const ConsultantsPage = () => {
   return (
@@ -167,6 +168,24 @@ const ConsultantsPage = () => {
           </a>
         </div>
       </section>
+
+      <section className={`py-16 px-4 sm:px-6 lg:px-8 bg-white`}>
+        <div className="max-w-7xl mx-auto text-center">
+          <h2 className={`text-3xl font-bold text-gray-900`}>
+            Become an affiliate
+          </h2>
+          <p className="mt-4 text-gray-700">
+            Refer people to Kahana and earn up to a 30% commission.
+          </p>
+          <Link href="/affiliates">
+            <a className="block mt-8">
+              <button className="px-6 py-2 bg-[#038270] text-white rounded-md shadow-md hover:bg-[#046856]">
+                Learn more
+              </button>
+            </a>
+          </Link>
+        </div>
+      </section> 
       
       <Footer />
     </div>
