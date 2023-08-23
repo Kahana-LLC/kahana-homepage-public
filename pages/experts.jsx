@@ -178,7 +178,7 @@ const ExpertsPage = () => {
           </p>
           <Link href="/affiliates">
             <a className="block mt-8">
-              <button className="px-6 py-2 bg-[#038270] text-white rounded-md shadow-md hover:bg-[#046856]">
+              <button className="px-6 py-2 bg-[#3B675E] text-white rounded-md shadow-md">
                 Learn more
               </button>
             </a>
