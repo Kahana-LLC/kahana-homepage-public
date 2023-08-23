@@ -195,7 +195,7 @@ export default function AffiliateProgramPage() {
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-100">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl font-bold mb-8 text-gray-900 text-center">
-              Commission on:
+              Earn commission on:
             </h2>
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {/* Your feature section */}
