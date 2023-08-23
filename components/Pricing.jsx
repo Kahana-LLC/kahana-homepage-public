@@ -64,7 +64,7 @@ export default function Pricing() {
     <div className="bg-white">
       <div className="mx-auto max-w-7xl py-24 px-4 sm:px-6 lg:px-8">
         <div className="sm:align-center sm:flex sm:flex-col">
-          <h1 className="text-5xl font-bold tracking-tight text-gray-900 text-center sm:text-left">
+          <h1 className="text-5xl font-bold tracking-tight text-gray-900 text-center">
             Pricing Plans
           </h1>
           <p className="mt-5 text-xl text-gray-500 sm:text-center">
