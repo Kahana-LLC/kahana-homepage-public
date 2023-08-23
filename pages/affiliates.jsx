@@ -22,14 +22,14 @@ const features = [
     title: 'Enterprise Deals',
     description: (
       <span>
-        <strong>What it is:</strong> Our highest-ticket SaaS subscription that we offer: it&apos;s for organizations that want their own Kahana environment. This typically involves a setup fee and some custom development upfront in addition to a recurring subscription. For more details, check out our{' '}
+        <strong>What it is:</strong> Our highest-ticket SaaS subscription that we offer for organizations that want their own Kahana environment. This typically involves a setup fee and some custom development upfront in addition to a recurring subscription. For more details, check out our{' '}
         <Link href="/pricing">
           <a className="text-[#038270] font-medium">Pricing page</a>
         </Link>
         .
         <br />
         <br />
-        <strong>What you earn:</strong> 30% of the setup fee and any custom development, as well as 30% of the company&apos;s subscription for the first 12 months. For example, if you refer an organization whose Enterprise contract is $300 per month, and their setup fee & custom development totaled $50K, <strong>you earn a total of $16.08K</strong> ([$300 x 12] x 30% + $50K x 30%).
+        <strong>What you earn:</strong> 30% of the setup fee and any custom development fees, as well as 30% of the company&apos;s subscription for the first 12 months. For example, if you refer an organization whose Enterprise contract is $300 per month, and their setup fee & custom development adds up to $50K, <strong>you earn a total of $16.08K</strong> ([$300 x 12] x 30% + $50K x 30%).
       </span>
     ),
   },
@@ -44,7 +44,7 @@ const features = [
         for more details.
         <br />
         <br />
-        <strong>What you earn:</strong> 30% of the $500 setup fee, as well as 30% of Kahana&apos; 50% cut of all hub sales for the first 12 months. For example, if someone you refer has a $500 hub (one-time payment) that generates 60 sales in the first year, <strong>you earn a total of $4.65K</strong> ([$500 x 60 x 50%] x 30% + $500 x 30%).
+        <strong>What you earn:</strong> 30% of the $500 setup fee, as well as 30% of Kahana&apos;s 50% cut of all hub sales for the first 12 months. For example, if someone you refer has a $500 hub (one-time payment) that generates 60 sales in the first year, <strong>you earn a total of $4.65K</strong> ([$500 x 60 x 50%] x 30% + $500 x 30%).
       </span>
     ),
   },
@@ -85,10 +85,10 @@ const faqs = [
         Here&apos;s a formula you can use to calculate your average monthly earnings:
         <br />
         <br />
-        <b>(Total Earnings from Boost Program + Total Earnings from Hub Services + Total Earnings from Enterprise + Total Earnings from Premium Upgrades) / 12</b>
+        <b>(Total Earnings from On-Demand Hub Creation + Total Earnings from Enterprise Deals + Total Earnings from Boost Program + Total Earnings from Premium Upgrades) / 12</b>
         <br />
         <br />
-        For any service that is purchased, you earn both 30% of any one-time payments (e.g., setup fees), as well as 30% of any recurring revenue Kahana gains from the service (e.g., revenue share on hub sales).
+        The &apos;Earn commission on&apos; section above provides a detailed breakdown of how you earn revenue for each of these.
       </span>
     ),
   },
