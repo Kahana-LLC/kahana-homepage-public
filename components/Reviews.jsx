@@ -6,13 +6,17 @@ import avatarImage1 from '../assets/images/avatars/oliviaMancusoHeadshot.png';
 
 import avatarImage3 from '../assets/images/avatars/edenGoldHeadshot.png';
 
-import avatarImage4 from '../assets/images/avatars/vivianneJagtHeadshot.png';
+import avatarImage4 from '../assets/images/avatars/gregoryGray.png;
 
 import avatarImage5 from '../assets/images/avatars/medicalElinaHeadshot.png';
 
 import avatarImage6 from '../assets/images/avatars/gabrielleJudgeHeadshot.png';
 
 import avatarImage7 from '../assets/images/avatars/tayLaddHeadshot.png';
+
+import avatarImage8 from '../assets/images/avatars/BSJheadshot.png';
+
+import avatarImage9 from '../assets/images/avatars/kelseyVetterHeadshot.png';
 
 import { Container } from './Container';
 
@@ -23,16 +27,16 @@ const testimonials = [
         "I can honestly say that I've never worked with a team that was as helpful and dedicated as the team at Kahana. If you're a digital creator looking for a platform that not only supports your content creation but also helps you achieve your goals, then Kahana is the answer.",
       author: {
         name: 'Olivia Mancuso',
-        role: 'Manifestation Coach - 135K on TikTok',
+        role: 'Manifestation Coach & Brand Consultant',
         image: avatarImage1, 
       },
     },
     {
       content:
-        "I saw Kahana as an opportunity to share my corporate knowledge because it can help someone avoid needing to get an agent just because they didn't know how to respond to brands.",
+        "You took my brain and turned it into a phenomenal asset. I could not do this at all without Kahana - I wouldn't even know where to start.",
       author: {
         name: 'Tay Ladd',
-        role: 'The Corporate Creator  - 70K on TikTok',
+        role: 'Corporate Lawyer, Creator, & Brand Deal Expert',
         image: avatarImage7, 
       },
     },
@@ -40,49 +44,40 @@ const testimonials = [
   [
     {
       content:
-        'I have had a lot of different software companies reach out to me, but there was something about Kahana that really intrigued me. To be able to have people follow along my journey and see what\'s working for me can make such a greater impact for my audience.',
+        "Kahana allows me to go so much more in-depth and share all the knowledge I've learned on and off the field - I can only scratch the surface on Instagram and TikTok.",
       author: {
-        name: 'Eden Gold',
-        role: 'Adulting Coach - 50K on TikTok',
-        image: avatarImage3,
+        name: 'Benjamin St-Juste',
+        role: 'NFL Player & Brand Owner',
+        image: avatarImage8, 
       },
     },
     {
       content:
-        "I'm really excited about my hub. I bet Kahana will grow and become really big. Excited to be a part of it!",
+        "I have had a lot of different software companies reach out to me, but there was something about Kahana that really intrigued me. To be able to have people follow along my journey and see what's working for me can make such a greater impact for my audience.",
       author: {
-        name: 'Medical Elina',
-        role: 'Med Student & Creator  - 70K on TikTok',
-        image: avatarImage5, 
+        name: 'Eden Gold',
+        role: 'Adulting Coach',
+        image: avatarImage3,
       },
     },
   ],
   [
     {
       content:
+        "Kahana has the most user-friendly interface I've come across in a platform of its kind. I love how easy it is to set up, make changes, add value, and connect with your audience. It's allowed me to monetize my knowledge and add a passive revenue stream to my small business.",
+      author: {
+        name: 'Kelsey Vetter',
+        role: 'CEO & Pinterest Marketing Expert',
+        image: avatarImage9,
+      },
+    },
+    {
+      content:
         'I think the Kahana team is onto something here - very exciting to be a part of your community!',
       author: {
-        name: 'Vivianne Jagt',
-        role: 'MD & Health Creator - 25K on TikTok',
+        name: 'Gregory Gray',
+        role: 'Fractional CEO & Executive Coach',
         image: avatarImage4,
-      },
-    },
-    {
-      content:
-        'Thanks for helping me build out something special!',
-      author: {
-        name: 'Josh Slavin',
-        role: 'Short Form Expert - 800K total followers',
-        image: avatarImage2,
-      },
-    },
-    {
-      content:
-        "This looks awesome! I am pumped to get this going and am super grateful for your help!",
-      author: {
-        name: 'Gabrielle Judge',
-        role: 'Expert on Future of Work - 90K on TikTok',
-        image: avatarImage6,
       },
     },
   ],
