@@ -67,7 +67,7 @@ const testimonials = [
     },
     {
       content:
-        'I think the Kahana team is onto something here - very exciting to be a part of your community!',
+        "It's finally out of my head! I've been wanting to build digital products for months and couldn't make any progress; Kahana streamlined it and made it so much easier.",
       author: {
         name: 'Gregory Gray',
         role: 'Fractional CEO & Executive Coach',
