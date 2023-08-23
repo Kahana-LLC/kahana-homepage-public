@@ -4,55 +4,64 @@ import Footer from '../components/Footer';
 import NavbarDup from '../components/NavbarDup';
 import Image from 'next/image';
 import AffiliateBanner from '../assets/images/AffiliateBanner.webp';
+import Link from 'next/link';
 
 const features = [
   {
-    title: 'High Commissions',
+    title: 'On-Demand Hub Creation',
     description: (
       <span>
-        Our partner program&apos;s competitive 30% commission structure, particularly with{' '}
-        <a href="https://kahana.co/pricing" className="text-[#038270] font-medium" target="_blank" rel="noopener noreferrer">
-          high-ticket SaaS
-        </a>{' '}
-        and{' '}
-        <a href="https://kahana.co/solutions" className="text-[#038270] font-medium" target="_blank" rel="noopener noreferrer">
-          project-based sales
-        </a>{' '}
-        ($5,000-$100,000+ per project), is an incentive for affiliates to promote Kahana.
+        <strong>What it is:</strong> An add-on service we provide for individuals and organizations who have a ton of expertise but don&apos;t have the time or energy to build hubs themselves. It&apos;s like ordering Domino&apos;s for recurring revenue: customers get to choose the number of hubs they want, add specific requests, and submit existing content they&apos;d like to include. Our team will handle all the graphic design, formatting, and content creation to turn their knowledge into hubs and deliver them in as little as 5 business days.
+        <br />
+        <br />
+        <strong>What you earn:</strong> 30% of the total project fee. For example, if you refer someone who orders two hubs, this will come out to $7K total ($4K for the first hub, $3K for the second). Of that $7K, <strong>you earn a total of $2.1K</strong> ($7K x 30%).
       </span>
     ),
   },
   {
-    title: 'Recurring Revenue',
-    description: 'Once you refer someone to us, you earn a recurring commission for the entire first year they are on Kahana.',
-  },
-  {
-    title: 'Quality and Reputation',
+    title: 'Enterprise Deals',
     description: (
       <span>
-        We are proud to be a software platform that is used daily by experts, teams, and organizations across the world. You can see reviews from our happy customers on{' '}
-        <a href="https://www.capterra.com/p/10009805/Kahana/#reviews" className="text-[#038270] font-medium">
-          Capterra
-        </a>{' '}
-        and{' '}
-        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7049745436105994240/" className="text-[#038270] font-medium">
-          LinkedIn
-        </a>
+        <strong>What it is:</strong> Our highest-ticket SaaS subscription that we offer: it&apos;s for organizations that want their own Kahana environment. This typically involves a setup fee and some custom development upfront in addition to a recurring subscription. For more details, check out our{' '}
+        <Link href="/pricing">
+          <a className="text-[#038270] font-medium">Pricing page</a>
+        </Link>
         .
+        <br />
+        <br />
+        <strong>What you earn:</strong> 30% of the setup fee and any custom development, as well as 30% of the company&apos;s subscription for the first 12 months. For example, if you refer an organization whose Enterprise contract is $300 per month, and their setup fee & custom development totaled $50K, <strong>you earn a total of $16.08K</strong> ([$300 x 12] x 30% + $50K x 30%).
       </span>
     ),
   },
   {
-    title: 'High Conversion Rate',
-    description: 'When users sign up on Kahana, they have plenty of options to get a lot of value out of the platform and the ecosystem. Our sales funnel and onboarding experience are designed to educate and help people find the best solution for them as quickly as possible.',
+    title: 'Boost Program',
+    description: (
+      <span>
+        <strong>What it is:</strong> An add-on service we provide for individuals and organizations who are interested in expanding the reach of their hubs. Our team will create a tailored email campaign on their behalf and put their hub(s) in front of thousands of potential customers per month that match their ideal customer profile. We take care of the entire process so that they generate recurring revenue on autopilot. You can check out{' '}
+        <a href="https://blog.kahana.co/boost-program/" className="text-[#038270] font-medium">
+          this post
+        </a>{' '}
+        for more details.
+        <br />
+        <br />
+        <strong>What you earn:</strong> 30% of the $500 setup fee, as well as 30% of Kahana&apos; 50% cut of all hub sales for the first 12 months. For example, if someone you refer has a $500 hub (one-time payment) that generates 60 sales in the first year, <strong>you earn a total of $4.65K</strong> ([$500 x 60 x 50%] x 30% + $500 x 30%).
+      </span>
+    ),
   },
   {
-    title: 'Support and Resources',
-    description: 'As an affiliate, you will receive full access to marketing materials and resources, including high-converting banners, email templates, landing pages, videos, and other collateral to help you best share Kahana. If you have ideas for new types of collateral that would help you, we are happy to create them for you.',
-  },
-  {
-    title: 'Transparent Tracking and Reporting',
-    description: 'When you become an affiliate, you will get your own highly-organized affiliate dashboard that provides real-time insights into clicks, conversions, commissions earned, and more.',
+    title: 'Premium Upgrades',
+    description: (
+      <span>
+        <strong>What it is:</strong> Our premium SaaS subscription (Expert) for people who want to upgrade from the free tier (Creator). For more details, check out our{' '}
+        <Link href="/pricing">
+          <a className="text-[#038270] font-medium">Pricing page</a>
+        </Link>
+        .
+        <br />
+        <br />
+        <strong>What you earn:</strong> 30% of the subscription for the first 12 months. The subscription is $9.99 per month or $99.99 per year, so for every person you refer who upgrades, <strong>you will earn a total of $35.96 or $30.00</strong> ([$9.99 x 12] x 30% OR $99.99 x 30%).
+      </span>
+    ),
   },
 ];
 
@@ -68,22 +77,6 @@ const faqs = [
   {
     question: 'How do I get started?',
     answer: 'Sign up to be an affiliate below. There\'s a quick form to fill out in order to create your Affiliate Account and get access to resources, and then our team will follow up with you and take care of the next steps. We have partnered with Reditus to provide you with a Partner Account and portal that you can use to track the status of your referrals, access resources, and see all your revenue stats in one place.',
-  },
-  {
-    question: 'What subscriptions and services can I earn revenue from?',
-    answer: (
-      <span>
-        You can earn revenue from any of the subscriptions or services that we offer. You can check out our{' '}
-        <a href="https://kahana.co/pricing" className="text-[#038270] font-medium">
-          Pricing page
-        </a>{' '}
-        for more information about the subscriptions people can purchase and you can check out our{' '}
-        <a href="https://kahana.co/solutions" className="text-[#038270] font-medium">
-          Solutions page
-        </a>{' '}
-        for more information about the services that are available.
-      </span>
-    ),
   },
   {
     question: 'How do I calculate my revenue as an affiliate?',
@@ -190,7 +183,7 @@ export default function AffiliateProgramPage() {
               It pays to be a partner of Kahana
             </h2>
             <p className="text-gray-700">
-              Refer people to Kahana and earn up to a 30% commission by joining our partner program.
+              Refer people to Kahana and earn up to a 30% commission.
             </p>
             <a href="https://app.getreditus.com/marketplace/kahana" className="block mt-8" target="_blank" rel="noopener noreferrer">
               <button className="px-6 py-3 bg-[#038270] text-white rounded-md shadow-md hover:bg-[#046856]">
@@ -202,7 +195,7 @@ export default function AffiliateProgramPage() {
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-100">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl font-bold mb-8 text-gray-900 text-center">
-              Become a Kahana partner
+              Commission on:
             </h2>
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {/* Your feature section */}
