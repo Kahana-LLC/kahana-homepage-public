@@ -89,12 +89,12 @@ export default function Home() {
               <h2 className={`text-3xl font-bold text-gray-900`}>
                 Become an affiliate
               </h2>
-              <p className="text-gray-700">
+              <p className="mt-4 text-gray-700">
                 Refer people to Kahana and earn up to a 30% commission.
               </p>
               <Link href="/affiliates">
                 <a className="block mt-8">
-                  <button className="px-6 py-3 bg-[#038270] text-white rounded-md shadow-md hover:bg-[#046856]">
+                  <button className="px-6 py-2 bg-[#038270] text-white rounded-md shadow-md hover:bg-[#046856]">
                     Learn more
                   </button>
                 </a>
