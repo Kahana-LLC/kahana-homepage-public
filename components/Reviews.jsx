@@ -4,7 +4,7 @@ import avatarImage1 from '../assets/images/avatars/oliviaMancusoHeadshot.png';
 
 import avatarImage3 from '../assets/images/avatars/edenGoldHeadshot.png';
 
-import avatarImage4 from '../assets/images/avatars/gregoryGray.png;
+import avatarImage4 from '../assets/images/avatars/gregoryGray.png';
 
 import avatarImage7 from '../assets/images/avatars/tayLaddHeadshot.png';
 
