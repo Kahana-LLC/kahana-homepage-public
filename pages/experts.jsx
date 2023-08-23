@@ -7,7 +7,6 @@ import ProductDemoSectionExperts from '../components/ProductDemoSectionExperts';
 import Image from 'next/image';
 import { CheckIcon } from '@heroicons/react/20/solid';
 import expertsHub from '../assets/images/expertsHub.png';
-import Link from 'next/link';
 
 const ExpertsPage = () => {
   return (
