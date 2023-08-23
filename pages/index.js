@@ -1,6 +1,6 @@
 import Head from 'next/head';
 // import Image from 'next/image';
-
+import Link from 'next/link';
 import Footer from '../components/Footer';
 import HeroSection from '../components/HeroSection';
 import NavbarDup from '../components/NavbarDup';
@@ -81,24 +81,26 @@ export default function Home() {
         <main>
           <HeroSection />
           <ProductDemoSection />
-          {/* <SimpleHeader /> */}
-          {/* <RealitySection /> */}
           <Reviews />
-            {/* <Testimonial
-            id="testimonial-from-kahana-user"
-            author={{
-              name: 'Fantasy Flock Network',
-              role: 'YouTuber - 147K subscribers',
-              image: avatarImage1,
-            }}
-          >
-            <p>
-              “ The flexibility is a huge differentiator in that you can just
-              have monetized hubs and put them anywhere as opposed to Patreon,
-              which is a whole thing.”
-            </p>
-          </Testimonial> */}
           <Pricing />
+          
+          <section className={`py-16 px-4 sm:px-6 lg:px-8 bg-white`}>
+            <div className="max-w-7xl mx-auto text-center">
+              <h2 className={`text-3xl font-bold ${showImage ? 'mb-2' : 'mb-4'} text-gray-900`}>
+                Become an affiliate
+              </h2>
+              <p className="text-gray-700">
+                Refer people to Kahana and earn up to a 30% commission.
+              </p>
+              <Link href="/affiliates">
+                <a className="block mt-8">
+                  <button className="px-6 py-3 bg-[#038270] text-white rounded-md shadow-md hover:bg-[#046856]">
+                    Learn more
+                  </button>
+                </a>
+              </Link>
+            </div>
+          </section> 
 
           <Faq />
         </main>
