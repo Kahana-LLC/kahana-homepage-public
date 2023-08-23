@@ -64,7 +64,7 @@ export default function ProductDemoSection() {
       /> */}
       <Container>
         <div className="max-w-2xl md:mx-auto md:text-center xl:max-w-none">
-          <h1 className="py-4  bg-clip-text text-white text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl text-center sm:text-left">
+          <h1 className="py-4  bg-clip-text text-white text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl text-center">
             Built for Creators and Experts
           </h1>
           <p className="mt-6 text-xl tracking-tight text-white">
