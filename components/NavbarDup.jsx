@@ -25,7 +25,7 @@ const Navigation = () => {
         </Link>
       </div>
 
-      <div className="hamburger" onClick={toggleMenu}>
+      <div className={`hamburger ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
         <div className={`bar ${isOpen ? 'open' : ''}`}></div>
         <div className={`bar ${isOpen ? 'open' : ''}`}></div>
         <div className={`bar ${isOpen ? 'open' : ''}`}></div>
