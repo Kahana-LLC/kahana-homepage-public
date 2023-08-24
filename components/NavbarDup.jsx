@@ -16,11 +16,13 @@ const Navigation = () => {
       <div className="logo">
         <Link href="/">
           <a>
-            <Image
-              className="h-10"
-              src={whiteKahanaLogo}
-              alt="navbar-logo"
-            />
+            <div className="logo-container">
+              <Image
+                className="h-10"
+                src={whiteKahanaLogo}
+                alt="navbar-logo"
+              />
+            </div>
           </a>
         </Link>
       </div>
@@ -109,9 +111,6 @@ const Navigation = () => {
           left: 0;
           right: 0;
           border-bottom: 1px solid lightgray; /* Add a light gray border */
-        }
-        .navigation a {
-          text-decoration: none;
         }
 
         .open .navigation {
