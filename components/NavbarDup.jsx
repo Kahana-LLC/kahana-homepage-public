@@ -39,7 +39,9 @@ const resourcesDropdownItems = [
 export default function NavbarDup() {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
+  const [isResourcesOpen, setIsResourcesOpen] = useState(false);
   const [solutionsDropdownTimeout, setSolutionsDropdownTimeout] = useState(null);
+  const [resourcesDropdownTimeout, setResourcesDropdownTimeout] = useState(null);
 
   const toggleNavOpen = () => {
     setIsNavOpen((prevState) => !prevState);
