@@ -244,11 +244,6 @@ const Navigation = () => {
           .hamburger.open .bar:nth-child(3) {
             transform: rotate(45deg) translate(-5px, -6px);
           }
-          
-          /* Add extra padding beneath the navigation bar on mobile */
-          body {
-            padding-top: calc(60px + 40px); /* Adjust the value as needed */
-          }
         }
       `}</style>
     </nav>
