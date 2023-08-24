@@ -31,7 +31,7 @@ const Navigation = () => {
         <div className="bar"></div>
       </div>
 
-      <div className="menu">
+      <div className={`menu ${isOpen ? 'open' : ''}`}>
         <ul>
           <li>
             <Link href="/about">
@@ -125,6 +125,12 @@ const Navigation = () => {
           display: flex;
           align-items: center;
           margin-left: auto;
+          transition: transform 0.3s ease-in-out;
+          transform: translateX(0);
+        }
+
+        .menu.open {
+          transform: translateX(0%);
         }
 
         .menu ul {
@@ -179,9 +185,13 @@ const Navigation = () => {
         }
 
         .hamburger {
-          display: none;
+          display: flex;
           flex-direction: column;
           cursor: pointer;
+          position: fixed;
+          top: 0.5rem;
+          right: 1rem;
+          z-index: 51;
         }
 
         .hamburger.open .bar:nth-child(1) {
@@ -202,18 +212,17 @@ const Navigation = () => {
           }
 
           .menu {
-            display: none;
-            flex-direction: column;
+            transform: translateX(100%);
             position: absolute;
             top: 60px; /* Adjust top position as needed */
             right: 0;
-            width: 100%;
+            width: 80%; /* Adjust menu width as needed */
             background-color: white; /* Change background color for mobile */
             z-index: 2; /* Ensure that the menu is above other elements */
           }
 
-          .open .menu {
-            display: flex;
+          .menu.open {
+            transform: translateX(0%);
           }
 
           .menu ul {
@@ -227,10 +236,6 @@ const Navigation = () => {
 
           .hamburger {
             display: flex;
-            position: absolute;
-            top: 0.5rem; /* Adjust the positioning as needed */
-            right: 1rem; /* Adjust the positioning as needed */
-            z-index: 51; /* Ensure that the hamburger menu is above everything */
           }
         }
       `}</style>
