@@ -92,6 +92,7 @@ const Navigation = () => {
         </ul>
       </div>
 
+      {/* Hamburger menu for mobile */}
       <div className={`hamburger ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
         <div className="bar"></div>
         <div className="bar"></div>
@@ -100,8 +101,8 @@ const Navigation = () => {
 
       <style jsx>{`
         .navigation {
-          background-color: #038270;
-          color: white;
+          background-color: white;
+          color: black;
           display: flex;
           justify-content: flex-end;
           align-items: center;
@@ -120,6 +121,7 @@ const Navigation = () => {
 
         .logo {
           cursor: pointer;
+          flex: 1;
         }
 
         .menu {
@@ -137,7 +139,7 @@ const Navigation = () => {
 
         .menu-item {
           text-decoration: none;
-          color: white;
+          color: black;
           padding: 0.5rem 1rem;
           transition: background-color 0.3s ease-in-out;
           cursor: pointer;
@@ -198,6 +200,11 @@ const Navigation = () => {
         }
 
         @media (max-width: 768px) {
+          .navigation {
+            background-color: white;
+            padding: 0.5rem 2rem 2rem 2rem;
+          }
+
           .menu {
             display: none;
             flex-direction: column;
@@ -205,8 +212,7 @@ const Navigation = () => {
             top: 60px;
             right: 0;
             width: 100%;
-            background-color: #038270;
-            padding-bottom: 1rem;
+            background-color: white; /* Change background color for mobile */
           }
 
           .open .menu {
@@ -219,6 +225,7 @@ const Navigation = () => {
 
           .menu-item {
             padding: 1rem 2rem;
+            color: black; /* Change text color for mobile */
           }
 
           .hamburger {
