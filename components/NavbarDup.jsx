@@ -25,7 +25,7 @@ const Navigation = () => {
         </Link>
       </div>
 
-      <div className="menu">
+      <div className={`menu ${isOpen ? 'open' : ''}`}>
         <ul>
           <li>
             <Link href="/about">
@@ -198,7 +198,35 @@ const Navigation = () => {
         }
 
         @media (max-width: 768px) {
-          /* Existing CSS styles */
+          .navigation {
+            background-color: white;
+            padding: 0.5rem 2rem 2rem 2rem;
+          }
+
+          .logo {
+            text-align: left;
+            flex: initial;
+            padding-right: 1rem;
+          }
+
+          .menu {
+            flex-direction: column;
+            position: absolute;
+            top: 60px;
+            right: 0;
+            width: 100%;
+            background-color: white; /* Change background color for mobile */
+            display: ${isOpen ? 'flex' : 'none'};
+          }
+
+          .menu ul {
+            flex-direction: column;
+          }
+
+          .menu-item {
+            padding: 1rem 2rem;
+            color: black; /* Change text color for mobile */
+          }
 
           .hamburger {
             display: flex;
@@ -213,3 +241,4 @@ const Navigation = () => {
 };
 
 export default Navigation;
+
