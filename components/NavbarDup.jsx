@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+
 import whiteKahanaLogo from '../assets/kahana_logo_wide_light.svg';
 
 const Navigation = () => {
@@ -10,87 +11,235 @@ const Navigation = () => {
     setIsOpen(!isOpen);
   };
 
-  const closeMenu = () => {
-    setIsOpen(false);
-  };
-
   return (
-    <nav className="bg-white border-b border-gray-300">
-      <div className="container mx-auto">
-        <div className="flex justify-between items-center py-4">
-          <Link href="/">
-            <a>
-              <Image
-                className="h-10"
-                src={whiteKahanaLogo}
-                alt="navbar-logo"
-              />
-            </a>
-          </Link>
+    <nav className={`navigation ${isOpen ? 'open' : ''}`}>
+      <div className="logo">
+        <Link href="/">
+          <a>
+            <Image
+              className="h-10"
+              src={whiteKahanaLogo}
+              alt="navbar-logo"
+            />
+          </a>
+        </Link>
+      </div>
 
-          {/* Hamburger menu for mobile */}
-          <div className="md:hidden">
-            <button
-              onClick={toggleMenu}
-              type="button"
-              className="text-gray-600 hover:text-gray-900 focus:outline-none"
-            >
-              <svg
-                className="h-6 w-6 fill-current"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fillRule="evenodd"
-                  clipRule="evenodd"
-                  d="M3 6H21V5H3v1zM3 11h18v-1H3v1zM3 16h18v-1H3v1z"
-                />
-              </svg>
-            </button>
-          </div>
+      <div className="hamburger" onClick={toggleMenu}>
+        <div className={`bar ${isOpen ? 'open' : ''}`}></div>
+        <div className={`bar ${isOpen ? 'open' : ''}`}></div>
+        <div className={`bar ${isOpen ? 'open' : ''}`}></div>
+      </div>
 
-          {/* Main navigation links */}
-          <div className={`md:flex md:space-x-4 ${isOpen ? 'block' : 'hidden'} mt-4 md:mt-0`}>
+      <div className={`menu ${isOpen ? 'open' : ''}`}>
+        <ul>
+          <li>
             <Link href="/about">
-              <a className="nav-link">About</a>
+              <a className="menu-item">About</a>
             </Link>
+          </li>
+          <li>
             <Link href="/explore">
-              <a className="nav-link">Examples</a>
+              <a className="menu-item">Examples</a>
             </Link>
-            <div className="dropdown">
-              <span className="nav-link cursor-pointer">Solutions</span>
-              <ul className="dropdown-menu">
-                <li><Link href="/enterprise"><a onClick={closeMenu}>For Enterprise</a></Link></li>
-                <li><Link href="/coaches"><a onClick={closeMenu}>For Coaches</a></Link></li>
-                <li><Link href="/consultants"><a onClick={closeMenu}>For Consultants</a></Link></li>
-                <li><Link href="/experts"><a onClick={closeMenu}>For Experts</a></Link></li>
-                <li><Link href="/affiliates"><a onClick={closeMenu}>Become an affiliate</a></Link></li>
-              </ul>
+          </li>
+          <li className="dropdown">
+            <span className="menu-item">Solutions</span>
+            <div className="dropdown-content">
+              <Link href="/enterprise">
+                <a>For Enterprise</a>
+              </Link>
+              <Link href="/coaches">
+                <a>For Coaches</a>
+              </Link>
+              <Link href="/consultants">
+                <a>For Consultants</a>
+              </Link>
+              <Link href="/experts">
+                <a>For Experts</a>
+              </Link>
+              <Link href="/affiliates">
+                <a>Become an affiliate</a>
+              </Link>
             </div>
-            <div className="dropdown">
-              <span className="nav-link cursor-pointer">Resources</span>
-              <ul className="dropdown-menu">
-                <li><a href="https://blog.kahana.co/" onClick={closeMenu}>Blog</a></li>
-                <li><Link href="/resources"><a onClick={closeMenu}>Monetizing Notion</a></Link></li>
-                <li><Link href="/resources"><a onClick={closeMenu}>Monetizing Google Drive</a></Link></li>
-                <li><Link href="/resources"><a onClick={closeMenu}>Selling Digital Products</a></Link></li>
-                <li><a href="https://kahana.tawk.help/" onClick={closeMenu}>Help Center</a></li>
-                <li><Link href="/faq"><a onClick={closeMenu}>FAQ</a></Link></li>
-                <li><a href="https://nas.io/creators-and-experts" onClick={closeMenu}>Community</a></li>
-              </ul>
+          </li>
+          <li className="dropdown">
+            <span className="menu-item">Resources</span>
+            <div className="dropdown-content">
+              <a href="https://blog.kahana.co/">Blog</a>
+              <Link href="/resources">
+                <a>Monetizing Notion</a>
+              </Link>
+              <Link href="/resources">
+                <a>Monetizing Google Drive</a>
+              </Link>
+              <Link href="/resources">
+                <a>Selling Digital Products</a>
+              </Link>
+              <a href="https://kahana.tawk.help/">Help Center</a>
+              <Link href="/faq">
+                <a>FAQ</a>
+              </Link>
+              <a href="https://nas.io/creators-and-experts">Community</a>
             </div>
+          </li>
+          <li>
             <Link href="/pricing">
-              <a className="nav-link">Pricing</a>
+              <a className="menu-item">Pricing</a>
             </Link>
-            <a
-              href="https://app.kahana.co/login"
-              className="nav-link bg-[038270] hover:bg-[024324] text-white px-4 py-2 rounded-md"
-            >
+          </li>
+          <li>
+            <a href="https://app.kahana.co/login" className="menu-item login">
               Log in
             </a>
-          </div>
-        </div>
+          </li>
+        </ul>
       </div>
+
+      <style jsx>{`
+        .navigation {
+          background-color: white;
+          color: black;
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          padding: 0.5rem 2rem;
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          border-bottom: 1px solid lightgray; /* Add a light gray border */
+          z-index: 1000; /* Ensure the navigation is on top */
+        }
+
+        .open .navigation {
+          background-color: white;
+          color: black;
+        }
+
+        .logo {
+          cursor: pointer;
+          flex: 1;
+        }
+
+        .menu {
+          display: flex;
+          align-items: center;
+          margin-left: auto;
+        }
+
+        .menu ul {
+          list-style: none;
+          display: flex;
+          margin: 0;
+          padding: 0;
+        }
+
+        .menu-item {
+          text-decoration: none;
+          color: black;
+          padding: 0.5rem 1rem;
+          transition: background-color 0.3s ease-in-out;
+          cursor: pointer;
+        }
+
+        .menu-item:hover {
+          background-color: #024324;
+        }
+
+        .dropdown {
+          position: relative;
+        }
+
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #038270;
+          min-width: 160px;
+          z-index: 1;
+          cursor: default;
+        }
+
+        .dropdown:hover .dropdown-content {
+          display: block;
+        }
+
+        .dropdown-content a {
+          color: white;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+        }
+
+        .login {
+          background-color: #038270;
+        }
+
+        .login:hover {
+          background-color: #024324;
+        }
+
+        .hamburger {
+          display: none;
+          flex-direction: column;
+          cursor: pointer;
+        }
+
+        .hamburger.open .bar:nth-child(1) {
+          transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .hamburger.open .bar:nth-child(2) {
+          opacity: 0;
+        }
+
+        .hamburger.open .bar:nth-child(3) {
+          transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        @media (max-width: 768px) {
+          .navigation {
+            padding: 0.5rem 2rem;
+          }
+
+          .menu {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 60px;
+            right: 0;
+            width: 100%;
+            background-color: white;
+            z-index: 2;
+          }
+
+          .open .menu {
+            display: flex;
+          }
+
+          .menu ul {
+            flex-direction: column;
+          }
+
+          .menu-item {
+            padding: 1rem 2rem;
+            color: black;
+          }
+
+          .hamburger {
+            display: flex;
+            position: absolute;
+            top: 0.5rem;
+            right: 1rem;
+            z-index: 3;
+          }
+          
+          /* Add extra padding beneath the navigation bar on mobile */
+          body {
+            padding-top: calc(60px + 20px); /* Adjust the value as needed */
+          }
+        }
+      `}</style>
     </nav>
   );
 };
