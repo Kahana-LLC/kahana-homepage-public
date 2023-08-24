@@ -135,6 +135,7 @@ const Navigation = () => {
             position: absolute;
             top: 0.5rem;
             right: 1rem;
+            z-index: 3;
           }
         }
       `}</style>
