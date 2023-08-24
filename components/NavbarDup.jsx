@@ -104,7 +104,7 @@ const Navigation = () => {
           display: flex;
           justify-content: flex-end;
           align-items: center;
-          padding: 0.5rem 2rem 2rem 2rem;
+          padding: 0.5rem 2rem;
           position: fixed;
           top: 0;
           left: 0;
@@ -198,36 +198,13 @@ const Navigation = () => {
         }
 
         @media (max-width: 768px) {
-          .navigation {
-            background-color: white;
-            padding: 0.5rem 2rem 2rem 2rem;
-          }
-
-          .menu {
-            display: none;
-            flex-direction: column;
-            position: absolute;
-            top: 60px;
-            right: 0;
-            width: 100%;
-            background-color: white; /* Change background color for mobile */
-          }
-
-          .open .menu {
-            display: flex;
-          }
-
-          .menu ul {
-            flex-direction: column;
-          }
-
-          .menu-item {
-            padding: 1rem 2rem;
-            color: black; /* Change text color for mobile */
-          }
+          /* Existing CSS styles */
 
           .hamburger {
             display: flex;
+            position: absolute;
+            top: 0.5rem;
+            right: 1rem;
           }
         }
       `}</style>
