@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -6,6 +6,14 @@ import whiteKahanaLogo from '../assets/kahana_logo_wide_light.svg';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    // Check screen width and open menu for small screens
+    const screenWidth = window.innerWidth;
+    if (screenWidth <= 768) {
+      setIsOpen(true);
+    }
+  }, []);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
