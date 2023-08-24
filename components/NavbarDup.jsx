@@ -230,6 +230,10 @@ const Navigation = () => {
             right: 1rem;
             background-color: black;
           }
+          .logo {
+            flex: none; /* Disable flex to allow logo to be left-aligned */
+            padding-left: 20px; /* Add left padding for spacing */
+          }
         }
       `}</style>
     </nav>
