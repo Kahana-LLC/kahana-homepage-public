@@ -20,6 +20,8 @@ const Navigation = () => {
               className="h-10"
               src={whiteKahanaLogo}
               alt="navbar-logo"
+              width={200}
+              height={40}
             />
           </a>
         </Link>
@@ -38,7 +40,7 @@ const Navigation = () => {
             </Link>
           </li>
           <li className="dropdown">
-            <a className="menu-item">Solutions</a>
+            <span className="menu-item">Solutions</span>
             <div className="dropdown-content">
               <Link href="/enterprise">
                 <a>For Enterprise</a>
@@ -58,7 +60,7 @@ const Navigation = () => {
             </div>
           </li>
           <li className="dropdown">
-            <a className="menu-item">Resources</a>
+            <span className="menu-item">Resources</span>
             <div className="dropdown-content">
               <a href="https://blog.kahana.co/">Blog</a>
               <Link href="/resources">
@@ -101,9 +103,9 @@ const Navigation = () => {
           background-color: #038270;
           color: white;
           display: flex;
-          justify-content: space-between;
+          justify-content: flex-end;
           align-items: center;
-          padding: 1rem 2rem;
+          padding: 0.5rem 2rem;
           position: fixed;
           top: 0;
           left: 0;
@@ -112,7 +114,8 @@ const Navigation = () => {
         }
 
         .open .navigation {
-          background-color: #024324;
+          background-color: white;
+          color: black;
         }
 
         .logo {
@@ -122,6 +125,7 @@ const Navigation = () => {
         .menu {
           display: flex;
           align-items: center;
+          margin-left: auto;
         }
 
         .menu ul {
@@ -134,8 +138,9 @@ const Navigation = () => {
         .menu-item {
           text-decoration: none;
           color: white;
-          padding: 1rem;
+          padding: 0.5rem 1rem;
           transition: background-color 0.3s ease-in-out;
+          cursor: pointer;
         }
 
         .menu-item:hover {
@@ -152,6 +157,7 @@ const Navigation = () => {
           background-color: #038270;
           min-width: 160px;
           z-index: 1;
+          cursor: default;
         }
 
         .dropdown:hover .dropdown-content {
@@ -200,9 +206,10 @@ const Navigation = () => {
             right: 0;
             width: 100%;
             background-color: #038270;
+            padding-bottom: 1rem;
           }
 
-          .menu.open {
+          .open .menu {
             display: flex;
           }
 
@@ -224,4 +231,3 @@ const Navigation = () => {
 };
 
 export default Navigation;
-
