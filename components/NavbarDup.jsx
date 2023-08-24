@@ -13,19 +13,14 @@ const Navigation = () => {
 
   return (
     <nav className={`navigation ${isOpen ? 'open' : ''}`}>
-      <div className="logo">
-        <Link href="/">
-          <a>
-            <div className="logo-container">
-              <Image
-                className="h-10"
-                src={whiteKahanaLogo}
-                alt="navbar-logo"
-              />
-            </div>
-          </a>
-        </Link>
-      </div>
+      <Link href="/" aria-label="Home">
+        <span className="sr-only">Company</span>
+        <Image
+          className="h-10"
+          src={whiteKahanaLogo}
+          alt="navbar-logo"
+        />
+      </Link>
 
       <div className="hamburger" onClick={toggleMenu}>
         <div className={`bar ${isOpen ? 'open' : ''}`}></div>
