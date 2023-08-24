@@ -53,9 +53,14 @@ export default function NavbarDup() {
     setIsResourcesOpen((prevState) => !prevState);
   };
 
+  const closeDropdowns = () => {
+    setIsSolutionsOpen(false);
+    setIsResourcesOpen(false);
+  };
+
   useEffect(() => {
     const bodyScrollLock = () => {
-      if (isNavOpen) {
+      if (isNavOpen || isSolutionsOpen || isResourcesOpen) {
         document.body.style.overflow = 'hidden';
       } else {
         document.body.style.overflow = 'auto';
@@ -67,14 +72,28 @@ export default function NavbarDup() {
     return () => {
       document.body.style.overflow = 'auto';
     };
-  }, [isNavOpen]);
+  }, [isNavOpen, isSolutionsOpen, isResourcesOpen]);
 
-  const renderDropdown = (items) => (
+  const renderSolutionsDropdown = () => (
     <div className="DROPDOWN-MENU">
-      <ul className="MENU-LINK-MOBILE-OPEN space-y-4 text-lg">
-        {items.map((item) => (
+      <ul className="MENU-LINK-DESKTOP space-y-4 text-lg">
+        {solutionsDropdownItems.map((item) => (
           <li key={item.name}>
-            <Link href={item.href} className="text-gray-600 hover:text-gray-800">
+            <Link href={item.href} className="text-gray-600 hover:text-gray-800" onClick={closeDropdowns}>
+              {item.name}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+
+  const renderResourcesDropdown = () => (
+    <div className="DROPDOWN-MENU">
+      <ul className="MENU-LINK-DESKTOP space-y-4 text-lg">
+        {resourcesDropdownItems.map((item) => (
+          <li key={item.name}>
+            <Link href={item.href} className="text-gray-600 hover:text-gray-800" onClick={closeDropdowns}>
               {item.name}
             </Link>
           </li>
@@ -125,8 +144,8 @@ export default function NavbarDup() {
                             >
                               {link.name}
                             </span>
-                            {link.name === 'Solutions' && isSolutionsOpen && renderDropdown(solutionsDropdownItems)}
-                            {link.name === 'Resources' && isResourcesOpen && renderDropdown(resourcesDropdownItems)}
+                            {link.name === 'Solutions' && isSolutionsOpen && renderSolutionsDropdown()}
+                            {link.name === 'Resources' && isResourcesOpen && renderResourcesDropdown()}
                           </div>
                         ) : (
                           <Link href={link.href} className="text-gray-600 hover:text-gray-800">
@@ -148,18 +167,16 @@ export default function NavbarDup() {
 
             <ul className="DESKTOP-MENU hidden space-x-8 lg:flex">
               {desktopNavigation.map((link) => (
-                <li key={link.name}>
+                <li key={link.name} onMouseEnter={link.name === 'Solutions' ? toggleSolutions : null} onMouseLeave={link.name === 'Solutions' ? toggleSolutions : null}>
                   {link.dropdown ? (
                     <div className="relative">
                       <span
                         className="text-base font-small text-gray-600 hover:text-gray-800 cursor-pointer"
-                        onMouseEnter={() => link.name === 'Solutions' && toggleSolutions()}
-                        onMouseLeave={() => link.name === 'Solutions' && toggleSolutions()}
                       >
                         {link.name}
                       </span>
-                      {link.name === 'Solutions' && isSolutionsOpen && renderDropdown(solutionsDropdownItems)}
-                      {link.name === 'Resources' && isResourcesOpen && renderDropdown(resourcesDropdownItems)}
+                      {link.name === 'Solutions' && isSolutionsOpen && renderSolutionsDropdown()}
+                      {link.name === 'Resources' && isResourcesOpen && renderResourcesDropdown()}
                     </div>
                   ) : (
                     <Link href={link.href} className="text-base font-small text-gray-600 hover:text-gray-800">
@@ -178,9 +195,46 @@ export default function NavbarDup() {
         </nav>
       </header>
       <style jsx>{`
+        .DROPDOWN-MENU {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          display: none;
+          flex-direction: column;
+          background-color: white;
+          box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+          border-radius: 0.25rem;
+          z-index: 999;
+        }
+
+        .MENU-LINK-DESKTOP:hover .DROPDOWN-MENU,
+        .MENU-LINK-DESKTOP:focus-within .DROPDOWN-MENU {
+          display: flex;
+        }
+
+        .DROPDOWN-MENU ul {
+          padding: 0;
+          margin: 0;
+          list-style: none;
+        }
+
+        .DROPDOWN-MENU li {
+          padding: 10px 20px;
+        }
+
+        .DROPDOWN-MENU li:hover {
+          background-color: #f7f7f7;
+        }
+
+        /* Other styles */
+        .DESKTOP-MENU li {
+          position: relative;
+        }
+
         .hideMenuNav {
           display: none;
         }
+
         .showMenuNav {
           display: block;
           position: absolute;
@@ -232,37 +286,6 @@ export default function NavbarDup() {
 
         .login-button:hover {
           background-color: #024324;
-        }
-
-        /* Add styles for dropdown menus */
-        .DROPDOWN-MENU {
-          position: absolute;
-          top: 100%;
-          left: 0;
-          display: none;
-          flex-direction: column;
-          background-color: white;
-          box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-          border-radius: 0.25rem;
-        }
-
-        .MENU-LINK-MOBILE-OPEN:hover .DROPDOWN-MENU,
-        .MENU-LINK-MOBILE-OPEN:focus-within .DROPDOWN-MENU {
-          display: flex;
-        }
-
-        .DROPDOWN-MENU ul {
-          padding: 0;
-          margin: 0;
-          list-style: none;
-        }
-
-        .DROPDOWN-MENU li {
-          padding: 10px 20px;
-        }
-
-        .DROPDOWN-MENU li:hover {
-          background-color: #f7f7f7;
         }
       `}</style>
     </>
