@@ -30,13 +30,12 @@ const Navigation = () => {
         />
       </Link>
 
-      <div className="hamburger" onClick={toggleMenu}>
-        <div className={`bar ${isOpen ? 'open' : ''}`}></div>
-        <div className={`bar ${isOpen ? 'open' : ''}`}></div>
-        <div className={`bar ${isOpen ? 'open' : ''}`}></div>
-      </div>
-
       <div className={`menu ${isOpen ? 'open' : ''}`}>
+        <div className="hamburger" onClick={toggleMenu}>
+          <div className={`bar ${isOpen ? 'open' : ''}`}></div>
+          <div className={`bar ${isOpen ? 'open' : ''}`}></div>
+          <div className={`bar ${isOpen ? 'open' : ''}`}></div>
+        </div>
         <ul>
           <li>
             <Link href="/about">
@@ -183,24 +182,6 @@ const Navigation = () => {
           background-color: #024324;
         }
 
-        .hamburger {
-          display: none;
-          flex-direction: column;
-          cursor: pointer;
-        }
-
-        .hamburger.open .bar:nth-child(1) {
-          transform: rotate(-45deg) translate(-5px, 6px);
-        }
-
-        .hamburger.open .bar:nth-child(2) {
-          opacity: 0;
-        }
-
-        .hamburger.open .bar:nth-child(3) {
-          transform: rotate(45deg) translate(-5px, -6px);
-        }
-
         @media (max-width: 768px) {
           .navigation {
             padding: 0.5rem 2rem;
@@ -237,6 +218,18 @@ const Navigation = () => {
             top: 0.5rem;
             right: 1rem;
             background-color: black;
+          }
+
+          .hamburger.open .bar:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+          }
+  
+          .hamburger.open .bar:nth-child(2) {
+            opacity: 0;
+          }
+  
+          .hamburger.open .bar:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
           }
         }
       `}</style>
