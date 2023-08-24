@@ -230,7 +230,7 @@ const Navigation = () => {
             position: absolute;
             top: 0.5rem; /* Adjust the positioning as needed */
             right: 1rem; /* Adjust the positioning as needed */
-            z-index: 3; /* Ensure that the hamburger menu is above everything */
+            z-index: 51; /* Ensure that the hamburger menu is above everything */
           }
         }
       `}</style>
