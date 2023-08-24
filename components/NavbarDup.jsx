@@ -40,34 +40,48 @@ export default function NavbarDup() {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
   const [isResourcesOpen, setIsResourcesOpen] = useState(false);
-  const [solutionsDropdownTimeout, setSolutionsDropdownTimeout] = useState(null);
-  const [resourcesDropdownTimeout, setResourcesDropdownTimeout] = useState(null);
 
   const toggleNavOpen = () => {
     setIsNavOpen((prevState) => !prevState);
   };
 
-  // Function to handle hovering over Solutions with a delay
-  const handleSolutionsHover = () => {
-    clearTimeout(solutionsDropdownTimeout);
-    setSolutionsDropdownTimeout(
-      setTimeout(() => {
-        setIsSolutionsOpen(true);
-      }, 300) // Adjust the delay as needed (in milliseconds)
-    );
+  const toggleSolutions = () => {
+    setIsSolutionsOpen((prevState) => !prevState);
   };
 
-  // Function to handle leaving Solutions with a delay
-  const handleSolutionsLeave = () => {
-    clearTimeout(solutionsDropdownTimeout);
-    setSolutionsDropdownTimeout(
-      setTimeout(() => {
-        setIsSolutionsOpen(false);
-      }, 300) // Adjust the delay as needed (in milliseconds)
-    );
+  const toggleResources = () => {
+    setIsResourcesOpen((prevState) => !prevState);
   };
 
-  // ... Rest of the code ...
+  useEffect(() => {
+    const bodyScrollLock = () => {
+      if (isNavOpen) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = 'auto';
+      }
+    };
+
+    bodyScrollLock();
+
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [isNavOpen]);
+
+  const renderDropdown = (items) => (
+    <div className="DROPDOWN-MENU">
+      <ul className="MENU-LINK-MOBILE-OPEN space-y-4 text-lg">
+        {items.map((item) => (
+          <li key={item.name}>
+            <Link href={item.href} className="text-gray-600 hover:text-gray-800">
+              {item.name}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 
   return (
     <>
@@ -111,12 +125,8 @@ export default function NavbarDup() {
                             >
                               {link.name}
                             </span>
-                            {link.name === 'Solutions' && isSolutionsOpen && (
-                              <div className="SOLUTIONS-DROPDOWN">{renderDropdown(solutionsDropdownItems)}</div>
-                            )}
-                            {link.name === 'Resources' && isResourcesOpen && (
-                              <div className="RESOURCES-DROPDOWN">{renderDropdown(resourcesDropdownItems)}</div>
-                            )}
+                            {link.name === 'Solutions' && isSolutionsOpen && renderDropdown(solutionsDropdownItems)}
+                            {link.name === 'Resources' && isResourcesOpen && renderDropdown(resourcesDropdownItems)}
                           </div>
                         ) : (
                           <Link href={link.href} className="text-gray-600 hover:text-gray-800">
@@ -143,17 +153,13 @@ export default function NavbarDup() {
                     <div className="relative">
                       <span
                         className="text-base font-small text-gray-600 hover:text-gray-800 cursor-pointer"
-                        onMouseEnter={handleSolutionsHover}
-                        onMouseLeave={handleSolutionsLeave}
+                        onMouseEnter={() => link.name === 'Solutions' && toggleSolutions()}
+                        onMouseLeave={() => link.name === 'Solutions' && toggleSolutions()}
                       >
                         {link.name}
                       </span>
-                      {link.name === 'Solutions' && isSolutionsOpen && (
-                        <div className="SOLUTIONS-DROPDOWN">{renderDropdown(solutionsDropdownItems)}</div>
-                      )}
-                      {link.name === 'Resources' && isResourcesOpen && (
-                        <div className="RESOURCES-DROPDOWN">{renderDropdown(resourcesDropdownItems)}</div>
-                      )}
+                      {link.name === 'Solutions' && isSolutionsOpen && renderDropdown(solutionsDropdownItems)}
+                      {link.name === 'Resources' && isResourcesOpen && renderDropdown(resourcesDropdownItems)}
                     </div>
                   ) : (
                     <Link href={link.href} className="text-base font-small text-gray-600 hover:text-gray-800">
@@ -240,18 +246,8 @@ export default function NavbarDup() {
           border-radius: 0.25rem;
         }
 
-        .SOLUTIONS-DROPDOWN,
-        .RESOURCES-DROPDOWN {
-          position: absolute;
-          top: 100%;
-          left: 0;
-          display: none;
-        }
-
         .MENU-LINK-MOBILE-OPEN:hover .DROPDOWN-MENU,
-        .MENU-LINK-MOBILE-OPEN:focus-within .DROPDOWN-MENU,
-        .SOLUTIONS-DROPDOWN:hover,
-        .RESOURCES-DROPDOWN:hover {
+        .MENU-LINK-MOBILE-OPEN:focus-within .DROPDOWN-MENU {
           display: flex;
         }
 
