@@ -204,6 +204,8 @@ const Navigation = () => {
         @media (max-width: 768px) {
           .navigation {
             padding: 0.5rem 2rem;
+            flex-direction: row;
+            justify-content: space-between;
           }
 
           .menu {
