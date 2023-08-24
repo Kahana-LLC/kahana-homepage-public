@@ -20,8 +20,6 @@ const Navigation = () => {
               className="h-10"
               src={whiteKahanaLogo}
               alt="navbar-logo"
-              width={200}
-              height={40}
             />
           </a>
         </Link>
