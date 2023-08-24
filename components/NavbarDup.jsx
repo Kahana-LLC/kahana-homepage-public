@@ -1,26 +1,39 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 import whiteKahanaLogo from '../assets/kahana_logo_wide_light.svg';
 import HeaderBanner from './HeaderBanner';
 
-const navigation = [
+const desktopNavigation = [
   { name: 'About', href: '/about' },
   { name: 'Examples', href: '/explore' },
-  { name: 'Solutions', href: '/solutions' },
-  { name: 'Resources', href: '/resources' },
-  { name: 'Blog', href: 'https://blog.kahana.co' },
+  { name: 'Solutions', dropdown: true },
+  { name: 'Resources', dropdown: true },
   { name: 'Pricing', href: '/pricing' },
 ];
 
-const navigation1 = [
-  { name: 'Log in', href: 'https://app.kahana.co/login', className: 'login-button' }
+const mobileNavigation = [
+  ...desktopNavigation,
+  { name: 'Log in', href: 'https://app.kahana.co/login', className: 'login-button' },
 ];
 
-const navigationAll = [
-  ...navigation,
-  ...navigation1,
+const solutionsDropdownItems = [
+  { name: 'For Enterprise', href: '/enterprise' },
+  { name: 'For Coaches', href: '/coaches' },
+  { name: 'For Consultants', href: '/consultants' },
+  { name: 'For Experts', href: '/experts' },
+  { name: 'Become an affiliate', href: '/affiliates' },
+];
+
+const resourcesDropdownItems = [
+  { name: 'Blog', href: 'https://blog.kahana.co/' },
+  { name: 'Monetizing Notion', href: '/resources' },
+  { name: 'Monetizing Google Drive', href: '/resources' },
+  { name: 'Selling Digital Products', href: '/resources' },
+  { name: 'Help Center', href: 'https://kahana.tawk.help/' },
+  { name: 'FAQ', href: '/faq' },
+  { name: 'Community', href: 'https://nas.io/creators-and-experts' },
 ];
 
 export default function NavbarDup() {
@@ -46,6 +59,20 @@ export default function NavbarDup() {
     };
   }, [isNavOpen]);
 
+  const renderDropdown = (items) => (
+    <div className="DROPDOWN-MENU">
+      <ul className="MENU-LINK-MOBILE-OPEN space-y-4 text-lg">
+        {items.map((item) => (
+          <li key={item.name}>
+            <Link href={item.href} className="text-gray-600 hover:text-gray-800">
+              {item.name}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+
   return (
     <>
       <HeaderBanner />
@@ -54,15 +81,14 @@ export default function NavbarDup() {
           <div className="flex items-center justify-between border-b py-2 px-10">
             <Link href="/" aria-label="Home">
               <span className="sr-only">Company</span>
-              <Image
-                className="h-10"
-                src={whiteKahanaLogo}
-                alt="navbar-logo"
-              />
+              <Image className="h-10" src={whiteKahanaLogo} alt="navbar-logo" />
             </Link>
 
             <section className="MOBILE-MENU relative flex lg:hidden">
-              <div className="MOBILE-MENU-OVERLAY fixed top-0 left-0 w-full h-screen bg-white z-10" style={{ display: isNavOpen ? 'flex' : 'none' }}>
+              <div
+                className="MOBILE-MENU-OVERLAY fixed top-0 left-0 w-full h-screen bg-white z-10"
+                style={{ display: isNavOpen ? 'flex' : 'none' }}
+              >
                 <div className="CROSS-ICON absolute top-4 right-4 px-2 py-2" onClick={toggleNavOpen}>
                   <svg
                     className="h-8 w-8 text-gray-600"
@@ -79,11 +105,24 @@ export default function NavbarDup() {
                 </div>
                 <div className="MOBILE-MENU-CONTENT flex flex-col items-start justify-start h-full p-8">
                   <ul className="MENU-LINK-MOBILE-OPEN space-y-4 text-lg">
-                    {navigationAll.map((link) => (
+                    {mobileNavigation.map((link) => (
                       <li key={link.name}>
-                        <Link href={link.href} className="text-gray-600 hover:text-gray-800">
-                          {link.name}
-                        </Link>
+                        {link.dropdown ? (
+                          <div className="relative">
+                            <span
+                              className="text-gray-600 hover:text-gray-800 cursor-pointer"
+                              onClick={() => link.name === 'Solutions' ? toggleSolutions() : toggleResources()}
+                            >
+                              {link.name}
+                            </span>
+                            {link.name === 'Solutions' && isSolutionsOpen && renderDropdown(solutionsDropdownItems)}
+                            {link.name === 'Resources' && isResourcesOpen && renderDropdown(resourcesDropdownItems)}
+                          </div>
+                        ) : (
+                          <Link href={link.href} className="text-gray-600 hover:text-gray-800">
+                            {link.name}
+                          </Link>
+                        )}
                       </li>
                     ))}
                   </ul>
@@ -98,11 +137,25 @@ export default function NavbarDup() {
             </section>
 
             <ul className="DESKTOP-MENU hidden space-x-8 lg:flex">
-              {navigation.map((link) => (
+              {desktopNavigation.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="text-base font-small text-gray-600 hover:text-gray-800">
-                    {link.name}
-                  </Link>
+                  {link.dropdown ? (
+                    <div className="relative">
+                      <span
+                        className="text-base font-small text-gray-600 hover:text-gray-800 cursor-pointer"
+                        onMouseEnter={() => link.name === 'Solutions' && toggleSolutions(true)}
+                        onMouseLeave={() => link.name === 'Solutions' && toggleSolutions(false)}
+                      >
+                        {link.name}
+                      </span>
+                      {link.name === 'Solutions' && isSolutionsOpen && renderDropdown(solutionsDropdownItems)}
+                      {link.name === 'Resources' && isResourcesOpen && renderDropdown(resourcesDropdownItems)}
+                    </div>
+                  ) : (
+                    <Link href={link.href} className="text-base font-small text-gray-600 hover:text-gray-800">
+                      {link.name}
+                    </Link>
+                  )}
                 </li>
               ))}
               <li>
@@ -132,7 +185,7 @@ export default function NavbarDup() {
           justify-content: space-evenly;
           align-items: center;
         }
-
+      
         .MOBILE-MENU-OVERLAY {
           top: 0;
           left: 0;
@@ -144,33 +197,65 @@ export default function NavbarDup() {
           align-items: flex-start;
           padding-top: 2rem;
         }
-
+      
         .CROSS-ICON {
           cursor: pointer;
         }
-
+      
         .MOBILE-MENU-CONTENT {
           width: 100%;
         }
-
+      
         .MENU-LINK-MOBILE-OPEN {
           list-style: none;
           padding: 0;
           margin: 0;
         }
         .login-button {
-          background-color: #038270; /* Green color */
-          color: white; /* Text color */
-          padding: 8px 16px; /* Add padding to make it look like a button */
-          border: none; /* Remove the default button border */
-          border-radius: 5px; /* Add some rounded corners */
-          text-decoration: none; /* Remove underline */
+          background-color: #038270;
+          color: white;
+          padding: 8px 16px;
+          border: none;
+          border-radius: 5px;
+          text-decoration: none;
         }
       
         .login-button:hover {
-          background-color: #024324; /* Change color on hover */
+          background-color: #024324;
+        }
+      
+        /* Add styles for dropdown menus */
+        .DROPDOWN-MENU {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          display: none;
+          flex-direction: column;
+          background-color: white;
+          box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+          border-radius: 0.25rem;
+        }
+      
+        .MENU-LINK-MOBILE-OPEN:hover .DROPDOWN-MENU,
+        .MENU-LINK-MOBILE-OPEN:focus-within .DROPDOWN-MENU {
+          display: flex;
+        }
+      
+        .DROPDOWN-MENU ul {
+          padding: 0;
+          margin: 0;
+          list-style: none;
+        }
+      
+        .DROPDOWN-MENU li {
+          padding: 10px 20px;
+        }
+      
+        .DROPDOWN-MENU li:hover {
+          background-color: #f7f7f7;
         }
       `}</style>
     </>
   );
 }
+
