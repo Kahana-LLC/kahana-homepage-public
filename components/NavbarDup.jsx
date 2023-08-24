@@ -13,6 +13,12 @@ const Navigation = () => {
 
   return (
     <nav className={`navigation ${isOpen ? 'open' : ''}`}>
+      <div className={`hamburger ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
+        <div className="bar"></div>
+        <div className="bar"></div>
+        <div className="bar"></div>
+      </div>
+
       <div className="logo">
         <Link href="/">
           <a>
@@ -20,12 +26,14 @@ const Navigation = () => {
               className="h-10"
               src={whiteKahanaLogo}
               alt="navbar-logo"
+              width={200}
+              height={40}
             />
           </a>
         </Link>
       </div>
 
-      <div className={`menu ${isOpen ? 'open' : ''}`}>
+      <div className="menu">
         <ul>
           <li>
             <Link href="/about">
@@ -90,146 +98,40 @@ const Navigation = () => {
         </ul>
       </div>
 
-      {/* Hamburger menu for mobile */}
-      <div className={`hamburger ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
-        <div className="bar"></div>
-        <div className="bar"></div>
-        <div className="bar"></div>
-      </div>
-
       <style jsx>{`
-        .navigation {
-          background-color: white;
-          color: black;
-          display: flex;
-          justify-content: flex-end;
-          align-items: center;
-          padding: 0.5rem 2rem;
-          position: fixed;
-          top: 0;
-          left: 0;
-          right: 0;
-          transition: background-color 0.3s ease-in-out;
-        }
-
-        .open .navigation {
-          background-color: white;
-          color: black;
-        }
-
-        .logo {
-          cursor: pointer;
-          flex: 1;
-        }
-
-        .menu {
-          display: flex;
-          align-items: center;
-          margin-left: auto;
-        }
-
-        .menu ul {
-          list-style: none;
-          display: flex;
-          margin: 0;
-          padding: 0;
-        }
-
-        .menu-item {
-          text-decoration: none;
-          color: black;
-          padding: 0.5rem 1rem;
-          transition: background-color 0.3s ease-in-out;
-          cursor: pointer;
-        }
-
-        .menu-item:hover {
-          background-color: #024324;
-        }
-
-        .dropdown {
-          position: relative;
-        }
-
-        .dropdown-content {
-          display: none;
-          position: absolute;
-          background-color: #038270;
-          min-width: 160px;
-          z-index: 1;
-          cursor: default;
-        }
-
-        .dropdown:hover .dropdown-content {
-          display: block;
-        }
-
-        .dropdown-content a {
-          color: white;
-          padding: 12px 16px;
-          text-decoration: none;
-          display: block;
-        }
-
-        .login {
-          background-color: #038270;
-        }
-
-        .login:hover {
-          background-color: #024324;
-        }
-
-        .hamburger {
-          display: none;
-          flex-direction: column;
-          cursor: pointer;
-        }
-
-        .hamburger.open .bar:nth-child(1) {
-          transform: rotate(-45deg) translate(-5px, 6px);
-        }
-
-        .hamburger.open .bar:nth-child(2) {
-          opacity: 0;
-        }
-
-        .hamburger.open .bar:nth-child(3) {
-          transform: rotate(45deg) translate(-5px, -6px);
-        }
-
         @media (max-width: 768px) {
           .navigation {
-            background-color: white;
-            padding: 0.5rem 2rem 2rem 2rem;
+            padding: 0.5rem 2rem;
           }
 
           .logo {
             text-align: left;
-            flex: initial;
             padding-right: 1rem;
           }
 
           .menu {
+            display: none;
             flex-direction: column;
             position: absolute;
             top: 60px;
             right: 0;
             width: 100%;
-            background-color: white; /* Change background color for mobile */
-            display: ${isOpen ? 'flex' : 'none'};
+            background-color: white;
           }
 
-          .menu ul {
-            flex-direction: column;
+          .open .menu {
+            display: flex;
           }
 
           .menu-item {
             padding: 1rem 2rem;
-            color: black; /* Change text color for mobile */
+            color: black;
           }
 
           .hamburger {
             display: flex;
+            flex-direction: column;
+            cursor: pointer;
             position: absolute;
             top: 0.5rem;
             right: 1rem;
@@ -241,4 +143,3 @@ const Navigation = () => {
 };
 
 export default Navigation;
-
