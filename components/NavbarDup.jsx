@@ -108,7 +108,7 @@ export default function NavbarDup() {
                             {link.name}
                           </button>
                           {link.name === 'Solutions' && isSolutionsOpen && (
-                            <div className="absolute left-16 top-0 mt-2 bg-white border border-gray-200 shadow-lg rounded-lg">
+                            <div className="absolute left-0 mt-2 bg-white border border-gray-200 shadow-lg rounded-lg" onMouseLeave={closeDropdowns}>
                               <ul className="MENU-LINK-MOBILE-OPEN space-y-2">
                                 {link.items.map((item) => (
                                   <li key={item.name}>
@@ -121,7 +121,7 @@ export default function NavbarDup() {
                             </div>
                           )}
                           {link.name === 'Resources' && isResourcesOpen && (
-                            <div className="absolute left-16 top-0 mt-2 bg-white border border-gray-200 shadow-lg rounded-lg">
+                            <div className="absolute left-0 mt-2 bg-white border border-gray-200 shadow-lg rounded-lg" onMouseLeave={closeDropdowns}>
                               <ul className="MENU-LINK-MOBILE-OPEN space-y-2">
                                 {link.items.map((item) => (
                                   <li key={item.name}>
@@ -141,7 +141,7 @@ export default function NavbarDup() {
                       )}
                     </div>
                   ))}
-                  <div className="mt-4">
+                  <div>
                     <a href="https://app.kahana.co/login" className="login-button">
                       Log in
                     </a>
@@ -164,12 +164,11 @@ export default function NavbarDup() {
                       <button
                         className="text-base font-small text-gray-600 hover:text-gray-800"
                         onMouseEnter={link.name === 'Solutions' ? toggleSolutionsOpen : (link.name === 'Resources' ? toggleResourcesOpen : null)}
-                        onMouseLeave={closeDropdowns}
                       >
                         {link.name}
                       </button>
                       {link.name === 'Solutions' && isSolutionsOpen && (
-                        <div className="absolute left-0 mt-2 bg-white border border-gray-200 shadow-lg rounded-lg">
+                        <div className="absolute left-0 mt-2 bg-white border border-gray-200 shadow-lg rounded-lg" onMouseLeave={closeDropdowns}>
                           <ul className="MENU-LINK-MOBILE-OPEN space-y-2">
                             {link.items.map((item) => (
                               <li key={item.name}>
@@ -182,7 +181,7 @@ export default function NavbarDup() {
                         </div>
                       )}
                       {link.name === 'Resources' && isResourcesOpen && (
-                        <div className="absolute left-0 mt-2 bg-white border border-gray-200 shadow-lg rounded-lg">
+                        <div className="absolute left-0 mt-2 bg-white border border-gray-200 shadow-lg rounded-lg" onMouseLeave={closeDropdowns}>
                           <ul className="MENU-LINK-MOBILE-OPEN space-y-2">
                             {link.items.map((item) => (
                               <li key={item.name}>
@@ -254,6 +253,7 @@ export default function NavbarDup() {
           list-style: none;
           padding: 0;
           margin: 0;
+          min-width: 200px; /* Adjust as needed */
         }
         .login-button {
           background-color: #038270; /* Green color */
