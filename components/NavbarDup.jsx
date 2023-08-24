@@ -1,56 +1,47 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 import whiteKahanaLogo from '../assets/kahana_logo_wide_light.svg';
 import HeaderBanner from './HeaderBanner';
 
-const desktopNavigation = [
+const navigation = [
   { name: 'About', href: '/about' },
   { name: 'Examples', href: '/explore' },
-  { name: 'Solutions', dropdown: true },
-  { name: 'Resources', dropdown: true },
+  { name: 'Solutions', dropdown: true, items: [
+    { name: 'For Enterprise', href: '/enterprise' },
+    { name: 'For Coaches', href: '/coaches' },
+    { name: 'For Consultants', href: '/consultants' },
+    { name: 'For Experts', href: '/experts' },
+    { name: 'Become an affiliate', href: '/affiliates' },
+  ] },
+  { name: 'Resources', dropdown: true, items: [
+    { name: 'Blog', href: 'https://blog.kahana.co/' },
+    { name: 'Monetizing Notion', href: '/resources' },
+    { name: 'Monetizing Google Drive', href: '/resources' },
+    { name: 'Selling Digital Products', href: '/resources' },
+    { name: 'Help Center', href: 'https://kahana.tawk.help/' },
+    { name: 'FAQ', href: '/faq' },
+    { name: 'Community', href: 'https://nas.io/creators-and-experts' },
+  ] },
   { name: 'Pricing', href: '/pricing' },
 ];
 
-const mobileNavigation = [
-  ...desktopNavigation,
-  { name: 'Log in', href: 'https://app.kahana.co/login', className: 'login-button' },
-];
-
-const solutionsDropdownItems = [
-  { name: 'For Enterprise', href: '/enterprise' },
-  { name: 'For Coaches', href: '/coaches' },
-  { name: 'For Consultants', href: '/consultants' },
-  { name: 'For Experts', href: '/experts' },
-  { name: 'Become an affiliate', href: '/affiliates' },
-];
-
-const resourcesDropdownItems = [
-  { name: 'Blog', href: 'https://blog.kahana.co/' },
-  { name: 'Monetizing Notion', href: '/resources' },
-  { name: 'Monetizing Google Drive', href: '/resources' },
-  { name: 'Selling Digital Products', href: '/resources' },
-  { name: 'Help Center', href: 'https://kahana.tawk.help/' },
-  { name: 'FAQ', href: '/faq' },
-  { name: 'Community', href: 'https://nas.io/creators-and-experts' },
-];
-
 export default function NavbarDup() {
-  const [isNavOpen, setIsNavOpen] = useState(false);
   const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
   const [isResourcesOpen, setIsResourcesOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const toggleNavOpen = () => {
-    setIsNavOpen((prevState) => !prevState);
+  const toggleSolutionsOpen = () => {
+    setIsSolutionsOpen(!isSolutionsOpen);
   };
 
-  const toggleSolutions = () => {
-    setIsSolutionsOpen((prevState) => !prevState);
+  const toggleResourcesOpen = () => {
+    setIsResourcesOpen(!isResourcesOpen);
   };
 
-  const toggleResources = () => {
-    setIsResourcesOpen((prevState) => !prevState);
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
   const closeDropdowns = () => {
@@ -60,7 +51,7 @@ export default function NavbarDup() {
 
   useEffect(() => {
     const bodyScrollLock = () => {
-      if (isNavOpen || isSolutionsOpen || isResourcesOpen) {
+      if (isSolutionsOpen || isResourcesOpen || isMobileMenuOpen) {
         document.body.style.overflow = 'hidden';
       } else {
         document.body.style.overflow = 'auto';
@@ -72,35 +63,7 @@ export default function NavbarDup() {
     return () => {
       document.body.style.overflow = 'auto';
     };
-  }, [isNavOpen, isSolutionsOpen, isResourcesOpen]);
-
-  const renderSolutionsDropdown = () => (
-    <div className="DROPDOWN-MENU">
-      <ul className="MENU-LINK-DESKTOP space-y-4 text-lg">
-        {solutionsDropdownItems.map((item) => (
-          <li key={item.name}>
-            <Link href={item.href} className="text-gray-600 hover:text-gray-800" onClick={closeDropdowns}>
-              {item.name}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-
-  const renderResourcesDropdown = () => (
-    <div className="DROPDOWN-MENU">
-      <ul className="MENU-LINK-DESKTOP space-y-4 text-lg">
-        {resourcesDropdownItems.map((item) => (
-          <li key={item.name}>
-            <Link href={item.href} className="text-gray-600 hover:text-gray-800" onClick={closeDropdowns}>
-              {item.name}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
+  }, [isSolutionsOpen, isResourcesOpen, isMobileMenuOpen]);
 
   return (
     <>
@@ -110,15 +73,16 @@ export default function NavbarDup() {
           <div className="flex items-center justify-between border-b py-2 px-10">
             <Link href="/" aria-label="Home">
               <span className="sr-only">Company</span>
-              <Image className="h-10" src={whiteKahanaLogo} alt="navbar-logo" />
+              <Image
+                className="h-10"
+                src={whiteKahanaLogo}
+                alt="navbar-logo"
+              />
             </Link>
 
             <section className="MOBILE-MENU relative flex lg:hidden">
-              <div
-                className="MOBILE-MENU-OVERLAY fixed top-0 left-0 w-full h-screen bg-white z-10"
-                style={{ display: isNavOpen ? 'flex' : 'none' }}
-              >
-                <div className="CROSS-ICON absolute top-4 right-4 px-2 py-2" onClick={toggleNavOpen}>
+              <div className="MOBILE-MENU-OVERLAY fixed top-0 left-0 w-full h-screen bg-white z-10" style={{ display: isMobileMenuOpen ? 'flex' : 'none' }}>
+                <div className="CROSS-ICON absolute top-4 right-4 px-2 py-2" onClick={toggleMobileMenu}>
                   <svg
                     className="h-8 w-8 text-gray-600"
                     viewBox="0 0 24 24"
@@ -133,32 +97,59 @@ export default function NavbarDup() {
                   </svg>
                 </div>
                 <div className="MOBILE-MENU-CONTENT flex flex-col items-start justify-start h-full p-8">
-                  <ul className="MENU-LINK-MOBILE-OPEN space-y-4 text-lg">
-                    {mobileNavigation.map((link) => (
-                      <li key={link.name}>
-                        {link.dropdown ? (
-                          <div className="relative">
-                            <span
-                              className="text-gray-600 hover:text-gray-800 cursor-pointer"
-                              onClick={() => link.name === 'Solutions' ? toggleSolutions() : toggleResources()}
-                            >
-                              {link.name}
-                            </span>
-                            {link.name === 'Solutions' && isSolutionsOpen && renderSolutionsDropdown()}
-                            {link.name === 'Resources' && isResourcesOpen && renderResourcesDropdown()}
-                          </div>
-                        ) : (
-                          <Link href={link.href} className="text-gray-600 hover:text-gray-800">
+                  {navigation.map((link) => (
+                    <div key={link.name}>
+                      {link.dropdown ? (
+                        <div className="relative">
+                          <button
+                            className="text-gray-600 hover:text-gray-800"
+                            onClick={link.name === 'Solutions' ? toggleSolutionsOpen : (link.name === 'Resources' ? toggleResourcesOpen : null)}
+                          >
                             {link.name}
-                          </Link>
-                        )}
-                      </li>
-                    ))}
-                  </ul>
+                          </button>
+                          {link.name === 'Solutions' && isSolutionsOpen && (
+                            <div className="absolute left-16 top-0 mt-2 bg-white border border-gray-200 shadow-lg rounded-lg">
+                              <ul className="MENU-LINK-MOBILE-OPEN space-y-2">
+                                {link.items.map((item) => (
+                                  <li key={item.name}>
+                                    <Link href={item.href} className="text-gray-600 hover:text-gray-800">
+                                      {item.name}
+                                    </Link>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          )}
+                          {link.name === 'Resources' && isResourcesOpen && (
+                            <div className="absolute left-16 top-0 mt-2 bg-white border border-gray-200 shadow-lg rounded-lg">
+                              <ul className="MENU-LINK-MOBILE-OPEN space-y-2">
+                                {link.items.map((item) => (
+                                  <li key={item.name}>
+                                    <Link href={item.href} className="text-gray-600 hover:text-gray-800">
+                                      {item.name}
+                                    </Link>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          )}
+                        </div>
+                      ) : (
+                        <Link href={link.href} className="text-gray-600 hover:text-gray-800">
+                          {link.name}
+                        </Link>
+                      )}
+                    </div>
+                  ))}
+                  <div className="mt-4">
+                    <a href="https://app.kahana.co/login" className="login-button">
+                      Log in
+                    </a>
+                  </div>
                 </div>
               </div>
 
-              <div className="HAMBURGER-ICON space-y-2" onClick={toggleNavOpen} style={{ display: isNavOpen ? 'none' : 'block' }}>
+              <div className="HAMBURGER-ICON space-y-2" onClick={toggleMobileMenu} style={{ display: isMobileMenuOpen ? 'none' : 'block' }}>
                 <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
                 <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
                 <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
@@ -166,17 +157,43 @@ export default function NavbarDup() {
             </section>
 
             <ul className="DESKTOP-MENU hidden space-x-8 lg:flex">
-              {desktopNavigation.map((link) => (
-                <li key={link.name} onMouseEnter={link.name === 'Solutions' ? toggleSolutions : null} onMouseLeave={link.name === 'Solutions' ? toggleSolutions : null}>
+              {navigation.map((link) => (
+                <li key={link.name}>
                   {link.dropdown ? (
-                    <div className="relative">
-                      <span
-                        className="text-base font-small text-gray-600 hover:text-gray-800 cursor-pointer"
+                    <div className="relative group">
+                      <button
+                        className="text-base font-small text-gray-600 hover:text-gray-800"
+                        onMouseEnter={link.name === 'Solutions' ? toggleSolutionsOpen : (link.name === 'Resources' ? toggleResourcesOpen : null)}
+                        onMouseLeave={closeDropdowns}
                       >
                         {link.name}
-                      </span>
-                      {link.name === 'Solutions' && isSolutionsOpen && renderSolutionsDropdown()}
-                      {link.name === 'Resources' && isResourcesOpen && renderResourcesDropdown()}
+                      </button>
+                      {link.name === 'Solutions' && isSolutionsOpen && (
+                        <div className="absolute left-0 mt-2 bg-white border border-gray-200 shadow-lg rounded-lg">
+                          <ul className="MENU-LINK-MOBILE-OPEN space-y-2">
+                            {link.items.map((item) => (
+                              <li key={item.name}>
+                                <Link href={item.href} className="text-gray-600 hover:text-gray-800">
+                                  {item.name}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                      {link.name === 'Resources' && isResourcesOpen && (
+                        <div className="absolute left-0 mt-2 bg-white border border-gray-200 shadow-lg rounded-lg">
+                          <ul className="MENU-LINK-MOBILE-OPEN space-y-2">
+                            {link.items.map((item) => (
+                              <li key={item.name}>
+                                <Link href={item.href} className="text-gray-600 hover:text-gray-800">
+                                  {item.name}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
                     </div>
                   ) : (
                     <Link href={link.href} className="text-base font-small text-gray-600 hover:text-gray-800">
@@ -195,46 +212,9 @@ export default function NavbarDup() {
         </nav>
       </header>
       <style jsx>{`
-        .DROPDOWN-MENU {
-          position: absolute;
-          top: 100%;
-          left: 0;
-          display: none;
-          flex-direction: column;
-          background-color: white;
-          box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-          border-radius: 0.25rem;
-          z-index: 999;
-        }
-
-        .MENU-LINK-DESKTOP:hover .DROPDOWN-MENU,
-        .MENU-LINK-DESKTOP:focus-within .DROPDOWN-MENU {
-          display: flex;
-        }
-
-        .DROPDOWN-MENU ul {
-          padding: 0;
-          margin: 0;
-          list-style: none;
-        }
-
-        .DROPDOWN-MENU li {
-          padding: 10px 20px;
-        }
-
-        .DROPDOWN-MENU li:hover {
-          background-color: #f7f7f7;
-        }
-
-        /* Other styles */
-        .DESKTOP-MENU li {
-          position: relative;
-        }
-
         .hideMenuNav {
           display: none;
         }
-
         .showMenuNav {
           display: block;
           position: absolute;
@@ -276,16 +256,16 @@ export default function NavbarDup() {
           margin: 0;
         }
         .login-button {
-          background-color: #038270;
-          color: white;
-          padding: 8px 16px;
-          border: none;
-          border-radius: 5px;
-          text-decoration: none;
+          background-color: #038270; /* Green color */
+          color: white; /* Text color */
+          padding: 8px 16px; /* Add padding to make it look like a button */
+          border: none; /* Remove the default button border */
+          border-radius: 5px; /* Add some rounded corners */
+          text-decoration: none; /* Remove underline */
         }
-
+      
         .login-button:hover {
-          background-color: #024324;
+          background-color: #024324; /* Change color on hover */
         }
       `}</style>
     </>
