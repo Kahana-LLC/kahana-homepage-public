@@ -38,11 +38,19 @@ const resourcesDropdownItems = [
 
 export default function NavbarDup() {
   const [isNavOpen, setIsNavOpen] = useState(false);
-  const [isSolutionsOpen, setIsSolutionsOpen] = useState(false); // Define isSolutionsOpen
-  const [isResourcesOpen, setIsResourcesOpen] = useState(false); // Define isResourcesOpen
+  const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
+  const [isResourcesOpen, setIsResourcesOpen] = useState(false);
 
   const toggleNavOpen = () => {
     setIsNavOpen((prevState) => !prevState);
+  };
+
+  const toggleSolutions = () => {
+    setIsSolutionsOpen((prevState) => !prevState);
+  };
+
+  const toggleResources = () => {
+    setIsResourcesOpen((prevState) => !prevState);
   };
 
   useEffect(() => {
@@ -145,8 +153,8 @@ export default function NavbarDup() {
                     <div className="relative">
                       <span
                         className="text-base font-small text-gray-600 hover:text-gray-800 cursor-pointer"
-                        onMouseEnter={() => link.name === 'Solutions' && toggleSolutions(true)}
-                        onMouseLeave={() => link.name === 'Solutions' && toggleSolutions(false)}
+                        onMouseEnter={() => link.name === 'Solutions' && toggleSolutions()}
+                        onMouseLeave={() => link.name === 'Solutions' && toggleSolutions()}
                       >
                         {link.name}
                       </span>
@@ -187,7 +195,7 @@ export default function NavbarDup() {
           justify-content: space-evenly;
           align-items: center;
         }
-      
+
         .MOBILE-MENU-OVERLAY {
           top: 0;
           left: 0;
@@ -199,15 +207,15 @@ export default function NavbarDup() {
           align-items: flex-start;
           padding-top: 2rem;
         }
-      
+
         .CROSS-ICON {
           cursor: pointer;
         }
-      
+
         .MOBILE-MENU-CONTENT {
           width: 100%;
         }
-      
+
         .MENU-LINK-MOBILE-OPEN {
           list-style: none;
           padding: 0;
@@ -221,11 +229,11 @@ export default function NavbarDup() {
           border-radius: 5px;
           text-decoration: none;
         }
-      
+
         .login-button:hover {
           background-color: #024324;
         }
-      
+
         /* Add styles for dropdown menus */
         .DROPDOWN-MENU {
           position: absolute;
@@ -237,22 +245,22 @@ export default function NavbarDup() {
           box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
           border-radius: 0.25rem;
         }
-      
+
         .MENU-LINK-MOBILE-OPEN:hover .DROPDOWN-MENU,
         .MENU-LINK-MOBILE-OPEN:focus-within .DROPDOWN-MENU {
           display: flex;
         }
-      
+
         .DROPDOWN-MENU ul {
           padding: 0;
           margin: 0;
           list-style: none;
         }
-      
+
         .DROPDOWN-MENU li {
           padding: 10px 20px;
         }
-      
+
         .DROPDOWN-MENU li:hover {
           background-color: #f7f7f7;
         }
@@ -260,4 +268,3 @@ export default function NavbarDup() {
     </>
   );
 }
-
