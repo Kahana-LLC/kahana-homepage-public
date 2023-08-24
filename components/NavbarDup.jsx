@@ -4,244 +4,72 @@ import Link from 'next/link';
 
 import whiteKahanaLogo from '../assets/kahana_logo_wide_light.svg';
 
-const Navigation = () => {
-  const [isOpen, setIsOpen] = useState(false);
+const NavBarDup = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
-    setIsOpen(!isOpen);
+    setMenuOpen(!menuOpen);
   };
 
   return (
-    <nav className={`navigation ${isOpen ? 'open' : ''}`}>
-      <div className="logo">
-        <Link href="/">
-          <a>
-            <Image
-              className="h-10"
-              src={whiteKahanaLogo}
-              alt="navbar-logo"
-            />
-          </a>
-        </Link>
-      </div>
-
-      <div className={`hamburger ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
-        <div className="bar"></div>
-        <div className="bar"></div>
-        <div className="bar"></div>
-      </div>
-
-      <div className={`menu ${isOpen ? 'open' : ''}`}>
-        <ul>
-          <li>
-            <Link href="/about">
-              <a className="menu-item">About</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/explore">
-              <a className="menu-item">Examples</a>
-            </Link>
-          </li>
-          <li className="dropdown">
-            <span className="menu-item">Solutions</span>
-            <div className="dropdown-content">
-              <Link href="/enterprise">
-                <a>For Enterprise</a>
-              </Link>
-              <Link href="/coaches">
-                <a>For Coaches</a>
-              </Link>
-              <Link href="/consultants">
-                <a>For Consultants</a>
-              </Link>
-              <Link href="/experts">
-                <a>For Experts</a>
-              </Link>
-              <Link href="/affiliates">
-                <a>Become an affiliate</a>
-              </Link>
-            </div>
-          </li>
-          <li className="dropdown">
-            <span className="menu-item">Resources</span>
-            <div className="dropdown-content">
-              <a href="https://blog.kahana.co/">Blog</a>
-              <Link href="/resources">
-                <a>Monetizing Notion</a>
-              </Link>
-              <Link href="/resources">
-                <a>Monetizing Google Drive</a>
-              </Link>
-              <Link href="/resources">
-                <a>Selling Digital Products</a>
-              </Link>
-              <a href="https://kahana.tawk.help/">Help Center</a>
-              <Link href="/faq">
-                <a>FAQ</a>
-              </Link>
-              <a href="https://nas.io/creators-and-experts">Community</a>
-            </div>
-          </li>
-          <li>
-            <Link href="/pricing">
-              <a className="menu-item">Pricing</a>
-            </Link>
-          </li>
-          <li>
-            <a href="https://app.kahana.co/login" className="menu-item login">
-              Log in
+    <nav className="bg-white border-b border-gray-200">
+      <div className="container mx-auto px-4 py-4">
+        <div className="flex justify-between items-center">
+          <Link href="/">
+            <a>
+              <Image
+                className="h-10"
+                src={whiteKahanaLogo}
+                alt="navbar-logo"
+              />
             </a>
-          </li>
-        </ul>
+          </Link>
+          <div className="hidden md:flex space-x-6">
+            <Link href="/about">
+              <a className="text-gray-700 hover:text-gray-900">About</a>
+            </Link>
+            <Link href="/explore">
+              <a className="text-gray-700 hover:text-gray-900">Examples</a>
+            </Link>
+            <div className="relative group">
+              <span className="text-gray-700 cursor-pointer group-hover:text-gray-900">Solutions</span>
+              <ul className={`absolute top-full left-0 hidden mt-2 space-y-2 bg-white border border-gray-200 group-hover:block ${menuOpen ? 'block' : 'hidden'} md:block`}>
+                <li><Link href="/enterprise"><a className="block px-4 py-2 text-gray-700 hover:text-gray-900">For Enterprise</a></Link></li>
+                <li><Link href="/coaches"><a className="block px-4 py-2 text-gray-700 hover:text-gray-900">For Coaches</a></Link></li>
+                <li><Link href="/consultants"><a className="block px-4 py-2 text-gray-700 hover:text-gray-900">For Consultants</a></Link></li>
+                <li><Link href="/experts"><a className="block px-4 py-2 text-gray-700 hover:text-gray-900">For Experts</a></Link></li>
+                <li><Link href="/affiliates"><a className="block px-4 py-2 text-gray-700 hover:text-gray-900">Become an affiliate</a></Link></li>
+              </ul>
+            </div>
+            <div className="relative group">
+              <span className="text-gray-700 cursor-pointer group-hover:text-gray-900">Resources</span>
+              <ul className={`absolute top-full left-0 hidden mt-2 space-y-2 bg-white border border-gray-200 group-hover:block ${menuOpen ? 'block' : 'hidden'} md:block`}>
+                <li><a href="https://blog.kahana.co/" className="block px-4 py-2 text-gray-700 hover:text-gray-900">Blog</a></li>
+                <li><Link href="/resources"><a className="block px-4 py-2 text-gray-700 hover:text-gray-900">Monetizing Notion</a></Link></li>
+                <li><Link href="/resources"><a className="block px-4 py-2 text-gray-700 hover:text-gray-900">Monetizing Google Drive</a></Link></li>
+                <li><Link href="/resources"><a className="block px-4 py-2 text-gray-700 hover:text-gray-900">Selling Digital Products</a></Link></li>
+                <li><a href="https://kahana.tawk.help/" className="block px-4 py-2 text-gray-700 hover:text-gray-900">Help Center</a></li>
+                <li><Link href="/faq"><a className="block px-4 py-2 text-gray-700 hover:text-gray-900">FAQ</a></Link></li>
+                <li><a href="https://nas.io/creators-and-experts" className="block px-4 py-2 text-gray-700 hover:text-gray-900">Community</a></li>
+              </ul>
+            </div>
+            <Link href="/pricing">
+              <a className="text-gray-700 hover:text-gray-900">Pricing</a>
+            </Link>
+          </div>
+          <div className="md:hidden">
+            <button onClick={toggleMenu} className="text-gray-700 hover:text-gray-900">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
       </div>
-
-      <style jsx>{`
-        .navigation {
-          background-color: white;
-          color: black;
-          display: flex;
-          justify-content: flex-end;
-          align-items: center;
-          padding: 0.5rem 2rem;
-          position: fixed;
-          top: 0;
-          left: 0;
-          right: 0;
-          transition: background-color 0.3s ease-in-out;
-        }
-
-        .open .navigation {
-          background-color: white;
-          color: black;
-        }
-
-        .logo {
-          cursor: pointer;
-          flex: 1;
-        }
-
-        .menu {
-          display: flex;
-          align-items: center;
-          margin-left: auto;
-          transition: transform 0.3s ease-in-out;
-          transform: translateX(0);
-        }
-
-        .menu.open {
-          transform: translateX(0%);
-        }
-
-        .menu ul {
-          list-style: none;
-          display: flex;
-          margin: 0;
-          padding: 0;
-        }
-
-        .menu-item {
-          text-decoration: none;
-          color: black;
-          padding: 0.5rem 1rem;
-          transition: background-color 0.3s ease-in-out;
-          cursor: pointer;
-        }
-
-        .menu-item:hover {
-          background-color: #024324;
-        }
-
-        .dropdown {
-          position: relative;
-        }
-
-        .dropdown-content {
-          display: none;
-          position: absolute;
-          background-color: #038270;
-          min-width: 160px;
-          z-index: 1;
-          cursor: default;
-        }
-
-        .dropdown:hover .dropdown-content {
-          display: block;
-        }
-
-        .dropdown-content a {
-          color: white;
-          padding: 12px 16px;
-          text-decoration: none;
-          display: block;
-        }
-
-        .login {
-          background-color: #038270;
-        }
-
-        .login:hover {
-          background-color: #024324;
-        }
-
-        .hamburger {
-          display: flex;
-          flex-direction: column;
-          cursor: pointer;
-          position: fixed;
-          top: 0.5rem;
-          right: 1rem;
-          z-index: 51;
-        }
-
-        .hamburger.open .bar:nth-child(1) {
-          transform: rotate(-45deg) translate(-5px, 6px);
-        }
-
-        .hamburger.open .bar:nth-child(2) {
-          opacity: 0;
-        }
-
-        .hamburger.open .bar:nth-child(3) {
-          transform: rotate(45deg) translate(-5px, -6px);
-        }
-
-        @media (max-width: 768px) {
-          .navigation {
-            padding: 0.5rem 2rem; /* Adjust padding as needed */
-          }
-
-          .menu {
-            transform: translateX(100%);
-            position: absolute;
-            top: 60px; /* Adjust top position as needed */
-            right: 0;
-            width: 80%; /* Adjust menu width as needed */
-            background-color: white; /* Change background color for mobile */
-            z-index: 2; /* Ensure that the menu is above other elements */
-          }
-
-          .menu.open {
-            transform: translateX(0%);
-          }
-
-          .menu ul {
-            flex-direction: column;
-          }
-
-          .menu-item {
-            padding: 1rem 2rem; /* Adjust padding as needed */
-            color: black; /* Change text color for mobile */
-          }
-
-          .hamburger {
-            display: flex;
-          }
-        }
-      `}</style>
     </nav>
   );
 };
 
-export default Navigation;
+export default NavBarDup;
+
 
