@@ -210,7 +210,6 @@ const Navigation = () => {
             right: 0;
             width: 100%;
             background-color: white;
-            z-index: 2;
           }
 
           .open .menu {
@@ -231,7 +230,19 @@ const Navigation = () => {
             position: absolute;
             top: 0.5rem;
             right: 1rem;
-            z-index: 3;
+            background-color: black;
+          }
+
+          .hamburger.open .bar:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+          }
+
+          .hamburger.open .bar:nth-child(2) {
+            opacity: 0;
+          }
+
+          .hamburger.open .bar:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
           }
           
           /* Add extra padding beneath the navigation bar on mobile */
