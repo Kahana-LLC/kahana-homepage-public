@@ -13,15 +13,17 @@ const Navigation = () => {
 
   return (
     <nav className={`navigation ${isOpen ? 'open' : ''}`}>
-      <Link href="/">
-        <a className="logo">
-          <Image
-            className="h-10"
-            src={whiteKahanaLogo}
-            alt="navbar-logo"
-          />
-        </a>
-      </Link>
+      <div className="logo">
+        <Link href="/">
+          <a>
+            <Image
+              className="h-10"
+              src={whiteKahanaLogo}
+              alt="navbar-logo"
+            />
+          </a>
+        </Link>
+      </div>
 
       <div className="hamburger" onClick={toggleMenu}>
         <div className={`bar ${isOpen ? 'open' : ''}`}></div>
@@ -107,7 +109,9 @@ const Navigation = () => {
           left: 0;
           right: 0;
           border-bottom: 1px solid lightgray; /* Add a light gray border */
-          z-index: 1000; /* Ensure the navigation is on top */
+        }
+        .navigation a {
+          text-decoration: none;
         }
 
         .open .navigation {
@@ -229,10 +233,6 @@ const Navigation = () => {
             top: 0.5rem;
             right: 1rem;
             background-color: black;
-          }
-          .logo {
-            flex: none; /* Disable flex to allow logo to be left-aligned */
-            padding-left: 20px; /* Add left padding for spacing */
           }
         }
       `}</style>
