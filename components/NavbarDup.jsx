@@ -38,6 +38,8 @@ const resourcesDropdownItems = [
 
 export default function NavbarDup() {
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const [isSolutionsOpen, setIsSolutionsOpen] = useState(false); // Define isSolutionsOpen
+  const [isResourcesOpen, setIsResourcesOpen] = useState(false); // Define isResourcesOpen
 
   const toggleNavOpen = () => {
     setIsNavOpen((prevState) => !prevState);
