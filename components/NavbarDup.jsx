@@ -12,30 +12,8 @@ const Navigation = () => {
   };
 
   return (
-    <nav
-      style={{
-        backgroundColor: 'white',
-        color: 'black',
-        display: 'flex',
-        justifyContent: 'flex-end',
-        alignItems: 'center',
-        padding: '0.5rem 2rem',
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
-        borderBottom: '1px solid lightgray',
-        zIndex: 1000,
-      }}
-      className={`navigation ${isOpen ? 'open' : ''}`}
-    >
-      <div
-        style={{
-          cursor: 'pointer',
-          flex: 1,
-        }}
-        className="logo"
-      >
+    <nav className={`navigation ${isOpen ? 'open' : ''}`}>
+      <div className="logo">
         <Link href="/">
           <a>
             <Image
@@ -47,298 +25,221 @@ const Navigation = () => {
         </Link>
       </div>
 
-      <div
-        style={{
-          display: 'none',
-          flexDirection: 'column',
-          cursor: 'pointer',
-        }}
-        className={`hamburger ${isOpen ? 'open' : ''}`}
-        onClick={toggleMenu}
-      >
+      <div className="hamburger" onClick={toggleMenu}>
         <div className={`bar ${isOpen ? 'open' : ''}`}></div>
         <div className={`bar ${isOpen ? 'open' : ''}`}></div>
         <div className={`bar ${isOpen ? 'open' : ''}`}></div>
       </div>
 
-      <div
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          marginLeft: 'auto',
-        }}
-        className={`menu ${isOpen ? 'open' : ''}`}
-      >
+      <div className={`menu ${isOpen ? 'open' : ''}`}>
         <ul>
           <li>
             <Link href="/about">
-              <a
-                style={{
-                  textDecoration: 'none',
-                  color: 'black',
-                  padding: '0.5rem 1rem',
-                  transition: 'background-color 0.3s ease-in-out',
-                  cursor: 'pointer',
-                }}
-                className="menu-item"
-              >
-                About
-              </a>
+              <a className="menu-item">About</a>
             </Link>
           </li>
           <li>
             <Link href="/explore">
-              <a
-                style={{
-                  textDecoration: 'none',
-                  color: 'black',
-                  padding: '0.5rem 1rem',
-                  transition: 'background-color 0.3s ease-in-out',
-                  cursor: 'pointer',
-                }}
-                className="menu-item"
-              >
-                Examples
-              </a>
+              <a className="menu-item">Examples</a>
             </Link>
           </li>
-          <li
-            style={{
-              position: 'relative',
-            }}
-            className="dropdown"
-          >
-            <span
-              style={{
-                textDecoration: 'none',
-                color: 'black',
-                padding: '0.5rem 1rem',
-                transition: 'background-color 0.3s ease-in-out',
-                cursor: 'pointer',
-              }}
-              className="menu-item"
-            >
-              Solutions
-            </span>
-            <div
-              style={{
-                display: 'none',
-                position: 'absolute',
-                backgroundColor: '#038270',
-                minWidth: '160px',
-                zIndex: 1,
-                cursor: 'default',
-              }}
-              className="dropdown-content"
-            >
+          <li className="dropdown">
+            <span className="menu-item">Solutions</span>
+            <div className="dropdown-content">
               <Link href="/enterprise">
-                <a
-                  style={{
-                    color: 'white',
-                    padding: '12px 16px',
-                    textDecoration: 'none',
-                    display: 'block',
-                  }}
-                >
-                  For Enterprise
-                </a>
+                <a>For Enterprise</a>
               </Link>
               <Link href="/coaches">
-                <a
-                  style={{
-                    color: 'white',
-                    padding: '12px 16px',
-                    textDecoration: 'none',
-                    display: 'block',
-                  }}
-                >
-                  For Coaches
-                </a>
+                <a>For Coaches</a>
               </Link>
               <Link href="/consultants">
-                <a
-                  style={{
-                    color: 'white',
-                    padding: '12px 16px',
-                    textDecoration: 'none',
-                    display: 'block',
-                  }}
-                >
-                  For Consultants
-                </a>
+                <a>For Consultants</a>
               </Link>
               <Link href="/experts">
-                <a
-                  style={{
-                    color: 'white',
-                    padding: '12px 16px',
-                    textDecoration: 'none',
-                    display: 'block',
-                  }}
-                >
-                  For Experts
-                </a>
+                <a>For Experts</a>
               </Link>
               <Link href="/affiliates">
-                <a
-                  style={{
-                    color: 'white',
-                    padding: '12px 16px',
-                    textDecoration: 'none',
-                    display: 'block',
-                  }}
-                >
-                  Become an affiliate
-                </a>
+                <a>Become an affiliate</a>
               </Link>
             </div>
           </li>
-          <li
-            style={{
-              position: 'relative',
-            }}
-            className="dropdown"
-          >
-            <span
-              style={{
-                textDecoration: 'none',
-                color: 'black',
-                padding: '0.5rem 1rem',
-                transition: 'background-color 0.3s ease-in-out',
-                cursor: 'pointer',
-              }}
-              className="menu-item"
-            >
-              Resources
-            </span>
-            <div
-              style={{
-                display: 'none',
-                position: 'absolute',
-                backgroundColor: '#038270',
-                minWidth: '160px',
-                zIndex: 1,
-                cursor: 'default',
-              }}
-              className="dropdown-content"
-            >
-              <a
-                href="https://blog.kahana.co/"
-                style={{
-                  color: 'white',
-                  padding: '12px 16px',
-                  textDecoration: 'none',
-                  display: 'block',
-                }}
-              >
-                Blog
-              </a>
+          <li className="dropdown">
+            <span className="menu-item">Resources</span>
+            <div className="dropdown-content">
+              <a href="https://blog.kahana.co/">Blog</a>
               <Link href="/resources">
-                <a
-                  style={{
-                    color: 'white',
-                    padding: '12px 16px',
-                    textDecoration: 'none',
-                    display: 'block',
-                  }}
-                >
-                  Monetizing Notion
-                </a>
+                <a>Monetizing Notion</a>
               </Link>
               <Link href="/resources">
-                <a
-                  style={{
-                    color: 'white',
-                    padding: '12px 16px',
-                    textDecoration: 'none',
-                    display: 'block',
-                  }}
-                >
-                  Monetizing Google Drive
-                </a>
+                <a>Monetizing Google Drive</a>
               </Link>
               <Link href="/resources">
-                <a
-                  style={{
-                    color: 'white',
-                    padding: '12px 16px',
-                    textDecoration: 'none',
-                    display: 'block',
-                  }}
-                >
-                  Selling Digital Products
-                </a>
+                <a>Selling Digital Products</a>
               </Link>
-              <a
-                href="https://kahana.tawk.help/"
-                style={{
-                  color: 'white',
-                  padding: '12px 16px',
-                  textDecoration: 'none',
-                  display: 'block',
-                }}
-              >
-                Help Center
-              </a>
+              <a href="https://kahana.tawk.help/">Help Center</a>
               <Link href="/faq">
-                <a
-                  style={{
-                    color: 'white',
-                    padding: '12px 16px',
-                    textDecoration: 'none',
-                    display: 'block',
-                  }}
-                >
-                  FAQ
-                </a>
+                <a>FAQ</a>
               </Link>
-              <a
-                href="https://nas.io/creators-and-experts"
-                style={{
-                  color: 'white',
-                  padding: '12px 16px',
-                  textDecoration: 'none',
-                  display: 'block',
-                }}
-              >
-                Community
-              </a>
+              <a href="https://nas.io/creators-and-experts">Community</a>
             </div>
           </li>
           <li>
             <Link href="/pricing">
-              <a
-                style={{
-                  textDecoration: 'none',
-                  color: 'black',
-                  padding: '0.5rem 1rem',
-                  transition: 'background-color 0.3s ease-in-out',
-                  cursor: 'pointer',
-                }}
-                className="menu-item"
-              >
-                Pricing
-              </a>
+              <a className="menu-item">Pricing</a>
             </Link>
           </li>
           <li>
-            <a
-              href="https://app.kahana.co/login"
-              style={{
-                backgroundColor: '#038270',
-                textDecoration: 'none',
-                color: 'white',
-                padding: '0.5rem 1rem',
-                transition: 'background-color 0.3s ease-in-out',
-                cursor: 'pointer',
-              }}
-              className="menu-item login"
-            >
+            <a href="https://app.kahana.co/login" className="menu-item login">
               Log in
             </a>
           </li>
         </ul>
       </div>
+
+      <style jsx>{`
+        .navigation {
+          background-color: white;
+          color: black;
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          padding: 0.5rem 2rem;
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          border-bottom: 1px solid lightgray; /* Add a light gray border */
+          z-index: 1000; /* Ensure the navigation is on top */
+        }
+
+        .open .navigation {
+          background-color: white;
+          color: black;
+        }
+
+        .logo {
+          cursor: pointer;
+          flex: 1;
+        }
+
+        .menu {
+          display: flex;
+          align-items: center;
+          margin-left: auto;
+        }
+
+        .menu ul {
+          list-style: none;
+          display: flex;
+          margin: 0;
+          padding: 0;
+        }
+
+        .menu-item {
+          text-decoration: none;
+          color: black;
+          padding: 0.5rem 1rem;
+          transition: background-color 0.3s ease-in-out;
+          cursor: pointer;
+        }
+
+        .menu-item:hover {
+          background-color: #024324;
+        }
+
+        .dropdown {
+          position: relative;
+        }
+
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #038270;
+          min-width: 160px;
+          z-index: 1;
+          cursor: default;
+        }
+
+        .dropdown:hover .dropdown-content {
+          display: block;
+        }
+
+        .dropdown-content a {
+          color: white;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+        }
+
+        .login {
+          background-color: #038270;
+        }
+
+        .login:hover {
+          background-color: #024324;
+        }
+
+        .hamburger {
+          display: none;
+          flex-direction: column;
+          cursor: pointer;
+        }
+
+        .hamburger.open .bar:nth-child(1) {
+          transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .hamburger.open .bar:nth-child(2) {
+          opacity: 0;
+        }
+
+        .hamburger.open .bar:nth-child(3) {
+          transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        @media (max-width: 768px) {
+          .navigation {
+            padding: 0.5rem 2rem;
+          }
+
+          .menu {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 60px;
+            right: 0;
+            width: 100%;
+            background-color: white;
+            z-index: 2;
+          }
+
+          .open .menu {
+            display: flex;
+          }
+
+          .menu ul {
+            flex-direction: column;
+          }
+
+          .menu-item {
+            padding: 1rem 2rem;
+            color: black;
+          }
+
+          .hamburger {
+            display: flex;
+            position: absolute;
+            top: 0.5rem;
+            right: 1rem;
+            z-index: 3;
+          }
+          
+          /* Add extra padding beneath the navigation bar on mobile */
+          body {
+            padding-top: calc(60px + 40px); /* Adjust the value as needed */
+          }
+        }
+      `}</style>
     </nav>
   );
 };
