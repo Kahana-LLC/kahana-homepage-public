@@ -20,8 +20,6 @@ const Navigation = () => {
               className="h-10"
               src={whiteKahanaLogo}
               alt="navbar-logo"
-              width={200}
-              height={40}
             />
           </a>
         </Link>
@@ -106,7 +104,7 @@ const Navigation = () => {
           display: flex;
           justify-content: flex-end;
           align-items: center;
-          padding: 0.5rem 2rem;
+          padding: 0.5rem 2rem 2rem 2rem;
           position: fixed;
           top: 0;
           left: 0;
