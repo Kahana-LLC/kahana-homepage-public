@@ -230,18 +230,6 @@ const Navigation = () => {
             right: 1rem;
             background-color: black;
           }
-
-          .hamburger.open .bar:nth-child(1) {
-            transform: rotate(-45deg) translate(-5px, 6px);
-          }
-
-          .hamburger.open .bar:nth-child(2) {
-            opacity: 0;
-          }
-
-          .hamburger.open .bar:nth-child(3) {
-            transform: rotate(45deg) translate(-5px, -6px);
-          }
         }
       `}</style>
     </nav>
