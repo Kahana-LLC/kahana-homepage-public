@@ -25,7 +25,6 @@ function NavBar() {
       <style jsx>{`
         /* Your styles here */
         .nav-link {
-          padding: 0.5rem 1rem;
           transition: background-color 0.3s ease;
         }
 
