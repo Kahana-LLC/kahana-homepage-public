@@ -317,7 +317,7 @@ function NavBar() {
                 )}
               </button>
               {isSolutionsDropdownOpen && (
-                <ul className="space-y-2 bg-white" style={{ border: 'none', paddingTop: '10px' }}>
+                <ul className="space-y-5 bg-white" style={{ border: 'none', paddingTop: '15px' }}>
                   <li>
                     <Link href="/enterprise" className="dropdown-link">
                       For Enterprise
@@ -388,7 +388,7 @@ function NavBar() {
                 )}
               </button>
               {isResourcesDropdownOpen && (
-                <ul className="space-y-2 bg-white" style={{ border: 'none', paddingTop: '10px' }}>
+                <ul className="space-y-5 bg-white" style={{ border: 'none', paddingTop: '15px' }}>
                   <li>
                     <Link href="https://blog.kahana.co/" className="dropdown-link" target="_blank" rel="noreferrer">
                       Blog
