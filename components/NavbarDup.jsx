@@ -101,7 +101,7 @@ function NavBar() {
             <div className="dropdown">
               <button className="nav-link">Solutions</button>
               <div className="dropdown-text">
-                <ul className="space-y-2" style={{ border: '1px solid rgba(0, 0, 0, 0.1)', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', backgroundColor: 'transparent' }}>
+                <ul className="space-y-2" style={{ border: '1px solid transparent', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', backgroundColor: 'transparent' }}>
                   <li>
                     <Link href="/enterprise" className="dropdown-link">
                       For Enterprise
@@ -133,7 +133,7 @@ function NavBar() {
             <div className="dropdown">
               <button className="nav-link">Resources</button>
               <div className="dropdown-text">
-                <ul className="space-y-2" style={{ border: '1px solid rgba(0, 0, 0, 0.1)', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', backgroundColor: 'transparent' }}>
+                <ul className="space-y-2" style={{ border: '1px solid transparent', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', backgroundColor: 'transparent' }}>
                   <li>
                     <Link href="https://blog.kahana.co/" className="dropdown-link">
                       Blog
