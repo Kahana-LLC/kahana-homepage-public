@@ -12,12 +12,20 @@ function NavBar() {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  const toggleSolutionsDropdown = () => {
-    setIsSolutionsDropdownOpen(!isSolutionsDropdownOpen);
+  const openSolutionsDropdown = () => {
+    setIsSolutionsDropdownOpen(true);
   };
 
-  const toggleResourcesDropdown = () => {
-    setIsResourcesDropdownOpen(!isResourcesDropdownOpen);
+  const closeSolutionsDropdown = () => {
+    setIsSolutionsDropdownOpen(false);
+  };
+
+  const openResourcesDropdown = () => {
+    setIsResourcesDropdownOpen(true);
+  };
+
+  const closeResourcesDropdown = () => {
+    setIsResourcesDropdownOpen(false);
   };
 
   return (
@@ -46,8 +54,8 @@ function NavBar() {
             </Link>
             <div
               className={`relative ${isSolutionsDropdownOpen ? 'z-10' : ''}`}
-              onMouseEnter={toggleSolutionsDropdown}
-              onMouseLeave={toggleSolutionsDropdown}
+              onMouseEnter={openSolutionsDropdown}
+              onMouseLeave={closeSolutionsDropdown}
             >
               <button className="nav-link">Solutions</button>
               {isSolutionsDropdownOpen && (
@@ -82,8 +90,8 @@ function NavBar() {
             </div>
             <div
               className={`relative ${isResourcesDropdownOpen ? 'z-10' : ''}`}
-              onMouseEnter={toggleResourcesDropdown}
-              onMouseLeave={toggleResourcesDropdown}
+              onMouseEnter={openResourcesDropdown}
+              onMouseLeave={closeResourcesDropdown}
             >
               <button className="nav-link">Resources</button>
               {isResourcesDropdownOpen && (
@@ -192,7 +200,7 @@ function NavBar() {
                 Solutions
               </button>
               {isSolutionsDropdownOpen && (
-                <ul className="space-y-2 bg-white border border-gray-200 w-full">
+                <ul className="absolute space-y-2 bg-white border border-gray-200 w-48 left-0">
                   <li>
                     <Link href="/enterprise" className="dropdown-link">
                       For Enterprise
@@ -226,7 +234,7 @@ function NavBar() {
                 Resources
               </button>
               {isResourcesDropdownOpen && (
-                <ul className="space-y-2 bg-white border border-gray-200 w-full">
+                <ul className="absolute space-y-2 bg-white border border-gray-200 w-48 left-0">
                   <li>
                     <Link href="https://blog.kahana.co/" className="dropdown-link">
                       Blog
@@ -279,4 +287,3 @@ function NavBar() {
 }
 
 export default NavBar;
-
