@@ -51,7 +51,7 @@ function NavBar() {
         }
 
         .dropdown-link {
-          padding: 0.5rem 1rem;
+          padding: 0.5rem 0.5rem;
           text-decoration: none;
           display: block;
           color: #000;
@@ -59,6 +59,13 @@ function NavBar() {
 
         .dropdown-link:hover {
           background-color: #f2f2f2;
+        }
+        .nav-button {
+          padding: 0.5rem 0.5rem;
+          background-color: #038270;
+          color: #fff;
+          border-radius: 0.25rem;
+          transition: background-color 0.3s ease;
         }
         .nav-button:hover {
           background-color: #024324;
@@ -169,9 +176,9 @@ function NavBar() {
                 Pricing
               </Link>
             </button>
-            <Link href="https://app.kahana.co/login" className="nav-button bg-[038270] rounded-md py-2 px-4">
+            <a href="https://app.kahana.co/login" className="nav-button">
               Log in
-            </Link>
+            </a>
           </div>
 
           {/* Mobile Menu */}
