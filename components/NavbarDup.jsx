@@ -148,8 +148,8 @@ function NavBar() {
                     </li>
                   </ul>
                 </div>
-              </div>
-            )}
+              )}
+            </div>
             <div className="dropdown">
               <button className="nav-link" onClick={toggleResourcesDropdown}>
                 Resources{' '}
@@ -210,8 +210,8 @@ function NavBar() {
                     </li>
                   </ul>
                 </div>
-              </div>
-            )}
+              )}
+            </div>
             <button className="nav-link">
               <Link href="/pricing">
                 Pricing
