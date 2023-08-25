@@ -316,7 +316,7 @@ function NavBar() {
             <Link href="/pricing" className="mobile-link">
               Pricing
             </Link>
-            <Link href="https://app.kahana.co/login" className="mobile-link bg-green-500 rounded-md py-2 px-4">
+            <Link href="https://app.kahana.co/login" className="mobile-link bg-[#038270] hover:bg-[#024324] rounded-md py-2 px-4">
               Log in
             </Link>
           </div>
