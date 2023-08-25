@@ -45,7 +45,7 @@ function NavBar() {
               Examples
             </Link>
             <div
-              className={`relative ${isSolutionsDropdownOpen ? 'z-10' : ''}`}
+              className={`relative dropdown ${isSolutionsDropdownOpen ? 'z-10' : ''}`}
               onMouseEnter={toggleSolutionsDropdown}
               onMouseLeave={toggleSolutionsDropdown}
             >
@@ -81,7 +81,7 @@ function NavBar() {
               )}
             </div>
             <div
-              className={`relative ${isResourcesDropdownOpen ? 'z-10' : ''}`}
+              className={`relative dropdown ${isResourcesDropdownOpen ? 'z-10' : ''}`}
               onMouseEnter={toggleResourcesDropdown}
               onMouseLeave={toggleResourcesDropdown}
             >
@@ -188,74 +188,82 @@ function NavBar() {
               Examples
             </Link>
             <div className="dropdown">
-              <button className="mobile-link">Solutions</button>
-              <ul className="hidden absolute space-y-2 bg-white border border-gray-200 w-48 left-0">
-                <li>
-                  <Link href="/enterprise" className="dropdown-link">
-                    For Enterprise
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/coaches" className="dropdown-link">
-                    For Coaches
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/consultants" className="dropdown-link">
-                    For Consultants
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/experts" className="dropdown-link">
-                    For Experts
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/affiliates" className="dropdown-link">
-                    Become an affiliate
-                  </Link>
-                </li>
-              </ul>
+              <button className="mobile-link" onClick={toggleSolutionsDropdown}>
+                Solutions
+              </button>
+              {isSolutionsDropdownOpen && (
+                <ul className="space-y-2 bg-white border border-gray-200 w-full">
+                  <li>
+                    <Link href="/enterprise" className="dropdown-link">
+                      For Enterprise
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/coaches" className="dropdown-link">
+                      For Coaches
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/consultants" className="dropdown-link">
+                      For Consultants
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/experts" className="dropdown-link">
+                      For Experts
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/affiliates" className="dropdown-link">
+                      Become an affiliate
+                    </Link>
+                  </li>
+                </ul>
+              )}
             </div>
             <div className="dropdown">
-              <button className="mobile-link">Resources</button>
-              <ul className="hidden absolute space-y-2 bg-white border border-gray-200 w-48 left-0">
-                <li>
-                  <Link href="https://blog.kahana.co/" className="dropdown-link">
-                    Blog
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/resources" className="dropdown-link">
-                    Monetizing Notion
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/resources" className="dropdown-link">
-                    Monetizing Google Drive
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/resources" className="dropdown-link">
-                    Selling Digital Products
-                  </Link>
-                </li>
-                <li>
-                  <Link href="https://kahana.tawk.help/" className="dropdown-link">
-                    Help Center
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/faq" className="dropdown-link">
-                    FAQ
-                  </Link>
-                </li>
-                <li>
-                  <Link href="https://nas.io/creators-and-experts" className="dropdown-link">
-                    Community
-                  </Link>
-                </li>
-              </ul>
+              <button className="mobile-link" onClick={toggleResourcesDropdown}>
+                Resources
+              </button>
+              {isResourcesDropdownOpen && (
+                <ul className="space-y-2 bg-white border border-gray-200 w-full">
+                  <li>
+                    <Link href="https://blog.kahana.co/" className="dropdown-link">
+                      Blog
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/resources" className="dropdown-link">
+                      Monetizing Notion
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/resources" className="dropdown-link">
+                      Monetizing Google Drive
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/resources" className="dropdown-link">
+                      Selling Digital Products
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="https://kahana.tawk.help/" className="dropdown-link">
+                      Help Center
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/faq" className="dropdown-link">
+                      FAQ
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="https://nas.io/creators-and-experts" className="dropdown-link">
+                      Community
+                    </Link>
+                  </li>
+                </ul>
+              )}
             </div>
             <Link href="/pricing" className="mobile-link">
               Pricing
@@ -271,3 +279,4 @@ function NavBar() {
 }
 
 export default NavBar;
+
