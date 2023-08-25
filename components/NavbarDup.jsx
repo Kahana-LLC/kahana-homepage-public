@@ -101,7 +101,7 @@ function NavBar() {
             <div className="dropdown">
               <button className="nav-link">Solutions</button>
               <div className="dropdown-text">
-                <ul className="space-y-2" style={{ border: '1px solid transparent', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', backgroundColor: 'transparent' }}>
+                <ul className="space-y-2" style={{ border: '1px solid transparent', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', backgroundColor: 'transparent', borderRadius: '8px' }}>
                   <li>
                     <Link href="/enterprise" className="dropdown-link">
                       For Enterprise
@@ -133,7 +133,7 @@ function NavBar() {
             <div className="dropdown">
               <button className="nav-link">Resources</button>
               <div className="dropdown-text">
-                <ul className="space-y-2" style={{ border: '1px solid transparent', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', backgroundColor: 'transparent' }}>
+                <ul className="space-y-2" style={{ border: '1px solid transparent', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', backgroundColor: 'transparent', borderRadius: '8px' }}>
                   <li>
                     <Link href="https://blog.kahana.co/" className="dropdown-link">
                       Blog
@@ -242,7 +242,7 @@ function NavBar() {
                 Solutions
               </button>
               {isSolutionsDropdownOpen && (
-                <ul className="space-y-2 bg-white border border-gray-200 w-full">
+                <ul className="space-y-2 bg-white" style={{ border: 'none' }}>
                   <li>
                     <Link href="/enterprise" className="dropdown-link">
                       For Enterprise
@@ -276,7 +276,7 @@ function NavBar() {
                 Resources
               </button>
               {isResourcesDropdownOpen && (
-                <ul className="space-y-2 bg-white border border-gray-200 w-full">
+                <ul className="space-y-2 bg-white" style={{ border: 'none' }}>
                   <li>
                     <Link href="https://blog.kahana.co/" className="dropdown-link">
                       Blog
