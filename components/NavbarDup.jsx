@@ -45,7 +45,6 @@ function NavBar() {
           background-color: white;
           min-width: 240px;
           z-index: 1;
-          padding: 10px 0; /* Add padding here */
         }
 
         .dropdown:hover .dropdown-text {
@@ -102,7 +101,7 @@ function NavBar() {
             <div className="dropdown">
               <button className="nav-link">Solutions</button>
               <div className="dropdown-text">
-                <ul className="space-y-2" style={{ border: '1px solid transparent', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', backgroundColor: 'transparent', borderRadius: '8px' }}>
+                <ul className="space-y-2" style={{ border: '1px solid transparent', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', backgroundColor: 'transparent', borderRadius: '8px', padding: '10px' }}>
                   <li>
                     <Link href="/enterprise" className="dropdown-link">
                       For Enterprise
@@ -134,7 +133,7 @@ function NavBar() {
             <div className="dropdown">
               <button className="nav-link">Resources</button>
               <div className="dropdown-text">
-                <ul className="space-y-2" style={{ border: '1px solid transparent', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', backgroundColor: 'transparent', borderRadius: '8px' }}>
+                <ul className="space-y-2" style={{ border: '1px solid transparent', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', backgroundColor: 'transparent', borderRadius: '8px', padding: '10px' }}>
                   <li>
                     <Link href="https://blog.kahana.co/" className="dropdown-link">
                       Blog
