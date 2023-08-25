@@ -60,6 +60,11 @@ function NavBar() {
         .dropdown-link:hover {
           background-color: #f2f2f2;
         }
+
+        /* Apply specific class for Solutions and Resources */
+        .special-nav-link {
+          padding: 0.5rem 1rem; /* Adjust padding as needed */
+        }
       `}</style>
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
@@ -76,7 +81,7 @@ function NavBar() {
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-8"> {/* Use the space-x-8 class */}
             <Link href="/about" className="nav-link">
               About
             </Link>
@@ -88,7 +93,7 @@ function NavBar() {
               onMouseEnter={toggleSolutionsDropdown}
               onMouseLeave={toggleSolutionsDropdown}
             >
-              <button className="nav-link">Solutions</button>
+              <button className="special-nav-link">Solutions</button> {/* Apply the special class */}
               {isSolutionsDropdownOpen && (
                 <ul className="absolute mt-2 space-y-2 bg-white border border-gray-200 w-48 left-0">
                   <li>
@@ -124,7 +129,7 @@ function NavBar() {
               onMouseEnter={toggleResourcesDropdown}
               onMouseLeave={toggleResourcesDropdown}
             >
-              <button className="nav-link">Resources</button>
+              <button className="special-nav-link">Resources</button> {/* Apply the special class */}
               {isResourcesDropdownOpen && (
                 <ul className="absolute mt-2 space-y-2 bg-white border border-gray-200 w-48 left-0">
                   <li>
