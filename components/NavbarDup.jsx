@@ -62,6 +62,11 @@ function NavBar() {
         .dropdown-link:hover {
           background-color: #f2f2f2;
         }
+        
+        .dropdown-button:hover {
+          background-color: #f2f2f2;
+          color: #fff;
+        }
         .nav-button {
           padding: 0.3rem 1rem;
           border-radius: 0.5rem; /* Add rounded corners */
@@ -104,29 +109,39 @@ function NavBar() {
               <div className="dropdown-text">
                 <ul className="space-y-2" style={{ border: '1px solid transparent', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', backgroundColor: 'transparent', borderRadius: '8px', padding: '10px' }}>
                   <li>
-                    <Link href="/enterprise" className="dropdown-link">
-                      For Enterprise
-                    </Link>
+                    <button className="dropdown-button">
+                      <Link href="/enterprise" className="dropdown-link hover:bg-[#f2f2f2]">
+                        For Enterprise
+                      </Link>
+                    </button>
                   </li>
                   <li>
-                    <Link href="/coaches" className="dropdown-link">
-                      For Coaches
-                    </Link>
+                    <button className="dropdown-button">
+                      <Link href="/coaches" className="dropdown-link">
+                        For Coaches
+                      </Link>
+                    </button>
                   </li>
                   <li>
-                    <Link href="/consultants" className="dropdown-link">
-                      For Consultants
-                    </Link>
+                    <button className="dropdown-button">
+                      <Link href="/consultants" className="dropdown-link">
+                        For Consultants
+                      </Link>
+                    </button>
                   </li>
                   <li>
-                    <Link href="/experts" className="dropdown-link">
-                      For Experts
-                    </Link>
+                    <button className="dropdown-button">
+                      <Link href="/experts" className="dropdown-link">
+                        For Experts
+                      </Link>
+                    </button>
                   </li>
                   <li>
-                    <Link href="/affiliates" className="dropdown-link">
-                      Become an affiliate
-                    </Link>
+                    <button className="dropdown-button">
+                      <Link href="/affiliates" className="dropdown-link">
+                        Become an affiliate
+                      </Link>
+                    </button>
                   </li>
                 </ul>
               </div>
@@ -136,39 +151,53 @@ function NavBar() {
               <div className="dropdown-text">
                 <ul className="space-y-2" style={{ border: '1px solid transparent', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', backgroundColor: 'transparent', borderRadius: '8px', padding: '10px' }}>
                   <li>
-                    <Link href="https://blog.kahana.co/" className="dropdown-link">
-                      Blog
-                    </Link>
+                    <button className="dropdown-button">
+                      <Link href="https://blog.kahana.co/" className="dropdown-link" target="_blank" rel="noreferrer">
+                        Blog
+                      </Link>
+                    </button>
                   </li>
                   <li>
-                    <Link href="/resources" className="dropdown-link">
-                      Monetizing Notion
-                    </Link>
+                    <button className="dropdown-button">
+                      <Link href="/resources" className="dropdown-link">
+                        Monetizing Notion
+                      </Link>
+                    </button>
                   </li>
                   <li>
-                    <Link href="/resources" className="dropdown-link">
-                      Monetizing Google Drive
-                    </Link>
+                    <button className="dropdown-button">
+                      <Link href="/resources" className="dropdown-link">
+                        Monetizing Google Drive
+                      </Link>
+                    </button>
                   </li>
                   <li>
-                    <Link href="/resources" className="dropdown-link">
-                      Selling Digital Products
-                    </Link>
+                    <button className="dropdown-button">
+                      <Link href="/resources" className="dropdown-link">
+                        Selling Digital Products
+                      </Link>
+                    </button>
                   </li>
                   <li>
-                    <Link href="https://kahana.tawk.help/" className="dropdown-link">
-                      Help Center
-                    </Link>
+                    <button className="dropdown-button">
+                      <Link href="https://kahana.tawk.help/" className="dropdown-link" target="_blank" rel="noreferrer">
+                        Help Center
+                      </Link>
+                    </button>
                   </li>
                   <li>
-                    <Link href="/faq" className="dropdown-link">
-                      FAQ
-                    </Link>
+                    <button className="dropdown-button">
+                      <Link href="/faq" className="dropdown-link">
+                        FAQ
+                      </Link>
+                    </button>
                   </li>
                   <li>
-                    <Link href="https://nas.io/creators-and-experts" className="dropdown-link">
-                      Community
-                    </Link>
+                    <button className="dropdown-button">
+                      <Link href="https://nas.io/creators-and-experts" className="dropdown-link" target="_blank" rel="noreferrer">
+                        Community
+                      </Link>
+                    </button>
                   </li>
                 </ul>
               </div>
@@ -353,7 +382,7 @@ function NavBar() {
               {isResourcesDropdownOpen && (
                 <ul className="space-y-2 bg-white" style={{ border: 'none', paddingTop: '10px' }}>
                   <li>
-                    <Link href="https://blog.kahana.co/" className="dropdown-link">
+                    <Link href="https://blog.kahana.co/" className="dropdown-link" target="_blank" rel="noreferrer">
                       Blog
                     </Link>
                   </li>
@@ -373,7 +402,7 @@ function NavBar() {
                     </Link>
                   </li>
                   <li>
-                    <Link href="https://kahana.tawk.help/" className="dropdown-link">
+                    <Link href="https://kahana.tawk.help/" className="dropdown-link" target="_blank" rel="noreferrer">
                       Help Center
                     </Link>
                   </li>
@@ -383,7 +412,7 @@ function NavBar() {
                     </Link>
                   </li>
                   <li>
-                    <Link href="https://nas.io/creators-and-experts" className="dropdown-link">
+                    <Link href="https://nas.io/creators-and-experts" className="dropdown-link" target="_blank" rel="noreferrer">
                       Community
                     </Link>
                   </li>
