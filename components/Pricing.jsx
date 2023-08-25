@@ -67,7 +67,7 @@ export default function Pricing() {
           <h1 className="text-5xl font-bold tracking-tight text-gray-900 text-center">
             Pricing Plans
           </h1>
-          <p className="mt-5 text-xl text-gray-500 sm:text-center">
+          <p className="mt-5 text-xl text-gray-500 text-center">
             We only win when you win - it’s completely free to get started. Kahana takes a 5% transaction fee every time someone pays to access your hub. For example, if you set a $10 price point for your hub and someone pays for access, Kahana will earn $0.50.
           </p>
           {/* monthly vs yearly  */}
