@@ -231,17 +231,17 @@ function NavBar() {
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white py-4">
           <div className="flex flex-col items-start ml-4 space-y-4">
-            <Link href="/about" className="mobile-link">
-              <span style={{ borderTop: '1px solid gray', fontWeight: 'bold' }}>About</span>
+            <Link href="/about" className="mobile-link" style={{ fontWeight: 'bold', borderTop: '1px solid lightgray', padding: '5px 0', display: 'block' }}>
+              About
             </Link>
-            <Link href="/explore" className="mobile-link">
-              <span style={{ borderTop: '1px solid gray', fontWeight: 'bold' }}>Examples</span>
+            <Link href="/explore" className="mobile-link" style={{ fontWeight: 'bold', borderTop: '1px solid lightgray', padding: '5px 0', display: 'block' }}>
+              Examples
             </Link>
-            <div className="dropdown" style={{ borderTop: '1px solid gray' }}>
+            <div className="dropdown">
               <button
                 className="mobile-link"
                 onClick={toggleSolutionsDropdown}
-                style={{ fontWeight: 'bold' }}
+                style={{ fontWeight: 'bold', borderTop: '1px solid lightgray', padding: '5px 0', display: 'block' }}
               >
                 Solutions{' '}
                 {isSolutionsDropdownOpen ? (
@@ -308,11 +308,11 @@ function NavBar() {
                 </ul>
               )}
             </div>
-            <div className="dropdown" style={{ borderTop: '1px solid gray' }}>
+            <div className="dropdown">
               <button
                 className="mobile-link"
                 onClick={toggleResourcesDropdown}
-                style={{ fontWeight: 'bold' }}
+                style={{ fontWeight: 'bold', borderTop: '1px solid lightgray', padding: '5px 0', display: 'block' }}
               >
                 Resources{' '}
                 {isResourcesDropdownOpen ? (
@@ -389,8 +389,8 @@ function NavBar() {
                 </ul>
               )}
             </div>
-            <Link href="/pricing" className="mobile-link">
-              <span style={{ borderTop: '1px solid gray', borderBottom: '1px solid gray', fontWeight: 'bold' }}>Pricing</span>
+            <Link href="/pricing" className="mobile-link" style={{ fontWeight: 'bold', borderTop: '1px solid lightgray', borderBottom: '1px solid lightgray', padding: '5px 0', display: 'block' }}>
+              Pricing
             </Link>
             <Link href="https://app.kahana.co/login" className="mobile-link bg-[#038270] hover:bg-[#024324] rounded-md py-2 px-4 text-white">
               Log in
