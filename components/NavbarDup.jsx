@@ -429,7 +429,15 @@ function NavBar() {
             <Link href="/pricing" className="mobile-link" style={{ fontWeight: 'bold'}}>
               Pricing
             </Link>
-            <Link href="https://app.kahana.co/login" className="mobile-link bg-[#038270] hover:bg-[#024324] rounded-md py-2 px-4 text-white">
+            <Link href="https://7hkdcfzbmr0.typeform.com/to/ZYLHazEf?utm_content=hamburger_menu" className="mobile-link" style={{ fontWeight: 'bold'}}>
+              Request a demo
+            </Link>
+          </div>
+          <div className="flex flex-col items-center mt-4">
+            <Link href="https://app.kahana.co/signup" className="mobile-link bg-[#038270] hover:bg-[#024324] rounded-md py-2 px-4 text-white">
+              Get Kahana free
+            </Link>
+            <Link href="https://app.kahana.co/login" className="mobile-link bg-[#FFFFFF] hover:bg-[#f2f2f2] rounded-md py-2 px-4 mt-2">
               Log in
             </Link>
           </div>
