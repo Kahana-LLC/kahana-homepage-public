@@ -231,17 +231,17 @@ function NavBar() {
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white py-4">
           <div className="flex flex-col items-start ml-4 space-y-4">
-            <Link href="/about" className="mobile-link" style={{ fontWeight: 'bold', borderTop: '1px solid lightgray', padding: '5px 0', display: 'block' }}>
+            <Link href="/about" className="mobile-link" style={{ fontWeight: 'bold'}}>
               About
             </Link>
-            <Link href="/explore" className="mobile-link" style={{ fontWeight: 'bold', borderTop: '1px solid lightgray', padding: '5px 0', display: 'block' }}>
+            <Link href="/explore" className="mobile-link" style={{ fontWeight: 'bold'}}>
               Examples
             </Link>
             <div className="dropdown">
               <button
                 className="mobile-link"
                 onClick={toggleSolutionsDropdown}
-                style={{ fontWeight: 'bold', borderTop: '1px solid lightgray', padding: '5px 0', display: 'block' }}
+                style={{ fontWeight: 'bold'}}
               >
                 Solutions{' '}
                 {isSolutionsDropdownOpen ? (
@@ -312,7 +312,7 @@ function NavBar() {
               <button
                 className="mobile-link"
                 onClick={toggleResourcesDropdown}
-                style={{ fontWeight: 'bold', borderTop: '1px solid lightgray', padding: '5px 0', display: 'block' }}
+                style={{ fontWeight: 'bold'}}
               >
                 Resources{' '}
                 {isResourcesDropdownOpen ? (
@@ -389,7 +389,7 @@ function NavBar() {
                 </ul>
               )}
             </div>
-            <Link href="/pricing" className="mobile-link" style={{ fontWeight: 'bold', borderTop: '1px solid lightgray', borderBottom: '1px solid lightgray', padding: '5px 0', display: 'block' }}>
+            <Link href="/pricing" className="mobile-link" style={{ fontWeight: 'bold'}}>
               Pricing
             </Link>
             <Link href="https://app.kahana.co/login" className="mobile-link bg-[#038270] hover:bg-[#024324] rounded-md py-2 px-4 text-white">
