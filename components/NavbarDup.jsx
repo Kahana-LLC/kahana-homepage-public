@@ -90,7 +90,7 @@ function NavBar() {
           </div>
 
          {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8 items-center desktop-nav"> {/* Use the .desktop-nav class */}
+          <div className="hidden md:flex items-center desktop-nav"> {/* Use the .desktop-nav class */}
             <Link href="/about" className="nav-link">
               About
             </Link>
