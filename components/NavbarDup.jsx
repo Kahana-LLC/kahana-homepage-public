@@ -34,8 +34,8 @@ function NavBar() {
         }
 
         .dropdown {
-          margin: 0; /* Remove any margin */
-          padding: 0;
+          position: relative;
+          display: inline-block;
         }
 
         .dropdown-text {
@@ -76,21 +76,17 @@ function NavBar() {
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex space-x-8 items-center">
             <Link href="/about" className="nav-link">
               About
             </Link>
             <Link href="/explore" className="nav-link">
               Examples
             </Link>
-            <div
-              className="relative dropdown"
-              onMouseEnter={toggleSolutionsDropdown}
-              onMouseLeave={toggleSolutionsDropdown}
-            >
+            <div className="dropdown">
               <button className="nav-link">Solutions</button>
-              {isSolutionsDropdownOpen && (
-                <ul className="absolute mt-2 space-y-2 bg-white border border-gray-200 w-48 left-0">
+              <div className="dropdown-text">
+                <ul className="space-y-2 border border-gray-200">
                   <li>
                     <Link href="/enterprise" className="dropdown-link">
                       For Enterprise
@@ -117,16 +113,12 @@ function NavBar() {
                     </Link>
                   </li>
                 </ul>
-              )}
+              </div>
             </div>
-            <div
-              className="relative dropdown"
-              onMouseEnter={toggleResourcesDropdown}
-              onMouseLeave={toggleResourcesDropdown}
-            >
+            <div className="dropdown">
               <button className="nav-link">Resources</button>
-              {isResourcesDropdownOpen && (
-                <ul className="absolute mt-2 space-y-2 bg-white border border-gray-200 w-48 left-0">
+              <div className="dropdown-text">
+                <ul className="space-y-2 border border-gray-200">
                   <li>
                     <Link href="https://blog.kahana.co/" className="dropdown-link">
                       Blog
@@ -163,7 +155,7 @@ function NavBar() {
                     </Link>
                   </li>
                 </ul>
-              )}
+              </div>
             </div>
             <Link href="/pricing" className="nav-link">
               Pricing
