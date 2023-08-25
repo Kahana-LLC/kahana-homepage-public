@@ -268,7 +268,7 @@ function NavBar() {
       {isMobileMenuOpen && (
         <div className="md:hidden h-screen bg-white py-4 z-100">
           <hr className="w-full border-gray-200 mt-2 mb-2" />
-          <div className="flex flex-col items-start ml-4 space-y-8">
+          <div className="flex flex-col items-start ml-4 space-y-6">
             <Link href="/about" className="mobile-link" style={{ fontWeight: 'bold'}}>
               About
             </Link>
@@ -317,7 +317,7 @@ function NavBar() {
                 )}
               </button>
               {isSolutionsDropdownOpen && (
-                <ul className="space-y-5 bg-white" style={{ border: 'none', paddingTop: '15px' }}>
+                <ul className="space-y-4 bg-white" style={{ border: 'none', paddingTop: '15px' }}>
                   <li>
                     <Link href="/enterprise" className="dropdown-link">
                       For Enterprise
@@ -388,7 +388,7 @@ function NavBar() {
                 )}
               </button>
               {isResourcesDropdownOpen && (
-                <ul className="space-y-5 bg-white" style={{ border: 'none', paddingTop: '15px' }}>
+                <ul className="space-y-4 bg-white" style={{ border: 'none', paddingTop: '15px' }}>
                   <li>
                     <Link href="https://blog.kahana.co/" className="dropdown-link" target="_blank" rel="noreferrer">
                       Blog
