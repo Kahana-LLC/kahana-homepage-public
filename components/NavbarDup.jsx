@@ -39,20 +39,12 @@ function NavBar() {
           display: inline-block;
         }
 
-        @media (min-width: 768px) {
-          .dropdown-text {
-            min-width: 240px; /* Wider dropdown menu */
-            padding: 1rem; /* More padding around items */
-            border-radius: 0.5rem; /* Rounded corners */
-          }
-        }
-        
-        /* Mobile Styles */
-        @media (max-width: 767px) {
-          .dropdown-text {
-            min-width: 90vw; /* Wider dropdown menu that stretches to the edge of the screen */
-            padding: 1rem; /* More padding around items */
-          }
+        .dropdown-text {
+          display: none;
+          position: absolute;
+          background-color: white;
+          min-width: 160px;
+          z-index: 1;
         }
 
         .dropdown:hover .dropdown-text {
