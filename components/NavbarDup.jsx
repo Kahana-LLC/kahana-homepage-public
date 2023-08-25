@@ -26,11 +26,12 @@ function NavBar() {
         /* Your styles here */
         .nav-link {
           padding: 0.5rem 1rem;
+          border-radius: 0.5rem; /* Add rounded corners */
           transition: background-color 0.3s ease;
         }
 
         .nav-link:hover {
-          background-color: #024324;
+          background-color: #f2f2f2;
         }
 
         .dropdown {
@@ -38,12 +39,20 @@ function NavBar() {
           display: inline-block;
         }
 
-        .dropdown-text {
-          display: none;
-          position: absolute;
-          background-color: white;
-          min-width: 160px;
-          z-index: 1;
+        @media (min-width: 768px) {
+          .dropdown-text {
+            min-width: 240px; /* Wider dropdown menu */
+            padding: 1rem; /* More padding around items */
+            border-radius: 0.5rem; /* Rounded corners */
+          }
+        }
+        
+        /* Mobile Styles */
+        @media (max-width: 767px) {
+          .dropdown-text {
+            min-width: 90vw; /* Wider dropdown menu that stretches to the edge of the screen */
+            padding: 1rem; /* More padding around items */
+          }
         }
 
         .dropdown:hover .dropdown-text {
@@ -316,7 +325,7 @@ function NavBar() {
             <Link href="/pricing" className="mobile-link">
               Pricing
             </Link>
-            <Link href="https://app.kahana.co/login" className="mobile-link bg-[#038270] hover:bg-[#024324] rounded-md py-2 px-4">
+            <Link href="https://app.kahana.co/login" className="mobile-link bg-[#038270] hover:bg-[#024324] rounded-md py-2 px-4 text-white">
               Log in
             </Link>
           </div>
