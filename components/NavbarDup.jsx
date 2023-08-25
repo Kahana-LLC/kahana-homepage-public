@@ -231,15 +231,52 @@ function NavBar() {
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white py-4">
           <div className="flex flex-col items-start ml-4 space-y-4">
-            <Link href="/about" className="mobile-link" style={{ fontWeight: 'bold' }}>
-              About
+            <Link href="/about" className="mobile-link">
+              <span style={{ borderTop: '1px solid gray', fontWeight: 'bold' }}>About</span>
             </Link>
-            <Link href="/explore" className="mobile-link" style={{ fontWeight: 'bold' }}>
-              Examples
+            <Link href="/explore" className="mobile-link">
+              <span style={{ borderTop: '1px solid gray', fontWeight: 'bold' }}>Examples</span>
             </Link>
-            <div className="dropdown">
-              <button className="mobile-link" onClick={toggleSolutionsDropdown} style={{ fontWeight: 'bold' }}>
-                Solutions
+            <div className="dropdown" style={{ borderTop: '1px solid gray' }}>
+              <button
+                className="mobile-link"
+                onClick={toggleSolutionsDropdown}
+                style={{ fontWeight: 'bold' }}
+              >
+                Solutions{' '}
+                {isSolutionsDropdownOpen ? (
+                  <svg
+                    className="w-4 h-4 inline-block"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    style={{ transform: 'rotate(90deg)' }}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M9 5l7 7-7 7"
+                    ></path>
+                  </svg>
+                ) : (
+                  <svg
+                    className="w-4 h-4 inline-block"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    style={{ transform: 'rotate(0deg)' }}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M9 5l7 7-7 7"
+                    ></path>
+                  </svg>
+                )}
               </button>
               {isSolutionsDropdownOpen && (
                 <ul className="space-y-2 bg-white" style={{ border: 'none', paddingTop: '10px' }}>
@@ -271,9 +308,46 @@ function NavBar() {
                 </ul>
               )}
             </div>
-            <div className="dropdown">
-              <button className="mobile-link" onClick={toggleResourcesDropdown} style={{ fontWeight: 'bold' }}>
-                Resources
+            <div className="dropdown" style={{ borderTop: '1px solid gray' }}>
+              <button
+                className="mobile-link"
+                onClick={toggleResourcesDropdown}
+                style={{ fontWeight: 'bold' }}
+              >
+                Resources{' '}
+                {isResourcesDropdownOpen ? (
+                  <svg
+                    className="w-4 h-4 inline-block"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    style={{ transform: 'rotate(90deg)' }}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M9 5l7 7-7 7"
+                    ></path>
+                  </svg>
+                ) : (
+                  <svg
+                    className="w-4 h-4 inline-block"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    style={{ transform: 'rotate(0deg)' }}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M9 5l7 7-7 7"
+                    ></path>
+                  </svg>
+                )}
               </button>
               {isResourcesDropdownOpen && (
                 <ul className="space-y-2 bg-white" style={{ border: 'none', paddingTop: '10px' }}>
@@ -315,8 +389,8 @@ function NavBar() {
                 </ul>
               )}
             </div>
-            <Link href="/pricing" className="mobile-link" style={{ fontWeight: 'bold' }}>
-              Pricing
+            <Link href="/pricing" className="mobile-link">
+              <span style={{ borderTop: '1px solid gray', borderBottom: '1px solid gray', fontWeight: 'bold' }}>Pricing</span>
             </Link>
             <Link href="https://app.kahana.co/login" className="mobile-link bg-[#038270] hover:bg-[#024324] rounded-md py-2 px-4 text-white">
               Log in
