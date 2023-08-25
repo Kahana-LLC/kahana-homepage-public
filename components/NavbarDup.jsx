@@ -25,6 +25,7 @@ function NavBar() {
       <style jsx>{`
         /* Your styles here */
         .nav-link {
+          padding: 0.5rem 1rem;
           transition: background-color 0.3s ease;
         }
 
@@ -59,6 +60,9 @@ function NavBar() {
         .dropdown-link:hover {
           background-color: #f2f2f2;
         }
+        .nav-button:hover {
+          background-color: #024324;
+        }
       `}</style>
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
@@ -75,13 +79,17 @@ function NavBar() {
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8 items-center">
-            <Link href="/about" className="nav-link">
-              About
-            </Link>
-            <Link href="/explore" className="nav-link">
-              Examples
-            </Link>
+          <div className="hidden md:flex space-x-4 items-center">
+            <button className="nav-link">    
+              <Link href="/about">
+                About
+              </Link>
+            </button>
+            <button className="nav-link"> 
+              <Link href="/explore">
+                Examples
+              </Link>
+            </button>
             <div className="dropdown">
               <button className="nav-link">Solutions</button>
               <div className="dropdown-text">
@@ -156,10 +164,12 @@ function NavBar() {
                 </ul>
               </div>
             </div>
-            <Link href="/pricing" className="nav-link">
-              Pricing
-            </Link>
-            <Link href="https://app.kahana.co/login" className="nav-button bg-green-500 rounded-md py-2 px-4">
+            <button className="nav-link">
+              <Link href="/pricing">
+                Pricing
+              </Link>
+            </button>
+            <Link href="https://app.kahana.co/login" className="nav-button bg-[038270] rounded-md py-2 px-4">
               Log in
             </Link>
           </div>
