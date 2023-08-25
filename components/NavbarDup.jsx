@@ -45,7 +45,7 @@ function NavBar() {
               Examples
             </Link>
             <div
-              className={`relative dropdown ${isSolutionsDropdownOpen ? 'z-10' : ''}`}
+              className={`relative ${isSolutionsDropdownOpen ? 'z-10' : ''}`}
               onMouseEnter={toggleSolutionsDropdown}
               onMouseLeave={toggleSolutionsDropdown}
             >
@@ -81,7 +81,7 @@ function NavBar() {
               )}
             </div>
             <div
-              className={`relative dropdown ${isResourcesDropdownOpen ? 'z-10' : ''}`}
+              className={`relative ${isResourcesDropdownOpen ? 'z-10' : ''}`}
               onMouseEnter={toggleResourcesDropdown}
               onMouseLeave={toggleResourcesDropdown}
             >
