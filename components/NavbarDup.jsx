@@ -34,8 +34,8 @@ function NavBar() {
         }
 
         .dropdown {
-          position: relative;
-          display: inline-block;
+          margin: 0; /* Remove any margin */
+          padding: 0;
         }
 
         .dropdown-text {
