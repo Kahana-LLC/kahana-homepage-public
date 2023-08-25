@@ -67,7 +67,7 @@ export default function ProductDemoSection() {
           <h1 className="py-4  bg-clip-text text-white text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl text-center">
             Built for Creators and Experts
           </h1>
-          <p className="mt-6 text-xl tracking-tight text-white">
+          <p className="mt-6 text-xl tracking-tight text-white text-center">
             You have years of valuable information sitting in your brain 
             and on your computer. Kahana helps you turn your collective 
             knowledge into hubs that generate income for you.    
@@ -81,7 +81,7 @@ export default function ProductDemoSection() {
           {({ selectedIndex }) => (
             <>
               <div className="-mx-4 flex overflow-hidden pb-4 sm:mx-0 sm:overflow-hidden sm:pb-0 lg:col-span-5">
-                <Tab.List className="relative z-10 flex gap-x-4 whitespace-nowrap px-4 sm:mx-auto sm:px-0 lg:mx-0 lg:block lg:gap-x-0 lg:gap-y-1 lg:whitespace-normal">
+                <Tab.List className="relative z-10 flex gap-x-4 whitespace-nowrap px-4 sm:mx-auto sm:px-0 lg:mx-0 lg:block lg:gap-x-0 lg:gap-y-1 lg:whitespace-normal mx-auto text-center">
                   {features.map((feature, featureIndex) => (
                     <div
                       key={feature.title}
