@@ -116,9 +116,11 @@ function NavBar() {
               <div className="dropdown-text">
                 <ul className="space-y-2" style={{ border: '1px solid transparent', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', backgroundColor: 'transparent', borderRadius: '8px', padding: '10px' }}>
                   <li>
-                    <Link href="/enterprise" className="dropdown-button">
-                      For Enterprise
-                    </Link>
+                    <button className="dropdown-button">
+                      <Link href="/enterprise">
+                        For Enterprise
+                      </Link>
+                    </button>
                   </li>
                   <li>
                     <button className="dropdown-button">
