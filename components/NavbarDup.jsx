@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import whiteKahanaLogo from '../assets/kahana_logo_wide_light.svg';
@@ -7,6 +7,8 @@ function NavBar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSolutionsDropdownOpen, setIsSolutionsDropdownOpen] = useState(false);
   const [isResourcesDropdownOpen, setIsResourcesDropdownOpen] = useState(false);
+  const solutionsDropdownRef = useRef(null);
+  const resourcesDropdownRef = useRef(null);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -17,7 +19,9 @@ function NavBar() {
   };
 
   const closeSolutionsDropdown = () => {
-    setIsSolutionsDropdownOpen(false);
+    setTimeout(() => {
+      setIsSolutionsDropdownOpen(false);
+    }, 200); // Adjust the delay as needed
   };
 
   const openResourcesDropdown = () => {
@@ -25,8 +29,38 @@ function NavBar() {
   };
 
   const closeResourcesDropdown = () => {
-    setIsResourcesDropdownOpen(false);
+    setTimeout(() => {
+      setIsResourcesDropdownOpen(false);
+    }, 200); // Adjust the delay as needed
   };
+
+  // Close dropdowns when clicking outside
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (
+        solutionsDropdownRef.current &&
+        !solutionsDropdownRef.current.contains(event.target)
+      ) {
+        closeSolutionsDropdown();
+      }
+      if (
+        resourcesDropdownRef.current &&
+        !resourcesDropdownRef.current.contains(event.target)
+      ) {
+        closeResourcesDropdown();
+      }
+    }
+
+    if (isSolutionsDropdownOpen || isResourcesDropdownOpen) {
+      window.addEventListener('mousedown', handleClickOutside);
+    } else {
+      window.removeEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      window.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isSolutionsDropdownOpen, isResourcesDropdownOpen]);
 
   return (
     <nav className="bg-white border-b border-gray-200">
@@ -53,9 +87,10 @@ function NavBar() {
               Examples
             </Link>
             <div
-              className={`relative ${isSolutionsDropdownOpen ? 'z-10' : ''}`}
+              className={`relative dropdown ${isSolutionsDropdownOpen ? 'z-10' : ''}`}
               onMouseEnter={openSolutionsDropdown}
               onMouseLeave={closeSolutionsDropdown}
+              ref={solutionsDropdownRef}
             >
               <button className="nav-link">Solutions</button>
               {isSolutionsDropdownOpen && (
@@ -89,9 +124,10 @@ function NavBar() {
               )}
             </div>
             <div
-              className={`relative ${isResourcesDropdownOpen ? 'z-10' : ''}`}
+              className={`relative dropdown ${isResourcesDropdownOpen ? 'z-10' : ''}`}
               onMouseEnter={openResourcesDropdown}
               onMouseLeave={closeResourcesDropdown}
+              ref={resourcesDropdownRef}
             >
               <button className="nav-link">Resources</button>
               {isResourcesDropdownOpen && (
@@ -200,7 +236,7 @@ function NavBar() {
                 Solutions
               </button>
               {isSolutionsDropdownOpen && (
-                <ul className="absolute space-y-2 bg-white border border-gray-200 w-48 left-0">
+                <ul className="space-y-2 bg-white border border-gray-200 w-full">
                   <li>
                     <Link href="/enterprise" className="dropdown-link">
                       For Enterprise
@@ -234,7 +270,7 @@ function NavBar() {
                 Resources
               </button>
               {isResourcesDropdownOpen && (
-                <ul className="absolute space-y-2 bg-white border border-gray-200 w-48 left-0">
+                <ul className="space-y-2 bg-white border border-gray-200 w-full">
                   <li>
                     <Link href="https://blog.kahana.co/" className="dropdown-link">
                       Blog
