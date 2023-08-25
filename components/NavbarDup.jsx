@@ -76,7 +76,7 @@ function NavBar() {
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center">
+          <div className="hidden md:flex items-center space-x-8">
             <Link href="/about" className="nav-link">
               About
             </Link>
