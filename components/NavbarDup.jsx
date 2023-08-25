@@ -117,35 +117,35 @@ function NavBar() {
                 <ul className="space-y-2" style={{ border: '1px solid transparent', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', backgroundColor: 'transparent', borderRadius: '8px', padding: '10px' }}>
                   <li>
                     <button className="dropdown-button">
-                      <Link href="/enterprise" className="dropdown-link hover:bg-[#f2f2f2]">
+                      <Link href="/enterprise">
                         For Enterprise
                       </Link>
                     </button>
                   </li>
                   <li>
                     <button className="dropdown-button">
-                      <Link href="/coaches" className="dropdown-link">
+                      <Link href="/coaches">
                         For Coaches
                       </Link>
                     </button>
                   </li>
                   <li>
                     <button className="dropdown-button">
-                      <Link href="/consultants" className="dropdown-link">
+                      <Link href="/consultants">
                         For Consultants
                       </Link>
                     </button>
                   </li>
                   <li>
                     <button className="dropdown-button">
-                      <Link href="/experts" className="dropdown-link">
+                      <Link href="/experts">
                         For Experts
                       </Link>
                     </button>
                   </li>
                   <li>
                     <button className="dropdown-button">
-                      <Link href="/affiliates" className="dropdown-link">
+                      <Link href="/affiliates">
                         Become an affiliate
                       </Link>
                     </button>
@@ -159,49 +159,49 @@ function NavBar() {
                 <ul className="space-y-2" style={{ border: '1px solid transparent', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', backgroundColor: 'transparent', borderRadius: '8px', padding: '10px' }}>
                   <li>
                     <button className="dropdown-button">
-                      <Link href="https://blog.kahana.co/" className="dropdown-link" target="_blank" rel="noreferrer">
+                      <Link href="https://blog.kahana.co/" target="_blank" rel="noreferrer">
                         Blog
                       </Link>
                     </button>
                   </li>
                   <li>
                     <button className="dropdown-button">
-                      <Link href="/resources" className="dropdown-link">
+                      <Link href="/resources">
                         Monetizing Notion
                       </Link>
                     </button>
                   </li>
                   <li>
                     <button className="dropdown-button">
-                      <Link href="/resources" className="dropdown-link">
+                      <Link href="/resources">
                         Monetizing Google Drive
                       </Link>
                     </button>
                   </li>
                   <li>
                     <button className="dropdown-button">
-                      <Link href="/resources" className="dropdown-link">
+                      <Link href="/resources">
                         Selling Digital Products
                       </Link>
                     </button>
                   </li>
                   <li>
                     <button className="dropdown-button">
-                      <Link href="https://kahana.tawk.help/" className="dropdown-link" target="_blank" rel="noreferrer">
+                      <Link href="https://kahana.tawk.help/" target="_blank" rel="noreferrer">
                         Help Center
                       </Link>
                     </button>
                   </li>
                   <li>
                     <button className="dropdown-button">
-                      <Link href="/faq" className="dropdown-link">
+                      <Link href="/faq">
                         FAQ
                       </Link>
                     </button>
                   </li>
                   <li>
                     <button className="dropdown-button">
-                      <Link href="https://nas.io/creators-and-experts" className="dropdown-link" target="_blank" rel="noreferrer">
+                      <Link href="https://nas.io/creators-and-experts" target="_blank" rel="noreferrer">
                         Community
                       </Link>
                     </button>
