@@ -58,12 +58,12 @@ export default function HeroSection() {
                       Create, collaborate, and monetize - all in one place
                     </h1>
 
-                    <p className="mt-3 text-base text-slate-900 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
-                      Upload the best insights (notes, videos, files, templates, etc.)
-                      you&apos;ve curated & created and charge for access to them.
+                    <p className="mt-3 text-base text-slate-900 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl text-center sm:text-left">
+                      Upload the best insights you&apos;ve curated & created 
+                      (notes, videos, files, templates, etc.) and charge for access to them.
                     </p>
 
-                    <div className="grid grid-cols-2 gap-4 mt-6 tracking-tight">
+                    <div className="grid grid-cols-2 gap-4 mt-6 tracking-tight hidden md:block">
                       {' '}
                       <ul role="list" className=" space-y-3">
                         {[
