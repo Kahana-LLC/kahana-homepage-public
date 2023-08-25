@@ -25,7 +25,7 @@ function NavBar() {
       <style jsx>{`
         /* Your styles here */
         .nav-link {
-          padding: 0.5rem 1rem;
+          padding: 0.5rem 0.75rem;
           border-radius: 0.5rem; /* Add rounded corners */
           transition: background-color 0.3s ease;
         }
@@ -87,7 +87,7 @@ function NavBar() {
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center">
+          <div className="hidden md:flex space-x-1 items-center">
             <button className="nav-link">    
               <Link href="/about">
                 About
@@ -99,118 +99,78 @@ function NavBar() {
               </Link>
             </button>
             <div className="dropdown">
-              <button className="nav-link" onClick={toggleSolutionsDropdown}>
-                Solutions{' '}
-                <span className={`arrow ${isSolutionsDropdownOpen ? 'rotate-arrow' : ''}`}>
-                  <svg
-                    className={`w-4 h-4 inline-block ${isSolutionsDropdownOpen ? 'rotate-180' : ''}`}
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M9 5l7 7-7 7"
-                    ></path>
-                  </svg>
-                </span>
-              </button>
-              {isSolutionsDropdownOpen && (
-                <div className="dropdown-text">
-                  <ul className="space-y-2" style={{ border: '1px solid transparent', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', backgroundColor: 'transparent', borderRadius: '8px' }}>
-                    <li>
-                      <Link href="/enterprise" className="dropdown-link">
-                        For Enterprise
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/coaches" className="dropdown-link">
-                        For Coaches
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/consultants" className="dropdown-link">
-                        For Consultants
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/experts" className="dropdown-link">
-                        For Experts
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/affiliates" className="dropdown-link">
-                        Become an affiliate
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-              )}
+              <button className="nav-link">Solutions</button>
+              <div className="dropdown-text">
+                <ul className="space-y-2" style={{ border: '1px solid transparent', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', backgroundColor: 'transparent', borderRadius: '8px' }}>
+                  <li>
+                    <Link href="/enterprise" className="dropdown-link">
+                      For Enterprise
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/coaches" className="dropdown-link">
+                      For Coaches
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/consultants" className="dropdown-link">
+                      For Consultants
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/experts" className="dropdown-link">
+                      For Experts
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/affiliates" className="dropdown-link">
+                      Become an affiliate
+                    </Link>
+                  </li>
+                </ul>
+              </div>
             </div>
             <div className="dropdown">
-              <button className="nav-link" onClick={toggleResourcesDropdown}>
-                Resources{' '}
-                <span className={`arrow ${isResourcesDropdownOpen ? 'rotate-arrow' : ''}`}>
-                  <svg
-                    className={`w-4 h-4 inline-block ${isSolutionsDropdownOpen ? 'rotate-180' : ''}`}
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M9 5l7 7-7 7"
-                    ></path>
-                  </svg>
-                </span>
-              </button>
-              {isResourcesDropdownOpen && (
-                <div className="dropdown-text">
-                  <ul className="space-y-2" style={{ border: '1px solid transparent', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', backgroundColor: 'transparent', borderRadius: '8px' }}>
-                    <li>
-                      <Link href="https://blog.kahana.co/" className="dropdown-link">
-                        Blog
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/resources" className="dropdown-link">
-                        Monetizing Notion
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/resources" className="dropdown-link">
-                        Monetizing Google Drive
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/resources" className="dropdown-link">
-                        Selling Digital Products
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="https://kahana.tawk.help/" className="dropdown-link">
-                        Help Center
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/faq" className="dropdown-link">
-                        FAQ
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="https://nas.io/creators-and-experts" className="dropdown-link">
-                        Community
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-              )}
+              <button className="nav-link">Resources</button>
+              <div className="dropdown-text">
+                <ul className="space-y-2" style={{ border: '1px solid transparent', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', backgroundColor: 'transparent', borderRadius: '8px' }}>
+                  <li>
+                    <Link href="https://blog.kahana.co/" className="dropdown-link">
+                      Blog
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/resources" className="dropdown-link">
+                      Monetizing Notion
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/resources" className="dropdown-link">
+                      Monetizing Google Drive
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/resources" className="dropdown-link">
+                      Selling Digital Products
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="https://kahana.tawk.help/" className="dropdown-link">
+                      Help Center
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/faq" className="dropdown-link">
+                      FAQ
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="https://nas.io/creators-and-experts" className="dropdown-link">
+                      Community
+                    </Link>
+                  </li>
+                </ul>
+              </div>
             </div>
             <button className="nav-link">
               <Link href="/pricing">
