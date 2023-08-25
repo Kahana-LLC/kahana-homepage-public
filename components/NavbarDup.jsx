@@ -49,10 +49,10 @@ function NavBar() {
               onMouseEnter={toggleSolutionsDropdown}
               onMouseLeave={toggleSolutionsDropdown}
             >
-              <div className={`dropdown-text ${isSolutionsDropdownOpen ? 'block' : 'hidden'} rounded-lg bg-gray-100 p-2 absolute mt-2 space-y-2 bg-white border border-gray-200 w-48 left-0`}>
+              <div className={`dropdown-text ${isSolutionsDropdownOpen ? 'rounded-lg bg-gray-100 p-2' : ''}`}>
                 <button className="nav-link">Solutions</button>
                 {isSolutionsDropdownOpen && (
-                  <ul>
+                  <ul className="absolute mt-2 space-y-2 bg-white border border-gray-200 w-48 left-0">
                     <li>
                       <Link href="/enterprise" className="dropdown-link">
                         For Enterprise
@@ -87,10 +87,10 @@ function NavBar() {
               onMouseEnter={toggleResourcesDropdown}
               onMouseLeave={toggleResourcesDropdown}
             >
-              <div className={`dropdown-text ${isResourcesDropdownOpen ? 'block' : 'hidden'} rounded-lg bg-gray-100 p-2 absolute mt-2 space-y-2 bg-white border border-gray-200 w-48 left-0`}>
+              <div className={`dropdown-text ${isResourcesDropdownOpen ? 'rounded-lg bg-gray-100 p-2' : ''}`}>
                 <button className="nav-link">Resources</button>
                 {isResourcesDropdownOpen && (
-                  <ul>
+                  <ul className="absolute mt-2 space-y-2 bg-white border border-gray-200 w-48 left-0">
                     <li>
                       <Link href="https://blog.kahana.co/" className="dropdown-link">
                         Blog
