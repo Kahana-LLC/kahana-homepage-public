@@ -25,7 +25,7 @@ function NavBar() {
       <style jsx>{`
         /* Your styles here */
         .nav-link {
-          padding: 0.5rem 0.75rem;
+          padding: 0.3rem 0.75rem;
           border-radius: 0.5rem; /* Add rounded corners */
           transition: background-color 0.3s ease;
         }
@@ -45,6 +45,7 @@ function NavBar() {
           background-color: white;
           min-width: 240px;
           z-index: 1;
+          padding: 10px 0; /* Add padding here */
         }
 
         .dropdown:hover .dropdown-text {
@@ -62,7 +63,7 @@ function NavBar() {
           background-color: #f2f2f2;
         }
         .nav-button {
-          padding: 0.5rem 1rem;
+          padding: 0.3rem 1rem;
           border-radius: 0.5rem; /* Add rounded corners */
           background-color: #038270;
           color: #fff;
