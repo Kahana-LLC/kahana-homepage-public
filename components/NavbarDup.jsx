@@ -67,6 +67,8 @@ function NavBar() {
           padding: 0.2rem 0.6rem; 
           background-color: transparent;
           width: 100%; 
+          text-align: left;
+          border-radius: 0.5rem;
         }
         
         .dropdown-button:hover {
