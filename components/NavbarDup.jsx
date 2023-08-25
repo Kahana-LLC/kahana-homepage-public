@@ -51,7 +51,7 @@ function NavBar() {
         }
 
         .dropdown-link {
-          padding: 0.5rem 0.5rem;
+          padding: 0.5rem 1rem;
           text-decoration: none;
           display: block;
           color: #000;
@@ -61,10 +61,10 @@ function NavBar() {
           background-color: #f2f2f2;
         }
         .nav-button {
-          padding: 0.5rem 0.5rem;
+          padding: 0.5rem 1rem;
           background-color: #038270;
           color: #fff;
-          border-radius: 0.25rem;
+
           transition: background-color 0.3s ease;
         }
         .nav-button:hover {
@@ -86,7 +86,7 @@ function NavBar() {
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-4 items-center">
+          <div className="hidden md:flex space-x-1 items-center">
             <button className="nav-link">    
               <Link href="/about">
                 About
