@@ -81,7 +81,7 @@ export default function ProductDemoSection() {
           {({ selectedIndex }) => (
             <>
               <div className="-mx-4 flex overflow-hidden pb-4 sm:mx-0 sm:overflow-hidden sm:pb-0 lg:col-span-5">
-                <Tab.List className="relative z-10 flex gap-x-4 whitespace-nowrap px-4 sm:mx-auto sm:px-0 lg:mx-0 lg:block lg:gap-x-0 lg:gap-y-1 lg:whitespace-normal mx-auto text-center">
+                <Tab.List className="relative z-10 flex gap-x-4 whitespace-nowrap px-4 sm:mx-auto sm:px-0 lg:mx-0 lg:block lg:gap-x-0 lg:gap-y-1 lg:whitespace-normal sm:text-center lg:text-left">
                   {features.map((feature, featureIndex) => (
                     <div
                       key={feature.title}
@@ -124,7 +124,7 @@ export default function ProductDemoSection() {
                   <Tab.Panel key={feature.title} unmount={false}>
                     <div className="relative sm:px-6 lg:hidden">
                       <div className="absolute -inset-x-4 top-[-6.5rem] bottom-[-4.25rem] bg-white/10 ring-1 ring-inset ring-white/10 sm:inset-x-0 sm:rounded-t-xl" />
-                      <p className="relative mx-auto max-w-2xl text-base text-white sm:text-center">
+                      <p className="relative mx-auto max-w-2xl text-base text-white sm:text-center lg:text-left">
                         {feature.description}
                       </p>
                     </div>
