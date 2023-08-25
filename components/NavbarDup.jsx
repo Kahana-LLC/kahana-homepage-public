@@ -36,7 +36,7 @@ function NavBar() {
             </Link>
             <div className="dropdown">
               <button className="nav-link">Solutions</button>
-              <ul className="absolute hidden mt-2 space-y-2 bg-white border border-gray-200 w-48">
+              <ul className="hidden absolute mt-2 space-y-2 bg-white border border-gray-200 w-48 left-0">
                 <li>
                   <Link href="/enterprise" className="dropdown-link">
                     For Enterprise
@@ -66,14 +66,11 @@ function NavBar() {
             </div>
             <div className="dropdown">
               <button className="nav-link">Resources</button>
-              <ul className="absolute hidden mt-2 space-y-2 bg-white border border-gray-200 w-48">
+              <ul className="hidden absolute mt-2 space-y-2 bg-white border border-gray-200 w-48 left-0">
                 <li>
-                  <a
-                    href="https://blog.kahana.co/"
-                    className="dropdown-link"
-                  >
+                  <Link href="https://blog.kahana.co/" className="dropdown-link">
                     Blog
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <Link href="/resources" className="dropdown-link">
@@ -91,12 +88,9 @@ function NavBar() {
                   </Link>
                 </li>
                 <li>
-                  <a
-                    href="https://kahana.tawk.help/"
-                    className="dropdown-link"
-                  >
+                  <Link href="https://kahana.tawk.help/" className="dropdown-link">
                     Help Center
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <Link href="/faq" className="dropdown-link">
@@ -104,25 +98,25 @@ function NavBar() {
                   </Link>
                 </li>
                 <li>
-                  <a
-                    href="https://nas.io/creators-and-experts"
-                    className="dropdown-link"
-                  >
+                  <Link href="https://nas.io/creators-and-experts" className="dropdown-link">
                     Community
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
             <Link href="/pricing" className="nav-link">
               Pricing
             </Link>
+            <Link href="https://app.kahana.co/login" className="nav-button bg-green-500 rounded-md py-2 px-4">
+              Log in
+            </Link>
           </div>
 
           {/* Mobile Menu */}
-          <div className="md:hidden flex items-center">
+          <div className="md:hidden flex items-start">
             <button
               onClick={toggleMobileMenu}
-              className="hamburger-button"
+              className="hamburger-button ml-4 mt-2"
               aria-label="Mobile Menu"
             >
               {isMobileMenuOpen ? (
@@ -164,7 +158,7 @@ function NavBar() {
       {/* Mobile Menu Content */}
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white py-4">
-          <div className="flex flex-col items-center space-y-4">
+          <div className="flex flex-col items-start ml-4 space-y-4">
             <Link href="/about" className="mobile-link">
               About
             </Link>
@@ -173,7 +167,7 @@ function NavBar() {
             </Link>
             <div className="dropdown">
               <button className="mobile-link">Solutions</button>
-              <ul className="absolute hidden space-y-2 bg-white border border-gray-200 w-48">
+              <ul className="hidden absolute space-y-2 bg-white border border-gray-200 w-48 left-0">
                 <li>
                   <Link href="/enterprise" className="dropdown-link">
                     For Enterprise
@@ -203,14 +197,11 @@ function NavBar() {
             </div>
             <div className="dropdown">
               <button className="mobile-link">Resources</button>
-              <ul className="absolute hidden space-y-2 bg-white border border-gray-200 w-48">
+              <ul className="hidden absolute space-y-2 bg-white border border-gray-200 w-48 left-0">
                 <li>
-                  <a
-                    href="https://blog.kahana.co/"
-                    className="dropdown-link"
-                  >
+                  <Link href="https://blog.kahana.co/" className="dropdown-link">
                     Blog
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <Link href="/resources" className="dropdown-link">
@@ -228,12 +219,9 @@ function NavBar() {
                   </Link>
                 </li>
                 <li>
-                  <a
-                    href="https://kahana.tawk.help/"
-                    className="dropdown-link"
-                  >
+                  <Link href="https://kahana.tawk.help/" className="dropdown-link">
                     Help Center
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <Link href="/faq" className="dropdown-link">
@@ -241,24 +229,18 @@ function NavBar() {
                   </Link>
                 </li>
                 <li>
-                  <a
-                    href="https://nas.io/creators-and-experts"
-                    className="dropdown-link"
-                  >
+                  <Link href="https://nas.io/creators-and-experts" className="dropdown-link">
                     Community
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
             <Link href="/pricing" className="mobile-link">
               Pricing
             </Link>
-            <a
-              href="https://app.kahana.co/login"
-              className="mobile-link bg-green-500 rounded-md py-2 px-4"
-            >
+            <Link href="https://app.kahana.co/login" className="mobile-link bg-green-500 rounded-md py-2 px-4">
               Log in
-            </a>
+            </Link>
           </div>
         </div>
       )}
@@ -267,3 +249,4 @@ function NavBar() {
 }
 
 export default NavBar;
+
