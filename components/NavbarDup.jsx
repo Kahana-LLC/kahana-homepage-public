@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import whiteKahanaLogo from '../assets/kahana_logo_wide_light.svg';
@@ -7,60 +7,18 @@ function NavBar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSolutionsDropdownOpen, setIsSolutionsDropdownOpen] = useState(false);
   const [isResourcesDropdownOpen, setIsResourcesDropdownOpen] = useState(false);
-  const solutionsDropdownRef = useRef(null);
-  const resourcesDropdownRef = useRef(null);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  const openSolutionsDropdown = () => {
-    setIsSolutionsDropdownOpen(true);
+  const toggleSolutionsDropdown = () => {
+    setIsSolutionsDropdownOpen(!isSolutionsDropdownOpen);
   };
 
-  const closeSolutionsDropdown = () => {
-    setTimeout(() => {
-      setIsSolutionsDropdownOpen(false);
-    }, 200); // Adjust the delay as needed
+  const toggleResourcesDropdown = () => {
+    setIsResourcesDropdownOpen(!isResourcesDropdownOpen);
   };
-
-  const openResourcesDropdown = () => {
-    setIsResourcesDropdownOpen(true);
-  };
-
-  const closeResourcesDropdown = () => {
-    setTimeout(() => {
-      setIsResourcesDropdownOpen(false);
-    }, 200); // Adjust the delay as needed
-  };
-
-  // Close dropdowns when clicking outside
-  useEffect(() => {
-    function handleClickOutside(event) {
-      if (
-        solutionsDropdownRef.current &&
-        !solutionsDropdownRef.current.contains(event.target)
-      ) {
-        closeSolutionsDropdown();
-      }
-      if (
-        resourcesDropdownRef.current &&
-        !resourcesDropdownRef.current.contains(event.target)
-      ) {
-        closeResourcesDropdown();
-      }
-    }
-
-    if (isSolutionsDropdownOpen || isResourcesDropdownOpen) {
-      window.addEventListener('mousedown', handleClickOutside);
-    } else {
-      window.removeEventListener('mousedown', handleClickOutside);
-    }
-
-    return () => {
-      window.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [isSolutionsDropdownOpen, isResourcesDropdownOpen]);
 
   return (
     <nav className="bg-white border-b border-gray-200">
@@ -88,9 +46,8 @@ function NavBar() {
             </Link>
             <div
               className={`relative dropdown ${isSolutionsDropdownOpen ? 'z-10' : ''}`}
-              onMouseEnter={openSolutionsDropdown}
-              onMouseLeave={closeSolutionsDropdown}
-              ref={solutionsDropdownRef}
+              onMouseEnter={toggleSolutionsDropdown}
+              onMouseLeave={toggleSolutionsDropdown}
             >
               <button className="nav-link">Solutions</button>
               {isSolutionsDropdownOpen && (
@@ -125,9 +82,8 @@ function NavBar() {
             </div>
             <div
               className={`relative dropdown ${isResourcesDropdownOpen ? 'z-10' : ''}`}
-              onMouseEnter={openResourcesDropdown}
-              onMouseLeave={closeResourcesDropdown}
-              ref={resourcesDropdownRef}
+              onMouseEnter={toggleResourcesDropdown}
+              onMouseLeave={toggleResourcesDropdown}
             >
               <button className="nav-link">Resources</button>
               {isResourcesDropdownOpen && (
