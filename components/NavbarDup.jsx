@@ -27,7 +27,7 @@ function NavBar() {
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-4">
+          <div className="hidden md:flex space-x-8">
             <Link href="/about" className="nav-link">
               About
             </Link>
