@@ -30,12 +30,13 @@ const Navigation = () => {
         />
       </Link>
 
+      <div className="hamburger" onClick={toggleMenu}>
+        <div className={`bar ${isOpen ? 'open' : ''}`}></div>
+        <div className={`bar ${isOpen ? 'open' : ''}`}></div>
+        <div className={`bar ${isOpen ? 'open' : ''}`}></div>
+      </div>
+
       <div className={`menu ${isOpen ? 'open' : ''}`}>
-        <div className="hamburger" onClick={toggleMenu}>
-          <div className={`bar ${isOpen ? 'open' : ''}`}></div>
-          <div className={`bar ${isOpen ? 'open' : ''}`}></div>
-          <div className={`bar ${isOpen ? 'open' : ''}`}></div>
-        </div>
         <ul>
           <li>
             <Link href="/about">
