@@ -43,7 +43,7 @@ function NavBar() {
           display: none;
           position: absolute;
           background-color: white;
-          min-width: 240px;
+          min-width: 220px;
           z-index: 1;
         }
 
