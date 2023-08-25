@@ -62,10 +62,15 @@ function NavBar() {
         .dropdown-link:hover {
           background-color: #f2f2f2;
         }
+
+        .dropdown-button {
+          padding: 0.2rem 0.6rem; 
+          background-color: transparent;
+          width: 100%; 
+        }
         
         .dropdown-button:hover {
           background-color: #f2f2f2;
-          color: #fff;
         }
         .nav-button {
           padding: 0.3rem 1rem;
