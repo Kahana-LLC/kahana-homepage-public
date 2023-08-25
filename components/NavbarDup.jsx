@@ -433,11 +433,12 @@ function NavBar() {
               Request a demo
             </Link>
           </div>
+          <hr className="w-full border-gray-300 mt-2 mb-2" />
           <div className="flex flex-col items-center mt-4">
-            <Link href="https://app.kahana.co/signup" className="mobile-link bg-[#038270] hover:bg-[#024324] rounded-md py-1 px-8 text-white">
+            <Link href="https://app.kahana.co/signup" className="mobile-link bg-[#038270] hover:bg-[#024324] rounded-md h-10 w-48 text-white">
               Get Kahana free
             </Link>
-            <Link href="https://app.kahana.co/login" className="mobile-link bg-[#FFFFFF] hover:bg-[#f2f2f2] border-gray-300 border rounded-md py-1 px-8 mt-2">
+            <Link href="https://app.kahana.co/login" className="mobile-link bg-[#FFFFFF] hover:bg-[#f2f2f2] border-gray-300 border rounded-md h-10 w-48 mt-2">
               Log in
             </Link>
           </div>
