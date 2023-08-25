@@ -43,7 +43,7 @@ function NavBar() {
           display: none;
           position: absolute;
           background-color: white;
-          min-width: 320px;
+          min-width: 240px;
           z-index: 1;
         }
 
@@ -231,18 +231,18 @@ function NavBar() {
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white py-4">
           <div className="flex flex-col items-start ml-4 space-y-4">
-            <Link href="/about" className="mobile-link">
+            <Link href="/about" className="mobile-link" style={{ fontWeight: 'bold' }}>
               About
             </Link>
-            <Link href="/explore" className="mobile-link">
+            <Link href="/explore" className="mobile-link" style={{ fontWeight: 'bold' }}>
               Examples
             </Link>
             <div className="dropdown">
-              <button className="mobile-link" onClick={toggleSolutionsDropdown}>
+              <button className="mobile-link" onClick={toggleSolutionsDropdown} style={{ fontWeight: 'bold' }}>
                 Solutions
               </button>
               {isSolutionsDropdownOpen && (
-                <ul className="space-y-2 bg-white" style={{ border: 'none' }}>
+                <ul className="space-y-2 bg-white" style={{ border: 'none', paddingTop: '10px' }}>
                   <li>
                     <Link href="/enterprise" className="dropdown-link">
                       For Enterprise
@@ -272,11 +272,11 @@ function NavBar() {
               )}
             </div>
             <div className="dropdown">
-              <button className="mobile-link" onClick={toggleResourcesDropdown}>
+              <button className="mobile-link" onClick={toggleResourcesDropdown} style={{ fontWeight: 'bold' }}>
                 Resources
               </button>
               {isResourcesDropdownOpen && (
-                <ul className="space-y-2 bg-white" style={{ border: 'none' }}>
+                <ul className="space-y-2 bg-white" style={{ border: 'none', paddingTop: '10px' }}>
                   <li>
                     <Link href="https://blog.kahana.co/" className="dropdown-link">
                       Blog
@@ -315,7 +315,7 @@ function NavBar() {
                 </ul>
               )}
             </div>
-            <Link href="/pricing" className="mobile-link">
+            <Link href="/pricing" className="mobile-link" style={{ fontWeight: 'bold' }}>
               Pricing
             </Link>
             <Link href="https://app.kahana.co/login" className="mobile-link bg-[#038270] hover:bg-[#024324] rounded-md py-2 px-4 text-white">
