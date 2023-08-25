@@ -61,7 +61,8 @@ function NavBar() {
           background-color: #f2f2f2;
         }
         .nav-button {
-          padding: 0.5rem 0.5rem 0.5rem 1.5rem;
+          padding: 0.5rem 1rem;
+          margin-left: 1rem;
           background-color: #038270;
           color: #fff;
           transition: background-color 0.3s ease;
