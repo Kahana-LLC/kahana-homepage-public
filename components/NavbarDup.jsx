@@ -99,7 +99,26 @@ function NavBar() {
               </Link>
             </button>
             <div className="dropdown">
-              <button className="nav-link">Solutions</button>
+              <button className="nav-link" onClick={toggleSolutionsDropdown}>
+                Solutions{' '}
+                <span className={`arrow ${isSolutionsDropdownOpen ? 'rotate-arrow' : ''}`}>
+                  <svg
+                    className="w-4 h-4 inline-block"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    style={{ transform: isSolutionsDropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M9 5l7 7-7 7"
+                    ></path>
+                  </svg>
+                </span>
+              </button>
               <div className="dropdown-text">
                 <ul className="space-y-2" style={{ border: '1px solid transparent', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', backgroundColor: 'transparent', borderRadius: '8px' }}>
                   <li>
@@ -131,7 +150,26 @@ function NavBar() {
               </div>
             </div>
             <div className="dropdown">
-              <button className="nav-link">Resources</button>
+              <button className="nav-link" onClick={toggleResourcesDropdown}>
+                Resources{' '}
+                <span className={`arrow ${isResourcesDropdownOpen ? 'rotate-arrow' : ''}`}>
+                  <svg
+                    className="w-4 h-4 inline-block"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    style={{ transform: isResourcesDropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M9 5l7 7-7 7"
+                    ></path>
+                  </svg>
+                </span>
+              </button>
               <div className="dropdown-text">
                 <ul className="space-y-2" style={{ border: '1px solid transparent', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', backgroundColor: 'transparent', borderRadius: '8px' }}>
                   <li>
