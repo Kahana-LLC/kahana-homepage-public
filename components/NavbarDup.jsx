@@ -266,7 +266,7 @@ function NavBar() {
 
       {/* Mobile Menu Content */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-white py-4">
+        <div className="md:hidden h-screen bg-white py-4">
           <hr className="w-full border-gray-200 mt-2 mb-2" />
           <div className="flex flex-col items-start ml-4 space-y-4">
             <Link href="/about" className="mobile-link" style={{ fontWeight: 'bold'}}>
