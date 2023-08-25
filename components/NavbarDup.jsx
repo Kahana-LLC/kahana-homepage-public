@@ -64,6 +64,7 @@ function NavBar() {
           padding: 0.5rem 1rem;
           background-color: #038270;
           color: #fff;
+          padding-left: 5px;
 
           transition: background-color 0.3s ease;
         }
@@ -176,7 +177,7 @@ function NavBar() {
                 Pricing
               </Link>
             </button>
-            <button className="nav-button pl-2">
+            <button className="nav-button">
               <a href="https://app.kahana.co/login">
                 Log in
               </a>
