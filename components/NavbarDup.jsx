@@ -56,6 +56,7 @@ function NavBar() {
           text-decoration: none;
           display: block;
           color: #000;
+          transition: background-color 0.3s ease;
         }
 
         .dropdown-link:hover {
