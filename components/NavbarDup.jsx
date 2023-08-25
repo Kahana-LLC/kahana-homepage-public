@@ -267,7 +267,7 @@ function NavBar() {
       {/* Mobile Menu Content */}
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white py-4">
-          <hr className="w-full border-gray-300 mt-2 mb-2" />
+          <hr className="w-full border-gray-200 mt-2 mb-2" />
           <div className="flex flex-col items-start ml-4 space-y-4">
             <Link href="/about" className="mobile-link" style={{ fontWeight: 'bold'}}>
               About
@@ -434,7 +434,7 @@ function NavBar() {
               Request a demo
             </Link>
           </div>
-          <hr className="w-full border-gray-300 mt-2 mb-2" />
+          <hr className="w-full border-gray-200 mt-2 mb-2" />
           <div className="flex flex-col items-center mt-4">
             <Link href="https://app.kahana.co/signup" className="mobile-link bg-[#038270] hover:bg-[#024324] rounded-md h-7 w-48 text-white text-center flex justify-center items-center">
               Get Kahana free
