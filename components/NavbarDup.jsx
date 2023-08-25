@@ -22,6 +22,45 @@ function NavBar() {
 
   return (
     <nav className="bg-white border-b border-gray-200">
+      <style jsx>{`
+        /* Your styles here */
+        .nav-link {
+          padding: 0.5rem 1rem;
+          transition: background-color 0.3s ease;
+        }
+
+        .nav-link:hover {
+          background-color: #024324;
+        }
+
+        .dropdown {
+          position: relative;
+          display: inline-block;
+        }
+
+        .dropdown-text {
+          display: none;
+          position: absolute;
+          background-color: white;
+          min-width: 160px;
+          z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-text {
+          display: block;
+        }
+
+        .dropdown-link {
+          padding: 0.5rem 1rem;
+          text-decoration: none;
+          display: block;
+          color: #000;
+        }
+
+        .dropdown-link:hover {
+          background-color: #f2f2f2;
+        }
+      `}</style>
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
@@ -36,7 +75,6 @@ function NavBar() {
             </Link>
           </div>
 
-
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8 items-center">
             <Link href="/about" className="nav-link">
@@ -45,14 +83,10 @@ function NavBar() {
             <Link href="/explore" className="nav-link">
               Examples
             </Link>
-            <div
-              className="relative dropdown"
-              onMouseEnter={toggleSolutionsDropdown}
-              onMouseLeave={toggleSolutionsDropdown}
-            >
+            <div className="dropdown">
               <button className="nav-link">Solutions</button>
-              {isSolutionsDropdownOpen && (
-                <ul className="absolute mt-2 space-y-2 bg-white border border-gray-200 w-48 left-0">
+              <div className="dropdown-text">
+                <ul className="space-y-2 border border-gray-200">
                   <li>
                     <Link href="/enterprise" className="dropdown-link">
                       For Enterprise
@@ -79,16 +113,12 @@ function NavBar() {
                     </Link>
                   </li>
                 </ul>
-              )}
+              </div>
             </div>
-            <div
-              className="relative dropdown"
-              onMouseEnter={toggleResourcesDropdown}
-              onMouseLeave={toggleResourcesDropdown}
-            >
+            <div className="dropdown">
               <button className="nav-link">Resources</button>
-              {isResourcesDropdownOpen && (
-                <ul className="absolute mt-2 space-y-2 bg-white border border-gray-200 w-48 left-0">
+              <div className="dropdown-text">
+                <ul className="space-y-2 border border-gray-200">
                   <li>
                     <Link href="https://blog.kahana.co/" className="dropdown-link">
                       Blog
@@ -125,7 +155,7 @@ function NavBar() {
                     </Link>
                   </li>
                 </ul>
-              )}
+              </div>
             </div>
             <Link href="/pricing" className="nav-link">
               Pricing
