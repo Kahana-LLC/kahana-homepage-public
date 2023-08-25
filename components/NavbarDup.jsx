@@ -60,6 +60,21 @@ function NavBar() {
         .dropdown-link:hover {
           background-color: #f2f2f2;
         }
+          .desktop-nav {
+            display: flex;
+            flex: 1;
+            justify-content: space-between;
+            align-items: center;
+          }
+        
+          .desktop-nav .nav-link {
+            padding: 0.5rem 1rem;
+            transition: background-color 0.3s ease;
+          }
+        
+          .desktop-nav .nav-link:hover {
+            background-color: #024324;
+          }
       `}</style>
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
@@ -75,8 +90,8 @@ function NavBar() {
             </Link>
           </div>
 
-          {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8 items-center">
+         {/* Desktop Menu */}
+          <div className="hidden md:flex space-x-8 items-center desktop-nav"> {/* Use the .desktop-nav class */}
             <Link href="/about" className="nav-link">
               About
             </Link>
