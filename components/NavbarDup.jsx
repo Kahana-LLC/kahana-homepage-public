@@ -62,8 +62,7 @@ function NavBar() {
         }
         .desktop-nav {
           display: flex;
-          flex: 1;
-          justify-content: space-between;
+          justify-content: flex-end;
           align-items: right;
         }
       
