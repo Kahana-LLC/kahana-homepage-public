@@ -21,7 +21,7 @@ function NavBar() {
   };
 
   return (
-    <nav className="bg-[#038270] border-b border-gray-200">
+    <nav className="bg-[#038270]">
       <style jsx>{`
         /* Your styles here */
         .nav-link {
@@ -91,7 +91,7 @@ function NavBar() {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-2">
           {/* Logo */}
-          <div className="flex items-center" style={{ zIndex: 50 }}>
+          <div className="flex items-center" style={{ zIndex: 100 }}>
             <Link href="/" aria-label="Home">
               <span className="sr-only">Company</span>
               <Image
