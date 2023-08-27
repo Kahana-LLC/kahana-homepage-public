@@ -11,7 +11,7 @@ const features = [
     title: '1. Choose how many hubs you want',
     description: (
       <span>
-        Tell us how many hubs you want to have (e.g., how many topics you&apos;d like to create digital products about). Choose from the options below, and check out securely through Stripe.
+        Tell us how many hubs you want to have (e.g., how many topics you&apos;d like to create digital products about). Choose from the options below, and check out securely through Stripe. Within 24 hours, a member of our team will reach out to you to schedule your kickoff call.
       </span>
     ),
   },
@@ -19,7 +19,7 @@ const features = [
     title: '2. Set up your kickoff call & interview(s)',
     description: (
       <span>
-        Within 24 hours, a member of our team will reach out to you to schedule your kickoff call. This is where we&apos;ll learn more about the hubs you&apos;d like to create, create your Kahana account to host your hubs, schedule any interviews so that you can share all the knowledge you want your hubs to have with us, and gather necessary information (e.g., your brand colors) so we can build your hubs for you.
+        This is where we&apos;ll learn more about the hubs you&apos;d like to create, create your Kahana account to host your hubs, schedule any interviews so that you can share all the knowledge you want your hubs to have with us, and gather necessary information (e.g., your brand colors) so we can build your hubs for you.
       </span>
     ),
   },
@@ -33,6 +33,63 @@ const features = [
         <i>Note:</i> After your hubs are delivered to you, you will be responsible for making future updates to the hubs that were created (e.g., adding information based on feedback from customers).
       </span>
     ),
+  },
+];
+
+const faqs = [
+  {
+    question: 'What does the time commitment look like from my end?',
+    answer: 'No more than 1-5 hours, depending on how many hubs you order. Our process is designed to limit the amount of time you have to spend as much as possible: the only time commitment from your end is the kickoff call to outline the plan for your hub(s) and create your Kahana account, interviews where you share all of the knowledge you want to include in your hub(s), and reviewing your hub(s) once they\'re completed.',
+  },
+  {
+    question: 'How much does this cost?',
+    answer: (
+      <span>
+        We have a volume-based pricing model, where the price per hub decreases the more you order:
+        <br />
+        <br />
+        - 1 Hub: $4,000
+        - 2 Hubs: $7,000 ($3,500 per hub)
+        - 3 Hubs: $9,000 ($3,000 per hub)
+        - 4 Hubs: $10,000 ($2,500 per hub)
+      </span>
+    ),
+  },
+  {
+    question: 'Can I see some examples of hubs that have been created?',
+    answer: (
+      <span>
+        Certainly! These hubs below will provide you with an idea of what you can expect to be created for you:
+        <br />
+        <br />
+        -{' '}<a href="https://app.kahana.co/hub/TEdBTfY10Dd9H7QIBgQc" target="_blank" rel="noopener noreferrer" className="text-[#038270] font-medium">
+          How to Work with Influencers 101
+        </a>
+        <br />
+        -{' '}<a href="https://app.kahana.co/hub/elQ1iO0Nbb1wMu6u3dDj" target="_blank" rel="noopener noreferrer" className="text-[#038270] font-medium">
+         Vision Story: Build the Life and Business You Deserve
+        </a>
+      </span>
+    ),
+  },
+  {
+    question: 'What happens after I receive my hubs?',
+    answer: (
+      <span>
+        Once you are fully satisfied with your hubs and they have been delivered to you, the project is complete and the hubs are yours to keep. You can market them, share the link with colleagues, etc. so that you can begin making revenue.
+        <br />
+        <br />
+        <i>Note</i>: If need help getting your hubs in front of more potential customers, feel free to check out our{' '}
+        <a href="https://blog.kahana.co/boost-program/" target="_blank" rel="noopener noreferrer" className="text-[#038270] font-medium">
+          Boost Program
+        </a>
+        ,{' '}an email marketing service we provide for individuals and organizations who are interested in expanding the reach of their hubs.
+      </span>
+    ),
+  },
+  {
+    question: 'What if I want to make updates after the project is complete?',
+    answer: 'After your hubs are delivered to you, you will be responsible for making future updates to the hubs that were created (e.g., adding information based on feedback from customers). Our team will show you how to do this when we hand the hubs off to you so that you are comfortable making updates on your own.',
   },
 ];
 
@@ -94,7 +151,7 @@ export default function AffiliateProgramPage() {
             </div>
           </section>
         )}
-        {/* It pays to be a partner section */}
+        {/* Hero section */}
         <section className={`py-16 px-4 sm:px-6 lg:px-8 bg-white ${showImage ? 'mt-0' : 'mt-4'}`}>
           <div className="max-w-7xl mx-auto text-center" style={{ padding: showImage ? '0' : '2rem 0' }}>
             <h2 className={`text-3xl font-bold ${showImage ? 'mb-2' : 'mb-4'} text-gray-900`}>
@@ -105,6 +162,7 @@ export default function AffiliateProgramPage() {
             </p>
           </div>
         </section> 
+        {/* How it works section */}
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-100">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl font-bold mb-8 text-gray-900 text-center">
@@ -119,6 +177,48 @@ export default function AffiliateProgramPage() {
                 >
                   <h3 className="text-xl font-semibold">{feature.title}</h3>
                   <p className="text-gray-700">{feature.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+        {/* FAQ Section */}
+        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+          <div className="max-w-7xl mx-auto">
+            <h2 className="text-3xl font-bold mb-8 text-gray-900 text-center">
+              Most frequently asked questions
+            </h2>
+            <div className="space-y-4">
+              {faqs.map((faq, index) => (
+                <div key={index} className="border border-gray-200 rounded-lg">
+                  <button
+                    className="w-full flex justify-between items-center p-4 focus:outline-none"
+                    onClick={() => toggleAccordion(index)}
+                  >
+                    <span className="text-lg font-medium text-gray-900 text-left flex-1">
+                      {faq.question}
+                    </span>
+                    <svg
+                      className={`${
+                        activeIndex === index ? 'transform rotate-180' : ''
+                      } w-5 h-5 text-gray-500 flex-shrink-0`}
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M10.293 15.293a1 1 0 0 1-1.414 0l-5-5a1 1 0 0 1 1.414-1.414L10 12.586l4.293-4.293a1 1 0 1 1 1.414 1.414l-5 5z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </button>
+                  {activeIndex === index && (
+                    <div className="p-4 bg-gray-50">
+                      <p className="text-gray-500">{faq.answer}</p>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
@@ -152,7 +252,7 @@ export default function AffiliateProgramPage() {
             </div>
           </div>
         </section>
-
+        {/* CTA section */}
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#F7FAFC]">
           <div className="max-w-7xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-4 text-gray-900">
@@ -181,6 +281,24 @@ export default function AffiliateProgramPage() {
             </div>
           </div>
         </section>
+        {/* Become an affiliate section */}
+        <section className={`py-16 px-4 sm:px-6 lg:px-8 bg-white`}>
+          <div className="max-w-7xl mx-auto text-center">
+            <h2 className={`text-3xl font-bold text-gray-900`}>
+              Become an affiliate
+            </h2>
+            <p className="mt-4 text-gray-700">
+              Refer people to Kahana and earn up to a 30% commission.
+            </p>
+            <Link href="/affiliates">
+              <a className="block mt-8">
+                <button className="px-6 py-2 bg-[#3B675E] text-white rounded-md shadow-md">
+                  Learn more
+                </button>
+              </a>
+            </Link>
+          </div>
+        </section> 
         <Footer />
       </div>
     </>
