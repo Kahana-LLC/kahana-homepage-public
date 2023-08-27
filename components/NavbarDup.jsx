@@ -88,7 +88,7 @@ function NavBar() {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-2">
           {/* Logo */}
-          <div className="flex items-center">
+          <div className="flex items-center" style={{ zIndex: 50 }}>
             <Link href="/" aria-label="Home">
               <span className="sr-only">Company</span>
               <Image
