@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Footer from '../components/Footer';
 import NavbarDup from '../components/NavbarDup';
 import Image from 'next/image';
-import OnDemandHub from '../assets/images/expertsHub.webp';
+import OnDemandHub from '../assets/images/expertsHub.png';
 import Link from 'next/link';
 
 const features = [
