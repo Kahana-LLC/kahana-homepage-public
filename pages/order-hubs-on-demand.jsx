@@ -73,6 +73,9 @@ export default function AffiliateProgramPage() {
             `,
           }}
         />
+        <script async
+          src="https://js.stripe.com/v3/buy-button.js">
+        </script>
       </Head>
       <div>
         <div className="sticky top-0 z-50">
