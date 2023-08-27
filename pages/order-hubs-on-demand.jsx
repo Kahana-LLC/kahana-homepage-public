@@ -142,11 +142,6 @@ export default function AffiliateProgramPage() {
           display: flex;
           justify-content: center;
         }
-
-        .stripe-button {
-          width: 100%;
-          max-width: 50px;
-        }
         `}</style>
         
         <div className="sticky top-0 z-50">
@@ -275,7 +270,7 @@ export default function AffiliateProgramPage() {
             <p className="text-gray-700">
               Choose how many hubs you&apos;d like to have, and we&apos;ll take care of the rest. 
             </p>
-            <div className="mt-4 space-y-4 sm:mt-6 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:mx-auto lg:max-w-4xl xl:mx-0 xl:max-w-none xl:grid-cols-4">
+            <div className="mt-4 space-y-4 sm:mt-6 md:grid md:grid-cols-2 md:gap-6 md:space-y-0 lg:mx-auto lg:max-w-4xl xl:mx-0 xl:max-w-none xl:grid-cols-2">
               {/* Start adding different pricing plans from here  */}
               <div className="divide-y divide-gray-200 rounded-lg border border-gray-200 shadow-sm">
                 <div className="p-6">
