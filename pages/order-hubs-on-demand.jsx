@@ -49,8 +49,11 @@ const faqs = [
         <br />
         <br />
         - 1 Hub: $4,000
+        <br />
         - 2 Hubs: $7,000 ($3,500 per hub)
+        <br />
         - 3 Hubs: $9,000 ($3,000 per hub)
+        <br />
         - 4 Hubs: $10,000 ($2,500 per hub)
       </span>
     ),
