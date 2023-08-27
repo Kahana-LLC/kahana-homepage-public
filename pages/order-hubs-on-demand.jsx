@@ -27,11 +27,7 @@ const features = [
     title: '3. Receive your hub(s) within 5-10 business days',
     description: (
       <span>
-        From there, we&apos;ll take care of the rest! Our team will handle all the asset creation, graphic design, and formatting you don&apos;t want to touch, and we won&apos;t stop making revisions until you are fully satisfied. The end result is that you receive delightful, easily digestible hubs with all of your knowledge that you can charge for access to and use to start generating revenue. 
-        <br />
-        <br />
-        <i>Note:</i> After your hubs are delivered to you, you will be responsible for making future updates to the hubs that were created (e.g., adding information based on feedback from customers).
-      </span>
+        From there, we&apos;ll take care of the rest! Our team will handle all the asset creation, graphic design, and formatting you don&apos;t want to touch, and we won&apos;t stop making revisions until you are fully satisfied. The end result is that you receive delightful, easily digestible hubs with all of your knowledge that you can charge for access to and use to start generating revenue.
     ),
   },
 ];
@@ -235,7 +231,7 @@ export default function AffiliateProgramPage() {
               {/* Add "px-4 md:px-0" to the grid container */}
               <div className="bg-white p-6 rounded-lg shadow-md">
                 <p className="text-lg italic mb-4">
-                  This is incredible! &quot;You took my brain and turned it into a phenomenal asset. I could not do this at all without Kahana - I wouldn&apos;t even know where to start.&quot;
+                  &quot;This is incredible! You took my brain and turned it into a phenomenal asset. I could not do this at all without Kahana - I wouldn&apos;t even know where to start.&quot;
                 </p>
                 <p className="font-semibold">Tay L., Corporate Lawyer & Brand Deal Consultant</p>
               </div>
@@ -256,7 +252,7 @@ export default function AffiliateProgramPage() {
           </div>
         </section>
         {/* CTA section */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#F7FAFC]">
+        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
           <div className="max-w-7xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-4 text-gray-900">
               Turn your knowledge into revenue
@@ -264,23 +260,92 @@ export default function AffiliateProgramPage() {
             <p className="text-gray-700">
               Choose how many hubs you&apos;d like to have, and we&apos;ll take care of the rest. 
             </p>
-            <div className="mt-8 flex flex-col items-center space-y-4">
-              <stripe-buy-button
-                buy-button-id="buy_btn_1NjYOPGAiwY6zSuoV2cONxWL"
-                publishable-key="pk_live_51H51RhGAiwY6zSuoffxrMvDE6GqlWDlPPFSM6ZkJznQY32CTgnMTxDZyysGekts6ttGIqpUHKenu0MdUVyvgKza900ezNceUSp"
-              ></stripe-buy-button>
-              <stripe-buy-button
-                buy-button-id="buy_btn_1NjYWeGAiwY6zSuoJeliMzWI"
-                publishable-key="pk_live_51H51RhGAiwY6zSuoffxrMvDE6GqlWDlPPFSM6ZkJznQY32CTgnMTxDZyysGekts6ttGIqpUHKenu0MdUVyvgKza900ezNceUSp"
-              ></stripe-buy-button>
-              <stripe-buy-button
-                buy-button-id="buy_btn_1NjYXRGAiwY6zSuojH6QtbY7"
-                publishable-key="pk_live_51H51RhGAiwY6zSuoffxrMvDE6GqlWDlPPFSM6ZkJznQY32CTgnMTxDZyysGekts6ttGIqpUHKenu0MdUVyvgKza900ezNceUSp"
-              ></stripe-buy-button>
-              <stripe-buy-button
-                buy-button-id="buy_btn_1NjYXtGAiwY6zSuou9GIordG"
-                publishable-key="pk_live_51H51RhGAiwY6zSuoffxrMvDE6GqlWDlPPFSM6ZkJznQY32CTgnMTxDZyysGekts6ttGIqpUHKenu0MdUVyvgKza900ezNceUSp"
-              ></stripe-buy-button>
+            <div className="mt-4 space-y-4 sm:mt-6 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:mx-auto lg:max-w-4xl xl:mx-0 xl:max-w-none xl:grid-cols-4">
+              {/* Start adding different pricing plans from here  */}
+              <div className="divide-y divide-gray-200 rounded-lg border border-gray-200 shadow-sm">
+                <div className="p-6">
+                  <h2 className="text-lg font-medium leading-6 text-[#038270]">
+                    1 Hub
+                  </h2>
+                  <p className="mt-8">
+                    <span className="text-4xl font-bold tracking-tight text-[#038270]">
+                      $4,000
+                    </span>{' '}
+                    <span className="text-base font-medium text-gray-500">
+                      /hub
+                    </span>
+                  </p>
+                </div>
+                <div className="px-6 pt-6 pb-8">
+                  <stripe-buy-button
+                    buy-button-id="buy_btn_1NjYOPGAiwY6zSuoV2cONxWL"
+                    publishable-key="pk_live_51H51RhGAiwY6zSuoffxrMvDE6GqlWDlPPFSM6ZkJznQY32CTgnMTxDZyysGekts6ttGIqpUHKenu0MdUVyvgKza900ezNceUSp"
+                  ></stripe-buy-button>
+                </div>
+              </div>
+              <div className="divide-y divide-gray-200 rounded-lg border border-gray-200 shadow-sm">
+                <div className="p-6">
+                  <h2 className="text-lg font-medium leading-6 text-[#038270]">
+                    2 Hubs
+                  </h2>
+                  <p className="mt-8">
+                    <span className="text-4xl font-bold tracking-tight text-[#038270]">
+                      $3,500
+                    </span>{' '}
+                    <span className="text-base font-medium text-gray-500">
+                      /hub
+                    </span>
+                  </p>
+                </div>
+                <div className="px-6 pt-6 pb-8">
+                  <stripe-buy-button
+                    buy-button-id="buy_btn_1NjYWeGAiwY6zSuoJeliMzWI"
+                    publishable-key="pk_live_51H51RhGAiwY6zSuoffxrMvDE6GqlWDlPPFSM6ZkJznQY32CTgnMTxDZyysGekts6ttGIqpUHKenu0MdUVyvgKza900ezNceUSp"
+                  ></stripe-buy-button>
+                </div>
+              </div>
+              <div className="divide-y divide-gray-200 rounded-lg border border-gray-200 shadow-sm">
+                <div className="p-6">
+                  <h2 className="text-lg font-medium leading-6 text-[#038270]">
+                    3 Hubs
+                  </h2>
+                  <p className="mt-8">
+                    <span className="text-4xl font-bold tracking-tight text-[#038270]">
+                      $3,000
+                    </span>{' '}
+                    <span className="text-base font-medium text-gray-500">
+                      /hub
+                    </span>
+                  </p>
+                </div>
+                <div className="px-6 pt-6 pb-8">
+                   <stripe-buy-button
+                    buy-button-id="buy_btn_1NjYXRGAiwY6zSuojH6QtbY7"
+                    publishable-key="pk_live_51H51RhGAiwY6zSuoffxrMvDE6GqlWDlPPFSM6ZkJznQY32CTgnMTxDZyysGekts6ttGIqpUHKenu0MdUVyvgKza900ezNceUSp"
+                  ></stripe-buy-button>
+                </div>
+              </div>
+              <div className="divide-y divide-gray-200 rounded-lg border border-gray-200 shadow-sm">
+                <div className="p-6">
+                  <h2 className="text-lg font-medium leading-6 text-[#038270]">
+                    4 Hubs (Best Value)
+                  </h2>
+                  <p className="mt-8">
+                    <span className="text-4xl font-bold tracking-tight text-[#038270]">
+                      $2,500
+                    </span>{' '}
+                    <span className="text-base font-medium text-gray-500">
+                      /hub
+                    </span>
+                  </p>
+                </div>
+                <div className="px-6 pt-6 pb-8">
+                  <stripe-buy-button
+                    buy-button-id="buy_btn_1NjYXtGAiwY6zSuou9GIordG"
+                    publishable-key="pk_live_51H51RhGAiwY6zSuoffxrMvDE6GqlWDlPPFSM6ZkJznQY32CTgnMTxDZyysGekts6ttGIqpUHKenu0MdUVyvgKza900ezNceUSp"
+                  ></stripe-buy-button>
+                </div>
+              </div>
             </div>
           </div>
         </section>
