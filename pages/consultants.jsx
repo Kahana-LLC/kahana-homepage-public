@@ -245,8 +245,8 @@ const ConsultantsPage = () => {
       {/* Contact section */}
       <section className="py-16 md:py-18">
         <div className="container mx-auto text-center flex flex-col items-center">
-          <h2 className="text-3xl font-bold mb-8 md:px-12 lg:px-24">Try Kahana today</h2>
-          <p className="mb-4 px-4">Start charging for access to your best assets in minutes with Kahana.</p>
+          <h2 className="text-3xl font-bold mb-8 md:px-12 lg:px-24 px-4 mx-auto">Try Kahana today</h2>
+          <p className="mb-4 px-4 mx-auto">Start charging for access to your best assets in minutes with Kahana.</p>
           <a
             href="https://app.kahana.co/signup"
             className="bg-[#3B675E] text-white py-2 px-6 rounded-md text-center inline-block mx-auto max-w-md"
