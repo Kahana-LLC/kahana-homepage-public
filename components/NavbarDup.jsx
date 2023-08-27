@@ -21,7 +21,7 @@ function NavBar() {
   };
 
   return (
-    <nav className="bg-gradient-to-l from-green-200 via-[#038270] to-[#338161] border-b border-gray-200">
+    <nav className="bg-[#038270] border-b border-gray-200">
       <style jsx>{`
         /* Your styles here */
         .nav-link {
@@ -79,12 +79,13 @@ function NavBar() {
         .nav-button {
           padding: 0.3rem 1rem;
           border-radius: 0.5rem; /* Add rounded corners */
-          background-color: #038270;
-          color: #fff;
+          background-color: #fff;
+          color: black;
           transition: background-color 0.3s ease;
         }
         .nav-button:hover {
           background-color: #024324;
+          color: white;
         }
       `}</style>
       <div className="container mx-auto px-4">
@@ -234,7 +235,7 @@ function NavBar() {
                 <svg
                   className="w-6 h-6"
                   fill="none"
-                  stroke="currentColor"
+                  stroke="white"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -249,7 +250,7 @@ function NavBar() {
                 <svg
                   className="w-6 h-6"
                   fill="none"
-                  stroke="currentColor"
+                  stroke="white"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
