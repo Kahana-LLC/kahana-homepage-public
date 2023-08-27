@@ -154,7 +154,7 @@ export default function AffiliateProgramPage() {
               Turn your knowledge into revenue
             </h2>
             <p className="text-gray-700">
-              Choose how many hubs you&pos;d like to have, and we&apos;ll take care of the rest. 
+              Choose how many hubs you&apos;d like to have, and we&apos;ll take care of the rest. 
             </p>
             <div className="mt-8 space-y-4">
               <a href="https://js.stripe.com/v3/buy-button.js">
