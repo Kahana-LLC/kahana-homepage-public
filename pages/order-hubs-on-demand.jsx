@@ -83,14 +83,16 @@ export default function AffiliateProgramPage() {
         </div>
        {showImage && (
           <section className="relative py-0 px-0 sm:px-0 lg:px-0 bg-white">
-            <Image
-              src={OnDemandHub}
-              alt="Example of a Created Hub"
-              layout="responsive"
-              height={500}
-              objectFit="cover"
-              className="hidden md:block"
-            />
+            <div className="flex justify-center items-center h-screen">
+              <Image
+                src={OnDemandHub}
+                alt="Example of a Finished Hub"
+                layout="fixed"
+                height={500}
+                objectFit="cover"
+                className="hidden md:block"
+              />
+            </div>
           </section>
         )}
         {/* It pays to be a partner section */}
