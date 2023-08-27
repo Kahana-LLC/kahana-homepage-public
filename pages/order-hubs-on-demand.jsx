@@ -145,7 +145,7 @@ export default function AffiliateProgramPage() {
 
         .stripe-button {
           width: 100%;
-          max-width: 150px;
+          max-width: 50px;
         }
         `}</style>
         
