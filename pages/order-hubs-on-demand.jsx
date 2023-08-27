@@ -134,7 +134,21 @@ export default function AffiliateProgramPage() {
           src="https://js.stripe.com/v3/buy-button.js">
         </script>
       </Head>
+      
       <div>
+        <style jsx>{`
+        /* CSS for limiting button width */
+        .button-container {
+          display: flex;
+          justify-content: center;
+        }
+
+        .stripe-button {
+          width: 100%;
+          max-width: 200px;
+        }
+        `}</style>
+        
         <div className="sticky top-0 z-50">
           <NavbarDup />
         </div>
@@ -277,7 +291,7 @@ export default function AffiliateProgramPage() {
                     </span>
                   </p>
                 </div>
-                <div className="px-6 pt-6 pb-8">
+                <div className="px-6 pt-6 pb-8 button-container">
                   <stripe-buy-button
                     buy-button-id="buy_btn_1NjYOPGAiwY6zSuoV2cONxWL"
                     publishable-key="pk_live_51H51RhGAiwY6zSuoffxrMvDE6GqlWDlPPFSM6ZkJznQY32CTgnMTxDZyysGekts6ttGIqpUHKenu0MdUVyvgKza900ezNceUSp"
@@ -298,7 +312,7 @@ export default function AffiliateProgramPage() {
                     </span>
                   </p>
                 </div>
-                <div className="px-6 pt-6 pb-8">
+                <div className="px-6 pt-6 pb-8 button-container">
                   <stripe-buy-button
                     buy-button-id="buy_btn_1NjYWeGAiwY6zSuoJeliMzWI"
                     publishable-key="pk_live_51H51RhGAiwY6zSuoffxrMvDE6GqlWDlPPFSM6ZkJznQY32CTgnMTxDZyysGekts6ttGIqpUHKenu0MdUVyvgKza900ezNceUSp"
@@ -319,7 +333,7 @@ export default function AffiliateProgramPage() {
                     </span>
                   </p>
                 </div>
-                <div className="px-6 pt-6 pb-8">
+                <div className="px-6 pt-6 pb-8 button-container">
                    <stripe-buy-button
                     buy-button-id="buy_btn_1NjYXRGAiwY6zSuojH6QtbY7"
                     publishable-key="pk_live_51H51RhGAiwY6zSuoffxrMvDE6GqlWDlPPFSM6ZkJznQY32CTgnMTxDZyysGekts6ttGIqpUHKenu0MdUVyvgKza900ezNceUSp"
@@ -340,7 +354,7 @@ export default function AffiliateProgramPage() {
                     </span>
                   </p>
                 </div>
-                <div className="px-6 pt-6 pb-8">
+                <div className="px-6 pt-6 pb-8 button-container">
                   <stripe-buy-button
                     buy-button-id="buy_btn_1NjYXtGAiwY6zSuou9GIordG"
                     publishable-key="pk_live_51H51RhGAiwY6zSuoffxrMvDE6GqlWDlPPFSM6ZkJznQY32CTgnMTxDZyysGekts6ttGIqpUHKenu0MdUVyvgKza900ezNceUSp"
