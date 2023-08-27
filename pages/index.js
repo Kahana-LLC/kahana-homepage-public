@@ -80,7 +80,7 @@ export default function Home() {
         </script>
       </Head>
       <div>
-        <div style={{ zIndex: '1' }} className="sticky top-0">
+        <div style={{ zIndex: '100' }} className="sticky top-0">
           <NavbarDup />
         </div>
         <main>
