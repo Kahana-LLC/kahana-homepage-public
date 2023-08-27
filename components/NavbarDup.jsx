@@ -28,10 +28,12 @@ function NavBar() {
           padding: 0.3rem 0.75rem;
           border-radius: 0.5rem; /* Add rounded corners */
           transition: background-color 0.3s ease;
+          color: white;
         }
 
         .nav-link:hover {
           background-color: #f2f2f2;
+          color: black;
         }
 
         .dropdown {
