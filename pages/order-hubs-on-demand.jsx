@@ -83,7 +83,7 @@ export default function AffiliateProgramPage() {
         </div>
        {showImage && (
           <section className="relative py-0 px-0 sm:px-0 lg:px-0 bg-white">
-            <div className="flex justify-center items-center h-screen">
+            <div className="flex justify-center h-screen">
               <Image
                 src={OnDemandHub}
                 alt="Example of a Finished Hub"
@@ -135,7 +135,7 @@ export default function AffiliateProgramPage() {
                 <p className="text-lg italic mb-4">
                   This is incredible! &quot;You took my brain and turned it into a phenomenal asset. I could not do this at all without Kahana - I wouldn&apos;t even know where to start.&quot;
                 </p>
-                <p className="font-semibold">Tay L., Corporate Lawyer, Creator & Brand Deal Expert</p>
+                <p className="font-semibold">Tay L., Corporate Lawyer & Brand Deal Consultant</p>
               </div>
               <div className="bg-white p-6 rounded-lg shadow-md">
                 <p className="text-lg italic mb-4">
