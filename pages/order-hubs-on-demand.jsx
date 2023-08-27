@@ -83,13 +83,12 @@ export default function AffiliateProgramPage() {
         </div>
        {showImage && (
           <section className="relative py-0 px-0 sm:px-0 lg:px-0 bg-white">
-            <div className="flex justify-center h-screen">
+            <div className="flex justify-center">
               <Image
                 src={OnDemandHub}
                 alt="Example of a Finished Hub"
                 layout="fixed"
                 height={500}
-                objectFit="cover"
                 className="hidden md:block"
               />
             </div>
