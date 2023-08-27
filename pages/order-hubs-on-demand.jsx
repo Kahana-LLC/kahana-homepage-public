@@ -157,37 +157,22 @@ export default function AffiliateProgramPage() {
               Choose how many hubs you&apos;d like to have, and we&apos;ll take care of the rest. 
             </p>
             <div className="mt-8 space-y-4">
-              <a href="https://js.stripe.com/v3/buy-button.js">
-                <stripe-buy-button
-                  buy-button-id="buy_btn_1NjYOPGAiwY6zSuoV2cONxWL"
-                  publishable-key="pk_live_51H51RhGAiwY6zSuoffxrMvDE6GqlWDlPPFSM6ZkJznQY32CTgnMTxDZyysGekts6ttGIqpUHKenu0MdUVyvgKza900ezNceUSp"
-                >
-                </stripe-buy-button>
-              </a>
-        
-              <a href="https://js.stripe.com/v3/buy-button.js">
-                <stripe-buy-button
-                  buy-button-id="buy_btn_1NjYWeGAiwY6zSuoJeliMzWI"
-                  publishable-key="pk_live_51H51RhGAiwY6zSuoffxrMvDE6GqlWDlPPFSM6ZkJznQY32CTgnMTxDZyysGekts6ttGIqpUHKenu0MdUVyvgKza900ezNceUSp"
-                >
-                </stripe-buy-button>
-              </a>
-        
-              <a href="https://js.stripe.com/v3/buy-button.js">
-                <stripe-buy-button
-                  buy-button-id="buy_btn_1NjYXRGAiwY6zSuojH6QtbY7"
-                  publishable-key="pk_live_51H51RhGAiwY6zSuoffxrMvDE6GqlWDlPPFSM6ZkJznQY32CTgnMTxDZyysGekts6ttGIqpUHKenu0MdUVyvgKza900ezNceUSp"
-                >
-                </stripe-buy-button>
-              </a>
-        
-              <a href="https://js.stripe.com/v3/buy-button.js">
-                <stripe-buy-button
-                  buy-button-id="buy_btn_1NjYXtGAiwY6zSuou9GIordG"
-                  publishable-key="pk_live_51H51RhGAiwY6zSuoffxrMvDE6GqlWDlPPFSM6ZkJznQY32CTgnMTxDZyysGekts6ttGIqpUHKenu0MdUVyvgKza900ezNceUSp"
-                >
-                </stripe-buy-button>
-              </a>
+              <stripe-buy-button
+                buy-button-id="buy_btn_1NjYOPGAiwY6zSuoV2cONxWL"
+                publishable-key="pk_live_51H51RhGAiwY6zSuoffxrMvDE6GqlWDlPPFSM6ZkJznQY32CTgnMTxDZyysGekts6ttGIqpUHKenu0MdUVyvgKza900ezNceUSp"
+              ></stripe-buy-button>
+              <stripe-buy-button
+                buy-button-id="buy_btn_1NjYWeGAiwY6zSuoJeliMzWI"
+                publishable-key="pk_live_51H51RhGAiwY6zSuoffxrMvDE6GqlWDlPPFSM6ZkJznQY32CTgnMTxDZyysGekts6ttGIqpUHKenu0MdUVyvgKza900ezNceUSp"
+              ></stripe-buy-button>
+              <stripe-buy-button
+                buy-button-id="buy_btn_1NjYXRGAiwY6zSuojH6QtbY7"
+                publishable-key="pk_live_51H51RhGAiwY6zSuoffxrMvDE6GqlWDlPPFSM6ZkJznQY32CTgnMTxDZyysGekts6ttGIqpUHKenu0MdUVyvgKza900ezNceUSp"
+              ></stripe-buy-button>
+              <stripe-buy-button
+                buy-button-id="buy_btn_1NjYXtGAiwY6zSuou9GIordG"
+                publishable-key="pk_live_51H51RhGAiwY6zSuoffxrMvDE6GqlWDlPPFSM6ZkJznQY32CTgnMTxDZyysGekts6ttGIqpUHKenu0MdUVyvgKza900ezNceUSp"
+              ></stripe-buy-button>
             </div>
           </div>
         </section>
