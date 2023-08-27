@@ -77,7 +77,7 @@ function NavBar() {
         .nav-button {
           padding: 0.3rem 1rem;
           border-radius: 0.5rem; /* Add rounded corners */
-          background-color: #E9F4E9;
+          background-color: #038270;
           color: #fff;
           transition: background-color 0.3s ease;
         }
