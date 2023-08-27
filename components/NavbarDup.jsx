@@ -21,13 +21,14 @@ function NavBar() {
   };
 
   return (
-    <nav className="bg-white border-b border-gray-200">
+    <nav className="bg-[#3B675E] border-b border-gray-200">
       <style jsx>{`
         /* Your styles here */
         .nav-link {
           padding: 0.3rem 0.75rem;
           border-radius: 0.5rem; /* Add rounded corners */
           transition: background-color 0.3s ease;
+          color: white;
         }
 
         .nav-link:hover {
@@ -77,7 +78,7 @@ function NavBar() {
         .nav-button {
           padding: 0.3rem 1rem;
           border-radius: 0.5rem; /* Add rounded corners */
-          background-color: #038270;
+          background-color: #E9F4E9;
           color: #fff;
           transition: background-color 0.3s ease;
         }
