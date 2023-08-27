@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import whiteKahanaLogo from '../assets/kahana_logo_wide_light.svg';
+import whiteKahanaLogo from '../assets/kahana_logo_wide_light_v2.svg';
 
 function NavBar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -21,14 +21,13 @@ function NavBar() {
   };
 
   return (
-    <nav className="bg-[#3B675E] border-b border-gray-200">
+    <nav className="bg-gradient-to-l from-green-200 via-[#038270] to-[#338161] border-b border-gray-200">
       <style jsx>{`
         /* Your styles here */
         .nav-link {
           padding: 0.3rem 0.75rem;
           border-radius: 0.5rem; /* Add rounded corners */
           transition: background-color 0.3s ease;
-          color: white;
         }
 
         .nav-link:hover {
@@ -233,7 +232,7 @@ function NavBar() {
                 <svg
                   className="w-6 h-6"
                   fill="none"
-                  stroke="white"
+                  stroke="currentColor"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -248,7 +247,7 @@ function NavBar() {
                 <svg
                   className="w-6 h-6"
                   fill="none"
-                  stroke="white"
+                  stroke="currentColor"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
