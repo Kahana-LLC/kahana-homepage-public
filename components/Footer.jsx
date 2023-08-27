@@ -32,6 +32,7 @@ const navigation = {
     { name: 'Twitter', href: 'https://twitter.com/KahanaHQ' },
   ],
   build: [
+    { name: 'Hubs on-demand', href: '/order-hubs-on-demand' },
     { name: 'Guides & tutorials', href: '/resources' },
     { name: 'Templates', href: 'https://templates.kahana.co' },
     { name: 'Invest in seed round', href: 'https://7hkdcfzbmr0.typeform.com/to/wYCUMm54' },
