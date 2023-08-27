@@ -152,7 +152,7 @@ export default function AffiliateProgramPage() {
             </div>
           </div>
         </section>
-        {/* New "Sign up below" Section */}
+
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#F7FAFC]">
           <div className="max-w-7xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-4 text-gray-900">
@@ -163,7 +163,6 @@ export default function AffiliateProgramPage() {
             </p>
             <div className="mt-8 space-y-4">
               <a href="https://js.stripe.com/v3/buy-button.js">
-                <!-- First button -->
                 <stripe-buy-button
                   buy-button-id="buy_btn_1NjYOPGAiwY6zSuoV2cONxWL"
                   publishable-key="pk_live_51H51RhGAiwY6zSuoffxrMvDE6GqlWDlPPFSM6ZkJznQY32CTgnMTxDZyysGekts6ttGIqpUHKenu0MdUVyvgKza900ezNceUSp"
@@ -172,7 +171,6 @@ export default function AffiliateProgramPage() {
               </a>
         
               <a href="https://js.stripe.com/v3/buy-button.js">
-                <!-- Second button -->
                 <stripe-buy-button
                   buy-button-id="buy_btn_1NjYWeGAiwY6zSuoJeliMzWI"
                   publishable-key="pk_live_51H51RhGAiwY6zSuoffxrMvDE6GqlWDlPPFSM6ZkJznQY32CTgnMTxDZyysGekts6ttGIqpUHKenu0MdUVyvgKza900ezNceUSp"
@@ -181,7 +179,6 @@ export default function AffiliateProgramPage() {
               </a>
         
               <a href="https://js.stripe.com/v3/buy-button.js">
-                <!-- Third button -->
                 <stripe-buy-button
                   buy-button-id="buy_btn_1NjYXRGAiwY6zSuojH6QtbY7"
                   publishable-key="pk_live_51H51RhGAiwY6zSuoffxrMvDE6GqlWDlPPFSM6ZkJznQY32CTgnMTxDZyysGekts6ttGIqpUHKenu0MdUVyvgKza900ezNceUSp"
@@ -190,7 +187,6 @@ export default function AffiliateProgramPage() {
               </a>
         
               <a href="https://js.stripe.com/v3/buy-button.js">
-                <!-- Fourth button -->
                 <stripe-buy-button
                   buy-button-id="buy_btn_1NjYXtGAiwY6zSuou9GIordG"
                   publishable-key="pk_live_51H51RhGAiwY6zSuoffxrMvDE6GqlWDlPPFSM6ZkJznQY32CTgnMTxDZyysGekts6ttGIqpUHKenu0MdUVyvgKza900ezNceUSp"
