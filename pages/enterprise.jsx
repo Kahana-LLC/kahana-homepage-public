@@ -255,8 +255,8 @@ const EnterprisePage = () => {
 
       {/* Contact section */}
       <section className="py-16 md:py-18">
-        <div className="container mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-8 mx-4 md:px-12 lg:px-24">Get a demo</h2>
+        <div className="container mx-auto text-center flex flex-col items-center">
+          <h2 className="text-3xl font-bold mb-8 md:px-12 lg:px-24">Get a demo</h2>
           <p className="mb-4 px-4">Talk to a human to understand how Kahana can help your org.</p>
           <a
             href="https://7hkdcfzbmr0.typeform.com/to/ZYLHazEf?utm_content=enterprise_page"
