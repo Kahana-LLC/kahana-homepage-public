@@ -11,7 +11,7 @@ const features = [
     title: '1. Choose how many hubs you want',
     description: (
       <span>
-        Tell us how many hubs you want to have (e.g., how many topics you'd like to create digital products about). Choose from the options below, and check out securely through Stripe.
+        Tell us how many hubs you want to have (e.g., how many topics you&apos;d like to create digital products about). Choose from the options below, and check out securely through Stripe.
       </span>
     ),
   },
