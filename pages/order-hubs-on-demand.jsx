@@ -159,7 +159,7 @@ export default function AffiliateProgramPage() {
             <p className="text-gray-700">
               Choose how many hubs you&apos;d like to have, and we&apos;ll take care of the rest. 
             </p>
-            <div className="mt-8 space-y-4">
+            <div className="mt-8 flex flex-col items-center space-y-4">
               <stripe-buy-button
                 buy-button-id="buy_btn_1NjYOPGAiwY6zSuoV2cONxWL"
                 publishable-key="pk_live_51H51RhGAiwY6zSuoffxrMvDE6GqlWDlPPFSM6ZkJznQY32CTgnMTxDZyysGekts6ttGIqpUHKenu0MdUVyvgKza900ezNceUSp"
