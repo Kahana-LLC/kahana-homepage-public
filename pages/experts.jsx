@@ -18,7 +18,7 @@ const posts = [
     buttonQuote:
       'Order my hubs',
     buttonLink:
-      'https://7hkdcfzbmr0.typeform.com/to/K9srs4OE?utm_source=solutions_page',
+      '/order-hubs-on-demand',
   },
   {
     title: 'Custom Development',
@@ -247,7 +247,7 @@ const ExpertsPage = () => {
         <div className="container mx-auto text-center">
           <h2 className="text-3xl font-bold mb-8 md:px-12 lg:px-24 px-4">Want your own hub but have too much on your plate?</h2>
           <p className="mb-4 px-4">We&apos;ll build one for you. Set up your interview, and we&apos;ll take care of the rest.</p>
-          <Link href="/solutions">
+          <Link href="/order-hubs-on-demand">
             <a className="bg-[#3B675E] text-white py-2 px-6 rounded-md text-center inline-block mx-auto max-w-md">
               Order my hub
             </a>
