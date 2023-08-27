@@ -258,12 +258,14 @@ const EnterprisePage = () => {
         <div className="container mx-auto text-center flex flex-col items-center">
           <h2 className="text-3xl font-bold mb-8 md:px-12 lg:px-24 px-4 mx-auto">Get a demo</h2>
           <p className="mb-4 px-4 mx-auto">Talk to a human to understand how Kahana can help your org.</p>
-          <a
-            href="https://7hkdcfzbmr0.typeform.com/to/ZYLHazEf?utm_content=enterprise_page"
-            className="bg-[#3B675E] text-white py-2 px-6 rounded-md text-center inline-block mx-auto max-w-md"
-          >
-            Request a demo
-          </a>
+          <div className="mx-auto">
+            <a
+              href="https://7hkdcfzbmr0.typeform.com/to/ZYLHazEf?utm_content=enterprise_page"
+              className="bg-[#3B675E] text-white py-2 px-6 rounded-md text-center inline-block mx-auto"
+            >
+              Request a demo
+            </a>
+          </div>
         </div>
       </section>
       
