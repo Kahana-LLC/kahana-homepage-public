@@ -28,6 +28,7 @@ const features = [
     description: (
       <span>
         From there, we&apos;ll take care of the rest! Our team will handle all the asset creation, graphic design, and formatting you don&apos;t want to touch, and we won&apos;t stop making revisions until you are fully satisfied. The end result is that you receive delightful, easily digestible hubs with all of your knowledge that you can charge for access to and use to start generating revenue.
+      </span>
     ),
   },
 ];
