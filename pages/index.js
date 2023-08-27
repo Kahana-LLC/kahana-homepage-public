@@ -73,6 +73,11 @@ export default function Home() {
             `,
           }}
         />
+
+        {/* Stripe button script */}
+        <script async
+          src="https://js.stripe.com/v3/buy-button.js">
+        </script>
       </Head>
       <div>
         <div style={{ zIndex: '1' }} className="sticky top-0">
