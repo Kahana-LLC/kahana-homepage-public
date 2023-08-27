@@ -87,7 +87,7 @@ export default function AffiliateProgramPage() {
               src={OnDemandHub}
               alt="Example of a Created Hub"
               layout="responsive"
-              height={800}
+              height={500}
               objectFit="cover"
               className="hidden md:block"
             />
