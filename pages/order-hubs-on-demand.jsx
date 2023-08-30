@@ -288,9 +288,10 @@ export default function AffiliateProgramPage() {
                 </div>
                 <div className="px-6 pt-6 pb-8 button-container">
                   <stripe-buy-button
-                    buy-button-id="buy_btn_1NjYOPGAiwY6zSuoV2cONxWL"
+                    buy-button-id="buy_btn_1NkxmGGAiwY6zSuojyFKZJ89"
                     publishable-key="pk_live_51H51RhGAiwY6zSuoffxrMvDE6GqlWDlPPFSM6ZkJznQY32CTgnMTxDZyysGekts6ttGIqpUHKenu0MdUVyvgKza900ezNceUSp"
-                  ></stripe-buy-button>
+                  >
+                  </stripe-buy-button>
                 </div>
               </div>
               <div className="divide-y divide-gray-200 rounded-lg border border-gray-200 shadow-sm">
