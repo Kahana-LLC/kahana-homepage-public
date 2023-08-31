@@ -96,7 +96,7 @@ const faqs = [
 function StripeBuyButton1() {
   return (
     <stripe-buy-button
-      buy-button-id="buy_btn_1NjYOPGAiwY6zSuoV2cONxWL"
+      buy-button-id="buy_btn_1NkxmGGAiwY6zSuojyFKZJ89"
       publishable-key="pk_live_51H51RhGAiwY6zSuoffxrMvDE6GqlWDlPPFSM6ZkJznQY32CTgnMTxDZyysGekts6ttGIqpUHKenu0MdUVyvgKza900ezNceUSp"
     >
     </stripe-buy-button>
@@ -139,12 +139,32 @@ export default function AffiliateProgramPage() {
   };
 
   useEffect(() => {
-    gr('track', 'conversion', { email: "email@example.com" });
+    const handleStripeButtonClicked = () => {
+      // Get the email input element
+      const emailInput = document.querySelector('#email');
+  
+      // Get the email value
+      const email = emailInput.value;
+  
+      // Track the conversion with the captured email value
+      gr('track', 'conversion', { email });
+  
+      // You can also log the email value to verify
+      console.log('Email:', email);
+    };
+    // Attach a click event listener to the Stripe button
+    const stripeButton = document.querySelector('stripe-buy-button');
+    stripeButton.addEventListener('click', handleStripeButtonClicked);
     
     if (typeof window !== 'undefined') {
       const viewportWidth = window.innerWidth || document.documentElement.clientWidth;
       setShowImage(viewportWidth > 1150);
     }
+    
+    // Remove the click event listener when the component unmounts
+    return () => {
+      stripeButton.removeEventListener('click', handleStripeButtonClicked);
+    };
   }, []);
 
   return (
