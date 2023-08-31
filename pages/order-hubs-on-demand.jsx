@@ -93,6 +93,15 @@ const faqs = [
   },
 ];
 
+function StripeBuyButton1() {
+  return (
+    <stripe-buy-button
+      buy-button-id="buy_btn_1NkxmGGAiwY6zSuojyFKZJ89"
+      publishable-key="pk_live_51H51RhGAiwY6zSuoffxrMvDE6GqlWDlPPFSM6ZkJznQY32CTgnMTxDZyysGekts6ttGIqpUHKenu0MdUVyvgKza900ezNceUSp"
+    ></stripe-buy-button>
+  );
+}
+
 export default function AffiliateProgramPage() {
   const [showImage, setShowImage] = useState(false);
   const [activeIndex, setActiveIndex] = useState(null);
@@ -102,6 +111,8 @@ export default function AffiliateProgramPage() {
   };
 
   useEffect(() => {
+    gr('track', 'conversion', { email: "email@example.com" });
+    
     if (typeof window !== 'undefined') {
       const viewportWidth = window.innerWidth || document.documentElement.clientWidth;
       setShowImage(viewportWidth > 1150);
@@ -307,11 +318,7 @@ export default function AffiliateProgramPage() {
                   </p>
                 </div>
                 <div className="px-6 pt-6 pb-8 button-container">
-                  <stripe-buy-button
-                    buy-button-id="buy_btn_1NkxmGGAiwY6zSuojyFKZJ89"
-                    publishable-key="pk_live_51H51RhGAiwY6zSuoffxrMvDE6GqlWDlPPFSM6ZkJznQY32CTgnMTxDZyysGekts6ttGIqpUHKenu0MdUVyvgKza900ezNceUSp"
-                  >
-                  </stripe-buy-button>
+                  <StripeBuyButton1 />
                 </div>
               </div>
               <div className="divide-y divide-gray-200 rounded-lg border border-gray-200 shadow-sm">
