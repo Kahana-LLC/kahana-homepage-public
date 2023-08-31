@@ -96,7 +96,7 @@ const faqs = [
 function StripeBuyButton1() {
   return (
     <stripe-buy-button
-      buy-button-id="buy_btn_1NkxmGGAiwY6zSuojyFKZJ89"
+      buy-button-id="buy_btn_1NjYOPGAiwY6zSuoV2cONxWL"
       publishable-key="pk_live_51H51RhGAiwY6zSuoffxrMvDE6GqlWDlPPFSM6ZkJznQY32CTgnMTxDZyysGekts6ttGIqpUHKenu0MdUVyvgKza900ezNceUSp"
     >
     </stripe-buy-button>
