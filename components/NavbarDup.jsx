@@ -147,6 +147,13 @@ function NavBar() {
                     </Link>
                   </button>
                   <button className="dropdown-button">
+                    <Link href="/order-hubs-on-demand">
+                      <li>
+                        Order hubs on-demand
+                      </li>
+                    </Link>
+                  </button>
+                  <button className="dropdown-button">
                     <Link href="/affiliates">
                       <li>
                         Become an affiliate
@@ -338,6 +345,11 @@ function NavBar() {
                   <li>
                     <Link href="/experts" className="dropdown-link">
                       For Experts
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/order-hubs-on-demand" className="dropdown-link">
+                      Order hubs on-demand
                     </Link>
                   </li>
                   <li>
