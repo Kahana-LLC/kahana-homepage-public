@@ -96,7 +96,35 @@ const faqs = [
 function StripeBuyButton1() {
   return (
     <stripe-buy-button
-      buy-button-id="buy_btn_1NkxmGGAiwY6zSuojyFKZJ89"
+      buy-button-id="buy_btn_1NjYOPGAiwY6zSuoV2cONxWL"
+      publishable-key="pk_live_51H51RhGAiwY6zSuoffxrMvDE6GqlWDlPPFSM6ZkJznQY32CTgnMTxDZyysGekts6ttGIqpUHKenu0MdUVyvgKza900ezNceUSp"
+    >
+    </stripe-buy-button>
+  );
+}
+
+function StripeBuyButton2() {
+  return (
+    <stripe-buy-button
+      buy-button-id="buy_btn_1NjYWeGAiwY6zSuoJeliMzWI"
+      publishable-key="pk_live_51H51RhGAiwY6zSuoffxrMvDE6GqlWDlPPFSM6ZkJznQY32CTgnMTxDZyysGekts6ttGIqpUHKenu0MdUVyvgKza900ezNceUSp"
+    ></stripe-buy-button>
+  );
+}
+
+function StripeBuyButton3() {
+  return (
+     <stripe-buy-button
+        buy-button-id="buy_btn_1NjYXRGAiwY6zSuojH6QtbY7"
+        publishable-key="pk_live_51H51RhGAiwY6zSuoffxrMvDE6GqlWDlPPFSM6ZkJznQY32CTgnMTxDZyysGekts6ttGIqpUHKenu0MdUVyvgKza900ezNceUSp"
+     ></stripe-buy-button>
+  );
+}
+
+function StripeBuyButton4() {
+  return (
+    <stripe-buy-button
+      buy-button-id="buy_btn_1NjYXtGAiwY6zSuou9GIordG"
       publishable-key="pk_live_51H51RhGAiwY6zSuoffxrMvDE6GqlWDlPPFSM6ZkJznQY32CTgnMTxDZyysGekts6ttGIqpUHKenu0MdUVyvgKza900ezNceUSp"
     ></stripe-buy-button>
   );
@@ -336,10 +364,7 @@ export default function AffiliateProgramPage() {
                   </p>
                 </div>
                 <div className="px-6 pt-6 pb-8 button-container">
-                  <stripe-buy-button
-                    buy-button-id="buy_btn_1NjYWeGAiwY6zSuoJeliMzWI"
-                    publishable-key="pk_live_51H51RhGAiwY6zSuoffxrMvDE6GqlWDlPPFSM6ZkJznQY32CTgnMTxDZyysGekts6ttGIqpUHKenu0MdUVyvgKza900ezNceUSp"
-                  ></stripe-buy-button>
+                  <StripeBuyButton2 />
                 </div>
               </div>
               <div className="divide-y divide-gray-200 rounded-lg border border-gray-200 shadow-sm">
@@ -357,10 +382,7 @@ export default function AffiliateProgramPage() {
                   </p>
                 </div>
                 <div className="px-6 pt-6 pb-8 button-container">
-                   <stripe-buy-button
-                    buy-button-id="buy_btn_1NjYXRGAiwY6zSuojH6QtbY7"
-                    publishable-key="pk_live_51H51RhGAiwY6zSuoffxrMvDE6GqlWDlPPFSM6ZkJznQY32CTgnMTxDZyysGekts6ttGIqpUHKenu0MdUVyvgKza900ezNceUSp"
-                  ></stripe-buy-button>
+                  <StripeBuyButton3 />
                 </div>
               </div>
               <div className="divide-y divide-gray-200 rounded-lg border border-gray-200 shadow-sm">
@@ -378,10 +400,7 @@ export default function AffiliateProgramPage() {
                   </p>
                 </div>
                 <div className="px-6 pt-6 pb-8 button-container">
-                  <stripe-buy-button
-                    buy-button-id="buy_btn_1NjYXtGAiwY6zSuou9GIordG"
-                    publishable-key="pk_live_51H51RhGAiwY6zSuoffxrMvDE6GqlWDlPPFSM6ZkJznQY32CTgnMTxDZyysGekts6ttGIqpUHKenu0MdUVyvgKza900ezNceUSp"
-                  ></stripe-buy-button>
+                  <StripeBuyButton4 />
                 </div>
               </div>
             </div>
