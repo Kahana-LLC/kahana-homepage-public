@@ -250,7 +250,95 @@ export default function AffiliateProgramPage() {
               </div>
             </div>
           </div>
-        </section> 
+        </section>
+        
+        {/* CTA section */}
+        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+          <div className="max-w-7xl mx-auto text-center">
+            <h2 className="text-3xl font-bold mb-4 text-gray-900">
+              Turn your knowledge into revenue
+            </h2>
+            <p className="text-gray-700">
+              Choose how many hubs you&apos;d like to have, and we&apos;ll take care of the rest. 
+            </p>
+            <div className="mt-4 space-y-4 sm:mt-6 md:grid md:grid-cols-2 md:gap-6 md:space-y-0 lg:mx-auto lg:max-w-4xl xl:mx-0 xl:max-w-none xl:grid-cols-2">
+              {/* Start adding different pricing plans from here  */}
+              <div className="divide-y divide-gray-200 rounded-lg border border-gray-200 shadow-sm">
+                <div className="p-6">
+                  <h2 className="text-lg font-medium leading-6 text-[#038270]">
+                    1 Hub
+                  </h2>
+                  <p className="mt-8">
+                    <span className="text-4xl font-bold tracking-tight text-[#038270]">
+                      $4,000
+                    </span>{' '}
+                    <span className="text-base font-medium text-gray-500">
+                      /hub
+                    </span>
+                  </p>
+                </div>
+                <div className="px-6 pt-6 pb-8 button-container">
+                  <StripeBuyButton1 />
+                </div>
+              </div>
+              <div className="divide-y divide-gray-200 rounded-lg border border-gray-200 shadow-sm">
+                <div className="p-6">
+                  <h2 className="text-lg font-medium leading-6 text-[#038270]">
+                    2 Hubs
+                  </h2>
+                  <p className="mt-8">
+                    <span className="text-4xl font-bold tracking-tight text-[#038270]">
+                      $3,500
+                    </span>{' '}
+                    <span className="text-base font-medium text-gray-500">
+                      /hub
+                    </span>
+                  </p>
+                </div>
+                <div className="px-6 pt-6 pb-8 button-container">
+                  <StripeBuyButton2 />
+                </div>
+              </div>
+              <div className="divide-y divide-gray-200 rounded-lg border border-gray-200 shadow-sm">
+                <div className="p-6">
+                  <h2 className="text-lg font-medium leading-6 text-[#038270]">
+                    3 Hubs
+                  </h2>
+                  <p className="mt-8">
+                    <span className="text-4xl font-bold tracking-tight text-[#038270]">
+                      $3,000
+                    </span>{' '}
+                    <span className="text-base font-medium text-gray-500">
+                      /hub
+                    </span>
+                  </p>
+                </div>
+                <div className="px-6 pt-6 pb-8 button-container">
+                  <StripeBuyButton3 />
+                </div>
+              </div>
+              <div className="divide-y divide-gray-200 rounded-lg border border-gray-200 shadow-sm">
+                <div className="p-6">
+                  <h2 className="text-lg font-medium leading-6 text-[#038270]">
+                    4 Hubs (Best Value)
+                  </h2>
+                  <p className="mt-8">
+                    <span className="text-4xl font-bold tracking-tight text-[#038270]">
+                      $2,500
+                    </span>{' '}
+                    <span className="text-base font-medium text-gray-500">
+                      /hub
+                    </span>
+                  </p>
+                </div>
+                <div className="px-6 pt-6 pb-8 button-container">
+                  <StripeBuyButton4 />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        
         {/* How it works section */}
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-100">
           <div className="max-w-7xl mx-auto">
