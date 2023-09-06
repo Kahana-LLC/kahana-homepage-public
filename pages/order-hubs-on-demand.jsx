@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import Head from 'next/head';
 import Footer from '../components/Footer';
 import NavbarDup from '../components/NavbarDup';
@@ -130,7 +131,7 @@ function StripeBuyButton4() {
 }
 
 export default function AffiliateProgramPage() {
- {/* const [showImage, setShowImage] = useState(false);
+  const [showImage, setShowImage] = useState(false);
   const [activeIndex, setActiveIndex] = useState(null);
 
   const toggleAccordion = (index) => {
@@ -139,7 +140,7 @@ export default function AffiliateProgramPage() {
 
   //gr('track', 'conversion', { email: "email@example.com" });
 
-    useEffect(() => {
+  {/* useEffect(() => {
     const handleStripeButtonClicked = () => {
       // Get the email input element
       const emailInput = document.querySelector('#email');
