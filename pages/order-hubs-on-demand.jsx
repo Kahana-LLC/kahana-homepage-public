@@ -254,7 +254,7 @@ export default function AffiliateProgramPage() {
         </section>
         
         {/* CTA section */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#E9F4E9]">
+        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
           <div className="max-w-7xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-4 text-gray-900">
               Turn your knowledge into revenue
