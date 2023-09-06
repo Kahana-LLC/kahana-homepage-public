@@ -93,40 +93,47 @@ const faqs = [
   },
 ];
 
-function StripeBuyButton1() {
-  return (
-    <stripe-buy-button
-      buy-button-id="buy_btn_1NjYOPGAiwY6zSuoV2cONxWL"
-      publishable-key="pk_live_51H51RhGAiwY6zSuoffxrMvDE6GqlWDlPPFSM6ZkJznQY32CTgnMTxDZyysGekts6ttGIqpUHKenu0MdUVyvgKza900ezNceUSp"
-    >
-    </stripe-buy-button>
-  );
-}
+function BuyButton({ buttonLabel, emailPlaceholder, stripeLink }) {
+  const [email, setEmail] = useState('');
+  const [isEmailValid, setIsEmailValid] = useState(true);
 
-function StripeBuyButton2() {
-  return (
-    <stripe-buy-button
-      buy-button-id="buy_btn_1NjYWeGAiwY6zSuoJeliMzWI"
-      publishable-key="pk_live_51H51RhGAiwY6zSuoffxrMvDE6GqlWDlPPFSM6ZkJznQY32CTgnMTxDZyysGekts6ttGIqpUHKenu0MdUVyvgKza900ezNceUSp"
-    ></stripe-buy-button>
-  );
-}
+  const handleButtonClick = () => {
+    if (!email || !isValidEmail(email)) {
+      setIsEmailValid(false);
+      return;
+    }
 
-function StripeBuyButton3() {
-  return (
-     <stripe-buy-button
-        buy-button-id="buy_btn_1NjYXRGAiwY6zSuojH6QtbY7"
-        publishable-key="pk_live_51H51RhGAiwY6zSuoffxrMvDE6GqlWDlPPFSM6ZkJznQY32CTgnMTxDZyysGekts6ttGIqpUHKenu0MdUVyvgKza900ezNceUSp"
-     ></stripe-buy-button>
-  );
-}
+    // Track the conversion with the captured email value
+    gr('track', 'conversion', { email });
 
-function StripeBuyButton4() {
+    // Redirect to the Stripe link
+    window.location.href = stripeLink;
+  };
+
+  const isValidEmail = (value) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(value);
+  };
+
   return (
-    <stripe-buy-button
-      buy-button-id="buy_btn_1NjYXtGAiwY6zSuou9GIordG"
-      publishable-key="pk_live_51H51RhGAiwY6zSuoffxrMvDE6GqlWDlPPFSM6ZkJznQY32CTgnMTxDZyysGekts6ttGIqpUHKenu0MdUVyvgKza900ezNceUSp"
-    ></stripe-buy-button>
+    <div>
+      <input
+        type="email"
+        placeholder={emailPlaceholder}
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        className={`border p-2 mb-2 ${isEmailValid ? '' : 'border-red-500'}`}
+      />
+      {!isEmailValid && (
+        <p className="text-black">Please enter a valid email.</p>
+      )}
+      <button
+        onClick={handleButtonClick}
+        className="px-6 py-2 bg-[#3B675E] text-white rounded-md shadow-md"
+      >
+        {buttonLabel}
+      </button>
+    </div>
   );
 }
 
@@ -279,7 +286,11 @@ export default function AffiliateProgramPage() {
                   </p>
                 </div>
                 <div className="px-6 pt-6 pb-8 button-container">
-                  <StripeBuyButton1 />
+                  <BuyButton
+                    buttonLabel="Order 1 Hub"
+                    emailPlaceholder="Enter your email"
+                    stripeLink="https://buy.stripe.com/fZe02batYc5oejK4gg"
+                  />
                 </div>
               </div>
               <div className="divide-y divide-gray-200 rounded-lg border border-gray-200 shadow-sm">
@@ -297,7 +308,11 @@ export default function AffiliateProgramPage() {
                   </p>
                 </div>
                 <div className="px-6 pt-6 pb-8 button-container">
-                  <StripeBuyButton2 />
+                  <BuyButton
+                    buttonLabel="Order 2 Hubs"
+                    emailPlaceholder="Enter your email"
+                    stripeLink="https://buy.stripe.com/3cs3en31w1qK6RicMN"
+                  />
                 </div>
               </div>
               <div className="divide-y divide-gray-200 rounded-lg border border-gray-200 shadow-sm">
@@ -315,7 +330,11 @@ export default function AffiliateProgramPage() {
                   </p>
                 </div>
                 <div className="px-6 pt-6 pb-8 button-container">
-                  <StripeBuyButton3 />
+                  <BuyButton
+                    buttonLabel="Order 3 Hubs"
+                    emailPlaceholder="Enter your email"
+                    stripeLink="https://buy.stripe.com/3csbKT0To1qK4JadQS"
+                  />
                 </div>
               </div>
               <div className="divide-y divide-gray-200 rounded-lg border border-gray-200 shadow-sm">
@@ -333,7 +352,11 @@ export default function AffiliateProgramPage() {
                   </p>
                 </div>
                 <div className="px-6 pt-6 pb-8 button-container">
-                  <StripeBuyButton4 />
+                  <BuyButton
+                    buttonLabel="Order 4 Hubs"
+                    emailPlaceholder="Enter your email"
+                    stripeLink="https://buy.stripe.com/bIY3en45A7P83F6aEH"
+                  />
                 </div>
               </div>
             </div>
@@ -430,6 +453,7 @@ export default function AffiliateProgramPage() {
             </div>
           </div>
         </section>
+        
         {/* CTA section */}
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
           <div className="max-w-7xl mx-auto text-center">
@@ -456,7 +480,11 @@ export default function AffiliateProgramPage() {
                   </p>
                 </div>
                 <div className="px-6 pt-6 pb-8 button-container">
-                  <StripeBuyButton1 />
+                  <BuyButton
+                    buttonLabel="Order 1 Hub"
+                    emailPlaceholder="Enter your email"
+                    stripeLink="https://buy.stripe.com/fZe02batYc5oejK4gg"
+                  />
                 </div>
               </div>
               <div className="divide-y divide-gray-200 rounded-lg border border-gray-200 shadow-sm">
@@ -474,7 +502,11 @@ export default function AffiliateProgramPage() {
                   </p>
                 </div>
                 <div className="px-6 pt-6 pb-8 button-container">
-                  <StripeBuyButton2 />
+                  <BuyButton
+                    buttonLabel="Order 2 Hubs"
+                    emailPlaceholder="Enter your email"
+                    stripeLink="https://buy.stripe.com/3cs3en31w1qK6RicMN"
+                  />
                 </div>
               </div>
               <div className="divide-y divide-gray-200 rounded-lg border border-gray-200 shadow-sm">
@@ -492,7 +524,11 @@ export default function AffiliateProgramPage() {
                   </p>
                 </div>
                 <div className="px-6 pt-6 pb-8 button-container">
-                  <StripeBuyButton3 />
+                  <BuyButton
+                    buttonLabel="Order 3 Hubs"
+                    emailPlaceholder="Enter your email"
+                    stripeLink="https://buy.stripe.com/3csbKT0To1qK4JadQS"
+                  />
                 </div>
               </div>
               <div className="divide-y divide-gray-200 rounded-lg border border-gray-200 shadow-sm">
@@ -510,12 +546,17 @@ export default function AffiliateProgramPage() {
                   </p>
                 </div>
                 <div className="px-6 pt-6 pb-8 button-container">
-                  <StripeBuyButton4 />
+                  <BuyButton
+                    buttonLabel="Order 4 Hubs"
+                    emailPlaceholder="Enter your email"
+                    stripeLink="https://buy.stripe.com/bIY3en45A7P83F6aEH"
+                  />
                 </div>
               </div>
             </div>
           </div>
         </section>
+        
         {/* Become an affiliate section */}
         <section className={`py-16 px-4 sm:px-6 lg:px-8 bg-[#E9F4E9]`}>
           <div className="max-w-7xl mx-auto text-center">
