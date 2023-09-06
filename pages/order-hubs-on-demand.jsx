@@ -224,7 +224,7 @@ export default function AffiliateProgramPage() {
             </p>
             <div className="mt-8">
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <a href="https://app.kahana.co/hub/tHwAYvYPzqVwGPGzh10k" target="_blank" rel="noopener noreferrer">
+                <a href="https://app.kahana.co/hub/TEdBTfY10Dd9H7QIBgQc" target="_blank" rel="noopener noreferrer">
                   <Image
                     src={OnDemandHub}
                     alt="Kahana Hub"
