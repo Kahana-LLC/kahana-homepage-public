@@ -121,13 +121,13 @@ function BuyButton({ buttonLabel, emailPlaceholder, stripeLink }) {
 
   return (
     <div>
-      <div className={`mb-2 ${isEmailValid ? '' : 'border-red-500 rounded-md'}`}>
+      <div className={`mb-2 ${isEmailValid ? '' : 'border-black rounded-md'}`}>
         <input
           type="email"
           placeholder={emailPlaceholder}
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="border p-2 w-full"
+          className="border p-2 w-full rounded-md"
         />
         {!isEmailValid && (
           <p className="text-red-500">Please enter a valid email.</p>
