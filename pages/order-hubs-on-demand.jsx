@@ -74,7 +74,7 @@ const faqs = [
   },
   {
     question: 'How do I order my hubs?',
-    answer: 'You can order 1, 2, 3, or 4 hubs. Simply navigate to either one of the \\"Turn your knowledge into revenue\\" sections of this page, enter your email under 1, 2, 3, or 4 hubs, and then click the \\"Proceed to checkout\\" button. From there, you will be taken to a secure payment portal through Stripe where you can complete your order.',
+    answer: 'You can order 1, 2, 3, or 4 hubs. Simply navigate to either one of the \"Turn your knowledge into revenue\" sections of this page, enter your email under 1, 2, 3, or 4 hubs, and then click the \"Proceed to checkout\" button. From there, you will be taken to a secure payment portal through Stripe where you can complete your order.',
   },
   {
     question: 'What happens after I receive my hubs?',
