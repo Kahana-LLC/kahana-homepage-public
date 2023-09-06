@@ -261,9 +261,9 @@ export default function AffiliateProgramPage() {
                 </div>
                 <div className="px-6 pt-6 pb-8 button-container">
                   <BuyButton
-                    buttonLabel="Order 1 Hub"
+                    buttonLabel="Order Now"
                     emailPlaceholder="Enter your email"
-                    stripeLink="https://buy.stripe.com/fZe02batYc5oejK4gg"
+                    stripeLink="https://buy.stripe.com/28o6qz1Xs0mG2B2004"
                   />
                 </div>
               </div>
@@ -283,7 +283,7 @@ export default function AffiliateProgramPage() {
                 </div>
                 <div className="px-6 pt-6 pb-8 button-container">
                   <BuyButton
-                    buttonLabel="Order 2 Hubs"
+                    buttonLabel="Order Now"
                     emailPlaceholder="Enter your email"
                     stripeLink="https://buy.stripe.com/3cs3en31w1qK6RicMN"
                   />
@@ -305,7 +305,7 @@ export default function AffiliateProgramPage() {
                 </div>
                 <div className="px-6 pt-6 pb-8 button-container">
                   <BuyButton
-                    buttonLabel="Order 3 Hubs"
+                    buttonLabel="Order Now"
                     emailPlaceholder="Enter your email"
                     stripeLink="https://buy.stripe.com/3csbKT0To1qK4JadQS"
                   />
@@ -327,7 +327,7 @@ export default function AffiliateProgramPage() {
                 </div>
                 <div className="px-6 pt-6 pb-8 button-container">
                   <BuyButton
-                    buttonLabel="Order 4 Hubs"
+                    buttonLabel="Order Now"
                     emailPlaceholder="Enter your email"
                     stripeLink="https://buy.stripe.com/bIY3en45A7P83F6aEH"
                   />
@@ -455,9 +455,9 @@ export default function AffiliateProgramPage() {
                 </div>
                 <div className="px-6 pt-6 pb-8 button-container">
                   <BuyButton
-                    buttonLabel="Order 1 Hub"
+                    buttonLabel="Order Now"
                     emailPlaceholder="Enter your email"
-                    stripeLink="https://buy.stripe.com/fZe02batYc5oejK4gg"
+                    stripeLink="https://buy.stripe.com/28o6qz1Xs0mG2B2004"
                   />
                 </div>
               </div>
@@ -477,7 +477,7 @@ export default function AffiliateProgramPage() {
                 </div>
                 <div className="px-6 pt-6 pb-8 button-container">
                   <BuyButton
-                    buttonLabel="Order 2 Hubs"
+                    buttonLabel="Order Now"
                     emailPlaceholder="Enter your email"
                     stripeLink="https://buy.stripe.com/3cs3en31w1qK6RicMN"
                   />
@@ -499,7 +499,7 @@ export default function AffiliateProgramPage() {
                 </div>
                 <div className="px-6 pt-6 pb-8 button-container">
                   <BuyButton
-                    buttonLabel="Order 3 Hubs"
+                    buttonLabel="Order Now"
                     emailPlaceholder="Enter your email"
                     stripeLink="https://buy.stripe.com/3csbKT0To1qK4JadQS"
                   />
@@ -521,7 +521,7 @@ export default function AffiliateProgramPage() {
                 </div>
                 <div className="px-6 pt-6 pb-8 button-container">
                   <BuyButton
-                    buttonLabel="Order 4 Hubs"
+                    buttonLabel="Order Now"
                     emailPlaceholder="Enter your email"
                     stripeLink="https://buy.stripe.com/bIY3en45A7P83F6aEH"
                   />
