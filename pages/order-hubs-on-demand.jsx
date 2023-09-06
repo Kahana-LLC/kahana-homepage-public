@@ -267,7 +267,7 @@ export default function AffiliateProgramPage() {
                   <BuyButton
                     buttonLabel="Proceed to checkout"
                     emailPlaceholder="Enter your email"
-                    stripeLink="https://buy.stripe.com/28o6qz1Xs0mG2B2004"
+                    stripeLink="https://buy.stripe.com/fZe02batYc5oejK4gg"
                   />
                 </div>
               </div>
@@ -461,7 +461,7 @@ export default function AffiliateProgramPage() {
                   <BuyButton
                     buttonLabel="Proceed to checkout"
                     emailPlaceholder="Enter your email"
-                    stripeLink="https://buy.stripe.com/28o6qz1Xs0mG2B2004"
+                    stripeLink="https://buy.stripe.com/fZe02batYc5oejK4gg"
                   />
                 </div>
               </div>
