@@ -117,7 +117,7 @@ function BuyButton({ buttonLabel, emailPlaceholder, stripeLink }) {
 
   return (
     <div>
-      <div className={`mb-2 ${isEmailValid ? '' : 'border-red-500'}`}>
+      <div className={`mb-2 ${isEmailValid ? '' : 'border-red-500 rounded-md'}`}>
         <input
           type="email"
           placeholder={emailPlaceholder}
