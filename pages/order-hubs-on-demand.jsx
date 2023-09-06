@@ -73,6 +73,10 @@ const faqs = [
     ),
   },
   {
+    question: 'How do I order my hubs?',
+    answer: 'You can order 1, 2, 3, or 4 hubs. Simply navigate to either one of the \\"Turn your knowledge into revenue\\" sections of this page, enter your email under 1, 2, 3, or 4 hubs, and then click the \\"Proceed to checkout\\" button. From there, you will be taken to a secure payment portal through Stripe where you can complete your order.',
+  },
+  {
     question: 'What happens after I receive my hubs?',
     answer: (
       <span>
@@ -261,7 +265,7 @@ export default function AffiliateProgramPage() {
                 </div>
                 <div className="px-6 pt-6 pb-8 button-container">
                   <BuyButton
-                    buttonLabel="Order Now"
+                    buttonLabel="Proceed to checkout"
                     emailPlaceholder="Enter your email"
                     stripeLink="https://buy.stripe.com/28o6qz1Xs0mG2B2004"
                   />
@@ -283,7 +287,7 @@ export default function AffiliateProgramPage() {
                 </div>
                 <div className="px-6 pt-6 pb-8 button-container">
                   <BuyButton
-                    buttonLabel="Order Now"
+                    buttonLabel="Proceed to checkout"
                     emailPlaceholder="Enter your email"
                     stripeLink="https://buy.stripe.com/3cs3en31w1qK6RicMN"
                   />
@@ -305,7 +309,7 @@ export default function AffiliateProgramPage() {
                 </div>
                 <div className="px-6 pt-6 pb-8 button-container">
                   <BuyButton
-                    buttonLabel="Order Now"
+                    buttonLabel="Proceed to checkout"
                     emailPlaceholder="Enter your email"
                     stripeLink="https://buy.stripe.com/3csbKT0To1qK4JadQS"
                   />
@@ -327,7 +331,7 @@ export default function AffiliateProgramPage() {
                 </div>
                 <div className="px-6 pt-6 pb-8 button-container">
                   <BuyButton
-                    buttonLabel="Order Now"
+                    buttonLabel="Proceed to checkout"
                     emailPlaceholder="Enter your email"
                     stripeLink="https://buy.stripe.com/bIY3en45A7P83F6aEH"
                   />
@@ -455,7 +459,7 @@ export default function AffiliateProgramPage() {
                 </div>
                 <div className="px-6 pt-6 pb-8 button-container">
                   <BuyButton
-                    buttonLabel="Order Now"
+                    buttonLabel="Proceed to checkout"
                     emailPlaceholder="Enter your email"
                     stripeLink="https://buy.stripe.com/28o6qz1Xs0mG2B2004"
                   />
@@ -477,7 +481,7 @@ export default function AffiliateProgramPage() {
                 </div>
                 <div className="px-6 pt-6 pb-8 button-container">
                   <BuyButton
-                    buttonLabel="Order Now"
+                    buttonLabel="Proceed to checkout"
                     emailPlaceholder="Enter your email"
                     stripeLink="https://buy.stripe.com/3cs3en31w1qK6RicMN"
                   />
@@ -499,7 +503,7 @@ export default function AffiliateProgramPage() {
                 </div>
                 <div className="px-6 pt-6 pb-8 button-container">
                   <BuyButton
-                    buttonLabel="Order Now"
+                    buttonLabel="Proceed to checkout"
                     emailPlaceholder="Enter your email"
                     stripeLink="https://buy.stripe.com/3csbKT0To1qK4JadQS"
                   />
@@ -521,7 +525,7 @@ export default function AffiliateProgramPage() {
                 </div>
                 <div className="px-6 pt-6 pb-8 button-container">
                   <BuyButton
-                    buttonLabel="Order Now"
+                    buttonLabel="Proceed to checkout"
                     emailPlaceholder="Enter your email"
                     stripeLink="https://buy.stripe.com/bIY3en45A7P83F6aEH"
                   />
