@@ -235,7 +235,7 @@ export default function AffiliateProgramPage() {
               Want to turn your knowledge into digital assets but don&apos;t have the time or energy?
             </h1>
             <p className="text-lg mb-8 md:px-12 lg:px-24">
-              We&apos;ve got you covered. We&apos;ll build Kahana hubs for you so that you can start earning passive income: It&apos;s like ordering Domino&apos;s for recurring revenue. 
+              We&apos;ve got you covered. We&apos;ll build Kahana hubs for you so that you can start earning passive income: it&apos;s like ordering Domino&apos;s for recurring revenue. 
             </p>
             <div className="mt-8">
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
@@ -254,7 +254,7 @@ export default function AffiliateProgramPage() {
         </section>
         
         {/* CTA section */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#E9F4E9]">
           <div className="max-w-7xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-4 text-gray-900">
               Turn your knowledge into revenue
@@ -517,7 +517,7 @@ export default function AffiliateProgramPage() {
           </div>
         </section>
         {/* Become an affiliate section */}
-        <section className={`py-16 px-4 sm:px-6 lg:px-8 bg-white`}>
+        <section className={`py-16 px-4 sm:px-6 lg:px-8 bg-[#E9F4E9]`}>
           <div className="max-w-7xl mx-auto text-center">
             <h2 className={`text-3xl font-bold text-gray-900`}>
               Become an affiliate
