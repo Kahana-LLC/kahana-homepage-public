@@ -117,22 +117,26 @@ function BuyButton({ buttonLabel, emailPlaceholder, stripeLink }) {
 
   return (
     <div>
-      <input
-        type="email"
-        placeholder={emailPlaceholder}
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        className={`border p-2 mb-2 ${isEmailValid ? '' : 'border-red-500'}`}
-      />
-      {!isEmailValid && (
-        <p className="text-black">Please enter a valid email.</p>
-      )}
-      <button
-        onClick={handleButtonClick}
-        className="px-6 py-2 bg-[#3B675E] text-white rounded-md shadow-md"
-      >
-        {buttonLabel}
-      </button>
+      <div className={`mb-2 ${isEmailValid ? '' : 'border-red-500'}`}>
+        <input
+          type="email"
+          placeholder={emailPlaceholder}
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          className="border p-2 w-full"
+        />
+        {!isEmailValid && (
+          <p className="text-red-500">Please enter a valid email.</p>
+        )}
+      </div>
+      <div className="mt-2">
+        <button
+          onClick={handleButtonClick}
+          className="w-full px-6 py-2 bg-[#3B675E] text-white rounded-md shadow-md"
+        >
+          {buttonLabel}
+        </button>
+      </div>
     </div>
   );
 }
@@ -144,36 +148,6 @@ export default function AffiliateProgramPage() {
   const toggleAccordion = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
-
-  //gr('track', 'conversion', { email: "email@example.com" });
-
-  {/* useEffect(() => {
-    const handleStripeButtonClicked = () => {
-      // Get the email input element
-      const emailInput = document.querySelector('#email');
-  
-      // Get the email value
-      const email = emailInput.value;
-  
-      // Track the conversion with the captured email value
-  
-      // You can also log the email value to verify
-      console.log('Email:', email);
-    };
-    // Attach a click event listener to the Stripe button
-    const stripeButton = document.querySelector('stripe-buy-button');
-    stripeButton.addEventListener('click', handleStripeButtonClicked);
-    
-    if (typeof window !== 'undefined') {
-      const viewportWidth = window.innerWidth || document.documentElement.clientWidth;
-      setShowImage(viewportWidth > 1150);
-    }
-    
-    // Remove the click event listener when the component unmounts
-    return () => {
-      stripeButton.removeEventListener('click', handleStripeButtonClicked);
-    };
-  }, []); */}
 
   return (
     <>
