@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Footer from '../components/Footer';
 import NavbarDup from '../components/NavbarDup';
@@ -131,14 +130,16 @@ function StripeBuyButton4() {
 }
 
 export default function AffiliateProgramPage() {
-  const [showImage, setShowImage] = useState(false);
+ {/* const [showImage, setShowImage] = useState(false);
   const [activeIndex, setActiveIndex] = useState(null);
 
   const toggleAccordion = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
-  useEffect(() => {
+  //gr('track', 'conversion', { email: "email@example.com" });
+
+    useEffect(() => {
     const handleStripeButtonClicked = () => {
       // Get the email input element
       const emailInput = document.querySelector('#email');
@@ -147,7 +148,6 @@ export default function AffiliateProgramPage() {
       const email = emailInput.value;
   
       // Track the conversion with the captured email value
-      gr('track', 'conversion', { email });
   
       // You can also log the email value to verify
       console.log('Email:', email);
@@ -165,7 +165,7 @@ export default function AffiliateProgramPage() {
     return () => {
       stripeButton.removeEventListener('click', handleStripeButtonClicked);
     };
-  }, []);
+  }, []); */}
 
   return (
     <>
@@ -226,28 +226,29 @@ export default function AffiliateProgramPage() {
         <div className="sticky top-0 z-50">
           <NavbarDup />
         </div>
-       {showImage && (
-          <section className="relative py-0 px-0 sm:px-0 lg:px-0 bg-white">
-            <div className="flex justify-center">
-              <Image
-                src={OnDemandHub}
-                alt="Example of a Finished Hub"
-                layout="fixed"
-                height={500}
-                className="hidden md:block"
-              />
-            </div>
-          </section>
-        )}
+
         {/* Hero section */}
-        <section className={`py-16 px-4 sm:px-6 lg:px-8 bg-white ${showImage ? 'mt-0' : 'mt-4'}`}>
-          <div className="max-w-7xl mx-auto text-center" style={{ padding: showImage ? '0' : '2rem 0' }}>
-            <h2 className={`text-3xl font-bold ${showImage ? 'mb-2' : 'mb-4'} text-gray-900`}>
+        <section className="py-16 md:py-18">
+          <div className="container mx-auto px-4 md:px-8 text-center">
+            <h1 className="text-5xl font-bold mb-4 md:px-12 lg:px-24">
               Want to turn your knowledge into digital assets but don&apos;t have the time or energy?
-            </h2>
-            <p className="text-gray-700">
+            </h1>
+            <p className="text-lg mb-8 md:px-12 lg:px-24">
               We&apos;ve got you covered. We&apos;ll build Kahana hubs for you so that you can start earning passive income: It&apos;s like ordering Domino&apos;s for recurring revenue. 
             </p>
+            <div className="mt-8">
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <a href="https://app.kahana.co/hub/tHwAYvYPzqVwGPGzh10k" target="_blank" rel="noopener noreferrer">
+                  <Image
+                    src={OnDemandHub}
+                    alt="Kahana Hub"
+                    width={750}
+                    height={750}
+                    layout="responsive"
+                  />
+                </a>
+              </div>
+            </div>
           </div>
         </section> 
         {/* How it works section */}
@@ -313,7 +314,7 @@ export default function AffiliateProgramPage() {
           </div>
         </section>
         {/* Testimonial */}
-        <section className="py-16 md:py-18">
+        <section className="py-16 md:py-18 bg-[#E9F4E9]">
           <div className="container mx-auto text-center">
             <h2 className="text-3xl font-bold mb-8">What our clients say</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-4 md:px-0">
