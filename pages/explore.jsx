@@ -7,21 +7,21 @@ import NavbarDup from '../components/NavbarDup';
 //components
 const posts = [
   {
-    title: 'Your Guide to Manifesting Anything',
-    href: 'https://app.kahana.co/hub/nHxv8vCZBv6i0bVPunyp',
-    category: { name: 'Olivia Mancuso', href: 'https://www.tiktok.com/@oliviamancuso__' },
+    title: 'Pinterest Success Session',
+    href: 'https://app.kahana.co/hub/tHwAYvYPzqVwGPGzh10k',
+    category: { name: 'Kelsey Vetter', href: 'https://www.tiktok.com/@kelseyvetterco' },
     description:
-      'This hub is for those who are dipping their toes into manifesting but don\'t want to spend thousands of dollars on a program or retreat to start their journey. Since implementing the manifesting and vision boarding strategies I share in this hub, I went from making $40K a year to consistent 5-figure months, lost 20 lbs in less than 4 months, and more.',
-    //date: 'Mar 16, 2020',
-    //datetime: '2020-03-16',
+      'Are you missing out on the massive potential of the traffic-driving powerhouse, Pinterest? This comprehensive Pinterest Success Session will teach you how to master Pinterest Marketing in less than 1 hour so you can start driving traffic to your website, growing your audience and increasing your sales.',
+    //date: 'Feb 12, 2020',
+    //datetime: '2020-02-12',
     imageUrl:
-      'https://kahana-website-images.s3.us-east-2.amazonaws.com/oliviaMancuso.png',
-    //readingTime: '6 min',
+      'https://kahana-website-images.s3.us-east-2.amazonaws.com/kelseyVetter.png',
+    //readingTime: '11 min',
     //author: {
-      //name: 'Roel Aufderehar',
+      //name: 'Daniela Metz',
       //href: '#',
       //imageUrl:
-        //'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        //'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
     //},
   },
   {
@@ -40,6 +40,42 @@ const posts = [
       //href: '#',
       //imageUrl:
         //'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    //},
+  },
+  {
+    title: 'Your Guide to Manifesting Anything',
+    href: 'https://app.kahana.co/hub/nHxv8vCZBv6i0bVPunyp',
+    category: { name: 'Olivia Mancuso', href: 'https://www.tiktok.com/@oliviamancuso__' },
+    description:
+      'This hub is for those who are dipping their toes into manifesting but don\'t want to spend thousands of dollars on a program or retreat to start their journey. Since implementing the manifesting and vision boarding strategies I share in this hub, I went from making $40K a year to consistent 5-figure months, lost 20 lbs in less than 4 months, and more.',
+    //date: 'Mar 16, 2020',
+    //datetime: '2020-03-16',
+    imageUrl:
+      'https://kahana-website-images.s3.us-east-2.amazonaws.com/oliviaMancuso.png',
+    //readingTime: '6 min',
+    //author: {
+      //name: 'Roel Aufderehar',
+      //href: '#',
+      //imageUrl:
+        //'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    //},
+  },
+  {
+    title: 'How to Work with Influencers 101',
+    href: 'https://app.kahana.co/hub/TEdBTfY10Dd9H7QIBgQc',
+    category: { name: 'Tay Lad: The Corporate Creator', href: 'https://tiktok.com/@thecorporatedogmom' },
+    description:
+      'An ongoing hub of all of the knowledge you need to help your business attract influencers, close brand deals, and avoid serious legal mistakes along the way, created by a corporate lawyer and TikTok creator. Get access to a customizable brand deal contract that protects you, outreach best practices, a checklist of legal do\'s and don\'ts, coaching on what creators look for, and more. DISCLAIMER: Even though I am a lawyer, I am not your lawyer and this does not constitute legal advice.',
+    //date: 'Feb 12, 2020',
+    //datetime: '2020-02-12',
+    imageUrl:
+      'https://kahana-website-images.s3.us-east-2.amazonaws.com/tayLadd.png',
+    //readingTime: '11 min',
+    //author: {
+      //name: 'Daniela Metz',
+      //href: '#',
+      //imageUrl:
+        //'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
     //},
   },
   {
@@ -88,42 +124,6 @@ const posts = [
     //datetime: '2020-02-12',
     imageUrl:
       'https://kahana-website-images.s3.us-east-2.amazonaws.com/kateHerman.png',
-    //readingTime: '11 min',
-    //author: {
-      //name: 'Daniela Metz',
-      //href: '#',
-      //imageUrl:
-        //'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    //},
-  },
-  {
-    title: 'Pinterest Success Session',
-    href: 'https://app.kahana.co/hub/tHwAYvYPzqVwGPGzh10k',
-    category: { name: 'Kelsey Vetter', href: 'https://www.tiktok.com/@kelseyvetterco' },
-    description:
-      'Are you missing out on the massive potential of the traffic-driving powerhouse, Pinterest? This comprehensive Pinterest Success Session will teach you how to master Pinterest Marketing in less than 1 hour so you can start driving traffic to your website, growing your audience and increasing your sales.',
-    //date: 'Feb 12, 2020',
-    //datetime: '2020-02-12',
-    imageUrl:
-      'https://kahana-website-images.s3.us-east-2.amazonaws.com/kelseyVetter.png',
-    //readingTime: '11 min',
-    //author: {
-      //name: 'Daniela Metz',
-      //href: '#',
-      //imageUrl:
-        //'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    //},
-  },
-  {
-    title: 'Email Templates for Content Creators',
-    href: 'https://app.kahana.co/hub/u1ln3CfdaZTUGyb8pSK2',
-    category: { name: 'The Corporate Creator', href: 'https://tiktok.com/@thecorporatedogmom' },
-    description:
-      'Sharing tips for multi-passionate creators, including email templates for negotiating with brands and navigating brand deal contracts.',
-    //date: 'Feb 12, 2020',
-    //datetime: '2020-02-12',
-    imageUrl:
-      'https://kahana-website-images.s3.us-east-2.amazonaws.com/tayLadd.png',
     //readingTime: '11 min',
     //author: {
       //name: 'Daniela Metz',
