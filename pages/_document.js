@@ -38,6 +38,24 @@ export default function Document() {
           rel="stylesheet"
         />
 
+        {/* Crisp script */}
+        <script
+          type="text/javascript"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.$crisp=[];
+              window.CRISP_WEBSITE_ID="711b6e27-0210-4313-9ea3-75009495e3ec";
+              (function(){
+                var d=document;
+                var s=d.createElement("script");
+                s.src="https://client.crisp.chat/l.js";
+                s.async=1;
+                d.getElementsByTagName("head")[0].appendChild(s);
+              })();
+            `,
+          }}
+        />
+
         {/* <!-- Google tag (gtag.js) --> 
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-KQHFL9605P"></script>
         <script>
