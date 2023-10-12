@@ -63,7 +63,7 @@ const posts = [
   {
     title: 'How to Work with Influencers 101',
     href: 'https://app.kahana.co/hub/TEdBTfY10Dd9H7QIBgQc',
-    category: { name: 'Tay Lad: The Corporate Creator', href: 'https://tiktok.com/@thecorporatedogmom' },
+    category: { name: 'Tay Ladd: The Corporate Creator', href: 'https://tiktok.com/@thecorporatedogmom' },
     description:
       'An ongoing hub of all of the knowledge you need to help your business attract influencers, close brand deals, and avoid serious legal mistakes along the way, created by a corporate lawyer and TikTok creator. Get access to a customizable brand deal contract that protects you, outreach best practices, a checklist of legal do\'s and don\'ts, coaching on what creators look for, and more. DISCLAIMER: Even though I am a lawyer, I am not your lawyer and this does not constitute legal advice.',
     //date: 'Feb 12, 2020',
