@@ -6,33 +6,6 @@ import OnDemandHub from '../assets/images/expertsHub.png';
 import Link from 'next/link';
 import tay from '../assets/images/avatars/tayLaddHeadshot.png';
 
-const features = [
-  {
-    title: '1. Choose how many hubs you want',
-    description: (
-      <span>
-        Tell us how many hubs you want to have (e.g., how many topics you&apos;d like to create digital products about). Choose from the options below, and check out securely through Stripe. Within 24 hours, a member of our team will reach out to you to schedule your kickoff call.
-      </span>
-    ),
-  },
-  {
-    title: '2. Set up your kickoff call & interview(s)',
-    description: (
-      <span>
-        This is where we&apos;ll learn more about the hubs you&apos;d like to create, create your Kahana account to host your hubs, schedule any interviews so that you can share all the knowledge you want your hubs to have with us, and gather necessary information (e.g., your brand colors) so we can build your hubs for you.
-      </span>
-    ),
-  },
-  {
-    title: '3. Receive your hub(s) within 5-10 business days',
-    description: (
-      <span>
-        From there, we&apos;ll take care of the rest! Our team will handle all the asset creation, graphic design, and formatting you don&apos;t want to touch, and we won&apos;t stop making revisions until you are fully satisfied. The end result is that you receive delightful, easily digestible hubs with all of your knowledge that you can charge for access to and use to start generating revenue.
-      </span>
-    ),
-  },
-];
-
 const faqs = [
   {
     question: 'What does the time commitment look like from my end?',
@@ -296,7 +269,7 @@ export default function TayLaddPage() {
                 <li>They lack the proper legal knowledge to put good deals together</li>
               </ul>
               <br />
-              Access my knowledge - a unique blend of big law expertise and the perspective of a creator - to create campaigns influencers want to be a part of.
+              Don&apos;t be like 99% of businesses. Access my knowledge - a unique blend of big law expertise and the perspective of a creator - to create campaigns influencers want to be a part of.
             </p>
             <a
               href="https://app.kahana.co/hub/TEdBTfY10Dd9H7QIBgQc"
