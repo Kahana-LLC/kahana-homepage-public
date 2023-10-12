@@ -107,33 +107,7 @@ const people = [
   },
 ];
 
-  return (
-    <div>
-      <div className={`mb-2 ${isEmailValid ? '' : 'border-black rounded-md'}`}>
-        <input
-          type="email"
-          placeholder={emailPlaceholder}
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          className="border p-2 w-full rounded-md"
-        />
-        {!isEmailValid && (
-          <p className="text-red-500">Please enter a valid email.</p>
-        )}
-      </div>
-      <div className="mt-2">
-        <button
-          onClick={handleButtonClick}
-          className="w-full px-6 py-2 bg-[#3B675E] text-white rounded-md shadow-md"
-        >
-          {buttonLabel}
-        </button>
-      </div>
-    </div>
-  );
-}
-
-export default function AffiliateProgramPage() {
+export default function TayLaddPage() {
   const [showImage, setShowImage] = useState(false);
   const [activeIndex, setActiveIndex] = useState(null);
 
