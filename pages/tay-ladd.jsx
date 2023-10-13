@@ -95,7 +95,7 @@ export default function TayLaddPage() {
         </div>
 
         {/* Hero section */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <section className="pt-16 px-4 sm:px-6 lg:px-8 bg-white">
           <div className="container mx-auto px-4 md:px-8 text-center">
             <h1 className="text-5xl font-bold mb-4 md:px-12 lg:px-24">
               Run influencer campaigns that actually work
