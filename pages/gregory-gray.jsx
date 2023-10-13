@@ -103,7 +103,7 @@ export default function GregoryGrayPage() {
               href="https://app.kahana.co/hub/elQ1iO0Nbb1wMu6u3dDj"
               className="bg-[#3B675E] text-white py-2 px-6 rounded-md text-center inline-block mx-auto max-w-md"
             >
-              Unlock your business' potential
+              Unlock your business&apos; potential
             </a>
             <div className="mt-8">
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
