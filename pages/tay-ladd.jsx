@@ -220,8 +220,10 @@ export default function TayLaddPage() {
             <p className="mt-4 text-lg mb-8 md:px-12 lg:px-24">
               Nearly all businesses fail to attract influencers for 2 reasons: 
               <br />
+              <br />
               1. They don&apos;t understand what influencers actually want
               2. They lack the proper legal knowledge to put good deals together
+              <br />
               <br />
               Don&apos;t be like 99% of businesses. Access my knowledge - a unique blend of big law expertise and the perspective of a creator - to create campaigns influencers want to be a part of.
             </p>
