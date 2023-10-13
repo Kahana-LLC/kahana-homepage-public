@@ -167,7 +167,7 @@ export default function GregoryGrayPage() {
         </section>
 
         {/* Testimonial section */}
-        <section className="py-8 pb-8">
+        <section className="py-8">
           <div className="container mx-auto text-center">
             <h2 className="text-3xl font-bold mb-8">What my clients say</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-4 md:px-0">
@@ -195,7 +195,7 @@ export default function GregoryGrayPage() {
           </div>
         </section>
 
-        <section className="py-8 px-4 sm:px-6 lg:px-8 bg-white">
+        <section className="py-12 px-4 sm:px-6 lg:px-8 bg-white">
           <div className="max-w-7xl mx-auto text-center">
             <h2 className={`text-3xl font-bold text-gray-900`}>
               Take your business to the next level
