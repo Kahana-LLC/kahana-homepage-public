@@ -125,7 +125,7 @@ export default function TayLaddPage() {
           </div>
         </section>
 
-        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <section className="py-8 px-4 sm:px-6 lg:px-8 bg-white">
           <div className="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:px-8 lg:py-24">
             <div className="space-y-12">
               <div className="space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none">
@@ -198,7 +198,7 @@ export default function TayLaddPage() {
           </div>
         </section>
 
-        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <section className="py-8 px-4 sm:px-6 lg:px-8 bg-white">
           <div className="max-w-7xl mx-auto text-center">
             <h2 className={`text-3xl font-bold text-gray-900`}>
               Become the top 1% of brands that influencers want to work with
