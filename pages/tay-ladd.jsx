@@ -133,7 +133,7 @@ export default function TayLaddPage() {
                   Why access my hub?
                 </h2>
                 <p className="text-lg mb-8 md:px-12 lg:px-24">
-                  As both a corporate lawyer at a large firm and a TikTok creator, I&apos;ve negotiated dozens of brand deals and turned down thousands of campaigns. I have the unique perspective and expertise to help you attract the influencers you want to work with and protect yourself in the process. Simply put, you can't get this information anywhere else.
+                  As both a corporate lawyer at a large firm and a TikTok creator, I&apos;ve negotiated dozens of brand deals and turned down thousands of campaigns. I have the unique perspective and expertise to help you attract the influencers you want to work with and protect yourself in the process. Simply put, you can&apos;t get this information anywhere else.
                 </p>
               </div>
               <div className="text-center">
