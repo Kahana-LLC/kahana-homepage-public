@@ -5,69 +5,23 @@ import NavbarDup from '../components/NavbarDup';
 import Image from 'next/image';
 import OnDemandHub from '../assets/images/expertsHub.png';
 import Link from 'next/link';
-import tay from '../assets/images/avatars/tayLaddHeadshot.png';
 
 const faqs = [
   {
-    question: 'What does the time commitment look like from my end?',
-    answer: 'No more than 1-5 hours, depending on how many hubs you order. Our process is designed to limit the amount of time you have to spend as much as possible: the only time commitment from your end is the kickoff call to outline the plan for your hub(s) and create your Kahana account, interviews where you share all of the knowledge you want to include in your hub(s), and reviewing your hub(s) once they\'re completed.',
+    question: 'What do I get when I pay for access to this hub?',
+    answer: 'This includes a customizable brand deal contract that protects you, outreach best practices, a checklist of legal do\'s and don\'ts, coaching on what creators look for, and more, and it\'s updated on an ongoing basis.',
   },
   {
     question: 'How much does this cost?',
-    answer: (
-      <span>
-        We have a volume-based pricing model, where the price per hub decreases the more you order:
-        <br />
-        <br />
-        - 1 Hub: $4,000
-        <br />
-        - 2 Hubs: $7,000 ($3,500 per hub)
-        <br />
-        - 3 Hubs: $9,000 ($3,000 per hub)
-        <br />
-        - 4 Hubs: $10,000 ($2,500 per hub)
-      </span>
-    ),
+    answer: 'Normally, my billing rate is over $1,000/hour, but you can have lifetime access to this hub of all my knowledge for $897.'
   },
   {
-    question: 'Can I see some examples of hubs that have been created?',
-    answer: (
-      <span>
-        Certainly! These hubs below will provide you with an idea of what you can expect to be created for you:
-        <br />
-        <br />
-        -{' '}<a href="https://app.kahana.co/hub/TEdBTfY10Dd9H7QIBgQc" target="_blank" rel="noopener noreferrer" className="text-[#038270] font-medium">
-          How to Work with Influencers 101
-        </a>
-        <br />
-        -{' '}<a href="https://app.kahana.co/hub/elQ1iO0Nbb1wMu6u3dDj" target="_blank" rel="noopener noreferrer" className="text-[#038270] font-medium">
-         Vision Story: Build the Life and Business You Deserve
-        </a>
-      </span>
-    ),
+    question: 'What if I outsource my influencer campaigns to an agency?',
+    answer: 'This is information that you still need to know - and you need to make sure the agency you\'re working with knows it, too. The agency you\'re working with is a reflection of your brand, and any campaign they construct should follow the best practices I share.'
   },
   {
-    question: 'How do I order my hubs?',
-    answer: 'You can order 1, 2, 3, or 4 hubs. Simply navigate to either one of the \"Turn your knowledge into revenue\" sections of this page, enter your email under 1, 2, 3, or 4 hubs, and then click the \"Proceed to checkout\" button. From there, you will be taken to a secure payment portal through Stripe where you can complete your order.',
-  },
-  {
-    question: 'What happens after I receive my hubs?',
-    answer: (
-      <span>
-        Once you are fully satisfied with your hubs and they have been delivered to you, the project is complete and the hubs are yours to keep. You can market them, share the link with colleagues, etc. so that you can begin making revenue.
-        <br />
-        <br />
-        <i>Note</i>: If need help getting your hubs in front of more potential customers, feel free to check out our{' '}
-        <a href="https://blog.kahana.co/boost-program/" target="_blank" rel="noopener noreferrer" className="text-[#038270] font-medium">
-          Boost Program
-        </a>
-        ,{' '}an email marketing service we provide for individuals and organizations who are interested in expanding the reach of their hubs.
-      </span>
-    ),
-  },
-  {
-    question: 'What if I want to make updates after the project is complete?',
-    answer: 'After your hubs are delivered to you, you will be responsible for making future updates to the hubs that were created (e.g., adding information based on feedback from customers). Our team will show you how to do this when we hand the hubs off to you so that you are comfortable making updates on your own.',
+    question: 'What if I want to work with a law firm instead?',
+    answer: 'Big law firms rarely, if ever, get involved with this type of work, and even when they do, they\'re not creators themselves, so they don\'t understand important nuances you have to keep in mind to make contracts mutually beneficial.',
   },
 ];
 
@@ -75,7 +29,7 @@ const people = [
   {
     name: 'Tay Ladd',
     role: 'Corporate Lawyer & TikTok Creator',
-    imageUrl: tay,
+    imageUrl: 'https://kahana-website-images.s3.us-east-2.amazonaws.com/tayLadd.png',
     tikTokUrl: 'https://www.tiktok.com/@thecorporatedogmom',
     linkedinUrl: 'https://www.linkedin.com/in/themaladd/',
   },
@@ -200,9 +154,9 @@ export default function TayLaddPage() {
                     <div className="space-y-4">
                       <div className="aspect-w-3 aspect-h-2">
                         <Image
-                          className="rounded-lg object-cover shadow-lg"
                           src={person.imageUrl}
                           alt=""
+                          style={{ maxWidth: '250px', maxHeight: '250px' }}
                         />
                       </div>
     
@@ -263,12 +217,11 @@ export default function TayLaddPage() {
             <h2 className={`text-3xl font-bold text-gray-900`}>
               Become the top 1% of brands that influencers want to work with
             </h2>
-            <p className="mt-4 text-gray-700">
+            <p className="mt-4 text-lg mb-8 md:px-12 lg:px-24">
               Nearly all businesses fail to attract influencers for 2 reasons: 
-              <ul className="list-disc pl-6">
-                <li>They don&apos;t understand what influencers actually want</li>
-                <li>They lack the proper legal knowledge to put good deals together</li>
-              </ul>
+              <br />
+              1. They don&apos;t understand what influencers actually want
+              2. They lack the proper legal knowledge to put good deals together
               <br />
               Don&apos;t be like 99% of businesses. Access my knowledge - a unique blend of big law expertise and the perspective of a creator - to create campaigns influencers want to be a part of.
             </p>
