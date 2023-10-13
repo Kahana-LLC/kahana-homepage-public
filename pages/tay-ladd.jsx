@@ -135,7 +135,7 @@ export default function TayLaddPage() {
                 As both a corporate lawyer at a large firm and a TikTok creator, I&apos;ve negotiated dozens of brand deals and turned down thousands of campaigns. I have the unique perspective and expertise to help you attract the influencers you want to work with and protect yourself in the process. Simply put, you can&apos;t get this information anywhere else.
               </p>
             </div>
-            <div className="text-center">
+            <div className="text-center mt-8">
               <div className="space-y-4">
                 <div className="flex justify-center items-center">
                   <Image
@@ -155,7 +155,7 @@ export default function TayLaddPage() {
                     <svg
                       width="512px"
                       height="512px"
-                      viewBox="0 0 512 512"
+                      viewBox="0 0 24 24"
                       id="icons"
                       xmlns="http://www.w3.org/2000/svg"
                     >
