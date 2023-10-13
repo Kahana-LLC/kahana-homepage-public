@@ -10,7 +10,7 @@ import Joanna from '../assets/headshots/joannaRajendranHeadshot.png'
 const faqs = [
   {
     question: 'What do I get when I pay for access to this hub?',
-    answer: 'You get access to a pre-recorded version of the course I&apos;ve taught to hundreds of professionals, with the exact same design and knowledge, that shows you how to create transformative habits and mindset shifts.'
+    answer: 'You get access to a pre-recorded version of the course I\'ve taught to hundreds of professionals, with the exact same design and knowledge, that shows you how to create transformative habits and mindset shifts.'
   },
   {
     question: 'How much does this cost?',
