@@ -5,6 +5,7 @@ import NavbarDup from '../components/NavbarDup';
 import Image from 'next/image';
 import OnDemandHub from '../assets/images/expertsHub.png';
 import Link from 'next/link';
+import Tay from '../assets/headshots/tayLaddHeadshot.png'
 
 const faqs = [
   {
