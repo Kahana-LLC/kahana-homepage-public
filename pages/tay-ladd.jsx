@@ -138,7 +138,7 @@ export default function TayLaddPage() {
               </div>
               <div className="text-center">
                 <div className="space-y-4">
-                  <div className="mx-auto">
+                  <div className="flex justify-center items-center">
                     <Image
                       src={Tay}
                       alt="Tay Ladd: Corporate Lawyer & TikTok Creator"
@@ -154,38 +154,30 @@ export default function TayLaddPage() {
                     >
                       <span className="sr-only">TikTok</span>
                       <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
                         className="h-8 w-8"
-                        aria-hidden="true"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
                       >
-                        {/* TikTok logo SVG */}
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                          className="h-8 w-8"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M17 10a3 3 0 11-6 0 3 3 0 016 0z"
-                          />
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M12 14a9 9 0 019-9M12 14a9 9 0 01-9-9"
-                          />
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M4 20a2 2 0 002 2 2 2 0 002-2"
-                          />
-                        </svg>
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M17 10a3 3 0 11-6 0 3 3 0 016 0z"
+                        />
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M12 14a9 9 0 019-9M12 14a9 9 0 01-9-9"
+                        />
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M4 20a2 2 0 002 2 2 2 0 002-2"
+                        />
                       </svg>
                     </a>
                     <a
@@ -199,27 +191,25 @@ export default function TayLaddPage() {
                         fill="currentColor"
                         viewBox="0 0 20 20"
                       >
-                        {/* LinkedIn logo SVG */}
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                          className="h-8 w-8"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M16 2a2 2 0 012 2v16a2 2 0 01-2 2H4a2 2 0 01-2-2V4a2 2 0 012-2h12z"
-                          />
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M17 10l-5 5m0 0l-5-5m5 5V10"
-                          />
-                        </svg>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        className="h-8 w-8"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M16 2a2 2 0 012 2v16a2 2 0 01-2 2H4a2 2 0 01-2-2V4a2 2 0 012-2h12z"
+                        />
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M17 10l-5 5m0 0l-5-5m5 5V10"
+                        />
                       </svg>
                     </a>
                   </div>
