@@ -5,7 +5,7 @@ import NavbarDup from '../components/NavbarDup';
 import Image from 'next/image';
 import BestLifeEverHub from '../assets/images/bestLifeEverHub.png';
 import Link from 'next/link';
-import Joanna from '../assets/headshots/joannaRajendranHeadshot.jpeg'
+import Joanna from '../assets/headshots/joannaRajendranHeadshot.png'
 
 const faqs = [
   {
