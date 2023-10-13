@@ -185,7 +185,7 @@ export default function JoannaRajendranPage() {
               </div>
               <div className="bg-white p-6 rounded-lg shadow-md">
                 <p className="text-lg italic mb-4">
-                  &quot;Joanna is pure magic. Her love, care, dedication, and strategies have changed me forever and I'm forever grateful for her and the best life ever.&quot;
+                  &quot;Joanna is pure magic. Her love, care, dedication, and strategies have changed me forever and I&apos;m forever grateful for her and the best life ever.&quot;
                 </p>
                 <p className="font-semibold">Jackie Z.</p>
               </div>
