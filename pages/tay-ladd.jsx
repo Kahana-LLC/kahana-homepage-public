@@ -95,7 +95,7 @@ export default function TayLaddPage() {
         </div>
 
         {/* Hero section */}
-        <section className="py-16 md:py-18">
+        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
           <div className="container mx-auto px-4 md:px-8 text-center">
             <h1 className="text-5xl font-bold mb-4 md:px-12 lg:px-24">
               Run influencer campaigns that actually work
@@ -125,95 +125,66 @@ export default function TayLaddPage() {
           </div>
         </section>
 
-        <section className="py-16 md:py-18">
+        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
           <div className="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:px-8 lg:py-24">
-            <div className="space-y-12">
-              <div className="space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none">
-                <h2 className="text-3xl font-bold tracking-tight text-center sm:text-4xl">
-                  Why access my hub?
-                </h2>
-                <p className="text-lg mb-8 md:px-12 lg:px-24">
-                  As both a corporate lawyer at a large firm and a TikTok creator, I&apos;ve negotiated dozens of brand deals and turned down thousands of campaigns. I have the unique perspective and expertise to help you attract the influencers you want to work with and protect yourself in the process. Simply put, you can&apos;t get this information anywhere else.
-                </p>
-              </div>
-              <div className="text-center">
-                <div className="space-y-4">
-                  <div className="flex justify-center items-center">
-                    <Image
-                      src={Tay}
-                      alt="Tay Ladd: Corporate Lawyer & TikTok Creator"
-                      width={400}
-                      height={400}
-                    />
-                  </div>
-                  <p className="text-lg font-bold">Tay Ladd: Corporate Lawyer & TikTok Creator</p>
-                  <div className="flex justify-center space-x-5">
-                    <a
-                      href="https://www.tiktok.com/@thecorporatedogmom"
-                      className="text-gray-400 hover:text-gray-500"
+            <div className="space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none">
+              <h2 className="text-3xl font-bold tracking-tight text-center sm:text-4xl">
+                Why access my hub?
+              </h2>
+              <p className="text-lg mb-8 md:px-12 lg:px-24">
+                As both a corporate lawyer at a large firm and a TikTok creator, I&apos;ve negotiated dozens of brand deals and turned down thousands of campaigns. I have the unique perspective and expertise to help you attract the influencers you want to work with and protect yourself in the process. Simply put, you can&apos;t get this information anywhere else.
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="space-y-4">
+                <div className="flex justify-center items-center">
+                  <Image
+                    src={Tay}
+                    alt="Tay Ladd: Corporate Lawyer & TikTok Creator"
+                    width={400}
+                    height={400}
+                  />
+                </div>
+                <p className="text-lg font-bold">Tay Ladd: Corporate Lawyer & TikTok Creator</p>
+                <div className="flex justify-center space-x-5">
+                  <a
+                    href="https://www.tiktok.com/@thecorporatedogmom"
+                    className="text-gray-400 hover:text-gray-500"
+                  >
+                    <span className="sr-only">TikTok</span>
+                    <svg
+                      width="512px"
+                      height="512px"
+                      viewBox="0 0 512 512"
+                      id="icons"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <span className="sr-only">TikTok</span>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        className="h-8 w-8"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M17 10a3 3 0 11-6 0 3 3 0 016 0z"
-                        />
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M12 14a9 9 0 019-9M12 14a9 9 0 01-9-9"
-                        />
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M4 20a2 2 0 002 2 2 2 0 002-2"
-                        />
-                      </svg>
-                    </a>
-                    <a
-                      href="https://www.linkedin.com/in/themaladd/"
-                      className="text-gray-400 hover:text-gray-500"
+                      <path d="M412.19,118.66a109.27,109.27,0,0,1-9.45-5.5,132.87,132.87,0,0,1-24.27-20.62c-18.1-20.71-24.86-41.72-27.35-56.43h.1C349.14,23.9,350,16,350.13,16H267.69V334.78c0,4.28,0,8.51-.18,12.69,0,.52-.05,1-.08,1.56,0,.23,0,.47-.05,.71,0,.06,0,.12,0,.18a70,70,0,0,1-35.22,55.56,68.8,68.8,0,0,1-34.11,9c-38.41,0-69.54-31.32-69.54-70s31.13-70,69.54-70a68.9,68.9,0,0,1,21.41,3.39l.1-83.94a153.14,153.14,0,0,0-118,34.52,161.79,161.79,0,0,0-35.3,43.53c-3.48,6-16.61,30.11-18.2,69.24-1,22.21,5.67,45.22,8.85,54.73v.2c2,5.6,9.75,24.71,22.38,40.82A167.53,167.53,0,0,0,115,470.66v-.2l.2.2C155.11,497.78,199.36,496,199.36,496c7.66-.31,33.32,0,62.46-13.81,32.32-15.31,50.72-38.12,50.72-38.12a158.46,158.46,0,0,0,27.64-45.93c7.46-19.61,9.95-43.13,9.95-52.53V176.49c1,.6,14.32,9.41,14.32,9.41s19.19,12.3,49.13,20.31c-21.48,5.7,50.42,6.9,50.42,6.9V131.27C453.86,132.37,433.27,129.17,412.19,118.66Z" 
+                      />
+                    </svg>
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/themaladd/"
+                    className="text-gray-400 hover:text-gray-500"
+                  >
+                    <span className="sr-only">LinkedIn</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
                     >
-                      <span className="sr-only">LinkedIn</span>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        className="h-8 w-8"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M16 2a2 2 0 012 2v16a2 2 0 01-2 2H4a2 2 0 01-2-2V4a2 2 0 012-2h12z"
-                        />
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M17 10l-5 5m0 0l-5-5m5 5V10"
-                        />
-                      </svg>
-                    </a>
-                  </div>
+                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" 
+                      />
+                    </svg>
+                  </a>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        <section className={`py-16 px-4 sm:px-6 lg:px-8 bg-white`}>
+        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
           <div className="max-w-7xl mx-auto text-center">
             <h2 className={`text-3xl font-bold text-gray-900`}>
               Become the top 1% of brands that influencers want to work with
