@@ -5,7 +5,7 @@ import NavbarDup from '../components/NavbarDup';
 import Image from 'next/image';
 import VisionStoryHub from '../assets/images/visionStoryHub.png';
 import Link from 'next/link';
-import Greg from '../assets/headshots/gregGrayHeadshot.png'
+import Greg from '../assets/headshots/gregGrayHeadshot.jpeg'
 
 const faqs = [
   {
