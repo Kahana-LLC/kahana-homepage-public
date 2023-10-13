@@ -131,6 +131,7 @@ export default function JoannaRajendranPage() {
                 <p className="text-lg mb-8 md:px-12 lg:px-24">
                   I&apos;ve coached hundreds of professionals across dozens of organizations on how to create transformative habits and mindset shifts, and I turned those teachings into a 12-week course. The results have been overwhelmingly positive:
                   <br/>
+                  <br/>
                   <ul className="list-disc ml-6">
                     <li>Team members who are happier and more confident in both their personal and professional lives</li>
                     <li>Improved communication and a deep sense of community across the team</li>
