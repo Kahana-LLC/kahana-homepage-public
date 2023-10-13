@@ -21,7 +21,7 @@ function NavBar() {
   };
 
   return (
-    <nav className="bg-[#038270]">
+    <nav className="bg-[#3B675E]">
       <style jsx>{`
         /* Your styles here */
         .nav-link {
@@ -450,7 +450,7 @@ function NavBar() {
           </div>
           <hr className="w-full border-gray-200 mt-2 mb-2" />
           <div className="flex flex-col items-center mt-4">
-            <Link href="https://app.kahana.co/signup" className="mobile-link bg-[#038270] hover:bg-[#024324] rounded-md h-10 w-60 text-white text-center flex justify-center items-center">
+            <Link href="https://app.kahana.co/signup" className="mobile-link bg-[#3B675E] hover:bg-[#024324] rounded-md h-10 w-60 text-white text-center flex justify-center items-center">
               Get Kahana free
             </Link>
             <Link href="https://app.kahana.co/login" className="mobile-link bg-[#FFFFFF] hover:bg-[#f2f2f2] border-gray-300 border rounded-md h-10 w-60 mt-2 text-center flex justify-center items-center">
