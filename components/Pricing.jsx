@@ -167,7 +167,7 @@ export default function Pricing() {
               </ul>
               <a
                 href="https://app.kahana.co/signup"
-                className="mt-8 block w-full rounded-md border border-[#038270] bg-[#038270] py-2 text-center text-sm font-semibold text-white hover:bg-[#024324]"
+                className="mt-8 block w-full rounded-md border border-[#3B675E] bg-[#3B675E] py-2 text-center text-sm font-semibold text-white hover:bg-[#024324]"
               >
                 Sign up for free
               </a>
@@ -232,7 +232,7 @@ export default function Pricing() {
               </ul>
               <a
                 href="https://app.kahana.co/signup"
-                className="mt-8 block w-full rounded-md border border-[#038270] bg-[#038270] py-2 text-center text-sm font-semibold text-white hover:bg-[#024324]"
+                className="mt-8 block w-full rounded-md border border-[#3B675E] bg-[#3B675E] py-2 text-center text-sm font-semibold text-white hover:bg-[#024324]"
               >
                 Buy now
               </a>
@@ -329,7 +329,7 @@ export default function Pricing() {
               </ul>
               <a
                 href="https://7hkdcfzbmr0.typeform.com/to/ZYLHazEf"
-                className="mt-8 block w-full rounded-md border border-[#038270] bg-[#038270] py-2 text-center text-sm font-semibold text-white hover:bg-[#024324]"
+                className="mt-8 block w-full rounded-md border border-[#3B675E] bg-[#3B675E] py-2 text-center text-sm font-semibold text-white hover:bg-[#024324]"
               >
                 Contact us
               </a>
