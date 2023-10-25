@@ -71,7 +71,7 @@ export default function HeroSection() {
                       Make a living doing what you love. Share your best insights with your audience so they can thrive.
                     </p>
 
-                    <div className="mt-3 flex flex-col items-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
+                    <div className="mt-6 flex flex-col items-center space-y-4 md:flex-row md:space-x-4 sm:space-y-0">
                       <a
                         href="https://app.kahana.co/signup"
                         className="rounded-md border border-transparent bg-[#3B675E] py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-[#024324] focus:outline-none focus:ring-2 focus:ring-[#024324] focus:ring-offset-2 text-center"
