@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import HeaderBanner from '../components/HeaderBanner.jsx';
 import whiteKahanaLogo from '../assets/kahana_logo_wide_light_v2.svg';
 
 function NavBar() {
@@ -21,6 +22,7 @@ function NavBar() {
   };
 
   return (
+    <HeaderBanner />
     <nav className="bg-[#3B675E]">
       <style jsx>{`
         /* Your styles here */
