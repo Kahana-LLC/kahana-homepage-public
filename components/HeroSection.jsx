@@ -80,6 +80,7 @@ export default function HeroSection() {
                         Start earning 
                       </a>
                       <a
+                        href=""
                         id="open-video"
                         className="rounded-md border border-black bg-transparent py-3 px-6 text-lg font-medium text-black shadow-sm hover:bg-[#024324] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#024324] focus:ring-offset-2 text-center"
                         style={{ maxWidth: "40%" }}
