@@ -55,12 +55,11 @@ export default function HeroSection() {
                   <div>
 
                     <h1 className="py-4  bg-clip-text text-transparent bg-gradient-to-r from-[#024324] to-teal-300 text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl text-center sm:text-left">
-                      Create, collaborate, and monetize - all in one place
+                      Add subscription revenue to your portfolio for free
                     </h1>
 
                     <p className="mt-3 text-base text-slate-900 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl text-center sm:text-left">
-                      Upload the best insights you&apos;ve curated & created 
-                      (notes, videos, files, templates, etc.) and charge for access to them.
+                      Make a living doing what you love. Share your best insights with your audience so they can thrive.
                     </p>
 
                     <div className="grid grid-cols-2 gap-4 mt-6 tracking-tight hidden md:block">
