@@ -11,7 +11,7 @@ export default function HeaderBanner() {
                 href="https://app.kahana.co/signup"
                 className="text-base text-white underline"
               >
-                Sign up for free
+                Create your subscription today 
               </a>
             </span>
           </p>
