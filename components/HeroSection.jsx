@@ -97,7 +97,7 @@ export default function HeroSection() {
                           <div className="video-wrapper" style={{ maxWidth: "90%", maxHeight: "80vh" }}>
                             <iframe
                               id="demo-video"
-                              width={window.innerWidth >= 768 ? 560 : 450}
+                              width={window.innerWidth >= 768 ? 560 : 400}
                               height="315"
                               src="https://www.youtube.com/embed/TBNzzUQsB-4"
                               title="Demo Video"
