@@ -80,7 +80,6 @@ export default function HeroSection() {
                         Start earning 
                       </a>
                       <a
-                        href="#"
                         id="open-video"
                         className="rounded-md border border-black bg-transparent py-2 px-4 text-sm font-medium text-black shadow-sm hover:bg-[#024324] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#024324] focus:ring-offset-2 text-center"
                         style={{ maxWidth: "40%" }}
@@ -94,16 +93,18 @@ export default function HeroSection() {
                       <div id="video-container" className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-70 z-50">
                         <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                           <button id="close-video" className="text-2xl text-white absolute top-0 right-0 p-2 cursor-pointer" onClick={closeVideo}>✕</button>
-                          <iframe
-                            id="demo-video"
-                            width="560"
-                            height="315"
-                            src="https://www.youtube.com/embed/TBNzzUQsB-4"
-                            title="Demo Video"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            frameBorder="0"
-                            allowFullScreen
-                          />
+                          <div className="video-wrapper" style={{ maxWidth: "90%", maxHeight: "80vh" }}>
+                            <iframe
+                              id="demo-video"
+                              width="560"
+                              height="315"
+                              src="https://www.youtube.com/embed/TBNzzUQsB-4"
+                              title="Demo Video"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                              frameBorder="0"
+                              allowFullScreen
+                            />
+                          </div>
                         </div>
                       </div>
                     )}
