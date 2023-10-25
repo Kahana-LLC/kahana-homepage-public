@@ -108,7 +108,7 @@ export default function HeroSection() {
                       </div>
                     )}
                     
-                    {*/ <div className="grid grid-cols-2 gap-4 mt-6 tracking-tight hidden md:block">
+                    {/* <div className="grid grid-cols-2 gap-4 mt-6 tracking-tight hidden md:block">
                       {' '}
                       <ul role="list" className=" space-y-3">
                         {[
