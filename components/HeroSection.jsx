@@ -125,7 +125,7 @@ export default function HeroSection() {
                           </>
                         ))}
                       </ul>
-                    </div> /*}
+                    </div> */}
                     
                   </div>
                   {/* right animated blob */}
