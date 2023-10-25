@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import HeaderBanner from '../components/HeaderBanner.jsx';
+import HeaderBanner from '../components/HeaderBanner';
 import whiteKahanaLogo from '../assets/kahana_logo_wide_light_v2.svg';
 
 function NavBar() {
