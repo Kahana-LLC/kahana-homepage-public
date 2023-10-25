@@ -111,7 +111,7 @@ function NavBar() {
             </button>
             <button className="nav-link"> 
               <Link href="/explore">
-                Examples
+                Featured
               </Link>
             </button>
             <div className="dropdown">
@@ -282,7 +282,7 @@ function NavBar() {
               About
             </Link>
             <Link href="/explore" className="mobile-link" style={{ fontWeight: 'bold'}}>
-              Examples
+              Featured
             </Link>
             <div className="dropdown">
               <button
