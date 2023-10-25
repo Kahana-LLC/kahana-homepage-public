@@ -75,15 +75,15 @@ export default function HeroSection() {
                       <a
                         href="https://app.kahana.co/signup"
                         className="rounded-md border border-transparent bg-[#3B675E] py-3 px-6 text-lg font-medium text-white shadow-sm hover:bg-[#024324] focus:outline-none focus:ring-2 focus:ring-[#024324] focus:ring-offset-2 text-center"
-                        style={{ maxWidth: "40%" }}
+                        style={{ maxWidth: "60%" }}
                       >
                         Start earning 
                       </a>
                       <a
-                        href=""
+                        href="#"
                         id="open-video"
                         className="rounded-md border border-black bg-transparent py-3 px-6 text-lg font-medium text-black shadow-sm hover:bg-[#024324] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#024324] focus:ring-offset-2 text-center"
-                        style={{ maxWidth: "40%" }}
+                        style={{ maxWidth: "60%" }}
                         onClick={openVideo}
                       >
                         Watch demo
@@ -97,7 +97,7 @@ export default function HeroSection() {
                           <div className="video-wrapper" style={{ maxWidth: "90%", maxHeight: "80vh" }}>
                             <iframe
                               id="demo-video"
-                              width="560"
+                              width="100%"
                               height="315"
                               src="https://www.youtube.com/embed/TBNzzUQsB-4"
                               title="Demo Video"
