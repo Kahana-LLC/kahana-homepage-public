@@ -102,7 +102,7 @@ export default function HeroSection() {
                         <div className="flex flex-col items-center space-y-4">
                           <a
                             href="https://app.kahana.co/signup"
-                            className="rounded-md border border-transparent bg-[#038270] py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-[#024324] focus:outline-none focus:ring-2 focus:ring-[#024324] focus:ring-offset-2 text-center"
+                            className="rounded-md border border-transparent bg-[#3B675E] py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-[#024324] focus:outline-none focus:ring-2 focus:ring-[#024324] focus:ring-offset-2 text-center"
                             style={{ maxWidth: "40%" }}
                           >
                             Sign up for free
