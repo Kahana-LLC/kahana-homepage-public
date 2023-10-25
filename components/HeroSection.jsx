@@ -103,6 +103,7 @@ export default function HeroSection() {
                               title="Demo Video"
                               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                               frameBorder="0"
+                              allowFullScreen
                             />
                           </div>
                         </div>
