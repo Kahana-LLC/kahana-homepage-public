@@ -39,7 +39,16 @@ if (typeof window !== 'undefined') {
 //   console.log('You clicked submit.');
 // }
 export default function HeroSection() {
-  const [showModal, setShowModal] = useState(false);
+  const [showVideo, setShowVideo] = useState(false);
+
+  const openVideo = () => {
+    setShowVideo(true);
+  };
+
+  const closeVideo = () => {
+    setShowVideo(false);
+  };
+  
   return (
     <div className=" bg-[#f8fafc]">
       <div className="pt-1 pb-16 sm:pb-24">
@@ -62,7 +71,44 @@ export default function HeroSection() {
                       Make a living doing what you love. Share your best insights with your audience so they can thrive.
                     </p>
 
-                    <div className="grid grid-cols-2 gap-4 mt-6 tracking-tight hidden md:block">
+                    <div className="flex flex-col items-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
+                      <a
+                        href="https://app.kahana.co/signup"
+                        className="rounded-md border border-transparent bg-[#3B675E] py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-[#024324] focus:outline-none focus:ring-2 focus:ring-[#024324] focus:ring-offset-2 text-center"
+                        style={{ maxWidth: "40%" }}
+                      >
+                        Start earning 
+                      </a>
+                      <a
+                        href="#"
+                        id="open-video"
+                        className="rounded-md border border-black bg-transparent py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-[#024324] focus:outline-none focus:ring-2 focus:ring-[#024324] focus:ring-offset-2 text-center"
+                        style={{ maxWidth: "40%" }}
+                        onClick={openVideo}
+                      >
+                        Watch demo
+                      </a>
+                    </div>
+
+                    {showVideo && (
+                      <div id="video-container" className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-70 z-50">
+                        <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                          <button id="close-video" className="text-2xl text-white absolute top-0 right-0 p-2 cursor-pointer">✕</button>
+                          <iframe
+                            id="demo-video"
+                            width="560"
+                            height="315"
+                            src="https://www.youtube.com/embed/TBNzzUQsB-4"
+                            title="Demo Video"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            frameBorder="0"
+                            allowFullScreen
+                          />
+                        </div>
+                      </div>
+                    )}
+                    
+                    {*/ <div className="grid grid-cols-2 gap-4 mt-6 tracking-tight hidden md:block">
                       {' '}
                       <ul role="list" className=" space-y-3">
                         {[
@@ -79,7 +125,8 @@ export default function HeroSection() {
                           </>
                         ))}
                       </ul>
-                    </div>
+                    </div> /*}
+                    
                   </div>
                   {/* right animated blob */}
                 </div>
