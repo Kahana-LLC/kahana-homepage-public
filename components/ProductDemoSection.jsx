@@ -11,16 +11,16 @@ import { Container } from './Container';
 
 const features = [
   {
-    title: 'Share',
-    description:
-      'Flip a switch and get in front of viewers all over the world. Get exposure to folks who can’t wait for your stuff.',
-    image: explore,
-  },
-  {
     title: 'Monetize',
     description:
       'Create a delightfully casual subscription flow by charging access to your hubs. Connect through Stripe to receive payments.',
     image: monetize,
+  },
+  {
+    title: 'Share',
+    description:
+      'Flip a switch and get in front of viewers all over the world. Get exposure to folks who can’t wait for your stuff.',
+    image: explore,
   },
   {
     title: 'Collaborate',
