@@ -232,6 +232,11 @@ function NavBar() {
                   Log in
                 </a>
               </button>
+              <button className="nav-button">
+                <a href="https://app.kahana.co/signup">
+                  Sign up
+                </a>
+              </button>
             </div>
   
             {/* Mobile Menu */}
@@ -454,7 +459,7 @@ function NavBar() {
             <hr className="w-full border-gray-200 mt-2 mb-2" />
             <div className="flex flex-col items-center mt-4">
               <Link href="https://app.kahana.co/signup" className="mobile-link bg-[#3B675E] hover:bg-[#024324] rounded-md h-10 w-60 text-white text-center flex justify-center items-center">
-                Get Kahana free
+                Sign up
               </Link>
               <Link href="https://app.kahana.co/login" className="mobile-link bg-[#FFFFFF] hover:bg-[#f2f2f2] border-gray-300 border rounded-md h-10 w-60 mt-2 text-center flex justify-center items-center">
                 Log in
