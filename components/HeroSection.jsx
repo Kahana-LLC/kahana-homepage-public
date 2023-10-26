@@ -143,12 +143,12 @@ export default function HeroSection() {
               </div>
               
               {/* Slider IN CASE */}
-              <div className="lg:col-span-6 hidden lg:block"> {/* Hide on medium and below screens */}
+              <div className="lg:col-span-6 hidden lg:block flex flex-col justify-center items-center"> {/* Hide on medium and below screens */}
                 <Image
                   src={images[currentIndex]}
                   alt={`Slider Image ${currentIndex}`}
                   width={400} // Adjust the width and height as needed
-                  height={400}
+                  height={450}
                   layout="responsive"
                   objectFit="cover"
                   quality={100}
