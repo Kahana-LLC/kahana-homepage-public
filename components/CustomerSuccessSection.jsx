@@ -64,12 +64,12 @@ export default function HeroSection() {
                 />
               </div>
               
-              <div className="lg:col-span-7 px-4 sm:px-6 sm:text-center md:mx-auto md:max-w-2xl lg:flex lg:items-center lg:text-right">
+              <div className="lg:col-span-7 px-4 sm:px-6 sm:text-center md:mx-auto md:max-w-2xl lg:flex lg:items-center lg:text-left">
                 <div>
                   
                   <div>
 
-                    <h1 className="py-4  bg-clip-text text-transparent bg-black text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl text-center sm:text-right">
+                    <h1 className="py-4  bg-clip-text text-transparent bg-black text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl text-center sm:text-left">
                       How Kelsey turned her Pinterest knowledge into a 4-figure income stream 
                     </h1>
 
