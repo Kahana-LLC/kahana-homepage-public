@@ -80,7 +80,7 @@ export default function HeroSection() {
                     </p>
 
                     <div className="mt-8 flex flex-col items-center space-y-4 md:flex-row md:space-x-4 md:space-y-0">
-                      <div className="w-[250px] h-[70px] px-4 py-2"">  
+                      <div className="w-[250px] h-[70px] px-4 py-2">  
                         <a
                           href="https://app.kahana.co/signup"
                           className="w-full h-full rounded-md border border-transparent bg-[#44B6A6] text-lg font-medium text-white shadow-sm hover:bg-[#024324] focus:outline-none focus:ring-2 focus:ring-[#024324] focus:ring-offset-2 text-center"
@@ -88,7 +88,7 @@ export default function HeroSection() {
                           Start earning 
                         </a>
                       </div>
-                      <div className="w-[250px] h-[70px] px-4 py-2"">
+                      <div className="w-[250px] h-[70px] px-4 py-2">
                         <a
                           href="https://www.youtube.com/channel/UCwsf3DOnt3uQdrqf-NRZ2_w"
                           target="_blank"
