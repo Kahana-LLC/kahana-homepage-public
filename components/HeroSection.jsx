@@ -76,7 +76,7 @@ export default function HeroSection() {
                     </h1>
 
                     <p className="mt-3 text-base text-slate-900 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl text-center sm:text-left">
-                      Make a living doing what you love. Share your best insights with your audience so they can thrive.
+                      Give your audience all your best resources - get income back. Start monetizing in under 45 minutes.
                     </p>
 
                     <div className="mt-8 flex flex-col items-center space-y-4 md:flex-row md:space-x-4 md:space-y-0">
