@@ -65,7 +65,7 @@ export default function HeroSection() {
         <main className="mt-10 sm:mt-24">
           <div className="mx-auto max-w-7xl">
             <div className="lg:grid lg:grid-cols-12 lg:gap-8 lg:items-center">
-              <div className=" px-4 sm:px-6 sm:text-center md:mx-auto md:max-w-2xl lg:col-span-6 lg:flex lg:items-center lg:text-left">
+              <div className="lg:col-span-6 px-4 sm:px-6 sm:text-center md:mx-auto md:max-w-2xl lg:flex lg:items-center lg:text-left">
                 <div>
 
                   {/* animated background left blob*/}
@@ -143,22 +143,24 @@ export default function HeroSection() {
               </div>
               
               {/* Slider IN CASE */}
+              <div className="lg:col-span-6 hidden lg:block"> {/* Hide on medium and below screens */}
+                <Image
+                  src={images[currentIndex]}
+                  alt={`Slider Image ${currentIndex}`}
+                  width={600} // Adjust the width and height as needed
+                  height={400}
+                  layout="responsive"
+                  objectFit="cover"
+                  quality={100}
+                />
+                <div className="absolute top-1/2 -translate-y-1/2 left-0 w-1/6 text-gray-700 cursor-pointer" onClick={prevSlide}>
+                  &lt;
+                </div>
+                <div className="absolute top-1/2 -translate-y-1/2 right-0 w-1/6 text-gray-700 cursor-pointer" onClick={nextSlide}>
+                  &gt;
+                </div>
+              </div>
             
-            </div>
-            <div className="hidden lg:block"> {/* Hide on medium and below screens */}
-              <Image
-                src={images[currentIndex]}
-                alt={`Slider Image ${currentIndex}`}
-                layout="intrinsic"
-                objectFit="cover"
-                quality={100}
-              />
-              <div className="absolute top-1/2 -translate-y-1/2 left-0 w-1/6 text-gray-700 cursor-pointer" onClick={prevSlide}>
-                &lt;
-              </div>
-              <div className="absolute top-1/2 -translate-y-1/2 right-0 w-1/6 text-gray-700 cursor-pointer" onClick={nextSlide}>
-                &gt;
-              </div>
             </div>
           </div>
         </main>
