@@ -43,6 +43,24 @@ const posts = [
     //},
   },
   {
+    title: 'The Ultimate Guide to Getting Internships/Research Opportunities',
+    href: 'https://app.kahana.co/hub/UMKtgp76MN1MvZuD6p7W',
+    category: { name: 'wAmy', href: 'https://www.youtube.com/@wamyy5' },
+    description:
+      'A hub of knowledge, resources, tips, and tricks I\'ve gathered over my career so far, from securing internships (and full-time jobs) to getting a research opportunity in a Nobel Prize Laureate's lab!  The internet is scattered with so much information that is overwhelming to navigate, so I synthesized all the best advice for you! I also collected tips I learned from my friends from Caltech, MIT, Microsoft, PhD programs, and more. There are a lot of things I wish I had known, so I hope to save you the time and energy I went through with this curated knowledge hub :)',
+    //date: 'Mar 16, 2020',
+    //datetime: '2020-03-16',
+    imageUrl:
+      'https://kahana-website-images.s3.us-east-2.amazonaws.com/wAmy.jpg',
+    //readingTime: '6 min',
+    //author: {
+      //name: 'Roel Aufderehar',
+      //href: '#',
+      //imageUrl:
+        //'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    //},
+  },
+  {
     title: 'Your Guide to Manifesting Anything',
     href: 'https://app.kahana.co/hub/nHxv8vCZBv6i0bVPunyp',
     category: { name: 'Olivia Mancuso', href: 'https://www.tiktok.com/@oliviamancuso__' },
