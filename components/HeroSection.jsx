@@ -2,7 +2,7 @@ import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import wAmy from '../assets/images/wAmySlider.png';
-import kelseySlider from '../assets/images/kelseySlider.png';
+import kelsey from '../assets/images/kelseySlider.png';
 import Juice from '../assets/images/juiceSlider.png';
 import Olivia from '../assets/images/oliviaSlider.png';
 
@@ -53,7 +53,7 @@ export default function HeroSection() {
   };
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const images = [wAmy, kelseySlider, Juice, Olivia];
+  const images = [wAmy, Kelsey, Juice, Olivia];
 
   const nextSlide = () => {
     setCurrentIndex((currentIndex + 1) % images.length);
