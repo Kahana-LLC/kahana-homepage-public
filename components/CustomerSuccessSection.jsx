@@ -47,7 +47,7 @@ export default function HeroSection() {
 
   return (
     <div className=" bg-white">
-      <div className="pt-1 pb-16 sm:pb-20">
+      <div className="pt-1 pb-16">
         <main className="mt-10 sm:mt-24">
           <div className="mx-auto max-w-7xl">
             <div className="lg:grid lg:grid-cols-12 lg:gap-8 lg:items-center">
