@@ -8,10 +8,12 @@ export default function HeaderBanner() {
             {/* <span>Check out today&apos;s</span> */}
             <span className="block sm:ml-2 sm:inline-block">
               <a
-                href="https://app.kahana.co/signup"
+                href="https://www.youtube.com/channel/UCwsf3DOnt3uQdrqf-NRZ2_w?sub_confirmation=1"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-base text-white underline"
               >
-                Create your subscription today 
+                Join our next live webinar
               </a>
             </span>
           </p>
