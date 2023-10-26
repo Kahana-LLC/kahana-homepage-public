@@ -80,34 +80,38 @@ export default function HeroSection() {
                     </p>
 
                     <div className="mt-8 flex flex-col items-center space-y-4 md:flex-row md:space-x-4 md:space-y-0">
-                      <a
-                        href="https://app.kahana.co/signup"
-                        className="rounded-md border border-transparent bg-[#44B6A6] px-3 py-15 text-lg font-medium text-white shadow-sm hover:bg-[#024324] focus:outline-none focus:ring-2 focus:ring-[#024324] focus:ring-offset-2 text-center"
-                      >
-                        Start earning 
-                      </a>
-                      <a
-                        href="https://www.youtube.com/channel/UCwsf3DOnt3uQdrqf-NRZ2_w"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="rounded-md border border-transparent bg-[#FF0000] px-3 py-12 text-lg font-medium text-white shadow-sm hover:bg-[#024324] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#024324] focus:ring-offset-2 text-center"
-                      >
-                        <span style={{ display: 'flex', alignItems: 'center' }}>
-                          <svg
-                            stroke="currentColor"
-                            fill="white"
-                            stroke-width="0"
-                            viewBox="0 0 448 512"
-                            height="1em"
-                            width="1em"
-                            xmlns="http://www.w3.org/2000/svg"
-                            style={{ marginRight: '12px' }}
-                          >
-                            <path d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"></path>
-                          </svg>
-                          Watch demo
-                        </span>
-                      </a>
+                      <div className="w-[200px] h-[200px]">  
+                        <a
+                          href="https://app.kahana.co/signup"
+                          className="rounded-md border border-transparent bg-[#44B6A6] text-lg font-medium text-white shadow-sm hover:bg-[#024324] focus:outline-none focus:ring-2 focus:ring-[#024324] focus:ring-offset-2 text-center"
+                        >
+                          Start earning 
+                        </a>
+                      </div>
+                      <div className="w-[200px] h-[200px]">
+                        <a
+                          href="https://www.youtube.com/channel/UCwsf3DOnt3uQdrqf-NRZ2_w"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="rounded-md border border-transparent bg-[#FF0000] text-lg font-medium text-white shadow-sm hover:bg-[#024324] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#024324] focus:ring-offset-2 text-center"
+                        >
+                          <span style={{ display: 'flex', alignItems: 'center' }}>
+                            <svg
+                              stroke="currentColor"
+                              fill="white"
+                              stroke-width="0"
+                              viewBox="0 0 448 512"
+                              height="1em"
+                              width="1em"
+                              xmlns="http://www.w3.org/2000/svg"
+                              style={{ marginRight: '12px' }}
+                            >
+                              <path d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"></path>
+                            </svg>
+                            Watch demo
+                          </span>
+                        </a>
+                      </div>
                     </div>
                     
                   </div>
