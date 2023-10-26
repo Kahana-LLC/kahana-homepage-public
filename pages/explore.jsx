@@ -51,7 +51,7 @@ const posts = [
     //date: 'Mar 16, 2020',
     //datetime: '2020-03-16',
     imageUrl:
-      'https://kahana-website-images.s3.us-east-2.amazonaws.com/wAmy.jpg',
+      'https://kahana-website-images.s3.us-east-2.amazonaws.com/wAmy.png',
     //readingTime: '6 min',
     //author: {
       //name: 'Roel Aufderehar',
