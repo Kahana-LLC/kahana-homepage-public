@@ -64,12 +64,12 @@ export default function HeroSection() {
                 />
               </div>
               
-              <div className="lg:col-span-7 px-4 sm:px-6 sm:text-center md:mx-auto md:max-w-2xl lg:flex lg:items-center lg:text-right">
+              <div className="lg:col-span-7 px-4 sm:px-6 sm:text-center md:mx-auto md:max-w-2xl lg:flex lg:items-center lg:text-left">
                 <div>
                   
                   <div>
 
-                    <h1 className="py-4  bg-clip-text text-transparent bg-black text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl text-center sm:text-left">
+                    <h1 className="py-4  bg-clip-text text-transparent bg-black text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl text-center sm:text-right">
                       How Kelsey turned her Pinterest knowledge into a 4-figure income stream 
                     </h1>
 
@@ -93,12 +93,12 @@ export default function HeroSection() {
                       </ul>
                     </div>
                     
-                    <div className="mt-12 flex flex-col items-center space-y-4 md:flex-row md:space-x-4 md:space-y-0">
+                    <div className="mt-12 flex flex-col items-center space-y-4 md:flex-row md:space-x-4 md:space-y-0 justify-end">
                       <a
                         href="https://www.kelseyvetter.com/resources"
                         className="text-black text-lg font-medium hover:underline"
                       >
-                        See how Kelsey did it 
+                        See how Kelsey did it ->
                       </a>
                     </div>              
                   </div>
