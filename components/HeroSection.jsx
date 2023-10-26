@@ -51,6 +51,13 @@ export default function HeroSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const images = [wAmy, Kelsey, Juice, Olivia];
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 4000); // Change the interval duration (in milliseconds) as needed
+    return () => clearInterval(interval);
+  }, [currentIndex]);
+
   const nextSlide = () => {
     setCurrentIndex((currentIndex + 1) % images.length);
   };
@@ -153,10 +160,10 @@ export default function HeroSection() {
                   objectFit="cover"
                   quality={100}
                 />
-                <div className="absolute top-1/2 -translate-y-1/2 left-0 w-1/6 text-gray-700 cursor-pointer" onClick={prevSlide}>
+                <div className="absolute top-1/2 left-0 w-1/6 text-gray-700 cursor-pointer" onClick={prevSlide}>
                   &lt;
                 </div>
-                <div className="absolute top-1/2 -translate-y-1/2 right-0 w-1/6 text-gray-700 cursor-pointer" onClick={nextSlide}>
+                <div className="absolute top-1/2 right-0 w-1/6 text-gray-700 cursor-pointer" onClick={nextSlide}>
                   &gt;
                 </div>
               </div>
