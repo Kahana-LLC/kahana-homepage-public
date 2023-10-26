@@ -91,7 +91,6 @@ export default function HeroSection() {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="rounded-md border border-transparent bg-[#FF0000] py-3 px-8 text-lg font-medium text-white shadow-sm hover:bg-[#024324] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#024324] focus:ring-offset-2 text-center"
-                        onClick={openVideo}
                       >
                         <span class="ant-btn-icon">
                           <svg
