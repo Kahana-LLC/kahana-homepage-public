@@ -142,23 +142,23 @@ export default function HeroSection() {
                 </div>
               </div>
               
-              {/* Slider */}
-              <div className="hidden lg:block"> {/* Hide on medium and below screens */}
-                <Image
-                  src={images[currentIndex]}
-                  alt={`Slider Image ${currentIndex}`}
-                  layout="intrinsic"
-                  objectFit="cover"
-                  quality={100}
-                />
-                <div className="absolute top-1/2 -translate-y-1/2 left-0 w-1/6 text-gray-700 cursor-pointer" onClick={prevSlide}>
-                  &lt;
-                </div>
-                <div className="absolute top-1/2 -translate-y-1/2 right-0 w-1/6 text-gray-700 cursor-pointer" onClick={nextSlide}>
-                  &gt;
-                </div>
-              </div>
+              {/* Slider IN CASE */}
             
+            </div>
+            <div className="hidden lg:block"> {/* Hide on medium and below screens */}
+              <Image
+                src={images[currentIndex]}
+                alt={`Slider Image ${currentIndex}`}
+                layout="intrinsic"
+                objectFit="cover"
+                quality={100}
+              />
+              <div className="absolute top-1/2 -translate-y-1/2 left-0 w-1/6 text-gray-700 cursor-pointer" onClick={prevSlide}>
+                &lt;
+              </div>
+              <div className="absolute top-1/2 -translate-y-1/2 right-0 w-1/6 text-gray-700 cursor-pointer" onClick={nextSlide}>
+                &gt;
+              </div>
             </div>
           </div>
         </main>
