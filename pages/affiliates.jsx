@@ -192,7 +192,7 @@ export default function AffiliateProgramPage() {
               Refer people to Kahana and earn up to a 30% commission.
             </p>
             <a href="https://app.getreditus.com/marketplace/kahana" className="block mt-8" target="_blank" rel="noopener noreferrer">
-              <button className="px-6 py-3 bg-[#038270] text-white rounded-md shadow-md hover:bg-[#046856]">
+              <button className="px-6 py-3 bg-[#3B675E] text-white rounded-md shadow-md hover:bg-[#046856]">
                 Sign Up Now
               </button>
             </a>
@@ -266,7 +266,7 @@ export default function AffiliateProgramPage() {
               Sign up below to join Kahana&apos;s partner program
             </h2>
               <a href="https://app.getreditus.com/marketplace/kahana" className="block mt-8" target="_blank" rel="noopener noreferrer">
-                <button className="px-6 py-3 bg-[#038270] text-white rounded-md shadow-md hover:bg-[#046856]">
+                <button className="px-6 py-3 bg-[#3B675E] text-white rounded-md shadow-md hover:bg-[#046856]">
                   Sign Up Here
                 </button>
               </a>
