@@ -97,7 +97,7 @@ export default function Home() {
                 Want a passive income stream but don&apos;t have the time or energy to make one?
               </h2>
               <p className="mt-4 text-gray-700 large-text">
-                We&apos;ve got you covered: our team will build it for you.
+                We&apos;ve got you covered: our team can build it for you.
               </p>
               <Link href="/order-hubs-on-demand">
                 <a className="block mt-8">
