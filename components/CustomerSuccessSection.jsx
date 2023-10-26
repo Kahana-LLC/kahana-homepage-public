@@ -93,7 +93,7 @@ export default function HeroSection() {
                       </ul>
                     </div>
                     
-                    <div className="mt-12 flex flex-col items-center space-y-4 md:flex-row md:space-x-4 md:space-y-0">
+                    <div className="mt-12 flex flex-col items-center space-y-4 md:flex-row md:space-x-4 md:space-y-0 justify-end">
                       <a
                         href="https://www.kelseyvetter.com/resources"
                         className="text-black text-lg font-medium hover:underline"
