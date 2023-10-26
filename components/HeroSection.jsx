@@ -65,7 +65,7 @@ export default function HeroSection() {
         <main className="mt-10 sm:mt-24">
           <div className="mx-auto max-w-7xl">
             <div className="lg:grid lg:grid-cols-12 lg:gap-8 lg:items-center">
-              <div className="lg:col-span-8 px-4 sm:px-6 sm:text-center md:mx-auto md:max-w-2xl lg:flex lg:items-center lg:text-left">
+              <div className="lg:col-span-7 px-4 sm:px-6 sm:text-center md:mx-auto md:max-w-2xl lg:flex lg:items-center lg:text-left">
                 <div>
 
                   {/* animated background left blob*/}
@@ -143,7 +143,7 @@ export default function HeroSection() {
               </div>
               
               {/* Slider IN CASE */}
-              <div className="lg:col-span-4 hidden lg:block flex flex-col justify-center items-center"> {/* Hide on medium and below screens */}
+              <div className="lg:col-span-5 hidden lg:block flex flex-col justify-center items-center"> {/* Hide on medium and below screens */}
                 <Image
                   src={images[currentIndex]}
                   alt={`Slider Image ${currentIndex}`}
