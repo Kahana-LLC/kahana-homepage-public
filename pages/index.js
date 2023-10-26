@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Footer from '../components/Footer';
 import HeroSection from '../components/HeroSection';
-import CustomerSuccessSession from '../components/CustomerSuccessSession';
+import CustomerSuccessSection from '../components/CustomerSuccessSession';
 import NavbarDup from '../components/NavbarDup';
 import Pricing from '../components/Pricing';
 import Reviews from '../components/Reviews';
