@@ -228,11 +228,6 @@ function NavBar() {
                 </Link>
               </button>
               <button className="nav-button">
-                <a href="https://app.kahana.co/login">
-                  Log in
-                </a>
-              </button>
-              <button className="nav-button">
                 <a href="https://app.kahana.co/signup">
                   Sign up
                 </a>
