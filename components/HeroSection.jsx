@@ -51,8 +51,8 @@ export default function HeroSection() {
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (showVideo && videoContainerRef.current) {
-        if (!videoContainerRef.current.contains(event.target)) {
+      if (showVideo && document.getElementById('video-container')) {
+        if (!document.getElementById('video-container').contains(event.target)) {
           // Click occurred outside the video container, so close the video
           closeVideo();
         }
@@ -60,7 +60,7 @@ export default function HeroSection() {
     };
 
     if (showVideo) {
-      // Attach the click event listener when the video is open
+      // Attach the click event listener to the entire document when the video is open
       document.addEventListener('click', handleClickOutside);
     }
 
