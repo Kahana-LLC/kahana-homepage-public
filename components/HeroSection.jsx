@@ -82,7 +82,7 @@ export default function HeroSection() {
                     <div className="mt-8 flex flex-col items-center space-y-4 md:flex-row md:space-x-4 md:space-y-0">
                       <a
                         href="https://app.kahana.co/signup"
-                        className="rounded-md border border-transparent bg-[#44B6A6] py-3 px-15 text-lg font-medium text-white shadow-sm hover:bg-[#024324] focus:outline-none focus:ring-2 focus:ring-[#024324] focus:ring-offset-2 text-center"
+                        className="rounded-md border border-transparent bg-[#44B6A6] py-3 px-12 text-lg font-medium text-white shadow-sm hover:bg-[#024324] focus:outline-none focus:ring-2 focus:ring-[#024324] focus:ring-offset-2 text-center"
                       >
                         Start earning 
                       </a>
@@ -90,7 +90,7 @@ export default function HeroSection() {
                         href="https://www.youtube.com/channel/UCwsf3DOnt3uQdrqf-NRZ2_w"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="rounded-md border border-transparent bg-[#FF0000] py-3 px-12 text-lg font-medium text-white shadow-sm hover:bg-[#024324] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#024324] focus:ring-offset-2 text-center"
+                        className="rounded-md border border-transparent bg-[#FF0000] py-3 px-9 text-lg font-medium text-white shadow-sm hover:bg-[#024324] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#024324] focus:ring-offset-2 text-center"
                       >
                         <span style={{ display: 'flex', alignItems: 'center' }}>
                           <svg
