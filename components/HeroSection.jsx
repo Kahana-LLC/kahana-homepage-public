@@ -8,10 +8,6 @@ import Olivia from '../assets/images/oliviaSlider.png';
 
 //icons
 import { CheckIcon } from './CheckIcon';
-// import { ChevronRightIcon } from '@heroicons/react/20/solid';
-//images
-// import googleLogo from '../assets/googleLogo.svg';
-// import ConfirmationModal from './ConfirmationModal';
 
 const navigation = [
   { name: 'Product', href: '#' },
@@ -146,23 +142,21 @@ export default function HeroSection() {
                 </div>
               </div>
 
-              <div className="mt-8 sm:mt-16 lg:col-span-6 lg:mt-0 ">
-                {/* Slider component */}
-                <div className="bg-white sm:mx-auto sm:w-full sm:max-w-md sm:overflow-hidden sm:rounded-lg shadow-2xl">
-                  <div className="relative">
-                    <div className="h-64 overflow-hidden">
-                      <img
-                        src={images[currentIndex]}
-                        alt={`Slider Image ${currentIndex}`}
-                        className="object-cover w-full h-full transition-transform duration-300 transform translate-x-0"
-                      />
-                    </div>
-                    <div className="absolute top-1/2 -translate-y-1/2 left-0 w-1/12 sm:w-1/6 text-gray-700 cursor-pointer" onClick={prevSlide}>
-                      &lt;
-                    </div>
-                    <div className="absolute top-1/2 -translate-y-1/2 right-0 w-1/12 sm:w-1/6 text-gray-700 cursor-pointer" onClick={nextSlide}>
-                      &gt;
-                    </div>
+              {/* Slider component */}
+              <div className="bg-white sm:mx-auto sm:w-full sm:max-w-md sm:overflow-hidden sm:rounded-lg shadow-2xl">
+                <div className="relative">
+                  <div className="h-64 overflow-hidden">
+                    <img
+                      src={images[currentIndex]}
+                      alt={`Slider Image ${currentIndex}`}
+                      className="object-cover w-full h-full transition-transform duration-300 transform translate-x-0"
+                    />
+                  </div>
+                  <div className="absolute top-1/2 -translate-y-1/2 left-0 w-1/12 sm:w-1/6 text-gray-700 cursor-pointer" onClick={prevSlide}>
+                    &lt;
+                  </div>
+                  <div className="absolute top-1/2 -translate-y-1/2 right-0 w-1/12 sm:w-1/6 text-gray-700 cursor-pointer" onClick={nextSlide}>
+                    &gt;
                   </div>
                 </div>
               </div>
