@@ -98,7 +98,7 @@ export default function HeroSection() {
                         href="https://www.kelseyvetter.com/resources"
                         className="text-black text-lg font-medium hover:underline"
                       >
-                        See how Kelsey did it -&gt;
+                        See Kelsey&apos;s hub in action -&gt;
                       </a>
                     </div>              
                   </div>
