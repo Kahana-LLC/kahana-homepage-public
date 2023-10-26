@@ -38,15 +38,6 @@ if (typeof window !== 'undefined') {
 //   console.log('You clicked submit.');
 // }
 export default function HeroSection() {
-  const [showVideo, setShowVideo] = useState(false);
-
-  const openVideo = () => {
-    setShowVideo(true);
-  };
-
-  const closeVideo = () => {
-    setShowVideo(false);
-  };
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const images = [wAmy, Kelsey, Juice, Olivia];
@@ -119,26 +110,6 @@ export default function HeroSection() {
                         Watch demo
                       </a>
                     </div>
-
-                    {showVideo && (
-                      <div id="video-container" className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-70 z-50">
-                        <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                          <button id="close-video" className="text-2xl text-white absolute top-0 right-0 p-2 cursor-pointer" onClick={closeVideo}>✕</button>
-                          <div className="video-wrapper" style={{ maxWidth: "90%", maxHeight: "80vh" }}>
-                            <iframe
-                              id="demo-video"
-                              width={window.innerWidth >= 768 ? 560 : 350}
-                              height="315"
-                              src="https://www.youtube.com/embed/TBNzzUQsB-4"
-                              title="Demo Video"
-                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                              frameBorder="0"
-                              allowFullScreen
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    )}
                     
                     {/* <div className="grid grid-cols-2 gap-4 mt-6 tracking-tight hidden md:block">
                       {' '}
