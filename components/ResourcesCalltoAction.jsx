@@ -13,7 +13,7 @@ const ResourcesCallToAction = () => {
         <div className="mt-4">
           <a
             href="https://app.kahana.co/signup"
-            className="inline-block px-6 py-3 bg-green-800 text-white rounded-md"
+            className="inline-block px-6 py-3 bg-[#3B675E] text-white rounded-md"
           >
             Use Kahana for free
           </a>
