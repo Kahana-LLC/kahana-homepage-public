@@ -90,21 +90,21 @@ const ResourcesPage = () => {
           <h2 className="text-2xl font-semibold mb-2">What topic would you like to learn more about?</h2>
           <div className="flex flex-wrap justify-center mt-6 space-y-4 sm:space-y-0 sm:gap-4">
             <div className="w-full sm:w-1/2 md:w-1/4 p-2">
-              <button onClick={() => scrollToSection('digital-products')} className="block bg-green-800 p-6 rounded-lg shadow-md text-center">
+              <button onClick={() => scrollToSection('digital-products')} className="block bg-[#3B675E] p-6 rounded-lg shadow-md text-center">
                 <h3 className="text-xl font-semibold text-white mb-1">
                   Selling knowledge-based digital products in general
                 </h3>
               </button>
             </div>
             <div className="w-full sm:w-1/2 md:w-1/4 p-2">
-              <button onClick={() => scrollToSection('google-drive')} className="block bg-green-800 p-6 rounded-lg shadow-md text-center">
+              <button onClick={() => scrollToSection('google-drive')} className="block bg-[#3B675E] p-6 rounded-lg shadow-md text-center">
                 <h3 className="text-xl font-semibold text-white mb-1">
                   Monetizing your knowledge and assets in Google Drive
                 </h3>
               </button>
             </div>
             <div className="w-full sm:w-1/2 md:w-1/4 p-2">
-              <button onClick={() => scrollToSection('notion')} className="block bg-green-800 p-6 rounded-lg shadow-md text-center">
+              <button onClick={() => scrollToSection('notion')} className="block bg-[#3B675E] p-6 rounded-lg shadow-md text-center">
                 <h3 className="text-xl font-semibold text-white mb-1">
                   Monetizing your knowledge and assets in Notion
                 </h3>
