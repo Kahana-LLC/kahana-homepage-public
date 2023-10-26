@@ -82,7 +82,7 @@ export default function HeroSection() {
                     <div className="mt-8 flex flex-col items-center space-y-4 md:flex-row md:space-x-4 md:space-y-0">
                       <a
                         href="https://app.kahana.co/signup"
-                        className="rounded-md border border-transparent bg-[#44B6A6] py-3 px-16 text-lg font-medium text-white shadow-sm hover:bg-[#024324] focus:outline-none focus:ring-2 focus:ring-[#024324] focus:ring-offset-2 text-center"
+                        className="rounded-md border border-transparent bg-[#44B6A6] py-3 px-12 text-lg font-medium text-white shadow-sm hover:bg-[#024324] focus:outline-none focus:ring-2 focus:ring-[#024324] focus:ring-offset-2 text-center"
                       >
                         Start earning 
                       </a>
@@ -92,7 +92,8 @@ export default function HeroSection() {
                         rel="noopener noreferrer"
                         className="rounded-md border border-transparent bg-[#FF0000] py-3 px-12 text-lg font-medium text-white shadow-sm hover:bg-[#024324] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#024324] focus:ring-offset-2 text-center"
                       >
-                        <span style={{ display: 'flex', alignItems: 'center' }}>
+                        Watch demo
+                        {/* <span style={{ display: 'flex', alignItems: 'center' }}>
                           <svg
                             stroke="currentColor"
                             fill="white"
@@ -106,7 +107,7 @@ export default function HeroSection() {
                             <path d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"></path>
                           </svg>
                           Watch demo
-                        </span>
+                        </span> */}
                       </a>
                     </div>
                     
