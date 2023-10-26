@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Footer from '../components/Footer';
 import HeroSection from '../components/HeroSection';
+import CustomerSuccessSession from '../components/CustomerSuccessSession';
 import NavbarDup from '../components/NavbarDup';
 import Pricing from '../components/Pricing';
 import Reviews from '../components/Reviews';
@@ -20,7 +21,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Kahana - Collaborate and monetize together</title>
+        <title>Kahana - Earn passive income for free</title>
         <meta
           name="Kahana"
           content="Kahana is the easiest way to turn your knowledge into subscription revenue. Sign up for free today!"
@@ -85,6 +86,7 @@ export default function Home() {
         </div>
         <main>
           <HeroSection />
+          <CustomerSuccessSection />
           <ProductDemoSection />
           <Reviews />
           <Pricing />
