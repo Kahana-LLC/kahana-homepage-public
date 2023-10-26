@@ -62,15 +62,15 @@ export default function HeroSection() {
   const sliderComponent = (
     <div className="hidden lg:block"> {/* Hide on medium and below screens */}
       <div className="relative">
-        <div className="h-96 overflow-hidden">
-          <Image
-            src={images[currentIndex]}
-            alt={`Slider Image ${currentIndex}`}
-            layout="fill"
-            objectFit="cover"
-            quality={100}
-          />
-        </div>
+        <Image
+          src={images[currentIndex]}
+          alt={`Slider Image ${currentIndex}`}
+          layout="responsive"
+          width={1920} // Set the width to the desired width (adjust as needed)
+          height={1080} // Set the height to the desired height (adjust as needed)
+          objectFit="cover"
+          quality={100}
+        />
         <div className="absolute top-1/2 -translate-y-1/2 left-0 w-1/6 text-gray-700 cursor-pointer" onClick={prevSlide}>
           &lt;
         </div>
