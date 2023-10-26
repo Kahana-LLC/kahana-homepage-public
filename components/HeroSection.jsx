@@ -59,26 +59,6 @@ export default function HeroSection() {
     setCurrentIndex((currentIndex - 1 + images.length) % images.length);
   };
 
-  const sliderComponent = (
-    <div className="hidden lg:block"> {/* Hide on medium and below screens */}
-      <Image
-        src={images[currentIndex]}
-        alt={`Slider Image ${currentIndex}`}
-        layout="responsive"
-        width={1920} // Set the width to the desired width (adjust as needed)
-        height={1080} // Set the height to the desired height (adjust as needed)
-        objectFit="cover"
-        quality={100}
-      />
-      <div className="absolute top-1/2 -translate-y-1/2 left-0 w-1/6 text-gray-700 cursor-pointer" onClick={prevSlide}>
-        &lt;
-      </div>
-      <div className="absolute top-1/2 -translate-y-1/2 right-0 w-1/6 text-gray-700 cursor-pointer" onClick={nextSlide}>
-        &gt;
-      </div>
-    </div>
-  );
-
   return (
     <div className=" bg-[#f8fafc]">
       <div className="pt-1 pb-16 sm:pb-24">
@@ -162,7 +142,25 @@ export default function HeroSection() {
                 </div>
               </div>
               
-              {sliderComponent}
+              {/* Slider */}
+              <div className="hidden lg:block"> {/* Hide on medium and below screens */}
+                <Image
+                  src={images[currentIndex]}
+                  alt={`Slider Image ${currentIndex}`}
+                  layout="responsive"
+                  width={1920} // Set the width to the desired width (adjust as needed)
+                  height={1080} // Set the height to the desired height (adjust as needed)
+                  objectFit="cover"
+                  quality={100}
+                />
+                <div className="absolute top-1/2 -translate-y-1/2 left-0 w-1/6 text-gray-700 cursor-pointer" onClick={prevSlide}>
+                  &lt;
+                </div>
+                <div className="absolute top-1/2 -translate-y-1/2 right-0 w-1/6 text-gray-700 cursor-pointer" onClick={nextSlide}>
+                  &gt;
+                </div>
+              </div>
+            
             </div>
           </div>
         </main>
