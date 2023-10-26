@@ -67,7 +67,7 @@ export default function HeroSection() {
   };
 
   return (
-    <div className=" bg-[#f8fafc]">
+    <div className=" bg-white">
       <div className="pt-1 pb-16 sm:pb-24">
         <main className="mt-10 sm:mt-24">
           <div className="mx-auto max-w-7xl">
@@ -160,12 +160,6 @@ export default function HeroSection() {
                   objectFit="cover"
                   quality={100}
                 />
-                <div className="absolute top-1/2 left-0 w-1/6 text-gray-700 cursor-pointer" onClick={prevSlide}>
-                  &lt;
-                </div>
-                <div className="absolute top-1/2 right-0 w-1/6 text-gray-700 cursor-pointer" onClick={nextSlide}>
-                  &gt;
-                </div>
               </div>
             
             </div>
