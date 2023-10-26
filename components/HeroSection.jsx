@@ -54,7 +54,7 @@ export default function HeroSection() {
   useEffect(() => {
     const interval = setInterval(() => {
       nextSlide();
-    }, 4000); // Change the interval duration (in milliseconds) as needed
+    }, 5000); // Change the interval duration (in milliseconds) as needed
     return () => clearInterval(interval);
   }, [currentIndex]);
 
