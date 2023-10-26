@@ -47,16 +47,29 @@ export default function HeroSection() {
 
   return (
     <div className=" bg-white">
-      <div className="pt-1 pb-16 sm:pb-24">
+      <div className="pt-1 pb-16 sm:pb-20">
         <main className="mt-10 sm:mt-24">
           <div className="mx-auto max-w-7xl">
-            <div className="lg:gap-8 lg:items-center">
-              <div className="px-4 sm:px-6 sm:text-center md:mx-auto md:max-w-2xl lg:flex lg:items-center lg:text-left">
+            <div className="lg:grid lg:grid-cols-12 lg:gap-8 lg:items-center">
+              {/* Image */}
+              <div className="lg:col-span-5 py-4 flex flex-col justify-center items-center"> {/* Hide on medium and below screens */}
+                <Image
+                  src={KelseySuccess}
+                  alt={`Kelsey's Success Metrics`}
+                  width={400}
+                  height={450}
+                  layout="responsive"
+                  objectFit="cover"
+                  quality={100}
+                />
+              </div>
+              
+              <div className="lg:col-span-7 px-4 sm:px-6 sm:text-center md:mx-auto md:max-w-2xl lg:flex lg:items-center lg:text-right">
                 <div>
                   
                   <div>
 
-                    <h1 className="py-4  bg-clip-text text-transparent bg-black text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl text-center sm:text-left">
+                    <h1 className="py-4  bg-clip-text text-transparent bg-black text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl text-center sm:text-left">
                       How Kelsey turned her Pinterest knowledge into a 4-figure income stream 
                     </h1>
 
@@ -80,29 +93,16 @@ export default function HeroSection() {
                       </ul>
                     </div>
                     
-                    <div className="mt-8 flex flex-col items-center space-y-4 md:flex-row md:space-x-4 md:space-y-0">
+                    <div className="mt-12 flex flex-col items-center space-y-4 md:flex-row md:space-x-4 md:space-y-0">
                       <a
-                        href="https://app.kahana.co/signup"
-                        className="rounded-md border border-transparent bg-[#3B675E] py-3 px-6 text-lg font-medium text-white shadow-sm hover:bg-[#024324] focus:outline-none focus:ring-2 focus:ring-[#024324] focus:ring-offset-2 text-center"
+                        href="https://www.kelseyvetter.com/resources"
+                        className="text-black text-lg font-medium hover:underline"
                       >
                         See how Kelsey did it 
                       </a>
                     </div>              
                   </div>
                 </div>
-              </div>
-              
-              {/* Image */}
-              <div className="flex flex-col justify-center items-center"> {/* Hide on medium and below screens */}
-                <Image
-                  src={KelseySuccess}
-                  alt={`Kelsey's Success Metrics`}
-                  width={400}
-                  height={450}
-                  layout="responsive"
-                  objectFit="cover"
-                  quality={100}
-                />
               </div>
             
             </div>
