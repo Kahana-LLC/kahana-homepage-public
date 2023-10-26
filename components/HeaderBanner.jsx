@@ -13,7 +13,7 @@ export default function HeaderBanner() {
                 rel="noopener noreferrer"
                 className="text-base text-white underline"
               >
-                Join our next live webinar
+                Live webinars every day on YouTube
               </a>
             </span>
           </p>
