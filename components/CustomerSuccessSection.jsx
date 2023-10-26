@@ -56,8 +56,8 @@ export default function HeroSection() {
                 <Image
                   src={KelseySuccess}
                   alt={`Kelsey's Success Metrics`}
-                  width={533}
-                  height={600}
+                  width={467}
+                  height={525}
                   layout="responsive"
                   objectFit="cover"
                   quality={100}
