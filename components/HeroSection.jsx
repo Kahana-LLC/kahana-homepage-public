@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import flowerIcon from '../assets/images/flowerIcon.webp';
 
@@ -48,6 +48,28 @@ export default function HeroSection() {
   const closeVideo = () => {
     setShowVideo(false);
   };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (showVideo) {
+        const videoContainer = document.getElementById('video-container');
+        if (videoContainer && !videoContainer.contains(event.target)) {
+          // Click occurred outside the video container, so close the video
+          closeVideo();
+        }
+      }
+    };
+    
+    if (showVideo) {
+      // Attach the click event listener when the video is open
+      window.addEventListener('click', handleClickOutside);
+    }
+
+    return () => {
+      // Remove the click event listener when the component unmounts
+      window.removeEventListener('click', handleClickOutside);
+    };
+  }, [showVideo]);
   
   return (
     <div className=" bg-[#f8fafc]">
