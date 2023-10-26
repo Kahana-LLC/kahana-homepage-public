@@ -47,7 +47,7 @@ const posts = [
     href: 'https://app.kahana.co/hub/UMKtgp76MN1MvZuD6p7W',
     category: { name: 'wAmy', href: 'https://www.youtube.com/@wamyy5' },
     description:
-      'A hub of knowledge, resources, tips, and tricks I\'ve gathered over my career so far, from securing internships (and full-time jobs) to getting a research opportunity in a Nobel Prize Laureate's lab!  The internet is scattered with so much information that is overwhelming to navigate, so I synthesized all the best advice for you! I also collected tips I learned from my friends from Caltech, MIT, Microsoft, PhD programs, and more. There are a lot of things I wish I had known, so I hope to save you the time and energy I went through with this curated knowledge hub :)',
+      'A hub of knowledge, resources, tips, and tricks I\'ve gathered over my career so far, from securing internships (and full-time jobs) to getting a research opportunity in a Nobel Prize Laureate\'s lab!  The internet is scattered with so much information that is overwhelming to navigate, so I synthesized all the best advice for you! I also collected tips I learned from my friends from Caltech, MIT, Microsoft, PhD programs, and more. There are a lot of things I wish I had known, so I hope to save you the time and energy I went through with this curated knowledge hub :)',
     //date: 'Mar 16, 2020',
     //datetime: '2020-03-16',
     imageUrl:
