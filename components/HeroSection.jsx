@@ -48,6 +48,27 @@ export default function HeroSection() {
   const closeVideo = () => {
     setShowVideo(false);
   };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (showVideo && videoContainerRef.current) {
+        if (!videoContainerRef.current.contains(event.target)) {
+          // Click occurred outside the video container, so close the video
+          closeVideo();
+        }
+      }
+    };
+
+    if (showVideo) {
+      // Attach the click event listener when the video is open
+      document.addEventListener('click', handleClickOutside);
+    }
+
+    return () => {
+      // Remove the click event listener when the component unmounts
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, [showVideo]);
   
   return (
     <div className=" bg-[#f8fafc]">
