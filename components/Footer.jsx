@@ -42,7 +42,7 @@ const navigation = {
     { name: 'Help center', href: 'https://kahana.tawk.help/' },
     { name: 'Blog', href: 'https://blog.kahana.co' },
     { name: 'FAQ', href: '/faq' },
-    { name: 'Community', href: 'https://nas.io/creators-and-experts' },
+    { name: 'Community', href: 'https://www.youtube.com/@kahanaHQ/community' },
     { name: 'Examples', href: '/explore' },
   ],
   resources: [
