@@ -59,6 +59,28 @@ export default function HeroSection() {
     setCurrentIndex((currentIndex - 1 + images.length) % images.length);
   };
 
+  const sliderComponent = (
+    <div className="sm:mx-auto sm:w-full sm:max-w-md sm:overflow-hidden sm:rounded-lg shadow-2xl">
+      <div className="relative">
+        <div className="h-80 md:h-96 overflow-hidden">
+          <Image
+            src={images[currentIndex]}
+            alt={`Slider Image ${currentIndex}`}
+            layout="fill"
+            objectFit="cover"
+            quality={100}
+          />
+        </div>
+        <div className="absolute top-1/2 -translate-y-1/2 left-0 w-1/6 text-gray-700 cursor-pointer" onClick={prevSlide}>
+          &lt;
+        </div>
+        <div className="absolute top-1/2 -translate-y-1/2 right-0 w-1/6 text-gray-700 cursor-pointer" onClick={nextSlide}>
+          &gt;
+        </div>
+      </div>
+    </div>
+  );
+
   return (
     <div className=" bg-[#f8fafc]">
       <div className="pt-1 pb-16 sm:pb-24">
@@ -143,22 +165,8 @@ export default function HeroSection() {
               </div>
 
               {/* Slider component */}
-              <div className="bg-white sm:mx-auto sm:w-full sm:max-w-md sm:overflow-hidden sm:rounded-lg shadow-2xl">
-                <div className="relative">
-                  <div className="h-64 overflow-hidden">
-                    <img
-                      src={images[currentIndex]}
-                      alt={`Slider Image ${currentIndex}`}
-                      className="object-cover w-full h-full transition-transform duration-300 transform translate-x-0"
-                    />
-                  </div>
-                  <div className="absolute top-1/2 -translate-y-1/2 left-0 w-1/12 sm:w-1/6 text-gray-700 cursor-pointer" onClick={prevSlide}>
-                    &lt;
-                  </div>
-                  <div className="absolute top-1/2 -translate-y-1/2 right-0 w-1/12 sm:w-1/6 text-gray-700 cursor-pointer" onClick={nextSlide}>
-                    &gt;
-                  </div>
-                </div>
+              <div className="hidden md:block">
+                {sliderComponent}
               </div>
             </div>
           </div>
