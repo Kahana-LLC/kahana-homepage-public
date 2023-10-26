@@ -64,7 +64,7 @@ export default function HeroSection() {
                 />
               </div>
               
-              <div className="lg:col-span-7 px-4 sm:px-6 sm:text-center md:mx-auto md:max-w-2xl lg:flex lg:items-center lg:text-left">
+              <div className="lg:col-span-7 px-4 sm:px-6 sm:text-center md:mx-auto md:max-w-2xl lg:flex lg:items-center lg:text-right">
                 <div>
                   
                   <div>
@@ -93,7 +93,7 @@ export default function HeroSection() {
                       </ul>
                     </div>
                     
-                    <div className="mt-12 flex flex-col items-center space-y-4 md:flex-row md:space-x-4 md:space-y-0 justify-end">
+                    <div className="mt-12 flex flex-col items-center space-y-4 md:flex-row md:space-x-4 md:space-y-0">
                       <a
                         href="https://www.kelseyvetter.com/resources"
                         className="text-black text-lg font-medium hover:underline"
