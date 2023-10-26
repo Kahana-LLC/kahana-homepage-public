@@ -1,14 +1,17 @@
 import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import flowerIcon from '../assets/images/flowerIcon.webp';
+import wAmy from '../assets/images/wAmySlider.png';
+import kelseySlider from '../assets/images/kelseySlider.png';
+import Juice from '../assets/images/juiceSlider.png';
+import Olivia from '../assets/images/oliviaSlider.png';
 
 //icons
-import { ChevronRightIcon } from '@heroicons/react/20/solid';
+import { CheckIcon } from './CheckIcon';
+// import { ChevronRightIcon } from '@heroicons/react/20/solid';
 //images
 // import googleLogo from '../assets/googleLogo.svg';
-import { CheckIcon } from './CheckIcon';
-import ConfirmationModal from './ConfirmationModal';
+// import ConfirmationModal from './ConfirmationModal';
 
 const navigation = [
   { name: 'Product', href: '#' },
@@ -47,6 +50,17 @@ export default function HeroSection() {
 
   const closeVideo = () => {
     setShowVideo(false);
+  };
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const images = [wAmy, kelseySlider, Juice, Olivia];
+
+  const nextSlide = () => {
+    setCurrentIndex((currentIndex + 1) % images.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((currentIndex - 1 + images.length) % images.length);
   };
 
   return (
@@ -132,57 +146,23 @@ export default function HeroSection() {
                 </div>
               </div>
 
-              {/* Sign up form starts here */}
               <div className="mt-8 sm:mt-16 lg:col-span-6 lg:mt-0 ">
-                <div className=" bg-white sm:mx-auto sm:w-full sm:max-w-md sm:overflow-hidden sm:rounded-lg shadow-2xl">
-                  <div className="px-4 py-8 sm:px-10 ">
-
-                    <div className="mt-2 items-center">
-                        <div className="flex-shrink-0 justify-content: center mb-6">
-                          <Image
-                            className="h-24 w-full justify-content: center object-scale-down"
-                            src={flowerIcon}
-                            alt=""
-                          />
-                        </div>
-
-                        <div className="flex flex-col items-center space-y-4">
-                          <a
-                            href="https://app.kahana.co/signup"
-                            className="rounded-md border border-transparent bg-[#3B675E] py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-[#024324] focus:outline-none focus:ring-2 focus:ring-[#024324] focus:ring-offset-2 text-center"
-                            style={{ maxWidth: "40%" }}
-                          >
-                            Sign up for free
-                          </a>
-                          <span className="text-sm font-medium text-gray-700">
-                            <a
-                              href="https://7hkdcfzbmr0.typeform.com/to/ZYLHazEf?utm_content=landing_page_CTA"
-                              className="hover:underline"
-                            >
-                              Request a demo
-                            </a>
-                          </span>
-                        </div>
+                {/* Slider component */}
+                <div className="bg-white sm:mx-auto sm:w-full sm:max-w-md sm:overflow-hidden sm:rounded-lg shadow-2xl">
+                  <div className="relative">
+                    <div className="h-64 overflow-hidden">
+                      <img
+                        src={images[currentIndex]}
+                        alt={`Slider Image ${currentIndex}`}
+                        className="object-cover w-full h-full transition-transform duration-300 transform translate-x-0"
+                      />
                     </div>
-                  </div>
-                  <div className="border-t-2 border-gray-200 bg-gray-50 px-4 py-6 sm:px-10">
-                    <p className="text-xs leading-5 text-gray-500">
-                      By signing up, you agree to our{' '}
-                      <Link
-                        href="/terms-and-conditions"
-                        className="font-medium text-gray-900 hover:underline"
-                      >
-                        Terms of Use
-                      </Link>
-                      , and{' '}
-                      <Link
-                        href="/privacy-policy"
-                        className="font-medium text-gray-900 hover:underline"
-                      >
-                        Privacy Policy
-                      </Link>
-                      .
-                    </p>
+                    <div className="absolute top-1/2 -translate-y-1/2 left-0 w-1/12 sm:w-1/6 text-gray-700 cursor-pointer" onClick={prevSlide}>
+                      &lt;
+                    </div>
+                    <div className="absolute top-1/2 -translate-y-1/2 right-0 w-1/12 sm:w-1/6 text-gray-700 cursor-pointer" onClick={nextSlide}>
+                      &gt;
+                    </div>
                   </div>
                 </div>
               </div>
