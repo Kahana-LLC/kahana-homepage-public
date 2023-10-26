@@ -147,8 +147,8 @@ export default function HeroSection() {
                 <Image
                   src={images[currentIndex]}
                   alt={`Slider Image ${currentIndex}`}
-                  width={600} // Adjust the width and height as needed
-                  height={400}
+                  width={200} // Adjust the width and height as needed
+                  height={300}
                   layout="responsive"
                   objectFit="cover"
                   quality={100}
