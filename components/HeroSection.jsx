@@ -72,7 +72,7 @@ export default function HeroSection() {
                   <div>
 
                     <h1 className="py-4  bg-clip-text text-transparent bg-gradient-to-r from-[#024324] to-teal-300 text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl text-center sm:text-left">
-                      Add subscription revenue to your portfolio for free
+                      Add passive income to your portfolio for free
                     </h1>
 
                     <p className="mt-3 text-base text-slate-900 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl text-center sm:text-left">
