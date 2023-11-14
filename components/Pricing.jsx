@@ -113,7 +113,7 @@ export default function Pricing() {
             </div>
             <div className="px-6 pt-6 pb-8">
               <h3 className="text-sm font-medium text-gray-900">
-                Whats included
+                What&apos;s included
               </h3>
               <ul role="list" className="mt-6 space-y-4">
                 <li className="flex space-x-3">
@@ -129,7 +129,7 @@ export default function Pricing() {
                     aria-hidden="true"
                   />
                   <span className="text-sm text-gray-500">
-                    Start generating revenue
+                    5% transaction fee
                   </span>
                 </li>
                 <li className="flex space-x-3">
@@ -183,7 +183,7 @@ export default function Pricing() {
               </p>
               <p className="mt-8">
                 <span className="text-4xl font-bold tracking-tight text-[#038270]">
-                  $9.99
+                  $29.99
                 </span>{' '}
                 <span className="text-base font-medium text-gray-500">
                   /mo/seat
@@ -213,7 +213,28 @@ export default function Pricing() {
                     className="h-5 w-5 flex-shrink-0 text-green-500"
                     aria-hidden="true"
                   />
-                  <span className="text-sm text-gray-500">Unlimited revenue streams</span>
+                  <span className="text-sm text-gray-500">No transaction fee</span>
+                </li>
+                <li className="flex space-x-3">
+                  <CheckIcon
+                    className="h-5 w-5 flex-shrink-0 text-green-500"
+                    aria-hidden="true"
+                  />
+                  <span className="text-sm text-gray-500">Remove ads</span>
+                </li>
+                <li className="flex space-x-3">
+                  <CheckIcon
+                    className="h-5 w-5 flex-shrink-0 text-green-500"
+                    aria-hidden="true"
+                  />
+                  <span className="text-sm text-gray-500">AI tools</span>
+                </li>
+                <li className="flex space-x-3">
+                  <CheckIcon
+                    className="h-5 w-5 flex-shrink-0 text-green-500"
+                    aria-hidden="true"
+                  />
+                  <span className="text-sm text-gray-500">Custom branding</span>
                 </li>
                 <li className="flex space-x-3">
                   <CheckIcon
@@ -221,13 +242,6 @@ export default function Pricing() {
                     aria-hidden="true"
                   />
                   <span className="text-sm text-gray-500">5 GB storage</span>
-                </li>
-                <li className="flex space-x-3">
-                  <CheckIcon
-                    className="h-5 w-5 flex-shrink-0 text-green-500"
-                    aria-hidden="true"
-                  />
-                  <span className="text-sm text-gray-500">Priority support</span>
                 </li>
               </ul>
               <a
@@ -248,7 +262,10 @@ export default function Pricing() {
               </p>
               <p className="mt-8">
                 <span className="text-4xl font-bold tracking-tight text-[#038270]">
-                  Custom Contract
+                  $99.99
+                </span>{' '}
+                <span className="text-base font-medium text-gray-500">
+                  /mo/seat
                 </span>
               </p>
               {/* <a
@@ -263,15 +280,6 @@ export default function Pricing() {
                 Everything in Expert, plus
               </h3>
               <ul role="list" className="mt-6 space-y-4">
-                <li className="flex space-x-3">
-                  <CheckIcon
-                    className="h-5 w-5 flex-shrink-0 text-green-500"
-                    aria-hidden="true"
-                  />
-                  <span className="text-sm text-gray-500">
-                    100 GB storage
-                  </span>
-                </li>
                 <li className="flex space-x-3">
                   <CheckIcon
                     className="h-5 w-5 flex-shrink-0 text-green-500"
@@ -324,6 +332,15 @@ export default function Pricing() {
                   />
                   <span className="text-sm text-gray-500">
                     Custom integrations
+                  </span>
+                </li>
+                <li className="flex space-x-3">
+                  <CheckIcon
+                    className="h-5 w-5 flex-shrink-0 text-green-500"
+                    aria-hidden="true"
+                  />
+                  <span className="text-sm text-gray-500">
+                    100 GB storage
                   </span>
                 </li>
               </ul>
