@@ -98,7 +98,7 @@ export default function Pricing() {
               </p>
               <p className="mt-8">
                 <span className="text-4xl font-bold tracking-tight text-[#038270]">
-                  $0 (FREE)
+                  FREE
                 </span>{' '}
               </p>
               {/* <a
