@@ -21,7 +21,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Kahana - Earn passive income for free</title>
+        <title>Build a secure knowledge business in minutes</title>
         <meta
           name="Kahana"
           content="Kahana is the easiest way to turn your knowledge into subscription revenue. Sign up for free today!"
@@ -94,15 +94,15 @@ export default function Home() {
           <section className={`py-16 px-4 sm:px-6 lg:px-8 bg-white`}>
             <div className="max-w-7xl mx-auto text-center">
               <h2 className={`text-3xl font-bold text-gray-900`}>
-                Want a passive income stream but don&apos;t have the time or energy to make one?
+                Ready to bring in more income?
               </h2>
               <p className="mt-4 text-gray-700 text-xl">
-                We&apos;ve got you covered: our team can build it for you.
+                Start building your secure knowledge business today. 
               </p>
-              <Link href="/order-hubs-on-demand">
+              <Link href="https://app.kahana.co/signup">
                 <a className="block mt-8">
                   <button className="px-6 py-2 bg-[#3B675E] text-white rounded-md shadow-md hover:bg-[#046856]">
-                    Learn more
+                    Earn income for free
                   </button>
                 </a>
               </Link>
