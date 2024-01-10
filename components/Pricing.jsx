@@ -94,15 +94,12 @@ export default function Pricing() {
                 Creator (Free Forever)
               </h2>
               <p className="mt-4 text-sm text-gray-500">
-                Get all the basics to monetize your expertise.
+                Get all the basics to monetize and protect your knowledge.
               </p>
               <p className="mt-8">
                 <span className="text-4xl font-bold tracking-tight text-[#038270]">
-                  $0
+                  $0 (FREE)
                 </span>{' '}
-                <span className="text-base font-medium text-gray-500">
-                  /mo/seat
-                </span>
               </p>
               {/* <a
                   href={tier.href}
@@ -121,7 +118,14 @@ export default function Pricing() {
                     className="h-5 w-5 flex-shrink-0 text-green-500"
                     aria-hidden="true"
                   />
-                  <span className="text-sm text-gray-500">2 hubs</span>
+                  <span className="text-sm text-gray-500">Built-in protection against unauthorized sharing</span>
+                </li>
+                <li className="flex space-x-3">
+                  <CheckIcon
+                    className="h-5 w-5 flex-shrink-0 text-green-500"
+                    aria-hidden="true"
+                  />
+                  <span className="text-sm text-gray-500">Upload .mp4, .mp3, .pdf, .png, .jpg</span>
                 </li>
                 <li className="flex space-x-3">
                   <CheckIcon
@@ -129,7 +133,7 @@ export default function Pricing() {
                     aria-hidden="true"
                   />
                   <span className="text-sm text-gray-500">
-                    5% transaction fee
+                    Add Google Drive, Notion, and other links
                   </span>
                 </li>
                 <li className="flex space-x-3">
@@ -138,7 +142,7 @@ export default function Pricing() {
                     aria-hidden="true"
                   />
                   <span className="text-sm text-gray-500">
-                    Real-time collaboration
+                    Ability to charge one-time or subscription payments
                   </span>
                 </li>
                 <li className="flex space-x-3">
@@ -146,7 +150,7 @@ export default function Pricing() {
                     className="h-5 w-5 flex-shrink-0 text-green-500"
                     aria-hidden="true"
                   />
-                  <span className="text-sm text-gray-500">Admin tools</span>
+                  <span className="text-sm text-gray-500">View, comment, edit and admin roles</span>
                 </li>
                 <li className="flex space-x-3">
                   <CheckIcon
@@ -154,7 +158,7 @@ export default function Pricing() {
                     aria-hidden="true"
                   />
                   <span className="text-sm text-gray-500">
-                    Sync across devices
+                    Built-in community chat
                   </span>
                 </li>
                 <li className="flex space-x-3">
@@ -162,7 +166,21 @@ export default function Pricing() {
                     className="h-5 w-5 flex-shrink-0 text-green-500"
                     aria-hidden="true"
                   />
-                  <span className="text-sm text-gray-500">1 GB storage</span>
+                  <span className="text-sm text-gray-500">Upload files up to 5 MB (per file)</span>
+                </li>
+                <li className="flex space-x-3">
+                  <CheckIcon
+                    className="h-5 w-5 flex-shrink-0 text-green-500"
+                    aria-hidden="true"
+                  />
+                  <span className="text-sm text-gray-500">1 GB total cloud storage</span>
+                </li>
+                <li className="flex space-x-3">
+                  <CheckIcon
+                    className="h-5 w-5 flex-shrink-0 text-green-500"
+                    aria-hidden="true"
+                  />
+                  <span className="text-sm text-gray-500">3 hubs</span>
                 </li>
               </ul>
               <a
@@ -179,14 +197,14 @@ export default function Pricing() {
                 Expert
               </h2>
               <p className="mt-4 text-sm text-gray-500">
-                For power users who want unlimited revenue streams.
+                For power users who want to upload larger files and build unlimited revenue streams.
               </p>
               <p className="mt-8">
                 <span className="text-4xl font-bold tracking-tight text-[#038270]">
-                  $29.99
+                  $9.99
                 </span>{' '}
                 <span className="text-base font-medium text-gray-500">
-                  /mo/seat
+                  /mo
                 </span>
               </p>
               {/* <a
@@ -206,42 +224,21 @@ export default function Pricing() {
                     className="h-5 w-5 flex-shrink-0 text-green-500"
                     aria-hidden="true"
                   />
+                  <span className="text-sm text-gray-500">Upload files up to 5 GB (per file)</span>
+                </li>
+                <li className="flex space-x-3">
+                  <CheckIcon
+                    className="h-5 w-5 flex-shrink-0 text-green-500"
+                    aria-hidden="true"
+                  />
+                  <span className="text-sm text-gray-500">100 GB total cloud storage</span>
+                </li>
+                <li className="flex space-x-3">
+                  <CheckIcon
+                    className="h-5 w-5 flex-shrink-0 text-green-500"
+                    aria-hidden="true"
+                  />
                   <span className="text-sm text-gray-500">Unlimited hubs</span>
-                </li>
-                <li className="flex space-x-3">
-                  <CheckIcon
-                    className="h-5 w-5 flex-shrink-0 text-green-500"
-                    aria-hidden="true"
-                  />
-                  <span className="text-sm text-gray-500">No transaction fee</span>
-                </li>
-                <li className="flex space-x-3">
-                  <CheckIcon
-                    className="h-5 w-5 flex-shrink-0 text-green-500"
-                    aria-hidden="true"
-                  />
-                  <span className="text-sm text-gray-500">Remove ads</span>
-                </li>
-                <li className="flex space-x-3">
-                  <CheckIcon
-                    className="h-5 w-5 flex-shrink-0 text-green-500"
-                    aria-hidden="true"
-                  />
-                  <span className="text-sm text-gray-500">AI tools</span>
-                </li>
-                <li className="flex space-x-3">
-                  <CheckIcon
-                    className="h-5 w-5 flex-shrink-0 text-green-500"
-                    aria-hidden="true"
-                  />
-                  <span className="text-sm text-gray-500">Custom branding</span>
-                </li>
-                <li className="flex space-x-3">
-                  <CheckIcon
-                    className="h-5 w-5 flex-shrink-0 text-green-500"
-                    aria-hidden="true"
-                  />
-                  <span className="text-sm text-gray-500">5 GB storage</span>
                 </li>
               </ul>
               <a
@@ -265,7 +262,7 @@ export default function Pricing() {
                   $99.99
                 </span>{' '}
                 <span className="text-base font-medium text-gray-500">
-                  /mo/seat
+                  /mo/person
                 </span>
               </p>
               {/* <a
@@ -295,7 +292,7 @@ export default function Pricing() {
                     aria-hidden="true"
                   />
                   <span className="text-sm text-gray-500">
-                    SAML, Single-Sign On (SSO)
+                    Dedicated success manager
                   </span>
                 </li>
                 <li className="flex space-x-3">
@@ -304,25 +301,7 @@ export default function Pricing() {
                     aria-hidden="true"
                   />
                   <span className="text-sm text-gray-500">
-                    White glove 24/7 support
-                  </span>
-                </li>
-                <li className="flex space-x-3">
-                  <CheckIcon
-                    className="h-5 w-5 flex-shrink-0 text-green-500"
-                    aria-hidden="true"
-                  />
-                  <span className="text-sm text-gray-500">
-                    Custom & advanced reporting
-                  </span>
-                </li>
-                <li className="flex space-x-3">
-                  <CheckIcon
-                    className="h-5 w-5 flex-shrink-0 text-green-500"
-                    aria-hidden="true"
-                  />
-                  <span className="text-sm text-gray-500">
-                    Time & usage reporting
+                    Custom branding
                   </span>
                 </li>
                 <li className="flex space-x-3">
@@ -340,7 +319,16 @@ export default function Pricing() {
                     aria-hidden="true"
                   />
                   <span className="text-sm text-gray-500">
-                    100 GB storage
+                    Custom reporting & analytics
+                  </span>
+                </li>
+                <li className="flex space-x-3">
+                  <CheckIcon
+                    className="h-5 w-5 flex-shrink-0 text-green-500"
+                    aria-hidden="true"
+                  />
+                  <span className="text-sm text-gray-500">
+                    Flexible cloud storage
                   </span>
                 </li>
               </ul>
