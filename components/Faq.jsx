@@ -5,13 +5,17 @@ const faqs = [
     question: 'What is Kahana?',
     answer: (
       <span>
-        You can think of Kahana as Patreon meets Google Drive - it&apos;s a collaborative platform that lets you create hubs of knowledge with other creators & experts and monetize <i>together</i>. You can upload your best insights (notes, videos, files, templates, etc.) you&apos;ve curated and created and charge for access to them without having to build a course from scratch.
+        You can think of Kahana as Patreon meets Google Drive - it&apos;s a collaborative platform you can use to quickly build and protect digital products through &apos;hubs&apos; of content.
       </span>
     ),
   },
   {
-    question: 'Is Kahana free to use?',
-    answer: 'Yes! You can use Kahana for free, forever.',
+    question: 'What is a hub?',
+    answer: (
+      <span>
+        Hubs are the core functional units of Kahana - you earn revenue through Kahana by selling access to your hub(s). In any given hub, you upload the content you want to sell on any given topic (e.g., e-books, courses, frameworks, links, etc.), set a price point and payment type (one-time or subscription), add a title, description, and cover image (optional), and share the link to start earning. A hub is flexible and can ultimately have as many or as few files as you want. For example, you can sell a single e-book or video through one hub or a bundle of PDFs and videos through one hub. 
+      </span>
+    ),
   },
   {
     question: 'What does a hub look like?',
@@ -26,22 +30,35 @@ const faqs = [
     ),
   },
   {
-    question: 'How do I think about starting a hub?',
+    question: 'How does Kahana protect my digital products?',
     answer: (
       <span>
-        The first step is to recognize that you have unique knowledge! Everyone has a topic, field, or skill that they could teach someone who was in their shoes two years ago, a year ago, or even six months ago. If you need help finding yours, we put together a{' '}
+        Other monetization platforms typically send customers to a page where they can directly download your digital products after payment, which makes it incredibly easy for customers to resell or distribute them to others for free. Within Kahana hubs, downloading is disabled and people who have not paid are blocked from accessing its contents, preventing unauthorized/unpaid access to your digital products. 
+      </span>
+    ),
+  },
+  {
+    question: 'I don\'t have any digital products. How do I get started with Kahana?',
+    answer: (
+      <span>
+        Kahana is designed to make the process of creating digital products much faster. Instead of having to build something completely from scratch, like a course or an e-book, you can use a hub to create a collection of helpful information from existing assets (e.g., Google Docs, Google Sheets, templates, frameworks, articles, YouTube videos). Said differently, you can curate and charge for access to existing resources that teach people about a specific topic or help them achieve a certain goal.
+        If you need more help, we put together a{' '}
         <a href="https://blog.kahana.co/how-to-create-your-first-digital-product/" className="text-[#038270] font-medium">
           step-by-step guide
         </a>{' '}
-        to show you how you can quickly identify something you know a lot about and are passionate about and turn it into a hub.
+        to show you how you can quickly identify something you know a lot about and are passionate about and turn it into a hub. 
       </span>
     ),
+  },
+  {
+    question: 'Is Kahana free to use?',
+    answer: 'Yes! You can use Kahana for free, forever.',
   },
   {
     question: 'How do I get paid from Kahana?',
     answer: (
       <span>
-        In a nutshell, you earn money when people subscribe to your monetized hubs. In order to charge for access to your hubs, you can connect to Stripe, which you can do by following{' '}
+        In a nutshell, you earn money when people pay to access your monetized hubs. In order to charge for access to your hubs, you can connect to Stripe, which you can do by following{' '}
         <a href="https://blog.kahana.co/connect-stripe/" className="text-[#038270] font-medium">
           these steps
         </a>
