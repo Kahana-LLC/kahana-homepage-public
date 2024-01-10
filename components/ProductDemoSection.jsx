@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 
 // import backgroundImage from '../assets/images/background-features.jpg';
 import collaborate from '../assets/images/collaborate.webp';
-import explore from '../assets/images/explore.webp';
+import create from '../assets/images/create.webp';
 import monetize from '../assets/images/monetize.webp';
 import { Container } from './Container';
 
@@ -13,8 +13,8 @@ const features = [
   {
     title: 'Create',
     description:
-      'Upload your best content, files, resources, etc. into secure Kahana hubs.',
-    image: monetize,
+      'Upload your best content, files, resources, etc. into secure Kahana hubs that prevent unauthorized reselling and distribution.',
+    image: create,
   },
   {
     title: 'Monetize',
@@ -65,7 +65,7 @@ export default function ProductDemoSection() {
       <Container>
         <div className="max-w-2xl md:mx-auto md:text-center xl:max-w-none">
           <h1 className="py-4  bg-clip-text text-white text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl text-center">
-            Built for Creators and Experts
+            Built for Creators, Coaches, and Experts
           </h1>
           <p className="mt-6 text-xl tracking-tight text-white text-center">
             Everything you need to jumpstart and scale a thriving, secure knowledge business.  
@@ -95,7 +95,7 @@ export default function ProductDemoSection() {
                           className={clsx(
                             'font-display text-lg focus:outline-none',
                             selectedIndex === featureIndex
-                              ? 'text-[#338161] lg:text-white'
+                              ? 'text-[#338161] lg:text-white font-bold'
                               : 'text-white hover:text-white lg:text-white'
                           )}
                         >
