@@ -73,12 +73,13 @@ export default function AboutCard() {
                           <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
                         </svg>
                         <p className="relative">
-                          We built Kahana because we saw a huge problem -
-                          creators and experts were struggling to make recurring
-                          revenue. We saw an opportunity to help people turn
-                          their collective knowledge and IP assets into a product 
-                          quickly, without having to trudge through the challenging
-                          and exhausting process of creating a course. 
+                          My little sister has been a creator since she was 9 and has
+                          always known she wants to be a creator full-time. As a grew up,
+                          I watched her dedicate years of her life to creating content 
+                          but struggle to monetize her passion. And she&apos;s not alone: 
+                          millions of creators have similar experiences. We want to build 
+                          a world where anyone can create a sustainable living doing what 
+                          they love.
                         </p>
                       </div>
 
@@ -97,18 +98,20 @@ export default function AboutCard() {
               {/* Content area */}
               <div className="pt-12 sm:pt-16 lg:pt-20">
                 <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                  Empowering creators and experts
+                  Creators, you are the future 💚
                 </h2>
                 <div className="mt-6 space-y-6 text-gray-500">
                   <p className="text-lg">
-                    Share your collective knowledge with the world - get income back.
-                    <br/><br/> Kahana lets you take existing information you&apos;ve 
-                    already curated or created - files, notes, methodologies, best 
-                    practices, templates, research, etc. - and charge for access to it 
-                    through hubs of knowledge. <br/><br/> Whether you&apos;re a solo creator 
-                    or part of a large organization, we started Kahana to help you create 
-                    profitable recurring revenue streams faster.
-                  </p>
+                    Over the last several years, we have experienced a fundamental shift in society:
+                    more and more people want to become creators and escape the traditional 9-5 path.
+                    In fact, according to a study by Adobe, nearly 1/4th of the global population is 
+                    <i>already</i> contributing to the creator economy. <br/><br/> But the sad truth is 
+                    that the creator economy is broken, as the vast majority of creators struggle to earn
+                    consistent living wages. In the last 12 months, for instance, 72% of creators earned 
+                    less than $500, and 94% earned less than $10K. <br/><br/> You deserve to live in a world 
+                    where you can make a sustainable living doing what you love. And that&apos;s exactly why
+                    we are building Kahana: to power your knowledge business and help you gain the financial
+                    independence you need to continue living your dreams.
                 </div>
               </div>
             </div>
