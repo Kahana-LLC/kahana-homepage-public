@@ -72,11 +72,11 @@ export default function HeroSection() {
                   <div>
 
                     <h1 className="py-4  bg-clip-text text-transparent bg-gradient-to-r from-[#024324] to-teal-300 text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl text-center sm:text-left">
-                      Add passive income to your portfolio for free
+                      Build a secure knowledge business in minutes
                     </h1>
 
                     <p className="mt-3 text-base text-slate-900 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl text-center sm:text-left">
-                      Give your audience all your best resources - get income back. Start monetizing in under 45 minutes.
+                      Protect your digital products from getting stolen. Create new products 10x faster. Earn more income.
                     </p>
 
                     <div className="mt-8 flex flex-col items-center space-y-4 md:flex-row md:space-x-4 md:space-y-0">
@@ -84,7 +84,7 @@ export default function HeroSection() {
                         href="https://app.kahana.co/signup"
                         className="rounded-md border border-transparent bg-[#44B6A6] py-3 px-12 text-lg font-medium text-white shadow-sm hover:bg-[#024324] focus:outline-none focus:ring-2 focus:ring-[#024324] focus:ring-offset-2 text-center"
                       >
-                        Start earning 
+                        Earn for free
                       </a>
                       <a
                         href="https://www.youtube.com/channel/UCwsf3DOnt3uQdrqf-NRZ2_w"
