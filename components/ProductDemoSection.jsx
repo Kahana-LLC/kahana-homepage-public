@@ -68,7 +68,7 @@ export default function ProductDemoSection() {
             Built for Creators and Experts
           </h1>
           <p className="mt-6 text-xl tracking-tight text-white text-center">
-            Everything you need to jumpstart and scale a thriving, secure knowledge business  
+            Everything you need to jumpstart and scale a thriving, secure knowledge business.  
           </p>
         </div>
         <Tab.Group
