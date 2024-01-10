@@ -118,7 +118,7 @@ export default function Pricing() {
                     className="h-5 w-5 flex-shrink-0 text-green-500"
                     aria-hidden="true"
                   />
-                  <span className="text-sm text-gray-500">Built-in protection against unauthorized sharing</span>
+                  <span className="text-sm text-gray-500">Protection against unauthorized sharing</span>
                 </li>
                 <li className="flex space-x-3">
                   <CheckIcon
@@ -142,7 +142,7 @@ export default function Pricing() {
                     aria-hidden="true"
                   />
                   <span className="text-sm text-gray-500">
-                    Ability to charge one-time or subscription payments
+                    Charge one-time or subscription payments
                   </span>
                 </li>
                 <li className="flex space-x-3">
