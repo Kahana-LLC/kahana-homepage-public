@@ -11,16 +11,16 @@ import { Container } from './Container';
 
 const features = [
   {
-    title: 'Monetize',
+    title: 'Create',
     description:
-      'Create a delightfully casual subscription flow by charging access to your hubs. Connect through Stripe to receive payments.',
+      'Upload your best content, files, resources, etc. into secure Kahana hubs.',
     image: monetize,
   },
   {
-    title: 'Share',
+    title: 'Monetize',
     description:
-      'Flip a switch and get in front of viewers all over the world. Get exposure to folks who can’t wait for your stuff.',
-    image: explore,
+      'Set your price point and payment type (one-time or subscription), share your hub(s), and start earning.',
+    image: monetize,
   },
   {
     title: 'Collaborate',
@@ -68,9 +68,7 @@ export default function ProductDemoSection() {
             Built for Creators and Experts
           </h1>
           <p className="mt-6 text-xl tracking-tight text-white text-center">
-            You have years of valuable information sitting in your brain 
-            and on your computer. Kahana helps you turn your collective 
-            knowledge into hubs that generate income for you.    
+            Everything you need to jumpstart and scale a thriving, secure knowledge business  
           </p>
         </div>
         <Tab.Group
