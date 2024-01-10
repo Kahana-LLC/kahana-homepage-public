@@ -112,6 +112,7 @@ export default function AboutCard() {
                     where you can make a sustainable living doing what you love. And that&apos;s exactly why
                     we are building Kahana: to power your knowledge business and help you gain the financial
                     independence you need to continue living your dreams.
+                  </p>
                 </div>
               </div>
             </div>
