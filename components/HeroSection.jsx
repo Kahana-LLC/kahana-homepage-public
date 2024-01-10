@@ -84,7 +84,7 @@ export default function HeroSection() {
                         href="https://app.kahana.co/signup"
                         className="rounded-md border border-transparent bg-[#44B6A6] py-3 px-12 text-lg font-medium text-white shadow-sm hover:bg-[#024324] focus:outline-none focus:ring-2 focus:ring-[#024324] focus:ring-offset-2 text-center"
                       >
-                        Earn for free
+                        Earn income for free
                       </a>
                       <a
                         href="https://www.youtube.com/watch?v=TBNzzUQsB-4"
