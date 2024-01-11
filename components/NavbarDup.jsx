@@ -23,7 +23,7 @@ function NavBar() {
 
   return (
     <div>
-      <HeaderBanner />
+      {/* <HeaderBanner /> */}
       <nav className="bg-[#3B675E]">
         <style jsx>{`
           /* Your styles here */
