@@ -74,7 +74,7 @@ export default function AboutCard() {
                         </svg>
                         <p className="relative">
                           My little sister has been a creator since she was 9 and has
-                          always known she wants to be a creator full-time. As a grew up,
+                          always known she wants to be a creator full-time. As we grew up,
                           I watched her dedicate years of her life to creating content 
                           but struggle to monetize her passion. And she&apos;s not alone: 
                           millions of creators have similar experiences. We want to build 
