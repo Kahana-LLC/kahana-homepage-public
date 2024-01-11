@@ -104,7 +104,7 @@ export default function AboutCard() {
                   <p className="text-lg">
                     Over the last several years, we have experienced a fundamental shift in society:
                     more and more people want to become creators and escape the traditional 9-5 path.
-                    In fact, according to a study by Adobe, nearly 1/4th of the global population is 
+                    In fact, according to a study by Adobe, nearly 1/4th of the global population is  
                     <i>already</i> contributing to the creator economy. <br/><br/> But the sad truth is 
                     that the creator economy is broken, as the vast majority of creators struggle to earn
                     consistent living wages. In the last 12 months, for instance, 72% of creators earned 
