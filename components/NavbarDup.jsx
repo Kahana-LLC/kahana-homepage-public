@@ -106,7 +106,7 @@ function NavBar() {
             </div>
   
             {/* Desktop Menu */}
-            <div className="hidden md:flex space-x-1 items-center">
+            <div className="hidden lg:flex space-x-1 items-center">
               <button className="nav-link">    
                 <Link href="/about">
                   About
@@ -226,7 +226,7 @@ function NavBar() {
             </div>
   
             {/* Mobile Menu */}
-            <div className="md:hidden flex items-start">
+            <div className="lg:hidden flex items-start">
               <button
                 onClick={toggleMobileMenu}
                 className="hamburger-button ml-4 mt-2"
