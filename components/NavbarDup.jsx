@@ -24,7 +24,7 @@ function NavBar() {
   return (
     <div>
       {/* <HeaderBanner /> */}
-      <nav className="bg-[#3B675E]">
+      <nav className="bg-gradient-to-br from-black to-[#0A4526]">
         <style jsx>{`
           /* Your styles here */
           .nav-link {
