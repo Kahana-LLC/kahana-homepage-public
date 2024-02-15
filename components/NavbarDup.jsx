@@ -112,6 +112,11 @@ function NavBar() {
                   About
                 </Link>
               </button>
+              <button className="nav-link">    
+                <Link href="https://blog.kahana.co/" target="_blank" rel="noreferrer">
+                  Help
+                </Link>
+              </button>
               <button className="nav-link"> 
                 <Link href="/explore">
                   Featured
@@ -269,6 +274,9 @@ function NavBar() {
             <div className="flex flex-col items-start ml-4 space-y-6">
               <Link href="/about" className="mobile-link" style={{ fontWeight: 'bold'}}>
                 About
+              </Link>
+              <Link href="https://blog.kahana.co/" target="_blank" rel="noreferrer" className="mobile-link" style={{ fontWeight: 'bold'}}>
+                Help
               </Link>
               <Link href="/explore" className="mobile-link" style={{ fontWeight: 'bold'}}>
                 Featured
