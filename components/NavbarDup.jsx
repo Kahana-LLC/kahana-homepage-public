@@ -199,23 +199,9 @@ function NavBar() {
                       </Link>
                     </button>
                     <button className="dropdown-button">
-                      <Link href="https://kahana.tawk.help/" target="_blank" rel="noreferrer">
-                        <li>
-                          Help Center
-                        </li>  
-                      </Link>
-                    </button>
-                    <button className="dropdown-button">
                       <Link href="/faq">
                         <li>
                           FAQ
-                        </li>  
-                      </Link>
-                    </button>
-                    <button className="dropdown-button">
-                      <Link href="https://nas.io/creators-and-experts" target="_blank" rel="noreferrer">
-                        <li>
-                          Community
                         </li>  
                       </Link>
                     </button>
@@ -427,18 +413,8 @@ function NavBar() {
                       </Link>
                     </li>
                     <li>
-                      <Link href="https://kahana.tawk.help/" className="dropdown-link" target="_blank" rel="noreferrer">
-                        Help Center
-                      </Link>
-                    </li>
-                    <li>
                       <Link href="/faq" className="dropdown-link">
                         FAQ
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="https://nas.io/creators-and-experts" className="dropdown-link" target="_blank" rel="noreferrer">
-                        Community
                       </Link>
                     </li>
                   </ul>
