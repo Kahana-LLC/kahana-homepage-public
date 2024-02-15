@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import Link from 'next/link'
 import Image from 'next/image';
-import grayKahanaLogo from '../assets/kahana_logo_wide_gray.svg';
+import kahanaLogo from '../assets/kahana_logo_wide_light.svg';
 
 const CustomLoader = ({ src, width, quality }) => {
   return `https://assets.capterra.com/badge/14c0b2030cba21f2961e6c6aed65228b.svg?v=2289101&p=342047`;
@@ -79,7 +79,7 @@ export default function Footer() {
           <div className="space-y-8 xl:col-span-1"> 
             <Image
               className="h-10"
-              src={grayKahanaLogo}
+              src={kahanaLogo}
               w
               alt="navbar-logo"
             />
