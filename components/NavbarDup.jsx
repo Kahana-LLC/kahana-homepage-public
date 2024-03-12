@@ -118,8 +118,8 @@ function NavBar() {
                 </Link>
               </button>
               <button className="nav-link"> 
-                <Link href="/explore">
-                  Featured
+                <Link href="https://app.kahana.co/explore" target="_blank" rel="noreferrer">
+                  Explore
                 </Link>
               </button>
               <div className="dropdown">
@@ -278,8 +278,8 @@ function NavBar() {
               <Link href="https://blog.kahana.co/" target="_blank" rel="noreferrer" className="mobile-link" style={{ fontWeight: 'bold'}}>
                 Help
               </Link>
-              <Link href="/explore" className="mobile-link" style={{ fontWeight: 'bold'}}>
-                Featured
+              <Link href="https://app.kahana.co/explore" target="_blank" rel="noreferrer" className="mobile-link" style={{ fontWeight: 'bold'}}>
+                Explore
               </Link>
               <div className="dropdown">
                 <button
