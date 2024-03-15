@@ -2,10 +2,10 @@ import { CheckIcon } from '@heroicons/react/20/solid';
 
 const tiers = [
   {
-    name: 'Starter',
+    name: 'Creator',
     href: '#',
     priceMonthly: 0,
-    description: 'Get all the basics to monetize your expertise',
+    description: 'Get all the basics to monetize your expertise.',
     includedFeatures: [
       'Get subscription revenue',
       'Real-time collaboration',
@@ -16,7 +16,7 @@ const tiers = [
     ],
   },
   {
-    name: 'Premium',
+    name: 'Expert',
     href: '#',
     priceMonthly: 9.99,
     description: 'For power users who want unlimited revenue streams.',
@@ -27,10 +27,10 @@ const tiers = [
     ],
   },
   {
-    name: 'Teams',
+    name: 'Team Collaboration',
     href: '#',
     priceMonthly: 19.99,
-    description: 'All the basics for starting a new business',
+    description: 'Create, collaborate, and monetize with your team.',
     includedFeatures: [
       'Monetize your hubs.',
       'Number of hubs - Unlimited',
@@ -42,7 +42,7 @@ const tiers = [
     name: 'Enterprise',
     href: '#',
     priceMonthly: 29.99,
-    description: 'All the basics for starting a new business',
+    description: 'Advanced controls & support to run your entire organization.',
     includedFeatures: [
       'Monetize your hubs.',
       'Number of hubs - Unlimited',
@@ -64,14 +64,12 @@ export default function Pricing() {
     <div className="bg-white">
       <div className="mx-auto max-w-7xl py-24 px-4 sm:px-6 lg:px-8">
         <div className="sm:align-center sm:flex sm:flex-col">
-          <h1 className="text-5xl font-bold tracking-tight text-gray-900 sm:text-center">
+          <h1 className="text-5xl font-bold tracking-tight text-gray-900 text-center">
             Pricing Plans
           </h1>
-          <p className="mt-5 text-xl text-gray-500 sm:text-center">
-            We only win when you win. It’s completely free to get started. We
-            only receive a small percentage once you start earning on Kahana.
+          <p className="mt-5 text-xl text-gray-500 text-center">
+            We only win when you win - it’s completely free to get started. Kahana takes a 5% transaction fee every time someone pays to access your hub. For example, if you set a $10 price point for your hub and someone pays for access, Kahana will earn $0.50.
           </p>
-
           {/* monthly vs yearly  */}
           {/* <div className="relative mt-6 flex self-center rounded-lg bg-gray-100 p-0.5 sm:mt-8">
             <button
@@ -88,23 +86,20 @@ export default function Pricing() {
             </button>
           </div> */}
         </div>
-        <div className="mt-12 space-y-4 sm:mt-16 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:mx-auto lg:max-w-4xl xl:mx-0 xl:max-w-none xl:grid-cols-4">
+        <div className="mt-12 space-y-4 sm:mt-16 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:mx-auto lg:max-w-4xl xl:mx-0 xl:max-w-none xl:grid-cols-3">
           {/* Start adding different pricing plans from here  */}
           <div className="divide-y divide-gray-200 rounded-lg border border-gray-200 shadow-sm">
             <div className="p-6">
               <h2 className="text-lg font-medium leading-6 text-[#038270]">
-                Starter
+                Creator (Free Forever)
               </h2>
               <p className="mt-4 text-sm text-gray-500">
-                Get all the basics to monetize your expertise.
+                Get all the basics to monetize and protect your knowledge.
               </p>
               <p className="mt-8">
                 <span className="text-4xl font-bold tracking-tight text-[#038270]">
-                  $0
+                  FREE
                 </span>{' '}
-                <span className="text-base font-medium text-gray-500">
-                  /mo/seat
-                </span>
               </p>
               {/* <a
                   href={tier.href}
@@ -115,7 +110,7 @@ export default function Pricing() {
             </div>
             <div className="px-6 pt-6 pb-8">
               <h3 className="text-sm font-medium text-gray-900">
-                Whats included
+                What&apos;s included
               </h3>
               <ul role="list" className="mt-6 space-y-4">
                 <li className="flex space-x-3">
@@ -123,8 +118,22 @@ export default function Pricing() {
                     className="h-5 w-5 flex-shrink-0 text-green-500"
                     aria-hidden="true"
                   />
+                  <span className="text-sm text-gray-500">Protection against unauthorized sharing</span>
+                </li>
+                <li className="flex space-x-3">
+                  <CheckIcon
+                    className="h-5 w-5 flex-shrink-0 text-green-500"
+                    aria-hidden="true"
+                  />
+                  <span className="text-sm text-gray-500">Upload .mp4, .mp3, .pdf, .png, .jpg</span>
+                </li>
+                <li className="flex space-x-3">
+                  <CheckIcon
+                    className="h-5 w-5 flex-shrink-0 text-green-500"
+                    aria-hidden="true"
+                  />
                   <span className="text-sm text-gray-500">
-                    Get subscription revenue
+                    Add Google Drive, Notion, and other links
                   </span>
                 </li>
                 <li className="flex space-x-3">
@@ -133,7 +142,7 @@ export default function Pricing() {
                     aria-hidden="true"
                   />
                   <span className="text-sm text-gray-500">
-                    Real-time collaboration
+                    Charge one-time or subscription payments
                   </span>
                 </li>
                 <li className="flex space-x-3">
@@ -141,7 +150,7 @@ export default function Pricing() {
                     className="h-5 w-5 flex-shrink-0 text-green-500"
                     aria-hidden="true"
                   />
-                  <span className="text-sm text-gray-500">Admin tools</span>
+                  <span className="text-sm text-gray-500">View, comment, edit and admin roles</span>
                 </li>
                 <li className="flex space-x-3">
                   <CheckIcon
@@ -149,7 +158,7 @@ export default function Pricing() {
                     aria-hidden="true"
                   />
                   <span className="text-sm text-gray-500">
-                    Sync across devices
+                    Built-in community chat
                   </span>
                 </li>
                 <li className="flex space-x-3">
@@ -157,32 +166,45 @@ export default function Pricing() {
                     className="h-5 w-5 flex-shrink-0 text-green-500"
                     aria-hidden="true"
                   />
-                  <span className="text-sm text-gray-500">2 hubs</span>
+                  <span className="text-sm text-gray-500">Upload files up to 5 MB (per file)</span>
                 </li>
                 <li className="flex space-x-3">
                   <CheckIcon
                     className="h-5 w-5 flex-shrink-0 text-green-500"
                     aria-hidden="true"
                   />
-                  <span className="text-sm text-gray-500">1 GB storage</span>
+                  <span className="text-sm text-gray-500">1 GB total cloud storage</span>
+                </li>
+                <li className="flex space-x-3">
+                  <CheckIcon
+                    className="h-5 w-5 flex-shrink-0 text-green-500"
+                    aria-hidden="true"
+                  />
+                  <span className="text-sm text-gray-500">3 hubs</span>
                 </li>
               </ul>
+              <a
+                href="https://app.kahana.co/signup"
+                className="mt-8 block w-full rounded-md border border-[#3B675E] bg-[#3B675E] py-2 text-center text-sm font-semibold text-white hover:bg-[#024324]"
+              >
+                Sign up for free
+              </a>
             </div>
           </div>
           <div className="divide-y divide-gray-200 rounded-lg border border-gray-200 shadow-sm">
             <div className="p-6">
               <h2 className="text-lg font-medium leading-6 text-[#038270]">
-                Doer
+                Expert
               </h2>
               <p className="mt-4 text-sm text-gray-500">
-                For power users who want unlimited revenue streams.
+                For power users who want to upload larger files and build unlimited revenue streams.
               </p>
               <p className="mt-8">
                 <span className="text-4xl font-bold tracking-tight text-[#038270]">
                   $9.99
                 </span>{' '}
                 <span className="text-base font-medium text-gray-500">
-                  /mo/seat
+                  /mo
                 </span>
               </p>
               {/* <a
@@ -194,9 +216,23 @@ export default function Pricing() {
             </div>
             <div className="px-6 pt-6 pb-8">
               <h3 className="text-sm font-medium text-gray-900">
-                Everything in Starter, plus
+                Everything in Creator, plus
               </h3>
               <ul role="list" className="mt-6 space-y-4">
+                <li className="flex space-x-3">
+                  <CheckIcon
+                    className="h-5 w-5 flex-shrink-0 text-green-500"
+                    aria-hidden="true"
+                  />
+                  <span className="text-sm text-gray-500">Upload files up to 5 GB (per file)</span>
+                </li>
+                <li className="flex space-x-3">
+                  <CheckIcon
+                    className="h-5 w-5 flex-shrink-0 text-green-500"
+                    aria-hidden="true"
+                  />
+                  <span className="text-sm text-gray-500">100 GB total cloud storage</span>
+                </li>
                 <li className="flex space-x-3">
                   <CheckIcon
                     className="h-5 w-5 flex-shrink-0 text-green-500"
@@ -204,30 +240,29 @@ export default function Pricing() {
                   />
                   <span className="text-sm text-gray-500">Unlimited hubs</span>
                 </li>
-                <li className="flex space-x-3">
-                  <CheckIcon
-                    className="h-5 w-5 flex-shrink-0 text-green-500"
-                    aria-hidden="true"
-                  />
-                  <span className="text-sm text-gray-500">5 GB storage</span>
-                </li>
               </ul>
+              <a
+                href="https://app.kahana.co/signup"
+                className="mt-8 block w-full rounded-md border border-[#3B675E] bg-[#3B675E] py-2 text-center text-sm font-semibold text-white hover:bg-[#024324]"
+              >
+                Buy now
+              </a>
             </div>
           </div>
           <div className="divide-y divide-gray-200 rounded-lg border border-gray-200 shadow-sm">
             <div className="p-6">
               <h2 className="text-lg font-medium leading-6 text-[#038270]">
-                Team
+                Enterprise
               </h2>
               <p className="mt-4 text-sm text-gray-500">
-                Create, collaborate, and monetize with your team.
+                Advanced controls & support to monetize your organization&apos;s collective knowledge.
               </p>
               <p className="mt-8">
                 <span className="text-4xl font-bold tracking-tight text-[#038270]">
-                  $19.99
+                  $99.99
                 </span>{' '}
                 <span className="text-base font-medium text-gray-500">
-                  /mo/seat
+                  /mo/person
                 </span>
               </p>
               {/* <a
@@ -239,16 +274,9 @@ export default function Pricing() {
             </div>
             <div className="px-6 pt-6 pb-8">
               <h3 className="text-sm font-medium text-gray-900">
-                Everything in Doer, plus
+                Everything in Expert, plus
               </h3>
               <ul role="list" className="mt-6 space-y-4">
-                <li className="flex space-x-3">
-                  <CheckIcon
-                    className="h-5 w-5 flex-shrink-0 text-green-500"
-                    aria-hidden="true"
-                  />
-                  <span className="text-sm text-gray-500">50 GB storage</span>
-                </li>
                 <li className="flex space-x-3">
                   <CheckIcon
                     className="h-5 w-5 flex-shrink-0 text-green-500"
@@ -264,8 +292,7 @@ export default function Pricing() {
                     aria-hidden="true"
                   />
                   <span className="text-sm text-gray-500">
-                    Pay as you grow, you’ll be able to reconcile costs for
-                    anyone who’s joined your team before each billing cycle
+                    Dedicated success manager
                   </span>
                 </li>
                 <li className="flex space-x-3">
@@ -274,48 +301,7 @@ export default function Pricing() {
                     aria-hidden="true"
                   />
                   <span className="text-sm text-gray-500">
-                    Designed for expanded collaboration controls to ensure your
-                    hubs adhere to community guidelines
-                  </span>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="divide-y divide-gray-200 rounded-lg border border-gray-200 shadow-sm">
-            <div className="p-6">
-              <h2 className="text-lg font-medium leading-6 text-[#038270]">
-                Enterprise
-              </h2>
-              <p className="mt-4 text-sm text-gray-500">
-                Advanced controls & support to run your entire organization.
-              </p>
-              <p className="mt-8">
-                <span className="text-4xl font-bold tracking-tight text-[#038270]">
-                  $29.99
-                </span>{' '}
-                <span className="text-base font-medium text-gray-500">
-                  /mo/seat
-                </span>
-              </p>
-              {/* <a
-                  href={tier.href}
-                  className="mt-8 block w-full rounded-md border border-[#038270] bg-[#038270] py-2 text-center text-sm font-semibold text-white hover:bg-[#024324]"
-                >
-                  Get {tier.name}
-                </a> */}
-            </div>
-            <div className="px-6 pt-6 pb-8">
-              <h3 className="text-sm font-medium text-gray-900">
-                Everything in Team, plus
-              </h3>
-              <ul role="list" className="mt-6 space-y-4">
-                <li className="flex space-x-3">
-                  <CheckIcon
-                    className="h-5 w-5 flex-shrink-0 text-green-500"
-                    aria-hidden="true"
-                  />
-                  <span className="text-sm text-gray-500">
-                    SAML, Single-Sign On (SSO)
+                    Custom branding
                   </span>
                 </li>
                 <li className="flex space-x-3">
@@ -324,7 +310,7 @@ export default function Pricing() {
                     aria-hidden="true"
                   />
                   <span className="text-sm text-gray-500">
-                    White glove 24/7 support
+                    Custom integrations
                   </span>
                 </li>
                 <li className="flex space-x-3">
@@ -333,7 +319,7 @@ export default function Pricing() {
                     aria-hidden="true"
                   />
                   <span className="text-sm text-gray-500">
-                    Dedicated success manager (100+ seats)
+                    Custom reporting & analytics
                   </span>
                 </li>
                 <li className="flex space-x-3">
@@ -342,42 +328,15 @@ export default function Pricing() {
                     aria-hidden="true"
                   />
                   <span className="text-sm text-gray-500">
-                    Custom & Advanced Reporting
-                  </span>
-                </li>
-                <li className="flex space-x-3">
-                  <CheckIcon
-                    className="h-5 w-5 flex-shrink-0 text-green-500"
-                    aria-hidden="true"
-                  />
-                  <span className="text-sm text-gray-500">
-                    Time & Usage Reporting
-                  </span>
-                </li>
-                <li className="flex space-x-3">
-                  <CheckIcon
-                    className="h-5 w-5 flex-shrink-0 text-green-500"
-                    aria-hidden="true"
-                  />
-                  <span className="text-sm text-gray-500">
-                    Custom Integrations
-                  </span>
-                </li>
-                <li className="flex space-x-3">
-                  <CheckIcon
-                    className="h-5 w-5 flex-shrink-0 text-green-500"
-                    aria-hidden="true"
-                  />
-                  <span className="text-sm text-gray-500">
-                    Storage as needed
+                    Flexible cloud storage
                   </span>
                 </li>
               </ul>
               <a
                 href="https://7hkdcfzbmr0.typeform.com/to/ZYLHazEf"
-                className="mt-8 block w-full rounded-md border border-[#038270] bg-[#038270] py-2 text-center text-sm font-semibold text-white hover:bg-[#024324]"
+                className="mt-8 block w-full rounded-md border border-[#3B675E] bg-[#3B675E] py-2 text-center text-sm font-semibold text-white hover:bg-[#024324]"
               >
-                Contact Us
+                Contact us
               </a>
             </div>
           </div>

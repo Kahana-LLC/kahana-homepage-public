@@ -1,14 +1,16 @@
 import Head from 'next/head';
 // import Image from 'next/image';
-
+import Link from 'next/link';
 import Footer from '../components/Footer';
 import HeroSection from '../components/HeroSection';
-import Navbar from '../components/Navbar';
+import CustomerSuccessSection from '../components/CustomerSuccessSection';
+import NavbarDup from '../components/NavbarDup';
 import Pricing from '../components/Pricing';
+import Reviews from '../components/Reviews';
 import ProductDemoSection from '../components/ProductDemoSection';
-import RealitySection from '../components/RealitySection';
-import SimpleHeader from '../components/SimpleHeader';
-import { Testimonial } from '../components/Testimonial';
+//import RealitySection from '../components/RealitySection';
+//import SimpleHeader from '../components/SimpleHeader';
+//import { Testimonial } from '../components/Testimonial';
 
 //components
 //images
@@ -19,37 +21,93 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Kahana - Helping Creators Monetize</title>
+        <title>Build a secure knowledge business in minutes</title>
         <meta
           name="Kahana"
-          content="Kahana is the easiest way to monetize your content and research. Transform knowledge and expertise into subscription revenue. Sign up for free today! "
+          content="Kahana is the easiest way to turn your knowledge into subscription revenue. Sign up for free today!"
         />
+        {/* Google tag (gtag.js) */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-KQHFL9605P"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-KQHFL9605P');
+            `,
+          }}
+        />
+        {/* Reditus affiliate tracking script */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(w, d, s, p, t) {
+                w.gr = w.gr || function() {
+                  w.gr.q = w.gr.q || [];
+                  w.gr.q.push(arguments);
+                };
+                p = d.getElementsByTagName(s)[0];
+                t = d.createElement(s);
+                t.async = true;
+                t.src = "https://app.getreditus.com/gr.js?_ce=90";
+                p.parentNode.insertBefore(t, p);
+              })(window, document, "script");
+              gr("track", "pageview");
+            `,
+          }}
+        />
+        {/* Crisp chat script */}
+        <script
+          type="text/javascript"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.$crisp=[];
+              window.CRISP_WEBSITE_ID="711b6e27-0210-4313-9ea3-75009495e3ec";
+              (function(){
+                var d=document;
+                var s=d.createElement("script");
+                s.src="https://client.crisp.chat/l.js";
+                s.async=1;
+                d.getElementsByTagName("head")[0].appendChild(s);
+              })();
+            `,
+          }}
+        />
+
+        {/* Stripe button script */}
+        <script async
+          src="https://js.stripe.com/v3/buy-button.js">
+        </script>
       </Head>
       <div>
-        <div style={{ zIndex: '1' }} className="sticky top-0">
-          <Navbar />
+        <div style={{ zIndex: '100' }} className="sticky top-0">
+          <NavbarDup />
         </div>
         <main>
           <HeroSection />
+          <CustomerSuccessSection />
           <ProductDemoSection />
-          <SimpleHeader />
-          <RealitySection />
-          <Testimonial
-            id="testimonial-from-kahana-user"
-            author={{
-              name: 'Fantasy Flock Network',
-              role: 'YouTuber - 147K subscribers',
-              image: avatarImage1,
-            }}
-          >
-            <p>
-              “ The flexibility is a huge differentiator in that you can just
-              have monetized hubs and put them anywhere as opposed to Patreon,
-              which is a whole thing.”
-            </p>
-          </Testimonial>
+          <Reviews />
           <Pricing />
-          {/* <Reviews /> */}
+          
+          <section className={`py-16 px-4 sm:px-6 lg:px-8 bg-white`}>
+            <div className="max-w-7xl mx-auto text-center">
+              <h2 className={`text-3xl font-bold text-gray-900`}>
+                Ready to bring in more income?
+              </h2>
+              <p className="mt-4 text-gray-700 text-xl">
+                Start building your secure knowledge business today. 
+              </p>
+              <Link href="https://app.kahana.co/signup">
+                <a className="block mt-8">
+                  <button className="px-6 py-2 bg-[#3B675E] text-white rounded-md shadow-md hover:bg-[#046856]">
+                    Earn income for free
+                  </button>
+                </a>
+              </Link>
+            </div>
+          </section> 
 
           <Faq />
         </main>

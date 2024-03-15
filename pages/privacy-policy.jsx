@@ -1,14 +1,34 @@
+import Head from 'next/head';
 /* eslint-disable react/no-unescaped-entities */
 // import Image from 'next/image';
 
 import Footer from '../components/Footer';
-import Navbar from '../components/Navbar';
+import NavbarDup from '../components/NavbarDup';
 
 export default function PrivacyPolicy() {
   return (
     <>
+      <Head>
+        <title>Kahana Privacy Policy</title>
+        <meta
+          name="Kahana"
+          content="Kahana is the easiest way to turn your knowledge into subscription revenue. Sign up for free today!"
+        />
+        {/* Google tag (gtag.js) */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-KQHFL9605P"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-KQHFL9605P');
+            `,
+          }}
+        />
+      </Head>
       <div style={{ zIndex: '2' }} className="sticky top-0">
-        <Navbar />
+        <NavbarDup />
       </div>
       <div>
         <div className="relative overflow-hidden bg-white py-16">

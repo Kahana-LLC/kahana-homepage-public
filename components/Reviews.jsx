@@ -1,6 +1,16 @@
 import Image from 'next/image';
 
-import avatarImage2 from '../assets/images/avatars/avatar-1.png';
+import avatarImage1 from '../assets/images/avatars/oliviaMancusoHeadshot.png';
+
+import avatarImage3 from '../assets/images/avatars/edenGoldHeadshot.png';
+
+import avatarImage4 from '../assets/images/avatars/gregoryGray.png';
+
+import avatarImage7 from '../assets/images/avatars/tayLaddHeadshot.png';
+
+import avatarImage8 from '../assets/images/avatars/BSJheadshot.png';
+
+import avatarImage9 from '../assets/images/avatars/kelseyVetterHeadshot.png';
 
 import { Container } from './Container';
 
@@ -8,60 +18,60 @@ const testimonials = [
   [
     {
       content:
-        "I can create hubs for clients and for my own newslettoverload in today's day and age that leads to disorganization and chaos. Kahana wrangles that in.",
+        "I can honestly say that I've never worked with a team that was as helpful and dedicated as the team at Kahana. If you're a digital creator looking for a platform that not only supports your content creation but also helps you achieve your goals, then Kahana is the answer.",
       author: {
-        name: 'Content Creator',
-        role: 'Soul Story Creative',
-        image: avatarImage2,
+        name: 'Olivia Mancuso',
+        role: 'Manifestation Coach & Brand Consultant',
+        image: avatarImage1, 
       },
     },
     {
       content:
-        "I can create hubs for clients and for my own newsletters, blog posts, and scripts for webinars. There's so much information overload in today's day and age that leads to disorganization and chaos. Kahana wrangles that in.",
+        "You took my brain and turned it into a phenomenal asset. I could not do this at all without Kahana - I wouldn't even know where to start.",
       author: {
-        name: 'Content Creator',
-        role: 'Soul Story Creative',
-        image: avatarImage2,
-      },
-    },
-  ],
-  [
-    {
-      content:
-        'I can create hubs for clients and for my own newsletters, blog posts, andnd age that leads to disorganization and chaos. Kahana wrangles that in.',
-      author: {
-        name: 'Content Creator',
-        role: 'Soul Story Creative',
-        image: avatarImage2,
-      },
-    },
-    {
-      content:
-        'I can create hubs for clients and for my own newsletters, blog posts, and shat leads to disorganization and chaos. Kahana wrangles that in.',
-      author: {
-        name: 'Content Creator',
-        role: 'Soul Story Creative',
-        image: avatarImage2,
+        name: 'Tay Ladd',
+        role: 'Corporate Lawyer, Creator & Brand Deal Expert',
+        image: avatarImage7, 
       },
     },
   ],
   [
     {
       content:
-        'I can create hubs for clients and for my own ganization and chaos. Kahana wrangles that in.',
+        "Kahana allows me to go so much more in-depth and share all the knowledge I've learned on and off the field - I can only scratch the surface on Instagram and TikTok.",
       author: {
-        name: 'Content Creator',
-        role: 'Soul Story Creative',
-        image: avatarImage2,
+        name: 'Benjamin St-Juste',
+        role: 'NFL Player & Brand Owner',
+        image: avatarImage8, 
       },
     },
     {
       content:
-        "I can create hubs for clients and for my own newsletters, blog posts, and scripts for webinars. There's so much information overload in Kahana wrangles that in.",
+        "I have had a lot of different software companies reach out to me, but there was something about Kahana that really intrigued me. To be able to have people follow along my journey and see what's working for me can make such a greater impact for my audience.",
       author: {
-        name: 'Content Creator',
-        role: 'Soul Story Creative',
-        image: avatarImage2,
+        name: 'Eden Gold',
+        role: 'Adulting Coach',
+        image: avatarImage3,
+      },
+    },
+  ],
+  [
+    {
+      content:
+        "Kahana has the most user-friendly interface I've come across in a platform of its kind. I love how easy it is to set up, make changes, add value, and connect with your audience. It's allowed me to monetize my knowledge and add a passive revenue stream to my small business.",
+      author: {
+        name: 'Kelsey Vetter',
+        role: 'CEO & Pinterest Marketing Expert',
+        image: avatarImage9,
+      },
+    },
+    {
+      content:
+        "It's finally out of my head! I've been wanting to build digital products for months and couldn't make any progress; Kahana streamlined it and made it so much easier.",
+      author: {
+        name: 'Gregory Gray',
+        role: 'Fractional CEO & Executive Coach',
+        image: avatarImage4,
       },
     },
   ],
@@ -75,7 +85,7 @@ function QuoteIcon(props) {
   );
 }
 
-export function Reviews() {
+export default function Reviews() {
   return (
     <section
       id="testimonials"
@@ -83,13 +93,12 @@ export function Reviews() {
       className="bg-slate-50 py-20 sm:py-32"
     >
       <Container>
-        <div className="mx-auto max-w-2xl md:text-center">
+        <div className="mx-auto max-w-2xl text-center">
           <p className="mt-1 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
-            How creators are changing the game with Kahana
+            Why People Love Kahana
           </p>
           <p className="mt-4 text-lg tracking-tight text-slate-700">
-            Kahana is so simple that creators can’t help but fall in love with
-            it.
+            Multi-passionate creators and experts from all over the world 🌎
           </p>
         </div>
         <ul

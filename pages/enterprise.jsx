@@ -1,0 +1,277 @@
+import React from 'react';
+import Head from 'next/head';
+import Footer from '../components/Footer';
+import NavbarDup from '../components/NavbarDup';
+import ProductDemoSectionEnterprise from '../components/ProductDemoSectionEnterprise';
+import Image from 'next/image';
+import { CheckIcon } from '@heroicons/react/20/solid';
+import enterpriseHub from '../assets/images/enterpriseHub.png';
+
+const posts = [
+  {
+    title: 'On-Demand Hub Creation',
+    description:
+      'Want hubs but have too much on your plate? We\'ll build them for you. Choose the number of hubs you want, add specific requests, and submit existing content you’d like to include. Our team will handle all the graphic design, formatting, and content creation you don’t want to touch. Track the progress of your hubs in real-time as they’re built right before your eyes. Finished hubs are delivered in as little as 5 business days - it’s like ordering Domino’s for recurring revenue.',
+    imageUrl:
+      'https://kahana-website-images.s3.us-east-2.amazonaws.com/On-Demand+Hub+Creation.webp',
+    buttonQuote:
+      'Order my hubs',
+    buttonLink:
+      '/order-hubs-on-demand',
+  },
+  {
+    title: 'Custom Development',
+    description:
+      'Want to create something special? We’ll collaborate with you closely to develop tailor-made features, add-ons, and integrations that are specific to the needs of your organization.',
+    imageUrl:
+      'https://kahana-website-images.s3.us-east-2.amazonaws.com/Custom+Development.webp',
+    buttonQuote:
+      'Let\'s chat',
+    buttonLink:
+      'https://7hkdcfzbmr0.typeform.com/to/ya2MITnT?utm_source=solutions_page',
+  },
+  {
+    title: 'Boost Program',
+    description:
+      'Want to get your hubs in front of more potential customers? We have you covered. Our team will create a tailored email campaign on your behalf and put your hub in front of thousands of potential customers per month that match your ideal customer profile. We take care of the entire process so that you generate recurring revenue on autopilot.',
+    imageUrl:
+      'https://kahana-website-images.s3.us-east-2.amazonaws.com/BoostProgram.webp',
+    buttonQuote:
+      'Apply now',
+    buttonLink:
+      'https://7hkdcfzbmr0.typeform.com/to/c9lwNpNb?utm_source=solutions_page',
+  },
+  {
+    title: 'Recurring Revenue Implementation',
+    description:
+      'Our recurring revenue implementation program combines on-demand hub creation, custom development, and tailored training to help organizations create profitable hubs from existing assets, templates, and methodologies.',
+    imageUrl:
+      'https://kahana-website-images.s3.us-east-2.amazonaws.com/Recurring+Revenue+Implementation.webp',
+    buttonQuote:
+      'Let\'s chat',
+    buttonLink:
+      'https://7hkdcfzbmr0.typeform.com/to/NvNSzKPE?utm_source=solutions_page',
+  },
+];
+
+
+const EnterprisePage = () => {
+  return (
+    <div>
+      <Head>
+        <title>Kahana - How enterprises generate recurring revenue</title>
+        <meta
+          name="Kahana"
+          content="Kahana is the easiest way to monetize your content and research. Transform knowledge and expertise into subscription revenue. Sign up for free today!"
+        />
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-KQHFL9605P"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-KQHFL9605P');
+            `,
+          }}
+        />
+      </Head>
+
+      <div className="sticky top-0 z-50">
+        <NavbarDup />
+      </div>
+
+      {/* Hero section */}
+      <section className="py-16 md:py-18">
+        <div className="container mx-auto px-4 md:px-8 text-center">
+          <h1 className="text-5xl font-bold mb-4 md:px-12 lg:px-24">
+            Turn your company&apos;s best assets into recurring revenue
+          </h1>
+          <p className="text-lg mb-8 md:px-12 lg:px-24">
+            Monetize the value you deliver and the knowledge you gain from projects on an ongoing basis.
+          </p>
+          <a
+            href="https://7hkdcfzbmr0.typeform.com/to/ZYLHazEf?utm_content=enterprise_page"
+            className="bg-[#3B675E] text-white py-2 px-6 rounded-md text-center inline-block mx-auto max-w-md"
+          >
+            Request a demo
+          </a>
+          <div className="mt-8">
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+              <a href="https://app.kahana.co/hub/tHwAYvYPzqVwGPGzh10k" target="_blank" rel="noopener noreferrer">
+                <Image
+                  src={enterpriseHub}
+                  alt="Kahana Hub"
+                  width={750}
+                  height={750}
+                  layout="responsive"
+                />
+              </a>
+            </div>
+          </div>
+          <div className="md:px-12 lg:px-24 mt-4 text-gray-500 text-center">
+            Create and charge for access to an up-to-date repository of your best data, research, insights, best practices, methodologies, templates, etc., like this hub
+          </div>
+        </div>
+      </section>
+
+      <ProductDemoSectionEnterprise />
+      
+      {/* What you get section */}
+      <section className="py-12 md:py-16">
+        <div className="container mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-8 md:px-12 lg:px-24 px-4">What you get with Enterprise</h2>
+          <div className="flex justify-center">
+            <div className="mx-auto max-w-md p-6 bg-gray-100 rounded-lg">
+              <ul className="space-y-4">
+                <li className="flex items-center space-x-3">
+                  <CheckIcon className="h-5 w-5 text-green-500" aria-hidden="true" />
+                  <span className="text-sm text-gray-500">Unlimited revenue streams</span>
+                </li>
+                <li className="flex items-center space-x-3">
+                  <CheckIcon className="h-5 w-5 text-green-500" aria-hidden="true" />
+                  <span className="text-sm text-gray-500">Real-time collaboration</span>
+                </li>
+                <li className="flex items-center space-x-3">
+                  <CheckIcon className="h-5 w-5 text-green-500" aria-hidden="true" />
+                  <span className="text-sm text-gray-500">Sync across devices</span>
+                </li>
+                <li className="flex items-center space-x-3">
+                  <CheckIcon className="h-5 w-5 text-green-500" aria-hidden="true" />
+                  <span className="text-sm text-gray-500">100 GB storage</span>
+                </li>
+                <li className="flex items-center space-x-3">
+                  <CheckIcon className="h-5 w-5 text-green-500" aria-hidden="true" />
+                  <span className="text-sm text-gray-500">Advanced permissions & controls</span>
+                </li>
+                <li className="flex items-center space-x-3">
+                  <CheckIcon className="h-5 w-5 text-green-500" aria-hidden="true" />
+                  <span className="text-sm text-gray-500">SAML, Single-Sign On (SSO)</span>
+                </li>
+                <li className="flex items-center space-x-3">
+                  <CheckIcon className="h-5 w-5 text-green-500" aria-hidden="true" />
+                  <span className="text-sm text-gray-500">White glove 24/7 support</span>
+                </li>
+                <li className="flex items-center space-x-3">
+                  <CheckIcon className="h-5 w-5 text-green-500" aria-hidden="true" />
+                  <span className="text-sm text-gray-500">Custom & advanced reporting</span>
+                </li>
+                <li className="flex items-center space-x-3">
+                  <CheckIcon className="h-5 w-5 text-green-500" aria-hidden="true" />
+                  <span className="text-sm text-gray-500">Time & usage reporting</span>
+                </li>
+                <li className="flex items-center space-x-3">
+                  <CheckIcon className="h-5 w-5 text-green-500" aria-hidden="true" />
+                  <span className="text-sm text-gray-500">Custom integrations</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Add ons section */}
+      <section className="px-4 pt-6 pb-20 sm:px-6 lg:px-8 lg:pt-20 lg:pb-28">
+        <div className=" inset-0">
+          <div className="h-1/3 bg-white sm:h-2/3" />
+        </div>
+        <div className=" mx-auto max-w-7xl">
+          <div className="text-center">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+              Custom add-ons
+            </h2>
+            <p className="mx-auto mt-3 max-w-2xl text-xl text-gray-500 sm:mt-4">
+              Supercharge your Enterprise plan to tailor your experience and bring recurring revenue to your organization even faster  
+            </p>
+          </div>
+          <div className="mx-auto mt-12 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3">
+            {posts.map((post) => (
+              <div
+                key={post.title}
+                className="flex flex-col overflow-hidden rounded-lg shadow-2xl hover:shadow-none border-2 border-slate-100"
+              >
+                <div className="flex-shrink-0">
+                  <img
+                    className="h-48 w-full object-cover"
+                    src={post.imageUrl}
+                    alt=""
+                  /> 
+                </div>
+                <div className="flex flex-1 flex-col justify-between bg-white p-6">
+                  <div className="flex-1">
+                      <p className="text-xl font-semibold text-gray-900">
+                        {post.title}
+                      </p>
+                      <p className="mt-3 text-base text-gray-500">
+                        {post.description}
+                      </p>
+                  </div>
+                </div>
+                <div class="flex justify-center py-4 px-4">
+                  <a
+                    href={post.buttonLink}
+                    className="flex w-1/2 justify-center rounded-md border border-transparent bg-[#3B675E] py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-[#024324]"
+                  >
+                      {post.buttonQuote}
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonial section */}
+      <section className="py-16 md:py-18">
+        <div className="container mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-8">What our clients say</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-4 md:px-0">
+            {/* Add "px-4 md:px-0" to the grid container */}
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <p className="text-lg italic mb-4">
+                &quot;You took my brain and turned it into a phenomenal asset. I could not do this at all without Kahana - I wouldn&apos;t even know where to start.&quot;
+              </p>
+              <p className="font-semibold">Tay L., CEO at TheCorporateCreator LLC</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <p className="text-lg italic mb-4">
+                &quot;I love how easy it is to set-up, make changes, add value & connect with your audience. The platform has allowed me to monetize my knowledge, and added a passive revenue stream to my small business.&quot;
+              </p>
+              <p className="font-semibold">Kelsey V., CEO at Kelsey Vetter Co LLC</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <p className="text-lg italic mb-4">
+                &quot;It&apos;s finally out of my head! I&apos;ve been wanting to build digital products for months and couldn&apos;t make any progress; Kahana streamlined it and made it so much easier.&quot;
+              </p>
+              <p className="font-semibold">Gregory G., CEO at Gray Solutions, LLC</p>
+            </div>
+            {/* Repeat similar blocks for other testimonials */}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact section */}
+      <section className="py-16 md:py-18">
+        <div className="container mx-auto text-center flex flex-col items-center">
+          <h2 className="text-3xl font-bold mb-8 md:px-12 lg:px-24 px-4 mx-auto">Get a demo</h2>
+          <p className="mb-4 px-4 mx-auto">Talk to a human to understand how Kahana can help your org.</p>
+          <div className="mx-auto">
+            <a
+              href="https://7hkdcfzbmr0.typeform.com/to/ZYLHazEf?utm_content=enterprise_page"
+              className="bg-[#3B675E] text-white py-2 px-6 rounded-md text-center inline-block mx-auto"
+            >
+              Request a demo
+            </a>
+          </div>
+        </div>
+      </section>
+      
+      <Footer />
+    </div>
+  );
+};
+
+export default EnterprisePage;

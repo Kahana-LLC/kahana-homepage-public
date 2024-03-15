@@ -2,7 +2,7 @@ import Head from 'next/head';
 // import Image from 'next/image';
 
 import Footer from '../components/Footer';
-import Navbar from '../components/Navbar';
+import NavbarDup from '../components/NavbarDup';
 import Pricing from '../components/Pricing';
 
 //components
@@ -11,15 +11,45 @@ export default function PricingPage() {
   return (
     <>
       <Head>
-        <title>Kahana - Helping Creators Monetize</title>
+        <title>Pricing - Plans for every creator</title>
         <meta
           name="Kahana"
           content="Kahana is the easiest way to monetize your content and research. Transform knowledge and expertise into subscription revenue. Sign up for free today! "
         />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-KQHFL9605P"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-KQHFL9605P');
+            `,
+          }}
+        />
+        {/* Reditus affiliate tracking script */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(w, d, s, p, t) {
+                w.gr = w.gr || function() {
+                  w.gr.q = w.gr.q || [];
+                  w.gr.q.push(arguments);
+                };
+                p = d.getElementsByTagName(s)[0];
+                t = d.createElement(s);
+                t.async = true;
+                t.src = "https://app.getreditus.com/gr.js?_ce=90";
+                p.parentNode.insertBefore(t, p);
+              })(window, document, "script");
+              gr("track", "pageview");
+            `,
+          }}
+        />
       </Head>
       <div>
         <div className="sticky top-0">
-          <Navbar />
+          <NavbarDup />
         </div>
         <main>
           <Pricing />

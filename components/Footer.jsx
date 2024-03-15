@@ -1,20 +1,23 @@
+import React, { useEffect } from 'react';
+import Link from 'next/link'
 import Image from 'next/image';
-import grayKahanaLogo from '../assets/kahana_logo_wide_gray.svg';
+import kahanaLogo from '../assets/kahana_logo_wide_light.svg';
+
+const CustomLoader = ({ src, width, quality }) => {
+  return `https://assets.capterra.com/badge/14c0b2030cba21f2961e6c6aed65228b.svg?v=2289101&p=342047`;
+};
 
 const navigation = {
-  important: [
-    { name: 'Explore', href: '/explore' },
-
-    { name: 'Blog', href: 'https://blog.kahana.co' },
-    { name: 'About', href: '/about' },
-    { name: 'Home', href: '/' },
-    // { name: 'Log in', href: '#' },
-    // { name: 'Sign up', href: '#' },
+  product: [
+    { name: 'Recurring Revenue', href: '/product/recurring-revenue' },
+    { name: 'Collaboration Tools', href: '/product/collaboration-tools' },
+    { name: 'Community Engagement', href: '/product/community-engagement' },
   ],
-  support: [
-    { name: 'Help center', href: 'https://kahana.tawk.help/' },
-    { name: 'Vote for features', href: 'https://productific.com/@Kahana' },
-    { name: 'Live Chat', href: 'https://kahana.tawk.help/' },
+  solutions: [
+    { name: 'Enterprise', href: '/enterprise' },
+    { name: 'Coaches', href: '/coaches' },
+    { name: 'Consultants', href: '/consultants' },
+    { name: 'Experts', href: '/experts' },
   ],
   social: [
     { name: 'LinkedIn', href: 'https://www.linkedin.com/company/kahana-co/' },
@@ -26,19 +29,43 @@ const navigation = {
       name: 'Instagram',
       href: 'https://instagram.com/kahanahq',
     },
-    {
-      name: 'TikTok',
-      href: 'https://www.tiktok.com/@kahanahub',
-    },
     { name: 'Twitter', href: 'https://twitter.com/KahanaHQ' },
   ],
-  legal: [
+  build: [
+    { name: 'Log in', href: 'https://app.kahana.co/login' },
+    { name: 'Hubs on-demand', href: '/order-hubs-on-demand' },
+    { name: 'Guides & tutorials', href: '/resources' },
+    { name: 'Templates', href: 'https://templates.kahana.co' },
+    { name: 'Invest in seed round', href: 'https://7hkdcfzbmr0.typeform.com/to/wYCUMm54' },
+    { name: 'Become an affiliate', href: '/affiliates' }, 
+  ],
+  learn: [
+    { name: 'Blog', href: 'https://blog.kahana.co' },
+    { name: 'FAQ', href: '/faq' },
+    { name: 'Examples', href: '/explore' },
+  ],
+  resources: [
+    { name: 'Pricing', href: '/pricing' },
+    { name: 'About us', href: '/about' },
+    { name: 'Careers', href: 'https://7hkdcfzbmr0.typeform.com/to/RQ99b3Bp' },
+    { name: 'Email us', href: 'mailto:info@kahana.co' },
     { name: 'Privacy Policy', href: '/privacy-policy' },
     { name: 'Terms & Conditions', href: '/terms-and-conditions' },
   ],
 };
 
 export default function Footer() {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://b.sf-syn.com/badge_js?sf_id=3652674&variant_id=sf';
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   return (
     <footer className="bg-white" aria-labelledby="footer-heading">
       <hr className="my-8 h-px bg-slate-300 border-0 mx-8" />
@@ -47,29 +74,37 @@ export default function Footer() {
       </h2>
       <div className="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
-          <div className="space-y-8 xl:col-span-1">
+          <div className="space-y-8 xl:col-span-1"> 
             <Image
-              className="h-10 "
-              src={grayKahanaLogo}
+              className="h-10"
+              src={kahanaLogo}
               w
-              // width={10}
-              // height={20}
               alt="navbar-logo"
             />
             <p className="text-base text-gray-500">
-              Reserve your account and join 2000+ others learning to monetize
-              their expertise. Reservers also get early-bird access to tips,
-              tricks, templates, plus more.
+              Join a community of 2500+ creators and experts collaborating and monetizing their expertise together.
             </p>
+            {/* Badge container */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <div className="sf-root" data-id="3652674" data-badge="heart-badge-white" data-variant-id="sf" style={{ width: '75px' }}></div>
+              <a href="https://www.capterra.com/reviews/342047/Kahana?utm_source=vendor&utm_medium=badge&utm_campaign=capterra_reviews_badge">
+                <Image
+                  loader={CustomLoader}
+                  src="capterra-badge"
+                  alt="Capterra Badge"
+                  width={120} // Adjust the width here as per your requirement
+                  height={48} // Adjust the height here as per your requirement
+                />
+              </a>
+            </div>
           </div>
-          <div className="mt-12 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
-            <div className="md:grid md:grid-cols-2 md:gap-8">
+          <div className="mt-12 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0 md:grid-cols-3">
               <div>
                 <h3 className="text-base font-medium text-gray-900">
-                  Important links
+                  Product
                 </h3>
                 <ul role="list" className="mt-4 space-y-4">
-                  {navigation.important.map((item) => (
+                  {navigation.product.map((item) => (
                     <li key={item.name}>
                       <a
                         href={item.href}
@@ -81,10 +116,10 @@ export default function Footer() {
                   ))}
                 </ul>
               </div>
-              <div className="mt-12 md:mt-0">
-                <h3 className="text-base font-medium text-gray-900">Support</h3>
+              <div>
+                <h3 className="text-base font-medium text-gray-900">Kahana for</h3>
                 <ul role="list" className="mt-4 space-y-4">
-                  {navigation.support.map((item) => (
+                  {navigation.solutions.map((item) => (
                     <li key={item.name}>
                       <a
                         href={item.href}
@@ -96,8 +131,6 @@ export default function Footer() {
                   ))}
                 </ul>
               </div>
-            </div>
-            <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
                 <h3 className="text-base font-medium text-gray-900">Social</h3>
                 <ul role="list" className="mt-4 space-y-4">
@@ -113,10 +146,10 @@ export default function Footer() {
                   ))}
                 </ul>
               </div>
-              <div className="mt-12 md:mt-0">
-                <h3 className="text-base font-medium text-gray-900">Legal</h3>
+              <div>
+                <h3 className="text-base font-medium text-gray-900">Build</h3>
                 <ul role="list" className="mt-4 space-y-4">
-                  {navigation.legal.map((item) => (
+                  {navigation.build.map((item) => (
                     <li key={item.name}>
                       <a
                         href={item.href}
@@ -128,12 +161,41 @@ export default function Footer() {
                   ))}
                 </ul>
               </div>
-            </div>
+              <div>
+                <h3 className="text-base font-medium text-gray-900">Learn</h3>
+                <ul role="list" className="mt-4 space-y-4">
+                  {navigation.learn.map((item) => (
+                    <li key={item.name}>
+                      <a
+                        href={item.href}
+                        className="text-base text-gray-500 hover:text-gray-900"
+                      >
+                        {item.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-base font-medium text-gray-900">Resources</h3>
+                <ul role="list" className="mt-4 space-y-4">
+                  {navigation.resources.map((item) => (
+                    <li key={item.name}>
+                      <a
+                        href={item.href}
+                        className="text-base text-gray-500 hover:text-gray-900"
+                      >
+                        {item.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
           </div>
         </div>
         <div className="mt-12 border-t border-gray-200 pt-8">
           <p className="text-base text-gray-400 xl:text-center">
-            &copy; 2023 Kahana Group Inc. All rights reserved.
+            &copy; 2023 Kahana Group Inc. All rights reserved. <Link href="/sitemap">Sitemap</Link>
           </p>
         </div>
       </div>

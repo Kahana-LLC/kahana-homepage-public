@@ -4,28 +4,28 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
 // import backgroundImage from '../assets/images/background-features.jpg';
-import collaborate from '../assets/images/collaborate.png';
-import create from '../assets/images/create.png';
-import monetize from '../assets/images/monetize.png';
+import collaborate from '../assets/images/collaborate.webp';
+import create from '../assets/images/create.webp';
+import monetize from '../assets/images/monetize.webp';
 import { Container } from './Container';
 
 const features = [
   {
     title: 'Create',
     description:
-      'Create digital products faster than ever. Bulk upload content and files into hubs. Organize with folders, subfolders, and smart links.',
+      'Upload your best content, files, resources, etc. into secure Kahana hubs that prevent unauthorized reselling and distribution.',
     image: create,
   },
   {
     title: 'Monetize',
     description:
-      'Money appears in your bank account like magic. Create a delightfully casual subscription flow. Connect through Stripe to receive payments.',
+      'Set your price point and payment type (one-time or subscription), share your hub(s), and start earning.',
     image: monetize,
   },
   {
     title: 'Collaborate',
     description:
-      'Engage with your audience more deeply. No need to create alone - invite and collaborate with other doers, creators, and experts.',
+      'No need to create alone - build hubs together. Invite and collaborate with other creators and experts to make something special.',
     image: collaborate,
   },
 ];
@@ -64,12 +64,11 @@ export default function ProductDemoSection() {
       /> */}
       <Container>
         <div className="max-w-2xl md:mx-auto md:text-center xl:max-w-none">
-          <h1 className="py-4  bg-clip-text text-white text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
-            A Platform Built by Creators for Creators
+          <h1 className="py-4  bg-clip-text text-white text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl text-center">
+            Built for Creators, Coaches, and Experts
           </h1>
-          <p className="mt-6 text-xl tracking-tight text-white">
-            It’s a lonely world for creators - creators work too long and hard
-            without seeing results. That’s why we created Kahana.
+          <p className="mt-6 text-xl tracking-tight text-white text-center">
+            Everything you need to jumpstart and scale a thriving, secure knowledge business.  
           </p>
         </div>
         <Tab.Group
@@ -96,7 +95,7 @@ export default function ProductDemoSection() {
                           className={clsx(
                             'font-display text-lg focus:outline-none',
                             selectedIndex === featureIndex
-                              ? 'text-[#338161] lg:text-white'
+                              ? 'text-[#338161] lg:text-white font-bold'
                               : 'text-white hover:text-white lg:text-white'
                           )}
                         >
