@@ -264,13 +264,13 @@ const ConsultantsPage = () => {
           <p className="mt-4 text-gray-700">
             Refer people to Kahana and earn up to a 30% commission.
           </p>
-          <Link href="/affiliates">
-            <a className="block mt-8">
-              <button className="px-6 py-2 bg-[#3B675E] text-white rounded-md shadow-md">
-                Learn more
-              </button>
-            </a>
-          </Link>
+          <Link href="/affiliates" className="block mt-8" legacyBehavior>
+  <div>
+    <button className="px-6 py-2 bg-[#3B675E] text-white rounded-md shadow-md">
+      Learn more
+    </button>
+  </div>
+</Link>
         </div>
       </section> 
       

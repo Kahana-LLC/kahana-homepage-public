@@ -1,9 +1,20 @@
-import { Head, Html, Main, NextScript } from 'next/document';
+import { Head, Html, Main, NextScript } from "next/document";
 
 export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        {/* <script
+          src="https://cdn.jsdelivr.net/npm/algoliasearch@4.22.1/dist/algoliasearch-lite.umd.js"
+          integrity="sha256-pxkGFjfnFWYGOtV9uhCWK/spKiGS0Z7gVDKYm39LyfM="
+          crossorigin="anonymous"
+        ></script>
+        <script
+          src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.66.0/dist/instantsearch.production.min.js"
+          integrity="sha256-lKV2os1BMDtHxNVG6JQWSPYDUouULGz/nEI1z2VMKEM="
+          crossorigin="anonymous"
+        ></script> */}
+
         {/* Google Tag Manager code */}
         <script
           dangerouslySetInnerHTML={{
@@ -16,7 +27,7 @@ export default function Document() {
             `,
           }}
         />
-  
+
         {/* Adding hotjar script here */}
         <script
           dangerouslySetInnerHTML={{
@@ -65,7 +76,6 @@ export default function Document() {
 
             gtag('config', 'G-KQHFL9605P');
         </script> */}
-
       </Head>
       <body>
         {/* Google Tag Manager (noscript) immediately after opening <body> */}
@@ -74,10 +84,10 @@ export default function Document() {
             src="https://www.googletagmanager.com/ns.html?id=GTM-WBXNXKQ"
             height="0"
             width="0"
-            style={{ display: 'none', visibility: 'hidden' }}
+            style={{ display: "none", visibility: "hidden" }}
           />
         </noscript>
-        
+
         <Main />
         <NextScript />
       </body>

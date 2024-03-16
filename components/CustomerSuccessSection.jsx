@@ -13,27 +13,6 @@ const navigation = [
   { name: 'Company', href: '#' },
 ];
 
-if (typeof window !== 'undefined') {
-  window.addEventListener('load', function () {
-    const form = document.getElementById('myform');
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      const data = new FormData(form);
-      const action = e.target.action;
-      fetch(action, {
-        method: 'POST',
-        body: data,
-      }).then(() => {
-        '';
-      });
-    });
-  });
-}
-
-// function handleSubmit(e) {
-//   e.preventDefault();
-//   console.log('You clicked submit.');
-// }
 export default function HeroSection() {
   const [showVideo, setShowVideo] = useState(false);
 
@@ -44,6 +23,27 @@ export default function HeroSection() {
   const closeVideo = () => {
     setShowVideo(false);
   };
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.addEventListener('load', function () {
+        const form = document.getElementById('myform');
+        if (form) {
+          form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const data = new FormData(form);
+            const action = e.target.action;
+            fetch(action, {
+              method: 'POST',
+              body: data,
+            }).then(() => {
+              // Handle response if needed
+            });
+          });
+        }
+      });
+    }
+  }, []);
 
   return (
     <div className=" bg-white">

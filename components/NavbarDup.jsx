@@ -118,7 +118,7 @@ function NavBar() {
                 </Link>
               </button>
               <button className="nav-link"> 
-                <Link href="https://app.kahana.co/explore" target="_blank" rel="noreferrer">
+                <Link href="/search">
                   Explore
                 </Link>
               </button>

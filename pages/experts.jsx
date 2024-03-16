@@ -242,19 +242,23 @@ const ExpertsPage = () => {
         </div>
       </section>
 
-      {/* Contact section */}
       <section className="py-16 md:py-18">
         <div className="container mx-auto text-center flex flex-col items-center">
           <h2 className="text-3xl font-bold mb-8 md:px-12 lg:px-24 px-4 mx-auto">Want your own hub but have too much on your plate?</h2>
-          <p className="mb-4 px-4 mx-auto">We&apos;ll build one for you. Set up your interview, and we&apos;ll take care of the rest.</p>
-          <Link href="/order-hubs-on-demand">
-            <a className="bg-[#3B675E] text-white py-2 px-6 rounded-md text-center inline-block mx-auto max-w-md">
-              Order my hub
-            </a>
-          </Link>
+          <p className="mb-4 px-4 mx-auto">We'll build one for you. Set up your interview, and we'll take care of the rest.</p>
+          <div>
+  <Link
+    href="/order-hubs-on-demand"
+    className="bg-[#3B675E] text-white py-2 px-6 rounded-md text-center inline-block mx-auto max-w-md"
+  >
+    Order my hub
+  </Link>
+</div>
+
         </div>
       </section>
 
+      {/* Affiliate section */}
       <section className={`py-16 px-4 sm:px-6 lg:px-8 bg-white`}>
         <div className="max-w-7xl mx-auto text-center">
           <h2 className={`text-3xl font-bold text-gray-900`}>
@@ -263,13 +267,14 @@ const ExpertsPage = () => {
           <p className="mt-4 text-gray-700">
             Refer people to Kahana and earn up to a 30% commission.
           </p>
-          <Link href="/affiliates">
-            <a className="block mt-8">
-              <button className="px-6 py-2 bg-[#3B675E] text-white rounded-md shadow-md">
-                Learn more
-              </button>
-            </a>
-          </Link>
+          <div>
+  <Link href="/affiliates" className="block mt-8" legacyBehavior>
+    <button className="px-6 py-2 bg-[#3B675E] text-white rounded-md shadow-md">
+      Learn more
+    </button>
+  </Link>
+</div>
+
         </div>
       </section> 
       
