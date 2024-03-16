@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import NavBar from "../components/NavbarDup";
+import NavbarDup from "../components/NavbarDup";
 
 const SearchPage = () => {
   useEffect(() => {
@@ -23,16 +23,34 @@ const SearchPage = () => {
               }),
               refinementList({
                 container: "#refinements",
-                attribute: "metaTags",
-                sortBy: ["count"],
+                attribute: ["name", "description"],
+                sortBy: ["viewCount"],
               }),
               searchBox({
                 container: "#searchbox",
-                placeholder: "Search to your heart's content",
+                placeholder: "Search to your heart's content 💚",
               }),
               hits({
                 container: "#hits",
-                //
+                templates: {
+                  item(hit, { html }) {
+                    return html`
+                      <div class="items">
+                        <a
+                          href="https://kahana-dev.herokuapp.com/hub/${hit.objectID}"
+                          target="_blank"
+                        >
+                          <img src="${hit.url}" alt="${hit.name}" />
+                          <div class="items-info">
+                            <div class="items-info--title">
+                              <h3>${hit.name}</h3>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                    `;
+                  },
+                },
               }),
               pagination({
                 container: "#pagination",
@@ -48,12 +66,11 @@ const SearchPage = () => {
 
   return (
     <div>
-      <NavBar />
+      <div style={{ zIndex: "100" }} className="sticky top-0">
+        <NavbarDup />
+      </div>
       <div class="header">
         <div class="header-wrapper">
-          <div class="header-nav">
-            <h3>Home</h3>
-          </div>
           <div id="searchbox"></div>
         </div>
       </div>

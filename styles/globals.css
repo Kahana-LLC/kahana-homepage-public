@@ -12,18 +12,18 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Roboto", sans-serif;
-  background-color: rgb(7, 11, 33);
-  color: rgb(255, 255, 255);
+  background-color: #f7f7f7; /* Dark background color */
+  color: #000000; /* White text color */
 }
 
 a {
-  color: white;
+  color: #ffffff; /* White color for links */
   font-weight: 500;
   text-decoration: none;
 }
 
 a:hover {
-  color: rgb(181, 181, 232);
+  color: #ffffff; /* Color for links on hover */
 }
 
 .page {
@@ -31,39 +31,55 @@ a:hover {
 }
 
 .header {
-  background: rgba(2, 2, 45, 0.92);
+  background: rgba(53, 78, 73, 0.92); /* Dark background color for header */
   box-shadow: 0 0 0 1px rgba(35, 38, 59, 0.05),
-    0 1px 3px 0 rgba(35, 38, 59, 0.15);
-  padding: 0.5rem 0;
-  position: fixed;
-  top: 0;
+    0 1px 3px 0 rgba(35, 59, 41, 0.15);
+  padding: 1rem 0;
+  position: relative;
   width: 100%;
 }
 
 .header-wrapper {
-  align-items: center;
   display: flex;
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Center the content vertically */
+}
+
+.items-info {
+  text-align: start;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
   justify-content: center;
-}
-
-.header-nav {
-  font-weight: 500;
-  margin: 0 1.5rem;
-}
-
-.wrapper {
-  margin: 0 auto;
-  padding: 0 1.5rem;
   width: 100%;
+  height: 100px;
+  border-radius: 5px;
+  pointer-events: none;
+  background: rgba(248, 248, 248, 0.7); /* Dark background color for items */
+  border-color: rgba(255, 255, 255, 0.7);
 }
 
-.container {
-  margin-top: 3.5rem;
-  padding: 1.5rem;
-  display: grid;
-  gap: 1rem;
+.items-info--title {
+  margin-left: 10px;
 }
 
+.items-info--title h3 {
+  font-size: 15px;
+  /* margin-top: 0.3vw; */
+  padding-bottom: 10px;
+  margin-bottom: 0;
+  color: "#FFFFFF";
+}
+
+.items-info--genres {
+  margin-bottom: 15px;
+}
+
+.genre-title {
+  display: inline-block;
+  font-size: 12px;
+  color: white; /* White color for genre title */
+}
 /* Autocomplete */
 
 .aa-Panel {
@@ -116,6 +132,10 @@ a:hover {
   border: none;
   padding-left: 10px;
   padding-right: 10px;
+  color: rgb(34, 34, 34); /* Set the text color to black */
+  font-size: 12px;
+  font-family: sans-serif; /* Use an industry-standard font */
+  text-indent: 5px; /* Adjust the indentation within the search bar */
 }
 
 .ais-SearchBox-submit {
@@ -181,8 +201,8 @@ a:hover {
   height: 100px;
   border-radius: 5px;
   pointer-events: none;
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.7);
+  background: rgb(255, 255, 255);
+  border-color: rgb(255, 255, 255);
 }
 
 .items-info--title {
@@ -203,5 +223,9 @@ a:hover {
 .genre-title {
   display: inline-block;
   font-size: 12px;
+  color: rgb(0, 0, 0);
+}
+
+.header .nav-button {
   color: white;
 }
