@@ -16,13 +16,12 @@ body {
   color: #000000; /* White text color */
 }
 
-a {
-  color: #ffffff; /* White color for links */
-  font-weight: 500;
+/* a {
+  color: #000000; /* White color for links */
+/* font-weight: 500;
   text-decoration: none;
-}
-
-a:hover {
+} */
+*/ a:hover {
   color: #ffffff; /* Color for links on hover */
 }
 
@@ -223,7 +222,7 @@ a:hover {
 .genre-title {
   display: inline-block;
   font-size: 12px;
-  color: rgb(0, 0, 0);
+  color: rgb(143, 89, 89);
 }
 
 .header .nav-button {
