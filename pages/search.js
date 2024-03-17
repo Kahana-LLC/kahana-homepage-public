@@ -40,7 +40,9 @@ const SearchPage = () => {
                           href="https://kahana-dev.herokuapp.com/hub/${hit.objectID}"
                           target="_blank"
                         >
-                          <img src="${hit.url}" alt="${hit.name}" />
+                          <div class="image-container">
+                            <img src="${hit.url}" alt="${hit.name}" />
+                          </div>
                           <div class="items-info">
                             <div class="items-info--title">
                               <h3>${hit.name}</h3>
