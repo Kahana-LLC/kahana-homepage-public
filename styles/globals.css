@@ -1,9 +1,7 @@
-/* Import Tailwind CSS styles */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Additional custom styles */
 * {
   box-sizing: border-box;
 }
@@ -12,17 +10,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Roboto", sans-serif;
-  background-color: #f7f7f7; /* Dark background color */
-  color: #000000; /* White text color */
-}
-
-/* a {
-  color: #000000; /* White color for links */
-/* font-weight: 500;
-  text-decoration: none;
-} */
-*/ a:hover {
-  color: #ffffff; /* Color for links on hover */
+  background-color: #f7f7f7;
+  color: #000000;
 }
 
 .page {
@@ -232,7 +221,7 @@ body {
 .image-container {
   position: relative;
   width: 100%;
-  padding-top: 56.25%; /* 16:9 aspect ratio */
+  padding-top: 56.25%;
 }
 
 .image-container img {
