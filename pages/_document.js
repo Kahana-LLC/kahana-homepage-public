@@ -5,8 +5,9 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <Script
-          dangerouslySetInnerHTML={{
+        <Script id="my-script">
+          dangerouslySetInnerHTML=
+          {{
             __html: `
               (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
               new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -15,7 +16,7 @@ export default function Document() {
               })(window,document,'script','dataLayer','GTM-WBXNXKQ');
             `,
           }}
-        />
+        </Script>
 
         {/* Adding hotjar script here */}
         <Script
