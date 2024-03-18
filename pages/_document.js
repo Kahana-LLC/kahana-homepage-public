@@ -1,22 +1,11 @@
 import { Head, Html, Main, NextScript } from "next/document";
+import Script from "next/script";
 
 export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        {/* <script
-          src="https://cdn.jsdelivr.net/npm/algoliasearch@4.22.1/dist/algoliasearch-lite.umd.js"
-          integrity="sha256-pxkGFjfnFWYGOtV9uhCWK/spKiGS0Z7gVDKYm39LyfM="
-          crossorigin="anonymous"
-        ></script>
-        <script
-          src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.66.0/dist/instantsearch.production.min.js"
-          integrity="sha256-lKV2os1BMDtHxNVG6JQWSPYDUouULGz/nEI1z2VMKEM="
-          crossorigin="anonymous"
-        ></script> */}
-
-        {/* Google Tag Manager code */}
-        <script
+        <Script
           dangerouslySetInnerHTML={{
             __html: `
               (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -29,7 +18,7 @@ export default function Document() {
         />
 
         {/* Adding hotjar script here */}
-        <script
+        <Script
           dangerouslySetInnerHTML={{
             __html: `
                 (function(h,o,t,j,a,r){
@@ -50,7 +39,7 @@ export default function Document() {
         />
 
         {/* Crisp script */}
-        <script
+        <Script
           type="text/javascript"
           dangerouslySetInnerHTML={{
             __html: `
