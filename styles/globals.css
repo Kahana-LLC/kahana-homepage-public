@@ -1,11 +1,14 @@
+/* Tailwind CSS setup */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Box sizing for all elements */
 * {
   box-sizing: border-box;
 }
 
+/* Body styles */
 body {
   margin: 0;
   padding: 0;
@@ -14,10 +17,12 @@ body {
   color: #000000;
 }
 
+/* Page width */
 .page {
   width: 100vw;
 }
 
+/* Header styles */
 .header {
   background: rgba(53, 78, 73, 0.92);
   box-shadow: 0 0 0 1px rgba(35, 38, 59, 0.05),
@@ -27,65 +32,71 @@ body {
   width: 100%;
 }
 
+/* Header wrapper styles */
 .header-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+/* Items info container */
 .items-info {
   display: flex;
   flex-direction: column;
-  align-items: baseline;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
   padding: 10px;
   background-color: #fff;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+  border-radius: 5px;
 }
 
+/* Title styles */
 .items-info--title {
-  margin-bottom: 5px;
+  margin-top: 10px; /* Initial margin for title */
+  margin-bottom: 5px; /* Initial margin for title */
 }
 
+/* Description styles */
 .items-info--description {
   font-size: 12px;
   color: #555;
+  margin-bottom: 10px;
   overflow: hidden;
-  text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3; /* Limit description to 3 lines */
   -webkit-box-orient: vertical;
 }
 
-.items-info--title {
-  margin-left: 10px;
-  margin-bottom: 5px;
-}
-
+/* Title heading styles */
 .items-info--title h3 {
   font-size: 15px;
   margin-bottom: 0;
 }
 
+/* Adjustments when no description */
+.items.no-description .items-info {
+  padding-bottom: 5px;
+  margin-top: 5px;
+}
+
+/* Genres styles */
 .items-info--genres {
   margin-bottom: 15px;
 }
 
+/* Genre title styles */
 .genre-title {
   display: inline-block;
   font-size: 12px;
   color: white;
 }
 
-/* Autocomplete */
-
+/* Autocomplete styles */
 .aa-Panel {
   position: fixed;
 }
 
-/* InstantSearch */
-
+/* InstantSearch styles */
 .ais-Hits-list {
   display: grid;
   gap: 1rem;
@@ -93,6 +104,7 @@ body {
   list-style: none;
 }
 
+/* Pagination styles */
 .ais-Pagination-list {
   list-style: none;
 }
@@ -117,6 +129,7 @@ body {
   margin: 2rem 0;
 }
 
+/* Search box styles */
 .ais-SearchBox {
   align-items: center;
 }
@@ -136,15 +149,12 @@ body {
   text-indent: 5px;
 }
 
-.ais-SearchBox-submit {
-  display: none;
-}
-
+.ais-SearchBox-submit,
 .ais-SearchBox-reset {
   display: none;
 }
 
-/* RefinementList */
+/* RefinementList styles */
 .ais-RefinementList-list {
   list-style: none;
 }
@@ -164,10 +174,7 @@ body {
   font-size: 20px;
 }
 
-.ais-RefinementList-checkbox {
-  display: none;
-}
-
+.ais-RefinementList-checkbox,
 .ais-RefinementList-count {
   display: none;
 }
@@ -176,69 +183,20 @@ body {
   cursor: pointer;
 }
 
+/* Items container styles */
 .items {
   overflow: hidden;
-  margin-right: 0.5rem;
   cursor: pointer;
-}
-
-.items img {
-  display: inline-block;
-  height: 100%;
-  width: 100%;
-  border-radius: 5px;
-}
-
-.items-info {
-  text-align: start;
-  display: flex;
-  flex-direction: column;
-  align-items: baseline;
-  justify-content: center;
-  width: 100%;
-  height: 100px;
-  border-radius: 5px;
-  pointer-events: none;
-  background: rgb(255, 255, 255);
-  border-color: rgb(255, 255, 255);
-}
-
-.items-info--title {
-  margin-left: 10px;
-}
-
-.items-info--title h3 {
-  font-size: 15px;
-  padding-bottom: 10px;
-  margin-bottom: 0;
-}
-
-.items-info--genres {
-  margin-bottom: 15px;
-}
-
-.genre-title {
-  display: inline-block;
-  font-size: 12px;
-  color: rgb(143, 89, 89);
-}
-
-.header .nav-button {
-  color: white;
-}
-
-.card {
   border-radius: 10px;
-  overflow: hidden;
-  margin-bottom: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease; /* Add transition for smooth effect */
+  transition: box-shadow 0.3s ease;
 }
 
-.card:hover {
-  box-shadow: 0 0 5px 5px rgba(0, 255, 191, 0.24); /* Green blur effect */
+.items:hover {
+  box-shadow: 0 0 5px 5px rgba(79, 164, 143, 0.5);
 }
 
+/* Image container styles */
 .image-container {
   position: relative;
   width: 100%;
@@ -257,38 +215,34 @@ body {
   border-top-right-radius: 10px;
 }
 
-.card-info {
-  padding: 10px;
-  background-color: #fff;
-}
-
-.card-info h3 {
-  margin-top: 0;
-  margin-bottom: 5px;
-  font-size: 1rem; /* Adjust the font size as needed */
-  font-weight: bold; /* Make the text bold */
-  font-family: sans-serif;
-}
-
-.card-info p {
-  margin-top: 0;
-  font-size: 0.8rem; /* Adjust the font size as needed */
-  color: #555;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 4; /* Maximum number of lines */
-  -webkit-box-orient: vertical;
-  white-space: normal;
-}
-
-.card-info p::after {
-  content: "";
-  background: linear-gradient(to right, rgba(255, 255, 255, 0), white 50%);
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 2rem; /* Adjust the width of the fade */
-  height: 100%;
+/* Additional styles for items info */
+.items-info {
+  text-align: start;
+  width: 100%;
   pointer-events: none;
+  background: rgb(255, 255, 255);
+  border-color: rgb(255, 255, 255);
+}
+
+/* Title styles in items info */
+.items-info--title {
+  margin-left: 10px;
+}
+
+.items-info--title h3 {
+  font-size: 15px;
+  padding-bottom: 10px;
+  margin-bottom: 0;
+}
+
+/* Genre title styles */
+.genre-title {
+  display: inline-block;
+  font-size: 12px;
+  color: rgb(143, 89, 89);
+}
+
+/* Header navigation button styles */
+.header .nav-button {
+  color: white;
 }

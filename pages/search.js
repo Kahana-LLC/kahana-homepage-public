@@ -19,7 +19,7 @@ const SearchPage = () => {
 
             search.addWidgets([
               configure({
-                hitsPerPage: 25,
+                hitsPerPage: 50,
               }),
               refinementList({
                 container: "#refinements",
@@ -28,14 +28,14 @@ const SearchPage = () => {
               }),
               searchBox({
                 container: "#searchbox",
-                placeholder: "🔎 What would you like to explore today?",
+                placeholder: "What would you like to explore today?",
               }),
               hits({
                 container: "#hits",
                 templates: {
                   item(hit, { html }) {
                     return html`
-                      <div class="card">
+                      <div class="items">
                         <a
                           href="https://kahana-dev.herokuapp.com/hub/${hit.objectID}"
                           target="_blank"
@@ -43,9 +43,18 @@ const SearchPage = () => {
                           <div class="image-container">
                             <img src="${hit.url}" alt="${hit.name}" />
                           </div>
-                          <div class="card-info">
-                            <h3>${hit.name}</h3>
-                            <p>${hit.description}</p>
+                          <div class="items-info">
+                            <div class="items-info-content">
+                              <div class="items-info--title">
+                                <h3>${hit.name}</h3>
+                                <p
+                                  class="items-info--description"
+                                  title="${hit.description}"
+                                >
+                                  ${hit.description}
+                                </p>
+                              </div>
+                            </div>
                           </div>
                         </a>
                       </div>
@@ -71,12 +80,12 @@ const SearchPage = () => {
       <div style={{ zIndex: "100" }} className="sticky top-0">
         <NavbarDup />
       </div>
-      <div class="header">
-        <div class="header-wrapper">
+      <div className="header">
+        <div className="header-wrapper">
           <div id="searchbox"></div>
         </div>
       </div>
-      <div class="container">
+      <div className="container">
         <div>
           <div id="refinements"></div>
         </div>
