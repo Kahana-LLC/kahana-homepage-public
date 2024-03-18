@@ -19,7 +19,7 @@ const SearchPage = () => {
 
             search.addWidgets([
               configure({
-                hitsPerPage: 8,
+                hitsPerPage: 25,
               }),
               refinementList({
                 container: "#refinements",
@@ -28,14 +28,14 @@ const SearchPage = () => {
               }),
               searchBox({
                 container: "#searchbox",
-                placeholder: "Search to your heart's content 💚",
+                placeholder: "🔎 What would you like to explore today?",
               }),
               hits({
                 container: "#hits",
                 templates: {
                   item(hit, { html }) {
                     return html`
-                      <div class="items">
+                      <div class="card">
                         <a
                           href="https://kahana-dev.herokuapp.com/hub/${hit.objectID}"
                           target="_blank"
@@ -43,10 +43,9 @@ const SearchPage = () => {
                           <div class="image-container">
                             <img src="${hit.url}" alt="${hit.name}" />
                           </div>
-                          <div class="items-info">
-                            <div class="items-info--title">
-                              <h3>${hit.name}</h3>
-                            </div>
+                          <div class="card-info">
+                            <h3>${hit.name}</h3>
+                            <p>${hit.description}</p>
                           </div>
                         </a>
                       </div>
@@ -54,6 +53,7 @@ const SearchPage = () => {
                   },
                 },
               }),
+
               pagination({
                 container: "#pagination",
               }),
