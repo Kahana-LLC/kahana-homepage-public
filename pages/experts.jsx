@@ -245,7 +245,7 @@ const ExpertsPage = () => {
       <section className="py-16 md:py-18">
         <div className="container mx-auto text-center flex flex-col items-center">
           <h2 className="text-3xl font-bold mb-8 md:px-12 lg:px-24 px-4 mx-auto">Want your own hub but have too much on your plate?</h2>
-          <p className="mb-4 px-4 mx-auto">We'll build one for you. Set up your interview, and we'll take care of the rest.</p>
+          <p className="mb-4 px-4 mx-auto">We will build one for you. Set up your interview, and we will take care of the rest.</p>
           <div>
   <Link
     href="/order-hubs-on-demand"

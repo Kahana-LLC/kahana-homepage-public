@@ -5,9 +5,9 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <Script id="GTag-script">
-          dangerouslySetInnerHTML=
-          {{
+        <Script
+          id="GA4-script"
+          dangerouslySetInnerHTML={{
             __html: `
               (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
               new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -16,12 +16,12 @@ export default function Document() {
               })(window,document,'script','dataLayer','GTM-WBXNXKQ');
             `,
           }}
-        </Script>
+        />
 
         {/* Adding hotjar script here */}
-        <Script id="hotjar-script">
-          dangerouslySetInnerHTML=
-          {{
+        <Script
+          id="hotjar-script"
+          dangerouslySetInnerHTML={{
             __html: `
                 (function(h,o,t,j,a,r){
                   h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
@@ -33,7 +33,7 @@ export default function Document() {
                 })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
               `,
           }}
-        </Script>
+        />
         {/* End of hotjar script */}
         <link
           href="https://cdn.jsdelivr.net/npm/tabler-icons@1.39.1/icons/tabler-icons.min.css"
@@ -41,9 +41,10 @@ export default function Document() {
         />
 
         {/* Crisp script */}
-        <Script id="crisp-script">
-          type="text/javascript" dangerouslySetInnerHTML=
-          {{
+        <Script
+          id="crisp-script"
+          type="text/javascript"
+          dangerouslySetInnerHTML={{
             __html: `
               window.$crisp=[];
               window.CRISP_WEBSITE_ID="711b6e27-0210-4313-9ea3-75009495e3ec";
@@ -56,7 +57,7 @@ export default function Document() {
               })();
             `,
           }}
-        </Script>
+        />
 
         {/* <!-- Google tag (gtag.js) --> 
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-KQHFL9605P"></script>
