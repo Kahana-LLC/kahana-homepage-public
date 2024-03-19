@@ -97,8 +97,8 @@ function NavBar() {
           }
 
           .mobile-link {
-            font-weight: bold;
-            color: white; /* White text for mobile links */
+            // font-weight: bold;
+            color: black; /* White text for mobile links */
             transition: background-color 0.3s ease;
           }
 

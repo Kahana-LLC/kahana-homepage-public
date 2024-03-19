@@ -23,8 +23,23 @@ const SearchPage = () => {
               }),
               refinementList({
                 container: "#refinements",
-                attribute: ["name", "description"],
-                sortBy: ["viewCount"],
+                attribute: "isWorkspaceMonetized",
+                sortBy: ["count"],
+                templates: {
+                  item(item, { html }) {
+                    const { url, label, count, value, isRefined } = item;
+                    const labelText = value === "true" ? "Paid" : "Free";
+
+                    return html`
+                      <a
+                        href="${url}"
+                        style="${isRefined ? "font-weight: bold" : ""}"
+                      >
+                        <span>${labelText} (${count})</span>
+                      </a>
+                    `;
+                  },
+                },
               }),
               searchBox({
                 container: "#searchbox",
