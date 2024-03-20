@@ -103,7 +103,7 @@ function NavBar() {
           }
 
           .mobile-link:hover {
-            background-color: #283B37;
+            background-color: #D0EDE6;
           }
         `}</style>
         <div className="container mx-auto px-4">
@@ -122,6 +122,9 @@ function NavBar() {
 
             {/* Desktop Menu */}
             <div className="hidden lg:flex space-x-1 items-center">
+            <button className="nav-link">
+                <Link href="/search">🔎 Explore</Link>
+              </button>
               <button className="nav-link">
                 <Link href="/about">About</Link>
               </button>
@@ -130,9 +133,7 @@ function NavBar() {
                   Help
                 </Link>
               </button>
-              <button className="nav-link">
-                <Link href="/search">Explore</Link>
-              </button>
+            
               <div className="dropdown">
                 <button className="nav-link" onClick={toggleSolutionsDropdown}>
                   Solutions
@@ -263,7 +264,7 @@ function NavBar() {
             <div className="flex flex-col items-start ml-4 space-y-6">
               <Link href="/about" className="mobile-link">About</Link>
               <Link href="https://blog.kahana.co/" target="_blank" rel="noreferrer" className="mobile-link">Help</Link>
-              <Link href="https://app.kahana.co/explore" target="_blank" rel="noreferrer" className="mobile-link">Explore</Link>
+              <Link href="/search" className="mobile-link">Explore</Link>
               <div className="dropdown">
                 <button className="mobile-link" onClick={toggleSolutionsDropdown}>
                   Solutions{' '}

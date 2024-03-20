@@ -24,29 +24,29 @@ const SearchPage = () => {
               configure({
                 hitsPerPage: 10,
               }),
-              refinementList({
-                container: "#refinements",
-                attribute: "isWorkspaceMonetized",
-                sortBy: ["count"],
-                templates: {
-                  item(item, { html }) {
-                    const { url, label, count, value, isRefined } = item;
-                    const labelText = value === "true" ? "Paid" : "Free";
+              // refinementList({
+              //   container: "#refinements",
+              //   attribute: "isWorkspaceMonetized",
+              //   sortBy: ["count"],
+              //   templates: {
+              //     item(item, { html }) {
+              //       const { url, label, count, value, isRefined } = item;
+              //       const labelText = value === "true" ? "Paid" : "Free";
 
-                    return html`
-                      <a
-                        href="${url}"
-                        style="${isRefined ? "font-weight: bold" : ""}"
-                      >
-                        <span>${labelText} (${count})</span>
-                      </a>
-                    `;
-                  },
-                },
-              }),
+              //       return html`
+              //         <a
+              //           href="${url}"
+              //           style="${isRefined ? "font-weight: bold" : ""}"
+              //         >
+              //           <span>${labelText} (${count})</span>
+              //         </a>
+              //       `;
+              //     },
+              //   },
+              // }),
               searchBox({
                 container: "#searchbox",
-                placeholder: "What would you like to explore today?",
+                placeholder: "🔎 What would you like to explore today?",
               }),
               hits({
                 container: "#hits",
