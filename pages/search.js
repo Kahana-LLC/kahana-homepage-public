@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import NavbarDup from "../components/NavbarDup";
-import DefaultImage from "../public/Hub_Default_Image.svg";
 
 const defaultImageUrl =
   "https://firebasestorage.googleapis.com/v0/b/kahana-dev-workspace/o/Tyw7pzhkRgXnWduNWjqn%2FAGeyYjbR9fXsqrXYx4tsjfv4tvW2%2FbackgroundUrl?alt=media&token=9d6d3811-7157-48de-890b-03eb6982a77e";
