@@ -1,6 +1,9 @@
 import { useEffect } from "react";
 import NavbarDup from "../components/NavbarDup";
 
+const defaultImageUrl =
+  "https://firebasestorage.googleapis.com/v0/b/kahana-dev-workspace/o/Tyw7pzhkRgXnWduNWjqn%2FAGeyYjbR9fXsqrXYx4tsjfv4tvW2%2FbackgroundUrl?alt=media&token=a97d19b6-8b85-478a-8ac3-c47185725f7f";
+
 const SearchPage = () => {
   useEffect(() => {
     import("algoliasearch/lite").then((algoliasearch) => {
@@ -49,6 +52,8 @@ const SearchPage = () => {
                 container: "#hits",
                 templates: {
                   item(hit, { html }) {
+                    const imageUrl = hit.url || defaultImageUrl; // Use default image URL if hit.url is null or undefined
+
                     return html`
                       <div class="items">
                         <a
@@ -56,7 +61,7 @@ const SearchPage = () => {
                           target="_blank"
                         >
                           <div class="image-container">
-                            <img src="${hit.url}" alt="${hit.name}" />
+                            <img src="${imageUrl}" alt="${hit.name}" />
                           </div>
                           <div class="items-info">
                             <div class="items-info-content">
