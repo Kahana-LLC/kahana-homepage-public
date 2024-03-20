@@ -1,8 +1,9 @@
 import { useEffect } from "react";
 import NavbarDup from "../components/NavbarDup";
+import DefaultImage from "../public/Hub_Default_Image.svg";
 
 const defaultImageUrl =
-  "https://firebasestorage.googleapis.com/v0/b/kahana-dev-workspace/o/Tyw7pzhkRgXnWduNWjqn%2FAGeyYjbR9fXsqrXYx4tsjfv4tvW2%2FbackgroundUrl?alt=media&token=a97d19b6-8b85-478a-8ac3-c47185725f7f";
+  "https://firebasestorage.googleapis.com/v0/b/kahana-dev-workspace/o/Tyw7pzhkRgXnWduNWjqn%2FAGeyYjbR9fXsqrXYx4tsjfv4tvW2%2FbackgroundUrl?alt=media&token=9d6d3811-7157-48de-890b-03eb6982a77e";
 
 const SearchPage = () => {
   useEffect(() => {
@@ -22,7 +23,7 @@ const SearchPage = () => {
 
             search.addWidgets([
               configure({
-                hitsPerPage: 50,
+                hitsPerPage: 10,
               }),
               refinementList({
                 container: "#refinements",
