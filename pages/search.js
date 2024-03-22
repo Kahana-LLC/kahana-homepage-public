@@ -1,15 +1,20 @@
-import { useEffect } from "react";
 import NavbarDup from "../components/NavbarDup";
+import CategoryFilter from "./CategoryFilter";
+import React, { useState, useEffect } from "react";
 
 const defaultImageUrl =
   "https://firebasestorage.googleapis.com/v0/b/kahana-dev-workspace/o/Tyw7pzhkRgXnWduNWjqn%2FAGeyYjbR9fXsqrXYx4tsjfv4tvW2%2FbackgroundUrl?alt=media&token=9d6d3811-7157-48de-890b-03eb6982a77e";
+const defaultProfilePic =
+  "https://firebasestorage.googleapis.com/v0/b/kahana-dev-user/o/qQY3PuV7wOdXn8X86XqgeGbL0nx1%2FprofilePic?alt=media&token=6dc94891-e29b-4633-b55b-1fb9205eec8c";
 
 const SearchPage = () => {
+  const [selectedCategory, setSelectedCategory] = useState("");
+
   useEffect(() => {
     import("algoliasearch/lite").then((algoliasearch) => {
       import("instantsearch.js").then((instantsearch) => {
         import("instantsearch.js/es/widgets").then(
-          ({ configure, refinementList, searchBox, hits, pagination }) => {
+          ({ configure, searchBox, hits, pagination, refinementList }) => {
             const searchClient = algoliasearch.default(
               "7IUAU6VN0W",
               "c2a4d857f669ce2b5a26ef929a9b9974"
@@ -23,66 +28,71 @@ const SearchPage = () => {
             search.addWidgets([
               configure({
                 hitsPerPage: 10,
+                filters: selectedCategory ? `metadata.tags:${selectedCategory}` : "",
               }),
-              // refinementList({
-              //   container: "#refinements",
-              //   attribute: "isWorkspaceMonetized",
-              //   sortBy: ["count"],
-              //   templates: {
-              //     item(item, { html }) {
-              //       const { url, label, count, value, isRefined } = item;
-              //       const labelText = value === "true" ? "Paid" : "Free";
-
-              //       return html`
-              //         <a
-              //           href="${url}"
-              //           style="${isRefined ? "font-weight: bold" : ""}"
-              //         >
-              //           <span>${labelText} (${count})</span>
-              //         </a>
-              //       `;
-              //     },
-              //   },
-              // }),
               searchBox({
                 container: "#searchbox",
-                placeholder: "🔎 What would you like to explore today?",
+                placeholder: "What would you like to explore today?",
+              }),
+              refinementList({
+                container: "#refinements",
+                attribute: "metadata.tags",
+                transformItems: (items) => {
+                  if (selectedCategory) {
+              
+                    return items.filter(item => item.label === selectedCategory);
+                  } else {
+                    
+                    return [];
+                  }
+                },
               }),
               hits({
                 container: "#hits",
                 templates: {
                   item(hit, { html }) {
-                    const imageUrl = hit.url || defaultImageUrl; // Use default image URL if hit.url is null or undefined
+                    const imageUrl = hit.url || defaultImageUrl;
 
                     return html`
-                      <div class="items">
-                        <a
-                          href="https://kahana-dev.herokuapp.com/hub/${hit.objectID}"
-                          target="_blank"
-                        >
+                      <a
+                        href="https://kahana-dev.herokuapp.com/hub/${hit.objectID}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <div class="items">
                           <div class="image-container">
                             <img src="${imageUrl}" alt="${hit.name}" />
                           </div>
                           <div class="items-info">
                             <div class="items-info-content">
-                              <div class="items-info--title">
-                                <h3>${hit.name}</h3>
-                                <p
-                                  class="items-info--description"
-                                  title="${hit.description}"
-                                >
-                                  ${hit.description}
-                                </p>
+                              <div class="profile-container">
+                                <!-- Added class name 'profile-container' -->
+                                <img
+                                  class="profile-pic"
+                                  src="${hit.metadata.profilePicLink ||
+                                  defaultProfilePic}"
+                                  alt="Profile Picture"
+                                />
+                              </div>
+                              <div class="text-container">
+                                <!-- Added class name 'text-container' -->
+                                <div class="items-info--title">
+                                  <h3>${hit.name}</h3>
+                                </div>
+                                <div class="items-info--description">
+                                  <p title="${hit.description}">
+                                    ${hit.description}
+                                  </p>
+                                </div>
                               </div>
                             </div>
                           </div>
-                        </a>
-                      </div>
+                        </div>
+                      </a>
                     `;
                   },
                 },
               }),
-
               pagination({
                 container: "#pagination",
               }),
@@ -93,7 +103,7 @@ const SearchPage = () => {
         );
       });
     });
-  }, []);
+  }, [selectedCategory]);
 
   return (
     <div>
@@ -103,12 +113,11 @@ const SearchPage = () => {
       <div className="header">
         <div className="header-wrapper">
           <div id="searchbox"></div>
+          <CategoryFilter setSelectedCategory={setSelectedCategory} />
         </div>
       </div>
       <div className="container">
-        <div>
-          <div id="refinements"></div>
-        </div>
+        <div id="refinements"></div>
         <div>
           <div id="hits"></div>
           <div id="pagination"></div>
@@ -119,3 +128,5 @@ const SearchPage = () => {
 };
 
 export default SearchPage;
+
+
