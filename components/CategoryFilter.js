@@ -1,5 +1,4 @@
-// CategoryFilter.js
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 const CategoryFilter = ({ setSelectedCategory }) => {
   const [selectedCategory, setSelectedCategoryState] = useState("");
@@ -10,24 +9,27 @@ const CategoryFilter = ({ setSelectedCategory }) => {
     setSelectedCategory(category);
   };
 
+  const categories = [ "AI","Sports","Money","Finance", "Gaming","Technology", "Product","Media","Fashion", "Software", "Fitness",  "Luxury", "Ecommerce",
+  ];
+
   return (
     <div className="container">
       <div className="filter-options">
         <div className="filter-option">
-          {/* <label>Categories</label>  */} 
           <select
             id="cats"
             value={selectedCategory}
             onChange={handleCategoryChange}
-            style={{ color: 'gray' }}
+            style={{ color: "gray" }}
           >
             <option value="">All Categories</option>
-            {["AI", "Sports", "Money", "Finance", "Gaming", "Technology", "Product", "Media", "Fashion", "Software", 
-              "Fitness","Luxury","Ecommerce"].map((option, i) => (
-              <option key={i} value={option}>
-                {option}
-              </option>
-            ))}
+            {categories
+              ? categories.map((option, i) => (
+                  <option key={i} value={option}>
+                    {option}
+                  </option>
+                ))
+              : null}
           </select>
         </div>
       </div>

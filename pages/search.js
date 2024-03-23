@@ -1,5 +1,5 @@
 import NavbarDup from "../components/NavbarDup";
-import CategoryFilter from "./CategoryFilter";
+import CategoryFilter from "../components/CategoryFilter";
 import React, { useState, useEffect } from "react";
 
 const defaultImageUrl =
@@ -27,7 +27,7 @@ const SearchPage = () => {
 
             search.addWidgets([
               configure({
-                hitsPerPage: 10,
+                hitsPerPage: 30,
                 filters: selectedCategory ? `metadata.tags:${selectedCategory}` : "",
               }),
               searchBox({
