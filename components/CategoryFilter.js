@@ -9,8 +9,7 @@ const CategoryFilter = ({ setSelectedCategory }) => {
     setSelectedCategory(category);
   };
 
-  const categories = [ "AI","Sports","Money","Finance", "Gaming","Technology", "Product","Media","Fashion", "Software", "Fitness",  "Luxury", "Ecommerce",
-  ];
+  const categories = ["AI", "Sports", "Money", "Finance", "Gaming", "Technology", "Product", "Media", "Fashion", "Software", "Fitness", "Luxury", "Ecommerce"];
 
   return (
     <div className="container">
@@ -23,13 +22,11 @@ const CategoryFilter = ({ setSelectedCategory }) => {
             style={{ color: "gray" }}
           >
             <option value="">All Categories</option>
-            {categories
-              ? categories.map((option, i) => (
-                  <option key={i} value={option}>
-                    {option}
-                  </option>
-                ))
-              : null}
+            {Array.isArray(categories) && categories.map((option, i) => (
+              <option key={i} value={option}>
+                {option}
+              </option>
+            ))}
           </select>
         </div>
       </div>
