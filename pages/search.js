@@ -34,7 +34,7 @@ const SearchPage = () => {
               }),
               searchBox({
                 container: "#searchbox",
-                placeholder: "🔎 What would you like to explore today?",
+                placeholder: "What would you like to explore today?",
               }),
               refinementList({
                 container: "#refinements",
