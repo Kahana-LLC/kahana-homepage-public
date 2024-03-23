@@ -273,7 +273,6 @@ body {
 
 @media (max-width: 600px) {
   #cats {
-    width: auto;
     margin: 10px 0;
   }
 
