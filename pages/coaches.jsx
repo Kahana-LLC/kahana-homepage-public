@@ -259,23 +259,22 @@ const CoachesPage = () => {
       </section>
 
       <section className={`py-16 px-4 sm:px-6 lg:px-8 bg-white`}>
-  <div className="max-w-7xl mx-auto text-center">
-    <h2 className={`text-3xl font-bold text-gray-900`}>
-      Become an affiliate
-    </h2>
-    <p className="mt-4 text-gray-700">
-      Refer people to Kahana and earn up to a 30% commission.
-    </p>
-    {/* Wrap the button with a span */}
-    <Link href="/affiliates" legacyBehavior>
-      <span>
-        <button className="block mt-8 px-6 py-2 bg-[#3B675E] text-white rounded-md shadow-md">
-          Learn more
-        </button>
-      </span>
-    </Link>
-  </div>
-</section>
+        <div className="max-w-7xl mx-auto text-center">
+          <h2 className={`text-3xl font-bold text-gray-900`}>
+            Become an affiliate
+          </h2>
+          <p className="mt-4 text-gray-700" style={{ marginBottom: '20px' }}>
+            Refer people to Kahana and earn up to a 30% commission.
+          </p>
+          <Link href="/affiliates" className="block mt-8" legacyBehavior>
+          <div>
+             <button className="px-6 py-2 bg-[#3B675E] text-white rounded-md shadow-md">
+                Learn more
+            </button>
+          </div>
+          </Link>
+        </div>
+      </section> 
 
 
       <Footer />

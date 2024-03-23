@@ -192,7 +192,7 @@ export default function AffiliateProgramPage() {
             <h2 className={`text-3xl font-bold ${showImage ? 'mb-2' : 'mb-4'} text-gray-900`}>
               It pays to be a partner of Kahana
             </h2>
-            <p className="text-gray-700">
+            <p className="text-gray-700" style={{ marginBottom: '20px' }}>
               Refer people to Kahana and earn up to a 30% commission.
             </p>
             <a href="https://app.getreditus.com/marketplace/kahana" className="block mt-8" target="_blank" rel="noopener noreferrer">

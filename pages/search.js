@@ -28,21 +28,23 @@ const SearchPage = () => {
             search.addWidgets([
               configure({
                 hitsPerPage: 30,
-                filters: selectedCategory ? `metadata.tags:${selectedCategory}` : "",
+                filters: selectedCategory
+                  ? `metadata.tags:${selectedCategory}`
+                  : "",
               }),
               searchBox({
                 container: "#searchbox",
-                placeholder: "What would you like to explore today?",
+                placeholder: "🔎 What would you like to explore today?",
               }),
               refinementList({
                 container: "#refinements",
                 attribute: "metadata.tags",
                 transformItems: (items) => {
                   if (selectedCategory) {
-              
-                    return items.filter(item => item.label === selectedCategory);
+                    return items.filter(
+                      (item) => item.label === selectedCategory
+                    );
                   } else {
-                    
                     return [];
                   }
                 },
@@ -128,5 +130,3 @@ const SearchPage = () => {
 };
 
 export default SearchPage;
-
-

@@ -69,9 +69,9 @@ export default function HeroSection() {
                   
                   <div>
 
-                    <h1 className="py-4  bg-clip-text text-transparent bg-black text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl text-center sm:text-left">
-                      How Kelsey turned her Pinterest knowledge into a 4-figure income stream 
-                    </h1>
+                  <h1 className="py-4 bg-clip-text bg-black text-3xl font-bold tracking-tight text-black sm:text-4xl md:text-5xl text-center sm:text-left">
+  How Kelsey turned her Pinterest knowledge into a 4-figure income stream 
+</h1>
 
                     <div className="gap-4 mt-6 tracking-tight">
                     {/* <div className="grid grid-cols-2 gap-4 mt-6 tracking-tight hidden md:block"> */}
