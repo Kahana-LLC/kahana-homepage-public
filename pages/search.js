@@ -21,7 +21,7 @@ const SearchPage = () => {
             );
 
             const search = instantsearch.default({
-              indexName: "Prod_PublicWorkspaces",
+              indexName: "dev_public_workspaces_test",
               searchClient,
             });
 
@@ -57,7 +57,7 @@ const SearchPage = () => {
 
                     return html`
                       <a
-                        href="https://app.kahana.co/hub/${hit.objectID}"
+                        href="https://kahana-dev.herokuapp.com/hub/${hit.objectID}"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
