@@ -118,7 +118,7 @@ const SearchPage = () => {
           <CategoryFilter setSelectedCategory={setSelectedCategory} />
         </div>
       </div>
-      <div className="container">
+      <div className="hits-container">
         <div id="refinements"></div>
         <div>
           <div id="hits"></div>

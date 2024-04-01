@@ -104,6 +104,11 @@ body {
   position: fixed;
 }
 
+.hits-container {
+  /* display: flex; */
+  justify-content: center; /* Center horizontally */
+}
+
 /* InstantSearch styles */
 .ais-Hits-list {
   display: grid;
