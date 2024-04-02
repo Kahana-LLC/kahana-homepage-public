@@ -47,7 +47,6 @@ const navigation = {
   resources: [
     { name: 'Pricing', href: '/pricing' },
     { name: 'About us', href: '/about' },
-    { name: 'Careers', href: 'https://7hkdcfzbmr0.typeform.com/to/RQ99b3Bp' },
     { name: 'Email us', href: 'mailto:info@kahana.co' },
     { name: 'Privacy Policy', href: '/privacy-policy' },
     { name: 'Terms & Conditions', href: '/terms-and-conditions' },
@@ -82,7 +81,7 @@ export default function Footer() {
               alt="navbar-logo"
             />
             <p className="text-base text-gray-500">
-              Join a community of 2500+ creators and experts collaborating and monetizing their expertise together.
+              Join a community of 3500+ creators and experts collaborating and monetizing their expertise together.
             </p>
             {/* Badge container */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
@@ -195,7 +194,7 @@ export default function Footer() {
         </div>
         <div className="mt-12 border-t border-gray-200 pt-8">
           <p className="text-base text-gray-400 xl:text-center">
-            &copy; 2023 Kahana Group Inc. All rights reserved. <Link href="/sitemap">Sitemap</Link>
+            &copy; 2024 Kahana Group Inc. All rights reserved. <Link href="/sitemap">Sitemap</Link>
           </p>
         </div>
       </div>

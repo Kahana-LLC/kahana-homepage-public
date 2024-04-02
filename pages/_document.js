@@ -1,11 +1,12 @@
-import { Head, Html, Main, NextScript } from 'next/document';
+import { Head, Html, Main, NextScript } from "next/document";
+import Script from "next/script";
 
 export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        {/* Google Tag Manager code */}
-        <script
+        <Script
+          id="GA4-script"
           dangerouslySetInnerHTML={{
             __html: `
               (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -16,9 +17,10 @@ export default function Document() {
             `,
           }}
         />
-  
+
         {/* Adding hotjar script here */}
-        <script
+        <Script
+          id="hotjar-script"
           dangerouslySetInnerHTML={{
             __html: `
                 (function(h,o,t,j,a,r){
@@ -39,7 +41,8 @@ export default function Document() {
         />
 
         {/* Crisp script */}
-        <script
+        <Script
+          id="crisp-script"
           type="text/javascript"
           dangerouslySetInnerHTML={{
             __html: `
@@ -65,7 +68,6 @@ export default function Document() {
 
             gtag('config', 'G-KQHFL9605P');
         </script> */}
-
       </Head>
       <body>
         {/* Google Tag Manager (noscript) immediately after opening <body> */}
@@ -74,10 +76,10 @@ export default function Document() {
             src="https://www.googletagmanager.com/ns.html?id=GTM-WBXNXKQ"
             height="0"
             width="0"
-            style={{ display: 'none', visibility: 'hidden' }}
+            style={{ display: "none", visibility: "hidden" }}
           />
         </noscript>
-        
+
         <Main />
         <NextScript />
       </body>

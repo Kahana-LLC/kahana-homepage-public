@@ -261,15 +261,15 @@ const ConsultantsPage = () => {
           <h2 className={`text-3xl font-bold text-gray-900`}>
             Become an affiliate
           </h2>
-          <p className="mt-4 text-gray-700">
+          <p className="mt-4 text-gray-700" style={{ marginBottom: '20px' }}>
             Refer people to Kahana and earn up to a 30% commission.
           </p>
-          <Link href="/affiliates">
-            <a className="block mt-8">
-              <button className="px-6 py-2 bg-[#3B675E] text-white rounded-md shadow-md">
+          <Link href="/affiliates" className="block mt-8" legacyBehavior>
+          <div>
+             <button className="px-6 py-2 bg-[#3B675E] text-white rounded-md shadow-md">
                 Learn more
-              </button>
-            </a>
+            </button>
+          </div>
           </Link>
         </div>
       </section> 

@@ -16,31 +16,30 @@ const navigation = [
   { name: 'Company', href: '#' },
 ];
 
-if (typeof window !== 'undefined') {
-  window.addEventListener('load', function () {
-    const form = document.getElementById('myform');
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      const data = new FormData(form);
-      const action = e.target.action;
-      fetch(action, {
-        method: 'POST',
-        body: data,
-      }).then(() => {
-        '';
-      });
-    });
-  });
-}
-
-// function handleSubmit(e) {
-//   e.preventDefault();
-//   console.log('You clicked submit.');
-// }
 export default function HeroSection() {
-
   const [currentIndex, setCurrentIndex] = useState(0);
   const images = [wAmy, Kelsey, Juice, Olivia];
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.addEventListener('load', function () {
+        const form = document.getElementById('myform');
+        if (form) {
+          form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const data = new FormData(form);
+            const action = e.target.action;
+            fetch(action, {
+              method: 'POST',
+              body: data,
+            }).then(() => {
+              // Handle response if needed
+            });
+          });
+        }
+      });
+    }
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -65,20 +64,14 @@ export default function HeroSection() {
             <div className="lg:grid lg:grid-cols-12 lg:gap-8 lg:items-center">
               <div className="lg:col-span-7 px-4 sm:px-6 sm:text-center md:mx-auto md:max-w-2xl lg:flex lg:items-center lg:text-left">
                 <div>
-
-                  {/* animated background left blob*/}
-
                   <div className="invisible md:visible absolute top-15 -left-7 w-40 h-40 bg-[#038270] rounded-full filter blur-3xl opacity-50 animate-blob"></div>
                   <div>
-
-                    <h1 className="py-4  bg-clip-text text-transparent bg-gradient-to-r from-[#024324] to-teal-300 text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-5xl text-center sm:text-left">
+                    <h1 className="py-4  bg-clip-text text-transparent bg-gradient-to-r from-[#024324] to-teal-300 text-4xl font-bold tracking-tight sm:text-5xl md:text-5xl text-center sm:text-left">
                       Build a secure knowledge business in minutes
                     </h1>
-
                     <p className="mt-3 text-base text-slate-900 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl text-center sm:text-left">
                       Protect your digital products from getting stolen, create new products 10x faster, and earn more income.
                     </p>
-
                     <div className="mt-8 flex flex-col items-center space-y-4 md:flex-row md:space-x-4 md:space-y-0">
                       <a
                         href="https://app.kahana.co/signup"
@@ -87,24 +80,20 @@ export default function HeroSection() {
                         Earn income for free
                       </a>
                     </div>
-                    
                   </div>
                 </div>
               </div>
-              
-              {/* Slider IN CASE */}
-              <div className="lg:col-span-5 hidden lg:block flex flex-col justify-center items-center"> {/* Hide on medium and below screens */}
+              <div className="lg:col-span-5 hidden lg:block flex flex-col justify-center items-center">
                 <Image
                   src={images[currentIndex]}
                   alt={`Slider Image ${currentIndex}`}
-                  width={400} // Adjust the width and height as needed
+                  width={400}
                   height={450}
                   layout="responsive"
                   objectFit="cover"
                   quality={100}
                 />
               </div>
-            
             </div>
           </div>
         </main>

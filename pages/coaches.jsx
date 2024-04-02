@@ -177,38 +177,40 @@ const CoachesPage = () => {
             </p>
           </div>
           <div className="mx-auto mt-12 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3">
-            {posts.map((post) => (
-              <div
-                key={post.title}
-                className="flex flex-col overflow-hidden rounded-lg shadow-2xl hover:shadow-none border-2 border-slate-100"
-              >
-                <div className="flex-shrink-0">
-                  <img
-                    className="h-48 w-full object-cover"
-                    src={post.imageUrl}
-                    alt=""
-                  /> 
-                </div>
-                <div className="flex flex-1 flex-col justify-between bg-white p-6">
-                  <div className="flex-1">
-                      <p className="text-xl font-semibold text-gray-900">
-                        {post.title}
-                      </p>
-                      <p className="mt-3 text-base text-gray-500">
-                        {post.description}
-                      </p>
-                  </div>
-                </div>
-                <div class="flex justify-center py-4 px-4">
-                  <a
-                    href={post.buttonLink}
-                    className="flex w-1/2 justify-center rounded-md border border-transparent bg-[#3B675E] py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-[#024324]"
-                  >
-                      {post.buttonQuote}
-                  </a>
-                </div>
-              </div>
-            ))}
+          {posts.map((post) => (
+  <div
+    key={post.title}
+    className="flex flex-col overflow-hidden rounded-lg shadow-2xl hover:shadow-none border-2 border-slate-100"
+  >
+    <div className="flex-shrink-0">
+      <img
+        className="h-48 w-full object-cover"
+        src={post.imageUrl}
+        alt=""
+      /> 
+    </div>
+    <div className="flex flex-1 flex-col justify-between bg-white p-6">
+      <div className="flex-1">
+        <p className="text-xl font-semibold text-gray-900">
+          {post.title}
+        </p>
+        <p className="mt-3 text-base text-gray-500">
+          {post.description}
+        </p>
+      </div>
+      {/* Change "class" to "className" */}
+      <div className="flex justify-center py-4 px-4">
+        {/* Use an anchor tag instead of a Link component */}
+        <a
+          href={post.buttonLink}
+          className="flex w-1/2 justify-center rounded-md border border-transparent bg-[#3B675E] py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-[#024324]"
+        >
+          {post.buttonQuote}
+        </a>
+      </div>
+    </div>
+  </div>
+))}
           </div>
         </div>
       </section>
@@ -261,19 +263,20 @@ const CoachesPage = () => {
           <h2 className={`text-3xl font-bold text-gray-900`}>
             Become an affiliate
           </h2>
-          <p className="mt-4 text-gray-700">
+          <p className="mt-4 text-gray-700" style={{ marginBottom: '20px' }}>
             Refer people to Kahana and earn up to a 30% commission.
           </p>
-          <Link href="/affiliates">
-            <a className="block mt-8">
-              <button className="px-6 py-2 bg-[#3B675E] text-white rounded-md shadow-md">
+          <Link href="/affiliates" className="block mt-8" legacyBehavior>
+          <div>
+             <button className="px-6 py-2 bg-[#3B675E] text-white rounded-md shadow-md">
                 Learn more
-              </button>
-            </a>
+            </button>
+          </div>
           </Link>
         </div>
       </section> 
-      
+
+
       <Footer />
     </div>
   );

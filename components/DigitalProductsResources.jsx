@@ -31,10 +31,13 @@ const DigitalProductsResources = () => {
         <div className="flex flex-wrap justify-center mt-6">
           {links.map((link, index) => (
             <div key={index} className="w-full sm:w-1/2 md:w-1/4 p-4">
-              <Link href={link.link}>
-                <a className="block bg-white p-6 rounded-lg shadow-md text-center">
-                  {link.title}
-                </a>
+              <Link
+                href={link.link}
+                className="block bg-white p-6 rounded-lg shadow-md text-center"
+                legacyBehavior>
+
+                {link.title}
+
               </Link>
             </div>
           ))}

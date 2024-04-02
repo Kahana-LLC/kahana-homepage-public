@@ -12,11 +12,11 @@ const features = [
     description: (
       <span>
         <strong>What it is:</strong> An add-on service we provide for individuals and organizations who have a ton of expertise but don&apos;t have the time or energy to build hubs themselves. It&apos;s like ordering Domino&apos;s for recurring revenue: customers get to choose the number of hubs they want, add specific requests, and submit existing content they&apos;d like to include. Our team will handle all the graphic design, formatting, and content creation to turn their knowledge into hubs and deliver them in as little as 5 business days. For more details, check out{' '}
-        <Link href="/order-hubs-on-demand">
-          <a className="text-[#038270] font-medium">
+        <span>
+          <Link href="/order-hubs-on-demand" className="text-[#038270] font-medium">
             this page
-          </a>
-        </Link>
+          </Link>
+        </span>
         .
         <br />
         <br />
@@ -29,9 +29,11 @@ const features = [
     description: (
       <span>
         <strong>What it is:</strong> Our highest-ticket SaaS subscription that we offer for organizations that want their own Kahana environment. This typically involves a setup fee and some custom development upfront in addition to a recurring subscription. For more details, check out our{' '}
-        <Link href="/pricing">
-          <a className="text-[#038270] font-medium">Pricing page</a>
-        </Link>
+        <span>
+          <Link href="/pricing" className="text-[#038270] font-medium">
+            Pricing page
+          </Link>
+        </span>
         .
         <br />
         <br />
@@ -59,9 +61,11 @@ const features = [
     description: (
       <span>
         <strong>What it is:</strong> Our premium SaaS subscription (Expert) for people who want to upgrade from the free tier (Creator). For more details, check out our{' '}
-        <Link href="/pricing">
-          <a className="text-[#038270] font-medium">Pricing page</a>
-        </Link>
+        <span>
+          <Link href="/pricing" className="text-[#038270] font-medium">
+            Pricing page
+          </Link>
+        </span>
         .
         <br />
         <br />
@@ -188,7 +192,7 @@ export default function AffiliateProgramPage() {
             <h2 className={`text-3xl font-bold ${showImage ? 'mb-2' : 'mb-4'} text-gray-900`}>
               It pays to be a partner of Kahana
             </h2>
-            <p className="text-gray-700">
+            <p className="text-gray-700" style={{ marginBottom: '20px' }}>
               Refer people to Kahana and earn up to a 30% commission.
             </p>
             <a href="https://app.getreditus.com/marketplace/kahana" className="block mt-8" target="_blank" rel="noopener noreferrer">
@@ -206,14 +210,17 @@ export default function AffiliateProgramPage() {
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {/* Your feature section */}
               {features.map((feature, index) => (
-                <div
-                  key={index}
-                  className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center space-y-4"
-                >
-                  <h3 className="text-xl font-semibold">{feature.title}</h3>
-                  <p className="text-gray-700">{feature.description}</p>
-                </div>
-              ))}
+  <div
+    key={index}
+    className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center space-y-4"
+  >
+    <h3 className="text-xl font-semibold">{feature.title}</h3>
+    <p className="text-gray-700">
+      {/* Remove the unnecessary nested <span> */}
+      {feature.description}
+    </p>
+  </div>
+))}
             </div>
           </div>
         </section>
@@ -224,38 +231,39 @@ export default function AffiliateProgramPage() {
               Most frequently asked questions
             </h2>
             <div className="space-y-4">
-              {faqs.map((faq, index) => (
-                <div key={index} className="border border-gray-200 rounded-lg">
-                  <button
-                    className="w-full flex justify-between items-center p-4 focus:outline-none"
-                    onClick={() => toggleAccordion(index)}
-                  >
-                    <span className="text-lg font-medium text-gray-900 text-left flex-1">
-                      {faq.question}
-                    </span>
-                    <svg
-                      className={`${
-                        activeIndex === index ? 'transform rotate-180' : ''
-                      } w-5 h-5 text-gray-500 flex-shrink-0`}
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                      aria-hidden="true"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M10.293 15.293a1 1 0 0 1-1.414 0l-5-5a1 1 0 0 1 1.414-1.414L10 12.586l4.293-4.293a1 1 0 1 1 1.414 1.414l-5 5z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  </button>
-                  {activeIndex === index && (
-                    <div className="p-4 bg-gray-50">
-                      <p className="text-gray-500">{faq.answer}</p>
-                    </div>
-                  )}
-                </div>
-              ))}
+            {faqs.map((faq, index) => (
+  <div key={index} className="border border-gray-200 rounded-lg">
+    <button
+      className="w-full flex justify-between items-center p-4 focus:outline-none"
+      onClick={() => toggleAccordion(index)}
+    >
+      <span className="text-lg font-medium text-gray-900 text-left flex-1">
+        {faq.question}
+      </span>
+      <svg
+        className={`${
+          activeIndex === index ? 'transform rotate-180' : ''
+        } w-5 h-5 text-gray-500 flex-shrink-0`}
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+        aria-hidden="true"
+      >
+        <path
+          fillRule="evenodd"
+          d="M10.293 15.293a1 1 0 0 1-1.414 0l-5-5a1 1 0 0 1 1.414-1.414L10 12.586l4.293-4.293a1 1 0 1 1 1.414 1.414l-5 5z"
+          clipRule="evenodd"
+        />
+      </svg>
+    </button>
+    {activeIndex === index && (
+      <div className="p-4 bg-gray-50">
+        {/* Remove the unnecessary nested <span> */}
+        <p className="text-gray-500">{faq.answer}</p>
+      </div>
+    )}
+  </div>
+))}
             </div>
           </div>
         </section>
