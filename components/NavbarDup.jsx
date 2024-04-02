@@ -123,7 +123,7 @@ function NavBar() {
             {/* Desktop Menu */}
             <div className="hidden lg:flex space-x-1 items-center">
             <button className="nav-link">
-                <Link href="/search">🔎 Explore</Link>
+                <Link href="/explore">🔎 Explore</Link>
               </button>
               <button className="nav-link">
                 <Link href="/about">About</Link>
@@ -264,7 +264,7 @@ function NavBar() {
             <div className="flex flex-col items-start ml-4 space-y-6">
               <Link href="/about" className="mobile-link">About</Link>
               <Link href="https://blog.kahana.co/" target="_blank" rel="noreferrer" className="mobile-link">Help</Link>
-              <Link href="/search" className="mobile-link">Explore</Link>
+              <Link href="/explore" className="mobile-link">Explore</Link>
               <div className="dropdown">
                 <button className="mobile-link" onClick={toggleSolutionsDropdown}>
                   Solutions{' '}
