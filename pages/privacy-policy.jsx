@@ -326,18 +326,18 @@ export default function PrivacyPolicy() {
                 <br /> 
                 Every user is entitled to the following:
                 <br /> <br />
-                The right to access – You have the right to request Our Company for copies of your personal data. We may charge you a small fee for this service.
+                The right to access – You have the right to request Kahana Group Inc. for copies of your personal data. We may charge you a small fee for this service.
                 <br /> <br />
-                The right to rectification – You have the right to request that Our Company correct any
- information you believe is inaccurate. You also have the right to request Our Company to complete the information you believe is incomplete.
+                The right to rectification – You have the right to request that Kahana Group Inc. correct any
+ information you believe is inaccurate. You also have the right to request Kahana Group Inc. to complete the information you believe is incomplete.
  <br /> <br />
- The right to erasure – You have the right to request that Our Company erase your personal data, under certain conditions.
+ The right to erasure – You have the right to request that Kahana Group Inc. erase your personal data, under certain conditions.
  <br /> <br />
- The right to restrict processing – You have the right to request that Our Company restrict the processing of your personal data, under certain conditions.
+ The right to restrict processing – You have the right to request that Kahana Group Inc. restrict the processing of your personal data, under certain conditions.
  <br /> <br />
- The right to object to processing – You have the right to object to Our Company’s processing of your personal data, under certain conditions.
+ The right to object to processing – You have the right to object to Kahana Group Inc.’s processing of your personal data, under certain conditions.
  <br /> <br />
- The right to data portability – You have the right to request that Our Company transfer the data that we have collected to another organization, or directly to you, under certain conditions.
+ The right to data portability – You have the right to request that Kahana Group Inc. transfer the data that we have collected to another organization, or directly to you, under certain conditions.
  <br /> <br />
  If you make a request, we have one month to respond to you. If you would like to exercise any
 of these rights, please contact us at our email: info@kahana.co
