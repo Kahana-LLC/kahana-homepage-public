@@ -8,7 +8,7 @@ import Link from 'next/link';
 
 const features = [
   {
-    title: '⬆️ Premium Upgrades',
+    title: '⬆️ Premium Upgrade',
     description: [
       'Upgrade from the free Creator tier to the Expert tier',
       'Unlock additional features and benefits',
@@ -17,7 +17,7 @@ const features = [
     link: 'https://app.getreditus.com/marketplace/kahana'
   },
   {
-    title: '🛠️ On-Demand Hub Creation',
+    title: '🛠️ On-Demand Hub Deal',
     description: [
       'We build knowledge hubs for individuals and organizations',
       'Customers provide content and requirements',
@@ -27,7 +27,7 @@ const features = [
     link: 'https://app.getreditus.com/marketplace/kahana'
   },
   {
-    title: '🏢 Enterprise Deals',
+    title: '🏢 Enterprise Deal',
     description: [
       'Custom Kahana environments for organizations',
       'Includes setup fee, custom development, and recurring subscription',
@@ -146,8 +146,12 @@ const faqs = [
     ),
   },
   {
-    question: 'How and when do I receive my commissions?',
+    question: 'When do I receive my payouts?',
     answer: 'We process all payouts on the 1st of every month. This means you\'ll receive your commissions on a monthly basis.',
+  },
+  {
+    question: 'How will I receive my payouts?',
+    answer: 'We offer various payment methods, including PayPal, direct bank transfer, or other options. You can select your preferred payment method in your account settings.',
   },
   {
     question: 'What is the minimum amount required for a payout?',
@@ -158,11 +162,7 @@ const faqs = [
     answer: 'If your commissions haven\'t reached the $50 minimum threshold by the 1st of the month, they will continue to accrue. Once your commissions cross the threshold in a subsequent month and have completed the 30-day waiting period, they will become eligible for payout.',
   },
   {
-    question: 'How will I receive my commissions?',
-    answer: 'We offer various payment methods, including PayPal, direct bank transfer, or other options. You can select your preferred payment method in your account settings.',
-  },
-  {
-    question: 'Can I track my commission earnings and payout status?',
+    question: 'Can I track my earnings and payout status?',
     answer: 'Yes, you can easily monitor your commission earnings and payout status through your affiliate dashboard. This dashboard provides you with real-time insights into your performance, pending commissions, and upcoming payouts.',
   },
   {
@@ -236,7 +236,7 @@ export default function AffiliateProgramPage() {
               It pays to be a partner of Kahana
             </h2>
             <p className="text-gray-700" style={{ marginBottom: '20px' }}>
-              Refer people to Kahana and earn a 30% commission 💰
+              Refer people to Kahana and earn a 30% 💰
             </p>
             <a href="https://app.getreditus.com/marketplace/kahana" className="block mt-8" target="_blank" rel="noopener noreferrer">
               <button className="px-6 py-3 bg-[#3B675E] text-white rounded-md shadow-md hover:bg-[#046856]">
@@ -248,7 +248,7 @@ export default function AffiliateProgramPage() {
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-E9F4E9">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl font-bold mb-8 text-gray-900 text-center">
-              Earn commission on
+              Earn money from every
             </h2>
 <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
   {/* Your feature section */}
