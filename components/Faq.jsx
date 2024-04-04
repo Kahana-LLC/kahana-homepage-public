@@ -23,7 +23,7 @@ const faqs = [
       <span>
         You can check out our{' '}
         <a href="https://kahana.co/explore" className="text-[#038270] font-medium">
-          Featured Hubs
+          Explore
         </a>{' '}
         page for examples of what a hub looks like.
       </span>
