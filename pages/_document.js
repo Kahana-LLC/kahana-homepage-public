@@ -17,7 +17,11 @@ export default function Document() {
             `,
           }}
         />
-
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5821697528846539"
+          crossorigin="anonymous"
+        ></script>
         {/* Adding hotjar script here */}
         <Script
           id="hotjar-script"
