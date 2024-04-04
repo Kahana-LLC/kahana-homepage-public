@@ -1,6 +1,7 @@
 import NavbarDup from "../components/NavbarDup";
 import CategoryFilter from "../components/CategoryFilter";
 import React, { useState, useEffect } from "react";
+import Footer from "../components/Footer";
 
 const defaultImageUrl =
   "https://firebasestorage.googleapis.com/v0/b/kahana-dev-workspace/o/Tyw7pzhkRgXnWduNWjqn%2FAGeyYjbR9fXsqrXYx4tsjfv4tvW2%2FbackgroundUrl?alt=media&token=9d6d3811-7157-48de-890b-03eb6982a77e";
@@ -125,6 +126,7 @@ const SearchPage = () => {
           <div id="pagination"></div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
