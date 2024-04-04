@@ -153,16 +153,15 @@ export default function PrivacyPolicy() {
                 Group Inc. website, you consent to the data practices described
                 in this statement.
                 <br /> <br />
+                <h3>
+                <span className="mt-2 block text-left text-2xl font-bold leading-8 tracking-tight text-gray-900 sm:text-2xl">
                 Collection of your Personal Information
-                <br /> <br />
+                </span>
+              </h3>
+                <br /> 
                 In order to better provide you with products and services
                 offered on our Site, Kahana Group Inc. may collect personally
-                identifiable information, such as your:
-                <ul>
-                  <l>First and Last Name</l>
-                  <l>Mailing Address</l>
-                  <l>E-mail Address</l>
-                </ul>
+                identifiable information, such as your: First and Last Name, Mailing Address, E-mail Address
                 <br /> <br />
                 If you purchase Kahana Group Inc.'s products and services, we
                 collect billing and credit card information. This information is
@@ -181,20 +180,27 @@ export default function PrivacyPolicy() {
                 use your information for, but not limited to, communicating with
                 you in relation to services and/or products you have requested
                 from us. We also may gather additional personal or non-personal
-                information in the future.
-                <br /> <br />
-                Use of your Personal Information
-                <br /> <br />
+                information in the future. <br />
+                <br />
+                <h3>
+                <span className="mt-2 block text-left text-2xl font-bold leading-8 tracking-tight text-gray-900 sm:text-2xl">
+                Use of Your Personal Information
+                </span>
+              </h3>
+              <br />
                 Kahana Group Inc. collects and uses your personal information to
                 operate its website(s) and deliver the services you have
                 requested.
                 <br /> <br />
                 Kahana Group Inc. may also use your personally identifiable
                 information to inform you of other products or services
-                available from Kahana LLC and its affiliates.
+                available from Kahana Group Inc. and its affiliates.
                 <br /> <br />
+                <h3>
+                <span className="mt-2 block text-left text-2xl font-bold leading-8 tracking-tight text-gray-900 sm:text-2xl">
                 Sharing Information with Third Parties
-                <br /> <br />
+                </span>
+              </h3> <br />
                 Kahana Group Inc. does not sell, rent or lease its customer
                 lists to third parties.
                 <br /> <br />
@@ -215,8 +221,11 @@ export default function PrivacyPolicy() {
                 circumstances to protect the personal safety of users of Kahana
                 Group Inc., or the public.
                 <br /> <br />
+                <h3>
+                <span className="mt-2 block text-left text-2xl font-bold leading-8 tracking-tight text-gray-900 sm:text-2xl">
                 Tracking User Behavior
-                <br /> <br />
+                </span>
+              </h3> <br />
                 Kahana Group Inc. may keep track of the websites and pages our
                 users visit within Kahana Group Inc., in order to determine what
                 Kahana Group Inc. services are the most popular. This data is
@@ -224,8 +233,12 @@ export default function PrivacyPolicy() {
                 Group Inc. to customers whose behavior indicates that they are
                 interested in a particular subject area.
                 <br /> <br />
+                <h3>
+                <span className="mt-2 block text-left text-2xl font-bold leading-8 tracking-tight text-gray-900 sm:text-2xl">
                 Automatically Collected Information
-                <br /> <br />
+                </span>
+              </h3>
+                <br />
                 Information about your computer hardware and software may be
                 automatically collected by Kahana Group Inc.. This information
                 can include: your IP address, browser type, domain names, access
@@ -234,8 +247,12 @@ export default function PrivacyPolicy() {
                 service, and to provide general statistics regarding use of the
                 Kahana Group Inc. website.
                 <br /> <br />
+                <h3>
+                <span className="mt-2 block text-left text-2xl font-bold leading-8 tracking-tight text-gray-900 sm:text-2xl">
                 Use of Cookies
-                <br /> <br />
+                </span>
+              </h3>
+                <br /> 
                 The Kahana Group Inc. website may use "cookies" to help you
                 personalize your online experience. A cookie is a text file that
                 is placed on your hard disk by a web page server. Cookies cannot
@@ -263,16 +280,24 @@ export default function PrivacyPolicy() {
                 experience the interactive features of the Kahana Group Inc.
                 services or websites you visit.
                 <br /> <br />
-                Links
-                <br /> <br />
+                <h3>
+                <span className="mt-2 block text-left text-2xl font-bold leading-8 tracking-tight text-gray-900 sm:text-2xl">
+                Privacy Policies of Other Websites
+                </span>
+              </h3>
+                <br /> 
                 This website contains links to other sites. Please be aware that
                 we are not responsible for the content or privacy practices of
                 such other sites. We encourage our users to be aware when they
                 leave our site and to read the privacy statements of any other
                 site that collects personally identifiable information.
                 <br /> <br />
-                Security of your Personal Information
-                <br /> <br />
+                <h3>
+                <span className="mt-2 block text-left text-2xl font-bold leading-8 tracking-tight text-gray-900 sm:text-2xl">
+                Security of Your Prsonal Information
+                </span>
+              </h3>
+                <br />
                 Kahana Group Inc. secures your personal information from
                 unauthorized access, use, or disclosure. Kahana Group Inc. uses
                 the following methods for this purpose:
@@ -293,17 +318,35 @@ export default function PrivacyPolicy() {
                 all information and data exchanged between you and us through
                 this Site cannot be guaranteed.
                 <br /> <br />
+                <h3>
+                <span className="mt-2 block text-left text-2xl font-bold leading-8 tracking-tight text-gray-900 sm:text-2xl">
+                Your Data Protection Rights
+                </span>
+              </h3>
+                <br /> 
+                Every user is entitled to the following:
+                <br /> <br />
+                The right to access – You have the right to request Our Company for copies of your personal data. We may charge you a small fee for this service.
+                <br /> <br />
+                The right to rectification – You have the right to request that Our Company correct any
+ information you believe is inaccurate. You also have the right to request Our Company to complete the information you believe is incomplete.
+ <br /> <br />
+ The right to erasure – You have the right to request that Our Company erase your personal data, under certain conditions.
+ <br /> <br />
+ The right to restrict processing – You have the right to request that Our Company restrict the processing of your personal data, under certain conditions.
+ <br /> <br />
+ The right to object to processing – You have the right to object to Our Company’s processing of your personal data, under certain conditions.
+ <br /> <br />
+ The right to data portability – You have the right to request that Our Company transfer the data that we have collected to another organization, or directly to you, under certain conditions.
+ <br /> <br />
+ If you make a request, we have one month to respond to you. If you would like to exercise any
+of these rights, please contact us at our email: info@kahana.co
+<br /> <br />
+<h3>
+                <span className="mt-2 block text-left text-2xl font-bold leading-8 tracking-tight text-gray-900 sm:text-2xl">
                 Right to Deletion
-                <br /> <br />
-                Subject to certain exceptions set out below, on receipt of a
-                verifiable request from you, we will:
-                <br /> <br />
-                Delete your personal information from our records; and Direct
-                any service providers to delete your personal information from
-                their records. Please note that we may not be able to comply
-                with requests to delete your personal information if it is
-                necessary to:
-                <br /> <br />
+                </span>
+              </h3> <br />
                 Complete the transaction for which the personal information was
                 collected, fulfill the terms of a written warranty or product
                 recall conducted in accordance with federal law, provide a good
@@ -329,15 +372,23 @@ export default function PrivacyPolicy() {
                 lawful manner that is compatible with the context in which you
                 provided the information.
                 <br /> <br />
-                Children Under Thirteen
-                <br /> <br />
+                <h3>
+                <span className="mt-2 block text-left text-2xl font-bold leading-8 tracking-tight text-gray-900 sm:text-2xl">
+                Children Under the Age of Thirteen
+                </span>
+              </h3>
+                <br /> 
                 Kahana Group Inc. does not knowingly collect personally
                 identifiable information from children under the age of
                 thirteen. If you are under the age of thirteen, you must ask
                 your parent or guardian for permission to use this website.
                 <br /> <br />
-                E-mail Communications
-                <br /> <br />
+                <h3>
+                <span className="mt-2 block text-left text-2xl font-bold leading-8 tracking-tight text-gray-900 sm:text-2xl">
+                Marketing and E-mail Communications
+                </span>
+              </h3>
+                <br /> 
                 From time to time, Kahana Group Inc. may contact you via email
                 for the purpose of providing announcements, promotional offers,
                 alerts, confirmations, surveys, and/or other general
@@ -348,15 +399,23 @@ export default function PrivacyPolicy() {
                 If you would like to stop receiving marketing or promotional
                 communications via email from Kahana Group Inc., you may opt out
                 of such communications by clicking the "unsubscribe" button in
-                the email.
+                the email. Alternatively, If you no longer wish to be contacted for marketing purposes, please by sending an email to info@kahana.co.
                 <br /> <br />
+                <h3>
+                <span className="mt-2 block text-left text-2xl font-bold leading-8 tracking-tight text-gray-900 sm:text-2xl">
                 External Data Storage Sites
-                <br /> <br />
+                </span>
+              </h3>
+                <br /> 
                 We may store your data on servers provided by third party
                 hosting vendors with whom we have contracted.
                 <br /> <br />
+                <h3>
+                <span className="mt-2 block text-left text-2xl font-bold leading-8 tracking-tight text-gray-900 sm:text-2xl">
                 Changes to this Statement
-                <br /> <br />
+                </span>
+              </h3>
+                <br /> 
                 Kahana Group Inc. reserves the right to change this Privacy
                 Policy from time to time. We will notify you about significant
                 changes in the way we treat personal information by sending a
@@ -368,8 +427,12 @@ export default function PrivacyPolicy() {
                 modified Privacy Policy; and (b) agreement to abide and be bound
                 by that Policy.
                 <br /> <br />
-                Contact Us
-                <br /> <br />
+                <h3>
+                <span className="mt-2 block text-left text-2xl font-bold leading-8 tracking-tight text-gray-900 sm:text-2xl">
+                How to Contact Us
+                </span>
+              </h3>
+                <br /> 
                 Kahana Group Inc. welcomes your questions or comments regarding
                 this Statement of Privacy. If you believe that Kahana Group Inc.
                 has not adhered to this Statement, please contact Kahana Group
@@ -379,8 +442,8 @@ export default function PrivacyPolicy() {
                 1550 N Lake Shore Dr, Apt 19E
                 <br />
                 Chicago, Illinois 60610 <br />
-                Email Address: jonathan@kahana.co Effective as of November 08,
-                2022
+                Email Address: info@kahana.co <br /><br />
+                This Privacy Policy is effective as of April 4th, 2024
               </div>
             </div>
           </div>
