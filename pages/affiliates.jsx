@@ -8,72 +8,115 @@ import Link from 'next/link';
 
 const features = [
   {
-    title: 'On-Demand Hub Creation',
-    description: (
-      <span>
-        <strong>What it is:</strong> An add-on service we provide for individuals and organizations who have a ton of expertise but don&apos;t have the time or energy to build hubs themselves. It&apos;s like ordering Domino&apos;s for recurring revenue: customers get to choose the number of hubs they want, add specific requests, and submit existing content they&apos;d like to include. Our team will handle all the graphic design, formatting, and content creation to turn their knowledge into hubs and deliver them in as little as 5 business days. For more details, check out{' '}
-        <span>
-          <Link href="/order-hubs-on-demand" className="text-[#038270] font-medium">
-            this page
-          </Link>
-        </span>
-        .
-        <br />
-        <br />
-        <strong>What you earn:</strong> 30% of the total project fee. For example, if you refer someone who orders two hubs, this will come out to $7K total ($4K for the first hub, $3K for the second). Of that $7K, <strong>you earn a total of $2.1K</strong> ($7K x 30%).
-      </span>
-    ),
+    title: '⬆️ Premium Upgrades',
+    description: [
+      'Upgrade from the free Creator tier to the Expert tier',
+      'Unlock additional features and benefits',
+      'You earn 30% of the subscription for the first 12 months'
+    ],
+    link: 'https://app.getreditus.com/marketplace/kahana'
   },
   {
-    title: 'Enterprise Deals',
-    description: (
-      <span>
-        <strong>What it is:</strong> Our highest-ticket SaaS subscription that we offer for organizations that want their own Kahana environment. This typically involves a setup fee and some custom development upfront in addition to a recurring subscription. For more details, check out our{' '}
-        <span>
-          <Link href="/pricing" className="text-[#038270] font-medium">
-            Pricing page
-          </Link>
-        </span>
-        .
-        <br />
-        <br />
-        <strong>What you earn:</strong> 30% of the setup fee and any custom development fees, as well as 30% of the company&apos;s subscription for the first 12 months. For example, if you refer an organization whose Enterprise contract is $300 per month, and their setup fee & custom development add up to $50K, <strong>you earn a total of $16.08K</strong> ([$300 x 12] x 30% + $50K x 30%).
-      </span>
-    ),
+    title: '🛠️ On-Demand Hub Creation',
+    description: [
+      'We build knowledge hubs for individuals and organizations',
+      'Customers provide content and requirements',
+      'Our team handles design, formatting, and content creation',
+      'You earn 30% of the total project fee'
+    ],
+    link: 'https://app.getreditus.com/marketplace/kahana'
   },
   {
-    title: 'Boost Program',
-    description: (
-      <span>
-        <strong>What it is:</strong> An add-on service we provide for individuals and organizations who are interested in expanding the reach of their hubs. Our team will create a tailored email campaign on their behalf and put their hub(s) in front of thousands of potential customers per month that match their ideal customer profile. We take care of the entire process so that they generate recurring revenue on autopilot. You can check out{' '}
-        <a href="https://blog.kahana.co/boost-program/" className="text-[#038270] font-medium">
-          this post
-        </a>{' '}
-        for more details.
-        <br />
-        <br />
-        <strong>What you earn:</strong> 30% of the $500 setup fee, as well as 30% of Kahana&apos;s 50% cut of all hub sales for the first 12 months. For example, if someone you refer has a $500 hub (one-time payment) that generates 60 sales in the first year, <strong>you earn a total of $4.65K</strong> ([$500 x 60 x 50%] x 30% + $500 x 30%).
-      </span>
-    ),
+    title: '🏢 Enterprise Deals',
+    description: [
+      'Custom Kahana environments for organizations',
+      'Includes setup fee, custom development, and recurring subscription',
+      'You earn 30% of the setup fee, custom development, and first 12 months’ subscription'
+    ],
+    link: 'https://app.getreditus.com/marketplace/kahana'
   },
-  {
-    title: 'Premium Upgrades',
-    description: (
-      <span>
-        <strong>What it is:</strong> Our premium SaaS subscription (Expert) for people who want to upgrade from the free tier (Creator). For more details, check out our{' '}
-        <span>
-          <Link href="/pricing" className="text-[#038270] font-medium">
-            Pricing page
-          </Link>
-        </span>
-        .
-        <br />
-        <br />
-        <strong>What you earn:</strong> 30% of the subscription for the first 12 months. The subscription is $9.99 per month or $99.99 per year, so for every person you refer who upgrades, <strong>you will earn a total of $35.96 or $30.00</strong> ([$9.99 x 12] x 30% OR $99.99 x 30%).
-      </span>
-    ),
-  },
+  // {
+  //   title: '🚀 Boost Program',
+  //   description: [
+  //     'Expand the reach of existing hubs',
+  //     'Tailored email campaigns to target audiences',
+  //     'Autopilot recurring revenue generation',
+  //     'You earn 30% of the setup fee and Kahana’s cut of hub sales for the first 12 months'
+  //   ],
+  //   link: 'https://app.getreditus.com/marketplace/kahana'
+  // },
+
 ];
+
+
+// const features = [
+//   {
+//     title: 'On-Demand Hub Creation',
+//     description: (
+//       <span>
+//         <strong>What it is:</strong> An add-on service we provide for individuals and organizations who have a ton of expertise but don&apos;t have the time or energy to build hubs themselves. It&apos;s like ordering Domino&apos;s for recurring revenue: customers get to choose the number of hubs they want, add specific requests, and submit existing content they&apos;d like to include. Our team will handle all the graphic design, formatting, and content creation to turn their knowledge into hubs and deliver them in as little as 5 business days. For more details, check out{' '}
+//         <span>
+//           <Link href="/order-hubs-on-demand" className="text-[#038270] font-medium">
+//             this page
+//           </Link>
+//         </span>
+//         .
+//         <br />
+//         <br />
+//         <strong>What you earn:</strong> 30% of the total project fee. For example, if you refer someone who orders two hubs, this will come out to $7K total ($4K for the first hub, $3K for the second). Of that $7K, <strong>you earn a total of $2.1K</strong> ($7K x 30%).
+//       </span>
+//     ),
+//   },
+//   {
+//     title: 'Enterprise Deals',
+//     description: (
+//       <span>
+//         <strong>What it is:</strong> Our highest-ticket SaaS subscription that we offer for organizations that want their own Kahana environment. This typically involves a setup fee and some custom development upfront in addition to a recurring subscription. For more details, check out our{' '}
+//         <span>
+//           <Link href="/pricing" className="text-[#038270] font-medium">
+//             Pricing page
+//           </Link>
+//         </span>
+//         .
+//         <br />
+//         <br />
+//         <strong>What you earn:</strong> 30% of the setup fee and any custom development fees, as well as 30% of the company&apos;s subscription for the first 12 months. For example, if you refer an organization whose Enterprise contract is $300 per month, and their setup fee & custom development add up to $50K, <strong>you earn a total of $16.08K</strong> ([$300 x 12] x 30% + $50K x 30%).
+//       </span>
+//     ),
+//   },
+//   {
+//     title: 'Boost Program',
+//     description: (
+//       <span>
+//         <strong>What it is:</strong> An add-on service we provide for individuals and organizations who are interested in expanding the reach of their hubs. Our team will create a tailored email campaign on their behalf and put their hub(s) in front of thousands of potential customers per month that match their ideal customer profile. We take care of the entire process so that they generate recurring revenue on autopilot. You can check out{' '}
+//         <a href="https://blog.kahana.co/boost-program/" className="text-[#038270] font-medium">
+//           this post
+//         </a>{' '}
+//         for more details.
+//         <br />
+//         <br />
+//         <strong>What you earn:</strong> 30% of the $500 setup fee, as well as 30% of Kahana&apos;s 50% cut of all hub sales for the first 12 months. For example, if someone you refer has a $500 hub (one-time payment) that generates 60 sales in the first year, <strong>you earn a total of $4.65K</strong> ([$500 x 60 x 50%] x 30% + $500 x 30%).
+//       </span>
+//     ),
+//   },
+//   {
+//     title: 'Premium Upgrades',
+//     description: (
+//       <span>
+//         <strong>What it is:</strong> Our premium SaaS subscription (Expert) for people who want to upgrade from the free tier (Creator). For more details, check out our{' '}
+//         <span>
+//           <Link href="/pricing" className="text-[#038270] font-medium">
+//             Pricing page
+//           </Link>
+//         </span>
+//         .
+//         <br />
+//         <br />
+//         <strong>What you earn:</strong> 30% of the subscription for the first 12 months. The subscription is $9.99 per month or $99.99 per year, so for every person you refer who upgrades, <strong>you will earn a total of $35.96 or $30.00</strong> ([$9.99 x 12] x 30% OR $99.99 x 30%).
+//       </span>
+//     ),
+//   },
+// ];
 
 const faqs = [
   {
@@ -193,35 +236,46 @@ export default function AffiliateProgramPage() {
               It pays to be a partner of Kahana
             </h2>
             <p className="text-gray-700" style={{ marginBottom: '20px' }}>
-              Refer people to Kahana and earn up to a 30% commission.
+              Refer people to Kahana and earn a 30% commission 💰
             </p>
             <a href="https://app.getreditus.com/marketplace/kahana" className="block mt-8" target="_blank" rel="noopener noreferrer">
               <button className="px-6 py-3 bg-[#3B675E] text-white rounded-md shadow-md hover:bg-[#046856]">
-                Sign Up Now
+                Become an Affiliate
               </button>
             </a>
           </div>
         </section> 
-        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-100">
+        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-E9F4E9">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl font-bold mb-8 text-gray-900 text-center">
-              Earn commission on:
+              Earn commission on
             </h2>
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {/* Your feature section */}
-              {features.map((feature, index) => (
-  <div
-    key={index}
-    className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center space-y-4"
-  >
-    <h3 className="text-xl font-semibold">{feature.title}</h3>
-    <p className="text-gray-700">
-      {/* Remove the unnecessary nested <span> */}
-      {feature.description}
-    </p>
-  </div>
-))}
-            </div>
+<div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+  {/* Your feature section */}
+  {features.map((feature, index) => (
+    <div
+      key={index}
+      className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center space-y-4"
+    >
+      <h3 className="text-xl font-semibold">{feature.title}</h3>
+      <ul className="text-gray-700 text-left list-disc pl-4">
+        {feature.description.map((point, i) => (
+          <li key={i} className="ml-4">{point}</li>
+        ))}
+      </ul>
+      <a
+        href={feature.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="px-4 py-2 bg-[#3B675E] text-white rounded-md shadow-md hover:bg-[#046856] cursor-pointer"
+        >
+        Learn more
+      </a>
+    </div>
+  ))}
+</div>
+
+
           </div>
         </section>
         {/* FAQ Section */}
@@ -275,7 +329,7 @@ export default function AffiliateProgramPage() {
             </h2>
               <a href="https://app.getreditus.com/marketplace/kahana" className="block mt-8" target="_blank" rel="noopener noreferrer">
                 <button className="px-6 py-3 bg-[#3B675E] text-white rounded-md shadow-md hover:bg-[#046856]">
-                  Sign Up Here
+                  Become an Affiliate
                 </button>
               </a>
           </div>
