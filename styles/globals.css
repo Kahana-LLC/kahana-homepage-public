@@ -286,3 +286,9 @@ body {
     margin-bottom: 10px;
   }
 }
+
+.view-count {
+  font-size: 14px;
+  color: #666;
+  margin-top: 8px;
+}
