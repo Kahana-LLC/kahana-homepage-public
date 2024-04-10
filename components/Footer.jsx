@@ -20,16 +20,17 @@ const navigation = {
     { name: 'Experts', href: '/experts' },
   ],
   social: [
-    { name: 'LinkedIn', href: 'https://www.linkedin.com/company/kahana-co/' },
+    { name: 'Discord', href: 'https://discord.gg/tpn7ZZkBRv' },
     {
       name: 'YouTube',
       href: 'https://www.youtube.com/channel/UCwsf3DOnt3uQdrqf-NRZ2_w?sub_confirmation=1',
     },
+    { name: 'LinkedIn', href: 'https://www.linkedin.com/company/kahana-co/' },
     {
       name: 'Instagram',
       href: 'https://instagram.com/kahanahq',
     },
-    { name: 'Twitter', href: 'https://twitter.com/KahanaHQ' },
+    { name: 'X (Twitter)', href: 'https://twitter.com/KahanaHQ' },
   ],
   build: [
     { name: 'Log in', href: 'https://app.kahana.co/login' },
