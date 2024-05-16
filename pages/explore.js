@@ -50,6 +50,7 @@ const SearchPage = () => {
                   }
                 },
               }),
+
               hits({
                 container: "#hits",
                 templates: {
@@ -69,7 +70,6 @@ const SearchPage = () => {
                           <div class="items-info">
                             <div class="items-info-content">
                               <div class="profile-container">
-                                <!-- Added class name 'profile-container' -->
                                 <img
                                   class="profile-pic"
                                   src="${hit.metadata.profilePicLink ||
@@ -78,7 +78,6 @@ const SearchPage = () => {
                                 />
                               </div>
                               <div class="text-container">
-                                <!-- Added class name 'text-container' -->
                                 <div class="items-info--title">
                                   <h3>${hit.name}</h3>
                                 </div>
@@ -86,6 +85,9 @@ const SearchPage = () => {
                                   <p title="${hit.description}">
                                     ${hit.description}
                                   </p>
+                                </div>
+                                <div class="view-count">
+                                  ${hit.metadata.viewCount || 0} views
                                 </div>
                               </div>
                             </div>
