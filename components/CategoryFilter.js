@@ -9,7 +9,22 @@ const CategoryFilter = ({ setSelectedCategory }) => {
     setSelectedCategory(category);
   };
 
-  const categories = ["AI", "Sports", "Money", "Finance", "Gaming", "Technology", "Product", "Media", "Fashion", "Software", "Fitness", "Luxury", "Ecommerce"];
+  const categories = [
+    "AI",
+    "Sports",
+    "Money",
+    "Finance",
+    "Food",
+    "Gaming",
+    "Technology",
+    "Product",
+    "Media",
+    "Fashion",
+    "Software",
+    "Fitness",
+    "Luxury",
+    "Ecommerce",
+  ];
 
   const categoryOptions = [];
   for (let i = 0; i < categories.length; i++) {

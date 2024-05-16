@@ -317,6 +317,17 @@ export default function TermsAndConditions() {
               Some states do not allow the exclusion of implied warranties or limitation of liability for incidental or consequential damages, which means that some of the above limitations may not apply. In these states, each party's liability will be limited to the greatest extent permitted by law.
               <br />
               <br />
+              <h2>LIMITATION OF LIABILITY FOR CONTENT THEFT</h2>
+              <br />
+              While Kahana employs rigorous measures to prevent unauthorized access and content theft, it is acknowledged by You that no system is completely invulnerable to breaches. Therefore, Kahana shall not be held liable for any instances of content theft or unauthorized access to content despite the implementation of preventive measures.
+              <br />
+              <br />
+              Just as a store may employ security measures to deter shoplifting but cannot guarantee that it will never occur, Kahana provides tools and features aimed at reducing the likelihood of content theft, but cannot guarantee absolute prevention. You acknowledge and accept this inherent risk when utilizing Kahana's services.
+              <br />
+              <br />
+              By agreeing to these Terms & Conditions, You waive any claims or legal actions against Kahana related to content theft or unauthorized access to content, understanding that Kahana is providing a service that endeavors to mitigate such risks, but cannot eliminate them entirely.              
+              <br />
+              <br />
               <h2>"AS IS" AND "AS AVAILABLE" DISCLAIMER</h2>
               <br />
               The Service is provided to You "AS IS" and "AS AVAILABLE" and with all faults and defects without warranty of any kind. To the maximum extent permitted under applicable law, the Company, on its own behalf and on behalf of its Affiliates and its and their respective licensors and service providers, expressly disclaims all warranties, whether express, implied, statutory or otherwise, with respect to the Service, including all implied warranties of merchantability, fitness for a particular purpose, title and non-infringement, and warranties that may arise out of course of dealing, course of performance, usage or trade practice. Without limitation to the foregoing, the Company provides no warranty or undertaking, and makes no representation of any kind that the Service will meet Your requirements, achieve any intended results, be compatible or work with any other software, applications, systems or services, operate without interruption, meet any performance or reliability standards or be error free or that any errors or defects can or will be corrected.
