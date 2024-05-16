@@ -50,55 +50,54 @@ const SearchPage = () => {
                   }
                 },
               }),
-             
+
               hits({
                 container: "#hits",
                 templates: {
-                   item(hit, {
-                      html
-                   }) {
-                      const imageUrl = hit.url || defaultImageUrl;
+                  item(hit, { html }) {
+                    const imageUrl = hit.url || defaultImageUrl;
 
-                      return html`
+                    return html`
                       <a
-                      href="https://app.kahana.co/hub/${hit.objectID}"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <div class="items">
-                        <div class="image-container">
-                          <img src="${imageUrl}" alt="${hit.name}" />
-                        </div>
-                        <div class="items-info">
-                          <div class="items-info-content">
-                            <div class="profile-container">
-                              <img
-                                class="profile-pic"
-                                src="${hit.metadata.profilePicLink || defaultProfilePic}"
-                                alt="Profile Picture"
-                              />
-                            </div>
-                            <div class="text-container">
-                              <div class="items-info--title">
-                                <h3>${hit.name}</h3>
+                        href="https://app.kahana.co/hub/${hit.objectID}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <div class="items">
+                          <div class="image-container">
+                            <img src="${imageUrl}" alt="${hit.name}" />
+                          </div>
+                          <div class="items-info">
+                            <div class="items-info-content">
+                              <div class="profile-container">
+                                <img
+                                  class="profile-pic"
+                                  src="${hit.metadata.profilePicLink ||
+                                  defaultProfilePic}"
+                                  alt="Profile Picture"
+                                />
                               </div>
-                              <div class="items-info--description">
-                                <p title="${hit.description}">
-                                  ${hit.description}
-                                </p>
-                              </div>
-                              <div class="view-count">
-                                View Count: ${hit.metadata.viewCount || 0}
+                              <div class="text-container">
+                                <div class="items-info--title">
+                                  <h3>${hit.name}</h3>
+                                </div>
+                                <div class="items-info--description">
+                                  <p title="${hit.description}">
+                                    ${hit.description}
+                                  </p>
+                                </div>
+                                <div class="view-count">
+                                  ${hit.metadata.viewCount || 0} views
+                                </div>
                               </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </a>
-                  `;
-                   },
+                      </a>
+                    `;
+                  },
                 },
-             }),
+              }),
               pagination({
                 container: "#pagination",
               }),
@@ -135,5 +134,3 @@ const SearchPage = () => {
 };
 
 export default SearchPage;
-
-
