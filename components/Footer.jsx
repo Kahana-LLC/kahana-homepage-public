@@ -20,24 +20,27 @@ const navigation = {
     { name: 'Experts', href: '/experts' },
   ],
   social: [
-    { name: 'Discord', href: 'https://discord.gg/tpn7ZZkBRv' },
+    { name: 'Discord', href: 'https://discord.gg/tpn7ZZkBRv', target: '_blank', rel: 'noopener noreferrer' },
     {
       name: 'YouTube',
       href: 'https://www.youtube.com/channel/UCwsf3DOnt3uQdrqf-NRZ2_w?sub_confirmation=1',
+      target: '_blank',
+      rel: 'noopener noreferrer'
     },
-    { name: 'LinkedIn', href: 'https://www.linkedin.com/company/kahana-co/' },
+    { name: 'LinkedIn', href: 'https://www.linkedin.com/company/kahana-co/', target: '_blank', rel: 'noopener noreferrer' },
     {
       name: 'Instagram',
       href: 'https://instagram.com/kahanahq',
+      target: '_blank',
+      rel: 'noopener noreferrer'
     },
-    { name: 'X (Twitter)', href: 'https://twitter.com/KahanaHQ' },
+    { name: 'X (Twitter)', href: 'https://twitter.com/KahanaHQ', target: '_blank', rel: 'noopener noreferrer' }
   ],
+  
   build: [
     { name: 'Log in', href: 'https://app.kahana.co/login' },
     { name: 'Hubs on-demand', href: '/order-hubs-on-demand' },
     { name: 'Guides & tutorials', href: '/resources' },
-    { name: 'Templates', href: 'https://templates.kahana.co' },
-    { name: 'Invest in seed round', href: 'https://7hkdcfzbmr0.typeform.com/to/wYCUMm54' },
     { name: 'Become an affiliate', href: '/affiliates' }, 
   ],
   learn: [
@@ -82,7 +85,7 @@ export default function Footer() {
               alt="navbar-logo"
             />
             <p className="text-base text-gray-500">
-              Join a community of 3500+ creators and experts collaborating and monetizing their expertise together.
+              Join a community of 3700+ creators and experts collaborating and monetizing their expertise together.
             </p>
             {/* Badge container */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
@@ -139,6 +142,8 @@ export default function Footer() {
                       <a
                         href={item.href}
                         className="text-base text-gray-500 hover:text-gray-900"
+                        target="_blank"
+                        rel="noopener noreferrer"
                       >
                         {item.name}
                       </a>
