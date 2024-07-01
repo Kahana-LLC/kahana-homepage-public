@@ -290,7 +290,7 @@ Start building for free and only pay as you grow. To be completely transparent, 
                     aria-hidden="true"
                   />
                   <span className="text-sm text-gray-500">
-                    Bulk pricing for multiple Supercharge accounts
+                    Bulk pricing for multiple Growth accounts
                   </span>
                 </li>
                 <li className="flex space-x-3">
