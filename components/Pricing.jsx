@@ -68,7 +68,7 @@ export default function Pricing() {
             Pricing Plans
           </h1>
           <p className="mt-5 text-xl text-gray-500 text-center">
-            We only win when you win - it’s completely free to get started. Kahana takes a 5% transaction fee every time someone pays to access your hub. For example, if you set a $10 price point for your hub and someone pays for access, Kahana will earn $0.50.
+            We only win when you win - it’s completely free to get started. Kahana takes a 5% transaction fee every time someone pays to access your hub. 
           </p>
           {/* monthly vs yearly  */}
           {/* <div className="relative mt-6 flex self-center rounded-lg bg-gray-100 p-0.5 sm:mt-8">
@@ -255,15 +255,15 @@ export default function Pricing() {
                 Enterprise
               </h2>
               <p className="mt-4 text-sm text-gray-500">
-                Advanced controls & support to monetize your organization&apos;s collective knowledge.
+                Advanced controls & support to monetize your organization.
               </p>
               <p className="mt-8">
                 <span className="text-4xl font-bold tracking-tight text-[#038270]">
-                  $99.99
+                  Custom contract
                 </span>{' '}
-                <span className="text-base font-medium text-gray-500">
+                {/* <span className="text-base font-medium text-gray-500">
                   /mo/person
-                </span>
+                </span> */}
               </p>
               {/* <a
                   href={tier.href}
@@ -293,15 +293,6 @@ export default function Pricing() {
                   />
                   <span className="text-sm text-gray-500">
                     Dedicated success manager
-                  </span>
-                </li>
-                <li className="flex space-x-3">
-                  <CheckIcon
-                    className="h-5 w-5 flex-shrink-0 text-green-500"
-                    aria-hidden="true"
-                  />
-                  <span className="text-sm text-gray-500">
-                    Custom branding
                   </span>
                 </li>
                 <li className="flex space-x-3">
