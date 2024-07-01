@@ -2,7 +2,7 @@ import { CheckIcon } from '@heroicons/react/20/solid';
 
 const tiers = [
   {
-    name: 'Creator',
+    name: 'Free',
     href: '#',
     priceMonthly: 0,
     description: 'Get all the basics to monetize your expertise.',
@@ -16,10 +16,10 @@ const tiers = [
     ],
   },
   {
-    name: 'Expert',
+    name: 'Grow',
     href: '#',
     priceMonthly: 9.99,
-    description: 'For power users who want unlimited revenue streams.',
+    description: 'For power users who want do more.',
     includedFeatures: [
       'Monetize your hubs.',
       'Number of hubs - Unlimited',
@@ -68,7 +68,7 @@ export default function Pricing() {
             Pricing Plans
           </h1>
           <p className="mt-5 text-xl text-gray-500 text-center">
-            We only win when you win - it’s completely free to get started. Kahana takes a 5% transaction fee every time someone pays to access your hub. For example, if you set a $10 price point for your hub and someone pays for access, Kahana will earn $0.50.
+Start building for free and only pay as you grow. To be completely transparent, Kahana earns 5% on all hub transactions. 
           </p>
           {/* monthly vs yearly  */}
           {/* <div className="relative mt-6 flex self-center rounded-lg bg-gray-100 p-0.5 sm:mt-8">
@@ -91,14 +91,14 @@ export default function Pricing() {
           <div className="divide-y divide-gray-200 rounded-lg border border-gray-200 shadow-sm">
             <div className="p-6">
               <h2 className="text-lg font-medium leading-6 text-[#038270]">
-                Creator (Free Forever)
+                FREE 🛠️
               </h2>
               <p className="mt-4 text-sm text-gray-500">
-                Get all the basics to monetize and protect your knowledge.
+                All the tools you need to start building.
               </p>
               <p className="mt-8">
                 <span className="text-4xl font-bold tracking-tight text-[#038270]">
-                  FREE
+                  $0
                 </span>{' '}
               </p>
               {/* <a
@@ -113,19 +113,13 @@ export default function Pricing() {
                 What&apos;s included
               </h3>
               <ul role="list" className="mt-6 space-y-4">
+              
                 <li className="flex space-x-3">
                   <CheckIcon
                     className="h-5 w-5 flex-shrink-0 text-green-500"
                     aria-hidden="true"
                   />
-                  <span className="text-sm text-gray-500">Protection against unauthorized sharing</span>
-                </li>
-                <li className="flex space-x-3">
-                  <CheckIcon
-                    className="h-5 w-5 flex-shrink-0 text-green-500"
-                    aria-hidden="true"
-                  />
-                  <span className="text-sm text-gray-500">Upload .mp4, .mp3, .pdf, .png, .jpg</span>
+                  <span className="text-sm text-gray-500">Upload .mp4, .mp3, .pdf, .png, .jpg & other files</span>
                 </li>
                 <li className="flex space-x-3">
                   <CheckIcon
@@ -142,7 +136,7 @@ export default function Pricing() {
                     aria-hidden="true"
                   />
                   <span className="text-sm text-gray-500">
-                    Charge one-time or subscription payments
+                    Charge one-time payments and subscriptions
                   </span>
                 </li>
                 <li className="flex space-x-3">
@@ -150,16 +144,14 @@ export default function Pricing() {
                     className="h-5 w-5 flex-shrink-0 text-green-500"
                     aria-hidden="true"
                   />
-                  <span className="text-sm text-gray-500">View, comment, edit and admin roles</span>
+                  <span className="text-sm text-gray-500">Protection against unauthorized sharing</span>
                 </li>
                 <li className="flex space-x-3">
                   <CheckIcon
                     className="h-5 w-5 flex-shrink-0 text-green-500"
                     aria-hidden="true"
                   />
-                  <span className="text-sm text-gray-500">
-                    Built-in community chat
-                  </span>
+                  <span className="text-sm text-gray-500">Collaboration & Admin Tools</span>
                 </li>
                 <li className="flex space-x-3">
                   <CheckIcon
@@ -180,24 +172,31 @@ export default function Pricing() {
                     className="h-5 w-5 flex-shrink-0 text-green-500"
                     aria-hidden="true"
                   />
-                  <span className="text-sm text-gray-500">3 hubs</span>
+                  <span className="text-sm text-gray-500">Build 3 hubs</span>
+                </li>
+                <li className="flex space-x-3">
+                  <CheckIcon
+                    className="h-5 w-5 flex-shrink-0 text-green-500"
+                    aria-hidden="true"
+                  />
+                  <span className="text-sm text-gray-500">Community Support</span>
                 </li>
               </ul>
               <a
                 href="https://app.kahana.co/signup"
                 className="mt-8 block w-full rounded-md border border-[#3B675E] bg-[#3B675E] py-2 text-center text-sm font-semibold text-white hover:bg-[#024324]"
               >
-                Sign up for free
+                Create an account
               </a>
             </div>
           </div>
           <div className="divide-y divide-gray-200 rounded-lg border border-gray-200 shadow-sm">
             <div className="p-6">
               <h2 className="text-lg font-medium leading-6 text-[#038270]">
-                Expert
+                GROWTH ⚡️
               </h2>
               <p className="mt-4 text-sm text-gray-500">
-                For power users who want to upload larger files and build unlimited revenue streams.
+                Upload larger files and build unlimited hubs.
               </p>
               <p className="mt-8">
                 <span className="text-4xl font-bold tracking-tight text-[#038270]">
@@ -216,7 +215,7 @@ export default function Pricing() {
             </div>
             <div className="px-6 pt-6 pb-8">
               <h3 className="text-sm font-medium text-gray-900">
-                Everything in Creator, plus
+                Everything in Free, plus
               </h3>
               <ul role="list" className="mt-6 space-y-4">
                 <li className="flex space-x-3">
@@ -233,37 +232,45 @@ export default function Pricing() {
                   />
                   <span className="text-sm text-gray-500">100 GB total cloud storage</span>
                 </li>
+                
                 <li className="flex space-x-3">
                   <CheckIcon
                     className="h-5 w-5 flex-shrink-0 text-green-500"
                     aria-hidden="true"
                   />
-                  <span className="text-sm text-gray-500">Unlimited hubs</span>
+                  <span className="text-sm text-gray-500">Build unlimited hubs</span>
+                </li>
+                <li className="flex space-x-3">
+                  <CheckIcon
+                    className="h-5 w-5 flex-shrink-0 text-green-500"
+                    aria-hidden="true"
+                  />
+                  <span className="text-sm text-gray-500">Live Chat Support</span>
                 </li>
               </ul>
               <a
-                href="https://app.kahana.co/signup"
+                href="https://app.kahana.co/billing"
                 className="mt-8 block w-full rounded-md border border-[#3B675E] bg-[#3B675E] py-2 text-center text-sm font-semibold text-white hover:bg-[#024324]"
               >
-                Buy now
+                Manage billing
               </a>
             </div>
           </div>
           <div className="divide-y divide-gray-200 rounded-lg border border-gray-200 shadow-sm">
             <div className="p-6">
               <h2 className="text-lg font-medium leading-6 text-[#038270]">
-                Enterprise
+                ENTERPRISE 🚀
               </h2>
               <p className="mt-4 text-sm text-gray-500">
-                Advanced controls & support to monetize your organization&apos;s collective knowledge.
+                Custom plans for groups and organizations.
               </p>
               <p className="mt-8">
                 <span className="text-4xl font-bold tracking-tight text-[#038270]">
-                  $99.99
+                  Custom billing
                 </span>{' '}
-                <span className="text-base font-medium text-gray-500">
+                {/* <span className="text-base font-medium text-gray-500">
                   /mo/person
-                </span>
+                </span> */}
               </p>
               {/* <a
                   href={tier.href}
@@ -274,7 +281,7 @@ export default function Pricing() {
             </div>
             <div className="px-6 pt-6 pb-8">
               <h3 className="text-sm font-medium text-gray-900">
-                Everything in Expert, plus
+                Everything in Growth, plus
               </h3>
               <ul role="list" className="mt-6 space-y-4">
                 <li className="flex space-x-3">
@@ -283,7 +290,7 @@ export default function Pricing() {
                     aria-hidden="true"
                   />
                   <span className="text-sm text-gray-500">
-                    Advanced permissions & controls
+                    Bulk pricing for multiple Growth accounts
                   </span>
                 </li>
                 <li className="flex space-x-3">
@@ -292,7 +299,7 @@ export default function Pricing() {
                     aria-hidden="true"
                   />
                   <span className="text-sm text-gray-500">
-                    Dedicated success manager
+                    Flexible storage options
                   </span>
                 </li>
                 <li className="flex space-x-3">
@@ -301,42 +308,16 @@ export default function Pricing() {
                     aria-hidden="true"
                   />
                   <span className="text-sm text-gray-500">
-                    Custom branding
+                    Dedicated Support Team
                   </span>
                 </li>
-                <li className="flex space-x-3">
-                  <CheckIcon
-                    className="h-5 w-5 flex-shrink-0 text-green-500"
-                    aria-hidden="true"
-                  />
-                  <span className="text-sm text-gray-500">
-                    Custom integrations
-                  </span>
-                </li>
-                <li className="flex space-x-3">
-                  <CheckIcon
-                    className="h-5 w-5 flex-shrink-0 text-green-500"
-                    aria-hidden="true"
-                  />
-                  <span className="text-sm text-gray-500">
-                    Custom reporting & analytics
-                  </span>
-                </li>
-                <li className="flex space-x-3">
-                  <CheckIcon
-                    className="h-5 w-5 flex-shrink-0 text-green-500"
-                    aria-hidden="true"
-                  />
-                  <span className="text-sm text-gray-500">
-                    Flexible cloud storage
-                  </span>
-                </li>
+        
               </ul>
               <a
-                href="https://7hkdcfzbmr0.typeform.com/to/ZYLHazEf"
+                href="https://tally.so/r/w52BJN"
                 className="mt-8 block w-full rounded-md border border-[#3B675E] bg-[#3B675E] py-2 text-center text-sm font-semibold text-white hover:bg-[#024324]"
               >
-                Contact us
+                Contact sales
               </a>
             </div>
           </div>
