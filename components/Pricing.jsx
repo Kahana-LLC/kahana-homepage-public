@@ -91,14 +91,14 @@ Start building for free and only pay as you grow. To be completely transparent, 
           <div className="divide-y divide-gray-200 rounded-lg border border-gray-200 shadow-sm">
             <div className="p-6">
               <h2 className="text-lg font-medium leading-6 text-[#038270]">
-                BUILD 🛠️
+                FREE 🛠️
               </h2>
               <p className="mt-4 text-sm text-gray-500">
                 All the tools you need to start building.
               </p>
               <p className="mt-8">
                 <span className="text-4xl font-bold tracking-tight text-[#038270]">
-                  FREE
+                  $0
                 </span>{' '}
               </p>
               {/* <a
@@ -215,7 +215,7 @@ Start building for free and only pay as you grow. To be completely transparent, 
             </div>
             <div className="px-6 pt-6 pb-8">
               <h3 className="text-sm font-medium text-gray-900">
-                Everything in Build, plus
+                Everything in Free, plus
               </h3>
               <ul role="list" className="mt-6 space-y-4">
                 <li className="flex space-x-3">
