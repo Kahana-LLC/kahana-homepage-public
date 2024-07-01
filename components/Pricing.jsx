@@ -314,7 +314,7 @@ Start building for free and only pay as you grow. To be completely transparent, 
         
               </ul>
               <a
-                href="https://7hkdcfzbmr0.typeform.com/to/ZYLHazEf"
+                href="https://tally.so/r/w52BJN"
                 className="mt-8 block w-full rounded-md border border-[#3B675E] bg-[#3B675E] py-2 text-center text-sm font-semibold text-white hover:bg-[#024324]"
               >
                 Contact sales
