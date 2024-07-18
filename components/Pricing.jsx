@@ -313,6 +313,15 @@ Start building for free and only pay as you grow. To be completely transparent, 
                     Dedicated Support Team
                   </span>
                 </li>
+                <li className="flex space-x-3">
+                  <CheckIcon
+                    className="h-5 w-5 flex-shrink-0 text-green-500"
+                    aria-hidden="true"
+                  />
+                  <span className="text-sm text-gray-500">
+                    White-labeling & Custom branding
+                  </span>
+                </li>
         
               </ul>
     <Link href="/sales" legacyBehavior>
