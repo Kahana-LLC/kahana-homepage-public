@@ -365,7 +365,6 @@ function NavBar() {
               </div>
               <Link href="/pricing" className="mobile-link">Pricing</Link>
               <Link href="/sales" className="mobile-link">Contact sales</Link>
-              <Link href="https://7hkdcfzbmr0.typeform.com/to/ZYLHazEf?utm_content=hamburger_menu" className="mobile-link">Request a demo</Link>
             </div>
             <hr className="w-full border-gray-200 mt-2 mb-2" />
             <div className="flex flex-col items-center mt-4">
