@@ -1,4 +1,6 @@
 import { CheckIcon } from '@heroicons/react/20/solid';
+import Link from 'next/link';
+
 
 const tiers = [
   {
@@ -313,12 +315,13 @@ Start building for free and only pay as you grow. To be completely transparent, 
                 </li>
         
               </ul>
-              <a
-                href="https://tally.so/r/w52BJN"
-                className="mt-8 block w-full rounded-md border border-[#3B675E] bg-[#3B675E] py-2 text-center text-sm font-semibold text-white hover:bg-[#024324]"
-              >
-                Contact sales
-              </a>
+    <Link href="/sales" legacyBehavior>
+      <a
+        className="mt-8 block w-full max-w-xs rounded-md border border-[#3B675E] bg-[#3B675E] py-2 text-center text-sm font-semibold text-white hover:bg-[#024324]"
+      >
+        Contact Sales
+      </a>
+    </Link>
             </div>
           </div>
         </div>
