@@ -213,6 +213,9 @@ function NavBar() {
               <button className="nav-button">
                 <a href="https://app.kahana.co/signup">Sign up</a>
               </button>
+              <button className="nav-button">
+                <Link href="/sales">Contact sales</Link>
+              </button>
             </div>
 
             {/* Mobile Menu */}
