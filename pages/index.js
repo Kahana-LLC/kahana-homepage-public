@@ -16,28 +16,34 @@ export default function Home() {
       <Head>
         <title>Build a secure knowledge business in minutes</title>
         <meta
-          name="Kahana"
+          name="description" // Changed to 'description' for better SEO
           content="Kahana is the easiest way to turn your knowledge into subscription revenue. Sign up for free today!"
         />
-        {/* Google tag (gtag.js) */}
-        <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-KQHFL9605P"
-        ></Script>
-        <Script
-          dangerouslySetInnerHTML={{
-            __html: `
+      </Head>
+      {/* Google tag (gtag.js) */}
+      <Script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-KQHFL9605P"
+        strategy="afterInteractive" // Load the script after the page is interactive
+      />
+      <Script
+        id="google-analytics"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'G-KQHFL9605P');
           `,
-          }}
-        />
-        {/* Reditus affiliate tracking script */}
-        <Script
-          dangerouslySetInnerHTML={{
-            __html: `
+        }}
+      />
+      {/* Reditus affiliate tracking script */}
+      <Script
+        id="reditus-affiliate"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
             (function(w, d, s, p, t) {
               w.gr = w.gr || function() {
                 w.gr.q = w.gr.q || [];
@@ -51,13 +57,14 @@ export default function Home() {
             })(window, document, "script");
             gr("track", "pageview");
           `,
-          }}
-        />
-        {/* Crisp chat script */}
-        <Script
-          type="text/javascript"
-          dangerouslySetInnerHTML={{
-            __html: `
+        }}
+      />
+      {/* Crisp chat script */}
+      <Script
+        id="crisp-chat"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
             window.$crisp=[];
             window.CRISP_WEBSITE_ID="711b6e27-0210-4313-9ea3-75009495e3ec";
             (function(){
@@ -68,12 +75,15 @@ export default function Home() {
               d.getElementsByTagName("head")[0].appendChild(s);
             })();
           `,
-          }}
-        />
-
-        {/* Stripe button script */}
-        <Script async src="https://js.stripe.com/v3/buy-button.js"></Script>
-      </Head>
+        }}
+      />
+      {/* Stripe button script */}
+      <Script
+        id="stripe-button"
+        async
+        src="https://js.stripe.com/v3/buy-button.js"
+        strategy="afterInteractive"
+      />
       <div>
         <div style={{ zIndex: "100" }} className="sticky top-0">
           <NavbarDup />
