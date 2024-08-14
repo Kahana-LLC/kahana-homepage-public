@@ -19,29 +19,24 @@ export default function Home() {
           content="A cloud-based platform that helps creators and experts collaborate and monetize their knowledge. It allows users to create hubs of content, upload files, and invite others to contribute. Creators can also charge for access to their content, which can be a collection of existing assets like articles, videos, or templates. Kahana can help creators speed up the process of making digital products, like courses or ebooks."
         />
       </Head>
+      {/* Load Crisp chat asynchronously and defer until after interactive */}
       <Script
         id="crisp-chat"
+        src="https://client.crisp.chat/l.js"
         strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-            window.$crisp=[];
-            window.CRISP_WEBSITE_ID="711b6e27-0210-4313-9ea3-75009495e3ec";
-            (function(){
-              var d=document;
-              var s=d.createElement("script");
-              s.src="https://client.crisp.chat/l.js";
-              s.async=1;
-              d.getElementsByTagName("head")[0].appendChild(s);
-            })();
-          `,
+        onLoad={() => {
+          window.$crisp = [];
+          window.CRISP_WEBSITE_ID = "711b6e27-0210-4313-9ea3-75009495e3ec";
         }}
       />
+
+      {/* Load Stripe button asynchronously and defer until after interactive */}
       <Script
         id="stripe-button"
-        async
         src="https://js.stripe.com/v3/buy-button.js"
         strategy="afterInteractive"
       />
+
       <div className="relative">
         <div style={{ zIndex: "100" }} className="sticky top-0">
           <NavbarDup />
