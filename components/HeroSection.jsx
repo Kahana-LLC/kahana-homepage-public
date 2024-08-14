@@ -19,6 +19,14 @@ export default function HeroSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const images = [wAmy, Kelsey, Juice, Olivia];
 
+  const nextSlide = () => {
+    setCurrentIndex((currentIndex + 1) % images.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((currentIndex - 1 + images.length) % images.length);
+  };
+
   useEffect(() => {
     if (typeof window !== 'undefined') {
       window.addEventListener('load', function () {
@@ -45,15 +53,7 @@ export default function HeroSection() {
       nextSlide();
     }, 5000); // Change the interval duration (in milliseconds) as needed
     return () => clearInterval(interval);
-  }, [currentIndex]);
-
-  const nextSlide = () => {
-    setCurrentIndex((currentIndex + 1) % images.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex((currentIndex - 1 + images.length) % images.length);
-  };
+  }, [currentIndex]); // Include currentIndex to ensure the effect updates with the index change
 
   return (
     <div className=" bg-white">
@@ -69,8 +69,7 @@ export default function HeroSection() {
                       Monetize knowledge through digital products
                     </h1>
                     <p className="mt-3 text-base text-slate-900 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl text-center sm:text-left">
-                    Kahana is a powerful platform to create, bundle, and sell digital products in hubs. Set your prices and earn every time someone pays to access your hubs. Collaborate to speed up the process.
-
+                      Kahana is a powerful platform to create, bundle, and sell digital products in hubs. Set your prices and earn every time someone pays to access your hubs. Collaborate to speed up the process.
                     </p>
                     <div className="mt-8 flex flex-col items-center space-y-4 md:flex-row md:space-x-4 md:space-y-0">
                       <a

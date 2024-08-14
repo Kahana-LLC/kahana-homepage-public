@@ -164,111 +164,133 @@ export default function AffiliateProgramPage() {
           name="description"
           content="Kahana is the easiest way to monetize your content and research. Transform knowledge and expertise into subscription revenue. Sign up for free today!"
         />
-        <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-KQHFL9605P"
-        />
-        <Script
-          id="google-analytics"
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-KQHFL9605P');
-            `,
-          }}
-        />
-        <Script
-          id="reditus-tracking"
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function(w, d, s, p, t) {
-                w.gr = w.gr || function() {
-                  w.gr.q = w.gr.q || [];
-                  w.gr.q.push(arguments);
-                };
-                p = d.getElementsByTagName(s)[0];
-                t = d.createElement(s);
-                t.async = true;
-                t.src = "https://app.getreditus.com/gr.js?_ce=90";
-                p.parentNode.insertBefore(t, p);
-              })(window, document, "script");
-              gr("track", "pageview");
-            `,
-          }}
-        />
-        <Script
-          async
-          src="https://js.stripe.com/v3/buy-button.js"
-        />
       </Head>
       
-      <div>
-        <style jsx>{`
-          .button-container {
-            display: flex;
-            justify-content: center;
-          }
-        `}</style>
-        <NavbarDup />
-        <main className="py-10 px-4">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold">Turn Your Knowledge into Revenue</h1>
-            <p className="text-lg mt-4">Create and sell digital products with ease.</p>
-          </div>
+      {/* Move Script tags here */}
+      <Script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-KQHFL9605P"
+      />
+      <Script
+        id="google-analytics"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-KQHFL9605P');
+          `,
+        }}
+      />
+      <Script
+        id="reditus-tracking"
+        dangerouslySetInnerHTML={{
+          __html: `
+            (function(w, d, s, p, t) {
+              w.gr = w.gr || function() {
+                w.gr.q = w.gr.q || [];
+                w.gr.q.push(arguments);
+              };
+              p = d.getElementsByTagName(s)[0];
+              t = d.createElement(s);
+              t.async = true;
+              t.src = "https://app.getreditus.com/gr.js?_=" + Math.random();
+              p.parentNode.insertBefore(t, p);
+            })(window, document, "script");
+          `,
+        }}
+      />
 
+      <NavbarDup />
+      <main>
+        <section className="bg-[#f4f4f4] p-8">
           <div className="container mx-auto">
-            <div className="flex flex-col items-center">
-              <div className="text-center mb-8">
-                <Image
-                  src={OnDemandHub}
-                  alt="On-Demand Hub"
-                  className="rounded-lg shadow-lg"
-                  onLoad={() => setShowImage(true)}
-                  priority
-                />
-              </div>
-
+            <div className="text-center">
+              <h1 className="text-4xl font-bold mb-4">Hubs On-Demand</h1>
+              <p className="text-lg mb-8">
+                Transform your knowledge into profitable digital products effortlessly.
+              </p>
+              <img
+                src={OnDemandHub.src}
+                alt="On-Demand Hub"
+                className="mx-auto"
+                style={{ display: showImage ? 'block' : 'none' }}
+              />
+              <button
+                className="bg-[#038270] text-white px-4 py-2 rounded-md"
+                onClick={() => setShowImage(!showImage)}
+              >
+                {showImage ? 'Hide Image' : 'Show Image'}
+              </button>
+            </div>
+            <div className="mt-8">
+              <h2 className="text-2xl font-bold mb-4">How It Works</h2>
               {features.map((feature, index) => (
                 <div key={index} className="mb-6">
-                  <h2 className="text-2xl font-semibold">{feature.title}</h2>
-                  <p className="text-lg mt-2">{feature.description}</p>
+                  <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
+                  <p>{feature.description}</p>
                 </div>
               ))}
-
-              <div className="flex flex-col gap-8">
-                <h2 className="text-2xl font-semibold">Frequently Asked Questions</h2>
-                {faqs.map((faq, index) => (
-                  <div key={index} className="border border-gray-300 rounded-md mb-4">
-                    <button
-                      className="w-full px-4 py-2 bg-gray-200 text-left rounded-t-md"
-                      onClick={() => toggleAccordion(index)}
-                    >
-                      {faq.question}
-                    </button>
-                    {activeIndex === index && (
-                      <div className="px-4 py-2 border-t border-gray-300 rounded-b-md">
-                        {faq.answer}
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
-
-              <div className="button-container mt-10">
-                <BuyButton
-                  buttonLabel="Order Hub(s)"
-                  emailPlaceholder="Enter your email to get started"
-                  stripeLink="https://buy.stripe.com/..."
-                />
+            </div>
+            <div className="mt-8">
+              <h2 className="text-2xl font-bold mb-4">Frequently Asked Questions</h2>
+              {faqs.map((faq, index) => (
+                <div key={index} className="mb-6">
+                  <button
+                    onClick={() => toggleAccordion(index)}
+                    className="w-full text-left bg-[#038270] text-white px-4 py-2 rounded-md"
+                  >
+                    {faq.question}
+                  </button>
+                  {activeIndex === index && (
+                    <div className="mt-2 p-4 border border-gray-300 rounded-md">
+                      <p>{faq.answer}</p>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+            <div className="mt-8">
+              <h2 className="text-2xl font-bold mb-4">Order Your Hubs</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <h3 className="text-lg font-semibold mb-2">1 Hub</h3>
+                  <BuyButton
+                    buttonLabel="Order 1 Hub"
+                    emailPlaceholder="Enter your email"
+                    stripeLink="https://buy.stripe.com/7sIbLV6j7eT8e5E4g6"
+                  />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold mb-2">2 Hubs</h3>
+                  <BuyButton
+                    buttonLabel="Order 2 Hubs"
+                    emailPlaceholder="Enter your email"
+                    stripeLink="https://buy.stripe.com/7sI8ZQ5G7be5a5E4gg"
+                  />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold mb-2">3 Hubs</h3>
+                  <BuyButton
+                    buttonLabel="Order 3 Hubs"
+                    emailPlaceholder="Enter your email"
+                    stripeLink="https://buy.stripe.com/7sI3fZ6j7d6U9aE4gh"
+                  />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold mb-2">4 Hubs</h3>
+                  <BuyButton
+                    buttonLabel="Order 4 Hubs"
+                    emailPlaceholder="Enter your email"
+                    stripeLink="https://buy.stripe.com/7sI8ZQ5G7c11d6E4gh"
+                  />
+                </div>
               </div>
             </div>
           </div>
-        </main>
-        <Footer />
-      </div>
+        </section>
+      </main>
+      <Footer />
     </>
   );
 }
-
