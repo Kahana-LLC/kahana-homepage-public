@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import KelseySuccess from '../assets/images/KelseySuccess.webp';
 
-//icons
+// icons
 import { CheckIcon } from './CheckIcon';
 
 const navigation = [
@@ -101,3 +101,4 @@ export default function HeroSection() {
     </div>
   );
 }
+
