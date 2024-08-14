@@ -8,6 +8,7 @@ import Olivia from '../assets/images/oliviaSlider.webp';
 
 //icons
 import { CheckIcon } from './CheckIcon';
+
 const navigation = [
   { name: 'Product', href: '#' },
   { name: 'Features', href: '#' },
@@ -52,8 +53,9 @@ export default function HeroSection() {
     const interval = setInterval(() => {
       nextSlide();
     }, 5000); // Change the interval duration (in milliseconds) as needed
+
     return () => clearInterval(interval);
-  }, [currentIndex]); // Include currentIndex to ensure the effect updates with the index change
+  }, [nextSlide]); // Include nextSlide to ensure the effect updates with changes
 
   return (
     <div className=" bg-white">

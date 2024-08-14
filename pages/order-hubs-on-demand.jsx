@@ -210,7 +210,7 @@ export default function AffiliateProgramPage() {
               <p className="text-lg mb-8">
                 Transform your knowledge into profitable digital products effortlessly.
               </p>
-              <img
+              <Image
                 src={OnDemandHub.src}
                 alt="On-Demand Hub"
                 className="mx-auto"

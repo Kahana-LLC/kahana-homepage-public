@@ -70,12 +70,12 @@ export default function AboutCard() {
                           <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
                         </svg>
                         <p className="relative">
-                        We're creating a thriving ecosystem that lowers the barrier for people to monetize their knowledge through digital products, where people can access the highest-quality knowledge on earth, curated by everyone from solopreneurs to S&P 500 companies. 
+                          We&apos;re creating a thriving ecosystem that lowers the barrier for people to monetize their knowledge through digital products, where people can access the highest-quality knowledge on earth, curated by everyone from solopreneurs to S&amp;P 500 companies.
                         </p>
                       </div>
                       <footer className="mt-4">
                         <p className="text-base text-white">
-                          Jonathan, Co-Founder & CEO at Kahana
+                          Jonathan, Co-Founder &amp; CEO at Kahana
                         </p>
                       </footer>
                     </blockquote>
@@ -92,16 +92,16 @@ export default function AboutCard() {
                 </h2>
                 <div className="mt-6 space-y-6 text-gray-500">
                   <p className="text-lg">
-                  Right now, we’re in the midst of two massive global movements: an explosion of solopreneurs looking for ways to monetize their knowledge and the rise in popularity of digital products like courses and e-books. Sadly, most solopreneurs fail to capitalize. Why? 
+                    Right now, we&apos;re in the midst of two massive global movements: an explosion of solopreneurs looking for ways to monetize their knowledge and the rise in popularity of digital products like courses and e-books. Sadly, most solopreneurs fail to capitalize. Why?
                   </p>
                   <p className="text-lg">
-                  First, building a product from scratch is time-consuming, and solopreneurs without teams behind them simply don’t have enough hours in the day. 
+                    First, building a product from scratch is time-consuming, and solopreneurs without teams behind them simply don&apos;t have enough hours in the day.
                   </p>
                   <p className="text-lg">
-                  Second, they get screwed over by piracy: even those who manage to find time to build products end up losing revenue because people can easily steal, bootleg, and distribute their products. 
+                    Second, they get screwed over by piracy: even those who manage to find time to build products end up losing revenue because people can easily steal, bootleg, and distribute their products.
                   </p>
                   <p className="text-lg">
-                  That's exactly why we built Kahana: a simple yet powerful platform that streamlines the process of monetizing knowledge through digital products.  
+                    That&apos;s exactly why we built Kahana: a simple yet powerful platform that streamlines the process of monetizing knowledge through digital products.
                   </p>
                 </div>
               </div>
