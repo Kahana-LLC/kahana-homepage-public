@@ -14,22 +14,6 @@ export default function PricingPage() {
           content="Kahana is the easiest way to monetize your content and research. Transform knowledge and expertise into subscription revenue. Sign up for free today!"
         />
       </Head>
-      {/* Move Script tags here */}
-      <Script
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=G-KQHFL9605P"
-      />
-      <Script
-        id="google-analytics"
-        dangerouslySetInnerHTML={{
-          __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-KQHFL9605P');
-          `,
-        }}
-      />
       <Script
         id="reditus-tracking"
         dangerouslySetInnerHTML={{

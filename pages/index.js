@@ -13,55 +13,12 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Build a secure knowledge business in minutes</title>
+        <title>Monetize knowledge through digital products</title>
         <meta
           name="description"
-          content="Kahana is the easiest way to turn your knowledge into subscription revenue. Sign up for free today!"
+          content="A cloud-based platform that helps creators and experts collaborate and monetize their knowledge. It allows users to create hubs of content, upload files, and invite others to contribute. Creators can also charge for access to their content, which can be a collection of existing assets like articles, videos, or templates. Kahana can help creators speed up the process of making digital products, like courses or ebooks."
         />
       </Head>
-
-      {/* Google tag (gtag.js) */}
-      <Script
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=G-KQHFL9605P"
-        strategy="afterInteractive"
-      />
-      <Script
-        id="google-analytics"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-KQHFL9605P');
-          `,
-        }}
-      />
-
-      {/* Reditus affiliate tracking script */}
-      <Script
-        id="reditus-affiliate"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-            (function(w, d, s, p, t) {
-              w.gr = w.gr || function() {
-                w.gr.q = w.gr.q || [];
-                w.gr.q.push(arguments);
-              };
-              p = d.getElementsByTagName(s)[0];
-              t = d.createElement(s);
-              t.async = true;
-              t.src = "https://app.getreditus.com/gr.js?_ce=90";
-              p.parentNode.insertBefore(t, p);
-            })(window, document, "script");
-            gr("track", "pageview");
-          `,
-        }}
-      />
-
-      {/* Crisp chat script */}
       <Script
         id="crisp-chat"
         strategy="afterInteractive"
@@ -79,15 +36,12 @@ export default function Home() {
           `,
         }}
       />
-
-      {/* Stripe button script */}
       <Script
         id="stripe-button"
         async
         src="https://js.stripe.com/v3/buy-button.js"
         strategy="afterInteractive"
       />
-
       <div className="relative">
         <div style={{ zIndex: "100" }} className="sticky top-0">
           <NavbarDup />
