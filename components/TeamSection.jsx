@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-//images
+// images
 import adam from '../assets/headshots/Adam Kershner.png';
 import emilio from '../assets/headshots/emilio.jpeg';
 import eugene from '../assets/headshots/Eugene Kaminsky.png';
@@ -9,7 +9,7 @@ import jonathan from '../assets/headshots/Jonathan Gans.png';
 import william from '../assets/headshots/William Reehil.png';
 import greg from '../assets/headshots/gregoryGray.png';
 import denali from '../assets/headshots/denaliKeefe.jpeg';
-import benjamin from '../assets/headshots/BSJheadshot.png'
+import benjamin from '../assets/headshots/BSJheadshot.png';
 
 const people = [
   {
@@ -75,19 +75,16 @@ const people = [
     twitterUrl: 'https://twitter.com/KahanaHQ',
     linkedinUrl: 'https://www.linkedin.com/in/denali-keefe/',
   },
-  
 ];
 
 export default function TeamSection() {
   return (
     <div className="bg-white">
       <div className="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:px-8 lg:py-24">
-        <div className="space-y-12">
-          <div className="space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none">
-            <h2 className="text-3xl font-bold tracking-tight text-center sm:text-4xl">
-              Our Team
-            </h2>
-          </div>
+        <div className="text-center space-y-12">
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+            Our Team
+          </h2>
           <ul
             role="list"
             className="space-y-12 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:grid-cols-3 lg:gap-x-8"
@@ -103,12 +100,12 @@ export default function TeamSection() {
                     />
                   </div>
 
-                  <div className="space-y-2">
+                  <div className="space-y-2 text-center">
                     <div className="space-y-1 text-lg font-medium leading-6">
                       <h3>{person.name}</h3>
                       <p className="text-green-700">{person.role}</p>
                     </div>
-                    <ul role="list" className="flex space-x-5">
+                    <ul role="list" className="flex justify-center space-x-5">
                       <li>
                         <a
                           href={person.twitterUrl}

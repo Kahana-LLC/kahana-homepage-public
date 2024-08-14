@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Link from "next/link";
 import Script from "next/script";
 import Footer from "../components/Footer";
 import HeroSection from "../components/HeroSection";
@@ -16,15 +15,16 @@ export default function Home() {
       <Head>
         <title>Build a secure knowledge business in minutes</title>
         <meta
-          name="description" // Changed to 'description' for better SEO
+          name="description"
           content="Kahana is the easiest way to turn your knowledge into subscription revenue. Sign up for free today!"
         />
       </Head>
+
       {/* Google tag (gtag.js) */}
       <Script
         async
         src="https://www.googletagmanager.com/gtag/js?id=G-KQHFL9605P"
-        strategy="afterInteractive" // Load the script after the page is interactive
+        strategy="afterInteractive"
       />
       <Script
         id="google-analytics"
@@ -38,6 +38,7 @@ export default function Home() {
           `,
         }}
       />
+
       {/* Reditus affiliate tracking script */}
       <Script
         id="reditus-affiliate"
@@ -59,6 +60,7 @@ export default function Home() {
           `,
         }}
       />
+
       {/* Crisp chat script */}
       <Script
         id="crisp-chat"
@@ -77,6 +79,7 @@ export default function Home() {
           `,
         }}
       />
+
       {/* Stripe button script */}
       <Script
         id="stripe-button"
@@ -84,43 +87,48 @@ export default function Home() {
         src="https://js.stripe.com/v3/buy-button.js"
         strategy="afterInteractive"
       />
-      <div>
+
+      <div className="relative">
         <div style={{ zIndex: "100" }} className="sticky top-0">
           <NavbarDup />
         </div>
-        <main>
-          <HeroSection />
-          <CustomerSuccessSection />
-          <ProductDemoSection />
-          <Reviews />
-          <Pricing />
-
-          <section className={`py-16 px-4 sm:px-6 lg:px-8 bg-white`}>
-            <div className="max-w-7xl mx-auto text-center">
-              <h2 className={`text-3xl font-bold text-gray-900`}>
-                Ready to bring in more income?
-              </h2>
-              <p
-                className="mt-4 text-gray-700 text-xl"
-                style={{ marginBottom: "20px" }}
-              >
-                Start building your secure knowledge business today.
-              </p>
-              <div>
-                <Link
-                  href="https://app.kahana.co/signup"
-                  className="block mt-8"
-                  legacyBehavior
-                >
-                  <button className="px-6 py-2 bg-[#3B675E] text-white rounded-md shadow-md hover:bg-[#046856]">
-                    Earn income for free
-                  </button>
-                </Link>
-              </div>
-            </div>
+        <main className="scroll-smooth">
+          <section
+            id="hero"
+            className="min-h-screen flex items-center justify-center p-4 md:p-8 bg-gray-100"
+          >
+            <HeroSection />
           </section>
-
-          <Faq />
+          <section
+            id="customer-success"
+            className="min-h-screen flex items-center justify-center p-4 md:p-8 bg-white"
+          >
+            <CustomerSuccessSection />
+          </section>
+          <section
+            id="product-demo"
+            className="min-h-screen flex items-center justify-center p-4 md:p-8 bg-gray-100"
+          >
+            <ProductDemoSection />
+          </section>
+          <section
+            id="reviews"
+            className="min-h-screen flex items-center justify-center p-4 md:p-8 bg-white"
+          >
+            <Reviews />
+          </section>
+          <section
+            id="pricing"
+            className="min-h-screen flex items-center justify-center p-4 md:p-8 bg-gray-100"
+          >
+            <Pricing />
+          </section>
+          <section
+            id="faq"
+            className="min-h-screen flex items-center justify-center p-4 md:p-8 bg-white"
+          >
+            <Faq />
+          </section>
         </main>
         <Footer />
       </div>
