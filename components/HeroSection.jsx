@@ -1,10 +1,10 @@
 import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import wAmy from '../assets/images/wAmySlider.png';
-import Kelsey from '../assets/images/kelseySlider.png';
-import Juice from '../assets/images/juiceSlider.png';
-import Olivia from '../assets/images/oliviaSlider.png';
+import wAmy from '../assets/images/wAmySlider.webp';
+import Kelsey from '../assets/images/kelseySlider.webp';
+import Juice from '../assets/images/juiceSlider.webp';
+import Olivia from '../assets/images/oliviaSlider.webp';
 
 //icons
 import { CheckIcon } from './CheckIcon';
