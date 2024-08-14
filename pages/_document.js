@@ -5,11 +5,14 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        {/* Preloading important resources */}
         <link
           rel="preload"
           href="https://cdn.jsdelivr.net/npm/tabler-icons@1.39.1/icons/tabler-icons.min.css"
           as="style"
         />
+
+        {/* Google Tag Manager */}
         <Script
           id="GA4-script"
           strategy="afterInteractive" // Loads after the page is interactive
@@ -23,16 +26,19 @@ export default function Document() {
             `,
           }}
         />
+
+        {/* Google Ads Script */}
         <Script
           id="google-ads"
-          strategy="afterInteractive" // Ensures it loads after the main content
+          strategy="lazyOnload" // Loads during idle time
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5821697528846539"
           crossOrigin="anonymous"
-          async // Ensures async loading
         />
+
+        {/* Hotjar Script */}
         <Script
           id="hotjar-script"
-          strategy="afterInteractive" // Ensures it loads after the main content
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `
               (function(h,o,t,j,a,r){
@@ -46,9 +52,11 @@ export default function Document() {
             `,
           }}
         />
+
+        {/* Crisp Script */}
         <Script
           id="crisp-script"
-          strategy="afterInteractive" // Ensures it loads after the main content
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `
               window.$crisp=[];
@@ -63,6 +71,24 @@ export default function Document() {
             `,
           }}
         />
+
+        {/* Optional: Google Tag Manager for gtag.js (if needed) */}
+        {/* <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-KQHFL9605P"
+        /> */}
+        {/* <Script
+          id="gtag-config"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-KQHFL9605P');
+            `,
+          }}
+        /> */}
       </Head>
       <body>
         <noscript>
