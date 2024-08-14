@@ -25,13 +25,14 @@ export default function Document() {
         />
         <Script
           id="google-ads"
-          strategy="afterInteractive" // Change to afterInteractive to ensure it loads after the main content
+          strategy="afterInteractive" // Ensures it loads after the main content
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5821697528846539"
           crossOrigin="anonymous"
+          async // Ensures async loading
         />
         <Script
           id="hotjar-script"
-          strategy="afterInteractive" // Change to afterInteractive to ensure it loads after the main content
+          strategy="afterInteractive" // Ensures it loads after the main content
           dangerouslySetInnerHTML={{
             __html: `
               (function(h,o,t,j,a,r){
@@ -47,7 +48,7 @@ export default function Document() {
         />
         <Script
           id="crisp-script"
-          strategy="afterInteractive" // Change to afterInteractive to ensure it loads after the main content
+          strategy="afterInteractive" // Ensures it loads after the main content
           dangerouslySetInnerHTML={{
             __html: `
               window.$crisp=[];

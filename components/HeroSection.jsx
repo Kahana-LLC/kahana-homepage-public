@@ -21,18 +21,16 @@ export default function HeroSection() {
   const images = [wAmy, Kelsey, Juice, Olivia];
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      nextSlide();
-    }, 5000); // Change the interval duration (in milliseconds) as needed
+    const interval = setInterval(nextSlide, 5000); // Change the interval duration as needed
     return () => clearInterval(interval);
-  }, [currentIndex]);
+  }, []); // Empty dependency array ensures this runs once on mount
 
   const nextSlide = () => {
-    setCurrentIndex((currentIndex + 1) % images.length);
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
   };
 
   const prevSlide = () => {
-    setCurrentIndex((currentIndex - 1 + images.length) % images.length);
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
   };
 
   return (
@@ -65,13 +63,13 @@ export default function HeroSection() {
               <div className="lg:col-span-5 hidden lg:block flex flex-col justify-center items-center">
                 <Image
                   src={images[currentIndex]}
-                  alt={`Slider Image ${currentIndex}`}
+                  alt={`Slider Image ${currentIndex + 1}`}
                   width={400}
                   height={450}
                   layout="responsive"
                   objectFit="cover"
                   quality={100}
-                  loading="lazy"
+                  priority
                 />
               </div>
             </div>
