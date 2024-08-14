@@ -5,17 +5,8 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        {/* Preloading important resources */}
-        <link
-          rel="preload"
-          href="https://cdn.jsdelivr.net/npm/tabler-icons@1.39.1/icons/tabler-icons.min.css"
-          as="style"
-        />
-
-        {/* Google Tag Manager */}
         <Script
           id="GA4-script"
-          strategy="afterInteractive" // Loads after the page is interactive
           dangerouslySetInnerHTML={{
             __html: `
               (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -26,37 +17,37 @@ export default function Document() {
             `,
           }}
         />
-
-        {/* Google Ads Script */}
-        <Script
-          id="google-ads"
-          strategy="lazyOnload" // Loads during idle time
+        <script
+          async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5821697528846539"
-          crossOrigin="anonymous"
-        />
-
-        {/* Hotjar Script */}
+          crossorigin="anonymous"
+        ></script>
+        {/* Adding hotjar script here */}
         <Script
           id="hotjar-script"
-          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `
-              (function(h,o,t,j,a,r){
-                h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-                h._hjSettings={hjid:2868036,hjsv:6};
-                a=o.getElementsByTagName('head')[0];
-                r=o.createElement('script');r.async=1;
-                r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-                a.appendChild(r);
-              })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-            `,
+                (function(h,o,t,j,a,r){
+                  h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+                  h._hjSettings={hjid:2868036,hjsv:6};
+                  a=o.getElementsByTagName('head')[0];
+                  r=o.createElement('script');r.async=1;
+                  r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+                  a.appendChild(r);
+                })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+              `,
           }}
         />
+        {/* End of hotjar script */}
+        <link
+          href="https://cdn.jsdelivr.net/npm/tabler-icons@1.39.1/icons/tabler-icons.min.css"
+          rel="stylesheet"
+        />
 
-        {/* Crisp Script */}
+        {/* Crisp script */}
         <Script
           id="crisp-script"
-          strategy="lazyOnload"
+          type="text/javascript"
           dangerouslySetInnerHTML={{
             __html: `
               window.$crisp=[];
@@ -72,25 +63,18 @@ export default function Document() {
           }}
         />
 
-        {/* Optional: Google Tag Manager for gtag.js (if needed) */}
-        {/* <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-KQHFL9605P"
-        /> */}
-        {/* <Script
-          id="gtag-config"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-KQHFL9605P');
-            `,
-          }}
-        /> */}
+        {/* <!-- Google tag (gtag.js) --> 
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-KQHFL9605P"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-KQHFL9605P');
+        </script> */}
       </Head>
       <body>
+        {/* Google Tag Manager (noscript) immediately after opening <body> */}
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-WBXNXKQ"
