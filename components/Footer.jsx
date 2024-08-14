@@ -85,7 +85,7 @@ export default function Footer() {
               alt="navbar-logo"
             />
             <p className="text-base text-gray-500">
-              Join a collaborative network of 4,031+ creators and experts.
+              Join a collaborative network of 4,171+ creators and experts.
             </p>
             {/* Badge container */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
