@@ -49,7 +49,7 @@ export default function HeroSection() {
                       Monetize knowledge through digital products
                     </h1>
                     <p className="mt-3 text-base text-slate-900 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl text-center sm:text-left">
-                      Kahana is a simple yet powerful platform to curate, bundle, and package digital products into hubs. Set your own prices and earn whenever anybody pays to access your hubs. Collaborate to accelerate the process even more.
+                      Kahana makes it easy to curate, bundle, and package digital products for purchase. Collaborate to accelerate the process even more.
                     </p>
                     <div className="mt-8 flex flex-col items-center space-y-4 md:flex-row md:space-x-4 md:space-y-0">
                       <a
