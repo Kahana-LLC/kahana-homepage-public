@@ -1,6 +1,6 @@
 import Head from 'next/head';
 // import Image from 'next/image';
-
+import Script from 'next/script';
 import Footer from '../components/Footer';
 import NavbarDup from '../components/NavbarDup';
 import Pricing from '../components/Pricing';
@@ -16,8 +16,8 @@ export default function PricingPage() {
           name="Kahana"
           content="Kahana is the easiest way to monetize your content and research. Transform knowledge and expertise into subscription revenue. Sign up for free today! "
         />
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-KQHFL9605P"></script>
-        <script
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-KQHFL9605P"></Script>
+        <Script
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
@@ -28,7 +28,7 @@ export default function PricingPage() {
           }}
         />
         {/* Reditus affiliate tracking script */}
-        <script
+        <Script
           dangerouslySetInnerHTML={{
             __html: `
               (function(w, d, s, p, t) {

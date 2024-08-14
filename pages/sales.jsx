@@ -43,17 +43,6 @@ export default function About() {
           name="description"
           content="Fill out your information and a Kahana representative will reach out to you. Have a simple question? Search our library of articles."
         />
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-KQHFL9605P"></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-KQHFL9605P');
-            `,
-          }}
-        />
       </Head>
       <div>
         <div style={{ zIndex: '1' }} className="sticky top-0">

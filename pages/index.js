@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
+import Script from "next/script";
 import Footer from "../components/Footer";
 import HeroSection from "../components/HeroSection";
 import CustomerSuccessSection from "../components/CustomerSuccessSection";
@@ -19,11 +20,11 @@ export default function Home() {
           content="Kahana is the easiest way to turn your knowledge into subscription revenue. Sign up for free today!"
         />
         {/* Google tag (gtag.js) */}
-        <script
+        <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-KQHFL9605P"
-        ></script>
-        <script
+        ></Script>
+        <Script
           dangerouslySetInnerHTML={{
             __html: `
             window.dataLayer = window.dataLayer || [];
@@ -34,7 +35,7 @@ export default function Home() {
           }}
         />
         {/* Reditus affiliate tracking script */}
-        <script
+        <Script
           dangerouslySetInnerHTML={{
             __html: `
             (function(w, d, s, p, t) {
@@ -53,7 +54,7 @@ export default function Home() {
           }}
         />
         {/* Crisp chat script */}
-        <script
+        <Script
           type="text/javascript"
           dangerouslySetInnerHTML={{
             __html: `
@@ -71,7 +72,7 @@ export default function Home() {
         />
 
         {/* Stripe button script */}
-        <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+        <Script async src="https://js.stripe.com/v3/buy-button.js"></Script>
       </Head>
       <div>
         <div style={{ zIndex: "100" }} className="sticky top-0">

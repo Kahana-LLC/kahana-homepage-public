@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
+import Script from 'next/script';
 import Footer from '../components/Footer';
 import NavbarDup from '../components/NavbarDup';
 import Image from 'next/image';
@@ -160,11 +161,11 @@ export default function AffiliateProgramPage() {
         name="Kahana"
         content="Kahana is the easiest way to monetize your content and research. Transform knowledge and expertise into subscription revenue. Sign up for free today!"
       />
-      <script
+      <Script
         async
         src="https://www.googletagmanager.com/gtag/js?id=G-KQHFL9605P"
-      ></script>
-      <script
+      ></Script>
+      <Script
         dangerouslySetInnerHTML={{
           __html: `
             window.dataLayer = window.dataLayer || [];
@@ -175,7 +176,7 @@ export default function AffiliateProgramPage() {
         }}
       />
       {/* Reditus affiliate tracking script */}
-      <script
+      <Script
         dangerouslySetInnerHTML={{
           __html: `
             (function(w, d, s, p, t) {
@@ -194,9 +195,9 @@ export default function AffiliateProgramPage() {
         }}
       />
       {/* Stripe button script */}
-      <script async
+      <Script async
         src="https://js.stripe.com/v3/buy-button.js">
-      </script>
+      </Script>
     </Head>
     
     <div>

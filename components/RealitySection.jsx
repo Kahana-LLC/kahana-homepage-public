@@ -12,7 +12,7 @@
   }
   ```
 */
-
+import Image from "next/image";
 const metrics = [
   {
     id: 1,
@@ -52,7 +52,7 @@ export default function RealitySection() {
           <div className="absolute inset-x-0 bottom-0 h-80 xl:top-0 xl:h-full">
             <div className="h-full w-full xl:grid xl:grid-cols-2">
               <div className="h-full xl:relative xl:col-start-2">
-                <img
+                <Image
                   className="h-full w-full object-cover opacity-25 xl:absolute xl:inset-0"
                   src="https://images.unsplash.com/photo-1517669375942-946a1f02d705?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2546&q=80"
                   alt="People working on laptops"

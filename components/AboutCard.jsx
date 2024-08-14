@@ -1,3 +1,4 @@
+import Image from "next/image";
 export default function AboutCard() {
   return (
     <div className="bg-white">
@@ -47,7 +48,7 @@ export default function AboutCard() {
               <div className="relative mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:max-w-none lg:px-0 lg:py-20">
                 {/* Testimonial card*/}
                 <div className="relative overflow-hidden rounded-2xl pt-64 pb-10 shadow-2xl">
-                  <img
+                  <Image
                     className="absolute inset-0 h-full w-full object-cover"
                     src="https://images.unsplash.com/photo-1613294326794-e7c74fe886e2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80https://images.unsplash.com/photo-1521510895919-46920266ddb3?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&fp-x=0.5&fp-y=0.6&fp-z=3&width=1440&height=1440&sat=-100"
                     alt="user-image"

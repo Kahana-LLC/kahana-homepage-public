@@ -52,20 +52,6 @@ const ResourcesPage = () => {
           name="Kahana"
           content="Kahana is the easiest way to monetize your content and research. Transform knowledge and expertise into subscription revenue. Sign up for free today!"
         />
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-KQHFL9605P"
-        ></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-KQHFL9605P');
-            `,
-          }}
-        />
       </Head>
 
       <div className="sticky top-0 z-50">
