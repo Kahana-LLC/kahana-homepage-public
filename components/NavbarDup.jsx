@@ -123,7 +123,7 @@ function NavBar() {
             {/* Desktop Menu */}
             <div className="hidden lg:flex space-x-1 items-center">
             <button className="nav-link">
-                <Link href="/explore">🔎 Explore</Link>
+                <Link href="/explore">Explore</Link>
               </button>
               <button className="nav-link">
                 <Link href="/about">About</Link>

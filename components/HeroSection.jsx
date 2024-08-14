@@ -21,27 +21,6 @@ export default function HeroSection() {
   const images = [wAmy, Kelsey, Juice, Olivia];
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.addEventListener('load', function () {
-        const form = document.getElementById('myform');
-        if (form) {
-          form.addEventListener('submit', function (e) {
-            e.preventDefault();
-            const data = new FormData(form);
-            const action = e.target.action;
-            fetch(action, {
-              method: 'POST',
-              body: data,
-            }).then(() => {
-              // Handle response if needed
-            });
-          });
-        }
-      });
-    }
-  }, []);
-
-  useEffect(() => {
     const interval = setInterval(() => {
       nextSlide();
     }, 5000); // Change the interval duration (in milliseconds) as needed
@@ -57,7 +36,7 @@ export default function HeroSection() {
   };
 
   return (
-    <div className=" bg-white">
+    <div className="bg-white">
       <div className="pt-1 pb-16 sm:pb-24">
         <main className="mt-10 sm:mt-24">
           <div className="mx-auto max-w-7xl">
@@ -66,12 +45,11 @@ export default function HeroSection() {
                 <div>
                   <div className="invisible md:visible absolute top-15 -left-7 w-40 h-40 bg-[#038270] rounded-full filter blur-3xl opacity-50 animate-blob"></div>
                   <div>
-                    <h1 className="py-4  bg-clip-text text-transparent bg-gradient-to-r from-[#024324] to-teal-300 text-4xl font-bold tracking-tight sm:text-5xl md:text-5xl text-center sm:text-left">
-                      All-in-one platform to monetize knowledge through digital products
+                    <h1 className="py-4 bg-clip-text text-transparent bg-gradient-to-r from-[#024324] to-teal-300 text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-center sm:text-left">
+                      Monetize knowledge through digital products
                     </h1>
                     <p className="mt-3 text-base text-slate-900 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl text-center sm:text-left">
-                    Kahana is a simple yet powerful platform to curate, bundle, and package digital products into hubs. Set your own prices and earn whenever anybody pays to access your hubs. Collaborate to accelerate the process even more.
-
+                      Kahana is a simple yet powerful platform to curate, bundle, and package digital products into hubs. Set your own prices and earn whenever anybody pays to access your hubs. Collaborate to accelerate the process even more.
                     </p>
                     <div className="mt-8 flex flex-col items-center space-y-4 md:flex-row md:space-x-4 md:space-y-0">
                       <a
@@ -93,6 +71,7 @@ export default function HeroSection() {
                   layout="responsive"
                   objectFit="cover"
                   quality={100}
+                  loading="lazy"
                 />
               </div>
             </div>
