@@ -7,7 +7,6 @@ import ProductDemoSectionEnterprise from '../components/ProductDemoSectionEnterp
 import { CheckIcon } from '@heroicons/react/20/solid';
 import enterpriseHub from '../assets/images/enterpriseHub.png';
 
-
 const EnterprisePage = () => {
   return (
     <div>
@@ -33,7 +32,7 @@ const EnterprisePage = () => {
             Monetize the value you deliver and the knowledge you gain from projects on an ongoing basis.
           </p>
           <a
-            href="https://7hkdcfzbmr0.typeform.com/to/ZYLHazEf?utm_content=enterprise_page"
+            href="/sales"
             className="bg-[#3B675E] text-white py-2 px-6 rounded-md text-center inline-block mx-auto max-w-md"
           >
             Request a demo
@@ -58,7 +57,7 @@ const EnterprisePage = () => {
       </section>
 
       <ProductDemoSectionEnterprise />
-      
+
       {/* What you get section */}
       <section className="py-12 md:py-16">
         <div className="container mx-auto text-center">
@@ -111,7 +110,6 @@ const EnterprisePage = () => {
           </div>
         </div>
       </section>
-      
 
       {/* Testimonial section */}
       <section className="py-16 md:py-18">
@@ -149,7 +147,7 @@ const EnterprisePage = () => {
           <p className="mb-4 px-4 mx-auto">Talk to a human to understand how Kahana can help your org.</p>
           <div className="mx-auto">
             <a
-              href="https://7hkdcfzbmr0.typeform.com/to/ZYLHazEf?utm_content=enterprise_page"
+              href="/sales"
               className="bg-[#3B675E] text-white py-2 px-6 rounded-md text-center inline-block mx-auto"
             >
               Request a demo
@@ -157,7 +155,7 @@ const EnterprisePage = () => {
           </div>
         </div>
       </section>
-      
+
       <Footer />
     </div>
   );

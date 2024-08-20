@@ -24,7 +24,7 @@ body {
 
 /* Header styles */
 .header {
-  background: rgba(131, 217, 196, 0.238);
+  background: rgba(230, 229, 225, 0.238);
   box-shadow: 0 0 0 1px rgba(35, 38, 59, 0.05),
     0 1px 3px 0 rgba(35, 59, 41, 0.15);
   padding: 1rem;
@@ -207,7 +207,7 @@ body {
 }
 
 .items:hover {
-  box-shadow: 0 0 5px 5px rgba(131, 217, 196, 0.238);
+  box-shadow: 0 0 5px 5px rgba(217, 196, 38, 0.238);
 }
 
 /* Image container styles */

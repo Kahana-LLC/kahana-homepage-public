@@ -39,14 +39,15 @@ const navigation = {
   
   build: [
     { name: 'Log in', href: 'https://app.kahana.co/login' },
-    { name: 'Hubs on-demand', href: '/order-hubs-on-demand' },
-    { name: 'Guides & tutorials', href: '/resources' },
+    { name: 'Explore', href: '/explore' },
+    // { name: 'Hubs on-demand', href: '/order-hubs-on-demand' },
+    // { name: 'Guides & tutorials', href: '/resources' },
     { name: 'Become an affiliate', href: '/affiliates' }, 
   ],
   learn: [
     { name: 'Blog', href: 'https://blog.kahana.co' },
     { name: 'FAQ', href: '/faq' },
-    { name: 'Examples', href: '/explore' },
+   
   ],
   resources: [
     { name: 'Pricing', href: '/pricing' },
@@ -104,7 +105,7 @@ export default function Footer() {
           <div className="mt-12 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0 md:grid-cols-3">
               <div>
                 <h3 className="text-base font-medium text-gray-900">
-                  Product
+                  Features
                 </h3>
                 <ul role="list" className="mt-4 space-y-4">
                   {navigation.product.map((item) => (
@@ -120,7 +121,7 @@ export default function Footer() {
                 </ul>
               </div>
               <div>
-                <h3 className="text-base font-medium text-gray-900">Kahana for</h3>
+                <h3 className="text-base font-medium text-gray-900">Use cases</h3>
                 <ul role="list" className="mt-4 space-y-4">
                   {navigation.solutions.map((item) => (
                     <li key={item.name}>

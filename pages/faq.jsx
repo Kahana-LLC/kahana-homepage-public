@@ -85,42 +85,9 @@ const faqs = [
     answer: 'This is not something we currently offer, but we are actively looking into enabling this in the future.',
   },
   {
-    question: 'What if I don\'t have an audience for my hub? How do I market and get sales for my hub?',
-    answer: (
-      <span>
-        Great question! We offer plenty of support to help you drive traffic to your hubs - we can feature your hub on our{' '}
-        <a href="https://kahana.co/explore" className="text-[#038270] font-medium">
-          Explore page
-        </a>,{' '}
-        and we can interview you about your hub to create both a blog post and a YouTube video for you. To have your hub featured, please fill out{' '}
-        <a href="https://7hkdcfzbmr0.typeform.com/to/cO7LxhV1" className="text-[#038270] font-medium">
-          this form
-        </a>,{' '}
-        and to set up your interview, please reach out to{' '}
-        <a href="mailto:info@kahana.co" className="font-medium text-[#038270]">
-          info@kahana.co
-        </a>
-        .
-      </span>
-    ),
-  },
-  {
     question: 'Can I use Kahana without my own content?',
     answer: 'Yes! You can use Kahana hubs to curate and share content that isn\'t your own (so long as you are appropriately crediting the creator and not claiming it is your own content). The value of your hub can be that you are collecting and filtering high-quality information about a given topic so that others don\'t have to.',
   },
-  {
-    question: 'I have more questions - where can I go?',
-    answer: (
-      <span>
-        If you have more questions, please feel free to visit our{' '}
-        <a href="https://kahana.tawk.help/" className="text-[#038270] font-medium">
-          Help Center
-        </a>
-        .
-      </span>
-    ),
-  },
-  // Add more questions...
 ];
 
 export default function FaqPage() {

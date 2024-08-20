@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import whiteKahanaLogo from '../assets/kahana_logo_wide_light_v2.svg';
+import whiteKahanaLogo from '../assets/kahana_logo_wide.svg';
 
 function NavBar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -23,21 +23,22 @@ function NavBar() {
 
   return (
     <div>
-      <nav className="bg-gradient-to-r from-black to-[#0A4526]">
-        <style jsx>{`
+      <nav className="bg-white bg-opacity-90">
+      <style jsx>{`
           /* Your styles here */
           .nav-link {
             padding: 0.3rem 0.75rem;
             border-radius: 0.5rem; /* Add rounded corners */
             transition: background-color 0.3s ease;
-            color: white !important; /* White text color for navbar links */
+            color: black !important; /* White text color for navbar links */
             text-decoration: none; /* Remove underline */
             background-color: transparent; /* Remove background color */
             border: none; /* Remove border */
           }
 
+
           .nav-link:hover {
-            background-color: #283B37;
+            background-color: #FFFFFF;
           }
 
           .dropdown {
@@ -67,7 +68,7 @@ function NavBar() {
           }
 
           .dropdown-link:hover {
-            background-color: #f2f2f2;
+            background-color: #FFFFFF;
           }
 
           .dropdown-button {
@@ -80,20 +81,20 @@ function NavBar() {
           }
 
           .dropdown-button:hover {
-            background-color: #3D5A54;
+            background-color: #FFFFFF;
           }
 
           .nav-button {
             padding: 0.3rem 1rem;
             border-radius: 0.5rem;
-            background-color: #3D5A54;
+            background-color: #3B675E;
             color: white !important;
 
             transition: background-color 0.3s ease, color 0.3s ease;
           }
 
           .nav-button:hover {
-            background-color: #283B37;
+            background-color: #024324;
           }
 
           .mobile-link {
@@ -113,7 +114,7 @@ function NavBar() {
               <Link href="/" aria-label="Home">
                 <span className="sr-only">Company</span>
                 <Image
-                  className="h-10"
+                  className="h-7"
                   src={whiteKahanaLogo}
                   alt="navbar-logo"
                 />
@@ -126,15 +127,26 @@ function NavBar() {
                 <Link href="/explore">Explore</Link>
               </button>
               <button className="nav-link">
-                <Link href="/about">About</Link>
+                <Link href="/pricing">Pricing</Link>
               </button>
               <button className="nav-link">
-                <Link href="https://blog.kahana.co/" target="_blank" rel="noreferrer">
-                  Help
-                </Link>
+                <Link href="/sales">Contact sales</Link>
+              </button>
+              <button className="nav-button">
+                <a href="https://app.kahana.co/signup">Get started</a>
               </button>
             
-              <div className="dropdown">
+            </div>
+              {/* <button className="nav-link">
+                <Link href="/about">About</Link>
+              </button> */}
+              {/* <button className="nav-link">
+                <Link href="https://blog.kahana.co/" target="_blank" rel="noreferrer">
+                  Blog
+                </Link>
+              </button> */}
+            
+              {/* <div className="dropdown">
                 <button className="nav-link" onClick={toggleSolutionsDropdown}>
                   Solutions
                 </button>
@@ -172,8 +184,8 @@ function NavBar() {
                     </button>
                   </ul>
                 </div>
-              </div>
-              <div className="dropdown">
+              </div> */}
+              {/* <div className="dropdown">
                 <button className="nav-link" onClick={toggleResourcesDropdown}>
                   Resources
                 </button>
@@ -206,17 +218,8 @@ function NavBar() {
                     </button>
                   </ul>
                 </div>
-              </div>
-              <button className="nav-link">
-                <Link href="/pricing">Pricing</Link>
-              </button>
-              <button className="nav-button">
-                <a href="https://app.kahana.co/signup">Sign up</a>
-              </button>
-              <button className="nav-button">
-                <Link href="/sales">Contact sales</Link>
-              </button>
-            </div>
+              </div> */}
+            
 
             {/* Mobile Menu */}
             <div className="lg:hidden flex items-start">

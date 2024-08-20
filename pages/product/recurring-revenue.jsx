@@ -31,7 +31,7 @@ const features = [
     alt: 'How to select your price point & payment type for Kahana hubs',
   },
   {
-    title: 'Start Earning!',
+    title: 'Start Earning',
     description:
       'After you set your payment terms, a paywall will automatically be generated for you that you can begin sharing! Be sure to add a title, cover photo, and description to each hub to improve the experience for potential customers.',
     image: startEarning,
