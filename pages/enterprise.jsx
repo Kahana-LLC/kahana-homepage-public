@@ -144,12 +144,9 @@ const EnterprisePage = () => {
           <h2 className="text-3xl font-bold mb-8 md:px-12 lg:px-24 px-4 mx-auto">Get a demo</h2>
           <p className="mb-4 px-4 mx-auto">Talk to a human to understand how Kahana can help your org.</p>
           <div className="mx-auto">
-            <a
-              href="/sales"
-              className="bg-[#3B675E] text-white py-2 px-6 rounded-md text-center inline-block mx-auto"
-            >
-              Request a demo
-            </a>
+          <Link href="/sales" className="bg-[#3B675E] text-white py-2 px-6 rounded-md text-center inline-block mx-auto max-w-md">
+            Request a demo
+          </Link>
           </div>
         </div>
       </section>
