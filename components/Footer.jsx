@@ -85,9 +85,9 @@ export default function Footer() {
               w
               alt="navbar-logo"
             />
-            <p className="text-base text-gray-500">
+            {/* <p className="text-base text-gray-500">
               Join a collaborative network of 4,171+ creators and experts.
-            </p>
+            </p> */}
             {/* Badge container */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
               <div className="sf-root" data-id="3652674" data-badge="heart-badge-white" data-variant-id="sf" style={{ width: '75px' }}></div>

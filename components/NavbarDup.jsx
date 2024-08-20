@@ -8,7 +8,6 @@ function NavBar() {
   const [isSolutionsDropdownOpen, setIsSolutionsDropdownOpen] = useState(false);
   const [isResourcesDropdownOpen, setIsResourcesDropdownOpen] = useState(false);
 
-  
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
@@ -24,18 +23,16 @@ function NavBar() {
   return (
     <div>
       <nav className="bg-white bg-opacity-90">
-      <style jsx>{`
-          /* Your styles here */
+        <style jsx>{`
           .nav-link {
             padding: 0.3rem 0.75rem;
-            border-radius: 0.5rem; /* Add rounded corners */
+            border-radius: 0.5rem;
             transition: background-color 0.3s ease;
-            color: black !important; /* White text color for navbar links */
-            text-decoration: none; /* Remove underline */
-            background-color: transparent; /* Remove background color */
-            border: none; /* Remove border */
+            color: black !important;
+            text-decoration: none;
+            background-color: transparent;
+            border: none;
           }
-
 
           .nav-link:hover {
             background-color: #FFFFFF;
@@ -49,7 +46,7 @@ function NavBar() {
           .dropdown-text {
             display: none;
             position: absolute;
-            background-color: #024324; /* Dark green background for dropdown */
+            background-color: #024324;
             min-width: 220px;
             color: white;
             z-index: 1;
@@ -63,7 +60,7 @@ function NavBar() {
             padding: 0.5rem 1rem;
             text-decoration: none;
             display: block;
-            color: black; /* White text for dropdown links */
+            color: white;
             transition: background-color 0.3s ease;
           }
 
@@ -76,7 +73,7 @@ function NavBar() {
             background-color: transparent;
             width: 100%;
             text-align: left;
-            color: white; /* White text for dropdown button */
+            color: white;
             border-radius: 0.5rem;
           }
 
@@ -89,7 +86,6 @@ function NavBar() {
             border-radius: 0.5rem;
             background-color: #3B675E;
             color: white !important;
-
             transition: background-color 0.3s ease, color 0.3s ease;
           }
 
@@ -98,8 +94,7 @@ function NavBar() {
           }
 
           .mobile-link {
-            // font-weight: bold;
-            color: black; /* White text for mobile links */
+            color: black;
             transition: background-color 0.3s ease;
           }
 
@@ -123,7 +118,7 @@ function NavBar() {
 
             {/* Desktop Menu */}
             <div className="hidden lg:flex space-x-1 items-center">
-            <button className="nav-link">
+              <button className="nav-link">
                 <Link href="/explore">Explore</Link>
               </button>
               <button className="nav-link">
@@ -135,91 +130,7 @@ function NavBar() {
               <button className="nav-button">
                 <a href="https://app.kahana.co/signup">Get started</a>
               </button>
-            
             </div>
-              {/* <button className="nav-link">
-                <Link href="/about">About</Link>
-              </button> */}
-              {/* <button className="nav-link">
-                <Link href="https://blog.kahana.co/" target="_blank" rel="noreferrer">
-                  Blog
-                </Link>
-              </button> */}
-            
-              {/* <div className="dropdown">
-                <button className="nav-link" onClick={toggleSolutionsDropdown}>
-                  Solutions
-                </button>
-                <div className="dropdown-text">
-                  <ul className="space-y-2">
-                    <button className="dropdown-button">
-                      <Link href="/enterprise" className="dropdown-link">
-                        For Enterprise
-                      </Link>
-                    </button>
-                    <button className="dropdown-button">
-                      <Link href="/coaches" className="dropdown-link">
-                        For Coaches
-                      </Link>
-                    </button>
-                    <button className="dropdown-button">
-                      <Link href="/consultants" className="dropdown-link">
-                        For Consultants
-                      </Link>
-                    </button>
-                    <button className="dropdown-button">
-                      <Link href="/experts" className="dropdown-link">
-                        For Experts
-                      </Link>
-                    </button>
-                    <button className="dropdown-button">
-                      <Link href="/order-hubs-on-demand" className="dropdown-link">
-                        Order hubs on-demand
-                      </Link>
-                    </button>
-                    <button className="dropdown-button">
-                      <Link href="/affiliates" className="dropdown-link">
-                        Become an affiliate
-                      </Link>
-                    </button>
-                  </ul>
-                </div>
-              </div> */}
-              {/* <div className="dropdown">
-                <button className="nav-link" onClick={toggleResourcesDropdown}>
-                  Resources
-                </button>
-                <div className="dropdown-text">
-                  <ul className="space-y-2">
-                    <button className="dropdown-button">
-                      <Link href="https://blog.kahana.co/" target="_blank" rel="noreferrer" className="dropdown-link">
-                        Blog
-                      </Link>
-                    </button>
-                    <button className="dropdown-button">
-                      <Link href="/resources" className="dropdown-link">
-                        Monetizing Notion
-                      </Link>
-                    </button>
-                    <button className="dropdown-button">
-                      <Link href="/resources" className="dropdown-link">
-                        Monetizing Google Drive
-                      </Link>
-                    </button>
-                    <button className="dropdown-button">
-                      <Link href="/resources" className="dropdown-link">
-                        Selling Digital Products
-                      </Link>
-                    </button>
-                    <button className="dropdown-button">
-                      <Link href="/faq" className="dropdown-link">
-                        FAQ
-                      </Link>
-                    </button>
-                  </ul>
-                </div>
-              </div> */}
-            
 
             {/* Mobile Menu */}
             <div className="lg:hidden flex items-start">
@@ -232,7 +143,7 @@ function NavBar() {
                   <svg
                     className="w-6 h-6"
                     fill="none"
-                    stroke="white"
+                    stroke="black"  // Ensure stroke is black
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
                   >
@@ -247,7 +158,7 @@ function NavBar() {
                   <svg
                     className="w-6 h-6"
                     fill="none"
-                    stroke="white"
+                    stroke="black"  // Ensure stroke is black
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
                   >
@@ -268,115 +179,15 @@ function NavBar() {
         {isMobileMenuOpen && (
           <div className="lg:hidden h-screen bg-white py-4 z-100">
             <div className="flex flex-col items-start ml-4 space-y-6">
-              <Link href="/about" className="mobile-link">About</Link>
-              <Link href="https://blog.kahana.co/" target="_blank" rel="noreferrer" className="mobile-link">Help</Link>
               <Link href="/explore" className="mobile-link">Explore</Link>
-              <div className="dropdown">
-                <button className="mobile-link" onClick={toggleSolutionsDropdown}>
-                  Solutions{' '}
-                  {isSolutionsDropdownOpen ? (
-                    <svg
-                      className="w-4 h-4 inline-block"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                      style={{ transform: 'rotate(90deg)' }}
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M9 5l7 7-7 7"
-                      ></path>
-                    </svg>
-                  ) : (
-                    <svg
-                      className="w-4 h-4 inline-block"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                      style={{ transform: 'rotate(0deg)' }}
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M9 5l7 7-7 7"
-                      ></path>
-                    </svg>
-                  )}
-                </button>
-                {isSolutionsDropdownOpen && (
-                  <ul className="space-y-4 bg-white" style={{ border: 'none', paddingTop: '15px' }}>
-                    <li><Link href="/enterprise" className="mobile-link">For Enterprise</Link></li>
-                    <li><Link href="/coaches" className="mobile-link">For Coaches</Link></li>
-                    <li><Link href="/consultants" className="mobile-link">For Consultants</Link></li>
-                    <li><Link href="/experts" className="mobile-link">For Experts</Link></li>
-                    <li><Link href="/order-hubs-on-demand" className="mobile-link">Order hubs on-demand</Link></li>
-                    <li><Link href="/affiliates" className="mobile-link">Become an affiliate</Link></li>
-                  </ul>
-                )}
-              </div>
-              <div className="dropdown">
-                <button className="mobile-link" onClick={toggleResourcesDropdown}>
-                  Resources{' '}
-                  {isResourcesDropdownOpen ? (
-                    <svg
-                      className="w-4 h-4 inline-block"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                      style={{ transform: 'rotate(90deg)' }}
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M9 5l7 7-7 7"
-                      ></path>
-                    </svg>
-                  ) : (
-                    <svg
-                      className="w-4 h-4 inline-block"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                      style={{ transform: 'rotate(0deg)' }}
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M9 5l7 7-7 7"
-                      ></path>
-                    </svg>
-                  )}
-                </button>
-                {isResourcesDropdownOpen && (
-                  <ul className="space-y-4 bg-white" style={{ border: 'none', paddingTop: '15px' }}>
-                    <li><Link href="https://blog.kahana.co/" className="mobile-link" target="_blank" rel="noreferrer">Blog</Link></li>
-                    <li><Link href="/resources" className="mobile-link">Monetizing Notion</Link></li>
-                    <li><Link href="/resources" className="mobile-link">Monetizing Google Drive</Link></li>
-                    <li><Link href="/resources" className="mobile-link">Selling Digital Products</Link></li>
-                    <li><Link href="/faq" className="mobile-link">FAQ</Link></li>
-                  </ul>
-                )}
-              </div>
               <Link href="/pricing" className="mobile-link">Pricing</Link>
+
               <Link href="/sales" className="mobile-link">Contact sales</Link>
-            </div>
-            <hr className="w-full border-gray-200 mt-2 mb-2" />
-            <div className="flex flex-col items-center mt-4">
-              <Link href="https://app.kahana.co/signup" className="mobile-link bg-[#3B675E] hover:bg-[#024324] rounded-md h-10 w-60 text-white text-center flex justify-center items-center">
-                Sign up
-              </Link>
-              <Link href="https://app.kahana.co/login" className="mobile-link bg-[#FFFFFF] hover:bg-[#f2f2f2] border-gray-300 border rounded-md h-10 w-60 mt-2 text-center flex justify-center items-center">
-                Log in
-              </Link>
+
+              
+              <div className="flex flex-col space-y-2">
+                <a href="https://app.kahana.co/signup" className="nav-button">Get started</a>
+              </div>
             </div>
           </div>
         )}
