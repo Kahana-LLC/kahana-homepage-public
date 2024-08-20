@@ -2,6 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import Footer from '../components/Footer';
+import Link from 'next/link';
 import NavbarDup from '../components/NavbarDup';
 import ProductDemoSectionEnterprise from '../components/ProductDemoSectionEnterprise';
 import { CheckIcon } from '@heroicons/react/20/solid';
@@ -31,12 +32,9 @@ const EnterprisePage = () => {
           <p className="text-lg mb-8 md:px-12 lg:px-24">
             Monetize the value you deliver and the knowledge you gain from projects on an ongoing basis.
           </p>
-          <a
-            href="/sales"
-            className="bg-[#3B675E] text-white py-2 px-6 rounded-md text-center inline-block mx-auto max-w-md"
-          >
+          <Link href="/sales" className="bg-[#3B675E] text-white py-2 px-6 rounded-md text-center inline-block mx-auto max-w-md">
             Request a demo
-          </a>
+          </Link>
           <div className="mt-8">
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
               <a href="https://app.kahana.co/hub/tHwAYvYPzqVwGPGzh10k" target="_blank" rel="noopener noreferrer">
