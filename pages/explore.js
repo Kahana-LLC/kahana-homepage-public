@@ -86,9 +86,6 @@ const SearchPage = () => {
                                     ${hit.description}
                                   </p>
                                 </div>
-                                <div class="view-count">
-                                  ${hit.metadata.viewCount || 0} views
-                                </div>
                               </div>
                             </div>
                           </div>
