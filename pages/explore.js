@@ -35,7 +35,7 @@ const SearchPage = () => {
               }),
               searchBox({
                 container: "#searchbox",
-                placeholder: "Search Kahana...",
+                placeholder: "🔍 Search hubs, topics, and more...",
               }),
               refinementList({
                 container: "#refinements",
@@ -116,17 +116,25 @@ const SearchPage = () => {
         <NavbarDup />
       </div>
       <div
-        className="fixed top-[30px] left-0 right-0 bg-white z-50"
-        style={{ backgroundColor: "rgba(255, 255, 255, 0.5)" }}
+        className="fixed top-[40px] left-0 right-0 bg-white z-50"
+        style={{
+          background:
+            "linear-gradient(to top, rgba(255, 255, 255, 0.01) 0%, rgba(255, 255, 255, 0.9) 100%)",
+        }}
       >
-        <div className="header-wrapper h-[200px] p-4">
-          {" "}
+        <div className="header-wrapper h-[200px] py-2">
           {/* Adjust height as needed */}
+          <div style={{ paddingTop: "40px" }}></div>
           <div id="searchbox"></div>
-          <CategoryFilter setSelectedCategory={setSelectedCategory} />
+          {/* Add padding or margin here */}
+          <div style={{ paddingTop: "5px" }}>
+            {" "}
+            {/* Add vertical padding */}
+            <CategoryFilter setSelectedCategory={setSelectedCategory} />
+          </div>
         </div>
       </div>
-      <div className="hits-container" style={{ marginTop: "220px" }}>
+      <div className="hits-container" style={{ marginTop: "260px" }}>
         <div id="refinements"></div>
         <div>
           <div id="hits"></div>

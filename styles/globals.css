@@ -14,7 +14,7 @@ body {
   padding: 0;
   font-family: "Roboto", sans-serif;
   background-color: #f7f7f7;
-  color: #000000;
+  color: #000;
 }
 
 /* Page width */
@@ -34,10 +34,10 @@ body {
 
 /* Header wrapper styles */
 .header-wrapper {
-  display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  text-align: center;
 }
 
 @media (max-width: 767px) {
@@ -54,24 +54,36 @@ body {
   }
 }
 
+/* Custom header wrapper styles */
+.custom-header-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  padding: 0.25rem;
+}
+
+.custom-header-wrapper > * {
+  margin: 0 0.5rem;
+}
+
+/* Items info styles */
 .items-info {
   display: flex;
-  align-items: center; /* Align items vertically center */
+  align-items: center;
   padding: 10px;
   background-color: #fff;
   border-radius: 5px;
   text-align: start;
   width: 100%;
   pointer-events: none;
-  background: rgb(255, 255, 255);
-  border-color: rgb(255, 255, 255);
+  border-color: #fff;
 }
 
-/* Title styles */
 .items-info--title {
   font-size: 20px;
   margin: 0;
-  padding-right: 5px; /* Add right padding */
+  padding-right: 5px;
 }
 
 .items-info--title h3 {
@@ -80,23 +92,22 @@ body {
   font-size: 16px;
 }
 
-/* Description styles */
 .items-info--description {
   font-size: 12px;
   color: #555;
   margin-bottom: 10px;
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 3; /* Limit description to 3 lines */
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
-  padding-right: 10px; /* Add padding to the right */
+  padding-right: 10px;
 }
 
 /* Genre title styles */
 .genre-title {
   display: inline-block;
   font-size: 12px;
-  color: white;
+  color: #fff;
 }
 
 /* Autocomplete styles */
@@ -104,9 +115,9 @@ body {
   position: fixed;
 }
 
+/* Hits container styles */
 .hits-container {
-  /* display: flex; */
-  justify-content: center; /* Center horizontally */
+  justify-content: center;
 }
 
 /* InstantSearch styles */
@@ -150,12 +161,10 @@ body {
 .ais-SearchBox-input {
   width: 300px;
   height: 46px;
-  margin-left: 15px;
-  margin-right: 15px;
+  margin: 0 15px;
   border-radius: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
-  color: rgb(34, 34, 34);
+  padding: 0 10px;
+  color: #222;
   font-size: 15px;
   font-family: sans-serif;
   text-indent: 5px;
@@ -196,14 +205,15 @@ body {
   cursor: pointer;
 }
 
+/* Item styles */
 .items {
-  position: relative; /* Add relative positioning */
+  position: relative;
   overflow: hidden;
   cursor: pointer;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease;
-  max-width: 500px; /* Adjust as needed */
+  max-width: 500px;
 }
 
 .items:hover {
@@ -230,47 +240,46 @@ body {
 }
 
 .items-info-content {
-  display: flex; /* Use flexbox layout */
-  align-items: flex-start; /* Align items at the start of the flex container */
-  justify-content: space-between; /* Distribute space between items */
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
 }
 
 .items-info--title h3,
 .items-info--description p {
-  word-wrap: break-word; /* Allow words to break and wrap onto the next line */
+  word-wrap: break-word;
 }
 
 /* Container for text (title and description) */
 .text-container {
-  flex: 1; /* Allow text container to grow and shrink as needed */
-  margin-right: 10px; /* Add margin to separate from profile picture */
+  flex: 1;
+  margin-right: 10px;
 }
 
 /* Header navigation button styles */
 .header .nav-button {
-  color: white;
+  color: #fff;
 }
 
+/* Profile picture styles */
 .profile-pic {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  margin-right: 10px; /* Add right margin */
+  margin-right: 10px;
 }
 
 .profile-container {
   display: inline-block;
 }
 
+/* Category filter styles */
 #cats {
   width: 300px;
   height: 46px;
-  margin-left: 5px;
-  margin-right: 5px;
-  border-radius: 10px; /* Adjust this value for desired roundness */
-  padding-left: 10px;
-  padding-right: 10px;
-  color: #222; /* Dark gray color */
+  border-radius: 10px;
+  padding: 0 10px;
+  color: #222;
   font-size: 15px;
   font-family: sans-serif;
   text-indent: 5px;
@@ -293,10 +302,11 @@ body {
   margin-top: 8px;
 }
 
+/* Search container styles */
 .search-container {
   display: flex;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.5); /* 50% transparency */
+  background-color: rgba(255, 255, 255, 0.5);
   border: 1px solid #ccc;
   border-radius: 10px;
   padding: 4px;
@@ -307,7 +317,7 @@ body {
 }
 
 .search-icon svg {
-  color: #3b675e; /* Icon color */
+  color: #3b675e;
   width: 24px;
   height: 24px;
 }
@@ -318,4 +328,54 @@ body {
   padding: 8px;
   font-size: 16px;
   width: 100%;
+}
+
+/* Container for searchbox and category filter */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Centered searchbox container */
+.search-container {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+/* Centered category filter container */
+.category-container {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+/* Responsive styling */
+@media (max-width: 767px) {
+  .search-categories-container {
+    flex-direction: column;
+  }
+
+  #searchbox {
+    margin-bottom: 10px;
+  }
+
+  #cats {
+    margin: 10px 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .search-categories-container {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  #searchbox {
+    margin-bottom: 0;
+  }
+
+  #cats {
+    margin: 0;
+  }
 }
