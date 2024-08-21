@@ -50,10 +50,10 @@ export default function About() {
         </div>
         <main style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', minHeight: '80vh', padding: '40px 20px' }}>
           <h1 style={{ textAlign: 'center', marginBottom: '40px', fontSize: '2rem', fontWeight: 'bold' }}>
-            Talk to a Kahana Representative
+            Contact Kahana HQ
           </h1>
           <p style={{ textAlign: 'center', marginBottom: '20px' }}>
-            Fill out your information and a Kahana representative will reach out to you. Have a simple question?{' '} 
+            Fill out your information and a Kahana team member will reach out to you. Have a simple question?{' '} 
             <span style={{ textDecoration: 'underline' }}>
             <a href="https://blog.kahana.co" target="_blank" rel="noopener noreferrer">
               Search our existing articles.

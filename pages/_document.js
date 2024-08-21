@@ -5,6 +5,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        {/* Google Tag Manager */}
         <Script
           id="GA4-script"
           dangerouslySetInnerHTML={{
@@ -17,37 +18,34 @@ export default function Document() {
             `,
           }}
         />
-        <script
+
+        {/* Google AdSense */}
+        <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5821697528846539"
           crossorigin="anonymous"
-        ></script>
-        {/* Adding hotjar script here */}
+        />
+
+        {/* Hotjar script */}
         <Script
           id="hotjar-script"
           dangerouslySetInnerHTML={{
             __html: `
-                (function(h,o,t,j,a,r){
-                  h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-                  h._hjSettings={hjid:2868036,hjsv:6};
-                  a=o.getElementsByTagName('head')[0];
-                  r=o.createElement('script');r.async=1;
-                  r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-                  a.appendChild(r);
-                })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-              `,
+              (function(h,o,t,j,a,r){
+                h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+                h._hjSettings={hjid:2868036,hjsv:6};
+                a=o.getElementsByTagName('head')[0];
+                r=o.createElement('script');r.async=1;
+                r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+                a.appendChild(r);
+              })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+            `,
           }}
-        />
-        {/* End of hotjar script */}
-        <link
-          href="https://cdn.jsdelivr.net/npm/tabler-icons@1.39.1/icons/tabler-icons.min.css"
-          rel="stylesheet"
         />
 
         {/* Crisp script */}
         <Script
           id="crisp-script"
-          type="text/javascript"
           dangerouslySetInnerHTML={{
             __html: `
               window.$crisp=[];
@@ -62,9 +60,15 @@ export default function Document() {
             `,
           }}
         />
+
+        {/* Additional stylesheet */}
+        <link
+          href="https://cdn.jsdelivr.net/npm/tabler-icons@1.39.1/icons/tabler-icons.min.css"
+          rel="stylesheet"
+        />
       </Head>
       <body>
-        {/* Google Tag Manager (noscript) immediately after opening <body> */}
+        {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-WBXNXKQ"

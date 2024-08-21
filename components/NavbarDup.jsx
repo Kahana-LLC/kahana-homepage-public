@@ -122,13 +122,13 @@ function NavBar() {
                 <Link href="/explore">Explore</Link>
               </button>
               <button className="nav-link">
-                <Link href="/pricing">Pricing</Link>
+                <Link href="/pricing">Plans</Link>
               </button>
               <button className="nav-link">
-                <Link href="/sales">Contact sales</Link>
+                <Link href="/sales">Contact</Link>
               </button>
               <button className="nav-button">
-                <a href="https://app.kahana.co/signup">Get started</a>
+                <a href="https://app.kahana.co/signup">Build a hub</a>
               </button>
             </div>
 

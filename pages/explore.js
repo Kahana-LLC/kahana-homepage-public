@@ -35,7 +35,7 @@ const SearchPage = () => {
               }),
               searchBox({
                 container: "#searchbox",
-                placeholder: "What would you like to explore today?",
+                placeholder: "Search Kahana...",
               }),
               refinementList({
                 container: "#refinements",
@@ -109,16 +109,24 @@ const SearchPage = () => {
 
   return (
     <div>
-      <div style={{ zIndex: "100" }} className="sticky top-0">
+      <div
+        style={{ zIndex: "100" }}
+        className="fixed top-0 left-0 right-0 bg-white shadow-md"
+      >
         <NavbarDup />
       </div>
-      <div className="header">
-        <div className="header-wrapper">
+      <div
+        className="fixed top-[30px] left-0 right-0 bg-white z-50"
+        style={{ backgroundColor: "rgba(255, 255, 255, 0.5)" }}
+      >
+        <div className="header-wrapper h-[200px] p-4">
+          {" "}
+          {/* Adjust height as needed */}
           <div id="searchbox"></div>
           <CategoryFilter setSelectedCategory={setSelectedCategory} />
         </div>
       </div>
-      <div className="hits-container">
+      <div className="hits-container" style={{ marginTop: "220px" }}>
         <div id="refinements"></div>
         <div>
           <div id="hits"></div>

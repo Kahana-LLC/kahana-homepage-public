@@ -152,7 +152,7 @@ body {
   height: 46px;
   margin-left: 15px;
   margin-right: 15px;
-  border-radius: 15px;
+  border-radius: 10px;
   padding-left: 10px;
   padding-right: 10px;
   color: rgb(34, 34, 34);
@@ -267,7 +267,7 @@ body {
   height: 46px;
   margin-left: 5px;
   margin-right: 5px;
-  border-radius: 15px; /* Adjust this value for desired roundness */
+  border-radius: 10px; /* Adjust this value for desired roundness */
   padding-left: 10px;
   padding-right: 10px;
   color: #222; /* Dark gray color */
@@ -291,4 +291,31 @@ body {
   font-size: 14px;
   color: #666;
   margin-top: 8px;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.5); /* 50% transparency */
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 4px;
+}
+
+.search-icon {
+  margin-right: 8px;
+}
+
+.search-icon svg {
+  color: #3b675e; /* Icon color */
+  width: 24px;
+  height: 24px;
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  padding: 8px;
+  font-size: 16px;
+  width: 100%;
 }
