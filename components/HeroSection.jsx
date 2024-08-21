@@ -50,7 +50,7 @@ export default function HeroSection() {
   useEffect(() => {
     const interval = setInterval(nextSlide, 5000); // Change interval duration as needed
     return () => clearInterval(interval);
-  }, [images.length]); // Depend only on images length
+  }, [nextSlide, images.length]); // Add nextSlide to dependencies
 
   return (
     <div className="relative bg-white">
@@ -65,24 +65,22 @@ export default function HeroSection() {
                     A New Oasis for Knowledge
                   </h1>
                   <p className="mt-3 text-base text-slate-900 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl text-center sm:text-left">
-                  With Kahana, anyone can build unique "hubs" of digital products, resources, files, and links and share them directly with hungry knowledge seekers. Collaborate within hubs to go even faster.
+                    With Kahana, anyone can build unique &quot;hubs&quot; of digital products, resources, files, and links and share them directly with hungry knowledge seekers. Collaborate within hubs to go even faster.
                   </p>
                   <div className="mt-8 flex flex-col items-center space-y-4 md:flex-row md:space-x-4 md:space-y-0">
-                  <Link
-  href="/explore"  
-  className="rounded-md border border-transparent bg-[#3B675E] py-3 px-6 text-lg font-medium text-white shadow-sm hover:bg-[#024324] focus:outline-none focus:ring-2 focus:ring-[#024324] focus:ring-offset-2 text-center"
->
-  Start exploring
-</Link>
-<Link
-  href="https://app.kahana.co/signup"
-  className="rounded-md border border-black bg-white py-3 px-6 text-lg font-medium text-black shadow-sm hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 text-center"
->
-  Build a hub
-</Link>
-
-
-</div>
+                    <Link
+                      href="/explore"  
+                      className="rounded-md border border-transparent bg-[#3B675E] py-3 px-6 text-lg font-medium text-white shadow-sm hover:bg-[#024324] focus:outline-none focus:ring-2 focus:ring-[#024324] focus:ring-offset-2 text-center"
+                    >
+                      Start exploring
+                    </Link>
+                    <Link
+                      href="https://app.kahana.co/signup"
+                      className="rounded-md border border-black bg-white py-3 px-6 text-lg font-medium text-black shadow-sm hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 text-center"
+                    >
+                      Build your hub
+                    </Link>
+                  </div>
                 </div>
               </div>
               <div className="lg:col-span-5 hidden lg:block flex flex-col justify-center items-center">
