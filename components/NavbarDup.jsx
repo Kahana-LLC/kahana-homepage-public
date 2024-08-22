@@ -125,7 +125,7 @@ function NavBar() {
                 <Link href="/pricing">Plans</Link>
               </button>
               <button className="nav-link">
-                <Link href="/sales">Contact</Link>
+                <Link href="/contact">Contact</Link>
               </button>
               <button className="nav-button">
                 <a href="https://app.kahana.co/signup">Build a hub</a>
@@ -182,7 +182,7 @@ function NavBar() {
               <Link href="/explore" className="mobile-link">Explore</Link>
               <Link href="/pricing" className="mobile-link">Pricing</Link>
 
-              <Link href="/sales" className="mobile-link">Contact sales</Link>
+              <Link href="/contact" className="mobile-link">Contact</Link>
 
               
               <div className="flex flex-col space-y-2">
