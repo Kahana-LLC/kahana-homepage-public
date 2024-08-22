@@ -44,7 +44,7 @@ export default function Contact() {
           content="Contact Kahana HQ for inquiries, support, or information. Fill out the form, and our team will get back to you. For immediate answers, explore our blog."
         />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://www.kahana.co/contact" />
+        <link rel="canonical" href="https://www.kahana.co/sales" />
       </Head>
       <div>
         <div style={{ zIndex: '1' }} className="sticky top-0 bg-white shadow-md">
@@ -52,7 +52,7 @@ export default function Contact() {
         </div>
         <main className="flex flex-col items-center min-h-screen py-16 bg-white px-6 sm:py-32 lg:px-8">
           <h1 className="text-2xl font-bold text-center mb-8 sm:text-3xl">
-            Contact Kahana HQ
+            Contact a Kahana team member
           </h1>
           <p className="text-center mb-6 text-base text-gray-700">
             We’re here to help! Please provide your details, and a Kahana team member will reach out to you shortly.<br />

@@ -32,7 +32,7 @@ const EnterprisePage = () => {
           <p className="text-lg mb-8 md:px-12 lg:px-24">
             Monetize the value you deliver and the knowledge you gain from projects on an ongoing basis.
           </p>
-          <Link href="/contact" className="bg-[#3B675E] text-white py-2 px-6 rounded-md text-center inline-block mx-auto max-w-md">
+          <Link href="/sales" className="bg-[#3B675E] text-white py-2 px-6 rounded-md text-center inline-block mx-auto max-w-md">
             Request a demo
           </Link>
           <div className="mt-8">
@@ -144,7 +144,7 @@ const EnterprisePage = () => {
           <h2 className="text-3xl font-bold mb-8 md:px-12 lg:px-24 px-4 mx-auto">Get a demo</h2>
           <p className="mb-4 px-4 mx-auto">Talk to a human to understand how Kahana can help your org.</p>
           <div className="mx-auto">
-          <Link href="/contact" className="bg-[#3B675E] text-white py-2 px-6 rounded-md text-center inline-block mx-auto max-w-md">
+          <Link href="/sales" className="bg-[#3B675E] text-white py-2 px-6 rounded-md text-center inline-block mx-auto max-w-md">
             Request a demo
           </Link>
           </div>

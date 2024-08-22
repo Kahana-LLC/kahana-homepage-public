@@ -43,7 +43,7 @@ export default function Custom404() {
                   Take me home
                 </button>
               </Link>
-              <Link href="/contact">
+              <Link href="/sales">
                 <button className="text-sm font-semibold text-gray-900">
                   Contact us <span aria-hidden="true">&rarr;</span>
                 </button>
