@@ -22,7 +22,7 @@ const faqs = [
       <span>
         You can check out our{' '}
         <a href="https://kahana.co/explore" className="text-[#038270] font-medium">
-          Featured Hubs
+          Explore
         </a>{' '}
         page for examples of what a hub looks like.
       </span>
@@ -44,49 +44,17 @@ const faqs = [
     question: 'How do I get paid from Kahana?',
     answer: (
       <span>
-        In a nutshell, you earn money when people subscribe to your monetized hubs. In order to charge for access to your hubs, you can connect to Stripe, which you can do by following{' '}
+        In a nutshell, you earn money when people subscribe to your monetized hubs. In order to charge for access to your hubs, you can follow{' '}
         <a href="https://blog.kahana.co/connect-stripe/" className="text-[#038270] font-medium">
-          these steps
+          these steps to connect Stripe
         </a>
         .
       </span>
     ),
   },
   {
-    question: 'How many hubs can I create?',
-    answer: 'You can create 2 hubs for free, and if you upgrade to a paid plan, you can create unlimited hubs.',
-  },
-  {
-    question: 'How is Kahana different from other platforms?',
-    answer: (
-      <span>
-        Kahana is different from other platforms you can use to monetize your content in two main ways. First, it is the only option that is <b>truly collaborative</b> - it enables people ot co-create, build products <i>together</i>, build off of each other&apos;s work, and monetize all in the same place. Second, it&apos;s a much more efficient way of monetize because you can upload and immediately charge for access to existing materials you&apos;ve already created and curated, as opposed to having to build something from scratch (like a course).
-      </span>
-    ),
-  },
-  {
-    question: 'Is there a storage limit?',
-    answer: (
-      <span>
-        Yes. The free plan (Creator) has a limit of 1 GB, Expert has a limit of 5 GB, and Team Collaboration and Enterprise each have a limit of 50 GB. For more information, please feel refer to our{' '}
-        <a href="https://kahana.co/pricing" className="text-[#038270] font-medium">
-          Pricing page
-        </a>
-        .
-      </span>
-    ),
-  },
-  {
-    question: 'If I already have a website, can I integrate it with Kahana?',
-    answer: 'Absolutely! You can embed Kahana hubs within your website, and you can also place content from your website in Kahana hubs.',
-  },
-  {
-    question: 'Do I get custom domains for my hubs?',
-    answer: 'This is not something we currently offer, but we are actively looking into enabling this in the future.',
-  },
-  {
-    question: 'Can I use Kahana without my own content?',
-    answer: 'Yes! You can use Kahana hubs to curate and share content that isn\'t your own (so long as you are appropriately crediting the creator and not claiming it is your own content). The value of your hub can be that you are collecting and filtering high-quality information about a given topic so that others don\'t have to.',
+    question: 'How many hubs can I build?',
+    answer: 'You can build 3 hubs for free, and if you upgrade to a paid plan, you can create unlimited hubs.',
   },
 ];
 
@@ -113,7 +81,7 @@ export default function FaqPage() {
         <div className="bg-white py-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <h1 className="text-3xl font-bold mb-8 text-gray-900">
-              Frequently Asked Questions
+              Frequently asked questions
             </h1>
             <div className="space-y-4">
               {faqs.map((faq, index) => (

@@ -27,7 +27,7 @@ export default function Footer() {
             <span className="mx-2">|</span>
               <Link href="/explore" className="text-gray-500 hover:text-gray-900">Explore</Link> 
               <span className="mx-2">·</span>
-              <Link href="/faq" className="text-gray-500 hover:text-gray-900">Glossary</Link>
+              <Link href="/faq" className="text-gray-500 hover:text-gray-900">FAQ</Link>
               <span className="mx-2">·</span>
               <Link href="/pricing" className="text-gray-500 hover:text-gray-900">Pricing</Link>
               <span className="mx-2">·</span>
@@ -43,7 +43,7 @@ export default function Footer() {
             </span>
             <span className="space-y-2 sm:hidden flex flex-col items-start mt-6">
               <Link href="/explore" className="text-gray-500 hover:text-gray-900">Explore</Link>
-              <Link href="/faq" className="text-gray-500 hover:text-gray-900">Glossary</Link>
+              <Link href="/faq" className="text-gray-500 hover:text-gray-900">FAQ</Link>
               <Link href="/pricing" className="text-gray-500 hover:text-gray-900">Pricing</Link>
               <Link href="/privacy-policy" className="text-gray-500 hover:text-gray-900">Privacy</Link>
               <Link href="/terms-and-conditions" className="text-gray-500 hover:text-gray-900">Terms</Link>

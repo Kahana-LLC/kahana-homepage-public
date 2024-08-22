@@ -112,7 +112,7 @@ Start building for free and pay as you need. To be transparent, Kahana earns 5% 
             </div>
             <div className="px-6 pt-6 pb-8">
               <h3 className="text-sm font-medium text-gray-900">
-                What&apos;s included
+                Your arsenal of tools for building hubs:
               </h3>
               <ul role="list" className="mt-6 space-y-4">
               
@@ -188,7 +188,7 @@ Start building for free and pay as you need. To be transparent, Kahana earns 5% 
                 href="https://app.kahana.co/signup"
                 className="mt-8 block w-full rounded-md border border-[#3B675E] bg-[#3B675E] py-2 text-center text-sm font-semibold text-white hover:bg-[#024324]"
               >
-                Sign up for free
+                Go with Free
               </a>
             </div>
           </div>
@@ -254,7 +254,7 @@ Start building for free and pay as you need. To be transparent, Kahana earns 5% 
                 href="https://app.kahana.co/billing"
                 className="mt-8 block w-full rounded-md border border-[#3B675E] bg-[#3B675E] py-2 text-center text-sm font-semibold text-white hover:bg-[#024324]"
               >
-                Go to billing
+                Go with Growth
               </a>
             </div>
           </div>
@@ -328,7 +328,7 @@ Start building for free and pay as you need. To be transparent, Kahana earns 5% 
       <a
         className="mt-8 block w-full max-w-xs rounded-md border border-[#3B675E] bg-[#3B675E] py-2 text-center text-sm font-semibold text-white hover:bg-[#024324]"
       >
-        Contact 
+        Go with Enterprise
       </a>
     </Link>
             </div>
