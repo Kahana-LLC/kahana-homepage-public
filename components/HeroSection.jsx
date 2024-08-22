@@ -1,12 +1,11 @@
-import Link from 'next/link';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import wAmy from '../assets/images/wAmySlider.webp';
 import Kelsey from '../assets/images/kelseySlider.webp';
 import Juice from '../assets/images/juiceSlider.webp';
 import Olivia from '../assets/images/oliviaSlider.webp';
+import Link from 'next/link';
 
-// Placeholder for blurDataURL
 const placeholderImage = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgc3Ryb2tlLXdpZHRoPSIxIiBzdHJva2UtbGluZS1zY2FsZT0icm91bmQiIHN0cm9rZS1jb2xvcj0iI2ZlZmYiLz48L3N2Zz4=';
 
 const navigation = [
@@ -20,13 +19,14 @@ export default function HeroSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const images = [wAmy, Kelsey, Juice, Olivia];
 
-  const nextSlide = () => {
+  // Memoize the nextSlide function
+  const nextSlide = useCallback(() => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-  };
+  }, [images.length]);
 
-  const prevSlide = () => {
+  const prevSlide = useCallback(() => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
-  };
+  }, [images.length]);
 
   useEffect(() => {
     const form = document.getElementById('myform');
@@ -50,7 +50,7 @@ export default function HeroSection() {
   useEffect(() => {
     const interval = setInterval(nextSlide, 5000); // Change interval duration as needed
     return () => clearInterval(interval);
-  }, [nextSlide, images.length]); // Add nextSlide to dependencies
+  }, [nextSlide]); // Use nextSlide directly here
 
   return (
     <div className="relative bg-white">
