@@ -5,79 +5,30 @@ import whiteKahanaLogo from '../assets/kahana_logo_wide.svg';
 
 function NavBar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isSolutionsDropdownOpen, setIsSolutionsDropdownOpen] = useState(false);
-  const [isResourcesDropdownOpen, setIsResourcesDropdownOpen] = useState(false);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
-
-  const toggleSolutionsDropdown = () => {
-    setIsSolutionsDropdownOpen(!isSolutionsDropdownOpen);
-  };
-
-  const toggleResourcesDropdown = () => {
-    setIsResourcesDropdownOpen(!isResourcesDropdownOpen);
   };
 
   return (
     <div>
       <nav className="bg-white bg-opacity-90">
         <style jsx>{`
+          .font-style {
+            font-family: 'YourFontFamily', sans-serif; /* Replace with the actual font family */
+          }
+
           .nav-link {
             padding: 0.3rem 0.75rem;
             border-radius: 0.5rem;
             transition: background-color 0.3s ease;
-            color: black !important;
+            color: gray !important;
             text-decoration: none;
             background-color: transparent;
             border: none;
           }
 
           .nav-link:hover {
-            background-color: #FFFFFF;
-          }
-
-          .dropdown {
-            position: relative;
-            display: inline-block;
-          }
-
-          .dropdown-text {
-            display: none;
-            position: absolute;
-            background-color: #024324;
-            min-width: 220px;
-            color: white;
-            z-index: 1;
-          }
-
-          .dropdown:hover .dropdown-text {
-            display: block;
-          }
-
-          .dropdown-link {
-            padding: 0.5rem 1rem;
-            text-decoration: none;
-            display: block;
-            color: white;
-            transition: background-color 0.3s ease;
-          }
-
-          .dropdown-link:hover {
-            background-color: #FFFFFF;
-          }
-
-          .dropdown-button {
-            padding: 0.2rem 0.6rem;
-            background-color: transparent;
-            width: 100%;
-            text-align: left;
-            color: white;
-            border-radius: 0.5rem;
-          }
-
-          .dropdown-button:hover {
             background-color: #FFFFFF;
           }
 
@@ -117,7 +68,7 @@ function NavBar() {
             </div>
 
             {/* Desktop Menu */}
-            <div className="hidden lg:flex space-x-1 items-center">
+            <div className="hidden lg:flex space-x-1 items-center font-style">
               <button className="nav-link">
                 <Link href="/explore">Explore</Link>
               </button>
@@ -143,7 +94,7 @@ function NavBar() {
                   <svg
                     className="w-6 h-6"
                     fill="none"
-                    stroke="black"  // Ensure stroke is black
+                    stroke="black"
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
                   >
@@ -158,7 +109,7 @@ function NavBar() {
                   <svg
                     className="w-6 h-6"
                     fill="none"
-                    stroke="black"  // Ensure stroke is black
+                    stroke="black"
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
                   >
@@ -177,14 +128,11 @@ function NavBar() {
 
         {/* Mobile Menu Content */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden h-screen bg-white py-4 z-100">
+          <div className="lg:hidden h-screen bg-white py-4 z-100 font-style">
             <div className="flex flex-col items-start ml-4 space-y-6">
               <Link href="/explore" className="mobile-link">Explore</Link>
               <Link href="/pricing" className="mobile-link">Pricing</Link>
-
               <Link href="/sales" className="mobile-link">Contact</Link>
-
-              
               <div className="flex flex-col space-y-2">
                 <a href="https://app.kahana.co/signup" className="nav-button">Get started</a>
               </div>

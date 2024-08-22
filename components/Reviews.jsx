@@ -95,10 +95,10 @@ export default function Reviews() {
       <Container>
         <div className="mx-auto max-w-2xl text-center">
           <p className="mt-1 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
-            Why People Love Kahana
+            What folks are sayin'
           </p>
           <p className="mt-4 text-lg tracking-tight text-slate-700">
-            Multi-passionate creators and experts from all over the world 🌎
+            Building hubs and sharing knowledge all over the world 🌎
           </p>
         </div>
         <ul

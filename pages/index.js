@@ -81,12 +81,6 @@ export default function Home() {
           >
             <Pricing />
           </section>
-          <section
-            id="faq"
-            className="min-h-screen flex items-center justify-center p-4 md:p-8 bg-white"
-          >
-            <Faq />
-          </section>
         </main>
         <Footer />
       </div>
