@@ -1,148 +1,95 @@
 import Image from 'next/image';
+import Head from 'next/head';
+import Link from 'next/link';
 
 // images
-import adam from '../assets/headshots/Adam Kershner.png';
-import emilio from '../assets/headshots/emilio.jpeg';
-import eugene from '../assets/headshots/Eugene Kaminsky.png';
-import hugh from '../assets/headshots/Hugh Molotsi.png';
-import jonathan from '../assets/headshots/Jonathan Gans.png';
-import william from '../assets/headshots/William Reehil.png';
-import greg from '../assets/headshots/gregoryGray.png';
-import denali from '../assets/headshots/denaliKeefe.jpeg';
-import benjamin from '../assets/headshots/BSJheadshot.png';
+import adam from '../assets/headshots/Adam_Kershner.webp';
+import emilio from '../assets/headshots/Emilio_Abelmann.webp';
+import eugene from '../assets/headshots/eugene_kaminsky.webp';
+import hugh from '../assets/headshots/hugh_molotsi.webp';
+import jonathan from '../assets/headshots/Jonathan_Gans.webp';
+import william from '../assets/headshots/william_reehil.webp';
+import greg from '../assets/headshots/Gregory_Gray.webp';
+import denali from '../assets/headshots/Denali_Keefe.webp';
+import benjamin from '../assets/headshots/Benjamin_St_Juste.webp';
+import aparna from '../assets/headshots/Aparna_Chaturvedula.webp';
+import kelsie from '../assets/headshots/Kelsie_Exley.webp';
+import jyoti from '../assets/headshots/Jyoti_Vashist.webp';
+import kirtana from '../assets/headshots/Kirtana_Sridharan.webp';
+import monty from '../assets/headshots/Monty_Lans.webp';
+import saumya from '../assets/headshots/Saumya Roy.webp';
+import shivani from '../assets/headshots/Shivani_Chandrashekar.webp';
+import sinchana from '../assets/headshots/Sinchana_Thippeswamy.webp';
+import jordan from '../assets/headshots/Jordan_Kern.webp';
+import veda from '../assets/headshots/veda_kanduri.webp';
+import siddhartha from '../assets/headshots/siddhartha_roy.webp';
 
 const people = [
-  {
-    name: 'Jonathan Gans',
-    role: 'Co-Founder & CEO',
-    imageUrl: jonathan,
-    twitterUrl: 'https://twitter.com/jonathan_gans1',
-    linkedinUrl: 'https://www.linkedin.com/in/jonathan-gans1/',
-  },
-  {
-    name: 'Adam Kershner',
-    role: 'Co-Founder & Chief Product Officer',
-    imageUrl: adam,
-    twitterUrl: 'https://twitter.com/adam_kershner',
-    linkedinUrl: 'https://www.linkedin.com/in/adam-kershner/',
-  },
-  {
-    name: 'Benjamin St-Juste',
-    role: 'Creative Partner',
-    imageUrl: benjamin,
-    twitterUrl: 'https://twitter.com/Benj_Juice',
-    linkedinUrl: 'https://www.linkedin.com/in/benjamin-st-juste-2849ab189/',
-  },
-  {
-    name: 'William Reehil',
-    role: 'Technical Lead',
-    imageUrl: william,
-    twitterUrl: 'https://twitter.com/KahanaHQ',
-    linkedinUrl: 'https://www.linkedin.com/company/kahana-co/',
-  },
-  {
-    name: 'Emilio V Abelmann',
-    role: 'Strategic Partnerships',
-    imageUrl: emilio,
-    twitterUrl: 'https://twitter.com/KahanaHQ',
-    linkedinUrl: 'https://www.linkedin.com/in/emilio-abelmann-617182107/',
-  },
-  {
-    name: 'Eugene Kaminsky',
-    role: 'Technical Advisor & Co-Founder',
-    imageUrl: eugene,
-    twitterUrl: 'https://twitter.com/KahanaHQ',
-    linkedinUrl: 'https://www.linkedin.com/company/kahana-co/',
-  },
-  {
-    name: 'Hugh Molotsi',
-    role: 'Innovation Advisor',
-    imageUrl: hugh,
-    twitterUrl: 'https://twitter.com/hughmolotsi',
-    linkedinUrl: 'https://www.linkedin.com/in/hughie/',
-  },
-  {
-    name: 'Gregory Gray',
-    role: 'Strategy',
-    imageUrl: greg,
-    twitterUrl: 'https://twitter.com/KahanaHQ',
-    linkedinUrl: 'https://www.linkedin.com/in/gregorygray00/',
-  },
-  {
-    name: 'Denali Keefe',
-    role: 'Marketing',
-    imageUrl: denali,
-    twitterUrl: 'https://twitter.com/KahanaHQ',
-    linkedinUrl: 'https://www.linkedin.com/in/denali-keefe/',
-  },
+  { name: 'Kelsie Exley', role: 'Lead Creator Ambassador', imageUrl: kelsie },
+  { name: 'Benjamin St-Juste', role: 'Creator Ambassador', imageUrl: benjamin },
+  { name: 'Monty Lans', role: 'Creator Ambassador', imageUrl: monty },
+  { name: 'Jyoti Vashist', role: 'Product', imageUrl: jyoti },
+  { name: 'Siddhartha Roy', role: 'Product', imageUrl: siddhartha },
+  { name: 'Saumya Roy', role: 'Product', imageUrl: saumya },
+  { name: 'Aparna Chaturvedula', role: 'Product', imageUrl: aparna },
+  { name: 'Sinchana Thippeswamy', role: 'Product', imageUrl: sinchana },
+  { name: 'Veda Kanduri', role: 'Product', imageUrl: veda },
+  { name: 'Denali Keefe', role: 'Marketing', imageUrl: denali },
+  { name: 'Emilio V Abelmann', role: 'Partnerships', imageUrl: emilio },
+  { name: 'William Reehil', role: 'Technical', imageUrl: william },
+  { name: 'Kirtana Sridharan', role: 'Data Analytics', imageUrl: kirtana },
+  { name: 'Shivani Chandrashekar', role: 'Data Analytics', imageUrl: shivani },
+  { name: 'Jordan Kern', role: 'CMO', imageUrl: jordan },
+  { name: 'Adam Kershner', role: 'COO', imageUrl: adam },
+  { name: 'Jonathan Gans', role: 'CEO', imageUrl: jonathan },
+  { name: 'Eugene Kaminsky', role: 'Advisor', imageUrl: eugene },
+  { name: 'Gregory Gray', role: 'Advisor', imageUrl: greg },
+  { name: 'Hugh Molotsi', role: 'Advisor', imageUrl: hugh },
 ];
 
 export default function TeamSection() {
   return (
-    <div className="bg-white">
-      <div className="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:px-8 lg:py-24">
-        <div className="text-center space-y-12">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-            Our Team
-          </h2>
-          <ul
-            role="list"
-            className="space-y-12 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:grid-cols-3 lg:gap-x-8"
-          >
+    <>
+      <Head>
+        <title>Kahana HQ Team</title>
+        <meta name="description" content="Meet the Kahana team, the brilliant minds driving our mission forward." />
+        <meta property="og:title" content="Kahana HQ Team" />
+        <meta property="og:description" content="Meet the Kahana team, the brilliant minds driving our mission forward." />
+        <meta property="og:image" content="/path/to/og-image.jpg" />
+        <meta property="og:url" content="https://www.kahana.co/team" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Kahana HQ Team" />
+        <meta name="twitter:description" content="Meet the Kahana team, the brilliant minds driving our mission forward." />
+        <meta name="twitter:image" content="/path/to/twitter-image.jpg" />
+      </Head>
+      <div className="bg-white py-24 sm:py-32">
+        <div className="mx-auto grid max-w-7xl gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-3">
+          <div className="max-w-2xl">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+              Kahana HQ
+            </h2>
+            <p className="mt-6 text-lg leading-8 text-gray-600">
+              The team of hungry avengers behind Kahana.
+            </p>
+          </div>
+          <ul role="list" className="grid gap-x-8 gap-y-12 sm:grid-cols-2 sm:gap-y-16 xl:col-span-2">
             {people.map((person) => (
               <li key={person.name}>
-                <div className="space-y-4">
-                  <div className="aspect-w-3 aspect-h-2">
-                    <Image
-                      className="rounded-lg object-cover shadow-lg"
-                      src={person.imageUrl}
-                      alt=""
-                    />
-                  </div>
-
-                  <div className="space-y-2 text-center">
-                    <div className="space-y-1 text-lg font-medium leading-6">
-                      <h3>{person.name}</h3>
-                      <p className="text-green-700">{person.role}</p>
-                    </div>
-                    <ul role="list" className="flex justify-center space-x-5">
-                      <li>
-                        <a
-                          href={person.twitterUrl}
-                          className="text-gray-400 hover:text-gray-500"
-                        >
-                          <span className="sr-only">Twitter</span>
-                          <svg
-                            className="h-5 w-5"
-                            aria-hidden="true"
-                            fill="currentColor"
-                            viewBox="0 0 20 20"
-                          >
-                            <path d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84" />
-                          </svg>
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href={person.linkedinUrl}
-                          className="text-gray-400 hover:text-gray-500"
-                        >
-                          <span className="sr-only">LinkedIn</span>
-                          <svg
-                            className="h-5 w-5"
-                            aria-hidden="true"
-                            fill="currentColor"
-                            viewBox="0 0 20 20"
-                          >
-                            <path
-                              fillRule="evenodd"
-                              d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z"
-                              clipRule="evenodd"
-                            />
-                          </svg>
-                        </a>
-                      </li>
-                    </ul>
+                <div className="flex items-center gap-x-6">
+                  <Image
+                    className="h-32 w-32 rounded-full" // Updated size
+                    src={person.imageUrl}
+                    alt={`Headshot of ${person.name}, ${person.role}`} // Descriptive alt text
+                    loading="lazy" // Built-in lazy loading
+                    placeholder="blur" // Use blur-up effect for better UX
+                  />
+                  <div>
+                    <h3 className="text-base font-semibold leading-7 tracking-tight text-gray-900">
+                      {person.name}
+                    </h3>
+                    <p className="text-sm font-semibold leading-6 text-green-700">
+                      {person.role}
+                    </p>
                   </div>
                 </div>
               </li>
@@ -150,6 +97,6 @@ export default function TeamSection() {
           </ul>
         </div>
       </div>
-    </div>
+    </>
   );
 }

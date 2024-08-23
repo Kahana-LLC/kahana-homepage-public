@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import Script from 'next/script'; // Import the Script component
-import AboutCard from '../components/AboutCard';
 import Footer from '../components/Footer';
 import NavbarDup from '../components/NavbarDup';
 import TeamSection from '../components/TeamSection';
@@ -35,8 +34,6 @@ export default function About() {
           <NavbarDup />
         </div>
         <main>
-          <AboutCard className="relative" /> {/* Fixed typo from classnName to className */}
-          {/* <FriendsOfKahana /> */}
           <TeamSection />
         </main>
         <Footer />
