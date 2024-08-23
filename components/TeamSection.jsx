@@ -23,6 +23,9 @@ import sinchana from '../assets/headshots/Sinchana_Thippeswamy.webp';
 import jordan from '../assets/headshots/Jordan_Kern.webp';
 import veda from '../assets/headshots/veda_kanduri.webp';
 import siddhartha from '../assets/headshots/siddhartha_roy.webp';
+import rj from '../assets/headshots/rj_gan.webp';
+import mahendra from '../assets/headshots/mahendra_shahi.webp';
+
 
 const people = [
   { name: 'Kelsie Exley', role: 'Lead Creator Ambassador', imageUrl: kelsie },
@@ -36,12 +39,14 @@ const people = [
   { name: 'Veda Kanduri', role: 'Product', imageUrl: veda },
   { name: 'Denali Keefe', role: 'Marketing', imageUrl: denali },
   { name: 'Emilio V Abelmann', role: 'Partnerships', imageUrl: emilio },
-  { name: 'William Reehil', role: 'Technical', imageUrl: william },
+  { name: 'Mahendra Shahi', role: 'Engineering', imageUrl: mahendra },
   { name: 'Kirtana Sridharan', role: 'Data Analytics', imageUrl: kirtana },
   { name: 'Shivani Chandrashekar', role: 'Data Analytics', imageUrl: shivani },
   { name: 'Jordan Kern', role: 'CMO', imageUrl: jordan },
+  { name: 'William Reehil', role: 'CTO', imageUrl: william },
   { name: 'Adam Kershner', role: 'COO', imageUrl: adam },
   { name: 'Jonathan Gans', role: 'CEO', imageUrl: jonathan },
+  { name: 'RJ Gan', role: 'Advisor', imageUrl: rj },
   { name: 'Eugene Kaminsky', role: 'Advisor', imageUrl: eugene },
   { name: 'Gregory Gray', role: 'Advisor', imageUrl: greg },
   { name: 'Hugh Molotsi', role: 'Advisor', imageUrl: hugh },
