@@ -60,7 +60,7 @@ const SearchPage = () => {
                     return html`
                       <a
                         href="https://app.kahana.co/hub/${hit.objectID}"
-                        target="_blank"
+                        target="_self"
                         rel="noopener noreferrer"
                       >
                         <div class="items">
