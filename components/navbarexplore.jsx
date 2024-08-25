@@ -19,12 +19,12 @@ function NavBarExplore() {
           }
 
           .mobile-link {
-            color: black;
+            color: lightgray;
             transition: background-color 0.3s ease;
             padding: 0.75rem;
             border-radius: 0.5rem;
             width: 100%;
-            text-align: right;
+            text-align: left;
             background-color: #f7f7f7;
           }
 
@@ -55,6 +55,30 @@ function NavBarExplore() {
             display: flex;
             align-items: center;
             justify-content: center;
+          }
+
+          .mobile-menu {
+            position: fixed;
+            top: 3rem; /* Adjust to align with the bottom of the navbar */
+            left: 0;
+            width: 33vw; /* Approximately one-third of the viewport width */
+            max-width: 400px; /* Maximum width for larger screens */
+            min-width: 280px; /* Minimum width for smaller screens */
+            height: 100vh; /* Full viewport height */
+            background-color: rgba(255, 255, 255, 0.9); /* White with transparency */
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); /* Shadow for better visibility */
+            padding: 1rem;
+            z-index: 40;
+            overflow-y: auto; /* Scroll if content overflows */
+            transition: transform 0.3s ease-in-out;
+            transform: ${isMobileMenuOpen ? 'translateX(0)' : 'translateX(-100%)'}; /* Slide in/out effect */
+          }
+
+          .menu-links {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* Aligns links to the left */
+            gap: 1rem; /* Space between links */
           }
         `}</style>
         <div className="nav-content">
@@ -111,19 +135,17 @@ function NavBarExplore() {
         </div>
 
         {/* Mobile Menu Content */}
-        {isMobileMenuOpen && (
-          <div className="fixed top-12 left-0 w-full h-screen bg-white py-4 z-40 font-style">
-            <div className="flex flex-col items-end pr-4 space-y-6">
-              <Link href="https://app.kahana.co" className="mobile-link">Dashboard</Link>
-              <Link href="https://app.kahana.co/billing" className="mobile-link">Billing</Link>
-              <Link href="https://blog.kahana.co" className="mobile-link">Blog</Link>
-              <Link href="/pricing" className="mobile-link">Pricing</Link>
-              <Link href="/terms-and-conditions" className="mobile-link">Terms & Conditions</Link>
-              <Link href="/privacy-policy" className="mobile-link">Privacy Policy</Link>
-              <Link href="/sales" className="mobile-link">Contact</Link>
-            </div>
+        <div className={`mobile-menu ${isMobileMenuOpen ? 'open' : ''}`}>
+          <div className="menu-links">
+            <Link href="https://app.kahana.co" className="mobile-link">Dashboard</Link>
+            <Link href="https://app.kahana.co/billing" className="mobile-link">Billing</Link>
+            <Link href="https://blog.kahana.co" className="mobile-link">Blog</Link>
+            <Link href="/pricing" className="mobile-link">Pricing</Link>
+            <Link href="/terms-and-conditions" className="mobile-link">Terms & Conditions</Link>
+            <Link href="/privacy-policy" className="mobile-link">Privacy Policy</Link>
+            <Link href="/sales" className="mobile-link">Contact</Link>
           </div>
-        )}
+        </div>
       </nav>
     </div>
   );
