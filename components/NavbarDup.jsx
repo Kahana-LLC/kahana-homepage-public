@@ -128,7 +128,7 @@ function NavBar() {
               <button className="nav-button explore">Explore</button>
             </Link>
             <Link href="https://app.kahana.co">
-              <button className="nav-button app-dashboard">Build a hub</button>
+              <button className="nav-button app-dashboard">Build</button>
             </Link>
 
             {/* Hamburger Menu */}
