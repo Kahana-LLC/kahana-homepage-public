@@ -1,4 +1,4 @@
-import NavbarDup from "../components/NavbarDup";
+import NavbarExplore from "../components/navbarexplore";
 import CategoryFilter from "../components/CategoryFilter";
 import React, { useState, useEffect } from "react";
 import Footer from "../components/Footer";
@@ -35,7 +35,7 @@ const SearchPage = () => {
               }),
               searchBox({
                 container: "#searchbox",
-                placeholder: "🔍 Search hubs, topics, and more...",
+                placeholder: "Search Kahana...",
               }),
               refinementList({
                 container: "#refinements",
@@ -113,7 +113,7 @@ const SearchPage = () => {
         style={{ zIndex: "100" }}
         className="fixed top-0 left-0 right-0 bg-white shadow-md"
       >
-        <NavbarDup />
+        <NavbarExplore />
       </div>
       <div
         className="fixed top-[40px] left-0 right-0 bg-white z-50"

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import whiteKahanaLogo from '../assets/kahana_logo_wide.svg';
+import whiteKahanaLogo from '../assets/kahana_icon.svg';
 
-function NavBar() {
+function NavBarExplore() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -67,33 +67,24 @@ function NavBar() {
           }
         `}</style>
         <div className="container mx-auto px-4">
-          <div className="flex justify-between items-center py-2">
+          <div className="flex items-center py-2">
             {/* Logo */}
-            <div className="flex items-center">
-              <Link href="/" aria-label="Home">
-                <span className="sr-only">Company</span>
+            <div className="flex items-center flex-grow-0">
+              <Link href="https://app.kahana.co" aria-label="Home">
+                <span className="sr-only">Home</span>
                 <Image
                   className="h-7"
                   src={whiteKahanaLogo}
-                  alt="navbar-logo"
+                  alt="Kahana Logo"
                 />
               </Link>
             </div>
 
             {/* Buttons and Hamburger Menu */}
-            <div className="flex items-center">
-              {/* Buttons */}
-              <Link href="/explore">
-                <button className="nav-button explore">Explore</button>
-              </Link>
-              <Link href="https://app.kahana.co">
-                <button className="nav-button app-dashboard">Build</button>
-              </Link>
-
-              {/* Hamburger Menu */}
+            <div className="flex items-center ml-auto">
               <button
                 onClick={toggleMobileMenu}
-                className="hamburger-button"
+                className="hamburger-button ml-4"
                 aria-label="Mobile Menu"
               >
                 {isMobileMenuOpen ? (
@@ -136,8 +127,7 @@ function NavBar() {
         {isMobileMenuOpen && (
           <div className="h-screen bg-white py-4 z-100 font-style">
             <div className="flex flex-col items-end pr-4 space-y-6">
-              <Link href="/explore" className="mobile-link">Explore</Link>
-              <Link href="https://app.kahana.co" className="mobile-link">App Home</Link>
+              <Link href="https://app.kahana.co" className="mobile-link">Home</Link>
               <Link href="https://app.kahana.co/billing" className="mobile-link">Billing</Link>
               <Link href="https://blog.kahana.co" className="mobile-link">Blog</Link>
               <Link href="/pricing" className="mobile-link">Pricing</Link>
@@ -152,4 +142,4 @@ function NavBar() {
   );
 }
 
-export default NavBar;
+export default NavBarExplore;
