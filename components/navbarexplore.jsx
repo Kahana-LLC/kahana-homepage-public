@@ -144,6 +144,7 @@ function NavBarExplore() {
             <Link href="/terms-and-conditions" className="mobile-link">Terms & Conditions</Link>
             <Link href="/privacy-policy" className="mobile-link">Privacy Policy</Link>
             <Link href="/sales" className="mobile-link">Contact</Link>
+            <Link href="/" className="mobile-link">Platform</Link>
           </div>
         </div>
       </nav>
