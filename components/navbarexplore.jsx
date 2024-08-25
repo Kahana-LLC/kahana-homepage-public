@@ -73,7 +73,7 @@ function NavBarExplore() {
               <Link href="https://app.kahana.co" aria-label="Home">
                 <span className="sr-only">Home</span>
                 <Image
-                  className="h-7"
+                  className="h-6"
                   src={whiteKahanaLogo}
                   alt="Kahana Logo"
                 />

@@ -73,7 +73,7 @@ function NavBar() {
               <Link href="/" aria-label="Home">
                 <span className="sr-only">Company</span>
                 <Image
-                  className="h-7"
+                  className="h-6"
                   src={whiteKahanaLogo}
                   alt="navbar-logo"
                 />
