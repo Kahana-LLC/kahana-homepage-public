@@ -15,7 +15,7 @@ function NavBar() {
       <nav className="fixed top-0 left-0 w-full h-12 bg-white bg-opacity-90 shadow-md z-50">
         <style jsx>{`
           .font-style {
-            font-family: 'YourFontFamily', sans-serif;
+            font-family: sans-serif;
           }
 
           .mobile-link {
@@ -111,7 +111,7 @@ function NavBar() {
         <div className="nav-content">
           {/* Logo */}
           <Link href="/" aria-label="Home">
-            <span className="sr-only">Company</span>
+            <span className="sr-only">About</span>
             <Image
               src={whiteKahanaLogo}
               alt="navbar-logo"
@@ -178,10 +178,12 @@ function NavBar() {
             <Link href="/explore" className="mobile-link">Explore</Link>
             <Link href="https://app.kahana.co" className="mobile-link">Dashboard</Link>
             <Link href="https://app.kahana.co/billing" className="mobile-link">Billing</Link>
-            <Link href="https://blog.kahana.co" className="mobile-link">Blog</Link>
             <Link href="/pricing" className="mobile-link">Pricing</Link>
             <Link href="/terms-and-conditions" className="mobile-link">Terms & Conditions</Link>
             <Link href="/privacy-policy" className="mobile-link">Privacy Policy</Link>
+            <Link href="/about" className="mobile-link">About</Link>
+            <Link href="https://blog.kahana.co" className="mobile-link">Blog</Link>
+            <Link href="/privacy-policy" className="mobile-link">FAQ</Link>
             <Link href="/sales" className="mobile-link">Contact</Link>
           </div>
         </div>

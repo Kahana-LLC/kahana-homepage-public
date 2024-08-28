@@ -78,7 +78,7 @@ export default function FaqPage() {
         <div className="sticky top-0">
           <NavbarDup />
         </div>
-        <div className="bg-white py-16 px-4 sm:px-6 lg:px-8">
+        <div className="bg-white py-24 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <h1 className="text-3xl font-bold mb-8 text-gray-900">
               Frequently asked questions

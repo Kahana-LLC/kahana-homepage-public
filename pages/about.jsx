@@ -3,6 +3,7 @@ import Script from 'next/script'; // Import the Script component
 import Footer from '../components/Footer';
 import NavbarDup from '../components/NavbarDup';
 import TeamSection from '../components/TeamSection';
+import AboutCard from '../components/AboutCard';
 
 export default function About() {
   return (
@@ -34,6 +35,7 @@ export default function About() {
           <NavbarDup />
         </div>
         <main>
+          <AboutCard />
           <TeamSection />
         </main>
         <Footer />

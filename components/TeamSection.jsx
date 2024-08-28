@@ -56,7 +56,7 @@ export default function TeamSection() {
   return (
     <>
       <Head>
-        <title>Kahana HQ Team</title>
+        <title>Kahana - Company</title>
         <meta name="description" content="Meet the Kahana team, the hungry avengers driving our mission forward." />
         <meta property="og:title" content="Kahana HQ Team" />
         <meta property="og:description" content="Meet the Kahana team, the hungry avengers driving our mission forward." />
