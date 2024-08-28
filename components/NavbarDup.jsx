@@ -183,7 +183,7 @@ function NavBar() {
             <Link href="/privacy-policy" className="mobile-link">Privacy Policy</Link>
             <Link href="/about" className="mobile-link">About</Link>
             <Link href="https://blog.kahana.co" className="mobile-link">Blog</Link>
-            <Link href="/privacy-policy" className="mobile-link">FAQ</Link>
+            <Link href="/faq" className="mobile-link">FAQ</Link>
             <Link href="/sales" className="mobile-link">Contact</Link>
           </div>
         </div>
