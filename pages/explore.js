@@ -3,7 +3,7 @@ import CategoryFilter from "../components/CategoryFilter";
 import React, { useState, useEffect } from "react";
 import Head from "next/head";
 import HitItem from "../components/hititem";
-import ReactDOM from "react-dom"; // Import ReactDOM
+import ReactDOM from "react-dom/client"; // Import ReactDOM from react-dom/client
 
 const SearchPage = () => {
   const [selectedCategory, setSelectedCategory] = useState("");
@@ -63,7 +63,8 @@ const SearchPage = () => {
                       const container = document.getElementById(
                         `hit-${item.objectID}`
                       );
-                      ReactDOM.render(<HitItem hit={item} />, container);
+                      const root = ReactDOM.createRoot(container); // Create root
+                      root.render(<HitItem hit={item} />); // Use root to render
                     }, 0);
                   });
                   return items;
