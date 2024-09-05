@@ -4,7 +4,10 @@ const nextConfig = {
   swcMinify: true,
 
   images: {
-    domains: ["images.unsplash.com"],
+    domains: [
+      "images.unsplash.com", // Domain for Unsplash images
+      "firebasestorage.googleapis.com", // Domain for Firebase Storage images
+    ],
   },
 };
 
