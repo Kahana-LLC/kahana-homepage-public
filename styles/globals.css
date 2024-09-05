@@ -54,6 +54,17 @@ body {
   }
 }
 
+.hit-title {
+  padding-left: 30px;
+  padding-right: 30px;
+  font-size: 16px; /* Adjust as needed */
+  padding-bottom: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 350px; /* Adjust based on your layout */
+}
+
 /* Custom header wrapper styles */
 .custom-header-wrapper {
   display: flex;
@@ -71,7 +82,7 @@ body {
 .items-info {
   display: flex;
   align-items: center;
-  padding: 10px;
+  padding: 20px;
   background-color: #fff;
   border-radius: 5px;
   text-align: start;
@@ -94,13 +105,15 @@ body {
 
 .items-info--description {
   font-size: 12px;
+  white-space: wrap;
   color: #555;
   margin-bottom: 10px;
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
-  padding-right: 10px;
+  padding-right: 20px;
+  padding-left: 30px;
 }
 
 /* Genre title styles */
@@ -124,7 +137,7 @@ body {
 .ais-Hits-list {
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   list-style: none;
 }
 
@@ -144,7 +157,7 @@ body {
 }
 
 .ais-Hits-item {
-  padding: 1rem !important;
+  padding: 0.5rem !important;
 }
 
 .ais-Pagination {
@@ -261,16 +274,20 @@ body {
   color: #fff;
 }
 
-/* Profile picture styles */
 .profile-pic {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  margin-right: 10px;
+  width: 50px; /* Set desired width */
+  height: 50px; /* Same as width to keep it square */
+  border-radius: 50%; /* Makes the image round */
+  object-fit: cover; /* Crops and fits the image within the circle */
+  overflow: hidden; /* Ensure no overflow outside the circle */
 }
 
 .profile-container {
-  display: inline-block;
+  display: inline-block; /* Keeps the container inline */
+  width: 50px; /* Same as the profile-pic size */
+  height: 50px; /* Same as the profile-pic size */
+  border-radius: 50%; /* Ensure the container also remains circular */
+  overflow: hidden; /* Crop anything outside the circle */
 }
 
 /* Category filter styles */

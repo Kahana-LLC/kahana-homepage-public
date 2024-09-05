@@ -1,7 +1,7 @@
 import NavbarExplore from "../components/navbarexplore";
 import CategoryFilter from "../components/CategoryFilter";
 import React, { useState, useEffect } from "react";
-import Footer from "../components/Footer";
+import Head from "next/head";
 
 const defaultImageUrl =
   "https://firebasestorage.googleapis.com/v0/b/kahana-dev-workspace/o/Tyw7pzhkRgXnWduNWjqn%2FAGeyYjbR9fXsqrXYx4tsjfv4tvW2%2FbackgroundUrl?alt=media&token=9d6d3811-7157-48de-890b-03eb6982a77e";
@@ -35,7 +35,7 @@ const SearchPage = () => {
               }),
               searchBox({
                 container: "#searchbox",
-                placeholder: "Search Kahana...",
+                placeholder: "Explore Kahana...",
               }),
               refinementList({
                 container: "#refinements",
@@ -79,7 +79,7 @@ const SearchPage = () => {
                               </div>
                               <div class="text-container">
                                 <div class="items-info--title">
-                                  <h3>${hit.name}</h3>
+                                  <h2 class="hit-title">${hit.name}</h2>
                                 </div>
                                 <div class="items-info--description">
                                   <p title="${hit.description}">
@@ -108,41 +108,45 @@ const SearchPage = () => {
   }, [selectedCategory]);
 
   return (
-    <div>
-      <div
-        style={{ zIndex: "100" }}
-        className="fixed top-0 left-0 right-0 bg-white shadow-md"
-      >
-        <NavbarExplore />
-      </div>
-      <div
-        className="fixed top-[40px] left-0 right-0 bg-white z-50"
-        style={{
-          background:
-            "linear-gradient(to top, rgba(255, 255, 255, 0.01) 0%, rgba(255, 255, 255, 0.9) 100%)",
-        }}
-      >
-        <div className="header-wrapper h-[200px] py-2">
-          {/* Adjust height as needed */}
-          <div style={{ paddingTop: "40px" }}></div>
-          <div id="searchbox"></div>
-          {/* Add padding or margin here */}
-          <div style={{ paddingTop: "5px" }}>
-            {" "}
-            {/* Add vertical padding */}
-            <CategoryFilter setSelectedCategory={setSelectedCategory} />
+    <>
+      <Head>
+        <title>Explore Kahana</title>
+        <meta
+          name="description"
+          content="Search Kahana workspaces and explore public profiles."
+        />
+      </Head>
+      <div>
+        <div
+          style={{ zIndex: "100" }}
+          className="fixed top-0 left-0 right-0 bg-white shadow-md"
+        >
+          <NavbarExplore />
+        </div>
+        <div
+          className="fixed top-[40px] left-0 right-0 bg-white z-50"
+          style={{
+            background:
+              "linear-gradient(to top, rgba(255, 255, 255, 0.01) 0%, rgba(255, 255, 255, 0.9) 100%)",
+          }}
+        >
+          <div className="header-wrapper h-[200px] py-2">
+            <div style={{ paddingTop: "40px" }}></div>
+            <div id="searchbox"></div>
+            <div style={{ paddingTop: "5px" }}>
+              <CategoryFilter setSelectedCategory={setSelectedCategory} />
+            </div>
+          </div>
+        </div>
+        <div className="hits-container" style={{ marginTop: "260px" }}>
+          <div id="refinements"></div>
+          <div>
+            <div id="hits"></div>
+            <div id="pagination"></div>
           </div>
         </div>
       </div>
-      <div className="hits-container" style={{ marginTop: "260px" }}>
-        <div id="refinements"></div>
-        <div>
-          <div id="hits"></div>
-          <div id="pagination"></div>
-        </div>
-      </div>
-      <Footer />
-    </div>
+    </>
   );
 };
 
