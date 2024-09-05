@@ -2,8 +2,11 @@ import NavbarExplore from "../components/navbarexplore";
 import CategoryFilter from "../components/CategoryFilter";
 import React, { useState, useEffect } from "react";
 import Head from "next/head";
-import HitItem from "../components/hititem";
-import ReactDOM from "react-dom/client"; // Import ReactDOM from react-dom/client
+
+const defaultImageUrl =
+  "https://firebasestorage.googleapis.com/v0/b/kahana-dev-workspace/o/Tyw7pzhkRgXnWduNWjqn%2FAGeyYjbR9fXsqrXYx4tsjfv4tvW2%2FbackgroundUrl?alt=media&token=9d6d3811-7157-48de-890b-03eb6982a77e";
+const defaultProfilePic =
+  "https://firebasestorage.googleapis.com/v0/b/kahana-dev-user/o/qQY3PuV7wOdXn8X86XqgeGbL0nx1%2FprofilePic?alt=media&token=53a64b5a-e1f1-4346-899a-7d32a1f5b07c";
 
 const SearchPage = () => {
   const [selectedCategory, setSelectedCategory] = useState("");
@@ -48,26 +51,48 @@ const SearchPage = () => {
                 },
               }),
 
-              // Use React component HitItem here
               hits({
                 container: "#hits",
                 templates: {
-                  item(hit) {
-                    return `<div class="hit-item" id="hit-${hit.objectID}"></div>`;
+                  item(hit, { html }) {
+                    const imageUrl = hit.url || defaultImageUrl;
+
+                    return html`
+                      <a
+                        href="https://app.kahana.co/hub/${hit.objectID}"
+                        target="_self"
+                        rel="noopener noreferrer"
+                      >
+                        <div class="items">
+                          <div class="image-container">
+                            <img src="${imageUrl}" alt="${hit.name}" />
+                          </div>
+                          <div class="items-info">
+                            <div class="items-info-content">
+                              <div class="profile-container">
+                                <img
+                                  class="profile-pic"
+                                  src="${hit.metadata.profilePicLink ||
+                                  defaultProfilePic}"
+                                  alt="Profile Picture"
+                                />
+                              </div>
+                              <div class="text-container">
+                                <div class="items-info--title">
+                                  <h2 class="hit-title">${hit.name}</h2>
+                                </div>
+                                <div class="items-info--description">
+                                  <p title="${hit.description}">
+                                    ${hit.description}
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    `;
                   },
-                },
-                transformItems(items) {
-                  // Render the React components after Algolia hits
-                  items.forEach((item) => {
-                    setTimeout(() => {
-                      const container = document.getElementById(
-                        `hit-${item.objectID}`
-                      );
-                      const root = ReactDOM.createRoot(container); // Create root
-                      root.render(<HitItem hit={item} />); // Use root to render
-                    }, 0);
-                  });
-                  return items;
                 },
               }),
               pagination({
