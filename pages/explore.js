@@ -28,7 +28,7 @@ const SearchPage = () => {
 
             search.addWidgets([
               configure({
-                hitsPerPage: 30,
+                hitsPerPage: 9,
                 filters: selectedCategory
                   ? `metadata.tags:${selectedCategory}`
                   : "",
