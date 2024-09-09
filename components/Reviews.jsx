@@ -1,17 +1,11 @@
 import Image from 'next/image';
 
 import avatarImage1 from '../assets/images/avatars/oliviaMancusoHeadshot.png';
-
 import avatarImage3 from '../assets/images/avatars/edenGoldHeadshot.png';
-
 import avatarImage4 from '../assets/images/avatars/gregoryGray.png';
-
 import avatarImage7 from '../assets/images/avatars/tayLaddHeadshot.png';
-
 import avatarImage8 from '../assets/images/avatars/BSJheadshot.png';
-
 import avatarImage9 from '../assets/images/avatars/kelseyVetterHeadshot.png';
-
 import { Container } from './Container';
 
 const testimonials = [
@@ -95,10 +89,10 @@ export default function Reviews() {
       <Container>
         <div className="mx-auto max-w-2xl text-center">
           <p className="mt-1 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
-            Why People Love Kahana
+            What folks are saying
           </p>
           <p className="mt-4 text-lg tracking-tight text-slate-700">
-            Multi-passionate creators and experts from all over the world 🌎
+            Building hubs and sharing knowledge all over the world 🌎
           </p>
         </div>
         <ul

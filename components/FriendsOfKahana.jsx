@@ -1,3 +1,4 @@
+import Image from "next/image";
 const people = [
   {
     name: 'Michael Foster',
@@ -96,7 +97,7 @@ export default function FriendsOfKahana() {
             {people.map((person) => (
               <li key={person.name}>
                 <div className="space-y-4">
-                  <img
+                  <Image
                     className="mx-auto h-20 w-20 rounded-full lg:h-24 lg:w-24"
                     src={person.imageUrl}
                     alt=""

@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Link from "next/link";
+import Script from "next/script";
 import Footer from "../components/Footer";
 import HeroSection from "../components/HeroSection";
 import CustomerSuccessSection from "../components/CustomerSuccessSection";
@@ -13,50 +13,19 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Build a secure knowledge business in minutes</title>
+        <title>Kahana - A New Oasis for Knowledge</title>
         <meta
-          name="Kahana"
-          content="Kahana is the easiest way to turn your knowledge into subscription revenue. Sign up for free today!"
+          name="description"
+          content="With Kahana, anyone can curate unique hubs of digital products, resources, files, and links and share them directly with hungry knowledge seekers. Collaborate within hubs to go even faster."
         />
-        {/* Google tag (gtag.js) */}
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-KQHFL9605P"
-        ></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-KQHFL9605P');
-          `,
-          }}
-        />
-        {/* Reditus affiliate tracking script */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-            (function(w, d, s, p, t) {
-              w.gr = w.gr || function() {
-                w.gr.q = w.gr.q || [];
-                w.gr.q.push(arguments);
-              };
-              p = d.getElementsByTagName(s)[0];
-              t = d.createElement(s);
-              t.async = true;
-              t.src = "https://app.getreditus.com/gr.js?_ce=90";
-              p.parentNode.insertBefore(t, p);
-            })(window, document, "script");
-            gr("track", "pageview");
-          `,
-          }}
-        />
-        {/* Crisp chat script */}
-        <script
-          type="text/javascript"
-          dangerouslySetInnerHTML={{
-            __html: `
+      </Head>
+
+      {/* Load Crisp chat asynchronously and defer until after interactive */}
+      <Script
+        id="crisp-script"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
             window.$crisp=[];
             window.CRISP_WEBSITE_ID="711b6e27-0210-4313-9ea3-75009495e3ec";
             (function(){
@@ -67,49 +36,51 @@ export default function Home() {
               d.getElementsByTagName("head")[0].appendChild(s);
             })();
           `,
-          }}
-        />
+        }}
+      />
 
-        {/* Stripe button script */}
-        <script async src="https://js.stripe.com/v3/buy-button.js"></script>
-      </Head>
-      <div>
+      {/* Load Stripe button asynchronously and defer until after interactive */}
+      <Script
+        id="stripe-button"
+        src="https://js.stripe.com/v3/buy-button.js"
+        strategy="afterInteractive"
+      />
+
+      <div className="relative">
         <div style={{ zIndex: "100" }} className="sticky top-0">
           <NavbarDup />
         </div>
-        <main>
-          <HeroSection />
-          <CustomerSuccessSection />
-          <ProductDemoSection />
-          <Reviews />
-          <Pricing />
-
-          <section className={`py-16 px-4 sm:px-6 lg:px-8 bg-white`}>
-            <div className="max-w-7xl mx-auto text-center">
-              <h2 className={`text-3xl font-bold text-gray-900`}>
-                Ready to bring in more income?
-              </h2>
-              <p
-                className="mt-4 text-gray-700 text-xl"
-                style={{ marginBottom: "20px" }}
-              >
-                Start building your secure knowledge business today.
-              </p>
-              <div>
-                <Link
-                  href="https://app.kahana.co/signup"
-                  className="block mt-8"
-                  legacyBehavior
-                >
-                  <button className="px-6 py-2 bg-[#3B675E] text-white rounded-md shadow-md hover:bg-[#046856]">
-                    Earn income for free
-                  </button>
-                </Link>
-              </div>
-            </div>
+        <main className="scroll-smooth">
+          <section
+            id="hero"
+            className="min-h-screen flex items-center justify-center p-4 md:p-8 bg-gray-100"
+          >
+            <HeroSection />
           </section>
-
-          <Faq />
+          <section
+            id="customer-success"
+            className="min-h-screen flex items-center justify-center p-4 md:p-8 bg-white"
+          >
+            <CustomerSuccessSection />
+          </section>
+          <section
+            id="product-demo"
+            className="min-h-screen flex items-center justify-center p-4 md:p-8 bg-gray-100"
+          >
+            <ProductDemoSection />
+          </section>
+          <section
+            id="reviews"
+            className="min-h-screen flex items-center justify-center p-4 md:p-8 bg-white"
+          >
+            <Reviews />
+          </section>
+          <section
+            id="pricing"
+            className="min-h-screen flex items-center justify-center p-4 md:p-8 bg-gray-100"
+          >
+            <Pricing />
+          </section>
         </main>
         <Footer />
       </div>

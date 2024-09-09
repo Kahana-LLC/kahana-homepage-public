@@ -11,7 +11,7 @@ import { Container } from './Container';
 
 const features = [
   {
-    title: 'Create',
+    title: 'Build',
     description:
       'Upload your best content, files, resources, etc. into secure Kahana hubs that prevent unauthorized reselling and distribution.',
     image: create,
@@ -65,10 +65,10 @@ export default function ProductDemoSection() {
       <Container>
         <div className="max-w-2xl md:mx-auto md:text-center xl:max-w-none">
           <h1 className="py-4  bg-clip-text text-white text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl text-center">
-            Built for Creators, Coaches, and Experts
+            Make the most of your knowledge
           </h1>
           <p className="mt-6 text-xl tracking-tight text-white text-center">
-            Everything you need to jumpstart and scale a thriving, secure knowledge business.  
+            Use hubs to organize side projects or build a full-fledged digital product selling business. 
           </p>
         </div>
         <Tab.Group

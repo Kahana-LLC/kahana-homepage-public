@@ -1,9 +1,9 @@
 import Head from 'next/head';
-import { useEffect } from 'react'; // Import useEffect for client-side script handling
+import { useEffect } from 'react';
 import Footer from '../components/Footer';
 import NavbarDup from '../components/NavbarDup';
 
-export default function About() {
+export default function Contact() {
   useEffect(() => {
     // Function to load Tally embeds script dynamically on the client side
     const loadTallyEmbeds = () => {
@@ -38,41 +38,32 @@ export default function About() {
   return (
     <>
       <Head>
-        <title>Kahana Sales</title>
+        <title>Contact Kahana - Get in Touch with Us</title>
         <meta
           name="description"
-          content="Fill out your information and a Kahana representative will reach out to you. Have a simple question? Search our library of articles."
+          content="Contact Kahana HQ for inquiries, support, or information. Fill out the form, and our team will get back to you. For immediate answers, explore our blog."
         />
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-KQHFL9605P"></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-KQHFL9605P');
-            `,
-          }}
-        />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://www.kahana.co/sales" />
       </Head>
       <div>
-        <div style={{ zIndex: '1' }} className="sticky top-0">
+        <div style={{ zIndex: '1' }} className="sticky top-0 bg-white shadow-md">
           <NavbarDup />
         </div>
-        <main style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', minHeight: '80vh', padding: '40px 20px' }}>
-          <h1 style={{ textAlign: 'center', marginBottom: '40px', fontSize: '2rem', fontWeight: 'bold' }}>
-            Talk to a Kahana Representative
+        <main className="flex flex-col items-center min-h-screen py-16 bg-white px-6 sm:py-32 lg:px-8">
+          <h1 className="text-2xl font-bold text-center mb-8 sm:text-3xl">
+            Contact a Kahana team member
           </h1>
-          <p style={{ textAlign: 'center', marginBottom: '20px' }}>
-            Fill out your information and a Kahana representative will reach out to you. Have a simple question?{' '} 
-            <span style={{ textDecoration: 'underline' }}>
-            <a href="https://blog.kahana.co" target="_blank" rel="noopener noreferrer">
-              Search our existing articles.
-            </a>
-            </span>
+          <p className="text-center mb-6 text-base text-gray-700">
+            We’re here to help! Please provide your details, and a Kahana team member will reach out to you shortly.<br />
+            If you have a quick question, feel free to{' '}
+            <span className="text-[#3B675E] underline">
+              check out our blog
+            </span>{' '}
+            for immediate answers.
           </p>
           {/* Embed the form iframe here */}
-          <div style={{ width: '100%', maxWidth: '800px', padding: '0 20px' }}>
+          <div className="w-full max-w-4xl px-4">
             <iframe
               data-attributer-iframe
               src="https://tally.so/embed/w52BJN?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
@@ -82,7 +73,7 @@ export default function About() {
               frameBorder="0"
               marginHeight="0"
               marginWidth="0"
-              title="Contact Sales"
+              title="Contact Form"
             ></iframe>
           </div>
         </main>

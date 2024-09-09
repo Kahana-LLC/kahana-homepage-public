@@ -26,24 +26,34 @@ export default function HeroSection() {
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      window.addEventListener('load', function () {
+      const handleFormSubmit = (e) => {
+        e.preventDefault();
         const form = document.getElementById('myform');
         if (form) {
-          form.addEventListener('submit', function (e) {
-            e.preventDefault();
-            const data = new FormData(form);
-            const action = e.target.action;
-            fetch(action, {
-              method: 'POST',
-              body: data,
-            }).then(() => {
-              // Handle response if needed
-            });
+          const data = new FormData(form);
+          const action = e.target.action;
+          fetch(action, {
+            method: 'POST',
+            body: data,
+          }).then(() => {
+            // Handle response if needed
           });
         }
+      };
+
+      window.addEventListener('load', () => {
+        const form = document.getElementById('myform');
+        if (form) {
+          form.addEventListener('submit', handleFormSubmit);
+        }
       });
+
+      // Cleanup event listener on component unmount
+      return () => {
+        window.removeEventListener('load', handleFormSubmit);
+      };
     }
-  }, []);
+  }, []); // Dependencies here should be handled based on context. Adjust if needed.
 
   return (
     <div className="bg-white">
@@ -54,7 +64,7 @@ export default function HeroSection() {
               {/* Text Section */}
               <div className="lg:w-1/2 px-4 sm:px-6 sm:text-center md:mx-auto md:max-w-2xl lg:text-left lg:order-1">
                 <h1 className="py-4 bg-clip-text bg-black text-3xl font-bold tracking-tight text-black sm:text-4xl md:text-5xl text-center sm:text-left">
-                  How Kelsey Vetter's $97 Package Earned Her Over $1,800
+                  How Kelsey Vetter&apos;s $97 Package Earned Her Over $1,800
                 </h1>
 
                 <div className="gap-4 mt-6 tracking-tight">
@@ -87,14 +97,14 @@ export default function HeroSection() {
                   >
                     See Kelsey&apos;s hub in action -&gt;
                   </a>
-                </div>              
+                </div>
               </div>
 
               {/* Image */}
               <div className="lg:w-1/2 py-4 flex justify-center lg:order-2">
                 <Image
                   src={KelseySuccess}
-                  alt={`Kelsey's Success Metrics`}
+                  alt={`Kelsey&apos;s Success Metrics`}
                   width={467}
                   height={525}
                   layout="responsive"

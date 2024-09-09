@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { AdjustmentsVerticalIcon } from "@heroicons/react/20/solid";
 
 const CategoryFilter = ({ setSelectedCategory }) => {
   const [selectedCategory, setSelectedCategoryState] = useState("");
@@ -45,7 +46,7 @@ const CategoryFilter = ({ setSelectedCategory }) => {
             onChange={handleCategoryChange}
             style={{ color: "gray" }}
           >
-            <option value="">All Categories</option>
+            <option value="">Filter</option>
             {categoryOptions}
           </select>
         </div>

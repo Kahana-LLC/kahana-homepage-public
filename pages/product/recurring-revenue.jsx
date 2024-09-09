@@ -31,7 +31,7 @@ const features = [
     alt: 'How to select your price point & payment type for Kahana hubs',
   },
   {
-    title: 'Start Earning!',
+    title: 'Start Earning',
     description:
       'After you set your payment terms, a paywall will automatically be generated for you that you can begin sharing! Be sure to add a title, cover photo, and description to each hub to improve the experience for potential customers.',
     image: startEarning,
@@ -64,20 +64,6 @@ const RecurringRevenue = () => {
         <meta
           name="Kahana"
           content="Kahana is the easiest way to monetize your content and research. Transform knowledge and expertise into subscription revenue. Sign up for free today!"
-        />
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-KQHFL9605P"
-        ></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-KQHFL9605P');
-            `,
-          }}
         />
       </Head>
 

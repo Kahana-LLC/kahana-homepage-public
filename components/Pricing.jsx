@@ -70,7 +70,7 @@ export default function Pricing() {
             Pricing Plans
           </h1>
           <p className="mt-5 text-xl text-gray-500 text-center">
-Start building for free and only pay as you grow. To be completely transparent, Kahana earns 5% on all hub transactions. 
+Start building for free and pay as you need. To be transparent, Kahana earns 5% whenever anyone pays to access any hub. 
           </p>
           {/* monthly vs yearly  */}
           {/* <div className="relative mt-6 flex self-center rounded-lg bg-gray-100 p-0.5 sm:mt-8">
@@ -96,7 +96,7 @@ Start building for free and only pay as you grow. To be completely transparent, 
                 FREE 🛠️
               </h2>
               <p className="mt-4 text-sm text-gray-500">
-                All the tools you need to start building.
+                All the essentials to start building.
               </p>
               <p className="mt-8">
                 <span className="text-4xl font-bold tracking-tight text-[#038270]">
@@ -112,7 +112,7 @@ Start building for free and only pay as you grow. To be completely transparent, 
             </div>
             <div className="px-6 pt-6 pb-8">
               <h3 className="text-sm font-medium text-gray-900">
-                What&apos;s included
+                Your arsenal of tools for building hubs:
               </h3>
               <ul role="list" className="mt-6 space-y-4">
               
@@ -188,7 +188,7 @@ Start building for free and only pay as you grow. To be completely transparent, 
                 href="https://app.kahana.co/signup"
                 className="mt-8 block w-full rounded-md border border-[#3B675E] bg-[#3B675E] py-2 text-center text-sm font-semibold text-white hover:bg-[#024324]"
               >
-                Create an account
+                Go with Free
               </a>
             </div>
           </div>
@@ -198,7 +198,7 @@ Start building for free and only pay as you grow. To be completely transparent, 
                 GROWTH ⚡️
               </h2>
               <p className="mt-4 text-sm text-gray-500">
-                Upload larger files and build unlimited hubs.
+                Build unlimited hubs and upload larger files.
               </p>
               <p className="mt-8">
                 <span className="text-4xl font-bold tracking-tight text-[#038270]">
@@ -254,7 +254,7 @@ Start building for free and only pay as you grow. To be completely transparent, 
                 href="https://app.kahana.co/billing"
                 className="mt-8 block w-full rounded-md border border-[#3B675E] bg-[#3B675E] py-2 text-center text-sm font-semibold text-white hover:bg-[#024324]"
               >
-                Manage billing
+                Go with Growth
               </a>
             </div>
           </div>
@@ -268,7 +268,7 @@ Start building for free and only pay as you grow. To be completely transparent, 
               </p>
               <p className="mt-8">
                 <span className="text-4xl font-bold tracking-tight text-[#038270]">
-                  Custom billing
+                  Custom 
                 </span>{' '}
                 {/* <span className="text-base font-medium text-gray-500">
                   /mo/person
@@ -328,7 +328,7 @@ Start building for free and only pay as you grow. To be completely transparent, 
       <a
         className="mt-8 block w-full max-w-xs rounded-md border border-[#3B675E] bg-[#3B675E] py-2 text-center text-sm font-semibold text-white hover:bg-[#024324]"
       >
-        Contact Sales
+        Go with Enterprise
       </a>
     </Link>
             </div>
