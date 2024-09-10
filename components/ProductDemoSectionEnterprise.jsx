@@ -2,32 +2,35 @@ import { useEffect, useState } from 'react';
 import clsx from 'clsx';
 import Image from 'next/image';
 
-import community from '../assets/images/collaborate.webp';
-import collaboration from '../assets/images/explore.webp';
-import revenue from '../assets/images/revenue.png';
+import create from '../assets/images/createHubs.webp';
+import collaboration from '../assets/images/collab.webp';
+import curate from '../assets/images/curate.webp';
 import { Container } from './Container';
 
 const features = [
   {
-    title: 'Recurring Revenue',
-    description:
-      'Build dynamic hubs of all your best data, templates, insights, research, methodologies, and best practices. It\'s like charging for access to your firm\'s brain.',
-    image: revenue,
-    link: '/product/recurring-revenue', // Add the link for Recurring Revenue
+    title: 'Curate',
+    description: (
+      <>
+        Curate <strong>all</strong> the different materials you&apos;re working with - docs, sheets, links, PDFs, videos, your choice - all in one space.
+      </>
+    ),
+    image: curate,
+    //link: '/product/recurring-revenue', // Add the link for Recurring Revenue
   },
   {
-    title: 'Collaboration Tools',
+    title: 'Collaborate',
     description:
-      'Enable colleagues and experts across your organization to contribute and build hubs together.',
+      'Add anyone from your team to a Kahana hub, choose their permission level, and work together with the exact same view of all relevant materials in a single window.',
     image: collaboration,
-    link: '/product/collaboration-tools', // Add the link for Collaboration Tools
+    //link: '/product/collaboration-tools', // Add the link for Collaboration Tools
   },
   {
-    title: 'Community Engagement',
+    title: 'Create',
     description:
-      'Collaborate with customers to gather feedback and create an engaging environment where customers can connect with one another.',
-    image: community,
-    link: '/product/community-engagement', // Add the link for Community Engagement
+      'Make as many hubs as you want for any topic or project, each with its own unique permissions & controls.',
+    image: create,
+    //link: '/product/community-engagement', // Add the link for Community Engagement
   },
 ];
 
@@ -53,12 +56,12 @@ export default function ProductDemoSection() {
     <section
       id="features"
       aria-label="Features for running your books"
-      className="overflow-hidden py-16 md:py-18"
+      className="overflow-hidden py-6 md:py-8"
     >
       <Container>
         <div className="max-w-2xl md:mx-auto md:text-center xl:max-w-none text-center">
           <h2 className="text-3xl font-bold mb-4 md:px-12 lg:px-24">
-            Manage your recurring revenue streams, collaborate with your team, and gather customer feedback, all in one place.
+            A blissful oasis with every document and piece of information your team needs on any given topic or project - all in a single tab.
           </h2>
         </div>
         {tabOrientation === 'vertical' ? (
@@ -72,9 +75,9 @@ export default function ProductDemoSection() {
                   <p className="mt-2 text-lg text-black">
                     {feature.description}
                     <br /><br />
-                    <a href={feature.link} className="underline" style={{ pointerEvents: 'auto' }}>
+                    {/*<a href={feature.link} className="underline" style={{ pointerEvents: 'auto' }}>
                       Learn more
-                    </a>
+                    </a> */}
                   </p>
                 </div>
                 <div className="max-w-[45rem] mx-auto">
@@ -102,10 +105,10 @@ export default function ProductDemoSection() {
                       <p className="mt-2 text-lg text-black">
                         {feature.description}
                         <br /><br />
-                        <a href={feature.link} className="underline" style={{ pointerEvents: 'auto' }}>
+                        {/* <a href={feature.link} className="underline" style={{ pointerEvents: 'auto' }}>
                           Learn more
-                        </a>
-                      </p>
+                        </a> */}
+                      </p> 
                     </div>
                     <div className="w-2/3">
                       <Image

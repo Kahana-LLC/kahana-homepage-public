@@ -12,9 +12,9 @@ const EnterprisePage = () => {
   return (
     <div>
       <Head>
-        <title>Kahana - How enterprises generate recurring revenue</title>
+        <title>Collaboration and Knowledge Management Platform</title>
         <meta
-          name="Kahana"
+          name="description"
           content="Kahana is the easiest way to monetize your content and research. Transform knowledge and expertise into subscription revenue. Sign up for free today!"
         />
       </Head>
@@ -24,18 +24,18 @@ const EnterprisePage = () => {
       </div>
 
       {/* Hero section */}
-      <section className="py-16 md:py-18">
+      <section className="py-24 md:py-24">
         <div className="container mx-auto px-4 md:px-8 text-center">
           <h1 className="text-5xl font-bold mb-4 md:px-12 lg:px-24">
-            Turn your company&apos;s best assets into recurring revenue
+            Stop squinting to find files and tabs
           </h1>
           <p className="text-lg mb-8 md:px-12 lg:px-24">
-            Monetize the value you deliver and the knowledge you gain from projects on an ongoing basis.
+            Start sharing and consuming information like it&apos;s 2024.
           </p>
           <Link href="/sales" className="bg-[#3B675E] text-white py-2 px-6 rounded-md text-center inline-block mx-auto max-w-md">
             Request a demo
           </Link>
-          <div className="mt-8">
+          {/* <div className="mt-8">
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
               <a href="https://app.kahana.co/hub/tHwAYvYPzqVwGPGzh10k" target="_blank" rel="noopener noreferrer">
                 <Image
@@ -47,10 +47,10 @@ const EnterprisePage = () => {
                 />
               </a>
             </div>
-          </div>
+          </div> 
           <div className="md:px-12 lg:px-24 mt-4 text-gray-500 text-center">
             Create and charge for access to an up-to-date repository of your best data, research, insights, best practices, methodologies, templates, etc., like this hub
-          </div>
+          </div> */}
         </div>
       </section>
 
@@ -65,19 +65,15 @@ const EnterprisePage = () => {
               <ul className="space-y-4">
                 <li className="flex items-center space-x-3">
                   <CheckIcon className="h-5 w-5 text-green-500" aria-hidden="true" />
-                  <span className="text-sm text-gray-500">Unlimited revenue streams</span>
+                  <span className="text-sm text-gray-500">Unlimited hubs</span>
                 </li>
                 <li className="flex items-center space-x-3">
                   <CheckIcon className="h-5 w-5 text-green-500" aria-hidden="true" />
-                  <span className="text-sm text-gray-500">Real-time collaboration</span>
+                  <span className="text-sm text-gray-500">Direct upgrade & feature requests</span>
                 </li>
                 <li className="flex items-center space-x-3">
                   <CheckIcon className="h-5 w-5 text-green-500" aria-hidden="true" />
-                  <span className="text-sm text-gray-500">Sync across devices</span>
-                </li>
-                <li className="flex items-center space-x-3">
-                  <CheckIcon className="h-5 w-5 text-green-500" aria-hidden="true" />
-                  <span className="text-sm text-gray-500">100 GB storage</span>
+                  <span className="text-sm text-gray-500">Dedicated account management</span>
                 </li>
                 <li className="flex items-center space-x-3">
                   <CheckIcon className="h-5 w-5 text-green-500" aria-hidden="true" />
@@ -85,11 +81,7 @@ const EnterprisePage = () => {
                 </li>
                 <li className="flex items-center space-x-3">
                   <CheckIcon className="h-5 w-5 text-green-500" aria-hidden="true" />
-                  <span className="text-sm text-gray-500">SAML, Single-Sign On (SSO)</span>
-                </li>
-                <li className="flex items-center space-x-3">
-                  <CheckIcon className="h-5 w-5 text-green-500" aria-hidden="true" />
-                  <span className="text-sm text-gray-500">White glove 24/7 support</span>
+                  <span className="text-sm text-gray-500">White glove support</span>
                 </li>
                 <li className="flex items-center space-x-3">
                   <CheckIcon className="h-5 w-5 text-green-500" aria-hidden="true" />
@@ -97,11 +89,15 @@ const EnterprisePage = () => {
                 </li>
                 <li className="flex items-center space-x-3">
                   <CheckIcon className="h-5 w-5 text-green-500" aria-hidden="true" />
-                  <span className="text-sm text-gray-500">Time & usage reporting</span>
+                  <span className="text-sm text-gray-500">Hands-on document & data migration</span>
                 </li>
                 <li className="flex items-center space-x-3">
                   <CheckIcon className="h-5 w-5 text-green-500" aria-hidden="true" />
                   <span className="text-sm text-gray-500">Custom integrations</span>
+                </li>
+                <li className="flex items-center space-x-3">
+                  <CheckIcon className="h-5 w-5 text-green-500" aria-hidden="true" />
+                  <span className="text-sm text-gray-500">Inrceased usage & data ceilings</span>
                 </li>
               </ul>
             </div>
@@ -110,11 +106,12 @@ const EnterprisePage = () => {
       </section>
 
       {/* Testimonial section */}
-      <section className="py-16 md:py-18">
+      
+      {/* <section className="py-16 md:py-18">
         <div className="container mx-auto text-center">
           <h2 className="text-3xl font-bold mb-8">What our clients say</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-4 md:px-0">
-            {/* Add "px-4 md:px-0" to the grid container */}
+
             <div className="bg-white p-6 rounded-lg shadow-md">
               <p className="text-lg italic mb-4">
                 &quot;You took my brain and turned it into a phenomenal asset. I could not do this at all without Kahana - I wouldn&apos;t even know where to start.&quot;
@@ -133,16 +130,16 @@ const EnterprisePage = () => {
               </p>
               <p className="font-semibold">Gregory G., CEO at Gray Solutions, LLC</p>
             </div>
-            {/* Repeat similar blocks for other testimonials */}
+
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Contact section */}
       <section className="py-16 md:py-18">
         <div className="container mx-auto text-center flex flex-col items-center">
-          <h2 className="text-3xl font-bold mb-8 md:px-12 lg:px-24 px-4 mx-auto">Get a demo</h2>
-          <p className="mb-4 px-4 mx-auto">Talk to a human to understand how Kahana can help your org.</p>
+          <h2 className="text-3xl font-bold mb-8 md:px-12 lg:px-24 px-4 mx-auto">Stop asking &ldquo;Where&apos;s that file?&rdquo; 47 times a week.</h2>
+          <p className="mb-4 px-4 mx-auto">Learn how Kahana can make life easier for you and your team.</p>
           <div className="mx-auto">
           <Link href="/sales" className="bg-[#3B675E] text-white py-2 px-6 rounded-md text-center inline-block mx-auto max-w-md">
             Request a demo
