@@ -41,7 +41,11 @@ export default function Footer() {
               <span className="mx-2">·</span>
               <Link href="/sitemap" className="text-gray-500 hover:text-gray-900">Sitemap</Link> 
               <span className="mx-2">·</span>
-              <Link href="/sales" className="text-gray-500 hover:text-gray-900">Contact</Link> 
+              <Link href="/enterprise" className="text-gray-500 hover:text-gray-900">Enterprise</Link> 
+              <span className="mx-2">·</span>
+              <Link href="/request-a-demo" className="text-gray-500 hover:text-gray-900">Demo</Link>
+              <span className="mx-2">·</span>
+              <Link href="/sales" className="text-gray-500 hover:text-gray-900">Contact</Link>  
             </span>
             <span className="space-y-2 sm:hidden flex flex-col items-start mt-6">
               <Link href="/explore" className="text-gray-500 hover:text-gray-900">Explore</Link>
@@ -52,6 +56,8 @@ export default function Footer() {
               <Link href="/about" className="text-gray-500 hover:text-gray-900">About</Link>
               <Link href="https://blog.kahana.co" className="text-gray-500 hover:text-gray-900">Blog</Link>
               <Link href="/sitemap" className="text-gray-500 hover:text-gray-900">Sitemap</Link>
+              <Link href="/enterprise" className="text-gray-500 hover:text-gray-900">Enterprise</Link>
+              <Link href="/request-a-demo" className="text-gray-500 hover:text-gray-900">Demo</Link>
               <Link href="/sales" className="text-gray-500 hover:text-gray-900">Contact</Link>
             </span>
           </p>

@@ -45,7 +45,7 @@ const tiers = [
       'Advanced Analytics <span class="inline-block bg-yellow-300 text-yellow-800 px-2 py-0.5 rounded-full text-xs">Beta</span>',
     ],
     additionalLinkText: 'Request a Live Demo',
-    additionalLinkHref: '/request-demo',
+    additionalLinkHref: '/request-a-demo',
   },
 ];
 

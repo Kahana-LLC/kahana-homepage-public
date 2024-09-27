@@ -12,7 +12,7 @@ function NavBarExplore() {
 
   return (
     <div>
-      <nav className="fixed top-0 left-0 w-full h-12 bg-white bg-opacity-90 shadow-md z-50">
+      <nav className="fixed top-0 left-0 w-full h-12 bg-white shadow-md z-50">
         <style jsx>{`
           .font-style {
             font-family: 'YourFontFamily', sans-serif;
@@ -65,7 +65,7 @@ function NavBarExplore() {
             max-width: 400px; /* Maximum width for larger screens */
             min-width: 280px; /* Minimum width for smaller screens */
             height: 100vh; /* Full viewport height */
-            background-color: rgba(255, 255, 255, 0.9); /* White with transparency */
+            background-color: rgba(255, 255, 255); /* White with transparency */
             box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); /* Shadow for better visibility */
             padding: 1rem;
             z-index: 40;
