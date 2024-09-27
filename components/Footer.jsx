@@ -53,6 +53,8 @@ export default function Footer() {
               <Link href="https://blog.kahana.co" className="text-gray-500 hover:text-gray-900">Blog</Link>
               <Link href="/sitemap" className="text-gray-500 hover:text-gray-900">Sitemap</Link>
               <Link href="/sales" className="text-gray-500 hover:text-gray-900">Contact</Link>
+              <Link href="/enterprise" className="text-gray-500 hover:text-gray-900">Enterprise</Link>
+              <Link href="/request-a-demo" className="text-gray-500 hover:text-gray-900">Request Demo</Link>
             </span>
           </p>
         </div>

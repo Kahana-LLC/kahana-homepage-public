@@ -56,9 +56,16 @@ function NavBar() {
             margin-left: 0.5rem;
           }
 
+          .nav-button.pricing {
+            background-color: #FFFFFF;
+            color: black;
+            border: 0.5px solid #FFFFFF;
+          }
+
           .nav-button.explore {
             background-color: #3B675E;
             color: white;
+            border: 0.5px solid #3B675E;
           }
 
           .nav-button.explore:hover {
@@ -124,6 +131,9 @@ function NavBar() {
           {/* Buttons and Hamburger Menu */}
           <div className="flex items-center">
             {/* Buttons */}
+            <Link href="/pricing">
+              <button className="nav-button pricing">Pricing</button>
+            </Link>
             <Link href="/explore">
               <button className="nav-button explore">Explore</button>
             </Link>

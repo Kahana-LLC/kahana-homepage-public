@@ -44,7 +44,7 @@ export default function Contact() {
           content="Request a live demo of Kahana."
         />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://www.kahana.co/request-demo" />
+        <link rel="canonical" href="https://www.kahana.co/request-a-demo" />
       </Head>
       <div>
         <div style={{ zIndex: '1' }} className="sticky top-0 bg-white shadow-md">

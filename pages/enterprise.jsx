@@ -32,7 +32,7 @@ const EnterprisePage = () => {
           <p className="text-lg mb-8 md:px-12 lg:px-24">
             Start sharing and consuming information like it&apos;s 2024.
           </p>
-          <Link href="/sales" className="bg-[#3B675E] text-white py-2 px-6 rounded-md text-center inline-block mx-auto max-w-md">
+          <Link href="/request-a-demo" className="bg-[#3B675E] text-white py-2 px-6 rounded-md text-center inline-block mx-auto max-w-md">
             Request a demo
           </Link>
           {/* <div className="mt-8">
@@ -141,7 +141,7 @@ const EnterprisePage = () => {
           <h2 className="text-3xl font-bold mb-8 md:px-12 lg:px-24 px-4 mx-auto">Stop asking &ldquo;Where&apos;s that file?&rdquo; 47 times a week.</h2>
           <p className="mb-4 px-4 mx-auto">Learn how Kahana can make life easier for you and your team.</p>
           <div className="mx-auto">
-          <Link href="/sales" className="bg-[#3B675E] text-white py-2 px-6 rounded-md text-center inline-block mx-auto max-w-md">
+          <Link href="/request-a-demo" className="bg-[#3B675E] text-white py-2 px-6 rounded-md text-center inline-block mx-auto max-w-md">
             Request a demo
           </Link>
           </div>
