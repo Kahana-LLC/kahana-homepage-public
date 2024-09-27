@@ -8,31 +8,13 @@ export default function PricingPage() {
   return (
     <>
       <Head>
-        <title>Pricing - Plans for Every Creator</title>
-        <meta
-          name="description"
-          content="Kahana is the easiest way to monetize your content and research. Transform knowledge and expertise into subscription revenue. Sign up for free today!"
-        />
+      <title>Pricing Plans - Kahana | Untether Your Knowledge</title>
+<meta
+  name="description"
+  content="Explore Kahana's flexible pricing plans designed for a variety of use cases. Start for free today!" 
+/>
+
       </Head>
-      <Script
-        id="reditus-tracking"
-        dangerouslySetInnerHTML={{
-          __html: `
-            (function(w, d, s, p, t) {
-              w.gr = w.gr || function() {
-                w.gr.q = w.gr.q || [];
-                w.gr.q.push(arguments);
-              };
-              p = d.getElementsByTagName(s)[0];
-              t = d.createElement(s);
-              t.async = true;
-              t.src = "https://app.getreditus.com/gr.js?_ce=90";
-              p.parentNode.insertBefore(t, p);
-            })(window, document, "script");
-            gr("track", "pageview");
-          `,
-        }}
-      />
       <div>
         <header className="sticky top-0 z-50">
           <NavbarDup />
