@@ -12,7 +12,7 @@ function NavBar() {
 
   return (
     <div>
-      <nav className="fixed top-0 left-0 w-full h-12 bg-white bg-opacity-90 shadow-md z-50">
+      <nav className="fixed top-0 left-0 w-full h-12 bg-white shadow-md z-50">
         <style jsx>{`
           .font-style {
             font-family: sans-serif;
@@ -24,7 +24,7 @@ function NavBar() {
             padding: 0.75rem;
             border-radius: 0.5rem;
             width: 100%;
-            text-align: left; /* Align text to the left */
+            text-align: left;
             background-color: #f7f7f7;
           }
 
@@ -93,26 +93,33 @@ function NavBar() {
 
           .mobile-menu {
             position: fixed;
-            top: 3rem; /* Align with the bottom of the navbar */
+            top: 3rem;
             left: 0;
-            width: 33vw; /* Approximately one-third of the viewport width */
-            max-width: 400px; /* Maximum width for larger screens */
-            min-width: 280px; /* Minimum width for smaller screens */
-            height: 100vh; /* Full viewport height */
-            background-color: rgba(255, 255, 255, 0.9); /* Transparent white background */
-            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); /* Shadow for visibility */
+            width: 33vw;
+            max-width: 400px;
+            min-width: 280px;
+            height: 100vh;
+            background-color: rgba(255, 255, 255);
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
             padding: 1rem;
             z-index: 40;
-            overflow-y: auto; /* Scroll if content overflows */
+            overflow-y: auto;
             transition: transform 0.3s ease-in-out;
-            transform: ${isMobileMenuOpen ? 'translateX(0)' : 'translateX(-100%)'}; /* Slide in/out effect */
+            transform: ${isMobileMenuOpen ? 'translateX(0)' : 'translateX(-100%)'};
           }
 
           .menu-links {
             display: flex;
             flex-direction: column;
-            align-items: flex-start; /* Align links to the left */
-            gap: 1rem; /* Space between links */
+            align-items: flex-start;
+            gap: 1rem;
+          }
+
+          /* Media Query to hide Pricing button on mobile */
+          @media (max-width: 480px) {
+            .nav-button.pricing {
+              display: none; /* Hide Pricing button on mobile screens */
+            }
           }
         `}</style>
         <div className="nav-content">
@@ -124,7 +131,7 @@ function NavBar() {
               alt="navbar-logo"
               className="logo"
               height={24}
-              width={100}  // Adjust this based on your logo's aspect ratio
+              width={100}
             />
           </Link>
 
@@ -194,6 +201,8 @@ function NavBar() {
             <Link href="/about" className="mobile-link">About</Link>
             <Link href="https://blog.kahana.co" className="mobile-link">Blog</Link>
             <Link href="/faq" className="mobile-link">FAQ</Link>
+            <Link href="/enterprise" className="mobile-link">Enterprise</Link>
+            <Link href="/request-a-demo" className="mobile-link">Request a Demo</Link>
             <Link href="/sales" className="mobile-link">Contact</Link>
           </div>
         </div>
