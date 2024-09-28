@@ -80,6 +80,12 @@ export default function HeroSection() {
                     >
                       Build your hub
                     </Link>
+                    <Link
+                      href="/request-a-demo"  
+                      className="rounded-md border border-transparent bg-[#000000] py-3 px-6 text-lg font-medium text-white shadow-sm hover:bg-[#024324] focus:outline-none focus:ring-2 focus:ring-[#024324] focus:ring-offset-2 text-center"
+                    >
+                      Get a demo
+                    </Link>
                   </div>
                 </div>
               </div>
