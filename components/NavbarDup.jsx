@@ -50,10 +50,14 @@ function NavBar() {
           }
 
           .nav-button {
-            padding: 0.2rem 1rem;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0.1rem 0.5rem;
             border-radius: 0.5rem;
             transition: background-color 0.3s ease, color 0.3s ease;
-            margin-left: 0.5rem;
+            margin-left: 0.4rem;
+            white-space: nowrap; /* Prevents text from breaking onto multiple lines */
           }
 
           .nav-button.pricing {
@@ -80,6 +84,13 @@ function NavBar() {
 
           .nav-button.app-dashboard:hover {
             background-color: #f0f0f0;
+          }
+
+          .vertical-divider {
+            height: 24px;
+            width: 1px;
+            background-color: gray;
+            margin: 0.1;
           }
 
           .hamburger-button {
@@ -115,10 +126,9 @@ function NavBar() {
             gap: 1rem;
           }
 
-          /* Media Query to hide Pricing button on mobile */
           @media (max-width: 480px) {
             .nav-button.pricing {
-              display: none; /* Hide Pricing button on mobile screens */
+              display: none;
             }
           }
         `}</style>
@@ -140,6 +150,10 @@ function NavBar() {
             {/* Buttons */}
             <Link href="/pricing">
               <button className="nav-button pricing">Pricing</button>
+            </Link>
+            <div className="vertical-divider"></div>
+            <Link href="/request-a-demo">
+              <button className="nav-button pricing">Demo</button>
             </Link>
             <Link href="/explore">
               <button className="nav-button explore">Explore</button>
