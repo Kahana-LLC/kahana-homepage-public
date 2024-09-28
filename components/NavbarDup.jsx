@@ -57,7 +57,7 @@ function NavBar() {
             border-radius: 0.5rem;
             transition: background-color 0.3s ease, color 0.3s ease;
             margin-left: 0.4rem;
-            white-space: nowrap; /* Prevents text from breaking onto multiple lines */
+            white-space: nowrap;
           }
 
           .nav-button.pricing {
@@ -126,11 +126,16 @@ function NavBar() {
             gap: 1rem;
           }
 
-          @media (max-width: 480px) {
-            .nav-button.pricing {
-              display: none;
-            }
-          }
+         @media (max-width: 480px) {
+  .nav-button.pricing {
+    display: none;
+  }
+
+  .vertical-divider {
+    display: none;
+  }
+}
+
         `}</style>
         <div className="nav-content">
           {/* Logo */}
@@ -226,3 +231,4 @@ function NavBar() {
 }
 
 export default NavBar;
+
