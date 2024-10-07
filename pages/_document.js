@@ -5,15 +5,39 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        {/* Google tag (gtag.js) */}
+        <Script
+          id="gtag-js"
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-KQHFL9605P"
+        />
+        <Script
+          id="gtag-init"
+          strategy="afterInteractive" // Ensure this runs after the script is loaded
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-KQHFL9605P');
+            `,
+          }}
+        />
+
         {/* Google Tag Manager */}
         <Script
           id="GA4-script"
           dangerouslySetInnerHTML={{
             __html: `
-              (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+              (function(w,d,s,l,i){
+                w[l]=w[l]||[];
+                w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+                var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),
+                dl=l!='dataLayer'?'&l='+l:'';
+                j.async=true;
+                j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+                f.parentNode.insertBefore(j,f);
               })(window,document,'script','dataLayer','GTM-WBXNXKQ');
             `,
           }}
@@ -23,7 +47,7 @@ export default function Document() {
         <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5821697528846539"
-          crossorigin="anonymous"
+          crossOrigin="anonymous"
         />
 
         {/* Hotjar script */}
