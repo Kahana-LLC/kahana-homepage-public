@@ -214,6 +214,7 @@ function NavBar() {
         <div className={`mobile-menu ${isMobileMenuOpen ? 'open' : ''}`}>
           <div className="menu-links">
             <Link href="/explore" className="mobile-link">Explore</Link>
+            <Link href="https://app.kahana.co/hub/YYFCLRknbxjf5Ls29Cbd" className="mobile-link">Learn</Link>
             <Link href="https://app.kahana.co" className="mobile-link">Dashboard</Link>
             <Link href="https://app.kahana.co/billing" className="mobile-link">Billing</Link>
             <Link href="/pricing" className="mobile-link">Pricing</Link>
