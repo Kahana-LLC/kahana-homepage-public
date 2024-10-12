@@ -57,21 +57,19 @@ function NavBarExplore() {
             justify-content: center;
           }
 
-          .mobile-menu {
+ .mobile-menu {
             position: fixed;
-            top: 3rem; /* Adjust to align with the bottom of the navbar */
-            left: 0;
-            width: 33vw; /* Approximately one-third of the viewport width */
-            max-width: 400px; /* Maximum width for larger screens */
-            min-width: 280px; /* Minimum width for smaller screens */
-            height: 100vh; /* Full viewport height */
-            background-color: rgba(255, 255, 255); /* White with transparency */
-            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); /* Shadow for better visibility */
+            top: 48; /* Start from the top */
+            right: 0; /* Align to the right */
+            width: 260px; /* or a fixed width */
+            height: 100vh;
+            background-color: rgba(255, 255, 255);
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2); /* Shadow on the left */
             padding: 1rem;
             z-index: 40;
-            overflow-y: auto; /* Scroll if content overflows */
+            overflow-y: auto;
             transition: transform 0.3s ease-in-out;
-            transform: ${isMobileMenuOpen ? 'translateX(0)' : 'translateX(-100%)'}; /* Slide in/out effect */
+            transform: ${isMobileMenuOpen ? 'translateX(0)' : 'translateX(100%)'}; /* Slide in from the right */
           }
 
           .menu-links {
@@ -83,7 +81,7 @@ function NavBarExplore() {
         `}</style>
         <div className="nav-content">
           {/* Logo */}
-          <Link href="/" aria-label="Kahana">
+          <Link href="https://app.kahana.co/" aria-label="Kahana">
             <span className="sr-only">Home</span>
             <Image
               src={whiteKahanaLogo}
