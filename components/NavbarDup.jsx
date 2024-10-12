@@ -18,15 +18,19 @@ function NavBar() {
             font-family: sans-serif;
           }
 
-          .mobile-link {
-            color: gray;
-            transition: background-color 0.3s ease;
-            padding: 0.75rem;
+            .mobile-link {
+            color: #333;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            padding: 1.25rem 1.5rem;
             border-radius: 0.5rem;
             width: 100%;
             text-align: left;
             background-color: #f7f7f7;
+            font-size: 1.2rem; /* Increase font size here */
+            font-weight: 500;
+            margin-bottom: 0.5rem;
           }
+
 
           .mobile-link:nth-child(even) {
             background-color: #e1e1e1;
@@ -102,21 +106,19 @@ function NavBar() {
             margin-left: 1rem;
           }
 
-          .mobile-menu {
+       .mobile-menu {
             position: fixed;
-            top: 3rem;
-            left: 0;
-            width: 33vw;
-            max-width: 400px;
-            min-width: 280px;
+            top: 48; /* Start from the top */
+            right: 0; /* Align to the right */
+            width: 260px; /* or a fixed width */
             height: 100vh;
             background-color: rgba(255, 255, 255);
-            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2); /* Shadow on the left */
             padding: 1rem;
             z-index: 40;
             overflow-y: auto;
             transition: transform 0.3s ease-in-out;
-            transform: ${isMobileMenuOpen ? 'translateX(0)' : 'translateX(-100%)'};
+            transform: ${isMobileMenuOpen ? 'translateX(0)' : 'translateX(100%)'}; /* Slide in from the right */
           }
 
           .menu-links {
