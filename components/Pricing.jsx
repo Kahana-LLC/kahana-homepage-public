@@ -25,7 +25,6 @@ const tiers = [
       'Live Chat Support',
       '100 GB cloud storage',
       'Upload files up to 5 GB',
-      'Basic Analytics <span class="inline-block bg-yellow-300 text-yellow-800 px-2 py-0.5 rounded-full text-xs">Beta</span>',
     ],
     additionalLinkText: '', // No additional link for Growth plan
     additionalLinkHref: '',
@@ -42,7 +41,7 @@ const tiers = [
       'Custom branding and white-labeling',
       'Custom integrations',
       'Onboarding and migration support',
-      'Advanced Analytics <span class="inline-block bg-yellow-300 text-yellow-800 px-2 py-0.5 rounded-full text-xs">Beta</span>',
+      'Analytics <span class="inline-block bg-yellow-300 text-yellow-800 px-2 py-0.5 rounded-full text-xs">Beta</span>',
     ],
     additionalLinkText: 'Request a Live Demo',
     additionalLinkHref: '/request-a-demo',
