@@ -8,9 +8,9 @@ const tiers = [
     description: 'Everything you need to get started',
     includedFeatures: [
       '3 hubs',
-      'Unlimited collaborators',
-      'Integrate with Stripe to monetize hubs',
+      'Monetize with Stripe',
       'Upload files up to 5 MB',
+      'Upload up to 10 resources per hub',
     ],
     additionalLinkText: '', // No additional link for Free plan
     additionalLinkHref: '',
@@ -25,7 +25,7 @@ const tiers = [
       'Live Chat Support',
       '100 GB cloud storage',
       'Upload files up to 5 GB',
-      'Basic Analytics <span class="inline-block bg-yellow-300 text-yellow-800 px-2 py-0.5 rounded-full text-xs">Beta</span>',
+      'Upload unlimited resources per hub',
     ],
     additionalLinkText: '', // No additional link for Growth plan
     additionalLinkHref: '',
@@ -42,7 +42,8 @@ const tiers = [
       'Custom branding and white-labeling',
       'Custom integrations',
       'Onboarding and migration support',
-      'Advanced Analytics <span class="inline-block bg-yellow-300 text-yellow-800 px-2 py-0.5 rounded-full text-xs">Beta</span>',
+      'Hub engagement analytics',
+      'Built-in AI & ML tools <span class="inline-block bg-yellow-300 text-yellow-800 px-2 py-0.5 rounded-full text-xs">new</span>',
     ],
     additionalLinkText: 'Request a Live Demo',
     additionalLinkHref: '/request-a-demo',
