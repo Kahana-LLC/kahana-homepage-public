@@ -39,6 +39,8 @@ export default function Footer() {
               <span className="mx-2">·</span>
               <Link href="https://blog.kahana.co" className="text-gray-500 hover:text-gray-900">Blog</Link> 
               <span className="mx-2">·</span>
+              <Link href="https://blog.kahana.co/employment-eligibility/" className="text-gray-500 hover:text-gray-900">Right to Work</Link> 
+              <span className="mx-2">·</span>
               <Link href="/sitemap" className="text-gray-500 hover:text-gray-900">Sitemap</Link> 
               <span className="mx-2">·</span>
               <Link href="/enterprise" className="text-gray-500 hover:text-gray-900">Enterprise</Link> 
@@ -55,6 +57,7 @@ export default function Footer() {
               <Link href="/terms-and-conditions" className="text-gray-500 hover:text-gray-900">Terms</Link>
               <Link href="/about" className="text-gray-500 hover:text-gray-900">About</Link>
               <Link href="https://blog.kahana.co" className="text-gray-500 hover:text-gray-900">Blog</Link>
+              <Link href="https://blog.kahana.co/employment-eligibility/" className="text-gray-500 hover:text-gray-900">Right to Work</Link>
               <Link href="/sitemap" className="text-gray-500 hover:text-gray-900">Sitemap</Link>
               <Link href="/enterprise" className="text-gray-500 hover:text-gray-900">Enterprise</Link>
               <Link href="/request-a-demo" className="text-gray-500 hover:text-gray-900">Demo</Link>
