@@ -36,6 +36,9 @@ const SearchPage = () => {
               searchBox({
                 container: "#searchbox",
                 placeholder: "Explore Kahana...",
+                cssClasses: {
+                  input: "search-input w-full max-w-[300px] md:max-w-[400px]",
+                },
               }),
               refinementList({
                 container: "#refinements",
@@ -50,7 +53,6 @@ const SearchPage = () => {
                   }
                 },
               }),
-
               hits({
                 container: "#hits",
                 templates: {
@@ -62,27 +64,39 @@ const SearchPage = () => {
                         href="https://app.kahana.co/hub/${hit.objectID}"
                         target="_self"
                         rel="noopener noreferrer"
+                        class="block hover:no-underline"
                       >
                         <div class="items">
                           <div class="image-container">
-                            <img src="${imageUrl}" alt="${hit.name}" />
+                            <img
+                              src="${imageUrl}"
+                              alt="${hit.name}"
+                              class="w-full h-full object-cover"
+                            />
                           </div>
-                          <div class="items-info">
-                            <div class="items-info-content">
-                              <div class="profile-container">
+                          <div class="items-info p-3 md:p-4">
+                            <div class="items-info-content flex items-start">
+                              <div class="profile-container flex-shrink-0 mr-3">
                                 <img
-                                  class="profile-pic"
+                                  class="profile-pic w-8 h-8 md:w-10 md:h-10 rounded-full"
                                   src="${hit.metadata.profilePicLink ||
                                   defaultProfilePic}"
                                   alt="Profile Picture"
                                 />
                               </div>
-                              <div class="text-container">
+                              <div class="text-container flex-grow min-w-0">
                                 <div class="items-info--title">
-                                  <h2 class="hit-title">${hit.name}</h2>
+                                  <h2
+                                    class="hit-title text-base md:text-lg font-medium truncate"
+                                  >
+                                    ${hit.name}
+                                  </h2>
                                 </div>
                                 <div class="items-info--description">
-                                  <p title="${hit.description}">
+                                  <p
+                                    class="text-sm text-gray-600 line-clamp-2 md:line-clamp-3"
+                                    title="${hit.description}"
+                                  >
                                     ${hit.description}
                                   </p>
                                 </div>
@@ -97,6 +111,14 @@ const SearchPage = () => {
               }),
               pagination({
                 container: "#pagination",
+                padding: 2,
+                showFirst: false,
+                showLast: false,
+                cssClasses: {
+                  list: "flex justify-center gap-2 mt-6",
+                  item: "px-3 py-1 rounded hover:bg-gray-100",
+                  selectedItem: "bg-gray-200",
+                },
               }),
             ]);
 
@@ -116,35 +138,26 @@ const SearchPage = () => {
           content="Search Kahana workspaces and explore public profiles."
         />
       </Head>
-      <div>
-        <div
-          style={{ zIndex: "100" }}
-          className="fixed top-0 left-0 right-0 bg-white shadow-md"
-        >
+      <div className="min-h-screen bg-gray-50">
+        <nav className="fixed top-0 left-0 right-0 bg-white shadow-sm z-50">
           <NavbarExplore />
-        </div>
-        <div
-          className="fixed top-[40px] left-0 right-0 bg-white z-50"
-          style={{
-            background:
-              "linear-gradient(to top, rgba(255, 255, 255, 0.01) 0%, rgba(255, 255, 255, 0.9) 100%)",
-          }}
-        >
-          <div className="header-wrapper h-[200px] py-2">
-            <div style={{ paddingTop: "40px" }}></div>
-            <div id="searchbox"></div>
-            <div style={{ paddingTop: "5px" }}>
+        </nav>
+        <div className="fixed top-[56px] left-0 right-0 bg-white/90 backdrop-blur-sm z-40 transition-all duration-200">
+          <div className="header-wrapper py-3 md:py-4">
+            <div className="px-4 md:px-6">
+              <div id="searchbox" className="mb-3" />
               <CategoryFilter setSelectedCategory={setSelectedCategory} />
             </div>
           </div>
         </div>
-        <div className="hits-container" style={{ marginTop: "260px" }}>
-          <div id="refinements"></div>
-          <div>
-            <div id="hits"></div>
-            <div id="pagination"></div>
-          </div>
-        </div>
+        <main
+          className="container mx-auto px-4 md:px-6"
+          style={{ marginTop: "180px" }}
+        >
+          <div id="refinements" className="mb-4" />
+          <div id="hits" className="mb-8" />
+          <div id="pagination" className="mb-8" />
+        </main>
       </div>
     </>
   );

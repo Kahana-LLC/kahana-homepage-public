@@ -46,11 +46,78 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
+    height: 160px !important; /* Reduced height on mobile */
   }
 
   #searchbox,
   #cats {
     margin: 5px 0;
+  }
+
+  .ais-SearchBox-input {
+    width: 90%; /* Responsive width */
+    max-width: 300px;
+    margin: 0 auto;
+    height: 40px; /* Slightly smaller on mobile */
+  }
+
+  .ais-Hits-list {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(280px, 1fr)
+    ) !important; /* Smaller cards on mobile */
+    gap: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  .items {
+    max-width: 100%; /* Full width on mobile */
+  }
+
+  .items-info {
+    padding: 10px; /* Reduced padding */
+  }
+
+  .items-info--title {
+    font-size: 16px; /* Smaller title on mobile */
+  }
+
+  .items-info--description {
+    font-size: 12px;
+    padding: 0 15px;
+    -webkit-line-clamp: 2; /* Show fewer lines on mobile */
+  }
+
+  .hit-title {
+    padding: 10px 15px;
+    max-width: 100%; /* Full width on mobile */
+  }
+
+  .profile-container {
+    margin-right: 10px; /* Reduced margin */
+  }
+
+  .ais-Pagination-item {
+    padding: 0 5px; /* Smaller pagination buttons */
+  }
+
+  /* Improve touch targets */
+  .ais-RefinementList-item {
+    padding: 0 15px;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 5px;
+  }
+}
+
+/* Optimize for larger phones and small tablets */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .ais-Hits-list {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+
+  .header-wrapper {
+    height: 180px;
   }
 }
 
@@ -334,11 +401,7 @@ body {
 }
 
 .search-input {
-  border: none;
-  outline: none;
-  padding: 8px;
-  font-size: 16px;
-  width: 100%;
+  @apply w-full h-10 px-4 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200;
 }
 
 /* Container for searchbox and category filter */
@@ -389,4 +452,88 @@ body {
   #cats {
     margin: 0;
   }
+}
+
+/* Grid layout improvements */
+.ais-Hits-list {
+  @apply grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 p-4;
+}
+
+.ais-Hits-item {
+  @apply w-full;
+}
+
+/* Card improvements */
+.items {
+  @apply bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200;
+}
+
+.image-container {
+  @apply relative w-full pt-[56.25%] overflow-hidden rounded-t-lg;
+}
+
+/* Profile and content layout */
+.items-info-content {
+  @apply flex items-start gap-3;
+}
+
+.profile-container {
+  @apply flex-shrink-0;
+}
+
+.text-container {
+  @apply flex-grow min-w-0;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 640px) {
+  .header-wrapper {
+    @apply h-auto py-2;
+  }
+
+  .ais-SearchBox-input {
+    @apply text-base;
+  }
+
+  .ais-Hits-list {
+    @apply gap-3 p-2;
+  }
+
+  .items-info {
+    @apply p-3;
+  }
+
+  .hit-title {
+    @apply text-sm;
+  }
+
+  .items-info--description {
+    @apply text-xs;
+  }
+
+  .ais-Pagination-list {
+    @apply gap-1;
+  }
+
+  .ais-Pagination-item {
+    @apply text-sm;
+  }
+}
+
+/* Category filter improvements */
+.ais-RefinementList-list {
+  @apply flex flex-nowrap overflow-x-auto gap-2 py-2 px-4 -mx-4 md:mx-0;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.ais-RefinementList-item {
+  @apply flex-none px-4 py-1 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors duration-200;
+}
+
+.ais-RefinementList-item--selected {
+  @apply bg-green-100 text-green-800;
 }
