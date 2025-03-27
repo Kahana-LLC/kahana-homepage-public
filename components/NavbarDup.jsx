@@ -70,9 +70,56 @@ function NavBar() {
             font-weight: 500;
             text-decoration: none;
             transition: color 0.3s ease;
+            position: relative;
           }
 
           .nav-link:hover {
+            color: #3B675E;
+          }
+
+          .dropdown {
+            position: relative;
+            display: inline-block;
+          }
+
+          .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: white;
+            min-width: 200px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            padding: 1rem 0;
+            z-index: 50;
+          }
+
+          .dropdown:hover .dropdown-content {
+            display: block;
+          }
+
+          .dropdown-section {
+            padding: 0.5rem 1.5rem;
+          }
+
+          .dropdown-section h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 0.75rem;
+          }
+
+          .dropdown-link {
+            display: block;
+            padding: 0.5rem 0;
+            color: #666;
+            text-decoration: none;
+            transition: color 0.2s ease;
+            font-size: 0.875rem;
+          }
+
+          .dropdown-link:hover {
             color: #3B675E;
           }
 
@@ -161,7 +208,26 @@ function NavBar() {
             <Link href="/solutions" className="nav-link">Solutions</Link>
             <Link href="/partners" className="nav-link">Partners</Link>
             <Link href="/learn" className="nav-link">Learn</Link>
-            <Link href="/about" className="nav-link">About</Link>
+            <div className="dropdown">
+              <Link href="/about" className="nav-link">About</Link>
+              <div className="dropdown-content">
+                <div className="dropdown-section">
+                  <h3>About</h3>
+                  <Link href="/about/company" className="dropdown-link">The Company</Link>
+                  <Link href="/about/careers" className="dropdown-link">Careers</Link>
+                  <Link href="/about/press" className="dropdown-link">Press</Link>
+                  <Link href="/about/media" className="dropdown-link">Media Coverage</Link>
+                  <Link href="/about/events" className="dropdown-link">Events</Link>
+                </div>
+                <div className="dropdown-section">
+                  <h3>Contact</h3>
+                  <Link href="/contact" className="dropdown-link">Get in Touch</Link>
+                  <Link href="/schedule-a-demo" className="dropdown-link">Schedule a Demo</Link>
+                  <Link href="/quote" className="dropdown-link">Request a Quote</Link>
+                  <Link href="/support" className="dropdown-link">Product Support</Link>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Buttons and Hamburger Menu */}
@@ -224,8 +290,20 @@ function NavBar() {
             <Link href="/partners" className="mobile-link">Partners</Link>
             <Link href="/learn" className="mobile-link">Learn</Link>
             <Link href="/about" className="mobile-link">About</Link>
+            <div className="mobile-section">
+              <Link href="/about/company" className="mobile-link">The Company</Link>
+              <Link href="/about/careers" className="mobile-link">Careers</Link>
+              <Link href="/about/press" className="mobile-link">Press</Link>
+              <Link href="/about/media" className="mobile-link">Media Coverage</Link>
+              <Link href="/about/events" className="mobile-link">Events</Link>
+            </div>
+            <div className="mobile-section">
+              <Link href="/contact" className="mobile-link">Get in Touch</Link>
+              <Link href="/schedule-a-demo" className="mobile-link">Schedule a Demo</Link>
+              <Link href="/quote" className="mobile-link">Request a Quote</Link>
+              <Link href="/support" className="mobile-link">Product Support</Link>
+            </div>
             <Link href="/download" className="mobile-link">Download</Link>
-            <Link href="/contact" className="mobile-link">Get in touch</Link>
           </div>
         </div>
       </nav>

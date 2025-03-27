@@ -42,5 +42,9 @@
   "main": "next.config.js",
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "engines": {
+    "node": "20.x",
+    "npm": "10.x"
+  }
 }
