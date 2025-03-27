@@ -1,7 +1,7 @@
 import Head from 'next/head';
+import Footer from '../components/Footer';
 
 /* eslint-disable react/no-unescaped-entities */
-import NavbarDup from '../components/NavbarDup';
 
 export default function TermsAndConditions() {
   return (
@@ -15,9 +15,6 @@ export default function TermsAndConditions() {
       
     </Head>
     <div>
-      <div style={{ zIndex: '2' }} className="sticky top-0">
-        <NavbarDup />
-      </div>
       <div className="relative overflow-hidden bg-white py-16">
         <div className="hidden lg:absolute lg:inset-y-0 lg:block lg:h-full lg:w-full lg:[overflow-anchor:none]">
           <div
@@ -148,14 +145,14 @@ export default function TermsAndConditions() {
               Affiliate means an entity that controls, is controlled by or is under common control with a party, where "control" means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.
               Account means a unique account created for You to access our Service or parts of our Service. Your account will be accessible from https://app.kahana.co/
               Country refers to: Illinois, United States
-              Company (referred to as either  “Kahana”, ”the Company", "We", "Us" or "Our" in this Agreement) refers to Kahana Group Inc., 1550 N Lake Shore Dr, Apt 19E Chicago, Illinois 60610.
+              Company (referred to as either  "Kahana", "the Company", "We", "Us" or "Our" in this Agreement) refers to Kahana Group Inc., 1550 N Lake Shore Dr, Apt 19E Chicago, Illinois 60610.
               Content refers to content such as text, images, or other information that can be posted, uploaded, linked to or otherwise made available by You, regardless of the form of that content.
               Creator refers to any individual who makes content on the Service for any purpose, including for the purpose of monetization.
               Device means any device that can access the Service such as a computer, a cellphone or a digital tablet.
               Feedback means feedback, innovations or suggestions sent by You regarding the attributes, performance or features of our Service.
               Hub refers to where Your content is displayed.
               Service refers to the Website.
-              Subscriber refers to any individual who pays for another individual’s content on the Service.
+              Subscriber refers to any individual who pays for another individual's content on the Service.
               Subscriptions refer to the services or access to the Service offered on a subscription basis by the Company to You.
               Terms and Conditions (also referred as "Terms") mean these Terms and Conditions that form the entire agreement between You and the Company regarding the use of the Service.
               Third-party Social Media Service means any services or content (including data, information, products or services) provided by a third-party that may be displayed, included or made available by the Service.
@@ -168,7 +165,7 @@ export default function TermsAndConditions() {
               These are the Terms and Conditions governing the use of this Service and the agreement that operates between You and the Company. These Terms and Conditions set out the rights and obligations of all users regarding the use of the Service.
               Your access to and use of the Service is conditioned on Your acceptance of and compliance with these Terms and Conditions. These Terms and Conditions apply to all visitors, users and others who access or use the Service.
               By accessing or using the Service You agree to be bound by these Terms and Conditions. If You disagree with any part of these Terms and Conditions then You may not access the Service.
-              You represent that you are at least 13 years old. If You are under the age of 18, You must have Your parent’s permission to use the Service. The Company does not permit those under 13 to use the Service.
+              You represent that you are at least 13 years old. If You are under the age of 18, You must have Your parent's permission to use the Service. The Company does not permit those under 13 to use the Service.
               Your access to and use of the Service is also conditioned on Your acceptance of and compliance with the Privacy Policy of the Company. Our Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your personal information when You use the Website and tells You about Your privacy rights and how the law protects You. Please read Our Privacy Policy carefully before using Our Service.
               <br />
               <br />
@@ -181,7 +178,7 @@ export default function TermsAndConditions() {
               <br />
               <h3>Fees</h3>
               <br />
-              As a creator, the minimum price that You can set for any Hub that You create is $1.00. You will be charged 5% of the Hub price for each transaction, which goes to Kahana, and you will also be charged for Stripe’s payment processing fees, which are as follows: The payment processing fee in US dollars is 2.9% plus $0.30 per successful transaction, as well as 0.5% if it is a recurring subscription payment. 1% is added to the 2.9% for international cards/if currency conversion is required.
+              As a creator, the minimum price that You can set for any Hub that You create is $1.00. You will be charged 5% of the Hub price for each transaction, which goes to Kahana, and you will also be charged for Stripe's payment processing fees, which are as follows: The payment processing fee in US dollars is 2.9% plus $0.30 per successful transaction, as well as 0.5% if it is a recurring subscription payment. 1% is added to the 2.9% for international cards/if currency conversion is required.
               <br />
               <br />
               <h3>Tax</h3>
@@ -381,6 +378,7 @@ export default function TermsAndConditions() {
         </div>
       </div>
     </div>
+    <Footer />
    </>
   );
 }

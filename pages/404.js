@@ -1,17 +1,10 @@
 // pages/404.js
 import Link from "next/link";
-import NavbarDup from "../components/NavbarDup";
 import Footer from "../components/Footer";
 
 export default function Custom404() {
   return (
     <>
-      <div
-        style={{ zIndex: "100" }}
-        className="fixed top-0 left-0 right-0 bg-white shadow-md"
-      >
-        <NavbarDup />
-      </div>
       <main className="min-h-full bg-white px-6 py-24 sm:py-32 lg:px-8 pt-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
@@ -22,12 +15,12 @@ export default function Custom404() {
               Oops! Page Not Found
             </h1>
             <p className="mt-6 text-base leading-7 text-gray-600">
-              We’re really sorry, but it looks like we’ve led you astray into
-              the digital wilderness. The page you’re looking for might have
-              been recently removed or deleted. If you ended up here by typing
-              an address into your browser, please check that the spelling and
-              capitalization are correct. If you need to refresh with the
-              correct spelling,{" "}
+              We&apos;re really sorry, but it looks like we&apos;ve led you
+              astray into the digital wilderness. The page you&apos;re looking
+              for might have been recently removed or deleted. If you ended up
+              here by typing an address into your browser, please check that the
+              spelling and capitalization are correct. If you need to refresh
+              with the correct spelling,{" "}
               <a
                 href="#"
                 onClick={() => window.location.reload()}

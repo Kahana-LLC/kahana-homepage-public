@@ -11,14 +11,18 @@ function NavBar() {
   };
 
   return (
-    <div>
-      <nav className="fixed top-0 left-0 w-full h-12 bg-white shadow-md z-50">
+    <div className="relative">
+      {/* Spacer div that matches navbar height */}
+      <div className="h-16 w-full"></div>
+      
+      {/* Fixed navbar */}
+      <nav className="fixed top-0 left-0 w-full h-16 bg-white shadow-md z-50">
         <style jsx>{`
           .font-style {
             font-family: sans-serif;
           }
 
-            .mobile-link {
+          .mobile-link {
             color: #333;
             transition: background-color 0.3s ease, color 0.3s ease;
             padding: 1.25rem 1.5rem;
@@ -26,11 +30,10 @@ function NavBar() {
             width: 100%;
             text-align: left;
             background-color: #f7f7f7;
-            font-size: 1.2rem; /* Increase font size here */
+            font-size: 1.2rem;
             font-weight: 500;
             margin-bottom: 0.5rem;
           }
-
 
           .mobile-link:nth-child(even) {
             background-color: #e1e1e1;
@@ -45,134 +48,137 @@ function NavBar() {
             justify-content: space-between;
             align-items: center;
             height: 100%;
-            padding: 0 10px;
+            padding: 0 24px;
+            max-width: 1280px;
+            margin: 0 auto;
           }
 
           .logo {
-            height: 24px;
+            height: 42px;
             width: auto;
+          }
+
+          .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+          }
+
+          .nav-link {
+            color: #333;
+            font-size: 1rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.3s ease;
+          }
+
+          .nav-link:hover {
+            color: #3B675E;
+          }
+
+          .nav-buttons {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
           }
 
           .nav-button {
             display: inline-flex;
             justify-content: center;
             align-items: center;
-            padding: 0.1rem 0.5rem;
-            border-radius: 0.5rem;
-            transition: background-color 0.3s ease, color 0.3s ease;
-            margin-left: 0.4rem;
-            white-space: nowrap;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            transition: all 0.3s ease;
+            font-size: 0.875rem;
+            font-weight: 500;
           }
 
-          .nav-button.pricing {
-            background-color: #FFFFFF;
-            color: black;
-            border: 0.5px solid #FFFFFF;
+          .nav-button.download {
+            color: #333;
+            background-color: transparent;
           }
 
-          .nav-button.explore {
+          .nav-button.download:hover {
+            color: #3B675E;
+          }
+
+          .nav-button.get-in-touch {
             background-color: #3B675E;
             color: white;
-            border: 0.5px solid #3B675E;
           }
 
-          .nav-button.explore:hover {
-            background-color: #024324;
+          .nav-button.get-in-touch:hover {
+            background-color: #2A4A3F;
           }
 
-          .nav-button.app-dashboard {
-            background-color: white;
-            color: #3B675E;
-            border: 0.5px solid #3B675E;
-          }
-
-          .nav-button.app-dashboard:hover {
-            background-color: #f0f0f0;
-          }
-
-          .vertical-divider {
-            height: 24px;
-            width: 1px;
-            background-color: gray;
-            margin: 0.1;
-          }
-
-          .hamburger-button {
-            width: 24px;
-            height: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-left: 1rem;
-          }
-
-       .mobile-menu {
+          .mobile-menu {
             position: fixed;
-            top: 48; /* Start from the top */
-            right: 0; /* Align to the right */
-            width: 260px; /* or a fixed width */
-            height: 100vh;
-            background-color: rgba(255, 255, 255);
-            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2); /* Shadow on the left */
-            padding: 1rem;
+            top: 64px;
+            right: 0;
+            width: 260px;
+            height: calc(100vh - 64px);
+            background-color: white;
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
             z-index: 40;
             overflow-y: auto;
-            transition: transform 0.3s ease-in-out;
-            transform: ${isMobileMenuOpen ? 'translateX(0)' : 'translateX(100%)'}; /* Slide in from the right */
+          }
+
+          .mobile-menu.open {
+            transform: translateX(0);
           }
 
           .menu-links {
+            padding: 1rem;
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
-            gap: 1rem;
+            gap: 0.5rem;
           }
 
-         @media (max-width: 480px) {
-  .nav-button.pricing {
-    display: none;
-  }
-
-  .vertical-divider {
-    display: none;
-  }
-}
-
+          @media (max-width: 1024px) {
+            .nav-links {
+              display: none;
+            }
+          }
         `}</style>
         <div className="nav-content">
           {/* Logo */}
           <Link href="/" aria-label="Home">
-            <span className="sr-only">About</span>
+            <span className="sr-only">Home</span>
             <Image
               src={whiteKahanaLogo}
               alt="navbar-logo"
               className="logo"
-              height={24}
-              width={100}
+              height={42}
+              width={150}
             />
           </Link>
 
+          {/* Navigation Links */}
+          <div className="nav-links">
+            <Link href="/products" className="nav-link">Product</Link>
+            <Link href="/solutions" className="nav-link">Solutions</Link>
+            <Link href="/partners" className="nav-link">Partners</Link>
+            <Link href="/learn" className="nav-link">Learn</Link>
+            <Link href="/about" className="nav-link">About</Link>
+          </div>
+
           {/* Buttons and Hamburger Menu */}
-          <div className="flex items-center">
-            {/* Buttons */}
-            <Link href="/pricing">
-              <button className="nav-button pricing">Pricing</button>
-            </Link>
-            <div className="vertical-divider"></div>
-            <Link href="/request-a-demo">
-              <button className="nav-button pricing">Demo</button>
-            </Link>
-            <Link href="/explore">
-              <button className="nav-button explore">Explore</button>
-            </Link>
-            <Link href="https://app.kahana.co">
-              <button className="nav-button app-dashboard">Build</button>
-            </Link>
+          <div className="flex items-center gap-4">
+            <div className="nav-buttons hidden md:flex">
+              <Link href="/download">
+                <button className="nav-button download">Download</button>
+              </Link>
+              <Link href="/contact">
+                <button className="nav-button get-in-touch">Get in touch</button>
+              </Link>
+            </div>
 
             {/* Hamburger Menu */}
             <button
               onClick={toggleMobileMenu}
-              className="hamburger-button"
+              className="lg:hidden"
               aria-label="Mobile Menu"
             >
               {isMobileMenuOpen ? (
@@ -213,19 +219,13 @@ function NavBar() {
         {/* Mobile Menu Content */}
         <div className={`mobile-menu ${isMobileMenuOpen ? 'open' : ''}`}>
           <div className="menu-links">
-            <Link href="/explore" className="mobile-link">Explore</Link>
-            <Link href="https://app.kahana.co/hub/YYFCLRknbxjf5Ls29Cbd" className="mobile-link">Learn</Link>
-            <Link href="https://app.kahana.co" className="mobile-link">Dashboard</Link>
-            <Link href="https://app.kahana.co/billing" className="mobile-link">Billing</Link>
-            <Link href="/pricing" className="mobile-link">Pricing</Link>
-            <Link href="/terms-and-conditions" className="mobile-link">Terms & Conditions</Link>
-            <Link href="/privacy-policy" className="mobile-link">Privacy Policy</Link>
+            <Link href="/products" className="mobile-link">Product</Link>
+            <Link href="/solutions" className="mobile-link">Solutions</Link>
+            <Link href="/partners" className="mobile-link">Partners</Link>
+            <Link href="/learn" className="mobile-link">Learn</Link>
             <Link href="/about" className="mobile-link">About</Link>
-            <Link href="https://blog.kahana.co" className="mobile-link">Blog</Link>
-            <Link href="/faq" className="mobile-link">FAQ</Link>
-            <Link href="/enterprise" className="mobile-link">Enterprise</Link>
-            <Link href="/request-a-demo" className="mobile-link">Request a Demo</Link>
-            <Link href="/sales" className="mobile-link">Contact</Link>
+            <Link href="/download" className="mobile-link">Download</Link>
+            <Link href="/contact" className="mobile-link">Get in touch</Link>
           </div>
         </div>
       </nav>

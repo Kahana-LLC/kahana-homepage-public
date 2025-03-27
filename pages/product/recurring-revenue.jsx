@@ -1,153 +1,67 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Head from 'next/head';
 import Footer from '../../components/Footer';
-import NavbarDup from '../../components/NavbarDup';
 import Image from 'next/image';
-import bulkUpload from '../../assets/images/bulkUpload.gif';
-import connectStripe from '../../assets/images/connectStripe.gif';
-import choosePricePoint from '../../assets/images/choosePricePoint.gif';
-import startEarning from '../../assets/images/startEarning.gif';
+import Link from 'next/link';
 
-const features = [
-  {
-    title: 'Bulk Upload',
-    description:
-      'Add existing materials you\'ve already created or curated (e.g., PDFs, Notion pages, Google Docs, web pages, videos, etc.) and create notes with ease to quickly build repositories of knowledge.',
-    image: bulkUpload,
-    alt: 'How to bulk upload materials with Kahana',
-  },
-  {
-    title: 'Connect to Stripe',
-    description:
-      'Connect to a new or existing Stripe account so that you can securely and seamlessly accept payments that go straight to your bank account for access to your hubs.',
-    image: connectStripe,
-    alt: 'How to connect your Kahana account to Stripe',
-  },
-  {
-    title: 'Choose Your Price Point & Payment Type',
-    description:
-      'For each hub, choose how much you want to charge and whether it\'s a one-time payment or a recurring subscription to access.',
-    image: choosePricePoint,
-    alt: 'How to select your price point & payment type for Kahana hubs',
-  },
-  {
-    title: 'Start Earning',
-    description:
-      'After you set your payment terms, a paywall will automatically be generated for you that you can begin sharing! Be sure to add a title, cover photo, and description to each hub to improve the experience for potential customers.',
-    image: startEarning,
-    alt: 'Sharing your Kahana hub link',
-  },
-];
-
-const RecurringRevenue = () => {
-  const [tabOrientation, setTabOrientation] = useState('vertical');
-
-  useEffect(() => {
-    const lgMediaQuery = window.matchMedia('(min-width: 1024px)');
-
-    function onMediaQueryChange({ matches }) {
-      setTabOrientation(matches ? 'horizontal' : 'vertical');
-    }
-
-    onMediaQueryChange(lgMediaQuery);
-    lgMediaQuery.addEventListener('change', onMediaQueryChange);
-
-    return () => {
-      lgMediaQuery.removeEventListener('change', onMediaQueryChange);
-    };
-  }, []);
-
+const RecurringRevenuePage = () => {
   return (
     <div>
       <Head>
-        <title>Turn your knowledge into recurring revenue</title>
+        <title>Recurring Revenue with Kahana</title>
         <meta
           name="Kahana"
           content="Kahana is the easiest way to monetize your content and research. Transform knowledge and expertise into subscription revenue. Sign up for free today!"
         />
       </Head>
 
-      <div className="sticky top-0 z-50">
-        <NavbarDup />
-      </div>
-
       {/* Hero section */}
       <section className="py-16 md:py-18">
         <div className="container mx-auto px-4 md:px-8 text-center">
-          <h1 className="text-4xl font-bold mb-4 md:px-12 lg:px-24">
-            Turn your knowledge into recurring revenue
+          <h1 className="text-5xl font-bold mb-4 md:px-12 lg:px-24">
+            Generate Recurring Revenue from Your Knowledge
           </h1>
-          <p className="text-lg mb-8 md:px-12 lg:px-24">
-            Build dynamic hubs of all your best data, templates, insights, research, methodologies, and best practices. It&apos;s like charging for access to your brain.
+          <p className="text-lg mb-8 md:px-12 lg:px-24 px-4">
+            Transform your expertise into a sustainable income stream with Kahana&apos;s subscription-based platform.
           </p>
-          <a
+          <Link
             href="https://app.kahana.co/signup"
-            className="bg-[#3B675E] text-white py-2 px-6 rounded-md text-center inline-block"
+            className="bg-[#3B675E] text-white py-2 px-6 rounded-md text-center inline-block mx-auto max-w-md"
           >
-            Get Kahana free
-          </a>
+            Get Started Free
+          </Link>
         </div>
       </section>
 
       {/* Features section */}
-      <section className="overflow-hidden">
-        {tabOrientation === 'vertical' ? (
-          <div className="mt-8 space-y-12 mx-4">
-            {features.map((feature, index) => (
-              <div key={index} className="space-y-6">
-                <div className="max-w-[45rem] mx-auto">
-                  <h2 className="text-2xl font-semibold text-black">
-                    {feature.title}
-                  </h2>
-                  <p className="mt-2 text-lg text-black">
-                    {feature.description}
-                  </p>
-                </div>
-                <div className="max-w-[45rem] mx-auto">
-                  <Image
-                    className="w-full"
-                    src={feature.image}
-                    alt={feature.alt}
-                    priority
-                    sizes="(min-width: 1024px) 45rem, (min-width: 640px) 100vw, 90vw"
-                  />
-                </div>
-              </div>
-            ))}
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-4">Subscription Management</h3>
+              <p className="text-gray-600">
+                Easily manage recurring subscriptions and access levels for your content.
+              </p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-4">Automated Billing</h3>
+              <p className="text-gray-600">
+                Let Kahana handle the billing process and subscription renewals automatically.
+              </p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-4">Revenue Analytics</h3>
+              <p className="text-gray-600">
+                Track your revenue streams and optimize your pricing strategy with detailed analytics.
+              </p>
+            </div>
           </div>
-        ) : (
-          <div className="mt-8 space-y-6">
-            {features.map((feature, index) => (
-              <div key={index} className="space-y-6 flex flex-col lg:flex-row lg:space-x-6">
-                <div className="max-w-[70rem] mx-auto rounded-lg bg-gray-100 p-4">
-                  <div className="flex items-center space-x-6">
-                    <div className="w-1/3 pl-4">
-                      <h2 className="text-2xl font-semibold text-black">
-                        {feature.title}
-                      </h2>
-                      <p className="mt-2 text-lg text-black">
-                        {feature.description}
-                      </p>
-                    </div>
-                    <div className="w-2/3">
-                      <Image
-                        className="w-full"
-                        src={feature.image}
-                        alt=""
-                        priority
-                        sizes="(min-width: 1024px) 70rem, (min-width: 640px) 100vw, 90vw"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
+        </div>
       </section>
+
       <Footer />
     </div>
   );
 };
 
-export default RecurringRevenue;
+export default RecurringRevenuePage;

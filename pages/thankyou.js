@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
 import Footer from "../components/Footer";
-import NavbarDup from "../components/NavbarDup";
 
 export default function ThankYou() {
   return (
@@ -10,9 +9,6 @@ export default function ThankYou() {
         <title>Thank You!</title>
       </Head>
       <div>
-        <div style={{ zIndex: "100" }} className="sticky top-0">
-          <NavbarDup />
-        </div>
         <main>
           <section className={`py-16 px-4 sm:px-6 lg:px-8 bg-white`}>
             <div className="max-w-7xl mx-auto text-center">
