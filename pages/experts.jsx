@@ -2,12 +2,10 @@ import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import Footer from '../components/Footer';
-import NavbarDup from '../components/NavbarDup';
 import ProductDemoSectionExperts from '../components/ProductDemoSectionExperts';
 import Image from 'next/image';
 import { CheckIcon } from '@heroicons/react/20/solid';
 import expertsHub from '../assets/images/expertsHub.png';
-
 
 const ExpertsPage = () => {
   return (
@@ -19,10 +17,6 @@ const ExpertsPage = () => {
           content="Kahana is the easiest way to monetize your content and research. Transform knowledge and expertise into subscription revenue. Sign up for free today!"
         />
       </Head>
-
-      <div className="sticky top-0 z-50">
-        <NavbarDup />
-      </div>
 
       {/* Hero section */}
       <section className="py-16 md:py-18">

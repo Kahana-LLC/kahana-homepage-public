@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import Script from 'next/script'; // Import the Script component
 import Footer from '../components/Footer';
-import NavbarDup from '../components/NavbarDup';
 import TeamSection from '../components/TeamSection';
 import AboutCard from '../components/AboutCard';
 
@@ -31,9 +30,6 @@ export default function About() {
         `}
       </Script>
       <div>
-        <div style={{ zIndex: '1' }} className="sticky top-0">
-          <NavbarDup />
-        </div>
         <main>
           <AboutCard />
           <TeamSection />

@@ -3,7 +3,6 @@ import Head from 'next/head';
 // import Image from 'next/image';
 
 import Footer from '../components/Footer';
-import NavbarDup from '../components/NavbarDup';
 
 export default function PrivacyPolicy() {
   return (
@@ -15,9 +14,6 @@ export default function PrivacyPolicy() {
           content="Kahana is the easiest way to turn your knowledge into subscription revenue. Sign up for free today!"
         />
       </Head>
-      <div style={{ zIndex: '2' }} className="sticky top-0">
-        <NavbarDup />
-      </div>
       <div>
         <div className="relative overflow-hidden bg-white py-16">
           <div className="hidden lg:absolute lg:inset-y-0 lg:block lg:h-full lg:w-full lg:[overflow-anchor:none]">
@@ -323,7 +319,7 @@ export default function PrivacyPolicy() {
  <br /> <br />
  The right to restrict processing – You have the right to request that Kahana Group Inc. restrict the processing of your personal data, under certain conditions.
  <br /> <br />
- The right to object to processing – You have the right to object to Kahana Group Inc.’s processing of your personal data, under certain conditions.
+ The right to object to processing – You have the right to object to Kahana Group Inc.'s processing of your personal data, under certain conditions.
  <br /> <br />
  The right to data portability – You have the right to request that Kahana Group Inc. transfer the data that we have collected to another organization, or directly to you, under certain conditions.
  <br /> <br />

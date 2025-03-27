@@ -3,7 +3,6 @@ import Script from "next/script";
 import Footer from "../components/Footer";
 import HeroSection from "../components/HeroSection";
 import CustomerSuccessSection from "../components/CustomerSuccessSection";
-import NavbarDup from "../components/NavbarDup";
 import Pricing from "../components/Pricing";
 import Reviews from "../components/Reviews";
 import ProductDemoSection from "../components/ProductDemoSection";
@@ -47,9 +46,6 @@ export default function Home() {
       />
 
       <div className="relative">
-        <div style={{ zIndex: "100" }} className="sticky top-0">
-          <NavbarDup />
-        </div>
         <main className="scroll-smooth">
           <section
             id="hero"

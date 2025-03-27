@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
 import Footer from '../components/Footer';
-import NavbarDup from '../components/NavbarDup';
 import Image from 'next/image';
 import OnDemandHub from '../assets/images/expertsHub.png';
 import Link from 'next/link';
@@ -147,7 +146,7 @@ function BuyButton({ buttonLabel, emailPlaceholder, stripeLink }) {
   );
 }
 
-export default function AffiliateProgramPage() {
+export default function OrderHubsOnDemand() {
   const [showImage, setShowImage] = useState(false);
   const [activeIndex, setActiveIndex] = useState(null);
 
@@ -158,103 +157,103 @@ export default function AffiliateProgramPage() {
   return (
     <>
       <Head>
-        <title>Hubs On-Demand</title>
+        <title>Order Hubs On Demand - Kahana</title>
         <meta
-          name="description"
+          name="Kahana"
           content="Kahana is the easiest way to monetize your content and research. Transform knowledge and expertise into subscription revenue. Sign up for free today!"
         />
       </Head>
-
-      <NavbarDup />
-      <main>
-        <section className="bg-[#f4f4f4] p-8">
-          <div className="container mx-auto">
-            <div className="text-center">
-              <h1 className="text-4xl font-bold mb-4">Hubs On-Demand</h1>
-              <p className="text-lg mb-8">
-                Transform your knowledge into profitable digital products effortlessly.
-              </p>
-              <Image
-                src={OnDemandHub.src}
-                alt="On-Demand Hub"
-                className="mx-auto"
-                style={{ display: showImage ? 'block' : 'none' }}
-              />
-              <button
-                className="bg-[#038270] text-white px-4 py-2 rounded-md"
-                onClick={() => setShowImage(!showImage)}
-              >
-                {showImage ? 'Hide Image' : 'Show Image'}
-              </button>
-            </div>
-            <div className="mt-8">
-              <h2 className="text-2xl font-bold mb-4">How It Works</h2>
-              {features.map((feature, index) => (
-                <div key={index} className="mb-6">
-                  <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                  <p>{feature.description}</p>
-                </div>
-              ))}
-            </div>
-            <div className="mt-8">
-              <h2 className="text-2xl font-bold mb-4">Frequently Asked Questions</h2>
-              {faqs.map((faq, index) => (
-                <div key={index} className="mb-6">
-                  <button
-                    onClick={() => toggleAccordion(index)}
-                    className="w-full text-left bg-[#038270] text-white px-4 py-2 rounded-md"
-                  >
-                    {faq.question}
-                  </button>
-                  {activeIndex === index && (
-                    <div className="mt-2 p-4 border border-gray-300 rounded-md">
-                      <p>{faq.answer}</p>
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-            <div className="mt-8">
-              <h2 className="text-2xl font-bold mb-4">Order Your Hubs</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <h3 className="text-lg font-semibold mb-2">1 Hub</h3>
-                  <BuyButton
-                    buttonLabel="Order 1 Hub"
-                    emailPlaceholder="Enter your email"
-                    stripeLink="https://buy.stripe.com/7sIbLV6j7eT8e5E4g6"
-                  />
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold mb-2">2 Hubs</h3>
-                  <BuyButton
-                    buttonLabel="Order 2 Hubs"
-                    emailPlaceholder="Enter your email"
-                    stripeLink="https://buy.stripe.com/7sI8ZQ5G7be5a5E4gg"
-                  />
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold mb-2">3 Hubs</h3>
-                  <BuyButton
-                    buttonLabel="Order 3 Hubs"
-                    emailPlaceholder="Enter your email"
-                    stripeLink="https://buy.stripe.com/7sI3fZ6j7d6U9aE4gh"
-                  />
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold mb-2">4 Hubs</h3>
-                  <BuyButton
-                    buttonLabel="Order 4 Hubs"
-                    emailPlaceholder="Enter your email"
-                    stripeLink="https://buy.stripe.com/7sI8ZQ5G7c11d6E4gh"
-                  />
+      <div>
+        <main>
+          <section className="bg-[#f4f4f4] p-8">
+            <div className="container mx-auto">
+              <div className="text-center">
+                <h1 className="text-4xl font-bold mb-4">Hubs On-Demand</h1>
+                <p className="text-lg mb-8">
+                  Transform your knowledge into profitable digital products effortlessly.
+                </p>
+                <Image
+                  src={OnDemandHub.src}
+                  alt="On-Demand Hub"
+                  className="mx-auto"
+                  style={{ display: showImage ? 'block' : 'none' }}
+                />
+                <button
+                  className="bg-[#038270] text-white px-4 py-2 rounded-md"
+                  onClick={() => setShowImage(!showImage)}
+                >
+                  {showImage ? 'Hide Image' : 'Show Image'}
+                </button>
+              </div>
+              <div className="mt-8">
+                <h2 className="text-2xl font-bold mb-4">How It Works</h2>
+                {features.map((feature, index) => (
+                  <div key={index} className="mb-6">
+                    <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
+                    <p>{feature.description}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-8">
+                <h2 className="text-2xl font-bold mb-4">Frequently Asked Questions</h2>
+                {faqs.map((faq, index) => (
+                  <div key={index} className="mb-6">
+                    <button
+                      onClick={() => toggleAccordion(index)}
+                      className="w-full text-left bg-[#038270] text-white px-4 py-2 rounded-md"
+                    >
+                      {faq.question}
+                    </button>
+                    {activeIndex === index && (
+                      <div className="mt-2 p-4 border border-gray-300 rounded-md">
+                        <p>{faq.answer}</p>
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+              <div className="mt-8">
+                <h2 className="text-2xl font-bold mb-4">Order Your Hubs</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <h3 className="text-lg font-semibold mb-2">1 Hub</h3>
+                    <BuyButton
+                      buttonLabel="Order 1 Hub"
+                      emailPlaceholder="Enter your email"
+                      stripeLink="https://buy.stripe.com/7sIbLV6j7eT8e5E4g6"
+                    />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold mb-2">2 Hubs</h3>
+                    <BuyButton
+                      buttonLabel="Order 2 Hubs"
+                      emailPlaceholder="Enter your email"
+                      stripeLink="https://buy.stripe.com/7sI8ZQ5G7be5a5E4gg"
+                    />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold mb-2">3 Hubs</h3>
+                    <BuyButton
+                      buttonLabel="Order 3 Hubs"
+                      emailPlaceholder="Enter your email"
+                      stripeLink="https://buy.stripe.com/7sI3fZ6j7d6U9aE4gh"
+                    />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold mb-2">4 Hubs</h3>
+                    <BuyButton
+                      buttonLabel="Order 4 Hubs"
+                      emailPlaceholder="Enter your email"
+                      stripeLink="https://buy.stripe.com/7sI8ZQ5G7c11d6E4gh"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
-      </main>
-      <Footer />
+          </section>
+        </main>
+        <Footer />
+      </div>
     </>
   );
 }

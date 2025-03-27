@@ -1,170 +1,52 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Head from 'next/head';
-import Link from 'next/link';
 import Footer from '../components/Footer';
-import NavbarDup from '../components/NavbarDup';
 import Image from 'next/image';
+import ResourcesCalltoAction from '../components/ResourcesCalltoAction';
 import DigitalProductsResources from '../components/DigitalProductsResources';
 import GoogleDriveResources from '../components/GoogleDriveResources';
 import NotionResources from '../components/NotionResources';
-import ResourcesCalltoAction from '../components/ResourcesCalltoAction';
 
-const ResourcesPage = () => {
-  const [activeIndex, setActiveIndex] = useState(null);
-
-  const toggleAccordion = (index) => {
-    setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
-  };
-
-  const scrollToSection = (sectionId) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      const titleHeight = 60; // Adjust this value to match the height of your section title
-      const offsetTop = section.offsetTop - titleHeight;
-      window.scrollTo({
-        top: offsetTop,
-        behavior: 'smooth',
-      });
-    }
-  };
-  
-  {/* const faqs = [
-    {
-      question: 'Question 1?',
-      answer: 'Answer 1.',
-    },
-    {
-      question: 'Question 2?',
-      answer: 'Answer 2.',
-    },
-    {
-      question: 'Question 3?',
-      answer: 'Answer 3.',
-    },
-    // ... add more FAQ items as needed
-  ]; */}
-
+const Page = () => {
   return (
-    <div>
+    <div className="bg-gray-100">
       <Head>
-        <title>Best Monetization Resources</title>
+        <title>Kahana Resources</title>
         <meta
           name="Kahana"
           content="Kahana is the easiest way to monetize your content and research. Transform knowledge and expertise into subscription revenue. Sign up for free today!"
         />
       </Head>
-
-      <div className="sticky top-0 z-50">
-        <NavbarDup />
-      </div>
-
-      {/* Header Section */}
-      <section className="bg-gray-100 py-10">
-        <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-3xl font-bold mb-4">
-            Top Resources to Monetize Your Knowledge
-          </h1>
-          <p className="text-gray-600">
-            A collection of actionable resources to help you monetize your best knowledge assets.
+      
+      <main>
+        <div className="max-w-7xl mx-auto p-8">
+          <section
+            className="bg-gradient-to-b from-[#3B4041] to-[#3B675E] text-white p-8 rounded-lg mb-8"
+            style={{
+              paddingTop: '20px',
+              paddingBottom: '20px',
+              paddingLeft: '20px',
+              paddingRight: '20px',
+            }}
+          >
+            <h1 className="text-3xl font-semibold mb-4">
+              Resources
+            </h1>
+          </section>
+          
+          <p className="text-gray-600 mb-6">
+            Explore our comprehensive collection of resources designed to help you succeed in monetizing your digital content.
           </p>
+          
+          <ResourcesCalltoAction />
+          <DigitalProductsResources />
+          <GoogleDriveResources />
+          <NotionResources />
         </div>
-      </section>
-
-      {/* Clickable Tiles Section */}
-      <section className="bg-gray-100 py-10">
-        <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-2xl font-semibold mb-2">What topic would you like to learn more about?</h2>
-          <div className="flex flex-wrap justify-center mt-6 space-y-4 sm:space-y-0 sm:gap-4">
-            <div className="w-full sm:w-1/2 md:w-1/4 p-2">
-              <button onClick={() => scrollToSection('digital-products')} className="block bg-[#3B675E] p-6 rounded-lg shadow-md text-center">
-                <h3 className="text-xl font-semibold text-white mb-1">
-                  Selling knowledge-based digital products in general
-                </h3>
-              </button>
-            </div>
-            <div className="w-full sm:w-1/2 md:w-1/4 p-2">
-              <button onClick={() => scrollToSection('google-drive')} className="block bg-[#3B675E] p-6 rounded-lg shadow-md text-center">
-                <h3 className="text-xl font-semibold text-white mb-1">
-                  Monetizing your knowledge and assets in Google Drive
-                </h3>
-              </button>
-            </div>
-            <div className="w-full sm:w-1/2 md:w-1/4 p-2">
-              <button onClick={() => scrollToSection('notion')} className="block bg-[#3B675E] p-6 rounded-lg shadow-md text-center">
-                <h3 className="text-xl font-semibold text-white mb-1">
-                  Monetizing your knowledge and assets in Notion
-                </h3>
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Call to Action Section */}
-      <ResourcesCalltoAction />
-
-      {/* Digital Products Resources Section */}
-      <div id="digital-products">
-        <DigitalProductsResources />
-      </div>
-
-      {/* Google Drive Resources Section */}
-      <div id="google-drive">
-        <GoogleDriveResources />
-      </div>
-
-      {/* Notion Resources Section */}
-      <div id="notion">
-        <NotionResources />
-      </div>
-
-      {/* FAQ Section */}
-      {/*
-      <section className="bg-gray-100 py-10">
-        <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-2xl font-semibold mb-8">
-            Questions?
-          </h2>
-          <div className="space-y-4">
-            {faqs.map((faq, index) => (
-              <div key={index} className="bg-white border border-transparent rounded-lg mx-2 sm:mx-0">
-                <button
-                  className="w-full flex justify-between items-center p-4 focus:outline-none"
-                  onClick={() => toggleAccordion(index)}
-                >
-                  <span className="text-lg font-medium text-gray-900 text-left flex-1">
-                    {faq.question}
-                  </span>
-                  <svg
-                    className={`${
-                      activeIndex === index ? 'transform rotate-180' : ''
-                    } w-5 h-5 text-gray-500 flex-shrink-0`}
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10.293 15.293a1 1 0 0 1-1.414 0l-5-5a1 1 0 0 1 1.414-1.414L10 12.586l4.293-4.293a1 1 0 1 1 1.414 1.414l-5 5z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                </button>
-                {activeIndex === index && (
-                  <div className="p-4 bg-gray-50">
-                    <p className="text-gray-500">{faq.answer}</p>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section> */}
-
+      </main>
       <Footer />
     </div>
   );
-};
+}
 
-export default ResourcesPage;
+export default Page;

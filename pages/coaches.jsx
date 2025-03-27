@@ -2,7 +2,6 @@ import React from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import Footer from '../components/Footer';
-import NavbarDup from '../components/NavbarDup';
 import ProductDemoSectionCoaches from '../components/ProductDemoSectionCoaches';
 import { CheckIcon } from '@heroicons/react/20/solid';
 import coachesHub from '../assets/images/coachesHub.png';
@@ -10,18 +9,36 @@ import Link from 'next/link';
 
 const CoachesPage = () => {
   return (
-    <div>
+    <div className="bg-gray-100">
       <Head>
-        <title>Kahana for coaches</title>
+        <title>Kahana Coaches</title>
         <meta
           name="Kahana"
           content="Kahana is the easiest way to monetize your content and research. Transform knowledge and expertise into subscription revenue. Sign up for free today!"
         />
       </Head>
-
-      <div className="sticky top-0 z-50">
-        <NavbarDup />
-      </div>
+      
+      <main>
+        <div className="max-w-7xl mx-auto p-8">
+          <section
+            className="bg-gradient-to-b from-[#3B4041] to-[#3B675E] text-white p-8 rounded-lg mb-8"
+            style={{
+              paddingTop: '20px',
+              paddingBottom: '20px',
+              paddingLeft: '20px',
+              paddingRight: '20px',
+            }}
+          >
+            <h1 className="text-3xl font-semibold mb-4">
+              Kahana Coaches
+            </h1>
+          </section>
+          
+          <p className="text-gray-600 mb-6">
+            Looking to maximize your success on Kahana? Our expert coaches are here to help you create, market, and sell your digital products effectively.
+          </p>
+        </div>
+      </main>
 
       {/* Hero section */}
       <section className="py-16 md:py-18">
@@ -173,7 +190,6 @@ const CoachesPage = () => {
           </Link>
         </div>
       </section> 
-
 
       <Footer />
     </div>
