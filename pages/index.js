@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Script from "next/script";
-import Footer from "../components/Footer";
 import HeroSection from "../components/HeroSection";
 import CustomerSuccessSection from "../components/CustomerSuccessSection";
 import Pricing from "../components/Pricing";
@@ -78,7 +77,6 @@ export default function Home() {
             <Pricing />
           </section>
         </main>
-        <Footer />
       </div>
     </>
   );

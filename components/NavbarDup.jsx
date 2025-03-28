@@ -69,12 +69,12 @@ function NavBar() {
             font-size: 1rem;
             font-weight: 500;
             text-decoration: none;
-            transition: color 0.3s ease;
+            transition: color 0.2s ease;
             position: relative;
           }
 
           .nav-link:hover {
-            color: #3B675E;
+            color: var(--kahana-primary);
           }
 
           .dropdown {
@@ -82,45 +82,114 @@ function NavBar() {
             display: inline-block;
           }
 
-          .dropdown-content {
+          .dropdown-overlay {
             display: none;
-            position: absolute;
-            top: 100%;
+            position: fixed;
+            top: 0;
             left: 0;
-            background-color: white;
-            min-width: 200px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            border-radius: 8px;
-            padding: 1rem 0;
-            z-index: 50;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(2px);
+            z-index: 40;
+            pointer-events: none;
           }
 
-          .dropdown:hover .dropdown-content {
+          .dropdown:hover .dropdown-overlay {
             display: block;
           }
 
+          .dropdown-content {
+            display: none;
+            position: absolute;
+            top: calc(100% + 0.5rem);
+            left: -100px;
+            background-color: var(--kahana-ui-surface);
+            min-width: 600px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            border-radius: 12px;
+            padding: 24px;
+            z-index: 50;
+            grid-template-columns: repeat(2, 1fr) 300px;
+            gap: 24px;
+            opacity: 0;
+            transform: translateY(-8px);
+            transition: opacity 0.2s, transform 0.2s;
+          }
+
+          .dropdown:hover .dropdown-content,
+          .dropdown-content:hover {
+            display: grid;
+            opacity: 1;
+            transform: translateY(0);
+          }
+
+          /* Add a small invisible area to prevent menu from closing when moving cursor from About to menu */
+          .dropdown:hover::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            height: 0.5rem;
+          }
+
           .dropdown-section {
-            padding: 0.5rem 1.5rem;
+            padding: 0;
           }
 
           .dropdown-section h3 {
-            font-size: 1rem;
-            font-weight: 600;
-            color: #333;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--kahana-primary);
             margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
           }
 
           .dropdown-link {
             display: block;
-            padding: 0.5rem 0;
-            color: #666;
+            color: var(--kahana-primary-light);
             text-decoration: none;
             transition: color 0.2s ease;
             font-size: 0.875rem;
+            line-height: 1.75;
           }
 
           .dropdown-link:hover {
-            color: #3B675E;
+            color: var(--kahana-primary);
+          }
+
+          .featured-blog {
+            background: linear-gradient(to right, var(--kahana-ui-background), var(--kahana-secondary-light));
+            border-radius: 8px;
+            overflow: hidden;
+          }
+
+          .featured-blog img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+          }
+
+          .featured-blog-content {
+            padding: 16px;
+          }
+
+          .featured-blog-label {
+            font-size: 0.75rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+          }
+
+          .featured-blog-title {
+            font-size: 0.9375rem;
+            font-weight: 500;
+            color: #111;
+            line-height: 1.4;
+            margin-bottom: 8px;
           }
 
           .nav-buttons {
@@ -141,21 +210,21 @@ function NavBar() {
           }
 
           .nav-button.download {
-            color: #333;
+            color: var(--kahana-primary);
             background-color: transparent;
           }
 
           .nav-button.download:hover {
-            color: #3B675E;
+            color: var(--kahana-primary-dark);
           }
 
           .nav-button.get-in-touch {
-            background-color: #3B675E;
+            background-color: var(--kahana-primary);
             color: white;
           }
 
           .nav-button.get-in-touch:hover {
-            background-color: #2A4A3F;
+            background-color: var(--kahana-primary-dark);
           }
 
           .mobile-menu {
@@ -210,21 +279,38 @@ function NavBar() {
             <Link href="/learn" className="nav-link">Learn</Link>
             <div className="dropdown">
               <Link href="/about" className="nav-link">About</Link>
+              <div className="dropdown-overlay"></div>
               <div className="dropdown-content">
                 <div className="dropdown-section">
                   <h3>About</h3>
-                  <Link href="/about/company" className="dropdown-link">The Company</Link>
-                  <Link href="/about/careers" className="dropdown-link">Careers</Link>
-                  <Link href="/about/press" className="dropdown-link">Press</Link>
-                  <Link href="/about/media" className="dropdown-link">Media Coverage</Link>
-                  <Link href="/about/events" className="dropdown-link">Events</Link>
+                  <div className="flex flex-col">
+                    <Link href="/about/company" className="dropdown-link">The Company</Link>
+                    <Link href="/about/careers" className="dropdown-link">Careers</Link>
+                    <Link href="/about/press" className="dropdown-link">Press</Link>
+                    <Link href="/about/media-coverage" className="dropdown-link">Media Coverage</Link>
+                    <Link href="/about/events" className="dropdown-link">Events</Link>
+                  </div>
                 </div>
                 <div className="dropdown-section">
                   <h3>Contact</h3>
-                  <Link href="/contact" className="dropdown-link">Get in Touch</Link>
-                  <Link href="/schedule-a-demo" className="dropdown-link">Schedule a Demo</Link>
-                  <Link href="/quote" className="dropdown-link">Request a Quote</Link>
-                  <Link href="/support" className="dropdown-link">Product Support</Link>
+                  <div className="flex flex-col">
+                    <Link href="/contact" className="dropdown-link">Get in Touch</Link>
+                    <Link href="/schedule-demo" className="dropdown-link">Schedule a Demo</Link>
+                    <Link href="/quote" className="dropdown-link">Request a Quote</Link>
+                    <Link href="/support" className="dropdown-link">Product Support</Link>
+                  </div>
+                </div>
+                <div className="featured-blog">
+                  <img 
+                    src="/featured-blog-image.jpg" 
+                    alt="Featured blog post" 
+                  />
+                  <div className="featured-blog-content">
+                    <div className="featured-blog-label">Featured Blog</div>
+                    <Link href="/blog/technical-debt" className="featured-blog-title">
+                      Tackling Technical Debt and Redefining Application Access
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
