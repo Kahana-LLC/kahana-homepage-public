@@ -1,7 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
 import Script from 'next/script';
-import Footer from '../../components/Footer';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -299,7 +298,7 @@ export default function EnterpriseBrowser() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-[#3B675E] py-16">
+      <section className="bg-kahana-primary py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-6">
             Ready to Transform Your Enterprise Browsing?
@@ -308,14 +307,12 @@ export default function EnterpriseBrowser() {
             Schedule a demo to see how Kahana's Enterprise Browser can enhance security, improve collaboration, and streamline your workflow.
           </p>
           <Link href="/contact">
-            <button className="bg-white text-[#3B675E] px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors">
+            <button className="bg-white text-kahana-primary px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors">
               Schedule Demo
             </button>
           </Link>
         </div>
       </section>
-
-      <Footer />
     </>
   );
 } 

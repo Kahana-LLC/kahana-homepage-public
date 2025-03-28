@@ -1,10 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import whiteKahanaLogo from '../assets/kahana_logo_wide.svg';
+import whiteKahanaLogo from '../assets/kahana_logo_wide_gray.svg';
 
 function NavBar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -16,7 +26,9 @@ function NavBar() {
       <div className="h-16 w-full"></div>
       
       {/* Fixed navbar */}
-      <nav className="fixed top-0 left-0 w-full h-16 bg-white shadow-md z-50">
+      <nav className={`fixed top-0 left-0 w-full h-16 z-50 transition-all duration-300 ${
+        isScrolled ? 'bg-white/70 backdrop-blur-md shadow-md' : 'bg-white'
+      }`}>
         <style jsx>{`
           .font-style {
             font-family: sans-serif;
@@ -103,14 +115,14 @@ function NavBar() {
             display: none;
             position: absolute;
             top: calc(100% + 0.5rem);
-            left: -100px;
+            left: -200px;
             background-color: var(--kahana-ui-surface);
-            min-width: 600px;
+            min-width: 800px;
             box-shadow: 0 2px 15px rgba(0,0,0,0.08);
             border-radius: 12px;
             padding: 24px;
             z-index: 50;
-            grid-template-columns: repeat(2, 1fr) 300px;
+            grid-template-columns: repeat(2, minmax(240px, 1fr)) 280px;
             gap: 24px;
             opacity: 0;
             transform: translateY(-8px);
@@ -153,7 +165,8 @@ function NavBar() {
             text-decoration: none;
             transition: color 0.2s ease;
             font-size: 0.875rem;
-            line-height: 1.75;
+            line-height: 2;
+            white-space: nowrap;
           }
 
           .dropdown-link:hover {
@@ -164,16 +177,21 @@ function NavBar() {
             background: linear-gradient(to right, var(--kahana-ui-background), var(--kahana-secondary-light));
             border-radius: 8px;
             overflow: hidden;
+            height: 100%;
           }
 
           .featured-blog img {
             width: 100%;
             height: 160px;
             object-fit: cover;
+            display: block;
           }
 
           .featured-blog-content {
             padding: 16px;
+            height: calc(100% - 160px);
+            display: flex;
+            flex-direction: column;
           }
 
           .featured-blog-label {
@@ -190,6 +208,13 @@ function NavBar() {
             color: #111;
             line-height: 1.4;
             margin-bottom: 8px;
+            display: block;
+            text-decoration: none;
+            transition: color 0.2s ease;
+          }
+
+          .featured-blog-title:hover {
+            color: var(--kahana-primary);
           }
 
           .nav-buttons {
@@ -221,10 +246,16 @@ function NavBar() {
           .nav-button.get-in-touch {
             background-color: var(--kahana-primary);
             color: white;
+            position: relative;
+            z-index: 1;
+            border: none;
+            transition: all 0.3s ease;
           }
 
           .nav-button.get-in-touch:hover {
             background-color: var(--kahana-primary-dark);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(42, 64, 55, 0.15);
           }
 
           .mobile-menu {
@@ -301,12 +332,15 @@ function NavBar() {
                   </div>
                 </div>
                 <div className="featured-blog">
-                  <img 
-                    src="/featured-blog-image.jpg" 
-                    alt="Featured blog post" 
+                  <Image 
+                    src="/featured-blog.jpg" 
+                    alt="Featured blog post"
+                    width={280}
+                    height={160}
+                    className="w-full h-[160px] object-cover"
                   />
                   <div className="featured-blog-content">
-                    <div className="featured-blog-label">Featured Blog</div>
+                    <div className="featured-blog-label">FEATURED BLOG</div>
                     <Link href="/blog/technical-debt" className="featured-blog-title">
                       Tackling Technical Debt and Redefining Application Access
                     </Link>

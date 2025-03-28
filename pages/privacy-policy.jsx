@@ -2,16 +2,14 @@ import Head from 'next/head';
 /* eslint-disable react/no-unescaped-entities */
 // import Image from 'next/image';
 
-import Footer from '../components/Footer';
-
 export default function PrivacyPolicy() {
   return (
     <>
       <Head>
         <title>Kahana Privacy Policy</title>
         <meta
-          name="Kahana Privacy Policy"
-          content="Kahana is the easiest way to turn your knowledge into subscription revenue. Sign up for free today!"
+          name="description"
+          content="Kahana's privacy policy outlines how we protect and handle your data while using our enterprise browsing platform."
         />
       </Head>
       <div>
@@ -432,7 +430,6 @@ of these rights, please contact us at our email: info@kahana.co
             </div>
           </div>
         </div>
-        <Footer />
       </div>
     </>
   );

@@ -1,6 +1,5 @@
 import React from 'react';
 import Head from 'next/head';
-import Footer from '../components/Footer';
 
 export default function PressPage() {
   const pressReleases = [
@@ -143,8 +142,6 @@ export default function PressPage() {
             </div>
           </div>
         </section>
-
-        <Footer />
       </div>
     </>
   );

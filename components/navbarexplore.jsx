@@ -137,7 +137,7 @@ function NavBarExplore() {
           <div className="menu-links">
             <Link href="https://app.kahana.co" className="mobile-link">Dashboard</Link>
             <Link href="https://app.kahana.co/billing" className="mobile-link">Billing</Link>
-            <Link href="https://blog.kahana.co" className="mobile-link">Blog</Link>
+            <Link href="/blog" className="mobile-link">Blog</Link>
             <Link href="/pricing" className="mobile-link">Pricing</Link>
             <Link href="/terms-and-conditions" className="mobile-link">Terms & Conditions</Link>
             <Link href="/privacy-policy" className="mobile-link">Privacy Policy</Link>

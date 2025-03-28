@@ -29,30 +29,30 @@ module.exports = {
         kahana: {
           // Main brand colors
           primary: {
-            DEFAULT: "#3C584A", // Deep sage green
-            light: "#6B8C7D", // Light sage
-            dark: "#2A4037", // Dark sage
+            DEFAULT: "#2B2640", // Deep twilight navy
+            light: "#474267", // Soft twilight purple
+            dark: "#1A1628", // Dark twilight
           },
           // Secondary colors
           secondary: {
-            DEFAULT: "#D2B8A4", // Warm sand
-            light: "#E6D5C7", // Light sand
-            dark: "#BFA08C", // Dark sand
+            DEFAULT: "#B84A5B", // Rich burgundy
+            light: "#E17B86", // Soft coral
+            dark: "#8E2941", // Deep burgundy
           },
           // Accent colors
           accent: {
-            sage: "#94A89A", // Muted sage
-            mint: "#A8C2B3", // Soft mint
-            sand: "#DCC1A7", // Desert sand
-            terra: "#C68D6E", // Terracotta
+            coral: "#F1785D", // Warm coral
+            burgundy: "#732F44", // Deep burgundy
+            purple: "#635C7E", // Muted purple
+            navy: "#2D2B4E", // Deep navy
           },
           // UI colors
           ui: {
-            background: "#FAF7F4", // Light sand background
+            background: "#F8F6FF", // Soft twilight background
             surface: "#FFFFFF", // White surface
-            border: "#E6D5C7", // Light sand border
-            hover: "#F0E6DD", // Hover state
-            sunlight: "#FFF8E7", // Soft golden sunlight
+            border: "#E8E6F2", // Soft border
+            hover: "#FFF1F3", // Warm hover
+            highlight: "#FFE9EC", // Soft coral highlight
           },
         },
       },
