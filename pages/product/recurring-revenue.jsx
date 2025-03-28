@@ -1,67 +1,59 @@
 import React from 'react';
 import Head from 'next/head';
-import Footer from '../../components/Footer';
-import Image from 'next/image';
 import Link from 'next/link';
+import SharedCTA from '../../components/SharedCTA';
 
-const RecurringRevenuePage = () => {
+export default function RecurringRevenue() {
   return (
-    <div>
+    <>
       <Head>
-        <title>Recurring Revenue with Kahana</title>
+        <title>Recurring Revenue | Kahana</title>
         <meta
-          name="Kahana"
-          content="Kahana is the easiest way to monetize your content and research. Transform knowledge and expertise into subscription revenue. Sign up for free today!"
+          name="description"
+          content="Generate recurring revenue with Kahana's enterprise browsing solutions."
         />
       </Head>
 
-      {/* Hero section */}
-      <section className="py-16 md:py-18">
-        <div className="container mx-auto px-4 md:px-8 text-center">
-          <h1 className="text-5xl font-bold mb-4 md:px-12 lg:px-24">
-            Generate Recurring Revenue from Your Knowledge
-          </h1>
-          <p className="text-lg mb-8 md:px-12 lg:px-24 px-4">
-            Transform your expertise into a sustainable income stream with Kahana&apos;s subscription-based platform.
-          </p>
-          <Link
-            href="https://app.kahana.co/signup"
-            className="bg-[#3B675E] text-white py-2 px-6 rounded-md text-center inline-block mx-auto max-w-md"
-          >
-            Get Started Free
-          </Link>
-        </div>
-      </section>
+      <div className="bg-white">
+        <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h1 className="text-4xl font-bold text-gray-900">Recurring Revenue Solutions</h1>
+            <p className="mt-4 text-xl text-gray-600">
+              Transform your enterprise browsing into a sustainable revenue stream.
+            </p>
+          </div>
 
-      {/* Features section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-4">Subscription Management</h3>
+          <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <div className="bg-gray-50 p-6 rounded-lg">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Subscription Management</h3>
               <p className="text-gray-600">
-                Easily manage recurring subscriptions and access levels for your content.
+                Easily manage and track enterprise browsing subscriptions.
               </p>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-4">Automated Billing</h3>
+
+            <div className="bg-gray-50 p-6 rounded-lg">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Usage Analytics</h3>
               <p className="text-gray-600">
-                Let Kahana handle the billing process and subscription renewals automatically.
+                Monitor and optimize browsing usage across your organization.
               </p>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-4">Revenue Analytics</h3>
+
+            <div className="bg-gray-50 p-6 rounded-lg">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Flexible Billing</h3>
               <p className="text-gray-600">
-                Track your revenue streams and optimize your pricing strategy with detailed analytics.
+                Customize billing options to match your organization's needs.
               </p>
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
-      <Footer />
-    </div>
+      <SharedCTA
+        title="Ready to Generate Recurring Revenue?"
+        description="Contact us to learn how Kahana can help your organization."
+        buttonText="Contact Sales"
+        buttonLink="/contact"
+      />
+    </>
   );
-};
-
-export default RecurringRevenuePage;
+}

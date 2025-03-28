@@ -1,17 +1,16 @@
 import React from 'react';
 import Head from 'next/head';
-import Footer from '../components/Footer';
 import Image from 'next/image';
 import Link from 'next/link';
 
 const RequestInvoicePage = () => {
   return (
-    <div>
+    <>
       <Head>
-        <title>Request an Invoice - Kahana</title>
+        <title>Request an Invoice | Kahana</title>
         <meta
-          name="Kahana"
-          content="Kahana is the easiest way to monetize your content and research. Transform knowledge and expertise into subscription revenue. Sign up for free today!"
+          name="description"
+          content="Request an invoice for your Kahana enterprise browsing subscription."
         />
       </Head>
 
@@ -78,9 +77,7 @@ const RequestInvoicePage = () => {
           </div>
         </div>
       </section>
-
-      <Footer />
-    </div>
+    </>
   );
 };
 

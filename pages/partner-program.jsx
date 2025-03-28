@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Script from 'next/script';
-import Footer from '../components/Footer';
 import Image from 'next/image';
 import AffiliateBanner from '../assets/images/AffiliateBanner.webp';
 import Link from 'next/link';
+import SharedCTA from '../components/SharedCTA';
 
 const features = [
   {
@@ -112,10 +112,10 @@ export default function PartnerProgram() {
   return (
     <>
       <Head>
-        <title>Kahana Partner Program</title>
+        <title>Partner Program | Kahana</title>
         <meta
-          name="Kahana"
-          content="Join the Kahana Partner Program and earn revenue by helping others transform their knowledge and expertise into subscription revenue. Sign up today!"
+          name="description"
+          content="Join Kahana's Partner Program and help organizations transform their enterprise browsing experience."
         />
       </Head>
       <Script
@@ -154,11 +154,16 @@ export default function PartnerProgram() {
             <p className="text-gray-700" style={{ marginBottom: '20px' }}>
               Partner with Kahana and earn a 30% commission 💰
             </p>
-            <a href="https://app.getreditus.com/marketplace/kahana" className="block mt-8" target="_blank" rel="noopener noreferrer">
-              <button className="px-6 py-3 bg-[#3B675E] text-white rounded-md shadow-md hover:bg-[#046856]">
-                Become a Partner
-              </button>
-            </a>
+            <div className="mt-8">
+              <SharedCTA 
+                title="Join Our Partner Program"
+                description="Start earning commissions by helping others transform their knowledge."
+                buttonText="Join Our Partner Program"
+                buttonLink="https://app.getreditus.com/marketplace/kahana"
+                buttonVariant="secondary"
+                className="!py-4 !bg-transparent"
+              />
+            </div>
           </div>
         </section>
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-E9F4E9">
@@ -210,7 +215,6 @@ export default function PartnerProgram() {
             </div>
           </div>
         </section>
-        <Footer />
       </div>
     </>
   );

@@ -1,87 +1,68 @@
 import React from 'react';
 import Head from 'next/head';
-import Footer from '../components/Footer';
-import Image from 'next/image';
 import Link from 'next/link';
 
-const RequestDemoPage = () => {
+export default function ScheduleDemo() {
   return (
-    <div>
+    <>
       <Head>
-        <title>Request a Demo - Kahana</title>
+        <title>Schedule a Demo | Kahana</title>
         <meta
-          name="Kahana"
-          content="Kahana is the easiest way to monetize your content and research. Transform knowledge and expertise into subscription revenue. Sign up for free today!"
+          name="description"
+          content="Schedule a personalized demo of Kahana's enterprise browsing solutions."
         />
       </Head>
 
-      {/* Hero section */}
-      <section className="py-16 md:py-18">
-        <div className="container mx-auto px-4 md:px-8 text-center">
-          <h1 className="text-5xl font-bold mb-4 md:px-12 lg:px-24">
-            Request a Demo
-          </h1>
-          <p className="text-lg mb-8 md:px-12 lg:px-24 px-4">
-            See how Kahana can help you monetize your content and build a thriving community.
-          </p>
-        </div>
-      </section>
+      <div className="bg-white">
+        <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h1 className="text-4xl font-bold text-gray-900">Schedule a Demo</h1>
+            <p className="mt-4 text-xl text-gray-600">
+              See how Kahana can transform your enterprise browsing experience.
+            </p>
+          </div>
 
-      {/* Contact form section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto">
-          <div className="bg-white p-8 rounded-lg shadow-md">
-            <h2 className="text-2xl font-bold mb-6">Schedule a demo</h2>
-            <form className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  name="name"
-                  id="name"
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#3B675E] focus:ring-[#3B675E]"
-                />
+          <div className="mt-12">
+            <div className="bg-gray-50 p-8 rounded-lg">
+              <div className="grid gap-8 md:grid-cols-2">
+                <div>
+                  <h2 className="text-2xl font-semibold text-gray-900 mb-4">What You'll See</h2>
+                  <ul className="space-y-4">
+                    <li className="flex items-center">
+                      <span className="text-kahana-primary mr-2">•</span>
+                      <span className="text-gray-600">Enterprise-grade security features</span>
+                    </li>
+                    <li className="flex items-center">
+                      <span className="text-kahana-primary mr-2">•</span>
+                      <span className="text-gray-600">Centralized management tools</span>
+                    </li>
+                    <li className="flex items-center">
+                      <span className="text-kahana-primary mr-2">•</span>
+                      <span className="text-gray-600">Compliance monitoring capabilities</span>
+                    </li>
+                    <li className="flex items-center">
+                      <span className="text-kahana-primary mr-2">•</span>
+                      <span className="text-gray-600">Integration options</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h2 className="text-2xl font-semibold text-gray-900 mb-4">Contact Sales</h2>
+                  <p className="text-gray-600 mb-6">
+                    Our team will reach out to schedule a personalized demo at your convenience.
+                  </p>
+                  <Link href="/contact">
+                    <button className="bg-kahana-primary text-white px-6 py-2 rounded-md hover:bg-kahana-primary-dark transition-colors">
+                      Contact Sales
+                    </button>
+                  </Link>
+                </div>
               </div>
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#3B675E] focus:ring-[#3B675E]"
-                />
-              </div>
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700">
-                  Message
-                </label>
-                <textarea
-                  name="message"
-                  id="message"
-                  rows={4}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#3B675E] focus:ring-[#3B675E]"
-                />
-              </div>
-              <div>
-                <button
-                  type="submit"
-                  className="w-full bg-[#3B675E] text-white py-2 px-4 rounded-md hover:bg-[#024324] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#3B675E]"
-                >
-                  Schedule Demo
-                </button>
-              </div>
-            </form>
+            </div>
           </div>
         </div>
-      </section>
-
-      <Footer />
-    </div>
+      </div>
+    </>
   );
-};
-
-export default RequestDemoPage;
+}

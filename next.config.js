@@ -13,6 +13,7 @@ const nextConfig = {
     domains: [
       "images.unsplash.com", // Domain for Unsplash images
       "firebasestorage.googleapis.com", // Domain for Firebase Storage images
+      "images.pexels.com", // Domain for Pexels images
     ],
   },
 };

@@ -1,67 +1,59 @@
 import React from 'react';
 import Head from 'next/head';
-import Footer from '../components/Footer';
-import Image from 'next/image';
 import Link from 'next/link';
 
-const ConsultantsPage = () => {
+export default function Consultants() {
   return (
-    <div>
+    <>
       <Head>
-        <title>Kahana for Consultants</title>
+        <title>Consultants | Kahana</title>
         <meta
-          name="Kahana"
-          content="Kahana is the easiest way to monetize your content and research. Transform knowledge and expertise into subscription revenue. Sign up for free today!"
+          name="description"
+          content="Join Kahana as a consultant and share your expertise with our community."
         />
       </Head>
 
-      {/* Hero section */}
-      <section className="py-16 md:py-18">
-        <div className="container mx-auto px-4 md:px-8 text-center">
-          <h1 className="text-5xl font-bold mb-4 md:px-12 lg:px-24">
-            Turn Your Consulting Knowledge Into Recurring Revenue
-          </h1>
-          <p className="text-lg mb-8 md:px-12 lg:px-24 px-4">
-            Package your expertise into digital products that clients can access anytime, anywhere.
-          </p>
-          <Link
-            href="https://app.kahana.co/signup"
-            className="bg-[#3B675E] text-white py-2 px-6 rounded-md text-center inline-block mx-auto max-w-md"
-          >
-            Get Started Free
-          </Link>
-        </div>
-      </section>
+      <div className="bg-white">
+        <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h1 className="text-4xl font-bold text-gray-900">Why Partner with Kahana?</h1>
+            <p className="mt-4 text-xl text-gray-600">
+              Join our network of consultants and help organizations transform their enterprise browsing experience.
+            </p>
+          </div>
 
-      {/* Features section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-4">Create Digital Products</h3>
-              <p className="text-gray-600">
-                Package your consulting frameworks, methodologies, and best practices into easily accessible digital products.
-              </p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-4">Automated Delivery</h3>
-              <p className="text-gray-600">
-                Let Kahana handle the delivery and access management of your digital products automatically.
-              </p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-4">Recurring Revenue</h3>
-              <p className="text-gray-600">
-                Generate passive income from your consulting knowledge through subscription-based access.
-              </p>
+          <div className="mt-12">
+            <div className="bg-gray-50 p-8 rounded-lg">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-6">Benefits of Joining</h2>
+              <ul className="space-y-4">
+                <li className="flex items-center">
+                  <span className="text-kahana-primary mr-2">•</span>
+                  <span className="text-gray-600">Expand your consulting business with enterprise-grade solutions</span>
+                </li>
+                <li className="flex items-center">
+                  <span className="text-kahana-primary mr-2">•</span>
+                  <span className="text-gray-600">Connect with organizations seeking browsing expertise</span>
+                </li>
+                <li className="flex items-center">
+                  <span className="text-kahana-primary mr-2">•</span>
+                  <span className="text-gray-600">Access enterprise-grade tools and resources</span>
+                </li>
+                <li className="flex items-center">
+                  <span className="text-kahana-primary mr-2">•</span>
+                  <span className="text-gray-600">Receive comprehensive training and support</span>
+                </li>
+              </ul>
+              <div className="mt-8 text-center">
+                <Link href="/contact">
+                  <button className="bg-kahana-primary text-white px-6 py-2 rounded-md hover:bg-kahana-primary-dark transition-colors">
+                    Apply Now
+                  </button>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
-      </section>
-
-      <Footer />
-    </div>
+      </div>
+    </>
   );
-};
-
-export default ConsultantsPage;
+}
