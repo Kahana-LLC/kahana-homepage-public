@@ -117,6 +117,7 @@ export default function Footer() {
                 <li><Link href="/customers" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">Customers</Link></li>
                 <li><Link href="/blog" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">Blog</Link></li>
                 <li><Link href="/resources" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">Resources</Link></li>
+                <li><Link href="/docs" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">Docs</Link></li>
               </ul>
             </div>
 

@@ -101,10 +101,8 @@ function NavBar() {
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(2px);
+            background-color: rgba(0, 0, 0, 0.05);
             z-index: 40;
-            pointer-events: none;
           }
 
           .dropdown:hover .dropdown-overlay {
@@ -114,36 +112,21 @@ function NavBar() {
           .dropdown-content {
             display: none;
             position: absolute;
-            top: calc(100% + 0.5rem);
-            left: -200px;
-            background-color: var(--kahana-ui-surface);
-            min-width: 800px;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            top: calc(100% + 0.75rem);
+            left: -180px;
+            background-color: white;
+            width: 520px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.06);
             border-radius: 12px;
-            padding: 24px;
+            padding: 28px;
             z-index: 50;
-            grid-template-columns: repeat(2, minmax(240px, 1fr)) 280px;
-            gap: 24px;
-            opacity: 0;
-            transform: translateY(-8px);
-            transition: opacity 0.2s, transform 0.2s;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
           }
 
           .dropdown:hover .dropdown-content,
           .dropdown-content:hover {
             display: grid;
-            opacity: 1;
-            transform: translateY(0);
-          }
-
-          /* Add a small invisible area to prevent menu from closing when moving cursor from About to menu */
-          .dropdown:hover::after {
-            content: '';
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            height: 0.5rem;
           }
 
           .dropdown-section {
@@ -152,65 +135,80 @@ function NavBar() {
 
           .dropdown-section h3 {
             font-size: 0.75rem;
-            font-weight: 500;
-            color: var(--kahana-primary);
-            margin-bottom: 0.75rem;
+            font-weight: 600;
+            color: #666;
+            margin-bottom: 16px;
             text-transform: uppercase;
             letter-spacing: 0.05em;
           }
 
           .dropdown-link {
             display: block;
-            color: var(--kahana-primary-light);
+            color: #2c2c2c;
             text-decoration: none;
-            transition: color 0.2s ease;
-            font-size: 0.875rem;
-            line-height: 2;
-            white-space: nowrap;
+            font-size: 0.9375rem;
+            line-height: 1;
+            padding: 12px 16px;
+            margin: 0 -16px;
+            border-radius: 8px;
+            transition: all 0.15s ease;
           }
 
           .dropdown-link:hover {
             color: var(--kahana-primary);
+            background-color: #f8fafc;
+          }
+
+          .dropdown-link + .dropdown-link {
+            margin-top: 4px;
+          }
+
+          .dropdown-section:first-child {
+            position: relative;
+          }
+
+          .dropdown-section:first-child::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -20px;
+            width: 1px;
+            height: 100%;
+            background: #f0f0f0;
           }
 
           .featured-blog {
-            background: linear-gradient(to right, var(--kahana-ui-background), var(--kahana-secondary-light));
+            background: #f5f7f9;
             border-radius: 8px;
             overflow: hidden;
-            height: 100%;
           }
 
           .featured-blog img {
             width: 100%;
             height: 160px;
             object-fit: cover;
-            display: block;
           }
 
           .featured-blog-content {
-            padding: 16px;
-            height: calc(100% - 160px);
-            display: flex;
-            flex-direction: column;
+            padding: 20px;
           }
 
           .featured-blog-label {
             font-size: 0.75rem;
+            font-weight: 600;
             color: #666;
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            margin-bottom: 8px;
+            margin-bottom: 0.75rem;
           }
 
           .featured-blog-title {
-            font-size: 0.9375rem;
+            font-size: 1rem;
             font-weight: 500;
             color: #111;
-            line-height: 1.4;
-            margin-bottom: 8px;
-            display: block;
+            line-height: 1.5;
             text-decoration: none;
-            transition: color 0.2s ease;
+            display: block;
           }
 
           .featured-blog-title:hover {
@@ -313,36 +311,39 @@ function NavBar() {
               <div className="dropdown-overlay"></div>
               <div className="dropdown-content">
                 <div className="dropdown-section">
-                  <h3>About</h3>
+                  <h3>About Kahana</h3>
                   <div className="flex flex-col">
-                    <Link href="/about/company" className="dropdown-link">The Company</Link>
-                    <Link href="/about/careers" className="dropdown-link">Careers</Link>
-                    <Link href="/about/press" className="dropdown-link">Press</Link>
-                    <Link href="/about/media-coverage" className="dropdown-link">Media Coverage</Link>
-                    <Link href="/about/events" className="dropdown-link">Events</Link>
+                    <Link href="/about/company" className="dropdown-link">
+                      The Company
+                    </Link>
+                    <Link href="/about/careers" className="dropdown-link">
+                      Join Our Team
+                    </Link>
+                    <Link href="/about/press" className="dropdown-link">
+                      Press Room
+                    </Link>
+                    <Link href="/about/media-coverage" className="dropdown-link">
+                      Media Coverage
+                    </Link>
+                    <Link href="/about/events" className="dropdown-link">
+                      Events & Webinars
+                    </Link>
                   </div>
                 </div>
                 <div className="dropdown-section">
-                  <h3>Contact</h3>
+                  <h3>Get Started</h3>
                   <div className="flex flex-col">
-                    <Link href="/contact" className="dropdown-link">Get in Touch</Link>
-                    <Link href="/schedule-demo" className="dropdown-link">Schedule a Demo</Link>
-                    <Link href="/quote" className="dropdown-link">Request a Quote</Link>
-                    <Link href="/support" className="dropdown-link">Product Support</Link>
-                  </div>
-                </div>
-                <div className="featured-blog">
-                  <Image 
-                    src="/featured-blog.jpg" 
-                    alt="Featured blog post"
-                    width={280}
-                    height={160}
-                    className="w-full h-[160px] object-cover"
-                  />
-                  <div className="featured-blog-content">
-                    <div className="featured-blog-label">FEATURED BLOG</div>
-                    <Link href="/blog/technical-debt" className="featured-blog-title">
-                      Tackling Technical Debt and Redefining Application Access
+                    <Link href="/contact" className="dropdown-link">
+                      Contact Sales
+                    </Link>
+                    <Link href="/schedule-demo" className="dropdown-link">
+                      Watch Demo
+                    </Link>
+                    <Link href="/quote" className="dropdown-link">
+                      Get Quote
+                    </Link>
+                    <Link href="/support" className="dropdown-link">
+                      Support Center
                     </Link>
                   </div>
                 </div>
