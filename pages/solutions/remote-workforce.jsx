@@ -227,10 +227,10 @@ export default function RemoteWorkforce() {
                           </svg>
                           <span className="text-sm font-medium">{detail.technical}</span>
                         </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+              </div>
+            ))}
+          </div>
+        </div>
               </div>
             ))}
           </div>
@@ -244,11 +244,11 @@ export default function RemoteWorkforce() {
             Ready to Secure Your Remote Workforce?
           </h2>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Download Oasis Browser today and start your journey to secure remote workforce management.
+            Schedule a demo to see how Oasis can transform your remote workforce security.
           </p>
-          <Link href="/download">
-            <button className="bg-white text-kahana-primary px-8 py-4 rounded-md font-semibold hover:bg-gray-50 transition-all duration-300 transform hover:scale-105">
-              Download Now
+          <Link href="/schedule-demo">
+            <button className="bg-white text-kahana-primary px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors">
+              Schedule Demo
             </button>
           </Link>
         </div>

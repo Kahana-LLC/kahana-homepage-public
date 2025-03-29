@@ -103,10 +103,12 @@ function NavBar() {
             bottom: 0;
             background-color: rgba(0, 0, 0, 0.05);
             z-index: 40;
+            pointer-events: none;
           }
 
           .dropdown:hover .dropdown-overlay {
             display: block;
+            pointer-events: auto;
           }
 
           .dropdown-content {
@@ -127,6 +129,33 @@ function NavBar() {
           .dropdown:hover .dropdown-content,
           .dropdown-content:hover {
             display: grid;
+          }
+
+          /* Create a container that includes both the link and dropdown */
+          .dropdown-container {
+            position: relative;
+            display: inline-block;
+          }
+
+          /* Ensure the dropdown stays visible when hovering over the container */
+          .dropdown-container:hover .dropdown-content {
+            display: grid;
+          }
+
+          .dropdown-container:hover .dropdown-overlay {
+            display: block;
+            pointer-events: auto;
+          }
+
+          /* Add a small invisible area to prevent the dropdown from disappearing when moving cursor to it */
+          .dropdown::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            height: 20px;
+            background: transparent;
           }
 
           .dropdown-section {
@@ -234,16 +263,16 @@ function NavBar() {
           }
 
           .nav-button.download {
-            color: var(--kahana-primary);
+            color: #66C2BE;
             background-color: transparent;
           }
 
           .nav-button.download:hover {
-            color: var(--kahana-primary-dark);
+            color: #55B3AF;
           }
 
           .nav-button.get-in-touch {
-            background-color: var(--kahana-primary);
+            background-color: #66C2BE;
             color: white;
             position: relative;
             z-index: 1;
@@ -252,9 +281,9 @@ function NavBar() {
           }
 
           .nav-button.get-in-touch:hover {
-            background-color: var(--kahana-primary-dark);
+            background-color: #55B3AF;
             transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(42, 64, 55, 0.15);
+            box-shadow: 0 4px 12px rgba(102, 194, 190, 0.25);
           }
 
           .mobile-menu {
@@ -303,10 +332,91 @@ function NavBar() {
 
           {/* Navigation Links */}
           <div className="nav-links">
-            <Link href="/products" className="nav-link">Product</Link>
-            <Link href="/solutions" className="nav-link">Solutions</Link>
+            <div className="dropdown-container">
+              <div className="dropdown">
+                <Link href="/products" className="nav-link">Products</Link>
+                <div className="dropdown-overlay"></div>
+                <div className="dropdown-content" style={{ width: '280px', gridTemplateColumns: '1fr' }}>
+                  <div className="dropdown-section">
+                    <h3 className="text-[0.75rem] font-semibold text-gray-600 mb-4 uppercase tracking-wider">Our Products</h3>
+                    <div className="flex flex-col space-y-4">
+                      <Link href="/products/enterprise-browser" className="dropdown-link">
+                        Enterprise Browser
+                      </Link>
+                      <Link href="/products/web-application" className="dropdown-link">
+                        Web Application
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="dropdown-container">
+              <div className="dropdown">
+                <Link href="/solutions" className="nav-link">Solutions</Link>
+                <div className="dropdown-overlay"></div>
+                <div className="dropdown-content">
+                  <div className="dropdown-section">
+                    <h3 className="text-[0.75rem] font-semibold text-gray-600 mb-4 uppercase tracking-wider">Use Cases</h3>
+                    <div className="flex flex-col space-y-4">
+                      <Link href="/solutions/saas-and-web-apps" className="dropdown-link">
+                        SaaS & Web Apps
+                      </Link>
+                      <Link href="/solutions/remote-workforce" className="dropdown-link">
+                        Remote Workforce Security
+                      </Link>
+                      <Link href="/solutions/merger-integration" className="dropdown-link">
+                        Merger Integration
+                      </Link>
+                      <Link href="/solutions/external-workforce" className="dropdown-link">
+                        External Workforce Access
+                      </Link>
+                      <Link href="/solutions/vdi-reduction" className="dropdown-link">
+                        VDI Reduction
+                      </Link>
+                      <Link href="/solutions/zero-trust-security" className="dropdown-link">
+                        Zero Trust Security
+                      </Link>
+                      <Link href="/solutions/privileged-user-management" className="dropdown-link">
+                        Privileged User Management
+                      </Link>
+                      <Link href="/solutions/secure-browsing" className="dropdown-link">
+                        Secure Web Browsing
+                      </Link>
+                      <Link href="/solutions/workplace-enablement" className="dropdown-link">
+                        Workplace Enablement
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
             <Link href="/partners" className="nav-link">Partners</Link>
-            <Link href="/learn" className="nav-link">Learn</Link>
+            <div className="dropdown-container">
+              <div className="dropdown">
+                <Link href="/learn" className="nav-link">Learn</Link>
+                <div className="dropdown-overlay"></div>
+                <div className="dropdown-content" style={{ width: '280px', gridTemplateColumns: '1fr' }}>
+                  <div className="dropdown-section">
+                    <h3 className="text-[0.75rem] font-semibold text-gray-600 mb-4 uppercase tracking-wider">Resources</h3>
+                    <div className="flex flex-col space-y-4">
+                      <Link href="/customers" className="dropdown-link">
+                        Customers
+                      </Link>
+                      <Link href="/blog" className="dropdown-link">
+                        Blog
+                      </Link>
+                      <Link href="/resources" className="dropdown-link">
+                        Resources
+                      </Link>
+                      <Link href="/docs" className="dropdown-link">
+                        Docs
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div className="dropdown">
               <Link href="/about" className="nav-link">About</Link>
               <div className="dropdown-overlay"></div>
@@ -349,8 +459,8 @@ function NavBar() {
           {/* Buttons and Hamburger Menu */}
           <div className="flex items-center gap-4">
             <div className="nav-buttons hidden md:flex">
-              <Link href="/download">
-                <button className="nav-button download">Download</button>
+              <Link href="/schedule-demo">
+                <button className="nav-button download">Demo</button>
               </Link>
               <Link href="/contact">
                 <button className="nav-button get-in-touch">Get in touch</button>
@@ -417,7 +527,7 @@ function NavBar() {
               <Link href="/get-a-quote" className="mobile-link">Request a Quote</Link>
               <Link href="/support" className="mobile-link">Product Support</Link>
             </div>
-            <Link href="/download" className="mobile-link">Download</Link>
+            <Link href="/schedule-demo" className="mobile-link">Demo</Link>
           </div>
         </div>
       </nav>
