@@ -1,7 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import SharedCTA from '../components/SharedCTA';
 
 export default function Support() {
   return (
@@ -10,7 +9,7 @@ export default function Support() {
         <title>Support | Kahana</title>
         <meta
           name="description"
-          content="Get support for Kahana's enterprise browsing solutions."
+          content="Access documentation and resources for Kahana's enterprise browsing solutions."
         />
       </Head>
 
@@ -19,23 +18,11 @@ export default function Support() {
           <div className="text-center">
             <h1 className="text-4xl font-bold text-gray-900">Support</h1>
             <p className="mt-4 text-xl text-gray-600">
-              We're here to help you get the most out of your Kahana solutions.
+              Access our comprehensive documentation and resources to help you get the most out of your Kahana solutions.
             </p>
           </div>
 
           <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            <div className="bg-gray-50 p-6 rounded-lg">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Technical Support</h3>
-              <p className="text-gray-600 mb-6">
-                Get help with technical issues and product-related questions.
-              </p>
-              <Link href="/contact">
-                <button className="bg-kahana-primary text-white px-6 py-2 rounded-md hover:bg-kahana-primary-dark transition-colors">
-                  Contact Support
-                </button>
-              </Link>
-            </div>
-
             <div className="bg-gray-50 p-6 rounded-lg">
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Documentation</h3>
               <p className="text-gray-600 mb-6">
@@ -59,16 +46,21 @@ export default function Support() {
                 </button>
               </Link>
             </div>
+
+            <div className="bg-gray-50 p-6 rounded-lg">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Resources</h3>
+              <p className="text-gray-600 mb-6">
+                Access additional resources, guides, and best practices.
+              </p>
+              <Link href="/resources">
+                <button className="bg-kahana-primary text-white px-6 py-2 rounded-md hover:bg-kahana-primary-dark transition-colors">
+                  View Resources
+                </button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
-
-      <SharedCTA
-        title="Need Additional Help?"
-        description="Our support team is ready to assist you."
-        buttonText="Contact Support"
-        buttonLink="/contact"
-      />
     </>
   );
 } 

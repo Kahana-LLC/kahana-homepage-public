@@ -1,11 +1,10 @@
 import Head from "next/head";
 import Script from "next/script";
 import HeroSection from "../components/HeroSection";
-import CustomerSuccessSection from "../components/CustomerSuccessSection";
-import Pricing from "../components/Pricing";
-import Reviews from "../components/Reviews";
-import ProductDemoSection from "../components/ProductDemoSection";
-import Faq from "../components/Faq";
+import FeaturesShowcase from "../components/FeaturesShowcase";
+import HowItWorks from "../components/HowItWorks";
+import TestimonialsCarousel from "../components/TestimonialsCarousel";
+import ProductSection from "../components/ProductSection";
 
 export default function Home() {
   return (
@@ -53,28 +52,28 @@ export default function Home() {
             <HeroSection />
           </section>
           <section
-            id="customer-success"
+            id="features"
             className="min-h-screen flex items-center justify-center p-4 md:p-8 bg-white"
           >
-            <CustomerSuccessSection />
+            <FeaturesShowcase />
           </section>
           <section
-            id="product-demo"
-            className="min-h-screen flex items-center justify-center p-4 md:p-8 bg-gray-100"
+            id="how-it-works"
+            className="min-h-screen flex items-center justify-center p-4 md:p-8 bg-gray-50"
           >
-            <ProductDemoSection />
+            <HowItWorks />
           </section>
           <section
-            id="reviews"
+            id="testimonials"
             className="min-h-screen flex items-center justify-center p-4 md:p-8 bg-white"
           >
-            <Reviews />
+            <TestimonialsCarousel />
           </section>
           <section
-            id="pricing"
+            id="products"
             className="min-h-screen flex items-center justify-center p-4 md:p-8 bg-gray-100"
           >
-            <Pricing />
+            <ProductSection />
           </section>
         </main>
       </div>
