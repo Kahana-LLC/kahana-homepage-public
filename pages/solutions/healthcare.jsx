@@ -217,11 +217,11 @@ export default function Healthcare() {
             Ready to Secure Your Healthcare Operations?
           </h2>
           <p className="text-xl text-white mb-8 max-w-2xl mx-auto">
-            Schedule a demo to see how Kahana can help you protect patient data, ensure HIPAA compliance, and enable efficient clinical workflows.
+            Download Oasis Browser today and start your journey to secure healthcare operations.
           </p>
-          <Link href="/contact">
-            <button className="bg-white text-kahana-primary px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors">
-              Schedule Demo
+          <Link href="/download">
+            <button className="bg-white text-kahana-primary px-8 py-4 rounded-md font-semibold hover:bg-gray-50 transition-all duration-300 transform hover:scale-105">
+              Download Now
             </button>
           </Link>
         </div>

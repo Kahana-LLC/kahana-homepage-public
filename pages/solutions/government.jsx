@@ -217,11 +217,11 @@ export default function Government() {
             Ready to Secure Your Government Operations?
           </h2>
           <p className="text-xl text-white mb-8 max-w-2xl mx-auto">
-            Schedule a demo to see how Kahana can help you protect sensitive data, ensure FedRAMP compliance, and enable efficient government operations.
+            Download Oasis Browser today and start your journey to secure government operations.
           </p>
-          <Link href="/contact">
-            <button className="bg-white text-kahana-primary px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors">
-              Schedule Demo
+          <Link href="/download">
+            <button className="bg-white text-kahana-primary px-8 py-4 rounded-md font-semibold hover:bg-gray-50 transition-all duration-300 transform hover:scale-105">
+              Download Now
             </button>
           </Link>
         </div>

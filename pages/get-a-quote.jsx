@@ -3,14 +3,14 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const RequestInvoicePage = () => {
+const GetQuotePage = () => {
   return (
     <>
       <Head>
-        <title>Request an Invoice | Kahana</title>
+        <title>Get a Quote | Kahana</title>
         <meta
           name="description"
-          content="Request an invoice for your Kahana enterprise browsing subscription."
+          content="Get a quote for your Kahana enterprise browsing solution."
         />
       </Head>
 
@@ -18,10 +18,10 @@ const RequestInvoicePage = () => {
       <section className="py-16 md:py-18">
         <div className="container mx-auto px-4 md:px-8 text-center">
           <h1 className="text-5xl font-bold mb-4 md:px-12 lg:px-24">
-            Request an Invoice
+            Get a Quote
           </h1>
           <p className="text-lg mb-8 md:px-12 lg:px-24 px-4">
-            Need an invoice for your Kahana subscription? Fill out the form below and we&apos;ll get back to you shortly.
+            Interested in Kahana for your organization? Fill out the form below and we&apos;ll get back to you with a custom quote.
           </p>
         </div>
       </section>
@@ -81,4 +81,4 @@ const RequestInvoicePage = () => {
   );
 };
 
-export default RequestInvoicePage;
+export default GetQuotePage;
