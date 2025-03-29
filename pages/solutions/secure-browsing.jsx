@@ -227,10 +227,10 @@ export default function SafeBrowsing() {
                           </svg>
                           <span className="text-sm font-medium">{detail.technical}</span>
                         </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+              </div>
+            ))}
+          </div>
+        </div>
               </div>
             ))}
           </div>
@@ -244,11 +244,11 @@ export default function SafeBrowsing() {
             Ready to Enable Secure Browsing?
           </h2>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Download Oasis Browser today and start your journey to comprehensive web security.
+            Schedule a demo to see how Oasis can transform your secure browsing experience.
           </p>
-          <Link href="/download">
+          <Link href="/schedule-demo">
             <button className="bg-white text-kahana-primary px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors">
-              Download Now
+              Schedule Demo
             </button>
           </Link>
         </div>

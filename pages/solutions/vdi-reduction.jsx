@@ -227,10 +227,10 @@ export default function VDI() {
                           </svg>
                           <span className="text-sm font-medium">{detail.technical}</span>
                         </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+              </div>
+            ))}
+          </div>
+        </div>
               </div>
             ))}
           </div>
@@ -244,15 +244,15 @@ export default function VDI() {
             Ready to Move Beyond VDI?
           </h2>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Download Oasis Browser today and start your journey to a VDI-free environment.
+            Schedule a demo to see how Oasis can transform your enterprise.
           </p>
-          <Link href="/download">
+          <Link href="/schedule-demo">
             <button className="bg-white text-kahana-primary px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors">
-              Download Now
+              Schedule Demo
             </button>
           </Link>
         </div>
       </section>
     </>
   );
-}
+} 

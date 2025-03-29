@@ -9,38 +9,26 @@ export default function HeroSection() {
           <div className="mx-auto max-w-7xl">
             <div className="lg:grid lg:grid-cols-12 lg:gap-8 lg:items-center">
               <div className="lg:col-span-7 px-4 sm:px-6 sm:text-center md:mx-auto md:max-w-2xl lg:flex lg:items-center lg:text-left relative">
-                <div className="invisible md:visible absolute top-15 -left-7 w-40 h-40 bg-kahana-primary-light rounded-full filter blur-3xl opacity-50 animate-blob"></div>
+                <div className="invisible md:visible absolute top-15 -left-7 w-40 h-40 bg-yellow-300/50 rounded-full filter blur-3xl opacity-50 animate-blob"></div>
                 <div>
-                  <h1 className="py-4 bg-clip-text text-transparent bg-gradient-to-r from-kahana-primary-dark to-kahana-secondary text-4xl font-bold tracking-tight sm:text-5xl md:text-5xl text-center sm:text-left">
-                    A New Oasis for Knowledge
+                  <h1 className="py-4 bg-clip-text text-transparent bg-gradient-to-r from-[#8CB7D0] to-[#A5DAD8] text-4xl font-bold tracking-tight sm:text-5xl md:text-5xl text-center sm:text-left">
+                    Bringing Ideas to Life
                   </h1>
                   <p className="mt-3 text-base text-kahana-primary sm:mt-5 sm:text-xl lg:text-lg xl:text-xl text-center sm:text-left">
-                    With Kahana, anyone can build unique &quot;hubs&quot; of digital products, resources, files, and links and share them directly with hungry knowledge seekers. Collaborate within hubs to go even faster.
+                    We believe the world is better off when your best ideas become reality. We create tools that help you get closer to your ideas and bring them into the world.
                   </p>
-                  <div className="mt-8 flex flex-col items-center space-y-4 md:flex-row md:space-x-4 md:space-y-0">
+                  <div className="mt-8 flex justify-center sm:justify-start">
                     <Link
-                      href="/explore"  
-                      className="rounded-md border border-transparent bg-kahana-primary py-3 px-6 text-lg font-medium text-white shadow-sm hover:bg-kahana-primary-dark focus:outline-none focus:ring-2 focus:ring-kahana-primary focus:ring-offset-2 text-center"
+                      href="/schedule-a-demo"  
+                      className="rounded-md border border-transparent bg-[#66C2BE] py-3 px-8 text-lg font-medium text-white shadow-sm hover:bg-[#55B3AF] focus:outline-none focus:ring-2 focus:ring-[#66C2BE] focus:ring-offset-2 text-center"
                     >
-                      Start exploring
-                    </Link>
-                    <Link
-                      href="https://app.kahana.co/signup"
-                      className="rounded-md border border-kahana-primary bg-white py-3 px-6 text-lg font-medium text-kahana-primary shadow-sm hover:bg-kahana-ui-hover focus:outline-none focus:ring-2 focus:ring-kahana-primary focus:ring-offset-2 text-center"
-                    >
-                      Build your hub
-                    </Link>
-                    <Link
-                      href="/request-a-demo"  
-                      className="rounded-md border border-transparent bg-kahana-accent-burgundy py-3 px-6 text-lg font-medium text-white shadow-sm hover:bg-kahana-accent-purple focus:outline-none focus:ring-2 focus:ring-kahana-accent-burgundy focus:ring-offset-2 text-center"
-                    >
-                      Get a demo
+                      Schedule a demo
                     </Link>
                   </div>
                 </div>
               </div>
               <div className="lg:col-span-5 hidden lg:block">
-                <div className="relative w-[450px] h-[450px] rounded-full overflow-hidden bg-gradient-to-b from-kahana-secondary-light/20 to-kahana-primary-light/20 mx-auto border border-kahana-secondary-light/30">
+                <div className="relative w-[450px] h-[450px] rounded-full overflow-hidden bg-gradient-to-b from-[#E3DFF1]/20 to-[#8CB7D0]/20 mx-auto">
                   {/* Oasis Animation */}
                   <div className="absolute inset-0">
                     {/* Sand Dunes - adjusted for circular container */}
@@ -48,67 +36,97 @@ export default function HeroSection() {
                       <svg viewBox="0 0 450 200" className="w-full h-full preserve-3d" preserveAspectRatio="none">
                         <path
                           d="M0 100 Q112.5 30 225 100 T450 100 L450 200 L0 200 Z"
-                          className="fill-kahana-secondary-light/30 animate-wave-slow"
+                          className="fill-[#A5DAD8]/30 animate-wave-slow"
                         />
                         <path
                           d="M0 120 Q112.5 50 225 120 T450 120 L450 200 L0 200 Z"
-                          className="fill-kahana-secondary/40 animate-wave-medium"
+                          className="fill-[#8CB7D0]/40 animate-wave-medium"
                         />
                         <path
                           d="M0 140 Q112.5 70 225 140 T450 140 L450 200 L0 200 Z"
-                          className="fill-kahana-secondary-dark/50 animate-wave-fast"
+                          className="fill-[#C2E1D9]/50 animate-wave-fast"
                         />
                       </svg>
                     </div>
                     
-                    {/* Palm Tree - adjusted position */}
-                    <div className="absolute bottom-0 right-24 transform-gpu">
-                      <div className="relative">
-                        {/* Trunk */}
-                        <div className="w-4 h-28 bg-kahana-accent-burgundy/80 rounded-full transform -skew-x-6 origin-bottom"></div>
-                        {/* Leaves */}
-                        <div className="absolute -top-8 -left-8 animate-sway-slow">
-                          <svg width="80" height="80" viewBox="0 0 100 100" className="transform rotate-45">
-                            <path
-                              d="M50 0 C70 30 70 70 50 100 C30 70 30 30 50 0"
-                              className="fill-kahana-accent-coral/60"
-                            />
-                            <path
-                              d="M0 50 C30 70 70 70 100 50 C70 30 30 30 0 50"
-                              className="fill-kahana-accent-coral/60"
-                            />
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Second Palm Tree */}
-                    <div className="absolute bottom-0 left-24 transform-gpu scale-75">
-                      <div className="relative">
-                        {/* Trunk */}
-                        <div className="w-3 h-24 bg-kahana-accent-burgundy/60 rounded-full transform skew-x-6 origin-bottom"></div>
-                        {/* Leaves */}
-                        <div className="absolute -top-8 -left-8 animate-sway-slow-reverse">
-                          <svg width="80" height="80" viewBox="0 0 100 100" className="transform -rotate-15">
-                            <path
-                              d="M50 0 C70 30 70 70 50 100 C30 70 30 30 50 0"
-                              className="fill-kahana-accent-coral/50"
-                            />
-                            <path
-                              d="M0 50 C30 70 70 70 100 50 C70 30 30 30 0 50"
-                              className="fill-kahana-accent-coral/50"
-                            />
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Sun - adjusted size and position */}
+                    {/* Sun - adjusted to yellow */}
                     <div className="absolute top-12 left-1/2 transform -translate-x-1/2">
-                      <div className="w-20 h-20 rounded-full bg-kahana-accent-coral/80 animate-pulse">
-                        <div className="absolute inset-0 rounded-full bg-kahana-accent-coral/30 animate-ripple"></div>
-                        <div className="absolute inset-0 rounded-full bg-kahana-accent-coral/20 animate-ripple-delayed"></div>
+                      <div className="w-20 h-20 rounded-full bg-yellow-300/80 animate-pulse">
+                        <div className="absolute inset-0 rounded-full bg-yellow-200/30 animate-ripple"></div>
+                        <div className="absolute inset-0 rounded-full bg-yellow-100/20 animate-ripple-delayed"></div>
                       </div>
+                    </div>
+
+                    {/* Innovation Symbols */}
+                    {/* Rockets */}
+                    <div className="absolute bottom-[45%] left-1/4 animate-rise">
+                      <svg width="24" height="24" viewBox="0 0 24 24" className="fill-[#66C2BE]/70">
+                        <path d="M12,2.5c-0.5,0-1,0.2-1.4,0.6L8,6v2l4-3l4,3V6l-2.6-2.9C13,2.7,12.5,2.5,12,2.5z"/>
+                        <path d="M8,8v6c0,1.1,0.9,2,2,2h4c1.1,0,2-0.9,2-2V8H8z"/>
+                        <path className="animate-flame" fill="#FFA500" d="M10,16l2,3l2-3H10z"/>
+                        <path className="animate-flame-inner" fill="#FF4500" d="M11,16l1,2l1-2H11z"/>
+                      </svg>
+                    </div>
+
+                    <div className="absolute bottom-[45%] left-1/2 animate-rise-delayed">
+                      <svg width="24" height="24" viewBox="0 0 24 24" className="fill-[#66C2BE]/70">
+                        <path d="M12,2.5c-0.5,0-1,0.2-1.4,0.6L8,6v2l4-3l4,3V6l-2.6-2.9C13,2.7,12.5,2.5,12,2.5z"/>
+                        <path d="M8,8v6c0,1.1,0.9,2,2,2h4c1.1,0,2-0.9,2-2V8H8z"/>
+                        <path className="animate-flame" fill="#FFA500" d="M10,16l2,3l2-3H10z"/>
+                        <path className="animate-flame-inner" fill="#FF4500" d="M11,16l1,2l1-2H11z"/>
+                      </svg>
+                    </div>
+
+                    <div className="absolute bottom-[45%] left-3/4 animate-rise-delayed-2">
+                      <svg width="24" height="24" viewBox="0 0 24 24" className="fill-[#66C2BE]/70">
+                        <path d="M12,2.5c-0.5,0-1,0.2-1.4,0.6L8,6v2l4-3l4,3V6l-2.6-2.9C13,2.7,12.5,2.5,12,2.5z"/>
+                        <path d="M8,8v6c0,1.1,0.9,2,2,2h4c1.1,0,2-0.9,2-2V8H8z"/>
+                        <path className="animate-flame" fill="#FFA500" d="M10,16l2,3l2-3H10z"/>
+                        <path className="animate-flame-inner" fill="#FF4500" d="M11,16l1,2l1-2H11z"/>
+                      </svg>
+                    </div>
+
+                    <div className="absolute bottom-[35%] left-[40%] animate-rise-fast">
+                      <svg width="24" height="24" viewBox="0 0 24 24" className="fill-[#66C2BE]/70">
+                        <path d="M12,2.5c-0.5,0-1,0.2-1.4,0.6L8,6v2l4-3l4,3V6l-2.6-2.9C13,2.7,12.5,2.5,12,2.5z"/>
+                        <path d="M8,8v6c0,1.1,0.9,2,2,2h4c1.1,0,2-0.9,2-2V8H8z"/>
+                        <path className="animate-flame" fill="#FFA500" d="M10,16l2,3l2-3H10z"/>
+                        <path className="animate-flame-inner" fill="#FF4500" d="M11,16l1,2l1-2H11z"/>
+                      </svg>
+                    </div>
+
+                    <div className="absolute bottom-[55%] left-[60%] animate-rise-fast-delayed">
+                      <svg width="24" height="24" viewBox="0 0 24 24" className="fill-[#66C2BE]/70">
+                        <path d="M12,2.5c-0.5,0-1,0.2-1.4,0.6L8,6v2l4-3l4,3V6l-2.6-2.9C13,2.7,12.5,2.5,12,2.5z"/>
+                        <path d="M8,8v6c0,1.1,0.9,2,2,2h4c1.1,0,2-0.9,2-2V8H8z"/>
+                        <path className="animate-flame" fill="#FFA500" d="M10,16l2,3l2-3H10z"/>
+                        <path className="animate-flame-inner" fill="#FF4500" d="M11,16l1,2l1-2H11z"/>
+                      </svg>
+                    </div>
+
+                    {/* Lightbulbs */}
+                    <div className="absolute bottom-[45%] left-1/3 animate-rise-more-delayed">
+                      <svg width="24" height="24" viewBox="0 0 24 24" className="fill-[#8CB7D0]/70">
+                        <path d="M12 2A7 7 0 0 0 5 9C5 11.38 6.19 13.47 8 14.74V17A1 1 0 0 0 9 18H15A1 1 0 0 0 16 17V14.74C17.81 13.47 19 11.38 19 9A7 7 0 0 0 12 2M9 21V20H15V21A1 1 0 0 1 14 22H10A1 1 0 0 1 9 21Z"/>
+                      </svg>
+                    </div>
+
+                    <div className="absolute bottom-[45%] left-2/3 animate-rise-more-delayed-2">
+                      <svg width="24" height="24" viewBox="0 0 24 24" className="fill-[#8CB7D0]/70">
+                        <path d="M12 2A7 7 0 0 0 5 9C5 11.38 6.19 13.47 8 14.74V17A1 1 0 0 0 9 18H15A1 1 0 0 0 16 17V14.74C17.81 13.47 19 11.38 19 9A7 7 0 0 0 12 2M9 21V20H15V21A1 1 0 0 1 14 22H10A1 1 0 0 1 9 21Z"/>
+                      </svg>
+                    </div>
+
+                    <div className="absolute bottom-[35%] left-[45%] animate-rise-fast">
+                      <svg width="24" height="24" viewBox="0 0 24 24" className="fill-[#8CB7D0]/70">
+                        <path d="M12 2A7 7 0 0 0 5 9C5 11.38 6.19 13.47 8 14.74V17A1 1 0 0 0 9 18H15A1 1 0 0 0 16 17V14.74C17.81 13.47 19 11.38 19 9A7 7 0 0 0 12 2M9 21V20H15V21A1 1 0 0 1 14 22H10A1 1 0 0 1 9 21Z"/>
+                      </svg>
+                    </div>
+
+                    <div className="absolute bottom-[55%] left-[55%] animate-rise-fast-delayed">
+                      <svg width="24" height="24" viewBox="0 0 24 24" className="fill-[#8CB7D0]/70">
+                        <path d="M12 2A7 7 0 0 0 5 9C5 11.38 6.19 13.47 8 14.74V17A1 1 0 0 0 9 18H15A1 1 0 0 0 16 17V14.74C17.81 13.47 19 11.38 19 9A7 7 0 0 0 12 2M9 21V20H15V21A1 1 0 0 1 14 22H10A1 1 0 0 1 9 21Z"/>
+                      </svg>
                     </div>
 
                     {/* Birds - adjusted for circular container */}
@@ -116,7 +134,7 @@ export default function HeroSection() {
                       <svg width="30" height="15" viewBox="0 0 40 20">
                         <path
                           d="M0 10 Q10 0 20 10 Q30 20 40 10"
-                          className="stroke-kahana-primary-dark/40 fill-none"
+                          className="stroke-[#8CB7D0]/40 fill-none"
                         />
                       </svg>
                     </div>
@@ -124,7 +142,7 @@ export default function HeroSection() {
                       <svg width="20" height="10" viewBox="0 0 40 20">
                         <path
                           d="M0 10 Q10 0 20 10 Q30 20 40 10"
-                          className="stroke-kahana-primary-dark/30 fill-none"
+                          className="stroke-[#8CB7D0]/30 fill-none"
                         />
                       </svg>
                     </div>
@@ -174,6 +192,78 @@ export default function HeroSection() {
           0% { transform: scale(1); opacity: 0.6; }
           100% { transform: scale(2); opacity: 0; }
         }
+        @keyframes rise {
+          0% { transform: translateY(0) scale(0.8); opacity: 0; }
+          10% { transform: translateY(-20%) scale(0.9); opacity: 0.3; }
+          30% { transform: translateY(-40%) scale(1); opacity: 0.7; }
+          70% { transform: translateY(-80%) scale(1.1); opacity: 0.7; }
+          90% { transform: translateY(-90%) scale(1.2); opacity: 0.3; }
+          100% { transform: translateY(-100%) scale(1.2); opacity: 0; }
+        }
+        @keyframes rise-delayed {
+          0% { transform: translateY(0) scale(0.8); opacity: 0; }
+          10% { transform: translateY(-20%) scale(0.9); opacity: 0.3; }
+          30% { transform: translateY(-40%) scale(1); opacity: 0.7; }
+          70% { transform: translateY(-80%) scale(1.1); opacity: 0.7; }
+          90% { transform: translateY(-90%) scale(1.2); opacity: 0.3; }
+          100% { transform: translateY(-100%) scale(1.2); opacity: 0; }
+        }
+        @keyframes rise-delayed-2 {
+          0% { transform: translateY(0) scale(0.8); opacity: 0; }
+          10% { transform: translateY(-20%) scale(0.9); opacity: 0.3; }
+          30% { transform: translateY(-40%) scale(1); opacity: 0.7; }
+          70% { transform: translateY(-80%) scale(1.1); opacity: 0.7; }
+          90% { transform: translateY(-90%) scale(1.2); opacity: 0.3; }
+          100% { transform: translateY(-100%) scale(1.2); opacity: 0; }
+        }
+        @keyframes rise-more-delayed {
+          0% { transform: translateY(0) scale(0.8); opacity: 0; }
+          10% { transform: translateY(-20%) scale(0.9); opacity: 0.3; }
+          30% { transform: translateY(-40%) scale(1); opacity: 0.7; }
+          70% { transform: translateY(-80%) scale(1.1); opacity: 0.7; }
+          90% { transform: translateY(-90%) scale(1.2); opacity: 0.3; }
+          100% { transform: translateY(-100%) scale(1.2); opacity: 0; }
+        }
+        @keyframes rise-more-delayed-2 {
+          0% { transform: translateY(0) scale(0.8); opacity: 0; }
+          10% { transform: translateY(-20%) scale(0.9); opacity: 0.3; }
+          30% { transform: translateY(-40%) scale(1); opacity: 0.7; }
+          70% { transform: translateY(-80%) scale(1.1); opacity: 0.7; }
+          90% { transform: translateY(-90%) scale(1.2); opacity: 0.3; }
+          100% { transform: translateY(-100%) scale(1.2); opacity: 0; }
+        }
+        @keyframes flame {
+          0%, 100% { transform: scaleY(1); opacity: 0.8; }
+          50% { transform: scaleY(1.2); opacity: 1; }
+        }
+        @keyframes flame-inner {
+          0%, 100% { transform: scaleY(1); opacity: 0.6; }
+          50% { transform: scaleY(1.3); opacity: 0.8; }
+        }
+        @keyframes rise-fast {
+          0% { transform: translateY(0) scale(0.8); opacity: 0; }
+          10% { transform: translateY(-20%) scale(0.9); opacity: 0.5; }
+          30% { transform: translateY(-40%) scale(1); opacity: 0.8; }
+          70% { transform: translateY(-80%) scale(1.1); opacity: 0.8; }
+          90% { transform: translateY(-90%) scale(1.2); opacity: 0.3; }
+          100% { transform: translateY(-100%) scale(1.2); opacity: 0; }
+        }
+        @keyframes rise-fast-delayed {
+          0% { transform: translateY(0) scale(0.8); opacity: 0; }
+          10% { transform: translateY(-20%) scale(0.9); opacity: 0.5; }
+          30% { transform: translateY(-40%) scale(1); opacity: 0.8; }
+          70% { transform: translateY(-80%) scale(1.1); opacity: 0.8; }
+          90% { transform: translateY(-90%) scale(1.2); opacity: 0.3; }
+          100% { transform: translateY(-100%) scale(1.2); opacity: 0; }
+        }
+        @keyframes rise-fast-delayed-2 {
+          0% { transform: translateY(0) scale(0.8); opacity: 0; }
+          10% { transform: translateY(-20%) scale(0.9); opacity: 0.5; }
+          30% { transform: translateY(-40%) scale(1); opacity: 0.8; }
+          70% { transform: translateY(-80%) scale(1.1); opacity: 0.8; }
+          90% { transform: translateY(-90%) scale(1.2); opacity: 0.3; }
+          100% { transform: translateY(-100%) scale(1.2); opacity: 0; }
+        }
         .animate-wave-slow {
           animation: wave-slow 8s ease-in-out infinite;
         }
@@ -201,8 +291,40 @@ export default function HeroSection() {
         .animate-ripple-delayed {
           animation: ripple-delayed 3s ease-out infinite 1.5s;
         }
+        .animate-rise {
+          animation: rise 12s ease-in-out infinite;
+        }
+        .animate-rise-delayed {
+          animation: rise-delayed 12s ease-in-out infinite 2.4s;
+        }
+        .animate-rise-delayed-2 {
+          animation: rise-delayed-2 12s ease-in-out infinite 4.8s;
+        }
+        .animate-rise-more-delayed {
+          animation: rise-more-delayed 12s ease-in-out infinite 1.2s;
+        }
+        .animate-rise-more-delayed-2 {
+          animation: rise-more-delayed-2 12s ease-in-out infinite 3.6s;
+        }
+        .animate-flame {
+          transform-origin: center bottom;
+          animation: flame 0.8s ease-in-out infinite;
+        }
+        .animate-flame-inner {
+          transform-origin: center bottom;
+          animation: flame-inner 0.6s ease-in-out infinite;
+        }
         .preserve-3d {
           transform-style: preserve-3d;
+        }
+        .animate-rise-fast {
+          animation: rise-fast 8s ease-in-out infinite;
+        }
+        .animate-rise-fast-delayed {
+          animation: rise-fast-delayed 8s ease-in-out infinite 1.5s;
+        }
+        .animate-rise-fast-delayed-2 {
+          animation: rise-fast-delayed-2 8s ease-in-out infinite 3s;
         }
       `}</style>
     </div>

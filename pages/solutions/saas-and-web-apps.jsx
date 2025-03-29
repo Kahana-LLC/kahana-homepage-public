@@ -241,7 +241,7 @@ export default function SaasAndWebApps() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
             Security Made Simple
-          </h2>
+            </h2>
           <div className="grid grid-cols-1 gap-12">
             {conceptCards.map((card, index) => (
               <div key={index} className="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-2xl overflow-hidden border border-indigo-100">
@@ -278,7 +278,7 @@ export default function SaasAndWebApps() {
                           </svg>
                           <span className="text-sm font-medium">{detail.technical}</span>
                         </div>
-                      </div>
+          </div>
                     ))}
                   </div>
                 </div>
@@ -327,11 +327,11 @@ export default function SaasAndWebApps() {
             Ready to Take Control?
           </h2>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Download Oasis Browser today and start your journey to secure SaaS control.
+            Schedule a demo to see how Oasis can transform your SaaS and web app security.
           </p>
-          <Link href="/download">
-            <button className="bg-white text-kahana-primary px-8 py-4 rounded-md font-semibold hover:bg-gray-50 transition-all duration-300 transform hover:scale-105">
-              Download Now
+          <Link href="/schedule-demo">
+            <button className="bg-white text-kahana-primary px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors">
+              Schedule Demo
             </button>
           </Link>
         </div>

@@ -216,12 +216,12 @@ export default function Healthcare() {
           <h2 className="text-3xl font-bold text-white mb-6">
             Ready to Secure Your Healthcare Operations?
           </h2>
-          <p className="text-xl text-white mb-8 max-w-2xl mx-auto">
-            Download Oasis Browser today and start your journey to secure healthcare operations.
+          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+            Schedule a demo to see how Oasis can transform your healthcare organization.
           </p>
-          <Link href="/download">
-            <button className="bg-white text-kahana-primary px-8 py-4 rounded-md font-semibold hover:bg-gray-50 transition-all duration-300 transform hover:scale-105">
-              Download Now
+          <Link href="/schedule-demo">
+            <button className="bg-white text-kahana-primary px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors">
+              Schedule Demo
             </button>
           </Link>
         </div>
