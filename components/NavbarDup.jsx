@@ -147,11 +147,12 @@ function NavBar() {
             color: #2c2c2c;
             text-decoration: none;
             font-size: 0.9375rem;
-            line-height: 1;
-            padding: 12px 16px;
+            line-height: 1.5;
+            padding: 8px 16px;
             margin: 0 -16px;
             border-radius: 8px;
             transition: all 0.15s ease;
+            font-family: "Roboto", sans-serif;
           }
 
           .dropdown-link:hover {
@@ -160,7 +161,7 @@ function NavBar() {
           }
 
           .dropdown-link + .dropdown-link {
-            margin-top: 4px;
+            margin-top: 1rem;
           }
 
           .dropdown-section:first-child {
@@ -311,35 +312,29 @@ function NavBar() {
               <div className="dropdown-overlay"></div>
               <div className="dropdown-content">
                 <div className="dropdown-section">
-                  <h3>About Kahana</h3>
-                  <div className="flex flex-col">
-                    <Link href="/about/company" className="dropdown-link">
-                      The Company
+                  <h3 className="text-[0.75rem] font-semibold text-gray-600 mb-4 uppercase tracking-wider">About Kahana</h3>
+                  <div className="flex flex-col space-y-4">
+                    <Link href="/about" className="dropdown-link">
+                      About
                     </Link>
-                    <Link href="/about/careers" className="dropdown-link">
-                      Join Our Team
+                    <Link href="/press" className="dropdown-link">
+                      Press
                     </Link>
-                    <Link href="/about/press" className="dropdown-link">
-                      Press Room
-                    </Link>
-                    <Link href="/about/media-coverage" className="dropdown-link">
-                      Media Coverage
-                    </Link>
-                    <Link href="/about/events" className="dropdown-link">
+                    <Link href="/events" className="dropdown-link">
                       Events & Webinars
                     </Link>
                   </div>
                 </div>
                 <div className="dropdown-section">
-                  <h3>Get Started</h3>
-                  <div className="flex flex-col">
-                    <Link href="/contact" className="dropdown-link">
+                  <h3 className="text-[0.75rem] font-semibold text-gray-600 mb-4 uppercase tracking-wider">Get Started</h3>
+                  <div className="flex flex-col space-y-4">
+                    <Link href="/sales" className="dropdown-link">
                       Contact Sales
                     </Link>
-                    <Link href="/schedule-demo" className="dropdown-link">
-                      Watch Demo
+                    <Link href="/schedule-a-demo" className="dropdown-link">
+                      Schedule a Demo
                     </Link>
-                    <Link href="/quote" className="dropdown-link">
+                    <Link href="/get-a-quote" className="dropdown-link">
                       Get Quote
                     </Link>
                     <Link href="/support" className="dropdown-link">
@@ -412,16 +407,14 @@ function NavBar() {
             <Link href="/learn" className="mobile-link">Learn</Link>
             <Link href="/about" className="mobile-link">About</Link>
             <div className="mobile-section">
-              <Link href="/about/company" className="mobile-link">The Company</Link>
-              <Link href="/about/careers" className="mobile-link">Careers</Link>
-              <Link href="/about/press" className="mobile-link">Press</Link>
-              <Link href="/about/media" className="mobile-link">Media Coverage</Link>
-              <Link href="/about/events" className="mobile-link">Events</Link>
+              <Link href="/about" className="mobile-link">About</Link>
+              <Link href="/press" className="mobile-link">Press</Link>
+              <Link href="/events" className="mobile-link">Events</Link>
             </div>
             <div className="mobile-section">
-              <Link href="/contact" className="mobile-link">Get in Touch</Link>
+              <Link href="/sales" className="mobile-link">Get in Touch</Link>
               <Link href="/schedule-a-demo" className="mobile-link">Schedule a Demo</Link>
-              <Link href="/quote" className="mobile-link">Request a Quote</Link>
+              <Link href="/get-a-quote" className="mobile-link">Request a Quote</Link>
               <Link href="/support" className="mobile-link">Product Support</Link>
             </div>
             <Link href="/download" className="mobile-link">Download</Link>

@@ -82,17 +82,15 @@ export default function Footer() {
               </button>
               <h3 className="text-kahana-accent-purple font-semibold mb-6 text-lg hidden md:block">Use Cases</h3>
               <ul className={`space-y-4 ${openSection === 'useCases' || !isMobile ? 'block' : 'hidden'}`}>
-                <li><Link href="/solutions/saas-and-web-apps" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">SaaS and Web Apps</Link></li>
-                <li><Link href="/solutions/byod" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">BYOD Workforce</Link></li>
-                <li><Link href="/solutions/ma" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">M&A Onboarding</Link></li>
-                <li><Link href="/solutions/contractors" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">3rd Party Contractors</Link></li>
-                <li><Link href="/solutions/vdi" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">VDI Reduction</Link></li>
-                <li><Link href="/solutions/zero-trust" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">Zero Trust</Link></li>
-                <li><Link href="/solutions/pam" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">Privileged Access Management</Link></li>
-                <li><Link href="/solutions/safe-browsing" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">Safe Browsing</Link></li>
-                <li><Link href="/solutions/say-yes-at-work" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">Say Yes at work</Link></li>
-                <li><Link href="/solutions/healthcare" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">Healthcare</Link></li>
-                <li><Link href="/solutions/government" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">Government</Link></li>
+                <li><Link href="/solutions/saas-and-web-apps" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">SaaS & Web Apps</Link></li>
+                <li><Link href="/solutions/remote-workforce" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">Remote Workforce Security</Link></li>
+                <li><Link href="/solutions/merger-integration" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">Merger Integration</Link></li>
+                <li><Link href="/solutions/external-workforce" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">External Workforce Access</Link></li>
+                <li><Link href="/solutions/vdi-reduction" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">VDI Reduction</Link></li>
+                <li><Link href="/solutions/zero-trust-security" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">Zero Trust Security</Link></li>
+                <li><Link href="/solutions/privileged-user-management" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">Privileged User Management</Link></li>
+                <li><Link href="/solutions/secure-browsing" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">Secure Web Browsing</Link></li>
+                <li><Link href="/solutions/workplace-enablement" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">Workplace Enablement</Link></li>
               </ul>
             </div>
 

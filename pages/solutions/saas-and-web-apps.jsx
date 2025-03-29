@@ -1,97 +1,106 @@
 import React from 'react';
 import Head from 'next/head';
 import Script from 'next/script';
-import Image from 'next/image';
 import Link from 'next/link';
 
-const benefits = [
+const conceptCards = [
   {
-    title: 'Enhanced Security',
-    description: 'Protect your SaaS applications with enterprise-grade security features, including SSO, MFA, and granular access controls.',
-    icon: '🔒'
-  },
-  {
-    title: 'Improved User Experience',
-    description: 'Provide a seamless, unified experience for your users across all web applications with a single, secure browser.',
-    icon: '✨'
-  },
-  {
-    title: 'Cost Reduction',
-    description: 'Reduce VDI costs and simplify your infrastructure by centralizing application access in a secure browser.',
-    icon: '💰'
-  },
-  {
-    title: 'Compliance & Audit',
-    description: 'Maintain detailed audit logs and ensure compliance with industry regulations like SOC 2, HIPAA, and GDPR.',
-    icon: '📋'
-  }
-];
-
-const features = [
-  {
-    title: 'Single Sign-On (SSO)',
-    description: 'Integrate with your existing identity provider for seamless authentication across all applications.',
+    title: "Your Digital Vault",
+    analogy: "Just like a bank vault protects your valuables with multiple security layers",
+    description: "Oasis Browser creates a secure environment for your SaaS apps",
     details: [
-      'SAML 2.0 support',
-      'OAuth 2.0 integration',
-      'Custom authentication flows'
+      {
+        title: "Multi-Layer Security",
+        explanation: "Like a vault's combination lock, time delay, and reinforced walls",
+        technical: "End-to-end encryption, access controls, and threat prevention"
+      },
+      {
+        title: "Controlled Access",
+        explanation: "Similar to bank employees needing specific credentials for different areas",
+        technical: "Role-based permissions and granular access policies"
+      }
     ]
   },
   {
-    title: 'Access Control',
-    description: 'Granular control over who can access which applications and features.',
+    title: "Your Digital Traffic Control",
+    analogy: "Like an air traffic control system monitoring and directing every plane",
+    description: "See and control every piece of data moving through your SaaS apps",
     details: [
-      'Role-based access control',
-      'IP-based restrictions',
-      'Time-based access policies'
+      {
+        title: "Real-Time Monitoring",
+        explanation: "Just as controllers track every aircraft's movement",
+        technical: "Live data flow monitoring and user activity tracking"
+      },
+      {
+        title: "Instant Intervention",
+        explanation: "Similar to redirecting planes away from danger zones",
+        technical: "Automatic threat prevention and policy enforcement"
+      }
     ]
   },
   {
-    title: 'Audit & Monitoring',
-    description: 'Comprehensive logging and monitoring of all user activities and security events.',
+    title: "Your Digital Bodyguard",
+    analogy: "Like having a personal security detail that's always alert but never in the way",
+    description: "Protection that works silently without disrupting your workflow",
     details: [
-      'Real-time activity monitoring',
-      'Detailed audit logs',
-      'Security event alerts'
-    ]
-  },
-  {
-    title: 'Application Management',
-    description: 'Centralized management of all web applications and their security policies.',
-    details: [
-      'Application whitelisting',
-      'Policy enforcement',
-      'Version control'
+      {
+        title: "Invisible Protection",
+        explanation: "Like bodyguards blending into the background",
+        technical: "Zero-impact security monitoring and threat prevention"
+      },
+      {
+        title: "Smart Decisions",
+        explanation: "Similar to security teams assessing threats in real-time",
+        technical: "AI-powered threat detection and automated responses"
+      }
     ]
   }
 ];
 
-const useCases = [
+const practicalBenefits = [
   {
-    title: 'SaaS Companies',
-    description: 'Secure access to your SaaS platform while maintaining a great user experience.',
+    title: 'Plug & Play Security',
+    icon: (
+      <svg className="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+      </svg>
+    ),
+    description: 'Like a smart home system that works right out of the box',
     benefits: [
-      'Protect sensitive data',
-      'Meet compliance requirements',
-      'Reduce support tickets'
+      'No complex setup needed',
+      'Works instantly with your apps',
+      'Automatic updates and protection',
+      'Zero configuration headaches'
     ]
   },
   {
-    title: 'Web Applications',
-    description: 'Provide secure access to your web applications without compromising usability.',
+    title: 'Smart Adaptation',
+    icon: (
+      <svg className="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+      </svg>
+    ),
+    description: 'Like a thermostat that learns your preferences over time',
     benefits: [
-      'Enhanced security',
-      'Simplified access management',
-      'Better user experience'
+      'Learns from your usage patterns',
+      'Adjusts security automatically',
+      'Gets smarter over time',
+      'Prevents future threats'
     ]
   },
   {
-    title: 'Enterprise Clients',
-    description: 'Help enterprise clients securely access your applications while meeting their security requirements.',
+    title: 'Team Harmony',
+    icon: (
+      <svg className="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+      </svg>
+    ),
+    description: 'Like a well-orchestrated symphony where every instrument plays its part',
     benefits: [
-      'Meet enterprise security needs',
-      'Support compliance requirements',
-      'Reduce deployment complexity'
+      'Everyone works in sync',
+      'Natural collaboration flow',
+      'Clear roles and permissions',
+      'Smooth team coordination'
     ]
   }
 ];
@@ -100,20 +109,17 @@ export default function SaasAndWebApps() {
   return (
     <>
       <Head>
-        <title>SaaS & Web Apps Solutions | Kahana</title>
+        <title>SaaS & Web Apps Control | Kahana</title>
         <meta
           name="description"
-          content="Secure and streamline access to your SaaS applications and web apps with Kahana's enterprise browser solution. Enhance security, improve user experience, and reduce costs."
+          content="Take control of your SaaS apps without losing their magic. Oasis Browser gives you the perfect balance of freedom and control."
         />
       </Head>
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-KQHFL9605P"
         strategy="afterInteractive"
       />
-      <Script
-        id="google-analytics"
-        strategy="afterInteractive"
-      >
+      <Script id="google-analytics" strategy="afterInteractive">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
@@ -123,84 +129,188 @@ export default function SaasAndWebApps() {
       </Script>
 
       {/* Hero Section */}
-      <section className="bg-white py-20">
+      <section className="bg-gradient-to-b from-indigo-50 to-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl font-bold text-gray-900 mb-6">
-              Secure SaaS & Web Applications
+            <h1 className="text-5xl font-bold text-gray-900 mb-6">
+              SaaS and Web Apps,<br />Finally Under Your Control
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Enhance security, improve user experience, and reduce costs with Kahana's enterprise browser solution for SaaS and web applications.
+              SaaS and web apps gave us unprecedented flexibility, but took away control over our own data. The Oasis Browser gives you both.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Benefits Section */}
-      <section className="bg-gray-50 py-16">
+      {/* Evolution Story Section */}
+      <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
-            Key Benefits
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* The Past Card */}
+            <div className="bg-gradient-to-br from-gray-50 to-indigo-50/30 rounded-2xl p-8 border border-gray-100">
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mr-4">
+                  <svg className="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-semibold text-gray-900">The Past</h3>
+              </div>
+              <p className="text-gray-600 mb-4">
+                Corporate data lived inside our four walls, under our direct control. Everything was secure, but limited in accessibility.
+              </p>
+              <ul className="space-y-2">
+                <li className="flex items-center text-gray-600">
+                  <span className="text-indigo-500 mr-2">✓</span>
+                  <span>Complete data control</span>
+                </li>
+                <li className="flex items-center text-gray-600">
+                  <span className="text-indigo-500 mr-2">✓</span>
+                  <span>Direct security oversight</span>
+                </li>
+                <li className="flex items-center text-gray-600">
+                  <span className="text-red-500 mr-2">✗</span>
+                  <span>Limited accessibility</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* The SaaS Era Card */}
+            <div className="bg-gradient-to-br from-gray-50 to-purple-50/30 rounded-2xl p-8 border border-gray-100">
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4">
+                  <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-semibold text-gray-900">The SaaS Era</h3>
+              </div>
+              <p className="text-gray-600 mb-4">
+                Data became accessible anywhere, anytime, on any device. But it now lives outside our walls, beyond our control.
+              </p>
+              <ul className="space-y-2">
+                <li className="flex items-center text-gray-600">
+                  <span className="text-indigo-500 mr-2">✓</span>
+                  <span>Universal accessibility</span>
+                </li>
+                <li className="flex items-center text-gray-600">
+                  <span className="text-indigo-500 mr-2">✓</span>
+                  <span>Seamless collaboration</span>
+                </li>
+                <li className="flex items-center text-gray-600">
+                  <span className="text-red-500 mr-2">✗</span>
+                  <span>Limited data control</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* The Solution Card */}
+          <div className="mt-8 bg-gradient-to-r from-indigo-50 to-purple-50 rounded-2xl p-8 border border-indigo-100">
+            <div className="flex items-center mb-6">
+              <div className="w-12 h-12 bg-gradient-to-br from-indigo-400 to-purple-400 rounded-full flex items-center justify-center mr-4">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-semibold text-gray-900">The Oasis Browser Closes the Loop</h3>
+            </div>
+            <p className="text-gray-600 text-lg mb-6">
+              We complete the vision of SaaS by delivering a fast, fluid, dynamic web app experience, while providing the control, security and visibility over corporate data that was missing until now.
+            </p>
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="bg-white rounded-xl p-6 shadow-sm">
+                <h4 className="font-semibold text-gray-900 mb-2">Fast & Fluid</h4>
+                <p className="text-gray-600">Modern web experience without compromise</p>
+              </div>
+              <div className="bg-white rounded-xl p-6 shadow-sm">
+                <h4 className="font-semibold text-gray-900 mb-2">Total Control</h4>
+                <p className="text-gray-600">Your data under your governance again</p>
+              </div>
+              <div className="bg-white rounded-xl p-6 shadow-sm">
+                <h4 className="font-semibold text-gray-900 mb-2">Full Visibility</h4>
+                <p className="text-gray-600">Complete oversight of data movement</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Concept Cards Section */}
+      <section className="bg-white py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
+            Security Made Simple
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {benefits.map((benefit, index) => (
-              <div key={index} className="bg-white rounded-lg p-6 shadow-md">
-                <div className="text-4xl mb-4">{benefit.icon}</div>
+          <div className="grid grid-cols-1 gap-12">
+            {conceptCards.map((card, index) => (
+              <div key={index} className="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-2xl overflow-hidden border border-indigo-100">
+                <div className="p-8">
+                  <div className="flex items-center mb-6">
+                    <div className="w-12 h-12 bg-gradient-to-br from-indigo-400 to-purple-400 rounded-full flex items-center justify-center mr-4">
+                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        {card.title === "Your Digital Vault" ? (
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                        ) : card.title === "Your Digital Traffic Control" ? (
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+                        ) : (
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                        )}
+                      </svg>
+                    </div>
+                    <h3 className="text-2xl font-semibold text-gray-900">{card.title}</h3>
+                  </div>
+                  <p className="text-gray-600 text-lg mb-8">
+                    {card.description}
+                  </p>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    {card.details.map((detail, dIndex) => (
+                      <div key={dIndex} className="bg-white rounded-xl p-6 shadow-sm">
+                        <h4 className="font-semibold text-gray-900 mb-3">
+                          {detail.title}
+                        </h4>
+                        <p className="text-gray-600 mb-3">
+                          {detail.explanation}
+                        </p>
+                        <div className="flex items-center text-indigo-600">
+                          <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                          <span className="text-sm font-medium">{detail.technical}</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Practical Benefits Section */}
+      <section className="bg-gradient-to-b from-gray-50 to-white py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
+            Real-World Benefits
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {practicalBenefits.map((benefit, index) => (
+              <div key={index} className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 transform transition-all duration-300 hover:shadow-md">
+                <div className="text-indigo-600 mb-4">
+                  {benefit.icon}
+                </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">
                   {benefit.title}
                 </h3>
-                <p className="text-gray-600">{benefit.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section className="bg-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
-            Enterprise Features
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {features.map((feature, index) => (
-              <div key={index} className="bg-gray-50 rounded-lg p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-600 mb-4">{feature.description}</p>
-                <ul className="space-y-2">
-                  {feature.details.map((detail, dIndex) => (
-                    <li key={dIndex} className="flex items-center text-gray-600">
-                      <span className="text-[#3B675E] mr-2">•</span>
-                      {detail}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Use Cases Section */}
-      <section className="bg-gray-50 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
-            Use Cases
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {useCases.map((useCase, index) => (
-              <div key={index} className="bg-white rounded-lg p-6 shadow-md">
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                  {useCase.title}
-                </h3>
-                <p className="text-gray-600 mb-4">{useCase.description}</p>
-                <ul className="space-y-2">
-                  {useCase.benefits.map((benefit, bIndex) => (
-                    <li key={bIndex} className="flex items-center text-gray-600">
-                      <span className="text-[#3B675E] mr-2">•</span>
-                      {benefit}
+                <p className="text-gray-600 mb-4 text-sm italic">
+                  {benefit.description}
+                </p>
+                <ul className="space-y-3">
+                  {benefit.benefits.map((item, iIndex) => (
+                    <li key={iIndex} className="flex items-start text-gray-600">
+                      <span className="text-indigo-500 mr-2">•</span>
+                      <span>{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -211,17 +321,17 @@ export default function SaasAndWebApps() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-kahana-primary py-16">
+      <section className="bg-gradient-to-r from-kahana-primary to-indigo-700 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-white mb-6">
-            Ready to Secure Your Applications?
+          <h2 className="text-4xl font-bold text-white mb-6">
+            Ready to Take Control?
           </h2>
-          <p className="text-xl text-white mb-8 max-w-2xl mx-auto">
-            Schedule a demo to see how Kahana can help secure your SaaS and web applications while improving the user experience.
+          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+            Download Oasis Browser today and start your journey to secure SaaS control.
           </p>
-          <Link href="/contact">
-            <button className="bg-white text-kahana-primary px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors">
-              Schedule Demo
+          <Link href="/download">
+            <button className="bg-white text-kahana-primary px-8 py-4 rounded-md font-semibold hover:bg-gray-50 transition-all duration-300 transform hover:scale-105">
+              Download Now
             </button>
           </Link>
         </div>
