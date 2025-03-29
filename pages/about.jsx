@@ -10,37 +10,51 @@ export default function About() {
         <title>About Us | Kahana</title>
         <meta
           name="description"
-          content="Learn about Kahana's mission to revolutionize productivity and creative flow through AI-powered workspace solutions."
+          content="Kahana creates tools that help you get closer to your ideas and bring them to life. We believe the world is better off when your best ideas become reality."
         />
       </Head>
 
       {/* Hero Section */}
-      <div className="bg-gradient-to-b from-blue-50 to-white">
+      <div className="bg-gradient-to-b from-indigo-50 to-white">
         <div className="max-w-7xl mx-auto py-20 px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-5xl font-bold text-gray-900 mb-6">Revolutionizing How We Work</h1>
+            <h1 className="text-5xl font-bold text-gray-900 mb-6">Bringing Ideas to Life</h1>
             <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
-              We're building the future of productivity, where AI and innovative workspace solutions help you get closer to your ideas and bring them to life.
+              We believe the world is better off when your best ideas become reality. We create tools that help you get closer to your ideas and bring them into the world.
             </p>
           </div>
         </div>
       </div>
 
       {/* Mission & Vision Section */}
-      <div className="bg-white">
-        <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+      <div className="bg-white py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 md:grid-cols-2">
-            <div className="bg-gradient-to-br from-blue-50 to-white p-8 rounded-2xl shadow-sm">
-              <h3 className="text-2xl font-semibold text-gray-900 mb-4">Our Mission</h3>
+            <div className="bg-gradient-to-br from-gray-50 to-indigo-50/30 rounded-2xl p-8 border border-gray-100">
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mr-4">
+                  <svg className="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-semibold text-gray-900">Our Mission</h3>
+              </div>
               <p className="text-gray-600 text-lg">
-                To empower people to think better, create more, and achieve their full potential through AI-enhanced productivity tools that break free from traditional desktop constraints.
+                To empower people to bring their ideas to life by creating tools that make the creative process faster, easier, and more tranquil. We believe in removing the barriers between you and your best ideas.
               </p>
             </div>
 
-            <div className="bg-gradient-to-br from-purple-50 to-white p-8 rounded-2xl shadow-sm">
-              <h3 className="text-2xl font-semibold text-gray-900 mb-4">Our Vision</h3>
+            <div className="bg-gradient-to-br from-gray-50 to-purple-50/30 rounded-2xl p-8 border border-gray-100">
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4">
+                  <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-semibold text-gray-900">Our Vision</h3>
+              </div>
               <p className="text-gray-600 text-lg">
-                A future where productivity transcends the traditional workspace, enabling seamless creation and collaboration in three-dimensional space, powered by AI that understands and enhances human creativity.
+                A world where nothing stands between you and your creative potential—where ideas flow naturally from mind to reality, and where the process of creation is as beautiful as the result.
               </p>
             </div>
           </div>
@@ -51,80 +65,95 @@ export default function About() {
       <div className="bg-gray-50 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Innovation</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Approach</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We're combining cutting-edge AI with revolutionary workspace technology to create the future of productivity.
+              We combine innovative technology with thoughtful design to create spaces where your ideas can flourish.
             </p>
           </div>
 
           <div className="grid gap-8 md:grid-cols-2">
-            <div className="bg-white p-8 rounded-2xl shadow-sm">
-              <h3 className="text-2xl font-semibold text-gray-900 mb-4">Patented Technology</h3>
-              <div className="space-y-4">
-                <h4 className="text-lg font-semibold text-gray-900">
-                  Computer based unitary workspace leveraging multiple filetype toggling for dynamic content creation
-                </h4>
-                <p className="text-gray-600">
-                  Our patented technology enables a revolutionary approach to content creation through an intelligent split-screen workspace interface. This innovation allows users to seamlessly integrate multiple file types and content sources while maintaining a unified, efficient workflow.
-                </p>
-                <div className="mt-4">
-                  <a 
-                    href="https://patents.google.com/patent/WO2021072333A1/en" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors"
-                  >
-                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            <div className="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-2xl overflow-hidden border border-indigo-100">
+              <div className="p-8">
+                <div className="flex items-center mb-6">
+                  <div className="w-12 h-12 bg-gradient-to-br from-indigo-400 to-purple-400 rounded-full flex items-center justify-center mr-4">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
-                    View Patent Details
-                  </a>
+                  </div>
+                  <h3 className="text-2xl font-semibold text-gray-900">Thoughtful Technology</h3>
                 </div>
-                <ul className="text-gray-600 space-y-2 mt-6">
-                  <li className="flex items-start">
-                    <span className="text-blue-500 mr-2">•</span>
-                    Split-screen workspace with dedicated viewing areas for different content types
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-blue-500 mr-2">•</span>
-                    Seamless file integration and management
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-blue-500 mr-2">•</span>
-                    Keyboard-driven navigation and content manipulation
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-blue-500 mr-2">•</span>
-                    Dynamic content creation and editing capabilities
-                  </li>
-                </ul>
+                <div className="space-y-4">
+                  <p className="text-gray-600">
+                    Our patented technology creates a workspace that adapts to your creative process, making it easier to organize and develop your ideas. We focus on removing friction and creating flow, so you can focus on what matters most—bringing your ideas to life.
+                  </p>
+                  <div className="mt-4">
+                    <a 
+                      href="https://patents.google.com/patent/WO2021072333A1/en" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-indigo-600 hover:text-indigo-800 transition-colors"
+                    >
+                      <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                      View Patent Details
+                    </a>
+                  </div>
+                  <div className="grid md:grid-cols-2 gap-6 mt-6">
+                    <div className="bg-white rounded-xl p-6 shadow-sm">
+                      <h4 className="font-semibold text-gray-900 mb-2">Intelligent Workspace</h4>
+                      <p className="text-gray-600">Adapts to your creative process</p>
+                    </div>
+                    <div className="bg-white rounded-xl p-6 shadow-sm">
+                      <h4 className="font-semibold text-gray-900 mb-2">Seamless Integration</h4>
+                      <p className="text-gray-600">Ideas and resources flow naturally</p>
+                    </div>
+                    <div className="bg-white rounded-xl p-6 shadow-sm">
+                      <h4 className="font-semibold text-gray-900 mb-2">Focused Environment</h4>
+                      <p className="text-gray-600">Perfect for deep creative work</p>
+                    </div>
+                    <div className="bg-white rounded-xl p-6 shadow-sm">
+                      <h4 className="font-semibold text-gray-900 mb-2">Flow Enhancement</h4>
+                      <p className="text-gray-600">Tools that support your creativity</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
-            <div className="bg-white p-8 rounded-2xl shadow-sm">
-              <h3 className="text-2xl font-semibold text-gray-900 mb-4">AI-Powered Future</h3>
-              <div className="space-y-4">
-                <p className="text-gray-600">
-                  We're developing next-generation AI solutions that understand and enhance your creative process, helping you work more efficiently and effectively.
-                </p>
-                <ul className="text-gray-600 space-y-2">
-                  <li className="flex items-start">
-                    <span className="text-purple-500 mr-2">•</span>
-                    Intelligent workspace that adapts to your workflow
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-purple-500 mr-2">•</span>
-                    AI-assisted content creation and editing
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-purple-500 mr-2">•</span>
-                    Three-dimensional workspace navigation
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-purple-500 mr-2">•</span>
-                    Seamless integration with your existing tools
-                  </li>
-                </ul>
+            <div className="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-2xl overflow-hidden border border-indigo-100">
+              <div className="p-8">
+                <div className="flex items-center mb-6">
+                  <div className="w-12 h-12 bg-gradient-to-br from-indigo-400 to-purple-400 rounded-full flex items-center justify-center mr-4">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-semibold text-gray-900">AI-Enhanced Creativity</h3>
+                </div>
+                <div className="space-y-4">
+                  <p className="text-gray-600">
+                    We're developing AI that understands and enhances your creative process, helping you work more effectively while maintaining the human touch that makes your ideas unique. Our AI tools are designed to support, not replace, your creative vision.
+                  </p>
+                  <div className="grid md:grid-cols-2 gap-6 mt-6">
+                    <div className="bg-white rounded-xl p-6 shadow-sm">
+                      <h4 className="font-semibold text-gray-900 mb-2">Contextual Understanding</h4>
+                      <p className="text-gray-600">AI that gets your creative context</p>
+                    </div>
+                    <div className="bg-white rounded-xl p-6 shadow-sm">
+                      <h4 className="font-semibold text-gray-900 mb-2">Potential Amplification</h4>
+                      <p className="text-gray-600">Tools that enhance your creativity</p>
+                    </div>
+                    <div className="bg-white rounded-xl p-6 shadow-sm">
+                      <h4 className="font-semibold text-gray-900 mb-2">Background Support</h4>
+                      <p className="text-gray-600">Intelligent assistance that stays subtle</p>
+                    </div>
+                    <div className="bg-white rounded-xl p-6 shadow-sm">
+                      <h4 className="font-semibold text-gray-900 mb-2">Workflow Integration</h4>
+                      <p className="text-gray-600">Seamless creative process support</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -137,36 +166,83 @@ export default function About() {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Values</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              The principles that guide us in building the future of productivity
+              The principles that guide us in helping you bring your ideas to life
             </p>
           </div>
 
           <div className="grid gap-8 md:grid-cols-3">
-            <div className="bg-gradient-to-br from-blue-50 to-white p-6 rounded-xl">
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">Innovation</h3>
+            <div className="bg-gradient-to-br from-gray-50 to-indigo-50/30 rounded-2xl p-8 border border-gray-100">
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mr-4">
+                  <svg className="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900">Flow</h3>
+              </div>
               <p className="text-gray-600">
-                Pushing the boundaries of what's possible with technology to create better ways of working.
+                Creating tools that help you maintain creative momentum, where ideas can develop naturally without interruption.
               </p>
             </div>
-            <div className="bg-gradient-to-br from-purple-50 to-white p-6 rounded-xl">
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">Human-Centric</h3>
+            <div className="bg-gradient-to-br from-gray-50 to-purple-50/30 rounded-2xl p-8 border border-gray-100">
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4">
+                  <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900">Focus</h3>
+              </div>
               <p className="text-gray-600">
-                Building tools that enhance human creativity and productivity, not replace it.
+                Building environments that help you concentrate on what matters most—bringing your ideas to life.
               </p>
             </div>
-            <div className="bg-gradient-to-br from-indigo-50 to-white p-6 rounded-xl">
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">Freedom</h3>
+            <div className="bg-gradient-to-br from-gray-50 to-indigo-50/30 rounded-2xl p-8 border border-gray-100">
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mr-4">
+                  <svg className="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900">Growth</h3>
+              </div>
               <p className="text-gray-600">
-                Enabling people to work how they want, where they want, and when they want.
+                Fostering an environment where ideas can evolve and reach their full potential, making the world better in the process.
               </p>
             </div>
           </div>
         </div>
       </div>
 
+      {/* Manifesto CTA Section */}
+      <div className="bg-gradient-to-r from-indigo-50 to-purple-50 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-2xl overflow-hidden border border-indigo-100">
+            <div className="p-8">
+              <div className="flex items-center mb-6">
+                <div className="w-12 h-12 bg-gradient-to-br from-indigo-400 to-purple-400 rounded-full flex items-center justify-center mr-4">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-semibold text-gray-900">Read Our Manifesto</h3>
+              </div>
+              <p className="text-gray-600 text-lg mb-6">
+                Dive deeper into our mission and vision. Learn about our beliefs, our purpose, and how we're working to help people bring their ideas to life.
+              </p>
+              <Link href="/manifesto">
+                <button className="bg-white text-indigo-600 px-6 py-2 rounded-md font-semibold hover:bg-gray-50 transition-colors border border-indigo-100">
+                  Read the Manifesto
+                </button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <SharedCTA
-        title="Ready to Transform Your Workflow?"
-        description="Join us in building the future of productivity and creative flow."
+        title="Bring Your Ideas to Life"
+        description="Join us in creating tools that help you get closer to your ideas and make them reality."
         buttonText="Get Started"
         buttonLink="/contact"
       />
