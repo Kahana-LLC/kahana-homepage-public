@@ -91,10 +91,46 @@ export default function Partners() {
   return (
     <>
       <Head>
-        <title>Partners | Kahana</title>
+        <title>Partners | Kahana - Enterprise Browser Solutions</title>
         <meta
           name="description"
-          content="Join Kahana's Partner Program and help organizations transform their enterprise browsing experience."
+          content="Partner with Kahana to deliver enterprise-grade browser solutions. Join our partner program and earn 30% commission by helping organizations transform their browsing experience with secure, efficient, and modern enterprise solutions."
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Kahana Partner Program",
+              "description": "Partner with Kahana to deliver enterprise-grade browser solutions. Join our partner program and earn 30% commission.",
+              "url": "https://kahana.is/partners",
+              "offers": {
+                "@type": "Offer",
+                "name": "Kahana Partner Program",
+                "description": "Earn 30% commission on enterprise deals, including setup fees, custom development, and the first 12 months of subscription revenue.",
+                "price": "0",
+                "priceCurrency": "USD"
+              }
+            })
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": faqs.map(faq => ({
+                "@type": "Question",
+                "name": faq.question,
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": faq.answer
+                }
+              }))
+            })
+          }}
         />
       </Head>
       <Script

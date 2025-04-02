@@ -30,7 +30,7 @@ export function Testimonial({ id, author, children }) {
               <Image
                 className="h-12 w-12 object-cover"
                 src={author.image}
-                alt=""
+                alt={`Profile picture of ${author.name}`}
                 width={48}
                 height={48}
               />

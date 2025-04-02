@@ -34,7 +34,7 @@ export default function Products() {
               <div className="space-y-4">
                 <Link href="/products/enterprise-browser">
                   <button className="w-full bg-kahana-primary text-white px-6 py-3 rounded-md hover:bg-kahana-primary-dark transition-colors">
-                    Learn More About Enterprise Browser
+                    Learn More
                   </button>
                 </Link>
               </div>
