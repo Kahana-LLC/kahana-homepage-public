@@ -9,7 +9,7 @@ function generateOrganizationSchema() {
     logo: `${EXTERNAL_DATA_URL}/images/logo.png`,
     sameAs: [
       "https://twitter.com/kahana",
-      "https://linkedin.com/company/kahana",
+      "https://www.linkedin.com/company/kahana-co",
       "https://github.com/kahana",
     ],
     contactPoint: {
