@@ -84,14 +84,6 @@ export default function Document() {
             `,
           }}
         />
-
-        {/* Additional stylesheet */}
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/@tabler/icons@2.40.0/iconfont/tabler-icons.min.css"
-          crossOrigin="anonymous"
-          referrerPolicy="no-referrer"
-        />
       </Head>
       <body>
         {/* Google Tag Manager (noscript) */}
