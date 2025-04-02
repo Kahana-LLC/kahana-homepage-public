@@ -2,6 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import SharedCTA from '../components/SharedCTA';
+import HeroSection from '../components/HeroSection';
 
 export default function About() {
   return (
@@ -14,17 +15,7 @@ export default function About() {
         />
       </Head>
 
-      {/* Hero Section */}
-      <div className="bg-gradient-to-b from-indigo-50 to-white">
-        <div className="max-w-7xl mx-auto py-20 px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-5xl font-bold text-gray-900 mb-6">Bringing Ideas to Life</h1>
-            <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
-              We believe the world is better off when your best ideas become reality. We create tools that help you get closer to your ideas and bring them into the world.
-            </p>
-          </div>
-        </div>
-      </div>
+      <HeroSection />
 
       {/* Mission & Vision Section */}
       <div className="bg-white py-16">

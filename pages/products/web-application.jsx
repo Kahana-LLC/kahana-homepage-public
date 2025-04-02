@@ -199,7 +199,7 @@ export default function WebApplication() {
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
               A simple platform to help you stay organized, productive, and grow your projects. Keep your hubs private, share them publicly, or monetize - it's your space to bring your ideas to life.
             </p>
-            <Link href="http://localhost:3002/pricing">
+            <Link href="/pricing">
               <button className="bg-[#66C2BE] text-white px-8 py-3 rounded-md font-semibold hover:bg-[#55B3AF] transition-colors shadow-lg shadow-[#E3DFF1]/20 hover:shadow-xl hover:shadow-[#E3DFF1]/30">
                 Plans & Pricing
               </button>
@@ -499,7 +499,7 @@ export default function WebApplication() {
             Start organizing your projects, growing your audience, and turning your ideas into reality.
           </p>
           <div className="flex justify-center">
-            <Link href="http://localhost:3002/pricing">
+            <Link href="/pricing">
               <button className="bg-white text-[#66C2BE] px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors">
                 Plans & Pricing
               </button>

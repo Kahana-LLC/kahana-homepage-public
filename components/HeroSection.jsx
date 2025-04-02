@@ -19,7 +19,7 @@ export default function HeroSection() {
                   </p>
                   <div className="mt-8 flex justify-center sm:justify-start">
                     <Link
-                      href="/schedule-a-demo"  
+                      href="/schedule-demo"  
                       className="rounded-md border border-transparent bg-[#66C2BE] py-3 px-8 text-lg font-medium text-white shadow-sm hover:bg-[#55B3AF] focus:outline-none focus:ring-2 focus:ring-[#66C2BE] focus:ring-offset-2 text-center"
                     >
                       Schedule a demo

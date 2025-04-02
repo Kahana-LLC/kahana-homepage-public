@@ -5,14 +5,10 @@ import { getRandomPhoto, getOptimizedPhotoUrl } from '../utils/pexels';
 
 // Import team member headshots
 import adam from '../assets/headshots/Adam_Kershner.webp';
-import william from '../assets/headshots/william_reehil.webp';
-import jonathan from '../assets/headshots/Jonathan_Gans.webp';
 
 // Author mapping for blog posts
 const authorImages = {
   'Adam Kershner': adam,
-  'William Reehil': william,
-  'Jonathan Gans': jonathan,
 };
 
 // Default placeholder for failed image loads
@@ -28,7 +24,7 @@ const defaultPosts = [
     date: 'March 15, 2024',
     author: {
       name: 'Adam Kershner',
-      role: 'Chief Technology Officer',
+      role: 'CTO',
     },
     customImage: null,
     defaultImageQuery: 'modern technology office workspace'
@@ -40,7 +36,7 @@ const defaultPosts = [
     category: 'Security',
     date: 'March 10, 2024',
     author: {
-      name: 'William Reehil',
+      name: 'Adam Kershner',
       role: 'CTO',
     },
     customImage: null,
@@ -48,13 +44,13 @@ const defaultPosts = [
   },
   {
     slug: 'cloud-migration',
-    title: 'Cloud Migration Strategies for 2024',
+    title: 'Cloud Migration Strategies for 2025',
     excerpt: 'Explore the latest strategies and best practices for successful cloud migration.',
     category: 'Cloud Computing',
     date: 'March 5, 2024',
     author: {
-      name: 'Jonathan Gans',
-      role: 'CEO',
+      name: 'Adam Kershner',
+      role: 'CTO',
     },
     customImage: null,
     defaultImageQuery: 'cloud computing data center'

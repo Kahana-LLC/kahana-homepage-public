@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import NavBar from '../components/NavbarDup';
+import Script from 'next/script';
+import { trackError } from '../utils/analytics';
 
 const steps = [
   {
@@ -82,6 +84,61 @@ const supportLinks = [
 
 export default function ScheduleDemo() {
   const [hoveredStep, setHoveredStep] = useState(0);
+  const [isFormLoaded, setIsFormLoaded] = useState(false);
+  const [loadError, setLoadError] = useState(false);
+  const [retryCount, setRetryCount] = useState(0);
+  const MAX_RETRIES = 3;
+
+  const initializeTally = () => {
+    if (window.Tally) {
+      window.Tally.loadEmbeds();
+      setIsFormLoaded(true);
+      setLoadError(false);
+    }
+  };
+
+  const handleTallyLoad = () => {
+    // Wait a brief moment to ensure Tally is fully loaded
+    setTimeout(() => {
+      initializeTally();
+    }, 100);
+  };
+
+  const handleTallyError = (error) => {
+    console.error('Tally form loading error:', error);
+    trackError('tally_form_load_error', error.message);
+    setLoadError(true);
+    
+    if (retryCount < MAX_RETRIES) {
+      setRetryCount(prev => prev + 1);
+      // Attempt to reload the script
+      const script = document.createElement('script');
+      script.src = 'https://tally.so/widgets/embed.js';
+      script.async = true;
+      script.onload = handleTallyLoad;
+      script.onerror = () => handleTallyError(new Error('Failed to load Tally script'));
+      document.body.appendChild(script);
+    }
+  };
+
+  useEffect(() => {
+    // Reset states when component mounts
+    setIsFormLoaded(false);
+    setLoadError(false);
+    setRetryCount(0);
+
+    // If Tally is already loaded, initialize immediately
+    if (window.Tally) {
+      initializeTally();
+    }
+
+    // Cleanup function
+    return () => {
+      // Only remove Tally-related elements, not the script
+      const tallyElements = document.querySelectorAll('[data-tally-loaded]');
+      tallyElements.forEach(element => element.remove());
+    };
+  }, []);
 
   return (
     <>
@@ -116,16 +173,47 @@ export default function ScheduleDemo() {
                       Book a personalized demo to see how Oasis can transform your enterprise.
                     </p>
                   </div>
-                  <iframe
-                    src="https://tally.so/embed/3xzNKv?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-                    width="100%"
-                    height="500"
-                    frameBorder="0"
-                    marginHeight="0"
-                    marginWidth="0"
-                    title="Demo Request Form"
-                    style={{ minWidth: '100%' }}
-                  ></iframe>
+                  <div className="relative min-h-[500px]">
+                    {!isFormLoaded && !loadError && (
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#66C2BE]"></div>
+                      </div>
+                    )}
+
+                    {loadError && retryCount < MAX_RETRIES && (
+                      <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center">
+                        <p className="text-gray-600 mb-4">Having trouble loading the form? We'll try again automatically.</p>
+                        <p className="text-sm text-gray-500">Attempt {retryCount + 1} of {MAX_RETRIES}</p>
+                      </div>
+                    )}
+
+                    {loadError && retryCount >= MAX_RETRIES && (
+                      <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center">
+                        <p className="text-gray-600 mb-4">We're having trouble loading the form. Please try refreshing the page.</p>
+                        <button
+                          onClick={() => window.location.reload()}
+                          className="px-4 py-2 bg-[#66C2BE] text-white rounded-md hover:bg-[#4A9E9A] transition-colors"
+                        >
+                          Refresh Page
+                        </button>
+                      </div>
+                    )}
+
+                    <iframe
+                      src="https://tally.so/embed/3xzNKv?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&redirectUrl=https://kahana.is/thankyou-demo"
+                      width="100%"
+                      height="500"
+                      frameBorder="0"
+                      marginHeight="0"
+                      marginWidth="0"
+                      title="Demo Request Form"
+                      style={{ 
+                        minWidth: '100%',
+                        opacity: isFormLoaded ? 1 : 0,
+                        transition: 'opacity 0.3s ease-in-out'
+                      }}
+                    />
+                  </div>
                 </div>
               </div>
 
@@ -208,21 +296,59 @@ export default function ScheduleDemo() {
                     Book a personalized demo to see how Oasis can transform your enterprise.
                   </p>
                 </div>
-                <iframe
-                  src="https://tally.so/embed/3xzNKv?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-                  width="100%"
-                  height="500"
-                  frameBorder="0"
-                  marginHeight="0"
-                  marginWidth="0"
-                  title="Demo Request Form"
-                  style={{ minWidth: '100%' }}
-                ></iframe>
+                <div className="relative min-h-[500px]">
+                  {!isFormLoaded && !loadError && (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#66C2BE]"></div>
+                    </div>
+                  )}
+
+                  {loadError && retryCount < MAX_RETRIES && (
+                    <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center">
+                      <p className="text-gray-600 mb-4">Having trouble loading the form? We'll try again automatically.</p>
+                      <p className="text-sm text-gray-500">Attempt {retryCount + 1} of {MAX_RETRIES}</p>
+                    </div>
+                  )}
+
+                  {loadError && retryCount >= MAX_RETRIES && (
+                    <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center">
+                      <p className="text-gray-600 mb-4">We're having trouble loading the form. Please try refreshing the page.</p>
+                      <button
+                        onClick={() => window.location.reload()}
+                        className="px-4 py-2 bg-[#66C2BE] text-white rounded-md hover:bg-[#4A9E9A] transition-colors"
+                      >
+                        Refresh Page
+                      </button>
+                    </div>
+                  )}
+
+                  <iframe
+                    src="https://tally.so/embed/3xzNKv?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&redirectUrl=https://kahana.is/thankyou-demo"
+                    width="100%"
+                    height="500"
+                    frameBorder="0"
+                    marginHeight="0"
+                    marginWidth="0"
+                    title="Demo Request Form"
+                    style={{ 
+                      minWidth: '100%',
+                      opacity: isFormLoaded ? 1 : 0,
+                      transition: 'opacity 0.3s ease-in-out'
+                    }}
+                  />
+                </div>
               </div>
             </div>
           </div>
         </div>
       </main>
+
+      <Script 
+        src="https://tally.so/widgets/embed.js"
+        strategy="afterInteractive"
+        onLoad={handleTallyLoad}
+        onError={handleTallyError}
+      />
     </>
   );
 } 

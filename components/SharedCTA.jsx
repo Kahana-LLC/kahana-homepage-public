@@ -5,7 +5,7 @@ const SharedCTA = ({
   title, 
   description, 
   buttonText = "Schedule a Demo", 
-  buttonLink = "/schedule-a-demo",
+  buttonLink = "/schedule-demo",
   buttonVariant = "primary", // primary or secondary
   className = "" // Additional classes for the section
 }) => {

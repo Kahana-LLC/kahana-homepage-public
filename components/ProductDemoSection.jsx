@@ -154,7 +154,7 @@ export default function ProductDemoSection() {
 
         {/* CTA Buttons */}
         <div className="mt-8 sm:mt-12 text-center space-y-3 sm:space-y-0 sm:space-x-4">
-          <Link href="/schedule-a-demo">
+          <Link href="/schedule-demo">
             <button className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg shadow-sm text-white bg-kahana-primary hover:bg-kahana-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-kahana-primary">
               Schedule a Demo
             </button>
