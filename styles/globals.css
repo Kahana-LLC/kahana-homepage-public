@@ -281,7 +281,13 @@ body {
 
 /* RefinementList styles */
 .ais-RefinementList-list {
-  list-style: none;
+  @apply flex flex-nowrap overflow-x-auto gap-2 py-2 px-4 -mx-4 md:mx-0;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.ais-RefinementList-list::-webkit-scrollbar {
+  display: none;
 }
 
 .ais-RefinementList-item {
@@ -552,9 +558,6 @@ body {
   @apply flex flex-nowrap overflow-x-auto gap-2 py-2 px-4 -mx-4 md:mx-0;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
-  &::-webkit-scrollbar {
-    display: none;
-  }
 }
 
 .ais-RefinementList-item {
@@ -565,25 +568,27 @@ body {
   @apply bg-green-100 text-green-800;
 }
 
-/* Hide scrollbar for Chrome, Safari and Opera */
+/* Replace nested selectors with flat ones */
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
 }
 
-/* Hide scrollbar for IE, Edge and Firefox */
 .hide-scrollbar {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-/* Smooth scrolling for snap points */
 .snap-x {
+  scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
 }
 
-/* Active snap point styles */
 .snap-center {
   scroll-snap-align: center;
   scroll-snap-stop: always;
+}
+
+.ais-RefinementList-list::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
 }

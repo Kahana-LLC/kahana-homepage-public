@@ -111,6 +111,8 @@ function NavBar() {
             padding: 0.75rem 1rem;
             white-space: nowrap;
             z-index: 2;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            letter-spacing: -0.01em;
           }
 
           .nav-link:hover {
@@ -459,7 +461,7 @@ function NavBar() {
             <Link href="/partners" className="nav-link">Partners</Link>
 
             <div className="dropdown">
-              <Link href="/learn" className="nav-link">Learn</Link>
+              <Link href="/docs" className="nav-link">Learn</Link>
               <div className="dropdown-overlay"></div>
               <div className="dropdown-content" style={{ width: '280px', gridTemplateColumns: '1fr' }}>
                 <div className="dropdown-section">
@@ -494,17 +496,14 @@ function NavBar() {
                 <div className="dropdown-section">
                   <h3 className="text-[0.75rem] font-semibold text-gray-600 mb-4 uppercase tracking-wider">Get Started</h3>
                   <div className="flex flex-col space-y-4">
-                    <Link href="/sales" className="dropdown-link">
-                      Contact Sales
-                    </Link>
-                    <Link href="/schedule-demo" className="dropdown-link">
+                  <Link href="/schedule-demo" className="dropdown-link">
                       Schedule a Demo
                     </Link>
-                    <Link href="/get-a-quote" className="dropdown-link">
-                      Get Quote
+                    <Link href="/contact" className="dropdown-link">
+                      Contact Us
                     </Link>
                     <Link href="/support" className="dropdown-link">
-                      Support Center
+                      Support 
                     </Link>
                   </div>
                 </div>

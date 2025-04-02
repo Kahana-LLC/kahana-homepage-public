@@ -16,21 +16,18 @@ const features = [
       </>
     ),
     image: curate,
-    //link: '/product/recurring-revenue', // Add the link for Recurring Revenue
   },
   {
     title: 'Collaborate',
     description:
       'Add anyone from your team to a Kahana hub, choose their permission level, and work together with the exact same view of all relevant materials in a single window.',
     image: collaboration,
-    //link: '/product/collaboration-tools', // Add the link for Collaboration Tools
   },
   {
     title: 'Create',
     description:
       'Make as many hubs as you want for any topic or project, each with its own unique permissions & controls.',
     image: create,
-    //link: '/product/community-engagement', // Add the link for Community Engagement
   },
 ];
 
@@ -75,9 +72,6 @@ export default function ProductDemoSection() {
                   <p className="mt-2 text-lg text-black">
                     {feature.description}
                     <br /><br />
-                    {/*<a href={feature.link} className="underline" style={{ pointerEvents: 'auto' }}>
-                      Learn more
-                    </a> */}
                   </p>
                 </div>
                 <div className="max-w-[45rem] mx-auto">
@@ -105,10 +99,7 @@ export default function ProductDemoSection() {
                       <p className="mt-2 text-lg text-black">
                         {feature.description}
                         <br /><br />
-                        {/* <a href={feature.link} className="underline" style={{ pointerEvents: 'auto' }}>
-                          Learn more
-                        </a> */}
-                      </p> 
+                      </p>
                     </div>
                     <div className="w-2/3">
                       <Image

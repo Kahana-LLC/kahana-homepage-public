@@ -1,0 +1,155 @@
+const EXTERNAL_DATA_URL = "https://kahana.ai";
+
+export default function handler(req, res) {
+  res.setHeader("Content-Type", "text/xml");
+  res.write(generateSiteMap());
+  res.end();
+}
+
+function generateSiteMap() {
+  return `<?xml version="1.0" encoding="UTF-8"?>
+   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+     <!-- Main Pages -->
+     <url>
+       <loc>${EXTERNAL_DATA_URL}</loc>
+       <changefreq>daily</changefreq>
+       <priority>1.0</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/about</loc>
+       <changefreq>weekly</changefreq>
+       <priority>0.8</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/contact</loc>
+       <changefreq>monthly</changefreq>
+       <priority>0.8</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/blog</loc>
+       <changefreq>daily</changefreq>
+       <priority>0.9</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/schedule-demo</loc>
+       <changefreq>monthly</changefreq>
+       <priority>1.0</priority>
+     </url>
+
+     <!-- Products -->
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/products</loc>
+       <changefreq>weekly</changefreq>
+       <priority>1.0</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/products/enterprise-browser</loc>
+       <changefreq>weekly</changefreq>
+       <priority>0.9</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/products/web-application</loc>
+       <changefreq>weekly</changefreq>
+       <priority>0.9</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/buyer-guide-oasis</loc>
+       <changefreq>monthly</changefreq>
+       <priority>0.8</priority>
+     </url>
+
+     <!-- Solutions -->
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/solutions</loc>
+       <changefreq>weekly</changefreq>
+       <priority>1.0</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/solutions/saas-and-web-apps</loc>
+       <changefreq>monthly</changefreq>
+       <priority>0.8</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/solutions/remote-workforce</loc>
+       <changefreq>monthly</changefreq>
+       <priority>0.8</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/solutions/merger-integration</loc>
+       <changefreq>monthly</changefreq>
+       <priority>0.8</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/solutions/external-workforce</loc>
+       <changefreq>monthly</changefreq>
+       <priority>0.8</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/solutions/vdi-reduction</loc>
+       <changefreq>monthly</changefreq>
+       <priority>0.8</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/solutions/zero-trust-security</loc>
+       <changefreq>monthly</changefreq>
+       <priority>0.8</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/solutions/privileged-user-management</loc>
+       <changefreq>monthly</changefreq>
+       <priority>0.8</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/solutions/secure-browsing</loc>
+       <changefreq>monthly</changefreq>
+       <priority>0.8</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/solutions/workplace-enablement</loc>
+       <changefreq>monthly</changefreq>
+       <priority>0.8</priority>
+     </url>
+
+     <!-- Documentation -->
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/docs</loc>
+       <changefreq>weekly</changefreq>
+       <priority>0.9</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/docs/getting-started</loc>
+       <changefreq>weekly</changefreq>
+       <priority>0.8</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/docs/ai-assistant</loc>
+       <changefreq>weekly</changefreq>
+       <priority>0.8</priority>
+     </url>
+
+     <!-- Support -->
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/support</loc>
+       <changefreq>weekly</changefreq>
+       <priority>0.8</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/faq</loc>
+       <changefreq>weekly</changefreq>
+       <priority>0.7</priority>
+     </url>
+
+     <!-- Legal -->
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/privacy-policy</loc>
+       <changefreq>monthly</changefreq>
+       <priority>0.5</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/terms-and-conditions</loc>
+       <changefreq>monthly</changefreq>
+       <priority>0.5</priority>
+     </url>
+   </urlset>
+ `;
+}

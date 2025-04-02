@@ -87,8 +87,8 @@ export default function Document() {
 
         {/* Additional stylesheet */}
         <link
-          href="https://cdn.jsdelivr.net/npm/tabler-icons@1.39.1/icons/tabler-icons.min.css"
           rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/@tabler/icons@2.40.0/iconfont/tabler-icons.min.css"
         />
       </Head>
       <body>

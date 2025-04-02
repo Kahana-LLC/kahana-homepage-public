@@ -15,6 +15,7 @@ export default function Products() {
       </Head>
 
       <div className="bg-white">
+        {/* Hero Section */}
         <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl font-bold text-gray-900">Our Products</h1>
@@ -23,45 +24,66 @@ export default function Products() {
             </p>
           </div>
 
-          <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            <div className="bg-gray-50 p-6 rounded-lg">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Secure Browser</h3>
-              <p className="text-gray-600">
-                Enterprise-grade secure browsing with advanced threat protection.
+          {/* Product Cards */}
+          <div className="mt-12 grid gap-8 md:grid-cols-2">
+            <div className="bg-gray-50 p-8 rounded-lg border border-gray-200 hover:shadow-lg transition-shadow duration-300">
+              <h3 className="text-2xl font-semibold text-gray-900 mb-4">Enterprise Browser</h3>
+              <p className="text-gray-600 mb-6">
+                A secure, isolated browser environment designed for enterprise needs, protecting your organization's data and users with advanced security features and compliance controls.
               </p>
-              <div className="mt-6">
-                <Link href="/products/secure-browser">
-                  <button className="bg-kahana-primary text-white px-6 py-2 rounded-md hover:bg-kahana-primary-dark transition-colors">
+              <div className="space-y-4">
+                <Link href="/products/enterprise-browser">
+                  <button className="w-full bg-kahana-primary text-white px-6 py-3 rounded-md hover:bg-kahana-primary-dark transition-colors">
                     Learn More
                   </button>
                 </Link>
               </div>
             </div>
 
-            <div className="bg-gray-50 p-6 rounded-lg">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Browser Management</h3>
-              <p className="text-gray-600">
-                Centralized control and monitoring of enterprise browsing activities.
+            <div className="bg-gray-50 p-8 rounded-lg border border-gray-200 hover:shadow-lg transition-shadow duration-300">
+              <h3 className="text-2xl font-semibold text-gray-900 mb-4">Web Application</h3>
+              <p className="text-gray-600 mb-6">
+                A modern web application platform for secure and efficient enterprise browsing, featuring seamless integration and advanced management capabilities.
               </p>
-              <div className="mt-6">
-                <Link href="/products/browser-management">
-                  <button className="bg-kahana-primary text-white px-6 py-2 rounded-md hover:bg-kahana-primary-dark transition-colors">
+              <div className="space-y-4">
+                <Link href="/products/web-application">
+                  <button className="w-full bg-kahana-primary text-white px-6 py-3 rounded-md hover:bg-kahana-primary-dark transition-colors">
                     Learn More
                   </button>
                 </Link>
               </div>
             </div>
+          </div>
 
-            <div className="bg-gray-50 p-6 rounded-lg">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Browser Extensions</h3>
-              <p className="text-gray-600">
-                Custom extensions to enhance productivity and security.
-              </p>
-              <div className="mt-6">
-                <Link href="/products/extensions">
-                  <button className="bg-kahana-primary text-white px-6 py-2 rounded-md hover:bg-kahana-primary-dark transition-colors">
-                    Learn More
-                  </button>
+          {/* Resources Section */}
+          <div className="mt-16">
+            <h2 className="text-2xl font-bold text-gray-900 text-center mb-8">Resources</h2>
+            <div className="grid gap-6 md:grid-cols-3">
+              <div className="bg-white p-6 rounded-lg border border-gray-200 hover:shadow-md transition-shadow duration-300">
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">Documentation</h3>
+                <p className="text-gray-600 mb-4">
+                  Comprehensive guides and documentation to help you get the most out of Kahana's products.
+                </p>
+                <Link href="/docs" className="text-kahana-primary hover:text-kahana-primary-dark">
+                  View Documentation →
+                </Link>
+              </div>
+              <div className="bg-white p-6 rounded-lg border border-gray-200 hover:shadow-md transition-shadow duration-300">
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">Support</h3>
+                <p className="text-gray-600 mb-4">
+                  Get help from our support team and access troubleshooting resources.
+                </p>
+                <Link href="/support" className="text-kahana-primary hover:text-kahana-primary-dark">
+                  Contact Support →
+                </Link>
+              </div>
+              <div className="bg-white p-6 rounded-lg border border-gray-200 hover:shadow-md transition-shadow duration-300">
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">Blog</h3>
+                <p className="text-gray-600 mb-4">
+                  Stay updated with the latest news, tips, and best practices.
+                </p>
+                <Link href="/blog" className="text-kahana-primary hover:text-kahana-primary-dark">
+                  Read Blog →
                 </Link>
               </div>
             </div>

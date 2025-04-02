@@ -8,32 +8,87 @@ const sitemapSections = [
     links: [
       { text: 'Home', href: '/' },
       { text: 'About', href: '/about' },
-      { text: 'Products', href: '/products' },
-      { text: 'Contact', href: '/contact' }
+      { text: 'Contact', href: '/contact' },
+      { text: 'Blog', href: '/blog' },
+      { text: 'Schedule Demo', href: '/schedule-demo' }
     ]
   },
   {
     title: 'Products',
     links: [
-      { text: 'Secure Browser', href: '/products/secure-browser' },
-      { text: 'Browser Management', href: '/products/browser-management' },
-      { text: 'Browser Extensions', href: '/products/extensions' }
+      { text: 'Products Overview', href: '/products' },
+      { text: 'Enterprise Browser', href: '/products/enterprise-browser' },
+      { text: 'Web Application', href: '/products/web-application' },
+      { text: "Buyer's Guide", href: '/buyer-guide-oasis' }
     ]
   },
   {
     title: 'Solutions',
     links: [
-      { text: 'Enterprise', href: '/enterprise' },
-      { text: 'Right to Work', href: '/right-to-work' },
-      { text: 'Partner Program', href: '/partner-program' }
+      { text: 'Solutions Overview', href: '/solutions' },
+      { text: 'SaaS & Web Apps', href: '/solutions/saas-and-web-apps' },
+      { text: 'Remote Workforce', href: '/solutions/remote-workforce' },
+      { text: 'Merger Integration', href: '/solutions/merger-integration' },
+      { text: 'External Workforce', href: '/solutions/external-workforce' },
+      { text: 'VDI Reduction', href: '/solutions/vdi-reduction' },
+      { text: 'Zero Trust Security', href: '/solutions/zero-trust-security' },
+      { text: 'Privileged User Management', href: '/solutions/privileged-user-management' },
+      { text: 'Secure Browsing', href: '/solutions/secure-browsing' },
+      { text: 'Workplace Enablement', href: '/solutions/workplace-enablement' },
+      { text: 'Healthcare', href: '/solutions/healthcare' },
+      { text: 'Government', href: '/solutions/government' }
     ]
   },
   {
-    title: 'Resources',
+    title: 'Partners & Resources',
     links: [
+      { text: 'Partners', href: '/partners' },
+      { text: 'Resources', href: '/resources' },
+      { text: 'Events', href: '/events' },
+      { text: 'Press', href: '/press' },
+      { text: 'Marketing Kit', href: '/marketing-kit' }
+    ]
+  },
+  {
+    title: 'Documentation',
+    links: [
+      { text: 'Documentation Home', href: '/docs' },
+      { text: 'Getting Started', href: '/docs/getting-started' },
+      { text: 'AI Assistant', href: '/docs/ai-assistant' },
+      { text: 'Multi-View', href: '/docs/multi-view' },
+      { text: 'Hubs', href: '/docs/hubs' },
+      { text: 'Settings', href: '/docs/settings' },
+      { text: 'Keyboard Shortcuts', href: '/docs/keyboard-shortcuts' },
+      { text: 'Advanced Features', href: '/docs/advanced-features' },
+      { text: 'Security Guide', href: '/docs/security-guide' },
+      { text: 'Troubleshooting', href: '/docs/troubleshooting' },
+      { text: 'FAQ', href: '/docs/faq' }
+    ]
+  },
+  {
+    title: 'Support',
+    links: [
+      { text: 'Support Center', href: '/support' },
       { text: 'FAQ', href: '/faq' },
-      { text: 'Terms and Conditions', href: '/terms-and-conditions' },
-      { text: 'Privacy Policy', href: '/privacy-policy' }
+      { text: 'Contact Sales', href: '/sales' },
+    ]
+  },
+  {
+    title: 'Company',
+    links: [
+      { text: 'About Us', href: '/about' },
+      { text: 'Careers', href: '/careers' },
+      { text: 'Manifesto', href: '/manifesto' },
+      { text: 'Contact', href: '/contact' }
+    ]
+  },
+  {
+    title: 'Legal',
+    links: [
+      { text: 'Privacy Policy', href: '/privacy-policy' },
+      { text: 'Terms & Conditions', href: '/terms-and-conditions' },
+      { text: 'Accessibility', href: '/docs/accessibility' },
+      { text: 'Right to Work', href: '/right-to-work' }
     ]
   }
 ];
@@ -42,19 +97,20 @@ export default function Sitemap() {
   return (
     <>
       <Head>
-        <title>Sitemap | Kahana</title>
+        <title>Sitemap | Kahana - Navigate Our Website</title>
         <meta
           name="description"
-          content="Navigate Kahana's website with our comprehensive sitemap."
+          content="Browse Kahana's complete website structure. Find information about our enterprise browser, web applications, solutions, documentation, support resources, and more."
         />
+        <meta name="robots" content="noindex, follow" />
       </Head>
 
       <div className="bg-white">
         <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-gray-900">Sitemap</h1>
+            <h1 className="text-4xl font-bold text-gray-900">Website Sitemap</h1>
             <p className="mt-4 text-xl text-gray-600">
-              Find your way around Kahana's website.
+              A complete guide to Kahana's website structure and content
             </p>
           </div>
 

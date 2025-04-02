@@ -91,13 +91,6 @@ export default function ContactPage() {
 
   const formSection = (
     <div className="bg-white rounded-xl shadow-xl border border-[#A5DAD8]/30 p-8">
-      <div className="text-center mb-8">
-        <h3 className="text-2xl font-semibold text-gray-900">Get In Touch</h3>
-        <p className="mt-3 text-gray-600">
-          Share your thoughts with us and we'll get back to you soon.
-        </p>
-      </div>
-      
       <div className="relative min-h-[600px]">
         {!isFormLoaded && !loadError && (
           <div className="absolute inset-0 flex items-center justify-center">
@@ -159,7 +152,7 @@ export default function ContactPage() {
               <div className="text-center lg:text-left mb-12">
                 <h2 className="text-base font-semibold leading-7 text-[#66C2BE] mb-3">Let's Connect</h2>
                 <h1 className="text-4xl font-bold text-gray-900 sm:text-5xl">
-                  Get in Touch with Our Team
+                  Contact us
                 </h1>
                 <p className="mt-6 text-xl text-gray-600">
                   We're excited to learn more about your needs and show you how Kahana can transform your browsing experience. Share your thoughts with us, and we'll get back to you soon!

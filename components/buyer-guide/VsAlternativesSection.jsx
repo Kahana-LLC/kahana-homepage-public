@@ -171,7 +171,7 @@ const VsAlternativesSection = () => {
           Experience the difference of a browser built specifically for enterprise productivity and security.
         </p>
         <Link
-          href="/request-a-demo"
+          href="/schedule-demo"
           className="inline-block bg-amber-600 text-white px-8 py-4 rounded-lg font-medium hover:bg-amber-700 transition-colors"
         >
           Schedule a Demo

@@ -11,7 +11,7 @@ const conceptCards = [
       </svg>
     ),
     highlight: "Automated workflow optimization",
-    link: "/solutions/workplace-enablement"
+    link: "/docs/getting-started"
   },
   {
     title: "Real-time Analytics",
@@ -22,7 +22,7 @@ const conceptCards = [
       </svg>
     ),
     highlight: "Real-time data processing",
-    link: "/solutions/saas-and-web-apps"
+    link: "/docs/getting-started"
   },
   {
     title: "Secure Platform",
@@ -33,7 +33,7 @@ const conceptCards = [
       </svg>
     ),
     highlight: "Military-grade encryption",
-    link: "/solutions/secure-browsing"
+    link: "/docs/security-guide"
   },
   {
     title: "Team Collaboration",
@@ -44,7 +44,7 @@ const conceptCards = [
       </svg>
     ),
     highlight: "Synchronized workspace",
-    link: "/solutions/workplace-enablement"
+    link: "/docs/advanced-features"
   }
 ];
 

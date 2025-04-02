@@ -66,9 +66,9 @@ const allDocs = {
       <h2>Next Steps</h2>
       <p>After completing the basic setup:</p>
       <ul>
-        <li>Explore advanced features in our <a href="/docs/advanced-features" className="text-[#66C2BE] hover:text-[#55B3AF]">Advanced Features Guide</a></li>
-        <li>Learn about security best practices in our <a href="/docs/security-guide" className="text-[#66C2BE] hover:text-[#55B3AF]">Security Guide</a></li>
-        <li>Check our <a href="/faq" className="text-[#66C2BE] hover:text-[#55B3AF]">FAQ section</a> for common questions</li>
+        <li>Explore advanced features in our <Link href="/docs/advanced-features" className="text-[#66C2BE] hover:text-[#55B3AF]">Advanced Features Guide</Link></li>
+        <li>Learn about security best practices in our <Link href="/docs/security-guide" className="text-[#66C2BE] hover:text-[#55B3AF]">Security Guide</Link></li>
+        <li>Check our <Link href="/faq" className="text-[#66C2BE] hover:text-[#55B3AF]">FAQ section</Link> for common questions</li>
       </ul>
     `,
     category: 'Getting Started',
@@ -120,8 +120,8 @@ const allDocs = {
       <h2>Additional Resources</h2>
       <p>For more information:</p>
       <ul>
-        <li>Visit our <a href="/faq" className="text-[#66C2BE] hover:text-[#55B3AF]">FAQ section</a> for common questions</li>
-        <li>Check our <a href="/docs/security-guide" className="text-[#66C2BE] hover:text-[#55B3AF]">Security Guide</a> for best practices</li>
+        <li>Visit our <Link href="/faq" className="text-[#66C2BE] hover:text-[#55B3AF]">FAQ section</Link> for common questions</li>
+        <li>Check our <Link href="/docs/security-guide" className="text-[#66C2BE] hover:text-[#55B3AF]">Security Guide</Link> for best practices</li>
         <li>Contact support for specific issues</li>
       </ul>
     `,
@@ -167,8 +167,8 @@ const allDocs = {
       <h2>Additional Resources</h2>
       <p>For more security information:</p>
       <ul>
-        <li>Check our <a href="/faq" className="text-[#66C2BE] hover:text-[#55B3AF]">FAQ section</a> for security-related questions</li>
-        <li>Review our <a href="/docs/advanced-features" className="text-[#66C2BE] hover:text-[#55B3AF]">Advanced Features Guide</a> for security configurations</li>
+        <li>Check our <Link href="/faq" className="text-[#66C2BE] hover:text-[#55B3AF]">FAQ section</Link> for security-related questions</li>
+        <li>Review our <Link href="/docs/advanced-features" className="text-[#66C2BE] hover:text-[#55B3AF]">Advanced Features Guide</Link> for security configurations</li>
         <li>Contact our security team for specific concerns</li>
       </ul>
     `,

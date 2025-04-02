@@ -1,0 +1,115 @@
+const fs = require("fs");
+const path = require("path");
+const { execSync } = require("child_process");
+
+const EXTERNAL_DATA_URL = "https://kahana.ai";
+
+// Function to get last modified date from git
+function getLastModifiedDate(filePath) {
+  try {
+    const gitLog = execSync(`git log -1 --format=%cd --date=iso ${filePath}`)
+      .toString()
+      .trim();
+    return new Date(gitLog).toISOString();
+  } catch (error) {
+    // Fallback to file system date if git history is not available
+    const stats = fs.statSync(filePath);
+    return stats.mtime.toISOString();
+  }
+}
+
+// Function to get all pages from the pages directory
+function getAllPages() {
+  const pagesDir = path.join(process.cwd(), "pages");
+  const pages = [];
+
+  function scanDirectory(dir) {
+    const files = fs.readdirSync(dir);
+
+    files.forEach((file) => {
+      const filePath = path.join(dir, file);
+      const stat = fs.statSync(filePath);
+
+      if (stat.isDirectory()) {
+        scanDirectory(filePath);
+      } else if (file.endsWith(".js") || file.endsWith(".jsx")) {
+        // Skip special Next.js files
+        if (
+          file.startsWith("_") ||
+          file === "sitemap.xml.js" ||
+          file === "sitemap.jsx"
+        ) {
+          return;
+        }
+
+        const relativePath = path.relative(pagesDir, filePath);
+        const route =
+          "/" +
+          relativePath
+            .replace(/\.(js|jsx)$/, "")
+            .replace(/\\/g, "/")
+            .replace(/index$/, "");
+
+        pages.push({
+          url: `${EXTERNAL_DATA_URL}${route}`,
+          lastmod: getLastModifiedDate(filePath),
+          changefreq: determineChangeFrequency(route),
+          priority: determinePriority(route),
+        });
+      }
+    });
+  }
+
+  scanDirectory(pagesDir);
+  return pages;
+}
+
+// Function to determine change frequency based on route
+function determineChangeFrequency(route) {
+  const patterns = {
+    "/blog": "daily",
+    "/products": "weekly",
+    "/solutions": "weekly",
+    "/docs": "weekly",
+    "/about": "monthly",
+    "/contact": "monthly",
+    "/privacy-policy": "monthly",
+    "/terms-and-conditions": "monthly",
+  };
+
+  for (const [pattern, freq] of Object.entries(patterns)) {
+    if (route.startsWith(pattern)) {
+      return freq;
+    }
+  }
+  return "monthly";
+}
+
+// Function to determine priority based on route
+function determinePriority(route) {
+  const patterns = {
+    "/": "1.0",
+    "/products": "1.0",
+    "/solutions": "1.0",
+    "/schedule-demo": "1.0",
+    "/blog": "0.9",
+    "/docs": "0.9",
+    "/about": "0.8",
+    "/contact": "0.8",
+    "/support": "0.8",
+    "/privacy-policy": "0.5",
+    "/terms-and-conditions": "0.5",
+  };
+
+  for (const [pattern, priority] of Object.entries(patterns)) {
+    if (route.startsWith(pattern)) {
+      return priority;
+    }
+  }
+  return "0.7";
+}
+
+module.exports = {
+  EXTERNAL_DATA_URL,
+  getAllPages,
+};

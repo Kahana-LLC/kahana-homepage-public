@@ -66,7 +66,7 @@ export default function Hubs() {
                 <li><Link href="/docs/multi-view">Working with Multiple Views</Link></li>
                 <li><Link href="/docs/ai-assistant">Using AI Assistant with Hubs</Link></li>
                 <li><Link href="/docs/settings">Hub-specific Settings</Link></li>
-                <li><Link href="/docs/troubleshooting">Troubleshooting Hub Issues</Link></li>
+                <li><Link href="/docs/getting-started#troubleshooting">Troubleshooting Hub Issues</Link></li>
               </ul>
             </div>
           </div>
