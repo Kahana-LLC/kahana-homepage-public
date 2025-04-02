@@ -23,7 +23,7 @@ const featuredPosts = [
     date: "March 15, 2024",
     author: {
       name: "Adam Kershner",
-      role: "Chief Technology Officer",
+      role: "CTO",
     },
     defaultImageQuery: "modern technology office workspace",
   },
@@ -35,21 +35,21 @@ const featuredPosts = [
     category: "Security",
     date: "March 10, 2024",
     author: {
-      name: "William Reehil",
+      name: "Adam Kershner",
       role: "CTO",
     },
     defaultImageQuery: "network security digital protection",
   },
   {
     slug: "cloud-migration",
-    title: "Cloud Migration Strategies for 2024",
+    title: "Cloud Migration Strategies for 2025",
     excerpt:
       "Explore the latest strategies and best practices for successful cloud migration.",
     category: "Cloud Computing",
     date: "March 5, 2024",
     author: {
-      name: "Jonathan Gans",
-      role: "CEO",
+      name: "Adam Kershner",
+      role: "CTO",
     },
     defaultImageQuery: "cloud computing data center",
   },
@@ -141,12 +141,6 @@ export default function Home({ blogPosts }) {
 
       <div className="relative">
         <main className="scroll-smooth">
-          <section
-            id="hero"
-            className="min-h-screen flex items-center justify-center p-4 md:p-8 bg-gray-100"
-          >
-            <HeroSection />
-          </section>
           <section
             id="products"
             className="min-h-screen flex items-center justify-center p-4 md:p-8 bg-white"

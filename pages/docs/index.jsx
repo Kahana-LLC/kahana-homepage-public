@@ -14,7 +14,6 @@ const categories = [
   'User Guide',
   'API Reference',
   'Best Practices',
-  'Troubleshooting',
   'Updates'
 ];
 
@@ -22,15 +21,159 @@ const categories = [
 const allDocs = {
   'getting-started': {
     title: 'Getting Started with Kahana Browser',
-    excerpt: 'Learn how to set up and start using Kahana for your enterprise browsing needs.',
+    excerpt: 'Learn how to set up and start using Kahana Browser for your enterprise needs.',
+    content: `
+      <h2>Introduction</h2>
+      <p>Welcome to Kahana Browser, your enterprise-grade solution for secure and productive browsing. This guide will help you get started with installation, basic configuration, and essential features.</p>
+
+      <h2>System Requirements</h2>
+      <p>Before installing Kahana Browser, ensure your system meets these requirements:</p>
+      <ul>
+        <li>Operating System: Windows 10/11, macOS 10.15+, or Linux (Ubuntu 20.04+)</li>
+        <li>Processor: Intel Core i5/AMD Ryzen 5 or better</li>
+        <li>Memory: 8GB RAM minimum (16GB recommended)</li>
+        <li>Storage: 500MB free space</li>
+        <li>Network: Stable internet connection</li>
+      </ul>
+
+      <h2>Installation</h2>
+      <p>Follow these steps to install Kahana Browser:</p>
+      <ol>
+        <li>Download the installer from your enterprise portal</li>
+        <li>Run the installer with administrator privileges</li>
+        <li>Follow the installation wizard prompts</li>
+        <li>Launch Kahana Browser and sign in with your enterprise credentials</li>
+      </ol>
+
+      <h2>Initial Setup</h2>
+      <p>After installation, complete these setup steps:</p>
+      <ul>
+        <li>Configure your enterprise SSO settings</li>
+        <li>Set up your security preferences</li>
+        <li>Customize your workspace layout</li>
+        <li>Import your bookmarks and settings</li>
+      </ul>
+
+      <h2>Essential Features</h2>
+      <p>Get familiar with these key features:</p>
+      <ul>
+        <li><strong>Multi-View:</strong> Work with multiple windows simultaneously</li>
+        <li><strong>Smart Navigation:</strong> Access frequently used sites quickly</li>
+        <li><strong>Security Controls:</strong> Manage enterprise security settings</li>
+        <li><strong>AI Assistant:</strong> Get help with common tasks</li>
+      </ul>
+
+      <h2>Next Steps</h2>
+      <p>After completing the basic setup:</p>
+      <ul>
+        <li>Explore advanced features in our <a href="/docs/advanced-features" className="text-[#66C2BE] hover:text-[#55B3AF]">Advanced Features Guide</a></li>
+        <li>Learn about security best practices in our <a href="/docs/security-guide" className="text-[#66C2BE] hover:text-[#55B3AF]">Security Guide</a></li>
+        <li>Check our <a href="/faq" className="text-[#66C2BE] hover:text-[#55B3AF]">FAQ section</a> for common questions</li>
+      </ul>
+    `,
     category: 'Getting Started',
-    date: 'March 15, 2024',
-    author: {
-      name: 'Kahana Team',
-      role: 'Documentation',
-    },
-    customImage: null,
-    defaultImageQuery: 'modern technology office workspace'
+    date: 'March 15, 2024'
+  },
+  'advanced-features': {
+    title: 'Advanced Features Guide',
+    excerpt: 'Explore the advanced capabilities of Kahana Browser for power users.',
+    content: `
+      <h2>Advanced Features Overview</h2>
+      <p>Kahana Browser offers powerful features for enterprise users who need more control and customization options. This guide covers advanced features and configurations.</p>
+
+      <h2>Custom Workspace Layouts</h2>
+      <p>Create and manage custom workspace layouts:</p>
+      <ul>
+        <li>Save multiple layout configurations</li>
+        <li>Set up automatic layout switching</li>
+        <li>Configure workspace shortcuts</li>
+        <li>Manage layout permissions</li>
+      </ul>
+
+      <h2>Advanced Security Settings</h2>
+      <p>Configure detailed security controls:</p>
+      <ul>
+        <li>Set up custom security policies</li>
+        <li>Configure advanced threat protection</li>
+        <li>Manage certificate handling</li>
+        <li>Set up custom content filtering</li>
+      </ul>
+
+      <h2>Integration Capabilities</h2>
+      <p>Connect Kahana with your enterprise tools:</p>
+      <ul>
+        <li>Configure SSO integrations</li>
+        <li>Set up API connections</li>
+        <li>Manage third-party extensions</li>
+        <li>Configure custom protocols</li>
+      </ul>
+
+      <h2>Performance Optimization</h2>
+      <p>Optimize Kahana for your needs:</p>
+      <ul>
+        <li>Configure memory management</li>
+        <li>Set up caching preferences</li>
+        <li>Manage resource allocation</li>
+        <li>Optimize network settings</li>
+      </ul>
+
+      <h2>Additional Resources</h2>
+      <p>For more information:</p>
+      <ul>
+        <li>Visit our <a href="/faq" className="text-[#66C2BE] hover:text-[#55B3AF]">FAQ section</a> for common questions</li>
+        <li>Check our <a href="/docs/security-guide" className="text-[#66C2BE] hover:text-[#55B3AF]">Security Guide</a> for best practices</li>
+        <li>Contact support for specific issues</li>
+      </ul>
+    `,
+    category: 'Advanced',
+    date: 'March 15, 2024'
+  },
+  'security-guide': {
+    title: 'Security Guide',
+    excerpt: 'Learn about security features and best practices in Kahana Browser.',
+    content: `
+      <h2>Security Overview</h2>
+      <p>Kahana Browser provides comprehensive security features to protect your enterprise data and users. This guide covers security features and best practices.</p>
+
+      <h2>Core Security Features</h2>
+      <p>Essential security capabilities include:</p>
+      <ul>
+        <li>Enterprise-grade encryption</li>
+        <li>Advanced threat protection</li>
+        <li>Secure browsing sessions</li>
+        <li>Content filtering</li>
+        <li>Access controls</li>
+      </ul>
+
+      <h2>Security Best Practices</h2>
+      <p>Follow these guidelines for optimal security:</p>
+      <ul>
+        <li>Regular security audits</li>
+        <li>Policy enforcement</li>
+        <li>User training</li>
+        <li>Incident response planning</li>
+        <li>Compliance monitoring</li>
+      </ul>
+
+      <h2>Compliance Features</h2>
+      <p>Maintain compliance with:</p>
+      <ul>
+        <li>HIPAA requirements</li>
+        <li>FedRAMP standards</li>
+        <li>Industry regulations</li>
+        <li>Data protection laws</li>
+      </ul>
+
+      <h2>Additional Resources</h2>
+      <p>For more security information:</p>
+      <ul>
+        <li>Check our <a href="/faq" className="text-[#66C2BE] hover:text-[#55B3AF]">FAQ section</a> for security-related questions</li>
+        <li>Review our <a href="/docs/advanced-features" className="text-[#66C2BE] hover:text-[#55B3AF]">Advanced Features Guide</a> for security configurations</li>
+        <li>Contact our security team for specific concerns</li>
+      </ul>
+    `,
+    category: 'Security',
+    date: 'March 15, 2024'
   },
   'hubs': {
     title: 'Understanding Hubs',

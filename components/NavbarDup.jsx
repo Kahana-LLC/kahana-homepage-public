@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import whiteKahanaLogo from '../assets/kahana_logo_wide_gray.svg';
+import whiteKahanaLogo from '../assets/kahana_logo_wide_gray.svg?v=2';
 
 function NavBar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -68,6 +68,13 @@ function NavBar() {
           .logo {
             height: 42px;
             width: auto;
+          }
+
+          @media (max-width: 768px) {
+            .logo {
+              height: 32px;
+              width: auto;
+            }
           }
 
           .nav-links {
@@ -231,7 +238,13 @@ function NavBar() {
           .nav-buttons {
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 0.75rem;
+          }
+
+          @media (max-width: 768px) {
+            .nav-buttons {
+              gap: 0.5rem;
+            }
           }
 
           .nav-button {
@@ -243,6 +256,13 @@ function NavBar() {
             transition: all 0.3s ease;
             font-size: 0.875rem;
             font-weight: 500;
+          }
+
+          @media (max-width: 768px) {
+            .nav-button {
+              padding: 0.375rem 0.75rem;
+              font-size: 0.75rem;
+            }
           }
 
           .nav-button.download {
@@ -329,6 +349,7 @@ function NavBar() {
               className="logo"
               height={42}
               width={150}
+              priority
             />
           </Link>
 
@@ -400,17 +421,14 @@ function NavBar() {
                 <div className="dropdown-section">
                   <h3 className="text-[0.75rem] font-semibold text-gray-600 mb-4 uppercase tracking-wider">Resources</h3>
                   <div className="flex flex-col space-y-4">
-                    <Link href="/customers" className="dropdown-link">
-                      Customers
-                    </Link>
                     <Link href="/blog" className="dropdown-link">
                       Blog
                     </Link>
-                    <Link href="/resources" className="dropdown-link">
-                      Resources
-                    </Link>
                     <Link href="/docs" className="dropdown-link">
                       Docs
+                    </Link>
+                    <Link href="/faq" className="dropdown-link">
+                      FAQ
                     </Link>
                   </div>
                 </div>
@@ -427,12 +445,6 @@ function NavBar() {
                     <Link href="/about" className="dropdown-link">
                       About
                     </Link>
-                    <Link href="/press" className="dropdown-link">
-                      Press
-                    </Link>
-                    <Link href="/events" className="dropdown-link">
-                      Events & Webinars
-                    </Link>
                   </div>
                 </div>
                 <div className="dropdown-section">
@@ -441,7 +453,7 @@ function NavBar() {
                     <Link href="/sales" className="dropdown-link">
                       Contact Sales
                     </Link>
-                    <Link href="/schedule-a-demo" className="dropdown-link">
+                    <Link href="/schedule-demo" className="dropdown-link">
                       Schedule a Demo
                     </Link>
                     <Link href="/get-a-quote" className="dropdown-link">
@@ -460,7 +472,7 @@ function NavBar() {
           <div className="flex items-center gap-4">
             <div className="nav-buttons hidden md:flex">
               <Link href="/schedule-demo">
-                <button className="nav-button download">Demo</button>
+                <button className="nav-button download inline-flex items-center rounded-md bg-white border border-[#66C2BE] shadow-sm text-[#66C2BE] hover:bg-gray-50 px-2 py-1.5 text-xs md:px-4 md:py-2 md:text-sm">Schedule Demo</button>
               </Link>
               <Link href="/contact">
                 <button className="nav-button get-in-touch">Get in touch</button>
@@ -518,12 +530,10 @@ function NavBar() {
             <Link href="/about" className="mobile-link">About</Link>
             <div className="mobile-section">
               <Link href="/about" className="mobile-link">About</Link>
-              <Link href="/press" className="mobile-link">Press</Link>
-              <Link href="/events" className="mobile-link">Events</Link>
             </div>
             <div className="mobile-section">
               <Link href="/sales" className="mobile-link">Get in Touch</Link>
-              <Link href="/schedule-a-demo" className="mobile-link">Schedule a Demo</Link>
+              <Link href="/schedule-demo" className="mobile-link">Schedule a Demo</Link>
               <Link href="/get-a-quote" className="mobile-link">Request a Quote</Link>
               <Link href="/support" className="mobile-link">Product Support</Link>
             </div>

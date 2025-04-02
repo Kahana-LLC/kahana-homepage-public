@@ -31,27 +31,6 @@ import mahendra from '../assets/headshots/mahendra_shahi.webp';
 // Author mapping for blog posts
 const authorImages = {
   'Adam Kershner': adam,
-  'Emilio V Abelmann': emilio,
-  'Eugene Kaminsky': eugene,
-  'Hugh Molotsi': hugh,
-  'Jonathan Gans': jonathan,
-  'William Reehil': william,
-  'Gregory Gray': greg,
-  'Denali Keefe': denali,
-  'Benjamin St-Juste': benjamin,
-  'Aparna Chaturvedula': aparna,
-  'Kelsie Exley': kelsie,
-  'Jyoti Vashist': jyoti,
-  'Kirtana Sridharan': kirtana,
-  'Monty Lans': monty,
-  'Saumya Roy': saumya,
-  'Shivani Chandrashekar': shivani,
-  'Sinchana Thippeswamy': sinchana,
-  'Jordan Kern': jordan,
-  'Veda Kanduri': veda,
-  'Siddhartha Roy': siddhartha,
-  'RJ Gan': rj,
-  'Mahendra Shahi': mahendra
 };
 
 // Default avatar placeholder
@@ -66,7 +45,7 @@ const allBlogPosts = {
     date: 'March 15, 2024',
     author: {
       name: 'Adam Kershner',
-      role: 'Chief Technology Officer',
+      role: 'CTO',
       avatar: authorImages['Adam Kershner'] || DEFAULT_AVATAR,
     },
     customImage: null,
@@ -78,22 +57,22 @@ const allBlogPosts = {
     category: 'Security',
     date: 'March 10, 2024',
     author: {
-      name: 'William Reehil',
+      name: 'Adam Kershner',
       role: 'CTO',
-      avatar: authorImages['William Reehil'] || DEFAULT_AVATAR,
+      avatar: authorImages['Adam Kershner'] || DEFAULT_AVATAR,
     },
     customImage: null,
     defaultImageQuery: 'network security digital protection'
   },
   'cloud-migration': {
-    title: 'Cloud Migration Strategies for 2024',
+    title: 'Cloud Migration Strategies for 2025',
     excerpt: 'Explore the latest strategies and best practices for successful cloud migration.',
     category: 'Cloud Computing',
     date: 'March 5, 2024',
     author: {
-      name: 'Jonathan Gans',
-      role: 'CEO',
-      avatar: authorImages['Jonathan Gans'] || DEFAULT_AVATAR,
+      name: 'Adam Kershner',
+      role: 'CTO',
+      avatar: authorImages['Adam Kershner'] || DEFAULT_AVATAR,
     },
     customImage: null,
     defaultImageQuery: 'cloud computing data center'
@@ -104,9 +83,9 @@ const allBlogPosts = {
     category: 'Development',
     date: 'March 1, 2024',
     author: {
-      name: 'Mahendra Shahi',
-      role: 'Engineering',
-      avatar: authorImages['Mahendra Shahi'] || DEFAULT_AVATAR,
+      name: 'Adam Kershner',
+      role: 'CTO',
+      avatar: authorImages['Adam Kershner'] || DEFAULT_AVATAR,
     },
     customImage: null,
     defaultImageQuery: 'software development team collaboration'
