@@ -51,8 +51,8 @@ export default function GettingStarted() {
               <h3 className="text-lg font-semibold mb-2">Need Help?</h3>
               <p className="mb-4">If you encounter any issues during installation or setup:</p>
               <ul>
-                <li>Check our <Link href="/docs/troubleshooting">Troubleshooting Guide</Link></li>
-                <li>Review the <Link href="/docs/faq">Frequently Asked Questions</Link></li>
+                <li>Check our <Link href="/docs/getting-started#troubleshooting">Troubleshooting Guide</Link></li>
+                <li>Review the <Link href="/docs/getting-started#faq">Frequently Asked Questions</Link></li>
                 <li>Contact our support team</li>
               </ul>
             </div>

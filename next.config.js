@@ -16,6 +16,16 @@ const nextConfig = {
       "images.pexels.com", // Domain for Pexels images
     ],
   },
+
+  // Handle XML sitemap
+  async rewrites() {
+    return [
+      {
+        source: "/sitemap.xml",
+        destination: "/api/sitemap",
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;

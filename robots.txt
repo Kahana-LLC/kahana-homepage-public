@@ -1,6 +1,35 @@
 # Allow all crawlers access to all content
 User-agent: *
-Disallow: /private/
+Allow: /
 
-# Specify the location of the sitemap
-Sitemap: https://kahana.co/sitemap.xml
+# Disallow private and admin areas
+Disallow: /private/
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /static/
+
+# Specify the location of the sitemaps
+Sitemap: https://kahana.ai/sitemap.xml
+Sitemap: https://kahana.ai/sitemap-image.xml
+
+# Add crawl-delay for better server resource management
+Crawl-delay: 1
+
+# Additional directives for specific bots
+User-agent: GPTBot
+Allow: /
+Crawl-delay: 2
+
+User-agent: ChatGPT-User
+Allow: /
+Crawl-delay: 2
+
+User-agent: Googlebot-Image
+Allow: /
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.gif$
+Allow: /*.png$
+Allow: /*.webp$
+Crawl-delay: 1

@@ -13,21 +13,18 @@ const features = [
     description:
       'Create a central repository of your best frameworks, methodologies, and resources. Package your expertise into valuable assets.',
     image: revenue,
-    link: '/product/recurring-revenue', // Add the link for Recurring Revenue
   },
   {
     title: 'Collaborate with Peers & Colleagues',
     description:
       'Work seamlessly with other consultants on joint projects and ventures. Leverage collective intelligence to tackle complex challenges.',
     image: collaboration,
-    link: '/product/collaboration-tools', // Add the link for Collaboration Tools
   },
   {
     title: 'Engage Your Clients',
     description:
       'Collaborate with clients to gather feedback and create an engaging environment where clients can connect with one another.',
     image: community,
-    link: '/product/community-engagement', // Add the link for Community Engagement
   },
 ];
 

@@ -5,7 +5,7 @@ export const DotPattern = ({ className = "" }) => (
     {[...Array(48)].map((_, i) => (
       <div 
         key={i} 
-        className="w-1.5 h-1.5 rounded-full bg-amber-700 opacity-20"
+        className="w-1.5 h-1.5 rounded-full bg-[#66C2BE] opacity-20"
       />
     ))}
   </div>

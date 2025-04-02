@@ -81,10 +81,9 @@ export default function Settings() {
             <div className="bg-gray-50 p-6 rounded-lg mt-8">
               <h3 className="text-lg font-semibold mb-2">Related Topics</h3>
               <ul>
-                <li><Link href="/docs/privacy">Privacy Features</Link></li>
-                <li><Link href="/docs/accessibility">Accessibility Options</Link></li>
-                <li><Link href="/docs/keyboard-shortcuts">Keyboard Shortcuts</Link></li>
-                <li><Link href="/docs/troubleshooting">Troubleshooting</Link></li>
+                <li><Link href="/docs/security-guide#privacy">Privacy Features</Link></li>
+                <li><Link href="/docs/getting-started#accessibility">Accessibility Options</Link></li>
+                <li><Link href="/docs/getting-started#troubleshooting">Troubleshooting</Link></li>
               </ul>
             </div>
           </div>

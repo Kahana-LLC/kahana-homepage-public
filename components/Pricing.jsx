@@ -32,7 +32,7 @@ const tiers = [
   },
   {
     name: 'Enterprise',
-    href: '/request-an-invoice',
+    href: '/contact',
     priceMonthly: 99.99,
     description: 'For organizations.',
     includedFeatures: [
@@ -46,7 +46,7 @@ const tiers = [
       'Built-in AI & ML tools <span class="inline-block bg-yellow-300 text-yellow-800 px-2 py-0.5 rounded-full text-xs">new</span>',
     ],
     additionalLinkText: 'Request a Live Demo',
-    additionalLinkHref: '/request-a-demo',
+    additionalLinkHref: '/contact',
   },
 ];
 

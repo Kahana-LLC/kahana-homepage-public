@@ -159,7 +159,7 @@ export default function ProductDemoSection() {
               Schedule a Demo
             </button>
           </Link>
-          <Link href="http://localhost:3001/products/enterprise-browser">
+          <Link href="/products/enterprise-browser">
             <button className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 border border-gray-300 text-base font-medium rounded-lg text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-kahana-primary">
               Learn More
             </button>

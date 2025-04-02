@@ -19,8 +19,10 @@ const EnterpriseDeploymentSection = () => {
         {/* Automated Distribution */}
         <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
           <div className="flex items-center space-x-4 mb-4">
-            <div className="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center">
-              <span className="text-2xl">📦</span>
+            <div className="w-12 h-12 bg-[#66C2BE]/10 rounded-lg flex items-center justify-center">
+              <svg className="w-6 h-6 text-[#66C2BE]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+              </svg>
             </div>
             <div>
               <h3 className="text-xl font-semibold text-gray-800">Automated Distribution</h3>
@@ -51,8 +53,10 @@ const EnterpriseDeploymentSection = () => {
         {/* Update Management */}
         <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
           <div className="flex items-center space-x-4 mb-4">
-            <div className="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center">
-              <span className="text-2xl">🔄</span>
+            <div className="w-12 h-12 bg-[#66C2BE]/10 rounded-lg flex items-center justify-center">
+              <svg className="w-6 h-6 text-[#66C2BE]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+              </svg>
             </div>
             <div>
               <h3 className="text-xl font-semibold text-gray-800">Update Management</h3>
@@ -72,11 +76,11 @@ const EnterpriseDeploymentSection = () => {
       </div>
 
       {/* System Requirements */}
-      <div className="bg-amber-50 p-8 rounded-xl border border-amber-100">
+      <div className="bg-gray-50 p-8 rounded-xl border border-gray-200">
         <h3 className="text-2xl font-semibold mb-6 text-gray-800">System Requirements</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-amber-800">Operating Systems</h4>
+            <h4 className="text-lg font-semibold mb-4 text-[#66C2BE]">Operating Systems</h4>
             <ul className="list-disc list-inside text-gray-600 space-y-2">
               <li>Windows 10/11 (64-bit)</li>
               <li>macOS 11.0 or later</li>
@@ -84,7 +88,7 @@ const EnterpriseDeploymentSection = () => {
             </ul>
           </div>
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-amber-800">Hardware Requirements</h4>
+            <h4 className="text-lg font-semibold mb-4 text-[#66C2BE]">Hardware Requirements</h4>
             <ul className="list-disc list-inside text-gray-600 space-y-2">
               <li>RAM: 4GB (8GB recommended)</li>
               <li>Storage: 500MB free space</li>
@@ -199,8 +203,10 @@ const EnterpriseDeploymentSection = () => {
           {/* Financial Services Case Study */}
           <div className="bg-white p-6 rounded-xl shadow-sm">
             <div className="flex items-center space-x-4 mb-4">
-              <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                <span className="text-2xl">🏦</span>
+              <div className="w-12 h-12 bg-[#66C2BE]/10 rounded-full flex items-center justify-center">
+                <svg className="w-6 h-6 text-[#66C2BE]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
               </div>
               <h4 className="text-xl font-semibold text-gray-800">Global Financial Firm</h4>
             </div>
@@ -219,8 +225,10 @@ const EnterpriseDeploymentSection = () => {
           {/* Tech Company Case Study */}
           <div className="bg-white p-6 rounded-xl shadow-sm">
             <div className="flex items-center space-x-4 mb-4">
-              <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                <span className="text-2xl">💻</span>
+              <div className="w-12 h-12 bg-[#66C2BE]/10 rounded-full flex items-center justify-center">
+                <svg className="w-6 h-6 text-[#66C2BE]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
               </div>
               <h4 className="text-xl font-semibold text-gray-800">Tech Startup</h4>
             </div>
@@ -239,8 +247,10 @@ const EnterpriseDeploymentSection = () => {
           {/* Healthcare Case Study */}
           <div className="bg-white p-6 rounded-xl shadow-sm">
             <div className="flex items-center space-x-4 mb-4">
-              <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                <span className="text-2xl">🏥</span>
+              <div className="w-12 h-12 bg-[#66C2BE]/10 rounded-full flex items-center justify-center">
+                <svg className="w-6 h-6 text-[#66C2BE]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                </svg>
               </div>
               <h4 className="text-xl font-semibold text-gray-800">Healthcare Provider</h4>
             </div>
@@ -259,8 +269,10 @@ const EnterpriseDeploymentSection = () => {
           {/* Enterprise Case Study */}
           <div className="bg-white p-6 rounded-xl shadow-sm">
             <div className="flex items-center space-x-4 mb-4">
-              <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                <span className="text-2xl">🏢</span>
+              <div className="w-12 h-12 bg-[#66C2BE]/10 rounded-full flex items-center justify-center">
+                <svg className="w-6 h-6 text-[#66C2BE]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                </svg>
               </div>
               <h4 className="text-xl font-semibold text-gray-800">Enterprise Retail</h4>
             </div>
