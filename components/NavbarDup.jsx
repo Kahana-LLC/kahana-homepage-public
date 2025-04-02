@@ -16,6 +16,23 @@ function NavBar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) { // 1024px is the lg breakpoint in Tailwind
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    // Add event listener
+    window.addEventListener('resize', handleResize);
+    
+    // Call handler right away to check initial size
+    handleResize();
+
+    // Clean up
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
@@ -293,7 +310,7 @@ function NavBar() {
             position: fixed;
             top: 64px;
             right: 0;
-            width: 260px;
+            width: 300px;
             height: calc(100vh - 64px);
             background-color: white;
             box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
@@ -308,10 +325,37 @@ function NavBar() {
           }
 
           .menu-links {
-            padding: 1rem;
+            padding: 1.5rem;
             display: flex;
             flex-direction: column;
-            gap: 0.5rem;
+            gap: 0.75rem;
+          }
+
+          .mobile-link {
+            color: #333;
+            transition: all 0.3s ease;
+            padding: 1rem 1.25rem;
+            border-radius: 0.75rem;
+            width: 100%;
+            text-align: left;
+            background-color: #f8f9fa;
+            font-size: 1.125rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            border: 1px solid #edf0f2;
+          }
+
+          .mobile-link:hover {
+            background-color: #D0EDE6;
+            color: #2c2c2c;
+            transform: translateX(4px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+          }
+
+          .mobile-link:active {
+            transform: translateX(2px);
+            background-color: #bfe5dd;
           }
 
           @media (max-width: 1024px) {
@@ -470,12 +514,18 @@ function NavBar() {
 
           {/* Buttons and Hamburger Menu */}
           <div className="flex items-center gap-4">
-            <div className="nav-buttons hidden md:flex">
+            <div className="nav-buttons flex">
               <Link href="/schedule-demo">
-                <button className="nav-button download inline-flex items-center rounded-md bg-white border border-[#66C2BE] shadow-sm text-[#66C2BE] hover:bg-gray-50 px-2 py-1.5 text-xs md:px-4 md:py-2 md:text-sm">Schedule Demo</button>
+                <button className="nav-button download inline-flex items-center rounded-md bg-white border border-[#66C2BE] shadow-sm text-[#66C2BE] hover:bg-gray-50 px-2 py-1.5 text-xs md:px-4 md:py-2 md:text-sm">
+                  <span className="md:hidden">Demo</span>
+                  <span className="hidden md:inline">Schedule Demo</span>
+                </button>
               </Link>
               <Link href="/contact">
-                <button className="nav-button get-in-touch">Get in touch</button>
+                <button className="nav-button get-in-touch">
+                  <span className="md:hidden">Contact</span>
+                  <span className="hidden md:inline">Contact</span>
+                </button>
               </Link>
             </div>
 
@@ -523,21 +573,35 @@ function NavBar() {
         {/* Mobile Menu Content */}
         <div className={`mobile-menu ${isMobileMenuOpen ? 'open' : ''}`}>
           <div className="menu-links">
-            <Link href="/products" className="mobile-link">Product</Link>
-            <Link href="/solutions" className="mobile-link">Solutions</Link>
-            <Link href="/partners" className="mobile-link">Partners</Link>
-            <Link href="/learn" className="mobile-link">Learn</Link>
-            <Link href="/about" className="mobile-link">About</Link>
-            <div className="mobile-section">
-              <Link href="/about" className="mobile-link">About</Link>
+            {/* Contact Buttons at Top */}
+            <div className="flex flex-col gap-2 mb-4">
+              <Link href="/schedule-demo" className="text-center">
+                <button className="w-full py-2 px-4 border border-[#66C2BE] text-[#66C2BE] rounded-md hover:bg-gray-50 transition-colors font-medium">
+                  Schedule Demo
+                </button>
+              </Link>
+              <Link href="/contact" className="text-center">
+                <button className="w-full py-2 px-4 bg-[#66C2BE] text-white rounded-md hover:bg-[#55B3AF] transition-colors font-medium">
+                  Contact
+                </button>
+              </Link>
             </div>
-            <div className="mobile-section">
-              <Link href="/sales" className="mobile-link">Get in Touch</Link>
-              <Link href="/schedule-demo" className="mobile-link">Schedule a Demo</Link>
-              <Link href="/get-a-quote" className="mobile-link">Request a Quote</Link>
-              <Link href="/support" className="mobile-link">Product Support</Link>
-            </div>
-            <Link href="/schedule-demo" className="mobile-link">Demo</Link>
+            
+            {/* Product Section */}
+            <Link href="/products/enterprise-browser" className="mobile-link">Enterprise Browser</Link>
+            <Link href="/products/web-application" className="mobile-link">Web Application</Link>
+            
+            {/* Learn Section */}
+            <Link href="/blog" className="mobile-link">Blog</Link>
+            <Link href="/docs" className="mobile-link">Docs</Link>
+            
+            {/* Partners Section */}
+            <Link href="/partners" className="mobile-link">Partner Program</Link>
+            
+            {/* About Section */}
+            <Link href="/about" className="mobile-link">About Kahana</Link>
+            <Link href="/support" className="mobile-link">Support</Link>
+            <Link href="/careers" className="mobile-link">Careers</Link>
           </div>
         </div>
       </nav>

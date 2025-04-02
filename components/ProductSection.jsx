@@ -70,7 +70,7 @@ export default function ProductSection() {
               <p className="mt-6 text-lg leading-8 text-gray-600 text-center lg:text-left">
                 Experience the next generation of secure browsing with Oasis Browser. Built for enterprises who demand both security and productivity.
               </p>
-              <div className="mt-8 flex gap-4 items-center">
+              <div className="mt-8 flex gap-4 items-center justify-center lg:justify-start">
                 <Link
                   href="/schedule-demo"
                   className="inline-flex items-center rounded-md bg-[#66C2BE] px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-[#55B3AF] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#66C2BE]"
