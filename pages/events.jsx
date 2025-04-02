@@ -56,7 +56,7 @@ export default function Events() {
                 <p className="text-gray-600 mb-4">{event.description}</p>
                 <Link href={event.link}>
                   <button className="bg-kahana-primary text-white px-6 py-2 rounded-md hover:bg-kahana-primary-dark transition-colors">
-                    Learn More
+                    Learn More About {event.title}
                   </button>
                 </Link>
               </div>

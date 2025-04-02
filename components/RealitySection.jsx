@@ -97,7 +97,7 @@ export default function RealitySection() {
         </div>
 
         {/* CTA Section */}
-        {/* <div className="bg-white">
+        <div className="bg-white">
           <div className="mx-auto max-w-4xl py-16 px-4 sm:px-6 sm:py-24 lg:flex lg:max-w-7xl lg:items-center lg:justify-between lg:px-8">
             <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-4xl">
               <span className="block">Ready to get started?</span>
@@ -110,7 +110,7 @@ export default function RealitySection() {
                 href="#"
                 className="flex items-center justify-center rounded-md border border-transparent bg-gradient-to-r from-purple-600 to-indigo-600 bg-origin-border px-4 py-3 text-base font-medium text-white shadow-sm hover:from-purple-700 hover:to-indigo-700"
               >
-                Learn more
+                Learn more about our solutions
               </a>
               <a
                 href="#"
@@ -120,7 +120,7 @@ export default function RealitySection() {
               </a>
             </div>
           </div>
-        </div> */}
+        </div>
       </main>
     </div>
   );

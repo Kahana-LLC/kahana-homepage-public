@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Script from 'next/script';
 import Image from 'next/image';
 import Link from 'next/link';
+import SEO from '../../components/SEO';
 
 const securityFeatures = [
   {
@@ -182,13 +183,55 @@ const technicalFeatures = [
 ];
 
 export default function EnterpriseBrowser() {
+  // Enterprise browser specific schema
+  const browserSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'Kahana Oasis - Enterprise Browser',
+    description: 'A secure, modern browser designed to help teams stay organized and focused. Features enterprise-grade security, organization tools, and collaboration features for enhanced productivity.',
+    applicationCategory: 'BusinessApplication',
+    operatingSystem: 'Cross-platform',
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD',
+      availability: 'https://schema.org/InStock'
+    },
+    featureList: [
+      'Enhanced Content Security Policy',
+      'Advanced Certificate Management',
+      'Comprehensive Permission Management',
+      'Mixed Content Protection',
+      'Hub-Based Organization',
+      'Multi-View Capabilities',
+      'Smart Navigation',
+      'AI-Powered Assistant'
+    ],
+    screenshot: 'https://kahana.co/assets/oasis-browser-preview.png',
+    softwareVersion: '1.0',
+    publisher: {
+      '@type': 'Organization',
+      name: 'Kahana',
+      url: 'https://kahana.co',
+      description: 'Kahana develops enterprise-grade productivity tools focused on organization, security, and collaboration'
+    }
+  };
+
   return (
     <>
+      <SEO 
+        title="Oasis - Enterprise Browser for Secure Organization & Productivity"
+        description="Stay organized and focused with Kahana's Oasis Enterprise Browser. Features enterprise-grade security, organization tools, and collaboration features for enhanced productivity."
+        image="https://kahana.co/assets/oasis-browser-preview.png"
+        url="https://kahana.co/products/enterprise-browser"
+        type="product"
+        schema={browserSchema}
+      />
       <Head>
-        <title>Oasis | Kahana</title>
+        <title>Oasis - Enterprise Browser | Kahana</title>
         <meta
           name="description"
-          content="Kahana's Oasis provides enhanced security, collaboration features, and a modern browsing experience for enterprise environments."
+          content="Kahana's Oasis Enterprise Browser helps teams stay organized and focused while maintaining enterprise-grade security. Features include hub-based organization, multi-view capabilities, and AI-powered assistance."
         />
       </Head>
       <Script

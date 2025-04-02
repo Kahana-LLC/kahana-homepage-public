@@ -1,6 +1,7 @@
 import "../styles/globals.css";
 import NavbarDup from "../components/NavbarDup";
 import Footer from "../components/Footer";
+import SEO from "../components/SEO";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { trackError } from "../utils/analytics";
@@ -49,6 +50,10 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <div className="flex flex-col min-h-screen">
+      <SEO
+        url={`https://kahana.co${router.asPath}`}
+        type={router.pathname === "/" ? "website" : "article"}
+      />
       <div style={{ zIndex: "100" }} className="sticky top-0">
         <NavbarDup />
       </div>

@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
+import SEO from '../components/SEO';
 import { getRandomPhoto, getOptimizedPhotoUrl } from '../utils/pexels';
 
 // Import team member headshots
@@ -232,232 +233,272 @@ const Blog = ({
     setCurrentPage(1);
   }, [selectedCategory, searchQuery]);
 
+  // Blog page schema
+  const blogSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Blog',
+    name: 'Kahana Blog',
+    description: 'Insights, guides, and updates from the Kahana team on sales enablement, AI technology, and enterprise solutions.',
+    url: 'https://kahana.co/blog',
+    publisher: {
+      '@type': 'Organization',
+      name: 'Kahana',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://kahana.co/logo.png'
+      }
+    },
+    blogPost: recentPosts.map(post => ({
+      '@type': 'BlogPosting',
+      headline: post.title,
+      description: post.excerpt,
+      datePublished: post.date,
+      author: {
+        '@type': 'Person',
+        name: post.author.name,
+        jobTitle: post.author.role
+      },
+      image: post.image || featuredImage,
+      url: `https://kahana.co/blog/${post.slug}`
+    }))
+  };
+
   return (
-    <div className="min-h-screen bg-white">
-      <Head>
-        <title>Blog - Kahana</title>
-        <meta name="description" content="Insights and updates from the Kahana team" />
-      </Head>
+    <>
+      <SEO 
+        title="Blog - Insights & Updates from Kahana"
+        description="Explore insights, guides, and updates from the Kahana team on sales enablement, AI technology, and enterprise solutions."
+        image={featuredImage}
+        url="https://kahana.co/blog"
+        type="blog"
+        schema={blogSchema}
+      />
+      <div className="min-h-screen bg-white">
+        <Head>
+          <title>Blog - Kahana</title>
+          <meta name="description" content="Insights and updates from the Kahana team" />
+        </Head>
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        {/* Featured Post */}
-        <section className="mb-20">
-          <div className="relative flex flex-col md:flex-row rounded-2xl overflow-hidden bg-kahana-ui-background shadow-lg">
-            <div className="relative w-full md:w-1/2 h-[400px]">
-              <Image
-                src={featuredImage}
-                alt={featuredPost.title}
-                fill
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover"
-                priority
-              />
-            </div>
-            <div className="w-full md:w-1/2 p-8">
-              <span className="inline-block px-3 py-1 text-sm font-medium bg-kahana-accent-water/10 text-kahana-accent-water rounded-full mb-4">
-                {featuredPost.category}
-              </span>
-              <h1 className="text-3xl font-bold text-kahana-primary mb-4">
-                {featuredPost.title}
-              </h1>
-              <p className="text-kahana-primary-light text-lg mb-6">
-                {featuredPost.excerpt}
-              </p>
-              <div className="flex items-center mb-6">
-                <div className="flex-shrink-0 w-10 h-10 relative">
-                  <Image
-                    src={featuredPost.author.avatar}
-                    alt={featuredPost.author.name}
-                    width={40}
-                    height={40}
-                    className="rounded-full ring-2 ring-kahana-accent-water/20"
-                  />
-                </div>
-                <div className="ml-3">
-                  <p className="text-sm font-medium text-kahana-primary">{featuredPost.author.name}</p>
-                  <p className="text-sm text-kahana-primary-light">{featuredPost.date}</p>
-                </div>
-              </div>
-              <Link 
-                href={`/blog/${featuredPost.slug}`}
-                className="inline-flex items-center text-kahana-accent-sunset hover:text-kahana-accent-flower transition-colors duration-200"
-              >
-                Read More
-                <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* Search and Categories Section */}
-        <section className="mb-12">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-            {/* Category Buttons */}
-            <div className="relative w-full md:w-auto">
-              <div className="flex overflow-x-auto pb-4 md:pb-0 hide-scrollbar gap-3 -mx-4 px-4 md:mx-0 md:px-0">
-                {categories.map((category) => (
-                  <button
-                    key={category}
-                    onClick={() => setSelectedCategory(category)}
-                    className={`flex-none px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 whitespace-nowrap ${
-                      selectedCategory === category
-                        ? 'bg-kahana-primary text-white'
-                        : 'bg-[#ECEEF2] hover:bg-[#E2E4EA] text-[#36394A]'
-                    }`}
-                  >
-                    {category}
-                  </button>
-                ))}
-              </div>
-              {/* Fade indicator for scrollable content on mobile */}
-              <div className="absolute right-0 top-0 h-full w-12 bg-gradient-to-l from-white to-transparent pointer-events-none md:hidden" />
-            </div>
-
-            {/* Search Bar */}
-            <div className="w-full md:w-96 order-first md:order-last">
-              <div className="relative">
-                <input
-                  type="text"
-                  placeholder="Search articles..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full px-4 py-2.5 pl-10 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-kahana-accent-water/20 focus:border-kahana-accent-water"
+        <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          {/* Featured Post */}
+          <section className="mb-20">
+            <div className="relative flex flex-col md:flex-row rounded-2xl overflow-hidden bg-kahana-ui-background shadow-lg">
+              <div className="relative w-full md:w-1/2 h-[400px]">
+                <Image
+                  src={featuredImage}
+                  alt={featuredPost.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover"
+                  priority
                 />
-                <svg
-                  className="absolute left-3 top-3 h-5 w-5 text-gray-400"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
+              </div>
+              <div className="w-full md:w-1/2 p-8">
+                <span className="inline-block px-3 py-1 text-sm font-medium bg-kahana-accent-water/10 text-kahana-accent-water rounded-full mb-4">
+                  {featuredPost.category}
+                </span>
+                <h1 className="text-3xl font-bold text-kahana-primary mb-4">
+                  {featuredPost.title}
+                </h1>
+                <p className="text-kahana-primary-light text-lg mb-6">
+                  {featuredPost.excerpt}
+                </p>
+                <div className="flex items-center mb-6">
+                  <div className="flex-shrink-0 w-10 h-10 relative">
+                    <Image
+                      src={featuredPost.author.avatar}
+                      alt={featuredPost.author.name}
+                      width={40}
+                      height={40}
+                      className="rounded-full ring-2 ring-kahana-accent-water/20"
+                    />
+                  </div>
+                  <div className="ml-3">
+                    <p className="text-sm font-medium text-kahana-primary">{featuredPost.author.name}</p>
+                    <p className="text-sm text-kahana-primary-light">{featuredPost.date}</p>
+                  </div>
+                </div>
+                <Link 
+                  href={`/blog/${featuredPost.slug}`}
+                  className="inline-flex items-center text-kahana-accent-sunset hover:text-kahana-accent-flower transition-colors duration-200"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                  />
-                </svg>
+                  Read More
+                  <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        {/* Recent Posts */}
-        <section>
-          <h2 className="text-2xl font-bold text-kahana-primary mb-12">Recent Articles</h2>
-          
-          {showNoResults ? (
-            <div className="text-center py-12">
-              <p className="text-lg text-gray-600">No articles found matching your criteria.</p>
-              <button
-                onClick={() => {
-                  setSelectedCategory('All');
-                  setSearchQuery('');
-                }}
-                className="mt-4 px-4 py-2 text-sm font-medium text-kahana-accent-water hover:text-kahana-accent-flower transition-colors duration-200"
-              >
-                Clear filters
-              </button>
+          {/* Search and Categories Section */}
+          <section className="mb-12">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+              {/* Category Buttons */}
+              <div className="relative w-full md:w-auto">
+                <div className="flex overflow-x-auto pb-4 md:pb-0 hide-scrollbar gap-3 -mx-4 px-4 md:mx-0 md:px-0">
+                  {categories.map((category) => (
+                    <button
+                      key={category}
+                      onClick={() => setSelectedCategory(category)}
+                      className={`flex-none px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 whitespace-nowrap ${
+                        selectedCategory === category
+                          ? 'bg-kahana-primary text-white'
+                          : 'bg-[#ECEEF2] hover:bg-[#E2E4EA] text-[#36394A]'
+                      }`}
+                    >
+                      {category}
+                    </button>
+                  ))}
+                </div>
+                {/* Fade indicator for scrollable content on mobile */}
+                <div className="absolute right-0 top-0 h-full w-12 bg-gradient-to-l from-white to-transparent pointer-events-none md:hidden" />
+              </div>
+
+              {/* Search Bar */}
+              <div className="w-full md:w-96 order-first md:order-last">
+                <div className="relative">
+                  <input
+                    type="text"
+                    placeholder="Search articles..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="w-full px-4 py-2.5 pl-10 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-kahana-accent-water/20 focus:border-kahana-accent-water"
+                  />
+                  <svg
+                    className="absolute left-3 top-3 h-5 w-5 text-gray-400"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                    />
+                  </svg>
+                </div>
+              </div>
             </div>
-          ) : (
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {paginatedPosts.map((post) => (
-                <article key={post.slug} className="bg-kahana-ui-background rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300">
-                  <Link href={`/blog/${post.slug}`} className="block">
-                    <div className="relative h-48">
-                      <Image
-                        src={post.image}
-                        alt={post.title}
-                        fill
-                        sizes="(max-width: 768px) 100vw, 33vw"
-                        className="transition-transform duration-500 hover:scale-105 object-cover"
-                      />
-                    </div>
-                    <div className="p-8">
-                      <span className="inline-block px-3 py-1 text-sm font-medium bg-kahana-accent-water/10 text-kahana-accent-water rounded-full mb-4">
-                        {post.category}
-                      </span>
-                      <h3 className="text-xl font-semibold text-kahana-primary mb-4 hover:text-kahana-accent-sunset transition-colors">
-                        {post.title}
-                      </h3>
-                      <p className="text-kahana-primary-light mb-6">
-                        {post.excerpt}
-                      </p>
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center">
-                          <div className="flex-shrink-0">
-                            <Image
-                              src={post.author.avatar}
-                              alt={post.author.name}
-                              width={32}
-                              height={32}
-                              className="rounded-full ring-2 ring-kahana-accent-water/20"
-                            />
+          </section>
+
+          {/* Recent Posts */}
+          <section>
+            <h2 className="text-2xl font-bold text-kahana-primary mb-12">Recent Articles</h2>
+            
+            {showNoResults ? (
+              <div className="text-center py-12">
+                <p className="text-lg text-gray-600">No articles found matching your criteria.</p>
+                <button
+                  onClick={() => {
+                    setSelectedCategory('All');
+                    setSearchQuery('');
+                  }}
+                  className="mt-4 px-4 py-2 text-sm font-medium text-kahana-accent-water hover:text-kahana-accent-flower transition-colors duration-200"
+                >
+                  Clear filters
+                </button>
+              </div>
+            ) : (
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {paginatedPosts.map((post) => (
+                  <article key={post.slug} className="bg-kahana-ui-background rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300">
+                    <Link href={`/blog/${post.slug}`} className="block">
+                      <div className="relative h-48">
+                        <Image
+                          src={post.image}
+                          alt={post.title}
+                          fill
+                          sizes="(max-width: 768px) 100vw, 33vw"
+                          className="transition-transform duration-500 hover:scale-105 object-cover"
+                        />
+                      </div>
+                      <div className="p-8">
+                        <span className="inline-block px-3 py-1 text-sm font-medium bg-kahana-accent-water/10 text-kahana-accent-water rounded-full mb-4">
+                          {post.category}
+                        </span>
+                        <h3 className="text-xl font-semibold text-kahana-primary mb-4 hover:text-kahana-accent-sunset transition-colors">
+                          {post.title}
+                        </h3>
+                        <p className="text-kahana-primary-light mb-6">
+                          {post.excerpt}
+                        </p>
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center">
+                            <div className="flex-shrink-0">
+                              <Image
+                                src={post.author.avatar}
+                                alt={post.author.name}
+                                width={32}
+                                height={32}
+                                className="rounded-full ring-2 ring-kahana-accent-water/20"
+                              />
+                            </div>
+                            <div className="ml-3">
+                              <p className="text-sm font-medium text-kahana-primary">{post.author.name}</p>
+                              <p className="text-xs text-kahana-primary-light">{post.date}</p>
+                            </div>
                           </div>
-                          <div className="ml-3">
-                            <p className="text-sm font-medium text-kahana-primary">{post.author.name}</p>
-                            <p className="text-xs text-kahana-primary-light">{post.date}</p>
+                          <div className="flex items-center text-kahana-accent-sunset hover:text-kahana-accent-flower transition-colors duration-200">
+                            <span className="text-sm font-medium">Read article</span>
+                            <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                            </svg>
                           </div>
-                        </div>
-                        <div className="flex items-center text-kahana-accent-sunset hover:text-kahana-accent-flower transition-colors duration-200">
-                          <span className="text-sm font-medium">Read article</span>
-                          <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                          </svg>
                         </div>
                       </div>
-                    </div>
-                  </Link>
-                </article>
-              ))}
-            </div>
-          )}
+                    </Link>
+                  </article>
+                ))}
+              </div>
+            )}
 
-          {/* Pagination */}
-          {totalPages > 1 && (
-            <div className="mt-12 flex justify-center items-center space-x-2">
-              <button
-                onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))}
-                disabled={currentPage === 1}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
-                  currentPage === 1
-                    ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                    : 'bg-kahana-primary text-white hover:bg-kahana-primary/90'
-                }`}
-              >
-                Previous
-              </button>
-              <span className="px-4 py-2 text-sm text-gray-600">
-                Page {currentPage} of {totalPages}
-              </span>
-              <button
-                onClick={() => setCurrentPage(prev => Math.min(totalPages, prev + 1))}
-                disabled={currentPage === totalPages}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
-                  currentPage === totalPages
-                    ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                    : 'bg-kahana-primary text-white hover:bg-kahana-primary/90'
-                }`}
-              >
-                Next
-              </button>
-            </div>
-          )}
-        </section>
-      </main>
+            {/* Pagination */}
+            {totalPages > 1 && (
+              <div className="mt-12 flex justify-center items-center space-x-2">
+                <button
+                  onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))}
+                  disabled={currentPage === 1}
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                    currentPage === 1
+                      ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                      : 'bg-kahana-primary text-white hover:bg-kahana-primary/90'
+                  }`}
+                >
+                  Previous
+                </button>
+                <span className="px-4 py-2 text-sm text-gray-600">
+                  Page {currentPage} of {totalPages}
+                </span>
+                <button
+                  onClick={() => setCurrentPage(prev => Math.min(totalPages, prev + 1))}
+                  disabled={currentPage === totalPages}
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                    currentPage === totalPages
+                      ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                      : 'bg-kahana-primary text-white hover:bg-kahana-primary/90'
+                  }`}
+                >
+                  Next
+                </button>
+              </div>
+            )}
+          </section>
+        </main>
 
-      <style jsx global>{`
-        /* Hide scrollbar but keep functionality */
-        .hide-scrollbar {
-          -ms-overflow-style: none;  /* IE and Edge */
-          scrollbar-width: none;  /* Firefox */
-        }
-        .hide-scrollbar::-webkit-scrollbar {
-          display: none;  /* Chrome, Safari and Opera */
-        }
-      `}</style>
-    </div>
+        <style jsx global>{`
+          /* Hide scrollbar but keep functionality */
+          .hide-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+          }
+          .hide-scrollbar::-webkit-scrollbar {
+            display: none;  /* Chrome, Safari and Opera */
+          }
+        `}</style>
+      </div>
+    </>
   );
 };
 

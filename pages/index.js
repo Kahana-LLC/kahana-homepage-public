@@ -6,6 +6,7 @@ import HowItWorks from "../components/HowItWorks";
 import TestimonialsCarousel from "../components/TestimonialsCarousel";
 import ProductSection from "../components/ProductSection";
 import FeaturedBlogSection from "../components/FeaturedBlogSection";
+import SEO from "../components/SEO";
 import { getRandomPhoto, getOptimizedPhotoUrl } from "../utils/pexels";
 
 // Default placeholder for failed image loads
@@ -103,13 +104,79 @@ export async function getStaticProps() {
 }
 
 export default function Home({ blogPosts }) {
+  // Homepage-specific schema
+  const homepageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "Kahana - Enterprise Browser & Productivity Tools",
+    description:
+      "Kahana's Oasis Enterprise Browser helps teams stay organized, focused on ideas, and increase productivity while maintaining enterprise-grade security.",
+    url: "https://kahana.co",
+    publisher: {
+      "@type": "Organization",
+      name: "Kahana",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://kahana.co/assets/logo.png",
+      },
+      description:
+        "Kahana develops enterprise-grade productivity tools focused on organization, security, and collaboration",
+      sameAs: [
+        "https://www.linkedin.com/company/kahana",
+        "https://twitter.com/kahanaai",
+      ],
+    },
+    mainEntity: {
+      "@type": "SoftwareApplication",
+      name: "Kahana Oasis",
+      applicationCategory: "BusinessApplication",
+      operatingSystem: "Cross-platform",
+      description:
+        "Enterprise browser with enhanced security, organization tools, and collaboration features for modern teams",
+      offers: {
+        "@type": "Offer",
+        price: "0",
+        priceCurrency: "USD",
+        availability: "https://schema.org/InStock",
+      },
+      featureList: [
+        "Enterprise-Grade Security",
+        "Hub-Based Organization",
+        "Multi-View Capabilities",
+        "Smart Navigation",
+        "AI-Powered Assistant",
+        "Collaboration Tools",
+      ],
+      screenshot: "https://kahana.co/assets/oasis-browser-preview.png",
+    },
+    additionalProperty: [
+      {
+        "@type": "PropertyValue",
+        name: "Latest Blog Posts",
+        value: blogPosts.slice(0, 3).map((post) => ({
+          title: post.title,
+          url: `https://kahana.co/blog/${post.slug}`,
+          datePublished: post.date,
+        })),
+      },
+    ],
+  };
+
   return (
     <>
+      <SEO
+        title="Kahana Oasis - Enterprise Browser for Secure Productivity"
+        description="Stay organized and focused with Kahana's Oasis Enterprise Browser. Features enterprise-grade security, organization tools, and collaboration features for modern teams."
+        image="https://kahana.co/assets/oasis-browser-preview.png"
+        url="https://kahana.co"
+        type="website"
+        schema={homepageSchema}
+      />
       <Head>
-        <title>Kahana - A New Oasis for Knowledge</title>
+        <title>Kahana - Enterprise Browser & Productivity Tools</title>
         <meta
           name="description"
-          content="With Kahana, anyone can curate unique hubs of digital products, resources, files, and links and share them directly with hungry knowledge seekers. Collaborate within hubs to go even faster."
+          content="Kahana's Oasis Enterprise Browser helps teams stay organized, focused on ideas, and increase productivity while maintaining enterprise-grade security."
         />
       </Head>
 

@@ -84,7 +84,7 @@ export default function FeaturesShowcase() {
                   <span className="font-medium">{card.highlight}</span>
                 </div>
                 <Link href={card.link} className="text-[#66C2BE] hover:text-[#55B3AF] text-sm font-semibold">
-                      Learn more <span aria-hidden="true">→</span>
+                      Learn more about {card.title} <span aria-hidden="true">→</span>
                 </Link>
               </div>
             ))}
