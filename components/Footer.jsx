@@ -47,7 +47,7 @@ export default function Footer() {
                 onClick={() => toggleSection('product')} 
                 className="flex justify-between items-center w-full md:hidden mb-3"
               >
-                <h3 className="text-kahana-accent-burgundy font-semibold text-lg">Product</h3>
+                <h3 className="text-kahana-accent-purple font-semibold text-lg">Product</h3>
                 <svg 
                   className={`w-5 h-5 transition-transform ${openSection === 'product' ? 'rotate-180' : ''}`}
                   fill="none" 
@@ -57,7 +57,7 @@ export default function Footer() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-              <h3 className="text-kahana-accent-burgundy font-semibold mb-6 text-lg hidden md:block">Product</h3>
+              <h3 className="text-kahana-accent-purple font-semibold mb-6 text-lg hidden md:block">Product</h3>
               <ul className={`space-y-4 ${openSection === 'product' || !isMobile ? 'block' : 'hidden'}`}>
                 <li><Link href="/products/enterprise-browser" className="text-kahana-primary hover:text-kahana-accent-coral transition-colors duration-200">Oasis Enterprise Browser</Link></li>
                 <li><Link href="/products/web-application" className="text-kahana-primary hover:text-kahana-accent-coral transition-colors duration-200">Web Application</Link></li>
