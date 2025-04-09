@@ -98,16 +98,16 @@ export default function FeaturedBlogSection({ posts = defaultPosts }) {
                 <div className="mt-6 flex items-center gap-x-4">
                   <div className="flex-shrink-0">
                     <Image
-                      src={authorImages[post.author.name]}
-                      alt={post.author.name}
+                      src={post.author?.avatar || authorImages[post.author?.name] || "/images/authors/AK-Headshot.jpg"}
+                      alt={post.author?.name || "Author"}
                       width={32}
                       height={32}
                       className="rounded-full ring-2 ring-kahana-accent-water/20"
                     />
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-kahana-primary">{post.author.name}</p>
-                    <p className="text-xs text-kahana-primary-light">{post.author.role}</p>
+                    <p className="text-sm font-medium text-kahana-primary">{post.author?.name}</p>
+                    <p className="text-xs text-kahana-primary-light">{post.author?.role}</p>
                   </div>
                 </div>
                 <div className="group relative">

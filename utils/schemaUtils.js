@@ -75,8 +75,10 @@ function generateBreadcrumbSchema(items) {
     itemListElement: items.map((item, index) => ({
       "@type": "ListItem",
       position: index + 1,
-      name: item.name,
-      item: item.url,
+      item: {
+        "@id": `${EXTERNAL_DATA_URL}${item.url}`,
+        name: item.name,
+      },
     })),
   };
 }

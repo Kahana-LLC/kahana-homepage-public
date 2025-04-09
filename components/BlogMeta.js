@@ -1,10 +1,21 @@
 import { generateBlogMetaTags } from "../utils/metaUtils";
-import { generateBlogPostSchema } from "../utils/schemaUtils";
+import {
+  generateBlogPostSchema,
+  generateBreadcrumbSchema,
+} from "../utils/schemaUtils";
 import Meta from "./Meta";
 
 export default function BlogMeta({ post }) {
   const metaTags = generateBlogMetaTags(post);
-  const schema = generateBlogPostSchema(post);
+  const postSchema = generateBlogPostSchema(post);
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Blog", url: "/blog" },
+    { name: post.title, url: `/blog/${post.slug}` },
+  ]);
+
+  // Combine schemas
+  const schema = [postSchema, breadcrumbSchema];
 
   return (
     <Meta

@@ -1,0 +1,12 @@
+{
+  "title": "Testing the Blog System",
+  "date": "2024-04-10T00:00:00.000Z",
+  "author": "Adam Kershner",
+  "authorRole": "CTO",
+  "category": "Testing",
+  "excerpt": "A test post to verify the blog system is working correctly.",
+  "defaultImageQuery": "technology testing",
+  "slug": "testing-the-blog-system",
+  "readingTime": 1,
+  "content": "<h1 id=\"testing-the-blog-system\">Testing the Blog System</h1>\n<p>This is a test post to verify that our blog system is working correctly. It includes various elements to test different aspects of the system.</p>\n<h2 id=\"local-image-test\">Local Image Test</h2>\n<p>Here&#39;s a test of a local image:</p>\n<p><img src=\"./images/test-image.jpg\" alt=\"Test Image\"></p>\n<h2 id=\"pexels-image-test\">Pexels Image Test</h2>\n<p>Here&#39;s a test of a Pexels image that will be fetched client-side:</p>\n<p><img src=\"https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg\" alt=\"Pexels Test Image\"></p>\n<h2 id=\"markdown-features\">Markdown Features</h2>\n<p>Let&#39;s test some Markdown features:</p>\n<h3 id=\"lists\">Lists</h3>\n<ul>\n<li>Item 1</li>\n<li>Item 2</li>\n<li>Item 3</li>\n</ul>\n<h3 id=\"code-blocks\">Code Blocks</h3>\n<pre><code class=\"language-javascript\">function testFunction() {\n  console.log(&quot;Testing the blog system&quot;);\n  return true;\n}\n</code></pre>\n<h3 id=\"tables\">Tables</h3>\n<table>\n<thead>\n<tr>\n<th>Header 1</th>\n<th>Header 2</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Cell 1</td>\n<td>Cell 2</td>\n</tr>\n<tr>\n<td>Cell 3</td>\n<td>Cell 4</td>\n</tr>\n</tbody></table>\n<h2 id=\"conclusion\">Conclusion</h2>\n<p>This test post should help us verify that all aspects of the blog system are working correctly.</p>\n"
+}

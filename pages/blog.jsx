@@ -6,7 +6,7 @@ import SEO from '../components/SEO';
 import { getRandomPhoto, getOptimizedPhotoUrl } from '../utils/pexels';
 
 // Import team member headshots
-import adam from '../assets/headshots/Adam_Kershner.webp';
+import adamHeadshot from '../assets/headshots/Adam_Kershner.webp';
 import emilio from '../assets/headshots/Emilio_Abelmann.webp';
 import eugene from '../assets/headshots/eugene_kaminsky.webp';
 import hugh from '../assets/headshots/hugh_molotsi.webp';
@@ -31,80 +31,11 @@ import mahendra from '../assets/headshots/mahendra_shahi.webp';
 
 // Author mapping for blog posts
 const authorImages = {
-  'Adam Kershner': adam,
+  'Adam Kershner': adamHeadshot,
 };
 
 // Default avatar placeholder
 const DEFAULT_AVATAR = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%233C584A"%3E%3Cpath d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"%2F%3E%3C%2Fsvg%3E';
-
-// This would typically come from a CMS or database
-const allBlogPosts = {
-  'technical-debt': {
-    title: 'Tackling Technical Debt and Redefining Application Access',
-    excerpt: 'How modern enterprises are balancing innovation with system maintenance while revolutionizing their approach to application security.',
-    category: 'Engineering',
-    date: 'March 15, 2024',
-    author: {
-      name: 'Adam Kershner',
-      role: 'CTO',
-      avatar: authorImages['Adam Kershner'] || DEFAULT_AVATAR,
-    },
-    customImage: null,
-    defaultImageQuery: 'modern technology office workspace'
-  },
-  'zero-trust': {
-    title: 'Implementing Zero Trust in Modern Enterprises',
-    excerpt: 'A comprehensive guide to implementing Zero Trust architecture in your organization.',
-    category: 'Security',
-    date: 'March 10, 2024',
-    author: {
-      name: 'Adam Kershner',
-      role: 'CTO',
-      avatar: authorImages['Adam Kershner'] || DEFAULT_AVATAR,
-    },
-    customImage: null,
-    defaultImageQuery: 'network security digital protection'
-  },
-  'cloud-migration': {
-    title: 'Cloud Migration Strategies for 2025',
-    excerpt: 'Explore the latest strategies and best practices for successful cloud migration.',
-    category: 'Cloud Computing',
-    date: 'March 5, 2024',
-    author: {
-      name: 'Adam Kershner',
-      role: 'CTO',
-      avatar: authorImages['Adam Kershner'] || DEFAULT_AVATAR,
-    },
-    customImage: null,
-    defaultImageQuery: 'cloud computing data center'
-  },
-  'devsecops': {
-    title: 'DevSecOps: Bridging Development and Security',
-    excerpt: 'Learn how to effectively integrate security practices into your development pipeline.',
-    category: 'Development',
-    date: 'March 1, 2024',
-    author: {
-      name: 'Adam Kershner',
-      role: 'CTO',
-      avatar: authorImages['Adam Kershner'] || DEFAULT_AVATAR,
-    },
-    customImage: null,
-    defaultImageQuery: 'software development team collaboration'
-  }
-};
-
-// Featured post is the most recent post
-const featuredPost = {
-  slug: 'technical-debt',
-  ...allBlogPosts['technical-debt']
-};
-
-// Recent posts are the next 3 most recent posts
-const recentPosts = [
-  { slug: 'zero-trust', ...allBlogPosts['zero-trust'] },
-  { slug: 'cloud-migration', ...allBlogPosts['cloud-migration'] },
-  { slug: 'devsecops', ...allBlogPosts['devsecops'] }
-];
 
 // Default placeholder for failed image loads
 const DEFAULT_PLACEHOLDER = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%233C584A"%3E%3Cpath d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-1.96-2.36L6.5 17h11l-3.54-4.71z"%2F%3E%3C%2Fsvg%3E';
@@ -122,73 +53,76 @@ const categories = [
 
 export async function getStaticProps() {
   try {
+    // Import the blog index
+    const blogPosts = require('../data/blog-index.js');
+    
     // Fetch images for all blog posts
     const allBlogPostsWithImages = await Promise.all(
-      Object.entries(allBlogPosts).map(async ([slug, post]) => {
+      blogPosts.map(async (post) => {
         try {
-          let postImage = post.customImage;
+          // Use the post's image if available, otherwise fetch a random one
+          let postImage = post.image || null;
           if (!postImage) {
-            const photo = await getRandomPhoto(post.defaultImageQuery);
+            const photo = await getRandomPhoto(post.title);
             postImage = photo ? getOptimizedPhotoUrl(photo) : DEFAULT_PLACEHOLDER;
           }
-          return [slug, {
+          return {
             ...post,
-            slug,
             image: postImage
-          }];
+          };
         } catch (error) {
-          console.error(`Error fetching image for post ${slug}:`, error);
-          return [slug, {
+          console.error(`Error fetching image for post ${post.slug}:`, error);
+          return {
             ...post,
-            slug,
             image: DEFAULT_PLACEHOLDER
-          }];
+          };
         }
       })
     );
 
-    // Convert back to object
-    const blogPostsWithImages = Object.fromEntries(allBlogPostsWithImages);
+    // Sort posts by date, newest first
+    const sortedPosts = allBlogPostsWithImages.sort((a, b) => 
+      new Date(b.date) - new Date(a.date)
+    );
 
-    // Get featured post image
-    const featuredImage = blogPostsWithImages[featuredPost.slug]?.image || DEFAULT_PLACEHOLDER;
+    // Get featured post (most recent)
+    const featuredPost = sortedPosts[0] || null;
+    
+    // Get recent posts (next 3)
+    const recentPosts = sortedPosts.slice(1, 4);
+
+    // Convert to object format for easier lookup
+    const blogPostsObject = sortedPosts.reduce((acc, post) => {
+      acc[post.slug] = post;
+      return acc;
+    }, {});
 
     return {
       props: {
-        featuredImage,
-        blogPosts: blogPostsWithImages,
-        recentPosts: recentPosts.map(post => ({
-          ...post,
-          image: blogPostsWithImages[post.slug]?.image || DEFAULT_PLACEHOLDER
-        }))
+        featuredPost,
+        recentPosts,
+        blogPosts: blogPostsObject
       },
-      revalidate: 86400
+      // Revalidate every 10 seconds in development, 1 hour in production
+      revalidate: process.env.NODE_ENV === 'development' ? 10 : 3600
     };
   } catch (error) {
     console.error('Error in getStaticProps:', error);
     return {
       props: {
-        featuredImage: DEFAULT_PLACEHOLDER,
-        blogPosts: Object.fromEntries(
-          Object.entries(allBlogPosts).map(([slug, post]) => [
-            slug,
-            { ...post, slug, image: DEFAULT_PLACEHOLDER }
-          ])
-        ),
-        recentPosts: recentPosts.map(post => ({
-          ...post,
-          image: DEFAULT_PLACEHOLDER
-        }))
+        featuredPost: null,
+        recentPosts: [],
+        blogPosts: {}
       },
-      revalidate: 86400
+      revalidate: 60
     };
   }
 }
 
 const Blog = ({ 
-  featuredImage = DEFAULT_PLACEHOLDER, 
+  featuredPost = null, 
   recentPosts = [], 
-  blogPosts: blogPostsWithImages = {} 
+  blogPosts = {} 
 }) => {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
@@ -197,26 +131,31 @@ const Blog = ({
 
   // Filter and search posts
   const filteredPosts = useMemo(() => {
-    if (!blogPostsWithImages || Object.keys(blogPostsWithImages).length === 0) return [];
+    if (!blogPosts || Object.keys(blogPosts).length === 0) return [];
     
-    return Object.values(blogPostsWithImages)
-      .map(post => ({
-        ...post,
-        author: {
-          ...post.author,
-          avatar: authorImages[post.author.name] || DEFAULT_AVATAR,
-        }
-      }))
+    return Object.values(blogPosts)
+      .map(post => {
+        // Ensure author object is properly structured
+        const author = {
+          name: post.author?.name || "Author",
+          role: post.author?.role || "Contributor",
+          avatar: authorImages[post.author?.name] || DEFAULT_AVATAR
+        };
+        return {
+          ...post,
+          author
+        };
+      })
       .filter(post => {
         const matchesCategory = selectedCategory === 'All' || post.category === selectedCategory;
         const matchesSearch = searchQuery === '' || 
           post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          post.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          post.excerpt.toLowerCase().includes(searchQuery.toLowerCase());
+          (post.category && post.category.toLowerCase().includes(searchQuery.toLowerCase())) ||
+          (post.excerpt && post.excerpt.toLowerCase().includes(searchQuery.toLowerCase()));
         return matchesCategory && matchesSearch;
       })
       .sort((a, b) => new Date(b.date) - new Date(a.date)); // Sort by date, newest first
-  }, [selectedCategory, searchQuery, blogPostsWithImages]);
+  }, [selectedCategory, searchQuery, blogPosts]);
 
   // Show "No results" message if no posts match the filters
   const showNoResults = filteredPosts.length === 0;
@@ -258,7 +197,7 @@ const Blog = ({
         name: post.author.name,
         jobTitle: post.author.role
       },
-      image: post.image || featuredImage,
+      image: post.image || featuredPost?.image || DEFAULT_PLACEHOLDER,
       url: `https://kahana.co/blog/${post.slug}`
     }))
   };
@@ -268,7 +207,7 @@ const Blog = ({
       <SEO 
         title="Blog - Insights & Updates from Kahana"
         description="Explore insights, guides, and updates from the Kahana team on sales enablement, AI technology, and enterprise solutions."
-        image={featuredImage}
+        image={featuredPost?.image || DEFAULT_PLACEHOLDER}
         url="https://kahana.co/blog"
         type="blog"
         schema={blogSchema}
@@ -285,8 +224,8 @@ const Blog = ({
             <div className="relative flex flex-col md:flex-row rounded-2xl overflow-hidden bg-kahana-ui-background shadow-lg">
               <div className="relative w-full md:w-1/2 h-[400px]">
                 <Image
-                  src={featuredImage}
-                  alt={featuredPost.title}
+                  src={featuredPost?.image || DEFAULT_PLACEHOLDER}
+                  alt={featuredPost?.title || 'Featured Post'}
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
@@ -295,31 +234,38 @@ const Blog = ({
               </div>
               <div className="w-full md:w-1/2 p-8">
                 <span className="inline-block px-3 py-1 text-sm font-medium bg-kahana-accent-water/10 text-kahana-accent-water rounded-full mb-4">
-                  {featuredPost.category}
+                  {featuredPost?.category || 'Featured'}
                 </span>
                 <h1 className="text-3xl font-bold text-kahana-primary mb-4">
-                  {featuredPost.title}
+                  {featuredPost?.title || 'Featured Post'}
                 </h1>
                 <p className="text-kahana-primary-light text-lg mb-6">
-                  {featuredPost.excerpt}
+                  {featuredPost?.excerpt || 'No excerpt available'}
                 </p>
                 <div className="flex items-center mb-6">
-                  <div className="flex-shrink-0 w-10 h-10 relative">
-                    <Image
-                      src={featuredPost.author.avatar}
-                      alt={featuredPost.author.name}
-                      width={40}
-                      height={40}
-                      className="rounded-full ring-2 ring-kahana-accent-water/20"
-                    />
+                  <div className="flex items-center">
+                    <div className="relative w-10 h-10 mr-3">
+                      <Image
+                        src={authorImages[featuredPost?.author?.name] || DEFAULT_AVATAR}
+                        alt={featuredPost?.author?.name || "Author"}
+                        width={40}
+                        height={40}
+                        className="rounded-full"
+                        priority
+                      />
+                    </div>
+                    <div>
+                      <p className="text-sm font-medium text-gray-900">{featuredPost?.author?.name || "Author"}</p>
+                      <p className="text-sm text-gray-600">
+                        {featuredPost?.date ? new Date(featuredPost.date).toLocaleDateString('en-US', { month: 'numeric', day: 'numeric', year: 'numeric' }) : 'Date not available'}
+                      </p>
+                    </div>
                   </div>
-                  <div className="ml-3">
-                    <p className="text-sm font-medium text-kahana-primary">{featuredPost.author.name}</p>
-                    <p className="text-sm text-kahana-primary-light">{featuredPost.date}</p>
-                  </div>
+                  <span className="mx-4 text-gray-600">•</span>
+                  <span className="text-sm text-gray-600">{featuredPost?.readingTime} min read</span>
                 </div>
                 <Link 
-                  href={`/blog/${featuredPost.slug}`}
+                  href={`/blog/${featuredPost?.slug}`}
                   className="inline-flex items-center text-kahana-accent-sunset hover:text-kahana-accent-flower transition-colors duration-200"
                 >
                   Read More
@@ -424,27 +370,26 @@ const Blog = ({
                         <p className="text-kahana-primary-light mb-6">
                           {post.excerpt}
                         </p>
-                        <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-4">
                           <div className="flex items-center">
-                            <div className="flex-shrink-0">
+                            <div className="relative w-10 h-10 mr-3">
                               <Image
-                                src={post.author.avatar}
-                                alt={post.author.name}
-                                width={32}
-                                height={32}
-                                className="rounded-full ring-2 ring-kahana-accent-water/20"
+                                src={post.author?.avatar || authorImages[post.author?.name] || DEFAULT_AVATAR}
+                                alt={post.author?.name || "Author"}
+                                width={40}
+                                height={40}
+                                className="rounded-full"
+                                priority
                               />
                             </div>
-                            <div className="ml-3">
-                              <p className="text-sm font-medium text-kahana-primary">{post.author.name}</p>
-                              <p className="text-xs text-kahana-primary-light">{post.date}</p>
+                            <div>
+                              <p className="text-sm font-medium text-gray-900">{post.author?.name || "Author"}</p>
+                              <p className="text-sm text-gray-600">{new Date(post.date).toLocaleDateString('en-US', { month: 'numeric', day: 'numeric', year: 'numeric' })}</p>
                             </div>
                           </div>
-                          <div className="flex items-center text-kahana-accent-sunset hover:text-kahana-accent-flower transition-colors duration-200">
-                            <span className="text-sm font-medium">Read article</span>
-                            <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                            </svg>
+                          <div className="flex items-center">
+                            <span className="text-sm text-gray-600">•</span>
+                            <span className="ml-2 text-sm text-gray-600">{post.readingTime} min read</span>
                           </div>
                         </div>
                       </div>

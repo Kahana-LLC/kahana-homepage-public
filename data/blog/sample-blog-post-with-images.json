@@ -1,0 +1,12 @@
+{
+  "title": "Sample Blog Post with Images",
+  "date": "2024-04-09T00:00:00.000Z",
+  "author": "Adam Kershner",
+  "authorRole": "CTO",
+  "category": "Testing",
+  "excerpt": "A sample blog post to test image handling in our Next.js blog.",
+  "defaultImageQuery": "technology office",
+  "slug": "sample-blog-post-with-images",
+  "readingTime": 1,
+  "content": "<h1 id=\"sample-blog-post-with-images\">Sample Blog Post with Images</h1>\n<p>This is a sample blog post to test image handling in our Next.js blog. It includes both local images and references to Pexels images.</p>\n<h2 id=\"local-image-example\">Local Image Example</h2>\n<p>Here&#39;s an example of a local image:</p>\n<p><img src=\"./images/local-image.jpg\" alt=\"Local Image Example\"></p>\n<h2 id=\"pexels-image-example\">Pexels Image Example</h2>\n<p>Here&#39;s an example of a Pexels image that will be fetched client-side:</p>\n<p><img src=\"https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg\" alt=\"Pexels Image Example\"></p>\n<h2 id=\"conclusion\">Conclusion</h2>\n<p>This sample post demonstrates how we can handle both local images and Pexels images in our blog.</p>\n"
+}

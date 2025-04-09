@@ -2,22 +2,29 @@ import { createClient } from "pexels";
 
 const client = createClient(process.env.NEXT_PUBLIC_PEXELS_API_KEY);
 
-export async function searchPhotos(query, perPage = 1) {
+export async function searchPhotos(query, options = {}) {
   try {
     const response = await client.photos.search({
       query,
-      per_page: perPage,
+      per_page: options.per_page || 1,
+      orientation: options.orientation || "landscape",
     });
-    return response.photos;
+
+    if (response && response.photos && response.photos.length > 0) {
+      return response.photos;
+    }
+
+    console.warn(`No photos found for query: ${query}`);
+    return [];
   } catch (error) {
     console.error("Error fetching photos from Pexels:", error);
-    return null;
+    return [];
   }
 }
 
 export async function getRandomPhoto(query) {
   try {
-    const photos = await searchPhotos(query, 15);
+    const photos = await searchPhotos(query, { per_page: 15 });
     if (!photos || photos.length === 0) return null;
     const randomIndex = Math.floor(Math.random() * photos.length);
     return photos[randomIndex];
@@ -28,6 +35,6 @@ export async function getRandomPhoto(query) {
 }
 
 export function getOptimizedPhotoUrl(photo, width = 800) {
-  if (!photo) return null;
-  return photo.src.large2x;
+  if (!photo || !photo.src) return null;
+  return photo.src.large2x || photo.src.large || photo.src.original;
 }
