@@ -104,40 +104,47 @@ export default function BlogPost({ post }) {
 
       <main className="max-w-4xl mx-auto px-4 py-8">
         <article className="prose prose-lg max-w-none">
-          <header>
-            <Breadcrumbs 
-              items={[
-                { name: "Home", url: "/" },
-                { name: "Blog", url: "/blog" },
-                { name: post.title, url: `/blog/${post.slug}` },
-              ]} 
-              className="mb-6"
-            />
-            
+          <header className="mb-12">
+            {/* Breadcrumbs for navigation */}
+            <nav aria-label="Breadcrumb" className="mb-6">
+              <Breadcrumbs 
+                items={[
+                  { name: "Home", url: "/" },
+                  { name: "Blog", url: "/blog" },
+                  { name: post.title, url: `/blog/${post.slug}` },
+                ]} 
+              />
+            </nav>
+
+            {/* Main title */}
             <h1 className="text-4xl font-bold mb-6">{post.title}</h1>
-            
-            {/* Metadata and author section */}
-            <div className="flex flex-wrap items-center gap-3 mb-10">
+
+            {/* Article metadata */}
+            <div className="flex flex-wrap items-center gap-3 mb-8">
               <AuthorCard author={author} variant="header" />
-              <div className="inline-flex items-center px-3 py-1.5 rounded-full bg-gray-100 text-gray-700 text-sm">
+              <time 
+                dateTime={post.date}
+                className="inline-flex items-center px-3 py-1.5 rounded-full bg-gray-100 text-gray-700 text-sm"
+              >
                 <FaRegCalendarAlt className="w-4 h-4 mr-2 text-gray-500" />
-                <span className="text-gray-500 mr-1">Last updated:</span>
+                <span className="text-gray-500 mr-1">Published:</span>
                 {new Date(post.date).toLocaleDateString('en-US', { month: 'numeric', day: 'numeric', year: 'numeric' })}
-              </div>
+              </time>
               <div className="inline-flex items-center px-3 py-1.5 rounded-full bg-gray-100 text-gray-700 text-sm">
                 <FaBookOpen className="w-4 h-4 mr-2 text-gray-500" />
-                {post.category}
+                <span className="text-gray-500">{post.category}</span>
               </div>
               <div className="inline-flex items-center px-3 py-1.5 rounded-full bg-gray-100 text-gray-700 text-sm">
                 <FaRegClock className="w-4 h-4 mr-2 text-gray-500" />
-                {post.readingTime} min read
+                <span className="text-gray-500">{post.readingTime} min read</span>
               </div>
             </div>
 
-            <p className="text-xl text-gray-600 mb-10 leading-relaxed">{post.excerpt}</p>
+            {/* Article excerpt */}
+            <p className="text-xl text-gray-600 mb-8 leading-relaxed">{post.excerpt}</p>
 
             {/* Cover Image */}
-            <div className="relative w-full h-[400px] mb-12 rounded-xl overflow-hidden bg-gray-100">
+            <figure className="relative w-full h-[400px] mb-8 rounded-xl overflow-hidden bg-gray-100">
               {isLoading ? (
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="animate-pulse text-gray-400">Loading cover image...</div>
@@ -152,16 +159,16 @@ export default function BlogPost({ post }) {
                     className="object-cover"
                     priority
                   />
-                  <div className="absolute bottom-4 right-4 text-xs text-white bg-black/50 px-2 py-1 rounded">
-                    Photo by <a href={contentImages[0].photographer_url} target="_blank" rel="noopener noreferrer" className="hover:underline">{contentImages[0].photographer}</a> on Pexels
-                  </div>
+                  <figcaption className="absolute bottom-4 right-4 text-sm text-white bg-black/70 px-3 py-2 rounded-md backdrop-blur-sm">
+                    Photo by <a href={contentImages[0].photographer_url} target="_blank" rel="noopener noreferrer" className="text-white hover:text-kahana-accent-water transition-colors">{contentImages[0].photographer}</a> on Pexels
+                  </figcaption>
                 </>
               ) : (
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-gray-400">Loading alternative nature image...</div>
                 </div>
               )}
-            </div>
+            </figure>
           </header>
 
           <div 

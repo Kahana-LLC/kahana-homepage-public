@@ -100,3 +100,14 @@ With 31 new data protection laws taking effect in 2025, [ISACA's Compliance Guid
 
 1. Conduct [NIST SP 800-171](https://csrc.nist.gov/publications/detail/sp/800-171/rev-3/final) compliance assessments
 2. Implement [MITRE D3FEND](https://d3fend.mitre.org) strategies for data protection
+
+## How Kahana Prevents Data Leaks
+
+At Kahana, we've built our enterprise browser solution with a deep understanding of modern data leak vectors. Our platform helps organizations prevent data leaks through:
+
+- **Memory Protection**: Advanced memory isolation techniques that prevent sensitive data from persisting in browser memory
+- **Smart DLP Controls**: Context-aware data loss prevention that intelligently controls data movement within the browser
+- **Third-Party Risk Management**: Granular control over third-party application access and browser extension permissions
+- **Secure Remote Work**: Built-in protections that maintain data security regardless of device or location
+
+Our enterprise browser approach moves security upstream, preventing data leaks at the source rather than trying to detect them after the fact. This proactive strategy aligns with the advanced prevention techniques discussed in this article, helping organizations maintain data security in an increasingly complex threat landscape.
