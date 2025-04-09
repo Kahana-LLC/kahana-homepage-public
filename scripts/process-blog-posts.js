@@ -100,10 +100,10 @@ function processPost(filePath) {
 
     // Create author object from frontmatter
     const author = {
-      name: frontmatter.author || "Author",
+      name: frontmatter.author,
       role: frontmatter.authorRole || "Contributor",
       bio: frontmatter.authorBio || null,
-      avatar: null, // This will be handled by the frontend components
+      linkedinProfile: frontmatter.linkedinProfile || null,
     };
 
     // Create post metadata
@@ -118,6 +118,7 @@ function processPost(filePath) {
     // Remove redundant fields that are now in the author object
     delete postData.authorRole;
     delete postData.authorBio;
+    delete postData.linkedinProfile;
 
     // Write individual post file
     const postFilePath = path.join(BLOG_DATA_DIR, `${slug}.json`);
@@ -131,6 +132,41 @@ function processPost(filePath) {
   } catch (error) {
     console.error(`Error processing ${filePath}:`, error.message);
     return null;
+  }
+}
+
+// Clean up orphaned JSON files
+function cleanupOrphanedFiles() {
+  try {
+    // Get all markdown files
+    const markdownFiles = fs
+      .readdirSync(BLOG_DIR)
+      .filter((file) => file.endsWith(".md"));
+
+    // Generate slugs for all markdown files
+    const validSlugs = markdownFiles.map((file) => {
+      const filePath = path.join(BLOG_DIR, file);
+      const source = fs.readFileSync(filePath, "utf8");
+      const { data: frontmatter } = matter(source);
+      return frontmatter.slug || generateSlug(frontmatter.title);
+    });
+
+    // Get all JSON files in the blog data directory
+    const jsonFiles = fs
+      .readdirSync(BLOG_DATA_DIR)
+      .filter((file) => file.endsWith(".json"));
+
+    // Remove JSON files that don't have a corresponding markdown file
+    jsonFiles.forEach((jsonFile) => {
+      const slug = path.basename(jsonFile, ".json");
+      if (!validSlugs.includes(slug)) {
+        const jsonPath = path.join(BLOG_DATA_DIR, jsonFile);
+        fs.unlinkSync(jsonPath);
+        console.log(`Removed orphaned JSON file: ${jsonPath}`);
+      }
+    });
+  } catch (error) {
+    console.error("Error cleaning up orphaned files:", error.message);
   }
 }
 
@@ -180,6 +216,9 @@ function main() {
       processPost(specificFile);
       generateBlogIndex(); // Still update the index
     } else {
+      // Clean up any orphaned JSON files first
+      cleanupOrphanedFiles();
+      // Then generate the blog index
       generateBlogIndex();
     }
   } catch (error) {

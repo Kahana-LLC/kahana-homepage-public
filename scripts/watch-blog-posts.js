@@ -99,20 +99,23 @@ async function main() {
       }
     });
 
-    watcher.on("unlink", (filePath) => {
+    watcher.on("unlink", async (filePath) => {
       if (filePath.endsWith(".md")) {
         console.log(`File deleted: ${filePath}`);
-        // TODO: Remove the corresponding JSON file
-        const slug = path.basename(filePath, ".md");
-        const jsonPath = path.join(BLOG_DATA_DIR, `${slug}.json`);
 
+        // Extract the slug from the filename
+        const fileName = path.basename(filePath);
+        const slug = fileName.replace(/\.md$/, "");
+
+        // Remove the corresponding JSON file
+        const jsonPath = path.join(BLOG_DATA_DIR, `${slug}.json`);
         if (fs.existsSync(jsonPath)) {
           fs.unlinkSync(jsonPath);
           console.log(`Removed ${jsonPath}`);
         }
 
-        // Regenerate the blog index
-        processAllPosts();
+        // Regenerate the blog index to remove the deleted post
+        await processAllPosts();
       }
     });
 

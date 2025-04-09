@@ -3,6 +3,7 @@ module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
+    "./app/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
@@ -10,6 +11,7 @@ module.exports = {
         blob: "blob 7s infinite",
         float: "float 6s ease-in-out infinite",
         "float-delayed": "float-delayed 6s ease-in-out infinite",
+        blink: "blink 1s ease-in-out infinite",
       },
       keyframes: {
         blob: {
@@ -33,6 +35,10 @@ module.exports = {
         "float-delayed": {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(20px)" },
+        },
+        blink: {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0" },
         },
       },
       colors: {

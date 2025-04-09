@@ -1,10 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import AuthorCard from './AuthorCard';
 import { getRandomPhoto, getOptimizedPhotoUrl } from '../utils/pexels';
 
 // Import team member headshots
-import adam from '../assets/headshots/Adam_Kershner.webp';
+import adam from '../assets/headshots/adam_kershner.jpg';
 
 // Author mapping for blog posts
 const authorImages = {
@@ -57,6 +58,12 @@ const defaultPosts = [
   }
 ];
 
+// Utility function to truncate text
+function truncateExcerpt(text, maxLength = 120) {
+  if (!text || text.length <= maxLength) return text;
+  return text.slice(0, maxLength).trim() + '...';
+}
+
 export default function FeaturedBlogSection({ posts = defaultPosts }) {
   return (
     <div className="bg-white py-24 sm:py-32">
@@ -95,29 +102,25 @@ export default function FeaturedBlogSection({ posts = defaultPosts }) {
                 </div>
               </div>
               <div className="max-w-xl">
-                <div className="mt-6 flex items-center gap-x-4">
-                  <div className="flex-shrink-0">
-                    <Image
-                      src={post.author?.avatar || authorImages[post.author?.name] || "/images/authors/AK-Headshot.jpg"}
-                      alt={post.author?.name || "Author"}
-                      width={32}
-                      height={32}
-                      className="rounded-full ring-2 ring-kahana-accent-water/20"
-                    />
-                  </div>
-                  <div>
-                    <p className="text-sm font-medium text-kahana-primary">{post.author?.name}</p>
-                    <p className="text-xs text-kahana-primary-light">{post.author?.role}</p>
-                  </div>
+                <div className="mt-4">
+                  <AuthorCard 
+                    author={{
+                      name: post.author?.name,
+                      role: post.author?.role,
+                      avatar: post.author?.avatar || authorImages[post.author?.name] || "/images/authors/AK-Headshot.jpg"
+                    }}
+                    variant="default"
+                    imageClassName="w-10 h-10 rounded-lg object-cover"
+                  />
                 </div>
-                <div className="group relative">
-                  <h3 className="mt-3 text-lg font-semibold leading-6 text-kahana-primary group-hover:text-kahana-accent-sunset">
+                <div className="group relative mt-4">
+                  <h3 className="text-lg font-semibold leading-6 text-kahana-primary group-hover:text-kahana-accent-sunset">
                     <Link href={`/blog/${post.slug}`}>
                       <span className="absolute inset-0" />
                       {post.title}
                     </Link>
                   </h3>
-                  <p className="mt-5 text-sm leading-6 text-kahana-primary-light">{post.excerpt}</p>
+                  <p className="mt-3 text-sm leading-6 text-kahana-primary-light line-clamp-2">{truncateExcerpt(post.excerpt)}</p>
                 </div>
               </div>
             </article>

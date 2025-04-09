@@ -1,4 +1,6 @@
 /** @type {import('next').NextConfig} */
+const path = require("path");
+
 const nextConfig = {
   reactStrictMode: true,
   eslint: {
@@ -15,6 +17,12 @@ const nextConfig = {
       "firebasestorage.googleapis.com", // Domain for Firebase Storage images
       "images.pexels.com", // Domain for Pexels images
     ],
+    unoptimized: true, // Allow unoptimized local images
+  },
+
+  webpack: (config) => {
+    config.resolve.alias["@"] = path.join(__dirname);
+    return config;
   },
 
   // Handle XML sitemap

@@ -4,6 +4,7 @@ date: 2025-04-09
 author: Adam Kershner
 authorRole: CTO
 authorBio: Adam is the CTO of Kahana, where he leads the technical vision and development of enterprise browser solutions. With extensive experience in browser security and enterprise software, he is passionate about transforming how organizations approach secure browsing.
+linkedinProfile: https://www.linkedin.com/in/adam-kershner/
 category: Enterprise
 excerpt: Enterprise browsers are rapidly transforming how businesses approach web security, with adoption predicted to reach 25% by 2026. As organizations face increasing browser-based threats and remote work challenges, these specialized browsers offer built-in protection, centralized control, and seamless integration with existing security infrastructure.
 defaultImageQuery: secure enterprise browser with digital shield protection corporate network

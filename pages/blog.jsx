@@ -6,7 +6,7 @@ import SEO from '../components/SEO';
 import { getRandomPhoto, getOptimizedPhotoUrl } from '../utils/pexels';
 
 // Import team member headshots
-import adamHeadshot from '../assets/headshots/Adam_Kershner.webp';
+import adamHeadshot from '../assets/headshots/adam_kershner.jpg';
 import emilio from '../assets/headshots/Emilio_Abelmann.webp';
 import eugene from '../assets/headshots/eugene_kaminsky.webp';
 import hugh from '../assets/headshots/hugh_molotsi.webp';
@@ -50,6 +50,12 @@ const categories = [
   'Company News',
   'Product Updates'
 ];
+
+// Utility function to truncate text
+function truncateExcerpt(text, maxLength = 120) {
+  if (!text || text.length <= maxLength) return text;
+  return text.slice(0, maxLength).trim() + '...';
+}
 
 export async function getStaticProps() {
   try {
@@ -239,8 +245,8 @@ const Blog = ({
                 <h1 className="text-3xl font-bold text-kahana-primary mb-4">
                   {featuredPost?.title || 'Featured Post'}
                 </h1>
-                <p className="text-kahana-primary-light text-lg mb-6">
-                  {featuredPost?.excerpt || 'No excerpt available'}
+                <p className="text-kahana-primary-light text-lg mb-6 line-clamp-2">
+                  {truncateExcerpt(featuredPost?.excerpt) || 'No excerpt available'}
                 </p>
                 <div className="flex items-center mb-6">
                   <div className="flex items-center">
@@ -250,7 +256,8 @@ const Blog = ({
                         alt={featuredPost?.author?.name || "Author"}
                         width={40}
                         height={40}
-                        className="rounded-full"
+                        className="rounded-lg"
+                        style={{ width: '40px', height: '40px', objectFit: 'cover' }}
                         priority
                       />
                     </div>
@@ -367,8 +374,8 @@ const Blog = ({
                         <h3 className="text-xl font-semibold text-kahana-primary mb-4 hover:text-kahana-accent-sunset transition-colors">
                           {post.title}
                         </h3>
-                        <p className="text-kahana-primary-light mb-6">
-                          {post.excerpt}
+                        <p className="text-kahana-primary-light mb-6 line-clamp-2">
+                          {truncateExcerpt(post.excerpt)}
                         </p>
                         <div className="flex items-center gap-4">
                           <div className="flex items-center">
@@ -378,7 +385,8 @@ const Blog = ({
                                 alt={post.author?.name || "Author"}
                                 width={40}
                                 height={40}
-                                className="rounded-full"
+                                className="rounded-lg"
+                                style={{ width: '40px', height: '40px', objectFit: 'cover' }}
                                 priority
                               />
                             </div>

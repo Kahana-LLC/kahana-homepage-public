@@ -6,17 +6,25 @@ import { getRandomPhoto, getOptimizedPhotoUrl, searchPhotos } from '../../utils/
 import { suggestNatureImageQuery } from '../../utils/blog-helpers';
 import blogIndex from '../../data/blog-index';
 import Breadcrumbs from '../../components/Breadcrumbs';
-
-// Import team member headshots
-import adamHeadshot from '../../assets/headshots/Adam_Kershner.webp';
-
-// Add author images mapping
-const authorImages = {
-  'Adam Kershner': adamHeadshot,
-};
+import AuthorCard from '../../components/AuthorCard';
+import { FaLinkedin, FaRegCalendarAlt, FaBookOpen, FaRegClock } from 'react-icons/fa';
 
 // Add default avatar
 const DEFAULT_AVATAR = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%233C584A"%3E%3Cpath d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"%2F%3E%3C%2Fsvg%3E';
+
+// Function to get author headshot path
+function getAuthorHeadshot(authorName) {
+  if (!authorName) return DEFAULT_AVATAR;
+  
+  try {
+    // Convert author name to lowercase and replace spaces with underscores
+    const formattedName = authorName.toLowerCase().replace(/\s+/g, '_');
+    return require(`@/assets/headshots/${formattedName}.jpg`).default;
+  } catch (error) {
+    console.warn(`Headshot not found for ${authorName}, using default avatar`);
+    return DEFAULT_AVATAR;
+  }
+}
 
 export default function BlogPost({ post }) {
   const [contentImages, setContentImages] = useState([]);
@@ -74,16 +82,17 @@ export default function BlogPost({ post }) {
 
   // Ensure author object is properly structured
   const author = {
-    name: post.author?.name || "Author",
-    role: post.author?.role || "Contributor",
-    bio: post.author?.bio || `${post.author?.name || "The author"} is a contributor to the Kahana blog, sharing insights and expertise in enterprise browser solutions and security.`,
-    avatar: authorImages[post.author?.name] || DEFAULT_AVATAR
+    name: post.author?.name || post.author || 'Anonymous',
+    role: post.author?.role || post.authorRole || 'Contributor',
+    bio: post.author?.bio || post.authorBio || `${post.author?.name || post.author || "The author"} is a contributor to the Kahana blog, sharing insights and expertise in enterprise browser solutions and security.`,
+    avatar: getAuthorHeadshot(post.author?.name || post.author),
+    linkedinProfile: post.author?.linkedinProfile || post.linkedinProfile || ''
   };
 
   return (
     <>
       <Head>
-        <title>{post.title} | Kahana Blog</title>
+        <title>{`${post.title} | Kahana Blog`}</title>
         <meta name="description" content={post.excerpt} />
         <meta property="og:title" content={post.title} />
         <meta property="og:description" content={post.excerpt} />
@@ -95,31 +104,54 @@ export default function BlogPost({ post }) {
 
       <main className="max-w-4xl mx-auto px-4 py-8">
         <article className="prose prose-lg max-w-none">
-          <header className="mb-8">
+          <header>
             <Breadcrumbs 
               items={[
                 { name: "Home", url: "/" },
                 { name: "Blog", url: "/blog" },
                 { name: post.title, url: `/blog/${post.slug}` },
               ]} 
+              className="mb-6"
             />
-            <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
             
+            <h1 className="text-4xl font-bold mb-6">{post.title}</h1>
+            
+            {/* Metadata and author section */}
+            <div className="flex flex-wrap items-center gap-3 mb-10">
+              <AuthorCard author={author} variant="header" />
+              <div className="inline-flex items-center px-3 py-1.5 rounded-full bg-gray-100 text-gray-700 text-sm">
+                <FaRegCalendarAlt className="w-4 h-4 mr-2 text-gray-500" />
+                <span className="text-gray-500 mr-1">Last updated:</span>
+                {new Date(post.date).toLocaleDateString('en-US', { month: 'numeric', day: 'numeric', year: 'numeric' })}
+              </div>
+              <div className="inline-flex items-center px-3 py-1.5 rounded-full bg-gray-100 text-gray-700 text-sm">
+                <FaBookOpen className="w-4 h-4 mr-2 text-gray-500" />
+                {post.category}
+              </div>
+              <div className="inline-flex items-center px-3 py-1.5 rounded-full bg-gray-100 text-gray-700 text-sm">
+                <FaRegClock className="w-4 h-4 mr-2 text-gray-500" />
+                {post.readingTime} min read
+              </div>
+            </div>
+
+            <p className="text-xl text-gray-600 mb-10 leading-relaxed">{post.excerpt}</p>
+
             {/* Cover Image */}
-            <div className="relative w-full h-[400px] mb-8 rounded-xl overflow-hidden bg-gray-100">
+            <div className="relative w-full h-[400px] mb-12 rounded-xl overflow-hidden bg-gray-100">
               {isLoading ? (
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="animate-pulse text-gray-400">Loading cover image...</div>
                 </div>
               ) : contentImages.length > 0 && contentImages[0].src ? (
                 <>
-              <Image
+                  <Image
                     src={contentImages[0].src.landscape || contentImages[0].src.large2x || contentImages[0].src.large}
                     alt={`Cover image for ${post.title}`}
-                fill
-                className="object-cover"
-                priority
-              />
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
+                    className="object-cover"
+                    priority
+                  />
                   <div className="absolute bottom-4 right-4 text-xs text-white bg-black/50 px-2 py-1 rounded">
                     Photo by <a href={contentImages[0].photographer_url} target="_blank" rel="noopener noreferrer" className="hover:underline">{contentImages[0].photographer}</a> on Pexels
                   </div>
@@ -130,36 +162,10 @@ export default function BlogPost({ post }) {
                 </div>
               )}
             </div>
-
-            <div className="flex items-center text-gray-600 mb-4">
-              <div className="flex items-center">
-                <div className="relative w-16 h-auto mr-4">
-                  <Image
-                    src={author.avatar}
-                    alt={author.name}
-                    width={64}
-                    height={64}
-                    className="rounded-md"
-                    priority
-                  />
-                </div>
-                <div>
-                  <div className="font-medium text-gray-900">{author.name}</div>
-                  <div className="text-sm">{author.role}</div>
-                </div>
-              </div>
-              <span className="mx-4">•</span>
-              <span>{new Date(post.date).toLocaleDateString('en-US', { month: 'numeric', day: 'numeric', year: 'numeric' })}</span>
-              <span className="mx-4">•</span>
-              <span>{post.category}</span>
-              <span className="mx-4">•</span>
-              <span>{post.readingTime} min read</span>
-            </div>
-            <p className="text-xl text-gray-600">{post.excerpt}</p>
           </header>
 
           <div 
-            className="blog-content"
+            className="blog-content prose prose-lg max-w-none"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
 
@@ -182,25 +188,14 @@ export default function BlogPost({ post }) {
 
           {/* Author Bio Section */}
           <div className="mt-12 p-8 bg-white rounded-xl border border-gray-200 shadow-sm">
-            <div className="flex items-start">
-              <div className="relative w-32 h-auto mr-6 flex-shrink-0">
-                <Image
-                  src={author.avatar}
-                  alt={author.name}
-                  width={128}
-                  height={128}
-                  className="rounded-md"
-                  priority
-                />
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-gray-900">{author.name}</h3>
-                <p className="text-gray-600 mb-4">{author.role}</p>
-                <p className="text-gray-600">
-                  {author.bio}
-                </p>
-              </div>
-            </div>
+            <AuthorCard 
+              author={{
+                ...author,
+                bio: author.bio
+              }} 
+              size="large" 
+              variant="bio" 
+            />
           </div>
         </article>
       </main>
