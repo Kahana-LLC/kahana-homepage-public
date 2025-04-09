@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 // images
-import adam from '../assets/headshots/Adam_Kershner.webp';
+import adam from '../assets/headshots/adam_kershner.jpg';
 import emilio from '../assets/headshots/Emilio_Abelmann.webp';
 import eugene from '../assets/headshots/eugene_kaminsky.webp';
 import hugh from '../assets/headshots/hugh_molotsi.webp';

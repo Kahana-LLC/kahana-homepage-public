@@ -6,6 +6,7 @@ import HowItWorks from "../components/HowItWorks";
 import TestimonialsCarousel from "../components/TestimonialsCarousel";
 import ProductSection from "../components/ProductSection";
 import FeaturedBlogSection from "../components/FeaturedBlogSection";
+import FadeInSection from "../components/FadeInSection";
 import SEO from "../components/SEO";
 import { getRandomPhoto, getOptimizedPhotoUrl } from "../utils/pexels";
 
@@ -208,30 +209,41 @@ export default function Home({ blogPosts }) {
 
       <div className="relative">
         <main className="scroll-smooth">
-          <section
-            id="products"
-            className="min-h-screen flex items-center justify-center p-4 md:p-8 bg-white"
-          >
-            <ProductSection />
-          </section>
-          <section
-            id="features"
-            className="min-h-screen flex items-center justify-center p-4 md:p-8 bg-gray-50"
-          >
-            <FeaturesShowcase />
-          </section>
-          <section
-            id="how-it-works"
-            className="min-h-screen flex items-center justify-center p-4 md:p-8 bg-white"
-          >
-            <HowItWorks />
-          </section>
-          <section
-            id="blog"
-            className="min-h-screen flex items-center justify-center p-4 md:p-8 bg-gray-50"
-          >
-            <FeaturedBlogSection posts={blogPosts} />
-          </section>
+          <FadeInSection>
+            <section
+              id="products"
+              className="min-h-screen flex items-center justify-center p-4 md:p-8 bg-white"
+            >
+              <ProductSection />
+            </section>
+          </FadeInSection>
+
+          <FadeInSection delay={200}>
+            <section
+              id="features"
+              className="min-h-screen flex items-center justify-center p-4 md:p-8 bg-gray-50"
+            >
+              <FeaturesShowcase />
+            </section>
+          </FadeInSection>
+
+          <FadeInSection delay={400}>
+            <section
+              id="how-it-works"
+              className="min-h-screen flex items-center justify-center p-4 md:p-8 bg-white"
+            >
+              <HowItWorks />
+            </section>
+          </FadeInSection>
+
+          <FadeInSection delay={600}>
+            <section
+              id="blog"
+              className="min-h-screen flex items-center justify-center p-4 md:p-8 bg-gray-50"
+            >
+              <FeaturedBlogSection posts={blogPosts} />
+            </section>
+          </FadeInSection>
         </main>
       </div>
     </>

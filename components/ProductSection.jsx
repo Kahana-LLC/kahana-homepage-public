@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 const browserFeatures = {
@@ -49,6 +49,80 @@ export default function ProductSection() {
   const [isChatOpen, setIsChatOpen] = useState(false);
   const [message, setMessage] = useState('');
   const [showDemoMessage, setShowDemoMessage] = useState(false);
+  const [placeholderIndex, setPlaceholderIndex] = useState(0);
+  const [currentPlaceholder, setCurrentPlaceholder] = useState('');
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  const placeholders = [
+    "Search the Internet or type a URL",
+    "Organize your creative flow",
+    "Jump back into your workspace",
+    "Browse. Build. Breathe.",
+    "Explore your next genius idea"
+  ];
+
+  useEffect(() => {
+    const baseTypeSpeed = 133; // ~90 WPM typing speed
+    const baseDeleteSpeed = 100; // slightly faster deletion
+    const pauseDuration = 3000; // 3 seconds pause between phrases
+
+    // Function to get a random speed variation
+    const getRandomSpeed = (baseSpeed) => {
+      const variation = Math.random() * 50 - 25; // Random variation between -25ms and +25ms
+      return Math.max(baseSpeed + variation, baseSpeed * 0.5); // Ensure minimum speed is half of base speed
+    };
+
+    // Function to simulate a typing mistake
+    const simulateMistake = async () => {
+      if (Math.random() < 0.1) { // 10% chance of mistake
+        const mistakeChar = String.fromCharCode(97 + Math.floor(Math.random() * 26)); // Random lowercase letter
+        setCurrentPlaceholder(prev => prev + mistakeChar);
+        await new Promise(resolve => setTimeout(resolve, getRandomSpeed(baseTypeSpeed)));
+        setCurrentPlaceholder(prev => prev.slice(0, -1));
+        await new Promise(resolve => setTimeout(resolve, getRandomSpeed(baseDeleteSpeed)));
+      }
+    };
+
+    // Function to add natural pause between words
+    const addWordPause = async () => {
+      if (currentPlaceholder.endsWith(' ')) {
+        await new Promise(resolve => setTimeout(resolve, 200 + Math.random() * 100)); // 200-300ms pause between words
+      }
+    };
+
+    const currentText = placeholders[placeholderIndex];
+    
+    const updatePlaceholder = async () => {
+      if (isDeleting) {
+        setCurrentPlaceholder(currentText.substring(0, currentPlaceholder.length - 1));
+        if (currentPlaceholder === '') {
+          setIsDeleting(false);
+          setPlaceholderIndex((prev) => (prev + 1) % placeholders.length);
+        }
+      } else {
+        const nextChar = currentText[currentPlaceholder.length];
+        if (nextChar === ' ') {
+          // Add longer pause before typing a space
+          await new Promise(resolve => setTimeout(resolve, 800 + Math.random() * 400));
+        }
+        
+        setCurrentPlaceholder(currentText.substring(0, currentPlaceholder.length + 1));
+        
+        if (currentPlaceholder === currentText) {
+          setTimeout(() => setIsDeleting(true), pauseDuration);
+        }
+      }
+
+      if (!isDeleting && currentPlaceholder !== currentText) {
+        await simulateMistake();
+        await addWordPause();
+      }
+    };
+
+    const timeout = setTimeout(updatePlaceholder, isDeleting ? getRandomSpeed(baseDeleteSpeed) : getRandomSpeed(baseTypeSpeed));
+
+    return () => clearTimeout(timeout);
+  }, [currentPlaceholder, isDeleting, placeholderIndex]);
 
   const handleSendMessage = (e) => {
     e.preventDefault();
@@ -108,7 +182,10 @@ export default function ProductSection() {
                       <svg className="h-2.5 w-2.5 sm:h-4 sm:w-4 text-[#66C2BE]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                       </svg>
-                      <span className="ml-1.5 sm:ml-2 text-[10px] sm:text-sm text-gray-400">Search the Internet or type a URL</span>
+                      <div className="ml-1.5 sm:ml-2 text-[10px] sm:text-sm text-gray-400 relative inline-flex items-center">
+                        <span>{currentPlaceholder}</span>
+                        <span className="ml-0.5 h-4 w-[2px] bg-[#66C2BE] animate-[blink_1s_ease-in-out_infinite]"></span>
+                      </div>
                     </div>
                     <div className="ml-1.5 sm:ml-3 flex items-center space-x-1.5 sm:space-x-3">
                       <div className="relative pointer-events-none">
