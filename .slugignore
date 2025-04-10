@@ -1,0 +1,32 @@
+# Development files
+.git
+.github
+.vscode
+*.log
+*.md
+!README.md
+tests
+test
+coverage
+.env*
+!.env.production
+
+# Documentation
+docs
+*.pdf
+*.doc
+*.docx
+
+# Development dependencies that aren't needed in production
+node_modules/@next/codemod
+node_modules/react-syntax-highlighter
+node_modules/react-to-pdf
+node_modules/html-to-image
+node_modules/html2pdf.js
+node_modules/pexels
+
+# Cache and build artifacts
+.next/cache
+.cache
+dist
+build 
