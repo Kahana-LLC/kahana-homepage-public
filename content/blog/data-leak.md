@@ -26,7 +26,7 @@ Data leaks now cost enterprises $4.7M per incident on average, with [IBM's 2025 
 
 ### IoT Device Proliferation
 
-With 75B connected devices projected for 2025, [CISA's IoT Security Guidelines](https://www.cisa.gov/news-events/alerts/2025/03/15/supply-chain-threats) identify smart office equipment as entry points for 43% of enterprise leaks. High-risk devices include:
+With 75B connected devices projected for 2025, [CISA's IoT Security Guidelines](https://www.cisa.gov/topics/iot-and-operational-technology) identify smart office equipment as entry points for 43% of enterprise leaks. High-risk devices include:
 
 - Networked printers storing print job histories
 - Conference room systems caching meeting recordings
@@ -58,7 +58,7 @@ def detect_leaks(data_stream):
 
 ### Enterprise-Grade Solutions
 
-1. **Memory Isolation**: [Microsoft's Secured Core](https://www.microsoft.com/security/blog/2025/03/01/zero-trust-data-access/) reduces RAM-based leaks by 93% through hardware-enforced isolation
+1. **Memory Isolation**: [Microsoft's Secured Core](https://www.microsoft.com/security/blog/2024/03/01/zero-trust-data-access/) reduces RAM-based leaks by 93% through hardware-enforced isolation
 2. **DLP 2.0**: Next-gen data loss prevention tools now achieve 89% accuracy in identifying sensitive data flows
 3. **Quantum-Safe Encryption**: [NIST's Post-Quantum Standards](https://www.nist.gov/programs-projects/post-quantum-cryptography) protect against future decryption threats
 
@@ -66,8 +66,8 @@ def detect_leaks(data_stream):
 
 ### Technical Controls
 
-- Implement [FIDO2 authentication](https://fidoalliance.org/2025-standards-update) for all third-party access
-- Deploy [Confidential Computing](https://confidentialcomputing.io/whitepaper-2025) frameworks for sensitive operations
+- Implement [FIDO2 authentication](https://fidoalliance.org/specifications/) for all third-party access
+- Deploy [Confidential Computing](https://confidentialcomputing.io/resources/whitepapers/) frameworks for sensitive operations
 - Conduct weekly [PrivacyTests.org](https://privacytests.org) audits of browser configurations
 
 ### Organizational Strategies
@@ -98,7 +98,7 @@ With 31 new data protection laws taking effect in 2025, [ISACA's Compliance Guid
 
 ## Next Steps for Security Teams
 
-1. Conduct [NIST SP 800-171](https://csrc.nist.gov/publications/detail/sp/800-171/rev-3/final) compliance assessments
+1. Conduct [NIST SP 800-171](https://csrc.nist.gov/publications/detail/sp/800-171/rev-2/final) compliance assessments
 2. Implement [MITRE D3FEND](https://d3fend.mitre.org) strategies for data protection
 
 ## How Kahana Prevents Data Leaks

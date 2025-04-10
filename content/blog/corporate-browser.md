@@ -26,7 +26,7 @@ The limitations of traditional browsers in enterprise environments have become i
 - **No control over data**: Organizations cannot restrict employees from downloading risky files or sharing confidential information
 - **Lack of centralized management**: Security teams struggle to enforce browser security policies uniformly across the organization
 
-According to [Security Week](https://www.securityweek.com/browser-threats-2025), there has been a 140% increase in browser phishing, with a 130% rise in zero-hour phishing attacks. Traditional browsers simply weren't designed to handle the sophisticated threats businesses face today.
+According to [Security Week](https://www.securityweek.com/cybersecurity/browser-security/), there has been a 140% increase in browser phishing, with a 130% rise in zero-hour phishing attacks. Traditional browsers simply weren't designed to handle the sophisticated threats businesses face today.
 
 ## Key Features Driving Enterprise Browser Adoption
 
