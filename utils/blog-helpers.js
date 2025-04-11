@@ -88,3 +88,17 @@ export function isNatureThemed(query) {
     query.toLowerCase().includes(keyword.toLowerCase())
   );
 }
+
+/**
+ * Calculates reading time from HTML content
+ * @param {string} htmlContent - The HTML content to calculate reading time for
+ * @returns {number} - Estimated reading time in minutes
+ */
+export function calculateReadingTime(htmlContent) {
+  // Strip HTML tags and count words
+  const textContent = htmlContent.replace(/<[^>]*>/g, "");
+  const wordCount = textContent.split(/\s+/).length;
+
+  // Calculate reading time (200 words per minute is standard)
+  return Math.ceil(wordCount / 200);
+}

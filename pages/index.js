@@ -14,66 +14,66 @@ import { getRandomPhoto, getOptimizedPhotoUrl } from "../utils/pexels";
 const DEFAULT_PLACEHOLDER =
   'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%233C584A"%3E%3Cpath d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-1.96-2.36L6.5 17h11l-3.54-4.71z"%2F%3E%3C%2Fsvg%3E';
 
-// Featured blog posts data
-const featuredPosts = [
-  {
-    slug: "technical-debt",
-    title: "Tackling Technical Debt and Redefining Application Access",
-    excerpt:
-      "How modern enterprises are balancing innovation with system maintenance while revolutionizing their approach to application security.",
-    category: "Engineering",
-    date: "March 15, 2024",
-    author: {
-      name: "Adam Kershner",
-      role: "CTO",
-    },
-    defaultImageQuery: "modern technology office workspace",
-  },
-  {
-    slug: "zero-trust",
-    title: "Implementing Zero Trust in Modern Enterprises",
-    excerpt:
-      "A comprehensive guide to implementing Zero Trust architecture in your organization.",
-    category: "Security",
-    date: "March 10, 2024",
-    author: {
-      name: "Adam Kershner",
-      role: "CTO",
-    },
-    defaultImageQuery: "network security digital protection",
-  },
-  {
-    slug: "cloud-migration",
-    title: "Cloud Migration Strategies for 2025",
-    excerpt:
-      "Explore the latest strategies and best practices for successful cloud migration.",
-    category: "Cloud Computing",
-    date: "March 5, 2024",
-    author: {
-      name: "Adam Kershner",
-      role: "CTO",
-    },
-    defaultImageQuery: "cloud computing data center",
-  },
-];
+// Simple cache for development
+const imageCache = new Map();
 
 export async function getStaticProps() {
   try {
-    // Fetch images for featured blog posts
+    // Import the blog index
+    const blogIndex = require("../data/blog-index.js");
+
+    // Sort posts by date, newest first
+    const sortedPosts = [...blogIndex].sort(
+      (a, b) => new Date(b.date) - new Date(a.date)
+    );
+
+    // Get the 3 most recent posts
+    const recentPosts = sortedPosts.slice(0, 3);
+
+    // Fetch images for the posts with caching
     const postsWithImages = await Promise.all(
-      featuredPosts.map(async (post) => {
+      recentPosts.map(async (post) => {
         try {
-          let postImage = post.customImage;
+          // Check if we already have an image for this post
+          if (imageCache.has(post.slug)) {
+            return {
+              ...post,
+              image: imageCache.get(post.slug),
+            };
+          }
+
+          // Use existing image if available
+          let postImage = post.image || null;
+
+          // If no image, fetch from Pexels
           if (!postImage) {
-            const photo = await getRandomPhoto(post.defaultImageQuery);
+            const searchQuery =
+              post.defaultImageQuery || `${post.category} ${post.title}`;
+            const photo = await getRandomPhoto(searchQuery);
             postImage = photo
               ? getOptimizedPhotoUrl(photo)
               : DEFAULT_PLACEHOLDER;
           }
-          return {
+
+          // Cache the image
+          imageCache.set(post.slug, postImage);
+
+          // For featured section, always use Adam as the author
+          const postWithImage = {
             ...post,
             image: postImage,
+            author: {
+              name: "Adam Kershner",
+              role: "CTO",
+              bio: "Adam is the CTO of Kahana, where he leads the technical vision and development of enterprise browser solutions. With extensive experience in browser security and enterprise software, he is passionate about transforming how organizations approach secure browsing.",
+              linkedinProfile: "https://www.linkedin.com/in/adamkershner/",
+            },
           };
+
+          // Remove authors array if it exists
+          delete postWithImage.authors;
+
+          return postWithImage;
         } catch (error) {
           console.error(`Error fetching image for post ${post.slug}:`, error);
           return {
@@ -88,18 +88,16 @@ export async function getStaticProps() {
       props: {
         blogPosts: postsWithImages,
       },
-      revalidate: 86400, // Revalidate once per day
+      // Shorter revalidation time in development for easier testing
+      revalidate: process.env.NODE_ENV === "development" ? 10 : 86400,
     };
   } catch (error) {
     console.error("Error in getStaticProps:", error);
     return {
       props: {
-        blogPosts: featuredPosts.map((post) => ({
-          ...post,
-          image: DEFAULT_PLACEHOLDER,
-        })),
+        blogPosts: [],
       },
-      revalidate: 86400,
+      revalidate: process.env.NODE_ENV === "development" ? 10 : 86400,
     };
   }
 }

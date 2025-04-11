@@ -181,7 +181,7 @@ export default function Footer() {
                   href="https://www.linkedin.com/company/kahana-co" 
                   target="_blank" 
                   rel="noopener noreferrer nofollow" 
-                  className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200"
+                  className="text-[#C17F11] hover:text-[#A66F0E] transition-colors duration-200"
                   aria-label="Visit Kahana on LinkedIn"
                 >
                   <span className="sr-only">LinkedIn</span>

@@ -2,61 +2,10 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import AuthorCard from './AuthorCard';
-import { getRandomPhoto, getOptimizedPhotoUrl } from '../utils/pexels';
-
-// Import team member headshots
-import adam from '../assets/headshots/adam_kershner.jpg';
-
-// Author mapping for blog posts
-const authorImages = {
-  'Adam Kershner': adam,
-};
+import { authors } from '../config/authors';
 
 // Default placeholder for failed image loads
 const DEFAULT_PLACEHOLDER = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%233C584A"%3E%3Cpath d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-1.96-2.36L6.5 17h11l-3.54-4.71z"%2F%3E%3C%2Fsvg%3E';
-
-// Default posts data
-const defaultPosts = [
-  {
-    slug: 'technical-debt',
-    title: 'Tackling Technical Debt and Redefining Application Access',
-    excerpt: 'How modern enterprises are balancing innovation with system maintenance while revolutionizing their approach to application security.',
-    category: 'Engineering',
-    date: 'March 15, 2024',
-    author: {
-      name: 'Adam Kershner',
-      role: 'CTO',
-    },
-    customImage: null,
-    defaultImageQuery: 'modern technology office workspace'
-  },
-  {
-    slug: 'zero-trust',
-    title: 'Implementing Zero Trust in Modern Enterprises',
-    excerpt: 'A comprehensive guide to implementing Zero Trust architecture in your organization.',
-    category: 'Security',
-    date: 'March 10, 2024',
-    author: {
-      name: 'Adam Kershner',
-      role: 'CTO',
-    },
-    customImage: null,
-    defaultImageQuery: 'network security digital protection'
-  },
-  {
-    slug: 'cloud-migration',
-    title: 'Cloud Migration Strategies for 2025',
-    excerpt: 'Explore the latest strategies and best practices for successful cloud migration.',
-    category: 'Cloud Computing',
-    date: 'March 5, 2024',
-    author: {
-      name: 'Adam Kershner',
-      role: 'CTO',
-    },
-    customImage: null,
-    defaultImageQuery: 'cloud computing data center'
-  }
-];
 
 // Utility function to truncate text
 function truncateExcerpt(text, maxLength = 120) {
@@ -64,7 +13,11 @@ function truncateExcerpt(text, maxLength = 120) {
   return text.slice(0, maxLength).trim() + '...';
 }
 
-export default function FeaturedBlogSection({ posts = defaultPosts }) {
+export default function FeaturedBlogSection({ posts = [] }) {
+  if (!posts || posts.length === 0) {
+    return null;
+  }
+
   return (
     <div className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -82,33 +35,43 @@ export default function FeaturedBlogSection({ posts = defaultPosts }) {
               <div className="relative w-full">
                 <div className="flex items-center gap-x-4 text-xs">
                   <time dateTime={post.date} className="text-kahana-primary-light">
-                    {post.date}
+                    {new Date(post.date).toLocaleDateString('en-US', { 
+                      month: 'long',
+                      day: 'numeric',
+                      year: 'numeric'
+                    })}
                   </time>
                   <span className="relative z-10 rounded-full bg-kahana-accent-water/10 px-3 py-1.5 font-medium text-kahana-accent-water">
                     {post.category}
                   </span>
                 </div>
                 <div className="group relative">
-                  <div className="mt-6 aspect-[16/9] w-full overflow-hidden rounded-2xl bg-gray-100">
-                    <Image
-                      src={post.image || DEFAULT_PLACEHOLDER}
-                      alt={post.title}
-                      fill
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                      className="object-cover transition duration-300 group-hover:scale-105"
-                      priority
-                    />
-                  </div>
+                  <Link href={`/blog/${post.slug}`} className="block">
+                    <div className="mt-6 aspect-[16/9] w-full overflow-hidden rounded-2xl bg-gray-100">
+                      <div className="relative h-full w-full">
+                        <Image
+                          src={post.image || DEFAULT_PLACEHOLDER}
+                          alt={post.title}
+                          fill
+                          sizes="(max-width: 768px) 100vw, 33vw"
+                          className="object-cover transition duration-300 group-hover:scale-105"
+                          priority
+                        />
+                        {/* Hover overlay */}
+                        <div className="absolute inset-0 bg-kahana-primary/0 transition-colors duration-300 group-hover:bg-kahana-primary/10" />
+                      </div>
+                    </div>
+                  </Link>
                 </div>
               </div>
               <div className="max-w-xl">
                 <div className="mt-4">
                   <AuthorCard 
-                    author={{
-                      name: post.author?.name,
-                      role: post.author?.role,
-                      avatar: post.author?.avatar || authorImages[post.author?.name] || "/images/authors/AK-Headshot.jpg"
-                    }}
+                    authors={post.authors || [{
+                      name: post.author.name,
+                      role: post.author.role,
+                      avatar: authors[post.author.name]?.avatar || DEFAULT_PLACEHOLDER
+                    }]}
                     variant="default"
                     imageClassName="w-10 h-10 rounded-lg object-cover"
                   />
