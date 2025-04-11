@@ -14,7 +14,7 @@ export default function ContactMeta({ contact }) {
         "Get in touch with Kahana's team. We're here to help with your enterprise browsing and security needs."
       }
       image={contact.featuredImage || "/images/contact-hero.jpg"}
-      url="https://kahana.ai/contact"
+      url="https://kahana.co/contact"
       type="website"
       twitterHandle="@kahana"
       schema={schema}

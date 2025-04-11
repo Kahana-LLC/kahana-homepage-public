@@ -22,7 +22,7 @@ function findImagesInDirectory(dir) {
         }
       } else if (IMAGE_EXTENSIONS.includes(path.extname(file).toLowerCase())) {
         const relativePath = path.relative(process.cwd(), filePath);
-        const url = `https://kahana.ai/${relativePath.replace(/\\/g, "/")}`;
+        const url = `https://kahana.co/${relativePath.replace(/\\/g, "/")}`;
 
         // Get image dimensions
         const dimensions = getImageDimensions(filePath);

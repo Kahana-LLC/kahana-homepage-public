@@ -26,7 +26,7 @@ Data leaks now cost enterprises $4.7M per incident on average, with [IBM's 2025 
 
 ### IoT Device Proliferation
 
-With 75B connected devices projected for 2025, [CISA's IoT Security Guidelines](https://www.cisa.gov/topics/iot-and-operational-technology) identify smart office equipment as entry points for 43% of enterprise leaks. High-risk devices include:
+With 75B connected devices projected for 2025, smart office equipment has been identified as entry points for 43% of enterprise leaks. High-risk devices include:
 
 - Networked printers storing print job histories
 - Conference room systems caching meeting recordings
@@ -67,7 +67,7 @@ def detect_leaks(data_stream):
 ### Technical Controls
 
 - Implement [FIDO2 authentication](https://fidoalliance.org/specifications/) for all third-party access
-- Deploy [Confidential Computing](https://confidentialcomputing.io/resources/whitepapers/) frameworks for sensitive operations
+- Deploy secure computing frameworks for sensitive operations
 - Conduct weekly [PrivacyTests.org](https://privacytests.org) audits of browser configurations
 
 ### Organizational Strategies

@@ -7,8 +7,8 @@ export default function JobPostingMeta({ job }) {
 
   // Generate breadcrumb schema for job posting
   const breadcrumbItems = [
-    { name: "Careers", url: "https://kahana.ai/careers" },
-    { name: job.title, url: `https://kahana.ai/careers/${job.slug}` },
+    { name: "Careers", url: "https://kahana.co/careers" },
+    { name: job.title, url: `https://kahana.co/careers/${job.slug}` },
   ];
   const schema = generateBreadcrumbSchema(breadcrumbItems);
 
@@ -22,7 +22,7 @@ export default function JobPostingMeta({ job }) {
         } Help us build the future of enterprise security.`
       }
       image={job.featuredImage || "/images/careers-hero.jpg"}
-      url={`https://kahana.ai/careers/${job.slug}`}
+      url={`https://kahana.co/careers/${job.slug}`}
       type="website"
       twitterHandle="@kahana"
       schema={schema}

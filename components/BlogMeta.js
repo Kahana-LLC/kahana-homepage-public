@@ -22,7 +22,7 @@ export default function BlogMeta({ post }) {
       title={post.title}
       description={post.excerpt}
       image={post.featuredImage}
-      url={`https://kahana.ai/blog/${post.slug}`}
+      url={`https://kahana.co/blog/${post.slug}`}
       type="article"
       twitterHandle={post.authorTwitter || "@kahana"}
       schema={schema}

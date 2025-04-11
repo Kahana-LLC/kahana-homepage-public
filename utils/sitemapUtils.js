@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const { execSync } = require("child_process");
 
-const EXTERNAL_DATA_URL = "https://kahana.ai";
+const EXTERNAL_DATA_URL = "https://kahana.co";
 
 // Function to get last modified date from git
 function getLastModifiedDate(filePath) {
@@ -18,10 +18,38 @@ function getLastModifiedDate(filePath) {
   }
 }
 
+// Function to get all blog posts
+function getAllBlogPosts() {
+  const blogDir = path.join(process.cwd(), "data", "blog");
+  const blogPosts = [];
+
+  try {
+    const files = fs.readdirSync(blogDir);
+    files.forEach((file) => {
+      if (file.endsWith(".json")) {
+        const filePath = path.join(blogDir, file);
+        const content = JSON.parse(fs.readFileSync(filePath, "utf8"));
+
+        blogPosts.push({
+          url: `${EXTERNAL_DATA_URL}/blog/${content.slug}`,
+          lastmod: content.date,
+          changefreq: "weekly",
+          priority: "0.8",
+        });
+      }
+    });
+  } catch (error) {
+    console.error("Error reading blog posts:", error);
+  }
+
+  return blogPosts;
+}
+
 // Function to get all pages from the pages directory
 function getAllPages() {
   const pagesDir = path.join(process.cwd(), "pages");
   const pages = [];
+  const blogPosts = getAllBlogPosts();
 
   function scanDirectory(dir) {
     const files = fs.readdirSync(dir);
@@ -61,7 +89,7 @@ function getAllPages() {
   }
 
   scanDirectory(pagesDir);
-  return pages;
+  return [...pages, ...blogPosts];
 }
 
 // Function to determine change frequency based on route

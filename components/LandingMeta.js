@@ -11,7 +11,7 @@ export default function LandingMeta({ landing }) {
       title={landing.title}
       description={landing.description}
       image={landing.featuredImage}
-      url={`https://kahana.ai${landing.path}`}
+      url={`https://kahana.co${landing.path}`}
       type="website"
       twitterHandle="@kahana"
       schema={schema}
