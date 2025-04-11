@@ -1,12 +1,26 @@
 {
   "title": "The Rise of Enterprise Browsers: Transforming Corporate Security in 2025",
   "date": "2025-04-09T00:00:00.000Z",
-  "author": {
-    "name": "Adam Kershner",
-    "role": "CTO",
-    "bio": "Adam is the CTO of Kahana, where he leads the technical vision and development of enterprise browser solutions. With extensive experience in browser security and enterprise software, he is passionate about transforming how organizations approach secure browsing.",
-    "linkedinProfile": "https://www.linkedin.com/in/adamkershner/"
-  },
+  "authors": [
+    {
+      "name": "Adam Kershner",
+      "role": "CTO",
+      "bio": "Adam is the CTO of Kahana, where he leads the technical vision and development of enterprise browser solutions. With extensive experience in browser security and enterprise software, he is passionate about transforming how organizations approach secure browsing.",
+      "linkedinProfile": "https://www.linkedin.com/in/adamkershner/"
+    },
+    {
+      "name": "Jordan Kern",
+      "role": "CMO",
+      "bio": "Jordan is the CMO of Kahana, where he leads marketing and sales strategy. With expertise in SaaS and performance marketing, he focuses on driving business growth through strategic team leadership and data-driven decision making.",
+      "linkedinProfile": "https://www.linkedin.com/in/jordankern/"
+    },
+    {
+      "name": "Vruksha Joshi",
+      "role": "Engineer",
+      "bio": "Vruksha is a self-motivated engineer at Kahana who thrives on working towards meaningful goals. She is driven by a sense of progress and the satisfaction of achieving impactful results. Her approach focuses on building confidence through proven abilities and trusting the process. She believes that consistent effort, combined with learning from challenges, is key to reaching successful outcomes.",
+      "linkedinProfile": "https://www.linkedin.com/in/vruksha-joshi-576a9818b/"
+    }
+  ],
   "category": "Enterprise",
   "excerpt": "Enterprise browsers are rapidly transforming how businesses approach web security, with adoption predicted to reach 25% by 2026. As organizations face increasing browser-based threats and remote work challenges, these specialized browsers offer built-in protection, centralized control, and seamless integration with existing security infrastructure.",
   "defaultImageQuery": "secure enterprise browser with digital shield protection corporate network",

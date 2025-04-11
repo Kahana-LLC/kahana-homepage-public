@@ -83,15 +83,34 @@ export async function getStaticProps() {
             const photo = await getRandomPhoto(searchQuery);
             postImage = photo ? getOptimizedPhotoUrl(photo) : DEFAULT_PLACEHOLDER;
           }
+
+          // Handle both multiple authors and single author cases
+          let mappedAuthors = [];
+          if (post.authors && post.authors.length > 0) {
+            // Use authors array if available
+            mappedAuthors = post.authors.map(author => ({
+              ...author,
+              avatar: authors[author.name]?.avatar || DEFAULT_AVATAR
+            }));
+          } else if (post.author && post.author.name) {
+            // Convert single author to array format
+            mappedAuthors = [{
+              ...post.author,
+              avatar: authors[post.author.name]?.avatar || DEFAULT_AVATAR
+            }];
+          }
+
           return {
             ...post,
-            image: postImage
+            image: postImage,
+            authors: mappedAuthors
           };
         } catch (error) {
           console.error(`Error fetching image for post ${post.slug}:`, error);
           return {
             ...post,
-            image: DEFAULT_PLACEHOLDER
+            image: DEFAULT_PLACEHOLDER,
+            authors: post.authors || (post.author?.name ? [post.author] : [])
           };
         }
       })
@@ -151,21 +170,6 @@ const Blog = ({
     if (!blogPosts || Object.keys(blogPosts).length === 0) return [];
     
     return Object.values(blogPosts)
-      .map(post => {
-        // Handle both single author and multiple authors cases
-        const authorData = post.authors?.[0] || post.author || { name: "Author", role: "Contributor" };
-        const authorName = authorData.name;
-        const authorConfig = authors[authorName] || {
-          name: authorName,
-          role: authorData.role || "Contributor",
-          avatar: DEFAULT_AVATAR
-        };
-        return {
-          ...post,
-          author: authorConfig,
-          authors: post.authors?.map(author => authors[author.name]) || [authorConfig]
-        };
-      })
       .filter(post => {
         const matchesCategory = selectedCategory === 'All' || post.category === selectedCategory;
         const matchesSearch = searchQuery === '' || 
@@ -280,7 +284,7 @@ const Blog = ({
                       {featuredPost?.authors?.map((author, index) => (
                         <div key={author.name} className="relative w-10 h-10">
                           <Image
-                            src={authors[author.name]?.avatar || DEFAULT_AVATAR}
+                            src={author.avatar || DEFAULT_AVATAR}
                             alt={author.name}
                             width={40}
                             height={40}
@@ -418,7 +422,7 @@ const Blog = ({
                               {post.authors?.map((author, index) => (
                                 <div key={author.name} className="relative w-10 h-10">
                                   <Image
-                                    src={authors[author.name]?.avatar || DEFAULT_AVATAR}
+                                    src={author.avatar || DEFAULT_AVATAR}
                                     alt={author.name}
                                     width={40}
                                     height={40}

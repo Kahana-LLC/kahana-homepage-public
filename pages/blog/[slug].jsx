@@ -74,7 +74,7 @@ export default function BlogPost({ post, coverImage }) {
               >
                 <FaRegCalendarAlt className="w-4 h-4 mr-2 text-gray-500" />
                 <span className="text-gray-500 mr-1">Published:</span>
-                {new Date(post.date).toLocaleDateString('en-US', { month: 'numeric', day: 'numeric', year: 'numeric' })}
+                {new Date(post.date).toLocaleDateString('en-US', { month: 'numeric', day: 'numeric', year: 'numeric' }).replace(/\//g, '/')}
               </time>
               <div className="inline-flex items-center px-3 py-1.5 rounded-full bg-gray-100 text-gray-700 text-sm">
                 <FaBookOpen className="w-4 h-4 mr-2 text-gray-500" />
