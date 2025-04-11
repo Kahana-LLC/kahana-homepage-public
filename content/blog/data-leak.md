@@ -4,7 +4,7 @@ date: 2025-04-09
 author: Adam Kershner
 authorRole: CTO
 authorBio: Adam is the CTO of Kahana, where he leads the technical vision and development of enterprise browser solutions. With extensive experience in browser security and enterprise software, he is passionate about transforming how organizations approach secure browsing.
-linkedinProfile: https://www.linkedin.com/in/adam-kershner/
+linkedinProfile: https://www.linkedin.com/in/adamkershner/
 category: Security
 excerpt: "Explore the latest causes of enterprise data leaks, advanced detection techniques, and cutting-edge prevention strategies for 2025."
 defaultImageQuery: "data leak prevention shield"

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import SEO from '../components/SEO';
 import { getRandomPhoto, getOptimizedPhotoUrl } from '../utils/pexels';
+import { authors } from '../config/authors';
 
 // Import team member headshots
 import adamHeadshot from '../assets/headshots/adam_kershner.jpg';
@@ -57,19 +58,29 @@ function truncateExcerpt(text, maxLength = 120) {
   return text.slice(0, maxLength).trim() + '...';
 }
 
+// Utility function to format date
+function formatDate(dateString) {
+  const date = new Date(dateString);
+  return date.toLocaleDateString('en-US', { 
+    month: 'short', 
+    day: 'numeric', 
+    year: 'numeric'
+  }).toUpperCase();
+}
+
 export async function getStaticProps() {
   try {
     // Import the blog index
     const blogPosts = require('../data/blog-index.js');
     
-    // Fetch images for all blog posts
+    // Fetch images for all blog posts in both development and production
     const allBlogPostsWithImages = await Promise.all(
       blogPosts.map(async (post) => {
         try {
-          // Use the post's image if available, otherwise fetch a random one
           let postImage = post.image || null;
           if (!postImage) {
-            const photo = await getRandomPhoto(post.title);
+            const searchQuery = post.defaultImageQuery || `${post.category} ${post.title}`;
+            const photo = await getRandomPhoto(searchQuery);
             postImage = photo ? getOptimizedPhotoUrl(photo) : DEFAULT_PLACEHOLDER;
           }
           return {
@@ -109,7 +120,7 @@ export async function getStaticProps() {
         recentPosts,
         blogPosts: blogPostsObject
       },
-      // Revalidate every 10 seconds in development, 1 hour in production
+      // Shorter revalidation time in development for easier testing
       revalidate: process.env.NODE_ENV === 'development' ? 10 : 3600
     };
   } catch (error) {
@@ -120,7 +131,7 @@ export async function getStaticProps() {
         recentPosts: [],
         blogPosts: {}
       },
-      revalidate: 60
+      revalidate: process.env.NODE_ENV === 'development' ? 10 : 60
     };
   }
 }
@@ -141,15 +152,18 @@ const Blog = ({
     
     return Object.values(blogPosts)
       .map(post => {
-        // Ensure author object is properly structured
-        const author = {
-          name: post.author?.name || "Author",
-          role: post.author?.role || "Contributor",
-          avatar: authorImages[post.author?.name] || DEFAULT_AVATAR
+        // Handle both single author and multiple authors cases
+        const authorData = post.authors?.[0] || post.author || { name: "Author", role: "Contributor" };
+        const authorName = authorData.name;
+        const authorConfig = authors[authorName] || {
+          name: authorName,
+          role: authorData.role || "Contributor",
+          avatar: DEFAULT_AVATAR
         };
         return {
           ...post,
-          author
+          author: authorConfig,
+          authors: post.authors?.map(author => authors[author.name]) || [authorConfig]
         };
       })
       .filter(post => {
@@ -160,7 +174,7 @@ const Blog = ({
           (post.excerpt && post.excerpt.toLowerCase().includes(searchQuery.toLowerCase()));
         return matchesCategory && matchesSearch;
       })
-      .sort((a, b) => new Date(b.date) - new Date(a.date)); // Sort by date, newest first
+      .sort((a, b) => new Date(b.date) - new Date(a.date));
   }, [selectedCategory, searchQuery, blogPosts]);
 
   // Show "No results" message if no posts match the filters
@@ -193,19 +207,31 @@ const Blog = ({
         url: 'https://kahana.co/logo.png'
       }
     },
-    blogPost: recentPosts.map(post => ({
-      '@type': 'BlogPosting',
-      headline: post.title,
-      description: post.excerpt,
-      datePublished: post.date,
-      author: {
-        '@type': 'Person',
-        name: post.author.name,
-        jobTitle: post.author.role
-      },
-      image: post.image || featuredPost?.image || DEFAULT_PLACEHOLDER,
-      url: `https://kahana.co/blog/${post.slug}`
-    }))
+    blogPost: recentPosts.map(post => {
+      // Get the first author, whether from authors array or single author
+      const primaryAuthor = post.authors?.[0] || post.author || { name: "Author", role: "Contributor" };
+      
+      return {
+        '@type': 'BlogPosting',
+        headline: post.title,
+        description: post.excerpt,
+        datePublished: post.date,
+        author: {
+          '@type': 'Person',
+          name: primaryAuthor.name,
+          jobTitle: primaryAuthor.role
+        },
+        image: post.image || featuredPost?.image || DEFAULT_PLACEHOLDER,
+        publisher: {
+          '@type': 'Organization',
+          name: 'Kahana',
+          logo: {
+            '@type': 'ImageObject',
+            url: 'https://kahana.co/logo.png'
+          }
+        }
+      };
+    })
   };
 
   return (
@@ -250,26 +276,35 @@ const Blog = ({
                 </p>
                 <div className="flex items-center mb-6">
                   <div className="flex items-center">
-                    <div className="relative w-10 h-10 mr-3">
-                      <Image
-                        src={authorImages[featuredPost?.author?.name] || DEFAULT_AVATAR}
-                        alt={featuredPost?.author?.name || "Author"}
-                        width={40}
-                        height={40}
-                        className="rounded-lg"
-                        style={{ width: '40px', height: '40px', objectFit: 'cover' }}
-                        priority
-                      />
+                    <div className="flex -space-x-2 mr-3">
+                      {featuredPost?.authors?.map((author, index) => (
+                        <div key={author.name} className="relative w-10 h-10">
+                          <Image
+                            src={authors[author.name]?.avatar || DEFAULT_AVATAR}
+                            alt={author.name}
+                            width={40}
+                            height={40}
+                            className="rounded-lg border-2 border-white"
+                            style={{ width: '40px', height: '40px', objectFit: 'cover' }}
+                            priority
+                          />
+                        </div>
+                      ))}
                     </div>
                     <div>
-                      <p className="text-sm font-medium text-gray-900">{featuredPost?.author?.name || "Author"}</p>
-                      <p className="text-sm text-gray-600">
-                        {featuredPost?.date ? new Date(featuredPost.date).toLocaleDateString('en-US', { month: 'numeric', day: 'numeric', year: 'numeric' }) : 'Date not available'}
+                      <p className="text-sm font-medium text-gray-600">
+                        {featuredPost?.authors?.map(author => author.name).join(', ')}
                       </p>
+                      <div className="flex items-center gap-2 mt-1">
+                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
+                          {featuredPost?.date ? formatDate(featuredPost.date) : 'Date not available'}
+                        </span>
+                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
+                          {featuredPost?.readingTime}m read
+                        </span>
+                      </div>
                     </div>
                   </div>
-                  <span className="mx-4 text-gray-600">•</span>
-                  <span className="text-sm text-gray-600">{featuredPost?.readingTime} min read</span>
                 </div>
                 <Link 
                   href={`/blog/${featuredPost?.slug}`}
@@ -379,25 +414,34 @@ const Blog = ({
                         </p>
                         <div className="flex items-center gap-4">
                           <div className="flex items-center">
-                            <div className="relative w-10 h-10 mr-3">
-                              <Image
-                                src={post.author?.avatar || authorImages[post.author?.name] || DEFAULT_AVATAR}
-                                alt={post.author?.name || "Author"}
-                                width={40}
-                                height={40}
-                                className="rounded-lg"
-                                style={{ width: '40px', height: '40px', objectFit: 'cover' }}
-                                priority
-                              />
+                            <div className="flex -space-x-2 mr-3">
+                              {post.authors?.map((author, index) => (
+                                <div key={author.name} className="relative w-10 h-10">
+                                  <Image
+                                    src={authors[author.name]?.avatar || DEFAULT_AVATAR}
+                                    alt={author.name}
+                                    width={40}
+                                    height={40}
+                                    className="rounded-lg border-2 border-white"
+                                    style={{ width: '40px', height: '40px', objectFit: 'cover' }}
+                                    priority
+                                  />
+                                </div>
+                              ))}
                             </div>
                             <div>
-                              <p className="text-sm font-medium text-gray-900">{post.author?.name || "Author"}</p>
-                              <p className="text-sm text-gray-600">{new Date(post.date).toLocaleDateString('en-US', { month: 'numeric', day: 'numeric', year: 'numeric' })}</p>
+                              <p className="text-sm font-medium text-gray-600">
+                                {post.authors?.map(author => author.name).join(', ')}
+                              </p>
+                              <div className="flex items-center gap-2 mt-1">
+                                <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
+                                  {formatDate(post.date)}
+                                </span>
+                                <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
+                                  {post.readingTime}m read
+                                </span>
+                              </div>
                             </div>
-                          </div>
-                          <div className="flex items-center">
-                            <span className="text-sm text-gray-600">•</span>
-                            <span className="ml-2 text-sm text-gray-600">{post.readingTime} min read</span>
                           </div>
                         </div>
                       </div>

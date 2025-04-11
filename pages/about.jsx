@@ -157,24 +157,25 @@ export default function About() {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Values</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              The principles that guide us in helping you bring your ideas to life
+              At our core, we aim to improve all the time and we value:
             </p>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-3">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             <div className="bg-gradient-to-br from-gray-50 to-indigo-50/30 rounded-2xl p-8 border border-gray-100">
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mr-4">
                   <svg className="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900">Flow</h3>
+                <h3 className="text-xl font-semibold text-gray-900">Eagerness to Learn</h3>
               </div>
               <p className="text-gray-600">
-                Creating tools that help you maintain creative momentum, where ideas can develop naturally without interruption.
+                Embracing continuous learning and growth, staying curious, and always seeking to expand our knowledge and capabilities.
               </p>
             </div>
+
             <div className="bg-gradient-to-br from-gray-50 to-purple-50/30 rounded-2xl p-8 border border-gray-100">
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4">
@@ -182,25 +183,46 @@ export default function About() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900">Focus</h3>
+                <h3 className="text-xl font-semibold text-gray-900">Accountability</h3>
               </div>
               <p className="text-gray-600">
-                Building environments that help you concentrate on what matters most—bringing your ideas to life.
+                Taking ownership of our actions and commitments, ensuring reliability and trust in everything we do.
               </p>
             </div>
+
             <div className="bg-gradient-to-br from-gray-50 to-indigo-50/30 rounded-2xl p-8 border border-gray-100">
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mr-4">
                   <svg className="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900">Growth</h3>
+                <h3 className="text-xl font-semibold text-gray-900">Problem-solving Skills</h3>
               </div>
               <p className="text-gray-600">
-                Fostering an environment where ideas can evolve and reach their full potential, making the world better in the process.
+                Approaching challenges with creativity and determination, finding innovative solutions to complex problems.
               </p>
             </div>
+
+            <div className="bg-gradient-to-br from-gray-50 to-purple-50/30 rounded-2xl p-8 border border-gray-100">
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4">
+                  <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900">Strong Work Ethic</h3>
+              </div>
+              <p className="text-gray-600">
+                Demonstrating dedication, perseverance, and commitment to excellence in everything we do.
+              </p>
+            </div>
+          </div>
+
+          <div className="text-center mt-12">
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              These four principles are foundational to Kahana's philosophy.
+            </p>
           </div>
         </div>
       </div>
@@ -232,9 +254,9 @@ export default function About() {
       </div>
 
       <SharedCTA
-        title="Bring Your Ideas to Life"
-        description="Join us in creating tools that help you get closer to your ideas and make them reality."
-        buttonText="Get Started"
+        title="Let's Talk"
+        description="We'd love to hear about your ideas and how we can help bring them to life."
+        buttonText="Get in Touch"
         buttonLink="/contact"
       />
     </>

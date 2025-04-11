@@ -112,7 +112,9 @@ function processPost(filePath) {
       slug,
       date,
       author,
-      readingTime: Math.ceil(content.split(" ").length / 200), // Rough estimate
+      readingTime: Math.ceil(
+        htmlContent.replace(/<[^>]*>/g, "").split(/\s+/).length / 200
+      ), // Calculate from HTML content
     };
 
     // Remove redundant fields that are now in the author object

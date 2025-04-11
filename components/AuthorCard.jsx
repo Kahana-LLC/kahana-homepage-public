@@ -13,7 +13,7 @@ export function AuthorHeader({ author, imageClassName }) {
           height={24}
           className={imageClassName || "rounded-lg"}
           style={{ width: '24px', height: '24px', objectFit: 'cover' }}
-          unoptimized
+          priority
         />
       </div>
       <div className="flex items-center gap-1.5">
@@ -25,7 +25,7 @@ export function AuthorHeader({ author, imageClassName }) {
             href={author.linkedinProfile}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[#0A66C2] hover:text-[#004182] transition-colors"
+            className="text-[#C17F11] hover:text-[#A66F0E] transition-colors"
             title={`Connect with ${author.name} on LinkedIn`}
           >
             <FaLinkedin className="w-[14px] h-[14px]" />
@@ -37,6 +37,17 @@ export function AuthorHeader({ author, imageClassName }) {
           </span>
         )}
       </div>
+    </div>
+  );
+}
+
+// Multiple authors header
+export function MultipleAuthorsHeader({ authors, imageClassName }) {
+  return (
+    <div className="flex flex-wrap gap-2">
+      {authors.map((author, index) => (
+        <AuthorHeader key={author.name} author={author} imageClassName={imageClassName} />
+      ))}
     </div>
   );
 }
@@ -54,7 +65,7 @@ export function AuthorBioCard({ author, imageClassName }) {
             height={64}
             className={imageClassName || "rounded-lg"}
             style={{ width: '64px', height: '64px', objectFit: 'cover' }}
-            unoptimized
+            priority
           />
         </div>
         <div className="flex-1">
@@ -67,7 +78,7 @@ export function AuthorBioCard({ author, imageClassName }) {
                 href={author.linkedinProfile}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#0A66C2] hover:text-[#004182] transition-colors"
+                className="text-[#C17F11] hover:text-[#A66F0E] transition-colors"
                 title={`Connect with ${author.name} on LinkedIn`}
               >
                 <FaLinkedin className="w-4 h-4" />
@@ -90,6 +101,17 @@ export function AuthorBioCard({ author, imageClassName }) {
   );
 }
 
+// Multiple authors bio cards
+export function MultipleAuthorsBio({ authors, imageClassName }) {
+  return (
+    <div className="space-y-6">
+      {authors.map((author, index) => (
+        <AuthorBioCard key={author.name} author={author} imageClassName={imageClassName} />
+      ))}
+    </div>
+  );
+}
+
 // Minimal author reference for blog listings
 export function AuthorReference({ author, imageClassName }) {
   return (
@@ -101,7 +123,7 @@ export function AuthorReference({ author, imageClassName }) {
         height={24}
         className={imageClassName || "rounded-lg"}
         style={{ width: '24px', height: '24px', objectFit: 'cover' }}
-        unoptimized
+        priority
       />
       <span className="text-sm text-gray-600">
         {author.name}
@@ -111,7 +133,20 @@ export function AuthorReference({ author, imageClassName }) {
 }
 
 // Default export for backward compatibility
-export default function AuthorCard({ author, variant = 'header', imageClassName }) {
+export default function AuthorCard({ author, authors, variant = 'header', imageClassName }) {
+  // If multiple authors are provided, use the multiple authors components
+  if (authors?.length > 0) {
+    switch (variant) {
+      case 'bio':
+        return <MultipleAuthorsBio authors={authors} imageClassName={imageClassName} />;
+      case 'reference':
+        return <AuthorReference author={authors[0]} imageClassName={imageClassName} />;
+      default:
+        return <MultipleAuthorsHeader authors={authors} imageClassName={imageClassName} />;
+    }
+  }
+
+  // Single author fallback
   switch (variant) {
     case 'bio':
       return <AuthorBioCard author={author} imageClassName={imageClassName} />;
