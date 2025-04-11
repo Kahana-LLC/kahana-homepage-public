@@ -24,9 +24,50 @@ node_modules/react-to-pdf
 node_modules/html-to-image
 node_modules/html2pdf.js
 node_modules/pexels
+node_modules/typescript
+node_modules/@types
+node_modules/eslint*
+node_modules/prettier
+node_modules/jest*
+node_modules/@testing-library
+node_modules/cypress
+node_modules/playwright
 
 # Cache and build artifacts
 .next/cache
 .cache
 dist
-build 
+build
+
+# Source maps and debug files
+*.map
+*.tsbuildinfo
+.DS_Store
+Thumbs.db
+
+# Large media files
+*.mp4
+*.mov
+*.avi
+*.wmv
+*.flv
+*.mkv
+*.webm
+*.mp3
+*.wav
+*.flac
+*.aac
+*.ogg
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# IDE specific files
+.idea
+*.iml
+*.sublime-workspace
+*.sublime-project 
