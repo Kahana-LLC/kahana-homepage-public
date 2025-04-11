@@ -29,10 +29,12 @@ import veda from '../assets/headshots/veda_kanduri.webp';
 import siddhartha from '../assets/headshots/siddhartha_roy.webp';
 import rj from '../assets/headshots/rj_gan.webp';
 import mahendra from '../assets/headshots/mahendra_shahi.webp';
+import jescetta from '../assets/headshots/jescetta_joy.jpg';
 
 // Author mapping for blog posts
 const authorImages = {
   'Adam Kershner': adamHeadshot,
+  'Jescetta Joy': jescetta,
 };
 
 // Default avatar placeholder

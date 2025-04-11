@@ -2,6 +2,7 @@
 import adamHeadshot from "../assets/headshots/adam_kershner.jpg";
 import jordanHeadshot from "../assets/headshots/jordan_kern.jpg";
 import vrukshaHeadshot from "../assets/headshots/Vruksha_Joshi.jpg";
+import jescettaHeadshot from "../assets/headshots/jescetta_joy.jpg";
 
 export const authors = {
   "Adam Kershner": {
@@ -24,5 +25,12 @@ export const authors = {
     bio: "I'm self-motivated and really enjoy working towards a goal. What drives me is the sense of progress and the satisfaction of achieving something meaningful. To reach my goals, I focus on building confidence in my abilities and trusting the process. I believe that consistent effort, along with learning from challenges along the way, will get me to where I want to be.",
     avatar: vrukshaHeadshot,
     linkedinProfile: "https://www.linkedin.com/in/vruksha-joshi-576a9818b/",
+  },
+  "Jescetta Joy": {
+    name: "Jescetta Joy",
+    role: "Product Strategy",
+    bio: "Jescetta brings extensive product management experience from Walmart and holds a Master of Engineering Management from Duke University. As a Certified Scrum Product Owner (CSPO), she specializes in crafting purposeful innovations that drive meaningful impact. Her approach combines strategic thinking with a deep commitment to solving real-world problems that make a difference in people's lives.",
+    avatar: jescettaHeadshot,
+    linkedinProfile: "https://www.linkedin.com/in/jescetta-joy/",
   },
 };
