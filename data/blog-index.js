@@ -2,6 +2,31 @@
 module.exports = [
   {
     title:
+      "The Truth About Private Browsing: What Enterprise Users Need to Know in 2025",
+    date: "2025-04-11T00:00:00.000Z",
+    authors: [
+      {
+        name: "Jescetta Joy",
+        role: "Product Strategy",
+        bio: "Jescetta brings extensive product management experience from Walmart and holds a Master of Engineering Management from Duke University. As a Certified Scrum Product Owner (CSPO), she specializes in crafting purposeful innovations that drive meaningful impact. Her approach combines strategic thinking with a deep commitment to solving real-world problems that make a difference in people's lives.",
+        linkedinProfile: "https://www.linkedin.com/in/jescetta-joy/",
+      },
+      {
+        name: "Adam Kershner",
+        role: "CTO",
+        bio: "Adam is the CTO of Kahana, where he leads the technical vision and development of enterprise browser solutions. With extensive experience in browser security and enterprise software, he is passionate about transforming how organizations approach secure browsing.",
+        linkedinProfile: "https://www.linkedin.com/in/adamkershner/",
+      },
+    ],
+    category: "Security",
+    excerpt:
+      "Recent research reveals significant gaps between private browsing expectations and reality. Learn what enterprise users need to know about browser privacy and how to implement effective security measures.",
+    defaultImageQuery: "private browsing security technology",
+    slug: "the-truth-about-private-browsing-what-enterprise-users-need-to-know",
+    readingTime: 5,
+  },
+  {
+    title:
       "Talon's $458.6M Acquisition: A Turning Point in Enterprise Browser Security",
     date: "2025-04-11T00:00:00.000Z",
     authors: [
