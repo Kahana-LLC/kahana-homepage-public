@@ -119,7 +119,7 @@ module.exports = [
     excerpt:
       "Island's recent $250M Series E funding marks a pivotal moment in enterprise browser evolution. With a $4.8B valuation, Island is reshaping how organizations approach web security, moving beyond traditional SASE platforms to deliver intelligent, context-aware browsing security.",
     defaultImageQuery: "enterprise browser security technology",
-    slug: "island-enterprise-browser-revolutionizing-corporate-security-with-a-250m-series-e",
+    slug: "island-enterprise-browser-revolutionizing-corporate-security",
     author: {
       role: "Contributor",
       bio: null,

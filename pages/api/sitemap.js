@@ -1,4 +1,4 @@
-const EXTERNAL_DATA_URL = "https://kahana.ai";
+const EXTERNAL_DATA_URL = "https://kahana.co";
 
 export default function handler(req, res) {
   res.setHeader("Content-Type", "text/xml");

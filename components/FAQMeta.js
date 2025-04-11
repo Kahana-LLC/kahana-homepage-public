@@ -14,7 +14,7 @@ export default function FAQMeta({ faq }) {
         "Find answers to frequently asked questions about Kahana's products and services."
       }
       image={faq.featuredImage || "/images/faq-hero.jpg"}
-      url="https://kahana.ai/faq"
+      url="https://kahana.co/faq"
       type="website"
       twitterHandle="@kahana"
       schema={schema}

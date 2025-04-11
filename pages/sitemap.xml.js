@@ -1,6 +1,8 @@
 const { getAllPages } = require("../utils/sitemapUtils");
 const { getCachedSitemap, setCachedSitemap } = require("../utils/cacheUtils");
 
+const EXTERNAL_DATA_URL = "https://kahana.co";
+
 function generateSiteMap(pages) {
   return `<?xml version="1.0" encoding="UTF-8"?>
    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -8,7 +10,7 @@ function generateSiteMap(pages) {
        .map(
          (page) => `
      <url>
-       <loc>${page.url}</loc>
+       <loc>${page.url.replace("https://kahana.ai", EXTERNAL_DATA_URL)}</loc>
        ${page.lastmod ? `<lastmod>${page.lastmod}</lastmod>` : ""}
        ${page.changefreq ? `<changefreq>${page.changefreq}</changefreq>` : ""}
        ${page.priority ? `<priority>${page.priority}</priority>` : ""}

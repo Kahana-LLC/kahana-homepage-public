@@ -11,7 +11,7 @@ export default function ProductMeta({ product }) {
       title={`${product.name} | Kahana`}
       description={product.description}
       image={product.featuredImage}
-      url={`https://kahana.ai/products/${product.slug}`}
+      url={`https://kahana.co/products/${product.slug}`}
       type="product"
       twitterHandle="@kahana"
       schema={schema}
