@@ -1,5 +1,5 @@
-const fs = require("fs");
 const path = require("path");
+const { promises: fs } = require("fs");
 const { execSync } = require("child_process");
 
 const EXTERNAL_DATA_URL = "https://kahana.co";
@@ -12,32 +12,33 @@ function getLastModifiedDate(filePath) {
       .trim();
     return new Date(gitLog).toISOString();
   } catch (error) {
-    // Fallback to file system date if git history is not available
-    const stats = fs.statSync(filePath);
-    return stats.mtime.toISOString();
+    // If git command fails, return current date
+    return new Date().toISOString();
   }
 }
 
 // Function to get all blog posts
-function getAllBlogPosts() {
+async function getAllBlogPosts() {
   const blogDir = path.join(process.cwd(), "data", "blog");
   const blogPosts = [];
 
   try {
-    const files = fs.readdirSync(blogDir);
-    files.forEach((file) => {
+    const files = await fs.readdir(blogDir);
+    for (const file of files) {
       if (file.endsWith(".json")) {
         const filePath = path.join(blogDir, file);
-        const content = JSON.parse(fs.readFileSync(filePath, "utf8"));
+        const content = JSON.parse(await fs.readFile(filePath, "utf8"));
 
         blogPosts.push({
           url: `${EXTERNAL_DATA_URL}/blog/${content.slug}`,
           lastmod: content.date,
           changefreq: "weekly",
           priority: "0.8",
+          title: content.title,
+          image: content.image,
         });
       }
-    });
+    }
   } catch (error) {
     console.error("Error reading blog posts:", error);
   }
@@ -46,20 +47,20 @@ function getAllBlogPosts() {
 }
 
 // Function to get all pages from the pages directory
-function getAllPages() {
+async function getAllPages() {
   const pagesDir = path.join(process.cwd(), "pages");
   const pages = [];
-  const blogPosts = getAllBlogPosts();
+  const blogPosts = await getAllBlogPosts();
 
-  function scanDirectory(dir) {
-    const files = fs.readdirSync(dir);
+  async function scanDirectory(dir) {
+    const files = await fs.readdir(dir);
 
-    files.forEach((file) => {
+    for (const file of files) {
       const filePath = path.join(dir, file);
-      const stat = fs.statSync(filePath);
+      const stat = await fs.stat(filePath);
 
       if (stat.isDirectory()) {
-        scanDirectory(filePath);
+        await scanDirectory(filePath);
       } else if (file.endsWith(".js") || file.endsWith(".jsx")) {
         // Skip special Next.js files
         if (
@@ -67,7 +68,7 @@ function getAllPages() {
           file === "sitemap.xml.js" ||
           file === "sitemap.jsx"
         ) {
-          return;
+          continue;
         }
 
         const relativePath = path.relative(pagesDir, filePath);
@@ -85,10 +86,10 @@ function getAllPages() {
           priority: determinePriority(route),
         });
       }
-    });
+    }
   }
 
-  scanDirectory(pagesDir);
+  await scanDirectory(pagesDir);
   return [...pages, ...blogPosts];
 }
 

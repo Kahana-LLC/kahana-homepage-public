@@ -4,13 +4,15 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "NODE_NO_WARNINGS=1 next build",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "process-blog": "node scripts/process-blog-posts.js",
-    "watch-blog": "node scripts/watch-blog-posts.js"
+    "watch-blog": "node scripts/watch-blog-posts.js",
+    "update-sitemap": "node scripts/update-sitemap.js"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.787.0",
     "@headlessui/react": "^1.7.3",
     "@heroicons/react": "^2.0.12",
     "@tabler/icons-react": "^3.31.0",
@@ -44,11 +46,11 @@
   },
   "optionalDependencies": {
     "@next/codemod": "^15.3.0",
-    "react-syntax-highlighter": "^15.5.0",
-    "react-to-pdf": "^2.0.0",
     "html-to-image": "^1.11.13",
     "html2pdf.js": "^0.10.3",
-    "pexels": "^1.4.0"
+    "pexels": "^1.4.0",
+    "react-syntax-highlighter": "^15.5.0",
+    "react-to-pdf": "^2.0.0"
   },
   "description": "This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).",
   "main": "next.config.js",
