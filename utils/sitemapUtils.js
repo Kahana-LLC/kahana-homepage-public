@@ -5,15 +5,21 @@ const { execSync } = require("child_process");
 const EXTERNAL_DATA_URL = "https://kahana.co";
 
 // Function to get last modified date from git
-function getLastModifiedDate(filePath) {
+async function getLastModifiedDate(filePath) {
   try {
     const gitLog = execSync(`git log -1 --format=%cd --date=iso ${filePath}`)
       .toString()
       .trim();
     return new Date(gitLog).toISOString();
   } catch (error) {
-    // If git command fails, return current date
-    return new Date().toISOString();
+    // If git command fails, use file system stats
+    try {
+      const stats = await fs.stat(filePath);
+      return new Date(stats.mtime).toISOString();
+    } catch (err) {
+      // If all else fails, return current date
+      return new Date().toISOString();
+    }
   }
 }
 
@@ -28,15 +34,19 @@ async function getAllBlogPosts() {
       if (file.endsWith(".json")) {
         const filePath = path.join(blogDir, file);
         const content = JSON.parse(await fs.readFile(filePath, "utf8"));
+        const slug = file.replace(".json", "");
 
-        blogPosts.push({
-          url: `${EXTERNAL_DATA_URL}/blog/${content.slug}`,
-          lastmod: content.date,
-          changefreq: "weekly",
-          priority: "0.8",
-          title: content.title,
-          image: content.image,
-        });
+        // Only include posts that have required fields
+        if (content.date) {
+          blogPosts.push({
+            url: `${EXTERNAL_DATA_URL}/blog/${slug}`,
+            lastmod: content.date,
+            changefreq: "weekly",
+            priority: "0.8",
+            title: content.title,
+            image: content.image,
+          });
+        }
       }
     }
   } catch (error) {
@@ -50,7 +60,6 @@ async function getAllBlogPosts() {
 async function getAllPages() {
   const pagesDir = path.join(process.cwd(), "pages");
   const pages = [];
-  const blogPosts = await getAllBlogPosts();
 
   async function scanDirectory(dir) {
     const files = await fs.readdir(dir);
@@ -81,7 +90,7 @@ async function getAllPages() {
 
         pages.push({
           url: `${EXTERNAL_DATA_URL}${route}`,
-          lastmod: getLastModifiedDate(filePath),
+          lastmod: await getLastModifiedDate(filePath),
           changefreq: determineChangeFrequency(route),
           priority: determinePriority(route),
         });
@@ -90,7 +99,7 @@ async function getAllPages() {
   }
 
   await scanDirectory(pagesDir);
-  return [...pages, ...blogPosts];
+  return pages;
 }
 
 // Function to determine change frequency based on route
@@ -141,4 +150,5 @@ function determinePriority(route) {
 module.exports = {
   EXTERNAL_DATA_URL,
   getAllPages,
+  getAllBlogPosts,
 };

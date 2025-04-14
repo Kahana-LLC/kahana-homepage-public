@@ -1,4 +1,4 @@
-import { getAllPages } from "../utils/sitemapUtils";
+import { getAllPages, getAllBlogPosts } from "../utils/sitemapUtils";
 
 const EXTERNAL_DATA_URL = "https://kahana.co";
 
@@ -132,6 +132,7 @@ function SiteMap() {
 export async function getServerSideProps({ res }) {
   try {
     const pages = await getAllPages();
+    const blogPosts = await getAllBlogPosts();
 
     // Filter out unwanted pages and normalize URLs
     const filteredPages = pages
@@ -155,14 +156,17 @@ export async function getServerSideProps({ res }) {
         return { url };
       });
 
+    // Combine static pages with blog posts
+    const allPages = [...filteredPages, ...blogPosts];
+
     // Log all URLs for debugging
     console.log(
       "All URLs in sitemap:",
-      filteredPages.map((p) => p.url)
+      allPages.map((p) => p.url)
     );
 
     // Generate sitemap XML
-    const sitemap = generateSiteMap(filteredPages);
+    const sitemap = generateSiteMap(allPages);
 
     res.setHeader("Content-Type", "application/xml");
     res.setHeader("Cache-Control", "s-maxage=3600, stale-while-revalidate");
