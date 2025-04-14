@@ -2,6 +2,56 @@
 module.exports = [
   {
     title:
+      "Google Chrome Enterprise in 2025: Security and Productivity at Scale",
+    date: "2025-04-15T00:00:00.000Z",
+    authors: [
+      {
+        name: "Jordan Kern",
+        role: "Security Research",
+        bio: "Jordan brings deep expertise in enterprise security and browser technologies. With a background in cybersecurity research and enterprise architecture, he specializes in analyzing emerging threats and developing robust security strategies for modern enterprises.",
+        linkedinProfile: "https://www.linkedin.com/in/jordan-kern/",
+      },
+      {
+        name: "Adam Kershner",
+        role: "Product Strategy",
+        bio: "Adam combines technical expertise with strategic vision to drive enterprise browser innovation. His experience in product management and security architecture helps organizations navigate the complex landscape of enterprise browser solutions.",
+        linkedinProfile: "https://www.linkedin.com/in/adamkershner/",
+      },
+    ],
+    category: "Security",
+    excerpt:
+      "Explore how Google Chrome Enterprise is transforming enterprise security and productivity in 2025, with new AI-powered protections, work-personal profile separation, and strategic partnerships driving adoption across organizations.",
+    defaultImageQuery: "Google Chrome Enterprise security dashboard interface",
+    slug: "google-chrome-enterprise-2025-security-and-productivity",
+    readingTime: 8,
+  },
+  {
+    title:
+      "Google Chrome Enterprise in 2025: Security and Productivity at Scale",
+    date: "2025-04-15T00:00:00.000Z",
+    authors: [
+      {
+        name: "Jordan Kern",
+        role: "Security Research",
+        bio: "Jordan brings deep expertise in enterprise security and browser technologies. With a background in cybersecurity research and enterprise architecture, he specializes in analyzing emerging threats and developing robust security strategies for modern enterprises.",
+        linkedinProfile: "https://www.linkedin.com/in/jordan-kern/",
+      },
+      {
+        name: "Adam Kershner",
+        role: "Product Strategy",
+        bio: "Adam combines technical expertise with strategic vision to drive enterprise browser innovation. His experience in product management and security architecture helps organizations navigate the complex landscape of enterprise browser solutions.",
+        linkedinProfile: "https://www.linkedin.com/in/adamkershner/",
+      },
+    ],
+    category: "Security",
+    excerpt:
+      "Explore how Google Chrome Enterprise is transforming enterprise security and productivity in 2025, with new AI-powered protections, work-personal profile separation, and strategic partnerships driving adoption across organizations.",
+    defaultImageQuery: "Google Chrome Enterprise security dashboard interface",
+    slug: "google-chrome-enterprise-2025-security-and-productivity",
+    readingTime: 8,
+  },
+  {
+    title:
       "The Truth About Private Browsing: What Enterprise Users Need to Know in 2025",
     date: "2025-04-11T00:00:00.000Z",
     authors: [
