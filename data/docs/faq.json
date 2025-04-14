@@ -1,0 +1,7 @@
+{
+  "title": "Frequently Asked Questions",
+  "excerpt": "Find answers to common questions about Kahana Browser.",
+  "category": "Support",
+  "date": "March 1, 2024",
+  "content": "<h2>Frequently Asked Questions</h2>\n\n<h3>General Questions</h3>\n<div class=\"faq-item\">\n  <h4>What is Kahana Browser?</h4>\n  <p>Kahana Browser is an enterprise-grade web browser designed for security, productivity, and collaboration.</p>\n</div>\n\n<div class=\"faq-item\">\n  <h4>How do I get started?</h4>\n  <p>Visit our <a href=\"/docs/getting-started\">Getting Started guide</a> for step-by-step instructions.</p>\n</div>\n\n<h3>Technical Questions</h3>\n<div class=\"faq-item\">\n  <h4>What are the system requirements?</h4>\n  <p>Kahana Browser requires Windows 10/11, macOS 10.15+, or Linux (Ubuntu 20.04+).</p>\n</div>\n\n<div class=\"faq-item\">\n  <h4>How do I update the browser?</h4>\n  <p>Updates are handled automatically through your enterprise deployment system.</p>\n</div>"
+} 

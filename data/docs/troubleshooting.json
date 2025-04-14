@@ -1,0 +1,7 @@
+{
+  "title": "Troubleshooting Guide",
+  "excerpt": "Solutions to common issues and how to resolve them.",
+  "category": "Support",
+  "date": "March 1, 2024",
+  "content": "<h2>Troubleshooting Guide</h2>\n\n<h3>Common Issues</h3>\n<div class=\"issue\">\n  <h4>Browser Won't Start</h4>\n  <p>Try these solutions:</p>\n  <ol>\n    <li>Check system requirements</li>\n    <li>Verify installation</li>\n    <li>Clear cache and cookies</li>\n  </ol>\n</div>\n\n<div class=\"issue\">\n  <h4>Performance Issues</h4>\n  <p>Improve performance by:</p>\n  <ol>\n    <li>Closing unused tabs</li>\n    <li>Clearing browser cache</li>\n    <li>Updating to latest version</li>\n  </ol>\n</div>\n\n<h3>Getting Help</h3>\n<p>If you need additional assistance:</p>\n<ul>\n  <li>Contact your IT support team</li>\n  <li>Submit a support ticket</li>\n  <li>Check our knowledge base</li>\n</ul>"
+} 

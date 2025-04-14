@@ -1,6 +1,7 @@
 const path = require("path");
 const { promises: fs } = require("fs");
 const { execSync } = require("child_process");
+import { getAllDocs } from "./docsUtils";
 
 const EXTERNAL_DATA_URL = "https://kahana.co";
 
@@ -21,6 +22,19 @@ async function getLastModifiedDate(filePath) {
       return new Date().toISOString();
     }
   }
+}
+
+// Function to get all documentation pages for sitemap
+async function getDocsForSitemap() {
+  const docs = await getAllDocs();
+  return docs.map((doc) => ({
+    url: `${EXTERNAL_DATA_URL}/docs/${doc.slug}`,
+    lastmod: doc.date || new Date().toISOString(),
+    changefreq: "weekly",
+    priority: "0.8",
+    title: doc.title,
+    category: doc.category,
+  }));
 }
 
 // Function to get all blog posts
@@ -151,4 +165,5 @@ module.exports = {
   EXTERNAL_DATA_URL,
   getAllPages,
   getAllBlogPosts,
+  getDocsForSitemap,
 };
