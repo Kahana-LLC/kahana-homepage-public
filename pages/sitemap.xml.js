@@ -1,4 +1,8 @@
-import { getAllPages, getAllBlogPosts } from "../utils/sitemapUtils";
+import {
+  getAllPages,
+  getAllBlogPosts,
+  getDocsForSitemap,
+} from "../utils/sitemapUtils";
 
 const EXTERNAL_DATA_URL = "https://kahana.co";
 
@@ -52,8 +56,8 @@ function getPriority(url) {
     return PRIORITIES.utility;
   }
 
-  // Blog posts and other content
-  if (path.startsWith("/blog/") || path.startsWith("/case-study/")) {
+  // Blog posts and documentation pages
+  if (path.startsWith("/blog/") || path.startsWith("/docs/")) {
     return PRIORITIES.tertiary;
   }
 
@@ -71,7 +75,7 @@ function getChangefreq(url) {
   if (path.startsWith("/blog/") || path === "/blog") return CHANGEFREQ.weekly;
 
   // Documentation
-  if (path.startsWith("/docs/")) return CHANGEFREQ.weekly;
+  if (path.startsWith("/docs/") || path === "/docs") return CHANGEFREQ.weekly;
 
   // Product and solution pages
   if (path.startsWith("/products/") || path.startsWith("/solutions/")) {
@@ -118,6 +122,7 @@ ${pages
     <loc>${url}</loc>
     <changefreq>${changefreq}</changefreq>
     <priority>${priority}</priority>
+    ${page.lastmod ? `<lastmod>${page.lastmod}</lastmod>` : ""}
 </url>`;
   })
   .join("\n")}
@@ -131,18 +136,26 @@ function SiteMap() {
 
 export async function getServerSideProps({ res }) {
   try {
-    const pages = await getAllPages();
-    const blogPosts = await getAllBlogPosts();
+    // Get all pages, blog posts, and documentation
+    const [pages, blogPosts, docs] = await Promise.all([
+      getAllPages(),
+      getAllBlogPosts(),
+      getDocsForSitemap(),
+    ]);
+
+    // Combine all URLs
+    const allUrls = [...pages, ...blogPosts, ...docs];
 
     // Filter out unwanted pages and normalize URLs
-    const filteredPages = pages
+    const filteredPages = allUrls
       .filter((page) => {
         const url = typeof page === "string" ? page.split(" ")[0] : page.url;
         return (
           !url.includes("/404") &&
           !url.includes("/api/") &&
           !url.includes("[slug]") &&
-          !url.includes("undefined")
+          !url.includes("undefined") &&
+          !url.includes("template") // Exclude any template files
         );
       })
       .map((page) => {
@@ -156,17 +169,14 @@ export async function getServerSideProps({ res }) {
         return { url };
       });
 
-    // Combine static pages with blog posts
-    const allPages = [...filteredPages, ...blogPosts];
-
     // Log all URLs for debugging
     console.log(
       "All URLs in sitemap:",
-      allPages.map((p) => p.url)
+      filteredPages.map((p) => p.url)
     );
 
     // Generate sitemap XML
-    const sitemap = generateSiteMap(allPages);
+    const sitemap = generateSiteMap(filteredPages);
 
     res.setHeader("Content-Type", "application/xml");
     res.setHeader("Cache-Control", "s-maxage=3600, stale-while-revalidate");

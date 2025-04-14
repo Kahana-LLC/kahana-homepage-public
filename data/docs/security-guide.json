@@ -1,0 +1,7 @@
+{
+  "title": "Security Guide",
+  "excerpt": "Comprehensive guide to Kahana Browser's security features.",
+  "category": "Security",
+  "date": "March 1, 2024",
+  "content": "<h2>Security Guide</h2>\n\n<h3>Core Security Features</h3>\n<ul>\n  <li>Enterprise-grade encryption</li>\n  <li>Secure data handling</li>\n  <li>Access controls</li>\n</ul>\n\n<h3>Best Practices</h3>\n<ol>\n  <li>Regular updates</li>\n  <li>Strong passwords</li>\n  <li>Secure configurations</li>\n</ol>\n\n<h3>Security Policies</h3>\n<p>Understand and implement:</p>\n<ul>\n  <li>Data protection policies</li>\n  <li>Access control policies</li>\n  <li>Incident response procedures</li>\n</ul>"
+} 
