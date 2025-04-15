@@ -12,7 +12,7 @@
     "process-docs": "node scripts/process-docs.js",
     "copy-docs": "node scripts/copy-docs.js",
     "update-sitemap": "node scripts/update-sitemap.js",
-    "heroku-postbuild": "npm run copy-docs && npm run process-docs"
+    "heroku-postbuild": "npm run copy-docs && npm run process-docs && next build"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.787.0",
