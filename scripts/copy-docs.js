@@ -2,8 +2,8 @@ const fs = require("fs");
 const path = require("path");
 
 // Configuration
-const SOURCE_DOCS_DIR = path.join(process.cwd(), "data/docs");
-const BUILD_DOCS_DIR = path.join(process.cwd(), "data/docs");
+const SOURCE_DOCS_DIR = path.join(process.cwd(), "data", "docs");
+const BUILD_DOCS_DIR = path.join(process.cwd(), "public", "docs");
 
 function ensureDirectoryExists(dir) {
   if (!fs.existsSync(dir)) {
@@ -15,8 +15,29 @@ function ensureDirectoryExists(dir) {
 function copyDocs() {
   try {
     console.log("Starting documentation copy process...");
+    console.log(`Current working directory: ${process.cwd()}`);
     console.log(`Source directory: ${SOURCE_DOCS_DIR}`);
     console.log(`Build directory: ${BUILD_DOCS_DIR}`);
+
+    // List contents of current directory to debug
+    console.log("Contents of current directory:");
+    fs.readdirSync(process.cwd()).forEach((file) => {
+      console.log(` - ${file}`);
+    });
+
+    // Check if source directory exists
+    if (!fs.existsSync(SOURCE_DOCS_DIR)) {
+      console.log(`Source directory ${SOURCE_DOCS_DIR} does not exist!`);
+      // Try to find docs in the root directory
+      const rootSourceDir = path.join(process.cwd(), "docs");
+      if (fs.existsSync(rootSourceDir)) {
+        console.log(`Found docs directory in root: ${rootSourceDir}`);
+        // Update source directory
+        SOURCE_DOCS_DIR = rootSourceDir;
+      } else {
+        throw new Error("Documentation source directory not found!");
+      }
+    }
 
     // Ensure the build directory exists
     ensureDirectoryExists(BUILD_DOCS_DIR);

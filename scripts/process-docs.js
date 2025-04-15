@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 
 // Configuration
-const DOCS_DIR = path.join(process.cwd(), "data/docs");
+const DOCS_DIR = path.join(process.cwd(), "public", "docs");
 const DATA_DIR = path.join(process.cwd(), "data");
 const DOCS_INDEX_PATH = path.join(DATA_DIR, "docs-index.js");
 
@@ -16,6 +16,21 @@ function ensureDirectories() {
       console.log(`Directory exists: ${dir}`);
     }
   });
+}
+
+// List directory contents for debugging
+function listDirectoryContents(dir) {
+  console.log(`Listing contents of ${dir}:`);
+  try {
+    const files = fs.readdirSync(dir);
+    files.forEach((file) => {
+      const fullPath = path.join(dir, file);
+      const stats = fs.statSync(fullPath);
+      console.log(` - ${file} (${stats.isDirectory() ? "directory" : "file"})`);
+    });
+  } catch (error) {
+    console.error(`Error listing directory ${dir}:`, error.message);
+  }
 }
 
 // Validate a documentation file
@@ -80,6 +95,9 @@ function processDoc(filePath) {
 function cleanupOrphanedFiles() {
   try {
     console.log(`Checking for files in: ${DOCS_DIR}`);
+    // List directory contents for debugging
+    listDirectoryContents(DOCS_DIR);
+
     // Get all JSON files in the docs directory
     const jsonFiles = fs
       .readdirSync(DOCS_DIR)
@@ -108,6 +126,9 @@ function cleanupOrphanedFiles() {
 function generateDocsIndex() {
   try {
     console.log(`Generating docs index from: ${DOCS_DIR}`);
+    // List directory contents for debugging
+    listDirectoryContents(DOCS_DIR);
+
     const files = fs
       .readdirSync(DOCS_DIR)
       .filter((file) => file.endsWith(".json"));
@@ -147,6 +168,9 @@ function main() {
     console.log("Starting documentation processing...");
     console.log(`Current working directory: ${process.cwd()}`);
     console.log(`Documentation directory: ${DOCS_DIR}`);
+
+    // List contents of current directory for debugging
+    listDirectoryContents(process.cwd());
 
     ensureDirectories();
 

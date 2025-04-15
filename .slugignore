@@ -11,11 +11,10 @@ coverage
 .env*
 !.env.production
 
-# Documentation
-docs
-*.pdf
-*.doc
-*.docx
+# Documentation - KEEP JSON FILES
+docs/*.pdf
+docs/*.doc
+docs/*.docx
 
 # Development dependencies that aren't needed in production
 node_modules/@next/codemod
