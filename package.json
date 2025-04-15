@@ -38,11 +38,10 @@
     "autoprefixer": "^10.4.21",
     "chokidar": "^3.5.3",
     "eslint": "8.26.0",
-    "eslint-config-next": "13.0.0",
+    "eslint-config-next": "14.1.3",
     "fast-xml-parser": "^4.2.2",
     "gray-matter": "^4.0.3",
     "marked": "^12.0.1",
-    "next-images": "^1.8.4",
     "postcss": "^8.4.18",
     "postcss-nesting": "^13.0.1",
     "tailwindcss": "^3.2.1"

@@ -1,6 +1,30 @@
 // This file is auto-generated. Do not edit directly.
 module.exports = [
   {
+    title: "Why You Shouldn't Use Chrome at Work",
+    date: "2025-04-15T00:00:00.000Z",
+    authors: [
+      {
+        name: "Sonakshi Singh",
+        role: "Product Marketing Manager",
+        bio: "Sonakshi is a Product Marketing Manager at Kahana, where she blends customer insights, creative storytelling, and strategic thinking to drive product adoption and user engagement. With experience spanning B2B SaaS, D2C, and AI-driven platforms, she is passionate about crafting compelling go-to-market strategies that resonate with users and fuel sustainable growth.",
+        linkedinProfile: "https://www.linkedin.com/in/sonakshisingh27/",
+      },
+      {
+        name: "Adam Kershner",
+        role: "CTO",
+        bio: "Adam is the CTO of Kahana, where he leads the technical vision and development of enterprise browser solutions. With extensive experience in browser security and enterprise software, he is passionate about transforming how organizations approach secure browsing.",
+        linkedinProfile: "https://www.linkedin.com/in/adamkershner/",
+      },
+    ],
+    category: "Browser",
+    excerpt:
+      "Google Chrome's popularity masks significant privacy, security, and compliance risks for businesses. This post explores why Chrome is ill-suited for the workplace, highlighting data collection practices, extension vulnerabilities, and the challenges of managing Chrome in enterprise environments.",
+    defaultImageQuery: "corporate cybersecurity browser privacy risk",
+    slug: "why-you-shouldnt-use-chrome-at-work",
+    readingTime: 8,
+  },
+  {
     title:
       "Google Chrome Enterprise in 2025: Security and Productivity at Scale",
     date: "2025-04-15T00:00:00.000Z",
