@@ -15,6 +15,7 @@ import adamHeadshot from "../assets/headshots/adam_kershner.jpg";
 import jordan from "../assets/headshots/jordan_kern.jpg";
 import jescetta from "../assets/headshots/jescetta_joy.jpg";
 import vruksha from "../assets/headshots/Vruksha_Joshi.jpg";
+import sonakshi from "../assets/headshots/sonakshi_singh.jpg";
 
 // Author mapping for blog posts
 const authorImages = {
@@ -22,6 +23,7 @@ const authorImages = {
   "Jordan Kern": jordan,
   "Jescetta Joy": jescetta,
   "Vruksha Joshi": vruksha,
+  "Sonakshi Singh": sonakshi,
 };
 
 // Default placeholder for failed image loads
