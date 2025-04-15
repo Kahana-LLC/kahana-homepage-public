@@ -17,25 +17,39 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: false,
+    fallback: 'blocking',
   };
 }
 
 export async function getStaticProps({ params }) {
-  const doc = await getDocBySlug(params.slug);
-  const allDocs = await getAllDocs();
+  try {
+    const doc = await getDocBySlug(params.slug);
+    const allDocs = await getAllDocs();
 
-  // Get related docs from the same category
-  const relatedDocs = allDocs
-    .filter(d => d.category === doc.category && d.slug !== doc.slug)
-    .slice(0, 3);
+    if (!doc) {
+      return {
+        notFound: true,
+      };
+    }
 
-  return {
-    props: {
-      doc,
-      relatedDocs,
-    },
-  };
+    // Get related docs from the same category
+    const relatedDocs = allDocs
+      .filter(d => d.category === doc.category && d.slug !== doc.slug)
+      .slice(0, 3);
+
+    return {
+      props: {
+        doc,
+        relatedDocs,
+      },
+      revalidate: 3600,
+    };
+  } catch (error) {
+    console.error('Error in getStaticProps:', error);
+    return {
+      notFound: true,
+    };
+  }
 }
 
 function formatDate(dateString) {
