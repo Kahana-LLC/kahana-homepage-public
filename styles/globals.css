@@ -592,3 +592,102 @@ body {
   width: 0;
   background: transparent;
 }
+
+/* Documentation Styles */
+.doc-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.doc-content h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 1.5rem;
+}
+
+.doc-content h2 {
+  font-size: 1.875rem;
+  font-weight: 600;
+  color: #2a2a2a;
+  margin: 2rem 0 1rem;
+}
+
+.doc-content h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #3a3a3a;
+  margin: 1.5rem 0 0.75rem;
+}
+
+.doc-content p {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: #4a4a4a;
+  margin-bottom: 1.25rem;
+}
+
+.doc-content ul,
+.doc-content ol {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.doc-content li {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: #4a4a4a;
+  margin: 0.5rem 0;
+}
+
+.doc-content section {
+  margin: 2.5rem 0;
+}
+
+.feature-group,
+.practice-group {
+  background: #f8f9fa;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin: 1rem 0;
+}
+
+.feature-group h3,
+.practice-group h3 {
+  color: #66c2be;
+  margin-top: 0;
+}
+
+.doc-content a {
+  color: #66c2be;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.doc-content a:hover {
+  color: #55b3af;
+  text-decoration: underline;
+}
+
+.getting-started ol > li {
+  font-weight: 600;
+  margin: 1.5rem 0;
+}
+
+.getting-started ol > li ul {
+  font-weight: normal;
+  margin-top: 0.5rem;
+}
+
+.help {
+  background: #f0f7f7;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin-top: 3rem;
+}
+
+.help h2 {
+  color: #66c2be;
+  margin-top: 0;
+}

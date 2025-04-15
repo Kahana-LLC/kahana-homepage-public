@@ -10,9 +10,27 @@ import FadeInSection from "../components/FadeInSection";
 import SEO from "../components/SEO";
 import { getRandomPhoto, getOptimizedPhotoUrl } from "../utils/pexels";
 
+// Import team member headshots
+import adamHeadshot from "../assets/headshots/adam_kershner.jpg";
+import jordan from "../assets/headshots/jordan_kern.jpg";
+import jescetta from "../assets/headshots/jescetta_joy.jpg";
+import vruksha from "../assets/headshots/Vruksha_Joshi.jpg";
+
+// Author mapping for blog posts
+const authorImages = {
+  "Adam Kershner": adamHeadshot,
+  "Jordan Kern": jordan,
+  "Jescetta Joy": jescetta,
+  "Vruksha Joshi": vruksha,
+};
+
 // Default placeholder for failed image loads
 const DEFAULT_PLACEHOLDER =
   'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%233C584A"%3E%3Cpath d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-1.96-2.36L6.5 17h11l-3.54-4.71z"%2F%3E%3C%2Fsvg%3E';
+
+// Default avatar placeholder
+const DEFAULT_AVATAR =
+  'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%233C584A"%3E%3Cpath d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"%2F%3E%3C%2Fsvg%3E';
 
 // Simple cache for development
 const imageCache = new Map();
@@ -58,27 +76,29 @@ export async function getStaticProps() {
           // Cache the image
           imageCache.set(post.slug, postImage);
 
-          // For featured section, always use Adam as the author
-          const postWithImage = {
+          // Map author images
+          const authorsWithImages =
+            post.authors?.map((author) => ({
+              ...author,
+              avatar: authorImages[author.name] || DEFAULT_AVATAR,
+            })) || [];
+
+          // Return post with image and author images
+          return {
             ...post,
             image: postImage,
-            author: {
-              name: "Adam Kershner",
-              role: "CTO",
-              bio: "Adam is the CTO of Kahana, where he leads the technical vision and development of enterprise browser solutions. With extensive experience in browser security and enterprise software, he is passionate about transforming how organizations approach secure browsing.",
-              linkedinProfile: "https://www.linkedin.com/in/adamkershner/",
-            },
+            authors: authorsWithImages,
           };
-
-          // Remove authors array if it exists
-          delete postWithImage.authors;
-
-          return postWithImage;
         } catch (error) {
           console.error(`Error fetching image for post ${post.slug}:`, error);
           return {
             ...post,
             image: DEFAULT_PLACEHOLDER,
+            authors:
+              post.authors?.map((author) => ({
+                ...author,
+                avatar: authorImages[author.name] || DEFAULT_AVATAR,
+              })) || [],
           };
         }
       })

@@ -153,7 +153,7 @@ export async function getServerSideProps({ res }) {
         return (
           !url.includes("/404") &&
           !url.includes("/api/") &&
-          !url.includes("[slug]") &&
+          !url.includes("/[slug]") && // Only exclude actual Next.js dynamic route patterns
           !url.includes("undefined") &&
           !url.includes("template") // Exclude any template files
         );

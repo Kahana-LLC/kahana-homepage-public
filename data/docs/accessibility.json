@@ -1,7 +1,8 @@
 {
-  "title": "Accessibility Features",
-  "excerpt": "Learn about Kahana Browser's accessibility features and how to use them.",
-  "category": "User Guide",
-  "date": "March 1, 2024",
-  "content": "<h2>Accessibility Features</h2>\n<p>Kahana Browser is designed to be accessible to all users. Here are the key accessibility features:</p>\n\n<h3>Screen Reader Support</h3>\n<p>Full compatibility with popular screen readers including:</p>\n<ul>\n  <li>NVDA</li>\n  <li>JAWS</li>\n  <li>VoiceOver</li>\n</ul>\n\n<h3>Keyboard Navigation</h3>\n<p>Comprehensive keyboard shortcuts for all features:</p>\n<ul>\n  <li>Tab navigation</li>\n  <li>Shortcut keys</li>\n  <li>Customizable key bindings</li>\n</ul>\n\n<h3>Visual Adjustments</h3>\n<p>Customize your visual experience:</p>\n<ul>\n  <li>High contrast mode</li>\n  <li>Text size adjustment</li>\n  <li>Color filters</li>\n</ul>"
+  "title": "Accessibility",
+  "description": "Learn about Kahana's accessibility features and compliance standards.",
+  "content": "<div class='doc-content'><h1>Accessibility</h1><p>Kahana is committed to providing an accessible experience for all users. Learn about our accessibility features and standards compliance.</p><h2>Features</h2><ul><li>Keyboard navigation</li><li>Screen reader support</li><li>High contrast modes</li></ul></div>",
+  "date": "2025-04-14",
+  "category": "legal",
+  "slug": "accessibility"
 } 
