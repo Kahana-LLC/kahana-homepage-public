@@ -7,9 +7,6 @@ const nextConfig = {
     ignoreDuringBuilds: true, // This will prevent ESLint errors from failing the build
   },
   swcMinify: true,
-  compiler: {
-    removeConsole: process.env.NODE_ENV === "production",
-  },
 
   images: {
     domains: [

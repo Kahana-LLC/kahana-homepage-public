@@ -3,6 +3,7 @@ import adamHeadshot from "../assets/headshots/adam_kershner.jpg";
 import jordanHeadshot from "../assets/headshots/jordan_kern.jpg";
 import vrukshaHeadshot from "../assets/headshots/Vruksha_Joshi.jpg";
 import jescettaHeadshot from "../assets/headshots/jescetta_joy.jpg";
+import sonakshiHeadshot from "../assets/headshots/sonakshi_singh.jpg";
 
 export const authors = {
   "Adam Kershner": {
@@ -32,5 +33,12 @@ export const authors = {
     bio: "Jescetta brings extensive product management experience from Walmart and holds a Master of Engineering Management from Duke University. As a Certified Scrum Product Owner (CSPO), she specializes in crafting purposeful innovations that drive meaningful impact. Her approach combines strategic thinking with a deep commitment to solving real-world problems that make a difference in people's lives.",
     avatar: jescettaHeadshot,
     linkedinProfile: "https://www.linkedin.com/in/jescetta-joy/",
+  },
+  "Sonakshi Singh": {
+    name: "Sonakshi Singh",
+    role: "Product Marketing Manager",
+    bio: "Sonakshi is a Product Marketing Manager at Kahana, where she blends customer insights, creative storytelling, and strategic thinking to drive product adoption and user engagement. With experience spanning B2B SaaS, D2C, and AI-driven platforms, she is passionate about crafting compelling go-to-market strategies that resonate with users and fuel sustainable growth.",
+    avatar: sonakshiHeadshot,
+    linkedinProfile: "https://www.linkedin.com/in/sonakshisingh27/",
   },
 };
