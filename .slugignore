@@ -16,6 +16,7 @@ docs
 *.pdf
 *.doc
 *.docx
+!data/docs/*.json
 
 # Development dependencies that aren't needed in production
 node_modules/@next/codemod
