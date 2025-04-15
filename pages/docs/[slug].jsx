@@ -8,12 +8,21 @@ import AuthorCard from '../../components/AuthorCard';
 import { FaRegCalendarAlt, FaBookOpen, FaRegClock } from 'react-icons/fa';
 import { authors } from '../../config/authors';
 import SEO from '../../components/SEO';
+import fs from 'fs';
+import path from 'path';
 
+// Generate static paths for documentation
 export async function getStaticPaths() {
-  const docs = await getAllDocs();
-  const paths = docs.map((doc) => ({
-    params: { slug: doc.slug },
-  }));
+  // Process docs before generating paths
+  require('../../scripts/process-docs.js');
+  
+  const docsDir = path.join(process.cwd(), "data/docs");
+  const files = fs.readdirSync(docsDir);
+  const paths = files
+    .filter((file) => file.endsWith(".json"))
+    .map((file) => ({
+      params: { slug: file.replace(/\.json$/, "") },
+    }));
 
   return {
     paths,
