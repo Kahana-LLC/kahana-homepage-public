@@ -37,6 +37,20 @@ const nextConfig = {
 
   // Ensure docs pages are included in the build
   pageExtensions: ["jsx", "js", "tsx", "ts"],
+  async generateStaticParams() {
+    const fs = require("fs");
+    const path = require("path");
+    const docsDir = path.join(process.cwd(), "data/docs");
+    const files = fs.readdirSync(docsDir);
+    const docs = files
+      .filter((file) => file.endsWith(".json"))
+      .map((file) => ({
+        params: {
+          slug: file.replace(/\.json$/, ""),
+        },
+      }));
+    return docs;
+  },
 };
 
 module.exports = nextConfig;
