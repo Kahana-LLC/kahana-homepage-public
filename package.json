@@ -4,14 +4,15 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "npm run process-docs && next build",
+    "build": "npm run copy-docs && npm run process-docs && next build",
     "start": "next start -p $PORT",
     "lint": "next lint",
     "process-blog": "node scripts/process-blog-posts.js",
     "watch-blog": "node scripts/watch-blog-posts.js",
     "process-docs": "node scripts/process-docs.js",
+    "copy-docs": "node scripts/copy-docs.js",
     "update-sitemap": "node scripts/update-sitemap.js",
-    "heroku-postbuild": "npm run process-docs"
+    "heroku-postbuild": "npm run copy-docs && npm run process-docs"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.787.0",
