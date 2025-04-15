@@ -25,13 +25,30 @@ export default function Footer() {
   }, []);
 
   useEffect(() => {
-    const script = document.createElement('script');
-    script.async = true;
-    script.src = 'https://b.sf-syn.com/badge_js?sf_id=3652674&variant_id=sf';
-    document.body.appendChild(script);
+    let scriptElement = null;
+    
+    try {
+      // Check if script is already loaded
+      if (!document.querySelector('script[src*="sf-syn.com"]')) {
+        scriptElement = document.createElement('script');
+        scriptElement.async = true;
+        scriptElement.src = 'https://b.sf-syn.com/badge_js?sf_id=3652674&variant_id=sf';
+        
+        // Add error handling
+        scriptElement.onerror = (error) => {
+          console.warn('Non-critical script failed to load:', error);
+        };
+        
+        document.body.appendChild(scriptElement);
+      }
+    } catch (error) {
+      console.warn('Non-critical script error:', error);
+    }
 
     return () => {
-      document.body.removeChild(script);
+      if (scriptElement && document.body.contains(scriptElement)) {
+        document.body.removeChild(scriptElement);
+      }
     };
   }, []);
 

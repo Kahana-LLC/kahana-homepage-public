@@ -386,17 +386,16 @@ function NavBar() {
           }
         `}</style>
         <div className="nav-content">
-          {/* Logo */}
-          <Link href="/" aria-label="Home">
-            <span className="sr-only">Home</span>
-            <Image
-              src={whiteKahanaLogo}
-              alt="navbar-logo"
-              className="logo"
-              height={42}
-              width={150}
-              priority
-            />
+          <Link href="/" className="flex items-center">
+            <div className="relative h-[42px] w-[160px]">
+              <Image
+                src={whiteKahanaLogo}
+                alt="Kahana Logo"
+                fill
+                style={{ objectFit: 'contain' }}
+                priority
+              />
+            </div>
           </Link>
 
           {/* Navigation Links */}

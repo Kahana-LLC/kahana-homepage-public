@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -20,20 +20,36 @@ const DEFAULT_COVER = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/s
 const POST_AUTHORS = [authors['Adam Kershner'], authors['Jordan Kern'], authors['Vruksha Joshi']];
 
 export default function BlogPost({ post, coverImage }) {
+  const [isClient, setIsClient] = useState(false);
+  
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   // Get the authors for this post
-  const postAuthors = post.authors?.map(author => ({
+  const postAuthors = post?.authors?.map(author => ({
     ...authors[author.name],
     name: author.name,
     role: author.role,
     bio: author.bio,
     linkedinProfile: author.linkedinProfile
-  })) || (post.author ? [{
+  })) || (post?.author ? [{
     ...authors[post.author.name],
     name: post.author.name,
     role: post.author.role,
     bio: post.author.bio,
     linkedinProfile: post.author.linkedinProfile
   }] : []);
+
+  if (!post) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold text-gray-900">Loading...</h1>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <>
@@ -67,14 +83,14 @@ export default function BlogPost({ post, coverImage }) {
 
             {/* Article metadata */}
             <div className="flex flex-wrap items-center gap-3 mb-8">
-              <AuthorCard authors={postAuthors} variant="header" />
+              {isClient && <AuthorCard authors={postAuthors} variant="header" />}
               <time 
                 dateTime={post.date}
                 className="inline-flex items-center px-3 py-1.5 rounded-full bg-gray-100 text-gray-700 text-sm"
               >
                 <FaRegCalendarAlt className="w-4 h-4 mr-2 text-gray-500" />
                 <span className="text-gray-500 mr-1">Published:</span>
-                {new Date(post.date).toLocaleDateString('en-US', { month: 'numeric', day: 'numeric', year: 'numeric' }).replace(/\//g, '/')}
+                {isClient ? new Date(post.date).toLocaleDateString('en-US', { month: 'numeric', day: 'numeric', year: 'numeric' }).replace(/\//g, '/') : ''}
               </time>
               <div className="inline-flex items-center px-3 py-1.5 rounded-full bg-gray-100 text-gray-700 text-sm">
                 <FaBookOpen className="w-4 h-4 mr-2 text-gray-500" />
@@ -91,7 +107,7 @@ export default function BlogPost({ post, coverImage }) {
 
             {/* Cover Image */}
             <figure className="relative w-full h-[400px] mb-8 rounded-xl overflow-hidden bg-gray-100">
-              {coverImage?.src ? (
+              {isClient && coverImage?.src ? (
                 <>
                   <Image
                     src={coverImage.src}
@@ -123,11 +139,13 @@ export default function BlogPost({ post, coverImage }) {
             <div dangerouslySetInnerHTML={{ __html: post.content }} />
           </div>
           
-          <SocialShare 
-            title={post.title} 
-            url={`https://kahana.co/blog/${post.slug}`}
-            excerpt={post.excerpt}
-          />
+          {isClient && (
+            <SocialShare 
+              title={post.title} 
+              url={`https://kahana.co/blog/${post.slug}`}
+              excerpt={post.excerpt}
+            />
+          )}
           
           <div className="mt-16 p-8 bg-gradient-to-r from-[#E3DFF1]/20 via-[#8CB7D0]/10 to-[#E3DFF1]/30 rounded-xl border border-[#A5DAD8]/30 shadow-lg">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Transform Your Enterprise Browser Experience</h2>
@@ -148,10 +166,12 @@ export default function BlogPost({ post, coverImage }) {
           {/* Author Bio Section */}
           <div className="mt-12">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">About the Authors</h2>
-            <AuthorCard 
-              authors={postAuthors}
-              variant="bio" 
-            />
+            {isClient && (
+              <AuthorCard 
+                authors={postAuthors}
+                variant="bio" 
+              />
+            )}
           </div>
         </article>
       </main>
