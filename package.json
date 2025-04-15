@@ -10,7 +10,8 @@
     "process-blog": "node scripts/process-blog-posts.js",
     "watch-blog": "node scripts/watch-blog-posts.js",
     "process-docs": "node scripts/process-docs.js",
-    "update-sitemap": "node scripts/update-sitemap.js"
+    "update-sitemap": "node scripts/update-sitemap.js",
+    "heroku-postbuild": "npm run process-docs"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.787.0",

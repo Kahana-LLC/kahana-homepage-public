@@ -10,7 +10,10 @@ const DOCS_INDEX_PATH = path.join(DATA_DIR, "docs-index.js");
 function ensureDirectories() {
   [DATA_DIR, DOCS_DIR].forEach((dir) => {
     if (!fs.existsSync(dir)) {
+      console.log(`Creating directory: ${dir}`);
       fs.mkdirSync(dir, { recursive: true });
+    } else {
+      console.log(`Directory exists: ${dir}`);
     }
   });
 }
@@ -50,6 +53,7 @@ function validateDoc(doc, filePath) {
 // Process a single documentation file
 function processDoc(filePath) {
   try {
+    console.log(`Attempting to process file: ${filePath}`);
     const fileContents = fs.readFileSync(filePath, "utf8");
     const doc = JSON.parse(fileContents);
 
@@ -64,7 +68,7 @@ function processDoc(filePath) {
     // Write the processed file back
     fs.writeFileSync(filePath, JSON.stringify(doc, null, 2));
 
-    console.log(`Processed ${filePath}`);
+    console.log(`Successfully processed ${filePath}`);
     return doc;
   } catch (error) {
     console.error(`Error processing ${filePath}:`, error.message);
@@ -75,10 +79,13 @@ function processDoc(filePath) {
 // Clean up orphaned JSON files
 function cleanupOrphanedFiles() {
   try {
+    console.log(`Checking for files in: ${DOCS_DIR}`);
     // Get all JSON files in the docs directory
     const jsonFiles = fs
       .readdirSync(DOCS_DIR)
       .filter((file) => file.endsWith(".json"));
+
+    console.log(`Found ${jsonFiles.length} JSON files in docs directory`);
 
     // Remove JSON files that are invalid
     jsonFiles.forEach((jsonFile) => {
@@ -100,9 +107,12 @@ function cleanupOrphanedFiles() {
 // Generate documentation index
 function generateDocsIndex() {
   try {
+    console.log(`Generating docs index from: ${DOCS_DIR}`);
     const files = fs
       .readdirSync(DOCS_DIR)
       .filter((file) => file.endsWith(".json"));
+
+    console.log(`Found ${files.length} documentation files to process`);
 
     const docs = files
       .map((file) => {
@@ -134,6 +144,10 @@ module.exports = ${JSON.stringify(docs, null, 2)};
 // Main execution
 function main() {
   try {
+    console.log("Starting documentation processing...");
+    console.log(`Current working directory: ${process.cwd()}`);
+    console.log(`Documentation directory: ${DOCS_DIR}`);
+
     ensureDirectories();
 
     // Check if a specific file was provided

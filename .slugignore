@@ -16,7 +16,18 @@ docs
 *.pdf
 *.doc
 *.docx
-!data/docs/*.json
+!data/docs/accessibility.json
+!data/docs/ai-assistant.json
+!data/docs/faq.json
+!data/docs/getting-started.json
+!data/docs/hubs.json
+!data/docs/privacy.json
+!data/docs/real-time-analytics.json
+!data/docs/secure-platform.json
+!data/docs/security-guide.json
+!data/docs/smart-automation.json
+!data/docs/team-collaboration.json
+!data/docs/troubleshooting.json
 
 # Development dependencies that aren't needed in production
 node_modules/@next/codemod
