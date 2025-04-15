@@ -9,6 +9,7 @@
     "lint": "next lint",
     "process-blog": "node scripts/process-blog-posts.js",
     "watch-blog": "node scripts/watch-blog-posts.js",
+    "process-docs": "node scripts/process-docs.js",
     "update-sitemap": "node scripts/update-sitemap.js"
   },
   "dependencies": {
@@ -32,7 +33,7 @@
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/forms": "^0.5.3",
     "@tailwindcss/typography": "^0.5.8",
-    "autoprefixer": "^10.4.12",
+    "autoprefixer": "^10.4.21",
     "chokidar": "^3.5.3",
     "eslint": "8.26.0",
     "eslint-config-next": "13.0.0",
