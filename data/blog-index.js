@@ -7,39 +7,14 @@ module.exports = [
     authors: [
       {
         name: "Jordan Kern",
-        role: "Security Research",
-        bio: "Jordan brings deep expertise in enterprise security and browser technologies. With a background in cybersecurity research and enterprise architecture, he specializes in analyzing emerging threats and developing robust security strategies for modern enterprises.",
+        role: "CMO",
+        bio: "Jordan is the CMO of Kahana, where he leads marketing and sales strategy. With expertise in SaaS and performance marketing, he focuses on driving business growth through strategic team leadership and data-driven decision making.",
         linkedinProfile: "https://www.linkedin.com/in/jordan-kern/",
       },
       {
         name: "Adam Kershner",
-        role: "Product Strategy",
-        bio: "Adam combines technical expertise with strategic vision to drive enterprise browser innovation. His experience in product management and security architecture helps organizations navigate the complex landscape of enterprise browser solutions.",
-        linkedinProfile: "https://www.linkedin.com/in/adamkershner/",
-      },
-    ],
-    category: "Security",
-    excerpt:
-      "Explore how Google Chrome Enterprise is transforming enterprise security and productivity in 2025, with new AI-powered protections, work-personal profile separation, and strategic partnerships driving adoption across organizations.",
-    defaultImageQuery: "Google Chrome Enterprise security dashboard interface",
-    slug: "google-chrome-enterprise-2025-security-and-productivity",
-    readingTime: 8,
-  },
-  {
-    title:
-      "Google Chrome Enterprise in 2025: Security and Productivity at Scale",
-    date: "2025-04-15T00:00:00.000Z",
-    authors: [
-      {
-        name: "Jordan Kern",
-        role: "Security Research",
-        bio: "Jordan brings deep expertise in enterprise security and browser technologies. With a background in cybersecurity research and enterprise architecture, he specializes in analyzing emerging threats and developing robust security strategies for modern enterprises.",
-        linkedinProfile: "https://www.linkedin.com/in/jordan-kern/",
-      },
-      {
-        name: "Adam Kershner",
-        role: "Product Strategy",
-        bio: "Adam combines technical expertise with strategic vision to drive enterprise browser innovation. His experience in product management and security architecture helps organizations navigate the complex landscape of enterprise browser solutions.",
+        role: "CTO",
+        bio: "Adam is the CTO of Kahana, where he leads the technical vision and development of enterprise browser solutions. With extensive experience in browser security and enterprise software, he is passionate about transforming how organizations approach secure browsing.",
         linkedinProfile: "https://www.linkedin.com/in/adamkershner/",
       },
     ],

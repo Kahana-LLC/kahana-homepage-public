@@ -1,7 +1,8 @@
 {
   "title": "Frequently Asked Questions",
-  "excerpt": "Find answers to common questions about Kahana Browser.",
-  "category": "Support",
-  "date": "March 1, 2024",
-  "content": "<h2>Frequently Asked Questions</h2>\n\n<h3>General Questions</h3>\n<div class=\"faq-item\">\n  <h4>What is Kahana Browser?</h4>\n  <p>Kahana Browser is an enterprise-grade web browser designed for security, productivity, and collaboration.</p>\n</div>\n\n<div class=\"faq-item\">\n  <h4>How do I get started?</h4>\n  <p>Visit our <a href=\"/docs/getting-started\">Getting Started guide</a> for step-by-step instructions.</p>\n</div>\n\n<h3>Technical Questions</h3>\n<div class=\"faq-item\">\n  <h4>What are the system requirements?</h4>\n  <p>Kahana Browser requires Windows 10/11, macOS 10.15+, or Linux (Ubuntu 20.04+).</p>\n</div>\n\n<div class=\"faq-item\">\n  <h4>How do I update the browser?</h4>\n  <p>Updates are handled automatically through your enterprise deployment system.</p>\n</div>"
+  "description": "Common questions about Kahana and their answers",
+  "content": "<div class='doc-content'><h1>Frequently Asked Questions</h1><p class='lead-text'>Find answers to commonly asked questions about Kahana's features, functionality, and best practices.</p><section class='faq-section'><h2>General Questions</h2><div class='faq-list'><div class='faq-item'><h3>What is Kahana?</h3><p>Kahana is an intelligent browser platform that combines AI-powered automation, real-time analytics, and secure collaboration tools to enhance your browsing experience.</p></div><div class='faq-item'><h3>How do I get started?</h3><p>Start by signing up for an account, then follow our quick-start guide to set up your workspace and customize your preferences.</p></div></div></section><section class='faq-section'><h2>Technical Questions</h2><div class='faq-list'><div class='faq-item'><h3>What browsers are supported?</h3><p>Kahana supports all major modern browsers including Chrome, Firefox, Safari, and Edge.</p></div><div class='faq-item'><h3>Is my data secure?</h3><p>Yes, we use enterprise-grade encryption and security measures to protect your data.</p></div></div></section></div>",
+  "date": "2025-04-14",
+  "category": "support",
+  "slug": "faq"
 } 

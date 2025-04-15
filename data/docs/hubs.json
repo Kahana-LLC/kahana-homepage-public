@@ -1,7 +1,8 @@
 {
-  "title": "Hubs System",
-  "excerpt": "Learn about Kahana Browser's Hubs system for organizing and collaborating on web content.",
-  "category": "User Guide",
-  "date": "March 10, 2024",
-  "content": "<h2>Creating a Hub</h2>\n<p>Follow these steps to create your first Hub:</p>\n<ol>\n  <li>Click the \"+New Hub\" button in the sidebar</li>\n  <li>Name your Hub</li>\n  <li>Add websites by dragging and dropping or using the URL bar</li>\n  <li>Organize content with tags and categories</li>\n</ol>\n\n<h2>Managing Hubs</h2>\n<p>Once created, you can manage your Hubs in several ways:</p>\n<ul>\n  <li><strong>Rename Hubs:</strong> Click the Hub name to edit</li>\n  <li><strong>Delete Hubs:</strong> Use the menu options to remove unwanted Hubs</li>\n  <li><strong>Share Hubs:</strong> Invite others to view or collaborate</li>\n  <li><strong>Set Permissions:</strong> Control who can view or edit Hub content</li>\n  <li><strong>Archive Hubs:</strong> Store inactive Hubs for future reference</li>\n</ul>"
+  "title": "Hubs",
+  "description": "Organize and manage your work with Kahana's powerful Hubs feature.",
+  "content": "<div class='doc-content'><h1>Hubs</h1><p>Kahana's Hubs feature helps you organize and manage your work efficiently. Learn how to create, customize, and use Hubs for better productivity.</p><h2>Features</h2><ul><li>Custom workspaces</li><li>Team collaboration</li><li>Resource management</li></ul></div>",
+  "date": "2025-04-14",
+  "category": "features",
+  "slug": "hubs"
 } 

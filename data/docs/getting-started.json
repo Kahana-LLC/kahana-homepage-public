@@ -1,7 +1,8 @@
 {
-  "title": "Getting Started with Kahana Browser",
-  "excerpt": "Learn how to set up and start using Kahana Browser for your enterprise needs.",
-  "category": "Getting Started",
-  "date": "March 15, 2024",
-  "content": "<h2>Introduction</h2>\n<p>Welcome to Kahana Browser, your enterprise-grade solution for secure and productive browsing. This guide will help you get started with installation, basic configuration, and essential features.</p>\n\n<h2>System Requirements</h2>\n<p>Before installing Kahana Browser, ensure your system meets these requirements:</p>\n<ul>\n  <li>Operating System: Windows 10/11, macOS 10.15+, or Linux (Ubuntu 20.04+)</li>\n  <li>Processor: Intel Core i5/AMD Ryzen 5 or better</li>\n  <li>Memory: 8GB RAM minimum (16GB recommended)</li>\n  <li>Storage: 500MB free space</li>\n  <li>Network: Stable internet connection</li>\n</ul>\n\n<h2>Installation</h2>\n<p>Follow these steps to install Kahana Browser:</p>\n<ol>\n  <li>Download the installer from your enterprise portal</li>\n  <li>Run the installer with administrator privileges</li>\n  <li>Follow the installation wizard prompts</li>\n  <li>Launch Kahana Browser and sign in with your enterprise credentials</li>\n</ol>\n\n<h2>Initial Setup</h2>\n<p>After installation, complete these setup steps:</p>\n<ul>\n  <li>Configure your enterprise SSO settings</li>\n  <li>Set up your security preferences</li>\n  <li>Customize your workspace layout</li>\n  <li>Import your bookmarks and settings</li>\n</ul>\n\n<h2>Essential Features</h2>\n<p>Get familiar with these key features:</p>\n<ul>\n  <li><strong>Multi-View:</strong> Work with multiple windows simultaneously</li>\n  <li><strong>Smart Navigation:</strong> Access frequently used sites quickly</li>\n  <li><strong>Security Controls:</strong> Manage enterprise security settings</li>\n  <li><strong>AI Assistant:</strong> Get help with common tasks</li>\n</ul>"
+  "title": "Getting Started",
+  "description": "Quick start guide to help you begin using Kahana effectively.",
+  "content": "<div class='doc-content'><h1>Getting Started with Kahana</h1><p>Welcome to Kahana! This guide will help you get started and make the most of our platform.</p><h2>First Steps</h2><ol><li>Create your account</li><li>Set up your workspace</li><li>Explore key features</li></ol><h2>Next Steps</h2><ul><li>Customize your settings</li><li>Invite team members</li><li>Configure integrations</li></ul></div>",
+  "date": "2025-04-14",
+  "category": "getting-started",
+  "slug": "getting-started"
 } 
