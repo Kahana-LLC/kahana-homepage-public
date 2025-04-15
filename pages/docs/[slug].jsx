@@ -10,15 +10,23 @@ import { authors } from '../../config/authors';
 import SEO from '../../components/SEO';
 
 export async function getStaticPaths() {
-  const docs = await getAllDocs();
-  const paths = docs.map((doc) => ({
-    params: { slug: doc.slug },
-  }));
+  try {
+    const docs = await getAllDocs();
+    const paths = docs.map((doc) => ({
+      params: { slug: doc.slug },
+    }));
 
-  return {
-    paths,
-    fallback: 'blocking',
-  };
+    return {
+      paths,
+      fallback: 'blocking',
+    };
+  } catch (error) {
+    console.error('Error in getStaticPaths:', error);
+    return {
+      paths: [],
+      fallback: 'blocking',
+    };
+  }
 }
 
 export async function getStaticProps({ params }) {
@@ -42,7 +50,7 @@ export async function getStaticProps({ params }) {
         doc,
         relatedDocs,
       },
-      revalidate: 3600,
+      revalidate: 3600, // Revalidate every hour
     };
   } catch (error) {
     console.error('Error in getStaticProps:', error);
