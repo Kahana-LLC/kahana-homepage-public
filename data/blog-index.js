@@ -269,4 +269,28 @@ module.exports = [
     slug: "data-vulnerability-in-2025-emerging-threats-and-enterprise-defense-strategies",
     readingTime: 3,
   },
+  {
+    title: "The Most Secure Web Browsers in 2025: A Comprehensive Analysis",
+    date: "2025-04-16T00:00:00.000Z",
+    authors: [
+      {
+        name: "Adam Kershner",
+        role: "CTO",
+        bio: "Adam is the CTO of Kahana, where he leads the technical vision and development of enterprise browser solutions. With extensive experience in browser security and enterprise software, he is passionate about transforming how organizations approach secure browsing.",
+        linkedinProfile: "https://www.linkedin.com/in/adamkershner/",
+      },
+      {
+        name: "Jordan Kern",
+        role: "CMO",
+        bio: "Jordan is the CMO of Kahana, where he leads marketing and sales strategy. With expertise in SaaS and performance marketing, he focuses on driving business growth through strategic team leadership and data-driven decision making.",
+        linkedinProfile: "https://www.linkedin.com/in/jordankern/",
+      },
+    ],
+    category: "Browser",
+    excerpt:
+      "As cyber threats evolve, choosing the right web browser has become a critical security decision. This comprehensive analysis examines the most secure browsers of 2025, backed by recent research and expert evaluations.",
+    defaultImageQuery: "secure web browser cybersecurity privacy protection",
+    slug: "the-most-secure-web-browsers-in-2025",
+    readingTime: 10,
+  },
 ];

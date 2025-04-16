@@ -17,8 +17,17 @@ const nextConfig = {
     unoptimized: true, // Allow unoptimized local images
   },
 
-  webpack: (config) => {
+  webpack: (config, { dev, isServer }) => {
     config.resolve.alias["@"] = path.join(__dirname);
+
+    // Add this to help with HMR
+    if (dev && !isServer) {
+      config.watchOptions = {
+        poll: 1000,
+        aggregateTimeout: 300,
+      };
+    }
+
     return config;
   },
 
