@@ -5,37 +5,20 @@ import Image from 'next/image';
 import SEO from '../components/SEO';
 import { getRandomPhoto, getOptimizedPhotoUrl } from '../utils/pexels';
 import { authors } from '../config/authors';
+import { getAuthorHeadshot } from '../utils/blog-utils';
 
-// Import team member headshots
-import adamHeadshot from '../assets/headshots/adam_kershner.jpg';
-import emilio from '../assets/headshots/Emilio_Abelmann.webp';
-import eugene from '../assets/headshots/eugene_kaminsky.webp';
-import hugh from '../assets/headshots/hugh_molotsi.webp';
-import jonathan from '../assets/headshots/Jonathan_Gans.webp';
-import william from '../assets/headshots/william_reehil.webp';
-import greg from '../assets/headshots/Gregory_Gray.webp';
-import denali from '../assets/headshots/Denali_Keefe.webp';
-import benjamin from '../assets/headshots/Benjamin_St_Juste.webp';
-import aparna from '../assets/headshots/Aparna_Chaturvedula.webp';
-import kelsie from '../assets/headshots/Kelsie_Exley.webp';
-import jyoti from '../assets/headshots/Jyoti_Vashist.webp';
-import kirtana from '../assets/headshots/Kirtana_Sridharan.webp';
-import monty from '../assets/headshots/Monty_Lans.webp';
-import saumya from '../assets/headshots/Saumya Roy.webp';
-import shivani from '../assets/headshots/Shivani_Chandrashekar.webp';
-import sinchana from '../assets/headshots/Sinchana_Thippeswamy.webp';
-import jordan from '../assets/headshots/Jordan_Kern.webp';
-import veda from '../assets/headshots/veda_kanduri.webp';
-import siddhartha from '../assets/headshots/siddhartha_roy.webp';
-import rj from '../assets/headshots/rj_gan.webp';
-import mahendra from '../assets/headshots/mahendra_shahi.webp';
-import jescetta from '../assets/headshots/jescetta_joy.jpg';
+// Function to convert author name to image filename format
+function getHeadshotFilename(authorName) {
+  // Try both lowercase and original case versions
+  const lowercaseVersion = authorName.toLowerCase().replace(/\s+/g, '_');
+  const originalCaseVersion = authorName.replace(/\s+/g, '_');
+  return [lowercaseVersion, originalCaseVersion];
+}
 
-// Author mapping for blog posts
-const authorImages = {
-  'Adam Kershner': adamHeadshot,
-  'Jescetta Joy': jescetta,
-};
+// Function to get author data including avatar
+function getAuthorImageUrl(authorName) {
+  return authors[authorName]?.avatar || getAuthorHeadshot(authorName);
+}
 
 // Default avatar placeholder
 const DEFAULT_AVATAR = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%233C584A"%3E%3Cpath d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"%2F%3E%3C%2Fsvg%3E';
@@ -51,6 +34,9 @@ const categories = [
   'Company News',
   'Product Updates'
 ];
+
+// Use a simple object for caching instead of Map to avoid Fast Refresh issues
+let imageCache = {};
 
 // Utility function to truncate text
 function truncateExcerpt(text, maxLength = 120) {
@@ -77,28 +63,45 @@ export async function getStaticProps() {
     const allBlogPostsWithImages = await Promise.all(
       blogPosts.map(async (post) => {
         try {
+          // Check if we already have an image for this post
+          if (imageCache[post.slug]) {
+            return {
+              ...post,
+              image: imageCache[post.slug],
+            };
+          }
+
+          // Use existing image if available
           let postImage = post.image || null;
+
+          // If no image, fetch from Pexels with multiple attempts
           if (!postImage) {
-            const searchQuery = post.defaultImageQuery || `${post.category} ${post.title}`;
-            const photo = await getRandomPhoto(searchQuery);
+            // Try primary query first
+            const primaryQuery = post.defaultImageQuery || `${post.category} ${post.title}`;
+            let photo = await getRandomPhoto(primaryQuery);
+            
+            // If no result, try category-specific query
+            if (!photo && post.category) {
+              const categoryQuery = `${post.category} technology`;
+              photo = await getRandomPhoto(categoryQuery);
+            }
+            
+            // If still no result, try a general tech query
+            if (!photo) {
+              photo = await getRandomPhoto("technology business");
+            }
+
             postImage = photo ? getOptimizedPhotoUrl(photo) : DEFAULT_PLACEHOLDER;
           }
 
-          // Handle both multiple authors and single author cases
-          let mappedAuthors = [];
-          if (post.authors && post.authors.length > 0) {
-            // Use authors array if available
-            mappedAuthors = post.authors.map(author => ({
-              ...author,
-              avatar: authors[author.name]?.avatar || DEFAULT_AVATAR
-            }));
-          } else if (post.author && post.author.name) {
-            // Convert single author to array format
-            mappedAuthors = [{
-              ...post.author,
-              avatar: authors[post.author.name]?.avatar || DEFAULT_AVATAR
-            }];
-          }
+          // Cache the image
+          imageCache[post.slug] = postImage;
+
+          // Map author images
+          const mappedAuthors = post.authors?.map(author => ({
+            ...author,
+            avatar: getAuthorImageUrl(author.name)
+          })) || [];
 
           return {
             ...post,
@@ -110,7 +113,10 @@ export async function getStaticProps() {
           return {
             ...post,
             image: DEFAULT_PLACEHOLDER,
-            authors: post.authors || (post.author?.name ? [post.author] : [])
+            authors: post.authors?.map(author => ({
+              ...author,
+              avatar: getAuthorImageUrl(author.name)
+            })) || []
           };
         }
       })
@@ -139,8 +145,8 @@ export async function getStaticProps() {
         recentPosts,
         blogPosts: blogPostsObject
       },
-      // Shorter revalidation time in development for easier testing
-      revalidate: process.env.NODE_ENV === 'development' ? 10 : 3600
+      // Revalidate more frequently in development
+      revalidate: process.env.NODE_ENV === 'development' ? 60 : 3600
     };
   } catch (error) {
     console.error('Error in getStaticProps:', error);
@@ -150,7 +156,7 @@ export async function getStaticProps() {
         recentPosts: [],
         blogPosts: {}
       },
-      revalidate: process.env.NODE_ENV === 'development' ? 10 : 60
+      revalidate: process.env.NODE_ENV === 'development' ? 60 : 3600
     };
   }
 }

@@ -203,29 +203,47 @@ export async function getStaticProps({ params }) {
       console.log(`[Debug] Trying primary query: "${primaryQuery}"`);
       
       let images = await searchPhotos(primaryQuery, {
-        per_page: 1,
+        per_page: 5, // Get more options to choose from
         orientation: 'landscape'
       });
       
-      // If no results, try with a fallback query
+      // If no results, try with a fallback query based on post content
       if (!images || images.length === 0) {
-        const fallbackQuery = "cyber security technology";
+        const fallbackQuery = post.default.category 
+          ? `${post.default.category} technology` 
+          : "cyber security technology";
         console.log(`[Debug] No results with primary query, trying fallback: "${fallbackQuery}"`);
         images = await searchPhotos(fallbackQuery, {
-          per_page: 1,
+          per_page: 5,
           orientation: 'landscape'
         });
       }
       
       if (images && images.length > 0) {
+        // Select the best image based on quality and relevance
+        const bestImage = images.reduce((best, current) => {
+          // Prefer images with higher width/height ratio
+          const currentRatio = current.width / current.height;
+          const bestRatio = best.width / best.height;
+          
+          // Also consider the photographer's rating if available
+          const currentScore = current.rating || 0;
+          const bestScore = best.rating || 0;
+          
+          return (currentRatio > bestRatio && currentScore >= bestScore) ? current : best;
+        }, images[0]);
+
         coverImage = {
-          ...images[0],
-          src: images[0].src.large2x || images[0].src.large || images[0].src.original
+          ...bestImage,
+          src: bestImage.src.large2x || bestImage.src.large || bestImage.src.original
         };
+        
         console.log(`[Debug] Selected cover image:`, {
           id: coverImage.id,
           photographer: coverImage.photographer,
-          url: coverImage.src
+          url: coverImage.src,
+          width: coverImage.width,
+          height: coverImage.height
         });
       } else {
         console.log(`[Debug] No images found with any query`);
@@ -244,13 +262,13 @@ export async function getStaticProps({ params }) {
         post: post.default,
         coverImage,
       },
-      // Revalidate once per day
-      revalidate: 86400,
+      // Revalidate more frequently in development
+      revalidate: process.env.NODE_ENV === 'development' ? 60 : 86400,
     };
   } catch (error) {
     console.error(`[Debug] Error loading blog post: ${params.slug}`, error);
     return {
-      notFound: true, // Return 404 page
+      notFound: true,
     };
   }
 } 

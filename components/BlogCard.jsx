@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { AuthorReference } from './AuthorCard';
 
 // Format date helper
 function formatDate(dateString) {
@@ -27,43 +28,33 @@ export default function BlogCard({ post }) {
     <article className="bg-white rounded-lg shadow-md overflow-hidden">
       <Link href={`/blog/${post.slug}`}>
         <div className="relative h-48">
-          {isClient && (
-            <Image
-              src={post.image}
-              alt={post.title}
-              fill
-              className="object-cover"
-            />
-          )}
+          <Image
+            src={post.image}
+            alt={post.title}
+            fill
+            className="object-cover"
+          />
         </div>
         <div className="p-6">
           <div className="flex items-center justify-between mb-4">
             <span className="text-sm font-medium text-kahana-accent-water">
               {post.category}
             </span>
-            {isClient && (
-              <time dateTime={post.date} className="text-sm text-gray-500">
-                {formatDate(post.date)}
-              </time>
-            )}
+            <time dateTime={post.date} className="text-sm text-gray-500">
+              {formatDate(post.date)}
+            </time>
           </div>
           <h3 className="text-xl font-semibold mb-2 hover:text-kahana-accent-sunset transition-colors">
             {post.title}
           </h3>
           <p className="text-gray-600 mb-4 line-clamp-2">{post.excerpt}</p>
           <div className="flex items-center justify-between">
-            {isClient && (
-              <>
-                <div className="flex items-center space-x-2">
-                  {post.authors?.map((author) => (
-                    <span key={author.name} className="text-sm text-gray-500">
-                      {author.name}
-                    </span>
-                  ))}
-                </div>
-                <span className="text-sm text-gray-500">{post.readingTime} min read</span>
-              </>
-            )}
+            <div className="flex items-center space-x-4">
+              {post.authors?.map((author) => (
+                <AuthorReference key={author.name} author={author} />
+              ))}
+            </div>
+            <span className="text-sm text-gray-500">{post.readingTime} min read</span>
           </div>
         </div>
       </Link>
