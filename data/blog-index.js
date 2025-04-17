@@ -1,5 +1,150 @@
 // This file is auto-generated. Do not edit directly.
-module.exports = [
+const blogIndex = [
+  {
+    title: "Browser Speed Showdown: Performance Benchmarks and Trends in 2025",
+    date: "2025-04-21T00:00:00.000Z",
+    authors: [
+      {
+        name: "Jordan Kern",
+        role: "CMO",
+        bio: "Jordan is the CMO of Kahana, where he leads marketing and sales strategy. With expertise in SaaS and performance marketing, he focuses on driving business growth through strategic team leadership and data-driven decision making.",
+        linkedinProfile: "https://www.linkedin.com/in/jordankern/",
+      },
+      {
+        name: "Adam Kershner",
+        role: "CTO",
+        bio: "Adam is the CTO of Kahana, where he leads the technical vision and development of enterprise browser solutions. With extensive experience in browser security and enterprise software, he is passionate about transforming how organizations approach secure browsing.",
+        linkedinProfile: "https://www.linkedin.com/in/adamkershner/",
+      },
+    ],
+    category: "Browsers",
+    excerpt:
+      "A comprehensive analysis of the fastest web browsers in 2024-2025, examining performance metrics, platform-specific optimizations, and emerging trends based on recent research from leading technology publications.",
+    defaultImageQuery: "fast web browser performance speed comparison",
+    slug: "fastest-web-browsers-2025",
+    readingTime: 8,
+  },
+  {
+    title: "The Hidden Costs and Limitations of Free Virtual Browsers in 2025",
+    date: "2025-04-17T00:00:00.000Z",
+    authors: [
+      {
+        name: "Jordan Kern",
+        role: "CMO",
+        bio: "Jordan is the CMO of Kahana, where he leads marketing and sales strategy. With expertise in SaaS and performance marketing, he focuses on driving business growth through strategic team leadership and data-driven decision making.",
+        linkedinProfile: "https://www.linkedin.com/in/jordankern/",
+      },
+      {
+        name: "Adam Kershner",
+        role: "CTO",
+        bio: "Adam is the CTO of Kahana, where he leads the technical vision and development of enterprise browser solutions. With extensive experience in browser security and enterprise software, he is passionate about transforming how organizations approach secure browsing.",
+        linkedinProfile: "https://www.linkedin.com/in/adamkershner/",
+      },
+    ],
+    category: "Browsers",
+    excerpt:
+      "A critical analysis of free virtual browser solutions in 2025, examining their limitations in security, performance, and enterprise readiness, with insights from recent research and industry experts.",
+    defaultImageQuery: "virtual browser security challenges 2025",
+    slug: "challenges-of-free-virtual-browsers-2025",
+    readingTime: 10,
+  },
+  {
+    title: "Recent Research and Trends on Secure Web Browsers: 2025 Insights",
+    date: "2025-04-20T00:00:00.000Z",
+    authors: [
+      {
+        name: "Jordan Kern",
+        role: "CMO",
+        bio: "Jordan is the CMO of Kahana, where he leads marketing and sales strategy. With expertise in SaaS and performance marketing, he focuses on driving business growth through strategic team leadership and data-driven decision making.",
+        linkedinProfile: "https://www.linkedin.com/in/jordankern/",
+      },
+      {
+        name: "Adam Kershner",
+        role: "CTO",
+        bio: "Adam is the CTO of Kahana, where he leads the technical vision and development of enterprise browser solutions. With extensive experience in browser security and enterprise software, he is passionate about transforming how organizations approach secure browsing.",
+        linkedinProfile: "https://www.linkedin.com/in/adamkershner/",
+      },
+    ],
+    category: "Browsers",
+    excerpt:
+      "A comprehensive analysis of the latest research and trends in secure web browsers for 2025, including security benchmarks, adoption metrics, and emerging threats in the browser security landscape.",
+    defaultImageQuery: "secure web browsers 2025 security trends",
+    slug: "secure-web-browsers-2025",
+    readingTime: 12,
+  },
+  {
+    title: "Best Enterprise Browsers of 2025: A Comprehensive Comparison",
+    date: "2025-04-19T00:00:00.000Z",
+    authors: [
+      {
+        name: "Jordan Kern",
+        role: "CMO",
+        bio: "Jordan is the CMO of Kahana, where he leads marketing and sales strategy. With expertise in SaaS and performance marketing, he focuses on driving business growth through strategic team leadership and data-driven decision making.",
+        linkedinProfile: "https://www.linkedin.com/in/jordankern/",
+      },
+      {
+        name: "Adam Kershner",
+        role: "CTO",
+        bio: "Adam is the CTO of Kahana, where he leads the technical vision and development of enterprise browser solutions. With extensive experience in browser security and enterprise software, he is passionate about transforming how organizations approach secure browsing.",
+        linkedinProfile: "https://www.linkedin.com/in/adamkershner/",
+      },
+    ],
+    category: "Browsers",
+    excerpt:
+      "A detailed comparison of the best enterprise browsers in 2025, including Chrome Enterprise, Island, and Microsoft Edge for Business, with insights into their security features, performance metrics, and enterprise adoption rates.",
+    defaultImageQuery: "best enterprise browsers comparison 2025",
+    slug: "best-enterprise-browsers-2025",
+    readingTime: 15,
+  },
+  {
+    title: "Enterprise Browsers: Security and Trends in 2025",
+    date: "2025-04-18T00:00:00.000Z",
+    authors: [
+      {
+        name: "Jordan Kern",
+        role: "CMO",
+        bio: "Jordan is the CMO of Kahana, where he leads marketing and sales strategy. With expertise in SaaS and performance marketing, he focuses on driving business growth through strategic team leadership and data-driven decision making.",
+        linkedinProfile: "https://www.linkedin.com/in/jordankern/",
+      },
+      {
+        name: "Adam Kershner",
+        role: "CTO",
+        bio: "Adam is the CTO of Kahana, where he leads the technical vision and development of enterprise browser solutions. With extensive experience in browser security and enterprise software, he is passionate about transforming how organizations approach secure browsing.",
+        linkedinProfile: "https://www.linkedin.com/in/adamkershner/",
+      },
+    ],
+    category: "Browsers",
+    excerpt:
+      "A comprehensive analysis of enterprise browsers in 2025, exploring their role in modern security architectures, key features, and market trends based on recent research from industry leaders.",
+    defaultImageQuery: "enterprise browser security architecture 2025",
+    slug: "enterprise-browsers-security-and-trends-2025",
+    readingTime: 12,
+  },
+  {
+    title:
+      "Recent Research on Free Web Browser Trends: A Comprehensive Analysis",
+    date: "2025-04-17T00:00:00.000Z",
+    authors: [
+      {
+        name: "Jordan Kern",
+        role: "CMO",
+        bio: "Jordan is the CMO of Kahana, where he leads marketing and sales strategy. With expertise in SaaS and performance marketing, he focuses on driving business growth through strategic team leadership and data-driven decision making.",
+        linkedinProfile: "https://www.linkedin.com/in/jordankern/",
+      },
+      {
+        name: "Adam Kershner",
+        role: "CTO",
+        bio: "Adam is the CTO of Kahana, where he leads the technical vision and development of enterprise browser solutions. With extensive experience in browser security and enterprise software, he is passionate about transforming how organizations approach secure browsing.",
+        linkedinProfile: "https://www.linkedin.com/in/adamkershner/",
+      },
+    ],
+    category: "Browsers",
+    excerpt:
+      "A comprehensive analysis of recent research on free web browser trends, including market share statistics, comparative analyses, and specialized applications for research and enterprise use.",
+    defaultImageQuery: "web browser market share statistics trends 2025",
+    slug: "recent-research-on-free-web-browser-trends-2025",
+    readingTime: 12,
+  },
   {
     title: "Why You Shouldn't Use Chrome at Work",
     date: "2025-04-15T00:00:00.000Z",
@@ -17,7 +162,7 @@ module.exports = [
         linkedinProfile: "https://www.linkedin.com/in/adamkershner/",
       },
     ],
-    category: "Browser",
+    category: "Browsers",
     excerpt:
       "Google Chrome's popularity masks significant privacy, security, and compliance risks for businesses. This post explores why Chrome is ill-suited for the workplace, highlighting data collection practices, extension vulnerabilities, and the challenges of managing Chrome in enterprise environments.",
     defaultImageQuery: "corporate cybersecurity browser privacy risk",
@@ -286,11 +431,37 @@ module.exports = [
         linkedinProfile: "https://www.linkedin.com/in/jordankern/",
       },
     ],
-    category: "Browser",
+    category: "Browsers",
     excerpt:
       "As cyber threats evolve, choosing the right web browser has become a critical security decision. This comprehensive analysis examines the most secure browsers of 2025, backed by recent research and expert evaluations.",
     defaultImageQuery: "secure web browser cybersecurity privacy protection",
     slug: "the-most-secure-web-browsers-in-2025",
     readingTime: 10,
   },
+  {
+    title: "Recent Research and Trends on Free Adblocker Browsers (2025)",
+    date: "2025-04-17T00:00:00.000Z",
+    authors: [
+      {
+        name: "Jordan Kern",
+        role: "CMO",
+        bio: "Jordan is the CMO of Kahana, where he leads marketing and sales strategy. With expertise in SaaS and performance marketing, he focuses on driving business growth through strategic team leadership and data-driven decision making.",
+        linkedinProfile: "https://www.linkedin.com/in/jordankern/",
+      },
+      {
+        name: "Adam Kershner",
+        role: "CTO",
+        bio: "Adam is the CTO of Kahana, where he leads the technical vision and development of enterprise browser solutions. With extensive experience in browser security and enterprise software, he is passionate about transforming how organizations approach secure browsing.",
+        linkedinProfile: "https://www.linkedin.com/in/adamkershner/",
+      },
+    ],
+    category: "Browsers",
+    excerpt:
+      "A comprehensive analysis of free adblocker browsers in 2025, examining their features, performance metrics, and emerging trends based on recent research from leading technology publications and security experts.",
+    defaultImageQuery: "adblocker browser technology privacy protection",
+    slug: "recent-research-on-free-adblocker-browsers-2025",
+    readingTime: 8,
+  },
 ];
+
+module.exports = blogIndex;

@@ -46,10 +46,8 @@ const DEFAULT_PLACEHOLDER = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/
 // Add categories array
 const categories = [
   'All',
-  'Engineering',
   'Security',
-  'Cloud Computing',
-  'Development',
+  'Browsers',
   'Company News',
   'Product Updates'
 ];
