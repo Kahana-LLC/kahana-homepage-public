@@ -148,7 +148,7 @@ export default function BlogPost({ post, coverImage }) {
           )}
           
           <div className="mt-16 p-8 bg-gradient-to-r from-[#E3DFF1]/20 via-[#8CB7D0]/10 to-[#E3DFF1]/30 rounded-xl border border-[#A5DAD8]/30 shadow-lg">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Transform Your Enterprise Browser Experience</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Elevate Your Enterprise Browser Experience</h2>
             <p className="text-lg text-gray-600 mb-6">
               Ready to learn how Kahana can help secure and streamline your organization's browsing? Schedule a personalized demo today.
             </p>
