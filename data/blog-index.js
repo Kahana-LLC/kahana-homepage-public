@@ -2,7 +2,7 @@
 const blogIndex = [
   {
     title: "Browser Speed Showdown: Performance Benchmarks and Trends in 2025",
-    date: "2025-04-21T00:00:00.000Z",
+    date: "2025-04-17T00:00:00.000Z",
     authors: [
       {
         name: "Jordan Kern",
@@ -14,7 +14,7 @@ const blogIndex = [
         name: "Adam Kershner",
         role: "CTO",
         bio: "Adam is the CTO of Kahana, where he leads the technical vision and development of enterprise browser solutions. With extensive experience in browser security and enterprise software, he is passionate about transforming how organizations approach secure browsing.",
-        linkedinProfile: "https://www.linkedin.com/in/adamkershner/",
+        linkedinProfile: "https://www.linkedin.com/in/adam-kershner/",
       },
     ],
     category: "Browsers",
@@ -38,7 +38,7 @@ const blogIndex = [
         name: "Adam Kershner",
         role: "CTO",
         bio: "Adam is the CTO of Kahana, where he leads the technical vision and development of enterprise browser solutions. With extensive experience in browser security and enterprise software, he is passionate about transforming how organizations approach secure browsing.",
-        linkedinProfile: "https://www.linkedin.com/in/adamkershner/",
+        linkedinProfile: "https://www.linkedin.com/in/adam-kershner/",
       },
     ],
     category: "Browsers",
@@ -50,7 +50,7 @@ const blogIndex = [
   },
   {
     title: "Recent Research and Trends on Secure Web Browsers: 2025 Insights",
-    date: "2025-04-20T00:00:00.000Z",
+    date: "2025-04-17T00:00:00.000Z",
     authors: [
       {
         name: "Jordan Kern",
@@ -62,7 +62,7 @@ const blogIndex = [
         name: "Adam Kershner",
         role: "CTO",
         bio: "Adam is the CTO of Kahana, where he leads the technical vision and development of enterprise browser solutions. With extensive experience in browser security and enterprise software, he is passionate about transforming how organizations approach secure browsing.",
-        linkedinProfile: "https://www.linkedin.com/in/adamkershner/",
+        linkedinProfile: "https://www.linkedin.com/in/adam-kershner/",
       },
     ],
     category: "Browsers",
@@ -74,7 +74,7 @@ const blogIndex = [
   },
   {
     title: "Best Enterprise Browsers of 2025: A Comprehensive Comparison",
-    date: "2025-04-19T00:00:00.000Z",
+    date: "2025-04-17T00:00:00.000Z",
     authors: [
       {
         name: "Jordan Kern",
@@ -86,7 +86,7 @@ const blogIndex = [
         name: "Adam Kershner",
         role: "CTO",
         bio: "Adam is the CTO of Kahana, where he leads the technical vision and development of enterprise browser solutions. With extensive experience in browser security and enterprise software, he is passionate about transforming how organizations approach secure browsing.",
-        linkedinProfile: "https://www.linkedin.com/in/adamkershner/",
+        linkedinProfile: "https://www.linkedin.com/in/adam-kershner/",
       },
     ],
     category: "Browsers",
@@ -110,7 +110,7 @@ const blogIndex = [
         name: "Adam Kershner",
         role: "CTO",
         bio: "Adam is the CTO of Kahana, where he leads the technical vision and development of enterprise browser solutions. With extensive experience in browser security and enterprise software, he is passionate about transforming how organizations approach secure browsing.",
-        linkedinProfile: "https://www.linkedin.com/in/adamkershner/",
+        linkedinProfile: "https://www.linkedin.com/in/adam-kershner/",
       },
     ],
     category: "Browsers",
@@ -135,7 +135,7 @@ const blogIndex = [
         name: "Adam Kershner",
         role: "CTO",
         bio: "Adam is the CTO of Kahana, where he leads the technical vision and development of enterprise browser solutions. With extensive experience in browser security and enterprise software, he is passionate about transforming how organizations approach secure browsing.",
-        linkedinProfile: "https://www.linkedin.com/in/adamkershner/",
+        linkedinProfile: "https://www.linkedin.com/in/adam-kershner/",
       },
     ],
     category: "Browsers",
@@ -159,7 +159,7 @@ const blogIndex = [
         name: "Adam Kershner",
         role: "CTO",
         bio: "Adam is the CTO of Kahana, where he leads the technical vision and development of enterprise browser solutions. With extensive experience in browser security and enterprise software, he is passionate about transforming how organizations approach secure browsing.",
-        linkedinProfile: "https://www.linkedin.com/in/adamkershner/",
+        linkedinProfile: "https://www.linkedin.com/in/adam-kershner/",
       },
     ],
     category: "Browsers",
@@ -184,7 +184,7 @@ const blogIndex = [
         name: "Adam Kershner",
         role: "CTO",
         bio: "Adam is the CTO of Kahana, where he leads the technical vision and development of enterprise browser solutions. With extensive experience in browser security and enterprise software, he is passionate about transforming how organizations approach secure browsing.",
-        linkedinProfile: "https://www.linkedin.com/in/adamkershner/",
+        linkedinProfile: "https://www.linkedin.com/in/adam-kershner/",
       },
     ],
     category: "Security",
@@ -209,7 +209,7 @@ const blogIndex = [
         name: "Adam Kershner",
         role: "CTO",
         bio: "Adam is the CTO of Kahana, where he leads the technical vision and development of enterprise browser solutions. With extensive experience in browser security and enterprise software, he is passionate about transforming how organizations approach secure browsing.",
-        linkedinProfile: "https://www.linkedin.com/in/adamkershner/",
+        linkedinProfile: "https://www.linkedin.com/in/adam-kershner/",
       },
     ],
     category: "Security",
@@ -228,7 +228,7 @@ const blogIndex = [
         name: "Adam Kershner",
         role: "CTO",
         bio: "Adam is the CTO of Kahana, where he leads the technical vision and development of enterprise browser solutions. With extensive experience in browser security and enterprise software, he is passionate about transforming how organizations approach secure browsing.",
-        linkedinProfile: "https://www.linkedin.com/in/adamkershner/",
+        linkedinProfile: "https://www.linkedin.com/in/adam-kershner/",
       },
       {
         name: "Jordan Kern",
@@ -258,7 +258,7 @@ const blogIndex = [
         name: "Adam Kershner",
         role: "CTO",
         bio: "Adam is the CTO of Kahana, where he leads the technical vision and development of enterprise browser solutions. With extensive experience in browser security and enterprise software, he is passionate about transforming how organizations approach secure browsing.",
-        linkedinProfile: "https://www.linkedin.com/in/adamkershner/",
+        linkedinProfile: "https://www.linkedin.com/in/adam-kershner/",
       },
       {
         name: "Jordan Kern",
@@ -294,7 +294,7 @@ const blogIndex = [
         name: "Adam Kershner",
         role: "CTO",
         bio: "Adam is the CTO of Kahana, where he leads the technical vision and development of enterprise browser solutions. With extensive experience in browser security and enterprise software, he is passionate about transforming how organizations approach secure browsing.",
-        linkedinProfile: "https://www.linkedin.com/in/adamkershner/",
+        linkedinProfile: "https://www.linkedin.com/in/adam-kershner/",
       },
       {
         name: "Jordan Kern",
@@ -330,7 +330,7 @@ const blogIndex = [
         name: "Adam Kershner",
         role: "CTO",
         bio: "Adam is the CTO of Kahana, where he leads the technical vision and development of enterprise browser solutions. With extensive experience in browser security and enterprise software, he is passionate about transforming how organizations approach secure browsing.",
-        linkedinProfile: "https://www.linkedin.com/in/adamkershner/",
+        linkedinProfile: "https://www.linkedin.com/in/adam-kershner/",
       },
       {
         name: "Jordan Kern",
@@ -361,7 +361,7 @@ const blogIndex = [
         name: "Adam Kershner",
         role: "CTO",
         bio: "Adam is the CTO of Kahana, where he leads the technical vision and development of enterprise browser solutions. With extensive experience in browser security and enterprise software, he is passionate about transforming how organizations approach secure browsing.",
-        linkedinProfile: "https://www.linkedin.com/in/adamkershner/",
+        linkedinProfile: "https://www.linkedin.com/in/adam-kershner/",
       },
       {
         name: "Jordan Kern",
@@ -392,7 +392,7 @@ const blogIndex = [
         name: "Adam Kershner",
         role: "CTO",
         bio: "Adam is the CTO of Kahana, where he leads the technical vision and development of enterprise browser solutions. With extensive experience in browser security and enterprise software, he is passionate about transforming how organizations approach secure browsing.",
-        linkedinProfile: "https://www.linkedin.com/in/adamkershner/",
+        linkedinProfile: "https://www.linkedin.com/in/adam-kershner/",
       },
       {
         name: "Jordan Kern",
@@ -422,7 +422,7 @@ const blogIndex = [
         name: "Adam Kershner",
         role: "CTO",
         bio: "Adam is the CTO of Kahana, where he leads the technical vision and development of enterprise browser solutions. With extensive experience in browser security and enterprise software, he is passionate about transforming how organizations approach secure browsing.",
-        linkedinProfile: "https://www.linkedin.com/in/adamkershner/",
+        linkedinProfile: "https://www.linkedin.com/in/adam-kershner/",
       },
       {
         name: "Jordan Kern",
@@ -452,7 +452,7 @@ const blogIndex = [
         name: "Adam Kershner",
         role: "CTO",
         bio: "Adam is the CTO of Kahana, where he leads the technical vision and development of enterprise browser solutions. With extensive experience in browser security and enterprise software, he is passionate about transforming how organizations approach secure browsing.",
-        linkedinProfile: "https://www.linkedin.com/in/adamkershner/",
+        linkedinProfile: "https://www.linkedin.com/in/adam-kershner/",
       },
     ],
     category: "Browsers",
@@ -461,6 +461,31 @@ const blogIndex = [
     defaultImageQuery: "adblocker browser technology privacy protection",
     slug: "recent-research-on-free-adblocker-browsers-2025",
     readingTime: 8,
+  },
+  {
+    title:
+      "The Hidden Costs and Limitations of Virtual Machine Browsers in 2025",
+    date: "2025-04-17T00:00:00.000Z",
+    authors: [
+      {
+        name: "Jordan Kern",
+        role: "CMO",
+        bio: "Jordan is the CMO of Kahana, where he leads marketing and sales strategy. With expertise in SaaS and performance marketing, he focuses on driving business growth through strategic team leadership and data-driven decision making.",
+        linkedinProfile: "https://www.linkedin.com/in/jordankern/",
+      },
+      {
+        name: "Adam Kershner",
+        role: "CTO",
+        bio: "Adam is the CTO of Kahana, where he leads the technical vision and development of enterprise browser solutions. With extensive experience in browser security and enterprise software, he is passionate about transforming how organizations approach secure browsing.",
+        linkedinProfile: "https://www.linkedin.com/in/adam-kershner/",
+      },
+    ],
+    category: "Browser",
+    excerpt:
+      "A critical analysis of virtual machine browser challenges and limitations in 2025, examining performance issues, security vulnerabilities, and implementation complexities that organizations face when relying on VM-based browsing solutions.",
+    defaultImageQuery: "virtual machine browser security challenges 2025",
+    slug: "virtual-machine-browsers-2025",
+    readingTime: 12,
   },
 ];
 
