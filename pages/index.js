@@ -10,20 +10,13 @@ import FadeInSection from "../components/FadeInSection";
 import SEO from "../components/SEO";
 import { getRandomPhoto, getOptimizedPhotoUrl } from "../utils/pexels";
 
-// Import team member headshots
-import adamHeadshot from "../assets/headshots/adam_kershner.jpg";
-import jordan from "../assets/headshots/jordan_kern.jpg";
-import jescetta from "../assets/headshots/jescetta_joy.jpg";
-import vruksha from "../assets/headshots/vruksha_joshi.jpg";
-import sonakshi from "../assets/headshots/sonakshi_singh.jpg";
-
 // Author mapping for blog posts
 const authorImages = {
-  "Adam Kershner": adamHeadshot,
-  "Jordan Kern": jordan,
-  "Jescetta Joy": jescetta,
-  "Vruksha Joshi": vruksha,
-  "Sonakshi Singh": sonakshi,
+  "Adam Kershner": "/assets/headshots/adam_kershner.jpg",
+  "Jordan Kern": "/assets/headshots/jordan_kern.jpg",
+  "Jescetta Joy": "/assets/headshots/jescetta_joy.jpg",
+  "Vruksha Joshi": "/assets/headshots/vruksha_joshi.jpg",
+  "Sonakshi Singh": "/assets/headshots/sonakshi_singh.jpg",
 };
 
 // Default placeholder for failed image loads
