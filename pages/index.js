@@ -14,7 +14,7 @@ import { getRandomPhoto, getOptimizedPhotoUrl } from "../utils/pexels";
 import adamHeadshot from "../assets/headshots/adam_kershner.jpg";
 import jordan from "../assets/headshots/jordan_kern.jpg";
 import jescetta from "../assets/headshots/jescetta_joy.jpg";
-import vruksha from "../assets/headshots/Vruksha_Joshi.jpg";
+import vruksha from "../assets/headshots/vruksha_joshi.jpg";
 import sonakshi from "../assets/headshots/sonakshi_singh.jpg";
 
 // Author mapping for blog posts

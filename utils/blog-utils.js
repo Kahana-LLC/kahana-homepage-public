@@ -13,8 +13,14 @@ export function getAuthorHeadshot(authorName) {
       .replace(/\s+/g, "_")
       .replace(/[^a-z0-9_]/g, "") + ".jpg";
 
-  // Return the path to the headshot
-  return `/assets/headshots/${formattedName}`;
+  try {
+    // Use dynamic import for headshots
+    const headshot = require(`../assets/headshots/${formattedName}`).default;
+    return headshot;
+  } catch (error) {
+    console.warn(`Could not load headshot for ${authorName}:`, error);
+    return DEFAULT_AVATAR;
+  }
 }
 
 // Default placeholder for failed image loads
