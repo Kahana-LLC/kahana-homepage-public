@@ -4,6 +4,8 @@ import jordanHeadshot from "../public/assets/headshots/jordan_kern.jpg";
 import jescettaHeadshot from "../public/assets/headshots/jescetta_joy.jpg";
 import vrukshaHeadshot from "../public/assets/headshots/vruksha_joshi.jpg";
 import sonakshiHeadshot from "../public/assets/headshots/sonakshi_singh.jpg";
+import venkeshHeadshot from "../public/assets/headshots/venkesh_agarwal.jpg";
+import vedantHeadshot from "../public/assets/headshots/vedant_gupta.jpg";
 
 // Default avatar placeholder
 const DEFAULT_AVATAR =
@@ -44,5 +46,19 @@ export const authors = {
     bio: "Sonakshi is a Product Marketing Manager at Kahana, where she blends customer insights, creative storytelling, and strategic thinking to drive product adoption and user engagement. With experience spanning B2B SaaS, D2C, and AI-driven platforms, she is passionate about crafting compelling go-to-market strategies that resonate with users and fuel sustainable growth.",
     avatar: "/assets/headshots/sonakshi_singh.jpg",
     linkedinProfile: "https://www.linkedin.com/in/sonakshisingh27/",
+  },
+  "Venkesh Agarwal": {
+    name: "Venkesh Agarwal",
+    role: "Product & Analytics",
+    bio: "Optimizing Processes, Maximizing Business Value. Duke Master of Engineering Management.",
+    avatar: "/assets/headshots/venkesh_agarwal.jpg",
+    linkedinProfile: "https://www.linkedin.com/in/venkesh-agarwal/",
+  },
+  "Vedant Gupta": {
+    name: "Vedant Gupta",
+    role: "Product Manager",
+    bio: "With a background in computer engineering and product management, I specialize in crafting product strategies and executing go-to-market plans. I love collaborating with people from diverse backgrounds and enjoy solving real-time problems. I've tackled a few in the past and would love to share my experiences.",
+    avatar: "/assets/headshots/vedant_gupta.jpg",
+    linkedinProfile: "https://www.linkedin.com/in/vedantgupta23/",
   },
 };
