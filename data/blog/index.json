@@ -1,0 +1,48 @@
+{
+  "articles": [
+    {
+      "title": "Opera for Chromebook: The Future of Browsing in 2025",
+      "date": "2025-04-15T00:00:00.000Z",
+      "authors": [
+        {
+          "name": "Adam Kershner",
+          "role": "CTO"
+        },
+        {
+          "name": "Jordan Kern",
+          "role": "Product Manager"
+        },
+        {
+          "name": "Venkesh Agarwal",
+          "role": "Product & Analytics"
+        }
+      ],
+      "category": ["Technology", "Browsers"],
+      "excerpt": "Discover how Opera is revolutionizing the Chromebook browsing experience in 2025 with AI-powered features, gaming optimizations, and Web 3.0 integration, making it a compelling alternative to Chrome.",
+      "slug": "opera-for-chromebook-2025",
+      "readingTime": 8
+    },
+    {
+      "title": "Enterprise vs Consumer Browsers: Securing the Modern Workforce (Part 1)",
+      "date": "2025-04-14T00:00:00.000Z",
+      "authors": [
+        {
+          "name": "Vedant Gupta",
+          "role": "Product Manager"
+        },
+        {
+          "name": "Venkesh Agarwal",
+          "role": "Product & Analytics"
+        },
+        {
+          "name": "Adam Kershner",
+          "role": "CTO"
+        }
+      ],
+      "category": ["Security"],
+      "excerpt": "As browser-based attacks surge to 600 million daily incidents, enterprises face critical security decisions. This first installment of our series examines how enterprise browsers combat modern threats through embedded security controls and zero-trust architecture.",
+      "slug": "enterprise-vs-consumer-browsers-securing-modern-workforce-part-1",
+      "readingTime": 10
+    }
+  ]
+} 

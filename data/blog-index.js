@@ -8,6 +8,73 @@ import vedantHeadshot from "../public/assets/headshots/vedant_gupta.jpg";
 
 const blogIndex = [
   {
+    title: "Opera Browser in 2025: An Overview of Features and Challenges",
+    date: "2025-04-16T00:00:00.000Z",
+    authors: [
+      {
+        name: "Adam Kershner",
+        role: "CTO",
+        bio: "Adam is the CTO of Kahana, where he leads the technical vision and development of enterprise browser solutions. With extensive experience in browser security and enterprise software, he is passionate about transforming how organizations approach secure browsing.",
+        linkedinProfile: "https://www.linkedin.com/in/adam-kershner/",
+        avatar: adamHeadshot,
+      },
+      {
+        name: "Jordan Kern",
+        role: "CMO",
+        bio: "Jordan is the CMO of Kahana, where he leads marketing and sales strategy. With expertise in SaaS and performance marketing, he focuses on driving business growth through strategic team leadership and data-driven decision making.",
+        linkedinProfile: "https://www.linkedin.com/in/jordan-kern/",
+        avatar: jordanHeadshot,
+      },
+      {
+        name: "Venkesh Agarwal",
+        role: "Product & Analytics",
+        bio: "Venkesh drives Product and Analytics at Kahana, where he focuses on optimizing processes and maximizing business value. With a Duke Master of Engineering Management degree and Fuqua Innovation & Entrepreneurship certificate, combined with his background as an Engineering Gold Medalist, he brings a unique blend of technical expertise and business acumen to product strategy and data-driven decision making.",
+        linkedinProfile: "https://www.linkedin.com/in/venkesh-agarwal/",
+        avatar: venkeshHeadshot,
+      },
+    ],
+    category: "Browsers",
+    excerpt:
+      "A comprehensive overview of Opera Browser in 2025, examining its innovative features alongside persistent challenges in privacy, security, and platform compatibility.",
+    defaultImageQuery: "Opera browser AI interface 2025",
+    slug: "opera-browser-2025",
+    readingTime: 12,
+  },
+  {
+    title:
+      "Opera for Chromebook in 2025: Breaking Down Strengths and Weaknesses",
+    date: "2025-04-15T00:00:00.000Z",
+    authors: [
+      {
+        name: "Adam Kershner",
+        role: "CTO",
+        bio: "Adam is the CTO of Kahana, where he leads the technical vision and development of enterprise browser solutions. With extensive experience in browser security and enterprise software, he is passionate about transforming how organizations approach secure browsing.",
+        linkedinProfile: "https://www.linkedin.com/in/adam-kershner/",
+        avatar: adamHeadshot,
+      },
+      {
+        name: "Jordan Kern",
+        role: "CMO",
+        bio: "Jordan is the CMO of Kahana, where he leads marketing and sales strategy. With expertise in SaaS and performance marketing, he focuses on driving business growth through strategic team leadership and data-driven decision making.",
+        linkedinProfile: "https://www.linkedin.com/in/jordan-kern/",
+        avatar: jordanHeadshot,
+      },
+      {
+        name: "Venkesh Agarwal",
+        role: "Product & Analytics",
+        bio: "Venkesh drives Product and Analytics at Kahana, where he focuses on optimizing processes and maximizing business value. With a Duke Master of Engineering Management degree and Fuqua Innovation & Entrepreneurship certificate, combined with his background as an Engineering Gold Medalist, he brings a unique blend of technical expertise and business acumen to product strategy and data-driven decision making.",
+        linkedinProfile: "https://www.linkedin.com/in/venkesh-agarwal/",
+        avatar: venkeshHeadshot,
+      },
+    ],
+    category: "Browsers",
+    excerpt:
+      "A detailed examination of Opera Browser's implementation on Chromebooks, breaking down its key strengths and notable weaknesses in performance, security, and integration.",
+    defaultImageQuery: "Opera browser on Chromebook 2025",
+    slug: "opera-for-chromebook-2025",
+    readingTime: 10,
+  },
+  {
     title: "Browser Speed Showdown: Performance Benchmarks and Trends in 2025",
     date: "2025-04-17T00:00:00.000Z",
     authors: [
@@ -551,7 +618,7 @@ const blogIndex = [
       {
         name: "Venkesh Agarwal",
         role: "Product & Analytics",
-        bio: "Optimizing Processes, Maximizing Business Value. Duke Master of Engineering Management.",
+        bio: "Venkesh drives Product and Analytics at Kahana, where he focuses on optimizing processes and maximizing business value. With a Duke Master of Engineering Management degree and Fuqua Innovation & Entrepreneurship certificate, combined with his background as an Engineering Gold Medalist, he brings a unique blend of technical expertise and business acumen to product strategy and data-driven decision making.",
         linkedinProfile: "https://www.linkedin.com/in/venkesh-agarwal/",
         avatar: venkeshHeadshot,
       },
@@ -585,7 +652,7 @@ const blogIndex = [
       {
         name: "Venkesh Agarwal",
         role: "Product & Analytics",
-        bio: "Optimizing Processes, Maximizing Business Value. Duke Master of Engineering Management.",
+        bio: "Venkesh drives Product and Analytics at Kahana, where he focuses on optimizing processes and maximizing business value. With a Duke Master of Engineering Management degree and Fuqua Innovation & Entrepreneurship certificate, combined with his background as an Engineering Gold Medalist, he brings a unique blend of technical expertise and business acumen to product strategy and data-driven decision making.",
         linkedinProfile: "https://www.linkedin.com/in/venkesh-agarwal/",
         avatar: venkeshHeadshot,
       },
