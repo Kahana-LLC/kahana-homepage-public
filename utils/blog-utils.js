@@ -2,25 +2,26 @@
 export const DEFAULT_AVATAR =
   'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%233C584A"%3E%3Cpath d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"%2F%3E%3C%2Fsvg%3E';
 
+// Import headshots statically
+import adamHeadshot from "../assets/headshots/adam_kershner.jpg";
+import jordan from "../assets/headshots/jordan_kern.jpg";
+import jescetta from "../assets/headshots/jescetta_joy.jpg";
+import vruksha from "../assets/headshots/vruksha_joshi.jpg";
+import sonakshi from "../assets/headshots/sonakshi_singh.jpg";
+
+// Author mapping for headshots
+const authorHeadshots = {
+  "Adam Kershner": adamHeadshot,
+  "Jordan Kern": jordan,
+  "Jescetta Joy": jescetta,
+  "Vruksha Joshi": vruksha,
+  "Sonakshi Singh": sonakshi,
+};
+
 // Function to get author headshot from name
 export function getAuthorHeadshot(authorName) {
-  try {
-    if (!authorName) return DEFAULT_AVATAR;
-
-    // Convert author name to first_last.jpg format
-    const formattedName =
-      authorName
-        .toLowerCase()
-        .replace(/\s+/g, "_")
-        .replace(/[^a-z0-9_]/g, "") + ".jpg";
-
-    // Try to import the image
-    const headshot = require(`../assets/headshots/${formattedName}`);
-    return headshot.default || headshot;
-  } catch (error) {
-    // If import fails, return default avatar
-    return DEFAULT_AVATAR;
-  }
+  if (!authorName) return DEFAULT_AVATAR;
+  return authorHeadshots[authorName] || DEFAULT_AVATAR;
 }
 
 // Default placeholder for failed image loads
