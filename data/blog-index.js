@@ -8,6 +8,59 @@ import vedantHeadshot from "../public/assets/headshots/vedant_gupta.jpg";
 
 const blogIndex = [
   {
+    title: "From BYOD to Zero Trust: A Deep Dive into Enterprise Browsers",
+    date: "2025-04-19T00:00:00.000Z",
+    authors: [
+      {
+        name: "Sonakshi Singh",
+        role: "Product Marketing Manager",
+        bio: "Sonakshi is a Product Marketing Manager at Kahana, where she blends customer insights, creative storytelling, and strategic thinking to drive product adoption and user engagement. With experience spanning B2B SaaS, D2C, and AI-driven platforms, she is passionate about crafting compelling go-to-market strategies that resonate with users and fuel sustainable growth.",
+        linkedinProfile: "https://www.linkedin.com/in/sonakshisingh27/",
+        avatar: sonakshiHeadshot,
+      },
+      {
+        name: "Adam Kershner",
+        role: "CTO",
+        bio: "Adam is the CTO of Kahana, where he leads the technical vision and development of enterprise browser solutions. With extensive experience in browser security and enterprise software, he is passionate about transforming how organizations approach secure browsing.",
+        linkedinProfile: "https://www.linkedin.com/in/adam-kershner/",
+        avatar: adamHeadshot,
+      },
+    ],
+    category: "Browser",
+    excerpt:
+      "As organizations embrace BYOD and hybrid work, the enterprise browser is emerging as a critical tool for secure access and productivity. This post explores how enterprise browsers bridge security gaps, enable zero trust, and empower IT teams to manage risk in a cloud-first world.",
+    defaultImageQuery: "enterprise browser security BYOD hybrid work",
+    slug: "byod-zero-trust-rise-enterprise-browser",
+    readingTime: 10,
+  },
+  {
+    title: "What Is an Enterprise Browser and Why It Matters in 2025",
+    date: "2025-04-19T00:00:00.000Z",
+    authors: [
+      {
+        name: "Sonakshi Singh",
+        role: "Product Marketing Manager",
+        bio: "Sonakshi is a Product Marketing Manager at Kahana, where she blends customer insights, creative storytelling, and strategic thinking to drive product adoption and user engagement. With experience spanning B2B SaaS, D2C, and AI-driven platforms, she is passionate about crafting compelling go-to-market strategies that resonate with users and fuel sustainable growth.",
+        linkedinProfile: "https://www.linkedin.com/in/sonakshisingh27/",
+        avatar: sonakshiHeadshot,
+      },
+      {
+        name: "Adam Kershner",
+        role: "CTO",
+        bio: "Adam is the CTO of Kahana, where he leads the technical vision and development of enterprise browser solutions. With extensive experience in browser security and enterprise software, he is passionate about transforming how organizations approach secure browsing.",
+        linkedinProfile: "https://www.linkedin.com/in/adam-kershner/",
+        avatar: adamHeadshot,
+      },
+    ],
+    category: "Browser",
+    excerpt:
+      "Enterprise browsers are transforming workplace security and productivity by offering advanced controls, seamless integrations, and robust data protection. Discover why these purpose-built browsers are essential for organizations navigating the evolving challenges of 2025.",
+    defaultImageQuery:
+      "modern enterprise browser security workplace technology",
+    slug: "what-is-enterprise-browser-2025",
+    readingTime: 12,
+  },
+  {
     title: "Opera Browser in 2025: An Overview of Features and Challenges",
     date: "2025-04-16T00:00:00.000Z",
     authors: [
