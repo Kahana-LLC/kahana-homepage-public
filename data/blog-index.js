@@ -8,6 +8,276 @@ import vedantHeadshot from "../public/assets/headshots/vedant_gupta.jpg";
 
 const blogIndex = [
   {
+    title:
+      "The Default Browser Dilemma: Technical Hurdles and Corporate Practices in 2025",
+    date: "2025-04-22T00:00:00.000Z",
+    authors: [
+      {
+        name: "Adam Kershner",
+        role: "CTO",
+        bio: "Adam is the CTO of Kahana, where he leads the technical vision and development of enterprise browser solutions. With extensive experience in browser security and enterprise software, he is passionate about transforming how organizations approach secure browsing.",
+        linkedinProfile: "https://www.linkedin.com/in/adam-kershner/",
+        avatar: adamHeadshot,
+      },
+      {
+        name: "Jordan Kern",
+        role: "CMO",
+        bio: "Jordan is the CMO of Kahana, where he leads marketing and sales strategy. With expertise in SaaS and performance marketing, he focuses on driving business growth through strategic team leadership and data-driven decision making.",
+        linkedinProfile: "https://www.linkedin.com/in/jordankern/",
+        avatar: jordanHeadshot,
+      },
+      {
+        name: "Vruksha Joshi",
+        role: "Engineer",
+        bio: "Vruksha is a self-motivated engineer at Kahana who thrives on working towards meaningful goals. She is driven by a sense of progress and the satisfaction of achieving impactful results. Her approach focuses on building confidence through proven abilities and trusting the process. She believes that consistent effort, combined with learning from challenges, is key to reaching successful outcomes.",
+        linkedinProfile: "https://www.linkedin.com/in/vruksha-joshi-576a9818b/",
+        avatar: vrukshaHeadshot,
+      },
+    ],
+    category: "Browsers",
+    excerpt:
+      "An in-depth analysis of the challenges users face when attempting to set and maintain their preferred default browser, examining technical barriers, corporate practices, and cross-platform inconsistencies in 2025.",
+    defaultImageQuery: "browser default settings configuration screen",
+    slug: "default-browser-challenges-2025",
+    readingTime: 8,
+  },
+  {
+    title: "Online Browser Testing: Key Challenges and Emerging Trends in 2025",
+    date: "2025-04-21T00:00:00.000Z",
+    authors: [
+      {
+        name: "Adam Kershner",
+        role: "CTO",
+        bio: "Adam is the CTO of Kahana, where he leads the technical vision and development of enterprise browser solutions. With extensive experience in browser security and enterprise software, he is passionate about transforming how organizations approach secure browsing.",
+        linkedinProfile: "https://www.linkedin.com/in/adam-kershner/",
+        avatar: adamHeadshot,
+      },
+      {
+        name: "Jordan Kern",
+        role: "CMO",
+        bio: "Jordan is the CMO of Kahana, where he leads marketing and sales strategy. With expertise in SaaS and performance marketing, he focuses on driving business growth through strategic team leadership and data-driven decision making.",
+        linkedinProfile: "https://www.linkedin.com/in/jordankern/",
+        avatar: jordanHeadshot,
+      },
+      {
+        name: "Venkesh Agarwal",
+        role: "Product & Analytics",
+        bio: "Venkesh Agarwal is a Product Manager at Kahana, where he supports cross-functional initiatives that blend product development with data-driven product marketing. He focuses on campaign strategy, performance analytics, and user-centric solutions that drive engagement and growth. With a foundation in technical execution and strategic insight, Venkesh helps shape products that resonate deeply with users and scale effectively in the market.",
+        linkedinProfile: "https://www.linkedin.com/in/venkesh-agarwal/",
+        avatar: venkeshHeadshot,
+      },
+    ],
+    category: "Browsers",
+    excerpt:
+      "A comprehensive analysis of the key challenges in online browser testing and emerging trends shaping the future of cross-browser compatibility testing in 2025.",
+    defaultImageQuery: "online browser testing challenges 2025",
+    slug: "online-browser-testing-challenges-trends-2025",
+    readingTime: 8,
+  },
+  {
+    title:
+      "Google Chrome Enterprise MSI: Insights, Trends, and Challenges in 2025",
+    date: "2025-04-21T00:00:00.000Z",
+    authors: [
+      {
+        name: "Adam Kershner",
+        role: "CTO",
+        bio: "Adam is the CTO of Kahana, where he leads the technical vision and development of enterprise browser solutions. With extensive experience in browser security and enterprise software, he is passionate about transforming how organizations approach secure browsing.",
+        linkedinProfile: "https://www.linkedin.com/in/adam-kershner/",
+        avatar: adamHeadshot,
+      },
+      {
+        name: "Jordan Kern",
+        role: "CMO",
+        bio: "Jordan is the CMO of Kahana, where he leads marketing and sales strategy. With expertise in SaaS and performance marketing, he focuses on driving business growth through strategic team leadership and data-driven decision making.",
+        linkedinProfile: "https://www.linkedin.com/in/jordankern/",
+        avatar: jordanHeadshot,
+      },
+      {
+        name: "Venkesh Agarwal",
+        role: "Product & Analytics",
+        bio: "Venkesh Agarwal is a Product Manager at Kahana, where he supports cross-functional initiatives that blend product development with data-driven product marketing. He focuses on campaign strategy, performance analytics, and user-centric solutions that drive engagement and growth. With a foundation in technical execution and strategic insight, Venkesh helps shape products that resonate deeply with users and scale effectively in the market.",
+        linkedinProfile: "https://www.linkedin.com/in/venkesh-agarwal/",
+        avatar: venkeshHeadshot,
+      },
+    ],
+    category: "Browser",
+    excerpt:
+      "A comprehensive analysis of Google Chrome Enterprise MSI deployment challenges, version management issues, and the evolving landscape of enterprise browser security in 2025.",
+    defaultImageQuery: "google chrome enterprise msi installation 2025",
+    slug: "google-chrome-enterprise-msi-research-2025",
+    readingTime: 12,
+  },
+  {
+    title:
+      "Google Chrome Enterprise Installer: Navigating Installation Challenges and Security Considerations in 2025",
+    date: "2025-04-21T00:00:00.000Z",
+    authors: [
+      {
+        name: "Adam Kershner",
+        role: "CTO",
+        bio: "Adam is the CTO of Kahana, where he leads the technical vision and development of enterprise browser solutions. With extensive experience in browser security and enterprise software, he is passionate about transforming how organizations approach secure browsing.",
+        linkedinProfile: "https://www.linkedin.com/in/adam-kershner/",
+        avatar: adamHeadshot,
+      },
+      {
+        name: "Jordan Kern",
+        role: "CMO",
+        bio: "Jordan is the CMO of Kahana, where he leads marketing and sales strategy. With expertise in SaaS and performance marketing, he focuses on driving business growth through strategic team leadership and data-driven decision making.",
+        linkedinProfile: "https://www.linkedin.com/in/jordankern/",
+        avatar: jordanHeadshot,
+      },
+      {
+        name: "Venkesh Agarwal",
+        role: "Product & Analytics",
+        bio: "Venkesh Agarwal is a Product Manager at Kahana, where he supports cross-functional initiatives that blend product development with data-driven product marketing. He focuses on campaign strategy, performance analytics, and user-centric solutions that drive engagement and growth. With a foundation in technical execution and strategic insight, Venkesh helps shape products that resonate deeply with users and scale effectively in the market.",
+        linkedinProfile: "https://www.linkedin.com/in/venkesh-agarwal/",
+        avatar: venkeshHeadshot,
+      },
+    ],
+    category: "Browser",
+    excerpt:
+      "A comprehensive analysis of Google Chrome Enterprise installer challenges, security vulnerabilities, and deployment strategies in 2025, providing insights for IT professionals and organizations.",
+    defaultImageQuery: "google chrome enterprise installer challenges 2025",
+    slug: "google-chrome-enterprise-installer-challenges-2025",
+    readingTime: 8,
+  },
+  {
+    title:
+      "Online Security Extensions: Navigating the Complex Landscape of Browser Security in 2025",
+    date: "2025-04-21T00:00:00.000Z",
+    authors: [
+      {
+        name: "Adam Kershner",
+        role: "CTO",
+        bio: "Adam is the CTO of Kahana, where he leads the technical vision and development of enterprise browser solutions. With extensive experience in browser security and enterprise software, he is passionate about transforming how organizations approach secure browsing.",
+        linkedinProfile: "https://www.linkedin.com/in/adam-kershner/",
+        avatar: adamHeadshot,
+      },
+      {
+        name: "Jordan Kern",
+        role: "CMO",
+        bio: "Jordan is the CMO of Kahana, where he leads marketing and sales strategy. With expertise in SaaS and performance marketing, he focuses on driving business growth through strategic team leadership and data-driven decision making.",
+        linkedinProfile: "https://www.linkedin.com/in/jordankern/",
+        avatar: jordanHeadshot,
+      },
+      {
+        name: "Venkesh Agarwal",
+        role: "Product & Analytics",
+        bio: "Venkesh Agarwal is a Product Manager at Kahana, where he supports cross-functional initiatives that blend product development with data-driven product marketing. He focuses on campaign strategy, performance analytics, and user-centric solutions that drive engagement and growth. With a foundation in technical execution and strategic insight, Venkesh helps shape products that resonate deeply with users and scale effectively in the market.",
+        linkedinProfile: "https://www.linkedin.com/in/venkesh-agarwal/",
+        avatar: venkeshHeadshot,
+      },
+    ],
+    category: "Browser",
+    excerpt:
+      "A comprehensive analysis of the current state of browser extension security, exploring the critical challenges, emerging threats, and best practices for organizations and individual users in 2025.",
+    defaultImageQuery: "browser extension security challenges 2025",
+    slug: "online-security-extensions-challenges-2025",
+    readingTime: 8,
+  },
+  {
+    title: "Windows 11 and Chrome: A Troubled Partnership in 2025",
+    date: "2025-04-21T00:00:00.000Z",
+    authors: [
+      {
+        name: "Adam Kershner",
+        role: "CTO",
+        bio: "Adam is the CTO of Kahana, where he leads the technical vision and development of enterprise browser solutions. With extensive experience in browser security and enterprise software, he is passionate about transforming how organizations approach secure browsing.",
+        linkedinProfile: "https://www.linkedin.com/in/adam-kershner/",
+        avatar: adamHeadshot,
+      },
+      {
+        name: "Jordan Kern",
+        role: "CMO",
+        bio: "Jordan is the CMO of Kahana, where he leads marketing and sales strategy. With expertise in SaaS and performance marketing, he focuses on driving business growth through strategic team leadership and data-driven decision making.",
+        linkedinProfile: "https://www.linkedin.com/in/jordankern/",
+        avatar: jordanHeadshot,
+      },
+      {
+        name: "Venkesh Agarwal",
+        role: "Product & Analytics",
+        bio: "Venkesh Agarwal is a Product Manager at Kahana, where he supports cross-functional initiatives that blend product development with data-driven product marketing. He focuses on campaign strategy, performance analytics, and user-centric solutions that drive engagement and growth. With a foundation in technical execution and strategic insight, Venkesh helps shape products that resonate deeply with users and scale effectively in the market.",
+        linkedinProfile: "https://www.linkedin.com/in/venkesh-agarwal/",
+        avatar: venkeshHeadshot,
+      },
+    ],
+    category: "Browsers",
+    excerpt:
+      "A comprehensive analysis of the mounting challenges between Google Chrome and Windows 11 in 2025, from critical security vulnerabilities to performance issues and installation failures. This post examines the root causes, business implications, and potential solutions for enterprises navigating this increasingly complex relationship.",
+    defaultImageQuery: "chrome windows 11 compatibility issues 2025",
+    slug: "windows-11-chrome-troubled-partnership-2025",
+    readingTime: 8,
+  },
+  {
+    title:
+      "The Antivirus Chrome Extension Dilemma: Addressing User Concerns and Ongoing Challenges",
+    date: "2025-04-21T00:00:00.000Z",
+    authors: [
+      {
+        name: "Adam Kershner",
+        role: "CTO",
+        bio: "Adam is the CTO of Kahana, where he leads the technical vision and development of enterprise browser solutions. With extensive experience in browser security and enterprise software, he is passionate about transforming how organizations approach secure browsing.",
+        linkedinProfile: "https://www.linkedin.com/in/adam-kershner/",
+        avatar: adamHeadshot,
+      },
+      {
+        name: "Jordan Kern",
+        role: "CMO",
+        bio: "Jordan is the CMO of Kahana, where he leads marketing and sales strategy. With expertise in SaaS and performance marketing, he focuses on driving business growth through strategic team leadership and data-driven decision making.",
+        linkedinProfile: "https://www.linkedin.com/in/jordankern/",
+        avatar: jordanHeadshot,
+      },
+      {
+        name: "Venkesh Agarwal",
+        role: "Product & Analytics",
+        bio: "Venkesh Agarwal is a Product Manager at Kahana, where he supports cross-functional initiatives that blend product development with data-driven product marketing. He focuses on campaign strategy, performance analytics, and user-centric solutions that drive engagement and growth. With a foundation in technical execution and strategic insight, Venkesh helps shape products that resonate deeply with users and scale effectively in the market.",
+        linkedinProfile: "https://www.linkedin.com/in/venkesh-agarwal/",
+        avatar: venkeshHeadshot,
+      },
+    ],
+    category: "Browser",
+    excerpt:
+      "An in-depth analysis of antivirus Chrome extensions, exploring their role in user security, persistent challenges, and the evolving landscape of browser extension security in 2025.",
+    defaultImageQuery: "antivirus chrome extension security 2025",
+    slug: "antivirus-chrome-extension-dilemma-2025",
+    readingTime: 8,
+  },
+  {
+    title:
+      "Antivirus Browser Extensions in 2025: A Critical Analysis of Security Challenges",
+    date: "2025-04-22T00:00:00.000Z",
+    authors: [
+      {
+        name: "Adam Kershner",
+        role: "CTO",
+        bio: "Adam is the CTO of Kahana, where he leads the technical vision and development of enterprise browser solutions. With extensive experience in browser security and enterprise software, he is passionate about transforming how organizations approach secure browsing.",
+        linkedinProfile: "https://www.linkedin.com/in/adam-kershner/",
+        avatar: adamHeadshot,
+      },
+      {
+        name: "Jordan Kern",
+        role: "CMO",
+        bio: "Jordan is the CMO of Kahana, where he leads marketing and sales strategy. With expertise in SaaS and performance marketing, he focuses on driving business growth through strategic team leadership and data-driven decision making.",
+        linkedinProfile: "https://www.linkedin.com/in/jordankern/",
+        avatar: jordanHeadshot,
+      },
+      {
+        name: "Vruksha Joshi",
+        role: "Engineer",
+        bio: "Vruksha is a self-motivated engineer at Kahana who thrives on working towards meaningful goals. She is driven by a sense of progress and the satisfaction of achieving impactful results. Her approach focuses on building confidence through proven abilities and trusting the process. She believes that consistent effort, combined with learning from challenges, is key to reaching successful outcomes.",
+        linkedinProfile: "https://www.linkedin.com/in/vruksha-joshi-576a9818b/",
+        avatar: vrukshaHeadshot,
+      },
+    ],
+    category: "Security",
+    excerpt:
+      "A comprehensive analysis of antivirus browser extensions in 2025, examining critical security vulnerabilities, performance impacts, and emerging challenges in an increasingly complex threat landscape.",
+    defaultImageQuery: "antivirus browser extension security shield",
+    slug: "antivirus-browser-extensions-security-challenges-2025",
+    readingTime: 8,
+  },
+  {
     title: "From BYOD to Zero Trust: A Deep Dive into Enterprise Browsers",
     date: "2025-04-19T00:00:00.000Z",
     authors: [
@@ -58,7 +328,7 @@ const blogIndex = [
     defaultImageQuery:
       "modern enterprise browser security workplace technology",
     slug: "what-is-enterprise-browser-2025",
-    readingTime: 12,
+    readingTime: 7,
   },
   {
     title: "Opera Browser in 2025: An Overview of Features and Challenges",
@@ -91,7 +361,7 @@ const blogIndex = [
       "A comprehensive overview of Opera Browser in 2025, examining its innovative features alongside persistent challenges in privacy, security, and platform compatibility.",
     defaultImageQuery: "Opera browser AI interface 2025",
     slug: "opera-browser-2025",
-    readingTime: 12,
+    readingTime: 7,
   },
   {
     title:
@@ -229,7 +499,7 @@ const blogIndex = [
       "A detailed comparison of the best enterprise browsers in 2025, including Chrome Enterprise, Island, and Microsoft Edge for Business, with insights into their security features, performance metrics, and enterprise adoption rates.",
     defaultImageQuery: "best enterprise browsers comparison 2025",
     slug: "best-enterprise-browsers-2025",
-    readingTime: 15,
+    readingTime: 9,
   },
   {
     title: "Enterprise Browsers: Security and Trends in 2025",
@@ -723,6 +993,73 @@ const blogIndex = [
     defaultImageQuery: "Enterprise browser productivity and management",
     slug: "enterprise-vs-consumer-browsers-productivity-management-modern-workplace-part-2",
     readingTime: 10,
+  },
+  {
+    title: "Recent Research and Challenges Surrounding Logii Browser in 2025",
+    date: "2025-04-22T00:00:00.000Z",
+    authors: [
+      {
+        name: "Adam Kershner",
+        role: "CTO",
+        bio: "Adam is the CTO of Kahana, where he leads the technical vision and development of enterprise browser solutions. With extensive experience in browser security and enterprise software, he is passionate about transforming how organizations approach secure browsing.",
+        linkedinProfile: "https://www.linkedin.com/in/adam-kershner/",
+        avatar: adamHeadshot,
+      },
+      {
+        name: "Jordan Kern",
+        role: "CMO",
+        bio: "Jordan is the CMO of Kahana, where he leads marketing and sales strategy. With expertise in SaaS and performance marketing, he focuses on driving business growth through strategic team leadership and data-driven decision making.",
+        linkedinProfile: "https://www.linkedin.com/in/jordankern/",
+        avatar: jordanHeadshot,
+      },
+      {
+        name: "Vruksha Joshi",
+        role: "Engineer",
+        bio: "Vruksha is a self-motivated engineer at Kahana who thrives on working towards meaningful goals. She is driven by a sense of progress and the satisfaction of achieving impactful results. Her approach focuses on building confidence through proven abilities and trusting the process. She believes that consistent effort, combined with learning from challenges, is key to reaching successful outcomes.",
+        linkedinProfile: "https://www.linkedin.com/in/vruksha-joshi-576a9818b/",
+        avatar: vrukshaHeadshot,
+      },
+    ],
+    category: "Browsers",
+    excerpt:
+      "A comprehensive analysis of Logii Browser's implementation challenges in 2025, examining stability issues, platform compatibility problems, and the evolving landscape of anti-detect browser technology.",
+    defaultImageQuery: "logii browser anti-detect fingerprinting 2025",
+    slug: "logii-browser-challenges-research-2025",
+    readingTime: 8,
+  },
+  {
+    title:
+      "Proxy Browser Downloads in 2025: Navigating Technical Hurdles and Security Risks",
+    date: "2025-04-22T00:00:00.000Z",
+    authors: [
+      {
+        name: "Adam Kershner",
+        role: "CTO",
+        bio: "Adam is the CTO of Kahana, where he leads the technical vision and development of enterprise browser solutions. With extensive experience in browser security and enterprise software, he is passionate about transforming how organizations approach secure browsing.",
+        linkedinProfile: "https://www.linkedin.com/in/adam-kershner/",
+        avatar: "/assets/headshots/adam_kershner.jpg",
+      },
+      {
+        name: "Jordan Kern",
+        role: "CMO",
+        bio: "Jordan is the CMO of Kahana, where he leads marketing and sales strategy. With expertise in SaaS and performance marketing, he focuses on driving business growth through strategic team leadership and data-driven decision making.",
+        linkedinProfile: "https://www.linkedin.com/in/jordankern/",
+        avatar: "/assets/headshots/jordan_kern.jpg",
+      },
+      {
+        name: "Vruksha Joshi",
+        role: "Engineer",
+        bio: "Vruksha is a self-motivated engineer at Kahana who thrives on working towards meaningful goals. She is driven by a sense of progress and the satisfaction of achieving impactful results. Her approach focuses on building confidence through proven abilities and trusting the process. She believes that consistent effort, combined with learning from challenges, is key to reaching successful outcomes.",
+        linkedinProfile: "https://www.linkedin.com/in/vruksha-joshi-576a9818b/",
+        avatar: "/assets/headshots/vruksha_joshi.jpg",
+      },
+    ],
+    category: "Security",
+    excerpt:
+      "A comprehensive analysis of the technical challenges and security risks in proxy browser adoption, from download failures to configuration complexities. This post examines the growing gap between market growth and user experience in 2025.",
+    defaultImageQuery: "proxy browser security download configuration",
+    slug: "proxy-browser-download-challenges-2025",
+    readingTime: 9,
   },
 ];
 
