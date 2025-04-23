@@ -6,6 +6,9 @@ import vrukshaHeadshot from "../public/assets/headshots/vruksha_joshi.jpg";
 import sonakshiHeadshot from "../public/assets/headshots/sonakshi_singh.jpg";
 import venkeshHeadshot from "../public/assets/headshots/venkesh_agarwal.jpg";
 import vedantHeadshot from "../public/assets/headshots/vedant_gupta.jpg";
+import shivangiHeadshot from "../public/assets/headshots/shivangi_chamoli.jpg";
+import vinitHeadshot from "../public/assets/headshots/vinit_juneja.jpg";
+import saideepHeadshot from "../public/assets/headshots/saideep_pajjuri.jpg";
 
 // Default avatar placeholder
 const DEFAULT_AVATAR =
@@ -60,5 +63,26 @@ export const authors = {
     bio: "With a background in computer engineering and product management, I specialize in crafting product strategies and executing go-to-market plans. I love collaborating with people from diverse backgrounds and enjoy solving real-time problems. I've tackled a few in the past and would love to share my experiences.",
     avatar: "/assets/headshots/vedant_gupta.jpg",
     linkedinProfile: "https://www.linkedin.com/in/vedantgupta23/",
+  },
+  "Shivangi Chamoli": {
+    name: "Shivangi Chamoli",
+    role: "Data Analyst",
+    bio: "Shivangi is a Data Analyst at Kahana, working at the intersection of data and marketing to drive user engagement, product adoption, and business growth. She analyzes user behavior and platform interaction data to uncover insights that shape marketing strategies, optimize onboarding and retention, and inform go-to-market initiatives. Collaborating with product, strategy, and marketing teams, she helps align data-driven decisions with customer needs and business outcomes.",
+    avatar: "/assets/headshots/shivangi_chamoli.jpg",
+    linkedinProfile: "https://www.linkedin.com/in/shivangichamoli/",
+  },
+  "Vinit Juneja": {
+    name: "Vinit Juneja",
+    role: "Product Manager",
+    bio: "Vinit is a product manager at Kahana, where he researches more about AI tools and customer insights and uses strategic thinking to drive product adoption and user engagement. With experience in creating AI automated tools, working with big tech Companies like Samsung, he is passionate about the product and obsessed with how customers think!",
+    avatar: "/assets/headshots/vinit_juneja.jpg",
+    linkedinProfile: "https://www.linkedin.com/in/vinitjuneja",
+  },
+  "Saideep Pajjuri": {
+    name: "Saideep Pajjuri",
+    role: "Software Engineer",
+    bio: "Saideep is a software engineer at Kahana who thrives on solving complex problems and bringing innovative solutions to life across both hardware and software domains. Known for his passion for optimizing systems and driving ideas from concept to reality, he is always excited to take on new challenges and continuously learn and grow along the way.",
+    avatar: "/assets/headshots/saideep_pajjuri.jpg",
+    linkedinProfile: "https://www.linkedin.com/in/saideep-pajjuri/",
   },
 };
