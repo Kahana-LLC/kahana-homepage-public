@@ -31,8 +31,13 @@ const categories = [
   'All',
   'Security',
   'Browsers',
-  'Company News',
-  'Product Updates'
+  'Enterprise',
+  'Deployment & Installation',
+  'Performance',
+  'Privacy',
+  'Guides & Tutorials',
+  'Research & Trends',
+  'Comparisons'
 ];
 
 // Use a simple object for caching instead of Map to avoid Fast Refresh issues
@@ -109,7 +114,6 @@ export async function getStaticProps() {
             authors: mappedAuthors
           };
         } catch (error) {
-          console.error(`Error fetching image for post ${post.slug}:`, error);
           return {
             ...post,
             image: DEFAULT_PLACEHOLDER,
@@ -133,23 +137,18 @@ export async function getStaticProps() {
     // Get recent posts (next 3)
     const recentPosts = sortedPosts.slice(1, 4);
 
-    // Convert to object format for easier lookup
-    const blogPostsObject = sortedPosts.reduce((acc, post) => {
-      acc[post.slug] = post;
-      return acc;
-    }, {});
-
     return {
       props: {
         featuredPost,
         recentPosts,
-        blogPosts: blogPostsObject
+        blogPosts: sortedPosts.reduce((acc, post) => {
+          acc[post.slug] = post;
+          return acc;
+        }, {})
       },
-      // Revalidate more frequently in development
       revalidate: process.env.NODE_ENV === 'development' ? 60 : 3600
     };
   } catch (error) {
-    console.error('Error in getStaticProps:', error);
     return {
       props: {
         featuredPost: null,
@@ -266,7 +265,7 @@ const Blog = ({
         <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           {/* Featured Post */}
           <section className="mb-20">
-            <div className="relative flex flex-col md:flex-row rounded-2xl overflow-hidden bg-kahana-ui-background shadow-lg">
+            <div className="relative flex flex-col md:flex-row rounded-2xl overflow-hidden bg-white border border-gray-100 shadow-lg hover:shadow-xl transition-all duration-200">
               <div className="relative w-full md:w-1/2 h-[400px]">
                 <Image
                   src={featuredPost?.image || DEFAULT_PLACEHOLDER}
@@ -276,28 +275,52 @@ const Blog = ({
                   className="object-cover"
                   priority
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent md:hidden" />
               </div>
-              <div className="w-full md:w-1/2 p-8">
-                <span className="inline-block px-3 py-1 text-sm font-medium bg-kahana-accent-water/10 text-kahana-accent-water rounded-full mb-4">
-                  {featuredPost?.category || 'Featured'}
-                </span>
-                <h1 className="text-3xl font-bold text-kahana-primary mb-4">
+              <div className="w-full md:w-1/2 p-8 md:p-10 flex flex-col">
+                <div className="flex flex-wrap items-center gap-2 mb-6">
+                  <span className="inline-flex items-center px-3 py-1.5 text-sm font-medium bg-kahana-accent-sunset/10 text-kahana-accent-sunset rounded-lg border border-kahana-accent-sunset/20">
+                    Featured
+                  </span>
+                  {featuredPost?.category && (
+                    Array.isArray(featuredPost.category) ? 
+                      featuredPost.category.map((cat) => (
+                        <span
+                          key={cat}
+                          className="inline-flex items-center px-3 py-1.5 text-sm font-medium bg-kahana-accent-water/10 text-kahana-accent-water rounded-lg border border-kahana-accent-water/20"
+                        >
+                          {cat}
+                        </span>
+                      ))
+                    : typeof featuredPost.category === 'string' ? 
+                      featuredPost.category.split(/(?=[A-Z&])/g).filter(Boolean).map((cat, index, array) => (
+                        <span
+                          key={index}
+                          className="inline-flex items-center px-3 py-1.5 text-sm font-medium bg-kahana-accent-water/10 text-kahana-accent-water rounded-lg border border-kahana-accent-water/20"
+                        >
+                          {cat.trim().replace(/^&\s*/, '')}
+                        </span>
+                      ))
+                    : null
+                  )}
+                </div>
+                <h1 className="text-2xl md:text-3xl font-bold text-kahana-primary mb-4 line-clamp-3">
                   {featuredPost?.title || 'Featured Post'}
                 </h1>
-                <p className="text-kahana-primary-light text-lg mb-6 line-clamp-2">
-                  {truncateExcerpt(featuredPost?.excerpt) || 'No excerpt available'}
+                <p className="text-kahana-primary-light text-base md:text-lg mb-6 line-clamp-3">
+                  {truncateExcerpt(featuredPost?.excerpt, 180) || 'No excerpt available'}
                 </p>
-                <div className="flex items-center mb-6">
+                <div className="flex items-center mb-6 mt-auto">
                   <div className="flex items-center">
-                    <div className="flex -space-x-2 mr-3">
+                    <div className="flex -space-x-3 mr-4">
                       {featuredPost?.authors?.map((author, index) => (
-                        <div key={author.name} className="relative w-10 h-10">
+                        <div key={author.name} className="relative w-10 h-10 rounded-lg border-2 border-white shadow-sm">
                           <Image
                             src={author.avatar || DEFAULT_AVATAR}
                             alt={author.name}
                             width={40}
                             height={40}
-                            className="rounded-lg border-2 border-white"
+                            className="rounded-lg"
                             style={{ width: '40px', height: '40px', objectFit: 'cover' }}
                             priority
                           />
@@ -305,59 +328,40 @@ const Blog = ({
                       ))}
                     </div>
                     <div>
-                      <p className="text-sm font-medium text-gray-600">
+                      <p className="text-sm font-medium text-gray-900">
                         {featuredPost?.authors?.map(author => author.name).join(', ')}
                       </p>
-                      <div className="flex items-center gap-2 mt-1">
-                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
+                      <div className="flex items-center gap-3 mt-1">
+                        <time className="text-sm text-gray-500" dateTime={featuredPost?.date}>
                           {featuredPost?.date ? formatDate(featuredPost.date) : 'Date not available'}
-                        </span>
-                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
+                        </time>
+                        <span className="text-sm text-gray-500">
                           {featuredPost?.readingTime}m read
                         </span>
                       </div>
                     </div>
                   </div>
                 </div>
-                <Link 
-                  href={`/blog/${featuredPost?.slug}`}
-                  className="inline-flex items-center text-kahana-accent-sunset hover:text-kahana-accent-flower transition-colors duration-200"
-                >
-                  Read More
-                  <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </Link>
+                {featuredPost?.slug && (
+                  <Link 
+                    href={`/blog/${featuredPost.slug}`}
+                    className="inline-flex items-center justify-center px-6 py-3 bg-kahana-accent-water text-white rounded-lg hover:bg-kahana-accent-water/90 transition-colors duration-200 text-sm font-medium group"
+                  >
+                    Read Article
+                    <svg className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                  </Link>
+                )}
               </div>
             </div>
           </section>
 
           {/* Search and Categories Section */}
           <section className="mb-12">
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-              {/* Category Buttons */}
-              <div className="relative w-full md:w-auto">
-                <div className="flex overflow-x-auto pb-4 md:pb-0 hide-scrollbar gap-3 -mx-4 px-4 md:mx-0 md:px-0">
-                  {categories.map((category) => (
-                    <button
-                      key={category}
-                      onClick={() => setSelectedCategory(category)}
-                      className={`flex-none px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 whitespace-nowrap ${
-                        selectedCategory === category
-                          ? 'bg-kahana-primary text-white'
-                          : 'bg-[#ECEEF2] hover:bg-[#E2E4EA] text-[#36394A]'
-                      }`}
-                    >
-                      {category}
-                    </button>
-                  ))}
-                </div>
-                {/* Fade indicator for scrollable content on mobile */}
-                <div className="absolute right-0 top-0 h-full w-12 bg-gradient-to-l from-white to-transparent pointer-events-none md:hidden" />
-              </div>
-
+            <div className="flex flex-col gap-6">
               {/* Search Bar */}
-              <div className="w-full md:w-96 order-first md:order-last">
+              <div className="w-full px-4 md:px-0">
                 <div className="relative">
                   <input
                     type="text"
@@ -381,6 +385,34 @@ const Blog = ({
                   </svg>
                 </div>
               </div>
+
+              {/* Category Buttons */}
+              <div className="relative">
+                <div className="flex overflow-x-auto pb-4 md:pb-0 hide-scrollbar gap-2 px-4 md:px-0">
+                  {categories.map((category) => (
+                    <button
+                      key={category}
+                      onClick={() => setSelectedCategory(category)}
+                      className={`flex-none px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 whitespace-nowrap ${
+                        selectedCategory === category
+                          ? 'bg-kahana-accent-water text-white shadow-sm'
+                          : 'bg-gray-50 hover:bg-gray-100 text-gray-700 hover:text-kahana-accent-water border border-gray-200'
+                      }`}
+                    >
+                      {category === 'All' ? (
+                        <span className="flex items-center">
+                          <svg className="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                          </svg>
+                          {category}
+                        </span>
+                      ) : category}
+                    </button>
+                  ))}
+                </div>
+                {/* Fade indicator for scrollable content on mobile */}
+                <div className="absolute right-0 top-0 h-full w-12 bg-gradient-to-l from-white to-transparent pointer-events-none md:hidden" />
+              </div>
             </div>
           </section>
 
@@ -398,61 +430,71 @@ const Blog = ({
                   }}
                   className="mt-4 px-4 py-2 text-sm font-medium text-kahana-accent-water hover:text-kahana-accent-flower transition-colors duration-200"
                 >
-                  Clear filters
+                  Reset Filters
                 </button>
               </div>
             ) : (
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {paginatedPosts.map((post) => (
-                  <article key={post.slug} className="bg-kahana-ui-background rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300">
+                  <article key={post.slug} className="flex flex-col bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-lg transition-shadow duration-200">
                     <Link href={`/blog/${post.slug}`} className="block">
                       <div className="relative h-48">
                         <Image
-                          src={post.image}
+                          src={post.image || DEFAULT_PLACEHOLDER}
                           alt={post.title}
                           fill
-                          sizes="(max-width: 768px) 100vw, 33vw"
-                          className="transition-transform duration-500 hover:scale-105 object-cover"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                          className="object-cover"
                         />
                       </div>
-                      <div className="p-8">
-                        <span className="inline-block px-3 py-1 text-sm font-medium bg-kahana-accent-water/10 text-kahana-accent-water rounded-full mb-4">
-                          {post.category}
-                        </span>
-                        <h3 className="text-xl font-semibold text-kahana-primary mb-4 hover:text-kahana-accent-sunset transition-colors">
+                      <div className="p-6">
+                        <div className="flex flex-wrap items-center gap-2 mb-4">
+                          {Array.isArray(post.category) ? (
+                            post.category.map((cat) => (
+                              <span
+                                key={cat}
+                                className="inline-flex items-center px-2.5 py-1 text-xs font-medium bg-kahana-accent-water/10 text-kahana-accent-water rounded-lg border border-kahana-accent-water/20 hover:bg-kahana-accent-water/15 transition-colors duration-200"
+                              >
+                                {cat}
+                              </span>
+                            ))
+                          ) : (
+                            <span className="inline-flex items-center px-2.5 py-1 text-xs font-medium bg-kahana-accent-water/10 text-kahana-accent-water rounded-lg border border-kahana-accent-water/20 hover:bg-kahana-accent-water/15 transition-colors duration-200">
+                              {post.category}
+                            </span>
+                          )}
+                        </div>
+                        <h3 className="text-xl font-bold text-kahana-primary mb-2 line-clamp-2">
                           {post.title}
                         </h3>
-                        <p className="text-kahana-primary-light mb-6 line-clamp-2">
+                        <p className="text-kahana-primary-light mb-4 line-clamp-2">
                           {truncateExcerpt(post.excerpt)}
                         </p>
-                        <div className="flex items-center gap-4">
+                        <div className="flex items-center justify-between mt-auto">
                           <div className="flex items-center">
-                            <div className="flex -space-x-2 mr-3">
-                              {post.authors?.map((author, index) => (
-                                <div key={author.name} className="relative w-10 h-10">
+                            <div className="flex -space-x-2 mr-2">
+                              {post.authors?.map((author) => (
+                                <div key={author.name} className="relative w-8 h-8">
                                   <Image
                                     src={author.avatar || DEFAULT_AVATAR}
                                     alt={author.name}
-                                    width={40}
-                                    height={40}
+                                    width={32}
+                                    height={32}
                                     className="rounded-lg border-2 border-white"
-                                    style={{ width: '40px', height: '40px', objectFit: 'cover' }}
-                                    priority
+                                    style={{ width: '32px', height: '32px', objectFit: 'cover' }}
                                   />
                                 </div>
                               ))}
                             </div>
-                            <div>
-                              <p className="text-sm font-medium text-gray-600">
+                            <div className="text-sm">
+                              <p className="font-medium text-gray-900">
                                 {post.authors?.map(author => author.name).join(', ')}
                               </p>
-                              <div className="flex items-center gap-2 mt-1">
-                                <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
+                              <div className="flex items-center gap-2">
+                                <time className="text-gray-500" dateTime={post.date}>
                                   {formatDate(post.date)}
-                                </span>
-                                <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
-                                  {post.readingTime}m read
-                                </span>
+                                </time>
+                                <span className="text-gray-500">{post.readingTime}m read</span>
                               </div>
                             </div>
                           </div>

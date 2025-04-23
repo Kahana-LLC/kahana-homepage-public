@@ -180,21 +180,45 @@ export default function BlogPost({ post, coverImage }) {
 }
 
 export async function getStaticPaths() {
-  // Generate paths from blog-index.js
-  const paths = blogIndex.map((post) => ({
-    params: { slug: post.slug },
-  }));
+  try {
+    // Generate paths from blog-index.js
+    const paths = blogIndex.map((post) => {
+      console.log(`[Debug] Generating path for post: ${post.slug}`);
+      return {
+        params: { slug: post.slug },
+      };
+    });
 
-  return {
-    paths,
-    fallback: false, // Return 404 for non-existent paths
-  };
+    console.log(`[Debug] Generated paths:`, paths);
+
+    return {
+      paths,
+      fallback: false, // Return 404 for non-existent paths
+    };
+  } catch (error) {
+    console.error('[Debug] Error in getStaticPaths:', error);
+    return {
+      paths: [],
+      fallback: false,
+    };
+  }
 }
 
 export async function getStaticProps({ params }) {
   try {
+    console.log(`[Debug] Loading blog post with slug: ${params.slug}`);
+
+    // First check if the post exists in the blog index
+    const postInIndex = blogIndex.find(post => post.slug === params.slug);
+    if (!postInIndex) {
+      console.log(`[Debug] Post not found in blog index: ${params.slug}`);
+      return { notFound: true };
+    }
+
     // Load the specific blog post JSON file
     const post = await import(`../../data/blog/${params.slug}.json`);
+    console.log(`[Debug] Successfully loaded post content for: ${params.slug}`);
+
     let coverImage = null;
 
     try {
@@ -203,7 +227,7 @@ export async function getStaticProps({ params }) {
       console.log(`[Debug] Trying primary query: "${primaryQuery}"`);
       
       let images = await searchPhotos(primaryQuery, {
-        per_page: 5, // Get more options to choose from
+        per_page: 5,
         orientation: 'landscape'
       });
       
@@ -222,14 +246,10 @@ export async function getStaticProps({ params }) {
       if (images && images.length > 0) {
         // Select the best image based on quality and relevance
         const bestImage = images.reduce((best, current) => {
-          // Prefer images with higher width/height ratio
           const currentRatio = current.width / current.height;
           const bestRatio = best.width / best.height;
-          
-          // Also consider the photographer's rating if available
           const currentScore = current.rating || 0;
           const bestScore = best.rating || 0;
-          
           return (currentRatio > bestRatio && currentScore >= bestScore) ? current : best;
         }, images[0]);
 
@@ -238,23 +258,16 @@ export async function getStaticProps({ params }) {
           src: bestImage.src.large2x || bestImage.src.large || bestImage.src.original
         };
         
-        console.log(`[Debug] Selected cover image:`, {
+        console.log(`[Debug] Selected cover image for ${params.slug}:`, {
           id: coverImage.id,
           photographer: coverImage.photographer,
-          url: coverImage.src,
-          width: coverImage.width,
-          height: coverImage.height
+          url: coverImage.src
         });
       } else {
-        console.log(`[Debug] No images found with any query`);
+        console.log(`[Debug] No images found for ${params.slug}`);
       }
     } catch (error) {
-      console.error('[Debug] Error fetching cover image:', {
-        error: error.message,
-        stack: error.stack,
-        query: post.default.defaultImageQuery,
-        category: post.default.category
-      });
+      console.error(`[Debug] Error fetching cover image for ${params.slug}:`, error);
     }
 
     return {
@@ -262,13 +275,10 @@ export async function getStaticProps({ params }) {
         post: post.default,
         coverImage,
       },
-      // Revalidate more frequently in development
       revalidate: process.env.NODE_ENV === 'development' ? 60 : 86400,
     };
   } catch (error) {
     console.error(`[Debug] Error loading blog post: ${params.slug}`, error);
-    return {
-      notFound: true,
-    };
+    return { notFound: true };
   }
 } 
