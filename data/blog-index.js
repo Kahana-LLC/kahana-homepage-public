@@ -5,8 +5,37 @@ import vrukshaHeadshot from "../public/assets/headshots/vruksha_joshi.jpg";
 import sonakshiHeadshot from "../public/assets/headshots/sonakshi_singh.jpg";
 import venkeshHeadshot from "../public/assets/headshots/venkesh_agarwal.jpg";
 import vedantHeadshot from "../public/assets/headshots/vedant_gupta.jpg";
+import shivangiHeadshot from "../public/assets/headshots/shivangi_chamoli.jpg";
+import saideepHeadshot from "../public/assets/headshots/saideep_pajjuri.jpg";
 
 const blogIndex = [
+  {
+    title:
+      "Windows 10 Enterprise Chrome Deployment: Overcoming Critical Installation and Management Hurdles in 2025",
+    date: "2025-04-23T00:00:00.000Z",
+    authors: [
+      {
+        name: "Shivangi Chamoli",
+        role: "Data Analyst",
+        bio: "Shivangi is a Data Analyst at Kahana, working at the intersection of data and marketing to drive user engagement, product adoption, and business growth. She analyzes user behavior and platform interaction data to uncover insights that shape marketing strategies, optimize onboarding and retention, and inform go-to-market initiatives. Collaborating with product, strategy, and marketing teams, she helps align data-driven decisions with customer needs and business outcomes.",
+        linkedinProfile: "https://www.linkedin.com/in/shivangichamoli/",
+        avatar: shivangiHeadshot,
+      },
+      {
+        name: "Adam Kershner",
+        role: "CTO",
+        bio: "Adam is the CTO of Kahana, where he leads the technical vision and development of enterprise browser solutions. With extensive experience in browser security and enterprise software, he is passionate about transforming how organizations approach secure browsing.",
+        linkedinProfile: "https://www.linkedin.com/in/adam-kershner/",
+        avatar: adamHeadshot,
+      },
+    ],
+    category: ["Enterprise", "Security"],
+    excerpt:
+      "A comprehensive analysis of challenges and solutions for downloading and managing Google Chrome in Windows 10 Enterprise environments, covering installation issues, enterprise deployment strategies, and security considerations for 2025.",
+    defaultImageQuery: "Google Chrome Enterprise deployment diagram",
+    slug: "google-chrome-enterprise-download-challenges-2025",
+    readingTime: 8,
+  },
   {
     title:
       "The Default Browser Dilemma: Technical Hurdles and Corporate Practices in 2025",
@@ -1060,6 +1089,94 @@ const blogIndex = [
     defaultImageQuery: "proxy browser security download configuration",
     slug: "proxy-browser-download-challenges-2025",
     readingTime: 9,
+  },
+  {
+    title: "Microsoft Edge Enterprise Download: A Comprehensive Guide for 2025",
+    date: "2025-04-23T00:00:00.000Z",
+    authors: [
+      {
+        name: "Shivangi Chamoli",
+        role: "Data Analyst",
+        bio: "Shivangi is a Data Analyst at Kahana, working at the intersection of data and marketing to drive user engagement, product adoption, and business growth. She analyzes user behavior and platform interaction data to uncover insights that shape marketing strategies, optimize onboarding and retention, and inform go-to-market initiatives. Collaborating with product, strategy, and marketing teams, she helps align data-driven decisions with customer needs and business outcomes.",
+        linkedinProfile: "https://www.linkedin.com/in/shivangichamoli/",
+        avatar: shivangiHeadshot,
+      },
+      {
+        name: "Adam Kershner",
+        role: "CTO",
+        bio: "Adam is the CTO of Kahana, where he leads the technical vision and development of enterprise browser solutions. With extensive experience in browser security and enterprise software, he is passionate about transforming how organizations approach secure browsing.",
+        linkedinProfile: "https://www.linkedin.com/in/adam-kershner/",
+        avatar: adamHeadshot,
+      },
+    ],
+    category: ["Enterprise", "Security"],
+    excerpt:
+      "A comprehensive analysis of challenges and solutions for downloading and managing Google Chrome in Windows 10 Enterprise environments, covering installation issues, enterprise deployment strategies, and security considerations for 2025.",
+    defaultImageQuery: "Google Chrome Enterprise deployment diagram",
+    slug: "google-chrome-enterprise-download-challenges-2025",
+    readingTime: 8,
+  },
+  {
+    title:
+      "Chrome Enterprise vs Firefox Enterprise vs Oasis Enterprise 2025: A Comprehensive Comparison",
+    date: "2025-04-23T00:00:00.000Z",
+    authors: [
+      {
+        name: "Vinit Juneja",
+        role: "Product Manager",
+        bio: "Vinit is a product manager at Kahana, where he researches more about AI tools and customer insights and uses strategic thinking to drive product adoption and user engagement. With experience in creating AI automated tools, working with big tech Companies like Samsung, he is passionate about the product and obsessed with how customers think!",
+        linkedinProfile: "https://www.linkedin.com/in/vinitjuneja",
+        avatar: "/assets/headshots/vinit_juneja.jpg",
+      },
+      {
+        name: "Adam Kershner",
+        role: "CTO",
+        bio: "Adam is the CTO of Kahana, where he leads the technical vision and development of enterprise browser solutions. With extensive experience in browser security and enterprise software, he is passionate about transforming how organizations approach secure browsing.",
+        linkedinProfile: "https://www.linkedin.com/in/adam-kershner/",
+        avatar: "/assets/headshots/adam_kershner.jpg",
+      },
+      {
+        name: "Saideep Pajjuri",
+        role: "Software Engineer",
+        bio: "Saideep is a software engineer at Kahana who thrives on solving complex problems and bringing innovative solutions to life across both hardware and software domains. Known for his passion for optimizing systems and driving ideas from concept to reality, he is always excited to take on new challenges and continuously learn and grow along the way.",
+        linkedinProfile: "https://www.linkedin.com/in/saideep-pajjuri/",
+        avatar: "/assets/headshots/saideep_pajjuri.jpg",
+      },
+    ],
+    category: ["Enterprise", "Browser"],
+    excerpt:
+      "As enterprise organizations evaluate their browser options for 2025, the choice between Chrome Enterprise, Firefox Enterprise, and Oasis Enterprise remains critical. This comprehensive comparison examines their security models, performance characteristics, and enterprise features, helping IT leaders make informed decisions about their browser strategy. From sandboxing approaches to extension ecosystems, we break down the key differences between these leading enterprise browsers.",
+    defaultImageQuery:
+      "Modern enterprise browser innovation, productivity and security",
+    slug: "chrome-vs-firefox-vs-oasis-enterprise-2025",
+    readingTime: 12,
+  },
+  {
+    title: "Recent Research and Challenges in Firefox Enterprise Adoption",
+    date: "2025-04-23T00:00:00.000Z",
+    authors: [
+      {
+        name: "Vinit Juneja",
+        role: "Product Manager",
+        bio: "Vinit is a product manager at Kahana, where he researches more about AI tools and customer insights and uses strategic thinking to drive product adoption and user engagement. With experience in creating AI automated tools, working with big tech Companies like Samsung, he is passionate about the product and obsessed with how customers think!",
+        linkedinProfile: "https://www.linkedin.com/in/vinitjuneja",
+        avatar: "/assets/headshots/vinit_juneja.jpg",
+      },
+      {
+        name: "Adam Kershner",
+        role: "CTO",
+        bio: "Adam is the CTO of Kahana, where he leads the technical vision and development of enterprise browser solutions. With extensive experience in browser security and enterprise software, he is passionate about transforming how organizations approach secure browsing.",
+        linkedinProfile: "https://www.linkedin.com/in/adam-kershner/",
+        avatar: "/assets/headshots/adam_kershner.jpg",
+      },
+    ],
+    category: ["Enterprise", "Browser"],
+    excerpt:
+      "A comprehensive analysis of Firefox's challenges in enterprise environments, examining market position, technical limitations, security concerns, and management complexities. Despite offering Extended Support Release (ESR) and Rapid Release versions, Firefox faces significant obstacles in enterprise adoption, from declining market share to complex deployment requirements.",
+    defaultImageQuery:
+      "Firefox Enterprise browser security and management challenges",
+    slug: "firefox-enterprise-challenges-2025",
+    readingTime: 12,
   },
 ];
 

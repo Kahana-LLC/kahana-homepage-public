@@ -23,8 +23,9 @@ const nextConfig = {
     // Add this to help with HMR
     if (dev && !isServer) {
       config.watchOptions = {
-        poll: 1000,
+        poll: false,
         aggregateTimeout: 300,
+        ignored: /node_modules/,
       };
     }
 
