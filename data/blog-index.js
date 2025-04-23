@@ -10,6 +10,32 @@ import saideepHeadshot from "../public/assets/headshots/saideep_pajjuri.jpg";
 
 const blogIndex = [
   {
+    title: "Microsoft Edge Enterprise Download: A Comprehensive Guide for 2025",
+    date: "2025-04-23T00:00:00.000Z",
+    authors: [
+      {
+        name: "Shivangi Chamoli",
+        role: "Data Analyst",
+        bio: "Shivangi is a Data Analyst at Kahana, working at the intersection of data and marketing to drive user engagement, product adoption, and business growth. She analyzes user behavior and platform interaction data to uncover insights that shape marketing strategies, optimize onboarding and retention, and inform go-to-market initiatives. Collaborating with product, strategy, and marketing teams, she helps align data-driven decisions with customer needs and business outcomes.",
+        linkedinProfile: "https://www.linkedin.com/in/shivangichamoli/",
+        avatar: shivangiHeadshot,
+      },
+      {
+        name: "Adam Kershner",
+        role: "CTO",
+        bio: "Adam is the CTO of Kahana, where he leads the technical vision and development of enterprise browser solutions. With extensive experience in browser security and enterprise software, he is passionate about transforming how organizations approach secure browsing.",
+        linkedinProfile: "https://www.linkedin.com/in/adam-kershner/",
+        avatar: adamHeadshot,
+      },
+    ],
+    category: ["Enterprise", "Deployment & Installation", "Guides & Tutorials"],
+    excerpt:
+      "A detailed guide on downloading and deploying Microsoft Edge for Business in 2025, covering new AI-powered features, advanced data protection for BYOD scenarios, and enterprise-specific security considerations.",
+    defaultImageQuery: "Microsoft Edge Enterprise deployment diagram",
+    slug: "microsoft-edge-enterprise-download-guide-2025",
+    readingTime: 8,
+  },
+  {
     title:
       "Windows 10 Enterprise Chrome Deployment: Overcoming Critical Installation and Management Hurdles in 2025",
     date: "2025-04-23T00:00:00.000Z",
@@ -29,7 +55,7 @@ const blogIndex = [
         avatar: adamHeadshot,
       },
     ],
-    category: ["Enterprise", "Security"],
+    category: ["Enterprise", "Deployment & Installation", "Guides & Tutorials"],
     excerpt:
       "A comprehensive analysis of challenges and solutions for downloading and managing Google Chrome in Windows 10 Enterprise environments, covering installation issues, enterprise deployment strategies, and security considerations for 2025.",
     defaultImageQuery: "Google Chrome Enterprise deployment diagram",
@@ -63,7 +89,7 @@ const blogIndex = [
         avatar: vrukshaHeadshot,
       },
     ],
-    category: "Browsers",
+    category: ["Browsers", "Research & Trends"],
     excerpt:
       "An in-depth analysis of the challenges users face when attempting to set and maintain their preferred default browser, examining technical barriers, corporate practices, and cross-platform inconsistencies in 2025.",
     defaultImageQuery: "browser default settings configuration screen",
@@ -96,7 +122,7 @@ const blogIndex = [
         avatar: venkeshHeadshot,
       },
     ],
-    category: "Browsers",
+    category: ["Browsers", "Performance", "Research & Trends"],
     excerpt:
       "A comprehensive analysis of the key challenges in online browser testing and emerging trends shaping the future of cross-browser compatibility testing in 2025.",
     defaultImageQuery: "online browser testing challenges 2025",
@@ -130,7 +156,7 @@ const blogIndex = [
         avatar: venkeshHeadshot,
       },
     ],
-    category: "Browser",
+    category: ["Enterprise", "Deployment & Installation", "Research & Trends"],
     excerpt:
       "A comprehensive analysis of Google Chrome Enterprise MSI deployment challenges, version management issues, and the evolving landscape of enterprise browser security in 2025.",
     defaultImageQuery: "google chrome enterprise msi installation 2025",
@@ -164,7 +190,7 @@ const blogIndex = [
         avatar: venkeshHeadshot,
       },
     ],
-    category: "Browser",
+    category: ["Enterprise", "Deployment & Installation", "Security"],
     excerpt:
       "A comprehensive analysis of Google Chrome Enterprise installer challenges, security vulnerabilities, and deployment strategies in 2025, providing insights for IT professionals and organizations.",
     defaultImageQuery: "google chrome enterprise installer challenges 2025",
@@ -198,7 +224,7 @@ const blogIndex = [
         avatar: venkeshHeadshot,
       },
     ],
-    category: "Browser",
+    category: ["Security", "Research & Trends"],
     excerpt:
       "A comprehensive analysis of the current state of browser extension security, exploring the critical challenges, emerging threats, and best practices for organizations and individual users in 2025.",
     defaultImageQuery: "browser extension security challenges 2025",
@@ -231,7 +257,7 @@ const blogIndex = [
         avatar: venkeshHeadshot,
       },
     ],
-    category: "Browsers",
+    category: ["Browsers", "Performance", "Research & Trends"],
     excerpt:
       "A comprehensive analysis of the mounting challenges between Google Chrome and Windows 11 in 2025, from critical security vulnerabilities to performance issues and installation failures. This post examines the root causes, business implications, and potential solutions for enterprises navigating this increasingly complex relationship.",
     defaultImageQuery: "chrome windows 11 compatibility issues 2025",
@@ -265,7 +291,7 @@ const blogIndex = [
         avatar: venkeshHeadshot,
       },
     ],
-    category: "Browser",
+    category: ["Security", "Research & Trends"],
     excerpt:
       "An in-depth analysis of antivirus Chrome extensions, exploring their role in user security, persistent challenges, and the evolving landscape of browser extension security in 2025.",
     defaultImageQuery: "antivirus chrome extension security 2025",
@@ -299,7 +325,7 @@ const blogIndex = [
         avatar: vrukshaHeadshot,
       },
     ],
-    category: "Security",
+    category: ["Security", "Research & Trends"],
     excerpt:
       "A comprehensive analysis of antivirus browser extensions in 2025, examining critical security vulnerabilities, performance impacts, and emerging challenges in an increasingly complex threat landscape.",
     defaultImageQuery: "antivirus browser extension security shield",
@@ -325,7 +351,7 @@ const blogIndex = [
         avatar: adamHeadshot,
       },
     ],
-    category: "Browser",
+    category: ["Enterprise", "Security", "Guides & Tutorials"],
     excerpt:
       "As organizations embrace BYOD and hybrid work, the enterprise browser is emerging as a critical tool for secure access and productivity. This post explores how enterprise browsers bridge security gaps, enable zero trust, and empower IT teams to manage risk in a cloud-first world.",
     defaultImageQuery: "enterprise browser security BYOD hybrid work",
@@ -351,7 +377,7 @@ const blogIndex = [
         avatar: adamHeadshot,
       },
     ],
-    category: "Browser",
+    category: ["Enterprise", "Guides & Tutorials"],
     excerpt:
       "Enterprise browsers are transforming workplace security and productivity by offering advanced controls, seamless integrations, and robust data protection. Discover why these purpose-built browsers are essential for organizations navigating the evolving challenges of 2025.",
     defaultImageQuery:
@@ -385,7 +411,7 @@ const blogIndex = [
         avatar: venkeshHeadshot,
       },
     ],
-    category: "Browsers",
+    category: ["Browsers", "Research & Trends"],
     excerpt:
       "A comprehensive overview of Opera Browser in 2025, examining its innovative features alongside persistent challenges in privacy, security, and platform compatibility.",
     defaultImageQuery: "Opera browser AI interface 2025",
@@ -419,7 +445,7 @@ const blogIndex = [
         avatar: venkeshHeadshot,
       },
     ],
-    category: "Browsers",
+    category: ["Browsers", "Performance", "Research & Trends"],
     excerpt:
       "A detailed examination of Opera Browser's implementation on Chromebooks, breaking down its key strengths and notable weaknesses in performance, security, and integration.",
     defaultImageQuery: "Opera browser on Chromebook 2025",
@@ -445,7 +471,7 @@ const blogIndex = [
         avatar: adamHeadshot,
       },
     ],
-    category: "Browsers",
+    category: ["Browsers", "Performance", "Research & Trends"],
     excerpt:
       "A comprehensive analysis of the fastest web browsers in 2024-2025, examining performance metrics, platform-specific optimizations, and emerging trends based on recent research from leading technology publications.",
     defaultImageQuery: "fast web browser performance speed comparison",
@@ -471,7 +497,7 @@ const blogIndex = [
         avatar: adamHeadshot,
       },
     ],
-    category: "Browsers",
+    category: ["Browsers", "Security", "Research & Trends"],
     excerpt:
       "A critical analysis of free virtual browser solutions in 2025, examining their limitations in security, performance, and enterprise readiness, with insights from recent research and industry experts.",
     defaultImageQuery: "virtual browser security challenges 2025",
@@ -497,7 +523,7 @@ const blogIndex = [
         avatar: adamHeadshot,
       },
     ],
-    category: "Browsers",
+    category: ["Browsers", "Security", "Research & Trends"],
     excerpt:
       "A comprehensive analysis of the latest research and trends in secure web browsers for 2025, including security benchmarks, adoption metrics, and emerging threats in the browser security landscape.",
     defaultImageQuery: "secure web browsers 2025 security trends",
@@ -523,7 +549,7 @@ const blogIndex = [
         avatar: adamHeadshot,
       },
     ],
-    category: "Browsers",
+    category: ["Enterprise", "Browsers", "Comparisons"],
     excerpt:
       "A detailed comparison of the best enterprise browsers in 2025, including Chrome Enterprise, Island, and Microsoft Edge for Business, with insights into their security features, performance metrics, and enterprise adoption rates.",
     defaultImageQuery: "best enterprise browsers comparison 2025",
@@ -549,7 +575,7 @@ const blogIndex = [
         avatar: adamHeadshot,
       },
     ],
-    category: "Browsers",
+    category: ["Enterprise", "Security", "Research & Trends"],
     excerpt:
       "A comprehensive analysis of enterprise browsers in 2025, exploring their role in modern security architectures, key features, and market trends based on recent research from industry leaders.",
     defaultImageQuery: "enterprise browser security architecture 2025",
@@ -576,7 +602,7 @@ const blogIndex = [
         avatar: adamHeadshot,
       },
     ],
-    category: "Browsers",
+    category: ["Browsers", "Research & Trends"],
     excerpt:
       "A comprehensive analysis of recent research on free web browser trends, including market share statistics, comparative analyses, and specialized applications for research and enterprise use.",
     defaultImageQuery: "web browser market share statistics trends 2025",
@@ -602,7 +628,7 @@ const blogIndex = [
         avatar: adamHeadshot,
       },
     ],
-    category: "Browsers",
+    category: ["Enterprise", "Security", "Guides & Tutorials"],
     excerpt:
       "Google Chrome's popularity masks significant privacy, security, and compliance risks for businesses. This post explores why Chrome is ill-suited for the workplace, highlighting data collection practices, extension vulnerabilities, and the challenges of managing Chrome in enterprise environments.",
     defaultImageQuery: "corporate cybersecurity browser privacy risk",
@@ -629,7 +655,7 @@ const blogIndex = [
         avatar: adamHeadshot,
       },
     ],
-    category: "Security",
+    category: ["Enterprise", "Security", "Research & Trends"],
     excerpt:
       "Explore how Google Chrome Enterprise is transforming enterprise security and productivity in 2025, with new AI-powered protections, work-personal profile separation, and strategic partnerships driving adoption across organizations.",
     defaultImageQuery: "Google Chrome Enterprise security dashboard interface",
@@ -656,7 +682,7 @@ const blogIndex = [
         avatar: adamHeadshot,
       },
     ],
-    category: "Security",
+    category: ["Privacy", "Security", "Guides & Tutorials"],
     excerpt:
       "Recent research reveals significant gaps between private browsing expectations and reality. Learn what enterprise users need to know about browser privacy and how to implement effective security measures.",
     defaultImageQuery: "private browsing security technology",
@@ -690,7 +716,7 @@ const blogIndex = [
         avatar: vrukshaHeadshot,
       },
     ],
-    category: "Security",
+    category: ["Enterprise", "Security", "Research & Trends"],
     excerpt:
       "Palo Alto Networks' strategic acquisition of Talon for $458.6M marks a watershed moment in enterprise browser security. We analyze the implications for the industry and what it means for the future of secure browsing.",
     defaultImageQuery: "cyber security enterprise browser technology",
@@ -723,7 +749,7 @@ const blogIndex = [
         avatar: vrukshaHeadshot,
       },
     ],
-    category: "Security",
+    category: ["Enterprise", "Security", "Comparisons"],
     excerpt:
       "As the enterprise browser market heats up with Island's $4.8B valuation, we compare the key features, benefits, and use cases of Kahana's Oasis and Island Enterprise Browser to help organizations make an informed choice.",
     defaultImageQuery: "enterprise browser comparison technology",
@@ -762,7 +788,7 @@ const blogIndex = [
         avatar: vrukshaHeadshot,
       },
     ],
-    category: "Security",
+    category: ["Enterprise", "Security", "Research & Trends"],
     excerpt:
       "Island's recent $250M Series E funding marks a pivotal moment in enterprise browser evolution. With a $4.8B valuation, Island is reshaping how organizations approach web security, moving beyond traditional SASE platforms to deliver intelligent, context-aware browsing security.",
     defaultImageQuery: "enterprise browser security technology",
@@ -801,7 +827,7 @@ const blogIndex = [
         avatar: vrukshaHeadshot,
       },
     ],
-    category: "Enterprise",
+    category: ["Enterprise", "Security", "Research & Trends"],
     excerpt:
       "Enterprise browsers are rapidly transforming how businesses approach web security, with adoption predicted to reach 25% by 2026. As organizations face increasing browser-based threats and remote work challenges, these specialized browsers offer built-in protection, centralized control, and seamless integration with existing security infrastructure.",
     defaultImageQuery:
@@ -835,7 +861,7 @@ const blogIndex = [
         avatar: vrukshaHeadshot,
       },
     ],
-    category: "Security",
+    category: ["Security", "Privacy", "Guides & Tutorials"],
     excerpt:
       "Explore the latest causes of enterprise data leaks, advanced detection techniques, and cutting-edge prevention strategies for 2025.",
     defaultImageQuery: "data leak prevention shield",
@@ -869,7 +895,7 @@ const blogIndex = [
         avatar: vrukshaHeadshot,
       },
     ],
-    category: "Security",
+    category: ["Security", "Privacy", "Research & Trends"],
     excerpt:
       "Explore the evolving landscape of data vulnerabilities in 2025, with insights on AI-driven threats, supply chain risks, and enterprise-grade mitigation strategies.",
     defaultImageQuery: "data vulnerability protection shield",
@@ -895,7 +921,7 @@ const blogIndex = [
         avatar: jordanHeadshot,
       },
     ],
-    category: "Browsers",
+    category: ["Browsers", "Security", "Comparisons"],
     excerpt:
       "As cyber threats evolve, choosing the right web browser has become a critical security decision. This comprehensive analysis examines the most secure browsers of 2025, backed by recent research and expert evaluations.",
     defaultImageQuery: "secure web browser cybersecurity privacy protection",
@@ -921,7 +947,7 @@ const blogIndex = [
         avatar: adamHeadshot,
       },
     ],
-    category: "Browsers",
+    category: ["Browsers", "Privacy", "Research & Trends"],
     excerpt:
       "A comprehensive analysis of free adblocker browsers in 2025, examining their features, performance metrics, and emerging trends based on recent research from leading technology publications and security experts.",
     defaultImageQuery: "adblocker browser technology privacy protection",
@@ -948,7 +974,7 @@ const blogIndex = [
         avatar: adamHeadshot,
       },
     ],
-    category: "Browser",
+    category: ["Browsers", "Performance", "Research & Trends"],
     excerpt:
       "A critical analysis of virtual machine browser challenges and limitations in 2025, examining performance issues, security vulnerabilities, and implementation complexities that organizations face when relying on VM-based browsing solutions.",
     defaultImageQuery: "virtual machine browser security challenges 2025",
@@ -982,7 +1008,7 @@ const blogIndex = [
         avatar: adamHeadshot,
       },
     ],
-    category: ["Security"],
+    category: ["Enterprise", "Security", "Comparisons"],
     excerpt:
       "As browser-based attacks surge to 600 million daily incidents, enterprises face critical security decisions. This first installment of our series examines how enterprise browsers combat modern threats through embedded security controls and zero-trust architecture.",
     defaultImageQuery: "Enterprise browser security architecture",
@@ -1016,7 +1042,7 @@ const blogIndex = [
         avatar: adamHeadshot,
       },
     ],
-    category: ["Security"],
+    category: ["Enterprise", "Performance", "Comparisons"],
     excerpt:
       "Beyond security, enterprise browsers are transforming workplace productivity and IT management. This second installment explores how these browsers streamline workflows, enable centralized control, and support hybrid workforces—delivering measurable business value.",
     defaultImageQuery: "Enterprise browser productivity and management",
@@ -1049,7 +1075,7 @@ const blogIndex = [
         avatar: vrukshaHeadshot,
       },
     ],
-    category: "Browsers",
+    category: ["Browsers", "Security", "Research & Trends"],
     excerpt:
       "A comprehensive analysis of Logii Browser's implementation challenges in 2025, examining stability issues, platform compatibility problems, and the evolving landscape of anti-detect browser technology.",
     defaultImageQuery: "logii browser anti-detect fingerprinting 2025",
@@ -1083,38 +1109,12 @@ const blogIndex = [
         avatar: "/assets/headshots/vruksha_joshi.jpg",
       },
     ],
-    category: "Security",
+    category: ["Security", "Deployment & Installation", "Research & Trends"],
     excerpt:
       "A comprehensive analysis of the technical challenges and security risks in proxy browser adoption, from download failures to configuration complexities. This post examines the growing gap between market growth and user experience in 2025.",
     defaultImageQuery: "proxy browser security download configuration",
     slug: "proxy-browser-download-challenges-2025",
     readingTime: 9,
-  },
-  {
-    title: "Microsoft Edge Enterprise Download: A Comprehensive Guide for 2025",
-    date: "2025-04-23T00:00:00.000Z",
-    authors: [
-      {
-        name: "Shivangi Chamoli",
-        role: "Data Analyst",
-        bio: "Shivangi is a Data Analyst at Kahana, working at the intersection of data and marketing to drive user engagement, product adoption, and business growth. She analyzes user behavior and platform interaction data to uncover insights that shape marketing strategies, optimize onboarding and retention, and inform go-to-market initiatives. Collaborating with product, strategy, and marketing teams, she helps align data-driven decisions with customer needs and business outcomes.",
-        linkedinProfile: "https://www.linkedin.com/in/shivangichamoli/",
-        avatar: shivangiHeadshot,
-      },
-      {
-        name: "Adam Kershner",
-        role: "CTO",
-        bio: "Adam is the CTO of Kahana, where he leads the technical vision and development of enterprise browser solutions. With extensive experience in browser security and enterprise software, he is passionate about transforming how organizations approach secure browsing.",
-        linkedinProfile: "https://www.linkedin.com/in/adam-kershner/",
-        avatar: adamHeadshot,
-      },
-    ],
-    category: ["Enterprise", "Security"],
-    excerpt:
-      "A comprehensive analysis of challenges and solutions for downloading and managing Google Chrome in Windows 10 Enterprise environments, covering installation issues, enterprise deployment strategies, and security considerations for 2025.",
-    defaultImageQuery: "Google Chrome Enterprise deployment diagram",
-    slug: "google-chrome-enterprise-download-challenges-2025",
-    readingTime: 8,
   },
   {
     title:
@@ -1143,7 +1143,7 @@ const blogIndex = [
         avatar: "/assets/headshots/saideep_pajjuri.jpg",
       },
     ],
-    category: ["Enterprise", "Browser"],
+    category: ["Enterprise", "Browsers", "Comparisons"],
     excerpt:
       "As enterprise organizations evaluate their browser options for 2025, the choice between Chrome Enterprise, Firefox Enterprise, and Oasis Enterprise remains critical. This comprehensive comparison examines their security models, performance characteristics, and enterprise features, helping IT leaders make informed decisions about their browser strategy. From sandboxing approaches to extension ecosystems, we break down the key differences between these leading enterprise browsers.",
     defaultImageQuery:
@@ -1170,7 +1170,7 @@ const blogIndex = [
         avatar: "/assets/headshots/adam_kershner.jpg",
       },
     ],
-    category: ["Enterprise", "Browser"],
+    category: ["Enterprise", "Browsers", "Research & Trends"],
     excerpt:
       "A comprehensive analysis of Firefox's challenges in enterprise environments, examining market position, technical limitations, security concerns, and management complexities. Despite offering Extended Support Release (ESR) and Rapid Release versions, Firefox faces significant obstacles in enterprise adoption, from declining market share to complex deployment requirements.",
     defaultImageQuery:
