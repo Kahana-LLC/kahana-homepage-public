@@ -10,6 +10,32 @@ import saideepHeadshot from "../public/assets/headshots/saideep_pajjuri.jpg";
 
 const blogIndex = [
   {
+    title: "Chrome Enterprise for Mac: Challenges and Developments in 2025",
+    date: "2025-04-23T00:00:00.000Z",
+    authors: [
+      {
+        name: "Shivangi Chamoli",
+        role: "Data Analyst",
+        bio: "Shivangi is a Data Analyst at Kahana, working at the intersection of data and marketing to drive user engagement, product adoption, and business growth. She analyzes user behavior and platform interaction data to uncover insights that shape marketing strategies, optimize onboarding and retention, and inform go-to-market initiatives. Collaborating with product, strategy, and marketing teams, she helps align data-driven decisions with customer needs and business outcomes.",
+        linkedinProfile: "https://www.linkedin.com/in/shivangichamoli/",
+        avatar: shivangiHeadshot,
+      },
+      {
+        name: "Adam Kershner",
+        role: "CTO",
+        bio: "Adam is the CTO of Kahana, where he leads the technical vision and development of enterprise browser solutions. With extensive experience in browser security and enterprise software, he is passionate about transforming how organizations approach secure browsing.",
+        linkedinProfile: "https://www.linkedin.com/in/adam-kershner/",
+        avatar: adamHeadshot,
+      },
+    ],
+    category: ["Enterprise", "Security"],
+    excerpt:
+      "A comprehensive analysis of Chrome Enterprise deployment challenges and developments on macOS in 2025, covering installation issues, stability concerns, security features, and platform compatibility considerations.",
+    defaultImageQuery: "Chrome Enterprise Mac deployment diagram",
+    slug: "chrome-enterprise-mac-challenges-2025",
+    readingTime: 8,
+  },
+  {
     title: "Microsoft Edge Enterprise Download: A Comprehensive Guide for 2025",
     date: "2025-04-23T00:00:00.000Z",
     authors: [
