@@ -265,96 +265,95 @@ const Blog = ({
         <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           {/* Featured Post */}
           <section className="mb-20">
-            <div className="relative flex flex-col md:flex-row rounded-2xl overflow-hidden bg-white border border-gray-100 shadow-lg hover:shadow-xl transition-all duration-200">
-              <div className="relative w-full md:w-1/2 h-[400px]">
-                <Image
-                  src={featuredPost?.image || DEFAULT_PLACEHOLDER}
-                  alt={featuredPost?.title || 'Featured Post'}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover"
-                  priority
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent md:hidden" />
-              </div>
-              <div className="w-full md:w-1/2 p-8 md:p-10 flex flex-col">
-                <div className="flex flex-wrap items-center gap-2 mb-6">
-                  <span className="inline-flex items-center px-3 py-1.5 text-sm font-medium bg-kahana-accent-sunset/10 text-kahana-accent-sunset rounded-lg border border-kahana-accent-sunset/20">
-                    Featured
-                  </span>
-                  {featuredPost?.category && (
-                    Array.isArray(featuredPost.category) ? 
-                      featuredPost.category.map((cat) => (
-                        <span
-                          key={cat}
-                          className="inline-flex items-center px-3 py-1.5 text-sm font-medium bg-kahana-accent-water/10 text-kahana-accent-water rounded-lg border border-kahana-accent-water/20"
-                        >
-                          {cat}
-                        </span>
-                      ))
-                    : typeof featuredPost.category === 'string' ? 
-                      featuredPost.category.split(/(?=[A-Z&])/g).filter(Boolean).map((cat, index, array) => (
-                        <span
-                          key={index}
-                          className="inline-flex items-center px-3 py-1.5 text-sm font-medium bg-kahana-accent-water/10 text-kahana-accent-water rounded-lg border border-kahana-accent-water/20"
-                        >
-                          {cat.trim().replace(/^&\s*/, '')}
-                        </span>
-                      ))
-                    : null
-                  )}
-                </div>
-                <h1 className="text-2xl md:text-3xl font-bold text-kahana-primary mb-4 line-clamp-3">
-                  {featuredPost?.title || 'Featured Post'}
-                </h1>
-                <p className="text-kahana-primary-light text-base md:text-lg mb-6 line-clamp-3">
-                  {truncateExcerpt(featuredPost?.excerpt, 180) || 'No excerpt available'}
-                </p>
-                <div className="flex items-center mb-6 mt-auto">
-                  <div className="flex items-center">
-                    <div className="flex -space-x-3 mr-4">
-                      {featuredPost?.authors?.map((author, index) => (
-                        <div key={author.name} className="relative w-10 h-10 rounded-lg border-2 border-white shadow-sm">
-                          <Image
-                            src={author.avatar || DEFAULT_AVATAR}
-                            alt={author.name}
-                            width={40}
-                            height={40}
-                            className="rounded-lg"
-                            style={{ width: '40px', height: '40px', objectFit: 'cover' }}
-                            priority
-                          />
-                        </div>
-                      ))}
+            {featuredPost?.slug && (
+              <Link href={`/blog/${featuredPost.slug}`} className="block group">
+                <div className="relative flex flex-col md:flex-row rounded-2xl overflow-hidden bg-white border border-gray-100 shadow-lg hover:shadow-xl transition-all duration-200">
+                  <div className="relative w-full md:w-1/2 h-[400px]">
+                    <Image
+                      src={featuredPost?.image || DEFAULT_PLACEHOLDER}
+                      alt={featuredPost?.title || 'Featured Post'}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="object-cover"
+                      priority
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent md:hidden" />
+                  </div>
+                  <div className="w-full md:w-1/2 p-8 md:p-10 flex flex-col">
+                    <div className="flex flex-wrap items-center gap-2 mb-6">
+                      <span className="inline-flex items-center px-3 py-1.5 text-sm font-medium bg-kahana-accent-sunset/10 text-kahana-accent-sunset rounded-lg border border-kahana-accent-sunset/20">
+                        Featured
+                      </span>
+                      {featuredPost?.category && (
+                        Array.isArray(featuredPost.category) ? 
+                          featuredPost.category.map((cat) => (
+                            <span
+                              key={cat}
+                              className="inline-flex items-center px-3 py-1.5 text-sm font-medium bg-kahana-accent-water/10 text-kahana-accent-water rounded-lg border border-kahana-accent-water/20"
+                            >
+                              {cat}
+                            </span>
+                          ))
+                        : typeof featuredPost.category === 'string' ? 
+                          featuredPost.category.split(/(?=[A-Z&])/g).filter(Boolean).map((cat, index, array) => (
+                            <span
+                              key={index}
+                              className="inline-flex items-center px-3 py-1.5 text-sm font-medium bg-kahana-accent-water/10 text-kahana-accent-water rounded-lg border border-kahana-accent-water/20"
+                            >
+                              {cat.trim().replace(/^&\s*/, '')}
+                            </span>
+                          ))
+                        : null
+                      )}
                     </div>
-                    <div>
-                      <p className="text-sm font-medium text-gray-900">
-                        {featuredPost?.authors?.map(author => author.name).join(', ')}
-                      </p>
-                      <div className="flex items-center gap-3 mt-1">
-                        <time className="text-sm text-gray-500" dateTime={featuredPost?.date}>
-                          {featuredPost?.date ? formatDate(featuredPost.date) : 'Date not available'}
-                        </time>
-                        <span className="text-sm text-gray-500">
-                          {featuredPost?.readingTime}m read
-                        </span>
+                    <h1 className="text-2xl md:text-3xl font-bold text-kahana-primary mb-4 line-clamp-3 group-hover:text-kahana-accent-water transition-colors duration-200">
+                      {featuredPost?.title || 'Featured Post'}
+                    </h1>
+                    <p className="text-kahana-primary-light text-base md:text-lg mb-6 line-clamp-3">
+                      {truncateExcerpt(featuredPost?.excerpt, 180) || 'No excerpt available'}
+                    </p>
+                    <div className="flex items-center mb-6 mt-auto">
+                      <div className="flex items-center">
+                        <div className="flex -space-x-3 mr-4">
+                          {featuredPost?.authors?.map((author, index) => (
+                            <div key={author.name} className="relative w-10 h-10 rounded-lg border-2 border-white shadow-sm">
+                              <Image
+                                src={author.avatar || DEFAULT_AVATAR}
+                                alt={author.name}
+                                width={40}
+                                height={40}
+                                className="rounded-lg"
+                                style={{ width: '40px', height: '40px', objectFit: 'cover' }}
+                                priority
+                              />
+                            </div>
+                          ))}
+                        </div>
+                        <div>
+                          <p className="text-sm font-medium text-gray-900">
+                            {featuredPost?.authors?.map(author => author.name).join(', ')}
+                          </p>
+                          <div className="flex items-center gap-3 mt-1">
+                            <time className="text-sm text-gray-500" dateTime={featuredPost?.date}>
+                              {featuredPost?.date ? formatDate(featuredPost.date) : 'Date not available'}
+                            </time>
+                            <span className="text-sm text-gray-500">
+                              {featuredPost?.readingTime}m read
+                            </span>
+                          </div>
+                        </div>
                       </div>
+                    </div>
+                    <div className="inline-flex items-center text-kahana-accent-water group-hover:translate-x-1 transition-transform duration-200">
+                      Read Article
+                      <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                      </svg>
                     </div>
                   </div>
                 </div>
-                {featuredPost?.slug && (
-                  <Link 
-                    href={`/blog/${featuredPost.slug}`}
-                    className="inline-flex items-center justify-center px-6 py-3 bg-kahana-accent-water text-white rounded-lg hover:bg-kahana-accent-water/90 transition-colors duration-200 text-sm font-medium group"
-                  >
-                    Read Article
-                    <svg className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                    </svg>
-                  </Link>
-                )}
-              </div>
-            </div>
+              </Link>
+            )}
           </section>
 
           {/* Search and Categories Section */}
