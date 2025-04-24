@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+const { getAuthorDetails } = require('../utils/authorUtils');
 
 // Format date helper
 function formatDate(dateString) {
@@ -23,6 +24,8 @@ export default function BlogListing({ post }) {
     return null;
   }
 
+  const postAuthors = getAuthorDetails(post.authors);
+
   return (
     <article className="flex flex-col space-y-4">
       <div className="flex items-center space-x-4">
@@ -42,12 +45,23 @@ export default function BlogListing({ post }) {
       </Link>
       <p className="text-gray-600">{post.excerpt}</p>
       {isClient && (
-        <div className="flex items-center space-x-2">
-          {post.authors?.map((author) => (
-            <span key={author.name} className="text-sm text-gray-500">
-              {author.name}
-            </span>
-          ))}
+        <div className="flex items-center space-x-4">
+          <div className="flex -space-x-2">
+            {postAuthors.map((author) => (
+              <div key={author.name} className="relative">
+                <Image
+                  src={author.avatar}
+                  alt={author.name}
+                  width={32}
+                  height={32}
+                  className="rounded-full border-2 border-white"
+                />
+              </div>
+            ))}
+          </div>
+          <div className="text-sm text-gray-600">
+            {postAuthors.map(author => author.name).join(', ')}
+          </div>
         </div>
       )}
     </article>

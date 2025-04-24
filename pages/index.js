@@ -252,7 +252,7 @@ export default function Home({ blogPosts }) {
           <FadeInSection delay={600}>
             <section
               id="blog"
-              className="min-h-screen flex items-center justify-center p-4 md:p-8 bg-gray-50"
+              className="flex items-center justify-center p-4 md:p-8 bg-gray-50"
             >
               <FeaturedBlogSection posts={blogPosts} />
             </section>

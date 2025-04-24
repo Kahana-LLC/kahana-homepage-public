@@ -4,20 +4,17 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { searchPhotos } from '../../utils/pexels';
 import { suggestNatureImageQuery } from '../../utils/blog-helpers';
-import blogIndex from '../../data/blog-index';
+import { blogIndex } from '../../data/blog-index';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import AuthorCard from '../../components/AuthorCard';
 import { FaLinkedin, FaRegCalendarAlt, FaBookOpen, FaRegClock } from 'react-icons/fa';
 import SocialShare from '../../components/SocialShare';
-import { authors } from '../../config/authors';
+const { getAuthorDetails } = require('../../utils/authorUtils');
 
 // Add default avatar and placeholder image
 const DEFAULT_AVATAR = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%233C584A"%3E%3Cpath d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"%2F%3E%3C%2Fsvg%3E';
 
 const DEFAULT_COVER = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%233C584A"%3E%3Cpath d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-1.96-2.36L6.5 17h11l-3.54-4.71z"%2F%3E%3C%2Fsvg%3E';
-
-// Define post authors outside the component
-const POST_AUTHORS = [authors['Adam Kershner'], authors['Jordan Kern'], authors['Vruksha Joshi']];
 
 export default function BlogPost({ post, coverImage }) {
   const [isClient, setIsClient] = useState(false);
@@ -26,20 +23,13 @@ export default function BlogPost({ post, coverImage }) {
     setIsClient(true);
   }, []);
 
-  // Get the authors for this post
-  const postAuthors = post?.authors?.map(author => ({
-    ...authors[author.name],
-    name: author.name,
-    role: author.role,
-    bio: author.bio,
-    linkedinProfile: author.linkedinProfile
-  })) || (post?.author ? [{
-    ...authors[post.author.name],
-    name: post.author.name,
-    role: post.author.role,
-    bio: post.author.bio,
-    linkedinProfile: post.author.linkedinProfile
-  }] : []);
+  // Get the authors for this post using getAuthorDetails
+  const postAuthors = post?.authors ? getAuthorDetails(post.authors) : [];
+  const hasAuthors = postAuthors && postAuthors.length > 0;
+
+  // Format category for display
+  const categoryDisplay = Array.isArray(post?.category) ? post.category[0] : post?.category || '';
+  const allCategories = Array.isArray(post?.category) ? post.category : [post?.category].filter(Boolean);
 
   if (!post) {
     return (
@@ -60,8 +50,8 @@ export default function BlogPost({ post, coverImage }) {
         <meta property="og:description" content={post.excerpt} />
         <meta property="og:type" content="article" />
         <meta property="article:published_time" content={post.date} />
-        <meta property="article:author" content={postAuthors.map(a => a.name).join(', ')} />
-        <meta property="article:section" content={post.category} />
+        <meta property="article:author" content={hasAuthors ? postAuthors.map(a => a.name).join(', ') : ''} />
+        <meta property="article:section" content={allCategories.join(', ')} />
       </Head>
 
       <main className="max-w-4xl mx-auto px-4 py-8">
@@ -83,7 +73,7 @@ export default function BlogPost({ post, coverImage }) {
 
             {/* Article metadata */}
             <div className="flex flex-wrap items-center gap-3 mb-8">
-              {isClient && <AuthorCard authors={postAuthors} variant="header" />}
+              {isClient && hasAuthors && <AuthorCard authors={postAuthors} variant="header" />}
               <time 
                 dateTime={post.date}
                 className="inline-flex items-center px-3 py-1.5 rounded-full bg-gray-100 text-gray-700 text-sm"
@@ -94,7 +84,7 @@ export default function BlogPost({ post, coverImage }) {
               </time>
               <div className="inline-flex items-center px-3 py-1.5 rounded-full bg-gray-100 text-gray-700 text-sm">
                 <FaBookOpen className="w-4 h-4 mr-2 text-gray-500" />
-                <span className="text-gray-500">{post.category}</span>
+                <span className="text-gray-500">{categoryDisplay}</span>
               </div>
               <div className="inline-flex items-center px-3 py-1.5 rounded-full bg-gray-100 text-gray-700 text-sm">
                 <FaRegClock className="w-4 h-4 mr-2 text-gray-500" />
@@ -136,7 +126,41 @@ export default function BlogPost({ post, coverImage }) {
           </header>
 
           <div className="prose prose-lg max-w-none">
-            <div dangerouslySetInnerHTML={{ __html: post.content }} />
+            {post.content ? (
+              Array.isArray(post.content) ? (
+                post.content.map((block, index) => {
+                  if (!block || !block.type) return null;
+                  
+                  switch (block.type) {
+                    case 'heading':
+                      return block.text ? (
+                        <h2 key={index} className="text-2xl font-bold mt-8 mb-4">{block.text}</h2>
+                      ) : null;
+                    case 'paragraph':
+                      return block.text ? (
+                        <p key={index} className="mb-4" dangerouslySetInnerHTML={{ __html: block.text }} />
+                      ) : null;
+                    case 'list':
+                      return block.items && Array.isArray(block.items) ? (
+                        <ul key={index} className="list-disc pl-6 mb-4">
+                          {block.items.map((item, itemIndex) => (
+                            <li key={itemIndex} className="mb-2">{item}</li>
+                          ))}
+                        </ul>
+                      ) : null;
+                    default:
+                      console.log('Unknown block type:', block.type);
+                      return null;
+                  }
+                })
+              ) : (
+                <div className="prose prose-lg max-w-none" dangerouslySetInnerHTML={{ __html: post.content }} />
+              )
+            ) : (
+              <div className="text-gray-600">
+                <p>No content available for this post.</p>
+              </div>
+            )}
           </div>
           
           {isClient && (
@@ -164,15 +188,17 @@ export default function BlogPost({ post, coverImage }) {
           </div>
 
           {/* Author Bio Section */}
-          <div className="mt-12">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">About the Authors</h2>
-            {isClient && (
-              <AuthorCard 
-                authors={postAuthors}
-                variant="bio" 
-              />
-            )}
-          </div>
+          {hasAuthors && (
+            <div className="mt-12">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">About the Authors</h2>
+              {isClient && (
+                <AuthorCard 
+                  authors={postAuthors}
+                  variant="bio" 
+                />
+              )}
+            </div>
+          )}
         </article>
       </main>
     </>
@@ -215,15 +241,15 @@ export async function getStaticProps({ params }) {
       return { notFound: true };
     }
 
-    // Load the specific blog post JSON file
-    const post = await import(`../../data/blog/${params.slug}.json`);
-    console.log(`[Debug] Successfully loaded post content for: ${params.slug}`);
+    // Load the specific blog post JSON file using require
+    const postContent = require(`../../data/blog/${params.slug}.json`);
+    console.log(`[Debug] Raw post content:`, JSON.stringify(postContent, null, 2));
 
     let coverImage = null;
 
     try {
       // First try with the default query
-      const primaryQuery = post.default.defaultImageQuery || suggestNatureImageQuery(post.default.category);
+      const primaryQuery = postContent.defaultImageQuery || suggestNatureImageQuery(postContent.category);
       console.log(`[Debug] Trying primary query: "${primaryQuery}"`);
       
       let images = await searchPhotos(primaryQuery, {
@@ -233,8 +259,8 @@ export async function getStaticProps({ params }) {
       
       // If no results, try with a fallback query based on post content
       if (!images || images.length === 0) {
-        const fallbackQuery = post.default.category 
-          ? `${post.default.category} technology` 
+        const fallbackQuery = postContent.category 
+          ? `${postContent.category} technology` 
           : "cyber security technology";
         console.log(`[Debug] No results with primary query, trying fallback: "${fallbackQuery}"`);
         images = await searchPhotos(fallbackQuery, {
@@ -257,28 +283,34 @@ export async function getStaticProps({ params }) {
           ...bestImage,
           src: bestImage.src.large2x || bestImage.src.large || bestImage.src.original
         };
-        
-        console.log(`[Debug] Selected cover image for ${params.slug}:`, {
-          id: coverImage.id,
-          photographer: coverImage.photographer,
-          url: coverImage.src
-        });
-      } else {
-        console.log(`[Debug] No images found for ${params.slug}`);
       }
     } catch (error) {
       console.error(`[Debug] Error fetching cover image for ${params.slug}:`, error);
     }
 
+    // Create the post object with explicit content handling
+    const post = {
+      ...postInIndex,
+      ...postContent
+    };
+
+    console.log('[Debug] Final post object:', {
+      hasContent: !!post.content,
+      contentType: typeof post.content,
+      isArray: Array.isArray(post.content),
+      contentLength: post.content ? post.content.length : 0,
+      content: post.content // Log the actual content
+    });
+
     return {
       props: {
-        post: post.default,
+        post: JSON.parse(JSON.stringify(post)), // Ensure the object is serializable
         coverImage,
       },
       revalidate: process.env.NODE_ENV === 'development' ? 60 : 86400,
     };
   } catch (error) {
-    console.error(`[Debug] Error loading blog post: ${params.slug}`, error);
+    console.error(`[Debug] Error loading blog post: ${params.slug}:`, error);
     return { notFound: true };
   }
 } 
