@@ -30,10 +30,10 @@ export default function BlogCard({ post }) {
   const postAuthors = getAuthorDetails(post.authors);
 
   return (
-    <article className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col h-full">
+    <article className="bg-white rounded-xl border border-gray-200 shadow-lg hover:shadow-xl transition-shadow duration-200 overflow-hidden flex flex-col h-full">
       <Link href={`/blog/${post.slug}`} className="flex flex-col h-full">
         {/* Image */}
-        <div className="relative h-48">
+        <div className="relative h-52 md:h-56 lg:h-48 w-full">
           <Image
             src={post.image || DEFAULT_PLACEHOLDER}
             alt={post.title}
@@ -42,67 +42,65 @@ export default function BlogCard({ post }) {
           />
         </div>
 
-        <div className="p-6 pb-4">
+        <div className="flex flex-col flex-grow px-6 pt-6 pb-4 gap-4">
           {/* Title */}
-          <h3 className="text-xl font-semibold mb-4 text-gray-900 hover:text-kahana-accent-sunset transition-colors line-clamp-2">
+          <h3 className="text-xl font-semibold text-gray-900 hover:text-kahana-accent-sunset transition-colors line-clamp-2 mb-2">
             {post.title}
           </h3>
-        </div>
 
-        <div className="p-6 pt-0 flex-grow flex flex-col">
+          {/* Authors */}
+          <div className="flex items-center space-x-4 mb-1">
+            <div className="flex -space-x-2">
+              {postAuthors.map((author) => (
+                <div key={author.name} className="relative">
+                  <Image
+                    src={author.avatar}
+                    alt={author.name}
+                    width={32}
+                    height={32}
+                    className="rounded-full border-2 border-white"
+                  />
+                </div>
+              ))}
+            </div>
+            <div className="text-sm text-gray-600">
+              {postAuthors.map(author => author.name).join(', ')}
+            </div>
+          </div>
+
+          {/* Date and Read Time */}
+          <div className="flex items-center gap-2 text-sm text-gray-500 mb-2">
+            <time dateTime={post.date}>{new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</time>
+            <span>•</span>
+            <span>{post.readingTime} min read</span>
+          </div>
+
           {/* Excerpt with gradient fade */}
-          <div className="relative mb-6 flex-grow">
+          <div className="relative mb-3">
             <p className="text-gray-600 line-clamp-4">
               {post.excerpt}
             </p>
-            <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-white to-transparent"></div>
+            <div className="absolute inset-x-0 bottom-0 h-6 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
           </div>
 
           {/* Bottom metadata */}
-          <div className="flex flex-col gap-4">
-            {/* Authors */}
-            <div className="flex items-center space-x-4">
-              <div className="flex -space-x-2">
-                {postAuthors.map((author) => (
-                  <div key={author.name} className="relative">
-                    <Image
-                      src={author.avatar}
-                      alt={author.name}
-                      width={32}
-                      height={32}
-                      className="rounded-full border-2 border-white"
-                    />
-                  </div>
-                ))}
-              </div>
-              <div className="text-sm text-gray-600">
-                {postAuthors.map(author => author.name).join(', ')}
-              </div>
-            </div>
-
-            {/* Categories and Date */}
-            <div className="flex flex-wrap items-center justify-between gap-2">
-              <div className="flex flex-wrap gap-2">
-                {Array.isArray(post.category) ? 
-                  post.category.map((cat) => (
+          <div className="flex flex-col gap-4 mt-auto">
+            {/* Categories */}
+            <div className="flex flex-row gap-2 overflow-x-auto whitespace-nowrap max-w-full scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent py-1">
+              {Array.isArray(post.category)
+                ? post.category.map((cat) => (
                     <span
                       key={cat}
-                      className="text-sm font-medium text-kahana-accent-water bg-kahana-accent-water/10 px-2.5 py-1 rounded-full"
+                      className="text-sm font-medium px-3 py-1 rounded-full bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors inline-block"
                     >
                       {cat}
                     </span>
                   ))
-                  : 
-                  <span className="text-sm font-medium text-kahana-accent-water bg-kahana-accent-water/10 px-2.5 py-1 rounded-full">
-                    {post.category}
-                  </span>
-                }
-              </div>
-              <div className="flex items-center gap-2 text-sm text-gray-500">
-                <time dateTime={post.date}>{formatDate(post.date)}</time>
-                <span>•</span>
-                <span>{post.readingTime} min read</span>
-              </div>
+                : post.category && (
+                    <span className="text-sm font-medium px-3 py-1 rounded-full bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors inline-block">
+                      {post.category}
+                    </span>
+                  )}
             </div>
           </div>
         </div>
