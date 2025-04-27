@@ -22,10 +22,13 @@ const getAllCategories = () => {
   return Array.from(categories).sort();
 };
 
+const POSTS_PER_PAGE = 9;
+
 export default function BlogIndex({ posts }) {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
   const [filteredPosts, setFilteredPosts] = useState(posts);
+  const [currentPage, setCurrentPage] = useState(1);
   const categories = ['All', ...getAllCategories()];
 
   useEffect(() => {
@@ -43,7 +46,48 @@ export default function BlogIndex({ posts }) {
     });
 
     setFilteredPosts(filtered);
+    setCurrentPage(1); // Reset to first page when filters change
   }, [selectedCategory, searchQuery, posts]);
+
+  // Calculate pagination values
+  const totalPages = Math.ceil(filteredPosts.length / POSTS_PER_PAGE);
+  const startIndex = (currentPage - 1) * POSTS_PER_PAGE;
+  const endIndex = startIndex + POSTS_PER_PAGE;
+  const currentPosts = filteredPosts.slice(startIndex, endIndex);
+
+  // Generate page numbers for pagination
+  const getPageNumbers = () => {
+    const delta = 2;
+    const range = [];
+    const rangeWithDots = [];
+    let l;
+
+    range.push(1);
+
+    for (let i = currentPage - delta; i <= currentPage + delta; i++) {
+      if (i < totalPages && i > 1) {
+        range.push(i);
+      }
+    }
+
+    if (totalPages > 1) {
+      range.push(totalPages);
+    }
+
+    for (let i of range) {
+      if (l) {
+        if (i - l === 2) {
+          rangeWithDots.push(l + 1);
+        } else if (i - l !== 1) {
+          rangeWithDots.push('...');
+        }
+      }
+      rangeWithDots.push(i);
+      l = i;
+    }
+
+    return rangeWithDots;
+  };
 
   return (
     <>
@@ -111,12 +155,61 @@ export default function BlogIndex({ posts }) {
         </div>
 
         {/* Blog Posts Grid */}
-        {filteredPosts.length > 0 ? (
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {filteredPosts.map((post) => (
-              <BlogCard key={post.slug} post={post} />
-            ))}
-          </div>
+        {currentPosts.length > 0 ? (
+          <>
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mb-12">
+              {currentPosts.map((post) => (
+                <BlogCard key={post.slug} post={post} />
+              ))}
+            </div>
+
+            {/* Pagination */}
+            {totalPages > 1 && (
+              <div className="flex justify-center items-center space-x-2 mt-8">
+                <button
+                  onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+                  disabled={currentPage === 1}
+                  className={`px-4 py-2 rounded-md ${
+                    currentPage === 1
+                      ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                      : 'bg-kahana-primary text-white hover:bg-kahana-primary-dark'
+                  }`}
+                >
+                  Previous
+                </button>
+
+                <div className="flex space-x-2">
+                  {getPageNumbers().map((pageNum, index) => (
+                    <button
+                      key={index}
+                      onClick={() => typeof pageNum === 'number' && setCurrentPage(pageNum)}
+                      className={`px-4 py-2 rounded-md ${
+                        pageNum === currentPage
+                          ? 'bg-kahana-primary text-white'
+                          : pageNum === '...'
+                          ? 'cursor-default'
+                          : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                      }`}
+                    >
+                      {pageNum}
+                    </button>
+                  ))}
+                </div>
+
+                <button
+                  onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+                  disabled={currentPage === totalPages}
+                  className={`px-4 py-2 rounded-md ${
+                    currentPage === totalPages
+                      ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                      : 'bg-kahana-primary text-white hover:bg-kahana-primary-dark'
+                  }`}
+                >
+                  Next
+                </button>
+              </div>
+            )}
+          </>
         ) : (
           <div className="text-center py-12">
             <h3 className="text-lg font-medium text-gray-900 mb-2">
