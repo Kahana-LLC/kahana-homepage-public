@@ -107,7 +107,6 @@ export default function BlogPost({ post, coverImage }) {
                     className="object-cover"
                     priority
                     onError={(e) => {
-                      console.error('[Debug] Image load error:', e);
                       e.target.src = DEFAULT_COVER;
                     }}
                   />
@@ -149,7 +148,6 @@ export default function BlogPost({ post, coverImage }) {
                         </ul>
                       ) : null;
                     default:
-                      console.log('Unknown block type:', block.type);
                       return null;
                   }
                 })
@@ -208,21 +206,15 @@ export default function BlogPost({ post, coverImage }) {
 export async function getStaticPaths() {
   try {
     // Generate paths from blog-index.js
-    const paths = blogIndex.map((post) => {
-      console.log(`[Debug] Generating path for post: ${post.slug}`);
-      return {
-        params: { slug: post.slug },
-      };
-    });
-
-    console.log(`[Debug] Generated paths:`, paths);
+    const paths = blogIndex.map((post) => ({
+      params: { slug: post.slug },
+    }));
 
     return {
       paths,
       fallback: false, // Return 404 for non-existent paths
     };
   } catch (error) {
-    console.error('[Debug] Error in getStaticPaths:', error);
     return {
       paths: [],
       fallback: false,
@@ -232,25 +224,20 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   try {
-    console.log(`[Debug] Loading blog post with slug: ${params.slug}`);
-
     // First check if the post exists in the blog index
     const postInIndex = blogIndex.find(post => post.slug === params.slug);
     if (!postInIndex) {
-      console.log(`[Debug] Post not found in blog index: ${params.slug}`);
       return { notFound: true };
     }
 
     // Load the specific blog post JSON file using require
     const postContent = require(`../../data/blog/${params.slug}.json`);
-    console.log(`[Debug] Raw post content:`, JSON.stringify(postContent, null, 2));
 
     let coverImage = null;
 
     try {
       // First try with the default query
       const primaryQuery = postContent.defaultImageQuery || suggestNatureImageQuery(postContent.category);
-      console.log(`[Debug] Trying primary query: "${primaryQuery}"`);
       
       let images = await searchPhotos(primaryQuery, {
         per_page: 5,
@@ -262,7 +249,6 @@ export async function getStaticProps({ params }) {
         const fallbackQuery = postContent.category 
           ? `${postContent.category} technology` 
           : "cyber security technology";
-        console.log(`[Debug] No results with primary query, trying fallback: "${fallbackQuery}"`);
         images = await searchPhotos(fallbackQuery, {
           per_page: 5,
           orientation: 'landscape'
@@ -285,7 +271,7 @@ export async function getStaticProps({ params }) {
         };
       }
     } catch (error) {
-      console.error(`[Debug] Error fetching cover image for ${params.slug}:`, error);
+      // Silently fail if we can't get a cover image
     }
 
     // Create the post object with explicit content handling
@@ -293,14 +279,6 @@ export async function getStaticProps({ params }) {
       ...postInIndex,
       ...postContent
     };
-
-    console.log('[Debug] Final post object:', {
-      hasContent: !!post.content,
-      contentType: typeof post.content,
-      isArray: Array.isArray(post.content),
-      contentLength: post.content ? post.content.length : 0,
-      content: post.content // Log the actual content
-    });
 
     return {
       props: {
@@ -310,7 +288,6 @@ export async function getStaticProps({ params }) {
       revalidate: process.env.NODE_ENV === 'development' ? 60 : 86400,
     };
   } catch (error) {
-    console.error(`[Debug] Error loading blog post: ${params.slug}:`, error);
     return { notFound: true };
   }
 } 
