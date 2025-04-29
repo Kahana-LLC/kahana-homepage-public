@@ -72,6 +72,17 @@ module.exports = {
           },
         },
       },
+      fontFamily: {
+        "sf-pro": [
+          '"SF Pro Display"',
+          "system-ui",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "Segoe UI",
+          "Roboto",
+          "sans-serif",
+        ],
+      },
     },
   },
   plugins: [
