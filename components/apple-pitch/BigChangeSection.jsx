@@ -18,7 +18,7 @@ const BigChangeSection = () => {
           >
             Gartner forecasts
           </a> that 80% of GenAI spending in 2025 will go toward AI-enabled consumer devices, 
-          as AI becomes a standard feature in smartphones, PCs, and other consumer electronics
+          as AI becomes a standard feature in smartphones, PCs, and other consumer electronics.
         </footer>
       </blockquote>
     </div>

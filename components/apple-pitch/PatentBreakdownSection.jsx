@@ -107,13 +107,24 @@ const PatentBreakdownSection = () => {
             </ul>
           </div>
         </div>
+
+        <div className="text-center mt-8">
+          <a 
+            href="https://patents.google.com/patent/WO2021072333A1/en" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="text-blue-600 hover:text-blue-800 underline"
+          >
+            Read the full patent here
+          </a>
+        </div>
       </div>
 
       <div className="mt-12 bg-black text-white p-8 rounded-2xl">
         <h3 className="text-2xl font-semibold mb-4">Beyond Browsing: AR/VR Applications</h3>
         <div className="space-y-4">
           <p className="text-gray-300">
-            The command-Graphical User Interface relationship extends naturally into augmented and virtual reality environments, 
+            The command-GUI relationship extends naturally into augmented and virtual reality environments, 
             creating immersive 3D browsing and information management experiences.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
