@@ -27,16 +27,16 @@ import {
 
 // Section titles for navigation
 const sections = [
-  { id: "big-change", title: "Big Relevant Change", component: BigChangeSection },
-  { id: "problem", title: "Problem", component: ProblemSection },
-  { id: "solution", title: "Solution", component: SolutionSection },
-  { id: "promised-land", title: "Promised Land", component: PromisedLandSection },
-  { id: "winners-losers", title: "Winners & Losers", component: WinnersLosersSection },
-  { id: "market-opportunity", title: "Market Opportunity", component: MarketOpportunitySection },
-  { id: "technical-roadmap", title: "Technical Roadmap & Implementation", component: TechnicalRoadmapSection },
-  { id: "ai-benefits", title: "Elevated Apple Intelligence", component: AIBenefitsSection },
-  { id: "patent-breakdown", title: "Patent Breakdown", component: PatentBreakdownSection },
-  { id: "vision-beyond", title: "Vision Beyond", component: VisionBeyondSection }
+  { id: "big-change", title: "AI is elevating how we interact with devices", component: BigChangeSection },
+  { id: "problem", title: "...But Apple interfaces can't handle commands", component: ProblemSection },
+  { id: "solution", title: "Here's how we make Apple devices understand you", component: SolutionSection },
+  { id: "promised-land", title: "Imagine seamless interaction across all devices", component: PromisedLandSection },
+  { id: "winners-losers", title: "Right now, competitors are already moving ahead", component: WinnersLosersSection },
+  { id: "market-opportunity", title: "Apple is missing out on billions in untapped revenue", component: MarketOpportunitySection },
+  { id: "technical-roadmap", title: "We have a clear path to capture this opportunity", component: TechnicalRoadmapSection },
+  { id: "ai-benefits", title: "Apple quickly becomes #1 for AI-enabled devices", component: AIBenefitsSection },
+  { id: "patent-breakdown", title: "Approved patents defend Apple's throne until 2039...", component: PatentBreakdownSection },
+  { id: "vision-beyond", title: "Paving the way for a god-like future", component: VisionBeyondSection }
 ];
 
 const ApplePitch = () => {
@@ -69,11 +69,11 @@ const ApplePitch = () => {
             {/* Main content */}
             <div className="relative z-10 max-w-2xl">
               <h1 className="text-[56px] font-bold mb-6 text-white leading-tight tracking-tight md:whitespace-nowrap">
-                Apple: a 100% touch free oasis
+                Omnipotence: Becoming a God Through Apple
               </h1>
               
               <p className="text-2xl text-gray-300 mb-12">
-                Browsing like it's science fiction
+                How Apple, the company famous for revolutionizing the touch-screen, can eliminate the need to touch devices to control them.
               </p>
             </div>
 
@@ -98,16 +98,42 @@ const ApplePitch = () => {
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-black mb-8">Table of Contents</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {sections.map((section, index) => (
-                <a
-                  key={section.id}
-                  href={`#${section.id}`}
-                  className="flex items-center text-gray-600 hover:text-black transition-colors"
-                >
-                  <span className="text-gray-400 mr-2">{String(index + 1).padStart(2, '0')}.</span>
-                  {section.title}
-                </a>
-              ))}
+              <div className="space-y-4">
+                {[
+                  { id: "big-change", name: "Introduction" },
+                  { id: "problem", name: "Problem" },
+                  { id: "solution", name: "Solution" },
+                  { id: "promised-land", name: "Vision" },
+                  { id: "winners-losers", name: "Competition" }
+                ].map((section, index) => (
+                  <a
+                    key={section.id}
+                    href={`#${section.id}`}
+                    className="flex items-center text-gray-600 hover:text-black transition-colors"
+                  >
+                    <span className="text-gray-400 mr-2">{String(index + 1).padStart(2, '0')}.</span>
+                    {section.name}
+                  </a>
+                ))}
+              </div>
+              <div className="space-y-4">
+                {[
+                  { id: "market-opportunity", name: "Market" },
+                  { id: "technical-roadmap", name: "Roadmap" },
+                  { id: "ai-benefits", name: "Benefits" },
+                  { id: "patent-breakdown", name: "Patents" },
+                  { id: "vision-beyond", name: "Future" }
+                ].map((section, index) => (
+                  <a
+                    key={section.id}
+                    href={`#${section.id}`}
+                    className="flex items-center text-gray-600 hover:text-black transition-colors"
+                  >
+                    <span className="text-gray-400 mr-2">{String(index + 6).padStart(2, '0')}.</span>
+                    {section.name}
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -117,13 +143,24 @@ const ApplePitch = () => {
       <nav className="sticky top-0 bg-white/80 backdrop-blur-md z-10 border-b border-gray-200">
         <div className="container mx-auto px-6 overflow-x-auto">
           <div className="flex space-x-8 py-4 min-w-max items-center">
-            {sections.map(section => (
+            {[
+              { id: "big-change", name: "Introduction" },
+              { id: "problem", name: "Problem" },
+              { id: "solution", name: "Solution" },
+              { id: "promised-land", name: "Vision" },
+              { id: "winners-losers", name: "Competition" },
+              { id: "market-opportunity", name: "Market" },
+              { id: "technical-roadmap", name: "Roadmap" },
+              { id: "ai-benefits", name: "Benefits" },
+              { id: "patent-breakdown", name: "Patents" },
+              { id: "vision-beyond", name: "Future" }
+            ].map(section => (
               <a
                 key={section.id}
                 href={`#${section.id}`}
                 className="text-gray-600 hover:text-black font-medium whitespace-nowrap transition-colors"
               >
-                {section.title}
+                {section.name}
               </a>
             ))}
           </div>
@@ -157,6 +194,23 @@ const ApplePitch = () => {
           );
         })}
       </main>
+
+      {/* Get in Touch Section */}
+      <section className="bg-black text-white py-24">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-4xl font-bold mb-8">Get in Touch</h2>
+            <div className="space-y-4">
+              <a href="mailto:adam@kahana.co" className="block text-xl hover:text-blue-400 transition-colors">
+                adam@kahana.co
+              </a>
+              <a href="mailto:jonathan@kahana.co" className="block text-xl hover:text-blue-400 transition-colors">
+                jonathan@kahana.co
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };

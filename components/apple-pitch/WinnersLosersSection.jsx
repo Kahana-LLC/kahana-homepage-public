@@ -19,38 +19,60 @@ const WinnersLosersSection = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-        <div className="space-y-4">
-          <h3 className="text-2xl font-semibold text-black">Meta</h3>
-          <ul className="list-disc list-inside space-y-2 text-gray-600">
-            <li>Quest VR headset is cheaper and more advanced than Vision Pro</li>
-            <li>Strong AR/VR ecosystem and developer community</li>
-            <li>Rapid iteration and mass-market adoption in immersive tech</li>
-          </ul>
+      {/* Competitive Quadrant */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+        {/* Top Left - Meta */}
+        <div className="space-y-4 p-6 bg-gray-50 rounded-tl-xl rounded-tr-xl md:rounded-tr-none rounded-bl-xl md:rounded-bl-none border border-gray-100">
+          <h3 className="text-2xl font-semibold text-black">Meta's Quest: Price-to-Performance Advantage</h3>
+          <div className="space-y-2">
+            <p className="text-gray-600">
+              Quest 3S delivers compelling value at $299 (vs. Vision Pro's $3,499), offering 90% of mixed reality functionality at just 8% of the cost. With 8GB RAM and 1832x1920 resolution, Meta's ecosystem dominates gaming and entertainment, commanding 73% user preference for Quest.
+            </p>
+            <div className="flex flex-wrap gap-2 mt-2">
+              <a href="https://www.xrtoday.com/mixed-reality/the-meta-quest-3s-vs-the-vision-pro-which-is-best/" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">XR Today Analysis</a>
+              <a href="https://www.roadtovr.com/apple-vision-pro-worth-buying-in-2025/" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Road to VR Review</a>
+            </div>
+          </div>
         </div>
-        <div className="space-y-4">
-          <h3 className="text-2xl font-semibold text-black">Google (Alphabet)</h3>
-          <ul className="list-disc list-inside space-y-2 text-gray-600">
-            <li>Gemini AI deeply integrated with Chrome for advanced browsing</li>
-            <li>Dominant in search and web data</li>
-            <li>Android and Pixel ecosystem for cross-device AI</li>
-          </ul>
+
+        {/* Top Right - Google */}
+        <div className="space-y-4 p-6 bg-gray-50 rounded-tr-xl rounded-tl-xl md:rounded-tl-none rounded-br-xl md:rounded-br-none border border-gray-100">
+          <h3 className="text-2xl font-semibold text-black">Google: Gemini's Chrome Integration</h3>
+          <div className="space-y-2">
+            <p className="text-gray-600">
+              Chrome Canary's GLIC (Gemini Live in Chrome) embeds AI as a system-tray tool, enabling real-time web automation without leaving the browser. This deep integration threatens Safari's market share by making Chrome more intelligent and efficient.
+            </p>
+            <div className="flex flex-wrap gap-2 mt-2">
+              <a href="https://www.pcworld.com/article/2643830/google-is-integrating-gemini-ai-directly-into-chrome-beta-version.html" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">PC World Report</a>
+            </div>
+          </div>
         </div>
-        <div className="space-y-4">
-          <h3 className="text-2xl font-semibold text-black">Microsoft</h3>
-          <ul className="list-disc list-inside space-y-2 text-gray-600">
-            <li>Leading in enterprise AI with Copilot integration</li>
-            <li>Strong partnership with OpenAI for advanced AI capabilities</li>
-            <li>Windows ecosystem and Edge browser poised for AI transformation</li>
-          </ul>
+
+        {/* Bottom Left - Microsoft */}
+        <div className="space-y-4 p-6 bg-gray-50 rounded-bl-xl rounded-br-xl md:rounded-br-none rounded-tl-xl md:rounded-tl-none border border-gray-100">
+          <h3 className="text-2xl font-semibold text-black">Microsoft: Enterprise AI Leadership</h3>
+          <div className="space-y-2">
+            <p className="text-gray-600">
+              Copilot Wave 2 introduces Researcher/Analyst agents for autonomous data synthesis and forecasting, with 71% of Frontier Firms reporting significant productivity gains. Microsoft's enterprise-first approach is creating a new standard for AI-assisted work.
+            </p>
+            <div className="flex flex-wrap gap-2 mt-2">
+              <a href="https://futurumgroup.com/insights/microsoft-365-copilot-wave-2-latest-advances-enterprise-ai/" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Futurum Research</a>
+            </div>
+          </div>
         </div>
-        <div className="space-y-4">
-          <h3 className="text-2xl font-semibold text-black">Perplexity</h3>
-          <ul className="list-disc list-inside space-y-2 text-gray-600">
-            <li>Building an agentic browser to automate and enhance web tasks</li>
-            <li>Innovating in AI-driven search and information retrieval</li>
-            <li>Could further erode Safari's usage if successful</li>
-          </ul>
+
+        {/* Bottom Right - Perplexity */}
+        <div className="space-y-4 p-6 bg-gray-50 rounded-br-xl rounded-bl-xl md:rounded-bl-none rounded-tr-xl md:rounded-tr-none border border-gray-100">
+          <h3 className="text-2xl font-semibold text-black">Perplexity: Disrupting Browser Paradigms</h3>
+          <div className="space-y-2">
+            <p className="text-gray-600">
+              Comet browser uses agentic search to autonomously complete tasks via 800+ app integrations. Their Chromium-based AI processes real-time data with citations, reducing research time by 40% in enterprise tests. This new browser paradigm directly challenges Safari's traditional approach.
+            </p>
+            <div className="flex flex-wrap gap-2 mt-2">
+              <a href="https://www.zdnet.com/article/perplexity-ai-teases-a-new-browser-for-agentic-search/" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">ZDNet Coverage</a>
+              <a href="https://writesonic.com/blog/comet-ai-browser" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Writesonic Analysis</a>
+            </div>
+          </div>
         </div>
       </div>
 
