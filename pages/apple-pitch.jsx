@@ -28,7 +28,7 @@ import {
 // Section titles for navigation
 const sections = [
   { id: "big-change", title: "AI is elevating how we interact with devices", component: BigChangeSection },
-  { id: "problem", title: "...But Apple interfaces can't handle commands", component: ProblemSection },
+  { id: "problem", title: "But Apple devices can't handle expected commands", component: ProblemSection },
   { id: "solution", title: "Here's how we make Apple devices understand you", component: SolutionSection },
   { id: "promised-land", title: "Imagine seamless interaction across all devices", component: PromisedLandSection },
   { id: "winners-losers", title: "Right now, competitors are already moving ahead", component: WinnersLosersSection },

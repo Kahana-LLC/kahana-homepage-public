@@ -36,7 +36,7 @@ const AIBenefitsSection = () => {
           <li>"Read me the headlines from my saved articles while I'm on my morning walk"</li>
           <li>"Send this article to my Vision Pro and display it in my workspace"</li>
           <li>"When I put on Vision Pro, show me the research papers I saved about neural networks"</li>
-          <li>"Summarize this article and send the key points to my Watch"</li>
+          <li>"Summarize this article and send the key points to my Apple Watch"</li>
         </ul>
         <div className="p-6 bg-gray-100 rounded-lg border border-gray-200">
           <p className="text-gray-600">

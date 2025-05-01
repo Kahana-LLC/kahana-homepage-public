@@ -29,7 +29,7 @@ const TechnicalRoadmapSection = () => {
           <div className="p-4 bg-gray-50 rounded-lg">
             <h4 className="font-semibold text-black">Success Criteria</h4>
             <p className="text-gray-600 text-sm">
-              Siri should find my saved tab groups from last week or tell me if none exist.
+              As a user, when I ask Siri, "show the Zillow articles for California properties under $1M I saved in a group last week in Safari", Siri should find my saved tab group from last week or tell me if none exist.
             </p>
           </div>
         </div>
