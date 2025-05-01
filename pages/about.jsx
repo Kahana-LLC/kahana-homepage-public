@@ -78,17 +78,30 @@ export default function About() {
                     Our patented technology creates a workspace that adapts to your creative process, making it easier to organize and develop your ideas. We focus on removing friction and creating flow, so you can focus on what matters most—bringing your ideas to life.
                   </p>
                   <div className="mt-4">
-                    <a 
-                      href="https://patents.google.com/patent/WO2021072333A1/en" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center text-indigo-600 hover:text-indigo-800 transition-colors"
-                    >
-                      <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                      </svg>
-                      View Patent Details
-                    </a>
+                    <div className="space-y-2">
+                      <a 
+                        href="https://patents.google.com/patent/US11693676B2/en?oq=11%2c693%2c676" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-indigo-600 hover:text-indigo-800 transition-colors"
+                      >
+                        <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                        View Patent #1: US11693676B2
+                      </a>
+                      <a 
+                        href="https://patents.google.com/patent/US11397844B2/en?oq=11%2c397%2c844" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-indigo-600 hover:text-indigo-800 transition-colors"
+                      >
+                        <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                        View Patent #2: US11397844B2
+                      </a>
+                    </div>
                   </div>
                   <div className="grid md:grid-cols-2 gap-6 mt-6">
                     <div className="bg-white rounded-xl p-6 shadow-sm">
