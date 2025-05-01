@@ -26,13 +26,13 @@ const ProblemSection = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+      <div className="grid grid-cols-1 gap-8 mt-12">
         <div className="space-y-4">
           <h3 className="text-2xl font-semibold text-black">Current Limitations</h3>
           <ul className="list-disc list-inside space-y-2 text-gray-600">
             <li>Poor integration between Siri and Safari bookmarks</li>
             <li>Safari lacks built-in AI assistance for content discovery</li>
-            <li>Cannot process natural language queries effectively</li>
+            <li className="whitespace-nowrap">Safari cannot process natural language queries effectively</li>
           </ul>
         </div>
       </div>

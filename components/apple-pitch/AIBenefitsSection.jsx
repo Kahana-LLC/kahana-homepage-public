@@ -19,20 +19,15 @@ const AIBenefitsSection = () => {
         </div>
       </div>
 
-      <div className="space-y-6">
-        <p className="text-xl text-gray-600">
-          Apple Intelligence transforms every device into a true productivity engine. By deeply integrating advanced AI, Apple empowers people to create, learn, solve complex problems, and accomplish more than ever before—moving far beyond menial tasks.
-        </p>
-      </div>
-
       <div className="mt-8">
         <h3 className="text-2xl font-semibold text-black mb-4">New Commands with Apple Intelligence</h3>
         <p className="text-gray-600 mb-4">
-          These commands showcase how Apple Intelligence integrates your personal context to deliver exactly what you need, when you need it—while always protecting your privacy.
+          By integrating our technology into Apple's product suite, the following types of commands will now be possible to accomplish touch-free:
         </p>
-        <ul className="list-disc list-inside space-y-2 text-gray-600">
+        <ul className="list-disc list-inside space-y-2 text-gray-600 mb-6">
           <li>"Show me the NerdWallet article about crypto that I saved last week in Safari"</li>
           <li>"Create a new tab group called 'Summer Travel' with all my saved Airbnb listings"</li>
+          <li>"Group my saved California properties under $1M from Zillow"</li>
           <li>"Find articles about AI from my reading list and show them to me sorted by publication date"</li>
           <li>"Continue reading the article I was looking at on my Mac this morning"</li>
           <li>"Open my most recent Safari tab group on my iPad"</li>
@@ -43,6 +38,11 @@ const AIBenefitsSection = () => {
           <li>"When I put on Vision Pro, show me the research papers I saved about neural networks"</li>
           <li>"Summarize this article and send the key points to my Watch"</li>
         </ul>
+        <div className="p-6 bg-gray-100 rounded-lg border border-gray-200">
+          <p className="text-gray-600">
+            These commands showcase how Apple Intelligence integrates your personal context to deliver exactly what you need, when you need it—while always protecting your privacy.
+          </p>
+        </div>
       </div>
     </div>
   );

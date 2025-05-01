@@ -47,7 +47,7 @@ const SolutionSection = () => {
           <div>
             <h4 className="text-xl font-semibold mb-2">Spotlight Integration</h4>
             <p className="text-gray-300">
-              Make all saved content—Safari tabs, reading lists, and more—fully searchable and accessible through Siri, creating a unified, touch-free information retrieval system.
+              Make all saved content—Safari tab groups, reading lists, and more—fully searchable and accessible through Siri, creating a unified, touch-free information retrieval system.
             </p>
           </div>
           <div>

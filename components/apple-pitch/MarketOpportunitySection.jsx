@@ -15,72 +15,47 @@ const MarketOpportunitySection = () => {
       </div>
       <div className="space-y-6">
         <p className="text-xl text-gray-600">
-          The integration of our technology into Apple's ecosystem presents two major revenue opportunities: 
-          increased device sales and increased revenue from the Google partnership. Our analysis shows 
-          a potential $6.8 billion in additional revenue over five years.
+          The integration of our technology into Apple's ecosystem presents two major revenue opportunities: increased device sales and increased ad revenue from the Google partnership. Our analysis shows an opportunity to generate ~$1.5B to ~$13.9B in additional revenue over five years in the United States alone.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+        {/* Device Revenue Opportunity */}
         <div className="space-y-4">
           <h3 className="text-2xl font-semibold text-black">Device Revenue Opportunity</h3>
-          <div className="space-y-6">
-            <div>
-              <h4 className="text-xl font-semibold text-black">Current US Revenue (2024)</h4>
-              <ul className="list-disc list-inside space-y-2 text-gray-600">
-                <li>Total Device Revenue: $101.4B</li>
-                <li>iPhone: $69.2B</li>
-                <li>Wearables & Accessories: $12.7B</li>
-                <li>Mac: $10.3B</li>
-                <li>iPad: $9.2B</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-xl font-semibold text-black">Projected Growth</h4>
-              <ul className="list-disc list-inside space-y-2 text-gray-600">
-                <li>Wearables & Accessories: +2% YoY increase in sales</li>
-                <li>Mac: +2% YoY increase in sales</li>
-                <li>iPhone & iPad: +1% YoY increase in sales</li>
-                <li>5-Year Total: $6.4B additional revenue</li>
-              </ul>
-            </div>
+          <div className="p-6 bg-gray-100 rounded-lg border border-gray-200">
+            <p className="text-2xl font-semibold text-gray-800">
+              ~$1.3B to ~$12.3B
+            </p>
+            <p className="text-gray-600 mt-1">
+              additional revenue from device sales over a 5 year period
+            </p>
           </div>
+          <p className="text-gray-600 mt-4">
+            Based on available data, Apple generates ~$101B in revenue from US-based device sales across the 4 major device categories. A better and more powerful Siri-Safari integration would create more cohesion across devices and make it more worthwhile for consumers to own multiple Apple products.
+          </p>
         </div>
-        
+
+        {/* Ad Revenue Opportunity */}
         <div className="space-y-4">
           <h3 className="text-2xl font-semibold text-black">Ad Revenue Opportunity</h3>
-          <div className="space-y-6">
-            <div>
-              <h4 className="text-xl font-semibold text-black">Current Position</h4>
-              <ul className="list-disc list-inside space-y-2 text-gray-600">
-                <li>28% of US searches through Safari</li>
-                <li>36% revenue share from Google</li>
-                <li>Current US ad revenue: $8.5B</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-xl font-semibold text-black">Growth Potential</h4>
-              <ul className="list-disc list-inside space-y-2 text-gray-600">
-                <li>0.25% annual increase in search share</li>
-                <li>0.89% relative market share growth</li>
-                <li>5-Year Total: $388M additional revenue</li>
-              </ul>
-            </div>
+          <div className="p-6 bg-gray-100 rounded-lg border border-gray-200">
+            <p className="text-2xl font-semibold text-gray-800">
+              ~$154M to ~$1.6B
+            </p>
+            <p className="text-gray-600 mt-1">
+              additional revenue from Google payouts over a 5 year period
+            </p>
           </div>
+          <p className="text-gray-600 mt-4">
+            Currently, only 28% of US search queries come through Safari. A better and more powerful Siri-Safari integration would result in Apple users spending more time in Safari and less time in other browsers.
+          </p>
         </div>
       </div>
 
-      <div className="mt-12 bg-black text-white p-8 rounded-2xl">
-        <h3 className="text-2xl font-semibold mb-4">Total Opportunity</h3>
-        <p className="text-gray-300">
-          The integration of our technology into Safari will create a more cohesive Apple ecosystem, 
-          driving increased device sales and higher prices across the product line. This, combined 
-          with growing ad revenue from increased Safari usage, represents a $6.8 billion revenue 
-          opportunity over five years. The improved Safari experience will make Apple's ecosystem 
-          more valuable to consumers, particularly driving growth in wearables and Mac sales, while 
-          maintaining strong iPhone and iPad revenue through premium pricing.
-        </p>
-      </div>
+      <p className="text-sm text-gray-500 mt-6">
+        Note: Detailed workbook/calculation estimates available upon request - email jonathan@kahana.co
+      </p>
     </div>
   );
 };
