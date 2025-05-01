@@ -24,7 +24,7 @@ const PatentBreakdownSection = () => {
       <div className="space-y-6">
         <div className="flex flex-col items-center gap-6">
           <p className="text-xl text-gray-600">
-            Our two patents cover how each command—whether through voice or gesture—instantly transforms the GUI you see, making information access effortless and ergonomic.
+            Our two approved patents cover how each command—whether through voice or gesture—instantly transforms the GUI you see, making information access effortless and ergonomic.
           </p>
           <button
             onClick={() => setShowVideo(true)}
@@ -109,14 +109,24 @@ const PatentBreakdownSection = () => {
         </div>
 
         <div className="text-center mt-8">
-          <a 
-            href="https://patents.google.com/patent/WO2021072333A1/en" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="text-blue-600 hover:text-blue-800 underline"
-          >
-            Read the full patent here
-          </a>
+          <div className="space-y-4">
+            <a 
+              href="https://patents.google.com/patent/US11693676B2/en?oq=11%2c693%2c676" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="block text-blue-600 hover:text-blue-800 underline"
+            >
+              Read Patent #1: US11693676B2
+            </a>
+            <a 
+              href="https://patents.google.com/patent/US11397844B2/en?oq=11%2c397%2c844" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="block text-blue-600 hover:text-blue-800 underline"
+            >
+              Read Patent #2: US11397844B2
+            </a>
+          </div>
         </div>
       </div>
 
