@@ -4,34 +4,29 @@ const path = require("path");
 // Configuration
 const DOCS_DIR = path.join(process.cwd(), "public", "docs");
 const DATA_DIR = path.join(process.cwd(), "data");
-const DOCS_INDEX_PATH = path.join(DATA_DIR, "docs-index.js");
+const DOCS_INDEX_PATH = path.join(DATA_DIR, "docs-index.json");
 
-// Ensure directories exist
-function ensureDirectories() {
-  [DATA_DIR, DOCS_DIR].forEach((dir) => {
-    if (!fs.existsSync(dir)) {
-      console.log(`Creating directory: ${dir}`);
-      fs.mkdirSync(dir, { recursive: true });
-    } else {
-      console.log(`Directory exists: ${dir}`);
+// Silent logging function
+const log = (message, type = "info") => {
+  if (
+    process.env.NODE_ENV === "development" &&
+    process.env.VERBOSE === "true"
+  ) {
+    switch (type) {
+      case "error":
+        console.error(message);
+        break;
+      case "warn":
+        console.warn(message);
+        break;
+      case "success":
+        console.log("\x1b[32m%s\x1b[0m", message);
+        break;
+      default:
+        console.log(message);
     }
-  });
-}
-
-// List directory contents for debugging
-function listDirectoryContents(dir) {
-  console.log(`Listing contents of ${dir}:`);
-  try {
-    const files = fs.readdirSync(dir);
-    files.forEach((file) => {
-      const fullPath = path.join(dir, file);
-      const stats = fs.statSync(fullPath);
-      console.log(` - ${file} (${stats.isDirectory() ? "directory" : "file"})`);
-    });
-  } catch (error) {
-    console.error(`Error listing directory ${dir}:`, error.message);
   }
-}
+};
 
 // Validate a documentation file
 function validateDoc(doc, filePath) {
@@ -65,131 +60,50 @@ function validateDoc(doc, filePath) {
   }
 }
 
-// Process a single documentation file
-function processDoc(filePath) {
+// Process documentation files
+async function processDocs() {
   try {
-    console.log(`Attempting to process file: ${filePath}`);
-    const fileContents = fs.readFileSync(filePath, "utf8");
-    const doc = JSON.parse(fileContents);
-
-    // Validate the document
-    validateDoc(doc, filePath);
-
-    // Ensure content is properly formatted
-    if (!doc.content.startsWith("<div class='doc-content'>")) {
-      doc.content = `<div class='doc-content'>${doc.content}</div>`;
+    if (!fs.existsSync(DOCS_DIR)) {
+      log("Documentation directory not found", "error");
+      return;
     }
-
-    // Write the processed file back
-    fs.writeFileSync(filePath, JSON.stringify(doc, null, 2));
-
-    console.log(`Successfully processed ${filePath}`);
-    return doc;
-  } catch (error) {
-    console.error(`Error processing ${filePath}:`, error.message);
-    return null;
-  }
-}
-
-// Clean up orphaned JSON files
-function cleanupOrphanedFiles() {
-  try {
-    console.log(`Checking for files in: ${DOCS_DIR}`);
-    // List directory contents for debugging
-    listDirectoryContents(DOCS_DIR);
-
-    // Get all JSON files in the docs directory
-    const jsonFiles = fs
-      .readdirSync(DOCS_DIR)
-      .filter((file) => file.endsWith(".json"));
-
-    console.log(`Found ${jsonFiles.length} JSON files in docs directory`);
-
-    // Remove JSON files that are invalid
-    jsonFiles.forEach((jsonFile) => {
-      const filePath = path.join(DOCS_DIR, jsonFile);
-      try {
-        const fileContents = fs.readFileSync(filePath, "utf8");
-        const doc = JSON.parse(fileContents);
-        validateDoc(doc, filePath);
-      } catch (error) {
-        console.error(`Removing invalid documentation file: ${filePath}`);
-        fs.unlinkSync(filePath);
-      }
-    });
-  } catch (error) {
-    console.error("Error cleaning up orphaned files:", error.message);
-  }
-}
-
-// Generate documentation index
-function generateDocsIndex() {
-  try {
-    console.log(`Generating docs index from: ${DOCS_DIR}`);
-    // List directory contents for debugging
-    listDirectoryContents(DOCS_DIR);
 
     const files = fs
       .readdirSync(DOCS_DIR)
       .filter((file) => file.endsWith(".json"));
 
-    console.log(`Found ${files.length} documentation files to process`);
-
-    const docs = files
-      .map((file) => {
-        const filePath = path.join(DOCS_DIR, file);
-        return processDoc(filePath);
-      })
-      .filter(Boolean); // Remove any null entries from failed processing
-
-    if (docs.length === 0) {
-      console.warn("No valid documentation files found to process");
+    if (files.length === 0) {
+      log("No documentation files found", "warn");
       return;
     }
 
-    // Sort docs by date
-    docs.sort((a, b) => new Date(b.date) - new Date(a.date));
-
-    // Write docs index
-    const indexContent = `// This file is auto-generated. Do not edit directly.
-module.exports = ${JSON.stringify(docs, null, 2)};
-`;
-
-    fs.writeFileSync(DOCS_INDEX_PATH, indexContent);
-    console.log(`Generated documentation index with ${docs.length} entries`);
-  } catch (error) {
-    console.error("Error generating documentation index:", error.message);
-  }
-}
-
-// Main execution
-function main() {
-  try {
-    console.log("Starting documentation processing...");
-    console.log(`Current working directory: ${process.cwd()}`);
-    console.log(`Documentation directory: ${DOCS_DIR}`);
-
-    // List contents of current directory for debugging
-    listDirectoryContents(process.cwd());
-
-    ensureDirectories();
-
-    // Check if a specific file was provided
-    const specificFile = process.argv[2];
-    if (specificFile) {
-      console.log(`Processing specific file: ${specificFile}`);
-      processDoc(specificFile);
-      generateDocsIndex(); // Still update the index
-    } else {
-      // Clean up any orphaned or invalid files first
-      cleanupOrphanedFiles();
-      // Then generate the docs index
-      generateDocsIndex();
+    const processedDocs = [];
+    for (const file of files) {
+      try {
+        const filePath = path.join(DOCS_DIR, file);
+        const content = JSON.parse(fs.readFileSync(filePath, "utf8"));
+        validateDoc(content, filePath);
+        processedDocs.push(content);
+      } catch (error) {
+        log(`Error processing ${file}: ${error.message}`, "error");
+      }
     }
+
+    // Sort docs by date
+    processedDocs.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+    // Write the processed docs to a single file
+    fs.writeFileSync(DOCS_INDEX_PATH, JSON.stringify(processedDocs, null, 2));
+
+    log(
+      `Successfully processed ${processedDocs.length} documentation files`,
+      "success"
+    );
   } catch (error) {
-    console.error("Error in main execution:", error.message);
+    log(`Error processing documentation: ${error.message}`, "error");
     process.exit(1);
   }
 }
 
-main();
+// Run the processing
+processDocs();

@@ -8,11 +8,15 @@ const client = createClient(process.env.NEXT_PUBLIC_PEXELS_API_KEY);
 const CACHE_FILE = path.join(process.cwd(), ".image-cache.json");
 const CACHE_DURATION = 7 * 24 * 60 * 60 * 1000; // 7 days
 
-// Rate limiting configuration
-const RATE_LIMIT_REQUESTS = 30; // Much more conservative limit
+// Rate limiting configuration - more conservative
+const RATE_LIMIT_REQUESTS = 3; // Reduced from 5 to 3
 const RATE_LIMIT_WINDOW = 60 * 1000; // 1 minute window
+const MIN_DELAY_BETWEEN_REQUESTS = 2000; // 2 seconds minimum between requests
+
+// Global request tracking
 let requestCount = 0;
 let windowStart = Date.now();
+let lastRequestTime = 0;
 
 // Request queue implementation
 const requestQueue = [];
@@ -55,60 +59,139 @@ const FALLBACK_QUERIES = [
   "business technology",
 ];
 
+// List of banned words to filter out inappropriate images
+const BANNED_WORDS = [
+  "gun",
+  "weapon",
+  "war",
+  "military",
+  "violence",
+  "army",
+  "soldier",
+  "fight",
+  "battle",
+  "blood",
+  "explosion",
+  "tank",
+  "missile",
+  "rifle",
+  "pistol",
+  "shoot",
+  "combat",
+  "hostage",
+  "terror",
+  "bomb",
+  "grenade",
+  "sniper",
+  "airstrike",
+  "artillery",
+  "nuclear",
+  "rocket",
+  "murder",
+  "death",
+  "dead",
+  "corpse",
+  "injury",
+  "wound",
+  "bloodshed",
+];
+
+function isImageSafe(photo) {
+  const text = [
+    photo.alt || "",
+    photo.photographer || "",
+    ...(photo.tags || []).map((tag) => tag.title || tag),
+  ]
+    .join(" ")
+    .toLowerCase();
+  return !BANNED_WORDS.some((banned) => text.includes(banned));
+}
+
 // Helper function to delay execution
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-// Process the request queue
+// Ensure minimum time between requests
+async function waitForRateLimit() {
+  const now = Date.now();
+  const timeSinceLastRequest = now - lastRequestTime;
+  if (timeSinceLastRequest < MIN_DELAY_BETWEEN_REQUESTS) {
+    await delay(MIN_DELAY_BETWEEN_REQUESTS - timeSinceLastRequest);
+  }
+  lastRequestTime = Date.now();
+}
+
+// Process queue with rate limiting and retries
 async function processQueue() {
   if (isProcessingQueue || requestQueue.length === 0) return;
 
   isProcessingQueue = true;
 
   while (requestQueue.length > 0) {
-    const { resolve, reject, query, options } = requestQueue[0];
+    // Check rate limit
+    const now = Date.now();
+    if (now - windowStart >= RATE_LIMIT_WINDOW) {
+      requestCount = 0;
+      windowStart = now;
+    }
+
+    if (requestCount >= RATE_LIMIT_REQUESTS) {
+      // Wait for rate limit window to reset
+      await delay(RATE_LIMIT_WINDOW);
+      continue;
+    }
+
+    const {
+      resolve,
+      reject,
+      query,
+      options,
+      retries = 0,
+    } = requestQueue.shift();
+
+    // Wait for minimum time between requests
+    await waitForRateLimit();
+    requestCount++;
 
     try {
-      // Check rate limit
-      const now = Date.now();
-      if (now - windowStart >= RATE_LIMIT_WINDOW) {
-        requestCount = 0;
-        windowStart = now;
-      }
-
-      if (requestCount >= RATE_LIMIT_REQUESTS) {
-        const waitTime = RATE_LIMIT_WINDOW - (now - windowStart) + 1000; // Add 1s buffer
-        await delay(waitTime);
-        continue; // Retry this request
-      }
-
-      // Make the request
-      requestCount++;
       const response = await client.photos.search({
         query,
-        per_page: options.per_page || 1,
+        per_page: options.per_page || 2, // Reduced from 3 to 2
         orientation: options.orientation || "landscape",
       });
 
-      requestQueue.shift(); // Remove this request from queue
-      resolve(response.photos);
-    } catch (error) {
-      if (error.message === "Too Many Requests") {
-        // If rate limited, wait and retry
-        await delay(RATE_LIMIT_WINDOW);
-        continue;
+      if (response && response.photos) {
+        resolve(response.photos);
+      } else {
+        resolve([]);
       }
-      requestQueue.shift();
-      reject(error);
+    } catch (error) {
+      console.error(`Error searching photos for "${query}":`, error);
+
+      // If we hit rate limit and haven't retried too many times, requeue
+      if (error.message === "Too Many Requests" && retries < 3) {
+        requestQueue.unshift({
+          resolve,
+          reject,
+          query,
+          options,
+          retries: retries + 1,
+        });
+        // Wait longer between retries with exponential backoff
+        await delay(10000 * Math.pow(2, retries));
+      } else {
+        // If we've retried too many times or it's a different error, resolve with empty array
+        resolve([]);
+      }
     }
 
-    // Add small delay between requests
-    await delay(1000);
+    // Add a delay between requests
+    await delay(MIN_DELAY_BETWEEN_REQUESTS);
   }
 
   isProcessingQueue = false;
 }
 
-// Queued version of searchPhotos
+// Queued version of searchPhotos with timeout and retries
 export async function searchPhotos(query, options = {}) {
   const cacheKey = `${query}-${options.per_page}-${options.orientation}`;
 
@@ -117,12 +200,29 @@ export async function searchPhotos(query, options = {}) {
     queryCache[cacheKey] &&
     Date.now() - queryCache[cacheKey].timestamp < CACHE_DURATION
   ) {
-    return queryCache[cacheKey].photos;
+    // Filter cached photos for safety
+    return queryCache[cacheKey].photos.filter(isImageSafe);
   }
 
-  // Queue the request
+  // Queue the request with timeout
   const promise = new Promise((resolve, reject) => {
-    requestQueue.push({ resolve, reject, query, options });
+    const timeout = setTimeout(() => {
+      resolve([]); // Resolve with empty array on timeout
+    }, 4000); // Reduced timeout from 5s to 4s
+
+    requestQueue.push({
+      resolve: (photos) => {
+        clearTimeout(timeout);
+        // Filter for safe images before resolving
+        resolve(photos.filter(isImageSafe));
+      },
+      reject: (error) => {
+        clearTimeout(timeout);
+        resolve([]); // Resolve with empty array on error
+      },
+      query,
+      options,
+    });
   });
 
   // Start processing queue if not already running
@@ -152,25 +252,23 @@ const usedPhotos = new Set();
 export async function getRandomPhoto(query) {
   try {
     // Try primary query first
-    let photos = await searchPhotos(query, { per_page: 15 });
+    let photos = await searchPhotos(query, { per_page: 2 }); // Reduced from 3 to 2
 
     // Filter out previously used photos
     photos = photos.filter((photo) => !usedPhotos.has(photo.id));
 
-    // If no unused photos, try fallback queries
+    // If no unused safe photos, try fallback queries
     if (!photos || photos.length === 0) {
       for (const fallbackQuery of FALLBACK_QUERIES) {
-        photos = await searchPhotos(fallbackQuery, { per_page: 15 });
+        photos = await searchPhotos(fallbackQuery, { per_page: 2 }); // Reduced from 3 to 2
         photos = photos.filter((photo) => !usedPhotos.has(photo.id));
         if (photos && photos.length > 0) {
-          console.log(`Using fallback query: ${fallbackQuery}`);
           break;
         }
       }
     }
 
     if (!photos || photos.length === 0) {
-      console.warn("No unused photos found with any query");
       // Clear used photos if we can't find any unused ones
       usedPhotos.clear();
       return null;
@@ -186,10 +284,8 @@ export async function getRandomPhoto(query) {
   }
 }
 
-export function getOptimizedPhotoUrl(photo, width = 800) {
-  if (!photo || !photo.src) return null;
-
-  // Prefer the highest quality available
+export function getOptimizedPhotoUrl(photo) {
+  if (!photo) return null;
   return photo.src.large2x || photo.src.large || photo.src.original;
 }
 

@@ -96,6 +96,7 @@ export default function BlogPost({ post, coverImage }) {
             <p className="text-xl text-gray-600 mb-8 leading-relaxed">{post.excerpt}</p>
 
             {/* Cover Image */}
+            {/*
             <figure className="relative w-full h-[400px] mb-8 rounded-xl overflow-hidden bg-gray-100">
               {isClient && coverImage?.src ? (
                 <>
@@ -122,6 +123,7 @@ export default function BlogPost({ post, coverImage }) {
                 </div>
               )}
             </figure>
+            */}
           </header>
 
           <div className="prose prose-lg max-w-none">
@@ -231,7 +233,14 @@ export async function getStaticProps({ params }) {
     }
 
     // Load the specific blog post JSON file using require
-    const postContent = require(`../../data/blog/${params.slug}.json`);
+    let postContent;
+    try {
+      postContent = require(`../../data/blog/${params.slug}.json`);
+    } catch (error) {
+      console.error(`Error loading blog content for ${params.slug}:`, error);
+      // If we can't load the content, use the index data
+      postContent = postInIndex;
+    }
 
     let coverImage = null;
 
@@ -239,55 +248,58 @@ export async function getStaticProps({ params }) {
       // First try with the default query
       const primaryQuery = postContent.defaultImageQuery || suggestNatureImageQuery(postContent.category);
       
-      let images = await searchPhotos(primaryQuery, {
-        per_page: 5,
+      // Add timeout to image search - reduced to 8 seconds
+      const imageSearchPromise = searchPhotos(primaryQuery, {
+        per_page: 3, // Reduced from 5 to 3
         orientation: 'landscape'
       });
       
-      // If no results, try with a fallback query based on post content
-      if (!images || images.length === 0) {
-        const fallbackQuery = postContent.category 
-          ? `${postContent.category} technology` 
-          : "cyber security technology";
-        images = await searchPhotos(fallbackQuery, {
-          per_page: 5,
-          orientation: 'landscape'
-        });
-      }
+      const timeoutPromise = new Promise((_, reject) => 
+        setTimeout(() => reject(new Error('Image search timeout')), 8000)
+      );
+      
+      const images = await Promise.race([imageSearchPromise, timeoutPromise]);
       
       if (images && images.length > 0) {
-        // Select the best image based on quality and relevance
-        const bestImage = images.reduce((best, current) => {
-          const currentRatio = current.width / current.height;
-          const bestRatio = best.width / best.height;
-          const currentScore = current.rating || 0;
-          const bestScore = best.rating || 0;
-          return (currentRatio > bestRatio && currentScore >= bestScore) ? current : best;
-        }, images[0]);
-
+        coverImage = images[0];
+      } else {
+        // Use default cover image if no images found
         coverImage = {
-          ...bestImage,
-          src: bestImage.src.large2x || bestImage.src.large || bestImage.src.original
+          src: DEFAULT_COVER,
+          photographer: null,
+          photographer_url: null
         };
       }
     } catch (error) {
-      // Silently fail if we can't get a cover image
+      console.error(`Error fetching cover image for ${params.slug}:`, error);
+      // Use default cover image on error
+      coverImage = {
+        src: DEFAULT_COVER,
+        photographer: null,
+        photographer_url: null
+      };
     }
-
-    // Create the post object with explicit content handling
-    const post = {
-      ...postInIndex,
-      ...postContent
-    };
 
     return {
       props: {
-        post: JSON.parse(JSON.stringify(post)), // Ensure the object is serializable
+        post: postContent,
         coverImage,
       },
-      revalidate: process.env.NODE_ENV === 'development' ? 60 : 86400,
+      // Revalidate every hour
+      revalidate: 3600,
     };
   } catch (error) {
-    return { notFound: true };
+    console.error('Error in getStaticProps:', error);
+    return {
+      props: {
+        post: postInIndex,
+        coverImage: {
+          src: DEFAULT_COVER,
+          photographer: null,
+          photographer_url: null
+        },
+      },
+      revalidate: 3600,
+    };
   }
 } 

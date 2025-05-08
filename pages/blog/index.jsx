@@ -10,9 +10,10 @@ import { suggestNatureImageQuery } from '../../utils/blog-helpers';
 const DEFAULT_PLACEHOLDER = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%233C584A"%3E%3Cpath d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-1.96-2.36L6.5 17h11l-3.54-4.71z"%2F%3E%3C%2Fsvg%3E';
 
 // Get unique categories from blog posts
-const getAllCategories = () => {
+const getAllCategories = (posts) => {
+  if (!Array.isArray(posts)) return [];
   const categories = new Set();
-  blogIndex.forEach(post => {
+  posts.forEach(post => {
     if (Array.isArray(post.category)) {
       post.category.forEach(cat => categories.add(cat));
     } else if (post.category) {
@@ -24,12 +25,12 @@ const getAllCategories = () => {
 
 const POSTS_PER_PAGE = 9;
 
-export default function BlogIndex({ posts }) {
+export default function BlogIndex({ posts = [] }) {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
   const [filteredPosts, setFilteredPosts] = useState(posts);
   const [currentPage, setCurrentPage] = useState(1);
-  const categories = ['All', ...getAllCategories()];
+  const categories = ['All', ...getAllCategories(posts)];
 
   useEffect(() => {
     const filtered = posts.filter(post => {
@@ -232,22 +233,21 @@ export async function getStaticProps() {
     blogIndex.forEach(post => {
       if (post.defaultImageQuery) searchTerms.add(post.defaultImageQuery);
       if (Array.isArray(post.category)) {
-        post.category.forEach(cat => searchTerms.add(`${cat} technology security`));
+        post.category.forEach(cat => searchTerms.add(`${cat} technology`));
       } else if (post.category) {
-        searchTerms.add(`${post.category} technology security`);
+        searchTerms.add(`${post.category} technology`);
       }
-      // Add first 3 words of title as a search term
-      searchTerms.add(post.title.split(' ').slice(0, 3).join(' '));
     });
 
     // Step 2: Create an image pool by fetching images for all search terms
     const imagePool = new Map();
-    await Promise.all(Array.from(searchTerms).map(async (term) => {
+    const searchPromises = Array.from(searchTerms).map(async (term) => {
       try {
         const photos = await searchPhotos(term, {
-          per_page: 15,
+          per_page: 5, // Reduced from 10 to 5
           orientation: 'landscape'
         });
+        
         if (photos && photos.length > 0) {
           photos.forEach(photo => {
             const imageUrl = photo.src.large2x || photo.src.large || photo.src.original;
@@ -255,7 +255,7 @@ export async function getStaticProps() {
               imagePool.set(imageUrl, {
                 url: imageUrl,
                 quality: (photo.width / photo.height - 1.5) ** 2 + (photo.rating || 0),
-                relevance: {}, // Will store relevance scores for each post
+                relevance: {},
               });
             }
           });
@@ -263,7 +263,13 @@ export async function getStaticProps() {
       } catch (error) {
         console.error(`Error fetching images for term "${term}":`, error);
       }
-    }));
+    });
+
+    // Wait for all image searches to complete with a timeout
+    await Promise.race([
+      Promise.all(searchPromises),
+      new Promise(resolve => setTimeout(resolve, 30000)) // 30 second timeout for all image searches
+    ]);
 
     // Step 3: Calculate relevance scores for each image-post pair
     const availableImages = Array.from(imagePool.values());
@@ -277,10 +283,9 @@ export async function getStaticProps() {
       ].filter(Boolean).join(' ').toLowerCase();
 
       availableImages.forEach(image => {
-        // Calculate relevance score based on search term matches
         let relevanceScore = 0;
         postTerms.split(' ').forEach(term => {
-          if (term.length > 3) { // Only consider meaningful terms
+          if (term.length > 3) {
             const termRegex = new RegExp(term, 'i');
             if (image.url.match(termRegex)) {
               relevanceScore += 1;
@@ -291,23 +296,14 @@ export async function getStaticProps() {
       });
     });
 
-    // Step 4: Assign images to posts using Hungarian algorithm (maximize total relevance)
+    // Step 4: Assign images to posts
     const assignments = new Map();
     const usedImages = new Set();
 
-    // Sort posts by most specific requirements first
-    postsNeedingImages.sort((a, b) => {
-      const aTerms = [a.defaultImageQuery, a.category].filter(Boolean).length;
-      const bTerms = [b.defaultImageQuery, b.category].filter(Boolean).length;
-      return bTerms - aTerms;
-    });
-
-    // Assign images to posts
     postsNeedingImages.forEach(post => {
       const availableImagesForPost = availableImages
         .filter(image => !usedImages.has(image.url))
         .sort((a, b) => {
-          // Sort by combination of quality and relevance
           const scoreA = a.quality + (a.relevance[post.slug] * 2);
           const scoreB = b.quality + (b.relevance[post.slug] * 2);
           return scoreB - scoreA;
@@ -335,7 +331,7 @@ export async function getStaticProps() {
       props: {
         posts: postsWithImages
       },
-      revalidate: process.env.NODE_ENV === 'development' ? 60 : 86400,
+      revalidate: 3600, // Revalidate every hour
     };
   } catch (error) {
     console.error('Error in getStaticProps:', error);
@@ -346,7 +342,7 @@ export async function getStaticProps() {
           image: DEFAULT_PLACEHOLDER
         }))
       },
-      revalidate: process.env.NODE_ENV === 'development' ? 60 : 86400,
+      revalidate: 3600,
     };
   }
 } 

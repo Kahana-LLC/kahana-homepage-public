@@ -488,4 +488,4 @@ const blogIndex = [
   },
 ];
 
-module.exports = { blogIndex };
+export { blogIndex };

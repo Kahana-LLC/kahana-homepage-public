@@ -3,6 +3,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Display",
+      "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji",
+      "Segoe UI Emoji", "Segoe UI Symbol";
+  }
+}
+
 :root {
   /* Main brand colors */
   --kahana-primary: #3c584a;

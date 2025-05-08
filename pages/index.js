@@ -9,6 +9,7 @@ import FeaturedBlogSection from "../components/FeaturedBlogSection";
 import FadeInSection from "../components/FadeInSection";
 import SEO from "../components/SEO";
 import { getRandomPhoto, getOptimizedPhotoUrl } from "../utils/pexels";
+import { blogIndex } from "../data/blog-index";
 
 // Author mapping for blog posts
 const authorImages = {
@@ -32,9 +33,6 @@ const imageCache = new Map();
 
 export async function getStaticProps() {
   try {
-    // Import the blog index
-    const blogIndex = require("../data/blog-index.js");
-
     // Sort posts by date, newest first
     const sortedPosts = [...blogIndex].sort(
       (a, b) => new Date(b.date) - new Date(a.date)
