@@ -10,6 +10,8 @@ import FadeInSection from "../components/FadeInSection";
 import SEO from "../components/SEO";
 import { getRandomPhoto, getOptimizedPhotoUrl } from "../utils/pexels";
 import { blogIndex } from "../data/blog-index";
+import BlogCard from "../components/BlogCard";
+import Link from "next/link";
 
 // Author mapping for blog posts
 const authorImages = {
@@ -250,9 +252,34 @@ export default function Home({ blogPosts }) {
           <FadeInSection delay={600}>
             <section
               id="blog"
-              className="flex items-center justify-center p-4 md:p-8 bg-gray-50"
+              className="flex flex-col items-center justify-center p-4 md:p-8 bg-gray-50"
             >
-              <FeaturedBlogSection posts={blogPosts || []} />
+              <div className="mx-auto max-w-7xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {(blogPosts || []).slice(0, 3).map((post) => (
+                  <BlogCard key={post.slug} post={post} />
+                ))}
+              </div>
+              <div className="mt-8 text-center">
+                <Link
+                  href="/blog"
+                  className="inline-flex items-center px-6 py-3 text-base font-medium rounded-md text-white bg-[#66C2BE] hover:bg-[#55B3AF] transition-all duration-200"
+                >
+                  View All Posts
+                  <svg
+                    className="ml-2 w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
+                  </svg>
+                </Link>
+              </div>
             </section>
           </FadeInSection>
         </main>
