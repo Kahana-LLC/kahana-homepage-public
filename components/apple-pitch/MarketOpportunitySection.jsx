@@ -15,7 +15,7 @@ const MarketOpportunitySection = () => {
       </div>
       <div className="space-y-6">
         <p className="text-xl text-gray-600">
-          The integration of our technology into Apple's ecosystem presents two major revenue opportunities: increased device sales and increased ad revenue from the Google partnership. Our analysis shows an opportunity to generate ~$1.5B to ~$13.9B in additional revenue over five years in the United States alone.
+          The integration of our technology into Apple's ecosystem presents a major revenue opportunity through increased device sales, as well a secondary opportunity to increase ad revenue from the Google search partnership as long as it remains in place. Our analysis shows an opportunity to generate ~$1.5B to ~$13.9B in additional revenue over five years in the United States alone.
         </p>
       </div>
 
@@ -38,7 +38,7 @@ const MarketOpportunitySection = () => {
 
         {/* Ad Revenue Opportunity */}
         <div className="space-y-4">
-          <h3 className="text-2xl font-semibold text-black">Ad Revenue Opportunity</h3>
+          <h3 className="text-2xl font-semibold text-black">Ad Revenue Opportunity*</h3>
           <div className="p-6 bg-gray-100 rounded-lg border border-gray-200">
             <p className="text-2xl font-semibold text-gray-800">
               ~$154M to ~$1.6B
@@ -54,7 +54,10 @@ const MarketOpportunitySection = () => {
       </div>
 
       <p className="text-sm text-gray-500 mt-6">
-        Note: Detailed workbook/calculation estimates available upon request - email jonathan@kahana.co
+        Note: Detailed workbook/calculation estimates available upon request - email jonathan@kahana.co.
+      </p>
+      <p className="text-sm text-gray-500">
+        *We are aware Apple is considering moving away from the ad revenue share partnership with Google.
       </p>
     </div>
   );

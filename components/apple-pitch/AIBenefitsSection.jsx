@@ -24,19 +24,27 @@ const AIBenefitsSection = () => {
         <p className="text-gray-600 mb-4">
           By integrating our technology into Apple's product suite, the following types of commands will now be possible to accomplish touch-free:
         </p>
-        <ul className="list-disc list-inside space-y-2 text-gray-600 mb-6">
+        <ul className="list-decimal list-inside space-y-2 text-gray-600 mb-6">
           <li>"Show me the NerdWallet article about crypto that I saved last week in Safari"</li>
           <li>"Create a new tab group called 'Summer Travel' with all my saved Airbnb listings"</li>
           <li>"Group my saved California properties under $1M from Zillow"</li>
-          <li>"Find articles about AI from my reading list and show them to me sorted by publication date"</li>
           <li>"Continue reading the article I was looking at on my Mac this morning"</li>
+          <li>"When I put on Vision Pro, show me the research papers I saved about neural networks"</li>
+          <li>"Save this 3D model to my Vision Pro workspace for later review"</li>
+          <li>"Send my meeting notes to my Apple Watch for my upcoming presentation"</li>
+          <li>"Summarize this article and send the key points to my Apple Watch"</li>
           <li>"Open my most recent Safari tab group on my iPad"</li>
           <li>"Remind me about this article next time I'm researching machine learning"</li>
           <li>"Move all my open finance-related tabs to a new tab group"</li>
           <li>"Read me the headlines from my saved articles while I'm on my morning walk"</li>
-          <li>"Send this article to my Vision Pro and display it in my workspace"</li>
-          <li>"When I put on Vision Pro, show me the research papers I saved about neural networks"</li>
-          <li>"Summarize this article and send the key points to my Apple Watch"</li>
+          <li>"Show me my Perplexity search from last week about quantum computing"</li>
+          <li>"Open my latest ChatGPT conversation about Python programming"</li>
+          <li>"Find my Grok analysis about market trends from yesterday"</li>
+          <li>"Show me my Tableau dashboard for Q2 sales metrics"</li>
+          <li>"Open my recent Figma designs for the new product launch"</li>
+          <li>"Find my Google Sheets with the project timeline"</li>
+          <li>"Show me my Notion workspace about the team meeting notes"</li>
+          <li>"Show me my recent Claude conversations about AI ethics"</li>
         </ul>
         <div className="p-6 bg-gray-100 rounded-lg border border-gray-200">
           <p className="text-gray-600">

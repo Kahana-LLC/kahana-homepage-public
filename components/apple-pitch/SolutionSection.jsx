@@ -23,7 +23,7 @@ const SolutionSection = () => {
         <div className="space-y-4">
           <h3 className="text-2xl font-semibold text-black">The Experience</h3>
           <p className="text-gray-600">
-            Ask for anything—<span className="font-semibold">"Show me all the articles about AI investments I saved last week"</span>—and see them appear, organized by relevance. Need to find that article about quantum computing? Just say it, and it's there. Organize, sort, and interact with your digital world using only your voice and simple gestures—no taps, no swipes, no distractions.
+            Ask for anything—<span className="font-semibold">"Show me all the articles and AI searches about NVIDIA investments I saved last week"</span>—and see them appear, organized by relevance. Need to find that article about quantum computing? Just say it, and it's there. Organize, sort, and interact with your digital world using only your voice and simple gestures—no taps, no swipes, no distractions.
           </p>
         </div>
         

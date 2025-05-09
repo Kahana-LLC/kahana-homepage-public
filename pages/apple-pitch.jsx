@@ -28,8 +28,8 @@ import {
 // Section titles for navigation
 const sections = [
   { id: "big-change", title: "AI is elevating how we interact with devices", component: BigChangeSection },
-  { id: "problem", title: "But Apple devices can't handle expected commands", component: ProblemSection },
-  { id: "solution", title: "Here's how we make Apple devices understand you", component: SolutionSection },
+  { id: "problem", title: "Apple devices can't handle expected commands", component: ProblemSection },
+  { id: "solution", title: "How our tech makes Apple devices understand you", component: SolutionSection },
   { id: "promised-land", title: "Imagine seamless interaction across all devices", component: PromisedLandSection },
   { id: "winners-losers", title: "Right now, competitors are already moving ahead", component: WinnersLosersSection },
   { id: "market-opportunity", title: "Apple is missing out on billions in untapped revenue", component: MarketOpportunitySection },
@@ -68,8 +68,8 @@ const ApplePitch = () => {
           <div className="max-w-6xl mx-auto relative">
             {/* Main content */}
             <div className="relative z-10 max-w-2xl">
-              <h1 className="text-[56px] font-bold mb-6 text-white leading-tight tracking-tight md:whitespace-nowrap">
-                Omnipotence: Becoming a God Through Apple
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-bold mb-6 text-white leading-tight tracking-tight">
+                The Hephaestus Project: Forging Apple Devices as Tools of Omnipotence
               </h1>
               
               <p className="text-2xl text-gray-300 mb-12">
@@ -87,53 +87,6 @@ const ApplePitch = () => {
                 className="rounded-lg"
                 priority
               />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Table of Contents */}
-      <section className="bg-white py-12">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-black mb-8">Table of Contents</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="space-y-4">
-                {[
-                  { id: "big-change", name: "Introduction" },
-                  { id: "problem", name: "Problem" },
-                  { id: "solution", name: "Solution" },
-                  { id: "promised-land", name: "Vision" },
-                  { id: "winners-losers", name: "Competition" }
-                ].map((section, index) => (
-                  <a
-                    key={section.id}
-                    href={`#${section.id}`}
-                    className="flex items-center text-gray-600 hover:text-black transition-colors"
-                  >
-                    <span className="text-gray-400 mr-2">{String(index + 1).padStart(2, '0')}.</span>
-                    {section.name}
-                  </a>
-                ))}
-              </div>
-              <div className="space-y-4">
-                {[
-                  { id: "market-opportunity", name: "Market" },
-                  { id: "technical-roadmap", name: "Roadmap" },
-                  { id: "ai-benefits", name: "Benefits" },
-                  { id: "patent-breakdown", name: "Patents" },
-                  { id: "vision-beyond", name: "Future" }
-                ].map((section, index) => (
-                  <a
-                    key={section.id}
-                    href={`#${section.id}`}
-                    className="flex items-center text-gray-600 hover:text-black transition-colors"
-                  >
-                    <span className="text-gray-400 mr-2">{String(index + 6).padStart(2, '0')}.</span>
-                    {section.name}
-                  </a>
-                ))}
-              </div>
             </div>
           </div>
         </div>
