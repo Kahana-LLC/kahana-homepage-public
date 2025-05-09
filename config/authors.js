@@ -64,6 +64,20 @@ const authors = {
     bio: "Saideep is a software engineer at Kahana who thrives on solving complex problems and bringing innovative solutions to life across both hardware and software domains. Known for his passion for optimizing systems and driving ideas from concept to reality, he is always excited to take on new challenges and continuously learn and grow along the way.",
     linkedinProfile: "https://www.linkedin.com/in/saideep-pajjuri/",
   },
+  "Shalvi Save": {
+    name: "Shalvi Save",
+    role: "Product Manager",
+    bio: "Shalvi is a dynamic product manager fueled by meaningful challenges that ignite innovation and create positive impact. Holding a degree in Engineering Management from Duke University, she leverages her expertise in Lean Manufacturing and Supply Chain Management to drive efficient, high-impact solutions. With a focus on growth, learning, and real-world problem-solving, Shalvi sets ambitious, outcome-oriented goals to build products that transform industries and improve lives.",
+    linkedinProfile: "https://www.linkedin.com/in/shalvi-save/",
+    avatar: "/assets/headshots/shalvi_save.jpg",
+  },
+  "Fahiza Syed": {
+    name: "Fahiza Syed",
+    role: "Product Manager",
+    bio: "Fahiza is an innovative product manager and STEM MBA candidate at UW-Madison, passionate about tackling complex challenges in Generative AI, APIs, product management, contact centers, pricing, and monetization. With 5 years of SaaS experience in software development and technical product management, including a proven track record at Verizon India, she has driven significant cost savings, accelerated go-to-market strategies, and enhanced user experiences through effective cross-functional collaboration with internal (engineering & UX) and external (sales, marketing) stakeholders. Specializing in Technology Strategy and Product Management, Fahiza sets ambitious, outcome-oriented goals to deliver transformative products that optimize operations and elevate customer experiences.",
+    linkedinProfile: "https://www.linkedin.com/in/fahiza-aafreen-syed/",
+    avatar: "/assets/headshots/fahiza_syed.jpg",
+  },
 };
 
 module.exports = { authors };

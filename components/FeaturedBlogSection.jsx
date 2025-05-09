@@ -103,7 +103,11 @@ export default function FeaturedBlogSection({ posts = [] }) {
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="text-sm font-medium text-gray-900 truncate">
-                      {postAuthors.map(author => author.name).join(', ')}
+                      {postAuthors.map((author, idx) => (
+                        <span key={author.name}>
+                          {author.name}{idx < postAuthors.length - 1 ? ', ' : ''}
+                        </span>
+                      ))}
                     </div>
                     <div className="flex items-center gap-1 text-sm text-gray-600">
                       <time dateTime={post.date}>
