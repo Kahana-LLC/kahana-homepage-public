@@ -441,18 +441,6 @@ const blogIndex = [
   },
   {
     title:
-      "The Hidden Costs and Limitations of Virtual Machine Browsers in 2025",
-    date: "2025-04-17T00:00:00.000Z",
-    authors: ["Jordan Kern", "Adam Kershner"],
-    category: ["Browsers", "Performance", "Research & Trends"],
-    excerpt:
-      "A critical analysis of virtual machine browser challenges and limitations in 2025, examining performance issues, security vulnerabilities, and implementation complexities that organizations face when relying on VM-based browsing solutions.",
-    defaultImageQuery: "virtual machine browser security challenges 2025",
-    slug: "virtual-machine-browsers-2025",
-    readingTime: 12,
-  },
-  {
-    title:
       "Enterprise vs Consumer Browsers: Securing the Modern Workforce (Part 1)",
     date: "2025-04-14T00:00:00.000Z",
     authors: ["Vedant Gupta", "Venkesh Agarwal", "Adam Kershner"],
@@ -485,6 +473,29 @@ const blogIndex = [
     defaultImageQuery: "logii browser anti-detect fingerprinting 2025",
     slug: "logii-browser-challenges-research-2025",
     readingTime: 8,
+  },
+  {
+    title: "Oasis: A Browser That Thinks in Projects, Not Tabs",
+    date: "2025-05-08T00:00:00.000Z",
+    authors: ["Shalvi Save"],
+    category: ["Enterprise", "Productivity", "Browser Innovation"],
+    excerpt:
+      "Oasis introduces a new way to organize your digital work: Hubs. Instead of endless tabs, you get focused workspaces for each project or topic. Shalvi Save explores why this approach could finally bring order to browser chaos.",
+    defaultImageQuery: "Oasis browser hub project organization",
+    slug: "oasis-browser-thinks-in-projects-not-tabs",
+    readingTime: 6,
+  },
+  {
+    title:
+      "Securing Manufacturing: How Enterprise Browsers like Kahana Oasis Combat Browser-Based Threats",
+    date: "2025-05-08T00:00:00.000Z",
+    authors: ["Fahiza Syed"],
+    category: ["Manufacturing", "Security", "Enterprise Browsers"],
+    excerpt:
+      "The manufacturing industry faces a surge in browser-based cyber threats as it embraces digital transformation. Fahiza Syed explores how Kahana's Oasis Enterprise Browser delivers the security and control manufacturers need to defend against ransomware, phishing, and insider threats.",
+    defaultImageQuery: "manufacturing browser security cyber threats",
+    slug: "securing-manufacturing-enterprise-browsers-oasis",
+    readingTime: 10,
   },
 ];
 

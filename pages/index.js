@@ -165,7 +165,7 @@ export default function Home({ blogPosts }) {
       {
         "@type": "PropertyValue",
         name: "Latest Blog Posts",
-        value: blogPosts.slice(0, 3).map((post) => ({
+        value: (blogPosts || []).slice(0, 3).map((post) => ({
           title: post.title,
           url: `https://kahana.co/blog/${post.slug}`,
           datePublished: post.date,
@@ -252,7 +252,7 @@ export default function Home({ blogPosts }) {
               id="blog"
               className="flex items-center justify-center p-4 md:p-8 bg-gray-50"
             >
-              <FeaturedBlogSection posts={blogPosts} />
+              <FeaturedBlogSection posts={blogPosts || []} />
             </section>
           </FadeInSection>
         </main>

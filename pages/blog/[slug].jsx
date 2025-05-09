@@ -214,7 +214,7 @@ export async function getStaticPaths() {
 
     return {
       paths,
-      fallback: false, // Return 404 for non-existent paths
+      fallback: 'blocking', // Changed from false to 'blocking' for on-demand static generation
     };
   } catch (error) {
     return {

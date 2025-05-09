@@ -8,7 +8,6 @@ import { trackError } from "../utils/analytics";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
-  const isApplePitch = router.pathname === "/apple-pitch";
 
   useEffect(() => {
     // Track route changes
@@ -55,15 +54,13 @@ function MyApp({ Component, pageProps }) {
         url={`https://kahana.co${router.asPath}`}
         type={router.pathname === "/" ? "website" : "article"}
       />
-      {!isApplePitch && (
-        <div style={{ zIndex: "100" }} className="sticky top-0">
-          <NavbarDup />
-        </div>
-      )}
+      <div style={{ zIndex: "100" }} className="sticky top-0">
+        <NavbarDup />
+      </div>
       <main className="flex-grow">
         <Component {...pageProps} />
       </main>
-      {!isApplePitch && <Footer />}
+      <Footer />
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import Head from 'next/head';
 import { blogIndex } from '../../data/blog-index';
 import BlogCard from '../../components/BlogCard';
@@ -26,18 +26,24 @@ const getAllCategories = (posts) => {
 const POSTS_PER_PAGE = 9;
 
 export default function BlogIndex({ posts = [] }) {
+  // Sort posts by date descending
+  const sortedPosts = useMemo(
+    () => posts.slice().sort((a, b) => new Date(b.date) - new Date(a.date)),
+    [posts]
+  );
+
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
-  const [filteredPosts, setFilteredPosts] = useState(posts);
   const [currentPage, setCurrentPage] = useState(1);
-  const categories = ['All', ...getAllCategories(posts)];
+  const categories = ['All', ...getAllCategories(sortedPosts)];
 
-  useEffect(() => {
-    const filtered = posts.filter(post => {
-      const matchesCategory = selectedCategory === 'All' || 
-        (Array.isArray(post.category) ? 
-          post.category.includes(selectedCategory) : 
-          post.category === selectedCategory);
+  // Filtered posts based on category and search
+  const filteredPosts = useMemo(() => {
+    return sortedPosts.filter(post => {
+      const matchesCategory = selectedCategory === 'All' ||
+        (Array.isArray(post.category)
+          ? post.category.includes(selectedCategory)
+          : post.category === selectedCategory);
 
       const matchesSearch = searchQuery === '' ||
         post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -45,10 +51,17 @@ export default function BlogIndex({ posts = [] }) {
 
       return matchesCategory && matchesSearch;
     });
+  }, [sortedPosts, selectedCategory, searchQuery]);
 
-    setFilteredPosts(filtered);
-    setCurrentPage(1); // Reset to first page when filters change
-  }, [selectedCategory, searchQuery, posts]);
+  // Reset to first page when filters change
+  const handleCategoryChange = (category) => {
+    setSelectedCategory(category);
+    setCurrentPage(1);
+  };
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+    setCurrentPage(1);
+  };
 
   // Calculate pagination values
   const totalPages = Math.ceil(filteredPosts.length / POSTS_PER_PAGE);
@@ -125,7 +138,7 @@ export default function BlogIndex({ posts = [] }) {
               type="text"
               placeholder="Search articles..."
               value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
+              onChange={handleSearchChange}
               className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-kahana-accent-water focus:border-transparent"
             />
             <div className="absolute inset-y-0 right-0 flex items-center pr-3">
@@ -142,7 +155,7 @@ export default function BlogIndex({ posts = [] }) {
             {categories.map((category) => (
               <button
                 key={category}
-                onClick={() => setSelectedCategory(category)}
+                onClick={() => handleCategoryChange(category)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                   selectedCategory === category
                     ? 'bg-kahana-primary text-white'

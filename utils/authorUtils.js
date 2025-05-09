@@ -64,7 +64,7 @@ const getAuthorDetails = (authorNames) => {
       return [
         {
           ...author,
-          avatar: getAuthorHeadshot(authorNames.name),
+          avatar: author.avatar || getAuthorHeadshot(authorNames.name),
         },
       ];
     }
@@ -85,7 +85,7 @@ const getAuthorDetails = (authorNames) => {
       return [
         {
           ...author,
-          avatar: getAuthorHeadshot(authorNames),
+          avatar: author.avatar || getAuthorHeadshot(authorNames),
         },
       ];
     }
@@ -110,7 +110,7 @@ const getAuthorDetails = (authorNames) => {
           }
           return {
             ...author,
-            avatar: getAuthorHeadshot(nameOrObject.name),
+            avatar: author.avatar || getAuthorHeadshot(nameOrObject.name),
           };
         }
         // If no name property, try to use the object itself as a name
@@ -128,7 +128,7 @@ const getAuthorDetails = (authorNames) => {
           }
           return {
             ...author,
-            avatar: getAuthorHeadshot(name),
+            avatar: author.avatar || getAuthorHeadshot(name),
           };
         }
         return null;
@@ -148,7 +148,7 @@ const getAuthorDetails = (authorNames) => {
       }
       return {
         ...author,
-        avatar: getAuthorHeadshot(name),
+        avatar: author.avatar || getAuthorHeadshot(name),
       };
     })
     .filter(Boolean); // Remove any null entries
