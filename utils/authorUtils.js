@@ -2,16 +2,16 @@ const { authors } = require("../config/authors");
 
 // Import headshot images
 const headshots = {
-  adam_kershner: require("../public/assets/headshots/adam_kershner.jpg"),
-  jordan_kern: require("../public/assets/headshots/jordan_kern.jpg"),
-  jescetta_joy: require("../public/assets/headshots/jescetta_joy.jpg"),
-  vruksha_joshi: require("../public/assets/headshots/vruksha_joshi.jpg"),
-  sonakshi_singh: require("../public/assets/headshots/sonakshi_singh.jpg"),
-  venkesh_agarwal: require("../public/assets/headshots/venkesh_agarwal.jpg"),
-  vedant_gupta: require("../public/assets/headshots/vedant_gupta.jpg"),
-  shivangi_chamoli: require("../public/assets/headshots/shivangi_chamoli.jpg"),
-  saideep_pajjuri: require("../public/assets/headshots/saideep_pajjuri.jpg"),
-  vinit_juneja: require("../public/assets/headshots/vinit_juneja.jpg"),
+  adam_kershner: "/assets/headshots/adam_kershner.jpg",
+  jordan_kern: "/assets/headshots/jordan_kern.jpg",
+  jescetta_joy: "/assets/headshots/jescetta_joy.jpg",
+  vruksha_joshi: "/assets/headshots/vruksha_joshi.jpg",
+  sonakshi_singh: "/assets/headshots/sonakshi_singh.jpg",
+  venkesh_agarwal: "/assets/headshots/venkesh_agarwal.jpg",
+  vedant_gupta: "/assets/headshots/vedant_gupta.jpg",
+  shivangi_chamoli: "/assets/headshots/shivangi_chamoli.jpg",
+  saideep_pajjuri: "/assets/headshots/saideep_pajjuri.jpg",
+  vinit_juneja: "/assets/headshots/vinit_juneja.jpg",
 };
 
 // Default avatar placeholder
@@ -64,7 +64,10 @@ const getAuthorDetails = (authorNames) => {
       return [
         {
           ...author,
-          avatar: author.avatar || getAuthorHeadshot(authorNames.name),
+          avatar:
+            typeof author.avatar === "string"
+              ? author.avatar
+              : author.avatar?.default || getAuthorHeadshot(authorNames.name),
         },
       ];
     }
@@ -85,7 +88,10 @@ const getAuthorDetails = (authorNames) => {
       return [
         {
           ...author,
-          avatar: author.avatar || getAuthorHeadshot(authorNames),
+          avatar:
+            typeof author.avatar === "string"
+              ? author.avatar
+              : author.avatar?.default || getAuthorHeadshot(authorNames),
         },
       ];
     }
@@ -110,7 +116,11 @@ const getAuthorDetails = (authorNames) => {
           }
           return {
             ...author,
-            avatar: author.avatar || getAuthorHeadshot(nameOrObject.name),
+            avatar:
+              typeof author.avatar === "string"
+                ? author.avatar
+                : author.avatar?.default ||
+                  getAuthorHeadshot(nameOrObject.name),
           };
         }
         // If no name property, try to use the object itself as a name
@@ -128,7 +138,10 @@ const getAuthorDetails = (authorNames) => {
           }
           return {
             ...author,
-            avatar: author.avatar || getAuthorHeadshot(name),
+            avatar:
+              typeof author.avatar === "string"
+                ? author.avatar
+                : author.avatar?.default || getAuthorHeadshot(name),
           };
         }
         return null;
@@ -148,7 +161,10 @@ const getAuthorDetails = (authorNames) => {
       }
       return {
         ...author,
-        avatar: author.avatar || getAuthorHeadshot(name),
+        avatar:
+          typeof author.avatar === "string"
+            ? author.avatar
+            : author.avatar?.default || getAuthorHeadshot(name),
       };
     })
     .filter(Boolean); // Remove any null entries
