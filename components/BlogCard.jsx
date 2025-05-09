@@ -28,6 +28,7 @@ export default function BlogCard({ post }) {
   }
 
   const postAuthors = getAuthorDetails(post.authors);
+  console.log('BlogCard postAuthors:', postAuthors);
 
   return (
     <article className="bg-white rounded-xl border border-gray-200 shadow-lg hover:shadow-xl transition-shadow duration-200 overflow-hidden flex flex-col h-full">
