@@ -15,7 +15,7 @@ const MarketOpportunitySection = () => {
       </div>
       <div className="space-y-6">
         <p className="text-xl text-gray-600">
-          The integration of our technology into Apple's ecosystem presents a major revenue opportunity through increased device sales, as well a secondary opportunity to increase ad revenue from the Google search partnership as long as it remains in place. Our analysis shows an opportunity to generate ~$1.5B to ~$13.9B in additional revenue over five years in the United States alone.
+          The integration of our technology into Apple's ecosystem presents two major revenue opportunities: increased device sales and the introduction of a new subscription for unlimited sophisticated Siri requests. Our analysis shows an opportunity to generate ~$1.9B to ~$15.3B in additional revenue over five years in the United States alone*.
         </p>
       </div>
 
@@ -36,19 +36,19 @@ const MarketOpportunitySection = () => {
           </p>
         </div>
 
-        {/* Ad Revenue Opportunity */}
+        {/* Siri Subscription Opportunity */}
         <div className="space-y-4">
-          <h3 className="text-2xl font-semibold text-black">Ad Revenue Opportunity*</h3>
+          <h3 className="text-2xl font-semibold text-black">Siri Subscription Opportunity</h3>
           <div className="p-6 bg-gray-100 rounded-lg border border-gray-200">
             <p className="text-2xl font-semibold text-gray-800">
-              ~$154M to ~$1.6B
+              ~$592M to ~$3.0B
             </p>
             <p className="text-gray-600 mt-1">
-              additional revenue from Google payouts over a 5 year period
+              additional subscription revenue over a 5 year period
             </p>
           </div>
           <p className="text-gray-600 mt-4">
-            Currently, only 28% of US search queries come through Safari. A better and more powerful Siri-Safari integration would result in Apple users spending more time in Safari and less time in other browsers.
+            Currently, ~66% of US Apple customers already pay for an iCloud subscription. A better and more powerful Siri-Safari integration presents an opportunity to introduce a new $0.99/month subscription that gives subscribers access to unlimited fast, sophisticated Siri requests, with a free tier that caps access to these requests.
           </p>
         </div>
       </div>
@@ -57,7 +57,7 @@ const MarketOpportunitySection = () => {
         Note: Detailed workbook/calculation estimates available upon request - email jonathan@kahana.co.
       </p>
       <p className="text-sm text-gray-500">
-        *We are aware Apple is considering moving away from the ad revenue share partnership with Google.
+        *This does not include a potential ~$154M to ~$1.6B in additional revenue from Google ad payouts for searches that take place in Safari over a 5-year period; we are aware that Apple is considering moving away from this ad revenue share partnership in favor of focusing on AI-powered search engines. However, while the partnership is still in place, Apple stands to gain more revenue by increasing its search query market share in the US.
       </p>
     </div>
   );
