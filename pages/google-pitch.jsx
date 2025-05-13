@@ -69,7 +69,7 @@ const GooglePitch = () => {
             {/* Main content */}
             <div className="relative z-10 max-w-2xl">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-bold mb-6 text-white leading-tight tracking-tight">
-                The Athena Project: Elevating Google Search to Divine Intelligence
+                The Hephaestus Project: Elevating Google Search to Divine Intelligence
               </h1>
               
               <p className="text-2xl text-gray-300 mb-12">

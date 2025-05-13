@@ -10,7 +10,6 @@ import {
   ProductOverviewSection,
   KeyFeaturesSection,
   TechnologySection,
-  BenefitsSection,
   ImplementationSection,
   VsCompetitorsSection,
   DotPattern,
@@ -21,21 +20,21 @@ import {
   PromisedLandSection,
   TechnicalRoadmapSection,
   AIBenefitsSection,
-  PatentBreakdownSection,
-  VisionBeyondSection
+  VisionBeyondSection,
+  PatentBreakdownSection
 } from "../components/meta-pitch/index.jsx";
 
 // Section titles for navigation
 const sections = [
   { id: "big-change", title: "AI is transforming social interaction", component: BigChangeSection },
-  { id: "problem", title: "Meta's platforms need intelligent content understanding", component: ProblemSection },
-  { id: "solution", title: "How our tech enhances Meta's social ecosystem", component: SolutionSection },
-  { id: "promised-land", title: "Imagine a truly intelligent social network", component: PromisedLandSection },
-  { id: "winners-losers", title: "Competitors are advancing in AI-powered social", component: WinnersLosersSection },
-  { id: "market-opportunity", title: "Meta can unlock new revenue streams with AI", component: MarketOpportunitySection },
-  { id: "technical-roadmap", title: "Clear path to AI-powered social dominance", component: TechnicalRoadmapSection },
-  { id: "ai-benefits", title: "Meta becomes the leader in AI-enhanced social", component: AIBenefitsSection },
-  { id: "patent-breakdown", title: "Protected IP secures Meta's future until 2039...", component: PatentBreakdownSection },
+  { id: "problem", title: "Meta's AR and VR devices are not designed for work", component: ProblemSection },
+  { id: "solution", title: "How our tech elevates the Metaverse for work", component: SolutionSection },
+  { id: "promised-land", title: "The future of work is in the Metaverse", component: PromisedLandSection },
+  { id: "winners-losers", title: "Right now, competitors are already moving ahead", component: VsCompetitorsSection },
+  { id: "market-opportunity", title: "Meta is missing out on billions in untapped revenue", component: MarketOpportunitySection },
+  { id: "technical-roadmap", title: "We have a clear path to capture this opportunity", component: TechnicalRoadmapSection },
+  { id: "ai-benefits", title: "Meta quickly becomes #1 for AI-enhanced social", component: AIBenefitsSection },
+  { id: "patent-breakdown", title: "Protected IP: Securing Meta's Future", component: PatentBreakdownSection },
   { id: "vision-beyond", title: "Building the future of social intelligence", component: VisionBeyondSection }
 ];
 
@@ -53,44 +52,7 @@ const MetaPitch = () => {
       </Head>
 
       {/* Hero Section */}
-      <section className="relative min-h-[600px] overflow-hidden bg-black">
-        {/* Top right dots */}
-        <div className="absolute top-0 right-0 w-72 h-72">
-          <DotPattern />
-        </div>
-        
-        {/* Bottom left dots */}
-        <div className="absolute bottom-0 left-0 w-72 h-72">
-          <DotPattern />
-        </div>
-
-        <div className="container mx-auto px-6 pt-16 pb-24">
-          <div className="max-w-6xl mx-auto relative">
-            {/* Main content */}
-            <div className="relative z-10 max-w-2xl">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-bold mb-6 text-white leading-tight tracking-tight">
-                The Hermes Project: Transforming Meta's Social Universe with AI
-              </h1>
-              
-              <p className="text-2xl text-gray-300 mb-12">
-                How Meta can revolutionize social interaction by making AI the core of every user experience.
-              </p>
-            </div>
-
-            {/* Centered image */}
-            <div className="relative w-full flex justify-center items-center mt-8">
-              <Image
-                src="/images-meta/introduction.jpg"
-                alt="Meta AI Social Interface"
-                width={800}
-                height={450}
-                className="rounded-lg"
-                priority
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      <IntroductionSection />
 
       {/* Navigation Menu */}
       <nav className="sticky top-0 bg-white/80 backdrop-blur-md z-10 border-b border-gray-200">
@@ -104,7 +66,7 @@ const MetaPitch = () => {
               { id: "winners-losers", name: "Competition" },
               { id: "market-opportunity", name: "Market" },
               { id: "technical-roadmap", name: "Roadmap" },
-              { id: "ai-benefits", name: "Benefits" },
+              { id: "ai-benefits", name: "AI Benefits" },
               { id: "patent-breakdown", name: "Patents" },
               { id: "vision-beyond", name: "Future" }
             ].map(section => (

@@ -9,6 +9,9 @@ import { trackError } from "../utils/analytics";
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
   const isApplePitch = router.pathname === "/apple-pitch";
+  const isMetaPitch = router.pathname === "/meta-pitch";
+  const isGooglePitch = router.pathname === "/google-pitch";
+  const isMicrosoftPitch = router.pathname === "/microsoft-pitch";
 
   useEffect(() => {
     // Track route changes
@@ -49,13 +52,16 @@ function MyApp({ Component, pageProps }) {
     };
   }, [router.events]);
 
+  const hideNavAndFooter =
+    isApplePitch || isMetaPitch || isGooglePitch || isMicrosoftPitch;
+
   return (
     <div className="flex flex-col min-h-screen">
       <SEO
         url={`https://kahana.co${router.asPath}`}
         type={router.pathname === "/" ? "website" : "article"}
       />
-      {!isApplePitch && (
+      {!hideNavAndFooter && (
         <div style={{ zIndex: "100" }} className="sticky top-0">
           <NavbarDup />
         </div>
@@ -63,7 +69,7 @@ function MyApp({ Component, pageProps }) {
       <main className="flex-grow">
         <Component {...pageProps} />
       </main>
-      {!isApplePitch && <Footer />}
+      {!hideNavAndFooter && <Footer />}
     </div>
   );
 }

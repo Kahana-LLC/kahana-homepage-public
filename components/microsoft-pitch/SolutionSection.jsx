@@ -7,62 +7,53 @@ const SolutionSection = () => {
       {/* Cover Photo */}
       <div className="relative h-[32rem] w-full rounded-xl overflow-hidden mb-6">
         <Image
-          src="/images-microsoft/solution.jpg"
-          alt="Microsoft AI-powered enterprise solutions"
+          src="/images-apple/solution.jpg"
+          alt="Seamless integration of Microsoft Copilot with Microsoft 365 showing AI-powered content discovery"
           fill
           className="object-cover"
         />
       </div>
-
       <div className="space-y-6">
         <p className="text-xl text-gray-600">
-          Our solution transforms enterprise software into an intelligent ecosystem that understands context, 
-          anticipates needs, and delivers insights at the right moment. By combining AI with deep enterprise 
-          expertise, we're creating a new paradigm for business operations.
+          Our solution puts Microsoft Copilot at the heart of Microsoft 365, elevating Microsoft's ecosystem and making it more useful for people. With enhanced Copilot, you can instantly find and act on any information you've saved in Microsoft 365 through natural conversation. Microsoft 365 becomes an intelligent workspace that understands your needs, while Copilot acts as your personal AI assistant, making information retrieval effortless across all your Microsoft devices—no touch required.
         </p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
         <div className="space-y-4">
-          <h3 className="text-2xl font-semibold text-black">Intelligent Automation</h3>
-          <ul className="list-disc list-inside space-y-2 text-gray-600">
-            <li>Context-aware process automation</li>
-            <li>Smart workflow optimization</li>
-            <li>Predictive task management</li>
-            <li>Adaptive resource allocation</li>
-          </ul>
+          <h3 className="text-2xl font-semibold text-black">The Experience</h3>
+          <p className="text-gray-600">
+            Ask for anything—<span className="font-semibold">"Show me all the articles and AI searches about NVIDIA investments I saved last week"</span>—and see them appear, organized by relevance. Need to find that article about quantum computing? Just say it, and it's there. Organize, sort, and interact with your digital world using only your voice and simple gestures—no taps, no swipes, no distractions.
+          </p>
         </div>
         
         <div className="space-y-4">
-          <h3 className="text-2xl font-semibold text-black">Business Intelligence</h3>
-          <ul className="list-disc list-inside space-y-2 text-gray-600">
-            <li>Real-time analytics and insights</li>
-            <li>Predictive business modeling</li>
-            <li>Automated reporting and visualization</li>
-            <li>Intelligent decision support</li>
-          </ul>
+          <h3 className="text-2xl font-semibold text-black">The Response</h3>
+          <p className="text-gray-600">
+            When you make a request, Copilot can speak back or display the information visually. The system intelligently chooses the best format based on your context. For articles and web content, it displays the actual content; for quick queries, it responds instantly—always hands-free.
+          </p>
         </div>
       </div>
 
       <div className="mt-12 bg-black text-white p-8 rounded-2xl">
-        <h3 className="text-2xl font-semibold mb-4">Key Features</h3>
+        <h3 className="text-2xl font-semibold mb-4">Key Components</h3>
         <div className="space-y-4">
           <div>
-            <h4 className="text-xl font-semibold mb-2">Enterprise Integration</h4>
+            <h4 className="text-xl font-semibold mb-2">Copilot Enhancement</h4>
             <p className="text-gray-300">
-              Seamless integration with existing enterprise systems and workflows, ensuring a smooth transition to AI-powered operations.
+              Enable Copilot to understand complex queries relating to your Microsoft 365 usage, letting you instantly find and act on your browsing history, saved articles, and bookmarks through natural conversation.
             </p>
           </div>
           <div>
-            <h4 className="text-xl font-semibold mb-2">Intelligent Insights</h4>
+            <h4 className="text-xl font-semibold mb-2">Spotlight Integration</h4>
             <p className="text-gray-300">
-              Advanced analytics and AI-driven insights that help organizations make better decisions and identify new opportunities.
+              Make all saved content—Microsoft 365 tab groups, reading lists, and more—fully searchable and accessible through Copilot, creating a unified, touch-free information retrieval system.
             </p>
           </div>
           <div>
-            <h4 className="text-xl font-semibold mb-2">Adaptive Learning</h4>
+            <h4 className="text-xl font-semibold mb-2">Microsoft 365 Transformation</h4>
             <p className="text-gray-300">
-              Systems that learn and adapt to organizational needs, continuously improving performance and delivering better results.
+              Transform Microsoft 365 into a smart content management system that organizes and indexes everything you save, making it instantly retrievable through voice and gesture.
             </p>
           </div>
         </div>

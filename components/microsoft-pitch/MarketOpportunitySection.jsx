@@ -7,66 +7,58 @@ const MarketOpportunitySection = () => {
       {/* Cover Photo */}
       <div className="relative h-[32rem] w-full rounded-xl overflow-hidden mb-6">
         <Image
-          src="/images-microsoft/market-opportunity.jpg"
-          alt="Enterprise AI market opportunity"
+          src="/images-apple/market-opportunity.jpg"
+          alt="Microsoft device and AI revenue growth potential"
           fill
           className="object-cover"
         />
       </div>
-
       <div className="space-y-6">
         <p className="text-xl text-gray-600">
-          The enterprise AI market represents a massive opportunity for transformation. With organizations increasingly 
-          seeking intelligent solutions to drive efficiency and innovation, Microsoft is uniquely positioned to lead 
-          this market evolution.
+          The integration of our technology into Microsoft's ecosystem presents two major revenue opportunities: increased device sales (Surface, Windows PCs, Xbox, and more) and the introduction of a new premium AI assistant subscription. Our analysis shows an opportunity to generate ~$2.1B to ~$16.2B in additional revenue over five years in the United States alone*.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+        {/* Device Revenue Opportunity */}
         <div className="space-y-4">
-          <h3 className="text-2xl font-semibold text-black">Market Size</h3>
-          <ul className="list-disc list-inside space-y-2 text-gray-600">
-            <li>$644B enterprise AI market by 2025</li>
-            <li>85% of Fortune 500 companies adopting AI</li>
-            <li>40% annual growth in enterprise AI spending</li>
-            <li>70% of organizations prioritizing AI integration</li>
-          </ul>
+          <h3 className="text-2xl font-semibold text-black">Device Revenue Opportunity</h3>
+          <div className="p-6 bg-gray-100 rounded-lg border border-gray-200">
+            <p className="text-2xl font-semibold text-gray-800">
+              ~$1.3B to ~$12.3B
+            </p>
+            <p className="text-gray-600 mt-1">
+              additional revenue from Microsoft device sales over a 5 year period
+            </p>
+          </div>
+          <p className="text-gray-600 mt-4">
+            Microsoft generates significant revenue from US-based device sales, including Surface, Windows PCs, Xbox, and accessories. Enhanced AI integration and a seamless device ecosystem will drive more value for consumers and businesses, increasing device adoption and retention across the Microsoft hardware portfolio.
+          </p>
         </div>
-        
+
+        {/* AI Assistant Subscription Opportunity */}
         <div className="space-y-4">
-          <h3 className="text-2xl font-semibold text-black">Growth Drivers</h3>
-          <ul className="list-disc list-inside space-y-2 text-gray-600">
-            <li>Increasing demand for intelligent automation</li>
-            <li>Need for real-time business insights</li>
-            <li>Shift to remote and hybrid work</li>
-            <li>Competitive pressure for digital transformation</li>
-          </ul>
+          <h3 className="text-2xl font-semibold text-black">AI Assistant Subscription Opportunity</h3>
+          <div className="p-6 bg-gray-100 rounded-lg border border-gray-200">
+            <p className="text-2xl font-semibold text-gray-800">
+              ~$600M to ~$3.2B
+            </p>
+            <p className="text-gray-600 mt-1">
+              additional subscription revenue over a 5 year period
+            </p>
+          </div>
+          <p className="text-gray-600 mt-4">
+            A better and more powerful AI assistant presents an opportunity to introduce a new subscription tier that gives subscribers access to unlimited advanced AI features across all Microsoft devices, with a free tier that caps access to these features.
+          </p>
         </div>
       </div>
 
-      <div className="mt-12 bg-black text-white p-8 rounded-2xl">
-        <h3 className="text-2xl font-semibold mb-4">Revenue Opportunities</h3>
-        <div className="space-y-4">
-          <div>
-            <h4 className="text-xl font-semibold mb-2">Enterprise Solutions</h4>
-            <p className="text-gray-300">
-              Comprehensive AI-powered enterprise software suites, including productivity tools, collaboration platforms, and business intelligence solutions.
-            </p>
-          </div>
-          <div>
-            <h4 className="text-xl font-semibold mb-2">Cloud Services</h4>
-            <p className="text-gray-300">
-              Scalable AI infrastructure and services through Azure, enabling organizations to build and deploy intelligent applications.
-            </p>
-          </div>
-          <div>
-            <h4 className="text-xl font-semibold mb-2">Professional Services</h4>
-            <p className="text-gray-300">
-              Consulting and implementation services to help organizations successfully adopt and integrate AI solutions.
-            </p>
-          </div>
-        </div>
-      </div>
+      <p className="text-sm text-gray-500 mt-6">
+        Note: Detailed workbook/calculation estimates available upon request - email jonathan@kahana.co.
+      </p>
+      <p className="text-sm text-gray-500">
+        *This does not include potential additional revenue from Azure AI services or other cloud-based productivity enhancements. Microsoft stands to gain more revenue by increasing its AI-powered device and productivity market share in the US.
+      </p>
     </div>
   );
 };
