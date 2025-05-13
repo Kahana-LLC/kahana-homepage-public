@@ -7,8 +7,8 @@ const SolutionSection = () => {
       {/* Cover Photo */}
       <div className="relative h-[32rem] w-full rounded-xl overflow-hidden mb-6">
         <Image
-          src="/images-apple/solution.jpg"
-          alt="Seamless integration of AI with Meta Glasses and Oculus for productivity"
+          src="/images-meta/solution.jpg"
+          alt="Meta's AI solution for work productivity"
           fill
           className="object-cover"
         />

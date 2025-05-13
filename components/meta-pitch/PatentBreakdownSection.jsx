@@ -7,24 +7,19 @@ const PatentBreakdownSection = () => {
   return (
     <div className="space-y-8">
       {/* Cover Photo */}
-      <div className="w-full max-w-4xl mx-auto mb-8">
-        <div className="relative aspect-[16/9] w-full rounded-xl overflow-hidden bg-[#000B1E]">
-          <Image
-            src="/images-apple/patent-breakdown.jpg"
-            alt="Patent-Driven Command-GUI System for the Metaverse"
-            fill
-            quality={100}
-            priority
-            className="object-contain"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          />
-        </div>
+      <div className="relative h-[32rem] w-full rounded-xl overflow-hidden mb-6">
+        <Image
+          src="/images-meta/patent-breakdown.jpg"
+          alt="Meta's patent portfolio breakdown"
+          fill
+          className="object-cover"
+        />
       </div>
 
       <div className="space-y-6">
         <div className="flex flex-col items-center gap-6">
-          <p className="text-xl text-gray-600">
-            Our two approved patents cover how each command—whether through voice or gesture—instantly transforms your virtual workspace in the metaverse, making information access and collaboration effortless and natural.
+        <p className="text-xl text-gray-600">
+            Our patent portfolio provides Meta with exclusive rights to key AI and social interaction technologies, securing our competitive advantage in the metaverse until 2039 and beyond.
           </p>
           <button
             onClick={() => setShowVideo(true)}

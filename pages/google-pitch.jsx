@@ -27,10 +27,10 @@ import {
 
 // Section titles for navigation
 const sections = [
-  { id: "big-change", title: "AI is revolutionizing search and knowledge", component: BigChangeSection },
-  { id: "problem", title: "Google's search needs to evolve beyond keywords", component: ProblemSection },
-  { id: "solution", title: "How our tech transforms Google's search experience", component: SolutionSection },
-  { id: "promised-land", title: "Imagine a truly intelligent search assistant", component: PromisedLandSection },
+  { id: "big-change", title: "AI is elevating how we find and manage information", component: BigChangeSection },
+  { id: "problem", title: "Gemini doesn't help you manage your knowledge", component: ProblemSection },
+  { id: "solution", title: "How our tech elevates Google's ecosystem into an oasis for knowledge management", component: SolutionSection },
+  { id: "promised-land", title: "Imagine a world where control goes beyond voice and touch", component: PromisedLandSection },
   { id: "winners-losers", title: "Competitors are redefining search with AI", component: WinnersLosersSection },
   { id: "market-opportunity", title: "Google can dominate the AI search market", component: MarketOpportunitySection },
   { id: "technical-roadmap", title: "Clear path to AI-powered search supremacy", component: TechnicalRoadmapSection },
@@ -69,11 +69,10 @@ const GooglePitch = () => {
             {/* Main content */}
             <div className="relative z-10 max-w-2xl">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-bold mb-6 text-white leading-tight tracking-tight">
-                The Hephaestus Project: Elevating Google Search to Divine Intelligence
-              </h1>
+              The Hephaestus Project: Forging Google Products as Tools of Omnipotence              </h1>
               
               <p className="text-2xl text-gray-300 mb-12">
-                How Google can revolutionize information discovery by making AI the core of every search experience.
+              How Google, the company famous for revolutionizing how we search for information can reinvent how we interact it.
               </p>
             </div>
 

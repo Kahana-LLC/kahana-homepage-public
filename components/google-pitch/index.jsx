@@ -1,6 +1,5 @@
 export { default as IntroductionSection } from './IntroductionSection';
 export { default as MarketOpportunitySection } from './MarketOpportunitySection';
-export { default as WhyGoogleSection } from './WhyGoogleSection';
 export { default as ProductOverviewSection } from './ProductOverviewSection';
 export { default as KeyFeaturesSection } from './KeyFeaturesSection';
 export { default as TechnologySection } from './TechnologySection';

@@ -30,12 +30,12 @@ const sections = [
   { id: "problem", title: "Meta's AR and VR devices are not designed for work", component: ProblemSection },
   { id: "solution", title: "How our tech elevates the Metaverse for work", component: SolutionSection },
   { id: "promised-land", title: "The future of work is in the Metaverse", component: PromisedLandSection },
-  { id: "winners-losers", title: "Right now, competitors are already moving ahead", component: VsCompetitorsSection },
+  { id: "winners-losers", title: "Right now, competitors are already moving ahead", component: WinnersLosersSection },
   { id: "market-opportunity", title: "Meta is missing out on billions in untapped revenue", component: MarketOpportunitySection },
   { id: "technical-roadmap", title: "We have a clear path to capture this opportunity", component: TechnicalRoadmapSection },
-  { id: "ai-benefits", title: "Meta quickly becomes #1 for AI-enhanced social", component: AIBenefitsSection },
+  { id: "ai-benefits", title: "Meta quickly becomes #1 for AR and VR work", component: AIBenefitsSection },
   { id: "patent-breakdown", title: "Protected IP: Securing Meta's Future", component: PatentBreakdownSection },
-  { id: "vision-beyond", title: "Building the future of social intelligence", component: VisionBeyondSection }
+  { id: "vision-beyond", title: "Say goodbye to being chained to your desk", component: VisionBeyondSection }
 ];
 
 const MetaPitch = () => {

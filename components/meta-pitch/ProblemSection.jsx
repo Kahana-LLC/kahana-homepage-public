@@ -7,7 +7,7 @@ const ProblemSection = () => {
       {/* Cover Photo */}
       <div className="relative h-[32rem] w-full rounded-xl overflow-hidden mb-6">
         <Image
-          src="/images-apple/problem.jpg"
+          src="/images-meta/problem.jpg"
           alt="Frustrated user trying to work with Meta Glasses or Oculus"
           fill
           className="object-cover"

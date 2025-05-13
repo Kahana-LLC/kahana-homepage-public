@@ -7,7 +7,7 @@ const MarketOpportunitySection = () => {
       {/* Cover Photo */}
       <div className="relative h-[32rem] w-full rounded-xl overflow-hidden mb-6">
         <Image
-          src="/images-apple/market-opportunity.jpg"
+          src="/images-meta/market-opportunity.jpg"
           alt="Meta Glasses and AI revenue growth potential"
           fill
           className="object-cover"

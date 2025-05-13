@@ -7,8 +7,8 @@ const PromisedLandSection = () => {
       {/* Cover Photo */}
       <div className="relative h-[32rem] w-full rounded-xl overflow-hidden mb-6">
         <Image
-          src="/images-apple/promised-land.jpg"
-          alt="Future vision of seamless Meta AR/VR metaverse"
+          src="/images-meta/promised-land.jpg"
+          alt="The future of work in the Metaverse"
           fill
           className="object-cover"
         />
@@ -16,7 +16,7 @@ const PromisedLandSection = () => {
 
       <div className="space-y-6">
         <p className="text-xl text-gray-600">
-          The perfected metaverse is a truly connected environment—where powerful native commands (gestures, voice, and more) let you summon, manipulate, and create information GUIs for work, productivity, gaming, and social life. Imagine the control and fluidity of Tony Stark working with Jarvis: you can pull up data, dashboards, and creative tools instantly, all with natural commands. In this new metaverse, you are more in control than ever before.
+          The future of work is being redefined in the Metaverse, where AI-powered tools and immersive environments create new possibilities for collaboration, productivity, and innovation.
         </p>
       </div>
 
