@@ -8,56 +8,79 @@ const MarketOpportunitySection = () => {
       <div className="relative h-[32rem] w-full rounded-xl overflow-hidden mb-6">
         <Image
           src="/images-apple/market-opportunity.jpg"
-          alt="Microsoft device and AI revenue growth potential"
+          alt="Microsoft's AI-powered Surface devices and productivity ecosystem revenue potential"
           fill
           className="object-cover"
         />
       </div>
       <div className="space-y-6">
         <p className="text-xl text-gray-600">
-          The integration of our technology into Microsoft's ecosystem presents two major revenue opportunities: increased device sales (Surface, Windows PCs, Xbox, and more) and the introduction of a new premium AI assistant subscription. Our analysis shows an opportunity to generate ~$2.1B to ~$16.2B in additional revenue over five years in the United States alone*.
+          The shift from traditional Office tools to AI-powered productivity is inevitable. As Fast Company reported, Microsoft has already acknowledged that traditional Office usage is declining. This presents three major revenue opportunities: expanding the Surface product line with AI-first devices, premium Copilot subscriptions, and Edge browser integration. Our analysis shows an opportunity to generate ~$3.2B to ~$22.5B in additional revenue over five years in the United States alone*.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-        {/* Device Revenue Opportunity */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+        {/* Surface Product Line Expansion */}
         <div className="space-y-4">
-          <h3 className="text-2xl font-semibold text-black">Device Revenue Opportunity</h3>
+          <h3 className="text-2xl font-semibold text-black">Surface Product Line Expansion</h3>
           <div className="p-6 bg-gray-100 rounded-lg border border-gray-200">
             <p className="text-2xl font-semibold text-gray-800">
-              ~$1.3B to ~$12.3B
+              ~$1.8B to ~$12.5B
             </p>
             <p className="text-gray-600 mt-1">
-              additional revenue from Microsoft device sales over a 5 year period
+              additional revenue from AI-first Surface devices over a 5 year period
             </p>
           </div>
           <p className="text-gray-600 mt-4">
-            Microsoft generates significant revenue from US-based device sales, including Surface, Windows PCs, Xbox, and accessories. Enhanced AI integration and a seamless device ecosystem will drive more value for consumers and businesses, increasing device adoption and retention across the Microsoft hardware portfolio.
+            Microsoft's Surface line is uniquely positioned to lead the AI-first hardware revolution. By expanding the product line with devices specifically designed for AI-powered productivity—from collaborative Surface Hubs to personal AI workstations—Microsoft can capture the growing demand for hardware that enables the future of work.
           </p>
         </div>
 
-        {/* AI Assistant Subscription Opportunity */}
+        {/* Copilot Premium Subscription */}
         <div className="space-y-4">
-          <h3 className="text-2xl font-semibold text-black">AI Assistant Subscription Opportunity</h3>
+          <h3 className="text-2xl font-semibold text-black">Copilot Premium Subscription</h3>
           <div className="p-6 bg-gray-100 rounded-lg border border-gray-200">
             <p className="text-2xl font-semibold text-gray-800">
-              ~$600M to ~$3.2B
+              ~$900M to ~$5.8B
             </p>
             <p className="text-gray-600 mt-1">
-              additional subscription revenue over a 5 year period
+              additional premium tier revenue over a 5 year period
             </p>
           </div>
           <p className="text-gray-600 mt-4">
-            A better and more powerful AI assistant presents an opportunity to introduce a new subscription tier that gives subscribers access to unlimited advanced AI features across all Microsoft devices, with a free tier that caps access to these features.
+            As traditional Office usage declines, businesses are actively seeking AI-powered productivity solutions. A new $20/month premium tier for unlimited Copilot requests, combined with AI-first Surface devices, creates a compelling value proposition for enterprises looking to future-proof their workforce.
           </p>
         </div>
+
+        {/* Edge Browser Revenue */}
+        <div className="space-y-4">
+          <h3 className="text-2xl font-semibold text-black">Edge Browser Revenue</h3>
+          <div className="p-6 bg-gray-100 rounded-lg border border-gray-200">
+            <p className="text-2xl font-semibold text-gray-800">
+              ~$500M to ~$4.2B
+            </p>
+            <p className="text-gray-600 mt-1">
+              additional ad revenue over a 5 year period
+            </p>
+          </div>
+          <p className="text-gray-600 mt-4">
+            With AI-first Surface devices and Copilot integration, Edge becomes the natural choice for businesses. This could help Microsoft capture 40-50% of the enterprise browser market, generating significant ad revenue while providing valuable data to improve Copilot's capabilities across the ecosystem.
+          </p>
+        </div>
+      </div>
+
+      <div className="mt-8 p-6 bg-black text-white rounded-xl">
+        <h3 className="text-xl font-semibold mb-4">The Inevitable Shift</h3>
+        <p className="text-gray-300">
+          "There's enough money now, enough large players, that I don't see how it doesn't happen," said about the switch from standard productivity tools to AI-powered ones. Microsoft's unique position—combining hardware, software, and AI—puts it at the forefront of this transformation. By expanding the Surface product line with AI-first devices and integrating Copilot deeply into the ecosystem, Microsoft can lead the charge in eliminating the need for traditional offices while creating new revenue streams.
+        </p>
       </div>
 
       <p className="text-sm text-gray-500 mt-6">
         Note: Detailed workbook/calculation estimates available upon request - email jonathan@kahana.co.
       </p>
       <p className="text-sm text-gray-500">
-        *This does not include potential additional revenue from Azure AI services or other cloud-based productivity enhancements. Microsoft stands to gain more revenue by increasing its AI-powered device and productivity market share in the US.
+        *This analysis focuses on direct revenue streams. Additional value may be generated through enterprise services, consulting, and ecosystem effects that could further increase Microsoft's market share and revenue potential.
       </p>
     </div>
   );

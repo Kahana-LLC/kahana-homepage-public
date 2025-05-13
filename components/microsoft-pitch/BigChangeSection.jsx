@@ -5,9 +5,9 @@ const BigChangeSection = () => {
     <div className="max-w-4xl mx-auto py-12">
       <blockquote className="text-3xl md:text-4xl font-light text-gray-900 leading-relaxed">
         <span className="block mb-8">
-          "The enterprise software landscape is undergoing a fundamental transformation. 
-          As AI becomes embedded in every aspect of business operations, 
-          the way organizations work, collaborate, and make decisions is changing forever."
+          "We are at the dawn of AI becoming a standard feature in enterprise productivity. 
+          As companies embed AI capabilities by default in their tools, 
+          the way people work and interact with their software is undergoing a fundamental transformation."
         </span>
         <footer className="text-lg text-gray-500 mb-2">
           <a 
@@ -17,23 +17,22 @@ const BigChangeSection = () => {
             className="underline hover:text-gray-700"
           >
             Gartner forecasts
-          </a> that enterprise AI spending will reach $644 billion by 2025, 
-          with Microsoft's AI-powered solutions leading the transformation of business operations.
+          </a> that 80% of GenAI spending in 2025 will go toward AI-enabled productivity tools, 
+          as AI becomes a standard feature in enterprise software and business applications.
         </footer>
         <div className="h-8" />
         <span className="block mb-8">
-          "The future of enterprise software is not about automation—it's about augmentation. AI is the key to unlocking human potential at scale."
+          "There's enough money now, enough large players, that I don't see how it doesn't happen," said about the switch from standard productivity tools to AI-powered ones.
         </span>
         <footer className="text-base text-gray-500 mb-2">
           <a
-            href="https://www.zdnet.com/microsoft-ai-enterprise-transformation"
+            href="https://www.fastcompany.com/91330398/microsoft-eyes-ai-powered-productivity-as-office-usage-declines"
             target="_blank"
             rel="noopener noreferrer"
             className="underline hover:text-gray-700"
           >
-            ZDNet
-          </a> reports that Microsoft's AI integration is transforming how enterprises operate, 
-          with 85% of Fortune 500 companies adopting Microsoft's AI-powered solutions.
+            Fast Company
+          </a> outlines how on May 7th, 2025, Microsoft acknowledged that traditional Office usage is declining and that Microsoft is considering emphasizing AI-powered productivity tools over standard applications.
         </footer>
       </blockquote>
     </div>

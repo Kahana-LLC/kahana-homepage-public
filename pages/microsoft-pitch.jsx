@@ -28,15 +28,15 @@ import {
 // Section titles for navigation
 const sections = [
   { id: "big-change", title: "AI is transforming enterprise productivity", component: BigChangeSection },
-  { id: "problem", title: "Microsoft's tools need intelligent automation", component: ProblemSection },
+  { id: "problem", title: "Microsoft's AI-powered device ecosystem can't handle basic commands", component: ProblemSection },
   { id: "solution", title: "How our tech enhances Microsoft's ecosystem", component: SolutionSection },
-  { id: "promised-land", title: "Imagine truly intelligent enterprise tools", component: PromisedLandSection },
-  { id: "winners-losers", title: "Competitors are advancing in AI-powered productivity", component: WinnersLosersSection },
-  { id: "market-opportunity", title: "Microsoft can dominate enterprise AI", component: MarketOpportunitySection },
-  { id: "technical-roadmap", title: "Clear path to AI-powered productivity leadership", component: TechnicalRoadmapSection },
-  { id: "ai-benefits", title: "Microsoft becomes the leader in AI-enhanced productivity", component: AIBenefitsSection },
-  { id: "patent-breakdown", title: "Protected IP secures Microsoft's future until 2039...", component: PatentBreakdownSection },
-  { id: "vision-beyond", title: "Building the future of intelligent productivity", component: VisionBeyondSection }
+  { id: "promised-land", title: "The future of work is in Microsoft's AI-powered devices", component: PromisedLandSection },
+  { id: "winners-losers", title: "Right now, competitors are already moving ahead", component: WinnersLosersSection },
+  { id: "market-opportunity", title: "Microsoft is missing out on billions in untapped revenue", component: MarketOpportunitySection },
+  { id: "technical-roadmap", title: "We have a clear path to capture this opportunity", component: TechnicalRoadmapSection },
+  { id: "ai-benefits", title: "Microsoft quickly becomes #1 for the Future of Work", component: AIBenefitsSection },
+  { id: "patent-breakdown", title: "Protected IP: Securing Microsoft's Future", component: PatentBreakdownSection },
+  { id: "vision-beyond", title: "Say goodbye to being chained to your desk", component: VisionBeyondSection }
 ];
 
 const MicrosoftPitch = () => {
@@ -69,11 +69,11 @@ const MicrosoftPitch = () => {
             {/* Main content */}
             <div className="relative z-10 max-w-2xl">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-bold mb-6 text-white leading-tight tracking-tight">
-                The Hephaestus Project: Igniting Microsoft's Productivity Revolution
+                The Hephaestus Project: Forging Microsoft's Productivity Revolution
               </h1>
               
               <p className="text-2xl text-gray-300 mb-12">
-                How Microsoft can revolutionize enterprise productivity by making AI the core of every tool.
+                How Microsoft, the company famous for its revolutionizing office tools and software, can eliminate the need for Offices. Period.
               </p>
             </div>
 
