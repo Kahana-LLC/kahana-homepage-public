@@ -7,7 +7,7 @@ const PromisedLandSection = () => {
       {/* Cover Photo */}
       <div className="relative h-[32rem] w-full rounded-xl overflow-hidden mb-6">
         <Image
-          src="/images-apple/promised-land.jpg"
+          src="/images-microsoft/promised-land.jpg"
           alt="Future vision of seamless Microsoft productivity interaction"
           fill
           className="object-cover"

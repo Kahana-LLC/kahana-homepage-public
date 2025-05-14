@@ -42,6 +42,13 @@ const VisionBeyondSection = () => {
           </ul>
         </div>
       </div>
+
+      <div className="mt-12 bg-black text-white p-8 rounded-2xl">
+        <h3 className="text-2xl font-semibold mb-4">Your Future of Work Isn't Chained to a Desk</h3>
+        <p className="text-gray-300">
+          With Apple Intelligence, the concept of "going to work" becomes obsolete. Your workspace is wherever you are, powered by AI that understands your context, anticipates your needs, and enables you to work with unprecedented freedom and efficiency. The future of work isn't about being tied to a desk—it's about having the power to work from anywhere, with all the tools and resources you need at your fingertips, seamlessly integrated across every Apple device. This foundation of Apple Intelligence and our existing devices creates the perfect platform for building new types of devices that will help people work smarter than ever before.
+        </p>
+      </div>
     </div>
   );
 };

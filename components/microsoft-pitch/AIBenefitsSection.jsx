@@ -8,7 +8,7 @@ const AIBenefitsSection = () => {
       <div className="w-full max-w-4xl mx-auto mb-8">
         <div className="relative aspect-[16/9] w-full rounded-xl overflow-hidden bg-[#000B1E]">
           <Image
-            src="/images-apple/ai-benefits.jpg"
+            src="/images-microsoft/ai-benefits.jpg"
             alt="AI-powered voice commands controlling multiple Microsoft devices"
             fill
             quality={100}
@@ -20,7 +20,7 @@ const AIBenefitsSection = () => {
       </div>
 
       <div className="mt-8">
-        <h3 className="text-2xl font-semibold text-black mb-4">New Commands with Microsoft Intelligence</h3>
+        <h3 className="text-2xl font-semibold text-black mb-4">New Commands in the Microsoft ecosystem</h3>
         <p className="text-gray-600 mb-4">
           By integrating our technology into Microsoft's product suite, the following types of commands will now be possible to accomplish touch-free:
         </p>
@@ -48,7 +48,7 @@ const AIBenefitsSection = () => {
         </ul>
         <div className="p-6 bg-gray-100 rounded-lg border border-gray-200">
           <p className="text-gray-600">
-            These commands showcase how Microsoft Intelligence integrates your work context to deliver exactly what you need, when you need it—while always protecting your privacy and enterprise security.
+            These commands showcase how Microsoft integrates your work context to deliver exactly what you need, when you need it—while always protecting your privacy and enterprise security.
           </p>
         </div>
       </div>

@@ -30,7 +30,7 @@ const sections = [
   { id: "big-change", title: "AI is elevating how we interact with devices", component: BigChangeSection },
   { id: "problem", title: "Apple devices can't handle expected commands", component: ProblemSection },
   { id: "solution", title: "How our tech makes Apple devices understand you", component: SolutionSection },
-  { id: "promised-land", title: "Imagine seamless interaction across all devices", component: PromisedLandSection },
+  { id: "promised-land", title: "Imagine touch-free control across all devices", component: PromisedLandSection },
   { id: "winners-losers", title: "Right now, competitors are already moving ahead", component: WinnersLosersSection },
   { id: "market-opportunity", title: "Apple is missing out on billions in untapped revenue", component: MarketOpportunitySection },
   { id: "technical-roadmap", title: "We have a clear path to capture this opportunity", component: TechnicalRoadmapSection },

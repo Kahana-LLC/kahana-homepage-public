@@ -27,13 +27,13 @@ import {
 // Section titles for navigation
 const sections = [
   { id: "big-change", title: "AI is transforming social interaction", component: BigChangeSection },
-  { id: "problem", title: "Meta's AR and VR devices are not designed for work", component: ProblemSection },
+  { id: "problem", title: "Meta's devices cannot handle basic commands", component: ProblemSection },
   { id: "solution", title: "How our tech elevates the Metaverse for work", component: SolutionSection },
-  { id: "promised-land", title: "The future of work is in the Metaverse", component: PromisedLandSection },
+  { id: "promised-land", title: "Imagine touch-free control across all devices", component: PromisedLandSection },
   { id: "winners-losers", title: "Right now, competitors are already moving ahead", component: WinnersLosersSection },
   { id: "market-opportunity", title: "Meta is missing out on billions in untapped revenue", component: MarketOpportunitySection },
   { id: "technical-roadmap", title: "We have a clear path to capture this opportunity", component: TechnicalRoadmapSection },
-  { id: "ai-benefits", title: "Meta quickly becomes #1 for AR and VR work", component: AIBenefitsSection },
+  { id: "ai-benefits", title: "Meta quickly becomes #1 for AI-enabled devices", component: AIBenefitsSection },
   { id: "patent-breakdown", title: "Protected IP: Securing Meta's Future", component: PatentBreakdownSection },
   { id: "vision-beyond", title: "Say goodbye to being chained to your desk", component: VisionBeyondSection }
 ];

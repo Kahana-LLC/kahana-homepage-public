@@ -16,8 +16,7 @@ const PromisedLandSection = () => {
 
       <div className="space-y-6">
         <p className="text-xl text-gray-600">
-          Google's ecosystem transforms into a seamless knowledge management platform where your information 
-          becomes an extension of your thoughts and actions. Whether you're coding while walking in the park, 
+          Google's ecosystem becomes an extension of your thoughts and actions. Whether you're coding while walking in the park, 
           analyzing market trends during your commute, or collaborating on a project from anywhere, your 
           knowledge and tools are always at your fingertips, ready to help you create and accomplish.
         </p>
@@ -25,7 +24,7 @@ const PromisedLandSection = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
         <div className="space-y-4">
-          <h3 className="text-2xl font-semibold text-black">Active Knowledge Creation</h3>
+          <h3 className="text-2xl font-semibold text-black">Touch-Free Productivity</h3>
           <ul className="list-disc list-inside space-y-2 text-gray-600">
             <li>Build software applications through natural conversation with Gemini</li>
             <li>Create and edit documents using voice commands and gestures</li>
@@ -35,9 +34,9 @@ const PromisedLandSection = () => {
         </div>
         
         <div className="space-y-4">
-          <h3 className="text-2xl font-semibold text-black">Seamless Work Environment</h3>
+          <h3 className="text-2xl font-semibold text-black">An Ecosystem that Adapts to You</h3>
           <ul className="list-disc list-inside space-y-2 text-gray-600">
-            <li>Your workspace follows you across devices and contexts</li>
+            <li>Your memory follows you across devices and contexts</li>
             <li>Information and tools adapt to your current activity</li>
             <li>Natural interaction through voice, text, or gestures</li>
             <li>Context-aware assistance that understands your workflow</li>
@@ -51,8 +50,8 @@ const PromisedLandSection = () => {
           <div>
             <h4 className="text-xl font-semibold mb-2">Beyond Information Access</h4>
             <p className="text-gray-300">
-              Move from passive information consumption to active knowledge creation. Your Pixel becomes a 
-              powerful workstation, Chrome transforms into a dynamic workspace, and Gemini evolves into your 
+              Move from passive information consumption to active touch-free productivity. Your Pixel becomes a 
+              portal to get work done, Chrome elevates from a browser to a dynamic information management system, and Gemini evolves into your 
               intelligent collaborator.
             </p>
           </div>

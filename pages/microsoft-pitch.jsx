@@ -27,16 +27,16 @@ import {
 
 // Section titles for navigation
 const sections = [
-  { id: "big-change", title: "AI is transforming enterprise productivity", component: BigChangeSection },
-  { id: "problem", title: "Microsoft's AI-powered device ecosystem can't handle basic commands", component: ProblemSection },
-  { id: "solution", title: "How our tech enhances Microsoft's ecosystem", component: SolutionSection },
-  { id: "promised-land", title: "The future of work is in Microsoft's AI-powered devices", component: PromisedLandSection },
-  { id: "winners-losers", title: "Right now, competitors are already moving ahead", component: WinnersLosersSection },
-  { id: "market-opportunity", title: "Microsoft is missing out on billions in untapped revenue", component: MarketOpportunitySection },
-  { id: "technical-roadmap", title: "We have a clear path to capture this opportunity", component: TechnicalRoadmapSection },
-  { id: "ai-benefits", title: "Microsoft quickly becomes #1 for the Future of Work", component: AIBenefitsSection },
-  { id: "patent-breakdown", title: "Protected IP: Securing Microsoft's Future", component: PatentBreakdownSection },
-  { id: "vision-beyond", title: "Say goodbye to being chained to your desk", component: VisionBeyondSection }
+  { id: "big-change", title: "AI is elevating how we interact with devices", component: BigChangeSection, image: "/images-microsoft/big-change.jpg" },
+  { id: "problem", title: "Microsoft's AI-powered device ecosystem can't handle basic commands", component: ProblemSection, image: "/images-microsoft/problem.jpg" },
+  { id: "solution", title: "How our tech elevates Microsoft's device ecosystem", component: SolutionSection, image: "/images-microsoft/solution.jpg" },
+  { id: "promised-land", title: "Imagine touch-free control across all devices", component: PromisedLandSection, image: "/images-microsoft/promised-land.jpg" },
+  { id: "winners-losers", title: "Right now, competitors are already moving ahead", component: WinnersLosersSection, image: "/images-microsoft/winners-losers.jpg" },
+  { id: "market-opportunity", title: "Microsoft is missing out on billions in untapped revenue", component: MarketOpportunitySection, image: "/images-microsoft/market-opportunity.jpg" },
+  { id: "technical-roadmap", title: "We have a clear path to capture this opportunity", component: TechnicalRoadmapSection, image: "/images-microsoft/technical-roadmap.jpg" },
+  { id: "ai-benefits", title: "Microsoft quickly becomes #1 for AI-enabled devices", component: AIBenefitsSection, image: "/images-microsoft/ai-benefits.jpg" },
+  { id: "patent-breakdown", title: "Protected IP: Securing Microsoft's Future", component: PatentBreakdownSection, image: "/images-microsoft/patent-breakdown.jpg" },
+  { id: "vision-beyond", title: "Say goodbye to being chained to your desk", component: VisionBeyondSection, image: "/images-microsoft/vision-beyond.jpg" }
 ];
 
 const MicrosoftPitch = () => {
@@ -69,7 +69,7 @@ const MicrosoftPitch = () => {
             {/* Main content */}
             <div className="relative z-10 max-w-2xl">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-bold mb-6 text-white leading-tight tracking-tight">
-                The Hephaestus Project: Forging Microsoft's Productivity Revolution
+                The Hephaestus Project: Forging Microsoft Devices as Tools of Omnipotence
               </h1>
               
               <p className="text-2xl text-gray-300 mb-12">

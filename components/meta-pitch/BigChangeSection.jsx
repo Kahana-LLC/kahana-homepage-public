@@ -5,7 +5,7 @@ const BigChangeSection = () => {
     <div className="max-w-4xl mx-auto py-12">
       <blockquote className="text-3xl md:text-4xl font-light text-gray-900 leading-relaxed">
         <span className="block mb-8">
-          "We are at the dawn of a new era where work is no longer confined to screens and physical offices. As AI, AR, and VR become standard features in our digital lives, Meta has the opportunity to create immersive, intelligent workspaces that empower people to collaborate, create, and connect from anywhere."
+          "AI is becoming a standard feature in consumer technology, not just a search technology. The way we interact with our devices is fundamentally changing."
         </span>
         <footer className="text-lg text-gray-500 mb-2">
           <a 
@@ -15,14 +15,21 @@ const BigChangeSection = () => {
             className="underline hover:text-gray-700"
           >
             Gartner forecasts
-          </a> that by 2025, a significant share of enterprise collaboration and productivity will shift to AI- and AR/VR-enabled platforms, making the Metaverse the next frontier for work.
+          </a> that 80% of GenAI spending in 2025 will go toward AI-enabled consumer devices, not search platforms.
         </footer>
         <div className="h-8" />
         <span className="block mb-8">
-          "The future of work isn't just about remote meetings or digital documents—it's about building context-aware, spatial experiences where teams feel present, creative, and productive together, no matter where they are."
+          "There's enough money now, enough large players, that I don't see how it doesn't happen," Cue said about the switch from standard internet search to AI.
         </span>
         <footer className="text-base text-green-900 bg-green-100 rounded px-2 py-1 mb-2">
-          Meta's vision is to lead this transformation, using AI, AR, and VR to create the world's most advanced, human-centered work environments in the Metaverse.
+          <a 
+            href="https://www.fastcompany.com/91330398/apple-eyes-ai-powered-search-as-safari-usage-declines"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-green-900 hover:text-green-700 underline"
+          >
+            Fast Company
+          </a> outlines how on May 7th, 2025, Eddy Cue acknowledged that Safari usage is declining and that Apple is considering emphasizing AI-powered search engines over Google.
         </footer>
       </blockquote>
     </div>

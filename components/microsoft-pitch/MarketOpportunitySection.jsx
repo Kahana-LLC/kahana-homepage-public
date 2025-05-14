@@ -7,7 +7,7 @@ const MarketOpportunitySection = () => {
       {/* Cover Photo */}
       <div className="relative h-[32rem] w-full rounded-xl overflow-hidden mb-6">
         <Image
-          src="/images-apple/market-opportunity.jpg"
+          src="/images-microsoft/market-opportunity.jpg"
           alt="Microsoft's AI-powered Surface devices and productivity ecosystem revenue potential"
           fill
           className="object-cover"

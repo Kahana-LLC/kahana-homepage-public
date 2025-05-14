@@ -7,7 +7,7 @@ const WinnersLosersSection = () => {
       {/* Cover Photo */}
       <div className="relative h-[32rem] w-full rounded-xl overflow-hidden mb-6">
         <Image
-          src="/images-apple/winners-losers.jpg"
+          src="/images-microsoft/winners-losers.jpg"
           alt="Competitive landscape showing major AI productivity platforms"
           fill
           className="object-cover"

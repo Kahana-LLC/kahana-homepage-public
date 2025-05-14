@@ -51,10 +51,10 @@ const VisionBeyondSection = () => {
       </div>
 
       <div className="mt-12 bg-black text-white p-8 rounded-2xl">
-        <h3 className="text-2xl font-semibold mb-4">Transforming How We Work Together</h3>
+        <h3 className="text-2xl font-semibold mb-4">Your Future of Work Isn't Chained to a Desk</h3>
         <div className="space-y-4">
           <p className="text-gray-300">
-            Meta's AI Vision is revolutionizing the future of work by making every interaction more intelligent, contextual, and productive. Our AR/VR devices, imbued with Meta AI and an expanded set of voice and gesture commands, serve as the perfect interface for this new era—where your workspace adapts to you, and collaboration feels as real as being in the same room.
+            With Meta AI and our AR/VR devices, the concept of "going to work" becomes obsolete. Your workspace is wherever you are, powered by AI that understands your context, anticipates your needs, and enables you to work with unprecedented freedom and efficiency. The future of work isn't about being tied to a desk—it's about having the power to work from anywhere, with all the tools and resources you need at your fingertips, seamlessly integrated across every Meta device. This foundation of Meta AI and our existing devices creates the perfect platform for building new types of devices that will help people work smarter than ever before.
           </p>
         </div>
       </div>

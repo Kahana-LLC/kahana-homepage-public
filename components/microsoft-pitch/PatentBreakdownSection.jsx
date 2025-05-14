@@ -10,7 +10,7 @@ const PatentBreakdownSection = () => {
       <div className="w-full max-w-4xl mx-auto mb-8">
         <div className="relative aspect-[16/9] w-full rounded-xl overflow-hidden bg-[#000B1E]">
           <Image
-            src="/images-apple/patent-breakdown.jpg"
+            src="/images-microsoft/patent-breakdown.jpg"
             alt="Patent-Driven Command-GUI System"
             fill
             quality={100}

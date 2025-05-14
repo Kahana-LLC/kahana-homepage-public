@@ -18,7 +18,7 @@ const IntroductionSection = () => {
           {/* Centered image */}
           <div className="relative w-full flex justify-center items-center mt-8">
             <Image
-              src="/images-apple/introduction.jpg"
+              src="/images-microsoft/introduction.jpg"
               alt="Vision of future Microsoft productivity with seamless AI integration"
               width={800}
               height={450}

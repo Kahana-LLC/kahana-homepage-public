@@ -27,16 +27,16 @@ import {
 
 // Section titles for navigation
 const sections = [
-  { id: "big-change", title: "AI is elevating how we find and manage information", component: BigChangeSection },
-  { id: "problem", title: "Gemini doesn't help you manage your knowledge", component: ProblemSection },
-  { id: "solution", title: "How our tech elevates Google's ecosystem into an oasis for knowledge management", component: SolutionSection },
-  { id: "promised-land", title: "Imagine a world where control goes beyond voice and touch", component: PromisedLandSection },
-  { id: "winners-losers", title: "Competitors are redefining search with AI", component: WinnersLosersSection },
-  { id: "market-opportunity", title: "Google can dominate the AI search market", component: MarketOpportunitySection },
-  { id: "technical-roadmap", title: "Clear path to AI-powered search supremacy", component: TechnicalRoadmapSection },
-  { id: "ai-benefits", title: "Google becomes the leader in AI-enhanced search", component: AIBenefitsSection },
-  { id: "patent-breakdown", title: "Protected IP secures Google's future until 2039...", component: PatentBreakdownSection },
-  { id: "vision-beyond", title: "Building the future of intelligent search", component: VisionBeyondSection }
+  { id: "big-change", title: "AI is elevating how we interact with devices", component: BigChangeSection, image: "/images-google/big-change.jpg" },
+  { id: "problem", title: "Google Devices can't handle basic commands", component: ProblemSection, image: "/images-google/problem.jpg" },
+  { id: "solution", title: "How our tech helps Google devices work with you", component: SolutionSection, image: "/images-google/solution.jpg" },
+  { id: "promised-land", title: "Imagine touch-free control across all Google devices", component: PromisedLandSection, image: "/images-google/promised-land.jpg" },
+  { id: "winners-losers", title: "Right now, competitors are already moving ahead", component: WinnersLosersSection, image: "/images-google/winners-losers.jpg" },
+  { id: "market-opportunity", title: "Google is missing out on billions in untapped revenue", component: MarketOpportunitySection, image: "/images-google/market-opportunity.jpg" },
+  { id: "technical-roadmap", title: "We have a clear path to capture this opportunity", component: TechnicalRoadmapSection, image: "/images-google/technical-roadmap.jpg" },
+  { id: "ai-benefits", title: "Google quickly becomes #1 for AI-enabled devices", component: AIBenefitsSection, image: "/images-google/ai-benefits.jpg" },
+  { id: "patent-breakdown", title: "Approved patents defend Google's throne until 2039...", component: PatentBreakdownSection, image: "/images-google/patent-breakdown.jpg" },
+  { id: "vision-beyond", title: "Paving the way for a god-like future", component: VisionBeyondSection, image: "/images-google/vision-beyond.jpg" }
 ];
 
 const GooglePitch = () => {

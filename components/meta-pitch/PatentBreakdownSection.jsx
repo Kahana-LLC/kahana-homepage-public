@@ -135,10 +135,7 @@ const PatentBreakdownSection = () => {
           <li>Protected methods for dynamic, context-aware GUI responses</li>
           <li>Exclusive rights to immersive, multi-modal information management in AR/VR</li>
         </ul>
-        <p className="text-gray-300">
-          <a href="https://patents.google.com/patent/US11693676B2/en?oq=11%2c693%2c676" target="_blank" rel="noopener noreferrer" className="underline hover:text-blue-400">Read Patent #1: US11693676B2</a> &nbsp;|&nbsp;
-          <a href="https://patents.google.com/patent/US11397844B2/en?oq=11%2c397%2c844" target="_blank" rel="noopener noreferrer" className="underline hover:text-blue-400">Read Patent #2: US11397844B2</a>
-        </p>
+
       </div>
     </div>
   );

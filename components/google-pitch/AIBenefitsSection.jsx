@@ -9,7 +9,7 @@ const AIBenefitsSection = () => {
         <div className="relative aspect-[16/9] w-full rounded-xl overflow-hidden bg-[#000B1E]">
           <Image
             src="/images-google/ai-benefits.jpg"
-            alt="AI-powered search commands controlling multiple devices"
+            alt="AI-powered voice commands controlling multiple devices"
             fill
             quality={100}
             priority
@@ -22,15 +22,35 @@ const AIBenefitsSection = () => {
       <div className="mt-8">
         <h3 className="text-2xl font-semibold text-black mb-4">New Commands with Google Intelligence</h3>
         <p className="text-gray-600 mb-4">
-          By integrating our technology into Google's search platform, the following types of commands will now be possible:
+          By integrating our technology into Google's product suite, the following types of commands will now be possible to accomplish touch-free:
         </p>
-        <ul className="list-disc list-inside space-y-2 text-gray-600">
-          <li>"Find and summarize all research papers I saved about quantum computing last month"</li>
-          <li>"Show me the key points from that article about AI ethics I bookmarked"</li>
-          <li>"Organize my saved content by topic and create a summary of each category"</li>
-          <li>"Find similar articles to what I was reading yesterday"</li>
-          <li>"Create a timeline of developments in machine learning based on my saved articles"</li>
+        <ul className="list-decimal list-inside space-y-2 text-gray-600 mb-6">
+          <li>"Show me the NerdWallet article about crypto that I saved last week in Chrome"</li>
+          <li>"Create a new tab group called 'Summer Travel' with all my saved Airbnb listings"</li>
+          <li>"Group my saved California properties under $1M from Zillow"</li>
+          <li>"Continue reading the article I was looking at on my Chromebook this morning"</li>
+          <li>"When I put on my Pixel phone, show me the research papers I saved about neural networks"</li>
+          <li>"Save this 3D model to my Google Drive workspace for later review"</li>
+          <li>"Send my meeting notes to my Pixel Watch for my upcoming presentation"</li>
+          <li>"Summarize this article and send the key points to my Pixel Watch"</li>
+          <li>"Open my most recent Chrome tab group on my Pixel Tablet"</li>
+          <li>"Remind me about this article next time I'm researching machine learning"</li>
+          <li>"Move all my open finance-related tabs to a new tab group"</li>
+          <li>"Read me the headlines from my saved articles while I'm on my morning walk"</li>
+          <li>"Show me my Perplexity search from last week about quantum computing"</li>
+          <li>"Open my latest ChatGPT conversation about Python programming"</li>
+          <li>"Find my Grok analysis about market trends from yesterday"</li>
+          <li>"Show me my Tableau dashboard for Q2 sales metrics"</li>
+          <li>"Open my recent Figma designs for the new product launch"</li>
+          <li>"Find my Google Sheets with the project timeline"</li>
+          <li>"Show me my Notion workspace about the team meeting notes"</li>
+          <li>"Show me my recent Claude conversations about AI ethics"</li>
         </ul>
+        <div className="p-6 bg-gray-100 rounded-lg border border-gray-200">
+          <p className="text-gray-600">
+            These commands showcase how Google Intelligence integrates your personal context to deliver exactly what you need, when you need it—while always protecting your privacy.
+          </p>
+        </div>
       </div>
 
       <div className="mt-12 bg-black text-white p-8 rounded-2xl">

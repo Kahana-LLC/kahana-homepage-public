@@ -46,11 +46,7 @@ const AIBenefitsSection = () => {
           <li>"Show me my Notion workspace about the team meeting notes"</li>
           <li>"Show me my recent Claude conversations about AI ethics"</li>
         </ul>
-        <div className="p-6 bg-gray-100 rounded-lg border border-gray-200 mt-6">
-          <p className="text-gray-600">
-            These commands showcase how Meta Intelligence integrates your social context to deliver exactly what you need, when you need it—while always protecting your privacy.
-          </p>
-        </div>
+      
       </div>
     </div>
   );

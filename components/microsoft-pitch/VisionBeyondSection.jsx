@@ -7,7 +7,7 @@ const VisionBeyondSection = () => {
       {/* Cover Photo */}
       <div className="relative h-[32rem] w-full rounded-xl overflow-hidden mb-6">
         <Image
-          src="/images-apple/vision-beyond.jpg"
+          src="/images-microsoft/vision-beyond.jpg"
           alt="Future vision of Microsoft's Copilot-powered, device-agnostic office experience"
           fill
           className="object-cover"
