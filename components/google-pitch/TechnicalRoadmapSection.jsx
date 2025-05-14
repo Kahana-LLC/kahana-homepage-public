@@ -7,8 +7,8 @@ const TechnicalRoadmapSection = () => {
       {/* Cover Photo */}
       <div className="relative h-[32rem] w-full rounded-xl overflow-hidden mb-6">
         <Image
-          src="/images-google/technical-roadmap.jpg"
-          alt="Technical roadmap for Google AI search implementation"
+          src="/images-google/technical-roadmap-google.jpg"
+          alt="Google Technical Roadmap"
           fill
           className="object-cover"
         />

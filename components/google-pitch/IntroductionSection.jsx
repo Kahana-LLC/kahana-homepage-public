@@ -7,10 +7,12 @@ const IntroductionSection = () => {
       {/* Cover Photo */}
       <div className="relative h-[32rem] w-full rounded-xl overflow-hidden mb-6">
         <Image
-          src="/images-apple/introduction.jpg"
-          alt="Vision of future Google ecosystem with seamless AI integration"
-          fill
-          className="object-cover"
+          src="/images-google/introduction-google.jpg"
+          alt="Vision of future Google productivity with seamless AI integration"
+          width={800}
+          height={450}
+          className="rounded-lg"
+          priority
         />
       </div>
       <p className="text-xl text-gray-600">

@@ -79,7 +79,7 @@ const GooglePitch = () => {
             {/* Centered image */}
             <div className="relative w-full flex justify-center items-center mt-8">
               <Image
-                src="/images-google/introduction.jpg"
+                src="/images-google/introduction-google.jpg"
                 alt="Google AI Search Interface"
                 width={800}
                 height={450}

@@ -7,11 +7,10 @@ const TechnicalRoadmapSection = () => {
       {/* Cover Photo */}
       <div className="relative aspect-[16/9] w-full rounded-xl overflow-hidden mb-6">
         <Image
-          src="/images-apple/technical-roadmap.jpg"
-          alt="Technical roadmap showing AI-Windows-Office integration plan"
+          src="/images-microsoft/technical-roadmap-microsoft.jpg"
+          alt="Microsoft Technical Roadmap"
           fill
-          className="object-contain bg-[#001B41]"
-          priority
+          className="object-cover"
         />
       </div>
       <div className="space-y-6">
