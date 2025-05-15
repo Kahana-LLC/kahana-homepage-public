@@ -11,6 +11,18 @@ import saideepHeadshot from "../public/assets/headshots/saideep_pajjuri.jpg";
 const blogIndex = [
   {
     title:
+      "Safeguarding Sensitive Data in 2025: Best Practices, Threats, and Emerging Solutions",
+    date: "2025-05-15T00:00:00.000Z",
+    authors: ["Vedant Gupta"],
+    category: ["Security"],
+    excerpt:
+      "Protecting sensitive data has become a top priority for organizations in the digital era. This post explores best practices, emerging technologies, and regulatory trends that help businesses safeguard their most valuable information assets.",
+    defaultImageQuery: "cybersecurity data protection shield",
+    slug: "protecting-sensitive-data",
+    readingTime: 9,
+  },
+  {
+    title:
       "Enterprise Access Browsers for Windows 10 Enterprise 64-bit: Latest Research and Trends",
     date: "2025-04-24T00:00:00.000Z",
     authors: ["Shivangi Chamoli", "Adam Kershner"],

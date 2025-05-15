@@ -43,8 +43,9 @@ const authors = {
   "Vedant Gupta": {
     name: "Vedant Gupta",
     role: "Product Manager",
-    bio: "With a background in computer engineering and product management, I specialize in crafting product strategies and executing go-to-market plans. I love collaborating with people from diverse backgrounds and enjoy solving real-time problems. I've tackled a few in the past and would love to share my experiences.",
+    bio: "Vedant is a Product Manager at Kahana, where he leads product development and go-to-market strategy for secure enterprise browser solutions. Combining technical insight with customer empathy, he partners with engineering and design to deliver intuitive, scalable products that enhance enterprise security and user productivity.",
     linkedinProfile: "https://www.linkedin.com/in/vedantgupta23/",
+    avatar: "/assets/headshots/vedant_gupta.jpg",
   },
   "Shivangi Chamoli": {
     name: "Shivangi Chamoli",
