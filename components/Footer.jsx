@@ -131,6 +131,7 @@ export default function Footer() {
               <ul className={`space-y-4 ${openSection === 'learn' || !isMobile ? 'block' : 'hidden'}`}>
                 <li><Link href="/blog" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">Blog</Link></li>
                 <li><Link href="/docs" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">Docs</Link></li>
+                <li><Link href="/subscribe-to-insights" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">Subscribe to Insights</Link></li>
               </ul>
             </div>
 
