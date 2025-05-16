@@ -11,6 +11,18 @@ import saideepHeadshot from "../public/assets/headshots/saideep_pajjuri.jpg";
 const blogIndex = [
   {
     title:
+      "Securing the Public Sector: Why Government Needs an Enterprise Browser for Modern Cyber Defense",
+    date: "2025-05-15T00:00:00.000Z",
+    authors: ["Fahiza Syed"],
+    category: ["Government", "Security", "Enterprise Browsers"],
+    excerpt:
+      "Government agencies face unprecedented browser-based cyber threats as they embrace digital transformation. Fahiza Syed explores how Oasis Browser by Kahana delivers the security, compliance, and operational resilience public sector organizations need to protect sensitive data and citizen services.",
+    defaultImageQuery: "government cybersecurity browser shield",
+    slug: "securing-public-sector-browser-security-oasis",
+    readingTime: 10,
+  },
+  {
+    title:
       "Safeguarding Sensitive Data in 2025: Best Practices, Threats, and Emerging Solutions",
     date: "2025-05-15T00:00:00.000Z",
     authors: ["Vedant Gupta"],
@@ -507,6 +519,42 @@ const blogIndex = [
       "The manufacturing industry faces a surge in browser-based cyber threats as it embraces digital transformation. Fahiza Syed explores how Kahana's Oasis Enterprise Browser delivers the security and control manufacturers need to defend against ransomware, phishing, and insider threats.",
     defaultImageQuery: "manufacturing browser security cyber threats",
     slug: "securing-manufacturing-enterprise-browsers-oasis",
+    readingTime: 10,
+  },
+  {
+    title:
+      "Securing Healthcare's Frontline: How Oasis Browser by Kahana Protects Against Browser-Based Threats",
+    date: "2025-05-15T00:00:00.000Z",
+    authors: ["Fahiza Syed"],
+    category: ["Healthcare", "Security"],
+    excerpt:
+      "As browser-based threats surge in healthcare, Oasis Browser by Kahana delivers enterprise-grade security, compliance, and operational resilience. This article explores real-world breaches, why traditional browsers fall short, and how Oasis uniquely protects patient data and care continuity.",
+    defaultImageQuery: "healthcare cybersecurity browser shield",
+    slug: "securing-healthcare-frontline-oasis-browser",
+    readingTime: 10,
+  },
+  {
+    title:
+      "Browser-Based Security Threats in Finance: Why the Industry Needs a Secure Enterprise Browser",
+    date: "2025-05-15T00:00:00.000Z",
+    authors: ["Fahiza Syed"],
+    category: ["Finance", "Security"],
+    excerpt:
+      "Browsers are now the primary attack vector in financial services. This article explores real-world incidents, evolving threats, and how Oasis Browser by Kahana delivers the security, compliance, and operational efficiency modern finance demands.",
+    defaultImageQuery: "finance cybersecurity browser shield",
+    slug: "browser-security-threats-finance-oasis",
+    readingTime: 10,
+  },
+  {
+    title:
+      "Securing the Energy & Utilities Sector: Why Browser Security Is Now Mission-Critical",
+    date: "2025-05-15T00:00:00.000Z",
+    authors: ["Fahiza Syed"],
+    category: ["Energy", "Utilities", "Security"],
+    excerpt:
+      "As cyberattacks surge against energy and utilities, browser security is now a mission-critical priority. This article explores real-world breaches, why traditional browsers fall short, and how Oasis Browser by Kahana delivers the advanced protection, compliance, and operational resilience the sector demands.",
+    defaultImageQuery: "energy utilities cybersecurity browser shield",
+    slug: "securing-energy-utilities-browser-security",
     readingTime: 10,
   },
 ];
