@@ -12,6 +12,7 @@ function MyApp({ Component, pageProps }) {
   const isMetaPitch = router.pathname === "/meta-pitch";
   const isGooglePitch = router.pathname === "/google-pitch";
   const isMicrosoftPitch = router.pathname === "/microsoft-pitch";
+  const isMozillaPitch = router.pathname === "/mozilla-pitch";
 
   useEffect(() => {
     // Track route changes
@@ -53,7 +54,11 @@ function MyApp({ Component, pageProps }) {
   }, [router.events]);
 
   const hideNavAndFooter =
-    isApplePitch || isMetaPitch || isGooglePitch || isMicrosoftPitch;
+    isApplePitch ||
+    isMetaPitch ||
+    isGooglePitch ||
+    isMicrosoftPitch ||
+    isMozillaPitch;
 
   return (
     <div className="flex flex-col min-h-screen">
