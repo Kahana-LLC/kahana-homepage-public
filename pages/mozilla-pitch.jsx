@@ -74,7 +74,7 @@ const MozillaPitch = () => {
               </h1>
               
               <p className="text-2xl text-gray-700 mb-12 text-center">
-                How Mozilla, the company famous for bringing us Firefox, can elevate the Internet into an Oasis.
+                How Mozilla, the company famous for bringing us Firefox, can transform the Internet into an Oasis.
               </p>
               <Image
                 src="/images/mozilla_kahana.jpg"
@@ -97,14 +97,14 @@ const MozillaPitch = () => {
               { id: "big-change", name: "Introduction" },
               { id: "problem", name: "Problem" },
               { id: "solution", name: "Solution" },
-              { id: "promised-land", name: "Vision" },
+              { id: "promised-land", name: "Benefits" },
               { id: "winners-losers", name: "Competition" },
               { id: "market-opportunity", name: "Market" },
               { id: "pricing", name: "Pricing" },
               { id: "technical-roadmap", name: "Roadmap" },
-              { id: "ai-benefits", name: "Benefits" },
-              { id: "ask", name: "Investment" },
-              { id: "vision-beyond", name: "Future" }
+              { id: "ai-benefits", name: "Next Feature" },
+              { id: "ask", name: "Our Ask" },
+              { id: "vision-beyond", name: "Our Vision" }
             ].map(section => (
               <a
                 key={section.id}
