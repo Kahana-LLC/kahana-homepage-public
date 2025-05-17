@@ -32,7 +32,7 @@ const sections = [
   { id: "solution", title: "Oasis keeps enterprises productive and secure", component: SolutionSection },
   { id: "promised-land", title: "Welcome to the future of enterprise browsers", component: PromisedLandSection },
   { id: "winners-losers", title: "Right now, competitors are already moving ahead", component: WinnersLosersSection },
-  { id: "market-opportunity", title: "The Market for Enterprise Brwosers is Exploding", component: MarketOpportunitySection },
+  { id: "market-opportunity", title: "The Market for Enterprise Browsers is Exploding", component: MarketOpportunitySection },
   { id: "pricing", title: "Pricing", component: PricingSection },
   { id: "technical-roadmap", title: "We have a clear path to capture this opportunity", component: TechnicalRoadmapSection },
   { id: "ai-benefits", title: "Next on the roadmap: 100% touch-free agentic browsing", component: AIBenefitsSection },
@@ -54,7 +54,7 @@ const MozillaPitch = () => {
       </Head>
 
       {/* Hero Section */}
-      <section className="relative min-h-[600px] overflow-hidden bg-black">
+      <section className="relative min-h-[600px] overflow-hidden bg-white">
         {/* Top right dots */}
         <div className="absolute top-0 right-0 w-72 h-72">
           <DotPattern />
@@ -68,14 +68,22 @@ const MozillaPitch = () => {
         <div className="container mx-auto px-6 pt-16 pb-24">
           <div className="max-w-6xl mx-auto relative">
             {/* Main content */}
-            <div className="relative z-10 max-w-2xl">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-bold mb-6 text-white leading-tight tracking-tight">
-                Oasis: The Enterprise Browser for the Rest of Us
+            <div className="relative z-10 max-w-2xl mx-auto flex flex-col items-center">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-bold mb-6 text-black leading-tight tracking-tight text-center">
+                Oasis: The Enterprise Browser Designed for Tranquility
               </h1>
               
-              <p className="text-2xl text-gray-300 mb-12">
-                How Mozilla, the company famous for revolutionizing the browser, can help create a new Oasis.
+              <p className="text-2xl text-gray-700 mb-12 text-center">
+                How Mozilla, the company famous for bringing us Firefox, can elevate the Internet into an Oasis.
               </p>
+              <Image
+                src="/images/mozilla_kahana.jpg"
+                alt="Kahana Sloth and Mozilla Fox Mascots"
+                width={300}
+                height={300}
+                className="rounded-lg mx-auto"
+                priority
+              />
             </div>
           </div>
         </div>
