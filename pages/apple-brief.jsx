@@ -76,7 +76,7 @@ const AppleBrief = () => {
                 <span
                   className="flex items-center justify-center mx-auto px-6 py-4 font-extrabold text-transparent bg-clip-text fade-pop-in rounded-xl border border-green-100 bg-white/60 shadow-sm"
                   style={{
-                    fontSize: '2.2vw',
+                    fontSize: '6vw',
                     lineHeight: 1.1,
                     backgroundImage: 'linear-gradient(90deg, #2997ff 0%, #35c5f3 20%, #a259ff 50%, #ff5ac8 80%, #ff7a00 100%)',
                     WebkitBackgroundClip: 'text',

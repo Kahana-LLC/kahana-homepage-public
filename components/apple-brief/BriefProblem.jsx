@@ -68,13 +68,12 @@ const BriefProblem = () => {
         </div>
         <div className="space-y-8">
           <h4 className="text-2xl font-semibold text-black text-center">Command-GUI Relationship</h4>
-          <div className="space-y-6 mt-8">
+          <div className="space-y-8 mt-8">
             {commandGuiPairs.map((pair, idx) => (
-              <div key={idx} className="flex flex-col md:flex-row items-center justify-center gap-4">
+              <div key={idx} className="bg-gradient-to-r from-[#e3efff] via-[#f3e6ff] to-[#ffe6f0] rounded-2xl px-4 py-6 flex flex-col md:flex-row items-center justify-center gap-4 shadow-md">
                 <div
-                  className="rounded-lg px-6 py-4 text-lg shadow-md w-full md:w-1/3 text-center"
-                  style={pastelGradientStyle}
-                >
+                  className="rounded-lg px-6 py-4 text-lg shadow-none w-full md:w-1/3 text-center font-bold"
+                  style={{color: '#1a237e'}}>
                   {pair.command}
                 </div>
                 <div className="text-5xl mx-2 my-2 md:my-0 font-extrabold">
@@ -82,13 +81,19 @@ const BriefProblem = () => {
                   <span className="hidden md:block" style={arrowStyle}>→</span>
                 </div>
                 <div
-                  className="rounded-lg px-6 py-4 text-lg shadow-md w-full md:w-1/3 text-center"
-                  style={pastelGradientStyle}
-                >
+                  className="rounded-lg px-6 py-4 text-lg shadow-none w-full md:w-1/3 text-center font-bold"
+                  style={{color: '#1a237e'}}>
                   {pair.gui}
                 </div>
               </div>
             ))}
+            {/* Divider between pairs */}
+            <style jsx>{`
+              .pair-divider:not(:last-child) {
+                border-bottom: 2px solid #e0e0e0;
+                margin: 2rem 0;
+              }
+            `}</style>
           </div>
           <div className="text-center mt-8 space-y-2">
             <a
