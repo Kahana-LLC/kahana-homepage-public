@@ -38,7 +38,7 @@ const AppleBrief = () => {
               <span
                 className="block mt-8 font-extrabold text-transparent bg-clip-text fade-pop-in mx-auto"
                 style={{
-                  fontSize: '3.5vw',
+                  fontSize: '7vw',
                   lineHeight: 1.1,
                   backgroundImage: 'linear-gradient(90deg, #2997ff 0%, #35c5f3 20%, #a259ff 50%, #ff5ac8 80%, #ff7a00 100%)',
                   WebkitBackgroundClip: 'text',

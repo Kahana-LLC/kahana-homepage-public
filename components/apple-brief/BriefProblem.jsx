@@ -77,11 +77,9 @@ const BriefProblem = () => {
                 >
                   {pair.command}
                 </div>
-                <div
-                  className="text-5xl mx-2 my-2 md:my-0 font-extrabold"
-                  style={arrowStyle}
-                >
-                  →
+                <div className="text-5xl mx-2 my-2 md:my-0 font-extrabold">
+                  <span className="block md:hidden" style={arrowStyle}>↓</span>
+                  <span className="hidden md:block" style={arrowStyle}>→</span>
                 </div>
                 <div
                   className="rounded-lg px-6 py-4 text-lg shadow-md w-full md:w-1/3 text-center"
