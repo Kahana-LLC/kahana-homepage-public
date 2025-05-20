@@ -9,6 +9,7 @@ import { trackError } from "../utils/analytics";
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
   const isApplePitch = router.pathname === "/apple-pitch";
+  const isAppleBrief = router.pathname === "/apple-brief";
   const isMetaPitch = router.pathname === "/meta-pitch";
   const isGooglePitch = router.pathname === "/google-pitch";
   const isMicrosoftPitch = router.pathname === "/microsoft-pitch";
@@ -55,6 +56,7 @@ function MyApp({ Component, pageProps }) {
 
   const hideNavAndFooter =
     isApplePitch ||
+    isAppleBrief ||
     isMetaPitch ||
     isGooglePitch ||
     isMicrosoftPitch ||
