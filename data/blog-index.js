@@ -11,6 +11,368 @@ import saideepHeadshot from "../public/assets/headshots/saideep_pajjuri.jpg";
 const blogIndex = [
   {
     title:
+      "Chrome for Mac in 2025: Performance, Security, and User Frustrations",
+    date: "2025-05-23T00:00:00.000Z",
+    authors: ["Adam Kershner", "Vruksha Joshi"],
+    category: [
+      "Browsers",
+      "Performance",
+      "Security",
+      "Enterprise",
+      "Research & Trends",
+    ],
+    excerpt:
+      "Chrome for Mac in 2025 is a tale of innovation marred by persistent performance issues, security vulnerabilities, and update challenges. This article delves into the real-world struggles of users on Apple Silicon, from severe lag and CPU spikes to zero-day exploits and installer conflicts—revealing why Chrome's dominance on macOS is increasingly under threat.",
+    defaultImageQuery: "chrome for mac performance security apple silicon",
+    slug: "chrome-for-mac-everything-you-need-to-know-2025",
+    readingTime: 8,
+  },
+  {
+    title:
+      "Microsoft Edge Browser in 2025: Ongoing Issues, Vulnerabilities, and User Frustrations",
+    date: "2025-05-23T00:00:00.000Z",
+    authors: ["Jordan Kern", "Adam Kershner"],
+    category: [
+      "Browsers",
+      "Security",
+      "Performance",
+      "Privacy",
+      "Enterprise",
+      "Research & Trends",
+    ],
+    excerpt:
+      "Despite rapid development, Microsoft Edge in 2025 is beset by persistent stability problems, rising security vulnerabilities, and privacy controversies. This article weaves together user stories and research to reveal why Edge's technical and compliance challenges continue to frustrate users and enterprises alike—underscoring the urgent need for performance fixes, transparent privacy controls, and reliable developer tools.",
+    defaultImageQuery:
+      "microsoft edge browser issues vulnerabilities privacy security",
+    slug: "microsoft-edge-browser-ongoing-issues-vulnerabilities-2025",
+    readingTime: 8,
+  },
+  {
+    title:
+      "Internet Explorer in 2025: The Aftermath, Lingering Problems, and Enterprise Risks",
+    date: "2025-05-23T00:00:00.000Z",
+    authors: ["Jordan Kern", "Adam Kershner"],
+    category: [
+      "Browsers",
+      "Security",
+      "Enterprise",
+      "Legacy Software",
+      "Research & Trends",
+    ],
+    excerpt:
+      "Though Internet Explorer was officially retired in 2022, its legacy continues to haunt users and organizations in 2025. This article explores the paradox of a browser that refuses to disappear—highlighting the security, compatibility, and compliance risks that persist long after its end of life.",
+    defaultImageQuery:
+      "internet explorer legacy browser security enterprise risks",
+    slug: "internet-explorer-aftermath-lingering-problems-2025",
+    readingTime: 8,
+  },
+  {
+    title:
+      "Microsoft Edge in 2025: Limitations, Misconceptions, and the Reality of Enterprise Browsing",
+    date: "2025-05-23T00:00:00.000Z",
+    authors: ["Adam Kershner", "Venkesh Agarwal"],
+    category: [
+      "Browsers",
+      "Performance",
+      "Security",
+      "Enterprise",
+      "Research & Trends",
+    ],
+    excerpt:
+      "Edge in 2025 is packed with features and promises, but the reality for users and IT teams is far more complicated. This article explores the hidden trade-offs behind Edge's performance, privacy, and security—revealing why its enterprise ambitions often clash with day-to-day reliability.",
+    defaultImageQuery:
+      "microsoft edge browser limitations security enterprise performance",
+    slug: "microsoft-edge-browser-limitations-misconceptions-2025",
+    readingTime: 8,
+  },
+  {
+    title:
+      "Chrome Installer Challenges and Misconceptions in 2025: Architecture Mix-Ups, Security Risks, and Enterprise Hurdles",
+    date: "2025-05-23T00:00:00.000Z",
+    authors: ["Adam Kershner", "Vruksha Joshi"],
+    category: [
+      "Browsers",
+      "Security",
+      "Enterprise",
+      "Deployment & Installation",
+      "Research & Trends",
+    ],
+    excerpt:
+      "In 2025, installing Chrome is anything but routine. This article unpacks the surprising complexity behind recent installer failures, security exploits, and enterprise headaches—revealing how architecture mix-ups and patching gaps can disrupt users and organizations alike.",
+    defaultImageQuery:
+      "chrome installer challenges security enterprise deployment",
+    slug: "chrome-installer-challenges-misconceptions-2025",
+    readingTime: 8,
+  },
+  {
+    title:
+      "Identifying the Best Browser in 2025: Trade-Offs, Risks, and What Really Matters",
+    date: "2025-05-23T00:00:00.000Z",
+    authors: ["Adam Kershner", "Venkesh Agarwal"],
+    category: [
+      "Browsers",
+      "Performance",
+      "Security",
+      "Privacy",
+      "Enterprise",
+      "Research & Trends",
+    ],
+    excerpt:
+      "Choosing a web browser in 2025 is more complicated than ever. This article explores the shifting landscape of speed, privacy, security, and compatibility—showing why there's no single 'best' browser, and how users must navigate a maze of trade-offs to find what truly fits their needs.",
+    defaultImageQuery:
+      "best web browser 2025 performance privacy security comparison",
+    slug: "identifying-best-browser-challenges-2025",
+    readingTime: 6,
+  },
+  {
+    title:
+      "Private Browsers in 2025: Myths, Loopholes, and the Reality of Online Privacy",
+    date: "2025-05-23T00:00:00.000Z",
+    authors: ["Adam Kershner", "Vruksha Joshi"],
+    category: [
+      "Browsers",
+      "Privacy",
+      "Security",
+      "Legal & Compliance",
+      "Research & Trends",
+    ],
+    excerpt:
+      "In 2025, the promise of private browsing is more complicated than ever. This article unpacks the myths, legal loopholes, and technical realities that shape user expectations—revealing why so many still misunderstand what private modes actually protect, and what they leave exposed.",
+    defaultImageQuery: "private browsers incognito mode privacy security myths",
+    slug: "private-browsers-issues-misconceptions-2025",
+    readingTime: 7,
+  },
+  {
+    title:
+      "Browser Downloads in 2025: Persistent Difficulties, Security Risks, and User Frustrations",
+    date: "2025-05-23T00:00:00.000Z",
+    authors: ["Adam Kershner", "Vruksha Joshi"],
+    category: [
+      "Browsers",
+      "Performance",
+      "Security",
+      "Enterprise",
+      "Research & Trends",
+    ],
+    excerpt:
+      "Despite years of progress, browser downloads in 2025 remain unpredictable and fraught with technical headaches. From failed transfers and security overblocks to tool limitations and system errors, this article explores why even routine downloads can become a source of frustration for users and IT teams—and what needs to change for a smoother experience.",
+    defaultImageQuery:
+      "browser downloads challenges performance security user experience",
+    slug: "browser-downloads-challenges-limitations-2025",
+    readingTime: 10,
+  },
+  {
+    title:
+      "The Internet Browser in 2025: Navigating Persistent Challenges and Compliance Pressures",
+    date: "2025-05-18T00:00:00.000Z",
+    authors: ["Adam Kershner", "Jordan Kern"],
+    category: [
+      "Browsers",
+      "Performance",
+      "Security",
+      "Privacy",
+      "Enterprise",
+      "Research & Trends",
+    ],
+    excerpt:
+      "In 2025, internet browsers face a rapidly evolving landscape shaped by technical innovation, regulatory demands, and rising user expectations. This article synthesizes real-world experiences and the latest research to reveal how persistent issues in performance, security, privacy, and compliance continue to challenge even the most advanced browsers—underscoring the complex trade-offs required to deliver a seamless and secure web experience.",
+    defaultImageQuery:
+      "internet browsers challenges performance security compliance",
+    slug: "internet-browsers-challenges-2025",
+    readingTime: 10,
+  },
+  {
+    title: "Web Browsers: Key Challenges and Limitations",
+    date: "2025-05-22T00:00:00.000Z",
+    authors: ["Adam Kershner", "Jordan Kern"],
+    category: [
+      "Browsers",
+      "Performance",
+      "Security",
+      "Privacy",
+      "Enterprise",
+      "Research & Trends",
+    ],
+    excerpt:
+      "A narrative exploration of the persistent challenges facing web browsers in 2025, including performance bottlenecks, security vulnerabilities, privacy controversies, and compatibility issues. This post weaves together user stories and industry research to highlight why browsers continue to struggle with balancing functionality, privacy, and security.",
+    defaultImageQuery: "web browsers challenges performance security privacy",
+    slug: "web-browsers-challenges-limitations-2025",
+    readingTime: 10,
+  },
+  {
+    title: "Chrome Internet Browser: Key Challenges and Limitations",
+    date: "2025-05-19T00:00:00.000Z",
+    authors: ["Adam Kershner", "Jordan Kern"],
+    category: [
+      "Browsers",
+      "Performance",
+      "Security",
+      "Privacy",
+      "Enterprise",
+      "Research & Trends",
+    ],
+    excerpt:
+      "A narrative exploration of the persistent challenges facing Chrome Internet Browser in 2025, including performance bottlenecks, security vulnerabilities, privacy controversies, and enterprise limitations. This post weaves together user stories and industry research to highlight why Chrome continues to struggle with balancing functionality, privacy, and security.",
+    defaultImageQuery:
+      "chrome internet browser challenges performance security privacy",
+    slug: "chrome-internet-browser-challenges-limitations-2025",
+    readingTime: 10,
+  },
+  {
+    title: "Google Chrome Browser: Key Challenges and Limitations",
+    date: "2025-05-15T00:00:00.000Z",
+    authors: ["Adam Kershner", "Jordan Kern"],
+    category: [
+      "Browsers",
+      "Performance",
+      "Security",
+      "Privacy",
+      "Enterprise",
+      "Research & Trends",
+    ],
+    excerpt:
+      "A detailed analysis of the persistent challenges facing Google Chrome in 2025, including performance bottlenecks, security vulnerabilities, privacy controversies, and enterprise limitations. This post synthesizes user reports and industry research to highlight why Chrome continues to struggle with balancing functionality, privacy, and security.",
+    defaultImageQuery:
+      "google chrome browser challenges performance security privacy",
+    slug: "chrome-browser-challenges-limitations-2025",
+    readingTime: 10,
+  },
+  {
+    title:
+      "Internet Browsers in 2025: Performance, Security, and Enterprise Challenges",
+    date: "2025-05-21T00:00:00.000Z",
+    authors: ["Adam Kershner", "Jordan Kern"],
+    category: [
+      "Browsers",
+      "Performance",
+      "Security",
+      "Enterprise",
+      "Research & Trends",
+    ],
+    excerpt:
+      "A comprehensive analysis of the critical challenges facing internet browsers in 2025, from performance bottlenecks and security vulnerabilities to enterprise risks and compliance issues. This post examines why browser architecture and design choices continue to impact user experience and organizational security.",
+    defaultImageQuery:
+      "internet browser challenges performance security enterprise",
+    slug: "internet-browser-challenges-trends-2025",
+    readingTime: 12,
+  },
+  {
+    title:
+      "Rethinking the Web Browser in 2025: Unsolved Challenges in Performance, Security, and Privacy",
+    date: "2025-05-21T00:00:00.000Z",
+    authors: ["Adam Kershner", "Jordan Kern"],
+    category: [
+      "Browsers",
+      "Performance",
+      "Security",
+      "Privacy",
+      "Research & Trends",
+    ],
+    excerpt:
+      "A comprehensive analysis of the key challenges facing modern web browsers in 2025, from performance bottlenecks and security vulnerabilities to privacy concerns and compatibility issues. This post examines why browser architecture and design choices continue to impact user experience and security.",
+    defaultImageQuery: "web browser challenges performance security privacy",
+    slug: "web-browser-challenges-trends-2025",
+    readingTime: 12,
+  },
+  {
+    title:
+      "Recent Research and Trends on Google Chrome Browser: Key Challenges and Limitations",
+    date: "2025-05-21T00:00:00.000Z",
+    authors: ["Adam Kershner", "Jordan Kern"],
+    category: [
+      "Browsers",
+      "Privacy",
+      "Security",
+      "Performance",
+      "Research & Trends",
+    ],
+    excerpt:
+      "A comprehensive analysis of Chrome's persistent challenges in 2025, from privacy concerns and performance issues to security vulnerabilities and regulatory compliance. This post examines why the world's most popular browser continues to face criticism despite its market dominance.",
+    defaultImageQuery:
+      "google chrome browser challenges privacy security performance",
+    slug: "chrome-browser-challenges-trends-2025",
+    readingTime: 12,
+  },
+  {
+    title:
+      "Browser Settings in 2025: Privacy, Compliance, and Usability Challenges",
+    date: "2025-05-21T00:00:00.000Z",
+    authors: ["Adam Kershner", "Jordan Kern"],
+    category: [
+      "Browsers",
+      "Privacy",
+      "Security",
+      "Enterprise",
+      "Research & Trends",
+    ],
+    excerpt:
+      "A synthesis of the latest research and user reports reveals persistent challenges in browser settings, from regulatory and technical issues to user misconceptions and enterprise risks. This post explores why balancing privacy, compliance, and usability remains a moving target in 2025.",
+    defaultImageQuery: "browser settings privacy compliance usability",
+    slug: "browser-settings-challenges-trends-2025",
+    readingTime: 8,
+  },
+  {
+    title:
+      "Chrome Downloading in 2025: Persistent Challenges in Speed, Security, and Cross-Platform Experience",
+    date: "2025-05-23T00:00:00.000Z",
+    authors: ["Adam Kershner", "Jordan Kern"],
+    category: [
+      "Browsers",
+      "Performance",
+      "Security",
+      "Enterprise",
+      "Research & Trends",
+    ],
+    excerpt:
+      "A synthesis of the latest research and user reports reveals persistent download challenges in Chrome, from technical and security issues to enterprise and mobile limitations. This post explores why Chrome's evolution still leaves critical gaps for users and organizations.",
+    defaultImageQuery: "chrome browser download speed security cross-platform",
+    slug: "chrome-download-challenges-trends-2025",
+    readingTime: 8,
+  },
+  {
+    title:
+      "Microsoft Edge in 2025: Performance, Privacy, and Security Challenges",
+    date: "2025-05-22T00:00:00.000Z",
+    authors: ["Adam Kershner", "Jordan Kern"],
+    category: [
+      "Browsers",
+      "Performance",
+      "Privacy",
+      "Security",
+      "Research & Trends",
+    ],
+    excerpt:
+      "A synthesis of the latest research and user reports reveals persistent challenges for Microsoft Edge in 2025, from memory and CPU management to privacy, security, and developer experience. This post explores why Edge's evolution still leaves critical gaps for users and organizations.",
+    defaultImageQuery: "microsoft edge browser performance privacy security",
+    slug: "microsoft-edge-browser-challenges-trends-2025",
+    readingTime: 8,
+  },
+  {
+    title:
+      "Incognito Mode in 2025: Legal Battles, Technical Flaws, and Privacy Myths Exposed",
+    date: "2025-05-21T00:00:00.000Z",
+    authors: ["Adam Kershner", "Jordan Kern"],
+    category: ["Privacy", "Security", "Legal & Compliance"],
+    excerpt:
+      "From billion-dollar settlements to technical vulnerabilities, 2025 marks a turning point in how we view Incognito mode. This deep dive reveals why private browsing isn't as private as users think, examining legal challenges, technical flaws, and widespread misconceptions.",
+    defaultImageQuery: "incognito mode privacy security browser",
+    slug: "incognito-mode-privacy-myths-technical-limitations-2025",
+    readingTime: 8,
+  },
+  {
+    title:
+      "Recent Research and Trends on Private Browsing/Incognito Mode: Challenges and Limitations",
+    date: "2025-05-20T00:00:00.000Z",
+    authors: ["Adam Kershner", "Jordan Kern"],
+    category: ["Privacy", "Security", "Research & Trends"],
+    excerpt:
+      "A comprehensive analysis of recent research and trends in private browsing/incognito mode, examining the growing gap between user expectations and actual privacy protections. From legal developments to technical limitations, this post explores why private browsing may not be as secure as users think.",
+    defaultImageQuery: "private browsing incognito mode security privacy",
+    slug: "recent-research-trends-private-browsing-incognito-mode-challenges-limitations",
+    readingTime: 12,
+  },
+  {
+    title:
       "Securing the Public Sector: Why Government Needs an Enterprise Browser for Modern Cyber Defense",
     date: "2025-05-15T00:00:00.000Z",
     authors: ["Fahiza Syed"],
@@ -556,6 +918,18 @@ const blogIndex = [
     defaultImageQuery: "energy utilities cybersecurity browser shield",
     slug: "securing-energy-utilities-browser-security",
     readingTime: 10,
+  },
+  {
+    title:
+      "The Evolving Landscape of Browser Monitoring: Obstacles, Privacy, and Performance in 2025",
+    date: "2025-05-20T00:00:00.000Z",
+    authors: ["Adam Kershner", "Jordan Kern"],
+    category: ["Monitoring", "Privacy", "Web Performance", "Research & Trends"],
+    excerpt:
+      "A synthesis of the latest research and industry insights reveals evolving obstacles in browser monitoring, from technical and privacy limitations to tool fragmentation and compliance risks. This post explores why adaptive monitoring solutions are needed to balance performance insights with user privacy and operational efficiency.",
+    defaultImageQuery: "browser monitoring privacy performance analytics",
+    slug: "recent-research-trends-browser-monitoring-challenges-limitations",
+    readingTime: 8,
   },
 ];
 
