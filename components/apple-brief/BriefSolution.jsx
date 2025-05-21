@@ -30,7 +30,7 @@ const BriefSolution = () => {
             onMouseOver={e => e.currentTarget.style.filter = 'brightness(1.05)'}
             onMouseOut={e => e.currentTarget.style.filter = 'none'}
           >
-            Let's work →
+            Let's work together →
           </a>
         </div>
       </div>
