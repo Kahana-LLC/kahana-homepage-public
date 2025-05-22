@@ -37,7 +37,7 @@ const authors = {
   "Venkesh Agarwal": {
     name: "Venkesh Agarwal",
     role: "Product & Analytics",
-    bio: "Optimizing Processes, Maximizing Business Value. Duke Master of Engineering Management.",
+    bio: "Venkesh Agarwal is a Product Manager at Kahana, where he supports cross-functional initiatives that blend product development with data-driven product marketing. He focuses on campaign strategy, performance analytics, and user-centric solutions that drive engagement and growth. With a foundation in technical execution and strategic insight, Venkesh helps shape products that resonate deeply with users and scale effectively in the market.",
     linkedinProfile: "https://www.linkedin.com/in/venkesh-agarwal/",
   },
   "Vedant Gupta": {
