@@ -932,10 +932,16 @@ const blogIndex = [
       "Securing Manufacturing: How Enterprise Browsers like Kahana Oasis Combat Browser-Based Threats",
     date: "2025-05-08T00:00:00.000Z",
     authors: ["Fahiza Syed"],
-    category: ["Manufacturing", "Security", "Enterprise Browsers"],
+    category: [
+      "Manufacturing",
+      "Security",
+      "Enterprise Browsers",
+      "Industry 4.0",
+    ],
     excerpt:
       "The manufacturing industry faces a surge in browser-based cyber threats as it embraces digital transformation. Fahiza Syed explores how Kahana's Oasis Enterprise Browser delivers the security and control manufacturers need to defend against ransomware, phishing, and insider threats.",
-    defaultImageQuery: "manufacturing browser security cyber threats",
+    defaultImageQuery:
+      "manufacturing cybersecurity industry 4.0 digital transformation",
     slug: "securing-manufacturing-enterprise-browsers-oasis",
     readingTime: 10,
   },
@@ -1217,6 +1223,76 @@ const blogIndex = [
     defaultImageQuery: "chromebook browser security performance challenges",
     slug: "chromebook-browser-challenges-2025",
     readingTime: 8,
+  },
+  {
+    title:
+      "Manufacturing's Missed Opportunities: How Cybersecurity Fears Are Holding Back Industry 4.0",
+    date: "2025-05-25T00:00:00.000Z",
+    authors: ["Fahiza Syed", "Adam Kershner"],
+    category: [
+      "Manufacturing",
+      "Security",
+      "Enterprise Browsers",
+      "Industry 4.0",
+    ],
+    excerpt:
+      "As Industry 4.0 promises to revolutionize manufacturing through digital innovation, cybersecurity concerns are preventing many companies from embracing free online tools and services. This article explores how manufacturers can safely unlock digital opportunities with enterprise-grade browser security.",
+    defaultImageQuery:
+      "manufacturing cybersecurity industry 4.0 digital transformation",
+    slug: "manufacturing-cybersecurity-opportunities-2025",
+    readingTime: 12,
+  },
+  {
+    title:
+      "Healthcare's Digital Dilemma: How Cybersecurity Fears Are Blocking Access to Free Online Services—And Why It's Time for a Secure Enterprise Browser",
+    date: "2025-05-25T00:00:00.000Z",
+    authors: ["Fahiza Syed", "Adam Kershner"],
+    category: ["Healthcare", "Security", "Enterprise Browsers"],
+    excerpt:
+      "As healthcare embraces digital transformation, cybersecurity concerns are preventing many organizations from leveraging free online services. This article explores how a secure enterprise browser can help healthcare providers safely unlock digital opportunities while maintaining compliance and protecting patient data.",
+    defaultImageQuery:
+      "healthcare cybersecurity digital transformation enterprise browser",
+    slug: "healthcare-digital-dilemma-2025",
+    readingTime: 12,
+  },
+  {
+    title:
+      "The High Price of Playing It Safe: Why Financial Firms Miss Out on Free Online Services",
+    date: "2025-05-25T00:00:00.000Z",
+    authors: ["Fahiza Syed", "Adam Kershner"],
+    category: ["Finance", "Security", "Enterprise Browsers"],
+    excerpt:
+      "Despite leading digital innovation, financial firms often avoid free online services due to cybersecurity fears. This article explores the real costs of this caution and how a secure enterprise browser can help unlock digital potential without compromising security or compliance.",
+    defaultImageQuery:
+      "finance cybersecurity digital transformation enterprise browser",
+    slug: "high-price-finance-digital-opportunity-2025",
+    readingTime: 12,
+  },
+  {
+    title:
+      "Energy & Utilities' Missed Opportunities: How Cybersecurity Fears Block Access to Free Online Services—And Why a Secure Enterprise Browser Is Essential",
+    date: "2025-05-25T00:00:00.000Z",
+    authors: ["Fahiza Syed", "Adam Kershner"],
+    category: ["Energy", "Security", "Enterprise Browsers"],
+    excerpt:
+      "As energy and utilities embrace digital transformation, cybersecurity concerns are preventing many organizations from leveraging free online services. This article explores how a secure enterprise browser can help the industry safely unlock digital opportunities while maintaining compliance and protecting critical infrastructure.",
+    defaultImageQuery:
+      "energy utilities cybersecurity digital transformation enterprise browser",
+    slug: "energy-utilities-digital-opportunity-2025",
+    readingTime: 12,
+  },
+  {
+    title:
+      "Government's Digital Dilemma: How Cybersecurity Fears Block Access to Free Online Services—And Why a Secure Enterprise Browser Is Essential",
+    date: "2025-05-25T00:00:00.000Z",
+    authors: ["Fahiza Syed", "Adam Kershner"],
+    category: ["Government", "Security", "Enterprise Browsers"],
+    excerpt:
+      "As government agencies embrace digital transformation, cybersecurity concerns are preventing many organizations from leveraging free online services. This article explores how a secure enterprise browser can help the public sector safely unlock digital opportunities while maintaining compliance and protecting citizen data.",
+    defaultImageQuery:
+      "government cybersecurity digital transformation enterprise browser",
+    slug: "government-digital-opportunity-2025",
+    readingTime: 12,
   },
 ];
 
