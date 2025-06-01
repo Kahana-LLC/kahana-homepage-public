@@ -11,6 +11,62 @@ import saideepHeadshot from "../public/assets/headshots/saideep_pajjuri.jpg";
 const blogIndex = [
   {
     title:
+      "Energy & Utilities' Browser Blind Spot: Why Standard Browsers Without Centralized Management Put Critical Infrastructure at Risk",
+    date: "2025-06-03T00:00:00.000Z",
+    authors: ["Fahiza Syed", "Adam Kershner"],
+    category: ["Security", "Energy & Utilities", "Research & Trends"],
+    excerpt:
+      "Utilities are modernizing fast, but browser security remains a weak link. Explore how enterprise browsers are helping the sector defend critical infrastructure and enable secure, real-time collaboration across the grid.",
+    defaultImageQuery:
+      "energy utilities cybersecurity browser management critical infrastructure",
+    slug: "energy-utilities-browser-blind-spot",
+    readingTime: 15,
+  },
+  {
+    title:
+      "Manufacturing's Browser Blind Spot: Why Lack of Centralized Management Drives Cyber Risk and Cost",
+    date: "2025-06-02T00:00:00.000Z",
+    authors: ["Fahiza Syed", "Adam Kershner"],
+    category: ["Security", "Manufacturing", "Research & Trends"],
+    excerpt:
+      "As manufacturing embraces Industry 4.0 and cloud-based automation, the sector faces unique cybersecurity challenges. This article explores how centralized browser management can transform security posture and reduce operational costs in manufacturing.",
+    defaultImageQuery:
+      "manufacturing cybersecurity browser management industry 4.0",
+    slug: "manufacturing-browser-blind-spot",
+    readingTime: 12,
+  },
+  {
+    title:
+      "Energy & Utilities' Remote Access Challenge: Why VPNs and Virtual Desktops Are Costly—and How a Secure Enterprise Browser Can Transform Cybersecurity",
+    date: "2025-06-02T00:00:00.000Z",
+    authors: ["Fahiza Syed", "Adam Kershner"],
+    category: [
+      "Security",
+      "Enterprise",
+      "Energy & Utilities",
+      "Research & Trends",
+    ],
+    excerpt:
+      "Legacy remote access tools are falling short for today's energy and utilities organizations. Discover how secure enterprise browsers are reshaping cybersecurity and operational resilience for the industry.",
+    defaultImageQuery:
+      "energy utilities cybersecurity remote access challenges",
+    slug: "energy-utilities-remote-access-challenges-2025",
+    readingTime: 15,
+  },
+  {
+    title:
+      "The Finance Sector's Remote Access Dilemma: Why Legacy Solutions Are Failing in 2025",
+    date: "2025-06-02T00:00:00.000Z",
+    authors: ["Fahiza Syed", "Adam Kershner"],
+    category: ["Security", "Enterprise", "Finance", "Research & Trends"],
+    excerpt:
+      "As financial institutions grapple with the challenges of remote work in 2025, traditional solutions like VPNs and virtual desktops are proving increasingly inadequate. This analysis examines why these legacy approaches are failing to meet modern security and productivity demands, and how a secure enterprise browser can provide a more effective solution.",
+    defaultImageQuery: "finance remote access security enterprise browser",
+    slug: "finance-remote-access-dilemma-2025",
+    readingTime: 8,
+  },
+  {
+    title:
       "The Chromium Browser Ecosystem in 2025: Security Paradoxes, Performance Challenges, and Monoculture Risks",
     date: "2025-05-24T00:00:00.000Z",
     authors: ["Venkesh Agarwal", "Adam Kershner"],
@@ -1226,73 +1282,226 @@ const blogIndex = [
   },
   {
     title:
-      "Manufacturing's Missed Opportunities: How Cybersecurity Fears Are Holding Back Industry 4.0",
-    date: "2025-05-25T00:00:00.000Z",
+      "Manufacturing's Remote Access Dilemma: Why VPNs and Virtual Desktops Aren't the Answer—and How a Secure Enterprise Browser Can Transform Productivity",
+    date: "2025-06-02T00:00:00.000Z",
     authors: ["Fahiza Syed", "Adam Kershner"],
-    category: [
-      "Manufacturing",
-      "Security",
-      "Enterprise Browsers",
-      "Industry 4.0",
-    ],
+    category: ["Manufacturing", "Security", "Enterprise Browsers"],
     excerpt:
-      "As Industry 4.0 promises to revolutionize manufacturing through digital innovation, cybersecurity concerns are preventing many companies from embracing free online tools and services. This article explores how manufacturers can safely unlock digital opportunities with enterprise-grade browser security.",
+      "Manufacturers are moving beyond legacy security tools to defend against modern cyberattacks. See how enterprise browsers are empowering factories to secure remote access and boost productivity.",
     defaultImageQuery:
-      "manufacturing cybersecurity industry 4.0 digital transformation",
-    slug: "manufacturing-cybersecurity-opportunities-2025",
-    readingTime: 12,
+      "manufacturing cybersecurity remote access digital transformation",
+    slug: "manufacturing-remote-access-dilemma-2025",
+    readingTime: 15,
   },
   {
     title:
-      "Healthcare's Digital Dilemma: How Cybersecurity Fears Are Blocking Access to Free Online Services—And Why It's Time for a Secure Enterprise Browser",
-    date: "2025-05-25T00:00:00.000Z",
+      "Patchwork Protections: Why Healthcare's Piecemeal Browser Security Leaves Patients and Data at Risk",
+    date: "2025-06-02T00:00:00.000Z",
     authors: ["Fahiza Syed", "Adam Kershner"],
     category: ["Healthcare", "Security", "Enterprise Browsers"],
     excerpt:
-      "As healthcare embraces digital transformation, cybersecurity concerns are preventing many organizations from leveraging free online services. This article explores how a secure enterprise browser can help healthcare providers safely unlock digital opportunities while maintaining compliance and protecting patient data.",
-    defaultImageQuery:
-      "healthcare cybersecurity digital transformation enterprise browser",
-    slug: "healthcare-digital-dilemma-2025",
-    readingTime: 12,
+      "Healthcare's digital shift demands more than patchwork browser security. Discover how enterprise browsers are helping providers protect patient data and streamline compliance in a connected care world.",
+    defaultImageQuery: "healthcare cybersecurity medical data protection",
+    slug: "healthcare-browser-security-patchwork-2025",
+    readingTime: 15,
   },
   {
     title:
-      "The High Price of Playing It Safe: Why Financial Firms Miss Out on Free Online Services",
-    date: "2025-05-25T00:00:00.000Z",
+      "Patchwork Protections: Why Piecemeal Browser Security Leaves Finance Organizations Exposed",
+    date: "2025-06-02T00:00:00.000Z",
     authors: ["Fahiza Syed", "Adam Kershner"],
     category: ["Finance", "Security", "Enterprise Browsers"],
     excerpt:
-      "Despite leading digital innovation, financial firms often avoid free online services due to cybersecurity fears. This article explores the real costs of this caution and how a secure enterprise browser can help unlock digital potential without compromising security or compliance.",
+      "Financial firms are under siege from sophisticated browser-based threats. See how a unified enterprise browser strategy is helping the industry stay compliant and secure sensitive data.",
+    defaultImageQuery: "finance cybersecurity banking data protection",
+    slug: "finance-browser-security-patchwork-2025",
+    readingTime: 15,
+  },
+  {
+    title:
+      "Patchwork Protections: Why Piecemeal Browser Security Leaves the Energy & Utility Sector Exposed",
+    date: "2025-06-02T00:00:00.000Z",
+    authors: ["Fahiza Syed", "Adam Kershner"],
+    category: ["Energy", "Utilities", "Security", "Enterprise Browsers"],
+    excerpt:
+      "Fragmented browser security is putting the energy sector at risk. See why a unified enterprise browser approach is now essential for protecting infrastructure and meeting compliance demands.",
     defaultImageQuery:
-      "finance cybersecurity digital transformation enterprise browser",
-    slug: "high-price-finance-digital-opportunity-2025",
+      "energy utilities cybersecurity infrastructure protection",
+    slug: "energy-browser-security-patchwork-2025",
+    readingTime: 15,
+  },
+  {
+    title:
+      "Patchwork Protections: Why Piecemeal Browser Security Leaves the Public Sector Exposed",
+    date: "2025-06-02T00:00:00.000Z",
+    authors: ["Fahiza Syed", "Adam Kershner"],
+    category: ["Public Sector", "Security", "Enterprise Browsers"],
+    excerpt:
+      "Siloed browser controls are no match for today's public sector threats. Find out how a new generation of enterprise browsers is helping agencies secure operations and maintain compliance.",
+    defaultImageQuery:
+      "government cybersecurity infrastructure protection digital transformation",
+    slug: "public-sector-browser-security-patchwork-2025",
+    readingTime: 15,
+  },
+  {
+    title:
+      "The Healthcare Sector's Remote Access Trap: Why VPNs and Virtual Desktops Are Costly—and How a Secure Enterprise Browser Can Transform Security",
+    date: "2025-06-02T00:00:00.000Z",
+    authors: ["Fahiza Syed", "Adam Kershner"],
+    category: ["Healthcare", "Security", "Enterprise Browsers"],
+    excerpt:
+      "Remote access is vital for modern healthcare, but old solutions can't keep up. Explore how enterprise browsers are delivering secure, seamless access for clinicians and staff everywhere.",
+    defaultImageQuery:
+      "healthcare cybersecurity remote access digital transformation",
+    slug: "healthcare-remote-access-trap-2025",
+    readingTime: 15,
+  },
+  {
+    title:
+      "Government & Public Sector's Remote Access Dilemma: Why VPNs and Virtual Desktops Are Costly—and How a Secure Enterprise Browser Can Transform Security",
+    date: "2025-06-02T00:00:00.000Z",
+    authors: ["Fahiza Syed", "Adam Kershner"],
+    category: [
+      "Security",
+      "Enterprise",
+      "Government & Public Sector",
+      "Research & Trends",
+    ],
+    excerpt:
+      "Remote work is here to stay for government, but legacy access tools are lagging behind. See how secure browsers are enabling safe, flexible work for agencies and contractors alike.",
+    defaultImageQuery:
+      "government public sector cybersecurity remote access challenges",
+    slug: "government-public-sector-remote-access-challenges-2025",
+    readingTime: 15,
+  },
+  {
+    title:
+      "Healthcare's Browser Management Crisis: Why Standard Browsers Leave Security Teams Struggling—and How Enterprise Browsers Like Oasis Can Transform Protection",
+    date: "2025-06-02T00:00:00.000Z",
+    authors: ["Fahiza Syed", "Adam Kershner"],
+    category: ["Security", "Healthcare", "Research & Trends"],
+    excerpt:
+      "Healthcare organizations face mounting cyber risks as browser use expands. Learn how centralized browser management is transforming security and reducing costs for the sector.",
+    defaultImageQuery:
+      "healthcare cybersecurity browser management digital transformation",
+    slug: "healthcare-browser-management-crisis",
     readingTime: 12,
   },
   {
     title:
-      "Energy & Utilities' Missed Opportunities: How Cybersecurity Fears Block Access to Free Online Services—And Why a Secure Enterprise Browser Is Essential",
-    date: "2025-05-25T00:00:00.000Z",
+      "Finance's Browser Management Blind Spot: Why Standard Browsers Leave Security Teams Exposed—and How Enterprise Browsers Like Oasis Can Transform Protection",
+    date: "2025-06-03T00:00:00.000Z",
     authors: ["Fahiza Syed", "Adam Kershner"],
-    category: ["Energy", "Security", "Enterprise Browsers"],
+    category: ["Security", "Finance", "Research & Trends"],
     excerpt:
-      "As energy and utilities embrace digital transformation, cybersecurity concerns are preventing many organizations from leveraging free online services. This article explores how a secure enterprise browser can help the industry safely unlock digital opportunities while maintaining compliance and protecting critical infrastructure.",
+      "As cyber threats and compliance pressures grow, banks and fintechs are rethinking browser security. Discover how enterprise browsers are enabling secure, efficient remote work in finance.",
     defaultImageQuery:
-      "energy utilities cybersecurity digital transformation enterprise browser",
-    slug: "energy-utilities-digital-opportunity-2025",
+      "finance cybersecurity browser management digital transformation",
+    slug: "finance-browser-management-blind-spot",
     readingTime: 12,
   },
   {
     title:
-      "Government's Digital Dilemma: How Cybersecurity Fears Block Access to Free Online Services—And Why a Secure Enterprise Browser Is Essential",
-    date: "2025-05-25T00:00:00.000Z",
+      "Government & Public Sector's Browser Management Crisis: Why Standard Browsers Leave Agencies Vulnerable—and How Kahana's Oasis Enterprise Browser Provides the Solution",
+    date: "2025-06-03T00:00:00.000Z",
     authors: ["Fahiza Syed", "Adam Kershner"],
-    category: ["Government", "Security", "Enterprise Browsers"],
+    category: ["Security", "Government", "Research & Trends"],
     excerpt:
-      "As government agencies embrace digital transformation, cybersecurity concerns are preventing many organizations from leveraging free online services. This article explores how a secure enterprise browser can help the public sector safely unlock digital opportunities while maintaining compliance and protecting citizen data.",
+      "Public sector agencies are reimagining digital services, but browser vulnerabilities threaten sensitive data and citizen trust. Learn how enterprise browsers are closing the gap in government cybersecurity.",
     defaultImageQuery:
-      "government cybersecurity digital transformation enterprise browser",
-    slug: "government-digital-opportunity-2025",
-    readingTime: 12,
+      "government cybersecurity browser management public sector",
+    slug: "government-browser-management-crisis",
+    readingTime: 15,
+  },
+  {
+    title:
+      "Why Manufacturing Companies Must Adopt Specialized Enterprise Browsers to Secure BYOD and Contractor Access",
+    date: "2025-06-03T00:00:00.000Z",
+    authors: ["Fahiza Syed", "Adam Kershner"],
+    category: ["Security", "Manufacturing", "Research & Trends"],
+    excerpt:
+      "As manufacturing embraces Industry 4.0 and cloud-based automation, the sector faces unique cybersecurity challenges. This article explores how specialized enterprise browsers can protect operations while enabling secure BYOD and contractor access.",
+    defaultImageQuery:
+      "manufacturing cybersecurity browser management BYOD contractor access",
+    slug: "manufacturing-enterprise-browser-security",
+    readingTime: 15,
+  },
+  {
+    title:
+      "Healthcare's Critical Browser Security Gap: How Enterprise Browsers Protect Patient Data in the BYOD Era",
+    date: "2025-06-03T00:00:00.000Z",
+    authors: ["Fahiza Syed", "Adam Kershner"],
+    category: ["Security", "Healthcare", "Research & Trends"],
+    excerpt:
+      "In an era of digital healthcare and remote access, standard browsers create dangerous security blind spots. Discover how enterprise browsers are becoming essential for protecting sensitive patient data while enabling secure access for healthcare professionals.",
+    defaultImageQuery:
+      "healthcare cybersecurity browser management BYOD contractor access",
+    slug: "healthcare-enterprise-browser-security",
+    readingTime: 15,
+  },
+  {
+    title:
+      "Finance's Unseen Browser Security Risk: How Enterprise Browsers Protect Data, Compliance, and Trust in the BYOD Era",
+    date: "2025-06-03T00:00:00.000Z",
+    authors: ["Fahiza Syed", "Adam Kershner"],
+    category: ["Security", "Finance", "Research & Trends"],
+    excerpt:
+      "Financial institutions face mounting cyber risks as remote access and BYOD become the norm. See how enterprise browsers are helping banks and fintechs safeguard sensitive data, meet compliance demands, and build customer trust in a rapidly changing landscape.",
+    defaultImageQuery: "finance cybersecurity banking data protection",
+    slug: "finance-enterprise-browser-security",
+    readingTime: 15,
+  },
+  {
+    title:
+      "Why Finance Companies Must Adopt Specialized Enterprise Browsers to Secure BYOD and Contractor Access",
+    date: "2025-06-03T00:00:00.000Z",
+    authors: ["Fahiza Syed", "Adam Kershner"],
+    category: ["Security", "Finance", "Research & Trends"],
+    excerpt:
+      "BYOD and contractor access are reshaping finance, but also raising new risks. Find out how specialized enterprise browsers are helping financial institutions protect data and maintain trust.",
+    defaultImageQuery:
+      "finance cybersecurity browser management BYOD contractor access",
+    slug: "finance-enterprise-browser-security",
+    readingTime: 15,
+  },
+  {
+    title:
+      "Energy & Utilities' Critical Browser Security Gap: How Enterprise Browsers Protect Infrastructure, Data, and Compliance in the BYOD Era",
+    date: "2025-06-03T00:00:00.000Z",
+    authors: ["Fahiza Syed", "Adam Kershner"],
+    category: ["Security", "Energy & Utilities", "Research & Trends"],
+    excerpt:
+      "For energy and utilities, the stakes of browser security have never been higher. Discover how modern enterprise browsers are empowering the sector to defend critical infrastructure, prevent costly breaches, and keep operations running smoothly—even as BYOD and contractor access expand.",
+    defaultImageQuery:
+      "energy utilities cybersecurity infrastructure protection",
+    slug: "energy-utilities-enterprise-browser-security",
+    readingTime: 15,
+  },
+  {
+    title:
+      "Government's Browser Security Crossroads: How Enterprise Browsers Safeguard Data, Compliance, and Public Trust in the BYOD Era",
+    date: "2025-06-03T00:00:00.000Z",
+    authors: ["Fahiza Syed", "Adam Kershner"],
+    category: ["Security", "Government", "Research & Trends"],
+    excerpt:
+      "Standard browsers leave government agencies and the public sector exposed to data breaches, operational disruption, and regulatory penalties—especially as BYOD and contractor access expand. Discover how enterprise browsers are transforming security and compliance for the modern public sector.",
+    defaultImageQuery:
+      "government cybersecurity browser management BYOD contractor access",
+    slug: "government-enterprise-browser-security",
+    readingTime: 15,
+  },
+  {
+    title:
+      "Safeguarding Digital Democracy: How Enterprise Browsers Are Transforming Government BYOD and Contractor Security",
+    date: "2025-06-03T00:00:00.000Z",
+    authors: ["Fahiza Syed", "Adam Kershner"],
+    category: ["Security", "Government", "Research & Trends"],
+    excerpt:
+      "Government agencies are under pressure to secure sensitive data and maintain public trust in an era of remote work and complex cyber threats. Learn how purpose-built enterprise browsers are enabling the public sector to modernize access, streamline compliance, and protect digital democracy.",
+    defaultImageQuery:
+      "government cybersecurity browser management BYOD contractor access",
+    slug: "government-enterprise-browser-security",
+    readingTime: 15,
   },
 ];
 
