@@ -419,6 +419,28 @@ function NavBar() {
             </div>
 
             <div className="dropdown">
+              <Link href="/markets" className="nav-link">Markets</Link>
+              <div className="dropdown-overlay"></div>
+              <div className="dropdown-content">
+                <div className="dropdown-section">
+                  <h3 className="text-[0.75rem] font-semibold text-gray-600 mb-4 uppercase tracking-wider">Industry Markets</h3>
+                  <div className="flex flex-col space-y-4">
+                    <Link href="/markets/manufacturing" className="dropdown-link">Manufacturing</Link>
+                    <Link href="/markets/professional" className="dropdown-link">Professional Services</Link>
+                    <Link href="/markets/healthcare" className="dropdown-link">Healthcare</Link>
+                    <Link href="/markets/financial" className="dropdown-link">Financial Services</Link>
+                    <Link href="/markets/energy-utilities" className="dropdown-link">Energy & Utilities</Link>
+                    <Link href="/markets/retail" className="dropdown-link">Retail & E-commerce</Link>
+                    <Link href="/markets/government" className="dropdown-link">Government & Public Sector</Link>
+                    <Link href="/markets/technology" className="dropdown-link">Technology</Link>
+                    <Link href="/markets/education" className="dropdown-link">Education</Link>
+                    <Link href="/markets/hospitality" className="dropdown-link">Hospitality</Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="dropdown">
               <Link href="/solutions" className="nav-link">Solutions</Link>
               <div className="dropdown-overlay"></div>
               <div className="dropdown-content">
