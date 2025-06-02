@@ -57,7 +57,7 @@ export default function Footer() {
       <div className="relative">
         <h2 id="footer-heading" className="sr-only">Footer</h2>
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-6 gap-12">
             {/* Product Column */}
             <div>
               <button 
@@ -132,6 +132,37 @@ export default function Footer() {
                 <li><Link href="/blog" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">Blog</Link></li>
                 <li><Link href="/docs" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">Docs</Link></li>
                 <li><Link href="/subscribe-to-insights" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">Subscribe to Insights</Link></li>
+              </ul>
+            </div>
+
+            {/* Markets Column */}
+            <div>
+              <button 
+                onClick={() => toggleSection('markets')} 
+                className="flex justify-between items-center w-full md:hidden mb-3"
+              >
+                <h3 className="text-kahana-accent-purple font-semibold text-lg">Markets</h3>
+                <svg 
+                  className={`w-5 h-5 transition-transform ${openSection === 'markets' ? 'rotate-180' : ''}`}
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <h3 className="text-kahana-accent-purple font-semibold mb-6 text-lg hidden md:block">Markets</h3>
+              <ul className={`space-y-4 ${openSection === 'markets' || !isMobile ? 'block' : 'hidden'}`}>
+                <li><Link href="/markets/manufacturing" className="text-kahana-primary hover:text-kahana-accent-coral transition-colors duration-200">Manufacturing</Link></li>
+                <li><Link href="/markets/professional" className="text-kahana-primary hover:text-kahana-accent-coral transition-colors duration-200">Professional Services</Link></li>
+                <li><Link href="/markets/healthcare" className="text-kahana-primary hover:text-kahana-accent-coral transition-colors duration-200">Healthcare</Link></li>
+                <li><Link href="/markets/financial" className="text-kahana-primary hover:text-kahana-accent-coral transition-colors duration-200">Financial Services</Link></li>
+                <li><Link href="/markets/energy-utilities" className="text-kahana-primary hover:text-kahana-accent-coral transition-colors duration-200">Energy & Utilities</Link></li>
+                <li><Link href="/markets/retail" className="text-kahana-primary hover:text-kahana-accent-coral transition-colors duration-200">Retail & E-commerce</Link></li>
+                <li><Link href="/markets/government" className="text-kahana-primary hover:text-kahana-accent-coral transition-colors duration-200">Government & Public Sector</Link></li>
+                <li><Link href="/markets/technology" className="text-kahana-primary hover:text-kahana-accent-coral transition-colors duration-200">Technology</Link></li>
+                <li><Link href="/markets/education" className="text-kahana-primary hover:text-kahana-accent-coral transition-colors duration-200">Education</Link></li>
+                <li><Link href="/markets/hospitality" className="text-kahana-primary hover:text-kahana-accent-coral transition-colors duration-200">Hospitality</Link></li>
               </ul>
             </div>
 
