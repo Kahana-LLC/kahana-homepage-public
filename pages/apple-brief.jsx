@@ -60,7 +60,8 @@ const AppleBrief = () => {
       {/* Acquisition Package Section at the very bottom, outside main content */}
       <div className="container mx-auto px-6 py-12">
         <AcquisitionPackageSection />
-        <div className="flex justify-center mt-10">
+        <div className="flex flex-col items-center mt-10">
+          <p className="mb-4 text-lg text-gray-700 text-center max-w-2xl">We are ready to hop on the next one-way flight to Cupertino at a moment's notice to make this happen.</p>
           <a
             href="https://go.oncehub.com/AdamKershner"
             target="_blank"
@@ -74,7 +75,7 @@ const AppleBrief = () => {
             onMouseOver={e => e.currentTarget.style.filter = 'brightness(1.05)'}
             onMouseOut={e => e.currentTarget.style.filter = 'none'}
           >
-            Let's work together →
+            Book a Call with Adam & Jonathan →
           </a>
         </div>
       </div>
