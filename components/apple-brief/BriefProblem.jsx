@@ -41,11 +41,11 @@ const BriefProblem = () => {
         Our IP portfolio protects the next wave of voice-first, touch-free features
         </h3>
         <p className="text-lg text-gray-700 mb-6">
-          Our IP portfolio includes 2 issued patents and a patent pending with "blank canvas" potential, enabling Apple to tailor additional claims to its needs and continue building a foundational portfolio for the next wave of Apple's products. These patents focus on protecting the connection between commands and GUI changes, making information access effortless and ergonomic across Apple's ecosystem.
+          Our IP portfolio includes 2 issued patents and a patent pending with "blank canvas" potential, enabling Apple to tailor additional claims to its needs and continue building a foundational portfolio with multiple patents for the next wave of Apple's products. These patents focus on protecting the connection between commands and GUI changes, making information access effortless and ergonomic across Apple's ecosystem.
         </p>
         <div className="flex flex-col items-start gap-1 mt-4">
           <a
-            href="https://patents.google.com/patent/US11693676B2/en?oq=11%2c693%2c676"
+            href="https://patents.google.com/patent/US11397844B2/en?oq=11%2c397%2c844"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block underline font-medium"
@@ -54,7 +54,7 @@ const BriefProblem = () => {
             Read Patent #1: US11693676B2
           </a>
           <a
-            href="https://patents.google.com/patent/US11397844B2/en?oq=11%2c397%2c844"
+            href="https://patents.google.com/patent/US11693676B2/en?oq=11%2c693%2c676"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block underline font-medium"

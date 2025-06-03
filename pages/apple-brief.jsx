@@ -12,7 +12,7 @@ import AcquisitionPackageSection from "../components/apple-brief/AcquisitionPack
 
 // Section titles for navigation
 const sections = [
-  { id: "solution", title: "Apple's vision of the future is exciting, so protect it.", component: BriefSolution },
+  { id: "solution", title: "The Hephaestus Project: Forging Apple Devices as Tools of Omnipotence", component: BriefSolution },
   { id: "problem", title: "Grow the IP Portfolio for Apple Intelligence and AR/VR", component: BriefProblem },
 ];
 

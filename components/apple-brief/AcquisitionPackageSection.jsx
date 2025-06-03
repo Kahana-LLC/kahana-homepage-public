@@ -9,15 +9,15 @@ const AcquisitionPackageSection = () => (
       <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-gray-200">
         <div className="p-6">
           <h4 className="text-lg font-semibold text-gray-900 mb-2">Full IP Portfolio</h4>
-          <p className="text-gray-600">Two issued patents and a patent pending, opening the door for multiple additional patents that can be tailored to protect command-to-GUI relationships in Apple's next-generation products (more details below).</p>
+          <p className="text-gray-600">Two issued patents and a patent pending, opening the door for multiple additional patents that can be tailored to protect command-to-GUI relationships in Apple's next-generation products.</p>
         </div>
         <div className="p-6">
           <h4 className="text-lg font-semibold text-gray-900 mb-2">Right to Hire</h4>
-          <p className="text-gray-600">The right to hire Adam Kershner and Jonathan Gans to integrate Kahana's technology/vision into Apple's products and work to expand the patent portfolio.</p>
+          <p className="text-gray-600">The right to hire Adam Kershner and Jonathan Gans as full-time engineers to integrate their patented command-to-GUI inventions into Apple's products and further expand Apple's IP portfolio.</p>
         </div>
         <div className="p-6">
           <h4 className="text-lg font-semibold text-gray-900 mb-2">Code, Products, Revenue</h4>
-          <p className="text-gray-600">Full ownership of Kahana's codebase, existing products, and revenue streams (e.g., subscriptions from current Kahana customer) and control over decision-making (e.g., integrating code into its own code base, shutting a product down, etc.).</p>
+          <p className="text-gray-600">Full ownership of Kahana's codebase, existing products, existing customers, and revenue streams and control over decision-making (e.g., integrating code into Apple's code base).</p>
         </div>
       </div>
     </div>
