@@ -60,6 +60,15 @@ const AppleBrief = () => {
       {/* Acquisition Package Section at the very bottom, outside main content */}
       <div className="container mx-auto px-6 py-12">
         <AcquisitionPackageSection />
+        {/* Adam & Jonathan Image */}
+        <div className="flex justify-center mt-8">
+          <img
+            src="/images-apple/adam_jonathan.png"
+            alt="Adam Kershner and Jonathan Gans at Kahana event"
+            className="rounded-xl shadow-lg object-cover"
+            style={{ maxWidth: '400px', width: '100%', height: 'auto' }}
+          />
+        </div>
         <div className="flex flex-col items-center mt-10">
           <p className="mb-4 text-lg text-gray-700 text-center max-w-2xl">We are ready to hop on the next one-way flight to Cupertino at a moment's notice to make this happen.</p>
           <a
@@ -77,6 +86,19 @@ const AppleBrief = () => {
           >
             Book a Call with Adam & Jonathan →
           </a>
+        </div>
+        {/* Contact Information Box */}
+        <div className="mt-8 max-w-2xl mx-auto bg-gray-50 rounded-xl border border-gray-200 p-6 flex flex-col md:flex-row gap-8 text-gray-800">
+          <div className="flex-1">
+            <span className="font-semibold">Adam Kershner</span><br />
+            <span className="text-sm">Email: <a href="mailto:adam@kahana.co" className="underline text-blue-700">adam@kahana.co</a></span><br />
+            <span className="text-sm">Phone: <a href="tel:17329393025" className="underline text-blue-700">(732)-939-3025</a></span>
+          </div>
+          <div className="flex-1 md:border-l md:pl-8">
+            <span className="font-semibold">Jonathan Gans</span><br />
+            <span className="text-sm">Email: <a href="mailto:jonathan@kahana.co" className="underline text-blue-700">jonathan@kahana.co</a></span><br />
+            <span className="text-sm">Phone: <a href="tel:13103843505" className="underline text-blue-700">(310)-384-3505</a></span>
+          </div>
         </div>
       </div>
 
