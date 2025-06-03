@@ -1,0 +1,27 @@
+import React from 'react';
+
+const AcquisitionPackageSection = () => (
+  <div className="mt-16 bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden max-w-4xl mx-auto">
+    <div className="bg-gradient-to-r from-blue-50 to-purple-50 py-2 px-4 border-b border-gray-200">
+      <h3 className="text-2xl font-bold text-gray-900 mb-2">Acquisition Package</h3>
+    </div>
+    <div className="py-2 px-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-gray-200">
+        <div className="p-6">
+          <h4 className="text-lg font-semibold text-gray-900 mb-2">Full IP Portfolio</h4>
+          <p className="text-gray-600">Two issued patents and a patent pending, opening the door for multiple additional patents that can be tailored to protect command-to-GUI relationships in Apple's next-generation products (more details below).</p>
+        </div>
+        <div className="p-6">
+          <h4 className="text-lg font-semibold text-gray-900 mb-2">Right to Hire</h4>
+          <p className="text-gray-600">The right to hire Adam Kershner and Jonathan Gans to integrate Kahana's technology/vision into Apple's products and work to expand the patent portfolio.</p>
+        </div>
+        <div className="p-6">
+          <h4 className="text-lg font-semibold text-gray-900 mb-2">Code, Products, Revenue</h4>
+          <p className="text-gray-600">Full ownership of Kahana's codebase, existing products, and revenue streams (e.g., subscriptions from current Kahana customer) and control over decision-making (e.g., integrating code into its own code base, shutting a product down, etc.).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
+export default AcquisitionPackageSection; 

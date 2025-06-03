@@ -8,11 +8,12 @@ import {
   BriefSolution,
 } from "../components/apple-brief";
 import { DotPattern } from "../components/apple-pitch";
+import AcquisitionPackageSection from "../components/apple-brief/AcquisitionPackageSection";
 
 // Section titles for navigation
 const sections = [
-  { id: "solution", title: "It's time for Apple Intelligence to be fully realized.", component: BriefSolution },
-  { id: "problem", title: "Functional prototype + 2 approved patents are done. ", component: BriefProblem },
+  { id: "solution", title: "Apple's vision of the future is exciting, so protect it.", component: BriefSolution },
+  { id: "problem", title: "Grow the IP Portfolio for Apple Intelligence and AR/VR", component: BriefProblem },
 ];
 
 const AppleBrief = () => {
@@ -55,6 +56,28 @@ const AppleBrief = () => {
           );
         })}
       </main>
+
+      {/* Acquisition Package Section at the very bottom, outside main content */}
+      <div className="container mx-auto px-6 py-12">
+        <AcquisitionPackageSection />
+        <div className="flex justify-center mt-10">
+          <a
+            href="https://go.oncehub.com/AdamKershner"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-8 py-3 rounded-full text-lg font-semibold shadow-md transition-all no-underline"
+            style={{
+              background: '#2c71d0',
+              color: '#fff',
+              border: 'none',
+            }}
+            onMouseOver={e => e.currentTarget.style.filter = 'brightness(1.05)'}
+            onMouseOut={e => e.currentTarget.style.filter = 'none'}
+          >
+            Let's work together →
+          </a>
+        </div>
+      </div>
 
       <style jsx global>{`
         @keyframes gradientGlow {
