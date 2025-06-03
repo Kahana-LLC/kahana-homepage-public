@@ -17,7 +17,7 @@ const AcquisitionPackageSection = () => (
         </div>
         <div className="p-6">
           <h4 className="text-lg font-semibold text-gray-900 mb-2">Code, Products, Revenue</h4>
-          <p className="text-gray-600">Full ownership of Kahana Group Inc. (company being acquired) codebase, existing products, existing customers, revenue streams, and control over decision-making (e.g., integrating code into Apple's code base).</p>
+          <p className="text-gray-600">Full ownership of Kahana Group Inc. codebase, existing products, existing customers, revenue streams, and control over decision-making (e.g., integrating code into Apple's code base).</p>
         </div>
       </div>
     </div>
