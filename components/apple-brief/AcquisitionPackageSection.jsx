@@ -13,7 +13,7 @@ const AcquisitionPackageSection = () => (
         </div>
         <div className="p-6">
           <h4 className="text-lg font-semibold text-gray-900 mb-2">Right to Hire</h4>
-          <p className="text-gray-600">The right to hire Adam Kershner and Jonathan Gans (majority Owners of Kahana Group Inc.) as full-time engineers to integrate their patented command-to-GUI inventions into Apple's products and further expand Apple's IP portfolio.</p>
+          <p className="text-gray-600">The right to hire Adam Kershner and Jonathan Gans (majority Owners of Kahana Group Inc.) as full-time directors to integrate their patented command-to-GUI inventions into Apple's products and further expand Apple's IP portfolio.</p>
         </div>
         <div className="p-6">
           <h4 className="text-lg font-semibold text-gray-900 mb-2">Code, Products, Revenue</h4>
