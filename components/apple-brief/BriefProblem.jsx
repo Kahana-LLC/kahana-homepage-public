@@ -35,10 +35,35 @@ const arrowStyle = {
 const BriefProblem = () => {
   return (
     <div className="space-y-12">
-      <div className="prose prose-lg max-w-none">
-        <h3 className="text-3xl font-bold text-gray-900 mb-8">
-          Next steps: acquire us and our IP so we can integrate the tech into Siri and Safari.
+      <div className="p-8 rounded-lg mb-12" style={{ backgroundColor: '#ecebf1' }}>
+        <h3 className="text-2xl font-semibold mb-4">
+        IP portfolio focusing on Apple's voice-first, touch-free tech ecosystem
         </h3>
+        <p className="text-lg text-gray-700 mb-6">
+          Our IP portfolio includes 2 issued patents and a patent pending with "blank canvas" potential, enabling Apple to tailor additional claims to its needs and continue building a foundational portfolio for the next wave of Apple's products. These patents focus on protecting the connection between commands and GUI changes, making information access effortless and ergonomic across Apple's ecosystem.
+        </p>
+        <div className="flex flex-col items-start gap-1 mt-4">
+          <a
+            href="https://patents.google.com/patent/US11693676B2/en?oq=11%2c693%2c676"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block underline font-medium"
+            style={{ color: '#2c71d0' }}
+          >
+            Read Patent #1: US11693676B2
+          </a>
+          <a
+            href="https://patents.google.com/patent/US11397844B2/en?oq=11%2c397%2c844"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block underline font-medium"
+            style={{ color: '#2c71d0' }}
+          >
+            Read Patent #2: US11397844B2
+          </a>
+        </div>
+      </div>
+      <div className="prose prose-lg max-w-none">
         <div className="flex justify-center mb-8">
           <Image
             src="/images-apple/patent-breakdown.jpg"
@@ -48,72 +73,6 @@ const BriefProblem = () => {
             className="rounded-lg object-contain shadow-lg"
             priority
           />
-        </div>
-        <p className="text-xl text-gray-700 text-center mb-8">
-          Our 2 approved patents cover how commands—whether through text, voice or gesture—trigger the GUI change you see, making information access effortless and ergonomic across Apple's ecosystem.
-        </p>
-        <div className="flex justify-center mb-8">
-          <a
-            href="https://www.youtube.com/watch?v=bAA8-TTFsxc"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-black text-white px-8 py-4 rounded-xl font-semibold hover:bg-gray-900 transition-colors flex items-center gap-2"
-          >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            Watch 3-minute Demo of the Tech in Action
-          </a>
-        </div>
-        <div className="space-y-8">
-          <h4 className="text-2xl font-semibold text-black text-center">Command-GUI Relationship</h4>
-          <div className="space-y-8 mt-8">
-            {commandGuiPairs.map((pair, idx) => (
-              <div key={idx} className="bg-gradient-to-r from-[#e3efff] via-[#f3e6ff] to-[#ffe6f0] rounded-2xl px-4 py-6 flex flex-col md:flex-row items-center justify-center gap-4 shadow-md">
-                <div
-                  className="rounded-lg px-6 py-4 text-lg shadow-none w-full md:w-1/3 text-center font-bold"
-                  style={{color: '#1a237e'}}>
-                  {pair.command}
-                </div>
-                <div className="text-5xl mx-2 my-2 md:my-0 font-extrabold">
-                  <span className="block md:hidden" style={arrowStyle}>↓</span>
-                  <span className="hidden md:block" style={arrowStyle}>→</span>
-                </div>
-                <div
-                  className="rounded-lg px-6 py-4 text-lg shadow-none w-full md:w-1/3 text-center font-bold"
-                  style={{color: '#1a237e'}}>
-                  {pair.gui}
-                </div>
-              </div>
-            ))}
-            {/* Divider between pairs */}
-            <style jsx>{`
-              .pair-divider:not(:last-child) {
-                border-bottom: 2px solid #e0e0e0;
-                margin: 2rem 0;
-              }
-            `}</style>
-          </div>
-          <div className="text-center mt-8 space-y-2">
-            <a
-              href="https://patents.google.com/patent/US11693676B2/en?oq=11%2c693%2c676"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block text-blue-600 hover:text-blue-800 underline text-lg font-medium"
-            >
-              Read Patent #1: US11693676B2
-            </a>
-            <br />
-            <a
-              href="https://patents.google.com/patent/US11397844B2/en?oq=11%2c397%2c844"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block text-blue-600 hover:text-blue-800 underline text-lg font-medium"
-            >
-              Read Patent #2: US11397844B2
-            </a>
-          </div>
         </div>
       </div>
     </div>
