@@ -116,28 +116,31 @@ const AppleBrief = () => {
         </div>
         {/* Tally Modal Popup */}
         {showTallyModal && (
-          <div className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4" onClick={e => { if (e.target === e.currentTarget) setShowTallyModal(false); }}>
-            <div className="bg-white rounded-xl shadow-lg max-w-2xl w-full relative overflow-hidden p-6">
+          <div className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-2 sm:p-4" onClick={e => { if (e.target === e.currentTarget) setShowTallyModal(false); }}>
+            <div className="bg-white rounded-xl shadow-lg max-w-2xl w-full relative overflow-hidden p-2 sm:p-6 lg:p-10 max-h-[90vh] flex flex-col">
               <div className="mb-4">
-                <h2 className="text-2xl font-bold text-gray-900">Book an In-Person Meeting With Adam & Jonathan</h2>
-                <p className="text-gray-600 mt-2">Date, time, place. Schedule an in-person meeting with Adam Kershner and Jonathan Gans.</p>
+                <h2 className="font-bold text-gray-900 text-lg sm:text-2xl">Book an In-Person Meeting With Adam & Jonathan</h2>
+                <p className="text-gray-600 mt-2 text-sm sm:text-base">Date, time, place. Schedule an in-person meeting with Adam Kershner and Jonathan Gans.</p>
               </div>
               <button
                 onClick={() => setShowTallyModal(false)}
-                className="absolute top-2 right-2 text-gray-500 hover:text-gray-800 text-2xl font-bold z-10"
+                className="absolute top-2 right-2 text-gray-500 hover:text-gray-800 text-2xl font-bold z-10 w-10 h-10 flex items-center justify-center rounded-full bg-white/80"
                 aria-label="Close"
+                style={{ lineHeight: 1 }}
               >
                 ×
               </button>
-              <iframe
-                src="https://tally.so/embed/mZKxzV?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-                width="100%"
-                height="600"
-                frameBorder="0"
-                title="Book an In-Person Meeting With Adam & Jonathan"
-                style={{ border: 'none', borderRadius: '0 0 0.75rem 0.75rem', minHeight: 500 }}
-                allowFullScreen
-              ></iframe>
+              <div className="flex-1 overflow-y-auto">
+                <iframe
+                  src="https://tally.so/embed/mZKxzV?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+                  width="100%"
+                  height="600"
+                  frameBorder="0"
+                  title="Book an In-Person Meeting With Adam & Jonathan"
+                  style={{ border: 'none', borderRadius: '0 0 0.75rem 0.75rem', minHeight: 500 }}
+                  allowFullScreen
+                ></iframe>
+              </div>
             </div>
           </div>
         )}
