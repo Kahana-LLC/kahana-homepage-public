@@ -117,8 +117,8 @@ const AppleBrief = () => {
         {/* Tally Modal Popup */}
         {showTallyModal && (
           <div className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-2 sm:p-4" onClick={e => { if (e.target === e.currentTarget) setShowTallyModal(false); }}>
-            <div className="bg-white rounded-xl shadow-lg max-w-2xl w-full relative overflow-hidden p-2 sm:p-6 lg:p-10 max-h-[90vh] flex flex-col">
-              <div className="mb-4">
+            <div className="bg-white rounded-xl shadow-lg max-w-2xl w-full relative overflow-hidden p-4 sm:p-6 lg:p-10 max-h-[90vh] flex flex-col">
+              <div className="mb-6">
                 <h2 className="font-bold text-gray-900 text-lg sm:text-2xl">Book an In-Person Meeting With Adam & Jonathan</h2>
                 <p className="text-gray-600 mt-2 text-sm sm:text-base">Date, time, place. Schedule an in-person meeting with Adam Kershner and Jonathan Gans.</p>
               </div>
