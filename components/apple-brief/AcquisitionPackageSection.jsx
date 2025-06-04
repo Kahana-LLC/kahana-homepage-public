@@ -12,7 +12,7 @@ const AcquisitionPackageSection = () => (
           <p className="text-gray-600">Two issued patents and a patent pending open up a clear path to write and file additional patents that will serve to expand and protect command-to-GUI technologies in Apple's next generations of products.</p>
         </div>
         <div className="p-6">
-          <h4 className="text-lg font-semibold text-gray-900 mb-2">Talent & Leadership</h4>
+          <h4 className="text-lg font-semibold text-gray-900 mb-2">Leadership & Innovation</h4>
           <p className="text-gray-600">Adam Kershner and Jonathan Gans (majority Owners of Kahana Group Inc.) join Apple as full-time directors to integrate their patented command-to-GUI inventions into Apple's product ecosystem and further expand Apple's IP portfolio.</p>
         </div>
         <div className="p-6">

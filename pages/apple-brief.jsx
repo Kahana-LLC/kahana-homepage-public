@@ -71,7 +71,7 @@ const AppleBrief = () => {
           />
         </div>
         <div className="flex flex-col items-center mt-10">
-          <p className="mb-4 text-lg text-gray-700 text-center max-w-2xl">At a moment's notice, we are ready to hop on the next flight to Cupertino to make this happen.</p>
+          <p className="mb-4 text-lg text-gray-700 text-center max-w-2xl">We are ready to hop on the next flight to Cupertino to make this happen.</p>
           {/* Book In-Person Meeting Button */}
           <button
             onClick={() => setShowTallyModal(true)}
