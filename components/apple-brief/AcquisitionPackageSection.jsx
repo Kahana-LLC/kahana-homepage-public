@@ -9,7 +9,7 @@ const AcquisitionPackageSection = () => (
       <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-gray-200">
         <div className="p-6">
           <h4 className="text-lg font-semibold text-gray-900 mb-2">Full IP Portfolio</h4>
-          <p className="text-gray-600">Two issued patents and a patent pending, creating a clear path to write and file additional patents that will serve to expand and protect command-to-GUI technologies in Apple's next generations of products.</p>
+          <p className="text-gray-600">Two issued patents and a patent pending open up a clear path to write and file additional patents that will serve to expand and protect command-to-GUI technologies in Apple's next generations of products.</p>
         </div>
         <div className="p-6">
           <h4 className="text-lg font-semibold text-gray-900 mb-2">Talent & Leadership</h4>

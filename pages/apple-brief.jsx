@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
@@ -17,6 +17,7 @@ const sections = [
 ];
 
 const AppleBrief = () => {
+  const [showTallyModal, setShowTallyModal] = useState(false);
   return (
     <div className="min-h-screen bg-white" style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "San Francisco", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif' }}>
       <Head>
@@ -70,7 +71,20 @@ const AppleBrief = () => {
           />
         </div>
         <div className="flex flex-col items-center mt-10">
-          <p className="mb-4 text-lg text-gray-700 text-center max-w-2xl">We are ready to hop on the next one-way flight to Cupertino at a moment's notice to make this happen.</p>
+          <p className="mb-4 text-lg text-gray-700 text-center max-w-2xl">At a moment's notice, we are ready to hop on the next flight to Cupertino to make this happen.</p>
+          {/* Book In-Person Meeting Button */}
+          <button
+            onClick={() => setShowTallyModal(true)}
+            className="mb-4 inline-block px-8 py-3 rounded-full text-lg font-semibold shadow-md transition-all no-underline"
+            style={{
+              background: '#2c71d0',
+              color: '#fff',
+              border: 'none',
+            }}
+          >
+            Book an In-Person Meeting
+          </button>
+          {/* Book Virtual Call Button */}
           <a
             href="https://go.oncehub.com/AdamKershner"
             target="_blank"
@@ -84,7 +98,7 @@ const AppleBrief = () => {
             onMouseOver={e => e.currentTarget.style.filter = 'brightness(1.05)'}
             onMouseOut={e => e.currentTarget.style.filter = 'none'}
           >
-            Book a Call with Adam & Jonathan →
+            Book a Virtual Call
           </a>
         </div>
         {/* Contact Information Box */}
@@ -100,6 +114,33 @@ const AppleBrief = () => {
             <span className="text-sm">Phone: <a href="tel:13103843505" className="underline text-blue-700">(310)-384-3505</a></span>
           </div>
         </div>
+        {/* Tally Modal Popup */}
+        {showTallyModal && (
+          <div className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4" onClick={e => { if (e.target === e.currentTarget) setShowTallyModal(false); }}>
+            <div className="bg-white rounded-xl shadow-lg max-w-2xl w-full relative overflow-hidden p-6">
+              <div className="mb-4">
+                <h2 className="text-2xl font-bold text-gray-900">Book an In-Person Meeting With Adam & Jonathan</h2>
+                <p className="text-gray-600 mt-2">Date, time, place. Schedule an in-person meeting with Adam Kershner and Jonathan Gans.</p>
+              </div>
+              <button
+                onClick={() => setShowTallyModal(false)}
+                className="absolute top-2 right-2 text-gray-500 hover:text-gray-800 text-2xl font-bold z-10"
+                aria-label="Close"
+              >
+                ×
+              </button>
+              <iframe
+                src="https://tally.so/embed/mZKxzV?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+                width="100%"
+                height="600"
+                frameBorder="0"
+                title="Book an In-Person Meeting With Adam & Jonathan"
+                style={{ border: 'none', borderRadius: '0 0 0.75rem 0.75rem', minHeight: 500 }}
+                allowFullScreen
+              ></iframe>
+            </div>
+          </div>
+        )}
       </div>
 
       <style jsx global>{`
