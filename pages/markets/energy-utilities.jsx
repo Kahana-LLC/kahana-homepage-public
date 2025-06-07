@@ -95,97 +95,85 @@ const utilityFeatures = [
 
 const industryBenefits = [
   {
-    title: 'Efficiency Gain',
-    description: 'Streamlined utility operations and reduced admin overhead with digital tools.',
+    title: 'Onboarding Speed',
+    description: 'Rapid, secure onboarding for contractors and third parties.',
+    icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+      </svg>
+    ),
+    stat: '45d → 1h',
+    statLabel: 'Onboarding Time',
+    source: {
+      url: '/products/enterprise-browser',
+      label: 'Oasis Enterprise Browser, 2025'
+    }
+  },
+  {
+    title: 'Response Time',
+    description: '80% faster incident response with centralized monitoring.',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
       </svg>
     ),
-    stat: '40%',
-    statLabel: 'Efficiency Gain',
+    stat: '80%',
+    statLabel: 'Faster Response',
     source: {
-      url: 'https://www2.deloitte.com/us/en/insights/industry/power-utilities/digital-transformation.html',
-      label: 'Deloitte, 2023'
+      url: 'https://www.cyberark.com/what-is/enterprise-browser/',
+      label: 'CyberArk, 2024'
     }
   },
   {
-    title: 'Grid Reliability',
-    description: 'Enhanced grid stability and uptime with secure digital operations.',
+    title: 'Compliance Success',
+    description: '60% reduction in compliance costs through automated evidence collection.',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
       </svg>
     ),
-    stat: '99.9%',
-    statLabel: 'Grid Uptime',
+    stat: '60%',
+    statLabel: 'Cost Reduction',
     source: {
-      url: 'https://www.pwc.com/gx/en/industries/power-utilities/publications/utilities-client-experience.html',
-      label: 'PwC, 2023'
+      url: 'https://nordlayer.com/learn/soc/soc-2-audit-checklist/',
+      label: 'NordLayer, 2024'
     }
   },
   {
-    title: 'Cost Savings',
-    description: 'Significant reduction in operational costs through automation and cloud adoption.',
+    title: 'Cost Reduction',
+    description: '18% lower IT overhead by replacing VPNs with enterprise browsers.',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
     ),
-    stat: '35%',
+    stat: '18%',
     statLabel: 'Cost Savings',
     source: {
-      url: 'https://www.mckinsey.com/industries/electric-power-and-natural-gas/our-insights/digital-automation',
-      label: 'McKinsey, 2023'
-    }
-  },
-  {
-    title: 'Compliance Ready',
-    description: 'Built-in compliance for utility standards and regulatory requirements.',
-    icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-      </svg>
-    ),
-    stat: '100%',
-    statLabel: 'Compliance',
-    source: {
-      url: 'https://www.gartner.com/en/documents/utilities-compliance',
-      label: 'Gartner, 2024'
+      url: 'https://chromeenterprise.google/download/',
+      label: 'Google, 2024'
     }
   }
 ];
 
 const energyMetrics = [
   {
-    label: 'Security Incidents Prevented',
-    value: '89%',
-    insight: 'Fewer browser-based breaches after adopting secure enterprise browsers.',
-    source: { url: 'https://www.paloaltonetworks.com/resources/research/2023-unit42-enterprise-browser-security-report', label: 'Palo Alto Networks, 2023' }
+    label: 'Wiper Attacks',
+    value: '31%',
+    insight: 'Of global wiper cyberattacks target energy & utilities.',
+    source: { url: 'https://www.statista.com/statistics/1479650/wiper-cyberattack-detections-global-industries/', label: 'Statista, 2023' }
   },
   {
-    label: 'Compliance Audit Pass Rate',
-    value: '100%',
-    insight: 'Streamlined NERC CIP and GDPR audits with built-in controls.',
-    source: { url: 'https://www2.deloitte.com/us/en/insights/industry/power-utilities/utilities-compliance.html', label: 'Deloitte, 2023' }
+    label: 'Ransomware Impact',
+    value: '44%',
+    insight: 'Of energy-sector breaches involve ransomware.',
+    source: { url: 'https://www.statista.com/statistics/1385289/cause-ransomware-attacks-by-industry/', label: 'Statista, 2023' }
   },
   {
-    label: 'IT Support Tickets Reduced',
-    value: '34%',
-    insight: 'Fewer browser-related helpdesk tickets, freeing IT resources.',
-    source: { url: 'https://www.mckinsey.com/industries/electric-power-and-natural-gas/our-insights/digital-automation', label: 'McKinsey, 2023' }
-  },
-  {
-    label: 'Time to Onboard Staff',
-    value: '2x faster',
-    insight: 'Rapid, policy-driven onboarding for new employees.',
-    source: { url: 'https://www2.deloitte.com/us/en/insights/industry/power-utilities/digital-transformation.html', label: 'Deloitte, 2023' }
-  },
-  {
-    label: 'Cost Savings',
-    value: '35%',
-    insight: 'Lowered IT overhead by consolidating browser management and automation.',
-    source: { url: 'https://www.mckinsey.com/industries/electric-power-and-natural-gas/our-insights/digital-automation', label: 'McKinsey, 2023' }
+    label: 'Breach Cost',
+    value: '$4.72M',
+    insight: 'Average cost per energy-sector data breach.',
+    source: { url: 'https://www.utilitydive.com/news/experts-raise-concerns-about-cybersecurity-and-energy-storage-batteries-hackers/744170/', label: 'Utility Dive, 2023' }
   }
 ];
 
@@ -272,16 +260,23 @@ export default function EnergyUtilities({ energyBlogs }) {
           <div className="text-center">
             <h2 className="text-base font-semibold leading-7 text-[#66C2BE] mb-3">Energy & Utilities</h2>
             <h1 className="text-5xl font-bold text-gray-900 mb-6">
-              Secure Grid Operations
+              Securing the Grid
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              Transform your utility operations with enterprise-grade security, enhanced productivity, and comprehensive analytics.
+              The energy sector faces unprecedented threats, with 31% of global wiper attacks targeting utilities and breaches costing $4.72M on average. Enterprise browsers provide critical protection for grid operations while ensuring compliance and operational continuity.
             </p>
-            <Link href="/schedule-demo">
-              <button className="bg-[#66C2BE] text-white px-8 py-3 rounded-md font-semibold hover:bg-[#55B3AF] transition-colors shadow-lg shadow-[#E3DFF1]/20 hover:shadow-xl hover:shadow-[#E3DFF1]/30">
-                Schedule Demo
-              </button>
-            </Link>
+            <div className="flex justify-center gap-4">
+              <Link href="/schedule-demo">
+                <button className="bg-[#66C2BE] text-white px-8 py-3 rounded-md font-semibold hover:bg-[#55B3AF] transition-colors shadow-lg shadow-[#E3DFF1]/20 hover:shadow-xl hover:shadow-[#E3DFF1]/30">
+                  Schedule Demo
+                </button>
+              </Link>
+              <Link href="http://localhost:3006/sales">
+                <button className="border border-[#66C2BE] text-[#66C2BE] px-8 py-3 rounded-md font-semibold hover:bg-[#66C2BE]/10 transition-colors">
+                  Contact Sales
+                </button>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -290,10 +285,10 @@ export default function EnergyUtilities({ energyBlogs }) {
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
-            Energy & Utilities Industry Metrics
+            Energy & Utilities Security Risks
           </h2>
           <p className="text-gray-600 text-center mb-8 max-w-3xl mx-auto">
-            Key metrics that matter to energy and utilities IT and security leaders evaluating enterprise browsers.
+            The energy and utilities sector faces unique security challenges due to critical infrastructure, regulatory requirements, and sophisticated threat landscape.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {energyMetrics.map((metric, idx) => (
@@ -314,10 +309,10 @@ export default function EnergyUtilities({ energyBlogs }) {
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
-            Utility Security
+            Enterprise Browser Effectiveness
           </h2>
           <p className="text-gray-600 text-center mb-8 max-w-3xl mx-auto">
-            Discover how our solutions deliver enterprise-grade security for utility operations. Our security-first approach helps organizations protect critical infrastructure and maintain compliance.
+            Enterprise browsers address energy and utilities' unique security challenges with proven results. Our security-first approach helps organizations protect critical infrastructure and maintain compliance.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {securityFeatures.map((feature, index) => (
@@ -351,10 +346,10 @@ export default function EnergyUtilities({ energyBlogs }) {
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
-            Utility Benefits
+            Productivity and Cost Savings
           </h2>
           <p className="text-gray-600 text-center mb-8 max-w-3xl mx-auto">
-            See how utility organizations are transforming their operations and improving grid efficiency with our solutions.
+            Enterprise browsers deliver measurable improvements in security, efficiency, and cost reduction for energy and utilities organizations.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {industryBenefits.map((benefit, index) => (
@@ -396,10 +391,10 @@ export default function EnergyUtilities({ energyBlogs }) {
       <section className="bg-gradient-to-r from-[#66C2BE] to-[#8CB7D0] py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-white mb-6">
-            Ready to Transform Your Utility Operations?
+            Ready to Transform Your Grid Security?
           </h2>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Schedule a demo to see how our solutions can enhance grid security, improve operations, and streamline your utility processes.
+            Join leading energy providers that trust Kahana for their digital transformation needs. Protect critical infrastructure and ensure operational continuity with enterprise-grade security.
           </p>
           <div className="flex justify-center gap-4">
             <Link href="/schedule-demo" className="bg-white text-[#66C2BE] px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors">

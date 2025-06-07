@@ -9,140 +9,140 @@ import { blogIndex } from '../../data/blog-index';
 
 const securityFeatures = [
   {
-    title: 'Supply Chain Security',
-    description: 'Enhanced protection for manufacturing supply chains.',
+    title: 'Attack Prevention',
+    description: 'Block 95% of browser-based attacks through granular controls.',
     details: [
-      'Secure vendor access',
-      'Supply chain visibility',
-      'Risk assessment tools',
-      'Compliance monitoring'
-    ]
-  },
-  {
-    title: 'Industrial IoT Protection',
-    description: 'Secure management of connected manufacturing devices.',
-    details: [
-      'Device authentication',
-      'Network segmentation',
-      'Real-time monitoring',
-      'Threat detection'
-    ]
-  },
-  {
-    title: 'Intellectual Property Protection',
-    description: 'Safeguard manufacturing processes and designs.',
-    details: [
-      'Document security',
-      'Access controls',
-      'Usage monitoring',
-      'Data encryption'
+      'Phishing protection',
+      'Malicious extension blocking',
+      'Isolation technology',
+      'Traffic monitoring'
     ]
   },
   {
     title: 'Compliance Management',
-    description: 'Meet industry-specific regulatory requirements.',
+    description: 'Achieve 99.8% audit success with built-in controls.',
     details: [
-      'ISO 27001 compliance',
-      'NIST framework',
+      'SOC 2 compliance',
       'GDPR compliance',
-      'Industry standards'
+      'Industrial standards',
+      'Zero Trust access'
+    ]
+  },
+  {
+    title: 'Incident Response',
+    description: '80% faster response through centralized monitoring.',
+    details: [
+      'Real-time alerts',
+      'Traffic visibility',
+      'Encrypted analysis',
+      'Rapid investigation'
+    ]
+  },
+  {
+    title: 'Credential Protection',
+    description: 'Counter 71% of attacks using valid credentials.',
+    details: [
+      'MFA enforcement',
+      'Access controls',
+      'Session monitoring',
+      'Risk assessment'
     ]
   }
 ];
 
 const industryBenefits = [
   {
-    title: 'Efficiency Gain',
-    description: 'Streamlined workflows and reduced admin overhead with digital tools.',
+    title: 'Operational Efficiency',
+    description: 'Streamlined workflows and reduced admin overhead.',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
       </svg>
     ),
-    stat: '22%',
-    statLabel: 'Efficiency Gain',
+    stat: '34%',
+    statLabel: 'Fewer Support Tickets',
     source: {
-      url: 'https://www2.deloitte.com/us/en/insights/industry/manufacturing/digital-transformation.html',
-      label: 'Deloitte, 2023'
-    }
-  },
-  {
-    title: 'Client Satisfaction',
-    description: 'Improved client experience and retention with secure collaboration.',
-    icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-      </svg>
-    ),
-    stat: '88%',
-    statLabel: 'Satisfaction',
-    source: {
-      url: 'https://www.pwc.com/gx/en/industries/manufacturing/publications/manufacturing-client-experience.html',
-      label: 'PwC, 2023'
+      url: 'https://cloud.google.com/blog/products/chrome-enterprise/forrester-study-finds-managing-chrome-brings-enterprises-cost-savings-and-major-productivity-gains',
+      label: 'Google, 2023'
     }
   },
   {
     title: 'Cost Savings',
-    description: 'Reduced operational costs through automation and cloud adoption.',
+    description: 'Reduced operational costs through automation and consolidation.',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
     ),
     stat: '18%',
-    statLabel: 'Cost Savings',
+    statLabel: 'Lower IT Overhead',
     source: {
-      url: 'https://www.mckinsey.com/industries/manufacturing/our-insights/digital-automation',
-      label: 'McKinsey, 2023'
+      url: 'https://www.bankinfosecurity.com/how-enterprise-browsers-enhance-security-efficiency-a-25416',
+      label: 'BankInfoSecurity, 2024'
     }
   },
   {
-    title: 'Compliance Ready',
-    description: 'Built-in compliance for manufacturing standards and regulatory requirements.',
+    title: 'Compliance Success',
+    description: '60% reduction in compliance costs through automated evidence collection.',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
       </svg>
     ),
-    stat: '99.8%',
-    statLabel: 'Compliance Rate',
+    stat: '60%',
+    statLabel: 'Cost Reduction',
     source: {
-      url: 'https://www.gartner.com/en/documents/manufacturing-compliance',
-      label: 'Gartner, 2024'
+      url: 'https://nordlayer.com/learn/soc/soc-2-audit-checklist/',
+      label: 'NordLayer, 2024'
+    }
+  },
+  {
+    title: 'Onboarding Speed',
+    description: 'Rapid, secure onboarding for contractors and third parties.',
+    icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+      </svg>
+    ),
+    stat: '45d → 1h',
+    statLabel: 'Onboarding Time',
+    source: {
+      url: '/products/enterprise-browser',
+      label: 'Oasis Enterprise Browser, 2025'
     }
   }
 ];
 
 const manufacturingMetrics = [
   {
-    label: 'Security Incidents Prevented',
-    value: '89%',
-    insight: 'Fewer browser-based breaches after adopting secure enterprise browsers.',
-    source: { url: 'https://www.paloaltonetworks.com/resources/research/2023-unit42-enterprise-browser-security-report', label: 'Palo Alto Networks, 2023' }
+    label: 'Ransomware Attacks',
+    value: '29%',
+    insight: 'Manufacturing accounts for 29% of global ransomware victims.',
+    source: { url: 'https://www.preveil.com/blog/cybersecurity-statistics/', label: 'Preveil, 2024' }
   },
   {
-    label: 'Compliance Audit Pass Rate',
-    value: '99.8%',
-    insight: 'Streamlined SOC 2 and GDPR audits with built-in controls.',
-    source: { url: 'https://www2.deloitte.com/us/en/insights/industry/manufacturing/manufacturing-compliance.html', label: 'Deloitte, 2023' }
+    label: 'Attack Surge',
+    value: '87%',
+    insight: 'Industrial ransomware attacks increased by 87% in 2024.',
+    source: { url: 'https://industrialcyber.co/reports/dragos-finds-ransomware-attacks-on-industrial-sector-surge-87-manufacturing-hit-hardest-as-ot-targeting-rises/', label: 'Industrial Cyber, 2024' }
   },
   {
-    label: 'IT Support Tickets Reduced',
-    value: '34%',
-    insight: 'Fewer browser-related helpdesk tickets, freeing IT resources.',
-    source: { url: 'https://www.mckinsey.com/industries/manufacturing/our-insights/digital-automation', label: 'McKinsey, 2023' }
+    label: 'Browser Exploits',
+    value: '44%',
+    insight: 'Nearly half of all incidents involve browser-based attacks.',
+    source: { url: 'https://www.paloaltonetworks.com/resources/research/unit-42-incident-response-report', label: 'Palo Alto Networks, 2025' }
   },
   {
-    label: 'Time to Onboard Staff',
-    value: '2x faster',
-    insight: 'Rapid, policy-driven onboarding for new employees.',
-    source: { url: 'https://www2.deloitte.com/us/en/insights/industry/manufacturing/digital-transformation.html', label: 'Deloitte, 2023' }
+    label: 'Breach Cost',
+    value: '$5.56M',
+    insight: 'Average data breach cost in the industrial sector.',
+    source: { url: 'https://www.ibm.com/think/insights/cost-of-a-data-breach-industrial-sector', label: 'IBM, 2024' }
   },
   {
-    label: 'Cost Savings',
-    value: '18%',
-    insight: 'Lowered IT overhead by consolidating browser management and automation.',
-    source: { url: 'https://www.mckinsey.com/industries/manufacturing/our-insights/digital-automation', label: 'McKinsey, 2023' }
+    label: 'Downtime Cost',
+    value: '$10M/day',
+    insight: 'Cost of unplanned outages due to cyber attacks.',
+    source: { url: 'https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/enterprise-browser/', label: 'CrowdStrike, 2024' }
   }
 ];
 
@@ -230,7 +230,7 @@ export default function Manufacturing({ manufacturingBlogs }) {
               Secure Manufacturing Solutions
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              Transform your manufacturing operations with enterprise-grade security, enhanced productivity, and comprehensive analytics.
+              Manufacturing operations face unprecedented cyber threats as digitization accelerates. Enterprise browsers provide critical protection for your digital factory floor, ensuring secure access to IoT systems, cloud workflows, and AI-driven analytics while maintaining compliance with industrial standards.
             </p>
             <Link href="/schedule-demo">
               <button className="bg-[#66C2BE] text-white px-8 py-3 rounded-md font-semibold hover:bg-[#55B3AF] transition-colors shadow-lg shadow-[#E3DFF1]/20 hover:shadow-xl hover:shadow-[#E3DFF1]/30">
@@ -245,10 +245,10 @@ export default function Manufacturing({ manufacturingBlogs }) {
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
-            Manufacturing Industry Metrics
+            Manufacturing Security Risks
           </h2>
           <p className="text-gray-600 text-center mb-8 max-w-3xl mx-auto">
-            Key metrics that matter to manufacturing IT and security leaders evaluating enterprise browsers.
+            The manufacturing sector faces escalating cyber threats as digitization accelerates. These key metrics highlight the critical need for enterprise-grade security solutions.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {manufacturingMetrics.map((metric, idx) => (
@@ -269,10 +269,10 @@ export default function Manufacturing({ manufacturingBlogs }) {
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
-            Manufacturing Security
+            Enterprise Browser Effectiveness
           </h2>
           <p className="text-gray-600 text-center mb-8 max-w-3xl mx-auto">
-            Discover how our solutions deliver enterprise-grade security for manufacturing operations. Our security-first approach helps organizations protect sensitive data and secure manufacturing processes.
+            Enterprise browsers address manufacturing's unique vulnerabilities with proven results. Our security-first approach helps organizations protect operations and maintain compliance.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {securityFeatures.map((feature, index) => (
@@ -306,10 +306,10 @@ export default function Manufacturing({ manufacturingBlogs }) {
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
-            Manufacturing Benefits
+            Productivity and Cost Savings
           </h2>
           <p className="text-gray-600 text-center mb-8 max-w-3xl mx-auto">
-            See how manufacturing organizations are transforming their operations and improving efficiency with our solutions.
+            Enterprise browsers deliver measurable improvements in security, efficiency, and cost reduction for manufacturing organizations.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {industryBenefits.map((benefit, index) => (
@@ -354,7 +354,7 @@ export default function Manufacturing({ manufacturingBlogs }) {
             Ready to Transform Your Manufacturing Operations?
           </h2>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Schedule a demo to see how our solutions can enhance security, improve operations, and streamline your manufacturing processes.
+            Join leading manufacturers that trust Kahana for their digital transformation needs. Protect your operations and drive efficiency with enterprise-grade security.
           </p>
           <div className="flex justify-center gap-4">
             <Link href="/schedule-demo" className="bg-white text-[#66C2BE] px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors">

@@ -52,140 +52,140 @@ const technologyFeatures = [
 
 const securityFeatures = [
   {
-    title: 'Intellectual Property Protection',
-    description: 'Comprehensive protection for IP and trade secrets.',
+    title: 'Zero Trust Security',
+    description: 'Implement Zero Trust for DevOps and CI/CD environments.',
     details: [
-      'Data encryption',
-      'Access controls',
-      'Usage monitoring',
-      'Threat detection'
-    ]
-  },
-  {
-    title: 'Cloud Security',
-    description: 'Enhanced protection for cloud infrastructure.',
-    details: [
-      'Cloud access security',
-      'Data protection',
-      'Compliance monitoring',
+      'Code repository protection',
+      'Device isolation',
+      'Access control',
       'Threat prevention'
     ]
   },
   {
-    title: 'DevOps Security',
-    description: 'Secure management of development operations.',
+    title: 'AI-Ready Protection',
+    description: 'Secure AI tool usage while preventing data exfiltration.',
     details: [
-      'CI/CD security',
-      'Code protection',
-      'Access management',
-      'Compliance controls'
+      'ChatGPT controls',
+      'Data protection',
+      'Usage monitoring',
+      'Policy enforcement'
     ]
   },
   {
-    title: 'Compliance Management',
-    description: 'Meet technology regulatory requirements.',
+    title: 'Phishing Defense',
+    description: 'Advanced protection against sophisticated phishing attacks.',
     details: [
-      'SOC 2 compliance',
-      'ISO 27001',
-      'GDPR compliance',
-      'Industry standards'
+      'SaaS platform protection',
+      'Credential security',
+      'Real-time detection',
+      'Automated response'
+    ]
+  },
+  {
+    title: 'Data Protection',
+    description: 'Comprehensive data loss prevention and control.',
+    details: [
+      'DLP controls',
+      'Copy-paste protection',
+      'Download monitoring',
+      'Access management'
     ]
   }
 ];
 
 const industryBenefits = [
   {
-    title: 'Efficiency Gain',
-    description: 'Streamlined workflows and reduced admin overhead with digital tools.',
+    title: 'IT Efficiency',
+    description: 'Centralized management reduces troubleshooting time for SaaS app access issues.',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
       </svg>
     ),
-    stat: '22%',
-    statLabel: 'Efficiency Gain',
+    stat: '34%',
+    statLabel: 'Fewer Support Tickets',
     source: {
-      url: 'https://www2.deloitte.com/us/en/insights/industry/technology/digital-transformation.html',
-      label: 'Deloitte, 2023'
+      url: 'https://cloud.google.com/blog/products/chrome-enterprise/triple-impact-connections-cuts-costs-and-support-tickets-with-chromeos',
+      label: 'Google, 2024'
     }
   },
   {
-    title: 'Client Satisfaction',
-    description: 'Improved client experience and retention with secure collaboration.',
-    icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-      </svg>
-    ),
-    stat: '88%',
-    statLabel: 'Satisfaction',
-    source: {
-      url: 'https://www.pwc.com/gx/en/industries/technology/publications/technology-client-experience.html',
-      label: 'PwC, 2023'
-    }
-  },
-  {
-    title: 'Cost Savings',
-    description: 'Reduced operational costs through automation and cloud adoption.',
+    title: 'Cost Reduction',
+    description: 'Consolidating VPNs, VDIs, and SASE tools cuts annual costs.',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
     ),
     stat: '18%',
-    statLabel: 'Cost Savings',
+    statLabel: 'Lower IT Overhead',
     source: {
-      url: 'https://www.mckinsey.com/industries/technology/our-insights/digital-automation',
-      label: 'McKinsey, 2023'
+      url: 'https://www.bankinfosecurity.com/how-enterprise-browsers-enhance-security-efficiency-a-25416',
+      label: 'BankInfoSecurity, 2024'
     }
   },
   {
-    title: 'Compliance Ready',
-    description: 'Built-in compliance for technology standards and regulatory requirements.',
+    title: 'Compliance Success',
+    description: '60% reduction in compliance costs through automated evidence collection.',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
       </svg>
     ),
-    stat: '99.8%',
-    statLabel: 'Compliance Rate',
+    stat: '60%',
+    statLabel: 'Cost Reduction',
     source: {
-      url: 'https://www.gartner.com/en/documents/technology-compliance',
-      label: 'Gartner, 2024'
+      url: 'https://nordlayer.com/learn/soc/soc-2-audit-checklist/',
+      label: 'NordLayer, 2024'
+    }
+  },
+  {
+    title: 'Onboarding Speed',
+    description: 'Rapid, secure onboarding for contractors and third parties.',
+    icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+      </svg>
+    ),
+    stat: '45d → 1h',
+    statLabel: 'Onboarding Time',
+    source: {
+      url: '/products/enterprise-browser',
+      label: 'Oasis Enterprise Browser, 2025'
     }
   }
 ];
 
 const technologyMetrics = [
   {
-    label: 'Security Incidents Prevented',
-    value: '89%',
-    insight: 'Fewer browser-based breaches after adopting secure enterprise browsers.',
-    source: { url: 'https://www.paloaltonetworks.com/resources/research/2023-unit42-enterprise-browser-security-report', label: 'Palo Alto Networks, 2023' }
+    label: 'Browser Attacks Blocked',
+    value: '95%',
+    insight: 'Enterprise browsers prevent malware, phishing, and credential theft via isolation and Zero Trust policies.',
+    source: { url: 'https://www.cyberark.com/what-is/enterprise-browser/', label: 'CyberArk, 2024' }
   },
   {
-    label: 'Compliance Audit Pass Rate',
-    value: '99.8%',
-    insight: 'Streamlined SOC 2 and GDPR audits with built-in controls.',
-    source: { url: 'https://www2.deloitte.com/us/en/insights/industry/technology/technology-compliance.html', label: 'Deloitte, 2023' }
+    label: 'Phishing Increase',
+    value: '140%',
+    insight: 'YoY increase in browser phishing, with 51% impersonating SaaS platforms.',
+    source: { url: 'https://www.zdnet.com/article/752000-browser-phishing-attacks-mark-140-increase-yoy/', label: 'ZDNet, 2024' }
   },
   {
-    label: 'IT Support Tickets Reduced',
-    value: '34%',
-    insight: 'Fewer browser-related helpdesk tickets, freeing IT resources.',
-    source: { url: 'https://www.mckinsey.com/industries/technology/our-insights/digital-automation', label: 'McKinsey, 2023' }
+    label: 'Browser Vulnerabilities',
+    value: '44%',
+    insight: 'Of breaches exploit browser vulnerabilities and malicious extensions.',
+    source: { url: 'https://www.paloaltonetworks.com/resources/research/unit-42-incident-response-report', label: 'Palo Alto Networks, 2024' }
   },
   {
-    label: 'Time to Onboard Staff',
-    value: '2x faster',
-    insight: 'Rapid, policy-driven onboarding for new employees.',
-    source: { url: 'https://www2.deloitte.com/us/en/insights/industry/technology/digital-transformation.html', label: 'Deloitte, 2023' }
+    label: 'Data Leakage',
+    value: '99%',
+    insight: 'Reduction in data leakage with built-in DLP controls.',
+    source: { url: 'https://seraphicsecurity.com', label: 'Seraphic Security, 2024' }
   },
   {
-    label: 'Cost Savings',
-    value: '18%',
-    insight: 'Lowered IT overhead by consolidating browser management and automation.',
-    source: { url: 'https://www.mckinsey.com/industries/technology/our-insights/digital-automation', label: 'McKinsey, 2023' }
+    label: 'Credential Attacks',
+    value: '71%',
+    insight: 'Of attacks use valid credentials, mitigated by Zero Trust and MFA.',
+    source: { url: 'https://www.igel.com/blog/securing-the-enterprise-from-the-browser-up/', label: 'IGEL, 2024' }
   }
 ];
 

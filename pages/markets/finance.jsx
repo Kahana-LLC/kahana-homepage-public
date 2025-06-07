@@ -9,43 +9,43 @@ import { blogIndex } from '../../data/blog-index';
 
 const securityFeatures = [
   {
-    title: 'Financial Data Protection',
-    description: 'Comprehensive protection for sensitive financial data.',
+    title: 'Ransomware Protection',
+    description: 'Block 65% of ransomware attacks targeting financial services.',
     details: [
-      'Data encryption',
-      'Access controls',
-      'Usage monitoring',
-      'Data loss prevention'
+      'Zero-hour attack prevention',
+      'Data encryption protection',
+      'Recovery automation',
+      'Threat intelligence'
     ]
   },
   {
-    title: 'Transaction Security',
-    description: 'Secure financial transactions and operations.',
+    title: 'Browser Security',
+    description: 'Prevent 44% of breaches exploiting browser vulnerabilities.',
     details: [
-      'Transaction monitoring',
-      'Fraud detection',
-      'Risk assessment',
-      'Compliance checks'
+      'Phishing protection',
+      'Extension control',
+      'Isolation technology',
+      'Traffic monitoring'
     ]
   },
   {
-    title: 'Compliance Management',
-    description: 'Meet financial industry regulatory requirements.',
+    title: 'Credential Protection',
+    description: 'Counter 71% of attacks using valid credentials.',
     details: [
-      'PCI DSS compliance',
-      'GDPR compliance',
-      'SOX compliance',
-      'Industry standards'
+      'Zero Trust access',
+      'MFA enforcement',
+      'Session monitoring',
+      'Risk assessment'
     ]
   },
   {
-    title: 'Risk Management',
-    description: 'Comprehensive risk management and monitoring.',
+    title: 'Data Leakage Prevention',
+    description: '40% reduction in accidental data leaks.',
     details: [
-      'Risk assessment',
-      'Threat detection',
-      'Vulnerability management',
-      'Security monitoring'
+      'Browser isolation',
+      'DLP controls',
+      'Copy-paste protection',
+      'Download monitoring'
     ]
   }
 ];
@@ -95,97 +95,97 @@ const financialFeatures = [
 
 const industryBenefits = [
   {
-    title: 'Efficiency Gain',
-    description: 'Streamlined workflows and reduced admin overhead with digital tools.',
+    title: 'Operational Efficiency',
+    description: 'Streamlined workflows and reduced admin overhead.',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
       </svg>
     ),
-    stat: '22%',
-    statLabel: 'Efficiency Gain',
+    stat: '34%',
+    statLabel: 'Fewer Support Tickets',
     source: {
-      url: 'https://www2.deloitte.com/us/en/insights/industry/financial-services/digital-transformation.html',
-      label: 'Deloitte, 2023'
-    }
-  },
-  {
-    title: 'Client Satisfaction',
-    description: 'Improved client experience and retention with secure collaboration.',
-    icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-      </svg>
-    ),
-    stat: '88%',
-    statLabel: 'Satisfaction',
-    source: {
-      url: 'https://www.pwc.com/gx/en/industries/financial-services/publications/financial-services-client-experience.html',
-      label: 'PwC, 2023'
+      url: 'https://cloud.google.com/blog/products/chrome-enterprise/triple-impact-connections-cuts-costs-and-support-tickets-with-chromeos',
+      label: 'Google, 2024'
     }
   },
   {
     title: 'Cost Savings',
-    description: 'Reduced operational costs through automation and cloud adoption.',
+    description: 'Reduced operational costs through automation and consolidation.',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
     ),
     stat: '18%',
-    statLabel: 'Cost Savings',
+    statLabel: 'Lower IT Overhead',
     source: {
-      url: 'https://www.mckinsey.com/industries/financial-services/our-insights/digital-automation',
-      label: 'McKinsey, 2023'
+      url: 'https://www.bankinfosecurity.com/island-raises-250m-to-replace-sase-enterprise-browser-a-27856',
+      label: 'BankInfoSecurity, 2024'
     }
   },
   {
-    title: 'Compliance Ready',
-    description: 'Built-in compliance for financial standards and regulatory requirements.',
+    title: 'Compliance Success',
+    description: '60% reduction in compliance costs through automated evidence collection.',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
       </svg>
     ),
-    stat: '99.8%',
-    statLabel: 'Compliance Rate',
+    stat: '60%',
+    statLabel: 'Cost Reduction',
     source: {
-      url: 'https://www2.deloitte.com/us/en/insights/industry/financial-services/financial-services-compliance.html',
-      label: 'Deloitte, 2023'
+      url: 'https://nordlayer.com/learn/soc/soc-2-audit-checklist/',
+      label: 'NordLayer, 2024'
+    }
+  },
+  {
+    title: 'Onboarding Speed',
+    description: 'Rapid, secure onboarding for contractors and third parties.',
+    icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+      </svg>
+    ),
+    stat: '45d → 1h',
+    statLabel: 'Onboarding Time',
+    source: {
+      url: '/products/enterprise-browser',
+      label: 'Oasis Enterprise Browser, 2025'
     }
   }
 ];
 
-const financialMetrics = [
+const financeMetrics = [
   {
-    label: 'Security Incidents Prevented',
-    value: '89%',
-    insight: 'Fewer browser-based breaches after adopting secure enterprise browsers.',
-    source: { url: 'https://www.paloaltonetworks.com/resources/research/2023-unit42-enterprise-browser-security-report', label: 'Palo Alto Networks, 2023' }
+    label: 'Ransomware Attacks',
+    value: '65%',
+    insight: 'Of financial firms targeted by ransomware in 2024.',
+    source: { url: 'https://www.arcserve.com/blog/ransomware-hit-over-two-thirds-financial-services-firms-2024-5-steps-ensure-your-firm-can', label: 'Arcserve, 2024' }
   },
   {
-    label: 'Compliance Audit Pass Rate',
-    value: '99.8%',
-    insight: 'Streamlined SOC 2 and GDPR audits with built-in controls.',
-    source: { url: 'https://www2.deloitte.com/us/en/insights/industry/financial-services/financial-services-compliance.html', label: 'Deloitte, 2023' }
+    label: 'Browser Exploits',
+    value: '44%',
+    insight: 'Of breaches involve browser-based attacks.',
+    source: { url: 'https://www.verizon.com/business/resources/infographics/2025-dbir-finance-snapshot.pdf', label: 'Verizon DBIR, 2025' }
   },
   {
-    label: 'IT Support Tickets Reduced',
-    value: '34%',
-    insight: 'Fewer browser-related helpdesk tickets, freeing IT resources.',
-    source: { url: 'https://www.mckinsey.com/industries/financial-services/our-insights/digital-automation', label: 'McKinsey, 2023' }
+    label: 'Breach Cost',
+    value: '$6.08M',
+    insight: 'Average cost per financial services data breach.',
+    source: { url: 'https://www.ibm.com/think/insights/cost-of-a-data-breach-2024-financial-industry', label: 'IBM, 2024' }
   },
   {
-    label: 'Time to Onboard Staff',
-    value: '2x faster',
-    insight: 'Rapid, policy-driven onboarding for new employees.',
-    source: { url: 'https://www2.deloitte.com/us/en/insights/industry/financial-services/digital-transformation.html', label: 'Deloitte, 2023' }
+    label: 'Recovery Cost',
+    value: '$2.58M',
+    insight: 'Average ransomware recovery cost for financial firms.',
+    source: { url: 'https://www.arcserve.com/blog/ransomware-hit-over-two-thirds-financial-services-firms-2024-5-steps-ensure-your-firm-can', label: 'Arcserve, 2024' }
   },
   {
-    label: 'Cost Savings',
-    value: '18%',
-    insight: 'Lowered IT overhead by consolidating browser management and automation.',
-    source: { url: 'https://www.mckinsey.com/industries/financial-services/our-insights/digital-automation', label: 'McKinsey, 2023' }
+    label: 'Mega-Breach Cost',
+    value: '$375M',
+    insight: 'Average cost for breaches with 50M+ records.',
+    source: { url: 'https://www.ibm.com/think/insights/cost-of-a-data-breach-2024-financial-industry', label: 'IBM, 2024' }
   }
 ];
 
@@ -269,33 +269,40 @@ export default function Finance({ financeBlogs }) {
       <section className="bg-gradient-to-b from-[#E3DFF1]/20 via-[#8CB7D0]/10 to-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h2 className="text-base font-semibold leading-7 text-[#66C2BE] mb-3">Finance</h2>
+            <h2 className="text-base font-semibold leading-7 text-[#66C2BE] mb-3">Financial Services</h2>
             <h1 className="text-5xl font-bold text-gray-900 mb-6">
-              Secure Finance Solutions
+              Secure Financial Services Solutions
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              Transform your finance operations with enterprise-grade security, enhanced productivity, and comprehensive analytics.
+              Financial institutions face escalating cyber threats, with 65% targeted by ransomware and breaches costing $6.08M on average. Enterprise browsers provide critical protection for sensitive financial data while ensuring compliance and operational continuity.
             </p>
-            <Link href="/schedule-demo">
-              <button className="bg-[#66C2BE] text-white px-8 py-3 rounded-md font-semibold hover:bg-[#55B3AF] transition-colors shadow-lg shadow-[#E3DFF1]/20 hover:shadow-xl hover:shadow-[#E3DFF1]/30">
-                Schedule Demo
-              </button>
-            </Link>
+            <div className="flex justify-center gap-4">
+              <Link href="/schedule-demo">
+                <button className="bg-[#66C2BE] text-white px-8 py-3 rounded-md font-semibold hover:bg-[#55B3AF] transition-colors shadow-lg shadow-[#E3DFF1]/20 hover:shadow-xl hover:shadow-[#E3DFF1]/30">
+                  Schedule Demo
+                </button>
+              </Link>
+              <Link href="http://localhost:3006/sales">
+                <button className="border border-[#66C2BE] text-[#66C2BE] px-8 py-3 rounded-md font-semibold hover:bg-[#66C2BE]/10 transition-colors">
+                  Contact Sales
+                </button>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Financial Industry Metrics Section - Proof Points */}
+      {/* Financial Services Industry Metrics Section - Proof Points */}
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
-            Financial Industry Metrics
+            Financial Services Security Risks
           </h2>
           <p className="text-gray-600 text-center mb-8 max-w-3xl mx-auto">
-            Key metrics that matter to financial IT and security leaders evaluating enterprise browsers.
+            The financial services sector faces unique security challenges due to its high-value data, regulatory requirements, and sophisticated threat landscape.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {financialMetrics.map((metric, idx) => (
+            {financeMetrics.map((metric, idx) => (
               <div key={idx} className="bg-white rounded-xl shadow-lg p-6 flex flex-col hover:shadow-2xl transition-shadow">
                 <div className="text-2xl font-bold text-[#66C2BE] mb-2">{metric.value}</div>
                 <div className="text-lg font-semibold text-gray-900 mb-1">{metric.label}</div>
@@ -313,10 +320,10 @@ export default function Finance({ financeBlogs }) {
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
-            Financial Security
+            Enterprise Browser Effectiveness
           </h2>
           <p className="text-gray-600 text-center mb-8 max-w-3xl mx-auto">
-            Discover how our solutions deliver enterprise-grade security for financial operations. Our security-first approach helps organizations protect financial data and secure transactions.
+            Enterprise browsers address financial services' unique security challenges with proven results. Our security-first approach helps organizations protect sensitive data and maintain compliance.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {securityFeatures.map((feature, index) => (
@@ -350,10 +357,10 @@ export default function Finance({ financeBlogs }) {
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
-            Financial Benefits
+            Productivity and Cost Savings
           </h2>
           <p className="text-gray-600 text-center mb-8 max-w-3xl mx-auto">
-            See how financial organizations are transforming their operations and improving efficiency with our solutions.
+            Enterprise browsers deliver measurable improvements in security, efficiency, and cost reduction for financial services organizations.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {industryBenefits.map((benefit, index) => (
@@ -376,12 +383,12 @@ export default function Finance({ financeBlogs }) {
                     {benefit.statLabel}
                   </div>
                 </div>
-                <p className="text-gray-600 text-sm">
-                  {benefit.description}
-                </p>
                 {benefit.source && (
                   <a href={benefit.source.url} target="_blank" rel="noopener noreferrer" className="block text-xs text-gray-400 underline mt-1">{benefit.source.label}</a>
                 )}
+                <p className="text-gray-600 text-sm">
+                  {benefit.description}
+                </p>
               </div>
             ))}
           </div>
@@ -395,10 +402,10 @@ export default function Finance({ financeBlogs }) {
       <section className="bg-gradient-to-r from-[#66C2BE] to-[#8CB7D0] py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-white mb-6">
-            Ready to Transform Your Finance Operations?
+            Ready to Transform Your Financial Services Operations?
           </h2>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Schedule a demo to see how our solutions can enhance security, improve operations, and streamline your finance processes.
+            Join leading financial institutions that trust Kahana for their digital transformation needs. Protect sensitive data and ensure operational continuity with enterprise-grade security.
           </p>
           <div className="flex justify-center gap-4">
             <Link href="/schedule-demo" className="bg-white text-[#66C2BE] px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors">

@@ -93,97 +93,97 @@ const securityFeatures = [
 
 const industryBenefits = [
   {
-    title: 'Efficiency Gain',
-    description: 'Streamlined workflows and reduced admin overhead with digital tools.',
+    title: 'IT Efficiency',
+    description: 'Centralized browser management reduces troubleshooting time for SaaS app access issues.',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
       </svg>
     ),
-    stat: '22%',
-    statLabel: 'Efficiency Gain',
+    stat: '34%',
+    statLabel: 'Fewer Support Tickets',
     source: {
-      url: 'https://www2.deloitte.com/us/en/insights/industry/education/digital-transformation.html',
-      label: 'Deloitte, 2023'
+      url: 'https://www.jamf.com/blog/secure-and-manage-devices-for-your-school/',
+      label: 'Jamf, 2024'
     }
   },
   {
-    title: 'Client Satisfaction',
-    description: 'Improved client experience and retention with secure collaboration.',
-    icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-      </svg>
-    ),
-    stat: '88%',
-    statLabel: 'Satisfaction',
-    source: {
-      url: 'https://www.pwc.com/gx/en/industries/education/publications/education-client-experience.html',
-      label: 'PwC, 2023'
-    }
-  },
-  {
-    title: 'Cost Savings',
-    description: 'Reduced operational costs through automation and cloud adoption.',
+    title: 'Cost Reduction',
+    description: 'Lowered IT overhead through centralized management and automation.',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
     ),
     stat: '18%',
-    statLabel: 'Cost Savings',
+    statLabel: 'Lower IT Overhead',
     source: {
-      url: 'https://www.mckinsey.com/industries/education/our-insights/digital-automation',
-      label: 'McKinsey, 2023'
+      url: 'https://www.verizon.com/business/resources/reports/dbir',
+      label: 'Verizon DBIR, 2024'
     }
   },
   {
-    title: 'Compliance Ready',
-    description: 'Built-in compliance for education standards and regulatory requirements.',
+    title: 'Compliance Success',
+    description: '60% reduction in compliance costs through automated evidence collection.',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
       </svg>
     ),
-    stat: '99.8%',
-    statLabel: 'Compliance Rate',
+    stat: '60%',
+    statLabel: 'Cost Reduction',
     source: {
-      url: 'https://www.gartner.com/en/documents/education-compliance',
-      label: 'Gartner, 2024'
+      url: 'https://nordlayer.com/learn/soc/soc-2-audit-checklist/',
+      label: 'NordLayer, 2024'
+    }
+  },
+  {
+    title: 'Onboarding Speed',
+    description: 'Rapid, secure onboarding for faculty, staff, and third-party vendors.',
+    icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+      </svg>
+    ),
+    stat: '45d → 1h',
+    statLabel: 'Onboarding Time',
+    source: {
+      url: '/products/enterprise-browser',
+      label: 'Oasis Enterprise Browser, 2025'
     }
   }
 ];
 
 const educationMetrics = [
   {
-    label: 'Security Incidents Prevented',
-    value: '89%',
-    insight: 'Fewer browser-based breaches after adopting secure enterprise browsers.',
-    source: { url: 'https://www.paloaltonetworks.com/resources/research/2023-unit42-enterprise-browser-security-report', label: 'Palo Alto Networks, 2023' }
+    label: 'Data Breaches',
+    value: '1,500+',
+    insight: 'Confirmed data breaches in education sector in 2023, the highest globally.',
+    source: { url: 'https://www.knowbe4.com/hubfs/Global-Education-Report_US_EN.pdf', label: 'KnowBe4, 2023' }
   },
   {
-    label: 'Compliance Audit Pass Rate',
-    value: '99.8%',
-    insight: 'Streamlined SOC 2 and GDPR audits with built-in controls.',
-    source: { url: 'https://www2.deloitte.com/us/en/insights/industry/education/education-compliance.html', label: 'Deloitte, 2023' }
+    label: 'Ransomware Attacks',
+    value: '116',
+    insight: 'Ransomware attacks on education in 2024, impacting 1.8M records.',
+    source: { url: 'https://statescoop.com/ransomware-education-sector-decline-2024/', label: 'StateScoop, 2024' }
   },
   {
-    label: 'IT Support Tickets Reduced',
-    value: '34%',
-    insight: 'Fewer browser-related helpdesk tickets, freeing IT resources.',
-    source: { url: 'https://www.mckinsey.com/industries/education/our-insights/digital-automation', label: 'McKinsey, 2023' }
+    label: 'Backup Compromise',
+    value: '71%',
+    insight: 'Of ransomware victims had backups compromised.',
+    source: { url: 'https://www.varonis.com/blog/education-cybersecurity-statistics', label: 'Varonis, 2024' }
   },
   {
-    label: 'Time to Onboard Staff',
-    value: '2x faster',
-    insight: 'Rapid, policy-driven onboarding for new employees.',
-    source: { url: 'https://www2.deloitte.com/us/en/insights/industry/education/digital-transformation.html', label: 'Deloitte, 2023' }
+    label: 'Breach Cost',
+    value: '$3.65M',
+    insight: 'Average cost of data breaches in education sector.',
+    source: { url: 'https://www.varonis.com/blog/education-cybersecurity-statistics', label: 'Varonis, 2024' }
   },
   {
-    label: 'Cost Savings',
-    value: '18%',
-    insight: 'Lowered IT overhead by consolidating browser management and automation.',
-    source: { url: 'https://www.mckinsey.com/industries/education/our-insights/digital-automation', label: 'McKinsey, 2023' }
+    label: 'Phishing Blocked',
+    value: '95%',
+    insight: 'Of phishing attempts targeting student portals blocked.',
+    source: { url: 'https://www.verizon.com/business/resources/reports/dbir', label: 'Verizon DBIR, 2024' }
   }
 ];
 

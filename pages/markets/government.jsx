@@ -9,28 +9,61 @@ import { blogIndex } from '../../data/blog-index';
 
 const securityFeatures = [
   {
-    title: 'Government Compliance',
-    description: 'Built-in compliance with government regulations.',
+    title: 'FedRAMP Authorization',
+    description: 'FedRAMP High Authorization for critical infrastructure.',
     details: [
-      'FISMA compliance',
-      'FedRAMP compliance',
-      'NIST framework',
-      'Industry standards'
+      'FedRAMP High compliance',
+      'Critical infrastructure protection',
+      'Zero Trust architecture',
+      'Secure BYOD support'
     ]
   },
   {
-    title: 'Data Protection',
-    description: 'Comprehensive protection for sensitive government data.',
+    title: 'Data Isolation',
+    description: '100% data isolation for BYOD environments.',
     details: [
-      'Data encryption',
-      'Access controls',
-      'Usage monitoring',
+      'Complete data separation',
+      'Secure BYOD implementation',
+      'Container isolation',
       'Data loss prevention'
     ]
   },
   {
-    title: 'Threat Detection',
-    description: 'Advanced threat detection and response.',
+    title: 'Zero Trust Security',
+    description: 'Zero Trust implementation for classified environments.',
+    details: [
+      'Classified data protection',
+      'Access control',
+      'Continuous monitoring',
+      'Threat detection'
+    ]
+  },
+  {
+    title: 'AI-Powered Protection',
+    description: 'AI-ready threat detection and response.',
+    details: [
+      'Advanced threat detection',
+      'Real-time monitoring',
+      'Automated response',
+      'Security analytics'
+    ]
+  }
+];
+
+const governmentFeatures = [
+  {
+    title: 'Secure BYOD',
+    description: 'Enterprise-grade security for personal devices.',
+    details: [
+      'Device isolation',
+      'Secure access',
+      'Policy enforcement',
+      'Compliance management'
+    ]
+  },
+  {
+    title: 'Threat Protection',
+    description: 'Comprehensive threat protection and monitoring.',
     details: [
       'Real-time monitoring',
       'Threat intelligence',
@@ -40,55 +73,22 @@ const securityFeatures = [
   },
   {
     title: 'Compliance Management',
-    description: 'Meet government-specific regulatory requirements.',
+    description: 'Streamlined compliance and audit processes.',
     details: [
-      'FISMA compliance',
       'FedRAMP compliance',
-      'NIST framework',
-      'Industry standards'
+      'Audit automation',
+      'Policy management',
+      'Documentation'
     ]
-  }
-];
-
-const governmentFeatures = [
+  },
   {
-    title: 'Agency Operations',
-    description: 'Streamlined government operations.',
+    title: 'Operational Efficiency',
+    description: 'Enhanced productivity and reduced overhead.',
     details: [
       'Workflow automation',
+      'Resource optimization',
       'Process management',
-      'Resource allocation',
-      'Service delivery'
-    ]
-  },
-  {
-    title: 'Resource Management',
-    description: 'Optimize government resources.',
-    details: [
-      'Asset tracking',
-      'Budget management',
-      'Project oversight',
-      'Resource planning'
-    ]
-  },
-  {
-    title: 'Team Collaboration',
-    description: 'Enhanced collaboration across agencies.',
-    details: [
-      'Inter-agency coordination',
-      'Document sharing',
-      'Project management',
-      'Communication tools'
-    ]
-  },
-  {
-    title: 'Government Analytics',
-    description: 'Comprehensive performance analytics.',
-    details: [
-      'Performance metrics',
-      'Resource utilization',
-      'Service analytics',
-      'Operational insights'
+      'Performance analytics'
     ]
   }
 ];
@@ -102,90 +102,78 @@ const industryBenefits = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
       </svg>
     ),
-    stat: '45%',
-    statLabel: 'Efficiency Gain',
+    stat: '34%',
+    statLabel: 'Fewer Support Tickets',
     source: {
-      url: 'https://www2.deloitte.com/us/en/insights/industry/public-sector/government-digital-transformation.html',
-      label: 'Deloitte, 2023'
+      url: 'https://cloud.google.com/blog/products/chrome-enterprise/forrester-study-finds-managing-chrome-brings-enterprises-cost-savings-and-major-productivity-gains',
+      label: 'Google, 2024'
     }
   },
   {
-    title: 'Service Delivery',
-    description: 'Improved citizen services and satisfaction with secure digital workflows.',
+    title: 'Threat Reduction',
+    description: 'Significant reduction in credential-based attacks and vulnerabilities.',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
       </svg>
     ),
-    stat: '50%',
-    statLabel: 'Service Improvement',
+    stat: '95%',
+    statLabel: 'Attack Reduction',
     source: {
-      url: 'https://www.pwc.com/gx/en/industries/government-public-services/publications/government-client-experience.html',
-      label: 'PwC, 2023'
+      url: 'https://www.menlosecurity.com/blog/4-evasive-web-browser-attacks-targeting-federal-agencies',
+      label: 'Menlo Security, 2024'
     }
   },
   {
-    title: 'Cost Savings',
-    description: 'Reduced operational costs through automation and cloud adoption.',
-    icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    ),
-    stat: '30%',
-    statLabel: 'Cost Savings',
-    source: {
-      url: 'https://www.mckinsey.com/industries/public-sector/our-insights/digital-automation',
-      label: 'McKinsey, 2023'
-    }
-  },
-  {
-    title: 'Compliance Ready',
-    description: 'Built-in compliance for government standards and regulatory requirements.',
+    title: 'Compliance Success',
+    description: '60% reduction in compliance costs through automated evidence collection.',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
       </svg>
     ),
-    stat: '100%',
-    statLabel: 'Compliance Rate',
+    stat: '60%',
+    statLabel: 'Cost Reduction',
     source: {
-      url: 'https://www.gartner.com/en/documents/government-compliance',
-      label: 'Gartner, 2024'
+      url: 'https://nordlayer.com/learn/soc/soc-2-audit-checklist/',
+      label: 'NordLayer, 2024'
+    }
+  },
+  {
+    title: 'Onboarding Speed',
+    description: 'Rapid, secure onboarding for contractors and third parties.',
+    icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+      </svg>
+    ),
+    stat: '45d → 1h',
+    statLabel: 'Onboarding Time',
+    source: {
+      url: '/products/enterprise-browser',
+      label: 'Oasis Enterprise Browser, 2025'
     }
   }
 ];
 
 const governmentMetrics = [
   {
-    label: 'Security Incidents Prevented',
-    value: '89%',
-    insight: 'Fewer browser-based breaches after adopting secure enterprise browsers.',
-    source: { url: 'https://www.paloaltonetworks.com/resources/research/2023-unit42-enterprise-browser-security-report', label: 'Palo Alto Networks, 2023' }
+    label: 'Mobile/IoT Incidents',
+    value: '70%',
+    insight: 'Of public sector organizations experience mobile/IoT security incidents.',
+    source: { url: 'https://www.verizon.com/about/sites/default/files/2024-mobile-security-index-public-sector.pdf', label: 'Verizon, 2024' }
   },
   {
-    label: 'Compliance Audit Pass Rate',
-    value: '100%',
-    insight: 'Streamlined FISMA and GDPR audits with built-in controls.',
-    source: { url: 'https://www2.deloitte.com/us/en/insights/industry/public-sector/government-compliance.html', label: 'Deloitte, 2023' }
+    label: 'Credential Attacks',
+    value: '95%',
+    insight: 'Reduction in credential-based attacks with enterprise browsers.',
+    source: { url: 'https://www.menlosecurity.com/blog/4-evasive-web-browser-attacks-targeting-federal-agencies', label: 'Menlo Security, 2024' }
   },
   {
-    label: 'IT Support Tickets Reduced',
-    value: '34%',
-    insight: 'Fewer browser-related helpdesk tickets, freeing IT resources.',
-    source: { url: 'https://www.mckinsey.com/industries/public-sector/our-insights/digital-automation', label: 'McKinsey, 2023' }
-  },
-  {
-    label: 'Time to Onboard Staff',
-    value: '2x faster',
-    insight: 'Rapid, policy-driven onboarding for new employees.',
-    source: { url: 'https://www2.deloitte.com/us/en/insights/industry/public-sector/government-digital-transformation.html', label: 'Deloitte, 2023' }
-  },
-  {
-    label: 'Cost Savings',
-    value: '30%',
-    insight: 'Lowered IT overhead by consolidating browser management and automation.',
-    source: { url: 'https://www.mckinsey.com/industries/public-sector/our-insights/digital-automation', label: 'McKinsey, 2023' }
+    label: 'Security Updates',
+    value: '63%',
+    insight: 'Of personal devices lack critical security updates.',
+    source: { url: 'https://www.indusface.com/news/it-managers-must-watchout-for-web-apps-related-security-breaches-report/', label: 'Indusface, 2024' }
   }
 ];
 

@@ -93,97 +93,91 @@ const securityFeatures = [
 
 const industryBenefits = [
   {
-    title: 'Efficiency Gain',
-    description: 'Streamlined workflows and reduced admin overhead with digital tools.',
+    title: 'IT Efficiency',
+    description: 'Centralized browser management reduces troubleshooting time for booking engines and POS systems.',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
       </svg>
     ),
-    stat: '22%',
-    statLabel: 'Efficiency Gain',
+    stat: '34%',
+    statLabel: 'Fewer Support Tickets',
     source: {
-      url: 'https://www2.deloitte.com/us/en/insights/industry/hospitality/digital-transformation.html',
-      label: 'Deloitte, 2023'
+      url: 'https://techdocs.zebra.com/enterprise-browser/2-5/guide/about/',
+      label: 'Zebra Technologies, 2024'
     }
   },
   {
-    title: 'Guest Satisfaction',
-    description: 'Improved guest experience and retention with secure collaboration.',
-    icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-      </svg>
-    ),
-    stat: '95%',
-    statLabel: 'Satisfaction Rate',
-    source: {
-      url: 'https://www.pwc.com/gx/en/industries/hospitality-leisure/publications/hospitality-client-experience.html',
-      label: 'PwC, 2023'
-    }
-  },
-  {
-    title: 'Cost Savings',
-    description: 'Reduced operational costs through automation and cloud adoption.',
+    title: 'Cost Reduction',
+    description: 'Lowered IT overhead through centralized management and automation.',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
     ),
     stat: '18%',
-    statLabel: 'Cost Savings',
+    statLabel: 'Lower IT Overhead',
     source: {
-      url: 'https://www.mckinsey.com/industries/hospitality/our-insights/digital-automation',
-      label: 'McKinsey, 2023'
+      url: 'https://www.bankinfosecurity.com/how-enterprise-browsers-enhance-security-efficiency-a-25416',
+      label: 'BankInfoSecurity, 2024'
     }
   },
   {
-    title: 'Compliance Ready',
-    description: 'Built-in compliance for hospitality standards and regulatory requirements.',
+    title: 'Compliance Success',
+    description: '60% reduction in compliance costs through automated evidence collection.',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
       </svg>
     ),
-    stat: '99.8%',
-    statLabel: 'Compliance Rate',
+    stat: '60%',
+    statLabel: 'Cost Reduction',
     source: {
-      url: 'https://www.gartner.com/en/documents/hospitality-compliance',
-      label: 'Gartner, 2024'
+      url: 'https://nordlayer.com/learn/soc/soc-2-audit-checklist/',
+      label: 'NordLayer, 2024'
+    }
+  },
+  {
+    title: 'Onboarding Speed',
+    description: 'Rapid, secure onboarding for seasonal staff and third-party vendors.',
+    icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+      </svg>
+    ),
+    stat: '45d → 1h',
+    statLabel: 'Onboarding Time',
+    source: {
+      url: '/products/enterprise-browser',
+      label: 'Oasis Enterprise Browser, 2025'
     }
   }
 ];
 
 const hospitalityMetrics = [
   {
-    label: 'Security Incidents Prevented',
-    value: '89%',
-    insight: 'Fewer browser-based breaches after adopting secure enterprise browsers.',
-    source: { url: 'https://www.paloaltonetworks.com/resources/research/2023-unit42-enterprise-browser-security-report', label: 'Palo Alto Networks, 2023' }
+    label: 'Data Breach Impact',
+    value: '31%',
+    insight: 'Of hospitality organizations reported a data breach in 2024, with average costs of $3.82M per incident.',
+    source: { url: 'https://www.venzagroup.com/fall-2024-top-cybersecurity-statistics-for-hospitality/', label: 'Venza Group, 2024' }
   },
   {
-    label: 'Compliance Audit Pass Rate',
-    value: '99.8%',
-    insight: 'Streamlined PCI DSS and GDPR audits with built-in controls.',
-    source: { url: 'https://www2.deloitte.com/us/en/insights/industry/hospitality/hospitality-compliance.html', label: 'Deloitte, 2023' }
+    label: 'Phishing Increase',
+    value: '140%',
+    insight: 'YoY increase in phishing targeting booking portals and loyalty programs.',
+    source: { url: 'https://www.zdnet.com/article/752000-browser-phishing-attacks-mark-140-increase-yoy/', label: 'ZDNet, 2024' }
   },
   {
-    label: 'IT Support Tickets Reduced',
-    value: '34%',
-    insight: 'Fewer browser-related helpdesk tickets, freeing IT resources.',
-    source: { url: 'https://www.mckinsey.com/industries/hospitality/our-insights/digital-automation', label: 'McKinsey, 2023' }
+    label: 'Browser Vulnerabilities',
+    value: '44%',
+    insight: 'Of breaches exploit browser vulnerabilities and malicious extensions.',
+    source: { url: 'https://www.paloaltonetworks.com/resources/research/unit-42-incident-response-report', label: 'Palo Alto Networks, 2024' }
   },
   {
-    label: 'Time to Onboard Staff',
-    value: '2x faster',
-    insight: 'Rapid, policy-driven onboarding for new employees.',
-    source: { url: 'https://www2.deloitte.com/us/en/insights/industry/hospitality/digital-transformation.html', label: 'Deloitte, 2023' }
-  },
-  {
-    label: 'Cost Savings',
-    value: '18%',
-    insight: 'Lowered IT overhead by consolidating browser management and automation.',
-    source: { url: 'https://www.mckinsey.com/industries/hospitality/our-insights/digital-automation', label: 'McKinsey, 2023' }
+    label: 'MFA Gap',
+    value: '71%',
+    insight: 'Of hospitality organizations lack MFA for admin access.',
+    source: { url: 'https://www.verizon.com/business/resources/Tc7d/reports/psr-travel-and-hospitality-snapshot.pdf', label: 'Verizon DBIR, 2024' }
   }
 ];
 
