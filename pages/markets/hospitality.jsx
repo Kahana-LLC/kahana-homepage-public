@@ -162,12 +162,6 @@ const hospitalityMetrics = [
     source: { url: 'https://www.venzagroup.com/fall-2024-top-cybersecurity-statistics-for-hospitality/', label: 'Venza Group, 2024' }
   },
   {
-    label: 'Phishing Increase',
-    value: '140%',
-    insight: 'YoY increase in phishing targeting booking portals and loyalty programs.',
-    source: { url: 'https://www.zdnet.com/article/752000-browser-phishing-attacks-mark-140-increase-yoy/', label: 'ZDNet, 2024' }
-  },
-  {
     label: 'Browser Vulnerabilities',
     value: '44%',
     insight: 'Of breaches exploit browser vulnerabilities and malicious extensions.',

@@ -164,22 +164,10 @@ const technologyMetrics = [
     source: { url: 'https://www.cyberark.com/what-is/enterprise-browser/', label: 'CyberArk, 2024' }
   },
   {
-    label: 'Phishing Increase',
-    value: '140%',
-    insight: 'YoY increase in browser phishing, with 51% impersonating SaaS platforms.',
-    source: { url: 'https://www.zdnet.com/article/752000-browser-phishing-attacks-mark-140-increase-yoy/', label: 'ZDNet, 2024' }
-  },
-  {
     label: 'Browser Vulnerabilities',
     value: '44%',
     insight: 'Of breaches exploit browser vulnerabilities and malicious extensions.',
     source: { url: 'https://www.paloaltonetworks.com/resources/research/unit-42-incident-response-report', label: 'Palo Alto Networks, 2024' }
-  },
-  {
-    label: 'Data Leakage',
-    value: '99%',
-    insight: 'Reduction in data leakage with built-in DLP controls.',
-    source: { url: 'https://seraphicsecurity.com', label: 'Seraphic Security, 2024' }
   },
   {
     label: 'Credential Attacks',
