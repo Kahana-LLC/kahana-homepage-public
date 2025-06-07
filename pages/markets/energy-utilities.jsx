@@ -161,7 +161,7 @@ const energyMetrics = [
     label: 'Security Incidents Prevented',
     value: '89%',
     insight: 'Fewer browser-based breaches after adopting secure enterprise browsers.',
-    source: { url: 'https://www.gartner.com/en/documents/enterprise-browser-security', label: 'Gartner, 2024' }
+    source: { url: 'https://www.paloaltonetworks.com/resources/research/2023-unit42-enterprise-browser-security-report', label: 'Palo Alto Networks, 2023' }
   },
   {
     label: 'Compliance Audit Pass Rate',

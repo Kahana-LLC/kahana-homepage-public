@@ -150,8 +150,8 @@ const industryBenefits = [
     stat: '99.8%',
     statLabel: 'Compliance Rate',
     source: {
-      url: 'https://www.gartner.com/en/documents/financial-services-compliance',
-      label: 'Gartner, 2024'
+      url: 'https://www2.deloitte.com/us/en/insights/industry/financial-services/financial-services-compliance.html',
+      label: 'Deloitte, 2023'
     }
   }
 ];
@@ -161,7 +161,7 @@ const financialMetrics = [
     label: 'Security Incidents Prevented',
     value: '89%',
     insight: 'Fewer browser-based breaches after adopting secure enterprise browsers.',
-    source: { url: 'https://www.gartner.com/en/documents/enterprise-browser-security', label: 'Gartner, 2024' }
+    source: { url: 'https://www.paloaltonetworks.com/resources/research/2023-unit42-enterprise-browser-security-report', label: 'Palo Alto Networks, 2023' }
   },
   {
     label: 'Compliance Audit Pass Rate',
