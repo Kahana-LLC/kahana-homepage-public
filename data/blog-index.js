@@ -11,6 +11,56 @@ import saideepHeadshot from "../public/assets/headshots/saideep_pajjuri.jpg";
 const blogIndex = [
   {
     title:
+      "Future-Proofing Enterprise Browsers: Preparing for Emerging Web Technologies",
+    date: "2025-06-06T00:00:00.000Z",
+    authors: ["Vruksha Joshi", "Adam Kershner"],
+    category: ["Enterprise", "Security", "Research & Trends"],
+    excerpt:
+      "The enterprise browser has come a long way. Once just a window into SaaS tools, it's now a fully managed, policy-driven workspace—central to security, productivity, and compliance. But with new web technologies rapidly gaining ground, enterprise IT leaders are now asking a key question: How do we future-proof the browser for what's coming next?",
+    defaultImageQuery:
+      "enterprise browser future technology web assembly progressive web apps",
+    slug: "future-proofing-enterprise-browsers-emerging-web-technologies-2025",
+    readingTime: 8,
+  },
+  {
+    title: "Evaluating the Impact of Browser Extensions on Enterprise Security",
+    date: "2025-06-06T00:00:00.000Z",
+    authors: ["Vruksha Joshi", "Adam Kershner"],
+    category: ["Enterprise", "Security", "Research & Trends"],
+    excerpt:
+      "Browser extensions are productivity gold—until they become a security liability. From password managers to ad blockers and GenAI tools, extensions have embedded themselves into everyday workflows across enterprises. But behind their convenience lies a hidden cost: risk exposure.",
+    defaultImageQuery: "browser extensions security risk enterprise management",
+    slug: "evaluating-impact-browser-extensions-enterprise-security-2025",
+    readingTime: 8,
+  },
+  {
+    title:
+      "Customizing Enterprise Browser Settings for Different Departmental Needs",
+    date: "2025-06-06T00:00:00.000Z",
+    authors: ["Vruksha Joshi", "Adam Kershner"],
+    category: ["Enterprise", "Security", "Research & Trends"],
+    excerpt:
+      "Enterprise browsers are no longer just secure windows into the web—they're now fully managed work environments. As the digital workplace becomes more specialized, IT leaders are realizing that different departments don't just need access—they need experiences tailored to how they work.",
+    defaultImageQuery:
+      "enterprise browser customization department settings management",
+    slug: "customizing-enterprise-browser-settings-departmental-needs-2025",
+    readingTime: 7,
+  },
+  {
+    title:
+      "Integrating AI Tools into Enterprise Browsers: Opportunities and Challenges",
+    date: "2025-06-06T00:00:00.000Z",
+    authors: ["Vruksha Joshi", "Adam Kershner"],
+    category: ["Enterprise", "AI", "Research & Trends"],
+    excerpt:
+      "Enterprise browsers are rapidly evolving—from secure gateways to intelligent productivity hubs. As generative AI and LLM-based tools mature, the integration of AI directly into the browser is creating a new frontier: one where the browser doesn't just protect the workspace—it enhances it.",
+    defaultImageQuery:
+      "AI integration in enterprise browser with digital intelligence and security",
+    slug: "integrating-ai-tools-enterprise-browsers-opportunities-challenges-2025",
+    readingTime: 8,
+  },
+  {
+    title:
       "Energy & Utilities' Browser Blind Spot: Why Standard Browsers Without Centralized Management Put Critical Infrastructure at Risk",
     date: "2025-06-03T00:00:00.000Z",
     authors: ["Fahiza Syed", "Adam Kershner"],
@@ -1502,6 +1552,18 @@ const blogIndex = [
       "government cybersecurity browser management BYOD contractor access",
     slug: "government-enterprise-browser-security",
     readingTime: 15,
+  },
+  {
+    title:
+      "The Role of Enterprise Browsers in Supporting Remote Work Compliance",
+    date: "2025-06-06T00:00:00.000Z",
+    authors: ["Vruksha Joshi", "Adam Kershner"],
+    category: ["Security", "Enterprise", "Remote Work", "Research & Trends"],
+    excerpt:
+      "As remote work becomes the norm, organizations face new compliance challenges in a perimeter-less digital workplace. Enterprise browsers have emerged as a transformative solution, embedding security and compliance at the browser level while enabling zero-trust principles without disrupting productivity.",
+    defaultImageQuery: "enterprise browser security compliance remote work",
+    slug: "enterprise-browsers-remote-work-compliance-2025",
+    readingTime: 10,
   },
 ];
 
