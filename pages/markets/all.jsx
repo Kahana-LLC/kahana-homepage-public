@@ -23,10 +23,10 @@ const industries = [
     href: '/markets/healthcare',
   },
   {
-    key: 'financial',
-    name: 'Financial Services',
-    description: 'Enhance security and compliance for financial organizations.',
-    href: '/markets/financial',
+    key: 'finance',
+    name: 'Finance',
+    description: 'Enhance security and compliance for finance organizations.',
+    href: '/markets/finance',
   },
   {
     key: 'energy',

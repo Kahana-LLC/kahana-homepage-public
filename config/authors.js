@@ -79,6 +79,13 @@ const authors = {
     linkedinProfile: "https://www.linkedin.com/in/fahiza-aafreen-syed/",
     avatar: "/assets/headshots/fahiza_syed.jpg",
   },
+  "Rishikes Ramachandran": {
+    name: "Rishikes Ramachandran",
+    role: "Engineer",
+    bio: "Rishikes specializes in engineering management, cybersecurity, and AI. Prior to Kahana, Rishikes has experience as a Project Engineer at Advance Energy Solutions and as a Manufacturing Engineer at ZF Wind Power.",
+    linkedinProfile: "https://www.linkedin.com/in/rishikes-ramachandran",
+    avatar: "/assets/headshots/rishikes_ramachandran.jpg",
+  },
 };
 
 module.exports = { authors };

@@ -1565,6 +1565,40 @@ const blogIndex = [
     slug: "enterprise-browsers-remote-work-compliance-2025",
     readingTime: 10,
   },
+  {
+    title:
+      "Cartier Data Breach: Root Causes, Implications, and Lessons for Modern Organizations",
+    date: "2025-06-07T00:00:00.000Z",
+    authors: ["Rishikes Ramachandran", "Adam Kershner"],
+    category: ["Security", "Retail", "Research & Trends"],
+    excerpt:
+      "The luxury retail sector faces a new reality: sophisticated cyberattacks targeting high-value customer data. Following Cartier's June 2025 breach, we explore how credential stuffing attacks are reshaping security priorities and what organizations must do to protect their digital assets.",
+    defaultImageQuery: "luxury retail cybersecurity data breach analysis",
+    slug: "cartier-data-breach-analysis-2025",
+    readingTime: 10,
+  },
+  {
+    title: "Victoria's Secret Cybersecurity Breach: Lessons for Retail in 2025",
+    date: "2025-06-07T00:00:00.000Z",
+    authors: ["Rishikes Ramachandran", "Adam Kershner"],
+    category: ["Security", "Retail", "Research & Trends"],
+    excerpt:
+      "A narrative analysis of the 2025 Victoria's Secret cyberattack, its industry context, and the urgent lessons for retail organizations facing a new era of digital threats.",
+    defaultImageQuery: "victorias secret cybersecurity breach retail industry",
+    slug: "victorias-secret-cybersecurity-breach-2025",
+    readingTime: 8,
+  },
+  {
+    title: "Norton Security Breach: A Wake-Up Call for Digital Privacy in 2025",
+    date: "2025-06-07T00:00:00.000Z",
+    authors: ["Rishikes Ramachandran", "Adam Kershner"],
+    category: ["Security", "Research & Trends"],
+    excerpt:
+      "When Norton's security systems were compromised in May 2025, exposing 184 million passwords, it revealed critical vulnerabilities in digital identity protection. This deep dive examines the technical failures, user impact, and essential security practices needed in today's threat landscape.",
+    defaultImageQuery: "norton security breach cybersecurity data protection",
+    slug: "norton-security-breach-analysis-2025",
+    readingTime: 10,
+  },
 ];
 
 export { blogIndex };

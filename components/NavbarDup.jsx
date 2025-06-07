@@ -428,7 +428,7 @@ function NavBar() {
                     <Link href="/markets/manufacturing" className="dropdown-link">Manufacturing</Link>
                     <Link href="/markets/professional" className="dropdown-link">Professional Services</Link>
                     <Link href="/markets/healthcare" className="dropdown-link">Healthcare</Link>
-                    <Link href="/markets/financial" className="dropdown-link">Financial Services</Link>
+                    <Link href="/markets/finance" className="dropdown-link">Finance</Link>
                     <Link href="/markets/energy-utilities" className="dropdown-link">Energy & Utilities</Link>
                     <Link href="/markets/retail" className="dropdown-link">Retail & E-commerce</Link>
                     <Link href="/markets/government" className="dropdown-link">Government & Public Sector</Link>

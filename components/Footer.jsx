@@ -131,7 +131,8 @@ export default function Footer() {
               <ul className={`space-y-4 ${openSection === 'learn' || !isMobile ? 'block' : 'hidden'}`}>
                 <li><Link href="/blog" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">Blog</Link></li>
                 <li><Link href="/docs" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">Docs</Link></li>
-                <li><Link href="/subscribe-to-insights" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">Subscribe to Insights</Link></li>
+                <li><Link href="/subscribe-to-insights" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">Newsletter</Link></li>
+                <li><Link href="/community" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">Community</Link></li>
               </ul>
             </div>
 
@@ -156,7 +157,7 @@ export default function Footer() {
                 <li><Link href="/markets/manufacturing" className="text-kahana-primary hover:text-kahana-accent-coral transition-colors duration-200">Manufacturing</Link></li>
                 <li><Link href="/markets/professional" className="text-kahana-primary hover:text-kahana-accent-coral transition-colors duration-200">Professional Services</Link></li>
                 <li><Link href="/markets/healthcare" className="text-kahana-primary hover:text-kahana-accent-coral transition-colors duration-200">Healthcare</Link></li>
-                <li><Link href="/markets/financial" className="text-kahana-primary hover:text-kahana-accent-coral transition-colors duration-200">Financial Services</Link></li>
+                <li><Link href="/markets/finance" className="text-kahana-primary hover:text-kahana-accent-coral transition-colors duration-200">Finance</Link></li>
                 <li><Link href="/markets/energy-utilities" className="text-kahana-primary hover:text-kahana-accent-coral transition-colors duration-200">Energy & Utilities</Link></li>
                 <li><Link href="/markets/retail" className="text-kahana-primary hover:text-kahana-accent-coral transition-colors duration-200">Retail & E-commerce</Link></li>
                 <li><Link href="/markets/government" className="text-kahana-primary hover:text-kahana-accent-coral transition-colors duration-200">Government & Public Sector</Link></li>
