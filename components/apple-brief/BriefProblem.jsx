@@ -122,7 +122,7 @@ const BriefProblem = () => {
                   </button>
                 </div>
                 <iframe
-                  src="https://www.youtube.com/embed/bAA8-TTFsxc?autoplay=1"
+                  src="https://www.youtube.com/embed/WkfmbTgiB5U?autoplay=1"
                   className="absolute top-0 left-0 w-full h-full"
                   style={{ border: 'none' }}
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
