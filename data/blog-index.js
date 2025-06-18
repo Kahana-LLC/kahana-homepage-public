@@ -12,7 +12,7 @@ const blogIndex = [
   {
     title:
       "The UBS Chain IQ Breach: A Wake-Up Call for Financial Services Cybersecurity",
-    date: "2025-06-18T00:00:00.000Z",
+    date: "2025-06-19T00:00:00.000Z",
     authors: ["Jordan Kern", "Adam Kershner"],
     category: ["Security", "Research & Trends"],
     excerpt:
