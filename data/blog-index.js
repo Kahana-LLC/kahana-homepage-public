@@ -11,6 +11,18 @@ import saideepHeadshot from "../public/assets/headshots/saideep_pajjuri.jpg";
 const blogIndex = [
   {
     title:
+      "The UBS Chain IQ Breach: A Wake-Up Call for Financial Services Cybersecurity",
+    date: "2025-06-18T00:00:00.000Z",
+    authors: ["Jordan Kern", "Adam Kershner"],
+    category: ["Security", "Research & Trends"],
+    excerpt:
+      "The recent UBS data breach through its procurement services provider Chain IQ highlights the growing challenges financial institutions face from third-party vendor cybersecurity risks. This analysis explores the incident and its implications for the financial sector.",
+    defaultImageQuery: "financial cybersecurity breach data protection",
+    slug: "ubs-chain-iq-cybersecurity-breach",
+    readingTime: 12,
+  },
+  {
+    title:
       "Future-Proofing Enterprise Browsers: Preparing for Emerging Web Technologies",
     date: "2025-06-06T00:00:00.000Z",
     authors: ["Vruksha Joshi", "Adam Kershner"],
