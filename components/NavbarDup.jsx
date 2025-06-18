@@ -407,8 +407,11 @@ function NavBar() {
                 <div className="dropdown-section">
                   <h3 className="text-[0.75rem] font-semibold text-gray-600 mb-4 uppercase tracking-wider">Our Products</h3>
                   <div className="flex flex-col space-y-4">
+                    <Link href="/products/free-agentic-browser" className="dropdown-link">
+                      Oasis Agentic Browser
+                    </Link>
                     <Link href="/products/enterprise-browser" className="dropdown-link">
-                      Enterprise Browser
+                      Oasis Enterprise Browser
                     </Link>
                     <Link href="/products/web-application" className="dropdown-link">
                       Web Application
@@ -608,6 +611,7 @@ function NavBar() {
             </div>
             
             {/* Product Section */}
+            <Link href="/products/free-agentic-browser" className="mobile-link">Free Agentic Browser</Link>
             <Link href="/products/enterprise-browser" className="mobile-link">Enterprise Browser</Link>
             <Link href="/products/web-application" className="mobile-link">Web Application</Link>
             

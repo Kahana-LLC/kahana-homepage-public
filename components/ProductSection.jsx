@@ -137,25 +137,25 @@ export default function ProductSection() {
           {/* Left side - Text content */}
           <div className="lg:col-span-5 px-4 sm:px-6 text-center md:mx-auto md:max-w-2xl lg:text-left relative">
             <div>
-              <h2 className="text-base font-semibold leading-7 text-[#66C2BE] text-center lg:text-left">Oasis Browser</h2>
+              <h2 className="text-base font-semibold leading-7 text-[#66C2BE] text-center lg:text-left">Oasis Agentic Browser</h2>
               <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl text-center lg:text-left">
-                The secure enterprise browser for modern teams
+                Your agentic browser for ergonomic work
               </p>
               <p className="mt-6 text-lg leading-8 text-gray-600 text-center lg:text-left">
-                Experience the next generation of secure browsing with Oasis Browser. Built for enterprises who demand both security and productivity.
+                The Oasis Agentic Browser integrates AI at its core, helping you find and organize anything at the sound of your voice. No more digging through tabs or search history—just tell Oasis to pull up what you need.
               </p>
               <div className="mt-8 flex gap-4 items-center justify-center lg:justify-start">
                 <Link
-                  href="/schedule-demo"
+                  href="/oasis-waitlist"
                   className="inline-flex items-center rounded-md bg-[#66C2BE] px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-[#55B3AF] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#66C2BE]"
                 >
-                  Schedule Demo
+                  Join Waitlist
                 </Link>
                 <Link
-                  href="/products/enterprise-browser"
+                  href="/schedule-demo"
                   className="inline-flex items-center rounded-md bg-white px-6 py-3 text-base font-semibold text-[#66C2BE] border border-[#66C2BE] shadow-sm hover:bg-gray-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#66C2BE]"
                 >
-                  Learn more
+                  Schedule Demo
                 </Link>
               </div>
             </div>

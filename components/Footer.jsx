@@ -76,6 +76,7 @@ export default function Footer() {
               </button>
               <h3 className="text-kahana-accent-purple font-semibold mb-6 text-lg hidden md:block">Product</h3>
               <ul className={`space-y-4 ${openSection === 'product' || !isMobile ? 'block' : 'hidden'}`}>
+                <li><Link href="/products/free-agentic-browser" className="text-kahana-primary hover:text-kahana-accent-coral transition-colors duration-200">Oasis Agentic Browser</Link></li>
                 <li><Link href="/products/enterprise-browser" className="text-kahana-primary hover:text-kahana-accent-coral transition-colors duration-200">Oasis Enterprise Browser</Link></li>
                 <li><Link href="/products/web-application" className="text-kahana-primary hover:text-kahana-accent-coral transition-colors duration-200">Web Application</Link></li>
               </ul>
