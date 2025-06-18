@@ -149,7 +149,7 @@ export default function OasisWaitlist() {
                   Join the Oasis Waitlist
                 </h1>
                 <p className="mt-6 text-xl text-gray-600">
-                  Meet Oasis, the intelligent browser that transforms how you explore and organize the web. Instead of hunting through endless tabs, scrolling through browser history, or juggling multiple windows, simply tell Oasis what you need. It finds and arranges everything you've ever saved with perfect layouts, turning information chaos into organized productivity.
+                  Meet Oasis, the agenticbrowser that transforms how you explore and organize the web. Instead of hunting through endless tabs, scrolling through browser history, or juggling multiple windows, simply tell Oasis what you need. It finds and arranges everything you've ever saved with perfect layouts, turning information chaos into organized productivity.
                 </p>
                 <p className="mt-4 text-xl text-gray-600">
                   <strong>Straight to the point.</strong> This is a genuine waitlist, not a marketing trap. You'll get one notification when the <Link href="/products/free-agentic-browser" className="text-[#66C2BE] hover:text-[#55B3AF]">free Oasis Agentic Browser</Link> launches. The free version is <strong>100% free forever—no credit card, no catches</strong>. As a bonus, you'll also receive exclusive early access to the <Link href="/products/enterprise-browser" className="text-[#66C2BE] hover:text-[#55B3AF]">Oasis Enterprise Browser</Link> with special launch pricing.
