@@ -19,10 +19,10 @@ export default function GlobalBanner() {
             <div className="ml-3">
               <p className="text-sm font-medium text-white">
                 <span className="md:hidden">
-                  🚀 Join the Oasis waitlist for early access!
+                  Join the Oasis waitlist for early access!
                 </span>
                 <span className="hidden md:inline">
-                  🚀 Be among the first to experience omnipotent work! Join the waitlist for early access to our free agentic browser when it launches.
+                  Be among the first to experience omnipotent work! Join the waitlist for early access to our free agentic browser when it launches.
                 </span>
               </p>
             </div>

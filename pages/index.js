@@ -160,7 +160,7 @@ export default function Home({ blogPosts }) {
   return (
     <>
       <SEO
-        title="Kahana Oasis - Enterprise Browser for Secure Productivity"
+        title="Kahana Oasis - Agentic Browser & Productivity Tools"
         description="Stay organized and focused with Kahana's Oasis Enterprise Browser. Features enterprise-grade security, organization tools, and collaboration features for modern teams."
         image="https://kahana.co/assets/oasis-browser-preview.png"
         url="https://kahana.co"
@@ -168,7 +168,7 @@ export default function Home({ blogPosts }) {
         schema={homepageSchema}
       />
       <Head>
-        <title>Kahana - Enterprise Browser & Productivity Tools</title>
+        <title>Kahana - Agentic Browser & Productivity</title>
         <meta
           name="description"
           content="Kahana's Oasis Enterprise Browser helps teams stay organized, focused on ideas, and increase productivity while maintaining enterprise-grade security."
