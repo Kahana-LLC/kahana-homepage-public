@@ -11,6 +11,18 @@ import saideepHeadshot from "../public/assets/headshots/saideep_pajjuri.jpg";
 const blogIndex = [
   {
     title:
+      "Google Chrome Data Collection and Advertising Practices: The Hidden Cost of Free Browsing",
+    date: "2025-06-19T00:00:00.000Z",
+    authors: ["Adam Kershner"],
+    category: ["Privacy", "Browser", "Security"],
+    excerpt:
+      "Google Chrome's extensive data collection practices have made it the most data-hungry browser available today, collecting 20 different types of user data compared to an average of 6 for competitors. This comprehensive analysis explores how Chrome's data collection fuels Google's $237.86 billion advertising business and what this means for user privacy in 2025.",
+    defaultImageQuery: "Google Chrome browser data collection privacy concerns",
+    slug: "google-chrome-data-collection-advertising-practices-2025",
+    readingTime: 15,
+  },
+  {
+    title:
       "How Amazon's $10 Billion Bet Is Transforming North Carolina Into the Next AI Powerhouse",
     date: "2025-06-18T00:00:00.000Z",
     authors: ["Hritik Chalse", "Adam Kershner"],
