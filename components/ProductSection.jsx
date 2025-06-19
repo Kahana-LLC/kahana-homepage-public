@@ -147,13 +147,15 @@ export default function ProductSection() {
               <div className="mt-8 flex gap-4 items-center justify-center lg:justify-start">
                 <Link
                   href="/oasis-waitlist"
-                  className="nav-button download inline-flex items-center rounded-md bg-[#21706c] text-white font-bold shadow-sm hover:bg-[#15514f] px-6 py-3 text-base"
+                  className="nav-button download inline-flex items-center rounded-md bg-[#21706c] text-white font-bold shadow-sm hover:bg-[#15514f] px-6 py-3 text-base no-underline hover:no-underline focus:no-underline"
+                  style={{ textDecoration: 'none' }}
                 >
                   Join Waitlist
                 </Link>
                 <Link
                   href="/schedule-demo"
-                  className="nav-button get-in-touch bg-white text-[#21706c] font-bold rounded-md shadow-sm border border-[#21706c] hover:bg-gray-100 px-6 py-3 text-base"
+                  className="nav-button get-in-touch bg-white text-[#21706c] font-bold rounded-md shadow-sm border border-[#21706c] hover:bg-gray-100 px-6 py-3 text-base no-underline hover:no-underline focus:no-underline"
+                  style={{ textDecoration: 'none' }}
                 >
                   Schedule Demo
                 </Link>

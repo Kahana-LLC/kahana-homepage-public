@@ -243,7 +243,8 @@ export default function Home({ blogPosts }) {
               <div className="mt-8 text-center">
                 <Link
                   href="/blog"
-                  className="bg-[#21706c] text-white font-bold rounded-md px-8 py-3 hover:bg-[#15514f] transition-colors inline-flex items-center justify-center"
+                  className="bg-[#21706c] text-white font-bold rounded-md px-8 py-3 hover:bg-[#15514f] transition-colors inline-flex items-center justify-center no-underline hover:no-underline focus:no-underline"
+                  style={{ textDecoration: "none" }}
                 >
                   All Posts
                   <svg

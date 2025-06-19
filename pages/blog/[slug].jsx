@@ -172,13 +172,14 @@ export default function BlogPost({ post, coverImage }) {
           )}
           
           <div className="mt-16 p-8 bg-gradient-to-r from-[#E3DFF1]/20 via-[#8CB7D0]/10 to-[#E3DFF1]/30 rounded-xl border border-[#A5DAD8]/30 shadow-lg">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Elevate Your Enterprise Browser Experience</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Your Story, Powered by Oasis</h2>
             <p className="text-lg text-gray-600 mb-6">
-              Ready to learn how Kahana can help secure and streamline your organization's browsing? Schedule a personalized demo today.
+              Your story is unique—Oasis is here to help you organize, explore, and create it. Ready to take the next step? Join us and see how Oasis can empower your journey.
             </p>
             <Link 
               href="/schedule-demo"
-              className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-[#66C2BE] hover:bg-[#4A9E9A] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#66C2BE] transition-colors duration-200"
+              className="inline-flex items-center px-6 py-3 border border-transparent text-base font-bold rounded-md shadow-sm text-white bg-[#21706c] hover:bg-[#15514f] transition-colors no-underline"
+              style={{ textDecoration: 'none' }}
             >
               Schedule Demo
               <svg className="ml-2 -mr-1 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -765,3 +765,15 @@ body {
   color: #66c2be;
   margin-top: 0;
 }
+
+/* Ensure nav-button and no-underline classes never show underline */
+.nav-button,
+.nav-button:visited,
+.nav-button:hover,
+.nav-button:active,
+.no-underline,
+.no-underline:visited,
+.no-underline:hover,
+.no-underline:active {
+  text-decoration: none !important;
+}

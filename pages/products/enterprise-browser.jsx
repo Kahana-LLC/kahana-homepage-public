@@ -262,7 +262,7 @@ export default function EnterpriseBrowser() {
               A secure, modern browser designed for enterprise environments, featuring enhanced security controls, collaboration tools, and a seamless user experience. Learn more about <Link href="/blog/the-rise-of-enterprise-browsers-transforming-corporate-security-in-2025" className="text-[#66C2BE] hover:text-[#55B3AF]">how enterprise browsers are transforming corporate security</Link> and why <Link href="/blog/why-you-shouldnt-use-chrome-at-work" className="text-[#66C2BE] hover:text-[#55B3AF]">traditional browsers fall short in the workplace</Link>.
             </p>
             <Link href="/schedule-demo">
-              <button className="bg-[#66C2BE] text-white px-8 py-3 rounded-md font-semibold hover:bg-[#55B3AF] transition-colors shadow-lg shadow-[#E3DFF1]/20 hover:shadow-xl hover:shadow-[#E3DFF1]/30">
+              <button className="bg-[#21706c] text-white font-bold px-8 py-3 rounded-md hover:bg-[#15514f] transition-colors shadow-lg shadow-[#E3DFF1]/20 hover:shadow-xl hover:shadow-[#E3DFF1]/30 no-underline">
                 Schedule Demo
               </button>
             </Link>

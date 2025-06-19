@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 export default function GlobalBanner() {
   const [isVisible, setIsVisible] = useState(true);
+  const router = useRouter();
 
-  if (!isVisible) return null;
+  // Hide banner on the Oasis Waitlist page
+  if (router.pathname === '/oasis-waitlist' || !isVisible) return null;
 
   return (
     <div className="bg-gradient-to-r from-[#66C2BE] to-[#8CB7D0] relative">
