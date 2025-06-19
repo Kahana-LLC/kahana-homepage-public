@@ -106,7 +106,7 @@ export default function HowItWorks() {
           <div className="mt-12 text-center">
             <Link
               href="/schedule-demo"
-              className="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#66C2BE] hover:bg-[#55B3AF] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#66C2BE] shadow-md shadow-[#E3DFF1]/20 hover:shadow-lg hover:shadow-[#E3DFF1]/30 transition-all duration-300"
+              className="inline-flex items-center px-8 py-3 border border-transparent text-base font-bold rounded-md text-white bg-[#21706c] hover:bg-[#15514f] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#21706c] shadow-md shadow-[#E3DFF1]/20 hover:shadow-lg hover:shadow-[#E3DFF1]/30 transition-all duration-300"
             >
               Schedule Your Demo
               <svg className="ml-2 -mr-1 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

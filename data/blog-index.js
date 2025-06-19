@@ -11,6 +11,18 @@ import saideepHeadshot from "../public/assets/headshots/saideep_pajjuri.jpg";
 const blogIndex = [
   {
     title:
+      "How Amazon's $10 Billion Bet Is Transforming North Carolina Into the Next AI Powerhouse",
+    date: "2025-06-18T00:00:00.000Z",
+    authors: ["Hritik Chalse", "Adam Kershner"],
+    category: ["AI", "Cloud Infrastructure", "Research & Trends"],
+    excerpt:
+      "Amazon Web Services' $10 billion investment is reshaping North Carolina's economic destiny, turning the state into a national leader in AI, cloud infrastructure, and sustainable technology. This article explores the far-reaching impact on jobs, education, cybersecurity, and the region's future as an innovation hub.",
+    defaultImageQuery: "amazon aws north carolina ai data center",
+    slug: "amazon-north-carolina-ai-powerhouse",
+    readingTime: 12,
+  },
+  {
+    title:
       "The UBS Chain IQ Breach: A Wake-Up Call for Financial Services Cybersecurity",
     date: "2025-06-19T00:00:00.000Z",
     authors: ["Jordan Kern", "Adam Kershner"],

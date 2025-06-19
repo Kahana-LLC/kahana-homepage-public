@@ -22,14 +22,14 @@ export default function GlobalBanner() {
                   Join the Oasis waitlist for early access!
                 </span>
                 <span className="hidden md:inline">
-                  Be among the first to experience omnipotent work! Join the waitlist for early access to our free agentic browser when it launches.
+                  Your story is unique—Oasis is here to help you organize, explore, and create it. Join the waitlist and let's begin.
                 </span>
               </p>
             </div>
           </div>
           <div className="flex items-center space-x-3">
             <Link href="/oasis-waitlist">
-              <button className="bg-white text-[#66C2BE] px-4 py-1.5 rounded-md text-sm font-medium hover:bg-gray-100 transition-colors">
+              <button className="bg-[#21706c] text-white font-bold px-6 py-3 rounded-md hover:bg-[#15514f] transition-colors">
                 Join Waitlist
               </button>
             </Link>

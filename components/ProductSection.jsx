@@ -147,13 +147,13 @@ export default function ProductSection() {
               <div className="mt-8 flex gap-4 items-center justify-center lg:justify-start">
                 <Link
                   href="/oasis-waitlist"
-                  className="inline-flex items-center rounded-md bg-[#66C2BE] px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-[#55B3AF] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#66C2BE]"
+                  className="nav-button download inline-flex items-center rounded-md bg-[#21706c] text-white font-bold shadow-sm hover:bg-[#15514f] px-6 py-3 text-base"
                 >
                   Join Waitlist
                 </Link>
                 <Link
                   href="/schedule-demo"
-                  className="inline-flex items-center rounded-md bg-white px-6 py-3 text-base font-semibold text-[#66C2BE] border border-[#66C2BE] shadow-sm hover:bg-gray-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#66C2BE]"
+                  className="nav-button get-in-touch bg-white text-[#21706c] font-bold rounded-md shadow-sm border border-[#21706c] hover:bg-gray-100 px-6 py-3 text-base"
                 >
                   Schedule Demo
                 </Link>
@@ -329,7 +329,7 @@ export default function ProductSection() {
                             />
                             <button 
                               type="submit"
-                              className="p-2 text-white bg-gradient-to-r from-[#66C2BE] to-[#8CB7D0] rounded-xl hover:opacity-90 transition-opacity"
+                              className="p-2 text-white font-bold bg-[#21706c] rounded-xl hover:bg-[#15514f] transition-opacity"
                             >
                               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M12 5l7 7-7 7" />
@@ -343,7 +343,7 @@ export default function ProductSection() {
                     {/* AI Assist Button */}
                     <button
                       onClick={() => setIsChatOpen(!isChatOpen)}
-                      className="group flex items-center space-x-2 bg-gradient-to-r from-[#66C2BE] to-[#8CB7D0] text-white px-3 py-2 rounded-xl hover:opacity-90 transition-all duration-200 shadow-lg hover:shadow-xl cursor-pointer"
+                      className="group flex items-center space-x-2 bg-[#21706c] text-white font-bold px-3 py-2 rounded-xl hover:bg-[#15514f] transition-all duration-200 shadow-lg hover:shadow-xl cursor-pointer"
                     >
                       <div className="relative">
                         <div className="absolute -top-1 -right-1 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-white rounded-full"></div>

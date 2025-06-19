@@ -158,8 +158,8 @@ export default function BlogIndex({ posts = [] }) {
                 onClick={() => handleCategoryChange(category)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                   selectedCategory === category
-                    ? 'bg-kahana-primary text-white'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                    ? 'bg-[#21706c] text-white font-bold'
+                    : 'bg-white text-[#21706c] font-bold hover:bg-gray-100 border border-[#21706c]'
                 }`}
               >
                 {category}
@@ -186,7 +186,7 @@ export default function BlogIndex({ posts = [] }) {
                   className={`px-4 py-2 rounded-md ${
                     currentPage === 1
                       ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                      : 'bg-kahana-primary text-white hover:bg-kahana-primary-dark'
+                      : 'bg-[#21706c] text-white font-bold hover:bg-[#15514f]'
                   }`}
                 >
                   Previous
@@ -199,10 +199,10 @@ export default function BlogIndex({ posts = [] }) {
                       onClick={() => typeof pageNum === 'number' && setCurrentPage(pageNum)}
                       className={`px-4 py-2 rounded-md ${
                         pageNum === currentPage
-                          ? 'bg-kahana-primary text-white'
+                          ? 'bg-[#21706c] text-white font-bold'
                           : pageNum === '...'
                           ? 'cursor-default'
-                          : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                          : 'bg-white text-[#21706c] font-bold hover:bg-gray-100 border border-[#21706c]'
                       }`}
                     >
                       {pageNum}
@@ -216,7 +216,7 @@ export default function BlogIndex({ posts = [] }) {
                   className={`px-4 py-2 rounded-md ${
                     currentPage === totalPages
                       ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                      : 'bg-kahana-primary text-white hover:bg-kahana-primary-dark'
+                      : 'bg-[#21706c] text-white font-bold hover:bg-[#15514f]'
                   }`}
                 >
                   Next

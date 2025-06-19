@@ -27,8 +27,8 @@ export default function DocFilter({ categories, activeCategory, onCategoryChange
           onClick={() => onCategoryChange('all')}
           className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
             activeCategory === 'all'
-              ? 'bg-kahana-primary text-white'
-              : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+              ? 'bg-[#21706c] text-white font-bold'
+              : 'bg-white text-[#21706c] font-bold hover:bg-gray-100 border border-[#21706c]'
           }`}
         >
           All
@@ -39,8 +39,8 @@ export default function DocFilter({ categories, activeCategory, onCategoryChange
             onClick={() => onCategoryChange(category)}
             className={`px-4 py-2 rounded-full text-sm font-medium capitalize transition-colors ${
               activeCategory === category
-                ? 'bg-kahana-primary text-white'
-                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                ? 'bg-[#21706c] text-white font-bold'
+                : 'bg-white text-[#21706c] font-bold hover:bg-gray-100 border border-[#21706c]'
             }`}
           >
             {category}

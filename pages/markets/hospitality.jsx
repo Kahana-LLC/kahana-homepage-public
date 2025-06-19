@@ -359,10 +359,10 @@ export default function Hospitality({ hospitalityBlogs }) {
               Join leading hospitality organizations that trust Kahana for the new wave of security and productivity.
             </p>
             <div className="flex justify-center gap-4">
-              <Link href="/schedule-demo" className="inline-block bg-white text-[#66C2BE] px-8 py-3 rounded-md hover:bg-gray-50 transition-colors">
+              <Link href="/schedule-demo" className="inline-block bg-white text-[#21706c] border-2 border-[#21706c] px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors">
                 Schedule Demo
               </Link>
-              <Link href="/sales" className="inline-block border border-white text-white px-8 py-3 rounded-md hover:bg-white/10 transition-colors">
+              <Link href="/sales" className="inline-block bg-[#21706c] text-white px-8 py-3 rounded-md font-bold hover:bg-[#15514f] transition-colors">
                 Contact Sales
               </Link>
             </div>

@@ -243,9 +243,9 @@ export default function Home({ blogPosts }) {
               <div className="mt-8 text-center">
                 <Link
                   href="/blog"
-                  className="inline-flex items-center px-6 py-3 text-base font-medium rounded-md text-white bg-[#66C2BE] hover:bg-[#55B3AF] transition-all duration-200"
+                  className="bg-[#21706c] text-white font-bold rounded-md px-8 py-3 hover:bg-[#15514f] transition-colors inline-flex items-center justify-center"
                 >
-                  View All Posts
+                  All Posts
                   <svg
                     className="ml-2 w-5 h-5"
                     fill="none"

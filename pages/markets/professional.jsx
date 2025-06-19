@@ -385,10 +385,10 @@ export default function Professional({ professionalBlogs }) {
             Join leading professional services firms that trust Kahana for their digital transformation needs. Protect client data and drive efficiency with enterprise-grade security.
           </p>
           <div className="flex justify-center gap-4">
-            <Link href="/schedule-demo" className="bg-white text-[#66C2BE] px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors">
+            <Link href="/schedule-demo" className="bg-white text-[#21706c] border-2 border-[#21706c] px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors">
               Schedule Demo
             </Link>
-            <Link href="http://localhost:3006/sales" className="inline-block border border-white text-white px-8 py-3 rounded-md hover:bg-white/10 transition-colors">
+            <Link href="/sales" className="bg-[#21706c] text-white px-8 py-3 rounded-md font-bold hover:bg-[#15514f] transition-colors">
               Contact Sales
             </Link>
           </div>

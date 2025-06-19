@@ -1,3 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap");
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li,
+span,
+a,
+strong {
+  font-family: "PT Serif", serif !important;
+}
+
+/* High-contrast headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #000 !important;
+}
+
+/* High-contrast links */
+a {
+  color: #21706c !important;
+  text-decoration: underline !important;
+  font-weight: bold !important;
+  transition: color 0.2s;
+}
+a:hover,
+a:focus {
+  color: #15514f !important;
+}
+
+/* High-contrast buttons */
+button,
+.btn,
+input[type="submit"],
+input[type="button"] {
+  background-color: #21706c !important;
+  color: #fff !important;
+  font-weight: bold !important;
+  border: none;
+  border-radius: 0.375rem;
+  padding: 0.5rem 1.25rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+button:hover,
+.btn:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover {
+  background-color: #15514f !important;
+}
+
+button.bg-\[\#21706c\],
+.bg-\[\#21706c\] button,
+.bg-\[\#21706c\] {
+  color: #fff !important;
+}
+
 /* Tailwind CSS setup */
 @tailwind base;
 @tailwind components;

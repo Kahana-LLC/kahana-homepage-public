@@ -539,13 +539,13 @@ function NavBar() {
           <div className="flex items-center gap-4">
             <div className="nav-buttons flex">
               <Link href="/schedule-demo">
-                <button className="nav-button download inline-flex items-center rounded-md bg-white border border-[#66C2BE] shadow-sm text-[#66C2BE] hover:bg-gray-50 px-2 py-1.5 text-xs md:px-4 md:py-2 md:text-sm">
+                <button className="nav-button download inline-flex items-center rounded-md bg-[#21706c] text-white font-bold shadow-sm hover:bg-[#15514f] px-2 py-1.5 text-xs md:px-4 md:py-2 md:text-sm">
                   <span className="md:hidden">Demo</span>
                   <span className="hidden md:inline">Schedule Demo</span>
                 </button>
               </Link>
               <Link href="/contact">
-                <button className="nav-button get-in-touch">
+                <button className="nav-button get-in-touch bg-white text-[#21706c] font-bold hover:bg-gray-100">
                   <span className="md:hidden">Contact</span>
                   <span className="hidden md:inline">Contact</span>
                 </button>
@@ -599,12 +599,12 @@ function NavBar() {
             {/* Contact Buttons at Top */}
             <div className="flex flex-col gap-2 mb-4">
               <Link href="/schedule-demo" className="text-center">
-                <button className="w-full py-2 px-4 border border-[#66C2BE] text-[#66C2BE] rounded-md hover:bg-gray-50 transition-colors font-medium">
+                <button className="w-full py-2 px-4 bg-[#21706c] text-white font-bold rounded-md hover:bg-[#15514f] transition-colors">
                   Schedule Demo
                 </button>
               </Link>
               <Link href="/contact" className="text-center">
-                <button className="w-full py-2 px-4 bg-[#66C2BE] text-white rounded-md hover:bg-[#55B3AF] transition-colors font-medium">
+                <button className="w-full py-2 px-4 bg-white text-[#21706c] font-bold rounded-md hover:bg-gray-100 transition-colors">
                   Contact
                 </button>
               </Link>

@@ -57,8 +57,8 @@ const FeaturedBlogSection = ({ posts = [] }) => {
         </div>
         <div className="flex justify-center">
           <Link href="/blog">
-            <button className="bg-[#66C2BE] text-white px-8 py-3 rounded-md font-semibold hover:bg-[#55B3AF] transition-colors">
-              View All Posts &rarr;
+            <button className="bg-[#21706c] text-white font-bold px-8 py-3 rounded-md hover:bg-[#15514f] transition-colors">
+              View All &rarr;
             </button>
           </Link>
         </div>

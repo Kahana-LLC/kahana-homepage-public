@@ -141,7 +141,7 @@ export default function Footer() {
             <div>
               <button 
                 onClick={() => toggleSection('markets')} 
-                className="flex justify-between items-center w-full md:hidden mb-3"
+                className="flex justify-between items-center w-full md:hidden mb-3 bg-[#21706c] text-white font-bold hover:bg-[#15514f]"
               >
                 <h3 className="text-kahana-accent-purple font-semibold text-lg">Markets</h3>
                 <svg 
