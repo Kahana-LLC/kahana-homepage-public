@@ -15,4 +15,16 @@ const SharedCTA = ({
   };
 
   return (
-    <section className={`
+    <section className={`py-16 text-center ${className}`}>
+      <h2 className="text-3xl font-bold mb-4">{title}</h2>
+      <p className="text-xl mb-8">{description}</p>
+      <Link href={buttonLink}>
+        <a className={buttonStyles[buttonVariant]}>
+          {buttonText}
+        </a>
+      </Link>
+    </section>
+  );
+};
+
+export default SharedCTA;
