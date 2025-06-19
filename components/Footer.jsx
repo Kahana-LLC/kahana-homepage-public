@@ -62,13 +62,13 @@ export default function Footer() {
             <div>
               <button 
                 onClick={() => toggleSection('product')} 
-                className="flex justify-between items-center w-full md:hidden mb-3"
+                className="footer-mobile-dropdown flex justify-between items-center w-full md:hidden mb-3 border border-[#21706c] text-[#21706c] font-bold py-2 px-4 rounded-md appearance-none shadow-sm"
               >
                 <h3 className="text-kahana-accent-purple font-semibold text-lg">Product</h3>
                 <svg 
                   className={`w-5 h-5 transition-transform ${openSection === 'product' ? 'rotate-180' : ''}`}
                   fill="none" 
-                  stroke="currentColor" 
+                  stroke="#21706c" 
                   viewBox="0 0 24 24"
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -86,13 +86,13 @@ export default function Footer() {
             <div>
               <button 
                 onClick={() => toggleSection('useCases')} 
-                className="flex justify-between items-center w-full md:hidden mb-3"
+                className="footer-mobile-dropdown flex justify-between items-center w-full md:hidden mb-3 border border-[#21706c] text-[#21706c] font-bold py-2 px-4 rounded-md appearance-none shadow-sm"
               >
                 <h3 className="text-kahana-accent-purple font-semibold text-lg">Use Cases</h3>
                 <svg 
                   className={`w-5 h-5 transition-transform ${openSection === 'useCases' ? 'rotate-180' : ''}`}
                   fill="none" 
-                  stroke="currentColor" 
+                  stroke="#21706c" 
                   viewBox="0 0 24 24"
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -116,13 +116,13 @@ export default function Footer() {
             <div>
               <button 
                 onClick={() => toggleSection('learn')} 
-                className="flex justify-between items-center w-full md:hidden mb-3"
+                className="footer-mobile-dropdown flex justify-between items-center w-full md:hidden mb-3 border border-[#21706c] text-[#21706c] font-bold py-2 px-4 rounded-md appearance-none shadow-sm"
               >
                 <h3 className="text-kahana-accent-purple font-semibold text-lg">Learn</h3>
                 <svg 
                   className={`w-5 h-5 transition-transform ${openSection === 'learn' ? 'rotate-180' : ''}`}
                   fill="none" 
-                  stroke="currentColor" 
+                  stroke="#21706c" 
                   viewBox="0 0 24 24"
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -141,13 +141,13 @@ export default function Footer() {
             <div>
               <button 
                 onClick={() => toggleSection('markets')} 
-                className="flex justify-between items-center w-full md:hidden mb-3 bg-[#21706c] text-white font-bold hover:bg-[#15514f]"
+                className="footer-mobile-dropdown flex justify-between items-center w-full md:hidden mb-3 border border-[#21706c] text-[#21706c] font-bold py-2 px-4 rounded-md appearance-none shadow-sm"
               >
                 <h3 className="text-kahana-accent-purple font-semibold text-lg">Markets</h3>
                 <svg 
                   className={`w-5 h-5 transition-transform ${openSection === 'markets' ? 'rotate-180' : ''}`}
                   fill="none" 
-                  stroke="currentColor" 
+                  stroke="#21706c" 
                   viewBox="0 0 24 24"
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -172,13 +172,13 @@ export default function Footer() {
             <div>
               <button 
                 onClick={() => toggleSection('partners')} 
-                className="flex justify-between items-center w-full md:hidden mb-3"
+                className="footer-mobile-dropdown flex justify-between items-center w-full md:hidden mb-3 border border-[#21706c] text-[#21706c] font-bold py-2 px-4 rounded-md appearance-none shadow-sm"
               >
                 <h3 className="text-kahana-accent-purple font-semibold text-lg">Partners</h3>
                 <svg 
                   className={`w-5 h-5 transition-transform ${openSection === 'partners' ? 'rotate-180' : ''}`}
                   fill="none" 
-                  stroke="currentColor" 
+                  stroke="#21706c" 
                   viewBox="0 0 24 24"
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -194,13 +194,13 @@ export default function Footer() {
             <div>
               <button 
                 onClick={() => toggleSection('about')} 
-                className="flex justify-between items-center w-full md:hidden mb-3"
+                className="footer-mobile-dropdown flex justify-between items-center w-full md:hidden mb-3 border border-[#21706c] text-[#21706c] font-bold py-2 px-4 rounded-md appearance-none shadow-sm"
               >
                 <h3 className="text-kahana-accent-purple font-semibold text-lg">About</h3>
                 <svg 
                   className={`w-5 h-5 transition-transform ${openSection === 'about' ? 'rotate-180' : ''}`}
                   fill="none" 
-                  stroke="currentColor" 
+                  stroke="#21706c" 
                   viewBox="0 0 24 24"
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />

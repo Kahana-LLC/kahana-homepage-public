@@ -13,6 +13,7 @@ import { blogIndex } from "../data/blog-index";
 import BlogCard from "../components/BlogCard";
 import Link from "next/link";
 import { getAuthorDetails } from "../utils/authorUtils";
+import React, { useRef, useEffect } from "react";
 
 // Default placeholder for failed image loads
 const DEFAULT_PLACEHOLDER =
@@ -156,6 +157,18 @@ export default function Home({ blogPosts }) {
       },
     ],
   };
+
+  const btnRef = useRef();
+
+  useEffect(() => {
+    if (btnRef.current) {
+      btnRef.current.style.setProperty(
+        "background-color",
+        "transparent",
+        "important"
+      );
+    }
+  }, []);
 
   return (
     <>

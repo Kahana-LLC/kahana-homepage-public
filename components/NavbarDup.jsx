@@ -562,7 +562,7 @@ function NavBar() {
                 <svg
                   className="w-6 h-6"
                   fill="none"
-                  stroke="black"
+                  stroke="white"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -577,7 +577,7 @@ function NavBar() {
                 <svg
                   className="w-6 h-6"
                   fill="none"
-                  stroke="black"
+                  stroke="white"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
