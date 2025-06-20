@@ -11,6 +11,30 @@ import saideepHeadshot from "../public/assets/headshots/saideep_pajjuri.jpg";
 const blogIndex = [
   {
     title:
+      "The 16 Billion Password Leak Crisis: A Wake-Up Call for Digital Security in 2025",
+    date: "2025-06-21T00:00:00.000Z",
+    authors: ["Adam Kershner", "Rishikes Ramachandran"],
+    category: ["Security", "Cybersecurity", "Research & Trends"],
+    excerpt:
+      "The discovery of 16 billion compromised passwords in 2025 represents the largest cybersecurity breach in history, exposing critical vulnerabilities in our digital security infrastructure. This comprehensive analysis explores the infostealer epidemic, password reuse patterns, and the urgent need for enterprise-grade protection.",
+    defaultImageQuery:
+      "cybersecurity data breach password security digital protection",
+    slug: "16-billion-password-leak-crisis-2025",
+    readingTime: 12,
+  },
+  {
+    title: "Your Blog Post Title Here",
+    date: "2025-01-20T00:00:00.000Z",
+    authors: ["Adam Kershner"],
+    category: ["Category1", "Category2", "Category3"],
+    excerpt:
+      "A compelling 2-3 sentence summary of your blog post that will appear in previews and search results.",
+    defaultImageQuery: "relevant search terms for cover image",
+    slug: "your-blog-post-slug",
+    readingTime: 8,
+  },
+  {
+    title:
       "Google Chrome Data Collection and Advertising Practices: The Hidden Cost of Free Browsing",
     date: "2025-06-19T00:00:00.000Z",
     authors: ["Adam Kershner"],
