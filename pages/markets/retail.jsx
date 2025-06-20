@@ -246,7 +246,7 @@ export default function Retail({ retailBlogs }) {
               <Link href="/schedule-demo" className="inline-block bg-[#66C2BE] text-white px-8 py-3 rounded-md hover:bg-[#55B3AF] transition-colors">
                 Schedule Demo
               </Link>
-              <Link href="http://localhost:3006/sales" className="inline-block border border-[#66C2BE] text-[#66C2BE] px-8 py-3 rounded-md hover:bg-gray-50 transition-colors">
+              <Link href="/sales" className="inline-block border border-[#66C2BE] text-[#66C2BE] px-8 py-3 rounded-md hover:bg-gray-50 transition-colors">
                 Contact Sales
               </Link>
             </div>

@@ -282,7 +282,7 @@ export default function Finance({ financeBlogs }) {
                   Schedule Demo
                 </button>
               </Link>
-              <Link href="http://localhost:3006/sales">
+              <Link href="/sales">
                 <button className="border border-[#66C2BE] text-[#66C2BE] px-8 py-3 rounded-md font-semibold hover:bg-[#66C2BE]/10 transition-colors">
                   Contact Sales
                 </button>
