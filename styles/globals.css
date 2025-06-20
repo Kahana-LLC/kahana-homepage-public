@@ -37,6 +37,13 @@ a:focus {
   color: #15514f !important;
 }
 
+a.pricing-button,
+a.pricing-button:hover,
+a.pricing-button:focus {
+  color: #fff !important;
+  text-decoration: none !important;
+}
+
 /* High-contrast buttons */
 button,
 .btn,
