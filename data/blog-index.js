@@ -23,17 +23,6 @@ const blogIndex = [
     readingTime: 12,
   },
   {
-    title: "Your Blog Post Title Here",
-    date: "2025-01-20T00:00:00.000Z",
-    authors: ["Adam Kershner"],
-    category: ["Category1", "Category2", "Category3"],
-    excerpt:
-      "A compelling 2-3 sentence summary of your blog post that will appear in previews and search results.",
-    defaultImageQuery: "relevant search terms for cover image",
-    slug: "your-blog-post-slug",
-    readingTime: 8,
-  },
-  {
     title:
       "Google Chrome Data Collection and Advertising Practices: The Hidden Cost of Free Browsing",
     date: "2025-06-19T00:00:00.000Z",
@@ -46,13 +35,13 @@ const blogIndex = [
     readingTime: 15,
   },
   {
-    title:
-      "How Amazon's $10 Billion Bet Is Transforming North Carolina Into the Next AI Powerhouse",
-    date: "2025-06-18T00:00:00.000Z",
-    authors: ["Hritik Chalse", "Adam Kershner"],
-    category: ["AI", "Cloud Infrastructure", "Research & Trends"],
+    title: "Your Blog Post Title Here",
+    date: "2025-01-20T00:00:00.000Z",
+    authors: ["Adam Kershner"],
+    category: ["Category1", "Category2", "Category3"],
     excerpt:
-      "Amazon Web Services' $10 billion investment is reshaping North Carolina's economic destiny, turning the state into a national leader in AI, cloud infrastructure, and sustainable technology. This article explores the far-reaching impact on jobs, education, cybersecurity, and the region's future as an innovation hub.",
+      "A compelling 2-3 sentence summary of your blog post that will appear in previews and search results.",
+    defaultImageQuery: "relevant search terms for cover image",
     defaultImageQuery: "amazon aws north carolina ai data center",
     slug: "amazon-north-carolina-ai-powerhouse",
     readingTime: 12,
