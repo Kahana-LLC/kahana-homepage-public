@@ -11,6 +11,19 @@ import saideepHeadshot from "../public/assets/headshots/saideep_pajjuri.jpg";
 const blogIndex = [
   {
     title:
+      "Mainline Health Systems Data Breach: A Case Study in Healthcare Cybersecurity Failures",
+    date: "2025-06-25T00:00:00.000Z",
+    authors: ["Adam Kershner", "Rishikes Ramachandran"],
+    category: ["Security", "Healthcare", "Research & Trends"],
+    excerpt:
+      "The Mainline Health Systems breach affecting over 101,000 patients reveals critical vulnerabilities in rural healthcare cybersecurity. This comprehensive analysis explores the 14-month delay in breach discovery, the INC ransomware group's healthcare specialization, and the urgent need for improved detection and response capabilities in the healthcare sector.",
+    defaultImageQuery:
+      "healthcare cybersecurity data breach rural medical security",
+    slug: "mainline-health-systems-data-breach-investigation-2025",
+    readingTime: 12,
+  },
+  {
+    title:
       "The 16 Billion Password Leak Crisis: A Wake-Up Call for Digital Security in 2025",
     date: "2025-06-21T00:00:00.000Z",
     authors: ["Adam Kershner", "Rishikes Ramachandran"],
