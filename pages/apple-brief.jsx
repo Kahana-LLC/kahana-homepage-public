@@ -8,7 +8,6 @@ import {
   BriefSolution,
 } from "../components/apple-brief";
 import { DotPattern } from "../components/apple-pitch";
-import AcquisitionPackageSection from "../components/apple-brief/AcquisitionPackageSection";
 
 // Section titles for navigation
 const sections = [
@@ -58,9 +57,8 @@ const AppleBrief = () => {
         })}
       </main>
 
-      {/* Acquisition Package Section at the very bottom, outside main content */}
+      {/* Contact Section */}
       <div className="container mx-auto px-6 py-12">
-        <AcquisitionPackageSection />
         {/* Adam & Jonathan Image */}
         <div className="flex justify-center mt-8">
           <img
