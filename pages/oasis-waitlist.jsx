@@ -72,78 +72,24 @@ const supportLinks = [
 
 export default function OasisWaitlist() {
   const [hoveredStep, setHoveredStep] = useState(0);
-  const [formLoading, setFormLoading] = useState(true);
-  const [showBackupLink, setShowBackupLink] = useState(false);
-
-  // Initialize beehiiv as soon as possible
-  useEffect(() => {
-    // Check if beehiiv script is already loaded
-    if (window.beehiiv) {
-      setFormLoading(false);
-      return;
-    }
-
-    // Create and load beehiiv script manually for faster loading
-    const script = document.createElement('script');
-    script.src = 'https://subscribe-forms.beehiiv.com/embed.js';
-    script.async = true;
-    script.onload = () => {
-      setFormLoading(false);
-    };
-    document.head.appendChild(script);
-
-    // Show backup link after 5 seconds if form hasn't loaded
-    const timer = setTimeout(() => {
-      setShowBackupLink(true);
-    }, 5000);
-
-    return () => {
-      document.head.removeChild(script);
-      clearTimeout(timer);
-    };
-  }, []);
 
   const renderForm = () => (
     <div className="w-full">
-      {formLoading ? (
-        <div className="flex flex-col items-center py-12">
-          <div className="animate-spin rounded-full h-8 w-8 border-2 border-[#66C2BE] mb-4"></div>
-          {showBackupLink && (
-            <a 
-              href="https://kahana.beehiiv.com/subscribe"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[#66C2BE] hover:text-[#55b1ad] text-sm font-medium transition-colors"
-            >
-              Still loading? Click here to open the waitlist in a new window
-            </a>
-          )}
-        </div>
-      ) : (
-        <div
-          style={{
-            width: '100%',
-            maxWidth: 500,
-            margin: '0 auto',
-            background: 'transparent',
-          }}
-        >
-          <iframe
-            src="https://subscribe-forms.beehiiv.com/0b3b81cc-67fc-4139-b133-2d3a1597c01d"
-            data-test-id="beehiiv-embed"
-            frameBorder="0"
-            scrolling="no"
-            style={{
-              width: '100%',
-              height: 400,
-              border: 0,
-              borderRadius: 0,
-              backgroundColor: 'transparent',
-              display: 'block',
-            }}
-          />
-        </div>
-      )}
+      <iframe
+        src="https://tally.so/r/w8V8GA"
+        width="100%"
+        height="400"
+        frameBorder="0"
+        marginHeight="0"
+        marginWidth="0"
+        title="Oasis Waitlist"
+        style={{
+          border: 0,
+          borderRadius: 0,
+          backgroundColor: 'transparent',
+          display: 'block',
+        }}
+      />
     </div>
   );
 
@@ -153,12 +99,6 @@ export default function OasisWaitlist() {
         <title>Join Oasis Waitlist | Kahana</title>
         <meta name="description" content="Join the Oasis browser waitlist - be among the first to experience the future of privacy-focused browsing" />
         <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap" rel="stylesheet" />
-        {/* Preload beehiiv script */}
-        <link 
-          rel="preload" 
-          href="https://subscribe-forms.beehiiv.com/embed.js" 
-          as="script"
-        />
       </Head>
       <style jsx global>{`
         .oasis-waitlist-ptserif h1,
@@ -188,7 +128,7 @@ export default function OasisWaitlist() {
                     Start your next chapter with Oasis
                   </h1>
                   <p className="mt-6 text-xl text-gray-600">
-                    Meet Oasis, the agentic browser that elevates how you explore and organize the web. Instead of hunting through endless tabs, scrolling through browser history, or juggling multiple windows, simply tell Oasis what you need. It finds and arranges everything you've ever saved with perfect layouts, turning information chaos into organized productivity.
+                    Meet Oasis, the agentic browser that elevates how you explore and organize the web. Instead of hunting through endless tabs, scrolling through browser history, or juggling multiple windows, simply tell Oasis what you need. 
                   </p>
                 </div>
 
