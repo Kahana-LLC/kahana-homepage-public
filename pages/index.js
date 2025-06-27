@@ -5,6 +5,7 @@ import FeaturesShowcase from "../components/FeaturesShowcase";
 import HowItWorks from "../components/HowItWorks";
 import TestimonialsCarousel from "../components/TestimonialsCarousel";
 import ProductSection from "../components/ProductSection";
+import VideoSection from "../components/VideoSection";
 import FeaturedBlogSection from "../components/FeaturedBlogSection";
 import FadeInSection from "../components/FadeInSection";
 import SEO from "../components/SEO";
@@ -225,10 +226,19 @@ export default function Home({ blogPosts }) {
             </section>
           </FadeInSection>
 
+          <FadeInSection delay={100}>
+            <section
+              id="video-demo"
+              className="min-h-screen flex items-center justify-center p-4 md:p-8 bg-gray-50"
+            >
+              <VideoSection />
+            </section>
+          </FadeInSection>
+
           <FadeInSection delay={200}>
             <section
               id="features"
-              className="min-h-screen flex items-center justify-center p-4 md:p-8 bg-gray-50"
+              className="min-h-screen flex items-center justify-center p-4 md:p-8 bg-white"
             >
               <FeaturesShowcase />
             </section>
@@ -237,7 +247,7 @@ export default function Home({ blogPosts }) {
           <FadeInSection delay={400}>
             <section
               id="how-it-works"
-              className="min-h-screen flex items-center justify-center p-4 md:p-8 bg-white"
+              className="min-h-screen flex items-center justify-center p-4 md:p-8 bg-gray-50"
             >
               <HowItWorks />
             </section>
