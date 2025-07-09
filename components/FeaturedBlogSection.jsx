@@ -13,7 +13,7 @@ const FeaturedBlogSection = ({ posts = [] }) => {
         <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">Featured Blog Posts</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-10">
           {posts.map((post) => (
-            <Link key={post.slug} href={`/blog/${post.slug}`} className="group">
+            <Link key={post.slug} href={`/blog/${post.slug}`} className="group no-underline">
               <div className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-shadow overflow-hidden flex flex-col h-full">
                 <div className="relative h-48 w-full">
                   {post.image ? (

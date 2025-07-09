@@ -11,6 +11,55 @@ import saideepHeadshot from "../public/assets/headshots/saideep_pajjuri.jpg";
 const blogIndex = [
   {
     title:
+      "Ingram Micro Ransomware Attack: Critical Supply Chain Vulnerability Exposes IT Distribution Sector Risks",
+    date: "2025-07-08T00:00:00.000Z",
+    authors: ["Rishikes Ramachandran", "Shivangi Chamoli"],
+    category: ["Cybersecurity", "Supply Chain", "Ransomware"],
+    excerpt:
+      "The Ingram Micro SafePay ransomware attack exposes the deep vulnerabilities in IT distribution and global supply chains. Explore the latest research on VPN flaws, ransomware evolution, and the cascading risks facing critical infrastructure and business continuity.",
+    defaultImageQuery: "ransomware supply chain cybersecurity IT distribution",
+    slug: "ingram-micro-ransomware-attack-critical-supply-chain-vulnerability-2025",
+    readingTime: 10,
+  },
+  {
+    title:
+      "The Comeback Play: How Legacy Brands Use Nostalgia to Win the Future",
+    date: "2025-07-08T00:00:00.000Z",
+    authors: ["Nipun Manghi", "Adam Kershner"],
+    category: ["Brand Strategy", "Marketing", "Business"],
+    excerpt:
+      "Legacy brands are leveraging nostalgia not as a crutch, but as a launchpad for innovation. Explore how companies like Nintendo and Motorola have turned emotional equity into commercial success, and why history is the ultimate advantage in a crowded digital marketplace.",
+    defaultImageQuery: "legacy brand nostalgia marketing comeback innovation",
+    slug: "the-comeback-play-how-legacy-brands-use-nostalgia-to-win-the-future-2025",
+    readingTime: 8,
+  },
+  {
+    title: "How Enterprise Browsers Power Zero Trust Architecture",
+    date: "2025-07-08T00:00:00.000Z",
+    authors: ["Hritik Chalse", "Adam Kershner"],
+    category: ["Security", "Enterprise", "Zero Trust"],
+    excerpt:
+      "From passive gateways to real-time enforcement engines, enterprise browsers are transforming how organizations implement Zero Trust Architecture. Discover how modern browsers are becoming the new security perimeter, enabling continuous verification and adaptive policy enforcement in today's cloud-first, remote work environment.",
+    defaultImageQuery:
+      "enterprise browser zero trust architecture security enforcement",
+    slug: "how-enterprise-browsers-power-zero-trust-architecture-2025",
+    readingTime: 8,
+  },
+  {
+    title:
+      "16 Billion Passwords Leaked: How Enterprise Browsers Can Shield Your Organization",
+    date: "2025-07-08T00:00:00.000Z",
+    authors: ["Hritik Chalse", "Adam Kershner"],
+    category: ["Security", "Enterprise", "Cybersecurity"],
+    excerpt:
+      "When headlines fade and breach fatigue sets in, the real cybersecurity work begins. The largest credential leak in history—with over 16 billion exposed passwords—demands a fundamental rethinking of browser security. Discover how enterprise browsers are becoming the new frontline in protecting organizations from credential-based attacks.",
+    defaultImageQuery:
+      "enterprise browser security credential protection cybersecurity",
+    slug: "16-billion-passwords-leaked-enterprise-browsers-shield-organization-2025",
+    readingTime: 10,
+  },
+  {
+    title:
       "Mainline Health Systems Data Breach: A Case Study in Healthcare Cybersecurity Failures",
     date: "2025-06-25T00:00:00.000Z",
     authors: ["Adam Kershner", "Rishikes Ramachandran"],

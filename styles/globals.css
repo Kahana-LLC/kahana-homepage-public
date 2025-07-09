@@ -791,3 +791,8 @@ body {
 .footer-mobile-dropdown:active {
   background-color: transparent !important;
 }
+
+.no-underline,
+.no-underline * {
+  text-decoration: none !important;
+}

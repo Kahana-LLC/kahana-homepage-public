@@ -93,6 +93,13 @@ const authors = {
     linkedinProfile: "https://www.linkedin.com/in/hritik-chalse-56a0261aa/",
     avatar: "/assets/headshots/hritik_chalse.jpg",
   },
+  "Nipun Manghi": {
+    name: "Nipun Manghi",
+    role: "Product Marketing & Business Development",
+    bio: "Nipun Manghi is a dynamic professional with expertise spanning product marketing, business development, customer success, and MarTech. With a strong foundation in computer engineering and a Master of Engineering Management from Duke University, Nipun blends technical acumen with strategic storytelling to drive impactful go-to-market strategies and customer engagement. He is passionate about bridging the gap between technology and business, leveraging his experience at Fuqua I&E to deliver innovative solutions and measurable results.",
+    linkedinProfile: "https://www.linkedin.com/in/nipunmanghi/",
+    avatar: "/assets/headshots/nipun_manghi.jpg",
+  },
 };
 
 module.exports = { authors };
