@@ -13,7 +13,7 @@ const blogIndex = [
     title:
       "Chrome vs Safari vs Oasis: The Hidden Security Crisis in Browser Choice",
     date: "2025-07-10T00:00:00.000Z",
-    authors: ["Adam Kershner", "Jordan Kern"],
+    authors: ["Adam Kershner", "Khyati Bhatia"],
     category: ["Security", "Browser", "Enterprise", "Research & Trends"],
     excerpt:
       "As browser security vulnerabilities reach unprecedented levels in 2025, organizations face a critical decision: stick with vulnerable consumer browsers or adopt enterprise-grade solutions. This comprehensive analysis reveals why Chrome's zero-day exploits and Safari's tracking failures are driving a fundamental shift toward secure enterprise browsers.",

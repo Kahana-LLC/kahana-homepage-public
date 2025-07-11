@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { getAuthorDetails } from '../utils/authorUtils';
 
 const FeaturedBlogSection = ({ posts = [] }) => {
   if (!posts || posts.length === 0) {
@@ -35,8 +36,23 @@ const FeaturedBlogSection = ({ posts = [] }) => {
                     {post.title}
                   </h3>
                   <div className="flex items-center mb-2 space-x-2">
+                    {/* Author Avatars */}
+                    <div className="flex -space-x-2">
+                      {getAuthorDetails(post.authors).map((author) => (
+                        <div key={author.name} className="relative">
+                          <Image
+                            src={author.avatar}
+                            alt={author.name}
+                            width={28}
+                            height={28}
+                            className="rounded-full border-2 border-white"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                    {/* Author Names */}
                     <span className="text-sm text-gray-700">
-                      {post.authors.join(', ')}
+                      {getAuthorDetails(post.authors).map(author => author.name).join(', ')}
                     </span>
                   </div>
                   <div className="text-xs text-gray-500 mb-2">
