@@ -11,6 +11,19 @@ import saideepHeadshot from "../public/assets/headshots/saideep_pajjuri.jpg";
 const blogIndex = [
   {
     title:
+      "Chrome vs Safari vs Oasis: The Hidden Security Crisis in Browser Choice",
+    date: "2025-07-10T00:00:00.000Z",
+    authors: ["Adam Kershner", "Jordan Kern"],
+    category: ["Security", "Browser", "Enterprise", "Research & Trends"],
+    excerpt:
+      "As browser security vulnerabilities reach unprecedented levels in 2025, organizations face a critical decision: stick with vulnerable consumer browsers or adopt enterprise-grade solutions. This comprehensive analysis reveals why Chrome's zero-day exploits and Safari's tracking failures are driving a fundamental shift toward secure enterprise browsers.",
+    defaultImageQuery:
+      "browser security chrome safari enterprise vulnerability",
+    slug: "chrome-vs-safari-vs-oasis-browser-security-privacy-challenges-2025",
+    readingTime: 12,
+  },
+  {
+    title:
       "Ingram Micro Ransomware Attack: Critical Supply Chain Vulnerability Exposes IT Distribution Sector Risks",
     date: "2025-07-08T00:00:00.000Z",
     authors: ["Rishikes Ramachandran", "Shivangi Chamoli"],

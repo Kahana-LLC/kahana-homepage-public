@@ -100,6 +100,13 @@ const authors = {
     linkedinProfile: "https://www.linkedin.com/in/nipunmanghi/",
     avatar: "/assets/headshots/nipun_manghi.jpg",
   },
+  "Khyati Bhatia": {
+    name: "Khyati Bhatia",
+    role: "Strategy",
+    bio: "I believe the best strategies start with curiosity and a good cup of chai (tea). Duke Fuqua MMS ’25 | Marketing & Business Development Enthusiast | Data-Driven Strategist",
+    linkedinProfile: "https://www.linkedin.com/in/khyatibhatia10/",
+    avatar: "/assets/headshots/khyati_bhatia.jpg",
+  },
 };
 
 module.exports = { authors };

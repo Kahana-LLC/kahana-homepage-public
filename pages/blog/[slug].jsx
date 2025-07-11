@@ -7,6 +7,7 @@ import { suggestNatureImageQuery } from '../../utils/blog-helpers';
 import { blogIndex } from '../../data/blog-index';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import AuthorCard from '../../components/AuthorCard';
+import BlogBrowserComparison from '../../components/BlogBrowserComparison';
 import { FaLinkedin, FaRegCalendarAlt, FaBookOpen, FaRegClock } from 'react-icons/fa';
 import SocialShare from '../../components/SocialShare';
 const { getAuthorDetails } = require('../../utils/authorUtils');
@@ -149,6 +150,16 @@ export default function BlogPost({ post, coverImage }) {
                           ))}
                         </ul>
                       ) : null;
+                    case 'component':
+                      if (block.name === 'BlogBrowserComparison') {
+                        return (
+                          <BlogBrowserComparison
+                            key={index}
+                            {...block.props}
+                          />
+                        );
+                      }
+                      return null;
                     default:
                       return null;
                   }

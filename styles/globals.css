@@ -785,6 +785,17 @@ body {
   text-decoration: none !important;
 }
 
+.no-underline a,
+.no-underline a:visited,
+.no-underline a:hover,
+.no-underline a:active,
+.no-underline *,
+.no-underline *:visited,
+.no-underline *:hover,
+.no-underline *:active {
+  text-decoration: none !important;
+}
+
 .footer-mobile-dropdown,
 .footer-mobile-dropdown:hover,
 .footer-mobile-dropdown:focus,
