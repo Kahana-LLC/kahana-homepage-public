@@ -79,6 +79,14 @@ const authors = {
     linkedinProfile: "https://www.linkedin.com/in/fahiza-aafreen-syed/",
     avatar: "/assets/headshots/fahiza_syed.jpg",
   },
+
+  "Konika Dhull": {
+    name: "Konika Dhull",
+    role: "Data Analyst",
+    bio: "I love working with data and learning different tools. Additionally, I am a tennis player and highly value leadership, teamwork, and collaboration.",
+    linkedinProfile: "https://www.linkedin.com/in/konika-dhull/",
+    avatar: "/assets/headshots/konika_dhull.jpeg",
+  },
   "Rishikes Ramachandran": {
     name: "Rishikes Ramachandran",
     role: "Engineer",
