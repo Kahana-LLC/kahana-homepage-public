@@ -12,9 +12,6 @@ const headshots = {
   shivangi_chamoli: "/assets/headshots/shivangi_chamoli.jpg",
   saideep_pajjuri: "/assets/headshots/saideep_pajjuri.jpg",
   vinit_juneja: "/assets/headshots/vinit_juneja.jpg",
-  konika_dhull: "/assets/headshots/konika_dhull.jpeg",
-  shalvi_save: "/assets/headshots/shalvi_save.jpg",
-  fahiza_syed: "/assets/headshots/fahiza_syed.jpg",
 };
 
 // Default avatar placeholder
