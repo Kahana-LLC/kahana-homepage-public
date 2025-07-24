@@ -83,7 +83,7 @@ const authors = {
     role: "Data Analyst",
     bio: "I love working with data and learning different tools. Additionally, I am a tennis player and highly value leadership, teamwork, and collaboration.",
     linkedinProfile: "https://www.linkedin.com/in/konika-dhull/",
-    avatar: "/assets/headshots/konika_dhull.jpg",
+    avatar: "/assets/headshots/konika_dhull.jpeg",
   },
 };
 
