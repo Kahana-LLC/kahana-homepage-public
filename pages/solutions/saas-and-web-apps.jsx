@@ -330,7 +330,7 @@ export default function SaasAndWebApps() {
             Schedule a demo to see how Oasis can transform your SaaS and web app security.
           </p>
           <Link href="/schedule-demo">
-            <button className="bg-white text-kahana-primary px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors">
+            <button className="bg-[#21706c] text-white font-bold px-8 py-3 rounded-md hover:bg-[#15514f] transition-colors">
               Schedule Demo
             </button>
           </Link>

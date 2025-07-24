@@ -5,6 +5,7 @@ import BlogCard from '../../components/BlogCard';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import { searchPhotos } from '../../utils/pexels';
 import { suggestNatureImageQuery } from '../../utils/blog-helpers';
+import { getAuthorDetails } from '../../utils/authorUtils';
 
 // Default placeholder for failed image loads
 const DEFAULT_PLACEHOLDER = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%233C584A"%3E%3Cpath d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-1.96-2.36L6.5 17h11l-3.54-4.71z"%2F%3E%3C%2Fsvg%3E';
@@ -158,8 +159,8 @@ export default function BlogIndex({ posts = [] }) {
                 onClick={() => handleCategoryChange(category)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                   selectedCategory === category
-                    ? 'bg-kahana-primary text-white'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                    ? 'bg-[#21706c] text-white font-bold'
+                    : 'bg-white text-[#21706c] font-bold hover:bg-gray-100 border border-[#21706c]'
                 }`}
               >
                 {category}
@@ -173,7 +174,7 @@ export default function BlogIndex({ posts = [] }) {
           <>
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mb-12">
               {currentPosts.map((post) => (
-                <BlogCard key={post.slug} post={post} />
+                <BlogCard key={post.slug} post={{ ...post, authors: getAuthorDetails(post.authors) }} />
               ))}
             </div>
 
@@ -186,7 +187,7 @@ export default function BlogIndex({ posts = [] }) {
                   className={`px-4 py-2 rounded-md ${
                     currentPage === 1
                       ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                      : 'bg-kahana-primary text-white hover:bg-kahana-primary-dark'
+                      : 'bg-[#21706c] text-white font-bold hover:bg-[#15514f]'
                   }`}
                 >
                   Previous
@@ -199,10 +200,10 @@ export default function BlogIndex({ posts = [] }) {
                       onClick={() => typeof pageNum === 'number' && setCurrentPage(pageNum)}
                       className={`px-4 py-2 rounded-md ${
                         pageNum === currentPage
-                          ? 'bg-kahana-primary text-white'
+                          ? 'bg-[#21706c] text-white font-bold'
                           : pageNum === '...'
                           ? 'cursor-default'
-                          : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                          : 'bg-white text-[#21706c] font-bold hover:bg-gray-100 border border-[#21706c]'
                       }`}
                     >
                       {pageNum}
@@ -216,7 +217,7 @@ export default function BlogIndex({ posts = [] }) {
                   className={`px-4 py-2 rounded-md ${
                     currentPage === totalPages
                       ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                      : 'bg-kahana-primary text-white hover:bg-kahana-primary-dark'
+                      : 'bg-[#21706c] text-white font-bold hover:bg-[#15514f]'
                   }`}
                 >
                   Next

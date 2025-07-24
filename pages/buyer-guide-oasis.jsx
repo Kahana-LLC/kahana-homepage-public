@@ -148,7 +148,7 @@ const BuyerGuideOasis = () => {
             ))}
             <button
               onClick={handleDownloadPDF}
-              className="ml-4 bg-[#66C2BE] text-white px-4 py-2 rounded-lg font-medium hover:bg-[#55B3AF] whitespace-nowrap"
+              className="ml-4 bg-[#21706c] text-white font-bold px-6 py-3 rounded-md hover:bg-[#15514f] transition-colors"
             >
               Download PDF
             </button>

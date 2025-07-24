@@ -155,17 +155,17 @@ export default function ProductDemoSection() {
         {/* CTA Buttons */}
         <div className="mt-8 sm:mt-12 text-center space-y-3 sm:space-y-0 sm:space-x-4">
           <Link href="/schedule-demo">
-            <button className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg shadow-sm text-white bg-kahana-primary hover:bg-kahana-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-kahana-primary">
+            <button className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-bold rounded-md text-white bg-[#21706c] hover:bg-[#15514f] transition-colors">
               Schedule a Demo
             </button>
           </Link>
           <Link href="/products/enterprise-browser">
-            <button className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 border border-gray-300 text-base font-medium rounded-lg text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-kahana-primary">
+            <button className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 border border-[#21706c] text-base font-bold rounded-md text-[#21706c] bg-white hover:bg-gray-100 transition-colors">
               Learn More
             </button>
           </Link>
           <Link href="/download">
-            <button className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg shadow-sm text-white bg-kahana-accent-burgundy hover:bg-kahana-accent-purple focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-kahana-accent-burgundy">
+            <button className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-bold rounded-md text-white bg-[#21706c] hover:bg-[#15514f] transition-colors">
               Download Browser
             </button>
           </Link>

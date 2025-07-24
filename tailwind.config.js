@@ -82,6 +82,7 @@ module.exports = {
           "Roboto",
           "sans-serif",
         ],
+        serif: ["PT Serif", "serif"],
       },
     },
   },

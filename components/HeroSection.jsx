@@ -20,7 +20,7 @@ export default function HeroSection() {
                   <div className="mt-8 flex justify-center sm:justify-start">
                     <Link
                       href="/contact"  
-                      className="rounded-md border border-transparent bg-[#66C2BE] py-3 px-8 text-lg font-medium text-white shadow-sm hover:bg-[#55B3AF] focus:outline-none focus:ring-2 focus:ring-[#66C2BE] focus:ring-offset-2 text-center transition-colors"
+                      className="rounded-md border border-transparent bg-[#21706c] py-3 px-8 text-lg font-bold text-white shadow-sm hover:bg-[#15514f] focus:outline-none focus:ring-2 focus:ring-[#21706c] focus:ring-offset-2 text-center transition-colors"
                     >
                       Get in Touch
                     </Link>

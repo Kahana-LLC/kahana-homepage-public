@@ -1,144 +1,86 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-const { getAuthorDetails } = require('../utils/authorUtils');
+import { getAuthorDetails } from '../utils/authorUtils';
 
-// Default placeholder for failed image loads
-const DEFAULT_PLACEHOLDER = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%233C584A"%3E%3Cpath d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-1.96-2.36L6.5 17h11l-3.54-4.71z"%2F%3E%3C%2Fsvg%3E';
-
-// Utility function to truncate text
-function truncateExcerpt(text, maxLength = 120) {
-  if (!text || text.length <= maxLength) return text;
-  return text.slice(0, maxLength).trim() + '...';
-}
-
-export default function FeaturedBlogSection({ posts = [] }) {
+const FeaturedBlogSection = ({ posts = [] }) => {
   if (!posts || posts.length === 0) {
     return null;
   }
 
   return (
-    <div className="bg-white py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-kahana-primary sm:text-4xl">
-            Latest from Our Blog
-          </h2>
-          <p className="mt-2 text-lg leading-8 text-kahana-primary-light">
-            Insights and updates from the Kahana team
-          </p>
-        </div>
-        <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-12 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-          {posts.map((post) => {
-            const postAuthors = getAuthorDetails(post.authors);
-            return (
-              <article key={post.slug} className="group flex flex-col">
-                {/* Categories */}
-                <div className="flex flex-wrap gap-1.5 mb-4">
-                  {Array.isArray(post.category) ? 
-                    post.category.map((cat) => (
-                      <span
-                        key={cat}
-                        className="inline-block px-2.5 py-1 text-sm bg-gray-50 text-gray-800 rounded-full border border-gray-200"
-                      >
-                        {cat}
-                      </span>
-                    ))
-                    : typeof post.category === 'string' ?
-                      post.category.split(/(?=[A-Z]|\s&\s|&(?=[A-Z]))/g)
-                        .filter(Boolean)
-                        .map((cat, index) => (
-                          <span
-                            key={index}
-                            className="inline-block px-2.5 py-1 text-sm bg-gray-50 text-gray-800 rounded-full border border-gray-200"
-                          >
-                            {cat.trim().replace(/^&\s*/, '')}
-                          </span>
-                        ))
-                    : null
-                  }
-                </div>
-
-                {/* Image */}
-                <Link href={`/blog/${post.slug}`} className="block mb-4">
-                  <div className="relative aspect-[3/2] w-full rounded-lg overflow-hidden bg-gray-100">
+    <section className="py-16 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">Featured Blog Posts</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-10">
+          {posts.map((post) => (
+            <Link key={post.slug} href={`/blog/${post.slug}`} className="group no-underline">
+              <div className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-shadow overflow-hidden flex flex-col h-full">
+                <div className="relative h-48 w-full">
+                  {post.image ? (
                     <Image
-                      src={post.image || DEFAULT_PLACEHOLDER}
+                      src={post.image}
                       alt={post.title}
                       fill
+                      className="object-cover"
                       sizes="(max-width: 768px) 100vw, 33vw"
-                      className="object-cover transition duration-300 group-hover:scale-105"
-                      priority
                     />
-                  </div>
-                </Link>
-
-                {/* Title and Excerpt */}
-                <div className="flex-grow">
-                  <Link href={`/blog/${post.slug}`}>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-kahana-accent-water transition-colors duration-200">
-                      {post.title}
-                    </h3>
-                    <p className="text-sm text-gray-600 mb-4 line-clamp-2">
-                      {truncateExcerpt(post.excerpt)}
-                    </p>
-                  </Link>
+                  ) : (
+                    <div className="w-full h-full bg-gray-100 flex items-center justify-center">
+                      <span className="text-gray-400">No Image</span>
+                    </div>
+                  )}
                 </div>
-
-                {/* Authors and Date */}
-                <div className="flex items-start gap-2">
-                  <div className="flex -space-x-1.5">
-                    {postAuthors.map((author) => (
-                      <div key={author.name} className="relative">
-                        <div className="relative w-6 h-6 rounded-full overflow-hidden border-2 border-white bg-white">
+                <div className="p-6 flex flex-col flex-1">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-[#66C2BE] transition-colors line-clamp-2">
+                    {post.title}
+                  </h3>
+                  <div className="flex items-center mb-2 space-x-2">
+                    {/* Author Avatars */}
+                    <div className="flex -space-x-2">
+                      {getAuthorDetails(post.authors).map((author) => (
+                        <div key={author.name} className="relative">
                           <Image
                             src={author.avatar}
                             alt={author.name}
-                            fill
-                            className="object-cover"
+                            width={28}
+                            height={28}
+                            className="rounded-full border-2 border-white"
                           />
                         </div>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <div className="text-sm font-medium text-gray-900 truncate">
-                      {postAuthors.map((author, idx) => (
-                        <span key={author.name}>
-                          {author.name}{idx < postAuthors.length - 1 ? ', ' : ''}
-                        </span>
                       ))}
                     </div>
-                    <div className="flex items-center gap-1 text-sm text-gray-600">
-                      <time dateTime={post.date}>
-                        {new Date(post.date).toLocaleDateString('en-US', { 
-                          month: 'short',
-                          day: 'numeric',
-                          year: 'numeric'
-                        })}
-                      </time>
-                      <span>•</span>
-                      <span>{post.readingTime}m read</span>
-                    </div>
+                    {/* Author Names */}
+                    <span className="text-sm text-gray-700">
+                      {getAuthorDetails(post.authors).map(author => author.name).join(', ')}
+                    </span>
+                  </div>
+                  <div className="text-xs text-gray-500 mb-2">
+                    {new Date(post.date).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })} • {post.readingTime || post.readingTime === 0 ? `${post.readingTime} min read` : ''}
+                  </div>
+                  <p className="text-gray-600 text-sm mb-4 line-clamp-3">{post.excerpt}</p>
+                  <div className="flex flex-wrap gap-2 mt-auto">
+                    {post.category.map((cat) => (
+                      <span key={cat} className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium">
+                        {cat}
+                      </span>
+                    ))}
                   </div>
                 </div>
-              </article>
-            );
-          })}
+              </div>
+            </Link>
+          ))}
         </div>
-
-        <div className="mt-16 text-center">
-          <Link
-            href="/blog"
-            className="inline-flex items-center px-6 py-3 text-base font-medium rounded-md text-white bg-[#66C2BE] hover:bg-[#55B3AF] transition-all duration-200"
-          >
-            View All Posts
-            <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
+        <div className="flex justify-center">
+          <Link href="/blog">
+            <button className="bg-[#21706c] text-white font-bold px-8 py-3 rounded-md hover:bg-[#15514f] transition-colors no-underline hover:no-underline focus:no-underline" style={{ textDecoration: 'none' }}>
+              View All &rarr;
+            </button>
           </Link>
         </div>
       </div>
-    </div>
+    </section>
   );
-} 
+};
+
+export default FeaturedBlogSection; 

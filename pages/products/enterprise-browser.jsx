@@ -259,10 +259,10 @@ export default function EnterpriseBrowser() {
               Oasis
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              A secure, modern browser designed for enterprise environments, featuring enhanced security controls, collaboration tools, and a seamless user experience.
+              A secure, modern browser designed for enterprise environments, featuring enhanced security controls, collaboration tools, and a seamless user experience. Learn more about <Link href="/blog/the-rise-of-enterprise-browsers-transforming-corporate-security-in-2025" className="text-[#66C2BE] hover:text-[#55B3AF]">how enterprise browsers are transforming corporate security</Link> and why <Link href="/blog/why-you-shouldnt-use-chrome-at-work" className="text-[#66C2BE] hover:text-[#55B3AF]">traditional browsers fall short in the workplace</Link>.
             </p>
             <Link href="/schedule-demo">
-              <button className="bg-[#66C2BE] text-white px-8 py-3 rounded-md font-semibold hover:bg-[#55B3AF] transition-colors shadow-lg shadow-[#E3DFF1]/20 hover:shadow-xl hover:shadow-[#E3DFF1]/30">
+              <button className="bg-[#21706c] text-white font-bold px-8 py-3 rounded-md hover:bg-[#15514f] transition-colors shadow-lg shadow-[#E3DFF1]/20 hover:shadow-xl hover:shadow-[#E3DFF1]/30 no-underline">
                 Schedule Demo
               </button>
             </Link>
@@ -276,6 +276,9 @@ export default function EnterpriseBrowser() {
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
             Enterprise-Grade Security
           </h2>
+          <p className="text-gray-600 text-center mb-8 max-w-3xl mx-auto">
+            Discover how Oasis delivers <Link href="/blog/enterprise-vs-consumer-browsers-securing-modern-workforce-part-1" className="text-[#66C2BE] hover:text-[#55B3AF]">enterprise-grade security</Link> through built-in protections and centralized management. Our security-first approach helps organizations <Link href="/blog/data-leaks-in-2025-prevention-strategies-for-enterprises" className="text-[#66C2BE] hover:text-[#55B3AF]">prevent data leaks</Link> and maintain compliance.
+          </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {securityFeatures.map((feature, index) => (
               <div key={index} className="bg-gradient-to-r from-[#E3DFF1]/20 via-[#8CB7D0]/10 to-[#E3DFF1]/30 rounded-xl overflow-hidden border border-[#A5DAD8]/30 p-6 shadow-lg shadow-[#E3DFF1]/20 hover:shadow-xl hover:shadow-[#E3DFF1]/30 transition-all duration-300">
@@ -310,6 +313,9 @@ export default function EnterpriseBrowser() {
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
             Modern Browsing Experience
           </h2>
+          <p className="text-gray-600 text-center mb-8 max-w-3xl mx-auto">
+            Experience a new way of working with <Link href="/blog/oasis-browser-thinks-in-projects-not-tabs" className="text-[#66C2BE] hover:text-[#55B3AF]">project-based organization</Link> and enhanced productivity features. Learn how Oasis is <Link href="/blog/enterprise-vs-consumer-browsers-productivity-management-modern-workplace-part-2" className="text-[#66C2BE] hover:text-[#55B3AF]">transforming workplace productivity</Link>.
+          </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {browsingFeatures.map((feature, index) => (
               <div key={index} className="bg-gradient-to-r from-[#E3DFF1]/20 via-[#8CB7D0]/10 to-[#E3DFF1]/30 rounded-xl overflow-hidden border border-[#A5DAD8]/30 p-6 shadow-lg shadow-[#E3DFF1]/20 hover:shadow-xl hover:shadow-[#E3DFF1]/30 transition-all duration-300">
@@ -344,6 +350,9 @@ export default function EnterpriseBrowser() {
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
             Enterprise Benefits
           </h2>
+          <p className="text-gray-600 text-center mb-8 max-w-3xl mx-auto">
+            See how organizations are <Link href="/blog/byod-zero-trust-rise-enterprise-browser" className="text-[#66C2BE] hover:text-[#55B3AF]">implementing zero trust</Link> and <Link href="/blog/what-is-enterprise-browser-2025" className="text-[#66C2BE] hover:text-[#55B3AF]">transforming their security posture</Link> with Oasis.
+          </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {enterpriseBenefits.map((benefit, index) => (
               <div key={index} className="bg-gradient-to-r from-[#E3DFF1]/20 via-[#8CB7D0]/10 to-[#E3DFF1]/30 rounded-xl overflow-hidden border border-[#A5DAD8]/30 p-6 shadow-lg shadow-[#E3DFF1]/20 hover:shadow-xl hover:shadow-[#E3DFF1]/30 transition-all duration-300">
@@ -416,7 +425,7 @@ export default function EnterpriseBrowser() {
             Ready to Transform Your Enterprise Browsing?
           </h2>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Schedule a demo to see how Oasis can enhance security, improve collaboration, and streamline your workflow.
+            Schedule a demo to see how Oasis can enhance security, improve collaboration, and streamline your workflow. Learn more about <Link href="/blog/chrome-vs-firefox-vs-oasis-enterprise-2025" className="text-white hover:text-white/90 underline">how Oasis compares to other enterprise browsers</Link>.
           </p>
           <Link href="/schedule-demo">
             <button className="bg-white text-[#66C2BE] px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors">

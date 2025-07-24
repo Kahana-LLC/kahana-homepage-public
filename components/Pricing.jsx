@@ -61,78 +61,85 @@ export default function Pricing() {
         </div>
 
         <div className="mt-12 space-y-4 sm:mt-16 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:mx-auto lg:max-w-4xl xl:mx-0 xl:max-w-none xl:grid-cols-3">
-          {tiers.map((tier) => (
-            <div key={tier.name} className="rounded-lg border border-gray-200 shadow-sm">
-              <div className="p-6">
-                <h2 className="text-lg font-bold text-center leading-6 text-[#000000]">
-                  {tier.name}
-                </h2>
-                <p className="mt-8 text-center">
-                  <span className="text-4xl font-bold tracking-tight text-[#000000]">
-                    {tier.priceMonthly === 0 ? '$0.00' : `$${tier.priceMonthly}`}
-                  </span>
-                  {tier.name === 'Enterprise' ? (
-                    <span className="text-base font-medium text-gray-500">
-                      /mo/seat
+          {tiers.map((tier) => {
+            let buttonClasses = 'block w-full rounded-md py-2 text-center text-sm font-semibold text-white pricing-button no-underline';
+            if (tier.name === 'Free (forever)') {
+              buttonClasses += ' bg-gray-500 hover:bg-gray-400';
+            } else if (tier.name === 'Growth') {
+              buttonClasses += ' bg-[#038270] hover:bg-[#026a5a]';
+            } else if (tier.name === 'Enterprise') {
+              buttonClasses += ' bg-black hover:bg-gray-800';
+            }
+
+            return (
+              <div key={tier.name} className="rounded-lg border border-gray-200 shadow-sm">
+                <div className="p-6">
+                  <h2 className="text-lg font-bold text-center leading-6 text-[#000000]">
+                    {tier.name}
+                  </h2>
+                  <p className="mt-8 text-center">
+                    <span className="text-4xl font-bold tracking-tight text-[#000000]">
+                      {tier.priceMonthly === 0 ? '$0.00' : `$${tier.priceMonthly}`}
                     </span>
-                  ) : (
-                    tier.priceMonthly !== 0 && (
+                    {tier.name === 'Enterprise' ? (
                       <span className="text-base font-medium text-gray-500">
-                        /mo
+                        /mo/seat
                       </span>
-                    )
+                    ) : (
+                      tier.priceMonthly !== 0 && (
+                        <span className="text-base font-medium text-gray-500">
+                          /mo
+                        </span>
+                      )
+                    )}
+                  </p>
+                </div>
+
+                <div className="px-6">
+                  <a
+                    href={tier.href}
+                    className={buttonClasses}
+                  >
+                    Choose {tier.name}
+                  </a>
+                  {tier.name === 'Enterprise' && (
+                    <p className="mt-3 text-center">
+                      <a
+                        href={tier.additionalLinkHref}
+                        className="text-sm text-[#038270] underline"
+                      >
+                        {tier.additionalLinkText}
+                      </a>
+                    </p>
                   )}
-                </p>
-              </div>
+                </div>
 
-              <div className="px-6">
-                <a
-                  href={tier.href}
-                  className={`block w-full rounded-md py-2 text-center text-sm font-semibold
-                    ${tier.name === 'Free (forever)' ? 'bg-gray-500 text-white hover:bg-gray-400' : ''}
-                    ${tier.name === 'Growth' ? 'bg-[#038270] text-white hover:bg-[#026a5a]' : ''}
-                    ${tier.name === 'Enterprise' ? 'bg-black text-white hover:bg-gray-800' : ''}
-                  `}
-                >
-                  Choose {tier.name}
-                </a>
-                {tier.name === 'Enterprise' && (
-                  <p className="mt-3 text-center">
-                    <a
-                      href={tier.additionalLinkHref}
-                      className="text-sm text-[#038270] underline"
-                    >
-                      {tier.additionalLinkText}
-                    </a>
-                  </p>
-                )}
+                <div className="px-6 pt-6 pb-8">
+                  {tier.name === 'Growth' && (
+                    <p className="text-sm text-gray-500 font-semibold mb-2">
+                      Everything in Free, plus...
+                    </p>
+                  )}
+                  {tier.name === 'Enterprise' && (
+                    <p className="text-sm text-gray-500 font-semibold mb-2">
+                      Everything in Growth, plus...
+                    </p>
+                  )}
+                  <ul role="list" className="mt-6 space-y-4">
+                    {tier.includedFeatures.map((feature, index) => (
+                      <li key={index} className="flex space-x-3">
+                        <CheckIcon className="h-5 w-5 flex-shrink-0 text-green-500" aria-hidden="true" />
+                        <span
+                          className="text-sm text-gray-500"
+                          dangerouslySetInnerHTML={{ __html: feature }} // Used to render HTML for Beta badge
+                        />
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
-
-              <div className="px-6 pt-6 pb-8">
-                {tier.name === 'Growth' && (
-                  <p className="text-sm text-gray-500 font-semibold mb-2">
-                    Everything in Free, plus...
-                  </p>
-                )}
-                {tier.name === 'Enterprise' && (
-                  <p className="text-sm text-gray-500 font-semibold mb-2">
-                    Everything in Growth, plus...
-                  </p>
-                )}
-                <ul role="list" className="mt-6 space-y-4">
-                  {tier.includedFeatures.map((feature, index) => (
-                    <li key={index} className="flex space-x-3">
-                      <CheckIcon className="h-5 w-5 flex-shrink-0 text-green-500" aria-hidden="true" />
-                      <span
-                        className="text-sm text-gray-500"
-                        dangerouslySetInnerHTML={{ __html: feature }} // Used to render HTML for Beta badge
-                      />
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         <p className="mt-12 text-lg text-gray-500 text-center">
