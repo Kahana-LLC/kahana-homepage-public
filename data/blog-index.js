@@ -1176,12 +1176,13 @@ const blogIndex = [
     readingTime: 10,
   },
   {
-
-    title: "Brave vs Safari vs Oasis: Recent Challenges and Research (2024–2025)",
+    title:
+      "Brave vs Safari vs Oasis: Recent Challenges and Research (2025–2026)",
     date: "2025-07-23T00:00:00.000Z",
     authors: ["Konika Dhull"],
     category: ["Browsers", "Security", "Comparisons"],
-    excerpt: "A deep dive into the latest research and real-world challenges facing Brave, Safari, and Oasis browsers, with a focus on security, privacy, and enterprise adoption in 2024–2025.",
+    excerpt:
+      "A deep dive into the latest research and real-world challenges facing Brave, Safari, and Oasis browsers, with a focus on security, privacy, and enterprise adoption in 2024–2025.",
     defaultImageQuery: "browser security privacy comparison 2025",
     slug: "brave-vs-safari-vs-oasis-challenges-2025",
     readingTime: 8,

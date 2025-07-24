@@ -130,9 +130,9 @@ const BrowserComparisonTable = () => {
   const handleFilterChange = (filterType, value) => {
     setFilters(prev => ({
       ...prev,
-      [filterType]: prev[filterType].includes(value)
-        ? prev[filterType].filter(item => item !== value)
-        : [...prev[filterType], value]
+      [filterType]: (prev[filterType] || []).includes(value)
+        ? (prev[filterType] || []).filter(item => item !== value)
+        : [...(prev[filterType] || []), value]
     }));
   };
 
@@ -150,7 +150,10 @@ const BrowserComparisonTable = () => {
 
   const applyPreset = (presetKey) => {
     const preset = filterPresets[presetKey];
-    setFilters(preset.filters);
+    setFilters(prev => ({
+      ...prev,
+      ...preset.filters
+    }));
   };
 
   const removeFilter = (filterType, value) => {
@@ -159,7 +162,7 @@ const BrowserComparisonTable = () => {
     } else {
       setFilters(prev => ({
         ...prev,
-        [filterType]: prev[filterType].filter(item => item !== value)
+        [filterType]: (prev[filterType] || []).filter(item => item !== value)
       }));
     }
   };
@@ -213,7 +216,7 @@ const BrowserComparisonTable = () => {
           <label key={option} className="flex items-center space-x-2 text-sm">
             <input
               type="checkbox"
-              checked={filters[filterType].includes(option)}
+              checked={(filters[filterType] || []).includes(option)}
               onChange={() => handleFilterChange(filterType, option)}
               className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
             />
