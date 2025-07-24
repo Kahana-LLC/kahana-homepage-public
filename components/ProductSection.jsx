@@ -137,25 +137,27 @@ export default function ProductSection() {
           {/* Left side - Text content */}
           <div className="lg:col-span-5 px-4 sm:px-6 text-center md:mx-auto md:max-w-2xl lg:text-left relative">
             <div>
-              <h2 className="text-base font-semibold leading-7 text-[#66C2BE] text-center lg:text-left">Oasis Browser</h2>
+              <h2 className="text-base font-semibold leading-7 text-[#66C2BE] text-center lg:text-left">Oasis Agentic Browser</h2>
               <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl text-center lg:text-left">
-                The secure enterprise browser for modern teams
+                Your agentic browser for ergonomic work
               </p>
               <p className="mt-6 text-lg leading-8 text-gray-600 text-center lg:text-left">
-                Experience the next generation of secure browsing with Oasis Browser. Built for enterprises who demand both security and productivity.
+                The Oasis Agentic Browser integrates AI at its core, helping you find and organize anything at the sound of your voice. No more digging through tabs or search history—just tell Oasis to pull up what you need.
               </p>
               <div className="mt-8 flex gap-4 items-center justify-center lg:justify-start">
                 <Link
-                  href="/schedule-demo"
-                  className="inline-flex items-center rounded-md bg-[#66C2BE] px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-[#55B3AF] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#66C2BE]"
+                  href="/oasis-waitlist"
+                  className="nav-button download inline-flex items-center rounded-md bg-[#21706c] text-white font-bold shadow-sm hover:bg-[#15514f] px-6 py-3 text-base no-underline hover:no-underline focus:no-underline"
+                  style={{ textDecoration: 'none' }}
                 >
-                  Schedule Demo
+                  Join Waitlist
                 </Link>
                 <Link
-                  href="/products/enterprise-browser"
-                  className="inline-flex items-center rounded-md bg-white px-6 py-3 text-base font-semibold text-[#66C2BE] border border-[#66C2BE] shadow-sm hover:bg-gray-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#66C2BE]"
+                  href="/schedule-demo"
+                  className="nav-button get-in-touch bg-white text-[#21706c] font-bold rounded-md shadow-sm border border-[#21706c] hover:bg-gray-100 px-6 py-3 text-base no-underline hover:no-underline focus:no-underline"
+                  style={{ textDecoration: 'none' }}
                 >
-                  Learn more
+                  Schedule Demo
                 </Link>
               </div>
             </div>
@@ -329,7 +331,7 @@ export default function ProductSection() {
                             />
                             <button 
                               type="submit"
-                              className="p-2 text-white bg-gradient-to-r from-[#66C2BE] to-[#8CB7D0] rounded-xl hover:opacity-90 transition-opacity"
+                              className="p-2 text-white font-bold bg-[#21706c] rounded-xl hover:bg-[#15514f] transition-opacity"
                             >
                               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M12 5l7 7-7 7" />
@@ -343,7 +345,7 @@ export default function ProductSection() {
                     {/* AI Assist Button */}
                     <button
                       onClick={() => setIsChatOpen(!isChatOpen)}
-                      className="group flex items-center space-x-2 bg-gradient-to-r from-[#66C2BE] to-[#8CB7D0] text-white px-3 py-2 rounded-xl hover:opacity-90 transition-all duration-200 shadow-lg hover:shadow-xl cursor-pointer"
+                      className="group flex items-center space-x-2 bg-[#21706c] text-white font-bold px-3 py-2 rounded-xl hover:bg-[#15514f] transition-all duration-200 shadow-lg hover:shadow-xl cursor-pointer"
                     >
                       <div className="relative">
                         <div className="absolute -top-1 -right-1 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-white rounded-full"></div>
@@ -351,7 +353,7 @@ export default function ProductSection() {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                         </svg>
                       </div>
-                      <span className="text-xs sm:text-sm font-medium">AI Assist</span>
+                      <span className="text-xs sm:text-sm font-medium">Oasis</span>
                     </button>
                   </div>
                 </div>

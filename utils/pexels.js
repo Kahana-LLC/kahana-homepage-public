@@ -6,12 +6,12 @@ const client = createClient(process.env.NEXT_PUBLIC_PEXELS_API_KEY);
 
 // Cache configuration
 const CACHE_FILE = path.join(process.cwd(), ".image-cache.json");
-const CACHE_DURATION = 7 * 24 * 60 * 60 * 1000; // 7 days
+const CACHE_DURATION = 30 * 24 * 60 * 60 * 1000; // 30 days
 
 // Rate limiting configuration - more conservative
-const RATE_LIMIT_REQUESTS = 3; // Reduced from 5 to 3
+const RATE_LIMIT_REQUESTS = 2; // Reduced from 3 to 2
 const RATE_LIMIT_WINDOW = 60 * 1000; // 1 minute window
-const MIN_DELAY_BETWEEN_REQUESTS = 2000; // 2 seconds minimum between requests
+const MIN_DELAY_BETWEEN_REQUESTS = 3000; // Increased from 2s to 3s
 
 // Global request tracking
 let requestCount = 0;
@@ -155,7 +155,7 @@ async function processQueue() {
     try {
       const response = await client.photos.search({
         query,
-        per_page: options.per_page || 2, // Reduced from 3 to 2
+        per_page: options.per_page || 1, // Reduced from 2 to 1
         orientation: options.orientation || "landscape",
       });
 
@@ -177,7 +177,7 @@ async function processQueue() {
           retries: retries + 1,
         });
         // Wait longer between retries with exponential backoff
-        await delay(10000 * Math.pow(2, retries));
+        await delay(15000 * Math.pow(2, retries)); // Increased from 10s to 15s
       } else {
         // If we've retried too many times or it's a different error, resolve with empty array
         resolve([]);

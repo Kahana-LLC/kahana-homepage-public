@@ -6,7 +6,7 @@ const authors = {
   "Adam Kershner": {
     name: "Adam Kershner",
     role: "CTO",
-    bio: "Adam is the CTO of Kahana, where he leads the technical vision and development of enterprise browser solutions. With extensive experience in browser security and enterprise software, he is passionate about transforming how organizations approach secure browsing.",
+    bio: "I'm the CTO of Kahana, where I lead our mission to give you an Oasis to nurture your dreams and ideas. No data gathering. Ad-free. Private. Anonymous. Secure. While delivering industry-leading productivity features like voice-to-text, agentic commands, and AI-integrated at the core.",
     linkedinProfile: "https://www.linkedin.com/in/adam-kershner/",
     // avatar: "/images/authors/adam-kershner.jpg",
   },
@@ -37,14 +37,15 @@ const authors = {
   "Venkesh Agarwal": {
     name: "Venkesh Agarwal",
     role: "Product & Analytics",
-    bio: "Optimizing Processes, Maximizing Business Value. Duke Master of Engineering Management.",
+    bio: "Venkesh Agarwal is a Product Manager at Kahana, where he supports cross-functional initiatives that blend product development with data-driven product marketing. He focuses on campaign strategy, performance analytics, and user-centric solutions that drive engagement and growth. With a foundation in technical execution and strategic insight, Venkesh helps shape products that resonate deeply with users and scale effectively in the market.",
     linkedinProfile: "https://www.linkedin.com/in/venkesh-agarwal/",
   },
   "Vedant Gupta": {
     name: "Vedant Gupta",
     role: "Product Manager",
-    bio: "With a background in computer engineering and product management, I specialize in crafting product strategies and executing go-to-market plans. I love collaborating with people from diverse backgrounds and enjoy solving real-time problems. I've tackled a few in the past and would love to share my experiences.",
+    bio: "Vedant is a Product Manager at Kahana, where he leads product development and go-to-market strategy for secure enterprise browser solutions. Combining technical insight with customer empathy, he partners with engineering and design to deliver intuitive, scalable products that enhance enterprise security and user productivity.",
     linkedinProfile: "https://www.linkedin.com/in/vedantgupta23/",
+    avatar: "/assets/headshots/vedant_gupta.jpg",
   },
   "Shivangi Chamoli": {
     name: "Shivangi Chamoli",
@@ -74,16 +75,45 @@ const authors = {
   "Fahiza Syed": {
     name: "Fahiza Syed",
     role: "Product Manager",
-    bio: "Fahiza is an innovative product manager and STEM MBA candidate at UW-Madison, passionate about tackling complex challenges in Generative AI, APIs, product management, contact centers, pricing, and monetization. With 5 years of SaaS experience in software development and technical product management, including a proven track record at Verizon India, she has driven significant cost savings, accelerated go-to-market strategies, and enhanced user experiences through effective cross-functional collaboration with internal (engineering & UX) and external (sales, marketing) stakeholders. Specializing in Technology Strategy and Product Management, Fahiza sets ambitious, outcome-oriented goals to deliver transformative products that optimize operations and elevate customer experiences.",
+    bio: "Fahiza is an innovative product manager passionate about tackling complex challenges in Generative AI, APIs, product management, contact centers, pricing, and monetization. With 5 years of SaaS experience in software development and technical product management, including a proven track record at Verizon India, she has driven significant cost savings, accelerated go-to-market strategies, and enhanced user experiences through effective cross-functional collaboration with internal (engineering & UX) and external (sales, marketing) stakeholders. Specializing in Technology Strategy and Product Management, Fahiza sets ambitious, outcome-oriented goals to deliver transformative products that optimize operations and elevate customer experiences.",
     linkedinProfile: "https://www.linkedin.com/in/fahiza-aafreen-syed/",
     avatar: "/assets/headshots/fahiza_syed.jpg",
   },
+
   "Konika Dhull": {
     name: "Konika Dhull",
     role: "Data Analyst",
     bio: "I love working with data and learning different tools. Additionally, I am a tennis player and highly value leadership, teamwork, and collaboration.",
     linkedinProfile: "https://www.linkedin.com/in/konika-dhull/",
     avatar: "/assets/headshots/konika_dhull.jpeg",
+  },
+  "Rishikes Ramachandran": {
+    name: "Rishikes Ramachandran",
+    role: "Engineer",
+    bio: "Rishikes specializes in engineering management, cybersecurity, and AI. Prior to Kahana, Rishikes has experience as a Project Engineer at Advance Energy Solutions and as a Manufacturing Engineer at ZF Wind Power.",
+    linkedinProfile: "https://www.linkedin.com/in/rishikes-ramachandran",
+    avatar: "/assets/headshots/rishikes_ramachandran.jpg",
+  },
+  "Hritik Chalse": {
+    name: "Hritik Chalse",
+    role: "Product Manager",
+    bio: "Hritik is a Product Manager at Kahana, where he focuses on community engagement and research and development. With a Masters in Engineering Management from Duke University and an undergraduate background in engineering, he is dedicated to advancing innovative technology solutions.",
+    linkedinProfile: "https://www.linkedin.com/in/hritik-chalse-56a0261aa/",
+    avatar: "/assets/headshots/hritik_chalse.jpg",
+  },
+  "Nipun Manghi": {
+    name: "Nipun Manghi",
+    role: "Product Marketing & Business Development",
+    bio: "Nipun Manghi is a dynamic professional with expertise spanning product marketing, business development, customer success, and MarTech. With a strong foundation in computer engineering and a Master of Engineering Management from Duke University, Nipun blends technical acumen with strategic storytelling to drive impactful go-to-market strategies and customer engagement. He is passionate about bridging the gap between technology and business, leveraging his experience at Fuqua I&E to deliver innovative solutions and measurable results.",
+    linkedinProfile: "https://www.linkedin.com/in/nipunmanghi/",
+    avatar: "/assets/headshots/nipun_manghi.jpg",
+  },
+  "Khyati Bhatia": {
+    name: "Khyati Bhatia",
+    role: "Strategy",
+    bio: "I believe the best strategies start with curiosity and a good cup of chai (tea). Duke Fuqua MMS ’25 | Marketing & Business Development Enthusiast | Data-Driven Strategist",
+    linkedinProfile: "https://www.linkedin.com/in/khyatibhatia10/",
+    avatar: "/assets/headshots/khyati_bhatia.jpg",
   },
 };
 

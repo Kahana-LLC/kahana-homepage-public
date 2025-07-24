@@ -5,7 +5,7 @@ const TrackedButton = ({
   onClick,
   name,
   location,
-  className = '',
+  className = 'bg-[#21706c] text-white font-bold rounded-md px-6 py-3 hover:bg-[#15514f] transition-colors',
   ...props
 }) => {
   const handleClick = (e) => {

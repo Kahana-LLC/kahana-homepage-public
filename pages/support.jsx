@@ -46,7 +46,7 @@ export default function Support() {
                 Access our comprehensive documentation and user guides to help you get started and master Kahana's features.
               </p>
               <Link href="/docs">
-                <button className="bg-[#66C2BE] text-white px-6 py-2 rounded-md font-semibold hover:bg-[#55B3AF] transition-colors shadow-lg shadow-[#E3DFF1]/20 hover:shadow-xl hover:shadow-[#E3DFF1]/30">
+                <button className="bg-[#21706c] text-white font-bold px-6 py-3 rounded-md hover:bg-[#15514f] transition-colors">
                   View Documentation
                 </button>
               </Link>
@@ -74,7 +74,7 @@ export default function Support() {
                 Find quick answers to commonly asked questions about Kahana's enterprise browsing solutions.
               </p>
               <Link href="/faq">
-                <button className="bg-[#66C2BE] text-white px-6 py-2 rounded-md font-semibold hover:bg-[#55B3AF] transition-colors shadow-lg shadow-[#E3DFF1]/20 hover:shadow-xl hover:shadow-[#E3DFF1]/30">
+                <button className="bg-[#21706c] text-white font-bold px-6 py-3 rounded-md hover:bg-[#15514f] transition-colors">
                   View FAQs
                 </button>
               </Link>

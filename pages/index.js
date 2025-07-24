@@ -5,6 +5,7 @@ import FeaturesShowcase from "../components/FeaturesShowcase";
 import HowItWorks from "../components/HowItWorks";
 import TestimonialsCarousel from "../components/TestimonialsCarousel";
 import ProductSection from "../components/ProductSection";
+import VideoSection from "../components/VideoSection";
 import FeaturedBlogSection from "../components/FeaturedBlogSection";
 import FadeInSection from "../components/FadeInSection";
 import SEO from "../components/SEO";
@@ -13,6 +14,7 @@ import { blogIndex } from "../data/blog-index";
 import BlogCard from "../components/BlogCard";
 import Link from "next/link";
 import { getAuthorDetails } from "../utils/authorUtils";
+import React, { useRef, useEffect } from "react";
 
 // Default placeholder for failed image loads
 const DEFAULT_PLACEHOLDER =
@@ -157,10 +159,22 @@ export default function Home({ blogPosts }) {
     ],
   };
 
+  const btnRef = useRef();
+
+  useEffect(() => {
+    if (btnRef.current) {
+      btnRef.current.style.setProperty(
+        "background-color",
+        "transparent",
+        "important"
+      );
+    }
+  }, []);
+
   return (
     <>
       <SEO
-        title="Kahana Oasis - Enterprise Browser for Secure Productivity"
+        title="Kahana Oasis - Agentic Browser & Productivity Tools"
         description="Stay organized and focused with Kahana's Oasis Enterprise Browser. Features enterprise-grade security, organization tools, and collaboration features for modern teams."
         image="https://kahana.co/assets/oasis-browser-preview.png"
         url="https://kahana.co"
@@ -168,7 +182,7 @@ export default function Home({ blogPosts }) {
         schema={homepageSchema}
       />
       <Head>
-        <title>Kahana - Enterprise Browser & Productivity Tools</title>
+        <title>Kahana - Agentic Browser & Productivity</title>
         <meta
           name="description"
           content="Kahana's Oasis Enterprise Browser helps teams stay organized, focused on ideas, and increase productivity while maintaining enterprise-grade security."
@@ -212,10 +226,19 @@ export default function Home({ blogPosts }) {
             </section>
           </FadeInSection>
 
+          <FadeInSection delay={100}>
+            <section
+              id="video-demo"
+              className="min-h-screen flex items-center justify-center p-4 md:p-8 bg-gray-50"
+            >
+              <VideoSection />
+            </section>
+          </FadeInSection>
+
           <FadeInSection delay={200}>
             <section
               id="features"
-              className="min-h-screen flex items-center justify-center p-4 md:p-8 bg-gray-50"
+              className="min-h-screen flex items-center justify-center p-4 md:p-8 bg-white"
             >
               <FeaturesShowcase />
             </section>
@@ -224,7 +247,7 @@ export default function Home({ blogPosts }) {
           <FadeInSection delay={400}>
             <section
               id="how-it-works"
-              className="min-h-screen flex items-center justify-center p-4 md:p-8 bg-white"
+              className="min-h-screen flex items-center justify-center p-4 md:p-8 bg-gray-50"
             >
               <HowItWorks />
             </section>
@@ -243,9 +266,10 @@ export default function Home({ blogPosts }) {
               <div className="mt-8 text-center">
                 <Link
                   href="/blog"
-                  className="inline-flex items-center px-6 py-3 text-base font-medium rounded-md text-white bg-[#66C2BE] hover:bg-[#55B3AF] transition-all duration-200"
+                  className="bg-[#21706c] text-white font-bold rounded-md px-8 py-3 hover:bg-[#15514f] transition-colors inline-flex items-center justify-center no-underline hover:no-underline focus:no-underline"
+                  style={{ textDecoration: "none" }}
                 >
-                  View All Posts
+                  All Posts
                   <svg
                     className="ml-2 w-5 h-5"
                     fill="none"
