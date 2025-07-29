@@ -71,15 +71,16 @@ const BrowserComparisonTable = () => {
       // Enhanced search: match against all fields
       if (searchTerm) {
         const term = searchTerm.toLowerCase();
-        const matches = [
+        const searchableFields = [
           browser.name,
           browser.browserType,
-          browser.price,
+          ...browser.price, // Spread the price array
           ...Object.entries(browser.productivity).filter(([_, v]) => v).map(([k]) => k),
           ...browser.ai,
           ...browser.privacy,
           ...browser.security
-        ].some(field => field && field.toLowerCase().includes(term));
+        ];
+        const matches = searchableFields.some(field => field && typeof field === 'string' && field.toLowerCase().includes(term));
         if (!matches) return false;
       }
       
