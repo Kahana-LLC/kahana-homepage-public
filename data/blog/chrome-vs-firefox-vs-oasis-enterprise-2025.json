@@ -3,18 +3,17 @@
   "date": "2025-04-23T00:00:00.000Z",
   "authors": [
     {
-      "name": "Vinit Juneja",
-      "role": "Product Manager",
-      "bio": "Vinit is a product manager at Kahana, where he researches more about AI tools and customer insights and uses strategic thinking to drive product adoption and user engagement. With experience in creating AI automated tools, working with big tech Companies like Samsung, he is passionate about the product and obsessed with how customers think!",
-      "linkedinProfile": "https://www.linkedin.com/in/vinitjuneja",
-      "avatar": "/assets/headshots/vinit_juneja.jpg"
-    },
-    {
       "name": "Adam Kershner",
       "role": "CTO",
       "bio": "Adam is the CTO of Kahana, where he leads the technical vision and development of enterprise browser solutions. With extensive experience in browser security and enterprise software, he is passionate about transforming how organizations approach secure browsing.",
       "linkedinProfile": "https://www.linkedin.com/in/adam-kershner/",
       "avatar": "/assets/headshots/adam_kershner.jpg"
+    },
+    {
+      "name": "Jordan Kern",
+      "role": "CMO",
+      "bio": "Jordan is the CMO of Kahana, where he leads marketing and sales strategy. With expertise in SaaS and performance marketing, he focuses on driving business growth through strategic team leadership and data-driven decision making.",
+      "linkedinProfile": "https://www.linkedin.com/in/jordankern/"
     },
     {
       "name": "Saideep Pajjuri",

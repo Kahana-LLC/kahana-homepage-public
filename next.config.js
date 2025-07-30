@@ -85,6 +85,17 @@ const nextConfig = {
     ];
   },
 
+  // Add redirects
+  async redirects() {
+    return [
+      {
+        source: "/products/consumer-browser",
+        destination: "/products/free-agentic-browser",
+        permanent: true,
+      },
+    ];
+  },
+
   // Ensure docs pages are included in the build
   pageExtensions: ["jsx", "js", "tsx", "ts"],
 

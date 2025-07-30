@@ -407,12 +407,37 @@ function NavBar() {
                 <div className="dropdown-section">
                   <h3 className="text-[0.75rem] font-semibold text-gray-600 mb-4 uppercase tracking-wider">Our Products</h3>
                   <div className="flex flex-col space-y-4">
+                    <Link href="/products/free-agentic-browser" className="dropdown-link">
+                      Oasis Agentic Browser
+                    </Link>
                     <Link href="/products/enterprise-browser" className="dropdown-link">
-                      Enterprise Browser
+                      Oasis Enterprise Browser
                     </Link>
                     <Link href="/products/web-application" className="dropdown-link">
                       Web Application
                     </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="dropdown">
+              <Link href="/markets" className="nav-link">Markets</Link>
+              <div className="dropdown-overlay"></div>
+              <div className="dropdown-content">
+                <div className="dropdown-section">
+                  <h3 className="text-[0.75rem] font-semibold text-gray-600 mb-4 uppercase tracking-wider">Industry Markets</h3>
+                  <div className="flex flex-col space-y-4">
+                    <Link href="/markets/manufacturing" className="dropdown-link">Manufacturing</Link>
+                    <Link href="/markets/professional" className="dropdown-link">Professional Services</Link>
+                    <Link href="/markets/healthcare" className="dropdown-link">Healthcare</Link>
+                    <Link href="/markets/finance" className="dropdown-link">Finance</Link>
+                    <Link href="/markets/energy-utilities" className="dropdown-link">Energy & Utilities</Link>
+                    <Link href="/markets/retail" className="dropdown-link">Retail & E-commerce</Link>
+                    <Link href="/markets/government" className="dropdown-link">Government & Public Sector</Link>
+                    <Link href="/markets/technology" className="dropdown-link">Technology</Link>
+                    <Link href="/markets/education" className="dropdown-link">Education</Link>
+                    <Link href="/markets/hospitality" className="dropdown-link">Hospitality</Link>
                   </div>
                 </div>
               </div>
@@ -514,13 +539,13 @@ function NavBar() {
           <div className="flex items-center gap-4">
             <div className="nav-buttons flex">
               <Link href="/schedule-demo">
-                <button className="nav-button download inline-flex items-center rounded-md bg-white border border-[#66C2BE] shadow-sm text-[#66C2BE] hover:bg-gray-50 px-2 py-1.5 text-xs md:px-4 md:py-2 md:text-sm">
+                <button className="nav-button download inline-flex items-center rounded-md bg-[#21706c] text-white font-bold shadow-sm hover:bg-[#15514f] px-2 py-1.5 text-xs md:px-4 md:py-2 md:text-sm">
                   <span className="md:hidden">Demo</span>
                   <span className="hidden md:inline">Schedule Demo</span>
                 </button>
               </Link>
               <Link href="/contact">
-                <button className="nav-button get-in-touch">
+                <button className="nav-button get-in-touch bg-white text-[#21706c] font-bold hover:bg-gray-100">
                   <span className="md:hidden">Contact</span>
                   <span className="hidden md:inline">Contact</span>
                 </button>
@@ -537,7 +562,7 @@ function NavBar() {
                 <svg
                   className="w-6 h-6"
                   fill="none"
-                  stroke="black"
+                  stroke="white"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -552,7 +577,7 @@ function NavBar() {
                 <svg
                   className="w-6 h-6"
                   fill="none"
-                  stroke="black"
+                  stroke="white"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -574,18 +599,19 @@ function NavBar() {
             {/* Contact Buttons at Top */}
             <div className="flex flex-col gap-2 mb-4">
               <Link href="/schedule-demo" className="text-center">
-                <button className="w-full py-2 px-4 border border-[#66C2BE] text-[#66C2BE] rounded-md hover:bg-gray-50 transition-colors font-medium">
+                <button className="w-full py-2 px-4 bg-[#21706c] text-white font-bold rounded-md hover:bg-[#15514f] transition-colors">
                   Schedule Demo
                 </button>
               </Link>
               <Link href="/contact" className="text-center">
-                <button className="w-full py-2 px-4 bg-[#66C2BE] text-white rounded-md hover:bg-[#55B3AF] transition-colors font-medium">
+                <button className="w-full py-2 px-4 bg-white text-[#21706c] font-bold rounded-md hover:bg-gray-100 transition-colors">
                   Contact
                 </button>
               </Link>
             </div>
             
             {/* Product Section */}
+            <Link href="/products/free-agentic-browser" className="mobile-link">Free Agentic Browser</Link>
             <Link href="/products/enterprise-browser" className="mobile-link">Enterprise Browser</Link>
             <Link href="/products/web-application" className="mobile-link">Web Application</Link>
             
