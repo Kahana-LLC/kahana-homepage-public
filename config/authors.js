@@ -82,8 +82,8 @@ const authors = {
 
   "Konika Dhull": {
     name: "Konika Dhull",
-    role: "Data Analyst",
-    bio: "I love working with data and learning different tools. Additionally, I am a tennis player and highly value leadership, teamwork, and collaboration.",
+    role: "Product and Data Analyst",
+    bio: "I am an enthusiast about bridging Computer Science and Business together with a strong interest in product strategy, data analysis, and emerging technologies. Passionate about the intersection of tech and innovation. 2x All-American athlete driven by curiosity and impact.",
     linkedinProfile: "https://www.linkedin.com/in/konika-dhull/",
   },
   "Rishikes Ramachandran": {
