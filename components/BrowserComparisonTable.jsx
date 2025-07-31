@@ -15,6 +15,7 @@ function useIsMobile() {
 }
 
 const BrowserComparisonTable = () => {
+  const [searchTerm, setSearchTerm] = useState('');
   const [filters, setFilters] = useState({
     name: [],
     price: [],
@@ -73,12 +74,14 @@ const BrowserComparisonTable = () => {
         const term = searchTerm.toLowerCase();
         const searchableFields = [
           browser.name,
-          browser.browserType,
-          ...browser.price, // Spread the price array
-          ...Object.entries(browser.productivity).filter(([_, v]) => v).map(([k]) => k),
-          ...browser.ai,
-          ...browser.privacy,
-          ...browser.security
+          browser.type,
+          browser.whoUsesIt,
+          browser.privacy,
+          browser.security,
+          browser.aiFeatures,
+          browser.platforms,
+          browser.uniqueStrength,
+          browser.summary
         ];
         const matches = searchableFields.some(field => field && typeof field === 'string' && field.toLowerCase().includes(term));
         if (!matches) return false;
