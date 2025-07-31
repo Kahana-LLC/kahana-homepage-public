@@ -10,17 +10,6 @@ import saideepHeadshot from "../public/assets/headshots/saideep_pajjuri.jpg";
 
 const blogIndex = [
   {
-    title: "Enterprise Browser Adoption in 2025: Overcoming the Hidden Barriers to Success",
-    date: "2025-07-30T00:00:00.000Z",
-    authors: ["Konika Dhull"],
-    category: ["Enterprise", "Security", "Research & Trends"],
-    excerpt:
-      "Enterprise browser adoption challenges in 2025: Learn how organizations overcome user resistance, integration complexity, and compliance barriers. Discover enterprise browser deployment strategies, security benefits, and best practices for successful implementation. Expert insights on enterprise browser market trends and adoption solutions.",
-    defaultImageQuery: "enterprise browser adoption challenges 2025 corporate security implementation",
-    slug: "enterprise-browser-adoption-challenges-2025",
-    readingTime: 12,
-  },
-  {
     title:
       "Chrome vs Safari vs Oasis: The Hidden Security Crisis in Browser Choice",
     date: "2025-07-10T00:00:00.000Z",
