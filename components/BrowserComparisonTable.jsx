@@ -17,14 +17,13 @@ function useIsMobile() {
 const BrowserComparisonTable = () => {
   const [filters, setFilters] = useState({
     name: [],
-    price: [],
-    productivity: [],
-    ai: [],
-    privacy: [],
-    security: []
+    type: [],
+    whoUsesIt: [],
+    platforms: [],
+    aiFeatures: []
   });
 
-  const [searchTerm, setSearchTerm] = useState('');
+
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [hoveredRow, setHoveredRow] = useState(null);
   const filterRef = useRef(null);
@@ -35,19 +34,19 @@ const BrowserComparisonTable = () => {
   const filterPresets = {
     'enterprise': {
       name: 'Enterprise Only',
-      filters: { browserType: ['Enterprise'] }
+      filters: { type: ['Enterprise'] }
     },
-    'free': {
-      name: 'Free Browsers',
-      filters: { price: ['Free'] }
+    'consumer': {
+      name: 'Consumer Browsers',
+      filters: { type: ['Consumer'] }
     },
     'ai-powered': {
       name: 'AI-Powered',
-      filters: { productivity: ['AI'] }
+      filters: { aiFeatures: ['Anthropic/Deepgram AI integrations', 'Google AI (search, autofill, smart suggestions)', 'Microsoft Copilot, Bing AI', 'Aria AI assistant'] }
     },
     'privacy-focused': {
       name: 'Privacy-Focused',
-      filters: { privacy: ['No tracking', 'Zero-trust architecture', 'No data collection'] }
+      filters: { whoUsesIt: ['Privacy-conscious users, open-source advocates', 'Privacy-first, ad-block fans'] }
     }
   };
 
@@ -65,67 +64,38 @@ const BrowserComparisonTable = () => {
     };
   }, []);
 
-  // Apply filters and search to data
+  // Apply filters to data
   const filteredData = useMemo(() => {
     return Object.values(browserData).filter(browser => {
-      // Enhanced search: match against all fields
-      if (searchTerm) {
-        const term = searchTerm.toLowerCase();
-        const matches = [
-          browser.name,
-          browser.browserType,
-          browser.price,
-          ...Object.entries(browser.productivity).filter(([_, v]) => v).map(([k]) => k),
-          ...browser.ai,
-          ...browser.privacy,
-          ...browser.security
-        ].some(field => field && field.toLowerCase().includes(term));
-        if (!matches) return false;
-      }
       
       // Name filter
       if ((filters.name ?? []).length > 0 && !(filters.name ?? []).includes(browser.name)) {
         return false;
       }
       
-      // Price filter
-      if ((filters.price ?? []).length > 0) {
-        const hasPrice = (filters.price ?? []).some(price => browser.price.includes(price));
-        if (!hasPrice) return false;
+      // Type filter
+      if ((filters.type ?? []).length > 0 && !(filters.type ?? []).includes(browser.type)) {
+        return false;
       }
       
-      // Productivity filter
-      if ((filters.productivity ?? []).length > 0) {
-        const hasProductivity = (filters.productivity ?? []).some(feature => {
-          if (feature === 'Tabs groups') return browser.productivity.tabsGroups;
-          if (feature === 'Extensions') return browser.productivity.extensions;
-          if (feature === 'AI') return browser.productivity.ai;
-          return false;
-        });
-        if (!hasProductivity) return false;
+      // Who Uses It filter
+      if ((filters.whoUsesIt ?? []).length > 0 && !(filters.whoUsesIt ?? []).includes(browser.whoUsesIt)) {
+        return false;
       }
       
-      // AI filter
-      if ((filters.ai ?? []).length > 0) {
-        const hasAI = (filters.ai ?? []).some(ai => browser.ai.includes(ai));
-        if (!hasAI) return false;
+      // Platforms filter
+      if ((filters.platforms ?? []).length > 0 && !(filters.platforms ?? []).includes(browser.platforms)) {
+        return false;
       }
       
-      // Privacy filter
-      if ((filters.privacy ?? []).length > 0) {
-        const hasPrivacy = (filters.privacy ?? []).some(privacy => browser.privacy.includes(privacy));
-        if (!hasPrivacy) return false;
-      }
-      
-      // Security filter
-      if ((filters.security ?? []).length > 0) {
-        const hasSecurity = (filters.security ?? []).some(security => browser.security.includes(security));
-        if (!hasSecurity) return false;
+      // AI Features filter
+      if ((filters.aiFeatures ?? []).length > 0 && !(filters.aiFeatures ?? []).includes(browser.aiFeatures)) {
+        return false;
       }
       
       return true;
     });
-  }, [filters, searchTerm]);
+  }, [filters]);
 
   const handleFilterChange = (filterType, value) => {
     setFilters(prev => ({
@@ -165,17 +135,19 @@ const BrowserComparisonTable = () => {
   };
 
   const exportToCSV = () => {
-    const headers = ['Name', 'Type', 'Price', 'Productivity', 'AI Providers', 'Privacy Features', 'Security Features'];
+    const headers = ['Browser', 'Type', 'Who Uses It', 'Privacy', 'Security', 'AI Features', 'Platforms', 'Unique Strength', 'Summary/Verdict'];
     const csvContent = [
       headers.join(','),
       ...filteredData.map(browser => [
         browser.name,
-        browser.browserType,
-        browser.price.join(';'),
-        Object.entries(browser.productivity).filter(([_, value]) => value).map(([key, _]) => key).join(';'),
-        browser.ai.join(';'),
-        browser.privacy.join(';'),
-        browser.security.join(';')
+        browser.type,
+        browser.whoUsesIt,
+        browser.privacy,
+        browser.security,
+        browser.aiFeatures,
+        browser.platforms,
+        browser.uniqueStrength,
+        browser.summary
       ].join(','))
     ].join('\n');
 
@@ -189,7 +161,7 @@ const BrowserComparisonTable = () => {
   };
 
   const getActiveFilterCount = () => {
-    return Object.values(filters).reduce((total, filterArray) => total + filterArray.length, 0) + (searchTerm ? 1 : 0);
+    return Object.values(filters).reduce((total, filterArray) => total + filterArray.length, 0);
   };
 
   const getActiveFilters = () => {
@@ -199,9 +171,6 @@ const BrowserComparisonTable = () => {
         activeFilters.push({ type, value });
       });
     });
-    if (searchTerm) {
-      activeFilters.push({ type: 'search', value: searchTerm });
-    }
     return activeFilters;
   };
 
@@ -226,7 +195,7 @@ const BrowserComparisonTable = () => {
 
   const renderProductivityCell = (productivity) => (
     <div className="space-y-1">
-      {productivity.tabsGroups && <span className="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Tabs groups</span>}
+      {productivity.tabsGroups && <span className="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Tab groups</span>}
       {productivity.extensions && <span className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Extensions</span>}
       {productivity.ai && <span className="inline-block bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">AI</span>}
     </div>
@@ -263,28 +232,43 @@ const BrowserComparisonTable = () => {
       {filteredData.map((browser) => (
         <div key={browser.name} className="bg-white rounded-lg shadow border border-gray-200 p-4">
           <div className="text-lg font-bold mb-2">{browser.name}</div>
-          <div className="mb-2">{renderPriceCell(browser.price)}</div>
           <div className="mb-2">
-            <div className="text-xs font-semibold text-gray-500 mb-1">Productivity</div>
-            {renderProductivityCell(browser.productivity)}
+            <div className="text-xs font-semibold text-gray-500 mb-1">Type</div>
+            <div>{browser.type}</div>
           </div>
           <div className="mb-2">
-            <div className="text-xs font-semibold text-gray-500 mb-1">AI Providers</div>
-            {browser.ai.length > 0 ? renderArrayCell(browser.ai) : <span className="text-gray-400">None</span>}
+            <div className="text-xs font-semibold text-gray-500 mb-1">Who Uses It</div>
+            <div>{browser.whoUsesIt}</div>
           </div>
           <div className="mb-2">
             <div className="text-xs font-semibold text-gray-500 mb-1">Privacy</div>
-            {renderArrayCell(browser.privacy)}
+            <div>{browser.privacy}</div>
+          </div>
+          <div className="mb-2">
+            <div className="text-xs font-semibold text-gray-500 mb-1">Security</div>
+            <div>{browser.security}</div>
+          </div>
+          <div className="mb-2">
+            <div className="text-xs font-semibold text-gray-500 mb-1">AI Features</div>
+            <div>{browser.aiFeatures}</div>
+          </div>
+          <div className="mb-2">
+            <div className="text-xs font-semibold text-gray-500 mb-1">Platforms</div>
+            <div>{browser.platforms}</div>
+          </div>
+          <div className="mb-2">
+            <div className="text-xs font-semibold text-gray-500 mb-1">Unique Strength</div>
+            <div>{browser.uniqueStrength}</div>
           </div>
           <div>
-            <div className="text-xs font-semibold text-gray-500 mb-1">Security</div>
-            {renderArrayCell(browser.security)}
+            <div className="text-xs font-semibold text-gray-500 mb-1">Summary/Verdict</div>
+            <div>{browser.summary}</div>
           </div>
         </div>
       ))}
       {filteredData.length === 0 && (
         <div className="text-center py-8 text-gray-500">
-          {searchTerm ? `No browsers found matching "${searchTerm}"` : 'No browsers match the current filters'}
+          No browsers match the current filters
         </div>
       )}
     </div>
@@ -292,7 +276,7 @@ const BrowserComparisonTable = () => {
 
   return (
     <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-      {/* Header with Search and Actions */}
+      {/* Header with Actions */}
       <div className="bg-gray-50 px-6 py-4 border-b">
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-xl font-semibold text-gray-900">Browser Comparison</h2>
@@ -348,12 +332,11 @@ const BrowserComparisonTable = () => {
                       </button>
                     </div>
                     
-                    {renderFilterSection('Name', 'name', filterOptions.name)}
-                    {renderFilterSection('Price', 'price', filterOptions.price)}
-                    {renderFilterSection('Productivity', 'productivity', filterOptions.productivity)}
-                    {renderFilterSection('AI Providers', 'ai', filterOptions.ai)}
-                    {renderFilterSection('Privacy Features', 'privacy', filterOptions.privacy.slice(0, 6))}
-                    {renderFilterSection('Security Features', 'security', filterOptions.security.slice(0, 6))}
+                    {renderFilterSection('Browser', 'name', filterOptions.name)}
+                    {renderFilterSection('Type', 'type', filterOptions.type)}
+                    {renderFilterSection('Who Uses It', 'whoUsesIt', filterOptions.whoUsesIt.slice(0, 6))}
+                    {renderFilterSection('Platforms', 'platforms', filterOptions.platforms)}
+                    {renderFilterSection('AI Features', 'aiFeatures', filterOptions.aiFeatures.slice(0, 6))}
                   </div>
                 </div>
               )}
@@ -361,19 +344,7 @@ const BrowserComparisonTable = () => {
           </div>
         </div>
 
-        {/* Search Bar */}
-        <div className="relative">
-          <input
-            type="text"
-            placeholder="Search browsers..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full px-4 py-2 pl-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-          />
-          <svg className="absolute left-3 top-2.5 w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-          </svg>
-        </div>
+
 
         {/* Filter Presets */}
         <div className="flex flex-wrap gap-2 mt-3">
@@ -396,7 +367,7 @@ const BrowserComparisonTable = () => {
                 key={index}
                 className="inline-flex items-center px-2 py-1 text-xs font-medium bg-blue-100 text-blue-800 rounded-full"
               >
-                {filter.type === 'search' ? `Search: "${filter.value}"` : filter.value}
+                {filter.value}
                 <button
                   onClick={() => removeFilter(filter.type, filter.value)}
                   className="ml-1 text-blue-600 hover:text-blue-800"
@@ -420,12 +391,15 @@ const BrowserComparisonTable = () => {
           <table className="w-full">
             <thead className="bg-gray-50 sticky top-0 z-10">
               <tr>
-                <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider bg-gray-50 border-r border-gray-200 sticky left-0 z-20 min-w-[140px] whitespace-normal break-words">Name</th>
-                <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider bg-white border-r border-gray-200 min-w-[120px] whitespace-normal break-words">Price</th>
-                <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider bg-gray-50 border-r border-gray-200 min-w-[140px] whitespace-normal break-words">Productivity</th>
-                <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider bg-white border-r border-gray-200 min-w-[140px] whitespace-normal break-words">AI Providers</th>
-                <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider bg-gray-50 border-r border-gray-200 min-w-[140px] whitespace-normal break-words">Privacy</th>
-                <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider bg-white min-w-[140px] whitespace-normal break-words">Security</th>
+                <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider bg-gray-50 border-r border-gray-200 sticky left-0 z-20 min-w-[140px] whitespace-normal break-words">Browser</th>
+                <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider bg-white border-r border-gray-200 min-w-[120px] whitespace-normal break-words">Type</th>
+                <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider bg-gray-50 border-r border-gray-200 min-w-[140px] whitespace-normal break-words">Who Uses It</th>
+                <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider bg-white border-r border-gray-200 min-w-[140px] whitespace-normal break-words">Privacy</th>
+                <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider bg-gray-50 border-r border-gray-200 min-w-[140px] whitespace-normal break-words">Security</th>
+                <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider bg-white border-r border-gray-200 min-w-[140px] whitespace-normal break-words">AI Features</th>
+                <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider bg-gray-50 border-r border-gray-200 min-w-[140px] whitespace-normal break-words">Platforms</th>
+                <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider bg-white border-r border-gray-200 min-w-[140px] whitespace-normal break-words">Unique Strength</th>
+                <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider bg-gray-50 min-w-[140px] whitespace-normal break-words">Summary/Verdict</th>
               </tr>
             </thead>
             <tbody className="bg-white divide-y divide-gray-200">
@@ -437,17 +411,20 @@ const BrowserComparisonTable = () => {
                   onMouseLeave={() => setHoveredRow(null)}
                 >
                   <td className="px-2 sm:px-4 py-2 sm:py-4 whitespace-normal break-words align-top bg-gray-50 border-r border-gray-200 sticky left-0 z-20 min-w-[140px]">{browser.name}</td>
-                  <td className="px-2 sm:px-4 py-2 sm:py-4 whitespace-normal break-words align-top bg-white border-r border-gray-200 min-w-[120px]">{renderPriceCell(browser.price)}</td>
-                  <td className="px-2 sm:px-4 py-2 sm:py-4 whitespace-normal break-words align-top bg-white border-r border-gray-200 min-w-[140px]">{renderProductivityCell(browser.productivity)}</td>
-                  <td className="px-2 sm:px-4 py-2 sm:py-4 whitespace-normal break-words align-top bg-gray-50 border-r border-gray-200 min-w-[140px]">{browser.ai.length > 0 ? renderArrayCell(browser.ai) : <span className="text-gray-400">None</span>}</td>
-                  <td className="px-2 sm:px-4 py-2 sm:py-4 whitespace-normal break-words align-top bg-white border-r border-gray-200 min-w-[140px]">{renderArrayCell(browser.privacy)}</td>
-                  <td className="px-2 sm:px-4 py-2 sm:py-4 whitespace-normal break-words align-top bg-gray-50 min-w-[140px]">{renderArrayCell(browser.security)}</td>
+                  <td className="px-2 sm:px-4 py-2 sm:py-4 whitespace-normal break-words align-top bg-white border-r border-gray-200 min-w-[120px]">{browser.type}</td>
+                  <td className="px-2 sm:px-4 py-2 sm:py-4 whitespace-normal break-words align-top bg-gray-50 border-r border-gray-200 min-w-[140px]">{browser.whoUsesIt}</td>
+                  <td className="px-2 sm:px-4 py-2 sm:py-4 whitespace-normal break-words align-top bg-white border-r border-gray-200 min-w-[140px]">{browser.privacy}</td>
+                  <td className="px-2 sm:px-4 py-2 sm:py-4 whitespace-normal break-words align-top bg-gray-50 border-r border-gray-200 min-w-[140px]">{browser.security}</td>
+                  <td className="px-2 sm:px-4 py-2 sm:py-4 whitespace-normal break-words align-top bg-white border-r border-gray-200 min-w-[140px]">{browser.aiFeatures}</td>
+                  <td className="px-2 sm:px-4 py-2 sm:py-4 whitespace-normal break-words align-top bg-gray-50 border-r border-gray-200 min-w-[140px]">{browser.platforms}</td>
+                  <td className="px-2 sm:px-4 py-2 sm:py-4 whitespace-normal break-words align-top bg-white border-r border-gray-200 min-w-[140px]">{browser.uniqueStrength}</td>
+                  <td className="px-2 sm:px-4 py-2 sm:py-4 whitespace-normal break-words align-top bg-gray-50 min-w-[140px]">{browser.summary}</td>
                 </tr>
               ))}
               {filteredData.length === 0 && (
                 <tr>
-                  <td colSpan={6} className="text-center py-8 text-gray-500">
-                    {searchTerm ? `No browsers found matching "${searchTerm}"` : 'No browsers match the current filters'}
+                  <td colSpan={9} className="text-center py-8 text-gray-500">
+                    No browsers match the current filters
                   </td>
                 </tr>
               )}
