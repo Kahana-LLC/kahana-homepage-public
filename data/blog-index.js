@@ -1188,7 +1188,8 @@ const blogIndex = [
   },
   {
 
-    title: "Brave vs Safari vs Oasis: Recent Challenges and Research (2024–2025)",
+    title:
+      "Brave vs Safari vs Oasis: Recent Challenges and Research (2025–2026)",
     date: "2025-07-23T00:00:00.000Z",
     authors: ["Konika Dhull"],
     category: ["Browsers", "Security", "Comparisons"],
@@ -1197,6 +1198,7 @@ const blogIndex = [
     slug: "brave-vs-safari-vs-oasis-challenges-2025",
     readingTime: 8,
   },
+
   {
     title:
       "Securing Healthcare's Frontline: How Oasis Browser by Kahana Protects Against Browser-Based Threats",

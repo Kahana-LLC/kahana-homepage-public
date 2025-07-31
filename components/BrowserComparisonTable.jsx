@@ -67,6 +67,23 @@ const BrowserComparisonTable = () => {
   // Apply filters to data
   const filteredData = useMemo(() => {
     return Object.values(browserData).filter(browser => {
+
+      // Enhanced search: match against all fields
+      if (searchTerm) {
+        const term = searchTerm.toLowerCase();
+        const searchableFields = [
+          browser.name,
+          browser.browserType,
+          ...browser.price, // Spread the price array
+          ...Object.entries(browser.productivity).filter(([_, v]) => v).map(([k]) => k),
+          ...browser.ai,
+          ...browser.privacy,
+          ...browser.security
+        ];
+        const matches = searchableFields.some(field => field && typeof field === 'string' && field.toLowerCase().includes(term));
+        if (!matches) return false;
+      }
+
       
       // Name filter
       if ((filters.name ?? []).length > 0 && !(filters.name ?? []).includes(browser.name)) {
@@ -100,9 +117,9 @@ const BrowserComparisonTable = () => {
   const handleFilterChange = (filterType, value) => {
     setFilters(prev => ({
       ...prev,
-      [filterType]: prev[filterType].includes(value)
-        ? prev[filterType].filter(item => item !== value)
-        : [...prev[filterType], value]
+      [filterType]: (prev[filterType] || []).includes(value)
+        ? (prev[filterType] || []).filter(item => item !== value)
+        : [...(prev[filterType] || []), value]
     }));
   };
 
@@ -120,7 +137,10 @@ const BrowserComparisonTable = () => {
 
   const applyPreset = (presetKey) => {
     const preset = filterPresets[presetKey];
-    setFilters(preset.filters);
+    setFilters(prev => ({
+      ...prev,
+      ...preset.filters
+    }));
   };
 
   const removeFilter = (filterType, value) => {
@@ -129,7 +149,7 @@ const BrowserComparisonTable = () => {
     } else {
       setFilters(prev => ({
         ...prev,
-        [filterType]: prev[filterType].filter(item => item !== value)
+        [filterType]: (prev[filterType] || []).filter(item => item !== value)
       }));
     }
   };
@@ -182,7 +202,7 @@ const BrowserComparisonTable = () => {
           <label key={option} className="flex items-center space-x-2 text-sm">
             <input
               type="checkbox"
-              checked={filters[filterType].includes(option)}
+              checked={(filters[filterType] || []).includes(option)}
               onChange={() => handleFilterChange(filterType, option)}
               className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
             />
