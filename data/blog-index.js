@@ -10,15 +10,15 @@ import saideepHeadshot from "../public/assets/headshots/saideep_pajjuri.jpg";
 
 const blogIndex = [
   {
-    title: "AI Browser vs. Traditional Browser: What's the Difference?",
+    title: "AI Browser Wars 2025: Comet, Genspark, and Dia Battle for the Future of Web Browsing",
     date: "2025-08-05T00:00:00.000Z",
     authors: ["Konika Dhull"],
-    category: ["AI", "Browser", "Technology", "Research & Trends"],
+    category: ["AI", "Technology", "Product Analysis", "Research & Trends"],
     excerpt:
-      "Discover the key differences between AI browsers and traditional browsers in 2025. Learn how AI-powered browsers are revolutionizing web browsing with automation, conversational interfaces, and intelligent assistance while understanding the trade-offs in privacy, security, and content monetization.",
-    defaultImageQuery: "AI browser vs traditional browser comparison technology 2025",
-    slug: "ai-browser-vs-traditional-browser-difference-2025",
-    readingTime: 15,
+      "The AI browser revolution is here, but not all contenders are created equal. This comprehensive analysis of Comet, Genspark, and Dia reveals the promise and pitfalls of AI-first browsing, from automation breakthroughs to critical security vulnerabilities that could reshape how we interact with the web.",
+    defaultImageQuery: "AI browser comparison artificial intelligence web browsing technology",
+    slug: "ai-browser-wars-2025-comet-genspark-dia-comparison",
+    readingTime: 12,
   },
   {
     title: "Enterprise Browser Adoption in 2025: Overcoming the Hidden Barriers to Success",
