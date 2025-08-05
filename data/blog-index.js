@@ -10,6 +10,17 @@ import saideepHeadshot from "../public/assets/headshots/saideep_pajjuri.jpg";
 
 const blogIndex = [
   {
+    title: "Enterprise Browser Management 2025: Complete Guide to Productivity & Security Challenges",
+    date: "2025-08-05T00:00:00.000Z",
+    authors: ["Konika Dhull"],
+    category: ["Enterprise", "Productivity", "Security", "Research & Trends"],
+    excerpt:
+      "Discover the top enterprise browser management challenges in 2025: productivity drains, security risks, and compliance issues. Learn how 78% of organizations struggle with browser-based workflows and get expert solutions for optimizing team productivity and security.",
+    defaultImageQuery: "enterprise browser management productivity security challenges 2025",
+    slug: "enterprise-browser-productivity-challenges-2025",
+    readingTime: 12,
+  },
+  {
     title: "Enterprise Browser Adoption in 2025: Overcoming the Hidden Barriers to Success",
     date: "2025-07-30T00:00:00.000Z",
     authors: ["Konika Dhull"],
