@@ -10,15 +10,15 @@ import saideepHeadshot from "../public/assets/headshots/saideep_pajjuri.jpg";
 
 const blogIndex = [
   {
-    title: "Enterprise Browser Management 2025: Complete Guide to Productivity & Security Challenges",
+    title: "AI Browser vs. Traditional Browser: What's the Difference?",
     date: "2025-08-05T00:00:00.000Z",
     authors: ["Konika Dhull"],
-    category: ["Enterprise", "Productivity", "Security", "Research & Trends"],
+    category: ["AI", "Browser", "Technology", "Research & Trends"],
     excerpt:
-      "Discover the top enterprise browser management challenges in 2025: productivity drains, security risks, and compliance issues. Learn how 78% of organizations struggle with browser-based workflows and get expert solutions for optimizing team productivity and security.",
-    defaultImageQuery: "enterprise browser management productivity security challenges 2025",
-    slug: "enterprise-browser-productivity-challenges-2025",
-    readingTime: 12,
+      "Discover the key differences between AI browsers and traditional browsers in 2025. Learn how AI-powered browsers are revolutionizing web browsing with automation, conversational interfaces, and intelligent assistance while understanding the trade-offs in privacy, security, and content monetization.",
+    defaultImageQuery: "AI browser vs traditional browser comparison technology 2025",
+    slug: "ai-browser-vs-traditional-browser-difference-2025",
+    readingTime: 15,
   },
   {
     title: "Enterprise Browser Adoption in 2025: Overcoming the Hidden Barriers to Success",
@@ -1199,8 +1199,7 @@ const blogIndex = [
   },
   {
 
-    title:
-      "Brave vs Safari vs Oasis: Recent Challenges and Research (2025–2026)",
+    title: "Brave vs Safari vs Oasis: Recent Challenges and Research (2024–2025)",
     date: "2025-07-23T00:00:00.000Z",
     authors: ["Konika Dhull"],
     category: ["Browsers", "Security", "Comparisons"],
@@ -1209,7 +1208,6 @@ const blogIndex = [
     slug: "brave-vs-safari-vs-oasis-challenges-2025",
     readingTime: 8,
   },
-
   {
     title:
       "Securing Healthcare's Frontline: How Oasis Browser by Kahana Protects Against Browser-Based Threats",
