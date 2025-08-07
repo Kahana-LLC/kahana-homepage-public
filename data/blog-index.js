@@ -10,6 +10,17 @@ import saideepHeadshot from "../public/assets/headshots/saideep_pajjuri.jpg";
 
 const blogIndex = [
   {
+    title: "AI Browser Privacy Guide 2025: Brave vs Firefox vs Sigma - Complete Comparison",
+    date: "2025-08-07T00:00:00.000Z",
+    authors: ["Konika Dhull"],
+    category: ["AI", "Privacy", "Technology", "Security", "Research & Trends"],
+    excerpt:
+      "Explore the critical privacy challenges facing AI-powered browsers in 2025. From Brave's privacy promises to Firefox's on-device AI and Sigma's strict no-tracking policy, discover how AI browsers are reshaping the balance between convenience and data protection.",
+    defaultImageQuery: "AI browser privacy security data protection artificial intelligence web browsing 2025",
+    slug: "ai-browsers-privacy-dilemma-2025",
+    readingTime: 15,
+  },
+  {
     title: "AI Browser Fragmentation 2025: Mac vs Windows Cross-Platform Crisis & Security Challenges",
     date: "2025-08-06T00:00:00.000Z",
     authors: ["Konika Dhull"],
