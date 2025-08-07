@@ -10,6 +10,17 @@ import saideepHeadshot from "../public/assets/headshots/saideep_pajjuri.jpg";
 
 const blogIndex = [
   {
+    title: "AI Browser Fragmentation 2025: Mac vs Windows Cross-Platform Crisis & Security Challenges",
+    date: "2025-08-06T00:00:00.000Z",
+    authors: ["Konika Dhull"],
+    category: ["AI", "Technology", "Product Analysis", "Security", "Cross-Platform", "Browser Comparison", "Enterprise Security"],
+    excerpt:
+      "AI Browser Fragmentation 2025: Expert analysis of Mac vs Windows AI browser disparities, cross-platform security risks, and enterprise challenges. Discover why AI browsers favor macOS and how Windows users are left behind in the AI revolution.",
+    defaultImageQuery: "AI browser fragmentation Mac Windows cross-platform security challenges 2025 artificial intelligence web browsing technology comparison",
+    slug: "ai-browser-fragmentation-cross-platform-challenges-2025",
+    readingTime: 15,
+  },
+  {
     title: "AI Browser Wars 2025: Comet, Genspark, and Dia Battle for the Future of Web Browsing",
     date: "2025-08-05T00:00:00.000Z",
     authors: ["Konika Dhull"],
