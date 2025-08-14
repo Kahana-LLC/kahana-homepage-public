@@ -159,32 +159,63 @@ const industryBenefits = [
 ];
 
 export async function getServerSideProps() {
-  const { getRandomPhoto, getOptimizedPhotoUrl } = await import('../../utils/pexels');
+  try {
+    const { getRandomPhoto, getOptimizedPhotoUrl, getPlaceholderImageUrl } = await import('../../utils/pexels');
 
-  const healthcareBlogs = blogIndex
-    .filter(post => post.category.some(cat => 
-      cat.toLowerCase() === 'healthcare' || 
+    const healthcareBlogs = blogIndex
+      .filter(post => post.category.some(cat => 
+        cat.toLowerCase() === 'healthcare' || 
       cat.toLowerCase() === 'security'
-    ))
-    .sort((a, b) => new Date(b.date) - new Date(a.date))
-    .slice(0, 3);
+      ))
+      .sort((a, b) => new Date(b.date) - new Date(a.date))
+      .slice(0, 3);
 
-  // Fetch images on the server
-  const postsWithImages = await Promise.all(
-    healthcareBlogs.map(async (post) => {
-      const photo = await getRandomPhoto(post.defaultImageQuery);
-      return {
+    // Fetch images on the server with error handling
+    const postsWithImages = await Promise.all(
+      healthcareBlogs.map(async (post) => {
+        try {
+          const photo = await getRandomPhoto(post.defaultImageQuery);
+          return {
+            ...post,
+            image: getOptimizedPhotoUrl(photo) || getPlaceholderImageUrl(post.defaultImageQuery),
+          };
+        } catch (error) {
+          console.error(`Error fetching image for post "${post.title}":`, error);
+          return {
+            ...post,
+            image: getPlaceholderImageUrl(post.defaultImageQuery),
+          };
+        }
+      })
+    );
+
+    return {
+      props: {
+        healthcareBlogs: postsWithImages,
+      },
+    };
+  } catch (error) {
+    console.error('Error in getServerSideProps for healthcare page:', error);
+    
+    // Return fallback data if everything fails
+    const fallbackBlogs = blogIndex
+      .filter(post => post.category.some(cat => 
+        cat.toLowerCase() === 'healthcare' || 
+      cat.toLowerCase() === 'security'
+      ))
+      .sort((a, b) => new Date(b.date) - new Date(a.date))
+      .slice(0, 3)
+      .map(post => ({
         ...post,
-        image: getOptimizedPhotoUrl(photo),
-      };
-    })
-  );
+        image: getPlaceholderImageUrl ? getPlaceholderImageUrl(post.defaultImageQuery) : null,
+      }));
 
-  return {
-    props: {
-      healthcareBlogs: postsWithImages,
-    },
-  };
+    return {
+      props: {
+        healthcareBlogs: fallbackBlogs,
+      },
+    };
+  }
 }
 
 export default function Healthcare({ healthcareBlogs }) {

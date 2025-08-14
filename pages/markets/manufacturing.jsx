@@ -147,32 +147,63 @@ const manufacturingMetrics = [
 ];
 
 export async function getServerSideProps() {
-  const { getRandomPhoto, getOptimizedPhotoUrl } = await import('../../utils/pexels');
+  try {
+    const { getRandomPhoto, getOptimizedPhotoUrl, getPlaceholderImageUrl } = await import('../../utils/pexels');
 
-  const manufacturingBlogs = blogIndex
-    .filter(post => post.category.some(cat => 
-      cat.toLowerCase() === 'manufacturing' || 
+    const manufacturingBlogs = blogIndex
+      .filter(post => post.category.some(cat => 
+        cat.toLowerCase() === 'manufacturing' || 
       cat.toLowerCase() === 'security'
-    ))
-    .sort((a, b) => new Date(b.date) - new Date(a.date))
-    .slice(0, 3);
+      ))
+      .sort((a, b) => new Date(b.date) - new Date(a.date))
+      .slice(0, 3);
 
-  // Fetch images on the server
-  const postsWithImages = await Promise.all(
-    manufacturingBlogs.map(async (post) => {
-      const photo = await getRandomPhoto(post.defaultImageQuery);
-      return {
+    // Fetch images on the server with error handling
+    const postsWithImages = await Promise.all(
+      manufacturingBlogs.map(async (post) => {
+        try {
+          const photo = await getRandomPhoto(post.defaultImageQuery);
+          return {
+            ...post,
+            image: getOptimizedPhotoUrl(photo) || getPlaceholderImageUrl(post.defaultImageQuery),
+          };
+        } catch (error) {
+          console.error(`Error fetching image for post "${post.title}":`, error);
+          return {
+            ...post,
+            image: getPlaceholderImageUrl(post.defaultImageQuery),
+          };
+        }
+      })
+    );
+
+    return {
+      props: {
+        manufacturingBlogs: postsWithImages,
+      },
+    };
+  } catch (error) {
+    console.error('Error in getServerSideProps for manufacturing page:', error);
+    
+    // Return fallback data if everything fails
+    const fallbackBlogs = blogIndex
+      .filter(post => post.category.some(cat => 
+        cat.toLowerCase() === 'manufacturing' || 
+      cat.toLowerCase() === 'security'
+      ))
+      .sort((a, b) => new Date(b.date) - new Date(a.date))
+      .slice(0, 3)
+      .map(post => ({
         ...post,
-        image: getOptimizedPhotoUrl(photo),
-      };
-    })
-  );
+        image: getPlaceholderImageUrl ? getPlaceholderImageUrl(post.defaultImageQuery) : null,
+      }));
 
-  return {
-    props: {
-      manufacturingBlogs: postsWithImages,
-    },
-  };
+    return {
+      props: {
+        manufacturingBlogs: fallbackBlogs,
+      },
+    };
+  }
 }
 
 export default function Manufacturing({ manufacturingBlogs }) {

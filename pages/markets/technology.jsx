@@ -178,35 +178,63 @@ const technologyMetrics = [
 ];
 
 export async function getServerSideProps() {
-  const { getRandomPhoto, getOptimizedPhotoUrl } = await import('../../utils/pexels');
+  try {
+    const { getRandomPhoto, getOptimizedPhotoUrl, getPlaceholderImageUrl } = await import('../../utils/pexels');
 
-  const techBlogs = blogIndex
-    .filter(post => post.category.some(cat => 
-      cat.toLowerCase() === 'technology' || 
-      cat.toLowerCase() === 'remote work' ||
-      cat.toLowerCase() === 'performance' ||
-      cat.toLowerCase() === 'privacy' ||
+    const technologyBlogs = blogIndex
+      .filter(post => post.category.some(cat => 
+        cat.toLowerCase() === 'technology' || 
       cat.toLowerCase() === 'security'
-    ))
-    .sort((a, b) => new Date(b.date) - new Date(a.date))
-    .slice(0, 3);
+      ))
+      .sort((a, b) => new Date(b.date) - new Date(a.date))
+      .slice(0, 3);
 
-  // Fetch images on the server
-  const postsWithImages = await Promise.all(
-    techBlogs.map(async (post) => {
-      const photo = await getRandomPhoto(post.defaultImageQuery);
-      return {
+    // Fetch images on the server with error handling
+    const postsWithImages = await Promise.all(
+      technologyBlogs.map(async (post) => {
+        try {
+          const photo = await getRandomPhoto(post.defaultImageQuery);
+          return {
+            ...post,
+            image: getOptimizedPhotoUrl(photo) || getPlaceholderImageUrl(post.defaultImageQuery),
+          };
+        } catch (error) {
+          console.error(`Error fetching image for post "${post.title}":`, error);
+          return {
+            ...post,
+            image: getPlaceholderImageUrl(post.defaultImageQuery),
+          };
+        }
+      })
+    );
+
+    return {
+      props: {
+        technologyBlogs: postsWithImages,
+      },
+    };
+  } catch (error) {
+    console.error('Error in getServerSideProps for technology page:', error);
+    
+    // Return fallback data if everything fails
+    const fallbackBlogs = blogIndex
+      .filter(post => post.category.some(cat => 
+        cat.toLowerCase() === 'technology' || 
+      cat.toLowerCase() === 'security'
+      ))
+      .sort((a, b) => new Date(b.date) - new Date(a.date))
+      .slice(0, 3)
+      .map(post => ({
         ...post,
-        image: getOptimizedPhotoUrl(photo),
-      };
-    })
-  );
+        image: getPlaceholderImageUrl ? getPlaceholderImageUrl(post.defaultImageQuery) : null,
+      }));
 
-  return {
-    props: {
-      techBlogs: postsWithImages,
-    },
-  };
+    return {
+      props: {
+        technologyBlogs: fallbackBlogs,
+      },
+    };
+  }
 }
 
 export default function Technology({ techBlogs }) {
