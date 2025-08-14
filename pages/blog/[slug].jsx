@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
-import { searchPhotos } from '../../utils/pexels';
+import { getRandomPhoto, getOptimizedPhotoUrl, getPlaceholderImageUrl } from '../../utils/pexels';
 import { suggestNatureImageQuery } from '../../utils/blog-helpers';
 import { blogIndex } from '../../data/blog-index';
 import Breadcrumbs from '../../components/Breadcrumbs';
@@ -17,12 +17,52 @@ const DEFAULT_AVATAR = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/
 
 const DEFAULT_COVER = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%233C584A"%3E%3Cpath d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-1.96-2.36L6.5 17h11l-3.54-4.71z"%2F%3E%3C%2Fsvg%3E';
 
-export default function BlogPost({ post, coverImage }) {
+export default function BlogPost({ post }) {
   const [isClient, setIsClient] = useState(false);
+  const [coverImage, setCoverImage] = useState(null);
+  const [isLoadingImage, setIsLoadingImage] = useState(true);
   
   useEffect(() => {
     setIsClient(true);
   }, []);
+
+  // Fetch image on-demand when component mounts
+  useEffect(() => {
+    const fetchImage = async () => {
+      try {
+        setIsLoadingImage(true);
+        const primaryQuery = post.defaultImageQuery || suggestNatureImageQuery(post.category);
+        // Use the post slug as unique identifier to prevent duplicate images
+        const photo = await getRandomPhoto(primaryQuery, post.slug);
+        
+        if (photo) {
+          setCoverImage(photo);
+        } else {
+          // Use placeholder if no photo found
+          setCoverImage({
+            src: getPlaceholderImageUrl(primaryQuery, post.slug),
+            photographer: null,
+            photographer_url: null
+          });
+        }
+      } catch (error) {
+        console.error('Error fetching image:', error);
+        // Use placeholder on error
+        const primaryQuery = post.defaultImageQuery || suggestNatureImageQuery(post.category);
+        setCoverImage({
+          src: getPlaceholderImageUrl(primaryQuery, post.slug),
+          photographer: null,
+          photographer_url: null
+        });
+      } finally {
+        setIsLoadingImage(false);
+      }
+    };
+
+    if (isClient) {
+      fetchImage();
+    }
+  }, [isClient, post.defaultImageQuery, post.category, post.slug]);
 
   // Get the authors for this post using getAuthorDetails
   const postAuthors = post?.authors ? getAuthorDetails(post.authors) : [];
@@ -259,48 +299,10 @@ export async function getStaticProps({ params }) {
       postContent = postInIndex;
     }
 
-    let coverImage = null;
-
-    try {
-      // First try with the default query
-      const primaryQuery = postContent.defaultImageQuery || suggestNatureImageQuery(postContent.category);
-      
-      // Add timeout to image search - reduced to 8 seconds
-      const imageSearchPromise = searchPhotos(primaryQuery, {
-        per_page: 3, // Reduced from 5 to 3
-        orientation: 'landscape'
-      });
-      
-      const timeoutPromise = new Promise((_, reject) => 
-        setTimeout(() => reject(new Error('Image search timeout')), 8000)
-      );
-      
-      const images = await Promise.race([imageSearchPromise, timeoutPromise]);
-      
-      if (images && images.length > 0) {
-        coverImage = images[0];
-      } else {
-        // Use default cover image if no images found
-        coverImage = {
-          src: DEFAULT_COVER,
-          photographer: null,
-          photographer_url: null
-        };
-      }
-    } catch (error) {
-      console.error(`Error fetching cover image for ${params.slug}:`, error);
-      // Use default cover image on error
-      coverImage = {
-        src: DEFAULT_COVER,
-        photographer: null,
-        photographer_url: null
-      };
-    }
-
+    // Don't fetch images during build - let them load on-demand
     return {
       props: {
         post: postContent,
-        coverImage,
       },
       // Revalidate every hour
       revalidate: 3600,
@@ -310,11 +312,6 @@ export async function getStaticProps({ params }) {
     return {
       props: {
         post: postInIndex,
-        coverImage: {
-          src: DEFAULT_COVER,
-          photographer: null,
-          photographer_url: null
-        },
       },
       revalidate: 3600,
     };

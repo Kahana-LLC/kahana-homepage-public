@@ -1,289 +1,148 @@
-import { createClient } from "pexels";
-
-const client = createClient(process.env.NEXT_PUBLIC_PEXELS_API_KEY);
-
-// Rate limiting configuration - more conservative
-const RATE_LIMIT_REQUESTS = 2; // Reduced from 3 to 2
-const RATE_LIMIT_WINDOW = 60 * 1000; // 1 minute window
-const MIN_DELAY_BETWEEN_REQUESTS = 3000; // Increased from 2s to 3s
-
-// Global request tracking
-let requestCount = 0;
-let windowStart = Date.now();
-let lastRequestTime = 0;
-
-// Request queue implementation
-const requestQueue = [];
-let isProcessingQueue = false;
-
-// In-memory cache (no file system dependency)
-const queryCache = new Map();
-const CACHE_DURATION = 30 * 24 * 60 * 60 * 1000; // 30 days
-
-// List of fallback queries to try if primary query fails
-const FALLBACK_QUERIES = [
-  "technology business",
-  "cyber security",
-  "digital transformation",
-  "enterprise software",
-  "cloud computing",
-  "data security",
-  "business technology",
-];
-
-// List of banned words to filter out inappropriate images
-const BANNED_WORDS = [
-  "gun",
-  "weapon",
-  "war",
-  "military",
-  "violence",
-  "army",
-  "soldier",
-  "fight",
-  "battle",
-  "blood",
-  "explosion",
-  "tank",
-  "missile",
-  "rifle",
-  "pistol",
-  "shoot",
-  "combat",
-  "hostage",
-  "terror",
-  "bomb",
-  "grenade",
-  "sniper",
-  "airstrike",
-  "artillery",
-  "nuclear",
-  "rocket",
-  "murder",
-  "death",
-  "dead",
-  "corpse",
-  "injury",
-  "wound",
-  "bloodshed",
-];
-
-function isImageSafe(photo) {
-  const text = [
-    photo.alt || "",
-    photo.photographer || "",
-    ...(photo.tags || []).map((tag) => tag.title || tag),
+// Tiered fallback image system with variety
+const UNSPLASH_IMAGES = {
+  // Technology/Business images from Unsplash - multiple options per category
+  'technology business': [
+    'https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop'
+  ],
+  'cyber security': [
+    'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop'
+  ],
+  'digital transformation': [
+    'https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop'
+  ],
+  'enterprise security': [
+    'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop'
+  ],
+  'browser security': [
+    'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop'
+  ],
+  'AI browser': [
+    'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop'
+  ],
+  'privacy security': [
+    'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop'
+  ],
+  'content creation': [
+    'https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop'
+  ],
+  'marketing': [
+    'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop'
+  ],
+  'finance': [
+    'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=600&fit=crop'
+  ],
+  'healthcare': [
+    'https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop'
+  ],
+  'education': [
+    'https://images.unsplash.com/photo-1523240795132-9a0523bf846d?w=800&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=600&fit=crop'
+  ],
+  'government': [
+    'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=600&fit=crop'
+  ],
+  'energy utilities': [
+    'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop'
+  ],
+  'manufacturing': [
+    'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop'
+  ],
+  'default': [
+    'https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop'
   ]
-    .join(" ")
-    .toLowerCase();
-  return !BANNED_WORDS.some((banned) => text.includes(banned));
+};
+
+// Custom Kahana blog image as final fallback
+const KAHANA_BLOG_IMAGE = '/assets/kahana_blog_image.jpg';
+
+// Simple hash function to get consistent but varied images based on unique identifier
+function getImageIndex(uniqueId) {
+  if (!uniqueId) return 0;
+  let hash = 0;
+  for (let i = 0; i < uniqueId.length; i++) {
+    const char = uniqueId.charCodeAt(i);
+    hash = ((hash << 5) - hash) + char;
+    hash = hash & hash; // Convert to 32-bit integer
+  }
+  return Math.abs(hash) % 3; // Return 0, 1, or 2
 }
 
-// Helper function to delay execution
-const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-
-// Ensure minimum time between requests
-async function waitForRateLimit() {
-  const now = Date.now();
-  const timeSinceLastRequest = now - lastRequestTime;
-  if (timeSinceLastRequest < MIN_DELAY_BETWEEN_REQUESTS) {
-    await delay(MIN_DELAY_BETWEEN_REQUESTS - timeSinceLastRequest);
+// Get an image with tiered fallback: Unsplash first, then Kahana image
+// Now accepts a uniqueId parameter to ensure each post gets a different image
+export function getStaticImage(query, uniqueId = null) {
+  if (!query) {
+    const defaultImages = UNSPLASH_IMAGES.default;
+    const index = getImageIndex(uniqueId || 'default');
+    return defaultImages[index];
   }
-  lastRequestTime = Date.now();
+  
+  const lowerQuery = query.toLowerCase();
+  
+  // First, try to find a matching Unsplash image category
+  for (const [key, images] of Object.entries(UNSPLASH_IMAGES)) {
+    if (lowerQuery.includes(key)) {
+      const index = getImageIndex(uniqueId || query);
+      return images[index];
+    }
+  }
+  
+  // If no Unsplash match found, use the Kahana blog image
+  return KAHANA_BLOG_IMAGE;
 }
 
-// Process queue with rate limiting and retries
-async function processQueue() {
-  if (isProcessingQueue || requestQueue.length === 0) return;
-
-  isProcessingQueue = true;
-
-  while (requestQueue.length > 0) {
-    // Check rate limit
-    const now = Date.now();
-    if (now - windowStart >= RATE_LIMIT_WINDOW) {
-      requestCount = 0;
-      windowStart = now;
-    }
-
-    if (requestCount >= RATE_LIMIT_REQUESTS) {
-      // Wait for rate limit window to reset
-      await delay(RATE_LIMIT_WINDOW);
-      continue;
-    }
-
-    const {
-      resolve,
-      reject,
-      query,
-      options,
-      retries = 0,
-    } = requestQueue.shift();
-
-    // Wait for minimum time between requests
-    await waitForRateLimit();
-    requestCount++;
-
-    try {
-      const response = await client.photos.search({
-        query,
-        per_page: options.per_page || 1, // Reduced from 2 to 1
-        orientation: options.orientation || "landscape",
-      });
-
-      if (response && response.photos) {
-        resolve(response.photos);
-      } else {
-        resolve([]);
-      }
-    } catch (error) {
-      console.error(`Error searching photos for "${query}":`, error);
-
-      // If we hit rate limit and haven't retried too many times, requeue
-      if (error.message === "Too Many Requests" && retries < 3) {
-        requestQueue.unshift({
-          resolve,
-          reject,
-          query,
-          options,
-          retries: retries + 1,
-        });
-        // Wait longer between retries with exponential backoff
-        await delay(15000 * Math.pow(2, retries)); // Increased from 10s to 15s
-      } else {
-        // If we've retried too many times or it's a different error, resolve with empty array
-        resolve([]);
-      }
-    }
-
-    // Add a delay between requests
-    await delay(MIN_DELAY_BETWEEN_REQUESTS);
-  }
-
-  isProcessingQueue = false;
-}
-
-// Queued version of searchPhotos with timeout and retries
-export async function searchPhotos(query, options = {}) {
-  const cacheKey = `${query}-${options.per_page}-${options.orientation}`;
-
-  // Check cache first
-  const cached = queryCache.get(cacheKey);
-  if (cached && Date.now() - cached.timestamp < CACHE_DURATION) {
-    // Filter cached photos for safety
-    return cached.photos.filter(isImageSafe);
-  }
-
-  // Queue the request with timeout
-  const promise = new Promise((resolve, reject) => {
-    const timeout = setTimeout(() => {
-      resolve([]); // Resolve with empty array on timeout
-    }, 4000); // Reduced timeout from 5s to 4s
-
-    requestQueue.push({
-      resolve: (photos) => {
-        clearTimeout(timeout);
-        // Filter for safe images before resolving
-        resolve(photos.filter(isImageSafe));
-      },
-      reject: (error) => {
-        clearTimeout(timeout);
-        resolve([]); // Resolve with empty array on error
-      },
-      query,
-      options,
-    });
-  });
-
-  // Start processing queue if not already running
-  processQueue();
-
-  try {
-    const photos = await promise;
-
-    if (photos && photos.length > 0) {
-      queryCache.set(cacheKey, {
-        photos,
-        timestamp: Date.now(),
-      });
-    }
-
-    return photos;
-  } catch (error) {
-    console.error("Error in searchPhotos:", error);
-    return [];
-  }
-}
-
-// Keep track of used photos to avoid duplicates
-const usedPhotos = new Set();
-
-export async function getRandomPhoto(query) {
-  try {
-    // Check if Pexels API key is available
-    if (!process.env.NEXT_PUBLIC_PEXELS_API_KEY) {
-      console.warn("Pexels API key not found, returning null");
-      return null;
-    }
-
-    // Try primary query first
-    let photos = await searchPhotos(query, { per_page: 2 }); // Reduced from 3 to 2
-
-    // Filter out previously used photos
-    photos = photos.filter((photo) => !usedPhotos.has(photo.id));
-
-    // If no unused safe photos, try fallback queries
-    if (!photos || photos.length === 0) {
-      for (const fallbackQuery of FALLBACK_QUERIES) {
-        photos = await searchPhotos(fallbackQuery, { per_page: 2 }); // Reduced from 3 to 2
-        photos = photos.filter((photo) => !usedPhotos.has(photo.id));
-        if (photos && photos.length > 0) {
-          break;
-        }
-      }
-    }
-
-    if (!photos || photos.length === 0) {
-      // Clear used photos if we can't find any unused ones
-      usedPhotos.clear();
-      return null;
-    }
-
-    const randomIndex = Math.floor(Math.random() * photos.length);
-    const selectedPhoto = photos[randomIndex];
-    usedPhotos.add(selectedPhoto.id);
-    return selectedPhoto;
-  } catch (error) {
-    console.error("Error getting random photo:", error);
-    return null;
-  }
+// Legacy functions for compatibility - now use tiered fallback
+export async function getRandomPhoto(query, uniqueId = null) {
+  return {
+    src: getStaticImage(query, uniqueId),
+    photographer: 'Unsplash',
+    photographer_url: 'https://unsplash.com'
+  };
 }
 
 export function getOptimizedPhotoUrl(photo) {
-  if (!photo) return null;
-  return photo.src.large2x || photo.src.large || photo.src.original;
+  return photo?.src || KAHANA_BLOG_IMAGE;
 }
 
-// Generate a placeholder image URL for when Pexels API is not available
-export function getPlaceholderImageUrl(query = "technology") {
-  // Use a simple placeholder service
-  const colors = ['66C2BE', '8CB7D0', 'E3DFF1', 'A5DAD8', '55B3AF'];
-  const randomColor = colors[Math.floor(Math.random() * colors.length)];
-  const width = 800;
-  const height = 600;
-  
-  return `https://via.placeholder.com/${width}x${height}/${randomColor}/ffffff?text=${encodeURIComponent(query)}`;
+export function getPlaceholderImageUrl(query, uniqueId = null) {
+  return getStaticImage(query, uniqueId);
 }
 
-// Clear cache periodically to prevent memory issues
-if (typeof window !== "undefined") {
-  setInterval(() => {
-    // Only clear old entries
-    const now = Date.now();
-    for (const [key, data] of queryCache.entries()) {
-      if (now - data.timestamp >= CACHE_DURATION) {
-        queryCache.delete(key);
-      }
-    }
-  }, CACHE_DURATION);
+// Keep the old searchPhotos function for compatibility but make it use tiered fallback
+export async function searchPhotos(query, options = {}, uniqueId = null) {
+  return [{
+    src: getStaticImage(query, uniqueId),
+    photographer: 'Unsplash',
+    photographer_url: 'https://unsplash.com'
+  }];
 }

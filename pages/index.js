@@ -33,58 +33,15 @@ export async function getStaticProps() {
     // Get the 3 most recent posts
     const recentPosts = sortedPosts.slice(0, 3);
 
-    // Fetch images for the posts with caching
-    const postsWithImages = await Promise.all(
-      recentPosts.map(async (post) => {
-        try {
-          // Check if we already have an image for this post
-          if (imageCache.has(post.slug)) {
-            return {
-              ...post,
-              image: imageCache.get(post.slug),
-              authors: getAuthorDetails(post.authors),
-            };
-          }
-
-          // Use existing image if available
-          let postImage = post.image || null;
-
-          // If no image, fetch from Pexels
-          if (!postImage) {
-            const searchQuery =
-              post.defaultImageQuery || `${post.category} ${post.title}`;
-            const photo = await getRandomPhoto(searchQuery);
-            postImage = photo
-              ? getOptimizedPhotoUrl(photo)
-              : DEFAULT_PLACEHOLDER;
-          }
-
-          // Cache the image
-          imageCache.set(post.slug, postImage);
-
-          // Use getAuthorDetails for full author info
-          const authorsWithDetails = getAuthorDetails(post.authors);
-
-          // Return post with image and author details
-          return {
-            ...post,
-            image: postImage,
-            authors: authorsWithDetails,
-          };
-        } catch (error) {
-          console.error(`Error fetching image for post ${post.slug}:`, error);
-          return {
-            ...post,
-            image: DEFAULT_PLACEHOLDER,
-            authors: getAuthorDetails(post.authors),
-          };
-        }
-      })
-    );
+    // Don't fetch images during build - let them load on-demand
+    const postsWithAuthorDetails = recentPosts.map((post) => ({
+      ...post,
+      authors: getAuthorDetails(post.authors),
+    }));
 
     return {
       props: {
-        blogPosts: postsWithImages,
+        blogPosts: postsWithAuthorDetails,
       },
       // Shorter revalidation time in development for easier testing
       revalidate: process.env.NODE_ENV === "development" ? 10 : 86400,

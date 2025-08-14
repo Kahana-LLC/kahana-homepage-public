@@ -84,6 +84,7 @@ module.exports = {
             sky: "#fef3c7", // Sky cream from seascape
             ocean: "#0ea5e9", // Ocean blue
             warm: "#92400e", // Warm brown from ocean
+            coral: "#f97316", // Coral accent color
           },
           // UI colors inspired by logo's natural theme
           ui: {
