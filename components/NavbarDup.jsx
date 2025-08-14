@@ -520,9 +520,6 @@ function NavBar() {
                 <div className="dropdown-section">
                   <h3 className="text-[0.75rem] font-semibold text-gray-600 mb-4 uppercase tracking-wider">Get Started</h3>
                   <div className="flex flex-col space-y-4">
-                  <Link href="/schedule-demo" className="dropdown-link">
-                      Schedule a Demo
-                    </Link>
                     <Link href="/contact" className="dropdown-link">
                       Contact Us
                     </Link>
