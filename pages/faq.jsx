@@ -137,7 +137,7 @@ export default function FAQ() {
                 placeholder="Search FAQs..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#66C2BE] focus:border-transparent"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-kahana-primary focus:border-transparent"
               />
               <svg
                 className="absolute right-3 top-3.5 h-5 w-5 text-gray-400"
@@ -164,7 +164,7 @@ export default function FAQ() {
               <div key={categoryIndex} className="border border-gray-200 rounded-lg overflow-hidden">
                 <button
                   onClick={() => toggleCategory(categoryIndex)}
-                  className="w-full px-6 py-4 bg-white hover:bg-gray-50 flex justify-between items-center"
+                  className="w-full px-6 py-4 bg-white hover:bg-gray-50 flex justify-between items-center border-b border-gray-200"
                 >
                   <h2 className="text-2xl font-bold text-gray-900">
                     {category.title}
@@ -192,10 +192,10 @@ export default function FAQ() {
                 </button>
                 
                 {openCategories[categoryIndex] && (
-                  <div className="px-6 py-4 bg-gray-50">
+                  <div className="px-6 py-4 bg-white">
                     <div className="space-y-4">
                       {category.questions.map((faq, faqIndex) => (
-                        <div key={faqIndex} className="bg-white p-6 rounded-lg shadow-sm">
+                        <div key={faqIndex} className="bg-gray-50 p-6 rounded-lg shadow-sm">
                           <h3 className="text-xl font-semibold text-gray-900 mb-4">
                             {highlightText(faq.question, searchQuery)}
                           </h3>
@@ -224,10 +224,10 @@ export default function FAQ() {
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
               {/* Documentation CTA */}
-              <div className="bg-gradient-to-br from-[#E3DFF1]/20 to-[#8CB7D0]/10 rounded-xl p-8">
+              <div className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl p-8">
                 <div className="flex items-center mb-4">
                   <svg
-                    className="w-8 h-8 text-[#66C2BE] mr-3"
+                    className="w-8 h-8 text-kahana-primary mr-3"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -245,17 +245,26 @@ export default function FAQ() {
                   Dive deeper into Kahana's features with our comprehensive documentation. Learn about advanced configurations, best practices, and troubleshooting guides.
                 </p>
                 <Link href="/docs">
-                  <button className="bg-[#66C2BE] text-white px-6 py-2 rounded-md font-semibold hover:bg-[#55B3AF] transition-colors shadow-lg shadow-[#E3DFF1]/20 hover:shadow-xl hover:shadow-[#E3DFF1]/30">
-                    View Documentation
+                  <button className="bg-kahana-primary text-white px-6 py-2 rounded-md font-semibold hover:bg-kahana-primary-dark transition-colors shadow-lg shadow-kahana-accent-sky/20 hover:shadow-xl hover:shadow-kahana-accent-sky/30"
+                    style={{
+                      backgroundColor: '#0d9488 !important',
+                      color: 'white !important',
+                      borderColor: '#0d9488 !important',
+                      fontWeight: 'bold'
+                    }}
+                  >
+                    <span style={{ color: 'white !important', fontWeight: 'bold' }}>
+                      View Documentation
+                    </span>
                   </button>
                 </Link>
               </div>
 
               {/* Blog CTA */}
-              <div className="bg-gradient-to-br from-[#E3DFF1]/20 to-[#8CB7D0]/10 rounded-xl p-8">
+              <div className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl p-8">
                 <div className="flex items-center mb-4">
                   <svg
-                    className="w-8 h-8 text-[#66C2BE] mr-3"
+                    className="w-8 h-8 text-kahana-primary mr-3"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -273,8 +282,17 @@ export default function FAQ() {
                   Stay updated with the latest insights, industry trends, and best practices in enterprise browsing security and productivity.
                 </p>
                 <Link href="/blog">
-                  <button className="bg-[#66C2BE] text-white px-6 py-2 rounded-md font-semibold hover:bg-[#55B3AF] transition-colors shadow-lg shadow-[#E3DFF1]/20 hover:shadow-xl hover:shadow-[#E3DFF1]/30">
-                    Read Our Blog
+                  <button className="bg-kahana-primary text-white px-6 py-2 rounded-md font-semibold hover:bg-kahana-primary-dark transition-colors shadow-lg shadow-kahana-accent-sky/20 hover:shadow-xl hover:shadow-kahana-accent-sky/30"
+                    style={{
+                      backgroundColor: '#0d9488 !important',
+                      color: 'white !important',
+                      borderColor: '#0d9488 !important',
+                      fontWeight: 'bold'
+                    }}
+                  >
+                    <span style={{ color: 'white !important', fontWeight: 'bold' }}>
+                      Read Our Blog
+                    </span>
                   </button>
                 </Link>
               </div>

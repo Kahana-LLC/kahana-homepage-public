@@ -21,10 +21,10 @@ export default function About() {
       <div className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 md:grid-cols-2">
-            <div className="bg-gradient-to-br from-gray-50 to-indigo-50/30 rounded-2xl p-8 border border-gray-100">
+            <div className="bg-gradient-to-br from-gray-50 to-kahana-primary-50/30 rounded-2xl p-8 border border-gray-100">
               <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mr-4">
-                  <svg className="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-12 h-12 bg-kahana-primary-100 rounded-full flex items-center justify-center mr-4">
+                  <svg className="w-6 h-6 text-kahana-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
@@ -35,10 +35,10 @@ export default function About() {
               </p>
             </div>
 
-            <div className="bg-gradient-to-br from-gray-50 to-purple-50/30 rounded-2xl p-8 border border-gray-100">
+            <div className="bg-gradient-to-br from-gray-50 to-kahana-secondary-50/30 rounded-2xl p-8 border border-gray-100">
               <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4">
-                  <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-12 h-12 bg-kahana-secondary-100 rounded-full flex items-center justify-center mr-4">
+                  <svg className="w-6 h-6 text-kahana-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
                   </svg>
                 </div>
@@ -63,10 +63,10 @@ export default function About() {
           </div>
 
           <div className="grid gap-8 md:grid-cols-2">
-            <div className="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-2xl overflow-hidden border border-indigo-100">
+            <div className="bg-gradient-to-r from-kahana-primary-50 to-kahana-secondary-50 rounded-2xl overflow-hidden border border-kahana-primary-100">
               <div className="p-8">
                 <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-br from-indigo-400 to-purple-400 rounded-full flex items-center justify-center mr-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-kahana-primary to-kahana-secondary rounded-full flex items-center justify-center mr-4">
                     <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
@@ -83,7 +83,7 @@ export default function About() {
                         href="https://patents.google.com/patent/US11693676B2/en?oq=11%2c693%2c676" 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="inline-flex items-center text-indigo-600 hover:text-indigo-800 transition-colors"
+                        className="inline-flex items-center text-kahana-primary hover:text-kahana-primary-dark transition-colors"
                       >
                         <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -94,7 +94,7 @@ export default function About() {
                         href="https://patents.google.com/patent/US11397844B2/en?oq=11%2c397%2c844" 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="inline-flex items-center text-indigo-600 hover:text-indigo-800 transition-colors"
+                        className="inline-flex items-center text-kahana-primary hover:text-kahana-primary-dark transition-colors"
                       >
                         <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -125,10 +125,10 @@ export default function About() {
               </div>
             </div>
 
-            <div className="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-2xl overflow-hidden border border-indigo-100">
+            <div className="bg-gradient-to-r from-kahana-primary-50 to-kahana-secondary-50 rounded-2xl overflow-hidden border border-kahana-primary-100">
               <div className="p-8">
                 <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-br from-indigo-400 to-purple-400 rounded-full flex items-center justify-center mr-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-kahana-primary to-kahana-secondary rounded-full flex items-center justify-center mr-4">
                     <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                     </svg>
@@ -175,10 +175,10 @@ export default function About() {
           </div>
 
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-            <div className="bg-gradient-to-br from-gray-50 to-indigo-50/30 rounded-2xl p-8 border border-gray-100">
+            <div className="bg-gradient-to-br from-gray-50 to-kahana-primary-50/30 rounded-2xl p-8 border border-gray-100">
               <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mr-4">
-                  <svg className="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-12 h-12 bg-kahana-primary-100 rounded-full flex items-center justify-center mr-4">
+                  <svg className="w-6 h-6 text-kahana-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                   </svg>
                 </div>
@@ -189,10 +189,10 @@ export default function About() {
               </p>
             </div>
 
-            <div className="bg-gradient-to-br from-gray-50 to-purple-50/30 rounded-2xl p-8 border border-gray-100">
+            <div className="bg-gradient-to-br from-gray-50 to-kahana-secondary-50/30 rounded-2xl p-8 border border-gray-100">
               <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4">
-                  <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-12 h-12 bg-kahana-secondary-100 rounded-full flex items-center justify-center mr-4">
+                  <svg className="w-6 h-6 text-kahana-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
@@ -203,10 +203,10 @@ export default function About() {
               </p>
             </div>
 
-            <div className="bg-gradient-to-br from-gray-50 to-indigo-50/30 rounded-2xl p-8 border border-gray-100">
+            <div className="bg-gradient-to-br from-gray-50 to-kahana-primary-50/30 rounded-2xl p-8 border border-gray-100">
               <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mr-4">
-                  <svg className="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-12 h-12 bg-kahana-primary-100 rounded-full flex items-center justify-center mr-4">
+                  <svg className="w-6 h-6 text-kahana-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                   </svg>
                 </div>
@@ -217,10 +217,10 @@ export default function About() {
               </p>
             </div>
 
-            <div className="bg-gradient-to-br from-gray-50 to-purple-50/30 rounded-2xl p-8 border border-gray-100">
+            <div className="bg-gradient-to-br from-gray-50 to-kahana-secondary-50/30 rounded-2xl p-8 border border-gray-100">
               <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4">
-                  <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-12 h-12 bg-kahana-secondary-100 rounded-full flex items-center justify-center mr-4">
+                  <svg className="w-6 h-6 text-kahana-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
@@ -241,12 +241,12 @@ export default function About() {
       </div>
 
       {/* Manifesto CTA Section */}
-      <div className="bg-gradient-to-r from-indigo-50 to-purple-50 py-16">
+      <div className="bg-gradient-to-r from-kahana-primary-50 to-kahana-secondary-50 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-2xl overflow-hidden border border-indigo-100">
+          <div className="bg-gradient-to-r from-kahana-primary-50 to-kahana-secondary-50 rounded-2xl overflow-hidden border border-kahana-primary-100">
             <div className="p-8">
               <div className="flex items-center mb-6">
-                <div className="w-12 h-12 bg-gradient-to-br from-indigo-400 to-purple-400 rounded-full flex items-center justify-center mr-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-kahana-primary to-kahana-secondary rounded-full flex items-center justify-center mr-4">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                   </svg>
@@ -256,10 +256,17 @@ export default function About() {
               <p className="text-gray-600 text-lg mb-6">
                 Dive deeper into our mission and vision. Learn about our beliefs, our purpose, and how we're working to help people bring their ideas to life.
               </p>
-              <Link href="/manifesto">
-                <button className="bg-white text-indigo-600 px-6 py-2 rounded-md font-semibold hover:bg-gray-50 transition-colors border border-indigo-100">
-                  Read the Manifesto
-                </button>
+              <Link 
+                href="/manifesto"
+                className="inline-block bg-kahana-primary text-white px-6 py-2 rounded-md font-semibold hover:bg-kahana-primary-dark transition-colors border border-kahana-primary"
+                style={{ 
+                  backgroundColor: '#0d9488 !important', 
+                  color: 'white !important', 
+                  borderColor: '#0d9488 !important',
+                  fontWeight: 'bold'
+                }}
+              >
+                <span style={{ color: 'white !important', fontWeight: 'bold' }}>Read the Manifesto</span>
               </Link>
             </div>
           </div>

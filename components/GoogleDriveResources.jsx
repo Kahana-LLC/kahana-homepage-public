@@ -22,9 +22,8 @@ const GoogleDriveResources = () => {
             <div key={index} className="w-full sm:w-1/2 md:w-1/4 p-4">
               <Link
                 href={link.link}
-                className="block bg-white p-6 rounded-lg shadow-md text-center"
-                legacyBehavior>
-                <span>{link.title}</span>
+                className="block bg-white p-6 rounded-lg shadow-md text-center">
+                {link.title}
               </Link>
             </div>
           ))}

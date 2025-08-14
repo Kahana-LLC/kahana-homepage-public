@@ -27,14 +27,14 @@ h6 {
 
 /* High-contrast links */
 a {
-  color: #21706c !important;
+  color: #0d9488 !important;
   text-decoration: underline !important;
   font-weight: bold !important;
   transition: color 0.2s;
 }
 a:hover,
 a:focus {
-  color: #15514f !important;
+  color: #0f766e !important;
 }
 
 a.pricing-button,
@@ -49,7 +49,7 @@ button,
 .btn,
 input[type="submit"],
 input[type="button"] {
-  background-color: #21706c !important;
+  background-color: #0d9488 !important;
   color: #fff !important;
   font-weight: bold !important;
   border: none;
@@ -62,12 +62,12 @@ button:hover,
 .btn:hover,
 input[type="submit"]:hover,
 input[type="button"]:hover {
-  background-color: #15514f !important;
+  background-color: #0f766e !important;
 }
 
-button.bg-\[\#21706c\],
-.bg-\[\#21706c\] button,
-.bg-\[\#21706c\] {
+button.bg-\[\#0d9488\],
+.bg-\[\#0d9488\] button,
+.bg-\[\#0d9488\] {
   color: #fff !important;
 }
 
@@ -85,27 +85,30 @@ button.bg-\[\#21706c\],
 }
 
 :root {
-  /* Main brand colors */
-  --kahana-primary: #3c584a;
-  --kahana-primary-light: #6b8c7d;
-  --kahana-primary-dark: #2a4037;
+  /* Main brand colors from new logo */
+  --kahana-primary: #0d9488;
+  --kahana-primary-light: #14b8a6;
+  --kahana-primary-dark: #0f766e;
 
-  /* Secondary colors */
-  --kahana-secondary: #d2b8a4;
-  --kahana-secondary-light: #e6d5c7;
-  --kahana-secondary-dark: #bfa08c;
+  /* Secondary colors from logo gradient */
+  --kahana-secondary: #0ea5e9;
+  --kahana-secondary-light: #38bdf8;
+  --kahana-secondary-dark: #0284c7;
 
-  /* Accent colors */
-  --kahana-accent-sage: #94a89a;
-  --kahana-accent-mint: #a8c2b3;
-  --kahana-accent-sand: #dcc1a7;
-  --kahana-accent-terra: #c68d6e;
+  /* Accent colors from logo elements */
+  --kahana-accent-green: #059669;
+  --kahana-accent-lime: #7dd3fc;
+  --kahana-accent-navy: #0c4a6e;
+  --kahana-accent-sand: #fbbf24;
+  --kahana-accent-sky: #fef3c7;
+  --kahana-accent-ocean: #0ea5e9;
+  --kahana-accent-warm: #92400e;
 
-  /* UI colors */
-  --kahana-ui-background: #faf7f4;
+  /* UI colors inspired by logo's natural theme */
+  --kahana-ui-background: #f8fafc;
   --kahana-ui-surface: #ffffff;
-  --kahana-ui-border: #e6d5c7;
-  --kahana-ui-hover: #f0e6dd;
+  --kahana-ui-border: #e2e8f0;
+  --kahana-ui-hover: #f0f9ff;
 }
 
 /* Box sizing for all elements */
@@ -783,6 +786,28 @@ body {
 .no-underline:hover,
 .no-underline:active {
   text-decoration: none !important;
+}
+
+/* Ensure Join Waitlist button has white text */
+.nav-button.download {
+  color: white !important;
+}
+
+.nav-button.download span {
+  color: white !important;
+}
+
+/* Ensure Schedule Demo buttons have white text */
+a[href="/schedule-demo"] {
+  color: white !important;
+}
+
+a[href="/schedule-demo"] span {
+  color: white !important;
+}
+
+a[href="/schedule-demo"] svg {
+  color: white !important;
 }
 
 .no-underline a,

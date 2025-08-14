@@ -393,20 +393,41 @@ export default function Healthcare({ healthcareBlogs }) {
       <FeaturedBlogSection posts={healthcareBlogs} />
 
       {/* CTA Section - Next Steps */}
-      <section className="bg-gradient-to-r from-[#66C2BE] to-[#8CB7D0] py-16">
+      <section className="bg-gradient-to-r from-kahana-primary to-kahana-secondary py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">
+          <h2 className="text-4xl font-bold text-white mb-6" style={{ color: 'white !important' }}>
             Ready to Transform Your Healthcare Operations?
           </h2>
-          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto" style={{ color: 'white !important' }}>
             Join leading healthcare organizations that trust Kahana for their digital transformation needs. Protect patient data and ensure operational continuity with enterprise-grade security.
           </p>
           <div className="flex justify-center gap-4">
-            <Link href="/schedule-demo" className="bg-white text-[#21706c] border-2 border-[#21706c] px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors">
-              Schedule Demo
+            <Link 
+              href="/schedule-demo" 
+              className="bg-white text-kahana-primary border-2 border-kahana-primary px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors"
+              style={{
+                backgroundColor: 'white !important',
+                color: '#0d9488 !important',
+                borderColor: '#0d9488 !important',
+                fontWeight: 'bold'
+              }}
+            >
+              <span style={{ color: '#0d9488 !important', fontWeight: 'bold' }}>
+                Schedule Demo
+              </span>
             </Link>
-            <Link href="/sales" className="bg-[#21706c] text-white px-8 py-3 rounded-md font-bold hover:bg-[#15514f] transition-colors">
-              Contact Sales
+            <Link 
+              href="/sales" 
+              className="bg-kahana-primary text-white px-8 py-3 rounded-md font-bold hover:bg-kahana-primary-dark transition-colors"
+              style={{
+                backgroundColor: '#0d9488 !important',
+                color: 'white !important',
+                fontWeight: 'bold'
+              }}
+            >
+              <span style={{ color: 'white !important', fontWeight: 'bold' }}>
+                Contact Sales
+              </span>
             </Link>
           </div>
         </div>

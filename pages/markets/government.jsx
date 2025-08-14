@@ -253,10 +253,10 @@ export default function Government({ governmentBlogs }) {
       </Script>
 
       {/* Hero Section - Problem Statement */}
-      <section className="bg-gradient-to-b from-[#E3DFF1]/20 via-[#8CB7D0]/10 to-white py-20">
+      <section className="bg-gradient-to-b from-kahana-accent-sky/20 via-kahana-secondary-300/10 to-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h2 className="text-base font-semibold leading-7 text-[#66C2BE] mb-3">Government & Public Sector</h2>
+            <h2 className="text-base font-semibold leading-7 text-kahana-primary mb-3">Government & Public Sector</h2>
             <h1 className="text-5xl font-bold text-gray-900 mb-6">
               Secure Government Operations
             </h1>
@@ -264,7 +264,7 @@ export default function Government({ governmentBlogs }) {
               Transform your government operations with enterprise-grade security, enhanced productivity, and comprehensive analytics.
             </p>
             <Link href="/schedule-demo">
-              <button className="bg-[#66C2BE] text-white px-8 py-3 rounded-md font-semibold hover:bg-[#55B3AF] transition-colors shadow-lg shadow-[#E3DFF1]/20 hover:shadow-xl hover:shadow-[#E3DFF1]/30">
+              <button className="bg-kahana-primary text-white px-8 py-3 rounded-md font-semibold hover:bg-kahana-primary-dark transition-colors shadow-lg shadow-kahana-accent-sky/20 hover:shadow-xl hover:shadow-kahana-accent-sky/30">
                 Schedule Demo
               </button>
             </Link>
@@ -284,7 +284,7 @@ export default function Government({ governmentBlogs }) {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {governmentMetrics.map((metric, idx) => (
               <div key={idx} className="bg-white rounded-xl shadow-lg p-6 flex flex-col hover:shadow-2xl transition-shadow">
-                <div className="text-2xl font-bold text-[#66C2BE] mb-2">{metric.value}</div>
+                <div className="text-2xl font-bold text-kahana-primary mb-2">{metric.value}</div>
                 <div className="text-lg font-semibold text-gray-900 mb-1">{metric.label}</div>
                 <div className="text-sm text-gray-600 mb-3">{metric.insight}</div>
                 {metric.source && (
@@ -307,9 +307,9 @@ export default function Government({ governmentBlogs }) {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {securityFeatures.map((feature, index) => (
-              <div key={index} className="bg-gradient-to-r from-[#E3DFF1]/20 via-[#8CB7D0]/10 to-[#E3DFF1]/30 rounded-xl overflow-hidden border border-[#A5DAD8]/30 p-6 shadow-lg shadow-[#E3DFF1]/20 hover:shadow-xl hover:shadow-[#E3DFF1]/30 transition-all duration-300">
+              <div key={index} className="bg-gradient-to-r from-kahana-accent-sky/20 via-kahana-secondary-300/10 to-kahana-accent-sky/30 rounded-xl overflow-hidden border border-kahana-primary/30 p-6 shadow-lg shadow-kahana-accent-sky/20 hover:shadow-xl hover:shadow-kahana-accent-sky/30 transition-all duration-300">
                 <div className="flex items-center mb-4">
-                  <div className="w-10 h-10 bg-gradient-to-br from-[#66C2BE] via-[#8CB7D0] to-[#E3DFF1] rounded-full flex items-center justify-center mr-3 shadow-md shadow-[#E3DFF1]/20">
+                  <div className="w-10 h-10 bg-gradient-to-br from-kahana-primary via-kahana-secondary-300 to-kahana-accent-sky rounded-full flex items-center justify-center mr-3 shadow-md shadow-kahana-accent-sky/20">
                     <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                     </svg>
@@ -320,7 +320,7 @@ export default function Government({ governmentBlogs }) {
                 <ul className="space-y-2">
                   {feature.details.map((detail, dIndex) => (
                     <li key={dIndex} className="flex items-center text-gray-600 text-sm">
-                      <svg className="w-4 h-4 mr-2 text-[#66C2BE]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-4 h-4 mr-2 text-kahana-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                       {detail}
@@ -344,9 +344,9 @@ export default function Government({ governmentBlogs }) {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {industryBenefits.map((benefit, index) => (
-              <div key={index} className="bg-gradient-to-r from-[#E3DFF1]/20 via-[#8CB7D0]/10 to-[#E3DFF1]/30 rounded-xl overflow-hidden border border-[#A5DAD8]/30 p-6 shadow-lg shadow-[#E3DFF1]/20 hover:shadow-xl hover:shadow-[#E3DFF1]/30 transition-all duration-300">
+              <div key={index} className="bg-gradient-to-r from-kahana-accent-sky/20 via-kahana-secondary-300/10 to-kahana-accent-sky/30 rounded-xl overflow-hidden border border-kahana-primary/30 p-6 shadow-lg shadow-kahana-accent-sky/20 hover:shadow-xl hover:shadow-kahana-accent-sky/30 transition-all duration-300">
                 <div className="flex items-center mb-4">
-                  <div className="w-10 h-10 bg-gradient-to-br from-[#66C2BE] via-[#8CB7D0] to-[#E3DFF1] rounded-full flex items-center justify-center mr-3 shadow-md shadow-[#E3DFF1]/20">
+                  <div className="w-10 h-10 bg-gradient-to-br from-kahana-primary via-kahana-secondary-300 to-kahana-accent-sky rounded-full flex items-center justify-center mr-3 shadow-md shadow-kahana-accent-sky/20">
                     <div className="text-white">
                       {benefit.icon}
                     </div>
@@ -356,7 +356,7 @@ export default function Government({ governmentBlogs }) {
                   </h3>
                 </div>
                 <div className="mb-4">
-                  <div className="text-2xl font-bold text-[#66C2BE] mb-1">
+                  <div className="text-2xl font-bold text-kahana-primary mb-1">
                     {benefit.stat}
                   </div>
                   <div className="text-sm text-gray-600">
@@ -379,20 +379,41 @@ export default function Government({ governmentBlogs }) {
       <FeaturedBlogSection posts={governmentBlogs} />
 
       {/* CTA Section - Next Steps */}
-      <section className="bg-gradient-to-r from-[#66C2BE] to-[#8CB7D0] py-16">
+      <section className="bg-gradient-to-r from-kahana-primary to-kahana-secondary py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">
+          <h2 className="text-4xl font-bold text-white mb-6" style={{ color: 'white !important' }}>
             Ready to Transform Your Government Operations?
           </h2>
-          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto" style={{ color: 'white !important' }}>
             Schedule a demo to see how our solutions can enhance security, improve operations, and streamline your government processes.
           </p>
           <div className="flex justify-center gap-4">
-            <Link href="/schedule-demo" className="bg-white text-[#21706c] border-2 border-[#21706c] px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors">
-              Schedule Demo
+            <Link 
+              href="/schedule-demo" 
+              className="bg-white text-kahana-primary border-2 border-kahana-primary px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors"
+              style={{
+                backgroundColor: 'white !important',
+                color: '#0d9488 !important',
+                borderColor: '#0d9488 !important',
+                fontWeight: 'bold'
+              }}
+            >
+              <span style={{ color: '#0d9488 !important', fontWeight: 'bold' }}>
+                Schedule Demo
+              </span>
             </Link>
-            <Link href="/sales" className="bg-[#21706c] text-white px-8 py-3 rounded-md font-bold hover:bg-[#15514f] transition-colors">
-              Contact Sales
+            <Link 
+              href="/sales" 
+              className="bg-kahana-primary text-white px-8 py-3 rounded-md font-bold hover:bg-kahana-primary-dark transition-colors"
+              style={{
+                backgroundColor: '#0d9488 !important',
+                color: 'white !important',
+                fontWeight: 'bold'
+              }}
+            >
+              <span style={{ color: 'white !important', fontWeight: 'bold' }}>
+                Contact Sales
+              </span>
             </Link>
           </div>
         </div>

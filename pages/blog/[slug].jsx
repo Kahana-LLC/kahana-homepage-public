@@ -189,11 +189,16 @@ export default function BlogPost({ post, coverImage }) {
             </p>
             <Link 
               href="/schedule-demo"
-              className="inline-flex items-center px-6 py-3 border border-transparent text-base font-bold rounded-md shadow-sm text-white bg-[#21706c] hover:bg-[#15514f] transition-colors no-underline"
-              style={{ textDecoration: 'none' }}
+              className="inline-flex items-center px-6 py-3 border border-transparent text-base font-bold rounded-md shadow-sm text-white bg-kahana-primary hover:bg-kahana-primary-dark transition-colors no-underline"
+              style={{ 
+                textDecoration: 'none', 
+                backgroundColor: '#0d9488 !important', 
+                color: 'white !important',
+                borderColor: '#0d9488 !important'
+              }}
             >
-              Schedule Demo
-              <svg className="ml-2 -mr-1 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <span style={{ color: 'white !important', fontWeight: 'bold' }}>Schedule Demo</span>
+              <svg className="ml-2 -mr-1 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: 'white !important' }}>
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
             </Link>

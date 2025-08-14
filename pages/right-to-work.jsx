@@ -7,41 +7,41 @@ export default function RightToWork() {
   return (
     <>
       <Head>
-        <title>Right to Work | Kahana</title>
+        <title>E-Verify & Right to Work | Kahana</title>
         <meta
           name="description"
-          content="Kahana's Right to Work solution helps organizations maintain compliance and streamline the verification process."
+          content="Kahana participates in E-Verify and follows federal employment eligibility verification requirements for all new hires."
         />
       </Head>
 
       <div className="bg-white">
         <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl font-bold text-gray-900">Right to Work Verification</h1>
+            <h1 className="text-4xl font-bold text-gray-900">E-Verify & Right to Work</h1>
             <p className="mt-4 text-xl text-gray-600">
-              Streamline your Right to Work verification process with Kahana's secure and compliant solution.
+              Kahana participates in E-Verify and follows federal employment eligibility verification requirements.
             </p>
           </div>
 
           <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            <div className="bg-gray-50 p-6 rounded-lg">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Automated Verification</h3>
+            <div className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 p-6 rounded-lg border border-kahana-primary/30">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">E-Verify Participation</h3>
               <p className="text-gray-600">
-                Our automated system handles document verification, reducing manual effort and human error.
+                Kahana is enrolled in the federal E-Verify program and verifies employment eligibility for all new hires.
               </p>
             </div>
 
-            <div className="bg-gray-50 p-6 rounded-lg">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Compliance Assurance</h3>
+            <div className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 p-6 rounded-lg border border-kahana-primary/30">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">I-9 Form Requirements</h3>
               <p className="text-gray-600">
-                Stay compliant with the latest regulations and maintain accurate records of all verifications.
+                All new employees must complete Form I-9 and provide appropriate documentation to verify identity and work authorization.
               </p>
             </div>
 
-            <div className="bg-gray-50 p-6 rounded-lg">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Secure Storage</h3>
+            <div className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 p-6 rounded-lg border border-kahana-primary/30">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Documentation Needed</h3>
               <p className="text-gray-600">
-                All sensitive documents are stored securely with enterprise-grade encryption.
+                You'll need to provide original documents such as a passport, driver's license, or Social Security card during the hiring process.
               </p>
             </div>
           </div>
@@ -49,9 +49,9 @@ export default function RightToWork() {
       </div>
 
       <SharedCTA
-        title="Ready to Streamline Your Right to Work Process?"
-        description="Contact us to learn how Kahana can help your organization maintain compliance."
-        buttonText="Contact Sales"
+        title="Questions About Our Hiring Process?"
+        description="If you have questions about our employment verification process or need assistance, please contact us."
+        buttonText="Contact Us"
         buttonLink="/contact"
       />
     </>

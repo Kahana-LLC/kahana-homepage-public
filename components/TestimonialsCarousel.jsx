@@ -83,14 +83,14 @@ export default function TestimonialsCarousel() {
             <div className="mt-8 flex justify-center gap-4">
               <button
                 onClick={prevTestimonial}
-                className="rounded-full bg-[#21706c] text-white font-bold p-2 hover:bg-[#15514f] transition-colors"
+                className="rounded-full bg-kahana-primary text-white font-bold p-2 hover:bg-kahana-primary-dark transition-colors"
               >
                 <span className="sr-only">Previous testimonial</span>
                 ←
               </button>
               <button
                 onClick={nextTestimonial}
-                className="rounded-full bg-[#21706c] text-white font-bold p-2 hover:bg-[#15514f] transition-colors"
+                className="rounded-full bg-kahana-primary text-white font-bold p-2 hover:bg-kahana-primary-dark transition-colors"
               >
                 <span className="sr-only">Next testimonial</span>
                 →

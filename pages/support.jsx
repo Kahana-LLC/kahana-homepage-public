@@ -25,10 +25,10 @@ export default function Support() {
 
           <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {/* Documentation CTA */}
-            <div className="bg-gradient-to-br from-[#E3DFF1]/20 to-[#8CB7D0]/10 rounded-xl p-8">
+            <div className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl p-8">
               <div className="flex items-center mb-4">
                 <svg
-                  className="w-8 h-8 text-[#66C2BE] mr-3"
+                  className="w-8 h-8 text-kahana-primary mr-3"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -46,17 +46,26 @@ export default function Support() {
                 Access our comprehensive documentation and user guides to help you get started and master Kahana's features.
               </p>
               <Link href="/docs">
-                <button className="bg-[#21706c] text-white font-bold px-6 py-3 rounded-md hover:bg-[#15514f] transition-colors">
-                  View Documentation
+                <button className="bg-kahana-primary text-white font-bold px-6 py-3 rounded-md hover:bg-kahana-primary-dark transition-colors"
+                  style={{
+                    backgroundColor: '#0d9488 !important',
+                    color: 'white !important',
+                    borderColor: '#0d9488 !important',
+                    fontWeight: 'bold'
+                  }}
+                >
+                  <span style={{ color: 'white !important', fontWeight: 'bold' }}>
+                    View Documentation
+                  </span>
                 </button>
               </Link>
             </div>
 
             {/* FAQ CTA */}
-            <div className="bg-gradient-to-br from-[#E3DFF1]/20 to-[#8CB7D0]/10 rounded-xl p-8">
+            <div className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl p-8">
               <div className="flex items-center mb-4">
                 <svg
-                  className="w-8 h-8 text-[#66C2BE] mr-3"
+                  className="w-8 h-8 text-kahana-primary mr-3"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -74,17 +83,26 @@ export default function Support() {
                 Find quick answers to commonly asked questions about Kahana's enterprise browsing solutions.
               </p>
               <Link href="/faq">
-                <button className="bg-[#21706c] text-white font-bold px-6 py-3 rounded-md hover:bg-[#15514f] transition-colors">
-                  View FAQs
+                <button className="bg-kahana-primary text-white font-bold px-6 py-3 rounded-md hover:bg-kahana-primary-dark transition-colors"
+                  style={{
+                    backgroundColor: '#0d9488 !important',
+                    color: 'white !important',
+                    borderColor: '#0d9488 !important',
+                    fontWeight: 'bold'
+                  }}
+                >
+                  <span style={{ color: 'white !important', fontWeight: 'bold' }}>
+                    View FAQs
+                  </span>
                 </button>
               </Link>
             </div>
 
             {/* Blog CTA */}
-            <div className="bg-gradient-to-br from-[#E3DFF1]/20 to-[#8CB7D0]/10 rounded-xl p-8">
+            <div className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl p-8">
               <div className="flex items-center mb-4">
                 <svg
-                  className="w-8 h-8 text-[#66C2BE] mr-3"
+                  className="w-8 h-8 text-kahana-primary mr-3"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -102,8 +120,17 @@ export default function Support() {
                 Stay updated with the latest insights, industry trends, and best practices in enterprise browsing security.
               </p>
               <Link href="/blog">
-                <button className="bg-[#66C2BE] text-white px-6 py-2 rounded-md font-semibold hover:bg-[#55B3AF] transition-colors shadow-lg shadow-[#E3DFF1]/20 hover:shadow-xl hover:shadow-[#E3DFF1]/30">
-                  Read Our Blog
+                <button className="bg-kahana-primary text-white px-6 py-2 rounded-md font-semibold hover:bg-kahana-primary-dark transition-colors shadow-lg shadow-kahana-accent-sky/20 hover:shadow-xl hover:shadow-kahana-accent-sky/30"
+                  style={{
+                    backgroundColor: '#0d9488 !important',
+                    color: 'white !important',
+                    borderColor: '#0d9488 !important',
+                    fontWeight: 'bold'
+                  }}
+                >
+                  <span style={{ color: 'white !important', fontWeight: 'bold' }}>
+                    Read Our Blog
+                  </span>
                 </button>
               </Link>
             </div>

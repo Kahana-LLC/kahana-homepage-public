@@ -65,9 +65,9 @@ export default function FeaturesShowcase() {
         <div className="mx-auto mt-16 max-w-7xl">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {conceptCards.map((card, index) => (
-              <div key={index} className="bg-gradient-to-r from-[#E3DFF1]/20 via-[#8CB7D0]/10 to-[#E3DFF1]/30 rounded-xl overflow-hidden border border-[#A5DAD8]/30 p-6 shadow-lg shadow-[#E3DFF1]/20 hover:shadow-xl hover:shadow-[#E3DFF1]/30 transition-all duration-300">
+              <div key={index} className="bg-gradient-to-r from-kahana-accent-sky/20 via-kahana-secondary-300/10 to-kahana-accent-sky/30 rounded-xl overflow-hidden border border-kahana-primary/30 p-6 shadow-lg shadow-kahana-accent-sky/20 hover:shadow-xl hover:shadow-kahana-accent-sky/30 transition-all duration-300">
                 <div className="flex items-center mb-4">
-                  <div className="w-10 h-10 bg-gradient-to-br from-[#66C2BE] via-[#8CB7D0] to-[#E3DFF1] rounded-full flex items-center justify-center mr-3 shadow-md shadow-[#E3DFF1]/20">
+                  <div className="w-10 h-10 bg-gradient-to-br from-kahana-primary via-kahana-secondary-300 to-kahana-accent-sky rounded-full flex items-center justify-center mr-3 shadow-md shadow-kahana-accent-sky/20">
                     <div className="text-white">
                       {card.icon}
                     </div>
@@ -83,7 +83,7 @@ export default function FeaturesShowcase() {
                   </svg>
                   <span className="font-medium">{card.highlight}</span>
                 </div>
-                <Link href={card.link} className="text-[#66C2BE] hover:text-[#55B3AF] text-sm font-semibold">
+                <Link href={card.link} className="text-kahana-primary hover:text-kahana-primary-dark text-sm font-semibold">
                       Learn more about {card.title} <span aria-hidden="true">→</span>
                 </Link>
               </div>

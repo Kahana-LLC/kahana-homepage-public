@@ -49,7 +49,7 @@ export default function Partners() {
       </Script>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-indigo-50 to-white py-20">
+      <section className="bg-gradient-to-b from-kahana-primary-50 to-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-5xl font-bold text-gray-900 mb-6">
@@ -67,10 +67,10 @@ export default function Partners() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Traditional Partnership Card */}
-            <div className="bg-gradient-to-br from-gray-50 to-indigo-50/30 rounded-2xl p-8 border border-gray-100">
+            <div className="bg-gradient-to-br from-gray-50 to-kahana-primary-50/30 rounded-2xl p-8 border border-gray-100">
               <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mr-4">
-                  <svg className="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-12 h-12 bg-kahana-primary-100 rounded-full flex items-center justify-center mr-4">
+                  <svg className="w-6 h-6 text-kahana-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                   </svg>
                 </div>
@@ -96,10 +96,10 @@ export default function Partners() {
             </div>
 
             {/* Kahana Partnership Card */}
-            <div className="bg-gradient-to-br from-gray-50 to-purple-50/30 rounded-2xl p-8 border border-gray-100">
+            <div className="bg-gradient-to-br from-gray-50 to-kahana-secondary-50/30 rounded-2xl p-8 border border-gray-100">
               <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4">
-                  <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-12 h-12 bg-kahana-secondary-100 rounded-full flex items-center justify-center mr-4">
+                  <svg className="w-6 h-6 text-kahana-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
@@ -110,15 +110,15 @@ export default function Partners() {
               </p>
               <ul className="space-y-2">
                 <li className="flex items-center text-gray-600">
-                  <span className="text-indigo-500 mr-2">✓</span>
+                  <span className="text-kahana-secondary mr-2">✓</span>
                   <span>Dedicated support team</span>
                 </li>
                 <li className="flex items-center text-gray-600">
-                  <span className="text-indigo-500 mr-2">✓</span>
+                  <span className="text-kahana-secondary mr-2">✓</span>
                   <span>Comprehensive resources</span>
                 </li>
                 <li className="flex items-center text-gray-600">
-                  <span className="text-indigo-500 mr-2">✓</span>
+                  <span className="text-kahana-secondary mr-2">✓</span>
                   <span>Flexible collaboration</span>
                 </li>
               </ul>
@@ -126,9 +126,9 @@ export default function Partners() {
           </div>
 
           {/* Partner Benefits Card */}
-          <div className="mt-8 bg-gradient-to-r from-indigo-50 to-purple-50 rounded-2xl p-8 border border-indigo-100">
+          <div className="mt-8 bg-gradient-to-r from-kahana-primary-50 to-kahana-secondary-50 rounded-2xl p-8 border border-kahana-primary-100">
             <div className="flex items-center mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-indigo-400 to-purple-400 rounded-full flex items-center justify-center mr-4">
+              <div className="w-12 h-12 bg-gradient-to-br from-kahana-primary to-kahana-secondary rounded-full flex items-center justify-center mr-4">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
@@ -167,10 +167,18 @@ export default function Partners() {
           </p>
           <Link 
             href="/contact"
-            className="inline-flex items-center px-8 py-4 border border-transparent text-lg font-medium rounded-md shadow-sm text-white bg-[#66C2BE] hover:bg-[#4A9E9A] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#66C2BE] transition-colors duration-200"
+            className="inline-flex items-center px-8 py-4 border border-transparent text-lg font-medium rounded-md shadow-sm text-white bg-kahana-primary hover:bg-kahana-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-kahana-primary transition-colors duration-200"
+            style={{
+              backgroundColor: '#0d9488 !important',
+              color: 'white !important',
+              borderColor: '#0d9488 !important',
+              fontWeight: 'bold'
+            }}
           >
-            Get in Touch
-            <svg className="ml-2 -mr-1 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <span style={{ color: 'white !important', fontWeight: 'bold' }}>
+              Get in Touch
+            </span>
+            <svg className="ml-2 -mr-1 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: 'white !important' }}>
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
           </Link>
