@@ -179,8 +179,6 @@ const retailMetrics = [
 
 export async function getServerSideProps() {
   try {
-    const { getRandomPhoto, getOptimizedPhotoUrl, getPlaceholderImageUrl } = await import('../../utils/pexels');
-
     const retailBlogs = blogIndex
       .filter(post => post.category.some(cat => 
         cat.toLowerCase() === 'retail' || 
@@ -189,28 +187,10 @@ export async function getServerSideProps() {
       .sort((a, b) => new Date(b.date) - new Date(a.date))
       .slice(0, 3);
 
-    // Fetch images on the server with error handling
-    const postsWithImages = await Promise.all(
-      retailBlogs.map(async (post) => {
-        try {
-          const photo = await getRandomPhoto(post.defaultImageQuery);
-          return {
-            ...post,
-            image: getOptimizedPhotoUrl(photo) || getPlaceholderImageUrl(post.defaultImageQuery),
-          };
-        } catch (error) {
-          console.error(`Error fetching image for post "${post.title}":`, error);
-          return {
-            ...post,
-            image: getPlaceholderImageUrl(post.defaultImageQuery),
-          };
-        }
-      })
-    );
-
+    // Don't fetch images during build - let them load on-demand
     return {
       props: {
-        retailBlogs: postsWithImages,
+        retailBlogs: retailBlogs,
       },
     };
   } catch (error) {
@@ -223,11 +203,7 @@ export async function getServerSideProps() {
       cat.toLowerCase() === 'security'
       ))
       .sort((a, b) => new Date(b.date) - new Date(a.date))
-      .slice(0, 3)
-      .map(post => ({
-        ...post,
-        image: getPlaceholderImageUrl ? getPlaceholderImageUrl(post.defaultImageQuery) : null,
-      }));
+      .slice(0, 3);
 
     return {
       props: {
