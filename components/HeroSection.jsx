@@ -21,14 +21,9 @@ export default function HeroSection() {
                     <Link
                       href="/contact"  
                       className="rounded-md border border-transparent bg-kahana-primary py-3 px-8 text-lg font-bold text-white shadow-sm hover:bg-kahana-primary-dark focus:outline-none focus:ring-2 focus:ring-kahana-primary focus:ring-offset-2 text-center transition-colors"
-                      style={{
-                        backgroundColor: '#0d9488 !important',
-                        color: 'white !important',
-                        borderColor: '#0d9488 !important',
-                        fontWeight: 'bold'
-                      }}
+                      
                     >
-                      <span style={{ color: 'white !important', fontWeight: 'bold' }}>
+                      <span >
                         Get in Touch
                       </span>
                     </Link>

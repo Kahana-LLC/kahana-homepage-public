@@ -168,17 +168,12 @@ export default function Partners() {
           <Link 
             href="/contact"
             className="inline-flex items-center px-8 py-4 border border-transparent text-lg font-medium rounded-md shadow-sm text-white bg-kahana-primary hover:bg-kahana-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-kahana-primary transition-colors duration-200"
-            style={{
-              backgroundColor: '#0d9488 !important',
-              color: 'white !important',
-              borderColor: '#0d9488 !important',
-              fontWeight: 'bold'
-            }}
+            
           >
-            <span style={{ color: 'white !important', fontWeight: 'bold' }}>
+            <span >
               Get in Touch
             </span>
-            <svg className="ml-2 -mr-1 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: 'white !important' }}>
+            <svg className="ml-2 -mr-1 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" >
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
           </Link>

@@ -148,9 +148,9 @@ export default function ProductSection() {
                 <Link
                   href="/oasis-waitlist"
                   className="nav-button download inline-flex items-center rounded-md bg-kahana-primary text-white font-bold shadow-sm hover:bg-kahana-primary-dark px-6 py-3 text-base no-underline hover:no-underline focus:no-underline"
-                  style={{ textDecoration: 'none', backgroundColor: '#0d9488', color: 'white !important' }}
+                  style={{ textDecoration: 'none', backgroundColor: '#0d9488' }}
                 >
-                  <span style={{ color: 'white !important' }}>Join Waitlist</span>
+                  <span>Join Waitlist</span>
                 </Link>
                 <Link
                   href="/schedule-demo"
