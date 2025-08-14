@@ -154,15 +154,7 @@ export default function ProductSection() {
                 </Link>
                 <Link
                   href="/schedule-demo"
-                  className="inline-flex items-center rounded-md bg-white font-bold shadow-sm border border-kahana-primary hover:bg-gray-100 px-6 py-3 text-base no-underline"
-                  style={{ 
-                    textDecoration: 'none', 
-                    backgroundColor: 'white', 
-                    color: '#0d9488', 
-                    borderColor: '#0d9488',
-                    display: 'inline-flex',
-                    alignItems: 'center'
-                  }}
+                  className="nav-button get-in-touch bg-white text-kahana-primary font-bold rounded-md shadow-sm border border-kahana-primary hover:bg-gray-100 px-6 py-3 text-base no-underline"
                 >
                   Schedule Demo
                 </Link>
