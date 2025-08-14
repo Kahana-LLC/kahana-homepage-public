@@ -22,13 +22,13 @@ const SharedCTA = ({
         href={buttonLink} 
         className={buttonStyles[buttonVariant]}
         style={buttonVariant === "primary" ? {
-          backgroundColor: '#0d9488 !important',
-          color: 'white !important',
+          
+          
           fontWeight: 'bold'
         } : {
-          backgroundColor: 'white !important',
-          color: '#0d9488 !important',
-          borderColor: '#0d9488 !important',
+          
+          
+          
           fontWeight: 'bold'
         }}
       >

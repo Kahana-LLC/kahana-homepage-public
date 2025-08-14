@@ -107,10 +107,10 @@ export default function HowItWorks() {
                         <Link
               href="/schedule-demo"
               className="inline-flex items-center px-8 py-3 border border-transparent text-base font-bold rounded-md text-white bg-kahana-primary hover:bg-kahana-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-kahana-primary shadow-md shadow-kahana-accent-sky/20 hover:shadow-lg hover:shadow-kahana-accent-sky/30 transition-all duration-300 no-underline hover:no-underline focus:no-underline"
-              style={{ textDecoration: 'none', backgroundColor: '#0d9488', color: 'white !important' }}
+              style={{ textDecoration: 'none', backgroundColor: '#0d9488' }}
             >
-              <span style={{ color: 'white !important' }}>Schedule Your Demo</span>
-              <svg className="ml-2 -mr-1 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: 'white !important' }}>
+              <span>Schedule Your Demo</span>
+              <svg className="ml-2 -mr-1 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" >
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
               </svg>
             </Link>

@@ -84,12 +84,10 @@ export default function OasisWaitlist() {
         marginHeight="0"
         marginWidth="0"
         title="Oasis Waitlist"
-        style={{
-          border: 0,
+        style={{ border: 0,
           borderRadius: 0,
           backgroundColor: 'transparent',
-          display: 'block',
-        }}
+          display: 'block' }}
       />
     </div>
   );

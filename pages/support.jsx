@@ -47,14 +47,9 @@ export default function Support() {
               </p>
               <Link href="/docs">
                 <button className="bg-kahana-primary text-white font-bold px-6 py-3 rounded-md hover:bg-kahana-primary-dark transition-colors"
-                  style={{
-                    backgroundColor: '#0d9488 !important',
-                    color: 'white !important',
-                    borderColor: '#0d9488 !important',
-                    fontWeight: 'bold'
-                  }}
+                  
                 >
-                  <span style={{ color: 'white !important', fontWeight: 'bold' }}>
+                  <span >
                     View Documentation
                   </span>
                 </button>
@@ -84,14 +79,9 @@ export default function Support() {
               </p>
               <Link href="/faq">
                 <button className="bg-kahana-primary text-white font-bold px-6 py-3 rounded-md hover:bg-kahana-primary-dark transition-colors"
-                  style={{
-                    backgroundColor: '#0d9488 !important',
-                    color: 'white !important',
-                    borderColor: '#0d9488 !important',
-                    fontWeight: 'bold'
-                  }}
+                  
                 >
-                  <span style={{ color: 'white !important', fontWeight: 'bold' }}>
+                  <span >
                     View FAQs
                   </span>
                 </button>
@@ -121,14 +111,9 @@ export default function Support() {
               </p>
               <Link href="/blog">
                 <button className="bg-kahana-primary text-white px-6 py-2 rounded-md font-semibold hover:bg-kahana-primary-dark transition-colors shadow-lg shadow-kahana-accent-sky/20 hover:shadow-xl hover:shadow-kahana-accent-sky/30"
-                  style={{
-                    backgroundColor: '#0d9488 !important',
-                    color: 'white !important',
-                    borderColor: '#0d9488 !important',
-                    fontWeight: 'bold'
-                  }}
+                  
                 >
-                  <span style={{ color: 'white !important', fontWeight: 'bold' }}>
+                  <span >
                     Read Our Blog
                   </span>
                 </button>

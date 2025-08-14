@@ -33,14 +33,9 @@ export default function Careers() {
               </p>
               <Link href="/contact">
                 <button className="bg-kahana-primary text-white px-6 py-2 rounded-md hover:bg-kahana-primary-dark transition-colors"
-                  style={{
-                    backgroundColor: '#0d9488 !important',
-                    color: 'white !important',
-                    borderColor: '#0d9488 !important',
-                    fontWeight: 'bold'
-                  }}
+                  
                 >
-                  <span style={{ color: 'white !important', fontWeight: 'bold' }}>
+                  <span >
                     Contact Us
                   </span>
                 </button>

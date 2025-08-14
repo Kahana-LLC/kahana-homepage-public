@@ -240,7 +240,7 @@ export default function WorkplaceEnablement() {
       {/* CTA Section */}
       <section className="bg-gradient-to-r from-kahana-primary to-kahana-secondary py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-white mb-6" style={{ color: 'white !important' }}>
+          <h2 className="text-4xl font-bold text-white mb-6" >
             Ready to Transform Your Workplace?
           </h2>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">

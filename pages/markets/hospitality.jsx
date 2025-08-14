@@ -357,37 +357,19 @@ export default function Hospitality({ hospitalityBlogs }) {
       <section className="bg-gradient-to-r from-kahana-primary to-kahana-secondary py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="rounded-2xl p-12 text-center">
-            <h2 className="text-3xl font-bold text-white mb-4" style={{ color: 'white !important' }}>
+            <h2 className="text-3xl font-bold text-white mb-4" >
               Ready to Transform Your Hospitality Operations?
             </h2>
-            <p className="text-white/90 mb-8 max-w-2xl mx-auto" style={{ color: 'white !important' }}>
+            <p className="text-white/90 mb-8 max-w-2xl mx-auto" >
               Join leading hospitality organizations that trust Kahana for the new wave of security and productivity.
             </p>
-            <div className="flex justify-center gap-4">
-              <Link 
-                href="/schedule-demo" 
-                className="inline-block bg-white text-kahana-primary border-2 border-kahana-primary px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors"
-                style={{
-                  backgroundColor: 'white !important',
-                  color: '#0d9488 !important',
-                  borderColor: '#0d9488 !important',
-                  fontWeight: 'bold'
-                }}
-              >
-                <span style={{ color: '#0d9488 !important', fontWeight: 'bold' }}>
-                  Schedule Demo
-                </span>
-              </Link>
+            <div className="flex justify-center">
               <Link 
                 href="/sales" 
                 className="bg-kahana-primary text-white px-8 py-3 rounded-md font-bold hover:bg-kahana-primary-dark transition-colors"
-                style={{
-                  backgroundColor: '#0d9488 !important',
-                  color: 'white !important',
-                  fontWeight: 'bold'
-                }}
+                
               >
-                <span style={{ color: 'white !important', fontWeight: 'bold' }}>
+                <span >
                   Contact Sales
                 </span>
               </Link>

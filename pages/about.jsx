@@ -259,14 +259,9 @@ export default function About() {
               <Link 
                 href="/manifesto"
                 className="inline-block bg-kahana-primary text-white px-6 py-2 rounded-md font-semibold hover:bg-kahana-primary-dark transition-colors border border-kahana-primary"
-                style={{ 
-                  backgroundColor: '#0d9488 !important', 
-                  color: 'white !important', 
-                  borderColor: '#0d9488 !important',
-                  fontWeight: 'bold'
-                }}
+                
               >
-                <span style={{ color: 'white !important', fontWeight: 'bold' }}>Read the Manifesto</span>
+                <span >Read the Manifesto</span>
               </Link>
             </div>
           </div>
