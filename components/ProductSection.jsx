@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
 
 const browserFeatures = {
@@ -53,13 +53,13 @@ export default function ProductSection() {
   const [currentPlaceholder, setCurrentPlaceholder] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
 
-  const placeholders = [
+  const placeholders = useMemo(() => [
     "Search the Internet or type a URL",
     "Organize your creative flow",
     "Jump back into your workspace",
     "Browse. Build. Breathe.",
     "Explore your next genius idea"
-  ];
+  ], []);
 
   useEffect(() => {
     const baseTypeSpeed = 133; // ~90 WPM typing speed
@@ -122,7 +122,7 @@ export default function ProductSection() {
     const timeout = setTimeout(updatePlaceholder, isDeleting ? getRandomSpeed(baseDeleteSpeed) : getRandomSpeed(baseTypeSpeed));
 
     return () => clearTimeout(timeout);
-  }, [currentPlaceholder, isDeleting, placeholderIndex]);
+  }, [currentPlaceholder, isDeleting, placeholderIndex, placeholders]);
 
   const handleSendMessage = (e) => {
     e.preventDefault();

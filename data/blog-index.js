@@ -1,13 +1,3 @@
-import adamHeadshot from "../public/assets/headshots/adam_kershner.jpg";
-import jordanHeadshot from "../public/assets/headshots/jordan_kern.jpg";
-import jescettaHeadshot from "../public/assets/headshots/jescetta_joy.jpg";
-import vrukshaHeadshot from "../public/assets/headshots/vruksha_joshi.jpg";
-import sonakshiHeadshot from "../public/assets/headshots/sonakshi_singh.jpg";
-import venkeshHeadshot from "../public/assets/headshots/venkesh_agarwal.jpg";
-import vedantHeadshot from "../public/assets/headshots/vedant_gupta.jpg";
-import shivangiHeadshot from "../public/assets/headshots/shivangi_chamoli.jpg";
-import saideepHeadshot from "../public/assets/headshots/saideep_pajjuri.jpg";
-
 const blogIndex = [
   {
     title: "Enterprise Browser Adoption in 2025: Overcoming the Hidden Barriers to Success",

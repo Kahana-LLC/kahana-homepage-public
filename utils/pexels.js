@@ -1,12 +1,6 @@
 import { createClient } from "pexels";
-import fs from "fs";
-import path from "path";
 
 const client = createClient(process.env.NEXT_PUBLIC_PEXELS_API_KEY);
-
-// Cache configuration
-const CACHE_FILE = path.join(process.cwd(), ".image-cache.json");
-const CACHE_DURATION = 30 * 24 * 60 * 60 * 1000; // 30 days
 
 // Rate limiting configuration - more conservative
 const RATE_LIMIT_REQUESTS = 2; // Reduced from 3 to 2
@@ -22,31 +16,9 @@ let lastRequestTime = 0;
 const requestQueue = [];
 let isProcessingQueue = false;
 
-// Load cache from file
-let queryCache = {};
-try {
-  if (fs.existsSync(CACHE_FILE)) {
-    const cacheData = JSON.parse(fs.readFileSync(CACHE_FILE, "utf8"));
-    // Filter out expired entries
-    const now = Date.now();
-    queryCache = Object.fromEntries(
-      Object.entries(cacheData).filter(([_, data]) => {
-        return now - data.timestamp < CACHE_DURATION;
-      })
-    );
-  }
-} catch (error) {
-  console.warn("Error loading image cache:", error);
-}
-
-// Save cache to file
-function saveCache() {
-  try {
-    fs.writeFileSync(CACHE_FILE, JSON.stringify(queryCache));
-  } catch (error) {
-    console.warn("Error saving image cache:", error);
-  }
-}
+// In-memory cache (no file system dependency)
+const queryCache = new Map();
+const CACHE_DURATION = 30 * 24 * 60 * 60 * 1000; // 30 days
 
 // List of fallback queries to try if primary query fails
 const FALLBACK_QUERIES = [
@@ -196,12 +168,10 @@ export async function searchPhotos(query, options = {}) {
   const cacheKey = `${query}-${options.per_page}-${options.orientation}`;
 
   // Check cache first
-  if (
-    queryCache[cacheKey] &&
-    Date.now() - queryCache[cacheKey].timestamp < CACHE_DURATION
-  ) {
+  const cached = queryCache.get(cacheKey);
+  if (cached && Date.now() - cached.timestamp < CACHE_DURATION) {
     // Filter cached photos for safety
-    return queryCache[cacheKey].photos.filter(isImageSafe);
+    return cached.photos.filter(isImageSafe);
   }
 
   // Queue the request with timeout
@@ -232,11 +202,10 @@ export async function searchPhotos(query, options = {}) {
     const photos = await promise;
 
     if (photos && photos.length > 0) {
-      queryCache[cacheKey] = {
+      queryCache.set(cacheKey, {
         photos,
         timestamp: Date.now(),
-      };
-      saveCache();
+      });
     }
 
     return photos;
@@ -251,6 +220,12 @@ const usedPhotos = new Set();
 
 export async function getRandomPhoto(query) {
   try {
+    // Check if Pexels API key is available
+    if (!process.env.NEXT_PUBLIC_PEXELS_API_KEY) {
+      console.warn("Pexels API key not found, returning null");
+      return null;
+    }
+
     // Try primary query first
     let photos = await searchPhotos(query, { per_page: 2 }); // Reduced from 3 to 2
 
@@ -289,16 +264,26 @@ export function getOptimizedPhotoUrl(photo) {
   return photo.src.large2x || photo.src.large || photo.src.original;
 }
 
+// Generate a placeholder image URL for when Pexels API is not available
+export function getPlaceholderImageUrl(query = "technology") {
+  // Use a simple placeholder service
+  const colors = ['66C2BE', '8CB7D0', 'E3DFF1', 'A5DAD8', '55B3AF'];
+  const randomColor = colors[Math.floor(Math.random() * colors.length)];
+  const width = 800;
+  const height = 600;
+  
+  return `https://via.placeholder.com/${width}x${height}/${randomColor}/ffffff?text=${encodeURIComponent(query)}`;
+}
+
 // Clear cache periodically to prevent memory issues
 if (typeof window !== "undefined") {
   setInterval(() => {
     // Only clear old entries
     const now = Date.now();
-    queryCache = Object.fromEntries(
-      Object.entries(queryCache).filter(([_, data]) => {
-        return now - data.timestamp < CACHE_DURATION;
-      })
-    );
-    saveCache();
+    for (const [key, data] of queryCache.entries()) {
+      if (now - data.timestamp >= CACHE_DURATION) {
+        queryCache.delete(key);
+      }
+    }
   }, CACHE_DURATION);
 }

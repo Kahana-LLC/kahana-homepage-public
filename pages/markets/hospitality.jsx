@@ -176,34 +176,63 @@ const hospitalityMetrics = [
 ];
 
 export async function getServerSideProps() {
-  const { getRandomPhoto, getOptimizedPhotoUrl } = await import('../../utils/pexels');
+  try {
+    const { getRandomPhoto, getOptimizedPhotoUrl, getPlaceholderImageUrl } = await import('../../utils/pexels');
 
-  const hospitalityBlogs = blogIndex
-    .filter(post => post.category.some(cat => 
-      cat.toLowerCase() === 'security' || 
-      cat.toLowerCase() === 'privacy' ||
-      cat.toLowerCase() === 'performance' ||
-      cat.toLowerCase() === 'remote work'
-    ))
-    .sort((a, b) => new Date(b.date) - new Date(a.date))
-    .slice(0, 3);
+    const hospitalityBlogs = blogIndex
+      .filter(post => post.category.some(cat => 
+        cat.toLowerCase() === 'hospitality' || 
+      cat.toLowerCase() === 'security'
+      ))
+      .sort((a, b) => new Date(b.date) - new Date(a.date))
+      .slice(0, 3);
 
-  // Fetch images on the server
-  const postsWithImages = await Promise.all(
-    hospitalityBlogs.map(async (post) => {
-      const photo = await getRandomPhoto(post.defaultImageQuery);
-      return {
+    // Fetch images on the server with error handling
+    const postsWithImages = await Promise.all(
+      hospitalityBlogs.map(async (post) => {
+        try {
+          const photo = await getRandomPhoto(post.defaultImageQuery);
+          return {
+            ...post,
+            image: getOptimizedPhotoUrl(photo) || getPlaceholderImageUrl(post.defaultImageQuery),
+          };
+        } catch (error) {
+          console.error(`Error fetching image for post "${post.title}":`, error);
+          return {
+            ...post,
+            image: getPlaceholderImageUrl(post.defaultImageQuery),
+          };
+        }
+      })
+    );
+
+    return {
+      props: {
+        hospitalityBlogs: postsWithImages,
+      },
+    };
+  } catch (error) {
+    console.error('Error in getServerSideProps for hospitality page:', error);
+    
+    // Return fallback data if everything fails
+    const fallbackBlogs = blogIndex
+      .filter(post => post.category.some(cat => 
+        cat.toLowerCase() === 'hospitality' || 
+      cat.toLowerCase() === 'security'
+      ))
+      .sort((a, b) => new Date(b.date) - new Date(a.date))
+      .slice(0, 3)
+      .map(post => ({
         ...post,
-        image: getOptimizedPhotoUrl(photo),
-      };
-    })
-  );
+        image: getPlaceholderImageUrl ? getPlaceholderImageUrl(post.defaultImageQuery) : null,
+      }));
 
-  return {
-    props: {
-      hospitalityBlogs: postsWithImages,
-    },
-  };
+    return {
+      props: {
+        hospitalityBlogs: fallbackBlogs,
+      },
+    };
+  }
 }
 
 export default function Hospitality({ hospitalityBlogs }) {
