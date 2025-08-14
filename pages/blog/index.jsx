@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { blogIndex } from '../../data/blog-index';
 import BlogCard from '../../components/BlogCard';
 import Breadcrumbs from '../../components/Breadcrumbs';
-import { searchPhotos } from '../../utils/pexels';
+import { getRandomPhoto, getOptimizedPhotoUrl, getPlaceholderImageUrl } from '../../utils/pexels';
 import { suggestNatureImageQuery } from '../../utils/blog-helpers';
 import { getAuthorDetails } from '../../utils/authorUtils';
 
@@ -241,122 +241,11 @@ export default function BlogIndex({ posts = [] }) {
 }
 
 export async function getStaticProps() {
-  try {
-    // Step 1: Gather all unique search terms
-    const searchTerms = new Set();
-    blogIndex.forEach(post => {
-      if (post.defaultImageQuery) searchTerms.add(post.defaultImageQuery);
-      if (Array.isArray(post.category)) {
-        post.category.forEach(cat => searchTerms.add(`${cat} technology`));
-      } else if (post.category) {
-        searchTerms.add(`${post.category} technology`);
-      }
-    });
-
-    // Step 2: Create an image pool by fetching images for all search terms
-    const imagePool = new Map();
-    const searchPromises = Array.from(searchTerms).map(async (term) => {
-      try {
-        const photos = await searchPhotos(term, {
-          per_page: 5, // Reduced from 10 to 5
-          orientation: 'landscape'
-        });
-        
-        if (photos && photos.length > 0) {
-          photos.forEach(photo => {
-            const imageUrl = photo.src.large2x || photo.src.large || photo.src.original;
-            if (!imagePool.has(imageUrl)) {
-              imagePool.set(imageUrl, {
-                url: imageUrl,
-                quality: (photo.width / photo.height - 1.5) ** 2 + (photo.rating || 0),
-                relevance: {},
-              });
-            }
-          });
-        }
-      } catch (error) {
-        console.error(`Error fetching images for term "${term}":`, error);
-      }
-    });
-
-    // Wait for all image searches to complete with a timeout
-    await Promise.race([
-      Promise.all(searchPromises),
-      new Promise(resolve => setTimeout(resolve, 30000)) // 30 second timeout for all image searches
-    ]);
-
-    // Step 3: Calculate relevance scores for each image-post pair
-    const availableImages = Array.from(imagePool.values());
-    const postsNeedingImages = blogIndex.filter(post => !post.image);
-
-    postsNeedingImages.forEach(post => {
-      const postTerms = [
-        post.defaultImageQuery,
-        Array.isArray(post.category) ? post.category.join(' ') : post.category,
-        post.title.split(' ').slice(0, 3).join(' ')
-      ].filter(Boolean).join(' ').toLowerCase();
-
-      availableImages.forEach(image => {
-        let relevanceScore = 0;
-        postTerms.split(' ').forEach(term => {
-          if (term.length > 3) {
-            const termRegex = new RegExp(term, 'i');
-            if (image.url.match(termRegex)) {
-              relevanceScore += 1;
-            }
-          }
-        });
-        image.relevance[post.slug] = relevanceScore;
-      });
-    });
-
-    // Step 4: Assign images to posts
-    const assignments = new Map();
-    const usedImages = new Set();
-
-    postsNeedingImages.forEach(post => {
-      const availableImagesForPost = availableImages
-        .filter(image => !usedImages.has(image.url))
-        .sort((a, b) => {
-          const scoreA = a.quality + (a.relevance[post.slug] * 2);
-          const scoreB = b.quality + (b.relevance[post.slug] * 2);
-          return scoreB - scoreA;
-        });
-
-      if (availableImagesForPost.length > 0) {
-        const selectedImage = availableImagesForPost[0];
-        assignments.set(post.slug, selectedImage.url);
-        usedImages.add(selectedImage.url);
-      }
-    });
-
-    // Step 5: Create final posts array with assigned images
-    const postsWithImages = blogIndex.map(post => {
-      if (post.image) {
-        return post;
-      }
-      return {
-        ...post,
-        image: assignments.get(post.slug) || DEFAULT_PLACEHOLDER
-      };
-    });
-
-    return {
-      props: {
-        posts: postsWithImages
-      },
-      revalidate: 3600, // Revalidate every hour
-    };
-  } catch (error) {
-    console.error('Error in getStaticProps:', error);
-    return {
-      props: {
-        posts: blogIndex.map(post => ({
-          ...post,
-          image: DEFAULT_PLACEHOLDER
-        }))
-      },
-      revalidate: 3600,
-    };
-  }
+  // Don't fetch images during build - let them load on-demand
+  return {
+    props: {
+      posts: blogIndex
+    },
+    revalidate: 3600, // Revalidate every hour
+  };
 } 

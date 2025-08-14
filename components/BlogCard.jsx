@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { getRandomPhoto, getOptimizedPhotoUrl, getPlaceholderImageUrl } from '../utils/pexels';
+import { suggestNatureImageQuery } from '../utils/blog-helpers';
 const { getAuthorDetails } = require('../utils/authorUtils');
 
 // Default placeholder for failed image loads
@@ -18,10 +20,42 @@ function formatDate(dateString) {
 
 export default function BlogCard({ post }) {
   const [isClient, setIsClient] = useState(false);
+  const [imageUrl, setImageUrl] = useState(null);
+  const [isLoadingImage, setIsLoadingImage] = useState(true);
 
   useEffect(() => {
     setIsClient(true);
   }, []);
+
+  // Fetch image on-demand when component mounts
+  useEffect(() => {
+    const fetchImage = async () => {
+      try {
+        setIsLoadingImage(true);
+        const primaryQuery = post.defaultImageQuery || suggestNatureImageQuery(post.category);
+        // Use the post slug as unique identifier to prevent duplicate images
+        const photo = await getRandomPhoto(primaryQuery, post.slug);
+        
+        if (photo) {
+          setImageUrl(getOptimizedPhotoUrl(photo));
+        } else {
+          // Use placeholder if no photo found
+          setImageUrl(getPlaceholderImageUrl(primaryQuery, post.slug));
+        }
+      } catch (error) {
+        console.error('Error fetching image:', error);
+        // Use placeholder on error
+        const primaryQuery = post.defaultImageQuery || suggestNatureImageQuery(post.category);
+        setImageUrl(getPlaceholderImageUrl(primaryQuery, post.slug));
+      } finally {
+        setIsLoadingImage(false);
+      }
+    };
+
+    if (isClient) {
+      fetchImage();
+    }
+  }, [isClient, post.defaultImageQuery, post.category, post.slug]);
 
   if (!post) {
     return null;
@@ -34,12 +68,18 @@ export default function BlogCard({ post }) {
       <Link href={`/blog/${post.slug}`} className="flex flex-col h-full">
         {/* Image */}
         <div className="relative h-52 md:h-56 lg:h-48 w-full">
-          <Image
-            src={post.image || DEFAULT_PLACEHOLDER}
-            alt={post.title}
-            fill
-            className="object-cover"
-          />
+          {isLoadingImage ? (
+            <div className="w-full h-full bg-gray-100 flex items-center justify-center">
+              <div className="text-gray-400">Loading...</div>
+            </div>
+          ) : (
+            <Image
+              src={imageUrl || DEFAULT_PLACEHOLDER}
+              alt={post.title}
+              fill
+              className="object-cover"
+            />
+          )}
         </div>
 
         <div className="flex flex-col flex-grow px-6 pt-6 pb-4 gap-4">

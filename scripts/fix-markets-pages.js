@@ -4,11 +4,9 @@ const path = require('path');
 const marketsDir = path.join(__dirname, '../pages/markets');
 const marketsFiles = fs.readdirSync(marketsDir).filter(file => file.endsWith('.jsx') && file !== 'all.jsx');
 
-// Template for the improved getServerSideProps function
+// Template for the improved getServerSideProps function - NO image fetching
 const getServerSidePropsTemplate = (pageName, blogVarName, categories) => `export async function getServerSideProps() {
   try {
-    const { getRandomPhoto, getOptimizedPhotoUrl, getPlaceholderImageUrl } = await import('../../utils/pexels');
-
     const ${blogVarName} = blogIndex
       .filter(post => post.category.some(cat => 
         ${categories}
@@ -16,28 +14,10 @@ const getServerSidePropsTemplate = (pageName, blogVarName, categories) => `expor
       .sort((a, b) => new Date(b.date) - new Date(a.date))
       .slice(0, 3);
 
-    // Fetch images on the server with error handling
-    const postsWithImages = await Promise.all(
-      ${blogVarName}.map(async (post) => {
-        try {
-          const photo = await getRandomPhoto(post.defaultImageQuery);
-          return {
-            ...post,
-            image: getOptimizedPhotoUrl(photo) || getPlaceholderImageUrl(post.defaultImageQuery),
-          };
-        } catch (error) {
-          console.error(\`Error fetching image for post "\${post.title}":\`, error);
-          return {
-            ...post,
-            image: getPlaceholderImageUrl(post.defaultImageQuery),
-          };
-        }
-      })
-    );
-
+    // Don't fetch images during build - let them load on-demand
     return {
       props: {
-        ${blogVarName}: postsWithImages,
+        ${blogVarName}: ${blogVarName},
       },
     };
   } catch (error) {
@@ -49,11 +29,7 @@ const getServerSidePropsTemplate = (pageName, blogVarName, categories) => `expor
         ${categories}
       ))
       .sort((a, b) => new Date(b.date) - new Date(a.date))
-      .slice(0, 3)
-      .map(post => ({
-        ...post,
-        image: getPlaceholderImageUrl ? getPlaceholderImageUrl(post.defaultImageQuery) : null,
-      }));
+      .slice(0, 3);
 
     return {
       props: {
@@ -143,10 +119,11 @@ marketsFiles.forEach(file => {
     
     // Write the updated content back to the file
     fs.writeFileSync(filePath, newContent);
-    console.log(`✅ Updated ${file}`);
+    console.log(`✅ Updated ${file} - Removed image fetching from getServerSideProps`);
   } else {
     console.log(`❌ Could not find getServerSideProps in ${file}`);
   }
 });
 
-console.log('\n🎉 All markets pages have been updated with improved error handling!');
+console.log('\n🎉 All markets pages have been updated to use on-demand image loading!');
+console.log('📝 Note: Images will now load on the client side, preventing Heroku deployment issues.');
