@@ -67,7 +67,8 @@ input[type="button"]:hover {
 
 button.bg-\[\#0d9488\],
 .bg-\[\#0d9488\] button,
-.bg-\[\#0d9488\] {
+.bg-\[\#0d9488\],
+.bg-kahana-primary {
   color: #fff !important;
 }
 
