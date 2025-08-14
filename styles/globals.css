@@ -1,7 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap");
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li,
+span,
+a,
+strong {
+  font-family: "PT Serif", serif !important;
+}
+
+/* High-contrast headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #000 !important;
+}
+
+/* High-contrast links */
+a {
+  color: #0d9488 !important;
+  text-decoration: underline !important;
+  font-weight: bold !important;
+  transition: color 0.2s;
+}
+a:hover,
+a:focus {
+  color: #0f766e !important;
+}
+
+a.pricing-button,
+a.pricing-button:hover,
+a.pricing-button:focus {
+  color: #fff !important;
+  text-decoration: none !important;
+}
+
+/* High-contrast buttons */
+button,
+.btn,
+input[type="submit"],
+input[type="button"] {
+  background-color: #0d9488 !important;
+  color: #fff !important;
+  font-weight: bold !important;
+  border: none;
+  border-radius: 0.375rem;
+  padding: 0.5rem 1.25rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+button:hover,
+.btn:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover {
+  background-color: #0f766e !important;
+}
+
+button.bg-\[\#0d9488\],
+.bg-\[\#0d9488\] button,
+.bg-\[\#0d9488\],
+.bg-kahana-primary {
+  color: #fff !important;
+}
+
 /* Tailwind CSS setup */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Display",
+      "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji",
+      "Segoe UI Emoji", "Segoe UI Symbol";
+  }
+}
+
+:root {
+  /* Main brand colors from new logo */
+  --kahana-primary: #0d9488;
+  --kahana-primary-light: #14b8a6;
+  --kahana-primary-dark: #0f766e;
+
+  /* Secondary colors from logo gradient */
+  --kahana-secondary: #0ea5e9;
+  --kahana-secondary-light: #38bdf8;
+  --kahana-secondary-dark: #0284c7;
+
+  /* Accent colors from logo elements */
+  --kahana-accent-green: #059669;
+  --kahana-accent-lime: #7dd3fc;
+  --kahana-accent-navy: #0c4a6e;
+  --kahana-accent-sand: #fbbf24;
+  --kahana-accent-sky: #fef3c7;
+  --kahana-accent-ocean: #0ea5e9;
+  --kahana-accent-warm: #92400e;
+
+  /* UI colors inspired by logo's natural theme */
+  --kahana-ui-background: #f8fafc;
+  --kahana-ui-surface: #ffffff;
+  --kahana-ui-border: #e2e8f0;
+  --kahana-ui-hover: #f0f9ff;
+}
 
 /* Box sizing for all elements */
 * {
@@ -15,6 +124,9 @@ body {
   font-family: "Roboto", sans-serif;
   background-color: #f7f7f7;
   color: #000;
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
 }
 
 /* Page width */
@@ -254,7 +366,13 @@ body {
 
 /* RefinementList styles */
 .ais-RefinementList-list {
-  list-style: none;
+  @apply flex flex-nowrap overflow-x-auto gap-2 py-2 px-4 -mx-4 md:mx-0;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.ais-RefinementList-list::-webkit-scrollbar {
+  display: none;
 }
 
 .ais-RefinementList-item {
@@ -525,9 +643,6 @@ body {
   @apply flex flex-nowrap overflow-x-auto gap-2 py-2 px-4 -mx-4 md:mx-0;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
-  &::-webkit-scrollbar {
-    display: none;
-  }
 }
 
 .ais-RefinementList-item {
@@ -536,4 +651,185 @@ body {
 
 .ais-RefinementList-item--selected {
   @apply bg-green-100 text-green-800;
+}
+
+/* Replace nested selectors with flat ones */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.snap-x {
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.snap-center {
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+}
+
+.ais-RefinementList-list::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+/* Documentation Styles */
+.doc-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.doc-content h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 1.5rem;
+}
+
+.doc-content h2 {
+  font-size: 1.875rem;
+  font-weight: 600;
+  color: #2a2a2a;
+  margin: 2rem 0 1rem;
+}
+
+.doc-content h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #3a3a3a;
+  margin: 1.5rem 0 0.75rem;
+}
+
+.doc-content p {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: #4a4a4a;
+  margin-bottom: 1.25rem;
+}
+
+.doc-content ul,
+.doc-content ol {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.doc-content li {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: #4a4a4a;
+  margin: 0.5rem 0;
+}
+
+.doc-content section {
+  margin: 2.5rem 0;
+}
+
+.feature-group,
+.practice-group {
+  background: #f8f9fa;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin: 1rem 0;
+}
+
+.feature-group h3,
+.practice-group h3 {
+  color: #66c2be;
+  margin-top: 0;
+}
+
+.doc-content a {
+  color: #66c2be;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.doc-content a:hover {
+  color: #55b3af;
+  text-decoration: underline;
+}
+
+.getting-started ol > li {
+  font-weight: 600;
+  margin: 1.5rem 0;
+}
+
+.getting-started ol > li ul {
+  font-weight: normal;
+  margin-top: 0.5rem;
+}
+
+.help {
+  background: #f0f7f7;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin-top: 3rem;
+}
+
+.help h2 {
+  color: #66c2be;
+  margin-top: 0;
+}
+
+/* Ensure nav-button and no-underline classes never show underline */
+.nav-button,
+.nav-button:visited,
+.nav-button:hover,
+.nav-button:active,
+.no-underline,
+.no-underline:visited,
+.no-underline:hover,
+.no-underline:active {
+  text-decoration: none !important;
+}
+
+/* Ensure Join Waitlist button has white text */
+.nav-button.download {
+  color: white !important;
+}
+
+.nav-button.download span {
+  color: white !important;
+}
+
+/* Ensure Schedule Demo buttons have white text (only for dark backgrounds) */
+a[href="/schedule-demo"]:not(.bg-white):not([style*="background-color: white"]) {
+  color: white !important;
+}
+
+a[href="/schedule-demo"]:not(.bg-white):not([style*="background-color: white"]) span {
+  color: white !important;
+}
+
+a[href="/schedule-demo"]:not(.bg-white):not([style*="background-color: white"]) svg {
+  color: white !important;
+}
+
+.no-underline a,
+.no-underline a:visited,
+.no-underline a:hover,
+.no-underline a:active,
+.no-underline *,
+.no-underline *:visited,
+.no-underline *:hover,
+.no-underline *:active {
+  text-decoration: none !important;
+}
+
+.footer-mobile-dropdown,
+.footer-mobile-dropdown:hover,
+.footer-mobile-dropdown:focus,
+.footer-mobile-dropdown:active {
+  background-color: transparent !important;
+}
+
+.no-underline,
+.no-underline * {
+  text-decoration: none !important;
 }

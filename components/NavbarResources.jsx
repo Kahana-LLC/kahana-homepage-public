@@ -8,7 +8,8 @@ function Navbar() {
       <nav>
         <div className="flex w-full items-center justify-between border-b py-2 px-10">
           <div className="flex items-center">
-            <Link href="/" aria-label="Home" legacyBehavior><span className="sr-only"> Company</span>
+            <Link href="/" aria-label="Home">
+              <span className="sr-only"> Company</span>
               <Image
                 className="h-10"
                 src={whiteKahanaLogo}
@@ -19,11 +20,8 @@ function Navbar() {
             </Link>
           </div>
           <div className="ml-10 space-x-4">
-  <Link legacyBehavior href="/resources" passHref>
-    {/* Using a <button> tag instead of <a> */}
-    <button className="underline text-back text-sm">
-      Back to Resources
-    </button>
+  <Link href="/resources" className="underline text-back text-sm">
+    Back to Resources
   </Link>
 </div>
 

@@ -1,174 +1,139 @@
+import React from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 
-      import Footer from '../components/Footer';
-      import NavbarDup from '../components/NavbarDup';
+const sitemapSections = [
+  {
+    title: 'Main Pages',
+    links: [
+      { text: 'Home', href: '/' },
+      { text: 'About', href: '/about' },
+      { text: 'Contact', href: '/contact' },
+      { text: 'Blog', href: '/blog' },
+      { text: 'Schedule Demo', href: '/schedule-demo' }
+    ]
+  },
+  {
+    title: 'Products',
+    links: [
+      { text: 'Products Overview', href: '/products' },
+      { text: 'Enterprise Browser', href: '/products/enterprise-browser' },
+      { text: 'Web Application', href: '/products/web-application' },
+      { text: "Buyer's Guide", href: '/buyer-guide-oasis' }
+    ]
+  },
+  {
+    title: 'Solutions',
+    links: [
+      { text: 'Solutions Overview', href: '/solutions' },
+      { text: 'SaaS & Web Apps', href: '/solutions/saas-and-web-apps' },
+      { text: 'Remote Workforce', href: '/solutions/remote-workforce' },
+      { text: 'Merger Integration', href: '/solutions/merger-integration' },
+      { text: 'External Workforce', href: '/solutions/external-workforce' },
+      { text: 'VDI Reduction', href: '/solutions/vdi-reduction' },
+      { text: 'Zero Trust Security', href: '/solutions/zero-trust-security' },
+      { text: 'Privileged User Management', href: '/solutions/privileged-user-management' },
+      { text: 'Secure Browsing', href: '/solutions/secure-browsing' },
+      { text: 'Workplace Enablement', href: '/solutions/workplace-enablement' },
+      { text: 'Healthcare', href: '/solutions/healthcare' },
+      { text: 'Government', href: '/solutions/government' }
+    ]
+  },
+  {
+    title: 'Partners & Resources',
+    links: [
+      { text: 'Partners', href: '/partners' },
+      { text: 'Resources', href: '/resources' },
+      { text: 'Events', href: '/events' },
+      { text: 'Press', href: '/press' },
+      { text: 'Marketing Kit', href: '/marketing-kit' }
+    ]
+  },
+  {
+    title: 'Documentation',
+    links: [
+      { text: 'Documentation Home', href: '/docs' },
+      { text: 'Getting Started', href: '/docs/getting-started' },
+      { text: 'AI Assistant', href: '/docs/ai-assistant' },
+      { text: 'Multi-View', href: '/docs/multi-view' },
+      { text: 'Hubs', href: '/docs/hubs' },
+      { text: 'Settings', href: '/docs/settings' },
+      { text: 'Keyboard Shortcuts', href: '/docs/keyboard-shortcuts' },
+      { text: 'Advanced Features', href: '/docs/advanced-features' },
+      { text: 'Security Guide', href: '/docs/security-guide' },
+      { text: 'Troubleshooting', href: '/docs/troubleshooting' },
+      { text: 'FAQ', href: '/docs/faq' }
+    ]
+  },
+  {
+    title: 'Support',
+    links: [
+      { text: 'Support Center', href: '/support' },
+      { text: 'FAQ', href: '/faq' },
+      { text: 'Contact Sales', href: '/sales' },
+    ]
+  },
+  {
+    title: 'Company',
+    links: [
+      { text: 'About Us', href: '/about' },
+      { text: 'Careers', href: '/careers' },
+      { text: 'Manifesto', href: '/manifesto' },
+      { text: 'Contact', href: '/contact' }
+    ]
+  },
+  {
+    title: 'Legal',
+    links: [
+      { text: 'Privacy Policy', href: '/privacy-policy' },
+      { text: 'Terms & Conditions', href: '/terms-and-conditions' },
+      { text: 'Accessibility', href: '/docs/accessibility' },
+      { text: 'Right to Work', href: '/right-to-work' }
+    ]
+  }
+];
 
-      import React from 'react';
-
-      const Sitemap = () => {
-       return (
-         <div>
-          <style jsx>{`
-            h1 {
-              font-size: 24px;
-              font-weight: bold;
-              margin: 20px 20px;
-              padding: 10px;
-            }
-          
-            h2 {
-              font-size: 18px;
-              font-weight: bold;
-              margin: 10px 20px;
-              padding: 10px;
-            }
-          
-            ul {
-              list-style-type: disc;
-              padding-left: 30px;
-              margin: 10px 20px;
-            }
-          
-            li {
-              margin-bottom: 5px;
-            }
-          
-            a {
-              color: #0366d6;
-              text-decoration: none;
-            }
-          
-            a:hover {
-              text-decoration: underline;
-            }
-          `}</style>
-
-          <h1>Sitemap</h1>
-
-          <h2>Create Kahana Account</h2>
-          <ul>
-            <li><a href="https://app.kahana.co/signup">Create a Free Account</a></li>
-          </ul>
-
-          <h2>Kahana Login</h2>
-          <ul>
-            <li><a href="https://app.kahana.co/login">Log in</a></li>
-          </ul>
-
-          <h2>About Kahana</h2>
-          <ul>
-            <li><a href="https://kahana.co/">Homepage</a></li>
-<li><a href="https://kahana.co/about">About</a></li>
-<li><a href="https://kahana.co/solutions">Solutions</a></li>
-<li><a href="https://kahana.co/privacy-policy">Privacy Policy</a></li>
-<li><a href="https://kahana.co/explore">Explore</a></li>
-<li><a href="https://kahana.co/faq">FAQ</a></li>
-<li><a href="https://kahana.co/pricing">Pricing</a></li>
-<li><a href="https://kahana.co/terms-and-conditions">Terms And Conditions</a></li>
-          </ul>
-
-          <h2>Hubs</h2>
-          <ul>
-            <li><a href="https://app.kahana.co/hub/nHxv8vCZBv6i0bVPunyp">Hub of vision board and manifestation guides, templates, and PDFs</a></li>
-<li><a href="https://app.kahana.co/hub/2tXld437NBOOjOrwpjQm">Hub of tips and resources for solopreneurs</a></li>
-<li><a href="https://app.kahana.co/hub/tHwAYvYPzqVwGPGzh10k">Hub of pinterest marketing tips and course videos</a></li>
-<li><a href="https://app.kahana.co/hub/2svUpfVnrxHFJHMn6UIG">Hub of TikTok marketing strategies and examples</a></li>
-<li><a href="https://app.kahana.co/hub/2bXcGh2ROEvMAEdmUhOX">Hub of retreat planning templates, PDFs, and checklists</a></li>
-<li><a href="https://app.kahana.co/hub/wQGSB4z4lsjEnlLZyLVk">Hub of curated resources, tips, and PDFs for beginner creators</a></li>
-<li><a href="https://app.kahana.co/hub/VarpGpuDHdukrW4IG4Ki">Hub of vision story guides, templates, and PDFs</a></li>
-<li><a href="https://app.kahana.co/hub/0xoAwd6Uq7KdKO0pdQ4j">Hub of ChatGPT prompts to help you get a job</a></li>
-<li><a href="https://app.kahana.co/hub/PY1KHuxIWoJ7fB7930ZF">Hub of tips for young adults to save money</a></li>
-<li><a href="https://app.kahana.co/hub/CWisLtwTnlvZh82pYrE8">Hub of 12 manifestation course videos and exercises</a></li>
-<li><a href="https://app.kahana.co/hub/dhJXTqv1Jj0GWIr65vuJ">Hub of strategies for students to make money on TikTok</a></li>
-<li><a href="https://app.kahana.co/hub/u1ln3CfdaZTUGyb8pSK2">Hub of 50 email templates for content creators</a></li>
-<li><a href="https://app.kahana.co/hub/gGhFFLYlY5VppWIiCccX">Hub of software engineer resume examples, tips, and templates</a></li>
-<li><a href="https://app.kahana.co/hub/ohTF2nOQTEWCW7PIsSYX">Hub of top TikTok trends right now</a></li>
-          </ul>
-
-          <h2>Blog</h2>
-          <ul>
-            <li><a href="https://blog.kahana.co/">Blog Homepage</a></li>
-<li><a href="https://blog.kahana.co/hub-inspiration/">Hub Inspiration</a></li>
-<li><a href="https://blog.kahana.co/creator-platforms/">Creator Platforms</a></li>
-<li><a href="https://blog.kahana.co/tag/recurring-revenue/">Category: Recurring Revenue</a></li>
-<li><a href="https://blog.kahana.co/signin/">Signin</a></li>
-<li><a href="https://blog.kahana.co/signup/">Signup</a></li>
-<li><a href="https://blog.kahana.co/connect-stripe/">Connect Stripe</a></li>
-<li><a href="https://blog.kahana.co/hub-pricing/">Hub Pricing</a></li>
-<li><a href="https://blog.kahana.co/add-hub-content/">Add Hub Content</a></li>
-<li><a href="https://blog.kahana.co/author/kahanateam/">Author - Kahanateam</a></li>
-<li><a href="https://blog.kahana.co/eden-gold/">Eden Gold</a></li>
-<li><a href="https://blog.kahana.co/monetization-platforms/">Monetization Platforms</a></li>
-<li><a href="https://blog.kahana.co/tag/software/">Category: Software</a></li>
-<li><a href="https://blog.kahana.co/tag/kahana-tutorials/">Category: Kahana Tutorials</a></li>
-<li><a href="https://blog.kahana.co/update-hub-info/">Update Hub Info</a></li>
-<li><a href="https://blog.kahana.co/tag/podcast/">Category: Podcast</a></li>
-<li><a href="https://blog.kahana.co/tag/sales-and-marketing/">Category: Sales And Marketing</a></li>
-<li><a href="https://blog.kahana.co/kahana-vs-gumroad/">Kahana Vs Gumroad</a></li>
-<li><a href="https://blog.kahana.co/tag/experts/">Category: Experts</a></li>
-<li><a href="https://blog.kahana.co/kahana-vs-stan/">Kahana Vs Stan</a></li>
-<li><a href="https://blog.kahana.co/creating-templates-with-kahana/">Creating Templates With Kahana</a></li>
-<li><a href="https://blog.kahana.co/supercharge-marketing/">Supercharge Marketing</a></li>
-<li><a href="https://blog.kahana.co/tag/creators/">Category: Creators</a></li>
-<li><a href="https://blog.kahana.co/tag/inspiration/">Category: Inspiration</a></li>
-<li><a href="https://blog.kahana.co/update-profile/">Update Profile</a></li>
-<li><a href="https://blog.kahana.co/kelsey-vetter-pinterest-success-session/">Kelsey Vetter Pinterest Success Session</a></li>
-<li><a href="https://blog.kahana.co/email-templates-for-creators/">Email Templates For Creators</a></li>
-<li><a href="https://blog.kahana.co/tag/creator-economy/">Category: Creator Economy</a></li>
-<li><a href="https://blog.kahana.co/track-sales/">Track Sales</a></li>
-<li><a href="https://blog.kahana.co/tag/solopreneur/">Category: Solopreneur</a></li>
-<li><a href="https://blog.kahana.co/carl-nordgren/">Carl Nordgren</a></li>
-<li><a href="https://blog.kahana.co/organize-research/">Organize Research</a></li>
-<li><a href="https://blog.kahana.co/joanna-rajendran-best-life-ever-self-guided-course/">Joanna Rajendran Best Life Ever Self Guided Course</a></li>
-<li><a href="https://blog.kahana.co/join-the-creator-economy/">Join The Creator Economy</a></li>
-<li><a href="https://blog.kahana.co/kahana-vs-discord/">Kahana Vs Discord</a></li>
-<li><a href="https://blog.kahana.co/kahana-vs-thinkific/">Kahana Vs Thinkific</a></li>
-<li><a href="https://blog.kahana.co/kahana-supported-devices/">Kahana Supported Devices</a></li>
-<li><a href="https://blog.kahana.co/side-hustles/">Side Hustles</a></li>
-<li><a href="https://blog.kahana.co/kahana-vs-onlyfans/">Kahana Vs Onlyfans</a></li>
-<li><a href="https://blog.kahana.co/kate-instates-tiktok-trends/">Kate Instates Tiktok Trends</a></li>
-<li><a href="https://blog.kahana.co/tag/knowledge-economy/">Category: Knowledge Economy</a></li>
-<li><a href="https://blog.kahana.co/tag/templates/">Category: Templates</a></li>
-<li><a href="https://blog.kahana.co/how-to-monetize-a-hub/">How To Monetize A Hub</a></li>
-<li><a href="https://blog.kahana.co/tag/technical/">Category: Technical</a></li>
-<li><a href="https://blog.kahana.co/kahana-vs-patreon/">Kahana Vs Patreon</a></li>
-<li><a href="https://blog.kahana.co/kahana-vs-kartra/">Kahana Vs Kartra</a></li>
-<li><a href="https://blog.kahana.co/tag/storytelling/">Category: Storytelling</a></li>
-<li><a href="https://blog.kahana.co/storytelling-in-business/">Storytelling In Business</a></li>
-<li><a href="https://blog.kahana.co/kahana-vs-coursera/">Kahana Vs Coursera</a></li>
-<li><a href="https://blog.kahana.co/kahana-vs-kajabi/">Kahana Vs Kajabi</a></li>
-<li><a href="https://blog.kahana.co/tag/knowledge-management/">Category: Knowledge Management</a></li>
-<li><a href="https://blog.kahana.co/content-research/">Content Research</a></li>
-<li><a href="https://blog.kahana.co/tag/market-research/">Category: Market Research</a></li>
-<li><a href="https://blog.kahana.co/tag/company/">Category: Company</a></li>
-<li><a href="https://blog.kahana.co/charging-for-hubs/">Charging For Hubs</a></li>
-<li><a href="https://blog.kahana.co/kahana-vs-teachable/">Kahana Vs Teachable</a></li>
-<li><a href="https://blog.kahana.co/author/jonathan/">Author - Jonathan</a></li>
-<li><a href="https://blog.kahana.co/thoughts-on-the-state-of-the-consulting-industry/">Thoughts On The State Of The Consulting Industry</a></li>
-          </ul>
-        </div>
-       );
-     };
-
-    export default function MySitemap() {
-     return (
-      <>
-       <Head>
-        <title>Kahana Sitemap</title>
+export default function Sitemap() {
+  return (
+    <>
+      <Head>
+        <title>Sitemap | Kahana - Navigate Our Website</title>
         <meta
-          name="Kahana"
-          content="Kahana is the easiest way to monetize your content and research. Transform knowledge and expertise into subscription revenue. Sign up for free today! "
+          name="description"
+          content="Browse Kahana's complete website structure. Find information about our enterprise browser, web applications, solutions, documentation, support resources, and more."
         />
-       </Head>
-       <div>
-         <NavbarDup />
-       </div>
-       <div>
-         <Sitemap />
-       </div>    
-       <div>
-        <Footer />
-       </div>
-      </>
-     );
+        <meta name="robots" content="noindex, follow" />
+      </Head>
+
+      <div className="bg-white">
+        <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h1 className="text-4xl font-bold text-gray-900">Website Sitemap</h1>
+            <p className="mt-4 text-xl text-gray-600">
+              A complete guide to Kahana's website structure and content
+            </p>
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+            {sitemapSections.map((section, index) => (
+              <div key={index} className="bg-gray-50 p-6 rounded-lg">
+                <h2 className="text-xl font-semibold text-gray-900 mb-4">{section.title}</h2>
+                <ul className="space-y-2">
+                  {section.links.map((link, linkIndex) => (
+                    <li key={linkIndex}>
+                      <Link href={link.href}>
+                        <span className="text-kahana-primary hover:text-kahana-primary-dark cursor-pointer">
+                          {link.text}
+                        </span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </>
+  );
 }

@@ -2,22 +2,16 @@ import Head from 'next/head';
 /* eslint-disable react/no-unescaped-entities */
 // import Image from 'next/image';
 
-import Footer from '../components/Footer';
-import NavbarDup from '../components/NavbarDup';
-
 export default function PrivacyPolicy() {
   return (
     <>
       <Head>
         <title>Kahana Privacy Policy</title>
         <meta
-          name="Kahana Privacy Policy"
-          content="Kahana is the easiest way to turn your knowledge into subscription revenue. Sign up for free today!"
+          name="description"
+          content="Kahana's privacy policy outlines how we protect and handle your data while using our enterprise browsing platform."
         />
       </Head>
-      <div style={{ zIndex: '2' }} className="sticky top-0">
-        <NavbarDup />
-      </div>
       <div>
         <div className="relative overflow-hidden bg-white py-16">
           <div className="hidden lg:absolute lg:inset-y-0 lg:block lg:h-full lg:w-full lg:[overflow-anchor:none]">
@@ -323,7 +317,7 @@ export default function PrivacyPolicy() {
  <br /> <br />
  The right to restrict processing – You have the right to request that Kahana Group Inc. restrict the processing of your personal data, under certain conditions.
  <br /> <br />
- The right to object to processing – You have the right to object to Kahana Group Inc.’s processing of your personal data, under certain conditions.
+ The right to object to processing – You have the right to object to Kahana Group Inc.'s processing of your personal data, under certain conditions.
  <br /> <br />
  The right to data portability – You have the right to request that Kahana Group Inc. transfer the data that we have collected to another organization, or directly to you, under certain conditions.
  <br /> <br />
@@ -436,7 +430,6 @@ of these rights, please contact us at our email: info@kahana.co
             </div>
           </div>
         </div>
-        <Footer />
       </div>
     </>
   );

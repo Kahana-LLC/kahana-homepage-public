@@ -1,170 +1,342 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import Footer from '../components/Footer';
-import NavbarDup from '../components/NavbarDup';
 import Image from 'next/image';
-import DigitalProductsResources from '../components/DigitalProductsResources';
-import GoogleDriveResources from '../components/GoogleDriveResources';
-import NotionResources from '../components/NotionResources';
-import ResourcesCalltoAction from '../components/ResourcesCalltoAction';
+import { getRandomPhoto, getOptimizedPhotoUrl } from '../utils/pexels';
 
-const ResourcesPage = () => {
-  const [activeIndex, setActiveIndex] = useState(null);
+// Default placeholder for failed image loads
+const DEFAULT_PLACEHOLDER = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%233C584A"%3E%3Cpath d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-1.96-2.36L6.5 17h11l-3.54-4.71z"%2F%3E%3C%2Fsvg%3E';
 
-  const toggleAccordion = (index) => {
-    setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
-  };
+// Add categories array
+const categories = [
+  'All',
+  'White Papers',
+  'Videos',
+  'Case Studies',
+  'Tutorials',
+  'Templates',
+  'Guides'
+];
 
-  const scrollToSection = (sectionId) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      const titleHeight = 60; // Adjust this value to match the height of your section title
-      const offsetTop = section.offsetTop - titleHeight;
-      window.scrollTo({
-        top: offsetTop,
-        behavior: 'smooth',
-      });
-    }
-  };
-  
-  {/* const faqs = [
-    {
-      question: 'Question 1?',
-      answer: 'Answer 1.',
-    },
-    {
-      question: 'Question 2?',
-      answer: 'Answer 2.',
-    },
-    {
-      question: 'Question 3?',
-      answer: 'Answer 3.',
-    },
-    // ... add more FAQ items as needed
-  ]; */}
+// This would typically come from a CMS or database
+const allResources = {
+  'digital-products-guide': {
+    title: 'Complete Guide to Digital Products',
+    excerpt: 'Learn how to create, market, and sell digital products successfully.',
+    category: 'Guides',
+    date: 'March 15, 2024',
+    type: 'pdf',
+    downloadUrl: '/resources/digital-products-guide.pdf',
+    customImage: null,
+    defaultImageQuery: 'digital products marketing'
+  },
+  'content-monetization': {
+    title: 'Content Monetization Strategies',
+    excerpt: 'Discover effective strategies for monetizing your content and building sustainable revenue streams.',
+    category: 'White Papers',
+    date: 'March 10, 2024',
+    type: 'pdf',
+    downloadUrl: '/resources/content-monetization.pdf',
+    customImage: null,
+    defaultImageQuery: 'content monetization business'
+  },
+  'subscription-model': {
+    title: 'Building a Successful Subscription Model',
+    excerpt: 'A comprehensive guide to implementing and optimizing subscription-based business models.',
+    category: 'Case Studies',
+    date: 'March 5, 2024',
+    type: 'video',
+    videoUrl: 'https://example.com/subscription-model-video',
+    customImage: null,
+    defaultImageQuery: 'subscription business model'
+  },
+  'content-creation': {
+    title: 'Content Creation Best Practices',
+    excerpt: 'Learn the best practices for creating high-quality, engaging content that drives results.',
+    category: 'Tutorials',
+    date: 'March 1, 2024',
+    type: 'video',
+    videoUrl: 'https://example.com/content-creation-video',
+    customImage: null,
+    defaultImageQuery: 'content creation process'
+  },
+  'marketing-templates': {
+    title: 'Marketing Templates Bundle',
+    excerpt: 'A collection of ready-to-use templates for your marketing campaigns.',
+    category: 'Templates',
+    date: 'February 28, 2024',
+    type: 'zip',
+    downloadUrl: '/resources/marketing-templates.zip',
+    customImage: null,
+    defaultImageQuery: 'marketing templates design'
+  }
+};
+
+// Featured resource is the most recent resource
+const featuredResource = {
+  slug: 'digital-products-guide',
+  ...allResources['digital-products-guide']
+};
+
+// Recent resources are the next 3 most recent resources
+const recentResources = [
+  { slug: 'content-monetization', ...allResources['content-monetization'] },
+  { slug: 'subscription-model', ...allResources['subscription-model'] },
+  { slug: 'content-creation', ...allResources['content-creation'] }
+];
+
+export async function getStaticProps() {
+  try {
+    // Fetch images for all resources
+    const allResourcesWithImages = await Promise.all(
+      Object.entries(allResources).map(async ([slug, resource]) => {
+        try {
+          let resourceImage = resource.customImage;
+          if (!resourceImage) {
+            const photo = await getRandomPhoto(resource.defaultImageQuery);
+            resourceImage = photo ? getOptimizedPhotoUrl(photo) : DEFAULT_PLACEHOLDER;
+          }
+          return [slug, {
+            ...resource,
+            slug,
+            image: resourceImage
+          }];
+        } catch (error) {
+          console.error(`Error fetching image for resource ${slug}:`, error);
+          return [slug, {
+            ...resource,
+            slug,
+            image: DEFAULT_PLACEHOLDER
+          }];
+        }
+      })
+    );
+
+    // Convert back to object
+    const resourcesWithImages = Object.fromEntries(allResourcesWithImages);
+
+    // Get featured resource image
+    const featuredImage = resourcesWithImages[featuredResource.slug]?.image || DEFAULT_PLACEHOLDER;
+
+    return {
+      props: {
+        featuredImage,
+        resources: resourcesWithImages,
+        recentResources: recentResources.map(resource => ({
+          ...resource,
+          image: resourcesWithImages[resource.slug]?.image || DEFAULT_PLACEHOLDER
+        }))
+      },
+      revalidate: 86400
+    };
+  } catch (error) {
+    console.error('Error in getStaticProps:', error);
+    return {
+      props: {
+        featuredImage: DEFAULT_PLACEHOLDER,
+        resources: Object.fromEntries(
+          Object.entries(allResources).map(([slug, resource]) => [
+            slug,
+            { ...resource, slug, image: DEFAULT_PLACEHOLDER }
+          ])
+        ),
+        recentResources: recentResources.map(resource => ({
+          ...resource,
+          image: DEFAULT_PLACEHOLDER
+        }))
+      },
+      revalidate: 86400
+    };
+  }
+}
+
+const Resources = ({ 
+  featuredImage = DEFAULT_PLACEHOLDER, 
+  recentResources = [], 
+  resources: resourcesWithImages = {} 
+}) => {
+  const [selectedCategory, setSelectedCategory] = useState('All');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [currentPage, setCurrentPage] = useState(1);
+  const resourcesPerPage = 6;
+
+  // Filter and search resources
+  const filteredResources = useMemo(() => {
+    if (!resourcesWithImages || Object.keys(resourcesWithImages).length === 0) return [];
+    
+    return Object.values(resourcesWithImages)
+      .filter(resource => {
+        const matchesCategory = selectedCategory === 'All' || resource.category === selectedCategory;
+        const matchesSearch = searchQuery === '' || 
+          resource.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          resource.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          resource.excerpt.toLowerCase().includes(searchQuery.toLowerCase());
+        return matchesCategory && matchesSearch;
+      })
+      .sort((a, b) => new Date(b.date) - new Date(a.date)); // Sort by date, newest first
+  }, [selectedCategory, searchQuery, resourcesWithImages]);
+
+  // Show "No results" message if no resources match the filters
+  const showNoResults = filteredResources.length === 0;
+
+  // Calculate pagination
+  const totalPages = Math.ceil(filteredResources.length / resourcesPerPage);
+  const paginatedResources = filteredResources.slice(
+    (currentPage - 1) * resourcesPerPage,
+    currentPage * resourcesPerPage
+  );
 
   return (
-    <div>
+    <div className="bg-white">
       <Head>
-        <title>Best Monetization Resources</title>
+        <title>Resources | Kahana</title>
         <meta
-          name="Kahana"
-          content="Kahana is the easiest way to monetize your content and research. Transform knowledge and expertise into subscription revenue. Sign up for free today!"
+          name="description"
+          content="Access our comprehensive collection of resources to help you succeed in monetizing your digital content."
         />
       </Head>
 
-      <div className="sticky top-0 z-50">
-        <NavbarDup />
-      </div>
-
-      {/* Header Section */}
-      <section className="bg-gray-100 py-10">
-        <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-3xl font-bold mb-4">
-            Top Resources to Monetize Your Knowledge
-          </h1>
-          <p className="text-gray-600">
-            A collection of actionable resources to help you monetize your best knowledge assets.
+      <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+        <div className="text-center">
+          <h1 className="text-4xl font-bold text-gray-900">Resources</h1>
+          <p className="mt-4 text-xl text-gray-600">
+            Explore our comprehensive collection of resources designed to help you succeed in monetizing your digital content.
           </p>
         </div>
-      </section>
 
-      {/* Clickable Tiles Section */}
-      <section className="bg-gray-100 py-10">
-        <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-2xl font-semibold mb-2">What topic would you like to learn more about?</h2>
-          <div className="flex flex-wrap justify-center mt-6 space-y-4 sm:space-y-0 sm:gap-4">
-            <div className="w-full sm:w-1/2 md:w-1/4 p-2">
-              <button onClick={() => scrollToSection('digital-products')} className="block bg-[#3B675E] p-6 rounded-lg shadow-md text-center">
-                <h3 className="text-xl font-semibold text-white mb-1">
-                  Selling knowledge-based digital products in general
-                </h3>
-              </button>
-            </div>
-            <div className="w-full sm:w-1/2 md:w-1/4 p-2">
-              <button onClick={() => scrollToSection('google-drive')} className="block bg-[#3B675E] p-6 rounded-lg shadow-md text-center">
-                <h3 className="text-xl font-semibold text-white mb-1">
-                  Monetizing your knowledge and assets in Google Drive
-                </h3>
-              </button>
-            </div>
-            <div className="w-full sm:w-1/2 md:w-1/4 p-2">
-              <button onClick={() => scrollToSection('notion')} className="block bg-[#3B675E] p-6 rounded-lg shadow-md text-center">
-                <h3 className="text-xl font-semibold text-white mb-1">
-                  Monetizing your knowledge and assets in Notion
-                </h3>
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Call to Action Section */}
-      <ResourcesCalltoAction />
-
-      {/* Digital Products Resources Section */}
-      <div id="digital-products">
-        <DigitalProductsResources />
-      </div>
-
-      {/* Google Drive Resources Section */}
-      <div id="google-drive">
-        <GoogleDriveResources />
-      </div>
-
-      {/* Notion Resources Section */}
-      <div id="notion">
-        <NotionResources />
-      </div>
-
-      {/* FAQ Section */}
-      {/*
-      <section className="bg-gray-100 py-10">
-        <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-2xl font-semibold mb-8">
-            Questions?
-          </h2>
-          <div className="space-y-4">
-            {faqs.map((faq, index) => (
-              <div key={index} className="bg-white border border-transparent rounded-lg mx-2 sm:mx-0">
-                <button
-                  className="w-full flex justify-between items-center p-4 focus:outline-none"
-                  onClick={() => toggleAccordion(index)}
-                >
-                  <span className="text-lg font-medium text-gray-900 text-left flex-1">
-                    {faq.question}
-                  </span>
-                  <svg
-                    className={`${
-                      activeIndex === index ? 'transform rotate-180' : ''
-                    } w-5 h-5 text-gray-500 flex-shrink-0`}
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10.293 15.293a1 1 0 0 1-1.414 0l-5-5a1 1 0 0 1 1.414-1.414L10 12.586l4.293-4.293a1 1 0 1 1 1.414 1.414l-5 5z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                </button>
-                {activeIndex === index && (
-                  <div className="p-4 bg-gray-50">
-                    <p className="text-gray-500">{faq.answer}</p>
-                  </div>
-                )}
+        {/* Featured Resource */}
+        <div className="mt-12">
+          <Link href={featuredResource.downloadUrl || featuredResource.videoUrl}>
+            <div className="relative rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div className="relative h-96">
+                <Image
+                  src={featuredImage}
+                  alt={featuredResource.title}
+                  layout="fill"
+                  objectFit="cover"
+                  className="rounded-lg"
+                />
               </div>
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6">
+                <div className="text-white">
+                  <span className="inline-block bg-kahana-primary px-3 py-1 rounded-full text-sm mb-2">
+                    {featuredResource.category}
+                  </span>
+                  <h2 className="text-2xl font-bold mb-2">{featuredResource.title}</h2>
+                  <p className="text-gray-200">{featuredResource.excerpt}</p>
+                </div>
+              </div>
+            </div>
+          </Link>
+        </div>
+
+        {/* Recent Resources */}
+        <div className="mt-12">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Recent Resources</h2>
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {recentResources.map((resource) => (
+              <Link key={resource.slug} href={resource.downloadUrl || resource.videoUrl}>
+                <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                  <div className="relative h-48">
+                    <Image
+                      src={resource.image}
+                      alt={resource.title}
+                      layout="fill"
+                      objectFit="cover"
+                      className="rounded-t-lg"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <span className="inline-block bg-kahana-primary text-white px-3 py-1 rounded-full text-sm mb-2">
+                      {resource.category}
+                    </span>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-2">{resource.title}</h3>
+                    <p className="text-gray-600">{resource.excerpt}</p>
+                  </div>
+                </div>
+              </Link>
             ))}
           </div>
         </div>
-      </section> */}
 
-      <Footer />
+        {/* Search and Filter */}
+        <div className="mt-12">
+          <div className="flex flex-col md:flex-row gap-4 mb-6">
+            <input
+              type="text"
+              placeholder="Search resources..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="flex-1 px-4 py-2 border border-gray-300 rounded-md focus:ring-kahana-primary focus:border-kahana-primary"
+            />
+            <select
+              value={selectedCategory}
+              onChange={(e) => setSelectedCategory(e.target.value)}
+              className="px-4 py-2 border border-gray-300 rounded-md focus:ring-kahana-primary focus:border-kahana-primary"
+            >
+              {categories.map((category) => (
+                <option key={category} value={category}>
+                  {category}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          {/* All Resources Grid */}
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {paginatedResources.map((resource) => (
+              <Link key={resource.slug} href={resource.downloadUrl || resource.videoUrl}>
+                <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                  <div className="relative h-48">
+                    <Image
+                      src={resource.image}
+                      alt={resource.title}
+                      layout="fill"
+                      objectFit="cover"
+                      className="rounded-t-lg"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <span className="inline-block bg-kahana-primary text-white px-3 py-1 rounded-full text-sm mb-2">
+                      {resource.category}
+                    </span>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-2">{resource.title}</h3>
+                    <p className="text-gray-600">{resource.excerpt}</p>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          {/* No Results Message */}
+          {showNoResults && (
+            <div className="text-center py-12">
+              <p className="text-gray-600">No resources found matching your criteria.</p>
+            </div>
+          )}
+
+          {/* Pagination */}
+          {totalPages > 1 && (
+            <div className="mt-8 flex justify-center gap-2">
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                <button
+                  key={page}
+                  onClick={() => setCurrentPage(page)}
+                  className={`px-4 py-2 rounded-md ${
+                    currentPage === page
+                      ? 'bg-[#21706c] text-white font-bold'
+                      : 'bg-white text-[#21706c] font-bold hover:bg-gray-100 border border-[#21706c]'
+                  }`}
+                >
+                  {page}
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   );
-};
+}
 
-export default ResourcesPage;
+export default Resources;
