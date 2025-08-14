@@ -11,7 +11,7 @@ export default function HeroSection() {
               <div className="lg:col-span-7 px-4 sm:px-6 sm:text-center md:mx-auto md:max-w-2xl lg:flex lg:items-center lg:text-left relative">
                 <div className="invisible md:visible absolute top-15 -left-7 w-40 h-40 bg-yellow-300/50 rounded-full filter blur-3xl opacity-50 animate-blob"></div>
                 <div>
-                  <h1 className="py-4 bg-clip-text text-transparent bg-gradient-to-r from-[#8CB7D0] to-[#A5DAD8] text-4xl font-bold tracking-tight sm:text-5xl md:text-5xl text-center sm:text-left">
+                  <h1 className="py-4 bg-clip-text text-transparent bg-gradient-to-r from-kahana-secondary-300 to-kahana-primary text-4xl font-bold tracking-tight sm:text-5xl md:text-5xl text-center sm:text-left">
                     Bringing Ideas to Life
                   </h1>
                   <p className="mt-3 text-base text-kahana-primary sm:mt-5 sm:text-xl lg:text-lg xl:text-xl text-center sm:text-left">
@@ -20,15 +20,23 @@ export default function HeroSection() {
                   <div className="mt-8 flex justify-center sm:justify-start">
                     <Link
                       href="/contact"  
-                      className="rounded-md border border-transparent bg-[#21706c] py-3 px-8 text-lg font-bold text-white shadow-sm hover:bg-[#15514f] focus:outline-none focus:ring-2 focus:ring-[#21706c] focus:ring-offset-2 text-center transition-colors"
+                      className="rounded-md border border-transparent bg-kahana-primary py-3 px-8 text-lg font-bold text-white shadow-sm hover:bg-kahana-primary-dark focus:outline-none focus:ring-2 focus:ring-kahana-primary focus:ring-offset-2 text-center transition-colors"
+                      style={{
+                        backgroundColor: '#0d9488 !important',
+                        color: 'white !important',
+                        borderColor: '#0d9488 !important',
+                        fontWeight: 'bold'
+                      }}
                     >
-                      Get in Touch
+                      <span style={{ color: 'white !important', fontWeight: 'bold' }}>
+                        Get in Touch
+                      </span>
                     </Link>
                   </div>
                 </div>
               </div>
               <div className="lg:col-span-5 hidden lg:block">
-                <div className="relative w-[450px] h-[450px] rounded-full overflow-hidden bg-gradient-to-b from-[#E3DFF1]/20 to-[#8CB7D0]/20 mx-auto">
+                <div className="relative w-[450px] h-[450px] rounded-full overflow-hidden bg-gradient-to-b from-kahana-accent-sky/20 to-kahana-secondary-300/20 mx-auto">
                   {/* Oasis Animation */}
                   <div className="absolute inset-0">
                     {/* Sand Dunes - adjusted for circular container */}
@@ -36,15 +44,15 @@ export default function HeroSection() {
                       <svg viewBox="0 0 450 200" className="w-full h-full preserve-3d" preserveAspectRatio="none">
                         <path
                           d="M0 100 Q112.5 30 225 100 T450 100 L450 200 L0 200 Z"
-                          className="fill-[#A5DAD8]/30 animate-wave-slow"
+                          className="fill-kahana-primary/30 animate-wave-slow"
                         />
                         <path
                           d="M0 120 Q112.5 50 225 120 T450 120 L450 200 L0 200 Z"
-                          className="fill-[#8CB7D0]/40 animate-wave-medium"
+                          className="fill-kahana-secondary-300/40 animate-wave-medium"
                         />
                         <path
                           d="M0 140 Q112.5 70 225 140 T450 140 L450 200 L0 200 Z"
-                          className="fill-[#C2E1D9]/50 animate-wave-fast"
+                          className="fill-kahana-secondary-200/50 animate-wave-fast"
                         />
                       </svg>
                     </div>
@@ -60,7 +68,7 @@ export default function HeroSection() {
                     {/* Innovation Symbols */}
                     {/* Rockets */}
                     <div className="absolute bottom-[45%] left-1/4 animate-rise">
-                      <svg width="24" height="24" viewBox="0 0 24 24" className="fill-[#66C2BE]/70">
+                      <svg width="24" height="24" viewBox="0 0 24 24" className="fill-kahana-primary/70">
                         <path d="M12,2.5c-0.5,0-1,0.2-1.4,0.6L8,6v2l4-3l4,3V6l-2.6-2.9C13,2.7,12.5,2.5,12,2.5z"/>
                         <path d="M8,8v6c0,1.1,0.9,2,2,2h4c1.1,0,2-0.9,2-2V8H8z"/>
                         <path className="animate-flame" fill="#FFA500" d="M10,16l2,3l2-3H10z"/>
@@ -69,62 +77,62 @@ export default function HeroSection() {
                     </div>
 
                     <div className="absolute bottom-[45%] left-1/2 animate-rise-delayed">
-                      <svg width="24" height="24" viewBox="0 0 24 24" className="fill-[#66C2BE]/70">
+                      <svg width="24" height="24" viewBox="0 0 24 24" className="fill-kahana-primary/70">
                         <path d="M12,2.5c-0.5,0-1,0.2-1.4,0.6L8,6v2l4-3l4,3V6l-2.6-2.9C13,2.7,12.5,2.5,12,2.5z"/>
                         <path d="M8,8v6c0,1.1,0.9,2,2,2h4c1.1,0,2-0.9,2-2V8H8z"/>
-                        <path className="animate-flame" fill="#FFA500" d="M10,16l2,3l2-3H10z"/>
-                        <path className="animate-flame-inner" fill="#FF4500" d="M11,16l1,2l1-2H11z"/>
+                        <path className="animate-flame" fill="#fbbf24" d="M10,16l2,3l2-3H10z"/>
+                        <path className="animate-flame-inner" fill="#ea580c" d="M11,16l1,2l1-2H11z"/>
                       </svg>
                     </div>
 
                     <div className="absolute bottom-[45%] left-3/4 animate-rise-delayed-2">
-                      <svg width="24" height="24" viewBox="0 0 24 24" className="fill-[#66C2BE]/70">
+                      <svg width="24" height="24" viewBox="0 0 24 24" className="fill-kahana-primary/70">
                         <path d="M12,2.5c-0.5,0-1,0.2-1.4,0.6L8,6v2l4-3l4,3V6l-2.6-2.9C13,2.7,12.5,2.5,12,2.5z"/>
                         <path d="M8,8v6c0,1.1,0.9,2,2,2h4c1.1,0,2-0.9,2-2V8H8z"/>
-                        <path className="animate-flame" fill="#FFA500" d="M10,16l2,3l2-3H10z"/>
-                        <path className="animate-flame-inner" fill="#FF4500" d="M11,16l1,2l1-2H11z"/>
+                        <path className="animate-flame" fill="#fbbf24" d="M10,16l2,3l2-3H10z"/>
+                        <path className="animate-flame-inner" fill="#ea580c" d="M11,16l1,2l1-2H11z"/>
                       </svg>
                     </div>
 
                     <div className="absolute bottom-[35%] left-[40%] animate-rise-fast">
-                      <svg width="24" height="24" viewBox="0 0 24 24" className="fill-[#66C2BE]/70">
+                      <svg width="24" height="24" viewBox="0 0 24 24" className="fill-kahana-primary/70">
                         <path d="M12,2.5c-0.5,0-1,0.2-1.4,0.6L8,6v2l4-3l4,3V6l-2.6-2.9C13,2.7,12.5,2.5,12,2.5z"/>
                         <path d="M8,8v6c0,1.1,0.9,2,2,2h4c1.1,0,2-0.9,2-2V8H8z"/>
-                        <path className="animate-flame" fill="#FFA500" d="M10,16l2,3l2-3H10z"/>
-                        <path className="animate-flame-inner" fill="#FF4500" d="M11,16l1,2l1-2H11z"/>
+                        <path className="animate-flame" fill="#fbbf24" d="M10,16l2,3l2-3H10z"/>
+                        <path className="animate-flame-inner" fill="#ea580c" d="M11,16l1,2l1-2H11z"/>
                       </svg>
                     </div>
 
                     <div className="absolute bottom-[55%] left-[60%] animate-rise-fast-delayed">
-                      <svg width="24" height="24" viewBox="0 0 24 24" className="fill-[#66C2BE]/70">
+                      <svg width="24" height="24" viewBox="0 0 24 24" className="fill-kahana-primary/70">
                         <path d="M12,2.5c-0.5,0-1,0.2-1.4,0.6L8,6v2l4-3l4,3V6l-2.6-2.9C13,2.7,12.5,2.5,12,2.5z"/>
                         <path d="M8,8v6c0,1.1,0.9,2,2,2h4c1.1,0,2-0.9,2-2V8H8z"/>
-                        <path className="animate-flame" fill="#FFA500" d="M10,16l2,3l2-3H10z"/>
-                        <path className="animate-flame-inner" fill="#FF4500" d="M11,16l1,2l1-2H11z"/>
+                        <path className="animate-flame" fill="#fbbf24" d="M10,16l2,3l2-3H10z"/>
+                        <path className="animate-flame-inner" fill="#ea580c" d="M11,16l1,2l1-2H11z"/>
                       </svg>
                     </div>
 
                     {/* Lightbulbs */}
                     <div className="absolute bottom-[45%] left-1/3 animate-rise-more-delayed">
-                      <svg width="24" height="24" viewBox="0 0 24 24" className="fill-[#8CB7D0]/70">
+                      <svg width="24" height="24" viewBox="0 0 24 24" className="fill-kahana-secondary-300/70">
                         <path d="M12 2A7 7 0 0 0 5 9C5 11.38 6.19 13.47 8 14.74V17A1 1 0 0 0 9 18H15A1 1 0 0 0 16 17V14.74C17.81 13.47 19 11.38 19 9A7 7 0 0 0 12 2M9 21V20H15V21A1 1 0 0 1 14 22H10A1 1 0 0 1 9 21Z"/>
                       </svg>
                     </div>
 
                     <div className="absolute bottom-[45%] left-2/3 animate-rise-more-delayed-2">
-                      <svg width="24" height="24" viewBox="0 0 24 24" className="fill-[#8CB7D0]/70">
+                      <svg width="24" height="24" viewBox="0 0 24 24" className="fill-kahana-secondary-300/70">
                         <path d="M12 2A7 7 0 0 0 5 9C5 11.38 6.19 13.47 8 14.74V17A1 1 0 0 0 9 18H15A1 1 0 0 0 16 17V14.74C17.81 13.47 19 11.38 19 9A7 7 0 0 0 12 2M9 21V20H15V21A1 1 0 0 1 14 22H10A1 1 0 0 1 9 21Z"/>
                       </svg>
                     </div>
 
                     <div className="absolute bottom-[35%] left-[45%] animate-rise-fast">
-                      <svg width="24" height="24" viewBox="0 0 24 24" className="fill-[#8CB7D0]/70">
+                      <svg width="24" height="24" viewBox="0 0 24 24" className="fill-kahana-secondary-300/70">
                         <path d="M12 2A7 7 0 0 0 5 9C5 11.38 6.19 13.47 8 14.74V17A1 1 0 0 0 9 18H15A1 1 0 0 0 16 17V14.74C17.81 13.47 19 11.38 19 9A7 7 0 0 0 12 2M9 21V20H15V21A1 1 0 0 1 14 22H10A1 1 0 0 1 9 21Z"/>
                       </svg>
                     </div>
 
                     <div className="absolute bottom-[55%] left-[55%] animate-rise-fast-delayed">
-                      <svg width="24" height="24" viewBox="0 0 24 24" className="fill-[#8CB7D0]/70">
+                      <svg width="24" height="24" viewBox="0 0 24 24" className="fill-kahana-secondary-300/70">
                         <path d="M12 2A7 7 0 0 0 5 9C5 11.38 6.19 13.47 8 14.74V17A1 1 0 0 0 9 18H15A1 1 0 0 0 16 17V14.74C17.81 13.47 19 11.38 19 9A7 7 0 0 0 12 2M9 21V20H15V21A1 1 0 0 1 14 22H10A1 1 0 0 1 9 21Z"/>
                       </svg>
                     </div>
@@ -134,7 +142,7 @@ export default function HeroSection() {
                       <svg width="30" height="15" viewBox="0 0 40 20">
                         <path
                           d="M0 10 Q10 0 20 10 Q30 20 40 10"
-                          className="stroke-[#8CB7D0]/40 fill-none"
+                          className="stroke-kahana-secondary-300/40 fill-none"
                         />
                       </svg>
                     </div>
@@ -142,7 +150,7 @@ export default function HeroSection() {
                       <svg width="20" height="10" viewBox="0 0 40 20">
                         <path
                           d="M0 10 Q10 0 20 10 Q30 20 40 10"
-                          className="stroke-[#8CB7D0]/30 fill-none"
+                          className="stroke-kahana-secondary-300/30 fill-none"
                         />
                       </svg>
                     </div>

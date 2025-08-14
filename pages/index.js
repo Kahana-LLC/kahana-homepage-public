@@ -266,15 +266,16 @@ export default function Home({ blogPosts }) {
               <div className="mt-8 text-center">
                 <Link
                   href="/blog"
-                  className="bg-[#21706c] text-white font-bold rounded-md px-8 py-3 hover:bg-[#15514f] transition-colors inline-flex items-center justify-center no-underline hover:no-underline focus:no-underline"
-                  style={{ textDecoration: "none" }}
+                  className="bg-kahana-primary text-white font-bold rounded-md px-8 py-3 hover:bg-kahana-primary-dark transition-colors inline-flex items-center justify-center no-underline hover:no-underline focus:no-underline"
+                  style={{ textDecoration: "none", backgroundColor: '#0d9488', color: 'white !important' }}
                 >
-                  All Posts
+                  <span style={{ color: 'white !important' }}>All Posts</span>
                   <svg
                     className="ml-2 w-5 h-5"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
+                    style={{ color: 'white !important' }}
                   >
                     <path
                       strokeLinecap="round"

@@ -43,32 +43,55 @@ module.exports = {
       },
       colors: {
         kahana: {
-          // Main brand colors
+          // Main brand colors from new logo
           primary: {
-            DEFAULT: "#2B2640", // Deep twilight navy
-            light: "#474267", // Soft twilight purple
-            dark: "#1A1628", // Dark twilight
+            DEFAULT: "#0d9488", // Primary teal from logo transition
+            light: "#14b8a6", // Lighter teal
+            dark: "#0f766e", // Darker teal
+            50: "#f0fdfa",
+            100: "#ccfbf1",
+            200: "#99f6e4",
+            300: "#5eead4",
+            400: "#2dd4bf",
+            500: "#0d9488",
+            600: "#0d9488",
+            700: "#0f766e",
+            800: "#115e59",
+            900: "#134e4a",
           },
-          // Secondary colors
+          // Secondary colors from logo gradient
           secondary: {
-            DEFAULT: "#B84A5B", // Rich burgundy
-            light: "#E17B86", // Soft coral
-            dark: "#8E2941", // Deep burgundy
+            DEFAULT: "#0ea5e9", // Cerulean blue from logo
+            light: "#38bdf8", // Light blue
+            dark: "#0284c7", // Dark blue
+            50: "#f0f9ff",
+            100: "#e0f2fe",
+            200: "#bae6fd",
+            300: "#7dd3fc", // Bright lime from logo
+            400: "#38bdf8",
+            500: "#0ea5e9",
+            600: "#0284c7",
+            700: "#0369a1",
+            800: "#075985",
+            900: "#0c4a6e", // Deep navy from logo
           },
-          // Accent colors
+          // Accent colors from logo elements
           accent: {
-            coral: "#F1785D", // Warm coral
-            burgundy: "#732F44", // Deep burgundy
-            purple: "#635C7E", // Muted purple
-            navy: "#2D2B4E", // Deep navy
+            green: "#059669", // Forest green from logo
+            lime: "#7dd3fc", // Bright lime from logo
+            navy: "#0c4a6e", // Deep navy from logo
+            sand: "#fbbf24", // Sandy yellow from seascape
+            sky: "#fef3c7", // Sky cream from seascape
+            ocean: "#0ea5e9", // Ocean blue
+            warm: "#92400e", // Warm brown from ocean
           },
-          // UI colors
+          // UI colors inspired by logo's natural theme
           ui: {
-            background: "#F8F6FF", // Soft twilight background
-            surface: "#FFFFFF", // White surface
-            border: "#E8E6F2", // Soft border
-            hover: "#FFF1F3", // Warm hover
-            highlight: "#FFE9EC", // Soft coral highlight
+            background: "#f8fafc", // Clean, minimal background
+            surface: "#ffffff", // Pure white surface
+            border: "#e2e8f0", // Subtle border
+            hover: "#f0f9ff", // Light blue hover
+            highlight: "#ccfbf1", // Light teal highlight
           },
         },
       },

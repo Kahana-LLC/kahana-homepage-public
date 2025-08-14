@@ -10,7 +10,7 @@ export default function GlobalBanner() {
   if (router.pathname === '/oasis-waitlist' || !isVisible) return null;
 
   return (
-    <div className="bg-gradient-to-r from-[#66C2BE] to-[#8CB7D0] relative">
+    <div className="bg-gradient-to-r from-kahana-primary to-kahana-secondary relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between py-3">
           <div className="flex items-center">
@@ -32,7 +32,7 @@ export default function GlobalBanner() {
           </div>
           <div className="flex items-center space-x-3">
             <Link href="/oasis-waitlist">
-              <button className="bg-[#21706c] text-white font-bold px-6 py-3 rounded-md hover:bg-[#15514f] transition-colors">
+              <button className="bg-kahana-primary text-white font-bold px-6 py-3 rounded-md hover:bg-kahana-primary-dark transition-colors">
                 Join Waitlist
               </button>
             </Link>

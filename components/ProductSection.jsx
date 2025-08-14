@@ -137,7 +137,7 @@ export default function ProductSection() {
           {/* Left side - Text content */}
           <div className="lg:col-span-5 px-4 sm:px-6 text-center md:mx-auto md:max-w-2xl lg:text-left relative">
             <div>
-              <h2 className="text-base font-semibold leading-7 text-[#66C2BE] text-center lg:text-left">Oasis Agentic Browser</h2>
+                              <h2 className="text-base font-semibold leading-7 text-kahana-primary text-center lg:text-left">Oasis Agentic Browser</h2>
               <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl text-center lg:text-left">
                 Your agentic browser for ergonomic work
               </p>
@@ -147,17 +147,17 @@ export default function ProductSection() {
               <div className="mt-8 flex gap-4 items-center justify-center lg:justify-start">
                 <Link
                   href="/oasis-waitlist"
-                  className="nav-button download inline-flex items-center rounded-md bg-[#21706c] text-white font-bold shadow-sm hover:bg-[#15514f] px-6 py-3 text-base no-underline hover:no-underline focus:no-underline"
-                  style={{ textDecoration: 'none' }}
+                  className="nav-button download inline-flex items-center rounded-md bg-kahana-primary text-white font-bold shadow-sm hover:bg-kahana-primary-dark px-6 py-3 text-base no-underline hover:no-underline focus:no-underline"
+                  style={{ textDecoration: 'none', backgroundColor: '#0d9488', color: 'white !important' }}
                 >
-                  Join Waitlist
+                  <span style={{ color: 'white !important' }}>Join Waitlist</span>
                 </Link>
                 <Link
                   href="/schedule-demo"
-                  className="nav-button get-in-touch bg-white text-[#21706c] font-bold rounded-md shadow-sm border border-[#21706c] hover:bg-gray-100 px-6 py-3 text-base no-underline hover:no-underline focus:no-underline"
-                  style={{ textDecoration: 'none' }}
+                  className="nav-button get-in-touch bg-white font-bold rounded-md shadow-sm border border-kahana-primary hover:bg-gray-100 px-6 py-3 text-base no-underline hover:no-underline focus:no-underline"
+                  style={{ textDecoration: 'none', backgroundColor: 'white', color: '#0d9488 !important', borderColor: '#0d9488' }}
                 >
-                  Schedule Demo
+                  <span style={{ color: '#0d9488 !important' }}>Schedule Demo</span>
                 </Link>
               </div>
             </div>
@@ -165,19 +165,19 @@ export default function ProductSection() {
 
           {/* Right side - Browser Preview */}
           <div className="lg:col-span-7 mt-16 lg:mt-0">
-            <div className="w-[95%] mx-auto lg:w-[120%] lg:-mr-[20%] aspect-[16/9] overflow-hidden rounded-2xl bg-gradient-to-br from-[#E3DFF1]/20 via-[#8CB7D0]/10 to-[#E3DFF1]/30 shadow-2xl">
+            <div className="w-[95%] mx-auto lg:w-[120%] lg:-mr-[20%] aspect-[16/9] overflow-hidden rounded-2xl bg-gradient-to-br from-kahana-accent-sky/20 via-kahana-secondary-300/10 to-kahana-accent-sky/30 shadow-2xl">
               <div className="relative h-full w-full">
                 {/* Browser Header */}
-                <div className="flex h-8 sm:h-12 items-center justify-between bg-gradient-to-b from-[#E3DFF1]/20 via-[#8CB7D0]/10 to-[#E3DFF1]/30 px-2 sm:px-4">
+                <div className="flex h-8 sm:h-12 items-center justify-between bg-gradient-to-b from-kahana-accent-sky/20 via-kahana-secondary-300/10 to-kahana-accent-sky/30 px-2 sm:px-4">
                   <div className="flex items-center space-x-1.5 sm:space-x-2">
-                    <div className="h-1.5 w-1.5 sm:h-3 sm:w-3 rounded-full bg-[#66C2BE]"></div>
-                    <div className="h-1.5 w-1.5 sm:h-3 sm:w-3 rounded-full bg-[#66C2BE]"></div>
-                    <div className="h-1.5 w-1.5 sm:h-3 sm:w-3 rounded-full bg-[#66C2BE]"></div>
+                    <div className="h-1.5 w-1.5 sm:h-3 sm:w-3 rounded-full bg-kahana-primary"></div>
+                    <div className="h-1.5 w-1.5 sm:h-3 sm:w-3 rounded-full bg-kahana-primary"></div>
+                    <div className="h-1.5 w-1.5 sm:h-3 sm:w-3 rounded-full bg-kahana-primary"></div>
                   </div>
                 </div>
                 
                 {/* Browser Content */}
-                <div className="relative h-[calc(100%-2rem)] sm:h-[calc(100%-3rem)] bg-gradient-to-br from-[#E3DFF1]/20 via-[#8CB7D0]/10 to-[#E3DFF1]/30">
+                <div className="relative h-[calc(100%-2rem)] sm:h-[calc(100%-3rem)] bg-gradient-to-br from-kahana-accent-sky/20 via-kahana-secondary-300/10 to-kahana-accent-sky/30">
                   {/* URL Bar */}
                   <div className="flex h-7 sm:h-12 items-center px-2 sm:px-4">
                     <div className="flex h-5 sm:h-8 w-full items-center rounded-lg bg-white/80 px-2 sm:px-3 shadow-sm">
@@ -331,7 +331,7 @@ export default function ProductSection() {
                             />
                             <button 
                               type="submit"
-                              className="p-2 text-white font-bold bg-[#21706c] rounded-xl hover:bg-[#15514f] transition-opacity"
+                              className="p-2 text-white font-bold bg-kahana-primary rounded-xl hover:bg-kahana-primary-dark transition-opacity"
                             >
                               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M12 5l7 7-7 7" />
@@ -345,7 +345,7 @@ export default function ProductSection() {
                     {/* AI Assist Button */}
                     <button
                       onClick={() => setIsChatOpen(!isChatOpen)}
-                      className="group flex items-center space-x-2 bg-[#21706c] text-white font-bold px-3 py-2 rounded-xl hover:bg-[#15514f] transition-all duration-200 shadow-lg hover:shadow-xl cursor-pointer"
+                      className="group flex items-center space-x-2 bg-kahana-primary text-white font-bold px-3 py-2 rounded-xl hover:bg-kahana-primary-dark transition-all duration-200 shadow-lg hover:shadow-xl cursor-pointer"
                     >
                       <div className="relative">
                         <div className="absolute -top-1 -right-1 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-white rounded-full"></div>

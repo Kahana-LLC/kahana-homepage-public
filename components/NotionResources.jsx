@@ -24,13 +24,8 @@ const NotionResources = () => {
         <div className="flex flex-wrap justify-center mt-6">
           {links.map((link, index) => (
             <div key={index} className="w-full sm:w-1/2 md:w-1/4 p-4">
-              <Link href={link.link} legacyBehavior>
-                {/* Wrap the content inside a single child element */}
-                <a>
-                  <div className="block bg-white p-6 rounded-lg shadow-md text-center">
-                    {link.title}
-                  </div>
-                </a>
+              <Link href={link.link} className="block bg-white p-6 rounded-lg shadow-md text-center">
+                {link.title}
               </Link>
             </div>
           ))}
