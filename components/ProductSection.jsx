@@ -154,10 +154,9 @@ export default function ProductSection() {
                 </Link>
                 <Link
                   href="/schedule-demo"
-                  className="nav-button get-in-touch bg-white font-bold rounded-md shadow-sm border border-kahana-primary hover:bg-gray-100 px-6 py-3 text-base no-underline hover:no-underline focus:no-underline"
-                  style={{ textDecoration: 'none', backgroundColor: 'white', color: '#0d9488 !important', borderColor: '#0d9488' }}
+                  className="nav-button get-in-touch bg-white text-kahana-primary font-bold rounded-md shadow-sm border border-kahana-primary hover:bg-gray-100 px-6 py-3 text-base no-underline"
                 >
-                  <span style={{ color: '#0d9488 !important' }}>Schedule Demo</span>
+                  Schedule Demo
                 </Link>
               </div>
             </div>
