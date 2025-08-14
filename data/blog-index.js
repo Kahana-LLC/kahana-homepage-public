@@ -10,6 +10,39 @@ import saideepHeadshot from "../public/assets/headshots/saideep_pajjuri.jpg";
 
 const blogIndex = [
   {
+    title: "AI Browser Privacy Guide 2025: Brave vs Firefox vs Sigma - Complete Comparison",
+    date: "2025-08-07T00:00:00.000Z",
+    authors: ["Konika Dhull"],
+    category: ["AI", "Privacy", "Technology", "Security", "Research & Trends"],
+    excerpt:
+      "Explore the critical privacy challenges facing AI-powered browsers in 2025. From Brave's privacy promises to Firefox's on-device AI and Sigma's strict no-tracking policy, discover how AI browsers are reshaping the balance between convenience and data protection.",
+    defaultImageQuery: "AI browser privacy security data protection artificial intelligence web browsing 2025",
+    slug: "ai-browsers-privacy-dilemma-2025",
+    readingTime: 15,
+  },
+  {
+    title: "AI Browser Fragmentation 2025: Mac vs Windows Cross-Platform Crisis & Security Challenges",
+    date: "2025-08-06T00:00:00.000Z",
+    authors: ["Konika Dhull"],
+    category: ["AI", "Technology", "Product Analysis", "Security", "Cross-Platform", "Browser Comparison", "Enterprise Security"],
+    excerpt:
+      "AI Browser Fragmentation 2025: Expert analysis of Mac vs Windows AI browser disparities, cross-platform security risks, and enterprise challenges. Discover why AI browsers favor macOS and how Windows users are left behind in the AI revolution.",
+    defaultImageQuery: "AI browser fragmentation Mac Windows cross-platform security challenges 2025 artificial intelligence web browsing technology comparison",
+    slug: "ai-browser-fragmentation-cross-platform-challenges-2025",
+    readingTime: 15,
+  },
+  {
+    title: "AI Browser Wars 2025: Comet, Genspark, and Dia Battle for the Future of Web Browsing",
+    date: "2025-08-05T00:00:00.000Z",
+    authors: ["Konika Dhull"],
+    category: ["AI", "Technology", "Product Analysis", "Research & Trends"],
+    excerpt:
+      "The AI browser revolution is here, but not all contenders are created equal. This comprehensive analysis of Comet, Genspark, and Dia reveals the promise and pitfalls of AI-first browsing, from automation breakthroughs to critical security vulnerabilities that could reshape how we interact with the web.",
+    defaultImageQuery: "AI browser comparison artificial intelligence web browsing technology",
+    slug: "ai-browser-wars-2025-comet-genspark-dia-comparison",
+    readingTime: 12,
+  },
+  {
     title: "Enterprise Browser Adoption in 2025: Overcoming the Hidden Barriers to Success",
     date: "2025-07-30T00:00:00.000Z",
     authors: ["Konika Dhull"],
@@ -1188,8 +1221,7 @@ const blogIndex = [
   },
   {
 
-    title:
-      "Brave vs Safari vs Oasis: Recent Challenges and Research (2025–2026)",
+    title: "Brave vs Safari vs Oasis: Recent Challenges and Research (2024–2025)",
     date: "2025-07-23T00:00:00.000Z",
     authors: ["Konika Dhull"],
     category: ["Browsers", "Security", "Comparisons"],
@@ -1198,7 +1230,6 @@ const blogIndex = [
     slug: "brave-vs-safari-vs-oasis-challenges-2025",
     readingTime: 8,
   },
-
   {
     title:
       "Securing Healthcare's Frontline: How Oasis Browser by Kahana Protects Against Browser-Based Threats",
