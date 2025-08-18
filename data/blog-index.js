@@ -1,5 +1,16 @@
 const blogIndex = [
   {
+    title: "The Browser Security Crisis of 2025: Why Chrome, Safari, and Traditional Browsers Are Failing Enterprises",
+    date: "2025-08-18T00:00:00.000Z",
+    authors: ["Hritik Chalse"],
+    category: ["Security", "Browser", "Enterprise", "Research & Trends"],
+    excerpt:
+      "As enterprises face unprecedented browser security threats in 2025, traditional browsers like Chrome and Safari are revealing critical vulnerabilities that put organizations at risk. This comprehensive analysis examines the security crisis and explores why enterprise browsers like Oasis are becoming essential for modern organizations.",
+    defaultImageQuery: "browser security crisis enterprise browser comparison 2025",
+    slug: "browser-security-crisis-2025-chrome-safari-oasis-comparison",
+    readingTime: 18,
+  },
+  {
     title: "The AI Browser Revolution: A Security and Privacy Crisis Unfolding in 2025",
     date: "2025-08-15T00:00:00.000Z",
     authors: ["Vedant Gupta"],
