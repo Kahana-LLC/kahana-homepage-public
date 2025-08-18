@@ -72,6 +72,59 @@ button.bg-\[\#0d9488\],
   color: #fff !important;
 }
 
+/* Override for GlobalBanner button */
+.GlobalBanner button,
+div[class*="bg-gradient-to-r from-kahana-primary"] button,
+div[class*="bg-gradient-to-r from-kahana-primary"] a[href="/sales"] {
+  background-color: transparent !important;
+  border: 1px solid white !important;
+  color: white !important;
+}
+
+.GlobalBanner button:hover,
+div[class*="bg-gradient-to-r from-kahana-primary"] button:hover,
+div[class*="bg-gradient-to-r from-kahana-primary"] a[href="/sales"]:hover {
+  background-color: white !important;
+  color: #0d9488 !important;
+}
+
+/* Ensure Contact Sales text is white */
+div[class*="bg-gradient-to-r from-kahana-primary"] a[href="/sales"] span {
+  color: white !important;
+}
+
+div[class*="bg-gradient-to-r from-kahana-primary"] a[href="/sales"]:hover span {
+  color: #0d9488 !important;
+}
+
+/* Specific override for Contact Sales buttons */
+.contact-sales-btn {
+  background-color: transparent !important;
+  border: 1px solid white !important;
+  color: white !important;
+}
+
+.contact-sales-btn:hover {
+  background-color: white !important;
+  color: #0d9488 !important;
+}
+
+.contact-sales-btn span {
+  color: white !important;
+}
+
+.contact-sales-btn:hover span {
+  color: #0d9488 !important;
+}
+
+/* Ensure CTA section headers are white */
+div[class*="bg-gradient-to-r from-kahana-primary"] h2,
+section[class*="bg-gradient-to-r from-kahana-primary"] h2,
+.bg-gradient-to-r h2.text-white,
+section.bg-gradient-to-r h2.text-white {
+  color: white !important;
+}
+
 /* Tailwind CSS setup */
 @tailwind base;
 @tailwind components;
