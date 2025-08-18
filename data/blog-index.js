@@ -1,5 +1,16 @@
 const blogIndex = [
   {
+    title: "The AI Browser Revolution: A Security and Privacy Crisis Unfolding in 2025",
+    date: "2025-08-15T00:00:00.000Z",
+    authors: ["Vedant Gupta"],
+    category: ["AI", "Security", "Privacy", "Technology", "Enterprise", "Research & Trends"],
+    excerpt:
+      "As AI browsers promise to revolutionize web browsing in 2025, a darker reality emerges: widespread security vulnerabilities, privacy violations, and enterprise adoption challenges that threaten to undermine the entire ecosystem.",
+    defaultImageQuery: "AI browser security privacy technology crisis 2025",
+    slug: "ai-browser-revolution-security-privacy-crisis-2025",
+    readingTime: 15,
+  },
+  {
     title: "AI Browser Privacy Guide 2025: Brave vs Firefox vs Sigma - Complete Comparison",
     date: "2025-08-07T00:00:00.000Z",
     authors: ["Konika Dhull"],
