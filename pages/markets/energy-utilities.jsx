@@ -406,7 +406,7 @@ export default function EnergyUtilities({ energyBlogs }) {
           <div className="flex justify-center">
             <Link 
               href="/sales" 
-              className="bg-kahana-primary text-white px-8 py-3 rounded-md font-bold hover:bg-kahana-primary-dark transition-colors"
+              className="contact-sales-btn bg-transparent border border-white text-white px-8 py-3 rounded-md font-bold hover:bg-white hover:text-kahana-primary transition-colors"
               
             >
               <span >
