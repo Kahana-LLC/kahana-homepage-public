@@ -95,8 +95,8 @@ const authors = {
   },
   "Hritik Chalse": {
     name: "Hritik Chalse",
-    role: "Product Manager",
-    bio: "Hritik is a Product Manager at Kahana, where he focuses on community engagement and research and development. With a Masters in Engineering Management from Duke University and an undergraduate background in engineering, he is dedicated to advancing innovative technology solutions.",
+    role: "Product Marketing Manager",
+    bio: "Hritik is a Product Marketing Manager at Kahana, where he focuses on community engagement and research and development. With a Masters in Engineering Management from Duke University and an undergraduate background in engineering, he is dedicated to advancing innovative technology solutions.",
     linkedinProfile: "https://www.linkedin.com/in/hritik-chalse-56a0261aa/",
     avatar: "/assets/headshots/hritik_chalse.jpg",
   },
