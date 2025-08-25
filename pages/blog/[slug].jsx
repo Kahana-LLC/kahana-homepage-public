@@ -223,20 +223,20 @@ export default function BlogPost({ post }) {
           )}
           
           <div className="mt-16 p-8 bg-gradient-to-r from-[#E3DFF1]/20 via-[#8CB7D0]/10 to-[#E3DFF1]/30 rounded-xl border border-[#A5DAD8]/30 shadow-lg">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Your Story, Powered by Oasis</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Ready to Elevate Your Work Experience?</h2>
             <p className="text-lg text-gray-600 mb-6">
-              Your story is unique—Oasis is here to help you organize, explore, and create it. Ready to take the next step? Join us and see how Oasis can empower your journey.
+              We'd love to understand your unique challenges and explore how our solutions can help you achieve a more fluid way of working now and in the future. Let's discuss your specific needs and see how we can work together to create a more ergonomic future of work.
             </p>
             <Link 
-              href="/schedule-demo"
-              className="inline-flex items-center px-6 py-3 border border-transparent text-base font-bold rounded-md shadow-sm text-white bg-kahana-primary hover:bg-kahana-primary-dark transition-colors no-underline"
+              href="/contact"
+              className="inline-flex items-center px-6 py-3 border border-transparent text-base font-bold rounded-md shadow-sm text-white bg-[#21706c] hover:bg-[#15514f] transition-colors no-underline"
               style={{ 
                 textDecoration: 'none', 
-                backgroundColor: '#0d9488', 
-                borderColor: '#0d9488'
+                backgroundColor: '#21706c', 
+                borderColor: '#21706c'
               }}
             >
-              <span style={{ fontWeight: 'bold' }}>Schedule Demo</span>
+              <span style={{ fontWeight: 'bold', color: 'white' }}>Contact us</span>
               <svg className="ml-2 -mr-1 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>

@@ -114,6 +114,13 @@ const authors = {
     linkedinProfile: "https://www.linkedin.com/in/khyatibhatia10/",
     avatar: "/assets/headshots/khyati_bhatia.jpg",
   },
+  "Jonathan Gans": {
+    name: "Jonathan Gans",
+    role: "CEO",
+    bio: "Biomedical Engineering graduate from Duke University, previously in Deloitte's corporate strategy practice, and renowned Dog Whisperer in the Windy City. Building an ergonomic future of work.",
+    linkedinProfile: "https://www.linkedin.com/in/jonathan-gans1/",
+    avatar: "/assets/headshots/jonathan_gans.jpg",
+  },
 };
 
 module.exports = { authors };

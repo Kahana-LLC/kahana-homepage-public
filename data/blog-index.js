@@ -1,5 +1,60 @@
 const blogIndex = [
   {
+    title: "The Next Steps: Three Critical Paths to Desk-Free Productivity",
+    date: "2025-08-25T00:00:00.000Z",
+    authors: ["Jonathan Gans"],
+    category: ["Ergonomic Work", "Technology", "AR/VR", "Future of Work", "Wearable Technology", "AI", "Product Development"],
+    excerpt:
+      "Exploring three critical development paths that could transform AR glasses from entertainment devices into powerful productivity tools that finally free us from desk-bound work.",
+    defaultImageQuery: "AR glasses development productivity technology roadmap future of work",
+    slug: "the-future-of-ergonomic-work-next-steps-2025",
+    readingTime: 10,
+  },
+  {
+    title: "The Key Players: Who's Leading the AR Glasses Revolution",
+    date: "2025-08-25T00:00:00.000Z",
+    authors: ["Jonathan Gans"],
+    category: ["Ergonomic Work", "Technology", "AR/VR", "Future of Work", "Wearable Technology", "AI", "Market Analysis"],
+    excerpt:
+      "A comprehensive analysis of the major players in the AR glasses market, from software-focused giants like Google and Microsoft to hardware innovators and emerging challengers.",
+    defaultImageQuery: "AR glasses market analysis key players Google Microsoft Apple Samsung Magic Leap",
+    slug: "the-future-of-ergonomic-work-key-players-2025",
+    readingTime: 8,
+  },
+  {
+    title: "The Solution: Breaking Free from Desk-Bound Productivity",
+    date: "2025-08-25T00:00:00.000Z",
+    authors: ["Jonathan Gans"],
+    category: ["Ergonomic Work", "Technology", "AR/VR", "Future of Work", "Wearable Technology", "AI"],
+    excerpt:
+      "Exploring the technological solutions that could finally free us from desk-bound work, from AR glasses and voice technology to AI agents and the companies leading this revolution.",
+    defaultImageQuery: "AR glasses wearable technology voice gesture AI future of work ergonomic",
+    slug: "the-future-of-ergonomic-work-solution-technology-2025",
+    readingTime: 7,
+  },
+  {
+    title: "The Problem: How Desk-Bound Work Is Literally Killing Us",
+    date: "2025-08-25T00:00:00.000Z",
+    authors: ["Jonathan Gans"],
+    category: ["Ergonomic Work", "Health Crisis", "Sedentary Lifestyle", "Workplace Health", "Future of Work"],
+    excerpt:
+      "A deep dive into the health crisis caused by sedentary work environments, examining the alarming trends in obesity, diabetes, musculoskeletal disorders, and mental health issues that have emerged since the 1950s.",
+    defaultImageQuery: "sedentary work health crisis desk bound productivity workplace health",
+    slug: "the-future-of-ergonomic-work-problem-analysis-2025",
+    readingTime: 8,
+  },
+  {
+    title: "The Future of Ergonomic Work & Improving Health",
+    date: "2025-08-25T00:00:00.000Z",
+    authors: ["Jonathan Gans"],
+    category: ["Ergonomic Work", "Health", "Technology", "Future of Work", "AR/VR"],
+    excerpt:
+      "Exploring how AR, VR, voice, gesture, and AI technologies are transforming the way we work, moving us away from desk-bound productivity toward healthier, more mobile work environments.",
+    defaultImageQuery: "ergonomic work health technology AR VR future of work",
+    slug: "the-future-of-ergonomic-work-improving-health-2025",
+    readingTime: 3,
+  },
+  {
     title: "The Browser Security Crisis of 2025: Why Chrome, Safari, and Traditional Browsers Are Failing Enterprises",
     date: "2025-08-18T00:00:00.000Z",
     authors: ["Hritik Chalse"],
