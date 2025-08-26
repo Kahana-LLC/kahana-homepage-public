@@ -114,12 +114,22 @@ const authors = {
     linkedinProfile: "https://www.linkedin.com/in/khyatibhatia10/",
     avatar: "/assets/headshots/khyati_bhatia.jpg",
   },
+
+  "Sanku Rajshree Rao": {
+    name: "Sanku Rajshree Rao",
+    role: "Software Engineer",
+    bio: "I’m a software engineer passionate about AI and automation, with a love for creating both smart solutions and fresh bakes. Baking has taught me patience and creativity, while my experience as an orientation leader on campus helped me grow in leadership, teamwork, and collaboration. I thrive in environments where I can learn, share ideas, and build meaningful projects with others.",
+    linkedinProfile: "https://www.linkedin.com/in/sanku-rajshree-rao/",
+    avatar: "/assets/headshots/Rajshree_Rao.jpg",
+  },
+  
   "Jonathan Gans": {
     name: "Jonathan Gans",
     role: "CEO",
     bio: "Biomedical Engineering graduate from Duke University, previously in Deloitte's corporate strategy practice, and renowned Dog Whisperer in the Windy City. Building an ergonomic future of work.",
     linkedinProfile: "https://www.linkedin.com/in/jonathan-gans1/",
     avatar: "/assets/headshots/jonathan_gans.jpg",
+
   },
 };
 
