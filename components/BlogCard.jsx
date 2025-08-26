@@ -65,7 +65,7 @@ export default function BlogCard({ post }) {
 
   return (
     <article className="bg-white rounded-xl border border-gray-200 shadow-lg hover:shadow-xl transition-shadow duration-200 overflow-hidden flex flex-col h-full">
-      <Link href={`/blog/${post.slug}`} className="flex flex-col h-full">
+      <Link href={`/blog/${post.slug}`} className="flex flex-col h-full blog-card-link">
         {/* Image */}
         <div className="relative h-52 md:h-56 lg:h-48 w-full">
           {isLoadingImage ? (

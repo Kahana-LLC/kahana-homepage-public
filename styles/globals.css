@@ -886,3 +886,51 @@ a[href="/schedule-demo"]:not(.bg-white):not([style*="background-color: white"]) 
 .no-underline * {
   text-decoration: none !important;
 }
+
+/* Documentation card links - remove underlines from card content */
+.doc-card-link,
+.doc-card-link:visited,
+.doc-card-link:hover,
+.doc-card-link:active,
+.doc-card-link *,
+.doc-card-link *:visited,
+.doc-card-link *:hover,
+.doc-card-link *:active {
+  text-decoration: none !important;
+  color: inherit !important;
+  font-weight: normal !important;
+}
+
+/* Keep the "Read More" link styled as a link */
+.doc-card-link .text-kahana-primary,
+.doc-card-link .text-kahana-primary:visited,
+.doc-card-link .text-kahana-primary:hover,
+.doc-card-link .text-kahana-primary:active {
+  color: #0d9488 !important;
+  text-decoration: none !important;
+  font-weight: bold !important;
+}
+
+/* Blog card links - remove underlines from card content */
+.blog-card-link,
+.blog-card-link:visited,
+.blog-card-link:hover,
+.blog-card-link:active,
+.blog-card-link *,
+.blog-card-link *:visited,
+.blog-card-link *:hover,
+.blog-card-link *:active {
+  text-decoration: none !important;
+  color: inherit !important;
+  font-weight: normal !important;
+}
+
+/* Keep category tags styled properly in blog cards */
+.blog-card-link .bg-gray-100,
+.blog-card-link .bg-gray-100:visited,
+.blog-card-link .bg-gray-100:hover,
+.blog-card-link .bg-gray-100:active {
+  color: #374151 !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+}
