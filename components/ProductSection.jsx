@@ -139,10 +139,10 @@ export default function ProductSection() {
             <div>
                               <h2 className="text-base font-semibold leading-7 text-kahana-primary text-center lg:text-left">Oasis Agentic Browser</h2>
               <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl text-center lg:text-left">
-                Your agentic browser for ergonomic work
+                The first AI browser designed for ergonomic work, focus, and spatial ease
               </p>
               <p className="mt-6 text-lg leading-8 text-gray-600 text-center lg:text-left">
-                The Oasis Agentic Browser integrates AI at its core, helping you find and organize anything at the sound of your voice. No more digging through tabs or search history—just tell Oasis to pull up what you need.
+                Oasis is designed to meld with the way your mind works naturally. Experience seamless flow with spatial organization, intelligent shortcuts, and AI that learns from your workflow. Transform how you browse, organize, and create—all while maintaining the focus and productivity you need.
               </p>
               <div className="mt-8 flex gap-4 items-center justify-center lg:justify-start">
                 <Link

@@ -1,8 +1,0 @@
-{
-  "title": "Troubleshooting Guide",
-  "description": "Solutions for common issues and how to resolve them",
-  "content": "<div class='doc-content'><h1>Troubleshooting Guide</h1><p class='lead-text'>Find solutions to common issues and learn how to optimize your Kahana experience. This guide covers performance optimization, connection issues, and general troubleshooting steps.</p><section class='common-issues'><h2>Common Issues</h2><div class='issue-cards'><div class='issue-card'><h3>Browser Performance</h3><p>If you experience slow performance:</p><ul><li>Clear browser cache and cookies</li><li>Check your internet connection</li><li>Update your browser to the latest version</li><li>Disable unused extensions</li></ul></div><div class='issue-card'><h3>Connection Issues</h3><p>If you have connection problems:</p><ul><li>Verify your internet connection</li><li>Check your firewall settings</li><li>Try using a different network</li><li>Contact your network administrator</li></ul></div></div></section></div>",
-  "date": "2025-04-14",
-  "category": "support",
-  "slug": "troubleshooting"
-}

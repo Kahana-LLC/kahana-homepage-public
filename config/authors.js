@@ -6,7 +6,7 @@ const authors = {
   "Adam Kershner": {
     name: "Adam Kershner",
     role: "CTO",
-    bio: "I'm the CTO of Kahana, where I lead our mission to give you an Oasis to nurture your dreams and ideas. No data gathering. Ad-free. Private. Anonymous. Secure. While delivering industry-leading productivity features like voice-to-text, agentic commands, and AI-integrated at the core.",
+    bio: "I'm the CTO of Kahana, bringing a unique perspective from my management consulting experience at Clarkston Consulting and biomedical engineering background from Duke University. I'm focused on making the future of work more ergonomic through innovative technology solutions that prioritize user well-being and productivity.",
     linkedinProfile: "https://www.linkedin.com/in/adam-kershner/",
     // avatar: "/images/authors/adam-kershner.jpg",
   },

@@ -5,9 +5,11 @@ import { useRouter } from 'next/router';
 import { getDocBySlug, getAllDocs } from '../../utils/docsUtils';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import AuthorCard from '../../components/AuthorCard';
+import DiscordCTA from '../../components/DiscordCTA';
 import { FaRegCalendarAlt, FaBookOpen, FaRegClock } from 'react-icons/fa';
-import { authors } from '../../config/authors';
+import { getAuthorDetails } from '../../utils/authorUtils';
 import SEO from '../../components/SEO';
+import { docsConfig, isUniversalComponentEnabled, getUniversalComponent } from '../../config/docsConfig';
 import fs from 'fs';
 import path from 'path';
 
@@ -18,11 +20,29 @@ export async function getStaticPaths() {
   
   const docsDir = path.join(process.cwd(), "data/docs");
   const files = fs.readdirSync(docsDir);
-  const paths = files
-    .filter((file) => file.endsWith(".json"))
-    .map((file) => ({
-      params: { slug: file.replace(/\.json$/, "") },
-    }));
+  const paths = [];
+  
+  for (const file of files) {
+    if (file.endsWith(".json")) {
+      try {
+        const filePath = path.join(docsDir, file);
+        const fileContents = fs.readFileSync(filePath, "utf8");
+        const doc = JSON.parse(fileContents);
+        
+        // Use the slug field from the JSON if available, otherwise use filename
+        const slug = doc.slug || file.replace(/\.json$/, "");
+        paths.push({
+          params: { slug },
+        });
+      } catch (error) {
+        console.error(`Error reading ${file}:`, error);
+        // Fallback to filename
+        paths.push({
+          params: { slug: file.replace(/\.json$/, "") },
+        });
+      }
+    }
+  }
 
   return {
     paths,
@@ -44,7 +64,7 @@ export async function getStaticProps({ params }) {
     // Get related docs from the same category
     const relatedDocs = allDocs
       .filter(d => d.category === doc.category && d.slug !== doc.slug)
-      .slice(0, 3);
+      .slice(0, docsConfig.defaults.relatedDocsCount);
 
     return {
       props: {
@@ -75,7 +95,7 @@ export default function DocPage({ doc, relatedDocs }) {
   useEffect(() => {
     if (doc?.content) {
       const wordCount = doc.content.replace(/<[^>]*>/g, '').split(/\s+/).length;
-      setReadingTime(Math.ceil(wordCount / 200));
+      setReadingTime(Math.ceil(wordCount / docsConfig.defaults.readingTimeWordsPerMinute));
     }
   }, [doc]);
 
@@ -83,11 +103,8 @@ export default function DocPage({ doc, relatedDocs }) {
     return <div>Document not found</div>;
   }
 
-  // Default to Adam Kershner as the author
-  const docAuthors = [{
-    ...authors['Adam Kershner'],
-    name: 'Adam Kershner',
-  }];
+  // Get authors for this document, default to Adam Kershner if no authors specified
+  const docAuthors = doc.authors ? getAuthorDetails(doc.authors) : getAuthorDetails(['Adam Kershner']);
 
   return (
     <>
@@ -142,6 +159,13 @@ export default function DocPage({ doc, relatedDocs }) {
             dangerouslySetInnerHTML={{ __html: doc.content }}
             suppressHydrationWarning={true}
           />
+
+          {/* Discord CTA */}
+          {isUniversalComponentEnabled('discordCTA') && (
+            <DiscordCTA 
+              {...getUniversalComponent('discordCTA')}
+            />
+          )}
 
           {/* Related Docs */}
           {relatedDocs.length > 0 && (
