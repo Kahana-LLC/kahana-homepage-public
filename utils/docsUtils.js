@@ -34,6 +34,22 @@ export async function getAllDocs() {
 
 export async function getDocBySlug(slug) {
   try {
+    // First try to find the file by the slug field in the JSON
+    const files = await readdir(DOCS_DIR);
+    const jsonFiles = files.filter((file) => file.endsWith(".json"));
+    
+    for (const file of jsonFiles) {
+      const filePath = path.join(DOCS_DIR, file);
+      const fileContents = await readFile(filePath, "utf8");
+      const doc = JSON.parse(fileContents);
+      
+      // Check if this file has the matching slug
+      if (doc.slug === slug) {
+        return doc;
+      }
+    }
+    
+    // Fallback: try to find by filename (without .json extension)
     const filePath = path.join(DOCS_DIR, `${slug}.json`);
     const fileContents = await readFile(filePath, "utf8");
     return JSON.parse(fileContents);

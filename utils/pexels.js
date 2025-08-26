@@ -2,9 +2,9 @@
 const UNSPLASH_IMAGES = {
   // Technology/Business images from Unsplash - multiple options per category
   'technology business': [
-    'https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=600&fit=crop',
     'https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop',
-    'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop'
+    'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop'
   ],
   'cyber security': [
     'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=600&fit=crop',
@@ -13,8 +13,8 @@ const UNSPLASH_IMAGES = {
   ],
   'digital transformation': [
     'https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop',
-    'https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=600&fit=crop',
-    'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop'
+    'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop'
   ],
   'enterprise security': [
     'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop',
@@ -28,8 +28,8 @@ const UNSPLASH_IMAGES = {
   ],
   'AI browser': [
     'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop',
-    'https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=600&fit=crop',
-    'https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop'
+    'https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop'
   ],
   'privacy security': [
     'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop',
@@ -37,14 +37,14 @@ const UNSPLASH_IMAGES = {
     'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop'
   ],
   'content creation': [
-    'https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=600&fit=crop',
     'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
-    'https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop'
+    'https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop'
   ],
   'marketing': [
     'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
-    'https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=600&fit=crop',
-    'https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop'
+    'https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop'
   ],
   'finance': [
     'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop',
@@ -59,7 +59,7 @@ const UNSPLASH_IMAGES = {
   'education': [
     'https://images.unsplash.com/photo-1523240795132-9a0523bf846d?w=800&h=600&fit=crop',
     'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop',
-    'https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=600&fit=crop'
+    'https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop'
   ],
   'government': [
     'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop',
@@ -77,9 +77,9 @@ const UNSPLASH_IMAGES = {
     'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop'
   ],
   'default': [
-    'https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=600&fit=crop',
     'https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop',
-    'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop'
+    'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop'
   ]
 };
 
