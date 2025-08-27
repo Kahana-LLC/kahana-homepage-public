@@ -79,7 +79,7 @@
     },
     {
       "type": "paragraph",
-      "text": "Organizations using specialized Windows 10 versions face unique challenges. <a href=\"https://serverfault.com/questions/831464/how-to-install-microsoft-edge-browser-on-windows-10-enterprise-ltsb\" target=\"_blank\" rel=\"noopener noreferrer\">Server Fault discussions</a> highlight difficulties in installing modern browsers on Windows 10 Enterprise LTSB, while <a href=\"https://learn.microsoft.com/en-us/answers/questions/279137/security-issues-with-uwf-filter-enabled-on-win-10\" target=\"_blank\" rel=\"noopener noreferrer\">Microsoft's documentation</a> reveals security vulnerabilities in specialized configurations like Unified Write Filter in Windows 10 IoT Enterprise."
+      "text": "Organizations using specialized Windows 10 versions face unique challenges. <a href=\"https://serverfault.com/questions/831464/how-to-install-microsoft-edge-browser-on-windows-10-enterprise-ltsb\" target=\"_blank\" rel=\"noopener noreferrer\">Server Fault discussions</a> highlight difficulties in installing modern browsers on Windows 10 Enterprise LTSB, while Microsoft's documentation reveals security vulnerabilities in specialized configurations like Unified Write Filter in Windows 10 IoT Enterprise."
     },
     {
       "type": "heading",

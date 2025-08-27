@@ -190,7 +190,7 @@ const BuyerGuideOasis = () => {
               </p>
               <div className="space-x-6">
                 <Link
-                  href="/request-a-demo"
+                  href="/schedule-demo"
                   className="inline-block bg-[#66C2BE] text-white px-8 py-4 rounded-lg font-medium hover:bg-[#55B3AF]"
                 >
                   Request a Demo
