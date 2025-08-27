@@ -250,9 +250,9 @@ export default function Technology({ techBlogs }) {
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
               Transform your technology operations with secure, efficient solutions designed for modern tech challenges.
             </p>
-            <div className="flex justify-center gap-4">
-              <Link href="/schedule-demo" className="inline-block bg-kahana-primary text-white px-8 py-3 rounded-md hover:bg-kahana-primary-dark transition-colors">
-                Schedule Demo
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/buyers-guide" className="inline-block bg-white text-kahana-primary px-8 py-3 rounded-md hover:bg-gray-50 transition-colors border-2 border-kahana-primary">
+                Read Buyer's Guide
               </Link>
               <Link href="/sales" className="inline-block border border-kahana-primary text-kahana-primary px-8 py-3 rounded-md hover:bg-gray-50 transition-colors">
                 Contact Sales

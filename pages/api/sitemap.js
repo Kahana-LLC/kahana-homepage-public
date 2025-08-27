@@ -53,7 +53,7 @@ function generateSiteMap() {
        <priority>0.9</priority>
      </url>
      <url>
-       <loc>${EXTERNAL_DATA_URL}/buyer-guide-oasis</loc>
+               <loc>${EXTERNAL_DATA_URL}/buyers-guide</loc>
        <changefreq>monthly</changefreq>
        <priority>0.8</priority>
      </url>
