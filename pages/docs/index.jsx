@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import Head from 'next/head';
-import { getAllDocs } from '../../utils/docsUtils';
+import { getAllDocsMetadata } from '../../utils/docsUtils';
 import DocCard from '../../components/DocCard';
 import DocFilter from '../../components/DocFilter';
 import Breadcrumbs from '../../components/Breadcrumbs';
@@ -9,7 +9,7 @@ import SEO from '../../components/SEO';
 import { docsConfig, isUniversalComponentEnabled, getUniversalComponent } from '../../config/docsConfig';
 
 export async function getStaticProps() {
-  const docs = await getAllDocs();
+  const docs = await getAllDocsMetadata();
   const categories = [...new Set(docs.map(doc => doc.category))].sort();
   
   return {

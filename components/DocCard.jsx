@@ -17,8 +17,8 @@ export default function DocCard({ doc }) {
   // Get authors for this document, default to Adam Kershner if no authors specified
   const docAuthors = doc.authors ? getAuthorDetails(doc.authors) : getAuthorDetails(['Adam Kershner']);
 
-  // Calculate reading time based on content length (200 words per minute)
-  const readingTime = Math.ceil(doc.content?.replace(/<[^>]*>/g, '').split(/\s+/).length / 200) || 5;
+  // Calculate reading time based on word count (200 words per minute)
+  const readingTime = Math.ceil((doc.wordCount || 0) / 200) || 5;
 
   return (
     <article className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
