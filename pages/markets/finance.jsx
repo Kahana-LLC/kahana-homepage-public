@@ -284,14 +284,14 @@ export default function Finance({ financeBlogs }) {
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
               Financial institutions face escalating cyber threats, with 65% targeted by ransomware and breaches costing $6.08M on average. Enterprise browsers provide critical protection for sensitive financial data while ensuring compliance and operational continuity.
             </p>
-            <div className="flex justify-center gap-4">
-              <Link href="/schedule-demo">
-                <button className="bg-[#66C2BE] text-white px-8 py-3 rounded-md font-semibold hover:bg-[#55B3AF] transition-colors shadow-lg shadow-[#E3DFF1]/20 hover:shadow-xl hover:shadow-[#E3DFF1]/30">
-                  Schedule Demo
-                </button>
-              </Link>
-              <Link href="/sales">
-                <button className="border border-[#66C2BE] text-[#66C2BE] px-8 py-3 rounded-md font-semibold hover:bg-[#66C2BE]/10 transition-colors">
+                          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link href="/buyers-guide">
+                  <button className="bg-white text-[#66C2BE] px-8 py-3 rounded-md font-semibold hover:bg-gray-50 transition-colors border-2 border-[#66C2BE] shadow-lg shadow-[#E3DFF1]/20 hover:shadow-xl hover:shadow-[#E3DFF1]/30">
+                    Read Buyer's Guide
+                  </button>
+                </Link>
+                <Link href="/sales">
+                  <button className="border border-[#66C2BE] text-[#66C2BE] px-8 py-3 rounded-md font-semibold hover:bg-[#66C2BE]/10 transition-colors">
                   Contact Sales
                 </button>
               </Link>

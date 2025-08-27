@@ -515,6 +515,9 @@ function NavBar() {
                     <Link href="/about" className="dropdown-link">
                       About
                     </Link>
+                    <Link href="/buyers-guide" className="dropdown-link">
+                      Buyer's Guide
+                    </Link>
                   </div>
                 </div>
                 <div className="dropdown-section">

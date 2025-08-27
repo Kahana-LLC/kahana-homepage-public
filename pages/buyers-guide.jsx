@@ -20,16 +20,17 @@ import {
 
 // Section titles for navigation
 const sections = [
-  { id: "introduction", title: "Introduction", component: IntroductionSection },
-  { id: "modern-browser-crisis", title: "The Modern Browser Crisis", component: ModernBrowserCrisisSection },
-  { id: "why-oasis", title: "Why Oasis Exists", component: WhyOasisSection },
-  { id: "what-is-oasis", title: "What is Oasis?", component: WhatIsOasisSection },
-  { id: "designed-for-productivity", title: "Designed for Productivity", component: DesignedForProductivitySection },
-  { id: "core-architecture", title: "Core Architecture", component: CoreArchitectureSection },
-  { id: "benefits", title: "Benefits", component: BenefitsSection },
-  { id: "enterprise-deployment", title: "Enterprise Deployment", component: EnterpriseDeploymentSection },
-  { id: "vs-alternatives", title: "Oasis vs. Alternatives", component: VsAlternativesSection },
-  // Add other sections as they are created
+  { id: "agentic-browser-era", title: "A New Beginning: The Agentic Browser Era", component: IntroductionSection },
+  { id: "redefining-browser", title: "Redefining the Browser: Beyond Tabs and Tasks", component: VsAlternativesSection },
+  { id: "heart-of-oasis", title: "The Heart of Oasis: Well-Being Meets Workflow", component: ModernBrowserCrisisSection },
+  { id: "transformative-outcomes", title: "Transformative Outcomes: Holistic Value for Modern Organizations", component: WhyOasisSection },
+  { id: "real-world-impact", title: "Real-World Impact: Workflows and Journeys Empowered", component: WhatIsOasisSection },
+  { id: "wisdom-from-field", title: "Wisdom from the Field: Perspectives Shaping Agentic Browsing", component: DesignedForProductivitySection },
+  { id: "leading-innovators", title: "Who Builds for the Future? Snapshot of Leading Browser Innovators", component: CoreArchitectureSection },
+  { id: "browser-alternatives", title: "More Than One Path: Comparative Exploration of Browser Alternatives", component: BenefitsSection },
+  { id: "deployment-journey", title: "Seamless Start: A Human-Centric Deployment Journey", component: EnterpriseDeploymentSection },
+  { id: "user-experience", title: "Every Second Counts: The Oasis User Experience", component: IntroductionSection },
+  { id: "customer-questions", title: "Thoughtful Answers: The Most Important Customer Questions", component: VsAlternativesSection }
 ];
 
 const BuyerGuideOasis = () => {
@@ -97,12 +98,11 @@ const BuyerGuideOasis = () => {
                   <div className="mx-auto">
                     <div className="bg-white rounded-xl shadow-xl border border-[#A5DAD8]/30 p-8">
                       <h3 className="text-2xl font-semibold text-gray-900 mb-6">Guide Sections</h3>
-                      <div className="grid grid-cols-1 gap-4">
+                      <div className="grid grid-cols-1 gap-2">
                         {sections.map(section => (
-                          <a
+                          <div
                             key={section.id}
-                            href={`#${section.id}`}
-                            className="flex items-center p-4 bg-gray-50 rounded-lg hover:bg-[#66C2BE]/10 transition-colors"
+                            className="flex items-center p-3 bg-gray-50 rounded-lg"
                           >
                             <div className="flex-shrink-0 w-8 h-8 bg-[#66C2BE] rounded-full flex items-center justify-center mr-4">
                               <span className="text-white text-sm font-semibold">
@@ -110,67 +110,31 @@ const BuyerGuideOasis = () => {
                               </span>
                             </div>
                             <span className="text-gray-900 font-medium">{section.title}</span>
-                          </a>
+                          </div>
                         ))}
                       </div>
                       
-                      <div className="mt-8 pt-6 border-t border-[#A5DAD8]/30">
-                        <button
-                          onClick={handleDownloadPDF}
-                          className="w-full bg-[#66C2BE] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#55B3AF] transition-colors"
-                        >
-                          Download PDF Guide
-                        </button>
-                      </div>
+
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Right Column - Quick Start */}
+              {/* Right Column - Download Form */}
               <div className="lg:col-span-5 lg:sticky lg:top-24">
                 <div className="bg-white rounded-xl shadow-xl border border-[#A5DAD8]/30 p-8">
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-4">Quick Start</h3>
-                  <p className="text-gray-600 mb-6">
-                    Get started with the buyer's guide to understand how Oasis can transform your enterprise browsing experience.
-                  </p>
-                  
-                  <div className="space-y-4 mb-8">
-                    <div className="flex items-start">
-                      <div className="flex-shrink-0 w-6 h-6 bg-[#66C2BE] rounded-full flex items-center justify-center mr-3 mt-0.5">
-                        <span className="text-white text-xs font-semibold">1</span>
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-gray-900">Read the Guide</h4>
-                        <p className="text-sm text-gray-600">Explore each section to understand Oasis capabilities</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start">
-                      <div className="flex-shrink-0 w-6 h-6 bg-[#66C2BE] rounded-full flex items-center justify-center mr-3 mt-0.5">
-                        <span className="text-white text-xs font-semibold">2</span>
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-gray-900">Download PDF</h4>
-                        <p className="text-sm text-gray-600">Save the guide for offline reference</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start">
-                      <div className="flex-shrink-0 w-6 h-6 bg-[#66C2BE] rounded-full flex items-center justify-center mr-3 mt-0.5">
-                        <span className="text-white text-xs font-semibold">3</span>
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-gray-900">Request Demo</h4>
-                        <p className="text-sm text-gray-600">See Oasis in action for your organization</p>
-                      </div>
-                    </div>
+                  <div className="w-full h-[400px]">
+                    <iframe
+                      src="https://tally.so/r/3xApd9"
+                      width="100%"
+                      height="100%"
+                      frameBorder="0"
+                      marginHeight="0"
+                      marginWidth="0"
+                      title="Download Buyer Guide Form"
+                      className="rounded-lg"
+                    />
                   </div>
-
-                  <Link
-                    href="/schedule-demo"
-                    className="block w-full bg-[#66C2BE] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#55B3AF] transition-colors text-center"
-                  >
-                    Request a Demo
-                  </Link>
                 </div>
               </div>
             </div>

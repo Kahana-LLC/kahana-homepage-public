@@ -239,11 +239,13 @@ export default function Manufacturing({ manufacturingBlogs }) {
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
               Manufacturing operations face unprecedented cyber threats as digitization accelerates. Enterprise browsers provide critical protection for your digital factory floor, ensuring secure access to IoT systems, cloud workflows, and AI-driven analytics while maintaining compliance with industrial standards.
             </p>
-            <Link href="/schedule-demo">
-              <button className="bg-[#66C2BE] text-white px-8 py-3 rounded-md font-semibold hover:bg-[#55B3AF] transition-colors shadow-lg shadow-[#E3DFF1]/20 hover:shadow-xl hover:shadow-[#E3DFF1]/30">
-                Schedule Demo
-              </button>
-            </Link>
+            <div className="flex justify-center">
+              <Link href="/buyers-guide">
+                <button className="bg-white text-[#66C2BE] px-8 py-3 rounded-md font-semibold hover:bg-gray-50 transition-colors border-2 border-[#66C2BE] shadow-lg shadow-[#E3DFF1]/20 hover:shadow-xl hover:shadow-[#E3DFF1]/30">
+                  Read Buyer's Guide
+                </button>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
