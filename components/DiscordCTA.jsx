@@ -29,7 +29,8 @@ const DiscordCTA = ({
   title = "Join Our Discord Community",
   description = "Connect with the Kahana team, get support, access exclusive resources, and stay updated on the latest features and announcements.",
   buttonText = "Join Discord",
-  className = ""
+  className = "",
+  directDiscordLink = false
 }) => {
   return (
     <div className={`mt-16 p-8 bg-gradient-to-r from-[#E3DFF1]/20 via-[#8CB7D0]/10 to-[#E3DFF1]/30 rounded-xl border border-[#A5DAD8]/30 shadow-lg ${className}`}>
@@ -47,28 +48,54 @@ const DiscordCTA = ({
             {description}
           </p>
           <div className="flex flex-wrap gap-4">
-            <Link 
-              href="https://discord.gg/U6jQCqE5"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center px-6 py-3 border border-transparent text-base font-bold rounded-md shadow-sm text-white bg-[#5865F2] hover:bg-[#4752C4] transition-colors no-underline"
-              style={{ 
-                textDecoration: 'none', 
-                backgroundColor: '#5865F2', 
-                borderColor: '#5865F2'
-              }}
-            >
-              <span style={{ fontWeight: 'bold', color: 'white' }}>{buttonText}</span>
-              <svg className="ml-2 -mr-1 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-              </svg>
-            </Link>
+            {directDiscordLink ? (
+              <a 
+                href="https://discord.gg/erkguEsVHa"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-6 py-3 border border-transparent text-base font-bold rounded-md shadow-sm text-white bg-[#5865F2] hover:bg-[#4752C4] transition-colors no-underline"
+                style={{ 
+                  textDecoration: 'none', 
+                  backgroundColor: '#5865F2', 
+                  borderColor: '#5865F2'
+                }}
+              >
+                <span style={{ fontWeight: 'bold', color: 'white' }}>{buttonText}</span>
+                <svg className="ml-2 -mr-1 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            ) : (
+              <Link 
+                href="/community"
+                className="inline-flex items-center px-6 py-3 border border-transparent text-base font-bold rounded-md shadow-sm text-white bg-[#5865F2] hover:bg-[#4752C4] transition-colors no-underline"
+                style={{ 
+                  textDecoration: 'none', 
+                  backgroundColor: '#5865F2', 
+                  borderColor: '#5865F2'
+                }}
+              >
+                <span style={{ fontWeight: 'bold', color: 'white' }}>{buttonText}</span>
+                <svg className="ml-2 -mr-1 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </Link>
+            )}
             <div className="flex items-center text-sm text-gray-500">
               <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
               <span>Always free to join</span>
             </div>
+          </div>
+          <div className="mt-4 text-sm text-gray-500">
+            <span>Having trouble with Discord? </span>
+            <Link 
+              href="/contact" 
+              className="text-[#66C2BE] hover:text-[#55B3AF] underline transition-colors"
+            >
+              Contact us directly
+            </Link>
           </div>
           <div className="mt-4 flex flex-wrap gap-6 text-sm text-gray-600">
             <div className="flex items-center">

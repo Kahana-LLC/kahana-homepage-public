@@ -280,9 +280,7 @@ export default function Footer() {
                   </svg>
                 </Link>
                 <Link 
-                  href="https://discord.gg/U6jQCqE5" 
-                  target="_blank" 
-                  rel="noopener noreferrer nofollow" 
+                  href="/community" 
                   className="text-[#5865F2] hover:text-[#4752C4] transition-colors duration-200"
                   aria-label="Join Kahana Discord Community"
                 >
