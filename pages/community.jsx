@@ -116,6 +116,7 @@ export default function Community() {
                   title="Join Our Discord Community"
                   description="Connect with the Kahana team, get support, access exclusive resources, and stay updated on the latest features and announcements."
                   buttonText="Join Discord"
+                  directDiscordLink={true}
                 />
               </div>
 
@@ -288,6 +289,7 @@ export default function Community() {
                         description="Connect with our team, get support, and stay updated on all things Oasis. Join our community today!"
                         buttonText="Join Discord Now"
                         className="mb-0"
+                        directDiscordLink={true}
                       />
                     </div>
 
@@ -328,6 +330,7 @@ export default function Community() {
                 title="Join Our Discord Community"
                 description="Connect with the Kahana team, get support, access exclusive resources, and stay updated on the latest features and announcements."
                 buttonText="Join Discord"
+                directDiscordLink={true}
               />
             </div>
           </div>
