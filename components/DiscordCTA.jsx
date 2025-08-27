@@ -48,7 +48,7 @@ const DiscordCTA = ({
           </p>
           <div className="flex flex-wrap gap-4">
             <Link 
-              href="https://discord.gg/U6jQCqE5"
+              href="https://discord.gg/erkguEsVHa"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center px-6 py-3 border border-transparent text-base font-bold rounded-md shadow-sm text-white bg-[#5865F2] hover:bg-[#4752C4] transition-colors no-underline"
