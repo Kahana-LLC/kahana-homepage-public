@@ -5,13 +5,13 @@
   "scripts": {
     "dev": "next dev",
     "clean": "rm -rf .next",
-    "build": "NODE_ENV=production VERBOSE=false npm run clean && npm run copy-docs && npm run process-docs && NODE_OPTIONS='--no-deprecation' next build",
+    "build": "NODE_ENV=production VERBOSE=false npm run clean && NODE_OPTIONS='--no-deprecation' next build",
     "start": "next start -p $PORT",
     "lint": "next lint",
-    "process-docs": "node scripts/process-docs.js",
-    "copy-docs": "node scripts/copy-docs.js",
+
+
     "update-sitemap": "node scripts/update-sitemap.js",
-    "heroku-postbuild": "npm run clean && npm run copy-docs && npm run process-docs && NODE_OPTIONS='--no-deprecation' next build"
+    "heroku-postbuild": "npm run clean && NODE_OPTIONS='--no-deprecation' next build"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.787.0",

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import whiteKahanaLogo from '../assets/kahana_logo_wide_gray.svg?v=2';
+import whiteKahanaLogo from '../assets/kahana_logo_combined.svg';
 
 function NavBar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -387,7 +387,7 @@ function NavBar() {
         `}</style>
         <div className="nav-content">
           <Link href="/" className="flex items-center">
-            <div className="relative h-[42px] w-[160px]">
+            <div className="relative h-[42px] w-[200px]">
               <Image
                 src={whiteKahanaLogo}
                 alt="Kahana Logo"
@@ -514,6 +514,9 @@ function NavBar() {
                   <div className="flex flex-col space-y-4">
                     <Link href="/about" className="dropdown-link">
                       About
+                    </Link>
+                    <Link href="/buyers-guide" className="dropdown-link">
+                      Buyer's Guide
                     </Link>
                   </div>
                 </div>

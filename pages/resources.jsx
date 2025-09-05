@@ -19,71 +19,13 @@ const categories = [
 ];
 
 // This would typically come from a CMS or database
-const allResources = {
-  'digital-products-guide': {
-    title: 'Complete Guide to Digital Products',
-    excerpt: 'Learn how to create, market, and sell digital products successfully.',
-    category: 'Guides',
-    date: 'March 15, 2024',
-    type: 'pdf',
-    downloadUrl: '/resources/digital-products-guide.pdf',
-    customImage: null,
-    defaultImageQuery: 'digital products marketing'
-  },
-  'content-monetization': {
-    title: 'Content Monetization Strategies',
-    excerpt: 'Discover effective strategies for monetizing your content and building sustainable revenue streams.',
-    category: 'White Papers',
-    date: 'March 10, 2024',
-    type: 'pdf',
-    downloadUrl: '/resources/content-monetization.pdf',
-    customImage: null,
-    defaultImageQuery: 'content monetization business'
-  },
-  'subscription-model': {
-    title: 'Building a Successful Subscription Model',
-    excerpt: 'A comprehensive guide to implementing and optimizing subscription-based business models.',
-    category: 'Case Studies',
-    date: 'March 5, 2024',
-    type: 'video',
-    videoUrl: 'https://example.com/subscription-model-video',
-    customImage: null,
-    defaultImageQuery: 'subscription business model'
-  },
-  'content-creation': {
-    title: 'Content Creation Best Practices',
-    excerpt: 'Learn the best practices for creating high-quality, engaging content that drives results.',
-    category: 'Tutorials',
-    date: 'March 1, 2024',
-    type: 'video',
-    videoUrl: 'https://example.com/content-creation-video',
-    customImage: null,
-    defaultImageQuery: 'content creation process'
-  },
-  'marketing-templates': {
-    title: 'Marketing Templates Bundle',
-    excerpt: 'A collection of ready-to-use templates for your marketing campaigns.',
-    category: 'Templates',
-    date: 'February 28, 2024',
-    type: 'zip',
-    downloadUrl: '/resources/marketing-templates.zip',
-    customImage: null,
-    defaultImageQuery: 'marketing templates design'
-  }
-};
+const allResources = {};
 
 // Featured resource is the most recent resource
-const featuredResource = {
-  slug: 'digital-products-guide',
-  ...allResources['digital-products-guide']
-};
+const featuredResource = null;
 
 // Recent resources are the next 3 most recent resources
-const recentResources = [
-  { slug: 'content-monetization', ...allResources['content-monetization'] },
-  { slug: 'subscription-model', ...allResources['subscription-model'] },
-  { slug: 'content-creation', ...allResources['content-creation'] }
-];
+const recentResources = [];
 
 export async function getStaticProps() {
   try {
@@ -116,7 +58,7 @@ export async function getStaticProps() {
     const resourcesWithImages = Object.fromEntries(allResourcesWithImages);
 
     // Get featured resource image
-    const featuredImage = resourcesWithImages[featuredResource.slug]?.image || DEFAULT_PLACEHOLDER;
+    const featuredImage = featuredResource?.image || DEFAULT_PLACEHOLDER;
 
     return {
       props: {
@@ -206,58 +148,67 @@ const Resources = ({
 
         {/* Featured Resource */}
         <div className="mt-12">
-          <Link href={featuredResource.downloadUrl || featuredResource.videoUrl}>
-            <div className="relative rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <div className="relative h-96">
-                <Image
-                  src={featuredImage}
-                  alt={featuredResource.title}
-                  layout="fill"
-                  objectFit="cover"
-                  className="rounded-lg"
-                />
-              </div>
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6">
-                <div className="text-white">
-                  <span className="inline-block bg-kahana-primary px-3 py-1 rounded-full text-sm mb-2">
-                    {featuredResource.category}
-                  </span>
-                  <h2 className="text-2xl font-bold mb-2">{featuredResource.title}</h2>
-                  <p className="text-gray-200">{featuredResource.excerpt}</p>
+          {featuredResource && (
+            <Link href={featuredResource.downloadUrl || featuredResource.videoUrl}>
+              <div className="relative rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div className="relative h-96">
+                  <Image
+                    src={featuredImage}
+                    alt={featuredResource.title}
+                    layout="fill"
+                    objectFit="cover"
+                    className="rounded-lg"
+                  />
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6">
+                  <div className="text-white">
+                    <span className="inline-block bg-kahana-primary px-3 py-1 rounded-full text-sm mb-2">
+                      {featuredResource.category}
+                    </span>
+                    <h2 className="text-2xl font-bold mb-2">{featuredResource.title}</h2>
+                    <p className="text-gray-200">{featuredResource.excerpt}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          </Link>
+            </Link>
+          )}
         </div>
 
         {/* Recent Resources */}
-        <div className="mt-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">Recent Resources</h2>
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {recentResources.map((resource) => (
-              <Link key={resource.slug} href={resource.downloadUrl || resource.videoUrl}>
-                <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-                  <div className="relative h-48">
-                    <Image
-                      src={resource.image}
-                      alt={resource.title}
-                      layout="fill"
-                      objectFit="cover"
-                      className="rounded-t-lg"
-                    />
+        {recentResources.length > 0 ? (
+          <div className="mt-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">Recent Resources</h2>
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+              {recentResources.map((resource) => (
+                <Link key={resource.slug} href={resource.downloadUrl || resource.videoUrl}>
+                  <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <div className="relative h-48">
+                      <Image
+                        src={resource.image}
+                        alt={resource.title}
+                        layout="fill"
+                        objectFit="cover"
+                        className="rounded-t-lg"
+                      />
+                    </div>
+                    <div className="p-6">
+                      <span className="inline-block bg-kahana-primary text-white px-3 py-1 rounded-full text-sm mb-2">
+                        {resource.category}
+                      </span>
+                      <h3 className="text-xl font-semibold text-gray-900 mb-2">{resource.title}</h3>
+                      <p className="text-gray-600">{resource.excerpt}</p>
+                    </div>
                   </div>
-                  <div className="p-6">
-                    <span className="inline-block bg-kahana-primary text-white px-3 py-1 rounded-full text-sm mb-2">
-                      {resource.category}
-                    </span>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">{resource.title}</h3>
-                    <p className="text-gray-600">{resource.excerpt}</p>
-                  </div>
-                </div>
-              </Link>
-            ))}
+                </Link>
+              ))}
+            </div>
           </div>
-        </div>
+        ) : (
+          <div className="mt-12 text-center py-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">No Resources Available</h2>
+            <p className="text-gray-600">We're currently updating our resource library. Check back soon for new content!</p>
+          </div>
+        )}
 
         {/* Search and Filter */}
         <div className="mt-12">

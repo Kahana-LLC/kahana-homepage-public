@@ -1,13 +1,15 @@
 import React, { useState, useMemo } from 'react';
 import Head from 'next/head';
-import { getAllDocs } from '../../utils/docsUtils';
+import { getAllDocsMetadata } from '../../utils/docsUtils';
 import DocCard from '../../components/DocCard';
 import DocFilter from '../../components/DocFilter';
 import Breadcrumbs from '../../components/Breadcrumbs';
+import DiscordCTA from '../../components/DiscordCTA';
 import SEO from '../../components/SEO';
+import { docsConfig, isUniversalComponentEnabled, getUniversalComponent } from '../../config/docsConfig';
 
 export async function getStaticProps() {
-  const docs = await getAllDocs();
+  const docs = await getAllDocsMetadata();
   const categories = [...new Set(docs.map(doc => doc.category))].sort();
   
   return {
@@ -87,6 +89,13 @@ export default function DocsIndex({ docs, categories }) {
                 Try adjusting your search or filter to find what you're looking for.
               </p>
             </div>
+          )}
+
+          {/* Discord CTA */}
+          {isUniversalComponentEnabled('discordCTA') && (
+            <DiscordCTA 
+              {...getUniversalComponent('discordCTA')}
+            />
           )}
         </div>
       </div>

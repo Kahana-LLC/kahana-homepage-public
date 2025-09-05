@@ -270,11 +270,13 @@ export default function Government({ governmentBlogs }) {
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
               Transform your government operations with enterprise-grade security, enhanced productivity, and comprehensive analytics.
             </p>
-            <Link href="/schedule-demo">
-              <button className="bg-kahana-primary text-white px-8 py-3 rounded-md font-semibold hover:bg-kahana-primary-dark transition-colors shadow-lg shadow-kahana-accent-sky/20 hover:shadow-xl hover:shadow-kahana-accent-sky/30">
-                Schedule Demo
-              </button>
-            </Link>
+            <div className="flex justify-center">
+              <Link href="/buyers-guide">
+                <button className="bg-white text-kahana-primary px-8 py-3 rounded-md font-semibold hover:bg-gray-50 transition-colors border-2 border-kahana-primary shadow-lg shadow-kahana-accent-sky/20 hover:shadow-xl hover:shadow-kahana-accent-sky/30">
+                  Read Buyer's Guide
+                </button>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
