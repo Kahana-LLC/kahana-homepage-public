@@ -1768,17 +1768,6 @@ const blogIndex = [
     slug: "victorias-secret-cybersecurity-breach-2025",
     readingTime: 8,
   },
-  {
-    title: "Norton Security Breach: A Wake-Up Call for Digital Privacy in 2025",
-    date: "2025-06-07T00:00:00.000Z",
-    authors: ["Rishikes Ramachandran", "Adam Kershner"],
-    category: ["Security", "Research & Trends"],
-    excerpt:
-      "When Norton's security systems were compromised in May 2025, exposing 184 million passwords, it revealed critical vulnerabilities in digital identity protection. This deep dive examines the technical failures, user impact, and essential security practices needed in today's threat landscape.",
-    defaultImageQuery: "norton security breach cybersecurity data protection",
-    slug: "norton-security-breach-analysis-2025",
-    readingTime: 10,
-  },
 ];
 
 export { blogIndex };
