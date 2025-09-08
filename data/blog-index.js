@@ -1,7 +1,17 @@
 const blogIndex = [
   {
+    title: "Advanced Thermal Management Materials in AR Glasses: The Future of Cool Computing",
+    date: "2025-09-08T00:00:00.000Z",
+    authors: ["Rishikes Ramachandran"],
+    category: ["Technology", "Engineering", "AR/VR", "Materials Science"],
+    excerpt: "Explore how titanium vapor chambers and graphene films are revolutionizing thermal management in AR glasses. Discover the engineering breakthroughs that make all-day wearable computing comfortable and safe.",
+    defaultImageQuery: "AR glasses thermal management titanium vapor chambers graphene films wearable computing heat dissipation technology",
+    slug: "advanced-thermal-management-materials-ar-glasses-2025",
+    readingTime: 8,
+  },
+  {
 
-    title: "The Rise of Agentic AI: Why the Next Breakthrough Won’t Be a Model—It’ll Be a Browser",
+    title: "The Rise of Agentic AI: Why the Next Breakthrough Won't Be a Model—It'll Be a Browser",
     date: "2025-08-26T00:00:00.000Z",
     authors: ["Sanku Rajshree Rao"],
     category: ["AI", "Browsers", "Security", "Enterprise", "Research & Trends"],
