@@ -272,10 +272,10 @@ export default function EnergyUtilities({ energyBlogs }) {
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
               The energy sector faces unprecedented threats, with 31% of global wiper attacks targeting utilities and breaches costing $4.72M on average. Enterprise browsers provide critical protection for grid operations while ensuring compliance and operational continuity.
             </p>
-            <div className="flex justify-center gap-4">
-              <Link href="/schedule-demo">
-                <button className="bg-kahana-primary text-white px-8 py-3 rounded-md font-semibold hover:bg-kahana-primary-dark transition-colors shadow-lg shadow-kahana-accent-sky/20 hover:shadow-xl hover:shadow-kahana-accent-sky/30">
-                  Schedule Demo
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/buyers-guide">
+                <button className="bg-white text-kahana-primary px-8 py-3 rounded-md font-semibold hover:bg-gray-50 transition-colors border-2 border-kahana-primary shadow-lg shadow-kahana-accent-sky/20 hover:shadow-xl hover:shadow-kahana-accent-sky/30">
+                  Read Buyer's Guide
                 </button>
               </Link>
               <Link href="/sales">
@@ -406,7 +406,7 @@ export default function EnergyUtilities({ energyBlogs }) {
           <div className="flex justify-center">
             <Link 
               href="/sales" 
-              className="bg-kahana-primary text-white px-8 py-3 rounded-md font-bold hover:bg-kahana-primary-dark transition-colors"
+              className="contact-sales-btn bg-transparent border border-white text-white px-8 py-3 rounded-md font-bold hover:bg-white hover:text-kahana-primary transition-colors"
               
             >
               <span >

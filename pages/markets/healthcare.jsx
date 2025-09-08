@@ -284,11 +284,13 @@ export default function Healthcare({ healthcareBlogs }) {
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
               Healthcare organizations face escalating cyber threats from web applications, unsecured devices, and sensitive patient data. Enterprise browsers provide critical protection for EHR systems while ensuring HIPAA compliance and operational continuity.
             </p>
-            <Link href="/schedule-demo">
-              <button className="bg-[#66C2BE] text-white px-8 py-3 rounded-md font-semibold hover:bg-[#55B3AF] transition-colors shadow-lg shadow-[#E3DFF1]/20 hover:shadow-xl hover:shadow-[#E3DFF1]/30">
-                Schedule Demo
-              </button>
-            </Link>
+            <div className="flex justify-center">
+              <Link href="/buyers-guide">
+                <button className="bg-white text-[#66C2BE] px-8 py-3 rounded-md font-semibold hover:bg-gray-50 transition-colors border-2 border-[#66C2BE] shadow-lg shadow-[#E3DFF1]/20 hover:shadow-xl hover:shadow-[#E3DFF1]/30">
+                  Read Buyer's Guide
+                </button>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -411,7 +413,7 @@ export default function Healthcare({ healthcareBlogs }) {
           <div className="flex justify-center">
             <Link 
               href="/sales" 
-              className="bg-kahana-primary text-white px-8 py-3 rounded-md font-bold hover:bg-kahana-primary-dark transition-colors"
+              className="contact-sales-btn bg-transparent border border-white text-white px-8 py-3 rounded-md font-bold hover:bg-white hover:text-kahana-primary transition-colors"
               
             >
               <span >
