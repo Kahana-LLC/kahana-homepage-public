@@ -1,7 +1,38 @@
 const blogIndex = [
   {
-
-    title: "The Rise of Agentic AI: Why the Next Breakthrough Won’t Be a Model—It’ll Be a Browser",
+    title: "Advanced Thermal Management Materials in AR Glasses: The Future of Cool Computing",
+    date: "2025-09-08T00:00:00.000Z",
+    authors: ["Rishikes Ramachandran"],
+    category: ["Technology", "Engineering", "AR/VR", "Materials Science"],
+    excerpt: "Explore how titanium vapor chambers and graphene films are revolutionizing thermal management in AR glasses. Discover the engineering breakthroughs that make all-day wearable computing comfortable and safe.",
+    defaultImageQuery: "AR glasses thermal management titanium vapor chambers graphene films wearable computing heat dissipation technology",
+    slug: "advanced-thermal-management-materials-ar-glasses-2025",
+    readingTime: 8,
+  },
+  {
+    title: "Why Oasis Trumps Dia and Comet: The Enterprise Browser That Actually Delivers on Its Promises",
+    date: "2025-08-26T00:00:00.000Z",
+    authors: ["Vedant Gupta"],
+    category: ["Enterprise", "Security", "Browser", "Technology", "Product Analysis"],
+    excerpt:
+      "While Dia and Comet struggle with reliability issues and security vulnerabilities, Kahana's Oasis browser delivers enterprise-grade security without compromising on performance. Discover why Oasis is the browser that actually works for business.",
+    defaultImageQuery: "enterprise browser security Oasis vs Dia Comet comparison 2025",
+    slug: "why-oasis-trumps-dia-comet-enterprise-browser-superiority-2025",
+    readingTime: 12,
+  },
+  {
+    title: "Browser Security Crisis 2025: How AI Browsers Are Creating New Vulnerabilities While Chrome Faces Unprecedented Threats",
+    date: "2025-08-25T00:00:00.000Z",
+    authors: ["Vedant Gupta"],
+    category: ["Security", "Browser", "AI", "Enterprise", "Technology", "Research & Trends"],
+    excerpt:
+      "The browser landscape in 2025 faces unprecedented security challenges as Chrome battles zero-day vulnerabilities while AI-powered browsers introduce new attack vectors. Discover how organizations are navigating this perfect storm of browser security threats.",
+    defaultImageQuery: "browser security crisis 2025 AI browser vulnerabilities Chrome zero-day exploits",
+    slug: "browser-security-crisis-2025-ai-browsers-vulnerabilities-challenges",
+    readingTime: 12,
+  },
+  {
+    title: "The Rise of Agentic AI: Why the Next Breakthrough Won't Be a Model—It'll Be a Browser",
     date: "2025-08-26T00:00:00.000Z",
     authors: ["Sanku Rajshree Rao"],
     category: ["AI", "Browsers", "Security", "Enterprise", "Research & Trends"],

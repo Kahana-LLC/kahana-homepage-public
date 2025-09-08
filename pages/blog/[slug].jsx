@@ -8,6 +8,7 @@ import { blogIndex } from '../../data/blog-index';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import AuthorCard from '../../components/AuthorCard';
 import BlogBrowserComparison from '../../components/BlogBrowserComparison';
+import MaterialComparisonTable from '../../components/MaterialComparisonTable';
 import { FaLinkedin, FaRegCalendarAlt, FaBookOpen, FaRegClock } from 'react-icons/fa';
 import SocialShare from '../../components/SocialShare';
 const { getAuthorDetails } = require('../../utils/authorUtils');
@@ -194,6 +195,14 @@ export default function BlogPost({ post }) {
                       if (block.name === 'BlogBrowserComparison') {
                         return (
                           <BlogBrowserComparison
+                            key={index}
+                            {...block.props}
+                          />
+                        );
+                      }
+                      if (block.name === 'MaterialComparisonTable') {
+                        return (
+                          <MaterialComparisonTable
                             key={index}
                             {...block.props}
                           />
