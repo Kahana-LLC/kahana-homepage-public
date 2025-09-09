@@ -131,6 +131,13 @@ const authors = {
     avatar: "/assets/headshots/jonathan_gans.jpg",
 
   },
+  "Mohammed Muneebuddin": {
+    name: "Mohammed Muneebuddin",
+    role: "Cybersecurity Analyst",
+    bio: "I am a cybersecurity and GRC professional with a strong background in enterprise security, compliance, and risk management. With a track record of bridging technical and business needs, I specialize in aligning security operations with regulatory requirements and organizational goals.",
+    linkedinProfile: "https://www.linkedin.com/in/mmuneeb16/",
+    avatar: "/assets/headshots/mohammed_muneebuddin.jpg",
+  },
 };
 
 module.exports = { authors };

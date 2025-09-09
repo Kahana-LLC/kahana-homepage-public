@@ -1,5 +1,15 @@
 const blogIndex = [
   {
+    title: "Chrome vs Safari vs Oasis: The Enterprise Browser Security Crisis of 2025",
+    date: "2025-09-08T00:00:00.000Z",
+    authors: ["Mohammed Muneebuddin"],
+    category: ["Security", "Enterprise", "Browser", "Cybersecurity", "Compliance"],
+    excerpt: "A comprehensive analysis of the critical security vulnerabilities, performance issues, and enterprise challenges facing Chrome, Safari, and emerging solutions like Oasis in 2025.",
+    defaultImageQuery: "enterprise browser security Chrome Safari Oasis comparison cybersecurity vulnerabilities 2025",
+    slug: "chrome-vs-safari-vs-oasis-enterprise-browser-security-analysis-2025",
+    readingTime: 12,
+  },
+  {
     title: "Advanced Thermal Management Materials in AR Glasses: The Future of Cool Computing",
     date: "2025-09-08T00:00:00.000Z",
     authors: ["Rishikes Ramachandran"],
