@@ -1,8 +1,0 @@
-{
-  "title": "Security Guide",
-  "description": "Comprehensive guide to Kahana's security features and best practices",
-  "content": "<div class='doc-content'><h1>Security Guide</h1><p class='lead-text'>Learn about Kahana's security features and how to implement security best practices for your organization.</p><section class='security-features'><h2>Key Security Features</h2><div class='feature-list'><div class='feature-item'><h3>Access Control</h3><p>Implement role-based access control and multi-factor authentication to secure your workspace.</p></div><div class='feature-item'><h3>Data Protection</h3><p>End-to-end encryption and secure data storage protect your sensitive information.</p></div></div></section><section class='best-practices'><h2>Security Best Practices</h2><ul><li>Enable two-factor authentication for all users</li><li>Regularly review access permissions</li><li>Keep security settings up to date</li><li>Monitor security logs regularly</li></ul></section></div>",
-  "date": "2025-04-14",
-  "category": "security",
-  "slug": "security-guide"
-}

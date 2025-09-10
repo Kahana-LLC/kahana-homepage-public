@@ -6,7 +6,7 @@ const authors = {
   "Adam Kershner": {
     name: "Adam Kershner",
     role: "CTO",
-    bio: "I'm the CTO of Kahana, where I lead our mission to give you an Oasis to nurture your dreams and ideas. No data gathering. Ad-free. Private. Anonymous. Secure. While delivering industry-leading productivity features like voice-to-text, agentic commands, and AI-integrated at the core.",
+    bio: "I'm the CTO of Kahana, bringing a unique perspective from my management consulting experience at Clarkston Consulting and biomedical engineering background from Duke University. I'm focused on making the future of work more ergonomic through innovative technology solutions that prioritize user well-being and productivity.",
     linkedinProfile: "https://www.linkedin.com/in/adam-kershner/",
     // avatar: "/images/authors/adam-kershner.jpg",
   },
@@ -114,12 +114,22 @@ const authors = {
     linkedinProfile: "https://www.linkedin.com/in/khyatibhatia10/",
     avatar: "/assets/headshots/khyati_bhatia.jpg",
   },
+
   "Sanku Rajshree Rao": {
     name: "Sanku Rajshree Rao",
     role: "Software Engineer",
     bio: "I’m a software engineer passionate about AI and automation, with a love for creating both smart solutions and fresh bakes. Baking has taught me patience and creativity, while my experience as an orientation leader on campus helped me grow in leadership, teamwork, and collaboration. I thrive in environments where I can learn, share ideas, and build meaningful projects with others.",
     linkedinProfile: "https://www.linkedin.com/in/sanku-rajshree-rao/",
     avatar: "/assets/headshots/Rajshree_Rao.jpg",
+  },
+  
+  "Jonathan Gans": {
+    name: "Jonathan Gans",
+    role: "CEO",
+    bio: "Biomedical Engineering graduate from Duke University, previously in Deloitte's corporate strategy practice, and renowned Dog Whisperer in the Windy City. Building an ergonomic future of work.",
+    linkedinProfile: "https://www.linkedin.com/in/jonathan-gans1/",
+    avatar: "/assets/headshots/jonathan_gans.jpg",
+
   },
 };
 
