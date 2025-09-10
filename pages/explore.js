@@ -9,18 +9,24 @@ const SearchPage = () => {
   const [error, setError] = useState(null);
   const [searchResults, setSearchResults] = useState([]);
   const [hasSearched, setHasSearched] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [pagination, setPagination] = useState(null);
+  const [searchQuery, setSearchQuery] = useState("");
 
-  const handleSearch = async (query) => {
+  const handleSearch = async (query, page = 1) => {
     setIsLoading(true);
     setError(null);
     setHasSearched(true);
+    setSearchQuery(query);
+    setCurrentPage(page);
     
     try {
       // Simple search implementation without InstantSearch
-      const response = await fetch(`/api/search?q=${encodeURIComponent(query)}&category=${selectedCategory}`);
+      const response = await fetch(`/api/search?q=${encodeURIComponent(query)}&category=${selectedCategory}&page=${page}`);
       if (response.ok) {
         const data = await response.json();
         setSearchResults(data.hits || []);
+        setPagination(data.pagination || null);
       } else {
         throw new Error('Search failed');
       }
@@ -31,10 +37,21 @@ const SearchPage = () => {
     }
   };
 
+  const handlePageChange = (newPage) => {
+    handleSearch(searchQuery, newPage);
+  };
+
   // Load initial results on component mount
   useEffect(() => {
     handleSearch('');
   }, []);
+
+  // Handle category changes
+  useEffect(() => {
+    if (hasSearched) {
+      handleSearch(searchQuery, 1);
+    }
+  }, [selectedCategory]);
 
   return (
     <>
@@ -56,10 +73,12 @@ const SearchPage = () => {
                 <input
                   type="text"
                   placeholder="Explore Kahana..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
                   className="search-input w-full max-w-[300px] md:max-w-[400px] px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                   onKeyPress={(e) => {
                     if (e.key === 'Enter') {
-                      handleSearch(e.target.value);
+                      handleSearch(e.target.value, 1);
                     }
                   }}
                 />
@@ -143,6 +162,74 @@ const SearchPage = () => {
                   <p>Loading Kahana workspaces...</p>
                 </div>
               )}
+            </div>
+          )}
+          
+          {/* Pagination */}
+          {pagination && pagination.totalPages > 1 && (
+            <div className="flex justify-center items-center mt-8 mb-8">
+              <div className="flex items-center space-x-2">
+                {/* Previous Button */}
+                <button
+                  onClick={() => handlePageChange(currentPage - 1)}
+                  disabled={!pagination.hasPreviousPage}
+                  className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                    pagination.hasPreviousPage
+                      ? 'bg-white text-gray-700 border border-gray-300 hover:bg-gray-50'
+                      : 'bg-gray-100 text-gray-400 border border-gray-200 cursor-not-allowed'
+                  }`}
+                >
+                  Previous
+                </button>
+
+                {/* Page Numbers */}
+                <div className="flex items-center space-x-1">
+                  {Array.from({ length: Math.min(5, pagination.totalPages) }, (_, i) => {
+                    let pageNum;
+                    if (pagination.totalPages <= 5) {
+                      pageNum = i + 1;
+                    } else if (currentPage <= 3) {
+                      pageNum = i + 1;
+                    } else if (currentPage >= pagination.totalPages - 2) {
+                      pageNum = pagination.totalPages - 4 + i;
+                    } else {
+                      pageNum = currentPage - 2 + i;
+                    }
+
+                    return (
+                      <button
+                        key={pageNum}
+                        onClick={() => handlePageChange(pageNum)}
+                        className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                          currentPage === pageNum
+                            ? 'bg-blue-500 text-white'
+                            : 'bg-white text-gray-700 border border-gray-300 hover:bg-gray-50'
+                        }`}
+                      >
+                        {pageNum}
+                      </button>
+                    );
+                  })}
+                </div>
+
+                {/* Next Button */}
+                <button
+                  onClick={() => handlePageChange(currentPage + 1)}
+                  disabled={!pagination.hasNextPage}
+                  className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                    pagination.hasNextPage
+                      ? 'bg-white text-gray-700 border border-gray-300 hover:bg-gray-50'
+                      : 'bg-gray-100 text-gray-400 border border-gray-200 cursor-not-allowed'
+                  }`}
+                >
+                  Next
+                </button>
+              </div>
+              
+              {/* Results Info */}
+              <div className="ml-6 text-sm text-gray-600">
+                Showing {((currentPage - 1) * pagination.hitsPerPage) + 1} to {Math.min(currentPage * pagination.hitsPerPage, pagination.totalHits)} of {pagination.totalHits} results
+              </div>
             </div>
           )}
         </main>
