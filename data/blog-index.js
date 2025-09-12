@@ -1,5 +1,15 @@
 const blogIndex = [
   {
+    title: "Building More Than a Server: Revamping the Kahana Discord Into a Creative Community",
+    date: "2025-09-12T00:00:00.000Z",
+    authors: ["Rajrajeshwari Gaware"],
+    category: ["Product Management", "Community", "Discord", "User Experience"],
+    excerpt: "At Kahana, we've always believed that productivity and creativity shouldn't live in separate corners of the internet; they should thrive together. This philosophy guided the revamp of our Discord server, transforming it from a simple chat hub into an interactive e-working space designed for creators, influencers, and innovators.",
+    defaultImageQuery: "discord community workspace collaboration",
+    slug: "building-more-than-server-revamping-kahana-discord-creative-community-2025",
+    readingTime: 6,
+  },
+  {
     title: "Advanced Thermal Management Materials in AR Glasses: The Future of Cool Computing",
     date: "2025-09-08T00:00:00.000Z",
     authors: ["Rishikes Ramachandran"],
