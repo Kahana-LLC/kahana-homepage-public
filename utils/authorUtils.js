@@ -15,6 +15,7 @@ const headshots = {
   konika_dhull: "/assets/headshots/konika_dhull.jpeg",
   shalvi_save: "/assets/headshots/shalvi_save.jpg",
   fahiza_syed: "/assets/headshots/fahiza_syed.jpg",
+  mohammed_muneebuddin: "/assets/headshots/mohammed_muneebuddin.jpg",
 };
 
 // Default avatar placeholder
