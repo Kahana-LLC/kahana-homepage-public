@@ -10,6 +10,7 @@ const sitemapSections = [
       { text: 'About', href: '/about' },
       { text: 'Contact', href: '/contact' },
       { text: 'Blog', href: '/blog' },
+      { text: 'Installations', href: '/installations' },
       { text: 'Schedule Demo', href: '/schedule-demo' }
     ]
   },
