@@ -1,5 +1,15 @@
 const blogIndex = [
   {
+    title: "5G Networks: How India's Leapfrog Strategy Outpaced the US in Speed and Affordability",
+    date: "2025-09-16T00:00:00.000Z",
+    authors: ["Durgesh Tiwari"],
+    category: ["Technology", "Telecommunications"],
+    excerpt: "A deep dive into why India's standalone 5G approach delivers 400 Mbps speeds at $50/year while the US struggles with 100 Mbps at $65/month, and what this means for the future of mobile connectivity.",
+    defaultImageQuery: "5G networks India US comparison standalone non-standalone mobile connectivity",
+    slug: "5g-networks-india-vs-us-comparison",
+    readingTime: 12,
+  },
+  {
     title: "The AI Browser Search Disruption of 2025: How Zero-Click Answers Are Dismantling Google's $200 Billion Ad Machine",
     date: "2025-09-12T00:00:00.000Z",
     authors: ["Hritik Chalse"],

@@ -145,6 +145,13 @@ const authors = {
     linkedinProfile: "https://www.linkedin.com/in/rajrajeshwari-gaware/",
     avatar: "/assets/headshots/rajrajeshwari_gaware.jpg",
   },
+  "Durgesh Tiwari": {
+    name: "Durgesh Tiwari",
+    role: "Software Engineer",
+    bio: "Durgesh is a software engineer at Kahana specializing in both software and hardware engineering with a passion for augmented and virtual reality technologies. He brings expertise in developing immersive AR/VR browser solutions and cutting-edge spatial computing applications. With a strong foundation in full-stack development and hardware integration, Durgesh focuses on creating seamless user experiences that bridge the gap between digital and physical worlds through innovative AR/VR products.",
+    linkedinProfile: "https://www.linkedin.com/in/durgesh98/",
+    avatar: "/assets/headshots/durgesh_tiwari.jpg",
+  },
 };
 
 module.exports = { authors };
