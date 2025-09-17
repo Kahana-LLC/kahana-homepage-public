@@ -339,12 +339,7 @@ export default function BlogPost({ post }) {
 }
 
 export async function getStaticPaths() {
-          {/* Render Browser Comparison Table at the bottom if enabled in JSON */}
-          {post.showBrowserComparisonTable && (
-            <div className="mt-12">
-              <BlogBrowserComparison />
-            </div>
-          )}
+  try {
     // Generate paths from blog-index.js
     const paths = blogIndex.map((post) => ({
       params: { slug: post.slug },
