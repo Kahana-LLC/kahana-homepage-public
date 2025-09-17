@@ -497,6 +497,9 @@ function NavBar() {
                     <Link href="/docs" className="dropdown-link">
                       Docs
                     </Link>
+                    <Link href="/installations" className="dropdown-link">
+                      Download
+                    </Link>
                     <Link href="/faq" className="dropdown-link">
                       FAQ
                     </Link>
@@ -514,6 +517,9 @@ function NavBar() {
                   <div className="flex flex-col space-y-4">
                     <Link href="/about" className="dropdown-link">
                       About
+                    </Link>
+                    <Link href="/buyers-guide" className="dropdown-link">
+                      Buyer's Guide
                     </Link>
                   </div>
                 </div>
@@ -615,6 +621,7 @@ function NavBar() {
             {/* Learn Section */}
             <Link href="/blog" className="mobile-link">Blog</Link>
             <Link href="/docs" className="mobile-link">Docs</Link>
+            <Link href="/installations" className="mobile-link">Download</Link>
             
             {/* Partners Section */}
             <Link href="/partners" className="mobile-link">Partner Program</Link>

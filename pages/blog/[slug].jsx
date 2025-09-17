@@ -8,9 +8,76 @@ import { blogIndex } from '../../data/blog-index';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import AuthorCard from '../../components/AuthorCard';
 import BlogBrowserComparison from '../../components/BlogBrowserComparison';
+import MaterialComparisonTable from '../../components/MaterialComparisonTable';
 import { FaLinkedin, FaRegCalendarAlt, FaBookOpen, FaRegClock } from 'react-icons/fa';
 import SocialShare from '../../components/SocialShare';
 const { getAuthorDetails } = require('../../utils/authorUtils');
+
+// Function to parse HTML content and convert component tags to React components
+function parseHtmlWithComponents(htmlContent) {
+  if (!htmlContent) return null;
+  
+  // Split content by component tags
+  const componentRegex = /<component name="([^"]+)"(?:\s+([^>]*))?\/>/g;
+  const parts = htmlContent.split(componentRegex);
+  
+  const elements = [];
+  let key = 0;
+  
+  for (let i = 0; i < parts.length; i += 3) {
+    // Add HTML content before component
+    if (parts[i]) {
+      elements.push(
+        <div 
+          key={key++} 
+          dangerouslySetInnerHTML={{ __html: parts[i] }} 
+        />
+      );
+    }
+    
+    // Add component if it exists
+    if (parts[i + 1]) {
+      const componentName = parts[i + 1];
+      const props = parts[i + 2] ? parseProps(parts[i + 2]) : {};
+      
+      switch (componentName) {
+        case 'BlogBrowserComparison':
+          elements.push(<BlogBrowserComparison key={key++} {...props} />);
+          break;
+        case 'MaterialComparisonTable':
+          elements.push(<MaterialComparisonTable key={key++} {...props} />);
+          break;
+        default:
+          // If component not found, render as HTML
+          elements.push(
+            <div 
+              key={key++} 
+              dangerouslySetInnerHTML={{ 
+                __html: `<component name="${componentName}"${parts[i + 2] ? ' ' + parts[i + 2] : ''}/>` 
+              }} 
+            />
+          );
+      }
+    }
+  }
+  
+  return elements;
+}
+
+// Helper function to parse component props from string
+function parseProps(propsString) {
+  if (!propsString) return {};
+  
+  const props = {};
+  const propRegex = /(\w+)="([^"]*)"/g;
+  let match;
+  
+  while ((match = propRegex.exec(propsString)) !== null) {
+    props[match[1]] = match[2];
+  }
+  
+  return props;
+}
 
 // Add default avatar and placeholder image
 const DEFAULT_AVATAR = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%233C584A"%3E%3Cpath d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"%2F%3E%3C%2Fsvg%3E';
@@ -199,13 +266,23 @@ export default function BlogPost({ post }) {
                           />
                         );
                       }
+                      if (block.name === 'MaterialComparisonTable') {
+                        return (
+                          <MaterialComparisonTable
+                            key={index}
+                            {...block.props}
+                          />
+                        );
+                      }
                       return null;
                     default:
                       return null;
                   }
                 })
               ) : (
-                <div className="prose prose-lg max-w-none" dangerouslySetInnerHTML={{ __html: post.content }} />
+                <div className="prose prose-lg max-w-none">
+                  {parseHtmlWithComponents(post.content)}
+                </div>
               )
             ) : (
               <div className="text-gray-600">

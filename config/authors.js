@@ -131,6 +131,27 @@ const authors = {
     avatar: "/assets/headshots/jonathan_gans.jpg",
 
   },
+  "Mohammed Muneebuddin": {
+    name: "Mohammed Muneebuddin",
+    role: "Cybersecurity Analyst",
+    bio: "I am a cybersecurity and GRC professional with a strong background in enterprise security, compliance, and risk management. With a track record of bridging technical and business needs, I specialize in aligning security operations with regulatory requirements and organizational goals.",
+    linkedinProfile: "https://www.linkedin.com/in/mmuneeb16/",
+    avatar: "/assets/headshots/mohammed_muneebuddin.jpg",
+  },
+  "Rajrajeshwari Gaware": {
+    name: "Rajrajeshwari Gaware",
+    role: "Product Manager",
+    bio: "Rajrajeshwari is a customer-centric Product Manager at Kahana, passionate about building products that truly serve user needs. She specializes in community-focused product management, collaborating directly with users through Discord and other channels to gather feedback, understand pain points, and iterate on solutions that make a real difference. Her approach combines data-driven insights with genuine user empathy to create products that users love and actively engage with.",
+    linkedinProfile: "https://www.linkedin.com/in/rajrajeshwari-gaware/",
+    avatar: "/assets/headshots/rajrajeshwari_gaware.jpg",
+  },
+  "Durgesh Tiwari": {
+    name: "Durgesh Tiwari",
+    role: "Software Engineer",
+    bio: "Durgesh is a software engineer at Kahana specializing in both software and hardware engineering with a passion for augmented and virtual reality technologies. He brings expertise in developing immersive AR/VR browser solutions and cutting-edge spatial computing applications. With a strong foundation in full-stack development and hardware integration, Durgesh focuses on creating seamless user experiences that bridge the gap between digital and physical worlds through innovative AR/VR products.",
+    linkedinProfile: "https://www.linkedin.com/in/durgesh98/",
+    avatar: "/assets/headshots/durgesh_tiwari.jpg",
+  },
 };
 
 module.exports = { authors };

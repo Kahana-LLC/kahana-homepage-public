@@ -10,6 +10,7 @@ const sitemapSections = [
       { text: 'About', href: '/about' },
       { text: 'Contact', href: '/contact' },
       { text: 'Blog', href: '/blog' },
+      { text: 'Installations', href: '/installations' },
       { text: 'Schedule Demo', href: '/schedule-demo' }
     ]
   },
@@ -19,7 +20,7 @@ const sitemapSections = [
       { text: 'Products Overview', href: '/products' },
       { text: 'Enterprise Browser', href: '/products/enterprise-browser' },
       { text: 'Web Application', href: '/products/web-application' },
-      { text: "Buyer's Guide", href: '/buyer-guide-oasis' }
+      { text: "Buyer's Guide", href: '/buyers-guide' }
     ]
   },
   {

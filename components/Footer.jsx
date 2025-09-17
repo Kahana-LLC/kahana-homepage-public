@@ -78,6 +78,8 @@ export default function Footer() {
               <ul className={`space-y-4 ${openSection === 'product' || !isMobile ? 'block' : 'hidden'}`}>
                 <li><Link href="/products/free-agentic-browser" className="text-kahana-primary hover:text-kahana-accent-coral transition-colors duration-200">Oasis Agentic Browser</Link></li>
                 <li><Link href="/products/enterprise-browser" className="text-kahana-primary hover:text-kahana-accent-coral transition-colors duration-200">Oasis Enterprise Browser</Link></li>
+                <li><Link href="/oasis-mobile" className="text-kahana-primary hover:text-kahana-accent-coral transition-colors duration-200">Oasis Mobile</Link></li>
+                <li><Link href="/oasis-augmented-reality" className="text-kahana-primary hover:text-kahana-accent-coral transition-colors duration-200">Oasis AR</Link></li>
                 <li><Link href="/products/web-application" className="text-kahana-primary hover:text-kahana-accent-coral transition-colors duration-200">Web Application</Link></li>
               </ul>
             </div>
@@ -133,7 +135,7 @@ export default function Footer() {
                 <li><Link href="/blog" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">Blog</Link></li>
                 <li><Link href="/docs" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">Docs</Link></li>
                 <li><Link href="/subscribe-to-insights" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">Newsletter</Link></li>
-                <li><Link href="/community" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">Community</Link></li>
+                <li><Link href="/community" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">Join Discord</Link></li>
               </ul>
             </div>
 
@@ -225,6 +227,7 @@ export default function Footer() {
                   <Link href="/terms-and-conditions" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200 text-sm">Terms</Link>
                   <Link href="/right-to-work" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200 text-sm">Right to Work</Link>
                   <Link href="/sales" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200 text-sm">Contact Sales</Link>
+                  <Link href="/oasis-feedback-survey" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200 text-sm">Feedback Survey</Link>
                 </div>
               </div>
               <div className="flex items-center space-x-6 mt-6 md:mt-0">
@@ -277,9 +280,7 @@ export default function Footer() {
                   </svg>
                 </Link>
                 <Link 
-                  href="https://discord.gg/U6jQCqE5" 
-                  target="_blank" 
-                  rel="noopener noreferrer nofollow" 
+                  href="/community" 
                   className="text-[#5865F2] hover:text-[#4752C4] transition-colors duration-200"
                   aria-label="Join Kahana Discord Community"
                 >
@@ -297,6 +298,7 @@ export default function Footer() {
               <Link href="/terms-and-conditions" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200 text-sm">Terms</Link>
               <Link href="/right-to-work" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200 text-sm">Right to Work</Link>
               <Link href="/sales" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200 text-sm">Contact Sales</Link>
+              <Link href="/oasis-feedback-survey" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200 text-sm">Feedback Survey</Link>
             </div>
           </div>
         </div>

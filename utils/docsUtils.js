@@ -32,6 +32,39 @@ export async function getAllDocs() {
   }
 }
 
+export async function getAllDocsMetadata() {
+  try {
+    const files = await readdir(DOCS_DIR);
+    const docs = await Promise.all(
+      files
+        .filter((file) => file.endsWith(".json"))
+        .map(async (file) => {
+          const slug = file.replace(/\.json$/, "");
+          const filePath = path.join(DOCS_DIR, file);
+          const fileContents = await readFile(filePath, "utf8");
+          const doc = JSON.parse(fileContents);
+          
+          // Return only the metadata needed for the index page
+          return {
+            title: doc.title,
+            description: doc.description,
+            date: doc.date,
+            category: doc.category,
+            slug: doc.slug,
+            authors: doc.authors,
+            // Include a word count for reading time calculation
+            wordCount: doc.content ? doc.content.replace(/<[^>]*>/g, '').split(/\s+/).length : 0
+          };
+        })
+    );
+
+    return docs.sort((a, b) => new Date(b.date) - new Date(a.date));
+  } catch (error) {
+    console.error("Error reading documentation files:", error);
+    return [];
+  }
+}
+
 export async function getDocBySlug(slug) {
   try {
     // First try to find the file by the slug field in the JSON

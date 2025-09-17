@@ -15,9 +15,6 @@ import path from 'path';
 
 // Generate static paths for documentation
 export async function getStaticPaths() {
-  // Process docs before generating paths
-  require('../../scripts/process-docs.js');
-  
   const docsDir = path.join(process.cwd(), "data/docs");
   const files = fs.readdirSync(docsDir);
   const paths = [];
