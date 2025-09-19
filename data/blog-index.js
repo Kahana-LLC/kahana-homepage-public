@@ -1,5 +1,15 @@
 const blogIndex = [
   {
+    title: "The Hidden Data Leakage Problem in SaaS Apps — and How Enterprise Browsers Solve It",
+    date: "2025-09-15T00:00:00.000Z",
+    authors: ["Mohammed Muneebuddin"],
+    category: ["SaaS security", "data leakage", "enterprise browsers", "DLP", "cybersecurity", "data protection", "browser security", "compliance"],
+    excerpt: "A comprehensive analysis of the critical data leakage vulnerabilities plaguing SaaS applications and how enterprise browsers provide the missing security layer that traditional DLP solutions cannot deliver.",
+    defaultImageQuery: "SaaS data leakage enterprise browser security DLP data protection cybersecurity 2025",
+    slug: "the-hidden-data-leakage-problem-in-saas-apps-and-how-enterprise-browsers-solve-it",
+    readingTime: 15,
+  },
+  {
     title: "Chrome vs Safari vs Oasis: The Enterprise Browser Security Crisis of 2025",
     date: "2025-09-08T00:00:00.000Z",
     authors: ["Mohammed Muneebuddin"],
