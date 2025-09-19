@@ -1,8 +1,53 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { motion, useInView } from 'framer-motion';
 import NavbarDup from '../components/NavbarDup';
 import SharedCTA from '../components/SharedCTA';
+
+// Animated Counter Component
+function AnimatedCounter({ start, end, duration = 2000, suffix = "", prefix = "" }) {
+  const [count, setCount] = useState(start);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  useEffect(() => {
+    if (!isInView) return;
+
+    let startTime;
+    let animationId;
+    
+    const animate = (currentTime) => {
+      if (!startTime) startTime = currentTime;
+      const progress = Math.min((currentTime - startTime) / duration, 1);
+      
+      // Easing function for smooth animation
+      const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+      const currentCount = Math.floor(start + (end - start) * easeOutQuart);
+      
+      setCount(currentCount);
+      
+      if (progress < 1) {
+        animationId = requestAnimationFrame(animate);
+      }
+    };
+    
+    animationId = requestAnimationFrame(animate);
+    
+    // Cleanup function to cancel animation if component unmounts
+    return () => {
+      if (animationId) {
+        cancelAnimationFrame(animationId);
+      }
+    };
+  }, [isInView, start, end, duration]);
+
+  return (
+    <span ref={ref}>
+      {prefix}{count.toLocaleString()}{suffix}
+    </span>
+  );
+}
 
 export default function WhitePaperPDF() {
   return (
@@ -24,100 +69,304 @@ export default function WhitePaperPDF() {
 
       <NavbarDup />
 
-      <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white pt-24 pb-16">
+      <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white pt-24 pb-16 lg:ml-64">
         <div className="max-w-none mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
           {/* Hero Section */}
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-[#66C2BE]/10 text-[#66C2BE] text-base font-medium mb-6">
-              <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-              </svg>
-              Comprehensive White Paper
-            </div>
-            <h1 className="text-4xl font-bold text-gray-900 sm:text-5xl lg:text-6xl mb-6">
-              The Future of Ergonomic Work
-            </h1>
-            <p className="text-xl text-gray-900 max-w-6xl mx-auto mb-8">
-              A comprehensive analysis of how AR, VR, voice, gesture, and AI technologies are transforming the way we work, moving us away from desk-bound productivity toward healthier, more mobile work environments.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-              <a
-                href="/references-future-of-ergonomic-work-white-paper"
-                className="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#66C2BE] hover:bg-[#4A9E9A] transition-colors duration-300"
-              >
-                <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                </svg>
-                View All References
-              </a>
-              <Link
-                href="/resources"
-                className="inline-flex items-center px-8 py-3 border border-gray-300 text-base font-medium rounded-md text-gray-900 bg-white hover:bg-gray-50 transition-colors duration-300"
-              >
-                View All Resources
-              </Link>
-            </div>
-
-            {/* Table of Contents */}
-            <div className="bg-white rounded-2xl shadow-lg border border-[#A5DAD8]/30 p-8 max-w-6xl mx-auto">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Table of Contents</h2>
-              <div className="space-y-3">
-                <a href="#introduction" className="block p-3 rounded-lg hover:bg-gray-50 transition-colors">
-                  <div className="flex items-center">
-                    <div className="w-8 h-8 bg-[#66C2BE] text-white rounded-full flex items-center justify-center text-base font-bold mr-3">1</div>
-                    <div>
-                      <div className="font-semibold text-gray-900">Introduction</div>
-                      <div className="text-base text-gray-900">The Vision for Ergonomic Work</div>
-                    </div>
-                  </div>
-                </a>
-                <a href="#problem" className="block p-3 rounded-lg hover:bg-gray-50 transition-colors">
-                  <div className="flex items-center">
-                    <div className="w-8 h-8 bg-[#66C2BE] text-white rounded-full flex items-center justify-center text-base font-bold mr-3">2</div>
-                    <div>
-                      <div className="font-semibold text-gray-900">The Problem</div>
-                      <div className="text-base text-gray-900">How Desk-Bound Work Is Killing Us</div>
-                    </div>
-                  </div>
-                </a>
-                <a href="#solution" className="block p-3 rounded-lg hover:bg-gray-50 transition-colors">
-                  <div className="flex items-center">
-                    <div className="w-8 h-8 bg-[#66C2BE] text-white rounded-full flex items-center justify-center text-base font-bold mr-3">3</div>
-                    <div>
-                      <div className="font-semibold text-gray-900">The Solution</div>
-                      <div className="text-base text-gray-900">Breaking Free from Desk-Bound Productivity</div>
-                    </div>
-                  </div>
-                </a>
-                <a href="#key-players" className="block p-3 rounded-lg hover:bg-gray-50 transition-colors">
-                  <div className="flex items-center">
-                    <div className="w-8 h-8 bg-[#66C2BE] text-white rounded-full flex items-center justify-center text-base font-bold mr-3">4</div>
-                    <div>
-                      <div className="font-semibold text-gray-900">Key Players</div>
-                      <div className="text-base text-gray-900">Who's Leading the AR Revolution</div>
-                    </div>
-                  </div>
-                </a>
-                <a href="#next-steps" className="block p-3 rounded-lg hover:bg-gray-50 transition-colors">
-                  <div className="flex items-center">
-                    <div className="w-8 h-8 bg-[#66C2BE] text-white rounded-full flex items-center justify-center text-base font-bold mr-3">5</div>
-                    <div>
-                      <div className="font-semibold text-gray-900">Next Steps</div>
-                      <div className="text-base text-gray-900">Three Critical Development Paths</div>
-                    </div>
-                  </div>
-                </a>
-                <a href="#conclusion" className="block p-3 rounded-lg hover:bg-gray-50 transition-colors">
-                  <div className="flex items-center">
-                    <div className="w-8 h-8 bg-[#66C2BE] text-white rounded-full flex items-center justify-center text-base font-bold mr-3">6</div>
-                    <div>
-                      <div className="font-semibold text-gray-900">Conclusion</div>
-                      <div className="text-base text-gray-900">The Path Forward</div>
-                    </div>
-                  </div>
-                </a>
+          <div className="mb-16">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Left Side - Content */}
+              <div className="text-left">
+                <div className="inline-flex items-center px-4 py-2 rounded-full bg-pink-100 text-pink-600 text-base font-medium mb-6">
+                  <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                  Comprehensive White Paper
+                </div>
+                <h1 className="text-4xl font-bold text-gray-900 sm:text-5xl lg:text-6xl mb-6 leading-tight">
+                  The Future of Ergonomic Work
+                </h1>
+                <p className="text-xl text-gray-900 mb-8 leading-relaxed">
+                  A comprehensive analysis of how AR, VR, voice, gesture, and AI technologies are transforming the way we work, moving us away from desk-bound productivity toward healthier, more mobile work environments.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <a
+                    href="/references-future-of-ergonomic-work-white-paper"
+                    className="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-md bg-[#66C2BE] hover:bg-[#4A9E9A] transition-colors duration-300"
+                    style={{color: 'white !important'}}
+                  >
+                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    View All References
+                  </a>
+                </div>
+              </div>
+              
+              {/* Right Side - Image */}
+              <div className="flex justify-center lg:justify-end">
+                <div className="w-96 h-96 rounded-2xl shadow-lg border border-[#A5DAD8]/30 overflow-hidden">
+                  <img 
+                    src="/sloth-future-of-ergonomic-work.png" 
+                    alt="Sloth breaking free from desk-bound work with AR/VR technology, symbolizing the future of ergonomic work"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
             </div>
+
+            {/* Mobile Toggle Button */}
+            <button 
+              id="sidebar-toggle"
+              className="fixed top-32 left-4 z-60 lg:hidden bg-white/95 backdrop-blur-sm border border-gray-200 rounded-lg p-3 shadow-lg hover:bg-gray-50 transition-colors duration-300"
+              onClick={() => {
+                const sidebar = document.getElementById('narrative-sidebar');
+                const toggle = document.getElementById('sidebar-toggle');
+                if (sidebar.classList.contains('hidden')) {
+                  sidebar.classList.remove('hidden');
+                  toggle.innerHTML = `
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                  `;
+                } else {
+                  sidebar.classList.add('hidden');
+                  toggle.innerHTML = `
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                  `;
+                }
+              }}
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            </button>
+
+            {/* Narrative Pathway Sidebar */}
+            <div id="narrative-sidebar" className="fixed top-24 left-0 w-64 h-[calc(100vh-6rem)] z-50 bg-white/95 backdrop-blur-sm border-r border-gray-200 shadow-lg hidden lg:block flex flex-col overflow-hidden">
+              <div className="p-6 flex-shrink-0">
+                <div className="flex items-center justify-between mb-8">
+                  <h2 className="text-lg font-bold text-gray-900">The Journey</h2>
+                  <button 
+                    className="lg:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors duration-300"
+                    onClick={() => {
+                      const sidebar = document.getElementById('narrative-sidebar');
+                      const toggle = document.getElementById('sidebar-toggle');
+                      sidebar.classList.add('hidden');
+                      toggle.innerHTML = `
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                      `;
+                    }}
+                  >
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              
+              {/* Vertical Pathway Steps - Scrollable Container */}
+              <div className="flex-1 overflow-y-auto px-6 pb-6 min-h-0">
+                <div className="space-y-10">
+                  <a href="#introduction" className="group pathway-step flex items-center scroll-smooth" data-step="1">
+                    <div className="w-16 h-16 bg-pink-50 border-3 border-pink-200 rounded-full flex items-center justify-center text-lg font-bold text-pink-400 group-hover:border-pink-300 group-hover:text-pink-500 group-hover:bg-pink-100 transition-all duration-300 shadow-md flex-shrink-0 active-step">
+                      1
+                    </div>
+                    <div className="ml-5">
+                      <div className="font-bold text-gray-700 text-lg mb-2 group-hover:text-pink-500 transition-colors">Introduction</div>
+                      <div className="text-base text-gray-400 leading-tight">The Vision</div>
+                    </div>
+                  </a>
+                  
+                  <a href="#problem" className="group pathway-step flex items-center scroll-smooth" data-step="2">
+                    <div className="w-16 h-16 bg-blue-50 border-3 border-blue-200 rounded-full flex items-center justify-center text-lg font-bold text-blue-400 group-hover:border-blue-300 group-hover:text-blue-500 group-hover:bg-blue-100 transition-all duration-300 shadow-md flex-shrink-0 active-step">
+                      2
+                    </div>
+                    <div className="ml-5">
+                      <div className="font-bold text-gray-700 text-lg mb-2 group-hover:text-blue-500 transition-colors">The Problem</div>
+                      <div className="text-base text-gray-400 leading-tight">Health Crisis</div>
+                    </div>
+                  </a>
+                  
+                  <a href="#solution" className="group pathway-step flex items-center scroll-smooth" data-step="3">
+                    <div className="w-16 h-16 bg-green-50 border-3 border-green-200 rounded-full flex items-center justify-center text-lg font-bold text-green-400 group-hover:border-green-300 group-hover:text-green-500 group-hover:bg-green-100 transition-all duration-300 shadow-md flex-shrink-0 active-step">
+                      3
+                    </div>
+                    <div className="ml-5">
+                      <div className="font-bold text-gray-700 text-lg mb-2 group-hover:text-green-500 transition-colors">The Solution</div>
+                      <div className="text-base text-gray-400 leading-tight">AR Technology</div>
+                    </div>
+                  </a>
+                  
+                  <a href="#key-players" className="group pathway-step flex items-center scroll-smooth" data-step="4">
+                    <div className="w-16 h-16 bg-purple-50 border-3 border-purple-200 rounded-full flex items-center justify-center text-lg font-bold text-purple-400 group-hover:border-purple-300 group-hover:text-purple-500 group-hover:bg-purple-100 transition-all duration-300 shadow-md flex-shrink-0 active-step">
+                      4
+                    </div>
+                    <div className="ml-5">
+                      <div className="font-bold text-gray-700 text-lg mb-2 group-hover:text-purple-500 transition-colors">Key Players</div>
+                      <div className="text-base text-gray-400 leading-tight">Market Leaders</div>
+                    </div>
+                  </a>
+                  
+                  <a href="#next-steps" className="group pathway-step flex items-center scroll-smooth" data-step="5">
+                    <div className="w-16 h-16 bg-yellow-50 border-3 border-yellow-200 rounded-full flex items-center justify-center text-lg font-bold text-yellow-400 group-hover:border-yellow-300 group-hover:text-yellow-500 group-hover:bg-yellow-100 transition-all duration-300 shadow-md flex-shrink-0 active-step">
+                      5
+                    </div>
+                    <div className="ml-5">
+                      <div className="font-bold text-gray-700 text-lg mb-2 group-hover:text-yellow-500 transition-colors">Next Steps</div>
+                      <div className="text-base text-gray-400 leading-tight">Development Paths</div>
+                    </div>
+                  </a>
+                  
+                  <a href="#conclusion" className="group pathway-step flex items-center scroll-smooth" data-step="6">
+                    <div className="w-16 h-16 bg-teal-50 border-3 border-teal-200 rounded-full flex items-center justify-center text-lg font-bold text-teal-400 group-hover:border-teal-300 group-hover:text-teal-500 group-hover:bg-teal-100 transition-all duration-300 shadow-md flex-shrink-0 active-step">
+                      6
+                    </div>
+                    <div className="ml-5">
+                      <div className="font-bold text-gray-700 text-lg mb-2 group-hover:text-teal-500 transition-colors">Conclusion</div>
+                      <div className="text-base text-gray-400 leading-tight">The Future</div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Active Step Styling */}
+            <style jsx>{`
+              .active-step {
+                transform: scale(1.05);
+                transition: transform 0.3s ease;
+              }
+              .active-step .font-bold {
+                color: #1f2937 !important;
+                font-weight: 800;
+              }
+              .active-step .text-base {
+                color: #6b7280 !important;
+                font-weight: 500;
+              }
+              /* Special styling for current section (grey highlight) */
+              .active-step .bg-gray-300 {
+                background-color: #d1d5db !important;
+                border-color: #6b7280 !important;
+                color: #374151 !important;
+                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(107, 114, 128, 0.2) !important;
+              }
+              /* Custom scrollbar styling for sidebar */
+              #narrative-sidebar::-webkit-scrollbar {
+                width: 6px;
+              }
+              #narrative-sidebar::-webkit-scrollbar-track {
+                background: transparent;
+              }
+              #narrative-sidebar::-webkit-scrollbar-thumb {
+                background: rgba(156, 163, 175, 0.3);
+                border-radius: 3px;
+              }
+              #narrative-sidebar::-webkit-scrollbar-thumb:hover {
+                background: rgba(156, 163, 175, 0.5);
+              }
+              /* Ensure proper scrolling on desktop */
+              #narrative-sidebar .flex-1 {
+                max-height: calc(100vh - 12rem);
+                overflow-y: auto;
+              }
+              /* Force scrollbar to be visible when content overflows */
+              #narrative-sidebar .flex-1::-webkit-scrollbar {
+                width: 6px;
+              }
+              #narrative-sidebar .flex-1::-webkit-scrollbar-track {
+                background: transparent;
+              }
+              #narrative-sidebar .flex-1::-webkit-scrollbar-thumb {
+                background: rgba(156, 163, 175, 0.3);
+                border-radius: 3px;
+              }
+              #narrative-sidebar .flex-1::-webkit-scrollbar-thumb:hover {
+                background: rgba(156, 163, 175, 0.5);
+              }
+            `}</style>
+
+            {/* Scroll Progress Script */}
+            <script dangerouslySetInnerHTML={{
+              __html: `
+                document.addEventListener('DOMContentLoaded', function() {
+                  const waveProgress = document.getElementById('wave-progress');
+                  const pathwaySteps = document.querySelectorAll('.pathway-step');
+                  
+                  function updateProgress() {
+                    const scrollTop = window.pageYOffset;
+                    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                    const scrollPercent = (scrollTop / docHeight) * 100;
+                    
+                    // Update wave progress using stroke-dashoffset
+                    const totalLength = 1000; // Total path length
+                    const progress = Math.min(scrollPercent, 100);
+                    const offset = totalLength - (totalLength * progress / 100);
+                    waveProgress.style.strokeDashoffset = offset;
+                    
+                    // Update step states based on scroll position
+                    const sections = ['introduction', 'problem', 'solution', 'key-players', 'next-steps', 'conclusion'];
+                    sections.forEach((sectionId, index) => {
+                      const section = document.getElementById(sectionId);
+                      if (section) {
+                        const sectionTop = section.offsetTop - window.innerHeight / 2;
+                        const stepElement = document.querySelector(\`[data-step="\${index + 1}"]\`);
+                        const stepCircle = stepElement?.querySelector('div');
+                        
+                        if (scrollTop >= sectionTop) {
+                          // Mark as active/completed - use grey highlight for current section
+                          const stepNumber = index + 1;
+                          const isCurrentSection = scrollTop >= sectionTop && (index === sections.length - 1 || scrollTop < (document.getElementById(sections[index + 1])?.offsetTop - window.innerHeight / 2 || Infinity));
+                          
+                          if (isCurrentSection) {
+                            // Current section gets grey highlight
+                            stepCircle?.classList.remove('border-gray-300', 'text-gray-400', 'shadow-md', 'bg-pink-50', 'bg-blue-50', 'bg-green-50', 'bg-purple-50', 'bg-yellow-50', 'bg-teal-50', 'border-pink-200', 'border-blue-200', 'border-green-200', 'border-purple-200', 'border-yellow-200', 'border-teal-200', 'text-pink-400', 'text-blue-400', 'text-green-400', 'text-purple-400', 'text-yellow-400', 'text-teal-400');
+                            stepCircle?.classList.add('bg-gray-300', 'border-gray-500', 'text-gray-700', 'shadow-lg', 'shadow-gray-300');
+                            stepElement?.classList.add('active-step');
+                          } else {
+                            // Completed sections get their original vibrant colors
+                            const colorMap = {
+                              1: { bg: 'bg-pink-200', border: 'border-pink-400', text: 'text-pink-600', shadow: 'shadow-lg shadow-pink-200' },
+                              2: { bg: 'bg-blue-200', border: 'border-blue-400', text: 'text-blue-600', shadow: 'shadow-lg shadow-blue-200' },
+                              3: { bg: 'bg-green-200', border: 'border-green-400', text: 'text-green-600', shadow: 'shadow-lg shadow-green-200' },
+                              4: { bg: 'bg-purple-200', border: 'border-purple-400', text: 'text-purple-600', shadow: 'shadow-lg shadow-purple-200' },
+                              5: { bg: 'bg-yellow-200', border: 'border-yellow-400', text: 'text-yellow-600', shadow: 'shadow-lg shadow-yellow-200' },
+                              6: { bg: 'bg-teal-200', border: 'border-teal-400', text: 'text-teal-600', shadow: 'shadow-lg shadow-teal-200' }
+                            };
+                            const colors = colorMap[stepNumber];
+                            stepCircle?.classList.remove('border-gray-300', 'text-gray-400', 'shadow-md', 'bg-gray-300', 'border-gray-500', 'text-gray-700', 'shadow-gray-300');
+                            stepCircle?.classList.add(colors.border, colors.bg, colors.text, colors.shadow);
+                            stepElement?.classList.add('active-step');
+                          }
+                        } else {
+                          // Mark as pending - reset to default pastel colors
+                          const stepNumber = index + 1;
+                          const colorMap = {
+                            1: { bg: 'bg-pink-50', border: 'border-pink-200', text: 'text-pink-400' },
+                            2: { bg: 'bg-blue-50', border: 'border-blue-200', text: 'text-blue-400' },
+                            3: { bg: 'bg-green-50', border: 'border-green-200', text: 'text-green-400' },
+                            4: { bg: 'bg-purple-50', border: 'border-purple-200', text: 'text-purple-400' },
+                            5: { bg: 'bg-yellow-50', border: 'border-yellow-200', text: 'text-yellow-400' },
+                            6: { bg: 'bg-teal-50', border: 'border-teal-200', text: 'text-teal-400' }
+                          };
+                          const colors = colorMap[stepNumber];
+                            stepCircle?.classList.remove('border-gray-300', 'text-gray-400', 'shadow-lg', 'shadow-pink-200', 'shadow-blue-200', 'shadow-green-200', 'shadow-purple-200', 'shadow-yellow-200', 'shadow-teal-200');
+                          stepCircle?.classList.add(colors.border, colors.bg, colors.text, 'shadow-md');
+                          stepElement?.classList.remove('active-step');
+                        }
+                      }
+                    });
+                  }
+                  
+                  window.addEventListener('scroll', updateProgress);
+                  updateProgress(); // Initial call
+                });
+              `
+            }} />
           </div>
 
           {/* Introduction Section */}
@@ -224,27 +473,39 @@ export default function WhitePaperPDF() {
           <section id="problem" className="mb-24">
             <div className="bg-white rounded-2xl shadow-xl border border-[#A5DAD8]/30 p-10 mb-12">
               <div className="text-center mb-12">
-                <div className="inline-flex items-center px-4 py-2 rounded-full bg-red-100 text-gray-900 text-base font-medium mb-6">
+                <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-600 text-base font-medium mb-6">
                   <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z" />
                   </svg>
                   Part 2: The Problem
                 </div>
                 <h2 className="text-4xl font-bold text-gray-900 mb-6">How Desk-Bound Work Is Literally Killing Us</h2>
-                <blockquote className="text-2xl font-semibold text-gray-900 italic border-l-4 border-red-500 pl-6 my-8 max-w-4xl mx-auto">
+                <blockquote className="text-2xl font-semibold text-gray-900 italic border-l-4 border-blue-500 pl-6 my-8 max-w-4xl mx-auto">
                   Human bodies were designed to be active.
                 </blockquote>
               </div>
 
               <div className="prose prose-lg max-w-none">
                 {/* Screenshot Component 1: The Historical Context */}
-                <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-8 mb-8 border border-green-200">
+                <motion.div 
+                  className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-8 mb-8 border border-green-200"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
+                  viewport={{ once: true, margin: "-100px" }}
+                >
                   <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">The Historical Context</h3>
                   
                   {/* Then vs Now Comparison */}
                   <div className="grid md:grid-cols-2 gap-8">
                     {/* Then: Active Lifestyle */}
-                    <div className="bg-white/70 rounded-xl p-6 border border-green-200">
+                    <motion.div 
+                      className="bg-white/70 rounded-xl p-6 border border-green-200"
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+                      viewport={{ once: true, margin: "-100px" }}
+                    >
                       <div className="flex items-center mb-4">
                         <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
                           <svg className="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -267,15 +528,23 @@ export default function WhitePaperPDF() {
                             <span className="text-base font-medium text-gray-900">Daily Steps</span>
                           </div>
                           <div className="text-right">
-                            <div className="text-2xl font-bold text-gray-900">14,000-18,000</div>
+                            <div className="text-2xl font-bold text-gray-900">
+                              <AnimatedCounter start={0} end={14000} duration={2500} suffix="-18,000" />
+                            </div>
                             <div className="text-sm text-gray-900">steps per day</div>
                           </div>
                         </div>
                       </div>
-                    </div>
+                    </motion.div>
 
                     {/* Now: Sedentary Crisis */}
-                    <div className="bg-white/70 rounded-xl p-6 border border-red-200">
+                    <motion.div 
+                      className="bg-white/70 rounded-xl p-6 border border-red-200"
+                      initial={{ opacity: 0, x: 20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+                      viewport={{ once: true, margin: "-100px" }}
+                    >
                       <div className="flex items-center mb-4">
                         <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mr-4">
                           <svg className="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -298,135 +567,349 @@ export default function WhitePaperPDF() {
                             <span className="text-base font-medium text-gray-900">Daily Steps</span>
                           </div>
                           <div className="text-right">
-                            <div className="text-2xl font-bold text-gray-900">4,000-5,000</div>
+                            <div className="text-2xl font-bold text-gray-900">
+                              <AnimatedCounter start={0} end={4000} duration={2000} suffix="-5,000" />
+                            </div>
                             <div className="text-sm text-gray-900">steps per day<sup><a href="/references-future-of-ergonomic-work-white-paper" className="text-gray-900 hover:text-gray-900">1,2</a></sup></div>
                           </div>
                         </div>
                       </div>
-                    </div>
+                    </motion.div>
                   </div>
 
                   {/* Dramatic Decline Visualization */}
-                  <div className="mt-8 bg-white/70 rounded-xl p-6 border border-amber-200">
-                    <div className="flex items-center justify-center mb-4">
+                  <motion.div 
+                    className="mt-8 bg-white/70 rounded-xl p-6 border border-amber-200"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+                    viewport={{ once: true, margin: "-100px" }}
+                  >
+                    <motion.div 
+                      className="flex items-center justify-center mb-4"
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.5, delay: 0.5, ease: "easeOut" }}
+                      viewport={{ once: true, margin: "-100px" }}
+                    >
                       <div className="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center mr-3">
                         <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6" />
                         </svg>
                       </div>
                       <h4 className="text-xl font-semibold text-gray-900">The Dramatic Decline</h4>
-                    </div>
+                    </motion.div>
                     <div className="grid md:grid-cols-3 gap-6 text-center">
-                      <div className="bg-green-50 rounded-lg p-4 border border-green-200">
-                        <div className="text-3xl font-bold text-gray-900 mb-2">70%</div>
+                      <motion.div 
+                        className="bg-green-50 rounded-lg p-4 border border-green-200"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
+                        <div className="text-3xl font-bold text-gray-900 mb-2">
+                          <AnimatedCounter start={0} end={70} duration={2000} suffix="%" />
+                        </div>
                         <div className="text-base text-gray-900">Reduction in daily activity</div>
-                      </div>
-                      <div className="bg-amber-50 rounded-lg p-4 border border-amber-200">
-                        <div className="text-3xl font-bold text-gray-900 mb-2">75</div>
+                      </motion.div>
+                      <motion.div 
+                        className="bg-amber-50 rounded-lg p-4 border border-amber-200"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
+                        <div className="text-3xl font-bold text-gray-900 mb-2">
+                          <AnimatedCounter start={0} end={75} duration={2000} />
+                        </div>
                         <div className="text-base text-gray-900">Years of decline (1950-2025)</div>
-                      </div>
-                      <div className="bg-red-50 rounded-lg p-4 border border-red-200">
-                        <div className="text-3xl font-bold text-gray-900 mb-2">3x</div>
+                      </motion.div>
+                      <motion.div 
+                        className="bg-red-50 rounded-lg p-4 border border-red-200"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 1.0, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
+                        <div className="text-3xl font-bold text-gray-900 mb-2">
+                          <AnimatedCounter start={0} end={3} duration={2000} suffix="x" />
+                        </div>
                         <div className="text-base text-gray-900">Less active than our ancestors</div>
-                      </div>
+                      </motion.div>
                     </div>
-                  </div>
-                </div>
+                  </motion.div>
+                </motion.div>
 
                 {/* Screenshot Component 2: The Life Expectancy Paradox */}
-                <div className="grid md:grid-cols-2 gap-8 items-center mb-8">
-                  <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl p-8 border border-emerald-200">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">The Life Expectancy Paradox</h3>
+                <motion.div 
+                  className="grid md:grid-cols-2 gap-8 items-center mb-8"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
+                  viewport={{ once: true, margin: "-100px" }}
+                >
+                  <motion.div 
+                    className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl p-8 border border-emerald-200"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+                    viewport={{ once: true, margin: "-100px" }}
+                  >
+                    <motion.h3 
+                      className="text-2xl font-bold text-gray-900 mb-6 text-center"
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
+                      viewport={{ once: true, margin: "-100px" }}
+                    >
+                      The Life Expectancy Paradox
+                    </motion.h3>
                     <div className="text-center mb-6">
-                      <div className="inline-flex items-center px-6 py-3 bg-white rounded-xl shadow-lg border border-emerald-200">
-                        <div className="text-center">
-                          <div className="text-3xl font-bold text-gray-900 mb-2">79 years</div>
+                      <motion.div 
+                        className="inline-flex items-center px-6 py-3 bg-white rounded-xl shadow-lg border border-emerald-200"
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
+                        <motion.div 
+                          className="text-center"
+                          initial={{ opacity: 0, x: -20 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+                          viewport={{ once: true, margin: "-100px" }}
+                        >
+                          <div className="text-3xl font-bold text-gray-900 mb-2">
+                            <AnimatedCounter start={0} end={79} duration={2000} suffix=" years" />
+                          </div>
                           <div className="text-base text-gray-900">2010 Life Expectancy</div>
-                        </div>
-                        <div className="mx-4 text-2xl text-gray-400">→</div>
-                        <div className="text-center">
-                          <div className="text-3xl font-bold text-gray-900 mb-2">78 years</div>
+                        </motion.div>
+                        <motion.div 
+                          className="mx-4 text-2xl text-gray-400"
+                          initial={{ opacity: 0, scale: 0 }}
+                          whileInView={{ opacity: 1, scale: 1 }}
+                          transition={{ duration: 0.4, delay: 1.2, ease: "easeOut" }}
+                          viewport={{ once: true, margin: "-100px" }}
+                        >
+                          →
+                        </motion.div>
+                        <motion.div 
+                          className="text-center"
+                          initial={{ opacity: 0, x: 20 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          transition={{ duration: 0.6, delay: 1.4, ease: "easeOut" }}
+                          viewport={{ once: true, margin: "-100px" }}
+                        >
+                          <div className="text-3xl font-bold text-gray-900 mb-2">
+                            <AnimatedCounter start={0} end={78} duration={2000} suffix=" years" />
+                          </div>
                           <div className="text-base text-gray-900">2025 Life Expectancy</div>
-                        </div>
-                      </div>
+                        </motion.div>
+                      </motion.div>
                     </div>
-                    <p className="text-lg text-gray-900 leading-relaxed">
+                    <motion.p 
+                      className="text-lg text-gray-900 leading-relaxed"
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 1.8, ease: "easeOut" }}
+                      viewport={{ once: true, margin: "-100px" }}
+                    >
                       Despite exponential medical progress, life expectancy in the United States has hit a plateau and is actually decreasing.<sup><a href="/references-future-of-ergonomic-work-white-paper" className="text-gray-900 hover:text-gray-900">3</a></sup>
-                    </p>
-                  </div>
-                  <div className="flex justify-center">
-                    <img 
+                    </motion.p>
+                  </motion.div>
+                  <motion.div 
+                    className="flex justify-center"
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+                    viewport={{ once: true, margin: "-100px" }}
+                  >
+                    <motion.img 
                       src="https://images.pexels.com/photos/4386464/pexels-photo-4386464.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" 
                       alt="Healthcare and medical progress concept" 
                       className="rounded-xl shadow-lg max-w-full h-auto"
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+                      viewport={{ once: true, margin: "-100px" }}
                     />
-                  </div>
-                </div>
+                  </motion.div>
+                </motion.div>
 
                 {/* Screenshot Component 3: The Workplace Connection */}
-                <div className="grid md:grid-cols-2 gap-8 items-center mb-8">
-                  <div className="bg-gradient-to-r from-teal-50 to-cyan-50 rounded-2xl p-8 border border-teal-200">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">The Workplace Connection</h3>
+                <motion.div 
+                  className="grid md:grid-cols-2 gap-8 items-center mb-8"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
+                  viewport={{ once: true, margin: "-100px" }}
+                >
+                  <motion.div 
+                    className="bg-gradient-to-r from-teal-50 to-cyan-50 rounded-2xl p-8 border border-teal-200"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+                    viewport={{ once: true, margin: "-100px" }}
+                  >
+                    <motion.h3 
+                      className="text-2xl font-bold text-gray-900 mb-6 text-center"
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
+                      viewport={{ once: true, margin: "-100px" }}
+                    >
+                      The Workplace Connection
+                    </motion.h3>
                     <div className="grid md:grid-cols-3 gap-4 mb-6">
-                      <div className="bg-white rounded-xl p-4 shadow-lg text-center">
-                        <div className="text-2xl font-bold text-gray-900 mb-2">83%</div>
+                      <motion.div 
+                        className="bg-white rounded-xl p-4 shadow-lg text-center"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
+                        <div className="text-2xl font-bold text-gray-900 mb-2">
+                          <AnimatedCounter start={0} end={83} duration={2000} suffix="%" />
+                        </div>
                         <div className="text-xs text-gray-900">Increase in Sedentary Jobs Since 1950</div>
-                      </div>
-                      <div className="bg-white rounded-xl p-4 shadow-lg text-center">
-                        <div className="text-2xl font-bold text-gray-900 mb-2">4-5 hours</div>
+                      </motion.div>
+                      <motion.div 
+                        className="bg-white rounded-xl p-4 shadow-lg text-center"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.7, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
+                        <div className="text-2xl font-bold text-gray-900 mb-2">
+                          <AnimatedCounter start={0} end={4} duration={2000} suffix="-5 hours" />
+                        </div>
                         <div className="text-xs text-gray-900">Average Sitting Time (1950)</div>
-                      </div>
-                      <div className="bg-white rounded-xl p-4 shadow-lg text-center">
-                        <div className="text-2xl font-bold text-gray-900 mb-2">8 hours</div>
+                      </motion.div>
+                      <motion.div 
+                        className="bg-white rounded-xl p-4 shadow-lg text-center"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.9, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
+                        <div className="text-2xl font-bold text-gray-900 mb-2">
+                          <AnimatedCounter start={0} end={8} duration={2000} suffix=" hours" />
+                        </div>
                         <div className="text-xs text-gray-900">Average Sitting Time (Today)</div>
-                      </div>
+                      </motion.div>
                     </div>
-                    <p className="text-lg text-gray-900 leading-relaxed">
+                    <motion.p 
+                      className="text-lg text-gray-900 leading-relaxed"
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 1.2, ease: "easeOut" }}
+                      viewport={{ once: true, margin: "-100px" }}
+                    >
                       The shift to a more sedentary lifestyle, driven in large part by time spent in the workplace, is a primary culprit behind the health crisis.<sup><a href="/references-future-of-ergonomic-work-white-paper" className="text-gray-900 hover:text-gray-900">4,5</a></sup>
-                    </p>
-                  </div>
-                  <div className="flex justify-center">
-                    <img 
+                    </motion.p>
+                  </motion.div>
+                  <motion.div 
+                    className="flex justify-center"
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+                    viewport={{ once: true, margin: "-100px" }}
+                  >
+                    <motion.img 
                       src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" 
                       alt="Modern office workplace and sedentary lifestyle" 
                       className="rounded-xl shadow-lg max-w-full h-auto"
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+                      viewport={{ once: true, margin: "-100px" }}
                     />
-                  </div>
-                </div>
+                  </motion.div>
+                </motion.div>
 
                 {/* Health Crisis Data Visualization */}
-                <div className="bg-gradient-to-r from-red-50 to-orange-50 rounded-2xl p-10 mb-12 border border-red-200">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">The Hidden Tax of Being Chained to a Desk</h3>
+                <motion.div 
+                  className="bg-gradient-to-r from-red-50 to-orange-50 rounded-2xl p-10 mb-12 border border-red-200"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
+                  viewport={{ once: true, margin: "-100px" }}
+                >
+                  <motion.h3 
+                    className="text-2xl font-bold text-gray-900 mb-6 text-center"
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
+                    viewport={{ once: true, margin: "-100px" }}
+                  >
+                    The Hidden Tax of Being Chained to a Desk
+                  </motion.h3>
                   <div className="grid md:grid-cols-3 gap-6">
-                    <div className="bg-white rounded-xl p-6 shadow-lg">
+                    <motion.div 
+                      className="bg-white rounded-xl p-6 shadow-lg"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+                      viewport={{ once: true, margin: "-100px" }}
+                    >
                       <div className="text-center">
-                        <div className="text-4xl font-bold text-gray-900 mb-2">10-13%</div>
+                        <div className="text-4xl font-bold text-gray-900 mb-2">
+                          <AnimatedCounter start={0} end={10} duration={2000} suffix="-13%" />
+                        </div>
                         <div className="text-base text-gray-900 mb-2">1950 Obesity Rate</div>
-                        <div className="text-4xl font-bold text-gray-900 mb-2">&gt;40%</div>
+                        <div className="text-4xl font-bold text-gray-900 mb-2">
+                          <AnimatedCounter start={0} end={40} duration={2000} prefix=">" suffix="%" />
+                        </div>
                         <div className="text-base text-gray-900">2025 Obesity Rate<sup><a href="/references-future-of-ergonomic-work-white-paper" className="text-gray-900 hover:text-gray-900">6</a></sup></div>
-                        <div className="text-lg font-semibold text-gray-900 mt-4">300%+ Increase</div>
+                        <div className="text-lg font-semibold text-gray-900 mt-4">
+                          <AnimatedCounter start={0} end={300} duration={2000} suffix="%+ Increase" />
+                        </div>
                       </div>
-                    </div>
-                    <div className="bg-white rounded-xl p-6 shadow-lg">
+                    </motion.div>
+                    <motion.div 
+                      className="bg-white rounded-xl p-6 shadow-lg"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+                      viewport={{ once: true, margin: "-100px" }}
+                    >
                       <div className="text-center">
-                        <div className="text-4xl font-bold text-gray-900 mb-2">&lt;1%</div>
+                        <div className="text-4xl font-bold text-gray-900 mb-2">
+                          <AnimatedCounter start={0} end={1} duration={2000} prefix="<" suffix="%" />
+                        </div>
                         <div className="text-base text-gray-900 mb-2">1950 Diabetes Rate</div>
-                        <div className="text-4xl font-bold text-gray-900 mb-2">9-10%</div>
+                        <div className="text-4xl font-bold text-gray-900 mb-2">
+                          <AnimatedCounter start={0} end={9} duration={2000} suffix="-10%" />
+                        </div>
                         <div className="text-base text-gray-900">2025 Diabetes Rate<sup><a href="/references-future-of-ergonomic-work-white-paper" className="text-gray-900 hover:text-gray-900">7,8</a></sup></div>
-                        <div className="text-lg font-semibold text-gray-900 mt-4">1000%+ Increase</div>
+                        <div className="text-lg font-semibold text-gray-900 mt-4">
+                          <AnimatedCounter start={0} end={1000} duration={2000} suffix="%+ Increase" />
+                        </div>
                       </div>
-                    </div>
-                    <div className="bg-white rounded-xl p-6 shadow-lg">
+                    </motion.div>
+                    <motion.div 
+                      className="bg-white rounded-xl p-6 shadow-lg"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
+                      viewport={{ once: true, margin: "-100px" }}
+                    >
                       <div className="text-center">
-                        <div className="text-4xl font-bold text-gray-900 mb-2">&lt;20%</div>
+                        <div className="text-4xl font-bold text-gray-900 mb-2">
+                          <AnimatedCounter start={0} end={20} duration={2000} prefix="<" suffix="%" />
+                        </div>
                         <div className="text-base text-gray-900 mb-2">1950 MSK Disorders</div>
-                        <div className="text-4xl font-bold text-gray-900 mb-2">~50%</div>
+                        <div className="text-4xl font-bold text-gray-900 mb-2">
+                          <AnimatedCounter start={0} end={50} duration={2000} prefix="~" suffix="%" />
+                        </div>
                         <div className="text-base text-gray-900">2025 MSK Disorders<sup><a href="/references-future-of-ergonomic-work-white-paper" className="text-gray-900 hover:text-gray-900">9</a></sup></div>
-                        <div className="text-lg font-semibold text-gray-900 mt-4">150%+ Increase</div>
+                        <div className="text-lg font-semibold text-gray-900 mt-4">
+                          <AnimatedCounter start={0} end={150} duration={2000} suffix="%+ Increase" />
+                        </div>
                       </div>
-                    </div>
+                    </motion.div>
                   </div>
-                </div>
+                </motion.div>
 
                 <p className="text-lg text-gray-900 mb-6">
                   This significant increase has introduced a new host of health problems that were far less prevalent for most of human history: sedentary behavior is well-documented to increase the risk of premature death, due to the higher likelihood of contracting cardiovascular diseases, metabolic disorders, musculoskeletal disorders, cancer, depression, and even cognitive impairment.
@@ -437,10 +920,30 @@ export default function WhitePaperPDF() {
                 </p>
 
                 {/* Current Solutions Analysis */}
-                <div className="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-2xl p-10 mb-12 border border-yellow-200">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-6">Why Current Solutions Fall Short</h3>
+                <motion.div 
+                  className="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-2xl p-10 mb-12 border border-yellow-200"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
+                  viewport={{ once: true, margin: "-100px" }}
+                >
+                  <motion.h3 
+                    className="text-2xl font-bold text-gray-900 mb-6"
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
+                    viewport={{ once: true, margin: "-100px" }}
+                  >
+                    Why Current Solutions Fall Short
+                  </motion.h3>
                   <div className="grid md:grid-cols-3 gap-6">
-                    <div className="bg-white rounded-xl p-6 shadow-lg">
+                    <motion.div 
+                      className="bg-white rounded-xl p-6 shadow-lg"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+                      viewport={{ once: true, margin: "-100px" }}
+                    >
                       <div className="flex items-center mb-4">
                         <div className="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mr-4">
                           <svg className="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -449,15 +952,23 @@ export default function WhitePaperPDF() {
                         </div>
                         <h4 className="text-lg font-semibold text-gray-900">Standing Desks</h4>
                       </div>
-                      <p className="text-gray-900 text-base mb-3">Barely meets minimum activity threshold (1.5 METs)</p>
+                      <p className="text-gray-900 text-base mb-3">
+                        Barely meets minimum activity threshold (1.5 METs)
+                      </p>
                       <ul className="text-base text-gray-900 space-y-1">
                         <li>• No significant cardiovascular benefit</li>
                         <li>• Introduces new health problems (varicose veins, DVT)</li>
                         <li>• Musculoskeletal issues persist (carpal tunnel)</li>
                         <li>• Blood pooling in lower extremities</li>
                       </ul>
-                    </div>
-                    <div className="bg-white rounded-xl p-6 shadow-lg">
+                    </motion.div>
+                    <motion.div 
+                      className="bg-white rounded-xl p-6 shadow-lg"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+                      viewport={{ once: true, margin: "-100px" }}
+                    >
                       <div className="flex items-center mb-4">
                         <div className="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mr-4">
                           <svg className="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -466,15 +977,23 @@ export default function WhitePaperPDF() {
                         </div>
                         <h4 className="text-lg font-semibold text-gray-900">Desk Treadmills</h4>
                       </div>
-                      <p className="text-gray-900 text-base mb-3">Impractical for most work tasks</p>
+                      <p className="text-gray-900 text-base mb-3">
+                        Impractical for most work tasks
+                      </p>
                       <ul className="text-base text-gray-900 space-y-1">
                         <li>• Difficult to type while moving</li>
                         <li>• Limited to specific activities (calls)</li>
                         <li>• Not comprehensive solution</li>
                         <li>• Still requires desk-bound work</li>
                       </ul>
-                    </div>
-                    <div className="bg-white rounded-xl p-6 shadow-lg">
+                    </motion.div>
+                    <motion.div 
+                      className="bg-white rounded-xl p-6 shadow-lg"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
+                      viewport={{ once: true, margin: "-100px" }}
+                    >
                       <div className="flex items-center mb-4">
                         <div className="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mr-4">
                           <svg className="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -483,28 +1002,30 @@ export default function WhitePaperPDF() {
                         </div>
                         <h4 className="text-lg font-semibold text-gray-900">Walking Breaks</h4>
                       </div>
-                      <p className="text-gray-900 text-base mb-3">Work culture pressure limits effectiveness</p>
+                      <p className="text-gray-900 text-base mb-3">
+                        Work culture pressure limits effectiveness
+                      </p>
                       <ul className="text-base text-gray-900 space-y-1">
                         <li>• Pressure to minimize time away from desk</li>
                         <li>• Most work requires desk access</li>
                         <li>• Not a fundamental solution</li>
                         <li>• Productivity vs. health trade-off</li>
                       </ul>
-                    </div>
+                    </motion.div>
                   </div>
-                </div>
+                </motion.div>
 
                 <p className="text-lg text-gray-900 mb-6">
                   Over the past 10-15 years, the public has become increasingly aware of the dangers that come with being chained to a desk to work. This has sparked the development of new technologies such as standing desks and mini treadmills to accompany desks, as well as workplace movements to encourage taking more breaks to go on walks. Sadly, these efforts are not nearly enough to make a tangible impact.<sup><a href="/references-future-of-ergonomic-work-white-paper" className="text-gray-900 hover:text-gray-900">12,13,14</a></sup>
                 </p>
 
-                <div className="bg-gradient-to-r from-red-100 to-pink-100 rounded-xl p-6 border border-red-200">
+                <div className="bg-gradient-to-r from-blue-100 to-blue-50 rounded-xl p-6 border border-blue-200">
                   <p className="text-lg font-semibold text-gray-900 text-center">
                     Simply put, humans were not meant to be sedentary beings. And the way that we work in the 21st century - tied to our desks - is quite literally killing us, deteriorating our bodies and exposing us to a myriad of health risks.
                   </p>
                 </div>
 
-                <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-6 border border-blue-200 mt-8">
+                <div className="bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl p-6 border border-blue-200 mt-8">
                   <div className="flex items-center mb-4">
                     <svg className="w-6 h-6 text-gray-900 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -579,14 +1100,32 @@ export default function WhitePaperPDF() {
               <div className="prose prose-lg max-w-none">
 
                 {/* Screenshot Component 4: Technology Overview */}
-                <div className="grid md:grid-cols-2 gap-8 items-center mb-8">
-                  <div className="bg-gradient-to-r from-cyan-50 to-blue-50 rounded-2xl p-8 border border-cyan-200">
+                <motion.div 
+                  className="grid md:grid-cols-2 gap-8 items-center mb-8"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
+                  viewport={{ once: true, margin: "-100px" }}
+                >
+                  <motion.div 
+                    className="bg-gradient-to-r from-cyan-50 to-blue-50 rounded-2xl p-8 border border-cyan-200"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+                    viewport={{ once: true, margin: "-100px" }}
+                  >
                     <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">The Technology Solution</h3>
                     <p className="text-lg text-gray-900 text-center mb-8 leading-relaxed">
                       There is a select set of companies that are best positioned to bring this technology to market. Here is a high-level overview of the technology that will need to be involved:
                     </p>
                     <div className="grid md:grid-cols-3 gap-4">
-                      <div className="bg-white rounded-xl p-4 shadow-lg text-center">
+                      <motion.div 
+                        className="bg-white rounded-xl p-4 shadow-lg text-center"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
                         <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
                           <svg className="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -595,8 +1134,14 @@ export default function WhitePaperPDF() {
                         </div>
                         <h4 className="text-base font-semibold text-gray-900 mb-1">AR/VR/MR Devices</h4>
                         <p className="text-xs text-gray-900">Lightweight, wearable computing platforms</p>
-                      </div>
-                      <div className="bg-white rounded-xl p-4 shadow-lg text-center">
+                      </motion.div>
+                      <motion.div 
+                        className="bg-white rounded-xl p-4 shadow-lg text-center"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
                         <div className="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-3">
                           <svg className="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
@@ -604,8 +1149,14 @@ export default function WhitePaperPDF() {
                         </div>
                         <h4 className="text-base font-semibold text-gray-900 mb-1">Voice & Gesture</h4>
                         <p className="text-xs text-gray-900">Natural interaction methods</p>
-                      </div>
-                      <div className="bg-white rounded-xl p-4 shadow-lg text-center">
+                      </motion.div>
+                      <motion.div 
+                        className="bg-white rounded-xl p-4 shadow-lg text-center"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
                         <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
                           <svg className="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
@@ -613,9 +1164,9 @@ export default function WhitePaperPDF() {
                         </div>
                         <h4 className="text-base font-semibold text-gray-900 mb-1">AI Technology</h4>
                         <p className="text-xs text-gray-900">Intelligent task automation</p>
-                      </div>
+                      </motion.div>
                     </div>
-                  </div>
+                  </motion.div>
                   <div className="flex justify-center">
                     <img 
                       src="https://images.pexels.com/photos/3862130/pexels-photo-3862130.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" 
@@ -623,13 +1174,25 @@ export default function WhitePaperPDF() {
                       className="rounded-xl shadow-lg max-w-full h-auto"
                     />
                   </div>
-                </div>
+                </motion.div>
 
                 {/* Screenshot Component 5: AR Glasses Advantage */}
-                <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-10 mb-8 border border-blue-200 shadow-lg">
+                <motion.div 
+                  className="bg-gradient-to-r from-purple-50 to-purple-100 rounded-2xl p-10 mb-8 border border-purple-200 shadow-lg"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
+                  viewport={{ once: true, margin: "-100px" }}
+                >
                   <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">Why AR Glasses Are the Clear Winner</h3>
                   <div className="grid md:grid-cols-2 gap-12">
-                    <div className="bg-white rounded-xl p-8 shadow-md border-l-4 border-red-500">
+                    <motion.div 
+                      className="bg-white rounded-xl p-8 shadow-md border-l-4 border-red-500"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+                      viewport={{ once: true, margin: "-100px" }}
+                    >
                       <div className="flex items-center mb-6">
                         <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mr-4">
                           <svg className="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -656,8 +1219,14 @@ export default function WhitePaperPDF() {
                           <span className="text-lg text-gray-900 font-medium">Still recreates sedentary work</span>
                         </li>
                       </ul>
-                    </div>
-                    <div className="bg-white rounded-xl p-8 shadow-md border-l-4 border-green-500">
+                    </motion.div>
+                    <motion.div 
+                      className="bg-white rounded-xl p-8 shadow-md border-l-4 border-green-500"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+                      viewport={{ once: true, margin: "-100px" }}
+                    >
                       <div className="flex items-center mb-6">
                         <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
                           <svg className="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -684,9 +1253,9 @@ export default function WhitePaperPDF() {
                           <span className="text-lg text-gray-900 font-medium">Safe for outdoor use</span>
                         </li>
                       </ul>
-                    </div>
+                    </motion.div>
                   </div>
-                </div>
+                </motion.div>
 
                 {/* Screenshot Component 6: The Computing Challenge */}
                 <div className="grid md:grid-cols-2 gap-8 items-stretch mb-8">
@@ -770,8 +1339,20 @@ export default function WhitePaperPDF() {
                 </div>
 
                 {/* Voice and Gesture Technology */}
-                <div className="grid md:grid-cols-2 gap-8 items-stretch mb-8">
-                  <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-8 border border-purple-200">
+                <motion.div 
+                  className="grid md:grid-cols-2 gap-8 items-stretch mb-8"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
+                  viewport={{ once: true, margin: "-100px" }}
+                >
+                  <motion.div 
+                    className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-8 border border-purple-200"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+                    viewport={{ once: true, margin: "-100px" }}
+                  >
                     <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">Voice and Gesture Technology</h3>
                     
                     {/* Simple Visual Concept */}
@@ -797,21 +1378,33 @@ export default function WhitePaperPDF() {
 
                     {/* Clean Content */}
                     <div className="space-y-6">
-                      <div className="bg-white/70 rounded-xl p-6 border border-purple-100">
+                      <motion.div 
+                        className="bg-white/70 rounded-xl p-6 border border-purple-100"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
                         <h4 className="text-lg font-semibold text-gray-900 mb-3">The Vision</h4>
                         <p className="text-gray-900 leading-relaxed">
                           Voice-first browsers and operating systems that replace keyboard navigation with natural speech commands like "pull up the article I bookmarked last week" or "pull up Microsoft Excel on the left and Chrome on the right."
                         </p>
-                      </div>
+                      </motion.div>
                       
-                      <div className="bg-white/70 rounded-xl p-6 border border-pink-100">
+                      <motion.div 
+                        className="bg-white/70 rounded-xl p-6 border border-pink-100"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
                         <h4 className="text-lg font-semibold text-gray-900 mb-3">The Reality</h4>
                         <p className="text-gray-900 leading-relaxed">
                           While existing devices show sophisticated voice and gesture technology, significant improvements are still needed in accuracy, functionality beyond basic navigation, and gesture precision. The technology is promising but not yet ready for full productivity replacement.
                         </p>
-                      </div>
+                      </motion.div>
                     </div>
-                  </div>
+                  </motion.div>
                   <div className="flex justify-center items-center">
                     <img 
                       src="https://images.pexels.com/photos/3862130/pexels-photo-3862130.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" 
@@ -819,11 +1412,23 @@ export default function WhitePaperPDF() {
                       className="rounded-xl shadow-lg w-full h-full object-cover"
                     />
                   </div>
-                </div>
+                </motion.div>
 
                 {/* AI Technology */}
-                <div className="grid md:grid-cols-2 gap-8 items-stretch mb-8">
-                  <div className="bg-gradient-to-br from-green-50 to-teal-50 rounded-2xl p-8 border border-green-200">
+                <motion.div 
+                  className="grid md:grid-cols-2 gap-8 items-stretch mb-8"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
+                  viewport={{ once: true, margin: "-100px" }}
+                >
+                  <motion.div 
+                    className="bg-gradient-to-br from-green-50 to-teal-50 rounded-2xl p-8 border border-green-200"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+                    viewport={{ once: true, margin: "-100px" }}
+                  >
                     <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">Personalized, Agentic AI Technology</h3>
                     
                     {/* Simple AI Status */}
@@ -837,21 +1442,33 @@ export default function WhitePaperPDF() {
 
                     {/* Clean Content */}
                     <div className="space-y-6">
-                      <div className="bg-white/70 rounded-xl p-6 border border-green-100">
+                      <motion.div 
+                        className="bg-white/70 rounded-xl p-6 border border-green-100"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
                         <h4 className="text-lg font-semibold text-gray-900 mb-3">The Current State</h4>
                         <p className="text-gray-900 leading-relaxed">
                           AI is already ubiquitous and the most advanced of the three technologies. From ChatGPT and Anthropic to coding agents like Replit and Cursor, AI is heavily leveraged for desk-based work across platforms like Google Drive and Notion.
                         </p>
-                      </div>
+                      </motion.div>
                       
-                      <div className="bg-white/70 rounded-xl p-6 border border-orange-100">
+                      <motion.div 
+                        className="bg-white/70 rounded-xl p-6 border border-orange-100"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
                         <h4 className="text-lg font-semibold text-gray-900 mb-3">The AR Challenge</h4>
                         <p className="text-gray-900 leading-relaxed">
                           While integrating AI into AR glasses would be transformative, AI workloads are compute-intensive and require heavy real-time processing. Even with external computing devices, challenges include overheating, reduced battery life, and higher latency—especially with cloud processing.
                         </p>
-                      </div>
+                      </motion.div>
                     </div>
-                  </div>
+                  </motion.div>
                   <div className="flex justify-center items-center">
                     <img 
                       src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" 
@@ -859,11 +1476,23 @@ export default function WhitePaperPDF() {
                       className="rounded-xl shadow-lg w-full h-full object-cover"
                     />
                   </div>
-                </div>
+                </motion.div>
 
                 {/* Additional Technical Considerations */}
-                <div className="grid md:grid-cols-2 gap-8 items-stretch mb-8">
-                  <div className="bg-gradient-to-br from-gray-50 via-slate-50 to-zinc-50 rounded-2xl p-8 border border-gray-200">
+                <motion.div 
+                  className="grid md:grid-cols-2 gap-8 items-stretch mb-8"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
+                  viewport={{ once: true, margin: "-100px" }}
+                >
+                  <motion.div 
+                    className="bg-gradient-to-br from-gray-50 via-slate-50 to-zinc-50 rounded-2xl p-8 border border-gray-200"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+                    viewport={{ once: true, margin: "-100px" }}
+                  >
                     <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">Additional Technical Considerations</h3>
                     
                     {/* Central Challenge Icon */}
@@ -877,7 +1506,13 @@ export default function WhitePaperPDF() {
 
                     {/* Technical Challenges Grid */}
                     <div className="space-y-4">
-                      <div className="bg-white/70 rounded-xl p-4 border border-gray-100">
+                      <motion.div 
+                        className="bg-white/70 rounded-xl p-4 border border-gray-100"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
                         <div className="flex items-center mb-2">
                           <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
                             <svg className="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -887,9 +1522,15 @@ export default function WhitePaperPDF() {
                           <h4 className="text-xl font-semibold text-gray-900">Connectivity & Battery</h4>
                         </div>
                         <p className="text-xl text-gray-900 leading-relaxed">Must work without WiFi and last all day for mobile productivity</p>
-                      </div>
+                      </motion.div>
                       
-                      <div className="bg-white/70 rounded-xl p-4 border border-gray-100">
+                      <motion.div 
+                        className="bg-white/70 rounded-xl p-4 border border-gray-100"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
                         <div className="flex items-center mb-2">
                           <div className="w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center mr-3">
                             <svg className="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -899,9 +1540,15 @@ export default function WhitePaperPDF() {
                           <h4 className="text-xl font-semibold text-gray-900">Light Sensitivity</h4>
                         </div>
                         <p className="text-xl text-gray-900 leading-relaxed">Adapt to indoor/outdoor environments for safety and visibility</p>
-                      </div>
+                      </motion.div>
                       
-                      <div className="bg-white/70 rounded-xl p-4 border border-gray-100">
+                      <motion.div 
+                        className="bg-white/70 rounded-xl p-4 border border-gray-100"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
                         <div className="flex items-center mb-2">
                           <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center mr-3">
                             <svg className="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -912,9 +1559,15 @@ export default function WhitePaperPDF() {
                           <h4 className="text-xl font-semibold text-gray-900">Style & Comfort</h4>
                         </div>
                         <p className="text-xl text-gray-900 leading-relaxed">Must look and feel like normal glasses for mainstream adoption</p>
-                      </div>
+                      </motion.div>
                       
-                      <div className="bg-white/70 rounded-xl p-4 border border-gray-100">
+                      <motion.div 
+                        className="bg-white/70 rounded-xl p-4 border border-gray-100"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 1.0, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
                         <div className="flex items-center mb-2">
                           <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-3">
                             <svg className="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -924,9 +1577,9 @@ export default function WhitePaperPDF() {
                           <h4 className="text-xl font-semibold text-gray-900">Market Readiness</h4>
                         </div>
                         <p className="text-xl text-gray-900 leading-relaxed">Need Ray-Ban Meta Glasses level of subtlety for mass adoption</p>
-                      </div>
+                      </motion.div>
                     </div>
-                  </div>
+                  </motion.div>
                   <div className="flex justify-center items-center">
                     <img 
                       src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" 
@@ -934,7 +1587,7 @@ export default function WhitePaperPDF() {
                       className="rounded-xl shadow-lg w-full h-full object-cover"
                     />
                   </div>
-                </div>
+                </motion.div>
 
                 <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-6 border border-purple-200 mt-8">
                   <div className="flex items-center mb-4">
@@ -964,7 +1617,7 @@ export default function WhitePaperPDF() {
           <section id="key-players" className="mb-24">
             <div className="bg-white rounded-2xl shadow-xl border border-[#A5DAD8]/30 p-10 mb-12">
               <div className="text-center mb-12">
-                <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-gray-900 text-base font-medium mb-6">
+                <div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-100 text-purple-600 text-base font-medium mb-6">
                   <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                   </svg>
@@ -984,11 +1637,23 @@ export default function WhitePaperPDF() {
                     </p>
 
                     {/* Company Logos Grid */}
-                    <div className="bg-white/70 rounded-xl p-6 border border-blue-100">
+                    <motion.div 
+                      className="bg-white/70 rounded-xl p-6 border border-blue-100"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, ease: "easeOut" }}
+                      viewport={{ once: true, margin: "-100px" }}
+                    >
                       <h4 className="text-xl font-semibold text-gray-900 mb-6 text-center">Key Players in AR Glasses</h4>
                       <div className="grid grid-cols-2 gap-6">
                         {/* Apple Vision Pro */}
-                        <div className="flex items-center justify-center p-4 bg-gray-50 rounded-lg border border-gray-200">
+                        <motion.div 
+                          className="flex items-center justify-center p-4 bg-gray-50 rounded-lg border border-gray-200"
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+                          viewport={{ once: true, margin: "-100px" }}
+                        >
                           <div className="text-center">
                             <div className="w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-3">
                               <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -998,10 +1663,16 @@ export default function WhitePaperPDF() {
                             <div className="text-lg font-semibold text-gray-900">Apple</div>
                             <div className="text-base text-gray-500">Vision Pro</div>
                           </div>
-                        </div>
+                        </motion.div>
 
                         {/* Meta Quest */}
-                        <div className="flex items-center justify-center p-4 bg-gray-50 rounded-lg border border-gray-200">
+                        <motion.div 
+                          className="flex items-center justify-center p-4 bg-gray-50 rounded-lg border border-gray-200"
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+                          viewport={{ once: true, margin: "-100px" }}
+                        >
                           <div className="text-center">
                             <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-3">
                               <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -1011,10 +1682,16 @@ export default function WhitePaperPDF() {
                             <div className="text-lg font-semibold text-gray-900">Meta</div>
                             <div className="text-base text-gray-500">Quest Pro</div>
                           </div>
-                        </div>
+                        </motion.div>
 
                         {/* Microsoft HoloLens */}
-                        <div className="flex items-center justify-center p-4 bg-gray-50 rounded-lg border border-gray-200">
+                        <motion.div 
+                          className="flex items-center justify-center p-4 bg-gray-50 rounded-lg border border-gray-200"
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+                          viewport={{ once: true, margin: "-100px" }}
+                        >
                           <div className="text-center">
                             <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-3">
                               <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -1024,10 +1701,16 @@ export default function WhitePaperPDF() {
                             <div className="text-lg font-semibold text-gray-900">Microsoft</div>
                             <div className="text-base text-gray-500">HoloLens</div>
                           </div>
-                        </div>
+                        </motion.div>
 
                         {/* Magic Leap */}
-                        <div className="flex items-center justify-center p-4 bg-gray-50 rounded-lg border border-gray-200">
+                        <motion.div 
+                          className="flex items-center justify-center p-4 bg-gray-50 rounded-lg border border-gray-200"
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
+                          viewport={{ once: true, margin: "-100px" }}
+                        >
                           <div className="text-center">
                             <div className="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-3">
                               <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1037,9 +1720,9 @@ export default function WhitePaperPDF() {
                             <div className="text-lg font-semibold text-gray-900">Magic Leap</div>
                             <div className="text-base text-gray-500">One & Two</div>
                           </div>
-                        </div>
+                        </motion.div>
                       </div>
-                    </div>
+                    </motion.div>
                   </div>
                   <div className="flex justify-center items-center">
                     <img 
@@ -1054,28 +1737,83 @@ export default function WhitePaperPDF() {
               <div className="prose prose-lg max-w-none">
 
                 {/* Screenshot Component 7: Market Overview */}
-                <div className="grid md:grid-cols-2 gap-8 items-center mb-8">
-                  <div className="bg-gradient-to-r from-sky-50 to-blue-50 rounded-2xl p-8 border border-sky-200">
-                    <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">AR Glasses Market Overview</h3>
+                <motion.div 
+                  className="grid md:grid-cols-2 gap-8 items-center mb-8"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
+                  viewport={{ once: true, margin: "-100px" }}
+                >
+                  <motion.div 
+                    className="bg-gradient-to-r from-sky-50 to-blue-50 rounded-2xl p-8 border border-sky-200"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+                    viewport={{ once: true, margin: "-100px" }}
+                  >
+                    <motion.h3 
+                      className="text-3xl font-bold text-gray-900 mb-8 text-center"
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
+                      viewport={{ once: true, margin: "-100px" }}
+                    >
+                      AR Glasses Market Overview
+                    </motion.h3>
                     <div className="grid md:grid-cols-3 gap-6 mb-8">
-                      <div className="bg-white rounded-xl p-6 shadow-lg text-center">
-                        <div className="text-4xl font-bold text-gray-900 mb-3">$2.1B</div>
+                      <motion.div 
+                        className="bg-white rounded-xl p-6 shadow-lg text-center"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
+                        <div className="text-4xl font-bold text-gray-900 mb-3">
+                          <AnimatedCounter start={0} end={2.1} duration={2000} prefix="$" suffix="B" />
+                        </div>
                         <div className="text-lg text-gray-900 mb-2">2024 Market Size</div>
                         <div className="text-base text-gray-500">Global AR glasses market</div>
-                      </div>
-                      <div className="bg-white rounded-xl p-6 shadow-lg text-center">
-                        <div className="text-4xl font-bold text-gray-900 mb-3">$15.8B</div>
+                      </motion.div>
+                      <motion.div 
+                        className="bg-white rounded-xl p-6 shadow-lg text-center"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.7, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
+                        <div className="text-4xl font-bold text-gray-900 mb-3">
+                          <AnimatedCounter start={0} end={15.8} duration={2000} prefix="$" suffix="B" />
+                        </div>
                         <div className="text-lg text-gray-900 mb-2">Projected 2030</div>
-                        <div className="text-base text-gray-500">CAGR: 40.2%</div>
-                      </div>
-                      <div className="bg-white rounded-xl p-6 shadow-lg text-center">
-                        <div className="text-4xl font-bold text-gray-900 mb-3">65%</div>
+                        <div className="text-base text-gray-500">CAGR: <AnimatedCounter start={0} end={40.2} duration={2000} suffix="%" /></div>
+                      </motion.div>
+                      <motion.div 
+                        className="bg-white rounded-xl p-6 shadow-lg text-center"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.9, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
+                        <div className="text-4xl font-bold text-gray-900 mb-3">
+                          <AnimatedCounter start={0} end={65} duration={2000} suffix="%" />
+                        </div>
                         <div className="text-lg text-gray-900 mb-2">Enterprise Share</div>
-                        <div className="text-base text-gray-500">vs 35% consumer</div>
-                      </div>
+                        <div className="text-base text-gray-500">vs <AnimatedCounter start={0} end={35} duration={2000} suffix="% consumer" /></div>
+                      </motion.div>
                     </div>
-                    <div className="grid md:grid-cols-2 gap-8">
-                      <div>
+                    <motion.div 
+                      className="grid md:grid-cols-2 gap-8"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 1.2, ease: "easeOut" }}
+                      viewport={{ once: true, margin: "-100px" }}
+                    >
+                      <motion.div
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.6, delay: 1.4, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
                         <h4 className="text-xl font-semibold text-gray-900 mb-4 text-center">Key Market Drivers</h4>
                         <ul className="space-y-3">
                           <li className="flex items-start">
@@ -1091,8 +1829,13 @@ export default function WhitePaperPDF() {
                             <span className="text-lg text-gray-900">AI and voice interface maturation</span>
                           </li>
                         </ul>
-                      </div>
-                      <div>
+                      </motion.div>
+                      <motion.div
+                        initial={{ opacity: 0, x: 20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.6, delay: 1.6, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
                         <h4 className="text-xl font-semibold text-gray-900 mb-4 text-center">Growth Factors</h4>
                         <ul className="space-y-3">
                           <li className="flex items-start">
@@ -1108,20 +1851,30 @@ export default function WhitePaperPDF() {
                             <span className="text-lg text-gray-900">Improved performance capabilities</span>
                           </li>
                         </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="flex justify-center">
-                    <img 
+                      </motion.div>
+                    </motion.div>
+                  </motion.div>
+                  <motion.div 
+                    className="flex justify-center"
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+                    viewport={{ once: true, margin: "-100px" }}
+                  >
+                    <motion.img 
                       src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" 
                       alt="Business growth and market analysis concept" 
                       className="rounded-xl shadow-lg max-w-full h-auto"
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+                      viewport={{ once: true, margin: "-100px" }}
                     />
-                  </div>
-                </div>
+                  </motion.div>
+                </motion.div>
 
                 {/* AR Glasses Comparison Table */}
-                <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 mb-8 border border-blue-200">
+                <div className="bg-gradient-to-r from-purple-50 to-purple-100 rounded-2xl p-8 mb-8 border border-purple-200">
                   <h3 className="text-3xl font-bold text-gray-900 mb-6 text-center">AR Glasses Technical Comparison</h3>
                   <p className="text-center text-lg text-gray-900 mb-8">Detailed specifications and capabilities of major AR glasses products</p>
                   <div className="overflow-x-auto">
@@ -1209,23 +1962,41 @@ export default function WhitePaperPDF() {
                       </div>
 
                       <div className="space-y-6">
-                        <div className="bg-white/70 rounded-xl p-6 border border-blue-100">
+                        <motion.div 
+                          className="bg-white/70 rounded-xl p-6 border border-blue-100"
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+                          viewport={{ once: true, margin: "-100px" }}
+                        >
                           <h4 className="text-xl font-semibold text-gray-900 mb-3">Strategy</h4>
                           <p className="text-lg text-gray-900">Android XR platform with hardware partnerships (Samsung, Qualcomm)</p>
-                        </div>
+                        </motion.div>
                         
-                        <div className="bg-white/70 rounded-xl p-6 border border-blue-100">
+                        <motion.div 
+                          className="bg-white/70 rounded-xl p-6 border border-blue-100"
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+                          viewport={{ once: true, margin: "-100px" }}
+                        >
                           <h4 className="text-xl font-semibold text-gray-900 mb-3">Upcoming Devices</h4>
-                          <ul className="text-lg text-gray-900 space-y-2">
-                            <li>• Smart Glasses (AI assistant)</li>
-                            <li>• Project Moohan headset</li>
+                          <ul className="text-lg text-gray-900 space-y-2 list-disc list-inside">
+                            <li>Smart Glasses (AI assistant)</li>
+                            <li>Project Moohan headset</li>
                           </ul>
-                        </div>
+                        </motion.div>
                         
-                        <div className="bg-white/70 rounded-xl p-6 border border-green-100">
+                        <motion.div 
+                          className="bg-white/70 rounded-xl p-6 border border-green-100"
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+                          viewport={{ once: true, margin: "-100px" }}
+                        >
                           <h4 className="text-xl font-semibold text-gray-900 mb-3">Status</h4>
                           <p className="text-lg text-gray-900">Active development, launching devices this year</p>
-                        </div>
+                        </motion.div>
                       </div>
                     </div>
                     <div className="flex justify-center items-center">
@@ -1253,20 +2024,38 @@ export default function WhitePaperPDF() {
                       </div>
 
                       <div className="space-y-6">
-                        <div className="bg-white/70 rounded-xl p-6 border border-orange-100">
+                        <motion.div 
+                          className="bg-white/70 rounded-xl p-6 border border-orange-100"
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+                          viewport={{ once: true, margin: "-100px" }}
+                        >
                           <h4 className="text-xl font-semibold text-gray-900 mb-3">Legacy</h4>
                           <p className="text-lg text-gray-900">Early pioneer with HoloLens 1 & 2 headsets</p>
-                        </div>
+                        </motion.div>
                         
-                        <div className="bg-white/70 rounded-xl p-6 border border-orange-100">
+                        <motion.div 
+                          className="bg-white/70 rounded-xl p-6 border border-orange-100"
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+                          viewport={{ once: true, margin: "-100px" }}
+                        >
                           <h4 className="text-xl font-semibold text-gray-900 mb-3">Current Status</h4>
                           <p className="text-lg text-gray-900">Discontinued HoloLens 2, focusing on software & cloud</p>
-                        </div>
+                        </motion.div>
                         
-                        <div className="bg-white/70 rounded-xl p-6 border border-yellow-100">
+                        <motion.div 
+                          className="bg-white/70 rounded-xl p-6 border border-yellow-100"
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+                          viewport={{ once: true, margin: "-100px" }}
+                        >
                           <h4 className="text-xl font-semibold text-gray-900 mb-3">Transition</h4>
                           <p className="text-lg text-gray-900">Winding down Mesh Platform, retiring Azure Remote Rendering</p>
-                        </div>
+                        </motion.div>
                       </div>
                     </div>
                     <div className="flex justify-center items-center">
@@ -1279,15 +2068,30 @@ export default function WhitePaperPDF() {
                   </div>
 
                   {/* Visual Comparison */}
-                  <div className="bg-gradient-to-r from-gray-50 to-slate-50 rounded-2xl p-8 border border-gray-200 mb-8">
+                  <motion.div 
+                    className="bg-gradient-to-r from-gray-50 to-slate-50 rounded-2xl p-8 border border-gray-200 mb-8"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                    viewport={{ once: true, margin: "-100px" }}
+                  >
                     <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">Google vs Microsoft: AR Strategy Comparison</h3>
                     
                     <div className="grid md:grid-cols-2 gap-8">
-                      <div className="bg-white rounded-xl p-8 border border-blue-200">
+                      <motion.div 
+                        className="bg-white rounded-xl p-8 border border-blue-200"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
                         <div className="flex items-center mb-6">
                           <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mr-4">
                             <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
                               <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                              <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                              <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                              <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
                             </svg>
                           </div>
                           <h4 className="text-2xl font-semibold text-gray-900">Google</h4>
@@ -1306,9 +2110,15 @@ export default function WhitePaperPDF() {
                             <span className="text-lg text-gray-900">Clear Android XR roadmap</span>
                           </div>
                         </div>
-                      </div>
+                      </motion.div>
                       
-                      <div className="bg-white rounded-xl p-8 border border-orange-200">
+                      <motion.div 
+                        className="bg-white rounded-xl p-8 border border-orange-200"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
                         <div className="flex items-center mb-6">
                           <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mr-4">
                             <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -1331,9 +2141,9 @@ export default function WhitePaperPDF() {
                             <span className="text-lg text-gray-900">Unclear future direction</span>
                           </div>
                         </div>
-                      </div>
+                      </motion.div>
                     </div>
-                  </div>
+                  </motion.div>
 
                   {/* AR-Focused Hardware Companies */}
                   <div className="bg-gradient-to-r from-green-50 to-teal-50 rounded-2xl p-8 border border-green-200">
@@ -1345,7 +2155,13 @@ export default function WhitePaperPDF() {
                     </div>
                     
                     <div className="grid md:grid-cols-2 gap-8 mb-8">
-                      <div className="bg-white/70 rounded-xl p-8 border border-green-100">
+                      <motion.div 
+                        className="bg-white/70 rounded-xl p-8 border border-green-100"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
                         <div className="flex items-center mb-6">
                           <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mr-4">
                             <svg className="w-8 h-8 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1372,9 +2188,15 @@ export default function WhitePaperPDF() {
                             <span className="text-lg text-gray-900">External computing devices for computationally-heavy activities</span>
                           </li>
                         </ul>
-                      </div>
+                      </motion.div>
                       
-                      <div className="bg-white/70 rounded-xl p-8 border border-green-100">
+                      <motion.div 
+                        className="bg-white/70 rounded-xl p-8 border border-green-100"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
                         <div className="flex items-center mb-6">
                           <div className="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mr-4">
                             <svg className="w-8 h-8 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1384,25 +2206,43 @@ export default function WhitePaperPDF() {
                           <h4 className="text-2xl font-semibold text-gray-900">Market Position</h4>
                         </div>
                         <div className="space-y-6">
-                          <div className="bg-green-50 rounded-lg p-6 border border-green-200">
+                          <motion.div 
+                            className="bg-green-50 rounded-lg p-6 border border-green-200"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+                            viewport={{ once: true, margin: "-100px" }}
+                          >
                             <h5 className="text-xl font-semibold text-gray-900 mb-3">Strengths</h5>
                             <p className="text-lg text-gray-900">
                               More ergonomic entertainment experience, removing device restrictions like limited screen size and poor posture
                             </p>
-                          </div>
-                          <div className="bg-yellow-50 rounded-lg p-6 border border-yellow-200">
+                          </motion.div>
+                          <motion.div 
+                            className="bg-yellow-50 rounded-lg p-6 border border-yellow-200"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
+                            viewport={{ once: true, margin: "-100px" }}
+                          >
                             <h5 className="text-xl font-semibold text-gray-900 mb-3">Limitations</h5>
                             <p className="text-lg text-gray-900">
                               Lack sophisticated built-in operating systems, limiting their potential for desk-free productivity<sup><a href="/references-future-of-ergonomic-work-white-paper" className="text-gray-900 hover:text-gray-900">22,23,30,31</a></sup>
                             </p>
-                          </div>
+                          </motion.div>
                         </div>
-                      </div>
+                      </motion.div>
                     </div>
 
                     {/* Company Comparison Cards */}
                     <div className="grid md:grid-cols-2 gap-8">
-                      <div className="bg-white rounded-xl p-8 shadow-sm border border-green-200">
+                      <motion.div 
+                        className="bg-white rounded-xl p-8 shadow-sm border border-green-200"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
                         <div className="flex items-center mb-6">
                           <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-lg flex items-center justify-center mr-4">
                             <span className="text-white font-bold text-xl">X</span>
@@ -1427,9 +2267,15 @@ export default function WhitePaperPDF() {
                             <span className="px-3 py-2 bg-green-100 text-gray-900 rounded text-base font-medium">Available</span>
                           </div>
                         </div>
-                      </div>
+                      </motion.div>
                       
-                      <div className="bg-white rounded-xl p-8 shadow-sm border border-green-200">
+                      <motion.div 
+                        className="bg-white rounded-xl p-8 shadow-sm border border-green-200"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
                         <div className="flex items-center mb-6">
                           <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mr-4">
                             <span className="text-white font-bold text-xl">V</span>
@@ -1454,7 +2300,7 @@ export default function WhitePaperPDF() {
                             <span className="px-3 py-2 bg-green-100 text-gray-900 rounded text-base font-medium">Available</span>
                           </div>
                         </div>
-                      </div>
+                      </motion.div>
                     </div>
                   </div>
 
@@ -1468,7 +2314,13 @@ export default function WhitePaperPDF() {
                       </div>
                     
                     <div className="grid md:grid-cols-2 gap-8 mb-8">
-                      <div className="bg-white/70 rounded-xl p-8 border border-emerald-100">
+                      <motion.div 
+                        className="bg-white/70 rounded-xl p-8 border border-emerald-100"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
                         <div className="flex items-center mb-6">
                           <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mr-4">
                             <svg className="w-8 h-8 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1494,9 +2346,15 @@ export default function WhitePaperPDF() {
                             <span className="text-lg text-gray-900">Provide foundational technologies for other AR companies</span>
                           </li>
                         </ul>
-                      </div>
+                      </motion.div>
                       
-                      <div className="bg-white/70 rounded-xl p-8 border border-emerald-100">
+                      <motion.div 
+                        className="bg-white/70 rounded-xl p-8 border border-emerald-100"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
                         <div className="flex items-center mb-6">
                           <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mr-4">
                             <svg className="w-8 h-8 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1506,25 +2364,43 @@ export default function WhitePaperPDF() {
                           <h4 className="text-2xl font-semibold text-gray-900">Strategic Partnerships</h4>
                         </div>
                         <div className="space-y-6">
-                          <div className="bg-blue-50 rounded-lg p-6 border border-blue-200">
+                          <motion.div 
+                            className="bg-blue-50 rounded-lg p-6 border border-blue-200"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+                            viewport={{ once: true, margin: "-100px" }}
+                          >
                             <h5 className="text-xl font-semibold text-gray-900 mb-3">Samsung + Google</h5>
                             <p className="text-lg text-gray-900">
                               Collaborating to bring smart glasses and XR headset to market in 2024
                             </p>
-                          </div>
-                          <div className="bg-purple-50 rounded-lg p-6 border border-purple-200">
+                          </motion.div>
+                          <motion.div 
+                            className="bg-purple-50 rounded-lg p-6 border border-purple-200"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
+                            viewport={{ once: true, margin: "-100px" }}
+                          >
                             <h5 className="text-xl font-semibold text-gray-900 mb-3">Component Ecosystem</h5>
                             <p className="text-lg text-gray-900">
                               Sony and Qualcomm provide critical hardware components used across the industry
                             </p>
-                          </div>
+                          </motion.div>
                         </div>
-                    </div>
+                    </motion.div>
                   </div>
 
                     {/* Company Profiles */}
                     <div className="grid md:grid-cols-3 gap-8">
-                      <div className="bg-white rounded-xl p-8 shadow-sm border border-emerald-200">
+                      <motion.div 
+                        className="bg-white rounded-xl p-8 shadow-sm border border-emerald-200"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
                         <div className="flex items-center mb-6">
                           <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mr-4">
                             <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -1547,9 +2423,15 @@ export default function WhitePaperPDF() {
                             <p className="text-base text-gray-900">Consumer electronics leader</p>
                           </div>
                         </div>
-                      </div>
+                      </motion.div>
                       
-                      <div className="bg-white rounded-xl p-8 shadow-sm border border-emerald-200">
+                      <motion.div 
+                        className="bg-white rounded-xl p-8 shadow-sm border border-emerald-200"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
                         <div className="flex items-center mb-6">
                           <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-pink-500 rounded-lg flex items-center justify-center mr-4">
                             <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -1572,9 +2454,15 @@ export default function WhitePaperPDF() {
                             <p className="text-base text-gray-900">Display technology supplier</p>
                           </div>
                         </div>
-                      </div>
+                      </motion.div>
                       
-                      <div className="bg-white rounded-xl p-8 shadow-sm border border-emerald-200">
+                      <motion.div 
+                        className="bg-white rounded-xl p-8 shadow-sm border border-emerald-200"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
                         <div className="flex items-center mb-6">
                           <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-teal-500 rounded-lg flex items-center justify-center mr-4">
                             <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -1597,7 +2485,7 @@ export default function WhitePaperPDF() {
                             <p className="text-base text-gray-900">Mobile processor leader</p>
                           </div>
                         </div>
-                      </div>
+                      </motion.div>
                     </div>
 
                     {/* Industry Impact Summary */}
@@ -1624,7 +2512,13 @@ export default function WhitePaperPDF() {
                     </div>
                     
                     <div className="grid md:grid-cols-2 gap-8">
-                      <div className="bg-white/70 rounded-xl p-8 border border-orange-100">
+                      <motion.div 
+                        className="bg-white/70 rounded-xl p-8 border border-orange-100"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
                         <div className="flex items-center mb-6">
                           <div className="w-16 h-16 bg-gradient-to-br from-gray-800 to-gray-600 rounded-lg flex items-center justify-center mr-4">
                             <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -1637,18 +2531,36 @@ export default function WhitePaperPDF() {
                           Apple is among the most intriguing players in the AR space with the potential to enable desk-free work. Its Vision Pro headset runs on VisionOS and integrates seamlessly into the existing Apple ecosystem.
                         </p>
                         <div className="space-y-4">
-                          <div className="bg-green-50 rounded-lg p-4 border border-green-200">
+                          <motion.div 
+                            className="bg-green-50 rounded-lg p-4 border border-green-200"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+                            viewport={{ once: true, margin: "-100px" }}
+                          >
                             <h5 className="text-lg font-semibold text-gray-900 mb-2">Strengths</h5>
                             <p className="text-base text-gray-900">Ecosystem integration, iCloud sync, established user base</p>
-                          </div>
-                          <div className="bg-yellow-50 rounded-lg p-4 border border-yellow-200">
+                          </motion.div>
+                          <motion.div 
+                            className="bg-yellow-50 rounded-lg p-4 border border-yellow-200"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+                            viewport={{ once: true, margin: "-100px" }}
+                          >
                             <h5 className="text-lg font-semibold text-gray-900 mb-2">Challenges</h5>
                             <p className="text-base text-gray-900">Heavy weight, virtual keyboard limitations<sup><a href="/references-future-of-ergonomic-work-white-paper" className="text-gray-900 hover:text-gray-900">76</a></sup></p>
-                          </div>
+                          </motion.div>
                         </div>
-                      </div>
+                      </motion.div>
                       
-                      <div className="bg-white/70 rounded-xl p-8 border border-orange-100">
+                      <motion.div 
+                        className="bg-white/70 rounded-xl p-8 border border-orange-100"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
                         <div className="flex items-center mb-6">
                           <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-lg flex items-center justify-center mr-4">
                             <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -1661,16 +2573,28 @@ export default function WhitePaperPDF() {
                           Meta has invested billions into Reality Labs and believes AR glasses are the computing device of the future. Their Orion prototype provides an impressive foundation for commercial AR glasses.
                         </p>
                         <div className="space-y-4">
-                          <div className="bg-blue-50 rounded-lg p-4 border border-blue-200">
+                          <motion.div 
+                            className="bg-blue-50 rounded-lg p-4 border border-blue-200"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
+                            viewport={{ once: true, margin: "-100px" }}
+                          >
                             <h5 className="text-lg font-semibold text-gray-900 mb-2">Innovation</h5>
                             <p className="text-base text-gray-900">Neural EMG wristband, holographic calls, multi-window displays<sup><a href="/references-future-of-ergonomic-work-white-paper" className="text-gray-900 hover:text-gray-900">15,16,17,18</a></sup></p>
-                      </div>
-                          <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                          </motion.div>
+                          <motion.div 
+                            className="bg-gray-50 rounded-lg p-4 border border-gray-200"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.7, ease: "easeOut" }}
+                            viewport={{ once: true, margin: "-100px" }}
+                          >
                             <h5 className="text-lg font-semibold text-gray-800 mb-2">Status</h5>
                             <p className="text-base text-gray-900">Orion prototype announced, working toward commercial release</p>
-                          </div>
+                          </motion.div>
                         </div>
-                      </div>
+                      </motion.div>
                     </div>
                   </div>
 
@@ -1684,7 +2608,13 @@ export default function WhitePaperPDF() {
                     </div>
                     
                     <div className="grid md:grid-cols-2 gap-8">
-                      <div className="bg-white/70 rounded-xl p-8 border border-purple-100">
+                      <motion.div 
+                        className="bg-white/70 rounded-xl p-8 border border-purple-100"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
                         <div className="flex items-center mb-6">
                           <div className="w-16 h-16 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-lg flex items-center justify-center mr-4">
                             <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -1697,18 +2627,36 @@ export default function WhitePaperPDF() {
                           Snap has been dedicated to AR for over a decade, with Snapchat filters laying the foundation for their Spectacles series running on proprietary Snap OS.
                         </p>
                         <div className="space-y-4">
-                          <div className="bg-yellow-50 rounded-lg p-4 border border-yellow-200">
+                          <motion.div 
+                            className="bg-yellow-50 rounded-lg p-4 border border-yellow-200"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+                            viewport={{ once: true, margin: "-100px" }}
+                          >
                             <h5 className="text-lg font-semibold text-gray-900 mb-2">Focus</h5>
                             <p className="text-base text-gray-900">Social interactions and creativity, sophisticated AR technology<sup><a href="/references-future-of-ergonomic-work-white-paper" className="text-gray-900 hover:text-gray-900">26,27,28,29</a></sup></p>
-                          </div>
-                          <div className="bg-blue-50 rounded-lg p-4 border border-blue-200">
+                          </motion.div>
+                          <motion.div 
+                            className="bg-blue-50 rounded-lg p-4 border border-blue-200"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+                            viewport={{ once: true, margin: "-100px" }}
+                          >
                             <h5 className="text-lg font-semibold text-gray-900 mb-2">Development</h5>
                             <p className="text-base text-gray-900">Considering raising outside funds for further AR glasses development</p>
-                          </div>
+                          </motion.div>
                         </div>
-                      </div>
+                      </motion.div>
                       
-                      <div className="bg-white/70 rounded-xl p-8 border border-purple-100">
+                      <motion.div 
+                        className="bg-white/70 rounded-xl p-8 border border-purple-100"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
                         <div className="flex items-center mb-6">
                           <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-indigo-500 rounded-lg flex items-center justify-center mr-4">
                             <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1721,16 +2669,28 @@ export default function WhitePaperPDF() {
                           Magic Leap has been at the forefront of AR technology with enterprise-focused headsets, but has recently shifted toward licensing its technology.
                         </p>
                         <div className="space-y-4">
-                          <div className="bg-purple-50 rounded-lg p-4 border border-purple-200">
+                          <motion.div 
+                            className="bg-purple-50 rounded-lg p-4 border border-purple-200"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
+                            viewport={{ once: true, margin: "-100px" }}
+                          >
                             <h5 className="text-lg font-semibold text-gray-900 mb-2">Specialty</h5>
                             <p className="text-base text-gray-900">Enterprise usage, medical training, optics expertise<sup><a href="/references-future-of-ergonomic-work-white-paper" className="text-gray-900 hover:text-gray-900">77,78,79,80</a></sup></p>
-                          </div>
-                          <div className="bg-green-50 rounded-lg p-4 border border-green-200">
+                          </motion.div>
+                          <motion.div 
+                            className="bg-green-50 rounded-lg p-4 border border-green-200"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.7, ease: "easeOut" }}
+                            viewport={{ once: true, margin: "-100px" }}
+                          >
                             <h5 className="text-lg font-semibold text-gray-900 mb-2">Partnerships</h5>
                             <p className="text-base text-gray-900">Strategic partner with Google, interest from Meta</p>
-                          </div>
+                          </motion.div>
                         </div>
-                      </div>
+                      </motion.div>
                     </div>
                   </div>
 
@@ -1743,7 +2703,13 @@ export default function WhitePaperPDF() {
                       </p>
                     </div>
                     
-                    <div className="bg-white/70 rounded-xl p-8 border border-teal-100">
+                    <motion.div 
+                      className="bg-white/70 rounded-xl p-8 border border-teal-100"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+                      viewport={{ once: true, margin: "-100px" }}
+                    >
                       <div className="flex items-center mb-6">
                         <div className="w-16 h-16 bg-gradient-to-br from-teal-500 to-cyan-500 rounded-lg flex items-center justify-center mr-4">
                           <span className="text-white font-bold text-2xl">R</span>
@@ -1754,16 +2720,28 @@ export default function WhitePaperPDF() {
                         A subsidiary of TCL Electronics, RayNeo has glasses that function as external displays (similar to Xreal and Viture) but also offers the X2 with its own operating system.
                       </p>
                       <div className="grid md:grid-cols-2 gap-6">
-                        <div className="bg-teal-50 rounded-lg p-4 border border-teal-200">
+                        <motion.div 
+                          className="bg-teal-50 rounded-lg p-4 border border-teal-200"
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+                          viewport={{ once: true, margin: "-100px" }}
+                        >
                           <h5 className="text-lg font-semibold text-gray-900 mb-2">Product Range</h5>
                           <p className="text-base text-gray-900">External display glasses + X2 with proprietary OS<sup><a href="/references-future-of-ergonomic-work-white-paper" className="text-gray-900 hover:text-gray-900">81</a></sup></p>
-                        </div>
-                        <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                        </motion.div>
+                        <motion.div 
+                          className="bg-gray-50 rounded-lg p-4 border border-gray-200"
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+                          viewport={{ once: true, margin: "-100px" }}
+                        >
                           <h5 className="text-lg font-semibold text-gray-800 mb-2">Position</h5>
                           <p className="text-base text-gray-900">Less sophisticated OS compared to Apple, Snap, and Magic Leap</p>
-                        </div>
+                        </motion.div>
                       </div>
-                    </div>
+                    </motion.div>
                   </div>
 
                   {/* Up and Coming Players */}
@@ -1776,7 +2754,13 @@ export default function WhitePaperPDF() {
                     </div>
                     
                     <div className="grid md:grid-cols-2 gap-8">
-                      <div className="bg-white/70 rounded-xl p-8 border border-indigo-100">
+                      <motion.div 
+                        className="bg-white/70 rounded-xl p-8 border border-indigo-100"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
                         <div className="flex items-center mb-6">
                           <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-yellow-500 rounded-lg flex items-center justify-center mr-4">
                             <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -1789,7 +2773,13 @@ export default function WhitePaperPDF() {
                           Amazon is actively developing AR glasses, though details about their specific approach and timeline remain limited. Given their expertise in cloud computing, AI, and consumer electronics, they could bring significant resources and infrastructure to the AR glasses market.
                         </p>
                         <div className="space-y-4">
-                          <div className="bg-orange-50 rounded-lg p-4 border border-orange-200">
+                          <motion.div 
+                            className="bg-orange-50 rounded-lg p-4 border border-orange-200"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+                            viewport={{ once: true, margin: "-100px" }}
+                          >
                             <h5 className="text-lg font-semibold text-gray-900 mb-2">Key Strengths</h5>
                             <ul className="text-base text-gray-900 space-y-2">
                               <li>Cloud computing infrastructure (AWS)</li>
@@ -1797,19 +2787,37 @@ export default function WhitePaperPDF() {
                               <li>Consumer electronics experience</li>
                               <li>Massive financial resources</li>
                             </ul>
-                      </div>
-                          <div className="bg-blue-50 rounded-lg p-4 border border-blue-200">
+                          </motion.div>
+                          <motion.div 
+                            className="bg-blue-50 rounded-lg p-4 border border-blue-200"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+                            viewport={{ once: true, margin: "-100px" }}
+                          >
                             <h5 className="text-lg font-semibold text-gray-900 mb-2">Market Potential</h5>
                             <p className="text-base text-gray-900">Could leverage existing Alexa ecosystem and AWS infrastructure for AR glasses development</p>
-                          </div>
-                          <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                          </motion.div>
+                          <motion.div 
+                            className="bg-gray-50 rounded-lg p-4 border border-gray-200"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
+                            viewport={{ once: true, margin: "-100px" }}
+                          >
                             <h5 className="text-lg font-semibold text-gray-800 mb-2">Status</h5>
                             <p className="text-base text-gray-900">Active development, limited public details available</p>
-                          </div>
+                          </motion.div>
                         </div>
-                      </div>
+                      </motion.div>
                       
-                      <div className="bg-white/70 rounded-xl p-8 border border-indigo-100">
+                      <motion.div 
+                        className="bg-white/70 rounded-xl p-8 border border-indigo-100"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
                         <div className="flex items-center mb-6">
                           <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-teal-500 rounded-lg flex items-center justify-center mr-4">
                             <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -1822,7 +2830,13 @@ export default function WhitePaperPDF() {
                           OpenAI has a plan for rolling out unique devices designed to increase the speed and context with which humans can interact with AI. While they're not building AR glasses directly, they have the capacity and funds to impact the space significantly.
                         </p>
                         <div className="space-y-4">
-                          <div className="bg-green-50 rounded-lg p-4 border border-green-200">
+                          <motion.div 
+                            className="bg-green-50 rounded-lg p-4 border border-green-200"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
+                            viewport={{ once: true, margin: "-100px" }}
+                          >
                             <h5 className="text-lg font-semibold text-gray-900 mb-2">AI Leadership</h5>
                             <ul className="text-base text-gray-900 space-y-2">
                               <li>Advanced AI and language models</li>
@@ -1830,21 +2844,39 @@ export default function WhitePaperPDF() {
                               <li>Substantial funding and resources</li>
                               <li>Innovation in device interfaces</li>
                             </ul>
-                      </div>
-                          <div className="bg-purple-50 rounded-lg p-4 border border-purple-200">
+                          </motion.div>
+                          <motion.div 
+                            className="bg-purple-50 rounded-lg p-4 border border-purple-200"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.7, ease: "easeOut" }}
+                            viewport={{ once: true, margin: "-100px" }}
+                          >
                             <h5 className="text-lg font-semibold text-gray-900 mb-2">Market Impact</h5>
                             <p className="text-base text-gray-900">Could influence AR glasses development through AI integration and human-computer interaction innovations</p>
-                          </div>
-                          <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                          </motion.div>
+                          <motion.div 
+                            className="bg-gray-50 rounded-lg p-4 border border-gray-200"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.9, ease: "easeOut" }}
+                            viewport={{ once: true, margin: "-100px" }}
+                          >
                             <h5 className="text-lg font-semibold text-gray-800 mb-2">Approach</h5>
                             <p className="text-base text-gray-900">Different device strategy, but potential to shape AR glasses AI capabilities</p>
-                          </div>
+                          </motion.div>
                         </div>
-                      </div>
+                      </motion.div>
                     </div>
 
                     {/* Market Impact Summary */}
-                    <div className="mt-8 bg-gradient-to-r from-indigo-100 to-purple-100 rounded-xl p-8 border border-indigo-200">
+                    <motion.div 
+                      className="mt-8 bg-gradient-to-r from-indigo-100 to-purple-100 rounded-xl p-8 border border-indigo-200"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+                      viewport={{ once: true, margin: "-100px" }}
+                    >
                       <div className="flex items-center mb-6">
                         <svg className="w-8 h-8 text-gray-900 mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -1855,48 +2887,92 @@ export default function WhitePaperPDF() {
                         These emerging players represent significant potential for disruption in the AR glasses market. Amazon's cloud infrastructure and consumer electronics expertise could enable new approaches to AR computing, while OpenAI's AI leadership could fundamentally reshape how humans interact with AR devices through more natural, intelligent interfaces.
                       </p>
                       <div className="grid md:grid-cols-2 gap-6">
-                        <div className="bg-white/70 rounded-lg p-6 border border-indigo-100">
+                        <motion.div 
+                          className="bg-white/70 rounded-lg p-6 border border-indigo-100"
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+                          viewport={{ once: true, margin: "-100px" }}
+                        >
                           <h5 className="text-lg font-semibold text-gray-900 mb-3">Infrastructure Advantage</h5>
                           <p className="text-base text-gray-900">Amazon's AWS could provide the cloud computing backbone for lightweight AR glasses with powerful remote processing capabilities</p>
-                        </div>
-                        <div className="bg-white/70 rounded-lg p-6 border border-purple-100">
+                        </motion.div>
+                        <motion.div 
+                          className="bg-white/70 rounded-lg p-6 border border-purple-100"
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+                          viewport={{ once: true, margin: "-100px" }}
+                        >
                           <h5 className="text-lg font-semibold text-gray-900 mb-3">AI Integration</h5>
                           <p className="text-base text-gray-900">OpenAI's innovations in human-AI interaction could set new standards for voice and gesture interfaces in AR glasses</p>
-                        </div>
+                        </motion.div>
                       </div>
-                    </div>
+                    </motion.div>
                   </div>
                 </div>
 
                 {/* Industry Adoption Metrics */}
-                <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl p-8 mb-8 border border-emerald-200">
-                  <div className="text-center mb-8">
+                <motion.div 
+                  className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl p-8 mb-8 border border-emerald-200"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
+                  viewport={{ once: true, margin: "-100px" }}
+                >
+                  <motion.div 
+                    className="text-center mb-8"
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
+                    viewport={{ once: true, margin: "-100px" }}
+                  >
                     <h3 className="text-3xl font-bold text-gray-900 mb-6">Current Industry Adoption</h3>
                     <p className="text-xl text-gray-900 max-w-3xl mx-auto">
                       AR glasses are gaining traction across key industries, with healthcare leading adoption and manufacturing showing strong enterprise uptake
                     </p>
-                        </div>
+                  </motion.div>
                   
                   <div className="grid md:grid-cols-3 gap-8 mb-8">
-                    <div className="bg-white rounded-xl p-8 shadow-lg border border-emerald-200">
-                      <div className="flex items-center mb-6">
+                    <motion.div 
+                      className="bg-white rounded-xl p-8 shadow-lg border border-emerald-200"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+                      viewport={{ once: true, margin: "-100px" }}
+                    >
+                      <motion.div 
+                        className="flex items-center mb-6"
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.5, delay: 0.5, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
                         <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-pink-500 rounded-lg flex items-center justify-center mr-4">
                           <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                           </svg>
                         </div>
                         <h4 className="text-2xl font-semibold text-gray-900">Healthcare</h4>
-                      </div>
+                      </motion.div>
                       
                       <div className="mb-6">
                         <div className="flex items-center justify-between mb-3">
                           <span className="text-lg font-medium text-gray-900">Adoption Rate</span>
-                          <span className="text-4xl font-bold text-gray-900">23%</span>
-                    </div>
+                          <span className="text-4xl font-bold text-gray-900">
+                            <AnimatedCounter start={0} end={23} duration={2000} suffix="%" />
+                          </span>
+                        </div>
                         <div className="w-full bg-gray-200 rounded-full h-3">
-                          <div className="bg-gradient-to-r from-red-500 to-pink-500 h-3 rounded-full" style={{width: '23%'}}></div>
+                          <motion.div 
+                            className="bg-gradient-to-r from-red-500 to-pink-500 h-3 rounded-full"
+                            initial={{ width: 0 }}
+                            whileInView={{ width: '23%' }}
+                            transition={{ duration: 2, delay: 0.6, ease: "easeOut" }}
+                            viewport={{ once: true, margin: "-100px" }}
+                          />
                         </div>
-                        </div>
+                      </div>
                       
                       <div className="space-y-4">
                         <div className="bg-red-50 rounded-lg p-4 border border-red-200">
@@ -1911,27 +2987,47 @@ export default function WhitePaperPDF() {
                         <div className="bg-blue-50 rounded-lg p-4 border border-blue-200">
                           <h5 className="text-lg font-semibold text-gray-900 mb-2">Leading Devices</h5>
                           <p className="text-base text-gray-900">Magic Leap 2 and HoloLens 2</p>
-                    </div>
                         </div>
-                        </div>
+                      </div>
+                    </motion.div>
                     
-                    <div className="bg-white rounded-xl p-8 shadow-lg border border-emerald-200">
-                      <div className="flex items-center mb-6">
+                    <motion.div 
+                      className="bg-white rounded-xl p-8 shadow-lg border border-emerald-200"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+                      viewport={{ once: true, margin: "-100px" }}
+                    >
+                      <motion.div 
+                        className="flex items-center mb-6"
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.5, delay: 0.7, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
                         <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-lg flex items-center justify-center mr-4">
                           <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
                           </svg>
-                      </div>
+                        </div>
                         <h4 className="text-2xl font-semibold text-gray-900">Manufacturing</h4>
-                    </div>
+                      </motion.div>
                       
                       <div className="mb-6">
                         <div className="flex items-center justify-between mb-3">
                           <span className="text-lg font-medium text-gray-900">Adoption Rate</span>
-                          <span className="text-4xl font-bold text-gray-900">18%</span>
+                          <span className="text-4xl font-bold text-gray-900">
+                            <AnimatedCounter start={0} end={18} duration={2000} suffix="%" />
+                          </span>
                         </div>
                         <div className="w-full bg-gray-200 rounded-full h-3">
-                          <div className="bg-gradient-to-r from-blue-500 to-indigo-500 h-3 rounded-full" style={{width: '18%'}}></div>
+                          <motion.div 
+                            className="bg-gradient-to-r from-blue-500 to-indigo-500 h-3 rounded-full"
+                            initial={{ width: 0 }}
+                            whileInView={{ width: '18%' }}
+                            transition={{ duration: 2, delay: 0.8, ease: "easeOut" }}
+                            viewport={{ once: true, margin: "-100px" }}
+                          />
                         </div>
                       </div>
                       
@@ -1950,25 +3046,45 @@ export default function WhitePaperPDF() {
                           <p className="text-base text-gray-900">Microsoft HoloLens 2 dominant</p>
                         </div>
                       </div>
-                    </div>
+                    </motion.div>
                     
-                    <div className="bg-white rounded-xl p-8 shadow-lg border border-emerald-200">
-                      <div className="flex items-center mb-6">
+                    <motion.div 
+                      className="bg-white rounded-xl p-8 shadow-lg border border-emerald-200"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
+                      viewport={{ once: true, margin: "-100px" }}
+                    >
+                      <motion.div 
+                        className="flex items-center mb-6"
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.5, delay: 0.9, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
                         <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-teal-500 rounded-lg flex items-center justify-center mr-4">
                           <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                           </svg>
                         </div>
                         <h4 className="text-2xl font-semibold text-gray-900">Education</h4>
-                      </div>
+                      </motion.div>
                       
                       <div className="mb-6">
                         <div className="flex items-center justify-between mb-3">
                           <span className="text-lg font-medium text-gray-900">Adoption Rate</span>
-                          <span className="text-4xl font-bold text-gray-900">12%</span>
+                          <span className="text-4xl font-bold text-gray-900">
+                            <AnimatedCounter start={0} end={12} duration={2000} suffix="%" />
+                          </span>
                         </div>
                         <div className="w-full bg-gray-200 rounded-full h-3">
-                          <div className="bg-gradient-to-r from-green-500 to-teal-500 h-3 rounded-full" style={{width: '12%'}}></div>
+                          <motion.div 
+                            className="bg-gradient-to-r from-green-500 to-teal-500 h-3 rounded-full"
+                            initial={{ width: 0 }}
+                            whileInView={{ width: '12%' }}
+                            transition={{ duration: 2, delay: 1.0, ease: "easeOut" }}
+                            viewport={{ once: true, margin: "-100px" }}
+                          />
                         </div>
                       </div>
                       
@@ -1987,33 +3103,63 @@ export default function WhitePaperPDF() {
                           <p className="text-base text-gray-900">Mixed device ecosystem across vendors</p>
                         </div>
                       </div>
-                    </div>
+                    </motion.div>
                   </div>
 
                   {/* Adoption Trends Summary */}
-                  <div className="bg-gradient-to-r from-emerald-100 to-teal-100 rounded-xl p-8 border border-emerald-200">
-                    <div className="flex items-center mb-6">
+                  <motion.div 
+                    className="bg-gradient-to-r from-emerald-100 to-teal-100 rounded-xl p-8 border border-emerald-200"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 1.2, ease: "easeOut" }}
+                    viewport={{ once: true, margin: "-100px" }}
+                  >
+                    <motion.div 
+                      className="flex items-center mb-6"
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.5, delay: 1.3, ease: "easeOut" }}
+                      viewport={{ once: true, margin: "-100px" }}
+                    >
                       <svg className="w-8 h-8 text-gray-900 mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                       </svg>
                       <h4 className="text-2xl font-semibold text-gray-900">Adoption Trends & Insights</h4>
-                    </div>
+                    </motion.div>
                     <div className="grid md:grid-cols-3 gap-6">
-                      <div className="bg-white/70 rounded-lg p-6 border border-emerald-100">
+                      <motion.div 
+                        className="bg-white/70 rounded-lg p-6 border border-emerald-100"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 1.4, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
                         <h5 className="text-lg font-semibold text-gray-900 mb-3">Healthcare Leads</h5>
                         <p className="text-base text-gray-900">Highest adoption due to clear ROI in surgical precision and training effectiveness</p>
-                      </div>
-                      <div className="bg-white/70 rounded-lg p-6 border border-emerald-100">
+                      </motion.div>
+                      <motion.div 
+                        className="bg-white/70 rounded-lg p-6 border border-emerald-100"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 1.6, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
                         <h5 className="text-lg font-semibold text-gray-900 mb-3">Enterprise Focus</h5>
                         <p className="text-base text-gray-900">Manufacturing shows strong enterprise adoption with Microsoft HoloLens 2 dominance</p>
-                      </div>
-                      <div className="bg-white/70 rounded-lg p-6 border border-emerald-100">
+                      </motion.div>
+                      <motion.div 
+                        className="bg-white/70 rounded-lg p-6 border border-emerald-100"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 1.8, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
                         <h5 className="text-lg font-semibold text-gray-900 mb-3">Growth Potential</h5>
                         <p className="text-base text-gray-900">Education sector shows early adoption with mixed device ecosystem indicating market maturity</p>
-                      </div>
+                      </motion.div>
                     </div>
-                  </div>
-                </div>
+                  </motion.div>
+                </motion.div>
 
                 <div className="grid md:grid-cols-2 gap-8 mt-8">
                   <div className="bg-gradient-to-r from-gray-100 to-slate-100 rounded-xl p-6 border border-gray-200">
@@ -2052,69 +3198,111 @@ export default function WhitePaperPDF() {
           <section id="next-steps" className="mb-24">
             <div className="bg-white rounded-2xl shadow-xl border border-[#A5DAD8]/30 p-10 mb-12">
               <div className="text-center mb-12">
-                <div className="inline-flex items-center px-4 py-2 rounded-full bg-indigo-100 text-gray-900 text-base font-medium mb-6">
+                <div className="inline-flex items-center px-4 py-2 rounded-full bg-yellow-100 text-yellow-600 text-base font-medium mb-6">
                   <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                   Part 5: Next Steps
                 </div>
                 <h2 className="text-4xl font-bold text-gray-900 mb-6">Three Critical Paths to Desk-Free Productivity</h2>
-                <blockquote className="text-2xl font-semibold text-gray-900 italic border-l-4 border-indigo-500 pl-6 my-8 max-w-4xl mx-auto">
+                <blockquote className="text-2xl font-semibold text-gray-900 italic border-l-4 border-yellow-500 pl-6 my-8 max-w-4xl mx-auto">
                   The future of AR glasses isn't just about what's possible—it's about what we need to build next.
                 </blockquote>
               </div>
 
               <div className="prose prose-lg max-w-none">
                 {/* Screenshot Component 8: The Path Forward Overview */}
-                <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-2xl p-8 mb-8 border border-blue-200">
+                <motion.div 
+                  className="bg-gradient-to-r from-yellow-50 to-yellow-100 rounded-2xl p-8 mb-8 border border-yellow-200"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+                  viewport={{ once: true, margin: "-100px" }}
+                >
                   <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">The Path Forward</h3>
                   <p className="text-lg text-gray-900 text-center mb-8 leading-relaxed">
                     We have identified three potential next steps and opportunities to prioritize, as well as how to potentially accomplish them, in order for AR glasses to be useful enough to enable people to perform tasks away from their desks.
                   </p>
                   <div className="grid md:grid-cols-3 gap-6">
-                    <div className="bg-white rounded-xl p-6 shadow-lg text-center">
+                    <motion.div 
+                      className="bg-white rounded-xl p-6 shadow-lg text-center"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+                      viewport={{ once: true, margin: "-100px" }}
+                    >
                       <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                         <span className="text-2xl font-bold text-gray-900">1</span>
                       </div>
                       <h4 className="text-lg font-semibold text-gray-900 mb-2">AR-Native Browsing</h4>
                       <p className="text-base text-gray-900">Spatial web experiences designed for AR</p>
-                    </div>
-                    <div className="bg-white rounded-xl p-6 shadow-lg text-center">
+                    </motion.div>
+                    <motion.div 
+                      className="bg-white rounded-xl p-6 shadow-lg text-center"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+                      viewport={{ once: true, margin: "-100px" }}
+                    >
                       <div className="w-16 h-16 bg-cyan-100 rounded-full flex items-center justify-center mx-auto mb-4">
                         <span className="text-2xl font-bold text-gray-900">2</span>
                       </div>
                       <h4 className="text-lg font-semibold text-gray-900 mb-2">AI-Powered Planning</h4>
                       <p className="text-base text-gray-900">Intelligent task distribution and battery management</p>
-                    </div>
-                    <div className="bg-white rounded-xl p-6 shadow-lg text-center">
+                    </motion.div>
+                    <motion.div 
+                      className="bg-white rounded-xl p-6 shadow-lg text-center"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
+                      viewport={{ once: true, margin: "-100px" }}
+                    >
                       <div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
                         <span className="text-2xl font-bold text-gray-900">3</span>
                       </div>
                       <h4 className="text-lg font-semibold text-gray-900 mb-2">AR-to-Computer Communication</h4>
                       <p className="text-base text-gray-900">Seamless remote computing integration</p>
-                    </div>
+                    </motion.div>
                   </div>
-                </div>
+                </motion.div>
 
                 {/* Three Critical Paths */}
                 <div className="space-y-12">
                   {/* Path 1A: AR-Native Browsing - The Vision */}
-                <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-2xl p-8 border border-blue-200 mb-8">
+                <motion.div 
+                  className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-2xl p-8 border border-blue-200 mb-8"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+                  viewport={{ once: true, margin: "-100px" }}
+                >
                   <div className="flex items-center mb-8">
                     <div className="w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center text-xl font-bold mr-4">1A</div>
                     <h3 className="text-2xl font-bold text-gray-900">AR-Native Browsing: The Vision<sup><a href="/references-future-of-ergonomic-work-white-paper" className="text-gray-900 hover:text-gray-900">38-45</a></sup></h3>
                   </div>
                   
                   {/* Inspirational Quote */}
-                  <div className="mb-8 p-6 bg-gradient-to-r from-blue-500/10 via-cyan-500/10 to-indigo-500/10 rounded-xl border border-blue-200">
+                  <motion.div 
+                    className="mb-8 p-6 bg-gradient-to-r from-blue-500/10 via-cyan-500/10 to-indigo-500/10 rounded-xl border border-blue-200"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+                    viewport={{ once: true, margin: "-100px" }}
+                  >
                     <p className="text-lg text-gray-900 italic text-center font-medium">
                       "Imagine browsing the web in 3D space, with content that understands your environment and responds to your movements."
                       </p>
-                    </div>
+                    </motion.div>
                   
                   <div className="grid md:grid-cols-2 gap-8">
                     {/* Left Column - The Vision */}
-                    <div className="flex flex-col justify-center">
+                    <motion.div 
+                      className="flex flex-col justify-center"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+                      viewport={{ once: true, margin: "-100px" }}
+                    >
                       <div className="bg-gradient-to-br from-blue-50 via-cyan-50 to-indigo-50 rounded-xl p-6 border border-blue-200 h-full relative overflow-hidden">
                         {/* Background Pattern */}
                         <div className="absolute top-0 right-0 w-32 h-32 opacity-10">
@@ -2191,11 +3379,23 @@ export default function WhitePaperPDF() {
                           </div>
                         </div>
                       </div>
-                    </div>
+                    </motion.div>
                     
                     {/* Right Column - Challenge and Opportunity Stacked */}
-                    <div className="space-y-6">
-                      <div className="bg-white/70 rounded-xl p-6 border border-red-100">
+                    <motion.div 
+                      className="space-y-6"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
+                      viewport={{ once: true, margin: "-100px" }}
+                    >
+                      <motion.div 
+                        className="bg-white/70 rounded-xl p-6 border border-red-100"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 1.0, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
                         <div className="flex items-center mb-4">
                           <div className="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center mr-3">
                             <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2207,9 +3407,15 @@ export default function WhitePaperPDF() {
                         <p className="text-gray-900">
                           Current AR devices simply display content from traditional 2D browsers, missing the opportunity to leverage AR's unique spatial and contextual capabilities for enhanced productivity.
                         </p>
-                      </div>
+                      </motion.div>
                       
-                      <div className="bg-white/70 rounded-xl p-6 border border-green-100">
+                      <motion.div 
+                        className="bg-white/70 rounded-xl p-6 border border-green-100"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 1.2, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
                         <div className="flex items-center mb-4">
                           <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-3">
                             <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2221,20 +3427,32 @@ export default function WhitePaperPDF() {
                         <p className="text-gray-900">
                         This represents a fundamental shift from traditional web browsing to spatial, contextual, and multimodal interaction paradigms that leverage the unique capabilities of AR technology.
                       </p>
-                      </div>
+                      </motion.div>
+                    </motion.div>
                     </div>
-                    </div>
-                </div>
+                </motion.div>
 
                 {/* Path 1B: AR-Native Browsing - Hardware Architecture */}
-                <div className="bg-gradient-to-r from-indigo-50 to-blue-50 rounded-2xl p-8 border border-indigo-200 mb-8">
+                <motion.div 
+                  className="bg-gradient-to-r from-indigo-50 to-blue-50 rounded-2xl p-8 border border-indigo-200 mb-8"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+                  viewport={{ once: true, margin: "-100px" }}
+                >
                   <div className="flex items-center mb-6">
                     <div className="w-12 h-12 bg-indigo-500 text-white rounded-full flex items-center justify-center text-xl font-bold mr-4">1B</div>
                     <h3 className="text-2xl font-bold text-gray-900">Hardware Architecture & Thermal Management<sup><a href="/references-future-of-ergonomic-work-white-paper" className="text-gray-900 hover:text-gray-900">38-45</a></sup></h3>
                   </div>
                   
                   <div className="grid md:grid-cols-2 gap-8">
-                    <div className="bg-white/70 rounded-xl p-6 border border-indigo-100">
+                    <motion.div 
+                      className="bg-white/70 rounded-xl p-6 border border-indigo-100"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+                      viewport={{ once: true, margin: "-100px" }}
+                    >
                       <div className="flex items-center mb-4">
                         <div className="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center mr-3">
                           <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2270,9 +3488,15 @@ export default function WhitePaperPDF() {
                           <p className="text-base text-gray-900">15-50W power budgets, dedicated graphics, 8-16GB RAM, active cooling</p>
                         </div>
                       </div>
-                    </div>
+                    </motion.div>
                     
-                    <div className="bg-white/70 rounded-xl p-6 border border-blue-100">
+                    <motion.div 
+                      className="bg-white/70 rounded-xl p-6 border border-blue-100"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+                      viewport={{ once: true, margin: "-100px" }}
+                    >
                       <div className="flex items-center mb-4">
                         <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
                           <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2309,19 +3533,31 @@ export default function WhitePaperPDF() {
                           <p className="text-base text-gray-900">Desktop-class performance with lightweight, comfortable wearables</p>
                         </div>
                       </div>
-                    </div>
+                    </motion.div>
                   </div>
-                </div>
+                </motion.div>
 
                 {/* Path 1C: AR-Native Browsing - Multimodal Input & AI */}
-                <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-8 border border-purple-200 mb-8">
+                <motion.div 
+                  className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-8 border border-purple-200 mb-8"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+                  viewport={{ once: true, margin: "-100px" }}
+                >
                   <div className="flex items-center mb-6">
                     <div className="w-12 h-12 bg-purple-500 text-white rounded-full flex items-center justify-center text-xl font-bold mr-4">1C</div>
                     <h3 className="text-2xl font-bold text-gray-900">Multimodal Input & AI Integration<sup><a href="/references-future-of-ergonomic-work-white-paper" className="text-gray-900 hover:text-gray-900">38-45</a></sup></h3>
                   </div>
                   
                   <div className="grid md:grid-cols-2 gap-8">
-                    <div className="bg-white/70 rounded-xl p-6 border border-purple-100">
+                    <motion.div 
+                      className="bg-white/70 rounded-xl p-6 border border-purple-100"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+                      viewport={{ once: true, margin: "-100px" }}
+                    >
                       <div className="flex items-center mb-4">
                         <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center mr-3">
                           <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2364,9 +3600,15 @@ export default function WhitePaperPDF() {
                           </div>
                         </div>
                       </div>
-                    </div>
+                    </motion.div>
                     
-                    <div className="bg-white/70 rounded-xl p-6 border border-pink-100">
+                    <motion.div 
+                      className="bg-white/70 rounded-xl p-6 border border-pink-100"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+                      viewport={{ once: true, margin: "-100px" }}
+                    >
                       <div className="flex items-center mb-4">
                         <div className="w-10 h-10 bg-pink-100 rounded-full flex items-center justify-center mr-3">
                           <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2418,9 +3660,9 @@ export default function WhitePaperPDF() {
                           </div>
                         </div>
                       </div>
-                    </div>
+                    </motion.div>
                   </div>
-                </div>
+                </motion.div>
 
                 {/* Path 1: AR-Native Browsing - Section B: Technical Implementation */}
                 <div className="bg-gradient-to-r from-cyan-50 to-teal-50 rounded-2xl p-8 border border-cyan-200 mb-8">
@@ -2430,8 +3672,20 @@ export default function WhitePaperPDF() {
                   </div>
                   
                   {/* Spatial Web Standards */}
-                  <div className="mb-8">
-                    <div className="bg-white/70 rounded-xl p-6 border border-blue-100">
+                  <motion.div 
+                    className="mb-8"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+                    viewport={{ once: true, margin: "-100px" }}
+                  >
+                    <motion.div 
+                      className="bg-white/70 rounded-xl p-6 border border-blue-100"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+                      viewport={{ once: true, margin: "-100px" }}
+                    >
                       <div className="flex items-center mb-4">
                         <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
                           <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2444,7 +3698,13 @@ export default function WhitePaperPDF() {
                         Building AR-native browsing demands entirely new web standards beyond traditional HTML/CSS designed for flat screens.
                       </p>
                       <div className="grid md:grid-cols-3 gap-6">
-                        <div className="bg-blue-50 rounded-lg p-6 border border-blue-200">
+                        <motion.div 
+                          className="bg-blue-50 rounded-lg p-6 border border-blue-200"
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+                          viewport={{ once: true, margin: "-100px" }}
+                        >
                           <div className="flex items-center mb-3">
                             <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3">
                               <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2454,8 +3714,14 @@ export default function WhitePaperPDF() {
                             <h5 className="text-lg font-semibold text-gray-900">WebXR APIs</h5>
                           </div>
                           <p className="text-lg text-gray-900">Enhanced APIs for true spatial content rendering</p>
-                        </div>
-                        <div className="bg-blue-50 rounded-lg p-6 border border-blue-200">
+                        </motion.div>
+                        <motion.div 
+                          className="bg-blue-50 rounded-lg p-6 border border-blue-200"
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
+                          viewport={{ once: true, margin: "-100px" }}
+                        >
                           <div className="flex items-center mb-3">
                             <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3">
                               <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2465,8 +3731,14 @@ export default function WhitePaperPDF() {
                             <h5 className="text-lg font-semibold text-gray-900">3D DOM Extensions</h5>
                           </div>
                           <p className="text-lg text-gray-900">Spatial objects with depth and physics properties</p>
-                        </div>
-                        <div className="bg-blue-50 rounded-lg p-6 border border-blue-200">
+                        </motion.div>
+                        <motion.div 
+                          className="bg-blue-50 rounded-lg p-6 border border-blue-200"
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.6, delay: 1.0, ease: "easeOut" }}
+                          viewport={{ once: true, margin: "-100px" }}
+                        >
                           <div className="flex items-center mb-3">
                             <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3">
                               <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2476,14 +3748,26 @@ export default function WhitePaperPDF() {
                             <h5 className="text-lg font-semibold text-gray-900">Spatial CSS</h5>
                           </div>
                           <p className="text-lg text-gray-900">Environmental interaction and 3D typography</p>
-                        </div>
+                        </motion.div>
                       </div>
-                    </div>
-                    </div>
+                    </motion.div>
+                    </motion.div>
                     
                   {/* Connectivity Architecture */}
-                  <div className="mb-8">
-                    <div className="bg-white/70 rounded-xl p-6 border border-green-100">
+                  <motion.div 
+                    className="mb-8"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+                    viewport={{ once: true, margin: "-100px" }}
+                  >
+                    <motion.div 
+                      className="bg-white/70 rounded-xl p-6 border border-green-100"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+                      viewport={{ once: true, margin: "-100px" }}
+                    >
                       <div className="flex items-center mb-4">
                         <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-3">
                           <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2497,7 +3781,13 @@ export default function WhitePaperPDF() {
                       </p>
                       <div className="grid md:grid-cols-2 gap-8">
                         <div className="space-y-4">
-                          <div className="bg-green-50 rounded-lg p-6 border border-green-200">
+                          <motion.div 
+                            className="bg-green-50 rounded-lg p-6 border border-green-200"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+                            viewport={{ once: true, margin: "-100px" }}
+                          >
                             <div className="flex items-center mb-3">
                               <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
                                 <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2507,8 +3797,14 @@ export default function WhitePaperPDF() {
                               <h5 className="text-lg font-semibold text-gray-900">Ultra-Low Latency</h5>
                             </div>
                             <p className="text-lg text-gray-900">&lt;5ms for display data, &lt;1ms for sensor data</p>
-                          </div>
-                          <div className="bg-green-50 rounded-lg p-6 border border-green-200">
+                          </motion.div>
+                          <motion.div 
+                            className="bg-green-50 rounded-lg p-6 border border-green-200"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
+                            viewport={{ once: true, margin: "-100px" }}
+                          >
                             <div className="flex items-center mb-3">
                               <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
                                 <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2518,10 +3814,16 @@ export default function WhitePaperPDF() {
                               <h5 className="text-lg font-semibold text-gray-900">High-Bandwidth</h5>
                             </div>
                             <p className="text-lg text-gray-900">60GHz, WiFi 7 for complex spatial data streams</p>
-                          </div>
+                          </motion.div>
                         </div>
                         <div className="space-y-4">
-                          <div className="bg-green-50 rounded-lg p-6 border border-green-200">
+                          <motion.div 
+                            className="bg-green-50 rounded-lg p-6 border border-green-200"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 1.0, ease: "easeOut" }}
+                            viewport={{ once: true, margin: "-100px" }}
+                          >
                             <div className="flex items-center mb-3">
                               <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
                                 <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2532,8 +3834,14 @@ export default function WhitePaperPDF() {
                               <h5 className="text-lg font-semibold text-gray-900">Foveated Streaming</h5>
                             </div>
                             <p className="text-lg text-gray-900">High-quality data only in user's focal area</p>
-                          </div>
-                          <div className="bg-green-50 rounded-lg p-6 border border-green-200">
+                          </motion.div>
+                          <motion.div 
+                            className="bg-green-50 rounded-lg p-6 border border-green-200"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 1.2, ease: "easeOut" }}
+                            viewport={{ once: true, margin: "-100px" }}
+                          >
                             <div className="flex items-center mb-3">
                               <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
                                 <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2543,15 +3851,27 @@ export default function WhitePaperPDF() {
                               <h5 className="text-lg font-semibold text-gray-900">Edge Computing</h5>
                             </div>
                             <p className="text-lg text-gray-900">Reduces dependency on constant internet connectivity</p>
-                          </div>
+                          </motion.div>
                         </div>
                       </div>
-                    </div>
-                  </div>
+                    </motion.div>
+                  </motion.div>
 
                   {/* Current State & Challenges */}
-                  <div className="mb-8">
-                    <div className="bg-white/70 rounded-xl p-6 border border-orange-100">
+                  <motion.div 
+                    className="mb-8"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+                    viewport={{ once: true, margin: "-100px" }}
+                  >
+                    <motion.div 
+                      className="bg-white/70 rounded-xl p-6 border border-orange-100"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+                      viewport={{ once: true, margin: "-100px" }}
+                    >
                       <div className="flex items-center mb-4">
                         <div className="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center mr-3">
                           <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2564,7 +3884,13 @@ export default function WhitePaperPDF() {
                         While some AR devices allow web browsing, the experience is neither deeply spatial, immersive, nor uniquely optimized for AR.
                       </p>
                       <div className="grid md:grid-cols-2 gap-8">
-                        <div className="bg-orange-50 rounded-lg p-6 border border-orange-200">
+                        <motion.div 
+                          className="bg-orange-50 rounded-lg p-6 border border-orange-200"
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+                          viewport={{ once: true, margin: "-100px" }}
+                        >
                           <div className="flex items-center mb-4">
                             <div className="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center mr-3">
                               <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2579,8 +3905,14 @@ export default function WhitePaperPDF() {
                             <li>UI lacks spatial optimization</li>
                             <li>Not fundamentally AR-native</li>
                           </ul>
-                        </div>
-                        <div className="bg-green-50 rounded-lg p-6 border border-green-200">
+                        </motion.div>
+                        <motion.div 
+                          className="bg-green-50 rounded-lg p-6 border border-green-200"
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
+                          viewport={{ once: true, margin: "-100px" }}
+                        >
                           <div className="flex items-center mb-4">
                             <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
                               <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2595,10 +3927,10 @@ export default function WhitePaperPDF() {
                             <li>Engineering optimization barriers</li>
                             <li>Within reach of current technology</li>
                           </ul>
-                        </div>
+                        </motion.div>
                       </div>
-                    </div>
-                  </div>
+                    </motion.div>
+                  </motion.div>
                 </div>
 
                   {/* Path 2: AI-Powered Planning - Section A: Core Intelligence */}
@@ -2615,8 +3947,20 @@ export default function WhitePaperPDF() {
                       </div>
 
                     {/* Predictive Battery Intelligence */}
-                    <div className="mb-8">
-                      <div className="bg-white/70 rounded-xl p-6 border border-blue-100">
+                    <motion.div 
+                      className="mb-8"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+                      viewport={{ once: true, margin: "-100px" }}
+                    >
+                      <motion.div 
+                        className="bg-white/70 rounded-xl p-6 border border-blue-100"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
                         <div className="flex items-center mb-4">
                           <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
                             <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2629,7 +3973,13 @@ export default function WhitePaperPDF() {
                           AI-powered daily planning requires sophisticated predictive battery analysis engines that learn individual usage patterns and deliver 95%+ accuracy in battery life predictions.
                         </p>
                         <div className="grid md:grid-cols-3 gap-6">
-                          <div className="bg-blue-50 rounded-lg p-6 border border-blue-200">
+                          <motion.div 
+                            className="bg-blue-50 rounded-lg p-6 border border-blue-200"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+                            viewport={{ once: true, margin: "-100px" }}
+                          >
                             <div className="flex items-center mb-3">
                               <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3">
                                 <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2639,8 +3989,14 @@ export default function WhitePaperPDF() {
                               <h5 className="text-lg font-semibold text-gray-900">Usage Pattern Learning</h5>
                             </div>
                             <p className="text-lg text-gray-900">Analyzes power consumption across browsing, AI queries, video calls, and navigation</p>
-                          </div>
-                          <div className="bg-blue-50 rounded-lg p-6 border border-blue-200">
+                          </motion.div>
+                          <motion.div 
+                            className="bg-blue-50 rounded-lg p-6 border border-blue-200"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
+                            viewport={{ once: true, margin: "-100px" }}
+                          >
                             <div className="flex items-center mb-3">
                               <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3">
                                 <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2650,8 +4006,14 @@ export default function WhitePaperPDF() {
                               <h5 className="text-lg font-semibold text-gray-900">Advanced Modeling</h5>
                             </div>
                             <p className="text-lg text-gray-900">Dynamic Z-Track algorithms accounting for workloads, environment, and connectivity</p>
-                          </div>
-                          <div className="bg-blue-50 rounded-lg p-6 border border-blue-200">
+                          </motion.div>
+                          <motion.div 
+                            className="bg-blue-50 rounded-lg p-6 border border-blue-200"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 1.0, ease: "easeOut" }}
+                            viewport={{ once: true, margin: "-100px" }}
+                          >
                             <div className="flex items-center mb-3">
                               <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3">
                                 <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2661,14 +4023,26 @@ export default function WhitePaperPDF() {
                               <h5 className="text-lg font-semibold text-gray-900">95%+ Accuracy</h5>
                             </div>
                             <p className="text-lg text-gray-900">High-precision battery life predictions for optimal task planning</p>
-                          </div>
+                          </motion.div>
                         </div>
-                      </div>
-                    </div>
+                      </motion.div>
+                    </motion.div>
                     
                     {/* Intelligent Task Classification */}
-                    <div className="mb-8">
-                      <div className="bg-white/70 rounded-xl p-6 border border-green-100">
+                    <motion.div 
+                      className="mb-8"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+                      viewport={{ once: true, margin: "-100px" }}
+                    >
+                      <motion.div 
+                        className="bg-white/70 rounded-xl p-6 border border-green-100"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
                         <div className="flex items-center mb-4">
                           <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-3">
                             <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2681,7 +4055,13 @@ export default function WhitePaperPDF() {
                           Automatically categorizes daily activities based on computational requirements, user context, and current battery status.
                         </p>
                         <div className="grid md:grid-cols-3 gap-6">
-                          <div className="bg-green-50 rounded-lg p-6 border border-green-200">
+                          <motion.div 
+                            className="bg-green-50 rounded-lg p-6 border border-green-200"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+                            viewport={{ once: true, margin: "-100px" }}
+                          >
                             <div className="flex items-center mb-3">
                               <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
                                 <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2692,8 +4072,14 @@ export default function WhitePaperPDF() {
                               <h5 className="text-lg font-semibold text-gray-900">AR-Native</h5>
                             </div>
                             <p className="text-lg text-gray-900">Optimal for glasses - lightweight, spatial tasks</p>
-                          </div>
-                          <div className="bg-yellow-50 rounded-lg p-6 border border-yellow-200">
+                          </motion.div>
+                          <motion.div 
+                            className="bg-yellow-50 rounded-lg p-6 border border-yellow-200"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
+                            viewport={{ once: true, margin: "-100px" }}
+                          >
                             <div className="flex items-center mb-3">
                               <div className="w-8 h-8 bg-yellow-100 rounded-full flex items-center justify-center mr-3">
                                 <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2703,8 +4089,14 @@ export default function WhitePaperPDF() {
                               <h5 className="text-lg font-semibold text-gray-900">AR-Assisted</h5>
                             </div>
                             <p className="text-lg text-gray-900">Beneficial but power-intensive - use with caution</p>
-                          </div>
-                          <div className="bg-red-50 rounded-lg p-6 border border-red-200">
+                          </motion.div>
+                          <motion.div 
+                            className="bg-red-50 rounded-lg p-6 border border-red-200"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 1.0, ease: "easeOut" }}
+                            viewport={{ once: true, margin: "-100px" }}
+                          >
                             <div className="flex items-center mb-3">
                               <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mr-3">
                                 <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2714,14 +4106,26 @@ export default function WhitePaperPDF() {
                               <h5 className="text-lg font-semibold text-gray-900">Traditional Computing</h5>
                             </div>
                             <p className="text-lg text-gray-900">Better suited for external devices - complex tasks</p>
-                          </div>
+                          </motion.div>
                         </div>
-                      </div>
-                      </div>
+                      </motion.div>
+                      </motion.div>
                       
                     {/* Voice-Centric Planning */}
-                    <div className="mb-8">
-                      <div className="bg-white/70 rounded-xl p-6 border border-purple-100">
+                    <motion.div 
+                      className="mb-8"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+                      viewport={{ once: true, margin: "-100px" }}
+                    >
+                      <motion.div 
+                        className="bg-white/70 rounded-xl p-6 border border-purple-100"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
                         <div className="flex items-center mb-4">
                           <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center mr-3">
                             <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2735,7 +4139,13 @@ export default function WhitePaperPDF() {
                         </p>
                         <div className="grid md:grid-cols-2 gap-6">
                           <div className="space-y-3">
-                            <div className="bg-purple-50 rounded-lg p-4 border border-purple-200">
+                            <motion.div 
+                              className="bg-purple-50 rounded-lg p-4 border border-purple-200"
+                              initial={{ opacity: 0, y: 20 }}
+                              whileInView={{ opacity: 1, y: 0 }}
+                              transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+                              viewport={{ once: true, margin: "-100px" }}
+                            >
                               <div className="flex items-center mb-2">
                                 <div className="w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center mr-2">
                                   <svg className="w-3 h-3 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2745,8 +4155,14 @@ export default function WhitePaperPDF() {
                                 <h5 className="font-semibold text-gray-900 text-base">Natural Queries</h5>
                               </div>
                               <p className="text-base text-gray-900">"How's my battery looking for today?" or "Can I handle another hour of AR browsing?"</p>
-                            </div>
-                            <div className="bg-purple-50 rounded-lg p-4 border border-purple-200">
+                            </motion.div>
+                            <motion.div 
+                              className="bg-purple-50 rounded-lg p-4 border border-purple-200"
+                              initial={{ opacity: 0, y: 20 }}
+                              whileInView={{ opacity: 1, y: 0 }}
+                              transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
+                              viewport={{ once: true, margin: "-100px" }}
+                            >
                               <div className="flex items-center mb-2">
                                 <div className="w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center mr-2">
                                   <svg className="w-3 h-3 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2756,10 +4172,16 @@ export default function WhitePaperPDF() {
                                 <h5 className="font-semibold text-gray-900 text-base">Productivity Integration</h5>
                               </div>
                               <p className="text-base text-gray-900">Connects with Google Calendar, Microsoft Teams for automatic task routing</p>
-                            </div>
+                            </motion.div>
                           </div>
                           <div className="space-y-3">
-                            <div className="bg-purple-50 rounded-lg p-4 border border-purple-200">
+                            <motion.div 
+                              className="bg-purple-50 rounded-lg p-4 border border-purple-200"
+                              initial={{ opacity: 0, y: 20 }}
+                              whileInView={{ opacity: 1, y: 0 }}
+                              transition={{ duration: 0.6, delay: 1.0, ease: "easeOut" }}
+                              viewport={{ once: true, margin: "-100px" }}
+                            >
                               <div className="flex items-center mb-2">
                                 <div className="w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center mr-2">
                                   <svg className="w-3 h-3 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2769,8 +4191,14 @@ export default function WhitePaperPDF() {
                                 <h5 className="font-semibold text-gray-900 text-base">Predictive Intervention</h5>
                               </div>
                               <p className="text-base text-gray-900">Identifies when meetings might exceed battery capacity and suggests strategies</p>
-                            </div>
-                            <div className="bg-purple-50 rounded-lg p-4 border border-purple-200">
+                            </motion.div>
+                            <motion.div 
+                              className="bg-purple-50 rounded-lg p-4 border border-purple-200"
+                              initial={{ opacity: 0, y: 20 }}
+                              whileInView={{ opacity: 1, y: 0 }}
+                              transition={{ duration: 0.6, delay: 1.2, ease: "easeOut" }}
+                              viewport={{ once: true, margin: "-100px" }}
+                            >
                               <div className="flex items-center mb-2">
                                 <div className="w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center mr-2">
                                   <svg className="w-3 h-3 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2780,23 +4208,47 @@ export default function WhitePaperPDF() {
                                 <h5 className="font-semibold text-gray-900 text-base">Power Impact Estimates</h5>
                               </div>
                               <p className="text-base text-gray-900">Meeting invitations include battery impact and optimal device recommendations</p>
-                            </div>
+                            </motion.div>
                           </div>
                         </div>
-                      </div>
-                    </div>
+                      </motion.div>
+                    </motion.div>
                   </div>
 
                   {/* Path 2: AI-Powered Planning - Section B: Advanced Optimization */}
-                  <div className="bg-gradient-to-r from-cyan-50 to-blue-50 rounded-2xl p-8 border border-cyan-200 mb-8">
-                    <div className="flex items-center mb-6">
+                  <motion.div 
+                    className="bg-gradient-to-r from-cyan-50 to-blue-50 rounded-2xl p-8 border border-cyan-200 mb-8"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+                    viewport={{ once: true, margin: "-100px" }}
+                  >
+                    <motion.div 
+                      className="flex items-center mb-6"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+                      viewport={{ once: true, margin: "-100px" }}
+                    >
                       <div className="w-12 h-12 bg-cyan-500 text-white rounded-full flex items-center justify-center text-xl font-bold mr-4">2B</div>
                       <h3 className="text-2xl font-bold text-gray-900">AI-Powered Planning: Advanced Optimization<sup><a href="/references-future-of-ergonomic-work-white-paper" className="text-gray-900 hover:text-gray-900">46-53</a></sup></h3>
-                    </div>
+                    </motion.div>
                     
                     {/* Morning Briefings & Energy Budgets */}
-                    <div className="mb-8">
-                      <div className="bg-white/70 rounded-xl p-6 border border-blue-100">
+                    <motion.div 
+                      className="mb-8"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+                      viewport={{ once: true, margin: "-100px" }}
+                    >
+                      <motion.div 
+                        className="bg-white/70 rounded-xl p-6 border border-blue-100"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
                         <div className="flex items-center mb-4">
                           <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
                             <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2809,7 +4261,13 @@ export default function WhitePaperPDF() {
                           AI provides personalized morning briefings analyzing calendar events, task lists, and usage patterns to create daily energy budgets.
                         </p>
                         <div className="grid md:grid-cols-2 gap-6">
-                          <div className="bg-blue-50 rounded-lg p-6 border border-blue-200">
+                          <motion.div 
+                            className="bg-blue-50 rounded-lg p-6 border border-blue-200"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 1.0, ease: "easeOut" }}
+                            viewport={{ once: true, margin: "-100px" }}
+                          >
                             <div className="flex items-center mb-3">
                               <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3">
                                 <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2819,8 +4277,14 @@ export default function WhitePaperPDF() {
                               <h5 className="text-lg font-semibold text-gray-900">Calendar Analysis</h5>
                             </div>
                             <p className="text-lg text-gray-900">Reviews upcoming meetings and events to predict power needs</p>
-                          </div>
-                          <div className="bg-blue-50 rounded-lg p-6 border border-blue-200">
+                          </motion.div>
+                          <motion.div 
+                            className="bg-blue-50 rounded-lg p-6 border border-blue-200"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 1.2, ease: "easeOut" }}
+                            viewport={{ once: true, margin: "-100px" }}
+                          >
                             <div className="flex items-center mb-3">
                               <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3">
                                 <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2830,14 +4294,26 @@ export default function WhitePaperPDF() {
                               <h5 className="text-lg font-semibold text-gray-900">Personalized Budgets</h5>
                             </div>
                             <p className="text-lg text-gray-900">Creates daily energy allocation plans based on individual patterns</p>
-                          </div>
+                          </motion.div>
                         </div>
-                      </div>
-                      </div>
+                      </motion.div>
+                    </motion.div>
                       
                     {/* Real-Time Task Routing */}
-                    <div className="mb-8">
-                      <div className="bg-white/70 rounded-xl p-6 border border-green-100">
+                    <motion.div 
+                      className="mb-8"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 1.4, ease: "easeOut" }}
+                      viewport={{ once: true, margin: "-100px" }}
+                    >
+                      <motion.div 
+                        className="bg-white/70 rounded-xl p-6 border border-green-100"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 1.6, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
                         <div className="flex items-center mb-4">
                           <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-3">
                             <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2851,7 +4327,13 @@ export default function WhitePaperPDF() {
                         </p>
                     <div className="grid md:grid-cols-2 gap-8">
                           <div className="space-y-4">
-                            <div className="bg-green-50 rounded-lg p-6 border border-green-200">
+                            <motion.div 
+                              className="bg-green-50 rounded-lg p-6 border border-green-200"
+                              initial={{ opacity: 0, y: 20 }}
+                              whileInView={{ opacity: 1, y: 0 }}
+                              transition={{ duration: 0.6, delay: 1.8, ease: "easeOut" }}
+                              viewport={{ once: true, margin: "-100px" }}
+                            >
                               <div className="flex items-center mb-3">
                                 <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
                                   <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2862,8 +4344,14 @@ export default function WhitePaperPDF() {
                                 <h5 className="text-lg font-semibold text-gray-900">AR Glasses Tasks</h5>
                               </div>
                               <p className="text-lg text-gray-900">"Email review: 15min, 3% battery" - lightweight, mobile-friendly</p>
-                            </div>
-                            <div className="bg-red-50 rounded-lg p-6 border border-red-200">
+                            </motion.div>
+                            <motion.div 
+                              className="bg-red-50 rounded-lg p-6 border border-red-200"
+                              initial={{ opacity: 0, y: 20 }}
+                              whileInView={{ opacity: 1, y: 0 }}
+                              transition={{ duration: 0.6, delay: 2.0, ease: "easeOut" }}
+                              viewport={{ once: true, margin: "-100px" }}
+                            >
                               <div className="flex items-center mb-3">
                                 <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mr-3">
                                   <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2873,10 +4361,16 @@ export default function WhitePaperPDF() {
                                 <h5 className="text-lg font-semibold text-gray-900">Computer Tasks</h5>
                               </div>
                               <p className="text-lg text-gray-900">"Excel analysis: 25% battery" - power-intensive, better on external device</p>
-                            </div>
+                            </motion.div>
                           </div>
                           <div className="space-y-4">
-                            <div className="bg-green-50 rounded-lg p-6 border border-green-200">
+                            <motion.div 
+                              className="bg-green-50 rounded-lg p-6 border border-green-200"
+                              initial={{ opacity: 0, y: 20 }}
+                              whileInView={{ opacity: 1, y: 0 }}
+                              transition={{ duration: 0.6, delay: 2.2, ease: "easeOut" }}
+                              viewport={{ once: true, margin: "-100px" }}
+                            >
                               <div className="flex items-center mb-3">
                                 <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
                                   <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2886,8 +4380,14 @@ export default function WhitePaperPDF() {
                                 <h5 className="text-lg font-semibold text-gray-900">Adaptive Distribution</h5>
                               </div>
                               <p className="text-lg text-gray-900">Automatically adjusts based on remaining capacity and scheduled activities</p>
-                            </div>
-                            <div className="bg-green-50 rounded-lg p-6 border border-green-200">
+                            </motion.div>
+                            <motion.div 
+                              className="bg-green-50 rounded-lg p-6 border border-green-200"
+                              initial={{ opacity: 0, y: 20 }}
+                              whileInView={{ opacity: 1, y: 0 }}
+                              transition={{ duration: 0.6, delay: 2.4, ease: "easeOut" }}
+                              viewport={{ once: true, margin: "-100px" }}
+                            >
                               <div className="flex items-center mb-3">
                                 <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
                                   <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2897,15 +4397,27 @@ export default function WhitePaperPDF() {
                                 <h5 className="text-lg font-semibold text-gray-900">Environmental Adaptation</h5>
                               </div>
                               <p className="text-lg text-gray-900">Factors in temperature, connectivity, and other environmental conditions</p>
-                            </div>
+                            </motion.div>
                           </div>
                         </div>
-                      </div>
-                    </div>
+                      </motion.div>
+                    </motion.div>
 
                     {/* Long-Term Battery Health */}
-                    <div className="mb-8">
-                      <div className="bg-white/70 rounded-xl p-6 border border-purple-100">
+                    <motion.div 
+                      className="mb-8"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 2.6, ease: "easeOut" }}
+                      viewport={{ once: true, margin: "-100px" }}
+                    >
+                      <motion.div 
+                        className="bg-white/70 rounded-xl p-6 border border-purple-100"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 2.8, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
                         <div className="flex items-center mb-4">
                           <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center mr-3">
                             <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2918,7 +4430,13 @@ export default function WhitePaperPDF() {
                           Advanced system monitoring that extends beyond daily planning to optimize long-term battery health and lifespan.
                         </p>
                         <div className="grid md:grid-cols-3 gap-6">
-                          <div className="bg-purple-50 rounded-lg p-6 border border-purple-200">
+                          <motion.div 
+                            className="bg-purple-50 rounded-lg p-6 border border-purple-200"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 3.0, ease: "easeOut" }}
+                            viewport={{ once: true, margin: "-100px" }}
+                          >
                             <div className="flex items-center mb-3">
                               <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mr-3">
                                 <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2928,8 +4446,14 @@ export default function WhitePaperPDF() {
                               <h5 className="text-lg font-semibold text-gray-900">Health Monitoring</h5>
                             </div>
                             <p className="text-lg text-gray-900">Tracks long-term battery health patterns and degradation</p>
-                          </div>
-                          <div className="bg-purple-50 rounded-lg p-6 border border-purple-200">
+                          </motion.div>
+                          <motion.div 
+                            className="bg-purple-50 rounded-lg p-6 border border-purple-200"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 3.2, ease: "easeOut" }}
+                            viewport={{ once: true, margin: "-100px" }}
+                          >
                             <div className="flex items-center mb-3">
                               <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mr-3">
                                 <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2939,8 +4463,14 @@ export default function WhitePaperPDF() {
                               <h5 className="text-lg font-semibold text-gray-900">Optimal Charging</h5>
                             </div>
                             <p className="text-lg text-gray-900">Suggests charging routines to extend battery lifespan</p>
-                          </div>
-                          <div className="bg-purple-50 rounded-lg p-6 border border-purple-200">
+                          </motion.div>
+                          <motion.div 
+                            className="bg-purple-50 rounded-lg p-6 border border-purple-200"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 3.4, ease: "easeOut" }}
+                            viewport={{ once: true, margin: "-100px" }}
+                          >
                             <div className="flex items-center mb-3">
                               <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mr-3">
                                 <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2950,14 +4480,26 @@ export default function WhitePaperPDF() {
                               <h5 className="text-lg font-semibold text-gray-900">Team Coordination</h5>
                             </div>
                             <p className="text-lg text-gray-900">Collaborative battery management for continuous team coverage</p>
-                          </div>
+                          </motion.div>
                         </div>
-                      </div>
-                      </div>
+                      </motion.div>
+                    </motion.div>
                       
                     {/* Intelligent Daily Companion */}
-                    <div className="mb-8">
-                      <div className="bg-white/70 rounded-xl p-6 border border-orange-100">
+                    <motion.div 
+                      className="mb-8"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 3.6, ease: "easeOut" }}
+                      viewport={{ once: true, margin: "-100px" }}
+                    >
+                      <motion.div 
+                        className="bg-white/70 rounded-xl p-6 border border-orange-100"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 3.8, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
                         <div className="flex items-center mb-4">
                           <div className="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center mr-3">
                             <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2970,7 +4512,13 @@ export default function WhitePaperPDF() {
                           The AI evolves from reactive monitoring to proactive workflow optimization, transforming AR glasses into intelligent daily companions.
                         </p>
                         <div className="grid md:grid-cols-2 gap-8">
-                          <div className="bg-orange-50 rounded-lg p-6 border border-orange-200">
+                          <motion.div 
+                            className="bg-orange-50 rounded-lg p-6 border border-orange-200"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 4.0, ease: "easeOut" }}
+                            viewport={{ once: true, margin: "-100px" }}
+                          >
                             <div className="flex items-center mb-4">
                               <div className="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center mr-3">
                                 <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2984,8 +4532,14 @@ export default function WhitePaperPDF() {
                               <li>Predicts power needs with high accuracy</li>
                               <li>Adapts to changing usage habits</li>
                             </ul>
-                          </div>
-                          <div className="bg-green-50 rounded-lg p-6 border border-green-200">
+                          </motion.div>
+                          <motion.div 
+                            className="bg-green-50 rounded-lg p-6 border border-green-200"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 4.2, ease: "easeOut" }}
+                            viewport={{ once: true, margin: "-100px" }}
+                          >
                             <div className="flex items-center mb-4">
                               <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
                                 <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2999,11 +4553,11 @@ export default function WhitePaperPDF() {
                               <li>Prevents unexpected battery depletion</li>
                               <li>Maximizes AR hardware utility</li>
                             </ul>
-                          </div>
+                          </motion.div>
                         </div>
-                      </div>
-                    </div>
-                  </div>
+                      </motion.div>
+                    </motion.div>
+                  </motion.div>
 
                   {/* Path 3: AR-to-Computer Communication - Section A: Foundation & Architecture */}
                   <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 border border-blue-200 mb-8">
@@ -3019,8 +4573,20 @@ export default function WhitePaperPDF() {
                       </div>
 
                     {/* The Instructional Tool Concept */}
-                    <div className="mb-8">
-                      <div className="bg-white/70 rounded-xl p-6 border border-blue-100">
+                    <motion.div 
+                      className="mb-8"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+                      viewport={{ once: true, margin: "-100px" }}
+                    >
+                      <motion.div 
+                        className="bg-white/70 rounded-xl p-6 border border-blue-100"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
                         <div className="flex items-center mb-4">
                           <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
                             <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -3033,7 +4599,13 @@ export default function WhitePaperPDF() {
                           While AR glasses aren't designed for heavy computation, they can serve as intelligent instructional tools that leverage more powerful external devices.
                         </p>
                         <div className="grid md:grid-cols-2 gap-6">
-                          <div className="bg-blue-50 rounded-lg p-6 border border-blue-200">
+                          <motion.div 
+                            className="bg-blue-50 rounded-lg p-6 border border-blue-200"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+                            viewport={{ once: true, margin: "-100px" }}
+                          >
                             <div className="flex items-center mb-3">
                               <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3">
                                 <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -3043,8 +4615,14 @@ export default function WhitePaperPDF() {
                               <h5 className="text-lg font-semibold text-gray-900">Send Instructions</h5>
                             </div>
                             <p className="text-lg text-gray-900">Leverage AI coding agents and powerful external devices for complex tasks</p>
-                          </div>
-                          <div className="bg-blue-50 rounded-lg p-6 border border-blue-200">
+                          </motion.div>
+                          <motion.div 
+                            className="bg-blue-50 rounded-lg p-6 border border-blue-200"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
+                            viewport={{ once: true, margin: "-100px" }}
+                          >
                             <div className="flex items-center mb-3">
                               <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3">
                                 <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -3055,14 +4633,26 @@ export default function WhitePaperPDF() {
                               <h5 className="text-lg font-semibold text-gray-900">Review & Iterate</h5>
                             </div>
                             <p className="text-lg text-gray-900">Review results and iterate on tasks away from a computer</p>
-                          </div>
+                          </motion.div>
                         </div>
-                      </div>
-                    </div>
+                      </motion.div>
+                    </motion.div>
                     
                     {/* Ultra-Low Latency Communication */}
-                    <div className="mb-8">
-                      <div className="bg-white/70 rounded-xl p-6 border border-green-100">
+                    <motion.div 
+                      className="mb-8"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 1.0, ease: "easeOut" }}
+                      viewport={{ once: true, margin: "-100px" }}
+                    >
+                      <motion.div 
+                        className="bg-white/70 rounded-xl p-6 border border-green-100"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 1.2, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
                         <div className="flex items-center mb-4">
                           <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-3">
                             <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -3075,7 +4665,13 @@ export default function WhitePaperPDF() {
                           The foundation requires ultra-low latency protocols for real-time task offloading and result streaming.
                         </p>
                         <div className="grid md:grid-cols-3 gap-6">
-                          <div className="bg-green-50 rounded-lg p-6 border border-green-200">
+                          <motion.div 
+                            className="bg-green-50 rounded-lg p-6 border border-green-200"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 1.4, ease: "easeOut" }}
+                            viewport={{ once: true, margin: "-100px" }}
+                          >
                             <div className="flex items-center mb-3">
                               <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
                                 <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -3085,8 +4681,14 @@ export default function WhitePaperPDF() {
                               <h5 className="text-lg font-semibold text-gray-900">&lt;50ms Latency</h5>
                             </div>
                             <p className="text-lg text-gray-900">End-to-end latencies using optimized wireless protocols</p>
-                          </div>
-                          <div className="bg-green-50 rounded-lg p-6 border border-green-200">
+                          </motion.div>
+                          <motion.div 
+                            className="bg-green-50 rounded-lg p-6 border border-green-200"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 1.6, ease: "easeOut" }}
+                            viewport={{ once: true, margin: "-100px" }}
+                          >
                             <div className="flex items-center mb-3">
                               <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
                                 <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -3096,8 +4698,14 @@ export default function WhitePaperPDF() {
                               <h5 className="text-lg font-semibold text-gray-900">JPEG Compression</h5>
                             </div>
                             <p className="text-lg text-gray-900">Optimized compression and dedicated network channels</p>
-                          </div>
-                          <div className="bg-green-50 rounded-lg p-6 border border-green-200">
+                          </motion.div>
+                          <motion.div 
+                            className="bg-green-50 rounded-lg p-6 border border-green-200"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 1.8, ease: "easeOut" }}
+                            viewport={{ once: true, margin: "-100px" }}
+                          >
                             <div className="flex items-center mb-3">
                               <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
                                 <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -3107,14 +4715,26 @@ export default function WhitePaperPDF() {
                               <h5 className="text-lg font-semibold text-gray-900">Custom Protocols</h5>
                             </div>
                             <p className="text-lg text-gray-900">Specialized protocols designed for AR workload distribution</p>
-                          </div>
+                          </motion.div>
                         </div>
-                      </div>
-                      </div>
+                      </motion.div>
+                    </motion.div>
                       
                     {/* Advanced Communication Protocols */}
-                    <div className="mb-8">
-                      <div className="bg-white/70 rounded-xl p-6 border border-purple-100">
+                    <motion.div 
+                      className="mb-8"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 2.0, ease: "easeOut" }}
+                      viewport={{ once: true, margin: "-100px" }}
+                    >
+                      <motion.div 
+                        className="bg-white/70 rounded-xl p-6 border border-purple-100"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 2.2, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
                         <div className="flex items-center mb-4">
                           <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center mr-3">
                             <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -3127,7 +4747,13 @@ export default function WhitePaperPDF() {
                           Multiple communication technologies work together to enable seamless AR-to-computer communication.
                         </p>
                         <div className="grid md:grid-cols-3 gap-6">
-                          <div className="bg-purple-50 rounded-lg p-6 border border-purple-200">
+                          <motion.div 
+                            className="bg-purple-50 rounded-lg p-6 border border-purple-200"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 2.4, ease: "easeOut" }}
+                            viewport={{ once: true, margin: "-100px" }}
+                          >
                             <div className="flex items-center mb-3">
                               <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mr-3">
                                 <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -3137,8 +4763,14 @@ export default function WhitePaperPDF() {
                               <h5 className="text-lg font-semibold text-gray-900">5G/WiFi 6E</h5>
                             </div>
                             <p className="text-lg text-gray-900">High-bandwidth connections for complex data transfer</p>
-                          </div>
-                          <div className="bg-purple-50 rounded-lg p-6 border border-purple-200">
+                          </motion.div>
+                          <motion.div 
+                            className="bg-purple-50 rounded-lg p-6 border border-purple-200"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 2.6, ease: "easeOut" }}
+                            viewport={{ once: true, margin: "-100px" }}
+                          >
                             <div className="flex items-center mb-3">
                               <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mr-3">
                                 <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -3148,8 +4780,14 @@ export default function WhitePaperPDF() {
                               <h5 className="text-lg font-semibold text-gray-900">WebRTC</h5>
                             </div>
                             <p className="text-lg text-gray-900">Real-time data streaming for immediate results</p>
-                          </div>
-                          <div className="bg-purple-50 rounded-lg p-6 border border-purple-200">
+                          </motion.div>
+                          <motion.div 
+                            className="bg-purple-50 rounded-lg p-6 border border-purple-200"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 2.8, ease: "easeOut" }}
+                            viewport={{ once: true, margin: "-100px" }}
+                          >
                             <div className="flex items-center mb-3">
                               <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mr-3">
                                 <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -3160,14 +4798,26 @@ export default function WhitePaperPDF() {
                               <h5 className="text-lg font-semibold text-gray-900">Custom AR Protocols</h5>
                             </div>
                             <p className="text-lg text-gray-900">Specialized protocols for AR workload distribution</p>
-                          </div>
+                          </motion.div>
                         </div>
-                      </div>
-                      </div>
+                      </motion.div>
+                    </motion.div>
                       
                     {/* Voice-Driven Workflow Integration */}
-                    <div className="mb-8">
-                      <div className="bg-white/70 rounded-xl p-6 border border-orange-100">
+                    <motion.div 
+                      className="mb-8"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 3.0, ease: "easeOut" }}
+                      viewport={{ once: true, margin: "-100px" }}
+                    >
+                      <motion.div 
+                        className="bg-white/70 rounded-xl p-6 border border-orange-100"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 3.2, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
                         <div className="flex items-center mb-4">
                           <div className="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center mr-3">
                             <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -3181,7 +4831,13 @@ export default function WhitePaperPDF() {
                         </p>
                         <div className="grid md:grid-cols-2 gap-8">
                           <div className="space-y-4">
-                            <div className="bg-orange-50 rounded-lg p-6 border border-orange-200">
+                            <motion.div 
+                              className="bg-orange-50 rounded-lg p-6 border border-orange-200"
+                              initial={{ opacity: 0, y: 20 }}
+                              whileInView={{ opacity: 1, y: 0 }}
+                              transition={{ duration: 0.6, delay: 3.4, ease: "easeOut" }}
+                              viewport={{ once: true, margin: "-100px" }}
+                            >
                               <div className="flex items-center mb-3">
                                 <div className="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center mr-3">
                                   <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -3196,10 +4852,16 @@ export default function WhitePaperPDF() {
                                 <li>"Generate three design variations of this 3D model"</li>
                                 <li>"Run security analysis on the current codebase"</li>
                               </ul>
-                            </div>
+                            </motion.div>
                           </div>
                           <div className="space-y-4">
-                            <div className="bg-orange-50 rounded-lg p-6 border border-orange-200">
+                            <motion.div 
+                              className="bg-orange-50 rounded-lg p-6 border border-orange-200"
+                              initial={{ opacity: 0, y: 20 }}
+                              whileInView={{ opacity: 1, y: 0 }}
+                              transition={{ duration: 0.6, delay: 3.6, ease: "easeOut" }}
+                              viewport={{ once: true, margin: "-100px" }}
+                            >
                               <div className="flex items-center mb-3">
                                 <div className="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center mr-3">
                                   <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -3209,8 +4871,14 @@ export default function WhitePaperPDF() {
                                 <h5 className="text-lg font-semibold text-gray-900">Productivity Integration</h5>
                               </div>
                               <p className="text-lg text-gray-900">Integrates with Cursor, IDEs, data analysis software, and development environments</p>
-                            </div>
-                            <div className="bg-orange-50 rounded-lg p-6 border border-orange-200">
+                            </motion.div>
+                            <motion.div 
+                              className="bg-orange-50 rounded-lg p-6 border border-orange-200"
+                              initial={{ opacity: 0, y: 20 }}
+                              whileInView={{ opacity: 1, y: 0 }}
+                              transition={{ duration: 0.6, delay: 3.8, ease: "easeOut" }}
+                              viewport={{ once: true, margin: "-100px" }}
+                            >
                               <div className="flex items-center mb-3">
                                 <div className="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center mr-3">
                                   <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -3221,11 +4889,11 @@ export default function WhitePaperPDF() {
                                 <h5 className="text-lg font-semibold text-gray-900">Spatial Results</h5>
                               </div>
                               <p className="text-lg text-gray-900">Results streamed back in spatial formats optimized for user's context and visual field</p>
-                            </div>
+                            </motion.div>
                           </div>
                         </div>
-                      </div>
-                    </div>
+                      </motion.div>
+                    </motion.div>
                   </div>
 
                   {/* Path 3: AR-to-Computer Communication - Section B: Advanced Optimization */}
@@ -3243,8 +4911,20 @@ export default function WhitePaperPDF() {
                       </div>
                       
                     {/* Intelligent Edge Client */}
-                    <div className="mb-8">
-                      <div className="bg-white/70 rounded-xl p-6 border border-blue-100">
+                    <motion.div 
+                      className="mb-8"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+                      viewport={{ once: true, margin: "-100px" }}
+                    >
+                      <motion.div 
+                        className="bg-white/70 rounded-xl p-6 border border-blue-100"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
                         <div className="flex items-center mb-4">
                           <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
                             <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -3257,7 +4937,13 @@ export default function WhitePaperPDF() {
                           The AR device functions as an intelligent edge client that dynamically assesses computational requirements and routes tasks appropriately.
                         </p>
                         <div className="grid md:grid-cols-3 gap-4">
-                          <div className="bg-blue-50 rounded-lg p-4 border border-blue-200">
+                          <motion.div 
+                            className="bg-blue-50 rounded-lg p-4 border border-blue-200"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+                            viewport={{ once: true, margin: "-100px" }}
+                          >
                             <div className="flex items-center mb-2">
                               <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center mr-2">
                                 <svg className="w-3 h-3 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -3267,8 +4953,14 @@ export default function WhitePaperPDF() {
                               <h5 className="font-semibold text-gray-900 text-base">Dynamic Assessment</h5>
                     </div>
                             <p className="text-base text-gray-900">Evaluates computational requirements in real-time</p>
-                          </div>
-                          <div className="bg-blue-50 rounded-lg p-4 border border-blue-200">
+                          </motion.div>
+                          <motion.div 
+                            className="bg-blue-50 rounded-lg p-4 border border-blue-200"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
+                            viewport={{ once: true, margin: "-100px" }}
+                          >
                             <div className="flex items-center mb-2">
                               <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center mr-2">
                                 <svg className="w-3 h-3 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -3278,8 +4970,14 @@ export default function WhitePaperPDF() {
                               <h5 className="font-semibold text-gray-900 text-base">Smart Routing</h5>
                             </div>
                             <p className="text-base text-gray-900">Routes tasks between local and remote processing</p>
-                          </div>
-                          <div className="bg-blue-50 rounded-lg p-4 border border-blue-200">
+                          </motion.div>
+                          <motion.div 
+                            className="bg-blue-50 rounded-lg p-4 border border-blue-200"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 1.0, ease: "easeOut" }}
+                            viewport={{ once: true, margin: "-100px" }}
+                          >
                             <div className="flex items-center mb-2">
                               <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center mr-2">
                                 <svg className="w-3 h-3 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -3289,14 +4987,26 @@ export default function WhitePaperPDF() {
                               <h5 className="font-semibold text-gray-900 text-base">Real-Time Performance</h5>
                             </div>
                             <p className="text-base text-gray-900">Maintains performance while offloading demanding algorithms</p>
-                          </div>
+                          </motion.div>
                         </div>
-                      </div>
-                    </div>
+                      </motion.div>
+                    </motion.div>
 
                     {/* Adaptive Reverse Task Offloading */}
-                    <div className="mb-8">
-                      <div className="bg-white/70 rounded-xl p-6 border border-green-100">
+                    <motion.div 
+                      className="mb-8"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 1.2, ease: "easeOut" }}
+                      viewport={{ once: true, margin: "-100px" }}
+                    >
+                      <motion.div 
+                        className="bg-white/70 rounded-xl p-6 border border-green-100"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 1.4, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
                         <div className="flex items-center mb-4">
                           <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-3">
                             <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -3310,7 +5020,13 @@ export default function WhitePaperPDF() {
                         </p>
                         <div className="grid md:grid-cols-2 gap-6">
                           <div className="space-y-3">
-                            <div className="bg-green-50 rounded-lg p-4 border border-green-200">
+                            <motion.div 
+                              className="bg-green-50 rounded-lg p-4 border border-green-200"
+                              initial={{ opacity: 0, y: 20 }}
+                              whileInView={{ opacity: 1, y: 0 }}
+                              transition={{ duration: 0.6, delay: 1.6, ease: "easeOut" }}
+                              viewport={{ once: true, margin: "-100px" }}
+                            >
                               <div className="flex items-center mb-2">
                                 <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mr-2">
                                   <svg className="w-3 h-3 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -3320,8 +5036,14 @@ export default function WhitePaperPDF() {
                                 <h5 className="font-semibold text-gray-900 text-base">Code Analysis</h5>
                               </div>
                               <p className="text-base text-gray-900">Running Cursor for code analysis and optimization</p>
-                            </div>
-                            <div className="bg-green-50 rounded-lg p-4 border border-green-200">
+                            </motion.div>
+                            <motion.div 
+                              className="bg-green-50 rounded-lg p-4 border border-green-200"
+                              initial={{ opacity: 0, y: 20 }}
+                              whileInView={{ opacity: 1, y: 0 }}
+                              transition={{ duration: 0.6, delay: 1.8, ease: "easeOut" }}
+                              viewport={{ once: true, margin: "-100px" }}
+                            >
                               <div className="flex items-center mb-2">
                                 <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mr-2">
                                   <svg className="w-3 h-3 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -3331,10 +5053,16 @@ export default function WhitePaperPDF() {
                                 <h5 className="font-semibold text-gray-900 text-base">Data Processing</h5>
                               </div>
                               <p className="text-base text-gray-900">Processing large datasets and complex calculations</p>
-                            </div>
+                            </motion.div>
                           </div>
                           <div className="space-y-3">
-                            <div className="bg-green-50 rounded-lg p-4 border border-green-200">
+                            <motion.div 
+                              className="bg-green-50 rounded-lg p-4 border border-green-200"
+                              initial={{ opacity: 0, y: 20 }}
+                              whileInView={{ opacity: 1, y: 0 }}
+                              transition={{ duration: 0.6, delay: 2.0, ease: "easeOut" }}
+                              viewport={{ once: true, margin: "-100px" }}
+                            >
                               <div className="flex items-center mb-2">
                                 <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mr-2">
                                   <svg className="w-3 h-3 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -3344,8 +5072,14 @@ export default function WhitePaperPDF() {
                                 <h5 className="font-semibold text-gray-900 text-base">3D Rendering</h5>
                               </div>
                               <p className="text-base text-gray-900">Rendering complex 3D models and visualizations</p>
-                            </div>
-                            <div className="bg-green-50 rounded-lg p-4 border border-green-200">
+                            </motion.div>
+                            <motion.div 
+                              className="bg-green-50 rounded-lg p-4 border border-green-200"
+                              initial={{ opacity: 0, y: 20 }}
+                              whileInView={{ opacity: 1, y: 0 }}
+                              transition={{ duration: 0.6, delay: 2.2, ease: "easeOut" }}
+                              viewport={{ once: true, margin: "-100px" }}
+                            >
                               <div className="flex items-center mb-2">
                                 <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mr-2">
                                   <svg className="w-3 h-3 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -3356,15 +5090,27 @@ export default function WhitePaperPDF() {
                                 <h5 className="font-semibold text-gray-900 text-base">Spatial Display</h5>
                               </div>
                               <p className="text-base text-gray-900">Results optimized for spatial display in AR</p>
-                            </div>
+                            </motion.div>
                           </div>
                         </div>
-                      </div>
-                    </div>
+                      </motion.div>
+                    </motion.div>
 
                     {/* Network Optimization Techniques */}
-                    <div className="mb-8">
-                      <div className="bg-white/70 rounded-xl p-6 border border-purple-100">
+                    <motion.div 
+                      className="mb-8"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 2.4, ease: "easeOut" }}
+                      viewport={{ once: true, margin: "-100px" }}
+                    >
+                      <motion.div 
+                        className="bg-white/70 rounded-xl p-6 border border-purple-100"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 2.6, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
                         <div className="flex items-center mb-4">
                           <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center mr-3">
                             <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -3377,7 +5123,13 @@ export default function WhitePaperPDF() {
                           Sophisticated network optimization techniques minimize latency while maximizing reliability for mobile users.
                         </p>
                         <div className="grid md:grid-cols-3 gap-4">
-                          <div className="bg-purple-50 rounded-lg p-4 border border-purple-200">
+                          <motion.div 
+                            className="bg-purple-50 rounded-lg p-4 border border-purple-200"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 2.8, ease: "easeOut" }}
+                            viewport={{ once: true, margin: "-100px" }}
+                          >
                             <div className="flex items-center mb-2">
                               <div className="w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center mr-2">
                                 <svg className="w-3 h-3 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -3387,8 +5139,14 @@ export default function WhitePaperPDF() {
                               <h5 className="font-semibold text-gray-900 text-base">Smart Routing</h5>
                             </div>
                             <p className="text-base text-gray-900">Intelligent routing protocols for optimal data paths</p>
-                          </div>
-                          <div className="bg-purple-50 rounded-lg p-4 border border-purple-200">
+                          </motion.div>
+                          <motion.div 
+                            className="bg-purple-50 rounded-lg p-4 border border-purple-200"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 3.0, ease: "easeOut" }}
+                            viewport={{ once: true, margin: "-100px" }}
+                          >
                             <div className="flex items-center mb-2">
                               <div className="w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center mr-2">
                                 <svg className="w-3 h-3 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -3398,8 +5156,14 @@ export default function WhitePaperPDF() {
                               <h5 className="font-semibold text-gray-900 text-base">Adaptive Compression</h5>
                             </div>
                             <p className="text-base text-gray-900">Dynamic compression algorithms based on bandwidth</p>
-                          </div>
-                          <div className="bg-purple-50 rounded-lg p-4 border border-purple-200">
+                          </motion.div>
+                          <motion.div 
+                            className="bg-purple-50 rounded-lg p-4 border border-purple-200"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 3.2, ease: "easeOut" }}
+                            viewport={{ once: true, margin: "-100px" }}
+                          >
                             <div className="flex items-center mb-2">
                               <div className="w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center mr-2">
                                 <svg className="w-3 h-3 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -3409,14 +5173,26 @@ export default function WhitePaperPDF() {
                               <h5 className="font-semibold text-gray-900 text-base">Predictive Caching</h5>
                             </div>
                             <p className="text-base text-gray-900">Pre-loading likely results for faster access</p>
-                          </div>
+                          </motion.div>
                         </div>
-                      </div>
-                    </div>
+                      </motion.div>
+                    </motion.div>
 
                     {/* Advanced Processing Techniques */}
-                    <div className="mb-8">
-                      <div className="bg-white/70 rounded-xl p-6 border border-orange-100">
+                    <motion.div 
+                      className="mb-8"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 3.4, ease: "easeOut" }}
+                      viewport={{ once: true, margin: "-100px" }}
+                    >
+                      <motion.div 
+                        className="bg-white/70 rounded-xl p-6 border border-orange-100"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 3.6, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
                         <div className="flex items-center mb-4">
                           <div className="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center mr-3">
                             <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -3431,7 +5207,13 @@ export default function WhitePaperPDF() {
                         </p>
                         <div className="grid md:grid-cols-2 gap-8">
                           <div className="space-y-4">
-                            <div className="bg-orange-50 rounded-lg p-6 border border-orange-200">
+                            <motion.div 
+                              className="bg-orange-50 rounded-lg p-6 border border-orange-200"
+                              initial={{ opacity: 0, y: 20 }}
+                              whileInView={{ opacity: 1, y: 0 }}
+                              transition={{ duration: 0.6, delay: 3.8, ease: "easeOut" }}
+                              viewport={{ once: true, margin: "-100px" }}
+                            >
                               <div className="flex items-center mb-3">
                                 <div className="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center mr-3">
                                   <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -3442,8 +5224,14 @@ export default function WhitePaperPDF() {
                                 <h5 className="text-lg font-semibold text-gray-900">Foveated Streaming</h5>
                               </div>
                               <p className="text-lg text-gray-900">High-quality data only where the user is looking</p>
-                            </div>
-                            <div className="bg-orange-50 rounded-lg p-6 border border-orange-200">
+                            </motion.div>
+                            <motion.div 
+                              className="bg-orange-50 rounded-lg p-6 border border-orange-200"
+                              initial={{ opacity: 0, y: 20 }}
+                              whileInView={{ opacity: 1, y: 0 }}
+                              transition={{ duration: 0.6, delay: 4.0, ease: "easeOut" }}
+                              viewport={{ once: true, margin: "-100px" }}
+                            >
                               <div className="flex items-center mb-3">
                                 <div className="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center mr-3">
                                   <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -3453,10 +5241,16 @@ export default function WhitePaperPDF() {
                                 <h5 className="text-lg font-semibold text-gray-900">Predictive Pre-loading</h5>
                               </div>
                               <p className="text-lg text-gray-900">Pre-loading likely results for faster response times</p>
-                            </div>
+                            </motion.div>
                           </div>
                           <div className="space-y-4">
-                            <div className="bg-orange-50 rounded-lg p-6 border border-orange-200">
+                            <motion.div 
+                              className="bg-orange-50 rounded-lg p-6 border border-orange-200"
+                              initial={{ opacity: 0, y: 20 }}
+                              whileInView={{ opacity: 1, y: 0 }}
+                              transition={{ duration: 0.6, delay: 4.2, ease: "easeOut" }}
+                              viewport={{ once: true, margin: "-100px" }}
+                            >
                               <div className="flex items-center mb-3">
                                 <div className="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center mr-3">
                                   <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -3466,8 +5260,14 @@ export default function WhitePaperPDF() {
                                 <h5 className="text-lg font-semibold text-gray-900">Failover Strategies</h5>
                               </div>
                               <p className="text-lg text-gray-900">Maintaining productivity during connectivity disruptions</p>
-                            </div>
-                            <div className="bg-orange-50 rounded-lg p-6 border border-orange-200">
+                            </motion.div>
+                            <motion.div 
+                              className="bg-orange-50 rounded-lg p-6 border border-orange-200"
+                              initial={{ opacity: 0, y: 20 }}
+                              whileInView={{ opacity: 1, y: 0 }}
+                              transition={{ duration: 0.6, delay: 4.4, ease: "easeOut" }}
+                              viewport={{ once: true, margin: "-100px" }}
+                            >
                               <div className="flex items-center mb-3">
                                 <div className="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center mr-3">
                                   <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -3478,11 +5278,11 @@ export default function WhitePaperPDF() {
                                 <h5 className="text-lg font-semibold text-gray-900">Network Intelligence</h5>
                               </div>
                               <p className="text-lg text-gray-900">Automatic optimization of connection protocols and compression</p>
-                            </div>
+                            </motion.div>
                           </div>
                         </div>
-                      </div>
-                    </div>
+                      </motion.div>
+                    </motion.div>
                   </div>
                 </div>
 
@@ -3493,17 +5293,6 @@ export default function WhitePaperPDF() {
                   </p>
                 </div>
 
-                <div className="bg-gradient-to-r from-cyan-50 to-blue-50 rounded-xl p-6 border border-cyan-200 mt-8">
-                  <div className="flex items-center mb-4">
-                    <svg className="w-6 h-6 text-gray-900 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    <h3 className="text-lg font-semibold text-gray-900">Conclusion</h3>
-                  </div>
-                  <p className="text-gray-900">
-                    The journey from desk-bound work to mobile productivity is complex but achievable. In our conclusion, we'll explore Kahana's commitment to this vision and how we're working to bring these technologies to life. <a href="#conclusion" className="text-gray-900 hover:text-gray-900 font-medium">Read the Conclusion →</a>
-                  </p>
-                </div>
               </div>
             </div>
           </section>
@@ -3521,13 +5310,12 @@ export default function WhitePaperPDF() {
           <section id="conclusion" className="mb-24">
             <div className="bg-white rounded-2xl shadow-xl border border-[#A5DAD8]/30 p-10 mb-12">
               <div className="text-center mb-12">
-                <div className="inline-flex items-center px-4 py-2 rounded-full bg-[#66C2BE]/10 text-[#66C2BE] text-base font-medium mb-6">
+                <div className="inline-flex items-center px-4 py-2 rounded-full bg-teal-100 text-teal-600 text-base font-medium mb-6">
                   <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
-                  Conclusion
+                  Wrap up
                 </div>
-                <h2 className="text-4xl font-bold text-gray-900 mb-6">The Path Forward</h2>
               </div>
 
               <div className="prose prose-lg max-w-none">
@@ -3564,7 +5352,8 @@ export default function WhitePaperPDF() {
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <a
                       href="/references-future-of-ergonomic-work-white-paper"
-                      className="inline-flex items-center px-8 py-4 bg-[#66C2BE] text-white font-semibold rounded-lg hover:bg-[#4A9E9A] transition-colors duration-300"
+                      className="inline-flex items-center px-8 py-4 bg-[#66C2BE] font-semibold rounded-lg hover:bg-[#4A9E9A] transition-colors duration-300"
+                      style={{color: 'white !important'}}
                     >
                       <svg className="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
