@@ -5384,7 +5384,7 @@ export default function WhitePaperPDF() {
 
                 <div className="text-center mt-12">
                   <p className="text-xl text-gray-900 font-medium mb-8">
-                    The future of work is not about better desks—it's about breaking free from desks altogether.
+                    The future of work is not about better desks—it's about breaking free from desks altogether. 🦥
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <a
