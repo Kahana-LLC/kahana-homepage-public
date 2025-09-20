@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { motion, useInView } from 'framer-motion';
 import NavbarDup from '../components/NavbarDup';
 import SharedCTA from '../components/SharedCTA';
+import WhitePaperSocialShare from '../components/WhitePaperSocialShare';
 
 // Animated Counter Component
 function AnimatedCounter({ start, end, duration = 2000, suffix = "", prefix = "" }) {
@@ -68,6 +69,22 @@ export default function WhitePaperPDF() {
       </Head>
 
       <NavbarDup />
+      
+      {/* Scroll Progress Bar */}
+      <div className="fixed top-16 left-0 w-full h-2 bg-gray-200 z-40">
+        <div 
+          id="scroll-progress-bar"
+          className="h-full bg-gradient-to-r from-[#66C2BE] to-[#4A9E9A] transition-all duration-150 ease-out"
+          style={{ width: '0%' }}
+        ></div>
+      </div>
+      
+      {/* Social Share Component - Hidden floating button, we'll add inline sharing instead */}
+      {/* <WhitePaperSocialShare 
+        title="The Future of Ergonomic Work: A White Paper"
+        url={typeof window !== 'undefined' ? window.location.href : 'https://kahana.com/white-paper-pdf'}
+        excerpt="Discover how AR/VR technology is revolutionizing the future of ergonomic work and productivity."
+      /> */}
 
       <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white pt-24 pb-16 lg:ml-64">
         <div className="max-w-none mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
@@ -144,93 +161,67 @@ export default function WhitePaperPDF() {
             </button>
 
             {/* Narrative Pathway Sidebar */}
-            <div id="narrative-sidebar" className="fixed top-24 left-0 w-64 h-[calc(100vh-6rem)] z-50 bg-white/95 backdrop-blur-sm border-r border-gray-200 shadow-lg hidden lg:block flex flex-col overflow-hidden">
-              <div className="p-6 flex-shrink-0">
-                <div className="flex items-center justify-between mb-8">
-                  <h2 className="text-lg font-bold text-gray-900">The Journey</h2>
-                  <button 
-                    className="lg:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors duration-300"
-                    onClick={() => {
-                      const sidebar = document.getElementById('narrative-sidebar');
-                      const toggle = document.getElementById('sidebar-toggle');
-                      sidebar.classList.add('hidden');
-                      toggle.innerHTML = `
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                      `;
-                    }}
-                  >
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12"></path>
-                    </svg>
-                  </button>
-                </div>
-              </div>
-              
-              {/* Vertical Pathway Steps - Scrollable Container */}
-              <div className="flex-1 overflow-y-auto px-6 pb-6 min-h-0">
-                <div className="space-y-10">
-                  <a href="#introduction" className="group pathway-step flex items-center scroll-smooth" data-step="1">
-                    <div className="w-16 h-16 bg-pink-50 border-3 border-pink-200 rounded-full flex items-center justify-center text-lg font-bold text-pink-400 group-hover:border-pink-300 group-hover:text-pink-500 group-hover:bg-pink-100 transition-all duration-300 shadow-md flex-shrink-0 active-step">
-                      1
-                    </div>
-                    <div className="ml-5">
-                      <div className="font-bold text-gray-700 text-lg mb-2 group-hover:text-pink-500 transition-colors">Introduction</div>
-                      <div className="text-base text-gray-400 leading-tight">The Vision</div>
-                    </div>
-                  </a>
-                  
-                  <a href="#problem" className="group pathway-step flex items-center scroll-smooth" data-step="2">
-                    <div className="w-16 h-16 bg-blue-50 border-3 border-blue-200 rounded-full flex items-center justify-center text-lg font-bold text-blue-400 group-hover:border-blue-300 group-hover:text-blue-500 group-hover:bg-blue-100 transition-all duration-300 shadow-md flex-shrink-0 active-step">
-                      2
-                    </div>
-                    <div className="ml-5">
-                      <div className="font-bold text-gray-700 text-lg mb-2 group-hover:text-blue-500 transition-colors">The Problem</div>
-                      <div className="text-base text-gray-400 leading-tight">Health Crisis</div>
-                    </div>
-                  </a>
-                  
-                  <a href="#solution" className="group pathway-step flex items-center scroll-smooth" data-step="3">
-                    <div className="w-16 h-16 bg-green-50 border-3 border-green-200 rounded-full flex items-center justify-center text-lg font-bold text-green-400 group-hover:border-green-300 group-hover:text-green-500 group-hover:bg-green-100 transition-all duration-300 shadow-md flex-shrink-0 active-step">
-                      3
-                    </div>
-                    <div className="ml-5">
-                      <div className="font-bold text-gray-700 text-lg mb-2 group-hover:text-green-500 transition-colors">The Solution</div>
-                      <div className="text-base text-gray-400 leading-tight">AR Technology</div>
-                    </div>
-                  </a>
-                  
-                  <a href="#key-players" className="group pathway-step flex items-center scroll-smooth" data-step="4">
-                    <div className="w-16 h-16 bg-purple-50 border-3 border-purple-200 rounded-full flex items-center justify-center text-lg font-bold text-purple-400 group-hover:border-purple-300 group-hover:text-purple-500 group-hover:bg-purple-100 transition-all duration-300 shadow-md flex-shrink-0 active-step">
-                      4
-                    </div>
-                    <div className="ml-5">
-                      <div className="font-bold text-gray-700 text-lg mb-2 group-hover:text-purple-500 transition-colors">Key Players</div>
-                      <div className="text-base text-gray-400 leading-tight">Market Leaders</div>
-                    </div>
-                  </a>
-                  
-                  <a href="#next-steps" className="group pathway-step flex items-center scroll-smooth" data-step="5">
-                    <div className="w-16 h-16 bg-yellow-50 border-3 border-yellow-200 rounded-full flex items-center justify-center text-lg font-bold text-yellow-400 group-hover:border-yellow-300 group-hover:text-yellow-500 group-hover:bg-yellow-100 transition-all duration-300 shadow-md flex-shrink-0 active-step">
-                      5
-                    </div>
-                    <div className="ml-5">
-                      <div className="font-bold text-gray-700 text-lg mb-2 group-hover:text-yellow-500 transition-colors">Next Steps</div>
-                      <div className="text-base text-gray-400 leading-tight">Development Paths</div>
-                    </div>
-                  </a>
-                  
-                  <a href="#conclusion" className="group pathway-step flex items-center scroll-smooth" data-step="6">
-                    <div className="w-16 h-16 bg-teal-50 border-3 border-teal-200 rounded-full flex items-center justify-center text-lg font-bold text-teal-400 group-hover:border-teal-300 group-hover:text-teal-500 group-hover:bg-teal-100 transition-all duration-300 shadow-md flex-shrink-0 active-step">
-                      6
-                    </div>
-                    <div className="ml-5">
-                      <div className="font-bold text-gray-700 text-lg mb-2 group-hover:text-teal-500 transition-colors">Conclusion</div>
-                      <div className="text-base text-gray-400 leading-tight">The Future</div>
-                    </div>
-                  </a>
-                </div>
+            <div id="narrative-sidebar" className="fixed top-40 left-0 w-64 h-[calc(100vh-10rem)] z-50 bg-white/95 backdrop-blur-sm border-r border-gray-200 shadow-lg hidden lg:block overflow-y-auto">
+              <div className="p-6 space-y-8">
+                <a href="#introduction" className="group pathway-step flex items-center scroll-smooth" data-step="1">
+                  <div className="w-16 h-16 bg-pink-50 border-3 border-pink-200 rounded-full flex items-center justify-center text-lg font-bold text-pink-400 group-hover:border-pink-300 group-hover:text-pink-500 group-hover:bg-pink-100 transition-all duration-300 shadow-md flex-shrink-0 active-step">
+                    1
+                  </div>
+                  <div className="ml-5">
+                    <div className="font-bold text-gray-700 text-lg mb-2 group-hover:text-pink-500 transition-colors">Introduction</div>
+                    <div className="text-base text-gray-400 leading-tight">The Vision</div>
+                  </div>
+                </a>
+                
+                <a href="#problem" className="group pathway-step flex items-center scroll-smooth" data-step="2">
+                  <div className="w-16 h-16 bg-blue-50 border-3 border-blue-200 rounded-full flex items-center justify-center text-lg font-bold text-blue-400 group-hover:border-blue-300 group-hover:text-blue-500 group-hover:bg-blue-100 transition-all duration-300 shadow-md flex-shrink-0 active-step">
+                    2
+                  </div>
+                  <div className="ml-5">
+                    <div className="font-bold text-gray-700 text-lg mb-2 group-hover:text-blue-500 transition-colors">The Problem</div>
+                    <div className="text-base text-gray-400 leading-tight">Health Crisis</div>
+                  </div>
+                </a>
+                
+                <a href="#solution" className="group pathway-step flex items-center scroll-smooth" data-step="3">
+                  <div className="w-16 h-16 bg-green-50 border-3 border-green-200 rounded-full flex items-center justify-center text-lg font-bold text-green-400 group-hover:border-green-300 group-hover:text-green-500 group-hover:bg-green-100 transition-all duration-300 shadow-md flex-shrink-0 active-step">
+                    3
+                  </div>
+                  <div className="ml-5">
+                    <div className="font-bold text-gray-700 text-lg mb-2 group-hover:text-green-500 transition-colors">The Solution</div>
+                    <div className="text-base text-gray-400 leading-tight">AR Technology</div>
+                  </div>
+                </a>
+                
+                <a href="#key-players" className="group pathway-step flex items-center scroll-smooth" data-step="4">
+                  <div className="w-16 h-16 bg-purple-50 border-3 border-purple-200 rounded-full flex items-center justify-center text-lg font-bold text-purple-400 group-hover:border-purple-300 group-hover:text-purple-500 group-hover:bg-purple-100 transition-all duration-300 shadow-md flex-shrink-0 active-step">
+                    4
+                  </div>
+                  <div className="ml-5">
+                    <div className="font-bold text-gray-700 text-lg mb-2 group-hover:text-purple-500 transition-colors">Key Players</div>
+                    <div className="text-base text-gray-400 leading-tight">Market Leaders</div>
+                  </div>
+                </a>
+                
+                <a href="#next-steps" className="group pathway-step flex items-center scroll-smooth" data-step="5">
+                  <div className="w-16 h-16 bg-yellow-50 border-3 border-yellow-200 rounded-full flex items-center justify-center text-lg font-bold text-yellow-400 group-hover:border-yellow-300 group-hover:text-yellow-500 group-hover:bg-yellow-100 transition-all duration-300 shadow-md flex-shrink-0 active-step">
+                    5
+                  </div>
+                  <div className="ml-5">
+                    <div className="font-bold text-gray-700 text-lg mb-2 group-hover:text-yellow-500 transition-colors">Next Steps</div>
+                    <div className="text-base text-gray-400 leading-tight">Development Paths</div>
+                  </div>
+                </a>
+                
+                <a href="#conclusion" className="group pathway-step flex items-center scroll-smooth" data-step="6">
+                  <div className="w-16 h-16 bg-teal-50 border-3 border-teal-200 rounded-full flex items-center justify-center text-lg font-bold text-teal-400 group-hover:border-teal-300 group-hover:text-teal-500 group-hover:bg-teal-100 transition-all duration-300 shadow-md flex-shrink-0 active-step">
+                    6
+                  </div>
+                  <div className="ml-5">
+                    <div className="font-bold text-gray-700 text-lg mb-2 group-hover:text-teal-500 transition-colors">Conclusion</div>
+                    <div className="text-base text-gray-400 leading-tight">The Future</div>
+                  </div>
+                </a>
               </div>
             </div>
 
@@ -302,11 +293,19 @@ export default function WhitePaperPDF() {
                     const docHeight = document.documentElement.scrollHeight - window.innerHeight;
                     const scrollPercent = (scrollTop / docHeight) * 100;
                     
-                    // Update wave progress using stroke-dashoffset
-                    const totalLength = 1000; // Total path length
-                    const progress = Math.min(scrollPercent, 100);
-                    const offset = totalLength - (totalLength * progress / 100);
-                    waveProgress.style.strokeDashoffset = offset;
+                    // Update scroll progress bar
+                    const progressBar = document.getElementById('scroll-progress-bar');
+                    if (progressBar) {
+                      progressBar.style.width = Math.min(scrollPercent, 100) + '%';
+                    }
+                    
+                    // Update wave progress using stroke-dashoffset (only if element exists)
+                    if (waveProgress) {
+                      const totalLength = 1000; // Total path length
+                      const progress = Math.min(scrollPercent, 100);
+                      const offset = totalLength - (totalLength * progress / 100);
+                      waveProgress.style.strokeDashoffset = offset;
+                    }
                     
                     // Update step states based on scroll position
                     const sections = ['introduction', 'problem', 'solution', 'key-players', 'next-steps', 'conclusion'];
@@ -339,7 +338,7 @@ export default function WhitePaperPDF() {
                             };
                             const colors = colorMap[stepNumber];
                             stepCircle?.classList.remove('border-gray-300', 'text-gray-400', 'shadow-md', 'bg-gray-300', 'border-gray-500', 'text-gray-700', 'shadow-gray-300');
-                            stepCircle?.classList.add(colors.border, colors.bg, colors.text, colors.shadow);
+                            stepCircle?.classList.add(colors.border, colors.bg, colors.text, ...colors.shadow.split(' '));
                             stepElement?.classList.add('active-step');
                           }
                         } else {
@@ -368,6 +367,7 @@ export default function WhitePaperPDF() {
               `
             }} />
           </div>
+
 
           {/* Introduction Section */}
           <section id="introduction" className="mb-20">
@@ -405,8 +405,8 @@ export default function WhitePaperPDF() {
                   </div>
                   <div className="flex justify-center items-center">
                     <img 
-                      src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" 
-                      alt="Freedom from desk work - mobile productivity concept" 
+                      src="/assets/image1.jpg" 
+                      alt="Remote work and mobile productivity concept" 
                       className="rounded-xl shadow-lg w-full h-full object-cover"
                     />
                   </div>
@@ -460,8 +460,8 @@ export default function WhitePaperPDF() {
                 </div>
                 <div className="flex justify-center items-center">
                   <img 
-                    src="https://images.pexels.com/photos/3862130/pexels-photo-3862130.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" 
-                    alt="White paper analysis and research concept" 
+                    src="/assets/image2.jpg" 
+                    alt="Research documentation and white paper analysis" 
                     className="rounded-xl shadow-lg w-full h-full object-cover"
                   />
                 </div>
@@ -816,8 +816,8 @@ export default function WhitePaperPDF() {
                     viewport={{ once: true, margin: "-100px" }}
                   >
                     <motion.img 
-                      src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" 
-                      alt="Modern office workplace and sedentary lifestyle" 
+                      src="/assets/image3.jpg" 
+                      alt="Modern office workspace and collaborative environment" 
                       className="rounded-xl shadow-lg max-w-full h-auto"
                       initial={{ opacity: 0, scale: 0.9 }}
                       whileInView={{ opacity: 1, scale: 1 }}
@@ -1089,8 +1089,8 @@ export default function WhitePaperPDF() {
                   </div>
                   <div className="flex justify-center items-center">
                     <img 
-                      src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" 
-                      alt="Breaking free from desk work - mobile productivity concept" 
+                      src="/assets/image4.jpg" 
+                      alt="Standing desk and ergonomic workspace setup" 
                       className="rounded-xl shadow-lg w-full h-full object-cover"
                     />
                   </div>
@@ -1169,8 +1169,8 @@ export default function WhitePaperPDF() {
                   </motion.div>
                   <div className="flex justify-center">
                     <img 
-                      src="https://images.pexels.com/photos/3862130/pexels-photo-3862130.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" 
-                      alt="Future technology and innovation concept" 
+                      src="/assets/image2.png" 
+                      alt="Futuristic technology and digital innovation" 
                       className="rounded-xl shadow-lg max-w-full h-auto"
                     />
                   </div>
@@ -1331,7 +1331,7 @@ export default function WhitePaperPDF() {
                   </div>
                   <div className="flex justify-center items-center">
                     <img 
-                      src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" 
+                      src="/assets/image5.jpg" 
                       alt="AR glasses and technology concept" 
                       className="rounded-xl shadow-lg w-full h-full object-cover"
                     />
@@ -1407,8 +1407,8 @@ export default function WhitePaperPDF() {
                   </motion.div>
                   <div className="flex justify-center items-center">
                     <img 
-                      src="https://images.pexels.com/photos/3862130/pexels-photo-3862130.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" 
-                      alt="Voice and gesture technology concept" 
+                      src="/assets/image6.jpg" 
+                      alt="Voice control and gesture recognition technology" 
                       className="rounded-xl shadow-lg w-full h-full object-cover"
                     />
                   </div>
@@ -1471,7 +1471,7 @@ export default function WhitePaperPDF() {
                   </motion.div>
                   <div className="flex justify-center items-center">
                     <img 
-                      src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" 
+                      src="/assets/image7.jpg" 
                       alt="AI technology and artificial intelligence concept" 
                       className="rounded-xl shadow-lg w-full h-full object-cover"
                     />
@@ -1582,24 +1582,13 @@ export default function WhitePaperPDF() {
                   </motion.div>
                   <div className="flex justify-center items-center">
                     <img 
-                      src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" 
-                      alt="AR glasses and technical considerations" 
+                      src="/assets/image8.jpg" 
+                      alt="Technical engineering and AR development" 
                       className="rounded-xl shadow-lg w-full h-full object-cover"
                     />
                   </div>
                 </motion.div>
 
-                <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-6 border border-purple-200 mt-8">
-                  <div className="flex items-center mb-4">
-                    <svg className="w-6 h-6 text-gray-900 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                    </svg>
-                    <h3 className="text-lg font-semibold text-gray-900">Meet the Key Players</h3>
-                  </div>
-                  <p className="text-gray-900">
-                    Now that we understand the technological requirements, let's examine the companies that are best positioned to bring these solutions to market. The next section provides a comprehensive analysis of the key players in the AR glasses revolution. <a href="#key-players" className="text-gray-900 hover:text-gray-900 font-medium">Explore the Key Players →</a>
-                  </p>
-                </div>
               </div>
             </div>
           </section>
@@ -1726,8 +1715,8 @@ export default function WhitePaperPDF() {
                   </div>
                   <div className="flex justify-center items-center">
                     <img 
-                      src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" 
-                      alt="AR glasses technology and innovation" 
+                      src="/assets/image9.jpg" 
+                      alt="Innovation and technology development" 
                       className="rounded-xl shadow-lg w-full h-full object-cover"
                     />
                   </div>
@@ -1862,8 +1851,8 @@ export default function WhitePaperPDF() {
                     viewport={{ once: true, margin: "-100px" }}
                   >
                     <motion.img 
-                      src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" 
-                      alt="Business growth and market analysis concept" 
+                      src="/assets/image10.jpg" 
+                      alt="Business analytics dashboard and data visualization" 
                       className="rounded-xl shadow-lg max-w-full h-auto"
                       initial={{ opacity: 0, scale: 0.9 }}
                       whileInView={{ opacity: 1, scale: 1 }}
@@ -2001,8 +1990,8 @@ export default function WhitePaperPDF() {
                     </div>
                     <div className="flex justify-center items-center">
                       <img 
-                        src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" 
-                        alt="Google AR technology and Android XR" 
+                        src="/assets/image11.jpg" 
+                        alt="Google Android and mobile AR technology" 
                         className="rounded-xl shadow-lg w-full h-full object-cover"
                       />
                     </div>
@@ -2060,8 +2049,8 @@ export default function WhitePaperPDF() {
                     </div>
                     <div className="flex justify-center items-center">
                       <img 
-                        src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" 
-                        alt="Microsoft HoloLens and mixed reality" 
+                        src="/assets/image12.jpg" 
+                        alt="Microsoft HoloLens and mixed reality technology" 
                         className="rounded-xl shadow-lg w-full h-full object-cover"
                       />
                     </div>
@@ -3161,23 +3150,11 @@ export default function WhitePaperPDF() {
                   </motion.div>
                 </motion.div>
 
-                <div className="grid md:grid-cols-2 gap-8 mt-8">
+                <div className="mt-8">
                   <div className="bg-gradient-to-r from-gray-100 to-slate-100 rounded-xl p-6 border border-gray-200">
                     <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">Summary</h3>
                     <p className="text-lg text-gray-900">
                       Each of these players has helped AR technology achieve remarkable advancements, whether through unique display technologies (micro-LED, micro-OLED, SiC, waveguides), novel heat dissipation (magnesium, titanium, passive or externalized cooling), cutting-edge gesture/voice input, or multimodal AI capabilities. However, the pathway to truly desk-free, mainstream productivity still faces some clear barriers, including high production costs, the need to combine the advanced computational power that headsets can hold into lightweight wearables, and the need to ensure that any accompanying wearable technology (e.g., Orion's EMG wristband for gesture tracking) are comfortable enough to wear outside (e.g., how does it respond to heat and sweat?).
-                    </p>
-                  </div>
-
-                  <div className="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-xl p-6 border border-indigo-200">
-                    <div className="flex items-center mb-4">
-                      <svg className="w-6 h-6 text-gray-900 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                      </svg>
-                      <h3 className="text-lg font-semibold text-gray-900">The Path Forward</h3>
-                    </div>
-                    <p className="text-gray-900">
-                      With the key players identified, the next section outlines three critical development paths that could transform AR glasses from entertainment devices into powerful productivity tools. These paths address the fundamental barriers we've identified and provide a roadmap for achieving desk-free productivity. <a href="#next-steps" className="text-gray-900 hover:text-gray-900 font-medium">Explore the Next Steps →</a>
                     </p>
                   </div>
                 </div>
@@ -5437,6 +5414,7 @@ export default function WhitePaperPDF() {
               </Link>
             </div>
           </div>
+
         </div>
       </main>
 
@@ -5446,6 +5424,172 @@ export default function WhitePaperPDF() {
         buttonText="Contact Us"
         buttonLink="/contact"
       />
+
+      {/* Sticky Bottom Right Social Share Tab */}
+      <div className="fixed bottom-4 right-4 z-50 bg-white/95 backdrop-blur-sm border border-gray-200 shadow-lg rounded-t-lg">
+        <div className="px-4 py-3">
+          <div className="flex items-center gap-3">
+            {/* Share Label */}
+            <div className="flex items-center gap-2 mr-2">
+              <svg className="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z" />
+              </svg>
+              <span className="text-sm text-gray-600 font-medium">Share</span>
+            </div>
+            {/* LinkedIn */}
+            <button
+              onClick={() => {
+                const url = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(typeof window !== 'undefined' ? window.location.href : 'https://kahana.com/white-paper-pdf')}`;
+                window.open(url, '_blank', 'width=600,height=600,scrollbars=yes,resizable=yes');
+              }}
+              className="flex items-center justify-center w-8 h-8 bg-blue-600 hover:bg-blue-700 text-white rounded-md transition-colors duration-200"
+              aria-label="Share on LinkedIn"
+            >
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+            </button>
+
+            {/* Twitter */}
+            <button
+              onClick={() => {
+                const title = "The Future of Ergonomic Work: A White Paper";
+                const url = typeof window !== 'undefined' ? window.location.href : 'https://kahana.com/white-paper-pdf';
+                const twitterText = encodeURIComponent(`${title} ${url}`);
+                const twitterUrl = `https://twitter.com/intent/tweet?text=${twitterText}`;
+                window.open(twitterUrl, '_blank', 'width=600,height=400,scrollbars=yes,resizable=yes');
+              }}
+              className="flex items-center justify-center w-8 h-8 bg-blue-400 hover:bg-blue-500 text-white rounded-md transition-colors duration-200"
+              aria-label="Share on Twitter"
+            >
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+              </svg>
+            </button>
+
+            {/* Email */}
+            <button
+              onClick={() => {
+                const title = "The Future of Ergonomic Work: A White Paper";
+                const url = typeof window !== 'undefined' ? window.location.href : 'https://kahana.com/white-paper-pdf';
+                const text = "Discover how AR/VR technology is revolutionizing the future of ergonomic work and productivity.";
+                const subject = encodeURIComponent(title);
+                const body = encodeURIComponent(`${text}\n\nRead more: ${url}`);
+                const emailUrl = `mailto:?subject=${subject}&body=${body}`;
+                window.open(emailUrl);
+              }}
+              className="flex items-center justify-center w-8 h-8 bg-gray-600 hover:bg-gray-700 text-white rounded-md transition-colors duration-200"
+              aria-label="Share via Email"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </button>
+
+            {/* SMS */}
+            <button
+              onClick={() => {
+                const title = "The Future of Ergonomic Work: A White Paper";
+                const url = typeof window !== 'undefined' ? window.location.href : 'https://kahana.com/white-paper-pdf';
+                const smsText = encodeURIComponent(`${title} - ${url}`);
+                const smsUrl = `sms:?body=${smsText}`;
+                window.open(smsUrl);
+              }}
+              className="flex items-center justify-center w-8 h-8 bg-green-600 hover:bg-green-700 text-white rounded-md transition-colors duration-200"
+              aria-label="Share via SMS"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+              </svg>
+            </button>
+
+            {/* Copy Link */}
+            <button
+              onClick={async (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const url = typeof window !== 'undefined' ? window.location.href : 'https://kahana.com/white-paper-pdf';
+                const button = e.currentTarget;
+                
+                try {
+                  // Try modern clipboard API first
+                  if (navigator.clipboard && window.isSecureContext) {
+                    await navigator.clipboard.writeText(url);
+                    console.log('Copied to clipboard via modern API');
+                  } else {
+                    // Fallback for older browsers or non-secure contexts
+                    const textArea = document.createElement('textarea');
+                    textArea.value = url;
+                    textArea.style.position = 'fixed';
+                    textArea.style.left = '-999999px';
+                    textArea.style.top = '-999999px';
+                    textArea.style.opacity = '0';
+                    document.body.appendChild(textArea);
+                    textArea.focus();
+                    textArea.select();
+                    
+                    const successful = document.execCommand('copy');
+                    document.body.removeChild(textArea);
+                    
+                    if (!successful) {
+                      throw new Error('execCommand copy failed');
+                    }
+                    console.log('Copied to clipboard via fallback method');
+                  }
+                  
+                  // Show success feedback
+                  const originalContent = button.innerHTML;
+                  button.innerHTML = '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>';
+                  button.classList.add('bg-green-600', 'hover:bg-green-700');
+                  button.classList.remove('bg-gray-600', 'hover:bg-gray-700');
+                  
+                  // Show "Copied!" text indicator
+                  const copiedIndicator = document.createElement('div');
+                  copiedIndicator.textContent = 'Copied!';
+                  copiedIndicator.className = 'absolute -top-8 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-xs px-2 py-1 rounded shadow-lg whitespace-nowrap z-50';
+                  copiedIndicator.style.fontSize = '11px';
+                  copiedIndicator.style.fontWeight = '500';
+                  
+                  // Position relative to button
+                  button.style.position = 'relative';
+                  button.appendChild(copiedIndicator);
+                  
+                  // Reset after 2 seconds
+                  setTimeout(() => {
+                    button.innerHTML = originalContent;
+                    button.classList.remove('bg-green-600', 'hover:bg-green-700');
+                    button.classList.add('bg-gray-600', 'hover:bg-gray-700');
+                    button.style.position = '';
+                  }, 2000);
+                  
+                } catch (err) {
+                  console.error('Failed to copy text: ', err);
+                  
+                  // Show error feedback
+                  const originalContent = button.innerHTML;
+                  button.innerHTML = '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>';
+                  button.classList.add('bg-red-600', 'hover:bg-red-700');
+                  button.classList.remove('bg-gray-600', 'hover:bg-gray-700');
+                  
+                  // Reset after 2 seconds
+                  setTimeout(() => {
+                    button.innerHTML = originalContent;
+                    button.classList.remove('bg-red-600', 'hover:bg-red-700');
+                    button.classList.add('bg-gray-600', 'hover:bg-gray-700');
+                  }, 2000);
+                }
+              }}
+              className="flex items-center justify-center w-8 h-8 bg-gray-600 hover:bg-gray-700 text-white rounded-md transition-colors duration-200"
+              aria-label="Copy Link to Clipboard"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
     </>
   );
 }
