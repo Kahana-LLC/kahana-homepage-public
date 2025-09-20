@@ -497,6 +497,9 @@ function NavBar() {
                     <Link href="/docs" className="dropdown-link">
                       Docs
                     </Link>
+                    <Link href="/white-paper-future-of-ergonomic-work" className="dropdown-link">
+                      White Paper
+                    </Link>
                     <Link href="/installations" className="dropdown-link">
                       Download
                     </Link>
@@ -621,6 +624,7 @@ function NavBar() {
             {/* Learn Section */}
             <Link href="/blog" className="mobile-link">Blog</Link>
             <Link href="/docs" className="mobile-link">Docs</Link>
+            <Link href="/white-paper-future-of-ergonomic-work" className="mobile-link">White Paper</Link>
             <Link href="/installations" className="mobile-link">Download</Link>
             
             {/* Partners Section */}
