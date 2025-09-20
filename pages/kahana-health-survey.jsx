@@ -9,7 +9,7 @@ export default function KahanaHealthSurvey() {
       <iframe
         src="https://tally.so/r/wgELDl"
         width="100%"
-        height="900"
+        height="1000"
         frameBorder="0"
         marginHeight="0"
         marginWidth="0"
@@ -110,68 +110,40 @@ export default function KahanaHealthSurvey() {
               </div>
             </div>
 
-            {/* Desktop Layout - Two Column */}
-            <div className="hidden lg:grid lg:grid-cols-12 lg:gap-12">
-              {/* Left Column - Content */}
-              <div className="lg:col-span-5">
-                <div className="bg-white rounded-xl shadow-xl border border-[#A5DAD8]/30 p-8 sticky top-24">
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-6">Why Your Participation Matters</h3>
-                  <div className="space-y-8">
-                    <div className="space-y-4">
-                      <h4 className="text-xl font-semibold text-gray-900">Research Impact</h4>
-                      <ul className="space-y-3 text-gray-600">
-                        <li className="flex items-start">
-                          <svg className="h-6 w-6 text-[#66C2BE] mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                          </svg>
-                          <span>Contribute to workplace health research</span>
-                        </li>
-                        <li className="flex items-start">
-                          <svg className="h-6 w-6 text-[#66C2BE] mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                          </svg>
-                          <span>Help identify common health challenges</span>
-                        </li>
-                        <li className="flex items-start">
-                          <svg className="h-6 w-6 text-[#66C2BE] mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                          </svg>
-                          <span>Shape the future of ergonomic work</span>
-                        </li>
-                      </ul>
+            {/* Desktop Layout - Survey Focused */}
+            <div className="hidden lg:block">
+              {/* Compact Info Bar */}
+              <div className="bg-white rounded-lg shadow-sm border border-[#A5DAD8]/30 p-4 mb-8">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center space-x-6">
+                    <div className="flex items-center space-x-2">
+                      <svg className="h-5 w-5 text-[#66C2BE]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      <span className="text-sm font-medium text-gray-700">Anonymous & Secure</span>
                     </div>
-                    <div className="space-y-4">
-                      <h4 className="text-xl font-semibold text-gray-900">Privacy & Anonymity</h4>
-                      <ul className="space-y-3 text-gray-600">
-                        <li className="flex items-start">
-                          <svg className="h-6 w-6 text-[#66C2BE] mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                          </svg>
-                          <span>Completely anonymous responses</span>
-                        </li>
-                        <li className="flex items-start">
-                          <svg className="h-6 w-6 text-[#66C2BE] mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                          </svg>
-                          <span>No personally identifying information collected</span>
-                        </li>
-                        <li className="flex items-start">
-                          <svg className="h-6 w-6 text-[#66C2BE] mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                          </svg>
-                          <span>Data used only for research purposes</span>
-                        </li>
-                      </ul>
+                    <div className="flex items-center space-x-2">
+                      <svg className="h-5 w-5 text-[#66C2BE]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      <span className="text-sm font-medium text-gray-700">~5 minutes</span>
                     </div>
+                    <div className="flex items-center space-x-2">
+                      <svg className="h-5 w-5 text-[#66C2BE]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                      </svg>
+                      <span className="text-sm font-medium text-gray-700">Help Shape Research</span>
+                    </div>
+                  </div>
+                  <div className="text-sm text-gray-500">
+                    Your responses help us develop better ergonomic solutions
                   </div>
                 </div>
               </div>
 
-              {/* Right Column - Form (Larger) */}
-              <div className="lg:col-span-7">
-                <div className="bg-white rounded-xl shadow-xl border border-[#A5DAD8]/30 p-6">
-                  {renderSurveyForm()}
-                </div>
+              {/* Full-Width Survey */}
+              <div className="bg-white rounded-xl shadow-xl border border-[#A5DAD8]/30 p-8">
+                {renderSurveyForm()}
               </div>
             </div>
           </div>
