@@ -1000,11 +1000,11 @@ export default function WhitePaperPDF() {
                       <p className="text-gray-900 text-base mb-3">
                         Barely meets minimum activity threshold (1.5 METs)
                       </p>
-                      <ul className="text-base text-gray-900 space-y-1">
-                        <li>• No significant cardiovascular benefit</li>
-                        <li>• Introduces new health problems (varicose veins, DVT)</li>
-                        <li>• Musculoskeletal issues persist (carpal tunnel)</li>
-                        <li>• Blood pooling in lower extremities</li>
+                      <ul className="text-base text-gray-900 space-y-1 list-disc list-inside">
+                        <li>No significant cardiovascular benefit</li>
+                        <li>Introduces new health problems (varicose veins, DVT)</li>
+                        <li>Musculoskeletal issues persist (carpal tunnel)</li>
+                        <li>Blood pooling in lower extremities</li>
                       </ul>
                     </motion.div>
                     <motion.div 
@@ -1025,11 +1025,11 @@ export default function WhitePaperPDF() {
                       <p className="text-gray-900 text-base mb-3">
                         Impractical for most work tasks
                       </p>
-                      <ul className="text-base text-gray-900 space-y-1">
-                        <li>• Difficult to type while moving</li>
-                        <li>• Limited to specific activities (calls)</li>
-                        <li>• Not comprehensive solution</li>
-                        <li>• Still requires desk-bound work</li>
+                      <ul className="text-base text-gray-900 space-y-1 list-disc list-inside">
+                        <li>Difficult to type while moving</li>
+                        <li>Limited to specific activities (calls)</li>
+                        <li>Not comprehensive solution</li>
+                        <li>Still requires desk-bound work</li>
                       </ul>
                     </motion.div>
                     <motion.div 
@@ -1050,11 +1050,11 @@ export default function WhitePaperPDF() {
                       <p className="text-gray-900 text-base mb-3">
                         Work culture pressure limits effectiveness
                       </p>
-                      <ul className="text-base text-gray-900 space-y-1">
-                        <li>• Pressure to minimize time away from desk</li>
-                        <li>• Most work requires desk access</li>
-                        <li>• Not a fundamental solution</li>
-                        <li>• Productivity vs. health trade-off</li>
+                      <ul className="text-base text-gray-900 space-y-1 list-disc list-inside">
+                        <li>Pressure to minimize time away from desk</li>
+                        <li>Most work requires desk access</li>
+                        <li>Not a fundamental solution</li>
+                        <li>Productivity vs. health trade-off</li>
                       </ul>
                     </motion.div>
                   </div>
