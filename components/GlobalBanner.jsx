@@ -12,7 +12,7 @@ export default function GlobalBanner() {
   return (
     <div className="GlobalBanner bg-gradient-to-r from-kahana-primary to-kahana-secondary relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between py-3">
+        <div className="flex items-center justify-between py-3 gap-4 md:gap-6">
           <div className="flex items-center">
             <div className="flex-shrink-0">
               <svg className="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">

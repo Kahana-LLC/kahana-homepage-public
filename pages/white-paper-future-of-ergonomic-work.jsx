@@ -134,7 +134,7 @@ export default function WhitePaperPDF() {
             {/* Mobile Toggle Button */}
             <button 
               id="sidebar-toggle"
-              className="fixed top-32 left-4 z-[9999] lg:hidden bg-white/95 backdrop-blur-sm border border-gray-200 rounded-lg p-3 shadow-lg hover:bg-gray-50 transition-colors duration-300"
+              className="fixed top-1/2 left-0 -translate-y-1/2 z-[9999] lg:hidden bg-white/95 backdrop-blur-sm border border-gray-200 rounded-l-none rounded-r-lg p-3 shadow-lg hover:bg-gray-50 transition-colors duration-300"
               onClick={() => {
                 const sidebar = document.getElementById('narrative-sidebar');
                 const toggle = document.getElementById('sidebar-toggle');
