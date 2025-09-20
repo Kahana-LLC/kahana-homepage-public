@@ -447,10 +447,7 @@ export default function WhitePaperPDF() {
                     />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">Jonathan Gans</h3>
-                  <p className="text-[#66C2BE] font-medium mb-3">CEO</p>
-                  <p className="text-gray-600 text-sm mb-4 leading-relaxed">
-                    Biomedical Engineering graduate from Duke University, previously in Deloitte's corporate strategy practice, and renowned Dog Whisperer in the Windy City. Building an ergonomic future of work.
-                  </p>
+                  <p className="text-[#66C2BE] font-medium mb-4">CEO</p>
                   <a 
                     href="https://www.linkedin.com/in/jonathan-gans1/" 
                     target="_blank" 
@@ -474,10 +471,7 @@ export default function WhitePaperPDF() {
                     />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">Adam Kershner</h3>
-                  <p className="text-[#66C2BE] font-medium mb-3">COO</p>
-                  <p className="text-gray-600 text-sm mb-4 leading-relaxed">
-                    I'm the COO of Kahana, bringing a unique perspective from my management consulting experience at Clarkston Consulting and biomedical engineering background from Duke University. I'm focused on making the future of work more ergonomic through innovative technology solutions.
-                  </p>
+                  <p className="text-[#66C2BE] font-medium mb-4">COO</p>
                   <a 
                     href="https://www.linkedin.com/in/adam-kershner/" 
                     target="_blank" 
