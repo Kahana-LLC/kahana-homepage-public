@@ -134,7 +134,7 @@ export default function WhitePaperPDF() {
             {/* Mobile Toggle Button */}
             <button 
               id="sidebar-toggle"
-              className="fixed top-32 left-4 z-60 lg:hidden bg-white/95 backdrop-blur-sm border border-gray-200 rounded-lg p-3 shadow-lg hover:bg-gray-50 transition-colors duration-300"
+              className="fixed top-32 left-4 z-[9999] lg:hidden bg-white/95 backdrop-blur-sm border border-gray-200 rounded-lg p-3 shadow-lg hover:bg-gray-50 transition-colors duration-300"
               onClick={() => {
                 const sidebar = document.getElementById('narrative-sidebar');
                 const toggle = document.getElementById('sidebar-toggle');
@@ -161,7 +161,7 @@ export default function WhitePaperPDF() {
             </button>
 
             {/* Narrative Pathway Sidebar */}
-            <div id="narrative-sidebar" className="fixed top-40 left-0 w-64 h-[calc(100vh-10rem)] z-50 bg-white/95 backdrop-blur-sm border-r border-gray-200 shadow-lg hidden lg:block overflow-y-auto">
+            <div id="narrative-sidebar" className="fixed top-40 left-0 w-64 h-[calc(100vh-10rem)] z-[9998] bg-white/95 backdrop-blur-sm border-r border-gray-200 shadow-lg hidden lg:block overflow-y-auto">
               <div className="p-6 space-y-8">
                 <a href="#introduction" className="group pathway-step flex items-center scroll-smooth" data-step="1">
                   <div className="w-16 h-16 bg-pink-50 border-3 border-pink-200 rounded-full flex items-center justify-center text-lg font-bold text-pink-400 group-hover:border-pink-300 group-hover:text-pink-500 group-hover:bg-pink-100 transition-all duration-300 shadow-md flex-shrink-0 active-step">
@@ -1000,11 +1000,11 @@ export default function WhitePaperPDF() {
                       <p className="text-gray-900 text-base mb-3">
                         Barely meets minimum activity threshold (1.5 METs)
                       </p>
-                      <ul className="text-base text-gray-900 space-y-1">
-                        <li>• No significant cardiovascular benefit</li>
-                        <li>• Introduces new health problems (varicose veins, DVT)</li>
-                        <li>• Musculoskeletal issues persist (carpal tunnel)</li>
-                        <li>• Blood pooling in lower extremities</li>
+                      <ul className="text-base text-gray-900 space-y-1 list-disc list-inside">
+                        <li>No significant cardiovascular benefit</li>
+                        <li>Introduces new health problems (varicose veins, DVT)</li>
+                        <li>Musculoskeletal issues persist (carpal tunnel)</li>
+                        <li>Blood pooling in lower extremities</li>
                       </ul>
                     </motion.div>
                     <motion.div 
@@ -1025,11 +1025,11 @@ export default function WhitePaperPDF() {
                       <p className="text-gray-900 text-base mb-3">
                         Impractical for most work tasks
                       </p>
-                      <ul className="text-base text-gray-900 space-y-1">
-                        <li>• Difficult to type while moving</li>
-                        <li>• Limited to specific activities (calls)</li>
-                        <li>• Not comprehensive solution</li>
-                        <li>• Still requires desk-bound work</li>
+                      <ul className="text-base text-gray-900 space-y-1 list-disc list-inside">
+                        <li>Difficult to type while moving</li>
+                        <li>Limited to specific activities (calls)</li>
+                        <li>Not comprehensive solution</li>
+                        <li>Still requires desk-bound work</li>
                       </ul>
                     </motion.div>
                     <motion.div 
@@ -1050,11 +1050,11 @@ export default function WhitePaperPDF() {
                       <p className="text-gray-900 text-base mb-3">
                         Work culture pressure limits effectiveness
                       </p>
-                      <ul className="text-base text-gray-900 space-y-1">
-                        <li>• Pressure to minimize time away from desk</li>
-                        <li>• Most work requires desk access</li>
-                        <li>• Not a fundamental solution</li>
-                        <li>• Productivity vs. health trade-off</li>
+                      <ul className="text-base text-gray-900 space-y-1 list-disc list-inside">
+                        <li>Pressure to minimize time away from desk</li>
+                        <li>Most work requires desk access</li>
+                        <li>Not a fundamental solution</li>
+                        <li>Productivity vs. health trade-off</li>
                       </ul>
                     </motion.div>
                   </div>
