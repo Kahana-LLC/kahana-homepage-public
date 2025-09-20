@@ -428,6 +428,71 @@ export default function WhitePaperPDF() {
             }} />
           </div>
 
+          {/* Authors Section */}
+          <section className="mb-16">
+            <div className="bg-white rounded-2xl shadow-xl border border-[#A5DAD8]/30 p-8">
+              <div className="text-center mb-8">
+                <h2 className="text-2xl font-bold text-gray-900 mb-2">Authors</h2>
+                <p className="text-gray-600">Meet the team behind this research</p>
+              </div>
+              
+              <div className="flex flex-col md:flex-row gap-8 justify-center items-center">
+                {/* Jonathan Gans */}
+                <div className="flex flex-col items-center text-center max-w-sm">
+                  <div className="w-32 h-32 rounded-full overflow-hidden mb-4 shadow-lg">
+                    <img 
+                      src="/assets/headshots/jonathan_gans.jpg" 
+                      alt="Jonathan Gans, CEO of Kahana"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Jonathan Gans</h3>
+                  <p className="text-[#66C2BE] font-medium mb-3">CEO</p>
+                  <p className="text-gray-600 text-sm mb-4 leading-relaxed">
+                    Biomedical Engineering graduate from Duke University, previously in Deloitte's corporate strategy practice, and renowned Dog Whisperer in the Windy City. Building an ergonomic future of work.
+                  </p>
+                  <a 
+                    href="https://www.linkedin.com/in/jonathan-gans1/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-[#66C2BE] hover:text-[#4A9E9A] transition-colors duration-300"
+                  >
+                    <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                    Connect on LinkedIn
+                  </a>
+                </div>
+
+                {/* Adam Kershner */}
+                <div className="flex flex-col items-center text-center max-w-sm">
+                  <div className="w-32 h-32 rounded-full overflow-hidden mb-4 shadow-lg">
+                    <img 
+                      src="/assets/headshots/adam_kershner.jpg" 
+                      alt="Adam Kershner, CTO of Kahana"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Adam Kershner</h3>
+                  <p className="text-[#66C2BE] font-medium mb-3">CTO</p>
+                  <p className="text-gray-600 text-sm mb-4 leading-relaxed">
+                    I'm the CTO of Kahana, bringing a unique perspective from my management consulting experience at Clarkston Consulting and biomedical engineering background from Duke University. I'm focused on making the future of work more ergonomic through innovative technology solutions.
+                  </p>
+                  <a 
+                    href="https://www.linkedin.com/in/adam-kershner/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-[#66C2BE] hover:text-[#4A9E9A] transition-colors duration-300"
+                  >
+                    <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                    Connect on LinkedIn
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
 
           {/* Introduction Section */}
           <section id="introduction" className="mb-20">
