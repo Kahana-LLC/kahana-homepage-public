@@ -108,13 +108,13 @@ export default function WhitePaperPDF() {
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a
                     href="/references-future-of-ergonomic-work-white-paper"
-                    className="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-md bg-[#66C2BE] hover:bg-[#4A9E9A] transition-colors duration-300"
-                    style={{color: 'white !important'}}
+                    className="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-md bg-[#66C2BE] hover:bg-[#4A9E9A] transition-colors duration-300 text-white"
+                    style={{color: 'white'}}
                   >
-                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 mr-2" fill="none" stroke="white" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                     </svg>
-                    View All References
+                    <span style={{color: 'white'}}>View All References</span>
                   </a>
                 </div>
               </div>
@@ -428,6 +428,65 @@ export default function WhitePaperPDF() {
             }} />
           </div>
 
+          {/* Authors Section */}
+          <section className="mb-16">
+            <div className="bg-white rounded-2xl shadow-xl border border-[#A5DAD8]/30 p-8">
+              <div className="text-center mb-8">
+                <h2 className="text-2xl font-bold text-gray-900 mb-2">Authors</h2>
+                <p className="text-gray-600">Meet the team behind this research</p>
+              </div>
+              
+              <div className="flex flex-col md:flex-row gap-8 justify-center items-center">
+                {/* Jonathan Gans */}
+                <div className="flex flex-col items-center text-center max-w-sm">
+                  <div className="w-32 h-32 rounded-full overflow-hidden mb-4 shadow-lg">
+                    <img 
+                      src="/assets/headshots/jonathan_gans.jpg" 
+                      alt="Jonathan Gans, CEO of Kahana"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Jonathan Gans</h3>
+                  <p className="text-[#66C2BE] font-medium mb-4">CEO</p>
+                  <a 
+                    href="https://www.linkedin.com/in/jonathan-gans1/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-[#66C2BE] hover:text-[#4A9E9A] transition-colors duration-300"
+                    title="Connect on LinkedIn"
+                  >
+                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                  </a>
+                </div>
+
+                {/* Adam Kershner */}
+                <div className="flex flex-col items-center text-center max-w-sm">
+                  <div className="w-32 h-32 rounded-full overflow-hidden mb-4 shadow-lg">
+                    <img 
+                      src="/assets/headshots/adam_kershner.jpg" 
+                      alt="Adam Kershner, COO of Kahana"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Adam Kershner</h3>
+                  <p className="text-[#66C2BE] font-medium mb-4">COO</p>
+                  <a 
+                    href="https://www.linkedin.com/in/adam-kershner/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-[#66C2BE] hover:text-[#4A9E9A] transition-colors duration-300"
+                    title="Connect on LinkedIn"
+                  >
+                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
 
           {/* Introduction Section */}
           <section id="introduction" className="mb-20">
@@ -5384,18 +5443,18 @@ export default function WhitePaperPDF() {
 
                 <div className="text-center mt-12">
                   <p className="text-xl text-gray-900 font-medium mb-8">
-                    The future of work is not about better desks—it's about breaking free from desks altogether.
+                    The future of work is not about better desks—it's about breaking free from desks altogether. 🦥
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <a
                       href="/references-future-of-ergonomic-work-white-paper"
-                      className="inline-flex items-center px-8 py-4 bg-[#66C2BE] font-semibold rounded-lg hover:bg-[#4A9E9A] transition-colors duration-300"
-                      style={{color: 'white !important'}}
+                      className="inline-flex items-center px-8 py-4 bg-[#66C2BE] font-semibold rounded-lg hover:bg-[#4A9E9A] transition-colors duration-300 text-white"
+                      style={{color: 'white'}}
                     >
-                      <svg className="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-6 h-6 mr-3" fill="none" stroke="white" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                       </svg>
-                      View All References
+                      <span style={{color: 'white'}}>View All References</span>
                     </a>
                     <Link
                       href="/contact"
@@ -5472,6 +5531,34 @@ export default function WhitePaperPDF() {
                   Explore our complete collection of guides, tools, and resources.
                 </p>
               </Link>
+            </div>
+          </div>
+
+          {/* Health Survey CTA Section */}
+          <div className="bg-green-100 rounded-2xl p-8 mb-16">
+            <div className="text-center">
+              <h3 className="text-2xl font-bold text-black mb-4">
+                How Many Steps Do You Actually Get In?
+              </h3>
+              <p className="text-black/80 mb-6 max-w-2xl mx-auto">
+                We're researching how sedentary work impacts daily movement and health. 
+                Share your experience with getting steps in during work hours to help us identify and fix the problems with desk-bound work.
+              </p>
+              <a 
+                href="/kahana-health-survey" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center bg-[#21706c] text-white font-bold px-8 py-4 rounded-lg hover:bg-[#15514f] transition-colors duration-300 shadow-lg"
+                style={{ color: 'white' }}
+              >
+                <svg className="w-5 h-5 mr-2" fill="none" stroke="white" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+                <span style={{ color: 'white' }}>Fine, I'll take a 5-minute survey</span>
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="white" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
             </div>
           </div>
 

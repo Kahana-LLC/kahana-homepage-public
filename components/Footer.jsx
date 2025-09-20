@@ -53,7 +53,7 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className="relative bg-gradient-to-b from-[#FDF3D9] to-[#FBE8BA] text-kahana-primary font-style before:absolute before:inset-0 before:bg-[radial-gradient(circle_at_top,#FFE7A1/0.2,transparent_70%)] before:pointer-events-none" aria-labelledby="footer-heading">
+    <footer className="relative bg-gradient-to-b from-[#E8F5E8] to-[#D4F1D4] text-kahana-primary font-style before:absolute before:inset-0 before:bg-[radial-gradient(circle_at_top,#2ECC71/0.1,transparent_70%)] before:pointer-events-none" aria-labelledby="footer-heading">
       <div className="relative">
         <h2 id="footer-heading" className="sr-only">Footer</h2>
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
