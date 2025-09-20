@@ -6,8 +6,8 @@ export default function GlobalBanner() {
   const [isVisible, setIsVisible] = useState(true);
   const router = useRouter();
 
-  // Hide banner on the Oasis Waitlist page
-  if (router.pathname === '/oasis-waitlist' || !isVisible) return null;
+  // Hide banner on specific pages
+  if (router.pathname === '/oasis-waitlist' || router.pathname === '/white-paper-future-of-ergonomic-work' || !isVisible) return null;
 
   return (
     <div className="GlobalBanner bg-gradient-to-r from-kahana-primary to-kahana-secondary relative">
