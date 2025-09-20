@@ -469,14 +469,14 @@ export default function WhitePaperPDF() {
                   <div className="w-32 h-32 rounded-full overflow-hidden mb-4 shadow-lg">
                     <img 
                       src="/assets/headshots/adam_kershner.jpg" 
-                      alt="Adam Kershner, CTO of Kahana"
+                      alt="Adam Kershner, COO of Kahana"
                       className="w-full h-full object-cover"
                     />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">Adam Kershner</h3>
-                  <p className="text-[#66C2BE] font-medium mb-3">CTO</p>
+                  <p className="text-[#66C2BE] font-medium mb-3">COO</p>
                   <p className="text-gray-600 text-sm mb-4 leading-relaxed">
-                    I'm the CTO of Kahana, bringing a unique perspective from my management consulting experience at Clarkston Consulting and biomedical engineering background from Duke University. I'm focused on making the future of work more ergonomic through innovative technology solutions.
+                    I'm the COO of Kahana, bringing a unique perspective from my management consulting experience at Clarkston Consulting and biomedical engineering background from Duke University. I'm focused on making the future of work more ergonomic through innovative technology solutions.
                   </p>
                   <a 
                     href="https://www.linkedin.com/in/adam-kershner/" 
