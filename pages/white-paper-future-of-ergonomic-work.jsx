@@ -5544,11 +5544,11 @@ export default function WhitePaperPDF() {
           <div className="bg-green-100 rounded-2xl p-8 mb-16">
             <div className="text-center">
               <h3 className="text-2xl font-bold text-black mb-4">
-                Help Shape the Future of Workplace Health
+                How Many Steps Do You Actually Get In?
               </h3>
               <p className="text-black/80 mb-6 max-w-2xl mx-auto">
-                Your insights about workplace health challenges are crucial for our research. 
-                Take our anonymous 5-minute survey to help us develop better ergonomic solutions.
+                We're researching how sedentary work impacts daily movement and health. 
+                Share your experience with getting steps in during work hours to help us identify and fix the problems with desk-bound work.
               </p>
               <a 
                 href="/kahana-health-survey" 
@@ -5558,9 +5558,9 @@ export default function WhitePaperPDF() {
                 style={{ color: 'white' }}
               >
                 <svg className="w-5 h-5 mr-2" fill="none" stroke="white" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
-                <span style={{ color: 'white' }}>Take Health Survey</span>
+                <span style={{ color: 'white' }}>Share Your Movement Story</span>
                 <svg className="w-4 h-4 ml-2" fill="none" stroke="white" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
