@@ -279,6 +279,51 @@ export default function WhitePaperPDF() {
               #narrative-sidebar .flex-1::-webkit-scrollbar-thumb:hover {
                 background: rgba(156, 163, 175, 0.5);
               }
+              
+              /* Print styles for PDF export */
+              @media print {
+                /* Hide navigation and UI elements during print */
+                nav,
+                .fixed,
+                #narrative-sidebar,
+                #scroll-progress-bar,
+                .sticky,
+                .backdrop-blur-sm {
+                  display: none !important;
+                }
+                
+                /* Ensure content takes full width */
+                main {
+                  margin-left: 0 !important;
+                  padding-left: 0 !important;
+                }
+                
+                /* Optimize text for print */
+                body {
+                  font-size: 12pt;
+                  line-height: 1.4;
+                }
+                
+                /* Ensure images print properly */
+                img {
+                  max-width: 100% !important;
+                  height: auto !important;
+                }
+                
+                /* Page breaks */
+                .page-break {
+                  page-break-before: always;
+                }
+                
+                /* Avoid breaking inside important elements */
+                h1, h2, h3, h4, h5, h6 {
+                  page-break-after: avoid;
+                }
+                
+                p, li {
+                  page-break-inside: avoid;
+                }
+              }
             `}</style>
 
             {/* Scroll Progress Script */}
@@ -5585,6 +5630,52 @@ export default function WhitePaperPDF() {
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+              </svg>
+            </button>
+
+            {/* PDF Export */}
+            <button
+              onClick={() => {
+                // Hide the share tab temporarily during print
+                const shareTab = document.querySelector('.fixed.bottom-4.right-4');
+                if (shareTab) {
+                  shareTab.style.display = 'none';
+                }
+                
+                // Hide the sidebar during print
+                const sidebar = document.getElementById('narrative-sidebar');
+                if (sidebar) {
+                  sidebar.style.display = 'none';
+                }
+                
+                // Hide the progress bar during print
+                const progressBar = document.getElementById('scroll-progress-bar');
+                if (progressBar) {
+                  progressBar.style.display = 'none';
+                }
+                
+                // Trigger print dialog
+                window.print();
+                
+                // Restore elements after a short delay
+                setTimeout(() => {
+                  if (shareTab) {
+                    shareTab.style.display = '';
+                  }
+                  if (sidebar) {
+                    sidebar.style.display = '';
+                  }
+                  if (progressBar) {
+                    progressBar.style.display = '';
+                  }
+                }, 1000);
+              }}
+              className="flex items-center justify-center w-8 h-8 bg-red-600 hover:bg-red-700 text-white rounded-md transition-colors duration-200"
+              aria-label="Export as PDF"
+              title="Export as PDF"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
               </svg>
             </button>
           </div>
