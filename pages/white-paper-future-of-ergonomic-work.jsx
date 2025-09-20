@@ -125,7 +125,11 @@ export default function WhitePaperPDF() {
                   <img 
                     src="/sloth-future-of-ergonomic-work.png" 
                     alt="Sloth breaking free from desk-bound work with AR/VR technology, symbolizing the future of ergonomic work"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out"
+                    onLoad={(e) => {
+                      e.target.style.opacity = '1';
+                    }}
+                    style={{ opacity: 0 }}
                   />
                 </div>
               </div>
