@@ -162,6 +162,15 @@ export default function BlogPost({ post }) {
         <meta property="article:section" content={allCategories.join(', ')} />
       </Head>
 
+      {/* Scroll Progress Bar */}
+      <div className="fixed top-16 left-0 w-full h-2 bg-gray-200 z-40">
+        <div 
+          id="scroll-progress-bar"
+          className="h-full bg-gradient-to-r from-[#66C2BE] to-[#4A9E9A] transition-all duration-150 ease-out"
+          style={{ width: '0%' }}
+        ></div>
+      </div>
+
       <main className="max-w-4xl mx-auto px-4 py-8">
         <article className="prose prose-lg max-w-none">
           <header className="mb-12">
@@ -334,6 +343,28 @@ export default function BlogPost({ post }) {
           )}
         </article>
       </main>
+
+      {/* Scroll Progress Script */}
+      <script dangerouslySetInnerHTML={{
+        __html: `
+          document.addEventListener('DOMContentLoaded', function() {
+            function updateProgress() {
+              const scrollTop = window.pageYOffset;
+              const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+              const scrollPercent = (scrollTop / docHeight) * 100;
+              
+              // Update scroll progress bar
+              const progressBar = document.getElementById('scroll-progress-bar');
+              if (progressBar) {
+                progressBar.style.width = Math.min(scrollPercent, 100) + '%';
+              }
+            }
+            
+            window.addEventListener('scroll', updateProgress);
+            updateProgress(); // Initial call
+          });
+        `
+      }} />
     </>
   );
 }
