@@ -14,6 +14,29 @@ import RetentionCohort from '../../components/analytics/RetentionCohort';
 import PersonaCard from '../../components/analytics/PersonaCard';
 import KPIStat from '../../components/analytics/KPIStat';
 import Tabs from '../../components/analytics/Tabs';
+import DashboardSelector from '../../components/analytics/DashboardSelector';
+import OrgAdoptionChart from '../../components/analytics/OrgAdoptionChart';
+import TopCommandsByTeam from '../../components/analytics/TopCommandsByTeam';
+import DepartmentMap from '../../components/analytics/DepartmentMap';
+import SimpleStatCard from '../../components/analytics/SimpleStatCard';
+import GaugeChart from '../../components/analytics/GaugeChart';
+import AreaStackedChart from '../../components/analytics/AreaStackedChart';
+import CostByModelChart from '../../components/analytics/CostByModelChart';
+import DonutStat from '../../components/analytics/DonutStat';
+import AreaSmoothChart from '../../components/analytics/AreaSmoothChart';
+import SparklineCard from '../../components/analytics/SparklineCard';
+import ScatterChart from '../../components/analytics/ScatterChart';
+import StatBlock from '../../components/analytics/StatBlock';
+import ProgressBarCard from '../../components/analytics/ProgressBarCard';
+import AlertsList from '../../components/analytics/AlertsList';
+import BadgeRow from '../../components/analytics/BadgeRow';
+import StreakCalendar from '../../components/analytics/StreakCalendar';
+import LevelsTrack from '../../components/analytics/LevelsTrack';
+import HorizontalMeterList from '../../components/analytics/HorizontalMeterList';
+import ShortcutAdoptionList from '../../components/analytics/ShortcutAdoptionList';
+import ClockDial from '../../components/analytics/ClockDial';
+import RoutinesList from '../../components/analytics/RoutinesList';
+import AchievementsGrid from '../../components/analytics/AchievementsGrid';
 
 const conceptCards = [
   {
@@ -68,6 +91,21 @@ const conceptCards = [
 
 export default function UserAnalyticsFeatures() {
   const [activeTab, setActiveTab] = useState('overview');
+  const [selectedDashboard, setSelectedDashboard] = useState('enterprise');
+  const [internalTab, setInternalTab] = useState('overview');
+  const internalTabs = [
+    { key: 'overview', label: 'Overview' },
+    { key: 'reliability', label: 'Reliability' },
+    { key: 'performance', label: 'Performance' },
+    { key: 'costs', label: 'Costs' }
+  ];
+  const [userTab, setUserTab] = useState('overview');
+  const userTabs = [
+    { key: 'overview', label: 'Overview' },
+    { key: 'progress', label: 'Progress' },
+    { key: 'habits', label: 'Habits' },
+    { key: 'achievements', label: 'Achievements' },
+  ];
   const tabs = [
     { key: 'overview', label: 'Overview' },
     { key: 'commands', label: 'Command Analytics' },
@@ -80,6 +118,42 @@ export default function UserAnalyticsFeatures() {
   const commandsSeries = [2200, 2400, 2600, 2500, 3000, 3200, 3500, 3300, 3600, 3700, 3900];
   const errorsSeries = [120, 80, 110, 90, 130, 95, 140, 180, 150, 170, 160];
   const activeUsersSeries = [100, 120, 130, 160, 200, 240, 300, 320, 380, 420, 480];
+
+  // Internal Team sample data
+  const requestLatencyLabels = ['P80 Hz', 'P33'];
+  const requestLatencySeries = [
+    {
+      label: 'p80',
+      data: [220, 260],
+      borderColor: '#6366f1'
+    },
+    {
+      label: 'p33',
+      data: [140, 160],
+      borderColor: '#14b8a6'
+    }
+  ];
+  const tokenConsumptionLabels = ['Week 1','Week 2','Week 3','Week 4','Week 5'];
+  const tokenConsumptionSeries = [
+    {
+      label: 'Token',
+      data: [10, 14, 13, 16, 18],
+      borderColor: '#3b82f6'
+    },
+    {
+      label: 'Total',
+      data: [12, 15, 16, 19, 22],
+      borderColor: '#14b8a6'
+    }
+  ];
+  const uptimeHeatmapData = [
+    [95, 96, 98, 97, 96],
+    [97, 98, 99, 98, 97],
+    [96, 96, 97, 98, 98],
+    [98, 99, 99, 99, 98]
+  ];
+  const uptimeRows = ['24/T', 'T', 'T', 'M'];
+  const uptimeCols = ['M', 'T', 'W', 'T', 'D'];
 
   // Command Analytics data
   const commandAccuracyData = [
@@ -191,12 +265,282 @@ export default function UserAnalyticsFeatures() {
       {/* Analytics Overview Section */}
       <section className="bg-white/60 py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-center mb-6">
-            <Tabs tabs={tabs} active={activeTab} onChange={setActiveTab} />
-          </div>
+          <DashboardSelector 
+            selectedDashboard={selectedDashboard} 
+            onSelect={setSelectedDashboard} 
+          />
+          {selectedDashboard !== 'internal' && selectedDashboard !== 'user' && (
+            <div className="flex items-center justify-center mb-6">
+              <Tabs tabs={tabs} active={activeTab} onChange={setActiveTab} />
+            </div>
+          )}
+
+          {selectedDashboard === 'user' && (
+            <>
+              <div className="flex items-center justify-center mb-6">
+                <Tabs tabs={userTabs} active={userTab} onChange={setUserTab} />
+              </div>
+
+              {userTab === 'overview' && (
+                <>
+                  <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+                    <SimpleStatCard title="Streak" value={<><span className="font-semibold">5</span> days</>} />
+                    <SimpleStatCard title="Focus Minutes" value={<><span className="font-semibold">2 h 13 m</span></>} />
+                    <SimpleStatCard title="Commands Used" value={<><span className="font-semibold">136</span></>} />
+                    <SimpleStatCard title="Shortcuts Used" value={<><span className="font-semibold">42</span></>} />
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <SparklineCard title="Focus Minutes Used" values={[10,12,11,15,14,16,15,18]} />
+                    <DonutStat label="Command Types" value={50} color="#60a5fa" />
+                    <BadgeRow title="Focus Score" badges={["🦥","🦥","🦥","🦥"]} />
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <GaugeChart value={82} />
+                    <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
+                      <div className="text-gray-900 font-semibold mb-3">Session Length Distribution</div>
+                      <BarChart labels={["10","20","30","40"]} values={[12,20,16,24]} color="rgba(59,130,246,0.8)" yMin={0} yMax={30} />
+                    </div>
+                    <BadgeRow badges={["🦥","😀","👍"]} />
+                  </div>
+                </>
+              )}
+
+              {userTab === 'progress' && (
+                <>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <SparklineCard title="Weekly Focus Minutes" values={[5,15,35,45,38,70,85]} />
+                    <StreakCalendar weeks={4} />
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <HorizontalMeterList />
+                    <LevelsTrack />
+                    <DonutStat label="Goals" value={75} />
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <GaugeChart label="Productivity" value={75} />
+                    <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
+                      <div className="text-gray-900 font-semibold mb-3">Sessions Completed</div>
+                      <BarChart labels={["1","2","3","4","5","6","7"]} values={[3,5,4,6,5,7,8]} color="rgba(59,130,246,0.8)" yMin={0} yMax={10} />
+                    </div>
+                    <DonutStat label="Time of Day Activity" value={62} color="#06b6d4" />
+                  </div>
+                </>
+              )}
+              {userTab === 'habits' && (
+                <>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <SparklineCard title="Daily Focus Minutes" values={[28,35,32,40,38,52,58]} />
+                    <ShortcutAdoptionList />
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
+                      <div className="text-gray-900 font-semibold mb-3">Streak Heatmap</div>
+                      <HeatmapChart data={uptimeHeatmapData} rowLabels={["M","T","W","T"]} colLabels={["M","T","W","T","S"]} />
+                    </div>
+                    <ClockDial />
+                    <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
+                      <div className="text-gray-900 font-semibold mb-3">Weekly Goal Completion</div>
+                      <div className="grid grid-cols-2 gap-4">
+                        <DonutStat label="" value={85} />
+                        <DonutStat label="" value={62} color="#22c55e" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <SparklineCard title="Tab Bounce Rate" values={[12,10,14,9,16,12,13]} />
+                    <SparklineCard title="" values={[2,1,3,2,1,4]} />
+                    <RoutinesList />
+                  </div>
+                </>
+              )}
+              {userTab === 'achievements' && (
+                <>
+                  <div className="mb-4 flex gap-2">
+                    <button className="px-4 py-2 rounded-md bg-gray-100 text-gray-700">Locked</button>
+                    <button className="px-4 py-2 rounded-md bg-teal-600 text-white">Earned</button>
+                  </div>
+                  <AchievementsGrid />
+                </>
+              )}
+            </>
+          )}
+
+          {selectedDashboard === 'internal' && (
+            <>
+              <div className="flex items-center justify-center mb-6">
+                <Tabs tabs={internalTabs} active={internalTab} onChange={setInternalTab} />
+              </div>
+
+              {internalTab === 'overview' && (
+                <>
+                  {/* Top Stats */}
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+                    <SimpleStatCard title="System Health" value="All systems operational" icon={(
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    )} />
+                    <SimpleStatCard title="API Latency" value={<><span className="font-semibold">320</span> ms <span className="text-gray-400">/ 800 ms</span></>} />
+                    <SimpleStatCard title="Error rate" value={<><span className="text-red-600 font-semibold">0.5%</span></>} sublabel={<><span className="text-gray-500">0,5 k</span> <span className="text-gray-400">ast month</span></>} />
+                  </div>
+
+                  {/* Charts Grid */}
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
+                      <div className="text-gray-900 font-semibold mb-3">Request Latency (ms)</div>
+                      <LineChart labels={requestLatencyLabels} datasets={requestLatencySeries} yMin={100} yMax={300} height={200} />
+                    </div>
+                    <CostByModelChart height={200} />
+                    <AreaStackedChart height={200} />
+                    <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
+                      <div className="text-gray-900 font-semibold mb-3">Uptime by Region</div>
+                      <HeatmapChart data={uptimeHeatmapData} rowLabels={uptimeRows} colLabels={uptimeCols} />
+                    </div>
+                    <GaugeChart value={75} height={220} />
+                    <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
+                      <div className="text-gray-900 font-semibold mb-3">Token Consumption</div>
+                      <LineChart labels={tokenConsumptionLabels} datasets={tokenConsumptionSeries} yMin={0} yMax={25} height={200} />
+                    </div>
+                  </div>
+                </>
+              )}
+              {internalTab === 'reliability' && (
+                <>
+                  {/* Top Stats */}
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+                    <SimpleStatCard title="Uptime" value={<><span className="font-semibold">99,9%</span></>} />
+                    <SimpleStatCard title="Error Budgets" value={<><span className="font-semibold">87%</span></>} />
+                    <SimpleStatCard title="SLOs Met" value={<><span className="font-semibold">96%</span></>} />
+                  </div>
+
+                  {/* Grid */}
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <AreaSmoothChart title="Latency Percentiles (ms)" />
+                    <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
+                      <div className="text-gray-900 font-semibold mb-3">Dependency Health</div>
+                      <div className="grid grid-cols-2 gap-4">
+                        <DonutStat label="MTR" value={80} height={140} />
+                        <DonutStat label="T2H" value={65} height={140} color="#3b82f6" />
+                      </div>
+                      <div className="flex justify-between text-sm text-gray-500 mt-2">
+                        <span>30m</span>
+                        <span>72h</span>
+                      </div>
+                    </div>
+                    <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
+                      <div className="text-gray-900 font-semibold mb-3">Regional Uptime</div>
+                      <DepartmentMap height={180} />
+                    </div>
+                    <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
+                      <div className="text-gray-900 font-semibold mb-3">Alert Volume</div>
+                      <AreaSmoothChart title="" />
+                    </div>
+                    <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
+                      <div className="text-gray-900 font-semibold mb-3">Error Rate</div>
+                      <BarChart labels={["1","2","3","4","5","6"]} values={[5,6,7,6,8,9]} color="rgba(59,130,246,0.8)" yMin={0} yMax={12} />
+                    </div>
+                    <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
+                      <div className="text-gray-900 font-semibold mb-3">Incident Timeline</div>
+                      <HorizontalBarChart labels={["A","B","C","D","E"]} values={[100,80,60,40,20]} color="rgba(20,184,166,0.8)" />
+                    </div>
+                    <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
+                      <div className="text-gray-900 font-semibold mb-3">Availability</div>
+                      <AreaSmoothChart title="" />
+                    </div>
+                    <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
+                      <div className="text-gray-900 font-semibold mb-3">Request Latency</div>
+                      <BarChart labels={["1","2","3","4","5","N"]} values={[12,18,22,15,10,8]} color="rgba(14,165,233,0.8)" yMin={0} yMax={30} />
+                    </div>
+                    <div className="grid grid-cols-2 gap-6">
+                      <DonutStat label="API Success" value={92} />
+                      <DonutStat label="API Failures" value={8} color="#ef4444" />
+                    </div>
+                  </div>
+                </>
+              )}
+              {internalTab === 'performance' && (
+                <>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <SparklineCard title="Requests per Second" values={[0.6,0.7,0.55,0.65,0.8,0.9,1.0,1.2]} />
+                    <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
+                      <div className="text-gray-900 font-semibold mb-3">CPU / Memory Utilisation</div>
+                      <div className="grid grid-cols-2 gap-4">
+                        <AreaSmoothChart title="Region" height={120} />
+                        <DepartmentMap height={120} />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
+                      <div className="text-gray-900 font-semibold mb-3">Model Throughput</div>
+                      <BarChart labels={["GPT-4","Reranker"]} values={[42, 55]} color="rgba(59,130,246,0.8)" yMin={0} yMax={60} />
+                    </div>
+                    <GaugeChart value={86} />
+                    <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
+                      <div className="grid grid-cols-2 gap-4">
+                        <SparklineCard title="Disk I/O" values={[88,85,86,87,88,89]} height={90} fill={false} />
+                        <SparklineCard title="Network I/O" values={[3.1,3.2,3.0,3.3,3.1]} height={90} fill={false} color="#14b8a6" />
+                        <SparklineCard title="Queue Depth" values={[2,3,2,4,3,2]} height={90} fill={false} color="#06b6d4" />
+                        <SparklineCard title="RPS" values={[120,140,130,150,160]} height={90} fill={false} color="#6366f1" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <SparklineCard title="Network I/O" values={[2.8,3.0,3.1,3.2,3.1,3.3]} />
+                    <ScatterChart title="Latency vs. Payload Size" />
+                  </div>
+                </>
+              )}
+              {internalTab === 'costs' && (
+                <>
+                  {/* Top row */}
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <StatBlock title="Total Spend" primary={<><span className="mr-1">$$</span>30</>} secondary={{ label: 'MTD', value: '$34.5K' }} />
+                    <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
+                      <div className="text-gray-900 font-semibold mb-3">Cost by Provider</div>
+                      <BarChart labels={["A","B","C","D","E","F"]} values={[3,4,5,6,7,7.5]} color="rgba(59,130,246,0.8)" yMin={0} yMax={8} />
+                    </div>
+                    <CostByModelChart height={160} />
+                  </div>
+
+                  {/* Middle row */}
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <SparklineCard title="Daily Spend Trend" values={[10,12,11,13,12,14,16,18,21]} />
+                    <SparklineCard title="Budget vs. Actual" values={[8,9,10,10,11,12,13,14,15]} />
+                    <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
+                      <div className="text-gray-900 font-semibold mb-3">Cache Savings</div>
+                      <DepartmentMap height={120} />
+                    </div>
+                  </div>
+
+                  {/* Bottom rows */}
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <SparklineCard title="Daily Spend Trend" values={[12,13,14,15,16,17,18]} />
+                    <ProgressBarCard title="Cost by Region" percent={72} label="Saved" />
+                    <AlertsList />
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
+                      <div className="text-gray-900 font-semibold mb-3">High-cost Commands</div>
+                      <HorizontalBarChart labels={["cmd-1","cmd-2","cmd-3","cmd-4"]} values={[90,80,60,40]} color="rgba(59,130,246,0.8)" />
+                    </div>
+                    <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
+                      <div className="text-gray-900 font-semibold mb-3">Cost by Region</div>
+                      <DepartmentMap height={120} />
+                    </div>
+                    <AlertsList />
+                  </div>
+                </>
+              )}
+            </>
+          )}
 
           {/* Monthly Trends Tab */}
-          {activeTab === 'monthly' && (
+          {selectedDashboard !== 'internal' && activeTab === 'monthly' && (
             <>
               {/* KPI Row */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
@@ -243,7 +587,7 @@ export default function UserAnalyticsFeatures() {
           )}
 
           {/* Command Analytics Tab */}
-          {activeTab === 'commands' && (
+          {selectedDashboard !== 'internal' && activeTab === 'commands' && (
             <>
               {/* KPI Row */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
@@ -287,8 +631,8 @@ export default function UserAnalyticsFeatures() {
             </>
           )}
 
-          {/* Overview Tab */}
-          {activeTab === 'overview' && (
+          {/* Overview Tab (Enterprise/User) */}
+          {selectedDashboard !== 'internal' && activeTab === 'overview' && (
             <>
               {/* KPI Row */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
@@ -327,16 +671,11 @@ export default function UserAnalyticsFeatures() {
                 />
               </div>
 
-              {/* Command Accuracy Distribution Chart */}
-              <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
-                <div className="text-gray-900 font-semibold mb-3">Command Accuracy Distribution</div>
-                <LineChart
-                  labels={hourlyAccuracyData.labels}
-                  datasets={hourlyAccuracyData.datasets}
-                  yMin={50}
-                  yMax={100}
-                  height={300}
-                />
+              {/* Dashboard Charts Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <OrgAdoptionChart height={250} />
+                <TopCommandsByTeam height={250} />
+                <DepartmentMap height={250} />
               </div>
             </>
           )}
