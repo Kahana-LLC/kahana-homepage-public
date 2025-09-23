@@ -62,14 +62,12 @@ const sitemapSections = [
       { text: 'Advanced Features', href: '/docs/advanced-features' },
       { text: 'Security Guide', href: '/docs/security-guide' },
       { text: 'Troubleshooting', href: '/docs/troubleshooting' },
-      { text: 'FAQ', href: '/docs/faq' }
     ]
   },
   {
     title: 'Support',
     links: [
       { text: 'Support Center', href: '/support' },
-      { text: 'FAQ', href: '/faq' },
       { text: 'Contact Sales', href: '/sales' },
     ]
   },

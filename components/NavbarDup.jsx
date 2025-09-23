@@ -498,11 +498,11 @@ function NavBar() {
                     <Link href="/white-paper-future-of-ergonomic-work" className="dropdown-link">
                       White Paper
                     </Link>
-                    <Link href="/installations" className="dropdown-link">
-                      Install
+                    <Link href="/subscribe-to-insights" className="dropdown-link">
+                      Newsletter
                     </Link>
-                    <Link href="/faq" className="dropdown-link">
-                      FAQ
+                    <Link href="/community" className="dropdown-link">
+                      Join Discord
                     </Link>
                   </div>
                 </div>
@@ -632,7 +632,8 @@ function NavBar() {
             <Link href="/blog" className="mobile-link">Blog</Link>
             <Link href="/docs" className="mobile-link">Docs</Link>
             <Link href="/white-paper-future-of-ergonomic-work" className="mobile-link">White Paper</Link>
-            <Link href="/installations" className="mobile-link">Install</Link>
+            <Link href="/subscribe-to-insights" className="mobile-link">Newsletter</Link>
+            <Link href="/community" className="mobile-link">Join Discord</Link>
             <Link href="/buyers-guide" className="mobile-link flex items-center space-x-3 p-3 bg-gradient-to-r from-[#66C2BE]/5 to-[#8CB7D0]/5 rounded-lg border border-[#66C2BE]/20 hover:from-[#66C2BE]/10 hover:to-[#8CB7D0]/10 hover:border-[#66C2BE]/30 transition-all duration-200">
               <div className="flex-shrink-0 w-12 h-12 rounded-lg overflow-hidden">
                 <img 

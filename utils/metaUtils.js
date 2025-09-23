@@ -91,18 +91,6 @@ function generatePageMetaTags(page) {
   });
 }
 
-function generateFAQMetaTags(faq) {
-  return generateMetaTags({
-    title: `${faq.title} | Kahana FAQ`,
-    description:
-      faq.description ||
-      "Find answers to frequently asked questions about Kahana's products and services.",
-    image: faq.featuredImage || "/images/faq-hero.jpg",
-    url: `${EXTERNAL_DATA_URL}/faq`,
-    type: "website",
-    twitterHandle: "@kahana",
-  });
-}
 
 function generateDocMetaTags(doc) {
   return generateMetaTags({
@@ -240,7 +228,6 @@ module.exports = {
   generateBlogMetaTags,
   generateProductMetaTags,
   generatePageMetaTags,
-  generateFAQMetaTags,
   generateDocMetaTags,
   generateLandingMetaTags,
   generateContactMetaTags,

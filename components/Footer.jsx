@@ -134,6 +134,8 @@ export default function Footer() {
               <ul className={`space-y-4 ${openSection === 'learn' || !isMobile ? 'block' : 'hidden'}`}>
                 <li><Link href="/blog" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">Blog</Link></li>
                 <li><Link href="/docs" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">Docs</Link></li>
+                <li><Link href="/white-paper-future-of-ergonomic-work" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">White Paper</Link></li>
+                <li><Link href="/buyers-guide" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">Buyer Guide</Link></li>
                 <li><Link href="/subscribe-to-insights" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">Newsletter</Link></li>
                 <li><Link href="/community" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">Join Discord</Link></li>
               </ul>
@@ -200,7 +202,6 @@ export default function Footer() {
               <div className="flex items-center space-x-8">
                 <span className="text-kahana-primary text-sm">&copy; Kahana Group Inc., 2025. All rights reserved</span>
                 <div className="hidden md:flex items-center space-x-8">
-                  <Link href="/faq" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200 text-sm">FAQ</Link>
                   <Link href="/privacy-policy" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200 text-sm">Privacy</Link>
                   <Link href="/terms-and-conditions" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200 text-sm">Terms</Link>
                   <Link href="/right-to-work" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200 text-sm">Right to Work</Link>
@@ -271,7 +272,6 @@ export default function Footer() {
             </div>
             {/* Mobile Footer Links */}
             <div className="md:hidden mt-6 flex flex-wrap justify-center gap-6">
-              <Link href="/faq" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200 text-sm">FAQ</Link>
               <Link href="/privacy-policy" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200 text-sm">Privacy</Link>
               <Link href="/terms-and-conditions" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200 text-sm">Terms</Link>
               <Link href="/right-to-work" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200 text-sm">Right to Work</Link>
