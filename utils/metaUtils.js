@@ -234,31 +234,6 @@ function generateEventMetaTags(event) {
   });
 }
 
-function generatePartnersMetaTags(partners) {
-  return generateMetaTags({
-    title: "Partners & Integrations | Kahana",
-    description:
-      partners.description ||
-      "Explore Kahana's partner ecosystem. Discover integrations, resellers, and technology partners helping to secure enterprises worldwide.",
-    image: partners.featuredImage || "/images/partners-hero.jpg",
-    url: `${EXTERNAL_DATA_URL}/partners`,
-    type: "website",
-    twitterHandle: "@kahana",
-  });
-}
-
-function generatePartnerMetaTags(partner) {
-  return generateMetaTags({
-    title: `${partner.name} | Kahana Partners`,
-    description:
-      partner.description ||
-      `Learn about our partnership with ${partner.name}. Discover how we're working together to enhance enterprise security.`,
-    image: partner.featuredImage || "/images/partners-hero.jpg",
-    url: `${EXTERNAL_DATA_URL}/partners/${partner.slug}`,
-    type: "website",
-    twitterHandle: "@kahana",
-  });
-}
 
 module.exports = {
   generateMetaTags,
@@ -276,6 +251,4 @@ module.exports = {
   generatePressReleaseMetaTags,
   generateEventsMetaTags,
   generateEventMetaTags,
-  generatePartnersMetaTags,
-  generatePartnerMetaTags,
 };

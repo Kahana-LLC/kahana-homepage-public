@@ -41,9 +41,8 @@ const sitemapSections = [
     ]
   },
   {
-    title: 'Partners & Resources',
+    title: 'Resources',
     links: [
-      { text: 'Partners', href: '/partners' },
       { text: 'Resources', href: '/resources' },
       { text: 'Events', href: '/events' },
       { text: 'Press', href: '/press' },

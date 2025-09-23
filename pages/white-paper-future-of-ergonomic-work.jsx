@@ -488,6 +488,35 @@ export default function WhitePaperPDF() {
             </div>
           </section>
 
+          {/* Download CTA Section */}
+          <section className="mb-16">
+            <div className="bg-gradient-to-r from-[#66C2BE] to-[#4A9E9A] rounded-2xl shadow-xl p-8 text-center">
+              <div className="max-w-4xl mx-auto">
+                <h2 className="text-3xl font-bold text-white mb-4">
+                  Want a PDF Version?
+                </h2>
+                <p className="text-xl text-white/90 mb-8 leading-relaxed">
+                  While you can read the complete white paper right here on this page, you can also download a PDF version for offline reading, sharing with colleagues, or archiving for future reference.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                  <Link
+                    href="/download-future-of-ergonomic-work-white-paper"
+                    className="inline-flex items-center px-8 py-4 bg-white text-[#66C2BE] font-semibold rounded-lg hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                  >
+                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    Download PDF Version
+                  </Link>
+                  <div className="text-white/80 text-sm">
+                    <p>✓ No registration required</p>
+                    <p>✓ Perfect for offline reading</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
           {/* Introduction Section */}
           <section id="introduction" className="mb-20">
             <div className="bg-white rounded-2xl shadow-xl border border-[#A5DAD8]/30 p-8 mb-8">
