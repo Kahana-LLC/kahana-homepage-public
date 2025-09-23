@@ -130,7 +130,7 @@ const BuyerGuideOasis = () => {
                   </div>
                   
                   {/* Disclaimer Section */}
-                  <div className="mt-4 pt-4 border-t border-gray-200 bg-white relative -mt-8 pt-8 z-10">
+                  <div className="mt-4 pt-4 bg-white relative -mt-12 pt-12 z-20">
                     <div className="text-center">
                       <p className="text-sm text-gray-600 mb-3">
                         <strong>Contact us</strong> - for an immediate response, contact us directly at{' '}

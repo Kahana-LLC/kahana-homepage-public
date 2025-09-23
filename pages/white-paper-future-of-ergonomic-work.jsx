@@ -509,7 +509,6 @@ export default function WhitePaperPDF() {
                     Download PDF Version
                   </Link>
                   <div className="text-white/80 text-sm">
-                    <p>✓ No registration required</p>
                     <p>✓ Perfect for offline reading</p>
                   </div>
                 </div>
