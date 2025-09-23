@@ -89,6 +89,25 @@ export default function OasisWaitlist() {
           backgroundColor: 'transparent',
           display: 'block' }}
       />
+      
+      {/* Disclaimer Section */}
+      <div className="mt-4 pt-4 border-t border-gray-200 bg-white relative -mt-8 pt-8">
+        <div className="text-center">
+          <p className="text-sm text-gray-600 mb-3">
+            <strong>Contact us</strong> - for an immediate response, contact us directly at{' '}
+            <Link href="/contact" className="text-[#66C2BE] hover:text-[#4A9E9A] underline">
+              contact us
+            </Link>
+          </p>
+          <p className="text-xs text-gray-500">
+            By submitting this form you consent to be contacted by Kahana, and acknowledge our{' '}
+            <Link href="/privacy-policy" className="text-[#66C2BE] hover:text-[#4A9E9A] underline">
+              Privacy Policy
+            </Link>
+            .
+          </p>
+        </div>
+      </div>
     </div>
   );
 

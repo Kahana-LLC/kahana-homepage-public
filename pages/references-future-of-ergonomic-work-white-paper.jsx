@@ -618,20 +618,12 @@ export default function ReferencesPage() {
 
           <div className="mt-8 sm:mt-12 text-center px-4">
             <Link
-              href="/download-future-of-ergonomic-work-white-paper"
+              href="/white-paper-future-of-ergonomic-work"
               className="inline-flex items-center px-4 sm:px-6 py-3 border border-transparent text-sm sm:text-base font-medium rounded-md text-white !text-white bg-[#66C2BE] hover:bg-[#4A9E9A] transition-colors no-underline w-full sm:w-auto justify-center"
               style={{ color: 'white' }}
             >
-              Download Whitepaper
+              Read Full White Paper
             </Link>
-            <div className="mt-4">
-              <Link
-                href="/blog/the-future-of-ergonomic-work-improving-health-2025"
-                className="text-[#66C2BE] hover:text-[#4A9E9A] font-medium underline text-sm sm:text-base"
-              >
-                Read the full paper →
-              </Link>
-            </div>
           </div>
         </div>
       </main>
