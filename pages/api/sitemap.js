@@ -134,7 +134,6 @@ function generateSiteMap() {
        <priority>0.8</priority>
      </url>
      <url>
-       <loc>${EXTERNAL_DATA_URL}/faq</loc>
        <changefreq>weekly</changefreq>
        <priority>0.7</priority>
      </url>
