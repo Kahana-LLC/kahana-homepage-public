@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 export default function VideoSection() {
   return (
@@ -16,6 +17,13 @@ export default function VideoSection() {
               <p className="text-lg text-gray-700 mb-4 text-center lg:text-left">
                 In this video, you'll see a demo of Oasis's core features and get a glimpse of the future we're building—where your browser is not just a tool, but a companion ready at the sound of your voice.
               </p>
+              <div className="text-center lg:text-left">
+                <Link href="/products/free-agentic-browser">
+                  <button className="bg-kahana-primary text-white px-6 py-3 rounded-md font-semibold hover:bg-kahana-primary-dark transition-colors shadow-lg shadow-kahana-accent-sky/20 hover:shadow-xl hover:shadow-kahana-accent-sky/30">
+                    Oasis Free Browser
+                  </button>
+                </Link>
+              </div>
             
             </div>
           </div>

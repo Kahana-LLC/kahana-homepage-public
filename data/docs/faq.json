@@ -1,8 +1,0 @@
-{
-  "title": "Frequently Asked Questions",
-  "description": "Common questions about Kahana and their answers",
-  "content": "<div class='doc-content'><h1>Frequently Asked Questions</h1><p class='lead-text'>Find answers to commonly asked questions about Kahana's features, functionality, and best practices.</p><section class='faq-section'><h2>General Questions</h2><div class='faq-list'><div class='faq-item'><h3>What is Kahana?</h3><p>Kahana is an intelligent browser platform that combines AI-powered automation, real-time analytics, and secure collaboration tools to enhance your browsing experience.</p></div><div class='faq-item'><h3>How do I get started?</h3><p>Start by signing up for an account, then follow our quick-start guide to set up your workspace and customize your preferences.</p></div></div></section><section class='faq-section'><h2>Technical Questions</h2><div class='faq-list'><div class='faq-item'><h3>What browsers are supported?</h3><p>Kahana supports all major modern browsers including Chrome, Firefox, Safari, and Edge.</p></div><div class='faq-item'><h3>Is my data secure?</h3><p>Yes, we use enterprise-grade encryption and security measures to protect your data.</p></div></div></section></div>",
-  "date": "2025-04-14",
-  "category": "support",
-  "slug": "faq"
-}

@@ -91,18 +91,6 @@ function generatePageMetaTags(page) {
   });
 }
 
-function generateFAQMetaTags(faq) {
-  return generateMetaTags({
-    title: `${faq.title} | Kahana FAQ`,
-    description:
-      faq.description ||
-      "Find answers to frequently asked questions about Kahana's products and services.",
-    image: faq.featuredImage || "/images/faq-hero.jpg",
-    url: `${EXTERNAL_DATA_URL}/faq`,
-    type: "website",
-    twitterHandle: "@kahana",
-  });
-}
 
 function generateDocMetaTags(doc) {
   return generateMetaTags({
@@ -234,38 +222,12 @@ function generateEventMetaTags(event) {
   });
 }
 
-function generatePartnersMetaTags(partners) {
-  return generateMetaTags({
-    title: "Partners & Integrations | Kahana",
-    description:
-      partners.description ||
-      "Explore Kahana's partner ecosystem. Discover integrations, resellers, and technology partners helping to secure enterprises worldwide.",
-    image: partners.featuredImage || "/images/partners-hero.jpg",
-    url: `${EXTERNAL_DATA_URL}/partners`,
-    type: "website",
-    twitterHandle: "@kahana",
-  });
-}
-
-function generatePartnerMetaTags(partner) {
-  return generateMetaTags({
-    title: `${partner.name} | Kahana Partners`,
-    description:
-      partner.description ||
-      `Learn about our partnership with ${partner.name}. Discover how we're working together to enhance enterprise security.`,
-    image: partner.featuredImage || "/images/partners-hero.jpg",
-    url: `${EXTERNAL_DATA_URL}/partners/${partner.slug}`,
-    type: "website",
-    twitterHandle: "@kahana",
-  });
-}
 
 module.exports = {
   generateMetaTags,
   generateBlogMetaTags,
   generateProductMetaTags,
   generatePageMetaTags,
-  generateFAQMetaTags,
   generateDocMetaTags,
   generateLandingMetaTags,
   generateContactMetaTags,
@@ -276,6 +238,4 @@ module.exports = {
   generatePressReleaseMetaTags,
   generateEventsMetaTags,
   generateEventMetaTags,
-  generatePartnersMetaTags,
-  generatePartnerMetaTags,
 };

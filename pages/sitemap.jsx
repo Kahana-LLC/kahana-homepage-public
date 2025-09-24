@@ -10,6 +10,7 @@ const sitemapSections = [
       { text: 'About', href: '/about' },
       { text: 'Contact', href: '/contact' },
       { text: 'Blog', href: '/blog' },
+      { text: 'Installations', href: '/installations' },
       { text: 'Schedule Demo', href: '/schedule-demo' }
     ]
   },
@@ -19,7 +20,7 @@ const sitemapSections = [
       { text: 'Products Overview', href: '/products' },
       { text: 'Enterprise Browser', href: '/products/enterprise-browser' },
       { text: 'Web Application', href: '/products/web-application' },
-      { text: "Buyer's Guide", href: '/buyer-guide-oasis' }
+      { text: "Buyer's Guide", href: '/buyers-guide' }
     ]
   },
   {
@@ -40,9 +41,8 @@ const sitemapSections = [
     ]
   },
   {
-    title: 'Partners & Resources',
+    title: 'Resources',
     links: [
-      { text: 'Partners', href: '/partners' },
       { text: 'Resources', href: '/resources' },
       { text: 'Events', href: '/events' },
       { text: 'Press', href: '/press' },
@@ -62,14 +62,12 @@ const sitemapSections = [
       { text: 'Advanced Features', href: '/docs/advanced-features' },
       { text: 'Security Guide', href: '/docs/security-guide' },
       { text: 'Troubleshooting', href: '/docs/troubleshooting' },
-      { text: 'FAQ', href: '/docs/faq' }
     ]
   },
   {
     title: 'Support',
     links: [
       { text: 'Support Center', href: '/support' },
-      { text: 'FAQ', href: '/faq' },
       { text: 'Contact Sales', href: '/sales' },
     ]
   },

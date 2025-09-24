@@ -6,7 +6,7 @@ const authors = {
   "Adam Kershner": {
     name: "Adam Kershner",
     role: "CTO",
-    bio: "I'm the CTO of Kahana, where I lead our mission to give you an Oasis to nurture your dreams and ideas. No data gathering. Ad-free. Private. Anonymous. Secure. While delivering industry-leading productivity features like voice-to-text, agentic commands, and AI-integrated at the core.",
+    bio: "I'm the CTO of Kahana, bringing a unique perspective from my management consulting experience at Clarkston Consulting and biomedical engineering background from Duke University. I'm focused on making the future of work more ergonomic through innovative technology solutions that prioritize user well-being and productivity.",
     linkedinProfile: "https://www.linkedin.com/in/adam-kershner/",
     // avatar: "/images/authors/adam-kershner.jpg",
   },
@@ -113,6 +113,44 @@ const authors = {
     bio: "I believe the best strategies start with curiosity and a good cup of chai (tea). Duke Fuqua MMS '25 | Marketing & Business Development Enthusiast | Data-Driven Strategist",
     linkedinProfile: "https://www.linkedin.com/in/khyatibhatia10/",
     avatar: "/assets/headshots/khyati_bhatia.jpg",
+  },
+
+  "Sanku Rajshree Rao": {
+    name: "Sanku Rajshree Rao",
+    role: "Software Engineer",
+    bio: "I’m a software engineer passionate about AI and automation, with a love for creating both smart solutions and fresh bakes. Baking has taught me patience and creativity, while my experience as an orientation leader on campus helped me grow in leadership, teamwork, and collaboration. I thrive in environments where I can learn, share ideas, and build meaningful projects with others.",
+    linkedinProfile: "https://www.linkedin.com/in/sanku-rajshree-rao/",
+    avatar: "/assets/headshots/Rajshree_Rao.jpg",
+  },
+  
+  "Jonathan Gans": {
+    name: "Jonathan Gans",
+    role: "CEO",
+    bio: "Biomedical Engineering graduate from Duke University, previously in Deloitte's corporate strategy practice, and renowned Dog Whisperer in the Windy City. Building an ergonomic future of work.",
+    linkedinProfile: "https://www.linkedin.com/in/jonathan-gans1/",
+    avatar: "/assets/headshots/jonathan_gans.jpg",
+
+  },
+  "Mohammed Muneebuddin": {
+    name: "Mohammed Muneebuddin",
+    role: "Cybersecurity Analyst",
+    bio: "I am a cybersecurity and GRC professional with a strong background in enterprise security, compliance, and risk management. With a track record of bridging technical and business needs, I specialize in aligning security operations with regulatory requirements and organizational goals.",
+    linkedinProfile: "https://www.linkedin.com/in/mmuneeb16/",
+    avatar: "/assets/headshots/mohammed_muneebuddin.jpg",
+  },
+  "Rajrajeshwari Gaware": {
+    name: "Rajrajeshwari Gaware",
+    role: "Product Manager",
+    bio: "Rajrajeshwari is a customer-centric Product Manager at Kahana, passionate about building products that truly serve user needs. She specializes in community-focused product management, collaborating directly with users through Discord and other channels to gather feedback, understand pain points, and iterate on solutions that make a real difference. Her approach combines data-driven insights with genuine user empathy to create products that users love and actively engage with.",
+    linkedinProfile: "https://www.linkedin.com/in/rajrajeshwari-gaware/",
+    avatar: "/assets/headshots/rajrajeshwari_gaware.jpg",
+  },
+  "Durgesh Tiwari": {
+    name: "Durgesh Tiwari",
+    role: "Software Engineer",
+    bio: "Durgesh is a software engineer at Kahana specializing in both software and hardware engineering with a passion for augmented and virtual reality technologies. He brings expertise in developing immersive AR/VR browser solutions and cutting-edge spatial computing applications. With a strong foundation in full-stack development and hardware integration, Durgesh focuses on creating seamless user experiences that bridge the gap between digital and physical worlds through innovative AR/VR products.",
+    linkedinProfile: "https://www.linkedin.com/in/durgesh98/",
+    avatar: "/assets/headshots/durgesh_tiwari.jpg",
   },
 };
 
