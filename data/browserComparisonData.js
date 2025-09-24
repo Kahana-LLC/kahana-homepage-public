@@ -11,7 +11,7 @@ export const browserData = {
     summary: "Best for enterprises needing Zero Trust + policy-based access",
     logo: null,
   },
-  chrome: {
+    perplexitycomet: {
     name: "Chrome",
     type: "Consumer",
     whoUsesIt: "General consumers",
@@ -130,7 +130,7 @@ perplexitycomet: {
   uniqueStrength: "Conversational search and agentic GenAI",
   summary: "For next-gen agentic browser fans",
   logo: null
-}
+  },
   here: {
   name: "Here Enterprise Browser",
   type: "Enterprise",
