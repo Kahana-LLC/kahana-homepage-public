@@ -20,17 +20,10 @@ import {
 
 // Section titles for navigation
 const sections = [
-  { id: "agentic-browser-era", title: "A New Beginning: The Agentic Browser Era", component: IntroductionSection },
-  { id: "redefining-browser", title: "Redefining the Browser: Beyond Tabs and Tasks", component: VsAlternativesSection },
-  { id: "heart-of-oasis", title: "The Heart of Oasis: Well-Being Meets Workflow", component: ModernBrowserCrisisSection },
-  { id: "transformative-outcomes", title: "Transformative Outcomes: Holistic Value for Modern Organizations", component: WhyOasisSection },
-  { id: "real-world-impact", title: "Real-World Impact: Workflows and Journeys Empowered", component: WhatIsOasisSection },
-  { id: "wisdom-from-field", title: "Wisdom from the Field: Perspectives Shaping Agentic Browsing", component: DesignedForProductivitySection },
-  { id: "leading-innovators", title: "Who Builds for the Future? Snapshot of Leading Browser Innovators", component: CoreArchitectureSection },
-  { id: "browser-alternatives", title: "More Than One Path: Comparative Exploration of Browser Alternatives", component: BenefitsSection },
-  { id: "deployment-journey", title: "Seamless Start: A Human-Centric Deployment Journey", component: EnterpriseDeploymentSection },
-  { id: "user-experience", title: "Every Second Counts: The Oasis User Experience", component: IntroductionSection },
-  { id: "customer-questions", title: "Thoughtful Answers: The Most Important Customer Questions", component: VsAlternativesSection }
+  { id: "essential-questions", title: "Key questions to ask when evaluating", component: IntroductionSection },
+  { id: "browser-alternatives", title: "How different enterprise browsers stack up", component: VsAlternativesSection },
+  { id: "use-cases", title: "Use cases and examples", component: ModernBrowserCrisisSection },
+  { id: "timing", title: "Timing: when an enterprise browser makes sense for your organization", component: WhyOasisSection }
 ];
 
 const BuyerGuideOasis = () => {
@@ -97,7 +90,7 @@ const BuyerGuideOasis = () => {
                 <div className="mb-12 lg:mb-0">
                   <div className="mx-auto">
                     <div className="bg-white rounded-xl shadow-xl border border-[#A5DAD8]/30 p-8">
-                      <h3 className="text-2xl font-semibold text-gray-900 mb-6">Guide Sections</h3>
+                      <h3 className="text-2xl font-semibold text-gray-900 mb-6">What's Inside</h3>
                       <div className="grid grid-cols-1 gap-2">
                         {sections.map(section => (
                           <div
@@ -134,6 +127,25 @@ const BuyerGuideOasis = () => {
                       title="Download Buyer Guide Form"
                       className="rounded-lg"
                     />
+                  </div>
+                  
+                  {/* Disclaimer Section */}
+                  <div className="mt-4 pt-4 bg-white relative -mt-12 pt-12 z-20">
+                    <div className="text-center">
+                      <p className="text-sm text-gray-600 mb-3">
+                        <strong>Contact us</strong> - for an immediate response, contact us directly at{' '}
+                        <Link href="/contact" className="text-[#66C2BE] hover:text-[#4A9E9A] underline">
+                          contact us
+                        </Link>
+                      </p>
+                      <p className="text-xs text-gray-500">
+                        By submitting this form you consent to be contacted by Kahana, and acknowledge our{' '}
+                        <Link href="/privacy-policy" className="text-[#66C2BE] hover:text-[#4A9E9A] underline">
+                          Privacy Policy
+                        </Link>
+                        .
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>

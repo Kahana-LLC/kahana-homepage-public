@@ -134,6 +134,8 @@ export default function Footer() {
               <ul className={`space-y-4 ${openSection === 'learn' || !isMobile ? 'block' : 'hidden'}`}>
                 <li><Link href="/blog" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">Blog</Link></li>
                 <li><Link href="/docs" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">Docs</Link></li>
+                <li><Link href="/white-paper-future-of-ergonomic-work" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">White Paper</Link></li>
+                <li><Link href="/buyers-guide" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">Buyer Guide</Link></li>
                 <li><Link href="/subscribe-to-insights" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">Newsletter</Link></li>
                 <li><Link href="/community" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">Join Discord</Link></li>
               </ul>
@@ -170,28 +172,6 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* Partners Column */}
-            <div>
-              <button 
-                onClick={() => toggleSection('partners')} 
-                className="footer-mobile-dropdown flex justify-between items-center w-full md:hidden mb-3 border border-[#21706c] text-[#21706c] font-bold py-2 px-4 rounded-md appearance-none shadow-sm"
-              >
-                <h3 className="text-kahana-accent-purple font-semibold text-lg">Partners</h3>
-                <svg 
-                  className={`w-5 h-5 transition-transform ${openSection === 'partners' ? 'rotate-180' : ''}`}
-                  fill="none" 
-                  stroke="#21706c" 
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              <h3 className="text-kahana-accent-purple font-semibold mb-6 text-lg hidden md:block">Partners</h3>
-              <ul className={`space-y-4 ${openSection === 'partners' || !isMobile ? 'block' : 'hidden'}`}>
-                <li><Link href="/partners" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">Partner Program</Link></li>
-              </ul>
-            </div>
-
             {/* About Column */}
             <div>
               <button 
@@ -222,7 +202,6 @@ export default function Footer() {
               <div className="flex items-center space-x-8">
                 <span className="text-kahana-primary text-sm">&copy; Kahana Group Inc., 2025. All rights reserved</span>
                 <div className="hidden md:flex items-center space-x-8">
-                  <Link href="/faq" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200 text-sm">FAQ</Link>
                   <Link href="/privacy-policy" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200 text-sm">Privacy</Link>
                   <Link href="/terms-and-conditions" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200 text-sm">Terms</Link>
                   <Link href="/right-to-work" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200 text-sm">Right to Work</Link>
@@ -293,7 +272,6 @@ export default function Footer() {
             </div>
             {/* Mobile Footer Links */}
             <div className="md:hidden mt-6 flex flex-wrap justify-center gap-6">
-              <Link href="/faq" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200 text-sm">FAQ</Link>
               <Link href="/privacy-policy" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200 text-sm">Privacy</Link>
               <Link href="/terms-and-conditions" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200 text-sm">Terms</Link>
               <Link href="/right-to-work" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200 text-sm">Right to Work</Link>

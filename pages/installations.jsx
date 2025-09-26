@@ -67,15 +67,15 @@ export default function Installations() {
           {/* Header Section */}
           <div className="text-center py-16">
             <h1 className="text-5xl font-bold text-gray-900 mb-6">
-              Download Kahana Browser
+              Install Kahana Browser
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              Experience the future of web browsing with our innovative browser technology. 
-              Choose your platform and start exploring the web like never before.
+              Get ready for a revolutionary browsing experience. Our next-generation browser 
+              is designed to transform how you work and explore the web.
             </p>
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-yellow-100 text-yellow-800 text-sm font-medium">
               <FaClock className="w-4 h-4 mr-2" />
-              Downloads coming soon - Stay tuned!
+              Installation files coming soon - Stay tuned!
             </div>
           </div>
 

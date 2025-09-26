@@ -132,6 +132,25 @@ export default function DownloadWhitePaperPage() {
           }}
         ></iframe>
       </div>
+      
+      {/* Disclaimer Section */}
+      <div className="mt-4 pt-4 bg-white relative -mt-12 pt-12 z-20">
+        <div className="text-center">
+          <p className="text-sm text-gray-600 mb-3">
+            <strong>Contact us</strong> - for an immediate response, contact us directly at{' '}
+            <Link href="/contact" className="text-[#66C2BE] hover:text-[#4A9E9A] underline">
+              contact us
+            </Link>
+          </p>
+          <p className="text-xs text-gray-500">
+            By submitting this form you consent to be contacted by Kahana, and acknowledge our{' '}
+            <Link href="/privacy-policy" className="text-[#66C2BE] hover:text-[#4A9E9A] underline">
+              Privacy Policy
+            </Link>
+            .
+          </p>
+        </div>
+      </div>
     </div>
   );
 
@@ -139,7 +158,7 @@ export default function DownloadWhitePaperPage() {
     <>
       <Head>
         <title>Download: The Future of Ergonomic Work | Kahana Browser</title>
-        <meta name="description" content="Download our comprehensive white paper on the future of ergonomic work and how modern browsers are reshaping productivity in the workplace." />
+        <meta name="description" content="Download our comprehensive white paper exploring how AR/VR technology can transform workplace ergonomics and productivity, addressing the health crisis of sedentary work." />
       </Head>
 
       <NavbarDup />
@@ -155,7 +174,7 @@ export default function DownloadWhitePaperPage() {
                   The Future of Ergonomic Work
                 </h1>
                 <p className="mt-6 text-xl text-gray-600">
-                  Discover how modern browser technology is revolutionizing workplace productivity and creating more ergonomic, efficient work environments. This comprehensive white paper explores the latest trends, challenges, and solutions in browser-based work.
+                  Explore how AR/VR technology is revolutionizing workplace productivity and creating more ergonomic, efficient work environments. This comprehensive white paper examines the health crisis of sedentary work, technological solutions that could free us from desk-bound productivity, and the companies leading the AR glasses revolution.
                 </p>
               </div>
 
@@ -169,7 +188,7 @@ export default function DownloadWhitePaperPage() {
                         ✓
                       </div>
                     </div>
-                    <p className="ml-3 text-gray-700">The evolution of browser-based work environments</p>
+                    <p className="ml-3 text-gray-700">The health crisis caused by sedentary work environments</p>
                   </div>
                   <div className="flex items-start">
                     <div className="flex-shrink-0">
@@ -177,7 +196,7 @@ export default function DownloadWhitePaperPage() {
                         ✓
                       </div>
                     </div>
-                    <p className="ml-3 text-gray-700">Ergonomic design principles for digital workspaces</p>
+                    <p className="ml-3 text-gray-700">AR/VR technological solutions for desk-free productivity</p>
                   </div>
                   <div className="flex items-start">
                     <div className="flex-shrink-0">
@@ -185,7 +204,7 @@ export default function DownloadWhitePaperPage() {
                         ✓
                       </div>
                     </div>
-                    <p className="ml-3 text-gray-700">Productivity optimization strategies</p>
+                    <p className="ml-3 text-gray-700">Key players leading the AR glasses revolution</p>
                   </div>
                   <div className="flex items-start">
                     <div className="flex-shrink-0">
@@ -193,7 +212,7 @@ export default function DownloadWhitePaperPage() {
                         ✓
                       </div>
                     </div>
-                    <p className="ml-3 text-gray-700">Future trends in workplace technology</p>
+                    <p className="ml-3 text-gray-700">Implementation roadmap for the future of ergonomic work</p>
                   </div>
                 </div>
               </div>

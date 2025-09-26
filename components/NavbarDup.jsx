@@ -482,14 +482,12 @@ function NavBar() {
               </div>
             </div>
 
-            <Link href="/partners" className="nav-link">Partners</Link>
-
             <div className="dropdown">
               <Link href="/docs" className="nav-link">Learn</Link>
               <div className="dropdown-overlay"></div>
-              <div className="dropdown-content" style={{ width: '280px', gridTemplateColumns: '1fr' }}>
+              <div className="dropdown-content" style={{ width: '480px', gridTemplateColumns: '1fr 1fr' }}>
                 <div className="dropdown-section">
-                  <h3 className="text-[0.75rem] font-semibold text-gray-600 mb-4 uppercase tracking-wider">Resources</h3>
+                  <h3 className="text-[0.75rem] font-semibold text-gray-600 mb-4 uppercase tracking-wider">Learn</h3>
                   <div className="flex flex-col space-y-4">
                     <Link href="/blog" className="dropdown-link">
                       Blog
@@ -500,13 +498,25 @@ function NavBar() {
                     <Link href="/white-paper-future-of-ergonomic-work" className="dropdown-link">
                       White Paper
                     </Link>
-                    <Link href="/installations" className="dropdown-link">
-                      Download
+                    <Link href="/subscribe-to-insights" className="dropdown-link">
+                      Newsletter
                     </Link>
-                    <Link href="/faq" className="dropdown-link">
-                      FAQ
+                    <Link href="/community" className="dropdown-link">
+                      Join Discord
                     </Link>
                   </div>
+                </div>
+                <div className="dropdown-section">
+                  <Link href="/buyers-guide" className="block p-4 bg-gradient-to-r from-[#66C2BE]/5 to-[#8CB7D0]/5 rounded-lg border border-[#66C2BE]/20 hover:from-[#66C2BE]/10 hover:to-[#8CB7D0]/10 hover:border-[#66C2BE]/30 transition-all duration-200">
+                    <div className="w-full h-32 rounded-lg overflow-hidden mb-3">
+                      <img 
+                        src="/assets/pexels-kamo11235-667838.jpg" 
+                        alt="Enterprise Browser Buyer Guide"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="font-semibold text-gray-900 text-sm leading-tight">Enterprise Browser Buyers Guide</div>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -520,9 +530,6 @@ function NavBar() {
                   <div className="flex flex-col space-y-4">
                     <Link href="/about" className="dropdown-link">
                       About
-                    </Link>
-                    <Link href="/buyers-guide" className="dropdown-link">
-                      Buyer's Guide
                     </Link>
                   </div>
                 </div>
@@ -625,10 +632,21 @@ function NavBar() {
             <Link href="/blog" className="mobile-link">Blog</Link>
             <Link href="/docs" className="mobile-link">Docs</Link>
             <Link href="/white-paper-future-of-ergonomic-work" className="mobile-link">White Paper</Link>
-            <Link href="/installations" className="mobile-link">Download</Link>
-            
-            {/* Partners Section */}
-            <Link href="/partners" className="mobile-link">Partner Program</Link>
+            <Link href="/subscribe-to-insights" className="mobile-link">Newsletter</Link>
+            <Link href="/community" className="mobile-link">Join Discord</Link>
+            <Link href="/buyers-guide" className="mobile-link flex items-center space-x-3 p-3 bg-gradient-to-r from-[#66C2BE]/5 to-[#8CB7D0]/5 rounded-lg border border-[#66C2BE]/20 hover:from-[#66C2BE]/10 hover:to-[#8CB7D0]/10 hover:border-[#66C2BE]/30 transition-all duration-200">
+              <div className="flex-shrink-0 w-12 h-12 rounded-lg overflow-hidden">
+                <img 
+                  src="/assets/pexels-kamo11235-667838.jpg" 
+                  alt="Enterprise Browser Buyer Guide"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="flex-1">
+                <div className="font-medium text-gray-900">Enterprise Browser Buyer Guide</div>
+                <div className="text-xs text-gray-500 mt-1">Comprehensive guide for enterprise decision makers</div>
+              </div>
+            </Link>
             
             {/* About Section */}
             <Link href="/about" className="mobile-link">About Kahana</Link>

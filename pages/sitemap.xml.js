@@ -47,7 +47,7 @@ function getPriority(url) {
   }
 
   // Support pages
-  if (["/faq", "/contact", "/support"].some((p) => path === p)) {
+  if (["/contact", "/support"].some((p) => path === p)) {
     return PRIORITIES.support;
   }
 
