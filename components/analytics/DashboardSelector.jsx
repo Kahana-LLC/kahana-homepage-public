@@ -4,37 +4,16 @@ const DashboardSelector = ({ selectedDashboard, onSelect }) => {
   const dashboards = [
     {
       id: 'internal',
-      title: 'Internal Team',
-      metrics: [
-        { name: 'System Health', icon: '📊' },
-        { name: 'Latency', icon: '⏱️' },
-        { name: 'Model Costs', icon: '💰' },
-        { name: 'Error Rates', icon: '⚠️' },
-        { name: 'Feature Flag', icon: '🚩' },
-        { name: 'Achievements', icon: '🏆' }
-      ]
+      title: 'Internal Team'
     },
     {
       id: 'user',
       title: 'User',
-      metrics: [
-        { name: 'Streak', icon: '∞' },
-        { name: 'Focus Minutes', icon: '⏰' },
-        { name: 'Commands Learned', icon: '📝' },
-        { name: 'Shortcuts Used', icon: '⌨️' }
-      ],
       avatar: '🦥'
     },
     {
       id: 'enterprise',
-      title: 'Enterprise',
-      metrics: [
-        { name: 'Adoption', icon: '👥' },
-        { name: 'Active Seats', icon: '🪑' },
-        { name: 'Command Accuracy', icon: '✅' },
-        { name: 'Teams', icon: '👥' },
-        { name: 'SSO Status', icon: '🔒' }
-      ]
+      title: 'Enterprise'
     }
   ];
 
@@ -60,14 +39,16 @@ const DashboardSelector = ({ selectedDashboard, onSelect }) => {
             <h3 className="text-lg font-semibold text-gray-900 mb-4 text-center">
               {dashboard.title}
             </h3>
-            <div className="space-y-2">
-              {dashboard.metrics.map((metric, index) => (
-                <div key={index} className="flex items-center text-sm text-gray-600">
-                  <span className="mr-2">{metric.icon}</span>
-                  <span>{metric.name}</span>
-                </div>
-              ))}
-            </div>
+            {dashboard.metrics && (
+              <div className="space-y-2">
+                {dashboard.metrics.map((metric, index) => (
+                  <div key={index} className="flex items-center text-sm text-gray-600">
+                    <span className="mr-2">{metric.icon}</span>
+                    <span>{metric.name}</span>
+                  </div>
+                ))}
+              </div>
+            )}
             {selectedDashboard === dashboard.id && (
               <div className="mt-4 text-center">
                 <span className="inline-block bg-teal-500 text-white px-4 py-2 rounded-md text-sm font-medium">
@@ -83,4 +64,5 @@ const DashboardSelector = ({ selectedDashboard, onSelect }) => {
 };
 
 export default DashboardSelector;
+
 

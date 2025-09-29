@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic';
 
 let ChartModule = null;
 
-const LineChart = ({ labels = [], datasets = [], yMax, yMin, yStepSize, height = 220 }) => {
+const LineChart = ({ labels = [], datasets = [], yMax, yMin, yStepSize, height = 220, showAxes = true, showGrid = true }) => {
   const canvasRef = useRef(null);
   const chartRef = useRef(null);
 
@@ -38,13 +38,23 @@ const LineChart = ({ labels = [], datasets = [], yMax, yMin, yStepSize, height =
           maintainAspectRatio: false,
           scales: {
             y: {
-              grid: { color: 'rgba(0,0,0,0.05)' },
-              ticks: { callback: value => `${value}` },
+              display: showAxes,
+              grid: { color: showGrid ? 'rgba(0,0,0,0.05)' : 'rgba(0,0,0,0)' },
+              ticks: { 
+                callback: value => `${value}%`,
+                font: { size: 12 },
+                color: '#6b7280'
+              },
               suggestedMax: yMax,
               suggestedMin: yMin,
             },
             x: {
+              display: showAxes,
               grid: { display: false },
+              ticks: {
+                font: { size: 12 },
+                color: '#6b7280'
+              }
             },
           },
           plugins: {

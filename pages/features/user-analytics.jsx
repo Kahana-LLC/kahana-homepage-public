@@ -38,56 +38,6 @@ import ClockDial from '../../components/analytics/ClockDial';
 import RoutinesList from '../../components/analytics/RoutinesList';
 import AchievementsGrid from '../../components/analytics/AchievementsGrid';
 
-const conceptCards = [
-  {
-    title: "Dashboards & Insights",
-    description: "Understand user behavior with actionable analytics",
-    details: [
-      {
-        title: "Engagement Overview",
-        explanation: "Track daily, weekly, and monthly active users",
-        technical: "DAU/WAU/MAU trends with retention cohorts"
-      },
-      {
-        title: "Usage Heatmaps",
-        explanation: "Visualize feature adoption and usage depth",
-        technical: "Per-feature heatmaps with segment filters"
-      }
-    ]
-  },
-  {
-    title: "Funnels & Journeys",
-    description: "Measure conversion through key workflows",
-    details: [
-      {
-        title: "Conversion Funnels",
-        explanation: "Identify drop-offs across multi-step flows",
-        technical: "Step-by-step funnel with time-to-complete"
-      },
-      {
-        title: "Path Analysis",
-        explanation: "See common navigation paths and loops",
-        technical: "User pathing with node/edge weighting"
-      }
-    ]
-  },
-  {
-    title: "Alerts & Reporting",
-    description: "Stay informed with proactive analytics",
-    details: [
-      {
-        title: "Anomaly Alerts",
-        explanation: "Detect unusual spikes or drops",
-        technical: "Z-score anomaly detection on key metrics"
-      },
-      {
-        title: "Scheduled Reports",
-        explanation: "Get insights delivered to your inbox",
-        technical: "Automated PDF/CSV reports with filters"
-      }
-    ]
-  }
-];
 
 export default function UserAnalyticsFeatures() {
   const [activeTab, setActiveTab] = useState('overview');
@@ -298,11 +248,6 @@ export default function UserAnalyticsFeatures() {
 
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <GaugeChart value={82} />
-                    <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
-                      <div className="text-gray-900 font-semibold mb-3">Session Length Distribution</div>
-                      <BarChart labels={["10","20","30","40"]} values={[12,20,16,24]} color="rgba(59,130,246,0.8)" yMin={0} yMax={30} />
-                    </div>
-                    <BadgeRow badges={["🦥","😀","👍"]} />
                   </div>
                 </>
               )}
@@ -631,8 +576,8 @@ export default function UserAnalyticsFeatures() {
             </>
           )}
 
-          {/* Overview Tab (Enterprise/User) */}
-          {selectedDashboard !== 'internal' && activeTab === 'overview' && (
+          {/* Overview Tab (Enterprise) */}
+          {selectedDashboard !== 'internal' && selectedDashboard !== 'user' && activeTab === 'overview' && (
             <>
               {/* KPI Row */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
@@ -671,11 +616,18 @@ export default function UserAnalyticsFeatures() {
                 />
               </div>
 
-              {/* Dashboard Charts Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <OrgAdoptionChart height={250} />
-                <TopCommandsByTeam height={250} />
-                <DepartmentMap height={250} />
+              {/* Command Accuracy Distribution Chart */}
+              <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 mb-8">
+                <div className="text-gray-900 font-semibold mb-6 text-lg">Command Accuracy Distribution</div>
+                <LineChart
+                  labels={hourlyAccuracyData.labels}
+                  datasets={hourlyAccuracyData.datasets}
+                  yMin={40}
+                  yMax={100}
+                  height={300}
+                  showAxes={true}
+                  showGrid={true}
+                />
               </div>
             </>
           )}
@@ -746,151 +698,7 @@ export default function UserAnalyticsFeatures() {
         </div>
       </section>
 
-      {/* Evolution / Comparison Section */}
-      <section className="bg-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Legacy Analytics Card */}
-            <div className="bg-gradient-to-br from-gray-50 to-kahana-primary-50/30 rounded-2xl p-8 border border-gray-100">
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-kahana-primary-100 rounded-full flex items-center justify-center mr-4">
-                  <svg className="w-6 h-6 text-kahana-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3v18h18" />
-                  </svg>
-                </div>
-                <h3 className="text-2xl font-semibold text-gray-900">Legacy Analytics</h3>
-              </div>
-              <p className="text-gray-600 mb-4">
-                Siloed tools, complex tagging, and stale reports slow decision-making.
-              </p>
-              <ul className="space-y-2">
-                <li className="flex items-center text-gray-600">
-                  <span className="text-red-500 mr-2">✗</span>
-                  <span>Fragmented data sources</span>
-                </li>
-                <li className="flex items-center text-gray-600">
-                  <span className="text-red-500 mr-2">✗</span>
-                  <span>Heavy instrumentation effort</span>
-                </li>
-                <li className="flex items-center text-gray-600">
-                  <span className="text-red-500 mr-2">✗</span>
-                  <span>Slow time-to-insight</span>
-                </li>
-              </ul>
-            </div>
 
-            {/* Oasis Analytics Card */}
-            <div className="bg-gradient-to-br from-gray-50 to-kahana-secondary-50/30 rounded-2xl p-8 border border-gray-100">
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-kahana-secondary-100 rounded-full flex items-center justify-center mr-4">
-                  <svg className="w-6 h-6 text-kahana-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 17l-5-5m0 0l5-5m-5 5h12" />
-                  </svg>
-                </div>
-                <h3 className="text-2xl font-semibold text-gray-900">Oasis Analytics</h3>
-              </div>
-              <p className="text-gray-600 mb-4">
-                Built-in, privacy-conscious analytics with instant visibility and zero tagging burden.
-              </p>
-              <ul className="space-y-2">
-                <li className="flex items-center text-gray-600">
-                  <span className="text-kahana-secondary mr-2">✓</span>
-                  <span>Unified view across features</span>
-                </li>
-                <li className="flex items-center text-gray-600">
-                  <span className="text-kahana-secondary mr-2">✓</span>
-                  <span>Automatic event capture</span>
-                </li>
-                <li className="flex items-center text-gray-600">
-                  <span className="text-kahana-secondary mr-2">✓</span>
-                  <span>Real-time insights</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          {/* The Solution Card */}
-          <div className="mt-8 bg-gradient-to-r from-kahana-primary-50 to-kahana-secondary-50 rounded-2xl p-8 border border-kahana-primary-100">
-            <div className="flex items-center mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-kahana-primary to-kahana-secondary rounded-full flex items-center justify-center mr-4">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17v-6h13" />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-semibold text-gray-900">Clarity That Drives Adoption</h3>
-            </div>
-            <p className="text-gray-600 text-lg mb-6">
-              See exactly how users engage, optimize onboarding, and prioritize features that matter.
-            </p>
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="bg-white rounded-xl p-6 shadow-sm">
-                <h4 className="font-semibold text-gray-900 mb-2">Realtime Views</h4>
-                <p className="text-gray-600">Monitor spikes, sessions, and errors</p>
-              </div>
-              <div className="bg-white rounded-xl p-6 shadow-sm">
-                <h4 className="font-semibold text-gray-900 mb-2">Cohort Retention</h4>
-                <p className="text-gray-600">Spot stickiness across segments</p>
-              </div>
-              <div className="bg-white rounded-xl p-6 shadow-sm">
-                <h4 className="font-semibold text-gray-900 mb-2">Feature Adoption</h4>
-                <p className="text-gray-600">Understand what resonates</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Concept Cards Section */}
-      <section className="bg-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
-            User Analytics Features
-          </h2>
-          <div className="grid grid-cols-1 gap-12">
-            {conceptCards.map((card, index) => (
-              <div key={index} className="bg-gradient-to-r from-kahana-primary-50 to-kahana-secondary-50 rounded-2xl overflow-hidden border border-kahana-primary-100">
-                <div className="p-8">
-                  <div className="flex items-center mb-6">
-                    <div className="w-12 h-12 bg-gradient-to-br from-kahana-primary to-kahana-secondary rounded-full flex items-center justify-center mr-4">
-                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        {card.title === "Dashboards & Insights" ? (
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3v18h18M7 13l3 3 7-7" />
-                        ) : card.title === "Funnels & Journeys" ? (
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h18l-7 8v6l-4-2v-4L3 5z" />
-                        ) : (
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-1.405-1.405M4 4l16 16M13 7h6m-6 4h4" />
-                        )}
-                      </svg>
-                    </div>
-                    <h3 className="text-2xl font-semibold text-gray-900">{card.title}</h3>
-                  </div>
-                  <p className="text-gray-600 text-lg mb-8">
-                    {card.description}
-                  </p>
-                  <div className="grid md:grid-cols-2 gap-6">
-                    {card.details.map((detail, dIndex) => (
-                      <div key={dIndex} className="bg-white rounded-xl p-6 shadow-sm">
-                        <h4 className="font-semibold text-gray-900 mb-3">
-                          {detail.title}
-                        </h4>
-                        <p className="text-gray-600 mb-3">
-                          {detail.explanation}
-                        </p>
-                        <div className="flex items-center text-kahana-primary">
-                          <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                          </svg>
-                          <span className="text-sm font-medium">{detail.technical}</span>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="bg-gradient-to-r from-kahana-primary to-kahana-secondary py-16">
