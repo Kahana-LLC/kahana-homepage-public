@@ -9,7 +9,7 @@ const Tabs = ({ tabs = [], active, onChange }) => {
           <button
             key={tab.key}
             onClick={() => onChange?.(tab.key)}
-            className={`${isActive ? 'bg-blue-600 text-white' : 'bg-white text-gray-700'} px-4 py-2 text-sm font-medium border-r last:border-r-0 border-gray-200`}
+            className={`${isActive ? 'bg-blue-100 text-blue-800' : 'bg-white text-gray-700'} px-4 py-2 text-sm font-medium border-r last:border-r-0 border-gray-200 hover:bg-gray-50 transition-colors`}
           >
             {tab.label}
           </button>
