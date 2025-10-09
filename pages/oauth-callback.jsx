@@ -6,114 +6,59 @@ export default function OAuthCallback() {
   const [errorMessage, setErrorMessage] = useState('');
 
   useEffect(() => {
-    // OAuth Callback Handler
-    class OAuthCallbackHandler {
-      constructor() {
-        this.allowedOrigin = 'chrome://browser/content/assistant/assistant.xhtml';
-        this.timeout = 10000; // 10 seconds timeout
-        this.init();
-      }
-      
-      init() {
-        try {
-          // Parse OAuth parameters from URL
-          const authData = this.parseOAuthParams();
-          
-          if (authData.error) {
-            this.showError(authData.error_description || authData.error);
-            return;
-          }
-          
-          if (authData.access_token || authData.code) {
-            this.sendAuthData(authData);
-          } else {
-            this.showError('No authentication data found in URL');
-          }
-        } catch (error) {
-          console.error('OAuth callback error:', error);
-          this.showError('Failed to process authentication data');
-        }
-      }
-      
-      parseOAuthParams() {
-        const urlParams = new URLSearchParams(window.location.search);
-        const hashParams = new URLSearchParams(window.location.hash.substring(1));
-        
-        // Combine search params and hash params
-        const allParams = {};
-        
-        // Parse search parameters
-        for (const [key, value] of urlParams.entries()) {
-          allParams[key] = value;
-        }
-        
-        // Parse hash parameters (OAuth often uses hash for security)
-        for (const [key, value] of hashParams.entries()) {
-          allParams[key] = value;
-        }
-        
-        return allParams;
-      }
-      
-      sendAuthData(authData) {
-        try {
-          // Validate that we have a parent window
-          if (!window.opener && !window.parent) {
-            this.showError('No parent window found');
-            return;
-          }
-          
-          const targetWindow = window.opener || window.parent;
-          
-          // Send the authentication data to the parent window
-          const message = {
-            type: 'oauth_callback',
-            data: authData,
-            timestamp: Date.now()
-          };
-          
-          targetWindow.postMessage(message, this.allowedOrigin);
-          
-          // Show success state
-          this.showSuccess();
-          
-          // Auto-close after a short delay
-          setTimeout(() => {
-            this.closeWindow();
-          }, 2000);
-          
-        } catch (error) {
-          console.error('Failed to send auth data:', error);
-          this.showError('Failed to communicate with parent window');
-        }
-      }
-      
-      showSuccess() {
-        setStatus('success');
-      }
-      
-      showError(message) {
-        setStatus('error');
-        setErrorMessage(message);
-      }
-      
-      closeWindow() {
-        try {
-          if (window.opener) {
-            window.close();
-          } else if (window.parent && window.parent !== window) {
-            // For iframe scenarios, we can't close the window
-            // Just show a message that the user can close manually
-            setStatus('success');
-          }
-        } catch (error) {
-          console.error('Failed to close window:', error);
-        }
-      }
+    // Parse OAuth parameters from URL hash
+    const params = {};
+    if (window.location.hash) {
+        window.location.hash.substring(1).split('&').forEach(part => {
+            const [key, value] = part.split('=');
+            if (key && value) {
+                params[key] = decodeURIComponent(value);
+            }
+        });
     }
 
-    // Initialize the OAuth callback handler when the page loads
-    new OAuthCallbackHandler();
+    // If we have an access token, send it back to the assistant
+    if (params.access_token) {
+        const authData = {
+            success: true,
+            timestamp: Date.now(),
+            access_token: params.access_token,
+            refresh_token: params.refresh_token,
+            expires_in: params.expires_in,
+            token_type: params.token_type,
+            url: window.location.href
+        };
+        
+        // Send to the assistant
+        if (window.opener) {
+            window.opener.postMessage({
+                type: 'oauth-success',
+                data: authData
+            }, 'chrome://browser/content/assistant/assistant.xhtml');
+            console.log('Sent OAuth success message to assistant');
+        }
+        
+        // Show success state
+        setStatus('success');
+        
+        // Close the window
+        setTimeout(() => {
+            window.close();
+        }, 1000);
+    } else {
+        // Check for error parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const error = urlParams.get('error');
+        const errorDescription = urlParams.get('error_description');
+        
+        if (error) {
+            setStatus('error');
+            setErrorMessage(errorDescription || error);
+        } else {
+            setStatus('error');
+            setErrorMessage('No authentication data found in URL');
+        }
+    }
   }, []);
 
   const handleRetry = () => {
