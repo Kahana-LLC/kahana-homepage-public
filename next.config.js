@@ -85,6 +85,45 @@ const nextConfig = {
     ];
   },
 
+  // Configure headers for specific routes
+  async headers() {
+    return [
+      {
+        source: "/oauth-callback",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "no-cache, no-store, must-revalidate",
+          },
+          {
+            key: "Pragma",
+            value: "no-cache",
+          },
+          {
+            key: "Expires",
+            value: "0",
+          },
+          {
+            key: "X-Frame-Options",
+            value: "SAMEORIGIN",
+          },
+          {
+            key: "X-Content-Type-Options",
+            value: "nosniff",
+          },
+          {
+            key: "Referrer-Policy",
+            value: "strict-origin-when-cross-origin",
+          },
+          {
+            key: "X-Robots-Tag",
+            value: "noindex, nofollow",
+          },
+        ],
+      },
+    ];
+  },
+
   // Add redirects
   async redirects() {
     return [
