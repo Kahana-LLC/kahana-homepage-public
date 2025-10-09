@@ -3,221 +3,258 @@ import Head from 'next/head';
 
 export default function OAuthCallback() {
   const [status, setStatus] = useState('loading');
-  const [errorMessage, setErrorMessage] = useState('');
+  const [statusMessage, setStatusMessage] = useState('Processing authentication...');
+  const [details, setDetails] = useState('');
+  const [showRetry, setShowRetry] = useState(false);
 
   useEffect(() => {
-    // Parse OAuth parameters from URL hash
-    const params = {};
-    if (window.location.hash) {
-        window.location.hash.substring(1).split('&').forEach(part => {
-            const [key, value] = part.split('=');
-            if (key && value) {
-                params[key] = decodeURIComponent(value);
-            }
-        });
-    }
-
-    // If we have an access token, send it back to the assistant
-    if (params.access_token) {
-        const authData = {
-            success: true,
-            timestamp: Date.now(),
-            access_token: params.access_token,
-            refresh_token: params.refresh_token,
-            expires_in: params.expires_in,
-            token_type: params.token_type,
-            url: window.location.href
-        };
-        
-        // Send to the assistant
-        if (window.opener) {
-            window.opener.postMessage({
-                type: 'oauth-success',
-                data: authData
-            }, 'chrome://browser/content/assistant/assistant.xhtml');
-            console.log('Sent OAuth success message to assistant');
-        }
-        
-        // Show success state
-        setStatus('success');
-        
-        // Close the window
-        setTimeout(() => {
-            window.close();
-        }, 1000);
-    } else {
-        // Check for error parameters
-        const urlParams = new URLSearchParams(window.location.search);
-        const error = urlParams.get('error');
-        const errorDescription = urlParams.get('error_description');
-        
-        if (error) {
-            setStatus('error');
-            setErrorMessage(errorDescription || error);
-        } else {
-            setStatus('error');
-            setErrorMessage('No authentication data found in URL');
-        }
-    }
+    processOAuthCallback();
   }, []);
 
-  const handleRetry = () => {
-    window.location.reload();
+  const processOAuthCallback = () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const hashParams = new URLSearchParams(window.location.hash.substring(1));
+    
+    // Check for error in URL params or hash
+    const error = urlParams.get('error') || hashParams.get('error');
+    const errorDescription = urlParams.get('error_description') || hashParams.get('error_description');
+    
+    // Check for success parameters
+    const accessToken = urlParams.get('access_token') || hashParams.get('access_token');
+    const refreshToken = urlParams.get('refresh_token') || hashParams.get('refresh_token');
+    const code = urlParams.get('code') || hashParams.get('code');
+    const state = urlParams.get('state') || hashParams.get('state');
+    
+    console.log('OAuth callback received:', {
+      error, errorDescription, accessToken, refreshToken, code, state,
+      url: window.location.href
+    });
+    
+    if (error) {
+      // Handle OAuth error
+      setStatus('error');
+      setStatusMessage('Authentication Failed');
+      setDetails(`Error: ${error}${errorDescription ? `\nDescription: ${errorDescription}` : ''}`);
+      setShowRetry(true);
+      
+      // Store error in localStorage for the assistant to pick up
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('oasis_auth_error', JSON.stringify({
+          error: error,
+          description: errorDescription,
+          timestamp: Date.now(),
+          source: 'kahana-callback'
+        }));
+        
+        // Also try to send error message to parent window
+        try {
+          if (window.opener) {
+            window.opener.postMessage({
+              type: 'oasis_auth_error',
+              data: { error, description: errorDescription }
+            }, '*');
+          }
+        } catch (e) {
+          console.log('Could not send error message to parent:', e);
+        }
+      }
+      
+    } else if (code || accessToken) {
+      // Success - we have authorization code or tokens
+      setStatus('success');
+      setStatusMessage('Authentication Successful!');
+      setDetails('Redirecting to Oasis Browser...');
+      
+      // Store auth data in localStorage for the assistant to pick up
+      const authData = {
+        code: code,
+        access_token: accessToken,
+        refresh_token: refreshToken,
+        state: state,
+        timestamp: Date.now(),
+        source: 'kahana-callback',
+        url: window.location.href
+      };
+      
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('oasis_auth_callback', JSON.stringify(authData));
+        
+        // Also try to send success message to parent window
+        try {
+          if (window.opener) {
+            window.opener.postMessage({
+              type: 'oasis_auth_success',
+              data: authData
+            }, '*');
+          }
+        } catch (e) {
+          console.log('Could not send success message to parent:', e);
+        }
+        
+        // Redirect to your browser after a short delay
+        setTimeout(() => {
+          try {
+            window.location.href = 'chrome://browser/content/assistant/assistant.xhtml';
+          } catch (e) {
+            setDetails('Please return to the Oasis Browser assistant manually.');
+          }
+        }, 2000);
+      }
+      
+    } else {
+      // No auth parameters found
+      setStatus('info');
+      setStatusMessage('No Authentication Data');
+      setDetails('This page is used for OAuth callbacks from Google.\nIf you reached this page by mistake, please return to the Oasis Browser.');
+      setShowRetry(true);
+    }
+  };
+
+  const retryAuth = () => {
+    // Clear any existing auth data
+    if (typeof window !== 'undefined') {
+      localStorage.removeItem('oasis_auth_callback');
+      localStorage.removeItem('oasis_auth_error');
+      
+      // Redirect back to the assistant
+      try {
+        window.location.href = 'chrome://browser/content/assistant/assistant.xhtml';
+      } catch (e) {
+        alert('Please return to the Oasis Browser assistant manually.');
+      }
+    }
   };
 
   return (
     <>
       <Head>
-        <title>OAuth Authentication - Kahana</title>
-        <meta name="description" content="Completing OAuth authentication for Kahana Oasis Browser" />
+        <title>OAuth Callback - Kahana</title>
+        <meta name="description" content="OAuth callback for Kahana Oasis Browser" />
         <meta name="robots" content="noindex, nofollow" />
         <meta httpEquiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
         <meta httpEquiv="Pragma" content="no-cache" />
         <meta httpEquiv="Expires" content="0" />
       </Head>
 
-      <div className="gradient-bg min-h-screen flex items-center justify-center p-4">
-        <div className="max-w-md w-full">
-          {/* Main Card */}
-          <div className="glass-effect rounded-2xl shadow-2xl p-8 text-center fade-in">
-            {/* Kahana Logo */}
-            <div className="mb-8">
-              <h1 className="text-3xl font-bold kahana-logo mb-2">Kahana</h1>
-              <p className="text-gray-600 text-sm">Oasis Browser Assistant</p>
-            </div>
-            
-            {/* Status Container */}
-            <div>
-              {/* Loading State */}
-              {status === 'loading' && (
-                <div className="flex flex-col items-center">
-                  <div className="loading-spinner mb-4"></div>
-                  <h2 className="text-xl font-semibold text-gray-800 mb-2">Authenticating...</h2>
-                  <p className="text-gray-600 text-sm">Please wait while we complete your authentication.</p>
-                </div>
-              )}
-              
-              {/* Success State */}
-              {status === 'success' && (
-                <div className="flex flex-col items-center">
-                  <div className="success-checkmark mb-4"></div>
-                  <h2 className="text-xl font-semibold text-green-600 mb-2">Authentication Successful!</h2>
-                  <p className="text-gray-600 text-sm mb-4">Your account has been connected successfully.</p>
-                  <p className="text-xs text-gray-500">This window will close automatically...</p>
-                </div>
-              )}
-              
-              {/* Error State */}
-              {status === 'error' && (
-                <div className="flex flex-col items-center">
-                  <div className="error-icon mb-4"></div>
-                  <h2 className="text-xl font-semibold text-red-600 mb-2">Authentication Failed</h2>
-                  <p className="text-gray-600 text-sm mb-4">{errorMessage}</p>
-                  <button 
-                    onClick={handleRetry}
-                    className="bg-kahana-primary hover:bg-kahana-primary-dark text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200"
-                  >
-                    Try Again
-                  </button>
-                </div>
-              )}
-            </div>
+      <div className="oauth-container">
+        <div className="container">
+          <div className="logo">K</div>
+          <div id="status" className={`status ${status}`}>
+            {statusMessage}
           </div>
-          
-          {/* Footer */}
-          <div className="text-center mt-6">
-            <p className="text-xs text-gray-500">
-              © 2025 Kahana Group Inc. All rights reserved.
-            </p>
-          </div>
+          {details && (
+            <div id="details" className="details">
+              {details.split('\n').map((line, index) => (
+                <div key={index}>
+                  {line}
+                  {index < details.split('\n').length - 1 && <br />}
+                </div>
+              ))}
+            </div>
+          )}
+          {showRetry && (
+            <button 
+              id="retryBtn" 
+              className="button" 
+              onClick={retryAuth}
+            >
+              Try Again
+            </button>
+          )}
         </div>
       </div>
 
       <style jsx>{`
-        .gradient-bg {
-          background: linear-gradient(135deg, #f0fdfa 0%, #e0f2fe 50%, #f0f9ff 100%);
-        }
-        
-        .kahana-logo {
-          background: linear-gradient(135deg, #0d9488 0%, #0ea5e9 100%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-        }
-        
-        .loading-spinner {
-          border: 3px solid #f3f4f6;
-          border-top: 3px solid #0d9488;
-          border-radius: 50%;
-          width: 40px;
-          height: 40px;
-          animation: spin 1s linear infinite;
-        }
-        
-        .success-checkmark {
-          width: 60px;
-          height: 60px;
-          border-radius: 50%;
-          background-color: #10b981;
-          position: relative;
-          animation: scaleIn 0.3s ease-out;
-        }
-        
-        .success-checkmark::after {
-          content: '';
-          position: absolute;
-          left: 18px;
-          top: 28px;
-          width: 12px;
-          height: 6px;
-          border: solid white;
-          border-width: 0 0 3px 3px;
-          transform: rotate(-45deg);
-        }
-        
-        .error-icon {
-          width: 60px;
-          height: 60px;
-          border-radius: 50%;
-          background-color: #ef4444;
-          position: relative;
-          animation: scaleIn 0.3s ease-out;
-        }
-        
-        .error-icon::after {
-          content: '×';
-          position: absolute;
-          left: 50%;
-          top: 50%;
-          transform: translate(-50%, -50%);
+        .oauth-container {
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          margin: 0;
+          padding: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          min-height: 100vh;
           color: white;
-          font-size: 30px;
-          font-weight: bold;
         }
         
-        .glass-effect {
-          background: rgba(255, 255, 255, 0.25);
+        .container {
+          text-align: center;
+          background: rgba(255, 255, 255, 0.1);
+          padding: 2rem;
+          border-radius: 1rem;
           backdrop-filter: blur(10px);
-          border: 1px solid rgba(255, 255, 255, 0.18);
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+          max-width: 500px;
+          width: 90%;
         }
         
-        .fade-in {
-          animation: fadeIn 0.5s ease-out;
+        .logo {
+          width: 60px;
+          height: 60px;
+          background: #10b981;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0 auto 1rem;
+          font-size: 24px;
+          font-weight: bold;
+          color: white;
         }
         
-        @keyframes spin {
-          0% { transform: rotate(0deg); }
-          100% { transform: rotate(360deg); }
+        .status {
+          font-size: 1.1rem;
+          margin-bottom: 1rem;
         }
         
-        @keyframes scaleIn {
-          0% { transform: scale(0); }
-          100% { transform: scale(1); }
+        .status.loading {
+          color: #74c0fc;
+          font-weight: 500;
         }
         
-        @keyframes fadeIn {
-          0% { opacity: 0; transform: translateY(20px); }
-          100% { opacity: 1; transform: translateY(0); }
+        .status.success {
+          color: #51cf66;
+          font-weight: 600;
+        }
+        
+        .status.error {
+          color: #ff6b6b;
+          font-weight: 600;
+        }
+        
+        .status.info {
+          color: #74c0fc;
+          font-weight: 500;
+        }
+        
+        .details {
+          margin-top: 1rem;
+          font-size: 0.9rem;
+          opacity: 0.8;
+          word-break: break-all;
+          line-height: 1.4;
+        }
+        
+        .button {
+          background: #10b981;
+          color: white;
+          border: none;
+          padding: 12px 24px;
+          border-radius: 6px;
+          font-size: 14px;
+          font-weight: 500;
+          cursor: pointer;
+          margin-top: 1rem;
+          transition: background-color 0.2s;
+        }
+        
+        .button:hover {
+          background: #059669;
+        }
+        
+        .button:disabled {
+          background: #6b7280;
+          cursor: not-allowed;
         }
       `}</style>
     </>
