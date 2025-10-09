@@ -14,17 +14,17 @@ async function testOAuthCallback() {
     {
       name: 'Basic OAuth Callback',
       url: '/oauth-callback',
-      shouldContain: ['Kahana', 'OAuth Authentication', 'Authenticating']
+      shouldContain: ['Kahana', 'OAuth Callback', 'Processing authentication']
     },
     {
       name: 'OAuth with Access Token',
       url: '/oauth-callback?access_token=test123&token_type=Bearer',
-      shouldContain: ['Kahana', 'OAuth Authentication', 'Authenticating']
+      shouldContain: ['Kahana', 'OAuth Callback', 'Processing authentication']
     },
     {
       name: 'OAuth with Error',
       url: '/oauth-callback?error=access_denied&error_description=User%20denied%20access',
-      shouldContain: ['Kahana', 'OAuth Authentication', 'Authenticating']
+      shouldContain: ['Kahana', 'OAuth Callback', 'Processing authentication']
     }
   ];
 
