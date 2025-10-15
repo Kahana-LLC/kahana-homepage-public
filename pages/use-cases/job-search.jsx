@@ -580,6 +580,37 @@ export default function JobSearchWaitlist() {
                 </div>
               </div>
 
+              {/* FAQ Section */}
+              <div className="mt-16 bg-white rounded-xl shadow-xl border border-[#A5DAD8]/30 p-8">
+                <h3 className="text-2xl font-semibold text-gray-900 mb-8 text-center">Frequently Asked Questions</h3>
+                
+                <div className="space-y-6">
+                  {/* FAQ 1 */}
+                  <div className="border-b border-gray-200 pb-6">
+                    <h4 className="text-lg font-semibold text-gray-900 mb-3">How does Oasis help with job search for people that want sponsorship?</h4>
+                    <p className="text-gray-600">
+                      Oasis includes a specialized Visa Sponsorship Detector that automatically flags H-1B/OPT/CPT sponsorship statements and eligibility constraints in job postings. You can use commands like "Filter to roles with visa sponsorship" to quickly identify opportunities that explicitly offer work authorization support. This saves you hours of manually reading through job descriptions to find sponsorship-friendly employers.
+                    </p>
+                  </div>
+
+                  {/* FAQ 2 */}
+                  <div className="border-b border-gray-200 pb-6">
+                    <h4 className="text-lg font-semibold text-gray-900 mb-3">How much does it cost?</h4>
+                    <p className="text-gray-600">
+                      Oasis is completely free to use and install, just like any browser! The AI assistant within Oasis allows you to run commands, but there is a limit to the number of tokens you can use while on a free plan. If you want more tokens for additional AI commands, you can upgrade to a paid plan. You can downgrade at any time - no long-term commitments required.
+                    </p>
+                  </div>
+
+                  {/* FAQ 3 */}
+                  <div className="pb-6">
+                    <h4 className="text-lg font-semibold text-gray-900 mb-3">How do I suggest new features?</h4>
+                    <p className="text-gray-600">
+                      We love hearing from our users! You can join our <Link href="/community" className="text-[#66C2BE] hover:text-[#4A9E9A] underline">Discord community</Link> to discuss ideas with other users and our team, or fill out our detailed <Link href="/oasis-feedback-survey" className="text-[#66C2BE] hover:text-[#4A9E9A] underline">feedback survey</Link>. Your suggestions directly influence our product roadmap and help us build features that matter most to job seekers like you.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
               {/* Discord CTA Section */}
               <DiscordCTA 
                 title="Join Our Job Search Community"
