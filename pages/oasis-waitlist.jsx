@@ -138,7 +138,7 @@ export default function OasisWaitlist() {
         .oasis-waitlist-ptserif span,
         .oasis-waitlist-ptserif a,
         .oasis-waitlist-ptserif strong {
-          font-family: 'PT Serif', serif !important;
+          font-family: 'PT Serif', serif ;
         }
       `}</style>
       <div className="oasis-waitlist-ptserif">

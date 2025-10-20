@@ -119,7 +119,7 @@ export default function OasisAugmentedReality() {
         .oasis-ar-ptserif span,
         .oasis-ar-ptserif a,
         .oasis-ar-ptserif strong {
-          font-family: 'PT Serif', serif !important;
+          font-family: 'PT Serif', serif ;
         }
       `}</style>
       <div className="oasis-ar-ptserif">

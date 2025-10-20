@@ -12,6 +12,7 @@ module.exports = {
         float: "float 6s ease-in-out infinite",
         "float-delayed": "float-delayed 6s ease-in-out infinite",
         blink: "blink 1s ease-in-out infinite",
+        fadeIn: "fadeIn 0.2s ease-in-out",
       },
       keyframes: {
         blob: {
@@ -40,8 +41,25 @@ module.exports = {
           "0%, 100%": { opacity: "1" },
           "50%": { opacity: "0" },
         },
+        fadeIn: {
+          "0%": { 
+            opacity: "0",
+            transform: "translateY(-8px)"
+          },
+          "100%": { 
+            opacity: "1",
+            transform: "translateY(0)"
+          },
+        },
       },
       colors: {
+        brand: {
+          primary: "#0A2240", // deep blue
+          accent: "#009999", // teal
+          page: "#F5F7FA", // light page bg
+          card: "#FFFFFF", // card bg
+          muted: "#5C6B7A", // muted text
+        },
         kahana: {
           // Main brand colors from new logo
           primary: {

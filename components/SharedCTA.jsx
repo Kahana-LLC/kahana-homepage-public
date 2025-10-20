@@ -33,7 +33,7 @@ const SharedCTA = ({
         }}
       >
         <span style={{ 
-          color: buttonVariant === "primary" ? 'white !important' : '#0d9488 !important',
+          color: buttonVariant === "primary" ? 'white ' : '#0d9488 ',
           fontWeight: 'bold'
         }}>
           {buttonText}

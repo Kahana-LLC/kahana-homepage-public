@@ -247,19 +247,19 @@ export default function WhitePaperPDF() {
                 transition: transform 0.3s ease;
               }
               .active-step .font-bold {
-                color: #1f2937 !important;
+                color: #1f2937 ;
                 font-weight: 800;
               }
               .active-step .text-base {
-                color: #6b7280 !important;
+                color: #6b7280 ;
                 font-weight: 500;
               }
               /* Special styling for current section (grey highlight) */
               .active-step .bg-gray-300 {
-                background-color: #d1d5db !important;
-                border-color: #6b7280 !important;
-                color: #374151 !important;
-                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(107, 114, 128, 0.2) !important;
+                background-color: #d1d5db ;
+                border-color: #6b7280 ;
+                color: #374151 ;
+                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(107, 114, 128, 0.2) ;
               }
               /* Custom scrollbar styling for sidebar */
               #narrative-sidebar::-webkit-scrollbar {
@@ -304,13 +304,13 @@ export default function WhitePaperPDF() {
                 #scroll-progress-bar,
                 .sticky,
                 .backdrop-blur-sm {
-                  display: none !important;
+                  display: none ;
                 }
                 
                 /* Ensure content takes full width */
                 main {
-                  margin-left: 0 !important;
-                  padding-left: 0 !important;
+                  margin-left: 0 ;
+                  padding-left: 0 ;
                 }
                 
                 /* Optimize text for print */
@@ -321,8 +321,8 @@ export default function WhitePaperPDF() {
                 
                 /* Ensure images print properly */
                 img {
-                  max-width: 100% !important;
-                  height: auto !important;
+                  max-width: 100% ;
+                  height: auto ;
                 }
                 
                 /* Page breaks */
