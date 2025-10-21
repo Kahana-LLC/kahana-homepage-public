@@ -147,8 +147,8 @@ const StickyNavigation: React.FC<StickyNavigationProps> = ({
             w-full text-left px-4 py-4 transition-all duration-200 ease-in-out
             ${isChild ? 'pl-8 text-lg' : 'text-xl font-semibold'}
             ${isActive 
-              ? 'bg-[#0A2240] text-white shadow-md border-l-4 border-[#009999]' 
-              : 'text-[#0A2240] hover:bg-[#0A2240] hover:text-white hover:shadow-sm'
+              ? 'bg-gray-100 text-[#0A2240] border-l-4 border-[#009999] font-semibold' 
+              : 'text-gray-700 hover:bg-gray-50 hover:text-[#0A2240] hover:border-l-2 hover:border-gray-300'
             }
             ${isFocused ? 'ring-2 ring-[#009999] ring-offset-2' : ''}
             rounded-r-lg focus:outline-none

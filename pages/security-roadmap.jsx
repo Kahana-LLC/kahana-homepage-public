@@ -142,32 +142,6 @@ function StickyHeader({ anchors }) {
   );
 }
 
-function CollapsibleTopHeader() {
-  const [open, setOpen] = useState(false);
-  return (
-    <div style={{ position: 'sticky', top: 0, zIndex: 20, background: COLORS.primary, color: '#fff', borderBottom: '1px solid #0d2a52', transform: 'translateZ(0)' }}>
-      <div style={{ maxWidth: MAX_WIDTH, margin: '0 auto', padding: '10px 16px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-          <button aria-label={open ? 'Collapse details' : 'Expand details'} onClick={() => setOpen(v => !v)} style={{ background: 'transparent', border: '1px solid rgba(255,255,255,0.25)', color: '#fff', borderRadius: 6, padding: '4px 8px', cursor: 'pointer' }}>{open ? '−' : '+'}</button>
-          <h1 style={{ margin: 0, fontSize: 18, fontWeight: 700 }}>Oasis: Your Modern Enterprise Workspace</h1>
-        </div>
-        <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
-          <Link href="/schedule-demo" legacyBehavior>
-            <a style={{ background: '#fff', color: COLORS.primary, padding: '8px 12px', borderRadius: 8, fontWeight: 700, textDecoration: 'none' }}>Schedule a Demo</a>
-          </Link>
-          <Link href="/oasis-waitlist" legacyBehavior>
-            <a style={{ background: COLORS.accent, color: '#083b3b', padding: '8px 12px', borderRadius: 8, fontWeight: 700, textDecoration: 'none' }}>Join the Waitlist</a>
-          </Link>
-        </div>
-      </div>
-      <div style={{ maxHeight: open ? 300 : 0, overflow: 'hidden', transition: 'max-height 220ms ease', borderTop: '1px solid rgba(255,255,255,0.15)' }}>
-        <div style={{ maxWidth: MAX_WIDTH, margin: '0 auto', padding: open ? '10px 16px 12px' : '0 16px', color: 'rgba(255,255,255,0.9)' }}>
-          Secure, compliant, and designed for productivity at scale.
-        </div>
-      </div>
-    </div>
-  );
-}
 
 
 function Accordion({ title, children }) {
@@ -334,8 +308,6 @@ export default function SecurityRoadmapPage() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <div style={{ background: COLORS.bgPage, color: COLORS.primary, minHeight: '100vh' }}>
-        <CollapsibleTopHeader />
-        
         {/* Sticky Navigation */}
         <StickyNavigation 
           items={structure.map(s => ({
@@ -1486,24 +1458,9 @@ export default function SecurityRoadmapPage() {
                 that your deployment meets your security, productivity, and compliance objectives.
               </p>
             </Section>
-            <Section id="final-cta" title="Ready to secure your workspace?" kicker="Final CTA">
-              <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-                <Link href="/schedule-demo" legacyBehavior><a style={{ background: '#0d9488', color: '#ffffff', padding: '10px 14px', borderRadius: 8, fontWeight: 700, textDecoration: 'none' }}>Schedule a Demo</a></Link>
-                <Link href="/oasis-waitlist" legacyBehavior><a style={{ background: COLORS.accent, color: '#ffffff', padding: '10px 14px', borderRadius: 8, fontWeight: 700, textDecoration: 'none' }}>Join the Waitlist</a></Link>
-              </div>
-            </Section>
           </main>
         </div>
 
-        <footer style={{ background: `linear-gradient(90deg, ${COLORS.primary}, ${COLORS.accent})`, color: '#fff', padding: '28px 16px', marginTop: 24 }}>
-          <div style={{ maxWidth: MAX_WIDTH, margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12, flexWrap: 'wrap' }}>
-            <div style={{ fontWeight: 700 }}>Secure more. Ship faster.</div>
-            <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
-              <Link href="/schedule-demo" legacyBehavior><a style={{ background: '#fff', color: COLORS.primary, padding: '8px 12px', borderRadius: 8, fontWeight: 700, textDecoration: 'none' }}>Schedule a Demo</a></Link>
-              <Link href="/oasis-waitlist" legacyBehavior><a style={{ background: '#083b3b', color: '#fff', padding: '8px 12px', borderRadius: 8, fontWeight: 700, textDecoration: 'none' }}>Join the Waitlist</a></Link>
-            </div>
-          </div>
-        </footer>
 
         <BackToTop />
       </div>
