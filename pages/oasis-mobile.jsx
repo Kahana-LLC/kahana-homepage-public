@@ -119,7 +119,7 @@ export default function OasisMobile() {
         .oasis-mobile-ptserif span,
         .oasis-mobile-ptserif a,
         .oasis-mobile-ptserif strong {
-          font-family: 'PT Serif', serif ;
+          font-family: 'PT Serif', serif !important;
         }
       `}</style>
       <div className="oasis-mobile-ptserif">
