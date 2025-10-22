@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import StickyNavigation from '../components/StickyNavigation';
+import TableOfContents from '../components/TableOfContents';
 import KeyPointsCard from '../components/KeyPointsCard';
 import ErrorBoundary from '../components/ErrorBoundary';
 
@@ -147,11 +147,61 @@ function StickyHeader({ anchors }) {
 function Accordion({ title, children }) {
   const [open, setOpen] = useState(false);
   return (
-    <div style={{ borderTop: '1px solid #e5e7eb' }}>
-      <button onClick={() => setOpen(v => !v)} style={{ width: '100%', textAlign: 'left', padding: '12px 0', background: 'transparent', border: 'none', color: COLORS.primary, fontWeight: 600, cursor: 'pointer' }}>
-        {title}
+    <div className="accordion-container" style={{ 
+      border: '1px solid #d1d5db', 
+      borderRadius: '8px', 
+      marginBottom: '12px',
+      backgroundColor: '#ffffff',
+      boxShadow: '0 1px 3px rgba(0, 0, 0, 0.05)'
+    }}>
+      <button 
+        className="accordion-button"
+        onClick={() => setOpen(v => !v)} 
+        style={{ 
+          width: '100%', 
+          textAlign: 'left', 
+          padding: '16px 20px', 
+          background: 'transparent', 
+          border: 'none', 
+          color: COLORS.primary, 
+          fontWeight: 600, 
+          cursor: 'pointer',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          borderRadius: '6px',
+          transition: 'background-color 0.2s ease'
+        }}
+        onMouseEnter={(e) => e.target.style.backgroundColor = '#f9fafb'}
+        onMouseLeave={(e) => e.target.style.backgroundColor = 'transparent'}
+        aria-expanded={open}
+        aria-controls={`accordion-${title.replace(/\s+/g, '-').toLowerCase()}`}
+      >
+        <span>{title}</span>
+        <svg 
+          className={`w-5 h-5 transition-transform duration-200 ${open ? 'rotate-180' : ''}`}
+          fill="none" 
+          stroke="currentColor" 
+          viewBox="0 0 24 24"
+          style={{ flexShrink: 0, marginLeft: '12px' }}
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+        </svg>
       </button>
-      {open && <div style={{ paddingBottom: 12, color: COLORS.muted, lineHeight: 1.7 }}>{children}</div>}
+      {open && (
+        <div 
+          id={`accordion-${title.replace(/\s+/g, '-').toLowerCase()}`}
+          style={{ 
+            padding: '0 20px 20px 20px', 
+            color: COLORS.muted, 
+            lineHeight: 1.7,
+            borderTop: '1px solid #e5e7eb',
+            marginTop: '8px'
+          }}
+        >
+          {children}
+        </div>
+      )}
     </div>
   );
 }
@@ -284,7 +334,6 @@ export default function SecurityRoadmapPage() {
     { id: 'key-questions-for-buyers', label: 'Key Questions for Buyers' },
     { id: 'pricing-licensing', label: 'Pricing & Licensing' },
     { id: 'getting-started-with-oasis', label: 'Getting Started with Oasis' },
-    { id: 'final-cta', label: 'Final CTA' },
   ];
 
   const anchors = useMemo(() => structure.flatMap(s => [
@@ -309,7 +358,7 @@ export default function SecurityRoadmapPage() {
       </Head>
       <div style={{ background: COLORS.bgPage, color: COLORS.primary, minHeight: '100vh' }}>
         {/* Sticky Navigation */}
-        <StickyNavigation 
+        <TableOfContents 
           items={structure.map(s => ({
             id: s.id,
             label: s.label,
@@ -321,7 +370,7 @@ export default function SecurityRoadmapPage() {
         />
 
         <div className="min-h-screen bg-[#F5F7FA]">
-          <main className="lg:ml-72">
+          <main className="lg:ml-80">
             <Section 
               id="overview" 
               title="Overview" 
@@ -604,10 +653,10 @@ export default function SecurityRoadmapPage() {
                       Configurable retention policies ensure audit logs are maintained for the appropriate duration based on regulatory requirements and organizational needs. Support for both hot storage (immediate access) and cold storage (archived) with automated lifecycle management.
                     </p>
                     <ul className="text-sm text-gray-600 space-y-1 ml-4">
-                      <li>• Flexible retention periods (30 days to 7+ years)</li>
-                      <li>• Automated archival and deletion policies</li>
-                      <li>• Compliance with GDPR, SOX, HIPAA requirements</li>
-                      <li>• Cost-optimized storage tiering</li>
+                      <li>Flexible retention periods (30 days to 7+ years)</li>
+                      <li>Automated archival and deletion policies</li>
+                      <li>Compliance with GDPR, SOX, HIPAA requirements</li>
+                      <li>Cost-optimized storage tiering</li>
                     </ul>
                   </div>
                 </Accordion>
@@ -618,10 +667,10 @@ export default function SecurityRoadmapPage() {
                       Seamless integration with leading SIEM platforms including Splunk, QRadar, ArcSight, and Sentinel. Real-time log streaming and batch export capabilities ensure security teams have immediate access to audit data.
                     </p>
                     <ul className="text-sm text-gray-600 space-y-1 ml-4">
-                      <li>• Real-time log streaming via syslog, API, or message queues</li>
-                      <li>• Standard formats: CEF, LEEF, JSON, CSV</li>
-                      <li>• Custom field mapping and data transformation</li>
-                      <li>• High-availability and failover support</li>
+                      <li>Real-time log streaming via syslog, API, or message queues</li>
+                      <li>Standard formats: CEF, LEEF, JSON, CSV</li>
+                      <li>Custom field mapping and data transformation</li>
+                      <li>High-availability and failover support</li>
                     </ul>
                   </div>
                 </Accordion>
@@ -632,10 +681,10 @@ export default function SecurityRoadmapPage() {
                       Comprehensive forensic capabilities enable detailed investigation of security incidents with complete user session reconstruction, timeline analysis, and evidence preservation for legal proceedings.
                     </p>
                     <ul className="text-sm text-gray-600 space-y-1 ml-4">
-                      <li>• Complete user session reconstruction</li>
-                      <li>• Timeline analysis with millisecond precision</li>
-                      <li>• Immutable log storage with cryptographic integrity</li>
-                      <li>• Chain of custody documentation</li>
+                      <li>Complete user session reconstruction</li>
+                      <li>Timeline analysis with millisecond precision</li>
+                      <li>Immutable log storage with cryptographic integrity</li>
+                      <li>Chain of custody documentation</li>
                     </ul>
                   </div>
                 </Accordion>
@@ -646,10 +695,10 @@ export default function SecurityRoadmapPage() {
                       Automated generation of compliance reports for various regulatory frameworks with customizable templates and scheduled delivery to stakeholders and auditors.
                     </p>
                     <ul className="text-sm text-gray-600 space-y-1 ml-4">
-                      <li>• Pre-built templates for SOX, GDPR, HIPAA, PCI DSS</li>
-                      <li>• Custom report builder with drag-and-drop interface</li>
-                      <li>• Scheduled and on-demand report generation</li>
-                      <li>• Digital signatures and audit trails for reports</li>
+                      <li>Pre-built templates for SOX, GDPR, HIPAA, PCI DSS</li>
+                      <li>Custom report builder with drag-and-drop interface</li>
+                      <li>Scheduled and on-demand report generation</li>
+                      <li>Digital signatures and audit trails for reports</li>
                     </ul>
                   </div>
                 </Accordion>
@@ -660,10 +709,10 @@ export default function SecurityRoadmapPage() {
                       Advanced timeline visualization tools help security teams understand the sequence of events during incidents, identify attack patterns, and correlate activities across multiple users and systems.
                     </p>
                     <ul className="text-sm text-gray-600 space-y-1 ml-4">
-                      <li>• Interactive timeline visualization</li>
-                      <li>• Event correlation and pattern detection</li>
-                      <li>• Multi-user session analysis</li>
-                      <li>• Export capabilities for external analysis tools</li>
+                      <li>Interactive timeline visualization</li>
+                      <li>Event correlation and pattern detection</li>
+                      <li>Multi-user session analysis</li>
+                      <li>Export capabilities for external analysis tools</li>
                     </ul>
                   </div>
                 </Accordion>
@@ -808,9 +857,9 @@ export default function SecurityRoadmapPage() {
                     <div>
                       <h5 className="font-medium text-gray-800">Certificate Pinning Strategies:</h5>
                       <ul className="text-sm text-gray-700 space-y-1 ml-4">
-                        <li>• Public key pinning for critical domains</li>
-                        <li>• SPKI pinning for enhanced security</li>
-                        <li>• Dynamic pinning updates via policy</li>
+                        <li>Public key pinning for critical domains</li>
+                        <li>SPKI pinning for enhanced security</li>
+                        <li>Dynamic pinning updates via policy</li>
                       </ul>
                     </div>
                     <div>
@@ -867,14 +916,6 @@ export default function SecurityRoadmapPage() {
                 ensure that security doesn't compromise productivity. The browser is designed to work the way 
                 modern teams work, with intelligent features that adapt to user behavior and organizational needs.
               </p>
-              <div style={{ marginTop: 16 }}>
-                <Quote
-                  text="Oasis helped our security team enforce data controls without slowing anyone down. Productivity actually increased."
-                  name="Jordan Kern"
-                  role="CISO"
-                  org="Northwind Health"
-                />
-              </div>
             </Section>
             <Section 
               id="hub-based-organization" 
@@ -1114,10 +1155,10 @@ export default function SecurityRoadmapPage() {
                       Replace heavy endpoint agents and VDI solutions with browser-native security controls that work regardless of device or location.
                     </p>
                     <ul className="text-sm text-gray-700 space-y-1">
-                      <li>• No VPN required for secure web access</li>
-                      <li>• Consistent security policies across all devices</li>
-                      <li>• Reduced IT overhead and support tickets</li>
-                      <li>• Better user experience than traditional VDI</li>
+                      <li>No VPN required for secure web access</li>
+                      <li>Consistent security policies across all devices</li>
+                      <li>Reduced IT overhead and support tickets</li>
+                      <li>Better user experience than traditional VDI</li>
                     </ul>
                     <div className="bg-purple-50 p-3 rounded-lg">
                       <p className="text-sm text-purple-800">
@@ -1135,10 +1176,10 @@ export default function SecurityRoadmapPage() {
                       Quickly provision secure access for acquired companies, contractors, and partners without complex network changes or trust relationships.
                     </p>
                     <ul className="text-sm text-gray-700 space-y-1">
-                      <li>• Instant provisioning of secure browser access</li>
-                      <li>• Granular permissions based on role and need</li>
-                      <li>• No network infrastructure changes required</li>
-                      <li>• Complete audit trail of all access activities</li>
+                      <li>Instant provisioning of secure browser access</li>
+                      <li>Granular permissions based on role and need</li>
+                      <li>No network infrastructure changes required</li>
+                      <li>Complete audit trail of all access activities</li>
                     </ul>
                   </div>
                 </div>
@@ -1422,7 +1463,7 @@ export default function SecurityRoadmapPage() {
               id="getting-started-with-oasis" 
               title="Getting Started with Oasis" 
               eyebrow="Getting Started"
-              kicker="Steps 01–06" 
+              kicker="Ready to Begin?" 
               right={
                 <div className="space-y-6">
                   <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
@@ -1432,31 +1473,37 @@ export default function SecurityRoadmapPage() {
                           <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
                         </svg>
                       </div>
-                      <h3 className="font-semibold text-gray-900 mb-2">Get Started</h3>
+                      <h3 className="font-semibold text-gray-900 mb-2">Take Action</h3>
                       <p className="text-sm text-gray-600">
-                        Simple steps from consultation to deployment
+                        Schedule a demo or get in touch to begin
                       </p>
                     </div>
                   </div>
-                  <KeyPointsCard>From initial consult to deployment plan.</KeyPointsCard>
+                  <KeyPointsCard>Ready to transform your enterprise browsing experience.</KeyPointsCard>
                 </div>
               }
             >
-              <p>
-                Getting started with Oasis is a straightforward process designed to ensure successful 
-                deployment and adoption. Our structured approach includes six key steps from initial 
-                consultation through full deployment, with comprehensive support and guidance at each stage.
-              </p>
-              <p>
-                The process begins with an initial consultation to understand your organization's specific 
-                needs and requirements. This is followed by a detailed assessment, pilot deployment, 
-                user training, full rollout, and ongoing support to ensure long-term success.
-              </p>
-              <p>
-                Each step is designed to minimize risk and maximize value, with clear milestones and 
-                success criteria. Our team provides hands-on support throughout the process, ensuring 
-                that your deployment meets your security, productivity, and compliance objectives.
-              </p>
+              <div className="space-y-6">
+                <p>
+                  Ready to get started with Oasis? We've made it easy for you to take the next step. 
+                  Whether you want to see Oasis in action or have questions about implementation, 
+                  we're here to help guide you through the process.
+                </p>
+                <p>
+                  Our team is ready to work with you to understand your organization's specific needs 
+                  and show you how Oasis can transform your enterprise browsing experience. From 
+                  initial consultation through deployment and ongoing support, we're committed to 
+                  your success.
+                </p>
+              </div>
+              
+              <div className="mt-12">
+                <Link href="/contact">
+                  <button className="nav-button get-in-touch bg-[#21706c] text-white font-bold hover:bg-[#15514f] px-4 py-2 text-sm rounded-md">
+                    Get in Touch
+                  </button>
+                </Link>
+              </div>
             </Section>
           </main>
         </div>
@@ -1476,6 +1523,23 @@ export default function SecurityRoadmapPage() {
         /* Remove old layout styles */
         html { scroll-behavior: smooth; }
         a:focus, button:focus, select:focus { outline: 2px solid ${COLORS.accent}; outline-offset: 2px; }
+        
+        /* Override global button styles for accordions only */
+        .accordion-container .accordion-button {
+          background-color: transparent !important;
+          color: #0A2240 !important;
+          font-weight: 600 !important;
+          border: none !important;
+          border-radius: 6px !important;
+          padding: 16px 20px !important;
+          cursor: pointer !important;
+          transition: background-color 0.2s ease !important;
+        }
+        
+        .accordion-container .accordion-button:hover {
+          background-color: #f9fafb !important;
+          color: #0A2240 !important;
+        }
         
         /* Modern link styling */
         .prose a {
