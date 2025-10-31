@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import whiteKahanaLogo from '../assets/kahana_icon.svg';
+import whiteKahanaLogo from '../assets/kahana_icon_old.svg';
 
 function NavBarExplore() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
