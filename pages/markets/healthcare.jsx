@@ -278,15 +278,15 @@ export default function Healthcare({ healthcareBlogs }) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h2 className="text-base font-semibold leading-7 text-[#66C2BE] mb-3">Healthcare</h2>
-            <h1 className="text-5xl font-bold text-gray-900 mb-6">
+            <h1 className="text-5xl font-bold text-[#4A5745] mb-6">
               Secure Healthcare Solutions
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+            <p className="text-xl text-[#4A5745] max-w-3xl mx-auto mb-8">
               Healthcare organizations face escalating cyber threats from web applications, unsecured devices, and sensitive patient data. Enterprise browsers provide critical protection for EHR systems while ensuring HIPAA compliance and operational continuity.
             </p>
             <div className="flex justify-center">
               <Link href="/buyers-guide">
-                <button className="bg-white text-[#66C2BE] px-8 py-3 rounded-md font-semibold hover:bg-gray-50 transition-colors border-2 border-[#66C2BE] shadow-lg shadow-[#E3DFF1]/20 hover:shadow-xl hover:shadow-[#E3DFF1]/30">
+                <button className="bg-white text-[#66C2BE] px-8 py-3 rounded-md font-semibold hover:bg-[#F3F8E4] transition-colors border-2 border-[#66C2BE] shadow-lg shadow-[#E3DFF1]/20 hover:shadow-xl hover:shadow-[#E3DFF1]/30">
                   Read Buyer's Guide
                 </button>
               </Link>
@@ -298,18 +298,18 @@ export default function Healthcare({ healthcareBlogs }) {
       {/* Healthcare Industry Metrics Section - Proof Points */}
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
+          <h2 className="text-3xl font-bold text-[#4A5745] text-center mb-12">
             Healthcare Security Risks
           </h2>
-          <p className="text-gray-600 text-center mb-8 max-w-3xl mx-auto">
+          <p className="text-[#4A5745] text-center mb-8 max-w-3xl mx-auto">
             The healthcare sector faces unique security challenges due to its reliance on web applications, third-party vendors, and sensitive patient data.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {healthcareMetrics.map((metric, idx) => (
               <div key={idx} className="bg-white rounded-xl shadow-lg p-6 flex flex-col hover:shadow-2xl transition-shadow">
                 <div className="text-2xl font-bold text-[#66C2BE] mb-2">{metric.value}</div>
-                <div className="text-lg font-semibold text-gray-900 mb-1">{metric.label}</div>
-                <div className="text-sm text-gray-600 mb-3">{metric.insight}</div>
+                <div className="text-lg font-semibold text-[#4A5745] mb-1">{metric.label}</div>
+                <div className="text-sm text-[#4A5745] mb-3">{metric.insight}</div>
                 {metric.source && (
                   <a href={metric.source.url} target="_blank" rel="noopener noreferrer" className="block text-xs text-gray-400 underline mt-auto">{metric.source.label}</a>
                 )}
@@ -322,10 +322,10 @@ export default function Healthcare({ healthcareBlogs }) {
       {/* Security Features Section - Core Solution */}
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
+          <h2 className="text-3xl font-bold text-[#4A5745] text-center mb-12">
             Enterprise Browser Effectiveness
           </h2>
-          <p className="text-gray-600 text-center mb-8 max-w-3xl mx-auto">
+          <p className="text-[#4A5745] text-center mb-8 max-w-3xl mx-auto">
             Enterprise browsers address healthcare's unique security challenges with proven results. Our security-first approach helps organizations protect patient data and maintain compliance.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -337,12 +337,12 @@ export default function Healthcare({ healthcareBlogs }) {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                     </svg>
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900">{feature.title}</h3>
+                  <h3 className="text-lg font-semibold text-[#4A5745]">{feature.title}</h3>
                 </div>
-                <p className="text-gray-600 text-sm mb-4">{feature.description}</p>
+                <p className="text-[#4A5745] text-sm mb-4">{feature.description}</p>
                 <ul className="space-y-2">
                   {feature.details.map((detail, dIndex) => (
-                    <li key={dIndex} className="flex items-center text-gray-600 text-sm">
+                    <li key={dIndex} className="flex items-center text-[#4A5745] text-sm">
                       <svg className="w-4 h-4 mr-2 text-[#66C2BE]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
@@ -359,10 +359,10 @@ export default function Healthcare({ healthcareBlogs }) {
       {/* Industry Benefits Section - ROI */}
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
+          <h2 className="text-3xl font-bold text-[#4A5745] text-center mb-12">
             Productivity and Cost Savings
           </h2>
-          <p className="text-gray-600 text-center mb-8 max-w-3xl mx-auto">
+          <p className="text-[#4A5745] text-center mb-8 max-w-3xl mx-auto">
             Enterprise browsers deliver measurable improvements in security, efficiency, and cost reduction for healthcare organizations.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -374,7 +374,7 @@ export default function Healthcare({ healthcareBlogs }) {
                       {benefit.icon}
                     </div>
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900">
+                  <h3 className="text-lg font-semibold text-[#4A5745]">
                     {benefit.title}
                   </h3>
                 </div>
@@ -382,14 +382,14 @@ export default function Healthcare({ healthcareBlogs }) {
                   <div className="text-2xl font-bold text-[#66C2BE] mb-1">
                     {benefit.stat}
                   </div>
-                  <div className="text-sm text-gray-600">
+                  <div className="text-sm text-[#4A5745]">
                     {benefit.statLabel}
                   </div>
                 </div>
                 {benefit.source && (
                   <a href={benefit.source.url} target="_blank" rel="noopener noreferrer" className="block text-xs text-gray-400 underline mt-1">{benefit.source.label}</a>
                 )}
-                <p className="text-gray-600 text-sm">
+                <p className="text-[#4A5745] text-sm">
                   {benefit.description}
                 </p>
               </div>
@@ -402,7 +402,7 @@ export default function Healthcare({ healthcareBlogs }) {
       <FeaturedBlogSection posts={healthcareBlogs} />
 
       {/* CTA Section - Next Steps */}
-      <section className="bg-gradient-to-r from-kahana-primary to-kahana-secondary py-16">
+      <section className="bg-gradient-to-r from-[#788B59] to-[#728552] py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-white mb-6" >
             Ready to Transform Your Healthcare Operations?
@@ -413,7 +413,7 @@ export default function Healthcare({ healthcareBlogs }) {
           <div className="flex justify-center">
             <Link 
               href="/sales" 
-              className="contact-sales-btn bg-transparent border border-white text-white px-8 py-3 rounded-md font-bold hover:bg-white hover:text-kahana-primary transition-colors"
+              className="contact-sales-btn bg-transparent border border-white text-white px-8 py-3 rounded-md font-bold hover:bg-white hover:text-[#728552] transition-colors"
               
             >
               <span >

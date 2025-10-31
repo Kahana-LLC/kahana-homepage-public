@@ -178,10 +178,10 @@ export default function UserAnalyticsFeatures() {
       <section className="bg-gradient-to-b from-kahana-primary-50 to-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-5xl font-bold text-gray-900 mb-6">
+            <h1 className="text-5xl font-bold text-[#4A5745] mb-6">
               User Analytics,<br />Clarity for Product Growth
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-[#4A5745] max-w-3xl mx-auto">
               Measure engagement, uncover bottlenecks, and drive adoption with built-in analytics inside Oasis.
             </p>
           </div>
@@ -207,8 +207,8 @@ export default function UserAnalyticsFeatures() {
 
               {/* Charts Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
-                  <div className="text-gray-900 font-semibold mb-3">Command Accuracy</div>
+                <div className="bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] rounded-xl shadow-sm border border-[#728552] border border-[#728552] p-5">
+                  <div className="text-[#4A5745] font-semibold mb-3">Command Accuracy</div>
                   <LineChart
                     labels={months}
                     datasets={[{ label: 'Accuracy', data: accuracySeries, borderColor: '#10b981' }]}
@@ -216,8 +216,8 @@ export default function UserAnalyticsFeatures() {
                     yMax={90}
                   />
                 </div>
-                <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
-                  <div className="text-gray-900 font-semibold mb-3">Commands Executed</div>
+                <div className="bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] rounded-xl shadow-sm border border-[#728552] border border-[#728552] p-5">
+                  <div className="text-[#4A5745] font-semibold mb-3">Commands Executed</div>
                   <LineChart
                     labels={months}
                     datasets={[{ label: 'Commands', data: commandsSeries, borderColor: '#3b82f6' }]}
@@ -225,12 +225,12 @@ export default function UserAnalyticsFeatures() {
                     yMax={6000}
                   />
                 </div>
-                <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
-                  <div className="text-gray-900 font-semibold mb-3">Command Errors</div>
+                <div className="bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] rounded-xl shadow-sm border border-[#728552] border border-[#728552] p-5">
+                  <div className="text-[#4A5745] font-semibold mb-3">Command Errors</div>
                   <BarChart labels={months} values={errorsSeries} color="rgba(239,68,68,0.8)" yMin={0} yMax={220} />
                 </div>
-                <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
-                  <div className="text-gray-900 font-semibold mb-3">Active Users</div>
+                <div className="bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] rounded-xl shadow-sm border border-[#728552] border border-[#728552] p-5">
+                  <div className="text-[#4A5745] font-semibold mb-3">Active Users</div>
                   <LineChart
                     labels={months}
                     datasets={[{ label: 'Active Users', data: activeUsersSeries, borderColor: '#06b6d4' }]}
@@ -254,8 +254,8 @@ export default function UserAnalyticsFeatures() {
 
               {/* Charts Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
-                  <div className="text-gray-900 font-semibold mb-3">Accuracy Over Time</div>
+                <div className="bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] rounded-xl shadow-sm border border-[#728552] border border-[#728552] p-5">
+                  <div className="text-[#4A5745] font-semibold mb-3">Accuracy Over Time</div>
                   <LineChart
                     labels={months}
                     datasets={[{ label: 'Accuracy', data: accuracySeries, borderColor: '#3b82f6' }]}
@@ -263,20 +263,20 @@ export default function UserAnalyticsFeatures() {
                     yMax={90}
                   />
                 </div>
-                <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
-                  <div className="text-gray-900 font-semibold mb-3">Top Commands</div>
+                <div className="bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] rounded-xl shadow-sm border border-[#728552] border border-[#728552] p-5">
+                  <div className="text-[#4A5745] font-semibold mb-3">Top Commands</div>
                   <HorizontalBarChart
                     labels={topCommandsData.labels}
                     values={topCommandsData.values}
                     color="rgba(59,130,246,0.8)"
                   />
                 </div>
-                <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
-                  <div className="text-gray-900 font-semibold mb-3">Correct vs Incorrect</div>
+                <div className="bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] rounded-xl shadow-sm border border-[#728552] border border-[#728552] p-5">
+                  <div className="text-[#4A5745] font-semibold mb-3">Correct vs Incorrect</div>
                   <DonutChart data={commandAccuracyData} />
                 </div>
-                <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
-                  <div className="text-gray-900 font-semibold mb-3">Hourly Usage</div>
+                <div className="bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] rounded-xl shadow-sm border border-[#728552] border border-[#728552] p-5">
+                  <div className="text-[#4A5745] font-semibold mb-3">Hourly Usage</div>
                   <HeatmapChart
                     data={hourlyUsageData}
                     rowLabels={hourlyLabels.rows}
@@ -328,8 +328,8 @@ export default function UserAnalyticsFeatures() {
               </div>
 
               {/* Command Accuracy Distribution Chart */}
-              <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
-                <div className="text-gray-900 font-semibold mb-3">Command Accuracy Distribution</div>
+              <div className="bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] rounded-xl shadow-sm border border-[#728552] border border-[#728552] p-5">
+                <div className="text-[#4A5745] font-semibold mb-3">Command Accuracy Distribution</div>
                 <LineChart
                   labels={hourlyAccuracyData.labels}
                   datasets={hourlyAccuracyData.datasets}
@@ -349,20 +349,20 @@ export default function UserAnalyticsFeatures() {
                 <KPIStat label="Power Users" value="958" trend="Active segment" />
                 <KPIStat label="Segments Growth" value="1,741" trend="Total users" />
                 <KPIStat label="Retention" value="3,256" trend="Cohort size" />
-                <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
+                <div className="bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] rounded-xl shadow-sm border border-[#728552] border border-[#728552] p-5">
                   <div className="text-sm text-gray-500">pen A</div>
-                  <div className="text-2xl font-semibold text-gray-900">325</div>
+                  <div className="text-2xl font-semibold text-[#4A5745]">325</div>
                 </div>
               </div>
 
               {/* Main Analytics Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-                <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
-                  <div className="text-gray-900 font-semibold mb-3">Segments Distribution</div>
+                <div className="bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] rounded-xl shadow-sm border border-[#728552] border border-[#728552] p-5">
+                  <div className="text-[#4A5745] font-semibold mb-3">Segments Distribution</div>
                   <PieChart data={segmentsDistributionData} />
                 </div>
-                <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
-                  <div className="text-gray-900 font-semibold mb-3">Segments Growth</div>
+                <div className="bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] rounded-xl shadow-sm border border-[#728552] border border-[#728552] p-5">
+                  <div className="text-[#4A5745] font-semibold mb-3">Segments Growth</div>
                   <LineChart
                     labels={segmentsGrowthData.labels}
                     datasets={segmentsGrowthData.datasets}
@@ -370,24 +370,24 @@ export default function UserAnalyticsFeatures() {
                     yMax={40}
                   />
                 </div>
-                <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
-                  <div className="text-gray-900 font-semibold mb-3">Geography</div>
+                <div className="bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] rounded-xl shadow-sm border border-[#728552] border border-[#728552] p-5">
+                  <div className="text-[#4A5745] font-semibold mb-3">Geography</div>
                   <WorldMap highlightedRegions={['south-america']} />
                 </div>
-                <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
-                  <div className="text-gray-900 font-semibold mb-3">Retention Cohort</div>
+                <div className="bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] rounded-xl shadow-sm border border-[#728552] border border-[#728552] p-5">
+                  <div className="text-[#4A5745] font-semibold mb-3">Retention Cohort</div>
                   <RetentionCohort data={retentionCohortData} />
                 </div>
-                <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
-                  <div className="text-gray-900 font-semibold mb-3">Geography</div>
+                <div className="bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] rounded-xl shadow-sm border border-[#728552] border border-[#728552] p-5">
+                  <div className="text-[#4A5745] font-semibold mb-3">Geography</div>
                   <HorizontalBarChart
                     labels={['North America', 'Europe', 'Asia', 'South America', 'Africa']}
                     values={[35, 28, 22, 10, 5]}
                     color="rgba(6,182,212,0.8)"
                   />
                 </div>
-                <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
-                  <div className="text-gray-900 font-semibold mb-3">Persona</div>
+                <div className="bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] rounded-xl shadow-sm border border-[#728552] border border-[#728552] p-5">
+                  <div className="text-[#4A5745] font-semibold mb-3">Persona</div>
                   <div className="space-y-3 max-h-48 overflow-y-auto">
                     {personaData.slice(0, 3).map((persona, index) => (
                       <PersonaCard key={index} {...persona} />
@@ -412,28 +412,28 @@ export default function UserAnalyticsFeatures() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Legacy Analytics Card */}
-            <div className="bg-gradient-to-br from-gray-50 to-kahana-primary-50/30 rounded-2xl p-8 border border-gray-100">
+            <div className="bg-gradient-to-br from-gray-50 to-kahana-primary-50/30 rounded-2xl p-8 border border-[#728552]">
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 bg-kahana-primary-100 rounded-full flex items-center justify-center mr-4">
                   <svg className="w-6 h-6 text-kahana-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3v18h18" />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-semibold text-gray-900">Legacy Analytics</h3>
+                <h3 className="text-2xl font-semibold text-[#4A5745]">Legacy Analytics</h3>
               </div>
-              <p className="text-gray-600 mb-4">
+              <p className="text-[#4A5745] mb-4">
                 Siloed tools, complex tagging, and stale reports slow decision-making.
               </p>
               <ul className="space-y-2">
-                <li className="flex items-center text-gray-600">
+                <li className="flex items-center text-[#4A5745]">
                   <span className="text-red-500 mr-2">✗</span>
                   <span>Fragmented data sources</span>
                 </li>
-                <li className="flex items-center text-gray-600">
+                <li className="flex items-center text-[#4A5745]">
                   <span className="text-red-500 mr-2">✗</span>
                   <span>Heavy instrumentation effort</span>
                 </li>
-                <li className="flex items-center text-gray-600">
+                <li className="flex items-center text-[#4A5745]">
                   <span className="text-red-500 mr-2">✗</span>
                   <span>Slow time-to-insight</span>
                 </li>
@@ -441,28 +441,28 @@ export default function UserAnalyticsFeatures() {
             </div>
 
             {/* Oasis Analytics Card */}
-            <div className="bg-gradient-to-br from-gray-50 to-kahana-secondary-50/30 rounded-2xl p-8 border border-gray-100">
+            <div className="bg-gradient-to-br from-gray-50 to-kahana-secondary-50/30 rounded-2xl p-8 border border-[#728552]">
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 bg-kahana-secondary-100 rounded-full flex items-center justify-center mr-4">
                   <svg className="w-6 h-6 text-kahana-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 17l-5-5m0 0l5-5m-5 5h12" />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-semibold text-gray-900">Oasis Analytics</h3>
+                <h3 className="text-2xl font-semibold text-[#4A5745]">Oasis Analytics</h3>
               </div>
-              <p className="text-gray-600 mb-4">
+              <p className="text-[#4A5745] mb-4">
                 Built-in, privacy-conscious analytics with instant visibility and zero tagging burden.
               </p>
               <ul className="space-y-2">
-                <li className="flex items-center text-gray-600">
+                <li className="flex items-center text-[#4A5745]">
                   <span className="text-kahana-secondary mr-2">✓</span>
                   <span>Unified view across features</span>
                 </li>
-                <li className="flex items-center text-gray-600">
+                <li className="flex items-center text-[#4A5745]">
                   <span className="text-kahana-secondary mr-2">✓</span>
                   <span>Automatic event capture</span>
                 </li>
-                <li className="flex items-center text-gray-600">
+                <li className="flex items-center text-[#4A5745]">
                   <span className="text-kahana-secondary mr-2">✓</span>
                   <span>Real-time insights</span>
                 </li>
@@ -478,23 +478,23 @@ export default function UserAnalyticsFeatures() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17v-6h13" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-semibold text-gray-900">Clarity That Drives Adoption</h3>
+              <h3 className="text-2xl font-semibold text-[#4A5745]">Clarity That Drives Adoption</h3>
             </div>
-            <p className="text-gray-600 text-lg mb-6">
+            <p className="text-[#4A5745] text-lg mb-6">
               See exactly how users engage, optimize onboarding, and prioritize features that matter.
             </p>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="bg-white rounded-xl p-6 shadow-sm">
-                <h4 className="font-semibold text-gray-900 mb-2">Realtime Views</h4>
-                <p className="text-gray-600">Monitor spikes, sessions, and errors</p>
+                <h4 className="font-semibold text-[#4A5745] mb-2">Realtime Views</h4>
+                <p className="text-[#4A5745]">Monitor spikes, sessions, and errors</p>
               </div>
               <div className="bg-white rounded-xl p-6 shadow-sm">
-                <h4 className="font-semibold text-gray-900 mb-2">Cohort Retention</h4>
-                <p className="text-gray-600">Spot stickiness across segments</p>
+                <h4 className="font-semibold text-[#4A5745] mb-2">Cohort Retention</h4>
+                <p className="text-[#4A5745]">Spot stickiness across segments</p>
               </div>
               <div className="bg-white rounded-xl p-6 shadow-sm">
-                <h4 className="font-semibold text-gray-900 mb-2">Feature Adoption</h4>
-                <p className="text-gray-600">Understand what resonates</p>
+                <h4 className="font-semibold text-[#4A5745] mb-2">Feature Adoption</h4>
+                <p className="text-[#4A5745]">Understand what resonates</p>
               </div>
             </div>
           </div>
@@ -504,7 +504,7 @@ export default function UserAnalyticsFeatures() {
       {/* Concept Cards Section */}
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
+          <h2 className="text-3xl font-bold text-[#4A5745] mb-12 text-center">
             User Analytics Features
           </h2>
           <div className="grid grid-cols-1 gap-12">
@@ -523,18 +523,18 @@ export default function UserAnalyticsFeatures() {
                         )}
                       </svg>
                     </div>
-                    <h3 className="text-2xl font-semibold text-gray-900">{card.title}</h3>
+                    <h3 className="text-2xl font-semibold text-[#4A5745]">{card.title}</h3>
                   </div>
-                  <p className="text-gray-600 text-lg mb-8">
+                  <p className="text-[#4A5745] text-lg mb-8">
                     {card.description}
                   </p>
                   <div className="grid md:grid-cols-2 gap-6">
                     {card.details.map((detail, dIndex) => (
                       <div key={dIndex} className="bg-white rounded-xl p-6 shadow-sm">
-                        <h4 className="font-semibold text-gray-900 mb-3">
+                        <h4 className="font-semibold text-[#4A5745] mb-3">
                           {detail.title}
                         </h4>
-                        <p className="text-gray-600 mb-3">
+                        <p className="text-[#4A5745] mb-3">
                           {detail.explanation}
                         </p>
                         <div className="flex items-center text-kahana-primary">

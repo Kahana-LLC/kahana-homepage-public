@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import whiteKahanaLogo from '../assets/kahana_logo_combined.svg';
+import whiteKahanaLogo from '../assets/Kahana_Current_Combined.svg';
 
 function NavBar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -83,13 +83,13 @@ function NavBar() {
           }
 
           .logo {
-            height: 42px;
+            height: 56px;
             width: auto;
           }
 
           @media (max-width: 768px) {
             .logo {
-              height: 32px;
+              height: 40px;
               width: auto;
             }
           }
@@ -333,6 +333,19 @@ function NavBar() {
             gap: 0.75rem;
           }
 
+          .menu-links button {
+            color: #ffffff !important;
+          }
+
+          .menu-links a {
+            text-decoration: none !important;
+            color: inherit !important;
+          }
+
+          .menu-links button span {
+            color: #ffffff !important;
+          }
+
           .mobile-link {
             color: #333;
             transition: all 0.3s ease;
@@ -387,7 +400,7 @@ function NavBar() {
         `}</style>
         <div className="nav-content">
           <Link href="/" className="flex items-center">
-            <div className="relative h-[42px] w-[200px]">
+            <div className="relative h-[56px] w-[240px]">
               <Image
                 src={whiteKahanaLogo}
                 alt="Kahana Logo"
@@ -552,13 +565,13 @@ function NavBar() {
           <div className="flex items-center gap-4">
             <div className="nav-buttons flex">
               <Link href="/schedule-demo">
-                <button className="nav-button download inline-flex items-center rounded-md bg-[#21706c] text-white font-bold shadow-sm hover:bg-[#15514f] px-2 py-1.5 text-xs md:px-4 md:py-2 md:text-sm">
+                <button className="nav-button download inline-flex items-center rounded-md bg-[#788B59] text-white font-bold shadow-sm hover:bg-[#728552] px-2 py-1.5 text-xs md:px-4 md:py-2 md:text-sm">
                   <span className="md:hidden">Demo</span>
                   <span className="hidden md:inline">Schedule Demo</span>
                 </button>
               </Link>
               <Link href="/contact">
-                <button className="nav-button get-in-touch bg-white text-[#21706c] font-bold hover:bg-gray-100">
+                <button className="nav-button get-in-touch bg-[#F3F8E4] text-[#788B59] font-bold hover:bg-[#E0D48C] border border-[#788B59]">
                   <span className="md:hidden">Contact</span>
                   <span className="hidden md:inline">Contact</span>
                 </button>
@@ -612,12 +625,12 @@ function NavBar() {
             {/* Contact Buttons at Top */}
             <div className="flex flex-col gap-2 mb-4">
               <Link href="/schedule-demo" className="text-center">
-                <button className="w-full py-2 px-4 bg-[#21706c] text-white font-bold rounded-md hover:bg-[#15514f] transition-colors">
+                <button className="w-full py-2 px-4 bg-[#788B59] text-white font-bold rounded-md hover:bg-[#728552] transition-colors" style={{ color: '#ffffff' }}>
                   Schedule Demo
                 </button>
               </Link>
               <Link href="/contact" className="text-center">
-                <button className="w-full py-2 px-4 bg-white text-[#21706c] font-bold rounded-md hover:bg-gray-100 transition-colors">
+                <button className="w-full py-2 px-4 bg-[#788B59] text-white font-bold rounded-md hover:bg-[#728552] transition-colors" style={{ color: '#ffffff' }}>
                   Contact
                 </button>
               </Link>

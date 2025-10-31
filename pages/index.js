@@ -186,7 +186,7 @@ export default function Home({ blogPosts }) {
           <FadeInSection delay={100}>
             <section
               id="video-demo"
-              className="min-h-screen flex items-center justify-center p-4 md:p-8 bg-gray-50"
+              className="min-h-screen flex items-center justify-center p-4 md:p-8 bg-white"
             >
               <VideoSection />
             </section>
@@ -204,7 +204,7 @@ export default function Home({ blogPosts }) {
           <FadeInSection delay={400}>
             <section
               id="how-it-works"
-              className="min-h-screen flex items-center justify-center p-4 md:p-8 bg-gray-50"
+              className="min-h-screen flex items-center justify-center p-4 md:p-8 bg-white"
             >
               <HowItWorks />
             </section>
@@ -213,7 +213,7 @@ export default function Home({ blogPosts }) {
           <FadeInSection delay={600}>
             <section
               id="blog"
-              className="flex flex-col items-center justify-center p-4 md:p-8 bg-gray-50"
+              className="flex flex-col items-center justify-center p-4 md:p-8 bg-white"
             >
               <div className="mx-auto max-w-7xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {(blogPosts || []).slice(0, 3).map((post) => (
@@ -223,7 +223,8 @@ export default function Home({ blogPosts }) {
               <div className="mt-8 text-center">
                 <Link
                   href="/blog"
-                  className="bg-kahana-primary text-white font-bold rounded-md px-8 py-3 hover:bg-kahana-primary-dark transition-colors inline-flex items-center justify-center no-underline"
+                  className="nav-button download rounded-md px-8 py-3 inline-flex items-center justify-center no-underline font-bold border border-transparent transition-all duration-300 text-white shadow-sm hover:no-underline focus:no-underline"
+                  style={{ textDecoration: 'none', backgroundColor: '#788B59' }}
                 >
                   All Posts
                   <svg

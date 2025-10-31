@@ -8,7 +8,7 @@ export default function DocFilter({ categories, activeCategory, onCategoryChange
         <div className="relative max-w-lg mx-auto">
           <input
             type="text"
-            className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-kahana-primary focus:border-transparent"
+            className="w-full px-4 py-2 rounded-lg border border-[#728552] focus:ring-2 focus:ring-[#788B59] focus:border-transparent"
             placeholder="Search documentation..."
             value={searchQuery}
             onChange={(e) => onSearchChange(e.target.value)}
@@ -27,8 +27,8 @@ export default function DocFilter({ categories, activeCategory, onCategoryChange
           onClick={() => onCategoryChange('all')}
           className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
             activeCategory === 'all'
-              ? 'bg-[#21706c] text-white font-bold'
-              : 'bg-white text-[#21706c] font-bold hover:bg-gray-100 border border-[#21706c]'
+              ? 'bg-[#788B59] text-white font-bold'
+              : 'bg-white text-[#4A5745] font-bold hover:bg-[#F3F8E4] border border-[#728552]'
           }`}
         >
           All
@@ -39,8 +39,8 @@ export default function DocFilter({ categories, activeCategory, onCategoryChange
             onClick={() => onCategoryChange(category)}
             className={`px-4 py-2 rounded-full text-sm font-medium capitalize transition-colors ${
               activeCategory === category
-                ? 'bg-[#21706c] text-white font-bold'
-                : 'bg-white text-[#21706c] font-bold hover:bg-gray-100 border border-[#21706c]'
+                ? 'bg-[#788B59] text-white font-bold'
+                : 'bg-white text-[#4A5745] font-bold hover:bg-[#F3F8E4] border border-[#728552]'
             }`}
           >
             {category}

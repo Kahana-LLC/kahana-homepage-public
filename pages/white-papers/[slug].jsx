@@ -88,21 +88,21 @@ export default function WhitePaperPage({ whitePaper, relatedWhitePapers }) {
             <div className="flex flex-col space-y-6">
               {/* Category and Featured Badge */}
               <div className="flex items-center gap-3">
-                <span className="inline-block bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">
+                <span className="inline-block bg-[#F3F8E4] text-[#4A5745] px-3 py-1 rounded-full text-sm font-medium">
                   {whitePaper.category}
                 </span>
                 {whitePaper.featured && (
-                  <span className="inline-block bg-[#21706c] text-white px-3 py-1 rounded-full text-sm font-semibold">
+                  <span className="inline-block bg-[#788B59] text-white px-3 py-1 rounded-full text-sm font-semibold">
                     Featured
                   </span>
                 )}
               </div>
 
               {/* Title */}
-              <h1 className="text-4xl font-bold text-gray-900">{whitePaper.title}</h1>
+              <h1 className="text-4xl font-bold text-[#4A5745]">{whitePaper.title}</h1>
 
               {/* Description */}
-              <p className="text-xl text-gray-600 leading-relaxed">
+              <p className="text-xl text-[#4A5745] leading-relaxed">
                 {whitePaper.description}
               </p>
 
@@ -113,15 +113,15 @@ export default function WhitePaperPage({ whitePaper, relatedWhitePapers }) {
                 )}
                 <time 
                   dateTime={whitePaper.date}
-                  className="inline-flex items-center px-3 py-1.5 rounded-full bg-gray-100 text-gray-700 text-sm"
+                  className="inline-flex items-center px-3 py-1.5 text-[#4A5745] text-sm"
                 >
-                  <FaRegCalendarAlt className="w-4 h-4 mr-2 text-gray-500" />
-                  <span className="text-gray-500 mr-1">Published:</span>
+                  <FaRegCalendarAlt className="w-4 h-4 mr-2" />
+                  <span className="mr-1">Published:</span>
                   {formatDate(whitePaper.date)}
                 </time>
-                <div className="inline-flex items-center px-3 py-1.5 rounded-full bg-gray-100 text-gray-700 text-sm">
-                  <FaRegClock className="w-4 h-4 mr-2 text-gray-500" />
-                  <span className="text-gray-500">{readingTime} min read</span>
+                <div className="inline-flex items-center px-3 py-1.5 text-[#4A5745] text-sm">
+                  <FaRegClock className="w-4 h-4 mr-2" />
+                  <span>{readingTime} min read</span>
                 </div>
               </div>
 
@@ -131,7 +131,7 @@ export default function WhitePaperPage({ whitePaper, relatedWhitePapers }) {
                   {whitePaper.tags.map((tag, index) => (
                     <span
                       key={index}
-                      className="bg-gray-50 text-gray-600 px-3 py-1 rounded-full text-sm"
+                      className="bg-[#F3F8E4] text-[#4A5745] px-3 py-1 rounded-full text-sm"
                     >
                       #{tag}
                     </span>
@@ -140,15 +140,16 @@ export default function WhitePaperPage({ whitePaper, relatedWhitePapers }) {
               )}
 
               {/* Download Button */}
-              <div className="flex items-center gap-4 pt-4 border-t border-gray-200">
+              <div className="flex items-center gap-4 pt-4 border-t border-[#728552]/30">
                 <a
                   href={whitePaper.downloadUrl || `/white-papers/${whitePaper.slug}`}
-                  className="inline-flex items-center bg-[#21706c] hover:bg-[#1a5a57] text-white px-6 py-3 rounded-lg font-semibold transition-colors"
+                  className="nav-button download inline-flex items-center justify-center rounded-md text-white font-bold shadow-sm px-6 py-3 text-base no-underline hover:no-underline focus:no-underline"
+                  style={{ textDecoration: 'none', backgroundColor: '#788B59' }}
                 >
                   <FaDownload className="w-5 h-5 mr-2" />
                   Download PDF
                 </a>
-                <div className="flex items-center text-gray-600">
+                <div className="flex items-center text-[#4A5745]">
                   <FaFilePdf className="w-5 h-5 mr-2 text-red-600" />
                   <span className="text-sm">PDF Document</span>
                 </div>
@@ -158,16 +159,16 @@ export default function WhitePaperPage({ whitePaper, relatedWhitePapers }) {
 
           {/* Content - This would typically be the white paper content */}
           <div className="prose prose-lg max-w-none mb-12">
-            <div className="bg-gray-50 rounded-lg p-8 text-center">
+            <div className="bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] rounded-lg p-8 text-center border border-[#728552]">
               <FaFilePdf className="w-16 h-16 text-red-600 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              <h3 className="text-xl font-semibold text-[#4A5745] mb-2">
                 White Paper Content
               </h3>
-              <p className="text-gray-600 mb-4">
+              <p className="text-[#4A5745] mb-4">
                 This white paper contains comprehensive research and analysis. 
                 Click the download button above to access the full PDF document.
               </p>
-              <p className="text-sm text-gray-500">
+              <p className="text-sm text-[#4A5745]">
                 The white paper includes detailed sections on methodology, findings, 
                 recommendations, and supporting data.
               </p>
@@ -177,32 +178,32 @@ export default function WhitePaperPage({ whitePaper, relatedWhitePapers }) {
           {/* Related White Papers */}
           {relatedWhitePapers.length > 0 && (
             <section className="mt-16">
-              <h2 className="text-2xl font-bold text-gray-900 mb-8">
+              <h2 className="text-2xl font-bold text-[#4A5745] mb-8">
                 Related White Papers
               </h2>
               <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                 {relatedWhitePapers.map((relatedWP) => (
-                  <div key={relatedWP.slug} className="bg-gray-50 rounded-lg p-6 hover:bg-gray-100 transition-colors">
+                  <div key={relatedWP.slug} className="bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] rounded-lg p-6 border border-[#728552] transition-all duration-300 hover:shadow-lg">
                     <div className="flex items-center mb-3">
                       <FaFilePdf className="w-5 h-5 text-red-600 mr-2" />
-                      <span className="text-sm font-medium text-gray-600">
+                      <span className="text-sm font-medium text-[#4A5745]">
                         {relatedWP.category}
                       </span>
                     </div>
-                    <h3 className="font-semibold text-gray-900 mb-2 line-clamp-2">
+                    <h3 className="font-semibold text-[#4A5745] mb-2 line-clamp-2">
                       <a 
                         href={`/white-papers/${relatedWP.slug}`}
-                        className="hover:text-[#21706c] transition-colors"
+                        className="hover:text-[#728552] transition-colors"
                       >
                         {relatedWP.title}
                       </a>
                     </h3>
-                    <p className="text-gray-600 text-sm line-clamp-3 mb-4">
+                    <p className="text-[#4A5745] text-sm line-clamp-3 mb-4">
                       {relatedWP.excerpt}
                     </p>
                     <a
                       href={`/white-papers/${relatedWP.slug}`}
-                      className="text-[#21706c] hover:text-[#1a5a57] font-medium text-sm"
+                      className="text-[#788B59] hover:text-[#728552] font-medium text-sm"
                     >
                       Read More →
                     </a>

@@ -6,13 +6,29 @@ import KeyPointsCard from '../components/KeyPointsCard';
 import ErrorBoundary from '../components/ErrorBoundary';
 import BrowserComparisonTable from '../components/BrowserComparisonTable';
 
-// Brand tokens
+// Brand tokens (updated green-forward accessible palette)
 const COLORS = {
-  primary: '#0A2240',
-  accent: '#009999',
-  bgPage: '#F5F7FA',
-  bgCard: '#FFFFFF',
-  muted: '#5C6B7A',
+  // Core brand greens from provided palette
+  brand900: '#4A5745', // Deep evergreen (text on light backgrounds)
+  brand700: '#788B59', // Accent olive
+  brand600: '#728552', // Mid olive
+  brand200: '#E0D48C', // Sand
+  brand050: '#F3F8E4', // Cream
+
+  // Role-based functional colors (derived from palette)
+  ctaPrimary: '#788B59', // Accent olive (primary actions)
+  ctaHover: '#728552', // Mid olive (hover states)
+  info: '#728552', // Mid olive (info states)
+  success: '#788B59', // Accent olive (success states)
+  warning: '#E0D48C', // Sand (warning states)
+  error: '#4A5745', // Deep evergreen (error states)
+
+  // Text and surfaces
+  primary: '#4A5745', // Deep evergreen text
+  accent: '#728552', // Mid olive accent
+  bgPage: '#F3F8E4', // Cream background
+  bgCard: '#FFFFFF', // White cards
+  muted: '#788B59', // Accent olive muted
 };
 
 const MAX_WIDTH = 1100;
@@ -90,7 +106,7 @@ function StickyHeader({ anchors }) {
       <div style={{ maxWidth: MAX_WIDTH, margin: '0 auto', padding: '12px 16px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         <Link href="/" legacyBehavior>
           <a style={{ display: 'inline-flex', alignItems: 'center', textDecoration: 'none' }}>
-            <span style={{ width: 28, height: 28, borderRadius: 6, background: COLORS.primary, display: 'inline-block', marginRight: 10 }} />
+            <span style={{ width: 28, height: 28, borderRadius: 6, background: COLORS.brand700, display: 'inline-block', marginRight: 10 }} />
             <span style={{ color: COLORS.primary, fontWeight: 700 }}>Kahana</span>
           </a>
         </Link>
@@ -152,7 +168,7 @@ function Accordion({ title, children }) {
       border: '1px solid #d1d5db', 
       borderRadius: '8px', 
       marginBottom: '12px',
-      backgroundColor: '#ffffff',
+      backgroundColor: '#F3F8E4',
       boxShadow: '0 1px 3px rgba(0, 0, 0, 0.05)'
     }}>
       <button 
@@ -173,8 +189,6 @@ function Accordion({ title, children }) {
           borderRadius: '6px',
           transition: 'background-color 0.2s ease'
         }}
-        onMouseEnter={(e) => e.target.style.backgroundColor = '#f9fafb'}
-        onMouseLeave={(e) => e.target.style.backgroundColor = 'transparent'}
         aria-expanded={open}
         aria-controls={`accordion-${title.replace(/\s+/g, '-').toLowerCase()}`}
       >
@@ -238,7 +252,7 @@ function Quote({ text, name, role, org }) {
     <blockquote style={{ borderLeft: `4px solid ${COLORS.accent}`, paddingLeft: 16, margin: 0 }}>
       <p style={{ color: COLORS.primary, fontSize: 18, lineHeight: 1.6, margin: 0 }}>{text}</p>
       <div style={{ display: 'flex', alignItems: 'center', marginTop: 10, gap: 10 }}>
-        <div style={{ width: 36, height: 36, borderRadius: 999, background: COLORS.accent, color: '#083b3b', fontWeight: 800, display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>{initials}</div>
+        <div style={{ width: 36, height: 36, borderRadius: 999, background: COLORS.accent, color: '#F3F8E4', fontWeight: 800, display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>{initials}</div>
         <span style={{ color: COLORS.muted }}>{name} • {role} @ {org}</span>
       </div>
     </blockquote>
@@ -265,28 +279,29 @@ function Section({ id, title, kicker, eyebrow, children, right }) {
     <section 
       id={id} 
       aria-labelledby={`${id}-title`} 
-      className="py-20 px-4 lg:px-8 scroll-mt-24 border-b border-gray-100 last:border-b-0"
+      className="py-28 px-4 lg:px-10 scroll-mt-28 border-b border-gray-100 last:border-b-0"
     >
       <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-14">
           <div className="lg:col-span-2">
             {eyebrow && (
-              <div className="text-sm font-semibold text-[#009999] uppercase tracking-wider mb-4">
+              <div className="uppercase tracking-wider mb-3 font-semibold text-base lg:text-lg" style={{ color: COLORS.accent }}>
                 {eyebrow}
               </div>
             )}
             <h2 
               id={`${id}-title`} 
-              className="text-3xl lg:text-4xl font-bold text-[#0A2240] mb-6 leading-tight"
+              className="text-3xl lg:text-4xl font-bold mb-4 leading-tight"
+              style={{ color: COLORS.primary }}
             >
               {title}
             </h2>
             {kicker && (
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed font-medium">
+              <p className="text-xl text-gray-700 mb-10 leading-relaxed font-medium">
                 {kicker}
               </p>
             )}
-            <div className="prose prose-lg max-w-none text-[#0A2240] leading-relaxed space-y-6">
+            <div className="prose prose-lg max-w-none leading-relaxed space-y-6 kb-typography" style={{ color: COLORS.primary }}>
               {children}
             </div>
           </div>
@@ -305,6 +320,8 @@ function Section({ id, title, kicker, eyebrow, children, right }) {
 
 export default function EnterpriseBuyerGuidePage() {
   const [isTocCollapsed, setIsTocCollapsed] = useState(false);
+  const [persona, setPersona] = useState('business'); // 'business' | 'technical'
+  const [isPlaying, setIsPlaying] = useState(false);
   
   // Exact headings/order with subsections
   const structure = [
@@ -360,8 +377,18 @@ export default function EnterpriseBuyerGuidePage() {
           onCollapseChange={setIsTocCollapsed}
         />
 
-        <div className="min-h-screen bg-[#F5F7FA]">
+        <div className="min-h-screen" style={{ background: COLORS.bgPage }}>
           <main className={`transition-all duration-300 ease-in-out ${isTocCollapsed ? 'lg:ml-16' : 'lg:ml-80'}`}>
+            <div className="mx-auto mb-8 px-4" style={{ maxWidth: 960 }}>
+              <div className="rounded-lg border border-gray-200 bg-[#F3F8E4] p-4 flex items-center justify-between">
+                <p className="text-sm text-gray-700">
+                  Not sure about an acronym? Visit our{' '}
+                  <Link href="/docs/glossary" legacyBehavior><a className="underline" style={{ color: COLORS.accent }}>Glossary</a></Link>
+                  . Hover on underlined terms to see a quick definition.
+                </p>
+                <span className="inline-flex items-center rounded-md px-2 py-1 text-xs font-medium" style={{ background: COLORS.brand050, color: COLORS.brand700, border: '1px solid #728552' }}>Accessible Palette</span>
+              </div>
+            </div>
             <Section 
               id="introduction" 
               title="Introduction" 
@@ -370,27 +397,38 @@ export default function EnterpriseBuyerGuidePage() {
               right={
                 <div className="space-y-6">
                   <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
-                    <img 
-                      src="/kahana_logo_wide.svg" 
-                      alt="Oasis Enterprise Browser" 
-                      className="w-full h-auto mb-4"
-                    />
-                    <p className="text-sm text-gray-600 text-center">
-                      Modern enterprise browser with integrated security
-                    </p>
+                    <div className="relative rounded-md overflow-hidden border border-gray-200">
+                      {!isPlaying ? (
+                        <button
+                          onClick={() => setIsPlaying(true)}
+                          className="group w-full h-40 flex items-center justify-center bg-gray-100"
+                          aria-label="Play mini demo"
+                        >
+                          <span className="inline-flex items-center justify-center w-12 h-12 rounded-full text-white" style={{ background: COLORS.ctaPrimary }}>
+                            ▶
+                          </span>
+                          <span className="sr-only">Play</span>
+                        </button>
+                      ) : (
+                        <video className="w-full h-40 object-cover" autoPlay muted loop playsInline>
+                          <source src="/videos/oasis-micro-demo.mp4" type="video/mp4" />
+                        </video>
+                      )}
+                    </div>
+                    <p className="text-xs text-gray-600 mt-2 text-center">3‑minute guided tour (no audio)</p>
                   </div>
                 <KeyPointsCard>
                   <ul className="space-y-2">
                     <li className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 bg-[#009999] rounded-full mt-2 flex-shrink-0" />
+                      <div className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0" style={{ background: COLORS.accent }} />
                       <span>Enterprise browser + AI browser</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 bg-[#009999] rounded-full mt-2 flex-shrink-0" />
+                      <div className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0" style={{ background: COLORS.accent }} />
                       <span>Firefox & Chromium versions</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 bg-[#009999] rounded-full mt-2 flex-shrink-0" />
+                      <div className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0" style={{ background: COLORS.accent }} />
                       <span>Tailored to your needs</span>
                     </li>
                   </ul>
@@ -422,6 +460,71 @@ export default function EnterpriseBuyerGuidePage() {
                 this guide will provide the insights you need to make informed decisions.
               </p>
             </Section>
+            {/* Persona toggle and targeted benefits */}
+            <Section
+              id="personas"
+              title="Guide by role"
+              kicker="Choose your perspective—concise benefits with optional detail"
+            >
+              <div className="mb-4 inline-flex items-center gap-3" role="tablist" aria-label="Persona selector">
+                <button
+                  role="tab"
+                  aria-selected={persona === 'business'}
+                  onClick={() => setPersona('business')}
+                  className={`px-4 py-2 text-sm rounded-md border ${persona === 'business' ? 'bg-white font-semibold border-gray-300' : 'bg-gray-50 text-gray-700 border-gray-200'} focus:outline-none`}
+                  style={{ color: persona === 'business' ? COLORS.primary : undefined }}
+                >
+                  Business
+                </button>
+                <button
+                  role="tab"
+                  aria-selected={persona === 'technical'}
+                  onClick={() => setPersona('technical')}
+                  className={`px-4 py-2 text-sm rounded-md border ${persona === 'technical' ? 'bg-white font-semibold border-gray-300' : 'bg-gray-50 text-gray-700 border-gray-200'} focus:outline-none`}
+                  style={{ color: persona === 'technical' ? COLORS.primary : undefined }}
+                >
+                  Technical
+                </button>
+              </div>
+
+              {persona === 'business' ? (
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <div className="rounded-lg not-prose border border-[#728552] p-4 bg-gradient-to-r from-[#F3F8E4] to-[#E0D48C]">
+                    <h4 className="font-semibold mb-1" style={{ color: '#4A5745' }}>Reduce spend</h4>
+                    <p className="text-sm text-gray-700 mb-2">Consolidate 3–5 tools into the browser; cut costs by 15–30%.</p>
+                    <details className="text-sm text-gray-700"><summary className="cursor-pointer">Show details</summary>Lower agent overhead, fewer vendors, simpler support.</details>
+                  </div>
+                  <div className="rounded-lg not-prose border border-[#728552] p-4 bg-gradient-to-r from-[#F3F8E4] to-[#E0D48C]">
+                    <h4 className="font-semibold mb-1" style={{ color: '#4A5745' }}>Faster onboarding</h4>
+                    <p className="text-sm text-gray-700 mb-2">Policy-based access + SSO enables day‑1 productivity.</p>
+                    <details className="text-sm text-gray-700"><summary className="cursor-pointer">Show details</summary>Import bookmarks/passwords instantly; least‑privilege defaults.</details>
+                  </div>
+                  <div className="rounded-lg not-prose border border-[#728552] p-4 bg-gradient-to-r from-[#F3F8E4] to-[#E0D48C]">
+                    <h4 className="font-semibold mb-1" style={{ color: '#4A5745' }}>Higher throughput</h4>
+                    <p className="text-sm text-gray-700 mb-2">Hubs + ad/tracker reduction and AI assist reduce switching.</p>
+                    <details className="text-sm text-gray-700"><summary className="cursor-pointer">Show details</summary>Multi‑view layouts; keyboard/voice commands for common flows.</details>
+                  </div>
+                </div>
+              ) : (
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <div className="rounded-lg not-prose border border-[#728552] p-4 bg-gradient-to-r from-[#F3F8E4] to-[#E0D48C]">
+                    <h4 className="font-semibold mb-1" style={{ color: '#4A5745' }}>Controls at the edge</h4>
+                    <p className="text-sm text-gray-700 mb-2">URL/app‑scoped DLP, clipboard/download policies, audit logs.</p>
+                    <details className="text-sm text-gray-700"><summary className="cursor-pointer">Show details</summary>Export to CSV/JSON; SIEM ingestion; exception workflows.</details>
+                  </div>
+                  <div className="rounded-lg not-prose border border-[#728552] p-4 bg-gradient-to-r from-[#F3F8E4] to-[#E0D48C]">
+                    <h4 className="font-semibold mb-1" style={{ color: '#4A5745' }}>Easy deployment</h4>
+                    <p className="text-sm text-gray-700 mb-2">MDM distribution, config templates, staged channels, rollback.</p>
+                    <details className="text-sm text-gray-700"><summary className="cursor-pointer">Show details</summary>Works with Workspace ONE, Intune, Jamf; JSON policy files.</details>
+                  </div>
+                  <div className="rounded-lg not-prose border border-[#728552] p-4 bg-gradient-to-r from-[#F3F8E4] to-[#E0D48C]">
+                    <h4 className="font-semibold mb-1" style={{ color: '#4A5745' }}>Identity native</h4>
+                    <p className="text-sm text-gray-700 mb-2">SAML/OIDC SSO and SCIM provisioning; MFA enforced.</p>
+                    <details className="text-sm text-gray-700"><summary className="cursor-pointer">Show details</summary>Conditional access; device posture checks; risk‑based prompts.</details>
+                  </div>
+                </div>
+              )}
+            </Section>
             <Section 
               id="what-is-oasis" 
               title="What is Oasis?" 
@@ -430,8 +533,8 @@ export default function EnterpriseBuyerGuidePage() {
               right={
                 <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
                   <div className="text-center">
-                    <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <svg className="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+                    <div className="w-16 h-16 bg-[#F3F8E4] rounded-full flex items-center justify-center mx-auto mb-4">
+                      <svg className="w-8 h-8 text-[#788B59]" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                       </svg>
                     </div>
@@ -447,17 +550,17 @@ export default function EnterpriseBuyerGuidePage() {
                 Oasis comes in two distinct versions, each tailored to different needs and use cases:
               </p>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
-                <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-6 border border-blue-200">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                    <Link href="/products/free-agentic-browser" className="text-blue-600 hover:text-blue-700">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-4">
+                <div className="not-prose bg-gradient-to-r from-[#F3F8E4] to-[#E0D48C] rounded-lg p-5 border border-[#728552]">
+                  <h3 className="text-lg font-semibold mb-2" style={{ color: '#4A5745' }}>
+                    <Link href="/products/free-agentic-browser" className="text-[#4A5745] hover:text-[#728552]">
                       Oasis Free Agentic Browser
                     </Link>
                   </h3>
-                  <p className="text-gray-600 text-sm mb-3">
+                  <p className="text-sm mb-2" style={{ color: '#4A5745' }}>
                     Designed for personal productivity with AI-powered assistance and smart organization tools.
                   </p>
-                  <ul className="text-sm text-gray-600 space-y-1">
+                  <ul className="text-sm space-y-1.5 list-disc list-inside" style={{ color: '#4A5745' }}>
                     <li>AI-powered productivity assistant</li>
                     <li>Smart workspace organization</li>
                     <li>Advanced tab management</li>
@@ -465,16 +568,16 @@ export default function EnterpriseBuyerGuidePage() {
                   </ul>
                 </div>
                 
-                <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg p-6 border border-green-200">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                    <Link href="/products/enterprise-browser" className="text-green-600 hover:text-green-700">
+                <div className="not-prose bg-gradient-to-r from-[#F3F8E4] to-[#E0D48C] rounded-lg p-5 border border-[#728552]">
+                  <h3 className="text-lg font-semibold mb-2" style={{ color: '#4A5745' }}>
+                    <Link href="/products/enterprise-browser" className="text-[#4A5745] hover:text-[#728552]">
                       Oasis Enterprise Browser
                     </Link>
                   </h3>
-                  <p className="text-gray-600 text-sm mb-3">
+                  <p className="text-sm mb-2" style={{ color: '#4A5745' }}>
                     Built for enterprise environments with enhanced security, compliance, and collaboration features.
                   </p>
-                  <ul className="text-sm text-gray-600 space-y-1">
+                  <ul className="text-sm space-y-1.5 list-disc list-inside" style={{ color: '#4A5745' }}>
                     <li>Enterprise-grade security controls</li>
                     <li>Centralized management</li>
                     <li>Compliance and audit logging</li>
@@ -512,8 +615,26 @@ export default function EnterpriseBuyerGuidePage() {
               
               <p>
                 <strong>Security-First AI:</strong> Maintaining security within an AI browser presents 
-                unique challenges that we specialize in solving. <Link href="/security-guide" className="text-blue-600 hover:text-blue-800 underline">Learn more about our security approach</Link>.
+                unique challenges that we specialize in solving. <Link href="/security-guide" className="text-[#788B59] hover:text-[#728552] underline">Learn more about our security approach</Link>.
               </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                <div className="rounded-lg not-prose bg-gradient-to-r from-[#F3F8E4] to-[#E0D48C] border border-[#728552] p-6">
+                  <h5 className="font-semibold mb-2" style={{ color: '#4A5745' }}>For Business Leaders</h5>
+                  <ul className="list-disc list-inside space-y-1" style={{ color: '#4A5745' }}>
+                    <li>Cut software and support costs by consolidating tools into the browser.</li>
+                    <li>Improve team focus with organized workspaces and distraction reduction.</li>
+                    <li>Shorten onboarding time with policy-based access and single sign-on.</li>
+                  </ul>
+                </div>
+                <div className="rounded-lg not-prose bg-gradient-to-r from-[#F3F8E4] to-[#E0D48C] border border-[#728552] p-6">
+                  <h5 className="font-semibold mb-2" style={{ color: '#4A5745' }}>For Technical Admins</h5>
+                  <ul className="list-disc list-inside space-y-1" style={{ color: '#4A5745' }}>
+                    <li>Centralize policies, audit logs, and data controls at the browser layer.</li>
+                    <li>Deploy via MDM with support for policy templates and version control.</li>
+                    <li>Integrate identity using <abbr title="Security Assertion Markup Language">SAML</abbr>/<abbr title="OpenID Connect">OIDC</abbr> and automate provisioning via SCIM.</li>
+                  </ul>
+                </div>
+              </div>
             </Section>
             
             <Section 
@@ -525,8 +646,8 @@ export default function EnterpriseBuyerGuidePage() {
                 <div className="space-y-6">
                   <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
                     <div className="text-center">
-                      <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg className="w-8 h-8 text-green-600" fill="currentColor" viewBox="0 0 24 24">
+                      <div className="w-16 h-16 bg-[#F3F8E4] rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg className="w-8 h-8 text-[#788B59]" fill="currentColor" viewBox="0 0 24 24">
                           <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
                         </svg>
                       </div>
@@ -539,15 +660,15 @@ export default function EnterpriseBuyerGuidePage() {
                 <KeyPointsCard>
                   <ul className="space-y-2">
                     <li className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 bg-[#009999] rounded-full mt-2 flex-shrink-0" />
+                      <div className="w-1.5 h-1.5 bg-[#728552] rounded-full mt-2 flex-shrink-0" />
                       <span>Works with Okta, Azure AD, Ping</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 bg-[#009999] rounded-full mt-2 flex-shrink-0" />
+                      <div className="w-1.5 h-1.5 bg-[#728552] rounded-full mt-2 flex-shrink-0" />
                       <span>Built-in MFA support</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 bg-[#009999] rounded-full mt-2 flex-shrink-0" />
+                      <div className="w-1.5 h-1.5 bg-[#728552] rounded-full mt-2 flex-shrink-0" />
                       <span>Seamless user experience</span>
                     </li>
                   </ul>
@@ -560,6 +681,24 @@ export default function EnterpriseBuyerGuidePage() {
                 These advantages are organized into key areas that address the most critical enterprise 
                 browser challenges and opportunities.
               </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                <div className="rounded-lg p-5 not-prose bg-gradient-to-r from-[#F3F8E4] to-[#E0D48C] border border-[#728552]">
+                  <h5 className="font-semibold mb-2" style={{ color: COLORS.brand900 }}>Business outcomes</h5>
+                  <ul className="list-disc list-inside space-y-1" style={{ color: '#4A5745' }}>
+                    <li>Reduce security stack spend by 15–30% via consolidation.</li>
+                    <li>Speed new-hire productivity by enabling same-day access.</li>
+                    <li>Decrease support tickets with built-in guardrails and guidance.</li>
+                  </ul>
+                </div>
+                <div className="rounded-lg p-5 not-prose bg-gradient-to-r from-[#F3F8E4] to-[#E0D48C] border border-[#728552]">
+                  <h5 className="font-semibold mb-2" style={{ color: COLORS.brand900 }}>Technical capabilities</h5>
+                  <ul className="list-disc list-inside space-y-1" style={{ color: '#4A5745' }}>
+                    <li>Granular DLP, clipboard, and download policies at URL/app scope.</li>
+                    <li>Exportable audit logs; SIEM-friendly formats; API access.</li>
+                    <li>Configurable update channels and rollback options.</li>
+                  </ul>
+                </div>
+              </div>
               
               <div className="space-y-4 mt-8">
                 <Accordion title="Efficiency and Cost Savings" defaultOpen={true}>
@@ -575,7 +714,7 @@ export default function EnterpriseBuyerGuidePage() {
                 <Accordion title="Application Provisioning">
                   <p>
                     With an enterprise browser, users access all the applications they're entitled to–SaaS, 
-                    web applications, and even non-web apps via SSH or RDP. It's the ideal access point for 
+                    web applications, and even non-web apps via <abbr title="Secure Shell">SSH</abbr> or <abbr title="Remote Desktop Protocol">RDP</abbr>. It's the ideal access point for 
                     application virtualization platforms to connect users to traditional "thick" applications 
                     without requiring a desktop installation. This way, new apps can be introduced simply, 
                     and new users can onboard by just logging in and getting to work.
@@ -596,9 +735,9 @@ export default function EnterpriseBuyerGuidePage() {
                   <p>
                     An enterprise browser can enable remote access for a hybrid workforce with employees 
                     outside the corporate office. Many organizations use an enterprise browser to reduce 
-                    the need for traditional VPN or virtual desktop infrastructure (VDI) while empowering 
+                    the need for traditional VPN or virtual desktop infrastructure (<abbr title="Virtual Desktop Infrastructure">VDI</abbr>) while empowering 
                     employees to access their applications from anywhere. An enterprise browser can be easily 
-                    deployed to personal devices to enable BYOD initiatives as well.
+                    deployed to personal devices to enable <abbr title="Bring Your Own Device">BYOD</abbr> initiatives as well.
                   </p>
                 </Accordion>
 
@@ -612,7 +751,7 @@ export default function EnterpriseBuyerGuidePage() {
               <p>
                     An enterprise browser, however, builds dynamic data protections into the browser itself, 
                     enabling you to build policies that prevent data leakage without disrupting organizational 
-                    workflows. Its DLP controls protect sensitive data from being improperly downloaded or 
+                    workflows. Its <abbr title="Data Loss Prevention">DLP</abbr> controls protect sensitive data from being improperly downloaded or 
                     uploaded before it leaves or enters the browser.
                   </p>
                 </Accordion>
@@ -624,14 +763,14 @@ export default function EnterpriseBuyerGuidePage() {
                     traffic inspection by decrypting SSL traffic. An enterprise browser offers visibility into 
                     browser behavior without any unnatural network traffic manipulation.
                   </p>
-                  <div className="bg-green-50 border border-green-200 rounded-lg p-4 mt-4">
+                  <div className="bg-[#F3F8E4] border border-[#728552] rounded-lg p-4 mt-4">
                     <div className="flex items-center mb-2">
-                      <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
-                        <span className="text-green-600 font-bold text-sm">3</span>
+                      <div className="w-8 h-8 bg-[#E0D48C] rounded-full flex items-center justify-center mr-3">
+                        <span className="text-[#4A5745] font-bold text-sm">3</span>
               </div>
-                      <span className="font-semibold text-green-900">Minutes</span>
+                      <span className="font-semibold text-[#4A5745]">Minutes</span>
                     </div>
-                    <p className="text-green-800 text-sm">
+                    <p className="text-[#4A5745] text-sm">
                       to open and close a phishing attempt investigation by The Bank of Marion. Previously took several hours.
                     </p>
                   </div>
@@ -670,14 +809,14 @@ export default function EnterpriseBuyerGuidePage() {
                     account), with built-in ad blocking to remove distractions and speed up browsing, and 
                     integrated tools to speed up common workflows.
                   </p>
-                  <div className="bg-green-50 border border-green-200 rounded-lg p-4 mt-4">
+                  <div className="bg-[#F3F8E4] border border-[#728552] rounded-lg p-4 mt-4">
                     <div className="flex items-center mb-2">
-                      <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
-                        <span className="text-green-600 font-bold text-sm">80%</span>
+                      <div className="w-8 h-8 bg-[#E0D48C] rounded-full flex items-center justify-center mr-3">
+                        <span className="text-[#4A5745] font-bold text-sm">80%</span>
                     </div>
-                      <span className="font-semibold text-green-900">Faster Launch</span>
+                      <span className="font-semibold text-[#4A5745]">Faster Launch</span>
                     </div>
-                    <p className="text-green-800 text-sm">
+                    <p className="text-[#4A5745] text-sm">
                       Faster point-of-sale system launch by a national retailer, saving 40 seconds on each launch.
                     </p>
                   </div>
@@ -692,8 +831,8 @@ export default function EnterpriseBuyerGuidePage() {
               right={
                 <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
                   <div className="text-center">
-                    <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <svg className="w-8 h-8 text-purple-600" fill="currentColor" viewBox="0 0 24 24">
+                      <div className="w-16 h-16 bg-[#F3F8E4] rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg className="w-8 h-8 text-[#728552]" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
                       </svg>
                     </div>
@@ -722,7 +861,7 @@ export default function EnterpriseBuyerGuidePage() {
                   <ul className="list-disc list-inside mt-4 space-y-2">
                     <li>Secure access to LinkedIn Sales Navigator and other prospecting tools</li>
                     <li>Automated data collection and lead scoring workflows</li>
-                    <li>Integration with CRM systems for seamless data transfer</li>
+                    <li>Integration with <abbr title="Customer Relationship Management">CRM</abbr> systems for seamless data transfer</li>
                     <li>Competitive intelligence gathering and analysis</li>
                     <li>Social media monitoring and engagement tracking</li>
                   </ul>
@@ -826,8 +965,8 @@ export default function EnterpriseBuyerGuidePage() {
               right={
                 <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
                   <div className="text-center">
-                    <div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <svg className="w-8 h-8 text-indigo-600" fill="currentColor" viewBox="0 0 24 24">
+                      <div className="w-16 h-16 bg-[#F3F8E4] rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg className="w-8 h-8 text-[#788B59]" fill="currentColor" viewBox="0 0 24 24">
                         <circle cx="12" cy="12" r="3"/>
                         <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 7.82 4 1.65 1.65 0 0 0 9 2.49V2a2 2 0 1 1 4 0v.09c0 .66.38 1.26 1 1.51.56.24 1.22.14 1.68-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06c-.47.47-.57 1.12-.33 1.68.25.62.85 1 1.51 1H21a2 2 0 1 1 0 4h-.09c-.66 0-1.26.38-1.51 1z"/>
                       </svg>
@@ -864,8 +1003,8 @@ export default function EnterpriseBuyerGuidePage() {
               right={
                 <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
                   <div className="text-center">
-                    <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <svg className="w-8 h-8 text-red-600" fill="currentColor" viewBox="0 0 24 24">
+                      <div className="w-16 h-16 bg-[#F3F8E4] rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg className="w-8 h-8 text-[#788B59]" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/>
                       </svg>
                     </div>
@@ -887,21 +1026,21 @@ export default function EnterpriseBuyerGuidePage() {
               
               <div className="mt-8 space-y-8">
                 <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
-                    <span className="text-blue-600 font-bold text-sm">1</span>
+                  <div className="flex-shrink-0 w-8 h-8 bg-[#E0D48C] rounded-full flex items-center justify-center">
+                    <span className="text-[#4A5745] font-bold text-sm">1</span>
                   </div>
                   <div className="flex-1">
                     <h3 className="text-lg font-semibold text-gray-900 mb-2">Integrate with your existing identity infrastructure</h3>
                     <p className="text-gray-700">
                       Oasis seamlessly connects with your current identity provider using industry-standard 
-                      protocols including SAML, OAuth, and SCIM for user provisioning and authentication.
+                      protocols including <abbr title="Security Assertion Markup Language">SAML</abbr>, OAuth, and <abbr title="System for Cross-domain Identity Management">SCIM</abbr> for user provisioning and authentication.
                     </p>
                   </div>
               </div>
               
                 <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
-                    <span className="text-blue-600 font-bold text-sm">2</span>
+                  <div className="flex-shrink-0 w-8 h-8 bg-[#E0D48C] rounded-full flex items-center justify-center">
+                    <span className="text-[#4A5745] font-bold text-sm">2</span>
                       </div>
                   <div className="flex-1">
                     <h3 className="text-lg font-semibold text-gray-900 mb-2">Distribute Oasis to your team</h3>
@@ -914,8 +1053,8 @@ export default function EnterpriseBuyerGuidePage() {
                     </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
-                    <span className="text-blue-600 font-bold text-sm">3</span>
+                  <div className="flex-shrink-0 w-8 h-8 bg-[#E0D48C] rounded-full flex items-center justify-center">
+                    <span className="text-[#4A5745] font-bold text-sm">3</span>
                     </div>
                   <div className="flex-1">
                     <h3 className="text-lg font-semibold text-gray-900 mb-2">Users get up and running immediately</h3>
@@ -927,8 +1066,8 @@ export default function EnterpriseBuyerGuidePage() {
                   </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
-                    <span className="text-blue-600 font-bold text-sm">4</span>
+                  <div className="flex-shrink-0 w-8 h-8 bg-[#E0D48C] rounded-full flex items-center justify-center">
+                    <span className="text-[#4A5745] font-bold text-sm">4</span>
                     </div>
                   <div className="flex-1">
                     <h3 className="text-lg font-semibold text-gray-900 mb-2">Gradually implement security policies</h3>
@@ -941,30 +1080,30 @@ export default function EnterpriseBuyerGuidePage() {
                     </div>
                     </div>
               
-              <div className="mt-8 bg-green-50 border border-green-200 rounded-lg p-6">
+              <div className="mt-8 bg-[#F3F8E4] border border-[#728552] rounded-lg p-6">
                 <div className="flex items-center mb-3">
-                  <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
-                    <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 24 24">
+                  <div className="w-8 h-8 bg-[#E0D48C] rounded-full flex items-center justify-center mr-3">
+                    <svg className="w-5 h-5 text-[#788B59]" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                     </svg>
                     </div>
-                  <h3 className="text-lg font-semibold text-green-900">Why This Approach Works</h3>
+                  <h3 className="text-lg font-semibold text-[#4A5745]">Why This Approach Works</h3>
                   </div>
-                <ul className="text-green-800 space-y-2">
+                <ul className="text-[#4A5745] space-y-2">
                   <li className="flex items-start">
-                    <span className="w-2 h-2 bg-green-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                    <span className="w-2 h-2 bg-[#728552] rounded-full mt-2 mr-3 flex-shrink-0"></span>
                     <span>Ready-to-use browser eliminates lengthy setup processes</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="w-2 h-2 bg-green-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                    <span className="w-2 h-2 bg-[#728552] rounded-full mt-2 mr-3 flex-shrink-0"></span>
                     <span>Users can be productive while policies are being developed</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="w-2 h-2 bg-green-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                    <span className="w-2 h-2 bg-[#728552] rounded-full mt-2 mr-3 flex-shrink-0"></span>
                     <span>Rapid time-to-value with measurable results in days</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="w-2 h-2 bg-green-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                    <span className="w-2 h-2 bg-[#728552] rounded-full mt-2 mr-3 flex-shrink-0"></span>
                     <span>Phased rollout reduces risk and allows for learning and adjustment</span>
                   </li>
                 </ul>
@@ -978,8 +1117,8 @@ export default function EnterpriseBuyerGuidePage() {
               right={
                 <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
                   <div className="text-center">
-                    <div className="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <svg className="w-8 h-8 text-teal-600" fill="currentColor" viewBox="0 0 24 24">
+                      <div className="w-16 h-16 bg-[#F3F8E4] rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg className="w-8 h-8 text-[#728552]" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
                       </svg>
                     </div>
@@ -998,74 +1137,74 @@ export default function EnterpriseBuyerGuidePage() {
               </p>
               
               <div className="mt-8 space-y-6">
-                <div className="bg-white rounded-lg p-6 border border-gray-200">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Designed Like an Oasis</h3>
+                <div className="not-prose bg-gradient-to-r from-[#F3F8E4] to-[#E0D48C] rounded-lg p-6 border border-[#728552]">
+                  <h3 className="text-lg font-semibold text-[#4A5745] mb-3">Designed Like an Oasis</h3>
                   <p className="text-gray-700 mb-4">
                     We are building a soothing environment that is conducive to fostering deep work, flow state, 
                     concentration, and focus.
                   </p>
                   <ul className="text-gray-700 space-y-2">
                     <li className="flex items-start">
-                      <span className="w-2 h-2 bg-gray-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      <span className="w-2 h-2 bg-[#728552] rounded-full mt-2 mr-3 flex-shrink-0"></span>
                       <span>Calming visual design that reduces cognitive load</span>
                     </li>
                     <li className="flex items-start">
-                      <span className="w-2 h-2 bg-gray-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      <span className="w-2 h-2 bg-[#728552] rounded-full mt-2 mr-3 flex-shrink-0"></span>
                       <span>Spatial organization that mirrors natural thought patterns</span>
                     </li>
                     <li className="flex items-start">
-                      <span className="w-2 h-2 bg-gray-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      <span className="w-2 h-2 bg-[#728552] rounded-full mt-2 mr-3 flex-shrink-0"></span>
                       <span>Ergonomic interface designed for extended focus sessions</span>
                     </li>
                   </ul>
                 </div>
 
-                <div className="bg-white rounded-lg p-6 border border-gray-200">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Voice-Controlled AI Workflows</h3>
+                <div className="not-prose bg-gradient-to-r from-[#F3F8E4] to-[#E0D48C] rounded-lg p-6 border border-[#728552]">
+                  <h3 className="text-lg font-semibold text-[#4A5745] mb-3">Voice-Controlled AI Workflows</h3>
                   <p className="text-gray-700 mb-4">
                     Fast voice-controlled commands let you talk to the Oasis browser and orchestrate agentic 
                     workflows. This natural interaction model reduces friction and enables seamless multitasking.
                   </p>
                   <ul className="text-gray-700 space-y-2">
                     <li className="flex items-start">
-                      <span className="w-2 h-2 bg-gray-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      <span className="w-2 h-2 bg-[#728552] rounded-full mt-2 mr-3 flex-shrink-0"></span>
                       <span>Natural language commands for complex browser operations</span>
                     </li>
                     <li className="flex items-start">
-                      <span className="w-2 h-2 bg-gray-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      <span className="w-2 h-2 bg-[#728552] rounded-full mt-2 mr-3 flex-shrink-0"></span>
                       <span>Orchestrate multiple tasks through conversational AI</span>
                     </li>
                     <li className="flex items-start">
-                      <span className="w-2 h-2 bg-gray-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      <span className="w-2 h-2 bg-[#728552] rounded-full mt-2 mr-3 flex-shrink-0"></span>
                       <span>Hands-free operation for accessibility and efficiency</span>
                     </li>
                   </ul>
                     </div>
 
-                <div className="bg-white rounded-lg p-6 border border-gray-200">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Spatial Ease</h3>
+                <div className="not-prose bg-gradient-to-r from-[#F3F8E4] to-[#E0D48C] rounded-lg p-6 border border-[#728552]">
+                  <h3 className="text-lg font-semibold text-[#4A5745] mb-3">Spatial Ease</h3>
                   <p className="text-gray-700 mb-4">
                     Every aspect of Oasis is designed to work with your natural cognitive processes, 
                     reducing mental overhead and enabling you to focus on what matters most.
                   </p>
                   <ul className="text-gray-700 space-y-2">
                     <li className="flex items-start">
-                      <span className="w-2 h-2 bg-gray-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      <span className="w-2 h-2 bg-[#728552] rounded-full mt-2 mr-3 flex-shrink-0"></span>
                       <span>Intuitive spatial organization that matches mental models</span>
                     </li>
                     <li className="flex items-start">
-                      <span className="w-2 h-2 bg-gray-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      <span className="w-2 h-2 bg-[#728552] rounded-full mt-2 mr-3 flex-shrink-0"></span>
                       <span>Context-aware interfaces that adapt to your workflow</span>
                     </li>
                     <li className="flex items-start">
-                      <span className="w-2 h-2 bg-gray-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      <span className="w-2 h-2 bg-[#728552] rounded-full mt-2 mr-3 flex-shrink-0"></span>
                       <span>Reduced cognitive switching between tasks and applications</span>
                     </li>
                   </ul>
                   </div>
 
-                <div className="bg-white rounded-lg p-6 border border-gray-200">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Training and Gamification Elements</h3>
+                <div className="not-prose bg-gradient-to-r from-[#F3F8E4] to-[#E0D48C] rounded-lg p-6 border border-[#728552]">
+                  <h3 className="text-lg font-semibold text-[#4A5745] mb-3">Training and Gamification Elements</h3>
                   <p className="text-gray-700 mb-4">
                     Fine-tune your own AI assistant (companion) so that it becomes faster and more accurate for you. 
                     One of the biggest issues with other AI browsers is that they're slow, you can't monitor agents 
@@ -1074,26 +1213,26 @@ export default function EnterpriseBuyerGuidePage() {
                   </p>
                   <ul className="text-gray-700 space-y-2">
                     <li className="flex items-start">
-                      <span className="w-2 h-2 bg-gray-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      <span className="w-2 h-2 bg-[#728552] rounded-full mt-2 mr-3 flex-shrink-0"></span>
                       <span>Personalized AI training that adapts to your specific workflow patterns</span>
                     </li>
                     <li className="flex items-start">
-                      <span className="w-2 h-2 bg-gray-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      <span className="w-2 h-2 bg-[#728552] rounded-full mt-2 mr-3 flex-shrink-0"></span>
                       <span>Gamification elements that make AI training engaging and rewarding</span>
                     </li>
                     <li className="flex items-start">
-                      <span className="w-2 h-2 bg-gray-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      <span className="w-2 h-2 bg-[#728552] rounded-full mt-2 mr-3 flex-shrink-0"></span>
                       <span>Simultaneous agent monitoring for better control and oversight</span>
                     </li>
                     <li className="flex items-start">
-                      <span className="w-2 h-2 bg-gray-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      <span className="w-2 h-2 bg-[#728552] rounded-full mt-2 mr-3 flex-shrink-0"></span>
                       <span>User-controlled training that improves speed and accuracy over time</span>
                     </li>
                   </ul>
                 </div>
 
-                <div className="bg-white rounded-lg p-6 border border-gray-200">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Hubs</h3>
+                <div className="not-prose bg-gradient-to-r from-[#F3F8E4] to-[#E0D48C] rounded-lg p-6 border border-[#728552]">
+                  <h3 className="text-lg font-semibold text-[#4A5745] mb-3">Hubs</h3>
                   <p className="text-gray-700 mb-4">
                     Hubs are like tab groups but amplified by 10x. Hubs let you visualize different layouts of browser 
                     tabs, for example you can see two, three, four tabs open side by side, 3-way, or quad box. 
@@ -1101,26 +1240,26 @@ export default function EnterpriseBuyerGuidePage() {
                   </p>
                   <ul className="text-gray-700 space-y-2">
                     <li className="flex items-start">
-                      <span className="w-2 h-2 bg-gray-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      <span className="w-2 h-2 bg-[#728552] rounded-full mt-2 mr-3 flex-shrink-0"></span>
                       <span>Advanced tab visualization with side-by-side, 3-way, and quad layouts</span>
                     </li>
                     <li className="flex items-start">
-                      <span className="w-2 h-2 bg-gray-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      <span className="w-2 h-2 bg-[#728552] rounded-full mt-2 mr-3 flex-shrink-0"></span>
                       <span>Multiple monitor experience within a single browser window</span>
                     </li>
                     <li className="flex items-start">
-                      <span className="w-2 h-2 bg-gray-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      <span className="w-2 h-2 bg-[#728552] rounded-full mt-2 mr-3 flex-shrink-0"></span>
                       <span>Enhanced productivity through simultaneous content viewing</span>
                     </li>
                     <li className="flex items-start">
-                      <span className="w-2 h-2 bg-gray-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      <span className="w-2 h-2 bg-[#728552] rounded-full mt-2 mr-3 flex-shrink-0"></span>
                       <span>Organized workspace management for complex workflows</span>
                     </li>
                   </ul>
                 </div>
 
-                <div className="bg-white rounded-lg p-6 border border-gray-200">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Enterprise Branding and Messaging</h3>
+                <div className="not-prose bg-gradient-to-r from-[#F3F8E4] to-[#E0D48C] rounded-lg p-6 border border-[#728552]">
+                  <h3 className="text-lg font-semibold text-[#4A5745] mb-3">Enterprise Branding and Messaging</h3>
                   <p className="text-gray-700 mb-4">
                     Oasis enables organizations to apply company branding and tailored messaging throughout the browser 
                     experience, ensuring users always see their organization's identity. When security events occur, 
@@ -1129,19 +1268,19 @@ export default function EnterpriseBuyerGuidePage() {
                   </p>
                   <ul className="text-gray-700 space-y-2">
                     <li className="flex items-start">
-                      <span className="w-2 h-2 bg-gray-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      <span className="w-2 h-2 bg-[#728552] rounded-full mt-2 mr-3 flex-shrink-0"></span>
                       <span>Custom company branding throughout the browser interface</span>
                     </li>
                     <li className="flex items-start">
-                      <span className="w-2 h-2 bg-gray-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      <span className="w-2 h-2 bg-[#728552] rounded-full mt-2 mr-3 flex-shrink-0"></span>
                       <span>Tailored messaging for security events and policy violations</span>
                     </li>
                     <li className="flex items-start">
-                      <span className="w-2 h-2 bg-gray-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      <span className="w-2 h-2 bg-[#728552] rounded-full mt-2 mr-3 flex-shrink-0"></span>
                       <span>Clear explanations of what happened and next steps</span>
                     </li>
                     <li className="flex items-start">
-                      <span className="w-2 h-2 bg-gray-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      <span className="w-2 h-2 bg-[#728552] rounded-full mt-2 mr-3 flex-shrink-0"></span>
                       <span>Consistent organizational identity across all user interactions</span>
                     </li>
                   </ul>
@@ -1157,8 +1296,8 @@ export default function EnterpriseBuyerGuidePage() {
               right={
                 <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
                   <div className="text-center">
-                    <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <svg className="w-8 h-8 text-emerald-600" fill="currentColor" viewBox="0 0 24 24">
+                      <div className="w-16 h-16 bg-[#F3F8E4] rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg className="w-8 h-8 text-[#788B59]" fill="currentColor" viewBox="0 0 24 24">
                         <rect x="3" y="3" width="7" height="7"/>
                         <rect x="14" y="3" width="7" height="7"/>
                         <rect x="14" y="14" width="7" height="7"/>
@@ -1273,8 +1412,8 @@ export default function EnterpriseBuyerGuidePage() {
                 <div className="space-y-6">
                   <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
                     <div className="text-center">
-                      <div className="w-16 h-16 bg-sky-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg className="w-8 h-8 text-sky-600" fill="currentColor" viewBox="0 0 24 24">
+                      <div className="w-16 h-16 bg-[#F3F8E4] rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg className="w-8 h-8 text-[#788B59]" fill="currentColor" viewBox="0 0 24 24">
                           <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
                         </svg>
                       </div>
@@ -1304,7 +1443,7 @@ export default function EnterpriseBuyerGuidePage() {
               
               <div className="mt-12">
                 <Link href="/contact">
-                  <button className="nav-button get-in-touch bg-[#21706c] text-white font-bold hover:bg-[#15514f] px-4 py-2 text-sm rounded-md">
+                  <button className="nav-button get-in-touch text-white font-bold px-4 py-2 text-sm rounded-md" style={{ background: COLORS.ctaPrimary }} onMouseOver={(e) => e.currentTarget.style.background = COLORS.ctaHover} onMouseOut={(e) => e.currentTarget.style.background = COLORS.ctaPrimary}>
                     Get in Touch
                   </button>
                 </Link>
@@ -1327,12 +1466,22 @@ export default function EnterpriseBuyerGuidePage() {
         }
         /* Remove old layout styles */
         html { scroll-behavior: smooth; }
+        
+        /* Override global link styles for enterprise buyer guide */
+        a:not(.nav-button):not(.contact-sales-btn):not(.pricing-button) {
+          color: ${COLORS.primary} !important;
+          text-decoration: underline !important;
+        }
+        a:not(.nav-button):not(.contact-sales-btn):not(.pricing-button):hover {
+          color: ${COLORS.accent} !important;
+        }
+        
         a:focus, button:focus, select:focus { outline: 2px solid ${COLORS.accent}; outline-offset: 2px; }
         
         /* Override global button styles for accordions only */
         .accordion-container .accordion-button {
           background-color: transparent !important;
-          color: #0A2240 !important;
+          color: #4A5745 !important;
           font-weight: 600 !important;
           border: none !important;
           border-radius: 6px !important;
@@ -1342,20 +1491,66 @@ export default function EnterpriseBuyerGuidePage() {
         }
         
         .accordion-container .accordion-button:hover {
-          background-color: #f9fafb !important;
-          color: #0A2240 !important;
+          background-color: #E0D48C !important;
+          color: #4A5745 !important;
         }
         
         /* Modern link styling */
         .prose a {
-          color: #0A2240;
+          color: ${COLORS.primary};
           text-decoration: underline;
           text-underline-offset: 3px;
           transition: color 0.2s ease;
         }
         .prose a:hover {
-          color: #009999;
+          color: ${COLORS.accent};
         }
+        
+        /* Override global button styles for persona selector */
+        div[role="tablist"] button[role="tab"],
+        button[role="tab"] {
+          background-color: #F3F8E4 !important;
+          border: 1px solid #d1d5db !important;
+          color: #788B59 !important;
+          font-weight: normal !important;
+          border-radius: 0.375rem !important;
+          padding: 0.5rem 1rem !important;
+        }
+        button[role="tab"][aria-selected="true"],
+        div[role="tablist"] button[role="tab"][aria-selected="true"] {
+          background-color: #F3F8E4 !important;
+          border-color: #728552 !important;
+          border-width: 2px !important;
+          color: #4A5745 !important;
+          font-weight: 600 !important;
+        }
+        div[role="tablist"] button[role="tab"]:hover {
+          background-color: #E0D48C !important;
+          border-color: #728552 !important;
+        }
+        
+        /* Style details/summary elements in persona cards */
+        details summary {
+          color: #788B59 !important;
+          cursor: pointer;
+          font-weight: 500;
+        }
+        details summary:hover {
+          color: #728552 !important;
+        }
+        .callout-info { background: #F3F8E4; border-left: 4px solid ${COLORS.info}; }
+        .callout-success { background: #E0D48C; border-left: 4px solid ${COLORS.success}; }
+        .callout-warning { background: #F3F8E4; border-left: 4px solid ${COLORS.warning}; }
+        .callout-error { background: #F3F8E4; border-left: 4px solid ${COLORS.error}; }
+        
+        /* Consistent page typography */
+        .kb-typography h2 { font-size: 28px; line-height: 1.3; font-weight: 800; margin-top: 0.25rem; margin-bottom: 0.75rem; }
+        @media (min-width: 1024px) { .kb-typography h2 { font-size: 32px; } }
+        .kb-typography h3 { font-size: 20px; line-height: 1.35; font-weight: 700; margin-top: 1rem; margin-bottom: 0.5rem; }
+        .kb-typography h4 { font-size: 18px; line-height: 1.35; font-weight: 600; margin-top: 0.75rem; margin-bottom: 0.5rem; }
+        .kb-typography p { font-size: 16px; line-height: 1.7; margin-top: 0.25rem; margin-bottom: 0.75rem; }
+        .kb-typography ul { margin-top: 0.25rem; margin-bottom: 0.5rem; }
+        .kb-typography li { margin: 0.125rem 0; }
         @media (max-width: 640px) {
           table { display: block; }
           thead { display: none; }

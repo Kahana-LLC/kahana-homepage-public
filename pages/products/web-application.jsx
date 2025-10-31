@@ -192,15 +192,15 @@ export default function WebApplication() {
       <section className="bg-gradient-to-b from-kahana-accent-sky/20 via-kahana-secondary-300/10 to-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h2 className="text-base font-semibold leading-7 text-kahana-primary mb-3">Web Application</h2>
-            <h1 className="text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-base font-semibold leading-7 text-[#728552] mb-3">Web Application</h2>
+            <h1 className="text-5xl font-bold text-[#4A5745] mb-6">
               Organize Your Best Ideas
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+            <p className="text-xl text-[#4A5745] max-w-3xl mx-auto mb-8">
               A simple platform to help you stay organized, productive, and grow your projects. Keep your hubs private, share them publicly, or monetize - it's your space to bring your ideas to life.
             </p>
             <Link href="/pricing">
-              <button className="bg-kahana-primary text-white px-8 py-3 rounded-md font-semibold hover:bg-kahana-primary-dark transition-colors shadow-lg shadow-kahana-accent-sky/20 hover:shadow-xl hover:shadow-kahana-accent-sky/30">
+              <button className="bg-[#788B59] text-white px-8 py-3 rounded-md font-semibold hover:bg-[#728552] transition-colors shadow-lg shadow-kahana-accent-sky/20 hover:shadow-xl hover:shadow-kahana-accent-sky/30">
                 Plans & Pricing
               </button>
             </Link>
@@ -211,7 +211,7 @@ export default function WebApplication() {
       {/* Features Section */}
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
+          <h2 className="text-3xl font-bold text-[#4A5745] text-center mb-12">
             Key Features
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -264,13 +264,13 @@ export default function WebApplication() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900">{feature.title}</h3>
+                  <h3 className="text-lg font-semibold text-[#4A5745]">{feature.title}</h3>
                 </div>
-                <p className="text-gray-600 text-sm mb-4">{feature.description}</p>
+                <p className="text-[#4A5745] text-sm mb-4">{feature.description}</p>
                 <ul className="space-y-2">
                   {feature.details.map((detail, dIndex) => (
-                    <li key={dIndex} className="flex items-center text-gray-600 text-sm">
-                      <svg className="w-4 h-4 mr-2 text-kahana-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <li key={dIndex} className="flex items-center text-[#4A5745] text-sm">
+                      <svg className="w-4 h-4 mr-2 text-[#728552]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                       {detail}
@@ -284,9 +284,9 @@ export default function WebApplication() {
       </section>
 
       {/* Benefits Section */}
-      <section className="bg-gray-50 py-16">
+      <section className="bg-[#F3F8E4] py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
+          <h2 className="text-3xl font-bold text-[#4A5745] text-center mb-12">
             Why Choose Kahana?
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -335,11 +335,11 @@ export default function WebApplication() {
                       {benefit.icon}
                     </div>
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900">
+                  <h3 className="text-lg font-semibold text-[#4A5745]">
                     {benefit.title}
                   </h3>
                 </div>
-                <p className="text-gray-600 text-sm">
+                <p className="text-[#4A5745] text-sm">
                   {benefit.description}
                 </p>
               </div>
@@ -351,7 +351,7 @@ export default function WebApplication() {
       {/* Use Cases Section */}
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
+          <h2 className="text-3xl font-bold text-[#4A5745] text-center mb-12">
             Perfect For
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -394,13 +394,13 @@ export default function WebApplication() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900">{useCase.title}</h3>
+                  <h3 className="text-lg font-semibold text-[#4A5745]">{useCase.title}</h3>
                 </div>
-                <p className="text-gray-600 text-sm mb-4">{useCase.description}</p>
+                <p className="text-[#4A5745] text-sm mb-4">{useCase.description}</p>
                 <ul className="space-y-2">
                   {useCase.benefits.map((benefit, bIndex) => (
-                    <li key={bIndex} className="flex items-center text-gray-600 text-sm">
-                      <svg className="w-4 h-4 mr-2 text-kahana-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <li key={bIndex} className="flex items-center text-[#4A5745] text-sm">
+                      <svg className="w-4 h-4 mr-2 text-[#728552]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                       {benefit}
@@ -414,9 +414,9 @@ export default function WebApplication() {
       </section>
 
       {/* Technical Features Section */}
-      <section className="bg-gray-50 py-16">
+      <section className="bg-[#F3F8E4] py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
+          <h2 className="text-3xl font-bold text-[#4A5745] text-center mb-12">
             Built For You
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -470,13 +470,13 @@ export default function WebApplication() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900">{feature.title}</h3>
+                  <h3 className="text-lg font-semibold text-[#4A5745]">{feature.title}</h3>
                 </div>
-                <p className="text-gray-600 text-sm mb-4">{feature.description}</p>
+                <p className="text-[#4A5745] text-sm mb-4">{feature.description}</p>
                 <ul className="space-y-2">
                   {feature.details.map((detail, dIndex) => (
-                    <li key={dIndex} className="flex items-center text-gray-600 text-sm">
-                      <svg className="w-4 h-4 mr-2 text-kahana-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <li key={dIndex} className="flex items-center text-[#4A5745] text-sm">
+                      <svg className="w-4 h-4 mr-2 text-[#728552]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                       {detail}
@@ -490,7 +490,7 @@ export default function WebApplication() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-gradient-to-r from-kahana-primary to-kahana-secondary py-16">
+      <section className="bg-gradient-to-r from-[#788B59] to-[#728552] py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-white mb-6" >
             Ready to Organize Your Ideas?
@@ -500,7 +500,7 @@ export default function WebApplication() {
           </p>
           <div className="flex justify-center">
             <Link href="/pricing">
-              <button className="bg-white text-kahana-primary px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors">
+              <button className="bg-white text-[#728552] px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors">
                 Plans & Pricing
               </button>
             </Link>

@@ -27,20 +27,20 @@ h6 {
 
 /* High-contrast links */
 a {
-  color: #0d9488 !important;
+  color: var(--bg-action) !important;
   text-decoration: underline !important;
   font-weight: bold !important;
   transition: color 0.2s;
 }
 a:hover,
 a:focus {
-  color: #0f766e !important;
+  color: var(--bg-surface) !important;
 }
 
 a.pricing-button,
 a.pricing-button:hover,
 a.pricing-button:focus {
-  color: #fff !important;
+  color: white !important;
   text-decoration: none !important;
 }
 
@@ -49,8 +49,8 @@ button,
 .btn,
 input[type="submit"],
 input[type="button"] {
-  background-color: #0d9488 !important;
-  color: #fff !important;
+  background-color: var(--bg-action) !important;
+  color: var(--bg-body) !important;
   font-weight: bold !important;
   border: none;
   border-radius: 0.375rem;
@@ -62,14 +62,14 @@ button:hover,
 .btn:hover,
 input[type="submit"]:hover,
 input[type="button"]:hover {
-  background-color: #0f766e !important;
+  background-color: var(--bg-surface) !important;
 }
 
 button.bg-\[\#0d9488\],
 .bg-\[\#0d9488\] button,
 .bg-\[\#0d9488\],
 .bg-kahana-primary {
-  color: #fff !important;
+  color: var(--bg-body) !important;
 }
 
 /* Override for GlobalBanner button */
@@ -84,8 +84,8 @@ div[class*="bg-gradient-to-r from-kahana-primary"] a[href="/sales"] {
 .GlobalBanner button:hover,
 div[class*="bg-gradient-to-r from-kahana-primary"] button:hover,
 div[class*="bg-gradient-to-r from-kahana-primary"] a[href="/sales"]:hover {
-  background-color: white !important;
-  color: #0d9488 !important;
+  background-color: var(--bg-body) !important;
+  color: var(--bg-action) !important;
 }
 
 /* Ensure Contact Sales text is white */
@@ -94,7 +94,7 @@ div[class*="bg-gradient-to-r from-kahana-primary"] a[href="/sales"] span {
 }
 
 div[class*="bg-gradient-to-r from-kahana-primary"] a[href="/sales"]:hover span {
-  color: #0d9488 !important;
+  color: var(--bg-action) !important;
 }
 
 /* Specific override for Contact Sales buttons */
@@ -105,8 +105,8 @@ div[class*="bg-gradient-to-r from-kahana-primary"] a[href="/sales"]:hover span {
 }
 
 .contact-sales-btn:hover {
-  background-color: white !important;
-  color: #0d9488 !important;
+  background-color: var(--bg-body) !important;
+  color: var(--bg-action) !important;
 }
 
 .contact-sales-btn span {
@@ -114,7 +114,7 @@ div[class*="bg-gradient-to-r from-kahana-primary"] a[href="/sales"]:hover span {
 }
 
 .contact-sales-btn:hover span {
-  color: #0d9488 !important;
+  color: var(--bg-action) !important;
 }
 
 /* Ensure CTA section headers are white */
@@ -122,7 +122,7 @@ div[class*="bg-gradient-to-r from-kahana-primary"] h2,
 section[class*="bg-gradient-to-r from-kahana-primary"] h2,
 .bg-gradient-to-r h2.text-white,
 section.bg-gradient-to-r h2.text-white {
-  color: white !important;
+  color: var(--bg-body) !important;
 }
 
 /* Tailwind CSS setup */
@@ -139,30 +139,17 @@ section.bg-gradient-to-r h2.text-white {
 }
 
 :root {
-  /* Main brand colors from new logo */
-  --kahana-primary: #0d9488;
-  --kahana-primary-light: #14b8a6;
-  --kahana-primary-dark: #0f766e;
+  /* Strict 5-color palette */
+  --text-base: #4A5745;         /* Dark Green/Text Base */
+  --bg-action: #728552;         /* Medium Olive Green/Primary/Buttons */
+  --bg-highlight: #E0D48C;      /* Light Khaki/Accent/Hover */
+  --bg-body: #F3F8E4;           /* Very Light Pale Yellow/Background */
+  --bg-surface: #788B59;        /* Medium Olive Green/Secondary/Darker Surface */
 
-  /* Secondary colors from logo gradient */
-  --kahana-secondary: #0ea5e9;
-  --kahana-secondary-light: #38bdf8;
-  --kahana-secondary-dark: #0284c7;
-
-  /* Accent colors from logo elements */
-  --kahana-accent-green: #059669;
-  --kahana-accent-lime: #7dd3fc;
-  --kahana-accent-navy: #0c4a6e;
-  --kahana-accent-sand: #fbbf24;
-  --kahana-accent-sky: #fef3c7;
-  --kahana-accent-ocean: #0ea5e9;
-  --kahana-accent-warm: #92400e;
-
-  /* UI colors inspired by logo's natural theme */
-  --kahana-ui-background: #f8fafc;
-  --kahana-ui-surface: #ffffff;
-  --kahana-ui-border: #e2e8f0;
-  --kahana-ui-hover: #f0f9ff;
+  /* Derived variables for usage */
+  --border-light: var(--bg-highlight);
+  --text-subtle: #4A5745A0;
+  --shadow-color: #4A574520;
 }
 
 /* Box sizing for all elements */
@@ -175,8 +162,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Roboto", sans-serif;
-  background-color: #f7f7f7;
-  color: #000;
+  background-color: var(--bg-body);
+  color: var(--text-base);
   overflow-x: hidden;
   position: relative;
   width: 100%;
@@ -459,7 +446,7 @@ body {
   justify-content: space-between;
   width: 100%;
   max-width: 400px; /* Adjust max-width for different screen sizes */
-  border: 1px solid #e0e0e0;
+  border: 1px solid var(--border-light);
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   overflow: hidden; /* Ensure content stays within the card */
@@ -566,7 +553,7 @@ body {
 }
 
 .search-icon svg {
-  color: #3b675e;
+  color: var(--text-base);
   width: 24px;
   height: 24px;
 }
@@ -699,11 +686,17 @@ body {
 }
 
 .ais-RefinementList-item {
-  @apply flex-none px-4 py-1 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors duration-200;
+  @apply flex-none px-4 py-1 rounded-full transition-colors duration-200;
+  background-color: var(--bg-body);
+}
+.ais-RefinementList-item:hover {
+  background-color: var(--bg-highlight);
 }
 
 .ais-RefinementList-item--selected {
-  @apply bg-green-100 text-green-800;
+  background-color: var(--bg-highlight);
+  color: var(--text-base);
+  font-weight: 700;
 }
 
 /* Replace nested selectors with flat ones */
@@ -741,28 +734,28 @@ body {
 .doc-content h1 {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #1a1a1a;
+  color: var(--text-base);
   margin-bottom: 1.5rem;
 }
 
 .doc-content h2 {
   font-size: 1.875rem;
   font-weight: 600;
-  color: #2a2a2a;
+  color: var(--text-base);
   margin: 2rem 0 1rem;
 }
 
 .doc-content h3 {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #3a3a3a;
+  color: var(--text-base);
   margin: 1.5rem 0 0.75rem;
 }
 
 .doc-content p {
   font-size: 1.125rem;
   line-height: 1.7;
-  color: #4a4a4a;
+  color: var(--text-base);
   margin-bottom: 1.25rem;
 }
 
@@ -775,7 +768,7 @@ body {
 .doc-content li {
   font-size: 1.125rem;
   line-height: 1.6;
-  color: #4a4a4a;
+  color: var(--text-base);
   margin: 0.5rem 0;
 }
 
@@ -785,7 +778,7 @@ body {
 
 .feature-group,
 .practice-group {
-  background: #f8f9fa;
+  background: var(--bg-body);
   border-radius: 0.5rem;
   padding: 1.5rem;
   margin: 1rem 0;
@@ -793,18 +786,18 @@ body {
 
 .feature-group h3,
 .practice-group h3 {
-  color: #66c2be;
+  color: var(--bg-action);
   margin-top: 0;
 }
 
 .doc-content a {
-  color: #66c2be;
+  color: var(--bg-action);
   text-decoration: none;
   transition: color 0.2s;
 }
 
 .doc-content a:hover {
-  color: #55b3af;
+  color: var(--bg-surface);
   text-decoration: underline;
 }
 
@@ -819,14 +812,14 @@ body {
 }
 
 .help {
-  background: #f0f7f7;
+  background: var(--bg-body);
   border-radius: 0.5rem;
   padding: 1.5rem;
   margin-top: 3rem;
 }
 
 .help h2 {
-  color: #66c2be;
+  color: var(--bg-action);
   margin-top: 0;
 }
 
@@ -848,6 +841,16 @@ body {
 }
 
 .nav-button.download span {
+  color: white !important;
+}
+
+/* Override for All Posts button to have white text */
+a[href="/blog"].text-white,
+a[href="/blog"]:has(span) {
+  color: white !important;
+  text-decoration: none !important;
+}
+a[href="/blog"]:hover {
   color: white !important;
 }
 
@@ -906,7 +909,7 @@ a[href="/schedule-demo"]:not(.bg-white):not([style*="background-color: white"]) 
 .doc-card-link .text-kahana-primary:visited,
 .doc-card-link .text-kahana-primary:hover,
 .doc-card-link .text-kahana-primary:active {
-  color: #0d9488 !important;
+  color: var(--bg-action) !important;
   text-decoration: none !important;
   font-weight: bold !important;
 }
@@ -930,7 +933,16 @@ a[href="/schedule-demo"]:not(.bg-white):not([style*="background-color: white"]) 
 .blog-card-link .bg-gray-100:visited,
 .blog-card-link .bg-gray-100:hover,
 .blog-card-link .bg-gray-100:active {
-  color: #374151 !important;
+  color: var(--text-base) !important;
   text-decoration: none !important;
   font-weight: 500 !important;
+}
+
+/* Hide Crisp chat notification badge/triangle */
+.crisp-client .crisp-cuf-vz-1,
+.crisp-client .crisp-cuf-1-badge,
+.crisp-client [class*="badge"],
+.crisp-client .crisp-1ucm7b4,
+.crisp-1ucm7b4 {
+  display: none !important;
 }

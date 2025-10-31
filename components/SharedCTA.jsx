@@ -10,34 +10,25 @@ const SharedCTA = ({
   className = "" // Additional classes for the section
 }) => {
   const buttonStyles = {
-    primary: "bg-kahana-primary text-white font-bold px-6 py-3 rounded-md hover:bg-kahana-primary-dark transition-colors",
-    secondary: "bg-white text-kahana-primary font-bold px-6 py-3 rounded-md border border-kahana-primary hover:bg-gray-100 transition-colors"
+    primary: "nav-button download inline-flex items-center justify-center rounded-md text-white font-bold shadow-sm px-6 py-3 text-base no-underline hover:no-underline focus:no-underline",
+    secondary: "inline-flex items-center justify-center rounded-md text-[#4A5745] font-bold px-6 py-3 text-base border border-[#728552] bg-[#F3F8E4] hover:bg-[#E0D48C] transition-colors no-underline hover:no-underline focus:no-underline"
+  };
+
+  const buttonInlineStyles = {
+    primary: { textDecoration: 'none', backgroundColor: '#788B59' },
+    secondary: { textDecoration: 'none' }
   };
 
   return (
     <section className={`py-16 text-center ${className}`}>
-      <h2 className="text-3xl font-bold mb-4">{title}</h2>
-      <p className="text-xl mb-8">{description}</p>
+      <h2 className="text-3xl font-bold mb-4 text-[#4A5745]">{title}</h2>
+      <p className="text-xl mb-8 text-[#4A5745]">{description}</p>
       <Link 
         href={buttonLink} 
         className={buttonStyles[buttonVariant]}
-        style={buttonVariant === "primary" ? {
-          
-          
-          fontWeight: 'bold'
-        } : {
-          
-          
-          
-          fontWeight: 'bold'
-        }}
+        style={buttonInlineStyles[buttonVariant]}
       >
-        <span style={{ 
-          color: buttonVariant === "primary" ? 'white !important' : '#0d9488 !important',
-          fontWeight: 'bold'
-        }}>
-          {buttonText}
-        </span>
+        {buttonText}
       </Link>
     </section>
   );

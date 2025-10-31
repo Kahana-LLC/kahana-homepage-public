@@ -163,10 +163,10 @@ export default function BlogPost({ post }) {
       </Head>
 
       {/* Scroll Progress Bar */}
-      <div className="fixed top-16 left-0 w-full h-2 bg-gray-200 z-40">
+      <div className="fixed top-16 left-0 w-full h-2 bg-[#F3F8E4] z-40">
         <div 
           id="scroll-progress-bar"
-          className="h-full bg-gradient-to-r from-[#66C2BE] to-[#4A9E9A] transition-all duration-150 ease-out"
+          className="h-full bg-gradient-to-r from-[#E0D48C] via-[#728552] to-[#788B59] transition-all duration-150 ease-out"
           style={{ width: '0%' }}
         ></div>
       </div>
@@ -186,31 +186,31 @@ export default function BlogPost({ post }) {
             </nav>
 
             {/* Main title */}
-            <h1 className="text-4xl font-bold mb-6">{post.title}</h1>
+            <h1 className="text-4xl font-bold mb-6 text-[#4A5745]">{post.title}</h1>
 
             {/* Article metadata */}
             <div className="flex flex-wrap items-center gap-3 mb-8">
               {isClient && hasAuthors && <AuthorCard authors={postAuthors} variant="header" />}
               <time 
                 dateTime={post.date}
-                className="inline-flex items-center px-3 py-1.5 rounded-full bg-gray-100 text-gray-700 text-sm"
+                className="inline-flex items-center px-3 py-1.5 text-[#4A5745] text-sm"
               >
-                <FaRegCalendarAlt className="w-4 h-4 mr-2 text-gray-500" />
-                <span className="text-gray-500 mr-1">Published:</span>
+                <FaRegCalendarAlt className="w-4 h-4 mr-2" />
+                <span className="mr-1">Published:</span>
                 {isClient ? new Date(post.date).toLocaleDateString('en-US', { month: 'numeric', day: 'numeric', year: 'numeric' }).replace(/\//g, '/') : ''}
               </time>
-              <div className="inline-flex items-center px-3 py-1.5 rounded-full bg-gray-100 text-gray-700 text-sm">
-                <FaBookOpen className="w-4 h-4 mr-2 text-gray-500" />
-                <span className="text-gray-500">{categoryDisplay}</span>
+              <div className="inline-flex items-center px-3 py-1.5 text-[#4A5745] text-sm">
+                <FaBookOpen className="w-4 h-4 mr-2" />
+                <span>{categoryDisplay}</span>
               </div>
-              <div className="inline-flex items-center px-3 py-1.5 rounded-full bg-gray-100 text-gray-700 text-sm">
-                <FaRegClock className="w-4 h-4 mr-2 text-gray-500" />
-                <span className="text-gray-500">{post.readingTime} min read</span>
+              <div className="inline-flex items-center px-3 py-1.5 text-[#4A5745] text-sm">
+                <FaRegClock className="w-4 h-4 mr-2" />
+                <span>{post.readingTime} min read</span>
               </div>
             </div>
 
             {/* Article excerpt */}
-            <p className="text-xl text-gray-600 mb-8 leading-relaxed">{post.excerpt}</p>
+            <p className="text-xl text-[#4A5745] mb-8 leading-relaxed">{post.excerpt}</p>
 
             {/* Cover Image */}
             {/*
@@ -307,7 +307,7 @@ export default function BlogPost({ post }) {
               excerpt={post.excerpt}
             />
           )}
-          
+
           <div className="mt-16 p-8 bg-gradient-to-r from-[#E3DFF1]/20 via-[#8CB7D0]/10 to-[#E3DFF1]/30 rounded-xl border border-[#A5DAD8]/30 shadow-lg">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Ready to Elevate Your Work Experience?</h2>
             <p className="text-lg text-gray-600 mb-6">
@@ -315,15 +315,11 @@ export default function BlogPost({ post }) {
             </p>
             <Link 
               href="/contact"
-              className="inline-flex items-center px-6 py-3 border border-transparent text-base font-bold rounded-md shadow-sm text-white bg-[#21706c] hover:bg-[#15514f] transition-colors no-underline"
-              style={{ 
-                textDecoration: 'none', 
-                backgroundColor: '#21706c', 
-                borderColor: '#21706c'
-              }}
+              className="nav-button download inline-flex items-center rounded-md text-white font-bold shadow-sm px-6 py-3 text-base no-underline hover:no-underline focus:no-underline"
+              style={{ textDecoration: 'none', backgroundColor: '#788B59' }}
             >
-              <span style={{ fontWeight: 'bold', color: 'white' }}>Contact us</span>
-              <svg className="ml-2 -mr-1 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <span>Contact us</span>
+              <svg className="ml-2 -mr-1 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: 'white' }}>
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
             </Link>
@@ -332,7 +328,7 @@ export default function BlogPost({ post }) {
           {/* Author Bio Section */}
           {hasAuthors && (
             <div className="mt-12">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">About the Authors</h2>
+              <h2 className="text-2xl font-bold text-[#4A5745] mb-6">About the Authors</h2>
               {isClient && (
                 <AuthorCard 
                   authors={postAuthors}

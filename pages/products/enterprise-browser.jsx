@@ -254,21 +254,21 @@ export default function EnterpriseBrowser() {
       <section className="bg-gradient-to-b from-kahana-accent-sky/20 via-kahana-secondary-300/10 to-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h2 className="text-base font-semibold leading-7 text-kahana-primary mb-3">Enterprise Browser</h2>
-            <h1 className="text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-base font-semibold leading-7 text-[#728552] mb-3">Enterprise Browser</h2>
+            <h1 className="text-5xl font-bold text-[#4A5745] mb-6">
               Oasis
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+            <p className="text-xl text-[#4A5745] max-w-3xl mx-auto mb-8">
               A secure, modern browser designed for enterprise environments, featuring enhanced security controls, collaboration tools, and a seamless user experience.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/schedule-demo">
-                <button className="bg-kahana-primary text-white font-bold px-8 py-3 rounded-md hover:bg-kahana-primary-dark transition-colors shadow-lg shadow-kahana-accent-sky/20 hover:shadow-xl hover:shadow-kahana-accent-sky/30 no-underline">
+                <button className="bg-[#788B59] text-white font-bold px-8 py-3 rounded-md hover:bg-[#728552] transition-colors shadow-lg shadow-kahana-accent-sky/20 hover:shadow-xl hover:shadow-kahana-accent-sky/30 no-underline">
                   Schedule Demo
                 </button>
               </Link>
               <Link href="/buyers-guide">
-                <button className="bg-white text-kahana-primary font-bold px-8 py-3 rounded-md hover:bg-gray-50 transition-colors border-2 border-kahana-primary shadow-lg shadow-kahana-accent-sky/20 hover:shadow-xl hover:shadow-kahana-accent-sky/30 no-underline">
+                <button className="bg-white text-[#728552] font-bold px-8 py-3 rounded-md hover:bg-[#F3F8E4] transition-colors border-2 border-kahana-primary shadow-lg shadow-kahana-accent-sky/20 hover:shadow-xl hover:shadow-kahana-accent-sky/30 no-underline">
                   Read Buyer's Guide
                 </button>
               </Link>
@@ -280,11 +280,11 @@ export default function EnterpriseBrowser() {
       {/* Security Features Section */}
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
+          <h2 className="text-3xl font-bold text-[#4A5745] text-center mb-12">
             Enterprise-Grade Security
           </h2>
-          <p className="text-gray-600 text-center mb-8 max-w-3xl mx-auto">
-            Discover how Oasis delivers <Link href="/blog/enterprise-vs-consumer-browsers-securing-modern-workforce-part-1" className="text-kahana-primary hover:text-kahana-primary-dark">enterprise-grade security</Link> through built-in protections and centralized management. Our security-first approach helps organizations <Link href="/blog/data-leaks-in-2025-prevention-strategies-for-enterprises" className="text-kahana-primary hover:text-kahana-primary-dark">prevent data leaks</Link> and maintain compliance.
+          <p className="text-[#4A5745] text-center mb-8 max-w-3xl mx-auto">
+            Discover how Oasis delivers <Link href="/blog/enterprise-vs-consumer-browsers-securing-modern-workforce-part-1" className="text-[#728552] hover:text-[#728552]-dark">enterprise-grade security</Link> through built-in protections and centralized management. Our security-first approach helps organizations <Link href="/blog/data-leaks-in-2025-prevention-strategies-for-enterprises" className="text-[#728552] hover:text-[#728552]-dark">prevent data leaks</Link> and maintain compliance.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {securityFeatures.map((feature, index) => (
@@ -295,13 +295,13 @@ export default function EnterpriseBrowser() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                     </svg>
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900">{feature.title}</h3>
+                  <h3 className="text-lg font-semibold text-[#4A5745]">{feature.title}</h3>
                 </div>
-                <p className="text-gray-600 text-sm mb-4">{feature.description}</p>
+                <p className="text-[#4A5745] text-sm mb-4">{feature.description}</p>
                 <ul className="space-y-2">
                   {feature.details.map((detail, dIndex) => (
-                    <li key={dIndex} className="flex items-center text-gray-600 text-sm">
-                      <svg className="w-4 h-4 mr-2 text-kahana-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <li key={dIndex} className="flex items-center text-[#4A5745] text-sm">
+                      <svg className="w-4 h-4 mr-2 text-[#728552]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                       {detail}
@@ -315,13 +315,13 @@ export default function EnterpriseBrowser() {
       </section>
 
       {/* Browsing Features Section */}
-      <section className="bg-gray-50 py-16">
+      <section className="bg-[#F3F8E4] py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
+          <h2 className="text-3xl font-bold text-[#4A5745] text-center mb-12">
             Modern Browsing Experience
           </h2>
-          <p className="text-gray-600 text-center mb-8 max-w-3xl mx-auto">
-            Experience a new way of working with <Link href="/blog/oasis-browser-thinks-in-projects-not-tabs" className="text-kahana-primary hover:text-kahana-primary-dark">project-based organization</Link> and enhanced productivity features. Learn how Oasis is <Link href="/blog/enterprise-vs-consumer-browsers-productivity-management-modern-workplace-part-2" className="text-kahana-primary hover:text-kahana-primary-dark">transforming workplace productivity</Link>.
+          <p className="text-[#4A5745] text-center mb-8 max-w-3xl mx-auto">
+            Experience a new way of working with <Link href="/blog/oasis-browser-thinks-in-projects-not-tabs" className="text-[#728552] hover:text-[#728552]-dark">project-based organization</Link> and enhanced productivity features. Learn how Oasis is <Link href="/blog/enterprise-vs-consumer-browsers-productivity-management-modern-workplace-part-2" className="text-[#728552] hover:text-[#728552]-dark">transforming workplace productivity</Link>.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {browsingFeatures.map((feature, index) => (
@@ -332,13 +332,13 @@ export default function EnterpriseBrowser() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900">{feature.title}</h3>
+                  <h3 className="text-lg font-semibold text-[#4A5745]">{feature.title}</h3>
                 </div>
-                <p className="text-gray-600 text-sm mb-4">{feature.description}</p>
+                <p className="text-[#4A5745] text-sm mb-4">{feature.description}</p>
                 <ul className="space-y-2">
                   {feature.details.map((detail, dIndex) => (
-                    <li key={dIndex} className="flex items-center text-gray-600 text-sm">
-                      <svg className="w-4 h-4 mr-2 text-kahana-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <li key={dIndex} className="flex items-center text-[#4A5745] text-sm">
+                      <svg className="w-4 h-4 mr-2 text-[#728552]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                       {detail}
@@ -354,11 +354,11 @@ export default function EnterpriseBrowser() {
       {/* Enterprise Benefits Section */}
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
+          <h2 className="text-3xl font-bold text-[#4A5745] text-center mb-12">
             Enterprise Benefits
           </h2>
-          <p className="text-gray-600 text-center mb-8 max-w-3xl mx-auto">
-            See how organizations are <Link href="/blog/byod-zero-trust-rise-enterprise-browser" className="text-kahana-primary hover:text-kahana-primary-dark">implementing zero trust</Link> and <Link href="/blog/what-is-enterprise-browser-2025" className="text-kahana-primary hover:text-kahana-primary-dark">transforming their security posture</Link> with Oasis.
+          <p className="text-[#4A5745] text-center mb-8 max-w-3xl mx-auto">
+            See how organizations are <Link href="/blog/byod-zero-trust-rise-enterprise-browser" className="text-[#728552] hover:text-[#728552]-dark">implementing zero trust</Link> and <Link href="/blog/what-is-enterprise-browser-2025" className="text-[#728552] hover:text-[#728552]-dark">transforming their security posture</Link> with Oasis.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {enterpriseBenefits.map((benefit, index) => (
@@ -369,19 +369,19 @@ export default function EnterpriseBrowser() {
                       {benefit.icon}
                     </div>
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900">
+                  <h3 className="text-lg font-semibold text-[#4A5745]">
                     {benefit.title}
                   </h3>
                 </div>
                 <div className="mb-4">
-                  <div className="text-2xl font-bold text-kahana-primary mb-1">
+                  <div className="text-2xl font-bold text-[#728552] mb-1">
                     {benefit.stat}
                   </div>
-                  <div className="text-sm text-gray-600">
+                  <div className="text-sm text-[#4A5745]">
                     {benefit.statLabel}
                   </div>
                 </div>
-                <p className="text-gray-600 text-sm">
+                <p className="text-[#4A5745] text-sm">
                   {benefit.description}
                 </p>
               </div>
@@ -391,9 +391,9 @@ export default function EnterpriseBrowser() {
       </section>
 
       {/* Technical Features Section */}
-      <section className="bg-gray-50 py-16">
+      <section className="bg-[#F3F8E4] py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
+          <h2 className="text-3xl font-bold text-[#4A5745] text-center mb-12">
             Technical Features
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -406,13 +406,13 @@ export default function EnterpriseBrowser() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900">{feature.title}</h3>
+                  <h3 className="text-lg font-semibold text-[#4A5745]">{feature.title}</h3>
                 </div>
-                <p className="text-gray-600 text-sm mb-4">{feature.description}</p>
+                <p className="text-[#4A5745] text-sm mb-4">{feature.description}</p>
                 <ul className="space-y-2">
                   {feature.details.map((detail, dIndex) => (
-                    <li key={dIndex} className="flex items-center text-gray-600 text-sm">
-                      <svg className="w-4 h-4 mr-2 text-kahana-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <li key={dIndex} className="flex items-center text-[#4A5745] text-sm">
+                      <svg className="w-4 h-4 mr-2 text-[#728552]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                       {detail}
@@ -426,7 +426,7 @@ export default function EnterpriseBrowser() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-gradient-to-r from-kahana-primary to-kahana-secondary py-16">
+      <section className="bg-gradient-to-r from-[#788B59] to-[#728552] py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-white mb-6" >
             Ready to Transform Your Enterprise Browsing?
@@ -435,7 +435,7 @@ export default function EnterpriseBrowser() {
             Schedule a demo to see how Oasis can enhance security, improve collaboration, and streamline your workflow.
           </p>
           <Link href="/schedule-demo">
-            <button className="bg-white text-kahana-primary px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors">
+            <button className="bg-white text-[#728552] px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors">
               Schedule Demo
             </button>
           </Link>

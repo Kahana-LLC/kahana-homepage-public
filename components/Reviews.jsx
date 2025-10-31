@@ -79,20 +79,20 @@ export default function Reviews() {
     <section
       id="testimonials"
       aria-label="What our customers are saying"
-      className="bg-gradient-to-b from-indigo-50 to-indigo-100 py-20 sm:py-32 relative"
+      className="bg-gradient-to-b from-[#F3F8E4] to-[#E0D48C] py-20 sm:py-32 relative"
     >
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-kahana-primary-light rounded-full filter blur-3xl opacity-20"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-kahana-secondary-light rounded-full filter blur-3xl opacity-20"></div>
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-[#788B59] rounded-full filter blur-3xl opacity-20"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-[#728552] rounded-full filter blur-3xl opacity-20"></div>
       </div>
 
       <Container>
         <div className="mx-auto max-w-2xl text-center relative">
-          <p className="mt-1 text-4xl font-bold tracking-tight text-kahana-primary sm:text-5xl lg:text-6xl">
+          <p className="mt-1 text-4xl font-bold tracking-tight text-[#4A5745] sm:text-5xl lg:text-6xl">
             What folks are saying
           </p>
-          <p className="mt-4 text-lg tracking-tight text-kahana-primary">
+          <p className="mt-4 text-lg tracking-tight text-[#4A5745]">
             Building hubs and sharing knowledge all over the world 🌎
           </p>
         </div>
@@ -105,24 +105,24 @@ export default function Reviews() {
                 className="w-full flex-none px-4 snap-center"
                 style={{ width: '100%' }}
               >
-                <figure className="rounded-xl bg-white p-6 shadow-[0_0_15px_rgba(60,88,74,0.1)] hover:shadow-[0_0_25px_rgba(60,88,74,0.15)] transition-shadow duration-300 mx-auto max-w-2xl">
+                <figure className="rounded-xl bg-white p-6 shadow-[0_0_15px_rgba(74,87,69,0.1)] hover:shadow-[0_0_25px_rgba(74,87,69,0.15)] transition-shadow duration-300 mx-auto max-w-2xl">
                   <blockquote>
-                    <p className="text-lg tracking-tight text-kahana-primary">
+                    <p className="text-lg tracking-tight text-[#4A5745]">
                       {testimonial.content}
                     </p>
                   </blockquote>
 
-                  <figcaption className="mt-6 flex items-center justify-between border-t border-kahana-secondary-light/20 pt-6">
+                  <figcaption className="mt-6 flex items-center justify-between border-t border-[#728552]/20 pt-6">
                     <div>
-                      <div className="font-display text-base text-kahana-primary">
+                      <div className="font-display text-base text-[#4A5745]">
                         {testimonial.author.name}
                       </div>
-                      <div className="mt-1 text-sm text-kahana-primary/70">
+                      <div className="mt-1 text-sm text-[#4A5745]/70">
                         {testimonial.author.role}
                       </div>
                     </div>
 
-                    <div className="overflow-hidden rounded-full bg-kahana-secondary-light/20">
+                    <div className="overflow-hidden rounded-full bg-[#F3F8E4]">
                       <Image
                         className="h-14 w-14 object-cover"
                         src={testimonial.author.image}
@@ -142,7 +142,7 @@ export default function Reviews() {
             {testimonials.map((_, index) => (
               <div
                 key={index}
-                className="h-2 w-2 rounded-full bg-kahana-primary/20"
+                className="h-2 w-2 rounded-full bg-[#788B59]/20"
                 aria-hidden="true"
               />
             ))}

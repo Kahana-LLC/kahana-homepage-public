@@ -43,11 +43,11 @@ export default function TestimonialsCarousel() {
   };
 
   return (
-    <div className="bg-gray-50 py-24 sm:py-32">
+    <div className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-xl text-center">
-          <h2 className="text-lg font-semibold leading-8 tracking-tight text-indigo-600">Testimonials</h2>
-          <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          <h2 className="text-lg font-semibold leading-8 tracking-tight text-[#4A5745]">Testimonials</h2>
+          <p className="mt-2 text-3xl font-bold tracking-tight text-[#4A5745] sm:text-4xl">
             Loved by professionals worldwide
           </p>
         </div>
@@ -55,13 +55,13 @@ export default function TestimonialsCarousel() {
           <div className="relative">
             <div className="flex items-center justify-center">
               <div className="relative w-full max-w-3xl">
-                <div className="relative bg-white px-6 py-8 shadow-xl ring-1 ring-gray-900/5 sm:rounded-xl sm:px-8">
+                <div className="relative bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] px-6 py-8 shadow-xl border border-[#728552] sm:rounded-xl sm:px-8">
                   <div className="text-center">
-                    <p className="text-lg leading-8 text-gray-600">
+                    <p className="text-lg leading-8 text-[#4A5745]">
                       "{testimonials[currentIndex].quote}"
                     </p>
                     <div className="mt-6 flex items-center justify-center gap-x-4">
-                      <div className="relative h-10 w-10 overflow-hidden rounded-full bg-gray-50">
+                      <div className="relative h-10 w-10 overflow-hidden rounded-full bg-[#F3F8E4]">
                         <Image
                           src={testimonials[currentIndex].author.image}
                           alt={testimonials[currentIndex].author.name}
@@ -70,8 +70,8 @@ export default function TestimonialsCarousel() {
                         />
                       </div>
                       <div>
-                        <div className="font-semibold">{testimonials[currentIndex].author.name}</div>
-                        <div className="text-sm leading-6 text-gray-600">
+                        <div className="font-semibold text-[#4A5745]">{testimonials[currentIndex].author.name}</div>
+                        <div className="text-sm leading-6 text-[#4A5745]">
                           {testimonials[currentIndex].author.role}
                         </div>
                       </div>
@@ -83,14 +83,14 @@ export default function TestimonialsCarousel() {
             <div className="mt-8 flex justify-center gap-4">
               <button
                 onClick={prevTestimonial}
-                className="rounded-full bg-kahana-primary text-white font-bold p-2 hover:bg-kahana-primary-dark transition-colors"
+                className="rounded-full bg-[#788B59] text-white font-bold p-2 hover:bg-[#728552] transition-colors"
               >
                 <span className="sr-only">Previous testimonial</span>
                 ←
               </button>
               <button
                 onClick={nextTestimonial}
-                className="rounded-full bg-kahana-primary text-white font-bold p-2 hover:bg-kahana-primary-dark transition-colors"
+                className="rounded-full bg-[#788B59] text-white font-bold p-2 hover:bg-[#728552] transition-colors"
               >
                 <span className="sr-only">Next testimonial</span>
                 →

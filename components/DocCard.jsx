@@ -25,24 +25,24 @@ export default function DocCard({ doc }) {
       <Link href={`/docs/${doc.slug}`} className="block doc-card-link">
         <div className="p-6">
           <div className="flex items-center justify-between mb-4">
-            <span className="text-sm font-medium text-kahana-accent-sage capitalize">
+            <span className="text-sm font-medium text-[#728552] capitalize">
               {doc.category}
             </span>
-            <time dateTime={doc.date} className="text-sm text-gray-500">
+            <time dateTime={doc.date} className="text-sm text-[#4A5745]">
               {formatDate(doc.date)}
             </time>
           </div>
-          <h3 className="text-xl font-semibold mb-2 text-gray-900 hover:text-kahana-primary transition-colors">
+          <h3 className="text-xl font-semibold mb-2 text-[#4A5745] hover:text-[#728552] transition-colors">
             {doc.title}
           </h3>
-          <p className="text-gray-600 mb-4 line-clamp-2">
+          <p className="text-[#4A5745] mb-4 line-clamp-2">
             {doc.description}
           </p>
           <div className="flex items-center justify-between">
             <AuthorCard authors={docAuthors} variant="reference" />
             <div className="flex items-center gap-2">
-              <span className="text-sm text-gray-500">{readingTime} min read</span>
-              <span className="inline-flex items-center text-sm text-kahana-primary hover:text-kahana-primary-dark">
+              <span className="text-sm text-[#4A5745]">{readingTime} min read</span>
+              <span className="inline-flex items-center text-sm text-[#788B59] hover:text-[#728552]">
                 Read More
                 <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

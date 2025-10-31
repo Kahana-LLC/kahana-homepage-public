@@ -241,17 +241,17 @@ export default function Education({ educationBlogs }) {
       <section className="bg-gradient-to-b from-kahana-accent-sky/20 via-kahana-secondary-300/10 to-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-5xl font-bold text-gray-900 mb-4">
+            <h1 className="text-5xl font-bold text-[#4A5745] mb-4">
               Education Solutions
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+            <p className="text-xl text-[#4A5745] max-w-3xl mx-auto mb-8">
               Transform your educational operations with secure, efficient solutions designed for modern learning challenges.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/buyers-guide" className="inline-block bg-white text-kahana-primary px-8 py-3 rounded-md hover:bg-gray-50 transition-colors border-2 border-kahana-primary">
+              <Link href="/buyers-guide" className="inline-block bg-white text-[#728552] px-8 py-3 rounded-md hover:bg-[#F3F8E4] transition-colors border-2 border-kahana-primary">
                 Read Buyer's Guide
               </Link>
-              <Link href="/sales" className="inline-block border border-kahana-primary text-kahana-primary px-8 py-3 rounded-md hover:bg-gray-50 transition-colors">
+              <Link href="/sales" className="inline-block border border-kahana-primary text-[#728552] px-8 py-3 rounded-md hover:bg-[#F3F8E4] transition-colors">
                 Contact Sales
               </Link>
             </div>
@@ -262,18 +262,18 @@ export default function Education({ educationBlogs }) {
       {/* Education Industry Metrics Section - Proof Points */}
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
+          <h2 className="text-3xl font-bold text-[#4A5745] text-center mb-12">
             Education Industry Metrics
           </h2>
-          <p className="text-gray-600 text-center mb-8 max-w-3xl mx-auto">
+          <p className="text-[#4A5745] text-center mb-8 max-w-3xl mx-auto">
             Key metrics that matter to education IT and security leaders evaluating enterprise browsers.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {educationMetrics.map((metric, idx) => (
               <div key={idx} className="bg-white rounded-xl shadow-lg p-6 flex flex-col hover:shadow-2xl transition-shadow">
-                <div className="text-2xl font-bold text-kahana-primary mb-2">{metric.value}</div>
-                <div className="text-lg font-semibold text-gray-900 mb-1">{metric.label}</div>
-                <div className="text-sm text-gray-600 mb-3">{metric.insight}</div>
+                <div className="text-2xl font-bold text-[#728552] mb-2">{metric.value}</div>
+                <div className="text-lg font-semibold text-[#4A5745] mb-1">{metric.label}</div>
+                <div className="text-sm text-[#4A5745] mb-3">{metric.insight}</div>
                 {metric.source && (
                   <a href={metric.source.url} target="_blank" rel="noopener noreferrer" className="block text-xs text-gray-400 underline mt-auto">{metric.source.label}</a>
                 )}
@@ -286,10 +286,10 @@ export default function Education({ educationBlogs }) {
       {/* Security Features Section - Core Solution */}
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
+          <h2 className="text-3xl font-bold text-[#4A5745] text-center mb-12">
             Education Security
           </h2>
-          <p className="text-gray-600 text-center mb-8 max-w-3xl mx-auto">
+          <p className="text-[#4A5745] text-center mb-8 max-w-3xl mx-auto">
             Discover how our solutions deliver enterprise-grade security for educational operations. Our security-first approach helps organizations protect student data and maintain compliance.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -301,13 +301,13 @@ export default function Education({ educationBlogs }) {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                     </svg>
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900">{feature.title}</h3>
+                  <h3 className="text-lg font-semibold text-[#4A5745]">{feature.title}</h3>
                 </div>
-                <p className="text-gray-600 text-sm mb-4">{feature.description}</p>
+                <p className="text-[#4A5745] text-sm mb-4">{feature.description}</p>
                 <ul className="space-y-2">
                   {feature.details.map((detail, dIndex) => (
-                    <li key={dIndex} className="flex items-center text-gray-600 text-sm">
-                      <svg className="w-4 h-4 mr-2 text-kahana-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <li key={dIndex} className="flex items-center text-[#4A5745] text-sm">
+                      <svg className="w-4 h-4 mr-2 text-[#728552]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                       {detail}
@@ -323,10 +323,10 @@ export default function Education({ educationBlogs }) {
       {/* Industry Benefits Section - ROI */}
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
+          <h2 className="text-3xl font-bold text-[#4A5745] text-center mb-12">
             Education Benefits
           </h2>
-          <p className="text-gray-600 text-center mb-8 max-w-3xl mx-auto">
+          <p className="text-[#4A5745] text-center mb-8 max-w-3xl mx-auto">
             See how educational institutions are transforming their operations and improving efficiency with our solutions.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -338,19 +338,19 @@ export default function Education({ educationBlogs }) {
                       {benefit.icon}
                     </div>
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900">
+                  <h3 className="text-lg font-semibold text-[#4A5745]">
                     {benefit.title}
                   </h3>
                 </div>
                 <div className="mb-4">
-                  <div className="text-2xl font-bold text-kahana-primary mb-1">
+                  <div className="text-2xl font-bold text-[#728552] mb-1">
                     {benefit.stat}
                   </div>
-                  <div className="text-sm text-gray-600">
+                  <div className="text-sm text-[#4A5745]">
                     {benefit.statLabel}
                   </div>
                 </div>
-                <p className="text-gray-600 text-sm">
+                <p className="text-[#4A5745] text-sm">
                   {benefit.description}
                 </p>
                 {benefit.source && (
@@ -366,7 +366,7 @@ export default function Education({ educationBlogs }) {
       <FeaturedBlogSection posts={educationBlogs} />
 
       {/* CTA Section - Next Steps */}
-      <section className="bg-gradient-to-r from-kahana-primary to-kahana-secondary py-16">
+      <section className="bg-gradient-to-r from-[#788B59] to-[#728552] py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-white mb-6" >
             Ready to Transform Your Educational Operations?
@@ -377,7 +377,7 @@ export default function Education({ educationBlogs }) {
           <div className="flex justify-center">
             <Link 
               href="/sales" 
-              className="contact-sales-btn bg-transparent border border-white text-white px-8 py-3 rounded-md font-bold hover:bg-white hover:text-kahana-primary transition-colors"
+              className="contact-sales-btn bg-transparent border border-white text-white px-8 py-3 rounded-md font-bold hover:bg-white hover:text-[#728552] transition-colors"
               
             >
               <span >

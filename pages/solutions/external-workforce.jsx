@@ -78,13 +78,13 @@ export default function ExternalWorkforce() {
       </Script>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-kahana-primary-50 to-white py-20">
+      <section className="bg-gradient-to-b from-[#F3F8E4] to-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-5xl font-bold text-gray-900 mb-6">
+            <h1 className="text-5xl font-bold text-[#4A5745] mb-6">
               External Workforce Security,<br />Without Compromise
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-[#4A5745] max-w-3xl mx-auto">
               Enable secure access for contractors and third parties while maintaining enterprise-grade security with Oasis Browser.
             </p>
           </div>
@@ -96,28 +96,28 @@ export default function ExternalWorkforce() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Traditional Approach Card */}
-            <div className="bg-gradient-to-br from-gray-50 to-kahana-primary-50/30 rounded-2xl p-8 border border-gray-100">
+            <div className="bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] rounded-2xl p-8 border border-[#728552]">
               <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-kahana-primary-100 rounded-full flex items-center justify-center mr-4">
-                  <svg className="w-6 h-6 text-kahana-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-12 h-12 bg-gradient-to-br from-[#788B59] to-[#728552] rounded-full flex items-center justify-center mr-4">
+                  <svg className="w-6 h-6 text-[#728552]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-semibold text-gray-900">Traditional Approach</h3>
+                <h3 className="text-2xl font-semibold text-[#4A5745]">Traditional Approach</h3>
               </div>
-              <p className="text-gray-600 mb-4">
+              <p className="text-[#4A5745] mb-4">
                 Traditional contractor access meant VPNs, hardware deployment, and complex security management.
               </p>
               <ul className="space-y-2">
-                <li className="flex items-center text-gray-600">
+                <li className="flex items-center text-[#4A5745]">
                   <span className="text-red-500 mr-2">✗</span>
                   <span>Complex setup process</span>
                 </li>
-                <li className="flex items-center text-gray-600">
+                <li className="flex items-center text-[#4A5745]">
                   <span className="text-red-500 mr-2">✗</span>
                   <span>High IT overhead</span>
                 </li>
-                <li className="flex items-center text-gray-600">
+                <li className="flex items-center text-[#4A5745]">
                   <span className="text-red-500 mr-2">✗</span>
                   <span>Security vulnerabilities</span>
                 </li>
@@ -125,28 +125,28 @@ export default function ExternalWorkforce() {
             </div>
 
             {/* Modern Needs Card */}
-            <div className="bg-gradient-to-br from-gray-50 to-kahana-secondary-50/30 rounded-2xl p-8 border border-gray-100">
+            <div className="bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] rounded-2xl p-8 border border-[#728552]">
               <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-kahana-secondary-100 rounded-full flex items-center justify-center mr-4">
-                  <svg className="w-6 h-6 text-kahana-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-12 h-12 bg-gradient-to-br from-[#788B59] to-[#728552] rounded-full flex items-center justify-center mr-4">
+                  <svg className="w-6 h-6 text-[#728552]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-semibold text-gray-900">Modern Workforce Needs</h3>
+                <h3 className="text-2xl font-semibold text-[#4A5745]">Modern Workforce Needs</h3>
               </div>
-              <p className="text-gray-600 mb-4">
+              <p className="text-[#4A5745] mb-4">
                 Today's external workforce needs instant, secure access from anywhere while maintaining strict security controls.
               </p>
               <ul className="space-y-2">
-                <li className="flex items-center text-gray-600">
-                  <span className="text-kahana-secondary mr-2">✓</span>
+                <li className="flex items-center text-[#4A5745]">
+                  <span className="text-[#728552] mr-2">✓</span>
                   <span>Quick onboarding</span>
                 </li>
-                <li className="flex items-center text-gray-600">
-                  <span className="text-kahana-secondary mr-2">✓</span>
+                <li className="flex items-center text-[#4A5745]">
+                  <span className="text-[#728552] mr-2">✓</span>
                   <span>Work from anywhere</span>
                 </li>
-                <li className="flex items-center text-gray-600">
+                <li className="flex items-center text-[#4A5745]">
                   <span className="text-red-500 mr-2">✗</span>
                   <span>Security gaps</span>
                 </li>
@@ -155,30 +155,30 @@ export default function ExternalWorkforce() {
           </div>
 
           {/* The Solution Card */}
-          <div className="mt-8 bg-gradient-to-r from-kahana-primary-50 to-kahana-secondary-50 rounded-2xl p-8 border border-kahana-primary-100">
+          <div className="mt-8 bg-gradient-to-r from-[#F3F8E4] to-[#E0D48C] rounded-2xl p-8 border border-[#728552]">
             <div className="flex items-center mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-kahana-primary to-kahana-secondary rounded-full flex items-center justify-center mr-4">
+              <div className="w-12 h-12 bg-gradient-to-br from-[#788B59] to-[#728552] rounded-full flex items-center justify-center mr-4">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-semibold text-gray-900">Oasis Browser Bridges the Gap</h3>
+              <h3 className="text-2xl font-semibold text-[#4A5745]">Oasis Browser Bridges the Gap</h3>
             </div>
-            <p className="text-gray-600 text-lg mb-6">
+            <p className="text-[#4A5745] text-lg mb-6">
               Enable secure, instant access for your external workforce while maintaining complete control and compliance.
             </p>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="bg-white rounded-xl p-6 shadow-sm">
-                <h4 className="font-semibold text-gray-900 mb-2">Instant Access</h4>
-                <p className="text-gray-600">No hardware needed</p>
+                <h4 className="font-semibold text-[#4A5745] mb-2">Instant Access</h4>
+                <p className="text-[#4A5745]">No hardware needed</p>
               </div>
               <div className="bg-white rounded-xl p-6 shadow-sm">
-                <h4 className="font-semibold text-gray-900 mb-2">Zero Trust</h4>
-                <p className="text-gray-600">Complete security control</p>
+                <h4 className="font-semibold text-[#4A5745] mb-2">Zero Trust</h4>
+                <p className="text-[#4A5745]">Complete security control</p>
               </div>
               <div className="bg-white rounded-xl p-6 shadow-sm">
-                <h4 className="font-semibold text-gray-900 mb-2">Full Visibility</h4>
-                <p className="text-gray-600">Monitor everything</p>
+                <h4 className="font-semibold text-[#4A5745] mb-2">Full Visibility</h4>
+                <p className="text-[#4A5745]">Monitor everything</p>
               </div>
             </div>
           </div>
@@ -188,15 +188,15 @@ export default function ExternalWorkforce() {
       {/* Concept Cards Section */}
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
+          <h2 className="text-3xl font-bold text-[#4A5745] mb-12 text-center">
             Enterprise Security Features
           </h2>
           <div className="grid grid-cols-1 gap-12">
             {conceptCards.map((card, index) => (
-              <div key={index} className="bg-gradient-to-r from-kahana-primary-50 to-kahana-secondary-50 rounded-2xl overflow-hidden border border-kahana-primary-100">
+              <div key={index} className="bg-gradient-to-r from-[#F3F8E4] to-[#E0D48C] rounded-2xl overflow-hidden border border-[#728552]">
                 <div className="p-8">
                   <div className="flex items-center mb-6">
-                    <div className="w-12 h-12 bg-gradient-to-br from-kahana-primary to-kahana-secondary rounded-full flex items-center justify-center mr-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-[#788B59] to-[#728552] rounded-full flex items-center justify-center mr-4">
                       <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         {card.title === "Access Control" ? (
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z" />
@@ -207,21 +207,21 @@ export default function ExternalWorkforce() {
                         )}
                       </svg>
                     </div>
-                    <h3 className="text-2xl font-semibold text-gray-900">{card.title}</h3>
+                    <h3 className="text-2xl font-semibold text-[#4A5745]">{card.title}</h3>
                   </div>
-                  <p className="text-gray-600 text-lg mb-8">
+                  <p className="text-[#4A5745] text-lg mb-8">
                     {card.description}
                   </p>
                   <div className="grid md:grid-cols-2 gap-6">
                     {card.details.map((detail, dIndex) => (
                       <div key={dIndex} className="bg-white rounded-xl p-6 shadow-sm">
-                        <h4 className="font-semibold text-gray-900 mb-3">
+                        <h4 className="font-semibold text-[#4A5745] mb-3">
                           {detail.title}
                         </h4>
-                        <p className="text-gray-600 mb-3">
+                        <p className="text-[#4A5745] mb-3">
                           {detail.explanation}
                         </p>
-                        <div className="flex items-center text-kahana-primary">
+                        <div className="flex items-center text-[#728552]">
                           <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                           </svg>
@@ -238,7 +238,7 @@ export default function ExternalWorkforce() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-gradient-to-r from-kahana-primary to-kahana-secondary py-16">
+      <section className="bg-gradient-to-r from-[#788B59] to-[#728552] py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-white mb-6" >
             Ready to Secure Your External Workforce?
@@ -247,7 +247,7 @@ export default function ExternalWorkforce() {
             Schedule a demo to see how Oasis can transform your external workforce security.
           </p>
           <Link href="/schedule-demo">
-            <button className="bg-white text-kahana-primary px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors">
+            <button className="nav-button download inline-flex items-center justify-center rounded-md text-white font-bold shadow-sm px-6 py-3 text-base no-underline hover:no-underline focus:no-underline" style={{ textDecoration: 'none', backgroundColor: '#788B59' }}>
               Schedule Demo
             </button>
           </Link>

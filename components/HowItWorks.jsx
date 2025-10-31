@@ -11,7 +11,6 @@ const steps = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
       </svg>
     ),
-    bgColor: 'from-[#E3DFF1]/20 via-[#8CB7D0]/10 to-[#E3DFF1]/30',
   },
   {
     id: 2,
@@ -23,7 +22,6 @@ const steps = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
       </svg>
     ),
-    bgColor: 'from-[#8CB7D0]/20 via-[#66C2BE]/10 to-[#8CB7D0]/30',
   },
   {
     id: 3,
@@ -34,7 +32,6 @@ const steps = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
       </svg>
     ),
-    bgColor: 'from-[#66C2BE]/20 via-[#A5DAD8]/10 to-[#66C2BE]/30',
   },
   {
     id: 4,
@@ -45,7 +42,6 @@ const steps = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
       </svg>
     ),
-    bgColor: 'from-[#A5DAD8]/20 via-[#E3DFF1]/10 to-[#A5DAD8]/30',
   },
 ];
 
@@ -56,19 +52,19 @@ export default function HowItWorks() {
     <div className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
-          <h2 className="text-base font-semibold leading-7 text-[#66C2BE]">Get Started</h2>
-          <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          <h2 className="text-base font-semibold leading-7 text-[#4A5745]">Get Started</h2>
+          <p className="mt-2 text-3xl font-bold tracking-tight text-[#4A5745] sm:text-4xl">
             Deploy Oasis Across Your Enterprise
           </p>
-          <p className="mt-6 text-lg leading-8 text-gray-600">
+          <p className="mt-6 text-lg leading-8 text-[#4A5745]">
             Ready to transform your organization's digital workspace? Schedule a demo to see Oasis in action and learn how we'll help you deploy it securely across your organization.
           </p>
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
           {/* Progress Bar */}
-          <div className="relative h-1 bg-gray-100 rounded-full mb-8">
+          <div className="relative h-1 bg-[#F3F8E4] rounded-full mb-8">
             <div 
-              className="absolute h-full bg-gradient-to-r from-[#E3DFF1] via-[#8CB7D0] to-[#66C2BE] rounded-full transition-all duration-300 ease-in-out"
+              className="absolute h-full bg-gradient-to-r from-[#E0D48C] via-[#728552] to-[#788B59] rounded-full transition-all duration-300 ease-in-out"
               style={{ width: `${(hoveredStep / (steps.length - 1)) * 100}%` }}
             />
           </div>
@@ -77,23 +73,23 @@ export default function HowItWorks() {
             {steps.map((step, index) => (
               <div 
                 key={step.id} 
-                className="bg-gradient-to-r from-[#E3DFF1]/20 via-[#8CB7D0]/10 to-[#E3DFF1]/30 rounded-xl overflow-hidden border border-[#A5DAD8]/30 p-6 shadow-lg shadow-[#E3DFF1]/20 hover:shadow-xl hover:shadow-[#E3DFF1]/30 transition-all duration-300"
+                className="bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] rounded-xl overflow-hidden border border-[#728552] p-6 shadow-lg transition-all duration-300 hover:shadow-xl"
                 onMouseEnter={() => setHoveredStep(index)}
                 onMouseLeave={() => setHoveredStep(0)}
               >
                 <div className="flex items-start">
                   <div className="flex-shrink-0">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-[#66C2BE] via-[#8CB7D0] to-[#E3DFF1] shadow-md shadow-[#E3DFF1]/20">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-[#788B59] to-[#728552] shadow-md">
                       <div className="text-white">
                         {step.icon}
                       </div>
                     </div>
                   </div>
                   <div className="ml-4">
-                    <div className="text-base font-semibold leading-7 text-gray-900">
+                    <div className="text-base font-semibold leading-7 text-[#4A5745]">
                       {step.name}
                     </div>
-                    <div className="mt-2 text-base leading-7 text-gray-600">
+                    <div className="mt-2 text-base leading-7 text-[#4A5745]">
                       {step.description}
                     </div>
                   </div>
@@ -106,8 +102,8 @@ export default function HowItWorks() {
           <div className="mt-12 text-center">
                         <Link
               href="/schedule-demo"
-              className="inline-flex items-center px-8 py-3 border border-transparent text-base font-bold rounded-md text-white bg-kahana-primary hover:bg-kahana-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-kahana-primary shadow-md shadow-kahana-accent-sky/20 hover:shadow-lg hover:shadow-kahana-accent-sky/30 transition-all duration-300 no-underline hover:no-underline focus:no-underline"
-              style={{ textDecoration: 'none', backgroundColor: '#0d9488' }}
+              className="nav-button download inline-flex items-center justify-center rounded-md text-white font-bold shadow-sm px-8 py-3 text-base no-underline hover:no-underline focus:no-underline"
+              style={{ textDecoration: 'none', backgroundColor: '#788B59' }}
             >
               <span>Schedule Your Demo</span>
               <svg className="ml-2 -mr-1 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" >

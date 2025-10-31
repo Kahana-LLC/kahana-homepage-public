@@ -80,27 +80,28 @@ export default function ContactPage() {
   }, []);
 
   const formSection = (
-    <div className="bg-white rounded-xl shadow-xl border border-[#A5DAD8]/30 p-8">
+    <div className="bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] rounded-xl shadow-xl border border-[#728552] p-8">
       <div className="relative min-h-[600px]">
         {!isFormLoaded && !loadError && (
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#66C2BE]"></div>
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#788B59]"></div>
           </div>
         )}
 
         {loadError && retryCount < MAX_RETRIES && (
           <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center">
-            <p className="text-gray-600 mb-4">Having trouble loading the form? We'll try again automatically.</p>
-            <p className="text-sm text-gray-500">Attempt {retryCount + 1} of {MAX_RETRIES}</p>
+            <p className="text-[#4A5745] mb-4">Having trouble loading the form? We'll try again automatically.</p>
+            <p className="text-sm text-[#4A5745]">Attempt {retryCount + 1} of {MAX_RETRIES}</p>
           </div>
         )}
 
         {loadError && retryCount >= MAX_RETRIES && (
           <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center">
-            <p className="text-gray-600 mb-4">We're having trouble loading the form. Please try refreshing the page.</p>
+            <p className="text-[#4A5745] mb-4">We're having trouble loading the form. Please try refreshing the page.</p>
             <button
               onClick={() => window.location.reload()}
-              className="px-4 py-2 bg-[#66C2BE] text-white rounded-md hover:bg-[#4A9E9A] transition-colors"
+              className="nav-button download inline-flex items-center justify-center rounded-md text-white font-bold shadow-sm px-6 py-3 text-base no-underline hover:no-underline focus:no-underline"
+              style={{ textDecoration: 'none', backgroundColor: '#788B59' }}
             >
               Refresh Page
             </button>
@@ -134,17 +135,17 @@ export default function ContactPage() {
 
       <NavbarDup />
 
-      <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white pt-24 pb-16">
+      <main className="min-h-screen bg-gradient-to-b from-[#F3F8E4] to-white pt-24 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:grid lg:grid-cols-12 lg:gap-16">
             {/* Left Column - Content */}
             <div className="lg:col-span-7">
               <div className="text-center lg:text-left mb-12">
-                <h2 className="text-base font-semibold leading-7 text-[#66C2BE] mb-3">Let's Connect</h2>
-                <h1 className="text-4xl font-bold text-gray-900 sm:text-5xl">
+                <h2 className="text-base font-semibold leading-7 text-[#728552] mb-3">Let's Connect</h2>
+                <h1 className="text-4xl font-bold text-[#4A5745] sm:text-5xl">
                   Contact us
                 </h1>
-                <p className="mt-6 text-xl text-gray-600">
+                <p className="mt-6 text-xl text-[#4A5745]">
                   We're excited to learn more about your needs and show you how Kahana can transform your browsing experience. Share your thoughts with us, and we'll get back to you soon!
                 </p>
               </div>
@@ -161,19 +162,19 @@ export default function ContactPage() {
                     <Link
                       key={link.name}
                       href={link.href}
-                      className="group flex flex-col p-6 bg-white rounded-xl border border-[#A5DAD8]/30 shadow-sm hover:shadow-md transition-all duration-300"
+                      className="group flex flex-col p-6 bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] rounded-xl border border-[#728552] shadow-sm hover:shadow-md transition-all duration-300"
                     >
                       <div className="flex-shrink-0 mb-4">
-                        <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-[#66C2BE]/10 via-[#8CB7D0]/10 to-[#E3DFF1]/10 group-hover:from-[#66C2BE]/20 group-hover:via-[#8CB7D0]/20 group-hover:to-[#E3DFF1]/20 transition-all duration-300">
-                          <div className="text-[#66C2BE]">
+                        <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-[#788B59] to-[#728552] transition-all duration-300">
+                          <div className="text-white">
                             {link.icon}
                           </div>
                         </div>
                       </div>
-                      <h3 className="text-lg font-semibold text-gray-900 group-hover:text-[#66C2BE] transition-colors duration-300">
+                      <h3 className="text-lg font-semibold text-[#4A5745] group-hover:text-[#728552] transition-colors duration-300">
                         {link.name}
                       </h3>
-                      <p className="mt-2 text-sm text-gray-600">
+                      <p className="mt-2 text-sm text-[#4A5745]">
                         {link.description}
                       </p>
                     </Link>
