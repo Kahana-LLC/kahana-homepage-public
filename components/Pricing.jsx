@@ -74,20 +74,20 @@ export default function Pricing() {
             return (
               <div key={tier.name} className="rounded-lg border border-gray-200 shadow-sm">
                 <div className="p-6">
-                  <h2 className="text-lg font-bold text-center leading-6 text-[#000000]">
+                  <h2 className="text-lg font-bold text-center leading-6 text-[#011910]">
                     {tier.name}
                   </h2>
                   <p className="mt-8 text-center">
-                    <span className="text-4xl font-bold tracking-tight text-[#000000]">
+                    <span className="text-4xl font-bold tracking-tight text-[#011910]">
                       {tier.priceMonthly === 0 ? '$0.00' : `$${tier.priceMonthly}`}
                     </span>
                     {tier.name === 'Enterprise' ? (
-                      <span className="text-base font-medium text-gray-500">
+                      <span className="text-base font-medium text-[#4A5745]">
                         /mo/seat
                       </span>
                     ) : (
                       tier.priceMonthly !== 0 && (
-                        <span className="text-base font-medium text-gray-500">
+                        <span className="text-base font-medium text-[#4A5745]">
                           /mo
                         </span>
                       )
@@ -116,12 +116,12 @@ export default function Pricing() {
 
                 <div className="px-6 pt-6 pb-8">
                   {tier.name === 'Growth' && (
-                    <p className="text-sm text-gray-500 font-semibold mb-2">
+                    <p className="text-sm text-[#4A5745] font-semibold mb-2">
                       Everything in Free, plus...
                     </p>
                   )}
                   {tier.name === 'Enterprise' && (
-                    <p className="text-sm text-gray-500 font-semibold mb-2">
+                    <p className="text-sm text-[#4A5745] font-semibold mb-2">
                       Everything in Growth, plus...
                     </p>
                   )}
@@ -130,7 +130,7 @@ export default function Pricing() {
                       <li key={index} className="flex space-x-3">
                         <CheckIcon className="h-5 w-5 flex-shrink-0 text-green-500" aria-hidden="true" />
                         <span
-                          className="text-sm text-gray-500"
+                          className="text-sm text-[#4A5745]"
                           dangerouslySetInnerHTML={{ __html: feature }} // Used to render HTML for Beta badge
                         />
                       </li>
@@ -142,7 +142,7 @@ export default function Pricing() {
           })}
         </div>
 
-        <p className="mt-12 text-lg text-gray-500 text-center">
+        <p className="mt-12 text-lg text-[#4A5745] text-center">
           Prices are in $ USD. To be transparent, Kahana earns 5% whenever anyone pays to access any monetized hub.
         </p>
       </div>

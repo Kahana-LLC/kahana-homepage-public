@@ -189,18 +189,18 @@ export default function WebApplication() {
       </Script>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-kahana-accent-sky/20 via-kahana-secondary-300/10 to-white py-20">
+      <section className="bg-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h2 className="text-base font-semibold leading-7 text-kahana-primary mb-3">Web Application</h2>
-            <h1 className="text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-base font-semibold leading-7 text-[#728552] mb-3">Web Application</h2>
+            <h1 className="text-5xl font-bold text-[#4A5745] mb-6">
               Organize Your Best Ideas
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+            <p className="text-xl text-[#4A5745] max-w-3xl mx-auto mb-8">
               A simple platform to help you stay organized, productive, and grow your projects. Keep your hubs private, share them publicly, or monetize - it's your space to bring your ideas to life.
             </p>
             <Link href="/pricing">
-              <button className="bg-kahana-primary text-white px-8 py-3 rounded-md font-semibold hover:bg-kahana-primary-dark transition-colors shadow-lg shadow-kahana-accent-sky/20 hover:shadow-xl hover:shadow-kahana-accent-sky/30">
+              <button className="nav-button download inline-flex items-center justify-center rounded-md text-white font-bold shadow-sm px-6 py-3 text-base no-underline hover:no-underline focus:no-underline" style={{ textDecoration: 'none', backgroundColor: '#788B59' }}>
                 Plans & Pricing
               </button>
             </Link>
@@ -211,7 +211,7 @@ export default function WebApplication() {
       {/* Features Section */}
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
+          <h2 className="text-3xl font-bold text-[#4A5745] text-center mb-12">
             Key Features
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -257,20 +257,20 @@ export default function WebApplication() {
                 ]
               }
             ].map((feature, index) => (
-              <div key={index} className="bg-gradient-to-r from-kahana-accent-sky/20 via-kahana-secondary-300/10 to-kahana-accent-sky/30 rounded-xl overflow-hidden border border-kahana-primary/30 p-6 shadow-lg shadow-kahana-accent-sky/20 hover:shadow-xl hover:shadow-kahana-accent-sky/30 transition-all duration-300">
+              <div key={index} className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl overflow-hidden p-6 shadow-lg hover:shadow-xl transition-all duration-300">
                 <div className="flex items-center mb-4">
-                  <div className="w-10 h-10 bg-gradient-to-br from-kahana-primary via-kahana-secondary-300 to-kahana-accent-sky rounded-full flex items-center justify-center mr-3 shadow-md shadow-kahana-accent-sky/20">
+                  <div className="w-10 h-10 bg-gradient-to-br from-kahana-primary via-kahana-secondary-300 to-kahana-accent-sky rounded-full flex items-center justify-center mr-3 shadow-md">
                     <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900">{feature.title}</h3>
+                  <h3 className="text-lg font-semibold text-[#4A5745]">{feature.title}</h3>
                 </div>
-                <p className="text-gray-600 text-sm mb-4">{feature.description}</p>
+                <p className="text-[#4A5745] text-sm mb-4">{feature.description}</p>
                 <ul className="space-y-2">
                   {feature.details.map((detail, dIndex) => (
-                    <li key={dIndex} className="flex items-center text-gray-600 text-sm">
-                      <svg className="w-4 h-4 mr-2 text-kahana-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <li key={dIndex} className="flex items-center text-[#4A5745] text-sm">
+                      <svg className="w-4 h-4 mr-2 text-[#728552]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                       {detail}
@@ -284,9 +284,9 @@ export default function WebApplication() {
       </section>
 
       {/* Benefits Section */}
-      <section className="bg-gray-50 py-16">
+      <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
+          <h2 className="text-3xl font-bold text-[#4A5745] text-center mb-12">
             Why Choose Kahana?
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -328,18 +328,18 @@ export default function WebApplication() {
                 )
               }
             ].map((benefit, index) => (
-              <div key={index} className="bg-gradient-to-r from-kahana-accent-sky/20 via-kahana-secondary-300/10 to-kahana-accent-sky/30 rounded-xl overflow-hidden border border-kahana-primary/30 p-6 shadow-lg shadow-kahana-accent-sky/20 hover:shadow-xl hover:shadow-kahana-accent-sky/30 transition-all duration-300">
+              <div key={index} className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl overflow-hidden p-6 shadow-lg hover:shadow-xl transition-all duration-300">
                 <div className="flex items-center mb-4">
-                  <div className="w-10 h-10 bg-gradient-to-br from-kahana-primary via-kahana-secondary-300 to-kahana-accent-sky rounded-full flex items-center justify-center mr-3 shadow-md shadow-kahana-accent-sky/20">
+                  <div className="w-10 h-10 bg-gradient-to-br from-kahana-primary via-kahana-secondary-300 to-kahana-accent-sky rounded-full flex items-center justify-center mr-3 shadow-md">
                     <div className="text-white">
                       {benefit.icon}
                     </div>
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900">
+                  <h3 className="text-lg font-semibold text-[#4A5745]">
                     {benefit.title}
                   </h3>
                 </div>
-                <p className="text-gray-600 text-sm">
+                <p className="text-[#4A5745] text-sm">
                   {benefit.description}
                 </p>
               </div>
@@ -351,7 +351,7 @@ export default function WebApplication() {
       {/* Use Cases Section */}
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
+          <h2 className="text-3xl font-bold text-[#4A5745] text-center mb-12">
             Perfect For
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -387,20 +387,20 @@ export default function WebApplication() {
                 ]
               }
             ].map((useCase, index) => (
-              <div key={index} className="bg-gradient-to-r from-kahana-accent-sky/20 via-kahana-secondary-300/10 to-kahana-accent-sky/30 rounded-xl overflow-hidden border border-kahana-primary/30 p-6 shadow-lg shadow-kahana-accent-sky/20 hover:shadow-xl hover:shadow-kahana-accent-sky/30 transition-all duration-300">
+              <div key={index} className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl overflow-hidden p-6 shadow-lg hover:shadow-xl transition-all duration-300">
                 <div className="flex items-center mb-4">
-                  <div className="w-10 h-10 bg-gradient-to-br from-kahana-primary via-kahana-secondary-300 to-kahana-accent-sky rounded-full flex items-center justify-center mr-3 shadow-md shadow-kahana-accent-sky/20">
+                  <div className="w-10 h-10 bg-gradient-to-br from-kahana-primary via-kahana-secondary-300 to-kahana-accent-sky rounded-full flex items-center justify-center mr-3 shadow-md">
                     <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900">{useCase.title}</h3>
+                  <h3 className="text-lg font-semibold text-[#4A5745]">{useCase.title}</h3>
                 </div>
-                <p className="text-gray-600 text-sm mb-4">{useCase.description}</p>
+                <p className="text-[#4A5745] text-sm mb-4">{useCase.description}</p>
                 <ul className="space-y-2">
                   {useCase.benefits.map((benefit, bIndex) => (
-                    <li key={bIndex} className="flex items-center text-gray-600 text-sm">
-                      <svg className="w-4 h-4 mr-2 text-kahana-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <li key={bIndex} className="flex items-center text-[#4A5745] text-sm">
+                      <svg className="w-4 h-4 mr-2 text-[#728552]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                       {benefit}
@@ -414,9 +414,9 @@ export default function WebApplication() {
       </section>
 
       {/* Technical Features Section */}
-      <section className="bg-gray-50 py-16">
+      <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
+          <h2 className="text-3xl font-bold text-[#4A5745] text-center mb-12">
             Built For You
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -462,21 +462,21 @@ export default function WebApplication() {
                 ]
               }
             ].map((feature, index) => (
-              <div key={index} className="bg-gradient-to-r from-kahana-accent-sky/20 via-kahana-secondary-300/10 to-kahana-accent-sky/30 rounded-xl overflow-hidden border border-kahana-primary/30 p-6 shadow-lg shadow-kahana-accent-sky/20 hover:shadow-xl hover:shadow-kahana-accent-sky/30 transition-all duration-300">
+              <div key={index} className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl overflow-hidden p-6 shadow-lg hover:shadow-xl transition-all duration-300">
                 <div className="flex items-center mb-4">
-                  <div className="w-10 h-10 bg-gradient-to-br from-kahana-primary via-kahana-secondary-300 to-kahana-accent-sky rounded-full flex items-center justify-center mr-3 shadow-md shadow-kahana-accent-sky/20">
+                  <div className="w-10 h-10 bg-gradient-to-br from-kahana-primary via-kahana-secondary-300 to-kahana-accent-sky rounded-full flex items-center justify-center mr-3 shadow-md">
                     <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900">{feature.title}</h3>
+                  <h3 className="text-lg font-semibold text-[#4A5745]">{feature.title}</h3>
                 </div>
-                <p className="text-gray-600 text-sm mb-4">{feature.description}</p>
+                <p className="text-[#4A5745] text-sm mb-4">{feature.description}</p>
                 <ul className="space-y-2">
                   {feature.details.map((detail, dIndex) => (
-                    <li key={dIndex} className="flex items-center text-gray-600 text-sm">
-                      <svg className="w-4 h-4 mr-2 text-kahana-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <li key={dIndex} className="flex items-center text-[#4A5745] text-sm">
+                      <svg className="w-4 h-4 mr-2 text-[#728552]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                       {detail}
@@ -490,7 +490,7 @@ export default function WebApplication() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-gradient-to-r from-kahana-primary to-kahana-secondary py-16">
+      <section className="bg-gradient-to-r from-[#788B59] to-[#728552] py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-white mb-6" >
             Ready to Organize Your Ideas?
@@ -500,7 +500,7 @@ export default function WebApplication() {
           </p>
           <div className="flex justify-center">
             <Link href="/pricing">
-              <button className="bg-white text-kahana-primary px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors">
+              <button className="nav-button download inline-flex items-center justify-center rounded-md text-white font-bold shadow-sm px-6 py-3 text-base no-underline hover:no-underline focus:no-underline" style={{ textDecoration: 'none', backgroundColor: '#788B59' }}>
                 Plans & Pricing
               </button>
             </Link>

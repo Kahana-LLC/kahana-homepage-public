@@ -44,7 +44,7 @@ const FeaturedBlogCard = ({ post }) => {
         <div className="relative h-48 w-full">
           {isLoadingImage ? (
             <div className="w-full h-full bg-gray-100 flex items-center justify-center">
-              <div className="text-gray-400">Loading...</div>
+              <div className="text-[#4A5745]">Loading...</div>
             </div>
           ) : (
             <Image
@@ -57,7 +57,7 @@ const FeaturedBlogCard = ({ post }) => {
           )}
         </div>
         <div className="p-6 flex flex-col flex-1">
-          <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-[#66C2BE] transition-colors line-clamp-2">
+          <h3 className="text-lg font-semibold text-[#4A5745] mb-2 group-hover:text-[#728552] transition-colors line-clamp-2">
             {post.title}
           </h3>
           <div className="flex items-center mb-2 space-x-2">
@@ -76,17 +76,17 @@ const FeaturedBlogCard = ({ post }) => {
               ))}
             </div>
             {/* Author Names */}
-            <span className="text-sm text-gray-700">
+            <span className="text-sm text-[#4A5745]">
               {getAuthorDetails(post.authors).map(author => author.name).join(', ')}
             </span>
           </div>
-          <div className="text-xs text-gray-500 mb-2">
+          <div className="text-xs text-[#4A5745] mb-2">
             {new Date(post.date).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })} • {post.readingTime || post.readingTime === 0 ? `${post.readingTime} min read` : ''}
           </div>
-          <p className="text-gray-600 text-sm mb-4 line-clamp-3">{post.excerpt}</p>
+          <p className="text-[#4A5745] text-sm mb-4 line-clamp-3">{post.excerpt}</p>
           <div className="flex flex-wrap gap-2 mt-auto">
             {post.category.map((cat) => (
-              <span key={cat} className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium">
+              <span key={cat} className="bg-[#F3F8E4] text-[#4A5745] px-3 py-1 rounded-full text-xs font-medium">
                 {cat}
               </span>
             ))}
@@ -103,9 +103,9 @@ const FeaturedBlogSection = ({ posts = [] }) => {
   }
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">Featured Blog Posts</h2>
+        <h2 className="text-3xl font-bold text-[#4A5745] text-center mb-12">Featured Blog Posts</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-10">
           {posts.map((post) => (
             <FeaturedBlogCard key={post.slug} post={post} />
@@ -113,7 +113,7 @@ const FeaturedBlogSection = ({ posts = [] }) => {
         </div>
         <div className="flex justify-center">
           <Link href="/blog">
-            <button className="bg-kahana-primary text-white font-bold px-8 py-3 rounded-md hover:bg-kahana-primary-dark transition-colors no-underline hover:no-underline focus:no-underline" style={{ textDecoration: 'none' }}>
+            <button className="nav-button download bg-[#788B59] text-white font-bold px-8 py-3 rounded-md hover:bg-[#728552] transition-colors no-underline hover:no-underline focus:no-underline shadow-sm" style={{ textDecoration: 'none' }}>
               View All &rarr;
             </button>
           </Link>

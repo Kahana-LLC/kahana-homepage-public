@@ -126,10 +126,10 @@ export default function Government() {
       <section className="bg-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl font-bold text-[#4A5745] mb-6">
               Government Solutions
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-[#4A5745] max-w-3xl mx-auto">
               Secure government operations with Kahana's enterprise browser solution, ensuring FedRAMP compliance while enabling efficient service delivery and protecting sensitive data.
             </p>
           </div>
@@ -137,19 +137,19 @@ export default function Government() {
       </section>
 
       {/* Benefits Section */}
-      <section className="bg-gray-50 py-16">
+      <section className="bg-[#F3F8E4] py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
+          <h2 className="text-3xl font-bold text-[#4A5745] text-center mb-12">
             Key Benefits
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {benefits.map((benefit, index) => (
-              <div key={index} className="bg-white rounded-lg p-6 shadow-md">
+              <div key={index} className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-lg">
                 <div className="text-4xl mb-4">{benefit.icon}</div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                <h3 className="text-xl font-semibold text-[#4A5745] mb-2">
                   {benefit.title}
                 </h3>
-                <p className="text-gray-600">{benefit.description}</p>
+                <p className="text-[#4A5745]">{benefit.description}</p>
               </div>
             ))}
           </div>
@@ -159,19 +159,19 @@ export default function Government() {
       {/* Features Section */}
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
+          <h2 className="text-3xl font-bold text-[#4A5745] text-center mb-12">
             Enterprise Features
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {features.map((feature, index) => (
-              <div key={index} className="bg-gray-50 rounded-lg p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
+              <div key={index} className="bg-[#F3F8E4] rounded-lg p-6">
+                <h3 className="text-xl font-semibold text-[#4A5745] mb-3">
                   {feature.title}
                 </h3>
-                <p className="text-gray-600 mb-4">{feature.description}</p>
+                <p className="text-[#4A5745] mb-4">{feature.description}</p>
                 <ul className="space-y-2">
                   {feature.details.map((detail, dIndex) => (
-                    <li key={dIndex} className="flex items-center text-gray-600">
+                    <li key={dIndex} className="flex items-center text-[#4A5745]">
                       <span className="text-[#3B675E] mr-2">•</span>
                       {detail}
                     </li>
@@ -184,21 +184,21 @@ export default function Government() {
       </section>
 
       {/* Use Cases Section */}
-      <section className="bg-gray-50 py-16">
+      <section className="bg-[#F3F8E4] py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
+          <h2 className="text-3xl font-bold text-[#4A5745] text-center mb-12">
             Use Cases
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {useCases.map((useCase, index) => (
-              <div key={index} className="bg-white rounded-lg p-6 shadow-md">
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
+              <div key={index} className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-lg">
+                <h3 className="text-xl font-semibold text-[#4A5745] mb-3">
                   {useCase.title}
                 </h3>
-                <p className="text-gray-600 mb-4">{useCase.description}</p>
+                <p className="text-[#4A5745] mb-4">{useCase.description}</p>
                 <ul className="space-y-2">
                   {useCase.benefits.map((benefit, bIndex) => (
-                    <li key={bIndex} className="flex items-center text-gray-600">
+                    <li key={bIndex} className="flex items-center text-[#4A5745]">
                       <span className="text-[#3B675E] mr-2">•</span>
                       {benefit}
                     </li>
@@ -211,7 +211,7 @@ export default function Government() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-kahana-primary py-16">
+      <section className="bg-[#788B59] py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-6">
             Ready to Secure Your Government Operations?
@@ -220,7 +220,7 @@ export default function Government() {
             Schedule a demo to see how Oasis can transform your government organization.
           </p>
           <Link href="/schedule-demo">
-            <button className="bg-white text-kahana-primary px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors">
+            <button className="nav-button download inline-flex items-center justify-center rounded-md text-white font-bold shadow-sm px-6 py-3 text-base no-underline hover:no-underline focus:no-underline" style={{ textDecoration: 'none', backgroundColor: '#788B59' }}>
               Schedule Demo
             </button>
           </Link>

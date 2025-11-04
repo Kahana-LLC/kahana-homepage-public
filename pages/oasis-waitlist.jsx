@@ -89,7 +89,7 @@ export default function OasisWaitlist() {
               contact us
             </Link>
           </p>
-          <p className="text-xs text-gray-500">
+          <p className="text-xs text-[#4A5745]">
             By submitting this form you consent to be contacted by Kahana, and acknowledge our{' '}
             <Link href="/privacy-policy" className="text-[#66C2BE] hover:text-[#4A9E9A] underline">
               Privacy Policy
@@ -124,26 +124,10 @@ export default function OasisWaitlist() {
       <Head>
         <title>Join Oasis Waitlist | Kahana</title>
         <meta name="description" content="Join the Oasis browser waitlist - be among the first to experience the future of privacy-focused browsing" />
-        <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap" rel="stylesheet" />
       </Head>
-      <style jsx global>{`
-        .oasis-waitlist-ptserif h1,
-        .oasis-waitlist-ptserif h2,
-        .oasis-waitlist-ptserif h3,
-        .oasis-waitlist-ptserif h4,
-        .oasis-waitlist-ptserif h5,
-        .oasis-waitlist-ptserif h6,
-        .oasis-waitlist-ptserif p,
-        .oasis-waitlist-ptserif li,
-        .oasis-waitlist-ptserif span,
-        .oasis-waitlist-ptserif a,
-        .oasis-waitlist-ptserif strong {
-          font-family: 'PT Serif', serif !important;
-        }
-      `}</style>
-      <div className="oasis-waitlist-ptserif">
+      <div className="oasis-waitlist">
         <NavBar />
-        <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white pt-24 pb-16">
+        <main className="min-h-screen bg-white pt-24 pb-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="lg:grid lg:grid-cols-12 lg:gap-16">
               {/* Left Column - Content */}
@@ -164,7 +148,7 @@ export default function OasisWaitlist() {
 
                 {/* Form Section - Now appears first on mobile */}
                 <div className="lg:hidden mb-12">
-                  <div className="bg-white rounded-xl shadow-xl border border-[#A5DAD8]/30 p-8">
+                  <div className="bg-white rounded-xl shadow-xl p-8">
                     {renderForm()}
                   </div>
                   {/* Mobile: Show video below form */}
@@ -188,7 +172,7 @@ export default function OasisWaitlist() {
                       {steps.map((step, index) => (
                         <div 
                           key={step.id} 
-                          className="bg-gradient-to-r from-[#E3DFF1]/20 via-[#8CB7D0]/10 to-[#E3DFF1]/30 rounded-xl overflow-hidden border border-[#A5DAD8]/30 p-6 shadow-lg shadow-[#E3DFF1]/20 hover:shadow-xl hover:shadow-[#E3DFF1]/30 transition-all duration-300"
+                          className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl overflow-hidden p-6 shadow-lg shadow-[#E3DFF1]/20 hover:shadow-xl hover:shadow-[#E3DFF1]/30 transition-all duration-300"
                           onMouseEnter={() => setHoveredStep(index)}
                           onMouseLeave={() => setHoveredStep(0)}
                         >
@@ -214,7 +198,7 @@ export default function OasisWaitlist() {
                     </div>
 
                     {/* Oasis Features Section */}
-                    <div className="mt-16 bg-white rounded-xl shadow-xl border border-[#A5DAD8]/30 p-8">
+                    <div className="mt-16 bg-white rounded-xl shadow-xl p-8">
                       <h3 className="text-2xl font-semibold text-gray-900 mb-6">The Oasis Advantage</h3>
                       <p className="text-lg text-gray-600 mb-8">
                         Oasis isn't just another browser—it's a productivity powerhouse built from the ground up with AI at its core. Experience unprecedented control over your digital workspace while maintaining lightning-fast performance.
@@ -275,7 +259,7 @@ export default function OasisWaitlist() {
 
               {/* Right Column - Form (Desktop only) */}
               <div className="hidden lg:block lg:col-span-5 lg:sticky lg:top-24">
-                <div className="bg-white rounded-xl shadow-xl border border-[#A5DAD8]/30 p-8">
+                <div className="bg-white rounded-xl shadow-xl p-8">
                   {renderForm()}
                 </div>
               </div>

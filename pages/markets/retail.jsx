@@ -240,20 +240,20 @@ export default function Retail({ retailBlogs }) {
       </Head>
 
       {/* Hero Section - Problem Statement */}
-      <section className="bg-gradient-to-b from-kahana-accent-sky/20 via-kahana-secondary-300/10 to-white py-20">
+      <section className="bg-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-5xl font-bold text-gray-900 mb-4">
+            <h1 className="text-5xl font-bold text-[#4A5745] mb-4">
               Retail & E-commerce Solutions
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+            <p className="text-xl text-[#4A5745] max-w-3xl mx-auto mb-8">
               The retail sector faces unprecedented threats, with 92% of breaches linked to system intrusion and phishing attacks. Enterprise browsers provide critical protection for customer data while ensuring compliance and operational efficiency.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/buyers-guide" className="inline-block bg-white text-kahana-primary px-8 py-3 rounded-md hover:bg-gray-50 transition-colors border-2 border-kahana-primary">
+              <Link href="/buyers-guide" className="nav-button download inline-flex items-center justify-center rounded-md text-white font-bold shadow-sm px-6 py-3 text-base no-underline hover:no-underline focus:no-underline" style={{ textDecoration: 'none', backgroundColor: '#788B59' }}>
                 Read Buyer's Guide
               </Link>
-              <Link href="/sales" className="inline-block border border-kahana-primary text-kahana-primary px-8 py-3 rounded-md hover:bg-gray-50 transition-colors">
+              <Link href="/sales" className="nav-button download inline-flex items-center justify-center rounded-md text-white font-bold shadow-sm px-6 py-3 text-base no-underline hover:no-underline focus:no-underline" style={{ textDecoration: 'none', backgroundColor: '#788B59' }}>
                 Contact Sales
               </Link>
             </div>
@@ -264,18 +264,18 @@ export default function Retail({ retailBlogs }) {
       {/* Retail Industry Metrics Section - Proof Points */}
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
+          <h2 className="text-3xl font-bold text-[#4A5745] text-center mb-12">
             Retail Security Risks
           </h2>
-          <p className="text-gray-600 text-center mb-8 max-w-3xl mx-auto">
+          <p className="text-[#4A5745] text-center mb-8 max-w-3xl mx-auto">
             The retail sector faces unique security challenges due to high-value customer data, peak shopping periods, and sophisticated threat landscape.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {retailMetrics.map((metric, idx) => (
               <div key={idx} className="bg-white rounded-xl shadow-lg p-6 flex flex-col hover:shadow-2xl transition-shadow">
-                <div className="text-2xl font-bold text-kahana-primary mb-2">{metric.value}</div>
-                <div className="text-lg font-semibold text-gray-900 mb-1">{metric.label}</div>
-                <div className="text-sm text-gray-600 mb-3">{metric.insight}</div>
+                <div className="text-2xl font-bold text-[#728552] mb-2">{metric.value}</div>
+                <div className="text-lg font-semibold text-[#4A5745] mb-1">{metric.label}</div>
+                <div className="text-sm text-[#4A5745] mb-3">{metric.insight}</div>
                 {metric.source && (
                   <a href={metric.source.url} target="_blank" rel="noopener noreferrer" className="block text-xs text-gray-400 underline mt-auto">{metric.source.label}</a>
                 )}
@@ -288,28 +288,28 @@ export default function Retail({ retailBlogs }) {
       {/* Security Features Section - Core Solution */}
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
+          <h2 className="text-3xl font-bold text-[#4A5745] text-center mb-12">
             Enterprise Browser Effectiveness
           </h2>
-          <p className="text-gray-600 text-center mb-8 max-w-3xl mx-auto">
+          <p className="text-[#4A5745] text-center mb-8 max-w-3xl mx-auto">
             Enterprise browsers address retail's unique security challenges with proven results. Our security-first approach helps organizations protect customer data and maintain compliance.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {securityFeatures.map((feature, index) => (
-              <div key={index} className="bg-gradient-to-r from-kahana-accent-sky/20 via-kahana-secondary-300/10 to-kahana-accent-sky/30 rounded-xl overflow-hidden border border-kahana-primary/30 p-6 shadow-lg shadow-kahana-accent-sky/20 hover:shadow-xl hover:shadow-kahana-accent-sky/30 transition-all duration-300">
+              <div key={index} className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl overflow-hidden p-6 shadow-lg hover:shadow-xl transition-all duration-300">
                 <div className="flex items-center mb-4">
                   <div className="w-10 h-10 bg-gradient-to-br from-kahana-primary via-kahana-secondary-300 to-kahana-accent-sky rounded-full flex items-center justify-center mr-3 shadow-md shadow-kahana-accent-sky/20">
                     <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                     </svg>
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900">{feature.title}</h3>
+                  <h3 className="text-lg font-semibold text-[#4A5745]">{feature.title}</h3>
                 </div>
-                <p className="text-gray-600 text-sm mb-4">{feature.description}</p>
+                <p className="text-[#4A5745] text-sm mb-4">{feature.description}</p>
                 <ul className="space-y-2">
                   {feature.details.map((detail, dIndex) => (
-                    <li key={dIndex} className="flex items-center text-gray-600 text-sm">
-                      <svg className="w-4 h-4 mr-2 text-kahana-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <li key={dIndex} className="flex items-center text-[#4A5745] text-sm">
+                      <svg className="w-4 h-4 mr-2 text-[#728552]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                       {detail}
@@ -325,34 +325,34 @@ export default function Retail({ retailBlogs }) {
       {/* Industry Benefits Section - ROI */}
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
+          <h2 className="text-3xl font-bold text-[#4A5745] text-center mb-12">
             Productivity and Cost Savings
           </h2>
-          <p className="text-gray-600 text-center mb-8 max-w-3xl mx-auto">
+          <p className="text-[#4A5745] text-center mb-8 max-w-3xl mx-auto">
             Enterprise browsers deliver measurable improvements in security, efficiency, and cost reduction for retail organizations.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {industryBenefits.map((benefit, index) => (
-              <div key={index} className="bg-gradient-to-r from-kahana-accent-sky/20 via-kahana-secondary-300/10 to-kahana-accent-sky/30 rounded-xl overflow-hidden border border-kahana-primary/30 p-6 shadow-lg shadow-kahana-accent-sky/20 hover:shadow-xl hover:shadow-kahana-accent-sky/30 transition-all duration-300">
+              <div key={index} className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl overflow-hidden p-6 shadow-lg hover:shadow-xl transition-all duration-300">
                 <div className="flex items-center mb-4">
                   <div className="w-10 h-10 bg-gradient-to-br from-kahana-primary via-kahana-secondary-300 to-kahana-accent-sky rounded-full flex items-center justify-center mr-3 shadow-md shadow-kahana-accent-sky/20">
                     <div className="text-white">
                       {benefit.icon}
                     </div>
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900">
+                  <h3 className="text-lg font-semibold text-[#4A5745]">
                     {benefit.title}
                   </h3>
                 </div>
                 <div className="mb-4">
-                  <div className="text-2xl font-bold text-kahana-primary mb-1">
+                  <div className="text-2xl font-bold text-[#728552] mb-1">
                     {benefit.stat}
                   </div>
-                  <div className="text-sm text-gray-600">
+                  <div className="text-sm text-[#4A5745]">
                     {benefit.statLabel}
                   </div>
                 </div>
-                <p className="text-gray-600 text-sm">
+                <p className="text-[#4A5745] text-sm">
                   {benefit.description}
                 </p>
                 {benefit.source && (
@@ -368,7 +368,7 @@ export default function Retail({ retailBlogs }) {
       <FeaturedBlogSection posts={retailBlogs} />
 
       {/* CTA Section - Next Steps */}
-      <section className="bg-gradient-to-r from-kahana-primary to-kahana-secondary py-16">
+      <section className="bg-gradient-to-r from-[#788B59] to-[#728552] py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-white mb-6" >
             Ready to Transform Your Retail Security?
@@ -379,7 +379,7 @@ export default function Retail({ retailBlogs }) {
           <div className="flex justify-center">
             <Link 
               href="/sales" 
-              className="contact-sales-btn bg-transparent border border-white text-white px-8 py-3 rounded-md font-bold hover:bg-white hover:text-kahana-primary transition-colors"
+              className="nav-button download inline-flex items-center justify-center rounded-md text-white font-bold shadow-sm px-6 py-3 text-base no-underline hover:no-underline focus:no-underline" style={{ textDecoration: 'none', backgroundColor: '#788B59' }}
               
             >
               <span >

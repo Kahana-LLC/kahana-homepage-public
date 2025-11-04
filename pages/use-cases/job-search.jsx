@@ -220,26 +220,10 @@ export default function JobSearchWaitlist() {
       <Head>
         <title>Transform Your Job Search with Oasis | Kahana</title>
         <meta name="description" content="Join the Oasis waitlist for job search revolution - AI-powered job organization, tracking, and matching to find your dream career" />
-        <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap" rel="stylesheet" />
       </Head>
-      <style jsx global>{`
-        .oasis-waitlist-ptserif h1,
-        .oasis-waitlist-ptserif h2,
-        .oasis-waitlist-ptserif h3,
-        .oasis-waitlist-ptserif h4,
-        .oasis-waitlist-ptserif h5,
-        .oasis-waitlist-ptserif h6,
-        .oasis-waitlist-ptserif p,
-        .oasis-waitlist-ptserif li,
-        .oasis-waitlist-ptserif span,
-        .oasis-waitlist-ptserif a,
-        .oasis-waitlist-ptserif strong {
-          font-family: 'PT Serif', serif !important;
-        }
-      `}</style>
-      <div className="oasis-waitlist-ptserif">
+      <div className="oasis-waitlist">
         <NavBar />
-        <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white pt-24 pb-16">
+        <main className="min-h-screen bg-white pt-24 pb-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto">
               {/* Hero Section */}
@@ -260,7 +244,7 @@ export default function JobSearchWaitlist() {
 
               {/* Centered Form Section */}
               <div className="max-w-md mx-auto mb-12">
-                <div className="bg-white rounded-xl shadow-xl border border-[#A5DAD8]/30 p-8">
+                <div className="bg-white rounded-xl shadow-xl p-8">
                   {renderForm()}
                 </div>
               </div>
@@ -280,7 +264,7 @@ export default function JobSearchWaitlist() {
                       {steps.map((step, index) => (
                         <div 
                           key={step.id} 
-                          className="bg-gradient-to-r from-[#E3DFF1]/20 via-[#8CB7D0]/10 to-[#E3DFF1]/30 rounded-xl overflow-hidden border border-[#A5DAD8]/30 p-6 shadow-lg shadow-[#E3DFF1]/20 hover:shadow-xl hover:shadow-[#E3DFF1]/30 transition-all duration-300"
+                          className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl overflow-hidden p-6 shadow-lg transition-all duration-300 hover:shadow-xl"
                           onMouseEnter={() => setHoveredStep(index)}
                           onMouseLeave={() => setHoveredStep(0)}
                         >

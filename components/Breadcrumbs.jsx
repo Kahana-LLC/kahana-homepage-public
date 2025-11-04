@@ -9,7 +9,7 @@ export default function Breadcrumbs({ items }) {
           <li key={item.url} className="flex items-center">
             {index > 0 && (
               <svg
-                className="h-5 w-5 flex-shrink-0 text-gray-400"
+                className="h-5 w-5 flex-shrink-0 text-[#4A5745]"
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 aria-hidden="true"
@@ -19,7 +19,7 @@ export default function Breadcrumbs({ items }) {
             )}
             <div className={index > 0 ? 'ml-2' : ''}>
               {index === items.length - 1 ? (
-                <span className="text-sm font-medium text-gray-500" aria-current="page">
+                <span className="text-sm font-medium text-[#4A5745]" aria-current="page">
                   {item.name}
                 </span>
               ) : (

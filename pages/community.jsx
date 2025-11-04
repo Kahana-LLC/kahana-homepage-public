@@ -92,20 +92,20 @@ export default function Community() {
 
       <NavBar />
 
-      <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white pt-24 pb-16">
+      <main className="min-h-screen bg-white pt-24 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:grid lg:grid-cols-12 lg:gap-16">
             {/* Left Column - Content */}
             <div className="lg:col-span-7">
               <div className="text-center lg:text-left mb-12">
                 <h2 className="text-base font-semibold leading-7 text-[#66C2BE] mb-3">Join Our Discord</h2>
-                <h1 className="text-4xl font-bold text-gray-900 sm:text-5xl">
+                <h1 className="text-4xl font-bold text-[#011910] sm:text-5xl">
                   Connect with the Kahana Community
                 </h1>
-                <p className="mt-6 text-xl text-gray-600">
+                <p className="mt-6 text-xl text-[#4A5745]">
                   Join our vibrant Discord community to connect with the Kahana team, get real-time support, access exclusive resources, and stay updated on the latest features and announcements.
                 </p>
-                <p className="mt-4 text-xl text-gray-600">
+                <p className="mt-4 text-xl text-[#4A5745]">
                   Whether you're a current user, interested in Oasis, or just want to stay connected with our team, our Discord is the perfect place to engage and grow together.
                 </p>
               </div>
@@ -135,7 +135,7 @@ export default function Community() {
                     {steps.map((step, index) => (
                       <div 
                         key={step.id} 
-                        className="bg-gradient-to-r from-[#E3DFF1]/20 via-[#8CB7D0]/10 to-[#E3DFF1]/30 rounded-xl overflow-hidden border border-[#A5DAD8]/30 p-6 shadow-lg shadow-[#E3DFF1]/20 hover:shadow-xl hover:shadow-[#E3DFF1]/30 transition-all duration-300"
+                        className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl overflow-hidden p-6 shadow-lg shadow-[#E3DFF1]/20 hover:shadow-xl hover:shadow-[#E3DFF1]/30 transition-all duration-300"
                         onMouseEnter={() => setHoveredStep(index)}
                         onMouseLeave={() => setHoveredStep(0)}
                       >
@@ -148,10 +148,10 @@ export default function Community() {
                             </div>
                           </div>
                           <div className="ml-4">
-                            <div className="text-lg font-semibold leading-7 text-gray-900">
+                            <div className="text-lg font-semibold leading-7 text-[#011910]">
                               {step.name}
                             </div>
-                            <div className="mt-2 text-base leading-7 text-gray-600">
+                            <div className="mt-2 text-base leading-7 text-[#4A5745]">
                               {step.description}
                             </div>
                           </div>
@@ -161,16 +161,16 @@ export default function Community() {
                   </div>
 
                   {/* Discord Features Section */}
-                  <div className="mt-16 bg-white rounded-xl shadow-xl border border-[#A5DAD8]/30 p-8">
-                    <h3 className="text-2xl font-semibold text-gray-900 mb-6">What You'll Find in Our Discord</h3>
-                    <p className="text-lg text-gray-600 mb-8">
+                  <div className="mt-16 bg-white rounded-xl shadow-xl p-8">
+                    <h3 className="text-2xl font-semibold text-[#011910] mb-6">What You'll Find in Our Discord</h3>
+                    <p className="text-lg text-[#4A5745] mb-8">
                       Our Discord server is organized to help you get the most out of your Oasis experience and connect with like-minded users.
                     </p>
                     
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
                       <div className="space-y-4">
-                        <h4 className="text-xl font-semibold text-gray-900">Support & Help</h4>
-                        <ul className="space-y-3 text-gray-600">
+                        <h4 className="text-xl font-semibold text-[#011910]">Support & Help</h4>
+                        <ul className="space-y-3 text-[#4A5745]">
                           <li className="flex items-start">
                             <svg className="h-6 w-6 text-[#66C2BE] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -192,8 +192,8 @@ export default function Community() {
                         </ul>
                       </div>
                       <div className="space-y-4">
-                        <h4 className="text-xl font-semibold text-gray-900">Community & Updates</h4>
-                        <ul className="space-y-3 text-gray-600">
+                        <h4 className="text-xl font-semibold text-[#011910]">Community & Updates</h4>
+                        <ul className="space-y-3 text-[#4A5745]">
                           <li className="flex items-start">
                             <svg className="h-6 w-6 text-[#66C2BE] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -218,65 +218,65 @@ export default function Community() {
                   </div>
 
                   {/* Discord Community Section */}
-                  <div className="mt-16 bg-white rounded-xl shadow-xl border border-[#A5DAD8]/30 p-8">
-                    <h3 className="text-2xl font-semibold text-gray-900 mb-6">Our Discord Community</h3>
-                    <p className="text-lg text-gray-600 mb-8">
+                  <div className="mt-16 bg-white rounded-xl shadow-xl p-8">
+                    <h3 className="text-2xl font-semibold text-[#011910] mb-6">Our Discord Community</h3>
+                    <p className="text-lg text-[#4A5745] mb-8">
                       Our Discord server is open to everyone interested in Oasis, whether you're a current user, considering trying it out, or just want to stay connected with our team.
                     </p>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                       {/* Community Benefits */}
                       <div className="space-y-6">
-                        <h4 className="text-xl font-semibold text-gray-900">Community Benefits</h4>
+                        <h4 className="text-xl font-semibold text-[#011910]">Community Benefits</h4>
                         <ul className="space-y-4">
                           <li className="flex items-start">
                             <svg className="h-6 w-6 text-[#66C2BE] mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
-                            <span className="text-gray-600">Direct access to our development team</span>
+                            <span className="text-[#4A5745]">Direct access to our development team</span>
                           </li>
                           <li className="flex items-start">
                             <svg className="h-6 w-6 text-[#66C2BE] mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
-                            <span className="text-gray-600">Early access to new features and updates</span>
+                            <span className="text-[#4A5745]">Early access to new features and updates</span>
                           </li>
                           <li className="flex items-start">
                             <svg className="h-6 w-6 text-[#66C2BE] mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
-                            <span className="text-gray-600">Exclusive tutorials and resources</span>
+                            <span className="text-[#4A5745]">Exclusive tutorials and resources</span>
                           </li>
                         </ul>
                       </div>
 
                       {/* Who Should Join */}
                       <div className="space-y-6">
-                        <h4 className="text-xl font-semibold text-gray-900">Who Should Join</h4>
+                        <h4 className="text-xl font-semibold text-[#011910]">Who Should Join</h4>
                         <ul className="space-y-4">
                           <li className="flex items-start">
                             <svg className="h-6 w-6 text-[#66C2BE] mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
-                            <span className="text-gray-600">Current Oasis users looking for support</span>
+                            <span className="text-[#4A5745]">Current Oasis users looking for support</span>
                           </li>
                           <li className="flex items-start">
                             <svg className="h-6 w-6 text-[#66C2BE] mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
-                            <span className="text-gray-600">People interested in trying Oasis</span>
+                            <span className="text-[#4A5745]">People interested in trying Oasis</span>
                           </li>
                           <li className="flex items-start">
                             <svg className="h-6 w-6 text-[#66C2BE] mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
-                            <span className="text-gray-600">Anyone wanting to stay updated on our progress</span>
+                            <span className="text-[#4A5745]">Anyone wanting to stay updated on our progress</span>
                           </li>
                           <li className="flex items-start">
                             <svg className="h-6 w-6 text-[#66C2BE] mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
-                            <span className="text-gray-600">Community members who want to connect</span>
+                            <span className="text-[#4A5745]">Community members who want to connect</span>
                           </li>
                         </ul>
                       </div>
@@ -299,7 +299,7 @@ export default function Community() {
                         <Link
                           key={link.name}
                           href={link.href}
-                          className="group flex items-center p-4 bg-white rounded-lg border border-[#A5DAD8]/30 shadow-sm hover:shadow-md transition-all duration-300"
+                          className="group flex items-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300"
                         >
                           <div className="flex-shrink-0">
                             <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-[#66C2BE]/10 via-[#8CB7D0]/10 to-[#E3DFF1]/10 group-hover:from-[#66C2BE]/20 group-hover:via-[#8CB7D0]/20 group-hover:to-[#E3DFF1]/20 transition-all duration-300">
@@ -309,10 +309,10 @@ export default function Community() {
                             </div>
                           </div>
                           <div className="ml-4">
-                            <p className="text-base font-medium text-gray-900 group-hover:text-[#66C2BE] transition-colors duration-300">
+                            <p className="text-base font-medium text-[#011910] group-hover:text-[#66C2BE] transition-colors duration-300">
                               {link.name}
                             </p>
-                            <p className="mt-1 text-sm text-gray-500">
+                            <p className="mt-1 text-sm text-[#4A5745]">
                               {link.description}
                             </p>
                           </div>

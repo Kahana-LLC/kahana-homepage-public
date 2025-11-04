@@ -78,13 +78,13 @@ export default function VDI() {
       </Script>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-kahana-primary-50 to-white py-20">
+      <section className="bg-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-5xl font-bold text-gray-900 mb-6">
+            <h1 className="text-5xl font-bold text-[#4A5745] mb-6">
               Beyond VDI:<br />Modern Access Without Complexity
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-[#4A5745] max-w-3xl mx-auto">
               Replace expensive VDI infrastructure with Oasis Browser for secure, efficient access to corporate resources.
             </p>
           </div>
@@ -96,28 +96,28 @@ export default function VDI() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Traditional VDI Card */}
-            <div className="bg-gradient-to-br from-gray-50 to-kahana-primary-50/30 rounded-2xl p-8 border border-gray-100">
+            <div className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-2xl">
               <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-kahana-primary-100 rounded-full flex items-center justify-center mr-4">
-                  <svg className="w-6 h-6 text-kahana-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-12 h-12 bg-gradient-to-br from-[#788B59] to-[#728552] rounded-full flex items-center justify-center mr-4">
+                  <svg className="w-6 h-6 text-[#728552]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-semibold text-gray-900">Traditional VDI</h3>
+                <h3 className="text-2xl font-semibold text-[#4A5745]">Traditional VDI</h3>
               </div>
-              <p className="text-gray-600 mb-4">
+              <p className="text-[#4A5745] mb-4">
                 Traditional VDI solutions are complex, expensive, and difficult to maintain.
               </p>
               <ul className="space-y-2">
-                <li className="flex items-center text-gray-600">
+                <li className="flex items-center text-[#4A5745]">
                   <span className="text-red-500 mr-2">✗</span>
                   <span>High infrastructure costs</span>
                 </li>
-                <li className="flex items-center text-gray-600">
+                <li className="flex items-center text-[#4A5745]">
                   <span className="text-red-500 mr-2">✗</span>
                   <span>Complex management</span>
                 </li>
-                <li className="flex items-center text-gray-600">
+                <li className="flex items-center text-[#4A5745]">
                   <span className="text-red-500 mr-2">✗</span>
                   <span>Performance bottlenecks</span>
                 </li>
@@ -125,28 +125,28 @@ export default function VDI() {
             </div>
 
             {/* Modern Needs Card */}
-            <div className="bg-gradient-to-br from-gray-50 to-kahana-secondary-50/30 rounded-2xl p-8 border border-gray-100">
+            <div className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-2xl">
               <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-kahana-secondary-100 rounded-full flex items-center justify-center mr-4">
-                  <svg className="w-6 h-6 text-kahana-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-12 h-12 bg-gradient-to-br from-[#788B59] to-[#728552] rounded-full flex items-center justify-center mr-4">
+                  <svg className="w-6 h-6 text-[#728552]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-semibold text-gray-900">Modern Access Needs</h3>
+                <h3 className="text-2xl font-semibold text-[#4A5745]">Modern Access Needs</h3>
               </div>
-              <p className="text-gray-600 mb-4">
+              <p className="text-[#4A5745] mb-4">
                 Today's workforce needs efficient, secure access without the overhead of traditional VDI.
               </p>
               <ul className="space-y-2">
-                <li className="flex items-center text-gray-600">
-                  <span className="text-kahana-secondary mr-2">✓</span>
+                <li className="flex items-center text-[#4A5745]">
+                  <span className="text-[#728552] mr-2">✓</span>
                   <span>Cost efficiency</span>
                 </li>
-                <li className="flex items-center text-gray-600">
-                  <span className="text-kahana-secondary mr-2">✓</span>
+                <li className="flex items-center text-[#4A5745]">
+                  <span className="text-[#728552] mr-2">✓</span>
                   <span>Simple management</span>
                 </li>
-                <li className="flex items-center text-gray-600">
+                <li className="flex items-center text-[#4A5745]">
                   <span className="text-red-500 mr-2">✗</span>
                   <span>Legacy solutions</span>
                 </li>
@@ -155,30 +155,30 @@ export default function VDI() {
           </div>
 
           {/* The Solution Card */}
-          <div className="mt-8 bg-gradient-to-r from-kahana-primary-50 to-kahana-secondary-50 rounded-2xl p-8 border border-kahana-primary-100">
+          <div className="mt-8 bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-2xl">
             <div className="flex items-center mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-kahana-primary to-kahana-secondary rounded-full flex items-center justify-center mr-4">
+              <div className="w-12 h-12 bg-gradient-to-br from-[#788B59] to-[#728552] rounded-full flex items-center justify-center mr-4">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-semibold text-gray-900">Oasis Browser: The Modern Alternative</h3>
+              <h3 className="text-2xl font-semibold text-[#4A5745]">Oasis Browser: The Modern Alternative</h3>
             </div>
-            <p className="text-gray-600 text-lg mb-6">
+            <p className="text-[#4A5745] text-lg mb-6">
               Replace VDI with a modern solution that delivers better performance, security, and cost efficiency.
             </p>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="bg-white rounded-xl p-6 shadow-sm">
-                <h4 className="font-semibold text-gray-900 mb-2">Zero Infrastructure</h4>
-                <p className="text-gray-600">No VDI servers needed</p>
+                <h4 className="font-semibold text-[#4A5745] mb-2">Zero Infrastructure</h4>
+                <p className="text-[#4A5745]">No VDI servers needed</p>
               </div>
               <div className="bg-white rounded-xl p-6 shadow-sm">
-                <h4 className="font-semibold text-gray-900 mb-2">Better Performance</h4>
-                <p className="text-gray-600">Direct resource access</p>
+                <h4 className="font-semibold text-[#4A5745] mb-2">Better Performance</h4>
+                <p className="text-[#4A5745]">Direct resource access</p>
               </div>
               <div className="bg-white rounded-xl p-6 shadow-sm">
-                <h4 className="font-semibold text-gray-900 mb-2">Simple Management</h4>
-                <p className="text-gray-600">Automated controls</p>
+                <h4 className="font-semibold text-[#4A5745] mb-2">Simple Management</h4>
+                <p className="text-[#4A5745]">Automated controls</p>
               </div>
             </div>
           </div>
@@ -188,15 +188,15 @@ export default function VDI() {
       {/* Concept Cards Section */}
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
+          <h2 className="text-3xl font-bold text-[#4A5745] mb-12 text-center">
             Enterprise Features
           </h2>
           <div className="grid grid-cols-1 gap-12">
             {conceptCards.map((card, index) => (
-              <div key={index} className="bg-gradient-to-r from-kahana-primary-50 to-kahana-secondary-50 rounded-2xl overflow-hidden border border-kahana-primary-100">
+              <div key={index} className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-2xl">
                 <div className="p-8">
                   <div className="flex items-center mb-6">
-                    <div className="w-12 h-12 bg-gradient-to-br from-kahana-primary to-kahana-secondary rounded-full flex items-center justify-center mr-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-[#788B59] to-[#728552] rounded-full flex items-center justify-center mr-4">
                       <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         {card.title === "Cost Optimization" ? (
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -207,21 +207,21 @@ export default function VDI() {
                         )}
                       </svg>
                     </div>
-                    <h3 className="text-2xl font-semibold text-gray-900">{card.title}</h3>
+                    <h3 className="text-2xl font-semibold text-[#4A5745]">{card.title}</h3>
                   </div>
-                  <p className="text-gray-600 text-lg mb-8">
+                  <p className="text-[#4A5745] text-lg mb-8">
                     {card.description}
                   </p>
                   <div className="grid md:grid-cols-2 gap-6">
                     {card.details.map((detail, dIndex) => (
                       <div key={dIndex} className="bg-white rounded-xl p-6 shadow-sm">
-                        <h4 className="font-semibold text-gray-900 mb-3">
+                        <h4 className="font-semibold text-[#4A5745] mb-3">
                           {detail.title}
                         </h4>
-                        <p className="text-gray-600 mb-3">
+                        <p className="text-[#4A5745] mb-3">
                           {detail.explanation}
                         </p>
-                        <div className="flex items-center text-kahana-primary">
+                        <div className="flex items-center text-[#728552]">
                           <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                           </svg>
@@ -238,7 +238,7 @@ export default function VDI() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-gradient-to-r from-kahana-primary to-kahana-secondary py-16">
+      <section className="bg-gradient-to-r from-[#788B59] to-[#728552] py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-white mb-6" >
             Ready to Move Beyond VDI?
@@ -247,7 +247,7 @@ export default function VDI() {
             Schedule a demo to see how Oasis can transform your enterprise.
           </p>
           <Link href="/schedule-demo">
-            <button className="bg-white text-kahana-primary px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors">
+            <button className="nav-button download inline-flex items-center justify-center rounded-md text-white font-bold shadow-sm px-6 py-3 text-base no-underline hover:no-underline focus:no-underline" style={{ textDecoration: 'none', backgroundColor: '#788B59' }}>
               Schedule Demo
             </button>
           </Link>

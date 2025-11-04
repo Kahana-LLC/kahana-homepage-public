@@ -78,13 +78,13 @@ export default function SafeBrowsing() {
       </Script>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-kahana-primary-50 to-white py-20">
+      <section className="bg-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-5xl font-bold text-gray-900 mb-6">
+            <h1 className="text-5xl font-bold text-[#4A5745] mb-6">
               Secure Browsing,<br />Made Simple
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-[#4A5745] max-w-3xl mx-auto">
               Protect users from web threats with Oasis Browser for comprehensive security controls and content filtering.
             </p>
           </div>
@@ -96,28 +96,28 @@ export default function SafeBrowsing() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Traditional Security Card */}
-            <div className="bg-gradient-to-br from-gray-50 to-kahana-primary-50/30 rounded-2xl p-8 border border-gray-100">
+            <div className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-2xl">
               <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-kahana-primary-100 rounded-full flex items-center justify-center mr-4">
-                  <svg className="w-6 h-6 text-kahana-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-12 h-12 bg-gradient-to-br from-[#788B59] to-[#728552] rounded-full flex items-center justify-center mr-4">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-semibold text-gray-900">Traditional Security</h3>
+                <h3 className="text-2xl font-semibold text-[#4A5745]">Traditional Security</h3>
               </div>
-              <p className="text-gray-600 mb-4">
+              <p className="text-[#4A5745] mb-4">
                 Legacy security solutions rely on basic filtering and reactive protection.
               </p>
               <ul className="space-y-2">
-                <li className="flex items-center text-gray-600">
+                <li className="flex items-center text-[#4A5745]">
                   <span className="text-red-500 mr-2">✗</span>
                   <span>Basic URL filtering</span>
                 </li>
-                <li className="flex items-center text-gray-600">
+                <li className="flex items-center text-[#4A5745]">
                   <span className="text-red-500 mr-2">✗</span>
                   <span>Reactive protection</span>
                 </li>
-                <li className="flex items-center text-gray-600">
+                <li className="flex items-center text-[#4A5745]">
                   <span className="text-red-500 mr-2">✗</span>
                   <span>Limited threat detection</span>
                 </li>
@@ -125,28 +125,28 @@ export default function SafeBrowsing() {
             </div>
 
             {/* Modern Security Card */}
-            <div className="bg-gradient-to-br from-gray-50 to-kahana-secondary-50/30 rounded-2xl p-8 border border-gray-100">
+            <div className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-2xl">
               <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-kahana-secondary-100 rounded-full flex items-center justify-center mr-4">
-                  <svg className="w-6 h-6 text-kahana-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-12 h-12 bg-gradient-to-br from-[#788B59] to-[#728552] rounded-full flex items-center justify-center mr-4">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-semibold text-gray-900">Modern Security Needs</h3>
+                <h3 className="text-2xl font-semibold text-[#4A5745]">Modern Security Needs</h3>
               </div>
-              <p className="text-gray-600 mb-4">
+              <p className="text-[#4A5745] mb-4">
                 Today's web threats require proactive protection and intelligent controls.
               </p>
               <ul className="space-y-2">
-                <li className="flex items-center text-gray-600">
-                  <span className="text-kahana-secondary mr-2">✓</span>
+                <li className="flex items-center text-[#4A5745]">
+                  <span className="text-[#728552] mr-2">✓</span>
                   <span>Proactive protection</span>
                 </li>
-                <li className="flex items-center text-gray-600">
-                  <span className="text-kahana-secondary mr-2">✓</span>
+                <li className="flex items-center text-[#4A5745]">
+                  <span className="text-[#728552] mr-2">✓</span>
                   <span>Intelligent filtering</span>
                 </li>
-                <li className="flex items-center text-gray-600">
+                <li className="flex items-center text-[#4A5745]">
                   <span className="text-red-500 mr-2">✗</span>
                   <span>Legacy solutions</span>
                 </li>
@@ -155,30 +155,30 @@ export default function SafeBrowsing() {
           </div>
 
           {/* The Solution Card */}
-          <div className="mt-8 bg-gradient-to-r from-kahana-primary-50 to-kahana-secondary-50 rounded-2xl p-8 border border-kahana-primary-100">
+          <div className="mt-8 bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-2xl">
             <div className="flex items-center mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-kahana-primary to-kahana-secondary rounded-full flex items-center justify-center mr-4">
+              <div className="w-12 h-12 bg-gradient-to-br from-[#788B59] to-[#728552] rounded-full flex items-center justify-center mr-4">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-semibold text-gray-900">Oasis Browser: Modern Security</h3>
+              <h3 className="text-2xl font-semibold text-[#4A5745]">Oasis Browser: Modern Security</h3>
             </div>
-            <p className="text-gray-600 text-lg mb-6">
+            <p className="text-[#4A5745] text-lg mb-6">
               Implement comprehensive web security with a modern solution that delivers protection and control.
             </p>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="bg-white rounded-xl p-6 shadow-sm">
-                <h4 className="font-semibold text-gray-900 mb-2">Threat Protection</h4>
-                <p className="text-gray-600">Real-time security</p>
+                <h4 className="font-semibold text-[#4A5745] mb-2">Threat Protection</h4>
+                <p className="text-[#4A5745]">Real-time security</p>
               </div>
               <div className="bg-white rounded-xl p-6 shadow-sm">
-                <h4 className="font-semibold text-gray-900 mb-2">Content Control</h4>
-                <p className="text-gray-600">Smart filtering</p>
+                <h4 className="font-semibold text-[#4A5745] mb-2">Content Control</h4>
+                <p className="text-[#4A5745]">Smart filtering</p>
               </div>
               <div className="bg-white rounded-xl p-6 shadow-sm">
-                <h4 className="font-semibold text-gray-900 mb-2">Risk Management</h4>
-                <p className="text-gray-600">Continuous monitoring</p>
+                <h4 className="font-semibold text-[#4A5745] mb-2">Risk Management</h4>
+                <p className="text-[#4A5745]">Continuous monitoring</p>
               </div>
             </div>
           </div>
@@ -188,15 +188,15 @@ export default function SafeBrowsing() {
       {/* Concept Cards Section */}
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
+          <h2 className="text-3xl font-bold text-[#4A5745] mb-12 text-center">
             Enterprise Features
           </h2>
           <div className="grid grid-cols-1 gap-12">
             {conceptCards.map((card, index) => (
-              <div key={index} className="bg-gradient-to-r from-kahana-primary-50 to-kahana-secondary-50 rounded-2xl overflow-hidden border border-kahana-primary-100">
+              <div key={index} className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-2xl">
                 <div className="p-8">
                   <div className="flex items-center mb-6">
-                    <div className="w-12 h-12 bg-gradient-to-br from-kahana-primary to-kahana-secondary rounded-full flex items-center justify-center mr-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-[#788B59] to-[#728552] rounded-full flex items-center justify-center mr-4">
                       <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         {card.title === "Web Security" ? (
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
@@ -207,21 +207,21 @@ export default function SafeBrowsing() {
                         )}
                       </svg>
                     </div>
-                    <h3 className="text-2xl font-semibold text-gray-900">{card.title}</h3>
+                    <h3 className="text-2xl font-semibold text-[#4A5745]">{card.title}</h3>
                   </div>
-                  <p className="text-gray-600 text-lg mb-8">
+                  <p className="text-[#4A5745] text-lg mb-8">
                     {card.description}
                   </p>
                   <div className="grid md:grid-cols-2 gap-6">
                     {card.details.map((detail, dIndex) => (
                       <div key={dIndex} className="bg-white rounded-xl p-6 shadow-sm">
-                        <h4 className="font-semibold text-gray-900 mb-3">
+                        <h4 className="font-semibold text-[#4A5745] mb-3">
                           {detail.title}
                         </h4>
-                        <p className="text-gray-600 mb-3">
+                        <p className="text-[#4A5745] mb-3">
                           {detail.explanation}
                         </p>
-                        <div className="flex items-center text-kahana-primary">
+                        <div className="flex items-center text-[#728552]">
                           <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                           </svg>
@@ -238,7 +238,7 @@ export default function SafeBrowsing() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-gradient-to-r from-kahana-primary to-kahana-secondary py-16">
+      <section className="bg-gradient-to-r from-[#788B59] to-[#728552] py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-white mb-6" >
             Ready to Enable Secure Browsing?
@@ -247,7 +247,7 @@ export default function SafeBrowsing() {
             Schedule a demo to see how Oasis can transform your secure browsing experience.
           </p>
           <Link href="/schedule-demo">
-            <button className="bg-white text-kahana-primary px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors">
+            <button className="nav-button download inline-flex items-center justify-center rounded-md text-white font-bold shadow-sm px-6 py-3 text-base no-underline hover:no-underline focus:no-underline" style={{ textDecoration: 'none', backgroundColor: '#788B59' }}>
               Schedule Demo
             </button>
           </Link>

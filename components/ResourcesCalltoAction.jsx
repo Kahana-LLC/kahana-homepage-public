@@ -13,7 +13,7 @@ const ResourcesCallToAction = () => {
         </p>
         <div className="mt-4">
           <Link href="/schedule-demo">
-            <button className="inline-block px-6 py-3 bg-[#21706c] text-white font-bold rounded-md hover:bg-[#15514f] transition-colors">
+            <button className="inline-block px-6 py-3 bg-[#788B59] text-white font-bold rounded-md hover:bg-[#728552] transition-colors">
               Schedule a Demo
             </button>
           </Link>

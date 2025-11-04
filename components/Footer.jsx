@@ -53,7 +53,7 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className="relative bg-gradient-to-b from-[#E8F5E8] to-[#D4F1D4] text-kahana-primary font-style before:absolute before:inset-0 before:bg-[radial-gradient(circle_at_top,#2ECC71/0.1,transparent_70%)] before:pointer-events-none" aria-labelledby="footer-heading">
+    <footer className="relative bg-gradient-to-b from-[#F3F8E4] to-[#F3F8E4] text-[#4A5745] font-style before:absolute before:inset-0 before:bg-[radial-gradient(circle_at_top,#728552/0.1,transparent_70%)] before:pointer-events-none" aria-labelledby="footer-heading">
       <div className="relative">
         <h2 id="footer-heading" className="sr-only">Footer</h2>
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
@@ -62,25 +62,25 @@ export default function Footer() {
             <div>
               <button 
                 onClick={() => toggleSection('product')} 
-                className="footer-mobile-dropdown flex justify-between items-center w-full md:hidden mb-3 border border-[#21706c] text-[#21706c] font-bold py-2 px-4 rounded-md appearance-none shadow-sm"
+                className="footer-mobile-dropdown flex justify-between items-center w-full md:hidden mb-3 border border-[#788B59] text-[#788B59] font-bold py-2 px-4 rounded-md appearance-none shadow-sm"
               >
-                <h3 className="text-black font-semibold text-lg">Product</h3>
+                <h3 className="text-[#011910] font-semibold text-lg">Product</h3>
                 <svg 
                   className={`w-5 h-5 transition-transform ${openSection === 'product' ? 'rotate-180' : ''}`}
                   fill="none" 
-                  stroke="#21706c" 
+                  stroke="#788B59" 
                   viewBox="0 0 24 24"
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-              <h3 className="text-black font-semibold mb-6 text-lg hidden md:block">Product</h3>
+              <h3 className="text-[#011910] font-semibold mb-6 text-lg hidden md:block">Product</h3>
               <ul className={`space-y-4 ${openSection === 'product' || !isMobile ? 'block' : 'hidden'}`}>
-                <li><Link href="/products/free-agentic-browser" className="text-kahana-primary hover:text-kahana-accent-coral transition-colors duration-200">Oasis Agentic Browser</Link></li>
-                <li><Link href="/products/enterprise-browser" className="text-kahana-primary hover:text-kahana-accent-coral transition-colors duration-200">Oasis Enterprise Browser</Link></li>
-                <li><Link href="/oasis-mobile" className="text-kahana-primary hover:text-kahana-accent-coral transition-colors duration-200">Oasis Mobile</Link></li>
-                <li><Link href="/oasis-augmented-reality" className="text-kahana-primary hover:text-kahana-accent-coral transition-colors duration-200">Oasis AR</Link></li>
-                <li><Link href="/products/web-application" className="text-kahana-primary hover:text-kahana-accent-coral transition-colors duration-200">Web Application</Link></li>
+                <li><Link href="/products/free-agentic-browser" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200">Oasis Agentic Browser</Link></li>
+                <li><Link href="/products/enterprise-browser" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200">Oasis Enterprise Browser</Link></li>
+                <li><Link href="/oasis-mobile" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200">Oasis Mobile</Link></li>
+                <li><Link href="/oasis-augmented-reality" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200">Oasis AR</Link></li>
+                <li><Link href="/products/web-application" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200">Web Application</Link></li>
               </ul>
             </div>
 
@@ -88,29 +88,29 @@ export default function Footer() {
             <div>
               <button 
                 onClick={() => toggleSection('useCases')} 
-                className="footer-mobile-dropdown flex justify-between items-center w-full md:hidden mb-3 border border-[#21706c] text-[#21706c] font-bold py-2 px-4 rounded-md appearance-none shadow-sm"
+                className="footer-mobile-dropdown flex justify-between items-center w-full md:hidden mb-3 border border-[#788B59] text-[#788B59] font-bold py-2 px-4 rounded-md appearance-none shadow-sm"
               >
-                <h3 className="text-black font-semibold text-lg">Use Cases</h3>
+                <h3 className="text-[#011910] font-semibold text-lg">Use Cases</h3>
                 <svg 
                   className={`w-5 h-5 transition-transform ${openSection === 'useCases' ? 'rotate-180' : ''}`}
                   fill="none" 
-                  stroke="#21706c" 
+                  stroke="#788B59" 
                   viewBox="0 0 24 24"
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-              <h3 className="text-black font-semibold mb-6 text-lg hidden md:block">Use Cases</h3>
+              <h3 className="text-[#011910] font-semibold mb-6 text-lg hidden md:block">Use Cases</h3>
               <ul className={`space-y-4 ${openSection === 'useCases' || !isMobile ? 'block' : 'hidden'}`}>
-                <li><Link href="/solutions/saas-and-web-apps" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">SaaS & Web Apps</Link></li>
-                <li><Link href="/solutions/remote-workforce" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">Remote Workforce Security</Link></li>
-                <li><Link href="/solutions/merger-integration" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">Merger Integration</Link></li>
-                <li><Link href="/solutions/external-workforce" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">External Workforce Access</Link></li>
-                <li><Link href="/solutions/vdi-reduction" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">VDI Reduction</Link></li>
-                <li><Link href="/solutions/zero-trust-security" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">Zero Trust Security</Link></li>
-                <li><Link href="/solutions/privileged-user-management" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">Privileged User Management</Link></li>
-                <li><Link href="/solutions/secure-browsing" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">Secure Web Browsing</Link></li>
-                <li><Link href="/solutions/workplace-enablement" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">Workplace Enablement</Link></li>
+                <li><Link href="/solutions/saas-and-web-apps" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200">SaaS & Web Apps</Link></li>
+                <li><Link href="/solutions/remote-workforce" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200">Remote Workforce Security</Link></li>
+                <li><Link href="/solutions/merger-integration" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200">Merger Integration</Link></li>
+                <li><Link href="/solutions/external-workforce" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200">External Workforce Access</Link></li>
+                <li><Link href="/solutions/vdi-reduction" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200">VDI Reduction</Link></li>
+                <li><Link href="/solutions/zero-trust-security" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200">Zero Trust Security</Link></li>
+                <li><Link href="/solutions/privileged-user-management" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200">Privileged User Management</Link></li>
+                <li><Link href="/solutions/secure-browsing" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200">Secure Web Browsing</Link></li>
+                <li><Link href="/solutions/workplace-enablement" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200">Workplace Enablement</Link></li>
               </ul>
             </div>
 
@@ -118,26 +118,26 @@ export default function Footer() {
             <div>
               <button 
                 onClick={() => toggleSection('learn')} 
-                className="footer-mobile-dropdown flex justify-between items-center w-full md:hidden mb-3 border border-[#21706c] text-[#21706c] font-bold py-2 px-4 rounded-md appearance-none shadow-sm"
+                className="footer-mobile-dropdown flex justify-between items-center w-full md:hidden mb-3 border border-[#788B59] text-[#788B59] font-bold py-2 px-4 rounded-md appearance-none shadow-sm"
               >
-                <h3 className="text-black font-semibold text-lg">Learn</h3>
+                <h3 className="text-[#011910] font-semibold text-lg">Learn</h3>
                 <svg 
                   className={`w-5 h-5 transition-transform ${openSection === 'learn' ? 'rotate-180' : ''}`}
                   fill="none" 
-                  stroke="#21706c" 
+                  stroke="#788B59" 
                   viewBox="0 0 24 24"
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-              <h3 className="text-black font-semibold mb-6 text-lg hidden md:block">Learn</h3>
+              <h3 className="text-[#011910] font-semibold mb-6 text-lg hidden md:block">Learn</h3>
               <ul className={`space-y-4 ${openSection === 'learn' || !isMobile ? 'block' : 'hidden'}`}>
-                <li><Link href="/blog" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">Blog</Link></li>
-                <li><Link href="/docs" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">Docs</Link></li>
-                <li><Link href="/white-paper-future-of-ergonomic-work" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">White Paper</Link></li>
-                <li><Link href="/buyers-guide" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">Buyer Guide</Link></li>
-                <li><Link href="/subscribe-to-insights" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">Newsletter</Link></li>
-                <li><Link href="/community" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">Join Discord</Link></li>
+                <li><Link href="/blog" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200">Blog</Link></li>
+                <li><Link href="/docs" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200">Docs</Link></li>
+                <li><Link href="/white-paper-future-of-ergonomic-work" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200">White Paper</Link></li>
+                <li><Link href="/buyers-guide" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200">Buyer Guide</Link></li>
+                <li><Link href="/subscribe-to-insights" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200">Newsletter</Link></li>
+                <li><Link href="/community" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200">Join Discord</Link></li>
               </ul>
             </div>
 
@@ -145,30 +145,30 @@ export default function Footer() {
             <div>
               <button 
                 onClick={() => toggleSection('markets')} 
-                className="footer-mobile-dropdown flex justify-between items-center w-full md:hidden mb-3 border border-[#21706c] text-[#21706c] font-bold py-2 px-4 rounded-md appearance-none shadow-sm"
+                className="footer-mobile-dropdown flex justify-between items-center w-full md:hidden mb-3 border border-[#788B59] text-[#788B59] font-bold py-2 px-4 rounded-md appearance-none shadow-sm"
               >
-                <h3 className="text-black font-semibold text-lg">Markets</h3>
+                <h3 className="text-[#011910] font-semibold text-lg">Markets</h3>
                 <svg 
                   className={`w-5 h-5 transition-transform ${openSection === 'markets' ? 'rotate-180' : ''}`}
                   fill="none" 
-                  stroke="#21706c" 
+                  stroke="#788B59" 
                   viewBox="0 0 24 24"
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-              <h3 className="text-black font-semibold mb-6 text-lg hidden md:block">Markets</h3>
+              <h3 className="text-[#011910] font-semibold mb-6 text-lg hidden md:block">Markets</h3>
               <ul className={`space-y-4 ${openSection === 'markets' || !isMobile ? 'block' : 'hidden'}`}>
-                <li><Link href="/markets/manufacturing" className="text-kahana-primary hover:text-kahana-accent-coral transition-colors duration-200">Manufacturing</Link></li>
-                <li><Link href="/markets/professional" className="text-kahana-primary hover:text-kahana-accent-coral transition-colors duration-200">Professional Services</Link></li>
-                <li><Link href="/markets/healthcare" className="text-kahana-primary hover:text-kahana-accent-coral transition-colors duration-200">Healthcare</Link></li>
-                <li><Link href="/markets/finance" className="text-kahana-primary hover:text-kahana-accent-coral transition-colors duration-200">Finance</Link></li>
-                <li><Link href="/markets/energy-utilities" className="text-kahana-primary hover:text-kahana-accent-coral transition-colors duration-200">Energy & Utilities</Link></li>
-                <li><Link href="/markets/retail" className="text-kahana-primary hover:text-kahana-accent-coral transition-colors duration-200">Retail & E-commerce</Link></li>
-                <li><Link href="/markets/government" className="text-kahana-primary hover:text-kahana-accent-coral transition-colors duration-200">Government & Public Sector</Link></li>
-                <li><Link href="/markets/technology" className="text-kahana-primary hover:text-kahana-accent-coral transition-colors duration-200">Technology</Link></li>
-                <li><Link href="/markets/education" className="text-kahana-primary hover:text-kahana-accent-coral transition-colors duration-200">Education</Link></li>
-                <li><Link href="/markets/hospitality" className="text-kahana-primary hover:text-kahana-accent-coral transition-colors duration-200">Hospitality</Link></li>
+                <li><Link href="/markets/manufacturing" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200">Manufacturing</Link></li>
+                <li><Link href="/markets/professional" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200">Professional Services</Link></li>
+                <li><Link href="/markets/healthcare" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200">Healthcare</Link></li>
+                <li><Link href="/markets/finance" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200">Finance</Link></li>
+                <li><Link href="/markets/energy-utilities" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200">Energy & Utilities</Link></li>
+                <li><Link href="/markets/retail" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200">Retail & E-commerce</Link></li>
+                <li><Link href="/markets/government" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200">Government & Public Sector</Link></li>
+                <li><Link href="/markets/technology" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200">Technology</Link></li>
+                <li><Link href="/markets/education" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200">Education</Link></li>
+                <li><Link href="/markets/hospitality" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200">Hospitality</Link></li>
               </ul>
             </div>
 
@@ -176,37 +176,37 @@ export default function Footer() {
             <div>
               <button 
                 onClick={() => toggleSection('about')} 
-                className="footer-mobile-dropdown flex justify-between items-center w-full md:hidden mb-3 border border-[#21706c] text-[#21706c] font-bold py-2 px-4 rounded-md appearance-none shadow-sm"
+                className="footer-mobile-dropdown flex justify-between items-center w-full md:hidden mb-3 border border-[#788B59] text-[#788B59] font-bold py-2 px-4 rounded-md appearance-none shadow-sm"
               >
-                <h3 className="text-black font-semibold text-lg">About</h3>
+                <h3 className="text-[#011910] font-semibold text-lg">About</h3>
                 <svg 
                   className={`w-5 h-5 transition-transform ${openSection === 'about' ? 'rotate-180' : ''}`}
                   fill="none" 
-                  stroke="#21706c" 
+                  stroke="#788B59" 
                   viewBox="0 0 24 24"
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-              <h3 className="text-black font-semibold mb-6 text-lg hidden md:block">About</h3>
+              <h3 className="text-[#011910] font-semibold mb-6 text-lg hidden md:block">About</h3>
               <ul className={`space-y-4 ${openSection === 'about' || !isMobile ? 'block' : 'hidden'}`}>
-                <li><Link href="/about" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">About Kahana</Link></li>
-                <li><Link href="/support" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">Support</Link></li>
-                <li><Link href="/careers" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200">Careers</Link></li>
+                <li><Link href="/about" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200">About Kahana</Link></li>
+                <li><Link href="/support" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200">Support</Link></li>
+                <li><Link href="/careers" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200">Careers</Link></li>
               </ul>
             </div>
           </div>
 
-          <div className="mt-16 pt-8 border-t border-kahana-secondary-light/20">
+          <div className="mt-16 pt-8 border-t border-[#728552]/20">
             <div className="flex flex-col md:flex-row items-center justify-between">
               <div className="flex items-center space-x-8">
-                <span className="text-kahana-primary text-sm">&copy; Kahana Group Inc., 2025. All rights reserved</span>
+                <span className="text-[#4A5745] text-sm">&copy; Kahana Group Inc., 2025. All rights reserved</span>
                 <div className="hidden md:flex items-center space-x-8">
-                  <Link href="/privacy-policy" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200 text-sm">Privacy</Link>
-                  <Link href="/terms-and-conditions" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200 text-sm">Terms</Link>
-                  <Link href="/right-to-work" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200 text-sm">Right to Work</Link>
-                  <Link href="/sales" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200 text-sm">Contact Sales</Link>
-                  <Link href="/oasis-feedback-survey" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200 text-sm">Feedback Survey</Link>
+                  <Link href="/privacy-policy" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 text-sm">Privacy</Link>
+                  <Link href="/terms-and-conditions" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 text-sm">Terms</Link>
+                  <Link href="/right-to-work" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 text-sm">Right to Work</Link>
+                  <Link href="/sales" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 text-sm">Contact Sales</Link>
+                  <Link href="/oasis-feedback-survey" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 text-sm">Feedback Survey</Link>
                 </div>
               </div>
               <div className="flex items-center space-x-6 mt-6 md:mt-0">
@@ -226,7 +226,7 @@ export default function Footer() {
                   href="https://x.com/KahanaHQ" 
                   target="_blank" 
                   rel="noopener noreferrer nofollow" 
-                  className="text-black hover:text-gray-600 transition-colors duration-200"
+                  className="text-[#011910] hover:text-gray-600 transition-colors duration-200"
                   aria-label="Follow Kahana on X (Twitter)"
                 >
                   <span className="sr-only">X (Twitter)</span>
@@ -272,11 +272,11 @@ export default function Footer() {
             </div>
             {/* Mobile Footer Links */}
             <div className="md:hidden mt-6 flex flex-wrap justify-center gap-6">
-              <Link href="/privacy-policy" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200 text-sm">Privacy</Link>
-              <Link href="/terms-and-conditions" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200 text-sm">Terms</Link>
-              <Link href="/right-to-work" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200 text-sm">Right to Work</Link>
-              <Link href="/sales" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200 text-sm">Contact Sales</Link>
-              <Link href="/oasis-feedback-survey" className="text-kahana-primary hover:text-kahana-accent-lavender transition-colors duration-200 text-sm">Feedback Survey</Link>
+              <Link href="/privacy-policy" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 text-sm">Privacy</Link>
+              <Link href="/terms-and-conditions" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 text-sm">Terms</Link>
+              <Link href="/right-to-work" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 text-sm">Right to Work</Link>
+              <Link href="/sales" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 text-sm">Contact Sales</Link>
+              <Link href="/oasis-feedback-survey" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 text-sm">Feedback Survey</Link>
             </div>
           </div>
         </div>

@@ -53,11 +53,11 @@ export default function FeaturesShowcase() {
     <div className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
-          <h2 className="text-base font-semibold leading-7 text-[#66C2BE]">Powerful Features</h2>
-          <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          <h2 className="text-base font-semibold leading-7 text-[#4A5745]">Powerful Features</h2>
+          <p className="mt-2 text-3xl font-bold tracking-tight text-[#4A5745] sm:text-4xl">
             Everything you need to succeed
           </p>
-          <p className="mt-6 text-lg leading-8 text-gray-600">
+          <p className="mt-6 text-lg leading-8 text-[#4A5745]">
             Our platform provides all the tools and features you need to streamline your workflow and boost productivity.
           </p>
         </div>
@@ -65,25 +65,27 @@ export default function FeaturesShowcase() {
         <div className="mx-auto mt-16 max-w-7xl">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {conceptCards.map((card, index) => (
-              <div key={index} className="bg-gradient-to-r from-kahana-accent-sky/20 via-kahana-secondary-300/10 to-kahana-accent-sky/30 rounded-xl overflow-hidden border border-kahana-primary/30 p-6 shadow-lg shadow-kahana-accent-sky/20 hover:shadow-xl hover:shadow-kahana-accent-sky/30 transition-all duration-300">
+              <div key={index} className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl overflow-hidden p-6 shadow-lg transition-all duration-300 hover:shadow-xl relative group border border-transparent hover:border-[#30400D]/20">
+                {/* Elegant accent dot */}
+                <div className="absolute top-4 right-4 w-2 h-2 rounded-full bg-[#30400D]/30 group-hover:bg-[#30400D]/60 transition-all duration-300"></div>
                 <div className="flex items-center mb-4">
-                  <div className="w-10 h-10 bg-gradient-to-br from-kahana-primary via-kahana-secondary-300 to-kahana-accent-sky rounded-full flex items-center justify-center mr-3 shadow-md shadow-kahana-accent-sky/20">
+                  <div className="w-10 h-10 bg-gradient-to-br from-[#788B59] to-[#728552] rounded-full flex items-center justify-center mr-3 shadow-md group-hover:ring-2 group-hover:ring-[#30400D]/30 transition-all duration-300">
                     <div className="text-white">
                       {card.icon}
                     </div>
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900">{card.title}</h3>
+                  <h3 className="text-lg font-semibold text-[#4A5745]">{card.title}</h3>
                 </div>
-                <p className="text-gray-600 text-sm mb-4">
+                <p className="text-[#4A5745] text-sm mb-4">
                   {card.description}
                 </p>
-                <div className="flex items-center text-gray-900 text-sm mb-4">
+                <div className="flex items-center text-[#4A5745] text-sm mb-4">
                   <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                   <span className="font-medium">{card.highlight}</span>
                 </div>
-                <Link href={card.link} className="text-kahana-primary hover:text-kahana-primary-dark text-sm font-semibold">
+                <Link href={card.link} className="text-[#4A5745] hover:text-[#728552] text-sm font-semibold transition-colors">
                       Learn more about {card.title} <span aria-hidden="true">→</span>
                 </Link>
               </div>
@@ -93,7 +95,7 @@ export default function FeaturesShowcase() {
           {/* Enterprise Browser CTA */}
           <div className="mt-12 text-center">
             <Link href="/products/enterprise-browser">
-              <button className="bg-kahana-primary text-white px-8 py-3 rounded-md font-semibold hover:bg-kahana-primary-dark transition-colors shadow-lg shadow-kahana-accent-sky/20 hover:shadow-xl hover:shadow-kahana-accent-sky/30">
+              <button className="nav-button download inline-flex items-center justify-center rounded-md text-white font-bold shadow-sm px-8 py-3 text-base no-underline hover:no-underline focus:no-underline" style={{ textDecoration: 'none', backgroundColor: '#788B59' }}>
                 Oasis Enterprise Browser
               </button>
             </Link>

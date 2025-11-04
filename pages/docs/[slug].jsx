@@ -129,22 +129,22 @@ export default function DocPage({ doc, relatedDocs }) {
 
             <div className="flex flex-col space-y-6">
               {/* Title */}
-              <h1 className="text-4xl font-bold text-gray-900">{doc.title}</h1>
+              <h1 className="text-4xl font-bold text-[#4A5745]">{doc.title}</h1>
 
               {/* Metadata */}
               <div className="flex flex-wrap items-center gap-3">
                 <AuthorCard authors={docAuthors} variant="header" />
                 <time 
                   dateTime={doc.date}
-                  className="inline-flex items-center px-3 py-1.5 rounded-full bg-gray-100 text-gray-700 text-sm"
+                  className="inline-flex items-center px-3 py-1.5 text-[#4A5745] text-sm"
                 >
-                  <FaRegCalendarAlt className="w-4 h-4 mr-2 text-gray-500" />
-                  <span className="text-gray-500 mr-1">Last updated:</span>
+                  <FaRegCalendarAlt className="w-4 h-4 mr-2" />
+                  <span className="mr-1">Last updated:</span>
                   {formatDate(doc.date)}
                 </time>
-                <div className="inline-flex items-center px-3 py-1.5 rounded-full bg-gray-100 text-gray-700 text-sm">
-                  <FaRegClock className="w-4 h-4 mr-2 text-gray-500" />
-                  <span className="text-gray-500">{readingTime} min read</span>
+                <div className="inline-flex items-center px-3 py-1.5 text-[#4A5745] text-sm">
+                  <FaRegClock className="w-4 h-4 mr-2" />
+                  <span>{readingTime} min read</span>
                 </div>
               </div>
             </div>
@@ -166,8 +166,8 @@ export default function DocPage({ doc, relatedDocs }) {
 
           {/* Related Docs */}
           {relatedDocs.length > 0 && (
-            <div className="mt-16 pt-8 border-t border-gray-200">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Related Documentation</h2>
+            <div className="mt-16 pt-8 border-t border-[#728552]/30">
+              <h2 className="text-2xl font-bold text-[#4A5745] mb-6">Related Documentation</h2>
               <div className="grid gap-6 md:grid-cols-3">
                 {relatedDocs.map((relatedDoc) => (
                   <Link
@@ -175,11 +175,11 @@ export default function DocPage({ doc, relatedDocs }) {
                     href={`/docs/${relatedDoc.slug}`}
                     className="block group"
                   >
-                    <div className="bg-gray-50 p-6 rounded-lg hover:bg-gray-100 transition-colors">
-                      <h3 className="text-lg font-semibold text-gray-900 group-hover:text-kahana-primary">
+                    <div className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 p-6 rounded-lg transition-all duration-300 hover:shadow-lg">
+                      <h3 className="text-lg font-semibold text-[#4A5745] group-hover:text-[#728552]">
                         {relatedDoc.title}
                       </h3>
-                      <p className="mt-2 text-sm text-gray-600 line-clamp-2">
+                      <p className="mt-2 text-sm text-[#4A5745] line-clamp-2">
                         {relatedDoc.description}
                       </p>
                     </div>
@@ -191,7 +191,7 @@ export default function DocPage({ doc, relatedDocs }) {
 
           {/* Author Bio Section */}
           <div className="mt-12">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">About the Author</h2>
+            <h2 className="text-2xl font-bold text-[#4A5745] mb-6">About the Author</h2>
             <AuthorCard 
               authors={docAuthors}
               variant="bio" 

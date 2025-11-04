@@ -9,8 +9,8 @@ export function AuthorHeader({ author, imageClassName, index }) {
   if (!author?.name) return null;
 
   return (
-    <div className="inline-flex items-center px-3 py-1.5 rounded-lg bg-gray-100 text-gray-700">
-      <div className="mr-2">
+    <div className="inline-flex items-center gap-1.5">
+      <div>
         <Image
           src={author.avatar || DEFAULT_AVATAR}
           alt={author.name}
@@ -22,7 +22,7 @@ export function AuthorHeader({ author, imageClassName, index }) {
         />
       </div>
       <div className="flex items-center gap-1.5">
-        <span className="text-sm font-medium">
+        <span className="text-sm font-medium text-[#4A5745]">
           {author.name}
         </span>
         {author.linkedinProfile && (
@@ -30,14 +30,14 @@ export function AuthorHeader({ author, imageClassName, index }) {
             href={author.linkedinProfile}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[#C17F11] hover:text-[#A66F0E] transition-colors"
+            className="text-[#728552] hover:text-[#788B59] transition-colors"
             title={`Connect with ${author.name} on LinkedIn`}
           >
             <FaLinkedin className="w-[14px] h-[14px]" />
           </a>
         )}
         {author.role && (
-          <span className="text-sm text-gray-500">
+          <span className="text-sm text-[#4A5745]">
             • {author.role}
           </span>
         )}
@@ -79,22 +79,24 @@ export function AuthorBioCard({ author, imageClassName, index }) {
   if (!author?.name) return null;
 
   return (
-    <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-8">
-      <div className="flex items-start gap-4">
-        <div className="-mt-1">
-          <Image
-            src={author.avatar || DEFAULT_AVATAR}
-            alt={author.name}
-            width={64}
-            height={64}
-            className={imageClassName || "rounded-lg"}
-            style={{ width: '64px', height: '64px', objectFit: 'cover' }}
-            priority
-          />
+    <div className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl shadow-lg p-8">
+      <div className="flex items-start gap-6">
+        <div className="flex-shrink-0">
+          <div className="overflow-hidden rounded-lg">
+            <Image
+              src={author.avatar || DEFAULT_AVATAR}
+              alt={author.name}
+              width={80}
+              height={80}
+              className="rounded-lg"
+              style={{ width: '80px', height: '80px', objectFit: 'cover' }}
+              priority
+            />
+          </div>
         </div>
         <div className="flex-1">
-          <div className="flex items-center gap-2 mb-1">
-            <span className="font-medium text-lg text-gray-900">
+          <div className="flex items-center gap-2 mb-2">
+            <span className="font-bold text-lg text-[#4A5745]">
               {author.name}
             </span>
             {author.linkedinProfile && (
@@ -102,7 +104,7 @@ export function AuthorBioCard({ author, imageClassName, index }) {
                 href={author.linkedinProfile}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#C17F11] hover:text-[#A66F0E] transition-colors"
+                className="text-[#728552] hover:text-[#788B59] transition-colors"
                 title={`Connect with ${author.name} on LinkedIn`}
               >
                 <FaLinkedin className="w-4 h-4" />
@@ -110,12 +112,12 @@ export function AuthorBioCard({ author, imageClassName, index }) {
             )}
           </div>
           {author.role && (
-            <div className="text-sm text-gray-600 mb-4">
+            <div className="text-sm font-medium text-[#4A5745] mb-4">
               {author.role}
             </div>
           )}
           {author.bio && (
-            <p className="text-gray-700 text-base">
+            <p className="text-[#4A5745] text-base leading-relaxed">
               {author.bio}
             </p>
           )}
@@ -168,7 +170,7 @@ export function AuthorReference({ author, imageClassName }) {
         style={{ width: '24px', height: '24px', objectFit: 'cover' }}
         priority
       />
-      <span className="text-sm text-gray-600">
+      <span className="text-sm text-[#4A5745]">
         {author.name}
       </span>
     </div>

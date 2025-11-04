@@ -111,7 +111,7 @@ export default function BlogIndex({ posts = [] }) {
         <meta name="description" content="Latest insights and updates from the Kahana team on enterprise browser security, productivity, and technology trends." />
       </Head>
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <main className="min-h-screen bg-white max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Breadcrumbs */}
         <div className="mb-8">
           <Breadcrumbs 
@@ -124,10 +124,10 @@ export default function BlogIndex({ posts = [] }) {
 
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+          <h1 className="text-4xl font-bold text-[#011910] mb-4">
             Kahana Blog
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-[#4A5745] max-w-2xl mx-auto">
             Insights and updates on enterprise browser security, productivity, and technology trends
           </p>
         </div>
@@ -227,10 +227,10 @@ export default function BlogIndex({ posts = [] }) {
           </>
         ) : (
           <div className="text-center py-12">
-            <h3 className="text-lg font-medium text-gray-900 mb-2">
+            <h3 className="text-lg font-medium text-[#011910] mb-2">
               No articles found
             </h3>
-            <p className="text-gray-600">
+            <p className="text-[#4A5745]">
               Try adjusting your search or filter to find what you're looking for.
             </p>
           </div>

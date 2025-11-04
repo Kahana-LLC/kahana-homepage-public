@@ -97,6 +97,26 @@ module.exports = {
         },
       },
       fontFamily: {
+        "bricolage": [
+          '"Bricolage Grotesque"',
+          "system-ui",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "Segoe UI",
+          "Roboto",
+          "sans-serif",
+        ],
+        "geist": [
+          "Geist",
+          "system-ui",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "Segoe UI",
+          "Roboto",
+          "Helvetica Neue",
+          "Arial",
+          "sans-serif",
+        ],
         "sf-pro": [
           '"SF Pro Display"',
           "system-ui",

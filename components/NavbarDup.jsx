@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import whiteKahanaLogo from '../assets/kahana_logo_combined.svg';
+import whiteKahanaLogo from '../assets/kahana_logo_transparent.svg';
 
 function NavBar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -44,7 +44,7 @@ function NavBar() {
       
       {/* Fixed navbar */}
       <nav className={`fixed top-0 left-0 w-full h-16 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white/70 backdrop-blur-md shadow-md' : 'bg-white'
+        isScrolled ? 'bg-[#30400D]/95 backdrop-blur-md shadow-md' : 'bg-[#30400D]'
       }`}>
         <style jsx>{`
           .font-style {
@@ -83,13 +83,13 @@ function NavBar() {
           }
 
           .logo {
-            height: 42px;
+            height: 56px;
             width: auto;
           }
 
           @media (max-width: 768px) {
             .logo {
-              height: 32px;
+              height: 40px;
               width: auto;
             }
           }
@@ -103,7 +103,7 @@ function NavBar() {
 
           .nav-link {
             position: relative;
-            color: #333;
+            color: #ffffff;
             font-size: 1rem;
             font-weight: 500;
             text-decoration: none;
@@ -116,7 +116,7 @@ function NavBar() {
           }
 
           .nav-link:hover {
-            color: var(--kahana-primary);
+            color: #E0D48C;
           }
 
           .dropdown {
@@ -271,7 +271,7 @@ function NavBar() {
             justify-content: center;
             align-items: center;
             padding: 0.5rem 1rem;
-            border-radius: 0.375rem;
+            border-radius: 27.5px !important;
             transition: all 0.3s ease;
             font-size: 0.875rem;
             font-weight: 500;
@@ -285,27 +285,29 @@ function NavBar() {
           }
 
           .nav-button.download {
-            color: #66C2BE;
-            background-color: transparent;
+            background-color: #788B59 !important;
+            color: white !important;
+            border: none !important;
           }
 
           .nav-button.download:hover {
-            color: #55B3AF;
+            background-color: #728552 !important;
+            color: white !important;
           }
 
           .nav-button.get-in-touch {
-            background-color: #66C2BE;
-            color: white;
+            background-color: #788B59 !important;
+            color: white !important;
             position: relative;
             z-index: 1;
-            border: none;
+            border: none !important;
             transition: all 0.3s ease;
           }
 
           .nav-button.get-in-touch:hover {
-            background-color: #55B3AF;
+            background-color: #728552 !important;
             transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(102, 194, 190, 0.25);
+            box-shadow: 0 4px 12px rgba(120, 139, 89, 0.25);
           }
 
           .mobile-menu {
@@ -331,6 +333,19 @@ function NavBar() {
             display: flex;
             flex-direction: column;
             gap: 0.75rem;
+          }
+
+          .menu-links button {
+            color: #ffffff !important;
+          }
+
+          .menu-links a {
+            text-decoration: none !important;
+            color: inherit !important;
+          }
+
+          .menu-links button span {
+            color: #ffffff !important;
           }
 
           .mobile-link {
@@ -387,7 +402,7 @@ function NavBar() {
         `}</style>
         <div className="nav-content">
           <Link href="/" className="flex items-center">
-            <div className="relative h-[42px] w-[200px]">
+            <div className="relative h-[56px] w-[240px]">
               <Image
                 src={whiteKahanaLogo}
                 alt="Kahana Logo"
@@ -550,15 +565,15 @@ function NavBar() {
 
           {/* Buttons and Hamburger Menu */}
           <div className="flex items-center gap-4">
-            <div className="nav-buttons flex">
+            <div className="nav-buttons flex gap-2">
               <Link href="/schedule-demo">
-                <button className="nav-button download inline-flex items-center rounded-md bg-[#21706c] text-white font-bold shadow-sm hover:bg-[#15514f] px-2 py-1.5 text-xs md:px-4 md:py-2 md:text-sm">
+                <button className="nav-button download inline-flex items-center justify-center rounded-[27.5px] bg-gradient-to-r from-[#4F571F] to-[#8A8D3E] text-white font-bold px-4 py-2.5 text-xs md:px-6 md:py-3 md:text-sm hover:from-[#8A8D3E] hover:to-[#4F571F] transition-all shadow-sm">
                   <span className="md:hidden">Demo</span>
                   <span className="hidden md:inline">Schedule Demo</span>
                 </button>
               </Link>
               <Link href="/contact">
-                <button className="nav-button get-in-touch bg-white text-[#21706c] font-bold hover:bg-gray-100">
+                <button className="nav-button get-in-touch inline-flex items-center justify-center rounded-[27.5px] bg-gradient-to-r from-[#4F571F] to-[#8A8D3E] text-white font-bold px-4 py-2.5 text-xs md:px-6 md:py-3 md:text-sm hover:from-[#8A8D3E] hover:to-[#4F571F] transition-all shadow-sm">
                   <span className="md:hidden">Contact</span>
                   <span className="hidden md:inline">Contact</span>
                 </button>
@@ -568,14 +583,14 @@ function NavBar() {
             {/* Hamburger Menu */}
             <button
               onClick={toggleMobileMenu}
-              className="lg:hidden"
+              className="lg:hidden inline-flex items-center justify-center rounded-[27.5px] bg-gradient-to-r from-[#4F571F] to-[#8A8D3E] text-white font-bold px-3 py-2 hover:from-[#8A8D3E] hover:to-[#4F571F] transition-all shadow-sm"
               aria-label="Mobile Menu"
             >
               {isMobileMenuOpen ? (
                 <svg
-                  className="w-6 h-6"
+                  className="w-5 h-5"
                   fill="none"
-                  stroke="white"
+                  stroke="currentColor"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -588,9 +603,9 @@ function NavBar() {
                 </svg>
               ) : (
                 <svg
-                  className="w-6 h-6"
+                  className="w-5 h-5"
                   fill="none"
-                  stroke="white"
+                  stroke="currentColor"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -612,12 +627,12 @@ function NavBar() {
             {/* Contact Buttons at Top */}
             <div className="flex flex-col gap-2 mb-4">
               <Link href="/schedule-demo" className="text-center">
-                <button className="w-full py-2 px-4 bg-[#21706c] text-white font-bold rounded-md hover:bg-[#15514f] transition-colors">
+                <button className="w-full py-2.5 px-6 bg-gradient-to-r from-[#4F571F] to-[#8A8D3E] text-white font-bold rounded-[27.5px] hover:from-[#8A8D3E] hover:to-[#4F571F] transition-all shadow-sm">
                   Schedule Demo
                 </button>
               </Link>
               <Link href="/contact" className="text-center">
-                <button className="w-full py-2 px-4 bg-white text-[#21706c] font-bold rounded-md hover:bg-gray-100 transition-colors">
+                <button className="w-full py-2.5 px-6 bg-gradient-to-r from-[#4F571F] to-[#8A8D3E] text-white font-bold rounded-[27.5px] hover:from-[#8A8D3E] hover:to-[#4F571F] transition-all shadow-sm">
                   Contact
                 </button>
               </Link>
@@ -644,7 +659,7 @@ function NavBar() {
               </div>
               <div className="flex-1">
                 <div className="font-medium text-gray-900">Enterprise Browser Buyer Guide</div>
-                <div className="text-xs text-gray-500 mt-1">Comprehensive guide for enterprise decision makers</div>
+                <div className="text-xs text-[#4A5745] mt-1">Comprehensive guide for enterprise decision makers</div>
               </div>
             </Link>
             

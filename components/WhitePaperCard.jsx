@@ -19,7 +19,7 @@ export default function WhitePaperCard({ whitePaper }) {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden border border-gray-200">
+    <div className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
       {/* Cover Image */}
       <div className="relative h-48 w-full">
         <Image
@@ -79,7 +79,7 @@ export default function WhitePaperCard({ whitePaper }) {
                 </span>
               ))}
               {whitePaper.tags.length > 3 && (
-                <span className="text-gray-400 text-xs px-2 py-1">
+                <span className="text-[#4A5745] text-xs px-2 py-1">
                   +{whitePaper.tags.length - 3} more
                 </span>
               )}
@@ -88,7 +88,7 @@ export default function WhitePaperCard({ whitePaper }) {
         )}
 
         {/* Metadata */}
-        <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
+        <div className="flex items-center justify-between text-sm text-[#4A5745] mb-4">
           <div className="flex items-center space-x-4">
             <div className="flex items-center">
               <FaRegCalendarAlt className="w-4 h-4 mr-1" />

@@ -105,26 +105,10 @@ export default function OasisMobile() {
       <Head>
         <title>Join Oasis Mobile Waitlist | Kahana</title>
         <meta name="description" content="Join the Oasis mobile browser waitlist - be among the first to experience the future of privacy-focused mobile browsing" />
-        <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap" rel="stylesheet" />
       </Head>
-      <style jsx global>{`
-        .oasis-mobile-ptserif h1,
-        .oasis-mobile-ptserif h2,
-        .oasis-mobile-ptserif h3,
-        .oasis-mobile-ptserif h4,
-        .oasis-mobile-ptserif h5,
-        .oasis-mobile-ptserif h6,
-        .oasis-mobile-ptserif p,
-        .oasis-mobile-ptserif li,
-        .oasis-mobile-ptserif span,
-        .oasis-mobile-ptserif a,
-        .oasis-mobile-ptserif strong {
-          font-family: 'PT Serif', serif !important;
-        }
-      `}</style>
-      <div className="oasis-mobile-ptserif">
+      <div className="oasis-mobile">
         <NavBar />
-        <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white pt-24 pb-16">
+        <main className="min-h-screen bg-white pt-24 pb-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="lg:grid lg:grid-cols-12 lg:gap-16">
               {/* Left Column - Content */}
@@ -145,7 +129,7 @@ export default function OasisMobile() {
 
                 {/* Form Section - Now appears first on mobile */}
                 <div className="lg:hidden mb-12">
-                  <div className="bg-white rounded-xl shadow-xl border border-[#A5DAD8]/30 p-8">
+                  <div className="bg-white rounded-xl shadow-xl p-8">
                     {renderForm()}
                   </div>
                   {/* Mobile: Show video below form */}
@@ -169,7 +153,7 @@ export default function OasisMobile() {
                       {steps.map((step, index) => (
                         <div 
                           key={step.id} 
-                          className="bg-gradient-to-r from-[#E3DFF1]/20 via-[#8CB7D0]/10 to-[#E3DFF1]/30 rounded-xl overflow-hidden border border-[#A5DAD8]/30 p-6 shadow-lg shadow-[#E3DFF1]/20 hover:shadow-xl hover:shadow-[#E3DFF1]/30 transition-all duration-300"
+                          className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl overflow-hidden p-6 shadow-lg transition-all duration-300 hover:shadow-xl"
                           onMouseEnter={() => setHoveredStep(index)}
                           onMouseLeave={() => setHoveredStep(0)}
                         >

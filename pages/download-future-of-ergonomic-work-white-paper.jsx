@@ -100,14 +100,14 @@ export default function DownloadWhitePaperPage() {
 
         {loadError && retryCount < MAX_RETRIES && (
           <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center">
-            <p className="text-gray-600 mb-4">Having trouble loading the form? We'll try again automatically.</p>
-            <p className="text-sm text-gray-500">Attempt {retryCount + 1} of {MAX_RETRIES}</p>
+            <p className="text-[#4A5745] mb-4">Having trouble loading the form? We'll try again automatically.</p>
+            <p className="text-sm text-[#4A5745]">Attempt {retryCount + 1} of {MAX_RETRIES}</p>
           </div>
         )}
 
         {loadError && retryCount >= MAX_RETRIES && (
           <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center">
-            <p className="text-gray-600 mb-4">We're having trouble loading the form. Please try refreshing the page.</p>
+            <p className="text-[#4A5745] mb-4">We're having trouble loading the form. Please try refreshing the page.</p>
             <button
               onClick={() => window.location.reload()}
               className="px-4 py-2 bg-[#66C2BE] text-white rounded-md hover:bg-[#4A9E9A] transition-colors"
@@ -136,13 +136,13 @@ export default function DownloadWhitePaperPage() {
       {/* Disclaimer Section */}
       <div className="mt-4 pt-4 bg-white relative -mt-12 pt-12 z-20">
         <div className="text-center">
-          <p className="text-sm text-gray-600 mb-3">
+          <p className="text-sm text-[#4A5745] mb-3">
             <strong>Contact us</strong> - for an immediate response, contact us directly at{' '}
             <Link href="/contact" className="text-[#66C2BE] hover:text-[#4A9E9A] underline">
               contact us
             </Link>
           </p>
-          <p className="text-xs text-gray-500">
+          <p className="text-xs text-[#4A5745]">
             By submitting this form you consent to be contacted by Kahana, and acknowledge our{' '}
             <Link href="/privacy-policy" className="text-[#66C2BE] hover:text-[#4A9E9A] underline">
               Privacy Policy
@@ -163,24 +163,24 @@ export default function DownloadWhitePaperPage() {
 
       <NavbarDup />
 
-      <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white pt-24 pb-16">
+      <main className="min-h-screen bg-white pt-24 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:grid lg:grid-cols-12 lg:gap-16">
             {/* Left Column - Content */}
             <div className="lg:col-span-7">
               <div className="text-center lg:text-left mb-12">
                 <h2 className="text-base font-semibold leading-7 text-[#66C2BE] mb-3">Free White Paper</h2>
-                <h1 className="text-4xl font-bold text-gray-900 sm:text-5xl">
+                <h1 className="text-4xl font-bold text-[#011910] sm:text-5xl">
                   The Future of Ergonomic Work
                 </h1>
-                <p className="mt-6 text-xl text-gray-600">
+                <p className="mt-6 text-xl text-[#4A5745]">
                   Explore how AR/VR technology is revolutionizing workplace productivity and creating more ergonomic, efficient work environments. This comprehensive white paper examines the health crisis of sedentary work, technological solutions that could free us from desk-bound productivity, and the companies leading the AR glasses revolution.
                 </p>
               </div>
 
               {/* Key Benefits */}
               <div className="mb-12">
-                <h3 className="text-2xl font-semibold text-gray-900 mb-6">What You'll Learn</h3>
+                <h3 className="text-2xl font-semibold text-[#011910] mb-6">What You'll Learn</h3>
                 <div className="space-y-4">
                   <div className="flex items-start">
                     <div className="flex-shrink-0">
@@ -224,7 +224,7 @@ export default function DownloadWhitePaperPage() {
 
               {/* Resource Links Section */}
               <div className="mb-12 lg:mb-0">
-                <h3 className="text-xl font-semibold text-gray-900 mb-6">Explore More Resources</h3>
+                <h3 className="text-xl font-semibold text-[#011910] mb-6">Explore More Resources</h3>
                 <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
                   {resourceLinks.map((link) => (
                     <Link
@@ -239,10 +239,10 @@ export default function DownloadWhitePaperPage() {
                           </div>
                         </div>
                       </div>
-                      <h3 className="text-lg font-semibold text-gray-900 group-hover:text-[#66C2BE] transition-colors duration-300">
+                      <h3 className="text-lg font-semibold text-[#011910] group-hover:text-[#66C2BE] transition-colors duration-300">
                         {link.name}
                       </h3>
-                      <p className="mt-2 text-sm text-gray-600">
+                      <p className="mt-2 text-sm text-[#4A5745]">
                         {link.description}
                       </p>
                     </Link>

@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import whiteKahanaLogo from '../assets/kahana_logo_wide_light.svg';
+import whiteKahanaLogo from '../assets/kahana_icon_old.svg';
 
 function Navbar() {
   return (

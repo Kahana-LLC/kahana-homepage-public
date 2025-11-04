@@ -66,20 +66,20 @@ export default function CommunityGuidelines() {
 
       <NavBar />
 
-      <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white pt-24 pb-16">
+      <main className="min-h-screen bg-white pt-24 pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-gray-900 sm:text-5xl mb-6">
+            <h1 className="text-4xl font-bold text-[#011910] sm:text-5xl mb-6">
               Community Guidelines
             </h1>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-[#4A5745]">
               Our community is built on trust, respect, and shared knowledge. These guidelines help us maintain a positive and productive environment for everyone.
             </p>
           </div>
 
           {/* Core Guidelines */}
           <div className="mb-16">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-8">Core Guidelines</h2>
+            <h2 className="text-2xl font-semibold text-[#011910] mb-8">Core Guidelines</h2>
             <div className="grid gap-6">
               {guidelines.map((guideline, index) => (
                 <div
@@ -95,10 +95,10 @@ export default function CommunityGuidelines() {
                       </div>
                     </div>
                     <div className="ml-4">
-                      <h3 className="text-lg font-semibold text-gray-900">
+                      <h3 className="text-lg font-semibold text-[#011910]">
                         {guideline.title}
                       </h3>
-                      <p className="mt-2 text-gray-600">
+                      <p className="mt-2 text-[#4A5745]">
                         {guideline.description}
                       </p>
                     </div>
@@ -110,7 +110,7 @@ export default function CommunityGuidelines() {
 
           {/* Enforcement */}
           <div className="mb-16">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-8">Enforcement</h2>
+            <h2 className="text-2xl font-semibold text-[#011910] mb-8">Enforcement</h2>
             <div className="bg-white rounded-xl shadow-lg border border-[#A5DAD8]/30 p-8">
               <div className="grid gap-6">
                 {enforcement.map((item, index) => (
@@ -121,10 +121,10 @@ export default function CommunityGuidelines() {
                       </div>
                     </div>
                     <div className="ml-4">
-                      <h3 className="text-lg font-semibold text-gray-900">
+                      <h3 className="text-lg font-semibold text-[#011910]">
                         {item.title}
                       </h3>
-                      <p className="mt-1 text-gray-600">
+                      <p className="mt-1 text-[#4A5745]">
                         {item.description}
                       </p>
                     </div>
@@ -136,8 +136,8 @@ export default function CommunityGuidelines() {
 
           {/* Contact Section */}
           <div className="bg-[#E3DFF1]/10 rounded-xl p-8 border border-[#A5DAD8]/30">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Need Help?</h2>
-            <p className="text-gray-600 mb-6">
+            <h2 className="text-2xl font-semibold text-[#011910] mb-4">Need Help?</h2>
+            <p className="text-[#4A5745] mb-6">
               If you have any questions about these guidelines or need to report a violation, please contact our community team.
             </p>
             <a

@@ -41,21 +41,21 @@ export default function Events() {
       <div className="bg-white">
         <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl font-bold text-gray-900">Upcoming Events</h1>
-            <p className="mt-4 text-xl text-gray-600">
+            <h1 className="text-4xl font-bold text-[#4A5745]">Upcoming Events</h1>
+            <p className="mt-4 text-xl text-[#4A5745]">
               Join us at our events to learn about enterprise browsing solutions and connect with experts.
             </p>
           </div>
 
           <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {upcomingEvents.map((event, index) => (
-              <div key={index} className="bg-gray-50 p-6 rounded-lg">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">{event.title}</h3>
-                <p className="text-kahana-primary mb-2">{event.date}</p>
-                <p className="text-gray-600 mb-2">{event.location}</p>
-                <p className="text-gray-600 mb-4">{event.description}</p>
+              <div key={index} className="bg-[#F3F8E4] p-6 rounded-lg">
+                <h3 className="text-xl font-semibold text-[#4A5745] mb-2">{event.title}</h3>
+                <p className="text-[#728552] mb-2">{event.date}</p>
+                <p className="text-[#4A5745] mb-2">{event.location}</p>
+                <p className="text-[#4A5745] mb-4">{event.description}</p>
                 <Link href={event.link}>
-                  <button className="bg-kahana-primary text-white px-6 py-2 rounded-md hover:bg-kahana-primary-dark transition-colors">
+                  <button className="bg-[#788B59] text-white font-bold px-6 py-3 rounded-md hover:bg-[#728552] transition-colors">
                     Learn More About {event.title}
                   </button>
                 </Link>

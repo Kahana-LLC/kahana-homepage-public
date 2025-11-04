@@ -5,6 +5,12 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        {/* Favicon */}
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2" />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico?v=2" />
+        <link rel="apple-touch-icon" href="/favicon.svg?v=2" />
+        <link rel="shortcut icon" type="image/svg+xml" href="/favicon.svg?v=2" />
+        
         {/* Google tag (gtag.js) */}
         <Script
           id="gtag-js"
@@ -67,7 +73,7 @@ export default function Document() {
           }}
         />
 
-        {/* Crisp script */}
+        {/* Crisp script - Configured to hide notification badge */}
         <Script
           id="crisp-script"
           dangerouslySetInnerHTML={{
@@ -81,6 +87,8 @@ export default function Document() {
                 s.async=1;
                 d.getElementsByTagName("head")[0].appendChild(s);
               })();
+              window.$crisp.push(["do", "chat:hide"]);
+              window.$crisp.push(["config", "badge:unread", {render: false}]);
             `,
           }}
         />

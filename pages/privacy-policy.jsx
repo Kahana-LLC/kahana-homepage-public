@@ -125,7 +125,7 @@ export default function PrivacyPolicy() {
                   Privacy Policy
                 </span>
               </h1>
-              <div className="mt-8 text-xl leading-8 text-gray-500">
+              <div className="mt-8 text-xl leading-8 text-[#4A5745]">
                 Protecting your private information is our priority. This
                 Statement of Privacy applies to https://kahana.co/ ("Site") and
                 Kahana Group Inc. and governs data collection and usage. For the
