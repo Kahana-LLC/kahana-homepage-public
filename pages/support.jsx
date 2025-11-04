@@ -25,7 +25,7 @@ export default function Support() {
 
           <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {/* Documentation CTA */}
-            <div className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl p-8">
+            <div className="bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] rounded-xl p-8 border border-[#728552]">
               <div className="flex items-center mb-4">
                 <svg
                   className="w-8 h-8 text-[#728552] mr-3"
@@ -59,7 +59,7 @@ export default function Support() {
             {/* FAQ CTA */}
 
             {/* Blog CTA */}
-            <div className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl p-8">
+            <div className="bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] rounded-xl p-8 border border-[#728552]">
               <div className="flex items-center mb-4">
                 <svg
                   className="w-8 h-8 text-[#728552] mr-3"
@@ -80,7 +80,7 @@ export default function Support() {
                 Stay updated with the latest insights, industry trends, and best practices in enterprise browsing security.
               </p>
               <Link href="/blog">
-                <button className="bg-[#788B59] text-white px-6 py-2 rounded-md font-semibold hover:bg-[#728552] transition-colors shadow-lg shadow-kahana-accent-sky/20 hover:shadow-xl hover:shadow-kahana-accent-sky/30"
+                <button className="bg-[#788B59] text-white font-bold px-6 py-3 rounded-md hover:bg-[#728552] transition-colors"
                   
                 >
                   <span >

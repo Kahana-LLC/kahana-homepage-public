@@ -214,7 +214,7 @@ export default function FreeAgenticBrowser() {
               A productivity-focused, modern browser designed for personal use, featuring smart organization tools, AI-powered assistance, and a seamless browsing experience. Boost your productivity and take control of your digital workflow.
             </p>
             <Link href="/oasis-waitlist">
-              <button className="bg-[#788B59] text-white px-8 py-3 rounded-md font-semibold hover:bg-[#728552] transition-colors shadow-lg shadow-kahana-accent-sky/20 hover:shadow-xl hover:shadow-kahana-accent-sky/30">
+              <button className="bg-[#788B59] text-white font-bold px-6 py-3 rounded-md hover:bg-[#728552] transition-colors">
                 Join Waitlist
               </button>
             </Link>

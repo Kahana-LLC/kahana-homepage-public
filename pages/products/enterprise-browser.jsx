@@ -263,7 +263,7 @@ export default function EnterpriseBrowser() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/schedule-demo">
-                <button className="bg-[#788B59] text-white font-bold px-8 py-3 rounded-md hover:bg-[#728552] transition-colors shadow-lg shadow-kahana-accent-sky/20 hover:shadow-xl hover:shadow-kahana-accent-sky/30 no-underline">
+                <button className="bg-[#788B59] text-white font-bold px-6 py-3 rounded-md hover:bg-[#728552] transition-colors">
                   Schedule Demo
                 </button>
               </Link>

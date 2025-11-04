@@ -30,7 +30,7 @@ export default function Customers() {
                 </p>
                 <div className="mt-6">
                   <Link href="/contact">
-                    <button className="bg-[#788B59] text-white px-6 py-2 rounded-md hover:bg-[#728552] transition-colors">
+                    <button className="bg-[#788B59] text-white font-bold px-6 py-3 rounded-md hover:bg-[#728552] transition-colors">
                       Contact Us
                     </button>
                   </Link>

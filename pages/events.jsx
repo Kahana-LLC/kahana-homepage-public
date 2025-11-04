@@ -55,7 +55,7 @@ export default function Events() {
                 <p className="text-[#4A5745] mb-2">{event.location}</p>
                 <p className="text-[#4A5745] mb-4">{event.description}</p>
                 <Link href={event.link}>
-                  <button className="bg-[#788B59] text-white px-6 py-2 rounded-md hover:bg-[#728552] transition-colors">
+                  <button className="bg-[#788B59] text-white font-bold px-6 py-3 rounded-md hover:bg-[#728552] transition-colors">
                     Learn More About {event.title}
                   </button>
                 </Link>

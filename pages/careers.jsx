@@ -32,7 +32,7 @@ export default function Careers() {
                 we'd love to hear from you.
               </p>
               <Link href="/contact">
-                <button className="bg-[#788B59] text-white px-6 py-2 rounded-md hover:bg-[#728552] transition-colors"
+                <button className="bg-[#788B59] text-white font-bold px-6 py-3 rounded-md hover:bg-[#728552] transition-colors"
                   
                 >
                   <span >

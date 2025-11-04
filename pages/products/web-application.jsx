@@ -200,7 +200,7 @@ export default function WebApplication() {
               A simple platform to help you stay organized, productive, and grow your projects. Keep your hubs private, share them publicly, or monetize - it's your space to bring your ideas to life.
             </p>
             <Link href="/pricing">
-              <button className="bg-[#788B59] text-white px-8 py-3 rounded-md font-semibold hover:bg-[#728552] transition-colors shadow-lg shadow-kahana-accent-sky/20 hover:shadow-xl hover:shadow-kahana-accent-sky/30">
+              <button className="bg-[#788B59] text-white font-bold px-6 py-3 rounded-md hover:bg-[#728552] transition-colors">
                 Plans & Pricing
               </button>
             </Link>
