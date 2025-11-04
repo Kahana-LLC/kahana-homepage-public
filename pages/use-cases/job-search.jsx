@@ -220,24 +220,8 @@ export default function JobSearchWaitlist() {
       <Head>
         <title>Transform Your Job Search with Oasis | Kahana</title>
         <meta name="description" content="Join the Oasis waitlist for job search revolution - AI-powered job organization, tracking, and matching to find your dream career" />
-        <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap" rel="stylesheet" />
       </Head>
-      <style jsx global>{`
-        .oasis-waitlist-ptserif h1,
-        .oasis-waitlist-ptserif h2,
-        .oasis-waitlist-ptserif h3,
-        .oasis-waitlist-ptserif h4,
-        .oasis-waitlist-ptserif h5,
-        .oasis-waitlist-ptserif h6,
-        .oasis-waitlist-ptserif p,
-        .oasis-waitlist-ptserif li,
-        .oasis-waitlist-ptserif span,
-        .oasis-waitlist-ptserif a,
-        .oasis-waitlist-ptserif strong {
-          font-family: 'PT Serif', serif !important;
-        }
-      `}</style>
-      <div className="oasis-waitlist-ptserif">
+      <div className="oasis-waitlist">
         <NavBar />
         <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white pt-24 pb-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

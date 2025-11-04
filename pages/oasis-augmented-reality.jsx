@@ -105,24 +105,8 @@ export default function OasisAugmentedReality() {
       <Head>
         <title>Join Oasis AR Waitlist | Kahana</title>
         <meta name="description" content="Join the Oasis augmented reality browser waitlist - be among the first to experience the future of AR-powered browsing" />
-        <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap" rel="stylesheet" />
       </Head>
-      <style jsx global>{`
-        .oasis-ar-ptserif h1,
-        .oasis-ar-ptserif h2,
-        .oasis-ar-ptserif h3,
-        .oasis-ar-ptserif h4,
-        .oasis-ar-ptserif h5,
-        .oasis-ar-ptserif h6,
-        .oasis-ar-ptserif p,
-        .oasis-ar-ptserif li,
-        .oasis-ar-ptserif span,
-        .oasis-ar-ptserif a,
-        .oasis-ar-ptserif strong {
-          font-family: 'PT Serif', serif !important;
-        }
-      `}</style>
-      <div className="oasis-ar-ptserif">
+      <div className="oasis-ar">
         <NavBar />
         <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white pt-24 pb-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

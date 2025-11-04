@@ -1,18 +1,43 @@
-@import url("https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap");
+/* Font Face Declarations */
+@font-face {
+  font-family: 'Bricolage Grotesque';
+  src: url('/fonts/BricolageGrotesque-VariableFont_opsz,wdth,wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-stretch: 75% 125%;
+  font-style: normal;
+  font-display: swap;
+}
 
+@font-face {
+  font-family: 'Geist';
+  src: url('/fonts/Geist-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Body text - Geist */
 body,
+p,
+li,
+span,
+a,
+strong,
+input,
+textarea,
+select,
+button:not(h1 button):not(h2 button):not(h3 button):not(h4 button):not(h5 button):not(h6 button) {
+  font-family: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
+}
+
+/* Primary Headers - Bricolage Grotesque */
 h1,
 h2,
 h3,
 h4,
 h5,
-h6,
-p,
-li,
-span,
-a,
-strong {
-  font-family: "PT Serif", serif !important;
+h6 {
+  font-family: 'Bricolage Grotesque', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
 }
 
 /* High-contrast headings */
@@ -132,9 +157,14 @@ section.bg-gradient-to-r h2.text-white {
 
 @layer base {
   html {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Display",
+    font-family: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Display",
       "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji",
       "Segoe UI Emoji", "Segoe UI Symbol";
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Bricolage Grotesque', system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Display",
+      "Segoe UI", Roboto, sans-serif;
   }
 }
 
@@ -161,7 +191,7 @@ section.bg-gradient-to-r h2.text-white {
 body {
   margin: 0;
   padding: 0;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   background-color: var(--bg-body);
   color: var(--text-base);
   overflow-x: hidden;
