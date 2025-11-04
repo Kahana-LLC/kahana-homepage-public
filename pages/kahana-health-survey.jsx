@@ -33,7 +33,7 @@ export default function KahanaHealthSurvey() {
         <meta name="robots" content="noindex, nofollow" />
       </Head>
       
-      <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+      <div className="min-h-screen bg-white">
         <NavBar />
         
         <main className="pt-16 pb-16">
@@ -41,10 +41,10 @@ export default function KahanaHealthSurvey() {
             {/* Header Section - Full Width */}
             <div className="text-center mb-12">
               <h2 className="text-base font-semibold leading-7 text-[#66C2BE] mb-3">Movement Research</h2>
-              <h1 className="text-4xl font-bold text-gray-900 sm:text-5xl mb-6">
+              <h1 className="text-4xl font-bold text-[#011910] sm:text-5xl mb-6">
                 How Many Steps Do You Actually Get In?
               </h1>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <p className="text-xl text-[#4A5745] max-w-3xl mx-auto">
                 We're researching how sedentary work impacts daily movement and health. Share your experience with getting steps in during work hours to help us identify and fix the problems with desk-bound work.
               </p>
             </div>
@@ -53,11 +53,11 @@ export default function KahanaHealthSurvey() {
             <div className="lg:hidden space-y-8">
               {/* Why Your Participation Matters Section - Mobile */}
               <div className="bg-white rounded-xl shadow-xl border border-[#A5DAD8]/30 p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-6 text-center">Why Your Movement Story Matters</h3>
+                <h3 className="text-xl font-semibold text-[#011910] mb-6 text-center">Why Your Movement Story Matters</h3>
                 <div className="space-y-6">
                   <div className="space-y-4">
-                    <h4 className="text-lg font-semibold text-gray-900">Research Impact</h4>
-                    <ul className="space-y-3 text-gray-600">
+                    <h4 className="text-lg font-semibold text-[#011910]">Research Impact</h4>
+                    <ul className="space-y-3 text-[#4A5745]">
                       <li className="flex items-start">
                         <svg className="h-5 w-5 text-[#66C2BE] mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -79,8 +79,8 @@ export default function KahanaHealthSurvey() {
                     </ul>
                   </div>
                   <div className="space-y-4">
-                    <h4 className="text-lg font-semibold text-gray-900">Privacy & Anonymity</h4>
-                    <ul className="space-y-3 text-gray-600">
+                    <h4 className="text-lg font-semibold text-[#011910]">Privacy & Anonymity</h4>
+                    <ul className="space-y-3 text-[#4A5745]">
                       <li className="flex items-start">
                         <svg className="h-5 w-5 text-[#66C2BE] mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -135,7 +135,7 @@ export default function KahanaHealthSurvey() {
                       <span className="text-sm font-medium text-gray-700">Share Your Movement Story</span>
                     </div>
                   </div>
-                  <div className="text-sm text-gray-500">
+                  <div className="text-sm text-[#4A5745]">
                     Help us understand how sedentary work affects daily steps
                   </div>
                 </div>

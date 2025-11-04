@@ -44,7 +44,7 @@ export default function DocsIndex({ docs, categories }) {
         type="website"
       />
 
-      <div className="bg-gradient-to-b from-kahana-ui-background to-white">
+      <div className="bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           {/* Breadcrumbs */}
           <nav aria-label="Breadcrumb" className="mb-8">
@@ -57,10 +57,10 @@ export default function DocsIndex({ docs, categories }) {
           </nav>
 
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">
+            <h1 className="text-4xl font-bold text-[#011910] mb-4">
               Documentation
             </h1>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-[#4A5745] max-w-2xl mx-auto">
               Learn how to use Kahana's features, understand our security measures, and follow best practices for your team.
             </p>
           </div>
@@ -84,8 +84,8 @@ export default function DocsIndex({ docs, categories }) {
           {/* No Results Message */}
           {filteredDocs.length === 0 && (
             <div className="text-center py-12">
-              <h3 className="text-lg font-medium text-gray-900 mb-2">No documentation found</h3>
-              <p className="text-gray-600">
+              <h3 className="text-lg font-medium text-[#011910] mb-2">No documentation found</h3>
+              <p className="text-[#4A5745]">
                 Try adjusting your search or filter to find what you're looking for.
               </p>
             </div>

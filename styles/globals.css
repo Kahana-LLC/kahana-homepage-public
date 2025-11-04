@@ -90,6 +90,20 @@ input[type="button"]:hover {
   background-color: var(--bg-surface) !important;
 }
 
+/* Override for navbar buttons - rounded pill style */
+.nav-button.download,
+.nav-button.get-in-touch {
+  border-radius: 27.5px !important;
+  background: linear-gradient(to right, #4F571F, #8A8D3E) !important;
+  color: white !important;
+}
+
+.nav-button.download:hover,
+.nav-button.get-in-touch:hover {
+  background: linear-gradient(to right, #8A8D3E, #4F571F) !important;
+  color: white !important;
+}
+
 button.bg-\[\#0d9488\],
 .bg-\[\#0d9488\] button,
 .bg-\[\#0d9488\],

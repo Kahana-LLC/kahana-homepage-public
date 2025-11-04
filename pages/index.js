@@ -173,47 +173,70 @@ export default function Home({ blogPosts }) {
       />
 
       <div className="relative">
+        {/* Elegant accent line at top */}
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#30400D] to-transparent opacity-20"></div>
+        
         <main className="scroll-smooth">
           <FadeInSection>
             <section
               id="products"
-              className="min-h-screen flex items-center justify-center p-4 md:p-8 bg-white"
+              className="min-h-screen flex items-center justify-center p-4 md:p-8 bg-white relative"
             >
+              {/* Subtle left accent */}
+              <div className="hidden lg:block absolute left-0 top-1/4 w-1 h-32 bg-gradient-to-b from-transparent via-[#30400D]/30 to-transparent opacity-40"></div>
               <ProductSection />
             </section>
           </FadeInSection>
 
+          {/* Elegant section divider */}
+          <div className="relative h-px bg-gradient-to-r from-transparent via-[#30400D]/20 to-transparent mx-auto max-w-4xl"></div>
+
           <FadeInSection delay={100}>
             <section
               id="video-demo"
-              className="min-h-screen flex items-center justify-center p-4 md:p-8 bg-white"
+              className="min-h-screen flex items-center justify-center p-4 md:p-8 bg-white relative"
             >
+              {/* Subtle right accent */}
+              <div className="hidden lg:block absolute right-0 top-1/3 w-1 h-40 bg-gradient-to-b from-transparent via-[#30400D]/25 to-transparent opacity-40"></div>
               <VideoSection />
             </section>
           </FadeInSection>
 
+          {/* Elegant section divider */}
+          <div className="relative h-px bg-gradient-to-r from-transparent via-[#30400D]/20 to-transparent mx-auto max-w-4xl"></div>
+
           <FadeInSection delay={200}>
             <section
               id="features"
-              className="min-h-screen flex items-center justify-center p-4 md:p-8 bg-white"
+              className="min-h-screen flex items-center justify-center p-4 md:p-8 bg-white relative"
             >
+              {/* Subtle decorative corner accent */}
+              <div className="hidden lg:block absolute top-0 left-0 w-24 h-24 border-l-2 border-t-2 border-[#30400D]/15"></div>
               <FeaturesShowcase />
             </section>
           </FadeInSection>
 
+          {/* Elegant section divider */}
+          <div className="relative h-px bg-gradient-to-r from-transparent via-[#30400D]/20 to-transparent mx-auto max-w-4xl"></div>
+
           <FadeInSection delay={400}>
             <section
               id="how-it-works"
-              className="min-h-screen flex items-center justify-center p-4 md:p-8 bg-white"
+              className="min-h-screen flex items-center justify-center p-4 md:p-8 bg-white relative"
             >
+              {/* Subtle decorative corner accent */}
+              <div className="hidden lg:block absolute bottom-0 right-0 w-24 h-24 border-r-2 border-b-2 border-[#30400D]/15"></div>
               <HowItWorks />
             </section>
           </FadeInSection>
 
+          {/* Elegant section divider */}
+          <div className="relative h-px bg-gradient-to-r from-transparent via-[#30400D]/20 to-transparent mx-auto max-w-4xl"></div>
+
           <FadeInSection delay={600}>
             <section
               id="blog"
-              className="flex flex-col items-center justify-center p-4 md:p-8 bg-white"
+              className="flex flex-col items-center justify-center p-4 md:p-8 bg-white relative"
             >
               <div className="mx-auto max-w-7xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {(blogPosts || []).slice(0, 3).map((post) => (

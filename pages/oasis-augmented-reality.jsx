@@ -108,7 +108,7 @@ export default function OasisAugmentedReality() {
       </Head>
       <div className="oasis-ar">
         <NavBar />
-        <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white pt-24 pb-16">
+        <main className="min-h-screen bg-white pt-24 pb-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="lg:grid lg:grid-cols-12 lg:gap-16">
               {/* Left Column - Content */}
@@ -129,7 +129,7 @@ export default function OasisAugmentedReality() {
 
                 {/* Form Section - Now appears first on mobile */}
                 <div className="lg:hidden mb-12">
-                  <div className="bg-white rounded-xl shadow-xl border border-[#A5DAD8]/30 p-8">
+                  <div className="bg-white rounded-xl shadow-xl p-8">
                     {renderForm()}
                   </div>
                   {/* Mobile: Show video below form */}
@@ -153,7 +153,7 @@ export default function OasisAugmentedReality() {
                       {steps.map((step, index) => (
                         <div 
                           key={step.id} 
-                          className="bg-gradient-to-r from-[#E3DFF1]/20 via-[#8CB7D0]/10 to-[#E3DFF1]/30 rounded-xl overflow-hidden border border-[#A5DAD8]/30 p-6 shadow-lg shadow-[#E3DFF1]/20 hover:shadow-xl hover:shadow-[#E3DFF1]/30 transition-all duration-300"
+                          className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl overflow-hidden p-6 shadow-lg shadow-[#E3DFF1]/20 hover:shadow-xl hover:shadow-[#E3DFF1]/30 transition-all duration-300"
                           onMouseEnter={() => setHoveredStep(index)}
                           onMouseLeave={() => setHoveredStep(0)}
                         >
@@ -179,7 +179,7 @@ export default function OasisAugmentedReality() {
                     </div>
 
                     {/* Oasis Features Section */}
-                    <div className="mt-16 bg-white rounded-xl shadow-xl border border-[#A5DAD8]/30 p-8">
+                    <div className="mt-16 bg-white rounded-xl shadow-xl p-8">
                       <h3 className="text-2xl font-semibold text-gray-900 mb-6">The Oasis AR Advantage</h3>
                       <p className="text-lg text-gray-600 mb-8">
                         Oasis AR isn't just another browser—it's a spatial computing revolution that brings the web into your physical world. Experience unprecedented immersion and control with AI-powered augmented reality that understands your environment and adapts to your needs.
@@ -240,7 +240,7 @@ export default function OasisAugmentedReality() {
 
               {/* Right Column - Form (Desktop only) */}
               <div className="hidden lg:block lg:col-span-5 lg:sticky lg:top-24">
-                <div className="bg-white rounded-xl shadow-xl border border-[#A5DAD8]/30 p-8">
+                <div className="bg-white rounded-xl shadow-xl p-8">
                   {renderForm()}
                 </div>
               </div>

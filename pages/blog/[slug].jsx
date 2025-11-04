@@ -171,7 +171,7 @@ export default function BlogPost({ post }) {
         ></div>
       </div>
 
-      <main className="max-w-4xl mx-auto px-4 py-8">
+      <main className="min-h-screen bg-white max-w-4xl mx-auto px-4 py-8">
         <article className="prose prose-lg max-w-none">
           <header className="mb-12">
             {/* Breadcrumbs for navigation */}
@@ -308,9 +308,9 @@ export default function BlogPost({ post }) {
             />
           )}
 
-          <div className="mt-16 p-8 bg-gradient-to-r from-[#E3DFF1]/20 via-[#8CB7D0]/10 to-[#E3DFF1]/30 rounded-xl border border-[#A5DAD8]/30 shadow-lg">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Ready to Elevate Your Work Experience?</h2>
-            <p className="text-lg text-gray-600 mb-6">
+          <div className="mt-16 p-8 bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl shadow-lg">
+            <h2 className="text-2xl font-bold text-[#011910] mb-4">Ready to Elevate Your Work Experience?</h2>
+            <p className="text-lg text-[#4A5745] mb-6">
               We'd love to understand your unique challenges and explore how our solutions can help you achieve a more fluid way of working now and in the future. Let's discuss your specific needs and see how we can work together to create a more ergonomic future of work.
             </p>
             <Link 

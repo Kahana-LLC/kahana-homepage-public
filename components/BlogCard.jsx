@@ -64,13 +64,13 @@ export default function BlogCard({ post }) {
   const postAuthors = getAuthorDetails(post.authors);
 
   return (
-    <article className="bg-white rounded-xl border border-gray-200 shadow-lg hover:shadow-xl transition-shadow duration-200 overflow-hidden flex flex-col h-full">
+    <article className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-200 overflow-hidden flex flex-col h-full">
       <Link href={`/blog/${post.slug}`} className="flex flex-col h-full blog-card-link">
         {/* Image */}
         <div className="relative h-52 md:h-56 lg:h-48 w-full">
           {isLoadingImage ? (
             <div className="w-full h-full bg-gray-100 flex items-center justify-center">
-              <div className="text-gray-400">Loading...</div>
+              <div className="text-[#4A5745]">Loading...</div>
             </div>
           ) : (
             <Image
@@ -109,7 +109,7 @@ export default function BlogCard({ post }) {
           </div>
 
           {/* Date and Read Time */}
-          <div className="flex items-center gap-2 text-sm text-gray-500 mb-2">
+          <div className="flex items-center gap-2 text-sm text-[#4A5745] mb-2">
             <time dateTime={post.date}>{new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</time>
             <span>•</span>
             <span>{post.readingTime} min read</span>

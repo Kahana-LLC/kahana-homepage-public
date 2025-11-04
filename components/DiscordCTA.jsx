@@ -33,7 +33,7 @@ const DiscordCTA = ({
   directDiscordLink = false
 }) => {
   return (
-    <div className={`mt-16 p-8 bg-gradient-to-r from-[#E3DFF1]/20 via-[#8CB7D0]/10 to-[#E3DFF1]/30 rounded-xl border border-[#A5DAD8]/30 shadow-lg ${className}`}>
+    <div className={`mt-16 p-8 bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl shadow-lg ${className}`}>
       <div className="flex items-start space-x-4">
         <div className="flex-shrink-0">
           <div className="w-12 h-12 bg-[#5865F2] rounded-lg flex items-center justify-center">
@@ -81,14 +81,14 @@ const DiscordCTA = ({
                 </svg>
               </Link>
             )}
-            <div className="flex items-center text-sm text-gray-500">
+            <div className="flex items-center text-sm text-[#4A5745]">
               <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
               <span>Always free to join</span>
             </div>
           </div>
-          <div className="mt-4 text-sm text-gray-500">
+          <div className="mt-4 text-sm text-[#4A5745]">
             <span>Having trouble with Discord? </span>
             <Link 
               href="/contact" 

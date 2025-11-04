@@ -33,7 +33,7 @@ export default function OasisFeedbackSurvey() {
         <meta name="robots" content="noindex, nofollow" />
       </Head>
       
-      <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+      <div className="min-h-screen bg-white">
         <NavBar />
         
         <main className="pt-16 pb-16">
@@ -43,10 +43,10 @@ export default function OasisFeedbackSurvey() {
               <div className="lg:col-span-7">
                 <div className="text-center lg:text-left mb-12">
                   <h2 className="text-base font-semibold leading-7 text-[#66C2BE] mb-3">Help Us Improve</h2>
-                  <h1 className="text-4xl font-bold text-gray-900 sm:text-5xl">
+                  <h1 className="text-4xl font-bold text-[#011910] sm:text-5xl">
                     Your Feedback Matters
                   </h1>
-                  <p className="mt-6 text-xl text-gray-600">
+                  <p className="mt-6 text-xl text-[#4A5745]">
                     Your feedback is invaluable to us. Share your thoughts about Oasis to help us create an even better experience for you and other users.
                   </p>
                 </div>
@@ -55,11 +55,11 @@ export default function OasisFeedbackSurvey() {
                 <div className="mb-12 lg:mb-0">
                   <div className="mx-auto">
                     <div className="bg-white rounded-xl shadow-xl border border-[#A5DAD8]/30 p-8">
-                      <h3 className="text-2xl font-semibold text-gray-900 mb-6">Why Your Feedback Matters</h3>
+                      <h3 className="text-2xl font-semibold text-[#011910] mb-6">Why Your Feedback Matters</h3>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
                         <div className="space-y-4">
-                          <h4 className="text-xl font-semibold text-gray-900">Product Development</h4>
-                          <ul className="space-y-3 text-gray-600">
+                          <h4 className="text-xl font-semibold text-[#011910]">Product Development</h4>
+                          <ul className="space-y-3 text-[#4A5745]">
                             <li className="flex items-start">
                               <svg className="h-6 w-6 text-[#66C2BE] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -81,8 +81,8 @@ export default function OasisFeedbackSurvey() {
                           </ul>
                         </div>
                         <div className="space-y-4">
-                          <h4 className="text-xl font-semibold text-gray-900">User Experience</h4>
-                          <ul className="space-y-3 text-gray-600">
+                          <h4 className="text-xl font-semibold text-[#011910]">User Experience</h4>
+                          <ul className="space-y-3 text-[#4A5745]">
                             <li className="flex items-start">
                               <svg className="h-6 w-6 text-[#66C2BE] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />

@@ -44,7 +44,7 @@ function NavBar() {
       
       {/* Fixed navbar */}
       <nav className={`fixed top-0 left-0 w-full h-16 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white/70 backdrop-blur-md shadow-md' : 'bg-white'
+        isScrolled ? 'bg-[#30400D]/95 backdrop-blur-md shadow-md' : 'bg-[#30400D]'
       }`}>
         <style jsx>{`
           .font-style {
@@ -103,7 +103,7 @@ function NavBar() {
 
           .nav-link {
             position: relative;
-            color: #333;
+            color: #ffffff;
             font-size: 1rem;
             font-weight: 500;
             text-decoration: none;
@@ -116,7 +116,7 @@ function NavBar() {
           }
 
           .nav-link:hover {
-            color: var(--kahana-primary);
+            color: #E0D48C;
           }
 
           .dropdown {
@@ -271,7 +271,7 @@ function NavBar() {
             justify-content: center;
             align-items: center;
             padding: 0.5rem 1rem;
-            border-radius: 0.375rem;
+            border-radius: 27.5px !important;
             transition: all 0.3s ease;
             font-size: 0.875rem;
             font-weight: 500;
@@ -285,27 +285,29 @@ function NavBar() {
           }
 
           .nav-button.download {
-            color: #66C2BE;
-            background-color: transparent;
+            background-color: #788B59 !important;
+            color: white !important;
+            border: none !important;
           }
 
           .nav-button.download:hover {
-            color: #55B3AF;
+            background-color: #728552 !important;
+            color: white !important;
           }
 
           .nav-button.get-in-touch {
-            background-color: #66C2BE;
-            color: white;
+            background-color: #788B59 !important;
+            color: white !important;
             position: relative;
             z-index: 1;
-            border: none;
+            border: none !important;
             transition: all 0.3s ease;
           }
 
           .nav-button.get-in-touch:hover {
-            background-color: #55B3AF;
+            background-color: #728552 !important;
             transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(102, 194, 190, 0.25);
+            box-shadow: 0 4px 12px rgba(120, 139, 89, 0.25);
           }
 
           .mobile-menu {
@@ -565,13 +567,13 @@ function NavBar() {
           <div className="flex items-center gap-4">
             <div className="nav-buttons flex gap-2">
               <Link href="/schedule-demo">
-                <button className="nav-button download inline-flex items-center justify-center rounded-[27.5px] bg-white text-[#728552] font-bold border-[3px] border-white/38 px-4 py-2.5 text-xs md:px-6 md:py-3 md:text-sm hover:bg-opacity-90 transition-all">
+                <button className="nav-button download inline-flex items-center justify-center rounded-[27.5px] bg-gradient-to-r from-[#4F571F] to-[#8A8D3E] text-white font-bold px-4 py-2.5 text-xs md:px-6 md:py-3 md:text-sm hover:from-[#8A8D3E] hover:to-[#4F571F] transition-all shadow-sm">
                   <span className="md:hidden">Demo</span>
                   <span className="hidden md:inline">Schedule Demo</span>
                 </button>
               </Link>
               <Link href="/contact">
-                <button className="nav-button get-in-touch inline-flex items-center justify-center rounded-[27.5px] bg-white text-[#728552] font-bold border-[3px] border-white/38 px-4 py-2.5 text-xs md:px-6 md:py-3 md:text-sm hover:bg-opacity-90 transition-all">
+                <button className="nav-button get-in-touch inline-flex items-center justify-center rounded-[27.5px] bg-gradient-to-r from-[#4F571F] to-[#8A8D3E] text-white font-bold px-4 py-2.5 text-xs md:px-6 md:py-3 md:text-sm hover:from-[#8A8D3E] hover:to-[#4F571F] transition-all shadow-sm">
                   <span className="md:hidden">Contact</span>
                   <span className="hidden md:inline">Contact</span>
                 </button>
@@ -581,14 +583,14 @@ function NavBar() {
             {/* Hamburger Menu */}
             <button
               onClick={toggleMobileMenu}
-              className="lg:hidden"
+              className="lg:hidden inline-flex items-center justify-center rounded-[27.5px] bg-gradient-to-r from-[#4F571F] to-[#8A8D3E] text-white font-bold px-3 py-2 hover:from-[#8A8D3E] hover:to-[#4F571F] transition-all shadow-sm"
               aria-label="Mobile Menu"
             >
               {isMobileMenuOpen ? (
                 <svg
-                  className="w-6 h-6"
+                  className="w-5 h-5"
                   fill="none"
-                  stroke="white"
+                  stroke="currentColor"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -601,9 +603,9 @@ function NavBar() {
                 </svg>
               ) : (
                 <svg
-                  className="w-6 h-6"
+                  className="w-5 h-5"
                   fill="none"
-                  stroke="white"
+                  stroke="currentColor"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -625,12 +627,12 @@ function NavBar() {
             {/* Contact Buttons at Top */}
             <div className="flex flex-col gap-2 mb-4">
               <Link href="/schedule-demo" className="text-center">
-                <button className="w-full py-2.5 px-6 bg-white text-[#728552] font-bold rounded-[27.5px] border-[3px] border-white/38 hover:bg-opacity-90 transition-all">
+                <button className="w-full py-2.5 px-6 bg-gradient-to-r from-[#4F571F] to-[#8A8D3E] text-white font-bold rounded-[27.5px] hover:from-[#8A8D3E] hover:to-[#4F571F] transition-all shadow-sm">
                   Schedule Demo
                 </button>
               </Link>
               <Link href="/contact" className="text-center">
-                <button className="w-full py-2.5 px-6 bg-white text-[#728552] font-bold rounded-[27.5px] border-[3px] border-white/38 hover:bg-opacity-90 transition-all">
+                <button className="w-full py-2.5 px-6 bg-gradient-to-r from-[#4F571F] to-[#8A8D3E] text-white font-bold rounded-[27.5px] hover:from-[#8A8D3E] hover:to-[#4F571F] transition-all shadow-sm">
                   Contact
                 </button>
               </Link>
@@ -657,7 +659,7 @@ function NavBar() {
               </div>
               <div className="flex-1">
                 <div className="font-medium text-gray-900">Enterprise Browser Buyer Guide</div>
-                <div className="text-xs text-gray-500 mt-1">Comprehensive guide for enterprise decision makers</div>
+                <div className="text-xs text-[#4A5745] mt-1">Comprehensive guide for enterprise decision makers</div>
               </div>
             </Link>
             

@@ -95,17 +95,17 @@ export default function Sales() {
 
       <NavBar />
 
-      <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white pt-24 pb-16">
+      <main className="min-h-screen bg-white pt-24 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:grid lg:grid-cols-12 lg:gap-16">
             {/* Left Column - Content */}
             <div className="lg:col-span-7">
               <div className="text-center lg:text-left mb-12">
                 <h2 className="text-base font-semibold leading-7 text-[#66C2BE] mb-3">Talk to Sales</h2>
-                <h1 className="text-4xl font-bold text-gray-900 sm:text-5xl">
+                <h1 className="text-4xl font-bold text-[#011910] sm:text-5xl">
                   Transform Your Enterprise Browsing Experience
                 </h1>
-                <p className="mt-6 text-xl text-gray-600">
+                <p className="mt-6 text-xl text-[#4A5745]">
                   Ready to enhance your organization's digital workspace? Connect with our sales team to learn how Kahana can transform your enterprise browsing experience.
                 </p>
               </div>
@@ -114,8 +114,8 @@ export default function Sales() {
               <div className="lg:hidden mb-12">
                 <div className="bg-white rounded-xl shadow-xl border border-[#A5DAD8]/30 p-8">
                   <div className="text-center mb-8">
-                    <h3 className="text-2xl font-semibold text-gray-900">Contact Sales</h3>
-                    <p className="mt-3 text-gray-600">
+                    <h3 className="text-2xl font-semibold text-[#011910]">Contact Sales</h3>
+                    <p className="mt-3 text-[#4A5745]">
                       Get in touch with our sales team to learn about enterprise solutions.
                     </p>
                   </div>
@@ -147,7 +147,7 @@ export default function Sales() {
                     {steps.map((step, index) => (
                       <div 
                         key={step.id} 
-                        className="bg-gradient-to-r from-[#E3DFF1]/20 via-[#8CB7D0]/10 to-[#E3DFF1]/30 rounded-xl overflow-hidden border border-[#A5DAD8]/30 p-6 shadow-lg shadow-[#E3DFF1]/20 hover:shadow-xl hover:shadow-[#E3DFF1]/30 transition-all duration-300"
+                        className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl overflow-hidden p-6 shadow-lg hover:shadow-xl transition-all duration-300"
                         onMouseEnter={() => setHoveredStep(index)}
                         onMouseLeave={() => setHoveredStep(0)}
                       >
@@ -160,10 +160,10 @@ export default function Sales() {
                             </div>
                           </div>
                           <div className="ml-4">
-                            <div className="text-lg font-semibold leading-7 text-gray-900">
+                            <div className="text-lg font-semibold leading-7 text-[#011910]">
                               {step.name}
                             </div>
-                            <div className="mt-2 text-base leading-7 text-gray-600">
+                            <div className="mt-2 text-base leading-7 text-[#4A5745]">
                               {step.description}
                             </div>
                           </div>
@@ -188,10 +188,10 @@ export default function Sales() {
                           </div>
                         </div>
                         <div className="ml-4">
-                          <p className="text-base font-medium text-gray-900 group-hover:text-[#66C2BE] transition-colors duration-300">
+                          <p className="text-base font-medium text-[#011910] group-hover:text-[#66C2BE] transition-colors duration-300">
                             {link.name}
                           </p>
-                          <p className="mt-1 text-sm text-gray-500">
+                          <p className="mt-1 text-sm text-[#4A5745]">
                             {link.description}
                           </p>
                         </div>
@@ -206,8 +206,8 @@ export default function Sales() {
             <div className="hidden lg:block lg:col-span-5 lg:sticky lg:top-24">
               <div className="bg-white rounded-xl shadow-xl border border-[#A5DAD8]/30 p-8">
                 <div className="text-center mb-8">
-                  <h3 className="text-2xl font-semibold text-gray-900">Contact Sales</h3>
-                  <p className="mt-3 text-gray-600">
+                  <h3 className="text-2xl font-semibold text-[#011910]">Contact Sales</h3>
+                  <p className="mt-3 text-[#4A5745]">
                     Get in touch with our sales team to learn about enterprise solutions.
                   </p>
                 </div>

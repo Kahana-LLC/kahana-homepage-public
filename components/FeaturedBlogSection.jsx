@@ -44,7 +44,7 @@ const FeaturedBlogCard = ({ post }) => {
         <div className="relative h-48 w-full">
           {isLoadingImage ? (
             <div className="w-full h-full bg-gray-100 flex items-center justify-center">
-              <div className="text-gray-400">Loading...</div>
+              <div className="text-[#4A5745]">Loading...</div>
             </div>
           ) : (
             <Image

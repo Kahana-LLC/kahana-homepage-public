@@ -91,7 +91,7 @@ export default function AboutCard() {
                 <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
                   A Beautiful Space for Knowledge to Thrive
                 </h2>
-                <div className="mt-6 space-y-6 text-gray-500">
+                <div className="mt-6 space-y-6 text-[#4A5745]">
                   <p className="text-lg">
                     Kahana is a platform for everyday experts to build hubs of information to be discovered and explored by knowledge seekers.
                   </p>

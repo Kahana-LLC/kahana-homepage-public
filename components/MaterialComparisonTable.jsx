@@ -277,49 +277,49 @@ const MaterialComparisonTable = () => {
         <div key={material.name} className="bg-white rounded-lg shadow border border-gray-200 p-4">
           <div className="text-lg font-bold mb-2">{material.name}</div>
           <div className="mb-2">
-            <div className="text-xs font-semibold text-gray-500 mb-1">Type</div>
+            <div className="text-xs font-semibold text-[#4A5745] mb-1">Type</div>
             <div>{material.type}</div>
           </div>
           <div className="mb-2">
-            <div className="text-xs font-semibold text-gray-500 mb-1">Thermal Conductivity</div>
+            <div className="text-xs font-semibold text-[#4A5745] mb-1">Thermal Conductivity</div>
             <div>{renderThermalConductivityCell(material.thermalConductivity)}</div>
           </div>
           <div className="mb-2">
-            <div className="text-xs font-semibold text-gray-500 mb-1">Thickness</div>
+            <div className="text-xs font-semibold text-[#4A5745] mb-1">Thickness</div>
             <div>{material.thickness}</div>
           </div>
           <div className="mb-2">
-            <div className="text-xs font-semibold text-gray-500 mb-1">Flexibility</div>
+            <div className="text-xs font-semibold text-[#4A5745] mb-1">Flexibility</div>
             <div>{renderFlexibilityCell(material.flexibility)}</div>
           </div>
           <div className="mb-2">
-            <div className="text-xs font-semibold text-gray-500 mb-1">Weight</div>
+            <div className="text-xs font-semibold text-[#4A5745] mb-1">Weight</div>
             <div>{material.weight}</div>
           </div>
           <div className="mb-2">
-            <div className="text-xs font-semibold text-gray-500 mb-1">Transparency</div>
+            <div className="text-xs font-semibold text-[#4A5745] mb-1">Transparency</div>
             <div>{material.transparency}</div>
           </div>
           <div className="mb-2">
-            <div className="text-xs font-semibold text-gray-500 mb-1">Application Area</div>
+            <div className="text-xs font-semibold text-[#4A5745] mb-1">Application Area</div>
             <div>{material.applicationArea}</div>
           </div>
           <div className="mb-2">
-            <div className="text-xs font-semibold text-gray-500 mb-1">Cost</div>
+            <div className="text-xs font-semibold text-[#4A5745] mb-1">Cost</div>
             <div>{renderCostCell(material.cost)}</div>
           </div>
           <div className="mb-2">
-            <div className="text-xs font-semibold text-gray-500 mb-1">Unique Strength</div>
+            <div className="text-xs font-semibold text-[#4A5745] mb-1">Unique Strength</div>
             <div>{material.uniqueStrength}</div>
           </div>
           <div>
-            <div className="text-xs font-semibold text-gray-500 mb-1">Summary</div>
+            <div className="text-xs font-semibold text-[#4A5745] mb-1">Summary</div>
             <div>{material.summary}</div>
           </div>
         </div>
       ))}
       {filteredData.length === 0 && (
-        <div className="text-center py-8 text-gray-500">
+        <div className="text-center py-8 text-[#4A5745]">
           No materials match the current filters
         </div>
       )}
@@ -376,7 +376,7 @@ const MaterialComparisonTable = () => {
                       <h3 className="text-lg font-semibold text-gray-900">Filters</h3>
                       <button
                         onClick={() => setIsFilterOpen(false)}
-                        className="text-gray-400 hover:text-gray-600"
+                        className="text-[#4A5745] hover:text-gray-600"
                       >
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -443,17 +443,17 @@ const MaterialComparisonTable = () => {
           <table className="w-full">
             <thead className="bg-gray-50 sticky top-0 z-10">
               <tr>
-                <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider bg-gray-50 border-r border-gray-200 sticky left-0 z-20 min-w-[160px] whitespace-normal break-words">Material</th>
-                <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider bg-white border-r border-gray-200 min-w-[140px] whitespace-normal break-words">Type</th>
-                <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider bg-gray-50 border-r border-gray-200 min-w-[120px] whitespace-normal break-words">Thermal Conductivity</th>
-                <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider bg-white border-r border-gray-200 min-w-[120px] whitespace-normal break-words">Thickness</th>
-                <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider bg-gray-50 border-r border-gray-200 min-w-[100px] whitespace-normal break-words">Flexibility</th>
-                <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider bg-white border-r border-gray-200 min-w-[80px] whitespace-normal break-words">Weight</th>
-                <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider bg-gray-50 border-r border-gray-200 min-w-[100px] whitespace-normal break-words">Transparency</th>
-                <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider bg-white border-r border-gray-200 min-w-[140px] whitespace-normal break-words">Application Area</th>
-                <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider bg-gray-50 border-r border-gray-200 min-w-[100px] whitespace-normal break-words">Cost</th>
-                <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider bg-white border-r border-gray-200 min-w-[160px] whitespace-normal break-words">Unique Strength</th>
-                <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider bg-gray-50 min-w-[160px] whitespace-normal break-words">Summary</th>
+                <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-[#4A5745] uppercase tracking-wider bg-gray-50 border-r border-gray-200 sticky left-0 z-20 min-w-[160px] whitespace-normal break-words">Material</th>
+                <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-[#4A5745] uppercase tracking-wider bg-white border-r border-gray-200 min-w-[140px] whitespace-normal break-words">Type</th>
+                <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-[#4A5745] uppercase tracking-wider bg-gray-50 border-r border-gray-200 min-w-[120px] whitespace-normal break-words">Thermal Conductivity</th>
+                <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-[#4A5745] uppercase tracking-wider bg-white border-r border-gray-200 min-w-[120px] whitespace-normal break-words">Thickness</th>
+                <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-[#4A5745] uppercase tracking-wider bg-gray-50 border-r border-gray-200 min-w-[100px] whitespace-normal break-words">Flexibility</th>
+                <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-[#4A5745] uppercase tracking-wider bg-white border-r border-gray-200 min-w-[80px] whitespace-normal break-words">Weight</th>
+                <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-[#4A5745] uppercase tracking-wider bg-gray-50 border-r border-gray-200 min-w-[100px] whitespace-normal break-words">Transparency</th>
+                <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-[#4A5745] uppercase tracking-wider bg-white border-r border-gray-200 min-w-[140px] whitespace-normal break-words">Application Area</th>
+                <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-[#4A5745] uppercase tracking-wider bg-gray-50 border-r border-gray-200 min-w-[100px] whitespace-normal break-words">Cost</th>
+                <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-[#4A5745] uppercase tracking-wider bg-white border-r border-gray-200 min-w-[160px] whitespace-normal break-words">Unique Strength</th>
+                <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-[#4A5745] uppercase tracking-wider bg-gray-50 min-w-[160px] whitespace-normal break-words">Summary</th>
               </tr>
             </thead>
             <tbody className="bg-white divide-y divide-gray-200">
@@ -479,7 +479,7 @@ const MaterialComparisonTable = () => {
               ))}
               {filteredData.length === 0 && (
                 <tr>
-                  <td colSpan={11} className="text-center py-8 text-gray-500">
+                  <td colSpan={11} className="text-center py-8 text-[#4A5745]">
                     No materials match the current filters
                   </td>
                 </tr>
@@ -488,7 +488,7 @@ const MaterialComparisonTable = () => {
           </table>
           {/* Row Count Indicator */}
           {filteredData.length > 0 && (
-            <div className="px-4 py-2 bg-gray-50 text-xs text-gray-500 border-t border-gray-200">
+            <div className="px-4 py-2 bg-gray-50 text-xs text-[#4A5745] border-t border-gray-200">
               Showing {filteredData.length} material{filteredData.length !== 1 ? 's' : ''}
               {filteredData.length > 2 && (
                 <span className="ml-2">(scroll to see more)</span>
@@ -496,7 +496,7 @@ const MaterialComparisonTable = () => {
             </div>
           )}
           {filteredData.length > 0 && (
-            <div className="block sm:hidden px-4 py-2 text-xs text-gray-400 text-center">↔️ Scroll horizontally to see more columns</div>
+            <div className="block sm:hidden px-4 py-2 text-xs text-[#4A5745] text-center">↔️ Scroll horizontally to see more columns</div>
           )}
         </div>
       )}

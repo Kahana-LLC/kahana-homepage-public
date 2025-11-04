@@ -148,7 +148,7 @@ export default function SubscribeToInsights() {
 
       <NavBar />
 
-      <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white pt-24 pb-16">
+      <main className="min-h-screen bg-white pt-24 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:grid lg:grid-cols-12 lg:gap-16">
             {/* Left Column - Content */}
@@ -182,7 +182,7 @@ export default function SubscribeToInsights() {
                     {loadError && retryCount < MAX_RETRIES && (
                       <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center">
                         <p className="text-gray-600 mb-4">Having trouble loading the form? We'll try again automatically.</p>
-                        <p className="text-sm text-gray-500">Attempt {retryCount + 1} of {MAX_RETRIES}</p>
+                        <p className="text-sm text-[#4A5745]">Attempt {retryCount + 1} of {MAX_RETRIES}</p>
                       </div>
                     )}
 
@@ -231,7 +231,7 @@ export default function SubscribeToInsights() {
                     {steps.map((step, index) => (
                       <div 
                         key={step.id} 
-                        className="bg-gradient-to-r from-[#E3DFF1]/20 via-[#8CB7D0]/10 to-[#E3DFF1]/30 rounded-xl overflow-hidden border border-[#A5DAD8]/30 p-6 shadow-lg shadow-[#E3DFF1]/20 hover:shadow-xl hover:shadow-[#E3DFF1]/30 transition-all duration-300"
+                        className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl overflow-hidden p-6 shadow-lg hover:shadow-xl transition-all duration-300"
                         onMouseEnter={() => setHoveredStep(index)}
                         onMouseLeave={() => setHoveredStep(0)}
                       >
@@ -275,7 +275,7 @@ export default function SubscribeToInsights() {
                           <p className="text-base font-medium text-gray-900 group-hover:text-[#66C2BE] transition-colors duration-300">
                             {link.name}
                           </p>
-                          <p className="mt-1 text-sm text-gray-500">
+                          <p className="mt-1 text-sm text-[#4A5745]">
                             {link.description}
                           </p>
                         </div>
@@ -305,7 +305,7 @@ export default function SubscribeToInsights() {
                   {loadError && retryCount < MAX_RETRIES && (
                     <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center">
                       <p className="text-gray-600 mb-4">Having trouble loading the form? We'll try again automatically.</p>
-                      <p className="text-sm text-gray-500">Attempt {retryCount + 1} of {MAX_RETRIES}</p>
+                      <p className="text-sm text-[#4A5745]">Attempt {retryCount + 1} of {MAX_RETRIES}</p>
                     </div>
                   )}
 

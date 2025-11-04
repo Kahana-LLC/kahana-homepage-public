@@ -267,10 +267,10 @@ const BrowserComparisonTable = () => {
                         );
                     })
                 ) : (
-                    <div className="text-center text-gray-500 py-4 text-xs">No browsers match the current filters or search.</div>
+                    <div className="text-center text-[#4A5745] py-4 text-xs">No browsers match the current filters or search.</div>
                 )}
     </div>
-            <div className="text-xs text-gray-500 mt-2">Filter the list using the sections below.</div>
+            <div className="text-xs text-[#4A5745] mt-2">Filter the list using the sections below.</div>
     </div>
   );
 
@@ -287,14 +287,14 @@ const BrowserComparisonTable = () => {
           </div>
                         {ALL_FEATURES.map(featureTitle => (
                             <div key={featureTitle} className="mb-2 border-b border-gray-100 last:border-b-0 py-1">
-                                <div className="text-xs font-semibold text-gray-500 mb-0.5">{featureTitle}</div>
+                                <div className="text-xs font-semibold text-[#4A5745] mb-0.5">{featureTitle}</div>
                                 <div className="text-sm text-gray-800">{browser[FEATURE_MAP[featureTitle]]}</div>
         </div>
       ))}
                     </div>
                 ))
             ) : (
-        <div className="text-center py-8 text-gray-500">
+        <div className="text-center py-8 text-[#4A5745]">
                     Select browsers in the "Filters" dropdown to start comparing.
         </div>
       )}
@@ -391,7 +391,7 @@ const BrowserComparisonTable = () => {
                 // Transposed Table Container: Features (Rows) vs. Selected Browsers (Columns)
                  <div className="relative overflow-x-auto overflow-y-auto max-h-96" style={{border:'1px solid var(--border-light)', borderTop:'none'}}>
                     {comparisonData.length === 0 ? (
-                        <div className="text-center py-16 text-gray-500">
+                        <div className="text-center py-16 text-[#4A5745]">
                             Use the **Controls** button to pin browsers for side-by-side comparison.
                         </div>
                     ) : (
@@ -455,7 +455,7 @@ const BrowserComparisonTable = () => {
                     )}
           {/* Row Count Indicator */}
                     {comparisonData.length > 0 && (
-            <div className="px-4 py-2 bg-gray-50 text-xs text-gray-500 border-t border-gray-200">
+            <div className="px-4 py-2 bg-gray-50 text-xs text-[#4A5745] border-t border-gray-200">
                             Comparing **{comparisonData.length}** browser{comparisonData.length !== 1 ? 's' : ''}.
                             <span className="ml-2">↔️ Scroll horizontally to see all selected browsers.</span>
             </div>
@@ -728,41 +728,41 @@ export default BrowserComparisonTable;
 //         <div key={browser.name} className="bg-white rounded-lg shadow border border-gray-200 p-4">
 //           <div className="text-lg font-bold mb-2">{browser.name}</div>
 //           <div className="mb-2">
-//             <div className="text-xs font-semibold text-gray-500 mb-1">Type</div>
+//             <div className="text-xs font-semibold text-[#4A5745] mb-1">Type</div>
 //             <div>{browser.type}</div>
 //           </div>
 //           <div className="mb-2">
-//             <div className="text-xs font-semibold text-gray-500 mb-1">Who Uses It</div>
+//             <div className="text-xs font-semibold text-[#4A5745] mb-1">Who Uses It</div>
 //             <div>{browser.whoUsesIt}</div>
 //           </div>
 //           <div className="mb-2">
-//             <div className="text-xs font-semibold text-gray-500 mb-1">Privacy</div>
+//             <div className="text-xs font-semibold text-[#4A5745] mb-1">Privacy</div>
 //             <div>{browser.privacy}</div>
 //           </div>
 //           <div className="mb-2">
-//             <div className="text-xs font-semibold text-gray-500 mb-1">Security</div>
+//             <div className="text-xs font-semibold text-[#4A5745] mb-1">Security</div>
 //             <div>{browser.security}</div>
 //           </div>
 //           <div className="mb-2">
-//             <div className="text-xs font-semibold text-gray-500 mb-1">AI Features</div>
+//             <div className="text-xs font-semibold text-[#4A5745] mb-1">AI Features</div>
 //             <div>{browser.aiFeatures}</div>
 //           </div>
 //           <div className="mb-2">
-//             <div className="text-xs font-semibold text-gray-500 mb-1">Platforms</div>
+//             <div className="text-xs font-semibold text-[#4A5745] mb-1">Platforms</div>
 //             <div>{browser.platforms}</div>
 //           </div>
 //           <div className="mb-2">
-//             <div className="text-xs font-semibold text-gray-500 mb-1">Unique Strength</div>
+//             <div className="text-xs font-semibold text-[#4A5745] mb-1">Unique Strength</div>
 //             <div>{browser.uniqueStrength}</div>
 //           </div>
 //           <div>
-//             <div className="text-xs font-semibold text-gray-500 mb-1">Summary/Verdict</div>
+//             <div className="text-xs font-semibold text-[#4A5745] mb-1">Summary/Verdict</div>
 //             <div>{browser.summary}</div>
 //           </div>
 //         </div>
 //       ))}
 //       {filteredData.length === 0 && (
-//         <div className="text-center py-8 text-gray-500">
+//         <div className="text-center py-8 text-[#4A5745]">
 //           No browsers match the current filters
 //         </div>
 //       )}
@@ -819,7 +819,7 @@ export default BrowserComparisonTable;
 //                       <h3 className="text-lg font-semibold text-gray-900">Filters</h3>
 //                       <button
 //                         onClick={() => setIsFilterOpen(false)}
-//                         className="text-gray-400 hover:text-gray-600"
+//                         className="text-[#4A5745] hover:text-gray-600"
 //                       >
 //                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 //                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -886,15 +886,15 @@ export default BrowserComparisonTable;
 //           <table className="w-full">
 //             <thead className="bg-gray-50 sticky top-0 z-10">
 //               <tr>
-//                 <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider bg-gray-50 border-r border-gray-200 sticky left-0 z-20 min-w-[140px] whitespace-normal break-words">Browser</th>
-//                 <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider bg-white border-r border-gray-200 min-w-[120px] whitespace-normal break-words">Type</th>
-//                 <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider bg-gray-50 border-r border-gray-200 min-w-[140px] whitespace-normal break-words">Who Uses It</th>
-//                 <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider bg-white border-r border-gray-200 min-w-[140px] whitespace-normal break-words">Privacy</th>
-//                 <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider bg-gray-50 border-r border-gray-200 min-w-[140px] whitespace-normal break-words">Security</th>
-//                 <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider bg-white border-r border-gray-200 min-w-[140px] whitespace-normal break-words">AI Features</th>
-//                 <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider bg-gray-50 border-r border-gray-200 min-w-[140px] whitespace-normal break-words">Platforms</th>
-//                 <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider bg-white border-r border-gray-200 min-w-[140px] whitespace-normal break-words">Unique Strength</th>
-//                 <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider bg-gray-50 min-w-[140px] whitespace-normal break-words">Summary/Verdict</th>
+//                 <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-[#4A5745] uppercase tracking-wider bg-gray-50 border-r border-gray-200 sticky left-0 z-20 min-w-[140px] whitespace-normal break-words">Browser</th>
+//                 <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-[#4A5745] uppercase tracking-wider bg-white border-r border-gray-200 min-w-[120px] whitespace-normal break-words">Type</th>
+//                 <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-[#4A5745] uppercase tracking-wider bg-gray-50 border-r border-gray-200 min-w-[140px] whitespace-normal break-words">Who Uses It</th>
+//                 <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-[#4A5745] uppercase tracking-wider bg-white border-r border-gray-200 min-w-[140px] whitespace-normal break-words">Privacy</th>
+//                 <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-[#4A5745] uppercase tracking-wider bg-gray-50 border-r border-gray-200 min-w-[140px] whitespace-normal break-words">Security</th>
+//                 <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-[#4A5745] uppercase tracking-wider bg-white border-r border-gray-200 min-w-[140px] whitespace-normal break-words">AI Features</th>
+//                 <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-[#4A5745] uppercase tracking-wider bg-gray-50 border-r border-gray-200 min-w-[140px] whitespace-normal break-words">Platforms</th>
+//                 <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-[#4A5745] uppercase tracking-wider bg-white border-r border-gray-200 min-w-[140px] whitespace-normal break-words">Unique Strength</th>
+//                 <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-[#4A5745] uppercase tracking-wider bg-gray-50 min-w-[140px] whitespace-normal break-words">Summary/Verdict</th>
 //               </tr>
 //             </thead>
 //             <tbody className="bg-white divide-y divide-gray-200">
@@ -918,7 +918,7 @@ export default BrowserComparisonTable;
 //               ))}
 //               {filteredData.length === 0 && (
 //                 <tr>
-//                   <td colSpan={9} className="text-center py-8 text-gray-500">
+//                   <td colSpan={9} className="text-center py-8 text-[#4A5745]">
 //                     No browsers match the current filters
 //                   </td>
 //                 </tr>
@@ -927,7 +927,7 @@ export default BrowserComparisonTable;
 //           </table>
 //           {/* Row Count Indicator */}
 //           {filteredData.length > 0 && (
-//             <div className="px-4 py-2 bg-gray-50 text-xs text-gray-500 border-t border-gray-200">
+//             <div className="px-4 py-2 bg-gray-50 text-xs text-[#4A5745] border-t border-gray-200">
 //               Showing {filteredData.length} browser{filteredData.length !== 1 ? 's' : ''}
 //               {filteredData.length > 6 && (
 //                 <span className="ml-2">(scroll to see more)</span>
@@ -935,7 +935,7 @@ export default BrowserComparisonTable;
 //             </div>
 //           )}
 //           {filteredData.length > 0 && (
-//             <div className="block sm:hidden px-4 py-2 text-xs text-gray-400 text-center">↔️ Scroll horizontally to see more columns</div>
+//             <div className="block sm:hidden px-4 py-2 text-xs text-[#4A5745] text-center">↔️ Scroll horizontally to see more columns</div>
 //           )}
 //         </div>
 //       )}

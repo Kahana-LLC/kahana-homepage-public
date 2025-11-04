@@ -70,7 +70,7 @@ export default function CustomerSuccessSection() {
                   <div className="mr-4">
                     <span className="font-semibold text-white">{testimonial.name}</span>
                     {' · '}
-                    <span className="text-gray-400">{testimonial.title}</span>
+                    <span className="text-[#4A5745]">{testimonial.title}</span>
                   </div>
                 </div>
                 <h3 className="mt-3 text-lg font-semibold leading-6 text-white">

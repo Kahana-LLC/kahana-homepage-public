@@ -21,7 +21,7 @@ export default function DocCard({ doc }) {
   const readingTime = Math.ceil((doc.wordCount || 0) / 200) || 5;
 
   return (
-    <article className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+    <article className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
       <Link href={`/docs/${doc.slug}`} className="block doc-card-link">
         <div className="p-6">
           <div className="flex items-center justify-between mb-4">

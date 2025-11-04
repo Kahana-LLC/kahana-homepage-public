@@ -81,7 +81,7 @@ export default function Products() {
                   Comprehensive guides and documentation to help you get the most out of Kahana's products.
                 </p>
                 <Link href="/docs">
-                  <button className="bg-[#788B59] text-white font-bold px-6 py-3 rounded-md hover:bg-[#728552] transition-colors">
+                  <button className="nav-button download inline-flex items-center justify-center rounded-md text-white font-bold shadow-sm px-6 py-3 text-base no-underline hover:no-underline focus:no-underline" style={{ textDecoration: 'none', backgroundColor: '#788B59' }}>
                     <span>View Documentation</span>
                   </button>
                 </Link>
@@ -109,7 +109,7 @@ export default function Products() {
                   Get help from our support team and access troubleshooting resources.
                 </p>
                 <Link href="/support">
-                  <button className="bg-[#788B59] text-white font-bold px-6 py-3 rounded-md hover:bg-[#728552] transition-colors">
+                  <button className="nav-button download inline-flex items-center justify-center rounded-md text-white font-bold shadow-sm px-6 py-3 text-base no-underline hover:no-underline focus:no-underline" style={{ textDecoration: 'none', backgroundColor: '#788B59' }}>
                     <span>Contact Support</span>
                   </button>
                 </Link>
@@ -137,7 +137,7 @@ export default function Products() {
                   Stay updated with the latest news, tips, and best practices.
                 </p>
                 <Link href="/blog">
-                  <button className="bg-[#788B59] text-white font-bold px-6 py-3 rounded-md hover:bg-[#728552] transition-colors">
+                  <button className="nav-button download inline-flex items-center justify-center rounded-md text-white font-bold shadow-sm px-6 py-3 text-base no-underline hover:no-underline focus:no-underline" style={{ textDecoration: 'none', backgroundColor: '#788B59' }}>
                     <span>Read Blog</span>
                   </button>
                 </Link>

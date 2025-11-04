@@ -151,7 +151,7 @@ export default function MarketsIndex() {
               <Link
                 key={index}
                 href={market.href}
-                className="group relative bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-[#728552] hover:border-[#788B59]/30 overflow-hidden"
+                className="group relative bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:border-[#788B59]/30 overflow-hidden"
               >
                 <div className="p-8">
                   <div className="flex items-center mb-4">
@@ -190,13 +190,13 @@ export default function MarketsIndex() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#788B59] hover:bg-[#728552] transition-colors duration-300"
+                  className="nav-button download inline-flex items-center justify-center rounded-md text-white font-bold shadow-sm px-6 py-3 text-base no-underline hover:no-underline focus:no-underline" style={{ textDecoration: 'none', backgroundColor: '#788B59' }}
                 >
                   Get Started
                 </Link>
                 <Link
                   href="/docs"
-                  className="inline-flex items-center justify-center px-8 py-3 border border-kahana-primary text-base font-medium rounded-md text-[#728552] bg-white hover:bg-[#788B59] hover:text-white transition-colors duration-300"
+                  className="nav-button download inline-flex items-center justify-center rounded-md text-white font-bold shadow-sm px-6 py-3 text-base no-underline hover:no-underline focus:no-underline" style={{ textDecoration: 'none', backgroundColor: '#788B59' }}
                 >
                   View Documentation
                 </Link>

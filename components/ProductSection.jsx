@@ -131,11 +131,16 @@ export default function ProductSection() {
   };
 
   return (
-    <div className="bg-white py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <div className="bg-white py-24 sm:py-32 relative">
+      {/* Subtle decorative background accent */}
+      <div className="absolute top-0 right-0 w-64 h-64 bg-[#30400D]/5 rounded-full blur-3xl opacity-30 -z-10"></div>
+      
+      <div className="mx-auto max-w-7xl px-6 lg:px-8 relative">
         <div className="lg:grid lg:grid-cols-12 lg:gap-8 lg:items-center">
           {/* Left side - Text content */}
           <div className="lg:col-span-5 px-4 sm:px-6 text-center md:mx-auto md:max-w-2xl lg:text-left relative">
+            {/* Elegant accent line */}
+            <div className="hidden lg:block absolute -left-8 top-1/2 w-1 h-24 bg-gradient-to-b from-transparent via-[#30400D]/25 to-transparent opacity-40"></div>
             <div>
                               <h2 className="text-base font-semibold leading-7 text-[#4A5745] text-center lg:text-left">Oasis Agentic Browser</h2>
               <p className="mt-2 text-3xl font-bold tracking-tight text-[#4A5745] sm:text-4xl text-center lg:text-left">
@@ -164,8 +169,10 @@ export default function ProductSection() {
           </div>
 
           {/* Right side - Browser Preview */}
-          <div className="lg:col-span-7 mt-16 lg:mt-0">
-            <div className="w-[95%] mx-auto lg:w-[120%] lg:-mr-[20%] aspect-[16/9] overflow-hidden rounded-2xl bg-gradient-to-br from-[#F3F8E4] via-[#E0D48C] to-[#F3F8E4] shadow-2xl">
+          <div className="lg:col-span-7 mt-16 lg:mt-0 relative">
+            {/* Elegant accent dot */}
+            <div className="hidden lg:block absolute -top-4 -right-4 w-3 h-3 rounded-full bg-[#30400D]/40 opacity-60"></div>
+            <div className="w-[95%] mx-auto lg:w-[120%] lg:-mr-[20%] aspect-[16/9] overflow-hidden rounded-2xl bg-gradient-to-br from-[#F3F8E4] via-[#E0D48C] to-[#F3F8E4] shadow-2xl border border-[#30400D]/10 group hover:border-[#30400D]/20 transition-all duration-300">
               <div className="relative h-full w-full">
                 {/* Browser Header */}
                 <div className="flex h-8 sm:h-12 items-center justify-between bg-gradient-to-b from-[#F3F8E4] via-[#E0D48C] to-[#F3F8E4] px-2 sm:px-4">

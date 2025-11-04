@@ -78,7 +78,7 @@ export default function ZeroTrust() {
       </Script>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-[#F3F8E4] to-white py-20">
+      <section className="bg-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-5xl font-bold text-[#4A5745] mb-6">

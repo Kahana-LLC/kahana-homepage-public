@@ -19,7 +19,7 @@ export default function ThankYouDemo() {
         <meta name="description" content="Thank you for requesting a demo of Oasis. We'll be in touch shortly." />
       </Head>
 
-      <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white pt-24 pb-16">
+      <main className="min-h-screen bg-white pt-24 pb-16">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="bg-white rounded-xl shadow-xl border border-[#A5DAD8]/30 p-8 md:p-12">
             {/* Success Icon */}

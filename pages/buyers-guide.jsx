@@ -68,7 +68,7 @@ const BuyerGuideOasis = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+      <div className="min-h-screen bg-white">
         <NavBar />
 
         <main className="pt-16 pb-16">
@@ -138,7 +138,7 @@ const BuyerGuideOasis = () => {
                           contact us
                         </Link>
                       </p>
-                      <p className="text-xs text-gray-500">
+                      <p className="text-xs text-[#4A5745]">
                         By submitting this form you consent to be contacted by Kahana, and acknowledge our{' '}
                         <Link href="/privacy-policy" className="text-[#66C2BE] hover:text-[#4A9E9A] underline">
                           Privacy Policy

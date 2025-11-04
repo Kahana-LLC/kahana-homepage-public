@@ -80,7 +80,7 @@ export default function ContactPage() {
   }, []);
 
   const formSection = (
-    <div className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl shadow-xl border border-[#728552] p-8">
+    <div className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl shadow-xl p-8">
       <div className="relative min-h-[600px]">
         {!isFormLoaded && !loadError && (
           <div className="absolute inset-0 flex items-center justify-center">
@@ -135,7 +135,7 @@ export default function ContactPage() {
 
       <NavbarDup />
 
-      <main className="min-h-screen bg-gradient-to-b from-[#F3F8E4] to-white pt-24 pb-16">
+      <main className="min-h-screen bg-white pt-24 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:grid lg:grid-cols-12 lg:gap-16">
             {/* Left Column - Content */}
@@ -162,7 +162,7 @@ export default function ContactPage() {
                     <Link
                       key={link.name}
                       href={link.href}
-                      className="group flex flex-col p-6 bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl border border-[#728552] shadow-sm hover:shadow-md transition-all duration-300"
+                      className="group flex flex-col p-6 bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
                     >
                       <div className="flex-shrink-0 mb-4">
                         <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-[#788B59] to-[#728552] transition-all duration-300">

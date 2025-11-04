@@ -489,17 +489,17 @@ export default function EnterpriseBuyerGuidePage() {
 
               {persona === 'business' ? (
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <div className="rounded-lg not-prose border border-[#728552] p-4 bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10">
+                  <div className="rounded-lg not-prose p-4 bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10">
                     <h4 className="font-semibold mb-1" style={{ color: '#4A5745' }}>Reduce spend</h4>
                     <p className="text-sm text-gray-700 mb-2">Consolidate 3–5 tools into the browser; cut costs by 15–30%.</p>
                     <details className="text-sm text-gray-700"><summary className="cursor-pointer">Show details</summary>Lower agent overhead, fewer vendors, simpler support.</details>
                   </div>
-                  <div className="rounded-lg not-prose border border-[#728552] p-4 bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10">
+                  <div className="rounded-lg not-prose p-4 bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10">
                     <h4 className="font-semibold mb-1" style={{ color: '#4A5745' }}>Faster onboarding</h4>
                     <p className="text-sm text-gray-700 mb-2">Policy-based access + SSO enables day‑1 productivity.</p>
                     <details className="text-sm text-gray-700"><summary className="cursor-pointer">Show details</summary>Import bookmarks/passwords instantly; least‑privilege defaults.</details>
                   </div>
-                  <div className="rounded-lg not-prose border border-[#728552] p-4 bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10">
+                  <div className="rounded-lg not-prose p-4 bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10">
                     <h4 className="font-semibold mb-1" style={{ color: '#4A5745' }}>Higher throughput</h4>
                     <p className="text-sm text-gray-700 mb-2">Hubs + ad/tracker reduction and AI assist reduce switching.</p>
                     <details className="text-sm text-gray-700"><summary className="cursor-pointer">Show details</summary>Multi‑view layouts; keyboard/voice commands for common flows.</details>
@@ -507,17 +507,17 @@ export default function EnterpriseBuyerGuidePage() {
                 </div>
               ) : (
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <div className="rounded-lg not-prose border border-[#728552] p-4 bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10">
+                  <div className="rounded-lg not-prose p-4 bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10">
                     <h4 className="font-semibold mb-1" style={{ color: '#4A5745' }}>Controls at the edge</h4>
                     <p className="text-sm text-gray-700 mb-2">URL/app‑scoped DLP, clipboard/download policies, audit logs.</p>
                     <details className="text-sm text-gray-700"><summary className="cursor-pointer">Show details</summary>Export to CSV/JSON; SIEM ingestion; exception workflows.</details>
                   </div>
-                  <div className="rounded-lg not-prose border border-[#728552] p-4 bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10">
+                  <div className="rounded-lg not-prose p-4 bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10">
                     <h4 className="font-semibold mb-1" style={{ color: '#4A5745' }}>Easy deployment</h4>
                     <p className="text-sm text-gray-700 mb-2">MDM distribution, config templates, staged channels, rollback.</p>
                     <details className="text-sm text-gray-700"><summary className="cursor-pointer">Show details</summary>Works with Workspace ONE, Intune, Jamf; JSON policy files.</details>
                   </div>
-                  <div className="rounded-lg not-prose border border-[#728552] p-4 bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10">
+                  <div className="rounded-lg not-prose p-4 bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10">
                     <h4 className="font-semibold mb-1" style={{ color: '#4A5745' }}>Identity native</h4>
                     <p className="text-sm text-gray-700 mb-2">SAML/OIDC SSO and SCIM provisioning; MFA enforced.</p>
                     <details className="text-sm text-gray-700"><summary className="cursor-pointer">Show details</summary>Conditional access; device posture checks; risk‑based prompts.</details>
@@ -618,7 +618,7 @@ export default function EnterpriseBuyerGuidePage() {
                 unique challenges that we specialize in solving. <Link href="/security-guide" className="text-[#788B59] hover:text-[#728552] underline">Learn more about our security approach</Link>.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-                <div className="rounded-lg not-prose bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 border border-[#728552] p-6">
+                <div className="rounded-lg not-prose bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 p-6">
                   <h5 className="font-semibold mb-2" style={{ color: '#4A5745' }}>For Business Leaders</h5>
                   <ul className="list-disc list-inside space-y-1" style={{ color: '#4A5745' }}>
                     <li>Cut software and support costs by consolidating tools into the browser.</li>
@@ -626,7 +626,7 @@ export default function EnterpriseBuyerGuidePage() {
                     <li>Shorten onboarding time with policy-based access and single sign-on.</li>
                   </ul>
                 </div>
-                <div className="rounded-lg not-prose bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 border border-[#728552] p-6">
+                <div className="rounded-lg not-prose bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 p-6">
                   <h5 className="font-semibold mb-2" style={{ color: '#4A5745' }}>For Technical Admins</h5>
                   <ul className="list-disc list-inside space-y-1" style={{ color: '#4A5745' }}>
                     <li>Centralize policies, audit logs, and data controls at the browser layer.</li>
@@ -682,7 +682,7 @@ export default function EnterpriseBuyerGuidePage() {
                 browser challenges and opportunities.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-                <div className="rounded-lg p-5 not-prose bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 border border-[#728552]">
+                <div className="rounded-lg p-5 not-prose bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10">
                   <h5 className="font-semibold mb-2" style={{ color: COLORS.brand900 }}>Business outcomes</h5>
                   <ul className="list-disc list-inside space-y-1" style={{ color: '#4A5745' }}>
                     <li>Reduce security stack spend by 15–30% via consolidation.</li>
@@ -690,7 +690,7 @@ export default function EnterpriseBuyerGuidePage() {
                     <li>Decrease support tickets with built-in guardrails and guidance.</li>
                   </ul>
                 </div>
-                <div className="rounded-lg p-5 not-prose bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 border border-[#728552]">
+                <div className="rounded-lg p-5 not-prose bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10">
                   <h5 className="font-semibold mb-2" style={{ color: COLORS.brand900 }}>Technical capabilities</h5>
                   <ul className="list-disc list-inside space-y-1" style={{ color: '#4A5745' }}>
                     <li>Granular DLP, clipboard, and download policies at URL/app scope.</li>
@@ -763,7 +763,7 @@ export default function EnterpriseBuyerGuidePage() {
                     traffic inspection by decrypting SSL traffic. An enterprise browser offers visibility into 
                     browser behavior without any unnatural network traffic manipulation.
                   </p>
-                  <div className="bg-[#F3F8E4] border border-[#728552] rounded-lg p-4 mt-4">
+                  <div className="bg-[#F3F8E4] rounded-lg p-4 mt-4">
                     <div className="flex items-center mb-2">
                       <div className="w-8 h-8 bg-[#E0D48C] rounded-full flex items-center justify-center mr-3">
                         <span className="text-[#4A5745] font-bold text-sm">3</span>
@@ -809,7 +809,7 @@ export default function EnterpriseBuyerGuidePage() {
                     account), with built-in ad blocking to remove distractions and speed up browsing, and 
                     integrated tools to speed up common workflows.
                   </p>
-                  <div className="bg-[#F3F8E4] border border-[#728552] rounded-lg p-4 mt-4">
+                  <div className="bg-[#F3F8E4] rounded-lg p-4 mt-4">
                     <div className="flex items-center mb-2">
                       <div className="w-8 h-8 bg-[#E0D48C] rounded-full flex items-center justify-center mr-3">
                         <span className="text-[#4A5745] font-bold text-sm">80%</span>
@@ -1080,7 +1080,7 @@ export default function EnterpriseBuyerGuidePage() {
                     </div>
                     </div>
               
-              <div className="mt-8 bg-[#F3F8E4] border border-[#728552] rounded-lg p-6">
+              <div className="mt-8 bg-[#F3F8E4] rounded-lg p-6">
                 <div className="flex items-center mb-3">
                   <div className="w-8 h-8 bg-[#E0D48C] rounded-full flex items-center justify-center mr-3">
                     <svg className="w-5 h-5 text-[#788B59]" fill="currentColor" viewBox="0 0 24 24">

@@ -82,8 +82,8 @@ export default function AllIndustries() {
       <section className="bg-gradient-to-b from-[#E3DFF1]/20 via-[#8CB7D0]/10 to-white py-20 min-h-screen">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h1 className="text-5xl font-bold text-gray-900 mb-4">All Industries</h1>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <h1 className="text-5xl font-bold text-[#011910] mb-4">All Industries</h1>
+            <p className="text-xl text-[#4A5745] max-w-2xl mx-auto">
               Discover how Kahana empowers organizations across every industry with secure, modern solutions.
             </p>
           </div>
@@ -92,7 +92,7 @@ export default function AllIndustries() {
               <div key={industry.key} className="bg-white rounded-xl border border-[#A5DAD8]/30 shadow-lg shadow-[#E3DFF1]/20 hover:shadow-xl hover:shadow-[#E3DFF1]/30 transition-all duration-300 p-8 flex flex-col justify-between">
                 <div>
                   <h2 className="text-2xl font-semibold text-[#66C2BE] mb-2">{industry.name}</h2>
-                  <p className="text-gray-600 mb-6">{industry.description}</p>
+                  <p className="text-[#4A5745] mb-6">{industry.description}</p>
                 </div>
                 <Link href={industry.href} className="inline-block mt-auto text-[#66C2BE] hover:text-[#55B3AF] font-semibold underline">Explore {industry.name}</Link>
               </div>

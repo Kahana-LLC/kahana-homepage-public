@@ -129,7 +129,7 @@ export default function SaasAndWebApps() {
       </Script>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-[#F3F8E4] to-white py-20">
+      <section className="bg-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-5xl font-bold text-[#4A5745] mb-6">
@@ -289,7 +289,7 @@ export default function SaasAndWebApps() {
       </section>
 
       {/* Practical Benefits Section */}
-      <section className="bg-gradient-to-b from-gray-50 to-white py-16">
+      <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-[#4A5745] mb-12 text-center">
             Real-World Benefits
@@ -330,7 +330,7 @@ export default function SaasAndWebApps() {
             Schedule a demo to see how Oasis can transform your SaaS and web app security.
           </p>
           <Link href="/schedule-demo">
-            <button className="bg-white text-[#728552] font-bold px-8 py-3 rounded-md hover:bg-gray-50 transition-colors">
+            <button className="nav-button download inline-flex items-center justify-center rounded-md text-white font-bold shadow-sm px-6 py-3 text-base no-underline hover:no-underline focus:no-underline" style={{ textDecoration: 'none', backgroundColor: '#788B59' }}>
               Schedule Demo
             </button>
           </Link>

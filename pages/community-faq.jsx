@@ -53,13 +53,13 @@ export default function CommunityFAQ() {
 
       <NavBar />
 
-      <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white pt-24 pb-16">
+      <main className="min-h-screen bg-white pt-24 pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-gray-900 sm:text-5xl mb-6">
+            <h1 className="text-4xl font-bold text-[#011910] sm:text-5xl mb-6">
               Frequently Asked Questions
             </h1>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-[#4A5745]">
               Find answers to common questions about our community, membership, and resources.
             </p>
           </div>
@@ -77,7 +77,7 @@ export default function CommunityFAQ() {
                     onClick={() => toggleFAQ(index)}
                   >
                     <div className="flex items-center justify-between">
-                      <h3 className="text-lg font-semibold text-gray-900">
+                      <h3 className="text-lg font-semibold text-[#011910]">
                         {faq.question}
                       </h3>
                       <svg
@@ -102,7 +102,7 @@ export default function CommunityFAQ() {
                       openIndex === index ? 'pb-4' : 'h-0 overflow-hidden'
                     }`}
                   >
-                    <p className="text-gray-600">{faq.answer}</p>
+                    <p className="text-[#4A5745]">{faq.answer}</p>
                   </div>
                 </div>
               ))}
@@ -111,8 +111,8 @@ export default function CommunityFAQ() {
 
           {/* Contact Section */}
           <div className="bg-[#E3DFF1]/10 rounded-xl p-8 border border-[#A5DAD8]/30">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Still Have Questions?</h2>
-            <p className="text-gray-600 mb-6">
+            <h2 className="text-2xl font-semibold text-[#011910] mb-4">Still Have Questions?</h2>
+            <p className="text-[#4A5745] mb-6">
               If you couldn't find the answer you're looking for, our community team is here to help.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
