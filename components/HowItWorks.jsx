@@ -73,7 +73,7 @@ export default function HowItWorks() {
             {steps.map((step, index) => (
               <div 
                 key={step.id} 
-                className="bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] rounded-xl overflow-hidden border border-[#728552] p-6 shadow-lg transition-all duration-300 hover:shadow-xl"
+                className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl overflow-hidden p-6 shadow-lg transition-all duration-300 hover:shadow-xl"
                 onMouseEnter={() => setHoveredStep(index)}
                 onMouseLeave={() => setHoveredStep(0)}
               >

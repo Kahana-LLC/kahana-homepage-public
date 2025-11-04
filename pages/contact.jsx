@@ -80,7 +80,7 @@ export default function ContactPage() {
   }, []);
 
   const formSection = (
-    <div className="bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] rounded-xl shadow-xl border border-[#728552] p-8">
+    <div className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl shadow-xl border border-[#728552] p-8">
       <div className="relative min-h-[600px]">
         {!isFormLoaded && !loadError && (
           <div className="absolute inset-0 flex items-center justify-center">
@@ -162,7 +162,7 @@ export default function ContactPage() {
                     <Link
                       key={link.name}
                       href={link.href}
-                      className="group flex flex-col p-6 bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] rounded-xl border border-[#728552] shadow-sm hover:shadow-md transition-all duration-300"
+                      className="group flex flex-col p-6 bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl border border-[#728552] shadow-sm hover:shadow-md transition-all duration-300"
                     >
                       <div className="flex-shrink-0 mb-4">
                         <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-[#788B59] to-[#728552] transition-all duration-300">

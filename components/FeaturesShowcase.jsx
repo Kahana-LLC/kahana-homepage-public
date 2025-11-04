@@ -65,7 +65,7 @@ export default function FeaturesShowcase() {
         <div className="mx-auto mt-16 max-w-7xl">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {conceptCards.map((card, index) => (
-              <div key={index} className="bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] rounded-xl overflow-hidden border border-[#728552] p-6 shadow-lg transition-all duration-300 hover:shadow-xl">
+              <div key={index} className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl overflow-hidden p-6 shadow-lg transition-all duration-300 hover:shadow-xl">
                 <div className="flex items-center mb-4">
                   <div className="w-10 h-10 bg-gradient-to-br from-[#788B59] to-[#728552] rounded-full flex items-center justify-center mr-3 shadow-md">
                     <div className="text-white">

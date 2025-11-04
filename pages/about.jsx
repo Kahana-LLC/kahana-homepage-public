@@ -21,7 +21,7 @@ export default function About() {
       <div className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 md:grid-cols-2">
-            <div className="bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] rounded-2xl p-8 border border-[#728552]">
+            <div className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-2xl">
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 bg-gradient-to-br from-[#788B59] to-[#728552] rounded-full flex items-center justify-center mr-4">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -35,7 +35,7 @@ export default function About() {
               </p>
             </div>
 
-            <div className="bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] rounded-2xl p-8 border border-[#728552]">
+            <div className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-2xl">
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 bg-gradient-to-br from-[#788B59] to-[#728552] rounded-full flex items-center justify-center mr-4">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -63,7 +63,7 @@ export default function About() {
           </div>
 
           <div className="grid gap-8 md:grid-cols-2">
-            <div className="bg-gradient-to-r from-[#F3F8E4] to-[#E0D48C] rounded-2xl overflow-hidden border border-[#728552]">
+            <div className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-2xl">
               <div className="p-8">
                 <div className="flex items-center mb-6">
                   <div className="w-12 h-12 bg-gradient-to-br from-[#788B59] to-[#728552] rounded-full flex items-center justify-center mr-4">
@@ -125,7 +125,7 @@ export default function About() {
               </div>
             </div>
 
-            <div className="bg-gradient-to-r from-[#F3F8E4] to-[#E0D48C] rounded-2xl overflow-hidden border border-[#728552]">
+            <div className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-2xl">
               <div className="p-8">
                 <div className="flex items-center mb-6">
                   <div className="w-12 h-12 bg-gradient-to-br from-[#788B59] to-[#728552] rounded-full flex items-center justify-center mr-4">
@@ -175,7 +175,7 @@ export default function About() {
           </div>
 
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-            <div className="bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] rounded-2xl p-8 border border-[#728552]">
+            <div className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-2xl">
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 bg-gradient-to-br from-[#788B59] to-[#728552] rounded-full flex items-center justify-center mr-4">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -189,7 +189,7 @@ export default function About() {
               </p>
             </div>
 
-            <div className="bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] rounded-2xl p-8 border border-[#728552]">
+            <div className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-2xl">
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 bg-gradient-to-br from-[#788B59] to-[#728552] rounded-full flex items-center justify-center mr-4">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -203,7 +203,7 @@ export default function About() {
               </p>
             </div>
 
-            <div className="bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] rounded-2xl p-8 border border-[#728552]">
+            <div className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-2xl">
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 bg-gradient-to-br from-[#788B59] to-[#728552] rounded-full flex items-center justify-center mr-4">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -217,7 +217,7 @@ export default function About() {
               </p>
             </div>
 
-            <div className="bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] rounded-2xl p-8 border border-[#728552]">
+            <div className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-2xl">
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 bg-gradient-to-br from-[#788B59] to-[#728552] rounded-full flex items-center justify-center mr-4">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -241,9 +241,9 @@ export default function About() {
       </div>
 
       {/* Manifesto CTA Section */}
-      <div className="bg-gradient-to-r from-[#F3F8E4] to-[#E0D48C] py-16">
+      <div className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-r from-[#F3F8E4] to-[#E0D48C] rounded-2xl overflow-hidden border border-[#728552]">
+          <div className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-2xl">
             <div className="p-8">
               <div className="flex items-center mb-6">
                 <div className="w-12 h-12 bg-gradient-to-br from-[#788B59] to-[#728552] rounded-full flex items-center justify-center mr-4">

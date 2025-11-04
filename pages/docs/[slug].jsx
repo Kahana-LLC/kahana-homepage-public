@@ -175,7 +175,7 @@ export default function DocPage({ doc, relatedDocs }) {
                     href={`/docs/${relatedDoc.slug}`}
                     className="block group"
                   >
-                    <div className="bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] p-6 rounded-lg border border-[#728552] transition-all duration-300 hover:shadow-lg">
+                    <div className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 p-6 rounded-lg transition-all duration-300 hover:shadow-lg">
                       <h3 className="text-lg font-semibold text-[#4A5745] group-hover:text-[#728552]">
                         {relatedDoc.title}
                       </h3>

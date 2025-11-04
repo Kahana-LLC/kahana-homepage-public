@@ -23,7 +23,7 @@ export default function Careers() {
           </div>
 
           <div className="mt-12">
-            <div className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 p-8 rounded-lg text-center border border-kahana-primary/30">
+            <div className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 p-8 rounded-lg text-center">
               <h2 className="text-2xl font-semibold text-[#4A5745] mb-4">Open Positions</h2>
               <p className="text-[#4A5745] mb-8">
                 We currently have no open positions, but we're always looking for talented individuals 

@@ -288,7 +288,7 @@ export default function ProductSection() {
                   <div className="absolute bottom-4 right-4 flex items-end">
                     {/* Desktop Chat Interface */}
                     {isChatOpen && (
-                      <div className="hidden lg:flex flex-col mr-3 w-80 h-72 bg-white rounded-2xl shadow-lg border border-[#728552] overflow-hidden">
+                      <div className="hidden lg:flex flex-col mr-3 w-80 h-72 bg-white rounded-2xl overflow-hidden">
                         <div className="flex items-center justify-between p-4 border-b border-[#728552] bg-gradient-to-r from-[#E0D48C]/5 to-[#F3F8E4]/5">
                           <div className="flex items-center space-x-3">
                             <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#788B59] to-[#728552] flex items-center justify-center">
@@ -311,7 +311,7 @@ export default function ProductSection() {
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                               </svg>
                             </div>
-                            <div className="bg-white rounded-2xl rounded-tl-none p-3 shadow-sm border border-[#728552]">
+                            <div className="bg-white rounded-2xl">
                               <p className="text-sm text-[#4A5745]">
                                 {showDemoMessage && (
                                   <>Unfortunately, this little chat bot on our landing page isn't integrated with AI. To see the real thing, <Link href="/schedule-demo" className="text-[#728552] hover:underline">schedule a demo</Link>! 😉</>
@@ -327,7 +327,7 @@ export default function ProductSection() {
                               value={message}
                               onChange={(e) => setMessage(e.target.value)}
                               placeholder="Type your message..."
-                              className="flex-1 px-4 py-2 text-sm border border-[#728552] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#788B59]/20 focus:border-[#788B59]"
+                              className="flex-1 px-4 py-2 text-sm rounded-xl focus:outline-none focus:ring-2 focus:ring-[#788B59]/20 focus:border-[#788B59]"
                             />
                             <button 
                               type="submit"

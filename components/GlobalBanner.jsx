@@ -10,7 +10,7 @@ export default function GlobalBanner() {
   if (router.pathname === '/oasis-waitlist' || router.pathname === '/white-paper-future-of-ergonomic-work' || !isVisible) return null;
 
   return (
-    <div className="GlobalBanner bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] border border-[#728552] relative shadow-md">
+    <div className="GlobalBanner bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 relative shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between py-3 gap-4 md:gap-6">
           <div className="flex items-center">

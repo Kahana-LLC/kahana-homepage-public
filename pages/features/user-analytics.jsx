@@ -207,7 +207,7 @@ export default function UserAnalyticsFeatures() {
 
               {/* Charts Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] rounded-xl shadow-sm border border-[#728552] border border-[#728552] p-5">
+                <div className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl shadow-sm p-5">
                   <div className="text-[#4A5745] font-semibold mb-3">Command Accuracy</div>
                   <LineChart
                     labels={months}
@@ -216,7 +216,7 @@ export default function UserAnalyticsFeatures() {
                     yMax={90}
                   />
                 </div>
-                <div className="bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] rounded-xl shadow-sm border border-[#728552] border border-[#728552] p-5">
+                <div className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl shadow-sm p-5">
                   <div className="text-[#4A5745] font-semibold mb-3">Commands Executed</div>
                   <LineChart
                     labels={months}
@@ -225,11 +225,11 @@ export default function UserAnalyticsFeatures() {
                     yMax={6000}
                   />
                 </div>
-                <div className="bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] rounded-xl shadow-sm border border-[#728552] border border-[#728552] p-5">
+                <div className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl shadow-sm p-5">
                   <div className="text-[#4A5745] font-semibold mb-3">Command Errors</div>
                   <BarChart labels={months} values={errorsSeries} color="rgba(239,68,68,0.8)" yMin={0} yMax={220} />
                 </div>
-                <div className="bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] rounded-xl shadow-sm border border-[#728552] border border-[#728552] p-5">
+                <div className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl shadow-sm p-5">
                   <div className="text-[#4A5745] font-semibold mb-3">Active Users</div>
                   <LineChart
                     labels={months}
@@ -254,7 +254,7 @@ export default function UserAnalyticsFeatures() {
 
               {/* Charts Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] rounded-xl shadow-sm border border-[#728552] border border-[#728552] p-5">
+                <div className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl shadow-sm p-5">
                   <div className="text-[#4A5745] font-semibold mb-3">Accuracy Over Time</div>
                   <LineChart
                     labels={months}
@@ -263,7 +263,7 @@ export default function UserAnalyticsFeatures() {
                     yMax={90}
                   />
                 </div>
-                <div className="bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] rounded-xl shadow-sm border border-[#728552] border border-[#728552] p-5">
+                <div className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl shadow-sm p-5">
                   <div className="text-[#4A5745] font-semibold mb-3">Top Commands</div>
                   <HorizontalBarChart
                     labels={topCommandsData.labels}
@@ -271,11 +271,11 @@ export default function UserAnalyticsFeatures() {
                     color="rgba(59,130,246,0.8)"
                   />
                 </div>
-                <div className="bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] rounded-xl shadow-sm border border-[#728552] border border-[#728552] p-5">
+                <div className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl shadow-sm p-5">
                   <div className="text-[#4A5745] font-semibold mb-3">Correct vs Incorrect</div>
                   <DonutChart data={commandAccuracyData} />
                 </div>
-                <div className="bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] rounded-xl shadow-sm border border-[#728552] border border-[#728552] p-5">
+                <div className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl shadow-sm p-5">
                   <div className="text-[#4A5745] font-semibold mb-3">Hourly Usage</div>
                   <HeatmapChart
                     data={hourlyUsageData}
@@ -328,7 +328,7 @@ export default function UserAnalyticsFeatures() {
               </div>
 
               {/* Command Accuracy Distribution Chart */}
-              <div className="bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] rounded-xl shadow-sm border border-[#728552] border border-[#728552] p-5">
+              <div className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl shadow-sm p-5">
                 <div className="text-[#4A5745] font-semibold mb-3">Command Accuracy Distribution</div>
                 <LineChart
                   labels={hourlyAccuracyData.labels}
@@ -349,7 +349,7 @@ export default function UserAnalyticsFeatures() {
                 <KPIStat label="Power Users" value="958" trend="Active segment" />
                 <KPIStat label="Segments Growth" value="1,741" trend="Total users" />
                 <KPIStat label="Retention" value="3,256" trend="Cohort size" />
-                <div className="bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] rounded-xl shadow-sm border border-[#728552] border border-[#728552] p-5">
+                <div className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl shadow-sm p-5">
                   <div className="text-sm text-gray-500">pen A</div>
                   <div className="text-2xl font-semibold text-[#4A5745]">325</div>
                 </div>
@@ -357,11 +357,11 @@ export default function UserAnalyticsFeatures() {
 
               {/* Main Analytics Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-                <div className="bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] rounded-xl shadow-sm border border-[#728552] border border-[#728552] p-5">
+                <div className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl shadow-sm p-5">
                   <div className="text-[#4A5745] font-semibold mb-3">Segments Distribution</div>
                   <PieChart data={segmentsDistributionData} />
                 </div>
-                <div className="bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] rounded-xl shadow-sm border border-[#728552] border border-[#728552] p-5">
+                <div className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl shadow-sm p-5">
                   <div className="text-[#4A5745] font-semibold mb-3">Segments Growth</div>
                   <LineChart
                     labels={segmentsGrowthData.labels}
@@ -370,15 +370,15 @@ export default function UserAnalyticsFeatures() {
                     yMax={40}
                   />
                 </div>
-                <div className="bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] rounded-xl shadow-sm border border-[#728552] border border-[#728552] p-5">
+                <div className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl shadow-sm p-5">
                   <div className="text-[#4A5745] font-semibold mb-3">Geography</div>
                   <WorldMap highlightedRegions={['south-america']} />
                 </div>
-                <div className="bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] rounded-xl shadow-sm border border-[#728552] border border-[#728552] p-5">
+                <div className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl shadow-sm p-5">
                   <div className="text-[#4A5745] font-semibold mb-3">Retention Cohort</div>
                   <RetentionCohort data={retentionCohortData} />
                 </div>
-                <div className="bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] rounded-xl shadow-sm border border-[#728552] border border-[#728552] p-5">
+                <div className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl shadow-sm p-5">
                   <div className="text-[#4A5745] font-semibold mb-3">Geography</div>
                   <HorizontalBarChart
                     labels={['North America', 'Europe', 'Asia', 'South America', 'Africa']}
@@ -386,7 +386,7 @@ export default function UserAnalyticsFeatures() {
                     color="rgba(6,182,212,0.8)"
                   />
                 </div>
-                <div className="bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] rounded-xl shadow-sm border border-[#728552] border border-[#728552] p-5">
+                <div className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl shadow-sm p-5">
                   <div className="text-[#4A5745] font-semibold mb-3">Persona</div>
                   <div className="space-y-3 max-h-48 overflow-y-auto">
                     {personaData.slice(0, 3).map((persona, index) => (
@@ -412,7 +412,7 @@ export default function UserAnalyticsFeatures() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Legacy Analytics Card */}
-            <div className="bg-gradient-to-br from-gray-50 to-kahana-primary-50/30 rounded-2xl p-8 border border-[#728552]">
+            <div className="bg-gradient-to-br from-gray-50 to-kahana-primary-50/30 rounded-2xl">
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 bg-kahana-primary-100 rounded-full flex items-center justify-center mr-4">
                   <svg className="w-6 h-6 text-kahana-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -441,7 +441,7 @@ export default function UserAnalyticsFeatures() {
             </div>
 
             {/* Oasis Analytics Card */}
-            <div className="bg-gradient-to-br from-gray-50 to-kahana-secondary-50/30 rounded-2xl p-8 border border-[#728552]">
+            <div className="bg-gradient-to-br from-gray-50 to-kahana-secondary-50/30 rounded-2xl">
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 bg-kahana-secondary-100 rounded-full flex items-center justify-center mr-4">
                   <svg className="w-6 h-6 text-kahana-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">

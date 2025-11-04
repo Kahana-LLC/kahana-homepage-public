@@ -89,7 +89,7 @@ export default function ProductDemoSection() {
               >
                 {features.map((feature, index) => (
                   <div key={index} className="w-full flex-shrink-0 px-2">
-                    <div className="bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] p-6 rounded-xl shadow-sm border border-[#728552]">
+                    <div className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 p-6 rounded-xl shadow-sm">
                       <div className="flex items-center mb-4">
                         <div className="flex-shrink-0">
                           <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-gradient-to-br from-[#788B59] to-[#728552] text-white">
@@ -132,7 +132,7 @@ export default function ProductDemoSection() {
         {/* Desktop View */}
         <div className="hidden lg:grid lg:grid-cols-3 lg:gap-6">
           {features.map((feature, index) => (
-            <div key={index} className="bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] p-6 rounded-xl shadow-sm border border-[#728552] hover:shadow-md transition-shadow duration-300">
+            <div key={index} className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
               <div className="flex items-center mb-4">
                 <div className="flex-shrink-0">
                   <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-gradient-to-br from-[#788B59] to-[#728552] text-white">
@@ -160,7 +160,7 @@ export default function ProductDemoSection() {
             </button>
           </Link>
           <Link href="/products/enterprise-browser">
-            <button className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 border border-[#728552] text-base font-bold rounded-md text-[#4A5745] bg-[#F3F8E4] hover:bg-[#E0D48C] transition-colors">
+            <button className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 text-base font-bold rounded-md text-[#4A5745] bg-[#F3F8E4] hover:bg-[#E0D48C] transition-colors">
               Learn More
             </button>
           </Link>

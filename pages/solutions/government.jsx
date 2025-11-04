@@ -144,7 +144,7 @@ export default function Government() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {benefits.map((benefit, index) => (
-              <div key={index} className="bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] rounded-lg p-6 shadow-md border border-[#728552]">
+              <div key={index} className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-lg">
                 <div className="text-4xl mb-4">{benefit.icon}</div>
                 <h3 className="text-xl font-semibold text-[#4A5745] mb-2">
                   {benefit.title}
@@ -191,7 +191,7 @@ export default function Government() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {useCases.map((useCase, index) => (
-              <div key={index} className="bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] rounded-lg p-6 shadow-md border border-[#728552]">
+              <div key={index} className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-lg">
                 <h3 className="text-xl font-semibold text-[#4A5745] mb-3">
                   {useCase.title}
                 </h3>

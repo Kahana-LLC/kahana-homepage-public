@@ -26,7 +26,7 @@ export default function Products() {
 
           {/* Product Cards */}
           <div className="mt-12 grid gap-8 md:grid-cols-2">
-            <div className="bg-[#F3F8E4] p-8 rounded-lg border border-[#728552] hover:shadow-lg transition-shadow duration-300">
+            <div className="bg-[#F3F8E4] p-8 rounded-lg hover:shadow-lg transition-shadow duration-300">
               <h3 className="text-2xl font-semibold text-[#4A5745] mb-4">Enterprise Browser</h3>
               <p className="text-[#4A5745] mb-6">
                 A secure, isolated browser environment designed for enterprise needs, protecting your organization's data and users with advanced security features and compliance controls.
@@ -40,7 +40,7 @@ export default function Products() {
               </div>
             </div>
 
-            <div className="bg-[#F3F8E4] p-8 rounded-lg border border-[#728552] hover:shadow-lg transition-shadow duration-300">
+            <div className="bg-[#F3F8E4] p-8 rounded-lg hover:shadow-lg transition-shadow duration-300">
               <h3 className="text-2xl font-semibold text-[#4A5745] mb-4">Web Application</h3>
               <p className="text-[#4A5745] mb-6">
                 A modern web application platform for secure and efficient enterprise browsing, featuring seamless integration and advanced management capabilities.
@@ -60,7 +60,7 @@ export default function Products() {
             <h2 className="text-2xl font-bold text-[#4A5745] text-center mb-8">Resources</h2>
             <div className="grid gap-8 md:grid-cols-3">
               {/* Documentation Card */}
-              <div className="bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] rounded-xl p-8 border border-[#728552]">
+              <div className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl p-8">
                 <div className="flex items-center mb-4">
                   <svg
                     className="w-8 h-8 text-[#728552] mr-3"
@@ -88,7 +88,7 @@ export default function Products() {
               </div>
 
               {/* Support Card */}
-              <div className="bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] rounded-xl p-8 border border-[#728552]">
+              <div className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl p-8">
                 <div className="flex items-center mb-4">
                   <svg
                     className="w-8 h-8 text-[#728552] mr-3"
@@ -116,7 +116,7 @@ export default function Products() {
               </div>
 
               {/* Blog Card */}
-              <div className="bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] rounded-xl p-8 border border-[#728552]">
+              <div className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl p-8">
                 <div className="flex items-center mb-4">
                   <svg
                     className="w-8 h-8 text-[#728552] mr-3"

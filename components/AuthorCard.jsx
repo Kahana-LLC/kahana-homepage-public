@@ -79,7 +79,7 @@ export function AuthorBioCard({ author, imageClassName, index }) {
   if (!author?.name) return null;
 
   return (
-    <div className="bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] rounded-xl border border-[#728552] shadow-lg p-8">
+    <div className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl shadow-lg p-8">
       <div className="flex items-start gap-6">
         <div className="flex-shrink-0">
           <div className="overflow-hidden rounded-lg">

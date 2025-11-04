@@ -96,7 +96,7 @@ export default function RemoteWorkforce() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Traditional Security Card */}
-            <div className="bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] rounded-2xl p-8 border border-[#728552]">
+            <div className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-2xl">
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 bg-gradient-to-br from-[#788B59] to-[#728552] rounded-full flex items-center justify-center mr-4">
                   <svg className="w-6 h-6 text-[#728552]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -125,7 +125,7 @@ export default function RemoteWorkforce() {
             </div>
 
             {/* Remote Work Era Card */}
-            <div className="bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] rounded-2xl p-8 border border-[#728552]">
+            <div className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-2xl">
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 bg-gradient-to-br from-[#788B59] to-[#728552] rounded-full flex items-center justify-center mr-4">
                   <svg className="w-6 h-6 text-[#728552]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -155,7 +155,7 @@ export default function RemoteWorkforce() {
           </div>
 
           {/* The Solution Card */}
-          <div className="mt-8 bg-gradient-to-r from-[#F3F8E4] to-[#E0D48C] rounded-2xl p-8 border border-[#728552]">
+          <div className="mt-8 bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-2xl">
             <div className="flex items-center mb-6">
               <div className="w-12 h-12 bg-gradient-to-br from-[#788B59] to-[#728552] rounded-full flex items-center justify-center mr-4">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -193,7 +193,7 @@ export default function RemoteWorkforce() {
           </h2>
           <div className="grid grid-cols-1 gap-12">
             {conceptCards.map((card, index) => (
-              <div key={index} className="bg-gradient-to-r from-[#F3F8E4] to-[#E0D48C] rounded-2xl overflow-hidden border border-[#728552]">
+              <div key={index} className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-2xl">
                 <div className="p-8">
                   <div className="flex items-center mb-6">
                     <div className="w-12 h-12 bg-gradient-to-br from-[#788B59] to-[#728552] rounded-full flex items-center justify-center mr-4">

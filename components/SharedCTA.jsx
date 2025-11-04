@@ -11,7 +11,7 @@ const SharedCTA = ({
 }) => {
   const buttonStyles = {
     primary: "nav-button download inline-flex items-center justify-center rounded-md text-white font-bold shadow-sm px-6 py-3 text-base no-underline hover:no-underline focus:no-underline",
-    secondary: "inline-flex items-center justify-center rounded-md text-[#4A5745] font-bold px-6 py-3 text-base border border-[#728552] bg-[#F3F8E4] hover:bg-[#E0D48C] transition-colors no-underline hover:no-underline focus:no-underline"
+    secondary: "inline-flex items-center justify-center rounded-md text-[#4A5745] font-bold px-6 py-3 text-base bg-[#F3F8E4] hover:bg-[#E0D48C] transition-colors no-underline hover:no-underline focus:no-underline"
   };
 
   const buttonInlineStyles = {

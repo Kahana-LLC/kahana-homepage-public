@@ -159,7 +159,7 @@ export default function WhitePaperPage({ whitePaper, relatedWhitePapers }) {
 
           {/* Content - This would typically be the white paper content */}
           <div className="prose prose-lg max-w-none mb-12">
-            <div className="bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] rounded-lg p-8 text-center border border-[#728552]">
+            <div className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-lg">
               <FaFilePdf className="w-16 h-16 text-red-600 mx-auto mb-4" />
               <h3 className="text-xl font-semibold text-[#4A5745] mb-2">
                 White Paper Content
@@ -183,7 +183,7 @@ export default function WhitePaperPage({ whitePaper, relatedWhitePapers }) {
               </h2>
               <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                 {relatedWhitePapers.map((relatedWP) => (
-                  <div key={relatedWP.slug} className="bg-gradient-to-br from-[#F3F8E4] to-[#E0D48C] rounded-lg p-6 border border-[#728552] transition-all duration-300 hover:shadow-lg">
+                  <div key={relatedWP.slug} className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-lg transition-all duration-300 hover:shadow-lg">
                     <div className="flex items-center mb-3">
                       <FaFilePdf className="w-5 h-5 text-red-600 mr-2" />
                       <span className="text-sm font-medium text-[#4A5745]">
