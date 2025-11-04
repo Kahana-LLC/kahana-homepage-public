@@ -5565,10 +5565,10 @@ export default function WhitePaperPDF() {
           {/* Health Survey CTA Section */}
           <div className="bg-green-100 rounded-2xl p-8 mb-16">
             <div className="text-center">
-              <h3 className="text-2xl font-bold text-black mb-4">
+              <h3 className="text-2xl font-bold text-[#011910] mb-4">
                 How Many Steps Do You Actually Get In?
               </h3>
-              <p className="text-black/80 mb-6 max-w-2xl mx-auto">
+              <p className="text-[#011910]/80 mb-6 max-w-2xl mx-auto">
                 We're researching how sedentary work impacts daily movement and health. 
                 Share your experience with getting steps in during work hours to help us identify and fix the problems with desk-bound work.
               </p>

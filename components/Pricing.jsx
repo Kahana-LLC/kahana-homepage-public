@@ -74,11 +74,11 @@ export default function Pricing() {
             return (
               <div key={tier.name} className="rounded-lg border border-gray-200 shadow-sm">
                 <div className="p-6">
-                  <h2 className="text-lg font-bold text-center leading-6 text-[#000000]">
+                  <h2 className="text-lg font-bold text-center leading-6 text-[#011910]">
                     {tier.name}
                   </h2>
                   <p className="mt-8 text-center">
-                    <span className="text-4xl font-bold tracking-tight text-[#000000]">
+                    <span className="text-4xl font-bold tracking-tight text-[#011910]">
                       {tier.priceMonthly === 0 ? '$0.00' : `$${tier.priceMonthly}`}
                     </span>
                     {tier.name === 'Enterprise' ? (

@@ -380,7 +380,7 @@ export default function SecurityRoadmapPage() {
                 <div className="space-y-6">
                   <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
                     <img 
-                      src="/Kahana_Current_Combined.svg" 
+                      src="/kahana_logo_transparent.svg" 
                       alt="Oasis Enterprise Browser" 
                       className="w-full h-auto mb-4"
                     />

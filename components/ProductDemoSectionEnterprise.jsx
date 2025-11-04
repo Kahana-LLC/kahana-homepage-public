@@ -66,10 +66,10 @@ export default function ProductDemoSection() {
             {features.map((feature) => (
               <div key={feature.title} className="space-y-6">
                 <div className="max-w-[45rem] mx-auto">
-                  <h2 className="text-2xl font-semibold text-black">
+                  <h2 className="text-2xl font-semibold text-[#011910]">
                     {feature.title}
                   </h2>
-                  <p className="mt-2 text-lg text-black">
+                  <p className="mt-2 text-lg text-[#011910]">
                     {feature.description}
                     <br /><br />
                   </p>
@@ -93,10 +93,10 @@ export default function ProductDemoSection() {
                 <div className="max-w-[70rem] mx-auto rounded-lg bg-gray-100 p-4">
                   <div className="flex items-center space-x-6">
                     <div className="w-1/3 pl-4">
-                      <h2 className="text-2xl font-semibold text-black">
+                      <h2 className="text-2xl font-semibold text-[#011910]">
                         {feature.title}
                       </h2>
-                      <p className="mt-2 text-lg text-black">
+                      <p className="mt-2 text-lg text-[#011910]">
                         {feature.description}
                         <br /><br />
                       </p>
