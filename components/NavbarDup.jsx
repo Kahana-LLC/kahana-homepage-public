@@ -563,15 +563,15 @@ function NavBar() {
 
           {/* Buttons and Hamburger Menu */}
           <div className="flex items-center gap-4">
-            <div className="nav-buttons flex">
+            <div className="nav-buttons flex gap-2">
               <Link href="/schedule-demo">
-                <button className="nav-button download inline-flex items-center rounded-md bg-[#788B59] text-white font-bold shadow-sm hover:bg-[#728552] px-2 py-1.5 text-xs md:px-4 md:py-2 md:text-sm">
+                <button className="nav-button download inline-flex items-center justify-center rounded-[27.5px] bg-white text-[#728552] font-bold border-[3px] border-white/38 px-4 py-2.5 text-xs md:px-6 md:py-3 md:text-sm hover:bg-opacity-90 transition-all">
                   <span className="md:hidden">Demo</span>
                   <span className="hidden md:inline">Schedule Demo</span>
                 </button>
               </Link>
               <Link href="/contact">
-                <button className="nav-button get-in-touch bg-[#F3F8E4] text-[#788B59] font-bold hover:bg-[#E0D48C] border border-[#788B59]">
+                <button className="nav-button get-in-touch inline-flex items-center justify-center rounded-[27.5px] bg-white text-[#728552] font-bold border-[3px] border-white/38 px-4 py-2.5 text-xs md:px-6 md:py-3 md:text-sm hover:bg-opacity-90 transition-all">
                   <span className="md:hidden">Contact</span>
                   <span className="hidden md:inline">Contact</span>
                 </button>
@@ -625,12 +625,12 @@ function NavBar() {
             {/* Contact Buttons at Top */}
             <div className="flex flex-col gap-2 mb-4">
               <Link href="/schedule-demo" className="text-center">
-                <button className="w-full py-2 px-4 bg-[#788B59] text-white font-bold rounded-md hover:bg-[#728552] transition-colors" style={{ color: '#ffffff' }}>
+                <button className="w-full py-2.5 px-6 bg-white text-[#728552] font-bold rounded-[27.5px] border-[3px] border-white/38 hover:bg-opacity-90 transition-all">
                   Schedule Demo
                 </button>
               </Link>
               <Link href="/contact" className="text-center">
-                <button className="w-full py-2 px-4 bg-[#788B59] text-white font-bold rounded-md hover:bg-[#728552] transition-colors" style={{ color: '#ffffff' }}>
+                <button className="w-full py-2.5 px-6 bg-white text-[#728552] font-bold rounded-[27.5px] border-[3px] border-white/38 hover:bg-opacity-90 transition-all">
                   Contact
                 </button>
               </Link>
