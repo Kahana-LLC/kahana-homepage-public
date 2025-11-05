@@ -62,6 +62,24 @@ a:focus {
   color: var(--bg-surface) !important;
 }
 
+/* Exception for navbar links - must be white */
+a.nav-link,
+.nav-link,
+a.nav-link:visited,
+.nav-link:visited,
+a.nav-link:hover,
+.nav-link:hover,
+a.nav-link:focus,
+.nav-link:focus {
+  color: #ffffff !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+}
+a.nav-link:hover,
+.nav-link:hover {
+  color: #E0D48C !important;
+}
+
 a.pricing-button,
 a.pricing-button:hover,
 a.pricing-button:focus {

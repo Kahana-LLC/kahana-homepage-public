@@ -10,22 +10,22 @@ export default function GlobalBanner() {
   if (router.pathname === '/oasis-waitlist' || router.pathname === '/white-paper-future-of-ergonomic-work' || !isVisible) return null;
 
   return (
-    <div className="GlobalBanner bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 relative shadow-md">
+    <div className="GlobalBanner bg-[#30400D] relative shadow-md border-t border-white/10 border-b border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between py-3 gap-4 md:gap-6">
           <div className="flex items-center">
             <div className="flex-shrink-0">
-              <svg className="h-5 w-5" style={{ color: '#4A5745' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 2a3 3 0 100 6 3 3 0 000-6zM12 16a3 3 0 100 6 3 3 0 000-6zM2 12a3 3 0 106 0 3 3 0 00-6 0zM16 12a3 3 0 106 0 3 3 0 00-6 0zM5 5l14 14M5 19l14-14" />
               </svg>
             </div>
             <div className="ml-3">
-              <p className="text-sm font-medium" style={{ color: '#4A5745' }}>
+              <p className="text-sm font-medium text-white">
                 <span className="md:hidden">
                   AI browser that melds with your mind naturally
                 </span>
                 <span className="hidden md:inline">
-                  Meet Oasis: The first AI browser designed to meld with the way your mind works naturally. Built for ergonomic work, focus, and spatial ease. Join our <a href="/community" className="underline hover:!text-[#728552] transition-colors" style={{color: '#4A5745'}}>Discord community</a> to stay updated!
+                  Meet Oasis: The first AI browser designed to meld with the way your mind works naturally. Built for ergonomic work, focus, and spatial ease. Join our <a href="/community" className="underline hover:!text-[#E0D48C] transition-colors text-white">Discord community</a> to stay updated!
                 </span>
               </p>
             </div>
@@ -36,7 +36,7 @@ export default function GlobalBanner() {
               className="nav-button download inline-flex items-center justify-center rounded-md text-white font-bold shadow-sm px-4 py-2.5 text-sm no-underline hover:no-underline focus:no-underline whitespace-nowrap"
               style={{ textDecoration: 'none', backgroundColor: '#788B59' }}
             >
-              <span>Join Waitlist</span>
+              <span>Get Early Access</span>
             </Link>
             <Link
               href="/community"
