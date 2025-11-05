@@ -170,8 +170,6 @@ export default function ProductSection() {
 
           {/* Right side - Browser Preview */}
           <div className="lg:col-span-7 mt-16 lg:mt-0 relative">
-            {/* Elegant accent dot */}
-            <div className="hidden lg:block absolute -top-4 -right-4 w-3 h-3 rounded-full bg-[#30400D]/40 opacity-60"></div>
             <div className="w-[95%] mx-auto lg:w-[120%] lg:-mr-[20%] aspect-[16/9] overflow-hidden rounded-2xl bg-gradient-to-br from-[#F3F8E4] via-[#E0D48C] to-[#F3F8E4] shadow-2xl border border-[#30400D]/10 group hover:border-[#30400D]/20 transition-all duration-300">
               <div className="relative h-full w-full">
                 {/* Browser Header */}

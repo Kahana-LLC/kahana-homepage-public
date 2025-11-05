@@ -69,7 +69,7 @@ function NavBar() {
           }
 
           .mobile-link:hover {
-            background-color: #D0EDE6;
+            background-color:rgb(82, 85, 84);
           }
 
           .nav-content {
@@ -101,12 +101,13 @@ function NavBar() {
             height: 100%;
           }
 
+          a.nav-link,
           .nav-link {
             position: relative;
-            color: #ffffff;
+            color: #ffffff !important;
             font-size: 1rem;
-            font-weight: 500;
-            text-decoration: none;
+            font-weight: 500 !important;
+            text-decoration: none !important;
             transition: color 0.2s ease;
             padding: 0.75rem 1rem;
             white-space: nowrap;
@@ -115,8 +116,10 @@ function NavBar() {
             letter-spacing: -0.01em;
           }
 
+          a.nav-link:hover,
           .nav-link:hover {
-            color: #E0D48C;
+            color: #E0D48C !important;
+            text-decoration: none !important;
           }
 
           .dropdown {
@@ -416,7 +419,7 @@ function NavBar() {
           {/* Navigation Links */}
           <div className="nav-links">
             <div className="dropdown">
-              <Link href="/products" className="nav-link">Products</Link>
+              <Link href="/products" className="nav-link text-white">Products</Link>
               <div className="dropdown-overlay"></div>
               <div className="dropdown-content" style={{ width: '280px', gridTemplateColumns: '1fr' }}>
                 <div className="dropdown-section">
@@ -437,7 +440,7 @@ function NavBar() {
             </div>
 
             <div className="dropdown">
-              <Link href="/markets" className="nav-link">Markets</Link>
+              <Link href="/markets" className="nav-link text-white">Markets</Link>
               <div className="dropdown-overlay"></div>
               <div className="dropdown-content">
                 <div className="dropdown-section">
@@ -459,7 +462,7 @@ function NavBar() {
             </div>
 
             <div className="dropdown">
-              <Link href="/solutions" className="nav-link">Solutions</Link>
+              <Link href="/solutions" className="nav-link text-white">Solutions</Link>
               <div className="dropdown-overlay"></div>
               <div className="dropdown-content">
                 <div className="dropdown-section">
@@ -498,7 +501,7 @@ function NavBar() {
             </div>
 
             <div className="dropdown">
-              <Link href="/docs" className="nav-link">Learn</Link>
+              <Link href="/docs" className="nav-link text-white">Learn</Link>
               <div className="dropdown-overlay"></div>
               <div className="dropdown-content" style={{ width: '480px', gridTemplateColumns: '1fr 1fr' }}>
                 <div className="dropdown-section">
@@ -537,7 +540,7 @@ function NavBar() {
             </div>
 
             <div className="dropdown">
-              <Link href="/about" className="nav-link">About</Link>
+              <Link href="/about" className="nav-link text-white">About</Link>
               <div className="dropdown-overlay"></div>
               <div className="dropdown-content">
                 <div className="dropdown-section">
