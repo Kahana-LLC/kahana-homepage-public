@@ -66,8 +66,6 @@ export default function FeaturesShowcase() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {conceptCards.map((card, index) => (
               <div key={index} className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl overflow-hidden p-6 shadow-lg transition-all duration-300 hover:shadow-xl relative group border border-transparent hover:border-[#30400D]/20">
-                {/* Elegant accent dot */}
-                <div className="absolute top-4 right-4 w-2 h-2 rounded-full bg-[#30400D]/30 group-hover:bg-[#30400D]/60 transition-all duration-300"></div>
                 <div className="flex items-center mb-4">
                   <div className="w-10 h-10 bg-gradient-to-br from-[#788B59] to-[#728552] rounded-full flex items-center justify-center mr-3 shadow-md group-hover:ring-2 group-hover:ring-[#30400D]/30 transition-all duration-300">
                     <div className="text-white">
