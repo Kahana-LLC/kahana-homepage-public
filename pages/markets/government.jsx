@@ -271,10 +271,8 @@ export default function Government({ governmentBlogs }) {
               Transform your government operations with enterprise-grade security, enhanced productivity, and comprehensive analytics.
             </p>
             <div className="flex justify-center">
-              <Link href="/buyers-guide">
-                <button className="nav-button download inline-flex items-center justify-center rounded-md text-white font-bold shadow-sm px-6 py-3 text-base no-underline hover:no-underline focus:no-underline" style={{ textDecoration: 'none', backgroundColor: '#788B59' }}>
+              <Link href="/buyers-guide" className="btn-secondary inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline">
                   Read Buyer's Guide
-                </button>
               </Link>
             </div>
           </div>
@@ -399,7 +397,7 @@ export default function Government({ governmentBlogs }) {
           <div className="flex justify-center">
             <Link 
               href="/sales" 
-              className="nav-button download inline-flex items-center justify-center rounded-md text-white font-bold shadow-sm px-6 py-3 text-base no-underline hover:no-underline focus:no-underline" style={{ textDecoration: 'none', backgroundColor: '#788B59' }}
+              className="btn-primary inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline"
               
             >
               <span >

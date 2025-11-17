@@ -213,10 +213,8 @@ export default function FreeAgenticBrowser() {
             <p className="text-xl text-[#4A5745] max-w-3xl mx-auto mb-8">
               A productivity-focused, modern browser designed for personal use, featuring smart organization tools, AI-powered assistance, and a seamless browsing experience. Boost your productivity and take control of your digital workflow.
             </p>
-            <Link href="/oasis-waitlist">
-              <button className="nav-button download inline-flex items-center justify-center rounded-md text-white font-bold shadow-sm px-6 py-3 text-base no-underline hover:no-underline focus:no-underline" style={{ textDecoration: 'none', backgroundColor: '#788B59' }}>
+            <Link href="/oasis-waitlist" className="btn-primary inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline">
                 Join Waitlist
-              </button>
             </Link>
           </div>
         </div>
@@ -340,10 +338,8 @@ export default function FreeAgenticBrowser() {
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
             Download Oasis Free Agentic Browser today and experience enhanced productivity with smart organization tools and AI-powered assistance.
           </p>
-          <Link href="/oasis-waitlist">
-            <button className="nav-button download inline-flex items-center justify-center rounded-md text-white font-bold shadow-sm px-6 py-3 text-base no-underline hover:no-underline focus:no-underline" style={{ textDecoration: 'none', backgroundColor: '#788B59' }}>
+          <Link href="/oasis-waitlist" className="btn-primary inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline">
               Join Waitlist
-            </button>
           </Link>
         </div>
       </section>

@@ -32,10 +32,8 @@ export default function Products() {
                 A secure, isolated browser environment designed for enterprise needs, protecting your organization's data and users with advanced security features and compliance controls.
               </p>
               <div className="space-y-4">
-                <Link href="/products/enterprise-browser">
-                  <button className="w-full nav-button download inline-flex items-center justify-center rounded-md text-white font-bold shadow-sm px-6 py-3 text-base no-underline hover:no-underline focus:no-underline" style={{ textDecoration: 'none', backgroundColor: '#788B59' }}>
+                <Link href="/products/enterprise-browser" className="btn-primary w-full inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline">
                     Learn More
-                  </button>
                 </Link>
               </div>
             </div>
@@ -46,10 +44,8 @@ export default function Products() {
                 A modern web application platform for secure and efficient enterprise browsing, featuring seamless integration and advanced management capabilities.
               </p>
               <div className="space-y-4">
-                <Link href="/products/web-application">
-                  <button className="w-full nav-button download inline-flex items-center justify-center rounded-md text-white font-bold shadow-sm px-6 py-3 text-base no-underline hover:no-underline focus:no-underline" style={{ textDecoration: 'none', backgroundColor: '#788B59' }}>
+                <Link href="/products/web-application" className="btn-primary w-full inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline">
                     Learn More About Web Application
-                  </button>
                 </Link>
               </div>
             </div>
@@ -80,10 +76,8 @@ export default function Products() {
                 <p className="text-[#4A5745] mb-6">
                   Comprehensive guides and documentation to help you get the most out of Kahana's products.
                 </p>
-                <Link href="/docs">
-                  <button className="nav-button download inline-flex items-center justify-center rounded-md text-white font-bold shadow-sm px-6 py-3 text-base no-underline hover:no-underline focus:no-underline" style={{ textDecoration: 'none', backgroundColor: '#788B59' }}>
+                <Link href="/docs" className="btn-primary inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline">
                     <span>View Documentation</span>
-                  </button>
                 </Link>
               </div>
 
@@ -108,10 +102,8 @@ export default function Products() {
                 <p className="text-[#4A5745] mb-6">
                   Get help from our support team and access troubleshooting resources.
                 </p>
-                <Link href="/support">
-                  <button className="nav-button download inline-flex items-center justify-center rounded-md text-white font-bold shadow-sm px-6 py-3 text-base no-underline hover:no-underline focus:no-underline" style={{ textDecoration: 'none', backgroundColor: '#788B59' }}>
+                <Link href="/support" className="btn-primary inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline">
                     <span>Contact Support</span>
-                  </button>
                 </Link>
               </div>
 
@@ -136,10 +128,8 @@ export default function Products() {
                 <p className="text-[#4A5745] mb-6">
                   Stay updated with the latest news, tips, and best practices.
                 </p>
-                <Link href="/blog">
-                  <button className="nav-button download inline-flex items-center justify-center rounded-md text-white font-bold shadow-sm px-6 py-3 text-base no-underline hover:no-underline focus:no-underline" style={{ textDecoration: 'none', backgroundColor: '#788B59' }}>
+                <Link href="/blog" className="btn-primary inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline">
                     <span>Read Blog</span>
-                  </button>
                 </Link>
               </div>
             </div>

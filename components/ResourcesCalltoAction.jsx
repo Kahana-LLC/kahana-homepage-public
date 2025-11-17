@@ -12,10 +12,8 @@ const ResourcesCallToAction = () => {
           Start charging for access to your best assets in minutes with Kahana.
         </p>
         <div className="mt-4">
-          <Link href="/schedule-demo">
-            <button className="inline-block px-6 py-3 bg-[#788B59] text-white font-bold rounded-md hover:bg-[#728552] transition-colors">
+          <Link href="/schedule-demo" className="btn-primary inline-block px-6 py-3 no-underline hover:no-underline focus:no-underline">
               Schedule a Demo
-            </button>
           </Link>
         </div>
       </div>

@@ -258,8 +258,7 @@ export default function About() {
               </p>
               <Link 
                 href="/manifesto"
-                className="nav-button download inline-flex items-center justify-center rounded-md text-white font-bold shadow-sm px-6 py-3 text-base no-underline hover:no-underline focus:no-underline"
-                style={{ textDecoration: 'none', backgroundColor: '#788B59' }}
+                className="btn-primary inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline"
               >
                 <span>Read the Manifesto</span>
               </Link>

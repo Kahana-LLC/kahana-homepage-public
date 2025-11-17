@@ -50,6 +50,21 @@ h6 {
   color: #011910 !important;
 }
 
+/* Exception for ProductSection h2 */
+.product-container h2 {
+  color: #978455 !important;
+}
+
+/* Exception for FeaturesShowcase h2 */
+.features-section h2 {
+  color: #978455 !important;
+}
+
+/* Exception for HowItWorks h2 */
+.get-started-section h2 {
+  color: #978455 !important;
+}
+
 /* High-contrast links */
 a {
   color: var(--bg-action) !important;
@@ -62,7 +77,7 @@ a:focus {
   color: var(--bg-surface) !important;
 }
 
-/* Exception for navbar links - must be white */
+/* Exception for navbar links - brand olive */
 a.nav-link,
 .nav-link,
 a.nav-link:visited,
@@ -71,13 +86,29 @@ a.nav-link:hover,
 .nav-link:hover,
 a.nav-link:focus,
 .nav-link:focus {
-  color: #ffffff !important;
+  color: #617500 !important;
   text-decoration: none !important;
   font-weight: 500 !important;
 }
 a.nav-link:hover,
 .nav-link:hover {
-  color: #E0D48C !important;
+  color: #4A5F00 !important;
+}
+
+/* Dropdown menu links */
+a.dropdown-link,
+.dropdown-link,
+a.dropdown-link:visited,
+.dropdown-link:visited {
+  color: #2c2c2c !important;
+  text-decoration: none !important;
+}
+a.dropdown-link:hover,
+.dropdown-link:hover,
+a.dropdown-link:focus,
+.dropdown-link:focus {
+  color: var(--kahana-primary) !important;
+  text-decoration: none !important;
 }
 
 a.pricing-button,
@@ -108,7 +139,90 @@ input[type="button"]:hover {
   background-color: var(--bg-surface) !important;
 }
 
-/* Override for navbar buttons - rounded pill style */
+/* Primary Button Style */
+.btn-primary,
+.nav-button.primary,
+button.btn-primary,
+a.btn-primary {
+  background-color: #7A9200 !important;
+  border: 1px solid #AFBE66 !important;
+  color: #FFFFFF !important;
+  border-radius: 27.5px !important;
+  font-weight: bold !important;
+  transition: all 0.3s ease !important;
+}
+
+.btn-primary:hover,
+.nav-button.primary:hover,
+button.btn-primary:hover,
+a.btn-primary:hover {
+  background-color: #6A8200 !important;
+  border-color: #9FAE56 !important;
+  color: #FFFFFF !important;
+}
+
+/* Secondary Button Style */
+.btn-secondary,
+.nav-button.secondary,
+button.btn-secondary,
+a.btn-secondary {
+  background-color: #FFFFFF !important;
+  border: 2px solid #7A9200 !important;
+  color: #7A9200 !important;
+  border-radius: 32px !important;
+  font-weight: bold !important;
+  transition: all 0.3s ease !important;
+}
+
+.btn-secondary,
+.btn-secondary *,
+.nav-button.secondary,
+.nav-button.secondary *,
+button.btn-secondary,
+button.btn-secondary *,
+a.btn-secondary,
+a.btn-secondary * {
+  color: #7A9200 !important;
+}
+
+.btn-secondary span,
+.nav-button.secondary span,
+button.btn-secondary span,
+a.btn-secondary span {
+  color: #7A9200 !important;
+}
+
+.btn-secondary svg,
+.nav-button.secondary svg,
+button.btn-secondary svg,
+a.btn-secondary svg {
+  color: #7A9200 !important;
+}
+
+.btn-secondary:hover,
+.nav-button.secondary:hover,
+button.btn-secondary:hover,
+a.btn-secondary:hover {
+  background-color: #F5F5F5 !important;
+  border-color: #6A8200 !important;
+  color: #6A8200 !important;
+}
+
+.btn-secondary:hover span,
+.nav-button.secondary:hover span,
+button.btn-secondary:hover span,
+a.btn-secondary:hover span {
+  color: #6A8200 !important;
+}
+
+.btn-secondary:hover svg,
+.nav-button.secondary:hover svg,
+button.btn-secondary:hover svg,
+a.btn-secondary:hover svg {
+  color: #6A8200 !important;
+}
+
+/* Legacy support - rounded pill style */
 .nav-button.download,
 .nav-button.get-in-touch {
   border-radius: 27.5px !important;
@@ -212,6 +326,11 @@ section.bg-gradient-to-r h2.text-white {
   --border-light: var(--bg-highlight);
   --text-subtle: #4A5745A0;
   --shadow-color: #4A574520;
+
+  /* Unified grid spacing - consistent left margin for all sections */
+  --container-padding-mobile: 1rem;    /* 16px - mobile */
+  --container-padding-tablet: 1.25rem; /* 20px - tablet (640px+) */
+  --container-padding-desktop: 1.5rem; /* 24px - desktop (1024px+) */
 }
 
 /* Box sizing for all elements */

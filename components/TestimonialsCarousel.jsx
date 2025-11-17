@@ -55,7 +55,7 @@ export default function TestimonialsCarousel() {
           <div className="relative">
             <div className="flex items-center justify-center">
               <div className="relative w-full max-w-3xl">
-                <div className="relative bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 px-6 py-8 shadow-xl sm:rounded-xl sm:px-8">
+                <div className="relative bg-white px-6 py-8 shadow-xl sm:rounded-xl sm:px-8 border border-gray-200">
                   <div className="text-center">
                     <p className="text-lg leading-8 text-[#4A5745]">
                       "{testimonials[currentIndex].quote}"
