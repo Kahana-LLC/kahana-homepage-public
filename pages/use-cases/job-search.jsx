@@ -128,38 +128,30 @@ const supportLinks = [
 export default function JobSearchWaitlist() {
   const [hoveredStep, setHoveredStep] = useState(0);
 
-  const renderForm = () => (
+  const renderCTASection = () => (
     <div className="w-full">
-      <iframe
-        src="https://tally.so/r/w8V8GA"
-        width="100%"
-        height="400"
-        frameBorder="0"
-        marginHeight="0"
-        marginWidth="0"
-        title="Oasis Waitlist"
-        style={{ border: 0,
-          borderRadius: 0,
-          backgroundColor: 'transparent',
-          display: 'block' }}
-      />
-      
-      {/* Disclaimer Section */}
-      <div className="mt-4 pt-4 border-t border-gray-200 bg-white relative -mt-8 pt-8">
-        <div className="text-center">
-          <p className="text-sm text-gray-600 mb-3">
-            <strong>Contact us</strong> - for an immediate response, contact us directly at{' '}
-            <Link href="/contact" className="text-[#66C2BE] hover:text-[#4A9E9A] underline">
-              contact us
-            </Link>
+      <div className="bg-white rounded-xl p-8 md:p-12 text-center shadow-xl" style={{ border: '2px solid #7A9200' }}>
+        <div className="max-w-2xl mx-auto">
+          <h3 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: '#4A5745' }}>
+            Join the Beta Program
+          </h3>
+          <p className="text-xl mb-8" style={{ color: '#4A5745' }}>
+            Get early access to Oasis before everyone else.
           </p>
-          <p className="text-xs text-gray-500">
-            By submitting this form you consent to be contacted by Kahana, and acknowledge our{' '}
-            <Link href="/privacy-policy" className="text-[#66C2BE] hover:text-[#4A9E9A] underline">
-              Privacy Policy
-            </Link>
-            .
-          </p>
+          <Link
+            href="/oasis-beta-program"
+            className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+            style={{
+              backgroundColor: '#FFFFFF',
+              border: '2px solid #7A9200',
+              color: '#7A9200'
+            }}
+          >
+            <span>Join Beta Program</span>
+            <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: '#7A9200' }}>
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </Link>
         </div>
       </div>
     </div>
@@ -223,16 +215,16 @@ export default function JobSearchWaitlist() {
       </Head>
       <div className="oasis-waitlist">
         <NavBar />
-        <main className="min-h-screen bg-white pt-24 pb-16">
+        <main className="min-h-screen pt-24 pb-16" style={{ background: 'linear-gradient(90deg, #d6e3f4 0%, #e5efd8 100%)' }}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto">
               {/* Hero Section */}
               <div className="text-center mb-12">
-                <h2 className="text-base font-semibold leading-7 text-[#66C2BE] mb-3">Amplify your existing job hunt workflow</h2>
-                <h1 className="text-4xl font-bold text-gray-900 sm:text-5xl">
+                <h2 className="text-base font-semibold leading-7 mb-3" style={{ color: '#7A9200' }}>Amplify your existing job hunt workflow</h2>
+                <h1 className="text-4xl font-bold sm:text-5xl" style={{ color: '#4A5745' }}>
                   The AI browser that makes job hunting less of a hellscape
                 </h1>
-                <p className="mt-6 text-xl text-gray-600">
+                <p className="mt-6 text-xl" style={{ color: '#4A5745' }}>
                   Using Jobright, LinkedIn, Apollo, Indeed and more job hunting tools? Great! Now you can amplify your workflow and process with Oasis, the top AI browser for job hunters. Our commands and agentic workflows amplify the platforms and tools you already use to make landing your dream job less of a hellscape.
                 </p>
               </div>
@@ -242,11 +234,9 @@ export default function JobSearchWaitlist() {
                 {featureShowcase}
               </div>
 
-              {/* Centered Form Section */}
-              <div className="max-w-md mx-auto mb-12">
-                <div className="bg-white rounded-xl shadow-xl p-8">
-                  {renderForm()}
-                </div>
+              {/* CTA Section */}
+              <div className="max-w-4xl mx-auto mb-12">
+                {renderCTASection()}
               </div>
 
               {/* Steps Section */}
@@ -264,23 +254,24 @@ export default function JobSearchWaitlist() {
                       {steps.map((step, index) => (
                         <div 
                           key={step.id} 
-                          className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl overflow-hidden p-6 shadow-lg transition-all duration-300 hover:shadow-xl"
+                          className="bg-white rounded-xl overflow-hidden p-6 shadow-lg transition-all duration-300 hover:shadow-xl"
+                          style={{ border: '2px solid #7A9200' }}
                           onMouseEnter={() => setHoveredStep(index)}
                           onMouseLeave={() => setHoveredStep(0)}
                         >
                           <div className="flex items-start">
                             <div className="flex-shrink-0">
-                              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-[#66C2BE] via-[#8CB7D0] to-[#E3DFF1] shadow-md shadow-[#E3DFF1]/20">
-                                <div className="text-white">
+                              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white shadow-md" style={{ border: '2px solid #7A9200' }}>
+                                <div style={{ color: '#7A9200' }}>
                                   {step.icon}
                                 </div>
                               </div>
                             </div>
                             <div className="ml-4">
-                              <div className="text-lg font-semibold leading-7 text-gray-900">
+                              <div className="text-lg font-semibold leading-7" style={{ color: '#4A5745' }}>
                                 {step.name}
                               </div>
-                              <div className="mt-2 text-base leading-7 text-gray-600">
+                              <div className="mt-2 text-base leading-7" style={{ color: '#4A5745' }}>
                                 {step.description}
                               </div>
                             </div>
@@ -290,30 +281,30 @@ export default function JobSearchWaitlist() {
                     </div>
 
                     {/* Job Search Features Section */}
-                    <div className="mt-16 bg-white rounded-xl shadow-xl border border-[#A5DAD8]/30 p-8">
-                      <h3 className="text-2xl font-semibold text-gray-900 mb-6">Oasis Job Search "Skill Pack"</h3>
-                      <p className="text-lg text-gray-600 mb-8">
+                    <div className="mt-16 bg-white rounded-xl shadow-xl p-8" style={{ border: '2px solid #7A9200' }}>
+                      <h3 className="text-2xl font-semibold mb-6" style={{ color: '#4A5745' }}>Oasis Job Search "Skill Pack"</h3>
+                      <p className="text-lg mb-8" style={{ color: '#4A5745' }}>
                         Our AI-powered job search system crawls LinkedIn, Indeed, and company ATS platforms to deliver top 25 deduped results in under 25 seconds with 95% accuracy.
                       </p>
                       
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
                         <div className="space-y-4">
-                          <h4 className="text-xl font-semibold text-gray-900">Smart Data Extraction</h4>
-                          <ul className="space-y-3 text-gray-600">
+                          <h4 className="text-xl font-semibold" style={{ color: '#4A5745' }}>Smart Data Extraction</h4>
+                          <ul className="space-y-3" style={{ color: '#4A5745' }}>
                             <li className="flex items-start">
-                              <svg className="h-6 w-6 text-[#66C2BE] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <svg className="h-6 w-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: '#7A9200' }}>
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                               </svg>
                               <span>De-duplicate postings across LinkedIn, Indeed & ATS</span>
                             </li>
                             <li className="flex items-start">
-                              <svg className="h-6 w-6 text-[#66C2BE] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <svg className="h-6 w-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: '#7A9200' }}>
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                               </svg>
                               <span>Extract key fields: title, company, location, requirements</span>
                             </li>
                             <li className="flex items-start">
-                              <svg className="h-6 w-6 text-[#66C2BE] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <svg className="h-6 w-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: '#7A9200' }}>
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                               </svg>
                               <span>Auto-sync application status from email/ATS portals</span>
@@ -321,22 +312,22 @@ export default function JobSearchWaitlist() {
                           </ul>
                         </div>
                         <div className="space-y-4">
-                          <h4 className="text-xl font-semibold text-gray-900">Intelligent Analysis</h4>
-                          <ul className="space-y-3 text-gray-600">
+                          <h4 className="text-xl font-semibold" style={{ color: '#4A5745' }}>Intelligent Analysis</h4>
+                          <ul className="space-y-3" style={{ color: '#4A5745' }}>
                             <li className="flex items-start">
-                              <svg className="h-6 w-6 text-[#66C2BE] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <svg className="h-6 w-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: '#7A9200' }}>
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                               </svg>
                               <span>Salary & total comp estimation (geo-aware)</span>
                             </li>
                             <li className="flex items-start">
-                              <svg className="h-6 w-6 text-[#66C2BE] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <svg className="h-6 w-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: '#7A9200' }}>
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                               </svg>
                               <span>Remote policy & visa sponsorship detection</span>
                             </li>
                             <li className="flex items-start">
-                              <svg className="h-6 w-6 text-[#66C2BE] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <svg className="h-6 w-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: '#7A9200' }}>
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                               </svg>
                               <span>Referral finder & LinkedIn outreach drafts</span>
@@ -363,29 +354,29 @@ export default function JobSearchWaitlist() {
                     </div>
 
                     {/* Most Popular AI Commands Section */}
-                    <div className="mt-16 bg-white rounded-xl shadow-xl border border-[#A5DAD8]/30 p-8">
-                      <h3 className="text-2xl font-semibold text-gray-900 mb-8 text-center">Most Popular AI Commands for Job Hunting</h3>
-                      <p className="text-lg text-gray-600 mb-8 text-center">
+                    <div className="mt-16 bg-white rounded-xl shadow-xl p-8" style={{ border: '2px solid #7A9200' }}>
+                      <h3 className="text-2xl font-semibold mb-8 text-center" style={{ color: '#4A5745' }}>Most Popular AI Commands for Job Hunting</h3>
+                      <p className="text-lg mb-8 text-center" style={{ color: '#4A5745' }}>
                         Powerful AI commands that understand job-hunt workflows and deliver results in under 25 seconds with 95% accuracy.
                       </p>
                       
                       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {/* Command 1 */}
-                        <div className="bg-gradient-to-br from-[#E3DFF1]/10 via-[#8CB7D0]/5 to-[#E3DFF1]/20 rounded-xl border border-[#A5DAD8]/20 p-6 hover:shadow-lg transition-all duration-300">
+                        <div className="bg-white rounded-xl p-6 hover:shadow-lg transition-all duration-300" style={{ border: '2px solid #7A9200' }}>
                           <div className="flex items-start space-x-4">
                             <div className="flex-shrink-0">
-                              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-[#66C2BE]/10 via-[#8CB7D0]/10 to-[#E3DFF1]/10">
-                                <svg className="w-6 h-6 text-[#66C2BE]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white" style={{ border: '2px solid #7A9200' }}>
+                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: '#7A9200' }}>
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                 </svg>
                               </div>
                             </div>
                             <div className="flex-1">
-                              <h4 className="text-lg font-semibold text-gray-900 mb-2">De-duplicate Postings</h4>
-                              <p className="text-sm text-gray-600 mb-3">
+                              <h4 className="text-lg font-semibold mb-2" style={{ color: '#4A5745' }}>De-duplicate Postings</h4>
+                              <p className="text-sm mb-3" style={{ color: '#4A5745' }}>
                                 Detects and merges identical roles from LinkedIn/Indeed/ATS into one canonical entry.
                               </p>
-                              <div className="bg-gray-50 rounded-lg p-3 text-xs text-gray-700 font-mono">
+                              <div className="bg-gray-50 rounded-lg p-3 text-xs font-mono" style={{ color: '#4A5745' }}>
                                 "De-dupe these 40 results across all sources"
                               </div>
                             </div>
@@ -393,21 +384,21 @@ export default function JobSearchWaitlist() {
                         </div>
 
                         {/* Command 2 */}
-                        <div className="bg-gradient-to-br from-[#E3DFF1]/10 via-[#8CB7D0]/5 to-[#E3DFF1]/20 rounded-xl border border-[#A5DAD8]/20 p-6 hover:shadow-lg transition-all duration-300">
+                        <div className="bg-white rounded-xl p-6 hover:shadow-lg transition-all duration-300" style={{ border: '2px solid #7A9200' }}>
                           <div className="flex items-start space-x-4">
                             <div className="flex-shrink-0">
-                              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-[#66C2BE]/10 via-[#8CB7D0]/10 to-[#E3DFF1]/10">
-                                <svg className="w-6 h-6 text-[#66C2BE]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white" style={{ border: '2px solid #7A9200' }}>
+                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: '#7A9200' }}>
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
                                 </svg>
                               </div>
                             </div>
                             <div className="flex-1">
-                              <h4 className="text-lg font-semibold text-gray-900 mb-2">Application Status Sync</h4>
-                              <p className="text-sm text-gray-600 mb-3">
+                              <h4 className="text-lg font-semibold mb-2" style={{ color: '#4A5745' }}>Application Status Sync</h4>
+                              <p className="text-sm mb-3" style={{ color: '#4A5745' }}>
                                 Watches inbox and ATS portals to auto-update job tracker status.
                               </p>
-                              <div className="bg-gray-50 rounded-lg p-3 text-xs text-gray-700 font-mono">
+                              <div className="bg-gray-50 rounded-lg p-3 text-xs font-mono" style={{ color: '#4A5745' }}>
                                 "Sync statuses for my last 20 applications"
                               </div>
                             </div>
@@ -415,21 +406,21 @@ export default function JobSearchWaitlist() {
                         </div>
 
                         {/* Command 3 */}
-                        <div className="bg-gradient-to-br from-[#E3DFF1]/10 via-[#8CB7D0]/5 to-[#E3DFF1]/20 rounded-xl border border-[#A5DAD8]/20 p-6 hover:shadow-lg transition-all duration-300">
+                        <div className="bg-white rounded-xl p-6 hover:shadow-lg transition-all duration-300" style={{ border: '2px solid #7A9200' }}>
                           <div className="flex items-start space-x-4">
                             <div className="flex-shrink-0">
-                              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-[#66C2BE]/10 via-[#8CB7D0]/10 to-[#E3DFF1]/10">
-                                <svg className="w-6 h-6 text-[#66C2BE]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white" style={{ border: '2px solid #7A9200' }}>
+                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: '#7A9200' }}>
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
                                 </svg>
                               </div>
                             </div>
                             <div className="flex-1">
-                              <h4 className="text-lg font-semibold text-gray-900 mb-2">Salary & Comp Estimator</h4>
-                              <p className="text-sm text-gray-600 mb-3">
+                              <h4 className="text-lg font-semibold mb-2" style={{ color: '#4A5745' }}>Salary & Comp Estimator</h4>
+                              <p className="text-sm mb-3" style={{ color: '#4A5745' }}>
                                 Infers likely base/bonus/equity from job descriptions and market data.
                               </p>
-                              <div className="bg-gray-50 rounded-lg p-3 text-xs text-gray-700 font-mono">
+                              <div className="bg-gray-50 rounded-lg p-3 text-xs font-mono" style={{ color: '#4A5745' }}>
                                 "Estimate total comp for Data Analyst, Boston"
                               </div>
                             </div>
@@ -437,21 +428,21 @@ export default function JobSearchWaitlist() {
                         </div>
 
                         {/* Command 4 */}
-                        <div className="bg-gradient-to-br from-[#E3DFF1]/10 via-[#8CB7D0]/5 to-[#E3DFF1]/20 rounded-xl border border-[#A5DAD8]/20 p-6 hover:shadow-lg transition-all duration-300">
+                        <div className="bg-white rounded-xl p-6 hover:shadow-lg transition-all duration-300" style={{ border: '2px solid #7A9200' }}>
                           <div className="flex items-start space-x-4">
                             <div className="flex-shrink-0">
-                              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-[#66C2BE]/10 via-[#8CB7D0]/10 to-[#E3DFF1]/10">
-                                <svg className="w-6 h-6 text-[#66C2BE]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white" style={{ border: '2px solid #7A9200' }}>
+                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: '#7A9200' }}>
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                 </svg>
                               </div>
                             </div>
                             <div className="flex-1">
-                              <h4 className="text-lg font-semibold text-gray-900 mb-2">Remote Policy Extractor</h4>
-                              <p className="text-sm text-gray-600 mb-3">
+                              <h4 className="text-lg font-semibold mb-2" style={{ color: '#4A5745' }}>Remote Policy Extractor</h4>
+                              <p className="text-sm mb-3" style={{ color: '#4A5745' }}>
                                 Pulls remote/hybrid policy and time-zone requirements from job descriptions.
                               </p>
-                              <div className="bg-gray-50 rounded-lg p-3 text-xs text-gray-700 font-mono">
+                              <div className="bg-gray-50 rounded-lg p-3 text-xs font-mono" style={{ color: '#4A5745' }}>
                                 "Show remote policy for results 1-15"
                               </div>
                             </div>
@@ -459,21 +450,21 @@ export default function JobSearchWaitlist() {
                         </div>
 
                         {/* Command 5 */}
-                        <div className="bg-gradient-to-br from-[#E3DFF1]/10 via-[#8CB7D0]/5 to-[#E3DFF1]/20 rounded-xl border border-[#A5DAD8]/20 p-6 hover:shadow-lg transition-all duration-300">
+                        <div className="bg-white rounded-xl p-6 hover:shadow-lg transition-all duration-300" style={{ border: '2px solid #7A9200' }}>
                           <div className="flex items-start space-x-4">
                             <div className="flex-shrink-0">
-                              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-[#66C2BE]/10 via-[#8CB7D0]/10 to-[#E3DFF1]/10">
-                                <svg className="w-6 h-6 text-[#66C2BE]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white" style={{ border: '2px solid #7A9200' }}>
+                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: '#7A9200' }}>
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                 </svg>
                               </div>
                             </div>
                             <div className="flex-1">
-                              <h4 className="text-lg font-semibold text-gray-900 mb-2">Visa Sponsorship Detector</h4>
-                              <p className="text-sm text-gray-600 mb-3">
+                              <h4 className="text-lg font-semibold mb-2" style={{ color: '#4A5745' }}>Visa Sponsorship Detector</h4>
+                              <p className="text-sm mb-3" style={{ color: '#4A5745' }}>
                                 Flags H-1B/OPT/CPT sponsorship statements and eligibility constraints.
                               </p>
-                              <div className="bg-gray-50 rounded-lg p-3 text-xs text-gray-700 font-mono">
+                              <div className="bg-gray-50 rounded-lg p-3 text-xs font-mono" style={{ color: '#4A5745' }}>
                                 "Filter to roles with visa sponsorship"
                               </div>
                             </div>
@@ -481,21 +472,21 @@ export default function JobSearchWaitlist() {
                         </div>
 
                         {/* Command 6 */}
-                        <div className="bg-gradient-to-br from-[#E3DFF1]/10 via-[#8CB7D0]/5 to-[#E3DFF1]/20 rounded-xl border border-[#A5DAD8]/20 p-6 hover:shadow-lg transition-all duration-300">
+                        <div className="bg-white rounded-xl p-6 hover:shadow-lg transition-all duration-300" style={{ border: '2px solid #7A9200' }}>
                           <div className="flex items-start space-x-4">
                             <div className="flex-shrink-0">
-                              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-[#66C2BE]/10 via-[#8CB7D0]/10 to-[#E3DFF1]/10">
-                                <svg className="w-6 h-6 text-[#66C2BE]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white" style={{ border: '2px solid #7A9200' }}>
+                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: '#7A9200' }}>
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                                 </svg>
                               </div>
                             </div>
                             <div className="flex-1">
-                              <h4 className="text-lg font-semibold text-gray-900 mb-2">Referral Finder & Outreach</h4>
-                              <p className="text-sm text-gray-600 mb-3">
+                              <h4 className="text-lg font-semibold mb-2" style={{ color: '#4A5745' }}>Referral Finder & Outreach</h4>
+                              <p className="text-sm mb-3" style={{ color: '#4A5745' }}>
                                 Finds connections at target companies and drafts tailored LinkedIn messages.
                               </p>
-                              <div className="bg-gray-50 rounded-lg p-3 text-xs text-gray-700 font-mono">
+                              <div className="bg-gray-50 rounded-lg p-3 text-xs font-mono" style={{ color: '#4A5745' }}>
                                 "Find warm connections for jobs 1-5"
                               </div>
                             </div>
@@ -509,9 +500,9 @@ export default function JobSearchWaitlist() {
               </div>
 
               {/* Job Application Process Section */}
-              <div className="mt-16 bg-white rounded-xl shadow-xl border border-[#A5DAD8]/30 p-8">
-                <h3 className="text-2xl font-semibold text-gray-900 mb-6 text-center">Your Complete Job Search Journey</h3>
-                <p className="text-lg text-gray-600 mb-8 text-center">
+              <div className="mt-16 bg-white rounded-xl shadow-xl p-8" style={{ border: '2px solid #7A9200' }}>
+                <h3 className="text-2xl font-semibold mb-6 text-center" style={{ color: '#4A5745' }}>Your Complete Job Search Journey</h3>
+                <p className="text-lg mb-8 text-center" style={{ color: '#4A5745' }}>
                   From discovering opportunities to landing your dream job, Oasis guides you through every step of the application process.
                 </p>
                 
@@ -519,19 +510,22 @@ export default function JobSearchWaitlist() {
                   {jobApplicationProcessSteps.map((step, index) => (
                     <div 
                       key={step.id} 
-                      className="bg-gradient-to-br from-[#E3DFF1]/10 via-[#8CB7D0]/5 to-[#E3DFF1]/20 rounded-xl border border-[#A5DAD8]/20 p-6 hover:shadow-lg transition-all duration-300"
+                      className="bg-white rounded-xl p-6 hover:shadow-lg transition-all duration-300"
+                      style={{ border: '2px solid #7A9200' }}
                     >
                       <div className="flex items-start space-x-4">
                         <div className="flex-shrink-0">
-                          <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-[#66C2BE]/10 via-[#8CB7D0]/10 to-[#E3DFF1]/10">
-                            {step.icon}
+                          <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white" style={{ border: '2px solid #7A9200' }}>
+                            <div style={{ color: '#7A9200' }}>
+                              {step.icon}
+                            </div>
                           </div>
                         </div>
                         <div className="flex-1">
-                          <h4 className="text-lg font-semibold text-gray-900 mb-2">
+                          <h4 className="text-lg font-semibold mb-2" style={{ color: '#4A5745' }}>
                             {step.name}
                           </h4>
-                          <p className="text-sm text-gray-600 leading-relaxed">
+                          <p className="text-sm leading-relaxed" style={{ color: '#4A5745' }}>
                             {step.description}
                           </p>
                         </div>
@@ -565,31 +559,31 @@ export default function JobSearchWaitlist() {
               </div>
 
               {/* FAQ Section */}
-              <div className="mt-16 bg-white rounded-xl shadow-xl border border-[#A5DAD8]/30 p-8">
-                <h3 className="text-2xl font-semibold text-gray-900 mb-8 text-center">Frequently Asked Questions</h3>
+              <div className="mt-16 bg-white rounded-xl shadow-xl p-8" style={{ border: '2px solid #7A9200' }}>
+                <h3 className="text-2xl font-semibold mb-8 text-center" style={{ color: '#4A5745' }}>Frequently Asked Questions</h3>
                 
                 <div className="space-y-6">
                   {/* FAQ 1 */}
-                  <div className="border-b border-gray-200 pb-6">
-                    <h4 className="text-lg font-semibold text-gray-900 mb-3">How does Oasis help with job search for people that want sponsorship?</h4>
-                    <p className="text-gray-600">
+                  <div className="pb-6" style={{ borderBottom: '1px solid #7A9200' }}>
+                    <h4 className="text-lg font-semibold mb-3" style={{ color: '#4A5745' }}>How does Oasis help with job search for people that want sponsorship?</h4>
+                    <p style={{ color: '#4A5745' }}>
                       Oasis includes a specialized Visa Sponsorship Detector that automatically flags H-1B/OPT/CPT sponsorship statements and eligibility constraints in job postings. You can use commands like "Filter to roles with visa sponsorship" to quickly identify opportunities that explicitly offer work authorization support. This saves you hours of manually reading through job descriptions to find sponsorship-friendly employers.
                     </p>
                   </div>
 
                   {/* FAQ 2 */}
-                  <div className="border-b border-gray-200 pb-6">
-                    <h4 className="text-lg font-semibold text-gray-900 mb-3">How much does it cost?</h4>
-                    <p className="text-gray-600">
+                  <div className="pb-6" style={{ borderBottom: '1px solid #7A9200' }}>
+                    <h4 className="text-lg font-semibold mb-3" style={{ color: '#4A5745' }}>How much does it cost?</h4>
+                    <p style={{ color: '#4A5745' }}>
                       Oasis is completely free to use and install, just like any browser! The AI assistant within Oasis allows you to run commands, but there is a limit to the number of tokens you can use while on a free plan. If you want more tokens for additional AI commands, you can upgrade to a paid plan. You can downgrade at any time - no long-term commitments required.
                     </p>
                   </div>
 
                   {/* FAQ 3 */}
                   <div className="pb-6">
-                    <h4 className="text-lg font-semibold text-gray-900 mb-3">How do I suggest new features?</h4>
-                    <p className="text-gray-600">
-                      We love hearing from our users! You can join our <Link href="/community" className="text-[#66C2BE] hover:text-[#4A9E9A] underline">Discord community</Link> to discuss ideas with other users and our team, or fill out our detailed <Link href="/oasis-feedback-survey" className="text-[#66C2BE] hover:text-[#4A9E9A] underline">feedback survey</Link>. Your suggestions directly influence our product roadmap and help us build features that matter most to job seekers like you.
+                    <h4 className="text-lg font-semibold mb-3" style={{ color: '#4A5745' }}>How do I suggest new features?</h4>
+                    <p style={{ color: '#4A5745' }}>
+                      We love hearing from our users! You can join our <Link href="/community" className="underline" style={{ color: '#7A9200' }}>Discord community</Link> to discuss ideas with other users and our team, or fill out our detailed <Link href="/oasis-feedback-survey" className="underline" style={{ color: '#7A9200' }}>feedback survey</Link>. Your suggestions directly influence our product roadmap and help us build features that matter most to job seekers like you.
                     </p>
                   </div>
                 </div>
