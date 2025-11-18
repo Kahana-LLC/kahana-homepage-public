@@ -21,21 +21,22 @@ export default function EarlyBirdDiscountRefundPolicy() {
         />
       </Head>
 
-      <NavBar />
+      <div className="relative bg-white">
+        <NavBar />
 
-      <main className="min-h-screen pt-24 pb-16" style={{ background: 'linear-gradient(90deg, #d6e3f4 0%, #e5efd8 100%)' }}>
+        <main className="min-h-screen pt-24 pb-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header Section */}
           <div className="text-center mb-12">
             <Link 
-              href="/early-bird-discount"
+              href="/oasis-beta-program"
               className="inline-flex items-center text-sm mb-6 hover:underline"
               style={{ color: '#7A9200' }}
             >
               <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
-              Back to Early Access Deposit
+              Back to Beta Program
             </Link>
             <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ color: '#4A5745' }}>
               Oasis Early Access Deposit & Refund Policy
@@ -155,12 +156,12 @@ export default function EarlyBirdDiscountRefundPolicy() {
 
           {/* CTA Section */}
           <div className="bg-white rounded-xl p-8 shadow-lg text-center" style={{ border: '2px solid #7A9200' }}>
-            <h2 className="text-2xl font-bold mb-4" style={{ color: '#4A5745' }}>Ready to Reserve Your Spot?</h2>
+            <h2 className="text-2xl font-bold mb-4" style={{ color: '#4A5745' }}>Ready to Join the Beta Program?</h2>
             <p className="mb-6" style={{ color: '#4A5745' }}>
-              Secure your early access and 20% lifetime discount with a 100% refundable $80 deposit.
+              Get early access to Oasis and help us build the future of browsing.
             </p>
             <Link
-              href="/early-bird-discount"
+              href="/oasis-beta-program"
               className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
               style={{
                 backgroundColor: '#FFFFFF',
@@ -168,7 +169,7 @@ export default function EarlyBirdDiscountRefundPolicy() {
                 color: '#7A9200'
               }}
             >
-              Reserve Your Spot
+              Join the Beta Program
               <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: '#7A9200' }}>
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
@@ -176,6 +177,7 @@ export default function EarlyBirdDiscountRefundPolicy() {
           </div>
         </div>
       </main>
+      </div>
     </>
   );
 }

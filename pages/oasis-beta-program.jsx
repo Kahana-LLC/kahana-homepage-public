@@ -123,47 +123,47 @@ export default function EarlyBirdDiscount() {
         />
       </Head>
 
-      <NavBar />
+      <div className="relative bg-white">
+        <NavBar />
 
-      {/* Sticky Countdown Timer */}
-      <div 
-        className="sticky z-40 w-full"
-        style={{ 
-          top: `${stickyTop}px`,
-          background: 'linear-gradient(90deg, #d6e3f4 0%, #e5efd8 100%)'
-        }}
-      >
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-          <div className="bg-white rounded-lg p-4 shadow-lg" style={{ border: '2px solid #7A9200' }}>
-            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-              {/* Launch Date with Calendar Icon */}
-              <div className="flex items-center justify-center gap-2">
-                <svg className="w-5 h-5 md:w-6 md:h-6 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: '#7A9200' }}>
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                </svg>
-                <div>
-                  <p className="text-lg md:text-2xl font-bold" style={{ color: '#7A9200' }}>
-                    Winter 2026
-                  </p>
+        {/* Sticky Countdown Timer */}
+        <div 
+          className="sticky z-40 w-full bg-white"
+          style={{ 
+            top: `${stickyTop}px`
+          }}
+        >
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+            <div className="bg-white rounded-lg p-4 shadow-lg" style={{ border: '2px solid #7A9200' }}>
+              <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+                {/* Launch Date with Calendar Icon */}
+                <div className="flex items-center justify-center gap-2">
+                  <svg className="w-5 h-5 md:w-6 md:h-6 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: '#7A9200' }}>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                  <div>
+                    <p className="text-lg md:text-2xl font-bold" style={{ color: '#7A9200' }}>
+                      publicly available starting May 2026
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <main className="min-h-screen pt-24 pb-16" style={{ background: 'linear-gradient(90deg, #d6e3f4 0%, #e5efd8 100%)' }}>
+        <main className="min-h-screen pt-24 pb-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header Section */}
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: '#4A5745' }}>
-              Fall in Love With Oasis
+              Get Early Access to Oasis
             </h1>
             <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-6 leading-relaxed" style={{ color: '#4A5745' }}>
               The most elegant and ergonomic browser experience.
             </p>
             <p className="text-lg max-w-2xl mx-auto mb-8 leading-relaxed" style={{ color: '#4A5745' }}>
-              Built for how your mind works naturally. A soothing environment designed for deep work, focus, and spatial ease.
+              An elegant and ergonomic browser designed for researching, job seeking, and learning. Built for how your mind works naturally.
             </p>
           </div>
 
@@ -199,9 +199,10 @@ export default function EarlyBirdDiscount() {
               <div className="bg-gray-50 rounded-lg p-4 max-w-xl mx-auto mb-6" style={{ border: '1px solid #7A9200' }}>
                 <ol className="text-sm text-left space-y-1 ml-4" style={{ color: '#4A5745', listStyleType: 'decimal' }}>
                   <li>Submit your name and email below</li>
-                  <li>Receive payment link via email</li>
-                  <li>Complete your $80 deposit securely</li>
-                  <li>Get notified when early access is ready (by May 17, 2026)</li>
+                  <li>Receive secure payment link via email</li>
+                  <li>Complete your $80 deposit</li>
+                  <li>Get early access before May 2026</li>
+                  <li>Email us for a refund any time</li>
                 </ol>
               </div>
             </div>
@@ -290,18 +291,6 @@ export default function EarlyBirdDiscount() {
                     </svg>
                     <span>2,000 credits per month</span>
                   </li>
-                  <li className="flex items-start">
-                    <svg className="w-5 h-5 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: '#7A9200' }}>
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span>Basic features</span>
-                  </li>
-                  <li className="flex items-start">
-                    <svg className="w-5 h-5 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: '#7A9200' }}>
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span>Community support</span>
-                  </li>
                 </ul>
               </div>
 
@@ -371,24 +360,6 @@ export default function EarlyBirdDiscount() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                     <span>5,000 credits per month</span>
-                  </li>
-                  <li className="flex items-start">
-                    <svg className="w-5 h-5 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: '#7A9200' }}>
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span>All premium features</span>
-                  </li>
-                  <li className="flex items-start">
-                    <svg className="w-5 h-5 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: '#7A9200' }}>
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span>Priority support</span>
-                  </li>
-                  <li className="flex items-start">
-                    <svg className="w-5 h-5 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: '#7A9200' }}>
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span>Early access to new features</span>
                   </li>
                 </ul>
               </div>
@@ -525,6 +496,7 @@ export default function EarlyBirdDiscount() {
           </div>
         </div>
       </main>
+      </div>
 
       <Script 
         src="https://tally.so/widgets/embed.js"
