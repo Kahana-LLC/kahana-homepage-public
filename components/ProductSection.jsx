@@ -96,9 +96,12 @@ export default function ProductSection() {
         <div className="flex flex-col items-center justify-center text-center">
           {/* Main Content - Centered */}
           <div className="w-full max-w-4xl mx-auto px-4 mb-12">
-            <h2 className="text-xl font-semibold leading-8 text-[#617500] mb-4">Fall into Oasis</h2>
-            <p className="text-2xl font-semibold tracking-tight text-[#333333] sm:text-3xl mb-8">
+            <h2 className="text-xl font-semibold leading-8 text-[#617500] mb-4">Fall in love</h2>
+            <p className="text-2xl font-semibold tracking-tight text-[#333333] sm:text-3xl mb-6">
               Meet Oasis, the Most Elegant browser
+            </p>
+            <p className="text-lg text-[#4A5745] mb-8 max-w-2xl mx-auto">
+              Enjoy a beautiful browsing experience designed for ergonomic work
             </p>
             
             {/* Buttons */}
@@ -107,7 +110,7 @@ export default function ProductSection() {
                 href="/oasis-waitlist"
                 className="btn-secondary inline-flex items-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline"
               >
-                <span>Join Waitlist</span>
+                <span>Get early access</span>
               </Link>
               <Link
                 href="/schedule-demo"

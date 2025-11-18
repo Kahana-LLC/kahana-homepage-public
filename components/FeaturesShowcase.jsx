@@ -53,7 +53,7 @@ export default function FeaturesShowcase() {
     <div className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8 features-section">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-xl font-semibold leading-8 text-[#978455] mb-4">Powerful Features</h2>
+          <h2 className="text-xl font-semibold leading-8 text-[#978455] mb-4">Enterprise Browser</h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-[#4A5745] sm:text-4xl">
             Everything you need to flow effortlessly
           </p>
@@ -170,7 +170,7 @@ export default function FeaturesShowcase() {
           <div className="mt-12 text-center">
             <Link href="/products/enterprise-browser">
               <button className="btn-primary inline-flex items-center justify-center px-8 py-3 text-base no-underline hover:no-underline focus:no-underline">
-                Oasis Enterprise Browser
+                Learn more
               </button>
             </Link>
           </div>
