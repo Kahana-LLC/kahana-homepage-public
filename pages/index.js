@@ -6,7 +6,6 @@ import HowItWorks from "../components/HowItWorks";
 import TestimonialsCarousel from "../components/TestimonialsCarousel";
 import ProductSection from "../components/ProductSection";
 import VideoSection from "../components/VideoSection";
-import WhyOasisSection from "../components/WhyOasisSection";
 import FeaturedBlogSection from "../components/FeaturedBlogSection";
 import FadeInSection from "../components/FadeInSection";
 import SEO from "../components/SEO";
@@ -194,12 +193,31 @@ export default function Home({ blogPosts }) {
 
           <FadeInSection delay={100}>
             <section
-              id="why-oasis"
-              className="min-h-screen flex items-center justify-center p-4 md:p-8 bg-white relative"
+              id="video"
+              className="min-h-screen flex items-center justify-center p-4 md:p-8 bg-white relative py-16 sm:py-24"
             >
               {/* Subtle right accent */}
               <div className="hidden lg:block absolute right-0 top-1/3 w-1 h-40 bg-gradient-to-b from-transparent via-[#30400D]/25 to-transparent opacity-40"></div>
-              <WhyOasisSection />
+              <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                {/* Section Heading */}
+                <div className="text-center mb-12">
+                  <h2 className="text-xl font-semibold leading-8 mb-4" style={{ color: '#978455' }}>See Oasis in Action</h2>
+                </div>
+
+                {/* YouTube Video - Centered */}
+                <div className="w-full max-w-xl mx-auto px-4">
+                  <div className="w-full mx-auto aspect-[4/3] overflow-hidden rounded-xl shadow-lg bg-black">
+                    <iframe
+                      className="w-full h-full"
+                      src="https://www.youtube.com/embed/05-oP8CNl8Y"
+                      title="Oasis AI-Powered Browser Demo"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
+                </div>
+              </div>
             </section>
           </FadeInSection>
 

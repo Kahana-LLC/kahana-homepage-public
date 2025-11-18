@@ -5,7 +5,7 @@ const steps = [
   {
     id: 1,
     name: 'Schedule Demo',
-    description: 'See how Oasis brings calm and flow to your enterprise in a personalized session.',
+    description: 'Experience Oasis in a personalized demonstration tailored to your organization\'s needs.',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
@@ -15,7 +15,7 @@ const steps = [
   {
     id: 2,
     name: 'Custom Setup',
-    description: "We’ll tailor Oasis to fit your organization’s rhythm and needs.",
+    description: 'We\'ll configure Oasis to align with your organization\'s workflows and requirements.',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
@@ -26,7 +26,7 @@ const steps = [
   {
     id: 3,
     name: 'Enterprise Deployment',
-    description: 'Deploy Oasis securely and seamlessly across your workspace.',
+    description: 'Deploy Oasis securely and efficiently across your organization.',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
@@ -36,7 +36,7 @@ const steps = [
   {
     id: 4,
     name: 'Ongoing Support',
-    description: 'Enjoy dedicated guidance, updates, and support that keeps you flowing.',
+    description: 'Receive dedicated support, regular updates, and ongoing guidance to ensure optimal performance.',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
@@ -54,10 +54,10 @@ export default function HowItWorks() {
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-xl font-semibold leading-8 text-[#978455] mb-4">Get Started</h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-[#4A5745] sm:text-4xl">
-          Bring Oasis to your enterprise
+          Bring Oasis to your organization
           </p>
           <p className="mt-6 text-lg leading-8 text-[#4A5745]">
-          Schedule a demo to bring calm and flow to your digital workspace.
+          Learn how Oasis can help you and your organization.
           </p>
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none flex flex-col items-center">
