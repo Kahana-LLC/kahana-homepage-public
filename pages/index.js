@@ -172,11 +172,11 @@ export default function Home({ blogPosts }) {
         strategy="afterInteractive"
       />
 
-      <div className="relative">
+      <div className="relative bg-white">
         {/* Elegant accent line at top */}
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#30400D] to-transparent opacity-20"></div>
         
-        <main className="scroll-smooth">
+        <main className="scroll-smooth bg-white">
           <FadeInSection>
             <section
               id="products"
@@ -193,12 +193,31 @@ export default function Home({ blogPosts }) {
 
           <FadeInSection delay={100}>
             <section
-              id="video-demo"
-              className="min-h-screen flex items-center justify-center p-4 md:p-8 bg-white relative"
+              id="video"
+              className="min-h-screen flex items-center justify-center p-4 md:p-8 bg-white relative py-16 sm:py-24"
             >
               {/* Subtle right accent */}
               <div className="hidden lg:block absolute right-0 top-1/3 w-1 h-40 bg-gradient-to-b from-transparent via-[#30400D]/25 to-transparent opacity-40"></div>
-              <VideoSection />
+              <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                {/* Section Heading */}
+                <div className="text-center mb-12">
+                  <h2 className="text-xl font-semibold leading-8 mb-4" style={{ color: '#978455' }}>See Oasis in Action</h2>
+                </div>
+
+                {/* YouTube Video - Centered */}
+                <div className="w-full max-w-xl mx-auto px-4">
+                  <div className="w-full mx-auto aspect-[4/3] overflow-hidden rounded-xl shadow-lg bg-black">
+                    <iframe
+                      className="w-full h-full"
+                      src="https://www.youtube.com/embed/05-oP8CNl8Y"
+                      title="Oasis AI-Powered Browser Demo"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
+                </div>
+              </div>
             </section>
           </FadeInSection>
 
@@ -246,8 +265,7 @@ export default function Home({ blogPosts }) {
               <div className="mt-8 text-center">
                 <Link
                   href="/blog"
-                  className="nav-button download rounded-md px-8 py-3 inline-flex items-center justify-center no-underline font-bold border border-transparent transition-all duration-300 text-white shadow-sm hover:no-underline focus:no-underline"
-                  style={{ textDecoration: 'none', backgroundColor: '#788B59' }}
+                  className="btn-primary px-8 py-3 inline-flex items-center justify-center no-underline hover:no-underline focus:no-underline"
                 >
                   All Posts
                   <svg

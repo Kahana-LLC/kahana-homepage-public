@@ -171,7 +171,8 @@ export default function BlogPost({ post }) {
         ></div>
       </div>
 
-      <main className="min-h-screen bg-white max-w-4xl mx-auto px-4 py-8">
+      <div className="min-h-screen bg-white">
+        <main className="max-w-4xl mx-auto px-4 py-8">
         <article className="prose prose-lg max-w-none">
           <header className="mb-12">
             {/* Breadcrumbs for navigation */}
@@ -315,11 +316,10 @@ export default function BlogPost({ post }) {
             </p>
             <Link 
               href="/contact"
-              className="nav-button download inline-flex items-center rounded-md text-white font-bold shadow-sm px-6 py-3 text-base no-underline hover:no-underline focus:no-underline"
-              style={{ textDecoration: 'none', backgroundColor: '#788B59' }}
+              className="btn-primary inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline"
             >
               <span>Contact us</span>
-              <svg className="ml-2 -mr-1 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: 'white' }}>
+              <svg className="ml-2 -mr-1 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
             </Link>
@@ -338,7 +338,8 @@ export default function BlogPost({ post }) {
             </div>
           )}
         </article>
-      </main>
+        </main>
+      </div>
 
       {/* Scroll Progress Script */}
       <script dangerouslySetInnerHTML={{

@@ -273,15 +273,11 @@ export default function EnergyUtilities({ energyBlogs }) {
               The energy sector faces unprecedented threats, with 31% of global wiper attacks targeting utilities and breaches costing $4.72M on average. Enterprise browsers provide critical protection for grid operations while ensuring compliance and operational continuity.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/buyers-guide">
-                <button className="nav-button download inline-flex items-center justify-center rounded-md text-white font-bold shadow-sm px-6 py-3 text-base no-underline hover:no-underline focus:no-underline" style={{ textDecoration: 'none', backgroundColor: '#788B59' }}>
-                  Read Buyer's Guide
-                </button>
+              <Link href="/sales" className="btn-primary inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline">
+                Contact Sales
               </Link>
-              <Link href="/sales">
-                <button className="nav-button download inline-flex items-center justify-center rounded-md text-white font-bold shadow-sm px-6 py-3 text-base no-underline hover:no-underline focus:no-underline" style={{ textDecoration: 'none', backgroundColor: '#788B59' }}>
-                  Contact Sales
-                </button>
+              <Link href="/buyers-guide" className="btn-secondary inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline">
+                Read Buyer's Guide
               </Link>
             </div>
           </div>
@@ -406,7 +402,7 @@ export default function EnergyUtilities({ energyBlogs }) {
           <div className="flex justify-center">
             <Link 
               href="/sales" 
-              className="nav-button download inline-flex items-center justify-center rounded-md text-white font-bold shadow-sm px-6 py-3 text-base no-underline hover:no-underline focus:no-underline" style={{ textDecoration: 'none', backgroundColor: '#788B59' }}
+              className="btn-primary inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline"
               
             >
               <span >

@@ -98,7 +98,7 @@ module.exports = {
       },
       fontFamily: {
         "bricolage": [
-          '"Bricolage Grotesque"',
+          '"Briolage Grotesque"',
           "system-ui",
           "-apple-system",
           "BlinkMacSystemFont",

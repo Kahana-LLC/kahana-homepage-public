@@ -154,20 +154,14 @@ export default function ProductDemoSection() {
 
         {/* CTA Buttons */}
         <div className="mt-8 sm:mt-12 text-center space-y-3 sm:space-y-0 sm:space-x-4">
-          <Link href="/schedule-demo">
-            <button className="w-full sm:w-auto nav-button download inline-flex items-center justify-center px-6 py-3 text-base font-bold rounded-md text-white no-underline hover:no-underline focus:no-underline" style={{ textDecoration: 'none', backgroundColor: '#788B59' }}>
-              Schedule a Demo
-            </button>
+          <Link href="/schedule-demo" className="btn-primary w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline" style={{ color: '#FFFFFF' }}>
+            <span style={{ color: '#FFFFFF' }}>Schedule a Demo</span>
           </Link>
-          <Link href="/products/enterprise-browser">
-            <button className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 text-base font-bold rounded-md text-[#4A5745] bg-[#F3F8E4] hover:bg-[#E0D48C] transition-colors">
+          <Link href="/products/enterprise-browser" className="btn-secondary w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline">
               Learn More
-            </button>
           </Link>
-          <Link href="/download">
-            <button className="w-full sm:w-auto nav-button download inline-flex items-center justify-center px-6 py-3 text-base font-bold rounded-md text-white no-underline hover:no-underline focus:no-underline" style={{ textDecoration: 'none', backgroundColor: '#788B59' }}>
+          <Link href="/download" className="btn-secondary w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline">
               Download Browser
-            </button>
           </Link>
         </div>
       </div>

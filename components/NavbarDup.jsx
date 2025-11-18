@@ -6,6 +6,7 @@ import whiteKahanaLogo from '../assets/kahana_logo_transparent.svg';
 function NavBar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,8 +34,31 @@ function NavBar() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      const target = event.target;
+      if (target && !target.closest('.dropdown')) {
+        setOpenDropdown(null);
+      }
+    };
+
+    if (openDropdown) {
+      document.addEventListener('mousedown', handleClickOutside);
+      return () => document.removeEventListener('mousedown', handleClickOutside);
+    }
+  }, [openDropdown]);
+
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const toggleDropdown = (dropdownId, event) => {
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    setOpenDropdown(openDropdown === dropdownId ? null : dropdownId);
   };
 
   return (
@@ -44,7 +68,7 @@ function NavBar() {
       
       {/* Fixed navbar */}
       <nav className={`fixed top-0 left-0 w-full h-16 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-[#30400D]/95 backdrop-blur-md shadow-md' : 'bg-[#30400D]'
+        isScrolled ? 'bg-[#FFFFFF]/95 backdrop-blur-md shadow-md' : 'bg-[#FFFFFF]'
       }`}>
         <style jsx>{`
           .font-style {
@@ -77,9 +101,25 @@ function NavBar() {
             justify-content: space-between;
             align-items: center;
             height: 100%;
-            padding: 0 24px;
+            width: 100%;
             max-width: 1280px;
             margin: 0 auto;
+            padding-left: var(--container-padding-mobile);
+            padding-right: var(--container-padding-mobile);
+          }
+
+          @media (min-width: 640px) {
+            .nav-content {
+              padding-left: var(--container-padding-tablet);
+              padding-right: var(--container-padding-tablet);
+            }
+          }
+
+          @media (min-width: 1024px) {
+            .nav-content {
+              padding-left: var(--container-padding-desktop);
+              padding-right: var(--container-padding-desktop);
+            }
           }
 
           .logo {
@@ -94,17 +134,85 @@ function NavBar() {
             }
           }
 
+          .nav-content > a:first-child {
+            margin-left: 1.45rem !important;
+            padding-left: 0 !important;
+            margin-right: 0;
+            padding-right: 0;
+            display: flex;
+            align-items: center;
+            line-height: 0;
+            flex-shrink: 0;
+          }
+
+          @media (min-width: 640px) {
+            .nav-content > a:first-child {
+              margin-left: 1.45rem !important;
+            }
+          }
+
+          @media (min-width: 1024px) {
+            .nav-content > a:first-child {
+              margin-left: 1.75rem !important;
+            }
+          }
+
+          .nav-content > a:first-child > div {
+            margin-left: 0 !important;
+            padding-left: 0 !important;
+            margin-right: 0;
+            padding-right: 0;
+            line-height: 0;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            width: 200px !important;
+          }
+
+          @media (max-width: 768px) {
+            .nav-content > a:first-child > div {
+              width: 160px !important;
+            }
+          }
+
+          .nav-content > a:first-child > div::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 0;
+            z-index: -1;
+          }
+
+          .nav-content > a:first-child img,
+          .nav-content > a:first-child > div > img,
+          .nav-content > a:first-child > div > span > img {
+            margin: 0 !important;
+            padding: 0 !important;
+            display: block;
+            object-fit: contain;
+            object-position: left center;
+          }
+
           .nav-links {
             display: flex;
             align-items: center;
             gap: 1.5rem;
             height: 100%;
+            list-style: none;
+            margin: 0;
+            padding: 0;
           }
 
           a.nav-link,
           .nav-link {
             position: relative;
-            color: #ffffff !important;
+            display: inline-flex;
+            align-items: center;
+            gap:2rem;
+            color: #617500 !important;
             font-size: 1rem;
             font-weight: 500 !important;
             text-decoration: none !important;
@@ -116,10 +224,19 @@ function NavBar() {
             letter-spacing: -0.01em;
           }
 
-          a.nav-link:hover,
-          .nav-link:hover {
-            color: #E0D48C !important;
-            text-decoration: none !important;
+
+          .nav-link-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            top: 0.06rem;
+          }
+
+          .nav-link-icon svg {
+            width: 2rem;
+            height: 1rem;
+            display: block;
           }
 
           .dropdown {
@@ -149,25 +266,64 @@ function NavBar() {
             left: 50%;
             transform: translateX(-50%) translateY(-10px);
             background-color: white;
-            min-width: 280px;
+            width: 280px;
             box-shadow: 0 2px 15px rgba(0, 0, 0, 0.06);
             border-radius: 12px;
-            padding: 28px;
+            padding: 24px 20px;
             transition: all 0.15s ease;
             display: grid;
             gap: 40px;
             pointer-events: none;
           }
 
-          .dropdown:hover .dropdown-content {
+          .dropdown:hover .dropdown-content,
+          .dropdown.active .dropdown-content {
             visibility: visible;
             opacity: 1;
             transform: translateX(-50%) translateY(0);
             pointer-events: auto;
           }
 
-          .dropdown:hover .dropdown-overlay {
+          .dropdown:hover .dropdown-overlay,
+          .dropdown.active .dropdown-overlay {
             display: block;
+          }
+
+          .dropdown-icon-button {
+            background: none !important;
+            border: none !important;
+            padding: 0 !important;
+            margin: 0 0 0 0.5rem !important;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #617500 !important;
+            transition: transform 0.2s ease, color 0.2s ease;
+            outline: none;
+            pointer-events: auto;
+          }
+
+          .nav-link:hover .dropdown-icon-button,
+          .dropdown-icon-button:hover {
+            color: #4A5F00 !important;
+            transform: scale(1.1);
+          }
+
+          .dropdown-icon-button:focus {
+            outline: none;
+          }
+
+          .dropdown.active .dropdown-icon-button svg {
+            transform: rotate(180deg);
+          }
+
+          .dropdown-icon-button svg {
+            transition: transform 0.2s ease;
+            width: 12px;
+            height: 12px;
+            pointer-events: none;
+            color: inherit;
           }
 
           .dropdown-section {
@@ -175,9 +331,10 @@ function NavBar() {
           }
 
           .dropdown-section h3 {
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: #666;
+            font-size: 0.6875rem;
+            font-weight: 700;
+            
+            color: #026400;
             margin-bottom: 16px;
             text-transform: uppercase;
             letter-spacing: 0.05em;
@@ -185,19 +342,21 @@ function NavBar() {
 
           .dropdown-link {
             display: block;
-            color: #2c2c2c;
-            text-decoration: none;
+            color: #333333 !important;
+            text-decoration: none !important;
+            font-weight: 300 !important;
             font-size: 0.9375rem;
             line-height: 1.5;
-            padding: 8px 16px;
-            margin: 0 -16px;
+            letter-spacing: 0.01em;
+            padding: 8px 12px;
+            margin: 0 -12px;
             border-radius: 8px;
-            transition: all 0.15s ease;
+            transition: background-color 0.15s ease;
             font-family: "Roboto", sans-serif;
           }
 
           .dropdown-link:hover {
-            color: var(--kahana-primary);
+            color: #333333 !important;
             background-color: #f8fafc;
           }
 
@@ -405,127 +564,179 @@ function NavBar() {
         `}</style>
         <div className="nav-content">
           <Link href="/" className="flex items-center">
-            <div className="relative h-[56px] w-[240px]">
+            <div className="relative h-[56px] flex-shrink-0" style={{ marginLeft: 0, paddingLeft: 0, overflow: 'hidden', width: '200px' }}>
               <Image
                 src={whiteKahanaLogo}
                 alt="Kahana Logo"
                 fill
-                style={{ objectFit: 'contain' }}
+                style={{ objectFit: 'contain', objectPosition: 'left center', margin: 0, padding: 0, width: '100%', height: '100%' }}
                 priority
               />
             </div>
           </Link>
 
           {/* Navigation Links */}
-          <div className="nav-links">
-            <div className="dropdown">
-              <Link href="/products" className="nav-link text-white">Products</Link>
+          <ul className="nav-links hidden md:flex items-center gap-1" role="list">
+            <li className={`dropdown ${openDropdown === 'products' ? 'active' : ''}`}>
+              <Link href="/products" className="nav-link">
+                <span className="nav-link-text">Products</span>
+                <button
+                  type="button"
+                  className="dropdown-icon-button"
+                  onClick={(e) => toggleDropdown('products', e)}
+                  aria-label="Toggle Products dropdown"
+                  aria-expanded={openDropdown === 'products'}
+                >
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12.09 16.1361C11.9917 16.1373 11.8942 16.1179 11.8038 16.0792C11.7134 16.0404 11.6321 15.9832 11.5652 15.9112L4.81674 9.16274C4.51681 8.86281 4.51681 8.39792 4.81674 8.09799C5.11667 7.79806 5.58156 7.79806 5.88149 8.09799L12.105 14.3215L18.3136 8.11299C18.6135 7.81306 19.0784 7.81306 19.3783 8.11299C19.6783 8.41292 19.6783 8.87781 19.3783 9.17774L12.6299 15.9262C12.4799 16.0761 12.285 16.1511 12.105 16.1511L12.09 16.1361Z" fill="currentColor" stroke="currentColor" strokeWidth="2" />
+                  </svg>
+                </button>
+              </Link>
               <div className="dropdown-overlay"></div>
-              <div className="dropdown-content" style={{ width: '280px', gridTemplateColumns: '1fr' }}>
+              <div className="dropdown-content" style={{ gridTemplateColumns: '1fr' }}>
                 <div className="dropdown-section">
-                  <h3 className="text-[0.75rem] font-semibold text-gray-600 mb-4 uppercase tracking-wider">Our Products</h3>
+                  <h3 className="font-semibold text-gray-600 mb-4 uppercase tracking-wider">Our Products</h3>
                   <div className="flex flex-col space-y-4">
-                    <Link href="/products/free-agentic-browser" className="dropdown-link">
+                    <Link href="/products/free-agentic-browser" className="dropdown-link" onClick={() => setOpenDropdown(null)}>
                       Oasis Agentic Browser
                     </Link>
-                    <Link href="/products/enterprise-browser" className="dropdown-link">
+                    <Link href="/products/enterprise-browser" className="dropdown-link" onClick={() => setOpenDropdown(null)}>
                       Oasis Enterprise Browser
                     </Link>
-                    <Link href="/products/web-application" className="dropdown-link">
+                    <Link href="/products/web-application" className="dropdown-link" onClick={() => setOpenDropdown(null)}>
                       Web Application
                     </Link>
                   </div>
                 </div>
               </div>
-            </div>
+            </li>
 
-            <div className="dropdown">
-              <Link href="/markets" className="nav-link text-white">Markets</Link>
+            <li className={`dropdown ${openDropdown === 'markets' ? 'active' : ''}`}>
+              <Link href="/markets" className="nav-link">
+                <span className="nav-link-text">Markets</span>
+                <button
+                  type="button"
+                  className="dropdown-icon-button"
+                  onClick={(e) => toggleDropdown('markets', e)}
+                  aria-label="Toggle Markets dropdown"
+                  aria-expanded={openDropdown === 'markets'}
+                >
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12.09 16.1361C11.9917 16.1373 11.8942 16.1179 11.8038 16.0792C11.7134 16.0404 11.6321 15.9832 11.5652 15.9112L4.81674 9.16274C4.51681 8.86281 4.51681 8.39792 4.81674 8.09799C5.11667 7.79806 5.58156 7.79806 5.88149 8.09799L12.105 14.3215L18.3136 8.11299C18.6135 7.81306 19.0784 7.81306 19.3783 8.11299C19.6783 8.41292 19.6783 8.87781 19.3783 9.17774L12.6299 15.9262C12.4799 16.0761 12.285 16.1511 12.105 16.1511L12.09 16.1361Z" fill="currentColor" stroke="currentColor" strokeWidth="2" />
+                  </svg>
+                </button>
+              </Link>
               <div className="dropdown-overlay"></div>
               <div className="dropdown-content">
                 <div className="dropdown-section">
-                  <h3 className="text-[0.75rem] font-semibold text-gray-600 mb-4 uppercase tracking-wider">Industry Markets</h3>
+                  <h3 className="font-semibold text-gray-600 mb-4 uppercase tracking-wider">Industry Markets</h3>
                   <div className="flex flex-col space-y-4">
-                    <Link href="/markets/manufacturing" className="dropdown-link">Manufacturing</Link>
-                    <Link href="/markets/professional" className="dropdown-link">Professional Services</Link>
-                    <Link href="/markets/healthcare" className="dropdown-link">Healthcare</Link>
-                    <Link href="/markets/finance" className="dropdown-link">Finance</Link>
-                    <Link href="/markets/energy-utilities" className="dropdown-link">Energy & Utilities</Link>
-                    <Link href="/markets/retail" className="dropdown-link">Retail & E-commerce</Link>
-                    <Link href="/markets/government" className="dropdown-link">Government & Public Sector</Link>
-                    <Link href="/markets/technology" className="dropdown-link">Technology</Link>
-                    <Link href="/markets/education" className="dropdown-link">Education</Link>
-                    <Link href="/markets/hospitality" className="dropdown-link">Hospitality</Link>
+                    <Link href="/markets/manufacturing" className="dropdown-link" onClick={() => setOpenDropdown(null)}>Manufacturing</Link>
+                    <Link href="/markets/professional" className="dropdown-link" onClick={() => setOpenDropdown(null)}>Professional Services</Link>
+                    <Link href="/markets/healthcare" className="dropdown-link" onClick={() => setOpenDropdown(null)}>Healthcare</Link>
+                    <Link href="/markets/finance" className="dropdown-link" onClick={() => setOpenDropdown(null)}>Finance</Link>
+                    <Link href="/markets/energy-utilities" className="dropdown-link" onClick={() => setOpenDropdown(null)}>Energy & Utilities</Link>
+                    <Link href="/markets/retail" className="dropdown-link" onClick={() => setOpenDropdown(null)}>Retail & E-commerce</Link>
+                    <Link href="/markets/government" className="dropdown-link" onClick={() => setOpenDropdown(null)}>Government & Public Sector</Link>
+                    <Link href="/markets/technology" className="dropdown-link" onClick={() => setOpenDropdown(null)}>Technology</Link>
+                    <Link href="/markets/education" className="dropdown-link" onClick={() => setOpenDropdown(null)}>Education</Link>
+                    <Link href="/markets/hospitality" className="dropdown-link" onClick={() => setOpenDropdown(null)}>Hospitality</Link>
                   </div>
                 </div>
               </div>
-            </div>
+            </li>
 
-            <div className="dropdown">
-              <Link href="/solutions" className="nav-link text-white">Solutions</Link>
+            <li className={`dropdown ${openDropdown === 'solutions' ? 'active' : ''}`}>
+              <Link href="/solutions" className="nav-link">
+                <span className="nav-link-text">Solutions</span>
+                <button
+                  type="button"
+                  className="dropdown-icon-button"
+                  onClick={(e) => toggleDropdown('solutions', e)}
+                  aria-label="Toggle Solutions dropdown"
+                  aria-expanded={openDropdown === 'solutions'}
+                >
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12.09 16.1361C11.9917 16.1373 11.8942 16.1179 11.8038 16.0792C11.7134 16.0404 11.6321 15.9832 11.5652 15.9112L4.81674 9.16274C4.51681 8.86281 4.51681 8.39792 4.81674 8.09799C5.11667 7.79806 5.58156 7.79806 5.88149 8.09799L12.105 14.3215L18.3136 8.11299C18.6135 7.81306 19.0784 7.81306 19.3783 8.11299C19.6783 8.41292 19.6783 8.87781 19.3783 9.17774L12.6299 15.9262C12.4799 16.0761 12.285 16.1511 12.105 16.1511L12.09 16.1361Z" fill="currentColor" stroke="currentColor" strokeWidth="2" />
+                  </svg>
+                </button>
+              </Link>
               <div className="dropdown-overlay"></div>
               <div className="dropdown-content">
                 <div className="dropdown-section">
-                  <h3 className="text-[0.75rem] font-semibold text-gray-600 mb-4 uppercase tracking-wider">Use Cases</h3>
+                  <h3 className="font-semibold text-gray-600 mb-4 uppercase tracking-wider">Use Cases</h3>
                   <div className="flex flex-col space-y-4">
-                    <Link href="/solutions/saas-and-web-apps" className="dropdown-link">
+                    <Link href="/solutions/saas-and-web-apps" className="dropdown-link" onClick={() => setOpenDropdown(null)}>
                       SaaS & Web Apps
                     </Link>
-                    <Link href="/solutions/remote-workforce" className="dropdown-link">
+                    <Link href="/solutions/remote-workforce" className="dropdown-link" onClick={() => setOpenDropdown(null)}>
                       Remote Workforce Security
                     </Link>
-                    <Link href="/solutions/merger-integration" className="dropdown-link">
+                    <Link href="/solutions/merger-integration" className="dropdown-link" onClick={() => setOpenDropdown(null)}>
                       Merger Integration
                     </Link>
-                    <Link href="/solutions/external-workforce" className="dropdown-link">
+                    <Link href="/solutions/external-workforce" className="dropdown-link" onClick={() => setOpenDropdown(null)}>
                       External Workforce Access
                     </Link>
-                    <Link href="/solutions/vdi-reduction" className="dropdown-link">
+                    <Link href="/solutions/vdi-reduction" className="dropdown-link" onClick={() => setOpenDropdown(null)}>
                       VDI Reduction
                     </Link>
-                    <Link href="/solutions/zero-trust-security" className="dropdown-link">
+                    <Link href="/solutions/zero-trust-security" className="dropdown-link" onClick={() => setOpenDropdown(null)}>
                       Zero Trust Security
                     </Link>
-                    <Link href="/solutions/privileged-user-management" className="dropdown-link">
+                    <Link href="/solutions/privileged-user-management" className="dropdown-link" onClick={() => setOpenDropdown(null)}>
                       Privileged User Management
                     </Link>
-                    <Link href="/solutions/secure-browsing" className="dropdown-link">
+                    <Link href="/solutions/secure-browsing" className="dropdown-link" onClick={() => setOpenDropdown(null)}>
                       Secure Web Browsing
                     </Link>
-                    <Link href="/solutions/workplace-enablement" className="dropdown-link">
+                    <Link href="/solutions/workplace-enablement" className="dropdown-link" onClick={() => setOpenDropdown(null)}>
                       Workplace Enablement
                     </Link>
                   </div>
                 </div>
               </div>
-            </div>
+            </li>
 
-            <div className="dropdown">
-              <Link href="/docs" className="nav-link text-white">Learn</Link>
+            <li className={`dropdown ${openDropdown === 'learn' ? 'active' : ''}`}>
+              <Link href="/docs" className="nav-link">
+                <span className="nav-link-text">Learn</span>
+                <button
+                  type="button"
+                  className="dropdown-icon-button"
+                  onClick={(e) => toggleDropdown('learn', e)}
+                  aria-label="Toggle Learn dropdown"
+                  aria-expanded={openDropdown === 'learn'}
+                >
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12.09 16.1361C11.9917 16.1373 11.8942 16.1179 11.8038 16.0792C11.7134 16.0404 11.6321 15.9832 11.5652 15.9112L4.81674 9.16274C4.51681 8.86281 4.51681 8.39792 4.81674 8.09799C5.11667 7.79806 5.58156 7.79806 5.88149 8.09799L12.105 14.3215L18.3136 8.11299C18.6135 7.81306 19.0784 7.81306 19.3783 8.11299C19.6783 8.41292 19.6783 8.87781 19.3783 9.17774L12.6299 15.9262C12.4799 16.0761 12.285 16.1511 12.105 16.1511L12.09 16.1361Z" fill="currentColor" stroke="currentColor" strokeWidth="2" />
+                  </svg>
+                </button>
+              </Link>
               <div className="dropdown-overlay"></div>
               <div className="dropdown-content" style={{ width: '480px', gridTemplateColumns: '1fr 1fr' }}>
                 <div className="dropdown-section">
-                  <h3 className="text-[0.75rem] font-semibold text-gray-600 mb-4 uppercase tracking-wider">Learn</h3>
+                  <h3 className="font-semibold text-gray-600 mb-4 uppercase tracking-wider">Learn</h3>
                   <div className="flex flex-col space-y-4">
-                    <Link href="/blog" className="dropdown-link">
+                    <Link href="/blog" className="dropdown-link" onClick={() => setOpenDropdown(null)}>
                       Blog
                     </Link>
-                    <Link href="/docs" className="dropdown-link">
+                    <Link href="/docs" className="dropdown-link" onClick={() => setOpenDropdown(null)}>
                       Docs
                     </Link>
-                    <Link href="/white-paper-future-of-ergonomic-work" className="dropdown-link">
+                    <Link href="/white-paper-future-of-ergonomic-work" className="dropdown-link" onClick={() => setOpenDropdown(null)}>
                       White Paper
                     </Link>
-                    <Link href="/subscribe-to-insights" className="dropdown-link">
+                    <Link href="/subscribe-to-insights" className="dropdown-link" onClick={() => setOpenDropdown(null)}>
                       Newsletter
                     </Link>
-                    <Link href="/community" className="dropdown-link">
+                    <Link href="/community" className="dropdown-link" onClick={() => setOpenDropdown(null)}>
                       Join Discord
                     </Link>
                   </div>
                 </div>
                 <div className="dropdown-section">
-                  <Link href="/buyers-guide" className="block p-4 bg-gradient-to-r from-[#66C2BE]/5 to-[#8CB7D0]/5 rounded-lg border border-[#66C2BE]/20 hover:from-[#66C2BE]/10 hover:to-[#8CB7D0]/10 hover:border-[#66C2BE]/30 transition-all duration-200">
+                  <Link href="/buyers-guide" className="block p-4 bg-gradient-to-r from-[#66C2BE]/5 to-[#8CB7D0]/5 rounded-lg border border-[#66C2BE]/20 hover:from-[#66C2BE]/10 hover:to-[#8CB7D0]/10 hover:border-[#66C2BE]/30 transition-all duration-200" onClick={() => setOpenDropdown(null)}>
                     <div className="w-full h-32 rounded-lg overflow-hidden mb-3">
                       <img 
                         src="/assets/pexels-kamo11235-667838.jpg" 
@@ -537,56 +748,65 @@ function NavBar() {
                   </Link>
                 </div>
               </div>
-            </div>
+            </li>
 
-            <div className="dropdown">
-              <Link href="/about" className="nav-link text-white">About</Link>
+            <li className={`dropdown ${openDropdown === 'about' ? 'active' : ''}`}>
+              <Link href="/about" className="nav-link">
+                <span className="nav-link-text">About</span>
+                <button
+                  type="button"
+                  className="dropdown-icon-button"
+                  onClick={(e) => toggleDropdown('about', e)}
+                  aria-label="Toggle About dropdown"
+                  aria-expanded={openDropdown === 'about'}
+                >
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12.09 16.1361C11.9917 16.1373 11.8942 16.1179 11.8038 16.0792C11.7134 16.0404 11.6321 15.9832 11.5652 15.9112L4.81674 9.16274C4.51681 8.86281 4.51681 8.39792 4.81674 8.09799C5.11667 7.79806 5.58156 7.79806 5.88149 8.09799L12.105 14.3215L18.3136 8.11299C18.6135 7.81306 19.0784 7.81306 19.3783 8.11299C19.6783 8.41292 19.6783 8.87781 19.3783 9.17774L12.6299 15.9262C12.4799 16.0761 12.285 16.1511 12.105 16.1511L12.09 16.1361Z" fill="currentColor" stroke="currentColor" strokeWidth="2" />
+                  </svg>
+                </button>
+              </Link>
               <div className="dropdown-overlay"></div>
               <div className="dropdown-content">
                 <div className="dropdown-section">
-                  <h3 className="text-[0.75rem] font-semibold text-gray-600 mb-4 uppercase tracking-wider">About Kahana</h3>
+                  <h3 className="font-semibold text-gray-600 mb-4 uppercase tracking-wider">About Kahana</h3>
                   <div className="flex flex-col space-y-4">
-                    <Link href="/about" className="dropdown-link">
+                    <Link href="/about" className="dropdown-link" onClick={() => setOpenDropdown(null)}>
                       About
                     </Link>
                   </div>
                 </div>
                 <div className="dropdown-section">
-                  <h3 className="text-[0.75rem] font-semibold text-gray-600 mb-4 uppercase tracking-wider">Get Started</h3>
+                  <h3 className="font-semibold text-gray-600 mb-4 uppercase tracking-wider">Get Started</h3>
                   <div className="flex flex-col space-y-4">
-                    <Link href="/contact" className="dropdown-link">
+                    <Link href="/contact" className="dropdown-link" onClick={() => setOpenDropdown(null)}>
                       Contact Us
                     </Link>
-                    <Link href="/support" className="dropdown-link">
-                      Support 
+                    <Link href="/support" className="dropdown-link" onClick={() => setOpenDropdown(null)}>
+                      Support
                     </Link>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
+            </li>
+          </ul>
 
           {/* Buttons and Hamburger Menu */}
           <div className="flex items-center gap-4">
             <div className="nav-buttons flex gap-2">
-              <Link href="/schedule-demo">
-                <button className="nav-button download inline-flex items-center justify-center rounded-[27.5px] bg-gradient-to-r from-[#4F571F] to-[#8A8D3E] text-white font-bold px-4 py-2.5 text-xs md:px-6 md:py-3 md:text-sm hover:from-[#8A8D3E] hover:to-[#4F571F] transition-all shadow-sm">
+              <Link href="/schedule-demo" className="btn-primary inline-flex items-center justify-center px-4 py-2.5 text-xs md:px-6 md:py-3 md:text-sm no-underline hover:no-underline focus:no-underline">
                   <span className="md:hidden">Demo</span>
                   <span className="hidden md:inline">Schedule Demo</span>
-                </button>
               </Link>
-              <Link href="/contact">
-                <button className="nav-button get-in-touch inline-flex items-center justify-center rounded-[27.5px] bg-gradient-to-r from-[#4F571F] to-[#8A8D3E] text-white font-bold px-4 py-2.5 text-xs md:px-6 md:py-3 md:text-sm hover:from-[#8A8D3E] hover:to-[#4F571F] transition-all shadow-sm">
+              <Link href="/contact" className="btn-secondary inline-flex items-center justify-center px-4 py-2.5 text-xs md:px-6 md:py-3 md:text-sm no-underline hover:no-underline focus:no-underline">
                   <span className="md:hidden">Contact</span>
                   <span className="hidden md:inline">Contact</span>
-                </button>
               </Link>
             </div>
 
             {/* Hamburger Menu */}
             <button
               onClick={toggleMobileMenu}
-              className="lg:hidden inline-flex items-center justify-center rounded-[27.5px] bg-gradient-to-r from-[#4F571F] to-[#8A8D3E] text-white font-bold px-3 py-2 hover:from-[#8A8D3E] hover:to-[#4F571F] transition-all shadow-sm"
+              className="btn-secondary lg:hidden inline-flex items-center justify-center px-3 py-2"
               aria-label="Mobile Menu"
             >
               {isMobileMenuOpen ? (
@@ -629,15 +849,11 @@ function NavBar() {
           <div className="menu-links">
             {/* Contact Buttons at Top */}
             <div className="flex flex-col gap-2 mb-4">
-              <Link href="/schedule-demo" className="text-center">
-                <button className="w-full py-2.5 px-6 bg-gradient-to-r from-[#4F571F] to-[#8A8D3E] text-white font-bold rounded-[27.5px] hover:from-[#8A8D3E] hover:to-[#4F571F] transition-all shadow-sm">
+              <Link href="/schedule-demo" className="btn-primary w-full text-center py-2.5 px-6 no-underline hover:no-underline focus:no-underline">
                   Schedule Demo
-                </button>
               </Link>
-              <Link href="/contact" className="text-center">
-                <button className="w-full py-2.5 px-6 bg-gradient-to-r from-[#4F571F] to-[#8A8D3E] text-white font-bold rounded-[27.5px] hover:from-[#8A8D3E] hover:to-[#4F571F] transition-all shadow-sm">
+              <Link href="/contact" className="btn-secondary w-full text-center py-2.5 px-6 no-underline hover:no-underline focus:no-underline">
                   Contact
-                </button>
               </Link>
             </div>
             

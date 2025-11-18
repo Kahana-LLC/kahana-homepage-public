@@ -262,15 +262,11 @@ export default function EnterpriseBrowser() {
               A secure, modern browser designed for enterprise environments, featuring enhanced security controls, collaboration tools, and a seamless user experience.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/schedule-demo">
-                <button className="nav-button download inline-flex items-center justify-center rounded-md text-white font-bold shadow-sm px-6 py-3 text-base no-underline hover:no-underline focus:no-underline" style={{ textDecoration: 'none', backgroundColor: '#788B59' }}>
+              <Link href="/schedule-demo" className="btn-primary inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline">
                   Schedule Demo
-                </button>
               </Link>
-              <Link href="/buyers-guide">
-                <button className="nav-button download inline-flex items-center justify-center rounded-md text-white font-bold shadow-sm px-6 py-3 text-base no-underline hover:no-underline focus:no-underline" style={{ textDecoration: 'none', backgroundColor: '#788B59' }}>
+              <Link href="/buyers-guide" className="btn-secondary inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline">
                   Read Buyer's Guide
-                </button>
               </Link>
             </div>
           </div>
@@ -434,10 +430,8 @@ export default function EnterpriseBrowser() {
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
             Schedule a demo to see how Oasis can enhance security, improve collaboration, and streamline your workflow.
           </p>
-          <Link href="/schedule-demo">
-            <button className="nav-button download inline-flex items-center justify-center rounded-md text-white font-bold shadow-sm px-6 py-3 text-base no-underline hover:no-underline focus:no-underline" style={{ textDecoration: 'none', backgroundColor: '#788B59' }}>
+          <Link href="/schedule-demo" className="btn-primary inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline">
               Schedule Demo
-            </button>
           </Link>
         </div>
       </section>

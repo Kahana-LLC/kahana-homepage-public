@@ -199,10 +199,8 @@ export default function WebApplication() {
             <p className="text-xl text-[#4A5745] max-w-3xl mx-auto mb-8">
               A simple platform to help you stay organized, productive, and grow your projects. Keep your hubs private, share them publicly, or monetize - it's your space to bring your ideas to life.
             </p>
-            <Link href="/pricing">
-              <button className="nav-button download inline-flex items-center justify-center rounded-md text-white font-bold shadow-sm px-6 py-3 text-base no-underline hover:no-underline focus:no-underline" style={{ textDecoration: 'none', backgroundColor: '#788B59' }}>
+            <Link href="/pricing" className="btn-primary inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline">
                 Plans & Pricing
-              </button>
             </Link>
           </div>
         </div>
@@ -499,10 +497,8 @@ export default function WebApplication() {
             Start organizing your projects, growing your audience, and turning your ideas into reality.
           </p>
           <div className="flex justify-center">
-            <Link href="/pricing">
-              <button className="nav-button download inline-flex items-center justify-center rounded-md text-white font-bold shadow-sm px-6 py-3 text-base no-underline hover:no-underline focus:no-underline" style={{ textDecoration: 'none', backgroundColor: '#788B59' }}>
+            <Link href="/pricing" className="btn-primary inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline">
                 Plans & Pricing
-              </button>
             </Link>
           </div>
         </div>

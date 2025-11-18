@@ -111,7 +111,8 @@ export default function BlogIndex({ posts = [] }) {
         <meta name="description" content="Latest insights and updates from the Kahana team on enterprise browser security, productivity, and technology trends." />
       </Head>
 
-      <main className="min-h-screen bg-white max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="min-h-screen bg-white">
+        <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Breadcrumbs */}
         <div className="mb-8">
           <Breadcrumbs 
@@ -159,7 +160,7 @@ export default function BlogIndex({ posts = [] }) {
                 onClick={() => handleCategoryChange(category)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                   selectedCategory === category
-                    ? 'bg-[#21706c] text-white font-bold'
+                    ? 'btn-primary'
                     : 'bg-white text-[#21706c] font-bold hover:bg-gray-100 border border-[#21706c]'
                 }`}
               >
@@ -187,7 +188,7 @@ export default function BlogIndex({ posts = [] }) {
                   className={`px-4 py-2 rounded-md ${
                     currentPage === 1
                       ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                      : 'bg-[#21706c] text-white font-bold hover:bg-[#15514f]'
+                      : 'btn-primary'
                   }`}
                 >
                   Previous
@@ -200,7 +201,7 @@ export default function BlogIndex({ posts = [] }) {
                       onClick={() => typeof pageNum === 'number' && setCurrentPage(pageNum)}
                       className={`px-4 py-2 rounded-md ${
                         pageNum === currentPage
-                          ? 'bg-[#21706c] text-white font-bold'
+                          ? 'btn-primary'
                           : pageNum === '...'
                           ? 'cursor-default'
                           : 'bg-white text-[#21706c] font-bold hover:bg-gray-100 border border-[#21706c]'
@@ -217,7 +218,7 @@ export default function BlogIndex({ posts = [] }) {
                   className={`px-4 py-2 rounded-md ${
                     currentPage === totalPages
                       ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                      : 'bg-[#21706c] text-white font-bold hover:bg-[#15514f]'
+                      : 'btn-primary'
                   }`}
                 >
                   Next
@@ -235,7 +236,8 @@ export default function BlogIndex({ posts = [] }) {
             </p>
           </div>
         )}
-      </main>
+        </main>
+      </div>
     </>
   );
 }

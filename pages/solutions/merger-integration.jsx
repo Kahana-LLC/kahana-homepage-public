@@ -246,10 +246,8 @@ export default function MA() {
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
             Schedule a demo to see how Oasis can transform your organization's merger integration.
           </p>
-          <Link href="/schedule-demo">
-            <button className="nav-button download inline-flex items-center justify-center rounded-md text-white font-bold shadow-sm px-6 py-3 text-base no-underline hover:no-underline focus:no-underline" style={{ textDecoration: 'none', backgroundColor: '#788B59' }}>
+          <Link href="/schedule-demo" className="btn-primary inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline">
               Schedule Demo
-            </button>
           </Link>
         </div>
       </section>

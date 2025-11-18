@@ -79,7 +79,16 @@ export function AuthorBioCard({ author, imageClassName, index }) {
   if (!author?.name) return null;
 
   return (
-    <div className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl shadow-lg p-8">
+    <>
+      <style jsx>{`
+        .author-bio-card {
+          background: linear-gradient(90deg, #F8FAF2 0%, #d6e3f4 100%);
+          border-radius: 1rem;
+          padding: 2rem;
+          box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+      `}</style>
+      <div className="author-bio-card">
       <div className="flex items-start gap-6">
         <div className="flex-shrink-0">
           <div className="overflow-hidden rounded-lg">
@@ -123,7 +132,8 @@ export function AuthorBioCard({ author, imageClassName, index }) {
           )}
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 }
 

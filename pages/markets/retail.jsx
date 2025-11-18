@@ -250,10 +250,10 @@ export default function Retail({ retailBlogs }) {
               The retail sector faces unprecedented threats, with 92% of breaches linked to system intrusion and phishing attacks. Enterprise browsers provide critical protection for customer data while ensuring compliance and operational efficiency.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/buyers-guide" className="nav-button download inline-flex items-center justify-center rounded-md text-white font-bold shadow-sm px-6 py-3 text-base no-underline hover:no-underline focus:no-underline" style={{ textDecoration: 'none', backgroundColor: '#788B59' }}>
+              <Link href="/buyers-guide" className="btn-primary inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline">
                 Read Buyer's Guide
               </Link>
-              <Link href="/sales" className="nav-button download inline-flex items-center justify-center rounded-md text-white font-bold shadow-sm px-6 py-3 text-base no-underline hover:no-underline focus:no-underline" style={{ textDecoration: 'none', backgroundColor: '#788B59' }}>
+              <Link href="/sales" className="btn-secondary inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline">
                 Contact Sales
               </Link>
             </div>
@@ -379,12 +379,9 @@ export default function Retail({ retailBlogs }) {
           <div className="flex justify-center">
             <Link 
               href="/sales" 
-              className="nav-button download inline-flex items-center justify-center rounded-md text-white font-bold shadow-sm px-6 py-3 text-base no-underline hover:no-underline focus:no-underline" style={{ textDecoration: 'none', backgroundColor: '#788B59' }}
-              
+              className="btn-primary inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline"
             >
-              <span >
                 Contact Sales
-              </span>
             </Link>
           </div>
         </div>

@@ -28,8 +28,7 @@ export default function HeroSection() {
                   <div className="mt-8 flex justify-center sm:justify-start">
                     <Link
                       href="/contact"  
-                      className="nav-button download inline-flex items-center justify-center rounded-md text-white font-bold shadow-sm px-6 py-3 text-base no-underline hover:no-underline focus:no-underline"
-                      style={{ textDecoration: 'none', backgroundColor: '#788B59' }}
+                      className="btn-primary inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline"
                     >
                       <span>
                         Get in Touch
