@@ -14,11 +14,13 @@ const conceptCards = [
   },
   {
     title: "Privileged User Management",
-    link: "/solutions/privileged-user-management"
+    link: "/solutions/privileged-user-management",
+    image: "/figma-imports/Personalization Features.png"
   },
   {
     title: "Secure Web Browsing",
-    link: "/solutions/secure-browsing"
+    link: "/solutions/secure-browsing",
+    image: "/figma-imports/Security 2.png"
   }
 ];
 
