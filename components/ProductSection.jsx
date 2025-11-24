@@ -77,16 +77,16 @@ export default function ProductSection() {
           }
         }
         .product-schedule-demo-button {
-          background-color: #7A9200 !important;
-          border: 1px solid #AFBE66 !important;
+          background-color: #5A7200 !important;
+          border: 1px solid #8FAE46 !important;
           color: #FFFFFF !important;
           border-radius: 32px !important;
           font-weight: bold !important;
           transition: all 0.3s ease !important;
         }
         .product-schedule-demo-button:hover {
-          background-color: #5A7200 !important;
-          border-color: #8FAE46 !important;
+          background-color: #4A6200 !important;
+          border-color: #7F9E36 !important;
         }
         .product-schedule-demo-button,
         .product-schedule-demo-button *,
@@ -115,8 +115,8 @@ export default function ProductSection() {
                 href="/schedule-demo"
                 className="product-schedule-demo-button inline-flex items-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline"
                 style={{
-                  backgroundColor: '#7A9200',
-                  border: '1px solid #AFBE66',
+                  backgroundColor: '#5A7200',
+                  border: '1px solid #8FAE46',
                   color: '#FFFFFF',
                   borderRadius: '32px',
                   fontWeight: 'bold'
