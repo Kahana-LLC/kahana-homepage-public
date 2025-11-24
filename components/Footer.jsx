@@ -60,7 +60,7 @@ export default function Footer() {
           <div className="flex flex-col items-center">
             <div className="grid grid-cols-1 md:grid-cols-6 gap-12 w-full max-w-5xl ml-16 lg:ml-32">
             {/* Product Column */}
-            <div className="text-center">
+            <div>
               <button 
                 onClick={() => toggleSection('product')} 
                 className="footer-mobile-dropdown flex justify-between items-center w-full md:hidden mb-3 border border-[#788B59] text-[#788B59] font-bold py-2 px-4 rounded-md appearance-none shadow-sm"

@@ -97,21 +97,15 @@ export default function ProductSection() {
           {/* Main Content - Centered */}
           <div className="w-full max-w-4xl mx-auto px-4 mb-12">
             <h2 className="text-xl font-semibold leading-8 text-[#617500] mb-4">Fall in love</h2>
-            <p className="text-2xl font-semibold tracking-tight text-[#333333] sm:text-3xl mb-6">
+            <p className="text-2xl font-semibold tracking-tight text-[#313A00] sm:text-3xl mb-6">
               Meet Oasis, the Most Elegant browser
             </p>
-            <p className="text-lg text-[#4A5745] mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-[#333333] mb-8 max-w-2xl mx-auto">
               Enjoy a beautiful browsing experience designed for ergonomic work
             </p>
             
             {/* Buttons */}
             <div className="flex gap-4 items-center justify-center">
-              <Link
-                href="/oasis-waitlist"
-                className="btn-secondary inline-flex items-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline"
-              >
-                <span>Get early access</span>
-              </Link>
               <Link
                 href="/schedule-demo"
                 className="product-schedule-demo-button inline-flex items-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline"
@@ -124,6 +118,12 @@ export default function ProductSection() {
                 }}
               >
                 <span style={{ color: '#FFFFFF' }}>Schedule Demo</span>
+              </Link>
+              <Link
+                href="/oasis-waitlist"
+                className="btn-secondary inline-flex items-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline"
+              >
+                <span>Get early access</span>
               </Link>
             </div>
           </div>

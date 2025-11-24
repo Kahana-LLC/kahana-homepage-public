@@ -338,7 +338,7 @@ export default function BlogPost({ post }) {
             </div>
           )}
         </article>
-        </main>
+      </main>
       </div>
 
       {/* Scroll Progress Script */}

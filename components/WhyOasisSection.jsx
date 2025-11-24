@@ -1,6 +1,28 @@
 import React from 'react';
+import Image from 'next/image';
 
 export default function WhyOasisSection() {
+  const features = [
+    {
+      title: "Ergonomic Design",
+      description: "Created to bring calm and focus back to browsing",
+      image: "/figma-imports/Group 6.jpg",
+      alt: "Ergonomic Design"
+    },
+    {
+      title: "AI-Powered Focus",
+      description: "Makes browsing beautiful and natural",
+      image: "/figma-imports/Frame 1321315005.jpg",
+      alt: "AI-Powered Focus"
+    },
+    {
+      title: "Spatial Ease",
+      description: "Browser that adapts to you",
+      image: "/figma-imports/Summarize with AI 3.jpg",
+      alt: "Spatial Ease"
+    }
+  ];
+
   return (
     <div className="bg-white py-16 sm:py-24 relative">
       <style jsx>{`
@@ -22,54 +44,55 @@ export default function WhyOasisSection() {
             padding-right: var(--container-padding-desktop);
           }
         }
-        .why-oasis-card {
-          background: linear-gradient(90deg, #F8FAF2 0%, #d6e3f4 100%);
+        .why-oasis-image-card {
+          background: #F8FAF2;
           border-radius: 1rem;
-          padding: 2rem;
+          padding: 1.5rem;
           box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          text-align: center;
-          height: 100%;
           transition: transform 0.3s ease, box-shadow 0.3s ease;
+          flex-shrink: 0;
         }
-        .why-oasis-card:hover {
+        .why-oasis-image-card:hover {
           transform: translateY(-4px);
           box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
-        .why-oasis-card h3 {
-          color: #495800;
-          font-weight: bold;
-          font-size: 1.25rem;
-          margin-bottom: 1rem;
-          line-height: 1.4;
-          text-align: center;
-        }
-        .why-oasis-card p {
-          color: #495800;
-          margin-bottom: 1.5rem;
-          flex-grow: 1;
-          line-height: 1.6;
-          text-align: center;
-        }
-        .why-oasis-card-image {
-          width: 100%;
-          height: 200px;
-          border-radius: 0.5rem;
-          margin-top: auto;
-          background-color: transparent;
-          position: relative;
-          overflow: hidden;
-        }
-        .why-oasis-card-image img {
+        .why-oasis-image-card img {
           width: 100%;
           height: 100%;
           object-fit: cover;
           border-radius: 0.5rem;
         }
+        .why-oasis-text-content p {
+          color: #495800;
+          font-size: 1.25rem;
+          font-weight: 600;
+          line-height: 2rem;
+        }
         .why-oasis-container h2 {
           color: #978455 !important;
+        }
+        .why-oasis-item {
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+          margin-bottom: 4rem;
+        }
+        @media (min-width: 768px) {
+          .why-oasis-item {
+            flex-direction: row;
+            align-items: center;
+            gap: 3rem;
+          }
+          .why-oasis-item.reverse {
+            flex-direction: row-reverse;
+          }
+          .why-oasis-image-card {
+            width: 45%;
+            min-width: 300px;
+          }
+          .why-oasis-text-content {
+            flex: 1;
+          }
         }
       `}</style>
       
@@ -79,49 +102,31 @@ export default function WhyOasisSection() {
           <h2 className="text-xl font-semibold leading-8 text-[#978455] mb-4">Why Oasis ?</h2>
         </div>
 
-        {/* Three Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-16">
-          {/* Card 1 */}
-          <div className="why-oasis-card">
-            <h3>Ergonomic Design</h3>
-            <p>
-              Created Oasis to bring calm and focus back to browsing
-            </p>
-            <div className="why-oasis-card-image">
-              <img
-                src="/figma-imports/Group 6.jpg"
-                alt="Ergonomic Design"
-              />
-            </div>
-          </div>
+        {/* Alternating Image and Text Items */}
+        <div className="mb-16">
+          {features.map((feature, index) => (
+            <div 
+              key={index} 
+              className={`why-oasis-item ${index % 2 === 1 ? 'reverse' : ''}`}
+            >
+              {/* Image Card */}
+              <div className="why-oasis-image-card">
+                <div style={{ width: '100%', height: '300px', position: 'relative', overflow: 'hidden' }}>
+                  <Image
+                    src={feature.image}
+                    alt={feature.alt}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </div>
 
-          {/* Card 2 */}
-          <div className="why-oasis-card">
-            <h3>AI-Powered Focus</h3>
-            <p>
-              No more clutter, no more chaos, Oasis makes browsing beautiful and natural
-            </p>
-            <div className="why-oasis-card-image">
-              <img
-                src="/figma-imports/Frame 1321315005.jpg"
-                alt="AI-Powered Focus"
-              />
+              {/* Text Content */}
+              <div className="why-oasis-text-content">
+                <p>{feature.description}</p>
+              </div>
             </div>
-          </div>
-
-          {/* Card 3 */}
-          <div className="why-oasis-card">
-            <h3>Spatial Ease</h3>
-            <p>
-              Oasis turns your browser into a calm space that adapts to you
-            </p>
-            <div className="why-oasis-card-image">
-              <img
-                src="/figma-imports/Summarize with AI 3.jpg"
-                alt="Spatial Ease"
-              />
-            </div>
-          </div>
+          ))}
         </div>
 
         {/* YouTube Video - Centered like golden container */}

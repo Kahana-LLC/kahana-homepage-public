@@ -1,116 +1,153 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import Link from 'next/link';
 
-const steps = [
-  {
-    id: 1,
-    name: 'Schedule Demo',
-    description: 'Experience Oasis in a personalized demonstration tailored to your organization\'s needs.',
-    icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-      </svg>
-    ),
-  },
-  {
-    id: 2,
-    name: 'Custom Setup',
-    description: 'We\'ll configure Oasis to align with your organization\'s workflows and requirements.',
-    icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-      </svg>
-    ),
-  },
-  {
-    id: 3,
-    name: 'Enterprise Deployment',
-    description: 'Deploy Oasis securely and efficiently across your organization.',
-    icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-      </svg>
-    ),
-  },
-  {
-    id: 4,
-    name: 'Ongoing Support',
-    description: 'Receive dedicated support, regular updates, and ongoing guidance to ensure optimal performance.',
-    icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
-      </svg>
-    ),
-  },
-];
-
 export default function HowItWorks() {
-  const [hoveredStep, setHoveredStep] = useState(0);
+  const videoRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(true);
+  const [isMuted, setIsMuted] = useState(true);
+
+  const handleVideoToggle = () => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    if (video.paused) {
+      video.play();
+      setIsPlaying(true);
+    } else {
+      video.pause();
+      setIsPlaying(false);
+    }
+  };
+
+  const handleAudioToggle = (e) => {
+    e.stopPropagation();
+    const video = videoRef.current;
+    if (!video) return;
+    const nextMuted = !isMuted;
+    video.muted = nextMuted;
+    setIsMuted(nextMuted);
+    if (!nextMuted && video.volume === 0) {
+      video.volume = 0.6;
+    }
+  };
 
   return (
     <div className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8 get-started-section">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-xl font-semibold leading-8 text-[#978455] mb-4">Get Started</h2>
-          <p className="mt-2 text-3xl font-bold tracking-tight text-[#4A5745] sm:text-4xl">
+          <p className="mt-2 text-3xl font-bold tracking-tight text-[#313A00] sm:text-4xl">
           Bring Oasis to your organization
           </p>
-          <p className="mt-6 text-lg leading-8 text-[#4A5745]">
+          <p className="mt-6 text-lg leading-8 text-[#333333]">
           Learn how Oasis can help you and your organization.
           </p>
         </div>
-        <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none flex flex-col items-center">
-          <style jsx>{`
-            .step-card {
-              background: linear-gradient(90deg, #F8FAF2 0%, #d6e3f4 100%);
-              border-radius: 1rem;
-              padding: 2rem;
-              box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-              transition: transform 0.3s ease, box-shadow 0.3s ease;
-            }
-            .step-card:hover {
-              transform: translateY(-4px);
-              box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            }
-          `}</style>
-          {/* Progress Bar */}
-          <div className="relative h-1 bg-[#F3F8E4] rounded-full mb-8 w-full max-w-4xl">
-            <div 
-              className="absolute h-full bg-gradient-to-r from-[#E0D48C] via-[#728552] to-[#788B59] rounded-full transition-all duration-300 ease-in-out"
-              style={{ width: `${(hoveredStep / (steps.length - 1)) * 100}%` }}
-            />
-          </div>
-          
-          <div className="grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-4 w-full">
-            {steps.map((step, index) => (
-              <div 
-                key={step.id} 
-                className="step-card"
-                onMouseEnter={() => setHoveredStep(index)}
-                onMouseLeave={() => setHoveredStep(0)}
-              >
-                <div className="flex items-start justify-center text-center">
-                  <div className="flex flex-col items-center w-full">
-                    <div className="flex-shrink-0 mb-4">
-                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#7A9200] border border-[#AFBE66] shadow-md mx-auto transition-all duration-300 hover:bg-[#6A8200] hover:border-[#9FAE56]">
-                        <div className="text-white">
-                          {step.icon}
-                        </div>
-                      </div>
-                    </div>
-                    <div className="w-full">
-                      <div className="text-base font-semibold leading-7 text-[#4A5745] text-center">
-                        {step.name}
-                      </div>
-                      <div className="mt-2 text-base leading-7 text-[#4A5745] text-center">
-                        {step.description}
-                      </div>
+        <div className="mx-auto mt-16 max-w-4xl sm:mt-20 lg:mt-24 w-full flex flex-col items-center">
+          <div className="w-full bg-[#E4E9CC] rounded-[32px] shadow-[0_20px_60px_rgba(33,41,10,0.15)] px-4 py-8 sm:px-10 sm:py-10">
+            <div className="text-left mb-6">
+              <p className="text-sm uppercase tracking-[0.2em] text-[#617500] mb-3">
+                Product Tour
+              </p>
+              <h3 className="text-2xl font-semibold text-[#313A00]">
+                See how Oasis customizes your homepage for every workflow
+              </h3>
+            </div>
+            <div className="w-full flex justify-center">
+              <div className="w-full max-w-4xl">
+                <div className="relative w-full rounded-[28px] overflow-hidden shadow-[0_18px_45px_rgba(32,47,0,0.18)]">
+                  <div
+                    className="relative w-full pt-[56.25%] bg-[#1B1F12] cursor-pointer"
+                    onClick={handleVideoToggle}
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        handleVideoToggle();
+                      }
+                    }}
+                    aria-label={isPlaying ? 'Pause product tour video' : 'Play product tour video'}
+                  >
+                    <video
+                      ref={videoRef}
+                      autoPlay
+                      loop
+                      muted={isMuted}
+                      playsInline
+                      controls={false}
+                      preload="metadata"
+                      poster="/figma-imports/Summarize with AI 3.jpg"
+                      className="absolute inset-0 w-full h-full object-cover"
+                    >
+                      <source
+                        src="/videos/Oasis%20Homepage%20Customization%20-%20FINAL.webm"
+                        type="video/webm"
+                      />
+                      Your browser does not support the video tag.
+                    </video>
+                    {/* Center play/pause control */}
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleVideoToggle();
+                      }}
+                      className={`absolute inset-0 m-auto h-14 w-14 btn-primary flex items-center justify-center shadow-lg transition-opacity duration-200 ${
+                        isPlaying ? 'opacity-0 pointer-events-none' : 'opacity-100'
+                      }`}
+                      aria-label={isPlaying ? "Pause video" : "Play video"}
+                    >
+                      {isPlaying ? (
+                        <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                          <line x1="9" y1="5" x2="9" y2="19" />
+                          <line x1="15" y1="5" x2="15" y2="19" />
+                        </svg>
+                      ) : (
+                        <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                          <polygon points="8 5 19 12 8 19 8 5" />
+                        </svg>
+                      )}
+                    </button>
+
+                    {/* Bottom controls */}
+                    <div className="absolute bottom-4 right-4 flex items-center gap-2">
+                      <button
+                        type="button"
+                        onClick={handleAudioToggle}
+                        className="btn-secondary h-8 w-8 flex items-center justify-center"
+                        aria-label={isMuted ? "Unmute video" : "Mute video"}
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="w-3 h-3"
+                        >
+                          <polygon points="5 9 9 9 13 5 13 19 9 15 5 15"></polygon>
+                          {!isMuted && (
+                            <>
+                              <path d="M16 9.35a4 4 0 010 5.3" />
+                              <path d="M19 7a7 7 0 010 10" />
+                            </>
+                          )}
+                          {isMuted && (
+                            <>
+                              <line x1="16" y1="8" x2="22" y2="14" />
+                              <line x1="22" y1="8" x2="16" y2="14" />
+                            </>
+                          )}
+                        </svg>
+                      </button>
                     </div>
                   </div>
                 </div>
               </div>
-            ))}
+            </div>
           </div>
 
           {/* Download Button */}

@@ -65,6 +65,12 @@ h6 {
   color: #978455 !important;
 }
 
+/* Exceptions for homepage section headings */
+#video h2,
+#why-oasis h2 {
+  color: #978455 !important;
+}
+
 /* High-contrast links */
 a {
   color: var(--bg-action) !important;

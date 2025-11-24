@@ -118,6 +118,27 @@ export default function Home({ blogPosts }) {
 
   const btnRef = useRef();
 
+  const whyOasisCards = [
+    {
+      title: "Created to bring calm and focus back to browsing",
+      image: "/figma-imports/er.svg",
+      imageAlt: "Serene illustration representing focused Oasis browsing",
+      loading: "eager",
+    },
+    {
+      title: "Makes browsing beautiful and natural",
+      image: "/figma-imports/Frame 1321315005.jpg",
+      imageAlt: "Screenshot showcasing clutter-free Oasis browsing",
+      loading: "eager",
+    },
+    {
+      title: "Artificial Intelligence (AI) browser that adapts to you",
+      image: "/figma-imports/Summarize with AI 3.jpg",
+      imageAlt: "Illustration of Oasis adapting to the user",
+      loading: "eager",
+    },
+  ];
+
   useEffect(() => {
     if (btnRef.current) {
       btnRef.current.style.setProperty(
@@ -172,7 +193,7 @@ export default function Home({ blogPosts }) {
         strategy="afterInteractive"
       />
 
-      <div className="relative bg-white">
+      <div className="relative bg-white shadow-[0_0_40px_rgba(0,0,0,0.08)]">
         {/* Elegant accent line at top */}
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#30400D] to-transparent opacity-20"></div>
         
@@ -201,7 +222,9 @@ export default function Home({ blogPosts }) {
               <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Section Heading */}
                 <div className="text-center mb-12">
-                  <h2 className="text-xl font-semibold leading-8 mb-4" style={{ color: '#978455' }}>See Oasis in Action</h2>
+                  <h2 className="text-xl font-semibold leading-8 mb-4">
+                    See Oasis in Action
+                  </h2>
                 </div>
 
                 {/* YouTube Video - Centered */}
@@ -216,6 +239,52 @@ export default function Home({ blogPosts }) {
                       allowFullScreen
                     ></iframe>
                   </div>
+                </div>
+              </div>
+            </section>
+          </FadeInSection>
+
+          {/* Elegant section divider */}
+          <div className="relative h-px bg-gradient-to-r from-transparent via-[#30400D]/20 to-transparent mx-auto max-w-4xl"></div>
+
+          <FadeInSection delay={150}>
+            <section
+              id="why-oasis"
+              className="py-16 sm:py-24 bg-white relative"
+            >
+              <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="text-center mb-12">
+                  <h2 className="text-xl font-semibold leading-8 mb-4">
+                    Rediscover Browsing with Oasis
+                  </h2>
+                </div>
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:justify-items-center">
+                  {whyOasisCards.map((card) => (
+                    <div
+                      key={card.title}
+                      className="bg-[#E4E9CC] rounded-[28px] px-6 py-6 shadow-[0_25px_70px_rgba(32,47,0,0.08)] flex flex-col h-full text-left w-full max-w-[384px] min-h-[360px] mx-auto"
+                    >
+                      <div className="flex flex-col gap-3 w-full max-w-[344px] mx-auto text-[#313A00]">
+                        <h3 className="text-xl font-semibold leading-tight">
+                          {card.title}
+                        </h3>
+                        <p className="text-base leading-relaxed text-[#313A00]/85">
+                          {card.text}
+                        </p>
+                      </div>
+                      <div className="flex-1 flex items-end justify-center pt-8 w-full">
+                        <img
+                          src={card.image}
+                          alt={card.imageAlt || `${card.title} illustration`}
+                          loading={card.loading || "lazy"}
+                          decoding="async"
+                          width={320}
+                          height={240}
+                          className="w-full max-w-[320px] min-h-[200px] rounded-[12px] object-cover"
+                        />
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </section>
