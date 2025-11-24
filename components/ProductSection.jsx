@@ -77,11 +77,16 @@ export default function ProductSection() {
           }
         }
         .product-schedule-demo-button {
-          background-color: #7A9200 !important;
-          border: 1px solid #AFBE66 !important;
+          background-color: #5A7200 !important;
+          border: 1px solid #8FAE46 !important;
           color: #FFFFFF !important;
           border-radius: 32px !important;
           font-weight: bold !important;
+          transition: all 0.3s ease !important;
+        }
+        .product-schedule-demo-button:hover {
+          background-color: #4A6200 !important;
+          border-color: #7F9E36 !important;
         }
         .product-schedule-demo-button,
         .product-schedule-demo-button *,
@@ -97,33 +102,33 @@ export default function ProductSection() {
           {/* Main Content - Centered */}
           <div className="w-full max-w-4xl mx-auto px-4 mb-12">
             <h2 className="text-xl font-semibold leading-8 text-[#617500] mb-4">Fall in love</h2>
-            <p className="text-2xl font-semibold tracking-tight text-[#333333] sm:text-3xl mb-6">
+            <p className="text-2xl font-semibold tracking-tight text-[#313A00] sm:text-3xl mb-6">
               Meet Oasis, the Most Elegant browser
             </p>
-            <p className="text-lg text-[#4A5745] mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-[#333333] mb-8 max-w-2xl mx-auto">
               Enjoy a beautiful browsing experience designed for ergonomic work
             </p>
             
             {/* Buttons */}
             <div className="flex gap-4 items-center justify-center">
               <Link
-                href="/oasis-waitlist"
-                className="btn-secondary inline-flex items-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline"
-              >
-                <span>Get early access</span>
-              </Link>
-              <Link
                 href="/schedule-demo"
                 className="product-schedule-demo-button inline-flex items-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline"
                 style={{
-                  backgroundColor: '#7A9200',
-                  border: '1px solid #AFBE66',
+                  backgroundColor: '#5A7200',
+                  border: '1px solid #8FAE46',
                   color: '#FFFFFF',
                   borderRadius: '32px',
                   fontWeight: 'bold'
                 }}
               >
                 <span style={{ color: '#FFFFFF' }}>Schedule Demo</span>
+              </Link>
+              <Link
+                href="/oasis-waitlist"
+                className="btn-secondary inline-flex items-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline"
+              >
+                <span>Get early access</span>
               </Link>
             </div>
           </div>

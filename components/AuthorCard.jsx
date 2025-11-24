@@ -132,7 +132,7 @@ export function AuthorBioCard({ author, imageClassName, index }) {
           )}
         </div>
       </div>
-      </div>
+    </div>
     </>
   );
 }

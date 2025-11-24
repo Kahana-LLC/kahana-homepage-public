@@ -794,8 +794,8 @@ function NavBar() {
           <div className="flex items-center gap-4">
             <div className="nav-buttons flex gap-2">
               <Link href="/schedule-demo" className="btn-primary inline-flex items-center justify-center px-4 py-2.5 text-xs md:px-6 md:py-3 md:text-sm no-underline hover:no-underline focus:no-underline">
-                  <span className="md:hidden">Demo</span>
-                  <span className="hidden md:inline">Schedule Demo</span>
+                  <span className="md:hidden">Get Early Access</span>
+                  <span className="hidden md:inline">Get Early Access</span>
               </Link>
               <Link href="/contact" className="btn-secondary inline-flex items-center justify-center px-4 py-2.5 text-xs md:px-6 md:py-3 md:text-sm no-underline hover:no-underline focus:no-underline">
                   <span className="md:hidden">Contact</span>
@@ -850,7 +850,7 @@ function NavBar() {
             {/* Contact Buttons at Top */}
             <div className="flex flex-col gap-2 mb-4">
               <Link href="/schedule-demo" className="btn-primary w-full text-center py-2.5 px-6 no-underline hover:no-underline focus:no-underline">
-                  Schedule Demo
+                  Get Early Access
               </Link>
               <Link href="/contact" className="btn-secondary w-full text-center py-2.5 px-6 no-underline hover:no-underline focus:no-underline">
                   Contact

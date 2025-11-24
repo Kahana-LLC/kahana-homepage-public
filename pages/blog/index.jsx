@@ -236,7 +236,7 @@ export default function BlogIndex({ posts = [] }) {
             </p>
           </div>
         )}
-        </main>
+      </main>
       </div>
     </>
   );
