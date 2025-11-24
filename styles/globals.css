@@ -162,8 +162,8 @@ a.btn-primary {
 .nav-button.primary:hover,
 button.btn-primary:hover,
 a.btn-primary:hover {
-  background-color: #6A8200 !important;
-  border-color: #9FAE56 !important;
+  background-color: #5A7200 !important;
+  border-color: #8FAE46 !important;
   color: #FFFFFF !important;
 }
 
@@ -209,23 +209,23 @@ a.btn-secondary svg {
 .nav-button.secondary:hover,
 button.btn-secondary:hover,
 a.btn-secondary:hover {
-  background-color: #F5F5F5 !important;
-  border-color: #6A8200 !important;
-  color: #6A8200 !important;
+  background-color: #E8E8E8 !important;
+  border-color: #5A7200 !important;
+  color: #5A7200 !important;
 }
 
 .btn-secondary:hover span,
 .nav-button.secondary:hover span,
 button.btn-secondary:hover span,
 a.btn-secondary:hover span {
-  color: #6A8200 !important;
+  color: #5A7200 !important;
 }
 
 .btn-secondary:hover svg,
 .nav-button.secondary:hover svg,
 button.btn-secondary:hover svg,
 a.btn-secondary:hover svg {
-  color: #6A8200 !important;
+  color: #5A7200 !important;
 }
 
 /* Legacy support - rounded pill style */

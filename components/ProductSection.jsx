@@ -82,6 +82,11 @@ export default function ProductSection() {
           color: #FFFFFF !important;
           border-radius: 32px !important;
           font-weight: bold !important;
+          transition: all 0.3s ease !important;
+        }
+        .product-schedule-demo-button:hover {
+          background-color: #5A7200 !important;
+          border-color: #8FAE46 !important;
         }
         .product-schedule-demo-button,
         .product-schedule-demo-button *,
