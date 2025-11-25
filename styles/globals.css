@@ -150,8 +150,8 @@ input[type="button"]:hover {
 .nav-button.primary,
 button.btn-primary,
 a.btn-primary {
-  background-color: #5A7200 !important;
-  border: 1px solid #8FAE46 !important;
+  background-color: #4A6200 !important;
+  border: 1px solid #7F9E36 !important;
   color: #FFFFFF !important;
   border-radius: 27.5px !important;
   font-weight: bold !important;
@@ -162,8 +162,8 @@ a.btn-primary {
 .nav-button.primary:hover,
 button.btn-primary:hover,
 a.btn-primary:hover {
-  background-color: #4A6200 !important;
-  border-color: #7F9E36 !important;
+  background-color: #3E5300 !important;
+  border-color: #6A8E2A !important;
   color: #FFFFFF !important;
 }
 
@@ -173,8 +173,8 @@ a.btn-primary:hover {
 button.btn-secondary,
 a.btn-secondary {
   background-color: #FFFFFF !important;
-  border: 2px solid #5A7200 !important;
-  color: #5A7200 !important;
+  border: 2px solid #4A6200 !important;
+  color: #4A6200 !important;
   border-radius: 32px !important;
   font-weight: bold !important;
   transition: all 0.3s ease !important;
@@ -188,21 +188,21 @@ button.btn-secondary,
 button.btn-secondary *,
 a.btn-secondary,
 a.btn-secondary * {
-  color: #5A7200 !important;
+  color: #4A6200 !important;
 }
 
 .btn-secondary span,
 .nav-button.secondary span,
 button.btn-secondary span,
 a.btn-secondary span {
-  color: #5A7200 !important;
+  color: #4A6200 !important;
 }
 
 .btn-secondary svg,
 .nav-button.secondary svg,
 button.btn-secondary svg,
 a.btn-secondary svg {
-  color: #5A7200 !important;
+  color: #4A6200 !important;
 }
 
 .btn-secondary:hover,
@@ -210,22 +210,22 @@ a.btn-secondary svg {
 button.btn-secondary:hover,
 a.btn-secondary:hover {
   background-color: #E8E8E8 !important;
-  border-color: #4A6200 !important;
-  color: #4A6200 !important;
+  border-color: #3E5300 !important;
+  color: #3E5300 !important;
 }
 
 .btn-secondary:hover span,
 .nav-button.secondary:hover span,
 button.btn-secondary:hover span,
 a.btn-secondary:hover span {
-  color: #4A6200 !important;
+  color: #3E5300 !important;
 }
 
 .btn-secondary:hover svg,
 .nav-button.secondary:hover svg,
 button.btn-secondary:hover svg,
 a.btn-secondary:hover svg {
-  color: #4A6200 !important;
+  color: #3E5300 !important;
 }
 
 /* Legacy support - rounded pill style */

@@ -33,53 +33,46 @@ export default function FeaturesShowcase() {
     <div className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8 features-section">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-xl font-semibold leading-8 text-[#978455] mb-4">Enterprise Browser</h2>
-          <p className="mt-2 text-3xl font-bold tracking-tight text-[#313A00] sm:text-4xl">
+          <h2 className="text-xl font-semibold leading-8 text-[#978455] mb-2">Enterprise Browser</h2>
+          <h1 className="text-3xl font-bold tracking-tight text-[#313A00] sm:text-4xl">
             Everything you need to flow effortlessly
-          </p>
+          </h1>
           <p className="mt-6 text-lg leading-8 text-[#333333]">
-          Oasis gives you the tools to simplify your workflow, stay focused, and work with calm precision. </p>
+            Oasis gives you the tools to simplify your workflow, stay focused, and work with calm precision.
+          </p>
         </div>
 
         <div className="mx-auto mt-16 max-w-7xl">
-          <div className="flex flex-col gap-24">
-            {conceptCards.map((card, index) => {
-              const isEven = index % 2 === 0;
-              const textPaddingClass = isEven ? 'md:pl-10' : 'md:pr-10';
-              return (
-                <div
-                  key={index}
-                  className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center justify-between gap-4 md:gap-[10px] py-[10px]`}
-                >
-                  {/* Card with image */}
-                  <div className="w-full md:w-1/2 flex items-center justify-center py-[10px]">
-                    <Link href={card.link} className="block w-full h-full">
-                      <div className="bg-[#E4E9CC] rounded-2xl p-4 md:p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                        <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-gray-200 hover:opacity-90 transition-opacity">
-                          <img
-                            src={card.image || `https://via.placeholder.com/600x400/E4E9CC/728552?text=${encodeURIComponent(card.title)}`}
-                            alt={card.title}
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                      </div>
-                    </Link>
-                  </div>
-
-                  {/* Header Text */}
-                  <div className={`w-full md:w-1/2 flex flex-col items-start justify-center gap-4 py-[10px] text-center md:text-left ${textPaddingClass}`}>
-                    <h3 className="text-2xl md:text-3xl font-bold text-[#313A00] w-full">
-                      {card.title}
-                    </h3>
-                    {card.description && (
-                      <p className="text-lg leading-8 text-[#333333] w-full">
-                        {card.description}
-                      </p>
-                    )}
-                  </div>
+          <div className="grid gap-8 lg:gap-10">
+            {conceptCards.map((card, index) => (
+              <Link
+                key={index}
+                href={card.link}
+                className="group relative mx-auto max-w-3xl overflow-hidden rounded-[28px] border border-white/70 bg-gradient-to-br from-white via-[#F8FAF2] to-[#F2F6E8] p-5 sm:p-6 shadow-[0_30px_100px_rgba(32,47,0,0.1)] transition-transform duration-500 hover:-translate-y-1 no-underline"
+              >
+                <div className="mb-6 flex flex-col gap-3 text-left">
+                  <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#978455]">
+                    Feature highlight
+                  </p>
+                  <h3 className="text-2xl sm:text-3xl font-semibold text-[#1F2D00]">
+                    {card.title}
+                  </h3>
+                  {card.description && (
+                    <p className="text-lg leading-8 text-[#373F29]">
+                      {card.description}
+                    </p>
+                  )}
                 </div>
-              );
-            })}
+                <div className="relative overflow-hidden rounded-[24px] border border-white/80 bg-white/80 shadow-[0_20px_60px_rgba(26,35,0,0.15)]">
+                  <img
+                    src={card.image || `https://via.placeholder.com/600x400/E4E9CC/728552?text=${encodeURIComponent(card.title)}`}
+                    alt={card.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+                  />
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#091003]/35 via-transparent to-transparent opacity-60" />
+                </div>
+              </Link>
+            ))}
           </div>
           
           {/* Enterprise Browser CTA */}

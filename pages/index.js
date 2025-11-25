@@ -3,18 +3,17 @@ import Script from "next/script";
 import HeroSection from "../components/HeroSection";
 import FeaturesShowcase from "../components/FeaturesShowcase";
 import HowItWorks from "../components/HowItWorks";
+import ProductTourCard from "../components/ProductTourCard";
 import TestimonialsCarousel from "../components/TestimonialsCarousel";
 import ProductSection from "../components/ProductSection";
 import VideoSection from "../components/VideoSection";
-import FeaturedBlogSection from "../components/FeaturedBlogSection";
 import FadeInSection from "../components/FadeInSection";
 import SEO from "../components/SEO";
 import { getRandomPhoto, getOptimizedPhotoUrl } from "../utils/pexels";
 import { blogIndex } from "../data/blog-index";
-import BlogCard from "../components/BlogCard";
 import Link from "next/link";
 import { getAuthorDetails } from "../utils/authorUtils";
-import React, { useRef, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 // Default placeholder for failed image loads
 const DEFAULT_PLACEHOLDER =
@@ -58,6 +57,7 @@ export async function getStaticProps() {
 }
 
 export default function Home({ blogPosts }) {
+  const [scrollY, setScrollY] = useState(0);
   // Homepage-specific schema
   const homepageSchema = {
     "@context": "https://schema.org",
@@ -116,8 +116,6 @@ export default function Home({ blogPosts }) {
     ],
   };
 
-  const btnRef = useRef();
-
   const whyOasisCards = [
     {
       title: "Created to bring calm and focus back to browsing",
@@ -140,13 +138,13 @@ export default function Home({ blogPosts }) {
   ];
 
   useEffect(() => {
-    if (btnRef.current) {
-      btnRef.current.style.setProperty(
-        "background-color",
-        "transparent",
-        "important"
-      );
-    }
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -193,19 +191,48 @@ export default function Home({ blogPosts }) {
         strategy="afterInteractive"
       />
 
-      <div className="relative bg-white shadow-[0_0_40px_rgba(0,0,0,0.08)]">
+      <div className="relative bg-white shadow-[0_0_40px_rgba(0,0,0,0.08)] overflow-hidden">
+        <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
+          <div
+            className="absolute top-20 -left-20 w-[600px] h-[600px] rounded-full filter blur-[220px] opacity-40 animate-pulse"
+            style={{
+              background: "radial-gradient(circle, #FCDD9F 0%, transparent 70%)",
+              transform: `translateY(${scrollY * 0.1}px)`,
+            }}
+          />
+          <div
+            className="absolute top-60 right-0 w-[700px] h-[700px] rounded-full filter blur-[260px] opacity-30 animate-pulse"
+            style={{
+              background: "radial-gradient(circle, #617500 0%, transparent 70%)",
+              transform: `translateY(${scrollY * 0.15}px)`,
+              animationDelay: "1s",
+            }}
+          />
+          <div
+            className="absolute -bottom-20 left-1/3 w-[600px] h-[600px] rounded-full filter blur-[220px] opacity-35 animate-pulse"
+            style={{
+              background: "radial-gradient(circle, #8BA500 0%, transparent 70%)",
+              transform: `translateY(${scrollY * 0.05}px)`,
+              animationDelay: "2s",
+            }}
+          />
+        </div>
         {/* Elegant accent line at top */}
-        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#30400D] to-transparent opacity-20"></div>
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#30400D] to-transparent opacity-20 z-10"></div>
         
-        <main className="scroll-smooth bg-white">
+        <main className="scroll-smooth bg-white relative z-10">
           <FadeInSection>
             <section
               id="products"
-              className="min-h-screen flex items-center justify-center p-4 md:p-8 bg-white relative"
+              className="relative overflow-hidden py-24 sm:py-32"
             >
-              {/* Subtle left accent */}
-              <div className="hidden lg:block absolute left-0 top-1/4 w-1 h-32 bg-gradient-to-b from-transparent via-[#30400D]/30 to-transparent opacity-40"></div>
-              <ProductSection />
+              <div className="pointer-events-none absolute inset-0">
+                <div className="absolute top-[-50%] left-[-55%] h-[660px] w-[1080px] rounded-full bg-[#FCDD9F]/28 blur-[420px]" />
+                <div className="absolute bottom-[-55%] right-[-55%] h-[720px] w-[1120px] rounded-full bg-[#617500]/15 blur-[420px]" />
+              </div>
+              <div className="relative z-10">
+                <ProductSection />
+              </div>
             </section>
           </FadeInSection>
 
@@ -215,30 +242,21 @@ export default function Home({ blogPosts }) {
           <FadeInSection delay={100}>
             <section
               id="video"
-              className="min-h-screen flex items-center justify-center p-4 md:p-8 bg-white relative py-16 sm:py-24"
+              className="relative overflow-hidden bg-white py-20 sm:py-28"
             >
-              {/* Subtle right accent */}
-              <div className="hidden lg:block absolute right-0 top-1/3 w-1 h-40 bg-gradient-to-b from-transparent via-[#30400D]/25 to-transparent opacity-40"></div>
-              <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                {/* Section Heading */}
-                <div className="text-center mb-12">
-                  <h2 className="text-xl font-semibold leading-8 mb-4">
-                    See Oasis in Action
-                  </h2>
-                </div>
-
-                {/* YouTube Video - Centered */}
-                <div className="w-full max-w-xl mx-auto px-4">
-                  <div className="w-full mx-auto aspect-[4/3] overflow-hidden rounded-xl shadow-lg bg-black">
-                    <iframe
-                      className="w-full h-full"
-                      src="https://www.youtube.com/embed/05-oP8CNl8Y"
-                      title="Oasis AI-Powered Browser Demo"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowFullScreen
-                    ></iframe>
-                  </div>
+              <div className="pointer-events-none absolute inset-0">
+                <div className="absolute top-0 left-0 h-72 w-72 rounded-full bg-[#FCDD9F]/40 blur-[220px]" />
+                <div className="absolute bottom-0 right-6 h-96 w-96 rounded-full bg-[#617500]/20 blur-[250px]" />
+              </div>
+              <div className="relative z-10 w-full max-w-5xl mx-auto px-6 sm:px-8 text-center">
+                <h2 className="text-xl font-semibold leading-8 text-[#978455] mb-4">
+                  See Oasis in Action
+                </h2>
+                <h1 className="text-3xl sm:text-4xl font-semibold leading-tight text-[#313A00] mb-10">
+                  Watch Oasis bring calm to complex workflows
+                </h1>
+                <div className="relative mx-auto max-w-4xl">
+                  <ProductTourCard />
                 </div>
               </div>
             </section>
@@ -254,34 +272,40 @@ export default function Home({ blogPosts }) {
             >
               <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-12">
-                  <h2 className="text-xl font-semibold leading-8 mb-4">
-                    Rediscover Browsing with Oasis
+                  <h2 className="text-xl font-semibold leading-8 text-[#978455] mb-2">
+                    Rediscover Browsing
                   </h2>
+                  <h1 className="text-3xl font-semibold tracking-tight text-[#313A00] sm:text-4xl">
+                  Unlock a New Level of Browsing with Oasis
+                  </h1>
                 </div>
-                <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:justify-items-center">
+                <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 md:justify-items-center">
                   {whyOasisCards.map((card) => (
                     <div
                       key={card.title}
-                      className="bg-[#E4E9CC] rounded-[28px] px-6 py-6 shadow-[0_25px_70px_rgba(32,47,0,0.08)] flex flex-col h-full text-left w-full max-w-[384px] min-h-[360px] mx-auto"
+                      className="relative bg-white/90 border border-white/80 rounded-[26px] px-5 py-6 shadow-[0_25px_70px_rgba(32,47,0,0.14)] flex flex-col gap-5 w-full max-w-[340px] mx-auto backdrop-blur-lg"
                     >
-                      <div className="flex flex-col gap-3 w-full max-w-[344px] mx-auto text-[#313A00]">
-                        <h3 className="text-xl font-semibold leading-tight">
-                          {card.title}
-                        </h3>
-                        <p className="text-base leading-relaxed text-[#313A00]/85">
-                          {card.text}
-                        </p>
-                      </div>
-                      <div className="flex-1 flex items-end justify-center pt-8 w-full">
+                      <div className="w-full overflow-hidden rounded-[18px] border border-[#F6F3E7] bg-white/70 shadow-[0_25px_70px_rgba(27,33,0,0.18)]">
                         <img
                           src={card.image}
                           alt={card.imageAlt || `${card.title} illustration`}
-                          loading={card.loading || "lazy"}
+                          loading={card.loading || "eager"}
                           decoding="async"
-                          width={320}
-                          height={240}
-                          className="w-full max-w-[320px] min-h-[200px] rounded-[12px] object-cover"
+                          width={420}
+                          height={320}
+                          className="w-full object-cover"
                         />
+                      </div>
+                      <div className="flex flex-col gap-3 text-left">
+                       
+                        <h3 className="text-2xl font-semibold leading-tight text-[#1F2D00]">
+                          {card.title}
+                        </h3>
+                        {card.description && (
+                          <p className="text-base text-[#4E5534]">
+                            {card.description}
+                          </p>
+                        )}
                       </div>
                     </div>
                   ))}
@@ -310,50 +334,21 @@ export default function Home({ blogPosts }) {
           <FadeInSection delay={400}>
             <section
               id="how-it-works"
-              className="min-h-screen flex items-center justify-center p-4 md:p-8 bg-white relative"
+              className="relative overflow-hidden py-24 sm:py-32"
             >
-              {/* Subtle decorative corner accent */}
-              <div className="hidden lg:block absolute bottom-0 right-0 w-24 h-24 border-r-2 border-b-2 border-[#30400D]/15"></div>
-              <HowItWorks />
+              <div className="pointer-events-none absolute inset-0">
+                <div className="absolute top-[-50%] left-[-55%] h-[660px] w-[1080px] rounded-full bg-[#FCDD9F]/28 blur-[420px]" />
+                <div className="absolute bottom-[-55%] right-[-55%] h-[720px] w-[1120px] rounded-full bg-[#617500]/15 blur-[420px]" />
+              </div>
+              <div className="relative z-10">
+                <HowItWorks />
+              </div>
             </section>
           </FadeInSection>
 
           {/* Elegant section divider */}
           <div className="relative h-px bg-gradient-to-r from-transparent via-[#30400D]/20 to-transparent mx-auto max-w-4xl"></div>
 
-          <FadeInSection delay={600}>
-            <section
-              id="blog"
-              className="flex flex-col items-center justify-center p-4 md:p-8 bg-white relative"
-            >
-              <div className="mx-auto max-w-7xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {(blogPosts || []).slice(0, 3).map((post) => (
-                  <BlogCard key={post.slug} post={post} />
-                ))}
-              </div>
-              <div className="mt-8 text-center">
-                <Link
-                  href="/blog"
-                  className="btn-primary px-8 py-3 inline-flex items-center justify-center no-underline hover:no-underline focus:no-underline"
-                >
-                  All Posts
-                  <svg
-                    className="ml-2 w-5 h-5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M17 8l4 4m0 0l-4 4m4-4H3"
-                    />
-                  </svg>
-                </Link>
-              </div>
-            </section>
-          </FadeInSection>
         </main>
       </div>
     </>
