@@ -3,25 +3,25 @@ import Link from 'next/link';
 
 const conceptCards = [
   {
-    title: "Ease with Tab Grouping",
+    title: "Group tabs with ease",
     link: "/solutions/external-workforce",
     image: "/figma-imports/Tab%20Groups.svg",
     description: "Organize your chaos into dedicated workspaces, keeping your current task in focus and the rest out of sight."
   },
   {
-    title: "Zero Trust Security",
-    link: "/solutions/zero-trust-security",
+    title: "Browse without being followed",
+    link: "/solutions/secure-browsing",
     image: "/figma-imports/Security 1.png",
     description: "Stay protected through continuous verification and calm, invisible security."
   },
   {
-    title: "Homepage Personalization",
+    title: "Personalize your homepage",
     link: "/solutions/privileged-user-management",
     image: "/figma-imports/New%20Tab%20Page.svg",
     description: "Start every session in a space designed by you, free from distractions and tuned to your mood."
   },
   {
-    title: "Secure Web Browsing",
+    title: "Stay secure while browsing",
     link: "/solutions/secure-browsing",
     image: "/figma-imports/Security 2.png",
     description: "Browse freely with built-in protection that feels natural, not intrusive."
