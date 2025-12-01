@@ -250,10 +250,10 @@ export default function Home({ blogPosts }) {
               </div>
               <div className="relative z-10 w-full max-w-5xl mx-auto px-6 sm:px-8 text-center">
                 <h2 className="text-xl font-semibold leading-8 text-[#978455] mb-4">
-                  See Oasis in Action
+                  Personalize Your Experience
                 </h2>
                 <h1 className="text-3xl sm:text-4xl font-semibold leading-tight text-[#313A00] mb-10">
-                  Watch Oasis bring calm to complex workflows
+                  Oasis adapts to your unique way of working
                 </h1>
                 <div className="relative mx-auto max-w-4xl">
                   <ProductTourCard />
