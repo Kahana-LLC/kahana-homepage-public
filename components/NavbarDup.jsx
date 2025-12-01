@@ -792,7 +792,7 @@ function NavBar() {
 
           {/* Buttons and Hamburger Menu */}
           <div className="flex items-center gap-4">
-            <div className="nav-buttons flex gap-2">
+            <div className="nav-buttons hidden lg:flex gap-2">
               <Link href="/schedule-demo" className="btn-primary inline-flex items-center justify-center px-4 py-2.5 text-xs md:px-6 md:py-3 md:text-sm no-underline hover:no-underline focus:no-underline">
                   <span className="md:hidden">Get Early Access</span>
                   <span className="hidden md:inline">Get Early Access</span>
