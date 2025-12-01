@@ -327,9 +327,9 @@ export default function EnterpriseBuyerGuidePage() {
   const structure = [
     { id: 'introduction', label: 'Introduction' },
     { id: 'what-is-oasis', label: 'What is Oasis?' },
-    { id: 'benefits-of-oasis', label: 'Benefits of Oasis' },
-    { id: 'common-use-cases', label: 'Common use cases' },
-    { id: 'similar-browser-vendors', label: 'Similar browser vendors' },
+    // Hidden: { id: 'benefits-of-oasis', label: 'Benefits of Oasis' },
+    // Hidden: { id: 'common-use-cases', label: 'Common use cases' },
+    // Hidden: { id: 'similar-browser-vendors', label: 'Similar browser vendors' },
     { id: 'deployment-experience', label: 'Deployment experience' },
     { id: 'user-experience', label: 'User Experience' },
     { id: 'faqs', label: 'FAQs' },
@@ -379,6 +379,7 @@ export default function EnterpriseBuyerGuidePage() {
 
         <div className="min-h-screen" style={{ background: COLORS.bgPage }}>
           <main className={`transition-all duration-300 ease-in-out ${isTocCollapsed ? 'lg:ml-16' : 'lg:ml-80'}`}>
+            {/* Hidden: Info banner with glossary text and Accessible Palette badge
             <div className="mx-auto mb-8 px-4" style={{ maxWidth: 960 }}>
               <div className="rounded-lg border border-gray-200 bg-[#F3F8E4] p-4 flex items-center justify-between">
                 <p className="text-sm text-gray-700">
@@ -389,6 +390,7 @@ export default function EnterpriseBuyerGuidePage() {
                 <span className="inline-flex items-center rounded-md px-2 py-1 text-xs font-medium" style={{ background: COLORS.brand050, color: COLORS.brand700, border: '1px solid #728552' }}>Accessible Palette</span>
               </div>
             </div>
+            */}
             <Section 
               id="introduction" 
               title="Introduction" 
@@ -396,6 +398,7 @@ export default function EnterpriseBuyerGuidePage() {
               kicker="How Oasis redefines what a browser can be in the enterprise"
               right={
                 <div className="space-y-6">
+                  {/* Hidden: Video container with 3-minute guided tour
                   <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
                     <div className="relative rounded-md overflow-hidden border border-gray-200">
                       {!isPlaying ? (
@@ -417,6 +420,7 @@ export default function EnterpriseBuyerGuidePage() {
                     </div>
                     <p className="text-xs text-gray-600 mt-2 text-center">3‑minute guided tour (no audio)</p>
                   </div>
+                  */}
                 <KeyPointsCard>
                   <ul className="space-y-2">
                     <li className="flex items-start gap-2">
@@ -460,7 +464,7 @@ export default function EnterpriseBuyerGuidePage() {
                 this guide will provide the insights you need to make informed decisions.
               </p>
             </Section>
-            {/* Persona toggle and targeted benefits */}
+            {/* Hidden: Persona toggle and targeted benefits - Guide by role section
             <Section
               id="personas"
               title="Guide by role"
@@ -525,6 +529,7 @@ export default function EnterpriseBuyerGuidePage() {
                 </div>
               )}
             </Section>
+            */}
             <Section 
               id="what-is-oasis" 
               title="What is Oasis?" 
@@ -637,6 +642,7 @@ export default function EnterpriseBuyerGuidePage() {
               </div>
             </Section>
             
+            {/* Hidden: Benefits of Oasis section
             <Section 
               id="benefits-of-oasis" 
               title="Benefits of Oasis" 
@@ -823,6 +829,8 @@ export default function EnterpriseBuyerGuidePage() {
                 </Accordion>
               </div>
             </Section>
+            */}
+            {/* Hidden: Common use cases section
             <Section 
               id="common-use-cases" 
               title="Common use cases" 
@@ -957,6 +965,8 @@ export default function EnterpriseBuyerGuidePage() {
                 </Accordion>
               </div>
             </Section>
+            */}
+            {/* Hidden: Similar browser vendors / Competitive Landscape section
             <Section 
               id="similar-browser-vendors" 
               title="Similar browser vendors" 
@@ -995,6 +1005,7 @@ export default function EnterpriseBuyerGuidePage() {
                 <BrowserComparisonTable />
               </div>
             </Section>
+            */}
             <Section 
               id="deployment-experience" 
               title="Deployment experience" 
