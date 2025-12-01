@@ -1,16 +1,65 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 
 export default function ProductTourCard() {
   const videoRef = useRef(null);
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
+  const [hasError, setHasError] = useState(false);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const handleCanPlay = () => {
+      // Try to autoplay, but handle if it fails (e.g., Firefox autoplay restrictions)
+      const playPromise = video.play();
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {
+            setIsPlaying(true);
+          })
+          .catch(() => {
+            // Autoplay was prevented, video will need user interaction
+            setIsPlaying(false);
+          });
+      }
+    };
+
+    const handleError = () => {
+      setHasError(true);
+      setIsPlaying(false);
+    };
+
+    const handleLoadStart = () => {
+      setHasError(false);
+    };
+
+    video.addEventListener('canplay', handleCanPlay);
+    video.addEventListener('error', handleError);
+    video.addEventListener('loadstart', handleLoadStart);
+
+    return () => {
+      video.removeEventListener('canplay', handleCanPlay);
+      video.removeEventListener('error', handleError);
+      video.removeEventListener('loadstart', handleLoadStart);
+    };
+  }, []);
 
   const handleVideoToggle = () => {
     const video = videoRef.current;
     if (!video) return;
     if (video.paused) {
-      video.play();
-      setIsPlaying(true);
+      const playPromise = video.play();
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {
+            setIsPlaying(true);
+          })
+          .catch((error) => {
+            console.error('Error playing video:', error);
+            setIsPlaying(false);
+          });
+      }
     } else {
       video.pause();
       setIsPlaying(false);
@@ -51,9 +100,10 @@ export default function ProductTourCard() {
           muted={isMuted}
           playsInline
           controls={false}
-          preload="metadata"
+          preload="auto"
           poster="/figma-imports/Summarize with AI 3.jpg"
           className="absolute inset-0 w-full h-full object-cover"
+          onError={() => setHasError(true)}
         >
           <source
             src="/videos/Oasis%20Homepage%20Customization%20-%20FINAL.webm"
@@ -66,6 +116,11 @@ export default function ProductTourCard() {
           Your browser does not support the video tag.
         </video>
 
+        {hasError && (
+          <div className="absolute inset-0 m-auto flex items-center justify-center bg-black/50 rounded-lg p-4">
+            <p className="text-white text-sm">Video unavailable. Please try refreshing the page.</p>
+          </div>
+        )}
         <button
           type="button"
           onClick={(e) => {
@@ -76,6 +131,7 @@ export default function ProductTourCard() {
             isPlaying ? "opacity-0 pointer-events-none" : "opacity-100"
           }`}
           aria-label={isPlaying ? "Pause video" : "Play video"}
+          style={{ zIndex: hasError ? 10 : 1 }}
         >
           {isPlaying ? (
             <svg
