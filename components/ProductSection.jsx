@@ -11,7 +11,7 @@ export default function ProductSection() {
               Fall in Love
             </h2>
             <h1 className="text-4xl font-semibold leading-tight text-[#313A00] sm:text-5xl">
-              Meet Oasis, the Most Elegant browser
+              Meet Oasis, the Most Elegant Browser
             </h1>
             <p className="text-lg text-[#4A5745] max-w-2xl">
               Enjoy a beautiful browsing experience designed for ergonomic work
@@ -27,7 +27,7 @@ export default function ProductSection() {
                 href="/oasis-waitlist"
                 className="btn-secondary inline-flex items-center justify-center px-8 py-3 text-base no-underline hover:no-underline focus:no-underline"
               >
-                Get early access
+                Get Early Access
               </Link>
             </div>
           </div>
