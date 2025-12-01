@@ -27,7 +27,7 @@ export default function ProductSection() {
                 href="/oasis-waitlist"
                 className="btn-secondary inline-flex items-center justify-center px-8 py-3 text-base no-underline hover:no-underline focus:no-underline"
               >
-                Get Early Access
+                Get Access
               </Link>
             </div>
           </div>

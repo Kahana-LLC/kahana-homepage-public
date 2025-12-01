@@ -59,6 +59,10 @@ export default function ProductTourCard() {
             src="/videos/Oasis%20Homepage%20Customization%20-%20FINAL.webm"
             type="video/webm"
           />
+          <source
+            src="/videos/oasis-homepage-customization.mp4"
+            type="video/mp4"
+          />
           Your browser does not support the video tag.
         </video>
 
