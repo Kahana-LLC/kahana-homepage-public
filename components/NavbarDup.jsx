@@ -417,9 +417,15 @@ function NavBar() {
           }
 
           .nav-buttons {
-            display: flex;
+            display: none;
             align-items: center;
             gap: 0.75rem;
+          }
+
+          @media (min-width: 1024px) {
+            .nav-buttons {
+              display: flex;
+            }
           }
 
           @media (max-width: 768px) {
