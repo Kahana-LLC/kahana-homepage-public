@@ -40,15 +40,21 @@ export default function FeaturesShowcase() {
           <p className="mt-6 text-lg leading-8 text-[#333333]">
             Oasis gives you the tools to simplify your workflow, stay focused, and work with calm precision.
           </p>
+          <div className="mt-8">
+            <Link href="/products/enterprise-browser">
+              <button className="btn-primary inline-flex items-center justify-center px-8 py-3 text-base no-underline hover:no-underline focus:no-underline">
+                Learn more
+              </button>
+            </Link>
+          </div>
         </div>
 
         <div className="mx-auto mt-16 max-w-7xl">
           <div className="grid gap-8 lg:gap-10">
             {conceptCards.map((card, index) => (
-              <Link
+              <div
                 key={index}
-                href={card.link}
-                className="group relative mx-auto max-w-3xl overflow-hidden rounded-[28px] border border-white/70 bg-gradient-to-br from-white via-[#F8FAF2] to-[#F2F6E8] p-5 sm:p-6 shadow-[0_30px_100px_rgba(32,47,0,0.1)] transition-transform duration-500 hover:-translate-y-1 no-underline"
+                className="group relative mx-auto max-w-3xl overflow-hidden rounded-[28px] border border-white/70 bg-gradient-to-br from-white via-[#F8FAF2] to-[#F2F6E8] p-5 sm:p-6 shadow-[0_30px_100px_rgba(32,47,0,0.1)] transition-transform duration-500 hover:-translate-y-1 cursor-default"
               >
                 <div className="mb-6 flex flex-col gap-3 text-left">
                   <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#978455]">
@@ -71,17 +77,8 @@ export default function FeaturesShowcase() {
                   />
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#091003]/35 via-transparent to-transparent opacity-60" />
                 </div>
-              </Link>
+              </div>
             ))}
-          </div>
-          
-          {/* Enterprise Browser CTA */}
-          <div className="mt-12 text-center">
-            <Link href="/products/enterprise-browser">
-              <button className="btn-primary inline-flex items-center justify-center px-8 py-3 text-base no-underline hover:no-underline focus:no-underline">
-                Learn more
-              </button>
-            </Link>
           </div>
         </div>
       </div>
