@@ -49,9 +49,9 @@ export default function GlobalBanner() {
             <div className="ml-3">
               <p className="text-sm font-medium text-[#4A5745]">
                 <span className="md:hidden">
-                  AI browser that melds with your mind naturally{' '}
+                  AI browser that melds with your mind naturally.{' '}
                   <Link href="/oasis-waitlist" className="underline hover:!text-[#7A9200] transition-colors text-[#4A5745]">
-                    Get early access
+                    Get access.
                   </Link>
                 </span>
                 <span className="hidden md:inline">
