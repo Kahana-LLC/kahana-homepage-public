@@ -535,12 +535,12 @@ export default function EnterpriseBuyerGuidePage() {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 max-w-6xl mx-auto">
                 {/* Business Executive */}
                 <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-6 flex flex-col hover:shadow-xl transition-all">
-                  <div className="flex justify-center mb-4">
+                  <div className="flex justify-start mb-4">
                     <div className="w-20 h-20 rounded-full bg-gradient-to-br from-pink-200 to-pink-300 flex items-center justify-center">
                       <Icon.DollarSign className="w-10 h-10" style={{ color: '#4A6200' }} />
                     </div>
                   </div>
-                  <h4 className="text-xl font-bold text-center mb-4" style={{ color: '#313A00' }}>Business Executive</h4>
+                  <h4 className="text-xl font-bold text-left mb-4" style={{ color: '#313A00' }}>Business Executive</h4>
                   <ul className="space-y-2 mb-6 flex-grow">
                     <li className="flex items-start gap-2 text-sm text-gray-700">
                       <Icon.Zap className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#4A6200' }} />
@@ -559,12 +559,12 @@ export default function EnterpriseBuyerGuidePage() {
 
                 {/* IT Administrator */}
                 <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-6 flex flex-col hover:shadow-xl transition-all">
-                  <div className="flex justify-center mb-4">
+                  <div className="flex justify-start mb-4">
                     <div className="w-20 h-20 rounded-full bg-gradient-to-br from-blue-200 to-blue-300 flex items-center justify-center">
                       <Icon.Settings className="w-10 h-10" style={{ color: '#4A6200' }} />
                     </div>
                   </div>
-                  <h4 className="text-xl font-bold text-center mb-4" style={{ color: '#313A00' }}>IT Administrator</h4>
+                  <h4 className="text-xl font-bold text-left mb-4" style={{ color: '#313A00' }}>IT Administrator</h4>
                   <ul className="space-y-2 mb-6 flex-grow">
                     <li className="flex items-start gap-2 text-sm text-gray-700">
                       <Icon.Zap className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#4A6200' }} />
@@ -583,12 +583,12 @@ export default function EnterpriseBuyerGuidePage() {
 
                 {/* Security Officer */}
                 <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-6 flex flex-col hover:shadow-xl transition-all">
-                  <div className="flex justify-center mb-4">
+                  <div className="flex justify-start mb-4">
                     <div className="w-20 h-20 rounded-full bg-gradient-to-br from-purple-200 to-purple-300 flex items-center justify-center">
                       <Icon.Shield className="w-10 h-10" style={{ color: '#4A6200' }} />
                     </div>
                   </div>
-                  <h4 className="text-xl font-bold text-center mb-4" style={{ color: '#313A00' }}>Security Officer</h4>
+                  <h4 className="text-xl font-bold text-left mb-4" style={{ color: '#313A00' }}>Security Officer</h4>
                   <ul className="space-y-2 mb-6 flex-grow">
                     <li className="flex items-start gap-2 text-sm text-gray-700">
                       <Icon.Zap className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#4A6200' }} />
@@ -607,12 +607,12 @@ export default function EnterpriseBuyerGuidePage() {
 
                 {/* Product Manager */}
                 <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-6 flex flex-col hover:shadow-xl transition-all">
-                  <div className="flex justify-center mb-4">
+                  <div className="flex justify-start mb-4">
                     <div className="w-20 h-20 rounded-full bg-gradient-to-br from-yellow-200 to-yellow-300 flex items-center justify-center">
                       <Icon.Rocket className="w-10 h-10" style={{ color: '#4A6200' }} />
                     </div>
                   </div>
-                  <h4 className="text-xl font-bold text-center mb-4" style={{ color: '#313A00' }}>Product Manager</h4>
+                  <h4 className="text-xl font-bold text-left mb-4" style={{ color: '#313A00' }}>Product Manager</h4>
                   <ul className="space-y-2 mb-6 flex-grow">
                     <li className="flex items-start gap-2 text-sm text-gray-700">
                       <Icon.Zap className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#4A6200' }} />
@@ -631,12 +631,12 @@ export default function EnterpriseBuyerGuidePage() {
 
                 {/* Developer */}
                 <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-6 flex flex-col hover:shadow-xl transition-all">
-                  <div className="flex justify-center mb-4">
+                  <div className="flex justify-start mb-4">
                     <div className="w-20 h-20 rounded-full bg-gradient-to-br from-green-200 to-green-300 flex items-center justify-center">
                       <Icon.Layers className="w-10 h-10" style={{ color: '#4A6200' }} />
                     </div>
                   </div>
-                  <h4 className="text-xl font-bold text-center mb-4" style={{ color: '#313A00' }}>Developer</h4>
+                  <h4 className="text-xl font-bold text-left mb-4" style={{ color: '#313A00' }}>Developer</h4>
                   <ul className="space-y-2 mb-6 flex-grow">
                     <li className="flex items-start gap-2 text-sm text-gray-700">
                       <Icon.Zap className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#4A6200' }} />
@@ -655,13 +655,13 @@ export default function EnterpriseBuyerGuidePage() {
 
                 {/* Custom Role */}
                 <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-6 flex flex-col hover:shadow-xl transition-all">
-                  <div className="flex justify-center mb-4">
+                  <div className="flex justify-start mb-4">
                     <div className="w-20 h-20 rounded-full bg-gradient-to-br from-amber-200 to-amber-300 flex items-center justify-center">
                       <Icon.Sliders className="w-10 h-10" style={{ color: '#4A6200' }} />
                     </div>
                   </div>
-                  <h4 className="text-xl font-bold text-center mb-4" style={{ color: '#313A00' }}>Custom Role</h4>
-                  <p className="text-sm text-gray-700 mb-6 flex-grow text-center">
+                  <h4 className="text-xl font-bold text-left mb-4" style={{ color: '#313A00' }}>Custom Role</h4>
+                  <p className="text-sm text-gray-700 mb-6 flex-grow text-left">
                     Create a custom role tailored to your unique workflows and requirements. Configure Oasis to match your organization's specific needs.
                   </p>
                 </div>
