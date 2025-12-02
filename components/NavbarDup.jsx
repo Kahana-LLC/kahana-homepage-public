@@ -224,6 +224,16 @@ function NavBar() {
             letter-spacing: -0.01em;
           }
 
+          .nav-link-text {
+            color: #617500 !important;
+            font-weight: 500 !important;
+          }
+
+          a.nav-link:hover .nav-link-text,
+          .nav-link:hover .nav-link-text {
+            color: #4A5F00 !important;
+          }
+
 
           .nav-link-icon {
             display: inline-flex;
@@ -274,6 +284,19 @@ function NavBar() {
             display: grid;
             gap: 40px;
             pointer-events: none;
+          }
+
+          /* Reset font-weight for all elements inside dropdown content */
+          .dropdown-content * {
+            font-weight: normal !important;
+          }
+
+          /* Specifically override global bold link styling for dropdown links */
+          .dropdown-content a,
+          .dropdown-section a,
+          .dropdown-content a.dropdown-link,
+          .dropdown-section a.dropdown-link {
+            font-weight: 400 !important;
           }
 
           .dropdown:hover .dropdown-content,
@@ -332,8 +355,7 @@ function NavBar() {
 
           .dropdown-section h3 {
             font-size: 0.6875rem;
-            font-weight: 700;
-            
+            font-weight: bold !important;
             color: #026400;
             margin-bottom: 16px;
             text-transform: uppercase;
@@ -344,15 +366,28 @@ function NavBar() {
             display: block;
             color: #333333 !important;
             text-decoration: none !important;
-            font-weight: 300 !important;
+            font-weight: 400 !important;
             font-size: 0.9375rem;
             line-height: 1.5;
             letter-spacing: 0.01em;
-            padding: 8px 12px;
+            padding: 4px 8px;
             margin: 0 -12px;
             border-radius: 8px;
             transition: background-color 0.15s ease;
-            font-family: "Roboto", sans-serif;
+            font-family: "Geist", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+          }
+
+          /* Force non-bold on all dropdown links with maximum specificity */
+          .dropdown-content a.dropdown-link,
+          .dropdown-section a.dropdown-link,
+          .dropdown-content .dropdown-link,
+          .dropdown-section .dropdown-link,
+          a.dropdown-link,
+          .dropdown-content a,
+          .dropdown-section a,
+          .dropdown-content a.dropdown-link *,
+          .dropdown-section a.dropdown-link * {
+            font-weight: 400 !important;
           }
 
           .dropdown-link:hover {

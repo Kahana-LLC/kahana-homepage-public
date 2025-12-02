@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import NavBar from '../components/NavbarDup';
 import SEO from '../components/SEO';
 import Script from 'next/script';
 
@@ -124,8 +123,6 @@ export default function EarlyBirdDiscount() {
       </Head>
 
       <div className="relative bg-white">
-        <NavBar />
-
         {/* Sticky Countdown Timer */}
         <div 
           className="sticky z-40 w-full bg-white"
