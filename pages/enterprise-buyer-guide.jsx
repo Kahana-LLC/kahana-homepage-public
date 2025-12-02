@@ -1071,17 +1071,6 @@ export default function EnterpriseBuyerGuidePage() {
                     traffic inspection by decrypting SSL traffic. An enterprise browser offers visibility into 
                     browser behavior without any unnatural network traffic manipulation.
                   </p>
-                            <div className="mt-auto">
-                              <div className="inline-flex items-center gap-3 px-6 py-4 bg-gradient-to-r from-[#4A6200] to-[#5A7200] rounded-xl shadow-md">
-                                <div>
-                                  <div className="text-white font-bold text-lg leading-tight">3 Minutes</div>
-                                  <div className="text-white/90 text-xs mt-1">to open and close a phishing attempt investigation by The Bank of Marion</div>
-              </div>
-                    </div>
-                              <p className="text-[#4A5745] text-sm mt-3 ml-2">
-                                Previously took several hours
-                    </p>
-                  </div>
                           </div>
                           <div className="lg:w-1/2 relative min-h-[200px] lg:min-h-0 overflow-hidden">
                             <img 
