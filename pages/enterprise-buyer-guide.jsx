@@ -828,7 +828,7 @@ export default function EnterpriseBuyerGuidePage() {
                       <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-[#F8FAF2] flex items-center justify-center" style={{ color: '#4A6200' }}>
                         <Icon.DollarSign />
                       </div>
-                      <p className="text-base text-[#4E5534] leading-relaxed pt-1">
+                      <p className="text-base text-[#4E5534] leading-relaxed pt-1 text-left">
                         Reduce security stack spend by 15–30% via consolidation.
                       </p>
                     </div>
@@ -836,7 +836,7 @@ export default function EnterpriseBuyerGuidePage() {
                       <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-[#F8FAF2] flex items-center justify-center" style={{ color: '#4A6200' }}>
                         <Icon.Clock />
                       </div>
-                      <p className="text-base text-[#4E5534] leading-relaxed pt-1">
+                      <p className="text-base text-[#4E5534] leading-relaxed pt-1 text-left">
                         Speed new-hire productivity by enabling same-day access.
                       </p>
                     </div>
@@ -844,7 +844,7 @@ export default function EnterpriseBuyerGuidePage() {
                       <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-[#F8FAF2] flex items-center justify-center" style={{ color: '#4A6200' }}>
                         <Icon.Ticket />
                       </div>
-                      <p className="text-base text-[#4E5534] leading-relaxed pt-1">
+                      <p className="text-base text-[#4E5534] leading-relaxed pt-1 text-left">
                         Decrease support tickets with built-in guardrails and guidance.
                       </p>
                     </div>
@@ -857,7 +857,7 @@ export default function EnterpriseBuyerGuidePage() {
                       <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-[#F8FAF2] flex items-center justify-center" style={{ color: '#4A6200' }}>
                         <Icon.Lock />
                       </div>
-                      <p className="text-base text-[#4E5534] leading-relaxed pt-1">
+                      <p className="text-base text-[#4E5534] leading-relaxed pt-1 text-left">
                         Granular DLP, clipboard, and download policies at URL/app scope.
                       </p>
                     </div>
@@ -865,7 +865,7 @@ export default function EnterpriseBuyerGuidePage() {
                       <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-[#F8FAF2] flex items-center justify-center" style={{ color: '#4A6200' }}>
                         <Icon.Database />
                       </div>
-                      <p className="text-base text-[#4E5534] leading-relaxed pt-1">
+                      <p className="text-base text-[#4E5534] leading-relaxed pt-1 text-left">
                         Exportable audit logs; SIEM-friendly formats; API access.
                       </p>
                     </div>
@@ -873,7 +873,7 @@ export default function EnterpriseBuyerGuidePage() {
                       <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-[#F8FAF2] flex items-center justify-center" style={{ color: '#4A6200' }}>
                         <Icon.RefreshCw />
                       </div>
-                      <p className="text-base text-[#4E5534] leading-relaxed pt-1">
+                      <p className="text-base text-[#4E5534] leading-relaxed pt-1 text-left">
                         Configurable update channels and rollback options.
                       </p>
                     </div>
