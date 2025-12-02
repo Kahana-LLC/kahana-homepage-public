@@ -73,6 +73,9 @@ const Icon = {
   RefreshCw: (props) => (
     <svg {...props} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
   ),
+  Zap: (props) => (
+    <svg {...props} width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+  ),
 };
 
 function useScrollSpy(sectionIds) {
@@ -342,7 +345,6 @@ function Section({ id, title, kicker, eyebrow, children, right, centered = false
 }
 
 export default function EnterpriseBuyerGuidePage() {
-  const [persona, setPersona] = useState('business'); // 'business' | 'technical'
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentMediaIndex, setCurrentMediaIndex] = useState(0);
   const [activeFeatureTab, setActiveFeatureTab] = useState('security');
@@ -523,69 +525,162 @@ export default function EnterpriseBuyerGuidePage() {
               </p>
               </div>
             </section>
-            {/* Persona toggle and targeted benefits */}
+            {/* Persona-based cards */}
             <Section
               id="personas"
               title="Guide by role"
-              kicker="Choose your perspective - concise benefits with optional detail"
+              kicker="Choose your perspective - discover benefits tailored to your role"
               centered={true}
             >
-              <div className="mb-8 flex justify-center items-center gap-3" role="tablist" aria-label="Persona selector">
-                <button
-                  role="tab"
-                  aria-selected={persona === 'business'}
-                  onClick={() => setPersona('business')}
-                  className={persona === 'business' ? 'btn-primary px-6 py-3 text-base font-semibold rounded-full' : 'btn-secondary px-6 py-3 text-base font-semibold rounded-full'}
-                >
-                  Business
-                </button>
-                <button
-                  role="tab"
-                  aria-selected={persona === 'technical'}
-                  onClick={() => setPersona('technical')}
-                  className={persona === 'technical' ? 'btn-primary px-6 py-3 text-base font-semibold rounded-full' : 'btn-secondary px-6 py-3 text-base font-semibold rounded-full'}
-                >
-                  Technical
-                </button>
-              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 max-w-6xl mx-auto">
+                {/* Business Executive */}
+                <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-6 flex flex-col hover:shadow-xl transition-all">
+                  <div className="flex justify-center mb-4">
+                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-pink-200 to-pink-300 flex items-center justify-center">
+                      <Icon.DollarSign className="w-10 h-10" style={{ color: '#4A6200' }} />
+                    </div>
+                  </div>
+                  <h4 className="text-xl font-bold text-center mb-4" style={{ color: '#313A00' }}>Business Executive</h4>
+                  <ul className="space-y-2 mb-6 flex-grow">
+                    <li className="flex items-start gap-2 text-sm text-gray-700">
+                      <Icon.Zap className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#4A6200' }} />
+                      <span>Reduce security stack spend by 15–30%</span>
+                    </li>
+                    <li className="flex items-start gap-2 text-sm text-gray-700">
+                      <Icon.Zap className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#4A6200' }} />
+                      <span>Speed new-hire productivity with same-day access</span>
+                    </li>
+                    <li className="flex items-start gap-2 text-sm text-gray-700">
+                      <Icon.Zap className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#4A6200' }} />
+                      <span>Decrease support tickets with built-in guardrails</span>
+                    </li>
+                  </ul>
+                  <button className="w-full px-4 py-2 bg-[#313A00] text-white rounded-lg font-semibold hover:bg-[#4A6200] transition-colors">
+                    Learn more
+                  </button>
+                </div>
 
-              {persona === 'business' ? (
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <div className="rounded-lg not-prose p-4 bg-gradient-to-br from-white via-[#F8FAF2] to-[#F2F6E8] border border-white/70">
-                    <h4 className="font-semibold mb-1" style={{ color: '#313A00' }}>Reduce spend</h4>
-                    <p className="text-sm text-gray-700 mb-2">Consolidate 3–5 tools into the browser; cut costs by 15–30%.</p>
-                    <details className="text-sm text-gray-700"><summary className="cursor-pointer">Show details</summary>Lower agent overhead, fewer vendors, simpler support.</details>
+                {/* IT Administrator */}
+                <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-6 flex flex-col hover:shadow-xl transition-all">
+                  <div className="flex justify-center mb-4">
+                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-blue-200 to-blue-300 flex items-center justify-center">
+                      <Icon.Settings className="w-10 h-10" style={{ color: '#4A6200' }} />
+                    </div>
                   </div>
-                  <div className="rounded-lg not-prose p-4 bg-gradient-to-br from-white via-[#F8FAF2] to-[#F2F6E8] border border-white/70">
-                    <h4 className="font-semibold mb-1" style={{ color: '#313A00' }}>Faster onboarding</h4>
-                    <p className="text-sm text-gray-700 mb-2">Policy-based access + SSO enables day‑1 productivity.</p>
-                    <details className="text-sm text-gray-700"><summary className="cursor-pointer">Show details</summary>Import bookmarks/passwords instantly; least‑privilege defaults.</details>
-                  </div>
-                  <div className="rounded-lg not-prose p-4 bg-gradient-to-br from-white via-[#F8FAF2] to-[#F2F6E8] border border-white/70">
-                    <h4 className="font-semibold mb-1" style={{ color: '#313A00' }}>Higher throughput</h4>
-                    <p className="text-sm text-gray-700 mb-2">Hubs + ad/tracker reduction and AI assist reduce switching.</p>
-                    <details className="text-sm text-gray-700"><summary className="cursor-pointer">Show details</summary>Multi‑view layouts; keyboard/voice commands for common flows.</details>
-                  </div>
+                  <h4 className="text-xl font-bold text-center mb-4" style={{ color: '#313A00' }}>IT Administrator</h4>
+                  <ul className="space-y-2 mb-6 flex-grow">
+                    <li className="flex items-start gap-2 text-sm text-gray-700">
+                      <Icon.Zap className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#4A6200' }} />
+                      <span>Easy deployment with MDM integration</span>
+                    </li>
+                    <li className="flex items-start gap-2 text-sm text-gray-700">
+                      <Icon.Zap className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#4A6200' }} />
+                      <span>Configurable update channels and rollback</span>
+                    </li>
+                    <li className="flex items-start gap-2 text-sm text-gray-700">
+                      <Icon.Zap className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#4A6200' }} />
+                      <span>Works with Workspace ONE, Intune, Jamf</span>
+                    </li>
+                  </ul>
+                  <button className="w-full px-4 py-2 bg-[#313A00] text-white rounded-lg font-semibold hover:bg-[#4A6200] transition-colors">
+                    Learn more
+                  </button>
                 </div>
-              ) : (
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <div className="rounded-lg not-prose p-4 bg-gradient-to-br from-white via-[#F8FAF2] to-[#F2F6E8] border border-white/70">
-                    <h4 className="font-semibold mb-1" style={{ color: '#313A00' }}>Controls at the edge</h4>
-                    <p className="text-sm text-gray-700 mb-2">URL/app‑scoped DLP, clipboard/download policies, audit logs.</p>
-                    <details className="text-sm text-gray-700"><summary className="cursor-pointer">Show details</summary>Export to CSV/JSON; SIEM ingestion; exception workflows.</details>
+
+                {/* Security Officer */}
+                <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-6 flex flex-col hover:shadow-xl transition-all">
+                  <div className="flex justify-center mb-4">
+                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-purple-200 to-purple-300 flex items-center justify-center">
+                      <Icon.Shield className="w-10 h-10" style={{ color: '#4A6200' }} />
+                    </div>
                   </div>
-                  <div className="rounded-lg not-prose p-4 bg-gradient-to-br from-white via-[#F8FAF2] to-[#F2F6E8] border border-white/70">
-                    <h4 className="font-semibold mb-1" style={{ color: '#313A00' }}>Easy deployment</h4>
-                    <p className="text-sm text-gray-700 mb-2">MDM distribution, config templates, staged channels, rollback.</p>
-                    <details className="text-sm text-gray-700"><summary className="cursor-pointer">Show details</summary>Works with Workspace ONE, Intune, Jamf; JSON policy files.</details>
-                  </div>
-                  <div className="rounded-lg not-prose p-4 bg-gradient-to-br from-white via-[#F8FAF2] to-[#F2F6E8] border border-white/70">
-                    <h4 className="font-semibold mb-1" style={{ color: '#313A00' }}>Identity native</h4>
-                    <p className="text-sm text-gray-700 mb-2">SAML/OIDC SSO and SCIM provisioning; MFA enforced.</p>
-                    <details className="text-sm text-gray-700"><summary className="cursor-pointer">Show details</summary>Conditional access; device posture checks; risk‑based prompts.</details>
-                  </div>
+                  <h4 className="text-xl font-bold text-center mb-4" style={{ color: '#313A00' }}>Security Officer</h4>
+                  <ul className="space-y-2 mb-6 flex-grow">
+                    <li className="flex items-start gap-2 text-sm text-gray-700">
+                      <Icon.Zap className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#4A6200' }} />
+                      <span>Granular DLP and clipboard policies</span>
+                    </li>
+                    <li className="flex items-start gap-2 text-sm text-gray-700">
+                      <Icon.Zap className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#4A6200' }} />
+                      <span>Exportable audit logs and SIEM integration</span>
+                    </li>
+                    <li className="flex items-start gap-2 text-sm text-gray-700">
+                      <Icon.Zap className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#4A6200' }} />
+                      <span>SAML/OIDC SSO with MFA enforcement</span>
+                    </li>
+                  </ul>
+                  <button className="w-full px-4 py-2 bg-[#313A00] text-white rounded-lg font-semibold hover:bg-[#4A6200] transition-colors">
+                    Learn more
+                  </button>
                 </div>
-              )}
+
+                {/* Product Manager */}
+                <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-6 flex flex-col hover:shadow-xl transition-all">
+                  <div className="flex justify-center mb-4">
+                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-yellow-200 to-yellow-300 flex items-center justify-center">
+                      <Icon.Rocket className="w-10 h-10" style={{ color: '#4A6200' }} />
+                    </div>
+                  </div>
+                  <h4 className="text-xl font-bold text-center mb-4" style={{ color: '#313A00' }}>Product Manager</h4>
+                  <ul className="space-y-2 mb-6 flex-grow">
+                    <li className="flex items-start gap-2 text-sm text-gray-700">
+                      <Icon.Zap className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#4A6200' }} />
+                      <span>AI-powered productivity features</span>
+                    </li>
+                    <li className="flex items-start gap-2 text-sm text-gray-700">
+                      <Icon.Zap className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#4A6200' }} />
+                      <span>Multi-view layouts and spatial organization</span>
+                    </li>
+                    <li className="flex items-start gap-2 text-sm text-gray-700">
+                      <Icon.Zap className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#4A6200' }} />
+                      <span>Voice commands and keyboard shortcuts</span>
+                    </li>
+                  </ul>
+                  <button className="w-full px-4 py-2 bg-[#313A00] text-white rounded-lg font-semibold hover:bg-[#4A6200] transition-colors">
+                    Learn more
+                  </button>
+                </div>
+
+                {/* Developer */}
+                <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-6 flex flex-col hover:shadow-xl transition-all">
+                  <div className="flex justify-center mb-4">
+                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-green-200 to-green-300 flex items-center justify-center">
+                      <Icon.Layers className="w-10 h-10" style={{ color: '#4A6200' }} />
+                    </div>
+                  </div>
+                  <h4 className="text-xl font-bold text-center mb-4" style={{ color: '#313A00' }}>Developer</h4>
+                  <ul className="space-y-2 mb-6 flex-grow">
+                    <li className="flex items-start gap-2 text-sm text-gray-700">
+                      <Icon.Zap className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#4A6200' }} />
+                      <span>API access for custom integrations</span>
+                    </li>
+                    <li className="flex items-start gap-2 text-sm text-gray-700">
+                      <Icon.Zap className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#4A6200' }} />
+                      <span>JSON policy configuration files</span>
+                    </li>
+                    <li className="flex items-start gap-2 text-sm text-gray-700">
+                      <Icon.Zap className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#4A6200' }} />
+                      <span>Extensible architecture and plugins</span>
+                    </li>
+                  </ul>
+                  <button className="w-full px-4 py-2 bg-[#313A00] text-white rounded-lg font-semibold hover:bg-[#4A6200] transition-colors">
+                    Learn more
+                  </button>
+                </div>
+
+                {/* Custom Role */}
+                <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-6 flex flex-col hover:shadow-xl transition-all">
+                  <div className="flex justify-center mb-4">
+                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-amber-200 to-amber-300 flex items-center justify-center">
+                      <Icon.Sliders className="w-10 h-10" style={{ color: '#4A6200' }} />
+                    </div>
+                  </div>
+                  <h4 className="text-xl font-bold text-center mb-4" style={{ color: '#313A00' }}>Custom Role</h4>
+                  <p className="text-sm text-gray-700 mb-6 flex-grow text-center">
+                    Create a custom role tailored to your unique workflows and requirements. Configure Oasis to match your organization's specific needs.
+                  </p>
+                </div>
+              </div>
             </Section>
             <Section 
               id="what-is-oasis" 
