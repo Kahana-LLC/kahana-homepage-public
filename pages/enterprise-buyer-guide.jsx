@@ -555,9 +555,6 @@ export default function EnterpriseBuyerGuidePage() {
                       <span>Decrease support tickets with built-in guardrails</span>
                     </li>
                   </ul>
-                  <button className="w-full px-4 py-2 bg-[#313A00] text-white rounded-lg font-semibold hover:bg-[#4A6200] transition-colors">
-                    Learn more
-                  </button>
                 </div>
 
                 {/* IT Administrator */}
@@ -582,9 +579,6 @@ export default function EnterpriseBuyerGuidePage() {
                       <span>Works with Workspace ONE, Intune, Jamf</span>
                     </li>
                   </ul>
-                  <button className="w-full px-4 py-2 bg-[#313A00] text-white rounded-lg font-semibold hover:bg-[#4A6200] transition-colors">
-                    Learn more
-                  </button>
                 </div>
 
                 {/* Security Officer */}
@@ -609,9 +603,6 @@ export default function EnterpriseBuyerGuidePage() {
                       <span>SAML/OIDC SSO with MFA enforcement</span>
                     </li>
                   </ul>
-                  <button className="w-full px-4 py-2 bg-[#313A00] text-white rounded-lg font-semibold hover:bg-[#4A6200] transition-colors">
-                    Learn more
-                  </button>
                 </div>
 
                 {/* Product Manager */}
@@ -636,9 +627,6 @@ export default function EnterpriseBuyerGuidePage() {
                       <span>Voice commands and keyboard shortcuts</span>
                     </li>
                   </ul>
-                  <button className="w-full px-4 py-2 bg-[#313A00] text-white rounded-lg font-semibold hover:bg-[#4A6200] transition-colors">
-                    Learn more
-                  </button>
                 </div>
 
                 {/* Developer */}
@@ -663,9 +651,6 @@ export default function EnterpriseBuyerGuidePage() {
                       <span>Extensible architecture and plugins</span>
                     </li>
                   </ul>
-                  <button className="w-full px-4 py-2 bg-[#313A00] text-white rounded-lg font-semibold hover:bg-[#4A6200] transition-colors">
-                    Learn more
-                  </button>
                 </div>
 
                 {/* Custom Role */}
