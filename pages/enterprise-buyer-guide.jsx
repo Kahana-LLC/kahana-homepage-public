@@ -430,16 +430,6 @@ export default function EnterpriseBuyerGuidePage() {
       <div style={{ background: '#FFFFFF', color: COLORS.primary, minHeight: '100vh' }}>
         <div className="min-h-screen" style={{ background: '#FFFFFF' }}>
           <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="mx-auto mb-8" style={{ maxWidth: 960 }}>
-              <div className="rounded-lg border border-gray-200 bg-white p-4 flex items-center justify-between">
-                <p className="text-sm text-gray-700">
-                  Not sure about an acronym? Visit our{' '}
-                  <Link href="/docs/glossary" legacyBehavior><a style={{ color: COLORS.accent, textDecoration: 'none' }}>Glossary</a></Link>
-                  . Hover on underlined terms to see a quick definition.
-                </p>
-                <span className="inline-flex items-center rounded-md px-2 py-1 text-xs font-medium" style={{ background: '#F8FAF2', color: COLORS.brand700, border: '1px solid #4A6200' }}>Accessible Palette</span>
-              </div>
-            </div>
             {/* Hero Introduction Section - Perplexity/Gemini Hybrid Style */}
             <section 
               id="introduction" 
