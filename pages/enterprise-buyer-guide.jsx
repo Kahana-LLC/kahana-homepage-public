@@ -445,7 +445,7 @@ export default function EnterpriseBuyerGuidePage() {
               id="introduction" 
               className="relative w-full py-32 md:py-48 lg:py-56 overflow-hidden"
               style={{
-                backgroundImage: 'url(/assets/oasis-hero-bg.jpg)',
+                backgroundImage: 'url(/images/desert-background-5.jpg)',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat'
