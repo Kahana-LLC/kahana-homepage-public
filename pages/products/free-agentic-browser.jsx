@@ -1,9 +1,9 @@
 import React from 'react';
 import Head from 'next/head';
 import Script from 'next/script';
+import Image from 'next/image';
 import Link from 'next/link';
 import SEO from '../../components/SEO';
-import FadeInSection from '../../components/FadeInSection';
 
 const productivityFeatures = [
   {
@@ -91,7 +91,51 @@ const browsingFeatures = [
   }
 ];
 
+const technicalFeatures = [
+  {
+    title: 'Modern Architecture',
+    description: 'Built with cutting-edge technology for reliability.',
+    details: [
+      'Electron-based',
+      'Chromium-powered',
+      'TypeScript implementation',
+      'Modular design'
+    ]
+  },
+  {
+    title: 'Automatic Updates',
+    description: 'Seamless update system for continuous improvement.',
+    details: [
+      'Background updates',
+      'Version management',
+      'Release notes',
+      'Seamless process'
+    ]
+  },
+  {
+    title: 'Data Management',
+    description: 'Secure handling of personal data and preferences.',
+    details: [
+      'Local data storage',
+      'Encrypted preferences',
+      'Sync capabilities',
+      'Data portability'
+    ]
+  },
+  {
+    title: 'User Interface',
+    description: 'Clean, modern design for optimal user experience.',
+    details: [
+      'Minimalist design',
+      'Responsive layout',
+      'Custom themes',
+      'Smooth animations'
+    ]
+  }
+];
+
 export default function FreeAgenticBrowser() {
+  // Free Agentic Browser specific schema
   const browserSchema = {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
@@ -158,167 +202,147 @@ export default function FreeAgenticBrowser() {
         `}
       </Script>
 
-      <main className="scroll-smooth bg-white relative">
-        {/* Hero Section */}
-        <FadeInSection>
-          <section className="relative overflow-hidden py-24 sm:py-32">
-            <div className="pointer-events-none absolute inset-0">
-              <div className="absolute top-[-50%] left-[-55%] h-[660px] w-[1080px] rounded-full bg-[#FCDD9F]/28 blur-[420px]" />
-              <div className="absolute bottom-[-55%] right-[-55%] h-[720px] w-[1120px] rounded-full bg-[#617500]/15 blur-[420px]" />
-            </div>
-            <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-              <h2 className="text-xl font-semibold leading-8 text-[#978455] mb-4">
-                Free Agentic Browser
-              </h2>
-              <h1 className="text-4xl font-semibold leading-tight text-[#313A00] sm:text-5xl mb-6">
-                Oasis
-              </h1>
-              <p className="text-lg text-[#4A5745] max-w-3xl mx-auto mb-10">
-                A productivity-focused, modern browser designed for personal use, featuring smart organization tools, AI-powered assistance, and a seamless browsing experience. Boost your productivity and take control of your digital workflow.
-              </p>
-              <div className="flex flex-col gap-3 sm:flex-row justify-center">
-                <Link href="/oasis-waitlist" className="btn-primary inline-flex items-center justify-center px-8 py-3 text-base no-underline hover:no-underline focus:no-underline">
-                  Join Waitlist
-                </Link>
-              </div>
-            </div>
-          </section>
-        </FadeInSection>
+      {/* Hero Section */}
+      <section className="bg-white py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h2 className="text-base font-semibold leading-7 text-[#728552] mb-3">Free Agentic Browser</h2>
+            <h1 className="text-5xl font-bold text-[#4A5745] mb-6">
+              Oasis
+            </h1>
+            <p className="text-xl text-[#4A5745] max-w-3xl mx-auto mb-8">
+              A productivity-focused, modern browser designed for personal use, featuring smart organization tools, AI-powered assistance, and a seamless browsing experience. Boost your productivity and take control of your digital workflow.
+            </p>
+            <Link href="/oasis-waitlist" className="btn-primary inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline">
+                Join Waitlist
+            </Link>
+          </div>
+        </div>
+      </section>
 
-        {/* Elegant section divider */}
-        <div className="relative h-px bg-gradient-to-r from-transparent via-[#30400D]/20 to-transparent mx-auto max-w-4xl"></div>
-
-        {/* Productivity Features Section */}
-        <FadeInSection delay={100}>
-          <section className="relative overflow-hidden py-20 sm:py-28">
-            <div className="pointer-events-none absolute inset-0">
-              <div className="absolute top-0 left-0 h-72 w-72 rounded-full bg-[#FCDD9F]/40 blur-[220px]" />
-              <div className="absolute bottom-0 right-6 h-96 w-96 rounded-full bg-[#617500]/20 blur-[250px]" />
-            </div>
-            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="text-center mb-12">
-                <h2 className="text-xl font-semibold leading-8 text-[#978455] mb-2">
-                  Productivity-First
-                </h2>
-                <h1 className="text-3xl font-semibold tracking-tight text-[#313A00] sm:text-4xl mb-4">
-                  Features Designed for Maximum Efficiency
-                </h1>
-                <p className="text-lg text-[#4A5745] max-w-3xl mx-auto">
-                  Boost your productivity with intelligent features designed to streamline your workflow and enhance your browsing experience.
-                </p>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {productivityFeatures.map((feature, index) => (
-                  <div
-                    key={index}
-                    className="relative bg-white/90 border border-white/80 rounded-[26px] px-6 py-8 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur-lg hover:shadow-[0_35px_90px_rgba(32,47,0,0.18)] transition-all duration-300"
-                  >
-                    <h3 className="text-2xl font-semibold leading-tight text-[#1F2D00] mb-4">
-                      {feature.title}
-                    </h3>
-                    <p className="text-base text-[#4E5534] mb-6 leading-relaxed">
-                      {feature.description}
-                    </p>
-                    <ul className="space-y-3">
-                      {feature.details.map((detail, dIndex) => (
-                        <li key={dIndex} className="flex items-start text-base text-[#4E5534]">
-                          <svg className="w-5 h-5 mr-3 text-[#4A6200] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                          </svg>
-                          <span>{detail}</span>
-                        </li>
-                      ))}
-                    </ul>
+      {/* Productivity Features Section */}
+      <section className="bg-white py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-[#4A5745] text-center mb-12">
+            Productivity-First Features
+          </h2>
+          <p className="text-[#4A5745] text-center mb-8 max-w-3xl mx-auto">
+            Boost your productivity with intelligent features designed to streamline your workflow and enhance your browsing experience.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {productivityFeatures.map((feature, index) => (
+              <div key={index} className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl overflow-hidden p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+                <div className="flex items-center mb-4">
+                  <div className="w-10 h-10 bg-gradient-to-br from-kahana-primary via-kahana-secondary-300 to-kahana-accent-sky rounded-full flex items-center justify-center mr-3 shadow-md">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
                   </div>
-                ))}
+                  <h3 className="text-lg font-semibold text-[#4A5745]">{feature.title}</h3>
+                </div>
+                <p className="text-[#4A5745] text-sm mb-4">{feature.description}</p>
+                <ul className="space-y-2">
+                  {feature.details.map((detail, dIndex) => (
+                    <li key={dIndex} className="flex items-center text-[#4A5745] text-sm">
+                      <svg className="w-4 h-4 mr-2 text-[#728552]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      {detail}
+                    </li>
+                  ))}
+                </ul>
               </div>
-            </div>
-          </section>
-        </FadeInSection>
+            ))}
+          </div>
+        </div>
+      </section>
 
-        {/* Elegant section divider */}
-        <div className="relative h-px bg-gradient-to-r from-transparent via-[#30400D]/20 to-transparent mx-auto max-w-4xl"></div>
-
-        {/* Browsing Features Section */}
-        <FadeInSection delay={150}>
-          <section className="relative overflow-hidden py-20 sm:py-28">
-            <div className="pointer-events-none absolute inset-0">
-              <div className="absolute top-[-50%] left-[-55%] h-[660px] w-[1080px] rounded-full bg-[#FCDD9F]/28 blur-[420px]" />
-              <div className="absolute bottom-[-55%] right-[-55%] h-[720px] w-[1120px] rounded-full bg-[#617500]/15 blur-[420px]" />
-            </div>
-            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="text-center mb-12">
-                <h2 className="text-xl font-semibold leading-8 text-[#978455] mb-2">
-                  Smart Browsing
-                </h2>
-                <h1 className="text-3xl font-semibold tracking-tight text-[#313A00] sm:text-4xl mb-4">
-                  Experience a New Way of Browsing
-                </h1>
-                <p className="text-lg text-[#4A5745] max-w-3xl mx-auto">
-                  Experience a new way of browsing with intelligent organization and productivity features designed for personal use.
-                </p>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {browsingFeatures.map((feature, index) => (
-                  <div
-                    key={index}
-                    className="relative bg-white/90 border border-white/80 rounded-[26px] px-6 py-8 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur-lg hover:shadow-[0_35px_90px_rgba(32,47,0,0.18)] transition-all duration-300"
-                  >
-                    <h3 className="text-2xl font-semibold leading-tight text-[#1F2D00] mb-4">
-                      {feature.title}
-                    </h3>
-                    <p className="text-base text-[#4E5534] mb-6 leading-relaxed">
-                      {feature.description}
-                    </p>
-                    <ul className="space-y-3">
-                      {feature.details.map((detail, dIndex) => (
-                        <li key={dIndex} className="flex items-start text-base text-[#4E5534]">
-                          <svg className="w-5 h-5 mr-3 text-[#4A6200] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                          </svg>
-                          <span>{detail}</span>
-                        </li>
-                      ))}
-                    </ul>
+      {/* Browsing Features Section */}
+      <section className="bg-white py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-[#4A5745] text-center mb-12">
+            Smart Browsing Experience
+          </h2>
+          <p className="text-[#4A5745] text-center mb-8 max-w-3xl mx-auto">
+            Experience a new way of browsing with intelligent organization and productivity features designed for personal use.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {browsingFeatures.map((feature, index) => (
+              <div key={index} className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl overflow-hidden p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+                <div className="flex items-center mb-4">
+                  <div className="w-10 h-10 bg-gradient-to-br from-kahana-primary via-kahana-secondary-300 to-kahana-accent-sky rounded-full flex items-center justify-center mr-3 shadow-md">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
                   </div>
-                ))}
+                  <h3 className="text-lg font-semibold text-[#4A5745]">{feature.title}</h3>
+                </div>
+                <p className="text-[#4A5745] text-sm mb-4">{feature.description}</p>
+                <ul className="space-y-2">
+                  {feature.details.map((detail, dIndex) => (
+                    <li key={dIndex} className="flex items-center text-[#4A5745] text-sm">
+                      <svg className="w-4 h-4 mr-2 text-[#728552]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      {detail}
+                    </li>
+                  ))}
+                </ul>
               </div>
-            </div>
-          </section>
-        </FadeInSection>
+            ))}
+          </div>
+        </div>
+      </section>
 
-        {/* Elegant section divider */}
-        <div className="relative h-px bg-gradient-to-r from-transparent via-[#30400D]/20 to-transparent mx-auto max-w-4xl"></div>
-
-        {/* CTA Section */}
-        <FadeInSection delay={200}>
-          <section 
-            className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] py-20 md:py-28 mb-0"
-            style={{
-              backgroundImage: 'url(/images/desert-background-5.jpg)',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              backgroundRepeat: 'no-repeat'
-            }}
-          >
-            {/* Overlay for text readability */}
-            <div className="absolute inset-0 bg-white/60"></div>
-            <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-6">
-                Ready to Boost Your Productivity?
-              </h2>
-              <p className="text-xl md:text-2xl mb-10 max-w-3xl mx-auto leading-relaxed font-bold" style={{ color: '#313A00' }}>
-                Download Oasis Free Agentic Browser today and experience enhanced productivity with smart organization tools and AI-powered assistance.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <Link href="/oasis-waitlist" className="btn-primary inline-flex items-center justify-center px-10 py-4 text-lg font-bold no-underline hover:no-underline focus:no-underline">
-                  Join Waitlist
-                </Link>
+      {/* Technical Features Section */}
+      <section className="bg-white py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-[#4A5745] text-center mb-12">
+            Technical Features
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {technicalFeatures.map((feature, index) => (
+              <div key={index} className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl overflow-hidden p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+                <div className="flex items-center mb-4">
+                  <div className="w-10 h-10 bg-gradient-to-br from-kahana-primary via-kahana-secondary-300 to-kahana-accent-sky rounded-full flex items-center justify-center mr-3 shadow-md">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-lg font-semibold text-[#4A5745]">{feature.title}</h3>
+                </div>
+                <p className="text-[#4A5745] text-sm mb-4">{feature.description}</p>
+                <ul className="space-y-2">
+                  {feature.details.map((detail, dIndex) => (
+                    <li key={dIndex} className="flex items-center text-[#4A5745] text-sm">
+                      <svg className="w-4 h-4 mr-2 text-[#728552]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      {detail}
+                    </li>
+                  ))}
+                </ul>
               </div>
-            </div>
-          </section>
-        </FadeInSection>
-      </main>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="bg-gradient-to-r from-[#788B59] to-[#728552] py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-4xl font-bold text-white mb-6" >
+            Ready to Boost Your Productivity?
+          </h2>
+          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+            Download Oasis Free Agentic Browser today and experience enhanced productivity with smart organization tools and AI-powered assistance.
+          </p>
+          <Link href="/oasis-waitlist" className="btn-primary inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline">
+              Join Waitlist
+          </Link>
+        </div>
+      </section>
     </>
   );
-}
+} 

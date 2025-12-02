@@ -1,3 +1,4 @@
+import NavbarExplore from "../components/navbarexplore";
 import CategoryFilter from "../components/CategoryFilter";
 import React, { useState, useEffect } from "react";
 import Head from "next/head";
@@ -62,7 +63,10 @@ const SearchPage = () => {
         />
       </Head>
       <div className="min-h-screen bg-gray-50">
-        <div className="fixed top-[64px] left-0 right-0 bg-white/90 backdrop-blur-sm z-40 transition-all duration-200">
+        <nav className="fixed top-0 left-0 right-0 bg-white shadow-sm z-50">
+          <NavbarExplore />
+        </nav>
+        <div className="fixed top-[56px] left-0 right-0 bg-white/90 backdrop-blur-sm z-40 transition-all duration-200">
           <div className="header-wrapper py-3 md:py-4">
             <div className="px-4 md:px-6">
               <div className="mb-3">
@@ -85,7 +89,7 @@ const SearchPage = () => {
         </div>
         <main
           className="container mx-auto px-4 md:px-6"
-          style={{ marginTop: "140px" }}
+          style={{ marginTop: "180px" }}
         >
           {error && (
             <div className="text-center py-8">

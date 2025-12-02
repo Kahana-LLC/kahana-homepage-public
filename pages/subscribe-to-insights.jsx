@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import NavBar from '../components/NavbarDup';
 import Script from 'next/script';
 import { trackError } from '../utils/analytics';
 
@@ -144,6 +145,8 @@ export default function SubscribeToInsights() {
         <title>Subscribe to Kahana Insights | Kahana</title>
         <meta name="description" content="Stay informed with the latest insights and updates from Kahana - subscribe to our newsletter" />
       </Head>
+
+      <NavBar />
 
       <main className="min-h-screen bg-white pt-24 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
