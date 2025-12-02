@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import NavBar from '../components/NavbarDup';
 import VideoSection from '../components/VideoSection';
 import Script from 'next/script';
 
@@ -107,7 +106,6 @@ export default function OasisAugmentedReality() {
         <meta name="description" content="Join the Oasis augmented reality browser waitlist - be among the first to experience the future of AR-powered browsing" />
       </Head>
       <div className="oasis-ar">
-        <NavBar />
         <main className="min-h-screen bg-white pt-24 pb-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="lg:grid lg:grid-cols-12 lg:gap-16">

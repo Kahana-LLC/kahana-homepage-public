@@ -1,7 +1,6 @@
 import React, { useRef } from "react";
 import Head from "next/head";
 import Link from "next/link";
-import NavBar from "../components/NavbarDup";
 import Image from "next/image";
 import dynamic from 'next/dynamic';
 import {
@@ -69,8 +68,6 @@ const BuyerGuideOasis = () => {
       </Head>
 
       <div className="min-h-screen bg-white">
-        <NavBar />
-
         <main className="pt-16 pb-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="lg:grid lg:grid-cols-12 lg:gap-16">

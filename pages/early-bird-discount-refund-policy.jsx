@@ -1,7 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import NavBar from '../components/NavbarDup';
 import SEO from '../components/SEO';
 
 export default function EarlyBirdDiscountRefundPolicy() {
@@ -22,8 +21,6 @@ export default function EarlyBirdDiscountRefundPolicy() {
       </Head>
 
       <div className="relative bg-white">
-        <NavBar />
-
         <main className="min-h-screen pt-24 pb-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header Section */}
