@@ -605,11 +605,6 @@ export default function EnterpriseBuyerGuidePage() {
                       <p className="text-center text-[#4A5745] mb-4">
                       Designed for personal productivity with AI-powered assistance and smart organization tools.
                     </p>
-                      <div className="flex justify-center">
-                        <span className="inline-flex items-center text-sm font-semibold text-[#4A6200] group-hover:underline">
-                          Learn more <span className="ml-1">→</span>
-                        </span>
-                  </div>
                 </div>
                   </div>
                 </Link>
@@ -634,11 +629,6 @@ export default function EnterpriseBuyerGuidePage() {
                       <p className="text-center text-[#4A5745] mb-4">
                       Built for enterprise environments with enhanced security, compliance, and collaboration features.
                     </p>
-                      <div className="flex justify-center">
-                        <span className="inline-flex items-center text-sm font-semibold text-[#4A6200] group-hover:underline">
-                          Learn more <span className="ml-1">→</span>
-                        </span>
-                  </div>
                 </div>
               </div>
                 </Link>
