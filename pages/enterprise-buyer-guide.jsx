@@ -392,7 +392,6 @@ export default function EnterpriseBuyerGuidePage() {
     { id: 'introduction', label: 'Introduction' },
     { id: 'what-is-oasis', label: 'What is Oasis?' },
     { id: 'benefits-of-oasis', label: 'Benefits of Oasis' },
-    { id: 'common-use-cases', label: 'Common use cases' },
     { id: 'similar-browser-vendors', label: 'Similar browser vendors' },
     { id: 'deployment-experience', label: 'Deployment experience' },
     { id: 'user-experience', label: 'User Experience' },
@@ -1081,124 +1080,6 @@ export default function EnterpriseBuyerGuidePage() {
                       </div>
                     </div>
                   )}
-                </div>
-              </div>
-            </Section>
-            <Section 
-              id="common-use-cases" 
-              title="Common use cases" 
-              eyebrow="Real-World Applications"
-              centered={true}
-              kicker="How organizations use Oasis to solve business challenges"
-            >
-              <p className="mb-12 max-w-3xl mx-auto text-center">
-                Enterprise research teams require secure, efficient, and comprehensive tools to gather, 
-                analyze, and share information across various domains. Oasis provides the ideal platform 
-                for research-intensive workflows.
-              </p>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-                {/* Use Case Cards - Perplexity Style Grid */}
-                <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 transition-all hover:shadow-xl hover:-translate-y-1 group">
-                  <div className="h-48 bg-gray-100 overflow-hidden">
-                    <img src="/images/sales.png" alt="Sales Prospecting" className="w-full h-full object-cover transition-transform duration-500 scale-110" />
-                  </div>
-                  <div className="p-6 text-left">
-                    <h3 className="text-xl font-bold mb-3 text-left" style={{ color: '#313A00' }}>Sales Prospecting</h3>
-                    <p className="text-sm text-gray-600 mb-4 text-left">
-                      Secure access to LinkedIn Sales Navigator, CRM systems, and competitive intel platforms.
-                    </p>
-                    <ul className="text-xs space-y-1.5 text-gray-500 text-left list-none pl-0">
-                      <li className="flex items-start">• Automated data collection</li>
-                      <li className="flex items-start">• CRM integration</li>
-                      <li className="flex items-start">• Social media monitoring</li>
-                    </ul>
-                  </div>
-                </div>
-
-                <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 transition-all hover:shadow-xl hover:-translate-y-1 group">
-                  <div className="h-48 bg-gray-100 overflow-hidden">
-                    <img src="/images/market.png" alt="Market Research" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-                  </div>
-                  <div className="p-6 text-left">
-                    <h3 className="text-xl font-bold mb-3 text-left" style={{ color: '#313A00' }}>Market Research</h3>
-                    <p className="text-sm text-gray-600 mb-4 text-left">
-                      Comprehensive industry analysis, competitor monitoring, and trend identification.
-                    </p>
-                    <ul className="text-xs space-y-1.5 text-gray-500 text-left list-none pl-0">
-                      <li className="flex items-start">• Trend identification</li>
-                      <li className="flex items-start">• Competitor site monitoring</li>
-                      <li className="flex items-start">• Sentiment analysis</li>
-                    </ul>
-                  </div>
-                </div>
-
-                <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 transition-all hover:shadow-xl hover:-translate-y-1 group">
-                  <div className="h-48 bg-gray-100 overflow-hidden">
-                    <img src="/images/due-diligence.jpeg" alt="Due Diligence" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-                  </div>
-                  <div className="p-6 text-left">
-                    <h3 className="text-xl font-bold mb-3 text-left" style={{ color: '#313A00' }}>Due Diligence & M&A</h3>
-                    <p className="text-sm text-gray-600 mb-4 text-left">
-                      Thorough research for investment and M&A teams with strict confidentiality.
-                    </p>
-                    <ul className="text-xs space-y-1.5 text-gray-500 text-left list-none pl-0">
-                      <li className="flex items-start">• Financial statement analysis</li>
-                      <li className="flex items-start">• Risk assessment</li>
-                      <li className="flex items-start">• Legal document review</li>
-                    </ul>
-                  </div>
-                </div>
-
-                <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 transition-all hover:shadow-xl hover:-translate-y-1 group">
-                  <div className="h-48 bg-gray-100 overflow-hidden">
-                    <img src="/images/academic.png" alt="Scientific Research" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-                  </div>
-                  <div className="p-6 text-left">
-                    <h3 className="text-xl font-bold mb-3 text-left" style={{ color: '#313A00' }}>Scientific Research</h3>
-                    <p className="text-sm text-gray-600 mb-4 text-left">
-                      Secure access to academic databases and journals for R&D teams.
-                    </p>
-                    <ul className="text-xs space-y-1.5 text-gray-500 text-left list-none pl-0">
-                      <li className="flex items-start">• Database access (PubMed, IEEE)</li>
-                      <li className="flex items-start">• Literature review</li>
-                      <li className="flex items-start">• IP protection</li>
-                    </ul>
-                  </div>
-                </div>
-
-                <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 transition-all hover:shadow-xl hover:-translate-y-1 group">
-                  <div className="h-48 bg-gray-100 overflow-hidden">
-                    <img src="/images/legal.jpeg" alt="Legal Compliance" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-                  </div>
-                  <div className="p-6 text-left">
-                    <h3 className="text-xl font-bold mb-3 text-left" style={{ color: '#313A00' }}>Legal & Compliance</h3>
-                    <p className="text-sm text-gray-600 mb-4 text-left">
-                      Regulatory monitoring and case law analysis ensuring attorney-client privilege.
-                    </p>
-                    <ul className="text-xs space-y-1.5 text-gray-500 text-left list-none pl-0">
-                      <li className="flex items-start">• Case law research</li>
-                      <li className="flex items-start">• Regulatory monitoring</li>
-                      <li className="flex items-start">• Contract analysis</li>
-                    </ul>
-                  </div>
-                </div>
-
-                <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 transition-all hover:shadow-xl hover:-translate-y-1 group">
-                  <div className="h-48 bg-gray-100 overflow-hidden">
-                    <img src="/images/user.png" alt="Customer Research" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-                  </div>
-                  <div className="p-6 text-left">
-                    <h3 className="text-xl font-bold mb-3 text-left" style={{ color: '#313A00' }}>Customer Research</h3>
-                    <p className="text-sm text-gray-600 mb-4 text-left">
-                      User behavior analysis and market validation while protecting customer data.
-                    </p>
-                    <ul className="text-xs space-y-1.5 text-gray-500 text-left list-none pl-0">
-                      <li className="flex items-start">• Survey collection</li>
-                      <li className="flex items-start">• Journey mapping</li>
-                      <li className="flex items-start">• Brand monitoring</li>
-                    </ul>
-                  </div>
                 </div>
               </div>
             </Section>
