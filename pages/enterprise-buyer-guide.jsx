@@ -55,6 +55,24 @@ const Icon = {
   Layers: (props) => (
     <svg {...props} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
   ),
+  DollarSign: (props) => (
+    <svg {...props} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+  ),
+  Clock: (props) => (
+    <svg {...props} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+  ),
+  Ticket: (props) => (
+    <svg {...props} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z"/><path d="M13 5v2"/><path d="M13 17v2"/><path d="M13 11v2"/></svg>
+  ),
+  Lock: (props) => (
+    <svg {...props} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+  ),
+  Database: (props) => (
+    <svg {...props} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+  ),
+  RefreshCw: (props) => (
+    <svg {...props} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+  ),
 };
 
 function useScrollSpy(sectionIds) {
@@ -802,22 +820,64 @@ export default function EnterpriseBuyerGuidePage() {
                 These advantages are organized into key areas that address the most critical enterprise 
                 browser challenges and opportunities.
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6 max-w-4xl mx-auto">
-                <div className="relative bg-white/90 border border-white/80 rounded-[26px] px-6 py-6 shadow-[0_25px_70px_rgba(32,47,0,0.14)] flex flex-col gap-4 backdrop-blur-lg">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6 max-w-5xl mx-auto">
+                <div className="flex flex-col gap-4">
                   <h5 className="text-2xl font-semibold leading-tight text-[#1F2D00] mb-2">Business outcomes</h5>
-                  <ul className="list-disc list-inside space-y-2 text-left text-base text-[#4E5534]">
-                    <li>Reduce security stack spend by 15–30% via consolidation.</li>
-                    <li>Speed new-hire productivity by enabling same-day access.</li>
-                    <li>Decrease support tickets with built-in guardrails and guidance.</li>
-                  </ul>
+                  <div className="space-y-4">
+                    <div className="relative bg-white/90 border border-white/80 rounded-xl px-5 py-4 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur-lg flex items-start gap-4">
+                      <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-[#F8FAF2] flex items-center justify-center" style={{ color: '#4A6200' }}>
+                        <Icon.DollarSign />
+                      </div>
+                      <p className="text-base text-[#4E5534] leading-relaxed pt-1">
+                        Reduce security stack spend by 15–30% via consolidation.
+                      </p>
+                    </div>
+                    <div className="relative bg-white/90 border border-white/80 rounded-xl px-5 py-4 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur-lg flex items-start gap-4">
+                      <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-[#F8FAF2] flex items-center justify-center" style={{ color: '#4A6200' }}>
+                        <Icon.Clock />
+                      </div>
+                      <p className="text-base text-[#4E5534] leading-relaxed pt-1">
+                        Speed new-hire productivity by enabling same-day access.
+                      </p>
+                    </div>
+                    <div className="relative bg-white/90 border border-white/80 rounded-xl px-5 py-4 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur-lg flex items-start gap-4">
+                      <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-[#F8FAF2] flex items-center justify-center" style={{ color: '#4A6200' }}>
+                        <Icon.Ticket />
+                      </div>
+                      <p className="text-base text-[#4E5534] leading-relaxed pt-1">
+                        Decrease support tickets with built-in guardrails and guidance.
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <div className="relative bg-white/90 border border-white/80 rounded-[26px] px-6 py-6 shadow-[0_25px_70px_rgba(32,47,0,0.14)] flex flex-col gap-4 backdrop-blur-lg">
+                <div className="flex flex-col gap-4">
                   <h5 className="text-2xl font-semibold leading-tight text-[#1F2D00] mb-2">Technical capabilities</h5>
-                  <ul className="list-disc list-inside space-y-2 text-left text-base text-[#4E5534]">
-                    <li>Granular DLP, clipboard, and download policies at URL/app scope.</li>
-                    <li>Exportable audit logs; SIEM-friendly formats; API access.</li>
-                    <li>Configurable update channels and rollback options.</li>
-                  </ul>
+                  <div className="space-y-4">
+                    <div className="relative bg-white/90 border border-white/80 rounded-xl px-5 py-4 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur-lg flex items-start gap-4">
+                      <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-[#F8FAF2] flex items-center justify-center" style={{ color: '#4A6200' }}>
+                        <Icon.Lock />
+                      </div>
+                      <p className="text-base text-[#4E5534] leading-relaxed pt-1">
+                        Granular DLP, clipboard, and download policies at URL/app scope.
+                      </p>
+                    </div>
+                    <div className="relative bg-white/90 border border-white/80 rounded-xl px-5 py-4 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur-lg flex items-start gap-4">
+                      <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-[#F8FAF2] flex items-center justify-center" style={{ color: '#4A6200' }}>
+                        <Icon.Database />
+                      </div>
+                      <p className="text-base text-[#4E5534] leading-relaxed pt-1">
+                        Exportable audit logs; SIEM-friendly formats; API access.
+                      </p>
+                    </div>
+                    <div className="relative bg-white/90 border border-white/80 rounded-xl px-5 py-4 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur-lg flex items-start gap-4">
+                      <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-[#F8FAF2] flex items-center justify-center" style={{ color: '#4A6200' }}>
+                        <Icon.RefreshCw />
+                      </div>
+                      <p className="text-base text-[#4E5534] leading-relaxed pt-1">
+                        Configurable update channels and rollback options.
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
               
