@@ -1616,15 +1616,6 @@ export default function EnterpriseBuyerGuidePage() {
                   </p>
               </Accordion>
 
-                <Accordion title="Is Oasis available for mobile devices?">
-                  <p>
-                    Mobile versions extend the same security and 
-                    management capabilities to smartphones and tablets. These mobile versions maintain 
-                    consistent policies across desktop and mobile environments, ensuring comprehensive coverage 
-                    for modern hybrid workforces.
-                  </p>
-                </Accordion>
-
                 <Accordion title="How does Oasis balance activity monitoring with user privacy?">
                   <p>
                     Sophisticated activity monitoring capabilities balance organizational 
