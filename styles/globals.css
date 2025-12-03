@@ -344,6 +344,13 @@ section.bg-gradient-to-r h2.text-white {
   box-sizing: border-box;
 }
 
+/* HTML and Body styles - prevent double scrollbars */
+/* Standard approach: html scrolls, body doesn't create its own scrollbar */
+html {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
 /* Body styles */
 body {
   margin: 0;
@@ -352,8 +359,21 @@ body {
   background-color: #FFFFFF;
   color: var(--text-base);
   overflow-x: hidden;
+  overflow-y: visible;
   position: relative;
   width: 100%;
+  min-height: 100vh;
+}
+
+/* Ensure #__next (Next.js root) doesn't create scroll context */
+#__next {
+  overflow: visible;
+  min-height: 100vh;
+}
+
+/* Ensure main element doesn't create scroll context */
+main {
+  overflow: visible;
 }
 
 /* Page width */

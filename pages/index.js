@@ -216,7 +216,7 @@ export default function Home({ blogPosts }) {
         strategy="afterInteractive"
       />
 
-      <div className="relative bg-white shadow-[0_0_40px_rgba(0,0,0,0.08)] overflow-x-hidden w-full">
+      <div className="relative bg-white shadow-[0_0_40px_rgba(0,0,0,0.08)] overflow-x-hidden w-full overflow-y-visible">
         {/* Background gradients - fixed on desktop, absolute on mobile for better performance */}
         <div className={`${isMobile ? 'absolute' : 'fixed'} inset-0 overflow-hidden pointer-events-none z-0`}>
           <div
@@ -246,7 +246,7 @@ export default function Home({ blogPosts }) {
         {/* Elegant accent line at top */}
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#30400D] to-transparent opacity-20 z-10"></div>
         
-        <main className="scroll-smooth bg-white relative z-10">
+        <div className="scroll-smooth bg-white relative z-10">
           <FadeInSection>
             <section
               id="products"
@@ -375,7 +375,7 @@ export default function Home({ blogPosts }) {
           {/* Elegant section divider */}
           <div className="relative h-px bg-gradient-to-r from-transparent via-[#30400D]/20 to-transparent mx-auto max-w-4xl"></div>
 
-        </main>
+        </div>
       </div>
     </>
   );

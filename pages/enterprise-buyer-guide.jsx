@@ -869,7 +869,7 @@ export default function EnterpriseBuyerGuidePage() {
                   </p>
                           <p className="text-lg text-[#4A5745] leading-relaxed opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-96 transition-all duration-500 overflow-hidden">
                     You maintain control over your AI's learning and behavior. Additionally, maintaining security 
-                    within an AI browser presents unique challenges that we specialize in solving.
+                    within an AI browser presents unique challenges that we specialize in solving. 
                           </p>
                         </div>
                       </div>
@@ -1091,7 +1091,7 @@ export default function EnterpriseBuyerGuidePage() {
                           </div>
                           <div className="lg:w-1/2 relative min-h-[200px] lg:min-h-0 overflow-hidden">
                             <img 
-                              src="/images/data-protection .webp" 
+                              src="/figma-imports/Security 1.webp" 
                               alt="Safe Browsing & Threat Protection" 
                               className="w-full h-full object-cover scale-100"
                             />
