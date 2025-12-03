@@ -116,7 +116,10 @@ export default function WhyOasisSection() {
                     src={feature.image}
                     alt={feature.alt}
                     fill
+                    sizes="(max-width: 768px) 100vw, 500px"
                     className="object-cover"
+                    loading="lazy"
+                    quality={85}
                   />
                 </div>
               </div>

@@ -49,7 +49,7 @@ export default function ProductSection() {
                   alt="Welcome to Oasis"
                   fill
                   priority
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
+                  sizes="(max-width: 640px) 100vw, (max-width: 768px) 90vw, (max-width: 1024px) 80vw, 1200px"
                   className="object-contain"
                   quality={90}
                 />
