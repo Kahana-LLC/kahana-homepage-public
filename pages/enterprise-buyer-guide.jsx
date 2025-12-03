@@ -466,20 +466,20 @@ export default function EnterpriseBuyerGuidePage() {
                 backgroundRepeat: 'no-repeat'
               }}
             >
-              {/* Darker gradient overlay for Perplexity-style contrast */}
-              <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/60 to-white/50"></div>
-              
               <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
                 <div className="tracking-wider mb-4 font-semibold text-base lg:text-lg capitalize" style={{ color: '#978455' }}>
                   Welcome to Oasis
                 </div>
                 <h1 
-                  className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold mb-8 leading-[1.1] tracking-tight text-black"
+                  className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold mb-8 leading-[1.1] tracking-tight text-white drop-shadow-lg"
+                  style={{ textShadow: '0 2px 8px rgba(0,0,0,0.3), 0 4px 16px rgba(0,0,0,0.2)' }}
                 >
                   The Future of <br className="hidden md:block" />
                     Enterprise Browsing
                 </h1>
-                <p className="text-xl md:text-2xl lg:text-3xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-medium mb-10">
+                <p className="text-xl md:text-2xl lg:text-3xl text-white max-w-3xl mx-auto leading-relaxed font-medium mb-10 drop-shadow-md"
+                  style={{ textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}
+                >
                   Combine enterprise-grade security with AI-powered intelligence in one seamless, spatial experience.
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center gap-4 mt-8">
