@@ -10,13 +10,14 @@ export default function GlobalBanner() {
   if (router.pathname === '/oasis-waitlist' || router.pathname === '/white-paper-future-of-ergonomic-work' || !isVisible) return null;
 
   return (
-    <div className="GlobalBanner relative shadow-md" style={{ background: 'linear-gradient(90deg, #d6e3f4 0%, #e5efd8 100%)' }}>
+    <div className="GlobalBanner relative shadow-md w-full" style={{ background: 'linear-gradient(90deg, #d6e3f4 0%, #e5efd8 100%)' }}>
       <style jsx>{`
         .banner-container {
           max-width: 1280px;
           margin: 0 auto;
           padding-left: calc(var(--container-padding-mobile) + 1.45rem);
           padding-right: var(--container-padding-mobile);
+          width: 100%;
         }
         @media (min-width: 640px) {
           .banner-container {
