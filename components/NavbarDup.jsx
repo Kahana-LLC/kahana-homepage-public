@@ -742,7 +742,7 @@ function NavBar() {
                   </div>
                 </div>
                 <div className="dropdown-section">
-                  <Link href="/buyers-guide" className="block p-4 bg-gradient-to-r from-[#66C2BE]/5 to-[#8CB7D0]/5 rounded-lg border border-[#66C2BE]/20 hover:from-[#66C2BE]/10 hover:to-[#8CB7D0]/10 hover:border-[#66C2BE]/30 transition-all duration-200" onClick={() => setOpenDropdown(null)}>
+                  <Link href="/enterprise-buyer-guide" className="block p-4 bg-gradient-to-r from-[#66C2BE]/5 to-[#8CB7D0]/5 rounded-lg border border-[#66C2BE]/20 hover:from-[#66C2BE]/10 hover:to-[#8CB7D0]/10 hover:border-[#66C2BE]/30 transition-all duration-200 no-underline" onClick={() => setOpenDropdown(null)}>
                     <div className="w-full h-32 rounded-lg overflow-hidden mb-3">
                       <img 
                         src="/assets/pexels-kamo11235-667838.jpg" 
@@ -750,7 +750,7 @@ function NavBar() {
                         className="w-full h-full object-cover"
                       />
                     </div>
-                    <div className="font-semibold text-gray-900 text-sm leading-tight">Enterprise Browser Buyers Guide</div>
+                    <div className="font-semibold text-gray-900 text-sm leading-tight no-underline">Enterprise Browser Buyer Guide</div>
                   </Link>
                 </div>
               </div>
