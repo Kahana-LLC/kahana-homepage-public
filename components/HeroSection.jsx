@@ -15,7 +15,7 @@ export default function HeroSection() {
             
             <div className="lg:grid lg:grid-cols-12 lg:gap-8 lg:items-center">
               <div className="lg:col-span-7 px-4 sm:px-6 sm:text-center md:mx-auto md:max-w-2xl lg:flex lg:items-center lg:text-left relative">
-                <div className="invisible md:visible absolute top-15 -left-7 w-40 h-40 bg-yellow-300/50 rounded-full filter blur-3xl opacity-50 animate-blob"></div>
+                <div className="invisible md:visible absolute top-15 -left-7 w-40 h-40 bg-[#728552]/30 rounded-full filter blur-3xl opacity-50 animate-blob"></div>
                 {/* Elegant accent dot */}
                 <div className="hidden lg:block absolute top-8 -left-4 w-2 h-2 rounded-full bg-[#30400D]/40"></div>
                 <div>
@@ -38,7 +38,7 @@ export default function HeroSection() {
                 </div>
               </div>
               <div className="lg:col-span-5 hidden lg:block">
-                <div className="relative w-[450px] h-[450px] rounded-full overflow-hidden bg-gradient-to-b from-[#F3F8E4] to-[#E0D48C] mx-auto">
+                <div className="relative w-[450px] h-[450px] rounded-full overflow-hidden bg-gradient-to-b from-[#F3F8E4] to-[#728552]/40 mx-auto">
                   {/* Oasis Animation */}
                   <div className="absolute inset-0">
                     {/* Sand Dunes - adjusted for circular container */}
@@ -54,16 +54,16 @@ export default function HeroSection() {
                         />
                         <path
                           d="M0 140 Q112.5 70 225 140 T450 140 L450 200 L0 200 Z"
-                          className="fill-[#E0D48C]/50 animate-wave-fast"
+                          className="fill-[#728552]/50 animate-wave-fast"
                         />
                       </svg>
                     </div>
                     
-                    {/* Sun - adjusted to yellow */}
+                    {/* Sun - adjusted to green/white */}
                     <div className="absolute top-12 left-1/2 transform -translate-x-1/2">
-                      <div className="w-20 h-20 rounded-full bg-yellow-300/80 animate-pulse">
-                        <div className="absolute inset-0 rounded-full bg-yellow-200/30 animate-ripple"></div>
-                        <div className="absolute inset-0 rounded-full bg-yellow-100/20 animate-ripple-delayed"></div>
+                      <div className="w-20 h-20 rounded-full bg-white/60 animate-pulse">
+                        <div className="absolute inset-0 rounded-full bg-[#728552]/20 animate-ripple"></div>
+                        <div className="absolute inset-0 rounded-full bg-[#788B59]/15 animate-ripple-delayed"></div>
                       </div>
                     </div>
 
@@ -73,8 +73,8 @@ export default function HeroSection() {
                       <svg width="24" height="24" viewBox="0 0 24 24" className="fill-[#788B59]/70">
                         <path d="M12,2.5c-0.5,0-1,0.2-1.4,0.6L8,6v2l4-3l4,3V6l-2.6-2.9C13,2.7,12.5,2.5,12,2.5z"/>
                         <path d="M8,8v6c0,1.1,0.9,2,2,2h4c1.1,0,2-0.9,2-2V8H8z"/>
-                        <path className="animate-flame" fill="#FFA500" d="M10,16l2,3l2-3H10z"/>
-                        <path className="animate-flame-inner" fill="#FF4500" d="M11,16l1,2l1-2H11z"/>
+                        <path className="animate-flame" fill="#728552" d="M10,16l2,3l2-3H10z"/>
+                        <path className="animate-flame-inner" fill="#788B59" d="M11,16l1,2l1-2H11z"/>
                       </svg>
                     </div>
 
@@ -82,8 +82,8 @@ export default function HeroSection() {
                       <svg width="24" height="24" viewBox="0 0 24 24" className="fill-[#788B59]/70">
                         <path d="M12,2.5c-0.5,0-1,0.2-1.4,0.6L8,6v2l4-3l4,3V6l-2.6-2.9C13,2.7,12.5,2.5,12,2.5z"/>
                         <path d="M8,8v6c0,1.1,0.9,2,2,2h4c1.1,0,2-0.9,2-2V8H8z"/>
-                        <path className="animate-flame" fill="#fbbf24" d="M10,16l2,3l2-3H10z"/>
-                        <path className="animate-flame-inner" fill="#ea580c" d="M11,16l1,2l1-2H11z"/>
+                        <path className="animate-flame" fill="#728552" d="M10,16l2,3l2-3H10z"/>
+                        <path className="animate-flame-inner" fill="#788B59" d="M11,16l1,2l1-2H11z"/>
                       </svg>
                     </div>
 
@@ -91,8 +91,8 @@ export default function HeroSection() {
                       <svg width="24" height="24" viewBox="0 0 24 24" className="fill-[#788B59]/70">
                         <path d="M12,2.5c-0.5,0-1,0.2-1.4,0.6L8,6v2l4-3l4,3V6l-2.6-2.9C13,2.7,12.5,2.5,12,2.5z"/>
                         <path d="M8,8v6c0,1.1,0.9,2,2,2h4c1.1,0,2-0.9,2-2V8H8z"/>
-                        <path className="animate-flame" fill="#fbbf24" d="M10,16l2,3l2-3H10z"/>
-                        <path className="animate-flame-inner" fill="#ea580c" d="M11,16l1,2l1-2H11z"/>
+                        <path className="animate-flame" fill="#728552" d="M10,16l2,3l2-3H10z"/>
+                        <path className="animate-flame-inner" fill="#788B59" d="M11,16l1,2l1-2H11z"/>
                       </svg>
                     </div>
 
@@ -100,8 +100,8 @@ export default function HeroSection() {
                       <svg width="24" height="24" viewBox="0 0 24 24" className="fill-[#788B59]/70">
                         <path d="M12,2.5c-0.5,0-1,0.2-1.4,0.6L8,6v2l4-3l4,3V6l-2.6-2.9C13,2.7,12.5,2.5,12,2.5z"/>
                         <path d="M8,8v6c0,1.1,0.9,2,2,2h4c1.1,0,2-0.9,2-2V8H8z"/>
-                        <path className="animate-flame" fill="#fbbf24" d="M10,16l2,3l2-3H10z"/>
-                        <path className="animate-flame-inner" fill="#ea580c" d="M11,16l1,2l1-2H11z"/>
+                        <path className="animate-flame" fill="#728552" d="M10,16l2,3l2-3H10z"/>
+                        <path className="animate-flame-inner" fill="#788B59" d="M11,16l1,2l1-2H11z"/>
                       </svg>
                     </div>
 
@@ -109,8 +109,8 @@ export default function HeroSection() {
                       <svg width="24" height="24" viewBox="0 0 24 24" className="fill-[#788B59]/70">
                         <path d="M12,2.5c-0.5,0-1,0.2-1.4,0.6L8,6v2l4-3l4,3V6l-2.6-2.9C13,2.7,12.5,2.5,12,2.5z"/>
                         <path d="M8,8v6c0,1.1,0.9,2,2,2h4c1.1,0,2-0.9,2-2V8H8z"/>
-                        <path className="animate-flame" fill="#fbbf24" d="M10,16l2,3l2-3H10z"/>
-                        <path className="animate-flame-inner" fill="#ea580c" d="M11,16l1,2l1-2H11z"/>
+                        <path className="animate-flame" fill="#728552" d="M10,16l2,3l2-3H10z"/>
+                        <path className="animate-flame-inner" fill="#788B59" d="M11,16l1,2l1-2H11z"/>
                       </svg>
                     </div>
 
