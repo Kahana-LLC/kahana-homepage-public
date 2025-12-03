@@ -1554,9 +1554,10 @@ export default function EnterpriseBuyerGuidePage() {
               <div className="space-y-4 text-left">
                 <Accordion title="Will my existing web applications work with an enterprise browser?">
                   <p>
-                    Enterprise browsers like Oasis are built on the same Chromium foundation as popular browsers 
-                    including Chrome, Edge, and Brave. This ensures complete compatibility with any web application 
-                    that functions properly in standard browsers, providing identical rendering and functionality.
+                    Since Oasis is built on Firefox or Chrome, all websites should work. Enterprise browsers like Oasis 
+                    are built on the same Chromium or Firefox foundation as popular browsers including Chrome, Edge, 
+                    and Brave. This ensures complete compatibility with any web application that functions properly in 
+                    standard browsers, providing identical rendering and functionality.
                   </p>
                 </Accordion>
 
