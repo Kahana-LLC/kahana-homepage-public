@@ -452,9 +452,9 @@ export default function EnterpriseBuyerGuidePage() {
         <meta name="twitter:description" content="Complete enterprise buyer guide for choosing and implementing the right enterprise browser solution for your organization." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <div style={{ background: '#FFFFFF', color: COLORS.primary, minHeight: '100vh' }}>
-        <div className="min-h-screen" style={{ background: '#FFFFFF' }}>
-          <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div style={{ background: '#FFFFFF', color: COLORS.primary, minHeight: '100vh', overflowX: 'hidden' }}>
+        <div className="min-h-screen" style={{ background: '#FFFFFF', overflowX: 'hidden' }}>
+          <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" style={{ overflowX: 'hidden' }}>
             {/* Hero Introduction Section - Perplexity/Gemini Hybrid Style */}
             <section 
               id="introduction" 
@@ -1444,9 +1444,10 @@ export default function EnterpriseBuyerGuidePage() {
             {/* Full-Width Media Carousel Section */}
             <section 
               id="user-experience" 
-              className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] py-16 md:py-24 bg-white"
+              className="w-full py-16 md:py-24 bg-white"
+              style={{ marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', width: '100vw', maxWidth: '100vw' }}
             >
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" style={{ overflowX: 'hidden' }}>
                 <div className="text-center mb-12">
                   <div className="tracking-wider mb-3 font-semibold text-base lg:text-lg capitalize" style={{ color: '#978455' }}>
                     Interface & Usability
@@ -1460,7 +1461,7 @@ export default function EnterpriseBuyerGuidePage() {
                   </div>
                 
                 {/* Media Carousel */}
-                <div className="relative w-full max-w-6xl mx-auto">
+                <div className="relative w-full max-w-6xl mx-auto" style={{ overflowX: 'hidden' }}>
                   <div className="relative overflow-hidden rounded-2xl bg-gray-100 shadow-2xl" style={{ aspectRatio: '16/9' }}>
                     {mediaItems.map((item, index) => (
                       <div
@@ -1667,8 +1668,12 @@ export default function EnterpriseBuyerGuidePage() {
             {/* Full-Width CTA Banner */}
             <section 
               id="getting-started-with-oasis" 
-              className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] py-20 md:py-28 mb-0"
+              className="w-full py-20 md:py-28 mb-0"
               style={{
+                marginLeft: 'calc(-50vw + 50%)',
+                marginRight: 'calc(-50vw + 50%)',
+                width: '100vw',
+                maxWidth: '100vw',
                 backgroundImage: 'url(/images/desert-background-5.jpg)',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
@@ -1677,7 +1682,7 @@ export default function EnterpriseBuyerGuidePage() {
             >
               {/* Overlay for text readability */}
               <div className="absolute inset-0 bg-white/90"></div>
-              <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+              <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center" style={{ overflowX: 'hidden' }}>
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-6">
                   Ready to Transform Your Enterprise Browsing Experience?
                 </h2>
@@ -1748,6 +1753,18 @@ export default function EnterpriseBuyerGuidePage() {
 
       <style jsx global>{`
         :root { color-scheme: light dark; }
+        
+        /* Prevent horizontal scrolling on mobile */
+        html, body {
+          overflow-x: hidden;
+          max-width: 100%;
+          position: relative;
+        }
+        
+        * {
+          box-sizing: border-box;
+        }
+        
         @media (prefers-color-scheme: dark) {
           body { background: #0b1526; color: #e5e7eb; }
           header, .toc nav { background: #fff ; border-color: #1f2a44 ; }
