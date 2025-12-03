@@ -483,8 +483,8 @@ export default function EnterpriseBuyerGuidePage() {
                   Bundle enterprise-grade security with the most elegant user experience
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center gap-4 mt-8">
-                  <Link href="#what-is-oasis" className="btn-primary inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-full shadow-lg shadow-[#4A6200]/20 transition-transform hover:scale-105 no-underline hover:no-underline focus:no-underline">
-                    Explore Features
+                  <Link href="/contact" className="btn-primary inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-full shadow-lg shadow-[#4A6200]/20 transition-transform hover:scale-105 no-underline hover:no-underline focus:no-underline">
+                    Get in Touch
                   </Link>
                 </div>
                 
