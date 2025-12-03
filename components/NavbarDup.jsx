@@ -742,7 +742,7 @@ function NavBar() {
                   </div>
                 </div>
                 <div className="dropdown-section">
-                  <Link href="/buyers-guide" className="block p-4 bg-gradient-to-r from-[#66C2BE]/5 to-[#8CB7D0]/5 rounded-lg border border-[#66C2BE]/20 hover:from-[#66C2BE]/10 hover:to-[#8CB7D0]/10 hover:border-[#66C2BE]/30 transition-all duration-200" onClick={() => setOpenDropdown(null)}>
+                  <Link href="/enterprise-buyer-guide" className="block p-4 bg-gradient-to-r from-[#66C2BE]/5 to-[#8CB7D0]/5 rounded-lg border border-[#66C2BE]/20 hover:from-[#66C2BE]/10 hover:to-[#8CB7D0]/10 hover:border-[#66C2BE]/30 transition-all duration-200 no-underline" onClick={() => setOpenDropdown(null)}>
                     <div className="w-full h-32 rounded-lg overflow-hidden mb-3">
                       <img 
                         src="/assets/pexels-kamo11235-667838.jpg" 
@@ -750,7 +750,7 @@ function NavBar() {
                         className="w-full h-full object-cover"
                       />
                     </div>
-                    <div className="font-semibold text-gray-900 text-sm leading-tight">Enterprise Browser Buyers Guide</div>
+                    <div className="font-semibold text-gray-900 text-sm leading-tight no-underline">Enterprise Browser Buyer Guide</div>
                   </Link>
                 </div>
               </div>
@@ -874,7 +874,7 @@ function NavBar() {
             <Link href="/white-paper-future-of-ergonomic-work" className="mobile-link">White Paper</Link>
             <Link href="/subscribe-to-insights" className="mobile-link">Newsletter</Link>
             <Link href="/community" className="mobile-link">Join Discord</Link>
-            <Link href="/buyers-guide" className="mobile-link flex items-center space-x-3 p-3 bg-gradient-to-r from-[#66C2BE]/5 to-[#8CB7D0]/5 rounded-lg border border-[#66C2BE]/20 hover:from-[#66C2BE]/10 hover:to-[#8CB7D0]/10 hover:border-[#66C2BE]/30 transition-all duration-200">
+            <Link href="/enterprise-buyer-guide" className="mobile-link flex items-center space-x-3 p-3 bg-gradient-to-r from-[#66C2BE]/5 to-[#8CB7D0]/5 rounded-lg border border-[#66C2BE]/20 hover:from-[#66C2BE]/10 hover:to-[#8CB7D0]/10 hover:border-[#66C2BE]/30 transition-all duration-200 no-underline">
               <div className="flex-shrink-0 w-12 h-12 rounded-lg overflow-hidden">
                 <img 
                   src="/assets/pexels-kamo11235-667838.jpg" 
@@ -883,7 +883,7 @@ function NavBar() {
                 />
               </div>
               <div className="flex-1">
-                <div className="font-medium text-gray-900">Enterprise Browser Buyer Guide</div>
+                <div className="font-medium text-gray-900 no-underline">Enterprise Browser Buyer Guide</div>
                 <div className="text-xs text-[#4A5745] mt-1">Comprehensive guide for enterprise decision makers</div>
               </div>
             </Link>

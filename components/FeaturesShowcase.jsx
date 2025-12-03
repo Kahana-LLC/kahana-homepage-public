@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const conceptCards = [
   {
@@ -41,56 +42,77 @@ export default function FeaturesShowcase() {
   };
 
   return (
-    <div className="bg-white py-12 sm:py-24 md:py-32">
+    <div className="bg-white py-10 sm:py-16 md:py-24 lg:py-32 overflow-x-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 features-section">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-base sm:text-xl font-semibold leading-8 text-[#978455] mb-2">Enterprise Browser</h2>
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-[#313A00]">
+        <div className="mx-auto max-w-2xl text-center w-full">
+          <h2 className="text-xl font-semibold leading-8 text-[#978455] mb-2">Enterprise Browser</h2>
+          <h1 className="text-3xl font-semibold tracking-tight text-[#313A00] sm:text-4xl break-words">
             Everything You Need to Flow Effortlessly
           </h1>
-          <p className="mt-4 sm:mt-6 text-base sm:text-lg leading-7 sm:leading-8 text-[#333333] px-2">
+          <p className="mt-4 text-lg text-[#4A5745] break-words">
             Oasis gives you the tools to simplify your workflow, stay focused, and work with calm precision.
           </p>
-          <div className="mt-6 sm:mt-8">
+          <div className="mt-8">
             <Link href="/products/enterprise-browser">
-              <button className="btn-primary inline-flex items-center justify-center px-6 py-2.5 sm:px-8 sm:py-3 text-sm sm:text-base no-underline hover:no-underline focus:no-underline">
+              <button className="btn-primary inline-flex items-center justify-center px-8 py-3 text-base no-underline hover:no-underline focus:no-underline">
                 Learn more
               </button>
             </Link>
           </div>
         </div>
 
-        <div className="mx-auto mt-10 sm:mt-16 max-w-6xl">
+        <div className="mx-auto mt-8 sm:mt-12 md:mt-16 max-w-6xl w-full">
           <div className="relative">
+            {/* Mobile scroll hint */}
+            <div className="md:hidden absolute -top-6 right-4 text-xs text-gray-500 flex items-center gap-1">
+              <span>Swipe</span>
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </div>
             <div
               ref={carouselRef}
-              className="flex gap-3 sm:gap-5 overflow-x-auto scroll-smooth pb-4 snap-x snap-mandatory px-2 sm:px-4 md:px-6 -mx-2 sm:mx-0"
-              style={{ WebkitOverflowScrolling: 'touch' }}
+              className="flex gap-3 sm:gap-4 md:gap-5 overflow-x-auto scroll-smooth pb-6 snap-x snap-mandatory px-2 sm:px-4 md:px-6 hide-scrollbar"
+              style={{ 
+                WebkitOverflowScrolling: 'touch',
+                scrollbarWidth: 'none',
+                msOverflowStyle: 'none'
+              }}
             >
+              <style jsx global>{`
+                .hide-scrollbar::-webkit-scrollbar {
+                  display: none;
+                }
+              `}</style>
             {conceptCards.map((card, index) => (
               <Link
                 key={index}
                 href={card.link}
-                className="group relative flex w-[85vw] sm:w-full max-w-sm flex-shrink-0 snap-center md:snap-start flex-col overflow-hidden rounded-[20px] sm:rounded-[26px] border border-white/80 bg-white/90 px-4 py-4 sm:px-6 sm:py-5 md:max-w-md md:px-7 md:py-6 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur transition-transform duration-500 hover:-translate-y-1 no-underline"
+                className="group relative flex w-[calc(100vw-5rem)] sm:w-[45vw] md:w-full max-w-sm flex-shrink-0 snap-center md:snap-start flex-col overflow-hidden rounded-[18px] sm:rounded-[22px] md:rounded-[26px] border border-white/80 bg-white/90 px-3.5 py-3.5 sm:px-5 sm:py-4 md:px-6 md:py-5 lg:max-w-md lg:px-7 lg:py-6 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur transition-transform duration-300 active:scale-[0.98] md:hover:-translate-y-1 no-underline touch-manipulation"
+                style={{ touchAction: 'pan-y' }}
               >
-                <div className="flex flex-col gap-2 sm:gap-3 text-left min-h-[120px] sm:min-h-[150px]">
-                  <p className="text-[0.55rem] sm:text-[0.6rem] font-semibold uppercase tracking-[0.25em] sm:tracking-[0.3em] text-[#978455]">
+                <div className="flex flex-col gap-1.5 sm:gap-2 md:gap-3 text-left min-h-[100px] sm:min-h-[130px] md:min-h-[150px]">
+                  <p className="text-[0.5rem] sm:text-[0.55rem] md:text-[0.6rem] font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] md:tracking-[0.3em] text-[#978455]">
                     Feature highlight
                   </p>
-                  <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-[#1F2D00]">
+                  <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-[#1F2D00] leading-tight">
                     {card.title}
                   </h3>
                   {card.description && (
-                    <p className="text-sm sm:text-base leading-6 sm:leading-7 text-[#373F29]">
+                    <p className="text-xs sm:text-sm md:text-base leading-5 sm:leading-6 md:leading-7 text-[#373F29]">
                       {card.description}
                     </p>
                   )}
                 </div>
-                <div className="mt-3 sm:mt-4 h-[180px] sm:h-[220px] overflow-hidden rounded-[16px] sm:rounded-[20px] flex items-center justify-center bg-white/50">
-                  <img
+                <div className="relative mt-2.5 sm:mt-3 md:mt-4 h-[160px] sm:h-[190px] md:h-[220px] overflow-hidden rounded-[14px] sm:rounded-[18px] md:rounded-[20px] bg-white/50">
+                  <Image
                     src={card.image || `https://via.placeholder.com/600x400/E4E9CC/728552?text=${encodeURIComponent(card.title)}`}
                     alt={card.title}
-                    className="max-h-full w-auto object-contain"
+                    fill
+                    sizes="(max-width: 640px) 85vw, (max-width: 768px) 45vw, 400px"
+                    className="object-contain"
+                    loading="lazy"
+                    quality={85}
                   />
                 </div>
               </Link>

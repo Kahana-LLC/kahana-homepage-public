@@ -483,8 +483,8 @@ export default function EnterpriseBuyerGuidePage() {
                   Bundle enterprise-grade security with the most elegant user experience
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center gap-4 mt-8">
-                  <Link href="#what-is-oasis" className="btn-primary inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-full shadow-lg shadow-[#4A6200]/20 transition-transform hover:scale-105 no-underline hover:no-underline focus:no-underline">
-                    Explore Features
+                  <Link href="/contact" className="btn-primary inline-flex items-center justify-center px-10 py-4 text-lg font-bold no-underline hover:no-underline focus:no-underline">
+                    Get in Touch
                   </Link>
                 </div>
                 
@@ -869,8 +869,7 @@ export default function EnterpriseBuyerGuidePage() {
                   </p>
                           <p className="text-lg text-[#4A5745] leading-relaxed opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-96 transition-all duration-500 overflow-hidden">
                     You maintain control over your AI's learning and behavior. Additionally, maintaining security 
-                    within an AI browser presents unique challenges that we specialize in solving. 
-                            <Link href="/security-guide" className="text-[#4A6200] hover:text-[#3E5300] ml-1 font-semibold underline" style={{ textDecoration: 'none' }}>Learn more about our security approach</Link>.
+                    within an AI browser presents unique challenges that we specialize in solving.
                           </p>
                         </div>
                       </div>

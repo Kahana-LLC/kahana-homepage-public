@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function ProductSection() {
   const [isVisible, setIsVisible] = useState(false);
@@ -42,11 +43,17 @@ export default function ProductSection() {
           <div className={`relative w-full max-w-3xl transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
             <div className="absolute inset-0 translate-x-4 translate-y-4 rounded-[34px] bg-gradient-to-br from-white/70 to-transparent blur-[160px]" />
             <div className="relative overflow-hidden rounded-[36px] border border-white/80 bg-white/80 p-4 shadow-[0_35px_120px_rgba(20,32,0,0.18)] backdrop-blur">
-              <img
-                src="/images/Welcome to Oasis.svg"
-                alt="Welcome to Oasis"
-                className="w-full rounded-[28px]"
-              />
+              <div className="relative w-full aspect-[16/10] rounded-[28px] overflow-hidden">
+                <Image
+                  src="/images/Welcome to Oasis.svg"
+                  alt="Welcome to Oasis"
+                  fill
+                  priority
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
+                  className="object-contain"
+                  quality={90}
+                />
+              </div>
             </div>
           </div>
         </div>
