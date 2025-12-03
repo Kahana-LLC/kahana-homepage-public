@@ -74,14 +74,14 @@ export default function EnterpriseBrowser() {
       </Script>
 
       {/* Hero Section */}
-      <section className="bg-white py-20">
+      <section className="bg-white py-20 overflow-x-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h2 className="text-base font-semibold leading-7 text-[#728552] mb-3">Enterprise Browser</h2>
-            <h1 className="text-5xl font-bold text-[#4A5745] mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#4A5745] mb-6 break-words">
               Oasis
             </h1>
-            <p className="text-xl text-[#4A5745] max-w-3xl mx-auto mb-8">
+            <p className="text-lg sm:text-xl text-[#4A5745] max-w-3xl mx-auto mb-8 break-words">
               Fall in love with enterprise-grade security, ergonomic workflows, and the most elegant user experience.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -97,28 +97,31 @@ export default function EnterpriseBrowser() {
       </section>
 
       {/* Enterprise Browser Image */}
-      <section className="bg-white py-16">
+      <section className="bg-white py-16 overflow-x-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-center">
-            <Image
-              src="/images/enterprise.jpeg"
-              alt="Oasis Enterprise Browser Interface"
-              width={1200}
-              height={800}
-              className="rounded-lg shadow-xl"
-              priority
-            />
+          <div className="flex justify-center w-full">
+            <div className="w-full max-w-full">
+              <Image
+                src="/images/enterprise.jpeg"
+                alt="Oasis Enterprise Browser Interface"
+                width={1200}
+                height={800}
+                className="w-full h-auto rounded-lg shadow-xl"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 1200px"
+                priority
+              />
+            </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="bg-gradient-to-r from-[#788B59] to-[#728552] py-16">
+      <section className="bg-gradient-to-r from-[#788B59] to-[#728552] py-16 overflow-x-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-white mb-6" >
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6 break-words" >
             Ready to Transform Your Enterprise Browsing?
           </h2>
-          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto break-words">
             Schedule a demo to see how Oasis can enhance security, improve collaboration, and streamline your workflow.
           </p>
           <Link href="/schedule-demo" className="btn-primary inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline">
