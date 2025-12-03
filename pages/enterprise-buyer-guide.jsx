@@ -1759,10 +1759,45 @@ export default function EnterpriseBuyerGuidePage() {
           overflow-x: hidden;
           max-width: 100%;
           position: relative;
+          width: 100%;
         }
         
         * {
           box-sizing: border-box;
+        }
+        
+        /* Ensure all containers respect viewport width */
+        main, section, div {
+          max-width: 100%;
+        }
+        
+        /* Fix for images and media that might overflow */
+        img, video {
+          max-width: 100%;
+          height: auto;
+        }
+        
+        /* Ensure tables don't cause horizontal scroll */
+        table {
+          width: 100%;
+          table-layout: auto;
+        }
+        
+        @media (max-width: 640px) {
+          /* Additional mobile fixes */
+          section {
+            padding-left: 1rem;
+            padding-right: 1rem;
+          }
+          
+          /* Ensure full-width sections don't overflow */
+          section[id="user-experience"],
+          section[id="getting-started-with-oasis"] {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            width: 100% !important;
+            max-width: 100% !important;
+          }
         }
         
         @media (prefers-color-scheme: dark) {
