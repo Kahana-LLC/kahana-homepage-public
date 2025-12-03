@@ -44,16 +44,16 @@ export default function FeaturesShowcase() {
     <div className="bg-white py-10 sm:py-16 md:py-24 lg:py-32 overflow-x-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 features-section">
         <div className="mx-auto max-w-2xl text-center w-full">
-          <h2 className="text-sm sm:text-base md:text-xl font-semibold leading-6 sm:leading-8 text-[#978455] mb-2 sm:mb-3">Enterprise Browser</h2>
-          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-[#313A00] leading-tight sm:leading-tight break-words">
+          <h2 className="text-xl font-semibold leading-8 text-[#978455] mb-2">Enterprise Browser</h2>
+          <h1 className="text-3xl font-semibold tracking-tight text-[#313A00] sm:text-4xl break-words">
             Everything You Need to Flow Effortlessly
           </h1>
-          <p className="mt-3 sm:mt-4 md:mt-6 text-sm sm:text-base md:text-lg leading-6 sm:leading-7 md:leading-8 text-[#333333] break-words">
+          <p className="mt-4 text-lg text-[#4A5745] break-words">
             Oasis gives you the tools to simplify your workflow, stay focused, and work with calm precision.
           </p>
-          <div className="mt-5 sm:mt-6 md:mt-8">
+          <div className="mt-8">
             <Link href="/products/enterprise-browser">
-              <button className="btn-primary inline-flex items-center justify-center px-5 py-2 sm:px-6 sm:py-2.5 md:px-8 md:py-3 text-xs sm:text-sm md:text-base no-underline hover:no-underline focus:no-underline">
+              <button className="btn-primary inline-flex items-center justify-center px-8 py-3 text-base no-underline hover:no-underline focus:no-underline">
                 Learn more
               </button>
             </Link>
