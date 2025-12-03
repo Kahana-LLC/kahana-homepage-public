@@ -1,6 +1,5 @@
 import "../styles/globals.css";
 import NavbarDup from "../components/NavbarDup";
-import GlobalBanner from "../components/GlobalBanner";
 import Footer from "../components/Footer";
 import SEO from "../components/SEO";
 import { useEffect } from "react";
@@ -57,7 +56,6 @@ function MyApp({ Component, pageProps }) {
       />
       <div style={{ zIndex: "100" }} className="sticky top-0">
         <NavbarDup />
-        <GlobalBanner />
       </div>
       <main className="flex-grow">
         <Component {...pageProps} />

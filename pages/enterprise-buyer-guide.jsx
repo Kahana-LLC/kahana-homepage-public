@@ -464,12 +464,15 @@ export default function EnterpriseBuyerGuidePage() {
                   The Future of <br className="hidden md:block" />
                     Enterprise Browsing
                 </h1>
-                <p className="text-xl md:text-2xl lg:text-3xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-medium mb-10">
+                <p className="text-xl md:text-2xl lg:text-3xl max-w-3xl mx-auto leading-relaxed font-medium mb-10" style={{ color: '#313A00' }}>
                   Combine enterprise-grade security with AI-powered intelligence in one seamless, spatial experience.
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center gap-4 mt-8">
                   <Link href="#what-is-oasis" className="btn-primary inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-full shadow-lg shadow-[#4A6200]/20 transition-transform hover:scale-105 no-underline hover:no-underline focus:no-underline">
                     Explore Features
+                  </Link>
+                  <Link href="/oasis-pricing" className="btn-secondary inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-full shadow-lg transition-transform hover:scale-105 no-underline hover:no-underline focus:no-underline">
+                    View Pricing
                   </Link>
                 </div>
                 

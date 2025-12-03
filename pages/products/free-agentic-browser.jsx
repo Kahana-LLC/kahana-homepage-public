@@ -159,7 +159,7 @@ export default function FreeAgenticBrowser() {
       </Script>
 
       <main className="scroll-smooth bg-white relative">
-        {/* Hero Section */}
+      {/* Hero Section */}
         <FadeInSection>
           <section className="relative overflow-hidden py-24 sm:py-32">
             <div className="pointer-events-none absolute inset-0">
@@ -171,24 +171,24 @@ export default function FreeAgenticBrowser() {
                 Free Agentic Browser
               </h2>
               <h1 className="text-4xl font-semibold leading-tight text-[#313A00] sm:text-5xl mb-6">
-                Oasis
-              </h1>
+              Oasis
+            </h1>
               <p className="text-lg text-[#4A5745] max-w-3xl mx-auto mb-10">
-                A productivity-focused, modern browser designed for personal use, featuring smart organization tools, AI-powered assistance, and a seamless browsing experience. Boost your productivity and take control of your digital workflow.
-              </p>
+              A productivity-focused, modern browser designed for personal use, featuring smart organization tools, AI-powered assistance, and a seamless browsing experience. Boost your productivity and take control of your digital workflow.
+            </p>
               <div className="flex flex-col gap-3 sm:flex-row justify-center">
                 <Link href="/oasis-waitlist" className="btn-primary inline-flex items-center justify-center px-8 py-3 text-base no-underline hover:no-underline focus:no-underline">
-                  Join Waitlist
-                </Link>
-              </div>
-            </div>
-          </section>
+                Join Waitlist
+            </Link>
+          </div>
+        </div>
+      </section>
         </FadeInSection>
 
         {/* Elegant section divider */}
         <div className="relative h-px bg-gradient-to-r from-transparent via-[#30400D]/20 to-transparent mx-auto max-w-4xl"></div>
 
-        {/* Productivity Features Section */}
+      {/* Productivity Features Section */}
         <FadeInSection delay={100}>
           <section className="relative overflow-hidden py-20 sm:py-28">
             <div className="pointer-events-none absolute inset-0">
@@ -199,16 +199,16 @@ export default function FreeAgenticBrowser() {
               <div className="text-center mb-12">
                 <h2 className="text-xl font-semibold leading-8 text-[#978455] mb-2">
                   Productivity-First
-                </h2>
+          </h2>
                 <h1 className="text-3xl font-semibold tracking-tight text-[#313A00] sm:text-4xl mb-4">
                   Features Designed for Maximum Efficiency
                 </h1>
                 <p className="text-lg text-[#4A5745] max-w-3xl mx-auto">
-                  Boost your productivity with intelligent features designed to streamline your workflow and enhance your browsing experience.
-                </p>
+            Boost your productivity with intelligent features designed to streamline your workflow and enhance your browsing experience.
+          </p>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {productivityFeatures.map((feature, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {productivityFeatures.map((feature, index) => (
                   <div
                     key={index}
                     className="relative bg-white/90 border border-white/80 rounded-[26px] px-6 py-8 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur-lg hover:shadow-[0_35px_90px_rgba(32,47,0,0.18)] transition-all duration-300"
@@ -220,26 +220,26 @@ export default function FreeAgenticBrowser() {
                       {feature.description}
                     </p>
                     <ul className="space-y-3">
-                      {feature.details.map((detail, dIndex) => (
+                  {feature.details.map((detail, dIndex) => (
                         <li key={dIndex} className="flex items-start text-base text-[#4E5534]">
                           <svg className="w-5 h-5 mr-3 text-[#4A6200] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                          </svg>
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
                           <span>{detail}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
+                    </li>
+                  ))}
+                </ul>
               </div>
-            </div>
-          </section>
+            ))}
+          </div>
+        </div>
+      </section>
         </FadeInSection>
 
         {/* Elegant section divider */}
         <div className="relative h-px bg-gradient-to-r from-transparent via-[#30400D]/20 to-transparent mx-auto max-w-4xl"></div>
 
-        {/* Browsing Features Section */}
+      {/* Browsing Features Section */}
         <FadeInSection delay={150}>
           <section className="relative overflow-hidden py-20 sm:py-28">
             <div className="pointer-events-none absolute inset-0">
@@ -250,15 +250,15 @@ export default function FreeAgenticBrowser() {
               <div className="text-center mb-12">
                 <h2 className="text-xl font-semibold leading-8 text-[#978455] mb-2">
                   Smart Browsing
-                </h2>
+          </h2>
                 <h1 className="text-3xl font-semibold tracking-tight text-[#313A00] sm:text-4xl mb-4">
                   Experience a New Way of Browsing
                 </h1>
                 <p className="text-lg text-[#4A5745] max-w-3xl mx-auto">
-                  Experience a new way of browsing with intelligent organization and productivity features designed for personal use.
-                </p>
+            Experience a new way of browsing with intelligent organization and productivity features designed for personal use.
+          </p>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {browsingFeatures.map((feature, index) => (
                   <div
                     key={index}
@@ -271,26 +271,26 @@ export default function FreeAgenticBrowser() {
                       {feature.description}
                     </p>
                     <ul className="space-y-3">
-                      {feature.details.map((detail, dIndex) => (
+                  {feature.details.map((detail, dIndex) => (
                         <li key={dIndex} className="flex items-start text-base text-[#4E5534]">
                           <svg className="w-5 h-5 mr-3 text-[#4A6200] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                          </svg>
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
                           <span>{detail}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
+                    </li>
+                  ))}
+                </ul>
               </div>
-            </div>
-          </section>
+            ))}
+          </div>
+        </div>
+      </section>
         </FadeInSection>
 
         {/* Elegant section divider */}
         <div className="relative h-px bg-gradient-to-r from-transparent via-[#30400D]/20 to-transparent mx-auto max-w-4xl"></div>
 
-        {/* CTA Section */}
+      {/* CTA Section */}
         <FadeInSection delay={200}>
           <section 
             className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] py-20 md:py-28 mb-0"
@@ -305,20 +305,20 @@ export default function FreeAgenticBrowser() {
             <div className="absolute inset-0 bg-white/60"></div>
             <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-6">
-                Ready to Boost Your Productivity?
-              </h2>
+            Ready to Boost Your Productivity?
+          </h2>
               <p className="text-xl md:text-2xl mb-10 max-w-3xl mx-auto leading-relaxed font-bold" style={{ color: '#313A00' }}>
-                Download Oasis Free Agentic Browser today and experience enhanced productivity with smart organization tools and AI-powered assistance.
-              </p>
+            Download Oasis Free Agentic Browser today and experience enhanced productivity with smart organization tools and AI-powered assistance.
+          </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <Link href="/oasis-waitlist" className="btn-primary inline-flex items-center justify-center px-10 py-4 text-lg font-bold no-underline hover:no-underline focus:no-underline">
-                  Join Waitlist
-                </Link>
+              Join Waitlist
+          </Link>
               </div>
-            </div>
-          </section>
+        </div>
+      </section>
         </FadeInSection>
       </main>
     </>
   );
-}
+} 
