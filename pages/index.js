@@ -58,6 +58,7 @@ export async function getStaticProps() {
 
 export default function Home({ blogPosts }) {
   const [scrollY, setScrollY] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
   // Homepage-specific schema
   const homepageSchema = {
     "@context": "https://schema.org",
@@ -142,9 +143,20 @@ export default function Home({ blogPosts }) {
       setScrollY(window.scrollY);
     };
 
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    // Check on mount and resize
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
     window.addEventListener("scroll", handleScroll);
     handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
+    
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", checkMobile);
+    };
   }, []);
 
   return (
@@ -192,19 +204,20 @@ export default function Home({ blogPosts }) {
       />
 
       <div className="relative bg-white shadow-[0_0_40px_rgba(0,0,0,0.08)] overflow-hidden">
-        <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        {/* Background gradients - fixed on desktop, absolute on mobile for better performance */}
+        <div className={`${isMobile ? 'absolute' : 'fixed'} inset-0 overflow-hidden pointer-events-none z-0`}>
           <div
             className="absolute top-20 -left-20 w-[600px] h-[600px] rounded-full filter blur-[220px] opacity-40 animate-pulse"
             style={{
               background: "radial-gradient(circle, #FCDD9F 0%, transparent 70%)",
-              transform: `translateY(${scrollY * 0.1}px)`,
+              transform: isMobile ? 'none' : `translateY(${scrollY * 0.1}px)`,
             }}
           />
           <div
             className="absolute top-60 right-0 w-[700px] h-[700px] rounded-full filter blur-[260px] opacity-30 animate-pulse"
             style={{
               background: "radial-gradient(circle, #617500 0%, transparent 70%)",
-              transform: `translateY(${scrollY * 0.15}px)`,
+              transform: isMobile ? 'none' : `translateY(${scrollY * 0.15}px)`,
               animationDelay: "1s",
             }}
           />
@@ -212,7 +225,7 @@ export default function Home({ blogPosts }) {
             className="absolute -bottom-20 left-1/3 w-[600px] h-[600px] rounded-full filter blur-[220px] opacity-35 animate-pulse"
             style={{
               background: "radial-gradient(circle, #8BA500 0%, transparent 70%)",
-              transform: `translateY(${scrollY * 0.05}px)`,
+              transform: isMobile ? 'none' : `translateY(${scrollY * 0.05}px)`,
               animationDelay: "2s",
             }}
           />
