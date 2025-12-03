@@ -14,6 +14,7 @@ import { blogIndex } from "../data/blog-index";
 import Link from "next/link";
 import { getAuthorDetails } from "../utils/authorUtils";
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 
 // Default placeholder for failed image loads
 const DEFAULT_PLACEHOLDER =
@@ -298,15 +299,15 @@ export default function Home({ blogPosts }) {
                       key={card.title}
                       className="relative bg-white/90 border border-white/80 rounded-[26px] px-5 py-6 shadow-[0_25px_70px_rgba(32,47,0,0.14)] flex flex-col gap-5 w-full max-w-[340px] mx-auto backdrop-blur-lg"
                     >
-                      <div className="w-full overflow-hidden rounded-[18px] border border-[#F6F3E7] bg-white/70 shadow-[0_25px_70px_rgba(27,33,0,0.18)]">
-                        <img
+                      <div className="relative w-full aspect-[4/3] overflow-hidden rounded-[18px] border border-[#F6F3E7] bg-white/70 shadow-[0_25px_70px_rgba(27,33,0,0.18)]">
+                        <Image
                           src={card.image}
                           alt={card.imageAlt || `${card.title} illustration`}
-                          loading={card.loading || "eager"}
-                          decoding="async"
-                          width={420}
-                          height={320}
-                          className="w-full object-cover"
+                          fill
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 340px"
+                          className="object-cover"
+                          loading="lazy"
+                          quality={85}
                         />
                       </div>
                       <div className="flex flex-col gap-3 text-left">

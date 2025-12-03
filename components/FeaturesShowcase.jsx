@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const conceptCards = [
   {
@@ -103,12 +104,15 @@ export default function FeaturesShowcase() {
                     </p>
                   )}
                 </div>
-                <div className="mt-2.5 sm:mt-3 md:mt-4 h-[160px] sm:h-[190px] md:h-[220px] overflow-hidden rounded-[14px] sm:rounded-[18px] md:rounded-[20px] flex items-center justify-center bg-white/50">
-                  <img
+                <div className="relative mt-2.5 sm:mt-3 md:mt-4 h-[160px] sm:h-[190px] md:h-[220px] overflow-hidden rounded-[14px] sm:rounded-[18px] md:rounded-[20px] bg-white/50">
+                  <Image
                     src={card.image || `https://via.placeholder.com/600x400/E4E9CC/728552?text=${encodeURIComponent(card.title)}`}
                     alt={card.title}
-                    className="max-h-full w-auto object-contain"
+                    fill
+                    sizes="(max-width: 640px) 85vw, (max-width: 768px) 45vw, 400px"
+                    className="object-contain"
                     loading="lazy"
+                    quality={85}
                   />
                 </div>
               </Link>
