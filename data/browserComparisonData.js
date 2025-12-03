@@ -5,7 +5,7 @@ export const browserData = {
     whoUsesIt: "Enterprise IT teams, privacy-centric businesses",
     privacy: "Zero-trust, no user tracking, no data collection",
     security: "Enterprise-grade, compliance ready",
-    aiFeatures: "Anthropic/Deepgram AI integrations",
+    aiFeatures: "Built into the core",
     platforms: "Windows, macOS",
     uniqueStrength: "Designed for corporate privacy, AI productivity tools",
     summary: "Best for enterprises needing Zero Trust + policy-based access",

@@ -71,7 +71,7 @@ const BrowserComparisonTable = () => {
     },
     'ai-powered': {
       name: 'AI-Powered',
-      filters: { aiFeatures: ['Anthropic/Deepgram AI integrations', 'Google AI (search, autofill, smart suggestions)', 'Microsoft Copilot, Bing AI', 'Aria AI assistant'] }
+      filters: { aiFeatures: ['Built into the core', 'Google AI (search, autofill, smart suggestions)', 'Microsoft Copilot, Bing AI', 'Aria AI assistant'] }
     },
     'privacy-focused': {
       name: 'Privacy-Focused',
@@ -520,7 +520,7 @@ export default BrowserComparisonTable;
 //     },
 //     'ai-powered': {
 //       name: 'AI-Powered',
-//       filters: { aiFeatures: ['Anthropic/Deepgram AI integrations', 'Google AI (search, autofill, smart suggestions)', 'Microsoft Copilot, Bing AI', 'Aria AI assistant'] }
+//       filters: { aiFeatures: ['Built into the core', 'Google AI (search, autofill, smart suggestions)', 'Microsoft Copilot, Bing AI', 'Aria AI assistant'] }
 //     },
 //     'privacy-focused': {
 //       name: 'Privacy-Focused',
