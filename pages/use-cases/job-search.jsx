@@ -88,7 +88,7 @@ export default function JobSearchWaitlist() {
                 <div className="w-full max-w-6xl mx-auto px-4 relative">
                   <div className="w-full mx-auto overflow-hidden rounded-2xl shadow-2xl">
                     <img
-                      src="/images/Welcome to Oasis.svg"
+                      src="/images/Welcome to Oasis.webp"
                       alt="Welcome to Oasis"
                       className="w-full h-auto"
                     />
