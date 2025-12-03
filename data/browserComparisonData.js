@@ -4,7 +4,7 @@ export const browserData = {
     type: "Enterprise",
     whoUsesIt: "All business functions",
     privacy: "Configurable privacy controls tailored to organizational needs",
-    security: "Enterprise-grade, compliance ready",
+    security: "Enterprise-grade",
     aiFeatures: "Built into the core",
     platforms: "Windows, macOS",
     uniqueStrength: "Designed for corporate privacy, AI productivity tools",
