@@ -176,6 +176,13 @@ export default function Home({ blogPosts }) {
           name="description"
           content="Kahana's Oasis Enterprise Browser helps teams stay organized, focused on ideas, and increase productivity while maintaining enterprise-grade security."
         />
+        {/* Preload critical hero image for faster LCP */}
+        <link
+          rel="preload"
+          as="image"
+          href="/images/Welcome to Oasis.svg"
+          fetchPriority="high"
+        />
       </Head>
 
       {/* Load Crisp chat asynchronously and defer until after interactive */}
