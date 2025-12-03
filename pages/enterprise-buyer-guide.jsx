@@ -555,22 +555,22 @@ export default function EnterpriseBuyerGuidePage() {
                   </div>
                   <h4 className="text-xl font-bold text-left mb-4" style={{ color: '#313A00' }}>Core Commands</h4>
                   <div className="space-y-2 mb-6 flex-grow">
-                    <div className="text-sm text-gray-700 text-left">
+                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
                       "Open new tab"
                     </div>
-                    <div className="text-sm text-gray-700 text-left">
+                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
                       "Organize all windows into groups"
                     </div>
-                    <div className="text-sm text-gray-700 text-left">
+                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
                       "Show tab 1 and tab 2 in split view"
                     </div>
-                    <div className="text-sm text-gray-700 text-left">
+                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
                       "Group all tabs by workspace"
                     </div>
-                    <div className="text-sm text-gray-700 text-left">
+                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
                       "Find and show tab from my groups"
                     </div>
-                    <div className="text-sm text-gray-700 text-left">
+                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
                       "Close all tabs in current group"
                     </div>
                   </div>
@@ -588,19 +588,19 @@ export default function EnterpriseBuyerGuidePage() {
                     Streamline your sales workflow with intelligent tab organization and quick access to CRM, email, and research tools.
                   </div>
                   <div className="space-y-2 mb-6 flex-grow">
-                    <div className="text-sm text-gray-700 text-left">
+                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
                       "Open Salesforce and email client in split view"
                     </div>
-                    <div className="text-sm text-gray-700 text-left">
+                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
                       "Group all prospect research tabs together"
                     </div>
-                    <div className="text-sm text-gray-700 text-left">
+                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
                       "Show deal pipeline and contract documents side by side"
                     </div>
-                    <div className="text-sm text-gray-700 text-left">
+                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
                       "Find and open prospect's LinkedIn profile from my groups"
                     </div>
-                    <div className="text-sm text-gray-700 text-left">
+                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
                       "Organize all outreach sequence tabs in one workspace"
                     </div>
                   </div>
@@ -618,19 +618,19 @@ export default function EnterpriseBuyerGuidePage() {
                     Manage campaigns, analyze performance, and create content with organized workspaces for all your marketing tools.
                   </div>
                   <div className="space-y-2 mb-6 flex-grow">
-                    <div className="text-sm text-gray-700 text-left">
+                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
                       "Open Google Ads and Meta Ads in split view for comparison"
                     </div>
-                    <div className="text-sm text-gray-700 text-left">
+                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
                       "Group all campaign analytics tabs by platform"
                     </div>
-                    <div className="text-sm text-gray-700 text-left">
+                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
                       "Show content calendar and design tool side by side"
                     </div>
-                    <div className="text-sm text-gray-700 text-left">
+                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
                       "Find A/B test results from my campaign groups"
                     </div>
-                    <div className="text-sm text-gray-700 text-left">
+                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
                       "Organize all social media management tabs in one workspace"
                     </div>
                   </div>
@@ -648,19 +648,19 @@ export default function EnterpriseBuyerGuidePage() {
                     Organize research sources, data analysis tools, and reference materials for efficient information gathering and analysis.
                   </div>
                   <div className="space-y-2 mb-6 flex-grow">
-                    <div className="text-sm text-gray-700 text-left">
+                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
                       "Show research paper and data visualization in split view"
                     </div>
-                    <div className="text-sm text-gray-700 text-left">
+                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
                       "Group all market research tabs by industry"
                     </div>
-                    <div className="text-sm text-gray-700 text-left">
+                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
                       "Open competitor analysis and benchmarking tools side by side"
                     </div>
-                    <div className="text-sm text-gray-700 text-left">
+                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
                       "Find specific dataset from my research groups"
                     </div>
-                    <div className="text-sm text-gray-700 text-left">
+                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
                       "Organize all citation sources and notes in one workspace"
                     </div>
                   </div>
@@ -678,19 +678,19 @@ export default function EnterpriseBuyerGuidePage() {
                     Streamline your development workflow with organized workspaces for code, documentation, testing, and deployment tools.
                   </div>
                   <div className="space-y-2 mb-6 flex-grow">
-                    <div className="text-sm text-gray-700 text-left">
+                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
                       "Open GitHub repo and API documentation in split view"
                     </div>
-                    <div className="text-sm text-gray-700 text-left">
+                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
                       "Group all frontend development tabs by feature branch"
                     </div>
-                    <div className="text-sm text-gray-700 text-left">
+                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
                       "Show code editor and test results side by side"
                     </div>
-                    <div className="text-sm text-gray-700 text-left">
+                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
                       "Find deployment logs from my project groups"
                     </div>
-                    <div className="text-sm text-gray-700 text-left">
+                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
                       "Organize all debugging tools and error tracking in one workspace"
                     </div>
                   </div>
