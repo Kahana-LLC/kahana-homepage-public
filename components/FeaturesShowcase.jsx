@@ -12,7 +12,7 @@ const conceptCards = [
   {
     title: "Zero Trust Security",
     link: "/solutions/zero-trust-security",
-    image: "/figma-imports/Security 1.png",
+    image: "/figma-imports/Security 1.webp",
     description: "Stay protected through continuous verification and calm, invisible security."
   },
   {
@@ -24,7 +24,7 @@ const conceptCards = [
   {
     title: "Secure Web Browsing",
     link: "/solutions/secure-browsing",
-    image: "/figma-imports/Security 2.png",
+    image: "/figma-imports/Security 2.webp",
     description: "Browse freely with built-in protection that feels natural, not intrusive."
   }
 ];
