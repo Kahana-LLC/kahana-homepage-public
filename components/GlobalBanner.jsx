@@ -49,7 +49,7 @@ export default function GlobalBanner() {
             <div className="ml-3">
               <p className="text-sm font-medium text-[#4A5745]">
                 <span className="md:hidden">
-                  AI browser that melds with your mind naturally.{' '}
+                  Meet Oasis: the most elegant browser.{' '}
                   <Link href="/oasis-waitlist" className="underline hover:!text-[#7A9200] transition-colors text-[#4A5745]">
                     Get access.
                   </Link>
