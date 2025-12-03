@@ -546,25 +546,20 @@ export default function EnterpriseBuyerGuidePage() {
                   </div>
                   <h4 className="text-xl font-bold text-left mb-4" style={{ color: '#313A00' }}>Core Commands</h4>
                   <ul className="space-y-2 mb-6 flex-grow">
-                    <li className="flex items-start gap-2 text-sm text-gray-700">
-                      <Icon.Zap className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#4A6200' }} />
-                      <span>"Open new tab"</span>
+                    <li className="text-sm text-gray-700">
+                      "Open new tab"
                     </li>
-                    <li className="flex items-start gap-2 text-sm text-gray-700">
-                      <Icon.Zap className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#4A6200' }} />
-                      <span>"Organize windows"</span>
+                    <li className="text-sm text-gray-700">
+                      "Organize windows"
                     </li>
-                    <li className="flex items-start gap-2 text-sm text-gray-700">
-                      <Icon.Zap className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#4A6200' }} />
-                      <span>"Open tab 1 and tab 2 splitview"</span>
+                    <li className="text-sm text-gray-700">
+                      "Open tab 1 and tab 2 splitview"
                     </li>
-                    <li className="flex items-start gap-2 text-sm text-gray-700">
-                      <Icon.Zap className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#4A6200' }} />
-                      <span>"Group all my tabs"</span>
+                    <li className="text-sm text-gray-700">
+                      "Group all my tabs"
                     </li>
-                    <li className="flex items-start gap-2 text-sm text-gray-700">
-                      <Icon.Zap className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#4A6200' }} />
-                      <span>"Find XYZ tab from my groups and show it"</span>
+                    <li className="text-sm text-gray-700">
+                      "Find XYZ tab from my groups and show it"
                     </li>
                   </ul>
                 </div>
@@ -581,17 +576,14 @@ export default function EnterpriseBuyerGuidePage() {
                     Pull up Google Sheet with prospects and Perplexity to write outreach sequences
                   </p>
                   <ul className="space-y-2 mb-6 flex-grow">
-                    <li className="flex items-start gap-2 text-sm text-gray-600">
-                      <Icon.Zap className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#4A6200' }} />
-                      <span>Open prospect list and AI assistant side by side</span>
+                    <li className="text-sm text-gray-600">
+                      Open prospect list and AI assistant side by side
                     </li>
-                    <li className="flex items-start gap-2 text-sm text-gray-600">
-                      <Icon.Zap className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#4A6200' }} />
-                      <span>Group all outreach tools in one workspace</span>
+                    <li className="text-sm text-gray-600">
+                      Group all outreach tools in one workspace
                     </li>
-                    <li className="flex items-start gap-2 text-sm text-gray-600">
-                      <Icon.Zap className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#4A6200' }} />
-                      <span>Quickly find and switch between prospect tabs</span>
+                    <li className="text-sm text-gray-600">
+                      Quickly find and switch between prospect tabs
                     </li>
                   </ul>
                 </div>
@@ -608,17 +600,14 @@ export default function EnterpriseBuyerGuidePage() {
                     Pull up Google Ads campaign and Meta Ads campaign side by side
                   </p>
                   <ul className="space-y-2 mb-6 flex-grow">
-                    <li className="flex items-start gap-2 text-sm text-gray-600">
-                      <Icon.Zap className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#4A6200' }} />
-                      <span>Compare campaign performance in split view</span>
+                    <li className="text-sm text-gray-600">
+                      Compare campaign performance in split view
                     </li>
-                    <li className="flex items-start gap-2 text-sm text-gray-600">
-                      <Icon.Zap className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#4A6200' }} />
-                      <span>Group all ad platform tabs together</span>
+                    <li className="text-sm text-gray-600">
+                      Group all ad platform tabs together
                     </li>
-                    <li className="flex items-start gap-2 text-sm text-gray-600">
-                      <Icon.Zap className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#4A6200' }} />
-                      <span>Organize analytics and creative tools</span>
+                    <li className="text-sm text-gray-600">
+                      Organize analytics and creative tools
                     </li>
                   </ul>
                 </div>
@@ -635,17 +624,14 @@ export default function EnterpriseBuyerGuidePage() {
                     Open research sources, data sheets, and analysis tools in organized groups
                   </p>
                   <ul className="space-y-2 mb-6 flex-grow">
-                    <li className="flex items-start gap-2 text-sm text-gray-600">
-                      <Icon.Zap className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#4A6200' }} />
-                      <span>Split view for comparing multiple sources</span>
+                    <li className="text-sm text-gray-600">
+                      Split view for comparing multiple sources
                     </li>
-                    <li className="flex items-start gap-2 text-sm text-gray-600">
-                      <Icon.Zap className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#4A6200' }} />
-                      <span>Group related research tabs by topic</span>
+                    <li className="text-sm text-gray-600">
+                      Group related research tabs by topic
                     </li>
-                    <li className="flex items-start gap-2 text-sm text-gray-600">
-                      <Icon.Zap className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#4A6200' }} />
-                      <span>Quickly find specific research documents</span>
+                    <li className="text-sm text-gray-600">
+                      Quickly find specific research documents
                     </li>
                   </ul>
                 </div>
@@ -662,17 +648,14 @@ export default function EnterpriseBuyerGuidePage() {
                     Organize documentation, code repos, and testing tools in dedicated workspaces
                   </p>
                   <ul className="space-y-2 mb-6 flex-grow">
-                    <li className="flex items-start gap-2 text-sm text-gray-600">
-                      <Icon.Zap className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#4A6200' }} />
-                      <span>Split view for code and documentation</span>
+                    <li className="text-sm text-gray-600">
+                      Split view for code and documentation
                     </li>
-                    <li className="flex items-start gap-2 text-sm text-gray-600">
-                      <Icon.Zap className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#4A6200' }} />
-                      <span>Group tabs by project or feature</span>
+                    <li className="text-sm text-gray-600">
+                      Group tabs by project or feature
                     </li>
-                    <li className="flex items-start gap-2 text-sm text-gray-600">
-                      <Icon.Zap className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#4A6200' }} />
-                      <span>Quickly switch between development tools</span>
+                    <li className="text-sm text-gray-600">
+                      Quickly switch between development tools
                     </li>
                   </ul>
                 </div>
