@@ -203,7 +203,7 @@ export default function Home({ blogPosts }) {
         strategy="afterInteractive"
       />
 
-      <div className="relative bg-white shadow-[0_0_40px_rgba(0,0,0,0.08)] overflow-hidden">
+      <div className="relative bg-white shadow-[0_0_40px_rgba(0,0,0,0.08)] overflow-x-hidden">
         {/* Background gradients - fixed on desktop, absolute on mobile for better performance */}
         <div className={`${isMobile ? 'absolute' : 'fixed'} inset-0 overflow-hidden pointer-events-none z-0`}>
           <div
