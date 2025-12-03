@@ -15,7 +15,7 @@ export default function HeroSection() {
             
             <div className="lg:grid lg:grid-cols-12 lg:gap-8 lg:items-center">
               <div className="lg:col-span-7 px-4 sm:px-6 sm:text-center md:mx-auto md:max-w-2xl lg:flex lg:items-center lg:text-left relative">
-                <div className="invisible md:visible absolute top-15 -left-7 w-40 h-40 bg-blue-300/50 rounded-full filter blur-3xl opacity-50 animate-blob"></div>
+                <div className="invisible md:visible absolute top-15 -left-7 w-40 h-40 bg-[#98CFE3]/50 rounded-full filter blur-3xl opacity-50 animate-blob"></div>
                 {/* Elegant accent dot */}
                 <div className="hidden lg:block absolute top-8 -left-4 w-2 h-2 rounded-full bg-[#30400D]/40"></div>
                 <div>
@@ -38,7 +38,7 @@ export default function HeroSection() {
                 </div>
               </div>
               <div className="lg:col-span-5 hidden lg:block">
-                <div className="relative w-[450px] h-[450px] rounded-full overflow-hidden bg-gradient-to-b from-[#E3F2FD] to-[#1976D2] mx-auto">
+                <div className="relative w-[450px] h-[450px] rounded-full overflow-hidden bg-gradient-to-b from-[#EDF5F8] to-[#98CFE3] mx-auto">
                   {/* Oasis Animation */}
                   <div className="absolute inset-0">
                     {/* Ocean Waves - adjusted for circular container */}
@@ -46,15 +46,15 @@ export default function HeroSection() {
                       <svg viewBox="0 0 450 200" className="w-full h-full preserve-3d" preserveAspectRatio="none">
                         <path
                           d="M0 100 Q112.5 30 225 100 T450 100 L450 200 L0 200 Z"
-                          className="fill-[#42A5F5]/40 animate-wave-slow"
+                          className="fill-[#98CFE3]/50 animate-wave-slow"
                         />
                         <path
                           d="M0 120 Q112.5 50 225 120 T450 120 L450 200 L0 200 Z"
-                          className="fill-[#1E88E5]/50 animate-wave-medium"
+                          className="fill-[#98CFE3]/60 animate-wave-medium"
                         />
                         <path
                           d="M0 140 Q112.5 70 225 140 T450 140 L450 200 L0 200 Z"
-                          className="fill-[#1565C0]/60 animate-wave-fast"
+                          className="fill-[#98CFE3]/70 animate-wave-fast"
                         />
                       </svg>
                     </div>
