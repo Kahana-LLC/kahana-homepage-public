@@ -693,7 +693,7 @@ export default function EnterpriseBuyerGuidePage() {
               {/* Redesigned Product Cards with Images */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-16">
                 {/* Free Agentic Browser Card */}
-                <Link href="/products/free-agentic-browser" className="group block">
+                <div className="group block">
                   <div className="relative overflow-hidden rounded-2xl shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 h-full">
                     {/* Image Section */}
                     <div className="relative h-64 overflow-hidden bg-gradient-to-br from-[#F8FAF2] to-[#F2F6E8]">
@@ -712,12 +712,12 @@ export default function EnterpriseBuyerGuidePage() {
                       <p className="text-center text-[#4A5745] mb-4">
                       Designed for personal productivity with AI-powered assistance and smart organization tools.
                     </p>
+                  </div>
                 </div>
                   </div>
-                </Link>
                 
                 {/* Enterprise Browser Card */}
-                <Link href="/products/enterprise-browser" className="group block">
+                <div className="group block">
                   <div className="relative overflow-hidden rounded-2xl shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 h-full">
                     {/* Image Section */}
                     <div className="relative h-64 overflow-hidden bg-gradient-to-br from-[#F8FAF2] to-[#F2F6E8]">
@@ -736,9 +736,9 @@ export default function EnterpriseBuyerGuidePage() {
                       <p className="text-center text-[#4A5745] mb-4">
                       Built for enterprise environments with enhanced security, compliance, and collaboration features.
                     </p>
+                  </div>
                 </div>
               </div>
-                </Link>
                     </div>
 
               {/* Interactive Feature Cards with Hover Reveal */}
