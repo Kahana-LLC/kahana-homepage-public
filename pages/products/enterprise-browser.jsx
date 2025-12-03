@@ -82,7 +82,7 @@ export default function EnterpriseBrowser() {
               Oasis
             </h1>
             <p className="text-xl text-[#4A5745] max-w-3xl mx-auto mb-8">
-              A secure, modern browser designed for enterprise environments, bundling enterprise-grade security, ergonomic workflows, and an elegant user experience.
+              Fall in love with enterprise-grade security, ergonomic workflows, and the most elegant user experience.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/schedule-demo" className="btn-primary inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline">
