@@ -359,21 +359,23 @@ body {
   background-color: #FFFFFF;
   color: var(--text-base);
   overflow-x: hidden;
-  overflow-y: visible;
+  overflow-y: hidden;
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  min-height: 100%;
 }
 
 /* Ensure #__next (Next.js root) doesn't create scroll context */
 #__next {
   overflow: visible;
-  min-height: 100vh;
+  height: auto;
+  min-height: 100%;
 }
 
 /* Ensure main element doesn't create scroll context */
 main {
   overflow: visible;
+  height: auto;
 }
 
 /* Page width */
@@ -914,6 +916,56 @@ main {
 .hide-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+/* Carousel horizontal-only scrolling - prevent vertical scrollbar */
+.carousel-horizontal-only {
+  overflow-y: hidden !important;
+  max-height: none !important;
+  height: auto !important;
+}
+
+/* Mobile: allow horizontal scrolling */
+@media (max-width: 767px) {
+  .carousel-horizontal-only {
+    overflow-x: auto !important;
+  }
+}
+
+/* Desktop: disable scrolling, only arrow navigation */
+@media (min-width: 768px) {
+  .carousel-horizontal-only {
+    overflow-x: hidden !important;
+  }
+}
+
+.carousel-horizontal-only::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.carousel-horizontal-only::-webkit-scrollbar:vertical {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.carousel-horizontal-only::-webkit-scrollbar:horizontal {
+  display: none !important;
+}
+
+.carousel-horizontal-only::-webkit-scrollbar-track {
+  display: none !important;
+}
+
+.carousel-horizontal-only::-webkit-scrollbar-thumb {
+  display: none !important;
+}
+
+.carousel-horizontal-only::-webkit-scrollbar-corner {
+  display: none !important;
+  background: transparent !important;
 }
 
 .snap-x {

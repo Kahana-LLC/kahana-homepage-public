@@ -46,7 +46,7 @@ export default function ProductSection() {
               <div className="relative w-full aspect-[16/10] rounded-[28px] overflow-hidden">
                 <Image
                   src="/images/Welcome to Oasis.webp"
-                  alt="Welcome to Oasis"
+                alt="Welcome to Oasis"
                   fill
                   priority
                   sizes="(max-width: 640px) 100vw, (max-width: 768px) 90vw, (max-width: 1024px) 80vw, 1200px"
