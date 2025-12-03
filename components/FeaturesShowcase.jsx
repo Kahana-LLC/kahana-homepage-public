@@ -41,52 +41,52 @@ export default function FeaturesShowcase() {
   };
 
   return (
-    <div className="bg-white py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8 features-section">
+    <div className="bg-white py-12 sm:py-24 md:py-32">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 features-section">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-xl font-semibold leading-8 text-[#978455] mb-2">Enterprise Browser</h2>
-          <h1 className="text-3xl font-bold tracking-tight text-[#313A00] sm:text-4xl">
+          <h2 className="text-base sm:text-xl font-semibold leading-8 text-[#978455] mb-2">Enterprise Browser</h2>
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-[#313A00]">
             Everything You Need to Flow Effortlessly
           </h1>
-          <p className="mt-6 text-lg leading-8 text-[#333333]">
+          <p className="mt-4 sm:mt-6 text-base sm:text-lg leading-7 sm:leading-8 text-[#333333] px-2">
             Oasis gives you the tools to simplify your workflow, stay focused, and work with calm precision.
           </p>
-          <div className="mt-8">
+          <div className="mt-6 sm:mt-8">
             <Link href="/products/enterprise-browser">
-              <button className="btn-primary inline-flex items-center justify-center px-8 py-3 text-base no-underline hover:no-underline focus:no-underline">
+              <button className="btn-primary inline-flex items-center justify-center px-6 py-2.5 sm:px-8 sm:py-3 text-sm sm:text-base no-underline hover:no-underline focus:no-underline">
                 Learn more
               </button>
             </Link>
           </div>
         </div>
 
-        <div className="mx-auto mt-16 max-w-6xl">
+        <div className="mx-auto mt-10 sm:mt-16 max-w-6xl">
           <div className="relative">
             <div
               ref={carouselRef}
-              className="flex gap-5 overflow-x-auto scroll-smooth pb-4 snap-x snap-mandatory px-4 md:px-6"
+              className="flex gap-3 sm:gap-5 overflow-x-auto scroll-smooth pb-4 snap-x snap-mandatory px-2 sm:px-4 md:px-6 -mx-2 sm:mx-0"
+              style={{ WebkitOverflowScrolling: 'touch' }}
             >
             {conceptCards.map((card, index) => (
               <Link
                 key={index}
                 href={card.link}
-                className="group relative flex w-full max-w-sm flex-shrink-0 snap-center md:snap-start flex-col overflow-hidden rounded-[26px] border border-white/80 bg-white/90 px-6 py-5 sm:max-w-md sm:px-7 sm:py-6 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur transition-transform duration-500 hover:-translate-y-1 no-underline"
-                style={index === 0 ? { marginLeft: '-2px' } : undefined}
+                className="group relative flex w-[85vw] sm:w-full max-w-sm flex-shrink-0 snap-center md:snap-start flex-col overflow-hidden rounded-[20px] sm:rounded-[26px] border border-white/80 bg-white/90 px-4 py-4 sm:px-6 sm:py-5 md:max-w-md md:px-7 md:py-6 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur transition-transform duration-500 hover:-translate-y-1 no-underline"
               >
-                <div className="flex flex-col gap-3 text-left pl-1 pr-2 min-h-[150px]">
-                  <p className="text-[0.6rem] font-semibold uppercase tracking-[0.3em] text-[#978455]">
+                <div className="flex flex-col gap-2 sm:gap-3 text-left min-h-[120px] sm:min-h-[150px]">
+                  <p className="text-[0.55rem] sm:text-[0.6rem] font-semibold uppercase tracking-[0.25em] sm:tracking-[0.3em] text-[#978455]">
                     Feature highlight
                   </p>
-                  <h3 className="text-xl sm:text-2xl font-semibold text-[#1F2D00]">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-[#1F2D00]">
                     {card.title}
                   </h3>
                   {card.description && (
-                    <p className="text-base leading-7 text-[#373F29]">
+                    <p className="text-sm sm:text-base leading-6 sm:leading-7 text-[#373F29]">
                       {card.description}
                     </p>
                   )}
                 </div>
-                <div className="mt-4 h-[220px] overflow-hidden rounded-[20px] flex items-center justify-center">
+                <div className="mt-3 sm:mt-4 h-[180px] sm:h-[220px] overflow-hidden rounded-[16px] sm:rounded-[20px] flex items-center justify-center bg-white/50">
                   <img
                     src={card.image || `https://via.placeholder.com/600x400/E4E9CC/728552?text=${encodeURIComponent(card.title)}`}
                     alt={card.title}
@@ -96,8 +96,8 @@ export default function FeaturesShowcase() {
               </Link>
             ))}
           </div>
-            <div className="pointer-events-none absolute inset-y-0 left-0 hidden w-12 bg-gradient-to-r from-white via-white/60 to-transparent md:block" />
-            <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-12 bg-gradient-to-l from-white via-white/60 to-transparent md:block" />
+            <div className="pointer-events-none absolute inset-y-0 left-0 hidden w-8 sm:w-12 bg-gradient-to-r from-white via-white/60 to-transparent md:block" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-8 sm:w-12 bg-gradient-to-l from-white via-white/60 to-transparent md:block" />
             <div className="pointer-events-none absolute inset-x-0 -bottom-1 flex justify-between px-2 md:px-4">
               <button
                 type="button"
