@@ -55,7 +55,7 @@ export default function GlobalBanner() {
                   </Link>
                 </span>
                 <span className="hidden md:inline">
-                  Join our <Link href="/community" className="underline hover:!text-[#7A9200] transition-colors text-[#4A5745]">Discord community</Link> to stay updated!
+                  Join our <Link href="/community" className="underline hover:!text-[#7A9200] transition-colors text-[#4A5745]">Discord community</Link> to get updates, share feedback, and connect with the team!
                 </span>
               </p>
             </div>
