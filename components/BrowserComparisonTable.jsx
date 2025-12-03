@@ -71,7 +71,7 @@ const BrowserComparisonTable = () => {
     },
     'ai-powered': {
       name: 'AI-Powered',
-      filters: { aiFeatures: ['Anthropic/Deepgram AI integrations', 'Google AI (search, autofill, smart suggestions)', 'Microsoft Copilot, Bing AI', 'Aria AI assistant'] }
+      filters: { aiFeatures: ['Built into the core', 'Google AI (search, autofill, smart suggestions)', 'Microsoft Copilot, Bing AI', 'Aria AI assistant'] }
     },
     'privacy-focused': {
       name: 'Privacy-Focused',
@@ -216,18 +216,17 @@ const BrowserComparisonTable = () => {
 
   const renderFilterSection = (title, filterType, options) => (
     <div className="mb-4">
-      <h3 className="text-sm font-semibold text-gray-700 mb-2">{title}</h3>
-            <div className="space-y-1 max-h-32 overflow-y-auto p-1 border rounded-md">
+      <h3 className="text-sm font-bold text-[#313A00] mb-2">{title}</h3>
+            <div className="space-y-2 max-h-32 overflow-y-auto p-2 border rounded-lg bg-[#F8FAF2]/50" style={{borderColor:'rgba(74, 98, 0, 0.1)'}}>
         {options.map(option => (
-                    <label key={option} className="flex items-center space-x-2 text-sm cursor-pointer">
+                    <label key={option} className="flex items-center space-x-2 text-sm cursor-pointer hover:bg-white/50 p-1 rounded transition-colors">
             <input
               type="checkbox"
               checked={(filters[filterType] || []).includes(option)}
               onChange={() => handleFilterChange(filterType, option)}
-                            className="rounded"
-                            style={{borderColor:'#E0D48C',accentColor:'#728552'}}
+                            className="rounded border-[#4A6200] text-[#4A6200] focus:ring-[#4A6200]"
             />
-            <span className="text-gray-600">{option}</span>
+            <span className="text-[#4A5745]">{option}</span>
           </label>
         ))}
       </div>
@@ -237,32 +236,32 @@ const BrowserComparisonTable = () => {
     // New: Renders a section for selecting browsers to pin/compare
     const renderBrowserSelection = () => (
         <div className="mb-4">
-            <h3 className="text-sm font-semibold text-gray-900 mb-2">Pin Browsers for Comparison ({comparisonData.length} selected)</h3>
-            <div className="mb-2">
+            <h3 className="text-sm font-bold text-[#313A00] mb-3">Pin Browsers for Comparison ({comparisonData.length} selected)</h3>
+            <div className="mb-3">
                  <input
                     type="text"
                     placeholder="Search browsers..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="w-full px-3 py-2 rounded-md text-sm"
-                    style={{border:'1px solid #E0D48C'}}
+                    className="w-full px-4 py-2.5 rounded-lg text-sm border focus:outline-none focus:ring-2 transition-all"
+                    style={{borderColor:'rgba(74, 98, 0, 0.2)', '--tw-ring-color': 'rgba(74, 98, 0, 0.3)'}}
+                    style={{color:'#313A00'}}
                 />
     </div>
-            <div className="space-y-1 max-h-48 overflow-y-auto p-1 border rounded-md" style={{borderColor:'#E0D48C'}}>
+            <div className="space-y-1 max-h-48 overflow-y-auto p-2 border rounded-lg bg-[#F8FAF2]/50" style={{borderColor:'rgba(74, 98, 0, 0.1)'}}>
                 {filteredData.length > 0 ? (
                     filteredData.map(browser => {
                         const key = NAME_TO_KEY[browser.name] || browser.name;
                         const isChecked = selectedBrowsers.includes(key);
                         return (
-                            <label key={browser.name} className="flex items-center space-x-2 text-sm cursor-pointer p-1 rounded" style={{background: isChecked ? '#F3F8E4' : 'transparent'}}>
+                            <label key={browser.name} className={`flex items-center space-x-2 text-sm cursor-pointer p-2 rounded transition-all ${isChecked ? 'border' : 'hover:bg-white/50'}`} style={isChecked ? {backgroundColor:'rgba(74, 98, 0, 0.1)', borderColor:'rgba(74, 98, 0, 0.2)'} : {}}>
                                 <input
                                     type="checkbox"
                                     checked={isChecked}
                                     onChange={() => toggleSelectedBrowser(key)}
-                                    className="rounded"
-                                    style={{borderColor:'#E0D48C',accentColor:'#728552'}}
+                                    className="rounded border-[#4A6200] text-[#4A6200] focus:ring-[#4A6200]"
                                 />
-                                <span className="font-medium" style={{color:'#4A5745'}}>{browser.name}</span>
+                                <span className="font-semibold" style={{color: isChecked ? '#313A00' : '#4A5745'}}>{browser.name}</span>
                             </label>
                         );
                     })
@@ -277,62 +276,70 @@ const BrowserComparisonTable = () => {
 
     // Card view for mobile (simplified to show only selected browsers)
   const renderMobileCards = () => (
-        <div className="space-y-4 pt-4">
+        <div className="space-y-4 pt-4 px-6 pb-6">
             {comparisonData.length > 0 ? (
                 comparisonData.map((browser) => (
-                    <div key={browser.name} className="bg-white rounded-lg shadow border p-4" style={{borderColor:'#E0D48C'}}>
-                        <div className="text-lg font-bold mb-2 flex items-center" style={{color:'#4A5745'}}>
-                            {browser.name}
-                            <span className="ml-2 text-xs font-medium px-2.5 py-0.5 rounded-full" style={{background:'#F3F8E4',color:'#4A5745',border:'1px solid #E0D48C'}}>Pinned</span>
+                    <div key={browser.name} className="bg-white rounded-[18px] shadow-[0_25px_70px_rgba(32,47,0,0.14)] border p-5" style={{borderColor:'rgba(74, 98, 0, 0.1)'}}>
+                        <div className="text-lg font-bold mb-3 flex items-center justify-between" style={{color:'#313A00'}}>
+                            <span>{browser.name}</span>
+                            <button
+                                onClick={() => toggleSelectedBrowser(browser.name)}
+                                className="text-[#4A6200] hover:text-[#3E5300] p-1"
+                            >
+                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </button>
           </div>
                         {ALL_FEATURES.map(featureTitle => (
-                            <div key={featureTitle} className="mb-2 border-b border-gray-100 last:border-b-0 py-1">
-                                <div className="text-xs font-semibold text-[#4A5745] mb-0.5">{featureTitle}</div>
-                                <div className="text-sm text-gray-800">{browser[FEATURE_MAP[featureTitle]]}</div>
+                            <div key={featureTitle} className="mb-3 border-b last:border-b-0 pb-3 last:pb-0" style={{borderColor:'rgba(74, 98, 0, 0.1)'}}>
+                                <div className="text-xs font-bold text-[#313A00] mb-1.5 uppercase tracking-wide">{featureTitle}</div>
+                                <div className="text-sm text-[#4A5745] leading-relaxed">{browser[FEATURE_MAP[featureTitle]]}</div>
         </div>
       ))}
                     </div>
                 ))
             ) : (
-        <div className="text-center py-8 text-[#4A5745]">
-                    Select browsers in the "Filters" dropdown to start comparing.
+        <div className="text-center py-12 px-4">
+                    <p className="text-[#4A5745] text-base mb-2">Select browsers in the <strong className="text-[#313A00]">Controls</strong> dropdown to start comparing.</p>
         </div>
       )}
     </div>
   );
 
   return (
-    <div className="rounded-lg shadow-lg overflow-hidden" style={{backgroundColor:'var(--bg-body)', color:'var(--text-base)'}}>
+    <div className="rounded-[26px] shadow-[0_25px_70px_rgba(32,47,0,0.14)] overflow-hidden bg-white/90 border border-white/80 backdrop-blur-lg">
             {/* Header with Actions - STICKY CONTROL BAR */}
-            <div className="px-4 sm:px-6 py-4 sticky top-0 z-40" style={{backgroundColor:'var(--bg-body)', borderBottom:'1px solid var(--border-light)'}}>
-        <div className="flex items-center justify-between mb-4">
-          <h2 className="text-xl font-semibold" style={{color:'var(--text-base)'}}>Browser Comparison</h2>
-          <div className="flex items-center space-x-2">
+            <div className="px-6 py-5 sticky top-0 z-40 bg-white/95 backdrop-blur-sm border-b" style={{borderColor:'rgba(74, 98, 0, 0.1)'}}>
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-4">
+          <h2 className="text-2xl font-bold" style={{color:'#313A00'}}>Browser Comparison</h2>
+          <div className="flex items-center flex-wrap gap-3">
             <button
               onClick={exportToCSV}
-              className="inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium shadow-md transition disabled:opacity-50"
-              style={{backgroundColor:'var(--bg-body)', color:'var(--text-base)', border:'1px solid var(--border-light)'}}
-                            disabled={comparisonData.length === 0}
+              className="btn-secondary inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+              disabled={comparisonData.length === 0}
             >
-                            Export CSV ({comparisonData.length})
+              <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              Export CSV ({comparisonData.length})
             </button>
             <div className="relative" ref={filterRef}>
               <button
                 onClick={() => setIsFilterOpen(!isFilterOpen)}
-                                className={`inline-flex items-center px-4 py-1.5 rounded-full border text-sm font-medium shadow-md transition focus:outline-none space-x-2`}
-                                style={{
-                                  backgroundColor: (getActiveFilterCount() > 0 || searchTerm || selectedBrowsers.length > 0) ? 'var(--bg-action)' : '#FFFFFF',
-                                  color: (getActiveFilterCount() > 0 || searchTerm || selectedBrowsers.length > 0) ? '#FFFFFF' : 'var(--text-base)',
-                                  border: '1px solid var(--border-light)'
-                                }}
+                                className={`inline-flex items-center px-5 py-2 rounded-full text-sm font-semibold transition-all focus:outline-none space-x-2 ${
+                                  (getActiveFilterCount() > 0 || searchTerm || selectedBrowsers.length > 0) ? 'btn-primary' : 'btn-secondary'
+                                }`}
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.207A1 1 0 013 6.5V4z" />
                 </svg>
                                 <span>Controls</span>
-                                <span className="text-xs rounded-full px-2 py-0.5 ml-1" style={{backgroundColor:'#FFFFFF', color:'var(--text-base)', border:'1px solid var(--border-light)'}}>
+                                {selectedBrowsers.length > 0 && (
+                                  <span className="text-xs rounded-full px-2.5 py-0.5 font-bold bg-white/20">
                                     {selectedBrowsers.length} Pinned
                   </span>
+                                )}
                 <svg className={`w-4 h-4 transition-transform ${isFilterOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
@@ -340,14 +347,13 @@ const BrowserComparisonTable = () => {
 
                             {/* Filter/Control Dropdown (with Browser Selection) */}
               {isFilterOpen && (
-                                <div className="absolute right-0 mt-2 w-80 rounded-lg shadow-xl z-50 max-h-[80vh] overflow-y-auto" style={{backgroundColor:'#FFFFFF', border:'1px solid var(--border-light)'}}>
-                  <div className="p-4">
-                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4 gap-2">
-                                            <h3 className="text-lg font-semibold" style={{color:'var(--text-base)'}}>Comparison Controls</h3>
+                                <div className="absolute right-0 mt-2 w-80 rounded-[18px] shadow-[0_25px_70px_rgba(32,47,0,0.18)] z-50 max-h-[80vh] overflow-y-auto bg-white border" style={{borderColor:'rgba(74, 98, 0, 0.1)'}}>
+                  <div className="p-5">
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-5 gap-2">
+                                            <h3 className="text-lg font-bold" style={{color:'#313A00'}}>Comparison Controls</h3>
                       <button
                                                 onClick={() => { clearAllFilters(); setSelectedBrowsers([]); setIsFilterOpen(false); }}
-                                                className="text-sm font-medium"
-                                                style={{color:'var(--text-base)'}}
+                                                className="text-sm font-semibold text-[#4A6200] hover:text-[#3E5300] transition-colors"
                       >
                                                 Clear All
                       </button>
@@ -355,8 +361,8 @@ const BrowserComparisonTable = () => {
                     
                                         {renderBrowserSelection()}
 
-                                        <div className="pt-4 mt-4" style={{borderTop:'1px solid var(--border-light)'}}>
-                                            <h3 className="text-sm font-semibold mb-2" style={{color:'var(--text-base)'}}>Browser Filters (Narrows Selection)</h3>
+                                        <div className="pt-5 mt-5 border-t" style={{borderColor:'rgba(74, 98, 0, 0.1)'}}>
+                                            <h3 className="text-sm font-bold mb-3" style={{color:'#313A00'}}>Browser Filters (Narrows Selection)</h3>
                     {renderFilterSection('Type', 'type', filterOptions.type)}
                     {renderFilterSection('Who Uses It', 'whoUsesIt', filterOptions.whoUsesIt.slice(0, 6))}
                     {renderFilterSection('Platforms', 'platforms', filterOptions.platforms)}
@@ -370,13 +376,12 @@ const BrowserComparisonTable = () => {
         </div>
 
         {/* Filter Presets */}
-                 <div className="flex flex-wrap gap-2">
+                 <div className="flex flex-wrap gap-2 px-6 pb-4">
           {Object.entries(filterPresets).map(([key, preset]) => (
             <button
               key={key}
               onClick={() => applyPreset(key)}
-                             className="px-3 py-1 text-xs font-medium rounded-full shadow-sm transition-colors"
-                             style={{backgroundColor:'var(--bg-body)', color:'var(--text-base)', border:'1px solid var(--border-light)'}}
+                             className="px-4 py-2 text-xs font-semibold rounded-full transition-all hover:scale-105 btn-secondary"
             >
               {preset.name}
             </button>
@@ -389,34 +394,34 @@ const BrowserComparisonTable = () => {
         renderMobileCards()
       ) : (
                 // Transposed Table Container: Features (Rows) vs. Selected Browsers (Columns)
-                 <div className="relative overflow-x-auto overflow-y-auto max-h-96" style={{border:'1px solid var(--border-light)', borderTop:'none'}}>
+                 <div className="relative overflow-x-auto overflow-y-auto max-h-96 border-t" style={{borderColor:'rgba(74, 98, 0, 0.1)'}}>
                     {comparisonData.length === 0 ? (
-                        <div className="text-center py-16 text-[#4A5745]">
-                            Use the **Controls** button to pin browsers for side-by-side comparison.
+                        <div className="text-center py-16">
+                            <p className="text-[#4A5745] text-base mb-2">Use the <strong className="text-[#313A00]">Controls</strong> button to pin browsers for side-by-side comparison.</p>
                         </div>
                     ) : (
                          <table className="min-w-full" style={{borderCollapse:'separate', borderSpacing:0}}>
                             {/* Browser Names as Column Headers */}
-                            <thead className="sticky top-0 z-30" style={{backgroundColor:'var(--bg-body)', borderBottom:'1px solid var(--border-light)'}}>
+                            <thead className="sticky top-0 z-30 bg-white/95 backdrop-blur-sm">
                                 <tr>
-                                    <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider sticky left-0 z-30 min-w-[200px]" style={{color:'var(--text-subtle)', backgroundColor:'var(--bg-body)', borderRight:'1px solid var(--border-light)'}}>
+                                    <th className="px-5 py-4 text-left text-xs font-bold uppercase tracking-wider sticky left-0 z-30 min-w-[200px] bg-white/95 backdrop-blur-sm" style={{color:'#4A5745', borderRight:'1px solid rgba(74, 98, 0, 0.1)', borderBottom:'2px solid rgba(74, 98, 0, 0.2)'}}>
                                         Feature
                                     </th>
                                     {comparisonData.map((browser) => (
                                         <th
                                             key={browser.name}
-                                            className={`px-4 py-3 text-center text-sm font-bold uppercase tracking-wider min-w-[180px] transition-colors ${
-                                                hoveredColumn === browser.name ? 'bg-[#F3F8E4]' : 'bg-white'
+                                            className={`px-5 py-4 text-center text-sm font-bold uppercase tracking-wider min-w-[180px] transition-all ${
+                                                hoveredColumn === browser.name ? 'bg-[#F8FAF2]' : 'bg-white'
                                             }`}
-                                            style={{borderRight:'1px solid var(--border-light)', color:'var(--text-base)'}}
+                                            style={{borderRight:'1px solid rgba(74, 98, 0, 0.1)', color:'#313A00', borderBottom:'2px solid rgba(74, 98, 0, 0.2)'}}
                                             onMouseEnter={() => setHoveredColumn(browser.name)}
                                             onMouseLeave={() => setHoveredColumn(null)}
                                         >
-                                            <div className="flex justify-center items-center">
-                                                {browser.name}
+                                            <div className="flex justify-center items-center gap-2">
+                                                <span>{browser.name}</span>
                                                 <button
                                                     onClick={() => toggleSelectedBrowser(browser.name)}
-                                                    className="ml-2 text-red-500 hover:text-red-700 p-1"
+                                                    className="text-[#4A6200] hover:text-[#3E5300] p-1 rounded transition-colors"
                                                     title={`Remove ${browser.name}`}
                                                 >
                                                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -429,19 +434,19 @@ const BrowserComparisonTable = () => {
               </tr>
             </thead>
                             {/* Features as Rows */}
-                            <tbody style={{backgroundColor:'#FFFFFF'}}>
+                            <tbody>
                                 {ALL_FEATURES.map((featureTitle, index) => (
-                                    <tr key={featureTitle} style={{background: index % 2 === 0 ? '#FFFFFF' : 'var(--bg-body)'}}>
-                                        <td className="px-4 py-4 whitespace-normal break-words align-top font-semibold sticky left-0 z-20 min-w-[200px]" style={{color:'var(--text-base)', backgroundColor:'var(--bg-body)', borderRight:'1px solid var(--border-light)'}}>
+                                    <tr key={featureTitle} className={`transition-colors ${index % 2 === 0 ? 'bg-white' : 'bg-[#F8FAF2]/30'} ${hoveredColumn ? 'hover:bg-[#F8FAF2]/50' : ''}`}>
+                                        <td className="px-5 py-4 whitespace-normal break-words align-top font-bold sticky left-0 z-20 min-w-[200px] bg-white" style={{color:'#313A00', borderRight:'1px solid rgba(74, 98, 0, 0.1)'}}>
                                             {featureTitle}
                                         </td>
                                         {comparisonData.map((browser) => (
                                             <td
                                                 key={`${browser.name}-${featureTitle}`}
-                                                className={`px-4 py-4 whitespace-normal break-words align-top min-w-[180px] transition-colors text-sm ${
-                                                    hoveredColumn === browser.name ? '' : ''
+                                                className={`px-5 py-4 whitespace-normal break-words align-top min-w-[180px] transition-colors text-sm ${
+                                                    hoveredColumn === browser.name ? 'bg-[#F8FAF2]' : ''
                                                 }`}
-                                                style={{borderRight:'1px solid var(--border-light)', color:'var(--text-base)', backgroundColor: hoveredColumn === browser.name ? 'var(--bg-body)' : undefined}}
+                                                style={{borderRight:'1px solid rgba(74, 98, 0, 0.1)', color:'#4A5745'}}
                                                 onMouseEnter={() => setHoveredColumn(browser.name)}
                                                 onMouseLeave={() => setHoveredColumn(null)}
                                             >
@@ -455,8 +460,8 @@ const BrowserComparisonTable = () => {
                     )}
           {/* Row Count Indicator */}
                     {comparisonData.length > 0 && (
-            <div className="px-4 py-2 bg-gray-50 text-xs text-[#4A5745] border-t border-gray-200">
-                            Comparing **{comparisonData.length}** browser{comparisonData.length !== 1 ? 's' : ''}.
+            <div className="px-6 py-3 bg-[#F8FAF2]/50 text-xs text-[#4A5745] border-t" style={{borderColor:'rgba(74, 98, 0, 0.1)'}}>
+                            Comparing <strong className="text-[#313A00]">{comparisonData.length}</strong> browser{comparisonData.length !== 1 ? 's' : ''}.
                             <span className="ml-2">↔️ Scroll horizontally to see all selected browsers.</span>
             </div>
           )}
@@ -515,7 +520,7 @@ export default BrowserComparisonTable;
 //     },
 //     'ai-powered': {
 //       name: 'AI-Powered',
-//       filters: { aiFeatures: ['Anthropic/Deepgram AI integrations', 'Google AI (search, autofill, smart suggestions)', 'Microsoft Copilot, Bing AI', 'Aria AI assistant'] }
+//       filters: { aiFeatures: ['Built into the core', 'Google AI (search, autofill, smart suggestions)', 'Microsoft Copilot, Bing AI', 'Aria AI assistant'] }
 //     },
 //     'privacy-focused': {
 //       name: 'Privacy-Focused',

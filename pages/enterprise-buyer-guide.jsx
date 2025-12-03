@@ -1,34 +1,33 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import TableOfContents from '../components/TableOfContents';
 import KeyPointsCard from '../components/KeyPointsCard';
 import ErrorBoundary from '../components/ErrorBoundary';
 import BrowserComparisonTable from '../components/BrowserComparisonTable';
 
-// Brand tokens (updated green-forward accessible palette)
+// Brand tokens (matching homepage colors)
 const COLORS = {
-  // Core brand greens from provided palette
-  brand900: '#4A5745', // Deep evergreen (text on light backgrounds)
-  brand700: '#788B59', // Accent olive
-  brand600: '#728552', // Mid olive
-  brand200: '#E0D48C', // Sand
-  brand050: '#F3F8E4', // Cream
+  // Core brand greens matching homepage
+  brand900: '#313A00', // Dark green (headings)
+  brand700: '#4A6200', // Primary button color
+  brand600: '#7A9200', // Hover/accent
+  brand200: '#978455', // Eyebrow text
+  brand050: '#F8FAF2', // Light background
 
-  // Role-based functional colors (derived from palette)
-  ctaPrimary: '#788B59', // Accent olive (primary actions)
-  ctaHover: '#728552', // Mid olive (hover states)
-  info: '#728552', // Mid olive (info states)
-  success: '#788B59', // Accent olive (success states)
-  warning: '#E0D48C', // Sand (warning states)
-  error: '#4A5745', // Deep evergreen (error states)
+  // Role-based functional colors (matching homepage)
+  ctaPrimary: '#4A6200', // Primary button background
+  ctaHover: '#3E5300', // Primary button hover
+  info: '#4A6200', // Info states
+  success: '#4A6200', // Success states
+  warning: '#978455', // Warning states
+  error: '#313A00', // Error states
 
-  // Text and surfaces
-  primary: '#4A5745', // Deep evergreen text
-  accent: '#728552', // Mid olive accent
-  bgPage: '#F3F8E4', // Cream background
+  // Text and surfaces (matching homepage)
+  primary: '#313A00', // Primary text color
+  accent: '#4A6200', // Accent color
+  bgPage: '#FFFFFF', // White background (matching homepage)
   bgCard: '#FFFFFF', // White cards
-  muted: '#788B59', // Accent olive muted
+  muted: '#4A5745', // Muted text
 };
 
 const MAX_WIDTH = 1100;
@@ -55,6 +54,33 @@ const Icon = {
   ),
   Layers: (props) => (
     <svg {...props} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+  ),
+  DollarSign: (props) => (
+    <svg {...props} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+  ),
+  Clock: (props) => (
+    <svg {...props} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+  ),
+  Ticket: (props) => (
+    <svg {...props} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z"/><path d="M13 5v2"/><path d="M13 17v2"/><path d="M13 11v2"/></svg>
+  ),
+  Lock: (props) => (
+    <svg {...props} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+  ),
+  Database: (props) => (
+    <svg {...props} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+  ),
+  RefreshCw: (props) => (
+    <svg {...props} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+  ),
+  Zap: (props) => (
+    <svg {...props} width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+  ),
+  Layout: (props) => (
+    <svg {...props} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+  ),
+  Calendar: (props) => (
+    <svg {...props} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
   ),
 };
 
@@ -123,7 +149,7 @@ function StickyHeader({ anchors }) {
         <div className="mobile-menu" style={{ borderTop: '1px solid #e5e7eb', background: COLORS.bgCard }}>
           <div style={{ maxWidth: MAX_WIDTH, margin: '0 auto', padding: '8px 16px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
             {anchors.map(a => (
-              <a key={a.href} href={a.href} onClick={() => setOpen(false)} style={{ color: COLORS.primary, textDecoration: 'none', padding: '8px 6px', borderRadius: 6, display: 'block' }}>
+              <a key={a.href} href={a.href} onClick={() => setOpen(false)} style={{ color: '#617500', textDecoration: 'none', padding: '8px 6px', borderRadius: 6, display: 'block' }}>
                 {a.label}
               </a>
             ))}
@@ -139,14 +165,14 @@ function StickyHeader({ anchors }) {
       <style jsx>{`
         @media (min-width: 1024px) {
           header nav { display: block; }
-          header nav a { color: ${COLORS.primary}; text-decoration: none; margin-left: 16px; font-size: 14px; }
-          header nav a:hover, header nav a:focus { color: ${COLORS.accent}; text-decoration: underline; text-underline-offset: 3px; outline: 2px solid transparent; outline-offset: 2px; }
+          header nav a { color: #617500 !important; text-decoration: none !important; margin-left: 16px; font-size: 14px; }
+          header nav a:hover, header nav a:focus { color: #4A5F00 !important; text-decoration: none !important; outline: 2px solid transparent; outline-offset: 2px; }
         }
       `}</style>
       <div className="desktop-nav" style={{ display: 'none' }} role="navigation" aria-label="Section anchors">
         <div style={{ maxWidth: MAX_WIDTH, margin: '0 auto', padding: '0 16px 12px 16px', display: 'flex', justifyContent: 'flex-end', gap: 16 }}>
           {anchors.map(a => (
-            <a key={a.href} href={a.href} style={{ color: COLORS.primary, textDecoration: 'none', fontSize: 14 }}>
+            <a key={a.href} href={a.href} style={{ color: '#617500', textDecoration: 'none', fontSize: 14 }}>
               {a.label}
             </a>
           ))}
@@ -168,7 +194,7 @@ function Accordion({ title, children }) {
       border: '1px solid #d1d5db', 
       borderRadius: '8px', 
       marginBottom: '12px',
-      backgroundColor: '#F3F8E4',
+      backgroundColor: '#FFFFFF',
       boxShadow: '0 1px 3px rgba(0, 0, 0, 0.05)'
     }}>
       <button 
@@ -211,7 +237,8 @@ function Accordion({ title, children }) {
             color: COLORS.muted, 
             lineHeight: 1.7,
             borderTop: '1px solid #e5e7eb',
-            marginTop: '8px'
+            marginTop: '8px',
+            textAlign: 'left'
           }}
         >
           {children}
@@ -252,7 +279,7 @@ function Quote({ text, name, role, org }) {
     <blockquote style={{ borderLeft: `4px solid ${COLORS.accent}`, paddingLeft: 16, margin: 0 }}>
       <p style={{ color: COLORS.primary, fontSize: 18, lineHeight: 1.6, margin: 0 }}>{text}</p>
       <div style={{ display: 'flex', alignItems: 'center', marginTop: 10, gap: 10 }}>
-        <div style={{ width: 36, height: 36, borderRadius: 999, background: COLORS.accent, color: '#F3F8E4', fontWeight: 800, display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>{initials}</div>
+        <div style={{ width: 36, height: 36, borderRadius: 999, background: '#4A6200', color: '#FFFFFF', fontWeight: 800, display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>{initials}</div>
         <span style={{ color: COLORS.muted }}>{name} • {role} @ {org}</span>
       </div>
     </blockquote>
@@ -268,68 +295,130 @@ function BackToTop() {
   }, []);
   if (!visible) return null;
   return (
-    <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} aria-label="Back to top" style={{ position: 'fixed', right: 20, bottom: 20, background: COLORS.primary, color: '#fff', border: 'none', borderRadius: 999, padding: '10px 14px', cursor: 'pointer', boxShadow: '0 6px 20px rgba(0,0,0,0.15)' }}>
+    <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} aria-label="Back to top" className="btn-primary" style={{ position: 'fixed', right: 20, bottom: 20, borderRadius: 999, padding: '10px 14px', cursor: 'pointer', boxShadow: '0 6px 20px rgba(0,0,0,0.15)' }}>
       ↑ Top
     </button>
   );
 }
 
-function Section({ id, title, kicker, eyebrow, children, right }) {
+function Section({ id, title, kicker, eyebrow, children, right, centered = false }) {
   return (
     <section 
       id={id} 
       aria-labelledby={`${id}-title`} 
-      className="py-28 px-4 lg:px-10 scroll-mt-28 border-b border-gray-100 last:border-b-0"
+      className="py-20 md:py-28 px-4 lg:px-10 scroll-mt-28 border-b border-gray-100 last:border-b-0 transition-all duration-300"
     >
-      <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-14">
-          <div className="lg:col-span-2">
-            {eyebrow && (
-              <div className="uppercase tracking-wider mb-3 font-semibold text-base lg:text-lg" style={{ color: COLORS.accent }}>
-                {eyebrow}
-              </div>
-            )}
+      <div className="max-w-5xl mx-auto">
+        {/* Centered Header */}
+        <div className="text-center mb-12">
+          {eyebrow && (
+            <div className="tracking-wider mb-4 font-semibold text-base lg:text-lg capitalize" style={{ color: '#978455' }}>
+              {eyebrow}
+            </div>
+          )}
+          {title && (
             <h2 
               id={`${id}-title`} 
-              className="text-3xl lg:text-4xl font-bold mb-4 leading-tight"
+              className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight"
               style={{ color: COLORS.primary }}
             >
               {title}
             </h2>
-            {kicker && (
-              <p className="text-xl text-gray-700 mb-10 leading-relaxed font-medium">
-                {kicker}
-              </p>
-            )}
-            <div className="prose prose-lg max-w-none leading-relaxed space-y-6 kb-typography" style={{ color: COLORS.primary }}>
-              {children}
-            </div>
-          </div>
-          {right && (
-            <div className="lg:col-span-1 lg:sticky lg:top-24 lg:self-start">
-              <div className="lg:ml-8">
-              {right}
-              </div>
-            </div>
+          )}
+          {kicker && (
+            <p className="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed font-medium">
+              {kicker}
+            </p>
           )}
         </div>
+        
+        {/* Centered Content */}
+        <div className={`${centered ? 'text-center' : ''} max-w-4xl mx-auto`}>
+          <div className="prose prose-lg max-w-none leading-relaxed space-y-6 kb-typography" style={{ color: COLORS.primary }}>
+            {children}
+          </div>
+        </div>
+        
+        {/* Right sidebar if provided */}
+        {right && (
+          <div className="mt-12 max-w-2xl mx-auto">
+            {right}
+          </div>
+        )}
       </div>
     </section>
   );
 }
 
 export default function EnterpriseBuyerGuidePage() {
-  const [isTocCollapsed, setIsTocCollapsed] = useState(false);
-  const [persona, setPersona] = useState('business'); // 'business' | 'technical'
   const [isPlaying, setIsPlaying] = useState(false);
+  const [currentMediaIndex, setCurrentMediaIndex] = useState(0);
+  const [activeFeatureTab, setActiveFeatureTab] = useState('security');
+  const [showTocButton, setShowTocButton] = useState(false);
+  const [isTocOpen, setIsTocOpen] = useState(false);
+  
+  // Media carousel items for User Experience section
+  const mediaItems = [
+    {
+      type: 'image',
+      src: '/images/in-action.png',
+      alt: 'Oasis Interface - Designed Like an Oasis',
+      title: 'Designed Like an Oasis',
+      description: 'A soothing environment that fosters deep work, flow state, and concentration'
+    },
+    {
+      type: 'image',
+      src: '/images/ai.png',
+      alt: 'Voice-Controlled AI Workflows',
+      title: 'Voice-Controlled AI Workflows',
+      description: 'Natural language commands for complex browser operations'
+    },
+    {
+      type: 'image',
+      src: '/images/spatial.png',
+      alt: 'Spatial Organization',
+      title: 'Spatial Ease',
+      description: 'Intuitive organization that matches your natural cognitive processes'
+    },
+    {
+      type: 'image',
+      src: '/images/WIP.png',
+      alt: 'Oasis Demo',
+      title: 'See Oasis in Action',
+      description: 'Experience the seamless integration of AI and enterprise security'
+    }
+  ];
+  
+  const nextMedia = () => {
+    setCurrentMediaIndex((prev) => (prev + 1) % mediaItems.length);
+  };
+  
+  const prevMedia = () => {
+    setCurrentMediaIndex((prev) => (prev - 1 + mediaItems.length) % mediaItems.length);
+  };
+  
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentMediaIndex((prev) => (prev + 1) % mediaItems.length);
+    }, 5000); // Auto-advance every 5 seconds
+    return () => clearInterval(interval);
+  }, [mediaItems.length]);
+  
+  // Show TOC button on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowTocButton(window.scrollY > 300);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
   
   // Exact headings/order with subsections
   const structure = [
     { id: 'introduction', label: 'Introduction' },
     { id: 'what-is-oasis', label: 'What is Oasis?' },
-    // Hidden: { id: 'benefits-of-oasis', label: 'Benefits of Oasis' },
-    // Hidden: { id: 'common-use-cases', label: 'Common use cases' },
-    // Hidden: { id: 'similar-browser-vendors', label: 'Similar browser vendors' },
+    { id: 'benefits-of-oasis', label: 'Benefits of Oasis' },
+    { id: 'similar-browser-vendors', label: 'Similar browser vendors' },
     { id: 'deployment-experience', label: 'Deployment experience' },
     { id: 'user-experience', label: 'User Experience' },
     { id: 'faqs', label: 'FAQs' },
@@ -363,84 +452,64 @@ export default function EnterpriseBuyerGuidePage() {
         <meta name="twitter:description" content="Complete enterprise buyer guide for choosing and implementing the right enterprise browser solution for your organization." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <div style={{ background: COLORS.bgPage, color: COLORS.primary, minHeight: '100vh' }}>
-        {/* Sticky Navigation */}
-        <TableOfContents 
-          items={structure.map(s => ({
-            id: s.id,
-            label: s.label,
-            children: s.children?.map(c => ({
-              id: c.id,
-              label: c.label
-            }))
-          }))}
-          onCollapseChange={setIsTocCollapsed}
-        />
-
-        <div className="min-h-screen" style={{ background: COLORS.bgPage }}>
-          <main className={`transition-all duration-300 ease-in-out ${isTocCollapsed ? 'lg:ml-16' : 'lg:ml-80'}`}>
-            {/* Hidden: Info banner with glossary text and Accessible Palette badge
-            <div className="mx-auto mb-8 px-4" style={{ maxWidth: 960 }}>
-              <div className="rounded-lg border border-gray-200 bg-[#F3F8E4] p-4 flex items-center justify-between">
-                <p className="text-sm text-gray-700">
-                  Not sure about an acronym? Visit our{' '}
-                  <Link href="/docs/glossary" legacyBehavior><a className="underline" style={{ color: COLORS.accent }}>Glossary</a></Link>
-                  . Hover on underlined terms to see a quick definition.
-                </p>
-                <span className="inline-flex items-center rounded-md px-2 py-1 text-xs font-medium" style={{ background: COLORS.brand050, color: COLORS.brand700, border: '1px solid #728552' }}>Accessible Palette</span>
-              </div>
-            </div>
-            */}
-            <Section 
+      <div style={{ background: '#FFFFFF', color: COLORS.primary, minHeight: '100vh' }}>
+        <div className="min-h-screen" style={{ background: '#FFFFFF' }}>
+          <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            {/* Hero Introduction Section - Perplexity/Gemini Hybrid Style */}
+            <section 
               id="introduction" 
-              title="Introduction" 
-              eyebrow="The Evolution of Browsers"
-              kicker="How Oasis redefines what a browser can be in the enterprise"
-              right={
-                <div className="space-y-6">
-                  {/* Hidden: Video container with 3-minute guided tour
-                  <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
-                    <div className="relative rounded-md overflow-hidden border border-gray-200">
-                      {!isPlaying ? (
-                        <button
-                          onClick={() => setIsPlaying(true)}
-                          className="group w-full h-40 flex items-center justify-center bg-gray-100"
-                          aria-label="Play mini demo"
-                        >
-                          <span className="inline-flex items-center justify-center w-12 h-12 rounded-full text-white" style={{ background: COLORS.ctaPrimary }}>
-                            ▶
-                          </span>
-                          <span className="sr-only">Play</span>
-                        </button>
-                      ) : (
-                        <video className="w-full h-40 object-cover" autoPlay muted loop playsInline>
-                          <source src="/videos/oasis-micro-demo.mp4" type="video/mp4" />
-                        </video>
-                      )}
-                    </div>
-                    <p className="text-xs text-gray-600 mt-2 text-center">3‑minute guided tour (no audio)</p>
-                  </div>
-                  */}
-                <KeyPointsCard>
-                  <ul className="space-y-2">
-                    <li className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0" style={{ background: COLORS.accent }} />
-                      <span>Enterprise browser + AI browser</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0" style={{ background: COLORS.accent }} />
-                      <span>Firefox & Chromium versions</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0" style={{ background: COLORS.accent }} />
-                      <span>Tailored to your needs</span>
-                    </li>
-                  </ul>
-                </KeyPointsCard>
-                </div>
-              }
+              className="relative w-full py-32 md:py-48 lg:py-56 overflow-hidden"
+              style={{
+                backgroundImage: 'url(/images/desert-background-5.jpg)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat'
+              }}
             >
-              <p>
+              {/* Darker gradient overlay for Perplexity-style contrast */}
+              <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-white/80 to-white"></div>
+              
+              <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
+                <div className="tracking-wider mb-4 font-semibold text-base lg:text-lg capitalize" style={{ color: '#978455' }}>
+                  Welcome to Oasis
+                </div>
+                <h1 
+                  className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold mb-8 leading-[1.1] tracking-tight text-black"
+                >
+                  The Future of <br className="hidden md:block" />
+                    Enterprise Browsing
+                </h1>
+                <p className="text-xl md:text-2xl lg:text-3xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-medium mb-10">
+                  Combine enterprise-grade security with AI-powered intelligence in one seamless, spatial experience.
+                </p>
+                <div className="flex flex-col sm:flex-row justify-center gap-4 mt-8">
+                  <Link href="#what-is-oasis" className="btn-primary inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-full shadow-lg shadow-[#4A6200]/20 transition-transform hover:scale-105 no-underline hover:no-underline focus:no-underline">
+                    Explore Features
+                  </Link>
+                </div>
+                
+                {/* Oasis Browser Preview Card */}
+                <div className="mt-16 rounded-2xl overflow-hidden shadow-2xl border border-gray-200 max-w-5xl mx-auto transform transition-all hover:shadow-3xl duration-500">
+                   <img 
+                     src="/images/21a37c6a0cca7d51dd3260b4f0996bdebb758608.png" 
+                     alt="Oasis Browser Interface - Welcome to Oasis" 
+                     className="w-full h-auto object-contain"
+                     loading="eager"
+                   />
+                </div>
+              </div>
+            </section>
+            
+            {/* Introduction Content Section */}
+            <section 
+              id="introduction-content" 
+              className="py-4 md:py-6 px-4 lg:px-10 scroll-mt-28"
+            >
+              <div className="max-w-5xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-left" style={{ color: '#4A6200' }}>
+                Oasis: The Evolution of Browsing
+              </h2>
+              <p className="text-lg md:text-xl leading-relaxed mb-4 text-left">
                 The definition of a "browser" has fundamentally changed in recent years. What was once 
                 simply a tool for viewing web pages has evolved into something far more powerful and 
                 intelligent. This transformation has been driven by two major innovations: enterprise 
@@ -448,7 +517,7 @@ export default function EnterpriseBuyerGuidePage() {
                 Comet, OpenAI's Atlas, GenSpark, and Dia that integrate artificial intelligence directly 
                 into the browsing experience.
               </p>
-              <p>
+              <p className="text-lg md:text-xl leading-relaxed mb-4 text-left">
                 Oasis represents the convergence of these two revolutionary approaches. It is both an 
                 enterprise browser and an AI browser, combining the security and control that modern 
                 organizations demand with the intelligence and automation that users expect from next-generation 
@@ -456,539 +525,775 @@ export default function EnterpriseBuyerGuidePage() {
                 of benefits tailored to your organization's specific needs and preferences. This dual nature 
                 makes Oasis uniquely positioned to address the complex challenges of today's digital workplace.
               </p>
-              <p>
+              <p className="text-lg md:text-xl leading-relaxed text-left">
                 In this guide, we'll break down what makes Oasis so special. We'll explore how it 
                 redefines enterprise security, how its AI capabilities transform productivity, and why 
                 it represents the future of how we interact with the web. Whether you're evaluating 
                 enterprise browser solutions or looking to understand the next evolution of web technology, 
                 this guide will provide the insights you need to make informed decisions.
               </p>
-            </Section>
-            {/* Hidden: Persona toggle and targeted benefits - Guide by role section
+              </div>
+            </section>
+            {/* Tools for any role */}
             <Section
               id="personas"
-              title="Guide by role"
-              kicker="Choose your perspective—concise benefits with optional detail"
+              title="Tools for any role"
+              kicker="Core Oasis commands that adapt to your workflow"
+              centered={true}
             >
-              <div className="mb-4 inline-flex items-center gap-3" role="tablist" aria-label="Persona selector">
-                <button
-                  role="tab"
-                  aria-selected={persona === 'business'}
-                  onClick={() => setPersona('business')}
-                  className={`px-4 py-2 text-sm rounded-md border ${persona === 'business' ? 'bg-white font-semibold border-gray-300' : 'bg-gray-50 text-gray-700 border-gray-200'} focus:outline-none`}
-                  style={{ color: persona === 'business' ? COLORS.primary : undefined }}
-                >
-                  Business
-                </button>
-                <button
-                  role="tab"
-                  aria-selected={persona === 'technical'}
-                  onClick={() => setPersona('technical')}
-                  className={`px-4 py-2 text-sm rounded-md border ${persona === 'technical' ? 'bg-white font-semibold border-gray-300' : 'bg-gray-50 text-gray-700 border-gray-200'} focus:outline-none`}
-                  style={{ color: persona === 'technical' ? COLORS.primary : undefined }}
-                >
-                  Technical
-                </button>
+              <p className="text-lg text-[#4A5745] mb-8 max-w-3xl mx-auto text-center">
+                Oasis core commands like "open new tab", "organize windows", and "group tabs" can be customized 
+                and adapted to serve any role. The same powerful tools work for everyone—just configured differently.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 max-w-6xl mx-auto">
+                {/* Core Commands */}
+                <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-6 flex flex-col hover:shadow-xl transition-all">
+                  <div className="flex justify-start mb-4">
+                    <div className="w-20 h-20 rounded-full flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #d6e3f4 0%, #e5efd8 100%)' }}>
+                      <Icon.Settings className="w-10 h-10" style={{ color: '#4A6200' }} />
+                    </div>
+                  </div>
+                  <h4 className="text-xl font-bold text-left mb-4" style={{ color: '#313A00' }}>Core Commands</h4>
+                  <div className="space-y-2 mb-6 flex-grow">
+                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
+                      "Open new tab"
+                    </div>
+                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
+                      "Organize all windows into groups"
+                    </div>
+                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
+                      "Show tab 1 and tab 2 in split view"
+                    </div>
+                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
+                      "Group all tabs by workspace"
+                    </div>
+                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
+                      "Find and show tab from my groups"
+                    </div>
+                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
+                      "Close all tabs in current group"
+                    </div>
+                  </div>
               </div>
 
-              {persona === 'business' ? (
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <div className="rounded-lg not-prose p-4 bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10">
-                    <h4 className="font-semibold mb-1" style={{ color: '#4A5745' }}>Reduce spend</h4>
-                    <p className="text-sm text-gray-700 mb-2">Consolidate 3–5 tools into the browser; cut costs by 15–30%.</p>
-                    <details className="text-sm text-gray-700"><summary className="cursor-pointer">Show details</summary>Lower agent overhead, fewer vendors, simpler support.</details>
+                {/* Sales */}
+                <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-6 flex flex-col hover:shadow-xl transition-all">
+                  <div className="flex justify-start mb-4">
+                    <div className="w-20 h-20 rounded-full flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #e5efd8 0%, #d6e3f4 100%)' }}>
+                      <Icon.DollarSign className="w-10 h-10" style={{ color: '#4A6200' }} />
                   </div>
-                  <div className="rounded-lg not-prose p-4 bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10">
-                    <h4 className="font-semibold mb-1" style={{ color: '#4A5745' }}>Faster onboarding</h4>
-                    <p className="text-sm text-gray-700 mb-2">Policy-based access + SSO enables day‑1 productivity.</p>
-                    <details className="text-sm text-gray-700"><summary className="cursor-pointer">Show details</summary>Import bookmarks/passwords instantly; least‑privilege defaults.</details>
                   </div>
-                  <div className="rounded-lg not-prose p-4 bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10">
-                    <h4 className="font-semibold mb-1" style={{ color: '#4A5745' }}>Higher throughput</h4>
-                    <p className="text-sm text-gray-700 mb-2">Hubs + ad/tracker reduction and AI assist reduce switching.</p>
-                    <details className="text-sm text-gray-700"><summary className="cursor-pointer">Show details</summary>Multi‑view layouts; keyboard/voice commands for common flows.</details>
+                  <h4 className="text-xl font-bold text-left mb-4" style={{ color: '#313A00' }}>Sales</h4>
+                  <div className="text-sm text-gray-700 mb-4 text-left">
+                    Streamline your sales workflow with intelligent tab organization and quick access to CRM, email, and research tools.
                   </div>
-                </div>
-              ) : (
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <div className="rounded-lg not-prose p-4 bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10">
-                    <h4 className="font-semibold mb-1" style={{ color: '#4A5745' }}>Controls at the edge</h4>
-                    <p className="text-sm text-gray-700 mb-2">URL/app‑scoped DLP, clipboard/download policies, audit logs.</p>
-                    <details className="text-sm text-gray-700"><summary className="cursor-pointer">Show details</summary>Export to CSV/JSON; SIEM ingestion; exception workflows.</details>
-                  </div>
-                  <div className="rounded-lg not-prose p-4 bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10">
-                    <h4 className="font-semibold mb-1" style={{ color: '#4A5745' }}>Easy deployment</h4>
-                    <p className="text-sm text-gray-700 mb-2">MDM distribution, config templates, staged channels, rollback.</p>
-                    <details className="text-sm text-gray-700"><summary className="cursor-pointer">Show details</summary>Works with Workspace ONE, Intune, Jamf; JSON policy files.</details>
-                  </div>
-                  <div className="rounded-lg not-prose p-4 bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10">
-                    <h4 className="font-semibold mb-1" style={{ color: '#4A5745' }}>Identity native</h4>
-                    <p className="text-sm text-gray-700 mb-2">SAML/OIDC SSO and SCIM provisioning; MFA enforced.</p>
-                    <details className="text-sm text-gray-700"><summary className="cursor-pointer">Show details</summary>Conditional access; device posture checks; risk‑based prompts.</details>
+                  <div className="space-y-2 mb-6 flex-grow">
+                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
+                      "Open Salesforce and email client in split view"
+                    </div>
+                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
+                      "Group all prospect research tabs together"
+                    </div>
+                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
+                      "Show deal pipeline and contract documents side by side"
+                    </div>
+                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
+                      "Find and open prospect's LinkedIn profile from my groups"
+                    </div>
+                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
+                      "Organize all outreach sequence tabs in one workspace"
+                    </div>
                   </div>
                 </div>
-              )}
+
+                {/* Marketing */}
+                <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-6 flex flex-col hover:shadow-xl transition-all">
+                  <div className="flex justify-start mb-4">
+                    <div className="w-20 h-20 rounded-full flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #d6e3f4 0%, #e5efd8 100%)' }}>
+                      <Icon.Calendar className="w-10 h-10" style={{ color: '#4A6200' }} />
+                    </div>
+                  </div>
+                  <h4 className="text-xl font-bold text-left mb-4" style={{ color: '#313A00' }}>Marketing</h4>
+                  <div className="text-sm text-gray-700 mb-4 text-left">
+                    Manage campaigns, analyze performance, and create content with organized workspaces for all your marketing tools.
+                  </div>
+                  <div className="space-y-2 mb-6 flex-grow">
+                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
+                      "Open Google Ads and Meta Ads in split view for comparison"
+                    </div>
+                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
+                      "Group all campaign analytics tabs by platform"
+                    </div>
+                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
+                      "Show content calendar and design tool side by side"
+                    </div>
+                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
+                      "Find A/B test results from my campaign groups"
+                    </div>
+                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
+                      "Organize all social media management tabs in one workspace"
+                    </div>
+                  </div>
+                </div>
+
+                {/* Research & Analysis */}
+                <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-6 flex flex-col hover:shadow-xl transition-all">
+                  <div className="flex justify-start mb-4">
+                    <div className="w-20 h-20 rounded-full flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #e5efd8 0%, #d6e3f4 100%)' }}>
+                      <Icon.FileText className="w-10 h-10" style={{ color: '#4A6200' }} />
+                    </div>
+                  </div>
+                  <h4 className="text-xl font-bold text-left mb-4" style={{ color: '#313A00' }}>Research & Analysis</h4>
+                  <div className="text-sm text-gray-700 mb-4 text-left">
+                    Organize research sources, data analysis tools, and reference materials for efficient information gathering and analysis.
+                  </div>
+                  <div className="space-y-2 mb-6 flex-grow">
+                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
+                      "Show research paper and data visualization in split view"
+                    </div>
+                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
+                      "Group all market research tabs by industry"
+                    </div>
+                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
+                      "Open competitor analysis and benchmarking tools side by side"
+                    </div>
+                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
+                      "Find specific dataset from my research groups"
+                    </div>
+                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
+                      "Organize all citation sources and notes in one workspace"
+                    </div>
+                  </div>
+                </div>
+
+                {/* Development */}
+                <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-6 flex flex-col hover:shadow-xl transition-all">
+                  <div className="flex justify-start mb-4">
+                    <div className="w-20 h-20 rounded-full flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #d6e3f4 0%, #e5efd8 100%)' }}>
+                      <Icon.Layers className="w-10 h-10" style={{ color: '#4A6200' }} />
+                    </div>
+                  </div>
+                  <h4 className="text-xl font-bold text-left mb-4" style={{ color: '#313A00' }}>Development</h4>
+                  <div className="text-sm text-gray-700 mb-4 text-left">
+                    Streamline your development workflow with organized workspaces for code, documentation, testing, and deployment tools.
+                  </div>
+                  <div className="space-y-2 mb-6 flex-grow">
+                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
+                      "Open GitHub repo and API documentation in split view"
+                    </div>
+                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
+                      "Group all frontend development tabs by feature branch"
+                    </div>
+                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
+                      "Show code editor and test results side by side"
+                    </div>
+                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
+                      "Find deployment logs from my project groups"
+                    </div>
+                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
+                      "Organize all debugging tools and error tracking in one workspace"
+                    </div>
+                  </div>
+                </div>
+
+                {/* Custom Workflow */}
+                <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-6 flex flex-col hover:shadow-xl transition-all">
+                  <div className="flex justify-start mb-4">
+                    <div className="w-20 h-20 rounded-full flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #e5efd8 0%, #d6e3f4 100%)' }}>
+                      <Icon.Sliders className="w-10 h-10" style={{ color: '#4A6200' }} />
+                    </div>
+                  </div>
+                  <h4 className="text-xl font-bold text-left mb-4" style={{ color: '#313A00' }}>Your Workflow</h4>
+                  <div className="text-sm text-gray-700 mb-6 flex-grow text-left">
+                    Adapt these core commands to match your unique workflow. Configure Oasis to work exactly how you need it—whether you're in sales, marketing, research, development, or any other role.
+                  </div>
+                </div>
+              </div>
             </Section>
-            */}
             <Section 
               id="what-is-oasis" 
               title="What is Oasis?" 
               eyebrow="Product Overview"
               kicker="Understanding Oasis as both enterprise and AI browser"
-              right={
-                <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-[#F3F8E4] rounded-full flex items-center justify-center mx-auto mb-4">
-                      <svg className="w-8 h-8 text-[#788B59]" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                      </svg>
-                    </div>
-                    <h3 className="font-semibold text-gray-900 mb-2">Two Versions</h3>
-                    <p className="text-sm text-gray-600">
-                      Free Agentic Browser for personal use, Enterprise Browser for organizations
+              centered={true}
+            >
+              <p className="text-lg mb-12 max-w-3xl mx-auto text-[#4A5745]">
+                Oasis represents the convergence of enterprise browser security and AI-powered intelligence. 
+                It combines the security and control that modern organizations demand with the intelligence 
+                and automation that users expect from next-generation software.
+              </p>
+              
+              {/* Redesigned Product Cards with Images */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-16">
+                {/* Free Agentic Browser Card */}
+                <div className="group block">
+                  <div className="relative overflow-hidden rounded-2xl shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 h-full">
+                    {/* Image Section */}
+                    <div className="relative h-64 overflow-hidden bg-gradient-to-br from-[#F8FAF2] to-[#F2F6E8]">
+                      <img 
+                        src="/images/welcom.jpeg" 
+                        alt="Free Agentic Browser Interface" 
+                        className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#F8FAF2]/80 to-transparent"></div>
+                  </div>
+                    {/* Content Section */}
+                    <div className="p-8 bg-[#F8FAF2]">
+                      <h3 className="text-2xl font-bold text-center mb-4" style={{ color: '#4A6200' }}>
+                      Free Agentic Browser
+                    </h3>
+                      <p className="text-center text-[#4A5745] mb-4">
+                      Designed for personal productivity with AI-powered assistance and smart organization tools.
                     </p>
                   </div>
                 </div>
-              }
-            >
-              <p>
-                Oasis comes in two distinct versions, each tailored to different needs and use cases:
-              </p>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-4">
-                <div className="not-prose bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-lg">
-                  <h3 className="text-lg font-semibold mb-2" style={{ color: '#4A5745' }}>
-                    <Link href="/products/free-agentic-browser" className="text-[#4A5745] hover:text-[#728552]">
-                      Oasis Free Agentic Browser
-                    </Link>
-                  </h3>
-                  <p className="text-sm mb-2" style={{ color: '#4A5745' }}>
-                    Designed for personal productivity with AI-powered assistance and smart organization tools.
-                  </p>
-                  <ul className="text-sm space-y-1.5 list-disc list-inside" style={{ color: '#4A5745' }}>
-                    <li>AI-powered productivity assistant</li>
-                    <li>Smart workspace organization</li>
-                    <li>Advanced tab management</li>
-                    <li>Personal hub creation</li>
-                  </ul>
-                </div>
+                  </div>
                 
-                <div className="not-prose bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-lg">
-                  <h3 className="text-lg font-semibold mb-2" style={{ color: '#4A5745' }}>
-                    <Link href="/products/enterprise-browser" className="text-[#4A5745] hover:text-[#728552]">
-                      Oasis Enterprise Browser
-                    </Link>
-                  </h3>
-                  <p className="text-sm mb-2" style={{ color: '#4A5745' }}>
-                    Built for enterprise environments with enhanced security, compliance, and collaboration features.
-                  </p>
-                  <ul className="text-sm space-y-1.5 list-disc list-inside" style={{ color: '#4A5745' }}>
-                    <li>Enterprise-grade security controls</li>
-                    <li>Centralized management</li>
-                    <li>Compliance and audit logging</li>
-                    <li>Team collaboration features</li>
-                  </ul>
+                {/* Enterprise Browser Card */}
+                <div className="group block">
+                  <div className="relative overflow-hidden rounded-2xl shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 h-full">
+                    {/* Image Section */}
+                    <div className="relative h-64 overflow-hidden bg-gradient-to-br from-[#F8FAF2] to-[#F2F6E8]">
+                      <img 
+                        src="/images/enterprise.jpeg" 
+                        alt="Enterprise Browser Interface" 
+                        className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#F8FAF2]/80 to-transparent"></div>
+                  </div>
+                    {/* Content Section */}
+                    <div className="p-8 bg-[#F8FAF2]">
+                      <h3 className="text-2xl font-bold text-center mb-4" style={{ color: '#4A6200' }}>
+                      Enterprise Browser
+                    </h3>
+                      <p className="text-center text-[#4A5745] mb-4">
+                      Built for enterprise environments with enhanced security, compliance, and collaboration features.
+                    </p>
+                  </div>
                 </div>
               </div>
+                    </div>
 
-              <h4 className="text-lg font-semibold text-gray-900 mb-4 mt-8">What Makes Oasis Different</h4>
-              
-              <p>
-                <strong>Designed for How Your Mind Works:</strong> Unlike other AI browsers that create more 
-                complexity with multiple agents and tabs, Oasis is designed to fit the way your mind 
-                naturally works. We pay attention to the "little things" that matter in your spatial 
-                workspace. While other solutions create multiple agents that require constant clicking 
-                between different interfaces, Oasis lets you view all agents in one unified page, 
-                eliminating the tab chaos that plagues traditional AI browsers.
-              </p>
-              
-              <p>
-                <strong>Deep AI Integration:</strong> AI commands are deeply rooted into the core of the 
-                browser, not bolted on as an afterthought. You can control everything from opening new 
-                windows to saving all tabs into organized hubs, extracting insights from research collections, 
-                all through natural language prompts or voice commands. This seamless integration reduces 
-                friction and makes AI truly useful rather than just a novelty.
-              </p>
-              
-              <p>
-                <strong>Trainable AI Companion:</strong> One of the biggest issues with AI browsers like 
-                Perplexity's Comet is that they're slow, you can't monitor agents simultaneously, and 
-                commands often don't work as expected. Oasis includes training and gamification elements 
-                that let you fine-tune your own AI assistant, making it faster and more accurate for your 
-                specific needs. You maintain control over your AI's learning and behavior.
-              </p>
-              
-              <p>
-                <strong>Security-First AI:</strong> Maintaining security within an AI browser presents 
-                unique challenges that we specialize in solving. <Link href="/security-guide" className="text-[#788B59] hover:text-[#728552] underline">Learn more about our security approach</Link>.
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-                <div className="rounded-lg not-prose bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 p-6">
-                  <h5 className="font-semibold mb-2" style={{ color: '#4A5745' }}>For Business Leaders</h5>
-                  <ul className="list-disc list-inside space-y-1" style={{ color: '#4A5745' }}>
-                    <li>Cut software and support costs by consolidating tools into the browser.</li>
-                    <li>Improve team focus with organized workspaces and distraction reduction.</li>
-                    <li>Shorten onboarding time with policy-based access and single sign-on.</li>
-                  </ul>
+              {/* Interactive Feature Cards with Hover Reveal */}
+              <div className="grid grid-cols-1 gap-6 max-w-6xl mx-auto mt-16">
+                {/* Feature Card 1: Designed for How Your Mind Works */}
+                <div className="group relative overflow-hidden rounded-2xl bg-white border-2 border-gray-200 hover:border-[#4A6200] transition-all duration-500 cursor-pointer">
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#4A6200]/0 via-[#4A6200]/0 to-[#4A6200]/0 group-hover:from-[#4A6200]/5 group-hover:via-[#4A6200]/3 group-hover:to-[#4A6200]/5 transition-all duration-500"></div>
+                  <div className="relative p-8 md:p-10">
+                    <div className="flex flex-col lg:flex-row gap-8 items-start">
+                      <div className="w-full lg:w-1/2 lg:pr-8">
+                        <h3 className="text-2xl md:text-3xl font-bold mb-6 text-left group-hover:text-[#4A6200] transition-colors duration-300" style={{ color: '#313A00' }}>
+                          Designed for How Your Mind Works
+                        </h3>
+                        <div className="space-y-4 text-left">
+                          <p className="text-lg text-[#4A5745] leading-relaxed">
+                    Unlike other AI browsers that create more complexity with multiple agents and tabs, Oasis 
+                    is designed to fit the way your mind naturally works. We pay attention to the "little things" 
+                    that matter in your spatial workspace.
+                  </p>
+                          <p className="text-lg text-[#4A5745] leading-relaxed opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-96 transition-all duration-500 overflow-hidden">
+                    While other solutions create multiple agents that require constant clicking between different 
+                    interfaces, Oasis lets you view all agents in one unified page, eliminating the tab chaos 
+                    that plagues traditional AI browsers.
+                  </p>
+                    </div>
+                  </div>
+                      <div className="w-full lg:w-1/2 relative">
+                        <div className="relative rounded-xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-500">
+                          <div className="aspect-video bg-gray-100 overflow-hidden">
+                            <img 
+                              src="/images/customs.png" 
+                              alt="Designed for How Your Mind Works" 
+                              className="w-full h-full object-cover transform scale-100 group-hover:scale-110 transition-transform duration-700"
+                            />
+                    </div>
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/0 group-hover:from-black/20 to-transparent transition-all duration-500"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="rounded-lg not-prose bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 p-6">
-                  <h5 className="font-semibold mb-2" style={{ color: '#4A5745' }}>For Technical Admins</h5>
-                  <ul className="list-disc list-inside space-y-1" style={{ color: '#4A5745' }}>
-                    <li>Centralize policies, audit logs, and data controls at the browser layer.</li>
-                    <li>Deploy via MDM with support for policy templates and version control.</li>
-                    <li>Integrate identity using <abbr title="Security Assertion Markup Language">SAML</abbr>/<abbr title="OpenID Connect">OIDC</abbr> and automate provisioning via SCIM.</li>
-                  </ul>
+
+                {/* Feature Card 2: Deep AI Integration */}
+                <div className="group relative overflow-hidden rounded-2xl bg-white border-2 border-gray-200 hover:border-[#4A6200] transition-all duration-500 cursor-pointer">
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#4A6200]/0 via-[#4A6200]/0 to-[#4A6200]/0 group-hover:from-[#4A6200]/5 group-hover:via-[#4A6200]/3 group-hover:to-[#4A6200]/5 transition-all duration-500"></div>
+                  <div className="relative p-8 md:p-10">
+                    <div className="flex flex-col lg:flex-row-reverse gap-8 items-start">
+                      <div className="w-full lg:w-1/2 lg:pl-8">
+                        <h3 className="text-2xl md:text-3xl font-bold mb-6 text-left group-hover:text-[#4A6200] transition-colors duration-300" style={{ color: '#313A00' }}>
+                          Deep AI Integration
+                        </h3>
+                        <div className="space-y-4 text-left">
+                          <p className="text-lg text-[#4A5745] leading-relaxed">
+                    AI commands are deeply rooted into the core of the browser, not bolted on as an afterthought. 
+                    You can control everything from opening new windows to saving all tabs into organized hubs, 
+                    extracting insights from research collections, all through natural language prompts or voice commands.
+                  </p>
+                          <p className="text-lg text-[#4A5745] leading-relaxed opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-96 transition-all duration-500 overflow-hidden">
+                    This seamless integration reduces friction and makes AI truly useful rather than just a novelty. 
+                    The AI understands context, learns from your usage patterns, and adapts to your workflow.
+                  </p>
+                </div>
+                </div>
+                      <div className="w-full lg:w-1/2 relative">
+                        <div className="relative rounded-xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-500">
+                          <div className="aspect-video bg-gray-100 overflow-hidden">
+                            <img 
+                              src="/images/ai-2.png" 
+                              alt="Deep AI Integration" 
+                              className="w-full h-full object-cover transform scale-100 group-hover:scale-110 transition-transform duration-700"
+                            />
+                          </div>
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/0 group-hover:from-black/20 to-transparent transition-all duration-500"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Feature Card 3: Trainable AI Companion & Security-First Design */}
+                <div className="group relative overflow-hidden rounded-2xl bg-white border-2 border-gray-200 hover:border-[#4A6200] transition-all duration-500 cursor-pointer">
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#4A6200]/0 via-[#4A6200]/0 to-[#4A6200]/0 group-hover:from-[#4A6200]/5 group-hover:via-[#4A6200]/3 group-hover:to-[#4A6200]/5 transition-all duration-500"></div>
+                  <div className="relative p-8 md:p-10">
+                    <div className="flex flex-col lg:flex-row gap-8 items-start">
+                      <div className="w-full lg:w-1/2 lg:pr-8">
+                        <h3 className="text-2xl md:text-3xl font-bold mb-6 text-left group-hover:text-[#4A6200] transition-colors duration-300" style={{ color: '#313A00' }}>
+                          Trainable AI Companion & Security-First Design
+                        </h3>
+                        <div className="space-y-4 text-left">
+                          <p className="text-lg text-[#4A5745] leading-relaxed">
+                    One of the biggest issues with AI browsers like Perplexity's Comet is that they're slow, 
+                    you can't monitor agents simultaneously, and commands often don't work as expected. Oasis 
+                    includes training and gamification elements that let you fine-tune your own AI assistant, 
+                    making it faster and more accurate for your specific needs.
+                  </p>
+                          <p className="text-lg text-[#4A5745] leading-relaxed opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-96 transition-all duration-500 overflow-hidden">
+                    You maintain control over your AI's learning and behavior. Additionally, maintaining security 
+                    within an AI browser presents unique challenges that we specialize in solving. 
+                            <Link href="/security-guide" className="text-[#4A6200] hover:text-[#3E5300] ml-1 font-semibold underline" style={{ textDecoration: 'none' }}>Learn more about our security approach</Link>.
+                          </p>
+                        </div>
+                      </div>
+                      <div className="w-full lg:w-1/2 relative">
+                        <div className="relative rounded-xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-500">
+                          <div className="aspect-video bg-gray-100 overflow-hidden">
+                            <img 
+                              src="/images/trainable.png" 
+                              alt="Trainable AI Companion & Security-First Design" 
+                              className="w-full h-full object-cover transform scale-100 group-hover:scale-110 transition-transform duration-700"
+                            />
+                          </div>
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/0 group-hover:from-black/20 to-transparent transition-all duration-500"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </Section>
             
-            {/* Hidden: Benefits of Oasis section
             <Section 
               id="benefits-of-oasis" 
               title="Benefits of Oasis" 
               eyebrow="Value Proposition"
               kicker="Key advantages of choosing Oasis for your organization"
+              centered={true}
               right={
                 <div className="space-y-6">
-                  <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+                  <div className="relative bg-white/90 border border-white/80 rounded-[26px] px-6 py-8 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur-lg">
                     <div className="text-center">
-                      <div className="w-16 h-16 bg-[#F3F8E4] rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg className="w-8 h-8 text-[#788B59]" fill="currentColor" viewBox="0 0 24 24">
+                      <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-5">
+                        <svg className="w-10 h-10 text-[#4A6200]" fill="currentColor" viewBox="0 0 24 24">
                           <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
                         </svg>
                       </div>
-                      <h3 className="font-semibold text-gray-900 mb-2">Single Sign-On</h3>
-                      <p className="text-sm text-gray-600">
+                      <h3 className="text-xl font-semibold text-[#1F2D00] mb-3">Single Sign-On</h3>
+                      <p className="text-base text-[#4E5534]">
                         Seamless authentication with your existing identity providers
                       </p>
                     </div>
                   </div>
-                <KeyPointsCard>
-                  <ul className="space-y-2">
-                    <li className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 bg-[#728552] rounded-full mt-2 flex-shrink-0" />
-                      <span>Works with Okta, Azure AD, Ping</span>
+                  <div className="relative bg-white border-2 border-[#4A6200] rounded-[26px] px-6 py-6 shadow-[0_25px_70px_rgba(32,47,0,0.14)]">
+                    <div className="flex items-start gap-3 mb-5">
+                      <div className="w-1 h-6 bg-[#4A6200] rounded-full flex-shrink-0 mt-1" />
+                      <h3 className="text-xl font-semibold text-[#4A6200]">
+                        Key Points
+                      </h3>
+                    </div>
+                    <ul className="space-y-3 text-left">
+                      <li className="flex items-start gap-3">
+                        <div className="w-2 h-2 bg-[#4A6200] rounded-full mt-2 flex-shrink-0" />
+                        <span className="text-base text-[#4A6200]">Works with Okta, Azure AD, Ping</span>
                     </li>
-                    <li className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 bg-[#728552] rounded-full mt-2 flex-shrink-0" />
-                      <span>Built-in MFA support</span>
+                      <li className="flex items-start gap-3">
+                        <div className="w-2 h-2 bg-[#4A6200] rounded-full mt-2 flex-shrink-0" />
+                        <span className="text-base text-[#4A6200]">Built-in MFA support</span>
                     </li>
-                    <li className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 bg-[#728552] rounded-full mt-2 flex-shrink-0" />
-                      <span>Seamless user experience</span>
+                      <li className="flex items-start gap-3">
+                        <div className="w-2 h-2 bg-[#4A6200] rounded-full mt-2 flex-shrink-0" />
+                        <span className="text-base text-[#4A6200]">Seamless user experience</span>
                     </li>
                   </ul>
-                </KeyPointsCard>
+                  </div>
                 </div>
               }
             >
-              <p>
-                Oasis delivers comprehensive benefits across efficiency, security, and user experience. 
-                These advantages are organized into key areas that address the most critical enterprise 
-                browser challenges and opportunities.
+              <p className="mb-8">
+                Enterprise browsers provide stronger security, more control, and better visibility than consumer browsers, 
+                while also improving user productivity and reducing IT complexity.
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-                <div className="rounded-lg p-5 not-prose bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10">
-                  <h5 className="font-semibold mb-2" style={{ color: COLORS.brand900 }}>Business outcomes</h5>
-                  <ul className="list-disc list-inside space-y-1" style={{ color: '#4A5745' }}>
-                    <li>Reduce security stack spend by 15–30% via consolidation.</li>
-                    <li>Speed new-hire productivity by enabling same-day access.</li>
-                    <li>Decrease support tickets with built-in guardrails and guidance.</li>
-                  </ul>
+              
+              <div className="space-y-8 max-w-6xl mx-auto">
+                {/* Security Container */}
+                <div>
+                  <div className="text-sm font-semibold text-[#4A6200] mb-4 uppercase tracking-wide text-left">Security</div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div className="relative bg-white/90 border border-white/80 rounded-xl px-5 py-4 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur-lg">
+                      <div className="absolute top-4 left-4">
+                        <div className="w-8 h-8 rounded-lg bg-[#F8FAF2] flex items-center justify-center" style={{ color: '#4A6200' }}>
+                          <Icon.Lock className="w-5 h-5" />
                 </div>
-                <div className="rounded-lg p-5 not-prose bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10">
-                  <h5 className="font-semibold mb-2" style={{ color: COLORS.brand900 }}>Technical capabilities</h5>
-                  <ul className="list-disc list-inside space-y-1" style={{ color: '#4A5745' }}>
-                    <li>Granular DLP, clipboard, and download policies at URL/app scope.</li>
-                    <li>Exportable audit logs; SIEM-friendly formats; API access.</li>
-                    <li>Configurable update channels and rollback options.</li>
-                  </ul>
+                      </div>
+                      <p className="text-base text-[#4E5534] leading-relaxed text-left pt-2 pl-10">
+                        Enhanced data protection and DLP (controls on copy/paste, download, printing, screenshots, watermarking).
+                      </p>
+                    </div>
+                    <div className="relative bg-white/90 border border-white/80 rounded-xl px-5 py-4 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur-lg">
+                      <div className="absolute top-4 left-4">
+                        <div className="w-8 h-8 rounded-lg bg-[#F8FAF2] flex items-center justify-center" style={{ color: '#4A6200' }}>
+                          <Icon.Shield className="w-5 h-5" />
+                        </div>
+                      </div>
+                      <p className="text-base text-[#4E5534] leading-relaxed text-left pt-2 pl-10">
+                        Built‑in threat detection and prevention for phishing, malware, risky sites, and malicious downloads.
+                      </p>
+                    </div>
+                    <div className="relative bg-white/90 border border-white/80 rounded-xl px-5 py-4 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur-lg">
+                      <div className="absolute top-4 left-4">
+                        <div className="w-8 h-8 rounded-lg bg-[#F8FAF2] flex items-center justify-center" style={{ color: '#4A6200' }}>
+                          <Icon.Key className="w-5 h-5" />
+                        </div>
+                      </div>
+                      <p className="text-base text-[#4E5534] leading-relaxed text-left pt-2 pl-10">
+                        Zero trust access to SaaS and internal web apps directly from the browser, often replacing or reducing VPN and VDI.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Productivity Container */}
+                <div>
+                  <div className="text-sm font-semibold text-[#4A6200] mb-4 uppercase tracking-wide text-left">Productivity</div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div className="relative bg-white/90 border border-white/80 rounded-xl px-5 py-4 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur-lg">
+                      <div className="absolute top-4 left-4">
+                        <div className="w-8 h-8 rounded-lg bg-[#F8FAF2] flex items-center justify-center" style={{ color: '#4A6200' }}>
+                          <Icon.Layout className="w-5 h-5" />
+                        </div>
+                      </div>
+                      <p className="text-base text-[#4E5534] leading-relaxed text-left pt-2 pl-10">
+                        New ergonomic workflows that adapt to how you work, with spatial organization and intuitive controls that reduce cognitive load and improve focus.
+                      </p>
+                    </div>
+                    <div className="relative bg-white/90 border border-white/80 rounded-xl px-5 py-4 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur-lg">
+                      <div className="absolute top-4 left-4">
+                        <div className="w-8 h-8 rounded-lg bg-[#F8FAF2] flex items-center justify-center" style={{ color: '#4A6200' }}>
+                          <Icon.Settings className="w-5 h-5" />
+                        </div>
+                      </div>
+                      <p className="text-base text-[#4E5534] leading-relaxed text-left pt-2 pl-10">
+                        Simplified IT operations by consolidating multiple security agents and web security products into the browser layer.
+                      </p>
+                    </div>
+                    <div className="relative bg-white/90 border border-white/80 rounded-xl px-5 py-4 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur-lg">
+                      <div className="absolute top-4 left-4">
+                        <div className="w-8 h-8 rounded-lg bg-[#F8FAF2] flex items-center justify-center" style={{ color: '#4A6200' }}>
+                          <Icon.DollarSign className="w-5 h-5" />
+                        </div>
+                      </div>
+                      <p className="text-base text-[#4E5534] leading-relaxed text-left pt-2 pl-10">
+                        Lower infrastructure and licensing costs by reducing reliance on legacy VPN, VDI, and separate web gateways.
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
               
-              <div className="space-y-4 mt-8">
-                <Accordion title="Efficiency and Cost Savings" defaultOpen={true}>
-                  <p>
-                    An enterprise browser dramatically simplifies your IT infrastructure and security stack. 
-                    Many of the security tools, endpoint agents, and IT solutions needed to secure and enable 
-                    the enterprise are now embedded in the browser or are no longer needed in many cases. 
-                    This means the cost and effort involved in licensing, deploying, maintaining, and 
-                    supporting all the infrastructure is brought to an absolute minimum.
-                  </p>
-                </Accordion>
+              {/* Streamlined Tabbed Feature Interface */}
+              <div className="mt-12 max-w-5xl mx-auto">
+                {/* Tab Navigation */}
+                <div className="flex flex-wrap justify-center gap-3 mb-8 border-b border-gray-200 pb-4">
+                  <button
+                    onClick={() => setActiveFeatureTab('security')}
+                    className={`px-6 py-3 text-base font-semibold rounded-full transition-all duration-300 ${
+                      activeFeatureTab === 'security' 
+                        ? 'btn-primary' 
+                        : 'btn-secondary'
+                    }`}
+                  >
+                    Security & Protection
+                  </button>
+                  <button
+                    onClick={() => setActiveFeatureTab('productivity')}
+                    className={`px-6 py-3 text-base font-semibold rounded-full transition-all duration-300 ${
+                      activeFeatureTab === 'productivity' 
+                        ? 'btn-primary' 
+                        : 'btn-secondary'
+                    }`}
+                  >
+                    Productivity & Performance
+                  </button>
+                  <button
+                    onClick={() => setActiveFeatureTab('management')}
+                    className={`px-6 py-3 text-base font-semibold rounded-full transition-all duration-300 ${
+                      activeFeatureTab === 'management' 
+                        ? 'btn-primary' 
+                        : 'btn-secondary'
+                    }`}
+                  >
+                    Management & Analytics
+                  </button>
+                </div>
 
-                <Accordion title="Application Provisioning">
-                  <p>
-                    With an enterprise browser, users access all the applications they're entitled to–SaaS, 
-                    web applications, and even non-web apps via <abbr title="Secure Shell">SSH</abbr> or <abbr title="Remote Desktop Protocol">RDP</abbr>. It's the ideal access point for 
-                    application virtualization platforms to connect users to traditional "thick" applications 
-                    without requiring a desktop installation. This way, new apps can be introduced simply, 
-                    and new users can onboard by just logging in and getting to work.
-                  </p>
-                </Accordion>
-
-                <Accordion title="Digital Experience & Analytics">
-                  <p>
-                    An enterprise browser provides analytics on application usage, performance, and workflow 
-                    insights. This data can be used to optimize application spend, identify and remediate 
-                    performance issues, and inform IT strategy to maximize business value. Unlike alternative 
-                    solutions that require application-side integrations or additional agents on the endpoint, 
-                    an enterprise browser naturally collects these analytics across every application interaction.
-                  </p>
-                </Accordion>
-
-                <Accordion title="Remote Access & BYOD">
-                  <p>
-                    An enterprise browser can enable remote access for a hybrid workforce with employees 
-                    outside the corporate office. Many organizations use an enterprise browser to reduce 
-                    the need for traditional VPN or virtual desktop infrastructure (<abbr title="Virtual Desktop Infrastructure">VDI</abbr>) while empowering 
-                    employees to access their applications from anywhere. An enterprise browser can be easily 
-                    deployed to personal devices to enable <abbr title="Bring Your Own Device">BYOD</abbr> initiatives as well.
-                  </p>
-                </Accordion>
-
-                <Accordion title="Data Protection & DLP">
-                  <p>
-                    Work's widespread shift to SaaS and internal web apps inside a consumer browser has made 
-                    data protection more challenging than ever. With no control over browser activity itself, 
-                    legacy approaches have taken a "blunt instrument" approach, securing data while disrupting 
-                    work and driving up cost and complexity in the process.
-              </p>
-              <p>
-                    An enterprise browser, however, builds dynamic data protections into the browser itself, 
+                {/* Tab Content */}
+                <div className="min-h-[400px]">
+                  {activeFeatureTab === 'security' && (
+                    <div className="space-y-6 animate-fadeIn">
+                      <div className="bg-gradient-to-br from-white to-[#F8FAF2] rounded-2xl overflow-hidden border border-gray-200 shadow-lg">
+                        <div className="flex flex-col lg:flex-row">
+                          <div className="lg:w-1/2 p-8">
+                            <h3 className="text-2xl font-bold mb-4" style={{ color: '#313A00' }}>Zero Trust Security</h3>
+                            <p className="text-lg text-[#4A5745] leading-relaxed text-left">
+                              An enterprise browser can be used to implement a zero trust security framework across a 
+                              wide range of deployment scenarios. User identity is verified with IdP integration and 
+                              multi-factor authentication. Device posture is checked to verify the device meets security 
+                              standards. Network and geolocation are examined to see where the request is coming from.
+                            </p>
+                          </div>
+                          <div className="lg:w-1/2 relative min-h-[200px] lg:min-h-0 overflow-hidden">
+                            <img 
+                              src="/images/securtiy.png" 
+                              alt="Zero Trust Security" 
+                              className="w-full h-full object-cover scale-100"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div className="bg-gradient-to-br from-white to-[#F8FAF2] rounded-2xl overflow-hidden border border-gray-200 shadow-lg">
+                        <div className="flex flex-col lg:flex-row-reverse">
+                          <div className="lg:w-1/2 p-8">
+                            <h3 className="text-2xl font-bold mb-4" style={{ color: '#313A00' }}>Safe Browsing & Threat Protection</h3>
+                            <p className="text-lg text-[#4A5745] leading-relaxed text-left">
+                              An enterprise browser comes embedded with powerful security tools that protect all browser 
+                              activity from the myriad of web-born threats, regardless of device or network. Malware is 
+                              detected and blocked before ever reaching the endpoint. Phishing attacks are stopped before 
+                              credentials are compromised. Unsafe or inappropriate sites are blocked from access.
+                            </p>
+                          </div>
+                          <div className="lg:w-1/2 relative min-h-[200px] lg:min-h-0 overflow-hidden">
+                            <img 
+                              src="/images/data-protection .png" 
+                              alt="Safe Browsing & Threat Protection" 
+                              className="w-full h-full object-cover scale-100"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div className="bg-gradient-to-br from-white to-[#F8FAF2] rounded-2xl overflow-hidden border border-gray-200 shadow-lg">
+                        <div className="flex flex-col lg:flex-row">
+                          <div className="lg:w-1/2 p-8">
+                            <h3 className="text-2xl font-bold mb-4" style={{ color: '#313A00' }}>Data Protection & DLP</h3>
+                            <p className="text-lg text-[#4A5745] leading-relaxed text-left">
+                              An enterprise browser builds dynamic data protections into the browser itself, A
                     enabling you to build policies that prevent data leakage without disrupting organizational 
-                    workflows. Its <abbr title="Data Loss Prevention">DLP</abbr> controls protect sensitive data from being improperly downloaded or 
+                    workflows. Its data loss prevention (DLP) controls protect sensitive data from being improperly downloaded or 
                     uploaded before it leaves or enters the browser.
                   </p>
-                </Accordion>
-
-                <Accordion title="Visibility & Monitoring">
-                  <p>
+                          </div>
+                          <div className="lg:w-1/2 relative min-h-[200px] lg:min-h-0 overflow-hidden">
+                            <img 
+                              src="/images/data-protection-2.png" 
+                              alt="Data Protection & DLP" 
+                              className="w-full h-full object-cover scale-100"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div className="bg-gradient-to-br from-white to-[#F8FAF2] rounded-2xl overflow-hidden border border-gray-200 shadow-lg">
+                        <div className="flex flex-col lg:flex-row">
+                          <div className="lg:w-1/2 p-8 flex flex-col">
+                            <h3 className="text-2xl font-bold mb-4" style={{ color: '#313A00' }}>Visibility & Monitoring</h3>
+                            <p className="text-lg text-[#4A5745] mb-6 leading-relaxed text-left">
                     An enterprise browser offers unprecedented visibility into all browser activity in a way 
                     that simply wasn't possible before. Most legacy security tools offer visibility via network 
                     traffic inspection by decrypting SSL traffic. An enterprise browser offers visibility into 
                     browser behavior without any unnatural network traffic manipulation.
                   </p>
-                  <div className="bg-[#F3F8E4] rounded-lg p-4 mt-4">
-                    <div className="flex items-center mb-2">
-                      <div className="w-8 h-8 bg-[#E0D48C] rounded-full flex items-center justify-center mr-3">
-                        <span className="text-[#4A5745] font-bold text-sm">3</span>
-              </div>
-                      <span className="font-semibold text-[#4A5745]">Minutes</span>
+                          </div>
+                          <div className="lg:w-1/2 relative min-h-[200px] lg:min-h-0 overflow-hidden">
+                            <img 
+                              src="/images/visibility.png" 
+                              alt="Visibility & Monitoring" 
+                              className="w-full h-full object-cover scale-100"
+                            />
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <p className="text-[#4A5745] text-sm">
-                      to open and close a phishing attempt investigation by The Bank of Marion. Previously took several hours.
-                    </p>
-                  </div>
-                </Accordion>
+                  )}
 
-                <Accordion title="Zero Trust Security">
-                  <p>
-                    An enterprise browser can be used to implement a zero trust security framework across a 
-                    wide range of deployment scenarios:
-                  </p>
-                  <ul className="list-disc list-inside mt-4 space-y-2">
-                    <li>User identity is verified with IdP integration and multi-factor authentication</li>
-                    <li>Device posture is checked to verify the device meets security standards</li>
-                    <li>Network and geolocation are examined to see where the request is coming from</li>
-                    </ul>
-                  <p className="mt-4">
-                    All of these elements are continuously evaluated with every access request, making it easy 
-                    to implement and enforce robust zero trust security policies across all browser activity.
-                  </p>
-                </Accordion>
-
-                <Accordion title="Safe Browsing & Threat Protection">
-                  <p>
-                    An enterprise browser comes embedded with powerful security tools that protect all browser 
-                    activity from the myriad of web-born threats, regardless of device or network. Malware is 
-                    detected and blocked before ever reaching the endpoint. Phishing attacks are stopped before 
-                    credentials are compromised. Unsafe or inappropriate sites are blocked from access.
-                  </p>
-                </Accordion>
-
-                <Accordion title="Productivity & Performance">
-                  <p>
+                  {activeFeatureTab === 'productivity' && (
+                    <div className="space-y-6 animate-fadeIn">
+                      <div className="bg-gradient-to-br from-white to-[#F8FAF2] rounded-2xl overflow-hidden border border-gray-200 shadow-lg">
+                        <div className="flex flex-col lg:flex-row">
+                          <div className="lg:w-1/2 p-8 flex flex-col">
+                            <h3 className="text-2xl font-bold mb-4" style={{ color: '#313A00' }}>Productivity & Performance</h3>
+                            <p className="text-lg text-[#4A5745] mb-6 leading-relaxed text-left">
                     Consumer browsers are optimized for personal convenience, advertising, consumer workflows 
                     like online shopping and social media. By contrast, an enterprise browser is designed to 
                     optimize for the workplace. It is tied to your enterprise identity (rather than a personal 
                     account), with built-in ad blocking to remove distractions and speed up browsing, and 
                     integrated tools to speed up common workflows.
                   </p>
-                  <div className="bg-[#F3F8E4] rounded-lg p-4 mt-4">
-                    <div className="flex items-center mb-2">
-                      <div className="w-8 h-8 bg-[#E0D48C] rounded-full flex items-center justify-center mr-3">
-                        <span className="text-[#4A5745] font-bold text-sm">80%</span>
+                            <div className="mt-auto">
+                              <div className="inline-flex items-center gap-3 px-6 py-4 bg-gradient-to-r from-[#4A6200] to-[#5A7200] rounded-xl shadow-md">
+                                <div>
+                                  <div className="text-white font-bold text-lg leading-tight">80% Faster Launch</div>
+                                  <div className="text-white/90 text-xs mt-1">Point-of-sale system launch by a national retailer</div>
                     </div>
-                      <span className="font-semibold text-[#4A5745]">Faster Launch</span>
                     </div>
-                    <p className="text-[#4A5745] text-sm">
-                      Faster point-of-sale system launch by a national retailer, saving 40 seconds on each launch.
+                              <p className="text-[#4A5745] text-sm mt-3 ml-2">
+                                Saving 40 seconds on each launch
                     </p>
                   </div>
-                </Accordion>
-              </div>
-            </Section>
-            */}
-            {/* Hidden: Common use cases section
-            <Section 
-              id="common-use-cases" 
-              title="Common use cases" 
-              eyebrow="Real-World Applications"
-              kicker="How organizations use Oasis to solve business challenges"
-              right={
-                <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
-                  <div className="text-center">
-                      <div className="w-16 h-16 bg-[#F3F8E4] rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg className="w-8 h-8 text-[#728552]" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                      </svg>
+                          </div>
+                          <div className="lg:w-1/2 relative min-h-[200px] lg:min-h-0 overflow-hidden">
+                            <img 
+                              src="/images/productivity.png" 
+                              alt="Productivity & Performance" 
+                              className="w-full h-full object-cover scale-100"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div className="bg-gradient-to-br from-white to-[#F8FAF2] rounded-2xl overflow-hidden border border-gray-200 shadow-lg">
+                        <div className="flex flex-col lg:flex-row-reverse">
+                          <div className="lg:w-1/2 p-8">
+                            <h3 className="text-2xl font-bold mb-4" style={{ color: '#313A00' }}>Application Provisioning</h3>
+                            <p className="text-lg text-[#4A5745] leading-relaxed text-left">
+                              With an enterprise browser, users access all the applications they're entitled to–SaaS, 
+                              web applications, and even non-web apps via <abbr title="Secure Shell">SSH</abbr> or <abbr title="Remote Desktop Protocol">RDP</abbr>. It's the ideal access point for 
+                              application virtualization platforms to connect users to traditional "thick" applications 
+                              without requiring a desktop installation. This way, new apps can be introduced simply, 
+                              and new users can onboard by just logging in and getting to work.
+                            </p>
+                          </div>
+                          <div className="lg:w-1/2 relative min-h-[200px] lg:min-h-0 overflow-hidden">
+                            <img 
+                              src="/images/applicaiton .png" 
+                              alt="Application Provisioning" 
+                              className="w-full h-full object-cover scale-100"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div className="bg-gradient-to-br from-white to-[#F8FAF2] rounded-2xl overflow-hidden border border-gray-200 shadow-lg">
+                        <div className="flex flex-col lg:flex-row">
+                          <div className="lg:w-1/2 p-8">
+                            <h3 className="text-2xl font-bold mb-4" style={{ color: '#313A00' }}>Remote Access & BYOD</h3>
+                            <p className="text-lg text-[#4A5745] leading-relaxed text-left">
+                              An enterprise browser can enable remote access for a hybrid workforce with employees 
+                              outside the corporate office. Many organizations use an enterprise browser to reduce 
+                              the need for traditional VPN or virtual desktop infrastructure (<abbr title="Virtual Desktop Infrastructure">VDI</abbr>) while empowering 
+                              employees to access their applications from anywhere. An enterprise browser can be easily 
+                              deployed to personal devices to enable bring your own device (BYOD) initiatives as well.
+                            </p>
+                          </div>
+                          <div className="lg:w-1/2 relative min-h-[200px] lg:min-h-0 overflow-hidden">
+                            <img 
+                              src="/images/BYOD.png" 
+                              alt="Remote Access & BYOD" 
+                              className="w-full h-full object-cover scale-100"
+                            />
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <h3 className="font-semibold text-gray-900 mb-2">Policy Management</h3>
-                    <p className="text-sm text-gray-600">
-                      Granular controls for data loss prevention and access management
-                    </p>
-                  </div>
+                  )}
+
+                  {activeFeatureTab === 'management' && (
+                    <div className="space-y-6 animate-fadeIn">
+                      <div className="bg-gradient-to-br from-white to-[#F8FAF2] rounded-2xl overflow-hidden border border-gray-200 shadow-lg">
+                        <div className="flex flex-col lg:flex-row">
+                          <div className="lg:w-1/2 p-8">
+                            <h3 className="text-2xl font-bold mb-4" style={{ color: '#313A00' }}>Efficiency and Cost Savings</h3>
+                            <p className="text-lg text-[#4A5745] leading-relaxed text-left">
+                              An enterprise browser dramatically simplifies your IT infrastructure and security stack. 
+                              Many of the security tools, endpoint agents, and IT solutions needed to secure and enable 
+                              the enterprise are now embedded in the browser or are no longer needed in many cases. 
+                              This means the cost and effort involved in licensing, deploying, maintaining, and 
+                              supporting all the infrastructure is brought to an absolute minimum.
+                            </p>
+                          </div>
+                          <div className="lg:w-1/2 relative min-h-[300px] lg:min-h-[400px] overflow-hidden">
+                            <img 
+                              src="/images/cost.png" 
+                              alt="Efficiency and Cost Savings" 
+                              className="w-full h-full object-contain scale-110"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div className="bg-gradient-to-br from-white to-[#F8FAF2] rounded-2xl overflow-hidden border border-gray-200 shadow-lg">
+                        <div className="flex flex-col lg:flex-row-reverse">
+                          <div className="lg:w-1/2 p-8">
+                            <h3 className="text-2xl font-bold mb-4" style={{ color: '#313A00' }}>Digital Experience & Analytics</h3>
+                            <p className="text-lg text-[#4A5745] leading-relaxed text-left">
+                              An enterprise browser provides analytics on application usage, performance, and workflow 
+                              insights. This data can be used to optimize application spend, identify and remediate 
+                              performance issues, and inform IT strategy to maximize business value. Unlike alternative 
+                              solutions that require application-side integrations or additional agents on the endpoint, 
+                              an enterprise browser naturally collects these analytics across every application interaction.
+                            </p>
+                          </div>
+                          <div className="lg:w-1/2 relative min-h-[300px] lg:min-h-[400px] overflow-hidden">
+                            <img 
+                              src="/images/analytics.png" 
+                              alt="Digital Experience & Analytics" 
+                              className="w-full h-full object-contain scale-110"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
                 </div>
-              }
-            >
-              <p>
-                Enterprise research teams require secure, efficient, and comprehensive tools to gather, 
-                analyze, and share information across various domains. Oasis provides the ideal platform 
-                for research-intensive workflows, offering both security and productivity features that 
-                enable teams to conduct thorough research while maintaining data protection and compliance.
-              </p>
-              
-              <div className="space-y-4 mt-8">
-                <Accordion title="Sales Prospecting & Lead Research" defaultOpen={true}>
-                  <p>
-                    Sales teams use Oasis to conduct comprehensive prospect research while maintaining 
-                    data security and compliance. The browser enables secure access to CRM systems, 
-                    LinkedIn Sales Navigator, industry databases, and competitive intelligence platforms.
-                  </p>
-                  <ul className="list-disc list-inside mt-4 space-y-2">
-                    <li>Secure access to LinkedIn Sales Navigator and other prospecting tools</li>
-                    <li>Automated data collection and lead scoring workflows</li>
-                    <li>Integration with <abbr title="Customer Relationship Management">CRM</abbr> systems for seamless data transfer</li>
-                    <li>Competitive intelligence gathering and analysis</li>
-                    <li>Social media monitoring and engagement tracking</li>
-                  </ul>
-                </Accordion>
-
-                <Accordion title="Market Research & Competitive Analysis">
-                  <p>
-                    Market research teams leverage Oasis for comprehensive industry analysis, competitor 
-                    monitoring, and trend identification. The browser's AI capabilities enhance data 
-                    collection and analysis while maintaining security protocols.
-                  </p>
-                  <ul className="list-disc list-inside mt-4 space-y-2">
-                    <li>Industry report analysis and trend identification</li>
-                    <li>Competitor website monitoring and content analysis</li>
-                    <li>Social media sentiment analysis and brand monitoring</li>
-                    <li>Financial data collection and analysis</li>
-                    <li>Regulatory and compliance research</li>
-                  </ul>
-                </Accordion>
-
-                <Accordion title="Due Diligence & M&A Research">
-                  <p>
-                    Investment and M&A teams use Oasis for thorough due diligence research, ensuring 
-                    secure access to sensitive financial data, legal documents, and market intelligence 
-                    while maintaining strict confidentiality requirements.
-                  </p>
-                  <ul className="list-disc list-inside mt-4 space-y-2">
-                    <li>Financial statement analysis and verification</li>
-                    <li>Legal document review and compliance checking</li>
-                    <li>Management team background research</li>
-                    <li>Market position and competitive landscape analysis</li>
-                    <li>Risk assessment and mitigation planning</li>
-                    </ul>
-                </Accordion>
-
-                <Accordion title="Academic & Scientific Research">
-                  <p>
-                    Research institutions and corporate R&D teams use Oasis for secure access to academic 
-                    databases, scientific journals, and collaborative research platforms while protecting 
-                    intellectual property and sensitive research data.
-                  </p>
-                  <ul className="list-disc list-inside mt-4 space-y-2">
-                    <li>Academic database access (PubMed, IEEE, ACM, etc.)</li>
-                    <li>Scientific literature review and citation management</li>
-                    <li>Collaborative research platform integration</li>
-                    <li>Patent and intellectual property research</li>
-                    <li>Grant application and funding research</li>
-                    </ul>
-                </Accordion>
-
-                <Accordion title="Legal Research & Compliance">
-                  <p>
-                    Legal teams and compliance officers use Oasis for comprehensive legal research, 
-                    regulatory monitoring, and case law analysis while ensuring attorney-client privilege 
-                    and data protection requirements.
-                  </p>
-                  <ul className="list-disc list-inside mt-4 space-y-2">
-                    <li>Case law research and precedent analysis</li>
-                    <li>Regulatory change monitoring and impact assessment</li>
-                    <li>Contract analysis and risk identification</li>
-                    <li>Intellectual property research and protection</li>
-                    <li>Compliance audit preparation and documentation</li>
-                    </ul>
-                </Accordion>
-
-                <Accordion title="Financial Research & Analysis">
-                  <p>
-                    Financial analysts and investment teams use Oasis for secure access to financial 
-                    databases, market data, and trading platforms while maintaining strict security 
-                    protocols and audit trails.
-                  </p>
-                  <ul className="list-disc list-inside mt-4 space-y-2">
-                    <li>Financial database access (Bloomberg, Reuters, etc.)</li>
-                    <li>Real-time market data analysis and reporting</li>
-                    <li>Investment research and portfolio analysis</li>
-                    <li>Risk assessment and modeling</li>
-                    <li>Regulatory reporting and compliance monitoring</li>
-                    </ul>
-                </Accordion>
-
-                <Accordion title="Customer Research & User Insights">
-                  <p>
-                    Product and marketing teams use Oasis for customer research, user behavior analysis, 
-                    and market validation while protecting customer data and maintaining privacy compliance.
-                  </p>
-                  <ul className="list-disc list-inside mt-4 space-y-2">
-                    <li>Customer survey and feedback collection</li>
-                    <li>User behavior analysis and journey mapping</li>
-                    <li>Market validation and product testing</li>
-                    <li>Customer support research and improvement</li>
-                    <li>Brand perception and reputation monitoring</li>
-                    </ul>
-                </Accordion>
               </div>
             </Section>
-            */}
-            {/* Hidden: Similar browser vendors / Competitive Landscape section
             <Section 
               id="similar-browser-vendors" 
               title="Similar browser vendors" 
               eyebrow="Competitive Landscape"
+              centered={true}
               kicker="How Oasis compares to other enterprise browser solutions"
               right={
-                <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+                <div className="relative bg-white/90 border border-white/80 rounded-[26px] px-6 py-8 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur-lg">
                   <div className="text-center">
-                      <div className="w-16 h-16 bg-[#F3F8E4] rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg className="w-8 h-8 text-[#788B59]" fill="currentColor" viewBox="0 0 24 24">
+                    <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-5">
+                      <svg className="w-10 h-10 text-[#4A6200]" fill="currentColor" viewBox="0 0 24 24">
                         <circle cx="12" cy="12" r="3"/>
                         <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 7.82 4 1.65 1.65 0 0 0 9 2.49V2a2 2 0 1 1 4 0v.09c0 .66.38 1.26 1 1.51.56.24 1.22.14 1.68-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06c-.47.47-.57 1.12-.33 1.68.25.62.85 1 1.51 1H21a2 2 0 1 1 0 4h-.09c-.66 0-1.26.38-1.51 1z"/>
                       </svg>
                     </div>
-                    <h3 className="font-semibold text-gray-900 mb-2">Centralized Control</h3>
-                    <p className="text-sm text-gray-600">
+                    <h3 className="text-xl font-semibold text-[#1F2D00] mb-3">Centralized Control</h3>
+                    <p className="text-base text-[#4E5534]">
                       Unified management console for enterprise-wide deployment
                     </p>
                   </div>
                 </div>
               }
             >
+              <div className="text-left">
               <p>
                 When evaluating enterprise browser solutions, it's important to understand how Oasis 
                 compares to other options in the market. The browser landscape has evolved significantly 
@@ -1000,34 +1305,20 @@ export default function EnterpriseBuyerGuidePage() {
                 and emerging AI browsers. This comparison will help you understand where Oasis fits in 
                 the competitive landscape and what makes it unique.
               </p>
+              </div>
               
               <div className="mt-8">
                 <BrowserComparisonTable />
               </div>
             </Section>
-            */}
             <Section 
               id="deployment-experience" 
               title="Deployment experience" 
               eyebrow="Implementation"
               kicker="What to expect when deploying Oasis in your organization"
-              right={
-                <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
-                  <div className="text-center">
-                      <div className="w-16 h-16 bg-[#F3F8E4] rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg className="w-8 h-8 text-[#788B59]" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/>
-                      </svg>
-                    </div>
-                    <h3 className="font-semibold text-gray-900 mb-2">Zero Trust Security</h3>
-                    <p className="text-sm text-gray-600">
-                      Never trust, always verify - comprehensive security architecture
-                    </p>
-                  </div>
-                </div>
-              }
+              centered={false}
             >
-              <p>
+              <p className="text-left mb-16 max-w-4xl mx-auto">
                 Oasis deployment follows a practical, incremental approach that prioritizes immediate 
                 functionality over complex initial configuration. The browser works out-of-the-box, 
                 allowing you to get users productive quickly while building security policies and 
@@ -1035,27 +1326,42 @@ export default function EnterpriseBuyerGuidePage() {
                 than requiring months of setup and planning.
               </p>
               
-              <div className="mt-8 space-y-8">
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-8 h-8 bg-[#E0D48C] rounded-full flex items-center justify-center">
-                    <span className="text-[#4A5745] font-bold text-sm">1</span>
+              {/* Elegant Timeline Design */}
+              <div className="mt-16 max-w-4xl mx-auto">
+                <div className="space-y-16 relative">
+                  {/* Vertical line connector */}
+                  <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#4A6200]/20 via-[#4A6200]/30 to-transparent hidden md:block"></div>
+                  
+                  {/* Step 1 */}
+                  <div className="relative flex items-start gap-8">
+                    <div className="flex-shrink-0 relative z-10">
+                      <div className="w-16 h-16 rounded-full border-2 border-[#4A6200] bg-white flex items-center justify-center">
+                        <span className="text-[#4A6200] font-bold text-xl">1</span>
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Integrate with your existing identity infrastructure</h3>
-                    <p className="text-gray-700">
+                    </div>
+                    <div className="flex-1 pt-2">
+                      <h3 className="text-2xl md:text-3xl font-bold text-[#313A00] mb-4 leading-tight">
+                        Integrate with your existing identity infrastructure
+                      </h3>
+                      <p className="text-lg text-[#4A5745] leading-relaxed">
                       Oasis seamlessly connects with your current identity provider using industry-standard 
-                      protocols including <abbr title="Security Assertion Markup Language">SAML</abbr>, OAuth, and <abbr title="System for Cross-domain Identity Management">SCIM</abbr> for user provisioning and authentication.
+                        protocols including <abbr title="Security Assertion Markup Language" className="underline decoration-dotted cursor-help">SAML</abbr>, OAuth, and <abbr title="System for Cross-domain Identity Management" className="underline decoration-dotted cursor-help">SCIM</abbr> for user provisioning and authentication.
                     </p>
                   </div>
               </div>
               
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-8 h-8 bg-[#E0D48C] rounded-full flex items-center justify-center">
-                    <span className="text-[#4A5745] font-bold text-sm">2</span>
+                  {/* Step 2 */}
+                  <div className="relative flex items-start gap-8">
+                    <div className="flex-shrink-0 relative z-10">
+                      <div className="w-16 h-16 rounded-full border-2 border-[#4A6200] bg-white flex items-center justify-center">
+                        <span className="text-[#4A6200] font-bold text-xl">2</span>
                       </div>
-                  <div className="flex-1">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Distribute Oasis to your team</h3>
-                    <p className="text-gray-700">
+                    </div>
+                    <div className="flex-1 pt-2">
+                      <h3 className="text-2xl md:text-3xl font-bold text-[#313A00] mb-4 leading-tight">
+                        Distribute Oasis to your team
+                      </h3>
+                      <p className="text-lg text-[#4A5745] leading-relaxed">
                       Deploy through your existing device management platform (VMware Workspace ONE, Citrix Endpoint Management, 
                       etc.) or provide a secure download link for self-service installation. The process 
                       is straightforward: download, install, and start using.
@@ -1063,26 +1369,36 @@ export default function EnterpriseBuyerGuidePage() {
                     </div>
                     </div>
 
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-8 h-8 bg-[#E0D48C] rounded-full flex items-center justify-center">
-                    <span className="text-[#4A5745] font-bold text-sm">3</span>
+                  {/* Step 3 */}
+                  <div className="relative flex items-start gap-8">
+                    <div className="flex-shrink-0 relative z-10">
+                      <div className="w-16 h-16 rounded-full border-2 border-[#4A6200] bg-white flex items-center justify-center">
+                        <span className="text-[#4A6200] font-bold text-xl">3</span>
                     </div>
-                  <div className="flex-1">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Users get up and running immediately</h3>
-                    <p className="text-gray-700">
+                    </div>
+                    <div className="flex-1 pt-2">
+                      <h3 className="text-2xl md:text-3xl font-bold text-[#313A00] mb-4 leading-tight">
+                        Users get up and running immediately
+                      </h3>
+                      <p className="text-lg text-[#4A5745] leading-relaxed">
                       Team members authenticate through your existing identity system and can instantly 
                       import their bookmarks, saved passwords, and browser preferences for a familiar experience.
                       </p>
                     </div>
                   </div>
 
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-8 h-8 bg-[#E0D48C] rounded-full flex items-center justify-center">
-                    <span className="text-[#4A5745] font-bold text-sm">4</span>
+                  {/* Step 4 */}
+                  <div className="relative flex items-start gap-8">
+                    <div className="flex-shrink-0 relative z-10">
+                      <div className="w-16 h-16 rounded-full border-2 border-[#4A6200] bg-white flex items-center justify-center">
+                        <span className="text-[#4A6200] font-bold text-xl">4</span>
                     </div>
-                  <div className="flex-1">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Gradually implement security policies</h3>
-                    <p className="text-gray-700">
+                    </div>
+                    <div className="flex-1 pt-2">
+                      <h3 className="text-2xl md:text-3xl font-bold text-[#313A00] mb-4 leading-tight">
+                        Gradually implement security policies
+                      </h3>
+                      <p className="text-lg text-[#4A5745] leading-relaxed">
                       Begin with a pilot group and specific applications to develop policies that match 
                       your workflows. As you gain experience, expand to additional teams and use cases 
                       to build comprehensive security coverage.
@@ -1090,224 +1406,169 @@ export default function EnterpriseBuyerGuidePage() {
                     </div>
                     </div>
                     </div>
+                    </div>
               
-              <div className="mt-8 bg-[#F3F8E4] rounded-lg p-6">
-                <div className="flex items-center mb-3">
-                  <div className="w-8 h-8 bg-[#E0D48C] rounded-full flex items-center justify-center mr-3">
-                    <svg className="w-5 h-5 text-[#788B59]" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                    </svg>
+              {/* Why This Approach Works - Elegant Design */}
+              <div className="mt-20 max-w-4xl mx-auto pt-12 border-t border-[#4A6200]/20">
+                <h3 className="text-2xl md:text-3xl font-bold text-[#313A00] mb-8 text-center">
+                  Why This Approach Works
+                </h3>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-2 h-2 bg-[#4A6200] rounded-full mt-6"></div>
+                    <p className="text-lg text-[#4A5745] leading-relaxed">
+                      Ready-to-use browser eliminates lengthy setup processes
+                    </p>
                     </div>
-                  <h3 className="text-lg font-semibold text-[#4A5745]">Why This Approach Works</h3>
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-2 h-2 bg-[#4A6200] rounded-full mt-6"></div>
+                    <p className="text-lg text-[#4A5745] leading-relaxed">
+                      Users can be productive while policies are being developed
+                    </p>
                   </div>
-                <ul className="text-[#4A5745] space-y-2">
-                  <li className="flex items-start">
-                    <span className="w-2 h-2 bg-[#728552] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span>Ready-to-use browser eliminates lengthy setup processes</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="w-2 h-2 bg-[#728552] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span>Users can be productive while policies are being developed</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="w-2 h-2 bg-[#728552] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span>Rapid time-to-value with measurable results in days</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="w-2 h-2 bg-[#728552] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span>Phased rollout reduces risk and allows for learning and adjustment</span>
-                  </li>
-                </ul>
-                </div>
-            </Section>
-            <Section 
-              id="user-experience" 
-              title="User Experience" 
-              eyebrow="Interface & Usability"
-              kicker="How Oasis feels to use day-to-day"
-              right={
-                <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
-                  <div className="text-center">
-                      <div className="w-16 h-16 bg-[#F3F8E4] rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg className="w-8 h-8 text-[#728552]" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
-                      </svg>
-                    </div>
-                    <h3 className="font-semibold text-gray-900 mb-2">Productivity Focused</h3>
-                    <p className="text-sm text-gray-600">
-                      Enhanced user experience without compromising security
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-2 h-2 bg-[#4A6200] rounded-full mt-6"></div>
+                    <p className="text-lg text-[#4A5745] leading-relaxed">
+                      Rapid time-to-value with measurable results in days
+                    </p>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-2 h-2 bg-[#4A6200] rounded-full mt-6"></div>
+                    <p className="text-lg text-[#4A5745] leading-relaxed">
+                      Phased rollout reduces risk and allows for learning and adjustment
                     </p>
                   </div>
                 </div>
-              }
-            >
-              <p>
-                Oasis represents the first AI browser designed to meld with the way your mind works naturally. 
-                Built for ergonomic work, focus, and spatial ease, Oasis creates a soothing environment that is 
-                conducive to fostering deep work, flow state, concentration, and focus.
-              </p>
-              
-              <div className="mt-8 space-y-6">
-                <div className="not-prose bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-lg">
-                  <h3 className="text-lg font-semibold text-[#4A5745] mb-3">Designed Like an Oasis</h3>
-                  <p className="text-gray-700 mb-4">
-                    We are building a soothing environment that is conducive to fostering deep work, flow state, 
-                    concentration, and focus.
-                  </p>
-                  <ul className="text-gray-700 space-y-2">
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 bg-[#728552] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                      <span>Calming visual design that reduces cognitive load</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 bg-[#728552] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                      <span>Spatial organization that mirrors natural thought patterns</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 bg-[#728552] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                      <span>Ergonomic interface designed for extended focus sessions</span>
-                    </li>
-                  </ul>
                 </div>
-
-                <div className="not-prose bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-lg">
-                  <h3 className="text-lg font-semibold text-[#4A5745] mb-3">Voice-Controlled AI Workflows</h3>
-                  <p className="text-gray-700 mb-4">
-                    Fast voice-controlled commands let you talk to the Oasis browser and orchestrate agentic 
-                    workflows. This natural interaction model reduces friction and enables seamless multitasking.
-                  </p>
-                  <ul className="text-gray-700 space-y-2">
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 bg-[#728552] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                      <span>Natural language commands for complex browser operations</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 bg-[#728552] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                      <span>Orchestrate multiple tasks through conversational AI</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 bg-[#728552] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                      <span>Hands-free operation for accessibility and efficiency</span>
-                    </li>
-                  </ul>
+            </Section>
+            {/* Full-Width Media Carousel Section */}
+            <section 
+              id="user-experience" 
+              className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] py-16 md:py-24 bg-white"
+            >
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="text-center mb-12">
+                  <div className="tracking-wider mb-3 font-semibold text-base lg:text-lg capitalize" style={{ color: '#978455' }}>
+                    Interface & Usability
                     </div>
-
-                <div className="not-prose bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-lg">
-                  <h3 className="text-lg font-semibold text-[#4A5745] mb-3">Spatial Ease</h3>
-                  <p className="text-gray-700 mb-4">
-                    Every aspect of Oasis is designed to work with your natural cognitive processes, 
-                    reducing mental overhead and enabling you to focus on what matters most.
-                  </p>
-                  <ul className="text-gray-700 space-y-2">
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 bg-[#728552] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                      <span>Intuitive spatial organization that matches mental models</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 bg-[#728552] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                      <span>Context-aware interfaces that adapt to your workflow</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 bg-[#728552] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                      <span>Reduced cognitive switching between tasks and applications</span>
-                    </li>
-                  </ul>
+                  <h2 className="text-3xl lg:text-4xl font-bold mb-4" style={{ color: COLORS.primary }}>
+                    User Experience
+                  </h2>
+                  <p className="text-xl text-gray-700 max-w-2xl mx-auto">
+                    Experience how Oasis feels to use day-to-day
+                    </p>
+                  </div>
+                
+                {/* Media Carousel */}
+                <div className="relative w-full max-w-6xl mx-auto">
+                  <div className="relative overflow-hidden rounded-2xl bg-gray-100 shadow-2xl" style={{ aspectRatio: '16/9' }}>
+                    {mediaItems.map((item, index) => (
+                      <div
+                        key={index}
+                        className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+                          index === currentMediaIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                        }`}
+                      >
+                        {item.type === 'video' ? (
+                          <video
+                            className="w-full h-full object-cover"
+                            autoPlay
+                            muted
+                            loop
+                            playsInline
+                            key={index}
+                          >
+                            <source src={item.src} type="video/mp4" />
+                          </video>
+                        ) : item.type === 'gif' ? (
+                          <img
+                            src={item.src}
+                            alt={item.alt}
+                            className="w-full h-full object-cover"
+                            loading="lazy"
+                          />
+                        ) : (
+                          <img
+                            src={item.src}
+                            alt={item.alt}
+                            className="w-full h-full object-cover"
+                            loading="lazy"
+                          />
+                        )}
+                    </div>
+                    ))}
                   </div>
 
-                <div className="not-prose bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-lg">
-                  <h3 className="text-lg font-semibold text-[#4A5745] mb-3">Training and Gamification Elements</h3>
-                  <p className="text-gray-700 mb-4">
-                    Fine-tune your own AI assistant (companion) so that it becomes faster and more accurate for you. 
-                    One of the biggest issues with other AI browsers is that they're slow, you can't monitor agents 
-                    simultaneously, and many commands don't work the way you expect. We let you as the user take 
-                    control of training your own AI.
-                  </p>
-                  <ul className="text-gray-700 space-y-2">
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 bg-[#728552] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                      <span>Personalized AI training that adapts to your specific workflow patterns</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 bg-[#728552] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                      <span>Gamification elements that make AI training engaging and rewarding</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 bg-[#728552] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                      <span>Simultaneous agent monitoring for better control and oversight</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 bg-[#728552] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                      <span>User-controlled training that improves speed and accuracy over time</span>
-                    </li>
-                  </ul>
+                  {/* Navigation Arrows */}
+                  <button
+                    onClick={prevMedia}
+                    className="btn-primary absolute left-4 top-1/2 -translate-y-1/2 z-20 rounded-full p-3 shadow-lg transition-all duration-200 hover:scale-110"
+                    aria-label="Previous media"
+                  >
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                    </svg>
+                  </button>
+                  <button
+                    onClick={nextMedia}
+                    className="btn-primary absolute right-4 top-1/2 -translate-y-1/2 z-20 rounded-full p-3 shadow-lg transition-all duration-200 hover:scale-110"
+                    aria-label="Next media"
+                  >
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                  
+                  {/* Text Content Below Image */}
+                  <div className="mt-6 text-center">
+                    <div className="transition-opacity duration-700 ease-in-out">
+                      <h3 className="text-2xl md:text-3xl font-bold mb-3" style={{ color: '#313A00' }}>
+                        {mediaItems[currentMediaIndex].title}
+                      </h3>
+                      <p className="text-lg md:text-xl text-[#4A5745] max-w-3xl mx-auto">
+                        {mediaItems[currentMediaIndex].description}
+                      </p>
+                    </div>
+                  </div>
+                  
+                  {/* Dots Indicator */}
+                  <div className="flex justify-center gap-2 mt-6">
+                    {mediaItems.map((_, index) => (
+                      <button
+                        key={index}
+                        onClick={() => setCurrentMediaIndex(index)}
+                        className={`h-2 rounded-full transition-all duration-300 ${
+                          index === currentMediaIndex
+                            ? 'w-8 bg-[#4A6200]'
+                            : 'w-2 bg-gray-300 hover:bg-gray-400'
+                        }`}
+                        aria-label={`Go to slide ${index + 1}`}
+                      />
+                    ))}
+                  </div>
+                </div>
                 </div>
 
-                <div className="not-prose bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-lg">
-                  <h3 className="text-lg font-semibold text-[#4A5745] mb-3">Hubs</h3>
-                  <p className="text-gray-700 mb-4">
-                    Hubs are like tab groups but amplified by 10x. Hubs let you visualize different layouts of browser 
-                    tabs, for example you can see two, three, four tabs open side by side, 3-way, or quad box. 
-                    It's like having multiple monitors in your browser window.
-                  </p>
-                  <ul className="text-gray-700 space-y-2">
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 bg-[#728552] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                      <span>Advanced tab visualization with side-by-side, 3-way, and quad layouts</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 bg-[#728552] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                      <span>Multiple monitor experience within a single browser window</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 bg-[#728552] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                      <span>Enhanced productivity through simultaneous content viewing</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 bg-[#728552] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                      <span>Organized workspace management for complex workflows</span>
-                    </li>
-                  </ul>
+              {/* Brief Content Summary Below Carousel */}
+              <div className="max-w-4xl mx-auto mt-16 text-center">
+                <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-8">
+                  Oasis represents the first AI browser designed to meld with the way your mind works naturally. 
+                  Built for ergonomic work, focus, and spatial ease, Oasis creates a soothing environment that is 
+                  conducive to fostering deep work, flow state, concentration, and focus.
+                </p>
                 </div>
-
-                <div className="not-prose bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-lg">
-                  <h3 className="text-lg font-semibold text-[#4A5745] mb-3">Enterprise Branding and Messaging</h3>
-                  <p className="text-gray-700 mb-4">
-                    Oasis enables organizations to apply company branding and tailored messaging throughout the browser 
-                    experience, ensuring users always see their organization's identity. When security events occur, 
-                    users receive notifications with company-specific branding and clear messaging that explains what 
-                    happened, why, and what to do next.
-                  </p>
-                  <ul className="text-gray-700 space-y-2">
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 bg-[#728552] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                      <span>Custom company branding throughout the browser interface</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 bg-[#728552] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                      <span>Tailored messaging for security events and policy violations</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 bg-[#728552] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                      <span>Clear explanations of what happened and next steps</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 bg-[#728552] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                      <span>Consistent organizational identity across all user interactions</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </Section>
+            </section>
             
             <Section 
               id="faqs" 
               title="FAQs" 
-              eyebrow="Frequent Questions About Enterprise Browsers"
+              eyebrow="Frequent Questions About Oasis"
               kicker="Comprehensive answers to technical and business questions"
+              centered={true}
               right={
                 <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
                   <div className="text-center">
-                      <div className="w-16 h-16 bg-[#F3F8E4] rounded-full flex items-center justify-center mx-auto mb-4">
+                      <div className="w-16 h-16 bg-[#F8FAF2] rounded-full flex items-center justify-center mx-auto mb-4">
                         <svg className="w-8 h-8 text-[#788B59]" fill="currentColor" viewBox="0 0 24 24">
                         <rect x="3" y="3" width="7" height="7"/>
                         <rect x="14" y="3" width="7" height="7"/>
@@ -1323,65 +1584,64 @@ export default function EnterpriseBuyerGuidePage() {
                 </div>
               }
             >
-              <div className="space-y-4">
-                <Accordion title="Will my existing web applications work with an enterprise browser?">
+              <div className="space-y-4 text-left">
+                <Accordion title="Will my existing web applications work with Oasis?">
                   <p>
-                    Enterprise browsers like Oasis are built on the same Chromium foundation as popular browsers 
-                    including Chrome, Edge, and Brave. This ensures complete compatibility with any web application 
-                    that functions properly in standard browsers, providing identical rendering and functionality.
+                    Since Oasis is built on Firefox or Chrome, all websites should work. Built on the same Chromium or Firefox foundation as popular browsers including Chrome, Edge, 
+                    and Brave, Oasis ensures complete compatibility with any web application that functions properly in 
+                    standard browsers, providing identical rendering and functionality.
                   </p>
                 </Accordion>
 
-                <Accordion title="How do enterprise browsers handle legacy Internet Explorer applications?">
+                <Accordion title="How does Oasis handle legacy Internet Explorer applications?">
                   <p>
-                    Many enterprise browser solutions provide Internet Explorer compatibility modes that automatically 
+                    Oasis provides Internet Explorer compatibility modes that automatically 
                     switch to the legacy IE engine when needed. This allows organizations to maintain access to older 
                     applications while benefiting from modern browser security and management features.
                   </p>
                 </Accordion>
 
-                <Accordion title="Will an enterprise browser slow down my applications?">
+                <Accordion title="Will Oasis slow down my applications?">
                   <p>
-                    Enterprise browsers maintain the same speed and responsiveness as standard browsers for all web 
+                    Oasis maintains the same speed and responsiveness as standard browsers for all web 
                     applications. In fact, many users experience improved performance due to built-in ad blocking, 
                     tracker prevention, and optimized resource management that reduces unnecessary network requests.
                   </p>
                 </Accordion>
 
-                <Accordion title="What's the difference between enterprise browsers and virtual desktop solutions?">
+                <Accordion title="What's the difference between Oasis and virtual desktop solutions?">
                   <p>
                     While virtual desktop infrastructure (VDI) and Desktop-as-a-Service (DaaS) serve similar purposes, 
-                    enterprise browsers offer significant advantages. VDI requires extensive infrastructure investments 
+                    Oasis offers significant advantages. VDI requires extensive infrastructure investments 
                     in servers, networking, and virtualization platforms, resulting in high operational costs. VDI also 
                     introduces user experience challenges including session latency, visual artifacts, and performance 
-                    degradation. Migrating web and SaaS workloads from VDI to an enterprise browser typically delivers 
+                    degradation. Migrating web and SaaS workloads from VDI to Oasis typically delivers 
                     substantial cost reductions and superior user experience.
                   </p>
                 </Accordion>
 
-                <Accordion title="Do enterprise browsers work with existing security service edge (SSE) solutions?">
+                <Accordion title="Does Oasis work with existing security service edge (SSE) solutions?">
                   <p>
-                    Enterprise browsers integrate seamlessly with existing Security Service Edge (SSE) architectures, 
+                    Oasis integrates seamlessly with existing Security Service Edge (SSE) architectures, 
                     or can serve as a comprehensive alternative. By shifting security enforcement from the network 
-                    perimeter to the browser itself, organizations gain enhanced deployment flexibility. Enterprise browsers 
-                    function on both managed and unmanaged devices without requiring complex network routing or traffic 
+                    perimeter to the browser itself, organizations gain enhanced deployment flexibility. The browser 
+                    functions on both managed and unmanaged devices without requiring complex network routing or traffic 
                     inspection. This approach eliminates the need for application-specific API integrations while 
                     providing comprehensive security coverage.
                   </p>
                 </Accordion>
 
-                <Accordion title="Is a VPN required when using an enterprise browser?">
+                <Accordion title="Is a VPN required when using Oasis?">
                   <p>
-                    Enterprise browsers adapt to any available network connection on the device, including VPN, 
-                    Zero Trust Network Access (ZTNA), or proxy configurations from other vendors. Some solutions 
-                    include integrated ZTNA capabilities directly within the browser, simplifying access to internal 
+                    Oasis adapts to any available network connection on the device, including VPN, 
+                    Zero Trust Network Access (ZTNA), or proxy configurations from other vendors. Integrated ZTNA capabilities are built directly within the browser, simplifying access to internal 
                     applications and private resources without additional network infrastructure requirements.
                   </p>
               </Accordion>
 
-                <Accordion title="Can enterprise browsers be deployed on personal or unmanaged devices?">
+                <Accordion title="Can Oasis be deployed on personal or unmanaged devices?">
                   <p>
-                    Absolutely. Enterprise browsers are designed to function on any device, whether corporate-managed 
+                    Absolutely. Oasis is designed to function on any device, whether corporate-managed 
                     or personal (BYOD). All security and management policies are enforced directly through the browser 
                     application, independent of device management status. This enables flexible deployment scenarios 
                     where different organizations manage the browser and device separately, such as business process 
@@ -1389,21 +1649,11 @@ export default function EnterpriseBuyerGuidePage() {
                   </p>
               </Accordion>
 
-                <Accordion title="Are enterprise browsers available for mobile devices?">
+                <Accordion title="How does Oasis balance activity monitoring with user privacy?">
                   <p>
-                    Many enterprise browser solutions provide mobile versions that extend the same security and 
-                    management capabilities to smartphones and tablets. These mobile enterprise browsers maintain 
-                    consistent policies across desktop and mobile environments, ensuring comprehensive coverage 
-                    for modern hybrid workforces.
-                  </p>
-                </Accordion>
-
-                <Accordion title="How do enterprise browsers balance activity monitoring with user privacy?">
-                  <p>
-                    Enterprise browsers provide sophisticated activity monitoring capabilities that balance organizational 
-                    security needs with user privacy expectations. These solutions offer granular logging controls that 
-                    focus on business-critical workflows while respecting personal browsing activities. Many enterprise 
-                    browsers include user-facing privacy indicators that clearly show when monitoring is active, 
+                    Sophisticated activity monitoring capabilities balance organizational 
+                    security needs with user privacy expectations. Granular logging controls 
+                    focus on business-critical workflows while respecting personal browsing activities. User-facing privacy indicators clearly show when monitoring is active, 
                     fostering transparency and trust between employees and organizations.
                   </p>
               </Accordion>
@@ -1414,57 +1664,86 @@ export default function EnterpriseBuyerGuidePage() {
             
             
             
-            <Section 
+            {/* Full-Width CTA Banner */}
+            <section 
               id="getting-started-with-oasis" 
-              title="Getting Started with Oasis" 
-              eyebrow="Getting Started"
-              kicker="Ready to Begin?" 
-              right={
-                <div className="space-y-6">
-                  <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
-                    <div className="text-center">
-                      <div className="w-16 h-16 bg-[#F3F8E4] rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg className="w-8 h-8 text-[#788B59]" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                        </svg>
-                      </div>
-                      <h3 className="font-semibold text-gray-900 mb-2">Take Action</h3>
-                      <p className="text-sm text-gray-600">
-                        Schedule a demo or get in touch to begin
-                      </p>
-                    </div>
-                  </div>
-                  <KeyPointsCard>Ready to transform your enterprise browsing experience.</KeyPointsCard>
-                </div>
-              }
+              className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] py-20 md:py-28 mb-0"
+              style={{
+                backgroundImage: 'url(/images/desert-background-5.jpg)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat'
+              }}
             >
-              <div className="space-y-6">
-                <p>
-                  Ready to get started with Oasis? We've made it easy for you to take the next step. 
-                  Whether you want to see Oasis in action or have questions about implementation, 
-                  we're here to help guide you through the process.
+              {/* Overlay for text readability */}
+              <div className="absolute inset-0 bg-white/90"></div>
+              <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-6">
+                  Ready to Transform Your Enterprise Browsing Experience?
+                </h2>
+                <p className="text-xl md:text-2xl mb-10 max-w-3xl mx-auto leading-relaxed font-bold" style={{ color: '#313A00' }}>
+                  See Oasis in action and discover how it can revolutionize your organization's productivity and security.
                 </p>
-                <p>
-                  Our team is ready to work with you to understand your organization's specific needs 
-                  and show you how Oasis can transform your enterprise browsing experience. From 
-                  initial consultation through deployment and ongoing support, we're committed to 
-                  your success.
-                </p>
-              </div>
-              
-              <div className="mt-12">
-                <Link href="/contact">
-                  <button className="nav-button get-in-touch text-white font-bold px-4 py-2 text-sm rounded-md" style={{ background: COLORS.ctaPrimary }} onMouseOver={(e) => e.currentTarget.style.background = COLORS.ctaHover} onMouseOut={(e) => e.currentTarget.style.background = COLORS.ctaPrimary}>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                  <Link href="/schedule-demo" className="btn-primary inline-flex items-center justify-center px-10 py-4 text-lg font-bold no-underline hover:no-underline focus:no-underline">
+                    Schedule a Demo
+                  </Link>
+                  <Link href="/contact" className="btn-secondary inline-flex items-center justify-center px-10 py-4 text-lg font-bold no-underline hover:no-underline focus:no-underline">
                     Get in Touch
-                  </button>
                 </Link>
               </div>
-            </Section>
+              </div>
+            </section>
           </main>
         </div>
 
 
         <BackToTop />
+        
+        {/* Floating Table of Contents Button */}
+        {showTocButton && (
+          <div className="fixed right-6 bottom-24 z-50">
+            <button
+              onClick={() => setIsTocOpen(!isTocOpen)}
+              className="btn-primary rounded-full p-4 shadow-lg hover:shadow-xl transition-all duration-200"
+              aria-label="Table of Contents"
+            >
+              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+            
+            {isTocOpen && (
+              <div className="absolute right-0 bottom-full mb-4 w-64 bg-white rounded-lg shadow-2xl border border-gray-200 p-4 max-h-[60vh] overflow-y-auto">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-lg font-bold" style={{ color: '#313A00' }}>Table of Contents</h3>
+                  <button
+                    onClick={() => setIsTocOpen(false)}
+                    className="text-gray-500 hover:text-gray-700"
+                    aria-label="Close"
+                  >
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+                </div>
+                <nav className="space-y-2">
+                  {structure.map((item) => (
+                    <a
+                      key={item.id}
+                      href={`#${item.id}`}
+                      onClick={() => setIsTocOpen(false)}
+                      className="block py-2 px-3 rounded-md hover:bg-[#F8FAF2] transition-colors duration-200 text-sm font-medium"
+                      style={{ color: '#4A5745' }}
+                    >
+                      {item.label}
+                    </a>
+                  ))}
+                </nav>
+              </div>
+            )}
+          </div>
+        )}
       </div>
 
       <style jsx global>{`
@@ -1475,98 +1754,220 @@ export default function EnterpriseBuyerGuidePage() {
           a { color: #7dd3d3; }
           header h1 { color: #ffffff; }
         }
-        /* Remove old layout styles */
+        
+        /* Smooth scrolling */
         html { scroll-behavior: smooth; }
         
-        /* Override global link styles for enterprise buyer guide */
-        a:not(.nav-button):not(.contact-sales-btn):not(.pricing-button) {
+        /* Smooth fade-in animations for sections */
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        
+        section {
+          animation: fadeInUp 0.6s ease-out;
+        }
+        
+        /* High contrast typography - Google Gemini/Perplexity style */
+        .kb-typography {
           color: ${COLORS.primary} !important;
-          text-decoration: underline !important;
         }
-        a:not(.nav-button):not(.contact-sales-btn):not(.pricing-button):hover {
+        
+        .kb-typography h2 { 
+          font-size: 28px; 
+          line-height: 1.3; 
+          font-weight: 800; 
+          margin-top: 0.25rem; 
+          margin-bottom: 0.75rem;
+          color: ${COLORS.primary} !important;
+        }
+        @media (min-width: 1024px) { 
+          .kb-typography h2 { 
+            font-size: 32px; 
+          } 
+        }
+        .kb-typography h3 { 
+          font-size: 22px; 
+          line-height: 1.4; 
+          font-weight: 700; 
+          margin-top: 1.5rem; 
+          margin-bottom: 0.75rem;
+          color: ${COLORS.primary} !important;
+        }
+        .kb-typography h4 { 
+          font-size: 20px; 
+          line-height: 1.35; 
+          font-weight: 600; 
+          margin-top: 1rem; 
+          margin-bottom: 0.5rem;
+          color: ${COLORS.primary} !important;
+        }
+        .kb-typography p { 
+          font-size: 18px; 
+          line-height: 1.75; 
+          margin-top: 0.5rem; 
+          margin-bottom: 1rem;
+          color: ${COLORS.primary} !important;
+        }
+        .kb-typography ul, .kb-typography ol { 
+          margin-top: 0.5rem; 
+          margin-bottom: 1rem; 
+        }
+        .kb-typography li { 
+          margin: 0.5rem 0;
+          font-size: 18px;
+          line-height: 1.75;
+          color: ${COLORS.primary} !important;
+        }
+        
+        /* Override global link styles for enterprise buyer guide */
+        a:not(.nav-button):not(.contact-sales-btn):not(.pricing-button):not(.btn-primary):not(.btn-secondary) {
+          color: ${COLORS.primary} !important;
+          text-decoration: none !important;
+          transition: color 0.3s ease;
+        }
+        a:not(.nav-button):not(.contact-sales-btn):not(.pricing-button):not(.btn-primary):not(.btn-secondary):hover {
           color: ${COLORS.accent} !important;
+          text-decoration: none !important;
         }
         
-        a:focus, button:focus, select:focus { outline: 2px solid ${COLORS.accent}; outline-offset: 2px; }
+        a:focus, button:focus, select:focus { 
+          outline: 2px solid ${COLORS.accent}; 
+          outline-offset: 2px; 
+        }
         
-        /* Override global button styles for accordions only */
+        /* Accordion styling - Google Gemini style */
         .accordion-container .accordion-button {
-          background-color: transparent !important;
-          color: #4A5745 !important;
+          background-color: #FFFFFF !important;
+          color: #313A00 !important;
           font-weight: 600 !important;
-          border: none !important;
-          border-radius: 6px !important;
-          padding: 16px 20px !important;
+          font-size: 18px !important;
+          border: 1px solid #e5e7eb !important;
+          border-radius: 8px !important;
+          padding: 20px 24px !important;
           cursor: pointer !important;
-          transition: background-color 0.2s ease !important;
+          transition: all 0.3s ease !important;
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
         }
         
         .accordion-container .accordion-button:hover {
-          background-color: #E0D48C !important;
-          color: #4A5745 !important;
+          background-color: #F8FAF2 !important;
+          border-color: #4A6200 !important;
+          box-shadow: 0 4px 12px rgba(74, 98, 0, 0.1) !important;
+          transform: translateY(-1px);
+        }
+        
+        .accordion-container .accordion-content {
+          transition: all 0.3s ease !important;
         }
         
         /* Modern link styling */
         .prose a {
           color: ${COLORS.primary};
-          text-decoration: underline;
-          text-underline-offset: 3px;
-          transition: color 0.2s ease;
+          text-decoration: none;
+          transition: color 0.3s ease;
+          font-weight: 500;
         }
         .prose a:hover {
           color: ${COLORS.accent};
+          text-decoration: none;
         }
         
-        /* Override global button styles for persona selector */
+        /* Persona selector - centered and styled */
+        div[role="tablist"] {
+          display: flex;
+          justify-content: center;
+          gap: 0.5rem;
+          margin-bottom: 2rem;
+        }
+        
         div[role="tablist"] button[role="tab"],
         button[role="tab"] {
-          background-color: #F3F8E4 !important;
+          background-color: #FFFFFF !important;
           border: 1px solid #d1d5db !important;
-          color: #788B59 !important;
-          font-weight: normal !important;
-          border-radius: 0.375rem !important;
-          padding: 0.5rem 1rem !important;
+          color: #4A6200 !important;
+          font-weight: 500 !important;
+          border-radius: 0.5rem !important;
+          padding: 0.75rem 1.5rem !important;
+          transition: all 0.3s ease !important;
         }
         button[role="tab"][aria-selected="true"],
         div[role="tablist"] button[role="tab"][aria-selected="true"] {
-          background-color: #F3F8E4 !important;
-          border-color: #728552 !important;
-          border-width: 2px !important;
-          color: #4A5745 !important;
+          background-color: #4A6200 !important;
+          border-color: #4A6200 !important;
+          color: #FFFFFF !important;
           font-weight: 600 !important;
+          box-shadow: 0 2px 8px rgba(74, 98, 0, 0.2);
         }
         div[role="tablist"] button[role="tab"]:hover {
-          background-color: #E0D48C !important;
-          border-color: #728552 !important;
+          background-color: #F8FAF2 !important;
+          border-color: #4A6200 !important;
+          transform: translateY(-1px);
         }
         
         /* Style details/summary elements in persona cards */
         details summary {
-          color: #788B59 !important;
+          color: #4A6200 !important;
           cursor: pointer;
           font-weight: 500;
+          transition: color 0.3s ease;
         }
         details summary:hover {
-          color: #728552 !important;
+          color: #3E5300 !important;
         }
-        .callout-info { background: #F3F8E4; border-left: 4px solid ${COLORS.info}; }
-        .callout-success { background: #E0D48C; border-left: 4px solid ${COLORS.success}; }
-        .callout-warning { background: #F3F8E4; border-left: 4px solid ${COLORS.warning}; }
-        .callout-error { background: #F3F8E4; border-left: 4px solid ${COLORS.error}; }
         
-        /* Consistent page typography */
-        .kb-typography h2 { font-size: 28px; line-height: 1.3; font-weight: 800; margin-top: 0.25rem; margin-bottom: 0.75rem; }
-        @media (min-width: 1024px) { .kb-typography h2 { font-size: 32px; } }
-        .kb-typography h3 { font-size: 20px; line-height: 1.35; font-weight: 700; margin-top: 1rem; margin-bottom: 0.5rem; }
-        .kb-typography h4 { font-size: 18px; line-height: 1.35; font-weight: 600; margin-top: 0.75rem; margin-bottom: 0.5rem; }
-        .kb-typography p { font-size: 16px; line-height: 1.7; margin-top: 0.25rem; margin-bottom: 0.75rem; }
-        .kb-typography ul { margin-top: 0.25rem; margin-bottom: 0.5rem; }
-        .kb-typography li { margin: 0.125rem 0; }
+        .callout-info { 
+          background: #F8FAF2; 
+          border-left: 4px solid #4A6200; 
+          padding: 1rem 1.5rem;
+          border-radius: 8px;
+          margin: 1.5rem 0;
+        }
+        .callout-success { 
+          background: #F8FAF2; 
+          border-left: 4px solid #4A6200; 
+          padding: 1rem 1.5rem;
+          border-radius: 8px;
+          margin: 1.5rem 0;
+        }
+        .callout-warning { 
+          background: #F8FAF2; 
+          border-left: 4px solid #978455; 
+          padding: 1rem 1.5rem;
+          border-radius: 8px;
+          margin: 1.5rem 0;
+        }
+        .callout-error { 
+          background: #F8FAF2; 
+          border-left: 4px solid #313A00; 
+          padding: 1rem 1.5rem;
+          border-radius: 8px;
+          margin: 1.5rem 0;
+        }
+        
+        /* Smooth transitions for all interactive elements */
+        button, a, .accordion-button {
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        }
+        
+        /* Table responsive styling */
         @media (max-width: 640px) {
           table { display: block; }
           thead { display: none; }
           tbody, tr, td { display: block; width: 100%; }
-          tr { margin-bottom: 12px; border: 1px solid #e5e7eb; border-radius: 8px; overflow: hidden; background: ${COLORS.bgCard}; }
+          tr { 
+            margin-bottom: 12px; 
+            border: 1px solid #e5e7eb; 
+            border-radius: 8px; 
+            overflow: hidden; 
+            background: ${COLORS.bgCard}; 
+          }
           td { border-bottom: 1px solid #eef2f7; }
           td:last-child { border-bottom: none; }
         }
@@ -1574,5 +1975,3 @@ export default function EnterpriseBuyerGuidePage() {
     </ErrorBoundary>
   );
 }
-
-
