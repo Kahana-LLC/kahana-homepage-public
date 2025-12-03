@@ -6,7 +6,7 @@ export default function ProductTourCard() {
     <div className="relative w-full rounded-[32px] overflow-hidden shadow-[0_35px_120px_rgba(9,12,0,0.35)]">
       <div className="relative w-full aspect-[16/9]">
         <Image
-          src="/figma-imports/Custom Themes.png"
+          src="/figma-imports/Custom Themes.webp"
           alt="Oasis Custom Themes"
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"

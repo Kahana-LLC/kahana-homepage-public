@@ -121,19 +121,19 @@ export default function Home({ blogPosts }) {
   const whyOasisCards = [
     {
       title: "Created to bring calm and focus back to browsing",
-      image: "/figma-imports/er.svg",
+      image: "/figma-imports/er.webp",
       imageAlt: "Serene illustration representing focused Oasis browsing",
       loading: "eager",
     },
     {
       title: "Makes browsing beautiful and natural",
-      image: "/figma-imports/Frame 1321315005.jpg",
+      image: "/figma-imports/Frame 1321315005.webp",
       imageAlt: "Screenshot showcasing clutter-free Oasis browsing",
       loading: "eager",
     },
     {
       title: "Artificial Intelligence (AI) browser that adapts to you",
-      image: "/figma-imports/Summarize with AI 3.jpg",
+      image: "/figma-imports/Summarize with AI 3.webp",
       imageAlt: "Illustration of Oasis adapting to the user",
       loading: "eager",
     },
@@ -175,6 +175,13 @@ export default function Home({ blogPosts }) {
         <meta
           name="description"
           content="Kahana's Oasis Enterprise Browser helps teams stay organized, focused on ideas, and increase productivity while maintaining enterprise-grade security."
+        />
+        {/* Preload critical hero image for faster LCP */}
+        <link
+          rel="preload"
+          as="image"
+          href="/images/Welcome to Oasis.svg"
+          fetchPriority="high"
         />
       </Head>
 
