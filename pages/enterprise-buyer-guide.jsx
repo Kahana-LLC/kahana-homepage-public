@@ -565,14 +565,14 @@ export default function EnterpriseBuyerGuidePage() {
                       "Find XYZ tab from my groups and show it"
                     </div>
                   </div>
-                </div>
+              </div>
 
                 {/* Sales */}
                 <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-6 flex flex-col hover:shadow-xl transition-all">
                   <div className="flex justify-start mb-4">
                     <div className="w-20 h-20 rounded-full bg-gradient-to-br from-pink-200 to-pink-300 flex items-center justify-center">
                       <Icon.DollarSign className="w-10 h-10" style={{ color: '#4A6200' }} />
-                    </div>
+                  </div>
                   </div>
                   <h4 className="text-xl font-bold text-left mb-4" style={{ color: '#313A00' }}>Sales</h4>
                   <div className="text-sm text-gray-700 mb-4 text-left">
@@ -581,13 +581,13 @@ export default function EnterpriseBuyerGuidePage() {
                   <div className="space-y-2 mb-6 flex-grow">
                     <div className="text-sm text-gray-700 text-left">
                       Open prospect list and AI assistant side by side
-                    </div>
+                </div>
                     <div className="text-sm text-gray-700 text-left">
                       Group all outreach tools in one workspace
-                    </div>
+                  </div>
                     <div className="text-sm text-gray-700 text-left">
                       Quickly find and switch between prospect tabs
-                    </div>
+                  </div>
                   </div>
                 </div>
 
@@ -919,7 +919,7 @@ export default function EnterpriseBuyerGuidePage() {
                       <div className="absolute top-4 left-4">
                         <div className="w-8 h-8 rounded-lg bg-[#F8FAF2] flex items-center justify-center" style={{ color: '#4A6200' }}>
                           <Icon.Lock className="w-5 h-5" />
-                        </div>
+                </div>
                       </div>
                       <p className="text-base text-[#4E5534] leading-relaxed text-left pt-2 pl-10">
                         Enhanced data protection and DLP (controls on copy/paste, download, printing, screenshots, watermarking).
@@ -1554,9 +1554,8 @@ export default function EnterpriseBuyerGuidePage() {
               <div className="space-y-4 text-left">
                 <Accordion title="Will my existing web applications work with Oasis?">
                   <p>
-                    Since Oasis is built on Firefox or Chrome, all websites should work. Oasis 
-                    is built on the same Chromium or Firefox foundation as popular browsers including Chrome, Edge, 
-                    and Brave. This ensures complete compatibility with any web application that functions properly in 
+                    Since Oasis is built on Firefox or Chrome, all websites should work. Built on the same Chromium or Firefox foundation as popular browsers including Chrome, Edge, 
+                    and Brave, Oasis ensures complete compatibility with any web application that functions properly in 
                     standard browsers, providing identical rendering and functionality.
                   </p>
                 </Accordion>
@@ -1592,7 +1591,7 @@ export default function EnterpriseBuyerGuidePage() {
                   <p>
                     Oasis integrates seamlessly with existing Security Service Edge (SSE) architectures, 
                     or can serve as a comprehensive alternative. By shifting security enforcement from the network 
-                    perimeter to the browser itself, organizations gain enhanced deployment flexibility. Oasis 
+                    perimeter to the browser itself, organizations gain enhanced deployment flexibility. The browser 
                     functions on both managed and unmanaged devices without requiring complex network routing or traffic 
                     inspection. This approach eliminates the need for application-specific API integrations while 
                     providing comprehensive security coverage.
@@ -1602,8 +1601,7 @@ export default function EnterpriseBuyerGuidePage() {
                 <Accordion title="Is a VPN required when using Oasis?">
                   <p>
                     Oasis adapts to any available network connection on the device, including VPN, 
-                    Zero Trust Network Access (ZTNA), or proxy configurations from other vendors. Oasis 
-                    includes integrated ZTNA capabilities directly within the browser, simplifying access to internal 
+                    Zero Trust Network Access (ZTNA), or proxy configurations from other vendors. Integrated ZTNA capabilities are built directly within the browser, simplifying access to internal 
                     applications and private resources without additional network infrastructure requirements.
                   </p>
               </Accordion>
@@ -1620,8 +1618,8 @@ export default function EnterpriseBuyerGuidePage() {
 
                 <Accordion title="Is Oasis available for mobile devices?">
                   <p>
-                    Oasis provides mobile versions that extend the same security and 
-                    management capabilities to smartphones and tablets. Oasis mobile maintains 
+                    Mobile versions extend the same security and 
+                    management capabilities to smartphones and tablets. These mobile versions maintain 
                     consistent policies across desktop and mobile environments, ensuring comprehensive coverage 
                     for modern hybrid workforces.
                   </p>
@@ -1629,10 +1627,9 @@ export default function EnterpriseBuyerGuidePage() {
 
                 <Accordion title="How does Oasis balance activity monitoring with user privacy?">
                   <p>
-                    Oasis provides sophisticated activity monitoring capabilities that balance organizational 
-                    security needs with user privacy expectations. Oasis offers granular logging controls that 
-                    focus on business-critical workflows while respecting personal browsing activities. Oasis 
-                    includes user-facing privacy indicators that clearly show when monitoring is active, 
+                    Sophisticated activity monitoring capabilities balance organizational 
+                    security needs with user privacy expectations. Granular logging controls 
+                    focus on business-critical workflows while respecting personal browsing activities. User-facing privacy indicators clearly show when monitoring is active, 
                     fostering transparency and trust between employees and organizations.
                   </p>
               </Accordion>
