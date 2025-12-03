@@ -71,7 +71,7 @@ export default function FeaturesShowcase() {
             </div>
             <div
               ref={carouselRef}
-              className="flex gap-3 sm:gap-4 md:gap-5 overflow-x-auto scroll-smooth pb-6 snap-x snap-mandatory pl-2 pr-2 sm:px-4 md:px-6 hide-scrollbar"
+              className="flex gap-3 sm:gap-4 md:gap-5 overflow-x-auto scroll-smooth pb-6 snap-x snap-mandatory px-2 sm:px-4 md:px-6 hide-scrollbar"
               style={{ 
                 WebkitOverflowScrolling: 'touch',
                 scrollbarWidth: 'none',
@@ -87,7 +87,7 @@ export default function FeaturesShowcase() {
               <Link
                 key={index}
                 href={card.link}
-                className="group relative flex w-[calc(100vw-4rem)] sm:w-[45vw] md:w-full max-w-sm flex-shrink-0 snap-center md:snap-start flex-col overflow-hidden rounded-[18px] sm:rounded-[22px] md:rounded-[26px] border border-white/80 bg-white/90 px-3.5 py-3.5 sm:px-5 sm:py-4 md:px-6 md:py-5 lg:max-w-md lg:px-7 lg:py-6 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur transition-transform duration-300 active:scale-[0.98] md:hover:-translate-y-1 no-underline touch-manipulation"
+                className="group relative flex w-[calc(100vw-5rem)] sm:w-[45vw] md:w-full max-w-sm flex-shrink-0 snap-center md:snap-start flex-col overflow-hidden rounded-[18px] sm:rounded-[22px] md:rounded-[26px] border border-white/80 bg-white/90 px-3.5 py-3.5 sm:px-5 sm:py-4 md:px-6 md:py-5 lg:max-w-md lg:px-7 lg:py-6 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur transition-transform duration-300 active:scale-[0.98] md:hover:-translate-y-1 no-underline touch-manipulation"
                 style={{ touchAction: 'pan-y' }}
               >
                 <div className="flex flex-col gap-1.5 sm:gap-2 md:gap-3 text-left min-h-[100px] sm:min-h-[130px] md:min-h-[150px]">
