@@ -1529,7 +1529,7 @@ export default function EnterpriseBuyerGuidePage() {
             <Section 
               id="faqs" 
               title="FAQs" 
-              eyebrow="Frequent Questions About Enterprise Browsers"
+              eyebrow="Frequent Questions About Oasis"
               kicker="Comprehensive answers to technical and business questions"
               centered={true}
               right={
@@ -1552,65 +1552,65 @@ export default function EnterpriseBuyerGuidePage() {
               }
             >
               <div className="space-y-4 text-left">
-                <Accordion title="Will my existing web applications work with an enterprise browser?">
+                <Accordion title="Will my existing web applications work with Oasis?">
                   <p>
-                    Since Oasis is built on Firefox or Chrome, all websites should work. Enterprise browsers like Oasis 
-                    are built on the same Chromium or Firefox foundation as popular browsers including Chrome, Edge, 
+                    Since Oasis is built on Firefox or Chrome, all websites should work. Oasis 
+                    is built on the same Chromium or Firefox foundation as popular browsers including Chrome, Edge, 
                     and Brave. This ensures complete compatibility with any web application that functions properly in 
                     standard browsers, providing identical rendering and functionality.
                   </p>
                 </Accordion>
 
-                <Accordion title="How do enterprise browsers handle legacy Internet Explorer applications?">
+                <Accordion title="How does Oasis handle legacy Internet Explorer applications?">
                   <p>
-                    Many enterprise browser solutions provide Internet Explorer compatibility modes that automatically 
+                    Oasis provides Internet Explorer compatibility modes that automatically 
                     switch to the legacy IE engine when needed. This allows organizations to maintain access to older 
                     applications while benefiting from modern browser security and management features.
                   </p>
                 </Accordion>
 
-                <Accordion title="Will an enterprise browser slow down my applications?">
+                <Accordion title="Will Oasis slow down my applications?">
                   <p>
-                    Enterprise browsers maintain the same speed and responsiveness as standard browsers for all web 
+                    Oasis maintains the same speed and responsiveness as standard browsers for all web 
                     applications. In fact, many users experience improved performance due to built-in ad blocking, 
                     tracker prevention, and optimized resource management that reduces unnecessary network requests.
                   </p>
                 </Accordion>
 
-                <Accordion title="What's the difference between enterprise browsers and virtual desktop solutions?">
+                <Accordion title="What's the difference between Oasis and virtual desktop solutions?">
                   <p>
                     While virtual desktop infrastructure (VDI) and Desktop-as-a-Service (DaaS) serve similar purposes, 
-                    enterprise browsers offer significant advantages. VDI requires extensive infrastructure investments 
+                    Oasis offers significant advantages. VDI requires extensive infrastructure investments 
                     in servers, networking, and virtualization platforms, resulting in high operational costs. VDI also 
                     introduces user experience challenges including session latency, visual artifacts, and performance 
-                    degradation. Migrating web and SaaS workloads from VDI to an enterprise browser typically delivers 
+                    degradation. Migrating web and SaaS workloads from VDI to Oasis typically delivers 
                     substantial cost reductions and superior user experience.
                   </p>
                 </Accordion>
 
-                <Accordion title="Do enterprise browsers work with existing security service edge (SSE) solutions?">
+                <Accordion title="Does Oasis work with existing security service edge (SSE) solutions?">
                   <p>
-                    Enterprise browsers integrate seamlessly with existing Security Service Edge (SSE) architectures, 
+                    Oasis integrates seamlessly with existing Security Service Edge (SSE) architectures, 
                     or can serve as a comprehensive alternative. By shifting security enforcement from the network 
-                    perimeter to the browser itself, organizations gain enhanced deployment flexibility. Enterprise browsers 
-                    function on both managed and unmanaged devices without requiring complex network routing or traffic 
+                    perimeter to the browser itself, organizations gain enhanced deployment flexibility. Oasis 
+                    functions on both managed and unmanaged devices without requiring complex network routing or traffic 
                     inspection. This approach eliminates the need for application-specific API integrations while 
                     providing comprehensive security coverage.
                   </p>
                 </Accordion>
 
-                <Accordion title="Is a VPN required when using an enterprise browser?">
+                <Accordion title="Is a VPN required when using Oasis?">
                   <p>
-                    Enterprise browsers adapt to any available network connection on the device, including VPN, 
-                    Zero Trust Network Access (ZTNA), or proxy configurations from other vendors. Some solutions 
-                    include integrated ZTNA capabilities directly within the browser, simplifying access to internal 
+                    Oasis adapts to any available network connection on the device, including VPN, 
+                    Zero Trust Network Access (ZTNA), or proxy configurations from other vendors. Oasis 
+                    includes integrated ZTNA capabilities directly within the browser, simplifying access to internal 
                     applications and private resources without additional network infrastructure requirements.
                   </p>
               </Accordion>
 
-                <Accordion title="Can enterprise browsers be deployed on personal or unmanaged devices?">
+                <Accordion title="Can Oasis be deployed on personal or unmanaged devices?">
                   <p>
-                    Absolutely. Enterprise browsers are designed to function on any device, whether corporate-managed 
+                    Absolutely. Oasis is designed to function on any device, whether corporate-managed 
                     or personal (BYOD). All security and management policies are enforced directly through the browser 
                     application, independent of device management status. This enables flexible deployment scenarios 
                     where different organizations manage the browser and device separately, such as business process 
@@ -1618,21 +1618,21 @@ export default function EnterpriseBuyerGuidePage() {
                   </p>
               </Accordion>
 
-                <Accordion title="Are enterprise browsers available for mobile devices?">
+                <Accordion title="Is Oasis available for mobile devices?">
                   <p>
-                    Many enterprise browser solutions provide mobile versions that extend the same security and 
-                    management capabilities to smartphones and tablets. These mobile enterprise browsers maintain 
+                    Oasis provides mobile versions that extend the same security and 
+                    management capabilities to smartphones and tablets. Oasis mobile maintains 
                     consistent policies across desktop and mobile environments, ensuring comprehensive coverage 
                     for modern hybrid workforces.
                   </p>
                 </Accordion>
 
-                <Accordion title="How do enterprise browsers balance activity monitoring with user privacy?">
+                <Accordion title="How does Oasis balance activity monitoring with user privacy?">
                   <p>
-                    Enterprise browsers provide sophisticated activity monitoring capabilities that balance organizational 
-                    security needs with user privacy expectations. These solutions offer granular logging controls that 
-                    focus on business-critical workflows while respecting personal browsing activities. Many enterprise 
-                    browsers include user-facing privacy indicators that clearly show when monitoring is active, 
+                    Oasis provides sophisticated activity monitoring capabilities that balance organizational 
+                    security needs with user privacy expectations. Oasis offers granular logging controls that 
+                    focus on business-critical workflows while respecting personal browsing activities. Oasis 
+                    includes user-facing privacy indicators that clearly show when monitoring is active, 
                     fostering transparency and trust between employees and organizations.
                   </p>
               </Accordion>
