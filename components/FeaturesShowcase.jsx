@@ -62,7 +62,7 @@ export default function FeaturesShowcase() {
         </div>
 
         <div className="mx-auto mt-8 sm:mt-12 md:mt-16 max-w-6xl w-full overflow-x-hidden">
-          <div className="relative w-full">
+          <div className="relative w-full" style={{ overflowY: 'visible' }}>
             {/* Mobile scroll hint */}
             <div className="md:hidden absolute -top-6 right-4 text-xs text-gray-500 flex items-center gap-1 z-10">
               <span>Swipe</span>
@@ -72,17 +72,57 @@ export default function FeaturesShowcase() {
             </div>
             <div
               ref={carouselRef}
-              className="flex gap-3 sm:gap-4 md:gap-5 overflow-x-auto overflow-y-visible scroll-smooth pb-6 snap-x snap-mandatory px-4 sm:px-4 md:px-6 hide-scrollbar"
+              className="flex gap-3 sm:gap-4 md:gap-5 overflow-x-auto md:overflow-x-hidden scroll-smooth pb-6 snap-x snap-mandatory md:snap-none px-4 sm:px-4 md:px-6 hide-scrollbar carousel-horizontal-only"
               style={{ 
                 WebkitOverflowScrolling: 'touch',
                 scrollbarWidth: 'none',
                 msOverflowStyle: 'none',
-                touchAction: 'pan-x'
+                overflowY: 'hidden',
+                height: 'auto',
+                maxHeight: '100%',
+                alignItems: 'flex-start'
               }}
             >
               <style jsx global>{`
-                .hide-scrollbar::-webkit-scrollbar {
-                  display: none;
+                .carousel-horizontal-only {
+                  overflow-y: hidden !important;
+                  max-height: none !important;
+                }
+                /* Mobile: allow horizontal scrolling */
+                @media (max-width: 767px) {
+                  .carousel-horizontal-only {
+                    overflow-x: auto !important;
+                    touch-action: pan-x !important;
+                  }
+                }
+                /* Desktop: disable scrolling, only arrow navigation */
+                @media (min-width: 768px) {
+                  .carousel-horizontal-only {
+                    overflow-x: hidden !important;
+                    touch-action: none !important;
+                  }
+                }
+                .carousel-horizontal-only::-webkit-scrollbar {
+                  display: none !important;
+                  width: 0 !important;
+                  height: 0 !important;
+                }
+                .carousel-horizontal-only::-webkit-scrollbar:vertical {
+                  display: none !important;
+                  width: 0 !important;
+                  height: 0 !important;
+                }
+                .carousel-horizontal-only::-webkit-scrollbar:horizontal {
+                  display: none !important;
+                }
+                .carousel-horizontal-only::-webkit-scrollbar-track {
+                  display: none !important;
+                }
+                .carousel-horizontal-only::-webkit-scrollbar-thumb {
+                  display: none !important;
+                }
+                .carousel-horizontal-only::-webkit-scrollbar-corner {
+                  display: none !important;
                 }
               `}</style>
             {conceptCards.map((card, index) => (
@@ -124,7 +164,7 @@ export default function FeaturesShowcase() {
               <button
                 type="button"
                 onClick={() => handleScroll('prev')}
-                className="pointer-events-auto hidden h-11 w-11 items-center justify-center rounded-full border !border-[#7F9E36] !bg-[#4A6200] text-white shadow-lg transition hover:!bg-[#3E5300] md:flex"
+                className="pointer-events-auto hidden h-11 w-11 items-center justify-center rounded-full border !border-[#7F9E36] !bg-[#4A6200] text-white shadow-lg transition hover:!bg-[#3E5300] md:flex z-20"
                 aria-label="Scroll previous feature"
               >
                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -134,7 +174,7 @@ export default function FeaturesShowcase() {
               <button
                 type="button"
                 onClick={() => handleScroll('next')}
-                className="pointer-events-auto hidden h-11 w-11 items-center justify-center rounded-full border !border-[#7F9E36] !bg-[#4A6200] text-white shadow-lg transition hover:!bg-[#3E5300] md:flex"
+                className="pointer-events-auto hidden h-11 w-11 items-center justify-center rounded-full border !border-[#7F9E36] !bg-[#4A6200] text-white shadow-lg transition hover:!bg-[#3E5300] md:flex z-20"
                 aria-label="Scroll next feature"
               >
                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

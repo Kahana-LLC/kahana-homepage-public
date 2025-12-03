@@ -110,7 +110,7 @@ export default function EnterpriseBrowser() {
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 1200px"
                 priority
               />
-            </div>
+              </div>
           </div>
         </div>
       </section>
