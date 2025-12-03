@@ -503,7 +503,7 @@ export default function EnterpriseBuyerGuidePage() {
               className="py-4 md:py-6 px-4 lg:px-10 scroll-mt-28"
             >
               <div className="max-w-5xl mx-auto">
-              <p className="text-lg md:text-xl leading-relaxed mb-4 text-center">
+              <p className="text-lg md:text-xl leading-relaxed mb-4 text-left">
                 The definition of a "browser" has fundamentally changed in recent years. What was once 
                 simply a tool for viewing web pages has evolved into something far more powerful and 
                 intelligent. This transformation has been driven by two major innovations: enterprise 
@@ -511,7 +511,7 @@ export default function EnterpriseBuyerGuidePage() {
                 Comet, OpenAI's Atlas, GenSpark, and Dia that integrate artificial intelligence directly 
                 into the browsing experience.
               </p>
-              <p className="text-lg md:text-xl leading-relaxed mb-4 text-center">
+              <p className="text-lg md:text-xl leading-relaxed mb-4 text-left">
                 Oasis represents the convergence of these two revolutionary approaches. It is both an 
                 enterprise browser and an AI browser, combining the security and control that modern 
                 organizations demand with the intelligence and automation that users expect from next-generation 
@@ -519,7 +519,7 @@ export default function EnterpriseBuyerGuidePage() {
                 of benefits tailored to your organization's specific needs and preferences. This dual nature 
                 makes Oasis uniquely positioned to address the complex challenges of today's digital workplace.
               </p>
-              <p className="text-lg md:text-xl leading-relaxed text-center">
+              <p className="text-lg md:text-xl leading-relaxed text-left">
                 In this guide, we'll break down what makes Oasis so special. We'll explore how it 
                 redefines enterprise security, how its AI capabilities transform productivity, and why 
                 it represents the future of how we interact with the web. Whether you're evaluating 
