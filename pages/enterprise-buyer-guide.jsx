@@ -452,9 +452,9 @@ export default function EnterpriseBuyerGuidePage() {
         <meta name="twitter:description" content="Complete enterprise buyer guide for choosing and implementing the right enterprise browser solution for your organization." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <div style={{ background: '#FFFFFF', color: COLORS.primary, minHeight: '100vh', overflowX: 'hidden' }}>
-        <div className="min-h-screen" style={{ background: '#FFFFFF', overflowX: 'hidden' }}>
-          <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" style={{ overflowX: 'hidden' }}>
+      <div style={{ background: '#FFFFFF', color: COLORS.primary, minHeight: '100vh' }}>
+        <div className="min-h-screen" style={{ background: '#FFFFFF' }}>
+          <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* Hero Introduction Section - Perplexity/Gemini Hybrid Style */}
             <section 
               id="introduction" 
@@ -466,21 +466,21 @@ export default function EnterpriseBuyerGuidePage() {
                 backgroundRepeat: 'no-repeat'
               }}
             >
+              {/* Darker gradient overlay for Perplexity-style contrast */}
+              <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-white/80 to-white"></div>
+              
               <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
                 <div className="tracking-wider mb-4 font-semibold text-base lg:text-lg capitalize" style={{ color: '#978455' }}>
                   Welcome to Oasis
                 </div>
                 <h1 
-                  className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold mb-8 leading-[1.1] tracking-tight text-white drop-shadow-lg"
-                  style={{ textShadow: '0 2px 8px rgba(0,0,0,0.3), 0 4px 16px rgba(0,0,0,0.2)' }}
+                  className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold mb-8 leading-[1.1] tracking-tight text-black"
                 >
                   The Future of <br className="hidden md:block" />
                     Enterprise Browsing
                 </h1>
-                <p className="text-xl md:text-2xl lg:text-3xl text-white max-w-3xl mx-auto leading-relaxed font-medium mb-10 drop-shadow-md"
-                  style={{ textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}
-                >
-                  Combine enterprise-grade security with AI-powered intelligence in one seamless, spatial experience.
+                <p className="text-xl md:text-2xl lg:text-3xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-medium mb-10">
+                  Bundle enterprise-grade security with the most elegant user experience
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center gap-4 mt-8">
                   <Link href="#what-is-oasis" className="btn-primary inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-full shadow-lg shadow-[#4A6200]/20 transition-transform hover:scale-105 no-underline hover:no-underline focus:no-underline">
@@ -1444,10 +1444,9 @@ export default function EnterpriseBuyerGuidePage() {
             {/* Full-Width Media Carousel Section */}
             <section 
               id="user-experience" 
-              className="w-full py-16 md:py-24 bg-white"
-              style={{ marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', width: '100vw', maxWidth: '100vw' }}
+              className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] py-16 md:py-24 bg-white"
             >
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" style={{ overflowX: 'hidden' }}>
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-12">
                   <div className="tracking-wider mb-3 font-semibold text-base lg:text-lg capitalize" style={{ color: '#978455' }}>
                     Interface & Usability
@@ -1461,7 +1460,7 @@ export default function EnterpriseBuyerGuidePage() {
                   </div>
                 
                 {/* Media Carousel */}
-                <div className="relative w-full max-w-6xl mx-auto" style={{ overflowX: 'hidden' }}>
+                <div className="relative w-full max-w-6xl mx-auto">
                   <div className="relative overflow-hidden rounded-2xl bg-gray-100 shadow-2xl" style={{ aspectRatio: '16/9' }}>
                     {mediaItems.map((item, index) => (
                       <div
@@ -1668,12 +1667,8 @@ export default function EnterpriseBuyerGuidePage() {
             {/* Full-Width CTA Banner */}
             <section 
               id="getting-started-with-oasis" 
-              className="w-full py-20 md:py-28 mb-0"
+              className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] py-20 md:py-28 mb-0"
               style={{
-                marginLeft: 'calc(-50vw + 50%)',
-                marginRight: 'calc(-50vw + 50%)',
-                width: '100vw',
-                maxWidth: '100vw',
                 backgroundImage: 'url(/images/desert-background-5.jpg)',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
@@ -1682,7 +1677,7 @@ export default function EnterpriseBuyerGuidePage() {
             >
               {/* Overlay for text readability */}
               <div className="absolute inset-0 bg-white/90"></div>
-              <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center" style={{ overflowX: 'hidden' }}>
+              <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-6">
                   Ready to Transform Your Enterprise Browsing Experience?
                 </h2>
@@ -1753,53 +1748,6 @@ export default function EnterpriseBuyerGuidePage() {
 
       <style jsx global>{`
         :root { color-scheme: light dark; }
-        
-        /* Prevent horizontal scrolling on mobile */
-        html, body {
-          overflow-x: hidden;
-          max-width: 100%;
-          position: relative;
-          width: 100%;
-        }
-        
-        * {
-          box-sizing: border-box;
-        }
-        
-        /* Ensure all containers respect viewport width */
-        main, section, div {
-          max-width: 100%;
-        }
-        
-        /* Fix for images and media that might overflow */
-        img, video {
-          max-width: 100%;
-          height: auto;
-        }
-        
-        /* Ensure tables don't cause horizontal scroll */
-        table {
-          width: 100%;
-          table-layout: auto;
-        }
-        
-        @media (max-width: 640px) {
-          /* Additional mobile fixes */
-          section {
-            padding-left: 1rem;
-            padding-right: 1rem;
-          }
-          
-          /* Ensure full-width sections don't overflow */
-          section[id="user-experience"],
-          section[id="getting-started-with-oasis"] {
-            margin-left: 0 !important;
-            margin-right: 0 !important;
-            width: 100% !important;
-            max-width: 100% !important;
-          }
-        }
-        
         @media (prefers-color-scheme: dark) {
           body { background: #0b1526; color: #e5e7eb; }
           header, .toc nav { background: #fff ; border-color: #1f2a44 ; }
