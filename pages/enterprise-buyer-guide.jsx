@@ -361,28 +361,28 @@ export default function EnterpriseBuyerGuidePage() {
   const mediaItems = [
     {
       type: 'image',
-      src: '/images/in-action.png',
+      src: '/images/in-action.webp',
       alt: 'Oasis Interface - Designed Like an Oasis',
       title: 'Designed Like an Oasis',
       description: 'A soothing environment that fosters deep work, flow state, and concentration'
     },
     {
       type: 'image',
-      src: '/images/ai.png',
+      src: '/images/ai.webp',
       alt: 'Voice-Controlled AI Workflows',
       title: 'Voice-Controlled AI Workflows',
       description: 'Natural language commands for complex browser operations'
     },
     {
       type: 'image',
-      src: '/images/spatial.png',
+      src: '/images/spatial.webp',
       alt: 'Spatial Organization',
       title: 'Spatial Ease',
       description: 'Intuitive organization that matches your natural cognitive processes'
     },
     {
       type: 'image',
-      src: '/images/WIP.png',
+      src: '/images/WIP.webp',
       alt: 'Oasis Demo',
       title: 'See Oasis in Action',
       description: 'Experience the seamless integration of AI and enterprise security'
@@ -460,7 +460,7 @@ export default function EnterpriseBuyerGuidePage() {
               id="introduction" 
               className="relative w-full py-32 md:py-48 lg:py-56 overflow-hidden"
               style={{
-                backgroundImage: 'url(/images/desert-background-5.jpg)',
+                backgroundImage: 'url(/images/desert-background-5.webp)',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat'
@@ -491,7 +491,7 @@ export default function EnterpriseBuyerGuidePage() {
                 {/* Oasis Browser Preview Card */}
                 <div className="mt-16 rounded-2xl overflow-hidden shadow-2xl border border-gray-200 max-w-5xl mx-auto transform transition-all hover:shadow-3xl duration-500">
                    <img 
-                     src="/images/21a37c6a0cca7d51dd3260b4f0996bdebb758608.png" 
+                     src="/images/Welcome to Oasis.webp" 
                      alt="Oasis Browser Interface - Welcome to Oasis" 
                      className="w-full h-auto object-contain"
                      loading="eager"
@@ -839,7 +839,7 @@ export default function EnterpriseBuyerGuidePage() {
                         <div className="relative rounded-xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-500">
                           <div className="aspect-video bg-gray-100 overflow-hidden">
                             <img 
-                              src="/images/ai-2.png" 
+                              src="/images/ai-2.webp" 
                               alt="Deep AI Integration" 
                               className="w-full h-full object-cover transform scale-100 group-hover:scale-110 transition-transform duration-700"
                             />
@@ -1071,7 +1071,7 @@ export default function EnterpriseBuyerGuidePage() {
                           </div>
                           <div className="lg:w-1/2 relative min-h-[200px] lg:min-h-0 overflow-hidden">
                             <img 
-                              src="/images/securtiy.png" 
+                              src="/images/securtiy.webp" 
                               alt="Zero Trust Security" 
                               className="w-full h-full object-cover scale-100"
                             />
@@ -1091,7 +1091,7 @@ export default function EnterpriseBuyerGuidePage() {
                           </div>
                           <div className="lg:w-1/2 relative min-h-[200px] lg:min-h-0 overflow-hidden">
                             <img 
-                              src="/images/data-protection .png" 
+                              src="/images/data-protection .webp" 
                               alt="Safe Browsing & Threat Protection" 
                               className="w-full h-full object-cover scale-100"
                             />
@@ -1111,7 +1111,7 @@ export default function EnterpriseBuyerGuidePage() {
                           </div>
                           <div className="lg:w-1/2 relative min-h-[200px] lg:min-h-0 overflow-hidden">
                             <img 
-                              src="/images/data-protection-2.png" 
+                              src="/images/data-protection-2.webp" 
                               alt="Data Protection & DLP" 
                               className="w-full h-full object-cover scale-100"
                             />
@@ -1131,7 +1131,7 @@ export default function EnterpriseBuyerGuidePage() {
                           </div>
                           <div className="lg:w-1/2 relative min-h-[200px] lg:min-h-0 overflow-hidden">
                             <img 
-                              src="/images/visibility.png" 
+                              src="/images/visibility.webp" 
                               alt="Visibility & Monitoring" 
                               className="w-full h-full object-cover scale-100"
                             />
@@ -1168,7 +1168,7 @@ export default function EnterpriseBuyerGuidePage() {
                           </div>
                           <div className="lg:w-1/2 relative min-h-[200px] lg:min-h-0 overflow-hidden">
                             <img 
-                              src="/images/productivity.png" 
+                              src="/images/productivity.webp" 
                               alt="Productivity & Performance" 
                               className="w-full h-full object-cover scale-100"
                             />
@@ -1189,7 +1189,7 @@ export default function EnterpriseBuyerGuidePage() {
                           </div>
                           <div className="lg:w-1/2 relative min-h-[200px] lg:min-h-0 overflow-hidden">
                             <img 
-                              src="/images/applicaiton .png" 
+                              src="/images/applicaiton .webp" 
                               alt="Application Provisioning" 
                               className="w-full h-full object-cover scale-100"
                             />
@@ -1236,7 +1236,7 @@ export default function EnterpriseBuyerGuidePage() {
                           </div>
                           <div className="lg:w-1/2 relative min-h-[300px] lg:min-h-[400px] overflow-hidden">
                             <img 
-                              src="/images/cost.png" 
+                              src="/images/cost.webp" 
                               alt="Efficiency and Cost Savings" 
                               className="w-full h-full object-contain scale-110"
                             />
@@ -1257,7 +1257,7 @@ export default function EnterpriseBuyerGuidePage() {
                           </div>
                           <div className="lg:w-1/2 relative min-h-[300px] lg:min-h-[400px] overflow-hidden">
                             <img 
-                              src="/images/analytics.png" 
+                              src="/images/analytics.webp" 
                               alt="Digital Experience & Analytics" 
                               className="w-full h-full object-contain scale-110"
                             />
@@ -1668,7 +1668,7 @@ export default function EnterpriseBuyerGuidePage() {
               id="getting-started-with-oasis" 
               className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] py-20 md:py-28 mb-0"
               style={{
-                backgroundImage: 'url(/images/desert-background-5.jpg)',
+                backgroundImage: 'url(/images/desert-background-5.webp)',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat'
