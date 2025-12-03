@@ -71,15 +71,15 @@ export default function FeaturesShowcase() {
             </div>
             <div
               ref={carouselRef}
-              className="flex gap-3 sm:gap-4 md:gap-5 overflow-x-auto scroll-smooth pb-6 snap-x snap-mandatory px-3 sm:px-4 md:px-6"
+              className="flex gap-3 sm:gap-4 md:gap-5 overflow-x-auto scroll-smooth pb-6 snap-x snap-mandatory px-3 sm:px-4 md:px-6 hide-scrollbar"
               style={{ 
                 WebkitOverflowScrolling: 'touch',
                 scrollbarWidth: 'none',
                 msOverflowStyle: 'none'
               }}
             >
-              <style jsx>{`
-                div::-webkit-scrollbar {
+              <style jsx global>{`
+                .hide-scrollbar::-webkit-scrollbar {
                   display: none;
                 }
               `}</style>
