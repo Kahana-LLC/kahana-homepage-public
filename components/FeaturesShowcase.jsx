@@ -6,7 +6,7 @@ const conceptCards = [
   {
     title: "Ease with Tab Grouping",
     link: "/solutions/external-workforce",
-    image: "/figma-imports/Tab%20Groups.svg",
+    image: "/figma-imports/Tab Groups.webp",
     description: "Organize your chaos into dedicated workspaces, keeping your current task in focus and the rest out of sight."
   },
   {
@@ -18,7 +18,7 @@ const conceptCards = [
   {
     title: "Homepage Personalization",
     link: "/solutions/privileged-user-management",
-    image: "/figma-imports/New%20Tab%20Page.svg",
+    image: "/figma-imports/New Tab Page.webp",
     description: "Start every session in a space designed by you, free from distractions and tuned to your mood."
   },
   {
