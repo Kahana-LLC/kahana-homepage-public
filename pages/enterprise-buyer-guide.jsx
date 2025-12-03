@@ -503,6 +503,9 @@ export default function EnterpriseBuyerGuidePage() {
               className="py-4 md:py-6 px-4 lg:px-10 scroll-mt-28"
             >
               <div className="max-w-5xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-left" style={{ color: '#4A6200' }}>
+                Oasis: The Evolution of Browsing
+              </h2>
               <p className="text-lg md:text-xl leading-relaxed mb-4 text-left">
                 The definition of a "browser" has fundamentally changed in recent years. What was once 
                 simply a tool for viewing web pages has evolved into something far more powerful and 
