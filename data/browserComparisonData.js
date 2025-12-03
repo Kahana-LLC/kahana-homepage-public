@@ -374,7 +374,7 @@ export const filterOptions = {
   ],
   type: ["Consumer", "Enterprise"],
   whoUsesIt: [
-    "Enterprise IT teams, privacy-centric businesses",
+    "All business functions",
     "General consumers",
     "Apple device users",
     "Windows, Microsoft ecosystem",
