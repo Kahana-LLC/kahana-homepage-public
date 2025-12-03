@@ -1655,7 +1655,7 @@ export default function EnterpriseBuyerGuidePage() {
               }}
             >
               {/* Overlay for text readability */}
-              <div className="absolute inset-0 bg-white/60"></div>
+              <div className="absolute inset-0 bg-white/90"></div>
               <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-6">
                   Ready to Transform Your Enterprise Browsing Experience?
