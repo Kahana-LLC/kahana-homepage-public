@@ -180,7 +180,7 @@ export default function Home({ blogPosts }) {
         <link
           rel="preload"
           as="image"
-          href="/images/Welcome to Oasis.svg"
+          href="/images/Welcome to Oasis.webp"
           fetchPriority="high"
         />
         {/* Preconnect to external image domains */}
