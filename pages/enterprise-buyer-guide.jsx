@@ -546,7 +546,7 @@ export default function EnterpriseBuyerGuidePage() {
                 {/* Core Commands */}
                 <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-6 flex flex-col hover:shadow-xl transition-all">
                   <div className="flex justify-start mb-4">
-                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-indigo-200 to-indigo-300 flex items-center justify-center">
+                    <div className="w-20 h-20 rounded-full flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #d6e3f4 0%, #e5efd8 100%)' }}>
                       <Icon.Settings className="w-10 h-10" style={{ color: '#4A6200' }} />
                     </div>
                   </div>
@@ -573,7 +573,7 @@ export default function EnterpriseBuyerGuidePage() {
                 {/* Sales */}
                 <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-6 flex flex-col hover:shadow-xl transition-all">
                   <div className="flex justify-start mb-4">
-                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-pink-200 to-pink-300 flex items-center justify-center">
+                    <div className="w-20 h-20 rounded-full flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #e5efd8 0%, #d6e3f4 100%)' }}>
                       <Icon.DollarSign className="w-10 h-10" style={{ color: '#4A6200' }} />
                   </div>
                   </div>
@@ -597,7 +597,7 @@ export default function EnterpriseBuyerGuidePage() {
                 {/* Marketing */}
                 <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-6 flex flex-col hover:shadow-xl transition-all">
                   <div className="flex justify-start mb-4">
-                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-blue-200 to-blue-300 flex items-center justify-center">
+                    <div className="w-20 h-20 rounded-full flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #d6e3f4 0%, #e5efd8 100%)' }}>
                       <Icon.Rocket className="w-10 h-10" style={{ color: '#4A6200' }} />
                     </div>
                   </div>
@@ -621,7 +621,7 @@ export default function EnterpriseBuyerGuidePage() {
                 {/* Research & Analysis */}
                 <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-6 flex flex-col hover:shadow-xl transition-all">
                   <div className="flex justify-start mb-4">
-                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-purple-200 to-purple-300 flex items-center justify-center">
+                    <div className="w-20 h-20 rounded-full flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #e5efd8 0%, #d6e3f4 100%)' }}>
                       <Icon.FileText className="w-10 h-10" style={{ color: '#4A6200' }} />
                     </div>
                   </div>
@@ -645,7 +645,7 @@ export default function EnterpriseBuyerGuidePage() {
                 {/* Development */}
                 <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-6 flex flex-col hover:shadow-xl transition-all">
                   <div className="flex justify-start mb-4">
-                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-green-200 to-green-300 flex items-center justify-center">
+                    <div className="w-20 h-20 rounded-full flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #d6e3f4 0%, #e5efd8 100%)' }}>
                       <Icon.Layers className="w-10 h-10" style={{ color: '#4A6200' }} />
                     </div>
                   </div>
@@ -669,7 +669,7 @@ export default function EnterpriseBuyerGuidePage() {
                 {/* Custom Workflow */}
                 <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-6 flex flex-col hover:shadow-xl transition-all">
                   <div className="flex justify-start mb-4">
-                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-amber-200 to-amber-300 flex items-center justify-center">
+                    <div className="w-20 h-20 rounded-full flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #e5efd8 0%, #d6e3f4 100%)' }}>
                       <Icon.Sliders className="w-10 h-10" style={{ color: '#4A6200' }} />
                     </div>
                   </div>
