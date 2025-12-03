@@ -546,19 +546,19 @@ export default function EnterpriseBuyerGuidePage() {
                   </div>
                   <h4 className="text-xl font-bold text-left mb-4" style={{ color: '#313A00' }}>Core Commands</h4>
                   <div className="space-y-2 mb-6 flex-grow">
-                    <div className="text-sm text-gray-700">
+                    <div className="text-sm text-gray-700 text-left">
                       "Open new tab"
                     </div>
-                    <div className="text-sm text-gray-700">
+                    <div className="text-sm text-gray-700 text-left">
                       "Organize windows"
                     </div>
-                    <div className="text-sm text-gray-700">
+                    <div className="text-sm text-gray-700 text-left">
                       "Open tab 1 and tab 2 splitview"
                     </div>
-                    <div className="text-sm text-gray-700">
+                    <div className="text-sm text-gray-700 text-left">
                       "Group all my tabs"
                     </div>
-                    <div className="text-sm text-gray-700">
+                    <div className="text-sm text-gray-700 text-left">
                       "Find XYZ tab from my groups and show it"
                     </div>
                   </div>
@@ -576,13 +576,13 @@ export default function EnterpriseBuyerGuidePage() {
                     Pull up Google Sheet with prospects and Perplexity to write outreach sequences
                   </p>
                   <div className="space-y-2 mb-6 flex-grow">
-                    <div className="text-sm text-gray-600">
+                    <div className="text-sm text-gray-700 text-left">
                       Open prospect list and AI assistant side by side
                     </div>
-                    <div className="text-sm text-gray-600">
+                    <div className="text-sm text-gray-700 text-left">
                       Group all outreach tools in one workspace
                     </div>
-                    <div className="text-sm text-gray-600">
+                    <div className="text-sm text-gray-700 text-left">
                       Quickly find and switch between prospect tabs
                     </div>
                   </div>
@@ -600,13 +600,13 @@ export default function EnterpriseBuyerGuidePage() {
                     Pull up Google Ads campaign and Meta Ads campaign side by side
                   </p>
                   <div className="space-y-2 mb-6 flex-grow">
-                    <div className="text-sm text-gray-600">
+                    <div className="text-sm text-gray-700 text-left">
                       Compare campaign performance in split view
                     </div>
-                    <div className="text-sm text-gray-600">
+                    <div className="text-sm text-gray-700 text-left">
                       Group all ad platform tabs together
                     </div>
-                    <div className="text-sm text-gray-600">
+                    <div className="text-sm text-gray-700 text-left">
                       Organize analytics and creative tools
                     </div>
                   </div>
@@ -624,13 +624,13 @@ export default function EnterpriseBuyerGuidePage() {
                     Open research sources, data sheets, and analysis tools in organized groups
                   </p>
                   <div className="space-y-2 mb-6 flex-grow">
-                    <div className="text-sm text-gray-600">
+                    <div className="text-sm text-gray-700 text-left">
                       Split view for comparing multiple sources
                     </div>
-                    <div className="text-sm text-gray-600">
+                    <div className="text-sm text-gray-700 text-left">
                       Group related research tabs by topic
                     </div>
-                    <div className="text-sm text-gray-600">
+                    <div className="text-sm text-gray-700 text-left">
                       Quickly find specific research documents
                     </div>
                   </div>
@@ -648,13 +648,13 @@ export default function EnterpriseBuyerGuidePage() {
                     Organize documentation, code repos, and testing tools in dedicated workspaces
                   </p>
                   <div className="space-y-2 mb-6 flex-grow">
-                    <div className="text-sm text-gray-600">
+                    <div className="text-sm text-gray-700 text-left">
                       Split view for code and documentation
                     </div>
-                    <div className="text-sm text-gray-600">
+                    <div className="text-sm text-gray-700 text-left">
                       Group tabs by project or feature
                     </div>
-                    <div className="text-sm text-gray-600">
+                    <div className="text-sm text-gray-700 text-left">
                       Quickly switch between development tools
                     </div>
                   </div>
