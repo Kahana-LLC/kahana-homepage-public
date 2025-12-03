@@ -545,23 +545,23 @@ export default function EnterpriseBuyerGuidePage() {
                     </div>
                   </div>
                   <h4 className="text-xl font-bold text-left mb-4" style={{ color: '#313A00' }}>Core Commands</h4>
-                  <ul className="space-y-2 mb-6 flex-grow">
-                    <li className="text-sm text-gray-700">
+                  <div className="space-y-2 mb-6 flex-grow">
+                    <div className="text-sm text-gray-700">
                       "Open new tab"
-                    </li>
-                    <li className="text-sm text-gray-700">
+                    </div>
+                    <div className="text-sm text-gray-700">
                       "Organize windows"
-                    </li>
-                    <li className="text-sm text-gray-700">
+                    </div>
+                    <div className="text-sm text-gray-700">
                       "Open tab 1 and tab 2 splitview"
-                    </li>
-                    <li className="text-sm text-gray-700">
+                    </div>
+                    <div className="text-sm text-gray-700">
                       "Group all my tabs"
-                    </li>
-                    <li className="text-sm text-gray-700">
+                    </div>
+                    <div className="text-sm text-gray-700">
                       "Find XYZ tab from my groups and show it"
-                    </li>
-                  </ul>
+                    </div>
+                  </div>
                 </div>
 
                 {/* Sales */}
@@ -575,17 +575,17 @@ export default function EnterpriseBuyerGuidePage() {
                   <p className="text-sm text-gray-700 mb-4 text-left">
                     Pull up Google Sheet with prospects and Perplexity to write outreach sequences
                   </p>
-                  <ul className="space-y-2 mb-6 flex-grow">
-                    <li className="text-sm text-gray-600">
+                  <div className="space-y-2 mb-6 flex-grow">
+                    <div className="text-sm text-gray-600">
                       Open prospect list and AI assistant side by side
-                    </li>
-                    <li className="text-sm text-gray-600">
+                    </div>
+                    <div className="text-sm text-gray-600">
                       Group all outreach tools in one workspace
-                    </li>
-                    <li className="text-sm text-gray-600">
+                    </div>
+                    <div className="text-sm text-gray-600">
                       Quickly find and switch between prospect tabs
-                    </li>
-                  </ul>
+                    </div>
+                  </div>
                 </div>
 
                 {/* Marketing */}
@@ -599,17 +599,17 @@ export default function EnterpriseBuyerGuidePage() {
                   <p className="text-sm text-gray-700 mb-4 text-left">
                     Pull up Google Ads campaign and Meta Ads campaign side by side
                   </p>
-                  <ul className="space-y-2 mb-6 flex-grow">
-                    <li className="text-sm text-gray-600">
+                  <div className="space-y-2 mb-6 flex-grow">
+                    <div className="text-sm text-gray-600">
                       Compare campaign performance in split view
-                    </li>
-                    <li className="text-sm text-gray-600">
+                    </div>
+                    <div className="text-sm text-gray-600">
                       Group all ad platform tabs together
-                    </li>
-                    <li className="text-sm text-gray-600">
+                    </div>
+                    <div className="text-sm text-gray-600">
                       Organize analytics and creative tools
-                    </li>
-                  </ul>
+                    </div>
+                  </div>
                 </div>
 
                 {/* Research & Analysis */}
@@ -623,17 +623,17 @@ export default function EnterpriseBuyerGuidePage() {
                   <p className="text-sm text-gray-700 mb-4 text-left">
                     Open research sources, data sheets, and analysis tools in organized groups
                   </p>
-                  <ul className="space-y-2 mb-6 flex-grow">
-                    <li className="text-sm text-gray-600">
+                  <div className="space-y-2 mb-6 flex-grow">
+                    <div className="text-sm text-gray-600">
                       Split view for comparing multiple sources
-                    </li>
-                    <li className="text-sm text-gray-600">
+                    </div>
+                    <div className="text-sm text-gray-600">
                       Group related research tabs by topic
-                    </li>
-                    <li className="text-sm text-gray-600">
+                    </div>
+                    <div className="text-sm text-gray-600">
                       Quickly find specific research documents
-                    </li>
-                  </ul>
+                    </div>
+                  </div>
                 </div>
 
                 {/* Development */}
@@ -647,17 +647,17 @@ export default function EnterpriseBuyerGuidePage() {
                   <p className="text-sm text-gray-700 mb-4 text-left">
                     Organize documentation, code repos, and testing tools in dedicated workspaces
                   </p>
-                  <ul className="space-y-2 mb-6 flex-grow">
-                    <li className="text-sm text-gray-600">
+                  <div className="space-y-2 mb-6 flex-grow">
+                    <div className="text-sm text-gray-600">
                       Split view for code and documentation
-                    </li>
-                    <li className="text-sm text-gray-600">
+                    </div>
+                    <div className="text-sm text-gray-600">
                       Group tabs by project or feature
-                    </li>
-                    <li className="text-sm text-gray-600">
+                    </div>
+                    <div className="text-sm text-gray-600">
                       Quickly switch between development tools
-                    </li>
-                  </ul>
+                    </div>
+                  </div>
                 </div>
 
                 {/* Custom Workflow */}
