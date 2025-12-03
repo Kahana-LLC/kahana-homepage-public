@@ -109,7 +109,7 @@ export default function FeaturesShowcase() {
                     src={card.image || `https://via.placeholder.com/600x400/E4E9CC/728552?text=${encodeURIComponent(card.title)}`}
                     alt={card.title}
                     fill
-                    sizes="(max-width: 640px) 85vw, (max-width: 768px) 45vw, 400px"
+                    sizes="(max-width: 640px) 340px, (max-width: 768px) 400px, 400px"
                     className="object-contain"
                     loading="lazy"
                     quality={85}

@@ -9,7 +9,7 @@ export default function ProductTourCard() {
           src="/figma-imports/Custom Themes.webp"
           alt="Oasis Custom Themes"
           fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
+          sizes="(max-width: 640px) 100vw, (max-width: 768px) 90vw, (max-width: 1024px) 80vw, 1000px"
           className="object-cover"
           loading="lazy"
           quality={85}

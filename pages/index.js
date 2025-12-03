@@ -316,7 +316,7 @@ export default function Home({ blogPosts }) {
                           src={card.image}
                           alt={card.imageAlt || `${card.title} illustration`}
                           fill
-                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 340px"
+                          sizes="(max-width: 640px) 340px, (max-width: 1024px) 340px, 340px"
                           className="object-cover"
                           loading="lazy"
                           quality={85}

@@ -1,162 +1,107 @@
-# Image Optimization Guide
+# Image Optimization Guide - Manual Resizing Required
 
-## ✅ Completed: Unsplash URLs Updated
+## Problem
+Since Next.js image optimization is disabled (`unoptimized: true` for Heroku), images are served at full resolution even when displayed much smaller. This wastes ~2,125 KiB of bandwidth.
 
-All Unsplash image URLs in `utils/pexels.js` have been updated to include `&auto=format`, which automatically serves WebP format when supported by the browser.
+## Solution
+Create manually resized versions of images at the correct display sizes. The `sizes` attributes have been updated, but we need the actual smaller image files.
 
-## 🎯 Priority Images to Optimize
+## Images to Resize
 
-These images are used on the main landing page and should be optimized for better performance:
+### 1. FeaturesShowcase Carousel Images
+**Display size**: 339x220px (mobile), ~400px (desktop)
+**Current size**: 3024x1964 or 2617x1964
+**Target size**: 400x260px (1.5x for retina = 600x390px)
 
-### 🔴 CRITICAL PRIORITY (Very Large Files - Optimize Immediately!)
+Files to resize:
+- `/figma-imports/New Tab Page.webp` (374.9 KiB → ~60-80 KiB)
+- `/figma-imports/er.webp` (348.6 KiB → ~50-70 KiB)
+- `/figma-imports/Security 1.webp` (329.9 KiB → ~50-70 KiB)
+- `/figma-imports/Tab Groups.webp` (233.8 KiB → ~40-60 KiB)
+- `/figma-imports/Security 2.webp` (200.9 KiB → ~35-50 KiB)
 
-1. **`/figma-imports/Security 1.png`** - **4.5 MB** ⚠️
-   - **Current size**: 4.5 MB (FeaturesShowcase carousel)
-   - **Action**: Convert PNG → WebP
-   - **Expected size after optimization**: ~500-800 KB (80-90% reduction!)
-   - **Impact**: This is blocking page load performance
+### 2. WhyOasisSection Images
+**Display size**: 300px height, ~45% width on desktop (~500px)
+**Current size**: 2617x1964
+**Target size**: 500x400px (1.5x for retina = 750x600px)
 
-2. **`/figma-imports/Security 2.png`** - **3.9 MB** ⚠️
-   - **Current size**: 3.9 MB (FeaturesShowcase carousel)
-   - **Action**: Convert PNG → WebP
-   - **Expected size after optimization**: ~400-700 KB (80-90% reduction!)
-   - **Impact**: This is blocking page load performance
+Files to resize:
+- `/figma-imports/er.webp` (348.6 KiB → ~60-80 KiB)
+- `/figma-imports/Frame 1321315005.webp` (139.5 KiB → ~30-40 KiB)
+- `/figma-imports/Summarize with AI 3.webp` (176.2 KiB → ~40-50 KiB)
 
-3. **`/figma-imports/Personalization Features.png`** - **5.3 MB** ⚠️
-   - **Current size**: 5.3 MB (if used)
-   - **Action**: Convert PNG → WebP
-   - **Expected size after optimization**: ~600-900 KB (80-90% reduction!)
-   - **Impact**: Massive performance impact if loaded
+### 3. Main Page WhyOasisCards
+**Display size**: max-w-[340px], aspect-[4/3] = 340x255px
+**Current size**: 2617x1964
+**Target size**: 340x255px (1.5x for retina = 510x383px)
 
-### High Priority (Above the Fold / Hero Section)
+Files to resize (same as WhyOasisSection):
+- `/figma-imports/er.webp` (348.6 KiB → ~40-60 KiB)
+- `/figma-imports/Frame 1321315005.webp` (139.5 KiB → ~25-35 KiB)
+- `/figma-imports/Summarize with AI 3.webp` (176.2 KiB → ~30-40 KiB)
 
-4. **`/images/Welcome to Oasis.svg`** ✅
-   - Already SVG format (optimal)
-   - No optimization needed
+### 4. ProductSection Hero Image
+**Display size**: 706x459px (desktop), smaller on mobile
+**Current size**: 3024x1964
+**Target size**: 800x520px (1.5x for retina = 1200x780px)
 
-5. **`/figma-imports/Custom Themes.png`** - **3.1 MB** ⚠️
-   - **Current size**: 3.1 MB (ProductTourCard - above the fold)
-   - **Action**: Convert PNG → WebP
-   - **Expected size after optimization**: ~300-500 KB (85-90% reduction!)
-   - **Impact**: Critical - this is above the fold and affects LCP
+File to resize:
+- `/images/Welcome to Oasis.webp` (80.4 KiB → ~50-70 KiB)
 
-### Medium Priority (Main Content)
+### 5. ProductTourCard Image
+**Display size**: 896x582px (desktop)
+**Current size**: 3024x1701
+**Target size**: 1000x650px (1.5x for retina = 1500x975px)
 
-6. **`/figma-imports/Frame 1321315005.jpg`** - **77 KB**
-   - **Current size**: 77 KB (Why Oasis section)
-   - **Action**: Convert JPG → WebP
-   - **Expected size after optimization**: ~50-60 KB (20-30% reduction)
-   - **Impact**: Moderate improvement
+File to resize:
+- `/figma-imports/Custom Themes.webp` (300.0 KiB → ~80-100 KiB)
 
-7. **`/figma-imports/Summarize with AI 3.jpg`** - **81 KB**
-   - **Current size**: 81 KB (Why Oasis section)
-   - **Action**: Convert JPG → WebP
-   - **Expected size after optimization**: ~55-65 KB (20-30% reduction)
-   - **Impact**: Moderate improvement
+## How to Resize
 
-### Already Optimized (SVG)
-
-- `/figma-imports/er.svg` ✅
-- `/figma-imports/Tab Groups.svg` ✅
-- `/figma-imports/New Tab Page.svg` ✅
-
-## 🛠️ How to Optimize Images
-
-### Option 1: Squoosh.app (Recommended - Free, Browser-based)
-
+### Option 1: Squoosh.app (Recommended)
 1. Go to https://squoosh.app
-2. Drag and drop your image
-3. Select **WebP** format
-4. Adjust quality slider (recommended: 80-85 for photos, 90-95 for graphics)
-5. Click "Download"
-6. Replace the original file with the optimized version
+2. Upload the original image
+3. Set output format to WebP
+4. Set quality to 85-90
+5. Resize to target dimensions (or 1.5x for retina)
+6. Download and replace the original file
 
-### Option 2: ImageOptim (Mac - Free)
-
-1. Download from https://imageoptim.com
-2. Drag images into ImageOptim
-3. It automatically optimizes and replaces files
-4. For WebP conversion, use Squoosh.app instead
-
-### Option 3: TinyPNG (Online - Free tier)
-
-1. Go to https://tinypng.com
-2. Upload images (up to 20 at a time on free tier)
-3. Download optimized versions
-4. Note: TinyPNG compresses but doesn't convert to WebP by default
-
-### Option 4: Command Line (Advanced)
-
+### Option 2: ImageMagick (Command Line)
 ```bash
-# Install cwebp (WebP encoder)
-# macOS: brew install webp
-# Linux: sudo apt-get install webp
+# Resize to target size
+magick input.webp -resize 400x260 -quality 85 output.webp
 
-# Convert PNG to WebP
-cwebp -q 85 input.png -o output.webp
-
-# Convert JPG to WebP
-cwebp -q 85 input.jpg -o output.webp
+# For retina (1.5x)
+magick input.webp -resize 600x390 -quality 85 output.webp
 ```
 
-## 📝 Optimization Checklist
+### Option 3: Create Multiple Sizes
+For best results, create multiple sizes and use responsive images:
+- Small: 400x260px (mobile)
+- Medium: 600x390px (tablet, retina mobile)
+- Large: 800x520px (desktop)
+- XLarge: 1200x780px (retina desktop)
 
-- [x] Update Unsplash URLs with `&auto=format`
-- [ ] Convert `/figma-imports/Custom Themes.png` → WebP
-- [ ] Convert `/figma-imports/Frame 1321315005.jpg` → WebP
-- [ ] Convert `/figma-imports/Summarize with AI 3.jpg` → WebP
-- [ ] Convert `/figma-imports/Security 1.png` → WebP
-- [ ] Convert `/figma-imports/Security 2.png` → WebP
-- [ ] Update component code to use `.webp` extensions
-- [ ] Test images load correctly
-- [ ] Verify file size reductions
+Then update components to use `srcSet` or conditional rendering.
 
-## 🔄 After Converting to WebP
+## Expected Savings
 
-After converting images to WebP, you'll need to update the file paths in the code:
+- **Total savings**: ~2,125 KiB (2.1 MB)
+- **Faster page load**: Especially on mobile
+- **Better LCP**: Largest Contentful Paint will improve significantly
+- **Reduced bandwidth**: Important for mobile users
 
-### Update `components/ProductTourCard.jsx`:
-```javascript
-src="/figma-imports/Custom Themes.webp"  // Changed from .png
-```
+## After Resizing
 
-### Update `pages/index.js`:
-```javascript
-image: "/figma-imports/Frame 1321315005.webp",  // Changed from .jpg
-image: "/figma-imports/Summarize with AI 3.webp",  // Changed from .jpg
-```
+1. Replace the original files with resized versions
+2. Test on local development
+3. Commit and push to GitHub
+4. Verify on Heroku deployment
+5. Check PageSpeed Insights again
 
-### Update `components/FeaturesShowcase.jsx`:
-```javascript
-image: "/figma-imports/Security 1.webp",  // Changed from .png
-image: "/figma-imports/Security 2.webp",  // Changed from .png
-```
+## Notes
 
-## 📊 Expected Performance Improvements
-
-After optimization:
-- **Hero image**: Already optimal (SVG)
-- **Carousel images**: 30-50% smaller file sizes
-- **Why Oasis images**: 30-40% smaller file sizes
-- **Overall page load**: Faster LCP (Largest Contentful Paint)
-- **Bandwidth savings**: Significant reduction for mobile users
-
-## 🚀 Next Steps
-
-1. Use Squoosh.app to convert the 5 images listed above
-2. Replace original files with WebP versions
-3. Update file paths in code (see above)
-4. Test locally to ensure images load correctly
-5. Commit and deploy
-
-## 💡 Pro Tips
-
-- **Quality settings**: 
-  - Photos: 80-85 quality
-  - Graphics/screenshots: 90-95 quality
-  - Icons: 100 quality (or keep as SVG)
-
-- **Fallback support**: Next.js Image component automatically handles WebP with fallback to original format if needed
-
-- **File naming**: Keep original names, just change extension (e.g., `image.png` → `image.webp`)
-
+- Keep aspect ratios the same when resizing
+- Use quality 85-90 for WebP to maintain visual quality
+- Consider creating 1.5x versions for retina displays
+- Test on actual devices to ensure quality is acceptable
