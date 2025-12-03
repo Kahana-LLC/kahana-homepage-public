@@ -525,144 +525,168 @@ export default function EnterpriseBuyerGuidePage() {
               </p>
               </div>
             </section>
-            {/* Persona-based cards */}
+            {/* Tools for any role */}
             <Section
               id="personas"
-              title="Guide by role"
-              kicker="Choose your perspective - discover benefits tailored to your role"
+              title="Tools for any role"
+              kicker="Core Oasis commands that adapt to your workflow"
               centered={true}
             >
+              <p className="text-lg text-[#4A5745] mb-8 max-w-3xl mx-auto text-center">
+                Oasis core commands like "open new tab", "organize windows", and "group tabs" can be customized 
+                and adapted to serve any role. The same powerful tools work for everyone—just configured differently.
+              </p>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 max-w-6xl mx-auto">
-                {/* Business Executive */}
+                {/* Core Commands */}
+                <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-6 flex flex-col hover:shadow-xl transition-all">
+                  <div className="flex justify-start mb-4">
+                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-indigo-200 to-indigo-300 flex items-center justify-center">
+                      <Icon.Settings className="w-10 h-10" style={{ color: '#4A6200' }} />
+                    </div>
+                  </div>
+                  <h4 className="text-xl font-bold text-left mb-4" style={{ color: '#313A00' }}>Core Commands</h4>
+                  <ul className="space-y-2 mb-6 flex-grow">
+                    <li className="flex items-start gap-2 text-sm text-gray-700">
+                      <Icon.Zap className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#4A6200' }} />
+                      <span>"Open new tab"</span>
+                    </li>
+                    <li className="flex items-start gap-2 text-sm text-gray-700">
+                      <Icon.Zap className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#4A6200' }} />
+                      <span>"Organize windows"</span>
+                    </li>
+                    <li className="flex items-start gap-2 text-sm text-gray-700">
+                      <Icon.Zap className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#4A6200' }} />
+                      <span>"Open tab 1 and tab 2 splitview"</span>
+                    </li>
+                    <li className="flex items-start gap-2 text-sm text-gray-700">
+                      <Icon.Zap className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#4A6200' }} />
+                      <span>"Group all my tabs"</span>
+                    </li>
+                    <li className="flex items-start gap-2 text-sm text-gray-700">
+                      <Icon.Zap className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#4A6200' }} />
+                      <span>"Find XYZ tab from my groups and show it"</span>
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Sales */}
                 <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-6 flex flex-col hover:shadow-xl transition-all">
                   <div className="flex justify-start mb-4">
                     <div className="w-20 h-20 rounded-full bg-gradient-to-br from-pink-200 to-pink-300 flex items-center justify-center">
                       <Icon.DollarSign className="w-10 h-10" style={{ color: '#4A6200' }} />
                     </div>
                   </div>
-                  <h4 className="text-xl font-bold text-left mb-4" style={{ color: '#313A00' }}>Business Executive</h4>
+                  <h4 className="text-xl font-bold text-left mb-4" style={{ color: '#313A00' }}>Sales</h4>
+                  <p className="text-sm text-gray-700 mb-4 text-left">
+                    Pull up Google Sheet with prospects and Perplexity to write outreach sequences
+                  </p>
                   <ul className="space-y-2 mb-6 flex-grow">
-                    <li className="flex items-start gap-2 text-sm text-gray-700">
+                    <li className="flex items-start gap-2 text-sm text-gray-600">
                       <Icon.Zap className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#4A6200' }} />
-                      <span>Reduce security stack spend by 15–30%</span>
+                      <span>Open prospect list and AI assistant side by side</span>
                     </li>
-                    <li className="flex items-start gap-2 text-sm text-gray-700">
+                    <li className="flex items-start gap-2 text-sm text-gray-600">
                       <Icon.Zap className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#4A6200' }} />
-                      <span>Speed new-hire productivity with same-day access</span>
+                      <span>Group all outreach tools in one workspace</span>
                     </li>
-                    <li className="flex items-start gap-2 text-sm text-gray-700">
+                    <li className="flex items-start gap-2 text-sm text-gray-600">
                       <Icon.Zap className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#4A6200' }} />
-                      <span>Decrease support tickets with built-in guardrails</span>
+                      <span>Quickly find and switch between prospect tabs</span>
                     </li>
                   </ul>
                 </div>
 
-                {/* IT Administrator */}
+                {/* Marketing */}
                 <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-6 flex flex-col hover:shadow-xl transition-all">
                   <div className="flex justify-start mb-4">
                     <div className="w-20 h-20 rounded-full bg-gradient-to-br from-blue-200 to-blue-300 flex items-center justify-center">
-                      <Icon.Settings className="w-10 h-10" style={{ color: '#4A6200' }} />
-                    </div>
-                  </div>
-                  <h4 className="text-xl font-bold text-left mb-4" style={{ color: '#313A00' }}>IT Administrator</h4>
-                  <ul className="space-y-2 mb-6 flex-grow">
-                    <li className="flex items-start gap-2 text-sm text-gray-700">
-                      <Icon.Zap className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#4A6200' }} />
-                      <span>Easy deployment with MDM integration</span>
-                    </li>
-                    <li className="flex items-start gap-2 text-sm text-gray-700">
-                      <Icon.Zap className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#4A6200' }} />
-                      <span>Configurable update channels and rollback</span>
-                    </li>
-                    <li className="flex items-start gap-2 text-sm text-gray-700">
-                      <Icon.Zap className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#4A6200' }} />
-                      <span>Works with Workspace ONE, Intune, Jamf</span>
-                    </li>
-                  </ul>
-                </div>
-
-                {/* Security Officer */}
-                <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-6 flex flex-col hover:shadow-xl transition-all">
-                  <div className="flex justify-start mb-4">
-                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-purple-200 to-purple-300 flex items-center justify-center">
-                      <Icon.Shield className="w-10 h-10" style={{ color: '#4A6200' }} />
-                    </div>
-                  </div>
-                  <h4 className="text-xl font-bold text-left mb-4" style={{ color: '#313A00' }}>Security Officer</h4>
-                  <ul className="space-y-2 mb-6 flex-grow">
-                    <li className="flex items-start gap-2 text-sm text-gray-700">
-                      <Icon.Zap className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#4A6200' }} />
-                      <span>Granular DLP and clipboard policies</span>
-                    </li>
-                    <li className="flex items-start gap-2 text-sm text-gray-700">
-                      <Icon.Zap className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#4A6200' }} />
-                      <span>Exportable audit logs and SIEM integration</span>
-                    </li>
-                    <li className="flex items-start gap-2 text-sm text-gray-700">
-                      <Icon.Zap className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#4A6200' }} />
-                      <span>SAML/OIDC SSO with MFA enforcement</span>
-                    </li>
-                  </ul>
-                </div>
-
-                {/* Product Manager */}
-                <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-6 flex flex-col hover:shadow-xl transition-all">
-                  <div className="flex justify-start mb-4">
-                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-yellow-200 to-yellow-300 flex items-center justify-center">
                       <Icon.Rocket className="w-10 h-10" style={{ color: '#4A6200' }} />
                     </div>
                   </div>
-                  <h4 className="text-xl font-bold text-left mb-4" style={{ color: '#313A00' }}>Product Manager</h4>
+                  <h4 className="text-xl font-bold text-left mb-4" style={{ color: '#313A00' }}>Marketing</h4>
+                  <p className="text-sm text-gray-700 mb-4 text-left">
+                    Pull up Google Ads campaign and Meta Ads campaign side by side
+                  </p>
                   <ul className="space-y-2 mb-6 flex-grow">
-                    <li className="flex items-start gap-2 text-sm text-gray-700">
+                    <li className="flex items-start gap-2 text-sm text-gray-600">
                       <Icon.Zap className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#4A6200' }} />
-                      <span>AI-powered productivity features</span>
+                      <span>Compare campaign performance in split view</span>
                     </li>
-                    <li className="flex items-start gap-2 text-sm text-gray-700">
+                    <li className="flex items-start gap-2 text-sm text-gray-600">
                       <Icon.Zap className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#4A6200' }} />
-                      <span>Multi-view layouts and spatial organization</span>
+                      <span>Group all ad platform tabs together</span>
                     </li>
-                    <li className="flex items-start gap-2 text-sm text-gray-700">
+                    <li className="flex items-start gap-2 text-sm text-gray-600">
                       <Icon.Zap className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#4A6200' }} />
-                      <span>Voice commands and keyboard shortcuts</span>
+                      <span>Organize analytics and creative tools</span>
                     </li>
                   </ul>
                 </div>
 
-                {/* Developer */}
+                {/* Research & Analysis */}
+                <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-6 flex flex-col hover:shadow-xl transition-all">
+                  <div className="flex justify-start mb-4">
+                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-purple-200 to-purple-300 flex items-center justify-center">
+                      <Icon.FileText className="w-10 h-10" style={{ color: '#4A6200' }} />
+                    </div>
+                  </div>
+                  <h4 className="text-xl font-bold text-left mb-4" style={{ color: '#313A00' }}>Research & Analysis</h4>
+                  <p className="text-sm text-gray-700 mb-4 text-left">
+                    Open research sources, data sheets, and analysis tools in organized groups
+                  </p>
+                  <ul className="space-y-2 mb-6 flex-grow">
+                    <li className="flex items-start gap-2 text-sm text-gray-600">
+                      <Icon.Zap className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#4A6200' }} />
+                      <span>Split view for comparing multiple sources</span>
+                    </li>
+                    <li className="flex items-start gap-2 text-sm text-gray-600">
+                      <Icon.Zap className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#4A6200' }} />
+                      <span>Group related research tabs by topic</span>
+                    </li>
+                    <li className="flex items-start gap-2 text-sm text-gray-600">
+                      <Icon.Zap className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#4A6200' }} />
+                      <span>Quickly find specific research documents</span>
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Development */}
                 <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-6 flex flex-col hover:shadow-xl transition-all">
                   <div className="flex justify-start mb-4">
                     <div className="w-20 h-20 rounded-full bg-gradient-to-br from-green-200 to-green-300 flex items-center justify-center">
                       <Icon.Layers className="w-10 h-10" style={{ color: '#4A6200' }} />
                     </div>
                   </div>
-                  <h4 className="text-xl font-bold text-left mb-4" style={{ color: '#313A00' }}>Developer</h4>
+                  <h4 className="text-xl font-bold text-left mb-4" style={{ color: '#313A00' }}>Development</h4>
+                  <p className="text-sm text-gray-700 mb-4 text-left">
+                    Organize documentation, code repos, and testing tools in dedicated workspaces
+                  </p>
                   <ul className="space-y-2 mb-6 flex-grow">
-                    <li className="flex items-start gap-2 text-sm text-gray-700">
+                    <li className="flex items-start gap-2 text-sm text-gray-600">
                       <Icon.Zap className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#4A6200' }} />
-                      <span>API access for custom integrations</span>
+                      <span>Split view for code and documentation</span>
                     </li>
-                    <li className="flex items-start gap-2 text-sm text-gray-700">
+                    <li className="flex items-start gap-2 text-sm text-gray-600">
                       <Icon.Zap className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#4A6200' }} />
-                      <span>JSON policy configuration files</span>
+                      <span>Group tabs by project or feature</span>
                     </li>
-                    <li className="flex items-start gap-2 text-sm text-gray-700">
+                    <li className="flex items-start gap-2 text-sm text-gray-600">
                       <Icon.Zap className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#4A6200' }} />
-                      <span>Extensible architecture and plugins</span>
+                      <span>Quickly switch between development tools</span>
                     </li>
                   </ul>
                 </div>
 
-                {/* Custom Role */}
+                {/* Custom Workflow */}
                 <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-6 flex flex-col hover:shadow-xl transition-all">
                   <div className="flex justify-start mb-4">
                     <div className="w-20 h-20 rounded-full bg-gradient-to-br from-amber-200 to-amber-300 flex items-center justify-center">
                       <Icon.Sliders className="w-10 h-10" style={{ color: '#4A6200' }} />
                     </div>
                   </div>
-                  <h4 className="text-xl font-bold text-left mb-4" style={{ color: '#313A00' }}>Custom Role</h4>
+                  <h4 className="text-xl font-bold text-left mb-4" style={{ color: '#313A00' }}>Your Workflow</h4>
                   <p className="text-sm text-gray-700 mb-6 flex-grow text-left">
-                    Create a custom role tailored to your unique workflows and requirements. Configure Oasis to match your organization's specific needs.
+                    Adapt these core commands to match your unique workflow. Configure Oasis to work exactly how you need it—whether you're in sales, marketing, research, development, or any other role.
                   </p>
                 </div>
               </div>
