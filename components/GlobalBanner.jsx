@@ -55,7 +55,7 @@ export default function GlobalBanner() {
                   </Link>
                 </span>
                 <span className="hidden md:inline">
-                  Meet Oasis: The first AI browser designed to meld with the way your mind works naturally. Built for ergonomic work, focus, and spatial ease. Join our <a href="/community" className="underline hover:!text-[#7A9200] transition-colors text-[#4A5745]">Discord community</a> to stay updated!
+                  Join our <Link href="/community" className="underline hover:!text-[#7A9200] transition-colors text-[#4A5745]">Discord community</Link> to stay updated!
                 </span>
               </p>
             </div>
