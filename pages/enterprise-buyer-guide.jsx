@@ -467,7 +467,7 @@ export default function EnterpriseBuyerGuidePage() {
               }}
             >
               {/* Darker gradient overlay for Perplexity-style contrast */}
-              <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-white/80 to-white"></div>
+              <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/60 to-white/50"></div>
               
               <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
                 <div className="tracking-wider mb-4 font-semibold text-base lg:text-lg capitalize" style={{ color: '#978455' }}>
@@ -590,19 +590,19 @@ export default function EnterpriseBuyerGuidePage() {
                   <div className="space-y-2 mb-6 flex-grow">
                     <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
                       "Open Salesforce and email client in split view"
-                    </div>
+                </div>
                     <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
                       "Group all prospect research tabs together"
-                    </div>
+                  </div>
                     <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
                       "Show deal pipeline and contract documents side by side"
-                    </div>
+                  </div>
                     <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
                       "Find and open prospect's LinkedIn profile from my groups"
-                    </div>
+                  </div>
                     <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
                       "Organize all outreach sequence tabs in one workspace"
-                    </div>
+                </div>
                   </div>
                 </div>
 
