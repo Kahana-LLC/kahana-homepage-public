@@ -559,16 +559,19 @@ export default function EnterpriseBuyerGuidePage() {
                       "Open new tab"
                     </div>
                     <div className="text-sm text-gray-700 text-left">
-                      "Organize windows"
+                      "Organize all windows into groups"
                     </div>
                     <div className="text-sm text-gray-700 text-left">
-                      "Open tab 1 and tab 2 splitview"
+                      "Show tab 1 and tab 2 in split view"
                     </div>
                     <div className="text-sm text-gray-700 text-left">
-                      "Group all my tabs"
+                      "Group all tabs by workspace"
                     </div>
                     <div className="text-sm text-gray-700 text-left">
-                      "Find XYZ tab from my groups and show it"
+                      "Find and show tab from my groups"
+                    </div>
+                    <div className="text-sm text-gray-700 text-left">
+                      "Close all tabs in current group"
                     </div>
                   </div>
               </div>
@@ -582,18 +585,24 @@ export default function EnterpriseBuyerGuidePage() {
                   </div>
                   <h4 className="text-xl font-bold text-left mb-4" style={{ color: '#313A00' }}>Sales</h4>
                   <div className="text-sm text-gray-700 mb-4 text-left">
-                    Pull up Google Sheet with prospects and Perplexity to write outreach sequences
+                    Streamline your sales workflow with intelligent tab organization and quick access to CRM, email, and research tools.
                   </div>
                   <div className="space-y-2 mb-6 flex-grow">
                     <div className="text-sm text-gray-700 text-left">
-                      Open prospect list and AI assistant side by side
-                </div>
+                      "Open Salesforce and email client in split view"
+                    </div>
                     <div className="text-sm text-gray-700 text-left">
-                      Group all outreach tools in one workspace
-                  </div>
+                      "Group all prospect research tabs together"
+                    </div>
                     <div className="text-sm text-gray-700 text-left">
-                      Quickly find and switch between prospect tabs
-                  </div>
+                      "Show deal pipeline and contract documents side by side"
+                    </div>
+                    <div className="text-sm text-gray-700 text-left">
+                      "Find and open prospect's LinkedIn profile from my groups"
+                    </div>
+                    <div className="text-sm text-gray-700 text-left">
+                      "Organize all outreach sequence tabs in one workspace"
+                    </div>
                   </div>
                 </div>
 
@@ -606,17 +615,23 @@ export default function EnterpriseBuyerGuidePage() {
                   </div>
                   <h4 className="text-xl font-bold text-left mb-4" style={{ color: '#313A00' }}>Marketing</h4>
                   <div className="text-sm text-gray-700 mb-4 text-left">
-                    Pull up Google Ads campaign and Meta Ads campaign side by side
+                    Manage campaigns, analyze performance, and create content with organized workspaces for all your marketing tools.
                   </div>
                   <div className="space-y-2 mb-6 flex-grow">
                     <div className="text-sm text-gray-700 text-left">
-                      Compare campaign performance in split view
+                      "Open Google Ads and Meta Ads in split view for comparison"
                     </div>
                     <div className="text-sm text-gray-700 text-left">
-                      Group all ad platform tabs together
+                      "Group all campaign analytics tabs by platform"
                     </div>
                     <div className="text-sm text-gray-700 text-left">
-                      Organize analytics and creative tools
+                      "Show content calendar and design tool side by side"
+                    </div>
+                    <div className="text-sm text-gray-700 text-left">
+                      "Find A/B test results from my campaign groups"
+                    </div>
+                    <div className="text-sm text-gray-700 text-left">
+                      "Organize all social media management tabs in one workspace"
                     </div>
                   </div>
                 </div>
@@ -630,17 +645,23 @@ export default function EnterpriseBuyerGuidePage() {
                   </div>
                   <h4 className="text-xl font-bold text-left mb-4" style={{ color: '#313A00' }}>Research & Analysis</h4>
                   <div className="text-sm text-gray-700 mb-4 text-left">
-                    Open research sources, data sheets, and analysis tools in organized groups
+                    Organize research sources, data analysis tools, and reference materials for efficient information gathering and analysis.
                   </div>
                   <div className="space-y-2 mb-6 flex-grow">
                     <div className="text-sm text-gray-700 text-left">
-                      Split view for comparing multiple sources
+                      "Show research paper and data visualization in split view"
                     </div>
                     <div className="text-sm text-gray-700 text-left">
-                      Group related research tabs by topic
+                      "Group all market research tabs by industry"
                     </div>
                     <div className="text-sm text-gray-700 text-left">
-                      Quickly find specific research documents
+                      "Open competitor analysis and benchmarking tools side by side"
+                    </div>
+                    <div className="text-sm text-gray-700 text-left">
+                      "Find specific dataset from my research groups"
+                    </div>
+                    <div className="text-sm text-gray-700 text-left">
+                      "Organize all citation sources and notes in one workspace"
                     </div>
                   </div>
                 </div>
@@ -654,17 +675,23 @@ export default function EnterpriseBuyerGuidePage() {
                   </div>
                   <h4 className="text-xl font-bold text-left mb-4" style={{ color: '#313A00' }}>Development</h4>
                   <div className="text-sm text-gray-700 mb-4 text-left">
-                    Organize documentation, code repos, and testing tools in dedicated workspaces
+                    Streamline your development workflow with organized workspaces for code, documentation, testing, and deployment tools.
                   </div>
                   <div className="space-y-2 mb-6 flex-grow">
                     <div className="text-sm text-gray-700 text-left">
-                      Split view for code and documentation
+                      "Open GitHub repo and API documentation in split view"
                     </div>
                     <div className="text-sm text-gray-700 text-left">
-                      Group tabs by project or feature
+                      "Group all frontend development tabs by feature branch"
                     </div>
                     <div className="text-sm text-gray-700 text-left">
-                      Quickly switch between development tools
+                      "Show code editor and test results side by side"
+                    </div>
+                    <div className="text-sm text-gray-700 text-left">
+                      "Find deployment logs from my project groups"
+                    </div>
+                    <div className="text-sm text-gray-700 text-left">
+                      "Organize all debugging tools and error tracking in one workspace"
                     </div>
                   </div>
                 </div>
