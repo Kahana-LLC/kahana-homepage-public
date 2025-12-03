@@ -51,6 +51,13 @@ export default function FeaturesShowcase() {
           <p className="mt-6 text-lg leading-8 text-[#333333]">
             Oasis gives you the tools to simplify your workflow, stay focused, and work with calm precision.
           </p>
+          <div className="mt-8">
+            <Link href="/products/enterprise-browser">
+              <button className="btn-primary inline-flex items-center justify-center px-8 py-3 text-base no-underline hover:no-underline focus:no-underline">
+                Learn more
+              </button>
+            </Link>
+          </div>
         </div>
 
         <div className="mx-auto mt-16 max-w-6xl">
@@ -113,15 +120,6 @@ export default function FeaturesShowcase() {
                 </svg>
               </button>
             </div>
-          </div>
-          
-          {/* Enterprise Browser CTA */}
-          <div className="mt-12 text-center">
-            <Link href="/products/enterprise-browser">
-              <button className="btn-primary inline-flex items-center justify-center px-8 py-3 text-base no-underline hover:no-underline focus:no-underline">
-                Learn more
-              </button>
-            </Link>
           </div>
         </div>
       </div>
