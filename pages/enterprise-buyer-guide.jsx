@@ -904,164 +904,69 @@ export default function EnterpriseBuyerGuidePage() {
             >
               <p className="mb-8">
                 Enterprise browsers provide stronger security, more control, and better visibility than consumer browsers, 
-                while also improving user productivity and reducing IT complexity. Below is a concise list of key benefits 
-                with representative source links you can explore.
+                while also improving user productivity and reducing IT complexity.
               </p>
               
-              <div className="space-y-8 max-w-5xl mx-auto">
-                {/* Core security benefits */}
-                <div className="flex flex-col gap-4">
-                  <h5 className="text-2xl font-semibold leading-tight text-[#1F2D00] mb-2">Core security benefits</h5>
-                  <div className="space-y-4">
-                    <div className="relative bg-white/90 border border-white/80 rounded-xl px-5 py-4 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur-lg">
-                      <p className="text-base text-[#4E5534] leading-relaxed text-left mb-2">
-                        Enhanced data protection and DLP (controls on copy/paste, download, printing, screenshots, watermarking).
-                      </p>
-                      <div className="text-sm text-[#4A6200] text-left">
-                        <Link href="https://www.wei.com/blog/why-the-enterprise-browser-is-key-to-a-strong-cybersecurity-strategy/" target="_blank" rel="noopener noreferrer" className="hover:underline">
-                          Source: WEI Blog
-                        </Link>
-                      </div>
-                    </div>
-                    <div className="relative bg-white/90 border border-white/80 rounded-xl px-5 py-4 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur-lg">
-                      <p className="text-base text-[#4E5534] leading-relaxed text-left mb-2">
-                        Built‑in threat detection and prevention for phishing, malware, risky sites, and malicious downloads.
-                      </p>
-                      <div className="text-sm text-[#4A6200] text-left">
-                        <Link href="https://www.cybersecuritytribe.com/articles/enhancing-cyber-security-the-role-of-enterprise-browsers" target="_blank" rel="noopener noreferrer" className="hover:underline">
-                          Source: Cybersecurity Tribe
-                        </Link>
-                      </div>
-                    </div>
-                    <div className="relative bg-white/90 border border-white/80 rounded-xl px-5 py-4 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur-lg">
-                      <p className="text-base text-[#4E5534] leading-relaxed text-left mb-2">
-                        Zero trust access to SaaS and internal web apps directly from the browser, often replacing or reducing VPN and VDI.
-                      </p>
-                      <div className="text-sm text-[#4A6200] text-left">
-                        <Link href="https://checkpoint.com/cyber-hub/threat-prevention/enterprise-browsers-explained-benefits-features-and-use-cases/" target="_blank" rel="noopener noreferrer" className="hover:underline">
-                          Source: Check Point
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                <div className="relative bg-white/90 border border-white/80 rounded-xl px-5 py-4 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur-lg">
+                  <p className="text-base text-[#4E5534] leading-relaxed text-left">
+                    Enhanced data protection and DLP (controls on copy/paste, download, printing, screenshots, watermarking).
+                  </p>
                 </div>
-
-                {/* Control, visibility, and compliance */}
-                <div className="flex flex-col gap-4">
-                  <h5 className="text-2xl font-semibold leading-tight text-[#1F2D00] mb-2">Control, visibility, and compliance</h5>
-                  <div className="space-y-4">
-                    <div className="relative bg-white/90 border border-white/80 rounded-xl px-5 py-4 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur-lg">
-                      <p className="text-base text-[#4E5534] leading-relaxed text-left mb-2">
-                        Centralized policy management for browsers (security settings, extensions, configurations) across all users and devices.
-                      </p>
-                      <div className="text-sm text-[#4A6200] text-left">
-                        <Link href="https://ermes.company/blog/gartners-new-category-browser-security/" target="_blank" rel="noopener noreferrer" className="hover:underline">
-                          Source: Ermes Company
-                        </Link>
-                      </div>
-                    </div>
-                    <div className="relative bg-white/90 border border-white/80 rounded-xl px-5 py-4 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur-lg">
-                      <p className="text-base text-[#4E5534] leading-relaxed text-left mb-2">
-                        Fine‑grained governance over web access and user actions, aiding regulatory compliance and auditability.
-                      </p>
-                      <div className="text-sm text-[#4A6200] text-left">
-                        <Link href="https://www.cyberark.com/what-is/enterprise-browser/" target="_blank" rel="noopener noreferrer" className="hover:underline">
-                          Source: CyberArk
-                        </Link>
-                      </div>
-                    </div>
-                    <div className="relative bg-white/90 border border-white/80 rounded-xl px-5 py-4 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur-lg">
-                      <p className="text-base text-[#4E5534] leading-relaxed text-left mb-2">
-                        Deep visibility and logging of browser activity for incident response and exposure management.
-                      </p>
-                      <div className="text-sm text-[#4A6200] text-left">
-                        <Link href="https://www.paloaltonetworks.com/cyberpedia/what-is-an-enterprise-browser" target="_blank" rel="noopener noreferrer" className="hover:underline">
-                          Source: Palo Alto Networks
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
+                <div className="relative bg-white/90 border border-white/80 rounded-xl px-5 py-4 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur-lg">
+                  <p className="text-base text-[#4E5534] leading-relaxed text-left">
+                    Built‑in threat detection and prevention for phishing, malware, risky sites, and malicious downloads.
+                  </p>
                 </div>
-
-                {/* Productivity and user experience */}
-                <div className="flex flex-col gap-4">
-                  <h5 className="text-2xl font-semibold leading-tight text-[#1F2D00] mb-2">Productivity and user experience</h5>
-                  <div className="space-y-4">
-                    <div className="relative bg-white/90 border border-white/80 rounded-xl px-5 py-4 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur-lg">
-                      <p className="text-base text-[#4E5534] leading-relaxed text-left mb-2">
-                        Improved user experience with familiar browser workflows but stronger built‑in security, avoiding latency from isolation or heavy VDI.
-                      </p>
-                      <div className="text-sm text-[#4A6200] text-left">
-                        <Link href="https://www.igel.com/enterprise-browser/" target="_blank" rel="noopener noreferrer" className="hover:underline">
-                          Source: IGEL
-                        </Link>
-                      </div>
-                    </div>
-                    <div className="relative bg-white/90 border border-white/80 rounded-xl px-5 py-4 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur-lg">
-                      <p className="text-base text-[#4E5534] leading-relaxed text-left mb-2">
-                        Higher productivity through optimized access to SaaS and internal apps, plus integrated collaboration or workflow tools.
-                      </p>
-                      <div className="text-sm text-[#4A6200] text-left">
-                        <Link href="https://venn.com/learn/browser-security/enterprise-browsers/" target="_blank" rel="noopener noreferrer" className="hover:underline">
-                          Source: Venn
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
+                <div className="relative bg-white/90 border border-white/80 rounded-xl px-5 py-4 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur-lg">
+                  <p className="text-base text-[#4E5534] leading-relaxed text-left">
+                    Zero trust access to SaaS and internal web apps directly from the browser, often replacing or reducing VPN and VDI.
+                  </p>
                 </div>
-
-                {/* IT efficiency and cost savings */}
-                <div className="flex flex-col gap-4">
-                  <h5 className="text-2xl font-semibold leading-tight text-[#1F2D00] mb-2">IT efficiency and cost savings</h5>
-                  <div className="space-y-4">
-                    <div className="relative bg-white/90 border border-white/80 rounded-xl px-5 py-4 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur-lg">
-                      <p className="text-base text-[#4E5534] leading-relaxed text-left mb-2">
-                        Simplified IT operations by consolidating multiple security agents and web security products into the browser layer.
-                      </p>
-                      <div className="text-sm text-[#4A6200] text-left">
-                        <Link href="https://www.datagravity.dev/p/enterprise-browsers-the-new-enterprise" target="_blank" rel="noopener noreferrer" className="hover:underline">
-                          Source: Data Gravity
-                        </Link>
-                      </div>
-                    </div>
-                    <div className="relative bg-white/90 border border-white/80 rounded-xl px-5 py-4 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur-lg">
-                      <p className="text-base text-[#4E5534] leading-relaxed text-left mb-2">
-                        Lower infrastructure and licensing costs by reducing reliance on legacy VPN, VDI, and separate web gateways.
-                      </p>
-                      <div className="text-sm text-[#4A6200] text-left">
-                        <Link href="https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/enterprise-browser/" target="_blank" rel="noopener noreferrer" className="hover:underline">
-                          Source: CrowdStrike
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
+                <div className="relative bg-white/90 border border-white/80 rounded-xl px-5 py-4 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur-lg">
+                  <p className="text-base text-[#4E5534] leading-relaxed text-left">
+                    Centralized policy management for browsers (security settings, extensions, configurations) across all users and devices.
+                  </p>
                 </div>
-
-                {/* Remote and hybrid work support */}
-                <div className="flex flex-col gap-4">
-                  <h5 className="text-2xl font-semibold leading-tight text-[#1F2D00] mb-2">Remote and hybrid work support</h5>
-                  <div className="space-y-4">
-                    <div className="relative bg-white/90 border border-white/80 rounded-xl px-5 py-4 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur-lg">
-                      <p className="text-base text-[#4E5534] leading-relaxed text-left mb-2">
-                        Secure access for contractors and BYOD/unmanaged devices without installing heavy endpoint agents.
-                      </p>
-                      <div className="text-sm text-[#4A6200] text-left">
-                        <Link href="https://seraphicsecurity.com/learn/enterprise-browser/enterprise-browser-key-capabilities-and-top-8-solutions-in-2025/" target="_blank" rel="noopener noreferrer" className="hover:underline">
-                          Source: Seraphic Security
-                        </Link>
-                      </div>
-                    </div>
-                    <div className="relative bg-white/90 border border-white/80 rounded-xl px-5 py-4 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur-lg">
-                      <p className="text-base text-[#4E5534] leading-relaxed text-left mb-2">
-                        Consistent protection and policies for users working from anywhere, across managed and unmanaged endpoints.
-                      </p>
-                      <div className="text-sm text-[#4A6200] text-left">
-                        <Link href="https://www.igel.com/blog/securing-the-enterprise-from-the-browser-up/" target="_blank" rel="noopener noreferrer" className="hover:underline">
-                          Source: IGEL Blog
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
+                <div className="relative bg-white/90 border border-white/80 rounded-xl px-5 py-4 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur-lg">
+                  <p className="text-base text-[#4E5534] leading-relaxed text-left">
+                    Fine‑grained governance over web access and user actions, aiding regulatory compliance and auditability.
+                  </p>
+                </div>
+                <div className="relative bg-white/90 border border-white/80 rounded-xl px-5 py-4 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur-lg">
+                  <p className="text-base text-[#4E5534] leading-relaxed text-left">
+                    Deep visibility and logging of browser activity for incident response and exposure management.
+                  </p>
+                </div>
+                <div className="relative bg-white/90 border border-white/80 rounded-xl px-5 py-4 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur-lg">
+                  <p className="text-base text-[#4E5534] leading-relaxed text-left">
+                    Improved user experience with familiar browser workflows but stronger built‑in security, avoiding latency from isolation or heavy VDI.
+                  </p>
+                </div>
+                <div className="relative bg-white/90 border border-white/80 rounded-xl px-5 py-4 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur-lg">
+                  <p className="text-base text-[#4E5534] leading-relaxed text-left">
+                    Higher productivity through optimized access to SaaS and internal apps, plus integrated collaboration or workflow tools.
+                  </p>
+                </div>
+                <div className="relative bg-white/90 border border-white/80 rounded-xl px-5 py-4 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur-lg">
+                  <p className="text-base text-[#4E5534] leading-relaxed text-left">
+                    Simplified IT operations by consolidating multiple security agents and web security products into the browser layer.
+                  </p>
+                </div>
+                <div className="relative bg-white/90 border border-white/80 rounded-xl px-5 py-4 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur-lg">
+                  <p className="text-base text-[#4E5534] leading-relaxed text-left">
+                    Lower infrastructure and licensing costs by reducing reliance on legacy VPN, VDI, and separate web gateways.
+                  </p>
+                </div>
+                <div className="relative bg-white/90 border border-white/80 rounded-xl px-5 py-4 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur-lg">
+                  <p className="text-base text-[#4E5534] leading-relaxed text-left">
+                    Secure access for contractors and BYOD/unmanaged devices without installing heavy endpoint agents.
+                  </p>
+                </div>
+                <div className="relative bg-white/90 border border-white/80 rounded-xl px-5 py-4 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur-lg">
+                  <p className="text-base text-[#4E5534] leading-relaxed text-left">
+                    Consistent protection and policies for users working from anywhere, across managed and unmanaged endpoints.
+                  </p>
                 </div>
               </div>
               
