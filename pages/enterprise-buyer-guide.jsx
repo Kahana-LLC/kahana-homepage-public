@@ -909,63 +909,39 @@ export default function EnterpriseBuyerGuidePage() {
               
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
                 <div className="relative bg-white/90 border border-white/80 rounded-xl px-5 py-4 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur-lg">
+                  <div className="text-xs font-semibold text-[#4A6200] mb-2 uppercase tracking-wide">Security</div>
                   <p className="text-base text-[#4E5534] leading-relaxed text-left">
                     Enhanced data protection and DLP (controls on copy/paste, download, printing, screenshots, watermarking).
                   </p>
                 </div>
                 <div className="relative bg-white/90 border border-white/80 rounded-xl px-5 py-4 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur-lg">
+                  <div className="text-xs font-semibold text-[#4A6200] mb-2 uppercase tracking-wide">Security</div>
                   <p className="text-base text-[#4E5534] leading-relaxed text-left">
                     Built‑in threat detection and prevention for phishing, malware, risky sites, and malicious downloads.
                   </p>
                 </div>
                 <div className="relative bg-white/90 border border-white/80 rounded-xl px-5 py-4 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur-lg">
+                  <div className="text-xs font-semibold text-[#4A6200] mb-2 uppercase tracking-wide">Security</div>
                   <p className="text-base text-[#4E5534] leading-relaxed text-left">
                     Zero trust access to SaaS and internal web apps directly from the browser, often replacing or reducing VPN and VDI.
                   </p>
                 </div>
                 <div className="relative bg-white/90 border border-white/80 rounded-xl px-5 py-4 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur-lg">
-                  <p className="text-base text-[#4E5534] leading-relaxed text-left">
-                    Centralized policy management for browsers (security settings, extensions, configurations) across all users and devices.
-                  </p>
-                </div>
-                <div className="relative bg-white/90 border border-white/80 rounded-xl px-5 py-4 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur-lg">
-                  <p className="text-base text-[#4E5534] leading-relaxed text-left">
-                    Fine‑grained governance over web access and user actions, aiding regulatory compliance and auditability.
-                  </p>
-                </div>
-                <div className="relative bg-white/90 border border-white/80 rounded-xl px-5 py-4 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur-lg">
-                  <p className="text-base text-[#4E5534] leading-relaxed text-left">
-                    Deep visibility and logging of browser activity for incident response and exposure management.
-                  </p>
-                </div>
-                <div className="relative bg-white/90 border border-white/80 rounded-xl px-5 py-4 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur-lg">
+                  <div className="text-xs font-semibold text-[#4A6200] mb-2 uppercase tracking-wide">Productivity</div>
                   <p className="text-base text-[#4E5534] leading-relaxed text-left">
                     Improved user experience with familiar browser workflows but stronger built‑in security, avoiding latency from isolation or heavy VDI.
                   </p>
                 </div>
                 <div className="relative bg-white/90 border border-white/80 rounded-xl px-5 py-4 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur-lg">
-                  <p className="text-base text-[#4E5534] leading-relaxed text-left">
-                    Higher productivity through optimized access to SaaS and internal apps, plus integrated collaboration or workflow tools.
-                  </p>
-                </div>
-                <div className="relative bg-white/90 border border-white/80 rounded-xl px-5 py-4 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur-lg">
+                  <div className="text-xs font-semibold text-[#4A6200] mb-2 uppercase tracking-wide">Productivity</div>
                   <p className="text-base text-[#4E5534] leading-relaxed text-left">
                     Simplified IT operations by consolidating multiple security agents and web security products into the browser layer.
                   </p>
                 </div>
                 <div className="relative bg-white/90 border border-white/80 rounded-xl px-5 py-4 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur-lg">
+                  <div className="text-xs font-semibold text-[#4A6200] mb-2 uppercase tracking-wide">Productivity</div>
                   <p className="text-base text-[#4E5534] leading-relaxed text-left">
                     Lower infrastructure and licensing costs by reducing reliance on legacy VPN, VDI, and separate web gateways.
-                  </p>
-                </div>
-                <div className="relative bg-white/90 border border-white/80 rounded-xl px-5 py-4 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur-lg">
-                  <p className="text-base text-[#4E5534] leading-relaxed text-left">
-                    Secure access for contractors and BYOD/unmanaged devices without installing heavy endpoint agents.
-                  </p>
-                </div>
-                <div className="relative bg-white/90 border border-white/80 rounded-xl px-5 py-4 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur-lg">
-                  <p className="text-base text-[#4E5534] leading-relaxed text-left">
-                    Consistent protection and policies for users working from anywhere, across managed and unmanaged endpoints.
                   </p>
                 </div>
               </div>
