@@ -180,9 +180,14 @@ export default function Home({ blogPosts }) {
         <link
           rel="preload"
           as="image"
-          href="/images/Welcome to Oasis.svg"
+          href="/images/Welcome to Oasis.webp"
           fetchPriority="high"
         />
+        {/* Preconnect to external image domains */}
+        <link rel="preconnect" href="https://images.unsplash.com" />
+        <link rel="preconnect" href="https://images.pexels.com" />
+        <link rel="dns-prefetch" href="https://images.unsplash.com" />
+        <link rel="dns-prefetch" href="https://images.pexels.com" />
       </Head>
 
       {/* Load Crisp chat asynchronously and defer until after interactive */}
