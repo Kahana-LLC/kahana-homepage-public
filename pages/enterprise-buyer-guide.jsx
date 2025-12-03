@@ -572,9 +572,9 @@ export default function EnterpriseBuyerGuidePage() {
                     </div>
                   </div>
                   <h4 className="text-xl font-bold text-left mb-4" style={{ color: '#313A00' }}>Sales</h4>
-                  <p className="text-sm text-gray-700 mb-4 text-left">
+                  <div className="text-sm text-gray-700 mb-4 text-left">
                     Pull up Google Sheet with prospects and Perplexity to write outreach sequences
-                  </p>
+                  </div>
                   <div className="space-y-2 mb-6 flex-grow">
                     <div className="text-sm text-gray-700 text-left">
                       Open prospect list and AI assistant side by side
@@ -596,9 +596,9 @@ export default function EnterpriseBuyerGuidePage() {
                     </div>
                   </div>
                   <h4 className="text-xl font-bold text-left mb-4" style={{ color: '#313A00' }}>Marketing</h4>
-                  <p className="text-sm text-gray-700 mb-4 text-left">
+                  <div className="text-sm text-gray-700 mb-4 text-left">
                     Pull up Google Ads campaign and Meta Ads campaign side by side
-                  </p>
+                  </div>
                   <div className="space-y-2 mb-6 flex-grow">
                     <div className="text-sm text-gray-700 text-left">
                       Compare campaign performance in split view
@@ -620,9 +620,9 @@ export default function EnterpriseBuyerGuidePage() {
                     </div>
                   </div>
                   <h4 className="text-xl font-bold text-left mb-4" style={{ color: '#313A00' }}>Research & Analysis</h4>
-                  <p className="text-sm text-gray-700 mb-4 text-left">
+                  <div className="text-sm text-gray-700 mb-4 text-left">
                     Open research sources, data sheets, and analysis tools in organized groups
-                  </p>
+                  </div>
                   <div className="space-y-2 mb-6 flex-grow">
                     <div className="text-sm text-gray-700 text-left">
                       Split view for comparing multiple sources
@@ -644,9 +644,9 @@ export default function EnterpriseBuyerGuidePage() {
                     </div>
                   </div>
                   <h4 className="text-xl font-bold text-left mb-4" style={{ color: '#313A00' }}>Development</h4>
-                  <p className="text-sm text-gray-700 mb-4 text-left">
+                  <div className="text-sm text-gray-700 mb-4 text-left">
                     Organize documentation, code repos, and testing tools in dedicated workspaces
-                  </p>
+                  </div>
                   <div className="space-y-2 mb-6 flex-grow">
                     <div className="text-sm text-gray-700 text-left">
                       Split view for code and documentation
@@ -668,9 +668,9 @@ export default function EnterpriseBuyerGuidePage() {
                     </div>
                   </div>
                   <h4 className="text-xl font-bold text-left mb-4" style={{ color: '#313A00' }}>Your Workflow</h4>
-                  <p className="text-sm text-gray-700 mb-6 flex-grow text-left">
+                  <div className="text-sm text-gray-700 mb-6 flex-grow text-left">
                     Adapt these core commands to match your unique workflow. Configure Oasis to work exactly how you need it—whether you're in sales, marketing, research, development, or any other role.
-                  </p>
+                  </div>
                 </div>
               </div>
             </Section>
