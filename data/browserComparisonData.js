@@ -2,7 +2,7 @@ export const browserData = {
   oasis: {
     name: "Oasis Enterprise",
     type: "Enterprise",
-    whoUsesIt: "Enterprise IT teams, privacy-centric businesses",
+    whoUsesIt: "All business functions",
     privacy: "Zero-trust, no user tracking, no data collection",
     security: "Enterprise-grade, compliance ready",
     aiFeatures: "Built into the core",
