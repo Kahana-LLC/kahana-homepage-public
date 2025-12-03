@@ -8,7 +8,7 @@ export const browserData = {
     aiFeatures: "Built into the core",
     platforms: "Windows, macOS",
     uniqueStrength: "Elegant and ergonomic user experience",
-    summary: "Best for enterprises needing Zero Trust + policy-based access",
+    summary: "Perfect for enterprises of all kinds",
     logo: null,
   },
     perplexitycomet: {
