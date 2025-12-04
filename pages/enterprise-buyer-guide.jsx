@@ -521,13 +521,11 @@ export default function EnterpriseBuyerGuidePage() {
                 Oasis represents the convergence of these two revolutionary approaches. It is both an 
                 enterprise browser and an AI browser, combining the security and control that modern 
                 organizations demand with the intelligence and automation that users expect from next-generation 
-                software. Available in both Firefox and Chromium versions, Oasis offers different suites 
-                of benefits tailored to your organization's specific needs and preferences. This dual nature 
-                makes Oasis uniquely positioned to address the complex challenges of today's digital workplace.
+                software. This dual nature makes Oasis uniquely positioned to address the complex challenges of today's digital workplace.
               </p>
               <p className="text-lg md:text-xl leading-relaxed text-left">
                 In this guide, we'll break down what makes Oasis so special. We'll explore how it 
-                redefines enterprise security, how its AI capabilities transform productivity, and why 
+                provides enterprise security, how its AI capabilities transform productivity, and why 
                 it represents the future of how we interact with the web. Whether you're evaluating 
                 enterprise browser solutions or looking to understand the next evolution of web technology, 
                 this guide will provide the insights you need to make informed decisions.
@@ -1103,7 +1101,7 @@ export default function EnterpriseBuyerGuidePage() {
                           <div className="lg:w-1/2 p-8">
                             <h3 className="text-2xl font-bold mb-4" style={{ color: '#313A00' }}>Data Protection & DLP</h3>
                             <p className="text-lg text-[#4A5745] leading-relaxed text-left">
-                              An enterprise browser builds dynamic data protections into the browser itself, A
+                              An enterprise browser builds dynamic data protections into the browser itself,
                     enabling you to build policies that prevent data leakage without disrupting organizational 
                     workflows. Its data loss prevention (DLP) controls protect sensitive data from being improperly downloaded or 
                     uploaded before it leaves or enters the browser.
@@ -1154,17 +1152,6 @@ export default function EnterpriseBuyerGuidePage() {
                     account), with built-in ad blocking to remove distractions and speed up browsing, and 
                     integrated tools to speed up common workflows.
                   </p>
-                            <div className="mt-auto">
-                              <div className="inline-flex items-center gap-3 px-6 py-4 bg-gradient-to-r from-[#4A6200] to-[#5A7200] rounded-xl shadow-md">
-                                <div>
-                                  <div className="text-white font-bold text-lg leading-tight">80% Faster Launch</div>
-                                  <div className="text-white/90 text-xs mt-1">Point-of-sale system launch by a national retailer</div>
-                    </div>
-                    </div>
-                              <p className="text-[#4A5745] text-sm mt-3 ml-2">
-                                Saving 40 seconds on each launch
-                    </p>
-                  </div>
                           </div>
                           <div className="lg:w-1/2 relative min-h-[200px] lg:min-h-0 overflow-hidden">
                             <img 
@@ -1586,8 +1573,7 @@ export default function EnterpriseBuyerGuidePage() {
               <div className="space-y-4 text-left">
                 <Accordion title="Will my existing web applications work with Oasis?">
                   <p>
-                    Since Oasis is built on Firefox or Chrome, all websites should work. Built on the same Chromium or Firefox foundation as popular browsers including Chrome, Edge, 
-                    and Brave, Oasis ensures complete compatibility with any web application that functions properly in 
+                    Oasis ensures complete compatibility with any web application that functions properly in 
                     standard browsers, providing identical rendering and functionality.
                   </p>
                 </Accordion>
