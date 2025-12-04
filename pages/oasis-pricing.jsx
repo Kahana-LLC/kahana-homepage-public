@@ -8,11 +8,11 @@ import FadeInSection from '../components/FadeInSection';
 const pricingTiers = [
   {
     name: 'Free plan',
-    tagline: 'Great for initial impressions',
+    tagline: 'Perfect for getting started',
     price: '$0',
     priceLabel: 'per month',
     features: [
-      'Great for initial impressions',
+      'Perfect for getting started',
       '2,000 credits included'
     ],
     creditNote: '',
@@ -21,36 +21,36 @@ const pricingTiers = [
     buttonStyle: 'primary'
   },
   {
-    name: 'Pro plan',
-    tagline: 'Great for light usage',
+    name: 'Zen plan',
+    tagline: 'Ideal for regular use',
     price: '$20',
     priceLabel: 'per month',
     features: [
-      'Great for light usage',
+      'Ideal for regular use',
       '8,000 credits included',
       '$10 per additional 1,000 credits',
       'Priority support'
     ],
     creditNote: 'Credits can be topped up at any time',
-    cta: 'Get instant access',
+    cta: 'Join waitlist',
     ctaLink: '/oasis-waitlist',
     buttonStyle: 'secondary',
     highlight: true
   },
   {
-    name: 'Ultra plan',
-    tagline: 'Great for daily usage',
+    name: 'Nirvana plan',
+    tagline: 'Built for power users',
     price: '$250',
     priceLabel: 'per month',
     features: [
-      'Great for daily usage',
+      'Built for power users',
       '50,000 credits included',
       '$10 per additional 1,000 credits',
       'Dedicated support'
     ],
     creditNote: 'Credits can be topped up at any time',
-    cta: 'Get instant access',
-    ctaLink: '/schedule-demo',
+    cta: 'Join waitlist',
+    ctaLink: '/oasis-waitlist',
     buttonStyle: 'primary'
   }
 ];
@@ -66,8 +66,8 @@ const teamPlan = {
     'Custom usage limits',
     'Dedicated onboarding'
   ],
-  cta: 'Get started',
-  ctaLink: '/contact'
+  cta: 'Join waitlist',
+  ctaLink: '/oasis-waitlist'
 };
 
 const faqs = [
@@ -192,9 +192,20 @@ export default function OasisPricing() {
           >
             Pricing
           </h1>
-          <p className="text-xl md:text-2xl lg:text-3xl max-w-3xl mx-auto leading-relaxed font-medium mb-10" style={{ color: '#313A00' }}>
+          <p className="text-xl md:text-2xl lg:text-3xl max-w-3xl mx-auto leading-relaxed font-medium mb-6" style={{ color: '#313A00' }}>
             Select the Oasis plan that aligns with your workflow and scale
           </p>
+          <p className="text-lg md:text-xl mb-8 text-[#978455] font-semibold">
+            Coming Soon
+          </p>
+          <div className="mb-10">
+            <Link
+              href="/oasis-waitlist"
+              className="btn-primary inline-flex items-center justify-center px-8 py-3 text-base font-semibold rounded-full no-underline hover:no-underline focus:no-underline"
+            >
+              Join waitlist
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -224,18 +235,7 @@ export default function OasisPricing() {
                     </div>
                   </div>
 
-                  <Link
-                    href={tier.ctaLink}
-                    className={`block w-full text-center py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg font-semibold text-xs sm:text-sm mb-5 sm:mb-6 transition-all duration-200 no-underline hover:no-underline focus:no-underline ${
-                      tier.buttonStyle === 'primary' 
-                        ? 'btn-primary' 
-                        : 'btn-secondary'
-                    }`}
-                  >
-                    {tier.cta}
-                  </Link>
-
-                  <ul className="space-y-2 sm:space-y-3 mb-3 sm:mb-4">
+                  <ul className="space-y-2 sm:space-y-3 mb-3 sm:mb-4 mt-5 sm:mt-6">
                     {tier.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-start">
                         <svg
@@ -267,51 +267,6 @@ export default function OasisPricing() {
                   )}
                 </div>
               ))}
-            </div>
-          </div>
-        </section>
-      </FadeInSection>
-
-      {/* Team Plan Section */}
-      <FadeInSection>
-        <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-white">
-          <div className="max-w-7xl mx-auto">
-            <div className="max-w-md mx-auto">
-              <div className="bg-white border-2 border-gray-200 rounded-2xl p-5 sm:p-6 lg:p-8 transition-all duration-300 hover:shadow-lg">
-                <div className="text-center mb-5 sm:mb-6">
-                  <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-gray-800">
-                    {teamPlan.name}
-                  </h3>
-                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-5 sm:mb-6 text-gray-900">
-                    {teamPlan.title}
-                  </h2>
-                </div>
-
-                <Link
-                  href={teamPlan.ctaLink}
-                  className="block w-full text-center py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg font-semibold text-xs sm:text-sm mb-5 sm:mb-6 transition-all duration-200 btn-secondary no-underline hover:no-underline focus:no-underline"
-                >
-                  {teamPlan.cta}
-                </Link>
-
-                <ul className="space-y-2 sm:space-y-3">
-                  {teamPlan.features.map((feature, index) => (
-                    <li key={index} className="flex items-start">
-                      <svg
-                        className="w-3 h-3 mr-2 mt-0.5 sm:mt-1 flex-shrink-0"
-                        style={{ color: '#495800' }}
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path d="M10 2L12 8L10 14L8 8L10 2Z" />
-                      </svg>
-                      <span className="text-xs sm:text-sm text-gray-800 leading-relaxed">
-                        {feature}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
             </div>
           </div>
         </section>
@@ -414,10 +369,10 @@ export default function OasisPricing() {
           <div className="absolute inset-0 bg-white/60"></div>
           <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4 sm:mb-6">
-              Ready to Transform Your Enterprise Browsing Experience?
+              Need More Than These Plans?
             </h2>
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 lg:mb-10 max-w-3xl mx-auto leading-relaxed font-bold" style={{ color: '#313A00' }}>
-              See Oasis in action and discover how it can revolutionize your organization's productivity and security.
+              For enterprises with larger teams, custom requirements, or advanced security needs, we offer tailored solutions designed to scale with your organization.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
               <Link href="/schedule-demo" className="btn-primary inline-flex items-center justify-center px-6 sm:px-8 lg:px-10 py-3 sm:py-4 text-sm sm:text-base lg:text-lg font-bold no-underline hover:no-underline focus:no-underline w-full sm:w-auto">
