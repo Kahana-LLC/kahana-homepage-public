@@ -59,25 +59,6 @@ const BrowserComparisonTable = () => {
       return map;
     }, []);
 
-  // Filter presets
-  const filterPresets = {
-    'enterprise': {
-      name: 'Enterprise Only',
-      filters: { type: ['Enterprise'] }
-    },
-    'consumer': {
-      name: 'Consumer Browsers',
-      filters: { type: ['Consumer'] }
-    },
-    'ai-powered': {
-      name: 'AI-Powered',
-      filters: { aiFeatures: ['Built into the core', 'Google AI (search, autofill, smart suggestions)', 'Microsoft Copilot, Bing AI', 'Aria AI assistant'] }
-    },
-    'privacy-focused': {
-      name: 'Privacy-Focused',
-      filters: { whoUsesIt: ['Privacy-conscious users, open-source advocates', 'Privacy-first, ad-block fans'] }
-    }
-  };
 
   // Close filter dropdown when clicking outside
   useEffect(() => {
@@ -140,15 +121,6 @@ const BrowserComparisonTable = () => {
     });
     setSearchTerm('');
   };
-
-  const applyPreset = (presetKey) => {
-    const preset = filterPresets[presetKey];
-        // Clear existing filters and apply the preset's filters
-        setFilters({
-            name: [], type: [], whoUsesIt: [], platforms: [], aiFeatures: [],
-      ...preset.filters
-        });
-    };
 
     const toggleSelectedBrowser = (idOrName) => {
         const key = browserData[idOrName] ? idOrName : (NAME_TO_KEY[idOrName] || idOrName);
@@ -373,19 +345,6 @@ const BrowserComparisonTable = () => {
               )}
             </div>
           </div>
-        </div>
-
-        {/* Filter Presets */}
-                 <div className="flex flex-wrap gap-2 px-6 pb-4">
-          {Object.entries(filterPresets).map(([key, preset]) => (
-            <button
-              key={key}
-              onClick={() => applyPreset(key)}
-                             className="px-4 py-2 text-xs font-semibold rounded-full transition-all hover:scale-105 btn-secondary"
-            >
-              {preset.name}
-            </button>
-          ))}
         </div>
       </div>
 
