@@ -2,13 +2,13 @@ export const browserData = {
   oasis: {
     name: "Oasis Enterprise",
     type: "Enterprise",
-    whoUsesIt: "Enterprise IT teams, privacy-centric businesses",
-    privacy: "Zero-trust, no user tracking, no data collection",
-    security: "Enterprise-grade, compliance ready",
-    aiFeatures: "Anthropic/Deepgram AI integrations",
+    whoUsesIt: "All business functions",
+    privacy: "Configurable privacy controls tailored to organizational needs",
+    security: "Enterprise-grade",
+    aiFeatures: "Built into the core",
     platforms: "Windows, macOS",
-    uniqueStrength: "Designed for corporate privacy, AI productivity tools",
-    summary: "Best for enterprises needing Zero Trust + policy-based access",
+    uniqueStrength: "Elegant and ergonomic user experience",
+    summary: "Perfect for enterprises of all kinds",
     logo: null,
   },
     perplexitycomet: {
@@ -374,7 +374,7 @@ export const filterOptions = {
   ],
   type: ["Consumer", "Enterprise"],
   whoUsesIt: [
-    "Enterprise IT teams, privacy-centric businesses",
+    "All business functions",
     "General consumers",
     "Apple device users",
     "Windows, Microsoft ecosystem",

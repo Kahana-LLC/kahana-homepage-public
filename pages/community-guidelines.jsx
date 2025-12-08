@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import NavBar from '../components/NavbarDup';
 
 const guidelines = [
   {
@@ -62,6 +63,8 @@ export default function CommunityGuidelines() {
         <title>Community Guidelines | Kahana</title>
         <meta name="description" content="Learn about our community standards and best practices for the Kahana community" />
       </Head>
+
+      <NavBar />
 
       <main className="min-h-screen bg-white pt-24 pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

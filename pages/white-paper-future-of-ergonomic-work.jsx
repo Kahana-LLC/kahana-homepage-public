@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import { motion, useInView } from 'framer-motion';
+import NavbarDup from '../components/NavbarDup';
 import SharedCTA from '../components/SharedCTA';
 import WhitePaperSocialShare from '../components/WhitePaperSocialShare';
 
@@ -66,6 +67,8 @@ export default function WhitePaperPDF() {
         <meta name="twitter:title" content="White Paper PDF | Kahana Browser" />
         <meta name="twitter:description" content="Download our comprehensive white paper on the future of ergonomic work and how modern browsers are reshaping productivity in the workplace." />
       </Head>
+
+      <NavbarDup />
       
       {/* Scroll Progress Bar */}
       <div className="fixed top-16 left-0 w-full h-2 bg-gray-200 z-40">

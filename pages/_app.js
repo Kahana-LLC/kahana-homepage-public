@@ -5,6 +5,7 @@ import SEO from "../components/SEO";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { trackError } from "../utils/analytics";
+import Script from "next/script";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -49,19 +50,18 @@ function MyApp({ Component, pageProps }) {
   }, [router.events]);
 
   return (
-    <div className="flex flex-col min-h-screen">
-      <SEO
-        url={`https://kahana.co${router.asPath}`}
-        type={router.pathname === "/" ? "website" : "article"}
+    <>
+      {/* Load analytics scripts after page is interactive */}
+      <Script
+        id="gtag-js"
+        strategy="afterInteractive"
+        src="https://www.googletagmanager.com/gtag/js?id=G-KQHFL9605P"
       />
       <div style={{ zIndex: "100" }} className="sticky top-0">
         <NavbarDup />
       </div>
-      <main className="flex-grow">
-        <Component {...pageProps} />
-      </main>
-      <Footer />
-    </div>
+      <Component {...pageProps} />
+    </>
   );
 }
 

@@ -10,13 +10,14 @@ export default function GlobalBanner() {
   if (router.pathname === '/oasis-waitlist' || router.pathname === '/white-paper-future-of-ergonomic-work' || !isVisible) return null;
 
   return (
-    <div className="GlobalBanner relative shadow-md" style={{ background: 'linear-gradient(90deg, #d6e3f4 0%, #e5efd8 100%)' }}>
+    <div className="GlobalBanner fixed top-16 left-0 right-0 shadow-md w-full z-40" style={{ background: 'linear-gradient(90deg, #d6e3f4 0%, #e5efd8 100%)' }}>
       <style jsx>{`
         .banner-container {
           max-width: 1280px;
           margin: 0 auto;
           padding-left: calc(var(--container-padding-mobile) + 1.45rem);
           padding-right: var(--container-padding-mobile);
+          width: 100%;
         }
         @media (min-width: 640px) {
           .banner-container {
@@ -49,13 +50,13 @@ export default function GlobalBanner() {
             <div className="ml-3">
               <p className="text-sm font-medium text-[#4A5745]">
                 <span className="md:hidden">
-                  AI browser that melds with your mind naturally.{' '}
+                  Meet Oasis: the most elegant browser.{' '}
                   <Link href="/oasis-waitlist" className="underline hover:!text-[#7A9200] transition-colors text-[#4A5745]">
                     Get access.
                   </Link>
                 </span>
                 <span className="hidden md:inline">
-                  Meet Oasis: The first AI browser designed to meld with the way your mind works naturally. Built for ergonomic work, focus, and spatial ease. Join our <a href="/community" className="underline hover:!text-[#7A9200] transition-colors text-[#4A5745]">Discord community</a> to stay updated!
+                  Join our <Link href="/community" className="underline hover:!text-[#7A9200] transition-colors text-[#4A5745]">Discord community</Link> to get updates, share feedback, and connect with the team!
                 </span>
               </p>
             </div>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import whiteKahanaLogo from '../assets/kahana_logo_transparent.svg';
+import { getCloudinaryImageUrl } from '../utils/cloudinary-mapper';
 
 function NavBar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -224,16 +225,6 @@ function NavBar() {
             letter-spacing: -0.01em;
           }
 
-          .nav-link-text {
-            color: #617500 !important;
-            font-weight: 500 !important;
-          }
-
-          a.nav-link:hover .nav-link-text,
-          .nav-link:hover .nav-link-text {
-            color: #4A5F00 !important;
-          }
-
 
           .nav-link-icon {
             display: inline-flex;
@@ -284,19 +275,6 @@ function NavBar() {
             display: grid;
             gap: 40px;
             pointer-events: none;
-          }
-
-          /* Reset font-weight for all elements inside dropdown content */
-          .dropdown-content * {
-            font-weight: normal !important;
-          }
-
-          /* Specifically override global bold link styling for dropdown links */
-          .dropdown-content a,
-          .dropdown-section a,
-          .dropdown-content a.dropdown-link,
-          .dropdown-section a.dropdown-link {
-            font-weight: 400 !important;
           }
 
           .dropdown:hover .dropdown-content,
@@ -355,7 +333,8 @@ function NavBar() {
 
           .dropdown-section h3 {
             font-size: 0.6875rem;
-            font-weight: bold !important;
+            font-weight: 700;
+            
             color: #026400;
             margin-bottom: 16px;
             text-transform: uppercase;
@@ -366,28 +345,15 @@ function NavBar() {
             display: block;
             color: #333333 !important;
             text-decoration: none !important;
-            font-weight: 400 !important;
+            font-weight: 300 !important;
             font-size: 0.9375rem;
             line-height: 1.5;
             letter-spacing: 0.01em;
-            padding: 4px 8px;
+            padding: 8px 12px;
             margin: 0 -12px;
             border-radius: 8px;
             transition: background-color 0.15s ease;
-            font-family: "Geist", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-          }
-
-          /* Force non-bold on all dropdown links with maximum specificity */
-          .dropdown-content a.dropdown-link,
-          .dropdown-section a.dropdown-link,
-          .dropdown-content .dropdown-link,
-          .dropdown-section .dropdown-link,
-          a.dropdown-link,
-          .dropdown-content a,
-          .dropdown-section a,
-          .dropdown-content a.dropdown-link *,
-          .dropdown-section a.dropdown-link * {
-            font-weight: 400 !important;
+            font-family: "Roboto", sans-serif;
           }
 
           .dropdown-link:hover {
@@ -452,9 +418,15 @@ function NavBar() {
           }
 
           .nav-buttons {
-            display: flex;
+            display: none;
             align-items: center;
             gap: 0.75rem;
+          }
+
+          @media (min-width: 1024px) {
+            .nav-buttons {
+              display: flex;
+            }
           }
 
           @media (max-width: 768px) {
@@ -771,15 +743,15 @@ function NavBar() {
                   </div>
                 </div>
                 <div className="dropdown-section">
-                  <Link href="/buyers-guide" className="block p-4 bg-gradient-to-r from-[#66C2BE]/5 to-[#8CB7D0]/5 rounded-lg border border-[#66C2BE]/20 hover:from-[#66C2BE]/10 hover:to-[#8CB7D0]/10 hover:border-[#66C2BE]/30 transition-all duration-200" onClick={() => setOpenDropdown(null)}>
+                  <Link href="/enterprise-buyer-guide" className="block p-4 bg-gradient-to-r from-[#66C2BE]/5 to-[#8CB7D0]/5 rounded-lg border border-[#66C2BE]/20 hover:from-[#66C2BE]/10 hover:to-[#8CB7D0]/10 hover:border-[#66C2BE]/30 transition-all duration-200 no-underline" onClick={() => setOpenDropdown(null)}>
                     <div className="w-full h-32 rounded-lg overflow-hidden mb-3">
                       <img 
-                        src="/assets/pexels-kamo11235-667838.jpg" 
+                        src={getCloudinaryImageUrl("/assets/pexels-kamo11235-667838.jpg")} 
                         alt="Enterprise Browser Buyer Guide"
                         className="w-full h-full object-cover"
                       />
                     </div>
-                    <div className="font-semibold text-gray-900 text-sm leading-tight">Enterprise Browser Buyers Guide</div>
+                    <div className="font-semibold text-gray-900 text-sm leading-tight no-underline">Enterprise Browser Buyer Guide</div>
                   </Link>
                 </div>
               </div>
@@ -827,10 +799,10 @@ function NavBar() {
 
           {/* Buttons and Hamburger Menu */}
           <div className="flex items-center gap-4">
-            <div className="nav-buttons flex gap-2">
-              <Link href="/schedule-demo" className="btn-primary inline-flex items-center justify-center px-4 py-2.5 text-xs md:px-6 md:py-3 md:text-sm no-underline hover:no-underline focus:no-underline">
-                  <span className="md:hidden">Get Early Access</span>
-                  <span className="hidden md:inline">Get Early Access</span>
+            <div className="nav-buttons hidden lg:flex gap-2">
+              <Link href="/oasis-waitlist" className="btn-primary inline-flex items-center justify-center px-4 py-2.5 text-xs md:px-6 md:py-3 md:text-sm no-underline hover:no-underline focus:no-underline">
+                  <span className="md:hidden">Get Access</span>
+                  <span className="hidden md:inline">Get Access</span>
               </Link>
               <Link href="/contact" className="btn-secondary inline-flex items-center justify-center px-4 py-2.5 text-xs md:px-6 md:py-3 md:text-sm no-underline hover:no-underline focus:no-underline">
                   <span className="md:hidden">Contact</span>
@@ -884,8 +856,8 @@ function NavBar() {
           <div className="menu-links">
             {/* Contact Buttons at Top */}
             <div className="flex flex-col gap-2 mb-4">
-              <Link href="/schedule-demo" className="btn-primary w-full text-center py-2.5 px-6 no-underline hover:no-underline focus:no-underline">
-                  Get Early Access
+              <Link href="/oasis-waitlist" className="btn-primary w-full text-center py-2.5 px-6 no-underline hover:no-underline focus:no-underline">
+                  Get Access
               </Link>
               <Link href="/contact" className="btn-secondary w-full text-center py-2.5 px-6 no-underline hover:no-underline focus:no-underline">
                   Contact
@@ -903,16 +875,16 @@ function NavBar() {
             <Link href="/white-paper-future-of-ergonomic-work" className="mobile-link">White Paper</Link>
             <Link href="/subscribe-to-insights" className="mobile-link">Newsletter</Link>
             <Link href="/community" className="mobile-link">Join Discord</Link>
-            <Link href="/buyers-guide" className="mobile-link flex items-center space-x-3 p-3 bg-gradient-to-r from-[#66C2BE]/5 to-[#8CB7D0]/5 rounded-lg border border-[#66C2BE]/20 hover:from-[#66C2BE]/10 hover:to-[#8CB7D0]/10 hover:border-[#66C2BE]/30 transition-all duration-200">
+            <Link href="/enterprise-buyer-guide" className="mobile-link flex items-center space-x-3 p-3 bg-gradient-to-r from-[#66C2BE]/5 to-[#8CB7D0]/5 rounded-lg border border-[#66C2BE]/20 hover:from-[#66C2BE]/10 hover:to-[#8CB7D0]/10 hover:border-[#66C2BE]/30 transition-all duration-200 no-underline">
               <div className="flex-shrink-0 w-12 h-12 rounded-lg overflow-hidden">
                 <img 
-                  src="/assets/pexels-kamo11235-667838.jpg" 
+                  src={getCloudinaryImageUrl("/assets/pexels-kamo11235-667838.jpg")} 
                   alt="Enterprise Browser Buyer Guide"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="flex-1">
-                <div className="font-medium text-gray-900">Enterprise Browser Buyer Guide</div>
+                <div className="font-medium text-gray-900 no-underline">Enterprise Browser Buyer Guide</div>
                 <div className="text-xs text-[#4A5745] mt-1">Comprehensive guide for enterprise decision makers</div>
               </div>
             </Link>

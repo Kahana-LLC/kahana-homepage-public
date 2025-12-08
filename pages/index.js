@@ -14,6 +14,7 @@ import { blogIndex } from "../data/blog-index";
 import Link from "next/link";
 import { getAuthorDetails } from "../utils/authorUtils";
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 
 // Default placeholder for failed image loads
 const DEFAULT_PLACEHOLDER =
@@ -58,6 +59,7 @@ export async function getStaticProps() {
 
 export default function Home({ blogPosts }) {
   const [scrollY, setScrollY] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
   // Homepage-specific schema
   const homepageSchema = {
     "@context": "https://schema.org",
@@ -71,7 +73,7 @@ export default function Home({ blogPosts }) {
       name: "Kahana",
       logo: {
         "@type": "ImageObject",
-        url: "https://kahana.co/assets/logo.png",
+        url: "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219991/kahana-homepage/public/kahana_logo_transparent.svg",
       },
       description:
         "Kahana develops enterprise-grade productivity tools focused on organization, security, and collaboration",
@@ -119,19 +121,19 @@ export default function Home({ blogPosts }) {
   const whyOasisCards = [
     {
       title: "Created to bring calm and focus back to browsing",
-      image: "/figma-imports/er.svg",
+      image: "/figma-imports/er.webp",
       imageAlt: "Serene illustration representing focused Oasis browsing",
       loading: "eager",
     },
     {
       title: "Makes browsing beautiful and natural",
-      image: "/figma-imports/Frame 1321315005.jpg",
+      image: "/figma-imports/Frame 1321315005.webp",
       imageAlt: "Screenshot showcasing clutter-free Oasis browsing",
       loading: "eager",
     },
     {
       title: "Artificial Intelligence (AI) browser that adapts to you",
-      image: "/figma-imports/Summarize with AI 3.jpg",
+      image: "/figma-imports/Summarize with AI 3.webp",
       imageAlt: "Illustration of Oasis adapting to the user",
       loading: "eager",
     },
@@ -142,9 +144,20 @@ export default function Home({ blogPosts }) {
       setScrollY(window.scrollY);
     };
 
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    // Check on mount and resize
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
     window.addEventListener("scroll", handleScroll);
     handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
+    
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", checkMobile);
+    };
   }, []);
 
   return (
@@ -163,6 +176,12 @@ export default function Home({ blogPosts }) {
           name="description"
           content="Kahana's Oasis Enterprise Browser helps teams stay organized, focused on ideas, and increase productivity while maintaining enterprise-grade security."
         />
+        {/* Note: Image is loaded via Cloudinary, preload handled by Next.js Image component with priority prop */}
+        {/* Preconnect to external image domains */}
+        <link rel="preconnect" href="https://images.unsplash.com" />
+        <link rel="preconnect" href="https://images.pexels.com" />
+        <link rel="dns-prefetch" href="https://images.unsplash.com" />
+        <link rel="dns-prefetch" href="https://images.pexels.com" />
       </Head>
 
       {/* Load Crisp chat asynchronously and defer until after interactive */}
@@ -191,20 +210,21 @@ export default function Home({ blogPosts }) {
         strategy="afterInteractive"
       />
 
-      <div className="relative bg-white shadow-[0_0_40px_rgba(0,0,0,0.08)] overflow-hidden">
-        <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
+      <div className="relative bg-white shadow-[0_0_40px_rgba(0,0,0,0.08)] overflow-x-hidden w-full overflow-y-visible">
+        {/* Background gradients - fixed on desktop, absolute on mobile for better performance */}
+        <div className={`${isMobile ? 'absolute' : 'fixed'} inset-0 overflow-hidden pointer-events-none z-0`}>
           <div
             className="absolute top-20 -left-20 w-[600px] h-[600px] rounded-full filter blur-[220px] opacity-40 animate-pulse"
             style={{
               background: "radial-gradient(circle, #FCDD9F 0%, transparent 70%)",
-              transform: `translateY(${scrollY * 0.1}px)`,
+              transform: isMobile ? 'none' : `translateY(${scrollY * 0.1}px)`,
             }}
           />
           <div
             className="absolute top-60 right-0 w-[700px] h-[700px] rounded-full filter blur-[260px] opacity-30 animate-pulse"
             style={{
               background: "radial-gradient(circle, #617500 0%, transparent 70%)",
-              transform: `translateY(${scrollY * 0.15}px)`,
+              transform: isMobile ? 'none' : `translateY(${scrollY * 0.15}px)`,
               animationDelay: "1s",
             }}
           />
@@ -212,7 +232,7 @@ export default function Home({ blogPosts }) {
             className="absolute -bottom-20 left-1/3 w-[600px] h-[600px] rounded-full filter blur-[220px] opacity-35 animate-pulse"
             style={{
               background: "radial-gradient(circle, #8BA500 0%, transparent 70%)",
-              transform: `translateY(${scrollY * 0.05}px)`,
+              transform: isMobile ? 'none' : `translateY(${scrollY * 0.05}px)`,
               animationDelay: "2s",
             }}
           />
@@ -220,8 +240,9 @@ export default function Home({ blogPosts }) {
         {/* Elegant accent line at top */}
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#30400D] to-transparent opacity-20 z-10"></div>
         
-        <main className="scroll-smooth bg-white relative z-10">
-          <FadeInSection>
+        <div className="scroll-smooth bg-white relative z-10">
+          {/* Skip fade-in for LCP element (h1 in ProductSection) */}
+          <FadeInSection skipFade={true}>
             <section
               id="products"
               className="relative overflow-hidden py-24 sm:py-32"
@@ -250,10 +271,10 @@ export default function Home({ blogPosts }) {
               </div>
               <div className="relative z-10 w-full max-w-5xl mx-auto px-6 sm:px-8 text-center">
                 <h2 className="text-xl font-semibold leading-8 text-[#978455] mb-4">
-                  See Oasis in Action
+                  Personalize Your Experience
                 </h2>
                 <h1 className="text-3xl sm:text-4xl font-semibold leading-tight text-[#313A00] mb-10">
-                  Watch Oasis bring calm to complex workflows
+                  Oasis adapts to your unique way of working
                 </h1>
                 <div className="relative mx-auto max-w-4xl">
                   <ProductTourCard />
@@ -285,15 +306,15 @@ export default function Home({ blogPosts }) {
                       key={card.title}
                       className="relative bg-white/90 border border-white/80 rounded-[26px] px-5 py-6 shadow-[0_25px_70px_rgba(32,47,0,0.14)] flex flex-col gap-5 w-full max-w-[340px] mx-auto backdrop-blur-lg"
                     >
-                      <div className="w-full overflow-hidden rounded-[18px] border border-[#F6F3E7] bg-white/70 shadow-[0_25px_70px_rgba(27,33,0,0.18)]">
-                        <img
+                      <div className="relative w-full aspect-[4/3] overflow-hidden rounded-[18px] border border-[#F6F3E7] bg-white/70 shadow-[0_25px_70px_rgba(27,33,0,0.18)]">
+                        <Image
                           src={card.image}
                           alt={card.imageAlt || `${card.title} illustration`}
-                          loading={card.loading || "eager"}
-                          decoding="async"
-                          width={420}
-                          height={320}
-                          className="w-full object-cover"
+                          fill
+                          sizes="(max-width: 640px) 340px, (max-width: 1024px) 340px, 340px"
+                          className="object-cover"
+                          loading="lazy"
+                          quality={85}
                         />
                       </div>
                       <div className="flex flex-col gap-3 text-left">
@@ -349,7 +370,7 @@ export default function Home({ blogPosts }) {
           {/* Elegant section divider */}
           <div className="relative h-px bg-gradient-to-r from-transparent via-[#30400D]/20 to-transparent mx-auto max-w-4xl"></div>
 
-        </main>
+        </div>
       </div>
     </>
   );

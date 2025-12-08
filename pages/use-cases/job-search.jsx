@@ -1,9 +1,11 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import NavBar from '../../components/NavbarDup';
 import VideoSection from '../../components/VideoSection';
 import DiscordCTA from '../../components/DiscordCTA';
 import Script from 'next/script';
+import { getCloudinaryImageUrl } from '../../utils/cloudinary-mapper';
 
 const supportLinks = [
   {
@@ -53,7 +55,7 @@ export default function JobSearchWaitlist() {
             <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: '#7A9200' }}>
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
-          </Link>
+            </Link>
         </div>
       </div>
     </div>
@@ -67,6 +69,7 @@ export default function JobSearchWaitlist() {
         <meta name="description" content="Join the Oasis waitlist for job search revolution - AI-powered job organization, tracking, and matching to find your dream career" />
       </Head>
       <div className="relative bg-white">
+        <NavBar />
         <main className="min-h-screen pt-24 pb-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto">
@@ -86,7 +89,7 @@ export default function JobSearchWaitlist() {
                 <div className="w-full max-w-6xl mx-auto px-4 relative">
                   <div className="w-full mx-auto overflow-hidden rounded-2xl shadow-2xl">
                     <img
-                      src="/images/Welcome to Oasis.svg"
+                      src={getCloudinaryImageUrl("/images/Welcome to Oasis.webp")}
                       alt="Welcome to Oasis"
                       className="w-full h-auto"
                     />
@@ -108,7 +111,7 @@ export default function JobSearchWaitlist() {
                 className="mt-16"
               />
             </div>
-          </div>
+            </div>
         </main>
       </div>
     </>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import NavBar from '../components/NavbarDup';
 import SEO from '../components/SEO';
 import Script from 'next/script';
 
@@ -123,31 +124,33 @@ export default function EarlyBirdDiscount() {
       </Head>
 
       <div className="relative bg-white">
-        {/* Sticky Countdown Timer */}
-        <div 
+      <NavBar />
+
+      {/* Sticky Countdown Timer */}
+      <div 
           className="sticky z-40 w-full bg-white"
-          style={{ 
+        style={{ 
             top: `${stickyTop}px`
-          }}
-        >
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-            <div className="bg-white rounded-lg p-4 shadow-lg" style={{ border: '2px solid #7A9200' }}>
-              <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-                {/* Launch Date with Calendar Icon */}
-                <div className="flex items-center justify-center gap-2">
-                  <svg className="w-5 h-5 md:w-6 md:h-6 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: '#7A9200' }}>
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                  <div>
-                    <p className="text-lg md:text-2xl font-bold" style={{ color: '#7A9200' }}>
+        }}
+      >
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+          <div className="bg-white rounded-lg p-4 shadow-lg" style={{ border: '2px solid #7A9200' }}>
+            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+              {/* Launch Date with Calendar Icon */}
+              <div className="flex items-center justify-center gap-2">
+                <svg className="w-5 h-5 md:w-6 md:h-6 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: '#7A9200' }}>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                <div>
+                  <p className="text-lg md:text-2xl font-bold" style={{ color: '#7A9200' }}>
                       publicly available starting May 2026
-                    </p>
-                  </div>
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
+      </div>
 
         <main className="min-h-screen pt-24 pb-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

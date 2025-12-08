@@ -6,19 +6,19 @@ export default function WhyOasisSection() {
     {
       title: "Ergonomic Design",
       description: "Created to bring calm and focus back to browsing",
-      image: "/figma-imports/Group 6.jpg",
+      image: "/figma-imports/er.webp",
       alt: "Ergonomic Design"
     },
     {
       title: "AI-Powered Focus",
       description: "Makes browsing beautiful and natural",
-      image: "/figma-imports/Frame 1321315005.jpg",
+      image: "/figma-imports/Frame 1321315005.webp",
       alt: "AI-Powered Focus"
     },
     {
       title: "Spatial Ease",
       description: "Browser that adapts to you",
-      image: "/figma-imports/Summarize with AI 3.jpg",
+      image: "/figma-imports/Summarize with AI 3.webp",
       alt: "Spatial Ease"
     }
   ];
@@ -116,7 +116,10 @@ export default function WhyOasisSection() {
                     src={feature.image}
                     alt={feature.alt}
                     fill
+                    sizes="(max-width: 768px) 100vw, 500px"
                     className="object-cover"
+                    loading="lazy"
+                    quality={85}
                   />
                 </div>
               </div>

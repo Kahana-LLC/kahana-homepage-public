@@ -4,6 +4,7 @@ import Link from 'next/link';
 import KeyPointsCard from '../components/KeyPointsCard';
 import ErrorBoundary from '../components/ErrorBoundary';
 import BrowserComparisonTable from '../components/BrowserComparisonTable';
+import { getCloudinaryImageUrl } from '../utils/cloudinary-mapper';
 
 // Brand tokens (matching homepage colors)
 const COLORS = {
@@ -479,7 +480,7 @@ export default function EnterpriseBuyerGuidePage() {
                 {/* Oasis Browser Preview Card */}
                 <div className="mt-16 rounded-2xl overflow-hidden shadow-2xl border border-gray-200 max-w-5xl mx-auto transform transition-all hover:shadow-3xl duration-500">
                    <img 
-                     src="/images/21a37c6a0cca7d51dd3260b4f0996bdebb758608.png" 
+                     src={getCloudinaryImageUrl("/images/Welcome to Oasis.webp")} 
                      alt="Oasis Browser Interface - Welcome to Oasis" 
                      className="w-full h-auto object-contain"
                      loading="eager"
@@ -604,7 +605,7 @@ export default function EnterpriseBuyerGuidePage() {
                     {/* Image Section */}
                     <div className="relative h-64 overflow-hidden bg-gradient-to-br from-[#F8FAF2] to-[#F2F6E8]">
                       <img 
-                        src="/images/welcom.jpeg" 
+                        src={getCloudinaryImageUrl("/images/welcom.jpeg")} 
                         alt="Free Agentic Browser Interface" 
                         className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
                       />
@@ -633,7 +634,7 @@ export default function EnterpriseBuyerGuidePage() {
                     {/* Image Section */}
                     <div className="relative h-64 overflow-hidden bg-gradient-to-br from-[#F8FAF2] to-[#F2F6E8]">
                       <img 
-                        src="/images/enterprise.jpeg" 
+                        src={getCloudinaryImageUrl("/images/enterprise.jpeg")} 
                         alt="Enterprise Browser Interface" 
                         className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
                       />
@@ -685,7 +686,7 @@ export default function EnterpriseBuyerGuidePage() {
                         <div className="relative rounded-xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-500">
                           <div className="aspect-video bg-gray-100 overflow-hidden">
                             <img 
-                              src="/images/customs.png" 
+                              src={getCloudinaryImageUrl("/images/customs.png")} 
                               alt="Designed for How Your Mind Works" 
                               className="w-full h-full object-cover transform scale-100 group-hover:scale-110 transition-transform duration-700"
                             />
@@ -722,7 +723,7 @@ export default function EnterpriseBuyerGuidePage() {
                         <div className="relative rounded-xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-500">
                           <div className="aspect-video bg-gray-100 overflow-hidden">
                             <img 
-                              src="/images/ai-2.png" 
+                              src={getCloudinaryImageUrl("/images/ai-2.webp")} 
                               alt="Deep AI Integration" 
                               className="w-full h-full object-cover transform scale-100 group-hover:scale-110 transition-transform duration-700"
                             />
@@ -761,7 +762,7 @@ export default function EnterpriseBuyerGuidePage() {
                         <div className="relative rounded-xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-500">
                           <div className="aspect-video bg-gray-100 overflow-hidden">
                             <img 
-                              src="/images/trainable.png" 
+                              src={getCloudinaryImageUrl("/images/trainable.png")} 
                               alt="Trainable AI Companion & Security-First Design" 
                               className="w-full h-full object-cover transform scale-100 group-hover:scale-110 transition-transform duration-700"
                             />
@@ -898,7 +899,7 @@ export default function EnterpriseBuyerGuidePage() {
                           </div>
                           <div className="lg:w-1/2 relative min-h-[200px] lg:min-h-0 overflow-hidden">
                             <img 
-                              src="/images/securtiy.png" 
+                              src={getCloudinaryImageUrl("/images/securtiy.webp")} 
                               alt="Zero Trust Security" 
                               className="w-full h-full object-cover scale-100"
                             />
@@ -918,7 +919,7 @@ export default function EnterpriseBuyerGuidePage() {
                           </div>
                           <div className="lg:w-1/2 relative min-h-[200px] lg:min-h-0 overflow-hidden">
                             <img 
-                              src="/images/data-protection .png" 
+                              src={getCloudinaryImageUrl("/images/data-protection-2.webp")} 
                               alt="Safe Browsing & Threat Protection" 
                               className="w-full h-full object-cover scale-100"
                             />
@@ -938,7 +939,7 @@ export default function EnterpriseBuyerGuidePage() {
                           </div>
                           <div className="lg:w-1/2 relative min-h-[200px] lg:min-h-0 overflow-hidden">
                             <img 
-                              src="/images/data-protection-2.png" 
+                              src={getCloudinaryImageUrl("/images/data-protection-2.webp")} 
                               alt="Data Protection & DLP" 
                               className="w-full h-full object-cover scale-100"
                             />
@@ -969,7 +970,7 @@ export default function EnterpriseBuyerGuidePage() {
                           </div>
                           <div className="lg:w-1/2 relative min-h-[200px] lg:min-h-0 overflow-hidden">
                             <img 
-                              src="/images/visibility.png" 
+                              src={getCloudinaryImageUrl("/images/visibility.webp")} 
                               alt="Visibility & Monitoring" 
                               className="w-full h-full object-cover scale-100"
                             />
@@ -1006,7 +1007,7 @@ export default function EnterpriseBuyerGuidePage() {
                           </div>
                           <div className="lg:w-1/2 relative min-h-[200px] lg:min-h-0 overflow-hidden">
                             <img 
-                              src="/images/productivity.png" 
+                              src={getCloudinaryImageUrl("/images/productivity.webp")} 
                               alt="Productivity & Performance" 
                               className="w-full h-full object-cover scale-100"
                             />
@@ -1027,7 +1028,7 @@ export default function EnterpriseBuyerGuidePage() {
                           </div>
                           <div className="lg:w-1/2 relative min-h-[200px] lg:min-h-0 overflow-hidden">
                             <img 
-                              src="/images/applicaiton .png" 
+                              src={getCloudinaryImageUrl("/images/applicaiton .webp")} 
                               alt="Application Provisioning" 
                               className="w-full h-full object-cover scale-100"
                             />
@@ -1048,7 +1049,7 @@ export default function EnterpriseBuyerGuidePage() {
                           </div>
                           <div className="lg:w-1/2 relative min-h-[200px] lg:min-h-0 overflow-hidden">
                             <img 
-                              src="/images/BYOD.png" 
+                              src={getCloudinaryImageUrl("/images/BYOD.png")} 
                               alt="Remote Access & BYOD" 
                               className="w-full h-full object-cover scale-100"
                             />
@@ -1074,7 +1075,7 @@ export default function EnterpriseBuyerGuidePage() {
                           </div>
                           <div className="lg:w-1/2 relative min-h-[300px] lg:min-h-[400px] overflow-hidden">
                             <img 
-                              src="/images/cost.png" 
+                              src={getCloudinaryImageUrl("/images/cost.webp")} 
                               alt="Efficiency and Cost Savings" 
                               className="w-full h-full object-contain scale-110"
                             />
@@ -1095,7 +1096,7 @@ export default function EnterpriseBuyerGuidePage() {
                           </div>
                           <div className="lg:w-1/2 relative min-h-[300px] lg:min-h-[400px] overflow-hidden">
                             <img 
-                              src="/images/analytics.png" 
+                              src={getCloudinaryImageUrl("/images/analytics.webp")} 
                               alt="Digital Experience & Analytics" 
                               className="w-full h-full object-contain scale-110"
                             />
@@ -1124,7 +1125,7 @@ export default function EnterpriseBuyerGuidePage() {
                 {/* Use Case Cards - Perplexity Style Grid */}
                 <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 transition-all hover:shadow-xl hover:-translate-y-1 group">
                   <div className="h-48 bg-gray-100 overflow-hidden">
-                    <img src="/images/sales.png" alt="Sales Prospecting" className="w-full h-full object-cover transition-transform duration-500 scale-110" />
+                    <img src={getCloudinaryImageUrl("/images/sales.png")} alt="Sales Prospecting" className="w-full h-full object-cover transition-transform duration-500 scale-110" />
                   </div>
                   <div className="p-6 text-left">
                     <h3 className="text-xl font-bold mb-3 text-left" style={{ color: '#313A00' }}>Sales Prospecting</h3>
@@ -1141,7 +1142,7 @@ export default function EnterpriseBuyerGuidePage() {
 
                 <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 transition-all hover:shadow-xl hover:-translate-y-1 group">
                   <div className="h-48 bg-gray-100 overflow-hidden">
-                    <img src="/images/market.png" alt="Market Research" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                    <img src={getCloudinaryImageUrl("/images/market.png")} alt="Market Research" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                   </div>
                   <div className="p-6 text-left">
                     <h3 className="text-xl font-bold mb-3 text-left" style={{ color: '#313A00' }}>Market Research</h3>
@@ -1158,7 +1159,7 @@ export default function EnterpriseBuyerGuidePage() {
 
                 <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 transition-all hover:shadow-xl hover:-translate-y-1 group">
                   <div className="h-48 bg-gray-100 overflow-hidden">
-                    <img src="/images/due-diligence.jpeg" alt="Due Diligence" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                    <img src={getCloudinaryImageUrl("/images/due-diligence.jpeg")} alt="Due Diligence" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                   </div>
                   <div className="p-6 text-left">
                     <h3 className="text-xl font-bold mb-3 text-left" style={{ color: '#313A00' }}>Due Diligence & M&A</h3>
@@ -1175,7 +1176,7 @@ export default function EnterpriseBuyerGuidePage() {
 
                 <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 transition-all hover:shadow-xl hover:-translate-y-1 group">
                   <div className="h-48 bg-gray-100 overflow-hidden">
-                    <img src="/images/academic.png" alt="Scientific Research" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                    <img src={getCloudinaryImageUrl("/images/academic.png")} alt="Scientific Research" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                   </div>
                   <div className="p-6 text-left">
                     <h3 className="text-xl font-bold mb-3 text-left" style={{ color: '#313A00' }}>Scientific Research</h3>
@@ -1192,7 +1193,7 @@ export default function EnterpriseBuyerGuidePage() {
 
                 <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 transition-all hover:shadow-xl hover:-translate-y-1 group">
                   <div className="h-48 bg-gray-100 overflow-hidden">
-                    <img src="/images/legal.jpeg" alt="Legal Compliance" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                    <img src={getCloudinaryImageUrl("/images/legal.jpeg")} alt="Legal Compliance" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                   </div>
                   <div className="p-6 text-left">
                     <h3 className="text-xl font-bold mb-3 text-left" style={{ color: '#313A00' }}>Legal & Compliance</h3>
@@ -1209,7 +1210,7 @@ export default function EnterpriseBuyerGuidePage() {
 
                 <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 transition-all hover:shadow-xl hover:-translate-y-1 group">
                   <div className="h-48 bg-gray-100 overflow-hidden">
-                    <img src="/images/user.png" alt="Customer Research" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                    <img src={getCloudinaryImageUrl("/images/user.png")} alt="Customer Research" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                   </div>
                   <div className="p-6 text-left">
                     <h3 className="text-xl font-bold mb-3 text-left" style={{ color: '#313A00' }}>Customer Research</h3>
@@ -1521,18 +1522,18 @@ export default function EnterpriseBuyerGuidePage() {
               kicker="Comprehensive answers to technical and business questions"
               centered={true}
               right={
-                <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+                <div className="relative bg-white/90 border border-white/80 rounded-[26px] px-6 py-8 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur-lg">
                   <div className="text-center">
-                      <div className="w-16 h-16 bg-[#F8FAF2] rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg className="w-8 h-8 text-[#788B59]" fill="currentColor" viewBox="0 0 24 24">
+                    <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-5">
+                      <svg className="w-10 h-10 text-[#4A6200]" fill="currentColor" viewBox="0 0 24 24">
                         <rect x="3" y="3" width="7" height="7"/>
                         <rect x="14" y="3" width="7" height="7"/>
                         <rect x="14" y="14" width="7" height="7"/>
                         <rect x="3" y="14" width="7" height="7"/>
                       </svg>
                     </div>
-                    <h3 className="font-semibold text-gray-900 mb-2">Multi-View</h3>
-                    <p className="text-sm text-gray-600">
+                    <h3 className="text-xl font-semibold text-[#1F2D00] mb-3">Multi-View</h3>
+                    <p className="text-base text-[#4E5534]">
                       Work with multiple applications simultaneously
                     </p>
                   </div>
