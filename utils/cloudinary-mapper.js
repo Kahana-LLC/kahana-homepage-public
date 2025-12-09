@@ -64,8 +64,29 @@ export function getCloudinaryImageUrl(localPath, options = {}) {
   // Normalize the path
   const normalizedPath = localPath.replace(/^\.\//, '').replace(/^\/+/, '');
   
-  // Try to find the public ID
-  const publicId = mapping[normalizedPath] || mapping[`/${normalizedPath}`] || mapping[`public/${normalizedPath}`];
+  // Try to find the public ID (exact match first)
+  let publicId = mapping[normalizedPath] || mapping[`/${normalizedPath}`] || mapping[`public/${normalizedPath}`];
+  
+  // If not found, try case-insensitive and extension-flexible matching
+  if (!publicId) {
+    const pathLower = normalizedPath.toLowerCase();
+    const pathWithoutExt = pathLower.replace(/\.[^.]+$/, '');
+    
+    // Find matching entry (case-insensitive, extension-flexible)
+    for (const [mappedPath, mappedPublicId] of Object.entries(mapping)) {
+      const mappedPathLower = mappedPath.toLowerCase();
+      const mappedPathWithoutExt = mappedPathLower.replace(/\.[^.]+$/, '');
+      
+      // Match if base path (without extension) matches
+      if (mappedPathWithoutExt === pathWithoutExt || 
+          mappedPathLower === pathLower ||
+          mappedPathLower === `/${pathLower}` ||
+          mappedPathLower === `public/${pathLower}`) {
+        publicId = mappedPublicId;
+        break;
+      }
+    }
+  }
   
   if (publicId) {
     // Return Cloudinary URL with optimizations

@@ -14,6 +14,7 @@ import { blogIndex } from "../data/blog-index";
 import Link from "next/link";
 import { getAuthorDetails } from "../utils/authorUtils";
 import React, { useEffect, useState } from "react";
+import { getCloudinaryImageUrl } from "../utils/cloudinary-mapper";
 
 // Default placeholder for failed image loads
 const DEFAULT_PLACEHOLDER =
@@ -119,19 +120,19 @@ export default function Home({ blogPosts }) {
   const whyOasisCards = [
     {
       title: "Created to bring calm and focus back to browsing",
-      image: "/figma-imports/er.svg",
+      image: getCloudinaryImageUrl("/figma-imports/er.webp"),
       imageAlt: "Serene illustration representing focused Oasis browsing",
       loading: "eager",
     },
     {
       title: "Makes browsing beautiful and natural",
-      image: "/figma-imports/Frame 1321315005.jpg",
+      image: getCloudinaryImageUrl("/figma-imports/Frame 1321315005.webp"),
       imageAlt: "Screenshot showcasing clutter-free Oasis browsing",
       loading: "eager",
     },
     {
       title: "Artificial Intelligence (AI) browser that adapts to you",
-      image: "/figma-imports/Summarize with AI 3.jpg",
+      image: getCloudinaryImageUrl("/figma-imports/Summarize with AI 3.webp"),
       imageAlt: "Illustration of Oasis adapting to the user",
       loading: "eager",
     },
