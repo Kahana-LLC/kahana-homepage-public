@@ -198,8 +198,9 @@ export default function SubscribeToInsights() {
                       </div>
                     )}
 
+                    {/* Fixed height to prevent CLS - remove dynamicHeight */}
                     <iframe
-                      src="https://tally.so/embed/wvbeyQ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+                      src="https://tally.so/embed/wvbeyQ?alignLeft=1&hideTitle=1&transparentBackground=1"
                       width="100%"
                       height="500"
                       frameBorder="0"
@@ -208,6 +209,7 @@ export default function SubscribeToInsights() {
                       title="Subscribe to Insights Form"
                       style={{ 
                         minWidth: '100%',
+                        minHeight: '500px',
                         opacity: isFormLoaded ? 1 : 0,
                         transition: 'opacity 0.3s ease-in-out'
                       }}

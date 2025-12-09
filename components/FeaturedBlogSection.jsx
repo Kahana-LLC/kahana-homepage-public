@@ -41,9 +41,10 @@ const FeaturedBlogCard = ({ post }) => {
   return (
     <Link href={`/blog/${post.slug}`} className="group no-underline">
       <div className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-shadow overflow-hidden flex flex-col h-full">
-        <div className="relative h-48 w-full">
+        {/* Image - Fixed dimensions to prevent CLS */}
+        <div className="relative h-48 w-full bg-gray-100">
           {isLoadingImage ? (
-            <div className="w-full h-full bg-gray-100 flex items-center justify-center">
+            <div className="w-full h-full flex items-center justify-center">
               <div className="text-[#4A5745]">Loading...</div>
             </div>
           ) : (

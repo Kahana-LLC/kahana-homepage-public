@@ -40,6 +40,29 @@ h6 {
   font-family: 'Bricolage Grotesque', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
 }
 
+/* Prevent layout shift from font loading - ensure fallback fonts match metrics */
+@supports (font-display: swap) {
+  h1, h2, h3, h4, h5, h6 {
+    font-display: swap;
+  }
+}
+
+/* Ensure images and iframes don't cause layout shift */
+img, iframe, video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Prevent CLS from aspect ratio containers */
+.aspect-video {
+  aspect-ratio: 16 / 9;
+}
+
+/* Ensure iframes maintain their dimensions */
+iframe {
+  border: 0;
+}
+
 /* High-contrast headings */
 h1,
 h2,

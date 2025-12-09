@@ -4,6 +4,7 @@ import Script from 'next/script';
 import Link from 'next/link';
 import SEO from '../../components/SEO';
 import FadeInSection from '../../components/FadeInSection';
+import { getCloudinaryImageUrl } from '../../utils/cloudinary-mapper';
 
 const productivityFeatures = [
   {
@@ -141,6 +142,29 @@ export default function FreeAgenticBrowser() {
           name="description"
           content="Kahana's Free Agentic Browser helps you boost productivity. Features include smart organization, AI-powered assistance, and seamless multi-tasking for enhanced personal productivity."
         />
+        {/* Inline critical CSS for LCP h1 to render immediately */}
+        <style dangerouslySetInnerHTML={{
+          __html: `
+            /* Critical CSS for LCP h1 - render immediately without waiting for external CSS */
+            h1.text-4xl.font-semibold.leading-tight.text-\\[\\#313A00\\].sm\\:text-5xl,
+            h1[class*="text-4xl"][class*="font-semibold"][class*="text-[#313A00]"] {
+              font-size: 2.25rem;
+              line-height: 1.25;
+              font-weight: 600;
+              color: #313A00;
+              font-family: 'Bricolage Grotesque', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+              display: block;
+              margin: 0;
+              padding: 0;
+            }
+            @media (min-width: 640px) {
+              h1.text-4xl.font-semibold.leading-tight.text-\\[\\#313A00\\].sm\\:text-5xl,
+              h1[class*="text-4xl"][class*="font-semibold"][class*="text-[#313A00]"] {
+                font-size: 3rem;
+              }
+            }
+          `
+        }} />
       </Head>
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-KQHFL9605P"
@@ -159,8 +183,8 @@ export default function FreeAgenticBrowser() {
       </Script>
 
       <main className="scroll-smooth bg-white relative">
-      {/* Hero Section */}
-        <FadeInSection>
+      {/* Hero Section - Skip fade-in for LCP element */}
+        <FadeInSection skipFade={true}>
           <section className="relative overflow-hidden py-24 sm:py-32">
             <div className="pointer-events-none absolute inset-0">
               <div className="absolute top-[-50%] left-[-55%] h-[660px] w-[1080px] rounded-full bg-[#FCDD9F]/28 blur-[420px]" />
@@ -170,6 +194,7 @@ export default function FreeAgenticBrowser() {
               <h2 className="text-xl font-semibold leading-8 text-[#978455] mb-4">
                 Free Agentic Browser
               </h2>
+              {/* Render h1 immediately for LCP - no fade-in delay */}
               <h1 className="text-4xl font-semibold leading-tight text-[#313A00] sm:text-5xl mb-6">
               Oasis
             </h1>
@@ -295,7 +320,7 @@ export default function FreeAgenticBrowser() {
           <section 
             className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] py-20 md:py-28 mb-0"
             style={{
-              backgroundImage: 'url(/images/desert-background-5.jpg)',
+              backgroundImage: `url(${getCloudinaryImageUrl('/images/desert-background-5.webp')})`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               backgroundRepeat: 'no-repeat'

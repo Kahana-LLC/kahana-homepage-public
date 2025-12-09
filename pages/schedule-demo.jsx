@@ -322,8 +322,9 @@ export default function ScheduleDemo() {
                     </div>
                   )}
 
+                  {/* Fixed height to prevent CLS - remove dynamicHeight */}
                   <iframe
-                    src="https://tally.so/embed/3xzNKv?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&redirectUrl=https://kahana.is/thankyou-demo"
+                    src="https://tally.so/embed/3xzNKv?alignLeft=1&hideTitle=1&transparentBackground=1&redirectUrl=https://kahana.is/thankyou-demo"
                     width="100%"
                     height="500"
                     frameBorder="0"
@@ -332,6 +333,7 @@ export default function ScheduleDemo() {
                     title="Demo Request Form"
                     style={{ 
                       minWidth: '100%',
+                      minHeight: '500px',
                       opacity: isFormLoaded ? 1 : 0,
                       transition: 'opacity 0.3s ease-in-out'
                     }}

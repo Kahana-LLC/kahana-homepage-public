@@ -66,10 +66,10 @@ export default function BlogCard({ post }) {
   return (
     <article className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-200 overflow-hidden flex flex-col h-full">
       <Link href={`/blog/${post.slug}`} className="flex flex-col h-full blog-card-link">
-        {/* Image */}
-        <div className="relative h-52 md:h-56 lg:h-48 w-full">
+        {/* Image - Fixed dimensions to prevent CLS */}
+        <div className="relative h-52 md:h-56 lg:h-48 w-full bg-gray-100">
           {isLoadingImage ? (
-            <div className="w-full h-full bg-gray-100 flex items-center justify-center">
+            <div className="w-full h-full flex items-center justify-center">
               <div className="text-[#4A5745]">Loading...</div>
             </div>
           ) : (
@@ -78,6 +78,7 @@ export default function BlogCard({ post }) {
               alt={post.title}
               fill
               className="object-cover"
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
             />
           )}
         </div>
