@@ -132,6 +132,11 @@ const nextConfig = {
         destination: "/products/free-agentic-browser",
         permanent: true,
       },
+      {
+        source: "/buyers-guide",
+        destination: "/enterprise-buyer-guide",
+        permanent: true,
+      },
     ];
   },
 

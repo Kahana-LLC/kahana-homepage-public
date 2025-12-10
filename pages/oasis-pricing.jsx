@@ -4,6 +4,7 @@ import Script from 'next/script';
 import Link from 'next/link';
 import SEO from '../components/SEO';
 import FadeInSection from '../components/FadeInSection';
+import { getCloudinaryImageUrl } from '../utils/cloudinary-mapper';
 
 const pricingTiers = [
   {
@@ -173,7 +174,7 @@ export default function OasisPricing() {
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: 'url(/images/desert-background-5.jpg)',
+            backgroundImage: `url(${getCloudinaryImageUrl('/images/desert-background-5.webp')})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat'
@@ -272,6 +273,51 @@ export default function OasisPricing() {
         </section>
       </FadeInSection>
 
+      {/* Team Plan Section */}
+      <FadeInSection>
+        <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-white">
+          <div className="max-w-7xl mx-auto">
+            <div className="max-w-md mx-auto">
+              <div className="bg-white border-2 border-gray-200 rounded-2xl p-5 sm:p-6 lg:p-8 transition-all duration-300 hover:shadow-lg">
+                <div className="text-center mb-5 sm:mb-6">
+                  <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-gray-800">
+                    {teamPlan.name}
+                  </h3>
+                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-5 sm:mb-6 text-gray-900">
+                    {teamPlan.title}
+                  </h2>
+                </div>
+
+                <Link
+                  href={teamPlan.ctaLink}
+                  className="block w-full text-center py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg font-semibold text-xs sm:text-sm mb-5 sm:mb-6 transition-all duration-200 btn-secondary no-underline hover:no-underline focus:no-underline"
+                >
+                  {teamPlan.cta}
+                </Link>
+
+                <ul className="space-y-2 sm:space-y-3">
+                  {teamPlan.features.map((feature, index) => (
+                    <li key={index} className="flex items-start">
+                      <svg
+                        className="w-3 h-3 mr-2 mt-0.5 sm:mt-1 flex-shrink-0"
+                        style={{ color: '#495800' }}
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path d="M10 2L12 8L10 14L8 8L10 2Z" />
+                      </svg>
+                      <span className="text-xs sm:text-sm text-gray-800 leading-relaxed">
+                        {feature}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+      </FadeInSection>
+
       {/* How Credits Work Section */}
       <FadeInSection>
         <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-[#F8FAF2]">
@@ -359,7 +405,7 @@ export default function OasisPricing() {
         <section 
           className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] py-12 sm:py-16 md:py-20 lg:py-28 mb-0"
           style={{
-            backgroundImage: 'url(/images/desert-background-5.jpg)',
+            backgroundImage: `url(${getCloudinaryImageUrl('/images/desert-background-5.webp')})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat'

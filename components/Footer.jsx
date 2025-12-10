@@ -138,7 +138,7 @@ export default function Footer() {
                 <li><Link href="/blog" className="text-[#011910] hover:text-[#728552] transition-colors duration-200 no-underline font-bold">Blog</Link></li>
                 <li><Link href="/docs" className="text-[#011910] hover:text-[#728552] transition-colors duration-200 no-underline font-bold">Docs</Link></li>
                 <li><Link href="/white-paper-future-of-ergonomic-work" className="text-[#011910] hover:text-[#728552] transition-colors duration-200 no-underline font-bold">White Paper</Link></li>
-                <li><Link href="/buyers-guide" className="text-[#011910] hover:text-[#728552] transition-colors duration-200 no-underline font-bold">Buyer Guide</Link></li>
+                <li><Link href="/enterprise-buyer-guide" className="text-[#011910] hover:text-[#728552] transition-colors duration-200 no-underline font-bold">Buyer Guide</Link></li>
                 <li><Link href="/subscribe-to-insights" className="text-[#011910] hover:text-[#728552] transition-colors duration-200 no-underline font-bold">Newsletter</Link></li>
                 <li><Link href="/community" className="text-[#011910] hover:text-[#728552] transition-colors duration-200 no-underline font-bold">Join Discord</Link></li>
               </ul>

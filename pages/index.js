@@ -72,7 +72,7 @@ export default function Home({ blogPosts }) {
       name: "Kahana",
       logo: {
         "@type": "ImageObject",
-        url: "https://kahana.co/assets/logo.png",
+        url: getCloudinaryImageUrl("/assets/kahana_logo_transparent.svg"),
       },
       description:
         "Kahana develops enterprise-grade productivity tools focused on organization, security, and collaboration",
@@ -102,7 +102,7 @@ export default function Home({ blogPosts }) {
         "AI-Powered Assistant",
         "Collaboration Tools",
       ],
-      screenshot: "https://kahana.co/assets/oasis-browser-preview.png",
+      screenshot: getCloudinaryImageUrl("/assets/oasis-browser-preview.png"),
     },
     additionalProperty: [
       {
@@ -153,7 +153,7 @@ export default function Home({ blogPosts }) {
       <SEO
         title="Kahana Oasis - Agentic Browser & Productivity Tools"
         description="Stay organized and focused with Kahana's Oasis Enterprise Browser. Features enterprise-grade security, organization tools, and collaboration features for modern teams."
-        image="https://kahana.co/assets/oasis-browser-preview.png"
+        image={getCloudinaryImageUrl("/assets/oasis-browser-preview.png")}
         url="https://kahana.co"
         type="website"
         schema={homepageSchema}

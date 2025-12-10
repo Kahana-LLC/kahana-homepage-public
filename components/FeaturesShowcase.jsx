@@ -1,29 +1,30 @@
 import React, { useRef } from 'react';
 import Link from 'next/link';
+import { getCloudinaryImageUrl } from '../utils/cloudinary-mapper';
 
 const conceptCards = [
   {
     title: "Ease with Tab Grouping",
     link: "/solutions/external-workforce",
-    image: "/figma-imports/Tab%20Groups.svg",
+    image: getCloudinaryImageUrl("/figma-imports/Tab Groups.webp"),
     description: "Organize your chaos into dedicated workspaces, keeping your current task in focus and the rest out of sight."
   },
   {
     title: "Zero Trust Security",
     link: "/solutions/zero-trust-security",
-    image: "/figma-imports/Security 1.png",
+    image: getCloudinaryImageUrl("/figma-imports/Security 1.webp"),
     description: "Stay protected through continuous verification and calm, invisible security."
   },
   {
     title: "Homepage Personalization",
     link: "/solutions/privileged-user-management",
-    image: "/figma-imports/New%20Tab%20Page.svg",
+    image: getCloudinaryImageUrl("/figma-imports/New Tab Page.webp"),
     description: "Start every session in a space designed by you, free from distractions and tuned to your mood."
   },
   {
     title: "Secure Web Browsing",
     link: "/solutions/secure-browsing",
-    image: "/figma-imports/Security 2.png",
+    image: getCloudinaryImageUrl("/figma-imports/Security 2.webp"),
     description: "Browse freely with built-in protection that feels natural, not intrusive."
   }
 ];

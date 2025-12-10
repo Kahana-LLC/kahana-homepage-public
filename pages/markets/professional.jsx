@@ -266,7 +266,7 @@ export default function Professional({ professionalBlogs }) {
               Professional services firms face escalating cyber risks from social engineering, third-party collaboration, and AI-driven threats. Enterprise browsers provide critical protection for client data while enabling secure access to modern tools and services.
             </p>
             <div className="flex justify-center">
-              <Link href="/buyers-guide" className="btn-secondary inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline">
+              <Link href="/enterprise-buyer-guide" className="btn-secondary inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline">
                   Read Buyer's Guide
               </Link>
             </div>

@@ -336,28 +336,28 @@ export default function EnterpriseBuyerGuidePage() {
   const mediaItems = [
     {
       type: 'image',
-      src: '/images/in-action.png',
+      src: getCloudinaryImageUrl('/images/in-action.webp'),
       alt: 'Oasis Interface - Designed Like an Oasis',
       title: 'Designed Like an Oasis',
       description: 'A soothing environment that fosters deep work, flow state, and concentration'
     },
     {
       type: 'image',
-      src: '/images/ai.png',
+      src: getCloudinaryImageUrl('/images/ai.webp'),
       alt: 'Voice-Controlled AI Workflows',
       title: 'Voice-Controlled AI Workflows',
       description: 'Natural language commands for complex browser operations'
     },
     {
       type: 'image',
-      src: '/images/spatial.png',
+      src: getCloudinaryImageUrl('/images/spatial.webp'),
       alt: 'Spatial Organization',
       title: 'Spatial Ease',
       description: 'Intuitive organization that matches your natural cognitive processes'
     },
     {
       type: 'image',
-      src: '/images/WIP.png',
+      src: getCloudinaryImageUrl('/images/WIP.webp'),
       alt: 'Oasis Demo',
       title: 'See Oasis in Action',
       description: 'Experience the seamless integration of AI and enterprise security'
