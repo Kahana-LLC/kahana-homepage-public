@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { getCloudinaryImageUrl } from '../utils/cloudinary-mapper';
 
 const SEO = ({
   title = 'Kahana - Enterprise Browser & Productivity Tools',
@@ -17,7 +18,7 @@ const SEO = ({
     '@type': 'Organization',
     name: 'Kahana',
     url: 'https://kahana.co',
-    logo: 'https://kahana.co/logo.png',
+    logo: getCloudinaryImageUrl("/assets/kahana_logo_transparent.svg"),
     sameAs: [
       'https://www.linkedin.com/company/kahana-co',
       'https://twitter.com/kahanaHQ',

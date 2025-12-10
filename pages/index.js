@@ -15,6 +15,7 @@ import Link from "next/link";
 import { getAuthorDetails } from "../utils/authorUtils";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
+import { getCloudinaryImageUrl } from "../utils/cloudinary-mapper";
 
 // Default placeholder for failed image loads
 const DEFAULT_PLACEHOLDER =
@@ -73,7 +74,7 @@ export default function Home({ blogPosts }) {
       name: "Kahana",
       logo: {
         "@type": "ImageObject",
-        url: "https://kahana.co/assets/logo.png",
+        url: getCloudinaryImageUrl("/assets/kahana_logo_transparent.svg"),
       },
       description:
         "Kahana develops enterprise-grade productivity tools focused on organization, security, and collaboration",
@@ -103,7 +104,7 @@ export default function Home({ blogPosts }) {
         "AI-Powered Assistant",
         "Collaboration Tools",
       ],
-      screenshot: "https://kahana.co/assets/oasis-browser-preview.png",
+      screenshot: getCloudinaryImageUrl("/assets/oasis-browser-preview.png"),
     },
     additionalProperty: [
       {
@@ -121,19 +122,19 @@ export default function Home({ blogPosts }) {
   const whyOasisCards = [
     {
       title: "Created to bring calm and focus back to browsing",
-      image: "/figma-imports/er.webp",
+      image: getCloudinaryImageUrl("/figma-imports/er.webp"),
       imageAlt: "Serene illustration representing focused Oasis browsing",
       loading: "eager",
     },
     {
       title: "Makes browsing beautiful and natural",
-      image: "/figma-imports/Frame 1321315005.webp",
+      image: getCloudinaryImageUrl("/figma-imports/Frame 1321315005.webp"),
       imageAlt: "Screenshot showcasing clutter-free Oasis browsing",
       loading: "eager",
     },
     {
       title: "Artificial Intelligence (AI) browser that adapts to you",
-      image: "/figma-imports/Summarize with AI 3.webp",
+      image: getCloudinaryImageUrl("/figma-imports/Summarize with AI 3.webp"),
       imageAlt: "Illustration of Oasis adapting to the user",
       loading: "eager",
     },

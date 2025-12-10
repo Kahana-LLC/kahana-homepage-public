@@ -1,0 +1,999 @@
+{
+  "generatedAt": "2025-12-09T17:28:55.454Z",
+  "cloudName": "dlhpqrucv",
+  "successful": [
+    {
+      "localPath": "public/assets/headshots/Rajshree_Rao.jpg",
+      "publicId": "kahana-homepage/assets/headshots/Rajshree_Rao",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219268/kahana-homepage/assets/headshots/Rajshree_Rao.jpg",
+      "width": 735,
+      "height": 1244,
+      "format": "jpg",
+      "resourceType": "image",
+      "bytes": 100932
+    },
+    {
+      "localPath": "public/assets/headshots/adam_kershner.jpg",
+      "publicId": "kahana-homepage/assets/headshots/adam_kershner",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219269/kahana-homepage/assets/headshots/adam_kershner.jpg",
+      "width": 1080,
+      "height": 1080,
+      "format": "jpg",
+      "resourceType": "image",
+      "bytes": 93308
+    },
+    {
+      "localPath": "public/assets/headshots/durgesh_tiwari.jpg",
+      "publicId": "kahana-homepage/assets/headshots/durgesh_tiwari",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219270/kahana-homepage/assets/headshots/durgesh_tiwari.webp",
+      "width": 1290,
+      "height": 1590,
+      "format": "webp",
+      "resourceType": "image",
+      "bytes": 189120
+    },
+    {
+      "localPath": "public/assets/headshots/fahiza_syed.jpg",
+      "publicId": "kahana-homepage/assets/headshots/fahiza_syed",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219272/kahana-homepage/assets/headshots/fahiza_syed.png",
+      "width": 715,
+      "height": 787,
+      "format": "png",
+      "resourceType": "image",
+      "bytes": 724967
+    },
+    {
+      "localPath": "public/assets/headshots/hritik_chalse.jpg",
+      "publicId": "kahana-homepage/assets/headshots/hritik_chalse",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219273/kahana-homepage/assets/headshots/hritik_chalse.png",
+      "width": 868,
+      "height": 863,
+      "format": "png",
+      "resourceType": "image",
+      "bytes": 463966
+    },
+    {
+      "localPath": "public/assets/headshots/jescetta_joy.jpg",
+      "publicId": "kahana-homepage/assets/headshots/jescetta_joy",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219274/kahana-homepage/assets/headshots/jescetta_joy.png",
+      "width": 689,
+      "height": 644,
+      "format": "png",
+      "resourceType": "image",
+      "bytes": 428836
+    },
+    {
+      "localPath": "public/assets/headshots/jonathan_gans.jpg",
+      "publicId": "kahana-homepage/assets/headshots/jonathan_gans",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219276/kahana-homepage/assets/headshots/jonathan_gans.png",
+      "width": 781,
+      "height": 637,
+      "format": "png",
+      "resourceType": "image",
+      "bytes": 708682
+    },
+    {
+      "localPath": "public/assets/headshots/jordan_kern.jpg",
+      "publicId": "kahana-homepage/assets/headshots/jordan_kern",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219278/kahana-homepage/assets/headshots/jordan_kern.png",
+      "width": 864,
+      "height": 863,
+      "format": "png",
+      "resourceType": "image",
+      "bytes": 352279
+    },
+    {
+      "localPath": "public/assets/headshots/khyati_bhatia.jpg",
+      "publicId": "kahana-homepage/assets/headshots/khyati_bhatia",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219279/kahana-homepage/assets/headshots/khyati_bhatia.png",
+      "width": 486,
+      "height": 437,
+      "format": "png",
+      "resourceType": "image",
+      "bytes": 325059
+    },
+    {
+      "localPath": "public/assets/headshots/konika_dhull.jpeg",
+      "publicId": "kahana-homepage/assets/headshots/konika_dhull",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219280/kahana-homepage/assets/headshots/konika_dhull.jpg",
+      "width": 2931,
+      "height": 1857,
+      "format": "jpg",
+      "resourceType": "image",
+      "bytes": 444143
+    },
+    {
+      "localPath": "public/assets/headshots/mohammed_muneebuddin.jpg",
+      "publicId": "kahana-homepage/assets/headshots/mohammed_muneebuddin",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219282/kahana-homepage/assets/headshots/mohammed_muneebuddin.jpg",
+      "width": 1710,
+      "height": 1584,
+      "format": "jpg",
+      "resourceType": "image",
+      "bytes": 469474
+    },
+    {
+      "localPath": "public/assets/headshots/nipun_manghi.jpg",
+      "publicId": "kahana-homepage/assets/headshots/nipun_manghi",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219284/kahana-homepage/assets/headshots/nipun_manghi.png",
+      "width": 575,
+      "height": 490,
+      "format": "png",
+      "resourceType": "image",
+      "bytes": 277620
+    },
+    {
+      "localPath": "public/assets/headshots/rajrajeshwari_gaware.jpg",
+      "publicId": "kahana-homepage/assets/headshots/rajrajeshwari_gaware",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219285/kahana-homepage/assets/headshots/rajrajeshwari_gaware.webp",
+      "width": 1892,
+      "height": 2425,
+      "format": "webp",
+      "resourceType": "image",
+      "bytes": 377966
+    },
+    {
+      "localPath": "public/assets/headshots/rishikes_ramachandran.jpg",
+      "publicId": "kahana-homepage/assets/headshots/rishikes_ramachandran",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219286/kahana-homepage/assets/headshots/rishikes_ramachandran.png",
+      "width": 664,
+      "height": 523,
+      "format": "png",
+      "resourceType": "image",
+      "bytes": 449902
+    },
+    {
+      "localPath": "public/assets/headshots/saideep_pajjuri.jpg",
+      "publicId": "kahana-homepage/assets/headshots/saideep_pajjuri",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219288/kahana-homepage/assets/headshots/saideep_pajjuri.png",
+      "width": 458,
+      "height": 410,
+      "format": "png",
+      "resourceType": "image",
+      "bytes": 270766
+    },
+    {
+      "localPath": "public/assets/headshots/shalvi_save.jpg",
+      "publicId": "kahana-homepage/assets/headshots/shalvi_save",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219289/kahana-homepage/assets/headshots/shalvi_save.png",
+      "width": 466,
+      "height": 429,
+      "format": "png",
+      "resourceType": "image",
+      "bytes": 360206
+    },
+    {
+      "localPath": "public/assets/headshots/shivangi_chamoli.jpg",
+      "publicId": "kahana-homepage/assets/headshots/shivangi_chamoli",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219290/kahana-homepage/assets/headshots/shivangi_chamoli.jpg",
+      "width": 339,
+      "height": 359,
+      "format": "jpg",
+      "resourceType": "image",
+      "bytes": 27476
+    },
+    {
+      "localPath": "public/assets/headshots/sonakshi_singh.jpg",
+      "publicId": "kahana-homepage/assets/headshots/sonakshi_singh",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219292/kahana-homepage/assets/headshots/sonakshi_singh.png",
+      "width": 488,
+      "height": 471,
+      "format": "png",
+      "resourceType": "image",
+      "bytes": 353492
+    },
+    {
+      "localPath": "public/assets/headshots/vedant_gupta.jpg",
+      "publicId": "kahana-homepage/assets/headshots/vedant_gupta",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219293/kahana-homepage/assets/headshots/vedant_gupta.webp",
+      "width": 959,
+      "height": 1022,
+      "format": "webp",
+      "resourceType": "image",
+      "bytes": 65160
+    },
+    {
+      "localPath": "public/assets/headshots/venkesh_agarwal.jpg",
+      "publicId": "kahana-homepage/assets/headshots/venkesh_agarwal",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219294/kahana-homepage/assets/headshots/venkesh_agarwal.webp",
+      "width": 800,
+      "height": 800,
+      "format": "webp",
+      "resourceType": "image",
+      "bytes": 33814
+    },
+    {
+      "localPath": "public/assets/headshots/vinit_juneja.jpg",
+      "publicId": "kahana-homepage/assets/headshots/vinit_juneja",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219295/kahana-homepage/assets/headshots/vinit_juneja.png",
+      "width": 278,
+      "height": 282,
+      "format": "png",
+      "resourceType": "image",
+      "bytes": 123576
+    },
+    {
+      "localPath": "public/assets/headshots/vruksha_joshi.jpg",
+      "publicId": "kahana-homepage/assets/headshots/vruksha_joshi",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219299/kahana-homepage/assets/headshots/vruksha_joshi.png",
+      "width": 848,
+      "height": 856,
+      "format": "png",
+      "resourceType": "image",
+      "bytes": 1521608
+    },
+    {
+      "localPath": "public/assets/image1.jpg",
+      "publicId": "kahana-homepage/assets/image1",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219301/kahana-homepage/assets/image1.jpg",
+      "width": 3024,
+      "height": 4032,
+      "format": "jpg",
+      "resourceType": "image",
+      "bytes": 1257582
+    },
+    {
+      "localPath": "public/assets/image10.jpg",
+      "publicId": "kahana-homepage/assets/image10",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219304/kahana-homepage/assets/image10.jpg",
+      "width": 7952,
+      "height": 5304,
+      "format": "jpg",
+      "resourceType": "image",
+      "bytes": 3681869
+    },
+    {
+      "localPath": "public/assets/image11.jpg",
+      "publicId": "kahana-homepage/assets/image11",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219306/kahana-homepage/assets/image11.jpg",
+      "width": 4284,
+      "height": 5712,
+      "format": "jpg",
+      "resourceType": "image",
+      "bytes": 3472962
+    },
+    {
+      "localPath": "public/assets/image12.jpg",
+      "publicId": "kahana-homepage/assets/image12",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219309/kahana-homepage/assets/image12.jpg",
+      "width": 5304,
+      "height": 7952,
+      "format": "jpg",
+      "resourceType": "image",
+      "bytes": 3350069
+    },
+    {
+      "localPath": "public/assets/image2.jpg",
+      "publicId": "kahana-homepage/assets/image2",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219310/kahana-homepage/assets/image2.jpg",
+      "width": 3456,
+      "height": 5184,
+      "format": "jpg",
+      "resourceType": "image",
+      "bytes": 702921
+    },
+    {
+      "localPath": "public/assets/image2.png",
+      "publicId": "kahana-homepage/assets/image2",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219310/kahana-homepage/assets/image2.jpg",
+      "width": 3456,
+      "height": 5184,
+      "format": "jpg",
+      "resourceType": "image",
+      "bytes": 702921
+    },
+    {
+      "localPath": "public/assets/image3.jpg",
+      "publicId": "kahana-homepage/assets/image3",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219313/kahana-homepage/assets/image3.jpg",
+      "width": 6016,
+      "height": 4016,
+      "format": "jpg",
+      "resourceType": "image",
+      "bytes": 1847288
+    },
+    {
+      "localPath": "public/assets/image4.jpg",
+      "publicId": "kahana-homepage/assets/image4",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219315/kahana-homepage/assets/image4.jpg",
+      "width": 4016,
+      "height": 6016,
+      "format": "jpg",
+      "resourceType": "image",
+      "bytes": 1912896
+    },
+    {
+      "localPath": "public/assets/image5.jpg",
+      "publicId": "kahana-homepage/assets/image5",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219317/kahana-homepage/assets/image5.jpg",
+      "width": 4024,
+      "height": 6048,
+      "format": "jpg",
+      "resourceType": "image",
+      "bytes": 2407668
+    },
+    {
+      "localPath": "public/assets/image6.jpg",
+      "publicId": "kahana-homepage/assets/image6",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219319/kahana-homepage/assets/image6.jpg",
+      "width": 4072,
+      "height": 6108,
+      "format": "jpg",
+      "resourceType": "image",
+      "bytes": 1167374
+    },
+    {
+      "localPath": "public/assets/image7.jpg",
+      "publicId": "kahana-homepage/assets/image7",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219321/kahana-homepage/assets/image7.jpg",
+      "width": 4000,
+      "height": 6000,
+      "format": "jpg",
+      "resourceType": "image",
+      "bytes": 2370256
+    },
+    {
+      "localPath": "public/assets/image8.jpg",
+      "publicId": "kahana-homepage/assets/image8",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219323/kahana-homepage/assets/image8.jpg",
+      "width": 3493,
+      "height": 5239,
+      "format": "jpg",
+      "resourceType": "image",
+      "bytes": 1549727
+    },
+    {
+      "localPath": "public/assets/image9.jpg",
+      "publicId": "kahana-homepage/assets/image9",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219325/kahana-homepage/assets/image9.jpg",
+      "width": 3861,
+      "height": 5784,
+      "format": "jpg",
+      "resourceType": "image",
+      "bytes": 1324720
+    },
+    {
+      "localPath": "public/assets/kahana_blog_image.jpg",
+      "publicId": "kahana-homepage/assets/kahana_blog_image",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219327/kahana-homepage/assets/kahana_blog_image.jpg",
+      "width": 960,
+      "height": 768,
+      "format": "jpg",
+      "resourceType": "image",
+      "bytes": 108187
+    },
+    {
+      "localPath": "public/assets/pexels-kamo11235-667838.jpg",
+      "publicId": "kahana-homepage/assets/pexels-kamo11235-667838",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219328/kahana-homepage/assets/pexels-kamo11235-667838.jpg",
+      "width": 3500,
+      "height": 2422,
+      "format": "jpg",
+      "resourceType": "image",
+      "bytes": 566162
+    },
+    {
+      "localPath": "public/blog/cloud-migration-hero.jpg",
+      "publicId": "kahana-homepage/blog/cloud-migration-hero",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219262/kahana-homepage/blog/cloud-migration-hero.jpg",
+      "width": 1200,
+      "height": 630,
+      "format": "jpg",
+      "resourceType": "image",
+      "bytes": 18636
+    },
+    {
+      "localPath": "public/blog/devsecops-hero.jpg",
+      "publicId": "kahana-homepage/blog/devsecops-hero",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219263/kahana-homepage/blog/devsecops-hero.jpg",
+      "width": 1200,
+      "height": 630,
+      "format": "jpg",
+      "resourceType": "image",
+      "bytes": 16222
+    },
+    {
+      "localPath": "public/blog/zero-trust-hero.jpg",
+      "publicId": "kahana-homepage/blog/zero-trust-hero",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219266/kahana-homepage/blog/zero-trust-hero.jpg",
+      "width": 1200,
+      "height": 630,
+      "format": "jpg",
+      "resourceType": "image",
+      "bytes": 14650
+    },
+    {
+      "localPath": "public/favicon.svg",
+      "publicId": "kahana-homepage/public/favicon",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219959/kahana-homepage/public/favicon.svg",
+      "width": 200,
+      "height": 200,
+      "format": "svg",
+      "resourceType": "image",
+      "bytes": 2131
+    },
+    {
+      "localPath": "public/figma-imports/Custom Themes.webp",
+      "publicId": "kahana-homepage/figma-imports/Custom Themes",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219330/kahana-homepage/figma-imports/Custom%20Themes.webp",
+      "width": 3024,
+      "height": 1964,
+      "format": "webp",
+      "resourceType": "image",
+      "bytes": 307168
+    },
+    {
+      "localPath": "public/figma-imports/Frame 1321315005.webp",
+      "publicId": "kahana-homepage/figma-imports/Frame 1321315005",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219331/kahana-homepage/figma-imports/Frame%201321315005.webp",
+      "width": 3024,
+      "height": 1964,
+      "format": "webp",
+      "resourceType": "image",
+      "bytes": 142864
+    },
+    {
+      "localPath": "public/figma-imports/New Tab Page.webp",
+      "publicId": "kahana-homepage/figma-imports/New Tab Page",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219333/kahana-homepage/figma-imports/New%20Tab%20Page.webp",
+      "width": 3024,
+      "height": 1964,
+      "format": "webp",
+      "resourceType": "image",
+      "bytes": 383940
+    },
+    {
+      "localPath": "public/figma-imports/Personalization Features.webp",
+      "publicId": "kahana-homepage/figma-imports/Personalization Features",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219334/kahana-homepage/figma-imports/Personalization%20Features.webp",
+      "width": 3024,
+      "height": 1964,
+      "format": "webp",
+      "resourceType": "image",
+      "bytes": 317728
+    },
+    {
+      "localPath": "public/figma-imports/Security 1.webp",
+      "publicId": "kahana-homepage/figma-imports/Security 1",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219336/kahana-homepage/figma-imports/Security%201.webp",
+      "width": 3024,
+      "height": 1964,
+      "format": "webp",
+      "resourceType": "image",
+      "bytes": 337774
+    },
+    {
+      "localPath": "public/figma-imports/Security 2.webp",
+      "publicId": "kahana-homepage/figma-imports/Security 2",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219337/kahana-homepage/figma-imports/Security%202.webp",
+      "width": 3024,
+      "height": 1964,
+      "format": "webp",
+      "resourceType": "image",
+      "bytes": 205750
+    },
+    {
+      "localPath": "public/figma-imports/Summarize with AI 3.webp",
+      "publicId": "kahana-homepage/figma-imports/Summarize with AI 3",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219339/kahana-homepage/figma-imports/Summarize%20with%20AI%203.webp",
+      "width": 3024,
+      "height": 1964,
+      "format": "webp",
+      "resourceType": "image",
+      "bytes": 180402
+    },
+    {
+      "localPath": "public/figma-imports/Tab Groups.webp",
+      "publicId": "kahana-homepage/figma-imports/Tab Groups",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219340/kahana-homepage/figma-imports/Tab%20Groups.webp",
+      "width": 3024,
+      "height": 1964,
+      "format": "webp",
+      "resourceType": "image",
+      "bytes": 239414
+    },
+    {
+      "localPath": "public/figma-imports/er.webp",
+      "publicId": "kahana-homepage/figma-imports/er",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219341/kahana-homepage/figma-imports/er.webp",
+      "width": 3024,
+      "height": 1964,
+      "format": "webp",
+      "resourceType": "image",
+      "bytes": 356990
+    },
+    {
+      "localPath": "public/images/BYOD.png",
+      "publicId": "kahana-homepage/images/BYOD",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219229/kahana-homepage/images/BYOD.png",
+      "width": 866,
+      "height": 812,
+      "format": "png",
+      "resourceType": "image",
+      "bytes": 784274
+    },
+    {
+      "localPath": "public/images/WIP.webp",
+      "publicId": "kahana-homepage/images/WIP",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219232/kahana-homepage/images/WIP.webp",
+      "width": 3024,
+      "height": 1964,
+      "format": "webp",
+      "resourceType": "image",
+      "bytes": 182934
+    },
+    {
+      "localPath": "public/images/Welcome to Oasis.webp",
+      "publicId": "kahana-homepage/images/Welcome to Oasis",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219233/kahana-homepage/images/Welcome%20to%20Oasis.webp",
+      "width": 3024,
+      "height": 1964,
+      "format": "webp",
+      "resourceType": "image",
+      "bytes": 82378
+    },
+    {
+      "localPath": "public/images/academic.png",
+      "publicId": "kahana-homepage/images/academic",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765222357/kahana-homepage/images/academic.png",
+      "width": 644,
+      "height": 452,
+      "format": "png",
+      "resourceType": "image",
+      "bytes": 374250
+    },
+    {
+      "localPath": "public/images/ai-2.webp",
+      "publicId": "kahana-homepage/images/ai-2",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219236/kahana-homepage/images/ai-2.webp",
+      "width": 3024,
+      "height": 1964,
+      "format": "webp",
+      "resourceType": "image",
+      "bytes": 296440
+    },
+    {
+      "localPath": "public/images/ai.webp",
+      "publicId": "kahana-homepage/images/ai",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219237/kahana-homepage/images/ai.webp",
+      "width": 3024,
+      "height": 1964,
+      "format": "webp",
+      "resourceType": "image",
+      "bytes": 180402
+    },
+    {
+      "localPath": "public/images/analytics.webp",
+      "publicId": "kahana-homepage/images/analytics",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219239/kahana-homepage/images/analytics.webp",
+      "width": 3024,
+      "height": 1964,
+      "format": "webp",
+      "resourceType": "image",
+      "bytes": 247962
+    },
+    {
+      "localPath": "public/images/applicaiton .webp",
+      "publicId": "kahana-homepage/images/applicaiton",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219240/kahana-homepage/images/applicaiton.webp",
+      "width": 3024,
+      "height": 1964,
+      "format": "webp",
+      "resourceType": "image",
+      "bytes": 239414
+    },
+    {
+      "localPath": "public/images/cost.webp",
+      "publicId": "kahana-homepage/images/cost",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219242/kahana-homepage/images/cost.webp",
+      "width": 3024,
+      "height": 1964,
+      "format": "webp",
+      "resourceType": "image",
+      "bytes": 170684
+    },
+    {
+      "localPath": "public/images/customs.png",
+      "publicId": "kahana-homepage/images/customs",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219244/kahana-homepage/images/customs.png",
+      "width": 3024,
+      "height": 1964,
+      "format": "png",
+      "resourceType": "image",
+      "bytes": 2022977
+    },
+    {
+      "localPath": "public/images/data-protection-2.webp",
+      "publicId": "kahana-homepage/images/data-protection-2",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219246/kahana-homepage/images/data-protection-2.webp",
+      "width": 3024,
+      "height": 1964,
+      "format": "webp",
+      "resourceType": "image",
+      "bytes": 207926
+    },
+    {
+      "localPath": "public/images/desert-background-5.webp",
+      "publicId": "kahana-homepage/images/desert-background-5",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219248/kahana-homepage/images/desert-background-5.webp",
+      "width": 4288,
+      "height": 2848,
+      "format": "webp",
+      "resourceType": "image",
+      "bytes": 1842844
+    },
+    {
+      "localPath": "public/images/due-diligence.jpeg",
+      "publicId": "kahana-homepage/images/due-diligence",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765222360/kahana-homepage/images/due-diligence.jpg",
+      "width": 846,
+      "height": 616,
+      "format": "jpg",
+      "resourceType": "image",
+      "bytes": 137681
+    },
+    {
+      "localPath": "public/images/enterprise.jpeg",
+      "publicId": "kahana-homepage/images/enterprise",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219249/kahana-homepage/images/enterprise.jpg",
+      "width": 1324,
+      "height": 856,
+      "format": "jpg",
+      "resourceType": "image",
+      "bytes": 122425
+    },
+    {
+      "localPath": "public/images/in-action.webp",
+      "publicId": "kahana-homepage/images/in-action",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219250/kahana-homepage/images/in-action.webp",
+      "width": 3024,
+      "height": 1964,
+      "format": "webp",
+      "resourceType": "image",
+      "bytes": 383940
+    },
+    {
+      "localPath": "public/images/kahana_mascot.png",
+      "publicId": "kahana-homepage/images/kahana_mascot",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219252/kahana-homepage/images/kahana_mascot.png",
+      "width": 1024,
+      "height": 1024,
+      "format": "png",
+      "resourceType": "image",
+      "bytes": 1859151
+    },
+    {
+      "localPath": "public/images/legal.jpeg",
+      "publicId": "kahana-homepage/images/legal",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765222361/kahana-homepage/images/legal.jpg",
+      "width": 742,
+      "height": 428,
+      "format": "jpg",
+      "resourceType": "image",
+      "bytes": 72101
+    },
+    {
+      "localPath": "public/images/market.png",
+      "publicId": "kahana-homepage/images/market",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765222356/kahana-homepage/images/market.png",
+      "width": 662,
+      "height": 432,
+      "format": "png",
+      "resourceType": "image",
+      "bytes": 418156
+    },
+    {
+      "localPath": "public/images/oasis-browser-preview.png",
+      "publicId": "kahana-homepage/images/oasis-browser-preview",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219253/kahana-homepage/images/oasis-browser-preview.png",
+      "width": 1200,
+      "height": 630,
+      "format": "png",
+      "resourceType": "image",
+      "bytes": 170548
+    },
+    {
+      "localPath": "public/images/productivity.webp",
+      "publicId": "kahana-homepage/images/productivity",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219255/kahana-homepage/images/productivity.webp",
+      "width": 3024,
+      "height": 1964,
+      "format": "webp",
+      "resourceType": "image",
+      "bytes": 109826
+    },
+    {
+      "localPath": "public/images/sales.png",
+      "publicId": "kahana-homepage/images/sales",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765222354/kahana-homepage/images/sales.png",
+      "width": 646,
+      "height": 448,
+      "format": "png",
+      "resourceType": "image",
+      "bytes": 299727
+    },
+    {
+      "localPath": "public/images/securtiy.webp",
+      "publicId": "kahana-homepage/images/securtiy",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219256/kahana-homepage/images/securtiy.webp",
+      "width": 3024,
+      "height": 1964,
+      "format": "webp",
+      "resourceType": "image",
+      "bytes": 205750
+    },
+    {
+      "localPath": "public/images/spatial.webp",
+      "publicId": "kahana-homepage/images/spatial",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219257/kahana-homepage/images/spatial.webp",
+      "width": 3024,
+      "height": 1964,
+      "format": "webp",
+      "resourceType": "image",
+      "bytes": 350214
+    },
+    {
+      "localPath": "public/images/trainable.png",
+      "publicId": "kahana-homepage/images/trainable",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219258/kahana-homepage/images/trainable.png",
+      "width": 2010,
+      "height": 1422,
+      "format": "png",
+      "resourceType": "image",
+      "bytes": 454915
+    },
+    {
+      "localPath": "public/images/user.png",
+      "publicId": "kahana-homepage/images/user",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765222359/kahana-homepage/images/user.png",
+      "width": 632,
+      "height": 364,
+      "format": "png",
+      "resourceType": "image",
+      "bytes": 310745
+    },
+    {
+      "localPath": "public/images/visibility.webp",
+      "publicId": "kahana-homepage/images/visibility",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219259/kahana-homepage/images/visibility.webp",
+      "width": 3024,
+      "height": 1964,
+      "format": "webp",
+      "resourceType": "image",
+      "bytes": 310110
+    },
+    {
+      "localPath": "public/images/welcom.jpeg",
+      "publicId": "kahana-homepage/images/welcom",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219261/kahana-homepage/images/welcom.jpg",
+      "width": 1324,
+      "height": 856,
+      "format": "jpg",
+      "resourceType": "image",
+      "bytes": 120582
+    },
+    {
+      "localPath": "public/kahana_logo_transparent.svg",
+      "publicId": "kahana-homepage/public/kahana_logo_transparent",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219991/kahana-homepage/public/kahana_logo_transparent.svg",
+      "width": 862,
+      "height": 286,
+      "format": "svg",
+      "resourceType": "image",
+      "bytes": 11053
+    },
+    {
+      "localPath": "public/sloth-future-of-ergonomic-work.png",
+      "publicId": "kahana-homepage/public/sloth-future-of-ergonomic-work",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219993/kahana-homepage/public/sloth-future-of-ergonomic-work.png",
+      "width": 1024,
+      "height": 1536,
+      "format": "png",
+      "resourceType": "image",
+      "bytes": 2738153
+    },
+    {
+      "localPath": "assets/Kahana_Brand_Image.webp",
+      "publicId": "kahana-homepage/assets/Kahana_Brand_Image",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219343/kahana-homepage/assets/Kahana_Brand_Image.webp",
+      "width": 1920,
+      "height": 1080,
+      "format": "webp",
+      "resourceType": "image",
+      "bytes": 52328
+    },
+    {
+      "localPath": "assets/image1.jpg",
+      "publicId": "kahana-homepage/assets/image1",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219301/kahana-homepage/assets/image1.jpg",
+      "width": 3024,
+      "height": 4032,
+      "format": "jpg",
+      "resourceType": "image",
+      "bytes": 1257582
+    },
+    {
+      "localPath": "assets/images/avatars/BSJheadshot.png",
+      "publicId": "kahana-homepage/assets/images/avatars/BSJheadshot",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765301314/kahana-homepage/assets/images/avatars/BSJheadshot.png",
+      "width": 144,
+      "height": 118,
+      "format": "png",
+      "resourceType": "image",
+      "bytes": 41835
+    },
+    {
+      "localPath": "assets/images/avatars/edenGoldHeadshot.png",
+      "publicId": "kahana-homepage/assets/images/avatars/edenGoldHeadshot",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765301315/kahana-homepage/assets/images/avatars/edenGoldHeadshot.png",
+      "width": 170,
+      "height": 166,
+      "format": "png",
+      "resourceType": "image",
+      "bytes": 68366
+    },
+    {
+      "localPath": "assets/images/avatars/gregoryGray.png",
+      "publicId": "kahana-homepage/assets/images/avatars/gregoryGray",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765301317/kahana-homepage/assets/images/avatars/gregoryGray.png",
+      "width": 144,
+      "height": 218,
+      "format": "png",
+      "resourceType": "image",
+      "bytes": 60352
+    },
+    {
+      "localPath": "assets/images/avatars/kelseyVetterHeadshot.png",
+      "publicId": "kahana-homepage/assets/images/avatars/kelseyVetterHeadshot",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765301318/kahana-homepage/assets/images/avatars/kelseyVetterHeadshot.png",
+      "width": 144,
+      "height": 217,
+      "format": "png",
+      "resourceType": "image",
+      "bytes": 65957
+    },
+    {
+      "localPath": "assets/images/avatars/oliviaMancusoHeadshot.png",
+      "publicId": "kahana-homepage/assets/images/avatars/oliviaMancusoHeadshot",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765301319/kahana-homepage/assets/images/avatars/oliviaMancusoHeadshot.png",
+      "width": 162,
+      "height": 134,
+      "format": "png",
+      "resourceType": "image",
+      "bytes": 47847
+    },
+    {
+      "localPath": "assets/images/avatars/tayLaddHeadshot.png",
+      "publicId": "kahana-homepage/assets/images/avatars/tayLaddHeadshot",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765301321/kahana-homepage/assets/images/avatars/tayLaddHeadshot.png",
+      "width": 130,
+      "height": 140,
+      "format": "png",
+      "resourceType": "image",
+      "bytes": 34380
+    },
+    {
+      "localPath": "assets/images/collab.webp",
+      "publicId": "kahana-homepage/assets/images/collab",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219352/kahana-homepage/assets/images/collab.webp",
+      "width": 2866,
+      "height": 1388,
+      "format": "webp",
+      "resourceType": "image",
+      "bytes": 138040
+    },
+    {
+      "localPath": "assets/images/createHubs.webp",
+      "publicId": "kahana-homepage/assets/images/createHubs",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219354/kahana-homepage/assets/images/createHubs.webp",
+      "width": 2870,
+      "height": 1388,
+      "format": "webp",
+      "resourceType": "image",
+      "bytes": 131178
+    },
+    {
+      "localPath": "assets/images/curate.webp",
+      "publicId": "kahana-homepage/assets/images/curate",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219355/kahana-homepage/assets/images/curate.webp",
+      "width": 2866,
+      "height": 1392,
+      "format": "webp",
+      "resourceType": "image",
+      "bytes": 161414
+    },
+    {
+      "localPath": "assets/kahana_blog_image.jpg",
+      "publicId": "kahana-homepage/assets/kahana_blog_image",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219327/kahana-homepage/assets/kahana_blog_image.jpg",
+      "width": 960,
+      "height": 768,
+      "format": "jpg",
+      "resourceType": "image",
+      "bytes": 108187
+    },
+    {
+      "localPath": "assets/kahana_icon_old.svg",
+      "publicId": "kahana-homepage/assets/kahana_icon_old",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219357/kahana-homepage/assets/kahana_icon_old.svg",
+      "width": 124,
+      "height": 124,
+      "format": "svg",
+      "resourceType": "image",
+      "bytes": 1509
+    },
+    {
+      "localPath": "assets/kahana_logo_transparent.svg",
+      "publicId": "kahana-homepage/assets/kahana_logo_transparent",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219359/kahana-homepage/assets/kahana_logo_transparent.svg",
+      "width": 862,
+      "height": 286,
+      "format": "svg",
+      "resourceType": "image",
+      "bytes": 11053
+    },
+    {
+      "localPath": "assets/oasis-browser-preview.png",
+      "publicId": "kahana-homepage/assets/oasis-browser-preview",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219362/kahana-homepage/assets/oasis-browser-preview.png",
+      "width": 1200,
+      "height": 630,
+      "format": "png",
+      "resourceType": "image",
+      "bytes": 170548
+    },
+    {
+      "localPath": "assets/sloth-future-of-ergonomic-work.png",
+      "publicId": "kahana-homepage/assets/sloth-future-of-ergonomic-work",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219363/kahana-homepage/assets/sloth-future-of-ergonomic-work.png",
+      "width": 1024,
+      "height": 1536,
+      "format": "png",
+      "resourceType": "image",
+      "bytes": 2738153
+    },
+    {
+      "localPath": "figma-imports/formkit_down.svg",
+      "publicId": "kahana-homepage/figma-imports/formkit_down",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765220009/kahana-homepage/figma-imports/formkit_down.svg",
+      "width": 24,
+      "height": 24,
+      "format": "svg",
+      "resourceType": "image",
+      "bytes": 557
+    },
+    {
+      "localPath": "figma-imports/weui_arrow-outlined.svg",
+      "publicId": "kahana-homepage/figma-imports/weui_arrow-outlined",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765220012/kahana-homepage/figma-imports/weui_arrow-outlined.svg",
+      "width": 10,
+      "height": 14,
+      "format": "svg",
+      "resourceType": "image",
+      "bytes": 432
+    },
+    {
+      "localPath": "Videos/Oasis Moving Through Tabs Feature - FINAL.mp4",
+      "publicId": "kahana-homepage/Videos/Oasis Moving Through Tabs Feature - FINAL",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/video/upload/v1765219207/kahana-homepage/Videos/Oasis%20Moving%20Through%20Tabs%20Feature%20-%20FINAL.mp4",
+      "width": 1920,
+      "height": 1080,
+      "format": "mp4",
+      "resourceType": "video",
+      "bytes": 9530866
+    }
+  ],
+  "skipped": [],
+  "failed": [
+    {
+      "localPath": "public/blog/placeholder.jpg",
+      "publicId": "blog/placeholder",
+      "error": "Invalid image file"
+    },
+    {
+      "localPath": "public/blog/technical-debt-hero.jpg",
+      "publicId": "blog/technical-debt-hero",
+      "error": "Invalid image file"
+    }
+  ]
+}
