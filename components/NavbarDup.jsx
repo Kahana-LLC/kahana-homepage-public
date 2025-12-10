@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import whiteKahanaLogo from '../assets/kahana_logo_transparent.svg';
+import { getCloudinaryImageUrl } from '../utils/cloudinary-mapper';
 
 function NavBar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -224,6 +225,16 @@ function NavBar() {
             letter-spacing: -0.01em;
           }
 
+          .nav-link-text {
+            color: #617500 !important;
+            font-weight: 500 !important;
+          }
+
+          a.nav-link:hover .nav-link-text,
+          .nav-link:hover .nav-link-text {
+            color: #4A5F00 !important;
+          }
+
 
           .nav-link-icon {
             display: inline-flex;
@@ -274,6 +285,19 @@ function NavBar() {
             display: grid;
             gap: 40px;
             pointer-events: none;
+          }
+
+          /* Reset font-weight for all elements inside dropdown content */
+          .dropdown-content * {
+            font-weight: normal !important;
+          }
+
+          /* Specifically override global bold link styling for dropdown links */
+          .dropdown-content a,
+          .dropdown-section a,
+          .dropdown-content a.dropdown-link,
+          .dropdown-section a.dropdown-link {
+            font-weight: 400 !important;
           }
 
           .dropdown:hover .dropdown-content,
@@ -332,8 +356,7 @@ function NavBar() {
 
           .dropdown-section h3 {
             font-size: 0.6875rem;
-            font-weight: 700;
-            
+            font-weight: bold !important;
             color: #026400;
             margin-bottom: 16px;
             text-transform: uppercase;
@@ -344,15 +367,28 @@ function NavBar() {
             display: block;
             color: #333333 !important;
             text-decoration: none !important;
-            font-weight: 300 !important;
+            font-weight: 400 !important;
             font-size: 0.9375rem;
             line-height: 1.5;
             letter-spacing: 0.01em;
-            padding: 8px 12px;
+            padding: 4px 8px;
             margin: 0 -12px;
             border-radius: 8px;
             transition: background-color 0.15s ease;
-            font-family: "Roboto", sans-serif;
+            font-family: "Geist", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+          }
+
+          /* Force non-bold on all dropdown links with maximum specificity */
+          .dropdown-content a.dropdown-link,
+          .dropdown-section a.dropdown-link,
+          .dropdown-content .dropdown-link,
+          .dropdown-section .dropdown-link,
+          a.dropdown-link,
+          .dropdown-content a,
+          .dropdown-section a,
+          .dropdown-content a.dropdown-link *,
+          .dropdown-section a.dropdown-link * {
+            font-weight: 400 !important;
           }
 
           .dropdown-link:hover {
@@ -417,15 +453,9 @@ function NavBar() {
           }
 
           .nav-buttons {
-            display: none;
+            display: flex;
             align-items: center;
             gap: 0.75rem;
-          }
-
-          @media (min-width: 1024px) {
-            .nav-buttons {
-              display: flex;
-            }
           }
 
           @media (max-width: 768px) {
@@ -497,10 +527,25 @@ function NavBar() {
           }
 
           .menu-links {
-            padding: 1.5rem;
+            padding: 0;
             display: flex;
             flex-direction: column;
             gap: 0.75rem;
+          }
+          
+          .mobile-menu-buttons-container {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background: white;
+            padding: 1rem 1.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #e5e7eb;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+          }
+          
+          .mobile-menu-content {
+            padding: 0 1.5rem 1.5rem 1.5rem;
           }
 
           .menu-links button {
@@ -545,6 +590,33 @@ function NavBar() {
 
           @media (max-width: 1024px) {
             .nav-links {
+              display: none;
+            }
+          }
+          
+          /* Custom breakpoint for very small screens (522px and below) */
+          @media (max-width: 522px) {
+            .btn-text-responsive {
+              font-size: 0.75rem;
+              padding-left: 0.5rem;
+              padding-right: 0.5rem;
+            }
+            
+            /* Show "Get Access" on small screens, hide "Get Early Access" */
+            .btn-text-full {
+              display: none;
+            }
+            .btn-text-short {
+              display: inline;
+            }
+          }
+          
+          /* Show "Get Early Access" on larger screens, hide "Get Access" */
+          @media (min-width: 523px) {
+            .btn-text-full {
+              display: inline;
+            }
+            .btn-text-short {
               display: none;
             }
           }
@@ -742,15 +814,15 @@ function NavBar() {
                   </div>
                 </div>
                 <div className="dropdown-section">
-                  <Link href="/enterprise-buyer-guide" className="block p-4 bg-gradient-to-r from-[#66C2BE]/5 to-[#8CB7D0]/5 rounded-lg border border-[#66C2BE]/20 hover:from-[#66C2BE]/10 hover:to-[#8CB7D0]/10 hover:border-[#66C2BE]/30 transition-all duration-200 no-underline" onClick={() => setOpenDropdown(null)}>
+                  <Link href="/enterprise-buyer-guide" className="block p-4 bg-gradient-to-r from-[#66C2BE]/5 to-[#8CB7D0]/5 rounded-lg border border-[#66C2BE]/20 hover:from-[#66C2BE]/10 hover:to-[#8CB7D0]/10 hover:border-[#66C2BE]/30 transition-all duration-200" onClick={() => setOpenDropdown(null)}>
                     <div className="w-full h-32 rounded-lg overflow-hidden mb-3">
                       <img 
-                        src="/assets/pexels-kamo11235-667838.jpg" 
+                        src={getCloudinaryImageUrl("/assets/pexels-kamo11235-667838.jpg")} 
                         alt="Enterprise Browser Buyer Guide"
                         className="w-full h-full object-cover"
                       />
                     </div>
-                    <div className="font-semibold text-gray-900 text-sm leading-tight no-underline">Enterprise Browser Buyer Guide</div>
+                    <div className="font-semibold text-gray-900 text-sm leading-tight">Enterprise Browser Buyers Guide</div>
                   </Link>
                 </div>
               </div>
@@ -798,10 +870,10 @@ function NavBar() {
 
           {/* Buttons and Hamburger Menu */}
           <div className="flex items-center gap-4">
-            <div className="nav-buttons hidden lg:flex gap-2">
-              <Link href="/oasis-waitlist" className="btn-primary inline-flex items-center justify-center px-4 py-2.5 text-xs md:px-6 md:py-3 md:text-sm no-underline hover:no-underline focus:no-underline">
-                  <span className="md:hidden">Get Access</span>
-                  <span className="hidden md:inline">Get Access</span>
+            <div className="nav-buttons flex gap-2">
+              <Link href="/schedule-demo" className="btn-primary inline-flex items-center justify-center px-3 py-2.5 text-xs sm:px-4 sm:text-xs md:px-6 md:py-3 md:text-sm no-underline hover:no-underline focus:no-underline btn-text-responsive">
+                  <span className="btn-text-full">Get Early Access</span>
+                  <span className="btn-text-short">Get Access</span>
               </Link>
               <Link href="/contact" className="btn-secondary inline-flex items-center justify-center px-4 py-2.5 text-xs md:px-6 md:py-3 md:text-sm no-underline hover:no-underline focus:no-underline">
                   <span className="md:hidden">Contact</span>
@@ -853,45 +925,59 @@ function NavBar() {
         {/* Mobile Menu Content */}
         <div className={`mobile-menu ${isMobileMenuOpen ? 'open' : ''}`}>
           <div className="menu-links">
-            {/* Contact Buttons at Top */}
-            <div className="flex flex-col gap-2 mb-4">
-              <Link href="/oasis-waitlist" className="btn-primary w-full text-center py-2.5 px-6 no-underline hover:no-underline focus:no-underline">
-                  Get Access
-              </Link>
-              <Link href="/contact" className="btn-secondary w-full text-center py-2.5 px-6 no-underline hover:no-underline focus:no-underline">
+            {/* Contact Buttons at Top - Sticky */}
+            <div className="mobile-menu-buttons-container">
+              <div className="flex flex-col gap-2.5">
+                <Link 
+                  href="/schedule-demo" 
+                  className="btn-primary w-full text-center py-3 px-4 min-[523px]:px-6 no-underline hover:no-underline focus:no-underline font-semibold text-sm min-[523px]:text-base"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  <span className="btn-text-full">Get Early Access</span>
+                  <span className="btn-text-short">Get Access</span>
+                </Link>
+                <Link 
+                  href="/contact" 
+                  className="btn-secondary w-full text-center py-3 px-6 no-underline hover:no-underline focus:no-underline font-semibold text-base"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
                   Contact
-              </Link>
+                </Link>
+              </div>
             </div>
             
-            {/* Product Section */}
-            <Link href="/products/free-agentic-browser" className="mobile-link">Free Agentic Browser</Link>
-            <Link href="/products/enterprise-browser" className="mobile-link">Enterprise Browser</Link>
-            <Link href="/products/web-application" className="mobile-link">Web Application</Link>
-            
-            {/* Learn Section */}
-            <Link href="/blog" className="mobile-link">Blog</Link>
-            <Link href="/docs" className="mobile-link">Docs</Link>
-            <Link href="/white-paper-future-of-ergonomic-work" className="mobile-link">White Paper</Link>
-            <Link href="/subscribe-to-insights" className="mobile-link">Newsletter</Link>
-            <Link href="/community" className="mobile-link">Join Discord</Link>
-            <Link href="/enterprise-buyer-guide" className="mobile-link flex items-center space-x-3 p-3 bg-gradient-to-r from-[#66C2BE]/5 to-[#8CB7D0]/5 rounded-lg border border-[#66C2BE]/20 hover:from-[#66C2BE]/10 hover:to-[#8CB7D0]/10 hover:border-[#66C2BE]/30 transition-all duration-200 no-underline">
-              <div className="flex-shrink-0 w-12 h-12 rounded-lg overflow-hidden">
-                <img 
-                  src="/assets/pexels-kamo11235-667838.jpg" 
-                  alt="Enterprise Browser Buyer Guide"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="flex-1">
-                <div className="font-medium text-gray-900 no-underline">Enterprise Browser Buyer Guide</div>
-                <div className="text-xs text-[#4A5745] mt-1">Comprehensive guide for enterprise decision makers</div>
-              </div>
-            </Link>
-            
-            {/* About Section */}
-            <Link href="/about" className="mobile-link">About Kahana</Link>
-            <Link href="/support" className="mobile-link">Support</Link>
-            <Link href="/careers" className="mobile-link">Careers</Link>
+            {/* Menu Content */}
+            <div className="mobile-menu-content">
+              {/* Product Section */}
+              <Link href="/products/free-agentic-browser" className="mobile-link" onClick={() => setIsMobileMenuOpen(false)}>Free Agentic Browser</Link>
+              <Link href="/products/enterprise-browser" className="mobile-link" onClick={() => setIsMobileMenuOpen(false)}>Enterprise Browser</Link>
+              <Link href="/products/web-application" className="mobile-link" onClick={() => setIsMobileMenuOpen(false)}>Web Application</Link>
+              
+              {/* Learn Section */}
+              <Link href="/blog" className="mobile-link" onClick={() => setIsMobileMenuOpen(false)}>Blog</Link>
+              <Link href="/docs" className="mobile-link" onClick={() => setIsMobileMenuOpen(false)}>Docs</Link>
+              <Link href="/white-paper-future-of-ergonomic-work" className="mobile-link" onClick={() => setIsMobileMenuOpen(false)}>White Paper</Link>
+              <Link href="/subscribe-to-insights" className="mobile-link" onClick={() => setIsMobileMenuOpen(false)}>Newsletter</Link>
+              <Link href="/community" className="mobile-link" onClick={() => setIsMobileMenuOpen(false)}>Join Discord</Link>
+              <Link href="/enterprise-buyer-guide" className="mobile-link flex items-center space-x-3 p-3 bg-gradient-to-r from-[#66C2BE]/5 to-[#8CB7D0]/5 rounded-lg border border-[#66C2BE]/20 hover:from-[#66C2BE]/10 hover:to-[#8CB7D0]/10 hover:border-[#66C2BE]/30 transition-all duration-200" onClick={() => setIsMobileMenuOpen(false)}>
+                <div className="flex-shrink-0 w-12 h-12 rounded-lg overflow-hidden">
+                  <img 
+                    src={getCloudinaryImageUrl("/assets/pexels-kamo11235-667838.jpg")} 
+                    alt="Enterprise Browser Buyer Guide"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="flex-1">
+                  <div className="font-medium text-gray-900">Enterprise Browser Buyer Guide</div>
+                  <div className="text-xs text-[#4A5745] mt-1">Comprehensive guide for enterprise decision makers</div>
+                </div>
+              </Link>
+              
+              {/* About Section */}
+              <Link href="/about" className="mobile-link" onClick={() => setIsMobileMenuOpen(false)}>About Kahana</Link>
+              <Link href="/support" className="mobile-link" onClick={() => setIsMobileMenuOpen(false)}>Support</Link>
+              <Link href="/careers" className="mobile-link" onClick={() => setIsMobileMenuOpen(false)}>Careers</Link>
+            </div>
           </div>
         </div>
       </nav>

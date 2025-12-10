@@ -66,6 +66,7 @@ export default function OasisAugmentedReality() {
 
   const renderForm = () => (
     <div className="w-full">
+      {/* Fixed height to prevent CLS */}
       <iframe
         src="https://tally.so/r/3q9AlO"
         width="100%"
@@ -74,10 +75,13 @@ export default function OasisAugmentedReality() {
         marginHeight="0"
         marginWidth="0"
         title="Oasis AR Waitlist"
-        style={{ border: 0,
+        style={{ 
+          border: 0,
           borderRadius: 0,
           backgroundColor: 'transparent',
-          display: 'block' }}
+          display: 'block',
+          minHeight: '400px'
+        }}
       />
     </div>
   );
@@ -86,15 +90,15 @@ export default function OasisAugmentedReality() {
   const videoEmbed = (
     <div className="w-full flex flex-col items-center mt-8">
       <h3 className="text-2xl font-semibold text-gray-900 mb-4 text-center lg:text-left w-full">See Oasis AR in action</h3>
-      <div className="w-full h-56 sm:h-72 md:h-96 lg:h-[28rem] rounded-2xl overflow-hidden shadow-2xl flex items-center justify-center bg-black">
+      {/* Fixed aspect ratio container to prevent CLS */}
+      <div className="w-full aspect-video rounded-2xl overflow-hidden shadow-2xl flex items-center justify-center bg-black">
         <iframe
-          className="w-full h-full min-h-[14rem]"
+          className="w-full h-full"
           src="https://www.youtube.com/embed/05-oP8CNl8Y"
           title="Oasis AI-Powered Browser Demo"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
-          style={{ minHeight: '14rem' }}
         ></iframe>
       </div>
     </div>

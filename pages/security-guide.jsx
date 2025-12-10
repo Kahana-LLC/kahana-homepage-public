@@ -4,6 +4,7 @@ import Link from 'next/link';
 import TableOfContents from '../components/TableOfContents';
 import KeyPointsCard from '../components/KeyPointsCard';
 import ErrorBoundary from '../components/ErrorBoundary';
+import { getCloudinaryImageUrl } from '../utils/cloudinary-mapper';
 
 // Brand tokens
 const COLORS = {
@@ -380,7 +381,7 @@ export default function SecurityRoadmapPage() {
                 <div className="space-y-6">
                   <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
                     <img 
-                      src="/kahana_logo_transparent.svg" 
+                      src={getCloudinaryImageUrl("/kahana_logo_transparent.svg")} 
                       alt="Oasis Enterprise Browser" 
                       className="w-full h-auto mb-4"
                     />

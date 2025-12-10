@@ -121,25 +121,6 @@ const nextConfig = {
           },
         ],
       },
-      // Cache static images for 1 year (immutable)
-      {
-        source: "/images/:path*",
-        headers: [
-          {
-            key: "Cache-Control",
-            value: "public, max-age=31536000, immutable",
-          },
-        ],
-      },
-      {
-        source: "/figma-imports/:path*",
-        headers: [
-          {
-            key: "Cache-Control",
-            value: "public, max-age=31536000, immutable",
-          },
-        ],
-      },
     ];
   },
 
@@ -149,6 +130,11 @@ const nextConfig = {
       {
         source: "/products/consumer-browser",
         destination: "/products/free-agentic-browser",
+        permanent: true,
+      },
+      {
+        source: "/buyers-guide",
+        destination: "/enterprise-buyer-guide",
         permanent: true,
       },
     ];

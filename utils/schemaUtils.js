@@ -6,7 +6,7 @@ function generateOrganizationSchema() {
     "@type": "Organization",
     name: "Kahana",
     url: EXTERNAL_DATA_URL,
-    logo: `${EXTERNAL_DATA_URL}/images/logo.png`,
+    logo: `https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219991/kahana-homepage/public/kahana_logo_transparent.svg`,
     sameAs: [
       "https://twitter.com/kahana",
       "https://www.linkedin.com/company/kahana-co",

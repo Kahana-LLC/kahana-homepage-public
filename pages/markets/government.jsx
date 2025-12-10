@@ -271,7 +271,7 @@ export default function Government({ governmentBlogs }) {
               Transform your government operations with enterprise-grade security, enhanced productivity, and comprehensive analytics.
             </p>
             <div className="flex justify-center">
-              <Link href="/buyers-guide" className="btn-secondary inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline">
+              <Link href="/enterprise-buyer-guide" className="btn-secondary inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline">
                   Read Buyer's Guide
               </Link>
             </div>

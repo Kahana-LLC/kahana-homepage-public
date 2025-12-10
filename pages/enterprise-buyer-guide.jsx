@@ -4,6 +4,7 @@ import Link from 'next/link';
 import KeyPointsCard from '../components/KeyPointsCard';
 import ErrorBoundary from '../components/ErrorBoundary';
 import BrowserComparisonTable from '../components/BrowserComparisonTable';
+import { getCloudinaryImageUrl } from '../utils/cloudinary-mapper';
 
 // Brand tokens (matching homepage colors)
 const COLORS = {
@@ -54,33 +55,6 @@ const Icon = {
   ),
   Layers: (props) => (
     <svg {...props} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
-  ),
-  DollarSign: (props) => (
-    <svg {...props} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-  ),
-  Clock: (props) => (
-    <svg {...props} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-  ),
-  Ticket: (props) => (
-    <svg {...props} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z"/><path d="M13 5v2"/><path d="M13 17v2"/><path d="M13 11v2"/></svg>
-  ),
-  Lock: (props) => (
-    <svg {...props} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-  ),
-  Database: (props) => (
-    <svg {...props} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
-  ),
-  RefreshCw: (props) => (
-    <svg {...props} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
-  ),
-  Zap: (props) => (
-    <svg {...props} width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-  ),
-  Layout: (props) => (
-    <svg {...props} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
-  ),
-  Calendar: (props) => (
-    <svg {...props} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
   ),
 };
 
@@ -351,6 +325,7 @@ function Section({ id, title, kicker, eyebrow, children, right, centered = false
 }
 
 export default function EnterpriseBuyerGuidePage() {
+  const [persona, setPersona] = useState('business'); // 'business' | 'technical'
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentMediaIndex, setCurrentMediaIndex] = useState(0);
   const [activeFeatureTab, setActiveFeatureTab] = useState('security');
@@ -361,28 +336,28 @@ export default function EnterpriseBuyerGuidePage() {
   const mediaItems = [
     {
       type: 'image',
-      src: '/images/in-action.webp',
+      src: getCloudinaryImageUrl('/images/in-action.webp'),
       alt: 'Oasis Interface - Designed Like an Oasis',
       title: 'Designed Like an Oasis',
       description: 'A soothing environment that fosters deep work, flow state, and concentration'
     },
     {
       type: 'image',
-      src: '/images/ai.webp',
+      src: getCloudinaryImageUrl('/images/ai.webp'),
       alt: 'Voice-Controlled AI Workflows',
       title: 'Voice-Controlled AI Workflows',
       description: 'Natural language commands for complex browser operations'
     },
     {
       type: 'image',
-      src: '/images/spatial.webp',
+      src: getCloudinaryImageUrl('/images/spatial.webp'),
       alt: 'Spatial Organization',
       title: 'Spatial Ease',
       description: 'Intuitive organization that matches your natural cognitive processes'
     },
     {
       type: 'image',
-      src: '/images/WIP.webp',
+      src: getCloudinaryImageUrl('/images/WIP.webp'),
       alt: 'Oasis Demo',
       title: 'See Oasis in Action',
       description: 'Experience the seamless integration of AI and enterprise security'
@@ -418,6 +393,7 @@ export default function EnterpriseBuyerGuidePage() {
     { id: 'introduction', label: 'Introduction' },
     { id: 'what-is-oasis', label: 'What is Oasis?' },
     { id: 'benefits-of-oasis', label: 'Benefits of Oasis' },
+    { id: 'common-use-cases', label: 'Common use cases' },
     { id: 'similar-browser-vendors', label: 'Similar browser vendors' },
     { id: 'deployment-experience', label: 'Deployment experience' },
     { id: 'user-experience', label: 'User Experience' },
@@ -455,12 +431,22 @@ export default function EnterpriseBuyerGuidePage() {
       <div style={{ background: '#FFFFFF', color: COLORS.primary, minHeight: '100vh' }}>
         <div className="min-h-screen" style={{ background: '#FFFFFF' }}>
           <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto mb-8" style={{ maxWidth: 960 }}>
+              <div className="rounded-lg border border-gray-200 bg-white p-4 flex items-center justify-between">
+                <p className="text-sm text-gray-700">
+                  Not sure about an acronym? Visit our{' '}
+                  <Link href="/docs/glossary" legacyBehavior><a style={{ color: COLORS.accent, textDecoration: 'none' }}>Glossary</a></Link>
+                  . Hover on underlined terms to see a quick definition.
+                </p>
+                <span className="inline-flex items-center rounded-md px-2 py-1 text-xs font-medium" style={{ background: '#F8FAF2', color: COLORS.brand700, border: '1px solid #4A6200' }}>Accessible Palette</span>
+              </div>
+            </div>
             {/* Hero Introduction Section - Perplexity/Gemini Hybrid Style */}
             <section 
               id="introduction" 
               className="relative w-full py-32 md:py-48 lg:py-56 overflow-hidden"
               style={{
-                backgroundImage: 'url(/images/desert-background-5.webp)',
+                backgroundImage: 'url(/assets/oasis-hero-bg.jpg)',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat'
@@ -479,19 +465,22 @@ export default function EnterpriseBuyerGuidePage() {
                   The Future of <br className="hidden md:block" />
                     Enterprise Browsing
                 </h1>
-                <p className="text-xl md:text-2xl lg:text-3xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-medium mb-10">
-                  Bundle enterprise-grade security with the most elegant user experience
+                <p className="text-xl md:text-2xl lg:text-3xl max-w-3xl mx-auto leading-relaxed font-medium mb-10" style={{ color: '#313A00' }}>
+                  Combine enterprise-grade security with AI-powered intelligence in one seamless, spatial experience.
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center gap-4 mt-8">
-                  <Link href="/contact" className="btn-primary inline-flex items-center justify-center px-10 py-4 text-lg font-bold no-underline hover:no-underline focus:no-underline">
-                    Get in Touch
+                  <Link href="#what-is-oasis" className="btn-primary inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-full shadow-lg shadow-[#4A6200]/20 transition-transform hover:scale-105 no-underline hover:no-underline focus:no-underline">
+                    Explore Features
+                  </Link>
+                  <Link href="/oasis-pricing" className="btn-secondary inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-full shadow-lg transition-transform hover:scale-105 no-underline hover:no-underline focus:no-underline">
+                    View Pricing
                   </Link>
                 </div>
                 
                 {/* Oasis Browser Preview Card */}
                 <div className="mt-16 rounded-2xl overflow-hidden shadow-2xl border border-gray-200 max-w-5xl mx-auto transform transition-all hover:shadow-3xl duration-500">
                    <img 
-                     src="/images/Welcome to Oasis.webp" 
+                     src={getCloudinaryImageUrl("/images/Welcome to Oasis.webp")} 
                      alt="Oasis Browser Interface - Welcome to Oasis" 
                      className="w-full h-auto object-contain"
                      loading="eager"
@@ -506,10 +495,7 @@ export default function EnterpriseBuyerGuidePage() {
               className="py-4 md:py-6 px-4 lg:px-10 scroll-mt-28"
             >
               <div className="max-w-5xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-left" style={{ color: '#4A6200' }}>
-                Oasis: The Evolution of Browsing
-              </h2>
-              <p className="text-lg md:text-xl leading-relaxed mb-4 text-left">
+              <p className="text-lg md:text-xl leading-relaxed mb-4 text-center">
                 The definition of a "browser" has fundamentally changed in recent years. What was once 
                 simply a tool for viewing web pages has evolved into something far more powerful and 
                 intelligent. This transformation has been driven by two major innovations: enterprise 
@@ -517,196 +503,86 @@ export default function EnterpriseBuyerGuidePage() {
                 Comet, OpenAI's Atlas, GenSpark, and Dia that integrate artificial intelligence directly 
                 into the browsing experience.
               </p>
-              <p className="text-lg md:text-xl leading-relaxed mb-4 text-left">
+              <p className="text-lg md:text-xl leading-relaxed mb-4 text-center">
                 Oasis represents the convergence of these two revolutionary approaches. It is both an 
                 enterprise browser and an AI browser, combining the security and control that modern 
                 organizations demand with the intelligence and automation that users expect from next-generation 
-                software. This dual nature makes Oasis uniquely positioned to address the complex challenges of today's digital workplace.
+                software. Available in both Firefox and Chromium versions, Oasis offers different suites 
+                of benefits tailored to your organization's specific needs and preferences. This dual nature 
+                makes Oasis uniquely positioned to address the complex challenges of today's digital workplace.
               </p>
-              <p className="text-lg md:text-xl leading-relaxed text-left">
+              <p className="text-lg md:text-xl leading-relaxed text-center">
                 In this guide, we'll break down what makes Oasis so special. We'll explore how it 
-                provides enterprise security, how its AI capabilities transform productivity, and why 
+                redefines enterprise security, how its AI capabilities transform productivity, and why 
                 it represents the future of how we interact with the web. Whether you're evaluating 
                 enterprise browser solutions or looking to understand the next evolution of web technology, 
                 this guide will provide the insights you need to make informed decisions.
               </p>
               </div>
             </section>
-            {/* Tools for any role */}
+            {/* Persona toggle and targeted benefits */}
             <Section
               id="personas"
-              title="Tools for any role"
-              kicker="Core Oasis commands that adapt to your workflow"
+              title="Guide by role"
+              kicker="Choose your perspective - concise benefits with optional detail"
               centered={true}
             >
-              <p className="text-lg text-[#4A5745] mb-8 max-w-3xl mx-auto text-center">
-                Oasis core commands like "open new tab", "organize windows", and "group tabs" can be customized 
-                and adapted to serve any role. The same powerful tools work for everyone—just configured differently.
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 max-w-6xl mx-auto">
-                {/* Core Commands */}
-                <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-6 flex flex-col hover:shadow-xl transition-all">
-                  <div className="flex justify-start mb-4">
-                    <div className="w-20 h-20 rounded-full flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #d6e3f4 0%, #e5efd8 100%)' }}>
-                      <Icon.Settings className="w-10 h-10" style={{ color: '#4A6200' }} />
-                    </div>
-                  </div>
-                  <h4 className="text-xl font-bold text-left mb-4" style={{ color: '#313A00' }}>Core Commands</h4>
-                  <div className="space-y-2 mb-6 flex-grow">
-                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
-                      "Open new tab"
-                    </div>
-                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
-                      "Organize all windows into groups"
-                    </div>
-                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
-                      "Show tab 1 and tab 2 in split view"
-                    </div>
-                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
-                      "Group all tabs by workspace"
-                    </div>
-                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
-                      "Find and show tab from my groups"
-                    </div>
-                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
-                      "Close all tabs in current group"
-                    </div>
-                  </div>
+              <div className="mb-8 flex justify-center items-center gap-3" role="tablist" aria-label="Persona selector">
+                <button
+                  role="tab"
+                  aria-selected={persona === 'business'}
+                  onClick={() => setPersona('business')}
+                  className={persona === 'business' ? 'btn-primary px-6 py-3 text-base font-semibold rounded-full' : 'btn-secondary px-6 py-3 text-base font-semibold rounded-full'}
+                >
+                  Business
+                </button>
+                <button
+                  role="tab"
+                  aria-selected={persona === 'technical'}
+                  onClick={() => setPersona('technical')}
+                  className={persona === 'technical' ? 'btn-primary px-6 py-3 text-base font-semibold rounded-full' : 'btn-secondary px-6 py-3 text-base font-semibold rounded-full'}
+                >
+                  Technical
+                </button>
               </div>
 
-                {/* Sales */}
-                <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-6 flex flex-col hover:shadow-xl transition-all">
-                  <div className="flex justify-start mb-4">
-                    <div className="w-20 h-20 rounded-full flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #e5efd8 0%, #d6e3f4 100%)' }}>
-                      <Icon.DollarSign className="w-10 h-10" style={{ color: '#4A6200' }} />
+              {persona === 'business' ? (
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <div className="rounded-lg not-prose p-4 bg-gradient-to-br from-white via-[#F8FAF2] to-[#F2F6E8] border border-white/70">
+                    <h4 className="font-semibold mb-1" style={{ color: '#313A00' }}>Reduce spend</h4>
+                    <p className="text-sm text-gray-700 mb-2">Consolidate 3–5 tools into the browser; cut costs by 15–30%.</p>
+                    <details className="text-sm text-gray-700"><summary className="cursor-pointer">Show details</summary>Lower agent overhead, fewer vendors, simpler support.</details>
                   </div>
+                  <div className="rounded-lg not-prose p-4 bg-gradient-to-br from-white via-[#F8FAF2] to-[#F2F6E8] border border-white/70">
+                    <h4 className="font-semibold mb-1" style={{ color: '#313A00' }}>Faster onboarding</h4>
+                    <p className="text-sm text-gray-700 mb-2">Policy-based access + SSO enables day‑1 productivity.</p>
+                    <details className="text-sm text-gray-700"><summary className="cursor-pointer">Show details</summary>Import bookmarks/passwords instantly; least‑privilege defaults.</details>
                   </div>
-                  <h4 className="text-xl font-bold text-left mb-4" style={{ color: '#313A00' }}>Sales</h4>
-                  <div className="text-sm text-gray-700 mb-4 text-left">
-                    Streamline your sales workflow with intelligent tab organization and quick access to CRM, email, and research tools.
-                  </div>
-                  <div className="space-y-2 mb-6 flex-grow">
-                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
-                      "Open Salesforce and email client in split view"
-                </div>
-                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
-                      "Group all prospect research tabs together"
-                  </div>
-                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
-                      "Show deal pipeline and contract documents side by side"
-                  </div>
-                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
-                      "Find and open prospect's LinkedIn profile from my groups"
-                  </div>
-                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
-                      "Organize all outreach sequence tabs in one workspace"
-                </div>
+                  <div className="rounded-lg not-prose p-4 bg-gradient-to-br from-white via-[#F8FAF2] to-[#F2F6E8] border border-white/70">
+                    <h4 className="font-semibold mb-1" style={{ color: '#313A00' }}>Higher throughput</h4>
+                    <p className="text-sm text-gray-700 mb-2">Hubs + ad/tracker reduction and AI assist reduce switching.</p>
+                    <details className="text-sm text-gray-700"><summary className="cursor-pointer">Show details</summary>Multi‑view layouts; keyboard/voice commands for common flows.</details>
                   </div>
                 </div>
-
-                {/* Marketing */}
-                <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-6 flex flex-col hover:shadow-xl transition-all">
-                  <div className="flex justify-start mb-4">
-                    <div className="w-20 h-20 rounded-full flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #d6e3f4 0%, #e5efd8 100%)' }}>
-                      <Icon.Calendar className="w-10 h-10" style={{ color: '#4A6200' }} />
-                    </div>
+              ) : (
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <div className="rounded-lg not-prose p-4 bg-gradient-to-br from-white via-[#F8FAF2] to-[#F2F6E8] border border-white/70">
+                    <h4 className="font-semibold mb-1" style={{ color: '#313A00' }}>Controls at the edge</h4>
+                    <p className="text-sm text-gray-700 mb-2">URL/app‑scoped DLP, clipboard/download policies, audit logs.</p>
+                    <details className="text-sm text-gray-700"><summary className="cursor-pointer">Show details</summary>Export to CSV/JSON; SIEM ingestion; exception workflows.</details>
                   </div>
-                  <h4 className="text-xl font-bold text-left mb-4" style={{ color: '#313A00' }}>Marketing</h4>
-                  <div className="text-sm text-gray-700 mb-4 text-left">
-                    Manage campaigns, analyze performance, and create content with organized workspaces for all your marketing tools.
+                  <div className="rounded-lg not-prose p-4 bg-gradient-to-br from-white via-[#F8FAF2] to-[#F2F6E8] border border-white/70">
+                    <h4 className="font-semibold mb-1" style={{ color: '#313A00' }}>Easy deployment</h4>
+                    <p className="text-sm text-gray-700 mb-2">MDM distribution, config templates, staged channels, rollback.</p>
+                    <details className="text-sm text-gray-700"><summary className="cursor-pointer">Show details</summary>Works with Workspace ONE, Intune, Jamf; JSON policy files.</details>
                   </div>
-                  <div className="space-y-2 mb-6 flex-grow">
-                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
-                      "Open Google Ads and Meta Ads in split view for comparison"
-                    </div>
-                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
-                      "Group all campaign analytics tabs by platform"
-                    </div>
-                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
-                      "Show content calendar and design tool side by side"
-                    </div>
-                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
-                      "Find A/B test results from my campaign groups"
-                    </div>
-                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
-                      "Organize all social media management tabs in one workspace"
-                    </div>
+                  <div className="rounded-lg not-prose p-4 bg-gradient-to-br from-white via-[#F8FAF2] to-[#F2F6E8] border border-white/70">
+                    <h4 className="font-semibold mb-1" style={{ color: '#313A00' }}>Identity native</h4>
+                    <p className="text-sm text-gray-700 mb-2">SAML/OIDC SSO and SCIM provisioning; MFA enforced.</p>
+                    <details className="text-sm text-gray-700"><summary className="cursor-pointer">Show details</summary>Conditional access; device posture checks; risk‑based prompts.</details>
                   </div>
                 </div>
-
-                {/* Research & Analysis */}
-                <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-6 flex flex-col hover:shadow-xl transition-all">
-                  <div className="flex justify-start mb-4">
-                    <div className="w-20 h-20 rounded-full flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #e5efd8 0%, #d6e3f4 100%)' }}>
-                      <Icon.FileText className="w-10 h-10" style={{ color: '#4A6200' }} />
-                    </div>
-                  </div>
-                  <h4 className="text-xl font-bold text-left mb-4" style={{ color: '#313A00' }}>Research & Analysis</h4>
-                  <div className="text-sm text-gray-700 mb-4 text-left">
-                    Organize research sources, data analysis tools, and reference materials for efficient information gathering and analysis.
-                  </div>
-                  <div className="space-y-2 mb-6 flex-grow">
-                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
-                      "Show research paper and data visualization in split view"
-                    </div>
-                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
-                      "Group all market research tabs by industry"
-                    </div>
-                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
-                      "Open competitor analysis and benchmarking tools side by side"
-                    </div>
-                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
-                      "Find specific dataset from my research groups"
-                    </div>
-                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
-                      "Organize all citation sources and notes in one workspace"
-                    </div>
-                  </div>
-                </div>
-
-                {/* Development */}
-                <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-6 flex flex-col hover:shadow-xl transition-all">
-                  <div className="flex justify-start mb-4">
-                    <div className="w-20 h-20 rounded-full flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #d6e3f4 0%, #e5efd8 100%)' }}>
-                      <Icon.Layers className="w-10 h-10" style={{ color: '#4A6200' }} />
-                    </div>
-                  </div>
-                  <h4 className="text-xl font-bold text-left mb-4" style={{ color: '#313A00' }}>Development</h4>
-                  <div className="text-sm text-gray-700 mb-4 text-left">
-                    Streamline your development workflow with organized workspaces for code, documentation, testing, and deployment tools.
-                  </div>
-                  <div className="space-y-2 mb-6 flex-grow">
-                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
-                      "Open GitHub repo and API documentation in split view"
-                    </div>
-                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
-                      "Group all frontend development tabs by feature branch"
-                    </div>
-                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
-                      "Show code editor and test results side by side"
-                    </div>
-                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
-                      "Find deployment logs from my project groups"
-                    </div>
-                    <div className="text-sm text-gray-700 text-left px-3 py-2 rounded-lg" style={{ backgroundColor: '#F8FAF2' }}>
-                      "Organize all debugging tools and error tracking in one workspace"
-                    </div>
-                  </div>
-                </div>
-
-                {/* Custom Workflow */}
-                <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-6 flex flex-col hover:shadow-xl transition-all">
-                  <div className="flex justify-start mb-4">
-                    <div className="w-20 h-20 rounded-full flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #e5efd8 0%, #d6e3f4 100%)' }}>
-                      <Icon.Sliders className="w-10 h-10" style={{ color: '#4A6200' }} />
-                    </div>
-                  </div>
-                  <h4 className="text-xl font-bold text-left mb-4" style={{ color: '#313A00' }}>Your Workflow</h4>
-                  <div className="text-sm text-gray-700 mb-6 flex-grow text-left">
-                    Adapt these core commands to match your unique workflow. Configure Oasis to work exactly how you need it—whether you're in sales, marketing, research, development, or any other role.
-                  </div>
-                </div>
-              </div>
+              )}
             </Section>
             <Section 
               id="what-is-oasis" 
@@ -724,12 +600,12 @@ export default function EnterpriseBuyerGuidePage() {
               {/* Redesigned Product Cards with Images */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-16">
                 {/* Free Agentic Browser Card */}
-                <div className="group block">
+                <Link href="/products/free-agentic-browser" className="group block">
                   <div className="relative overflow-hidden rounded-2xl shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 h-full">
                     {/* Image Section */}
                     <div className="relative h-64 overflow-hidden bg-gradient-to-br from-[#F8FAF2] to-[#F2F6E8]">
                       <img 
-                        src="/images/welcom.jpeg" 
+                        src={getCloudinaryImageUrl("/images/welcom.jpeg")} 
                         alt="Free Agentic Browser Interface" 
                         className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
                       />
@@ -743,17 +619,22 @@ export default function EnterpriseBuyerGuidePage() {
                       <p className="text-center text-[#4A5745] mb-4">
                       Designed for personal productivity with AI-powered assistance and smart organization tools.
                     </p>
+                      <div className="flex justify-center">
+                        <span className="inline-flex items-center text-sm font-semibold text-[#4A6200] group-hover:underline">
+                          Learn more <span className="ml-1">→</span>
+                        </span>
                   </div>
                 </div>
                   </div>
+                </Link>
                 
                 {/* Enterprise Browser Card */}
-                <div className="group block">
+                <Link href="/products/enterprise-browser" className="group block">
                   <div className="relative overflow-hidden rounded-2xl shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 h-full">
                     {/* Image Section */}
                     <div className="relative h-64 overflow-hidden bg-gradient-to-br from-[#F8FAF2] to-[#F2F6E8]">
                       <img 
-                        src="/images/enterprise.jpeg" 
+                        src={getCloudinaryImageUrl("/images/enterprise.jpeg")} 
                         alt="Enterprise Browser Interface" 
                         className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
                       />
@@ -767,9 +648,14 @@ export default function EnterpriseBuyerGuidePage() {
                       <p className="text-center text-[#4A5745] mb-4">
                       Built for enterprise environments with enhanced security, compliance, and collaboration features.
                     </p>
+                      <div className="flex justify-center">
+                        <span className="inline-flex items-center text-sm font-semibold text-[#4A6200] group-hover:underline">
+                          Learn more <span className="ml-1">→</span>
+                        </span>
                   </div>
                 </div>
               </div>
+                </Link>
                     </div>
 
               {/* Interactive Feature Cards with Hover Reveal */}
@@ -800,7 +686,7 @@ export default function EnterpriseBuyerGuidePage() {
                         <div className="relative rounded-xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-500">
                           <div className="aspect-video bg-gray-100 overflow-hidden">
                             <img 
-                              src="/images/customs.png" 
+                              src={getCloudinaryImageUrl("/images/customs.png")} 
                               alt="Designed for How Your Mind Works" 
                               className="w-full h-full object-cover transform scale-100 group-hover:scale-110 transition-transform duration-700"
                             />
@@ -837,7 +723,7 @@ export default function EnterpriseBuyerGuidePage() {
                         <div className="relative rounded-xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-500">
                           <div className="aspect-video bg-gray-100 overflow-hidden">
                             <img 
-                              src="/images/ai-2.webp" 
+                              src={getCloudinaryImageUrl("/images/ai-2.webp")} 
                               alt="Deep AI Integration" 
                               className="w-full h-full object-cover transform scale-100 group-hover:scale-110 transition-transform duration-700"
                             />
@@ -868,6 +754,7 @@ export default function EnterpriseBuyerGuidePage() {
                           <p className="text-lg text-[#4A5745] leading-relaxed opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-96 transition-all duration-500 overflow-hidden">
                     You maintain control over your AI's learning and behavior. Additionally, maintaining security 
                     within an AI browser presents unique challenges that we specialize in solving. 
+                            <Link href="/security-guide" className="text-[#4A6200] hover:text-[#3E5300] ml-1 font-semibold underline" style={{ textDecoration: 'none' }}>Learn more about our security approach</Link>.
                           </p>
                         </div>
                       </div>
@@ -875,7 +762,7 @@ export default function EnterpriseBuyerGuidePage() {
                         <div className="relative rounded-xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-500">
                           <div className="aspect-video bg-gray-100 overflow-hidden">
                             <img 
-                              src="/images/trainable.png" 
+                              src={getCloudinaryImageUrl("/images/trainable.png")} 
                               alt="Trainable AI Companion & Security-First Design" 
                               className="w-full h-full object-cover transform scale-100 group-hover:scale-110 transition-transform duration-700"
                             />
@@ -935,84 +822,27 @@ export default function EnterpriseBuyerGuidePage() {
                 </div>
               }
             >
-              <p className="mb-8">
-                Enterprise browsers provide stronger security, more control, and better visibility than consumer browsers, 
-                while also improving user productivity and reducing IT complexity.
+              <p>
+                Oasis delivers comprehensive benefits across efficiency, security, and user experience. 
+                These advantages are organized into key areas that address the most critical enterprise 
+                browser challenges and opportunities.
               </p>
-              
-              <div className="space-y-8 max-w-6xl mx-auto">
-                {/* Security Container */}
-                <div>
-                  <div className="text-sm font-semibold text-[#4A6200] mb-4 uppercase tracking-wide text-left">Security</div>
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div className="relative bg-white/90 border border-white/80 rounded-xl px-5 py-4 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur-lg">
-                      <div className="absolute top-4 left-4">
-                        <div className="w-8 h-8 rounded-lg bg-[#F8FAF2] flex items-center justify-center" style={{ color: '#4A6200' }}>
-                          <Icon.Lock className="w-5 h-5" />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6 max-w-4xl mx-auto">
+                <div className="relative bg-white/90 border border-white/80 rounded-[26px] px-6 py-6 shadow-[0_25px_70px_rgba(32,47,0,0.14)] flex flex-col gap-4 backdrop-blur-lg">
+                  <h5 className="text-2xl font-semibold leading-tight text-[#1F2D00] mb-2">Business outcomes</h5>
+                  <ul className="list-disc list-inside space-y-2 text-left text-base text-[#4E5534]">
+                    <li>Reduce security stack spend by 15–30% via consolidation.</li>
+                    <li>Speed new-hire productivity by enabling same-day access.</li>
+                    <li>Decrease support tickets with built-in guardrails and guidance.</li>
+                  </ul>
                 </div>
-                      </div>
-                      <p className="text-base text-[#4E5534] leading-relaxed text-left pt-2 pl-10">
-                        Enhanced data protection and DLP (controls on copy/paste, download, printing, screenshots, watermarking).
-                      </p>
-                    </div>
-                    <div className="relative bg-white/90 border border-white/80 rounded-xl px-5 py-4 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur-lg">
-                      <div className="absolute top-4 left-4">
-                        <div className="w-8 h-8 rounded-lg bg-[#F8FAF2] flex items-center justify-center" style={{ color: '#4A6200' }}>
-                          <Icon.Shield className="w-5 h-5" />
-                        </div>
-                      </div>
-                      <p className="text-base text-[#4E5534] leading-relaxed text-left pt-2 pl-10">
-                        Built‑in threat detection and prevention for phishing, malware, risky sites, and malicious downloads.
-                      </p>
-                    </div>
-                    <div className="relative bg-white/90 border border-white/80 rounded-xl px-5 py-4 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur-lg">
-                      <div className="absolute top-4 left-4">
-                        <div className="w-8 h-8 rounded-lg bg-[#F8FAF2] flex items-center justify-center" style={{ color: '#4A6200' }}>
-                          <Icon.Key className="w-5 h-5" />
-                        </div>
-                      </div>
-                      <p className="text-base text-[#4E5534] leading-relaxed text-left pt-2 pl-10">
-                        Zero trust access to SaaS and internal web apps directly from the browser, often replacing or reducing VPN and VDI.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Productivity Container */}
-                <div>
-                  <div className="text-sm font-semibold text-[#4A6200] mb-4 uppercase tracking-wide text-left">Productivity</div>
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div className="relative bg-white/90 border border-white/80 rounded-xl px-5 py-4 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur-lg">
-                      <div className="absolute top-4 left-4">
-                        <div className="w-8 h-8 rounded-lg bg-[#F8FAF2] flex items-center justify-center" style={{ color: '#4A6200' }}>
-                          <Icon.Layout className="w-5 h-5" />
-                        </div>
-                      </div>
-                      <p className="text-base text-[#4E5534] leading-relaxed text-left pt-2 pl-10">
-                        New ergonomic workflows that adapt to how you work, with spatial organization and intuitive controls that reduce cognitive load and improve focus.
-                      </p>
-                    </div>
-                    <div className="relative bg-white/90 border border-white/80 rounded-xl px-5 py-4 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur-lg">
-                      <div className="absolute top-4 left-4">
-                        <div className="w-8 h-8 rounded-lg bg-[#F8FAF2] flex items-center justify-center" style={{ color: '#4A6200' }}>
-                          <Icon.Settings className="w-5 h-5" />
-                        </div>
-                      </div>
-                      <p className="text-base text-[#4E5534] leading-relaxed text-left pt-2 pl-10">
-                        Simplified IT operations by consolidating multiple security agents and web security products into the browser layer.
-                      </p>
-                    </div>
-                    <div className="relative bg-white/90 border border-white/80 rounded-xl px-5 py-4 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur-lg">
-                      <div className="absolute top-4 left-4">
-                        <div className="w-8 h-8 rounded-lg bg-[#F8FAF2] flex items-center justify-center" style={{ color: '#4A6200' }}>
-                          <Icon.DollarSign className="w-5 h-5" />
-                        </div>
-                      </div>
-                      <p className="text-base text-[#4E5534] leading-relaxed text-left pt-2 pl-10">
-                        Lower infrastructure and licensing costs by reducing reliance on legacy VPN, VDI, and separate web gateways.
-                      </p>
-                    </div>
-                  </div>
+                <div className="relative bg-white/90 border border-white/80 rounded-[26px] px-6 py-6 shadow-[0_25px_70px_rgba(32,47,0,0.14)] flex flex-col gap-4 backdrop-blur-lg">
+                  <h5 className="text-2xl font-semibold leading-tight text-[#1F2D00] mb-2">Technical capabilities</h5>
+                  <ul className="list-disc list-inside space-y-2 text-left text-base text-[#4E5534]">
+                    <li>Granular DLP, clipboard, and download policies at URL/app scope.</li>
+                    <li>Exportable audit logs; SIEM-friendly formats; API access.</li>
+                    <li>Configurable update channels and rollback options.</li>
+                  </ul>
                 </div>
               </div>
               
@@ -1069,7 +899,7 @@ export default function EnterpriseBuyerGuidePage() {
                           </div>
                           <div className="lg:w-1/2 relative min-h-[200px] lg:min-h-0 overflow-hidden">
                             <img 
-                              src="/images/securtiy.webp" 
+                              src={getCloudinaryImageUrl("/images/securtiy.webp")} 
                               alt="Zero Trust Security" 
                               className="w-full h-full object-cover scale-100"
                             />
@@ -1089,7 +919,7 @@ export default function EnterpriseBuyerGuidePage() {
                           </div>
                           <div className="lg:w-1/2 relative min-h-[200px] lg:min-h-0 overflow-hidden">
                             <img 
-                              src="/figma-imports/Security 1.webp" 
+                              src={getCloudinaryImageUrl("/images/data-protection-2.webp")} 
                               alt="Safe Browsing & Threat Protection" 
                               className="w-full h-full object-cover scale-100"
                             />
@@ -1101,7 +931,7 @@ export default function EnterpriseBuyerGuidePage() {
                           <div className="lg:w-1/2 p-8">
                             <h3 className="text-2xl font-bold mb-4" style={{ color: '#313A00' }}>Data Protection & DLP</h3>
                             <p className="text-lg text-[#4A5745] leading-relaxed text-left">
-                              An enterprise browser builds dynamic data protections into the browser itself,
+                              An enterprise browser builds dynamic data protections into the browser itself, A
                     enabling you to build policies that prevent data leakage without disrupting organizational 
                     workflows. Its data loss prevention (DLP) controls protect sensitive data from being improperly downloaded or 
                     uploaded before it leaves or enters the browser.
@@ -1109,7 +939,7 @@ export default function EnterpriseBuyerGuidePage() {
                           </div>
                           <div className="lg:w-1/2 relative min-h-[200px] lg:min-h-0 overflow-hidden">
                             <img 
-                              src="/images/data-protection-2.webp" 
+                              src={getCloudinaryImageUrl("/images/data-protection-2.webp")} 
                               alt="Data Protection & DLP" 
                               className="w-full h-full object-cover scale-100"
                             />
@@ -1126,10 +956,21 @@ export default function EnterpriseBuyerGuidePage() {
                     traffic inspection by decrypting SSL traffic. An enterprise browser offers visibility into 
                     browser behavior without any unnatural network traffic manipulation.
                   </p>
+                            <div className="mt-auto">
+                              <div className="inline-flex items-center gap-3 px-6 py-4 bg-gradient-to-r from-[#4A6200] to-[#5A7200] rounded-xl shadow-md">
+                                <div>
+                                  <div className="text-white font-bold text-lg leading-tight">3 Minutes</div>
+                                  <div className="text-white/90 text-xs mt-1">to open and close a phishing attempt investigation by The Bank of Marion</div>
+              </div>
+                    </div>
+                              <p className="text-[#4A5745] text-sm mt-3 ml-2">
+                                Previously took several hours
+                    </p>
+                  </div>
                           </div>
                           <div className="lg:w-1/2 relative min-h-[200px] lg:min-h-0 overflow-hidden">
                             <img 
-                              src="/images/visibility.webp" 
+                              src={getCloudinaryImageUrl("/images/visibility.webp")} 
                               alt="Visibility & Monitoring" 
                               className="w-full h-full object-cover scale-100"
                             />
@@ -1152,10 +993,21 @@ export default function EnterpriseBuyerGuidePage() {
                     account), with built-in ad blocking to remove distractions and speed up browsing, and 
                     integrated tools to speed up common workflows.
                   </p>
+                            <div className="mt-auto">
+                              <div className="inline-flex items-center gap-3 px-6 py-4 bg-gradient-to-r from-[#4A6200] to-[#5A7200] rounded-xl shadow-md">
+                                <div>
+                                  <div className="text-white font-bold text-lg leading-tight">80% Faster Launch</div>
+                                  <div className="text-white/90 text-xs mt-1">Point-of-sale system launch by a national retailer</div>
+                    </div>
+                    </div>
+                              <p className="text-[#4A5745] text-sm mt-3 ml-2">
+                                Saving 40 seconds on each launch
+                    </p>
+                  </div>
                           </div>
                           <div className="lg:w-1/2 relative min-h-[200px] lg:min-h-0 overflow-hidden">
                             <img 
-                              src="/images/productivity.webp" 
+                              src={getCloudinaryImageUrl("/images/productivity.webp")} 
                               alt="Productivity & Performance" 
                               className="w-full h-full object-cover scale-100"
                             />
@@ -1176,7 +1028,7 @@ export default function EnterpriseBuyerGuidePage() {
                           </div>
                           <div className="lg:w-1/2 relative min-h-[200px] lg:min-h-0 overflow-hidden">
                             <img 
-                              src="/images/applicaiton .webp" 
+                              src={getCloudinaryImageUrl("/images/applicaiton .webp")} 
                               alt="Application Provisioning" 
                               className="w-full h-full object-cover scale-100"
                             />
@@ -1197,7 +1049,7 @@ export default function EnterpriseBuyerGuidePage() {
                           </div>
                           <div className="lg:w-1/2 relative min-h-[200px] lg:min-h-0 overflow-hidden">
                             <img 
-                              src="/images/BYOD.png" 
+                              src={getCloudinaryImageUrl("/images/BYOD.png")} 
                               alt="Remote Access & BYOD" 
                               className="w-full h-full object-cover scale-100"
                             />
@@ -1223,7 +1075,7 @@ export default function EnterpriseBuyerGuidePage() {
                           </div>
                           <div className="lg:w-1/2 relative min-h-[300px] lg:min-h-[400px] overflow-hidden">
                             <img 
-                              src="/images/cost.webp" 
+                              src={getCloudinaryImageUrl("/images/cost.webp")} 
                               alt="Efficiency and Cost Savings" 
                               className="w-full h-full object-contain scale-110"
                             />
@@ -1244,7 +1096,7 @@ export default function EnterpriseBuyerGuidePage() {
                           </div>
                           <div className="lg:w-1/2 relative min-h-[300px] lg:min-h-[400px] overflow-hidden">
                             <img 
-                              src="/images/analytics.webp" 
+                              src={getCloudinaryImageUrl("/images/analytics.webp")} 
                               alt="Digital Experience & Analytics" 
                               className="w-full h-full object-contain scale-110"
                             />
@@ -1253,6 +1105,124 @@ export default function EnterpriseBuyerGuidePage() {
                       </div>
                     </div>
                   )}
+                </div>
+              </div>
+            </Section>
+            <Section 
+              id="common-use-cases" 
+              title="Common use cases" 
+              eyebrow="Real-World Applications"
+              centered={true}
+              kicker="How organizations use Oasis to solve business challenges"
+            >
+              <p className="mb-12 max-w-3xl mx-auto text-center">
+                Enterprise research teams require secure, efficient, and comprehensive tools to gather, 
+                analyze, and share information across various domains. Oasis provides the ideal platform 
+                for research-intensive workflows.
+              </p>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+                {/* Use Case Cards - Perplexity Style Grid */}
+                <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 transition-all hover:shadow-xl hover:-translate-y-1 group">
+                  <div className="h-48 bg-gray-100 overflow-hidden">
+                    <img src={getCloudinaryImageUrl("/images/sales.png")} alt="Sales Prospecting" className="w-full h-full object-cover transition-transform duration-500 scale-110" />
+                  </div>
+                  <div className="p-6 text-left">
+                    <h3 className="text-xl font-bold mb-3 text-left" style={{ color: '#313A00' }}>Sales Prospecting</h3>
+                    <p className="text-sm text-gray-600 mb-4 text-left">
+                      Secure access to LinkedIn Sales Navigator, CRM systems, and competitive intel platforms.
+                    </p>
+                    <ul className="text-xs space-y-1.5 text-gray-500 text-left list-none pl-0">
+                      <li className="flex items-start">• Automated data collection</li>
+                      <li className="flex items-start">• CRM integration</li>
+                      <li className="flex items-start">• Social media monitoring</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 transition-all hover:shadow-xl hover:-translate-y-1 group">
+                  <div className="h-48 bg-gray-100 overflow-hidden">
+                    <img src={getCloudinaryImageUrl("/images/market.png")} alt="Market Research" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                  </div>
+                  <div className="p-6 text-left">
+                    <h3 className="text-xl font-bold mb-3 text-left" style={{ color: '#313A00' }}>Market Research</h3>
+                    <p className="text-sm text-gray-600 mb-4 text-left">
+                      Comprehensive industry analysis, competitor monitoring, and trend identification.
+                    </p>
+                    <ul className="text-xs space-y-1.5 text-gray-500 text-left list-none pl-0">
+                      <li className="flex items-start">• Trend identification</li>
+                      <li className="flex items-start">• Competitor site monitoring</li>
+                      <li className="flex items-start">• Sentiment analysis</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 transition-all hover:shadow-xl hover:-translate-y-1 group">
+                  <div className="h-48 bg-gray-100 overflow-hidden">
+                    <img src={getCloudinaryImageUrl("/images/due-diligence.jpeg")} alt="Due Diligence" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                  </div>
+                  <div className="p-6 text-left">
+                    <h3 className="text-xl font-bold mb-3 text-left" style={{ color: '#313A00' }}>Due Diligence & M&A</h3>
+                    <p className="text-sm text-gray-600 mb-4 text-left">
+                      Thorough research for investment and M&A teams with strict confidentiality.
+                    </p>
+                    <ul className="text-xs space-y-1.5 text-gray-500 text-left list-none pl-0">
+                      <li className="flex items-start">• Financial statement analysis</li>
+                      <li className="flex items-start">• Risk assessment</li>
+                      <li className="flex items-start">• Legal document review</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 transition-all hover:shadow-xl hover:-translate-y-1 group">
+                  <div className="h-48 bg-gray-100 overflow-hidden">
+                    <img src={getCloudinaryImageUrl("/images/academic.png")} alt="Scientific Research" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                  </div>
+                  <div className="p-6 text-left">
+                    <h3 className="text-xl font-bold mb-3 text-left" style={{ color: '#313A00' }}>Scientific Research</h3>
+                    <p className="text-sm text-gray-600 mb-4 text-left">
+                      Secure access to academic databases and journals for R&D teams.
+                    </p>
+                    <ul className="text-xs space-y-1.5 text-gray-500 text-left list-none pl-0">
+                      <li className="flex items-start">• Database access (PubMed, IEEE)</li>
+                      <li className="flex items-start">• Literature review</li>
+                      <li className="flex items-start">• IP protection</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 transition-all hover:shadow-xl hover:-translate-y-1 group">
+                  <div className="h-48 bg-gray-100 overflow-hidden">
+                    <img src={getCloudinaryImageUrl("/images/legal.jpeg")} alt="Legal Compliance" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                  </div>
+                  <div className="p-6 text-left">
+                    <h3 className="text-xl font-bold mb-3 text-left" style={{ color: '#313A00' }}>Legal & Compliance</h3>
+                    <p className="text-sm text-gray-600 mb-4 text-left">
+                      Regulatory monitoring and case law analysis ensuring attorney-client privilege.
+                    </p>
+                    <ul className="text-xs space-y-1.5 text-gray-500 text-left list-none pl-0">
+                      <li className="flex items-start">• Case law research</li>
+                      <li className="flex items-start">• Regulatory monitoring</li>
+                      <li className="flex items-start">• Contract analysis</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 transition-all hover:shadow-xl hover:-translate-y-1 group">
+                  <div className="h-48 bg-gray-100 overflow-hidden">
+                    <img src={getCloudinaryImageUrl("/images/user.png")} alt="Customer Research" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                  </div>
+                  <div className="p-6 text-left">
+                    <h3 className="text-xl font-bold mb-3 text-left" style={{ color: '#313A00' }}>Customer Research</h3>
+                    <p className="text-sm text-gray-600 mb-4 text-left">
+                      User behavior analysis and market validation while protecting customer data.
+                    </p>
+                    <ul className="text-xs space-y-1.5 text-gray-500 text-left list-none pl-0">
+                      <li className="flex items-start">• Survey collection</li>
+                      <li className="flex items-start">• Journey mapping</li>
+                      <li className="flex items-start">• Brand monitoring</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </Section>
@@ -1548,22 +1518,22 @@ export default function EnterpriseBuyerGuidePage() {
             <Section 
               id="faqs" 
               title="FAQs" 
-              eyebrow="Frequent Questions About Oasis"
+              eyebrow="Frequent Questions About Enterprise Browsers"
               kicker="Comprehensive answers to technical and business questions"
               centered={true}
               right={
-                <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+                <div className="relative bg-white/90 border border-white/80 rounded-[26px] px-6 py-8 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur-lg">
                   <div className="text-center">
-                      <div className="w-16 h-16 bg-[#F8FAF2] rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg className="w-8 h-8 text-[#788B59]" fill="currentColor" viewBox="0 0 24 24">
+                    <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-5">
+                      <svg className="w-10 h-10 text-[#4A6200]" fill="currentColor" viewBox="0 0 24 24">
                         <rect x="3" y="3" width="7" height="7"/>
                         <rect x="14" y="3" width="7" height="7"/>
                         <rect x="14" y="14" width="7" height="7"/>
                         <rect x="3" y="14" width="7" height="7"/>
                       </svg>
                     </div>
-                    <h3 className="font-semibold text-gray-900 mb-2">Multi-View</h3>
-                    <p className="text-sm text-gray-600">
+                    <h3 className="text-xl font-semibold text-[#1F2D00] mb-3">Multi-View</h3>
+                    <p className="text-base text-[#4E5534]">
                       Work with multiple applications simultaneously
                     </p>
                   </div>
@@ -1571,62 +1541,64 @@ export default function EnterpriseBuyerGuidePage() {
               }
             >
               <div className="space-y-4 text-left">
-                <Accordion title="Will my existing web applications work with Oasis?">
+                <Accordion title="Will my existing web applications work with an enterprise browser?">
                   <p>
-                    Oasis ensures complete compatibility with any web application that functions properly in 
-                    standard browsers, providing identical rendering and functionality.
+                    Enterprise browsers like Oasis are built on the same Chromium foundation as popular browsers 
+                    including Chrome, Edge, and Brave. This ensures complete compatibility with any web application 
+                    that functions properly in standard browsers, providing identical rendering and functionality.
                   </p>
                 </Accordion>
 
-                <Accordion title="How does Oasis handle legacy Internet Explorer applications?">
+                <Accordion title="How do enterprise browsers handle legacy Internet Explorer applications?">
                   <p>
-                    Oasis provides Internet Explorer compatibility modes that automatically 
+                    Many enterprise browser solutions provide Internet Explorer compatibility modes that automatically 
                     switch to the legacy IE engine when needed. This allows organizations to maintain access to older 
                     applications while benefiting from modern browser security and management features.
                   </p>
                 </Accordion>
 
-                <Accordion title="Will Oasis slow down my applications?">
+                <Accordion title="Will an enterprise browser slow down my applications?">
                   <p>
-                    Oasis maintains the same speed and responsiveness as standard browsers for all web 
+                    Enterprise browsers maintain the same speed and responsiveness as standard browsers for all web 
                     applications. In fact, many users experience improved performance due to built-in ad blocking, 
                     tracker prevention, and optimized resource management that reduces unnecessary network requests.
                   </p>
                 </Accordion>
 
-                <Accordion title="What's the difference between Oasis and virtual desktop solutions?">
+                <Accordion title="What's the difference between enterprise browsers and virtual desktop solutions?">
                   <p>
                     While virtual desktop infrastructure (VDI) and Desktop-as-a-Service (DaaS) serve similar purposes, 
-                    Oasis offers significant advantages. VDI requires extensive infrastructure investments 
+                    enterprise browsers offer significant advantages. VDI requires extensive infrastructure investments 
                     in servers, networking, and virtualization platforms, resulting in high operational costs. VDI also 
                     introduces user experience challenges including session latency, visual artifacts, and performance 
-                    degradation. Migrating web and SaaS workloads from VDI to Oasis typically delivers 
+                    degradation. Migrating web and SaaS workloads from VDI to an enterprise browser typically delivers 
                     substantial cost reductions and superior user experience.
                   </p>
                 </Accordion>
 
-                <Accordion title="Does Oasis work with existing security service edge (SSE) solutions?">
+                <Accordion title="Do enterprise browsers work with existing security service edge (SSE) solutions?">
                   <p>
-                    Oasis integrates seamlessly with existing Security Service Edge (SSE) architectures, 
+                    Enterprise browsers integrate seamlessly with existing Security Service Edge (SSE) architectures, 
                     or can serve as a comprehensive alternative. By shifting security enforcement from the network 
-                    perimeter to the browser itself, organizations gain enhanced deployment flexibility. The browser 
-                    functions on both managed and unmanaged devices without requiring complex network routing or traffic 
+                    perimeter to the browser itself, organizations gain enhanced deployment flexibility. Enterprise browsers 
+                    function on both managed and unmanaged devices without requiring complex network routing or traffic 
                     inspection. This approach eliminates the need for application-specific API integrations while 
                     providing comprehensive security coverage.
                   </p>
                 </Accordion>
 
-                <Accordion title="Is a VPN required when using Oasis?">
+                <Accordion title="Is a VPN required when using an enterprise browser?">
                   <p>
-                    Oasis adapts to any available network connection on the device, including VPN, 
-                    Zero Trust Network Access (ZTNA), or proxy configurations from other vendors. Integrated ZTNA capabilities are built directly within the browser, simplifying access to internal 
+                    Enterprise browsers adapt to any available network connection on the device, including VPN, 
+                    Zero Trust Network Access (ZTNA), or proxy configurations from other vendors. Some solutions 
+                    include integrated ZTNA capabilities directly within the browser, simplifying access to internal 
                     applications and private resources without additional network infrastructure requirements.
                   </p>
               </Accordion>
 
-                <Accordion title="Can Oasis be deployed on personal or unmanaged devices?">
+                <Accordion title="Can enterprise browsers be deployed on personal or unmanaged devices?">
                   <p>
-                    Absolutely. Oasis is designed to function on any device, whether corporate-managed 
+                    Absolutely. Enterprise browsers are designed to function on any device, whether corporate-managed 
                     or personal (BYOD). All security and management policies are enforced directly through the browser 
                     application, independent of device management status. This enables flexible deployment scenarios 
                     where different organizations manage the browser and device separately, such as business process 
@@ -1634,11 +1606,21 @@ export default function EnterpriseBuyerGuidePage() {
                   </p>
               </Accordion>
 
-                <Accordion title="How does Oasis balance activity monitoring with user privacy?">
+                <Accordion title="Are enterprise browsers available for mobile devices?">
                   <p>
-                    Sophisticated activity monitoring capabilities balance organizational 
-                    security needs with user privacy expectations. Granular logging controls 
-                    focus on business-critical workflows while respecting personal browsing activities. User-facing privacy indicators clearly show when monitoring is active, 
+                    Many enterprise browser solutions provide mobile versions that extend the same security and 
+                    management capabilities to smartphones and tablets. These mobile enterprise browsers maintain 
+                    consistent policies across desktop and mobile environments, ensuring comprehensive coverage 
+                    for modern hybrid workforces.
+                  </p>
+                </Accordion>
+
+                <Accordion title="How do enterprise browsers balance activity monitoring with user privacy?">
+                  <p>
+                    Enterprise browsers provide sophisticated activity monitoring capabilities that balance organizational 
+                    security needs with user privacy expectations. These solutions offer granular logging controls that 
+                    focus on business-critical workflows while respecting personal browsing activities. Many enterprise 
+                    browsers include user-facing privacy indicators that clearly show when monitoring is active, 
                     fostering transparency and trust between employees and organizations.
                   </p>
               </Accordion>
@@ -1654,14 +1636,14 @@ export default function EnterpriseBuyerGuidePage() {
               id="getting-started-with-oasis" 
               className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] py-20 md:py-28 mb-0"
               style={{
-                backgroundImage: 'url(/images/desert-background-5.webp)',
+                backgroundImage: 'url(/images/desert-background-5.jpg)',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat'
               }}
             >
               {/* Overlay for text readability */}
-              <div className="absolute inset-0 bg-white/90"></div>
+              <div className="absolute inset-0 bg-white/60"></div>
               <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-6">
                   Ready to Transform Your Enterprise Browsing Experience?

@@ -250,7 +250,7 @@ export default function Retail({ retailBlogs }) {
               The retail sector faces unprecedented threats, with 92% of breaches linked to system intrusion and phishing attacks. Enterprise browsers provide critical protection for customer data while ensuring compliance and operational efficiency.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/buyers-guide" className="btn-primary inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline">
+              <Link href="/enterprise-buyer-guide" className="btn-primary inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline">
                 Read Buyer's Guide
               </Link>
               <Link href="/sales" className="btn-secondary inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline">

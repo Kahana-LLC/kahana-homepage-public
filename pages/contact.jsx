@@ -108,6 +108,7 @@ export default function ContactPage() {
           </div>
         )}
 
+        {/* Fixed height to prevent CLS */}
         <iframe
           data-tally-src="https://tally.so/r/w52BJN"
           width="100%"
@@ -118,6 +119,7 @@ export default function ContactPage() {
           title="Get In Touch"
           style={{ 
             border: 'none',
+            minHeight: '600px',
             opacity: isFormLoaded ? 1 : 0,
             transition: 'opacity 0.3s ease-in-out'
           }}

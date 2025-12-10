@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import Image from 'next/image';
+import { getCloudinaryImageUrl } from '../utils/cloudinary-mapper';
 
 const stats = [
   { value: '500+', label: 'Active Users' },
@@ -109,7 +110,7 @@ export default function CustomerSuccessSection() {
               <Image src="/logos/softmotive.svg" alt="Softmotive" width={158} height={48} />
             </div>
             <div className="col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1 opacity-50 hover:opacity-100 transition-opacity">
-              <Image src="/logos/kahana.svg" alt="Kahana" width={158} height={48} />
+              <Image src={getCloudinaryImageUrl("/assets/kahana_logo_transparent.svg")} alt="Kahana" width={158} height={48} />
             </div>
           </div>
         </div>

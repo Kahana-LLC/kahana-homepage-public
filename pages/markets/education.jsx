@@ -251,7 +251,7 @@ export default function Education({ educationBlogs }) {
               <Link href="/sales" className="btn-primary inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline">
                 Contact Sales
               </Link>
-              <Link href="/buyers-guide" className="btn-secondary inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline">
+              <Link href="/enterprise-buyer-guide" className="btn-secondary inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline">
                 Read Buyer's Guide
               </Link>
             </div>

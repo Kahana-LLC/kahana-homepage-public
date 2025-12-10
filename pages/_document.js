@@ -12,13 +12,14 @@ export default function Document() {
         <link rel="dns-prefetch" href="https://client.crisp.chat" />
         <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
         
-        {/* Preload critical fonts */}
+        {/* Preload critical fonts with highest priority for LCP optimization */}
         <link
           rel="preload"
           href="/fonts/BricolageGrotesque-VariableFont_opsz,wdth,wght.ttf"
           as="font"
           type="font/ttf"
           crossOrigin="anonymous"
+          fetchPriority="high"
         />
         <link
           rel="preload"
@@ -26,6 +27,7 @@ export default function Document() {
           as="font"
           type="font/ttf"
           crossOrigin="anonymous"
+          fetchPriority="high"
         />
         
         {/* Favicon */}
@@ -34,7 +36,7 @@ export default function Document() {
         <link rel="apple-touch-icon" href="/favicon.svg?v=2" />
         <link rel="shortcut icon" type="image/svg+xml" href="/favicon.svg?v=2" />
         
-        {/* Google tag (gtag.js) */}
+        {/* Google tag (gtag.js) - Defer to not block render */}
         <Script
           id="gtag-js"
           async
@@ -53,7 +55,7 @@ export default function Document() {
           }}
         />
 
-        {/* Note: Analytics scripts moved to _app.js to load after interactive */}
+        {/* Note: Analytics scripts moved to _app.js to load after interactive and not block LCP */}
       </Head>
       <body>
         {/* Google Tag Manager (noscript) */}

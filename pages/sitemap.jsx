@@ -20,7 +20,7 @@ const sitemapSections = [
       { text: 'Products Overview', href: '/products' },
       { text: 'Enterprise Browser', href: '/products/enterprise-browser' },
       { text: 'Web Application', href: '/products/web-application' },
-      { text: "Buyer's Guide", href: '/buyers-guide' }
+      { text: "Buyer's Guide", href: '/enterprise-buyer-guide' }
     ]
   },
   {

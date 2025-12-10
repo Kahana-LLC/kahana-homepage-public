@@ -5,6 +5,7 @@ import { motion, useInView } from 'framer-motion';
 import NavbarDup from '../components/NavbarDup';
 import SharedCTA from '../components/SharedCTA';
 import WhitePaperSocialShare from '../components/WhitePaperSocialShare';
+import { getCloudinaryImageUrl } from '../utils/cloudinary-mapper';
 
 // Animated Counter Component
 function AnimatedCounter({ start, end, duration = 2000, suffix = "", prefix = "" }) {
@@ -441,7 +442,7 @@ export default function WhitePaperPDF() {
                 <div className="flex flex-col items-center text-center max-w-sm">
                   <div className="w-32 h-32 rounded-full overflow-hidden mb-4 shadow-lg">
                     <img 
-                      src="/assets/headshots/jonathan_gans.jpg" 
+                      src={getCloudinaryImageUrl("/assets/headshots/jonathan_gans.jpg")} 
                       alt="Jonathan Gans, CEO of Kahana"
                       className="w-full h-full object-cover"
                     />
@@ -465,7 +466,7 @@ export default function WhitePaperPDF() {
                 <div className="flex flex-col items-center text-center max-w-sm">
                   <div className="w-32 h-32 rounded-full overflow-hidden mb-4 shadow-lg">
                     <img 
-                      src="/assets/headshots/adam_kershner.jpg" 
+                      src={getCloudinaryImageUrl("/assets/headshots/adam_kershner.jpg")} 
                       alt="Adam Kershner, COO of Kahana"
                       className="w-full h-full object-cover"
                     />
@@ -552,7 +553,7 @@ export default function WhitePaperPDF() {
                   </div>
                   <div className="flex justify-center items-center">
                     <img 
-                      src="/assets/image1.jpg" 
+                      src={getCloudinaryImageUrl("/assets/image1.jpg")} 
                       alt="Remote work and mobile productivity concept" 
                       className="rounded-xl shadow-lg w-full h-full object-cover"
                     />
@@ -607,7 +608,7 @@ export default function WhitePaperPDF() {
                 </div>
                 <div className="flex justify-center items-center">
                   <img 
-                    src="/assets/image2.jpg" 
+                    src={getCloudinaryImageUrl("/assets/image2.jpg")} 
                     alt="Research documentation and white paper analysis" 
                     className="rounded-xl shadow-lg w-full h-full object-cover"
                   />
@@ -963,7 +964,7 @@ export default function WhitePaperPDF() {
                     viewport={{ once: true, margin: "-100px" }}
                   >
                     <motion.img 
-                      src="/assets/image3.jpg" 
+                      src={getCloudinaryImageUrl("/assets/image3.jpg")} 
                       alt="Modern office workspace and collaborative environment" 
                       className="rounded-xl shadow-lg max-w-full h-auto"
                       initial={{ opacity: 0, scale: 0.9 }}
@@ -1236,7 +1237,7 @@ export default function WhitePaperPDF() {
                   </div>
                   <div className="flex justify-center items-center">
                     <img 
-                      src="/assets/image4.jpg" 
+                      src={getCloudinaryImageUrl("/assets/image4.jpg")} 
                       alt="Standing desk and ergonomic workspace setup" 
                       className="rounded-xl shadow-lg w-full h-full object-cover"
                     />
@@ -1316,7 +1317,7 @@ export default function WhitePaperPDF() {
                   </motion.div>
                   <div className="flex justify-center">
                     <img 
-                      src="/assets/image2.png" 
+                      src={getCloudinaryImageUrl("/assets/image2.png")} 
                       alt="Futuristic technology and digital innovation" 
                       className="rounded-xl shadow-lg max-w-full h-auto"
                     />
@@ -1478,7 +1479,7 @@ export default function WhitePaperPDF() {
                   </div>
                   <div className="flex justify-center items-center">
                     <img 
-                      src="/assets/image5.jpg" 
+                      src={getCloudinaryImageUrl("/assets/image5.jpg")} 
                       alt="AR glasses and technology concept" 
                       className="rounded-xl shadow-lg w-full h-full object-cover"
                     />
@@ -1554,7 +1555,7 @@ export default function WhitePaperPDF() {
                   </motion.div>
                   <div className="flex justify-center items-center">
                     <img 
-                      src="/assets/image6.jpg" 
+                      src={getCloudinaryImageUrl("/assets/image6.jpg")} 
                       alt="Voice control and gesture recognition technology" 
                       className="rounded-xl shadow-lg w-full h-full object-cover"
                     />
@@ -1618,7 +1619,7 @@ export default function WhitePaperPDF() {
                   </motion.div>
                   <div className="flex justify-center items-center">
                     <img 
-                      src="/assets/image7.jpg" 
+                      src={getCloudinaryImageUrl("/assets/image7.jpg" 
                       alt="AI technology and artificial intelligence concept" 
                       className="rounded-xl shadow-lg w-full h-full object-cover"
                     />
@@ -1729,7 +1730,7 @@ export default function WhitePaperPDF() {
                   </motion.div>
                   <div className="flex justify-center items-center">
                     <img 
-                      src="/assets/image8.jpg" 
+                      src={getCloudinaryImageUrl("/assets/image8.jpg" 
                       alt="Technical engineering and AR development" 
                       className="rounded-xl shadow-lg w-full h-full object-cover"
                     />
@@ -1862,7 +1863,7 @@ export default function WhitePaperPDF() {
                   </div>
                   <div className="flex justify-center items-center">
                     <img 
-                      src="/assets/image9.jpg" 
+                      src={getCloudinaryImageUrl("/assets/image9.jpg" 
                       alt="Innovation and technology development" 
                       className="rounded-xl shadow-lg w-full h-full object-cover"
                     />
@@ -1998,7 +1999,7 @@ export default function WhitePaperPDF() {
                     viewport={{ once: true, margin: "-100px" }}
                   >
                     <motion.img 
-                      src="/assets/image10.jpg" 
+                      src={getCloudinaryImageUrl("/assets/image10.jpg" 
                       alt="Business analytics dashboard and data visualization" 
                       className="rounded-xl shadow-lg max-w-full h-auto"
                       initial={{ opacity: 0, scale: 0.9 }}
@@ -2137,7 +2138,7 @@ export default function WhitePaperPDF() {
                     </div>
                     <div className="flex justify-center items-center">
                       <img 
-                        src="/assets/image11.jpg" 
+                        src={getCloudinaryImageUrl("/assets/image11.jpg" 
                         alt="Google Android and mobile AR technology" 
                         className="rounded-xl shadow-lg w-full h-full object-cover"
                       />
@@ -2196,7 +2197,7 @@ export default function WhitePaperPDF() {
                     </div>
                     <div className="flex justify-center items-center">
                       <img 
-                        src="/assets/image12.jpg" 
+                        src={getCloudinaryImageUrl("/assets/image12.jpg" 
                         alt="Microsoft HoloLens and mixed reality technology" 
                         className="rounded-xl shadow-lg w-full h-full object-cover"
                       />

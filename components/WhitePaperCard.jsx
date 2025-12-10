@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { FaRegCalendarAlt, FaRegClock, FaDownload, FaFilePdf } from 'react-icons/fa';
 import { getAuthorDetails } from '../utils/authorUtils';
+import { getCloudinaryImageUrl } from '../utils/cloudinary-mapper';
 
 export default function WhitePaperCard({ whitePaper }) {
   const authors = getAuthorDetails(whitePaper.authors);
@@ -23,12 +24,12 @@ export default function WhitePaperCard({ whitePaper }) {
       {/* Cover Image */}
       <div className="relative h-48 w-full">
         <Image
-          src={whitePaper.coverImage || '/assets/kahana_blog_image.jpg'}
+          src={getCloudinaryImageUrl(whitePaper.coverImage || '/assets/kahana_blog_image.jpg')}
           alt={whitePaper.title}
           fill
           className="object-cover"
           onError={(e) => {
-            e.target.src = '/assets/kahana_blog_image.jpg';
+            e.target.src = getCloudinaryImageUrl('/assets/kahana_blog_image.jpg');
           }}
         />
         {whitePaper.featured && (
@@ -108,13 +109,13 @@ export default function WhitePaperCard({ whitePaper }) {
               {authors.slice(0, 2).map((author, index) => (
                 <div key={index} className="relative">
                   <Image
-                    src={author.avatar || '/assets/headshots/adam-kershner.jpg'}
+                    src={author.avatar || getCloudinaryImageUrl('/assets/headshots/adam-kershner.jpg')}
                     alt={author.name}
                     width={32}
                     height={32}
                     className="rounded-full border-2 border-white"
                     onError={(e) => {
-                      e.target.src = '/assets/headshots/adam-kershner.jpg';
+                      e.target.src = getCloudinaryImageUrl('/assets/headshots/adam-kershner.jpg');
                     }}
                   />
                 </div>

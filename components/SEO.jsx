@@ -17,7 +17,7 @@ const SEO = ({
     '@type': 'Organization',
     name: 'Kahana',
     url: 'https://kahana.co',
-    logo: 'https://kahana.co/logo.png',
+    logo: 'https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219991/kahana-homepage/public/kahana_logo_transparent.svg',
     sameAs: [
       'https://www.linkedin.com/company/kahana-co',
       'https://twitter.com/kahanaHQ',

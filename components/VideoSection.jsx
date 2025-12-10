@@ -26,17 +26,16 @@ export default function VideoSection() {
             </div>
           </div>
 
-          {/* Right side - Video */}
+          {/* Right side - Video - Fixed aspect ratio to prevent CLS */}
           <div className="lg:col-span-7 mt-16 lg:mt-0 flex items-center justify-center">
-            <div className="w-full h-56 sm:h-72 md:h-96 lg:h-[28rem] rounded-2xl overflow-hidden shadow-2xl flex items-center justify-center bg-black">
+            <div className="w-full aspect-video rounded-2xl overflow-hidden shadow-2xl flex items-center justify-center bg-black">
               <iframe
-                className="w-full h-full min-h-[14rem]"
+                className="w-full h-full"
                 src="https://www.youtube.com/embed/05-oP8CNl8Y"
                 title="Oasis AI-Powered Browser Demo"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
-                style={{ minHeight: '14rem' }}
               ></iframe>
             </div>
           </div>

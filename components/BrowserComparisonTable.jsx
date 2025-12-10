@@ -59,6 +59,25 @@ const BrowserComparisonTable = () => {
       return map;
     }, []);
 
+  // Filter presets
+  const filterPresets = {
+    'enterprise': {
+      name: 'Enterprise Only',
+      filters: { type: ['Enterprise'] }
+    },
+    'consumer': {
+      name: 'Consumer Browsers',
+      filters: { type: ['Consumer'] }
+    },
+    'ai-powered': {
+      name: 'AI-Powered',
+      filters: { aiFeatures: ['Anthropic/Deepgram AI integrations', 'Google AI (search, autofill, smart suggestions)', 'Microsoft Copilot, Bing AI', 'Aria AI assistant'] }
+    },
+    'privacy-focused': {
+      name: 'Privacy-Focused',
+      filters: { whoUsesIt: ['Privacy-conscious users, open-source advocates', 'Privacy-first, ad-block fans'] }
+    }
+  };
 
   // Close filter dropdown when clicking outside
   useEffect(() => {
@@ -121,6 +140,15 @@ const BrowserComparisonTable = () => {
     });
     setSearchTerm('');
   };
+
+  const applyPreset = (presetKey) => {
+    const preset = filterPresets[presetKey];
+        // Clear existing filters and apply the preset's filters
+        setFilters({
+            name: [], type: [], whoUsesIt: [], platforms: [], aiFeatures: [],
+      ...preset.filters
+        });
+    };
 
     const toggleSelectedBrowser = (idOrName) => {
         const key = browserData[idOrName] ? idOrName : (NAME_TO_KEY[idOrName] || idOrName);
@@ -289,12 +317,12 @@ const BrowserComparisonTable = () => {
             <button
               onClick={exportToCSV}
               className="btn-secondary inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold transition-all disabled:opacity-50 disabled:cursor-not-allowed"
-              disabled={comparisonData.length === 0}
+                            disabled={comparisonData.length === 0}
             >
               <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
               </svg>
-              Export CSV ({comparisonData.length})
+                            Export CSV ({comparisonData.length})
             </button>
             <div className="relative" ref={filterRef}>
               <button
@@ -345,6 +373,19 @@ const BrowserComparisonTable = () => {
               )}
             </div>
           </div>
+        </div>
+
+        {/* Filter Presets */}
+                 <div className="flex flex-wrap gap-2 px-6 pb-4">
+          {Object.entries(filterPresets).map(([key, preset]) => (
+            <button
+              key={key}
+              onClick={() => applyPreset(key)}
+                             className="px-4 py-2 text-xs font-semibold rounded-full transition-all hover:scale-105 btn-secondary"
+            >
+              {preset.name}
+            </button>
+          ))}
         </div>
       </div>
 
@@ -479,7 +520,7 @@ export default BrowserComparisonTable;
 //     },
 //     'ai-powered': {
 //       name: 'AI-Powered',
-//       filters: { aiFeatures: ['Built into the core', 'Google AI (search, autofill, smart suggestions)', 'Microsoft Copilot, Bing AI', 'Aria AI assistant'] }
+//       filters: { aiFeatures: ['Anthropic/Deepgram AI integrations', 'Google AI (search, autofill, smart suggestions)', 'Microsoft Copilot, Bing AI', 'Aria AI assistant'] }
 //     },
 //     'privacy-focused': {
 //       name: 'Privacy-Focused',
