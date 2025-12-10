@@ -7,6 +7,16 @@
 
 const CLOUD_NAME = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME;
 
+// Log configuration status (only in browser console, not server logs)
+if (typeof window !== 'undefined') {
+  if (CLOUD_NAME) {
+    console.log(`[Cloudinary] Configured with cloud name: ${CLOUD_NAME}`);
+  } else {
+    console.error('[Cloudinary] ⚠️ NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME is not set! Images will fallback to local paths.');
+    console.error('[Cloudinary] To fix: Set NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME in Heroku config vars');
+  }
+}
+
 /**
  * Generate a Cloudinary image URL with optimizations
  * 
@@ -23,7 +33,13 @@ const CLOUD_NAME = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME;
  */
 export function getCloudinaryUrl(publicId, options = {}) {
   if (!CLOUD_NAME) {
-    console.warn('Cloudinary cloud name not configured');
+    if (typeof window !== 'undefined') {
+      // Client-side: log warning
+      console.warn('[Cloudinary] Cloud name not configured. Set NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME environment variable.');
+    } else {
+      // Server-side: log error
+      console.error('[Cloudinary] NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME is not set in environment variables.');
+    }
     return '';
   }
 
@@ -104,6 +120,30 @@ export function getCloudinaryImageProps(publicId, options = {}) {
     height: height || 800,
     alt: publicId, // You should override this with actual alt text
   };
+}
+
+/**
+ * Diagnostic function to check Cloudinary configuration
+ * Call this in browser console to verify setup
+ */
+export function checkCloudinaryConfig() {
+  const config = {
+    cloudName: CLOUD_NAME || 'NOT SET',
+    isConfigured: !!CLOUD_NAME,
+    environment: typeof window !== 'undefined' ? 'client' : 'server',
+  };
+  
+  if (typeof window !== 'undefined') {
+    console.log('[Cloudinary] Configuration check:', config);
+    if (!CLOUD_NAME) {
+      console.error('[Cloudinary] ❌ Configuration issue: NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME is missing');
+      console.error('[Cloudinary] Set it in Heroku: heroku config:set NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=dlhpqrucv');
+    } else {
+      console.log('[Cloudinary] ✅ Configuration looks good!');
+    }
+  }
+  
+  return config;
 }
 
 // Note: Upload functions have been moved to utils/cloudinary-upload.js

@@ -33,8 +33,12 @@ function getPathMapping() {
         pathMapping[`/${normalizedPath}`] = item.publicId;
         pathMapping[`public/${normalizedPath}`] = item.publicId;
       });
+      
+      if (typeof window !== 'undefined') {
+        console.log(`[Cloudinary] Loaded ${Object.keys(pathMapping).length} image mappings`);
+      }
     } catch (error) {
-      console.warn('Could not load Cloudinary mapping:', error);
+      console.warn('[Cloudinary] Could not load cloudinary-mapping.json:', error.message);
       pathMapping = {};
     }
   }
@@ -50,7 +54,12 @@ function getPathMapping() {
  * @returns {string} Cloudinary URL or original path if not found
  */
 export function getCloudinaryImageUrl(localPath, options = {}) {
-  if (!localPath) return localPath;
+  if (!localPath) {
+    if (typeof window !== 'undefined') {
+      console.warn('[Cloudinary] getCloudinaryImageUrl called with empty path');
+    }
+    return localPath;
+  }
   
   // If it's already a Cloudinary URL or external URL, return as-is
   if (localPath.startsWith('http://') || 
@@ -90,15 +99,27 @@ export function getCloudinaryImageUrl(localPath, options = {}) {
   
   if (publicId) {
     // Return Cloudinary URL with optimizations
-    return getCloudinaryUrl(publicId, {
+    const cloudinaryUrl = getCloudinaryUrl(publicId, {
       format: 'auto',
       quality: 'auto:good',
       ...options,
     });
+    
+    // If Cloudinary is not configured (returns empty string), fallback to local path
+    if (!cloudinaryUrl) {
+      if (typeof window !== 'undefined') {
+        console.warn(`[Cloudinary] Cloud name not configured, falling back to local path: ${localPath}`);
+      }
+      return localPath;
+    }
+    
+    return cloudinaryUrl;
   }
   
   // If not found in mapping, return original path (fallback)
-  console.warn(`Cloudinary mapping not found for: ${localPath}`);
+  if (typeof window !== 'undefined') {
+    console.warn(`[Cloudinary] Mapping not found for: ${localPath}, using local path`);
+  }
   return localPath;
 }
 
