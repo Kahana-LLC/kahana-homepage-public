@@ -14,8 +14,9 @@ const nextConfig = {
       "firebasestorage.googleapis.com", // Domain for Firebase Storage images
       "images.pexels.com", // Domain for Pexels images
       "kahana.co",
+      "res.cloudinary.com", // Domain for Cloudinary CDN images
     ],
-    unoptimized: true, // Allow unoptimized local images
+    unoptimized: true, // Allow unoptimized local images (Cloudinary handles optimization)
   },
 
   // Suppress build logs
