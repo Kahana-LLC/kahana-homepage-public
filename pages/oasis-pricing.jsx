@@ -4,6 +4,7 @@ import Script from 'next/script';
 import Link from 'next/link';
 import SEO from '../components/SEO';
 import FadeInSection from '../components/FadeInSection';
+import { getCloudinaryImageUrl } from '../utils/cloudinary-mapper';
 
 const pricingTiers = [
   {
@@ -139,7 +140,7 @@ export default function OasisPricing() {
       <SEO 
         title="Oasis Pricing - Choose Your Plan"
         description="Select the perfect Oasis plan for your workflow. From free exploration to enterprise-scale solutions, find the right fit for your AI-powered workspace needs."
-        image="https://kahana.co/assets/oasis-browser-preview.png"
+        image={getCloudinaryImageUrl('/assets/oasis-browser-preview.png')}
         url="https://kahana.co/oasis-pricing"
         type="website"
         schema={pricingSchema}
@@ -173,7 +174,7 @@ export default function OasisPricing() {
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: 'url(/images/desert-background-5.webp)',
+            backgroundImage: `url(${getCloudinaryImageUrl('/images/desert-background-5.webp')})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat'

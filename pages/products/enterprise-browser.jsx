@@ -4,6 +4,7 @@ import Script from 'next/script';
 import Image from 'next/image';
 import Link from 'next/link';
 import SEO from '../../components/SEO';
+import { getCloudinaryImageUrl } from '../../utils/cloudinary-mapper';
 
 export default function EnterpriseBrowser() {
   // Enterprise browser specific schema
@@ -30,7 +31,7 @@ export default function EnterpriseBrowser() {
       'Smart Navigation',
       'AI-Powered Assistant'
     ],
-    screenshot: 'https://kahana.co/assets/oasis-browser-preview.png',
+    screenshot: getCloudinaryImageUrl('/assets/oasis-browser-preview.png'),
     softwareVersion: '1.0',
     publisher: {
       '@type': 'Organization',
@@ -45,7 +46,7 @@ export default function EnterpriseBrowser() {
       <SEO 
         title="Oasis - Enterprise Browser for Secure Organization & Productivity"
         description="Stay organized and focused with Kahana's Oasis Enterprise Browser. Features enterprise-grade security, organization tools, and collaboration features for enhanced productivity."
-        image="https://kahana.co/assets/oasis-browser-preview.png"
+        image={getCloudinaryImageUrl('/assets/oasis-browser-preview.png')}
         url="https://kahana.co/products/enterprise-browser"
         type="product"
         schema={browserSchema}
@@ -102,7 +103,7 @@ export default function EnterpriseBrowser() {
           <div className="flex justify-center w-full">
             <div className="w-full max-w-full">
               <Image
-                src="/images/enterprise.jpeg"
+                src={getCloudinaryImageUrl("/images/enterprise.jpeg")}
                 alt="Oasis Enterprise Browser Interface"
                 width={1200}
                 height={800}
