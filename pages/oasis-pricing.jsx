@@ -140,7 +140,7 @@ export default function OasisPricing() {
       <SEO 
         title="Oasis Pricing - Choose Your Plan"
         description="Select the perfect Oasis plan for your workflow. From free exploration to enterprise-scale solutions, find the right fit for your AI-powered workspace needs."
-        image={getCloudinaryImageUrl('/assets/oasis-browser-preview.png')}
+        image={getCloudinaryImageUrl('/assets/oasis-browser-preview.png', { width: 1200, quality: 'auto:good' })}
         url="https://kahana.co/oasis-pricing"
         type="website"
         schema={pricingSchema}
@@ -174,7 +174,7 @@ export default function OasisPricing() {
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url(${getCloudinaryImageUrl('/images/desert-background-5.webp')})`,
+            backgroundImage: `url(${getCloudinaryImageUrl('/images/desert-background-5.webp', { width: 1920, quality: 'auto:good' })})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat'
