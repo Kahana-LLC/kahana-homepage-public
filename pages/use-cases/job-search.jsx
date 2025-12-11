@@ -5,6 +5,7 @@ import NavBar from '../../components/NavbarDup';
 import VideoSection from '../../components/VideoSection';
 import DiscordCTA from '../../components/DiscordCTA';
 import Script from 'next/script';
+import { getCloudinaryImageUrl } from '../../utils/cloudinary-mapper';
 
 const supportLinks = [
   {
@@ -88,9 +89,10 @@ export default function JobSearchWaitlist() {
                 <div className="w-full max-w-6xl mx-auto px-4 relative">
                   <div className="w-full mx-auto overflow-hidden rounded-2xl shadow-2xl">
                     <img
-                      src="/images/Welcome to Oasis.webp"
+                      src={getCloudinaryImageUrl("/images/Welcome to Oasis.webp", { width: 1200, quality: 'auto:good' })}
                       alt="Welcome to Oasis"
                       className="w-full h-auto"
+                      loading="lazy"
                     />
                   </div>
                 </div>

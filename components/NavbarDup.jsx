@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import whiteKahanaLogo from '../assets/kahana_logo_transparent.svg';
+import { getCloudinaryImageUrl } from '../utils/cloudinary-mapper';
 
 function NavBar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -745,9 +746,10 @@ function NavBar() {
                   <Link href="/enterprise-buyer-guide" className="block p-4 bg-gradient-to-r from-[#66C2BE]/5 to-[#8CB7D0]/5 rounded-lg border border-[#66C2BE]/20 hover:from-[#66C2BE]/10 hover:to-[#8CB7D0]/10 hover:border-[#66C2BE]/30 transition-all duration-200 no-underline" onClick={() => setOpenDropdown(null)}>
                     <div className="w-full h-32 rounded-lg overflow-hidden mb-3">
                       <img 
-                        src="/assets/pexels-kamo11235-667838.jpg" 
+                        src={getCloudinaryImageUrl("/assets/pexels-kamo11235-667838.jpg", { width: 280, height: 160, quality: 'auto:good' })} 
                         alt="Enterprise Browser Buyer Guide"
                         className="w-full h-full object-cover"
+                        loading="lazy"
                       />
                     </div>
                     <div className="font-semibold text-gray-900 text-sm leading-tight no-underline">Enterprise Browser Buyer Guide</div>
@@ -877,9 +879,10 @@ function NavBar() {
             <Link href="/enterprise-buyer-guide" className="mobile-link flex items-center space-x-3 p-3 bg-gradient-to-r from-[#66C2BE]/5 to-[#8CB7D0]/5 rounded-lg border border-[#66C2BE]/20 hover:from-[#66C2BE]/10 hover:to-[#8CB7D0]/10 hover:border-[#66C2BE]/30 transition-all duration-200 no-underline">
               <div className="flex-shrink-0 w-12 h-12 rounded-lg overflow-hidden">
                 <img 
-                  src="/assets/pexels-kamo11235-667838.jpg" 
+                  src={getCloudinaryImageUrl("/assets/pexels-kamo11235-667838.jpg", { width: 48, height: 48, quality: 'auto:good' })} 
                   alt="Enterprise Browser Buyer Guide"
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
               </div>
               <div className="flex-1">
