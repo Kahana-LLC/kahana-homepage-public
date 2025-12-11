@@ -31,7 +31,7 @@ export default function EnterpriseBrowser() {
       'Smart Navigation',
       'AI-Powered Assistant'
     ],
-    screenshot: getCloudinaryImageUrl('/assets/oasis-browser-preview.png'),
+    screenshot: getCloudinaryImageUrl('/assets/oasis-browser-preview.png', { width: 1200, quality: 'auto:good' }),
     softwareVersion: '1.0',
     publisher: {
       '@type': 'Organization',
@@ -46,7 +46,7 @@ export default function EnterpriseBrowser() {
       <SEO 
         title="Oasis - Enterprise Browser for Secure Organization & Productivity"
         description="Stay organized and focused with Kahana's Oasis Enterprise Browser. Features enterprise-grade security, organization tools, and collaboration features for enhanced productivity."
-        image={getCloudinaryImageUrl('/assets/oasis-browser-preview.png')}
+        image={getCloudinaryImageUrl('/assets/oasis-browser-preview.png', { width: 1200, quality: 'auto:good' })}
         url="https://kahana.co/products/enterprise-browser"
         type="product"
         schema={browserSchema}
@@ -103,7 +103,7 @@ export default function EnterpriseBrowser() {
           <div className="flex justify-center w-full">
             <div className="w-full max-w-full">
               <Image
-                src={getCloudinaryImageUrl("/images/enterprise.jpeg")}
+                src={getCloudinaryImageUrl("/images/enterprise.jpeg", { width: 1200, quality: 'auto:good' })}
                 alt="Oasis Enterprise Browser Interface"
                 width={1200}
                 height={800}
