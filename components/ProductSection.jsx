@@ -46,8 +46,8 @@ export default function ProductSection() {
             <div className="relative overflow-hidden rounded-[36px] border border-white/80 bg-white/80 p-4 shadow-[0_35px_120px_rgba(20,32,0,0.18)] backdrop-blur">
               <div className="relative w-full aspect-[16/10] rounded-[28px] overflow-hidden">
                 <Image
-                  src={getCloudinaryImageUrl("/images/Welcome to Oasis.webp")}
-                  alt="Welcome to Oasis"
+                  src={getCloudinaryImageUrl("/images/Welcome to Oasis.webp", { width: 1200, quality: 'auto:good' })}
+                alt="Welcome to Oasis"
                   fill
                   priority
                   sizes="(max-width: 640px) 100vw, (max-width: 768px) 90vw, (max-width: 1024px) 80vw, 1200px"
