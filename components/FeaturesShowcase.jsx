@@ -7,25 +7,25 @@ const conceptCards = [
   {
     title: "Ease with Tab Grouping",
     link: "/solutions/external-workforce",
-    image: getCloudinaryImageUrl("/figma-imports/Tab Groups.webp"),
+    image: getCloudinaryImageUrl("/figma-imports/Tab Groups.webp", { width: 800, quality: 'auto:good' }),
     description: "Organize your chaos into dedicated workspaces, keeping your current task in focus and the rest out of sight."
   },
   {
     title: "Zero Trust Security",
     link: "/solutions/zero-trust-security",
-    image: getCloudinaryImageUrl("/figma-imports/Security 1.webp"),
+    image: getCloudinaryImageUrl("/figma-imports/Security 1.webp", { width: 800, quality: 'auto:good' }),
     description: "Stay protected through continuous verification and calm, invisible security."
   },
   {
     title: "Homepage Personalization",
     link: "/solutions/privileged-user-management",
-    image: getCloudinaryImageUrl("/figma-imports/New Tab Page.webp"),
+    image: getCloudinaryImageUrl("/figma-imports/New Tab Page.webp", { width: 800, quality: 'auto:good' }),
     description: "Start every session in a space designed by you, free from distractions and tuned to your mood."
   },
   {
     title: "Secure Web Browsing",
     link: "/solutions/secure-browsing",
-    image: getCloudinaryImageUrl("/figma-imports/Security 2.webp"),
+    image: getCloudinaryImageUrl("/figma-imports/Security 2.webp", { width: 800, quality: 'auto:good' }),
     description: "Browse freely with built-in protection that feels natural, not intrusive."
   }
 ];
@@ -188,4 +188,4 @@ export default function FeaturesShowcase() {
       </div>
     </div>
   );
-}
+} 

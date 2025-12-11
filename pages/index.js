@@ -122,19 +122,19 @@ export default function Home({ blogPosts }) {
   const whyOasisCards = [
     {
       title: "Created to bring calm and focus back to browsing",
-      image: getCloudinaryImageUrl("/figma-imports/er.webp"),
+      image: getCloudinaryImageUrl("/figma-imports/er.webp", { width: 1000, quality: 'auto:good' }),
       imageAlt: "Serene illustration representing focused Oasis browsing",
       loading: "eager",
     },
     {
       title: "Makes browsing beautiful and natural",
-      image: getCloudinaryImageUrl("/figma-imports/Frame 1321315005.webp"),
+      image: getCloudinaryImageUrl("/figma-imports/Frame 1321315005.webp", { width: 1000, quality: 'auto:good' }),
       imageAlt: "Screenshot showcasing clutter-free Oasis browsing",
       loading: "eager",
     },
     {
       title: "Artificial Intelligence (AI) browser that adapts to you",
-      image: getCloudinaryImageUrl("/figma-imports/Summarize with AI 3.webp"),
+      image: getCloudinaryImageUrl("/figma-imports/Summarize with AI 3.webp", { width: 1000, quality: 'auto:good' }),
       imageAlt: "Illustration of Oasis adapting to the user",
       loading: "eager",
     },
