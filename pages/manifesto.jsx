@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
+import { getCloudinaryImageUrl } from '../utils/cloudinary-mapper';
 
 export default function Manifesto() {
   useEffect(() => {
@@ -55,7 +56,7 @@ export default function Manifesto() {
             <div className="flex justify-center mb-12">
               <div className="bg-white p-6 rounded-2xl shadow-lg">
                 <Image
-                  src="/images/kahana_mascot.png"
+                  src={getCloudinaryImageUrl("/images/kahana_mascot.png", { width: 300, height: 300, quality: 'auto:good' })}
                   alt="Kahana Sloth Mascot"
                   width={300}
                   height={300}
