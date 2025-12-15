@@ -90,7 +90,7 @@ const faqs = [
   },
   {
     question: 'What does Oasis cost?',
-    answer: 'Oasis offers flexible pricing starting with a free plan that includes 2,000 credits monthly. Paid plans range from $20/month for Pro users to $250/month for Ultra power users. Team plans feature per-seat pricing starting at $40/month with custom options for larger organizations.'
+    answer: 'Oasis offers flexible pricing starting with a free plan that includes 2,000 credits monthly. Paid plans range from $20/month for Zen users to $250/month for Nirvana power users. Team plans feature per-seat pricing starting at $40/month with custom options for larger organizations.'
   },
   {
     question: 'Can I change plans or cancel anytime?',

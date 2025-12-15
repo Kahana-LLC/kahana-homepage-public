@@ -63,6 +63,21 @@ export default function OAuthCallback() {
       // Success - we have authorization code or tokens
       setStatus('success');
       setStatusMessage('Authentication Successful!');
+      
+      // Check if there's a pending Stripe checkout URL
+      const pendingCheckout = sessionStorage.getItem('pendingStripeCheckout');
+      
+      if (pendingCheckout) {
+        // Clear the stored checkout URL
+        sessionStorage.removeItem('pendingStripeCheckout');
+        // Redirect to Stripe checkout
+        setDetails('Redirecting to checkout...');
+        setTimeout(() => {
+          window.location.href = pendingCheckout;
+        }, 1000);
+        return;
+      }
+      
       setDetails('Redirecting to Oasis Browser...');
       
       // Store auth data in localStorage for the assistant to pick up
