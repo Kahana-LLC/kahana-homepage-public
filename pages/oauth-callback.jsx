@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
+import { createClient } from '@/utils/supabase';
 
 export default function OAuthCallback() {
+  const router = useRouter();
   const [status, setStatus] = useState('loading');
   const [statusMessage, setStatusMessage] = useState('Processing authentication...');
   const [details, setDetails] = useState('');
@@ -11,7 +14,7 @@ export default function OAuthCallback() {
     processOAuthCallback();
   }, []);
 
-  const processOAuthCallback = () => {
+  const processOAuthCallback = async () => {
     const urlParams = new URLSearchParams(window.location.search);
     const hashParams = new URLSearchParams(window.location.hash.substring(1));
     
@@ -45,82 +48,73 @@ export default function OAuthCallback() {
           timestamp: Date.now(),
           source: 'kahana-callback'
         }));
-        
-        // Also try to send error message to parent window
-        try {
-          if (window.opener) {
-            window.opener.postMessage({
-              type: 'oasis_auth_error',
-              data: { error, description: errorDescription }
-            }, '*');
-          }
-        } catch (e) {
-          console.log('Could not send error message to parent:', e);
-        }
       }
       
     } else if (code || accessToken) {
       // Success - we have authorization code or tokens
-      setStatus('success');
-      setStatusMessage('Authentication Successful!');
-      
-      // Check if there's a pending Stripe checkout URL
-      const pendingCheckout = sessionStorage.getItem('pendingStripeCheckout');
-      
-      if (pendingCheckout) {
-        // Clear the stored checkout URL
-        sessionStorage.removeItem('pendingStripeCheckout');
-        // Redirect to Stripe checkout
-        setDetails('Redirecting to checkout...');
-        setTimeout(() => {
-          window.location.href = pendingCheckout;
-        }, 1000);
-        return;
-      }
-      
-      setDetails('Redirecting to Oasis Browser...');
-      
-      // Store auth data in localStorage for the assistant to pick up
-      const authData = {
-        code: code,
-        access_token: accessToken,
-        refresh_token: refreshToken,
-        state: state,
-        timestamp: Date.now(),
-        source: 'kahana-callback',
-        url: window.location.href
-      };
-      
-      if (typeof window !== 'undefined') {
-        localStorage.setItem('oasis_auth_callback', JSON.stringify(authData));
+      try {
+        const supabase = createClient();
         
-        // Also try to send success message to parent window
-        try {
-          if (window.opener) {
-            window.opener.postMessage({
-              type: 'oasis_auth_success',
-              data: authData
-            }, '*');
-          }
-        } catch (e) {
-          console.log('Could not send success message to parent:', e);
+        // If we have tokens in the hash, Supabase should have already set the session
+        // But we need to get the user to create the profile
+        const { data: { user }, error: userError } = await supabase.auth.getUser();
+        
+        if (userError || !user) {
+          throw new Error(userError?.message || 'Failed to get user');
+        }
+
+        // Create user profile via API
+        const res = await fetch('/api/create-profile', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ 
+            email: user.email,
+            fullName: user.user_metadata?.full_name || user.user_metadata?.name || ''
+          }),
+        });
+
+        if (!res.ok) {
+          const body = await res.json().catch(() => ({}));
+          console.error('Failed to create profile:', body);
+          // Don't throw - profile might already exist
+        }
+
+        setStatus('success');
+        setStatusMessage('Authentication Successful!');
+        
+        // Check if there's a pending Stripe checkout URL
+        const pendingCheckout = sessionStorage.getItem('pendingStripeCheckout');
+        
+        if (pendingCheckout) {
+          // Clear the stored checkout URL
+          sessionStorage.removeItem('pendingStripeCheckout');
+          // Redirect to Stripe checkout
+          setDetails('Redirecting to checkout...');
+          setTimeout(() => {
+            window.location.href = pendingCheckout;
+          }, 1000);
+          return;
         }
         
-        // Redirect to your browser after a short delay
+        // No pending checkout - redirect back to auth page or home
+        setDetails('Redirecting...');
         setTimeout(() => {
-          try {
-            window.location.href = 'chrome://browser/content/assistant/assistant.xhtml';
-          } catch (e) {
-            setDetails('Please return to the Oasis Browser assistant manually.');
-          }
-        }, 2000);
+          router.push('/oasis-auth');
+        }, 1500);
+        
+      } catch (err) {
+        console.error('Error processing OAuth callback:', err);
+        setStatus('error');
+        setStatusMessage('Authentication Error');
+        setDetails(`An error occurred: ${err.message}`);
+        setShowRetry(true);
       }
       
     } else {
       // No auth parameters found
       setStatus('info');
       setStatusMessage('No Authentication Data');
-      setDetails('This page is used for OAuth callbacks from Google.\nIf you reached this page by mistake, please return to the Oasis Browser.');
+      setDetails('This page is used for OAuth callbacks from Google.\nIf you reached this page by mistake, please return to the home page.');
       setShowRetry(true);
     }
   };
@@ -131,12 +125,8 @@ export default function OAuthCallback() {
       localStorage.removeItem('oasis_auth_callback');
       localStorage.removeItem('oasis_auth_error');
       
-      // Redirect back to the assistant
-      try {
-        window.location.href = 'chrome://browser/content/assistant/assistant.xhtml';
-      } catch (e) {
-        alert('Please return to the Oasis Browser assistant manually.');
-      }
+      // Redirect back to auth page
+      router.push('/oasis-auth');
     }
   };
 
