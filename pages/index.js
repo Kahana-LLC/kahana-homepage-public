@@ -61,6 +61,19 @@ export async function getStaticProps() {
 export default function Home({ blogPosts }) {
   const [scrollY, setScrollY] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
+
+  // Handle OAuth callback redirects from root URL
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const hash = window.location.hash;
+      // Check if we have OAuth tokens in the hash (Supabase redirects to root sometimes)
+      if (hash && (hash.includes('access_token=') || hash.includes('code=') || hash.includes('error='))) {
+        // Redirect to oauth-callback page with the hash
+        window.location.href = `/oauth-callback${hash}`;
+        return;
+      }
+    }
+  }, []);
   // Homepage-specific schema
   const homepageSchema = {
     "@context": "https://schema.org",
