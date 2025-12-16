@@ -19,7 +19,7 @@ const pricingTiers = [
     creditNote: '',
     cta: 'Join waitlist',
     ctaLink: '/oasis-waitlist',
-    buttonStyle: 'primary'
+    buttonStyle: 'secondary'
   },
   {
     name: 'Zen plan',
@@ -32,10 +32,10 @@ const pricingTiers = [
       '$10 per additional 1,000 credits',
       'Priority support'
     ],
-    creditNote: 'Credits can be topped up at any time',
-    cta: 'Join waitlist',
-    ctaLink: '/oasis-waitlist',
-    buttonStyle: 'secondary',
+    creditNote: '',
+    cta: 'Get instant access',
+    ctaLink: '/oasis-auth?plan=zen',
+    buttonStyle: 'primary',
     highlight: true
   },
   {
@@ -49,9 +49,9 @@ const pricingTiers = [
       '$10 per additional 1,000 credits',
       'Dedicated support'
     ],
-    creditNote: 'Credits can be topped up at any time',
-    cta: 'Join waitlist',
-    ctaLink: '/oasis-waitlist',
+    creditNote: '',
+    cta: 'Get instant access',
+    ctaLink: '/oasis-auth?plan=nirvana',
     buttonStyle: 'primary'
   }
 ];
@@ -170,7 +170,7 @@ export default function OasisPricing() {
       />
 
       {/* Hero Section */}
-      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[30vh] flex items-center justify-center overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -183,36 +183,19 @@ export default function OasisPricing() {
           <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-white/80 to-white"></div>
         </div>
         
-        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10 py-20">
-          <div className="tracking-wider mb-4 font-semibold text-base lg:text-lg capitalize" style={{ color: '#978455' }}>
-            Pricing
-          </div>
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10 py-12">
           <h1 
-            className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold mb-8 leading-[1.1] tracking-tight"
+            className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-tight"
             style={{ color: '#313A00' }}
           >
             Pricing
           </h1>
-          <p className="text-xl md:text-2xl lg:text-3xl max-w-3xl mx-auto leading-relaxed font-medium mb-6" style={{ color: '#313A00' }}>
-            Select the Oasis plan that aligns with your workflow and scale
-          </p>
-          <p className="text-lg md:text-xl mb-8 text-[#978455] font-semibold">
-            Coming Soon
-          </p>
-          <div className="mb-10">
-            <Link
-              href="/oasis-waitlist"
-              className="btn-primary inline-flex items-center justify-center px-8 py-3 text-base font-semibold rounded-full no-underline hover:no-underline focus:no-underline"
-            >
-              Join waitlist
-            </Link>
-          </div>
         </div>
       </section>
 
       {/* Pricing Tiers Section */}
       <FadeInSection>
-        <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <section className="py-8 sm:py-10 px-4 sm:px-6 lg:px-8 bg-white">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
               {pricingTiers.map((tier, index) => (
@@ -220,23 +203,31 @@ export default function OasisPricing() {
                   key={tier.name}
                   className="relative bg-white border-2 border-gray-200 rounded-2xl p-5 sm:p-6 lg:p-8 transition-all duration-300 hover:shadow-lg"
                 >
-                  <div className="text-center mb-5 sm:mb-6">
-                    <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-gray-800">
+                  <div className="mb-4">
+                    <h3 className="text-base sm:text-lg font-semibold mb-3 text-gray-800">
                       {tier.name}
                     </h3>
-                    <div className="mb-3 sm:mb-4">
+                    <div className="mb-6">
                       <span className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900">
                         {tier.price}
                       </span>
                       {tier.priceLabel && (
-                        <span className="block text-xs sm:text-sm mt-1 text-gray-600">
+                        <span className="text-xs sm:text-sm text-gray-600 ml-1">
                           {tier.priceLabel}
                         </span>
                       )}
                     </div>
+                    <div className="mb-6">
+                      <Link
+                        href={tier.ctaLink}
+                        className={`btn-${tier.buttonStyle} w-full inline-flex items-center justify-center px-4 py-2.5 sm:py-3 text-sm sm:text-base font-normal rounded-full no-underline hover:no-underline focus:no-underline transition-all`}
+                      >
+                        {tier.cta}
+                      </Link>
+                    </div>
                   </div>
 
-                  <ul className="space-y-2 sm:space-y-3 mb-3 sm:mb-4 mt-5 sm:mt-6">
+                  <ul className="space-y-2 sm:space-y-3">
                     {tier.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-start">
                         <svg
@@ -253,19 +244,6 @@ export default function OasisPricing() {
                       </li>
                     ))}
                   </ul>
-
-                  {tier.creditNote && (
-                    <div className="flex items-start text-xs text-gray-500 mt-3 sm:mt-4">
-                      <svg
-                        className="w-3.5 h-3.5 sm:w-4 sm:h-4 mr-1.5 mt-0.5 flex-shrink-0"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
-                      </svg>
-                      <span className="leading-relaxed">{tier.creditNote}</span>
-                    </div>
-                  )}
                 </div>
               ))}
             </div>

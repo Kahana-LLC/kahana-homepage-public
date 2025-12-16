@@ -28,7 +28,7 @@ const plans = [
     name: 'Nirvana plan', 
     price: '$250', 
     cadence: 'per month',
-    stripeCheckoutUrl: 'https://buy.stripe.com/YOUR_NIRVANA_CHECKOUT_URL' // Replace with your actual Nirvana plan URL
+    stripeCheckoutUrl: 'https://buy.stripe.com/eVqcN53SZePu8LvdghgMw07'
   },
 ]
 
