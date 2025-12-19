@@ -256,7 +256,7 @@ export default function OasisPricing() {
                     Existing User ?
                   </h3>
                   <p className="text-sm sm:text-base text-gray-700 mb-6 leading-relaxed">
-                    Access your account information here.
+                    Access your customer dashboard
                   </p>
                   <Link
                     href="https://billing.stripe.com/p/login/bIYg16d6l3FqelieUU"
