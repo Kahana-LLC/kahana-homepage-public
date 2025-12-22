@@ -244,3 +244,6 @@ checkMissingPayment(email, shouldSync).catch((error) => {
   process.exit(1);
 });
 
+
+
+

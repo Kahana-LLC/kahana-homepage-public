@@ -21,3 +21,8 @@ ON public.user_plans(stripe_subscription_id);
 COMMENT ON COLUMN public.user_plans.stripe_customer_id IS 'Stripe customer ID (cus_*) linking to the Stripe customer';
 COMMENT ON COLUMN public.user_plans.stripe_subscription_id IS 'Stripe subscription ID (sub_*) linking to the Stripe subscription';
 
+
+
+
+
+
