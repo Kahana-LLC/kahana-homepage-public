@@ -21,8 +21,8 @@ const plans = [
     name: 'Zen plan', 
     price: '$20', 
     cadence: 'per month',
-    // Stripe Payment Link (TEST MODE) - customize brand color (#3E5300) in Stripe Dashboard > Payment Links
-    stripeCheckoutUrl: 'https://buy.stripe.com/test_bJedR92OV9vabXHa45gMw01'
+    // Stripe Payment Link (PRODUCTION) - customize brand color (#3E5300) in Stripe Dashboard > Payment Links
+    stripeCheckoutUrl: 'https://buy.stripe.com/cNi3cvdtzazef9T0tvgMw08'
   },
   { 
     id: 'nirvana', 
