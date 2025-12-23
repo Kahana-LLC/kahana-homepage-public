@@ -16,7 +16,8 @@ export default function OAuthCallback() {
 
   const processOAuthCallback = async () => {
     const urlParams = new URLSearchParams(window.location.search);
-    const hashParams = new URLSearchParams(window.location.hash.substring(1));
+    const hash = window.location.hash.substring(1);
+    const hashParams = new URLSearchParams(hash);
     
     // Check for error in URL params or hash
     const error = urlParams.get('error') || hashParams.get('error');
@@ -29,7 +30,8 @@ export default function OAuthCallback() {
     const state = urlParams.get('state') || hashParams.get('state');
     
     console.log('OAuth callback received:', {
-      error, errorDescription, accessToken, refreshToken, code, state,
+      error, errorDescription, accessToken: accessToken ? 'present' : 'missing', refreshToken: refreshToken ? 'present' : 'missing', code, state,
+      hashLength: hash.length,
       url: window.location.href
     });
     
@@ -50,33 +52,101 @@ export default function OAuthCallback() {
         }));
       }
       
-    } else if (code || accessToken) {
-      // Success - we have authorization code or tokens
+    } else if (code || accessToken || hash.length === 0) {
+      // Success - we have authorization code, tokens, or hash was already processed (empty hash)
       try {
         const supabase = createClient();
         
-        // If we have tokens in the hash, Supabase should have already set the session
-        // But we need to get the user to create the profile
-        const { data: { user }, error: userError } = await supabase.auth.getUser();
+        let session = null;
+        let user = null;
         
-        if (userError || !user) {
-          throw new Error(userError?.message || 'Failed to get user');
+        // If hash is empty (just #), Supabase has already processed it - just get the session
+        if (hash.length === 0 || (!accessToken && !refreshToken)) {
+          console.log('Hash is empty or no tokens in hash - Supabase should have already processed it');
+          // Wait a moment for Supabase to finish processing
+          await new Promise(resolve => setTimeout(resolve, 300));
         }
+        
+        // If we have tokens in the hash, explicitly set the session
+        if (accessToken && refreshToken) {
+          try {
+            console.log('Setting session explicitly with tokens from hash');
+            // Set the session using the tokens from the hash
+            const { data: sessionData, error: sessionError } = await supabase.auth.setSession({
+              access_token: accessToken,
+              refresh_token: refreshToken,
+            });
+            
+            if (sessionError) {
+              console.error('Error setting session:', sessionError);
+              // Don't throw - fall through to try getSession
+            } else if (sessionData?.session) {
+              session = sessionData.session;
+              user = sessionData.session.user;
+              console.log('Session set successfully from hash tokens');
+            }
+          } catch (setSessionError) {
+            console.error('Error in setSession:', setSessionError);
+            // Fall through to try getSession/getUser
+          }
+        }
+        
+        // Try getting the session (Supabase might have parsed hash automatically or hash was already processed)
+        if (!session) {
+          console.log('Getting session from Supabase...');
+          const { data: sessionData, error: sessionError } = await supabase.auth.getSession();
+          if (sessionError) {
+            console.error('Error getting session:', sessionError);
+          } else if (sessionData?.session) {
+            session = sessionData.session;
+            user = sessionData.session.user;
+            console.log('Session retrieved successfully');
+          } else {
+            console.log('No session found in getSession');
+          }
+        }
+        
+        // If still no user, try getting user directly
+        if (!user) {
+          console.log('Getting user directly...');
+          const { data: userData, error: userError } = await supabase.auth.getUser();
+          if (userError) {
+            console.error('Error getting user:', userError);
+            throw new Error(`Auth session missing! ${userError.message || 'Failed to get user'}`);
+          }
+          if (userData?.user) {
+            user = userData.user;
+            console.log('User retrieved successfully');
+          }
+        }
+        
+        if (!user) {
+          throw new Error('Auth session missing! Failed to get user after OAuth callback');
+        }
+        
+        console.log('User authenticated:', user.email);
 
         // Create user profile via API
-        const res = await fetch('/api/create-profile', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ 
-            email: user.email,
-            fullName: user.user_metadata?.full_name || user.user_metadata?.name || ''
-          }),
-        });
+        try {
+          const res = await fetch('/api/create-profile', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ 
+              email: user.email,
+              fullName: user.user_metadata?.full_name || user.user_metadata?.name || ''
+            }),
+          });
 
-        if (!res.ok) {
-          const body = await res.json().catch(() => ({}));
-          console.error('Failed to create profile:', body);
-          // Don't throw - profile might already exist
+          if (!res.ok) {
+            const body = await res.json().catch(() => ({}));
+            console.error('Failed to create profile:', body);
+            // Don't throw - profile might already exist
+          } else {
+            console.log('Profile created/updated successfully');
+          }
+        } catch (profileError) {
+          console.error('Error calling create-profile API:', profileError);
+          // Don't throw - profile creation is not critical for OAuth flow
         }
 
         setStatus('success');
