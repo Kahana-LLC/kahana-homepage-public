@@ -54,7 +54,13 @@ export default async function handler(req, res) {
         }
 
         // Get subscription details from Stripe
-        const subscription = await stripe.subscriptions.retrieve(subscriptionId)
+        let subscription
+        try {
+          subscription = await stripe.subscriptions.retrieve(subscriptionId)
+        } catch (stripeError) {
+          console.error('❌ Error retrieving subscription from Stripe:', stripeError)
+          throw new Error(`Failed to retrieve subscription: ${stripeError.message}`)
+        }
         const priceId = subscription.items.data[0]?.price?.id
         const planName = subscription.items.data[0]?.price?.nickname || 'Pro'
         const amount = subscription.items.data[0]?.price?.unit_amount || 0 // Amount in cents
@@ -123,16 +129,22 @@ export default async function handler(req, res) {
           .eq('user_id', userId)
 
         // Create payment record in payments table
-        const paymentRecord = await createPayment({
-          user_id: userId,
-          amount: amountInDollars,
-          currency: subscription.currency || 'usd',
-          status: 'success', // Payment succeeded since checkout completed
-          provider: 'stripe',
-          timestamp: new Date().toISOString(),
-          customer_subscription_status: 'Paid', // Set to "Paid" on successful payment
-        })
-        console.log(`✅ Payment record created: ${paymentRecord.payment_id}`)
+        let paymentRecord
+        try {
+          paymentRecord = await createPayment({
+            user_id: userId,
+            amount: amountInDollars,
+            currency: subscription.currency || 'usd',
+            status: 'success', // Payment succeeded since checkout completed
+            provider: 'stripe',
+            timestamp: new Date().toISOString(),
+            customer_subscription_status: 'Paid', // Set to "Paid" on successful payment
+          })
+          console.log(`✅ Payment record created: ${paymentRecord.payment_id}`)
+        } catch (paymentError) {
+          console.error('❌ Error creating payment record:', paymentError)
+          throw new Error(`Failed to create payment record: ${paymentError.message}`)
+        }
 
         // Create or update user_plan in user_plans table
         const userPlanData = {
@@ -147,8 +159,14 @@ export default async function handler(req, res) {
           payment_id: paymentRecord.payment_id,
         }
 
-        const userPlanRecord = await upsertUserPlan(userPlanData)
-        console.log(`✅ User plan record created/updated: ${userPlanRecord.user_plan_id}`)
+        let userPlanRecord
+        try {
+          userPlanRecord = await upsertUserPlan(userPlanData)
+          console.log(`✅ User plan record created/updated: ${userPlanRecord.user_plan_id}`)
+        } catch (planError) {
+          console.error('❌ Error creating/updating user plan:', planError)
+          throw new Error(`Failed to create/update user plan: ${planError.message}`)
+        }
 
         // Log to subscription history (if table exists)
         await logSubscriptionHistory(
@@ -451,7 +469,18 @@ export default async function handler(req, res) {
     return res.status(200).json({ received: true })
   } catch (error) {
     console.error('Webhook handler error:', error)
-    return res.status(500).json({ error: 'Webhook handler failed' })
+    console.error('Error stack:', error.stack)
+    console.error('Error details:', {
+      message: error.message,
+      type: error.type,
+      code: error.code,
+      eventType: event?.type,
+    })
+    return res.status(500).json({ 
+      error: 'Webhook handler failed',
+      message: error.message,
+      eventType: event?.type,
+    })
   }
 }
 

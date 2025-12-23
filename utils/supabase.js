@@ -193,7 +193,11 @@ export async function upsertUserPlan(planData) {
       .select()
       .single()
     
-    if (error) throw error
+    if (error) {
+      console.error('Error updating user_plan:', error)
+      console.error('User plan data:', userPlanData)
+      throw new Error(`Failed to update user_plan: ${error.message} (${error.code || 'unknown'})`)
+    }
     return data
   }
   
@@ -204,7 +208,11 @@ export async function upsertUserPlan(planData) {
     .select()
     .single()
   
-  if (error) throw error
+  if (error) {
+    console.error('Error creating user_plan:', error)
+    console.error('User plan data:', userPlanData)
+    throw new Error(`Failed to create user_plan: ${error.message} (${error.code || 'unknown'})`)
+  }
   return data
 }
 
