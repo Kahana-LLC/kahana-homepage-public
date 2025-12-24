@@ -22,7 +22,7 @@ const plans = [
     price: '$20', 
     cadence: 'per month',
     // Stripe Payment Link (PRODUCTION) - customize brand color (#3E5300) in Stripe Dashboard > Payment Links
-    stripeCheckoutUrl: 'https://buy.stripe.com/cNi3cvdtzazef9T0tvgMw08'
+    stripeCheckoutUrl: 'https://buy.stripe.com/cNi8wP0GN4aQgdX901gMw06'
   },
   { 
     id: 'nirvana', 

@@ -55,7 +55,13 @@ export default function OAuthCallback() {
     } else if (code || accessToken || hash.length === 0) {
       // Success - we have authorization code, tokens, or hash was already processed (empty hash)
       try {
-        const supabase = createClient();
+        let supabase;
+        try {
+          supabase = createClient();
+        } catch (clientError) {
+          console.error('Failed to create Supabase client:', clientError);
+          throw new Error(`Failed to initialize Supabase client. Please check NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY are set correctly in production.`);
+        }
         
         let session = null;
         let user = null;
@@ -79,7 +85,10 @@ export default function OAuthCallback() {
             
             if (sessionError) {
               console.error('Error setting session:', sessionError);
-              // Don't throw - fall through to try getSession
+              if (sessionError.message?.includes('Invalid API key') || sessionError.message?.includes('JWT')) {
+                throw new Error(`Supabase API key is invalid or incorrect. Error: ${sessionError.message}. Please verify NEXT_PUBLIC_SUPABASE_ANON_KEY is set correctly in Heroku config vars.`);
+              }
+              // Don't throw for other errors - fall through to try getSession
             } else if (sessionData?.session) {
               session = sessionData.session;
               user = sessionData.session.user;
@@ -87,7 +96,11 @@ export default function OAuthCallback() {
             }
           } catch (setSessionError) {
             console.error('Error in setSession:', setSessionError);
-            // Fall through to try getSession/getUser
+            // If it's an API key error, throw it so user sees the real issue
+            if (setSessionError.message?.includes('Invalid API key') || setSessionError.message?.includes('API key')) {
+              throw setSessionError;
+            }
+            // Fall through to try getSession/getUser for other errors
           }
         }
         
