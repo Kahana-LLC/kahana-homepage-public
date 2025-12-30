@@ -111,6 +111,14 @@ export default function OasisAuth() {
       if (plan.stripeCheckoutUrl) {
         sessionStorage.setItem('pendingStripeCheckout', plan.stripeCheckoutUrl)
       }
+      
+      // Detect if opened from Firefox extension (window.opener exists)
+      const isFromExtension = window.opener && !window.opener.closed
+      if (isFromExtension) {
+        // Store flag so callback page knows to send postMessage
+        sessionStorage.setItem('oauthFromExtension', 'true')
+      }
+      
       await signInWithGoogle()
       // Note: Google OAuth will redirect, so we handle checkout redirect in the OAuth callback
       setStatus({ loading: false, error: '', success: 'Redirecting to Google…' })
