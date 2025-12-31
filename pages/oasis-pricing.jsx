@@ -95,6 +95,22 @@ const faqs = [
   {
     question: 'Can I change plans or cancel anytime?',
     answer: 'Yes, you have complete flexibility to upgrade, downgrade, or cancel your plan at any time. Changes take effect at your next billing cycle, and unused credits from your current plan will remain available until they expire according to your plan terms.'
+  },
+  {
+    question: 'Where can I review the Terms and Conditions and Privacy Policy?',
+    answer: (
+      <>
+        You can review our{' '}
+        <Link href="/terms-and-conditions" className="text-[#4A6200] hover:underline font-semibold">
+          Terms and Conditions
+        </Link>
+        {' '}and{' '}
+        <Link href="/privacy-policy" className="text-[#4A6200] hover:underline font-semibold">
+          Privacy Policy
+        </Link>
+        {' '}at any time. These documents outline how we handle your data, your rights as a user, and the terms of service for using Oasis.
+      </>
+    )
   }
 ];
 
@@ -248,6 +264,20 @@ export default function OasisPricing() {
               ))}
             </div>
 
+            {/* Legal Links */}
+            <div className="max-w-5xl mx-auto mt-6 sm:mt-8 text-center">
+              <p className="text-xs sm:text-sm text-gray-600">
+                By using Oasis, you agree to our{' '}
+                <Link href="/terms-and-conditions" className="text-[#4A6200] hover:underline font-semibold">
+                  Terms and Conditions
+                </Link>
+                {' '}and{' '}
+                <Link href="/privacy-policy" className="text-[#4A6200] hover:underline font-semibold">
+                  Privacy Policy
+                </Link>
+              </p>
+            </div>
+
             {/* Existing User Card */}
             <div className="max-w-md mx-auto mt-8 sm:mt-10">
               <div className="relative bg-gradient-to-br from-[#F8FAF2] to-white border-2 border-gray-300 rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:shadow-lg">
@@ -267,6 +297,7 @@ export default function OasisPricing() {
                 </div>
               </div>
             </div>
+
           </div>
         </section>
       </FadeInSection>
@@ -339,9 +370,9 @@ export default function OasisPricing() {
                       </button>
                       {openFaq === index && (
                         <div className="pt-3 sm:pt-4 pl-3 sm:pl-4">
-                          <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+                          <div className="text-sm sm:text-base text-gray-700 leading-relaxed">
                             {faq.answer}
-                          </p>
+                          </div>
                         </div>
                       )}
                     </div>
