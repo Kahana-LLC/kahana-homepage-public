@@ -1,434 +1,381 @@
 import Head from 'next/head';
+import Link from 'next/link';
+import SEO from '../components/SEO';
+import TableOfContents from '../components/TableOfContents';
 /* eslint-disable react/no-unescaped-entities */
-// import Image from 'next/image';
+
+const tocStructure = [
+  { id: 'personal-data-collect', label: '1. Personal Data Collection' },
+  { id: 'how-we-use', label: '2. How We Use Your Personal Data' },
+  { id: 'how-we-share', label: '3. How We Share Your Information' },
+  { id: 'data-storage-security', label: '4. Data Storage and Security' },
+  { id: 'lawful-basis', label: '5. Legal Basis for Processing Personal Data' },
+  { id: 'your-choices-rights', label: '6. Your Privacy Rights and Choices' },
+  { id: 'third-party-services', label: '7. Third-Party Services' },
+  { id: 'international-transfers', label: '8. International Data Transfers' },
+  { id: 'children-privacy', label: '9. Privacy for Children' },
+  { id: 'changes-policy', label: '10. Changes to This Privacy Policy' },
+  { id: 'contact-us', label: '11. Contact Us' },
+];
 
 export default function PrivacyPolicy() {
   return (
     <>
+      <SEO 
+        title="Privacy Policy"
+        description="Kahana's privacy policy outlines how we protect and handle your data while using our enterprise browsing platform."
+        url="https://kahana.co/privacy-policy"
+        type="website"
+      />
       <Head>
-        <title>Kahana Privacy Policy</title>
-        <meta
-          name="description"
-          content="Kahana's privacy policy outlines how we protect and handle your data while using our enterprise browsing platform."
-        />
+        <title>Privacy Policy | Kahana</title>
       </Head>
-      <div>
-        <div className="relative overflow-hidden bg-white py-16">
-          <div className="hidden lg:absolute lg:inset-y-0 lg:block lg:h-full lg:w-full lg:[overflow-anchor:none]">
-            <div
-              className="relative mx-auto h-full max-w-prose text-lg"
-              aria-hidden="true"
-            >
-              <svg
-                className="absolute top-12 left-full translate-x-32 transform"
-                width={404}
-                height={384}
-                fill="none"
-                viewBox="0 0 404 384"
-              >
-                <defs>
-                  <pattern
-                    id="74b3fd99-0a6f-4271-bef2-e80eeafdf357"
-                    x={0}
-                    y={0}
-                    width={20}
-                    height={20}
-                    patternUnits="userSpaceOnUse"
-                  >
-                    <rect
-                      x={0}
-                      y={0}
-                      width={4}
-                      height={4}
-                      className="text-gray-200"
-                      fill="currentColor"
-                    />
-                  </pattern>
-                </defs>
-                <rect
-                  width={404}
-                  height={384}
-                  fill="url(#74b3fd99-0a6f-4271-bef2-e80eeafdf357)"
-                />
-              </svg>
-              <svg
-                className="absolute top-1/2 right-full -translate-y-1/2 -translate-x-32 transform"
-                width={404}
-                height={384}
-                fill="none"
-                viewBox="0 0 404 384"
-              >
-                <defs>
-                  <pattern
-                    id="f210dbf6-a58d-4871-961e-36d5016a0f49"
-                    x={0}
-                    y={0}
-                    width={20}
-                    height={20}
-                    patternUnits="userSpaceOnUse"
-                  >
-                    <rect
-                      x={0}
-                      y={0}
-                      width={4}
-                      height={4}
-                      className="text-gray-200"
-                      fill="currentColor"
-                    />
-                  </pattern>
-                </defs>
-                <rect
-                  width={404}
-                  height={384}
-                  fill="url(#f210dbf6-a58d-4871-961e-36d5016a0f49)"
-                />
-              </svg>
-              <svg
-                className="absolute bottom-12 left-full translate-x-32 transform"
-                width={404}
-                height={384}
-                fill="none"
-                viewBox="0 0 404 384"
-              >
-                <defs>
-                  <pattern
-                    id="d3eb07ae-5182-43e6-857d-35c643af9034"
-                    x={0}
-                    y={0}
-                    width={20}
-                    height={20}
-                    patternUnits="userSpaceOnUse"
-                  >
-                    <rect
-                      x={0}
-                      y={0}
-                      width={4}
-                      height={4}
-                      className="text-gray-200"
-                      fill="currentColor"
-                    />
-                  </pattern>
-                </defs>
-                <rect
-                  width={404}
-                  height={384}
-                  fill="url(#d3eb07ae-5182-43e6-857d-35c643af9034)"
-                />
-              </svg>
-            </div>
-          </div>
 
-          <div className="relative px-4 sm:px-6 lg:px-8">
-            <div className="mx-auto max-w-prose text-lg">
-              <h1>
-                <span className="mt-2 block text-center text-3xl font-bold leading-8 tracking-tight text-gray-900 sm:text-4xl">
-                  Privacy Policy
-                </span>
+      <TableOfContents items={tocStructure} />
+
+      <div className="min-h-screen bg-white lg:ml-80">
+        {/* Hero Section */}
+        <div className="bg-gradient-to-b from-[#F3F8E4] to-white py-16 sm:py-24">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-8">
+              <p className="text-sm font-semibold text-[#4A5745] uppercase tracking-wide mb-4">
+                Privacy Policy
+              </p>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#313A00] mb-6">
+                Privacy Policy
               </h1>
-              <div className="mt-8 text-xl leading-8 text-[#4A5745]">
-                Protecting your private information is our priority. This
-                Statement of Privacy applies to https://kahana.co/ ("Site") and
-                Kahana Group Inc. and governs data collection and usage. For the
-                purposes of this Privacy Policy, unless otherwise noted, all
-                references to Kahana Group Inc. include https://kahana.co/. The
-                Kahana Group Inc. website is a SaaS site. By using the Kahana
-                Group Inc. website, you consent to the data practices described
-                in this statement.
-                <br /> <br />
-                <h3>
-                <span className="mt-2 block text-left text-2xl font-bold leading-8 tracking-tight text-gray-900 sm:text-2xl">
-                Collection of your Personal Information
-                </span>
-              </h3>
-                <br /> 
-                In order to better provide you with products and services
-                offered on our Site, Kahana Group Inc. may collect personally
-                identifiable information, such as your: First and Last Name, Mailing Address, E-mail Address
-                <br /> <br />
-                If you purchase Kahana Group Inc.'s products and services, we
-                collect billing and credit card information. This information is
-                used to complete the purchase transaction.
-                <br /> <br />
-                We do not collect any personal information about you unless you
-                voluntarily provide it to us. However, you may be required to
-                provide certain personal information to us when you elect to use
-                certain products or services available on the Site. These may
-                include: (a) registering for an account on our Site; (b)
-                entering a sweepstakes or contest sponsored by us or one of our
-                partners; (c) signing up for special offers from selected third
-                parties; (d) sending us an email message; (e) submitting your
-                credit card or other payment information when ordering and
-                purchasing products and services on our Site. To wit, we will
-                use your information for, but not limited to, communicating with
-                you in relation to services and/or products you have requested
-                from us. We also may gather additional personal or non-personal
-                information in the future. <br />
-                <br />
-                <h3>
-                <span className="mt-2 block text-left text-2xl font-bold leading-8 tracking-tight text-gray-900 sm:text-2xl">
-                Use of Your Personal Information
-                </span>
-              </h3>
-              <br />
-                Kahana Group Inc. collects and uses your personal information to
-                operate its website(s) and deliver the services you have
-                requested.
-                <br /> <br />
-                Kahana Group Inc. may also use your personally identifiable
-                information to inform you of other products or services
-                available from Kahana Group Inc. and its affiliates.
-                <br /> <br />
-                <h3>
-                <span className="mt-2 block text-left text-2xl font-bold leading-8 tracking-tight text-gray-900 sm:text-2xl">
-                Sharing Information with Third Parties
-                </span>
-              </h3> <br />
-                Kahana Group Inc. does not sell, rent or lease its customer
-                lists to third parties.
-                <br /> <br />
-                Kahana Group Inc. may share data with trusted partners to help
-                perform statistical analysis, send you email or postal mail,
-                provide customer support, or arrange for deliveries. All such
-                third parties are prohibited from using your personal
-                information except to provide these services to Kahana Group
-                Inc., and they are required to maintain the confidentiality of
-                your information.
-                <br /> <br />
-                Kahana Group Inc. may disclose your personal information,
-                without notice, if required to do so by law or in the good faith
-                belief that such action is necessary to: (a) conform to the
-                edicts of the law or comply with legal process served on Kahana
-                Group Inc. or the site; (b) protect and defend the rights or
-                property of Kahana Group Inc.; and/or (c) act under exigent
-                circumstances to protect the personal safety of users of Kahana
-                Group Inc., or the public.
-                <br /> <br />
-                <h3>
-                <span className="mt-2 block text-left text-2xl font-bold leading-8 tracking-tight text-gray-900 sm:text-2xl">
-                Tracking User Behavior
-                </span>
-              </h3> <br />
-                Kahana Group Inc. may keep track of the websites and pages our
-                users visit within Kahana Group Inc., in order to determine what
-                Kahana Group Inc. services are the most popular. This data is
-                used to deliver customized content and advertising within Kahana
-                Group Inc. to customers whose behavior indicates that they are
-                interested in a particular subject area.
-                <br /> <br />
-                <h3>
-                <span className="mt-2 block text-left text-2xl font-bold leading-8 tracking-tight text-gray-900 sm:text-2xl">
-                Automatically Collected Information
-                </span>
-              </h3>
-                <br />
-                Information about your computer hardware and software may be
-                automatically collected by Kahana Group Inc.. This information
-                can include: your IP address, browser type, domain names, access
-                times and referring website addresses. This information is used
-                for the operation of the service, to maintain quality of the
-                service, and to provide general statistics regarding use of the
-                Kahana Group Inc. website.
-                <br /> <br />
-                <h3>
-                <span className="mt-2 block text-left text-2xl font-bold leading-8 tracking-tight text-gray-900 sm:text-2xl">
-                Use of Cookies
-                </span>
-              </h3>
-                <br /> 
-                The Kahana Group Inc. website may use "cookies" to help you
-                personalize your online experience. A cookie is a text file that
-                is placed on your hard disk by a web page server. Cookies cannot
-                be used to run programs or deliver viruses to your computer.
-                Cookies are uniquely assigned to you, and can only be read by a
-                web server in the domain that issued the cookie to you.
-                <br /> <br />
-                One of the primary purposes of cookies is to provide a
-                convenience feature to save you time. The purpose of a cookie is
-                to tell the Web server that you have returned to a specific
-                page. For example, if you personalize Kahana Group Inc. pages,
-                or register with Kahana Group Inc. site or services, a cookie
-                helps Kahana Group Inc. to recall your specific information on
-                subsequent visits. This simplifies the process of recording your
-                personal information, such as billing addresses, shipping
-                addresses, and so on. When you return to the same Kahana Group
-                Inc. website, the information you previously provided can be
-                retrieved, so you can easily use the Kahana Group Inc. features
-                that you customized.
-                <br /> <br />
-                You have the ability to accept or decline cookies. Most Web
-                browsers automatically accept cookies, but you can usually
-                modify your browser setting to decline cookies if you prefer. If
-                you choose to decline cookies, you may not be able to fully
-                experience the interactive features of the Kahana Group Inc.
-                services or websites you visit.
-                <br /> <br />
-                <h3>
-                <span className="mt-2 block text-left text-2xl font-bold leading-8 tracking-tight text-gray-900 sm:text-2xl">
-                Privacy Policies of Other Websites
-                </span>
-              </h3>
-                <br /> 
-                This website contains links to other sites. Please be aware that
-                we are not responsible for the content or privacy practices of
-                such other sites. We encourage our users to be aware when they
-                leave our site and to read the privacy statements of any other
-                site that collects personally identifiable information.
-                <br /> <br />
-                <h3>
-                <span className="mt-2 block text-left text-2xl font-bold leading-8 tracking-tight text-gray-900 sm:text-2xl">
-                Security of Your Prsonal Information
-                </span>
-              </h3>
-                <br />
-                Kahana Group Inc. secures your personal information from
-                unauthorized access, use, or disclosure. Kahana Group Inc. uses
-                the following methods for this purpose:
-                <br /> <br />
-                SSL Protocol When personal information (such as a credit card
-                number) is transmitted to other websites, it is protected
-                through the use of encryption, such as the Secure Sockets Layer
-                (SSL) protocol.
-                <br /> <br />
-                We strive to take appropriate security measures to protect
-                against unauthorized access to or alteration of your personal
-                information. Unfortunately, no data transmission over the
-                Internet or any wireless network can be guaranteed to be 100%
-                secure. As a result, while we strive to protect your personal
-                information, you acknowledge that: (a) there are security and
-                privacy limitations inherent to the Internet which are beyond
-                our control; and (b) security, integrity, and privacy of any and
-                all information and data exchanged between you and us through
-                this Site cannot be guaranteed.
-                <br /> <br />
-                <h3>
-                <span className="mt-2 block text-left text-2xl font-bold leading-8 tracking-tight text-gray-900 sm:text-2xl">
-                Your Data Protection Rights
-                </span>
-              </h3>
-                <br /> 
-                Every user is entitled to the following:
-                <br /> <br />
-                The right to access – You have the right to request Kahana Group Inc. for copies of your personal data. We may charge you a small fee for this service.
-                <br /> <br />
-                The right to rectification – You have the right to request that Kahana Group Inc. correct any
- information you believe is inaccurate. You also have the right to request Kahana Group Inc. to complete the information you believe is incomplete.
- <br /> <br />
- The right to erasure – You have the right to request that Kahana Group Inc. erase your personal data, under certain conditions.
- <br /> <br />
- The right to restrict processing – You have the right to request that Kahana Group Inc. restrict the processing of your personal data, under certain conditions.
- <br /> <br />
- The right to object to processing – You have the right to object to Kahana Group Inc.'s processing of your personal data, under certain conditions.
- <br /> <br />
- The right to data portability – You have the right to request that Kahana Group Inc. transfer the data that we have collected to another organization, or directly to you, under certain conditions.
- <br /> <br />
- If you make a request, we have one month to respond to you. If you would like to exercise any
-of these rights, please contact us at our email: info@kahana.co
-<br /> <br />
-<h3>
-                <span className="mt-2 block text-left text-2xl font-bold leading-8 tracking-tight text-gray-900 sm:text-2xl">
-                Right to Deletion
-                </span>
-              </h3> <br />
-                Complete the transaction for which the personal information was
-                collected, fulfill the terms of a written warranty or product
-                recall conducted in accordance with federal law, provide a good
-                or service requested by you, or reasonably anticipated within
-                the context of our ongoing business relationship with you, or
-                otherwise perform a contract between you and us; Detect security
-                incidents, protect against malicious, deceptive, fraudulent, or
-                illegal activity; or prosecute those responsible for that
-                activity; Debug to identify and repair errors that impair
-                existing intended functionality; Exercise free speech, ensure
-                the right of another consumer to exercise his or her right of
-                free speech, or exercise another right provided for by law;
-                Comply with the California Electronic Communications Privacy
-                Act; Engage in public or peer-reviewed scientific, historical,
-                or statistical research in the public interest that adheres to
-                all other applicable ethics and privacy laws, when our deletion
-                of the information is likely to render impossible or seriously
-                impair the achievement of such research, provided we have
-                obtained your informed consent; Enable solely internal uses that
-                are reasonably aligned with your expectations based on your
-                relationship with us; Comply with an existing legal obligation;
-                or Otherwise use your personal information, internally, in a
-                lawful manner that is compatible with the context in which you
-                provided the information.
-                <br /> <br />
-                <h3>
-                <span className="mt-2 block text-left text-2xl font-bold leading-8 tracking-tight text-gray-900 sm:text-2xl">
-                Children Under the Age of Thirteen
-                </span>
-              </h3>
-                <br /> 
-                Kahana Group Inc. does not knowingly collect personally
-                identifiable information from children under the age of
-                thirteen. If you are under the age of thirteen, you must ask
-                your parent or guardian for permission to use this website.
-                <br /> <br />
-                <h3>
-                <span className="mt-2 block text-left text-2xl font-bold leading-8 tracking-tight text-gray-900 sm:text-2xl">
-                Marketing and E-mail Communications
-                </span>
-              </h3>
-                <br /> 
-                From time to time, Kahana Group Inc. may contact you via email
-                for the purpose of providing announcements, promotional offers,
-                alerts, confirmations, surveys, and/or other general
-                communication. In order to improve our Services, we may receive
-                a notification when you open an email from Kahana Group Inc. or
-                click on a link therein.
-                <br /> <br />
-                If you would like to stop receiving marketing or promotional
-                communications via email from Kahana Group Inc., you may opt out
-                of such communications by clicking the "unsubscribe" button in
-                the email. Alternatively, If you no longer wish to be contacted for marketing purposes, please by sending an email to info@kahana.co.
-                <br /> <br />
-                <h3>
-                <span className="mt-2 block text-left text-2xl font-bold leading-8 tracking-tight text-gray-900 sm:text-2xl">
-                External Data Storage Sites
-                </span>
-              </h3>
-                <br /> 
-                We may store your data on servers provided by third party
-                hosting vendors with whom we have contracted.
-                <br /> <br />
-                <h3>
-                <span className="mt-2 block text-left text-2xl font-bold leading-8 tracking-tight text-gray-900 sm:text-2xl">
-                Changes to this Statement
-                </span>
-              </h3>
-                <br /> 
-                Kahana Group Inc. reserves the right to change this Privacy
-                Policy from time to time. We will notify you about significant
-                changes in the way we treat personal information by sending a
-                notice to the primary email address specified in your account,
-                by placing a prominent notice on our site, and/or by updating
-                any privacy information on this page. Your continued use of the
-                Site and/or Services available through this Site after such
-                modifications will constitute your: (a) acknowledgment of the
-                modified Privacy Policy; and (b) agreement to abide and be bound
-                by that Policy.
-                <br /> <br />
-                <h3>
-                <span className="mt-2 block text-left text-2xl font-bold leading-8 tracking-tight text-gray-900 sm:text-2xl">
-                How to Contact Us
-                </span>
-              </h3>
-                <br /> 
-                Kahana Group Inc. welcomes your questions or comments regarding
-                this Statement of Privacy. If you believe that Kahana Group Inc.
-                has not adhered to this Statement, please contact Kahana Group
-                Inc. at:
-                <br />
-                Kahana Group Inc. <br />
-                1550 N Lake Shore Dr, Apt 19E
-                <br />
-                Chicago, Illinois 60610 <br />
-                Email Address: info@kahana.co <br /><br />
-                This Privacy Policy is effective as of April 4th, 2024
-              </div>
+              <p className="text-xl sm:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+                Kahana Group Inc. ("we," "us," or "our") is committed to protecting your privacy and ensuring transparency about how we collect, use, and protect your information. This privacy policy ("Privacy Policy") explains our data practices in connection with your use of Oasis Browser and our Services (the "Service"). By accessing or using the Service, you agree to the collection, use, disclosure, and procedures this Privacy Policy describes. Beyond the Privacy Policy, your use of our Services is also subject to our Terms of Service.
+              </p>
             </div>
           </div>
+        </div>
+
+        {/* Main Content */}
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <article className="prose prose-lg max-w-none">
+            {/* 1. Personal Data Collection */}
+            <section id="personal-data-collect" className="mb-16 scroll-mt-8">
+              <div className="mb-4">
+                <span className="inline-block px-3 py-1 text-xs font-semibold text-[#4A5745] bg-[#F3F8E4] rounded-md mb-2">
+                  1. Personal Data Collection
+                </span>
+              </div>
+              <h2 className="text-3xl font-bold text-[#313A00] mb-6">1. Personal Data Collection</h2>
+              
+              <p className="text-gray-700 leading-relaxed mb-6">
+                Throughout this Privacy Policy, the term "Personal Data" refers to any information that relates to an identified or identifiable natural person. The following categories of Personal Data are collected and processed by us during your use of the Service:
+              </p>
+
+              <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">Information provided by you</h3>
+              <ul className="list-disc list-inside text-gray-700 space-y-3 mb-6 ml-4">
+                <li>Account creation and registration. During account creation and sign-up for our Services, we may gather basic account information, including your name, email address, and profile picture (if you choose to provide one).</li>
+                <li>Service usage and invitations. Information regarding your subscription plan and payment method is processed when you use or invite others to use our Services. Additionally, we process invitation history when you invite others to use the Service.</li>
+                <li>Newsletter subscriptions. From time to time, we may offer email newsletters through our Services. When you subscribe to receive a newsletter, we may request Personal Data such as your email address.</li>
+                <li>Contact and feedback. When you reach out to us with feedback, suggestions, or inquiries (e.g., via <a href="mailto:info@kahana.co" className="text-[#4A6200] hover:underline font-semibold">info@kahana.co</a>), we may gather the information you provide, which includes your contact information and the content of your message.</li>
+              </ul>
+
+              <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">Information collected when you use our Services</h3>
+              <ul className="list-disc list-inside text-gray-700 space-y-3 mb-6 ml-4">
+                <li>Location information. Your location information is received by us when you use our Services. For instance, we may determine your location by analyzing your IP address.</li>
+                <li>Device information. Information about the device and software you utilize to access our Services is received by us, which encompasses IP address, device type, device identifiers, web browser type and version, and operating system version.</li>
+                <li>Usage information. Information about your interactions with our Services is automatically received by us. This encompasses usage data, visit timestamps, feature interactions, and the pages or other content you view. Additionally, it may include larger chats and files that you upload, as well as the frequency and type of AI tasks performed.</li>
+                <li>Cookies and other tracking technologies. Information about your activities on our Services is collected by us and our third-party partners through cookies or other tracking technologies. These same technologies may also be used by our third-party partners, including analytics, advertising, and security partners, to gather information about your online activities across time and different services.</li>
+              </ul>
+
+              <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">Information collected from other sources</h3>
+              <ul className="list-disc list-inside text-gray-700 space-y-3 mb-6 ml-4">
+                <li>Third-party authentication. When you log in using accounts from third-party services, we may gather limited information from those services in accordance with their terms and your privacy settings. This may include accessing your name, email address, or profile information.</li>
+                <li>Third-party integrations. When you connect our Services with third-party tools, we may access your basic account information (e.g., email, profile details) and workspace content (e.g., documents and spreadsheets) from those services as needed to enable the integration.</li>
+                <li>Referrals. When a friend refers you to our Services, we collect the email address of the referred person to facilitate this process and ensure access to the Services is provided.</li>
+                <li>Other sources. Information is received from our trusted partners, such as security partners, to help protect against fraud, abuse, and other security threats to our Services.</li>
+              </ul>
+            </section>
+
+            {/* 2. How We Use Your Personal Data */}
+            <section id="how-we-use" className="mb-16 scroll-mt-8">
+              <div className="mb-4">
+                <span className="inline-block px-3 py-1 text-xs font-semibold text-[#4A5745] bg-[#F3F8E4] rounded-md mb-2">
+                  2. How We Use Your Personal Data
+                </span>
+              </div>
+              <h2 className="text-3xl font-bold text-[#313A00] mb-6">2. How We Use Your Personal Data</h2>
+              
+              <p className="text-gray-700 leading-relaxed mb-6">
+                We use the Personal Data described in Section 1 for the following purposes:
+              </p>
+
+              <ul className="list-disc list-inside text-gray-700 space-y-3 mb-6 ml-4">
+                <li>To deliver, operate, and enhance the Service, including all AI-powered features and third-party integrations.</li>
+                <li>To create and manage your account, verify your identity when you access the Service, and administer your subscription plan.</li>
+                <li>To process payments, manage account credits, and handle billing for users with paid subscriptions.</li>
+                <li>To analyze how the Service is used in order to improve features, functionality, and overall user experience.</li>
+                <li>To enable third-party integrations that you authorize and connect to your account.</li>
+                <li>To address your questions, respond to feedback, and provide customer support.</li>
+                <li>To send you service-related communications about how our Services function. You may unsubscribe from these communications at any time.</li>
+                <li>To fulfill legal requirements and to safeguard the rights, property, and safety of Kahana Group Inc., our users, and third parties. This includes using your Personal Data to enforce our Terms of Service, detect and prevent fraudulent or abusive activity, and address trust and safety concerns.</li>
+              </ul>
+            </section>
+
+            {/* 3. How We Share Your Information */}
+            <section id="how-we-share" className="mb-16 scroll-mt-8">
+              <div className="mb-4">
+                <span className="inline-block px-3 py-1 text-xs font-semibold text-[#4A5745] bg-[#F3F8E4] rounded-md mb-2">
+                  3. How We Share Your Information
+                </span>
+              </div>
+              <h2 className="text-3xl font-bold text-[#313A00] mb-6">3. How We Share Your Information</h2>
+              
+              <p className="text-gray-700 leading-relaxed mb-6">
+                We do not sell your Personal Data. Your information may be shared with third parties only in the circumstances described below:
+              </p>
+
+              <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">With third-party service providers</h3>
+              <p className="text-gray-700 leading-relaxed mb-6">
+                We may share your information with trusted service providers that help us operate the Service. These providers assist with functions such as hosting, payment processing (for example, Stripe), and analytics (for example, Mixpanel).
+              </p>
+
+              <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">With third-party integrations and AI partners</h3>
+              <p className="text-gray-700 leading-relaxed mb-6">
+                When you connect third-party tools or APIs (such as Google, OpenAI, or Anthropic) to the Service, we may share your information with those services to the extent necessary to enable the integration. We also share information, including your chat data, with our AI partners when necessary to deliver our Services, such as to provide improved search results. These third-party services maintain their own privacy policies, which we encourage you to review.
+              </p>
+
+              <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">As required by law and similar disclosures</h3>
+              <p className="text-gray-700 leading-relaxed mb-6">
+                We may disclose your information when required by applicable law, in response to legal process, or to protect and defend the rights, property, or safety of Kahana Group Inc., our users, or third parties.
+              </p>
+
+              <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">In business transfers</h3>
+              <p className="text-gray-700 leading-relaxed mb-6">
+                In the event of a merger, acquisition, sale of assets, or similar business transaction, your information may be transferred as part of that transaction, subject to appropriate privacy and security safeguards.
+              </p>
+
+              <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">With your consent</h3>
+              <p className="text-gray-700 leading-relaxed mb-6">
+                We may disclose your Personal Data to third parties when you have provided explicit consent for such disclosure.
+              </p>
+            </section>
+
+            {/* 4. Data Storage and Security */}
+            <section id="data-storage-security" className="mb-16 scroll-mt-8">
+              <div className="mb-4">
+                <span className="inline-block px-3 py-1 text-xs font-semibold text-[#4A5745] bg-[#F3F8E4] rounded-md mb-2">
+                  4. Data Storage and Security
+                </span>
+              </div>
+              <h2 className="text-3xl font-bold text-[#313A00] mb-6">4. Data Storage and Security</h2>
+              
+              <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">Data Retention</h3>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                We retain your Personal Data only for the period necessary to deliver the Service, accomplish the purposes described in this Privacy Policy, or meet our legal obligations. For instance, we may be required to retain certain Personal Data to satisfy tax and accounting requirements, or to preserve information that may be needed to resolve disputes and enforce our legal agreements.
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-6">
+                In determining how long to retain your Personal Data, we consider multiple factors, including the type of service you use, the nature and duration of our relationship with you, applicable legal retention requirements, and relevant statutes of limitations. The retention period for your Personal Data may vary depending on the specific purpose for which it was originally collected.
+              </p>
+
+              <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">Security Measures</h3>
+              <p className="text-gray-700 leading-relaxed mb-6">
+                We implement reasonable physical, technical, and administrative safeguards designed to protect the security and confidentiality of your Personal Data. However, please be aware that no method of electronic transmission or storage is completely secure, and we cannot guarantee absolute security or privacy of your information.
+              </p>
+            </section>
+
+            {/* 5. Legal Basis for Processing Personal Data */}
+            <section id="lawful-basis" className="mb-16 scroll-mt-8">
+              <div className="mb-4">
+                <span className="inline-block px-3 py-1 text-xs font-semibold text-[#4A5745] bg-[#F3F8E4] rounded-md mb-2">
+                  5. Legal Basis for Processing Personal Data
+                </span>
+              </div>
+              <h2 className="text-3xl font-bold text-[#313A00] mb-6">5. Legal Basis for Processing Personal Data</h2>
+              
+              <p className="text-gray-700 leading-relaxed mb-6">
+                For users located in the European Economic Area, Switzerland, or the United Kingdom ("Europe"), we process your Personal Data only when we have a valid legal basis under applicable data protection laws. The legal bases we rely on include:
+              </p>
+
+              <div className="space-y-4 mb-6">
+                <div>
+                  <h3 className="text-xl font-bold text-[#313A00] mb-2">Contract</h3>
+                  <p className="text-gray-700 leading-relaxed">
+                    When you use our Services, we process your Personal Data as necessary to fulfill our contractual obligations to you and to provide the services you have requested.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-[#313A00] mb-2">Legitimate interests</h3>
+                  <p className="text-gray-700 leading-relaxed">
+                    We may process your Personal Data based on our legitimate interests, provided that such interests do not override your fundamental privacy rights and freedoms. When processing Personal Data on this basis, we carefully balance our business needs against your privacy rights and implement measures to minimize any impact on your privacy. Examples of our legitimate interests include delivering and enhancing the services you request, preventing and detecting fraud, and responding to your inquiries about our Services.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-[#313A00] mb-2">Legal obligations</h3>
+                  <p className="text-gray-700 leading-relaxed">
+                    We may process your Personal Data when necessary to comply with applicable legal obligations or to protect the rights and interests of other users. This includes, for example, meeting regulatory reporting requirements and fulfilling tax and accounting obligations.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-[#313A00] mb-2">Consent</h3>
+                  <p className="text-gray-700 leading-relaxed">
+                    In certain circumstances, we may process your Personal Data based on your explicit consent. For instance, we may request your consent before sending you direct marketing communications. You have the right to withdraw your consent at any time by contacting us, and such withdrawal will not affect the lawfulness of processing that occurred before you withdrew consent.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            {/* 6. Your Privacy Rights and Choices */}
+            <section id="your-choices-rights" className="mb-16 scroll-mt-8">
+              <div className="mb-4">
+                <span className="inline-block px-3 py-1 text-xs font-semibold text-[#4A5745] bg-[#F3F8E4] rounded-md mb-2">
+                  6. Your Privacy Rights and Choices
+                </span>
+              </div>
+              <h2 className="text-3xl font-bold text-[#313A00] mb-6">6. Your Privacy Rights and Choices</h2>
+              
+              <p className="text-gray-700 leading-relaxed mb-6">
+                Your rights regarding your Personal Data may vary depending on your location and applicable data protection laws. If you are located in Europe, you have the following legal rights:
+              </p>
+
+              <div className="space-y-4 mb-6">
+                <div>
+                  <h3 className="text-xl font-bold text-[#313A00] mb-2">Right to Access and Data Portability</h3>
+                  <p className="text-gray-700 leading-relaxed">
+                    You have the right to request access to your Personal Data that we hold, including receiving a copy of such data in a structured, commonly used, and machine-readable format. You may also request details about how we process your Personal Data.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-[#313A00] mb-2">Right to Rectification and Deletion</h3>
+                  <p className="text-gray-700 leading-relaxed">
+                    You have the right to request that we correct any inaccurate Personal Data we hold about you, complete any incomplete data, or delete your Personal Data, subject to our assessment of the appropriateness of such actions based on applicable law and our legitimate business interests.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-[#313A00] mb-2">Right to Restriction and Objection</h3>
+                  <p className="text-gray-700 leading-relaxed">
+                    You have the right to request that we restrict the processing of your Personal Data or to object to certain types of processing of your Personal Data, where permitted by applicable law.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-[#313A00] mb-2">Right to Withdraw Consent</h3>
+                  <p className="text-gray-700 leading-relaxed">
+                    Where we process your Personal Data based on your consent, you have the right to withdraw that consent at any time, free of charge. Your withdrawal of consent will apply to future processing, but will not affect the lawfulness of any processing that occurred before you withdrew your consent.
+                  </p>
+                </div>
+              </div>
+
+              <p className="text-gray-700 leading-relaxed mb-6">
+                In addition to the rights described above, you have the following choices and controls regarding your information:
+              </p>
+
+              <div className="space-y-4 mb-6">
+                <div>
+                  <h3 className="text-xl font-bold text-[#313A00] mb-2">Managing Your Account</h3>
+                  <p className="text-gray-700 leading-relaxed">
+                    You may update or delete your account information at any time by accessing your account settings or by <Link href="/contact" className="text-[#4A6200] hover:underline font-semibold">contacting us through our contact form</Link>.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-[#313A00] mb-2">Do Not Track Signals</h3>
+                  <p className="text-gray-700 leading-relaxed">
+                    The Service does not currently respond to "Do Not Track" browser signals, as there is no universally accepted standard for interpreting such signals.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            {/* 7. Third-Party Services */}
+            <section id="third-party-services" className="mb-16 scroll-mt-8">
+              <div className="mb-4">
+                <span className="inline-block px-3 py-1 text-xs font-semibold text-[#4A5745] bg-[#F3F8E4] rounded-md mb-2">
+                  7. Third-Party Services
+                </span>
+              </div>
+              <h2 className="text-3xl font-bold text-[#313A00] mb-6">7. Third-Party Services</h2>
+              
+              <p className="text-gray-700 leading-relaxed mb-6">
+                Our Service may include links to or integrations with third-party websites, services, or applications that are not owned, operated, or controlled by us. We are not responsible for the privacy practices, data collection, or content of these third-party services. We strongly encourage you to review the privacy policies and terms of service of any third-party services before connecting them to or using them in conjunction with our Service.
+              </p>
+            </section>
+
+            {/* 8. International Data Transfers */}
+            <section id="international-transfers" className="mb-16 scroll-mt-8">
+              <div className="mb-4">
+                <span className="inline-block px-3 py-1 text-xs font-semibold text-[#4A5745] bg-[#F3F8E4] rounded-md mb-2">
+                  8. International Data Transfers
+                </span>
+              </div>
+              <h2 className="text-3xl font-bold text-[#313A00] mb-6">8. International Data Transfers</h2>
+              
+              <p className="text-gray-700 leading-relaxed mb-4">
+                Your Personal Data may be transferred to and stored on servers or systems located outside your state, province, country, or other governmental jurisdiction. The data protection laws in these jurisdictions may differ from those in your location.
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-6">
+                If you are located outside the United States and provide Personal Data to us, please be aware that we transfer your Personal Data to the United States for processing and storage. By using our Service and providing your Personal Data, you consent to the transfer, storage, and processing of your Personal Data in the United States, even if the data protection laws in the United States may differ from those in your jurisdiction.
+              </p>
+            </section>
+
+            {/* 9. Privacy for Children */}
+            <section id="children-privacy" className="mb-16 scroll-mt-8">
+              <div className="mb-4">
+                <span className="inline-block px-3 py-1 text-xs font-semibold text-[#4A5745] bg-[#F3F8E4] rounded-md mb-2">
+                  9. Privacy for Children
+                </span>
+              </div>
+              <h2 className="text-3xl font-bold text-[#313A00] mb-6">9. Privacy for Children</h2>
+              
+              <p className="text-gray-700 leading-relaxed mb-4">
+                Our Service is not directed to children under the age of 13, and we do not knowingly collect Personal Data from children under 13 years of age.
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                If you are a parent or guardian and believe that your child under the age of 13 has provided us with Personal Data without your consent, please <Link href="/contact" className="text-[#4A6200] hover:underline font-semibold">contact us</Link> so that we can address your concerns.
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-6">
+                If we discover that we have collected Personal Data from a child under 13 without obtaining verifiable parental consent, we will take prompt action to delete such information from our systems.
+              </p>
+            </section>
+
+            {/* 10. Changes to This Privacy Policy */}
+            <section id="changes-policy" className="mb-16 scroll-mt-8">
+              <div className="mb-4">
+                <span className="inline-block px-3 py-1 text-xs font-semibold text-[#4A5745] bg-[#F3F8E4] rounded-md mb-2">
+                  10. Changes to This Privacy Policy
+                </span>
+              </div>
+              <h2 className="text-3xl font-bold text-[#313A00] mb-6">10. Changes to This Privacy Policy</h2>
+              
+              <p className="text-gray-700 leading-relaxed mb-4">
+                We reserve the right to update, modify, or revise this Privacy Policy at any time to reflect changes in our practices, technology, legal requirements, or for other operational, legal, or regulatory reasons.
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                When we make changes to this Privacy Policy, we will notify you by posting the updated version on this page and updating the "Last Updated" date at the bottom of this Privacy Policy. We may also notify you of material changes through other means, such as email or a prominent notice on our Service.
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-6">
+                We encourage you to review this Privacy Policy periodically to stay informed about how we collect, use, and protect your Personal Data. Any changes to this Privacy Policy will become effective immediately upon posting on this page, and your continued use of the Service after such changes constitutes your acceptance of the updated Privacy Policy.
+              </p>
+            </section>
+
+            {/* 11. Contact Us */}
+            <section id="contact-us" className="mb-16 scroll-mt-8">
+              <div className="mb-4">
+                <span className="inline-block px-3 py-1 text-xs font-semibold text-[#4A5745] bg-[#F3F8E4] rounded-md mb-2">
+                  11. Contact Us
+                </span>
+              </div>
+              <h2 className="text-3xl font-bold text-[#313A00] mb-6">11. Contact Us</h2>
+              
+              <p className="text-gray-700 leading-relaxed mb-4">
+                If you have questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us at:
+              </p>
+              <div className="text-gray-700 leading-relaxed mb-6">
+                <p className="mb-4">
+                  <strong>Email:</strong> <a href="mailto:info@kahana.co" className="text-[#4A6200] hover:underline font-semibold">info@kahana.co</a> or <Link href="/contact" className="text-[#4A6200] hover:underline font-semibold">through our contact form</Link>
+                </p>
+                <p className="mb-4">
+                  If you are not satisfied with our response to your complaint, or if you believe that our processing of your Personal Data does not comply with applicable data protection laws, you have the right to lodge a complaint with your local data protection supervisory authority. However, we would appreciate the opportunity to address your concerns directly before you contact a supervisory authority, and we encourage you to reach out to us first so that we may attempt to resolve the matter.
+                </p>
+                <p className="mt-4">
+                  This Privacy Policy is effective as of January 1st, 2026
+                </p>
+              </div>
+            </section>
+          </article>
         </div>
       </div>
     </>

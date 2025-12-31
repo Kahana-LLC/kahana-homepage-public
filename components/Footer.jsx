@@ -192,6 +192,7 @@ export default function Footer() {
               <h3 className="text-[#011910] font-semibold mb-6 text-lg hidden md:block">About</h3>
               <ul className={`space-y-4 ${openSection === 'about' || !isMobile ? 'block' : 'hidden'}`}>
                 <li><Link href="/about" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 no-underline">About Kahana</Link></li>
+                <li><Link href="/security" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 no-underline">Security</Link></li>
                 <li><Link href="/support" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 no-underline">Support</Link></li>
                 <li><Link href="/careers" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 no-underline">Careers</Link></li>
               </ul>
@@ -202,7 +203,7 @@ export default function Footer() {
           <div className="mt-16 pt-8 border-t border-[#728552]/20">
             <div className="flex flex-col items-center justify-center text-center w-full max-w-5xl mx-auto ml-4 lg:ml-12">
               <div className="flex flex-col items-center space-y-4 mb-6">
-                <span className="text-[#4A5745] text-sm">&copy; Kahana Group Inc., 2025. All rights reserved</span>
+                <span className="text-[#4A5745] text-sm">&copy; Kahana Group Inc., 2026. All rights reserved</span>
                 <div className="flex flex-wrap items-center justify-center gap-4 md:gap-8">
                   <Link href="/privacy-policy" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 text-sm no-underline">Privacy</Link>
                   <Link href="/terms-and-conditions" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 text-sm no-underline">Terms</Link>
