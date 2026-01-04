@@ -9,11 +9,12 @@ export default function Installations() {
     {
       platform: 'Mac',
       icon: FaApple,
-      description: 'macOS 10.15 or later',
-      status: 'coming-soon',
-      size: 'Coming Soon',
-      color: 'bg-gray-100 hover:bg-gray-200 border-gray-300',
-      textColor: 'text-gray-600'
+      description: 'macOS 10.15 or later (Apple Silicon)',
+      status: 'available',
+      size: 'Download',
+      downloadUrl: 'https://app.box.com/s/phj5kgcc9zmykla2u6vmng6h3bseh8zv',
+      color: 'bg-[#4A6200] hover:bg-[#3E5300] border-[#4A6200]',
+      textColor: 'text-white'
     },
     {
       platform: 'Windows',
@@ -35,11 +36,19 @@ export default function Installations() {
     }
   ];
 
-  const handleDownload = (platform) => {
-    // Placeholder for future download functionality
-    console.log(`Download ${platform} version`);
-    // For now, just show an alert
-    alert(`${platform} version coming soon! We're working hard to bring you the best browsing experience.`);
+  const handleDownload = (button) => {
+    if (button.status === 'coming-soon') {
+      alert(`${button.platform} version coming soon! We're working hard to bring you the best browsing experience.`);
+      return;
+    }
+    
+    if (button.downloadUrl) {
+      // Open download URL in new tab (Box.com will handle the download)
+      window.open(button.downloadUrl, '_blank');
+    } else {
+      console.error('Download URL not configured');
+      alert('Download URL not configured. Please contact support.');
+    }
   };
 
   return (
@@ -73,9 +82,9 @@ export default function Installations() {
               Get ready for a revolutionary browsing experience. Our next-generation browser 
               is designed to transform how you work and explore the web.
             </p>
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-yellow-100 text-yellow-800 text-sm font-medium">
-              <FaClock className="w-4 h-4 mr-2" />
-              Installation files coming soon - Stay tuned!
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-green-100 text-green-800 text-sm font-medium">
+              <FaDownload className="w-4 h-4 mr-2" />
+              Mac (Apple Silicon) now available for download!
             </div>
           </div>
 
@@ -90,8 +99,12 @@ export default function Installations() {
                     className="relative"
                   >
                     <button
-                      onClick={() => handleDownload(button.platform)}
-                      className={`w-full p-8 rounded-2xl border-2 transition-all duration-200 ${button.color} ${button.textColor} group`}
+                      onClick={() => handleDownload(button)}
+                      className={`w-full p-8 rounded-2xl border-2 transition-all duration-200 ${button.color} ${button.textColor} group ${
+                        button.status === 'available' 
+                          ? 'cursor-pointer hover:shadow-lg transform hover:scale-[1.02]' 
+                          : 'cursor-not-allowed opacity-75'
+                      }`}
                       disabled={button.status === 'coming-soon'}
                     >
                       <div className="text-center">
@@ -124,6 +137,13 @@ export default function Installations() {
                     {button.status === 'coming-soon' && (
                       <div className="absolute -top-2 -right-2 bg-yellow-500 text-white text-xs font-bold px-3 py-1 rounded-full">
                         Coming Soon
+                      </div>
+                    )}
+                    
+                    {/* Beta Badge */}
+                    {button.status === 'available' && button.platform === 'Mac' && (
+                      <div className="absolute -top-2 -right-2 bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-full">
+                        Beta
                       </div>
                     )}
                   </div>
