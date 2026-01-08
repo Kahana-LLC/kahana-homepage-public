@@ -185,8 +185,9 @@ const benefitsData = [
       'Monetization options',
       'Revenue tracking',
       'Payment processing',
-      'Growth analytics'
+      'Hub views analytics'
     ],
+    stripePowered: true,
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
@@ -287,6 +288,95 @@ export default function WebApplication() {
         </div>
       </section>
 
+      {/* Step Flow Chart Section */}
+      <section className="bg-gradient-to-br from-[#F8FAF2] via-white to-[#F0F4E8] py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-[#4A5745] text-center mb-12">
+            How It Works
+          </h2>
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 relative">
+              {[
+                {
+                  step: 1,
+                  title: 'Upload Your Files',
+                  description: 'Upload your files, resources, and content',
+                  icon: (
+                    <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                    </svg>
+                  )
+                },
+                {
+                  step: 2,
+                  title: 'Organize in Hubs',
+                  description: 'Organize everything in hubs',
+                  icon: (
+                    <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                    </svg>
+                  )
+                },
+                {
+                  step: 3,
+                  title: 'Share or Keep Private',
+                  description: 'Share with others or keep it private',
+                  icon: (
+                    <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+                    </svg>
+                  )
+                },
+                {
+                  step: 4,
+                  title: 'Monetize',
+                  description: 'Turn on monetization with our Stripe integration',
+                  icon: (
+                    <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  )
+                }
+              ].map((item, index) => (
+                <div key={index} className="relative">
+                  {/* Arrow connector - only show on desktop between steps */}
+                  {index < 3 && (
+                    <div className="hidden lg:block absolute top-1/2 -right-3 z-10">
+                      <svg className="w-6 h-6 text-[#4A6200]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
+                  )}
+                  
+                  {/* Step Card */}
+                  <div className="bg-white rounded-2xl p-6 border-2 border-[#E5EFD8] hover:shadow-lg transition-all h-full flex flex-col">
+                    {/* Step Number */}
+                    <div className="w-10 h-10 rounded-full bg-[#4A6200] text-white flex items-center justify-center font-bold text-lg mb-4">
+                      {item.step}
+                    </div>
+                    
+                    {/* Icon */}
+                    <div className="mb-4 text-[#4A6200]">
+                      {item.icon}
+                    </div>
+                    
+                    {/* Title */}
+                    <h3 className="text-xl font-bold text-[#313A00] mb-2">
+                      {item.title}
+                    </h3>
+                    
+                    {/* Description */}
+                    <p className="text-sm text-[#4A5745] flex-grow">
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Features Section */}
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -300,8 +390,7 @@ export default function WebApplication() {
                 details: [
                   'Drag-and-drop interface',
                   'Hierarchical structure',
-                  'Search functionality',
-                  'Trash/recovery system'
+                  'Search functionality'
                 ]
               },
               {
@@ -318,16 +407,16 @@ export default function WebApplication() {
                 details: [
                   'Subscription options',
                   'Payment processing',
-                  'Revenue tracking',
-                  'Promo code support'
-                ]
+                  'Revenue tracking'
+                ],
+                stripePowered: true
               },
               {
                 title: 'Productivity Features',
                 details: [
-                  'Rich text editing',
-                  'Flow state tracking',
-                  'Activity monitoring',
+                  'Dynamic hubs',
+                  'Duplicate hubs',
+                  'Drag-and-drop file uploads',
                   'Mobile access'
                 ]
               }
@@ -355,6 +444,16 @@ export default function WebApplication() {
                       {detail}
                     </div>
                   ))}
+                  {feature.stripePowered && (
+                    <div className="mt-3 pt-3 border-t border-gray-200">
+                      <div className="flex items-center gap-2 text-xs text-[#4A5745]">
+                        <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M13.976 9.15c-2.172-.806-3.356-1.426-3.356-2.409 0-.831.683-1.305 1.901-1.305 2.227 0 4.515.858 6.09 1.631l.89-5.494C18.252.975 15.697 0 12.165 0 9.667 0 7.589.654 6.104 1.872 4.56 3.147 3.757 4.992 3.757 7.218c0 2.462 1.899 4.635 5.303 6.076 2.449.92 3.63 1.574 3.63 2.583 0 .98-.84 1.545-2.354 1.545-1.875 0-4.965-.921-6.99-2.109l-.9 5.555C3.394 22.99 6.309 24 9.705 24c2.42 0 4.366-.624 5.79-1.688 1.613-1.18 2.404-3.01 2.404-5.234 0-2.52-1.893-4.717-5.323-6.128z"/>
+                        </svg>
+                        <span>Powered by Stripe</span>
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
@@ -449,6 +548,20 @@ export default function WebApplication() {
                             {detail}
                           </div>
                         ))}
+                        {benefit.stripePowered && (
+                          <div className={`mt-4 pt-4 border-t transition-all duration-500 ${
+                            index === currentBenefitIndex ? 'border-gray-200' : 'border-gray-100'
+                          }`}>
+                            <div className={`flex items-center gap-2 text-sm transition-all duration-500 ${
+                              index === currentBenefitIndex ? 'text-[#4A5745]' : 'text-gray-400'
+                            }`}>
+                              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M13.976 9.15c-2.172-.806-3.356-1.426-3.356-2.409 0-.831.683-1.305 1.901-1.305 2.227 0 4.515.858 6.09 1.631l.89-5.494C18.252.975 15.697 0 12.165 0 9.667 0 7.589.654 6.104 1.872 4.56 3.147 3.757 4.992 3.757 7.218c0 2.462 1.899 4.635 5.303 6.076 2.449.92 3.63 1.574 3.63 2.583 0 .98-.84 1.545-2.354 1.545-1.875 0-4.965-.921-6.99-2.109l-.9 5.555C3.394 22.99 6.309 24 9.705 24c2.42 0 4.366-.624 5.79-1.688 1.613-1.18 2.404-3.01 2.404-5.234 0-2.52-1.893-4.717-5.323-6.128z"/>
+                              </svg>
+                              <span>Powered by Stripe</span>
+                            </div>
+                          </div>
+                        )}
                       </div>
                     </div>
                   </div>
