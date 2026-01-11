@@ -17,16 +17,6 @@ function FooterContent() {
     }
   });
   
-  const openDoNotSell = consentContext ? () => {
-    consentContext.declineAll();
-    consentContext.openModal();
-  } : () => {
-    // Fallback: navigate to privacy policy
-    if (typeof window !== 'undefined') {
-      window.location.href = '/privacy-policy#do-not-sell';
-    }
-  };
-  
   const toggleSection = (section) => {
     setOpenSection(openSection === section ? null : section);
   };
@@ -238,16 +228,6 @@ function FooterContent() {
                     </button>
                   ) : (
                     <Link href="/privacy-policy#cookie-settings" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 text-sm no-underline">Cookie Settings</Link>
-                  )}
-                  {openDoNotSell ? (
-                    <button
-                      onClick={openDoNotSell}
-                      className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 text-sm no-underline bg-transparent border-none cursor-pointer p-0"
-                    >
-                      Do Not Sell or Share My Personal Information
-                    </button>
-                  ) : (
-                    <Link href="/privacy-policy#do-not-sell" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 text-sm no-underline">Do Not Sell or Share</Link>
                   )}
                   <Link href="/right-to-work" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 text-sm no-underline">Right to Work</Link>
                   <Link href="/sales" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 text-sm no-underline">Contact Sales</Link>
