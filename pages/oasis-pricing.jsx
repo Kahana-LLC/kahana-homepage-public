@@ -30,7 +30,7 @@ const pricingTiers = [
       'Ideal for regular use',
       '1,500 AI commands per month',
       'Priority support',
-      'Mac only'
+      'Available for Mac'
     ],
     creditNote: '',
     cta: 'Get instant access',
@@ -47,7 +47,7 @@ const pricingTiers = [
       'Built for power users',
       '18,750 AI commands per month',
       'Dedicated support',
-      'Mac only'
+      'Available for Mac'
     ],
     creditNote: '',
     cta: 'Get instant access',
@@ -255,21 +255,31 @@ export default function OasisPricing() {
                   </div>
 
                   <ul className="space-y-2 sm:space-y-3">
-                    {tier.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-start">
-                        <svg
-                          className="w-3 h-3 mr-2 mt-0.5 sm:mt-1 flex-shrink-0"
-                          style={{ color: '#495800' }}
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
+                    {tier.features.map((feature, featureIndex) => {
+                      const isMacOnly = feature === 'Available for Mac';
+                      return (
+                        <li 
+                          key={featureIndex} 
+                          className={`flex items-start ${isMacOnly ? 'px-3 py-2 rounded-lg -mx-3' : ''}`}
+                          style={isMacOnly ? { backgroundColor: '#EDF5F8', border: '1px solid #489CB5' } : {}}
                         >
-                          <path d="M10 2L12 8L10 14L8 8L10 2Z" />
-                        </svg>
-                        <span className="text-xs sm:text-sm text-gray-800 leading-relaxed">
-                          {feature}
-                        </span>
-                      </li>
-                    ))}
+                          <svg
+                            className="w-3 h-3 mr-2 mt-0.5 sm:mt-1 flex-shrink-0"
+                            style={{ color: isMacOnly ? '#489CB5' : '#495800' }}
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                          >
+                            <path d="M10 2L12 8L10 14L8 8L10 2Z" />
+                          </svg>
+                          <span 
+                            className={`text-xs sm:text-sm leading-relaxed ${isMacOnly ? 'font-semibold' : 'text-gray-800'}`}
+                            style={isMacOnly ? { color: '#1D3E48' } : {}}
+                          >
+                            {feature}
+                          </span>
+                        </li>
+                      );
+                    })}
                   </ul>
                 </div>
               ))}
