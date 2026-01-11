@@ -29,7 +29,8 @@ const pricingTiers = [
     features: [
       'Ideal for regular use',
       '1,500 AI commands per month',
-      'Priority support'
+      'Priority support',
+      'Available for Mac'
     ],
     creditNote: '',
     cta: 'Get instant access',
@@ -45,7 +46,8 @@ const pricingTiers = [
     features: [
       'Built for power users',
       '18,750 AI commands per month',
-      'Dedicated support'
+      'Dedicated support',
+      'Available for Mac'
     ],
     creditNote: '',
     cta: 'Get instant access',
@@ -72,7 +74,7 @@ const teamPlan = {
 const faqs = [
   {
     question: 'What platforms does Oasis support?',
-    answer: 'Oasis is available across all major operating systems including Windows, macOS, and Linux.'
+    answer: 'Oasis is currently available for Mac (Apple Silicon and Intel). Windows and Linux versions are in development and coming soon.'
   },
   {
     question: 'How does Oasis integrate with my existing tools?',
@@ -204,9 +206,13 @@ export default function OasisPricing() {
           >
             Pricing
           </h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto mt-4">
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto mt-4 mb-4">
             Oasis is currently in beta. By subscribing, you acknowledge that you're using beta software that may contain bugs or incomplete features.
           </p>
+          <div className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium mb-4" style={{ backgroundColor: '#EDF5F8', color: '#1D3E48' }}>
+            <span className="mr-2">💻</span>
+            Currently available for Mac (Apple Silicon & Intel) only. Windows and Linux coming soon.
+          </div>
         </div>
       </section>
 
@@ -249,21 +255,31 @@ export default function OasisPricing() {
                   </div>
 
                   <ul className="space-y-2 sm:space-y-3">
-                    {tier.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-start">
-                        <svg
-                          className="w-3 h-3 mr-2 mt-0.5 sm:mt-1 flex-shrink-0"
-                          style={{ color: '#495800' }}
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
+                    {tier.features.map((feature, featureIndex) => {
+                      const isMacOnly = feature === 'Available for Mac';
+                      return (
+                        <li 
+                          key={featureIndex} 
+                          className={`flex items-start ${isMacOnly ? 'px-3 py-2 rounded-lg -mx-3' : ''}`}
+                          style={isMacOnly ? { backgroundColor: '#EDF5F8', border: '1px solid #489CB5' } : {}}
                         >
-                          <path d="M10 2L12 8L10 14L8 8L10 2Z" />
-                        </svg>
-                        <span className="text-xs sm:text-sm text-gray-800 leading-relaxed">
-                          {feature}
-                        </span>
-                      </li>
-                    ))}
+                          <svg
+                            className="w-3 h-3 mr-2 mt-0.5 sm:mt-1 flex-shrink-0"
+                            style={{ color: isMacOnly ? '#489CB5' : '#495800' }}
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                          >
+                            <path d="M10 2L12 8L10 14L8 8L10 2Z" />
+                          </svg>
+                          <span 
+                            className={`text-xs sm:text-sm leading-relaxed ${isMacOnly ? 'font-semibold' : 'text-gray-800'}`}
+                            style={isMacOnly ? { color: '#1D3E48' } : {}}
+                          >
+                            {feature}
+                          </span>
+                        </li>
+                      );
+                    })}
                   </ul>
                 </div>
               ))}

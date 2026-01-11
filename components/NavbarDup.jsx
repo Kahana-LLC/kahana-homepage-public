@@ -618,91 +618,10 @@ function NavBar() {
               </div>
             </li>
 
-            <li className={`dropdown ${openDropdown === 'markets' ? 'active' : ''}`}>
-              <Link href="/markets" className="nav-link">
-                <span className="nav-link-text">Markets</span>
-                <button
-                  type="button"
-                  className="dropdown-icon-button"
-                  onClick={(e) => toggleDropdown('markets', e)}
-                  aria-label="Toggle Markets dropdown"
-                  aria-expanded={openDropdown === 'markets'}
-                >
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12.09 16.1361C11.9917 16.1373 11.8942 16.1179 11.8038 16.0792C11.7134 16.0404 11.6321 15.9832 11.5652 15.9112L4.81674 9.16274C4.51681 8.86281 4.51681 8.39792 4.81674 8.09799C5.11667 7.79806 5.58156 7.79806 5.88149 8.09799L12.105 14.3215L18.3136 8.11299C18.6135 7.81306 19.0784 7.81306 19.3783 8.11299C19.6783 8.41292 19.6783 8.87781 19.3783 9.17774L12.6299 15.9262C12.4799 16.0761 12.285 16.1511 12.105 16.1511L12.09 16.1361Z" fill="currentColor" stroke="currentColor" strokeWidth="2" />
-                  </svg>
-                </button>
+            <li>
+              <Link href="/oasis-pricing" className="nav-link">
+                <span className="nav-link-text">Pricing</span>
               </Link>
-              <div className="dropdown-overlay"></div>
-              <div className="dropdown-content">
-                <div className="dropdown-section">
-                  <h3 className="font-semibold text-gray-600 mb-4 uppercase tracking-wider">Industry Markets</h3>
-                  <div className="flex flex-col space-y-4">
-                    <Link href="/markets/manufacturing" className="dropdown-link" onClick={() => setOpenDropdown(null)}>Manufacturing</Link>
-                    <Link href="/markets/professional" className="dropdown-link" onClick={() => setOpenDropdown(null)}>Professional Services</Link>
-                    <Link href="/markets/healthcare" className="dropdown-link" onClick={() => setOpenDropdown(null)}>Healthcare</Link>
-                    <Link href="/markets/finance" className="dropdown-link" onClick={() => setOpenDropdown(null)}>Finance</Link>
-                    <Link href="/markets/energy-utilities" className="dropdown-link" onClick={() => setOpenDropdown(null)}>Energy & Utilities</Link>
-                    <Link href="/markets/retail" className="dropdown-link" onClick={() => setOpenDropdown(null)}>Retail & E-commerce</Link>
-                    <Link href="/markets/government" className="dropdown-link" onClick={() => setOpenDropdown(null)}>Government & Public Sector</Link>
-                    <Link href="/markets/technology" className="dropdown-link" onClick={() => setOpenDropdown(null)}>Technology</Link>
-                    <Link href="/markets/education" className="dropdown-link" onClick={() => setOpenDropdown(null)}>Education</Link>
-                    <Link href="/markets/hospitality" className="dropdown-link" onClick={() => setOpenDropdown(null)}>Hospitality</Link>
-                  </div>
-                </div>
-              </div>
-            </li>
-
-            <li className={`dropdown ${openDropdown === 'solutions' ? 'active' : ''}`}>
-              <Link href="/solutions" className="nav-link">
-                <span className="nav-link-text">Solutions</span>
-                <button
-                  type="button"
-                  className="dropdown-icon-button"
-                  onClick={(e) => toggleDropdown('solutions', e)}
-                  aria-label="Toggle Solutions dropdown"
-                  aria-expanded={openDropdown === 'solutions'}
-                >
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12.09 16.1361C11.9917 16.1373 11.8942 16.1179 11.8038 16.0792C11.7134 16.0404 11.6321 15.9832 11.5652 15.9112L4.81674 9.16274C4.51681 8.86281 4.51681 8.39792 4.81674 8.09799C5.11667 7.79806 5.58156 7.79806 5.88149 8.09799L12.105 14.3215L18.3136 8.11299C18.6135 7.81306 19.0784 7.81306 19.3783 8.11299C19.6783 8.41292 19.6783 8.87781 19.3783 9.17774L12.6299 15.9262C12.4799 16.0761 12.285 16.1511 12.105 16.1511L12.09 16.1361Z" fill="currentColor" stroke="currentColor" strokeWidth="2" />
-                  </svg>
-                </button>
-              </Link>
-              <div className="dropdown-overlay"></div>
-              <div className="dropdown-content">
-                <div className="dropdown-section">
-                  <h3 className="font-semibold text-gray-600 mb-4 uppercase tracking-wider">Use Cases</h3>
-                  <div className="flex flex-col space-y-4">
-                    <Link href="/solutions/saas-and-web-apps" className="dropdown-link" onClick={() => setOpenDropdown(null)}>
-                      SaaS & Web Apps
-                    </Link>
-                    <Link href="/solutions/remote-workforce" className="dropdown-link" onClick={() => setOpenDropdown(null)}>
-                      Remote Workforce Security
-                    </Link>
-                    <Link href="/solutions/merger-integration" className="dropdown-link" onClick={() => setOpenDropdown(null)}>
-                      Merger Integration
-                    </Link>
-                    <Link href="/solutions/external-workforce" className="dropdown-link" onClick={() => setOpenDropdown(null)}>
-                      External Workforce Access
-                    </Link>
-                    <Link href="/solutions/vdi-reduction" className="dropdown-link" onClick={() => setOpenDropdown(null)}>
-                      VDI Reduction
-                    </Link>
-                    <Link href="/solutions/zero-trust-security" className="dropdown-link" onClick={() => setOpenDropdown(null)}>
-                      Zero Trust Security
-                    </Link>
-                    <Link href="/solutions/privileged-user-management" className="dropdown-link" onClick={() => setOpenDropdown(null)}>
-                      Privileged User Management
-                    </Link>
-                    <Link href="/solutions/secure-browsing" className="dropdown-link" onClick={() => setOpenDropdown(null)}>
-                      Secure Web Browsing
-                    </Link>
-                    <Link href="/solutions/workplace-enablement" className="dropdown-link" onClick={() => setOpenDropdown(null)}>
-                      Workplace Enablement
-                    </Link>
-                  </div>
-                </div>
-              </div>
             </li>
 
             <li className={`dropdown ${openDropdown === 'learn' ? 'active' : ''}`}>
@@ -869,6 +788,9 @@ function NavBar() {
             <Link href="/products/free-agentic-browser" className="mobile-link">Free Agentic Browser</Link>
             <Link href="/products/enterprise-browser" className="mobile-link">Enterprise Browser</Link>
             <Link href="/products/web-application" className="mobile-link">Web Application</Link>
+            
+            {/* Pricing */}
+            <Link href="/oasis-pricing" className="mobile-link">Pricing</Link>
             
             {/* Learn Section */}
             <Link href="/blog" className="mobile-link">Blog</Link>
