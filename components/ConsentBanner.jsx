@@ -29,11 +29,11 @@ export default function ConsentBanner() {
           
           <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
             <button
-              onClick={declineAll}
-              className="px-6 py-2.5 text-sm font-semibold text-[#4A5745] bg-white border-2 border-[#728552] rounded-md hover:bg-[#F3F8E4] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#728552] focus:ring-offset-2"
-              aria-label="Decline all non-essential cookies"
+              onClick={acceptAll}
+              className="px-6 py-2.5 text-sm font-semibold text-white bg-[#728552] rounded-md hover:bg-[#5a6b44] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#728552] focus:ring-offset-2"
+              aria-label="Accept all cookies"
             >
-              Decline All
+              Accept All
             </button>
             <button
               onClick={openModal}
@@ -43,11 +43,11 @@ export default function ConsentBanner() {
               Manage Preferences
             </button>
             <button
-              onClick={acceptAll}
-              className="px-6 py-2.5 text-sm font-semibold text-white bg-[#728552] rounded-md hover:bg-[#5a6b44] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#728552] focus:ring-offset-2"
-              aria-label="Accept all cookies"
+              onClick={declineAll}
+              className="px-6 py-2.5 text-sm font-semibold text-[#4A5745] bg-white border-2 border-[#728552] rounded-md hover:bg-[#F3F8E4] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#728552] focus:ring-offset-2"
+              aria-label="Decline all non-essential cookies"
             >
-              Accept All
+              Decline All
             </button>
           </div>
         </div>
