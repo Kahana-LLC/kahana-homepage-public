@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import Head from 'next/head'
+import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { signupAndCreateProfile, signInWithEmail, signInWithGoogle } from '@/utils/auth'
 
@@ -41,6 +42,7 @@ export default function OasisAuth() {
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
   const [fullName, setFullName] = useState('')
+  const [acceptedTerms, setAcceptedTerms] = useState(false)
   const [status, setStatus] = useState({ loading: false, error: '', success: '' })
   const [selectedPlan, setSelectedPlan] = useState('zen')
 
@@ -67,6 +69,10 @@ export default function OasisAuth() {
       const redirectPath = router?.query?.redirect
       
       if (mode === 'signup') {
+        if (!acceptedTerms) {
+          setStatus({ loading: false, error: 'You must accept the Terms and Conditions and Privacy Policy to create an account', success: '' })
+          return
+        }
         if (password !== confirmPassword) {
           setStatus({ loading: false, error: 'Passwords do not match', success: '' })
           return
@@ -252,6 +258,28 @@ export default function OasisAuth() {
                       placeholder="••••••••"
                       className="w-full rounded-lg border border-neutral-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#4A6200]"
                     />
+                  </div>
+                )}
+                {mode === 'signup' && (
+                  <div className="flex items-start">
+                    <input
+                      type="checkbox"
+                      id="accept-terms"
+                      checked={acceptedTerms}
+                      onChange={(e) => setAcceptedTerms(e.target.checked)}
+                      required
+                      className="mt-1 mr-2 h-4 w-4 rounded border-neutral-300 text-[#4A6200] focus:ring-2 focus:ring-[#4A6200]"
+                    />
+                    <label htmlFor="accept-terms" className="text-sm text-neutral-700">
+                      I have read and agree to the{' '}
+                      <Link href="/terms-and-conditions" target="_blank" rel="noopener noreferrer" className="text-[#4A6200] hover:underline font-semibold">
+                        Terms and Conditions
+                      </Link>
+                      {' '}and{' '}
+                      <Link href="/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-[#4A6200] hover:underline font-semibold">
+                        Privacy Policy
+                      </Link>
+                    </label>
                   </div>
                 )}
                 <button
