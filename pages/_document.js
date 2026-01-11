@@ -34,26 +34,8 @@ export default function Document() {
         <link rel="apple-touch-icon" href="/favicon.svg?v=2" />
         <link rel="shortcut icon" type="image/svg+xml" href="/favicon.svg?v=2" />
         
-        {/* Google tag (gtag.js) */}
-        <Script
-          id="gtag-js"
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-KQHFL9605P"
-        />
-        <Script
-          id="gtag-init"
-          strategy="afterInteractive" // Ensure this runs after the script is loaded
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-KQHFL9605P');
-            `,
-          }}
-        />
-
-        {/* Note: Analytics scripts moved to _app.js to load after interactive */}
+        {/* Note: Analytics and marketing scripts are now gated by consent and loaded in _app.js */}
+        {/* Scripts will only load after user grants appropriate consent */}
       </Head>
       <body>
         {/* Google Tag Manager (noscript) */}

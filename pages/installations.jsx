@@ -17,6 +17,16 @@ export default function Installations() {
       textColor: 'text-white'
     },
     {
+      platform: 'Mac Intel',
+      icon: FaApple,
+      description: 'macOS 10.15 or later (Intel)',
+      status: 'available',
+      size: 'Download',
+      downloadUrl: 'https://app.box.com/s/rr14pha5eoiawc296jgidngsdyx1cofu',
+      color: 'bg-[#4A6200] hover:bg-[#3E5300] border-[#4A6200]',
+      textColor: 'text-white'
+    },
+    {
       platform: 'Windows',
       icon: FaWindows,
       description: 'Windows 10 or later',
@@ -84,13 +94,13 @@ export default function Installations() {
             </p>
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-green-100 text-green-800 text-sm font-medium">
               <FaDownload className="w-4 h-4 mr-2" />
-              Mac (Apple Silicon) now available for download!
+              Mac (Apple Silicon & Intel) now available for download!
             </div>
           </div>
 
           {/* Download Buttons Grid */}
-          <div className="max-w-4xl mx-auto pb-20">
-            <div className="grid md:grid-cols-3 gap-8">
+          <div className="max-w-5xl mx-auto pb-20">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {downloadButtons.map((button, index) => {
                 const IconComponent = button.icon;
                 return (
@@ -141,7 +151,7 @@ export default function Installations() {
                     )}
                     
                     {/* Beta Badge */}
-                    {button.status === 'available' && button.platform === 'Mac' && (
+                    {button.status === 'available' && (button.platform === 'Mac' || button.platform === 'Mac Intel') && (
                       <div className="absolute -top-2 -right-2 bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-full">
                         Beta
                       </div>
