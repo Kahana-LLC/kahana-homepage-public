@@ -72,7 +72,7 @@ const teamPlan = {
 const faqs = [
   {
     question: 'What platforms does Oasis support?',
-    answer: 'Oasis is available across all major operating systems including Windows, macOS, and Linux.'
+    answer: 'Oasis is currently available for Mac (Apple Silicon and Intel). Windows and Linux versions are in development and coming soon.'
   },
   {
     question: 'How does Oasis integrate with my existing tools?',
@@ -204,9 +204,13 @@ export default function OasisPricing() {
           >
             Pricing
           </h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto mt-4">
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto mt-4 mb-4">
             Oasis is currently in beta. By subscribing, you acknowledge that you're using beta software that may contain bugs or incomplete features.
           </p>
+          <div className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium mb-4" style={{ backgroundColor: '#EDF5F8', color: '#1D3E48' }}>
+            <span className="mr-2">💻</span>
+            Currently available for Mac (Apple Silicon & Intel) only. Windows and Linux coming soon.
+          </div>
         </div>
       </section>
 
