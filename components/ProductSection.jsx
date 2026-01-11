@@ -33,7 +33,7 @@ export default function ProductSection() {
                 Schedule Demo
               </Link>
               <Link
-                href="/oasis-waitlist"
+                href="/oasis-pricing"
                 className="btn-secondary inline-flex items-center justify-center px-8 py-3 text-base no-underline hover:no-underline focus:no-underline"
               >
                 Get Access

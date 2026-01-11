@@ -51,7 +51,7 @@ export default function GlobalBanner() {
               <p className="text-sm font-medium text-[#4A5745]">
                 <span className="md:hidden">
                   Meet Oasis: the most elegant browser.{' '}
-                  <Link href="/oasis-waitlist" className="underline hover:!text-[#7A9200] transition-colors text-[#4A5745]">
+                  <Link href="/oasis-pricing" className="underline hover:!text-[#7A9200] transition-colors text-[#4A5745]">
                     Get access.
                   </Link>
                 </span>

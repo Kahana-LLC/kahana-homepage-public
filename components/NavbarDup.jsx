@@ -801,7 +801,7 @@ function NavBar() {
           {/* Buttons and Hamburger Menu */}
           <div className="flex items-center gap-4">
             <div className="nav-buttons hidden lg:flex gap-2">
-              <Link href="/oasis-waitlist" className="btn-primary inline-flex items-center justify-center px-4 py-2.5 text-xs md:px-6 md:py-3 md:text-sm no-underline hover:no-underline focus:no-underline">
+              <Link href="/oasis-pricing" className="btn-primary inline-flex items-center justify-center px-4 py-2.5 text-xs md:px-6 md:py-3 md:text-sm no-underline hover:no-underline focus:no-underline">
                   <span className="md:hidden">Get Access</span>
                   <span className="hidden md:inline">Get Access</span>
               </Link>
@@ -857,7 +857,7 @@ function NavBar() {
           <div className="menu-links">
             {/* Contact Buttons at Top */}
             <div className="flex flex-col gap-2 mb-4">
-              <Link href="/oasis-waitlist" className="btn-primary w-full text-center py-2.5 px-6 no-underline hover:no-underline focus:no-underline">
+              <Link href="/oasis-pricing" className="btn-primary w-full text-center py-2.5 px-6 no-underline hover:no-underline focus:no-underline">
                   Get Access
               </Link>
               <Link href="/contact" className="btn-secondary w-full text-center py-2.5 px-6 no-underline hover:no-underline focus:no-underline">
