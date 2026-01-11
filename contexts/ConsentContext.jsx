@@ -243,6 +243,7 @@ export const ConsentProvider = ({ children }) => {
     acceptAll,
     declineAll,
     updateConsent,
+    saveConsent,
     openModal,
     closeModal,
     isCaliforniaUser,

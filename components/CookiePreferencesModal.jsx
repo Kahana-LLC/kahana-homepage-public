@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useConsent } from '../contexts/ConsentContext';
 
 export default function CookiePreferencesModal() {
-  const { showModal, closeModal, consent, updateConsent, acceptAll, declineAll } = useConsent();
+  const { showModal, closeModal, consent, acceptAll, declineAll, saveConsent } = useConsent();
+  // Initialize with all false (except strictly necessary)
   const [localConsent, setLocalConsent] = useState({
     strictlyNecessary: true,
     analytics: false,
@@ -10,14 +11,30 @@ export default function CookiePreferencesModal() {
     marketing: false,
   });
 
+  // Sync local consent state with actual consent whenever modal opens or consent changes
+  // Always start with all false (except strictly necessary), then show saved state if it exists
   useEffect(() => {
-    if (showModal && consent) {
-      setLocalConsent({
+    if (showModal) {
+      // Default to all false initially
+      const defaultState = {
         strictlyNecessary: true,
-        analytics: consent.analytics || false,
-        advertising: consent.advertising || false,
-        marketing: consent.marketing || false,
-      });
+        analytics: false,
+        advertising: false,
+        marketing: false,
+      };
+      
+      // If consent exists and has explicit true values, use those
+      if (consent && typeof consent === 'object') {
+        setLocalConsent({
+          strictlyNecessary: true,
+          analytics: consent.analytics === true, // Only true if explicitly true
+          advertising: consent.advertising === true, // Only true if explicitly true
+          marketing: consent.marketing === true, // Only true if explicitly true
+        });
+      } else {
+        // No consent saved yet, use defaults (all false)
+        setLocalConsent(defaultState);
+      }
     }
   }, [showModal, consent]);
 
@@ -32,31 +49,39 @@ export default function CookiePreferencesModal() {
   };
 
   const handleSave = () => {
-    updateConsent('analytics', localConsent.analytics);
-    updateConsent('advertising', localConsent.advertising);
-    updateConsent('marketing', localConsent.marketing);
-    // Save all at once
+    // Save all preferences together via context
     const consentData = {
       strictlyNecessary: true,
       analytics: localConsent.analytics,
       advertising: localConsent.advertising,
       marketing: localConsent.marketing,
-      timestamp: new Date().toISOString(),
-      region: consent?.region || null,
     };
     
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('kahana_consent_preferences', JSON.stringify(consentData));
-      window.dispatchEvent(new CustomEvent('consentChanged', { detail: consentData }));
-    }
-    closeModal();
+    // Use saveConsent from context which handles localStorage, state updates, and script loading
+    saveConsent(consentData);
   };
 
   const handleAcceptAll = () => {
+    // Update local state immediately for visual feedback
+    setLocalConsent({
+      strictlyNecessary: true,
+      analytics: true,
+      advertising: true,
+      marketing: true,
+    });
+    // Then save to context and localStorage
     acceptAll();
   };
 
   const handleDeclineAll = () => {
+    // Update local state immediately for visual feedback
+    setLocalConsent({
+      strictlyNecessary: true,
+      analytics: false,
+      advertising: false,
+      marketing: false,
+    });
+    // Then save to context and localStorage
     declineAll();
   };
 
@@ -143,15 +168,17 @@ export default function CookiePreferencesModal() {
                   <button
                     onClick={() => handleToggle('analytics')}
                     className={`relative inline-flex h-8 w-14 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-[#728552] focus:ring-offset-2 ${
-                      localConsent.analytics ? 'bg-[#728552]' : 'bg-gray-300'
+                      localConsent.analytics ? 'bg-[#728552]' : 'bg-gray-200 border-2 border-gray-300'
                     }`}
                     role="switch"
                     aria-checked={localConsent.analytics}
                     aria-label="Toggle analytics cookies"
                   >
                     <span
-                      className={`inline-block h-6 w-6 transform rounded-full bg-white transition-transform ${
-                        localConsent.analytics ? 'translate-x-7' : 'translate-x-1'
+                      className={`inline-block h-5 w-5 transform rounded-full transition-transform shadow-sm ${
+                        localConsent.analytics 
+                          ? 'translate-x-7 bg-white' 
+                          : 'translate-x-1 bg-gray-400'
                       }`}
                     />
                   </button>
@@ -176,15 +203,17 @@ export default function CookiePreferencesModal() {
                   <button
                     onClick={() => handleToggle('advertising')}
                     className={`relative inline-flex h-8 w-14 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-[#728552] focus:ring-offset-2 ${
-                      localConsent.advertising ? 'bg-[#728552]' : 'bg-gray-300'
+                      localConsent.advertising ? 'bg-[#728552]' : 'bg-gray-200 border-2 border-gray-300'
                     }`}
                     role="switch"
                     aria-checked={localConsent.advertising}
                     aria-label="Toggle advertising cookies"
                   >
                     <span
-                      className={`inline-block h-6 w-6 transform rounded-full bg-white transition-transform ${
-                        localConsent.advertising ? 'translate-x-7' : 'translate-x-1'
+                      className={`inline-block h-5 w-5 transform rounded-full transition-transform shadow-sm ${
+                        localConsent.advertising 
+                          ? 'translate-x-7 bg-white' 
+                          : 'translate-x-1 bg-gray-400'
                       }`}
                     />
                   </button>
@@ -209,15 +238,17 @@ export default function CookiePreferencesModal() {
                   <button
                     onClick={() => handleToggle('marketing')}
                     className={`relative inline-flex h-8 w-14 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-[#728552] focus:ring-offset-2 ${
-                      localConsent.marketing ? 'bg-[#728552]' : 'bg-gray-300'
+                      localConsent.marketing ? 'bg-[#728552]' : 'bg-gray-200 border-2 border-gray-300'
                     }`}
                     role="switch"
                     aria-checked={localConsent.marketing}
                     aria-label="Toggle marketing cookies"
                   >
                     <span
-                      className={`inline-block h-6 w-6 transform rounded-full bg-white transition-transform ${
-                        localConsent.marketing ? 'translate-x-7' : 'translate-x-1'
+                      className={`inline-block h-5 w-5 transform rounded-full transition-transform shadow-sm ${
+                        localConsent.marketing 
+                          ? 'translate-x-7 bg-white' 
+                          : 'translate-x-1 bg-gray-400'
                       }`}
                     />
                   </button>
