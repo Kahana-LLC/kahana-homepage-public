@@ -1,10 +1,48 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { FaApple, FaWindows, FaLinux, FaDownload, FaClock } from 'react-icons/fa';
 import { Container } from '../components/Container';
 import Breadcrumbs from '../components/Breadcrumbs';
+import { createClient } from '@/utils/supabase';
 
 export default function Installations() {
+  const router = useRouter();
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    checkAuthentication();
+  }, []);
+
+  const checkAuthentication = async () => {
+    try {
+      const supabase = createClient();
+      const { data: { session }, error } = await supabase.auth.getSession();
+      
+      if (error) {
+        console.error('Error checking authentication:', error);
+        // Redirect to auth page on error - use free plan to avoid Stripe redirect
+        router.push('/oasis-auth?mode=login&plan=free&redirect=/installations');
+        return;
+      }
+      
+      if (!session) {
+        // Not authenticated - redirect to auth page - use free plan to avoid Stripe redirect
+        router.push('/oasis-auth?mode=login&plan=free&redirect=/installations');
+        return;
+      }
+      
+      setIsAuthenticated(true);
+    } catch (err) {
+      console.error('Failed to check authentication:', err);
+      // Redirect to auth page on error - use free plan to avoid Stripe redirect
+      router.push('/oasis-auth?mode=login&plan=free&redirect=/installations');
+    } finally {
+      setIsLoading(false);
+    }
+  };
   const downloadButtons = [
     {
       platform: 'Mac',
@@ -61,6 +99,26 @@ export default function Installations() {
     }
   };
 
+  // Show loading state while checking authentication or redirecting
+  if (isLoading || !isAuthenticated) {
+    return (
+      <>
+        <Head>
+          <title>Download Kahana Browser | Installations</title>
+        </Head>
+        <main className="min-h-screen bg-gradient-to-br from-gray-50 to-white flex items-center justify-center">
+          <Container>
+            <div className="text-center">
+              <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-[#4A6200] mb-4"></div>
+              <p className="text-gray-600">Redirecting to authentication...</p>
+            </div>
+          </Container>
+        </main>
+      </>
+    );
+  }
+
+  // Show normal content if authenticated
   return (
     <>
       <Head>
@@ -92,14 +150,27 @@ export default function Installations() {
               Get ready for a revolutionary browsing experience. Our next-generation browser 
               is designed to transform how you work and explore the web.
             </p>
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-green-100 text-green-800 text-sm font-medium">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-800 text-sm font-medium mb-4">
               <FaDownload className="w-4 h-4 mr-2" />
-              Mac (Apple Silicon & Intel) now available for download!
+              Beta Version - Mac (Apple Silicon & Intel) now available for download!
+            </div>
+            <div className="max-w-2xl mx-auto px-4 py-3 bg-yellow-50 border-2 border-yellow-200 rounded-lg">
+              <p className="text-sm text-yellow-900 font-semibold mb-2">
+                ⚠️ Beta Software Notice
+              </p>
+              <p className="text-sm text-yellow-800">
+                All downloads are currently in <strong>beta</strong>. By downloading and installing Kahana Browser, you acknowledge that you have read and agree to our{' '}
+                <Link href="/terms-and-conditions" className="text-[#4A6200] hover:underline font-semibold">Terms and Conditions</Link>
+                {', '}
+                <Link href="/privacy-policy" className="text-[#4A6200] hover:underline font-semibold">Privacy Policy</Link>
+                {', and '}
+                <Link href="/security" className="text-[#4A6200] hover:underline font-semibold">Security</Link>.
+              </p>
             </div>
           </div>
 
           {/* Download Buttons Grid */}
-          <div className="max-w-5xl mx-auto pb-20">
+          <div className="max-w-5xl mx-auto pb-8">
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {downloadButtons.map((button, index) => {
                 const IconComponent = button.icon;
@@ -150,8 +221,8 @@ export default function Installations() {
                       </div>
                     )}
                     
-                    {/* Beta Badge */}
-                    {button.status === 'available' && (button.platform === 'Mac' || button.platform === 'Mac Intel') && (
+                    {/* Beta Badge - Show on all available downloads */}
+                    {button.status === 'available' && (
                       <div className="absolute -top-2 -right-2 bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-full">
                         Beta
                       </div>
@@ -159,6 +230,38 @@ export default function Installations() {
                   </div>
                 );
               })}
+            </div>
+            
+            {/* Legal Notice Section */}
+            <div className="mt-12 max-w-3xl mx-auto px-6 py-6 bg-gray-50 border-2 border-gray-200 rounded-lg">
+              <p className="text-sm text-gray-700 text-center mb-4">
+                <strong>By downloading Kahana Browser, you agree to our:</strong>
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <Link 
+                  href="/terms-and-conditions" 
+                  className="text-[#4A6200] hover:text-[#728552] font-semibold underline transition-colors duration-200"
+                >
+                  Terms and Conditions
+                </Link>
+                <span className="text-gray-400 hidden sm:inline">•</span>
+                <Link 
+                  href="/privacy-policy" 
+                  className="text-[#4A6200] hover:text-[#728552] font-semibold underline transition-colors duration-200"
+                >
+                  Privacy Policy
+                </Link>
+                <span className="text-gray-400 hidden sm:inline">•</span>
+                <Link 
+                  href="/security" 
+                  className="text-[#4A6200] hover:text-[#728552] font-semibold underline transition-colors duration-200"
+                >
+                  Security
+                </Link>
+              </div>
+              <p className="text-xs text-gray-600 text-center mt-4">
+                Please review these documents before installing. All versions are currently in beta and may contain bugs or incomplete features.
+              </p>
             </div>
           </div>
 

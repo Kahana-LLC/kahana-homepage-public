@@ -14,7 +14,7 @@ const pricingTiers = [
     priceLabel: 'per month',
     features: [
       'Perfect for getting started',
-      '2,000 credits included'
+      '50 AI commands per month'
     ],
     creditNote: '',
     cta: 'Join waitlist',
@@ -28,8 +28,7 @@ const pricingTiers = [
     priceLabel: 'per month',
     features: [
       'Ideal for regular use',
-      '8,000 credits included',
-      '$10 per additional 1,000 credits',
+      '1,500 AI commands per month',
       'Priority support'
     ],
     creditNote: '',
@@ -45,8 +44,7 @@ const pricingTiers = [
     priceLabel: 'per month',
     features: [
       'Built for power users',
-      '50,000 credits included',
-      '$10 per additional 1,000 credits',
+      '18,750 AI commands per month',
       'Dedicated support'
     ],
     creditNote: '',
@@ -85,16 +83,16 @@ const faqs = [
     answer: 'We implement enterprise-grade encryption for data in transit and at rest. Your workspace data remains private and is never used to train our AI models. All processing happens in secure, isolated environments with strict access controls and regular security audits.'
   },
   {
-    question: 'How do credits work in Oasis?',
-    answer: 'Credits are consumed when you use AI-powered features like content summarization, data extraction, automated workflows, and advanced analysis. Core workspace access and basic navigation never require credits. You can monitor your usage in real-time and purchase additional credits instantly when needed.'
+    question: 'How do AI commands work in Oasis?',
+    answer: 'AI commands are consumed when you use the AI assistant to execute actions like opening tabs, performing searches, organizing content, and running automated workflows. Core workspace access and basic navigation never require AI commands. You can monitor your usage in real-time and upgrade your plan when needed.'
   },
   {
     question: 'What does Oasis cost?',
-    answer: 'Oasis offers flexible pricing starting with a free plan that includes 2,000 credits monthly. Paid plans range from $20/month for Zen users to $250/month for Nirvana power users. Team plans feature per-seat pricing starting at $40/month with custom options for larger organizations.'
+    answer: 'Oasis offers flexible pricing starting with a free plan that includes 50 AI commands per month. Paid plans range from $20/month for Zen users (1,500 AI commands per month) to $250/month for Nirvana power users (18,750 AI commands per month). Team plans feature per-seat pricing starting at $40/month with custom options for larger organizations.'
   },
   {
     question: 'Can I change plans or cancel anytime?',
-    answer: 'Yes, you have complete flexibility to upgrade, downgrade, or cancel your plan at any time. Changes take effect at your next billing cycle, and unused credits from your current plan will remain available until they expire according to your plan terms.'
+    answer: 'Yes, you have complete flexibility to upgrade, downgrade, or cancel your plan at any time. Changes take effect at your next billing cycle, and unused AI commands from your current plan will reset at the start of each billing cycle.'
   },
   {
     question: 'Where can I review the Terms and Conditions and Privacy Policy?',
@@ -201,11 +199,14 @@ export default function OasisPricing() {
         
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10 py-12">
           <h1 
-            className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-tight"
+            className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-tight mb-4"
             style={{ color: '#313A00' }}
           >
             Pricing
           </h1>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto mt-4">
+            Oasis is currently in beta. By subscribing, you acknowledge that you're using beta software that may contain bugs or incomplete features.
+          </p>
         </div>
       </section>
 
@@ -219,6 +220,10 @@ export default function OasisPricing() {
                   key={tier.name}
                   className="relative bg-white border-2 border-gray-200 rounded-2xl p-5 sm:p-6 lg:p-8 transition-all duration-300 hover:shadow-lg"
                 >
+                  {/* Beta Badge */}
+                  <div className="absolute -top-2 -right-2 text-white text-xs font-bold px-3 py-1 rounded-full z-10" style={{ backgroundColor: '#489CB5' }}>
+                    Beta
+                  </div>
                   <div className="mb-4">
                     <h3 className="text-base sm:text-lg font-semibold mb-3 text-gray-800">
                       {tier.name}
@@ -302,28 +307,28 @@ export default function OasisPricing() {
         </section>
       </FadeInSection>
 
-      {/* How Credits Work Section */}
+      {/* How AI Commands Work Section */}
       <FadeInSection>
         <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-[#F8FAF2]">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-8 sm:mb-12">
               <div className="tracking-wider mb-3 sm:mb-4 font-semibold text-sm sm:text-base lg:text-lg capitalize" style={{ color: '#978455' }}>
-                Understanding Credits
+                Understanding AI Commands
               </div>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-3 sm:mb-4" style={{ color: '#313A00' }}>
-                How Credits Work
+                How AI Commands Work
               </h2>
             </div>
 
             <div className="space-y-3 sm:space-y-4 text-left max-w-3xl mx-auto">
               <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-                Accessing your Oasis workspace and navigating through your content is completely free. No credits required. Your workspace, files, and basic organizational tools are always available without any usage limits.
+                Accessing your Oasis workspace and navigating through your content is completely free. No AI commands required. Your workspace, files, and basic organizational tools are always available without any usage limits.
               </p>
               <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-                Credits are used when you activate AI-powered features that require processing power. This includes generating intelligent summaries, extracting structured data from documents, automating complex workflows, performing advanced content analysis, and running custom AI-assisted operations.
+                AI commands are used when you interact with the AI assistant to execute actions like opening tabs, performing searches, organizing content, creating tab groups, and running automated workflows. Each command you give to the assistant counts toward your monthly allocation.
               </p>
               <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-                You maintain full control over your credit usage with real-time monitoring and instant top-up options. Additional credits are available for purchase at any time to ensure your productivity never gets interrupted.
+                You maintain full control over your AI command usage with real-time monitoring. Each plan includes a monthly allocation of AI commands that reset at the start of each billing cycle. You can upgrade your plan at any time to ensure your productivity never gets interrupted.
               </p>
             </div>
           </div>
