@@ -29,7 +29,8 @@ const pricingTiers = [
     features: [
       'Ideal for regular use',
       '1,500 AI commands per month',
-      'Priority support'
+      'Priority support',
+      'Mac only'
     ],
     creditNote: '',
     cta: 'Get instant access',
@@ -45,7 +46,8 @@ const pricingTiers = [
     features: [
       'Built for power users',
       '18,750 AI commands per month',
-      'Dedicated support'
+      'Dedicated support',
+      'Mac only'
     ],
     creditNote: '',
     cta: 'Get instant access',
