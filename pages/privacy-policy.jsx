@@ -80,8 +80,80 @@ export default function PrivacyPolicy() {
                 <li>Location information. Your location information is received by us when you use our Services. For instance, we may determine your location by analyzing your IP address.</li>
                 <li>Device information. Information about the device and software you utilize to access our Services is received by us, which encompasses IP address, device type, device identifiers, web browser type and version, and operating system version.</li>
                 <li>Usage information. Information about your interactions with our Services is automatically received by us. This encompasses usage data, visit timestamps, feature interactions, and the pages or other content you view. Additionally, it may include larger chats and files that you upload, as well as the frequency and type of AI tasks performed.</li>
-                <li>Cookies and other tracking technologies. Information about your activities on our Services is collected by us and our third-party partners through cookies or other tracking technologies. These same technologies may also be used by our third-party partners, including analytics, advertising, and security partners, to gather information about your online activities across time and different services.</li>
+                <li>Cookies and other tracking technologies. Information about your activities on our Services is collected by us and our third-party partners through cookies or other tracking technologies. These same technologies may also be used by our third-party partners, including analytics, advertising, and security partners, to gather information about your online activities across time and different services. For detailed information about our use of cookies and tracking technologies, including how to manage your preferences, please see Section 1.4 below.</li>
               </ul>
+
+              <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">Cookies, Pixels, and Similar Technologies</h3>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                We use cookies, pixels, tags, beacons, and similar tracking technologies (collectively, "Tracking Technologies") to collect and store information about your interactions with our Services. These technologies help us understand how you use our Services, improve your experience, and provide personalized content and advertisements.
+              </p>
+              
+              <p className="text-gray-700 leading-relaxed mb-4">
+                <strong>What are Tracking Technologies?</strong> Tracking Technologies are small text files, pixels, scripts, or other data files that are placed on your device when you visit our website. They enable us to recognize your device and remember information about your visit, such as your preferences and actions.
+              </p>
+
+              <p className="text-gray-700 leading-relaxed mb-4">
+                <strong>Categories of Tracking Technologies:</strong>
+              </p>
+
+              <div className="space-y-4 mb-6">
+                <div>
+                  <h4 className="text-xl font-semibold text-[#313A00] mb-2">Strictly Necessary</h4>
+                  <p className="text-gray-700 leading-relaxed mb-2">
+                    These cookies are essential for the website to function properly. They enable core functionality such as security, network management, and accessibility. These cookies cannot be disabled as they are necessary for the basic operation of our Services.
+                  </p>
+                  <p className="text-sm text-gray-600">
+                    <strong>Examples:</strong> Session management, security features, load balancing
+                  </p>
+                </div>
+
+                <div>
+                  <h4 className="text-xl font-semibold text-[#313A00] mb-2">Analytics</h4>
+                  <p className="text-gray-700 leading-relaxed mb-2">
+                    These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously. This information helps us improve our website and user experience.
+                  </p>
+                  <p className="text-sm text-gray-600 mb-2">
+                    <strong>Tools we use:</strong> Google Analytics, Google Tag Manager, Hotjar
+                  </p>
+                  <p className="text-sm text-gray-600">
+                    <strong>Data collected:</strong> Page views, user interactions, session duration, bounce rates, device and browser information
+                  </p>
+                </div>
+
+                <div>
+                  <h4 className="text-xl font-semibold text-[#313A00] mb-2">Advertising</h4>
+                  <p className="text-gray-700 leading-relaxed mb-2">
+                    These cookies are used to deliver advertisements that are more relevant to you and your interests. They may also be used to limit the number of times you see an advertisement and measure the effectiveness of advertising campaigns.
+                  </p>
+                  <p className="text-sm text-gray-600 mb-2">
+                    <strong>Tools we use:</strong> Google Ads, retargeting pixels
+                  </p>
+                  <p className="text-sm text-gray-600">
+                    <strong>Data collected:</strong> Ad interactions, conversion tracking, audience segmentation
+                  </p>
+                </div>
+
+                <div>
+                  <h4 className="text-xl font-semibold text-[#313A00] mb-2">Marketing / Personalization</h4>
+                  <p className="text-gray-700 leading-relaxed mb-2">
+                    These cookies are used to deliver personalized content and identify potential leads. They help us understand visitor behavior, improve our marketing efforts, and provide a more tailored experience.
+                  </p>
+                  <p className="text-sm text-gray-600 mb-2">
+                    <strong>Tools we use:</strong> Warmly, lead identification tools
+                  </p>
+                  <p className="text-sm text-gray-600">
+                    <strong>Data collected:</strong> Visitor identification, company information, browsing patterns, engagement metrics
+                  </p>
+                </div>
+              </div>
+
+              <p className="text-gray-700 leading-relaxed mb-4">
+                <strong>Consent and Your Choices:</strong> Non-essential tracking technologies (analytics, advertising, and marketing/personalization) are only activated after you provide explicit consent via our consent banner. You can withdraw or modify your consent at any time by clicking the "Cookie Settings" link in our website footer or by managing your browser settings.
+              </p>
+
+              <p className="text-gray-700 leading-relaxed mb-6">
+                <strong>Third-Party Sharing:</strong> When you consent to non-essential tracking technologies, we may share information collected through these technologies with third-party service providers, including Google (for Analytics and Ads), Hotjar, and Warmly. These third parties may use this information for their own purposes in accordance with their privacy policies.
+              </p>
 
               <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">Information collected from other sources</h3>
               <ul className="list-disc list-inside text-gray-700 space-y-3 mb-6 ml-4">
@@ -231,6 +303,35 @@ export default function PrivacyPolicy() {
               
               <p className="text-gray-700 leading-relaxed mb-6">
                 Your rights regarding your Personal Data may vary depending on your location and applicable data protection laws. If you are located in Europe, you have the following legal rights:
+              </p>
+
+              <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">Your Choices About Cookies and Tracking</h3>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                You have control over how we use cookies and similar tracking technologies on our website. You can manage your preferences in the following ways:
+              </p>
+              <ul className="list-disc list-inside text-gray-700 space-y-2 mb-4 ml-4">
+                <li><strong>Cookie Settings:</strong> Click the "Cookie Settings" link in our website footer to access our cookie preferences center, where you can enable or disable specific categories of cookies (analytics, advertising, marketing/personalization).</li>
+                <li><strong>Browser Settings:</strong> Most web browsers allow you to control cookies through their settings preferences. However, limiting cookies may impact your experience on our website.</li>
+                <li><strong>Opt-Out of Sale/Sharing:</strong> If you are a California resident, you can opt-out of the sale or sharing of your personal information by clicking the "Do Not Sell or Share My Personal Information" link in our footer.</li>
+                <li><strong>Withdraw Consent:</strong> You can withdraw your consent for non-essential tracking technologies at any time by accessing the Cookie Settings and disabling the relevant categories.</li>
+              </ul>
+              <p className="text-gray-700 leading-relaxed mb-6">
+                Please note that disabling certain cookies may limit your ability to use some features of our Services. Strictly necessary cookies cannot be disabled as they are essential for the website to function.
+              </p>
+
+              <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">California Residents' Rights</h3>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                If you are a California resident, you have specific rights under the California Consumer Privacy Act (CCPA) and California Privacy Rights Act (CPRA), including:
+              </p>
+              <ul className="list-disc list-inside text-gray-700 space-y-2 mb-4 ml-4">
+                <li><strong>Right to Know:</strong> You have the right to request information about the categories and specific pieces of personal information we collect, use, disclose, and sell.</li>
+                <li><strong>Right to Delete:</strong> You have the right to request deletion of your personal information, subject to certain exceptions.</li>
+                <li><strong>Right to Correct:</strong> You have the right to request correction of inaccurate personal information.</li>
+                <li><strong>Right to Opt-Out of Sale/Sharing:</strong> You have the right to opt-out of the sale or sharing of your personal information. You can exercise this right by clicking the "Do Not Sell or Share My Personal Information" link in our footer or by contacting us directly.</li>
+                <li><strong>Right to Non-Discrimination:</strong> We will not discriminate against you for exercising your privacy rights.</li>
+              </ul>
+              <p className="text-gray-700 leading-relaxed mb-6">
+                To exercise these rights, please contact us at <a href="mailto:info@kahana.co" className="text-[#4A6200] hover:underline font-semibold">info@kahana.co</a> or use the "Do Not Sell or Share My Personal Information" link in our footer. We will respond to your request within the timeframes required by applicable law.
               </p>
 
               <div className="space-y-4 mb-6">

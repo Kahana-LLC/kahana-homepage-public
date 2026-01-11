@@ -1,9 +1,31 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import Link from 'next/link';
+import { ConsentContext } from '../contexts/ConsentContext';
 
-export default function Footer() {
+function FooterContent() {
   const [openSection, setOpenSection] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
+  
+  // Get consent context safely - returns null if not available
+  const consentContext = useContext(ConsentContext);
+  
+  // Provide fallback functions if context not available
+  const openCookieModal = consentContext?.openModal || (() => {
+    // Fallback: navigate to privacy policy cookie section
+    if (typeof window !== 'undefined') {
+      window.location.href = '/privacy-policy#cookie-settings';
+    }
+  });
+  
+  const openDoNotSell = consentContext ? () => {
+    consentContext.declineAll();
+    consentContext.openModal();
+  } : () => {
+    // Fallback: navigate to privacy policy
+    if (typeof window !== 'undefined') {
+      window.location.href = '/privacy-policy#do-not-sell';
+    }
+  };
   
   const toggleSection = (section) => {
     setOpenSection(openSection === section ? null : section);
@@ -207,6 +229,26 @@ export default function Footer() {
                 <div className="flex flex-wrap items-center justify-center gap-4 md:gap-8">
                   <Link href="/privacy-policy" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 text-sm no-underline">Privacy</Link>
                   <Link href="/terms-and-conditions" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 text-sm no-underline">Terms</Link>
+                  {openCookieModal ? (
+                    <button
+                      onClick={openCookieModal}
+                      className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 text-sm no-underline bg-transparent border-none cursor-pointer p-0"
+                    >
+                      Cookie Settings
+                    </button>
+                  ) : (
+                    <Link href="/privacy-policy#cookie-settings" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 text-sm no-underline">Cookie Settings</Link>
+                  )}
+                  {openDoNotSell ? (
+                    <button
+                      onClick={openDoNotSell}
+                      className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 text-sm no-underline bg-transparent border-none cursor-pointer p-0"
+                    >
+                      Do Not Sell or Share My Personal Information
+                    </button>
+                  ) : (
+                    <Link href="/privacy-policy#do-not-sell" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 text-sm no-underline">Do Not Sell or Share</Link>
+                  )}
                   <Link href="/right-to-work" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 text-sm no-underline">Right to Work</Link>
                   <Link href="/sales" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 text-sm no-underline">Contact Sales</Link>
                   <Link href="/oasis-feedback-survey" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 text-sm no-underline">Feedback Survey</Link>
@@ -278,4 +320,8 @@ export default function Footer() {
       </div>
     </footer>
   );
+}
+
+export default function Footer() {
+  return <FooterContent />;
 }

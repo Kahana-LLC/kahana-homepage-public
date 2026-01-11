@@ -5,9 +5,52 @@ if (typeof window !== "undefined" && !window.dataLayer) {
   window.dataLayer = window.dataLayer || [];
 }
 
-// Helper function to push events to dataLayer
+// Helper function to check if analytics consent is granted
+const hasAnalyticsConsent = () => {
+  if (typeof window === "undefined") return false;
+  
+  try {
+    const stored = localStorage.getItem('kahana_consent_preferences');
+    if (stored) {
+      const consent = JSON.parse(stored);
+      // Validate consent structure
+      if (consent && typeof consent === 'object') {
+        return consent.analytics === true;
+      }
+    }
+  } catch (error) {
+    // Handle various error types gracefully
+    if (error.name === 'QuotaExceededError') {
+      console.warn('localStorage quota exceeded when checking analytics consent');
+    } else if (error instanceof SyntaxError) {
+      console.warn('Invalid consent data format, defaulting to no consent');
+      // Clear corrupted data
+      try {
+        localStorage.removeItem('kahana_consent_preferences');
+      } catch (clearError) {
+        // Ignore clear errors
+      }
+    } else {
+      console.warn('Error checking analytics consent:', error);
+    }
+  }
+  
+  return false;
+};
+
+// Helper function to push events to dataLayer (only if consent granted)
 const pushToDataLayer = (event) => {
-  if (typeof window !== "undefined" && window.dataLayer) {
+  if (typeof window === "undefined") return;
+  
+  // Check consent before tracking
+  if (!hasAnalyticsConsent()) {
+    if (process.env.NODE_ENV === 'development') {
+      console.log('Analytics event blocked - no consent:', event);
+    }
+    return;
+  }
+  
+  if (window.dataLayer) {
     window.dataLayer.push(event);
   }
 };
