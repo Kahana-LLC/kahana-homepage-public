@@ -158,10 +158,10 @@ export default function BlogIndex({ posts = [] }) {
               <button
                 key={category}
                 onClick={() => handleCategoryChange(category)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                className={`px-4 py-2 text-sm font-medium transition-colors ${
                   selectedCategory === category
                     ? 'btn-primary'
-                    : 'bg-white text-[#21706c] font-bold hover:bg-gray-100 border border-[#21706c]'
+                    : 'btn-secondary'
                 }`}
               >
                 {category}
