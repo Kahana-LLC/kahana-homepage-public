@@ -32,6 +32,14 @@ export default function BlogCard({ post }) {
     const fetchImage = async () => {
       try {
         setIsLoadingImage(true);
+        
+        // Check if post has a featuredImage URL - use it directly
+        if (post.featuredImage) {
+          setImageUrl(post.featuredImage);
+          setIsLoadingImage(false);
+          return;
+        }
+        
         const primaryQuery = post.defaultImageQuery || suggestNatureImageQuery(post.category);
         // Use the post slug as unique identifier to prevent duplicate images
         const photo = await getRandomPhoto(primaryQuery, post.slug);
@@ -55,7 +63,7 @@ export default function BlogCard({ post }) {
     if (isClient) {
       fetchImage();
     }
-  }, [isClient, post.defaultImageQuery, post.category, post.slug]);
+  }, [isClient, post.defaultImageQuery, post.category, post.slug, post.featuredImage]);
 
   if (!post) {
     return null;

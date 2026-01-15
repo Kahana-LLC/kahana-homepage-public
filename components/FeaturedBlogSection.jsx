@@ -15,6 +15,14 @@ const FeaturedBlogCard = ({ post }) => {
     const fetchImage = async () => {
       try {
         setIsLoadingImage(true);
+        
+        // Check if post has a featuredImage URL - use it directly
+        if (post.featuredImage) {
+          setImageUrl(post.featuredImage);
+          setIsLoadingImage(false);
+          return;
+        }
+        
         const primaryQuery = post.defaultImageQuery || suggestNatureImageQuery(post.category);
         // Use the post slug as unique identifier to prevent duplicate images
         const photo = await getRandomPhoto(primaryQuery, post.slug);
@@ -36,7 +44,7 @@ const FeaturedBlogCard = ({ post }) => {
     };
 
     fetchImage();
-  }, [post.defaultImageQuery, post.category, post.slug]);
+  }, [post.defaultImageQuery, post.category, post.slug, post.featuredImage]);
 
   return (
     <Link href={`/blog/${post.slug}`} className="group no-underline">

@@ -98,6 +98,18 @@ export default function BlogPost({ post }) {
     const fetchImage = async () => {
       try {
         setIsLoadingImage(true);
+        
+        // Check if post has a featuredImage URL - use it directly
+        if (post.featuredImage) {
+          setCoverImage({
+            src: post.featuredImage,
+            photographer: null,
+            photographer_url: null
+          });
+          setIsLoadingImage(false);
+          return;
+        }
+        
         const primaryQuery = post.defaultImageQuery || suggestNatureImageQuery(post.category);
         // Use the post slug as unique identifier to prevent duplicate images
         const photo = await getRandomPhoto(primaryQuery, post.slug);
@@ -129,7 +141,7 @@ export default function BlogPost({ post }) {
     if (isClient) {
       fetchImage();
     }
-  }, [isClient, post.defaultImageQuery, post.category, post.slug]);
+  }, [isClient, post.defaultImageQuery, post.category, post.slug, post.featuredImage]);
 
   // Get the authors for this post using getAuthorDetails
   const postAuthors = post?.authors ? getAuthorDetails(post.authors) : [];

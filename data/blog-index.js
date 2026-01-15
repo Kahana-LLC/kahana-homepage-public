@@ -1,5 +1,16 @@
 const blogIndex = [
   {
+    title: "OpenAI's $10 Billion Cerebras Deal: A Bold Gamble or a Recipe for Disaster?",
+    date: "2026-01-15T00:00:00.000Z",
+    authors: ["Konika Dhull"],
+    category: ["Engineering"],
+    excerpt: "OpenAI's three-year, $10 billion compute partnership with Cerebras promises to break free from Nvidia bottlenecks, but the deal raises serious questions about power consumption, vendor concentration risk, conflicts of interest, and the sustainability of hyperscale AI infrastructure.",
+    defaultImageQuery: "AI computing infrastructure data center technology",
+    featuredImage: "https://www.thedailystar.net/sites/default/files/styles/big_1/public/2026-01/OpenAI%20Cerebras.png?h=948fe59c",
+    slug: "openai-cerebras-10-billion-deal-risks-challenges-2026",
+    readingTime: 12,
+  },
+  {
     title: "5G Networks: How India's Leapfrog Strategy Outpaced the US in Speed and Affordability",
     date: "2025-09-16T00:00:00.000Z",
     authors: ["Durgesh Tiwari"],
