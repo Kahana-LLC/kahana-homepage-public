@@ -178,7 +178,7 @@ export default function FreeAgenticBrowser() {
       'Smart Navigation',
       'AI-Powered Assistant'
     ],
-    screenshot: 'https://kahana.co/assets/oasis-browser-preview.png',
+    screenshot: getCloudinaryImageUrl('/assets/oasis-browser-preview.png', { width: 1200, quality: 'auto:good' }) || 'https://kahana.co/assets/oasis-browser-preview.png',
     softwareVersion: '1.0',
     publisher: {
       '@type': 'Organization',
@@ -193,7 +193,7 @@ export default function FreeAgenticBrowser() {
       <SEO 
         title="Oasis - Free Agentic Browser for Enhanced Productivity"
         description="Boost your productivity with Kahana's Free Agentic Browser. Features smart organization tools, AI-powered assistance, and a seamless browsing experience designed for maximum efficiency."
-        image="https://kahana.co/assets/oasis-browser-preview.png"
+        image={getCloudinaryImageUrl('/assets/oasis-browser-preview.png', { width: 1200, quality: 'auto:good' }) || 'https://kahana.co/assets/oasis-browser-preview.png'}
         url="https://kahana.co/products/free-agentic-browser"
         type="product"
         schema={browserSchema}
