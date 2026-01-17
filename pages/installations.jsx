@@ -50,7 +50,7 @@ export default function Installations() {
       description: 'macOS 10.15 or later (Apple Silicon)',
       status: 'available',
       size: 'Download',
-      downloadUrl: 'https://app.box.com/s/phj5kgcc9zmykla2u6vmng6h3bseh8zv',
+      downloadUrl: 'https://app.box.com/s/p5e5waq8elgcbadqzl9pnfo1j0y88265',
       color: 'bg-[#4A6200] hover:bg-[#3E5300] border-[#4A6200]',
       textColor: 'text-white'
     },
