@@ -1,5 +1,16 @@
 const blogIndex = [
   {
+    title: "The AI Productivity Paradox: How Anthropic's Engineers Are Winning and Losing at the Same Time",
+    date: "2026-01-20T00:00:00.000Z",
+    authors: ["Konika Dhull"],
+    category: ["Engineering"],
+    excerpt: "Anthropic's groundbreaking internal research reveals that AI tools like Claude are handling roughly 27% of engineering work, delivering significant productivity gains while simultaneously raising urgent questions about skill erosion, code quality, and the future of software development expertise.",
+    defaultImageQuery: "AI software development engineering collaboration technology workplace",
+    featuredImage: "https://media.licdn.com/dms/image/v2/C5112AQGhjTJTRMZFBg/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1550175529636?e=2147483647&v=beta&t=odREJ3JbPCpdYx1W_Q8sWQfE7ToxG5rPt1MqTtXfsSA",
+    slug: "anthropic-ai-transforming-work-developers-skill-erosion-2026",
+    readingTime: 14,
+  },
+  {
     title: "OpenAI's $10 Billion Cerebras Deal: A Bold Gamble or a Recipe for Disaster?",
     date: "2026-01-15T00:00:00.000Z",
     authors: ["Konika Dhull"],
