@@ -17,6 +17,7 @@ const nextConfig = {
       "res.cloudinary.com", // Domain for Cloudinary CDN images
       "www.thedailystar.net", // Domain for The Daily Star images
       "media.licdn.com", // Domain for LinkedIn images
+      "s.alicdn.com", // Domain for Alibaba Cloud images
     ],
     unoptimized: true, // Allow unoptimized local images (Cloudinary handles optimization)
   },

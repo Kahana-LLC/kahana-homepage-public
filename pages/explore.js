@@ -175,7 +175,7 @@ const SearchPage = () => {
                   disabled={!pagination.hasPreviousPage}
                   className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                     pagination.hasPreviousPage
-                      ? 'bg-white text-gray-700 border border-gray-300 hover:bg-gray-50'
+                      ? 'btn-primary'
                       : 'bg-gray-100 text-gray-400 border border-gray-200 cursor-not-allowed'
                   }`}
                 >
@@ -202,8 +202,8 @@ const SearchPage = () => {
                         onClick={() => handlePageChange(pageNum)}
                         className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                           currentPage === pageNum
-                            ? 'bg-blue-500 text-white'
-                            : 'bg-white text-gray-700 border border-gray-300 hover:bg-gray-50'
+                            ? 'btn-primary'
+                            : 'btn-secondary'
                         }`}
                       >
                         {pageNum}
@@ -218,7 +218,7 @@ const SearchPage = () => {
                   disabled={!pagination.hasNextPage}
                   className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                     pagination.hasNextPage
-                      ? 'bg-white text-gray-700 border border-gray-300 hover:bg-gray-50'
+                      ? 'btn-primary'
                       : 'bg-gray-100 text-gray-400 border border-gray-200 cursor-not-allowed'
                   }`}
                 >

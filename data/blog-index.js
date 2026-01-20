@@ -1,5 +1,16 @@
 const blogIndex = [
   {
+    title: "The Hidden Cost of Tab Overload: How 50 Open Tabs Are Draining Your Brain",
+    date: "2026-01-20T00:00:00.000Z",
+    authors: ["Konika Dhull"],
+    category: ["Engineering"],
+    excerpt: "Research reveals that tab overload isn't just a productivity annoyance—it's a cognitive load crisis. Each open tab represents a separate mental context that drains working memory, increases decision fatigue, and erodes the deep focus needed for knowledge work. But AI-powered solutions like Oasis are reimagining browser organization to solve this problem.",
+    defaultImageQuery: "browser tabs cognitive load productivity workspace organization",
+    featuredImage: "https://s.alicdn.com/@sc02/kf/H8074b66434c641ceae080586d4044f03T.jpg",
+    slug: "tab-overload-cognitive-load-productivity-2026",
+    readingTime: 13,
+  },
+  {
     title: "The AI Productivity Paradox: How Anthropic's Engineers Are Winning and Losing at the Same Time",
     date: "2026-01-20T00:00:00.000Z",
     authors: ["Konika Dhull"],
