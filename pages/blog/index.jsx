@@ -204,7 +204,7 @@ export default function BlogIndex({ posts = [] }) {
                           ? 'btn-primary'
                           : pageNum === '...'
                           ? 'cursor-default'
-                          : 'bg-white text-[#21706c] font-bold hover:bg-gray-100 border border-[#21706c]'
+                          : 'btn-secondary'
                       }`}
                     >
                       {pageNum}

@@ -275,8 +275,8 @@ const Resources = ({
                   onClick={() => setCurrentPage(page)}
                   className={`px-4 py-2 rounded-md ${
                     currentPage === page
-                      ? 'bg-[#21706c] text-white font-bold'
-                      : 'bg-white text-[#21706c] font-bold hover:bg-gray-100 border border-[#21706c]'
+                      ? 'btn-primary'
+                      : 'btn-secondary'
                   }`}
                 >
                   {page}
