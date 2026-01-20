@@ -50,7 +50,7 @@ export default function Installations() {
       description: 'macOS 10.15 or later (Apple Silicon)',
       status: 'available',
       size: 'Download',
-      downloadUrl: 'https://app.box.com/s/phj5kgcc9zmykla2u6vmng6h3bseh8zv',
+      downloadUrl: 'https://app.box.com/s/4x605cd3ehhxbzyaqunquw5pp40vau9r',
       color: 'bg-[#4A6200] hover:bg-[#3E5300] border-[#4A6200]',
       textColor: 'text-white'
     },
@@ -60,7 +60,7 @@ export default function Installations() {
       description: 'macOS 10.15 or later (Intel)',
       status: 'available',
       size: 'Download',
-      downloadUrl: 'https://app.box.com/s/rr14pha5eoiawc296jgidngsdyx1cofu',
+      downloadUrl: 'https://app.box.com/s/wumbootmyp4qkxlkdqg7vqwwbdk70kqx',
       color: 'bg-[#4A6200] hover:bg-[#3E5300] border-[#4A6200]',
       textColor: 'text-white'
     },
