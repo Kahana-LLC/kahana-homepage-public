@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { trackPostHogEvent, setUserProperties } from '../utils/posthog';
 
 /**
@@ -8,6 +9,8 @@ import { trackPostHogEvent, setUserProperties } from '../utils/posthog';
  * 
  * Timing: Shows after 20 seconds OR 50% scroll depth
  * Research: 20 seconds is optimal for survey popups - balances engagement with non-intrusiveness
+ * 
+ * Privacy: Only shows if user has accepted all cookies (Accept All) - matches Warmly behavior
  */
 const ICPSurvey = () => {
   const [showSurvey, setShowSurvey] = useState(false);
@@ -15,7 +18,33 @@ const ICPSurvey = () => {
   const [showOtherInput, setShowOtherInput] = useState(false);
   const [otherRole, setOtherRole] = useState('');
 
+  // Check if user has accepted all cookies (Accept All) before showing survey
+  // This matches how Warmly works - only shows after full acceptance
+  const hasAcceptedAll = () => {
+    if (typeof window === 'undefined') return false;
+    try {
+      const stored = localStorage.getItem('kahana_consent_preferences');
+      if (stored) {
+        const consent = JSON.parse(stored);
+        // Only show if all consents are accepted (analytics, advertising, marketing)
+        return consent && 
+               consent.analytics === true && 
+               consent.advertising === true && 
+               consent.marketing === true;
+      }
+    } catch (error) {
+      return false;
+    }
+    return false;
+  };
+
   useEffect(() => {
+    // Only proceed if user has accepted all cookies (Accept All)
+    // This matches how Warmly works - only shows after full acceptance
+    if (!hasAcceptedAll()) {
+      return; // Don't show survey if user hasn't accepted all
+    }
+
     // Check if user has already responded
     if (typeof window !== 'undefined') {
       const responded = localStorage.getItem('icp_survey_responded');
@@ -155,7 +184,8 @@ const ICPSurvey = () => {
     });
   };
 
-  if (!showSurvey || hasResponded) {
+  // Don't show if user hasn't accepted all, already responded, or survey not triggered
+  if (!hasAcceptedAll() || !showSurvey || hasResponded) {
     return null;
   }
 
@@ -252,6 +282,18 @@ const ICPSurvey = () => {
             One quick click, that's it!
           </p>
         )}
+
+        {/* Privacy Policy Link */}
+        <p className="text-xs text-gray-500 text-center mt-2">
+          By selecting an option, you agree to our{' '}
+          <Link 
+            href="/privacy-policy" 
+            className="text-[#728552] hover:text-[#5a6a42] underline"
+            onClick={() => trackPostHogEvent('privacy_policy_clicked', { source: 'icp_survey' })}
+          >
+            Privacy Policy
+          </Link>
+        </p>
       </div>
     </div>
   );

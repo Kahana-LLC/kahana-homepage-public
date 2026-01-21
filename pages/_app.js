@@ -247,8 +247,8 @@ function AppContent({ Component, pageProps }) {
         <ConsentBanner />
         <CookiePreferencesModal />
       </ConsentErrorBoundary>
-      {/* ICP Survey - only shows if analytics consent granted */}
-      {hasConsent('analytics') && <ICPSurvey />}
+      {/* ICP Survey - only shows if user has accepted all cookies (Accept All) */}
+      {hasConsent('analytics') && hasConsent('advertising') && hasConsent('marketing') && <ICPSurvey />}
     </>
   );
 }
