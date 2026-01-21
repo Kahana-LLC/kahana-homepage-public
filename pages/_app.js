@@ -12,6 +12,8 @@ import ConsentBanner from "../components/ConsentBanner";
 import CookiePreferencesModal from "../components/CookiePreferencesModal";
 import ConsentErrorBoundary from "../components/ConsentErrorBoundary";
 import { loadScriptIfConsented, loadInlineScriptIfConsented } from "../utils/scriptLoader";
+import { initPostHog, trackPageView } from "../utils/posthog";
+import ICPSurvey from "../components/ICPSurvey";
 
 // Inner component that uses consent
 function AppContent({ Component, pageProps }) {
@@ -21,7 +23,10 @@ function AppContent({ Component, pageProps }) {
   useEffect(() => {
     // Track route changes
     const handleRouteChange = (url) => {
-      // You can add additional tracking here if needed
+      // Track page view in PostHog
+      if (hasConsent('analytics')) {
+        trackPageView(url);
+      }
     };
 
     // Track errors
@@ -129,6 +134,14 @@ function AppContent({ Component, pageProps }) {
         {},
         hasConsent
       );
+
+      // PostHog - requires analytics consent
+      // Using API key from PostHog snippet: phc_AO2jVB9Uuo448EoalpPTIkdZoqZnyjlEh4BUuRngoby
+      const posthogApiKey = process.env.NEXT_PUBLIC_POSTHOG_KEY || 'phc_AO2jVB9Uuo448EoalpPTIkdZoqZnyjlEh4BUuRngoby';
+      const posthogHost = process.env.NEXT_PUBLIC_POSTHOG_HOST || 'https://us.i.posthog.com';
+      if (posthogApiKey) {
+        initPostHog(posthogApiKey, posthogHost);
+      }
     }
 
     // Google Ads - requires advertising consent
@@ -234,6 +247,8 @@ function AppContent({ Component, pageProps }) {
         <ConsentBanner />
         <CookiePreferencesModal />
       </ConsentErrorBoundary>
+      {/* ICP Survey - only shows if analytics consent granted */}
+      {hasConsent('analytics') && <ICPSurvey />}
     </>
   );
 }
