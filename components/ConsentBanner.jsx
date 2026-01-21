@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { useConsent } from '../contexts/ConsentContext';
 
 export default function ConsentBanner() {
@@ -17,8 +18,10 @@ export default function ConsentBanner() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <div className="flex-1">
-            <h2 id="consent-banner-title" className="text-lg font-semibold text-[#313A00] mb-2">
-              We Value Your Privacy
+            <h2 id="consent-banner-title" className="text-lg font-semibold mb-2">
+              <Link href="/privacy-policy" className="text-[#617500] hover:underline" style={{ color: '#617500' }}>
+                We Value Your Privacy
+              </Link>
             </h2>
             <p id="consent-banner-description" className="text-sm text-gray-700 mb-0">
               We use cookies and similar technologies to enhance your browsing experience, analyze site traffic, and personalize content. 
