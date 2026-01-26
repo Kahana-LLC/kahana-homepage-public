@@ -31,14 +31,8 @@ export default function Careers() {
                 If you're excited about transforming how people work and making technology work better for humans, 
                 we'd love to hear from you.
               </p>
-              <Link href="/contact">
-                <button className="bg-[#788B59] text-white font-bold px-6 py-3 rounded-md hover:bg-[#728552] transition-colors"
-                  
-                >
-                  <span >
-                    Contact Us
-                  </span>
-                </button>
+              <Link href="/contact" className="btn-primary inline-flex items-center justify-center px-6 py-3 text-base font-bold no-underline hover:no-underline focus:no-underline">
+                Contact Us
               </Link>
             </div>
           </div>

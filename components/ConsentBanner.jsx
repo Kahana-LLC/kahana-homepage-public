@@ -20,7 +20,7 @@ export default function ConsentBanner() {
           <div className="flex-1">
             <h2 id="consent-banner-title" className="text-lg font-semibold mb-2">
               <Link href="/privacy-policy" className="text-[#617500] hover:underline" style={{ color: '#617500' }}>
-                We Value Your Privacy
+              We Value Your Privacy
               </Link>
             </h2>
             <p id="consent-banner-description" className="text-sm text-gray-700 mb-0">

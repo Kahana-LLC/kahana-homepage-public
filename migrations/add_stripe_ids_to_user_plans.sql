@@ -28,3 +28,11 @@ COMMENT ON COLUMN public.user_plans.stripe_subscription_id IS 'Stripe subscripti
 
 
 
+
+
+
+
+
+
+
+

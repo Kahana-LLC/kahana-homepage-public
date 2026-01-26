@@ -77,7 +77,7 @@ function FooterContent() {
                 onClick={() => toggleSection('product')} 
                 className="footer-mobile-dropdown flex justify-between items-center w-full md:hidden mb-3 border border-[#788B59] text-[#788B59] font-bold py-2 px-4 rounded-md appearance-none shadow-sm"
               >
-                <h3 className="text-[#011910] font-semibold text-lg">Product</h3>
+                <h3 className="text-[#617500] font-semibold text-lg">Product</h3>
                 <svg 
                   className={`w-5 h-5 transition-transform ${openSection === 'product' ? 'rotate-180' : ''}`}
                   fill="none" 
@@ -87,7 +87,7 @@ function FooterContent() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-              <h3 className="text-[#011910] font-semibold mb-6 text-lg hidden md:block">Product</h3>
+              <h3 className="text-[#617500] font-semibold mb-6 text-lg hidden md:block">Product</h3>
               <ul className={`space-y-4 ${openSection === 'product' || !isMobile ? 'block' : 'hidden'}`}>
                 <li><Link href="/products/free-agentic-browser" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 no-underline">Oasis Agentic Browser</Link></li>
                 <li><Link href="/products/enterprise-browser" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 no-underline">Oasis Enterprise Browser</Link></li>
@@ -103,7 +103,7 @@ function FooterContent() {
                 onClick={() => toggleSection('useCases')} 
                 className="footer-mobile-dropdown flex justify-between items-center w-full md:hidden mb-3 border border-[#788B59] text-[#788B59] font-bold py-2 px-4 rounded-md appearance-none shadow-sm"
               >
-                <h3 className="text-[#011910] font-semibold text-lg">Use Cases</h3>
+                <h3 className="text-[#617500] font-semibold text-lg">Use Cases</h3>
                 <svg 
                   className={`w-5 h-5 transition-transform ${openSection === 'useCases' ? 'rotate-180' : ''}`}
                   fill="none" 
@@ -113,7 +113,7 @@ function FooterContent() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-              <h3 className="text-[#011910] font-semibold mb-6 text-lg hidden md:block">Use Cases</h3>
+              <h3 className="text-[#617500] font-semibold mb-6 text-lg hidden md:block">Use Cases</h3>
               <ul className={`space-y-4 ${openSection === 'useCases' || !isMobile ? 'block' : 'hidden'}`}>
                 <li><Link href="/solutions/saas-and-web-apps" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 no-underline">SaaS & Web Apps</Link></li>
                 <li><Link href="/solutions/remote-workforce" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 no-underline">Remote Workforce Security</Link></li>
@@ -133,7 +133,7 @@ function FooterContent() {
                 onClick={() => toggleSection('learn')} 
                 className="footer-mobile-dropdown flex justify-between items-center w-full md:hidden mb-3 border border-[#788B59] text-[#788B59] font-bold py-2 px-4 rounded-md appearance-none shadow-sm"
               >
-                <h3 className="text-[#011910] font-semibold text-lg">Learn</h3>
+                <h3 className="text-[#617500] font-semibold text-lg">Learn</h3>
                 <svg 
                   className={`w-5 h-5 transition-transform ${openSection === 'learn' ? 'rotate-180' : ''}`}
                   fill="none" 
@@ -143,7 +143,7 @@ function FooterContent() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-              <h3 className="text-[#011910] font-semibold mb-6 text-lg hidden md:block">Learn</h3>
+              <h3 className="text-[#617500] font-semibold mb-6 text-lg hidden md:block">Learn</h3>
               <ul className={`space-y-4 ${openSection === 'learn' || !isMobile ? 'block' : 'hidden'}`}>
                 <li><Link href="/blog" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 no-underline">Blog</Link></li>
                 <li><Link href="/docs" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 no-underline">Docs</Link></li>
@@ -160,7 +160,7 @@ function FooterContent() {
                 onClick={() => toggleSection('markets')} 
                 className="footer-mobile-dropdown flex justify-between items-center w-full md:hidden mb-3 border border-[#788B59] text-[#788B59] font-bold py-2 px-4 rounded-md appearance-none shadow-sm"
               >
-                <h3 className="text-[#011910] font-semibold text-lg">Markets</h3>
+                <h3 className="text-[#617500] font-semibold text-lg">Markets</h3>
                 <svg 
                   className={`w-5 h-5 transition-transform ${openSection === 'markets' ? 'rotate-180' : ''}`}
                   fill="none" 
@@ -170,7 +170,7 @@ function FooterContent() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-              <h3 className="text-[#011910] font-semibold mb-6 text-lg hidden md:block">Markets</h3>
+              <h3 className="text-[#617500] font-semibold mb-6 text-lg hidden md:block">Markets</h3>
               <ul className={`space-y-4 ${openSection === 'markets' || !isMobile ? 'block' : 'hidden'}`}>
                 <li><Link href="/markets/manufacturing" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 no-underline">Manufacturing</Link></li>
                 <li><Link href="/markets/professional" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 no-underline">Professional Services</Link></li>
@@ -191,7 +191,7 @@ function FooterContent() {
                 onClick={() => toggleSection('about')} 
                 className="footer-mobile-dropdown flex justify-between items-center w-full md:hidden mb-3 border border-[#788B59] text-[#788B59] font-bold py-2 px-4 rounded-md appearance-none shadow-sm"
               >
-                <h3 className="text-[#011910] font-semibold text-lg">About</h3>
+                <h3 className="text-[#617500] font-semibold text-lg">About</h3>
                 <svg 
                   className={`w-5 h-5 transition-transform ${openSection === 'about' ? 'rotate-180' : ''}`}
                   fill="none" 
@@ -201,7 +201,7 @@ function FooterContent() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-              <h3 className="text-[#011910] font-semibold mb-6 text-lg hidden md:block">About</h3>
+              <h3 className="text-[#617500] font-semibold mb-6 text-lg hidden md:block">About</h3>
               <ul className={`space-y-4 ${openSection === 'about' || !isMobile ? 'block' : 'hidden'}`}>
                 <li><Link href="/about" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 no-underline">About Kahana</Link></li>
                 <li><Link href="/security" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 no-underline">Security</Link></li>
@@ -222,7 +222,8 @@ function FooterContent() {
                   {openCookieModal ? (
                     <button
                       onClick={openCookieModal}
-                      className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 text-sm no-underline bg-transparent border-none cursor-pointer p-0"
+                      className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 text-sm no-underline bg-transparent border-none cursor-pointer p-0 font-normal appearance-none outline-none focus:outline-none"
+                      style={{ fontFamily: 'inherit', fontSize: 'inherit', lineHeight: 'inherit' }}
                     >
                       Cookie Settings
                     </button>

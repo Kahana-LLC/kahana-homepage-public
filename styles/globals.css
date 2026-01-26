@@ -72,7 +72,7 @@ h6 {
 }
 
 /* High-contrast links */
-a {
+a:not(.no-underline):not(.mobile-link):not(.nav-link):not(.btn-primary):not(.btn-secondary):not(.dropdown-link) {
   color: var(--bg-action) !important;
   text-decoration: underline !important;
   font-weight: bold !important;
@@ -106,15 +106,19 @@ a.dropdown-link,
 .dropdown-link,
 a.dropdown-link:visited,
 .dropdown-link:visited {
-  color: #2c2c2c !important;
+  color: #617500 !important;
   text-decoration: none !important;
+  font-weight: 600 !important;
 }
 a.dropdown-link:hover,
 .dropdown-link:hover,
 a.dropdown-link:focus,
-.dropdown-link:focus {
-  color: var(--kahana-primary) !important;
+.dropdown-link:focus,
+a.dropdown-link:active,
+.dropdown-link:active {
+  color: #617500 !important;
   text-decoration: none !important;
+  font-weight: 600 !important;
 }
 
 a.pricing-button,
@@ -158,12 +162,34 @@ a.btn-primary {
   transition: all 0.3s ease !important;
 }
 
+.btn-primary *,
+.btn-primary span,
+.nav-button.primary *,
+.nav-button.primary span,
+button.btn-primary *,
+button.btn-primary span,
+a.btn-primary *,
+a.btn-primary span {
+  color: #FFFFFF !important;
+}
+
 .btn-primary:hover,
 .nav-button.primary:hover,
 button.btn-primary:hover,
 a.btn-primary:hover {
   background-color: #3E5300 !important;
   border-color: #6A8E2A !important;
+  color: #FFFFFF !important;
+}
+
+.btn-primary:hover *,
+.btn-primary:hover span,
+.nav-button.primary:hover *,
+.nav-button.primary:hover span,
+button.btn-primary:hover *,
+button.btn-primary:hover span,
+a.btn-primary:hover *,
+a.btn-primary:hover span {
   color: #FFFFFF !important;
 }
 
@@ -1147,6 +1173,59 @@ a[href="/schedule-demo"]:not(.bg-white):not([style*="background-color: white"]) 
 .no-underline,
 .no-underline * {
   text-decoration: none !important;
+}
+
+/* Footer links - ensure no underlines */
+footer a,
+footer a:visited,
+footer a:hover,
+footer a:active {
+  text-decoration: none !important;
+}
+
+/* Footer buttons styled as links - match link appearance */
+footer button.text-sm.no-underline {
+  text-decoration: none !important;
+  font-weight: normal !important;
+  font-size: 0.875rem !important;
+  color: #4A5745 !important;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+}
+
+footer button.text-sm.no-underline:hover {
+  color: #728552 !important;
+  text-decoration: none !important;
+}
+
+/* Mobile menu links - ensure no underlines and correct styling */
+.mobile-link,
+.mobile-link:visited,
+.mobile-link:hover,
+.mobile-link:active,
+.mobile-link:focus,
+.menu-links a,
+.menu-links a:visited,
+.menu-links a:hover,
+.menu-links a:active,
+.menu-links a:focus {
+  text-decoration: none !important;
+  color: #617500 !important;
+  font-weight: 600 !important;
+}
+
+/* Navbar dropdown links - ensure no underlines and correct styling */
+.dropdown-link,
+.dropdown-link:visited,
+.dropdown-link:hover,
+.dropdown-link:active,
+.dropdown-link:focus {
+  text-decoration: none !important;
+  color: #617500 !important;
+  font-weight: 600 !important;
 }
 
 /* Documentation card links - remove underlines from card content */
