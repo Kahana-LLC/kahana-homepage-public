@@ -1,0 +1,20 @@
+# Blog Post Request Template
+# Fill in the details below, then run: node scripts/create-blog-from-template.js blog-request.txt
+
+TOPIC: Comet vs Atlas vs Oasis
+YEAR: 2026
+DATE: 2026-01-21
+AUTHOR: Konika Dhull
+IMAGE: https://example.com/image.jpg
+CTA: Try Oasis
+OASIS_ANGLE: Enterprise security, Most reliable, Privacy-focused
+
+SOURCES:
+https://example.com/source1
+https://example.com/source2
+https://example.com/source3
+
+INTERNAL_LINKS:
+/products/enterprise-browser → enterprise browser
+/solutions/zero-trust-security → zero-trust security
+/buyers-guide → Enterprise Browser Buyer's Guide

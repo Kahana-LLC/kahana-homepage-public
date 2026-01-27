@@ -18,7 +18,7 @@ export default function Custom404() {
           </p>
           <div className="mt-5">
             <Link href="/">
-              <button className="bg-kahana-primary text-white px-8 py-3 rounded-md font-semibold hover:bg-kahana-primary-dark transition-colors">
+              <button className="btn-primary px-8 py-3 rounded-md font-semibold">
                 Return Home
               </button>
             </Link>

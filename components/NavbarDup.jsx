@@ -343,9 +343,9 @@ function NavBar() {
 
           .dropdown-link {
             display: block;
-            color: #333333 !important;
+            color: #617500 !important;
             text-decoration: none !important;
-            font-weight: 300 !important;
+            font-weight: 600 !important;
             font-size: 0.9375rem;
             line-height: 1.5;
             letter-spacing: 0.01em;
@@ -356,9 +356,14 @@ function NavBar() {
             font-family: "Roboto", sans-serif;
           }
 
-          .dropdown-link:hover {
-            color: #333333 !important;
+          .dropdown-link:hover,
+          .dropdown-link:active,
+          .dropdown-link:visited,
+          .dropdown-link:focus {
+            color: #617500 !important;
             background-color: #f8fafc;
+            text-decoration: none !important;
+            font-weight: 600 !important;
           }
 
           .dropdown-link + .dropdown-link {
@@ -508,9 +513,40 @@ function NavBar() {
             color: #ffffff !important;
           }
 
-          .menu-links a {
+          .menu-links a:not(.btn-primary):not(.btn-secondary) {
             text-decoration: none !important;
             color: inherit !important;
+          }
+
+          /* Ensure btn-primary buttons in mobile menu have correct styling - HIGH SPECIFICITY */
+          .mobile-menu .menu-links a.btn-primary {
+            background-color: #4A6200 !important;
+            border: 1px solid #7F9E36 !important;
+            color: #FFFFFF !important;
+            border-radius: 27.5px !important;
+            font-weight: bold !important;
+            transition: all 0.3s ease !important;
+            text-decoration: none !important;
+          }
+
+          .mobile-menu .menu-links a.btn-primary,
+          .mobile-menu .menu-links a.btn-primary *,
+          .mobile-menu .menu-links a.btn-primary span,
+          .mobile-menu .menu-links a.btn-primary::before,
+          .mobile-menu .menu-links a.btn-primary::after {
+            color: #FFFFFF !important;
+          }
+
+          .mobile-menu .menu-links a.btn-primary:hover {
+            background-color: #3E5300 !important;
+            border-color: #6A8E2A !important;
+            color: #FFFFFF !important;
+          }
+
+          .mobile-menu .menu-links a.btn-primary:hover,
+          .mobile-menu .menu-links a.btn-primary:hover *,
+          .mobile-menu .menu-links a.btn-primary:hover span {
+            color: #FFFFFF !important;
           }
 
           .menu-links button span {
@@ -518,7 +554,7 @@ function NavBar() {
           }
 
           .mobile-link {
-            color: #333;
+            color: #617500 !important;
             transition: all 0.3s ease;
             padding: 1rem 1.25rem;
             border-radius: 0.75rem;
@@ -526,22 +562,56 @@ function NavBar() {
             text-align: left;
             background-color: #f8f9fa;
             font-size: 1.125rem;
-            font-weight: 500;
+            font-weight: 600 !important;
             display: flex;
             align-items: center;
             border: 1px solid #edf0f2;
+            text-decoration: none !important;
           }
 
           .mobile-link:hover {
             background-color: #D0EDE6;
-            color: #2c2c2c;
+            color: #617500 !important;
             transform: translateX(4px);
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            text-decoration: none !important;
+            font-weight: 600 !important;
           }
 
           .mobile-link:active {
             transform: translateX(2px);
             background-color: #bfe5dd;
+            text-decoration: none !important;
+            color: #617500 !important;
+            font-weight: 600 !important;
+          }
+
+          .mobile-link:visited {
+            text-decoration: none !important;
+            color: #617500 !important;
+            font-weight: 600 !important;
+          }
+
+          .mobile-link:focus {
+            color: #617500 !important;
+            font-weight: 600 !important;
+            text-decoration: none !important;
+          }
+
+          /* Ensure mobile links with navbar color don't have underlines */
+          .mobile-link[style*="color: #617500"],
+          .mobile-link[style*="color:#617500"] {
+            text-decoration: none !important;
+          }
+
+          .mobile-link[style*="color: #617500"]:hover,
+          .mobile-link[style*="color:#617500"]:hover,
+          .mobile-link[style*="color: #617500"]:active,
+          .mobile-link[style*="color:#617500"]:active,
+          .mobile-link[style*="color: #617500"]:visited,
+          .mobile-link[style*="color:#617500"]:visited {
+            text-decoration: none !important;
+            color: #617500 !important;
           }
 
           @media (max-width: 1024px) {
@@ -618,10 +688,35 @@ function NavBar() {
               </div>
             </li>
 
-            <li>
+            <li className={`dropdown ${openDropdown === 'pricing' ? 'active' : ''}`}>
               <Link href="/oasis-pricing" className="nav-link">
                 <span className="nav-link-text">Pricing</span>
+                <button
+                  type="button"
+                  className="dropdown-icon-button"
+                  onClick={(e) => toggleDropdown('pricing', e)}
+                  aria-label="Toggle Pricing dropdown"
+                  aria-expanded={openDropdown === 'pricing'}
+                >
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12.09 16.1361C11.9917 16.1373 11.8942 16.1179 11.8038 16.0792C11.7134 16.0404 11.6321 15.9832 11.5652 15.9112L4.81674 9.16274C4.51681 8.86281 4.51681 8.39792 4.81674 8.09799C5.11667 7.79806 5.58156 7.79806 5.88149 8.09799L12.105 14.3215L18.3136 8.11299C18.6135 7.81306 19.0784 7.81306 19.3783 8.11299C19.6783 8.41292 19.6783 8.87781 19.3783 9.17774L12.6299 15.9262C12.4799 16.0761 12.285 16.1511 12.105 16.1511L12.09 16.1361Z" fill="currentColor" stroke="currentColor" strokeWidth="2" />
+                  </svg>
+                </button>
               </Link>
+              <div className="dropdown-overlay"></div>
+              <div className="dropdown-content" style={{ gridTemplateColumns: '1fr' }}>
+                <div className="dropdown-section">
+                  <h3 className="font-semibold mb-4 uppercase tracking-wider" style={{ color: '#000' }}>Product Pricing</h3>
+                  <div className="flex flex-col space-y-4">
+                    <Link href="/oasis-pricing" className="dropdown-link" onClick={() => setOpenDropdown(null)}>
+                      Oasis Pricing
+                    </Link>
+                    <Link href="/pricing" className="dropdown-link" onClick={() => setOpenDropdown(null)}>
+                      Hubs Pricing
+                    </Link>
+                  </div>
+                </div>
+              </div>
             </li>
 
             <li className={`dropdown ${openDropdown === 'learn' ? 'active' : ''}`}>
@@ -776,8 +871,8 @@ function NavBar() {
           <div className="menu-links">
             {/* Contact Buttons at Top */}
             <div className="flex flex-col gap-2 mb-4">
-              <Link href="/oasis-pricing" className="btn-primary w-full text-center py-2.5 px-6 no-underline hover:no-underline focus:no-underline">
-                  Get Access
+              <Link href="/oasis-pricing" className="btn-primary w-full text-center py-2.5 px-6 no-underline hover:no-underline focus:no-underline" style={{ color: '#FFFFFF' }}>
+                  <span style={{ color: '#FFFFFF' }}>Get Access</span>
               </Link>
               <Link href="/contact" className="btn-secondary w-full text-center py-2.5 px-6 no-underline hover:no-underline focus:no-underline">
                   Contact
@@ -785,19 +880,20 @@ function NavBar() {
             </div>
             
             {/* Product Section */}
-            <Link href="/products/free-agentic-browser" className="mobile-link">Free Agentic Browser</Link>
-            <Link href="/products/enterprise-browser" className="mobile-link">Enterprise Browser</Link>
-            <Link href="/products/web-application" className="mobile-link">Web Application</Link>
+            <Link href="/products/free-agentic-browser" className="mobile-link no-underline">Free Agentic Browser</Link>
+            <Link href="/products/enterprise-browser" className="mobile-link no-underline">Enterprise Browser</Link>
+            <Link href="/products/web-application" className="mobile-link no-underline">Web Application</Link>
             
             {/* Pricing */}
-            <Link href="/oasis-pricing" className="mobile-link">Pricing</Link>
+            <Link href="/oasis-pricing" className="mobile-link no-underline">Oasis Pricing</Link>
+            <Link href="/pricing" className="mobile-link no-underline">Hubs Pricing</Link>
             
             {/* Learn Section */}
-            <Link href="/blog" className="mobile-link">Blog</Link>
-            <Link href="/docs" className="mobile-link">Docs</Link>
-            <Link href="/white-paper-future-of-ergonomic-work" className="mobile-link">White Paper</Link>
-            <Link href="/subscribe-to-insights" className="mobile-link">Newsletter</Link>
-            <Link href="/community" className="mobile-link">Join Discord</Link>
+            <Link href="/blog" className="mobile-link no-underline">Blog</Link>
+            <Link href="/docs" className="mobile-link no-underline">Docs</Link>
+            <Link href="/white-paper-future-of-ergonomic-work" className="mobile-link no-underline">White Paper</Link>
+            <Link href="/subscribe-to-insights" className="mobile-link no-underline">Newsletter</Link>
+            <Link href="/community" className="mobile-link no-underline">Join Discord</Link>
             <Link href="/enterprise-buyer-guide" className="mobile-link flex items-center space-x-3 p-3 bg-gradient-to-r from-[#66C2BE]/5 to-[#8CB7D0]/5 rounded-lg border border-[#66C2BE]/20 hover:from-[#66C2BE]/10 hover:to-[#8CB7D0]/10 hover:border-[#66C2BE]/30 transition-all duration-200 no-underline">
               <div className="flex-shrink-0 w-12 h-12 rounded-lg overflow-hidden">
                 <img 
@@ -814,9 +910,9 @@ function NavBar() {
             </Link>
             
             {/* About Section */}
-            <Link href="/about" className="mobile-link">About Kahana</Link>
-            <Link href="/support" className="mobile-link">Support</Link>
-            <Link href="/careers" className="mobile-link">Careers</Link>
+            <Link href="/about" className="mobile-link no-underline">About Kahana</Link>
+            <Link href="/support" className="mobile-link no-underline">Support</Link>
+            <Link href="/careers" className="mobile-link no-underline">Careers</Link>
           </div>
         </div>
       </nav>

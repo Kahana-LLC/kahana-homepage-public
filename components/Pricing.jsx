@@ -56,7 +56,7 @@ export default function Pricing() {
       <div className="mx-auto max-w-7xl py-24 px-4 sm:px-6 lg:px-8">
         <div className="sm:align-center sm:flex sm:flex-col">
           <h1 className="text-5xl font-bold tracking-tight text-gray-900 text-center">
-            Pricing
+            Hubs Pricing
           </h1>
         </div>
 
