@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
-import { getCloudinaryImageUrl } from '../utils/cloudinary-mapper';
+import { getCloudinaryImageUrl } from '../../utils/cloudinary-mapper';
 
 const STORAGE_KEY = 'kahana_sloth_prefs';
 

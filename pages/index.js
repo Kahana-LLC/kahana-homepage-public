@@ -16,7 +16,6 @@ import { getAuthorDetails } from "../utils/authorUtils";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { getCloudinaryImageUrl } from "../utils/cloudinary-mapper";
-import InteractiveSloth from "../components/InteractiveSloth";
 
 // Default placeholder for failed image loads
 const DEFAULT_PLACEHOLDER =
@@ -392,9 +391,6 @@ export default function Home({ blogPosts }) {
 
         </div>
       </div>
-
-      {/* Interactive Sloth Mascot */}
-      <InteractiveSloth />
     </>
   );
 }

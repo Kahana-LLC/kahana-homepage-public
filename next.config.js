@@ -79,15 +79,27 @@ const nextConfig = {
     return config;
   },
 
-  // Handle XML sitemap
+  // Handle XML sitemap + PostHog reverse proxy (heatmaps, ad-blocker bypass)
   async rewrites() {
     return [
       {
         source: "/sitemap.xml",
         destination: "/api/sitemap",
       },
+      // PostHog reverse proxy - static assets must come first
+      {
+        source: "/ph/static/:path*",
+        destination: "https://us-assets.i.posthog.com/static/:path*",
+      },
+      {
+        source: "/ph/:path*",
+        destination: "https://us.i.posthog.com/:path*",
+      },
     ];
   },
+
+  // Required for PostHog proxy: API uses trailing slashes (e.g. /e/)
+  skipTrailingSlashRedirect: true,
 
   // Configure headers for specific routes
   async headers() {

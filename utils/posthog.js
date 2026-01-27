@@ -31,24 +31,24 @@ export function initPostHog(apiKey, host = 'https://us.i.posthog.com') {
     return false;
   }
 
-  // Dynamically import PostHog
+  // Dynamically import PostHog - config matches PostHog dashboard snippet
   import('posthog-js')
     .then(({ default: PostHog }) => {
       posthog = PostHog.init(apiKey, {
         api_host: host,
+        defaults: '2025-11-30',
+        person_profiles: 'identified_only',
         loaded: (ph) => {
           console.log('PostHog initialized successfully');
           posthog = ph;
         },
-        // Person profiles: only create for identified users
-        person_profiles: 'identified_only',
         // Disable autocapture for better privacy control
         autocapture: false,
-        // Capture pageviews manually
+        // Capture pageviews manually (we call trackPageView on route change)
         capture_pageview: false,
         // Respect Do Not Track
         respect_dnt: true,
-        // Disable session recording by default (can enable per user)
+        // Disable session recording by default
         disable_session_recording: true,
       });
     })
@@ -80,10 +80,13 @@ function hasAnalyticsConsent() {
 }
 
 /**
- * Get PostHog instance
+ * Get PostHog instance (from snippet window.posthog or npm-init'd instance)
  * @returns {Object|null}
  */
 export function getPostHog() {
+  if (typeof window !== 'undefined' && window.posthog) {
+    return window.posthog;
+  }
   return posthog;
 }
 
@@ -92,7 +95,7 @@ export function getPostHog() {
  * @returns {boolean}
  */
 export function isPostHogInitialized() {
-  return posthog !== null;
+  return getPostHog() != null;
 }
 
 /**
@@ -101,7 +104,8 @@ export function isPostHogInitialized() {
  * @param {Object} properties - Event properties
  */
 export function trackPostHogEvent(eventName, properties = {}) {
-  if (!posthog || !hasAnalyticsConsent()) {
+  const ph = getPostHog();
+  if (!ph || !hasAnalyticsConsent()) {
     if (process.env.NODE_ENV === 'development') {
       console.log('PostHog event blocked - no consent or not initialized:', eventName, properties);
     }
@@ -109,7 +113,7 @@ export function trackPostHogEvent(eventName, properties = {}) {
   }
 
   try {
-    posthog.capture(eventName, {
+    ph.capture(eventName, {
       ...properties,
       timestamp: new Date().toISOString(),
       url: typeof window !== 'undefined' ? window.location.href : '',
@@ -125,12 +129,13 @@ export function trackPostHogEvent(eventName, properties = {}) {
  * @param {Object} properties - User properties
  */
 export function identifyUser(distinctId, properties = {}) {
-  if (!posthog || !hasAnalyticsConsent()) {
+  const ph = getPostHog();
+  if (!ph || !hasAnalyticsConsent()) {
     return;
   }
 
   try {
-    posthog.identify(distinctId, properties);
+    ph.identify(distinctId, properties);
   } catch (error) {
     console.error('Error identifying user in PostHog:', error);
   }
@@ -141,12 +146,13 @@ export function identifyUser(distinctId, properties = {}) {
  * @param {Object} properties - User properties to set
  */
 export function setUserProperties(properties) {
-  if (!posthog || !hasAnalyticsConsent()) {
+  const ph = getPostHog();
+  if (!ph || !hasAnalyticsConsent()) {
     return;
   }
 
   try {
-    posthog.setPersonProperties(properties);
+    ph.setPersonProperties(properties);
   } catch (error) {
     console.error('Error setting user properties in PostHog:', error);
   }
@@ -156,10 +162,14 @@ export function setUserProperties(properties) {
  * Reset PostHog (on logout or consent withdrawal)
  */
 export function resetPostHog() {
-  if (posthog) {
+  const ph = getPostHog();
+  if (ph) {
     try {
-      posthog.reset();
+      ph.reset();
       posthog = null;
+      if (typeof window !== 'undefined' && window.posthog) {
+        window.posthog = undefined;
+      }
       console.log('PostHog reset');
     } catch (error) {
       console.error('Error resetting PostHog:', error);
@@ -173,13 +183,16 @@ export function resetPostHog() {
  * @param {Object} properties - Additional properties
  */
 export function trackPageView(path, properties = {}) {
-  if (!posthog || !hasAnalyticsConsent()) {
+  const ph = getPostHog();
+  if (!ph || !hasAnalyticsConsent()) {
     return;
   }
 
   try {
-    posthog.capture('$pageview', {
-      $current_url: typeof window !== 'undefined' ? window.location.href : path,
+    const isClient = typeof window !== 'undefined';
+    ph.capture('$pageview', {
+      $current_url: isClient ? window.location.href : path,
+      $host: isClient ? window.location.hostname : undefined,
       ...properties,
     });
   } catch (error) {
