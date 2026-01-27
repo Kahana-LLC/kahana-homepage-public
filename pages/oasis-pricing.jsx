@@ -204,7 +204,7 @@ export default function OasisPricing() {
             className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-tight mb-4"
             style={{ color: '#313A00' }}
           >
-            Pricing
+            Oasis Pricing
           </h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto mt-4 mb-4">
             Oasis is currently in beta. By subscribing, you acknowledge that you're using beta software that may contain bugs or incomplete features.
