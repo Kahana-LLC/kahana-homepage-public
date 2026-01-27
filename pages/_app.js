@@ -3,7 +3,7 @@ import NavbarDup from "../components/NavbarDup";
 import GlobalBanner from "../components/GlobalBanner";
 import Footer from "../components/Footer";
 import SEO from "../components/SEO";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useRouter } from "next/router";
 import { trackError } from "../utils/analytics";
 import Script from "next/script";
@@ -12,7 +12,7 @@ import ConsentBanner from "../components/ConsentBanner";
 import CookiePreferencesModal from "../components/CookiePreferencesModal";
 import ConsentErrorBoundary from "../components/ConsentErrorBoundary";
 import { loadScriptIfConsented, loadInlineScriptIfConsented } from "../utils/scriptLoader";
-import { trackPageView } from "../utils/posthog";
+import { trackPageView, getPostHog } from "../utils/posthog";
 import ICPSurvey from "../components/ICPSurvey";
 
 // Inner component that uses consent
@@ -166,12 +166,28 @@ posthog.init('phc_AO2jVB9Uuo448EoalpPTIkdZoqZnyjlEh4BUuRngoby',{api_host:'${post
     }
   }, [consent, hasConsent, isLoading]);
 
-  // Capture initial pageview (Next.js routeChangeComplete does not fire on first load)
+  // Capture initial pageview (Next.js routeChangeComplete does not fire on first load).
+  // Retry a few times so slow script load on production (e.g. kahana.co) still sends the first pageview.
   useEffect(() => {
     if (isLoading || !consent || !hasConsent('analytics')) return;
     const initialPath = typeof window !== 'undefined' ? window.location.pathname + (window.location.search || '') : router.asPath || '/';
-    const t = setTimeout(() => trackPageView(initialPath), 2000);
-    return () => clearTimeout(t);
+    const timeoutRef = { current: null };
+    let attempts = 0;
+    const maxAttempts = 4; // try at 1.5s, 3s, 4.5s, 6s
+    const trySend = () => {
+      if (getPostHog()) {
+        trackPageView(initialPath);
+        return;
+      }
+      attempts += 1;
+      if (attempts < maxAttempts) {
+        timeoutRef.current = setTimeout(trySend, 1500);
+      }
+    };
+    timeoutRef.current = setTimeout(trySend, 1500);
+    return () => {
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    };
   }, [consent, hasConsent, isLoading]);
 
   // Listen for consent changes and dynamically load/unload scripts
