@@ -688,10 +688,35 @@ function NavBar() {
               </div>
             </li>
 
-            <li>
+            <li className={`dropdown ${openDropdown === 'pricing' ? 'active' : ''}`}>
               <Link href="/oasis-pricing" className="nav-link">
                 <span className="nav-link-text">Pricing</span>
+                <button
+                  type="button"
+                  className="dropdown-icon-button"
+                  onClick={(e) => toggleDropdown('pricing', e)}
+                  aria-label="Toggle Pricing dropdown"
+                  aria-expanded={openDropdown === 'pricing'}
+                >
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12.09 16.1361C11.9917 16.1373 11.8942 16.1179 11.8038 16.0792C11.7134 16.0404 11.6321 15.9832 11.5652 15.9112L4.81674 9.16274C4.51681 8.86281 4.51681 8.39792 4.81674 8.09799C5.11667 7.79806 5.58156 7.79806 5.88149 8.09799L12.105 14.3215L18.3136 8.11299C18.6135 7.81306 19.0784 7.81306 19.3783 8.11299C19.6783 8.41292 19.6783 8.87781 19.3783 9.17774L12.6299 15.9262C12.4799 16.0761 12.285 16.1511 12.105 16.1511L12.09 16.1361Z" fill="currentColor" stroke="currentColor" strokeWidth="2" />
+                  </svg>
+                </button>
               </Link>
+              <div className="dropdown-overlay"></div>
+              <div className="dropdown-content" style={{ gridTemplateColumns: '1fr' }}>
+                <div className="dropdown-section">
+                  <h3 className="font-semibold mb-4 uppercase tracking-wider" style={{ color: '#000' }}>Product Pricing</h3>
+                  <div className="flex flex-col space-y-4">
+                    <Link href="/oasis-pricing" className="dropdown-link" onClick={() => setOpenDropdown(null)}>
+                      Oasis Pricing
+                    </Link>
+                    <Link href="/pricing" className="dropdown-link" onClick={() => setOpenDropdown(null)}>
+                      Hubs Pricing
+                    </Link>
+                  </div>
+                </div>
+              </div>
             </li>
 
             <li className={`dropdown ${openDropdown === 'learn' ? 'active' : ''}`}>
@@ -860,7 +885,8 @@ function NavBar() {
             <Link href="/products/web-application" className="mobile-link no-underline">Web Application</Link>
             
             {/* Pricing */}
-            <Link href="/oasis-pricing" className="mobile-link no-underline">Pricing</Link>
+            <Link href="/oasis-pricing" className="mobile-link no-underline">Oasis Pricing</Link>
+            <Link href="/pricing" className="mobile-link no-underline">Hubs Pricing</Link>
             
             {/* Learn Section */}
             <Link href="/blog" className="mobile-link no-underline">Blog</Link>
