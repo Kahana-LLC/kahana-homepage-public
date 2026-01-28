@@ -17,7 +17,7 @@ export default function HowItWorks() {
         <div className="mt-8">
           <Link
             href="/schedule-demo"
-            className="btn-primary inline-flex items-center justify-center px-8 py-3 text-base no-underline hover:no-underline focus:no-underline"
+            className="btn-primary inline-flex items-center justify-center px-8 py-3 text-base no-underline hover:no-underline focus:no-underline scale-110 sm:scale-125"
           >
             Schedule Demo
           </Link>

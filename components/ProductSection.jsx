@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { getCloudinaryImageUrl } from '../utils/cloudinary-mapper';
+import WaitlistButton from './WaitlistButton';
+import { trackButtonClick } from '../utils/analytics';
 
 export default function ProductSection() {
   const [isVisible, setIsVisible] = useState(false);
@@ -25,19 +27,16 @@ export default function ProductSection() {
             <p className="text-lg text-[#4A5745] max-w-2xl">
               Enjoy a beautiful browsing experience designed for ergonomic work
             </p>
-            <div className="flex flex-col gap-3 sm:flex-row">
-              <Link
-                href="/schedule-demo"
-                className="btn-primary inline-flex items-center justify-center px-8 py-3 text-base no-underline hover:no-underline focus:no-underline"
-              >
-                Schedule Demo
-              </Link>
-              <Link
-                href="/oasis-pricing"
-                className="btn-secondary inline-flex items-center justify-center px-8 py-3 text-base no-underline hover:no-underline focus:no-underline"
-              >
-                Get Access
-              </Link>
+            <div className="flex flex-col items-center gap-4">
+              <WaitlistButton
+                hasSeats={false}
+                waitlistUrl="/oasis-waitlist"
+                proUrl="/oasis-pricing"
+                onJoinWaitlist={() => {
+                  trackButtonClick('join_waitlist', 'hero_section');
+                }}
+                className="scale-110 sm:scale-125"
+              />
             </div>
           </div>
 

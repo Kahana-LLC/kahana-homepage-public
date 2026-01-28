@@ -3,7 +3,9 @@ import Head from 'next/head';
 import Link from 'next/link';
 import NavBar from '../components/NavbarDup';
 import VideoSection from '../components/VideoSection';
+import WaitlistButton from '../components/WaitlistButton';
 import Script from 'next/script';
+import { trackButtonClick } from '../utils/analytics';
 
 const steps = [
   {
@@ -149,6 +151,17 @@ export default function OasisWaitlist() {
                 {/* Form Section - Now appears first on mobile */}
                 <div className="lg:hidden mb-12">
                   <div className="bg-white rounded-xl shadow-xl p-8">
+                    {/* Waitlist Button Component */}
+                    <div className="mb-6 flex justify-center">
+                      <WaitlistButton
+                        hasSeats={false}
+                        waitlistUrl="/oasis-waitlist"
+                        proUrl="/oasis-pricing"
+                        onJoinWaitlist={() => {
+                          trackButtonClick('join_waitlist', 'waitlist_page_mobile');
+                        }}
+                      />
+                    </div>
                     {renderForm()}
                   </div>
                   {/* Mobile: Show video below form */}
@@ -260,6 +273,24 @@ export default function OasisWaitlist() {
               {/* Right Column - Form (Desktop only) */}
               <div className="hidden lg:block lg:col-span-5 lg:sticky lg:top-24">
                 <div className="bg-white rounded-xl shadow-xl p-8">
+                  {/* Waitlist Button Component */}
+                  <div className="mb-6 flex justify-center">
+                    <WaitlistButton
+                      hasSeats={false}
+                      waitlistUrl="/oasis-waitlist"
+                      proUrl="/oasis-pricing"
+                      onJoinWaitlist={() => {
+                        trackButtonClick('join_waitlist', 'waitlist_page');
+                        // Scroll to form
+                        setTimeout(() => {
+                          const form = document.querySelector('iframe[title="Oasis Waitlist"]');
+                          if (form) {
+                            form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                          }
+                        }, 100);
+                      }}
+                    />
+                  </div>
                   {renderForm()}
                 </div>
               </div>

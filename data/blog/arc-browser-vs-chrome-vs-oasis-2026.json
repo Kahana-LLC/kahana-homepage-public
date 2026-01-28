@@ -10,13 +10,7 @@
       "avatar": "/assets/headshots/konika_dhull.jpg"
     }
   ],
-  "category": [
-    "AI",
-    "Security",
-    "Enterprise",
-    "Product Analysis",
-    "Comparisons"
-  ],
+  "category": "Security",
   "excerpt": "Comprehensive comparison of Arc Browser vs Chrome vs Oasis in 2026. Expert analysis reveals critical insights, security considerations, and enterprise-readiness factors. Discover which solution best fits your needs.",
   "defaultImageQuery": "Arc Browser vs Chrome vs Oasis AI browser comparison security enterprise",
   "featuredImage": "https://cdn.mos.cms.futurecdn.net/v2/t:0,l:437,cw:1125,ch:1125,q:80,w:1125/UmVQKsozpRAg5QGxYALiJ4.jpg",

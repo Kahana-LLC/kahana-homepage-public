@@ -10,7 +10,7 @@
       "avatar": "/assets/headshots/rishikes_ramachandran.jpg"
     }
   ],
-  "category": ["Technology", "Engineering", "AR/VR", "Materials Science"],
+  "category": "AI & Emerging Tech",
   "excerpt": "Explore how titanium vapor chambers and graphene films are revolutionizing thermal management in AR glasses. Discover the engineering breakthroughs that make all-day wearable computing comfortable and safe.",
   "defaultImageQuery": "AR glasses thermal management titanium vapor chambers graphene films wearable computing heat dissipation technology",
   "slug": "advanced-thermal-management-materials-ar-glasses-2025",
@@ -21,7 +21,7 @@
       "text": "<p>Imagine wearing a pair of <strong>augmented reality glasses</strong> for an entire workday—seamlessly switching between virtual meetings, 3D design reviews, and real-time data visualization. This vision of always-on wearable computing is tantalizingly close to reality, but there's one critical challenge standing in the way: heat. As <a href=\"https://ambiq.com/blog/why-your-smart-wearable-device-must-run-on-ultra-low-power/\">smart wearable devices must run on ultra-low power</a> to maintain user comfort, the thermal management problem becomes increasingly complex.</p>"
     },
     {
-      "type": "paragraph", 
+      "type": "paragraph",
       "text": "<p>Unlike smartphones that can get warm in your pocket or laptops that can run fans, AR glasses rest directly against your skin and must remain cool, silent, and lightweight. The solution lies in two revolutionary materials that are reshaping how we think about thermal management: <strong>titanium vapor chambers</strong> and <strong>graphene films</strong>. These advanced materials represent the cutting edge of wearable thermal engineering, enabling the next generation of AR devices to deliver powerful computing without compromising user comfort.</p>"
     },
     {

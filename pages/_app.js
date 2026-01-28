@@ -13,6 +13,7 @@ import CookiePreferencesModal from "../components/CookiePreferencesModal";
 import ConsentErrorBoundary from "../components/ConsentErrorBoundary";
 import { loadScriptIfConsented, loadInlineScriptIfConsented } from "../utils/scriptLoader";
 import ICPSurvey from "../components/ICPSurvey";
+import { initMixpanel, trackMixpanelPageView } from "../utils/mixpanel";
 
 // Inner component that uses consent
 function AppContent({ Component, pageProps }) {
@@ -20,9 +21,31 @@ function AppContent({ Component, pageProps }) {
   const { consent, hasConsent, isLoading } = useConsent();
 
   useEffect(() => {
+    // Add debug helper to window for troubleshooting
+    if (typeof window !== 'undefined') {
+      window.debugMixpanel = () => {
+        console.log('=== Mixpanel Debug Info ===');
+        console.log('Token available:', !!process.env.NEXT_PUBLIC_MIXPANEL_TOKEN);
+        console.log('Token value:', process.env.NEXT_PUBLIC_MIXPANEL_TOKEN ? '***' + process.env.NEXT_PUBLIC_MIXPANEL_TOKEN.slice(-4) : 'NOT SET');
+        console.log('Mixpanel loaded:', !!window.mixpanel);
+        console.log('Mixpanel instance:', window.mixpanel);
+        console.log('Analytics consent:', hasConsent('analytics'));
+        console.log('Consent object:', consent);
+        console.log('========================');
+      };
+    }
+
+    // Track initial page view
+    if (hasConsent('analytics') && process.env.NEXT_PUBLIC_MIXPANEL_TOKEN) {
+      trackMixpanelPageView(router.asPath, document.title);
+    }
+
     // Track route changes
     const handleRouteChange = (url) => {
-      // Route change tracking (Mixpanel removed)
+      // Track page view with Mixpanel
+      if (hasConsent('analytics') && process.env.NEXT_PUBLIC_MIXPANEL_TOKEN) {
+        trackMixpanelPageView(url, document.title);
+      }
     };
 
     // Track errors
@@ -130,6 +153,60 @@ function AppContent({ Component, pageProps }) {
         {},
         hasConsent
       );
+
+      // Mixpanel - requires analytics consent
+      const mixpanelToken = process.env.NEXT_PUBLIC_MIXPANEL_TOKEN;
+      if (mixpanelToken) {
+        // Load Mixpanel library first, then initialize
+        loadScriptIfConsented(
+          'mixpanel-script-app',
+          'https://cdn.mixpanel.com/mixpanel-2-latest.min.js',
+          'analytics',
+          { 
+            async: true,
+            onLoad: function() {
+              // Wait for Mixpanel to be available, then initialize
+              let retries = 0;
+              const maxRetries = 20; // 2 seconds max wait
+              const initMixpanel = () => {
+                if (window.mixpanel && typeof window.mixpanel.init === 'function') {
+                  try {
+                    window.mixpanel.init(mixpanelToken, {
+                      debug: false, // Disable debug in production
+                      track_pageview: false,
+                      persistence: 'localStorage',
+                      api_host: 'https://api.mixpanel.com',
+                      loaded: function(mixpanel) {
+                        console.log('[Mixpanel] Initialized successfully');
+                        // Track initial page view
+                        mixpanel.track('Page View', {
+                          page_path: window.location.pathname,
+                          page_title: document.title,
+                        });
+                      }
+                    });
+                  } catch (error) {
+                    console.error('[Mixpanel] Initialization error:', error);
+                  }
+                } else if (retries < maxRetries) {
+                  // Retry after a short delay if not ready
+                  retries++;
+                  setTimeout(initMixpanel, 100);
+                } else {
+                  console.warn('[Mixpanel] Failed to initialize after max retries');
+                }
+              };
+              initMixpanel();
+            },
+            onError: function() {
+              console.error('[Mixpanel] Failed to load script');
+            }
+          },
+          hasConsent
+        );
+      } else {
+        console.warn('[Mixpanel] Token not found. Set NEXT_PUBLIC_MIXPANEL_TOKEN in environment variables.');
+      }
     }
 
     // Google Ads - requires advertising consent
@@ -217,6 +294,56 @@ function AppContent({ Component, pageProps }) {
           {},
           () => newConsent.analytics
         );
+
+        // Mixpanel - load when consent granted
+        const mixpanelToken = process.env.NEXT_PUBLIC_MIXPANEL_TOKEN;
+        if (mixpanelToken) {
+          loadScriptIfConsented(
+            'mixpanel-script-app',
+            'https://cdn.mixpanel.com/mixpanel-2-latest.min.js',
+            'analytics',
+            { 
+              async: true,
+              onLoad: function() {
+                // Wait for Mixpanel to be available, then initialize
+                let retries = 0;
+                const maxRetries = 20; // 2 seconds max wait
+                const initMixpanel = () => {
+                  if (window.mixpanel && typeof window.mixpanel.init === 'function') {
+                    try {
+                      window.mixpanel.init(mixpanelToken, {
+                        debug: false,
+                        track_pageview: false,
+                        persistence: 'localStorage',
+                        api_host: 'https://api.mixpanel.com',
+                        loaded: function(mixpanel) {
+                          console.log('[Mixpanel] Initialized successfully');
+                          // Track initial page view
+                          mixpanel.track('Page View', {
+                            page_path: window.location.pathname,
+                            page_title: document.title,
+                          });
+                        }
+                      });
+                    } catch (error) {
+                      console.error('[Mixpanel] Initialization error:', error);
+                    }
+                  } else if (retries < maxRetries) {
+                    retries++;
+                    setTimeout(initMixpanel, 100);
+                  } else {
+                    console.warn('[Mixpanel] Failed to initialize after max retries');
+                  }
+                };
+                initMixpanel();
+              },
+              onError: function() {
+                console.error('[Mixpanel] Failed to load script');
+              }
+            },
+            () => newConsent.analytics
+          );
+        }
       }
       
       if (newConsent.advertising) {

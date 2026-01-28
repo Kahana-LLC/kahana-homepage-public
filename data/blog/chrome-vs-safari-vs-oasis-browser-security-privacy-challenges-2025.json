@@ -1,8 +1,11 @@
 {
   "title": "Chrome vs Safari vs Oasis: The Hidden Security Crisis in Browser Choice",
   "date": "2025-07-10T00:00:00.000Z",
-  "authors": ["Adam Kershner", "Khyati Bhatia"],
-  "category": ["Security", "Browser", "Enterprise", "Research & Trends"],
+  "authors": [
+    "Adam Kershner",
+    "Khyati Bhatia"
+  ],
+  "category": "Security",
   "excerpt": "As browser security vulnerabilities reach unprecedented levels in 2025, organizations face a critical decision: stick with vulnerable consumer browsers or adopt enterprise-grade solutions. This comprehensive analysis reveals why Chrome's zero-day exploits and Safari's tracking failures are driving a fundamental shift toward secure enterprise browsers.",
   "defaultImageQuery": "browser security chrome safari enterprise vulnerability",
   "slug": "chrome-vs-safari-vs-oasis-browser-security-privacy-challenges-2025",
@@ -140,4 +143,4 @@
       "text": "<p>As organizations face the reality of browser security vulnerabilities, the transition to enterprise browsers like Oasis Browser represents not just a security upgrade, but a fundamental shift in how we approach web security. The choice is clear: continue accepting the risks of consumer browsers or adopt enterprise-grade solutions designed for the security challenges of 2025 and beyond.</p>"
     }
   ]
-} 
+}
