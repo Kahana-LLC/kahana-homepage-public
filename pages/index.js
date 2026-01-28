@@ -195,7 +195,7 @@ export default function Home({ blogPosts }) {
           rel="preload"
           as="image"
           href="/images/Welcome to Oasis.webp"
-          fetchPriority="high"
+          fetchpriority="high"
         />
         {/* Preconnect to external image domains */}
         <link rel="preconnect" href="https://images.unsplash.com" />

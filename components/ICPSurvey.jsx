@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { trackPostHogEvent, setUserProperties } from '../utils/posthog';
 
 /**
  * ICP Survey Component
@@ -116,19 +115,7 @@ const ICPSurvey = () => {
       localStorage.setItem('icp_survey_responded', 'true');
     }
 
-    // Track event in PostHog
-    trackPostHogEvent('role_selected', {
-      role: role,
-      source: 'icp_survey',
-      timestamp: new Date().toISOString(),
-    });
-
-    // Set user property in PostHog
-    setUserProperties({
-      user_role: role,
-      icp_segment: role,
-      role_selected_at: new Date().toISOString(),
-    });
+    // Mixpanel tracking removed
 
     // TODO: Send to Warmly via webhook (can be added later)
     // sendToWarmly({ role });
@@ -152,21 +139,7 @@ const ICPSurvey = () => {
       localStorage.setItem('icp_survey_responded', 'true');
     }
 
-    // Track event in PostHog
-    trackPostHogEvent('role_selected', {
-      role: 'Other',
-      custom_role: otherRole.trim(),
-      source: 'icp_survey',
-      timestamp: new Date().toISOString(),
-    });
-
-    // Set user property in PostHog
-    setUserProperties({
-      user_role: customRole,
-      icp_segment: 'Other',
-      custom_role: otherRole.trim(),
-      role_selected_at: new Date().toISOString(),
-    });
+    // Mixpanel tracking removed
   };
 
   const handleDismiss = () => {
@@ -178,10 +151,7 @@ const ICPSurvey = () => {
       localStorage.setItem('icp_survey_responded', 'true');
     }
 
-    // Track dismissal
-    trackPostHogEvent('icp_survey_dismissed', {
-      timestamp: new Date().toISOString(),
-    });
+    // Mixpanel tracking removed
   };
 
   // Don't show if user hasn't accepted all, already responded, or survey not triggered
@@ -289,7 +259,6 @@ const ICPSurvey = () => {
           <Link 
             href="/privacy-policy" 
             className="text-[#728552] hover:text-[#5a6a42] underline"
-            onClick={() => trackPostHogEvent('privacy_policy_clicked', { source: 'icp_survey' })}
           >
             Privacy Policy
           </Link>
