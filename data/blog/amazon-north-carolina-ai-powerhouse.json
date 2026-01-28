@@ -1,8 +1,11 @@
 {
   "title": "How Amazon's $10 Billion Bet Is Transforming North Carolina Into the Next AI Powerhouse",
   "date": "2025-06-18T00:00:00.000Z",
-  "authors": ["Hritik Chalse", "Adam Kershner"],
-  "category": ["AI", "Cloud Infrastructure", "Research & Trends"],
+  "authors": [
+    "Hritik Chalse",
+    "Adam Kershner"
+  ],
+  "category": "AI & Emerging Tech",
   "excerpt": "Amazon Web Services' $10 billion investment is reshaping North Carolina's economic destiny, turning the state into a national leader in AI, cloud infrastructure, and sustainable technology. This article explores the far-reaching impact on jobs, education, cybersecurity, and the region's future as an innovation hub.",
   "defaultImageQuery": "amazon aws north carolina ai data center",
   "slug": "amazon-north-carolina-ai-powerhouse",
@@ -113,4 +116,4 @@
       "text": "<p>This is a moment to pause and admire. A state once caught in the tailwinds of industrial decline is now riding the front of a digital transformation wave. Amazon's $10 billion investment will change landscapes, build futures, and maybe, just maybe, set the tone for how America builds its tech future, one community at a time. And it all starts in North Carolina.</p>"
     }
   ]
-} 
+}

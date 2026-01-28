@@ -1,8 +1,10 @@
 {
   "title": "Brave vs Safari vs Oasis: Recent Challenges and Research (2025–2026)",
   "date": "2025-07-23T00:00:00.000Z",
-  "authors": ["Konika Dhull"],
-  "category": ["Browsers", "Security", "Comparisons"],
+  "authors": [
+    "Konika Dhull"
+  ],
+  "category": "Security",
   "excerpt": "A deep dive into the latest research and real-world challenges facing Brave, Safari, and Oasis browsers, with a focus on security, privacy, and enterprise adoption in 2025–2026.",
   "slug": "brave-vs-safari-vs-oasis-challenges-2025",
   "readingTime": 8,
@@ -95,4 +97,4 @@
       "text": "<p>The landscape of web browsers in 2025–2026 is defined by rapid change, persistent challenges, and a growing demand for security and privacy. Brave, Safari, and Oasis each offer unique strengths and face distinct obstacles, but the common thread is clear: success in this space requires relentless innovation, honest engagement with user feedback, and a willingness to adapt to new threats. As organizations and individuals navigate these choices, staying informed and vigilant will be key to making the most of the modern web.</p>"
     }
   ]
-} 
+}

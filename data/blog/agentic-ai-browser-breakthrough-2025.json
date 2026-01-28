@@ -1,8 +1,10 @@
 {
   "title": "The Rise of Agentic AI: Why the Next Breakthrough Won’t Be a Model—It’ll Be a Browser",
   "date": "2025-08-26T00:00:00.000Z",
-  "authors": ["Sanku Rajshree Rao"],
-  "category": ["AI", "Browsers", "Security", "Enterprise", "Research & Trends"],
+  "authors": [
+    "Sanku Rajshree Rao"
+  ],
+  "category": "Security",
   "excerpt": "Agentic AI is transforming the browser from a passive tool into an intelligent collaborator, but this evolution brings new security, reliability, and integration challenges. This article explores the latest research and trends, highlighting the risks and opportunities as agentic AI becomes central to business operations.",
   "defaultImageQuery": "agentic ai browser security automation trends",
   "slug": "agentic-ai-browser-breakthrough-2025",

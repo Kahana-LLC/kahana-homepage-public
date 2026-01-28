@@ -9,8 +9,10 @@ import Breadcrumbs from '../../components/Breadcrumbs';
 import AuthorCard from '../../components/AuthorCard';
 import BlogBrowserComparison from '../../components/BlogBrowserComparison';
 import MaterialComparisonTable from '../../components/MaterialComparisonTable';
+import BlogCard from '../../components/BlogCard';
 import { FaLinkedin, FaRegCalendarAlt, FaBookOpen, FaRegClock } from 'react-icons/fa';
 import SocialShare from '../../components/SocialShare';
+import { trackBlogEngagement, trackCategoryClick, trackRelatedBlogClick, trackOasisRelevance } from '../../utils/userIntentTracking';
 const { getAuthorDetails } = require('../../utils/authorUtils');
 
 // Function to parse HTML content and convert component tags to React components
@@ -91,7 +93,53 @@ export default function BlogPost({ post }) {
   
   useEffect(() => {
     setIsClient(true);
-  }, []);
+    
+    // Track blog view and user segment
+    if (post?.slug && post?.category) {
+      trackBlogEngagement(post.slug, post.category, 'view');
+      
+      // Track user segment based on category
+      if (typeof window !== 'undefined') {
+        const { trackUserSegment } = require('../../utils/userIntentTracking');
+        trackUserSegment('interest', post.category, `/blog/${post.slug}`);
+      }
+    }
+    
+    // Track scroll depth for engagement
+    let maxScroll = 0;
+    const handleScroll = () => {
+      const scrollPercent = Math.round(
+        (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100
+      );
+      
+      if (scrollPercent > maxScroll) {
+        maxScroll = scrollPercent;
+        if (maxScroll >= 50 && maxScroll < 100) {
+          trackBlogEngagement(post?.slug, post?.category, 'scroll_50');
+        } else if (maxScroll >= 100) {
+          trackBlogEngagement(post?.slug, post?.category, 'scroll_100');
+        }
+      }
+    };
+    
+    // Track time on page
+    const startTime = Date.now();
+    const timeInterval = setInterval(() => {
+      const timeInSeconds = Math.round((Date.now() - startTime) / 1000);
+      if (timeInSeconds === 30) {
+        trackBlogEngagement(post?.slug, post?.category, 'time_30s', 30);
+      } else if (timeInSeconds === 120) {
+        trackBlogEngagement(post?.slug, post?.category, 'time_2min', 120);
+      }
+    }, 1000);
+    
+    window.addEventListener('scroll', handleScroll);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      clearInterval(timeInterval);
+    };
+  }, [post]);
 
   // Fetch image on-demand when component mounts
   useEffect(() => {
@@ -147,9 +195,15 @@ export default function BlogPost({ post }) {
   const postAuthors = post?.authors ? getAuthorDetails(post.authors) : [];
   const hasAuthors = postAuthors && postAuthors.length > 0;
 
-  // Format category for display
-  const categoryDisplay = Array.isArray(post?.category) ? post.category[0] : post?.category || '';
-  const allCategories = Array.isArray(post?.category) ? post.category : [post?.category].filter(Boolean);
+  // Format category for display (now single string)
+  const categoryDisplay = post?.category || '';
+  const postCategory = categoryDisplay;
+
+  // Get related blogs from the same category (excluding current post)
+  const relatedBlogs = blogIndex
+    .filter(blog => blog.slug !== post.slug && blog.category === postCategory)
+    .sort((a, b) => new Date(b.date) - new Date(a.date))
+    .slice(0, 3);
 
   if (!post) {
     return (
@@ -166,12 +220,60 @@ export default function BlogPost({ post }) {
       <Head>
         <title>{`${post.title} | Kahana Blog`}</title>
         <meta name="description" content={post.excerpt} />
+        
+        {/* Enhanced SEO for browser-related searches */}
+        {post.title.toLowerCase().includes('browser') && (
+          <>
+            <meta name="keywords" content={`${postCategory}, enterprise browser, top browser, best browser, browser comparison, Oasis browser, ${post.title.split(' ').slice(0, 5).join(', ')}`} />
+            <meta name="robots" content="index, follow" />
+          </>
+        )}
+        
+        {/* Open Graph */}
         <meta property="og:title" content={post.title} />
         <meta property="og:description" content={post.excerpt} />
         <meta property="og:type" content="article" />
         <meta property="article:published_time" content={post.date} />
         <meta property="article:author" content={hasAuthors ? postAuthors.map(a => a.name).join(', ') : ''} />
-        <meta property="article:section" content={allCategories.join(', ')} />
+        <meta property="article:section" content={postCategory} />
+        {post.featuredImage && <meta property="og:image" content={post.featuredImage} />}
+        
+        {/* Structured Data for SEO */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'BlogPosting',
+              headline: post.title,
+              description: post.excerpt,
+              image: post.featuredImage || '',
+              datePublished: post.date,
+              dateModified: post.date,
+              author: hasAuthors ? postAuthors.map(author => ({
+                '@type': 'Person',
+                name: author.name,
+                url: author.linkedinProfile || '',
+              })) : [],
+              publisher: {
+                '@type': 'Organization',
+                name: 'Kahana',
+                logo: {
+                  '@type': 'ImageObject',
+                  url: 'https://kahana.co/assets/kahana_logo_transparent.svg',
+                },
+              },
+              mainEntityOfPage: {
+                '@type': 'WebPage',
+                '@id': `https://kahana.co/blog/${post.slug}`,
+              },
+              articleSection: postCategory,
+              keywords: post.title.toLowerCase().includes('browser') 
+                ? `${postCategory}, enterprise browser, top browser, best browser, browser comparison, Oasis browser`
+                : postCategory,
+            }),
+          }}
+        />
       </Head>
 
       {/* Scroll Progress Bar */}
@@ -212,10 +314,16 @@ export default function BlogPost({ post }) {
                 <span className="mr-1">Published:</span>
                 {isClient ? new Date(post.date).toLocaleDateString('en-US', { month: 'numeric', day: 'numeric', year: 'numeric' }).replace(/\//g, '/') : ''}
               </time>
-              <div className="inline-flex items-center px-3 py-1.5 text-[#4A5745] text-sm">
-                <FaBookOpen className="w-4 h-4 mr-2" />
-                <span>{categoryDisplay}</span>
-              </div>
+              {postCategory && (
+                <Link 
+                  href={`/blog?category=${encodeURIComponent(postCategory)}`}
+                  onClick={() => trackCategoryClick(postCategory, post.slug)}
+                  className="inline-flex items-center px-3 py-1.5 text-[#4A5745] text-sm hover:text-[#617500] transition-colors rounded-md hover:bg-[#F3F8E4]"
+                >
+                  <FaBookOpen className="w-4 h-4 mr-2" />
+                  <span>{postCategory}</span>
+                </Link>
+              )}
               <div className="inline-flex items-center px-3 py-1.5 text-[#4A5745] text-sm">
                 <FaRegClock className="w-4 h-4 mr-2" />
                 <span>{post.readingTime} min read</span>
@@ -256,7 +364,18 @@ export default function BlogPost({ post }) {
             */}
           </header>
 
-          <div className="prose prose-lg max-w-none">
+          <div 
+            className="prose prose-lg max-w-none"
+            onMouseEnter={() => {
+              // Track when users engage with content - helps understand relevance
+              if (post.content && post.content.includes('Oasis')) {
+                trackOasisRelevance('content_engagement', 'blog_post', {
+                  blog_slug: post.slug,
+                  category: postCategory,
+                });
+              }
+            }}
+          >
             {post.content ? (
               Array.isArray(post.content) ? (
                 post.content.map((block, index) => {
@@ -282,10 +401,19 @@ export default function BlogPost({ post }) {
                     case 'component':
                       if (block.name === 'BlogBrowserComparison') {
                         return (
-                          <BlogBrowserComparison
+                          <div 
                             key={index}
-                            {...block.props}
-                          />
+                            onMouseEnter={() => {
+                              trackOasisRelevance('comparison_table', 'blog_post', {
+                                blog_slug: post.slug,
+                                category: postCategory,
+                              });
+                            }}
+                          >
+                            <BlogBrowserComparison
+                              {...block.props}
+                            />
+                          </div>
                         );
                       }
                       if (block.name === 'MaterialComparisonTable') {
@@ -336,6 +464,41 @@ export default function BlogPost({ post }) {
               </svg>
             </Link>
           </div>
+
+          {/* Related Blogs Section */}
+          {relatedBlogs.length > 0 && (
+            <div className="mt-16 pt-12 border-t border-gray-200">
+              <h2 style={{fontWeight: 'bold', fontSize: '2rem', marginTop: '2rem', marginBottom: '1rem'}} className="text-2xl font-bold text-[#4A5745] mb-6">
+                <strong>Read More Blogs Like This</strong>
+              </h2>
+              <p className="text-lg text-[#4A5745] mb-6">
+                Explore more articles about <Link href={`/blog?category=${encodeURIComponent(postCategory)}`} className="text-[#617500] hover:text-[#4A5F00] font-semibold underline">{postCategory}</Link>
+              </p>
+              <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mt-8">
+                {relatedBlogs.map((relatedPost) => (
+                  <div 
+                    key={relatedPost.slug}
+                    onClick={() => trackRelatedBlogClick(post.slug, relatedPost.slug, postCategory)}
+                  >
+                    <BlogCard 
+                      post={{ ...relatedPost, authors: getAuthorDetails(relatedPost.authors) }} 
+                    />
+                  </div>
+                ))}
+              </div>
+              <div className="mt-8 text-center">
+                <Link 
+                  href={`/blog?category=${encodeURIComponent(postCategory)}`}
+                  className="btn-secondary inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline"
+                >
+                  <span>View All {postCategory} Articles</span>
+                  <svg className="ml-2 -mr-1 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+          )}
 
           {/* Author Bio Section */}
           {hasAuthors && (

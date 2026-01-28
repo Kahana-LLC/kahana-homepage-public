@@ -1,8 +1,11 @@
 {
   "title": "The UBS Chain IQ Breach: A Wake-Up Call for Financial Services Cybersecurity",
   "date": "2025-06-19T00:00:00.000Z",
-  "authors": ["Jordan Kern", "Adam Kershner"],
-  "category": ["Security", "Research & Trends"],
+  "authors": [
+    "Jordan Kern",
+    "Adam Kershner"
+  ],
+  "category": "Security",
   "excerpt": "The recent UBS data breach through its procurement services provider Chain IQ highlights the growing challenges financial institutions face from third-party vendor cybersecurity risks. This analysis explores the incident and its implications for the financial sector.",
   "defaultImageQuery": "financial cybersecurity breach data protection",
   "slug": "ubs-chain-iq-cybersecurity-breach",
@@ -69,4 +72,4 @@
       "text": "The UBS Chain IQ breach serves as a critical reminder of the evolving cybersecurity landscape in financial services. With average breach costs exceeding $6 million and rising, as reported by <a href=\"https://www.corbado.com/blog/data-breaches-finance\">recent studies</a>, financial institutions must prioritize robust third-party risk management programs and comprehensive cybersecurity frameworks. The path forward requires a balanced approach that addresses both immediate threats and long-term security posture, ensuring the protection of sensitive data while maintaining operational efficiency in an increasingly complex digital environment."
     }
   ]
-} 
+}

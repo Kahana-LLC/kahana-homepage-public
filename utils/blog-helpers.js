@@ -1,34 +1,40 @@
 // Map of categories to nature-themed image queries
 const categoryImageMap = {
-  Privacy: [
-    "misty forest path sunrise",
-    "hidden mountain valley",
-    "secluded forest clearing",
-    "peaceful sanctuary nature",
-  ],
   Security: [
     "mountain fortress nature",
     "ancient stone walls forest",
     "protective rock formation",
     "natural barrier landscape",
   ],
+  Enterprise: [
+    "majestic mountain range",
+    "towering forest canopy",
+    "strong oak tree",
+    "enduring natural structure",
+  ],
+  "Browser & Technology": [
+    "flowing river technology",
+    "interconnected forest network",
+    "digital nature patterns",
+    "tech-inspired landscape",
+  ],
+  "AI & Emerging Tech": [
+    "futuristic nature scene",
+    "evolving landscape patterns",
+    "innovative natural forms",
+    "cutting-edge wilderness",
+  ],
+  Industry: [
+    "industrial nature harmony",
+    "urban forest integration",
+    "modern natural landscape",
+    "structured wilderness",
+  ],
   Engineering: [
     "zen garden stones balance",
     "geometric patterns in nature",
     "natural architecture forest",
     "structured rock formation",
-  ],
-  "Cloud Computing": [
-    "peaceful clouds mountain landscape",
-    "misty mountain peaks",
-    "floating clouds nature",
-    "ethereal sky landscape",
-  ],
-  Development: [
-    "growing forest saplings",
-    "natural progression landscape",
-    "evolving nature patterns",
-    "organic growth forest",
   ],
   // Default themes for any category
   default: [

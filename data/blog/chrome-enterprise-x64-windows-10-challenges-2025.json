@@ -1,8 +1,11 @@
 {
   "title": "Chrome Enterprise x64 for Windows 10 Enterprise: Challenges and Research Trends",
   "date": "2025-04-24T00:00:00.000Z",
-  "authors": ["Shivangi Chamoli", "Adam Kershner"],
-  "category": ["Enterprise", "Security", "Deployment & Installation"],
+  "authors": [
+    "Shivangi Chamoli",
+    "Adam Kershner"
+  ],
+  "category": "Security",
   "excerpt": "A comprehensive analysis of Chrome Enterprise x64 deployment challenges on Windows 10 Enterprise, examining installation hurdles, compatibility issues, security vulnerabilities, and enterprise management considerations in 2025.",
   "content": [
     {
@@ -93,4 +96,4 @@
   ],
   "readingTime": 12,
   "slug": "chrome-enterprise-x64-windows-10-challenges-2025"
-} 
+}

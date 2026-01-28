@@ -55,7 +55,7 @@ export default function FeaturesShowcase() {
           </p>
           <div className="mt-6 sm:mt-8">
             <Link href="/products/enterprise-browser">
-              <button className="btn-primary inline-flex items-center justify-center px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base no-underline hover:no-underline focus:no-underline">
+              <button className="btn-primary inline-flex items-center justify-center px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base no-underline hover:no-underline focus:no-underline scale-110 sm:scale-125">
                 Learn more
               </button>
             </Link>

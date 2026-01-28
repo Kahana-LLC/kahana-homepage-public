@@ -72,7 +72,7 @@ h6 {
 }
 
 /* High-contrast links */
-a:not(.no-underline):not(.mobile-link):not(.nav-link):not(.btn-primary):not(.btn-secondary):not(.dropdown-link) {
+a:not(.no-underline):not(.mobile-link):not(.nav-link):not(.btn-primary):not(.btn-secondary):not(.dropdown-link):not(.blog-card-link) {
   color: var(--bg-action) !important;
   text-decoration: underline !important;
   font-weight: bold !important;
@@ -1260,10 +1260,24 @@ footer button.text-sm.no-underline:hover {
 .blog-card-link *,
 .blog-card-link *:visited,
 .blog-card-link *:hover,
-.blog-card-link *:active {
+.blog-card-link *:active,
+.blog-card-link p,
+.blog-card-link p *,
+.blog-card-link span,
+.blog-card-link span *,
+.blog-card-link div,
+.blog-card-link div * {
   text-decoration: none !important;
   color: inherit !important;
   font-weight: normal !important;
+}
+
+/* Ensure excerpt paragraphs don't have underlines */
+.blog-card-link p,
+.blog-card-link p:visited,
+.blog-card-link p:hover,
+.blog-card-link p:active {
+  text-decoration: none !important;
 }
 
 /* Keep category tags styled properly in blog cards */

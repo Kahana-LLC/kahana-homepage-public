@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { getRandomPhoto, getOptimizedPhotoUrl, getPlaceholderImageUrl } from '../utils/pexels';
 import { suggestNatureImageQuery } from '../utils/blog-helpers';
+import { trackBlogEngagement, trackCategoryClick } from '../utils/userIntentTracking';
 const { getAuthorDetails } = require('../utils/authorUtils');
 
 // Default placeholder for failed image loads
@@ -73,7 +74,14 @@ export default function BlogCard({ post }) {
 
   return (
     <article className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-200 overflow-hidden flex flex-col h-full">
-      <Link href={`/blog/${post.slug}`} className="flex flex-col h-full blog-card-link">
+      <Link 
+        href={`/blog/${post.slug}`} 
+        className="flex flex-col h-full blog-card-link"
+        onClick={() => {
+          // Track blog card click for engagement analysis
+          trackBlogEngagement(post.slug, post.category, 'card_click');
+        }}
+      >
         {/* Image */}
         <div className="relative h-52 md:h-56 lg:h-48 w-full">
           {isLoadingImage ? (
@@ -135,20 +143,18 @@ export default function BlogCard({ post }) {
           <div className="flex flex-col gap-4 mt-auto">
             {/* Categories */}
             <div className="flex flex-row gap-2 overflow-x-auto whitespace-nowrap max-w-full scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent py-1">
-              {Array.isArray(post.category)
-                ? post.category.map((cat) => (
-                    <span
-                      key={cat}
-                      className="text-sm font-medium px-3 py-1 rounded-full bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors inline-block"
-                    >
-                      {cat}
-                    </span>
-                  ))
-                : post.category && (
-                    <span className="text-sm font-medium px-3 py-1 rounded-full bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors inline-block">
-                      {post.category}
-                    </span>
-                  )}
+              {post.category && (
+                <Link
+                  href={`/blog?category=${encodeURIComponent(post.category)}`}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    trackCategoryClick(post.category, post.slug);
+                  }}
+                  className="text-sm font-medium px-3 py-1 rounded-full bg-gray-100 text-gray-700 hover:bg-[#617500] hover:text-white transition-colors inline-block"
+                >
+                  {post.category}
+                </Link>
+              )}
             </div>
           </div>
         </div>

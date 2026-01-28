@@ -6,6 +6,7 @@ import Breadcrumbs from '../../components/Breadcrumbs';
 import { getRandomPhoto, getOptimizedPhotoUrl, getPlaceholderImageUrl } from '../../utils/pexels';
 import { suggestNatureImageQuery } from '../../utils/blog-helpers';
 import { getAuthorDetails } from '../../utils/authorUtils';
+import { trackCategoryFilter, trackBrowserSearchIntent } from '../../utils/userIntentTracking';
 
 // Default placeholder for failed image loads
 const DEFAULT_PLACEHOLDER = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%233C584A"%3E%3Cpath d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-1.96-2.36L6.5 17h11l-3.54-4.71z"%2F%3E%3C%2Fsvg%3E';
@@ -33,9 +34,22 @@ export default function BlogIndex({ posts = [] }) {
     [posts]
   );
 
+  // Get initial category from URL query params
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
+  
+  // Set category from URL on mount
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const urlParams = new URLSearchParams(window.location.search);
+      const categoryParam = urlParams.get('category');
+      if (categoryParam) {
+        setSelectedCategory(categoryParam);
+      }
+    }
+  }, []);
+
   const categories = ['All', ...getAllCategories(sortedPosts)];
 
   // Filtered posts based on category and search
@@ -58,11 +72,25 @@ export default function BlogIndex({ posts = [] }) {
   const handleCategoryChange = (category) => {
     setSelectedCategory(category);
     setCurrentPage(1);
+    // Track category filter for user intent analysis
+    trackCategoryFilter(category, 'blog_index');
   };
   const handleSearchChange = (e) => {
-    setSearchQuery(e.target.value);
+    const query = e.target.value;
+    setSearchQuery(query);
     setCurrentPage(1);
   };
+  
+  // Track search intent when filtered posts change
+  useEffect(() => {
+    if (searchQuery && (
+      searchQuery.toLowerCase().includes('top browser') || 
+      searchQuery.toLowerCase().includes('best browser') ||
+      searchQuery.toLowerCase().includes('browser comparison')
+    )) {
+      trackBrowserSearchIntent(searchQuery, filteredPosts.length);
+    }
+  }, [searchQuery, filteredPosts.length]);
 
   // Calculate pagination values
   const totalPages = Math.ceil(filteredPosts.length / POSTS_PER_PAGE);
@@ -107,8 +135,39 @@ export default function BlogIndex({ posts = [] }) {
   return (
     <>
       <Head>
-        <title>Blog | Kahana</title>
-        <meta name="description" content="Latest insights and updates from the Kahana team on enterprise browser security, productivity, and technology trends." />
+        <title>Blog | Kahana - Enterprise Browser Insights & Security</title>
+        <meta name="description" content="Latest insights and updates from the Kahana team on enterprise browser security, productivity, and technology trends. Compare top browsers, learn about Oasis enterprise browser, and discover best practices for browser security." />
+        <meta name="keywords" content="enterprise browser, top browser, best browser, browser comparison, Oasis browser, browser security, enterprise security, browser productivity" />
+        
+        {/* Structured Data for Blog Index */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Blog',
+              name: 'Kahana Blog',
+              description: 'Latest insights on enterprise browser security, productivity, and technology trends',
+              url: 'https://kahana.co/blog',
+              publisher: {
+                '@type': 'Organization',
+                name: 'Kahana',
+                logo: {
+                  '@type': 'ImageObject',
+                  url: 'https://kahana.co/assets/kahana_logo_transparent.svg',
+                },
+              },
+              blogPost: sortedPosts.slice(0, 10).map(post => ({
+                '@type': 'BlogPosting',
+                headline: post.title,
+                description: post.excerpt,
+                url: `https://kahana.co/blog/${post.slug}`,
+                datePublished: post.date,
+                articleSection: post.category,
+              })),
+            }),
+          }}
+        />
       </Head>
 
       <div className="min-h-screen bg-white">
