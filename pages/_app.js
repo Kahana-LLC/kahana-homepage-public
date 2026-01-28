@@ -3,7 +3,7 @@ import NavbarDup from "../components/NavbarDup";
 import GlobalBanner from "../components/GlobalBanner";
 import Footer from "../components/Footer";
 import SEO from "../components/SEO";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { trackError } from "../utils/analytics";
 import Script from "next/script";
@@ -12,7 +12,6 @@ import ConsentBanner from "../components/ConsentBanner";
 import CookiePreferencesModal from "../components/CookiePreferencesModal";
 import ConsentErrorBoundary from "../components/ConsentErrorBoundary";
 import { loadScriptIfConsented, loadInlineScriptIfConsented } from "../utils/scriptLoader";
-import { trackPageView, getPostHog } from "../utils/posthog";
 import ICPSurvey from "../components/ICPSurvey";
 
 // Inner component that uses consent
@@ -23,10 +22,7 @@ function AppContent({ Component, pageProps }) {
   useEffect(() => {
     // Track route changes
     const handleRouteChange = (url) => {
-      // Track page view in PostHog
-      if (hasConsent('analytics')) {
-        trackPageView(url);
-      }
+      // Route change tracking (Mixpanel removed)
     };
 
     // Track errors
@@ -134,13 +130,6 @@ function AppContent({ Component, pageProps }) {
         {},
         hasConsent
       );
-
-      // PostHog - load when analytics consent given
-      // Default api_host = direct URL so tracking works even if proxy fails. Set NEXT_PUBLIC_POSTHOG_HOST=/ph to use reverse proxy.
-      const posthogHost = process.env.NEXT_PUBLIC_POSTHOG_HOST || 'https://us.i.posthog.com';
-      const posthogSnippet = `!function(t,e){var o,n,p,r;e.__SV||(window.posthog&&window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init ss us bi os hs es ns capture Bi calculateEventProperties cs register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey cancelPendingSurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException startExceptionAutocapture stopExceptionAutocapture loadToolbar get_property getSessionProperty ps vs createPersonProfile gs Zr ys opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing ds debug O fs getPageViewId captureTraceFeedback captureTraceMetric Yr".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
-posthog.init('phc_AO2jVB9Uuo448EoalpPTIkdZoqZnyjlEh4BUuRngoby',{api_host:'${posthogHost}',ui_host:'https://us.posthog.com',defaults:'2025-11-30',person_profiles:'identified_only',enable_heatmaps:true})`;
-      loadInlineScriptIfConsented('posthog-snippet-app', posthogSnippet, 'analytics', {}, hasConsent);
     }
 
     // Google Ads - requires advertising consent
@@ -166,30 +155,6 @@ posthog.init('phc_AO2jVB9Uuo448EoalpPTIkdZoqZnyjlEh4BUuRngoby',{api_host:'${post
     }
   }, [consent, hasConsent, isLoading]);
 
-  // Capture initial pageview (Next.js routeChangeComplete does not fire on first load).
-  // Retry a few times so slow script load on production (e.g. kahana.co) still sends the first pageview.
-  useEffect(() => {
-    if (isLoading || !consent || !hasConsent('analytics')) return;
-    const initialPath = typeof window !== 'undefined' ? window.location.pathname + (window.location.search || '') : router.asPath || '/';
-    const timeoutRef = { current: null };
-    let attempts = 0;
-    const maxAttempts = 4; // try at 1.5s, 3s, 4.5s, 6s
-    const trySend = () => {
-      if (getPostHog()) {
-        trackPageView(initialPath);
-        return;
-      }
-      attempts += 1;
-      if (attempts < maxAttempts) {
-        timeoutRef.current = setTimeout(trySend, 1500);
-      }
-    };
-    timeoutRef.current = setTimeout(trySend, 1500);
-    return () => {
-      if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    };
-  }, [consent, hasConsent, isLoading]);
-
   // Listen for consent changes and dynamically load/unload scripts
   useEffect(() => {
     const handleConsentChange = (event) => {
@@ -197,11 +162,7 @@ posthog.init('phc_AO2jVB9Uuo448EoalpPTIkdZoqZnyjlEh4BUuRngoby',{api_host:'${post
       
       // Dynamically load scripts based on new consent
       if (newConsent.analytics) {
-        // Load analytics scripts (including PostHog so enabling in modal starts tracking immediately)
-        const posthogHost = process.env.NEXT_PUBLIC_POSTHOG_HOST || 'https://us.i.posthog.com';
-        const posthogSnippet = `!function(t,e){var o,n,p,r;e.__SV||(window.posthog&&window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init ss us bi os hs es ns capture Bi calculateEventProperties cs register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey cancelPendingSurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException startExceptionAutocapture stopExceptionAutocapture loadToolbar get_property getSessionProperty ps vs createPersonProfile gs Zr ys opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing ds debug O fs getPageViewId captureTraceFeedback captureTraceMetric Yr".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
-posthog.init('phc_AO2jVB9Uuo448EoalpPTIkdZoqZnyjlEh4BUuRngoby',{api_host:'${posthogHost}',ui_host:'https://us.posthog.com',defaults:'2025-11-30',person_profiles:'identified_only',enable_heatmaps:true})`;
-        loadInlineScriptIfConsented('posthog-snippet-app', posthogSnippet, 'analytics', {}, () => newConsent.analytics);
+        // Load analytics scripts
         loadScriptIfConsented(
           'gtag-js-app',
           'https://www.googletagmanager.com/gtag/js?id=G-KQHFL9605P',
