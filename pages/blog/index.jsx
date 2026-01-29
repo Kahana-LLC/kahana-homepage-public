@@ -61,8 +61,8 @@ export default function BlogIndex({ posts = [] }) {
           : post.category === selectedCategory);
 
       const matchesSearch = searchQuery === '' ||
-        post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        post.excerpt.toLowerCase().includes(searchQuery.toLowerCase());
+        (post.title || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
+        (post.excerpt || '').toLowerCase().includes(searchQuery.toLowerCase());
 
       return matchesCategory && matchesSearch;
     });
@@ -135,10 +135,18 @@ export default function BlogIndex({ posts = [] }) {
   return (
     <>
       <Head>
-        <title>Blog | Kahana - Enterprise Browser Insights & Security</title>
-        <meta name="description" content="Latest insights and updates from the Kahana team on enterprise browser security, productivity, and technology trends. Compare top browsers, learn about Oasis enterprise browser, and discover best practices for browser security." />
+        <title>Enterprise Browser Blog | Top Browser Comparisons & Security Insights – Kahana</title>
+        <meta name="description" content="Compare top browsers, get expert takes on enterprise browser security, and learn how Oasis solves real-world speed and privacy problems. Actionable insights—updated regularly." />
         <meta name="keywords" content="enterprise browser, top browser, best browser, browser comparison, Oasis browser, browser security, enterprise security, browser productivity" />
-        
+        <link rel="canonical" href="https://kahana.co/blog" />
+        <meta property="og:url" content="https://kahana.co/blog" />
+        <meta property="og:title" content="Enterprise Browser Blog | Top Browser Comparisons & Security – Kahana" />
+        <meta property="og:description" content="Compare top browsers, get expert takes on enterprise browser security, and learn how Oasis solves real-world speed and privacy problems." />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Enterprise Browser Blog | Top Browser Comparisons & Security – Kahana" />
+        <meta name="twitter:description" content="Compare top browsers, get expert takes on enterprise browser security, and learn how Oasis solves real-world speed and privacy problems." />
+
         {/* Structured Data for Blog Index */}
         <script
           type="application/ld+json"

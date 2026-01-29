@@ -1,5 +1,16 @@
 const blogIndex = [
   {
+    title: "Chromium Browsers 2026: Why Benchmarks Say 'Fastest' But Real-World Speed Tells a Different Story",
+    date: "2026-02-01T00:00:00.000Z",
+    authors: ["Konika Dhull"],
+    category: "Browser & Technology",
+    excerpt: "Chrome and Edge win most 'fastest browser' benchmarks in 2026—but memory consumption, background processes, and extensions undermine real-world performance. A clear look at Chromium rankings, RAM and energy trade-offs, and why lab scores don't match everyday responsiveness.",
+    defaultImageQuery: "Chromium browser benchmarks 2026 speed RAM",
+    featuredImage: "https://www.browserstack.com/blog/content/images/2020/01/Blog_inside@2x.png",
+    slug: "chromium-browsers-2026-benchmarks-ram-real-world",
+    readingTime: 18,
+  },
+  {
     title: "From Network DLP to Session DLP: Securing External Users with In-Browser DLP in 2026",
     date: "2026-02-01T00:00:00.000Z",
     authors: ["Konika Dhull"],
@@ -20,6 +31,17 @@ const blogIndex = [
     featuredImage: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScobEj7eoNphf4yK0wh7nA6ctPtogdkYoq2w&s",
     slug: "shadow-it-browser-saas-insider-risk-contractors-2026",
     readingTime: 20,
+  },
+  {
+    title: "Browser Speed vs. Security for Remote Work: The 2026 Trade-Off",
+    date: "2026-01-31T00:00:00.000Z",
+    authors: ["Konika Dhull"],
+    category: "Security",
+    excerpt: "Secure browsers in 2026—Brave, Firefox, enterprise options—improve privacy and Zero Trust, but aggressive tracker blocking, built-in VPNs, and remote browser isolation can slow remote workflows. A clear look at the speed–security trade-off, BYOD risks, extension threats, and why the fastest secure browser for remote work isn't always the strictest one.",
+    defaultImageQuery: "secure browser remote work 2026 speed security",
+    featuredImage: "https://images.fastcompany.com/image/upload/f_webp,c_fit,w_1920,q_auto/wp-cms-2/2026/01/p-1-91467410-best-remote-job-sites.jpg",
+    slug: "browser-speed-vs-security-remote-work-2026",
+    readingTime: 18,
   },
   {
     title: "SaaS Data Exfiltration: How Browser and Contractor Risks Enable Rapid Data Theft in 2026",
@@ -97,6 +119,17 @@ const blogIndex = [
     featuredImage: "https://etimg.etb2bimg.com/photo/118318139.cms",
     slug: "chromium-enterprise-browser-reduces-saas-compatibility-headaches-2026",
     readingTime: 19,
+  },
+  {
+    title: "Fastest Web Browser in 2026: Benchmarks, Caveats, and Real-World Problems",
+    date: "2026-01-27T00:00:00.000Z",
+    authors: ["Konika Dhull"],
+    category: "Browser & Technology",
+    excerpt: "What does 'fastest web browser in 2026' really mean? Benchmarks from JetStream, Speedometer, and Basemark tell one story—RAM bloat, tracker blocking, and real-world interaction delays tell another. A clear look at 2026 browser speed claims, methodology pitfalls, and why enterprises care about more than synthetic scores.",
+    defaultImageQuery: "fastest web browser 2026 benchmarks speed",
+    featuredImage: "https://www.lifewire.com/thmb/mz8CxFcUC_UWKjwpOUhwc2so4sQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-2129983245-456da613b0fa44c0977143a801d1b0d4.jpg",
+    slug: "fastest-web-browser-2026-benchmarks-caveats-real-world-problems",
+    readingTime: 17,
   },
   {
     title: "Okta and SaaS Session Security: How Enterprise Browsers Close the Gap Beyond SSO",

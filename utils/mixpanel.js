@@ -47,11 +47,11 @@ export function initMixpanel(token) {
 }
 
 /**
- * Check if analytics consent is granted
+ * Check if analytics consent is granted (or localhost for dev reporting)
  */
 function hasAnalyticsConsent() {
   if (typeof window === 'undefined') return false;
-  
+  if (['localhost', '127.0.0.1'].includes(window.location.hostname)) return true;
   try {
     const stored = localStorage.getItem('kahana_consent_preferences');
     if (stored) {
@@ -63,7 +63,6 @@ function hasAnalyticsConsent() {
   } catch (error) {
     console.warn('Error checking analytics consent:', error);
   }
-  
   return false;
 }
 

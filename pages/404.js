@@ -17,10 +17,11 @@ export default function Custom404() {
             The page you're looking for doesn't exist or has been moved.
           </p>
           <div className="mt-5">
-            <Link href="/">
-              <button className="btn-primary px-8 py-3 rounded-md font-semibold">
-                Return Home
-              </button>
+            <Link
+              href="/"
+              className="btn-primary inline-block px-8 py-3 rounded-md font-semibold no-underline"
+            >
+              Return Home
             </Link>
           </div>
         </div>

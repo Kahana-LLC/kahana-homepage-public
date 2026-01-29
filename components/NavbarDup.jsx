@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import whiteKahanaLogo from '../assets/kahana_logo_transparent.svg';
 import { getCloudinaryImageUrl } from '../utils/cloudinary-mapper';
 
 function NavBar() {
+  const router = useRouter();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
@@ -158,6 +160,7 @@ function NavBar() {
             }
           }
 
+          .nav-content > a:first-child > span,
           .nav-content > a:first-child > div {
             margin-left: 0 !important;
             padding-left: 0 !important;
@@ -172,11 +175,13 @@ function NavBar() {
           }
 
           @media (max-width: 768px) {
+            .nav-content > a:first-child > span,
             .nav-content > a:first-child > div {
               width: 160px !important;
             }
           }
 
+          .nav-content > a:first-child > span::before,
           .nav-content > a:first-child > div::before {
             content: '';
             position: absolute;
@@ -188,6 +193,7 @@ function NavBar() {
           }
 
           .nav-content > a:first-child img,
+          .nav-content > a:first-child > span img,
           .nav-content > a:first-child > div > img,
           .nav-content > a:first-child > div > span > img {
             margin: 0 !important;
@@ -352,8 +358,12 @@ function NavBar() {
             padding: 8px 12px;
             margin: 0 -12px;
             border-radius: 8px;
-            transition: background-color 0.15s ease;
             font-family: "Roboto", sans-serif;
+            -webkit-tap-highlight-color: transparent;
+            tap-highlight-color: transparent;
+            background-color: rgba(248, 250, 252, 0.4);
+            transition: none;
+            outline: none;
           }
 
           .dropdown-link:hover,
@@ -361,9 +371,10 @@ function NavBar() {
           .dropdown-link:visited,
           .dropdown-link:focus {
             color: #617500 !important;
-            background-color: #f8fafc;
+            background-color: rgba(248, 250, 252, 0.9);
             text-decoration: none !important;
             font-weight: 600 !important;
+            outline: none;
           }
 
           .dropdown-link + .dropdown-link {
@@ -640,16 +651,18 @@ function NavBar() {
           }
         `}</style>
         <div className="nav-content">
-          <Link href="/" className="flex items-center">
-            <div className="relative h-[56px] flex-shrink-0" style={{ marginLeft: 0, paddingLeft: 0, overflow: 'hidden', width: '200px' }}>
-              <Image
-                src={whiteKahanaLogo}
-                alt="Kahana Logo"
-                fill
-                style={{ objectFit: 'contain', objectPosition: 'left center', margin: 0, padding: 0, width: '100%', height: '100%' }}
-                priority
-              />
-            </div>
+          <Link href="/" className="flex items-center" passHref legacyBehavior>
+            <a className="flex items-center" style={{ lineHeight: 0 }}>
+              <span className="relative block h-[56px] w-[200px] flex-shrink-0" style={{ marginLeft: 0, paddingLeft: 0, overflow: 'hidden' }}>
+                <Image
+                  src={whiteKahanaLogo}
+                  alt="Kahana Logo"
+                  fill
+                  style={{ objectFit: 'contain', objectPosition: 'left center', margin: 0, padding: 0, width: '100%', height: '100%' }}
+                  priority
+                />
+              </span>
+            </a>
           </Link>
 
           {/* Navigation Links */}
@@ -739,7 +752,14 @@ function NavBar() {
                 <div className="dropdown-section">
                   <h3 className="font-semibold text-gray-600 mb-4 uppercase tracking-wider">Learn</h3>
                   <div className="flex flex-col space-y-4">
-                    <Link href="/blog" className="dropdown-link" onClick={() => setOpenDropdown(null)}>
+                    <Link
+                      href="/blog"
+                      className="dropdown-link"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        router.push('/blog');
+                      }}
+                    >
                       Blog
                     </Link>
                     <Link href="/docs" className="dropdown-link" onClick={() => setOpenDropdown(null)}>
