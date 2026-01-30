@@ -40,21 +40,18 @@ export default function ConfirmSuccess() {
           <h1 className="text-3xl sm:text-4xl font-extrabold text-[#313A00] mb-4">
             Email confirmed
           </h1>
-          <p className="text-lg text-gray-700 mb-8">
-            Your email is verified. You're all set—sign in to continue to Oasis or download the app.
+          <p className="text-lg text-gray-700 mb-6">
+            Your email is verified. You're all set.
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Link
-              href="/oasis-auth"
-              className="btn-primary inline-flex items-center justify-center px-6 py-3 text-base font-semibold rounded-full no-underline"
-            >
-              Sign in
-            </Link>
+          <p className="text-base text-gray-600 mb-8 max-w-sm mx-auto">
+            You can install the newest version of Oasis and use your login credentials to use the AI assistant. While you don't need to sign in to use the browser, you will need to sign in in order to use AI commands in the AI assistant.
+          </p>
+          <div className="flex justify-center">
             <Link
               href="/installations"
-              className="btn-secondary inline-flex items-center justify-center px-6 py-3 text-base font-semibold rounded-full no-underline"
+              className="btn-primary inline-flex items-center justify-center px-6 py-3 text-base font-semibold rounded-full no-underline"
             >
-              Download Oasis
+              Install Oasis
             </Link>
           </div>
           <p className="mt-8 text-sm text-gray-500">
