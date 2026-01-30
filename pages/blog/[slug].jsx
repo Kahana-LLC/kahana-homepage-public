@@ -13,6 +13,7 @@ import BlogCard from '../../components/BlogCard';
 import { FaLinkedin, FaRegCalendarAlt, FaBookOpen, FaRegClock } from 'react-icons/fa';
 import SocialShare from '../../components/SocialShare';
 import { trackBlogEngagement, trackCategoryClick, trackRelatedBlogClick, trackOasisRelevance } from '../../utils/userIntentTracking';
+import { getBlogPostSeo, getBlogKeywords } from '../../utils/blogSeo';
 const { getAuthorDetails } = require('../../utils/authorUtils');
 
 // Function to parse HTML content and convert component tags to React components
@@ -215,29 +216,41 @@ export default function BlogPost({ post }) {
     );
   }
 
+  const { titleTag, metaDescription, canonicalUrl } = getBlogPostSeo(post);
+  const keywordsMeta = getBlogKeywords(post);
+  const isBrowserPost = post.title.toLowerCase().includes('browser');
+
   return (
     <>
       <Head>
-        <title>{`${post.title} | Kahana Blog`}</title>
-        <meta name="description" content={post.excerpt} />
-        
-        {/* Enhanced SEO for browser-related searches */}
-        {post.title.toLowerCase().includes('browser') && (
-          <>
-            <meta name="keywords" content={`${postCategory}, enterprise browser, top browser, best browser, browser comparison, Oasis browser, ${post.title.split(' ').slice(0, 5).join(', ')}`} />
-            <meta name="robots" content="index, follow" />
-          </>
-        )}
-        
-        {/* Open Graph */}
-        <meta property="og:title" content={post.title} />
-        <meta property="og:description" content={post.excerpt} />
+        <title>{titleTag}</title>
+        <meta name="description" content={metaDescription} />
+        <link rel="canonical" href={canonicalUrl} />
+        {keywordsMeta && <meta name="keywords" content={keywordsMeta} />}
+        {isBrowserPost && <meta name="robots" content="index, follow" />}
+
+        {/* Open Graph — CTR-friendly title/description, full URL, image dimensions */}
+        <meta property="og:title" content={titleTag.replace(/\s*\|\s*Kahana Blog$/, '')} />
+        <meta property="og:description" content={metaDescription} />
         <meta property="og:type" content="article" />
+        <meta property="og:url" content={canonicalUrl} />
         <meta property="article:published_time" content={post.date} />
         <meta property="article:author" content={hasAuthors ? postAuthors.map(a => a.name).join(', ') : ''} />
         <meta property="article:section" content={postCategory} />
-        {post.featuredImage && <meta property="og:image" content={post.featuredImage} />}
-        
+        {post.featuredImage && (
+          <>
+            <meta property="og:image" content={post.featuredImage} />
+            <meta property="og:image:width" content="1200" />
+            <meta property="og:image:height" content="630" />
+          </>
+        )}
+
+        {/* Twitter Card — same as OG for consistent social CTR */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={titleTag.replace(/\s*\|\s*Kahana Blog$/, '')} />
+        <meta name="twitter:description" content={metaDescription} />
+        {post.featuredImage && <meta name="twitter:image" content={post.featuredImage} />}
+
         {/* Structured Data for SEO */}
         <script
           type="application/ld+json"
@@ -246,7 +259,7 @@ export default function BlogPost({ post }) {
               '@context': 'https://schema.org',
               '@type': 'BlogPosting',
               headline: post.title,
-              description: post.excerpt,
+              description: metaDescription,
               image: post.featuredImage || '',
               datePublished: post.date,
               dateModified: post.date,
@@ -265,12 +278,10 @@ export default function BlogPost({ post }) {
               },
               mainEntityOfPage: {
                 '@type': 'WebPage',
-                '@id': `https://kahana.co/blog/${post.slug}`,
+                '@id': canonicalUrl,
               },
               articleSection: postCategory,
-              keywords: post.title.toLowerCase().includes('browser') 
-                ? `${postCategory}, enterprise browser, top browser, best browser, browser comparison, Oasis browser`
-                : postCategory,
+              keywords: keywordsMeta || postCategory,
             }),
           }}
         />

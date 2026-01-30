@@ -82,12 +82,13 @@ export default function BlogCard({ post }) {
           trackBlogEngagement(post.slug, post.category, 'card_click');
         }}
       >
+        <span className="flex flex-col h-full block">
         {/* Image */}
-        <div className="relative h-52 md:h-56 lg:h-48 w-full">
+        <span className="relative h-52 md:h-56 lg:h-48 w-full block">
           {isLoadingImage ? (
-            <div className="w-full h-full bg-gray-100 flex items-center justify-center">
-              <div className="text-[#4A5745]">Loading...</div>
-            </div>
+            <span className="w-full h-full bg-gray-100 flex items-center justify-center block" style={{ minHeight: '13rem' }}>
+              <span className="text-[#4A5745]">Loading...</span>
+            </span>
           ) : (
             <Image
               src={imageUrl || DEFAULT_PLACEHOLDER}
@@ -96,9 +97,9 @@ export default function BlogCard({ post }) {
               className="object-cover"
             />
           )}
-        </div>
+        </span>
 
-        <div className="flex flex-col flex-grow px-6 pt-6 pb-4 gap-4">
+        <span className="flex flex-col flex-grow px-6 pt-6 pb-4 gap-4 block">
           {/* Title */}
           <h3 className="text-xl font-semibold text-gray-900 hover:text-kahana-accent-sunset transition-colors line-clamp-2 mb-2">
             {post.title}
@@ -157,7 +158,8 @@ export default function BlogCard({ post }) {
               )}
             </div>
           </div>
-        </div>
+        </span>
+        </span>
       </Link>
     </article>
   );

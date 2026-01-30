@@ -80,7 +80,6 @@ export default function PrivacyPolicy() {
                 <li>Location information. Your location information is received by us when you use our Services. For instance, we may determine your location by analyzing your IP address.</li>
                 <li>Device information. Information about the device and software you utilize to access our Services is received by us, which encompasses IP address, device type, device identifiers, web browser type and version, and operating system version.</li>
                 <li>Usage information. Information about your interactions with our Services is automatically received by us. This encompasses usage data, visit timestamps, feature interactions, and the pages or other content you view. Additionally, it may include larger chats and files that you upload, as well as the frequency and type of AI tasks performed.</li>
-                <li>ICP (Ideal Customer Profile) information. When you interact with our website, we may present you with a voluntary survey asking "What best describes your work?" with options such as Founder, Developer, Marketer, Student, or Other. If you choose to participate, we collect your role selection to help us understand our audience and improve our services. This information is collected only after you have provided consent for analytics cookies and is used for segmentation and conversion analysis. You are not required to participate in this survey, and you can dismiss it at any time.</li>
                 <li>Cookies and other tracking technologies. Information about your activities on our Services is collected by us and our third-party partners through cookies or other tracking technologies. These same technologies may also be used by our third-party partners, including analytics, advertising, and security partners, to gather information about your online activities across time and different services. For detailed information about our use of cookies and tracking technologies, including how to manage your preferences, please see Section 1.4 below.</li>
               </ul>
 
@@ -117,7 +116,7 @@ export default function PrivacyPolicy() {
                     <strong>Tools we use:</strong> Google Analytics, Google Tag Manager, Hotjar, PostHog
                   </p>
                   <p className="text-sm text-gray-600">
-                    <strong>Data collected:</strong> Page views, user interactions, session duration, bounce rates, device and browser information, user role/segment data (via ICP survey), conversion events, funnel analytics
+                    <strong>Data collected:</strong> Page views, user interactions, session duration, bounce rates, device and browser information, conversion events, funnel analytics
                   </p>
                 </div>
 
@@ -153,7 +152,7 @@ export default function PrivacyPolicy() {
               </p>
 
               <p className="text-gray-700 leading-relaxed mb-6">
-                <strong>Third-Party Sharing:</strong> When you consent to non-essential tracking technologies, we may share information collected through these technologies with third-party service providers, including Google (for Analytics and Ads), Hotjar, PostHog, and Warmly. These third parties may use this information for their own purposes in accordance with their privacy policies. PostHog is used for product analytics and ICP segmentation, and may receive your role selection data from our voluntary survey. For more information about PostHog's data practices, please visit <a href="https://posthog.com/privacy" target="_blank" rel="noopener noreferrer" className="text-[#4A6200] hover:underline font-semibold">PostHog's Privacy Policy</a>.
+                <strong>Third-Party Sharing:</strong> When you consent to non-essential tracking technologies, we may share information collected through these technologies with third-party service providers, including Google (for Analytics and Ads), Hotjar, PostHog, and Warmly. These third parties may use this information for their own purposes in accordance with their privacy policies. PostHog is used for product analytics. For more information about PostHog's data practices, please visit <a href="https://posthog.com/privacy" target="_blank" rel="noopener noreferrer" className="text-[#4A6200] hover:underline font-semibold">PostHog's Privacy Policy</a>.
               </p>
 
               <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">Information collected from other sources</h3>
@@ -454,8 +453,6 @@ export default function PrivacyPolicy() {
                 <p className="text-sm font-semibold text-[#313A00] mb-2">January 2025</p>
                 <ul className="list-disc list-inside text-gray-700 space-y-2 text-sm ml-4">
                   <li><strong>PostHog Analytics Integration:</strong> We have integrated PostHog, a product analytics platform, to better understand how visitors interact with our website. PostHog helps us analyze user behavior, track conversion funnels, and segment our audience. PostHog only collects data after you have provided consent for analytics cookies.</li>
-                  <li><strong>ICP Survey:</strong> We now offer a voluntary survey that asks visitors "What best describes your work?" (with options such as Founder, Developer, Marketer, Student, or Other). This survey appears after you have accepted analytics cookies and helps us understand our audience better. Participation is completely voluntary, and you can dismiss the survey at any time. The survey only appears once per user and includes a link to this Privacy Policy.</li>
-                  <li><strong>Enhanced Data Collection:</strong> We now collect ICP (Ideal Customer Profile) segmentation data, including user role information, to improve our marketing efforts and better understand which customer segments engage with our services. This data is collected only with your explicit consent through our analytics cookie consent.</li>
                 </ul>
               </div>
 
