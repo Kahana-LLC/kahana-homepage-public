@@ -1,0 +1,71 @@
+<!--
+  Supabase Auth: Confirm signup email template
+  Paste this into: Supabase Dashboard > Authentication > Email Templates > Confirm signup
+
+  Subject line (use in Supabase template subject field):
+    Confirm your email · Kahana
+
+  Brand colors (Kahana/Oasis):
+  - Heading: #313A00
+  - Primary button: #4A6200
+  - Body text: #4A5745
+  - Light background: #F8FAF2
+  - Border: #7F9E36
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Confirm your email · Kahana</title>
+  <!--[if mso]>
+  <noscript>
+    <xml>
+      <o:OfficeDocumentSettings>
+        <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+    </xml>
+  </noscript>
+  <![endif]-->
+</head>
+<body style="margin: 0; padding: 0; background-color: #f0f0f0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #4A5745;">
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #f0f0f0; padding: 40px 20px;">
+    <tr>
+      <td align="center">
+        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="max-width: 520px; background-color: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 24px rgba(49, 58, 0, 0.08);">
+          <!-- Header -->
+          <tr>
+            <td style="background-color: #F8FAF2; padding: 32px 40px 24px; border-bottom: 1px solid #e8ebe0;">
+              <p style="margin: 0 0 4px; font-size: 13px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #978455;">Oasis by Kahana</p>
+              <h1 style="margin: 0; font-size: 24px; font-weight: 800; color: #313A00; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">Confirm your email</h1>
+            </td>
+          </tr>
+          <!-- Body -->
+          <tr>
+            <td style="padding: 32px 40px;">
+              <p style="margin: 0 0 16px; font-size: 16px; color: #4A5745;">Thanks for signing up. Click the button below to confirm your email address and get started.</p>
+              <p style="margin: 0 0 24px; font-size: 16px; color: #4A5745;">If you didn’t create an account with Kahana, you can safely ignore this email.</p>
+              <!-- CTA Button -->
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: 0 auto;">
+                <tr>
+                  <td style="border-radius: 28px; background-color: #4A6200; border: 1px solid #7F9E36;">
+                    <a href="{{ .ConfirmationURL }}" target="_blank" rel="noopener noreferrer" style="display: inline-block; padding: 14px 28px; font-size: 16px; font-weight: bold; color: #ffffff; text-decoration: none;">Confirm your email</a>
+                  </td>
+                </tr>
+              </table>
+              <!-- Fallback link for clients that strip buttons -->
+              <p style="margin: 24px 0 0; font-size: 14px; color: #6b7355;">If the button doesn’t work, use this link: <a href="{{ .ConfirmationURL }}" style="color: #4A6200; font-weight: 600; text-decoration: underline;">Confirm your email</a></p>
+            </td>
+          </tr>
+          <!-- Footer -->
+          <tr>
+            <td style="padding: 24px 40px 32px; background-color: #F8FAF2; border-top: 1px solid #e8ebe0;">
+              <p style="margin: 0; font-size: 13px; color: #6b7355;">You’re receiving this because you signed up at Kahana. Questions? <a href="{{ .SiteURL }}/contact" style="color: #4A6200; font-weight: 600; text-decoration: none;">Contact us</a>.</p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

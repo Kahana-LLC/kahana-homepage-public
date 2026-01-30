@@ -7,11 +7,17 @@ import { createClient } from '@/utils/supabase'
 export async function signupAndCreateProfile(email, password, fullName) {
   const supabase = createClient()
 
+  const emailRedirectTo =
+    typeof window !== 'undefined'
+      ? `${window.location.origin}/confirm-success`
+      : undefined
+
   const { data, error } = await supabase.auth.signUp({
     email,
     password,
     options: {
       data: fullName ? { full_name: fullName } : {},
+      emailRedirectTo,
     },
   })
   if (error) throw error
