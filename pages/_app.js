@@ -152,10 +152,12 @@ function AppContent({ Component, pageProps }) {
   // Mixpanel via npm (mixpanel-browser) – no CDN, works on localhost even when CDN is blocked
   const initMixpanelFromNpm = async (token, opts) => {
     const { debug = false, apiHost } = opts || {};
+    const sessionReplayPercent = parseInt(process.env.NEXT_PUBLIC_MIXPANEL_SESSION_REPLAY_PERCENT || '0', 10);
+    const enableHeatmaps = sessionReplayPercent > 0;
     try {
       const mod = await import('mixpanel-browser');
       const mp = mod.default;
-      mp.init(token, {
+      const initOpts = {
         debug,
         track_pageview: false,
         persistence: 'localStorage',
@@ -168,7 +170,12 @@ function AppContent({ Component, pageProps }) {
             timestamp: new Date().toISOString(),
           });
         },
-      });
+      };
+      if (enableHeatmaps) {
+        initOpts.record_sessions_percent = Math.min(100, Math.max(1, sessionReplayPercent));
+        initOpts.record_heatmap_data = true;
+      }
+      mp.init(token, initOpts);
       return mp;
     } catch (e) {
       console.error('[Mixpanel] init error:', e);
