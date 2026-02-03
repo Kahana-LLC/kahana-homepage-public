@@ -141,6 +141,24 @@ Then redeploy. Our init uses `api_host` from these env vars.
 | `NEXT_PUBLIC_MIXPANEL_DEBUG` | `true` → enable Mixpanel debug + loader logs. |
 | `NEXT_PUBLIC_MIXPANEL_EU` | `true` → use `https://api-eu.mixpanel.com`. |
 | `NEXT_PUBLIC_MIXPANEL_API_HOST` | Override `api_host` (e.g. proxy or custom endpoint). |
+| `NEXT_PUBLIC_MIXPANEL_SESSION_REPLAY_PERCENT` | `1`–`100` → enable Session Replay + Heatmaps (1 = 1% of sessions). `0` or unset = disabled. Requires Mixpanel Session Replay add-on. |
+
+---
+
+## 7. Heatmaps and Session Replay
+
+Mixpanel Heatmaps show where users click. They require **Session Replay** (paid add-on) and `record_heatmap_data`.
+
+**Enable:**
+
+1. Ensure your Mixpanel plan includes **Session Replay**.
+2. Set `NEXT_PUBLIC_MIXPANEL_SESSION_REPLAY_PERCENT=1` (or 1–100) in your env.  
+   - `1` = record 1% of sessions  
+   - `100` = record all sessions (higher cost)
+3. Redeploy. Heatmaps will collect click data during recorded sessions.
+4. In Mixpanel: **Session Replay** → **Heatmaps** → choose a URL to analyze.
+
+Heatmap clicks are free when a session recording is in progress. Session Replay itself is billed per your plan.
 
 ---
 
