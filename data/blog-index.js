@@ -1,5 +1,16 @@
 const blogIndex = [
   {
+    title: "7 Ways DRM Must Evolve for Zero Trust and Enterprise Browsers in 2026",
+    date: "2026-02-06T00:00:00.000Z",
+    authors: ["Konika Dhull"],
+    category: "Security",
+    excerpt: "Traditional DRM breaks in a Zero Trust, browser-first world. This post explains why legacy DRM struggles with BYOD, SaaS sprawl, and post-render protection—and how enterprise browsers are becoming the new DRM perimeter for future of DRM and Zero Trust data protection.",
+    defaultImageQuery: "DRM digital rights management Zero Trust enterprise browser security 2026",
+    featuredImage: "https://depenning.com/wp-content/uploads/2025/09/DRM-Technologies.webp",
+    slug: "drm-zero-trust-enterprise-browser-2026",
+    readingTime: 16,
+  },
+  {
     title: "Enterprise Architecture Challenges in 2026: 7 Pain Points and How AI Browsers Help Solution Architects",
     date: "2026-02-05T00:00:00.000Z",
     authors: ["Konika Dhull"],
@@ -1590,14 +1601,15 @@ const blogIndex = [
   },
   {
     title: "Oasis: A Browser That Thinks in Projects, Not Tabs",
-    date: "2025-05-08T00:00:00.000Z",
-    authors: ["Shalvi Save"],
+    date: "2026-02-03T00:00:00.000Z",
+    authors: ["Konika Dhull"],
     category: "Enterprise",
     excerpt:
-      "Oasis introduces a new way to organize your digital work: Hubs. Instead of endless tabs, you get focused workspaces for each project or topic. Shalvi Save explores why this approach could finally bring order to browser chaos.",
+      "Oasis by Kahana is an AI-powered, agentic browser built for focused work—with patented hub technology, smart tab management, and an integrated AI assistant. This post explains why Oasis belongs in top AI browsers for productivity and how Hubs bring order to browser chaos.",
     defaultImageQuery: "Oasis browser hub project organization",
+    featuredImage: "https://res.cloudinary.com/dlhpqrucv/image/upload/w_1000,c_fill,g_auto,f_auto,q_auto:good/kahana-homepage/figma-imports/er",
     slug: "oasis-browser-thinks-in-projects-not-tabs",
-    readingTime: 6,
+    readingTime: 10,
   },
   {
     title:
