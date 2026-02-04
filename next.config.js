@@ -10,16 +10,51 @@ const nextConfig = {
 
   images: {
     domains: [
-      "images.unsplash.com", // Domain for Unsplash images
-      "firebasestorage.googleapis.com", // Domain for Firebase Storage images
-      "images.pexels.com", // Domain for Pexels images
+      "images.unsplash.com",
+      "firebasestorage.googleapis.com",
+      "images.pexels.com",
       "kahana.co",
-      "res.cloudinary.com", // Domain for Cloudinary CDN images
-      "www.thedailystar.net", // Domain for The Daily Star images
-      "media.licdn.com", // Domain for LinkedIn images
-      "s.alicdn.com", // Domain for Alibaba Cloud images
+      "res.cloudinary.com",
+      "www.thedailystar.net",
+      "media.licdn.com",
+      "s.alicdn.com",
+      // Blog featured images (external hosts)
+      "www.vdocipher.com",
+      "discover.strongdm.com",
+      "browserstack.wpenginepowered.com",
+      "cyberguy.com",
+      "encrypted-tbn0.gstatic.com",
+      "www.eccouncil.org",
+      "foyercus.blob.core.windows.net",
+      "surfshark.com",
+      "www.qualtrics.com",
+      "www.zdnet.com",
+      "www.totalassure.com",
+      "cdn.prod.website-files.com",
+      "depenning.com",
+      "www.leanix.net",
+      "substack-post-media.s3.amazonaws.com",
+      "substackcdn.com",
+      "www.eginnovations.com",
+      "i.ytimg.com",
+      "www.browserstack.com",
+      "www.paloaltonetworks.com",
+      "images.fastcompany.com",
+      "static.endpointprotector.com",
+      "layerxsecurity.com",
+      "patchmypc.com",
+      "www.watchguard.com",
+      "etimg.etb2bimg.com",
+      "www.lifewire.com",
+      "salesforcedevops.net",
+      "www.searchengineinsight.com",
+      "dropinblog.net",
+      "cdn.mos.cms.futurecdn.net",
+      "preview.redd.it",
+      "redaccess.io",
+      "docs.netskope.com",
     ],
-    unoptimized: true, // Allow unoptimized local images (Cloudinary handles optimization)
+    unoptimized: true,
   },
 
   // Suppress build logs

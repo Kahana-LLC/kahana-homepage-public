@@ -152,6 +152,19 @@ const authors = {
     linkedinProfile: "https://www.linkedin.com/in/durgesh98/",
     avatar: "/assets/headshots/durgesh_tiwari.jpg",
   },
+  "Ankit Sai Allam": {
+    name: "Ankit Sai Allam",
+    role: "Product Management Intern",
+    bio: "I'm Ankit Sai Allam, someone loves solving complex problems through thoughtful strategy and teamwork. I've worked on AI tools, and I'm passionate about building things that are both useful and meaningful.",
+    linkedinProfile: "https://www.linkedin.com/in/ankitsai/",
+    avatar: "/assets/headshots/ankit_sai_allam.png",
+  },
+  "Rohan Mehere": {
+    name: "Rohan Mehere",
+    role: "Team",
+    bio: "Rohan Mehere is a member of the Kahana team.",
+    linkedinProfile: "https://www.linkedin.com/in/rohan-mehere/",
+  },
 };
 
 module.exports = { authors };
