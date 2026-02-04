@@ -22,13 +22,16 @@ function getPathMapping() {
       pathMapping = {};
       
       // Create a reverse mapping: localPath -> publicId
-      mapping.successful.forEach((item) => {
+      // Include both successful uploads and skipped (already on Cloudinary)
+      const items = [...(mapping.successful || []), ...(mapping.skipped || [])];
+      items.forEach((item) => {
+        if (!item.localPath || !item.publicId) return;
         // Normalize paths (remove leading ./ or public/)
         const normalizedPath = item.localPath
           .replace(/^\.\//, '')
           .replace(/^public\//, '');
         
-        // Map both with and without /public prefix
+        // Map both with and without /public prefix; blog paths use /blog/filename
         pathMapping[normalizedPath] = item.publicId;
         pathMapping[`/${normalizedPath}`] = item.publicId;
         pathMapping[`public/${normalizedPath}`] = item.publicId;

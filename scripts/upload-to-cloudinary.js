@@ -153,10 +153,11 @@ async function uploadFile(file) {
   } catch (error) {
     // Check if file already exists
     if (error.http_code === 409 || error.message.includes('already exists')) {
-      console.log(`⏭️  Skipped (already exists): ${cleanPublicId}`);
+      const fullPublicId = `kahana-homepage/${cleanPublicId}`;
+      console.log(`⏭️  Skipped (already exists): ${fullPublicId}`);
       uploadResults.skipped.push({
         localPath: relativePath,
-        publicId: cleanPublicId,
+        publicId: fullPublicId,
         reason: 'already_exists',
       });
       return null;

@@ -752,14 +752,7 @@ function NavBar() {
                 <div className="dropdown-section">
                   <h3 className="font-semibold text-gray-600 mb-4 uppercase tracking-wider">Learn</h3>
                   <div className="flex flex-col space-y-4">
-                    <Link
-                      href="/blog"
-                      className="dropdown-link"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        router.push('/blog');
-                      }}
-                    >
+                    <Link href="/blog" className="dropdown-link" onClick={() => setOpenDropdown(null)}>
                       Blog
                     </Link>
                     <Link href="/docs" className="dropdown-link" onClick={() => setOpenDropdown(null)}>

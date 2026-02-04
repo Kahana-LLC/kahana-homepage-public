@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { getRandomPhoto, getOptimizedPhotoUrl, getPlaceholderImageUrl } from '../utils/pexels';
+import { getBlogImageUrl } from '../utils/blog-image-url';
 import { suggestNatureImageQuery } from '../utils/blog-helpers';
 import { trackBlogEngagement, trackCategoryClick } from '../utils/userIntentTracking';
 const { getAuthorDetails } = require('../utils/authorUtils');
@@ -23,6 +24,7 @@ export default function BlogCard({ post }) {
   const [isClient, setIsClient] = useState(false);
   const [imageUrl, setImageUrl] = useState(null);
   const [isLoadingImage, setIsLoadingImage] = useState(true);
+  const [imageError, setImageError] = useState(false);
 
   useEffect(() => {
     setIsClient(true);
@@ -34,9 +36,9 @@ export default function BlogCard({ post }) {
       try {
         setIsLoadingImage(true);
         
-        // Check if post has a featuredImage URL - use it directly
+        // Check if post has a featuredImage URL - resolve via Cloudinary for local paths
         if (post.featuredImage) {
-          setImageUrl(post.featuredImage);
+          setImageUrl(getBlogImageUrl(post.featuredImage));
           setIsLoadingImage(false);
           return;
         }
@@ -62,6 +64,7 @@ export default function BlogCard({ post }) {
     };
 
     if (isClient) {
+      setImageError(false);
       fetchImage();
     }
   }, [isClient, post.defaultImageQuery, post.category, post.slug, post.featuredImage]);
@@ -70,7 +73,7 @@ export default function BlogCard({ post }) {
     return null;
   }
 
-  const postAuthors = getAuthorDetails(post.authors);
+  const postAuthors = getAuthorDetails(post.authors ?? []);
 
   return (
     <article className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-200 overflow-hidden flex flex-col h-full">
@@ -91,10 +94,12 @@ export default function BlogCard({ post }) {
             </span>
           ) : (
             <Image
-              src={imageUrl || DEFAULT_PLACEHOLDER}
-              alt={post.title}
+              src={imageError || !imageUrl || imageUrl.trim() === '' ? DEFAULT_PLACEHOLDER : imageUrl}
+              alt={post.title ?? 'Blog post'}
               fill
               className="object-cover"
+              unoptimized={imageUrl?.startsWith('data:') === true}
+              onError={() => setImageError(true)}
             />
           )}
         </span>

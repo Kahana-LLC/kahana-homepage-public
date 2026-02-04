@@ -14,6 +14,7 @@ import { FaLinkedin, FaRegCalendarAlt, FaBookOpen, FaRegClock } from 'react-icon
 import SocialShare from '../../components/SocialShare';
 import { trackBlogEngagement, trackCategoryClick, trackRelatedBlogClick, trackOasisRelevance } from '../../utils/userIntentTracking';
 import { getBlogPostSeo, getBlogKeywords } from '../../utils/blogSeo';
+import { getBlogImageUrl } from '../../utils/blog-image-url';
 const { getAuthorDetails } = require('../../utils/authorUtils');
 
 // Function to parse HTML content and convert component tags to React components
@@ -148,10 +149,10 @@ export default function BlogPost({ post }) {
       try {
         setIsLoadingImage(true);
         
-        // Check if post has a featuredImage URL - use it directly
+        // Check if post has a featuredImage URL - resolve via Cloudinary for local paths
         if (post.featuredImage) {
           setCoverImage({
-            src: post.featuredImage,
+            src: getBlogImageUrl(post.featuredImage),
             photographer: null,
             photographer_url: null
           });
@@ -237,9 +238,9 @@ export default function BlogPost({ post }) {
         <meta property="article:published_time" content={post.date} />
         <meta property="article:author" content={hasAuthors ? postAuthors.map(a => a.name).join(', ') : ''} />
         <meta property="article:section" content={postCategory} />
-        {post.featuredImage && (
+        {post.featuredImage && getBlogImageUrl(post.featuredImage) && (
           <>
-            <meta property="og:image" content={post.featuredImage} />
+            <meta property="og:image" content={getBlogImageUrl(post.featuredImage)} />
             <meta property="og:image:width" content="1200" />
             <meta property="og:image:height" content="630" />
           </>
@@ -249,7 +250,7 @@ export default function BlogPost({ post }) {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={titleTag.replace(/\s*\|\s*Kahana Blog$/, '')} />
         <meta name="twitter:description" content={metaDescription} />
-        {post.featuredImage && <meta name="twitter:image" content={post.featuredImage} />}
+        {post.featuredImage && getBlogImageUrl(post.featuredImage) && <meta name="twitter:image" content={getBlogImageUrl(post.featuredImage)} />}
 
         {/* Structured Data for SEO */}
         <script
@@ -260,7 +261,7 @@ export default function BlogPost({ post }) {
               '@type': 'BlogPosting',
               headline: post.title,
               description: metaDescription,
-              image: post.featuredImage || '',
+              image: getBlogImageUrl(post.featuredImage) || '',
               datePublished: post.date,
               dateModified: post.date,
               author: hasAuthors ? postAuthors.map(author => ({

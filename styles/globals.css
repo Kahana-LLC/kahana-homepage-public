@@ -1129,13 +1129,13 @@ main {
   color: white !important;
 }
 
-/* Override for All Posts button to have white text */
-a[href="/blog"].text-white,
-a[href="/blog"]:has(span) {
+/* Override for All Posts button to have white text (exclude nav dropdown so it doesn't blink) */
+a[href="/blog"].text-white:not(.dropdown-link),
+a[href="/blog"]:has(span):not(.dropdown-link) {
   color: white !important;
   text-decoration: none !important;
 }
-a[href="/blog"]:hover {
+a[href="/blog"]:hover:not(.dropdown-link) {
   color: white !important;
 }
 
