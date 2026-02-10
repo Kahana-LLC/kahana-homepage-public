@@ -161,9 +161,17 @@ const authors = {
   },
   "Rohan Mehere": {
     name: "Rohan Mehere",
-    role: "Team",
-    bio: "Rohan Mehere is a member of the Kahana team.",
+    role: "Product Manager",
+    // bio: "Rohan Mehere is a member of the Kahana team.",
     linkedinProfile: "https://www.linkedin.com/in/rohan-mehere/",
+    avatar: "/assets/headshots/rohan_mehere.png",
+  },
+  "Ravi Chandra Dasari": {
+    name: "Ravi Chandra Dasari",
+    role: "Data Analyst",
+    bio: "I'm a data analyst with hands-on experience turning large, messy datasets into clear insights that drive business decisions. I work across SQL, Excel, Power BI, and Python to analyze performance, build dashboards, and help teams move from intuition to evidence.",
+    linkedinProfile: "https://www.linkedin.com/in/ravi-chandra-dasari/",
+    avatar: "/assets/headshots/ravi_chandra_dasari.png",
   },
 };
 
