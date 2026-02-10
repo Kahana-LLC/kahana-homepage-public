@@ -68,7 +68,15 @@ function getBlogKeywords(post) {
   const category = Array.isArray(post.category) ? post.category[0] : post.category;
   const focus = post.focusKeyword || '';
   const titleTerms = (post.title || '').split(/\s+/).slice(0, 5).join(', ');
-  const base = ['enterprise browser', 'browser security', 'Oasis browser'];
+  const base = [
+    'enterprise browser',
+    'browser security',
+    'Oasis browser',
+    'AI browser',
+    'AI browsers',
+    'best AI browser',
+    'enterprise AI browser',
+  ];
   const combined = [category, focus, titleTerms, ...base].filter(Boolean);
   return [...new Set(combined)].join(', ');
 }
