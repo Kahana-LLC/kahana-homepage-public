@@ -8,7 +8,7 @@ const authors = {
     role: "CTO",
     bio: "I'm the CTO of Kahana, bringing a unique perspective from my management consulting experience at Clarkston Consulting and biomedical engineering background from Duke University. I'm focused on making the future of work more ergonomic through innovative technology solutions that prioritize user well-being and productivity.",
     linkedinProfile: "https://www.linkedin.com/in/adam-kershner/",
-    // avatar: "/images/authors/adam-kershner.jpg",
+    avatar: "/assets/headshots/adam_kershner.jpg",
   },
   "Jordan Kern": {
     name: "Jordan Kern",
@@ -162,7 +162,7 @@ const authors = {
   "Rohan Mehere": {
     name: "Rohan Mehere",
     role: "Product Manager",
-    // bio: "Rohan Mehere is a member of the Kahana team.",
+    bio: "With a background across Product Management, Technical Sales and Customer Success, I'm driven by the tangible sense of progress that comes from solving complex problems. I thrive at the intersection of technical innovation and business strategy. My professional journey is fueled by a belief in consistent effort and the satisfaction of seeing a project move from a conceptual \"pain point\" to a high-impact solution.",
     linkedinProfile: "https://www.linkedin.com/in/rohan-mehere/",
     avatar: "/assets/headshots/rohan_mehere.png",
   },
