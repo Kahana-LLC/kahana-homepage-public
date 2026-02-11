@@ -1,5 +1,27 @@
 const blogIndex = [
   {
+    title: "Prompt Injection: LLM01 Risks, Challenges, and Mitigation in 2026",
+    date: "2026-02-23T00:00:00.000Z",
+    authors: ["Konika Dhull", "Adam Kershner"],
+    category: "Security",
+    excerpt: "OWASP ranks prompt injection as the #1 LLM risk for 2025. Malicious prompts can override system instructions, exfiltrate data, and subvert business logic across agents and multimodal systems. This guide covers core security risks, practitioner perspectives, SEO and AI-overview manipulation, and why robust defenses remain a frontier challenge.",
+    defaultImageQuery: "prompt injection LLM security",
+    featuredImage: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREjCbpDRRLIhsIr1PX-MNobiw8Iqo5lhiofg&s",
+    slug: "prompt-injection-llm01-risks-challenges-2026",
+    readingTime: 18,
+  },
+  {
+    title: "From Chaos to Calm: How Oasis Brings Focus Back to Browsing",
+    date: "2026-02-13T00:00:00.000Z",
+    authors: ["Konika Dhull", "Ankit Sai Allam"],
+    category: "Productivity",
+    excerpt: "Modern browsers have become chaotic environments where tabs, notifications, extensions, and SaaS alerts compete for attention—creating cognitive fatigue, reduced focus, and productivity loss. As the browser becomes the primary workspace, intentional design principles and calm technology are emerging to restore clarity and control. This guide covers the cost of distraction, tab overload, security noise, and how focused browsers like Oasis address browser chaos.",
+    defaultImageQuery: "calm focused browser workspace",
+    featuredImage: "https://res.cloudinary.com/dlhpqrucv/image/upload/w_1000,c_fill,g_auto,f_auto,q_auto:good/kahana-homepage/figma-imports/Custom%20Themes",
+    slug: "from-chaos-to-calm-oasis-focus-browsing-2026",
+    readingTime: 19,
+  },
+  {
     title: "Weaponizing IE Mode and the jQuery 4 Breaking Point: Enterprise Security in 2026",
     date: "2026-02-23T00:00:00.000Z",
     authors: ["Konika Dhull", "Rohan Mehere"],
