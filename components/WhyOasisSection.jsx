@@ -137,10 +137,11 @@ export default function WhyOasisSection() {
           <div className="w-full mx-auto aspect-[4/3] overflow-hidden rounded-xl shadow-lg bg-black">
             <iframe
               className="w-full h-full"
-              src="https://www.youtube.com/embed/05-oP8CNl8Y"
-              title="Oasis AI-Powered Browser Demo"
+              src="https://www.youtube.com/embed/BF2ZZ7x3i8g?si=NFz-aQqXVItuSrkz"
+              title="Oasis product demo video"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen
             ></iframe>
           </div>
