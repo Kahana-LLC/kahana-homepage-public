@@ -15,8 +15,9 @@ function safeGet(paramSource, key) {
 
 export default function ForgotPassword() {
   const router = useRouter()
-  const [phase, setPhase] = useState('loading') // loading | ready | done | error | info
+  const [phase, setPhase] = useState('loading') // loading | gate | ready | done | error | info
   const [message, setMessage] = useState('Processing your password reset link…')
+  const [confirmationUrl, setConfirmationUrl] = useState('')
   const [newPassword, setNewPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
   const [submitting, setSubmitting] = useState(false)
@@ -37,6 +38,19 @@ export default function ForgotPassword() {
   }, [])
 
   const processRecoveryLink = async () => {
+    const urlParams = new URLSearchParams(window.location.search)
+
+    // Mitigation for email link scanners/prefetch:
+    // If the email links to /forgot-password?confirmation_url=<supabase_verify_link>,
+    // we do NOT automatically navigate there. We wait for a real user click.
+    const confirmationFromQuery = safeGet(urlParams, 'confirmation_url')
+    if (confirmationFromQuery) {
+      setConfirmationUrl(confirmationFromQuery)
+      setPhase('gate')
+      setMessage('Click continue to open the secure password reset link.')
+      return
+    }
+
     let supabase
     try {
       supabase = createClient()
@@ -48,7 +62,6 @@ export default function ForgotPassword() {
       return
     }
 
-    const urlParams = new URLSearchParams(window.location.search)
     const hash = window.location.hash.startsWith('#')
       ? window.location.hash.substring(1)
       : window.location.hash
@@ -134,6 +147,12 @@ export default function ForgotPassword() {
     }
   }
 
+  const onContinueToSupabase = () => {
+    if (!confirmationUrl) return
+    // Navigate only after user click (prevents scanners from consuming OTP).
+    window.location.assign(confirmationUrl)
+  }
+
   return (
     <>
       <Head>
@@ -149,6 +168,17 @@ export default function ForgotPassword() {
             </p>
             <h1 className="text-3xl font-extrabold text-[#313A00] mb-2">Reset your password</h1>
             <p className="text-base text-neutral-700 mb-6">{message}</p>
+
+            {phase === 'gate' && (
+              <div className="space-y-3">
+                <button type="button" className="btn-primary w-full py-3.5 text-base" onClick={onContinueToSupabase}>
+                  Continue
+                </button>
+                <p className="text-sm text-neutral-600">
+                  If you didn’t request a reset, you can close this page.
+                </p>
+              </div>
+            )}
 
             {phase === 'ready' && (
               <form className="space-y-4" onSubmit={onSubmit}>
