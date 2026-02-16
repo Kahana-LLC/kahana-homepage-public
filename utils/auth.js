@@ -62,3 +62,29 @@ export async function signInWithGoogle() {
   return data
 }
 
+/**
+ * Request a password reset email for the given address.
+ * Always show a generic success message in UI (do not reveal if user exists).
+ */
+export async function requestPasswordReset(email) {
+  const supabase = createClient()
+  const redirectTo =
+    typeof window !== 'undefined'
+      ? `${window.location.origin}/forgot-password`
+      : undefined
+
+  const { data, error } = await supabase.auth.resetPasswordForEmail(email, {
+    redirectTo,
+  })
+  if (error) throw error
+  return data
+}
+
+/** Update current user's password (after recovery link is processed). */
+export async function updatePassword(newPassword) {
+  const supabase = createClient()
+  const { data, error } = await supabase.auth.updateUser({ password: newPassword })
+  if (error) throw error
+  return data
+}
+
