@@ -2,7 +2,12 @@ import { useEffect, useMemo, useState } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { signupAndCreateProfile, signInWithEmail, signInWithGoogle } from '@/utils/auth'
+import {
+  requestPasswordReset,
+  signupAndCreateProfile,
+  signInWithEmail,
+  signInWithGoogle,
+} from '@/utils/auth'
 
 const modes = {
   signup: 'Create Account',
@@ -45,6 +50,7 @@ export default function OasisAuth() {
   const [acceptedTerms, setAcceptedTerms] = useState(false)
   const [status, setStatus] = useState({ loading: false, error: '', success: '' })
   const [selectedPlan, setSelectedPlan] = useState('zen')
+  const [resetStatus, setResetStatus] = useState({ loading: false, error: '', success: '' })
 
   useEffect(() => {
     if (router?.query?.plan && typeof router.query.plan === 'string') {
@@ -145,6 +151,39 @@ export default function OasisAuth() {
       setStatus({ loading: false, error: '', success: 'Redirecting to Google…' })
     } catch (err) {
       setStatus({ loading: false, error: err.message || 'Google sign-in failed', success: '' })
+    }
+  }
+
+  const handleForgotPassword = async () => {
+    setResetStatus({ loading: true, error: '', success: '' })
+    try {
+      if (!email) {
+        setResetStatus({ loading: false, error: 'Enter your email above first.', success: '' })
+        return
+      }
+      await requestPasswordReset(email)
+      setResetStatus({
+        loading: false,
+        error: '',
+        success:
+          "If an account exists for that email, you'll receive a password reset link shortly.",
+      })
+    } catch (err) {
+      // Do not reveal whether the user exists; show generic message unless it's clearly a config issue.
+      const msg = err?.message || 'Failed to send reset email'
+      const looksLikeConfig =
+        msg.toLowerCase().includes('redirect') ||
+        msg.toLowerCase().includes('url') ||
+        msg.toLowerCase().includes('not allowed')
+      setResetStatus({
+        loading: false,
+        error: looksLikeConfig
+          ? `Password reset isn't configured correctly yet: ${msg}`
+          : '',
+        success: looksLikeConfig
+          ? ''
+          : "If an account exists for that email, you'll receive a password reset link shortly.",
+      })
     }
   }
 
@@ -257,6 +296,18 @@ export default function OasisAuth() {
                     className="w-full rounded-lg border border-neutral-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#4A6200]"
                   />
                 </div>
+                {mode === 'login' && (
+                  <div className="flex items-center justify-between">
+                    <button
+                      type="button"
+                      onClick={handleForgotPassword}
+                      className="text-sm font-semibold text-[#4A6200] hover:underline"
+                      disabled={status.loading || resetStatus.loading}
+                    >
+                      {resetStatus.loading ? 'Sending reset email…' : 'Forgot password?'}
+                    </button>
+                  </div>
+                )}
                 {mode === 'signup' && (
                   <div>
                     <label className="block text-sm font-medium text-neutral-800 mb-1">Confirm Password</label>
@@ -300,6 +351,16 @@ export default function OasisAuth() {
                   {status.loading ? 'Working…' : `${modes[mode]} • ${plan.name}`}
                 </button>
               </form>
+              {resetStatus.error && (
+                <div className="rounded-md border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-700">
+                  {resetStatus.error}
+                </div>
+              )}
+              {resetStatus.success && (
+                <div className="rounded-md border border-green-200 bg-green-50 px-3 py-2 text-sm text-green-700">
+                  {resetStatus.success}
+                </div>
+              )}
               {status.error && (
                 <div className="rounded-md border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-700">
                   {status.error}
