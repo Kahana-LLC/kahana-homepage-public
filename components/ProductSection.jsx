@@ -1,9 +1,44 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { getCloudinaryImageUrl } from '../utils/cloudinary-mapper';
+import { getCloudinaryImageProps } from '../utils/cloudinary-mapper';
 import WaitlistButton from './WaitlistButton';
 import { trackButtonClick } from '../utils/analytics';
+
+const HERO_SIZES = '(max-width: 640px) 100vw, (max-width: 768px) 90vw, (max-width: 1024px) 80vw, 1200px';
+const HERO_WIDTHS = [640, 828, 1080, 1200, 1920];
+
+function HeroImage() {
+  const heroProps = getCloudinaryImageProps('/images/Welcome to Oasis.webp', {
+    widths: HERO_WIDTHS,
+    width: 1200,
+    quality: 'auto:good',
+  });
+  if (heroProps.srcSet && heroProps.src) {
+    return (
+      <img
+        src={heroProps.src}
+        srcSet={heroProps.srcSet}
+        sizes={HERO_SIZES}
+        alt="Welcome to Oasis"
+        className="object-contain w-full h-full"
+        fetchPriority="high"
+        decoding="async"
+      />
+    );
+  }
+  return (
+    <Image
+      src={heroProps.src || '/images/Welcome to Oasis.webp'}
+      alt="Welcome to Oasis"
+      fill
+      priority
+      sizes={HERO_SIZES}
+      className="object-contain"
+      quality={90}
+    />
+  );
+}
 
 export default function ProductSection() {
   const [isVisible, setIsVisible] = useState(false);
@@ -18,12 +53,12 @@ export default function ProductSection() {
       <div className="relative mx-auto max-w-5xl px-6 lg:px-10 text-center">
         <div className="flex flex-col items-center gap-8">
           <div className="flex flex-col items-center gap-6 max-w-3xl">
-            <h2 className="text-xl font-semibold leading-8 text-[#978455] mb-2">
-              Fall in Love
-            </h2>
-            <h1 className="text-4xl font-semibold leading-tight text-[#313A00] sm:text-5xl">
+            <h1 className="text-4xl font-semibold leading-tight text-[#313A00] sm:text-5xl mb-2">
               Meet Oasis, the Most Elegant Browser
             </h1>
+            <h2 className="text-xl font-semibold leading-8 text-[#978455]">
+              Fall in Love
+            </h2>
             <p className="text-lg text-[#4A5745] max-w-2xl">
               Enjoy a beautiful browsing experience designed for ergonomic work
             </p>
@@ -44,15 +79,7 @@ export default function ProductSection() {
             <div className="absolute inset-0 translate-x-4 translate-y-4 rounded-[34px] bg-gradient-to-br from-white/70 to-transparent blur-[160px]" />
             <div className="relative overflow-hidden rounded-[36px] border border-white/80 bg-white/80 p-4 shadow-[0_35px_120px_rgba(20,32,0,0.18)] backdrop-blur">
               <div className="relative w-full aspect-[16/10] rounded-[28px] overflow-hidden">
-                <Image
-                  src={getCloudinaryImageUrl("/images/Welcome to Oasis.webp", { width: 1200, quality: 'auto:good' })}
-                alt="Welcome to Oasis"
-                  fill
-                  priority
-                  sizes="(max-width: 640px) 100vw, (max-width: 768px) 90vw, (max-width: 1024px) 80vw, 1200px"
-                  className="object-contain"
-                  quality={90}
-                />
+                <HeroImage />
               </div>
             </div>
           </div>

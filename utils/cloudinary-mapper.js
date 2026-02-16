@@ -157,6 +157,10 @@ export function getCloudinaryImageProps(localPath, options = {}) {
       ...restOptions,
     });
     
+    if (!src) {
+      return { src: localPath.startsWith('/') ? localPath : `/${localPath}` };
+    }
+    
     if (widths) {
       const { srcSet } = getCloudinarySrcSet(publicId, {
         format: 'auto',
@@ -170,6 +174,6 @@ export function getCloudinaryImageProps(localPath, options = {}) {
     return { src };
   }
   
-  return { src: localPath };
+  return { src: localPath.startsWith('/') ? localPath : `/${localPath}` };
 }
 

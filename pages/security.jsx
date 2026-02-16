@@ -87,7 +87,7 @@ export default function Security() {
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
                 But don't take our word for it. Below, we've listed everything we can think of that you might want to know about our security practices. For more on privacy,{' '}
-                <a href="/privacy-policy" className="text-[#4A6200] hover:underline font-semibold">click here</a>.
+                <a href="/privacy-policy" className="text-[#4A6200] hover:underline font-semibold">read our Privacy Policy</a>.
               </p>
               <p className="text-gray-700 leading-relaxed">
                 And if you have any questions, please{' '}

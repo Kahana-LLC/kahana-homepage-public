@@ -21,8 +21,8 @@ export default function DocCard({ doc }) {
   const readingTime = Math.ceil((doc.wordCount || 0) / 200) || 5;
 
   return (
-    <article className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-      <Link href={`/docs/${doc.slug}`} className="block doc-card-link">
+    <article className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-200 overflow-hidden flex flex-col h-full">
+      <Link href={`/docs/${doc.slug}`} className="flex flex-col h-full doc-card-link no-underline">
         <div className="p-6">
           <div className="flex items-center justify-between mb-4">
             <span className="text-sm font-medium text-[#728552] capitalize">
@@ -32,18 +32,18 @@ export default function DocCard({ doc }) {
               {formatDate(doc.date)}
             </time>
           </div>
-          <h3 className="text-xl font-semibold mb-2 text-[#4A5745] hover:text-[#728552] transition-colors">
+          <h3 className="text-xl font-semibold mb-2 text-gray-900 hover:text-[#728552] transition-colors line-clamp-2">
             {doc.title}
           </h3>
-          <p className="text-[#4A5745] mb-4 line-clamp-2">
+          <p className="text-gray-600 mb-4 line-clamp-2">
             {doc.description}
           </p>
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between mt-auto">
             <AuthorCard authors={docAuthors} variant="reference" />
             <div className="flex items-center gap-2">
               <span className="text-sm text-[#4A5745]">{readingTime} min read</span>
               <span className="inline-flex items-center text-sm text-[#788B59] hover:text-[#728552]">
-                Read More
+                Read more
                 <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>

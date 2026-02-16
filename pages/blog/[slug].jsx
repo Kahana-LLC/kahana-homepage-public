@@ -210,8 +210,8 @@ export default function BlogPost({ post }) {
   if (!post) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-2xl font-bold text-gray-900">Loading...</h1>
+        <div className="text-center" role="status" aria-live="polite">
+          <p className="text-2xl font-bold text-gray-900">Loading...</p>
         </div>
       </div>
     );
@@ -481,7 +481,7 @@ export default function BlogPost({ post }) {
           {relatedBlogs.length > 0 && (
             <div className="mt-16 pt-12 border-t border-gray-200">
               <h2 style={{fontWeight: 'bold', fontSize: '2rem', marginTop: '2rem', marginBottom: '1rem'}} className="text-2xl font-bold text-[#4A5745] mb-6">
-                <strong>Read More Blogs Like This</strong>
+                <strong>More {postCategory} articles</strong>
               </h2>
               <p className="text-lg text-[#4A5745] mb-6">
                 Explore more articles about <Link href={`/blog?category=${encodeURIComponent(postCategory)}`} className="text-[#617500] hover:text-[#4A5F00] font-semibold underline">{postCategory}</Link>

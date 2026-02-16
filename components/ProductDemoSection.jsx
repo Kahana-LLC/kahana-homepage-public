@@ -158,7 +158,7 @@ export default function ProductDemoSection() {
             <span style={{ color: '#FFFFFF' }}>Schedule a Demo</span>
           </Link>
           <Link href="/products/enterprise-browser" className="btn-secondary w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline scale-110 sm:scale-125">
-              Learn More
+              Learn more about Oasis Enterprise Browser
           </Link>
           <Link href="/download" className="btn-secondary w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline scale-110 sm:scale-125">
               Download Browser
