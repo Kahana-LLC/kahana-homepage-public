@@ -152,7 +152,7 @@ export default function DocPage({ doc, relatedDocs }) {
 
           {/* Content */}
           <div 
-            className="prose prose-lg max-w-none"
+            className="prose prose-lg max-w-none no-underline"
             dangerouslySetInnerHTML={{ __html: doc.content }}
             suppressHydrationWarning={true}
           />
@@ -173,13 +173,13 @@ export default function DocPage({ doc, relatedDocs }) {
                   <Link
                     key={relatedDoc.slug}
                     href={`/docs/${relatedDoc.slug}`}
-                    className="block group"
+                    className="block group doc-card-link no-underline"
                   >
-                    <div className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 p-6 rounded-lg transition-all duration-300 hover:shadow-lg">
-                      <h3 className="text-lg font-semibold text-[#4A5745] group-hover:text-[#728552]">
+                    <div className="bg-white rounded-xl shadow-lg hover:shadow-xl p-6 transition-all duration-200">
+                      <h3 className="text-lg font-semibold text-gray-900 group-hover:text-[#728552]">
                         {relatedDoc.title}
                       </h3>
-                      <p className="mt-2 text-sm text-[#4A5745] line-clamp-2">
+                      <p className="mt-2 text-sm text-gray-600 line-clamp-2">
                         {relatedDoc.description}
                       </p>
                     </div>

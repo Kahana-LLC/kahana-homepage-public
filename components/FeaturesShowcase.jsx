@@ -47,16 +47,16 @@ export default function FeaturesShowcase() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 features-section w-full">
         <div className="mx-auto max-w-2xl text-center w-full px-4 sm:px-0">
           <h2 className="text-lg sm:text-xl font-semibold leading-8 text-[#978455] mb-2">Enterprise Browser</h2>
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-[#313A00] break-words px-2 sm:px-0">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-black break-words px-2 sm:px-0">
             Everything You Need to Flow Effortlessly
-          </h1>
+          </h2>
           <p className="mt-4 text-base sm:text-lg text-[#4A5745] break-words px-2 sm:px-0">
             Oasis gives you the tools to simplify your workflow, stay focused, and work with calm precision.
           </p>
           <div className="mt-6 sm:mt-8">
             <Link href="/products/enterprise-browser">
               <button className="btn-primary inline-flex items-center justify-center px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base no-underline hover:no-underline focus:no-underline scale-110 sm:scale-125">
-                Learn more
+                Learn more about Oasis Enterprise Browser
               </button>
             </Link>
           </div>

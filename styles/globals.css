@@ -72,7 +72,7 @@ h6 {
 }
 
 /* High-contrast links */
-a:not(.no-underline):not(.mobile-link):not(.nav-link):not(.btn-primary):not(.btn-secondary):not(.dropdown-link):not(.blog-card-link) {
+a:not(.no-underline):not(.mobile-link):not(.nav-link):not(.btn-primary):not(.btn-secondary):not(.dropdown-link):not(.blog-card-link):not(.doc-card-link) {
   color: var(--bg-action) !important;
   text-decoration: underline !important;
   font-weight: bold !important;

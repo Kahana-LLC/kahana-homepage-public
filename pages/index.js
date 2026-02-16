@@ -137,19 +137,19 @@ export default function Home({ blogPosts }) {
       title: "Created to bring calm and focus back to browsing",
       image: getCloudinaryImageUrl("/figma-imports/er.webp", { width: 1000, quality: 'auto:good' }),
       imageAlt: "Serene illustration representing focused Oasis browsing",
-      loading: "eager",
+      loading: "lazy",
     },
     {
       title: "Makes browsing beautiful and natural",
       image: getCloudinaryImageUrl("/figma-imports/Frame 1321315005.webp", { width: 1000, quality: 'auto:good' }),
       imageAlt: "Screenshot showcasing clutter-free Oasis browsing",
-      loading: "eager",
+      loading: "lazy",
     },
     {
       title: "Artificial Intelligence (AI) browser that adapts to you",
       image: getCloudinaryImageUrl("/figma-imports/Summarize with AI 3.webp", { width: 1000, quality: 'auto:good' }),
       imageAlt: "Illustration of Oasis adapting to the user",
-      loading: "eager",
+      loading: "lazy",
     },
   ];
 
@@ -177,7 +177,7 @@ export default function Home({ blogPosts }) {
   return (
     <>
       <SEO
-        title="Kahana Oasis - Agentic Browser & Productivity Tools"
+        title="Kahana Oasis – Agentic Browser & Enterprise Productivity | Kahana"
         description="Stay organized and focused with Kahana's Oasis Enterprise Browser. Features enterprise-grade security, organization tools, and collaboration features for modern teams."
         image="https://kahana.co/assets/oasis-browser-preview.png"
         url="https://kahana.co"
@@ -185,29 +185,24 @@ export default function Home({ blogPosts }) {
         schema={homepageSchema}
       />
       <Head>
-        <title>Kahana - Agentic Browser & Productivity</title>
+        <title>Kahana Oasis – Agentic Browser & Enterprise Productivity | Kahana</title>
         <meta
           name="description"
           content="Kahana's Oasis Enterprise Browser helps teams stay organized, focused on ideas, and increase productivity while maintaining enterprise-grade security."
         />
-        {/* Preload critical hero image for faster LCP */}
+        {/* Preload critical hero image for faster LCP (matches Cloudinary src in ProductSection) */}
         <link
           rel="preload"
           as="image"
-          href="/images/Welcome to Oasis.webp"
-          fetchpriority="high"
+          href={getCloudinaryImageUrl("/images/Welcome to Oasis.webp", { width: 1200, quality: 'auto:good' })}
+          fetchPriority="high"
         />
-        {/* Preconnect to external image domains */}
-        <link rel="preconnect" href="https://images.unsplash.com" />
-        <link rel="preconnect" href="https://images.pexels.com" />
-        <link rel="dns-prefetch" href="https://images.unsplash.com" />
-        <link rel="dns-prefetch" href="https://images.pexels.com" />
       </Head>
 
-      {/* Load Crisp chat asynchronously and defer until after interactive */}
+      {/* Load Crisp chat after page is idle to improve initial load (target &lt;5.3s interactive) */}
       <Script
         id="crisp-script"
-        strategy="afterInteractive"
+        strategy="lazyOnLoad"
         dangerouslySetInnerHTML={{
           __html: `
             window.$crisp=[];
@@ -223,11 +218,11 @@ export default function Home({ blogPosts }) {
         }}
       />
 
-      {/* Load Stripe button asynchronously and defer until after interactive */}
+      {/* Load Stripe button after page is idle to improve initial load (target &lt;5.3s interactive) */}
       <Script
         id="stripe-button"
         src="https://js.stripe.com/v3/buy-button.js"
-        strategy="afterInteractive"
+        strategy="lazyOnLoad"
       />
 
       <div className="relative bg-white shadow-[0_0_40px_rgba(0,0,0,0.08)] overflow-x-hidden w-full overflow-y-visible">
@@ -292,9 +287,9 @@ export default function Home({ blogPosts }) {
                 <h2 className="text-xl font-semibold leading-8 text-[#978455] mb-4">
                   Personalize Your Experience
                 </h2>
-                <h1 className="text-3xl sm:text-4xl font-semibold leading-tight text-[#313A00] mb-10">
+                <h2 className="text-3xl sm:text-4xl font-semibold leading-tight text-[#313A00] mb-10">
                   Oasis adapts to your unique way of working
-                </h1>
+                </h2>
                 <div className="relative mx-auto max-w-4xl">
                   <ProductTourCard />
                 </div>
@@ -315,9 +310,9 @@ export default function Home({ blogPosts }) {
                   <h2 className="text-xl font-semibold leading-8 text-[#978455] mb-2">
                     Rediscover Browsing
                   </h2>
-                  <h1 className="text-3xl font-semibold tracking-tight text-[#313A00] sm:text-4xl">
-                  Unlock a New Level of Browsing with Oasis
-                  </h1>
+                  <h2 className="text-3xl font-semibold tracking-tight text-[#313A00] sm:text-4xl">
+                    Unlock a New Level of Browsing with Oasis
+                  </h2>
                 </div>
                 <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 md:justify-items-center">
                   {whyOasisCards.map((card) => (

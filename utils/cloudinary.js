@@ -1,8 +1,13 @@
 /**
  * Cloudinary Utility Functions
- * 
+ *
  * This utility helps generate optimized Cloudinary image URLs
  * and provides helper functions for image transformations.
+ *
+ * Why isn't Cloudinary working?
+ * - Set NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME in your environment (.env.local or Heroku config).
+ * - Without it, images fall back to local paths and won't use Cloudinary's optimization or CDN.
+ * - Copy .env.example to .env.local and set your cloud name from https://cloudinary.com/console
  */
 
 const CLOUD_NAME = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME;

@@ -168,7 +168,7 @@ export default function MarketsIndex() {
                     {market.description}
                   </p>
                   <div className="mt-6 flex items-center text-[#728552] font-medium text-sm group-hover:translate-x-1 transition-transform duration-300">
-                    Learn more
+                    View {market.title} solutions
                     <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
