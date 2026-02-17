@@ -49,7 +49,7 @@ export default function Installations() {
       icon: FaApple,
       description: 'macOS 10.15 or later (Apple Silicon)',
       status: 'available',
-      size: 'Download',
+      size: 'Install the latest version',
       downloadUrl: 'https://app.box.com/s/4x605cd3ehhxbzyaqunquw5pp40vau9r',
       color: 'bg-[#4A6200] hover:bg-[#3E5300] border-[#4A6200]',
       textColor: 'text-white'
@@ -59,7 +59,7 @@ export default function Installations() {
       icon: FaApple,
       description: 'macOS 10.15 or later (Intel)',
       status: 'available',
-      size: 'Download',
+      size: 'Install the latest version',
       downloadUrl: 'https://app.box.com/s/wumbootmyp4qkxlkdqg7vqwwbdk70kqx',
       color: 'bg-[#4A6200] hover:bg-[#3E5300] border-[#4A6200]',
       textColor: 'text-white'
