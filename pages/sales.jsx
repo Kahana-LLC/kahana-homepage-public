@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import NavBar from '../components/NavbarDup';
 
 const steps = [
   {
@@ -92,8 +91,6 @@ export default function Sales() {
           content="Connect with Kahana's sales team to learn about our enterprise browsing solutions."
         />
       </Head>
-
-      <NavBar />
 
       <main className="min-h-screen bg-white pt-24 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

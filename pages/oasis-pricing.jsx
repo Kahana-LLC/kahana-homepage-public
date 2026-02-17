@@ -101,11 +101,11 @@ const faqs = [
     answer: (
       <>
         You can review our{' '}
-        <Link href="/terms-and-conditions" className="text-[#4A6200] hover:underline font-semibold">
+        <Link href="/terms-and-conditions" className="text-[#4A6200] no-underline hover:no-underline font-semibold">
           Terms and Conditions
         </Link>
         {' '}and{' '}
-        <Link href="/privacy-policy" className="text-[#4A6200] hover:underline font-semibold">
+        <Link href="/privacy-policy" className="text-[#4A6200] no-underline hover:no-underline font-semibold">
           Privacy Policy
         </Link>
         {' '}at any time. These documents outline how we handle your data, your rights as a user, and the terms of service for using Oasis.
@@ -289,11 +289,11 @@ export default function OasisPricing() {
             <div className="max-w-5xl mx-auto mt-6 sm:mt-8 text-center">
               <p className="text-xs sm:text-sm text-gray-600">
                 By using Oasis, you agree to our{' '}
-                <Link href="/terms-and-conditions" className="text-[#4A6200] hover:underline font-semibold">
+                <Link href="/terms-and-conditions" className="text-[#4A6200] no-underline hover:no-underline font-semibold">
                   Terms and Conditions
                 </Link>
                 {' '}and{' '}
-                <Link href="/privacy-policy" className="text-[#4A6200] hover:underline font-semibold">
+                <Link href="/privacy-policy" className="text-[#4A6200] no-underline hover:no-underline font-semibold">
                   Privacy Policy
                 </Link>
               </p>

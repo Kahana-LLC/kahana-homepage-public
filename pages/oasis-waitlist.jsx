@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import NavBar from '../components/NavbarDup';
 import VideoSection from '../components/VideoSection';
 import WaitlistButton from '../components/WaitlistButton';
 import Script from 'next/script';
@@ -87,13 +86,13 @@ export default function OasisWaitlist() {
         <div className="text-center">
           <p className="text-sm text-gray-600 mb-3">
             <strong>Contact us</strong> - for an immediate response, contact us directly at{' '}
-            <Link href="/contact" className="text-[#66C2BE] hover:text-[#4A9E9A] underline">
+            <Link href="/contact" className="text-[#66C2BE] hover:text-[#4A9E9A] no-underline hover:no-underline">
               contact us
             </Link>
           </p>
           <p className="text-xs text-[#4A5745]">
             By submitting this form you consent to be contacted by Kahana, and acknowledge our{' '}
-            <Link href="/privacy-policy" className="text-[#66C2BE] hover:text-[#4A9E9A] underline">
+            <Link href="/privacy-policy" className="text-[#66C2BE] hover:text-[#4A9E9A] no-underline hover:no-underline">
               Privacy Policy
             </Link>
             .
@@ -129,7 +128,6 @@ export default function OasisWaitlist() {
         <meta name="description" content="Join the Oasis browser waitlist - be among the first to experience the future of privacy-focused browsing" />
       </Head>
       <div className="oasis-waitlist">
-        <NavBar />
         <main className="min-h-screen bg-white pt-24 pb-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="lg:grid lg:grid-cols-12 lg:gap-16">

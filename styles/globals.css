@@ -101,6 +101,49 @@ a.nav-link:hover,
   color: #4A5F00 !important;
 }
 
+/* Buyer's guide pages: ensure Products, Pricing, Learn, About + dropdowns match homepage (#617500, bold) */
+.buyer-guide-layout a.nav-link,
+.buyer-guide-layout .nav-link,
+.buyer-guide-layout .nav-link .nav-link-text,
+.buyer-guide-layout .nav-link span,
+.buyer-guide-layout .dropdown-icon-button,
+.buyer-guide-layout .dropdown-icon-button svg {
+  color: #617500 !important;
+}
+.buyer-guide-layout a.nav-link:hover,
+.buyer-guide-layout .nav-link:hover,
+.buyer-guide-layout .nav-link:hover .nav-link-text,
+.buyer-guide-layout .nav-link:hover .dropdown-icon-button {
+  color: #4A5F00 !important;
+}
+.buyer-guide-layout a.dropdown-link,
+.buyer-guide-layout .dropdown-link,
+.buyer-guide-layout a.dropdown-link:visited,
+.buyer-guide-layout .dropdown-link:visited {
+  color: #617500 !important;
+  font-weight: 700 !important;
+}
+.buyer-guide-layout a.dropdown-link:hover,
+.buyer-guide-layout .dropdown-link:hover,
+.buyer-guide-layout a.dropdown-link:focus,
+.buyer-guide-layout .dropdown-link:focus,
+.buyer-guide-layout a.dropdown-link:active,
+.buyer-guide-layout .dropdown-link:active {
+  color: #4A5F00 !important;
+  font-weight: 700 !important;
+}
+/* Buyer's guide: Discord community link in banner - dark olive, bold */
+.buyer-guide-layout .GlobalBanner .banner-discord-link,
+.buyer-guide-layout .GlobalBanner a.banner-discord-link {
+  color: #617500 !important;
+  font-weight: 700 !important;
+}
+.buyer-guide-layout .GlobalBanner .banner-discord-link:hover,
+.buyer-guide-layout .GlobalBanner a.banner-discord-link:hover {
+  color: #4A5F00 !important;
+  font-weight: 700 !important;
+}
+
 /* Dropdown menu links */
 a.dropdown-link,
 .dropdown-link,

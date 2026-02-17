@@ -38,6 +38,20 @@ export default function GlobalBanner() {
           border-radius: 32px !important;
           font-weight: bold !important;
         }
+        .GlobalBanner a {
+          text-decoration: none !important;
+        }
+        .GlobalBanner a:hover {
+          text-decoration: none !important;
+        }
+        .GlobalBanner .banner-discord-link {
+          color: #617500 !important;
+          font-weight: 700 !important;
+        }
+        .GlobalBanner .banner-discord-link:hover {
+          color: #4A5F00 !important;
+          font-weight: 700 !important;
+        }
       `}</style>
       <div className="banner-container">
         <div className="flex items-center justify-between py-3 gap-4 md:gap-8">
@@ -51,12 +65,12 @@ export default function GlobalBanner() {
               <p className="text-sm font-medium text-[#4A5745]">
                 <span className="md:hidden">
                   Meet Oasis: the most elegant browser.{' '}
-                  <Link href="/oasis-pricing" className="underline hover:!text-[#7A9200] transition-colors text-[#4A5745]">
+                  <Link href="/oasis-pricing" className="no-underline hover:no-underline hover:!text-[#7A9200] transition-colors text-[#4A5745]">
                     Get access.
                   </Link>
                 </span>
                 <span className="hidden md:inline">
-                  Join our <Link href="/community" className="underline hover:!text-[#7A9200] transition-colors text-[#4A5745]">Discord community</Link> to get updates, share feedback, and connect with the team!
+                  Join our <Link href="/community" className="banner-discord-link no-underline hover:no-underline transition-colors" style={{ textDecoration: 'none', color: '#617500', fontWeight: 700 }}>Discord community</Link> to get updates, share feedback, and connect with the team!
                 </span>
               </p>
             </div>

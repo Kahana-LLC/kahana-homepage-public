@@ -160,11 +160,11 @@ export default function Installations() {
               </p>
               <p className="text-sm text-yellow-800">
                 All downloads are currently in <strong>beta</strong>. By downloading and installing Kahana Browser, you acknowledge that you have read and agree to our{' '}
-                <Link href="/terms-and-conditions" className="text-[#4A6200] hover:underline font-semibold">Terms and Conditions</Link>
+                <Link href="/terms-and-conditions" className="text-[#4A6200] no-underline hover:no-underline font-semibold">Terms and Conditions</Link>
                 {', '}
-                <Link href="/privacy-policy" className="text-[#4A6200] hover:underline font-semibold">Privacy Policy</Link>
+                <Link href="/privacy-policy" className="text-[#4A6200] no-underline hover:no-underline font-semibold">Privacy Policy</Link>
                 {', and '}
-                <Link href="/security" className="text-[#4A6200] hover:underline font-semibold">Security</Link>.
+                <Link href="/security" className="text-[#4A6200] no-underline hover:no-underline font-semibold">Security</Link>.
               </p>
             </div>
           </div>

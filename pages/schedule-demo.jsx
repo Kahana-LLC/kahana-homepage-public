@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import NavBar from '../components/NavbarDup';
 import Script from 'next/script';
 import { trackError } from '../utils/analytics';
 
@@ -146,8 +145,6 @@ export default function ScheduleDemo() {
         <title>Enterprise Browser Demo | Kahana</title>
         <meta name="description" content="Schedule a demo of Oasis - the secure enterprise browser that transforms how organizations explore and organize knowledge" />
       </Head>
-
-      <NavBar />
 
       <main className="min-h-screen bg-white pt-24 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

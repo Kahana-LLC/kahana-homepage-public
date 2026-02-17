@@ -1,7 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import NavBar from '../components/NavbarDup';
 
 export default function KahanaHealthSurvey() {
   const renderSurveyForm = () => (
@@ -34,9 +33,7 @@ export default function KahanaHealthSurvey() {
       </Head>
       
       <div className="min-h-screen bg-white">
-        <NavBar />
-        
-        <main className="pt-16 pb-16">
+        <main className="pt-24 pb-16">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* Header Section - Full Width */}
             <div className="text-center mb-12">

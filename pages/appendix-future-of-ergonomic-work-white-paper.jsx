@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import NavbarDup from '../components/NavbarDup';
 
 const AppendixPage = () => {
   const technologies = [
@@ -154,8 +153,6 @@ const AppendixPage = () => {
         <meta name="keywords" content="AR glasses, augmented reality, ergonomic work, technology comparison, Meta Orion, Apple Vision Pro, Magic Leap" />
         <link rel="canonical" href="https://kahana.co/appendix-future-of-ergonomic-work-white-paper" />
       </Head>
-      
-      <NavbarDup />
       
       <div className="min-h-screen bg-gradient-to-br from-[#E3DFF1] via-white to-[#8CB7D0]">
         <div className="container mx-auto px-4 py-12 max-w-6xl">

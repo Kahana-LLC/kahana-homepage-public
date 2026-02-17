@@ -414,15 +414,17 @@ function AppContent({ Component, pageProps }) {
     };
   }, [hasConsent]);
 
+  const isBuyerGuide = router.pathname === '/buyers-guide' || router.pathname === '/enterprise-buyer-guide';
+
   return (
     <>
-      <div className="flex flex-col min-h-screen">
+      <div className="flex flex-col min-h-screen" data-page={isBuyerGuide ? 'buyer-guide' : undefined}>
         <SEO
           url={`https://kahana.co${router.asPath}`}
           type={router.pathname === "/" ? "website" : "article"}
           skipCanonical
         />
-        <div style={{ zIndex: "100" }} className="sticky top-0">
+        <div style={{ zIndex: "100" }} className={`sticky top-0${isBuyerGuide ? ' buyer-guide-layout' : ''}`}>
           <NavbarDup />
           <GlobalBanner />
         </div>
