@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import NavBar from '../components/NavbarDup';
 import DiscordCTA from '../components/DiscordCTA';
 
 const steps = [
@@ -89,8 +88,6 @@ export default function Community() {
         <title>Join Kahana Discord Community | Kahana</title>
         <meta name="description" content="Join the Kahana Discord community - connect with our team, get support, and stay updated on the latest features" />
       </Head>
-
-      <NavBar />
 
       <main className="min-h-screen bg-white pt-24 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

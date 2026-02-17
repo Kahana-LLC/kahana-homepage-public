@@ -233,7 +233,7 @@ export default function ForgotPassword() {
               <div className="mt-2">
                 <Link
                   href="/oasis-auth?mode=login"
-                  className="text-sm font-semibold text-[#4A6200] hover:underline"
+                  className="text-sm font-semibold text-[#4A6200] no-underline hover:no-underline"
                 >
                   Back to sign in
                 </Link>

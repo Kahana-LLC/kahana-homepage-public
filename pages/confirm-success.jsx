@@ -55,7 +55,7 @@ export default function ConfirmSuccess() {
             </Link>
           </div>
           <p className="mt-8 text-sm text-gray-500">
-            <Link href="/" className="text-[#4A6200] font-semibold hover:underline">
+            <Link href="/" className="text-[#4A6200] font-semibold no-underline hover:no-underline">
               Back to home
             </Link>
           </p>

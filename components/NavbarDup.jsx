@@ -351,7 +351,7 @@ function NavBar() {
             display: block;
             color: #617500 !important;
             text-decoration: none !important;
-            font-weight: 600 !important;
+            font-weight: 500 !important;
             font-size: 0.9375rem;
             line-height: 1.5;
             letter-spacing: 0.01em;
@@ -373,7 +373,7 @@ function NavBar() {
             color: #617500 !important;
             background-color: rgba(248, 250, 252, 0.9);
             text-decoration: none !important;
-            font-weight: 600 !important;
+            font-weight: 500 !important;
             outline: none;
           }
 

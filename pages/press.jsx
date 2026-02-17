@@ -74,7 +74,7 @@ export default function PressPage() {
                   <div key={index} className="border-b pb-8 last:border-b-0">
                     <div className="text-sm text-[#4A5745] mb-2">{release.date}</div>
                     <h3 className="text-xl font-semibold mb-2">
-                      <a href={release.link} className="text-[#0B3B2D] hover:underline">
+                      <a href={release.link} className="text-[#0B3B2D] no-underline hover:no-underline">
                         {release.title}
                       </a>
                     </h3>
@@ -94,7 +94,7 @@ export default function PressPage() {
                     <p className="text-gray-600 mb-4">{resource.description}</p>
                     <a
                       href={resource.downloadLink}
-                      className="inline-flex items-center text-[#0B3B2D] hover:underline"
+                      className="inline-flex items-center text-[#0B3B2D] no-underline hover:no-underline"
                     >
                       <span>Download</span>
                       <svg
@@ -127,7 +127,7 @@ export default function PressPage() {
                   <h3 className="font-semibold">Media Relations</h3>
                   <a
                     href="mailto:press@kahana.co"
-                    className="text-[#0B3B2D] hover:underline"
+                    className="text-[#0B3B2D] no-underline hover:no-underline"
                   >
                     press@kahana.co
                   </a>

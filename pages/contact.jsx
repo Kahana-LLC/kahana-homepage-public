@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import NavbarDup from '../components/NavbarDup';
 import Script from 'next/script';
 import { trackError } from '../utils/analytics';
 import SEO from '../components/SEO';
@@ -135,8 +134,6 @@ export default function ContactPage() {
         url="https://kahana.co/contact"
         type="website"
       />
-
-      <NavbarDup />
 
       <main className="min-h-screen bg-white pt-24 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

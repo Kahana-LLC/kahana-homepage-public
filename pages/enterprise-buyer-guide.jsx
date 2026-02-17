@@ -455,7 +455,7 @@ export default function EnterpriseBuyerGuidePage() {
       </Head>
       <div style={{ background: '#FFFFFF', color: COLORS.primary, minHeight: '100vh' }}>
         <div className="min-h-screen" style={{ background: '#FFFFFF' }}>
-          <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24">
             {/* Hero Introduction Section - Perplexity/Gemini Hybrid Style */}
             <section 
               id="introduction" 

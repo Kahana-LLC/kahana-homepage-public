@@ -1,7 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import NavBar from '../../components/NavbarDup';
 import VideoSection from '../../components/VideoSection';
 import DiscordCTA from '../../components/DiscordCTA';
 import Script from 'next/script';
@@ -69,7 +68,6 @@ export default function JobSearchWaitlist() {
         <meta name="description" content="Join the Oasis waitlist for job search revolution - AI-powered job organization, tracking, and matching to find your dream career" />
       </Head>
       <div className="relative bg-white">
-        <NavBar />
         <main className="min-h-screen pt-24 pb-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto">

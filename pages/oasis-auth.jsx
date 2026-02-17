@@ -301,7 +301,7 @@ export default function OasisAuth() {
                     <button
                       type="button"
                       onClick={handleForgotPassword}
-                      className="text-sm font-semibold text-[#4A6200] hover:underline"
+                      className="text-sm font-semibold text-[#4A6200] no-underline hover:no-underline"
                       disabled={status.loading || resetStatus.loading}
                     >
                       {resetStatus.loading ? 'Sending reset email…' : 'Forgot password?'}
@@ -333,11 +333,11 @@ export default function OasisAuth() {
                     />
                     <label htmlFor="accept-terms" className="text-sm text-neutral-700">
                       I have read and agree to the{' '}
-                      <Link href="/terms-and-conditions" target="_blank" rel="noopener noreferrer" className="text-[#4A6200] hover:underline font-semibold">
+                      <Link href="/terms-and-conditions" target="_blank" rel="noopener noreferrer" className="text-[#4A6200] no-underline hover:no-underline font-semibold">
                         Terms and Conditions
                       </Link>
                       {' '}and{' '}
-                      <Link href="/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-[#4A6200] hover:underline font-semibold">
+                      <Link href="/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-[#4A6200] no-underline hover:no-underline font-semibold">
                         Privacy Policy
                       </Link>
                     </label>

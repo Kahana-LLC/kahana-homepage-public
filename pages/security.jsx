@@ -69,7 +69,7 @@ export default function Security() {
               <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">How to Submit your Research</h3>
               <p className="text-gray-700 leading-relaxed">
                 If you believe you've identified a security or privacy issue that affects Kahana products, services, or software, please report it to us through our{' '}
-                <Link href="/contact" className="text-[#4A6200] hover:underline font-semibold">contact form</Link>.
+                <Link href="/contact" className="text-[#4A6200] no-underline hover:no-underline font-semibold">contact form</Link>.
               </p>
             </section>
 
@@ -84,11 +84,11 @@ export default function Security() {
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
                 But don't take our word for it. Below, we've listed everything we can think of that you might want to know about our security practices. For more on privacy,{' '}
-                <a href="/privacy-policy" className="text-[#4A6200] hover:underline font-semibold">read our Privacy Policy</a>.
+                <a href="/privacy-policy" className="text-[#4A6200] no-underline hover:no-underline font-semibold">read our Privacy Policy</a>.
               </p>
               <p className="text-gray-700 leading-relaxed">
                 And if you have any questions, please{' '}
-                <Link href="/contact" className="text-[#4A6200] hover:underline font-semibold">reach out to us through our contact form</Link>. We're all ears!
+                <Link href="/contact" className="text-[#4A6200] no-underline hover:no-underline font-semibold">reach out to us through our contact form</Link>. We're all ears!
               </p>
             </section>
 
@@ -282,7 +282,7 @@ export default function Security() {
                   <br />
                   <span className="text-gray-700">
                     Oasis comes with Firefox's built-in Enhanced Tracking Protection, which blocks many trackers and ads by default. Additionally, users can install{' '}
-                    <a href="https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/" className="text-[#4A6200] hover:underline font-semibold" target="_blank" rel="noopener noreferrer">uBlock Origin</a> from the Firefox Add-ons store for additional ad-blocking capabilities. We currently don't have a custom built ad-blocking but are looking at building further member protections into Oasis in the future. Since we're using Firefox under the hood, any ad-blockers or privacy tooling that is available in the Firefox Add-ons store works with Oasis.
+                    <a href="https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/" className="text-[#4A6200] no-underline hover:no-underline font-semibold" target="_blank" rel="noopener noreferrer">uBlock Origin</a> from the Firefox Add-ons store for additional ad-blocking capabilities. We currently don't have a custom built ad-blocking but are looking at building further member protections into Oasis in the future. Since we're using Firefox under the hood, any ad-blockers or privacy tooling that is available in the Firefox Add-ons store works with Oasis.
                   </span>
                 </li>
                 <li>
@@ -301,7 +301,7 @@ export default function Security() {
           <footer className="text-center py-8">
             <p className="text-gray-700">
               If you have any questions or suggestions, please{' '}
-              <Link href="/contact" className="text-[#4A6200] hover:underline font-semibold">
+              <Link href="/contact" className="text-[#4A6200] no-underline hover:no-underline font-semibold">
                 contact us →
               </Link>
             </p>

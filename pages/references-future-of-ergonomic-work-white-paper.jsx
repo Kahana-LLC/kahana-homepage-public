@@ -1,7 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import NavbarDup from '../components/NavbarDup';
 
 export default function ReferencesPage() {
   const references = [
@@ -574,8 +573,6 @@ export default function ReferencesPage() {
         <title>References: The Future of Ergonomic Work | Kahana Browser</title>
         <meta name="description" content="Complete references and citations for The Future of Ergonomic Work white paper." />
       </Head>
-
-      <NavbarDup />
 
       <main className="min-h-screen bg-white pt-20 sm:pt-24 pb-12 sm:pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

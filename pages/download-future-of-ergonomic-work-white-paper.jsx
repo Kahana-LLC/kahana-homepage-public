@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import NavbarDup from '../components/NavbarDup';
 import Script from 'next/script';
 import { trackError } from '../utils/analytics';
 
@@ -138,13 +137,13 @@ export default function DownloadWhitePaperPage() {
         <div className="text-center">
           <p className="text-sm text-[#4A5745] mb-3">
             <strong>Contact us</strong> - for an immediate response, contact us directly at{' '}
-            <Link href="/contact" className="text-[#66C2BE] hover:text-[#4A9E9A] underline">
+            <Link href="/contact" className="text-[#66C2BE] hover:text-[#4A9E9A] no-underline hover:no-underline">
               contact us
             </Link>
           </p>
           <p className="text-xs text-[#4A5745]">
             By submitting this form you consent to be contacted by Kahana, and acknowledge our{' '}
-            <Link href="/privacy-policy" className="text-[#66C2BE] hover:text-[#4A9E9A] underline">
+            <Link href="/privacy-policy" className="text-[#66C2BE] hover:text-[#4A9E9A] no-underline hover:no-underline">
               Privacy Policy
             </Link>
             .
@@ -160,8 +159,6 @@ export default function DownloadWhitePaperPage() {
         <title>Download: The Future of Ergonomic Work | Kahana Browser</title>
         <meta name="description" content="Download our comprehensive white paper exploring how AR/VR technology can transform workplace ergonomics and productivity, addressing the health crisis of sedentary work." />
       </Head>
-
-      <NavbarDup />
 
       <main className="min-h-screen bg-white pt-24 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
