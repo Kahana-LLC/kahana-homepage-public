@@ -776,7 +776,11 @@ function NavBar() {
                         src={getCloudinaryImageUrl("/assets/pexels-kamo11235-667838.jpg", { width: 280, height: 160, quality: 'auto:good' })} 
                         alt="Enterprise Browser Buyer Guide"
                         className="w-full h-full object-cover"
+                        width={280}
+                        height={160}
                         loading="lazy"
+                        decoding="async"
+                        fetchPriority="low"
                       />
                     </div>
                     <div className="font-semibold text-gray-900 text-sm leading-tight no-underline">Enterprise Browser Buyer Guide</div>
@@ -913,7 +917,11 @@ function NavBar() {
                   src={getCloudinaryImageUrl("/assets/pexels-kamo11235-667838.jpg", { width: 48, height: 48, quality: 'auto:good' })} 
                   alt="Enterprise Browser Buyer Guide"
                   className="w-full h-full object-cover"
+                  width={48}
+                  height={48}
                   loading="lazy"
+                  decoding="async"
+                  fetchPriority="low"
                 />
               </div>
               <div className="flex-1">

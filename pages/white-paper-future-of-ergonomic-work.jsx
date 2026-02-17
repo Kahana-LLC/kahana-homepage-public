@@ -51,11 +51,14 @@ function AnimatedCounter({ start, end, duration = 2000, suffix = "", prefix = ""
   );
 }
 
+const WHITE_PAPER_HERO_IMAGE_URL = getCloudinaryImageUrl("/sloth-future-of-ergonomic-work.png", { width: 384, height: 384, quality: 'auto:good' });
+
 export default function WhitePaperPDF() {
   return (
     <>
       <Head>
         <title>White Paper PDF | Kahana Browser</title>
+        <link rel="preload" href={WHITE_PAPER_HERO_IMAGE_URL} as="image" />
         <meta 
           name="description" 
           content="Download our comprehensive white paper on the future of ergonomic work and how modern browsers are reshaping productivity in the workplace." 
@@ -123,10 +126,14 @@ export default function WhitePaperPDF() {
               <div className="flex justify-center lg:justify-end">
                 <div className="w-96 h-96 rounded-2xl shadow-lg overflow-hidden">
                   <img 
-                    src={getCloudinaryImageUrl("/sloth-future-of-ergonomic-work.png", { width: 384, height: 384, quality: 'auto:good' })} 
+                    src={WHITE_PAPER_HERO_IMAGE_URL} 
                     alt="Sloth breaking free from desk-bound work with AR/VR technology, symbolizing the future of ergonomic work"
-                    className="w-full h-full object-cover transition-opacity duration-1000 ease-in-out"
-                    loading="lazy"
+                    className="w-full h-full object-cover transition-opacity duration-300 ease-out"
+                    width={384}
+                    height={384}
+                    loading="eager"
+                    fetchPriority="high"
+                    decoding="async"
                     onLoad={(e) => {
                       e.target.style.opacity = '1';
                     }}
@@ -136,10 +143,9 @@ export default function WhitePaperPDF() {
                     style={{ opacity: 0 }}
                     ref={(img) => {
                       if (img) {
-                        // Fallback: show image after 2 seconds regardless
                         setTimeout(() => {
                           img.style.opacity = '1';
-                        }, 2000);
+                        }, 400);
                       }
                     }}
                   />
