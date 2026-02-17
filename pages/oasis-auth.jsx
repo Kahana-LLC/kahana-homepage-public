@@ -348,7 +348,7 @@ export default function OasisAuth() {
                   disabled={status.loading}
                   className="btn-primary w-full py-3.5 text-base"
                 >
-                  {status.loading ? 'Working…' : `${modes[mode]} • ${plan.name}`}
+                  {status.loading ? 'Working…' : (mode === 'login' && plan.id === 'free' ? modes[mode] : `${modes[mode]} • ${plan.name}`)}
                 </button>
               </form>
               {resetStatus.error && (

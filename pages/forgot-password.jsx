@@ -135,10 +135,8 @@ export default function ForgotPassword() {
       }
 
       setPhase('done')
-      setMessage('Password updated. You can now sign in with your new password.')
-      setTimeout(() => {
-        router.push('/oasis-auth?mode=login')
-      }, 1200)
+      setMessage('Password updated. Redirecting…')
+      router.push('/password-reset-success')
     } catch (err) {
       setPhase('error')
       setMessage(err?.message || 'Failed to update password. Please try again.')
