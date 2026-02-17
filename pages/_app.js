@@ -420,6 +420,7 @@ function AppContent({ Component, pageProps }) {
         <SEO
           url={`https://kahana.co${router.asPath}`}
           type={router.pathname === "/" ? "website" : "article"}
+          skipCanonical
         />
         <div style={{ zIndex: "100" }} className="sticky top-0">
           <NavbarDup />

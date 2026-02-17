@@ -27,9 +27,6 @@ export default function PrivacyPolicy() {
         url="https://kahana.co/privacy-policy"
         type="website"
       />
-      <Head>
-        <title>Privacy Policy | Kahana</title>
-      </Head>
 
       <TableOfContents items={tocStructure} />
 

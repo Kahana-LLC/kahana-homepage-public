@@ -3,6 +3,7 @@ const path = require("path");
 
 const nextConfig = {
   reactStrictMode: true,
+  poweredByHeader: false,
   eslint: {
     ignoreDuringBuilds: true, // This will prevent ESLint errors from failing the build
   },

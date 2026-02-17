@@ -9,6 +9,7 @@ const SEO = ({
   type = 'website',
   schema = null,
   noindex = false,
+  skipCanonical = false,
 }) => {
   const siteTitle = title.includes('Kahana') ? title : `${title} | Kahana`;
   
@@ -47,8 +48,8 @@ const SEO = ({
       <meta property="twitter:description" content={description} />
       <meta property="twitter:image" content={image} />
 
-      {/* Canonical URL */}
-      <link rel="canonical" href={url} />
+      {/* Canonical URL (omit when page provides its own to avoid duplicate) */}
+      {!skipCanonical && <link rel="canonical" href={url} />}
 
       {/* Schema.org markup */}
       <script

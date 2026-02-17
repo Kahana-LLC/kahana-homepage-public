@@ -23,9 +23,6 @@ export default function Security() {
         url="https://kahana.co/security"
         type="website"
       />
-      <Head>
-        <title>Security | Kahana</title>
-      </Head>
 
       <TableOfContents items={tocStructure} />
 

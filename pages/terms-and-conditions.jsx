@@ -37,9 +37,6 @@ export default function TermsAndConditions() {
         url="https://kahana.co/terms-and-conditions"
         type="website"
       />
-      <Head>
-        <title>Terms and Conditions | Kahana</title>
-      </Head>
 
       <TableOfContents items={tocStructure} />
 

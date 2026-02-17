@@ -4,6 +4,7 @@ import Link from 'next/link';
 import NavbarDup from '../components/NavbarDup';
 import Script from 'next/script';
 import { trackError } from '../utils/analytics';
+import SEO from '../components/SEO';
 
 const supportLinks = [
   {
@@ -128,10 +129,12 @@ export default function ContactPage() {
 
   return (
     <>
-      <Head>
-        <title>Let's Connect | Kahana Browser</title>
-        <meta name="description" content="We'd love to hear from you and explore how Kahana can enhance your browsing experience." />
-      </Head>
+      <SEO
+        title="Let's Connect"
+        description="We'd love to hear from you and explore how Kahana can enhance your browsing experience."
+        url="https://kahana.co/contact"
+        type="website"
+      />
 
       <NavbarDup />
 

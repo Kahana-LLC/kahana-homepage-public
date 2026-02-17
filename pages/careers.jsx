@@ -1,17 +1,17 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import SEO from '../components/SEO';
 
 export default function Careers() {
   return (
     <>
-      <Head>
-        <title>Careers at Kahana</title>
-        <meta
-          name="description"
-          content="Join our team at Kahana and help make the future of work more ergonomic and productive."
-        />
-      </Head>
+      <SEO
+        title="Careers at Kahana"
+        description="Join our team at Kahana and help make the future of work more ergonomic and productive."
+        url="https://kahana.co/careers"
+        type="website"
+      />
 
       <div className="bg-white">
         <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">

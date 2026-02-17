@@ -77,7 +77,7 @@ function FooterContent() {
                 onClick={() => toggleSection('product')} 
                 className="footer-mobile-dropdown flex justify-between items-center w-full md:hidden mb-3 border border-[#788B59] text-[#788B59] font-bold py-2 px-4 rounded-md appearance-none shadow-sm"
               >
-                <h3 className="text-[#617500] font-semibold text-lg">Product</h3>
+                <span className="text-[#617500] font-semibold text-lg">Product</span>
                 <svg 
                   className={`w-5 h-5 transition-transform ${openSection === 'product' ? 'rotate-180' : ''}`}
                   fill="none" 
@@ -103,7 +103,7 @@ function FooterContent() {
                 onClick={() => toggleSection('useCases')} 
                 className="footer-mobile-dropdown flex justify-between items-center w-full md:hidden mb-3 border border-[#788B59] text-[#788B59] font-bold py-2 px-4 rounded-md appearance-none shadow-sm"
               >
-                <h3 className="text-[#617500] font-semibold text-lg">Use Cases</h3>
+                <span className="text-[#617500] font-semibold text-lg">Use Cases</span>
                 <svg 
                   className={`w-5 h-5 transition-transform ${openSection === 'useCases' ? 'rotate-180' : ''}`}
                   fill="none" 
@@ -133,7 +133,7 @@ function FooterContent() {
                 onClick={() => toggleSection('learn')} 
                 className="footer-mobile-dropdown flex justify-between items-center w-full md:hidden mb-3 border border-[#788B59] text-[#788B59] font-bold py-2 px-4 rounded-md appearance-none shadow-sm"
               >
-                <h3 className="text-[#617500] font-semibold text-lg">Learn</h3>
+                <span className="text-[#617500] font-semibold text-lg">Learn</span>
                 <svg 
                   className={`w-5 h-5 transition-transform ${openSection === 'learn' ? 'rotate-180' : ''}`}
                   fill="none" 
@@ -160,7 +160,7 @@ function FooterContent() {
                 onClick={() => toggleSection('markets')} 
                 className="footer-mobile-dropdown flex justify-between items-center w-full md:hidden mb-3 border border-[#788B59] text-[#788B59] font-bold py-2 px-4 rounded-md appearance-none shadow-sm"
               >
-                <h3 className="text-[#617500] font-semibold text-lg">Markets</h3>
+                <span className="text-[#617500] font-semibold text-lg">Markets</span>
                 <svg 
                   className={`w-5 h-5 transition-transform ${openSection === 'markets' ? 'rotate-180' : ''}`}
                   fill="none" 
@@ -191,7 +191,7 @@ function FooterContent() {
                 onClick={() => toggleSection('about')} 
                 className="footer-mobile-dropdown flex justify-between items-center w-full md:hidden mb-3 border border-[#788B59] text-[#788B59] font-bold py-2 px-4 rounded-md appearance-none shadow-sm"
               >
-                <h3 className="text-[#617500] font-semibold text-lg">About</h3>
+                <span className="text-[#617500] font-semibold text-lg">About</span>
                 <svg 
                   className={`w-5 h-5 transition-transform ${openSection === 'about' ? 'rotate-180' : ''}`}
                   fill="none" 

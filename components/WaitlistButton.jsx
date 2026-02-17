@@ -52,8 +52,8 @@ export default function WaitlistButton({
       {/* Pro Link */}
       <Link
         href={proUrl}
-        className="text-sm transition-colors hover:opacity-80"
-        style={{ color: '#617500' }}
+        className="text-sm transition-colors hover:opacity-80 no-underline"
+        style={{ color: '#4A6200' }}
       >
         <span className="ml-1">Get Zen for uninterrupted work</span>
       </Link>

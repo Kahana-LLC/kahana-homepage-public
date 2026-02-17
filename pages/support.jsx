@@ -1,17 +1,17 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import SEO from '../components/SEO';
 
 export default function Support() {
   return (
     <>
-      <Head>
-        <title>Support | Kahana</title>
-        <meta
-          name="description"
-          content="Access documentation and resources for Kahana's enterprise browsing solutions."
-        />
-      </Head>
+      <SEO
+        title="Support"
+        description="Access documentation and resources for Kahana's enterprise browsing solutions."
+        url="https://kahana.co/support"
+        type="website"
+      />
 
       <div className="bg-white">
         <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
