@@ -31,12 +31,21 @@ const SharedCTA = ({
           {description}
         </p>
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
-          <Link href="/schedule-demo" className="btn-primary inline-flex items-center justify-center px-6 sm:px-8 lg:px-10 py-3 sm:py-4 text-sm sm:text-base lg:text-lg font-bold no-underline hover:no-underline focus:no-underline w-full sm:w-auto">
-            Schedule a Demo
-          </Link>
-          <Link href="/contact" className="btn-secondary inline-flex items-center justify-center px-6 sm:px-8 lg:px-10 py-3 sm:py-4 text-sm sm:text-base lg:text-lg font-bold no-underline hover:no-underline focus:no-underline w-full sm:w-auto">
-            Get in Touch
-          </Link>
+          {buttonLink && (
+            <Link href={buttonLink} className={`${buttonStyles[buttonVariant]} w-full sm:w-auto`}>
+              {buttonText}
+            </Link>
+          )}
+          {!buttonLink && (
+            <>
+              <Link href="/schedule-demo" className="btn-primary inline-flex items-center justify-center px-6 sm:px-8 lg:px-10 py-3 sm:py-4 text-sm sm:text-base lg:text-lg font-bold no-underline hover:no-underline focus:no-underline w-full sm:w-auto">
+                Schedule a Demo
+              </Link>
+              <Link href="/contact" className="btn-secondary inline-flex items-center justify-center px-6 sm:px-8 lg:px-10 py-3 sm:py-4 text-sm sm:text-base lg:text-lg font-bold no-underline hover:no-underline focus:no-underline w-full sm:w-auto">
+                Get in Touch
+              </Link>
+            </>
+          )}
         </div>
       </div>
     </section>

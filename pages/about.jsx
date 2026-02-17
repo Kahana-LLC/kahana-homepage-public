@@ -3,17 +3,17 @@ import Head from 'next/head';
 import Link from 'next/link';
 import SharedCTA from '../components/SharedCTA';
 import HeroSection from '../components/HeroSection';
+import SEO from '../components/SEO';
 
 export default function About() {
   return (
     <>
-      <Head>
-        <title>About Us | Kahana</title>
-        <meta
-          name="description"
-          content="Kahana creates tools that help you get closer to your ideas and bring them to life. We believe the world is better off when your best ideas become reality."
-        />
-      </Head>
+      <SEO
+        title="About Us"
+        description="Kahana creates tools that help you get closer to your ideas and bring them to life. We believe the world is better off when your best ideas become reality."
+        url="https://kahana.co/about"
+        type="website"
+      />
 
       <HeroSection />
 

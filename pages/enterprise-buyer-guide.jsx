@@ -1719,8 +1719,8 @@ export default function EnterpriseBuyerGuidePage() {
                       key={item.id}
                       href={`#${item.id}`}
                       onClick={() => setIsTocOpen(false)}
-                      className="block py-2 px-3 rounded-md hover:bg-[#F8FAF2] transition-colors duration-200 text-sm font-medium"
-                      style={{ color: '#4A5745' }}
+                      className="block py-2 px-3 rounded-md hover:bg-[#F8FAF2] transition-colors duration-200 text-sm font-medium no-underline"
+                      style={{ color: '#4A5745', textDecoration: 'none' }}
                     >
                       {item.label}
                     </a>

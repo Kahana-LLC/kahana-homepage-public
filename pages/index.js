@@ -177,7 +177,7 @@ export default function Home({ blogPosts }) {
   return (
     <>
       <SEO
-        title="Kahana Oasis – Agentic Browser & Enterprise Productivity | Kahana"
+        title="Kahana Oasis – Agentic Browser & Productivity | Kahana"
         description="Stay organized and focused with Kahana's Oasis Enterprise Browser. Features enterprise-grade security, organization tools, and collaboration features for modern teams."
         image="https://kahana.co/assets/oasis-browser-preview.png"
         url="https://kahana.co"
@@ -185,7 +185,7 @@ export default function Home({ blogPosts }) {
         schema={homepageSchema}
       />
       <Head>
-        <title>Kahana Oasis – Agentic Browser & Enterprise Productivity | Kahana</title>
+        <title>Kahana Oasis – Agentic Browser & Productivity | Kahana</title>
         <meta
           name="description"
           content="Kahana's Oasis Enterprise Browser helps teams stay organized, focused on ideas, and increase productivity while maintaining enterprise-grade security."
@@ -284,9 +284,9 @@ export default function Home({ blogPosts }) {
                 <div className="absolute bottom-0 right-6 h-96 w-96 rounded-full bg-[#617500]/20 blur-[250px]" />
               </div>
               <div className="relative z-10 w-full max-w-5xl mx-auto px-6 sm:px-8 text-center">
-                <h2 className="text-xl font-semibold leading-8 text-[#978455] mb-4">
+                <p className="text-xl font-semibold leading-8 text-[#978455] mb-4" role="doc-subtitle">
                   Personalize Your Experience
-                </h2>
+                </p>
                 <h2 className="text-3xl sm:text-4xl font-semibold leading-tight text-[#313A00] mb-10">
                   Oasis adapts to your unique way of working
                 </h2>
@@ -307,9 +307,9 @@ export default function Home({ blogPosts }) {
             >
               <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-12">
-                  <h2 className="text-xl font-semibold leading-8 text-[#978455] mb-2">
+                  <p className="text-xl font-semibold leading-8 text-[#978455] mb-2" role="doc-subtitle">
                     Rediscover Browsing
-                  </h2>
+                  </p>
                   <h2 className="text-3xl font-semibold tracking-tight text-[#313A00] sm:text-4xl">
                     Unlock a New Level of Browsing with Oasis
                   </h2>
