@@ -70,7 +70,7 @@ export default function GlobalBanner() {
                   </Link>
                 </span>
                 <span className="hidden md:inline">
-                  Join our <Link href="/community" className="banner-discord-link no-underline hover:no-underline transition-colors" style={{ textDecoration: 'none', color: '#617500', fontWeight: 700 }}>Discord community</Link> to get updates, share feedback, and connect with the team!
+                  Join our <Link href="/community" className="banner-discord-link no-underline hover:no-underline transition-colors" style={{ textDecoration: 'none', color: 'rgba(97, 117, 0, 1)', fontWeight: 700 }}>Discord community</Link> to get updates, share feedback, and connect with the team!
                 </span>
               </p>
             </div>

@@ -1,3 +1,50 @@
+/* Nav bar and dropdown link color - used by Products, Pricing, Learn, About (all pages) */
+:root {
+  --nav-link-color: #617500;
+}
+
+/* Site nav wrapper: ensure olive #617500 on ALL pages (homepage, enterprise-browser, blog, buyer guide, etc.) */
+.site-nav-wrapper a.nav-link,
+.site-nav-wrapper .nav-link,
+.site-nav-wrapper .nav-link .nav-link-text,
+.site-nav-wrapper .nav-link span,
+.site-nav-wrapper .dropdown-icon-button,
+.site-nav-wrapper .dropdown-icon-button svg,
+.site-nav-wrapper a.dropdown-link,
+.site-nav-wrapper .dropdown-link,
+.site-nav-wrapper a.dropdown-link:hover,
+.site-nav-wrapper .dropdown-link:hover,
+.site-nav-wrapper a.dropdown-link:visited,
+.site-nav-wrapper .dropdown-link:visited,
+.site-nav-wrapper a.dropdown-link:focus,
+.site-nav-wrapper .dropdown-link:focus,
+.site-nav-wrapper a.dropdown-link:active,
+.site-nav-wrapper .dropdown-link:active,
+.site-nav-wrapper a.mobile-link,
+.site-nav-wrapper .mobile-link,
+.site-nav-wrapper a.mobile-link:hover,
+.site-nav-wrapper .mobile-link:hover,
+.site-nav-wrapper a.mobile-link:visited,
+.site-nav-wrapper .mobile-link:visited,
+.site-nav-wrapper a.mobile-link:focus,
+.site-nav-wrapper .mobile-link:focus,
+.site-nav-wrapper a.mobile-link:active,
+.site-nav-wrapper .mobile-link:active,
+.site-nav-wrapper nav .dropdown-content a.dropdown-link,
+.site-nav-wrapper nav .dropdown-content .dropdown-link,
+.site-nav-wrapper .dropdown .dropdown-content a.dropdown-link,
+.site-nav-wrapper .dropdown .dropdown-content .dropdown-link,
+.site-nav-wrapper .dropdown-section a.dropdown-link,
+.site-nav-wrapper .dropdown-section .dropdown-link {
+  color: #617500 !important;
+}
+.site-nav-wrapper a.nav-link:hover,
+.site-nav-wrapper .nav-link:hover,
+.site-nav-wrapper .nav-link:hover .nav-link-text,
+.site-nav-wrapper .nav-link:hover .dropdown-icon-button {
+  color: #4A5F00 !important;
+}
+
 /* Font Face Declarations */
 @font-face {
   font-family: 'Bricolage Grotesque';
@@ -83,16 +130,14 @@ a:focus {
   color: var(--bg-surface) !important;
 }
 
-/* Exception for navbar links - brand olive */
+/* Exception for navbar links - same as enterprise-browser/blog (--nav-link-color) */
 a.nav-link,
 .nav-link,
 a.nav-link:visited,
 .nav-link:visited,
-a.nav-link:hover,
-.nav-link:hover,
 a.nav-link:focus,
 .nav-link:focus {
-  color: #617500 !important;
+  color: var(--nav-link-color, #617500) !important;
   text-decoration: none !important;
   font-weight: 500 !important;
 }
@@ -101,7 +146,7 @@ a.nav-link:hover,
   color: #4A5F00 !important;
 }
 
-/* Buyer's guide pages: ensure Products, Pricing, Learn, About + dropdowns match homepage (#617500, bold) */
+/* Buyer's guide: same olive #617500 as rest of site (matches mobile menu image) */
 .buyer-guide-layout a.nav-link,
 .buyer-guide-layout .nav-link,
 .buyer-guide-layout .nav-link .nav-link-text,
@@ -114,25 +159,22 @@ a.nav-link:hover,
 .buyer-guide-layout .nav-link:hover,
 .buyer-guide-layout .nav-link:hover .nav-link-text,
 .buyer-guide-layout .nav-link:hover .dropdown-icon-button {
-  color: #4A5F00 !important;
+  color: #617500 !important;
 }
 .buyer-guide-layout a.dropdown-link,
 .buyer-guide-layout .dropdown-link,
 .buyer-guide-layout a.dropdown-link:visited,
-.buyer-guide-layout .dropdown-link:visited {
-  color: #617500 !important;
-  font-weight: 700 !important;
-}
+.buyer-guide-layout .dropdown-link:visited,
 .buyer-guide-layout a.dropdown-link:hover,
 .buyer-guide-layout .dropdown-link:hover,
 .buyer-guide-layout a.dropdown-link:focus,
 .buyer-guide-layout .dropdown-link:focus,
 .buyer-guide-layout a.dropdown-link:active,
 .buyer-guide-layout .dropdown-link:active {
-  color: #4A5F00 !important;
-  font-weight: 700 !important;
+  color: #617500 !important;
+  font-weight: 500 !important;
 }
-/* Buyer's guide: Discord community link in banner - dark olive, bold */
+/* Buyer's guide: Discord community link in banner - match main site (#617500) */
 .buyer-guide-layout .GlobalBanner .banner-discord-link,
 .buyer-guide-layout .GlobalBanner a.banner-discord-link {
   color: #617500 !important;
@@ -144,15 +186,11 @@ a.nav-link:hover,
   font-weight: 700 !important;
 }
 
-/* Dropdown menu links */
+/* All navbar dropdown links - match Products, Pricing, Learn, About nav styling (#617500) */
 a.dropdown-link,
 .dropdown-link,
 a.dropdown-link:visited,
-.dropdown-link:visited {
-  color: #617500 !important;
-  text-decoration: none !important;
-  font-weight: 600 !important;
-}
+.dropdown-link:visited,
 a.dropdown-link:hover,
 .dropdown-link:hover,
 a.dropdown-link:focus,
@@ -161,7 +199,10 @@ a.dropdown-link:active,
 .dropdown-link:active {
   color: #617500 !important;
   text-decoration: none !important;
-  font-weight: 600 !important;
+  font-weight: 500 !important;
+  font-size: 1rem !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+  letter-spacing: -0.01em !important;
 }
 
 a.pricing-button,
@@ -197,7 +238,7 @@ input[type="button"]:hover {
 .nav-button.primary,
 button.btn-primary,
 a.btn-primary {
-  background-color: #4A6200 !important;
+  background-color: #617500 !important;
   border: 1px solid #7F9E36 !important;
   color: #FFFFFF !important;
   border-radius: 27.5px !important;
@@ -220,7 +261,7 @@ a.btn-primary span {
 .nav-button.primary:hover,
 button.btn-primary:hover,
 a.btn-primary:hover {
-  background-color: #3E5300 !important;
+  background-color: #617500 !important;
   border-color: #6A8E2A !important;
   color: #FFFFFF !important;
 }
@@ -242,8 +283,8 @@ a.btn-primary:hover span {
 button.btn-secondary,
 a.btn-secondary {
   background-color: #FFFFFF !important;
-  border: 2px solid #4A6200 !important;
-  color: #4A6200 !important;
+  border: 2px solid #617500 !important;
+  color: #617500 !important;
   border-radius: 32px !important;
   font-weight: bold !important;
   transition: all 0.3s ease !important;
@@ -1172,13 +1213,13 @@ main {
   color: white !important;
 }
 
-/* Override for All Posts button to have white text (exclude nav dropdown so it doesn't blink) */
-a[href="/blog"].text-white:not(.dropdown-link),
-a[href="/blog"]:has(span):not(.dropdown-link) {
+/* Override for All Posts button to have white text (exclude nav dropdown and mobile menu so they keep #617500) */
+a[href="/blog"].text-white:not(.dropdown-link):not(.mobile-link),
+a[href="/blog"]:has(span):not(.dropdown-link):not(.mobile-link) {
   color: white !important;
   text-decoration: none !important;
 }
-a[href="/blog"]:hover:not(.dropdown-link) {
+a[href="/blog"]:hover:not(.dropdown-link):not(.mobile-link) {
   color: white !important;
 }
 
@@ -1244,12 +1285,17 @@ footer button.text-sm.no-underline:hover {
   text-decoration: none !important;
 }
 
-/* Mobile menu links - ensure no underlines and correct styling */
+/* Mobile menu links - match Products/Pricing nav color #617500 */
 .mobile-link,
 .mobile-link:visited,
 .mobile-link:hover,
 .mobile-link:active,
-.mobile-link:focus,
+.mobile-link:focus {
+  text-decoration: none !important;
+  color: #617500 !important;
+  font-weight: 500 !important;
+  box-sizing: content-box !important;
+}
 .menu-links a,
 .menu-links a:visited,
 .menu-links a:hover,
@@ -1257,18 +1303,7 @@ footer button.text-sm.no-underline:hover {
 .menu-links a:focus {
   text-decoration: none !important;
   color: #617500 !important;
-  font-weight: 600 !important;
-}
-
-/* Navbar dropdown links - ensure no underlines and correct styling */
-.dropdown-link,
-.dropdown-link:visited,
-.dropdown-link:hover,
-.dropdown-link:active,
-.dropdown-link:focus {
-  text-decoration: none !important;
-  color: #617500 !important;
-  font-weight: 600 !important;
+  font-weight: 500 !important;
 }
 
 /* Documentation card links - remove underlines from card content */
@@ -1371,4 +1406,70 @@ a[href="/resources"]:hover * {
 .crisp-client .crisp-1ucm7b4,
 .crisp-1ucm7b4 {
   display: none !important;
+}
+
+/* Force nav dropdown links to match Products/Pricing/Learn/About styling - #617500 same as nav text */
+/* Prevent white blink on hover/click - use subtle tint instead of white background */
+.site-nav-wrapper nav .dropdown-content a.dropdown-link,
+.site-nav-wrapper nav .dropdown-content .dropdown-link,
+.site-nav-wrapper .dropdown .dropdown-content a.dropdown-link,
+.site-nav-wrapper .dropdown .dropdown-content .dropdown-link,
+.site-nav-wrapper .dropdown-section a.dropdown-link,
+.site-nav-wrapper .dropdown-section .dropdown-link,
+nav .dropdown-content a.dropdown-link,
+nav .dropdown-content .dropdown-link,
+.dropdown .dropdown-content a.dropdown-link,
+.dropdown .dropdown-content .dropdown-link,
+.dropdown-section a.dropdown-link,
+.dropdown-section .dropdown-link {
+  color: #617500 !important;
+  font-weight: 500 !important;
+  font-size: 1rem !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+  letter-spacing: -0.01em !important;
+  -webkit-tap-highlight-color: transparent !important;
+  tap-highlight-color: transparent !important;
+}
+
+/* Prevent white blink on dropdown/mobile link hover and active */
+.site-nav-wrapper nav .dropdown-content a.dropdown-link:hover,
+.site-nav-wrapper nav .dropdown-content a.dropdown-link:active,
+.site-nav-wrapper nav .dropdown-content a.dropdown-link:focus,
+nav .dropdown-content a.dropdown-link:hover,
+nav .dropdown-content a.dropdown-link:active,
+nav .dropdown-content a.dropdown-link:focus,
+.dropdown .dropdown-content a.dropdown-link:hover,
+.dropdown .dropdown-content a.dropdown-link:active,
+.dropdown .dropdown-content a.dropdown-link:focus {
+  color: #617500 !important;
+  background-color: rgba(97, 117, 0, 0.06) !important;
+}
+
+/* Contents table / sidebar links (buyer guide toc) - no white blink on hover/click */
+#toc-sidebar a,
+.toc a {
+  -webkit-tap-highlight-color: transparent !important;
+  tap-highlight-color: transparent !important;
+}
+
+#toc-sidebar a:hover,
+#toc-sidebar a:active,
+#toc-sidebar a:focus,
+.toc a:hover,
+.toc a:active,
+.toc a:focus {
+  color: #617500 !important;
+  background-color: transparent !important;
+}
+
+/* Enterprise buyer guide: all dropdown-link elements #617500 (main nav + sticky header) */
+.buyer-guide-layout a.dropdown-link,
+.buyer-guide-layout .dropdown-link,
+.buyer-guide-layout nav .dropdown-content a.dropdown-link,
+.buyer-guide-layout nav .dropdown-content .dropdown-link,
+.buyer-guide-layout .dropdown .dropdown-content a.dropdown-link,
+.buyer-guide-layout .dropdown .dropdown-content .dropdown-link,
+.buyer-guide-layout .dropdown-section a.dropdown-link,
+.buyer-guide-layout .dropdown-section .dropdown-link {
+  color: #617500 !important;
 }

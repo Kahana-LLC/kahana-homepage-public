@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-12-09T17:28:55.454Z",
+  "generatedAt": "2026-02-19T15:45:11.973Z",
   "cloudName": "dlhpqrucv",
   "successful": [
     {
@@ -981,19 +981,258 @@
       "format": "mp4",
       "resourceType": "video",
       "bytes": 9530866
+    },
+    {
+      "localPath": "public/blog/agentic-ai-browser-autonomous-task-execution-2026.png",
+      "publicId": "kahana-homepage/blog/agentic-ai-browser-autonomous-task-execution-2026",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1771514330/kahana-homepage/blog/agentic-ai-browser-autonomous-task-execution-2026.png",
+      "width": 303,
+      "height": 166,
+      "format": "png",
+      "resourceType": "image",
+      "bytes": 4149
+    },
+    {
+      "localPath": "public/blog/ai-browsers-enterprise-ready-2026.jpg",
+      "publicId": "kahana-homepage/blog/ai-browsers-enterprise-ready-2026",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1771514331/kahana-homepage/blog/ai-browsers-enterprise-ready-2026.jpg",
+      "width": 225,
+      "height": 225,
+      "format": "jpg",
+      "resourceType": "image",
+      "bytes": 3563
+    },
+    {
+      "localPath": "public/blog/ai-changes-browser-security-2026.jpg",
+      "publicId": "kahana-homepage/blog/ai-changes-browser-security-2026",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1771514332/kahana-homepage/blog/ai-changes-browser-security-2026.jpg",
+      "width": 318,
+      "height": 158,
+      "format": "jpg",
+      "resourceType": "image",
+      "bytes": 6015
+    },
+    {
+      "localPath": "public/blog/chromium-enterprise-browser-2026.png",
+      "publicId": "kahana-homepage/blog/chromium-enterprise-browser-2026",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1771514333/kahana-homepage/blog/chromium-enterprise-browser-2026.png",
+      "width": 277,
+      "height": 182,
+      "format": "png",
+      "resourceType": "image",
+      "bytes": 6000
+    },
+    {
+      "localPath": "public/blog/data-leakage-browsers-copy-paste-downloads-shadow-it-2026.png",
+      "publicId": "kahana-homepage/blog/data-leakage-browsers-copy-paste-downloads-shadow-it-2026",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1771514335/kahana-homepage/blog/data-leakage-browsers-copy-paste-downloads-shadow-it-2026.png",
+      "width": 300,
+      "height": 168,
+      "format": "png",
+      "resourceType": "image",
+      "bytes": 101
+    },
+    {
+      "localPath": "public/blog/enterprise-browsers-new-perimeter-saas-2026.jpg",
+      "publicId": "kahana-homepage/blog/enterprise-browsers-new-perimeter-saas-2026",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1771514336/kahana-homepage/blog/enterprise-browsers-new-perimeter-saas-2026.jpg",
+      "width": 311,
+      "height": 162,
+      "format": "jpg",
+      "resourceType": "image",
+      "bytes": 3735
+    },
+    {
+      "localPath": "public/blog/privacy-vs-convenience-ai-browser-era-2026.jpg",
+      "publicId": "kahana-homepage/blog/privacy-vs-convenience-ai-browser-era-2026",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1771514338/kahana-homepage/blog/privacy-vs-convenience-ai-browser-era-2026.jpg",
+      "width": 300,
+      "height": 168,
+      "format": "jpg",
+      "resourceType": "image",
+      "bytes": 783
+    },
+    {
+      "localPath": "public/blog/secure-research-workflows-vpn-private-browser-ai-2026.jpg",
+      "publicId": "kahana-homepage/blog/secure-research-workflows-vpn-private-browser-ai-2026",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1771514338/kahana-homepage/blog/secure-research-workflows-vpn-private-browser-ai-2026.jpg",
+      "width": 297,
+      "height": 170,
+      "format": "jpg",
+      "resourceType": "image",
+      "bytes": 5949
+    },
+    {
+      "localPath": "public/blog/stop-shipping-laptops-managed-browser-2026.jpg",
+      "publicId": "kahana-homepage/blog/stop-shipping-laptops-managed-browser-2026",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1771514339/kahana-homepage/blog/stop-shipping-laptops-managed-browser-2026.jpg",
+      "width": 281,
+      "height": 179,
+      "format": "jpg",
+      "resourceType": "image",
+      "bytes": 5925
+    },
+    {
+      "localPath": "public/blog/technical-reality-anonymity-dark-web-fingerprinting-2026.jpg",
+      "publicId": "kahana-homepage/blog/technical-reality-anonymity-dark-web-fingerprinting-2026",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1771514341/kahana-homepage/blog/technical-reality-anonymity-dark-web-fingerprinting-2026.jpg",
+      "width": 300,
+      "height": 168,
+      "format": "jpg",
+      "resourceType": "image",
+      "bytes": 4719
+    },
+    {
+      "localPath": "public/blog/why-enterprise-browsers-needed-2026.jpg",
+      "publicId": "kahana-homepage/blog/why-enterprise-browsers-needed-2026",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1771514342/kahana-homepage/blog/why-enterprise-browsers-needed-2026.jpg",
+      "width": 225,
+      "height": 225,
+      "format": "jpg",
+      "resourceType": "image",
+      "bytes": 8439
+    },
+    {
+      "localPath": "public/assets/headshots/ankit_sai_allam.png",
+      "publicId": "kahana-homepage/assets/headshots/ankit_sai_allam",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1771514832/kahana-homepage/assets/headshots/ankit_sai_allam.jpg",
+      "width": 1170,
+      "height": 970,
+      "format": "jpg",
+      "resourceType": "image",
+      "bytes": 149381
+    },
+    {
+      "localPath": "public/assets/headshots/ravi_chandra_dasari.png",
+      "publicId": "kahana-homepage/assets/headshots/ravi_chandra_dasari",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1771514832/kahana-homepage/assets/headshots/ravi_chandra_dasari.jpg",
+      "width": 484,
+      "height": 462,
+      "format": "jpg",
+      "resourceType": "image",
+      "bytes": 63387
+    },
+    {
+      "localPath": "public/assets/headshots/rohan_mehere.png",
+      "publicId": "kahana-homepage/assets/headshots/rohan_mehere",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1771514833/kahana-homepage/assets/headshots/rohan_mehere.jpg",
+      "width": 498,
+      "height": 488,
+      "format": "jpg",
+      "resourceType": "image",
+      "bytes": 53027
+    },
+    {
+      "localPath": "public/assets/sloth-mascot.png",
+      "publicId": "kahana-homepage/assets/sloth-mascot",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1771515282/kahana-homepage/assets/sloth-mascot.png",
+      "width": 2000,
+      "height": 2000,
+      "format": "png"
+    },
+    {
+      "localPath": "public/assets/sloth-sleeping.png",
+      "publicId": "kahana-homepage/assets/sloth-sleeping",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1771515283/kahana-homepage/assets/sloth-sleeping.png",
+      "width": 2000,
+      "height": 2000,
+      "format": "png"
+    },
+    {
+      "localPath": "public/assets/sloth-working.png",
+      "publicId": "kahana-homepage/assets/sloth-working",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1771515284/kahana-homepage/assets/sloth-working.png",
+      "width": 2000,
+      "height": 2000,
+      "format": "png"
+    },
+    {
+      "localPath": "assets/cute-sloth-working-laptop-cartoon-vector-icon-illustration-animal-technology-icon-concept-isolated-premium-vector-flat-cartoon-style.png",
+      "publicId": "kahana-homepage/assets/cute-sloth-working-laptop-cartoon-vector-icon-illustration-animal-technology-icon-concept-isolated-premium-vector-flat-cartoon-style",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1771515508/kahana-homepage/assets/cute-sloth-working-laptop-cartoon-vector-icon-illustration-animal-technology-icon-concept-isolated-premium-vector-flat-cartoon-style.png",
+      "width": 2000,
+      "height": 2000,
+      "format": "png",
+      "resourceType": "image",
+      "bytes": 887715
+    },
+    {
+      "localPath": "public/blog/choosing-secure-enterprise-browser-saas-2026.jpg",
+      "publicId": "kahana-homepage/blog/choosing-secure-enterprise-browser-saas-2026",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1771515908/kahana-homepage/blog/choosing-secure-enterprise-browser-saas-2026.jpg"
+    },
+    {
+      "localPath": "public/blog/drm-privacy-innovation-browsers-locked-down-2026.jpg",
+      "publicId": "kahana-homepage/blog/drm-privacy-innovation-browsers-locked-down-2026",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1771515909/kahana-homepage/blog/drm-privacy-innovation-browsers-locked-down-2026.jpg"
+    },
+    {
+      "localPath": "public/blog/placeholder.jpg",
+      "publicId": "kahana-homepage/blog/placeholder",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1771515910/kahana-homepage/blog/placeholder.jpg"
+    },
+    {
+      "localPath": "public/blog/technical-debt-hero.jpg",
+      "publicId": "kahana-homepage/blog/technical-debt-hero",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1771515911/kahana-homepage/blog/technical-debt-hero.jpg"
     }
   ],
   "skipped": [],
   "failed": [
     {
-      "localPath": "public/blog/placeholder.jpg",
-      "publicId": "blog/placeholder",
-      "error": "Invalid image file"
+      "localPath": "public/blog/agentic-ai-browser-autonomous-task-execution-2026.png",
+      "publicId": "kahana-homepage/blog/agentic-ai-browser-autonomous-task-execution-2026",
+      "error": "Invalid Signature 79975103d04178228ad42ff9061fff41d59c74a0. String to sign - 'folder=kahana-homepage&invalidate=1&overwrite=0&public_id=blog/agentic-ai-browser-autonomous-task-execution-2026&timestamp=1771457729'."
     },
     {
-      "localPath": "public/blog/technical-debt-hero.jpg",
-      "publicId": "blog/technical-debt-hero",
-      "error": "Invalid image file"
+      "localPath": "public/blog/ai-browsers-enterprise-ready-2026.jpg",
+      "publicId": "kahana-homepage/blog/ai-browsers-enterprise-ready-2026",
+      "error": "Invalid Signature 037c29a37fc237e0e75d6d34c27107ef65880b8a. String to sign - 'folder=kahana-homepage&invalidate=1&overwrite=0&public_id=blog/ai-browsers-enterprise-ready-2026&timestamp=1771457730'."
+    },
+    {
+      "localPath": "public/blog/ai-changes-browser-security-2026.jpg",
+      "publicId": "kahana-homepage/blog/ai-changes-browser-security-2026",
+      "error": "Invalid Signature 408cf2ea31641c02315da376ff555815731cff3c. String to sign - 'folder=kahana-homepage&invalidate=1&overwrite=0&public_id=blog/ai-changes-browser-security-2026&timestamp=1771457730'."
+    },
+    {
+      "localPath": "public/blog/chromium-enterprise-browser-2026.png",
+      "publicId": "kahana-homepage/blog/chromium-enterprise-browser-2026",
+      "error": "Invalid Signature 694d58f3dc194b0f9cc5e84345afba44f94aaffc. String to sign - 'folder=kahana-homepage&invalidate=1&overwrite=0&public_id=blog/chromium-enterprise-browser-2026&timestamp=1771457731'."
+    },
+    {
+      "localPath": "public/blog/data-leakage-browsers-copy-paste-downloads-shadow-it-2026.png",
+      "publicId": "kahana-homepage/blog/data-leakage-browsers-copy-paste-downloads-shadow-it-2026",
+      "error": "Invalid Signature 5e4cecf54b0cb693355c656acb730449d9070c5b. String to sign - 'folder=kahana-homepage&invalidate=1&overwrite=0&public_id=blog/data-leakage-browsers-copy-paste-downloads-shadow-it-2026&timestamp=1771457732'."
+    },
+    {
+      "localPath": "public/blog/enterprise-browsers-new-perimeter-saas-2026.jpg",
+      "publicId": "kahana-homepage/blog/enterprise-browsers-new-perimeter-saas-2026",
+      "error": "Invalid Signature 484bca211713b72e17c4978b6c9197febc999763. String to sign - 'folder=kahana-homepage&invalidate=1&overwrite=0&public_id=blog/enterprise-browsers-new-perimeter-saas-2026&timestamp=1771457733'."
+    },
+    {
+      "localPath": "public/blog/privacy-vs-convenience-ai-browser-era-2026.jpg",
+      "publicId": "kahana-homepage/blog/privacy-vs-convenience-ai-browser-era-2026",
+      "error": "Invalid Signature fbad560fa37916a97be3240cdc807b8bc65bd80e. String to sign - 'folder=kahana-homepage&invalidate=1&overwrite=0&public_id=blog/privacy-vs-convenience-ai-browser-era-2026&timestamp=1771457733'."
+    },
+    {
+      "localPath": "public/blog/secure-research-workflows-vpn-private-browser-ai-2026.jpg",
+      "publicId": "kahana-homepage/blog/secure-research-workflows-vpn-private-browser-ai-2026",
+      "error": "Invalid Signature 41881468a5fcd4003ac76c5d337ebce23914ebec. String to sign - 'folder=kahana-homepage&invalidate=1&overwrite=0&public_id=blog/secure-research-workflows-vpn-private-browser-ai-2026&timestamp=1771457733'."
+    },
+    {
+      "localPath": "public/blog/stop-shipping-laptops-managed-browser-2026.jpg",
+      "publicId": "kahana-homepage/blog/stop-shipping-laptops-managed-browser-2026",
+      "error": "Invalid Signature e6bebe4341c8ca26905a1e08b2a19fdd5f90ede5. String to sign - 'folder=kahana-homepage&invalidate=1&overwrite=0&public_id=blog/stop-shipping-laptops-managed-browser-2026&timestamp=1771457734'."
+    },
+    {
+      "localPath": "public/blog/technical-reality-anonymity-dark-web-fingerprinting-2026.jpg",
+      "publicId": "kahana-homepage/blog/technical-reality-anonymity-dark-web-fingerprinting-2026",
+      "error": "Invalid Signature 11657fbf453f8cd4ff53c271b7351fc81008caa7. String to sign - 'folder=kahana-homepage&invalidate=1&overwrite=0&public_id=blog/technical-reality-anonymity-dark-web-fingerprinting-2026&timestamp=1771457734'."
+    },
+    {
+      "localPath": "public/blog/why-enterprise-browsers-needed-2026.jpg",
+      "publicId": "kahana-homepage/blog/why-enterprise-browsers-needed-2026",
+      "error": "Invalid Signature 6534ea5e5ce8e0ccf95855de9dd7189024dad994. String to sign - 'folder=kahana-homepage&invalidate=1&overwrite=0&public_id=blog/why-enterprise-browsers-needed-2026&timestamp=1771457735'."
     }
   ]
 }

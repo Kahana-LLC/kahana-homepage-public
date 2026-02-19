@@ -1,14 +1,48 @@
 # Blog Images on Cloudinary
 
+## Quick Fix for Slow Blog Images
+
+**Blog pictures loading slowly?** Migrate them to Cloudinary with:
+
+1. **Add Cloudinary credentials** to `.env.local` (from [Cloudinary Console](https://console.cloudinary.com) → Dashboard):
+
+   ```
+   NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=your_cloud_name
+   CLOUDINARY_API_KEY=your_api_key
+   CLOUDINARY_API_SECRET=your_api_secret
+   ```
+
+2. **Run the upload script:**
+
+   ```bash
+   npm run upload-all-blog-images
+   ```
+
+   This uploads:
+   - **Local images** in `public/blog/` → Cloudinary + `cloudinary-mapping.json`
+   - **External URLs** (Substack, Medium, gstatic, etc.) → Cloudinary, and updates `blog-index.js` + blog JSON files
+
+   All blog featured images will then load from Cloudinary’s global CDN.
+
+---
+
 ## Overview
 
 Blog featured images can be served from Cloudinary when a mapping exists in `cloudinary-mapping.json`, or when `featuredImage` is already a Cloudinary URL. Local paths like `/blog/image.jpg` are automatically resolved to Cloudinary URLs via `getBlogImageUrl()` in `utils/blog-image-url.js`. **All blog and page images should be on Cloudinary** for performance, reliability, and to avoid third-party host dependencies.
+
+**To get all blog pictures onto Cloudinary:** Add the three credentials above to `.env.local`, then run `npm run upload-all-blog-images`. This runs both upload scripts in order:
+1. **Local images** in `public/blog/` → uploaded to Cloudinary and added to `cloudinary-mapping.json`.
+2. **External featured images** (any blog whose `featuredImage` is an http(s) URL that is not Cloudinary) → uploaded to Cloudinary and `blog-index.js` + blog JSON files are updated with the new Cloudinary URLs.
+
+Alternatively, run the scripts separately: `npm run upload-blog-images` then `npm run upload-external-blog-images`.
+
+**To save website space:** Run `npm run upload-to-cloudinary-and-remove-local` to upload all images and delete local copies from `public/blog/`.
 
 ## Uploading Blog Images
 
 ### 1. Add Cloudinary API Credentials
 
-Add these to `.env.local` (get them from [Cloudinary Console](https://console.cloudinary.com)):
+Add these to `.env.local` (get them from [Cloudinary Console](https://console.cloudinary.com) → Dashboard):
 
 ```
 NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=your_cloud_name
@@ -16,10 +50,14 @@ CLOUDINARY_API_KEY=your_api_key
 CLOUDINARY_API_SECRET=your_api_secret
 ```
 
+All three are required for the upload script. The script does not read from `.env`; use `.env.local` only.
+
 ### 2. Local Blog Images (in `public/blog/`)
 
 ```bash
 node scripts/upload-blog-images-to-cloudinary.js
+# Or, to also delete local images after upload (saves website space):
+node scripts/upload-blog-images-to-cloudinary.js --remove-local
 ```
 
 This script:
