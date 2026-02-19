@@ -4,7 +4,10 @@
  * Uploads only images from public/blog/ and merges results into the existing
  * cloudinary-mapping.json without overwriting other asset mappings.
  *
- * Usage: node scripts/upload-blog-images-to-cloudinary.js
+ * Usage: node scripts/upload-blog-images-to-cloudinary.js [--remove-local]
+ *
+ * --remove-local  Delete local images after successful upload (saves website space;
+ *                 images are served from Cloudinary via cloudinary-mapping.json)
  *
  * Requires .env.local:
  *   NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME
@@ -23,6 +26,8 @@ const stat = promisify(fs.stat);
 const IMAGE_EXTENSIONS = ['.jpg', '.jpeg', '.png', '.webp', '.gif'];
 const BLOG_DIR = path.join(process.cwd(), 'public', 'blog');
 const MAPPING_FILE = path.join(process.cwd(), 'cloudinary-mapping.json');
+
+const REMOVE_LOCAL = process.argv.includes('--remove-local');
 
 function configureCloudinary() {
   const cloudName = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME || process.env.CLOUDINARY_CLOUD_NAME;
@@ -177,14 +182,13 @@ async function main() {
 
   console.log(`📁 Blog images: ${blogFiles.length} total, ${toUpload.length} to upload\n`);
 
-  if (toUpload.length === 0) {
-    console.log('✅ All blog images already in Cloudinary mapping.');
-    return;
-  }
-
   const uploadResults = { successful: [], skipped: [], failed: [] };
-  for (const file of toUpload) {
-    await uploadFile(file, uploadResults);
+  if (toUpload.length > 0) {
+    for (const file of toUpload) {
+      await uploadFile(file, uploadResults);
+    }
+  } else {
+    console.log('✅ All blog images already in Cloudinary mapping.');
   }
 
   const merged = mergeMappings(existing, uploadResults);
@@ -202,6 +206,27 @@ async function main() {
     console.log('\n❌ Failed:');
     uploadResults.failed.forEach((f) => console.log(`   - ${f.localPath}: ${f.error}`));
   }
+
+  if (REMOVE_LOCAL && blogFiles.length) {
+    const mappedAfter = getMappedPaths(merged);
+    let removed = 0;
+    for (const file of blogFiles) {
+      const key = file.relativePath.replace(/^public\//, '');
+      if (mappedAfter.has(key) || mappedAfter.has(file.relativePath)) {
+        try {
+          fs.unlinkSync(file.fullPath);
+          removed++;
+          console.log(`🗑️  Removed local: ${file.relativePath}`);
+        } catch (e) {
+          console.warn(`⚠️  Could not remove ${file.relativePath}: ${e.message}`);
+        }
+      }
+    }
+    if (removed) {
+      console.log(`\n💾 Removed ${removed} local image(s) to save website space.`);
+    }
+  }
+
   console.log('\n✨ Done.\n');
 }
 

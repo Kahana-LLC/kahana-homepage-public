@@ -107,9 +107,34 @@ function useScrollSpy(sectionIds) {
   return activeId;
 }
 
+// Same dropdown links as NavbarDup (products/free-agentic-browser and main site)
+const STICKY_NAV_PRODUCTS = [
+  { label: 'Oasis Agentic Browser', href: '/products/free-agentic-browser' },
+  { label: 'Oasis Enterprise Browser', href: '/products/enterprise-browser' },
+  { label: 'Web Application', href: '/products/web-application' },
+];
+const STICKY_NAV_PRICING = [
+  { label: 'Oasis Pricing', href: '/oasis-pricing' },
+  { label: 'Hubs Pricing', href: '/pricing' },
+];
+const STICKY_NAV_LEARN = [
+  { label: 'Blog', href: '/blog' },
+  { label: 'Docs', href: '/docs' },
+  { label: 'White Paper', href: '/white-paper-future-of-ergonomic-work' },
+  { label: 'Newsletter', href: '/subscribe-to-insights' },
+  { label: 'Join Discord', href: '/community' },
+  { label: 'Enterprise Browser Buyer Guide', href: '/enterprise-buyer-guide' },
+];
+const STICKY_NAV_ABOUT = [
+  { label: 'About', href: '/about' },
+  { label: 'Contact Us', href: '/contact' },
+  { label: 'Support', href: '/support' },
+];
+
 function StickyHeader({ anchors }) {
   const [open, setOpen] = useState(false);
   const [hidden, setHidden] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(null);
   const lastY = useRef(0);
   useEffect(() => {
     const onScroll = () => {
@@ -128,6 +153,58 @@ function StickyHeader({ anchors }) {
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (e.target && !e.target.closest('.sticky-nav-dropdown')) setOpenDropdown(null);
+    };
+    if (openDropdown) {
+      document.addEventListener('mousedown', handleClickOutside);
+      return () => document.removeEventListener('mousedown', handleClickOutside);
+    }
+  }, [openDropdown]);
+
+  /* Section headers like "OUR PRODUCTS" - dark gray, bold, small, uppercase, letter-spacing */
+  const sectionHeaderStyle = {
+    color: '#374151',
+    fontWeight: 700,
+    fontSize: '0.6875rem',
+    textTransform: 'uppercase',
+    letterSpacing: '0.05em',
+    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+  };
+  /* Dropdown/list links - olive #617500 (match nav image on all pages), 1rem, 500, -0.01em */
+  const navColor = '#617500';
+  const linkStyle = {
+    color: navColor,
+    textDecoration: 'none',
+    fontWeight: 500,
+    fontSize: '1rem',
+    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+    letterSpacing: '-0.01em',
+  };
+  const dropdownSection = (id, buttonLabel, headerLabel, items) => (
+    <div key={id} className="sticky-nav-dropdown" style={{ position: 'relative', display: 'inline-block', marginLeft: 16 }}>
+      <button
+        type="button"
+        onClick={() => setOpenDropdown(openDropdown === id ? null : id)}
+        style={{ ...linkStyle, background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
+        aria-expanded={openDropdown === id}
+      >
+        {buttonLabel}
+      </button>
+      {openDropdown === id && (
+        <div style={{ position: 'absolute', top: '100%', left: 0, marginTop: 4, minWidth: 220, background: '#f3f4f6', border: '1px solid #e5e7eb', borderRadius: 8, boxShadow: '0 4px 12px rgba(0,0,0,0.1)', padding: '20px 20px 16px', zIndex: 50 }}>
+          <div style={{ ...sectionHeaderStyle, marginBottom: 16 }}>{headerLabel}</div>
+          {items.map((item) => (
+            <Link key={item.href} href={item.href}>
+              <a className="dropdown-link" onClick={() => setOpenDropdown(null)} style={{ ...linkStyle, display: 'block', padding: '8px 0' }}>{item.label}</a>
+            </Link>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+
   return (
     <header style={{ position: 'sticky', top: 0, zIndex: 30, background: COLORS.bgCard, borderBottom: '1px solid #e5e7eb', transform: hidden ? 'translateY(-100%)' : 'translateY(0)', transition: 'transform 220ms ease' }}>
       <div style={{ maxWidth: MAX_WIDTH, margin: '0 auto', padding: '12px 16px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
@@ -137,8 +214,11 @@ function StickyHeader({ anchors }) {
             <span style={{ color: COLORS.primary, fontWeight: 700 }}>Kahana</span>
           </a>
         </Link>
-        <nav className="hide-on-mobile" role="navigation" aria-label="Primary" style={{ display: 'none' }}>
-          {/* populated by CSS at larger widths */}
+        <nav className="hide-on-mobile sticky-nav-desktop" role="navigation" aria-label="Primary" style={{ display: 'none' }}>
+          {dropdownSection('products', 'Products', 'OUR PRODUCTS', STICKY_NAV_PRODUCTS)}
+          {dropdownSection('pricing', 'Pricing', 'PRODUCT PRICING', STICKY_NAV_PRICING)}
+          {dropdownSection('learn', 'Learn', 'LEARN', STICKY_NAV_LEARN)}
+          {dropdownSection('about', 'About', 'ABOUT', STICKY_NAV_ABOUT)}
         </nav>
         <button onClick={() => setOpen(v => !v)} aria-label="Toggle Menu" className="mobile-menu-btn" style={{ appearance: 'none', background: 'transparent', border: 'none', cursor: 'pointer' }}>
           <span style={{ width: 24, height: 2, background: COLORS.primary, display: 'block', marginBottom: 5 }} />
@@ -147,33 +227,70 @@ function StickyHeader({ anchors }) {
         </button>
       </div>
       {open && (
-        <div className="mobile-menu" style={{ borderTop: '1px solid #e5e7eb', background: COLORS.bgCard }}>
-          <div style={{ maxWidth: MAX_WIDTH, margin: '0 auto', padding: '8px 16px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
-            {anchors.map(a => (
-              <a key={a.href} href={a.href} onClick={() => setOpen(false)} style={{ color: '#617500', textDecoration: 'none', padding: '8px 6px', borderRadius: 6, display: 'block' }}>
-                {a.label}
-              </a>
+        <div className="mobile-menu" style={{ borderTop: '1px solid #e5e7eb', background: '#f9fafb' }}>
+          <div style={{ maxWidth: MAX_WIDTH, margin: '0 auto', padding: '16px 16px' }}>
+            <div style={{ ...sectionHeaderStyle, marginBottom: 12 }}>OUR PRODUCTS</div>
+            {STICKY_NAV_PRODUCTS.map((item) => (
+              <Link key={item.href} href={item.href}><a className="dropdown-link" onClick={() => setOpen(false)} style={{ ...linkStyle, display: 'block', padding: '8px 0' }}>{item.label}</a></Link>
             ))}
+            <div style={{ ...sectionHeaderStyle, marginTop: 16, marginBottom: 12 }}>PRODUCT PRICING</div>
+            {STICKY_NAV_PRICING.map((item) => (
+              <Link key={item.href} href={item.href}><a className="dropdown-link" onClick={() => setOpen(false)} style={{ ...linkStyle, display: 'block', padding: '8px 0' }}>{item.label}</a></Link>
+            ))}
+            <div style={{ ...sectionHeaderStyle, marginTop: 16, marginBottom: 12 }}>LEARN</div>
+            {STICKY_NAV_LEARN.map((item) => (
+              <Link key={item.href} href={item.href}><a className="dropdown-link" onClick={() => setOpen(false)} style={{ ...linkStyle, display: 'block', padding: '8px 0' }}>{item.label}</a></Link>
+            ))}
+            <div style={{ ...sectionHeaderStyle, marginTop: 16, marginBottom: 12 }}>ABOUT</div>
+            {STICKY_NAV_ABOUT.map((item) => (
+              <Link key={item.href} href={item.href}><a className="dropdown-link" onClick={() => setOpen(false)} style={{ ...linkStyle, display: 'block', padding: '8px 0' }}>{item.label}</a></Link>
+            ))}
+            <div style={{ marginTop: 20, paddingTop: 16, borderTop: '1px solid #e5e7eb' }}>
+              <div style={{ ...sectionHeaderStyle, marginBottom: 8 }}>PAGE SECTIONS</div>
+              {anchors.map(a => (
+                <a key={a.href} href={a.href} onClick={() => setOpen(false)} className="dropdown-link" style={{ ...linkStyle, display: 'block', padding: '8px 0' }}>{a.label}</a>
+              ))}
+            </div>
           </div>
         </div>
       )}
       <style jsx>{`
         @media (min-width: 1024px) {
-          .hide-on-mobile { display: block; }
+          .hide-on-mobile { display: flex !important; align-items: center; }
           .mobile-menu-btn { display: none; }
+          .sticky-nav-desktop { display: flex !important; }
         }
       `}</style>
       <style jsx>{`
         @media (min-width: 1024px) {
-          header nav { display: block; }
-          header nav a { color: #617500 !important; text-decoration: none !important; margin-left: 16px; font-size: 14px; }
-          header nav a:hover, header nav a:focus { color: #4A5F00 !important; text-decoration: none !important; outline: 2px solid transparent; outline-offset: 2px; }
+          header nav.sticky-nav-desktop a,
+          header nav.sticky-nav-desktop button,
+          header nav.sticky-nav-desktop a:hover,
+          header nav.sticky-nav-desktop button:hover { color: #617500 !important; font-weight: 500 !important; }
+        }
+      `}</style>
+      <style jsx global>{`
+        /* StickyHeader dropdown links - olive #617500, no white blink on hover/click */
+        header .dropdown-link,
+        header a.dropdown-link,
+        header .dropdown-link:hover,
+        header a.dropdown-link:hover,
+        header .dropdown-link:visited,
+        header .dropdown-link:focus,
+        header .dropdown-link:active {
+          color: #617500 !important;
+          -webkit-tap-highlight-color: transparent !important;
+        }
+        header .dropdown-link:hover,
+        header .dropdown-link:active,
+        header .dropdown-link:focus {
+          background-color: rgba(97, 117, 0, 0.06) !important;
         }
       `}</style>
       <div className="desktop-nav" style={{ display: 'none' }} role="navigation" aria-label="Section anchors">
         <div style={{ maxWidth: MAX_WIDTH, margin: '0 auto', padding: '0 16px 12px 16px', display: 'flex', justifyContent: 'flex-end', gap: 16 }}>
           {anchors.map(a => (
-            <a key={a.href} href={a.href} style={{ color: '#617500', textDecoration: 'none', fontSize: 14 }}>
+            <a key={a.href} href={a.href} style={{ ...linkStyle }}>
               {a.label}
             </a>
           ))}
@@ -1686,7 +1803,7 @@ export default function EnterpriseBuyerGuidePage() {
 
         <BackToTop />
         
-        {/* Floating Table of Contents Button */}
+        {/* Floating Table of Contents - Mobile menu style (matches nav dropdown) */}
         {showTocButton && (
           <div className="fixed right-6 bottom-24 z-50">
             <button
@@ -1698,14 +1815,15 @@ export default function EnterpriseBuyerGuidePage() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             </button>
-            
+
             {isTocOpen && (
-              <div className="absolute right-0 bottom-full mb-4 w-64 bg-white rounded-lg shadow-2xl border border-gray-200 p-4 max-h-[60vh] overflow-y-auto">
+              <div className="absolute right-0 bottom-full mb-4 w-72 sm:w-80 bg-white rounded-xl shadow-2xl border border-gray-200 p-5 max-h-[70vh] overflow-y-auto">
                 <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-lg font-bold" style={{ color: '#313A00' }}>Table of Contents</h3>
+                  <h3 className="text-lg font-bold" style={{ color: '#313A00' }}>Contents</h3>
                   <button
                     onClick={() => setIsTocOpen(false)}
-                    className="text-gray-500 hover:text-gray-700"
+                    className="rounded-full p-2 hover:bg-gray-100 transition-colors"
+                    style={{ color: '#617500' }}
                     aria-label="Close"
                   >
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1713,19 +1831,72 @@ export default function EnterpriseBuyerGuidePage() {
                     </svg>
                   </button>
                 </div>
-                <nav className="space-y-2">
+
+                {/* CTA buttons - match mobile menu */}
+                <div className="flex flex-col gap-2 mb-4">
+                  <Link href="/schedule-demo" className="btn-primary w-full text-center py-2.5 px-6 no-underline hover:no-underline focus:no-underline rounded-[27.5px]" style={{ color: '#FFFFFF' }} onClick={() => setIsTocOpen(false)}>
+                    Schedule Demo
+                  </Link>
+                  <Link href="/oasis-pricing" className="btn-secondary w-full text-center py-2.5 px-6 no-underline hover:no-underline focus:no-underline rounded-[27.5px]" onClick={() => setIsTocOpen(false)}>
+                    Get Access
+                  </Link>
+                </div>
+
+                {/* Product links */}
+                <Link href="/products/free-agentic-browser" className="block py-2.5 text-[#617500] font-medium no-underline hover:no-underline" style={{ fontSize: '1rem' }} onClick={() => setIsTocOpen(false)}>Free Agentic Browser</Link>
+                <Link href="/products/enterprise-browser" className="block py-2.5 text-[#617500] font-medium no-underline hover:no-underline" style={{ fontSize: '1rem' }} onClick={() => setIsTocOpen(false)}>Enterprise Browser</Link>
+                <Link href="/products/web-application" className="block py-2.5 text-[#617500] font-medium no-underline hover:no-underline" style={{ fontSize: '1rem' }} onClick={() => setIsTocOpen(false)}>Web Application</Link>
+
+                {/* Pricing */}
+                <Link href="/oasis-pricing" className="block py-2.5 text-[#617500] font-medium no-underline hover:no-underline" style={{ fontSize: '1rem' }} onClick={() => setIsTocOpen(false)}>Oasis Pricing</Link>
+                <Link href="/pricing" className="block py-2.5 text-[#617500] font-medium no-underline hover:no-underline" style={{ fontSize: '1rem' }} onClick={() => setIsTocOpen(false)}>Hubs Pricing</Link>
+
+                {/* Learn */}
+                <Link href="/blog" className="block py-2.5 text-[#617500] font-medium no-underline hover:no-underline" style={{ fontSize: '1rem' }} onClick={() => setIsTocOpen(false)}>Blog</Link>
+                <Link href="/docs" className="block py-2.5 text-[#617500] font-medium no-underline hover:no-underline" style={{ fontSize: '1rem' }} onClick={() => setIsTocOpen(false)}>Docs</Link>
+                <Link href="/white-paper-future-of-ergonomic-work" className="block py-2.5 text-[#617500] font-medium no-underline hover:no-underline" style={{ fontSize: '1rem' }} onClick={() => setIsTocOpen(false)}>White Paper</Link>
+                <Link href="/subscribe-to-insights" className="block py-2.5 text-[#617500] font-medium no-underline hover:no-underline" style={{ fontSize: '1rem' }} onClick={() => setIsTocOpen(false)}>Newsletter</Link>
+                <Link href="/community" className="block py-2.5 text-[#617500] font-medium no-underline hover:no-underline" style={{ fontSize: '1rem' }} onClick={() => setIsTocOpen(false)}>Join Discord</Link>
+
+                {/* Enterprise Browser Buyer Guide - highlighted card */}
+                <Link href="/enterprise-buyer-guide" className="flex items-start gap-3 p-3 mt-2 mb-2 rounded-lg border border-[#66C2BE]/20 bg-gradient-to-r from-[#66C2BE]/5 to-[#8CB7D0]/5 hover:from-[#66C2BE]/10 hover:to-[#8CB7D0]/10 hover:border-[#66C2BE]/30 transition-all no-underline" onClick={() => setIsTocOpen(false)}>
+                  <div className="flex-shrink-0 w-12 h-12 rounded-lg overflow-hidden">
+                    <img
+                      src={getCloudinaryImageUrl("/assets/pexels-kamo11235-667838.jpg", { width: 48, height: 48, quality: 'auto:good' })}
+                      alt="Enterprise Browser Buyer Guide"
+                      className="w-full h-full object-cover"
+                      width={48}
+                      height={48}
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="font-medium text-gray-900 no-underline">Enterprise Browser Buyer Guide</div>
+                    <div className="text-xs mt-1" style={{ color: '#4A5745' }}>Comprehensive guide for enterprise decision makers</div>
+                  </div>
+                </Link>
+
+                {/* On this page - section links */}
+                <div className="pt-2 mt-2 border-t border-gray-200">
+                  <div className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: '#374151' }}>On this page</div>
                   {structure.map((item) => (
                     <a
                       key={item.id}
                       href={`#${item.id}`}
                       onClick={() => setIsTocOpen(false)}
-                      className="block py-2 px-3 rounded-md hover:bg-[#F8FAF2] transition-colors duration-200 text-sm font-medium no-underline"
-                      style={{ color: '#4A5745', textDecoration: 'none' }}
+                      className="block py-1.5 text-[#617500] font-medium no-underline hover:no-underline text-sm"
                     >
                       {item.label}
                     </a>
                   ))}
-                </nav>
+                </div>
+
+                {/* About */}
+                <div className="pt-2 mt-2 border-t border-gray-200">
+                  <Link href="/about" className="block py-2.5 text-[#617500] font-medium no-underline hover:no-underline" style={{ fontSize: '1rem' }} onClick={() => setIsTocOpen(false)}>About Kahana</Link>
+                  <Link href="/support" className="block py-2.5 text-[#617500] font-medium no-underline hover:no-underline" style={{ fontSize: '1rem' }} onClick={() => setIsTocOpen(false)}>Support</Link>
+                  <Link href="/careers" className="block py-2.5 text-[#617500] font-medium no-underline hover:no-underline" style={{ fontSize: '1rem' }} onClick={() => setIsTocOpen(false)}>Careers</Link>
+                </div>
               </div>
             )}
           </div>
@@ -1812,13 +1983,13 @@ export default function EnterpriseBuyerGuidePage() {
           color: ${COLORS.primary} !important;
         }
         
-        /* Override global link styles for enterprise buyer guide */
-        a:not(.nav-button):not(.contact-sales-btn):not(.pricing-button):not(.btn-primary):not(.btn-secondary) {
+        /* Override global link styles for enterprise buyer guide - exclude nav dropdown/mobile links and banner-discord-link (keep #617500) */
+        a:not(.nav-button):not(.contact-sales-btn):not(.pricing-button):not(.btn-primary):not(.btn-secondary):not(.dropdown-link):not(.mobile-link):not(.banner-discord-link) {
           color: ${COLORS.primary} !important;
           text-decoration: none !important;
           transition: color 0.3s ease;
         }
-        a:not(.nav-button):not(.contact-sales-btn):not(.pricing-button):not(.btn-primary):not(.btn-secondary):hover {
+        a:not(.nav-button):not(.contact-sales-btn):not(.pricing-button):not(.btn-primary):not(.btn-secondary):not(.dropdown-link):not(.mobile-link):not(.banner-discord-link):hover {
           color: ${COLORS.accent} !important;
           text-decoration: none !important;
         }
@@ -1826,6 +1997,22 @@ export default function EnterpriseBuyerGuidePage() {
         a:focus, button:focus, select:focus { 
           outline: 2px solid ${COLORS.accent}; 
           outline-offset: 2px; 
+        }
+        
+        /* Remove border/outline from links on hover and focus */
+        [data-page="buyer-guide"] a:hover,
+        [data-page="buyer-guide"] a:focus {
+          outline: none !important;
+          box-shadow: none !important;
+          border: none !important;
+        }
+        
+        /* Remove border/outline on nav logo hover and focus */
+        .buyer-guide-layout .nav-content > a:first-child:hover,
+        .buyer-guide-layout .nav-content > a:first-child:focus {
+          outline: none !important;
+          box-shadow: none !important;
+          border: none !important;
         }
         
         /* Accordion styling - Google Gemini style */

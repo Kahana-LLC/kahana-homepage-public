@@ -107,8 +107,11 @@ async function main() {
 
   const { cloudName, apiKey, apiSecret } = configureCloudinary();
   if (!dryRun && (!cloudName || !apiKey || !apiSecret)) {
-    console.error('❌ Cloudinary credentials not found. Add to .env.local:');
-    console.error('   NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME, CLOUDINARY_API_KEY, CLOUDINARY_API_SECRET');
+    console.error('❌ Cloudinary credentials not found. Add to .env.local (from Cloudinary Console → Dashboard):');
+    if (!cloudName) console.error('   NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=your_cloud_name');
+    if (!apiKey) console.error('   CLOUDINARY_API_KEY=your_api_key');
+    if (!apiSecret) console.error('   CLOUDINARY_API_SECRET=your_api_secret');
+    console.error('\nThen run: node scripts/upload-external-blog-images-to-cloudinary.js');
     process.exit(1);
   }
 

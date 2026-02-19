@@ -424,7 +424,7 @@ function AppContent({ Component, pageProps }) {
           type={router.pathname === "/" ? "website" : "article"}
           skipCanonical
         />
-        <div style={{ zIndex: "100" }} className={`sticky top-0${isBuyerGuide ? ' buyer-guide-layout' : ''}`}>
+        <div style={{ zIndex: "100" }} className={`sticky top-0 site-nav-wrapper${isBuyerGuide ? ' buyer-guide-layout' : ''}`}>
           <NavbarDup />
           <GlobalBanner />
         </div>

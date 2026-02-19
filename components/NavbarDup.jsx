@@ -37,7 +37,7 @@ function NavBar() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Close dropdown when clicking outside
+  // Close dropdown when clicking outside (use 'click' not 'mousedown' so link clicks register first)
   useEffect(() => {
     const handleClickOutside = (event) => {
       const target = event.target;
@@ -47,8 +47,8 @@ function NavBar() {
     };
 
     if (openDropdown) {
-      document.addEventListener('mousedown', handleClickOutside);
-      return () => document.removeEventListener('mousedown', handleClickOutside);
+      document.addEventListener('click', handleClickOutside);
+      return () => document.removeEventListener('click', handleClickOutside);
     }
   }, [openDropdown]);
 
@@ -79,24 +79,30 @@ function NavBar() {
           }
 
           .mobile-link {
-            color: #333;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            color: #617500 !important;
+            box-sizing: content-box !important;
+            transition: background-color 0.2s ease;
             padding: 1.25rem 1.5rem;
             border-radius: 0.5rem;
             width: 100%;
             text-align: left;
-            background-color: #f7f7f7;
+            background-color: #f8f9fa;
             font-size: 1.2rem;
-            font-weight: 500;
+            font-weight: 500 !important;
             margin-bottom: 0.5rem;
+            -webkit-tap-highlight-color: transparent;
+            tap-highlight-color: transparent;
           }
 
           .mobile-link:nth-child(even) {
-            background-color: #e1e1e1;
+            background-color: #f0f2f1;
           }
 
-          .mobile-link:hover {
-            background-color:rgb(82, 85, 84);
+          .mobile-link:hover,
+          .mobile-link:active,
+          .mobile-link:focus {
+            background-color: #D0EDE6;
+            color: #617500 !important;
           }
 
           .nav-content {
@@ -219,7 +225,7 @@ function NavBar() {
             display: inline-flex;
             align-items: center;
             gap:2rem;
-            color: #617500 !important;
+            color: var(--nav-link-color, #617500) !important;
             font-size: 1rem;
             font-weight: 500 !important;
             text-decoration: none !important;
@@ -269,7 +275,7 @@ function NavBar() {
             visibility: hidden;
             opacity: 0;
             position: absolute;
-            top: calc(100% - 0.5rem);
+            top: 100%;
             left: 50%;
             transform: translateX(-50%) translateY(-10px);
             background-color: white;
@@ -277,10 +283,21 @@ function NavBar() {
             box-shadow: 0 2px 15px rgba(0, 0, 0, 0.06);
             border-radius: 12px;
             padding: 24px 20px;
+            margin-top: -4px;
             transition: all 0.15s ease;
             display: grid;
             gap: 40px;
             pointer-events: none;
+          }
+
+          /* Invisible bridge so hover stays active when moving from trigger to menu */
+          .dropdown-content::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: 0;
+            right: 0;
+            height: 24px;
           }
 
           .dropdown:hover .dropdown-content,
@@ -305,7 +322,7 @@ function NavBar() {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            color: #617500 !important;
+            color: var(--nav-link-color, #617500) !important;
             transition: transform 0.2s ease, color 0.2s ease;
             outline: none;
             pointer-events: auto;
@@ -349,19 +366,19 @@ function NavBar() {
 
           .dropdown-link {
             display: block;
-            color: #617500 !important;
+            color: var(--nav-link-color, #617500) !important;
             text-decoration: none !important;
             font-weight: 500 !important;
-            font-size: 0.9375rem;
+            font-size: 1rem;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            letter-spacing: -0.01em;
             line-height: 1.5;
-            letter-spacing: 0.01em;
             padding: 8px 12px;
             margin: 0 -12px;
             border-radius: 8px;
-            font-family: "Roboto", sans-serif;
             -webkit-tap-highlight-color: transparent;
             tap-highlight-color: transparent;
-            background-color: rgba(248, 250, 252, 0.4);
+            background-color: transparent;
             transition: none;
             outline: none;
           }
@@ -370,8 +387,8 @@ function NavBar() {
           .dropdown-link:active,
           .dropdown-link:visited,
           .dropdown-link:focus {
-            color: #617500 !important;
-            background-color: rgba(248, 250, 252, 0.9);
+            color: var(--nav-link-color, #617500) !important;
+            background-color: rgba(97, 117, 0, 0.06);
             text-decoration: none !important;
             font-weight: 500 !important;
             outline: none;
@@ -566,18 +583,21 @@ function NavBar() {
 
           .mobile-link {
             color: #617500 !important;
-            transition: all 0.3s ease;
+            box-sizing: content-box !important;
+            transition: background-color 0.2s ease;
             padding: 1rem 1.25rem;
             border-radius: 0.75rem;
             width: 100%;
             text-align: left;
             background-color: #f8f9fa;
             font-size: 1.125rem;
-            font-weight: 600 !important;
+            font-weight: 500 !important;
             display: flex;
             align-items: center;
             border: 1px solid #edf0f2;
             text-decoration: none !important;
+            -webkit-tap-highlight-color: transparent;
+            tap-highlight-color: transparent;
           }
 
           .mobile-link:hover {
@@ -586,27 +606,27 @@ function NavBar() {
             transform: translateX(4px);
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
             text-decoration: none !important;
-            font-weight: 600 !important;
+            font-weight: 500 !important;
+          }
+
+          .mobile-link:active,
+          .mobile-link:focus {
+            background-color: #D0EDE6;
+            color: #617500 !important;
+            text-decoration: none !important;
+            font-weight: 500 !important;
+            -webkit-tap-highlight-color: transparent;
           }
 
           .mobile-link:active {
             transform: translateX(2px);
             background-color: #bfe5dd;
-            text-decoration: none !important;
-            color: #617500 !important;
-            font-weight: 600 !important;
           }
 
           .mobile-link:visited {
             text-decoration: none !important;
             color: #617500 !important;
-            font-weight: 600 !important;
-          }
-
-          .mobile-link:focus {
-            color: #617500 !important;
-            font-weight: 600 !important;
-            text-decoration: none !important;
+            font-weight: 500 !important;
           }
 
           /* Ensure mobile links with navbar color don't have underlines */
@@ -649,6 +669,17 @@ function NavBar() {
             bottom: 0;
             z-index: 1;
           }
+
+          /* Remove focus outline/border when clicking navbar buttons */
+          .btn-primary:focus,
+          .btn-secondary:focus,
+          button:focus,
+          .nav-link:focus,
+          .dropdown-link:focus,
+          .mobile-link:focus {
+            outline: none !important;
+            box-shadow: none !important;
+          }
         `}</style>
         <div className="nav-content">
           <Link href="/" className="flex items-center" passHref legacyBehavior>
@@ -658,7 +689,7 @@ function NavBar() {
                   src={whiteKahanaLogo}
                   alt="Kahana Logo"
                   fill
-                  style={{ objectFit: 'contain', objectPosition: 'left center', margin: 0, padding: 0, width: '100%', height: '100%' }}
+                  style={{ objectFit: 'contain', objectPosition: 'left center', margin: 0, padding: 0, width: '100%', height: '100%', boxSizing: 'content-box' }}
                   priority
                 />
               </span>
@@ -847,6 +878,7 @@ function NavBar() {
               onClick={toggleMobileMenu}
               className="btn-secondary lg:hidden inline-flex items-center justify-center px-3 py-2"
               aria-label="Mobile Menu"
+              style={{ boxSizing: 'content-box' }}
             >
               {isMobileMenuOpen ? (
                 <svg
