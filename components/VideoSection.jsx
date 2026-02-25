@@ -31,7 +31,7 @@ export default function VideoSection() {
             <div className="w-full h-56 sm:h-72 md:h-96 lg:h-[28rem] rounded-2xl overflow-hidden shadow-2xl flex items-center justify-center bg-black">
               <iframe
                 className="w-full h-full min-h-[14rem]"
-                src="https://www.youtube.com/embed/BF2ZZ7x3i8g?si=NFz-aQqXVItuSrkz"
+                src="https://www.youtube.com/embed/e4D1-cmBqCo"
                 title="Oasis product demo video"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
