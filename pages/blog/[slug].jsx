@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import { getRandomPhoto, getOptimizedPhotoUrl, getPlaceholderImageUrl } from '../../utils/pexels';
 import { suggestNatureImageQuery } from '../../utils/blog-helpers';
 import { blogIndex } from '../../data/blog-index';
@@ -12,7 +13,7 @@ import MaterialComparisonTable from '../../components/MaterialComparisonTable';
 import BlogCard from '../../components/BlogCard';
 import { FaLinkedin, FaRegCalendarAlt, FaBookOpen, FaRegClock } from 'react-icons/fa';
 import SocialShare from '../../components/SocialShare';
-import { trackBlogEngagement, trackCategoryClick, trackRelatedBlogClick, trackOasisRelevance } from '../../utils/userIntentTracking';
+import { trackBlogPageViewDirect } from '../../utils/directMixpanel';
 import { getBlogPostSeo, getBlogKeywords } from '../../utils/blogSeo';
 import { getBlogImageUrl } from '../../utils/blog-image-url';
 const { getAuthorDetails } = require('../../utils/authorUtils');
@@ -89,59 +90,26 @@ const DEFAULT_AVATAR = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/
 const DEFAULT_COVER = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%233C584A"%3E%3Cpath d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-1.96-2.36L6.5 17h11l-3.54-4.71z"%2F%3E%3C%2Fsvg%3E';
 
 export default function BlogPost({ post }) {
+  const router = useRouter();
   const [isClient, setIsClient] = useState(false);
   const [coverImage, setCoverImage] = useState(null);
   const [isLoadingImage, setIsLoadingImage] = useState(true);
+
+  // Simplified: Direct Mixpanel tracking only (no GTM/dataLayer). Client-side only. Safe guard if no params/slug.
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const slug = router?.query?.slug ?? post?.slug;
+    if (!slug) return;
+    trackBlogPageViewDirect({
+      post_slug: slug,
+      post_title: document.title,
+      ...(post?.category && { blog_category: post.category }),
+    });
+  }, [router?.query?.slug, post?.slug, post?.category]);
   
   useEffect(() => {
     setIsClient(true);
-    
-    // Track blog view and user segment
-    if (post?.slug && post?.category) {
-      trackBlogEngagement(post.slug, post.category, 'view');
-      
-      // Track user segment based on category
-      if (typeof window !== 'undefined') {
-        const { trackUserSegment } = require('../../utils/userIntentTracking');
-        trackUserSegment('interest', post.category, `/blog/${post.slug}`);
-      }
-    }
-    
-    // Track scroll depth for engagement
-    let maxScroll = 0;
-    const handleScroll = () => {
-      const scrollPercent = Math.round(
-        (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100
-      );
-      
-      if (scrollPercent > maxScroll) {
-        maxScroll = scrollPercent;
-        if (maxScroll >= 50 && maxScroll < 100) {
-          trackBlogEngagement(post?.slug, post?.category, 'scroll_50');
-        } else if (maxScroll >= 100) {
-          trackBlogEngagement(post?.slug, post?.category, 'scroll_100');
-        }
-      }
-    };
-    
-    // Track time on page
-    const startTime = Date.now();
-    const timeInterval = setInterval(() => {
-      const timeInSeconds = Math.round((Date.now() - startTime) / 1000);
-      if (timeInSeconds === 30) {
-        trackBlogEngagement(post?.slug, post?.category, 'time_30s', 30);
-      } else if (timeInSeconds === 120) {
-        trackBlogEngagement(post?.slug, post?.category, 'time_2min', 120);
-      }
-    }, 1000);
-    
-    window.addEventListener('scroll', handleScroll);
-    
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      clearInterval(timeInterval);
-    };
-  }, [post]);
+  }, []);
 
   // Fetch image on-demand when component mounts
   useEffect(() => {
@@ -329,7 +297,6 @@ export default function BlogPost({ post }) {
               {postCategory && (
                 <Link 
                   href={`/blog?category=${encodeURIComponent(postCategory)}`}
-                  onClick={() => trackCategoryClick(postCategory, post.slug)}
                   className="inline-flex items-center px-3 py-1.5 text-[#4A5745] text-sm hover:text-[#617500] transition-colors rounded-md hover:bg-[#F3F8E4]"
                 >
                   <FaBookOpen className="w-4 h-4 mr-2" />
@@ -378,15 +345,6 @@ export default function BlogPost({ post }) {
 
           <div 
             className="prose prose-lg max-w-none"
-            onMouseEnter={() => {
-              // Track when users engage with content - helps understand relevance
-              if (post.content && post.content.includes('Oasis')) {
-                trackOasisRelevance('content_engagement', 'blog_post', {
-                  blog_slug: post.slug,
-                  category: postCategory,
-                });
-              }
-            }}
           >
             {post.content ? (
               Array.isArray(post.content) ? (
@@ -413,15 +371,7 @@ export default function BlogPost({ post }) {
                     case 'component':
                       if (block.name === 'BlogBrowserComparison') {
                         return (
-                          <div 
-                            key={index}
-                            onMouseEnter={() => {
-                              trackOasisRelevance('comparison_table', 'blog_post', {
-                                blog_slug: post.slug,
-                                category: postCategory,
-                              });
-                            }}
-                          >
+                          <div key={index}>
                             <BlogBrowserComparison
                               {...block.props}
                             />
@@ -488,10 +438,7 @@ export default function BlogPost({ post }) {
               </p>
               <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mt-8">
                 {relatedBlogs.map((relatedPost) => (
-                  <div 
-                    key={relatedPost.slug}
-                    onClick={() => trackRelatedBlogClick(post.slug, relatedPost.slug, postCategory)}
-                  >
+                  <div key={relatedPost.slug}>
                     <BlogCard 
                       post={{ ...relatedPost, authors: getAuthorDetails(relatedPost.authors) }} 
                     />

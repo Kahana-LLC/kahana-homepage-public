@@ -77,95 +77,93 @@ export default function BlogCard({ post }) {
 
   return (
     <article className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-200 overflow-hidden flex flex-col h-full">
-      <Link 
-        href={`/blog/${post.slug}`} 
-        className="flex flex-col h-full blog-card-link"
-        onClick={() => {
-          // Track blog card click for engagement analysis
-          trackBlogEngagement(post.slug, post.category, 'card_click');
-        }}
-      >
-        <span className="flex flex-col h-full block">
-        {/* Image */}
-        <span className="relative h-52 md:h-56 lg:h-48 w-full block">
-          {isLoadingImage ? (
-            <span className="w-full h-full bg-gray-100 flex items-center justify-center block" style={{ minHeight: '13rem' }}>
-              <span className="text-[#4A5745]">Loading...</span>
-            </span>
-          ) : (
-            <Image
-              src={imageError || !imageUrl || imageUrl.trim() === '' ? DEFAULT_PLACEHOLDER : imageUrl}
-              alt={post.title ?? 'Blog post'}
-              fill
-              className="object-cover"
-              unoptimized={imageUrl?.startsWith('data:') === true}
-              onError={() => setImageError(true)}
-            />
-          )}
-        </span>
+      <div className="flex flex-col h-full">
+        <Link
+          href={`/blog/${post.slug}`}
+          className="flex flex-col flex-grow blog-card-link"
+          onClick={() => {
+            trackBlogEngagement(post.slug, post.category, 'card_click');
+          }}
+        >
+          {/* Image */}
+          <div className="relative h-52 md:h-56 lg:h-48 w-full block">
+            {isLoadingImage ? (
+              <div className="w-full h-full bg-gray-100 flex items-center justify-center block" style={{ minHeight: '13rem' }}>
+                <span className="text-[#4A5745]">Loading...</span>
+              </div>
+            ) : (
+              <Image
+                src={imageError || !imageUrl || imageUrl.trim() === '' ? DEFAULT_PLACEHOLDER : imageUrl}
+                alt={post.title ?? 'Blog post'}
+                fill
+                className="object-cover"
+                unoptimized={imageUrl?.startsWith('data:') === true}
+                onError={() => setImageError(true)}
+              />
+            )}
+          </div>
 
-        <span className="flex flex-col flex-grow px-6 pt-6 pb-4 gap-4 block">
-          {/* Title */}
-          <h3 className="text-xl font-semibold text-gray-900 hover:text-kahana-accent-sunset transition-colors line-clamp-2 mb-2">
-            {post.title}
-          </h3>
+          <div className="flex flex-col flex-grow px-6 pt-6 pb-4 gap-4">
+            {/* Title */}
+            <h3 className="text-xl font-semibold text-gray-900 hover:text-kahana-accent-sunset transition-colors line-clamp-2 mb-2">
+              {post.title}
+            </h3>
 
-          {/* Authors */}
-          <div className="flex items-center space-x-4 mb-1">
-            <div className="flex -space-x-2">
-              {postAuthors.map((author) => (
-                <div key={author.name} className="relative">
-                  <Image
-                    src={author.avatar}
-                    alt={author.name}
-                    width={32}
-                    height={32}
-                    className="rounded-full border-2 border-white"
-                  />
-                </div>
-              ))}
+            {/* Authors */}
+            <div className="flex items-center space-x-4 mb-1">
+              <div className="flex -space-x-2">
+                {postAuthors.map((author) => (
+                  <div key={author.name} className="relative">
+                    <Image
+                      src={author.avatar}
+                      alt={author.name}
+                      width={32}
+                      height={32}
+                      className="rounded-full border-2 border-white"
+                    />
+                  </div>
+                ))}
+              </div>
+              <div className="text-sm text-gray-600">
+                {postAuthors.map(author => author.name).join(', ')}
+              </div>
             </div>
-            <div className="text-sm text-gray-600">
-              {postAuthors.map(author => author.name).join(', ')}
+
+            {/* Date and Read Time */}
+            <div className="flex items-center gap-2 text-sm text-[#4A5745] mb-2">
+              <time dateTime={post.date}>{new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</time>
+              <span>•</span>
+              <span>{post.readingTime} min read</span>
             </div>
-          </div>
 
-          {/* Date and Read Time */}
-          <div className="flex items-center gap-2 text-sm text-[#4A5745] mb-2">
-            <time dateTime={post.date}>{new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</time>
-            <span>•</span>
-            <span>{post.readingTime} min read</span>
-          </div>
-
-          {/* Excerpt with gradient fade */}
-          <div className="relative mb-3">
-            <p className="text-gray-600 line-clamp-4">
-              {post.excerpt}
-            </p>
-            <div className="absolute inset-x-0 bottom-0 h-6 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
-          </div>
-
-          {/* Bottom metadata */}
-          <div className="flex flex-col gap-4 mt-auto">
-            {/* Categories */}
-            <div className="flex flex-row gap-2 overflow-x-auto whitespace-nowrap max-w-full scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent py-1">
-              {post.category && (
-                <Link
-                  href={`/blog?category=${encodeURIComponent(post.category)}`}
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    trackCategoryClick(post.category, post.slug);
-                  }}
-                  className="text-sm font-medium px-3 py-1 rounded-full bg-gray-100 text-gray-700 hover:bg-[#617500] hover:text-white transition-colors inline-block"
-                >
-                  {post.category}
-                </Link>
-              )}
+            {/* Excerpt with gradient fade */}
+            <div className="relative mb-3">
+              <p className="text-gray-600 line-clamp-4">
+                {post.excerpt}
+              </p>
+              <div className="absolute inset-x-0 bottom-0 h-6 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
             </div>
           </div>
-        </span>
-        </span>
-      </Link>
+        </Link>
+
+        {/* Bottom metadata - outside Link to avoid nested anchors */}
+        <div className="flex flex-col gap-4 mt-auto px-6 pb-4">
+          <div className="flex flex-row gap-2 overflow-x-auto whitespace-nowrap max-w-full scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent py-1">
+            {post.category && (
+              <Link
+                href={`/blog?category=${encodeURIComponent(post.category)}`}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  trackCategoryClick(post.category, post.slug);
+                }}
+                className="text-sm font-medium px-3 py-1 rounded-full bg-gray-100 text-gray-700 hover:bg-[#617500] hover:text-white transition-colors inline-block"
+              >
+                {post.category}
+              </Link>
+            )}
+          </div>
+        </div>
+      </div>
     </article>
   );
 } 
