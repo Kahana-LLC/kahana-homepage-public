@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
 import Link from 'next/link';
 import { ConsentContext } from '../contexts/ConsentContext';
+import { getCloudinaryImageUrl } from '../utils/cloudinary-mapper';
 
 function FooterContent() {
   const [openSection, setOpenSection] = useState(null);
@@ -300,7 +301,7 @@ function FooterContent() {
                   aria-label="AICPA SOC 2 Certification"
                 >
                   <img
-                    src="/aicpa-soc2-certification.svg"
+                    src={getCloudinaryImageUrl('/aicpa-soc2-certification.svg', { width: 24, height: 24, quality: 'auto:good' }) || '/aicpa-soc2-certification.svg'}
                     alt="AICPA SOC 2 Certification"
                     className="h-6 w-6 object-contain"
                   />

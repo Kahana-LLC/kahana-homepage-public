@@ -3,6 +3,16 @@
   "cloudName": "dlhpqrucv",
   "successful": [
     {
+      "localPath": "public/aicpa-soc2-certification.svg",
+      "publicId": "kahana-homepage/public/aicpa-soc2-certification",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/kahana-homepage/public/aicpa-soc2-certification.svg",
+      "width": null,
+      "height": null,
+      "format": "svg",
+      "resourceType": "image",
+      "bytes": 18547
+    },
+    {
       "localPath": "public/assets/headshots/Rajshree_Rao.jpg",
       "publicId": "kahana-homepage/assets/headshots/Rajshree_Rao",
       "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1765219268/kahana-homepage/assets/headshots/Rajshree_Rao.jpg",
