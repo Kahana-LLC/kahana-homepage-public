@@ -159,6 +159,12 @@ const authors = {
     linkedinProfile: "https://www.linkedin.com/in/ankitsai/",
     avatar: "/assets/headshots/ankit_sai_allam.png",
   },
+  "Pallavi M": {
+    name: "Pallavi M",
+    role: "Social Media Marketing Manager",
+    bio: "I am someone who is driven by growth and meaningful progress. I enjoy taking initiative, building things from scratch, and pushing myself beyond my comfort zone. I value discipline, consistency, and continuous self-improvement, and I'm always looking for ways to turn ideas into practical outcomes. Challenges motivate me, and I see every experience as an opportunity to learn, refine my thinking, and evolve both personally and professionally.",
+    linkedinProfile: "https://www.linkedin.com/in/pallavi-m-ise/",
+  },
   "Rohan Mehere": {
     name: "Rohan Mehere",
     role: "Product Manager",
