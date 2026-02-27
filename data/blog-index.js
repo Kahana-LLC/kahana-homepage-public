@@ -57,7 +57,7 @@ const blogIndex = [
   {
     title: "Secure Web Gateway vs Enterprise Browser: What to Deploy First (and Why)",
     date: "2026-03-04T00:00:00.000Z",
-    authors: ["Rohan Mehere"],
+    authors: ["Rohan Mehere", "Konika Dhull"],
     category: "Enterprise & Security",
     excerpt: "Choosing between a Secure Web Gateway (SWG) and an Enterprise Browser is often a debate of Network Perimeter vs. Last Mile Productivity. Based on 2024–2026 research from Oasis, Gartner, and Palo Alto Networks, the consensus is shifting toward the browser for SaaS-heavy environments.",
     defaultImageQuery: "secure web gateway enterprise browser SASE",
