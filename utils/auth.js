@@ -48,18 +48,33 @@ export async function signInWithEmail(email, password) {
   return data
 }
 
-/** Sign in/up with Google (opens popup) */
-export async function signInWithGoogle() {
+/** Sign in/up with an OAuth provider. */
+export async function signInWithOAuthProvider(provider) {
   const supabase = createClient()
-  const redirectUrl = typeof window !== 'undefined' 
-    ? `${window.location.origin}/oauth-callback` 
+  const redirectUrl = typeof window !== 'undefined'
+    ? `${window.location.origin}/oauth-callback`
     : undefined
   const { data, error } = await supabase.auth.signInWithOAuth({
-    provider: 'google',
+    provider,
     options: { redirectTo: redirectUrl },
   })
   if (error) throw error
   return data
+}
+
+/** Sign in/up with Google */
+export async function signInWithGoogle() {
+  return signInWithOAuthProvider('google')
+}
+
+/** Sign in/up with Apple */
+export async function signInWithApple() {
+  return signInWithOAuthProvider('apple')
+}
+
+/** Sign in/up with Microsoft */
+export async function signInWithMicrosoft() {
+  return signInWithOAuthProvider('azure')
 }
 
 /**

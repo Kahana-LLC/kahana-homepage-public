@@ -14,6 +14,17 @@ export default function OAuthCallback() {
     processOAuthCallback();
   }, []);
 
+  const persistAuthError = (error, description) => {
+    if (typeof window === 'undefined') return;
+
+    localStorage.setItem('oasis_auth_error', JSON.stringify({
+      error,
+      description,
+      timestamp: Date.now(),
+      source: 'kahana-callback'
+    }));
+  };
+
   const processOAuthCallback = async () => {
     const urlParams = new URLSearchParams(window.location.search);
     const hash = window.location.hash.substring(1);
@@ -43,14 +54,7 @@ export default function OAuthCallback() {
       setShowRetry(true);
       
       // Store error in localStorage for the assistant to pick up
-      if (typeof window !== 'undefined') {
-        localStorage.setItem('oasis_auth_error', JSON.stringify({
-          error: error,
-          description: errorDescription,
-          timestamp: Date.now(),
-          source: 'kahana-callback'
-        }));
-      }
+      persistAuthError(error, errorDescription);
       
     } else if (code || accessToken || hash.length === 0) {
       // Success - we have authorization code, tokens, or hash was already processed (empty hash)
@@ -64,7 +68,6 @@ export default function OAuthCallback() {
         }
         
         let session = null;
-        let user = null;
         
         // If hash is empty (just #), Supabase has already processed it - just get the session
         if (hash.length === 0 || (!accessToken && !refreshToken)) {
@@ -91,7 +94,6 @@ export default function OAuthCallback() {
               // Don't throw for other errors - fall through to try getSession
             } else if (sessionData?.session) {
               session = sessionData.session;
-              user = sessionData.session.user;
               console.log('Session set successfully from hash tokens');
             }
           } catch (setSessionError) {
@@ -112,32 +114,45 @@ export default function OAuthCallback() {
             console.error('Error getting session:', sessionError);
           } else if (sessionData?.session) {
             session = sessionData.session;
-            user = sessionData.session.user;
             console.log('Session retrieved successfully');
           } else {
             console.log('No session found in getSession');
           }
         }
         
-        // If still no user, try getting user directly
-        if (!user) {
-          console.log('Getting user directly...');
-          const { data: userData, error: userError } = await supabase.auth.getUser();
-          if (userError) {
-            console.error('Error getting user:', userError);
-            throw new Error(`Auth session missing! ${userError.message || 'Failed to get user'}`);
-          }
-          if (userData?.user) {
-            user = userData.user;
-            console.log('User retrieved successfully');
-          }
+        console.log('Getting user directly...');
+        const { data: userData, error: userError } = await supabase.auth.getUser();
+        if (userError) {
+          console.error('Error getting user:', userError);
+          throw new Error(`Auth session missing! ${userError.message || 'Failed to get user'}`);
+        }
+        const user = userData?.user;
+        if (user) {
+          console.log('User retrieved successfully');
         }
         
         if (!user) {
           throw new Error('Auth session missing! Failed to get user after OAuth callback');
         }
         
-        console.log('User authenticated:', user.email);
+        const email = user.email || user.user_metadata?.email || user.user_metadata?.preferred_email;
+        const fullName =
+          user.user_metadata?.full_name ||
+          user.user_metadata?.name ||
+          user.user_metadata?.preferred_username ||
+          '';
+
+        if (!email) {
+          const missingEmailMessage = 'Your account provider did not return an email address. Please try another sign-in method or contact support.';
+          persistAuthError('missing_email', missingEmailMessage);
+          setStatus('error');
+          setStatusMessage('Authentication Error');
+          setDetails(missingEmailMessage);
+          setShowRetry(true);
+          return;
+        }
+
+        console.log('User authenticated:', email);
 
         // Create user profile via API
         try {
@@ -145,8 +160,8 @@ export default function OAuthCallback() {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ 
-              email: user.email,
-              fullName: user.user_metadata?.full_name || user.user_metadata?.name || ''
+              email,
+              fullName,
             }),
           });
 
@@ -164,14 +179,23 @@ export default function OAuthCallback() {
 
         setStatus('success');
         setStatusMessage('Authentication Successful!');
-        
-        // Check if there's a pending Stripe checkout URL
+
+        const postAuthRedirect = sessionStorage.getItem('postAuthRedirect');
         const pendingCheckout = sessionStorage.getItem('pendingStripeCheckout');
+
         
-        if (pendingCheckout) {
-          // Clear the stored checkout URL
+        if (postAuthRedirect) {
+          sessionStorage.removeItem('postAuthRedirect');
           sessionStorage.removeItem('pendingStripeCheckout');
-          // Redirect to Stripe checkout
+          setDetails('Redirecting...');
+          setTimeout(() => {
+            window.location.href = postAuthRedirect;
+          }, 1000);
+          return;
+        }
+
+        if (pendingCheckout) {
+          sessionStorage.removeItem('pendingStripeCheckout');
           setDetails('Redirecting to checkout...');
           setTimeout(() => {
             window.location.href = pendingCheckout;
@@ -179,14 +203,15 @@ export default function OAuthCallback() {
           return;
         }
         
-        // No pending checkout - redirect back to auth page or home
+        // No pending checkout - redirect back to the default auth success path
         setDetails('Redirecting...');
         setTimeout(() => {
-          router.push('/oasis-auth');
+          router.push('/oasis-auth?mode=login&plan=free');
         }, 1500);
         
       } catch (err) {
         console.error('Error processing OAuth callback:', err);
+        persistAuthError('callback_error', err.message);
         setStatus('error');
         setStatusMessage('Authentication Error');
         setDetails(`An error occurred: ${err.message}`);
@@ -197,7 +222,7 @@ export default function OAuthCallback() {
       // No auth parameters found
       setStatus('info');
       setStatusMessage('No Authentication Data');
-      setDetails('This page is used for OAuth callbacks from Google.\nIf you reached this page by mistake, please return to the home page.');
+      setDetails('This page is used for OAuth callbacks.\nIf you reached this page by mistake, please return to the home page.');
       setShowRetry(true);
     }
   };

@@ -6,7 +6,7 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method Not Allowed' })
   }
 
-  const { userId, email, fullName } = req.body || {}
+  const { email, fullName } = req.body || {}
   if (!email) {
     return res.status(400).json({ error: 'email is required' })
   }
@@ -22,13 +22,19 @@ export default async function handler(req, res) {
       .single()
 
     if (existingUser) {
+      const updatePayload = {
+        updated_at: new Date().toISOString(),
+      }
+
+      if (fullName) {
+        updatePayload.full_name = fullName
+        updatePayload.name = fullName
+      }
+
       // Update existing user
       const { data, error } = await supabase
         .from('users')
-        .update({
-          full_name: fullName || null,
-          updated_at: new Date().toISOString(),
-        })
+        .update(updatePayload)
         .eq('user_id', existingUser.user_id)
         .select()
         .single()
@@ -57,6 +63,5 @@ export default async function handler(req, res) {
     return res.status(500).json({ error: error.message })
   }
 }
-
 
 
