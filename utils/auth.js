@@ -1,5 +1,23 @@
 import { createClient } from '@/utils/supabase'
 
+async function createProfile({ userId, email, fullName, accessToken }) {
+  const headers = { 'Content-Type': 'application/json' }
+  if (accessToken) {
+    headers.Authorization = `Bearer ${accessToken}`
+  }
+
+  const res = await fetch('/api/create-profile', {
+    method: 'POST',
+    headers,
+    body: JSON.stringify({ userId, email, fullName }),
+  })
+
+  if (!res.ok) {
+    const body = await res.json().catch(() => ({}))
+    throw new Error(body.error || 'Failed to create user')
+  }
+}
+
 /**
  * Sign up a user via Supabase Auth, then create their user record server-side.
  * Returns the auth user and session.
@@ -29,16 +47,12 @@ export async function signupAndCreateProfile(email, password, fullName) {
 
   // Call server-side API to create user record (uses service role)
   // Note: public.users is matched by email, not by auth.users.id
-  const res = await fetch('/api/create-profile', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ userId: user.id, email, fullName }),
+  await createProfile({
+    userId: user.id,
+    email,
+    fullName,
+    accessToken: data.session?.access_token,
   })
-
-  if (!res.ok) {
-    const body = await res.json().catch(() => ({}))
-    throw new Error(body.error || 'Failed to create user')
-  }
 
   return { user, session: data.session }
 }
@@ -48,6 +62,16 @@ export async function signInWithEmail(email, password) {
   const supabase = createClient()
   const { data, error } = await supabase.auth.signInWithPassword({ email, password })
   if (error) throw error
+
+  if (data.user?.id && data.user?.email) {
+    await createProfile({
+      userId: data.user.id,
+      email: data.user.email,
+      fullName: data.user.user_metadata?.full_name || data.user.user_metadata?.name || '',
+      accessToken: data.session?.access_token,
+    })
+  }
+
   return data
 }
 

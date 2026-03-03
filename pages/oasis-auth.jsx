@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { getSafeRedirectPath } from '@/utils/redirects'
 import {
   requestPasswordReset,
   signupAndCreateProfile,
@@ -39,13 +40,6 @@ const plans = [
     stripeCheckoutUrl: 'https://buy.stripe.com/eVqcN53SZePu8LvdghgMw07'
   },
 ]
-
-function getSafeRedirectPath(value) {
-  if (typeof value !== 'string') return null
-  if (!value.startsWith('/')) return null
-  if (value.startsWith('//')) return null
-  return value
-}
 
 export default function OasisAuth() {
   const router = useRouter()

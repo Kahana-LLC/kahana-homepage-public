@@ -1,14 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+import { getSafeRedirectPath } from '@/utils/redirects';
 import { createClient } from '@/utils/supabase';
-
-function getSafeRedirectPath(value) {
-  if (typeof value !== 'string') return null;
-  if (!value.startsWith('/')) return null;
-  if (value.startsWith('//')) return null;
-  return value;
-}
 
 export default function OAuthCallback() {
   const router = useRouter();
@@ -163,9 +157,14 @@ export default function OAuthCallback() {
 
         // Create user profile via API
         try {
+          const headers = { 'Content-Type': 'application/json' };
+          if (session?.access_token) {
+            headers.Authorization = `Bearer ${session.access_token}`;
+          }
+
           const res = await fetch('/api/create-profile', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers,
             body: JSON.stringify({ 
               userId: user.id,
               email,

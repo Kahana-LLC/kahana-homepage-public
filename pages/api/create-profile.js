@@ -1,4 +1,4 @@
-import { createServiceClient } from '@/utils/supabase'
+import { createServerClient, createServiceClient } from '@/utils/supabase'
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -12,24 +12,46 @@ export default async function handler(req, res) {
   }
 
   try {
+    const normalizedEmail = email.trim().toLowerCase()
     const supabase = createServiceClient()
+    const authHeader = req.headers.authorization || ''
+    const bearerToken = authHeader.startsWith('Bearer ') ? authHeader.slice(7) : null
+
+    if (bearerToken) {
+      const anonClient = createServerClient()
+      const { data: authedUserData, error: authedUserError } = await anonClient.auth.getUser(bearerToken)
+
+      if (authedUserError || !authedUserData?.user) {
+        return res.status(401).json({ error: 'Authentication required' })
+      }
+
+      const authedEmail = authedUserData.user.email?.trim().toLowerCase()
+      if (authedUserData.user.id !== userId || !authedEmail || authedEmail !== normalizedEmail) {
+        return res.status(403).json({ error: 'Authenticated user does not match provided profile data' })
+      }
+    }
+
     const { data: authUserData, error: authUserError } = await supabase.auth.admin.getUserById(userId)
 
     if (authUserError) throw authUserError
 
-    const authEmail = authUserData?.user?.email?.toLowerCase()
-    if (!authEmail || authEmail !== email.toLowerCase()) {
-      return res.status(403).json({ error: 'Authenticated user does not match provided email' })
+    const authEmail = authUserData?.user?.email?.trim().toLowerCase()
+    if (!authEmail || authEmail !== normalizedEmail) {
+      return res.status(403).json({ error: 'Provided email does not match email on record for the specified userId' })
     }
 
     // Find existing user by email (since public.users is not linked to auth.users)
     const { data: existingUser } = await supabase
       .from('users')
       .select('user_id')
-      .eq('email', email)
+      .eq('email', normalizedEmail)
       .single()
 
     if (existingUser) {
+      if (!bearerToken) {
+        return res.status(401).json({ error: 'Authentication required to update an existing profile' })
+      }
+
       const updatePayload = {
         updated_at: new Date().toISOString(),
       }
@@ -54,7 +76,7 @@ export default async function handler(req, res) {
       const { data, error } = await supabase
         .from('users')
         .insert({
-          email,
+          email: normalizedEmail,
           full_name: fullName || null,
           name: fullName || null, // Also set name field
           password_hash: '', // Required field, but not used for auth.users linked accounts
@@ -71,4 +93,3 @@ export default async function handler(req, res) {
     return res.status(500).json({ error: error.message })
   }
 }
-
