@@ -23,13 +23,16 @@ export async function signupAndCreateProfile(email, password, fullName) {
   if (error) throw error
 
   const user = data.user
+  if (!user?.id) {
+    throw new Error('Failed to create auth user')
+  }
 
   // Call server-side API to create user record (uses service role)
   // Note: public.users is matched by email, not by auth.users.id
   const res = await fetch('/api/create-profile', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ email, fullName }),
+    body: JSON.stringify({ userId: user.id, email, fullName }),
   })
 
   if (!res.ok) {
@@ -102,4 +105,3 @@ export async function updatePassword(newPassword) {
   if (error) throw error
   return data
 }
-

@@ -40,6 +40,13 @@ const plans = [
   },
 ]
 
+function getSafeRedirectPath(value) {
+  if (typeof value !== 'string') return null
+  if (!value.startsWith('/')) return null
+  if (value.startsWith('//')) return null
+  return value
+}
+
 export default function OasisAuth() {
   const router = useRouter()
   const [mode, setMode] = useState('signup')
@@ -72,7 +79,7 @@ export default function OasisAuth() {
     setStatus({ loading: true, error: '', success: '' })
     try {
       // Check for redirect parameter first
-      const redirectPath = router?.query?.redirect
+      const redirectPath = getSafeRedirectPath(router?.query?.redirect)
       
       if (mode === 'signup') {
         if (!acceptedTerms) {
@@ -134,10 +141,10 @@ export default function OasisAuth() {
   const beginOAuth = async (provider) => {
     setStatus({ loading: true, error: '', success: '' })
     try {
-      const redirectPath = router?.query?.redirect
+      const redirectPath = getSafeRedirectPath(router?.query?.redirect)
 
       // Persist any post-auth redirect context before the OAuth handoff.
-      if (redirectPath && typeof redirectPath === 'string') {
+      if (redirectPath) {
         sessionStorage.setItem('postAuthRedirect', redirectPath)
       } else {
         sessionStorage.removeItem('postAuthRedirect')
@@ -426,4 +433,3 @@ export default function OasisAuth() {
     </>
   )
 }
-

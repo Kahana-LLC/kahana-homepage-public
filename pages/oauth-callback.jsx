@@ -3,6 +3,13 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { createClient } from '@/utils/supabase';
 
+function getSafeRedirectPath(value) {
+  if (typeof value !== 'string') return null;
+  if (!value.startsWith('/')) return null;
+  if (value.startsWith('//')) return null;
+  return value;
+}
+
 export default function OAuthCallback() {
   const router = useRouter();
   const [status, setStatus] = useState('loading');
@@ -160,6 +167,7 @@ export default function OAuthCallback() {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ 
+              userId: user.id,
               email,
               fullName,
             }),
@@ -180,7 +188,7 @@ export default function OAuthCallback() {
         setStatus('success');
         setStatusMessage('Authentication Successful!');
 
-        const postAuthRedirect = sessionStorage.getItem('postAuthRedirect');
+        const postAuthRedirect = getSafeRedirectPath(sessionStorage.getItem('postAuthRedirect'));
         const pendingCheckout = sessionStorage.getItem('pendingStripeCheckout');
 
         
@@ -193,6 +201,8 @@ export default function OAuthCallback() {
           }, 1000);
           return;
         }
+
+        sessionStorage.removeItem('postAuthRedirect');
 
         if (pendingCheckout) {
           sessionStorage.removeItem('pendingStripeCheckout');

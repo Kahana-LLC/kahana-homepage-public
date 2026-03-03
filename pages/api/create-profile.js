@@ -6,13 +6,21 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method Not Allowed' })
   }
 
-  const { email, fullName } = req.body || {}
-  if (!email) {
-    return res.status(400).json({ error: 'email is required' })
+  const { userId, email, fullName } = req.body || {}
+  if (!userId || !email) {
+    return res.status(400).json({ error: 'userId and email are required' })
   }
 
   try {
     const supabase = createServiceClient()
+    const { data: authUserData, error: authUserError } = await supabase.auth.admin.getUserById(userId)
+
+    if (authUserError) throw authUserError
+
+    const authEmail = authUserData?.user?.email?.toLowerCase()
+    if (!authEmail || authEmail !== email.toLowerCase()) {
+      return res.status(403).json({ error: 'Authenticated user does not match provided email' })
+    }
 
     // Find existing user by email (since public.users is not linked to auth.users)
     const { data: existingUser } = await supabase
@@ -63,5 +71,4 @@ export default async function handler(req, res) {
     return res.status(500).json({ error: error.message })
   }
 }
-
 
