@@ -216,8 +216,11 @@ const BrowserComparisonTable = () => {
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                     className="w-full px-4 py-2.5 rounded-lg text-sm border focus:outline-none focus:ring-2 transition-all"
-                    style={{borderColor:'rgba(74, 98, 0, 0.2)', '--tw-ring-color': 'rgba(74, 98, 0, 0.3)'}}
-                    style={{color:'#313A00'}}
+                    style={{
+                      borderColor: 'rgba(74, 98, 0, 0.2)',
+                      '--tw-ring-color': 'rgba(74, 98, 0, 0.3)',
+                      color: '#313A00',
+                    }}
                 />
     </div>
             <div className="space-y-1 max-h-48 overflow-y-auto p-2 border rounded-lg bg-[#F8FAF2]/50" style={{borderColor:'rgba(74, 98, 0, 0.1)'}}>

@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 
 const guidelines = [
   {
@@ -137,12 +138,12 @@ export default function CommunityGuidelines() {
             <p className="text-[#4A5745] mb-6">
               If you have any questions about these guidelines or need to report a violation, please contact our community team.
             </p>
-            <a
+            <Link
               href="/contact"
               className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#66C2BE] hover:bg-[#4A9E9A] transition-colors"
             >
               Contact Community Team
-            </a>
+            </Link>
           </div>
         </div>
       </main>

@@ -18,6 +18,15 @@ export function createClient() {
   })
 }
 
+export function createServerClient() {
+  if (!supabaseUrl || !supabaseAnonKey) {
+    throw new Error('Missing Supabase env vars')
+  }
+  return createSupabaseClient(supabaseUrl, supabaseAnonKey, {
+    auth: { persistSession: false, autoRefreshToken: false },
+  })
+}
+
 export function createServiceClient() {
   if (!supabaseUrl || !supabaseServiceRoleKey) {
     throw new Error('Missing Supabase service role key (server-side only)')
@@ -295,6 +304,5 @@ export async function logSubscriptionHistory(subscriptionId, eventType, stripeEv
   
   return null
 }
-
 
 

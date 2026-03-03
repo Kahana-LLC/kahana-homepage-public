@@ -14,13 +14,14 @@ export default function Meta({
   canonicalUrl = null,
   schema = null,
 }) {
+  const router = useRouter();
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://kahana.is";
   const fullTitle = title ? `${title} | Kahana` : "Kahana";
   const fullDescription =
     description || "Kahana - Enterprise Browser Solutions";
   const canonical = canonicalUrl
     ? `${siteUrl}${canonicalUrl}`
-    : `${siteUrl}${useRouter().asPath}`;
+    : `${siteUrl}${router.asPath}`;
 
   const metaTags = generateMetaTags({
     title,

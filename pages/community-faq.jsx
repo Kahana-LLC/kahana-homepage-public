@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 
 const faqs = [
   {
@@ -113,18 +114,18 @@ export default function CommunityFAQ() {
               If you couldn't find the answer you're looking for, our community team is here to help.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a
+              <Link
                 href="/contact"
                 className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#66C2BE] hover:bg-[#4A9E9A] transition-colors"
               >
                 Contact Us
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/community"
                 className="inline-flex items-center justify-center px-6 py-3 border border-[#66C2BE] text-base font-medium rounded-md text-[#66C2BE] bg-white hover:bg-[#66C2BE]/5 transition-colors"
               >
                 Join Our Community
-              </a>
+              </Link>
             </div>
           </div>
         </div>

@@ -107,7 +107,7 @@ export default function WhitePaperPDF() {
                   A comprehensive analysis of how AR, VR, voice, gesture, and AI technologies are transforming the way we work, moving us away from desk-bound productivity toward healthier, more mobile work environments.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <a
+                  <Link
                     href="/references-future-of-ergonomic-work-white-paper"
                     className="btn-primary inline-flex items-center justify-center px-8 py-3 text-base font-bold no-underline hover:no-underline focus:no-underline"
                   >
@@ -115,7 +115,7 @@ export default function WhitePaperPDF() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                     </svg>
                     View All References
-                  </a>
+                  </Link>
                 </div>
               </div>
               
@@ -771,7 +771,7 @@ export default function WhitePaperPDF() {
                             <div className="text-2xl font-bold text-[#011910]">
                               <AnimatedCounter start={0} end={4000} duration={2000} suffix="-5,000" />
                             </div>
-                            <div className="text-sm text-[#011910]">steps per day<sup><a href="/references-future-of-ergonomic-work-white-paper" className="text-[#011910] hover:text-[#011910]">1,2</a></sup></div>
+                            <div className="text-sm text-[#011910]">steps per day<sup><Link href="/references-future-of-ergonomic-work-white-paper" className="text-[#011910] hover:text-[#011910]">1,2</Link></sup></div>
                           </div>
                         </div>
                       </div>
@@ -915,7 +915,7 @@ export default function WhitePaperPDF() {
                       transition={{ duration: 0.6, delay: 1.8, ease: "easeOut" }}
                       viewport={{ once: true, margin: "-100px" }}
                     >
-                      Despite exponential medical progress, life expectancy in the United States has hit a plateau and is actually decreasing.<sup><a href="/references-future-of-ergonomic-work-white-paper" className="text-[#011910] hover:text-[#011910]">3</a></sup>
+                      Despite exponential medical progress, life expectancy in the United States has hit a plateau and is actually decreasing.<sup><Link href="/references-future-of-ergonomic-work-white-paper" className="text-[#011910] hover:text-[#011910]">3</Link></sup>
                     </motion.p>
                   </motion.div>
                   <motion.div 
@@ -1006,7 +1006,7 @@ export default function WhitePaperPDF() {
                       transition={{ duration: 0.6, delay: 1.2, ease: "easeOut" }}
                       viewport={{ once: true, margin: "-100px" }}
                     >
-                      The shift to a more sedentary lifestyle, driven in large part by time spent in the workplace, is a primary culprit behind the health crisis.<sup><a href="/references-future-of-ergonomic-work-white-paper" className="text-[#011910] hover:text-[#011910]">4,5</a></sup>
+                      The shift to a more sedentary lifestyle, driven in large part by time spent in the workplace, is a primary culprit behind the health crisis.<sup><Link href="/references-future-of-ergonomic-work-white-paper" className="text-[#011910] hover:text-[#011910]">4,5</Link></sup>
                     </motion.p>
                   </motion.div>
                   <motion.div 
@@ -1062,7 +1062,7 @@ export default function WhitePaperPDF() {
                         <div className="text-4xl font-bold text-[#011910] mb-2">
                           <AnimatedCounter start={0} end={40} duration={2000} prefix=">" suffix="%" />
                         </div>
-                        <div className="text-base text-[#011910]">2025 Obesity Rate<sup><a href="/references-future-of-ergonomic-work-white-paper" className="text-[#011910] hover:text-[#011910]">6</a></sup></div>
+                        <div className="text-base text-[#011910]">2025 Obesity Rate<sup><Link href="/references-future-of-ergonomic-work-white-paper" className="text-[#011910] hover:text-[#011910]">6</Link></sup></div>
                         <div className="text-lg font-semibold text-[#011910] mt-4">
                           <AnimatedCounter start={0} end={300} duration={2000} suffix="%+ Increase" />
                         </div>
@@ -1083,7 +1083,7 @@ export default function WhitePaperPDF() {
                         <div className="text-4xl font-bold text-[#011910] mb-2">
                           <AnimatedCounter start={0} end={9} duration={2000} suffix="-10%" />
                         </div>
-                        <div className="text-base text-[#011910]">2025 Diabetes Rate<sup><a href="/references-future-of-ergonomic-work-white-paper" className="text-[#011910] hover:text-[#011910]">7,8</a></sup></div>
+                        <div className="text-base text-[#011910]">2025 Diabetes Rate<sup><Link href="/references-future-of-ergonomic-work-white-paper" className="text-[#011910] hover:text-[#011910]">7,8</Link></sup></div>
                         <div className="text-lg font-semibold text-[#011910] mt-4">
                           <AnimatedCounter start={0} end={1000} duration={2000} suffix="%+ Increase" />
                         </div>
@@ -1104,7 +1104,7 @@ export default function WhitePaperPDF() {
                         <div className="text-4xl font-bold text-[#011910] mb-2">
                           <AnimatedCounter start={0} end={50} duration={2000} prefix="~" suffix="%" />
                         </div>
-                        <div className="text-base text-[#011910]">2025 MSK Disorders<sup><a href="/references-future-of-ergonomic-work-white-paper" className="text-[#011910] hover:text-[#011910]">9</a></sup></div>
+                        <div className="text-base text-[#011910]">2025 MSK Disorders<sup><Link href="/references-future-of-ergonomic-work-white-paper" className="text-[#011910] hover:text-[#011910]">9</Link></sup></div>
                         <div className="text-lg font-semibold text-[#011910] mt-4">
                           <AnimatedCounter start={0} end={150} duration={2000} suffix="%+ Increase" />
                         </div>
@@ -1118,7 +1118,7 @@ export default function WhitePaperPDF() {
                 </p>
 
                 <p className="text-lg text-[#011910] mb-8">
-                  And while depression, anxiety, and burnout were not as well-documented in the workplace in the 1950s, sedentary behavior is linked to poorer mood, higher stress, increased fatigue, and increased risk of depression and anxiety.<sup><a href="/references-future-of-ergonomic-work-white-paper" className="text-[#011910] hover:text-[#011910]">10,11</a></sup>
+                  And while depression, anxiety, and burnout were not as well-documented in the workplace in the 1950s, sedentary behavior is linked to poorer mood, higher stress, increased fatigue, and increased risk of depression and anxiety.<sup><Link href="/references-future-of-ergonomic-work-white-paper" className="text-[#011910] hover:text-[#011910]">10,11</Link></sup>
                 </p>
 
                 {/* Current Solutions Analysis */}
@@ -1218,7 +1218,7 @@ export default function WhitePaperPDF() {
                 </motion.div>
 
                 <p className="text-lg text-[#011910] mb-6">
-                  Over the past 10-15 years, the public has become increasingly aware of the dangers that come with being chained to a desk to work. This has sparked the development of new technologies such as standing desks and mini treadmills to accompany desks, as well as workplace movements to encourage taking more breaks to go on walks. Sadly, these efforts are not nearly enough to make a tangible impact.<sup><a href="/references-future-of-ergonomic-work-white-paper" className="text-[#011910] hover:text-[#011910]">12,13,14</a></sup>
+                  Over the past 10-15 years, the public has become increasingly aware of the dangers that come with being chained to a desk to work. This has sparked the development of new technologies such as standing desks and mini treadmills to accompany desks, as well as workplace movements to encourage taking more breaks to go on walks. Sadly, these efforts are not nearly enough to make a tangible impact.<sup><Link href="/references-future-of-ergonomic-work-white-paper" className="text-[#011910] hover:text-[#011910]">12,13,14</Link></sup>
                 </p>
 
                 <div className="bg-gradient-to-r from-blue-100 to-blue-50 rounded-xl p-6 border border-blue-200">
@@ -2428,7 +2428,7 @@ export default function WhitePaperPDF() {
                           >
                             <h5 className="text-xl font-semibold text-[#011910] mb-3">Limitations</h5>
                             <p className="text-lg text-[#011910]">
-                              Lack sophisticated built-in operating systems, limiting their potential for desk-free productivity<sup><a href="/references-future-of-ergonomic-work-white-paper" className="text-[#011910] hover:text-[#011910]">22,23,30,31</a></sup>
+                              Lack sophisticated built-in operating systems, limiting their potential for desk-free productivity<sup><Link href="/references-future-of-ergonomic-work-white-paper" className="text-[#011910] hover:text-[#011910]">22,23,30,31</Link></sup>
                             </p>
                           </motion.div>
                         </div>
@@ -2750,7 +2750,7 @@ export default function WhitePaperPDF() {
                             viewport={{ once: true, margin: "-100px" }}
                           >
                             <h5 className="text-lg font-semibold text-[#011910] mb-2">Challenges</h5>
-                            <p className="text-base text-[#011910]">Heavy weight, virtual keyboard limitations<sup><a href="/references-future-of-ergonomic-work-white-paper" className="text-[#011910] hover:text-[#011910]">76</a></sup></p>
+                            <p className="text-base text-[#011910]">Heavy weight, virtual keyboard limitations<sup><Link href="/references-future-of-ergonomic-work-white-paper" className="text-[#011910] hover:text-[#011910]">76</Link></sup></p>
                           </motion.div>
                         </div>
                       </motion.div>
@@ -2782,7 +2782,7 @@ export default function WhitePaperPDF() {
                             viewport={{ once: true, margin: "-100px" }}
                           >
                             <h5 className="text-lg font-semibold text-[#011910] mb-2">Innovation</h5>
-                            <p className="text-base text-[#011910]">Neural EMG wristband, holographic calls, multi-window displays<sup><a href="/references-future-of-ergonomic-work-white-paper" className="text-[#011910] hover:text-[#011910]">15,16,17,18</a></sup></p>
+                            <p className="text-base text-[#011910]">Neural EMG wristband, holographic calls, multi-window displays<sup><Link href="/references-future-of-ergonomic-work-white-paper" className="text-[#011910] hover:text-[#011910]">15,16,17,18</Link></sup></p>
                           </motion.div>
                           <motion.div 
                             className="bg-gray-50 rounded-lg p-4 border border-gray-200"
@@ -2836,7 +2836,7 @@ export default function WhitePaperPDF() {
                             viewport={{ once: true, margin: "-100px" }}
                           >
                             <h5 className="text-lg font-semibold text-[#011910] mb-2">Focus</h5>
-                            <p className="text-base text-[#011910]">Social interactions and creativity, sophisticated AR technology<sup><a href="/references-future-of-ergonomic-work-white-paper" className="text-[#011910] hover:text-[#011910]">26,27,28,29</a></sup></p>
+                            <p className="text-base text-[#011910]">Social interactions and creativity, sophisticated AR technology<sup><Link href="/references-future-of-ergonomic-work-white-paper" className="text-[#011910] hover:text-[#011910]">26,27,28,29</Link></sup></p>
                           </motion.div>
                           <motion.div 
                             className="bg-yellow-50 rounded-lg p-4 border border-yellow-200"
@@ -2878,7 +2878,7 @@ export default function WhitePaperPDF() {
                             viewport={{ once: true, margin: "-100px" }}
                           >
                             <h5 className="text-lg font-semibold text-[#011910] mb-2">Specialty</h5>
-                            <p className="text-base text-[#011910]">Enterprise usage, medical training, optics expertise<sup><a href="/references-future-of-ergonomic-work-white-paper" className="text-[#011910] hover:text-[#011910]">77,78,79,80</a></sup></p>
+                            <p className="text-base text-[#011910]">Enterprise usage, medical training, optics expertise<sup><Link href="/references-future-of-ergonomic-work-white-paper" className="text-[#011910] hover:text-[#011910]">77,78,79,80</Link></sup></p>
                           </motion.div>
                           <motion.div 
                             className="bg-purple-50 rounded-lg p-4 border border-purple-200"
@@ -2929,7 +2929,7 @@ export default function WhitePaperPDF() {
                           viewport={{ once: true, margin: "-100px" }}
                         >
                           <h5 className="text-lg font-semibold text-[#011910] mb-2">Product Range</h5>
-                          <p className="text-base text-[#011910]">External display glasses + X2 with proprietary OS<sup><a href="/references-future-of-ergonomic-work-white-paper" className="text-[#011910] hover:text-[#011910]">81</a></sup></p>
+                          <p className="text-base text-[#011910]">External display glasses + X2 with proprietary OS<sup><Link href="/references-future-of-ergonomic-work-white-paper" className="text-[#011910] hover:text-[#011910]">81</Link></sup></p>
                         </motion.div>
                         <motion.div 
                           className="bg-gray-50 rounded-lg p-4 border border-gray-200"
@@ -3467,7 +3467,7 @@ export default function WhitePaperPDF() {
                 >
                   <div className="flex items-center mb-8">
                     <div className="w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center text-xl font-bold mr-4">1A</div>
-                    <h3 className="text-2xl font-bold text-[#011910]">AR-Native Browsing: The Vision<sup><a href="/references-future-of-ergonomic-work-white-paper" className="text-[#011910] hover:text-[#011910]">38-45</a></sup></h3>
+                    <h3 className="text-2xl font-bold text-[#011910]">AR-Native Browsing: The Vision<sup><Link href="/references-future-of-ergonomic-work-white-paper" className="text-[#011910] hover:text-[#011910]">38-45</Link></sup></h3>
                   </div>
                   
                   {/* Inspirational Quote */}
@@ -3631,7 +3631,7 @@ export default function WhitePaperPDF() {
                 >
                   <div className="flex items-center mb-6">
                     <div className="w-12 h-12 bg-indigo-500 text-white rounded-full flex items-center justify-center text-xl font-bold mr-4">1B</div>
-                    <h3 className="text-2xl font-bold text-[#011910]">Hardware Architecture & Thermal Management<sup><a href="/references-future-of-ergonomic-work-white-paper" className="text-[#011910] hover:text-[#011910]">38-45</a></sup></h3>
+                    <h3 className="text-2xl font-bold text-[#011910]">Hardware Architecture & Thermal Management<sup><Link href="/references-future-of-ergonomic-work-white-paper" className="text-[#011910] hover:text-[#011910]">38-45</Link></sup></h3>
                   </div>
                   
                   <div className="grid md:grid-cols-2 gap-8">
@@ -3736,7 +3736,7 @@ export default function WhitePaperPDF() {
                 >
                   <div className="flex items-center mb-6">
                     <div className="w-12 h-12 bg-purple-500 text-white rounded-full flex items-center justify-center text-xl font-bold mr-4">1C</div>
-                    <h3 className="text-2xl font-bold text-[#011910]">Multimodal Input & AI Integration<sup><a href="/references-future-of-ergonomic-work-white-paper" className="text-[#011910] hover:text-[#011910]">38-45</a></sup></h3>
+                    <h3 className="text-2xl font-bold text-[#011910]">Multimodal Input & AI Integration<sup><Link href="/references-future-of-ergonomic-work-white-paper" className="text-[#011910] hover:text-[#011910]">38-45</Link></sup></h3>
                   </div>
                   
                   <div className="grid md:grid-cols-2 gap-8">
@@ -3857,7 +3857,7 @@ export default function WhitePaperPDF() {
                 <div className="bg-gradient-to-r from-cyan-50 to-teal-50 rounded-2xl p-8 border border-[#7F9E36]-200 mb-8">
                   <div className="flex items-center mb-6">
                     <div className="w-12 h-12 bg-cyan-500 text-white rounded-full flex items-center justify-center text-xl font-bold mr-4">1B</div>
-                    <h3 className="text-2xl font-bold text-[#011910]">AR-Native Browsing: Technical Implementation<sup><a href="/references-future-of-ergonomic-work-white-paper" className="text-[#011910] hover:text-[#011910]">38-45</a></sup></h3>
+                    <h3 className="text-2xl font-bold text-[#011910]">AR-Native Browsing: Technical Implementation<sup><Link href="/references-future-of-ergonomic-work-white-paper" className="text-[#011910] hover:text-[#011910]">38-45</Link></sup></h3>
                   </div>
                   
                   {/* Spatial Web Standards */}
@@ -4126,7 +4126,7 @@ export default function WhitePaperPDF() {
                   <div className="bg-gradient-to-r from-[#E8F0D8] to-[#D4E4B8] rounded-2xl p-8 border border-[#7F9E36] mb-8">
                     <div className="flex items-center mb-6">
                       <div className="w-12 h-12 bg-white text-[#4A6200] rounded-full flex items-center justify-center text-xl font-bold mr-4 border-2 border-[#4A6200]">2A</div>
-                      <h3 className="text-2xl font-bold text-[#011910]">AI-Powered Planning: Core Intelligence<sup><a href="/references-future-of-ergonomic-work-white-paper" className="text-[#011910] hover:text-[#011910]">46-53</a></sup></h3>
+                      <h3 className="text-2xl font-bold text-[#011910]">AI-Powered Planning: Core Intelligence<sup><Link href="/references-future-of-ergonomic-work-white-paper" className="text-[#011910] hover:text-[#011910]">46-53</Link></sup></h3>
                     </div>
                     {/* Vision Statement */}
                     <div className="mb-8 p-6 bg-gradient-to-r from-teal-500/10 via-cyan-500/10 to-blue-500/10 rounded-xl border border-[#7F9E36]">
@@ -4420,7 +4420,7 @@ export default function WhitePaperPDF() {
                       viewport={{ once: true, margin: "-100px" }}
                     >
                       <div className="w-12 h-12 bg-cyan-500 text-white rounded-full flex items-center justify-center text-xl font-bold mr-4">2B</div>
-                      <h3 className="text-2xl font-bold text-[#011910]">AI-Powered Planning: Advanced Optimization<sup><a href="/references-future-of-ergonomic-work-white-paper" className="text-[#011910] hover:text-[#011910]">46-53</a></sup></h3>
+                      <h3 className="text-2xl font-bold text-[#011910]">AI-Powered Planning: Advanced Optimization<sup><Link href="/references-future-of-ergonomic-work-white-paper" className="text-[#011910] hover:text-[#011910]">46-53</Link></sup></h3>
                     </motion.div>
                     
                     {/* Morning Briefings & Energy Budgets */}
@@ -4752,7 +4752,7 @@ export default function WhitePaperPDF() {
                   <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 border border-blue-200 mb-8">
                     <div className="flex items-center mb-6">
                       <div className="w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center text-xl font-bold mr-4">3A</div>
-                      <h3 className="text-2xl font-bold text-[#011910]">AR-to-Computer Communication: Foundation & Architecture<sup><a href="/references-future-of-ergonomic-work-white-paper" className="text-[#011910] hover:text-[#011910]">54-61</a></sup></h3>
+                      <h3 className="text-2xl font-bold text-[#011910]">AR-to-Computer Communication: Foundation & Architecture<sup><Link href="/references-future-of-ergonomic-work-white-paper" className="text-[#011910] hover:text-[#011910]">54-61</Link></sup></h3>
                     </div>
                     {/* Vision Statement */}
                     <div className="mb-8 p-6 bg-gradient-to-r from-blue-500/10 via-indigo-500/10 to-purple-500/10 rounded-xl border border-blue-200">
@@ -5089,7 +5089,7 @@ export default function WhitePaperPDF() {
                   <div className="bg-gradient-to-r from-indigo-50 to-blue-50 rounded-2xl p-8 border border-indigo-200 mb-8">
                     <div className="flex items-center mb-6">
                       <div className="w-12 h-12 bg-indigo-500 text-white rounded-full flex items-center justify-center text-xl font-bold mr-4">3B</div>
-                      <h3 className="text-2xl font-bold text-[#011910]">AR-to-Computer Communication: Advanced Optimization<sup><a href="/references-future-of-ergonomic-work-white-paper" className="text-[#011910] hover:text-[#011910]">54-61</a></sup></h3>
+                      <h3 className="text-2xl font-bold text-[#011910]">AR-to-Computer Communication: Advanced Optimization<sup><Link href="/references-future-of-ergonomic-work-white-paper" className="text-[#011910] hover:text-[#011910]">54-61</Link></sup></h3>
                     </div>
                     
                     {/* Vision Statement */}
@@ -5554,7 +5554,7 @@ export default function WhitePaperPDF() {
                 The future of work is not about better desks—it's about breaking free from desks altogether. 🦥
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
+                <Link
                   href="/references-future-of-ergonomic-work-white-paper"
                   className="btn-primary inline-flex items-center justify-center px-8 py-4 font-bold no-underline hover:no-underline focus:no-underline"
                 >
@@ -5562,7 +5562,7 @@ export default function WhitePaperPDF() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                   </svg>
                   View All References
-                </a>
+                </Link>
                 <Link
                   href="/contact"
                   className="btn-secondary inline-flex items-center justify-center px-8 py-4 font-bold no-underline hover:no-underline focus:no-underline"
@@ -5866,5 +5866,4 @@ export default function WhitePaperPDF() {
     </>
   );
 }
-
 

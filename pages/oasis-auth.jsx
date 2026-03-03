@@ -2,11 +2,12 @@ import { useEffect, useMemo, useState } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { getSafeRedirectPath } from '@/utils/redirects'
 import {
   requestPasswordReset,
   signupAndCreateProfile,
   signInWithEmail,
-  signInWithGoogle,
+  signInWithOAuthProvider,
 } from '@/utils/auth'
 
 const modes = {
@@ -72,7 +73,7 @@ export default function OasisAuth() {
     setStatus({ loading: true, error: '', success: '' })
     try {
       // Check for redirect parameter first
-      const redirectPath = router?.query?.redirect
+      const redirectPath = getSafeRedirectPath(router?.query?.redirect)
       
       if (mode === 'signup') {
         if (!acceptedTerms) {
@@ -131,26 +132,35 @@ export default function OasisAuth() {
     }
   }
 
-  const handleGoogle = async () => {
+  const beginOAuth = async (provider) => {
     setStatus({ loading: true, error: '', success: '' })
     try {
-      // Store the selected plan in sessionStorage so we can redirect after Google OAuth
+      const redirectPath = getSafeRedirectPath(router?.query?.redirect)
+
+      // Persist any post-auth redirect context before the OAuth handoff.
+      if (redirectPath) {
+        sessionStorage.setItem('postAuthRedirect', redirectPath)
+      } else {
+        sessionStorage.removeItem('postAuthRedirect')
+      }
+
       if (plan.stripeCheckoutUrl) {
         sessionStorage.setItem('pendingStripeCheckout', plan.stripeCheckoutUrl)
+      } else {
+        sessionStorage.removeItem('pendingStripeCheckout')
       }
-      
+
       // Detect if opened from Firefox extension (window.opener exists)
       const isFromExtension = window.opener && !window.opener.closed
       if (isFromExtension) {
         // Store flag so callback page knows to send postMessage
         sessionStorage.setItem('oauthFromExtension', 'true')
       }
-      
-      await signInWithGoogle()
-      // Note: Google OAuth will redirect, so we handle checkout redirect in the OAuth callback
-      setStatus({ loading: false, error: '', success: 'Redirecting to Google…' })
+
+      await signInWithOAuthProvider(provider)
+      setStatus({ loading: false, error: '', success: 'Redirecting to sign-in…' })
     } catch (err) {
-      setStatus({ loading: false, error: err.message || 'Google sign-in failed', success: '' })
+      setStatus({ loading: false, error: err.message || 'OAuth sign-in failed', success: '' })
     }
   }
 
@@ -220,32 +230,71 @@ export default function OasisAuth() {
           {/* Right column: auth form */}
           <div className="w-full lg:w-7/12">
             <div className="flex flex-col gap-4">
-              {/* Google Sign-In - Hidden until browser implementation is complete */}
-              {false && (
-                <>
-                  <div className="flex items-center justify-center">
-                    <button
-                      type="button"
-                      onClick={handleGoogle}
-                      className="btn-secondary w-full py-3.5 text-base flex items-center justify-center gap-3"
-                      disabled={status.loading}
+              <>
+                <div className="grid gap-2 sm:grid-cols-3">
+                  <button
+                    type="button"
+                    onClick={() => beginOAuth('google')}
+                    className="btn-secondary w-full py-3.5 text-base flex items-center justify-center gap-3"
+                    disabled={status.loading}
+                  >
+                    <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                      <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                      <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                      <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                    </svg>
+                    <span>Google</span>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => beginOAuth('apple')}
+                    className="btn-secondary w-full py-3.5 text-base flex items-center justify-center gap-3"
+                    disabled={status.loading}
+                  >
+                    <svg
+                      width="18"
+                      height="22"
+                      viewBox="0 0 18 22"
+                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true"
+                      className="shrink-0"
                     >
-                      <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-                        <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-                        <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
-                        <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-                      </svg>
-                      <span>Continue with Google</span>
-                    </button>
-                  </div>
-                  <div className="flex items-center gap-4 text-neutral-400 text-xs font-medium">
-                    <span className="flex-1 h-px bg-neutral-200" />
-                    OR
-                    <span className="flex-1 h-px bg-neutral-200" />
-                  </div>
-                </>
-              )}
+                      <path
+                        fill="currentColor"
+                        d="M14.93 11.78c.03 2.61 2.28 3.48 2.31 3.49-.02.06-.36 1.22-1.18 2.42-.71 1.03-1.44 2.06-2.6 2.08-1.14.02-1.51-.68-2.81-.68-1.31 0-1.72.66-2.79.7-1.12.04-1.98-1.12-2.69-2.14C3.72 15.55 2.6 12.7 4.1 10.1c.74-1.29 2.06-2.1 3.49-2.12 1.09-.02 2.12.73 2.81.73.69 0 1.99-.9 3.35-.77.57.02 2.18.23 3.21 1.74-.08.05-1.92 1.12-1.9 3.1ZM12.99 6.54c.59-.71 1-1.69.89-2.67-.85.03-1.88.57-2.49 1.28-.55.64-1.03 1.67-.9 2.65.95.07 1.91-.49 2.5-1.26Z"
+                      />
+                    </svg>
+                    <span>Apple</span>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => beginOAuth('azure')}
+                    className="btn-secondary w-full py-3.5 text-base flex items-center justify-center gap-3"
+                    disabled={status.loading}
+                  >
+                    <svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 18 18"
+                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true"
+                      className="shrink-0"
+                    >
+                      <rect x="1" y="1" width="7" height="7" fill="#F25022" />
+                      <rect x="10" y="1" width="7" height="7" fill="#7FBA00" />
+                      <rect x="1" y="10" width="7" height="7" fill="#00A4EF" />
+                      <rect x="10" y="10" width="7" height="7" fill="#FFB900" />
+                    </svg>
+                    <span>Microsoft</span>
+                  </button>
+                </div>
+                <div className="flex items-center gap-4 text-neutral-400 text-xs font-medium">
+                  <span className="flex-1 h-px bg-neutral-200" />
+                  OR
+                  <span className="flex-1 h-px bg-neutral-200" />
+                </div>
+              </>
               <div className="flex gap-2">
                 {Object.entries(modes).map(([key, label]) => (
                   <button
@@ -378,4 +427,3 @@ export default function OasisAuth() {
     </>
   )
 }
-
