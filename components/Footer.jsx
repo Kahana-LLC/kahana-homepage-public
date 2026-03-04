@@ -304,6 +304,7 @@ function FooterContent() {
                     src={getCloudinaryImageUrl('/aicpa-soc2-certification.svg', { width: 24, height: 24, quality: 'auto:good' }) || '/aicpa-soc2-certification.svg'}
                     alt="AICPA SOC 2 Certification"
                     className="h-6 w-6 object-contain"
+                    loading="lazy"
                   />
                 </Link>
               </div>

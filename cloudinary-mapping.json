@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-19T15:45:11.973Z",
+  "generatedAt": "2026-03-04T18:50:51.590Z",
   "cloudName": "dlhpqrucv",
   "successful": [
     {
@@ -1185,6 +1185,16 @@
       "localPath": "public/blog/technical-debt-hero.jpg",
       "publicId": "kahana-homepage/blog/technical-debt-hero",
       "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1771515911/kahana-homepage/blog/technical-debt-hero.jpg"
+    },
+    {
+      "localPath": "public/blog/brave-tor-oasis-2026.jpg",
+      "publicId": "kahana-homepage/blog/brave-tor-oasis-2026",
+      "secureUrl": "https://res.cloudinary.com/dlhpqrucv/image/upload/v1772650158/kahana-homepage/blog/brave-tor-oasis-2026.jpg",
+      "width": 300,
+      "height": 168,
+      "format": "jpg",
+      "resourceType": "image",
+      "bytes": 3840
     }
   ],
   "skipped": [],
@@ -1243,6 +1253,11 @@
       "localPath": "public/blog/why-enterprise-browsers-needed-2026.jpg",
       "publicId": "kahana-homepage/blog/why-enterprise-browsers-needed-2026",
       "error": "Invalid Signature 6534ea5e5ce8e0ccf95855de9dd7189024dad994. String to sign - 'folder=kahana-homepage&invalidate=1&overwrite=0&public_id=blog/why-enterprise-browsers-needed-2026&timestamp=1771457735'."
+    },
+    {
+      "localPath": "public/blog/dark-web-browsers-tor-i2p-freenet-2026.jpg",
+      "publicId": "kahana-homepage/blog/dark-web-browsers-tor-i2p-freenet-2026",
+      "error": "Invalid image file"
     }
   ]
 }
