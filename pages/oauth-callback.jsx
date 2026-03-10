@@ -37,6 +37,44 @@ function isAssistantCallback(urlParams) {
   return Boolean(contextValue && ASSISTANT_CONTEXT_VALUES.has(contextValue.toLowerCase()));
 }
 
+function getAssistantMarkerEntries(urlParams) {
+  const preservedEntries = [];
+
+  for (const [key, value] of urlParams.entries()) {
+    const lowerKey = key.toLowerCase();
+    const lowerValue = value.toLowerCase();
+    const isAssistantKey =
+      lowerKey === 'assistant' ||
+      lowerKey === 'assistant_oauth' ||
+      lowerKey === 'auth_context' ||
+      lowerKey === 'handoff' ||
+      lowerKey === 'flow' ||
+      lowerKey === 'source' ||
+      lowerKey === 'origin';
+
+    const isAssistantValue =
+      ASSISTANT_TRUE_VALUES.has(lowerValue) ||
+      ASSISTANT_CONTEXT_VALUES.has(lowerValue);
+
+    if (isAssistantKey && isAssistantValue) {
+      preservedEntries.push([key, value]);
+    }
+  }
+
+  return preservedEntries;
+}
+
+function scrubAssistantCallbackUrl(urlParams) {
+  if (typeof window === 'undefined' || !window.history?.replaceState) {
+    return;
+  }
+
+  const preservedParams = new URLSearchParams(getAssistantMarkerEntries(urlParams));
+  const cleanSearch = preservedParams.toString();
+  const cleanUrl = `${window.location.pathname}${cleanSearch ? `?${cleanSearch}` : ''}`;
+  window.history.replaceState(null, '', cleanUrl);
+}
+
 export default function OAuthCallback() {
   const router = useRouter();
   const [status, setStatus] = useState('loading');
@@ -66,6 +104,10 @@ export default function OAuthCallback() {
     const hashParams = new URLSearchParams(hash);
 
     setAssistantMode(assistantCallback);
+
+    if (assistantCallback) {
+      scrubAssistantCallbackUrl(urlParams);
+    }
     
     // Check for error in URL params or hash
     const error = urlParams.get('error') || hashParams.get('error');
@@ -235,7 +277,7 @@ export default function OAuthCallback() {
           sessionStorage.removeItem('postAuthRedirect');
           sessionStorage.removeItem('pendingStripeCheckout');
           setHandoffPayload(callbackUrl);
-          setDetails('OAuth succeeded. Copy the callback payload below, then return to Oasis Assistant to finish sign-in.');
+          setDetails('OAuth succeeded. Copy the callback payload below, then return to Oasis Assistant to finish sign-in.\nThis payload is sensitive and grants access to the signed-in account. Do not share or store it anywhere else.');
           return;
         }
 
