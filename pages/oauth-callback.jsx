@@ -1,8 +1,79 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { getSafeRedirectPath } from '@/utils/redirects';
 import { createClient } from '@/utils/supabase';
+
+const ASSISTANT_TRUE_VALUES = new Set([
+  '1',
+  'true',
+  'yes',
+  'assistant',
+  'oasis-assistant',
+  'firefox-assistant',
+  'firefox-oasis-assistant',
+]);
+
+const ASSISTANT_CONTEXT_VALUES = new Set([
+  'assistant',
+  'oasis-assistant',
+  'firefox-assistant',
+  'firefox-oasis-assistant',
+]);
+
+function isAssistantCallback(urlParams) {
+  const assistantFlag = urlParams.get('assistant') || urlParams.get('assistant_oauth');
+  if (assistantFlag && ASSISTANT_TRUE_VALUES.has(assistantFlag.toLowerCase())) {
+    return true;
+  }
+
+  const contextValue =
+    urlParams.get('auth_context') ||
+    urlParams.get('handoff') ||
+    urlParams.get('flow') ||
+    urlParams.get('source') ||
+    urlParams.get('origin');
+
+  return Boolean(contextValue && ASSISTANT_CONTEXT_VALUES.has(contextValue.toLowerCase()));
+}
+
+function getAssistantMarkerEntries(urlParams) {
+  const preservedEntries = [];
+
+  for (const [key, value] of urlParams.entries()) {
+    const lowerKey = key.toLowerCase();
+    const lowerValue = value.toLowerCase();
+    const isAssistantKey =
+      lowerKey === 'assistant' ||
+      lowerKey === 'assistant_oauth' ||
+      lowerKey === 'auth_context' ||
+      lowerKey === 'handoff' ||
+      lowerKey === 'flow' ||
+      lowerKey === 'source' ||
+      lowerKey === 'origin';
+
+    const isAssistantValue =
+      ASSISTANT_TRUE_VALUES.has(lowerValue) ||
+      ASSISTANT_CONTEXT_VALUES.has(lowerValue);
+
+    if (isAssistantKey && isAssistantValue) {
+      preservedEntries.push([key, value]);
+    }
+  }
+
+  return preservedEntries;
+}
+
+function scrubAssistantCallbackUrl(urlParams) {
+  if (typeof window === 'undefined' || !window.history?.replaceState) {
+    return;
+  }
+
+  const preservedParams = new URLSearchParams(getAssistantMarkerEntries(urlParams));
+  const cleanSearch = preservedParams.toString();
+  const cleanUrl = `${window.location.pathname}${cleanSearch ? `?${cleanSearch}` : ''}`;
+  window.history.replaceState(null, '', cleanUrl);
+}
 
 export default function OAuthCallback() {
   const router = useRouter();
@@ -10,12 +81,11 @@ export default function OAuthCallback() {
   const [statusMessage, setStatusMessage] = useState('Processing authentication...');
   const [details, setDetails] = useState('');
   const [showRetry, setShowRetry] = useState(false);
+  const [assistantMode, setAssistantMode] = useState(false);
+  const [handoffPayload, setHandoffPayload] = useState('');
+  const [copyStatus, setCopyStatus] = useState('');
 
-  useEffect(() => {
-    processOAuthCallback();
-  }, []);
-
-  const persistAuthError = (error, description) => {
+  const persistAuthError = useCallback((error, description) => {
     if (typeof window === 'undefined') return;
 
     localStorage.setItem('oasis_auth_error', JSON.stringify({
@@ -24,12 +94,20 @@ export default function OAuthCallback() {
       timestamp: Date.now(),
       source: 'kahana-callback'
     }));
-  };
+  }, []);
 
-  const processOAuthCallback = async () => {
+  const processOAuthCallback = useCallback(async () => {
     const urlParams = new URLSearchParams(window.location.search);
+    const assistantCallback = isAssistantCallback(urlParams);
+    const callbackUrl = window.location.href;
     const hash = window.location.hash.substring(1);
     const hashParams = new URLSearchParams(hash);
+
+    setAssistantMode(assistantCallback);
+
+    if (assistantCallback) {
+      scrubAssistantCallbackUrl(urlParams);
+    }
     
     // Check for error in URL params or hash
     const error = urlParams.get('error') || hashParams.get('error');
@@ -50,9 +128,13 @@ export default function OAuthCallback() {
     if (error) {
       // Handle OAuth error
       setStatus('error');
-      setStatusMessage('Authentication Failed');
-      setDetails(`Error: ${error}${errorDescription ? `\nDescription: ${errorDescription}` : ''}`);
-      setShowRetry(true);
+      setStatusMessage(assistantCallback ? 'Assistant Sign-In Failed' : 'Authentication Failed');
+      setDetails(
+        assistantCallback
+          ? `OAuth could not be completed for Oasis Assistant.\nStart the sign-in flow again from the assistant.\nError: ${error}${errorDescription ? `\nDescription: ${errorDescription}` : ''}`
+          : `Error: ${error}${errorDescription ? `\nDescription: ${errorDescription}` : ''}`
+      );
+      setShowRetry(!assistantCallback);
       
       // Store error in localStorage for the assistant to pick up
       persistAuthError(error, errorDescription);
@@ -147,9 +229,13 @@ export default function OAuthCallback() {
           const missingEmailMessage = 'Your account provider did not return an email address. Please try another sign-in method or contact support.';
           persistAuthError('missing_email', missingEmailMessage);
           setStatus('error');
-          setStatusMessage('Authentication Error');
-          setDetails(missingEmailMessage);
-          setShowRetry(true);
+          setStatusMessage(assistantCallback ? 'Assistant Sign-In Failed' : 'Authentication Error');
+          setDetails(
+            assistantCallback
+              ? `OAuth could not be completed for Oasis Assistant.\nStart the sign-in flow again from the assistant.\nError: ${missingEmailMessage}`
+              : missingEmailMessage
+          );
+          setShowRetry(!assistantCallback);
           return;
         }
 
@@ -185,7 +271,15 @@ export default function OAuthCallback() {
         }
 
         setStatus('success');
-        setStatusMessage('Authentication Successful!');
+        setStatusMessage(assistantCallback ? 'Assistant Sign-In Ready' : 'Authentication Successful!');
+
+        if (assistantCallback) {
+          sessionStorage.removeItem('postAuthRedirect');
+          sessionStorage.removeItem('pendingStripeCheckout');
+          setHandoffPayload(callbackUrl);
+          setDetails('OAuth succeeded. Copy the callback payload below, then return to Oasis Assistant to finish sign-in.\nThis payload is sensitive and grants access to the signed-in account. Do not share or store it anywhere else.');
+          return;
+        }
 
         const postAuthRedirect = getSafeRedirectPath(sessionStorage.getItem('postAuthRedirect'));
         const pendingCheckout = sessionStorage.getItem('pendingStripeCheckout');
@@ -222,17 +316,53 @@ export default function OAuthCallback() {
         console.error('Error processing OAuth callback:', err);
         persistAuthError('callback_error', err.message);
         setStatus('error');
-        setStatusMessage('Authentication Error');
-        setDetails(`An error occurred: ${err.message}`);
-        setShowRetry(true);
+        setStatusMessage(assistantCallback ? 'Assistant Sign-In Failed' : 'Authentication Error');
+        setDetails(
+          assistantCallback
+            ? `OAuth could not be completed for Oasis Assistant.\nStart the sign-in flow again from the assistant.\nError: ${err.message}`
+            : `An error occurred: ${err.message}`
+        );
+        setShowRetry(!assistantCallback);
       }
       
     } else {
       // No auth parameters found
       setStatus('info');
-      setStatusMessage('No Authentication Data');
-      setDetails('This page is used for OAuth callbacks.\nIf you reached this page by mistake, please return to the home page.');
-      setShowRetry(true);
+      setStatusMessage(assistantCallback ? 'Assistant Sign-In Incomplete' : 'No Authentication Data');
+      setDetails(
+        assistantCallback
+          ? 'No OAuth payload was found on this callback.\nStart the sign-in flow again from Oasis Assistant.'
+          : 'This page is used for OAuth callbacks.\nIf you reached this page by mistake, please return to the home page.'
+      );
+      setShowRetry(!assistantCallback);
+    }
+  }, [persistAuthError, router]);
+
+  useEffect(() => {
+    processOAuthCallback();
+  }, [processOAuthCallback]);
+
+  const copyPayload = async () => {
+    if (!handoffPayload) return;
+
+    try {
+      if (navigator?.clipboard?.writeText) {
+        await navigator.clipboard.writeText(handoffPayload);
+      } else {
+        const input = document.createElement('textarea');
+        input.value = handoffPayload;
+        input.setAttribute('readonly', 'true');
+        input.style.position = 'absolute';
+        input.style.left = '-9999px';
+        document.body.appendChild(input);
+        input.select();
+        document.execCommand('copy');
+        document.body.removeChild(input);
+      }
+      setCopyStatus('Copied');
+    } catch (copyError) {
+      console.error('Failed to copy handoff payload:', copyError);
+      setCopyStatus('Copy failed');
     }
   };
 
@@ -272,6 +402,28 @@ export default function OAuthCallback() {
                   {index < details.split('\n').length - 1 && <br />}
                 </div>
               ))}
+            </div>
+          )}
+          {assistantMode && status === 'success' && handoffPayload && (
+            <div className="handoff-panel">
+              <label className="payload-label" htmlFor="assistant-handoff-payload">
+                Callback payload
+              </label>
+              <textarea
+                id="assistant-handoff-payload"
+                className="payload"
+                value={handoffPayload}
+                readOnly
+                onFocus={(event) => event.target.select()}
+              />
+              <button
+                type="button"
+                className="button"
+                onClick={copyPayload}
+              >
+                Copy Payload
+              </button>
+              {copyStatus && <div className="copy-status">{copyStatus}</div>}
             </div>
           )}
           {showRetry && (
@@ -355,6 +507,40 @@ export default function OAuthCallback() {
           opacity: 0.8;
           word-break: break-all;
           line-height: 1.4;
+        }
+
+        .handoff-panel {
+          margin-top: 1.5rem;
+          text-align: left;
+        }
+
+        .payload-label {
+          display: block;
+          margin-bottom: 0.5rem;
+          font-size: 0.85rem;
+          font-weight: 600;
+          color: #dbeafe;
+          text-transform: uppercase;
+          letter-spacing: 0.08em;
+        }
+
+        .payload {
+          width: 100%;
+          min-height: 140px;
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          border-radius: 10px;
+          background: rgba(15, 23, 42, 0.45);
+          color: #f8fafc;
+          padding: 0.85rem;
+          resize: vertical;
+          font-size: 0.85rem;
+          line-height: 1.5;
+        }
+
+        .copy-status {
+          margin-top: 0.75rem;
+          font-size: 0.85rem;
+          color: #d1fae5;
         }
         
         .button {
