@@ -1,5 +1,17 @@
 const blogIndex = [
   {
+    title: "Saving tab groups in Microsoft Edge: how it works + better alternatives: The AI Browser Comparison of 2026",
+    date: "2026-03-10T00:00:00.000Z",
+    authors: ["Pallavi M", "Ankit Sai Allam"],
+    category: ["AI", "Security", "Enterprise", "Product Analysis", "Comparisons"],
+    excerpt: "Comprehensive comparison of Saving tab groups in Microsoft Edge: how it works + better alternatives in 2026. Expert analysis reveals critical insights, security considerations, and enterprise-readiness factors. Discover which solution best fits your needs.",
+    defaultImageQuery: "Saving tab groups in Microsoft Edge: how it works + better alternatives AI browser comparison security enterprise",
+    featuredImage: "https://i.ytimg.com/vi/cQiZtBSqtGw/maxresdefault.jpg",
+    slug: "saving-tab-groups-in-microsoft-edge-how-it-works-better-alternatives-2026",
+    readingTime: 15,
+  },
+
+  {
     title: "Tab Groups Collapse (and Other Tab Group Bugs): Fixes + Workarounds (Oasis Fix Plan)",
     date: "2026-03-05T00:00:00.000Z",
     authors: ["Konika Dhull", "Ankit Sai Allam"],
