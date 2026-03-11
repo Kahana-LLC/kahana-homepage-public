@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { getSafeRedirectPath } from '@/utils/redirects';
@@ -21,6 +21,10 @@ const ASSISTANT_CONTEXT_VALUES = new Set([
   'firefox-oasis-assistant',
 ]);
 
+const ASSISTANT_HANDOFF_TARGETS = new Set(['assistant', 'onboarding']);
+const ASSISTANT_HANDOFF_COOKIE_NAME = 'oasis_assistant_handoff';
+const ASSISTANT_HANDOFF_COOKIE_MAX_AGE_SECONDS = 180;
+
 function isAssistantCallback(urlParams) {
   const assistantFlag = urlParams.get('assistant') || urlParams.get('assistant_oauth');
   if (assistantFlag && ASSISTANT_TRUE_VALUES.has(assistantFlag.toLowerCase())) {
@@ -37,6 +41,15 @@ function isAssistantCallback(urlParams) {
   return Boolean(contextValue && ASSISTANT_CONTEXT_VALUES.has(contextValue.toLowerCase()));
 }
 
+function getAssistantHandoffTarget(urlParams) {
+  const handoffTarget = urlParams.get('handoff_target')?.toLowerCase();
+  if (handoffTarget && ASSISTANT_HANDOFF_TARGETS.has(handoffTarget)) {
+    return handoffTarget;
+  }
+
+  return 'assistant';
+}
+
 function getAssistantMarkerEntries(urlParams) {
   const preservedEntries = [];
 
@@ -48,13 +61,15 @@ function getAssistantMarkerEntries(urlParams) {
       lowerKey === 'assistant_oauth' ||
       lowerKey === 'auth_context' ||
       lowerKey === 'handoff' ||
+      lowerKey === 'handoff_target' ||
       lowerKey === 'flow' ||
       lowerKey === 'source' ||
       lowerKey === 'origin';
 
     const isAssistantValue =
       ASSISTANT_TRUE_VALUES.has(lowerValue) ||
-      ASSISTANT_CONTEXT_VALUES.has(lowerValue);
+      ASSISTANT_CONTEXT_VALUES.has(lowerValue) ||
+      ASSISTANT_HANDOFF_TARGETS.has(lowerValue);
 
     if (isAssistantKey && isAssistantValue) {
       preservedEntries.push([key, value]);
@@ -82,8 +97,7 @@ export default function OAuthCallback() {
   const [details, setDetails] = useState('');
   const [showRetry, setShowRetry] = useState(false);
   const [assistantMode, setAssistantMode] = useState(false);
-  const [handoffPayload, setHandoffPayload] = useState('');
-  const [copyStatus, setCopyStatus] = useState('');
+  const hasProcessedRef = useRef(false);
 
   const persistAuthError = useCallback((error, description) => {
     if (typeof window === 'undefined') return;
@@ -96,9 +110,77 @@ export default function OAuthCallback() {
     }));
   }, []);
 
+  const persistAssistantHandoffCookie = useCallback((payload) => {
+    if (typeof document === 'undefined') {
+      return false;
+    }
+
+    try {
+      const value = encodeURIComponent(JSON.stringify(payload));
+      const secureAttr = window.location.protocol === 'https:' ? '; Secure' : '';
+      document.cookie =
+        `${ASSISTANT_HANDOFF_COOKIE_NAME}=${value}; ` +
+        `Max-Age=${ASSISTANT_HANDOFF_COOKIE_MAX_AGE_SECONDS}; ` +
+        `Path=/; SameSite=Lax${secureAttr}`;
+      return true;
+    } catch (error) {
+      console.error('Failed to persist assistant handoff cookie:', error);
+    }
+
+    return false;
+  }, []);
+
+  const startAssistantHandoff = useCallback(({
+    target,
+    callbackUrl,
+    code,
+    accessToken,
+    refreshToken,
+    state,
+    error,
+    errorDescription,
+    success,
+  }) => {
+    const handoffPayload = {
+      timestamp: Date.now(),
+      target,
+      url: callbackUrl,
+    };
+
+    if (code) handoffPayload.code = code;
+    if (accessToken) handoffPayload.access_token = accessToken;
+    if (refreshToken) handoffPayload.refresh_token = refreshToken;
+    if (state) handoffPayload.state = state;
+    if (error) handoffPayload.error = error;
+    if (errorDescription) handoffPayload.description = errorDescription;
+
+    const handoffStored = persistAssistantHandoffCookie(handoffPayload);
+
+    setAssistantMode(true);
+    setShowRetry(false);
+    setStatus(success ? 'success' : 'error');
+    setStatusMessage(
+      success
+        ? target === 'onboarding'
+          ? 'Onboarding Sign-In Complete'
+          : 'Assistant Sign-In Complete'
+        : 'Assistant Sign-In Failed'
+    );
+    setDetails(
+      success
+        ? handoffStored
+          ? 'OAuth succeeded. Oasis should finish sign-in automatically.\nYou can return to Firefox now.'
+          : 'OAuth succeeded, but Firefox handoff storage could not be prepared.\nPlease return to Firefox and retry sign-in.'
+        : handoffStored
+          ? 'OAuth could not be completed.\nReturn to Firefox to see the error and retry.'
+          : 'OAuth could not be completed and Firefox handoff storage failed.\nPlease return to Firefox and retry sign-in.'
+    );
+  }, [persistAssistantHandoffCookie]);
+
   const processOAuthCallback = useCallback(async () => {
     const urlParams = new URLSearchParams(window.location.search);
     const assistantCallback = isAssistantCallback(urlParams);
+    const handoffTarget = getAssistantHandoffTarget(urlParams);
     const callbackUrl = window.location.href;
     const hash = window.location.hash.substring(1);
     const hashParams = new URLSearchParams(hash);
@@ -127,18 +209,28 @@ export default function OAuthCallback() {
     
     if (error) {
       // Handle OAuth error
-      setStatus('error');
-      setStatusMessage(assistantCallback ? 'Assistant Sign-In Failed' : 'Authentication Failed');
-      setDetails(
-        assistantCallback
-          ? `OAuth could not be completed for Oasis Assistant.\nStart the sign-in flow again from the assistant.\nError: ${error}${errorDescription ? `\nDescription: ${errorDescription}` : ''}`
-          : `Error: ${error}${errorDescription ? `\nDescription: ${errorDescription}` : ''}`
-      );
-      setShowRetry(!assistantCallback);
-      
       // Store error in localStorage for the assistant to pick up
       persistAuthError(error, errorDescription);
-      
+
+      if (assistantCallback) {
+        startAssistantHandoff({
+          target: handoffTarget,
+          callbackUrl,
+          code,
+          accessToken,
+          refreshToken,
+          state,
+          error,
+          errorDescription,
+          success: false,
+        });
+        return;
+      }
+
+      setStatus('error');
+      setStatusMessage('Authentication Failed');
+      setDetails(`Error: ${error}${errorDescription ? `\nDescription: ${errorDescription}` : ''}`);
+      setShowRetry(true);
     } else if (code || accessToken || hash.length === 0) {
       // Success - we have authorization code, tokens, or hash was already processed (empty hash)
       try {
@@ -228,14 +320,24 @@ export default function OAuthCallback() {
         if (!email) {
           const missingEmailMessage = 'Your account provider did not return an email address. Please try another sign-in method or contact support.';
           persistAuthError('missing_email', missingEmailMessage);
+          if (assistantCallback) {
+            startAssistantHandoff({
+              target: handoffTarget,
+              callbackUrl,
+              code,
+              accessToken,
+              refreshToken,
+              state,
+              error: 'missing_email',
+              errorDescription: missingEmailMessage,
+              success: false,
+            });
+            return;
+          }
           setStatus('error');
-          setStatusMessage(assistantCallback ? 'Assistant Sign-In Failed' : 'Authentication Error');
-          setDetails(
-            assistantCallback
-              ? `OAuth could not be completed for Oasis Assistant.\nStart the sign-in flow again from the assistant.\nError: ${missingEmailMessage}`
-              : missingEmailMessage
-          );
-          setShowRetry(!assistantCallback);
+          setStatusMessage('Authentication Error');
+          setDetails(missingEmailMessage);
+          setShowRetry(true);
           return;
         }
 
@@ -276,8 +378,15 @@ export default function OAuthCallback() {
         if (assistantCallback) {
           sessionStorage.removeItem('postAuthRedirect');
           sessionStorage.removeItem('pendingStripeCheckout');
-          setHandoffPayload(callbackUrl);
-          setDetails('OAuth succeeded. Copy the callback payload below, then return to Oasis Assistant to finish sign-in.\nThis payload is sensitive and grants access to the signed-in account. Do not share or store it anywhere else.');
+          startAssistantHandoff({
+            target: handoffTarget,
+            callbackUrl,
+            code,
+            accessToken,
+            refreshToken,
+            state,
+            success: true,
+          });
           return;
         }
 
@@ -307,64 +416,61 @@ export default function OAuthCallback() {
         }
         
         // No pending checkout - redirect back to the default auth success path
-        setDetails('Redirecting...');
+        setDetails('Redirecting to downloads...');
         setTimeout(() => {
-          router.push('/oasis-auth?mode=login&plan=free');
+          window.location.href = '/installations';
         }, 1500);
         
       } catch (err) {
         console.error('Error processing OAuth callback:', err);
         persistAuthError('callback_error', err.message);
+        if (assistantCallback) {
+          startAssistantHandoff({
+            target: handoffTarget,
+            callbackUrl,
+            code,
+            accessToken,
+            refreshToken,
+            state,
+            error: 'callback_error',
+            errorDescription: err.message,
+            success: false,
+          });
+          return;
+        }
         setStatus('error');
-        setStatusMessage(assistantCallback ? 'Assistant Sign-In Failed' : 'Authentication Error');
-        setDetails(
-          assistantCallback
-            ? `OAuth could not be completed for Oasis Assistant.\nStart the sign-in flow again from the assistant.\nError: ${err.message}`
-            : `An error occurred: ${err.message}`
-        );
-        setShowRetry(!assistantCallback);
+        setStatusMessage('Authentication Error');
+        setDetails(`An error occurred: ${err.message}`);
+        setShowRetry(true);
       }
       
     } else {
       // No auth parameters found
+      if (assistantCallback) {
+        startAssistantHandoff({
+          target: handoffTarget,
+          callbackUrl,
+          error: 'missing_oauth_payload',
+          errorDescription: 'No OAuth payload was found on this callback.',
+          success: false,
+        });
+        return;
+      }
       setStatus('info');
-      setStatusMessage(assistantCallback ? 'Assistant Sign-In Incomplete' : 'No Authentication Data');
-      setDetails(
-        assistantCallback
-          ? 'No OAuth payload was found on this callback.\nStart the sign-in flow again from Oasis Assistant.'
-          : 'This page is used for OAuth callbacks.\nIf you reached this page by mistake, please return to the home page.'
-      );
-      setShowRetry(!assistantCallback);
+      setStatusMessage('No Authentication Data');
+      setDetails('This page is used for OAuth callbacks.\nIf you reached this page by mistake, please return to the home page.');
+      setShowRetry(true);
     }
-  }, [persistAuthError, router]);
+  }, [persistAuthError, startAssistantHandoff]);
 
   useEffect(() => {
+    if (hasProcessedRef.current) {
+      return;
+    }
+
+    hasProcessedRef.current = true;
     processOAuthCallback();
   }, [processOAuthCallback]);
-
-  const copyPayload = async () => {
-    if (!handoffPayload) return;
-
-    try {
-      if (navigator?.clipboard?.writeText) {
-        await navigator.clipboard.writeText(handoffPayload);
-      } else {
-        const input = document.createElement('textarea');
-        input.value = handoffPayload;
-        input.setAttribute('readonly', 'true');
-        input.style.position = 'absolute';
-        input.style.left = '-9999px';
-        document.body.appendChild(input);
-        input.select();
-        document.execCommand('copy');
-        document.body.removeChild(input);
-      }
-      setCopyStatus('Copied');
-    } catch (copyError) {
-      console.error('Failed to copy handoff payload:', copyError);
-      setCopyStatus('Copy failed');
-    }
-  };
 
   const retryAuth = () => {
     // Clear any existing auth data
@@ -402,28 +508,6 @@ export default function OAuthCallback() {
                   {index < details.split('\n').length - 1 && <br />}
                 </div>
               ))}
-            </div>
-          )}
-          {assistantMode && status === 'success' && handoffPayload && (
-            <div className="handoff-panel">
-              <label className="payload-label" htmlFor="assistant-handoff-payload">
-                Callback payload
-              </label>
-              <textarea
-                id="assistant-handoff-payload"
-                className="payload"
-                value={handoffPayload}
-                readOnly
-                onFocus={(event) => event.target.select()}
-              />
-              <button
-                type="button"
-                className="button"
-                onClick={copyPayload}
-              >
-                Copy Payload
-              </button>
-              {copyStatus && <div className="copy-status">{copyStatus}</div>}
             </div>
           )}
           {showRetry && (
@@ -514,6 +598,13 @@ export default function OAuthCallback() {
           text-align: left;
         }
 
+        .fallback-title {
+          margin-bottom: 0.85rem;
+          font-size: 0.95rem;
+          font-weight: 600;
+          color: #f8fafc;
+        }
+
         .payload-label {
           display: block;
           margin-bottom: 0.5rem;
@@ -541,6 +632,11 @@ export default function OAuthCallback() {
           margin-top: 0.75rem;
           font-size: 0.85rem;
           color: #d1fae5;
+        }
+
+        .secondary-button {
+          background: rgba(255, 255, 255, 0.14);
+          margin-top: 0.85rem;
         }
         
         .button {

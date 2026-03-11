@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { getSafeRedirectPath } from '@/utils/redirects'
+import { createClient } from '@/utils/supabase'
 import {
   requestPasswordReset,
   signupAndCreateProfile,
@@ -67,6 +68,47 @@ export default function OasisAuth() {
   }, [router?.query?.plan, router?.query?.mode])
 
   const plan = useMemo(() => plans.find((p) => p.id === selectedPlan) || plans[1], [selectedPlan])
+
+  useEffect(() => {
+    if (!router.isReady) return
+
+    let isCancelled = false
+
+    const redirectAuthenticatedUser = async () => {
+      try {
+        const supabase = createClient()
+        const { data: { session }, error } = await supabase.auth.getSession()
+
+        if (error || !session || isCancelled) {
+          return
+        }
+
+        const redirectPath = getSafeRedirectPath(router?.query?.redirect)
+
+        setStatus({ loading: false, error: '', success: 'Signed in successfully. Redirecting…' })
+
+        if (redirectPath) {
+          window.location.href = redirectPath
+          return
+        }
+
+        if (plan.stripeCheckoutUrl) {
+          window.location.href = plan.stripeCheckoutUrl
+          return
+        }
+
+        window.location.href = '/installations'
+      } catch (err) {
+        console.error('Failed to restore authenticated session on auth page:', err)
+      }
+    }
+
+    redirectAuthenticatedUser()
+
+    return () => {
+      isCancelled = true
+    }
+  }, [router, plan])
 
   const handleSubmit = async (e) => {
     e.preventDefault()
