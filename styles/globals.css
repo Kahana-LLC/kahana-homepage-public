@@ -97,6 +97,32 @@ h6 {
   color: #011910 !important;
 }
 
+/* Hero CTA buttons: match navbar colors exactly and prevent overlap */
+.hero-cta-buttons .btn-primary,
+.hero-cta-buttons a.btn-primary {
+  background-color: #617500 !important;
+  border: 1px solid #7F9E36 !important;
+  color: #FFFFFF !important;
+}
+.hero-cta-buttons .btn-primary:hover,
+.hero-cta-buttons a.btn-primary:hover {
+  background-color: #556600 !important;
+  border-color: #6A8E2A !important;
+  color: #FFFFFF !important;
+}
+.hero-cta-buttons .btn-secondary,
+.hero-cta-buttons button.btn-secondary {
+  background-color: #FFFFFF !important;
+  border: 2px solid #617500 !important;
+  color: #617500 !important;
+}
+.hero-cta-buttons .btn-secondary:hover,
+.hero-cta-buttons button.btn-secondary:hover {
+  background-color: #F6F8F0 !important;
+  border-color: #617500 !important;
+  color: #556600 !important;
+}
+
 /* Exception for ProductSection h2 */
 .product-container h2 {
   color: #978455 !important;
@@ -261,7 +287,7 @@ a.btn-primary span {
 .nav-button.primary:hover,
 button.btn-primary:hover,
 a.btn-primary:hover {
-  background-color: #617500 !important;
+  background-color: #556600 !important;
   border-color: #6A8E2A !important;
   color: #FFFFFF !important;
 }
@@ -298,44 +324,44 @@ button.btn-secondary,
 button.btn-secondary *,
 a.btn-secondary,
 a.btn-secondary * {
-  color: #4A6200 !important;
+  color: #617500 !important;
 }
 
 .btn-secondary span,
 .nav-button.secondary span,
 button.btn-secondary span,
 a.btn-secondary span {
-  color: #4A6200 !important;
+  color: #617500 !important;
 }
 
 .btn-secondary svg,
 .nav-button.secondary svg,
 button.btn-secondary svg,
 a.btn-secondary svg {
-  color: #4A6200 !important;
+  color: #617500 !important;
 }
 
 .btn-secondary:hover,
 .nav-button.secondary:hover,
 button.btn-secondary:hover,
 a.btn-secondary:hover {
-  background-color: #E8E8E8 !important;
-  border-color: #3E5300 !important;
-  color: #3E5300 !important;
+  background-color: #F6F8F0 !important;
+  border-color: #617500 !important;
+  color: #556600 !important;
 }
 
 .btn-secondary:hover span,
 .nav-button.secondary:hover span,
 button.btn-secondary:hover span,
 a.btn-secondary:hover span {
-  color: #3E5300 !important;
+  color: #556600 !important;
 }
 
 .btn-secondary:hover svg,
 .nav-button.secondary:hover svg,
 button.btn-secondary:hover svg,
 a.btn-secondary:hover svg {
-  color: #3E5300 !important;
+  color: #556600 !important;
 }
 
 /* Legacy support - rounded pill style */
