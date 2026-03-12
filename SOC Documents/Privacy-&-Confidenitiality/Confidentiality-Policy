@@ -1,0 +1,136 @@
+Owner: Legal / Security Lead
+Approved By: CEO
+
+1. Purpose
+This policy defines how Kahana identifies, protects, and disposes of confidential information belonging to Kahana, its customers, and partners. It supports SOC 2 Trust Services Criteria for Confidentiality by ensuring confidential information is only accessed by authorized persons and is handled appropriately throughout its lifecycle.
+
+2. Scope
+This policy applies to:
+
+All confidential information processed in connection with Kahana Oasis, including customer workspace data, internal business information, and proprietary materials.
+
+All formats (digital, paper, verbal).
+
+All Kahana employees, contractors, interns, and relevant vendors who may access confidential information.
+
+3. Definition of Confidential Information
+“Confidential Information” includes, at a minimum:
+
+Customer data stored or processed in Kahana Oasis workspaces, hubs, and related services.
+
+Non‑public business information (financials, roadmaps, pricing, product plans, internal metrics).
+
+Proprietary or trade secret information belonging to Kahana or its customers.
+
+Security‑sensitive information (architecture details, access credentials, incident information).
+
+Information classified as Confidential or Restricted under the Data Classification Policy is covered by this policy.
+
+4. Identification and Classification
+Kahana classifies information according to the Data Classification Policy (e.g., Public, Internal, Confidential, Restricted).
+
+Data owners (e.g., Product, Engineering, Finance, HR) are responsible for ensuring that information under their control is correctly classified and handled in line with its sensitivity.
+
+Where practical, systems and documents should indicate classification (labels, folder permissions, metadata).
+
+5. Access and Use of Confidential Information
+Access to confidential information is granted strictly on a need‑to‑know basis, consistent with role‑based access control and least privilege.
+
+Users must:
+
+Access confidential data only when required for their job responsibilities.
+
+Not attempt to access data or systems they are not authorized to use.
+
+Not share confidential information with unauthorized persons inside or outside Kahana.
+
+Use of confidential information is limited to legitimate business purposes related to Kahana’s services and operations.
+
+6. Technical and Organizational Protections
+Kahana protects confidential information through controls defined in related policies and standards, including:
+
+Access Controls: Role‑based access, unique user accounts, MFA, and periodic access reviews.
+
+Encryption: Encryption of confidential data in transit and at rest where appropriate.
+
+Secure Storage: Use of approved systems (databases, storage, SaaS tools) with appropriate access controls; prohibition on storing confidential data in unapproved locations (personal email, personal cloud storage).
+
+Endpoint and Network Security: Workstation security, VPN/secure remote access, and network controls.
+
+Logging and Monitoring: Logging of access to key systems and data, with monitoring for unusual activity.
+
+Controls are documented in the Access Control, Encryption, Remote Access, Workstation Security, Logging & Monitoring, and Vendor Management policies.
+
+7. Confidentiality Obligations and Agreements
+All employees and contractors with access to confidential information must sign confidentiality clauses or a dedicated NDA as part of their engagement with Kahana.
+
+Vendors and sub‑processors that may access confidential information must be bound by contractual confidentiality obligations and appropriate data protection provisions.
+
+Confidentiality obligations continue after the end of employment or engagement, as specified in the relevant agreements.
+
+8. Sharing and Disclosure
+Confidential information may only be shared:
+
+Internally, with individuals who have a legitimate business need and appropriate access rights.
+
+Externally, when:
+
+There is a valid business purpose;
+
+The recipient is under an appropriate NDA or confidentiality obligation; and
+
+Sharing is approved by management as needed (e.g., Legal, Security, business owner).
+
+Disclosures required by law (e.g., subpoena, regulatory request) must be coordinated with Legal, and limited to what is legally required.
+
+9. Handling and Storage Requirements
+Personnel must:
+
+Use only approved tools and locations for storing and processing confidential information.
+
+Avoid transmitting confidential information via insecure channels (e.g., unencrypted email, messaging apps) unless protected by encryption and policy.
+
+Be cautious when discussing confidential information in public or shared spaces (offices, calls, conferences).
+
+Follow the Workstation and Physical Security policies to prevent unauthorized viewing or theft of devices and documents.
+
+10. Retention and Disposal
+Confidential information is retained only as long as necessary for business, legal, or contractual purposes, in accordance with the Data Retention and Destruction Policy.
+
+When no longer needed, confidential information must be securely disposed of or anonymized, for example:
+
+Secure deletion from systems and storage.
+
+Shredding or secure destruction of paper records.
+
+Backups are managed and expired in line with backup retention and data protection policies; Kahana does not typically perform per‑record deletion in historical backups but ensures they age out and remain protected.
+
+11. Training and Awareness
+Confidentiality expectations are communicated in the Employee Handbook, Code of Conduct, and this policy.
+
+All personnel receive security and confidentiality training at onboarding and at least annually, including classification and handling of confidential information.
+​
+
+Employees must acknowledge understanding of confidentiality obligations as part of onboarding and policy updates.
+
+12. Incidents and Breaches of Confidentiality
+Suspected or actual unauthorized access, disclosure, or misuse of confidential information must be reported immediately via Kahana’s incident reporting channels.
+
+Kahana’s Incident Response Plan governs investigation, containment, remediation, and, where required, notifications to customers or regulators.
+
+Confirmed breaches of confidentiality may lead to disciplinary action, up to and including termination, and may have legal consequences.
+
+13. Compliance and Enforcement
+Failure to follow this policy (e.g., sharing confidential data in unapproved ways, mishandling customer information, using personal accounts for confidential work) is a violation and may result in disciplinary action.
+
+Managers and data owners are responsible for reinforcing this policy within their teams and escalating concerns to Legal/Security when needed.
+
+14. Review and Maintenance
+This Confidentiality Policy is reviewed at least annually, and when there are:
+
+Significant changes to Kahana’s services, data flows, or risk profile.
+
+Changes in relevant legal or contractual requirements.
+
+Updates are approved by Legal and the Security Lead and communicated to all personnel.
+

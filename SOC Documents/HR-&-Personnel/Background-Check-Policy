@@ -1,0 +1,86 @@
+Owner: HR
+Approved By: CEO
+
+1. Purpose
+This policy defines Kahana’s approach to basic pre‑employment screening for individuals who will have access to Kahana systems, customer data, or offices. The goal is to reduce obvious hiring risks in a fair, lawful, and proportionate way that supports SOC 2 requirements, without implementing overly intrusive checks.
+
+2. Scope
+This policy applies to:
+
+All new employees, contractors, and long‑term interns who will:
+
+Access production or internal systems; or
+
+Handle customer data; or
+
+Work in Kahana offices with access to equipment and information.
+
+Existing staff may be subject to checks only when required by law, contract, or role change, and only with appropriate notice.
+
+3. Types of Checks (Basic Only)
+Kahana uses basic, role‑appropriate checks and avoids unnecessarily invasive screening.
+
+For most roles with system access, Kahana may perform:
+
+Identity and Work Eligibility Verification
+
+Confirm legal name, identity, and right to work in the relevant country (e.g., standard employment eligibility documents).
+
+Employment / Education Verification (where relevant)
+
+Confirm key recent employment or claimed degree(s) when they are material to the role (e.g., senior technical positions, specialized roles).
+
+Basic Criminal Record Check (where lawful and appropriate)
+
+Limited to jurisdictions where the candidate will work.
+
+Only for roles with meaningful access to production systems, sensitive data, or financial responsibilities.
+
+Kahana does not require intrusive checks (e.g., credit checks, broad investigations) unless mandated by law or specific customer/regulatory requirements for a particular role.
+
+4. Fairness, Consent, and Legal Compliance
+All checks are conducted in compliance with applicable laws in the relevant jurisdiction.
+
+Candidates are informed which checks may be conducted and must provide consent where required.
+
+Kahana will work with vetted background screening providers or follow local legal procedures where applicable.
+
+Checks are applied consistently to similar roles to avoid unfair treatment or discrimination.
+
+5. Use of Background Check Results
+Results are considered along with the candidate’s qualifications, references, and interview performance.
+
+A finding in a background check does not automatically disqualify a candidate; Kahana considers:
+
+Relevance to the role.
+
+Seriousness and recency.
+
+Any explanation or context provided by the candidate.
+
+Decisions based on background information will be made by HR in consultation with the hiring manager and, if needed, legal counsel.
+
+6. Data Handling and Privacy
+Background check information is treated as Confidential and accessible only to HR and limited decision‑makers who need it.
+
+Records are stored securely and retained only as long as needed to complete the hiring process and meet legal requirements.
+
+Candidates may request information about what has been collected about them, consistent with applicable law.
+
+7. Documentation and Evidence for SOC 2
+To support SOC 2:
+
+HR keeps a simple record (e.g., in the HR system or checklist) indicating:
+
+Whether required checks were completed (Yes/No).
+
+Date completed.
+
+Screening provider (if any).
+
+Detailed reports are not shared outside HR and are not needed for audits; auditors only need to see that checks are performed for applicable roles.
+
+8. Review and Exceptions
+This policy is reviewed at least annually or when there are changes in legal or customer requirements affecting background checks.
+
+Any exception (e.g., skipping a check for a role that normally requires it) must be documented by HR with justification and approved by the CEO or HR Lead.

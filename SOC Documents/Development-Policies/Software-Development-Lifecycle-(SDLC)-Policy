@@ -1,0 +1,194 @@
+Owner: Engineering Lead
+Approved By: CTO
+
+1. Purpose
+This policy defines how Kahana designs, builds, tests, and deploys changes to the Kahana Oasis platform. The goal is to ensure that software is developed securely, reliably, and in a controlled way that supports SOC 2 requirements for security, change management, and system operations.
+
+2. Scope
+This policy applies to:
+
+All software components of Kahana Oasis (frontend, backend services, APIs, scripts, infrastructure‑as‑code).
+
+All environments that support Oasis (development, testing, staging, production).
+
+All Kahana employees, contractors, and vendors involved in software development, testing, and deployment.
+
+3. SDLC Phases
+Kahana follows a lifecycle with the following phases:
+
+Requirements & Design
+
+Implementation (Development)
+
+Testing & Quality Assurance
+
+Deployment & Release
+
+Operations & Monitoring
+
+Maintenance & Continuous Improvement
+
+Each phase includes security and quality activities appropriate to Kahana’s size and risk profile.
+
+4. Requirements & Design
+New features and changes must start with clear requirements (functional and, where relevant, security/privacy requirements).
+
+For changes with potential security or privacy impact (e.g., access control, data handling, integrations), the team must consider:
+
+What data is processed and its classification.
+
+Threats and abuse cases (e.g., unauthorized access, data leakage, injection).
+
+Necessary controls (authentication, authorization, input validation, logging, encryption).
+
+Architecture and design decisions should be documented at a level appropriate to the change (e.g., design docs for major features, tickets/notes for smaller changes).
+
+The Engineering Lead or designated reviewers should review major designs for technical feasibility, performance, and security.
+
+5. Implementation (Development)
+All code must be stored in GitHub. Kahana uses GitHub for PRs, reviews, merge history, and CI; sprints created from Tally.so feedback via Cursor and GitHub; no Jira/Linear.
+
+Developers must follow Kahana’s secure coding practices, including:
+
+Input validation and output encoding to prevent common vulnerabilities (e.g., injection, XSS).
+
+Proper use of authentication/authorization APIs.
+
+Encryption APIs used only via approved libraries and configurations.
+
+Avoidance of hard‑coded secrets or credentials in code.
+
+Feature and bugfix work must be done in separate branches (not directly on main), with commits referencing relevant tickets where appropriate.
+
+6. Code Review
+All changes to production code must go through peer review via pull requests (PRs) before merging into main or release branches.
+
+Code reviewers should check for:
+
+Correctness and maintainability.
+
+Security issues (injection, improper access checks, insecure error handling, etc.).
+
+Performance or scalability impacts for key paths.
+
+Compliance with coding standards and style guidelines.
+
+High‑risk changes (e.g., authentication, authorization, cryptography, data access) may require review by a more senior engineer or someone with security experience.
+
+PRs must not be self‑approved; at least one other qualified person must review and approve before merge.
+
+7. Dependencies and Third‑Party Components
+Dependencies (libraries, frameworks, packages) must be sourced from trusted repositories.
+
+Dependency updates should be managed and reviewed (e.g., via scheduled update cycles or tools like Dependabot).
+
+Known vulnerabilities in dependencies must be monitored and remediated based on severity and Kahana’s vulnerability management SLAs.
+
+Developers must avoid including unnecessary third‑party code, especially if licensing or security risk is unclear.
+
+8. Testing & Quality Assurance
+Automated tests (unit, integration, and where appropriate end‑to‑end tests) should be included in the codebase and run via CI on PRs.
+
+For features with meaningful risk, the team should ensure adequate test coverage of:
+
+Core business logic.
+
+Access control rules.
+
+Error handling and edge cases.
+
+Before deployment to production:
+
+Changes should be deployed to a non‑production environment (e.g., staging) for validation.
+
+Manual testing may be performed for critical flows and UI/UX.
+
+Security testing:
+
+Static or dynamic analysis and dependency scanning may be integrated into pipelines where feasible.
+
+Critical security findings must be triaged and addressed before release, or explicitly approved as exceptions with compensating controls.
+
+9. Deployment & Release
+Deployments to production must follow the Change Management Policy, including:
+
+Tracking via tickets/PRs.
+
+Required approvals.
+
+Documented rollback steps.
+
+Production deployments should be automated via approved CI/CD pipelines; manual ad‑hoc changes to production are discouraged and require explicit approval if unavoidable.
+
+Deployments should be performed during appropriate windows, considering user impact and support coverage.
+
+Where possible, Kahana may use progressive deployment strategies (blue/green, canary) to reduce risk.
+
+10. Configuration and Infrastructure as Code (IaC)
+Infrastructure, configuration, and environment definitions should be managed as code where practical (IaC).
+
+Changes to IaC follow the same review and testing processes as application code (PRs, approvals, testing in non‑prod).
+
+Configuration values that are secrets (API keys, tokens, passwords) must not be stored in code; they must be kept in approved secret management systems.
+
+11. Security Integration in the SDLC
+Security requirements must be considered at each phase:
+
+Design: threat modeling for significant features.
+
+Implementation: secure coding, use of approved libraries.
+
+Testing: inclusion of security tests and checks where feasible.
+
+Deployment: ensuring secure configurations (TLS, headers, hardening).
+
+The Security Lead or designated security champion(s) in engineering should be consulted for high‑risk changes or when new data types, integrations, or features could affect security or privacy.
+
+12. Documentation
+Code changes should include or update relevant documentation (inline comments, README files, API docs, runbooks), especially when:
+
+Introducing new services or endpoints.
+
+Adding or altering security‑relevant behavior.
+
+Operational runbooks (for on‑call and incident response) should be updated when new features or components affect monitoring, alerts, and troubleshooting.
+
+13. Defect and Vulnerability Handling
+Bugs and vulnerabilities discovered in any phase must be logged in the tracking system with severity and priority.
+
+Security issues are handled in line with the Vulnerability Management Policy, including defined SLAs by severity.
+
+If a vulnerability is discovered post‑deployment that affects production, it must be escalated through the Incident Response process when risk is significant.
+
+14. Training and Awareness for Developers
+Engineers must receive periodic training on:
+
+Secure coding best practices.
+
+Common web application and API vulnerabilities.
+
+Kahana’s internal SDLC, change management, and security policies.
+
+New engineering hires should be introduced to this SDLC Policy during onboarding.
+
+15. Metrics and Continuous Improvement
+Engineering leadership may track metrics such as:
+
+Deployment frequency and failure rates.
+
+Time to resolve critical bugs and vulnerabilities.
+
+Test coverage and build pipeline health.
+
+Lessons learned from incidents, outages, and major defects should feed back into the SDLC (e.g., adding tests, improving review checklists, updating guidelines).
+
+16. Compliance and Enforcement
+Failure to follow the SDLC Policy (e.g., bypassing code review, deploying unapproved changes) is a policy violation and may result in remedial action or access restrictions.
+
+Repeated or serious violations may be escalated to leadership and HR.
+
+17. Review and Maintenance
+This SDLC Policy must be reviewed at least annually, or when there are major changes in development practices, architecture, or regulatory requirements.
+
+Updates must be approved by the Engineering Lead and CTO and communicated to all developers and relevant staff.
+

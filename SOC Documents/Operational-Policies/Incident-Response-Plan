@@ -1,0 +1,285 @@
+Owner: CISO / Security Lead
+Approved By: CEO / CTO
+
+1. Purpose
+This Incident Response Plan (IRP) defines how Kahana detects, responds to, and recovers from security and privacy incidents that could affect Kahana Oasis, customer data, or company operations. The goal is to minimize impact, restore normal service quickly, meet legal and contractual obligations, and learn from each incident.
+
+2. Scope
+This plan applies to:
+
+All Kahana systems (production, staging, development, corporate tools).
+
+All types of security incidents, including but not limited to:
+
+Unauthorized access or account compromise
+
+Data disclosure, loss, or modification
+
+Malware, ransomware, or other malicious software
+
+Denial of service or major outages caused by attack
+
+Misconfigurations that expose data or systems
+
+All Kahana employees, contractors, and relevant vendors.
+
+3. Definitions
+Security Event: Any observable occurrence in a system or network (e.g., failed logins, alerts) that may or may not indicate a problem.
+
+Security Incident: A security event or series of events that actually or potentially compromises confidentiality, integrity, or availability of systems or data, or violates policy or law.
+
+Data Breach: An incident that results in unauthorized access to or disclosure of personal or customer data.
+
+4. Roles and Responsibilities
+Kahana uses a small, clear incident response team (IRT):
+
+Incident Commander (IC):
+
+Usually the Security Lead / CISO (or delegate).
+
+Owns overall coordination, decision‑making, and timeline.
+
+Technical Lead:
+
+Senior engineer/DevOps lead for the affected systems.
+
+Investigates root cause, applies fixes, and supports containment/recovery.
+
+Communications Lead:
+
+Coordinates internal and external communications (employees, customers, vendors, regulators if needed).
+
+Typically someone from leadership, product, or customer success, guided by Legal.
+
+Legal / Privacy Contact:
+
+Assesses regulatory and contractual obligations (e.g., breach notifications).
+
+Record Keeper:
+
+Maintains an incident log (what happened, when, who did what, decisions made).
+
+Often the IC or a designated team member.
+
+Everyone at Kahana is responsible for quickly reporting suspected incidents.
+
+5. Incident Lifecycle Overview
+Kahana follows these phases:
+
+Preparation
+
+Identification (Detection & Reporting)
+
+Containment
+
+Eradication
+
+Recovery
+
+Lessons Learned / Post‑Incident Review
+
+6. Phase 1 – Preparation
+Kahana prepares for incidents by:
+
+Maintaining and enforcing security policies (access, logging, encryption, etc.).
+
+Using logging and monitoring tools (Supabase logs, Mixpanel; no dedicated SIEM—consider Datadog for enhanced detection) to detect unusual activity.
+
+Training staff to recognize phishing and suspicious behavior.
+
+Keeping contact lists for key personnel and vendors up to date.
+
+Defining where incident records are stored (e.g., incident ticketing system, shared folder).
+
+7. Phase 2 – Identification (Detection & Reporting)
+Recognition
+
+An incident may be detected by:
+
+Monitoring alerts (auth anomalies, malware, unusual system errors).
+
+Users or employees noticing suspicious behavior or data exposure.
+
+Vendors or partners notifying Kahana of issues.
+
+External reports (customers, researchers).
+
+Initial Steps
+
+Anyone who suspects an incident must promptly report it to the Security Lead or via the designated incident channel (e.g., “#security‑incidents” or ticket type).
+
+The Security Lead or delegate opens an incident record with:
+
+Date/time reported, reporter, and description.
+
+Systems and data potentially affected.
+
+Initial severity guess.
+
+Triage and Classification
+
+The IRT quickly classifies the incident:
+
+Low: Limited scope, no sensitive data exposure, minor impact.
+
+Medium: Some risk to systems or internal data, limited customer impact.
+
+High/Critical: Confirmed or likely compromise of customer data, major outage, or regulatory impact.
+
+Severity determines urgency, communications, and escalation.
+
+8. Phase 3 – Containment
+Goal: Limit damage and prevent further spread or data loss.
+
+Examples of containment actions:
+
+Disable or reset compromised user accounts and credentials.
+
+Revoke API keys, tokens, or sessions.
+
+Isolate affected hosts (e.g., remove from network, restrict access).
+
+Block malicious IPs or traffic patterns at firewall/WAF.
+
+Temporarily disable vulnerable functionality or endpoints if necessary.
+
+For OTA update incidents: Bad build promoted to stable → run rollback to repoint ring to last known-good version. Update service down → restore Supabase function; clients retry automatically. MAR or code-signing key compromise → stop all promotions; disable compromised key; rotate; ship emergency client with new cert pair if needed.
+
+Containment decisions should balance stopping the attack with preserving evidence for investigation.
+
+9. Phase 4 – Eradication
+Goal: Remove the threat and underlying cause.
+
+Typical actions:
+
+Identify and remove malware or malicious code.
+
+Fix misconfigurations (e.g., open S3 bucket, overly broad IAM policy).
+
+Apply patches or updates to vulnerable software.
+
+Remove unused accounts, access keys, or backdoors.
+
+Validate that the root cause is addressed, not just the symptoms.
+
+Technical teams should document what was changed and why in the incident record.
+
+10. Phase 5 – Recovery
+Goal: Safely restore normal operations and monitor for recurrence.
+
+Actions may include:
+
+Restore affected services, servers, or data from known‑good backups if needed.
+
+Gradually re‑enable disabled functionality and access, monitoring closely.
+
+Increase logging or temporary additional monitoring for affected systems.
+
+Confirm systems are stable and no new suspicious activity is observed for an agreed‑upon period.
+
+The Incident Commander, with Technical Lead input, decides when to declare recovery complete.
+
+11. Communications and Notification
+Internal Communication
+
+The IC and Communications Lead provide timely updates to:
+
+Leadership (CEO/CTO).
+
+Relevant teams (engineering, support, customer success, product, HR if applicable).
+
+Internal updates should be factual, concise, and avoid speculation.
+
+Customer and External Communication
+
+If customers or external parties are affected or need to be informed:
+
+The Communications Lead, with Legal and leadership, drafts messages that may include:
+
+What happened (high‑level).
+
+What data or systems were affected.
+
+What Kahana has done and is doing.
+
+Recommended actions for customers (e.g., reset passwords).
+
+Communications may use email, in‑app notices, or public status pages as appropriate.
+
+Regulatory / Contractual Notification
+
+Legal/Privacy determines if incident qualifies as a reportable breach under laws or contracts.
+
+If required, notifications to regulators or partners are prepared and sent within required timelines.
+
+All external communication should be coordinated and approved to ensure consistency and accuracy.
+
+12. Evidence Handling and Documentation
+All incident‑related evidence (logs, screenshots, exports, config snapshots) must be preserved, protected, and stored in a controlled location.
+
+The Record Keeper or IC must maintain a detailed incident log including:
+
+Timeline of events and actions.
+
+People involved and decisions made.
+
+Systems and data affected.
+
+Containment, eradication, and recovery steps.
+
+Evidence must be accessible for audits and any legal or regulatory review.
+
+13. Post‑Incident Review and Lessons Learned
+Within a defined period after resolution (e.g., within 1–2 weeks):
+
+The IRT and relevant stakeholders conduct a post‑incident review (“postmortem”) to discuss:
+
+What happened and why.
+
+What worked well and what did not.
+
+How detection and response can be improved.
+
+Concrete follow‑up actions are documented, with owners and due dates, such as:
+
+Improving monitoring or alerting.
+
+Updating policies or procedures.
+
+Fixing process gaps (e.g., missing access reviews, incomplete backups).
+
+The goal is learning, not blame. Reviews should foster openness and continuous improvement.
+
+14. Training and Exercises
+All employees receive basic awareness training on what a security incident is and how to report it.
+
+Key technical and security staff receive more detailed incident response training.
+
+Kahana may periodically run tabletop exercises or simulations (e.g., mock phishing attack, mock data breach) to test and improve the IRP.
+
+15. Integration with Other Policies
+This Incident Response Plan works together with:
+
+Logging and Monitoring Policy
+
+Access Control Policy
+
+Encryption and Data Protection Policies
+
+Business Continuity and Disaster Recovery Plans
+
+Vendor Management Policy (for vendor‑related incidents)
+
+Where multiple policies apply, the Incident Commander coordinates between them.
+
+16. Violations and Enforcement
+Failure to report suspected incidents, withholding information, or interfering with incident handling may be considered a serious policy violation.
+
+Unauthorized sharing of incident details outside approved channels is prohibited.
+
+Violations may result in disciplinary action up to and including termination of employment or contract.
+
+17. Review and Maintenance
+This Incident Response Plan will be reviewed at least annually, and after significant incidents or major changes to Kahana’s environment.
+
+Updates must be approved by the CISO/Security Lead and senior management and communicated to all affected personnel.

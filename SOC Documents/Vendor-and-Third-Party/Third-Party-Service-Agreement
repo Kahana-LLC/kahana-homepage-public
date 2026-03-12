@@ -1,0 +1,53 @@
+1. Security and Compliance Clause (Template)
+The Service Provider shall implement and maintain appropriate technical and organizational security measures to protect Kahana data against unauthorized access, disclosure, alteration, or destruction, consistent with industry best practices and applicable laws.
+​
+
+The Service Provider will:
+
+Maintain an information security program that includes access control, encryption, logging and monitoring, vulnerability management, and incident response.
+
+Comply with all applicable data protection and privacy laws and regulations.
+
+Ensure that personnel with access to Kahana data are bound by confidentiality obligations.
+
+2. Data Protection and Use of Sub‑processors
+The Service Provider shall use Kahana data only to provide the contracted services and shall not sell, rent, or otherwise disclose Kahana data except as expressly permitted by the Agreement or required by law.
+
+The Service Provider may engage sub‑processors only where:
+
+Such sub‑processors are bound by written agreements imposing security and confidentiality obligations no less protective than those in this Agreement.
+
+The Service Provider remains fully responsible for the acts and omissions of its sub‑processors.
+
+3. Incident Notification
+The Service Provider shall promptly, and without undue delay, notify Kahana upon becoming aware of any actual or reasonably suspected unauthorized access to, or disclosure of, Kahana data or systems (“Security Incident”).
+
+Such notice shall include, to the extent known at the time:
+
+A description of the nature of the Security Incident.
+
+The categories of data and systems affected.
+
+The steps taken or proposed to contain, remediate, and mitigate the Security Incident.
+
+The Service Provider shall cooperate in good faith with Kahana’s reasonable requests for information relating to the Security Incident.
+
+4. Audit and Assurance
+Upon reasonable request, the Service Provider shall provide Kahana with information necessary to demonstrate compliance with its security obligations, which may include:
+
+Current security whitepapers or summaries of its information security program.
+
+Copies or summaries of relevant independent audit reports or certifications (e.g., SOC 2, ISO 27001), if available.
+
+Kahana may, no more than once annually and with reasonable notice, perform or commission a security review limited to verifying the Service Provider’s adherence to the security and data protection obligations set forth in this Agreement, subject to mutual confidentiality obligations.
+
+5. Data Retention and Deletion
+Upon termination or expiration of the Agreement, or upon Kahana’s written request, the Service Provider shall, within a reasonable timeframe, return or securely delete Kahana data in its possession or control, except to the extent retention is required by law.
+
+Where deletion is not technically feasible, the Service Provider shall continue to protect such data in accordance with this Agreement and limit processing to storage only.
+
+6. Data Location and Transfers (Optional, if relevant for you)
+The Service Provider shall inform Kahana of the primary geographic locations where Kahana data is stored or processed and shall not transfer Kahana data to a new region or country in a way that materially increases risk without prior notice to Kahana.
+
+7. Termination for Security Reasons
+Kahana may terminate the Agreement, in whole or in part, upon written notice if the Service Provider experiences repeated or material Security Incidents, fails to remedy material security deficiencies, or otherwise materially breaches its security or data protection obligations under this Agreement.

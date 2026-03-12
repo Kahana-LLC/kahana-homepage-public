@@ -1,0 +1,23 @@
+Title: Change Management Evidence
+
+Purpose
+To demonstrate that production changes are controlled, approved, and documented.
+
+Process
+
+Scope: All changes to production application code, infrastructure, and security configurations.
+
+Each change must have a ticket including: description, risk/impact, rollback plan, reviewer, and approver.
+
+Changes are tested in staging where feasible before production deployment.
+
+Emergency changes are documented retrospectively with justification.
+
+Evidence kept for Type II:
+
+Population of change tickets across the period.
+
+Samples showing approvals, testing notes, and rollout dates.
+
+CI/CD release logs linked to tickets, where available.
+

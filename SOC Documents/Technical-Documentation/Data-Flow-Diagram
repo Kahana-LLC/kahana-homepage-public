@@ -1,0 +1,95 @@
+You don’t need a long policy here; you need 1–2 clear Data Flow Diagrams (DFDs) plus a short note describing them. Here’s exactly what to draw for SOC 2.
+
+1. Diagram 1 – User Session & Workspace Data Flow
+Draw this as a left‑to‑right flow:
+
+Entities / Boxes
+
+User browser (Oasis client)
+
+Web/API gateway
+
+Auth/Session service
+
+Workspace service
+
+User/Org service
+
+Database (accounts + workspace metadata)
+
+Object storage (workspace files, if any)
+
+Logging/Monitoring
+
+AI provider (if applicable)
+
+Arrows (label each with data type)
+
+User → Web/API gateway
+
+“Login credentials / SSO token / requests over HTTPS”
+
+Web/API gateway → Auth service
+
+“Auth request (email + password hash / SSO assertion)”
+
+Auth service ↔ IdP (SSO)
+
+“Auth assertion / profile attributes (name, email, org)”
+
+Auth service → User browser
+
+“Session token / JWT over HTTPS”
+
+User browser → Web/API gateway → Workspace & User services
+
+“API calls with session token (workspace operations, settings)”
+
+Workspace/User services ↔ Database
+
+“Account records, workspace metadata, config (encrypted at rest)”
+
+Workspace service ↔ Object storage
+
+“Workspace files / attachments (encrypted at rest)”
+
+Services → Logging/Monitoring
+
+“Access logs, errors, security events (no sensitive content where avoidable)”
+
+(If AI integration) Workspace/AI service ↔ AI provider
+
+“Minimal context for AI request; no unnecessary personal/sensitive data”
+
+This shows: where personal/customer data enters, what systems process/store it, and where it leaves (if at all).
+
+2. Diagram 2 – Admin & Support Access Data Flow (Short)
+Draw a second, simpler DFD showing internal access:
+
+Entities / Boxes
+
+Admin/support user (laptop)
+
+SSO / IdP
+
+Admin panel / support tools
+
+Production database (read‑only views)
+
+Logging/Monitoring
+
+Key flows
+
+Admin → SSO (MFA) → Admin panel.
+
+Admin panel → Database (limited queries to help customers).
+
+All admin access → Logging/Monitoring (who accessed what, when).
+
+This answers “how do internal people touch customer data, and how is it controlled and logged.”
+
+3. One‑Paragraph Companion Text
+Add a small text block under “Data Flow Diagrams – Notes”:
+
+The data flow diagrams show how user and admin data enters Kahana Oasis, which services process it, which data stores persist it, and where logs and third‑party providers are involved. Personal and workspace data flows only through controlled backend services over TLS, is stored in encrypted databases and object storage, and is accessed by internal staff only via authenticated, logged tools with least‑privilege permissions.
+

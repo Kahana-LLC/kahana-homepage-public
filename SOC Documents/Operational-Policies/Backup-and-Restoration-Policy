@@ -1,0 +1,210 @@
+Owner: DevOps / Infrastructure Lead
+Approved By: CTO
+
+1. Purpose
+This policy defines how Kahana backs up and restores systems and data that support Kahana Oasis. The goal is to ensure that critical data and services can be recovered within acceptable timeframes and with minimal data loss after failures, errors, or incidents.
+
+2. Scope
+This policy applies to:
+
+All production systems and data stores used by Kahana Oasis, including:
+
+Databases
+
+Object/file storage for customer content
+
+Configuration data and critical metadata
+
+Key internal systems that are needed to operate the service (identity/SSO, secrets, monitoring), where backups are under Kahana’s control.
+
+All Kahana employees and contractors responsible for infrastructure, operations, and security.
+
+3. Backup Objectives
+Backup strategy is designed to meet Kahana’s continuity goals:
+
+Recovery Time Objective (RTO):
+
+Target maximum time to restore critical services after a data‑related incident (e.g., <4 hours – adjust as needed>).
+
+Recovery Point Objective (RPO):
+
+Target maximum acceptable data loss from the last backup or replicated state (e.g., <15–60 minutes – adjust as needed>).
+
+These objectives drive backup frequency, retention, and restoration procedures.
+
+4. Data Types and Backup Requirements
+Kahana backs up the following categories of data:
+
+Production Databases (Supabase PostgreSQL)
+
+Supabase provides automated daily backups on Pro Plan and above. Free Plan has no backups (gap—upgrade or use custom db dump for compliance).
+
+Backup frequency: daily on Pro Plan ($25/mo); custom supabase db dump if on Free Plan.
+
+Retention: Pro = 7 days, Team = 14 days, Enterprise = 30 days. Minimum 7 days for SOC readiness.
+
+Customer Files and Content (Object Storage)
+
+Use storage versioning and/or periodic snapshots/replication where feasible.
+
+Backup frequency: at least daily snapshots for critical buckets/stores, plus versioning to recover accidental deletions/overwrites.
+
+Retention: configured based on data retention policy (e.g., 30–90 days for backups, plus live data retention rules).
+
+Configuration and Infrastructure Definitions
+
+Application and infrastructure code stored in version control (e.g., Git) with regular remote backups of repositories.
+
+Critical configuration (e.g., IaC templates, deployment scripts) treated as code and backed up automatically through the repository.
+
+Secrets, Keys, and Credentials Metadata
+
+Managed in secure secrets management services; configuration and mapping are documented and backed up where supported by the provider.
+
+5. Backup Methods and Locations
+Managed Cloud Backups:
+
+Use built‑in backup features of managed databases and storage where possible.
+
+Configure automatic backups and retention per this policy.
+
+Snapshots and Replication:
+
+Use snapshots for volumes and object storage when appropriate.
+
+Where feasible, consider cross‑region or cross‑zone replication to protect against localized failures.
+
+Version Control:
+
+All application code and infrastructure definitions must be committed to the central repository, which is itself backed up by the hosting provider.
+
+Backup configurations must be documented, including which systems are backed up, how often, and where backups are stored.
+
+6. Access Control for Backups
+Access to backup data is restricted to authorized DevOps/Security personnel with a clear business need.
+
+Backup storage must be protected with strong authentication, least privilege, and appropriate encryption.
+
+Wherever possible, backup environments should be logically separated from production environments to reduce the risk that a compromise of production automatically exposes backups.
+
+7. Encryption of Backups
+All backups containing customer or other Confidential/Restricted data must be encrypted at rest.
+
+Encryption keys must be managed according to the Encryption Policy (e.g., cloud KMS).
+
+Backups transferred between locations (e.g., between regions) must be protected by secure channels.
+
+8. Backup Monitoring and Verification
+Backup jobs must be monitored for success/failure.
+
+Failed backups must be investigated and remediated promptly.
+
+Regular checks should confirm that:
+
+Backups are running as scheduled.
+
+Retention policies are being applied correctly.
+
+Storage capacity is adequate.
+
+9. Restoration Procedures
+Restoration procedures must be documented and tested for each major system:
+
+Database Restore
+
+Identify the incident and the time to which data must be restored (pre‑corruption/pre‑deletion time).
+
+Use managed DB recovery tools to restore to the chosen backup or point in time.
+
+Where possible, first restore to a test instance to validate data integrity before applying to production.
+
+Once validated, either:
+
+Swap application to use the restored instance, or
+
+Migrate cleaned data into the existing instance via controlled procedures.
+
+File/Object Storage Restore
+
+For accidental deletion/overwrites: restore specific objects using versioning or snapshots.
+
+For larger issues: restore affected buckets or directories from backup or replicated copies.
+
+Configuration and Infrastructure
+
+Reprovision infrastructure using IaC definitions stored in version control.
+
+Reapply configurations and deploy application from known‑good versions.
+
+All restoration steps must be recorded in an incident/DR log for traceability.
+
+10. Testing Restores
+Kahana must perform regular restore tests to verify backup reliability—at least quarterly for critical databases and key data stores.
+
+Tests should include:
+
+Restoring backups to a test environment.
+
+Verifying that data is complete, usable, and consistent.
+
+Measuring time taken to restore (compare with RTO).
+
+Results of each test must be documented, including issues found and any changes needed in backup or restore procedures.
+
+11. Integration with Incident Response and DR
+During security incidents or major outages, backup and restore actions will be coordinated under the Incident Response Plan and Disaster Recovery Plan.
+
+Decisions to restore from backup must consider:
+
+Whether the backups themselves are safe and uncompromised.
+
+The business impact of potential data loss within the RPO window.
+
+Backups should not be restored into an environment that remains compromised; containment and eradication steps should be completed first.
+
+12. Data Retention and Deletion Alignment
+Backup retention periods must align with Kahana’s Data Retention and Destruction Policy and legal/regulatory requirements.
+
+When customer data must be deleted or anonymized due to retention rules or requests, procedures must ensure:
+
+Live data is removed as required.
+
+Backups are handled in a way that does not conflict with regulatory obligations (e.g., deletion on backup expiry, or special handling for specific legal requirements).
+
+13. Roles and Responsibilities
+DevOps / Infrastructure Team:
+
+Configure and maintain backup jobs and systems.
+
+Execute restoration procedures and tests.
+
+Security Team:
+
+Ensure backups support security and compliance requirements (encryption, access control).
+
+Validate that backup/restore capability is considered in risk assessments.
+
+System Owners / Engineering Leads:
+
+Define critical data sets and confirm backup coverage.
+
+Participate in testing and validation of restored systems.
+
+14. Violations and Enforcement
+Disabling backups, ignoring backup failures, or restoring data outside of approved processes may be treated as serious policy violations.
+
+Violations may result in disciplinary actions and tighter controls over access to backup and restore capabilities.
+
+15. Exceptions
+Any exception (e.g., system not backed up due to technical limitation) must be:
+
+Documented with justification and assessed risk.
+
+Approved by the DevOps Lead and Security.
+
+Mitigated with compensating controls where feasible (e.g., alternative redundancy or replication).
+
+16. Review and Maintenance
+This Backup and Restoration Policy must be reviewed at least annually, and after any significant change to architecture, storage solutions, or regulatory requirements.
+
+Updates must be approved by the policy owner and communicated to DevOps, Security, and relevant engineering staff.

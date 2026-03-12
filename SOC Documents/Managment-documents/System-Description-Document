@@ -1,0 +1,179 @@
+Title: System Description – Kahana Oasis (SOC 2)
+
+Version: 1.0
+Effective Date / Period Covered: For SOC 2 Type I: as of [audit date]. For Type II: from [START DATE] to [END DATE] (audit period to be set upon engagement; target SOC 2 Type II within 6–12 months post–SOC 1)
+
+1. Company Overview and Services Provided
+Kahana Inc. (“Kahana” or the “service organization”) provides Kahana Oasis, a secure, AI‑powered, agentic browser and productivity workspace used by organizations to manage online work, research, and content in a structured environment. Users can group tabs, organize sessions into hubs, collaborate, and integrate AI assistants while maintaining strong security and privacy controls.
+
+Kahana primarily serves business and enterprise customers who need a safer, more controlled browser environment for employees and teams. The Oasis platform is delivered as a cloud‑hosted service accessible over the internet.
+
+2. System Boundaries and In‑Scope Components
+For this SOC 2 engagement, the “system” includes the people, processes, and technology used to deliver the Kahana Oasis service to customers. In scope:
+
+Production environment for Kahana Oasis (web application, APIs, backend services).
+
+Authentication and user management for Oasis accounts.
+
+Data storage for customer accounts, workspace metadata, and related content stored by or routed through Kahana‑managed services.
+​
+
+Logging, monitoring, and security controls for the in‑scope environment.
+
+Change management, incident response, and supporting processes relevant to the Security Trust Services Criteria.
+
+Out of scope (for this report, unless later added): non‑production environments beyond their role supporting production, purely marketing websites, and purely internal‑only tooling not used to deliver the Oasis service.
+
+3. Principal Service Commitments and System Requirements
+Kahana’s principal commitments for the Oasis system, as communicated in marketing materials, security documentation, and contracts/SLAs, focus on:
+
+Security and Zero‑Trust Principles:
+
+Reducing the risk of unauthorized access to customer data and browsing activity.
+
+Enforcing strong access control, isolation, and least privilege.
+
+Privacy and Data Protection:
+
+Limiting data collection and avoiding sensitive content collection where possible.
+
+Encrypting data in transit and at rest and using security‑focused providers for key functions (auth, payments, AI).
+​
+
+Availability and Reliability (if you choose Availability TSC):
+
+Providing reasonable uptime and responsiveness for core Oasis features.
+
+Restoring service in a timely manner after incidents, in line with documented RTO/RPO.
+
+To meet these commitments, Kahana defines system requirements such as encryption, access control, logging, monitoring, backup/DR, secure development, and vendor management controls.
+
+4. System Components
+4.1 Infrastructure
+Kahana hosts Oasis on AWS (us‑east‑1, N. Virginia) and Supabase for backend services. The infrastructure includes:
+
+AWS: Lambda, Terraform for infrastructure-as-code, CI/CD for build and versioning.
+
+Virtual networks, subnets, and security groups controlling traffic to and from application services.
+
+Load balancers or gateways terminating TLS and routing traffic to application backends.
+
+Supabase (managed PostgreSQL) for storing user and workspace metadata, analytics, UTM tracking, HITL feedback—encrypted at rest; TLS in transit.
+
+Supabase Storage / AWS S3 for object storage of customer‑related content and metadata, encrypted at rest.
+
+Secrets and keys managed in AWS Secrets Manager, accessed securely via Lambda functions.
+
+Direct access to production infrastructure is restricted to authorized personnel using secure, authenticated channels, with access logged; quarterly access reviews are being implemented as part of SOC readiness.
+​
+
+4.2 Software
+The Oasis system consists of:
+
+Client components:
+
+A browser‑based or browser‑integrated client environment that provides tab grouping, workspace management, and AI assistant features.
+
+Server components:
+
+Backend microservices and APIs supporting authentication, session management, workspace operations, and telemetry (limited to privacy‑preserving events).
+
+Integration components: Supabase Auth (end‑user login; Google, Microsoft, Apple sign‑in); Okta for enterprise browser; Mixpanel for analytics; Google Gemini and Deepgram for AI (with DPA considerations).
+
+Software is built and deployed through a secure development lifecycle and change management process, including code review and testing.
+
+4.3 People
+Key roles involved in operating and securing the system include:
+
+Executive leadership (CEO Adam Kershner, CTO, Security Lead).
+
+Engineering and DevOps teams responsible for building, deploying, and operating Oasis.
+
+Security / Compliance functions overseeing policies, risk management, and SOC readiness.
+
+Customer support and success teams assisting customers and handling support requests.
+
+Access to production environments and customer data is limited to specific roles and is controlled by documented access control policies.
+​
+
+4.4 Data
+The system processes the following main data types:
+​
+
+Account and profile data: basic information needed to create and manage Oasis accounts.
+
+Workspace and configuration data: information about user workspaces, tab groupings, settings, and metadata.
+
+Technical and usage telemetry: privacy‑preserving usage events (e.g., feature usage) and technical metadata as described in Kahana’s security and privacy statements, intentionally avoiding sensitive content like full URLs or page text wherever possible.
+​
+
+Kahana aims to store as little personally identifiable information (PII) as possible and to avoid unnecessary sensitive content.
+​
+
+5. Subservice Organizations (Third‑Party Providers)
+Kahana relies on the following subservice organizations:
+
+Cloud and Backend: AWS (compute, storage, networking, us‑east‑1); Supabase (PostgreSQL database, Auth, Storage, backend APIs).
+
+Authentication: Supabase Auth (end‑user; Google, Microsoft, Apple); Okta (enterprise browser plugin).
+
+Analytics and Monitoring: Mixpanel (analytics); Supabase logs (backend events; 7‑day retention on Pro Plan). No dedicated SIEM; Datadog under consideration.
+
+Payment: Stripe (subscription billing; Kahana does not directly handle payment card data).
+
+Other: Google Analytics, Looker; AI: Google Gemini, Deepgram (DPAs and SOC 2 considerations per checklist).
+
+These subservice organizations are expected to maintain security and compliance controls appropriate to their services. Kahana reviews them through vendor management processes and, where available, obtains their security documentation or SOC/ISO reports.
+
+The system description and SOC 2 report identify which controls are assumed to be provided by these subservice organizations and which are handled by Kahana.
+
+6. Trust Services Criteria in Scope
+For this report, Kahana has selected the following Trust Services Criteria (TSC):
+
+Security (Common Criteria – required):
+Controls to protect against unauthorized access, disclosure, or damage to systems and data (e.g., access control, authentication, logging, change management, incident response).
+
+Optionally (if you choose to add them later):
+
+Availability:
+Controls to support reasonable uptime, redundancy, and recovery.
+
+Confidentiality:
+Controls to protect non‑public information, including customer workspace data and internal sensitive data.
+
+The system description and related controls are designed to demonstrate how Kahana meets the criteria in scope.
+
+7. Relevant Aspects of the Control Environment, Risk Assessment, and Monitoring
+Control Environment
+Kahana’s leadership emphasizes secure design and privacy‑preserving behavior for Oasis, reflected in written policies (information security, access control, encryption, change management, incident response, BCP/DR, vendor management, etc.) and clearly defined roles and responsibilities.
+
+Risk Assessment
+Kahana conducts periodic risk assessments over the Oasis environment, identifying threats to availability, confidentiality, and integrity, and tracking them in a risk register with treatment plans.
+
+Information and Communication
+Security and privacy commitments are communicated via public security/privacy documentation and customer materials. Internally, policies, procedures, and security updates are communicated through internal documentation, training, and meetings.
+
+Monitoring Activities
+Kahana uses logging, monitoring, and alerting to detect unusual activity, investigate incidents, and verify that controls operate as intended, as described in the Logging and Monitoring Policy.
+
+8. System Changes, Incidents, and Control Processes
+During the period in scope (for Type II), Kahana manages change and incidents through:
+
+A documented Change Management Policy requiring tracking, review, and testing of code and infrastructure changes.
+
+An Incident Response Plan defining how security incidents are detected, triaged, contained, remediated, and reviewed.
+
+Regular application of security updates, configuration management, and vulnerability remediation in line with defined SLAs.
+
+Any significant system changes or relevant incidents during the period will be summarized in the SOC 2 report narrative if required by the auditor.
+
+9. Complementary User Entity Controls (CUECs)
+To fully achieve the control objectives and Trust Services Criteria, Kahana assumes that customer organizations (user entities) implement certain controls, such as:
+
+Managing their own user provisioning, role assignments, and offboarding within their Kahana accounts as provided by the product.
+
+Configuring and enforcing internal policies for acceptable use of Oasis and related security training for their staff.
+
+Securing endpoints and networks used to access Oasis (e.g., device hardening, endpoint protection, local access controls).
+
+These complementary user entity controls are described in the SOC 2 report so customers understand their responsibilities.

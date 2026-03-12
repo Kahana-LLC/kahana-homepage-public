@@ -1,0 +1,152 @@
+Owner: Legal / Security Lead
+Approved By: CEO
+
+1. Purpose
+This policy defines how Kahana protects personal and other sensitive data processed by the Kahana Oasis platform. It supports:
+
+Compliance with applicable data protection laws (for example, GDPR/CCPA where they apply).
+
+SOC 2 Trust Services Criteria for Confidentiality and Privacy (if in scope).
+
+It should be read together with the Privacy Policy, Data Classification Policy, and Data Retention and Destruction Policy.
+
+2. Scope
+This policy applies to:
+
+All personal data and other sensitive information processed in connection with Kahana Oasis (customer and user data, employee data, vendor contact data).
+
+All systems and services used to process, store, or transmit such data.
+
+All Kahana employees, contractors, and vendors who have access to this data.
+
+“Personal data” means any information that identifies or can reasonably be linked to an individual.
+
+3. Data Protection Principles
+Kahana aims to handle personal data in line with broadly accepted data protection principles and SOC 2 Privacy criteria:
+
+Lawfulness, fairness, and transparency – We process data in a lawful and transparent way and explain our practices in a clear Privacy Policy.
+
+Purpose limitation – We collect and use personal data only for specified, legitimate purposes (e.g., providing and improving Kahana Oasis, security, support).
+
+Data minimization – We collect and retain only the data necessary for those purposes.
+
+Accuracy – We take reasonable steps to keep personal data accurate and up to date.
+
+Storage limitation – We keep personal data only as long as needed and then delete or anonymize it according to the Data Retention Policy.
+
+Integrity and confidentiality (security) – We protect personal data with appropriate technical and organizational security measures.
+
+4. Legal Basis and Consent (if applicable)
+Where required by law (e.g., GDPR/CCPA where Kahana is subject to them):
+
+We identify an appropriate legal basis for processing (such as contract performance, legitimate interests, legal obligations, or consent).
+
+Where we rely on consent (for example, for certain marketing or optional features), we:
+
+Obtain consent in a clear, specific way.
+
+Allow individuals to withdraw consent easily.
+
+We document and honor relevant user preferences (e.g., marketing opt‑outs, cookie choices).
+
+5. Data Subject Rights
+Where data protection laws apply, and as a matter of good practice more generally, Kahana will maintain processes to respond to individual requests regarding their personal data, such as:
+
+Access – Obtain a copy of personal data we hold.
+
+Correction – Request corrections to inaccurate or incomplete data.
+
+Deletion – Request deletion of personal data when no longer needed or when required by law (subject to legitimate retention needs).
+
+Restriction or objection – Object to or restrict certain processing where permitted by law.
+
+Portability – Receive certain data in a machine‑readable format where feasible.
+
+Requests may be submitted through designated channels (for example, privacy@<domain> or support). Kahana will verify identity as appropriate and respond within legally required timeframes where applicable.
+
+6. Data Classification and Handling
+Personal data and other sensitive information must be classified and handled according to Kahana’s Data Classification Policy (e.g., Internal, Confidential, Restricted).
+
+Handling requirements for Restricted and Confidential data include:
+
+Encryption in transit and at rest where applicable.
+
+Access limited to those with a business need (“need‑to‑know”).
+
+Use of approved storage and collaboration tools.
+
+Secure deletion or anonymization when no longer needed (per Data Retention and Destruction Policy).
+
+7. Security Measures
+Kahana implements technical and organizational measures appropriate to the risk, including:
+
+Access control and authentication (RBAC, least privilege, MFA).
+
+Network and application security controls.
+
+Encryption for data in transit and at rest where appropriate.
+
+Logging and monitoring of security‑relevant events.
+
+Backup and restore procedures and tested DR capabilities.
+
+Security awareness training for employees.
+
+These controls are further described in Kahana’s security and IT policies (Access Control, Encryption, Logging & Monitoring, Incident Response, BCP/DR, etc.).
+
+8. Vendors and Sub‑processors
+Kahana uses third‑party service providers (sub‑processors) to deliver Kahana Oasis (e.g., cloud infrastructure, auth, payment, analytics).
+
+Vendors that process personal data on Kahana’s behalf must:
+
+Be subject to appropriate due diligence and risk assessment.
+
+Sign agreements including confidentiality, security, and data protection obligations.
+
+Implement controls consistent with this policy and applicable laws.
+
+The Vendor Management Policy and Subservice Organization procedures govern selection and monitoring of such providers.
+
+9. Data Breaches and Incident Response
+Suspected or confirmed personal data breaches must be reported immediately through Kahana’s incident channels.
+
+Kahana’s Incident Response Plan governs investigation, containment, remediation, and documentation.
+
+Where required by law or contract, Kahana will:
+
+Notify affected customers and/or regulators within applicable timelines.
+
+Provide available information about the nature of the breach, affected data, and steps being taken.
+
+10. Training and Awareness
+Employees and relevant contractors must complete security and privacy awareness training at onboarding and at least annually thereafter.
+
+Training includes:
+
+Data protection principles.
+
+Handling of personal and confidential data.
+
+Recognizing and reporting security/privacy incidents.
+
+11. Responsibilities
+Legal / Compliance: Track applicable data protection laws and advise on obligations, contracts, and data subject rights processes.
+
+Security Lead: Ensure security measures support confidentiality and privacy requirements; coordinate incident handling.
+
+Engineering / Product: Design features and data flows with privacy and data minimization in mind; document data processing in system design.
+
+HR: Protect employee data and ensure staff understand their data protection responsibilities.
+
+All employees and contractors: Follow this policy and related procedures when accessing or handling personal data.
+
+12. Review and Updates
+This Data Protection Policy is reviewed at least annually and whenever there are significant changes to:
+
+Kahana Oasis’ data processing activities.
+
+Applicable data protection laws.
+
+Kahana’s security and compliance program.
+
+Updates are approved by Legal and the Security Lead and communicated to relevant teams.

@@ -1,0 +1,309 @@
+Owner: DevOps / Infrastructure Lead
+Approved By: CTO
+
+1. Purpose
+This Disaster Recovery Plan defines the technical steps Kahana takes to restore Kahana Oasis and supporting systems after a major disruption (e.g., cloud provider issues, data corruption, major misconfiguration). It supports the Business Continuity Plan by focusing on restoring IT services and data within defined RTO/RPO targets.
+
+2. Scope
+This DRP covers:
+
+Kahana Oasis production environment (application, APIs, databases, storage).
+
+Supporting infrastructure (cloud accounts, networking, CI/CD where needed for restore).
+
+Critical internal systems needed to operate the service (identity/SSO, monitoring, logging).
+
+It applies to severe events such as:
+
+Region‑level or major cloud service failure.
+
+Significant data corruption or loss.
+
+Catastrophic deployment or configuration changes that break production.
+
+Security incidents that require rebuilding systems or restoring from backups.
+
+3. Recovery Objectives
+These values are examples – you should set real numbers with engineering:
+
+Recovery Time Objective (RTO):
+
+Target maximum outage duration for Kahana Oasis core services: 4–8 hours.
+
+Recovery Point Objective (RPO):
+
+Target maximum acceptable data loss (time since last usable backup/replica): 24 hours with Supabase Pro daily backups; N/A if on Free Plan (no backups—gap).
+
+These objectives drive backup frequency, replication, and DR architecture.
+
+4. Systems and Components in Scope
+List your main components (adjust names later):
+
+Application Layer:
+
+Web frontend and backend services (AWS Lambda, Supabase backend, Oasis app).
+
+Data Layer:
+
+Primary production database: Supabase PostgreSQL (analytics, UTM, HITL feedback, Mixpanel). No secondary DB/redundancy.
+
+Object/file storage: Supabase Storage / AWS S3.
+
+Infrastructure Layer:
+
+AWS us-east-1 (VPC, subnets, security groups); Terraform IaC.
+
+Load balancers, gateways, DNS.
+
+CI/CD: GitHub workflows, build/versioning.
+
+Supporting Services:
+
+Auth: Supabase Auth (Google, Microsoft, Apple); Okta for enterprise. Internal: Google Workspace (Adam only).
+
+Monitoring: Supabase logs, Mixpanel; no dedicated SIEM.
+
+Secrets: AWS Secrets Manager (accessed via Lambda).
+
+5. Disaster Scenarios
+Kahana plans for at least these high‑level scenarios:
+
+Application or Deployment Failure
+
+A deployment or configuration change breaks the service.
+
+Data Corruption or Loss
+
+Data is accidentally or maliciously altered or deleted.
+
+Cloud Region / Availability Zone Failure
+
+A major outage in the primary region or zone.
+
+Security Incident Requiring Rebuild
+
+Systems must be rebuilt or restored to a known‑good state after compromise.
+
+The DRP defines responses for each, using standard building blocks: rollback, restore, failover, and rebuild.
+
+6. Backup Strategy
+(High level – details live in Backup & Restoration Policy.)
+
+Databases (Supabase):
+
+Pro Plan: daily backups, 7-day retention in AWS S3 (us-east-1). Free Plan: no backups (gap—upgrade or use supabase db dump).
+
+Object/File Storage:
+
+Versioning and/or lifecycle rules for critical buckets.
+
+Periodic backups to alternate storage or region if needed.
+
+Configuration and Infrastructure:
+
+Infrastructure‑as‑Code (IaC) used for VPC, services, policies.
+
+Application code and configurations stored in version control.
+
+Secrets and Keys:
+
+Managed by a secure secrets store; configuration and mapping documented.
+
+Regular restore tests validate that backups are usable.
+
+7. Disaster Declaration and DRP Activation
+The DRP is activated when:
+
+Kahana Oasis is unavailable or severely degraded beyond normal incident response and cannot be quickly fixed.
+
+Data integrity is at significant risk or confirmed compromised.
+
+A major cloud or infrastructure outage makes normal operations impossible in the primary environment.
+
+Steps:
+
+Incident Response is triggered and assesses the situation.
+
+CTO/DevOps Lead, with Security and BCP Coordinator, decide to activate this DRP.
+
+A dedicated DR channel/ticket is opened to coordinate all tasks and communication.
+
+8. Recovery Procedures – Application Failure / Bad Deployment
+Goal: Quickly restore a working version when a deployment or config breaks production.
+
+Identify the Problem:
+
+Review monitoring and logs to confirm the deployment or config change is causing the issue.
+
+Rollback:
+
+Use CI/CD tools to roll back to the last known good version of the application or configuration.
+
+For Oasis client updates: Repoint the oasis-stable ring to the prior known-good version (no rebuild required). Same process for canary→stable promotion in reverse.
+
+If using blue/green or canary deployments, switch traffic back to the previous environment.
+
+Verify Service:
+
+Check health checks, logs, and key user flows.
+
+Confirm incident metrics return to normal.
+
+Document:
+
+Record the failure, root cause, and corrective actions in the incident/DR log.
+
+If rollback fails or data is impacted, follow the data corruption or rebuild procedures below.
+
+9. Recovery Procedures – Data Corruption or Loss
+Goal: Restore data to a consistent state with minimal loss.
+
+Assess Scope and Time Window:
+
+Identify when corruption/loss occurred (using logs, monitoring, database metrics).
+
+Determine which data sets are affected (e.g., specific tables, entire DB, certain buckets).
+
+Decide Recovery Strategy:
+
+If possible, fix forward (e.g., revert only bad records using logs or snapshots).
+
+If not, restore from backup or use point‑in‑time recovery to a timestamp just before the event.
+
+Restore Database:
+
+In a test environment, restore DB from backup or PITR to validate integrity.
+
+Once validated, restore to production (either replacing the existing DB or creating a new instance and redirecting app).
+
+Restore Files/Objects:
+
+Recover files from storage versioning or backup if they were deleted/overwritten.
+
+Validate:
+
+Run sanity checks and application tests to confirm data consistency.
+
+Communicate any unavoidable data loss (within RPO) to stakeholders/customers as needed.
+
+Document and Improve:
+
+Update procedures, add controls to prevent recurrence (e.g., safer tooling, access restrictions).
+
+10. Recovery Procedures – Region or Major Infrastructure Failure
+Goal: Restore service in an alternate environment if primary region is unavailable.
+
+(If you don’t have full multi‑region now, treat this as a roadmap and focus on restoring from backups into a working region.)
+
+Confirm Regional/Infra Failure:
+
+Check cloud provider status and ability to access main region.
+
+Activate Alternate Region or Environment:
+
+If multi‑region is set up:
+
+Promote secondary region to primary (e.g., switch DNS, update routing).
+
+Ensure DB replicas and file storage are in sync or accept RPO‑level data loss.
+
+If not fully multi‑region:
+
+Provision a new environment in another region using IaC.
+
+Restore DB and storage from latest backups.
+
+Reconfigure DNS and Routing:
+
+Update DNS records, load balancers, and routing to point to the recovered environment.
+
+Validate Service:
+
+Run smoke tests and key user journeys.
+
+Monitor performance and logs.
+
+Communicate:
+
+Inform internal teams and customers about restored service and any known limitations.
+
+11. Recovery Procedures – Security Incident Requiring Rebuild
+Goal: Rebuild and restore systems to a trusted state after compromise.
+
+Contain and Investigate:
+
+Follow Incident Response Plan first to stop ongoing compromise and understand scope.
+
+Decide Rebuild Scope:
+
+Determine which systems must be rebuilt (e.g., app servers, containers, certain services).
+
+For heavily compromised environments, consider building a clean environment and migrating.
+
+Rebuild from Trusted Sources:
+
+Use clean images, IaC definitions, and verified artifacts from CI/CD.
+
+Do not reuse potentially compromised systems or secrets.
+
+Rotate Credentials and Keys:
+
+Rotate any keys, tokens, or credentials that might have been exposed.
+
+Restore Data Carefully:
+
+Validate backups have not been tampered with; restore to a safe point.
+
+Harden and Monitor:
+
+Apply additional security measures (patches, configuration checks, monitoring rules).
+
+Increase scrutiny on logs and alerts post‑rebuild.
+
+12. Testing the DRP
+Perform at least one DR test per year, which can be:
+
+A partial test (restoring a backup to a test environment).
+
+A full test exercise (simulated region outage and restore in an alternate environment).
+
+Each test should:
+
+Have clear objectives and a plan.
+
+Measure how long recovery actually takes (compare to RTO).
+
+Document issues found and improvements needed.
+
+13. Documentation and Records
+For each DR event or test, Kahana must keep:
+
+Date, time, and description of the event/test.
+
+Steps performed and who performed them.
+
+Recovery time (actual RTO) and data loss window (actual RPO).
+
+Problems encountered and mitigations.
+
+Follow‑up actions and owners.
+
+These records support internal learning and external audits.
+
+14. Dependencies and Prerequisites
+DR success depends on:
+
+Up‑to‑date and tested backups.
+
+Current IaC and deployment scripts for rapid reprovisioning.
+
+Maintained contact lists for critical staff and vendors.
+
+Access to necessary tools from alternate locations (e.g., laptops, VPN, SSO).
+
+Gaps identified here should be tracked in the Risk Register and Risk Treatment Plan.
+
+15. Review and Maintenance
+This DRP must be reviewed at least annually, and after any major incident, system architecture change, or DR test.
+
+Updates must be approved by the DevOps/Infrastructure Lead and CTO, and relevant changes communicated to engineering and operations teams.

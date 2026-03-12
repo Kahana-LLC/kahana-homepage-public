@@ -1,0 +1,81 @@
+Employee Onboarding Checklist – Kahana
+
+Owner: HR / Operations
+Approved By: CEO
+Effective Date: March 2026
+Source: https://data-room-two.vercel.app/onboarding
+
+1. Purpose
+This checklist ensures new team members complete required onboarding steps, including security and compliance requirements. It supports SOC 2 controls for access provisioning, security awareness, and policy acknowledgment.
+
+2. Scope
+Applies to all new employees, contractors, and interns joining Kahana.
+
+3. Onboarding Steps (from Kahana data room)
+
+Day 1
+| Step | Owner | Done (Y/N) | Notes |
+|------|-------|------------|-------|
+| Schedule weekly 1-on-1 meeting with Adam | HR/Manager | | |
+| Read Company Rules, Values, & Guidelines | New hire | | |
+| Follow all Kahana social media channels | New hire | | |
+| Join internal communication channels (Slack/Discord) | IT | | |
+| Install Slack on phone and configure notifications | New hire | | |
+| Create Avenger profile | New hire | | |
+| Get access to tools relevant to function | IT/Security | | Access Control Policy applies; least privilege |
+| Create ProductHunt account and follow Kahana accounts | New hire | | |
+| Install Oasis (make it default browser) | New hire | | |
+
+Across first 5 business days
+| Step | Owner | Done (Y/N) | Notes |
+|------|-------|------------|-------|
+| Use Oasis as default browser for 5 business days; complete NPS survey | New hire | | |
+
+Day 2
+| Step | Owner | Done (Y/N) | Notes |
+|------|-------|------------|-------|
+| Read LinkedIn Guide; complete participation form; select Category 1 or 2; join #linkedin-focus-group on Slack; update profile | New hire | | Mandatory participation per LinkedIn Guide |
+
+Day 3
+| Step | Owner | Done (Y/N) | Notes |
+|------|-------|------------|-------|
+| Read full Business Plan (all sections) | New hire | | |
+
+Day 4
+| Step | Owner | Done (Y/N) | Notes |
+|------|-------|------------|-------|
+| Learn the Growth Framework | New hire | | |
+
+Day 5
+| Step | Owner | Done (Y/N) | Notes |
+|------|-------|------------|-------|
+| Fill out weekly Time Log; add calendar reminder | New hire | | |
+| Complete Onboarding Experience Survey | New hire | | |
+
+4. Security & Compliance (SOC 2 requirements)
+| Step | Owner | Done (Y/N) | Notes |
+|------|-------|------------|-------|
+| Review SOC 2 & Compliance Policies | HR/Security | | Information Security, Access Control, Password, Encryption, Acceptable Use, Code of Conduct, NDA. Planned: formal policy acknowledgment. |
+| Sign confidentiality/NDA and key policy acknowledgments | HR | | Per Employee Handbook, Code of Conduct |
+| Complete Security Awareness Training | HR/Security | | Per Security Awareness Training Program |
+| Background check completed (where applicable) | HR | | Per Background Check Policy |
+
+5. Tools access (Kahana-specific)
+New hires receive access to tools relevant to their function, including but not limited to:
+- Google Workspace (email, docs, calendar)
+- Slack / Discord (internal communication)
+- GitHub (for engineering)
+- Tally.so, Google Sheets (feedback, sprints)
+- Oasis (product; install as default browser)
+- AWS, Supabase (for engineering/DevOps, per Access Control Policy)
+
+Access is granted per least privilege; MFA required where supported.
+
+6. Evidence for SOC 2
+- Completed checklist with sign-off (electronic)
+- Policy acknowledgment records
+- Security training completion record
+- Access request/approval records
+
+7. Review and Maintenance
+This checklist is reviewed at least annually and updated when onboarding process or tools change. Aligns with data room: https://data-room-two.vercel.app/onboarding

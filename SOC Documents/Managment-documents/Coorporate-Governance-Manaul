@@ -1,0 +1,143 @@
+Doument Title: Corporate Governance & Security Governance Manual – Kahana Inc.
+
+Version: 1.0
+Effective Date: <set date>
+Owner: CEO
+Approved By: Board / Founders
+
+1. Purpose and Scope
+This document describes Kahana’s corporate governance structure and how leadership oversees strategy, risk, and internal controls, including information security for the Kahana Oasis platform. It supports SOC 2 Common Criteria related to the control environment (CC1) by showing how management and any board/owners provide oversight and accountability.
+
+It applies to Kahana Inc. as a whole, including all teams involved in delivering and securing Kahana Oasis.
+
+2. Governance Structure and Board / Ownership Oversight
+Kahana is led by its founders and executive team, who act as the primary governing body (equivalent to a board for early‑stage companies).
+
+The governing body:
+
+Sets overall company strategy and risk appetite, including security and privacy priorities.
+
+Reviews major security, product, and financial decisions (e.g., budget, roadmap, key vendor selection).
+
+Reviews significant incidents and their remediation at least annually, or more frequently when needed.
+
+As Kahana grows, the governance structure may formally include independent directors or advisors to strengthen oversight of risk and internal controls.
+
+3. Executive Roles and Decision‑Making
+Key executive roles in governance:
+
+Chief Executive Officer (CEO)
+
+Ultimately accountable for company performance, including security and compliance outcomes.
+
+Approves major security policies, the SOC 2 program, and key risk decisions.
+
+Chief Technology Officer (CTO)
+
+Responsible for technology strategy and architecture for Kahana Oasis.
+
+Chairs or co‑chairs decisions on technical risk, uptime, architecture changes, and major security improvements.
+
+Chief Information Security Officer (CISO) / Security Lead
+
+Designs and oversees the information security program and SOC 2 control framework.
+
+Reports to the CEO/CTO on security posture, risk assessment results, significant incidents, and remediation progress.
+
+COO / Operations Lead (if applicable)
+
+Oversees business operations, including business continuity and physical office security.
+
+CFO
+
+Oversees financial reporting and contracts, and co‑signs SOC 2 management assertions with the CEO.
+
+Decisions on high‑impact topics (e.g., accepting major security risk, large vendor commitments, substantial architectural changes) require approval from the CEO and CTO, with input from the Security Lead and relevant stakeholders.
+​
+
+4. Governance Committees and Security Governance
+Given Kahana’s size, governance is handled through lightweight but structured routines instead of many formal committees. Kahana maintains:
+
+Security & Risk Review (Lead: Security Lead / CTO)
+
+Cadence: at least quarterly.
+
+Attendees: CEO (or delegate), CTO, Security Lead, DevOps Lead, key product/engineering leads.
+
+Agenda typically includes:
+
+Review of current risk register and top risks.
+
+Status of SOC 2 controls and evidence collection.
+
+Summary of incidents since last review and lessons learned.
+
+Upcoming high‑risk changes (architecture, major vendors).
+
+Product & Engineering Review
+
+Cadence: weekly or bi‑weekly.
+
+Focused on roadmap, large changes, and technical debt with security implications.
+
+Meeting notes or summaries are stored in an internal system and may be used as evidence of leadership oversight for SOC 2.
+
+5. Policies, Control Ownership, and Accountability
+Kahana maintains a documented set of security, IT, HR, and risk policies (e.g., Information Security, Access Control, Encryption, Change Management, Incident Response, Vendor Management, Data Retention, etc.).
+
+Each policy has an owner (e.g., CISO, DevOps Lead, HR Lead) responsible for:
+
+Drafting and maintaining the policy.
+
+Ensuring the policy is implemented and enforced in their area.
+
+Reviewing and updating at least annually.
+
+Control owners (e.g., “Access Reviews – IT Manager,” “Backups – DevOps Lead”) are documented in the controls matrix and are accountable for operating specific controls and providing evidence during internal and external audits.
+​
+
+Performance and adherence to security responsibilities may be considered in role expectations and reviews, reinforcing accountability.
+​
+
+6. Risk Management and Internal Control Oversight
+Kahana performs periodic risk assessments to identify and evaluate risks to Kahana Oasis and supporting systems.
+
+Identified risks are recorded in a Risk Register with owners, likelihood/impact assessments, and mitigation/treatment plans.
+
+The Security Lead and executive team review top risks at least annually (and more often if needed), decide on risk treatment (mitigate, accept, transfer, or avoid), and track progress.
+
+Kahana uses its SOC 2 controls and internal audits/mock audits (like the ones you are planning) as a key part of its internal control system.
+
+7. Information and Communication
+Leadership communicates company strategy, priorities, and key security expectations through:
+
+All‑hands meetings, team meetings, and written updates (e.g., internal docs, announcements).
+
+New‑hire onboarding, including review of key policies and security responsibilities.
+
+Customers and prospects receive security and privacy information through:
+
+Public security page, privacy policy, and enterprise materials.
+
+Direct responses to security questionnaires and due diligence.
+
+Kahana maintains channels for employees to raise concerns about security, ethics, or policy violations without fear of retaliation.
+
+8. Monitoring and Continuous Improvement
+Kahana monitors control operation through:
+
+Logging and monitoring tools (for access, incidents, performance).
+
+Periodic internal reviews of access, changes, and evidence collection for SOC 2.
+
+Ad hoc or scheduled internal audits (mock SOC 2 audits).
+
+Findings from incidents, tests, or audits are discussed by leadership and tracked to remediation, with clear ownership and deadlines.
+
+9. Policy Lifecycle and Governance Reviews
+Governance and security‑related policies (including this manual) are reviewed at least annually or when there are significant changes to Kahana’s structure, risk profile, or regulatory environment.
+​
+
+The CEO and Security Lead coordinate needed changes, and updates are approved by executive leadership (or a formal board, if constituted).
+
+Updated policies are communicated to employees, and acknowledgments are tracked where appropriate.

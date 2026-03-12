@@ -1,0 +1,61 @@
+1. Purpose and Scope
+Include a brief opening:
+
+This document covers all network firewalls/security groups controlling traffic for production, staging, and corporate networks.
+
+It describes the current ruleset at a summarized level, how logs are reviewed, and how firewall changes are requested, approved, and documented.
+
+2. Firewall Inventory Section
+Add a small table listing each firewall or ruleset:
+
+ID	Firewall / Ruleset Name	Location / Platform	Environment	Owner	Logging Enabled?
+FW-01	Prod Edge Firewall (WAF/LB SG)	AWS Security Group	Prod	DevOps Lead	Yes
+FW-02	Prod App Tier SG	AWS Security Group	Prod	DevOps Lead	Yes
+FW-03	Prod DB SG	AWS Security Group	Prod	DevOps Lead	Yes
+This ties rules to specific devices/SGs for auditors.
+
+3. Ruleset Summary (Not Line‑by‑Line Dump)
+For each firewall/SG, create a summarized table like:
+
+Rule ID	Action	Source	Destination	Ports/Protocol	Purpose / Justification	Internet‑Exposed?
+FW-01-01	Allow	Any (Internet)	Load balancer VIP	443/TCP	User HTTPS access to Oasis app	Yes
+FW-01-02	Deny	Any	Load balancer VIP	All other	Default deny for non‑HTTPS traffic	Yes
+FW-02-01	Allow	FW-01 (LB SG)	App instances	443/TCP	LB to app over HTTPS	No
+FW-02-02	Deny	Any	App instances	All other	Default deny; app only reachable via LB	No
+FW-03-01	Allow	FW-02 (App SG)	DB cluster	5432/TCP	App to database access	No
+FW-03-02	Deny	Any	DB cluster	All other	DB not directly reachable from Internet	No
+Focus on: default‑deny posture, least privilege, and explicit justifications.
+
+4. Log Review Process
+Add a short section “Firewall Log Review”:
+
+All production firewalls/SGs send logs to <logging platform> (e.g., CloudWatch, ELK, Datadog).
+
+Security/DevOps reviews firewall logs at least <monthly/quarterly> for: denied traffic to critical resources, repeated probes, unexpected sources/destinations, and rule misconfigurations.
+
+Significant findings (e.g., repeated blocked attempts, anomalous access) are documented in <ticket system> with remediation steps.
+
+Evidence: screenshots or exports of log dashboards and review tickets during the audit period.
+
+5. Change Management and Justifications
+Add a “Firewall Rule Change Process” section:
+
+All new firewall rules or changes require a change ticket in <Jira/Linear> including:
+
+Requester, affected firewall/ruleset, proposed change (source, destination, port, action), business justification, risk assessment, and planned start/end time.
+
+A designated approver (e.g., DevOps Lead or Security Lead) must review and approve changes before implementation, except documented emergencies.
+
+After implementation, changes are tested and documented in the same ticket, including any follow‑up adjustments or rollback.
+
+The firewall ruleset is formally reviewed at least annually, and the review report records: reviewer, date, firewalls covered, rules examined, redundant rules removed, and any high‑risk rules that require exceptions.
+
+6. Attachments / Evidence to Keep
+Internally (not all must go to the written doc, but keep handy):
+
+Export or screenshots of current firewall/SG rules.
+
+Example firewall log views showing deny events and normal traffic.
+
+A few recent change tickets demonstrating: justification, approval, testing, and closure.
+

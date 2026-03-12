@@ -1,0 +1,175 @@
+Owner: HR / IT
+Approved By: CEO
+
+1. Purpose
+This policy defines what is and is not allowed when employees, contractors, and interns use Kahana’s systems, devices, and networks. The goal is to protect Kahana Oasis, customer data, and company assets from misuse, accidental damage, and security incidents.
+
+2. Scope
+This policy applies to:
+
+All Kahana employees, contractors, and interns.
+
+All company‑owned or managed devices (laptops, desktops, phones, tablets).
+
+All networks and systems used to access Kahana Oasis or company data (office network, VPN, cloud systems, SaaS tools).
+
+Any personal devices used to access Kahana systems or data, where allowed by IT.
+
+3. General Acceptable Use
+Users must:
+
+Use Kahana devices and systems primarily for legitimate business purposes.
+
+Follow all security policies (Information Security, Access Control, Password, Encryption, Workstation Security, Remote Access, etc.).
+
+Protect devices and accounts from unauthorized access (lock screens, do not share passwords, enable MFA where required).
+
+Immediately report lost or stolen devices, suspected malware, phishing emails, or any suspicious activity to IT/Security.
+
+Limited personal use (checking personal email, basic web browsing) is allowed as long as it:
+
+Does not interfere with work duties.
+
+Does not violate this policy or any laws.
+
+Does not introduce security risks (e.g., downloading untrusted software, accessing illegal content).
+
+4. Use of Devices (Laptops, Desktops, Mobile)
+Users must:
+
+Keep devices physically secure (do not leave unattended in public places, lock them when away from desk).
+
+Enable and not disable required security controls (disk encryption, antivirus/EDR, firewalls, OS updates).
+
+Only install software approved or allowed by IT; do not install pirated or unlicensed software.
+
+Not attempt to “jailbreak” or otherwise tamper with system security protections.
+
+For personal devices used to access Kahana systems (if permitted):
+
+Devices must meet basic security requirements (screen lock, OS updates, no known malware).
+
+IT and Security may require additional controls or may prohibit personal devices for specific systems.
+
+5. Network and Internet Use
+When using Kahana networks or remote access to Kahana systems, users must:
+
+Use only approved methods (e.g., VPN, SSO, secure Wi‑Fi) to access internal systems.
+
+Avoid using unsecured public Wi‑Fi for sensitive work unless a VPN is active.
+
+Not run unauthorized network services (e.g., personal Wi‑Fi hotspots connected to office network, rogue routers).
+
+Not perform activities that degrade network performance for others (e.g., large personal downloads, streaming at scale).
+
+Users must not use Kahana networks or systems to:
+
+Access, download, or share illegal content.
+
+Engage in harassment, discrimination, or any form of abusive behavior.
+
+Perform hacking, port scanning, or other unauthorized security testing.
+
+6. Access to Systems and Data
+Users must:
+
+Access only the systems and data they are authorized to use, and only for legitimate business purposes.
+
+Respect data classification rules (Public, Internal, Confidential, Restricted) and handle data accordingly.
+
+Not attempt to bypass access controls, escalate privileges, or view data outside their job responsibilities.
+
+Prohibited activities include:
+
+Using someone else’s account or credentials.
+
+Sharing accounts or passwords with colleagues or external parties.
+
+Exporting or copying customer or company data to unapproved locations (personal cloud storage, personal email, USB drives) unless explicitly approved and protected.
+
+7. Prohibited Activities
+The following activities are strictly prohibited when using Kahana devices, systems, or networks:
+
+Installing, distributing, or using malware, hacking tools, or unauthorized security utilities.
+
+Attempting to break into any system (internal or external) without explicit written authorization.
+
+Circumventing security or monitoring controls (VPN requirements, logging, endpoint protection).
+
+Using Kahana resources for personal commercial activities, political campaigns, or any illegal purpose.
+
+Sending spam, phishing, or other deceptive communications.
+
+Storing or transmitting offensive, discriminatory, or inappropriate content that violates company values or law.
+
+8. Social Media and Professional Networks (e.g., LinkedIn)
+Kahana encourages use of LinkedIn as part of growth and branding initiatives. When posting or engaging on LinkedIn or other professional/social platforms:
+
+You represent Kahana; maintain a professional tone and align with company values.
+
+Do not disclose confidential, Internal, or Restricted information (customer data, product roadmaps, financials, security details, or other non‑public company information).
+
+Do not share screenshots, metrics, or internal documents that contain sensitive data unless approved by HR/Legal.
+
+Use the #linkedin-focus-group Slack channel per Kahana’s LinkedIn Guide for team coordination. Participation expectations are defined in the LinkedIn Guide; violations of confidentiality or professionalism here are treated as policy violations.
+
+9. Use of Email, Messaging, and Collaboration Tools
+When using company email, chat, or collaboration tools:
+
+Communicate professionally and respectfully.
+
+Do not send sensitive data to people who do not need it or to personal email accounts.
+
+Be cautious with links and attachments; report suspicious messages to IT/Security.
+
+Do not use company email or messaging for harassment, threats, or inappropriate content.
+
+10. Data Storage and Transfer
+Store company and customer data only in approved locations (company cloud storage, product databases, approved SaaS tools).
+
+Do not sync work folders to personal cloud services (e.g., personal Google Drive, Dropbox) unless explicitly approved.
+
+Use encryption where required (e.g., for Confidential/Restricted data, per Encryption and Data Protection policies).
+
+When transferring data to customers or vendors, use secure channels agreed with Security/Legal.
+
+11. Privacy and Monitoring
+Kahana may monitor use of its systems, networks, and devices to:
+
+Ensure security and compliance.
+
+Investigate suspected incidents or policy violations.
+
+Users should not expect privacy on company‑owned systems or accounts, subject to applicable laws and regulations.
+
+Monitoring will be performed in a reasonable and lawful manner.
+
+12. Reporting Issues
+Users must promptly report to IT/Security:
+
+Lost or stolen devices.
+
+Suspected account compromise or unusual login alerts.
+
+Suspected malware infections or strange device behavior.
+
+Emails or messages that seem like phishing or social engineering.
+
+Any suspected policy violations or security incidents.
+
+There will be no retaliation for good‑faith reporting of concerns.
+
+13. Violations and Disciplinary Action
+Violating this policy may lead to disciplinary action, up to and including termination of employment or contract, and possible legal action where applicable.
+
+Serious violations (e.g., intentional data theft, hacking, harassment) will be treated as serious misconduct and may be escalated to legal authorities.
+
+14. Exceptions
+Any exception to this policy must be requested in writing, include a business justification, and be approved by HR and IT/Security.
+
+Approved exceptions must define compensating controls and time limits.
+
+15. Review and Acknowledgment
+This policy will be reviewed at least annually and updated as needed.
+
+All employees, contractors, and interns must read and acknowledge this policy during onboarding and whenever material updates are made.

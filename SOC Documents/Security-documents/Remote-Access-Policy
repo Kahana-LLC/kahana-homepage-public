@@ -1,0 +1,165 @@
+Owner: IT / Security
+Approved By: CTO
+
+1. Purpose
+This policy defines how Kahana employees, contractors, and other authorized users may remotely access Kahana systems and data. The goal is to ensure remote work is secure and does not expose Kahana Oasis or customer data to unnecessary risk.
+
+2. Scope
+This policy applies to:
+
+All Kahana employees, contractors, and interns who connect from outside Kahana offices.
+
+All remote connections to Kahana systems, including:
+
+Cloud infrastructure (AWS)
+
+Kahana Oasis production, staging, and development systems
+
+Corporate tools (Google Workspace, Slack, Tally.so, Sheets, GitHub, HR, etc.)
+
+All devices used for remote access, whether company‑owned or approved personal devices.
+
+3. General Requirements for Remote Work
+Users who work remotely must:
+
+Follow all Kahana security policies (Information Security, Access Control, Password, Encryption, Acceptable Use, Workstation Security).
+
+Ensure their physical environment is reasonably secure (no shoulder‑surfing, locking screen when away, not leaving devices unattended in public).
+
+Immediately report lost or stolen devices or suspected compromise of any device used for Kahana work.
+
+4. Approved Remote Access Methods
+Remote access to Kahana systems must occur only through approved, secure methods:
+
+Single Sign‑On (SSO) with MFA for SaaS applications and internal tools.
+
+VPN, secure tunnel, or bastion/jump host for access to internal or production infrastructure, where required.
+
+HTTPS/TLS‑secured web interfaces and APIs for Kahana Oasis and admin tools.
+
+Direct access to internal or production systems over the open internet without an approved secure channel is prohibited.
+
+5. Device Requirements for Remote Access
+5.1 Company‑Owned Devices
+Must have full‑disk encryption enabled.
+
+Must run supported and up‑to‑date operating systems.
+
+Must have endpoint protection (AV/EDR) and host firewall enabled as configured by IT/Security.
+
+Must apply security patches and updates promptly, following IT/Security guidance.
+
+5.2 Personal Devices (if allowed)
+If Kahana permits limited remote access from personal devices:
+
+Personal devices must have:
+
+Screen lock (PIN, password, biometric).
+
+Up‑to‑date OS and security patches.
+
+No known malware or jailbreaking/rooting.
+
+IT/Security may restrict which systems can be accessed from personal devices (for example: allowed for email and calendar, but not for production systems).
+
+Kahana may require device management or additional controls for personal devices accessing sensitive systems.
+
+6. Network Requirements
+Users should avoid using unsecured public Wi‑Fi for sensitive work unless a VPN is active.
+
+When possible, remote work should occur over trusted networks (home networks with strong Wi‑Fi passwords and updated routers).
+
+Users must not disable VPN or secure tunneling requirements configured by IT/Security.
+
+7. Access Control and Authentication
+All remote access must use unique user accounts; sharing accounts is prohibited.
+
+MFA is mandatory for remote access to:
+
+Cloud consoles and infrastructure.
+
+Kahana Oasis production admin tools and sensitive SaaS platforms.
+
+Access must follow least‑privilege and role‑based access control, as defined in the Access Control Policy.
+
+Elevated/privileged actions (e.g., production changes) should be performed from company‑managed devices only.
+
+8. Remote Access to Production and Sensitive Systems
+Only authorized roles (e.g., DevOps, specific engineers, Security) may remotely access production systems.
+
+Access should be routed through secure mechanisms such as:
+
+VPN with strong encryption
+
+Bastion hosts / jump boxes
+
+Secure shell (SSH) with key‑based authentication and MFA
+
+Direct RDP/SSH from the internet to production systems is prohibited unless tunneled and restricted by IP and MFA.
+
+9. Data Handling During Remote Work
+When working remotely, users must:
+
+Store Kahana and customer data only in approved systems (product backend, company cloud storage, approved SaaS tools).
+
+Not copy or sync work data to personal cloud storage or personal email accounts.
+
+Protect Confidential/Restricted data from viewing by others in the same physical location.
+
+Use encryption for any local storage of sensitive data (e.g., on laptops) as covered in the Encryption and Workstation Security policies.
+
+Printing sensitive documents in shared or insecure locations should be avoided; printed materials must be stored and disposed of securely.
+
+10. Monitoring and Logging
+Remote access sessions (VPN connections, SSO logins, access to admin tools) must be logged.
+
+Logs should include user identity, time, source IP, and systems accessed, subject to legal requirements.
+
+IT/Security will monitor remote access logs for unusual patterns (e.g., logins from unexpected locations, times, or devices) and may investigate and temporarily block access if suspicious activity is detected.
+
+11. Prohibited Remote Activities
+When connected remotely to Kahana systems, users must not:
+
+Disable or bypass security tools (VPN, endpoint protection, firewalls, logging).
+
+Share their screen or allow remote control in a way that exposes confidential data to unauthorized parties.
+
+Use remote access for non‑business purposes, hacking, or any illegal activity.
+
+Connect from devices that are known or suspected to be compromised.
+
+12. Third‑Party and Vendor Remote Access
+Vendor or third‑party remote access must be explicitly approved by Security and the relevant system owner.
+
+Vendor access must:
+
+Use secure methods (VPN, SSO, strong authentication).
+
+Be limited to the minimum systems and time needed.
+
+Be monitored and logged.
+
+Vendor accounts must be disabled when no longer required.
+
+13. Incident Response for Remote Access Issues
+Suspected compromise of remote access credentials or devices must be reported immediately.
+
+The Security Team may revoke or limit remote access for individuals or systems during an investigation.
+
+Remote access logs will be used as part of incident investigations.
+
+14. Enforcement
+Violations of this policy may result in disciplinary action, up to and including termination of employment or contract.
+
+Serious or repeated violations may also result in legal action or reporting to authorities, as required by law or contractual obligations.
+
+15. Exceptions
+Any exception to this policy must be documented with justification and risk assessment, and approved by IT/Security and, where necessary, the CTO.
+
+Exceptions should be time‑limited and reviewed regularly.
+
+16. Review and Maintenance
+This Remote Access Policy will be reviewed at least annually or whenever there are significant changes to remote work practices, infrastructure, or regulatory requirements.
+
+Updates must be approved by the policy owner and communicated to all affected users.
+

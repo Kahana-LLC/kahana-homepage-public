@@ -1,0 +1,160 @@
+Owner: Engineering Lead
+Approved By: CTO
+
+1. Purpose
+These procedures define how code changes for Kahana Oasis are reviewed and approved before they are merged and deployed. The goal is to ensure quality, security, and consistency, and to provide clear evidence of peer review for SOC 2 audits.
+
+2. Scope
+These procedures apply to:
+
+All changes to production‑bound code and infrastructure (application code, APIs, configuration, infrastructure‑as‑code).
+
+All engineers and contractors contributing code to Kahana Oasis repositories.
+
+3. General Principles
+Every production change must be peer‑reviewed.
+
+No self‑approval of production PRs.
+
+Reviews check for correctness, security, performance, and maintainability, not just style.
+
+Code review discussions are kept within the review tool so they form an auditable record.
+
+4. Pre‑Review Requirements (Developer Responsibilities)
+Before requesting a review, the author must:
+
+Work in a feature branch (not directly on main/production branch).
+
+Ensure the branch is up to date with the target branch (rebase/merge as needed).
+
+Run relevant tests locally (unit/integration) and fix obvious issues.
+
+Create a Pull Request (PR) that includes:
+
+Clear title and short description of the change.
+
+Link to relevant GitHub issue or ticket where applicable.
+
+Summary of impact (functional, security, performance).
+
+Rollback considerations if relevant.
+
+Tag appropriate reviewers (see Reviewer Selection).
+
+PRs without a clear description or tests (where expected) may be rejected or sent back for improvement.
+
+5. Reviewer Selection
+At least one qualified peer reviewer is required for any PR destined for production.
+
+For higher‑risk changes (e.g., auth, access control, data model, encryption, critical paths), at least one senior engineer or designated security‑aware reviewer must be included.
+
+The author must not be the only approver on the PR; self‑approval is not allowed.
+
+Where team size is small, rotation of reviewers helps avoid the same two people always reviewing each other’s work.
+
+6. Review Checklist (What Reviewers Must Check)
+Reviewers should systematically check:
+
+Correctness & Clarity
+
+Does the code do what the description says?
+
+Are edge cases and error conditions handled?
+
+Is the code understandable and maintainable?
+
+Security
+
+Proper input validation and output encoding where needed.
+
+Correct use of authentication and authorization checks.
+
+No secrets, passwords, tokens, or keys hard‑coded in code or configs.
+
+No logging of sensitive data (e.g., passwords, full tokens).
+
+Performance & Reliability
+
+Any obvious performance risks (e.g., N+1 queries, unbounded loops, excessive calls).
+
+Potential impact on availability or scalability.
+
+Compliance with Standards
+
+Follows team coding conventions and architectural patterns.
+
+Appropriate tests added or updated (unit/integration).
+
+Comments and documentation added where needed.
+
+Review comments should be constructive, specific, and focused on improving the code and safety of the change.
+
+7. Approval Rules and Gates
+A PR can be merged only when:
+
+Required status checks (CI tests, linters, etc.) have passed.
+
+Required review approvals have been granted (at least one, more for high‑risk areas).
+
+All blocking comments have been addressed or resolved.
+
+The repository settings should enforce:
+
+Protected main/production branches.
+
+Required reviews and status checks.
+
+No force‑push to protected branches.
+
+Emergency changes that cannot follow the full process must still be logged as PRs after the fact and reviewed in a post‑incident process.
+
+8. Handling Review Comments and Changes
+The author must respond to review comments, either by:
+
+Making changes and marking comments as resolved, or
+
+Politely explaining and discussing why a change is not needed.
+
+Significant changes in response to review may require another review pass before approval.
+
+If reviewers and authors cannot agree, the Engineering Lead or a designated senior engineer acts as tie‑breaker.
+
+9. Documentation and Evidence for Audits
+For each production change, the following evidence should exist:
+
+The PR itself, including:
+
+Description, linked ticket, and diff.
+
+Review comments and resolutions.
+
+Approval records with reviewer identities and timestamps.
+
+CI results (pass/fail history).
+
+These records are kept in the code hosting platform and are used as SOC 2 evidence for change management and control testing.
+
+10. Exceptions
+Exceptions to these procedures (e.g., direct hotfix to critical production issue) must be:
+
+Extremely rare and justified.
+
+Approved by the Engineering Lead or CTO.
+
+Followed by:
+
+A retrospective PR capturing the change.
+
+A review after the fact.
+
+Documentation in the incident or change log.
+
+11. Training and Awareness
+New engineers are introduced to these Code Review Procedures as part of onboarding.
+
+Periodically, the team reviews and refines the checklist based on lessons from incidents, bugs, or security findings.
+
+12. Review and Maintenance
+These procedures are reviewed at least annually, or when there are major changes to tooling or development practices.
+
+Changes must be approved by the Engineering Lead and CTO and communicated to the engineering team.

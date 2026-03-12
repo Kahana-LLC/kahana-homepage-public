@@ -1,0 +1,163 @@
+Owner: CISO / CTO
+Approved by: CEO
+
+1. Purpose
+The purpose of this Information Security Policy is to define how Kahana secures the systems, data, and services that power Kahana Oasis, our agentic browser and workspace platform. The policy establishes requirements to protect customer data and company assets against unauthorized access, disclosure, alteration, and destruction.
+
+2. Scope
+This policy applies to:
+
+All Kahana employees, contractors, and interns.
+
+All information systems used to deliver Kahana Oasis, including production, staging, and development environments.
+
+All customer and company data processed, stored, or transmitted by Kahana (e.g., customer workspaces, files, account information, logs).
+
+It covers on‑premise offices, remote work locations, cloud infrastructure (AWS us-east-1, Supabase), and all SaaS tools (GitHub, Google Workspace, Mixpanel, Stripe, etc.) used in connection with Kahana business operations.
+
+3. Security Objectives
+Kahana’s information security program is designed to achieve the following objectives:
+
+Confidentiality: Ensure that customer and company data is accessible only to authorized individuals and services.
+
+Integrity: Ensure that data and systems are accurate, complete, and protected from unauthorized modification.
+
+Availability: Ensure that Kahana Oasis and supporting systems remain available to authorized users within defined service levels.
+
+These objectives align with the SOC 2 Trust Services Criteria for Security and, where applicable, Availability, Confidentiality, and Privacy.
+
+4. Roles and Responsibilities
+CEO: Provides overall sponsorship for the security program and allocates resources.
+
+CISO / Security Lead: Owns the information security program, policies, risk management, and incident response.
+
+CTO / Engineering Leadership: Ensures secure design, development, and operation of Kahana Oasis and supporting infrastructure.
+
+DevOps / Infrastructure: Implements and maintains secure configurations, monitoring, backup, and recovery mechanisms.
+
+HR: Ensures security requirements are included in hiring, onboarding, training, and offboarding.
+
+All Employees and Contractors: Must understand and comply with this policy and all supporting security policies and procedures.
+
+Responsibilities are further detailed in supporting policies (Access Control, SDLC, Incident Response, etc.).
+
+5. Governance and Policy Framework
+Kahana maintains a documented information security program that includes, at a minimum, the following supporting policies and standards:
+
+Access Control Policy
+
+Password / Authentication Policy
+
+Encryption Policy
+
+Logging and Monitoring Policy
+
+Remote Access Policy
+
+Workstation / Endpoint Security Policy
+
+Network Security Policy
+
+Physical Security Policy
+
+Change Management Policy
+
+Incident Response Plan
+
+Business Continuity and Disaster Recovery Plans
+
+Vulnerability Management Policy
+
+Secure SDLC / Development Policy
+
+Configuration Management / Baseline Standards
+
+Vendor Management Policy
+
+Risk Management (Risk Assessment, Risk Register, Risk Treatment Plan)
+
+Privacy, Data Classification, Data Protection, and Data Retention Policies
+
+This Information Security Policy is the top‑level document; all other policies must be consistent with it.
+
+6. Asset Management
+Kahana maintains an inventory of information assets, including laptops, servers, cloud resources, applications, and critical data stores.
+
+Assets must have an owner responsible for ensuring appropriate classification and protection.
+
+All devices accessing Kahana systems must be properly managed (e.g., enrolled in device management, encrypted, and patched) in accordance with the Workstation Security and Configuration Management policies.
+
+7. Access Control
+Access to systems and data is granted based on the principle of least privilege and role-based access control (RBAC).
+
+All access must be requested, approved, and documented as defined in the Access Control Policy.
+
+Strong authentication, including MFA, is required for all administrative and production access and for critical SaaS tools.
+
+Access rights are reviewed on a regular basis (at least quarterly) and promptly updated when roles change or employment ends.
+
+8. Data Classification and Handling
+Kahana classifies data into at least the following categories: Public, Internal, Confidential, and Restricted.
+
+Customer data stored in Kahana workspaces and associated files is treated as at least Confidential or Restricted.
+
+Handling requirements (e.g., encryption, sharing limitations, storage locations) for each classification are defined in the Data Classification and Data Protection Policies and must be followed by all personnel.
+
+9. Cryptography and Key Management
+Customer and company data at rest in production databases and storage must be encrypted using industry‑standard algorithms (e.g., AES‑256).
+
+Data in transit between client browsers, Kahana services, and third‑party providers must be protected using strong TLS configurations.
+
+Cryptographic keys and certificates are managed using secure key management systems (e.g., cloud KMS) with restricted access, rotation, and monitoring as defined in the Encryption Policy.
+
+10. Secure Development and Change Management
+All changes to Kahana Oasis code and infrastructure must follow the Secure SDLC and Change Management policies.
+
+Code changes must be peer‑reviewed, tested, and tracked via the approved issue tracking and version control systems.
+
+Security testing (e.g., dependency scanning, SAST/DAST, vulnerability scans) must be integrated into the development and deployment processes where practical.
+
+11. Logging, Monitoring, and Incident Management
+Security‑relevant events (authentication, authorization changes, configuration changes, administrative actions, and system errors) must be logged in centralized logging or SIEM systems.
+
+Logs must be protected from tampering and retained for a defined period to support investigations and audit requirements.
+
+Suspected or confirmed security incidents must be reported immediately through defined channels and handled according to the Incident Response Plan.
+
+12. Business Continuity and Disaster Recovery
+Kahana maintains Business Continuity and Disaster Recovery plans to ensure the continued availability of Kahana Oasis and protection of customer data during disruptions.
+
+Regular backups and restoration tests are performed for critical systems in line with the Backup and Restoration Policy.
+
+BCP/DR plans are reviewed and tested periodically; lessons learned are used to improve resilience.
+
+13. Vendor and Third‑Party Management
+Third‑party service providers that store, process, or transmit Kahana or customer data must be assessed and approved in accordance with the Vendor Management Policy.
+
+Security and privacy requirements must be included in contracts and data processing agreements.
+
+Vendor performance and security posture are reviewed periodically, including obtaining SOC reports or equivalent assurance where applicable.
+
+14. Human Resources Security
+Security requirements are embedded into hiring, onboarding, and offboarding processes.
+
+All employees and relevant contractors must complete security awareness training at hire and at least annually thereafter.
+
+Employees must sign confidentiality agreements and acknowledge key security policies as part of onboarding.
+
+15. Compliance and Risk Management
+Kahana conducts regular risk assessments to identify and evaluate threats to systems and data, and maintains a Risk Register and Risk Treatment Plan.
+
+The security program is designed to support compliance with applicable legal, regulatory, and contractual requirements, including SOC 2 and, where relevant, SOC 1 control objectives.
+
+Internal audits and control testing are performed to assess policy effectiveness and readiness for external audits.
+
+16. Policy Exceptions
+Any exception to this policy must be formally documented, justified by business need, approved by the CISO/Security Lead, and, where appropriate, time‑bound.
+
+Approved exceptions must include compensating controls to manage the associated risks.
+
+17. Policy Review and Maintenance
+This Information Security Policy is reviewed at least annually, or upon significant changes to Kahana’s systems, business operations, or regulatory requirements.
+
+Updates must be approved by senior management and communicated to all affected personnel.

@@ -1,0 +1,161 @@
+Owner: HR / Security Lead
+Approved By: CEO / CTO
+
+1. Purpose
+This program defines how Kahana educates employees and contractors about security, privacy, and compliance responsibilities. The goal is to ensure everyone understands how to protect Kahana Oasis, customer data, and company assets, and to support SOC 2 Type I & II requirements.
+
+2. Scope
+This program applies to:
+
+All Kahana employees, contractors, and interns.
+
+All roles, including engineering, product, support, sales, operations, and leadership.
+
+Training is mandatory for everyone with access to Kahana systems or data.
+
+3. Training Objectives
+The Security Awareness Training Program aims to ensure that personnel:
+
+Understand Kahana’s key security policies (acceptable use, access control, password, encryption, incident reporting, data classification, vendor/third‑party, etc.).
+
+Recognize common threats (phishing, social engineering, malware, password attacks).
+
+Know how to handle customer and company data appropriately and report suspected incidents quickly.
+
+4. Training Components
+The program includes:
+
+New Hire / Onboarding Training
+
+Required for all new employees and contractors within their first 2 weeks.
+
+Covers:
+
+Overview of Kahana Oasis and why security matters.
+
+Key policies: Employee Handbook (security section), Acceptable Use, Password & MFA, Access Control, Data Classification, Incident Reporting.
+
+Basics of phishing and social engineering.
+
+Expectations for device security and remote work.
+
+Annual Security Awareness Training
+
+Required for all personnel once per year.
+
+Refresher on:
+
+Current threats and recent examples (phishing, ransomware, credential theft).
+
+Handling Restricted/Confidential data and using approved tools.
+
+Incident reporting process and “see something, say something” culture.
+
+Any updates to policies or major changes in Kahana’s environment.
+
+Role‑Specific Training (as needed)
+
+Additional training for teams with elevated risk or access, for example:
+
+Engineering/DevOps: secure coding, SDLC, vulnerabilities, cloud security basics.
+
+Support/Success: handling customer data, verifying identity, privacy considerations.
+
+Phishing Simulations and Practice
+
+Periodic simulated phishing campaigns to test and reinforce awareness.
+
+Follow‑up micro‑training for individuals or teams that click or respond to simulated phish.
+
+5. Delivery Methods
+Training may be delivered via:
+
+Online training platform (LMS) modules with slides, videos, and quizzes.
+
+Live sessions (video call or in‑person) for onboarding or annual refreshers.
+
+Short micro‑learning materials (emails, tips in chat, brief articles) between formal sessions.
+
+All core training must include a short knowledge check/quiz to confirm understanding.
+
+6. Attendance, Tracking, and Certificates
+Completion of onboarding and annual training is mandatory.
+
+HR/Security tracks:
+
+Who has completed required training.
+
+Dates of completion.
+
+Quiz scores (pass/fail).
+
+Employees who complete required training may receive a simple certificate or confirmation (PDF or system record) for audit evidence.
+
+Non‑completion is followed up via reminders and manager escalation; persistent non‑compliance may affect performance reviews.
+
+7. Phishing Simulation Program
+Frequency: at least 2–4 times per year (adjustable).
+
+Simulations mimic realistic phishing (e.g., fake password reset, invoice, HR notice) without being punitive.
+
+Metrics tracked include:
+
+Open and click‑through rates.
+
+Submission of credentials (if applicable).
+
+Reporting rates (who reported the test email).
+
+Individuals or teams who repeatedly fall for simulations receive targeted coaching or additional training.
+
+Phishing exercises are designed to be educational and supportive, not punitive.
+
+8. Content Maintenance and Updates
+Security and HR review training content at least annually, and after major changes to:
+
+Kahana’s systems and architecture.
+
+Applicable regulations or standards.
+
+Company policies.
+
+Lessons learned from real incidents, near‑misses, or phishing results are incorporated into future training.
+
+9. Responsibilities
+Security Lead
+
+Defines training topics, approves content, and ensures alignment with the overall security program.
+
+HR / People Team
+
+Integrates training into onboarding and annual cycles.
+
+Tracks completion and manages reminders/escalations.
+
+Managers
+
+Encourage and enforce participation within their teams.
+
+Reinforce secure behavior in daily work.
+
+All Employees and Contractors
+
+Complete required training on time.
+
+Apply what they learn and ask questions when unsure.
+
+10. Enforcement
+Completion of mandatory training is a condition of continued access to Kahana systems and, ultimately, employment or engagement.
+
+Repeated failure to complete training or clear disregard for security responsibilities may result in disciplinary action, up to and including termination.
+
+11. Evidence for Audits
+For SOC 2 and other audits, Kahana maintains:
+
+Training schedules and content outlines.
+
+Attendance/completion records (exportable from LMS or tracking sheet).
+
+Example certificates or screenshots of completion records.
+
+Summary of phishing simulation metrics and follow‑up actions (without naming/shaming individuals in external reports).

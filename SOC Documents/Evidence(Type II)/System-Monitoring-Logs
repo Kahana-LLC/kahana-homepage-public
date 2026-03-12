@@ -1,0 +1,21 @@
+Title: Monitoring and Logging Evidence
+
+Purpose
+To show that systems are monitored and logs are collected, retained, and reviewed.
+
+Process
+
+Application and infrastructure logs are centralized into <platform> (e.g., CloudWatch, Datadog, ELK).
+
+Alerts are configured for key conditions: errors, performance degradation, security events, and availability issues.
+
+On‑call engineers and/or security staff respond to alerts and document actions in tickets.
+
+Evidence kept for Type II:
+
+Screenshot or export of key dashboards.
+
+Examples of alert notifications and associated tickets.
+
+Log samples demonstrating retention for the required period.
+

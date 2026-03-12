@@ -1,0 +1,71 @@
+1. Scope and Principles
+Include 3–5 sentences:
+
+This standard applies to all servers, containers, endpoints, cloud accounts, databases, and network devices in production, staging, and corporate environments.
+
+All systems must follow a documented, approved baseline configuration before going live.
+
+Changes to baselines or individual configurations must go through change management and be tracked.
+
+2. Baseline Sources by System Type
+Add a small table to your doc:
+
+System type	Baseline reference
+Linux servers	CIS Linux Benchmark Level 1
+Containers/K8s	CIS Kubernetes Benchmark
+Cloud accounts	CIS Cloud Foundations (AWS/Azure/GCP)
+Databases	Vendor hardening guide + CIS/STIG where available
+Endpoints (laptops)	OS vendor security baseline + MDM policies
+Network devices	Vendor hardening guide + industry best practice
+State that these baselines are your minimum standard and exceptions must be documented and approved.
+
+3. Common Hardening Requirements
+List a concise, generic baseline that applies to all servers/containers:
+
+Remove or disable default accounts and change any vendor default passwords.
+
+Disable unnecessary services, ports, and packages; use “deny by default” where practical.
+
+Enable host firewalls where available and restrict inbound access to required sources/ports only.
+​
+
+Enforce OS‑level password and lockout policies or SSO where supported.
+​
+
+Ensure time synchronization with approved NTP sources.
+
+Enable logging for security‑relevant events (auth, privilege use, configuration changes).
+​
+
+Apply full‑disk or volume encryption where supported; otherwise ensure data‑at‑rest encryption at the storage layer.
+
+For cloud:
+
+Use infrastructure‑as‑code for new resources wherever possible.
+
+Enforce encryption at rest and in transit for managed services by default.
+
+Prohibit public exposure of storage, databases, and admin interfaces unless explicitly approved and documented.
+​
+
+4. Configuration Management and Drift
+Add a short section:
+
+All configuration changes must be performed via approved methods (IaC, MDM, configuration management, or documented manual runbook).
+
+Production changes must be tested in staging where feasible before rollout.
+​
+
+Periodic scans or checks compare systems against baselines; deviations are tracked and remediated or formally excepted.
+
+Configuration backups must exist for critical systems and be tested for restore.
+
+5. Exceptions
+Close with 3 bullets:
+
+Any deviation from a baseline must have: asset, change description, reason, business owner, approver, and review date.
+​
+
+Exceptions are time‑bound and reviewed at least annually.
+
+High‑risk exceptions may require compensating controls.

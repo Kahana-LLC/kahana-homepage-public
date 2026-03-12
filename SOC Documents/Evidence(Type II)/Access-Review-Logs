@@ -1,0 +1,28 @@
+Title: User Access Review Procedure and Evidence
+
+Purpose
+Kahana performs periodic user access reviews for all in‑scope systems to ensure access is appropriate and based on least privilege.
+
+Process
+
+Scope: Production infrastructure, application admin consoles, source code repositories, corporate SaaS (IdP, ticketing, finance tools).
+
+Frequency: Quarterly.
+
+Steps:
+
+Export current user and role listings from each in‑scope system.
+
+Send to the designated system owner for review and sign‑off.
+
+Remove or adjust any inappropriate, stale, or excessive access.
+
+Store approved reviews and remediation tickets in <folder/tool>.
+
+Evidence kept for Type II:
+
+Review exports, annotated with “keep/remove/change” decisions.
+
+Approvals (email, ticket comments, or sign‑off in GDrive/Notion).
+
+Tickets showing deprovisioning or privilege reductions.

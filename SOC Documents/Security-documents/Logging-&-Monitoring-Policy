@@ -1,0 +1,205 @@
+Owner: Security / DevOps
+Approved By: CTO
+
+1. Purpose
+This policy defines how Kahana logs and monitors activities on its systems to detect security events, performance issues, and misuse. It supports SOC 2 requirements for system monitoring, incident detection, and evidence collection for both Type I and Type II audits.
+
+2. Scope
+This policy applies to:
+
+All Kahana environments: production, staging, development (with strongest requirements in production).
+
+All systems used to deliver or support Kahana Oasis, including:
+
+Application frontends and backends
+
+Databases and storage
+
+Cloud infrastructure (e.g., AWS accounts, networks, compute, containers)
+
+Identity and access systems (SSO, directory, VPN)
+
+Key SaaS tools (ticketing, CI/CD, monitoring, HRIS where relevant).
+
+All Kahana employees, contractors, and vendors who manage or access these systems.
+
+3. Logging Objectives
+Kahana’s logging and monitoring program aims to:
+
+Detect unauthorized access and potential security incidents.
+
+Support investigations, incident response, and root cause analysis.
+
+Demonstrate control operation for SOC 2 and other audits.
+
+Provide operational visibility (performance, reliability, errors).
+
+4. What Must Be Logged
+At a minimum, the following events must be logged in production and other critical environments:
+
+Authentication and Access Events
+
+Logins and logouts (successful and failed) for:
+
+Kahana Oasis user and admin accounts
+
+Cloud consoles and infrastructure
+
+Source code repositories and CI/CD
+
+VPN and remote access
+
+Password changes, MFA enrollment/changes, account lockouts.
+
+Authorization and Permission Changes
+
+Role and group changes, new privileges granted, access revocations.
+
+Creation and deletion of user accounts and service accounts.
+
+Administrative and Configuration Changes
+
+Changes to security configurations (firewall rules, security groups, IAM policies).
+
+Changes to application or infrastructure configurations that affect security or availability.
+
+Data and Application Activity
+
+Significant actions on sensitive data (e.g., exports, deletions, bulk changes) where feasible.
+
+Critical application errors and exceptions.
+
+System and Infrastructure Events
+
+Resource creation, modification, and deletion (instances, containers, databases, storage buckets).
+
+System restarts, crashes, and high‑severity performance issues.
+
+Security‑Relevant Events
+
+Malware or endpoint protection alerts.
+
+Intrusion detection/prevention events (if used).
+
+Denied network connections where relevant (firewall logs).
+
+5. Centralized Logging
+Kahana’s current state: Events are logged directly in Supabase tables; Mixpanel for analytics. No dedicated SIEM. Supabase Pro Plan includes 7‑day log retention; Log Drains available at additional cost ($60/drain/project). Datadog is under consideration. AWS infrastructure logs where applicable.
+
+Logs from critical systems should, at minimum, collect:
+
+Application logs from Kahana Oasis services (Supabase)
+
+Infrastructure logs (AWS, cloud audit logs where available)
+
+Authentication/SSO logs (Supabase Auth)
+
+Security‑relevant events.
+
+Access to centralized logs must be restricted to authorized personnel (Security, DevOps, and other designated roles).
+
+6. Time Synchronization
+Systems generating logs must use synchronized time (e.g., NTP) so events from different systems can be correlated accurately.
+
+Time zone settings and formats should be consistent and documented.
+
+7. Log Retention
+Current state: Supabase Pro Plan = 7‑day log retention. Target: Security and access logs for production should be retained for at least 12 months where feasible, or longer if required by regulation or contracts. Kahana is evaluating extended retention (e.g., Log Drains, Datadog) for audit readiness.
+
+Less critical logs may have shorter retention but must meet business, legal, and audit needs. Log retention configurations must be documented.
+
+8. Monitoring and Alerting
+The Security and DevOps teams must define and maintain alert rules for high‑risk events, such as:
+
+Multiple failed login attempts or suspicious login locations.
+
+Unexpected admin or privilege changes.
+
+Creation of new access keys or service accounts in sensitive environments.
+
+Critical application errors or repeated service crashes.
+
+Alerts must be delivered to appropriate channels (e.g., on‑call pager, email, chat) for timely response.
+
+Thresholds and alert logic should be tuned to reduce noise while still catching meaningful events.
+
+9. Log Protection and Integrity
+Log data must be protected from unauthorized access, modification, or deletion.
+
+Only authorized personnel may manage logging configurations and access logs.
+
+Where possible, logs should be stored in append‑only or tamper‑evident systems or backed up so that historical records cannot be silently altered.
+
+10. Use of Logs in Incident Response
+Logs are a primary source of evidence during incident detection, investigation, and post‑incident review.
+
+The Incident Response Plan must reference logging sources to be consulted for different incident types (e.g., auth logs, application logs, cloud audit logs).
+
+After significant incidents, Security/DevOps should verify that logging coverage was adequate and improve it if necessary.
+
+11. Privacy and Data Minimization in Logs
+Logs should avoid storing unnecessary sensitive data, especially:
+
+Passwords or secrets (never log these).
+
+Full payment card numbers or other highly sensitive identifiers (if applicable).
+
+Large volumes of personal data where not needed for debugging or security.
+
+Where sensitive data must be logged (for example, identifiers needed for traceability), access to those logs must be more tightly controlled.
+
+12. Responsibilities
+Security Team:
+
+Defines security logging requirements and alerting rules.
+
+Monitors for security incidents and coordinates response.
+
+DevOps / Infrastructure:
+
+Implements log forwarding, storage, and access controls.
+
+Ensures system‑level logs and metrics are collected.
+
+Engineering:
+
+Ensures application logging is implemented correctly (errors, key events) and does not expose secrets.
+
+Managers/System Owners:
+
+Participate in defining important events to monitor for their systems.
+
+13. Testing and Continuous Improvement
+Logging and monitoring configurations should be reviewed periodically (at least annually, and after major changes) to ensure:
+
+Coverage of new systems and services.
+
+Alert rules are still relevant and effective.
+
+Log volume and performance remain manageable.
+
+Security or internal audit may run periodic tests (e.g., simulated incidents) to verify that events are logged and alerts are generated as expected.
+
+14. Third‑Party Services and Vendors
+For key third‑party platforms (cloud providers, critical SaaS tools), Kahana must:
+
+Enable and retain relevant audit logs where available.
+
+Understand how to access these logs during investigations.
+
+Ensure vendor logging capabilities are sufficient for Kahana’s security and compliance needs, or implement compensating controls.
+
+15. Violations and Enforcement
+Disabling logging, altering logs without authorization, or ignoring critical alerts may be treated as serious policy violations.
+
+Violations may result in disciplinary action up to and including termination of employment or contract, and may be escalated externally if required by law or contracts.
+
+16. Exceptions
+Any exception to this policy (e.g., systems where logging is limited due to constraints) must be documented, risk‑assessed, and approved by the Security Team and relevant system owner.
+
+Exceptions should be time‑bound and accompanied by compensating controls where possible.
+
+17. Review and Maintenance
+This Logging and Monitoring Policy will be reviewed at least annually, or whenever major changes occur in Kahana’s systems, monitoring tools, or regulatory requirements.
+
+Updates must be approved by the policy owner and communicated to Security, DevOps, Engineering, and other impacted teams.

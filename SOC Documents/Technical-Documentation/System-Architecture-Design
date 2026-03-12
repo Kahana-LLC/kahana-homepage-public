@@ -1,0 +1,105 @@
+1. High‑Level Components (Boxes)
+Kahana implementation includes:
+
+Clients
+
+Oasis client (Firefox-based browser). OTA updates delivered via canary/stable rings; update service (Supabase function) serves update.xml and MAR files. Users receive updates in-app (Settings → Oasis Updates). Critical: update URL must not point to Mozilla—would overwrite Oasis branding.
+
+Edge / API Layer
+
+Web/API gateway / load balancer (receives HTTPS requests).
+
+Application Services (Oasis Backend)
+
+Auth & Session service (handles login, tokens, SSO).
+
+Workspace / Hubs service (workspaces, structures, metadata).
+
+User & Org service (accounts, org membership, roles).
+
+AI/Assistant service (calls out to AI providers, if applicable).
+
+Notification / Email service (optional).
+
+Data Stores
+
+Primary relational database (user accounts, workspace metadata, configs).
+
+Object storage (any stored files or attachments, if applicable).
+
+Caches (Redis, etc. – optional).
+
+Support Services
+
+OTA Update Service: Supabase function (oasis-update/index.ts) serving canary/stable rings; ring pointers control which version users receive. Rollback = repoint pointer.
+
+Logging / Monitoring system (Supabase logs, Mixpanel).
+
+Secrets management (AWS Secrets Manager).
+
+CI/CD pipeline (GitHub Actions: oasis-canary.yml, oasis-stable-promote.yml; MAR build/sign via scripts/update-signing).
+
+Third‑Party Services
+
+Identity/SSO provider.
+
+Payment/billing provider.
+
+AI provider(s) (if used).
+
+Email/notifications provider (if used).
+
+2. Arrows and Interactions
+Show main flows:
+
+User → Oasis
+
+Browser → HTTPS → Web/API gateway → backend services.
+
+Auth Flow
+
+User browser → Auth service → (optional) SSO provider → Auth service → Session/token.
+
+App Logic
+
+Workspace/User services ↔ Database (CRUD on metadata, account info).
+
+Workspace service ↔ Object storage (store/retrieve files if applicable).
+
+AI service ↔ AI provider (only necessary context, no excess data).
+
+Ops & Security
+
+All services → Logging/Monitoring (logs, metrics).
+
+Services ↔ Secrets/KMS (retrieving DB passwords, API keys, etc.).
+
+CI/CD → deploys new versions of backend services.
+
+Use simple, directional arrows; annotate key ones (e.g., “HTTPS + JWT”, “Encrypted at rest”).
+
+3. Security Annotations on the Diagram
+Add small notes/callouts:
+
+On edge/API gateway: “TLS termination, WAF rules, rate limiting”.
+
+On Auth service: “SSO + MFA, session management, RBAC”.
+
+On DB and object storage: “Private network, encryption at rest, limited access”.
+
+On AI/provider calls: “Minimal data, contractual security obligations”.
+
+On Logging: “Central log aggregation, security monitoring”.
+
+This visually shows where core controls live, which auditors will link to your policies.
+
+4. One‑Page Text Companion (“System Architecture – Notes”)
+Add a short text page:
+
+Oasis is a multi‑tier, cloud‑hosted web application with a browser‑based client, stateless backend services, and managed data stores.
+
+Authentication uses SSO/MFA (where configured) and centralized auth/session service; authorization is enforced via role‑based access in backend services.
+
+Customer data (accounts, workspace metadata, stored content) is stored in managed databases and object storage in private networks, encrypted at rest and accessed only via backend services.
+
+Logging, monitoring, CI/CD, and secrets management support secure operations and are restricted to authorized engineering/DevOps staff.

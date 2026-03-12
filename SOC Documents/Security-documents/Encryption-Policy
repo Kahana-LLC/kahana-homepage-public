@@ -1,0 +1,181 @@
+Owner: CISO / Security Team
+Approved By: CTO
+
+1. Purpose
+This policy defines how Kahana uses encryption to protect customer and company data at rest and in transit across all Kahana Oasis systems. It ensures that sensitive information cannot be read or altered by unauthorized parties, supporting SOC 2 Trust Services Criteria for Security and Confidentiality.
+
+2. Scope
+This policy applies to:
+
+All Kahana environments: production, staging, development, and internal corporate systems.
+
+All data stores and communication channels used by Kahana Oasis (databases, object storage, logs, backups, message queues, APIs, web traffic).
+
+All Kahana employees, contractors, and third parties who design, implement, or operate systems where encryption is used.
+
+3. Data Classification and Encryption Requirements
+Encryption requirements are based on Kahana’s data classification levels:
+
+Restricted / Confidential data (e.g., customer workspaces, files, account details, authentication data, secrets)
+
+Must be encrypted at rest and in transit.
+
+Internal data (e.g., internal docs, some logs)
+
+Should be encrypted at rest where feasible; must be encrypted in transit when sent over untrusted networks.
+
+Public data
+
+Encryption is optional, but network encryption is still recommended where practical.
+
+The Data Classification and Data Protection policies define which data falls into each category and must be followed when deciding encryption controls.
+
+4. Encryption at Rest
+4.1 General Requirements
+All production systems storing Restricted or Confidential data must enforce encryption at rest using industry‑standard algorithms.
+
+Encryption must be enabled by default on:
+
+Databases: Supabase PostgreSQL (encryption at rest; TLS in transit per SOC2 checklist)
+
+Object storage: Supabase Storage / AWS S3 for workspace content
+
+Persistent volumes and disks attached to compute instances
+
+Backups and snapshots (Supabase stores backups in regionally replicated AWS S3)
+
+Secrets/credentials: AWS Secrets Manager
+
+4.2 Algorithms and Standards
+Recommended symmetric encryption: AES with at least 128‑bit keys (AES‑256 preferred).
+
+Key strength and algorithms must align with current industry best practices and cloud provider recommendations.
+
+Legacy algorithms (e.g., 3DES) are only allowed where unavoidable and must be documented and phased out.
+
+4.3 Logging and Evidence
+Configuration evidence (screenshots, config exports, or IaC definitions) must show that encryption is enabled for each critical data store.
+
+Regular checks (manual or automated) must verify that new databases, storage buckets, and volumes are also encrypted.
+
+5. Encryption in Transit
+5.1 External Connections (Client to Kahana)
+All external connections from users to Kahana Oasis must use HTTPS/TLS.
+
+Insecure protocols (HTTP, plain TCP) must be redirected to secure endpoints or disabled.
+
+Only strong TLS versions are allowed (e.g., TLS 1.2+), and legacy protocols like SSL and TLS 1.0/1.1 must be disabled where possible.
+
+5.2 Internal Service‑to‑Service Traffic
+Communication between microservices, APIs, and internal components that traverse untrusted or shared networks must be encrypted (e.g., TLS, mTLS, VPN tunnels, or secure service mesh).
+
+Database connections and other internal connections carrying sensitive data should use TLS or equivalent protection.
+
+5.3 Email and Integrations
+When sending sensitive information via email or integrating with third‑party systems, secure transport (e.g., TLS for SMTP, HTTPS for APIs) must be used.
+
+Direct transmission of secrets or passwords via email or chat is prohibited.
+
+6. Cryptographic Key Management
+Kahana uses AWS Secrets Manager for application secrets; keys are accessed via Lambda. Supabase provides encryption at rest for database and storage.
+
+6.1 Key Generation and Storage
+Keys must be generated using approved cryptographic libraries or managed key services; manual or ad‑hoc key generation is not allowed.
+
+Keys must be stored in secure key management systems (e.g., KMS, HSM) and never embedded in source code, configuration files in version control, or plain‑text storage.
+
+6.2 Access Control to Keys
+Only a limited set of roles (e.g., Security, DevOps) may manage encryption keys.
+
+Access to key management systems must be controlled via strong authentication and least privilege, and all key‑related actions must be logged.
+
+6.3 Key Rotation and Revocation
+Keys for critical systems must be rotated on a defined schedule (e.g., at least annually) or immediately upon suspected compromise.
+
+Application and system configurations must be designed to support key rotation with minimal downtime.
+
+Compromised keys must be revoked promptly, and incident response procedures must be followed.
+
+6.4 Key Backup and Recovery
+Key material must be backed up securely to prevent data loss while maintaining confidentiality.
+
+Recovery procedures must be tested periodically to ensure encrypted data can be successfully decrypted during DR/BCP events.
+
+7. Secrets, Tokens, and Certificates
+Application secrets (API keys, tokens, client secrets) must be stored only in approved secret management systems and encrypted at rest.
+
+TLS certificates must be:
+
+Issued by trusted certificate authorities (or appropriate internal CA for internal use).
+
+Monitored for expiration and renewed before expiry.
+
+Protected against unauthorized access and modification.
+
+Hard‑coding secrets or certificates in source code repositories is prohibited.
+
+8. Backup, Logging, and Encryption
+Backups containing Restricted or Confidential data must be encrypted at rest and when transmitted between systems or regions.
+
+Logs that contain sensitive information (even indirectly, like identifiers or tokens) must be encrypted at rest where stored.
+
+When exporting logs or backups off‑platform (for example to cold storage or third‑party tools), encryption must be maintained.
+
+9. Design and Implementation Requirements
+New systems, features, and integrations must be reviewed for encryption needs as part of the secure design process.
+
+Technical design documents must specify:
+
+What data is sensitive.
+
+Where encryption at rest is enabled.
+
+How data in transit is protected.
+
+Which keys, KMS resources, and certificates are used.
+
+Infrastructure‑as‑Code and configuration management should define encryption settings explicitly to reduce the risk of unencrypted resources being created.
+
+10. Monitoring and Testing
+Security and DevOps teams must monitor for:
+
+Unencrypted storage resources in production.
+
+Services listening on non‑encrypted endpoints.
+
+Periodic reviews or automated scans should check encryption coverage and key usage.
+
+During DR/BCP and backup restore tests, decryption must be validated to ensure that data is recoverable and keys are working as expected.
+
+11. Vendor and Third‑Party Requirements
+Vendors and sub‑processors that store or process Kahana data must use strong encryption at rest and in transit that is at least equivalent to Kahana’s standards.
+
+Contracts and DPAs must require appropriate encryption and key management practices.
+
+Where possible, vendor SOC reports or security documentation should be obtained and reviewed to confirm encryption controls.
+
+12. Training and Awareness
+Relevant staff (engineering, DevOps, security) must be trained on:
+
+How encryption is implemented in Kahana’s architecture.
+
+How to use key and secret management tools.
+
+How to avoid common mistakes (e.g., storing secrets in code, disabling TLS checks).
+
+General staff awareness should cover why encryption matters and basic handling of encrypted data.
+
+13. Exceptions
+Any exception (e.g., a legacy system that cannot support encryption) must be:
+
+Documented, including the reason and affected systems/data.
+
+Approved by the CISO/Security Lead.
+
+Mitigated with compensating controls and a plan to remediate the exception where feasible.
+
+14. Policy Review and Maintenance
+This policy must be reviewed at least annually, or when there are significant changes to Kahana’s infrastructure, cryptographic standards, or regulatory requirements.
+
+Updates must be approved by the policy owner and senior management and communicated to all impacted teams.
+

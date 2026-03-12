@@ -1,0 +1,219 @@
+Owner: Legal / Security
+Approved By: CEO
+
+1. Purpose
+This policy defines how long Kahana retains different types of data and how that data is securely deleted or anonymized when it is no longer needed. The goal is to:
+
+Meet legal, contractual, and business requirements.
+
+Protect customer and company data from unnecessary exposure.
+
+Support privacy principles and SOC 2 controls.
+
+2. Scope
+This policy applies to:
+
+All data processed, stored, or transmitted by Kahana in relation to Kahana Oasis, including:
+
+Customer workspace content and files.
+
+Customer account and billing data.
+
+Logs and telemetry.
+
+Internal operational and HR data.
+
+All storage locations: production systems, backups, logs, local devices (where applicable), and third‑party systems managed by Kahana.
+
+All Kahana employees, contractors, and vendors handling this data.
+
+3. Data Categories
+Kahana groups data into high‑level categories. Concrete durations can be finalized with Legal; below are reasonable defaults you can adjust.
+
+Customer Workspace Data and Files
+
+Content created or uploaded by customers into Kahana hubs/workspaces.
+
+Customer Account and Billing Data
+
+Account profiles, subscription info, payment‑related records (but not full card data, which is handled by payment processors).
+
+System and Security Logs
+
+Application logs, audit logs, access logs, infrastructure logs.
+
+Support and Communication Records
+
+Support tickets, emails, chat transcripts with customers.
+
+Internal Operational Data
+
+Product analytics, internal documents, project/task records.
+
+HR and Personnel Data
+
+Employee records, contracts, performance, and training records.
+
+Backups and Snapshots
+
+Copies of any of the above stored as part of the backup program.
+
+4. Default Retention Periods (Suggested Baseline)
+You can adjust these with Legal and based on customer commitments:
+
+Customer Workspace Data and Files
+
+Retention:
+
+While the customer account is active.
+
+After account termination: retained for 30–90 days grace period for restoration, then deleted or anonymized.
+
+Customers may request earlier deletion where permitted by law and contract.
+
+Customer Account and Billing Data
+
+Retention:
+
+While account is active.
+
+After termination: retained for 3–7 years to comply with financial, tax, and contractual obligations.
+
+Certain data may be anonymized instead of fully deleted where appropriate.
+
+System and Security Logs
+
+Retention:
+
+Security/audit logs: 12–24 months target; current Supabase Pro = 7-day retention (document current state; consider Log Drains for extended retention).
+
+Less critical logs: 3–6 months depending on value and cost.
+
+Support and Communication Records
+
+Retention: 2–3 years from last interaction, or longer if needed for dispute handling or legal obligations.
+
+Internal Operational Data
+
+Retention: based on business need and other policies (e.g., until replaced or superseded, subject to periodic review).
+
+HR and Personnel Data
+
+Retention:
+
+During employment.
+
+After employment ends: retained for 3–7 years or as required by labor and tax laws.
+
+Backups and Snapshots
+
+Retention:
+
+Supabase: Pro = 7 days, Team = 14 days, Enterprise = 30 days. See Backup and Restoration Policy for details.
+
+Older backups automatically expired/overwritten.
+
+If law, contract, or a specific customer agreement requires different retention, that requirement overrides these defaults for the relevant data.
+
+5. Legal Holds and Exceptions
+If Legal determines that certain data is needed for an ongoing or reasonably anticipated investigation, dispute, or legal matter, a legal hold may be placed on that data.
+
+While a legal hold is in effect, normal deletion processes for that data are suspended.
+
+Once the hold is lifted, data resumes following normal retention/destruction timelines.
+
+6. Secure Destruction and Anonymization
+When data reaches the end of its retention period (and is not subject to a legal hold), it must be securely destroyed or anonymized:
+
+Application / Database Data
+
+Deleted via application or database processes so that it is no longer accessible.
+
+For structured data, rows/records are deleted or irreversibly anonymized (removing identifiers linking to individuals/organizations).
+
+Object / File Storage
+
+Files are deleted via storage controls (e.g., deleting objects from buckets).
+
+Where storage uses versioning, ensure that old versions are also removed per retention rules.
+
+Backups
+
+Deletion is normally achieved by backup expiration: backups exceeding their configured retention period are automatically deleted or overwritten.
+
+Kahana does not perform per‑record deletion inside historical backups unless required by law; instead, data is removed from live systems and then naturally leaves backups as they age out.
+
+Physical Media (if any)
+
+Any physical media (disks, drives) must be destroyed or wiped using industry‑standard methods if decommissioned.
+
+7. Customer Requests and Privacy Rights
+Where applicable law or contract grants customers or end‑users specific data rights (e.g., access, deletion):
+
+Kahana will provide mechanisms for customers to request:
+
+Deletion of their account data and related personal data, subject to legal retention requirements.
+
+Export or access to certain data.
+
+When honoring deletion requests:
+
+Live systems are updated to remove or anonymize the requested data.
+
+Backups are not modified individually; instead, the data will disappear as backups age out, and those backups are only used for restore in limited cases.
+
+Legal and Security must ensure that responses to such requests align with applicable regulations (e.g., GDPR, if relevant, or local law).
+
+8. Data Ownership and Responsibilities
+Data Owners (e.g., Product, Support, HR, Finance):
+
+Classify their data and confirm that retention periods meet business and legal needs.
+
+Periodically review data stores for relevance and clean‑up opportunities.
+
+Legal / Compliance:
+
+Define minimum retention requirements based on law and contract.
+
+Advise on legal holds and exceptions.
+
+Security / DevOps / Engineering:
+
+Implement technical enforcement (e.g., automatic deletion jobs, backup retention).
+
+Ensure deletion/anonymization methods are effective and secure.
+
+9. Documentation and Automation
+Wherever possible, retention and deletion should be implemented via:
+
+Automated jobs (e.g., scheduled deletion tasks, lifecycle rules in storage).
+
+Configuration of backup retention within cloud services.
+
+Procedures for manual deletion (e.g., special cases, legal requests) must be documented, including approvals and verification steps.
+
+10. Monitoring and Verification
+Periodic checks should verify that:
+
+Deletion jobs and lifecycle rules are running as expected.
+
+Backup retention settings match this policy.
+
+Accumulated data does not exceed defined retention without justification.
+
+Any issues identified (e.g., data not being deleted as expected) must be investigated and remediated.
+
+11. Violations and Enforcement
+Failure to follow this policy (e.g., retaining data indefinitely without justification, deleting data that must be retained, mishandling deletion requests) may result in disciplinary action.
+
+Serious or willful violations may also lead to legal or contractual consequences.
+
+12. Review and Maintenance
+This policy must be reviewed at least annually, and whenever there are:
+
+Significant changes in applicable laws/regulations.
+
+Changes to Kahana’s services, data flows, or storage architecture.
+
+Updates must be approved by Legal and Security and communicated to relevant teams.
+

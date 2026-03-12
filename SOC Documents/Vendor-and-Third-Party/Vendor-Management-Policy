@@ -1,0 +1,218 @@
+Owner: Security Lead / COO
+Approved By: CEO
+
+1. Purpose
+This policy defines how Kahana selects, assesses, monitors, and offboards third‑party vendors and service providers that support Kahana Oasis. It aims to manage third‑party risk, protect customer and company data, and meet security and compliance requirements (including SOC 2).
+
+2. Scope
+This policy applies to:
+
+All third parties that provide products or services to Kahana: AWS, Supabase, Okta, Stripe, Mixpanel, Google Analytics, Looker, Google Gemini, Deepgram, Google Workspace, and other SaaS (payment processors, HR/finance tools).
+
+All Kahana employees involved in selecting, onboarding, managing, or offboarding vendors.
+
+“Vendor” in this policy includes service providers, subcontractors, and key partners.
+
+3. Roles and Responsibilities
+Vendor Owner (Business Owner):
+
+Primary internal contact for the vendor.
+
+Ensures due diligence, contract requirements, and ongoing reviews are completed.
+
+Security / Compliance:
+
+Performs or reviews security and privacy due diligence.
+
+Assesses vendor risk level and recommends controls or mitigations.
+
+Legal:
+
+Reviews and approves contracts, DPAs, and security/privacy clauses.
+
+Finance / Procurement (if applicable):
+
+Approves financial terms and maintains vendor payment records.
+
+Executive Leadership (CEO/CTO/COO):
+
+Approves onboarding of high‑risk or critical vendors.
+
+4. Vendor Inventory and Risk Classification
+Kahana maintains a vendor inventory that records for each vendor:
+
+Name and description of services provided.
+
+Data types involved (e.g., internal data, customer data, personal data).
+
+Level of access to systems and data (none / limited / significant / admin).
+
+Risk rating (e.g., Low / Medium / High / Critical).
+
+Vendor owner, key contacts, and contract dates.
+
+Risk rating is based on:
+
+Sensitivity of data the vendor handles.
+
+Criticality of the service to Kahana’s operations.
+
+Level of access to Kahana environments (e.g., production access, SSO integration).
+
+5. Vendor Selection and Due Diligence (Pre‑Onboarding)
+Before engaging a new Medium/High‑risk vendor, Kahana must:
+
+Define Need and Scope
+
+Vendor owner documents purpose, systems/data involved, and alternatives considered.
+
+Perform Security and Privacy Due Diligence (appropriate to risk level), which may include:
+
+Reviewing the vendor’s security documentation and certifications (e.g., SOC 2, ISO 27001, security whitepaper).
+
+Sending or reviewing a security questionnaire.
+
+Reviewing privacy policy, data handling, and sub‑processor lists.
+
+Assessing data residency and regulatory implications (if applicable).
+
+Risk Assessment
+
+Security/Compliance assigns a risk rating and identifies required controls or contract clauses.
+
+For High/Critical vendors, the Security Lead and relevant leadership must explicitly approve proceeding.
+
+Low‑risk vendors (e.g., tools with no access to confidential data) may follow a lightweight review process.
+
+6. Contract and Security Requirements
+Contracts with Medium/High‑risk vendors should, where possible, include:
+
+Confidentiality and Data Protection:
+
+Obligations to protect Kahana data using appropriate technical and organizational measures.
+
+Clear description of data processed and purposes.
+
+Compliance and Standards:
+
+Commitment to comply with relevant regulations and security standards.
+
+Provision of security documentation and reports upon reasonable request.
+
+Incident Notification:
+
+Requirement to notify Kahana promptly of security incidents that may affect Kahana data or services, with defined timelines.
+
+Sub‑processors / Sub‑vendors:
+
+Disclosure of relevant sub‑processors and obligation to impose comparable security requirements on them.
+
+Right to Audit / Obtain Assurance:
+
+Ability for Kahana to obtain reasonable assurance (e.g., reports, responses) about vendor controls.
+
+Data Retention and Deletion:
+
+Requirements for data return or secure deletion at contract end or upon request.
+
+7. Onboarding
+Once a vendor is approved:
+
+Vendor is added to the vendor inventory with risk rating and owner.
+
+Access controls are configured following least privilege (e.g., specific API keys, scoped access, SSO roles).
+
+Where relevant, integration is documented (data flows, systems touched, configuration steps).
+
+The vendor owner is informed of their responsibilities for ongoing oversight.
+
+8. Ongoing Monitoring and Review
+For Medium/High‑risk vendors, Kahana should:
+
+Annually (or at defined intervals):
+
+Review updated security reports (e.g., SOC 2, ISO certs) or equivalent assurance documents.
+
+Confirm that the nature of services, data processed, and sub‑processors have not changed materially, or understand new risks.
+
+Review any significant incidents reported by the vendor and mitigations applied.
+
+Continuously:
+
+Monitor for major service outages or security news affecting critical vendors.
+
+Review actual usage and access to ensure least privilege is maintained.
+
+Findings should be documented and, where necessary, result in risk mitigations, contract changes, or vendor replacement.
+
+9. Access Management for Vendors
+Vendor accounts and access (e.g., support accounts, admin portals, API keys) must be:
+
+Individually assigned where possible (no generic shared logins).
+
+Protected with strong authentication (MFA where supported).
+
+Limited to the minimum required permissions and environments.
+
+Access must be reviewed periodically (e.g., as part of quarterly access reviews) and removed when:
+
+No longer needed for business purposes.
+
+The contract ends or the individual vendor contact changes.
+
+10. Vendor‑Related Incidents
+If a vendor experiences a security incident that impacts or could impact Kahana:
+
+The Incident Response Plan is activated.
+
+Kahana coordinates with the vendor to obtain:
+
+Description of the incident and scope.
+
+Data and systems affected.
+
+Steps taken for containment and remediation.
+
+Kahana assesses impact on its own risk, systems, and customers and determines whether customer or regulatory notifications are required.
+
+Outcomes may influence vendor risk rating and continued use.
+
+11. Offboarding Vendors
+When a vendor is no longer needed or a contract is terminated:
+
+Vendor owner ensures:
+
+Access tokens, API keys, and logins are revoked or disabled.
+
+Data return or deletion is executed as required by contract and Data Retention policy (with confirmation where possible).
+
+Vendor inventory is updated to reflect termination date and offboarding status.
+
+For critical vendors, an exit plan should be considered in advance (e.g., alternative vendor, internal replacement).
+
+12. Exceptions
+If a vendor cannot meet standard security requirements but is still considered necessary:
+
+The vendor owner and Security must:
+
+Document the deviation and associated risks.
+
+Define compensating controls (e.g., limited data shared, additional monitoring, segregation).
+
+The Security Lead (and CEO/CTO for High/Critical cases) must approve the exception.
+
+Exceptions should be time‑limited and reviewed periodically.
+
+13. Training and Awareness
+Relevant staff (product, engineering, operations, finance, legal) should be trained on:
+
+This Vendor Management Policy.
+
+How to request new vendors and when security/legal review is required.
+
+How to handle vendor‑related security concerns.
+
+14. Review and Maintenance
+This policy must be reviewed at least annually, or when there are significant changes to vendor landscape, regulations, or business operations.
+
+Updates must be approved by the policy owner and CEO and communicated to all relevant teams.

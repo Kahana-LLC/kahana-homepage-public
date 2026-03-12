@@ -1,0 +1,72 @@
+Kahana Inc.
+Management Assertion Regarding the Kahana Oasis System
+
+For the period: Type I: as of [audit date]. Type II: from [START DATE] to [END DATE] (to be set upon audit engagement; target SOC 2 Type II within 6–12 months post–SOC 1)
+
+Kahana Inc. (“Kahana” or the “service organization”) management has prepared the accompanying description of the Kahana Oasis system (the “system”). The system description includes the services provided to user entities, the components of the system used to provide those services, and the relevant controls designed and implemented by Kahana to meet the applicable Trust Services Criteria for Security (and any additional criteria selected, such as Availability, Confidentiality, etc.).
+
+Kahana’s management is responsible for:
+
+Designing, implementing, operating, and monitoring controls within the Kahana Oasis system that achieve the stated control objectives and satisfy the applicable Trust Services Criteria.
+
+Preparing and presenting the description of the Kahana Oasis system in accordance with the AICPA description criteria for a description of a service organization’s system in a SOC 2 report.
+
+Providing the assertion below based on management’s understanding and evaluation of the system and related controls.
+
+Based on the foregoing, Kahana’s management asserts that:
+
+System description
+The description of the Kahana Oasis system fairly presents, in all material respects, the system that was designed and implemented to provide the described services to user entities, including:
+
+The types of services provided (the Kahana Oasis agentic browser and workspace platform).
+
+The principal service commitments and system requirements.
+
+The system components used to provide those services (infrastructure, software, people, procedures, and data).
+
+The boundaries of the system and the roles of subservice organizations (such as cloud and other third‑party providers).
+
+Design of controls (Type I and Type II)
+The controls related to the Kahana Oasis system were suitably designed, as of <Type I: DATE / Type II: START DATE>, to provide reasonable assurance that the applicable Trust Services Criteria for Security (and any additional criteria selected) would be met if the controls operated effectively.
+
+Operating effectiveness of controls (Type II only – omit this paragraph for Type I)
+The controls related to the Kahana Oasis system operated effectively throughout the period from <START DATE> to <END DATE> to provide reasonable assurance that the applicable Trust Services Criteria for Security (and any additional criteria selected) were met.
+
+Scope and criteria
+In preparing this description and designing the controls, Kahana’s management:
+
+Identified the system boundaries and services that are in scope for this SOC 2 engagement.
+
+Selected the applicable Trust Services Criteria (Security is in scope; additional categories such as Availability, Confidentiality, Processing Integrity, and Privacy may be included as agreed with the auditor).
+
+Evaluated the design (and for Type II, the operating effectiveness over the stated period) of controls against those criteria.
+
+Subservice organizations
+Where subservice organizations are used (for example, cloud infrastructure and other critical service providers), management has disclosed their role in the system description. Management has either:
+
+Identified the controls at those subservice organizations that are relied upon, or
+
+Described complementary subservice organization controls (CSOCs) where appropriate.
+
+Complementary user entity controls
+Where applicable, management has identified complementary user entity controls (CUECs) that user entities must implement to achieve certain control objectives and Trust Services Criteria, as described in the system description.
+
+Kahana’s management believes that the description of the Kahana Oasis system and the controls presented therein are accurate and complete in all material respects for the purposes of the SOC 2 report.
+
+Kahana Inc.
+
+By: ____________________________
+Name: Adam Kershner
+Title: Chief Executive Officer
+Date: <date of signing>
+
+By: ____________________________
+Name: [CFO or second signatory – fill in when applicable for small team]
+Title: Chief Financial Officer / Finance Lead
+Date: <date of signing>
+
+How you’ll use this:
+
+For a Type I audit, keep only the design assertion (point 2) and adjust the period to “as of <DATE>”.
+
+For a Type II audit, keep both design and operating‑effectiveness assertions (points 2 and 3) and set the full period.

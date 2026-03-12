@@ -1,0 +1,151 @@
+Effective Date: March 2026
+Owner: Security Lead / Compliance Lead
+Approved By: CEO / CTO
+
+1. Purpose
+This document provides an overview of Kahana’s information security and compliance program for the Kahana Oasis platform. It explains how policies, processes, and controls are organized and governed to meet SOC 2 Trust Services Criteria (Security, and any additional criteria in scope).
+
+2. Governance and Roles
+Executive Oversight: CEO Adam Kershner and CTO are ultimately accountable for security and compliance outcomes and approve key policies, risk decisions, and SOC 2 scope.
+
+Security / Compliance Lead: Owns the information security program, coordinates SOC 2 readiness, manages risk assessments, and oversees incident response, vendor risk, and control operation.
+
+Engineering & DevOps: Implement and operate technical controls (access, logging, SDLC, change management, backups/DR, vulnerability management).
+
+HR / People: Manage hiring, background checks, onboarding/offboarding, security awareness training, and the Employee Handbook.
+
+Operations / Legal: Oversee physical security, vendor and contract terms, and legal/privacy obligations.
+
+3. Policy and Procedure Framework
+Kahana maintains a structured set of written policies and procedures that form the foundation of the compliance program, including but not limited to:
+
+Management & Governance:
+
+Corporate Governance & Security Governance Manual
+
+Management Assertion Letter
+
+System Description – Kahana Oasis
+
+Security & IT Policies:
+
+Information Security / Encryption Policy
+
+Acceptable Use Policy
+
+Remote Access Policy
+
+Workstation / Endpoint Security Policy
+
+Physical Security Policy
+
+Logging & Monitoring Policy
+
+Change Management Policy
+
+Incident Response Plan
+
+Business Continuity Plan (BCP) & Disaster Recovery Plan (DRP)
+
+Backup & Restoration Policy
+
+Operational & Data Policies:
+
+Data Retention and Destruction Policy
+
+Data Classification Policy
+
+Development & Technical:
+
+SDLC Policy
+
+Code Review Procedures
+
+Vulnerability Management Policy
+
+Vendor & Third‑Party:
+
+Vendor Management Policy
+
+Vendor Risk Assessment Template and Records
+
+Third‑Party Service Agreement Security Clauses
+
+Subservice Organization SOC Report Review Procedure
+
+HR & Personnel:
+
+Employee Handbook (incl. security responsibilities)
+
+Security Awareness Training Program
+
+Employee Offboarding Checklist
+
+Background Check Policy
+
+Code of Conduct
+
+Confidentiality / NDA Agreements
+
+Each document has a defined owner, review cadence (at least annually), and approval path.
+
+4. Risk Management Process
+Kahana’s risk management approach includes:
+
+Annual Risk Assessment Report: Formal identification and evaluation of risks to Kahana Oasis and supporting systems, with likelihood/impact ratings and prioritized risks.
+
+Risk Register: Living register tracking each risk’s description, rating, owner, actions, and status.
+
+Risk Treatment Plan: Mapping of risks to treatment decisions (mitigate, accept, transfer, avoid) with specific mitigation tasks, targets, and residual risk ratings.
+
+Results are reviewed with leadership at least annually and after major changes or incidents.
+
+5. Control Framework and Mapping (CC1–CC9)
+Kahana operates a Controls Matrix that:
+
+Lists all key controls (policies, processes, technical safeguards).
+
+Maps them to SOC 2 Common Criteria (CC1–CC9) and any additional criteria in scope.
+
+Identifies control owners, frequency, and typical evidence.
+
+This matrix is used to plan evidence collection and to verify that all relevant SOC 2 criteria have at least one control in place.
+
+6. Evidence Management and Audit Readiness
+To support SOC 2 Type I & II:
+
+Evidence (screenshots, exports, reports, tickets, logs, training records, completed checklists) is collected and stored in organized, access‑controlled locations.
+
+Each control in the matrix has defined “evidence examples” so teams know what to capture during the audit period.
+
+Internal spot checks or informal “mock audits” may be performed periodically to validate that controls operate as described and evidence is available.
+
+7. Training, Communication, and Culture
+Security expectations and key policies are communicated via onboarding, the Employee Handbook, and the Security Awareness Training Program.
+
+Annual training and phishing simulations reinforce secure behavior.
+
+Employees sign acknowledgments for the Handbook, Code of Conduct, and confidentiality obligations.
+
+Management and Security provide regular updates on security posture, incidents, and policy changes.
+
+8. Continuous Improvement
+Kahana’s compliance program is designed to improve over time through:
+
+Lessons learned from incidents and near‑misses.
+
+Feedback from engineers, staff, and customers.
+
+Findings from risk assessments, vendor reviews, and SOC 2 audits.
+
+Updates to policies, controls, and processes are tracked, approved, and communicated, and the Compliance Program Documentation is reviewed at least annually.
+
+If you’d like, I can now give you a one‑page “SOC 2 Project Plan” outline (phases and milestones) that ties this program doc to an actual audit timeline.
+
+9. SOC 2 Project Timeline (as of March 2026)
+By March 16, 2026: All first drafts of SOC documentation complete. One week for gap analysis and policy creation.
+March 16, 2026: Mock audit begins. Two weeks for engineering (Adam and team) to fix identified security gaps.
+Post–mock audit: SOC 1 audit engagement. Target SOC 2 Type II within 6–12 months.
+Gap analysis reference: See data-room SOC2 Gap Analysis for current implementation status, P0/P1/P2 gaps, and evidence inventory.
+
+

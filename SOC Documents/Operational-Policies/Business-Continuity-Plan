@@ -1,0 +1,211 @@
+Owner: Operations Lead
+Approved By: CEO
+
+1. Purpose
+This Business Continuity Plan describes how Kahana will continue critical operations and services—especially Kahana Oasis—during and after a disruption (e.g., infrastructure outages, office inaccessibility, major incidents). The goal is to minimize downtime for customers and maintain essential internal functions.
+
+2. Scope
+This BCP covers:
+
+Kahana Oasis production service (web app, APIs, data storage).
+
+Supporting infrastructure and platforms (cloud provider, identity/SSO, monitoring, CI/CD as needed to support continuity).
+
+Critical business functions:
+
+Service availability and customer access to workspaces and content.
+
+Customer support and communication.
+
+Key internal operations (engineering, security, billing as needed).
+
+It applies to disruptions such as: cloud or network outages, loss of office access (e.g., Chandigarh), major supplier failure, regional incidents, and serious internal system failures.
+
+3. Business Impact and Critical Functions
+Kahana identifies the following as critical:
+
+Kahana Oasis availability: Customers must be able to log in and access their hubs and content.
+
+Customer support and incident communication: Ability to respond to customer issues and provide timely updates.
+
+Data integrity and access: Preservation and access to customer data and core configuration.
+
+Target objectives:
+
+Recovery Time Objective (RTO):
+
+Kahana Oasis core service: 4–8 hours.
+
+Customer support channels (email/helpdesk): 4 hours.
+
+Recovery Point Objective (RPO):
+
+Customer production data: 24 hours maximum acceptable data loss (Supabase Pro daily backups); N/A if on Free Plan (no backups).
+
+4. Assumptions
+This plan assumes:
+
+AWS (us-east-1) and Supabase remain generally available outside specific regional or service issues.
+
+Critical team members can work remotely if office is unavailable.
+
+Backups and monitoring are functioning as defined in Backup/DR and Logging policies.
+
+5. Continuity Strategies by Scenario
+5.1 Cloud / Infrastructure Outage (Partial or Regional)
+Use multi‑AZ or multi‑zone architecture where possible for critical components.
+
+For regional failures, DR Plan defines steps to fail over to a secondary region (if configured) or restore from backups in a different location.
+
+Priorities:
+
+Restore core APIs and web front‑end.
+
+Restore database and storage access.
+
+Restore non‑critical background jobs and analytics.
+
+5.2 Kahana Office Unavailable (e.g., Chandigarh)
+All critical roles can work remotely using laptops and secure remote access.
+
+Office‑bound functions (e.g., physical paperwork) are deferred or moved to digital processes where possible.
+
+Communication continues via remote collaboration tools (chat, video, email); leadership confirms expectations with the team.
+
+5.3 Major Application Incident (Functional Degradation)
+Activate Incident Response Plan for technical triage and containment.
+
+Prioritize restoration of “read” access to customer content, then full functionality.
+
+Use feature flags or temporary disablement of non‑critical features to stabilize the platform.
+
+5.4 Key Vendor or Third‑Party Failure
+Identify critical vendors (cloud provider, auth provider, monitoring, critical SaaS).
+
+For each, define:
+
+Available backups or alternatives (secondary provider, manual workaround).
+
+How to quickly switch if provider is down or compromised.
+
+Communicate clearly to customers if a third‑party outage is affecting service.
+
+6. Roles and Responsibilities in a BCP Event
+BCP Coordinator (often Operations Lead or CEO):
+
+Decides when to activate the BCP.
+
+Coordinates efforts across teams.
+
+Technical Lead (Engineering/DevOps):
+
+Executes technical recovery steps (failover, restores, configuration changes).
+
+Customer Support / Success Lead:
+
+Manages customer‑facing communications and expectations.
+
+Communications Lead:
+
+Coordinates internal announcements and status updates (may be same as above in a small team).
+
+HR / Admin:
+
+Supports people‑related logistics (remote work guidance, office access issues).
+
+7. Plan Activation and Escalation
+The BCP may be activated when:
+
+Kahana Oasis is or is expected to be unavailable or severely degraded beyond normal incident SLAs.
+
+The primary office is unavailable for an extended period.
+
+A critical vendor outage significantly affects service delivery.
+
+Steps:
+
+BCP Coordinator declares a BCP event and notifies leadership and key staff.
+
+An incident/BCP channel is created (e.g., dedicated chat room) and a record opened.
+
+Roles for this event (Coordinator, Technical Lead, Communications Lead) are assigned if not predefined.
+
+8. Communication Plan
+Internal Communication
+
+Use agreed internal channels (chat, email, calls) for real‑time updates.
+
+Provide concise, regular updates: current status, actions taken, next steps.
+
+Customer Communication
+
+Use appropriate channels (status page, email, in‑app banners) to:
+
+Inform customers of the disruption at a high level.
+
+Provide expected timelines and workarounds (if any).
+
+Share updates at reasonable intervals until resolution.
+
+External / Stakeholder Communication
+
+For significant events, leadership may provide summaries to partners, investors, or others as needed.
+
+9. Data Backup and Recovery Alignment
+This BCP works together with the Backup and Disaster Recovery Plan:
+
+Production databases and critical storage are backed up on a defined schedule.
+
+Periodic restore tests verify that backups are usable.
+
+In a continuity event, the Technical Lead follows documented DR steps to restore data and services while meeting RTO/RPO targets as closely as possible.
+
+10. Remote Work and Alternate Work Arrangements
+All critical staff must be able to work remotely in case of office disruptions.
+
+Remote access must comply with the Remote Access and Workstation Security policies.
+
+Leadership ensures:
+
+Clear expectations on working hours and availability during a continuity event.
+
+Support for employees affected by local conditions (flexible arrangements where needed).
+
+11. Testing and Exercises
+Kahana will test key elements of this BCP at least annually, such as:
+
+Simulated cloud outage and failover or restore scenario.
+
+Office‑unavailability drill (e.g., “work from home day” test).
+
+Each test should have:
+
+Clear objectives.
+
+Documented results and gaps.
+
+Follow‑up actions to improve the plan.
+
+12. Plan Maintenance
+The BCP must be reviewed at least annually, and after major changes to:
+
+System architecture or cloud infrastructure.
+
+Office locations or working model.
+
+Critical vendors or service dependencies.
+
+Updates must be approved by the BCP Owner and communicated to affected staff.
+
+13. Relationship to Other Documents
+This BCP is supported by, and should be read alongside:
+
+Disaster Recovery Plan (technical recovery procedures).
+
+Incident Response Plan (security/technical incident handling).
+
+Backup and Restoration Policy.
+
+Vendor Management Policy.
+
+Remote Access and Workstation Security policies.

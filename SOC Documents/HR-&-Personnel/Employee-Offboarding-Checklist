@@ -1,0 +1,91 @@
+Owner: HR / IT / Security
+Approved By: CEO
+
+1. Purpose
+This checklist ensures that when an employee or contractor leaves Kahana, their access is promptly revoked, company assets are returned, and data is handled securely. It supports SOC 2 requirements for user access revocation and information security during terminations.
+
+2. Scope
+Applies to:
+
+All employees, contractors, and interns whose engagement with Kahana ends (voluntary or involuntary).
+
+All systems, devices, and physical access associated with Kahana work.
+
+3. Offboarding Steps (Checklist)
+You can turn this into a table in Notion/Sheets. Each line should have: “Owner, Due date, Done (Y/N), Notes.”
+
+A. Initiation (HR / Manager)
+ Offboarding request created in HR/IT system with last working day and time.
+
+ IT/Security notified in advance of departure (or immediately for involuntary termination).
+
+ List of systems and access reviewed (SSO directory, password manager, vendor inventory, etc.).
+
+B. Logical Access Revocation (IT / Security)
+Perform as close as possible to the effective termination time (earlier for high‑risk cases).
+
+ Disable account in primary identity provider (Google Workspace; internal IdP for Adam and team).
+
+ Revoke access to:
+
+Email and collaboration: Google Workspace, Slack, Discord.
+
+Kahana Oasis admin tools and production access: AWS, Supabase, GitHub, CI/CD.
+
+VPN and remote access tools (if applicable).
+
+Other SaaS: Tally.so, Google Sheets, Mixpanel, Stripe, ProductHunt, CRM, ticketing, monitoring, etc.
+
+ Invalidate active sessions, tokens, and API keys associated with the user where possible.
+​
+
+ Remove from mailing lists, groups, and shared calendars.
+​
+
+For privileged and technical staff, also:
+
+ Rotate any shared credentials or admin passwords the user knew.
+
+ Review and, if needed, rotate secrets/keys created by the user (e.g., in secrets manager).
+
+C. Data and Ownership Transfer (Manager / IT)
+ Transfer ownership of important documents, repositories, and accounts (e.g., shared drives, project boards, admin roles) to another owner before full account deletion.
+​
+
+ Ensure customer‑facing responsibilities and open tickets are reassigned.
+
+ Decide what to do with email (forwarding to manager, auto‑reply, or mailbox export) consistent with law and policy.
+
+D. Physical Access and Assets (Operations / Manager)
+ Recover all company‑owned devices: laptops, monitors, phones, hardware tokens, USB keys, etc.
+
+ Recover building access badges, keys, or other physical access devices.
+
+ Remove or update physical access rights (door codes, access lists).
+​
+
+ Confirm devices will be wiped, reimaged, or securely stored before reassignment.
+
+E. HR & Admin Close‑Out (HR / Finance)
+ Update HR system and payroll to reflect termination date.
+​
+
+ Cancel or adjust expense cards, benefits, and other financial accounts.
+​
+
+ Update organizational chart and internal directories.
+
+F. Confirmation and Recordkeeping
+ Manager and HR review that all steps are completed.
+
+ Offboarding checklist signed/approved by HR and IT/Security (electronically is fine).
+
+ Checklist and related evidence (screenshots/exports, ticket links) stored in the employee’s HR/security file as SOC 2 evidence.
+
+4. Timeliness
+Per Access Control Policy: All access must be revoked within 24 hours of termination or contract end.
+
+For involuntary or high‑risk departures, access should be revoked immediately at decision time, coordinated between HR and IT/Security (or Adam/CEO for small team).
+
+5. Review and Maintenance
+This checklist is reviewed at least annually, or when tools and systems change, to ensure all key systems and steps remain covered.

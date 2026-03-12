@@ -1,0 +1,20 @@
+Title: Incident Management Evidence
+
+Purpose
+To show that security incidents are identified, investigated, and resolved according to the IR plan.
+
+Process
+
+All suspected security incidents must be logged in <tool> and triaged by the Security Lead or delegate.
+
+Each incident record includes: date/time, reporter, systems/users affected, severity, timeline of actions, and resolution.
+
+Post‑incident reviews are conducted for significant incidents to capture lessons learned and prevention measures.
+
+Evidence kept for Type II:
+
+List of incidents (including “no major incidents” if true).
+
+Detailed records for each incident in the period.
+
+Post‑mortems / lessons learned documents.

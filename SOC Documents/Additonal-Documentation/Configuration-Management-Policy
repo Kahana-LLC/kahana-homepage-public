@@ -1,0 +1,26 @@
+Configuration Management Policy – Kahana Oasis
+
+Owner: DevOps / Engineering Lead
+Approved By: CTO
+Effective Date: March 2026
+
+1. Purpose
+This policy establishes requirements for baseline configurations, hardening standards, configuration changes (including approvals and testing), use of infrastructure-as-code, and detection/remediation of configuration drift for Kahana Oasis systems.
+
+2. Scope
+Applies to all production and staging infrastructure for Kahana Oasis, including AWS (us-east-1), Supabase, Lambda, Terraform definitions, CI/CD (GitHub workflows), and application configuration.
+
+3. Infrastructure as Code (IaC)
+Kahana uses Terraform for AWS infrastructure and GitHub for application code. All infrastructure changes must be version-controlled and reviewed via pull requests. Configuration values that are secrets (API keys, tokens) must be stored in AWS Secrets Manager, not in code.
+
+4. Baseline and Hardening
+Production systems must follow security baselines: encryption at rest and in transit (Supabase, TLS); least-privilege IAM; security groups and network segmentation per design. Supabase and AWS default security configurations must be verified and hardened where needed.
+
+5. Configuration Change Process
+Configuration changes follow the Change Management Policy: tracked via GitHub PRs, peer-reviewed, tested in non-production before production deployment. High-risk changes (IAM, security groups, database settings) require explicit approval from Engineering Lead or DevOps.
+
+6. Configuration Drift
+Periodic reviews (manual or automated) should detect configuration drift. Deviations from IaC definitions must be documented, justified, or reverted. Gaps identified are tracked in the Risk Register.
+
+7. Review and Maintenance
+This policy is reviewed at least annually. Updates require approval from the policy owner and CTO.

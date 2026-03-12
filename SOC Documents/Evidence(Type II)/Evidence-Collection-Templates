@@ -1,0 +1,12 @@
+Title: Evidence Collection Templates
+
+Purpose
+To standardize how ongoing evidence is collected, labeled, and stored.
+
+Approach
+
+For each control family (access management, training, vulnerability management, etc.), Kahana maintains a simple template (spreadsheet or form) indicating: data source, frequency, owner, and file naming convention.
+
+Evidence is stored in a central repository (e.g., “SOC2 Evidence – YYYY”) with consistent folder structure by control and period.
+
+Templates are reviewed annually and updated as needed.

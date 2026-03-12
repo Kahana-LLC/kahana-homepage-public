@@ -1,0 +1,23 @@
+Title: Backup and Restore Testing Evidence
+
+Purpose
+To verify that critical data backups can be successfully restored.
+
+Process
+
+Scope: Production databases and any critical configuration/state stores.
+
+Frequency: At least quarterly.
+
+Test types: Point‑in‑time restore to a non‑production environment, or file/object restore tests as appropriate.
+
+Each test is documented with: date, system, backup source, restore target, success/failure, and issues.
+
+Evidence kept for Type II:
+
+Test run logs or screenshots.
+
+Short test reports summarizing results and fixes.
+
+Tickets for any issues found and their resolution.
+

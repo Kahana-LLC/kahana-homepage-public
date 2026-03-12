@@ -1,0 +1,113 @@
+Owner: Operations
+Approved By: CEO
+
+1. Purpose
+This policy defines how Kahana protects its physical offices, equipment, and on‑premise assets to reduce the risk of unauthorized physical access, damage, theft, or disruption. It supports overall security of Kahana Oasis and the data we process.
+
+2. Scope
+This policy applies to:
+
+All Kahana office locations (including the Chandigarh office) and any future facilities.
+
+All Kahana employees, contractors, interns, and visitors who enter Kahana premises.
+
+All physical assets located at Kahana sites (laptops, servers if any, network devices, paper records, and other equipment).
+
+3. Physical Access Controls
+Office access must be controlled using one or more of: keys, access cards/badges, PIN pads, or building security reception.
+
+Only authorized personnel may have regular access; access should be granted based on role and business need.
+
+Access credentials (keys, badges, codes) must not be shared; lost or stolen credentials must be reported immediately to Operations so they can be revoked or replaced.
+
+Where possible, access to sensitive areas (e.g., network closets, server rooms) must be further restricted to a smaller set of authorized personnel.
+
+4. Visitor Management
+All visitors (vendors, customers, guests) must be:
+
+Logged (e.g., sign‑in sheet or digital visitor system) with name, company, host, and time of entry/exit.
+
+Escorted or under supervision by a Kahana employee while in non‑public areas.
+
+Visitors must wear visible identification (badge/sticker) where feasible.
+
+Visitors must not be granted unsupervised access to areas where sensitive data or systems are present.
+
+Hosts are responsible for ensuring visitors follow Kahana policies and leave the premises when their visit ends.
+
+5. Office Security Practices
+Office doors and windows should be closed and locked outside of business hours and when areas are unattended.
+
+Emergency exits must remain clear and available at all times but should not be used as regular entry points.
+
+Security or building staff (if applicable) should be informed of Kahana’s normal working hours and contact points for after‑hours issues.
+
+Cleaning or maintenance personnel with after‑hours access must be approved by Operations or the building management and subject to contractual confidentiality clauses where necessary.
+
+6. Equipment and Asset Protection
+Laptops and other portable devices should be stored securely when not in use (e.g., locked drawer, lockable cabinet, or taken home by the user).
+
+Network equipment (routers, switches, firewalls, access points) and any on‑premise servers must be placed in locked rooms or cabinets with restricted access.
+
+Display screens should be positioned to reduce the risk of shoulder‑surfing, especially in shared or reception areas.
+
+Whiteboards or printed materials containing sensitive information should be erased or removed when no longer needed, particularly from meeting rooms.
+
+7. Handling of Paper Records and Media
+Where paper documents containing Confidential or Restricted information are used, they must be stored in locked cabinets or rooms when not in use.
+
+Sensitive paper records must be disposed of securely (e.g., cross‑cut shredding, locked shred bins) rather than using open trash or recycling.
+
+Removable media (USB drives, external disks) should be minimized; if used, they must be physically secured and handled per relevant data and encryption policies.
+
+8. Environmental and Safety Controls
+Offices must have appropriate environmental protections as provided by the building (e.g., fire alarms, extinguishers, adequate electrical safety).
+
+Critical network or server equipment should be protected against obvious risks such as water leaks, excessive heat, or accidental damage where feasible.
+
+Staff must know evacuation routes and basic emergency procedures as provided by the building or safety guidelines.
+
+9. After‑Hours Access
+After‑hours access should be limited to staff with a documented business need (e.g., on‑call engineers, operations staff).
+
+Staff working after hours should take extra care to lock doors behind them and avoid letting unknown persons tailgate into the office.
+
+Operations may review access logs (where available) to check after‑hours entries if security concerns arise.
+
+10. Tailgating and Challenges
+Employees must not allow unidentified persons to follow them into secure office areas (“tailgating”) without confirming their identity and purpose.
+
+It is acceptable to politely challenge unknown individuals in secure areas or alert Operations/management/building security if something seems suspicious.
+
+11. Lost or Stolen Assets
+Any lost or stolen physical asset (laptop, badge, key, phone, documents) must be reported immediately to Operations and IT/Security.
+
+IT may remotely wipe or lock devices and revoke related access.
+
+Operations will assess whether locks or codes need to be changed and whether the incident must be escalated as a security incident.
+
+12. Audits and Inspections
+Operations, in coordination with Security, may periodically review:
+
+Physical access lists and keys/badge holders.
+
+Visitor logs.
+
+Placement and security of network equipment and sensitive areas.
+
+Findings may lead to changes in building procedures, access controls, or physical layout.
+
+13. Violations and Enforcement
+Violations of this policy (e.g., improper visitor handling, propping open secure doors, leaving devices unattended with sensitive data visible) may result in disciplinary action, up to and including termination of employment or contract.
+
+Serious incidents or repeated violations may also be escalated to legal authorities or building management when appropriate.
+
+14. Exceptions
+Any exception to this policy must be documented with justification and approved by Operations and Security.
+
+Exceptions must be limited in duration and accompanied by compensating controls where possible.
+
+15. Review and Maintenance
+This Physical Security Policy will be reviewed at least annually, or whenever there are significant changes to Kahana offices, operations, or security requirements.
+
+Updates must be approved by the policy owner and senior management and communicated to all affected staff.

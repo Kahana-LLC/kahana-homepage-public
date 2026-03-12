@@ -1,0 +1,21 @@
+Title: Audit Logging Evidence
+
+Purpose
+To show that security‑relevant events are logged and retained.
+
+Process
+
+Application logs capture authentication events, key administrative actions, and data‑sensitive operations where feasible.
+
+Infrastructure logs capture OS logins, configuration changes, and network activity (e.g., security groups).
+
+Logs are stored centrally with restricted access and retained for at least <X> months.
+
+Evidence kept for Type II:
+
+Configuration screenshots of logging setup.
+
+Sample log entries for key events.
+
+Proof of retention (show logs from early and late in the period).
+

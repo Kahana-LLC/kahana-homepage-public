@@ -1,0 +1,23 @@
+Title: Penetration Testing Evidence
+
+Purpose
+To validate that external assessments of Kahana’s security posture are conducted and acted upon.
+
+Process
+
+Frequency: At least annually, and after major architectural changes.
+
+Scope: Internet‑facing application and APIs; optionally internal components.
+
+An independent third party performs testing based on an agreed scope and methodology.
+
+Findings are triaged, and remediation tasks are logged and tracked to closure.
+
+Evidence kept for Type II:
+
+Latest pen test report (sanitized if necessary).
+
+Remediation plan and tickets for High/Critical issues.
+
+Confirmation of retesting for fixed issues.
+

@@ -1,0 +1,83 @@
+1. Zones to Show
+Draw distinct boxes/zones with labels:
+
+Internet / Users
+
+End‑user browsers and devices.
+
+Edge / Public Zone
+
+DNS (e.g., Route 53/Cloud DNS).
+
+Public load balancer / API gateway / WAF.
+
+Application Zone (Private Subnets)
+
+Oasis application services (containers, app servers, serverless functions).
+
+Any internal APIs / background workers.
+
+Data Zone (Restricted)
+
+Primary database (managed DB service).
+
+Object storage buckets for customer content.
+
+Caches (Redis, etc.) if used.
+
+Management / Admin Zone
+
+Bastion/jump host (if any).
+
+CI/CD runners, monitoring/logging agents, config management.
+
+Corporate Network / Admin Users
+
+Admin laptops (with VPN/SSO) connecting to cloud console, CI/CD, etc.
+
+2. Network Segmentation and Traffic
+On the diagram, clearly show:
+
+VPC and Subnets
+
+One VPC for production.
+
+Public subnets (load balancer only).
+
+Private subnets (app and data tiers).
+
+Security Controls
+
+Internet → WAF/Load Balancer (HTTPS only, TLS termination).
+
+WAF/Load Balancer → App subnets (restricted ports only).
+
+App subnets → DB and storage (internal, limited ports).
+
+Management access (VPN or SSO + bastion) into admin/infra.
+
+Use arrows to show allowed traffic flows, and annotate key firewall/security group rules (e.g., “HTTPS 443 only”, “App → DB 5432 only”).
+
+3. Security Features to Label
+Add small callouts or labels for:
+
+TLS everywhere between clients, edge, and internal services.
+
+Security groups / firewall rules protecting each zone.
+
+MFA + SSO for admin access to cloud console, CI/CD, and production.
+
+Central logging (app, infra) feeding into log/monitoring platform.
+
+This lets auditors visually see how CC6 (logical access) and CC8 (operations) are implemented.
+
+4. Minimal Legend / Text Companion
+Create a one‑page “Network Architecture – Notes” with bullets:
+
+Production is hosted in <cloud provider> within a dedicated VPC, segmented into public, application, and data subnets.
+
+Only the load balancer/API gateway is internet‑facing; app and data tiers reside in private subnets, reachable only via controlled security groups.
+
+Admin and DevOps access production via SSO/MFA and VPN (or bastion), not directly over the public internet.
+
+All traffic between components uses TLS where supported; customer data stores (DB, object storage) are in private networks and encrypted at rest.

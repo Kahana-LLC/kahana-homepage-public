@@ -1,0 +1,72 @@
+1. Sheet structure (one tab)
+Create one Google Sheet tab named: Asset Inventory – Kahana Oasis.
+​
+
+Use one row per asset (hardware, software, cloud, data store, vendor, etc.).
+
+2. Recommended columns
+Copy‑paste these as your header row:
+
+Asset ID
+
+Category (Hardware / Software / Cloud / Data Store / Network / Vendor / Credential)
+
+Asset Name
+
+Description
+
+Owner (Role or Person)
+
+Business Function (Product, Engineering, Finance, HR, Support, etc.)
+
+Environment (Prod / Staging / Dev / Corp / Other)
+
+Location (Office / Remote / Cloud region)
+
+Data Processed (None / Internal / Customer / Personal / Sensitive)
+
+Data Classification (Public / Internal / Confidential / Regulated)
+
+Criticality (Critical / High / Medium / Low)
+
+Internet‑Exposed? (Yes/No)
+
+Vendor / Provider (if applicable)
+
+Licence / Contract Type (Per‑user, Subscription, Open source, etc.)
+
+Licence / Contract Expiry Date
+
+Configuration / Key Details (OS / Version / SKU / instance type, etc.)
+
+Encryption at Rest? (Yes/No/Not applicable)
+
+Encryption in Transit? (Yes/No/Not applicable)
+
+Authentication Method (SSO, Local, API key, Service account)
+
+Date Added
+
+Lifecycle Status (In use / In build / Retired)
+
+These fields align with SOC 2 guidance that inventories must cover hardware, software, cloud resources, data stores, and vendors with owners, classification, lifecycle and configuration details.
+
+3. Example starter entries
+You can seed the sheet with a few example rows like this:
+​
+
+Asset ID	Category	Asset Name	Owner	Data Processed	Classification	Environment	Lifecycle Status
+HW-001	Hardware	Developer Laptop	Eng Manager	Internal	Internal	Corp	In use
+CL-001	Cloud	Prod VPC	DevOps Lead	Customer	Confidential	Prod	In use
+CL-002	Cloud	Prod RDS Database	DevOps Lead	Customer	Confidential	Prod	In use
+SW-003	Software	GitHub Organization	Eng Manager	Code	Confidential	Corp	In use
+VN-001	Vendor	Stripe Payment Gateway	Finance Lead	Customer	Confidential	Prod	In use
+Auditors mainly care that: every system in your diagrams appears here, each has an owner, classification, and lifecycle, and the list is kept current
+
+| Asset ID | Category | Asset Name             | Owner        | Data Processed | Classification | Environment | Lifecycle Status |
+| -------- | -------- | ---------------------- | ------------ | -------------- | -------------- | ----------- | ---------------- |
+| HW-001   | Hardware | Developer Laptop       | Eng Manager  | Internal       | Internal       | Corp        | In use           |
+| CL-001   | Cloud    | Prod VPC               | DevOps Lead  | Customer       | Confidential   | Prod        | In use           |
+| CL-002   | Cloud    | Prod RDS Database      | DevOps Lead  | Customer       | Confidential   | Prod        | In use           |
+| SW-003   | Software | GitHub Organization    | Eng Manager  | Code           | Confidential   | Corp        | In use           |
+| VN-001   | Vendor   | Stripe Payment Gateway | Finance Lead | Customer       | Confidential   | Prod        | In use           |

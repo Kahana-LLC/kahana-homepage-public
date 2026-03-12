@@ -1,0 +1,99 @@
+Owner: Compliance Lead
+Approved By: CISO / CTO
+
+1. Purpose
+This document describes how Kahana obtains and reviews SOC reports and similar assurance documents from key subservice organizations (for example, AWS and other cloud/SaaS infrastructure providers). It supports SOC 2 requirements to monitor subservice organizations and manage risks associated with them (e.g., CC9.2).
+
+2. Scope
+This procedure applies to all subservice organizations that:
+
+Provide core infrastructure or platform services for Kahana Oasis (e.g., AWS, auth/SSO, payment processor, logging/monitoring).
+
+Perform controls that are necessary, in combination with Kahana’s controls, to meet Kahana’s service commitments and system requirements.
+
+It does not cover purely low‑risk tools; those are handled through normal vendor management.
+
+3. Subservice Organizations in Scope
+Kahana identifies the following as subservice organizations for SOC 2:
+
+AWS (us‑east‑1): hosting compute, Lambda, storage, networking, Terraform/IaC, CI/CD.
+
+Supabase: PostgreSQL database, Auth (Google, Microsoft, Apple sign‑in), Storage, backend APIs.
+
+Okta: enterprise browser plugin for SSO.
+
+Stripe: subscription billing and payment processing.
+
+Mixpanel: analytics.
+
+Google Analytics, Looker: analytics and reporting.
+
+AI: Google Gemini, Deepgram (DPA considerations per SOC 2 checklist).
+
+These are listed in the vendor inventory and in the SOC 2 system description as subservice organizations using the carve‑out method.
+
+4. Obtaining SOC Reports and Assurance Documents
+For each in‑scope subservice organization, the Compliance Lead or Vendor Owner will:
+
+Obtain the latest available SOC 2 (and/or SOC 1) report or equivalent security/compliance report (e.g., ISO 27001 certificate) at least annually, usually via the provider’s compliance portal (e.g., AWS Artifact for AWS).
+
+Record in the vendor inventory:
+
+Report type (SOC 1/SOC 2, Type I/II).
+
+Coverage period.
+
+Date obtained.
+
+If a formal SOC report is not available, Kahana will obtain other assurance (e.g., security whitepaper, third‑party assessment) and note the limitation.
+
+5. Review of SOC Reports
+For each obtained SOC report, the Compliance Lead (and Security Lead if needed) will:
+
+Confirm that the service description and scope match how Kahana uses the service.
+
+Review the control objectives and testing results relevant to Kahana’s use (e.g., physical security, infrastructure security, logical access, change management, backup/DR).
+
+Identify any exceptions or control failures in the report that could affect Kahana.
+
+Identify the provider’s complementary subservice organization controls (CSOCs) and complementary user entity controls (CUECs) and ensure Kahana’s responsibilities are understood.
+
+A brief summary (1–2 paragraphs) and any concerns or follow‑up actions are recorded in the vendor inventory or a simple “Subservice Report Review” note.
+
+6. Handling Issues and Deficiencies
+If the SOC report reveals significant issues that may impact Kahana:
+
+The Compliance Lead and Security Lead assess the risk and decide on actions, which may include:
+
+Implementing additional compensating controls at Kahana.
+
+Requesting clarification or remediation from the provider.
+
+Considering alternative providers for the future.
+
+Material issues, and Kahana’s response, are documented and may be referenced in the SOC 2 system description if relevant.
+
+7. Frequency
+SOC reports and similar assurance documents for key subservice organizations are obtained and reviewed at least annually, or when there is a major change in services or a significant incident involving the provider.
+
+8. Evidence for SOC 2
+Kahana maintains:
+
+Copies of subservice SOC reports (or download confirmations) in a secure internal repository.
+
+A simple log or checklist showing:
+
+Vendor name.
+
+Report type and period.
+
+Date reviewed.
+
+Reviewer name.
+
+Summary of findings and actions (if any).
+
+Auditors can sample from this evidence to verify that Kahana monitors subservice organizations as required.
+
+9. Review and Maintenance
+This procedure is reviewed at least annually alongside the Vendor Management Policy and updated as Kahana’s subservice organizations or SOC 2 scope change.

@@ -1,0 +1,870 @@
+Document Title: Information Security Risk Register – Kahana Oasis
+
+Version: 1.0
+Owner: Security Lead
+Last Updated: March 2026
+
+1. How to Use This Register
+Each row = one risk.
+
+Update Status and Residual Risk as you implement controls.
+
+Auditors mainly care that:
+
+You’ve identified key risks.
+
+You have owners and actions.
+
+You actually update progress.
+
+2. Risk Register – Template Fields
+Use this as your column set in Google Sheets/Notion:
+
+Risk ID
+
+Risk Title
+
+Detailed Description
+
+Assets / Processes Affected
+
+Likelihood (Low/Med/High)
+
+Impact (Low/Med/High)
+
+Inherent Risk Rating (L/M/H)
+
+Existing Controls
+
+Planned Mitigation Actions
+
+Treatment Decision (Mitigate/Accept/Transfer/Avoid)
+
+Risk Owner
+
+Target Completion Date
+
+Status (Open / In Progress / Mitigated / Accepted)
+
+Residual Risk Rating (L/M/H)
+
+Notes / Links (tickets, docs, policies)
+
+3. Example Entries for Kahana (You Can Edit)
+You can keep these as initial rows and tune them with Adam.
+
+R‑01 – Compromise of Production Engineer Account
+Risk ID: R‑01
+
+Risk Title: Compromised engineer account leading to production access
+
+Description: An attacker compromises an engineer’s credentials or device and uses it to access Kahana Oasis production systems or admin tools.
+
+Assets / Processes: Cloud infrastructure, CI/CD, Oasis admin, customer data.
+
+Likelihood: Medium
+
+Impact: High
+
+Inherent Risk: High
+
+Existing Controls: SSO + MFA for core tools, limited production roles, workstation security, logging of admin access.
+
+Planned Mitigation Actions: Enforce MFA on all remaining tools; tighten least‑privilege roles; quarterly access reviews for privileged accounts.
+
+Treatment Decision: Mitigate
+
+Risk Owner: Security Lead / DevOps Lead
+
+Target Date: <insert>
+
+Status: Open / In Progress
+
+Residual Risk: Medium (expected)
+
+Notes: Link to Access Control Policy, Remote Access Policy.
+
+R‑02 – Data Corruption or Loss in Production Database
+Risk ID: R‑02
+
+Risk Title: Data loss/corruption in primary database
+
+Description: Accidental or malicious changes lead to loss or corruption of customer data.
+
+Assets / Processes: Production DB, backups, DR.
+
+Likelihood: Low
+
+Impact: High
+
+Inherent Risk: Medium
+
+Existing Controls: Managed DB with automatic backups and PITR; Backup & Restoration Policy; DR Plan.
+
+Planned Mitigation Actions: Quarterly restore tests; additional monitoring on backup failures; improve DB change procedures.
+
+Treatment Decision: Mitigate
+
+Risk Owner: DevOps Lead
+
+Target Date: <insert>
+
+Status: Open / In Progress
+
+Residual Risk: Low–Medium
+
+Notes: Link to DR Plan and Backup Policy.
+
+R‑03 – Misconfigured Cloud Storage Exposing Data
+Risk ID: R‑03
+
+Risk Title: Misconfigured storage (buckets/volumes) exposing data
+
+Description: Cloud storage is accidentally configured as publicly accessible or overly permissive, exposing customer or internal data.
+
+Assets / Processes: Object storage, logs, infrastructure as code.
+
+Likelihood: Medium
+
+Impact: High
+
+Inherent Risk: High
+
+Existing Controls: Default private storage, IaC use, code review on infra changes, access limited to DevOps.
+
+Planned Mitigation Actions: Enable automated configuration checks (CSPM or scripts); periodic audits of storage permissions; tighten IaC guardrails.
+
+Treatment Decision: Mitigate
+
+Risk Owner: DevOps Lead
+
+Target Date: <insert>
+
+Status: Open / In Progress
+
+Residual Risk: Medium
+
+R‑04 – Critical Vulnerabilities in Dependencies
+Risk ID: R‑04
+
+Risk Title: Unpatched critical vulnerabilities in libraries/containers
+
+Description: Publicly known critical vulns in app dependencies or base images remain unpatched and exploitable.
+
+Assets / Processes: Application services, CI/CD, dependency management.
+
+Likelihood: Medium
+
+Impact: Medium–High
+
+Inherent Risk: Medium–High
+
+Existing Controls: Dependency scanning; patching during sprints; Vulnerability Management Policy with SLAs.
+
+Planned Mitigation Actions: Enforce SLA dashboards for Critical/High; add automated PRs for upgrades; monthly review of open vulns.
+
+Treatment Decision: Mitigate
+
+Risk Owner: Engineering Lead
+
+Target Date: <insert>
+
+Status: Open / In Progress
+
+Residual Risk: Medium
+
+R‑05 – Single Cloud Region / Major Outage
+Risk ID: R‑05
+
+Risk Title: Regional cloud outage affecting Oasis availability
+
+Description: Outage or major incident in primary cloud region makes Kahana Oasis unavailable.
+
+Assets / Processes: Cloud region, DR, BCP.
+
+Likelihood: Low
+
+Impact: High
+
+Inherent Risk: Medium
+
+Existing Controls: Multi‑AZ where possible; backups; DR Plan; BCP with defined RTO/RPO.
+
+Planned Mitigation Actions: Evaluate multi‑region strategy; document manual restore playbook to new region; run DR test at least annually.
+
+Treatment Decision: Mitigate / Partially Accept (short term)
+
+Risk Owner: CTO / DevOps Lead
+
+Target Date: <insert>
+
+Status: Open
+
+Residual Risk: Medium
+
+You can add risks for:
+
+Vendor breach (e.g., auth provider, AI provider).
+
+Insufficient logging/monitoring.
+
+Weak security awareness / phishing.
+
+Gaps in vendor risk management.
+
+Incomplete offboarding or access reviews.
+
+If you’d like, I can now turn the field list into a single header row you can paste directly into Google Sheets.
+
+Risk Treatment Plan do this necxt
+Here is a straightforward Risk Treatment Plan template you can pair with your Risk Register.
+
+Document Title: Risk Treatment Plan – Kahana Oasis
+
+Version: 1.0
+Effective Date: <set date>
+Owner: Security Lead
+Approved By: CTO / CEO
+
+1. Purpose
+This Risk Treatment Plan defines how Kahana will address the information security risks identified in the Risk Register. It maps each risk to specific mitigation or acceptance decisions, actions, owners, and timelines so progress can be tracked and demonstrated for SOC 2.
+
+2. Scope
+This plan applies to:
+
+All risks recorded in the Information Security Risk Register that affect Kahana Oasis and supporting systems.
+
+All teams responsible for implementing security, infrastructure, and process controls.
+
+3. Treatment Options
+For each risk, Kahana chooses one or more of the following:
+
+Mitigate: Implement controls to reduce likelihood and/or impact.
+
+Accept: Consciously accept the risk at its current level (usually only for Low/Medium risks), with documented justification.
+
+Transfer: Shift the impact through insurance or contractual arrangements (e.g., relying on vendor commitments).
+
+Avoid: Change plans to remove the risky activity (e.g., not implementing a feature or decommissioning a system).
+
+4. Treatment Plan Template (Fields)
+Use these fields (columns) in a table or spreadsheet:
+
+Risk ID (linked to Risk Register)
+
+Risk Title
+
+Current Risk Rating (from register)
+
+Treatment Decision (Mitigate / Accept / Transfer / Avoid)
+
+Planned Mitigation Actions (bullets or short description)
+
+Control(s) Involved (policy, process, or technical control)
+
+Owner (role/name)
+
+Target Completion Date
+
+Status (Not Started / In Progress / Completed / Accepted)
+
+Residual Risk Rating (expected/actual)
+
+Notes / References (tickets, docs, evidence)
+
+5. Example Treatment Entries for Kahana
+You can paste these as initial rows and refine.
+
+R‑01 – Compromised Engineer Account
+Risk ID: R‑01
+
+Risk Title: Compromised engineer account leading to production access
+
+Current Risk Rating: High
+
+Treatment Decision: Mitigate
+
+Planned Mitigation Actions:
+
+Enforce MFA on all admin and engineering tools (including any remaining exceptions).
+
+Tighten IAM roles and groups to ensure least privilege for production access.
+
+Implement quarterly access reviews for privileged accounts.
+
+Controls Involved: Access Control Policy, Remote Access Policy, Logging & Monitoring Policy.
+
+Owner: Security Lead / DevOps Lead
+
+Target Completion Date: <insert>
+
+Status: In Progress
+
+Residual Risk Rating (Target): Medium
+
+Notes: Track implementation via tickets <IDs>.
+
+R‑02 – Data Loss/Corruption in Primary Database
+Risk ID: R‑02
+
+Risk Title: Data loss or corruption in primary database
+
+Current Risk Rating: Medium
+
+Treatment Decision: Mitigate
+
+Planned Mitigation Actions:
+
+Schedule quarterly database restore tests to a non‑production environment.
+
+Add monitoring alerts for backup/replication failures.
+
+Update DR runbook with clear restore steps and verification procedures.
+
+Controls Involved: Backup & Restoration Policy, Disaster Recovery Plan, Logging & Monitoring Policy.
+
+Owner: DevOps Lead
+
+Target Completion Date: <insert>
+
+Status: Not Started / In Progress
+
+Residual Risk Rating (Target): Low–Medium
+
+R‑03 – Misconfigured Cloud Storage Exposing Data
+Risk ID: R‑03
+
+Risk Title: Misconfigured cloud storage (buckets/volumes) exposing data
+
+Current Risk Rating: High
+
+Treatment Decision: Mitigate
+
+Planned Mitigation Actions:
+
+Implement automated checks or a CSPM/script to detect public or overly permissive storage.
+
+Add IaC guardrails to prevent creation of public buckets by default.
+
+Perform an initial one‑time review of all storage permissions in production.
+
+Controls Involved: Encryption Policy, Infrastructure/Change Management, Logging & Monitoring.
+
+Owner: DevOps Lead
+
+Target Completion Date: <insert>
+
+Status: In Progress
+
+Residual Risk Rating (Target): Medium
+
+R‑04 – Unpatched Critical Vulnerabilities in Dependencies
+Risk ID: R‑04
+
+Risk Title: Critical vulnerabilities in app libraries/containers
+
+Current Risk Rating: Medium–High
+
+Treatment Decision: Mitigate
+
+Planned Mitigation Actions:
+
+Integrate dependency/container scanning into CI/CD with clear severity thresholds.
+
+Enforce remediation SLAs: 7 days (Critical), 30 days (High).
+
+Monthly review of open findings with Engineering leadership.
+
+Controls Involved: Vulnerability Management Policy, SDLC Policy.
+
+Owner: Engineering Lead
+
+Target Completion Date: <insert>
+
+Status: In Progress
+
+Residual Risk Rating (Target): Medium
+
+R‑05 – Single Cloud Region / Major Outage
+Risk ID: R‑05
+
+Risk Title: Single region outage affecting Oasis availability
+
+Current Risk Rating: Medium
+
+Treatment Decision: Mitigate / Partially Accept
+
+Planned Mitigation Actions:
+
+Document and test a restore‑to‑new‑region playbook based on current backups.
+
+Evaluate feasibility and cost of multi‑region architecture for core services and DB.
+
+Run at least one DR/BCP exercise annually simulating a regional outage.
+
+Controls Involved: Business Continuity Plan, Disaster Recovery Plan.
+
+Owner: CTO / DevOps Lead
+
+Target Completion Date: <insert (e.g., end of year)>
+
+Status: Not Started / In Progress
+
+Residual Risk Rating (Target): Medium (accepted until multi‑region is implemented)
+
+6. Governance and Review
+The Security Lead updates the Risk Treatment Plan regularly (e.g., quarterly), in sync with the Risk Register.
+
+Progress is reviewed in security/risk review meetings with leadership.
+
+When actions are completed, the corresponding Status and Residual Risk Rating are updated.
+
+Any accepted risks are explicitly documented and revisited at least annually.
+
+If you want, I can now give you a one‑line header row for Google Sheets with all the fields, ready to paste.
+
+Controls Matrix (CC1-CC9 Mapping). do this next
+Here’s a simple Controls Matrix (CC1–CC9 mapping) structure you can use in a spreadsheet/Notion. I’ll show:
+
+Columns you should use
+
+A small set of concrete example rows using the policies you’ve already drafted
+
+You’ll expand this over time, but this is enough to be SOC‑ready for Week 1.
+
+1. Controls Matrix – Recommended Columns
+Use one row per control.
+
+Control ID
+
+Control Name
+
+Trust Services Criteria (TSC)
+
+SOC 2 Criterion (e.g., CC1.1, CC2.1 … CC9.2)
+
+Control Description
+
+Control Type (Policy / Process / Technical / HR)
+
+Owner (Role)
+
+Frequency (Ongoing, Per‑event, Daily, Quarterly, Annually, etc.)
+
+Evidence Examples
+
+Status (Designed / Implemented / In‑testing / Operating)
+
+2. Example Rows (seed set for Kahana)
+You can paste this into a table and expand.
+
+CC1 – Control Environment
+Row 1
+
+Control ID: CE‑01
+
+Control Name: Corporate Governance & Security Governance Manual
+
+TSC: Security
+
+SOC 2 Criterion: CC1.1, CC1.2
+
+Control Description: Documents governance structure, leadership roles, oversight of security and SOC 2, and policy ownership.
+
+Control Type: Policy / Governance
+
+Owner: CEO / Security Lead
+
+Frequency: Annual review
+
+Evidence: Signed governance manual, meeting notes, policy review records
+
+Status: Implemented
+
+Row 2
+
+Control ID: CE‑02
+
+Control Name: Code of Conduct & Employee Handbook
+
+TSC: Security
+
+SOC 2 Criterion: CC1.1, CC1.3
+
+Control Description: Defines ethical behavior, security expectations, reporting mechanisms, and disciplinary consequences.
+
+Control Type: Policy / HR
+
+Owner: HR / Legal
+
+Frequency: Onboarding + annual review
+
+Evidence: Handbook, signed acknowledgments, training records
+
+Status: Implemented
+
+CC2 – Communication & Information
+Row 3
+
+Control ID: CI‑01
+
+Control Name: Security Awareness Training Program
+
+TSC: Security
+
+SOC 2 Criterion: CC2.2, CC2.3
+
+Control Description: Onboarding and annual security training, plus phishing simulations, to communicate security responsibilities.
+
+Control Type: HR / Process
+
+Owner: HR / Security Lead
+
+Frequency: Onboarding; annually; periodic simulations
+
+Evidence: Training materials, completion reports, phishing stats
+
+Status: Implemented
+
+Row 4
+
+Control ID: CI‑02
+
+Control Name: System Description & Management Assertion
+
+TSC: Security
+
+SOC 2 Criterion: CC2.1
+
+Control Description: Documented description of the Kahana Oasis system and management’s assertion about design and operation of controls.
+
+Control Type: Documentation
+
+Owner: Security Lead / CTO
+
+Frequency: Annual update (per SOC 2 report cycle)
+
+Evidence: System Description doc, signed assertion letter
+
+Status: Designed
+
+CC3 – Risk Assessment
+Row 5
+
+Control ID: RA‑01
+
+Control Name: Annual Risk Assessment & Report
+
+TSC: Security
+
+SOC 2 Criterion: CC3.2, CC3.3
+
+Control Description: Formal annual assessment of risks to Kahana Oasis, with documented ratings and decisions.
+
+Control Type: Process
+
+Owner: Security Lead
+
+Frequency: Annual
+
+Evidence: Risk Assessment Report, meeting notes, approvals
+
+Status: Implemented
+
+Row 6
+
+Control ID: RA‑02
+
+Control Name: Risk Register & Risk Treatment Plan
+
+TSC: Security
+
+SOC 2 Criterion: CC3.3, CC3.4
+
+Control Description: Live register of risks with treatment decisions, owners, actions, and due dates.
+
+Control Type: Process
+
+Owner: Security Lead
+
+Frequency: Ongoing; quarterly review
+
+Evidence: Risk Register, Treatment Plan, review meeting notes
+
+Status: Implemented
+
+CC4 – Monitoring Activities
+Row 7
+
+Control ID: MON‑01
+
+Control Name: Logging & Monitoring Policy
+
+TSC: Security
+
+SOC 2 Criterion: CC4.1, CC4.2
+
+Control Description: Centralized logging, defined events to log, alerting for high‑risk activities, and periodic review.
+
+Control Type: Policy / Technical
+
+Owner: Security Lead / DevOps Lead
+
+Frequency: Ongoing; periodic review
+
+Evidence: Logging configs, SIEM dashboards, alert examples, review records
+
+Status: Implemented
+
+Row 8
+
+Control ID: MON‑02
+
+Control Name: Subservice Organization SOC Report Reviews
+
+TSC: Security
+
+SOC 2 Criterion: CC4.1, CC9.2
+
+Control Description: Annual obtain/review of SOC reports for AWS and other subservice orgs, documenting issues and follow‑up.
+
+Control Type: Process / Vendor
+
+Owner: Compliance Lead / Security Lead
+
+Frequency: Annual
+
+Evidence: SOC reports, review notes, vendor inventory log
+
+Status: Implemented
+
+CC5 – Control Activities
+Row 9
+
+Control ID: CA‑01
+
+Control Name: Access Control & Remote Access Policies
+
+TSC: Security
+
+SOC 2 Criterion: CC5.2, CC6.1
+
+Control Description: Role‑based access, least privilege, MFA, VPN/secure remote access for production and internal systems.
+
+Control Type: Policy / Technical
+
+Owner: Security Lead / DevOps Lead
+
+Frequency: Ongoing; quarterly access reviews
+
+Evidence: Policies, IAM configs, access review records, VPN settings
+
+Status: Implemented
+
+Row 10
+
+Control ID: CA‑02
+
+Control Name: Employee Onboarding & Offboarding Checklists
+
+TSC: Security
+
+SOC 2 Criterion: CC5.2, CC6.1
+
+Control Description: Formal procedures to grant and revoke access, recover assets, and transfer ownership of accounts.
+
+Control Type: HR / Process
+
+Owner: HR / IT
+
+Frequency: Per event
+
+Evidence: Completed checklists, tickets, directory screenshots
+
+Status: Implemented
+
+CC6 – Logical and Physical Access
+Row 11
+
+Control ID: LA‑01
+
+Control Name: Workstation Security & Encryption
+
+TSC: Security
+
+SOC 2 Criterion: CC6.1, CC6.2
+
+Control Description: Full‑disk encryption, screen lock, endpoint protection, and patching for endpoints used to access Kahana systems.
+
+Control Type: Policy / Technical
+
+Owner: IT / Security Lead
+
+Frequency: Ongoing; periodic compliance checks
+
+Evidence: MDM/EDR reports, OS settings screenshots, inventory
+
+Status: Implemented
+
+Row 12
+
+Control ID: LA‑02
+
+Control Name: Physical Security Policy (Office)
+
+TSC: Security
+
+SOC 2 Criterion: CC6.3
+
+Control Description: Controlled office access, visitor logs, equipment security, and lost/stolen asset response.
+
+Control Type: Policy / Operational
+
+Owner: Operations
+
+Frequency: Ongoing; periodic review
+
+Evidence: Access records, visitor logs, lock/keys records
+
+Status: Implemented
+
+CC7 – Change Management
+Row 13
+
+Control ID: CHG‑01
+
+Control Name: Change Management Policy & SDLC
+
+TSC: Security
+
+SOC 2 Criterion: CC7.2, CC7.3
+
+Control Description: All production changes tracked, reviewed, tested, and approved; emergency changes documented and reviewed post‑hoc.
+
+Control Type: Policy / Process
+
+Owner: Engineering Lead / DevOps Lead
+
+Frequency: Per change; annual policy review
+
+Evidence: Tickets, PRs, approvals, CI/CD logs
+
+Status: Implemented
+
+Row 14
+
+Control ID: CHG‑02
+
+Control Name: Code Review Procedures
+
+TSC: Security
+
+SOC 2 Criterion: CC7.2
+
+Control Description: Peer review of code and infra changes, no self‑approval for production, checks for security and quality.
+
+Control Type: Process
+
+Owner: Engineering Lead
+
+Frequency: Per PR
+
+Evidence: PR history, review records, branch protection rules
+
+Status: Implemented
+
+CC8 – System Operations
+Row 15
+
+Control ID: OPS‑01
+
+Control Name: Incident Response Plan
+
+TSC: Security
+
+SOC 2 Criterion: CC8.1, CC8.2
+
+Control Description: Defined incident lifecycle, roles, communication, evidence handling, and post‑incident reviews.
+
+Control Type: Policy / Process
+
+Owner: Security Lead
+
+Frequency: Ongoing; annual review; after major incidents
+
+Evidence: IR plan, incident tickets, postmortems
+
+Status: Implemented
+
+Row 16
+
+Control ID: OPS‑02
+
+Control Name: Business Continuity & Disaster Recovery (BCP/DRP)
+
+TSC: Security (and Availability if in scope)
+
+SOC 2 Criterion: CC8.1, CC8.3
+
+Control Description: Documented RTO/RPO, DR/BCP procedures, and periodic testing for Kahana Oasis.
+
+Control Type: Policy / Process
+
+Owner: DevOps Lead / Operations
+
+Frequency: Annual tests; plan review annually
+
+Evidence: BCP/DR docs, test reports, restore logs
+
+Status: Implemented
+
+CC9 – Risk Mitigation / Vendors
+Row 17
+
+Control ID: RM‑01
+
+Control Name: Vendor Management & Vendor Risk Assessments
+
+TSC: Security
+
+SOC 2 Criterion: CC9.2
+
+Control Description: Vendor Management Policy, risk assessment template, and periodic review of vendors processing Kahana data.
+
+Control Type: Policy / Process
+
+Owner: Security Lead / COO
+
+Frequency: Onboarding; annual review
+
+Evidence: Vendor inventory, completed assessments, contracts/DPAs
+
+Status: Implemented
+
+Row 18
+
+Control ID: RM‑02
+
+Control Name: Vulnerability Management Program
+
+TSC: Security
+
+SOC 2 Criterion: CC9.2
+
+Control Description: Scans, severity classification, and remediation SLAs for vulnerabilities in infrastructure and applications.
+
+Control Type: Process / Technical
+
+Owner: Security Lead / Engineering Lead
+
+Frequency: Ongoing; scans monthly/continuous; SLA tracking
+
+Evidence: Scan reports, remediation tickets, SLA metrics
+
+Status: Implemented
+
+
+
+header row in Google Sheets, then each control is one row under it:
+
+Control ID,Control Name,Trust Services Criteria,SOC 2 Criterion,Control Description,Control Type,Owner,Frequency,Evidence Examples,Status

@@ -1,0 +1,194 @@
+Owner: Security Team
+Approved By: CEO / CISO
+
+1. Purpose
+This policy defines how Kahana classifies data and what protection requirements apply to each classification. The goal is to ensure that data used by Kahana Oasis is handled, stored, and shared in a way that matches its sensitivity and risk.
+
+2. Scope
+This policy applies to:
+
+All data created, received, processed, or stored by Kahana in connection with Kahana Oasis and internal operations.
+
+All formats (databases, files, documents, messages, logs, backups, paper, etc.).
+
+All Kahana employees, contractors, and vendors with access to Kahana data.
+
+3. Classification Levels
+Kahana uses four main data classification levels:
+
+Public
+
+Internal
+
+Confidential
+
+Restricted
+
+Each level builds on the previous one; higher levels require stronger protection.
+
+4. Public
+Definition
+Information that is intended for public disclosure and whose unauthorized use or disclosure would not cause harm to Kahana, its customers, or partners.
+
+Examples
+
+Public website content (marketing pages, blog posts, documentation intended for the public).
+
+Publicly shared product announcements, press releases.
+
+Public job listings.
+
+Handling Requirements
+
+May be freely shared outside Kahana.
+
+Must still be accurate and approved through appropriate channels before publication.
+
+No special technical protection required beyond normal website and infrastructure security.
+
+5. Internal
+Definition
+Information intended for use inside Kahana that is not meant for public distribution, but whose unauthorized disclosure would have limited impact.
+
+Examples
+
+Internal process documents, runbooks, non‑sensitive project docs.
+
+Internal meeting notes that do not contain customer secrets or personal data.
+
+Internal metrics or dashboards that do not reveal sensitive customer information.
+
+Handling Requirements
+
+Can be shared with Kahana employees and authorized contractors who need it for their work.
+
+Should not be posted on public websites or shared outside the company without approval.
+
+Stored in approved internal tools (e.g., company drive, internal wiki, project management tools).
+
+Basic access controls must be applied (e.g., login required, not publicly readable).
+
+6. Confidential
+Definition
+Information that, if disclosed or altered without authorization, could cause harm to Kahana or its customers (e.g., reputational, financial, or operational impact).
+
+Examples
+
+Most customer business information that is not publicly available.
+
+Product roadmaps, internal financials, non‑public metrics.
+
+Internal security documentation (e.g., network diagrams, some policy details).
+
+Support tickets containing customer context (but not highly sensitive personal data).
+
+Handling Requirements
+
+Access limited to staff and contractors with a legitimate business need (“need‑to‑know”).
+
+Must be stored in approved systems with authentication and access control.
+
+Transmission over networks must use secure channels (e.g., HTTPS/TLS, VPN).
+
+Should not be stored on personal devices or personal cloud unless explicitly approved and adequately protected.
+
+When shared externally (e.g., with partners), must be under appropriate agreements (NDA, contract).
+
+7. Restricted
+Definition
+The most sensitive information Kahana processes. Unauthorized access, disclosure, or modification could cause significant harm to customers, individuals, or Kahana (e.g., legal, regulatory, or serious reputational damage).
+
+Examples
+
+For Kahana Oasis, Restricted typically includes:
+
+Customer workspace content and files that may contain proprietary or sensitive information.
+
+Authentication data and security tokens (password hashes, access tokens, API keys).
+
+Any personal data classified as highly sensitive under law or customer contract (if applicable).
+
+Secrets and keys used to access production systems.
+
+Certain detailed security configurations and vulnerability data.
+
+Handling Requirements
+
+Access strictly limited to a small number of authorized personnel with a clear need‑to‑know.
+
+Must be stored only in approved, highly secured systems (e.g., encrypted databases, encrypted storage, secrets managers).
+
+Must always be encrypted in transit and at rest, according to the Encryption Policy.
+
+Must never be stored in plaintext in source code repositories, tickets, chat, or unapproved tools.
+
+Should not be copied to local devices unless absolutely necessary and protected by encryption and endpoint controls.
+
+When no longer needed, must be securely deleted or anonymized according to the Data Retention and Destruction Policy.
+
+8. Labeling and Identification
+Where practical:
+
+Systems and documents should indicate the classification (e.g., in document headers, labels, tags).
+
+Application and database fields that may contain Restricted data should be identified in design docs and data dictionaries.
+
+Internal tools may use folder/space permissions that reflect classification (e.g., “Internal Only,” “Confidential,” “Restricted”).
+
+When explicit labels are not present, users should default to Confidential for customer‑related or non‑public company data and seek clarification if unsure.
+
+9. Responsibilities
+Data Owners (e.g., Product, Support, HR, Finance, Engineering):
+
+Decide the appropriate classification for their data sets.
+
+Ensure that storage and access controls match the classification.
+
+All Employees and Contractors:
+
+Understand and follow this policy when creating, storing, or sharing data.
+
+When in doubt, treat data as more sensitive (Confidential or Restricted) and ask the data owner or Security.
+
+Security Team:
+
+Provide guidance on classification and required controls.
+
+Periodically review samples of data handling to verify classification and protections are appropriate.
+
+10. Data Handling by Classification (Summary)
+You can turn this into a quick reference table in your doc:
+
+Public
+
+Sharing: Unrestricted.
+
+Storage: Standard controls.
+
+Internal
+
+Sharing: Inside Kahana only, except with approval.
+
+Storage: Authenticated internal tools.
+
+Confidential
+
+Sharing: Need‑to‑know within Kahana; limited external sharing under NDA/contract.
+
+Storage: Approved systems with access control; secure transmission.
+
+Restricted
+
+Sharing: Strict need‑to‑know, minimal audience.
+
+Storage: Strong access control, encryption at rest and in transit, secrets managers for credentials.
+
+11. Violations and Enforcement
+Mishandling data (e.g., posting Restricted data in public channels, copying to unauthorized tools, or sharing beyond allowed scope) is a violation of this policy.
+
+Violations may result in disciplinary action and may also trigger security incident handling and external notifications if required by law or contract.
+
+12. Review and Maintenance
+This Data Classification Policy will be reviewed at least annually, or when there are major changes to Kahana’s services, data flows, or regulatory environment.
+
+Updates must be approved by the Security Owner and Legal, and communicated to relevant teams.

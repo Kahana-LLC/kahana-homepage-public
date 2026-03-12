@@ -1,0 +1,20 @@
+Title: Joiner/Mover/Leaver Evidence
+
+Purpose
+To confirm that access is provisioned and revoked in a controlled, timely manner.
+
+Process
+
+HR notifies IT/Security of new hires, role changes, and terminations via <HRIS/ticketing>.
+
+Standard access profiles are applied based on role, with least privilege.
+
+Offboarding tasks (account disabling, device return, access revocation) are executed on or before termination date.
+
+Evidence kept for Type II:
+
+Sample tickets for hires/leavers during the period.
+
+HR export of personnel changes.
+
+Cross‑check showing accounts disabled in IdP and key systems.

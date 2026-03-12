@@ -1,0 +1,331 @@
+Title: Security Awareness Training Evidence
+
+Purpose
+To demonstrate that all personnel complete regular security awareness training and understand their responsibilities.
+
+Process
+
+All employees and long‑term contractors must complete baseline security training within 30 days of hire and annually thereafter.
+
+Content covers phishing, password/SSO usage, data classification, incident reporting, and acceptable use.
+
+A central system (LMS, HRIS, or spreadsheet) tracks: name, role, hire date, last training date, and quiz score if applicable.
+
+Evidence kept for Type II:
+
+Training completion reports (CSV/PDF export) for the audit period.
+
+Sample quiz results or certificates.
+
+A list of overdue users and remediation actions, if any.
+
+10.3 Vulnerability Scan Reports
+Title: Vulnerability Management Evidence
+
+Purpose
+To show regular vulnerability scanning of in‑scope assets and tracking of remediation.
+
+Process
+
+Scope: Production infrastructure (hosts, containers), Internet‑facing endpoints, and key corporate assets (VPN, IdP, etc.).
+
+Frequency: At least monthly for external scans; at least quarterly for internal/application scans.
+
+Steps:
+
+Run scheduled scans using <tool>.
+
+Triage findings; assign severity (Critical/High/Medium/Low).
+
+Create tickets for remediation of Critical/High issues.
+
+Track remediation to closure and verify via re‑scan.
+
+Evidence kept for Type II:
+
+Monthly scan reports or dashboards.
+
+Sample remediation tickets with links to specific findings.
+
+Before/after scans showing reduced risk where appropriate.
+
+10.4 Penetration Test Reports
+Title: Penetration Testing Evidence
+
+Purpose
+To validate that external assessments of Kahana’s security posture are conducted and acted upon.
+
+Process
+
+Frequency: At least annually, and after major architectural changes.
+
+Scope: Internet‑facing application and APIs; optionally internal components.
+
+An independent third party performs testing based on an agreed scope and methodology.
+
+Findings are triaged, and remediation tasks are logged and tracked to closure.
+
+Evidence kept for Type II:
+
+Latest pen test report (sanitized if necessary).
+
+Remediation plan and tickets for High/Critical issues.
+
+Confirmation of retesting for fixed issues.
+
+10.5 Change Management Tickets
+Title: Change Management Evidence
+
+Purpose
+To demonstrate that production changes are controlled, approved, and documented.
+
+Process
+
+Scope: All changes to production application code, infrastructure, and security configurations.
+
+Each change must have a ticket including: description, risk/impact, rollback plan, reviewer, and approver.
+
+Changes are tested in staging where feasible before production deployment.
+
+Emergency changes are documented retrospectively with justification.
+
+Evidence kept for Type II:
+
+Population of change tickets across the period.
+
+Samples showing approvals, testing notes, and rollout dates.
+
+CI/CD release logs linked to tickets, where available.
+
+10.6 Incident Response Records
+Title: Incident Management Evidence
+
+Purpose
+To show that security incidents are identified, investigated, and resolved according to the IR plan.
+
+Process
+
+All suspected security incidents must be logged in <tool> and triaged by the Security Lead or delegate.
+
+Each incident record includes: date/time, reporter, systems/users affected, severity, timeline of actions, and resolution.
+
+Post‑incident reviews are conducted for significant incidents to capture lessons learned and prevention measures.
+
+Evidence kept for Type II:
+
+List of incidents (including “no major incidents” if true).
+
+Detailed records for each incident in the period.
+
+Post‑mortems / lessons learned documents.
+
+10.7 Backup Test Results
+Title: Backup and Restore Testing Evidence
+
+Purpose
+To verify that critical data backups can be successfully restored.
+
+Process
+
+Scope: Production databases and any critical configuration/state stores.
+
+Frequency: At least quarterly.
+
+Test types: Point‑in‑time restore to a non‑production environment, or file/object restore tests as appropriate.
+
+Each test is documented with: date, system, backup source, restore target, success/failure, and issues.
+
+Evidence kept for Type II:
+
+Test run logs or screenshots.
+
+Short test reports summarizing results and fixes.
+
+Tickets for any issues found and their resolution.
+
+10.8 System Monitoring Logs
+Title: Monitoring and Logging Evidence
+
+Purpose
+To show that systems are monitored and logs are collected, retained, and reviewed.
+
+Process
+
+Application and infrastructure logs are centralized into <platform> (e.g., CloudWatch, Datadog, ELK).
+
+Alerts are configured for key conditions: errors, performance degradation, security events, and availability issues.
+
+On‑call engineers and/or security staff respond to alerts and document actions in tickets.
+
+Evidence kept for Type II:
+
+Screenshot or export of key dashboards.
+
+Examples of alert notifications and associated tickets.
+
+Log samples demonstrating retention for the required period.
+
+10.9 Vendor Review Documentation
+Title: Vendor Risk Management Evidence
+
+Purpose
+To demonstrate that third‑party vendors are assessed and monitored.
+
+Process
+
+All new vendors handling customer or internal confidential data must undergo a security review before onboarding.
+
+For critical vendors, Kahana collects and reviews SOC 2 reports, security documentation, or questionnaires at least annually.
+
+Risks, exceptions, and mitigations are documented and approved by the Security Lead or delegate.
+
+Evidence kept for Type II:
+
+Completed vendor questionnaires or review checklists.
+
+Copies/summaries of SOC reports and security addenda.
+
+Records of yearly re‑assessments and decisions.
+
+10.10 Business Continuity Test Results
+Title: Business Continuity and DR Testing Evidence
+
+Purpose
+To show that BC/DR plans are exercised and improved.
+
+Process
+
+At least annually, Kahana runs a BC/DR exercise (tabletop or live failover) focusing on critical services and teams.
+
+Each test has clear objectives, scope, participants, and scenarios.
+
+Outcomes, gaps, and follow‑up actions are documented in a test report.
+
+Evidence kept for Type II:
+
+BC/DR test report(s) from the period.
+
+Tickets for follow‑up improvements.
+
+Updated BC/DR plan if changes were made.
+
+10.11 Employee Onboarding/Offboarding Records
+Title: Joiner/Mover/Leaver Evidence
+
+Purpose
+To confirm that access is provisioned and revoked in a controlled, timely manner.
+
+Process
+
+HR notifies IT/Security of new hires, role changes, and terminations via <HRIS/ticketing>.
+
+Standard access profiles are applied based on role, with least privilege.
+
+Offboarding tasks (account disabling, device return, access revocation) are executed on or before termination date.
+
+Evidence kept for Type II:
+
+Sample tickets for hires/leavers during the period.
+
+HR export of personnel changes.
+
+Cross‑check showing accounts disabled in IdP and key systems.
+
+10.12 Audit Logs (Application & Infrastructure)
+Title: Audit Logging Evidence
+
+Purpose
+To show that security‑relevant events are logged and retained.
+
+Process
+
+Application logs capture authentication events, key administrative actions, and data‑sensitive operations where feasible.
+
+Infrastructure logs capture OS logins, configuration changes, and network activity (e.g., security groups).
+
+Logs are stored centrally with restricted access and retained for at least <X> months.
+
+Evidence kept for Type II:
+
+Configuration screenshots of logging setup.
+
+Sample log entries for key events.
+
+Proof of retention (show logs from early and late in the period).
+
+10.13 Evidence Collection Templates
+Title: Evidence Collection Templates
+
+Purpose
+To standardize how ongoing evidence is collected, labeled, and stored.
+
+Approach
+
+For each control family (access management, training, vulnerability management, etc.), Kahana maintains a simple template (spreadsheet or form) indicating: data source, frequency, owner, and file naming convention.
+
+Evidence is stored in a central repository (e.g., “SOC2 Evidence – YYYY”) with consistent folder structure by control and period.
+
+Templates are reviewed annually and updated as needed.
+
+10.14 Control Testing Documentation
+Title: Internal Control Testing Evidence
+
+Purpose
+To demonstrate periodic internal testing of key controls.
+
+Process
+
+Quarterly, Kahana selects a subset of controls (e.g., access reviews, backups, changes, incident management) for sample testing.
+
+For each control, an internal tester pulls a sample of records and evaluates design and operating effectiveness.
+
+Results are documented in a brief test report with findings and remediation actions.
+
+Evidence kept for Type II:
+
+Control test plans and sampling criteria.
+
+Completed test worksheets.
+
+Tickets raised for deficiencies and follow‑up reviews.
+
+11. Supplementary Docs – Draft Descriptions
+You mostly need short one‑paragraph descriptions in your SOC documentation index.
+
+Service Level Agreements (SLAs)
+Document outlines uptime and support commitments (e.g., target availability, response/resolution times, maintenance windows) for Kahana services and is shared with customers as part of contracts or product documentation.
+
+Customer Data Processing Agreements (DPA)
+Legal document describing how Kahana processes customer personal data, including roles (controller/processor), subprocessors, security measures, and data subject rights.
+
+Insurance Certificates
+Certificates of coverage for cyber liability and errors & omissions, maintained by Finance/Legal and updated upon policy renewal.
+
+Office Lease/Physical Location Documentation
+Lease and site description for the Chandigarh office, including building access controls, guards/reception policies, and any on‑site physical security measures.
+
+Internal Audit Reports
+Periodic self‑assessments or formal internal audit reports that evaluate SOC 2 controls, identify gaps, and track remediation.
+
+12. Additional Policies – Draft One‑Paragraph Intros
+You already have these mostly conceptually; you just need a short “what this policy covers” statement.
+
+Network Security Policy
+Defines how Kahana designs, secures, and monitors its networks, including segmentation, firewall configuration and review, VPN requirements for remote access, and restrictions on exposing services to the Internet.
+
+Configuration Management Policy
+Establishes requirements for baseline configurations, hardening standards, configuration changes (including approvals and testing), use of infrastructure‑as‑code, and detection/remediation of configuration drift.
+
+Acceptable Use Policy (AUP)
+Describes how employees, contractors, and other users may use Kahana systems and data, including prohibited activities, monitoring statements, device security requirements, and consequences for violations.
+
+Risk Assessment Methodology
+Documents how Kahana identifies assets, threats, vulnerabilities, and business impacts, and how it rates risks (likelihood/impact) and selects treatments, including review frequency and ownership.
+
+Phishing Simulation Program
+Describes the program for running periodic phishing simulations, measuring click/report rates, and providing targeted follow‑up training to improve user awareness.
+
+Would it help if I also turn a few of these into a single checklist table (columns: “Control Area, Evidence Owner, Frequency, Tool/Location”) so you can operationalize them quickly with your team?
+
+
+

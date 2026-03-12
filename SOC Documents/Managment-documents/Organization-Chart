@@ -1,0 +1,115 @@
+1. Executive Leadership
+Chief Executive Officer (CEO) – Adam Kershner (adam@kahana.co)
+
+Overall responsibility for Kahana’s strategy, including security and compliance.
+
+Approves major security policies and the SOC 2 program.
+
+Chief Technology Officer (CTO)
+
+Owns technology strategy and architecture for Kahana Oasis.
+
+Oversees Engineering and DevOps functions.
+
+Co‑approves key security and technical policies.
+
+Chief Information Security Officer (CISO) / Security Lead
+
+Owns the information security program and SOC 2 control design.
+
+Leads risk assessments, incident response, and security governance.
+
+Coordinates with Engineering, DevOps, HR, and Legal.
+
+Chief Operating Officer (COO) / Operations Lead
+
+Oversees business operations, including business continuity and office/physical security.
+
+Chief Financial Officer (CFO)
+
+Oversees financial reporting and contracts; signs the management assertion letter with the CEO.
+
+(If some C‑level roles are combined, you can note that: e.g., “CTO also acting as Security Lead.”)
+
+2. Product & Engineering
+VP / Head of Engineering
+
+Manages software development teams for Oasis.
+
+Responsible for SDLC, code quality, and implementing security requirements in product design.
+
+Engineering Team Leads
+
+Lead feature teams (e.g., “Browser & Client,” “Backend Services,” “AI & Integrations”).
+
+Ensure secure coding, code review, and adherence to Change Management Policy.
+
+Software Engineers
+
+Design, build, and maintain application features.
+
+Follow SDLC, Access Control, and Security policies.
+
+3. DevOps / Infrastructure
+DevOps / Infrastructure Lead
+
+Owns cloud infrastructure (AWS, etc.), CI/CD, backup/DR, and monitoring.
+
+Responsible for implementing technical security controls (networking, encryption at rest, logging).
+
+DevOps / SRE Engineers
+
+Manage deployments, infrastructure as code, observability.
+
+Ensure systems meet availability and recovery objectives.
+
+4. Security & Compliance
+Security Lead / CISO (as above)
+
+Defines and maintains security policies (access control, logging, vulnerability management, incident response).
+
+Coordinates SOC 2 readiness, evidence collection, and internal audits.
+
+Security / Compliance Analyst (if applicable)
+
+Helps map controls to SOC 2 criteria, gather evidence, and perform internal control testing.
+
+(If you do not yet have a dedicated role, you can list “Security responsibilities currently performed by <Name/Title>.”)
+
+5. Customer Success & Support
+Head of Customer Success / Support Lead
+
+Owns customer communication during incidents and continuity events.
+
+Ensures support staff follow data handling and access policies.
+
+Support / Success Team
+
+Handles customer issues through ticketing systems.
+
+Access to customer data limited to what is necessary for support.
+
+6. HR & People Operations
+HR / People Lead
+
+Owns hiring, onboarding, offboarding, and background checks.
+
+Ensures employees complete security training and sign policies/NDAs.
+
+HR / People Ops Team
+
+Maintains employee records and onboarding/offboarding checklists.
+
+7. Legal & Privacy
+Legal Counsel / Compliance Counsel
+
+Reviews contracts, DPAs, and privacy obligations.
+
+Advises on data retention, incident notification, and regulatory requirements.
+
+8. Operations & Physical Security
+Operations / Office Manager
+
+Manages physical office logistics (e.g., Chandigarh office), including visitor logs and access.
+
+Implements physical security controls per the Physical Security Policy.

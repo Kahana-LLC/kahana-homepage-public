@@ -1,0 +1,145 @@
+Owner: IT
+Approved By: CTO
+
+1. Purpose
+This policy defines security requirements for laptops, desktops, and other endpoints used to access Kahana systems. The goal is to protect Kahana Oasis and customer data from compromise through insecure or lost devices.
+
+2. Scope
+This policy applies to:
+
+All company‑owned laptops, desktops, and mobile devices.
+
+Any personally owned devices that are authorized to access Kahana systems or data.
+
+All Kahana employees, contractors, and interns who use these devices for work.
+
+3. General Requirements
+All workstations and endpoints used for Kahana work must:
+
+Be configured and managed according to IT’s approved standards.
+
+Only run licensed and approved operating systems and software.
+
+Comply with this and all related policies (Information Security, Acceptable Use, Remote Access, Encryption, Password).
+
+Users must not attempt to bypass, disable, or alter security controls implemented by IT/Security.
+
+4. Device Hardening and Configuration
+IT is responsible for configuring baseline security on all company‑managed devices, including:
+
+Disabling unnecessary services and ports.
+
+Enforcing secure configuration settings (e.g., firewall enabled, file sharing restricted).
+
+Applying OS and application hardening guidelines appropriate to the platform.
+
+Where feasible, configuration management or device management tools should be used to enforce these settings and keep them consistent.
+
+5. Disk Encryption
+All company‑owned laptops and desktops must use full‑disk encryption (e.g., FileVault, BitLocker, or equivalent).
+
+Encryption keys must be stored securely and accessible to IT for recovery if needed.
+
+Personal devices used to access sensitive Kahana systems must have disk encryption enabled where the platform supports it.
+
+Unencrypted devices must not be used to store or process Confidential or Restricted data.
+
+6. Screen Lock and Session Management
+Devices must automatically lock after a period of inactivity (e.g., 5–10 minutes for laptops/desktops; shorter for mobile devices).
+
+Users must lock their screens (e.g., via keyboard shortcut) whenever they step away from their workstation.
+
+Automatic logoff or re‑authentication may be required for access to sensitive applications.
+
+7. Antivirus / Endpoint Protection
+All company‑managed devices must run approved antivirus or endpoint detection and response (EDR) software.
+
+Endpoint protection must be kept enabled and up to date; users must not disable or tamper with it.
+
+Detected threats must be reported to IT/Security and handled according to incident response procedures.
+
+8. Patching and Updates
+Operating systems, browsers, and critical software must be kept up to date with security patches.
+
+IT will define patching schedules (e.g., automatic updates or regular maintenance windows).
+
+Users must cooperate with update requirements and not defer updates indefinitely.
+
+Devices that fall significantly behind on updates may be blocked from accessing Kahana systems until remediated.
+
+9. Software Installation and Use
+Only approved software may be installed on company‑managed devices; IT may maintain an approved software list.
+
+Users must not install pirated, unlicensed, or unsafe software.
+
+Administrative privileges on workstations should be limited; where users have local admin rights, they must use them responsibly and only when necessary.
+
+10. Use of Removable Media and External Storage
+Use of USB drives and other removable media should be minimized.
+
+If removable media is used, it must be encrypted if it stores Confidential or Restricted data.
+
+Users must not connect unknown or untrusted devices (e.g., random USB sticks) to Kahana workstations.
+
+Syncing work data to personal external drives is prohibited unless explicitly approved and encrypted.
+
+11. Personal Devices (BYOD)
+If Kahana allows some use of personal devices:
+
+Personal devices must meet minimum security requirements (screen lock, OS updates, no jailbreaking/rooting, antivirus where applicable).
+
+Kahana may limit access from personal devices to lower‑risk systems (e.g., email/calendar only).
+
+IT/Security may require the use of mobile/device management tools as a condition for BYOD access.
+
+Kahana reserves the right, subject to applicable laws, to remove company data or access from personal devices if security is at risk.
+
+12. Physical Security of Devices
+Users must take reasonable steps to prevent theft or loss of devices:
+
+Do not leave devices unattended in public places.
+
+Use cable locks where appropriate in shared spaces.
+
+Store devices securely when not in use.
+
+Lost or stolen devices must be reported to IT/Security immediately so remote wipe or access revocation can be initiated.
+
+13. Logging and Monitoring
+Workstations may be configured to send security‑relevant logs (e.g., malware alerts, policy violations) to centralized monitoring systems.
+
+IT/Security may monitor device health and compliance (patch level, endpoint protection status, encryption status) for security and audit purposes.
+
+Monitoring will be conducted in a manner consistent with company policies and applicable law.
+
+14. Handling of Sensitive Data on Workstations
+Sensitive data should reside primarily in secure backend systems and approved cloud storage, not on local desktops wherever possible.
+
+Local copies of Confidential/Restricted data should be minimized and deleted when no longer needed.
+
+Screens displaying sensitive data should be positioned to prevent viewing by unauthorized persons (e.g., in shared spaces or public areas).
+
+15. Incident Reporting
+Users must promptly report to IT/Security:
+
+Lost, stolen, or damaged devices that may affect security.
+
+Suspected malware infections or unusual device behavior.
+
+Unauthorized access attempts or security warnings from endpoint tools.
+
+16. Violations and Enforcement
+Violations of this policy (e.g., disabling security tools, installing prohibited software, ignoring patching requirements) may result in disciplinary action up to and including termination of employment or contract.
+
+Serious or repeated violations may lead to stricter controls on the user’s access or device usage.
+
+17. Exceptions
+Any exception to this policy must be requested in writing, justified, and approved by IT and Security.
+
+Exceptions must be time‑limited and include compensating controls where appropriate.
+
+18. Review and Maintenance
+This Workstation / Endpoint Security Policy will be reviewed at least annually or upon significant changes to Kahana’s endpoint environment or security requirements.
+
+Updates must be approved by the policy owner and communicated to all affected personnel.
+

@@ -1,0 +1,205 @@
+Owner: Engineering Lead / DevOps
+Approved By: CTO
+
+1. Purpose
+This policy defines how changes to Kahana Oasis systems (code, infrastructure, configurations, and data structures) are requested, reviewed, approved, tested, implemented, and documented. The goal is to reduce the risk of outages, security issues, and unexpected behavior while enabling safe and predictable delivery.
+
+2. Scope
+This policy applies to:
+
+All changes to production and staging environments for Kahana Oasis.
+
+All code changes, infrastructure changes (e.g., IaC, AWS resources), configuration changes, and database schema changes.
+
+All employees, contractors, and vendors involved in development, operations, and support.
+
+The same principles should be followed in development environments, with stricter enforcement in production.
+
+3. Change Types
+Changes are categorized to determine required controls:
+
+Standard Changes:
+
+Low‑risk, repeatable changes with well‑defined steps (e.g., routine deployments, regularly scheduled jobs).
+
+Pre‑approved once documented and can follow a lightweight process.
+
+Normal Changes:
+
+Non‑emergency changes that may impact functionality, performance, or security (feature releases, infrastructure modifications).
+
+Require full review, testing, and documented approval prior to implementation.
+
+Emergency Changes:
+
+Changes made urgently to address a critical incident (major outage, severe security issue).
+
+May use a streamlined approval path but must be documented and reviewed after implementation.
+
+4. Change Request and Tracking
+All non‑trivial changes must be tracked in an approved system. Kahana uses GitHub (PRs, issues, merge history) for code changes; Tally.so feedback forms routed to Slack and Google Sheets for product feedback; and sprints are created from feedback using Cursor and GitHub. No Jira or Linear; releases are managed via GitHub workflows and CI pipeline (see OTA & Updates Guide).
+
+Each change request should include:
+
+Description of the change and rationale.
+
+Systems affected (services, components, infrastructure).
+
+Risk/impact assessment (including security and customer impact).
+
+Rollback or remediation plan.
+
+Planned implementation date/time and responsible engineer(s).
+
+No production change should occur without an associated ticket or record.
+
+4.1 OTA (Over-the-Air) Client Updates
+Oasis client updates use a two-ring model: oasis-canary (early validation) and oasis-stable (production). New versions land on canary first; after validation, stable is promoted by updating the ring pointer (no rebuild). Release workflows (GitHub Actions: oasis-canary.yml, oasis-stable-promote.yml) use tags vX.Y.Z.N. Rollback is done by repointing the ring to a prior known-good version. Update service: Supabase function (oasis-update). See OTA & Updates Guide for details.
+
+5. Design, Review, and Approval
+5.1 Code and Configuration Changes
+All code changes must be made via version control (GitHub) using feature branches.
+
+Every change must be peer‑reviewed via pull request (PR) by at least one qualified reviewer who is not the author.
+
+Reviews should consider:
+
+Correctness and quality.
+
+Security implications.
+
+Performance and reliability impact.
+
+Changes that affect security, authentication, access control, or data handling may require review by a security‑knowledgeable engineer or the Security Team.
+
+5.2 Infrastructure and Database Changes
+Infrastructure changes (e.g., Terraform, CloudFormation, manual configuration) and database schema changes must be documented and reviewed before implementation.
+
+High‑risk changes (e.g., network rules, IAM policies, production database schema) may require explicit approval from the Engineering Lead or DevOps Lead.
+
+6. Testing Requirements
+Normal and standard changes must be tested in non‑production environments before deployment to production, where feasible.
+
+Testing may include:
+
+Unit and integration tests.
+
+Automated test suites in the CI pipeline.
+
+Manual QA or exploratory testing for critical user flows.
+
+Changes must not be deployed to production if critical tests are failing, unless explicitly approved as an emergency with documented rationale.
+
+7. Deployment to Production
+Production changes should follow a repeatable, automated deployment process (CI/CD) wherever possible.
+
+Deployment steps should be scripted and versioned, not performed manually ad‑hoc.
+
+Deployments should be scheduled during appropriate windows, considering user impact and support coverage.
+
+For larger or higher‑risk changes, a deployment plan should be created including:
+
+Pre‑deployment checks.
+
+Communication plan.
+
+Rollback steps.
+
+8. Rollback and Remediation
+Each change must have a defined rollback or mitigation plan in case issues occur.
+
+If serious problems are detected after deployment (outages, regressions, security issues), the team should quickly decide to:
+
+Roll back to the previous stable version, or
+
+Apply a fix or mitigation change following the emergency process.
+
+Rollback actions must be documented in the change record.
+
+9. Emergency Changes
+Emergency changes are allowed when delay would significantly increase risk to availability, security, or compliance.
+
+For emergencies:
+
+The on‑call engineer or incident commander may approve the change verbally or via rapid written approval (e.g., in incident ticket or chat), if formal review is not feasible.
+
+The change must still be tracked (ticket/PR) and documented as soon as possible.
+
+After the incident, a post‑incident review must include review of the emergency change, its impact, and any follow‑up actions.
+
+10. Separation of Duties
+Where feasible, the person approving a production change should not be the same person who authored it.
+
+For particularly sensitive changes (e.g., security settings, IAM, critical database modifications), separate approval from a team lead or Security/DevOps lead may be required.
+
+11. Monitoring and Post‑Change Review
+Systems must be monitored during and after deployments for errors, performance issues, and security events.
+
+If anomalies are detected after a change, the team should:
+
+Investigate promptly, using logs and metrics.
+
+Decide whether to roll back or fix.
+
+Significant or problematic changes may require a brief post‑change review to capture lessons learned and improve procedures.
+
+12. Documentation and Audit Trail
+Change records must be kept for all production changes, including:
+
+Links to PRs, tickets, and deployment logs.
+
+Approvals (who approved and when).
+
+Testing evidence or references.
+
+Any incident or rollback information.
+
+These records support internal reviews and external audits (SOC 2/SOC 1).
+
+13. Access Controls for Changes
+Only authorized personnel may deploy changes to production environments.
+
+Production deployment permissions should be limited to specific roles (e.g., DevOps, designated engineers) and enforced via IAM, CI/CD controls, and SSO/MFA.
+
+Temporary elevated access, if required for a change, must be time‑bound and removed afterward.
+
+14. Communication
+For changes with potential customer or internal impact (downtime, behavior changes), appropriate stakeholders should be informed in advance, such as:
+
+Internal teams (support, success, sales).
+
+Customers (via status page, email, or in‑app notices), when relevant.
+
+Incident communication procedures must be followed if a change causes an outage or incident.
+
+15. Training and Awareness
+Engineers, DevOps, and other relevant staff must be trained on this Change Management Policy and associated procedures.
+
+New team members should receive an overview of:
+
+The change process.
+
+Tools used for tracking and deployment.
+
+Expectations for testing and documentation.
+
+16. Violations and Enforcement
+Implementing production changes outside this process (e.g., unapproved hotfixes, manual changes with no record) is a violation of this policy.
+
+Violations may result in disciplinary action and may trigger additional controls or restrictions on deployment permissions.
+
+17. Exceptions
+Any exception to this policy must be documented, including:
+
+The specific requirement being waived.
+
+The justification and risks.
+
+Approval from the Engineering Lead/CTO and, if relevant, Security.
+
+Exceptions must be time‑limited and reviewed periodically.
+
+18. Review and Maintenance
+This Change Management Policy will be reviewed at least annually, or upon significant changes to Kahana’s development or infrastructure practices.
+
+Updates must be approved by the policy owner and communicated to all affected staff.
