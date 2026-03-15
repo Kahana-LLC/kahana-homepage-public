@@ -23,6 +23,42 @@ export default function Careers() {
           </div>
 
           <div className="mt-12">
+            {/* Learning Internship Card */}
+            <div className="mb-8">
+              <Link 
+                href="/learning-internship"
+                className="block bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 p-8 rounded-lg hover:shadow-lg transition-all duration-300 group"
+              >
+                <div className="flex items-start justify-between">
+                  <div className="flex-1">
+                    <div className="flex items-center gap-3 mb-3">
+                      <h2 className="text-2xl font-semibold text-[#4A5745] group-hover:text-[#728552] transition-colors">
+                        Learning Internship Program
+                      </h2>
+                      <span className="px-3 py-1 text-xs font-semibold text-[#728552] bg-white/50 rounded-full">
+                        Educational Opportunity
+                      </span>
+                    </div>
+                    <p className="text-[#4A5745] mb-4">
+                      Join our educational internship program designed for individuals who want to learn and gain hands-on experience in a fast-paced, innovative startup environment.
+                    </p>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      <span className="px-3 py-1 text-sm text-[#4A5745] bg-white/50 rounded-full">Flexible Schedule</span>
+                      <span className="px-3 py-1 text-sm text-[#4A5745] bg-white/50 rounded-full">Remote</span>
+                      <span className="px-3 py-1 text-sm text-[#4A5745] bg-white/50 rounded-full">Multiple Functions</span>
+                    </div>
+                    <span className="text-[#728552] font-semibold group-hover:underline inline-flex items-center">
+                      Learn more and apply
+                      <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+              </Link>
+            </div>
+
+            {/* Open Positions Section */}
             <div className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 p-8 rounded-lg text-center">
               <h2 className="text-2xl font-semibold text-[#4A5745] mb-4">Open Positions</h2>
               <p className="text-[#4A5745] mb-8">
