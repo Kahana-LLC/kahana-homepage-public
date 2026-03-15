@@ -61,13 +61,13 @@ export default function ProductSection() {
             <p className="text-lg text-[#4A5745] max-w-2xl">
               Enjoy a beautiful browsing experience designed for ergonomic work
             </p>
-            <div className="hero-cta-buttons flex flex-row flex-nowrap items-center justify-center gap-4 sm:gap-[3.5rem]">
+            <div className="hero-cta-buttons flex flex-col items-center justify-center gap-4 sm:gap-6">
               <Link
-                href="/oasis-waitlist"
-                onClick={() => trackButtonClick('join_waitlist', 'hero_section')}
+                href="/oasis-pricing"
+                onClick={() => trackButtonClick('get_instant_access', 'hero_section')}
                 className="btn-primary inline-flex items-center justify-center px-4 sm:px-8 py-2 sm:py-3 text-xs sm:text-base whitespace-nowrap no-underline hover:no-underline focus:no-underline rounded-[27.5px] font-bold scale-100 sm:scale-125 shrink-0"
               >
-                Join waitlist
+                Get Instant Access
               </Link>
               <button
                 type="button"
@@ -77,7 +77,7 @@ export default function ProductSection() {
                 }}
                 className="btn-secondary inline-flex items-center justify-center px-4 sm:px-8 py-2 sm:py-3 text-xs sm:text-base whitespace-nowrap no-underline hover:no-underline focus:no-underline rounded-[27.5px] font-bold scale-100 sm:scale-125 shrink-0"
               >
-                Watch 4‑min overview
+                Watch 4-min video
               </button>
             </div>
           </div>
