@@ -546,9 +546,9 @@ function NavBar() {
             color: inherit !important;
           }
 
-          /* Ensure btn-primary buttons in mobile menu have correct styling - HIGH SPECIFICITY */
+          /* Ensure btn-primary buttons in mobile menu match hero/desktop nav - #617500 */
           .mobile-menu .menu-links a.btn-primary {
-            background-color: #4A6200 !important;
+            background-color: #617500 !important;
             border: 1px solid #7F9E36 !important;
             color: #FFFFFF !important;
             border-radius: 27.5px !important;
@@ -566,7 +566,7 @@ function NavBar() {
           }
 
           .mobile-menu .menu-links a.btn-primary:hover {
-            background-color: #3E5300 !important;
+            background-color: #556600 !important;
             border-color: #6A8E2A !important;
             color: #FFFFFF !important;
           }
@@ -575,6 +575,18 @@ function NavBar() {
           .mobile-menu .menu-links a.btn-primary:hover *,
           .mobile-menu .menu-links a.btn-primary:hover span {
             color: #FFFFFF !important;
+          }
+
+          /* btn-secondary in mobile menu: match hero - white bg, #617500 border/text */
+          .mobile-menu .menu-links a.btn-secondary {
+            background-color: #FFFFFF !important;
+            border: 2px solid #617500 !important;
+            color: #617500 !important;
+          }
+          .mobile-menu .menu-links a.btn-secondary:hover {
+            background-color: #F6F8F0 !important;
+            border-color: #617500 !important;
+            color: #556600 !important;
           }
 
           .menu-links button span {
