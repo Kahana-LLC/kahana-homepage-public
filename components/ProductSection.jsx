@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { getCloudinaryImageProps } from '../utils/cloudinary-mapper';
-import WaitlistButton from './WaitlistButton';
 import { trackButtonClick } from '../utils/analytics';
 
 const HERO_SIZES = '(max-width: 640px) 100vw, (max-width: 768px) 90vw, (max-width: 1024px) 80vw, 1200px';
@@ -63,15 +62,15 @@ export default function ProductSection() {
               Enjoy a beautiful browsing experience designed for ergonomic work
             </p>
             <div className="flex flex-col items-center gap-4">
-              <WaitlistButton
-                hasSeats={false}
-                waitlistUrl="/oasis-waitlist"
-                proUrl="/oasis-pricing"
-                onJoinWaitlist={() => {
-                  trackButtonClick('join_waitlist', 'hero_section');
+              <Link
+                href="/oasis-pricing"
+                onClick={() => {
+                  trackButtonClick('get_instant_access', 'hero_section');
                 }}
-                className="scale-110 sm:scale-125"
-              />
+                className="btn-primary flex items-center justify-center px-8 py-3 rounded-full text-base font-medium transition-all duration-200 no-underline hover:no-underline focus:no-underline scale-110 sm:scale-125"
+              >
+                Get Instant Access
+              </Link>
             </div>
           </div>
 
