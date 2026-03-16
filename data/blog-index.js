@@ -1,5 +1,16 @@
 const blogIndex = [
   {
+    title: "How to Enable Tab Groups in Chrome (and Run Them Like a System) - Oasis Workflow",
+    date: "2026-03-11T00:00:00.000Z",
+    authors: ["Pallavi M", "Ankit Sai Allam"],
+    category: ["Browser & Technology"],
+    excerpt: "Learn how to enable and use Chrome tab groups as a real workflow system. This guide covers saving, syncing, shortcuts, AI organization, and how Oasis takes tab workflows to the next level.",
+    defaultImageQuery: "Chrome tab groups workflow system productivity browser organization 2026",
+    featuredImage: "https://i.ytimg.com/vi/zoJfaB2ouIY/maxresdefault.jpg",
+    slug: "how-to-enable-tab-groups-chrome-run-like-system-oasis-workflow-2026",
+    readingTime: 5,
+  },
+  {
     title: "Saving tab groups in Microsoft Edge: how it works + better alternatives: The AI Browser Comparison of 2026",
     date: "2026-03-10T00:00:00.000Z",
     authors: ["Pallavi M", "Ankit Sai Allam"],
