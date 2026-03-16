@@ -149,18 +149,24 @@ export default function BlogCard({ post }) {
         {/* Bottom metadata - outside Link to avoid nested anchors */}
         <div className="flex flex-col gap-4 mt-auto px-6 pb-4">
           <div className="flex flex-row gap-2 overflow-x-auto whitespace-nowrap max-w-full scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent py-1">
-            {post.category && (
-              <Link
-                href={`/blog?category=${encodeURIComponent(post.category)}`}
-                onClick={(e) => {
-                  e.stopPropagation();
-                  trackCategoryClick(post.category, post.slug);
-                }}
-                className="text-sm font-medium px-3 py-1 rounded-full bg-gray-100 text-gray-700 hover:bg-[#617500] hover:text-white transition-colors inline-block"
-              >
-                {post.category}
-              </Link>
-            )}
+            {post.category && (() => {
+              // Handle both string and array categories - display only the first one
+              const categoryToDisplay = Array.isArray(post.category) ? post.category[0] : post.category;
+              const categoryForUrl = Array.isArray(post.category) ? post.category[0] : post.category;
+              
+              return (
+                <Link
+                  href={`/blog?category=${encodeURIComponent(categoryForUrl)}`}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    trackCategoryClick(categoryForUrl, post.slug);
+                  }}
+                  className="text-sm font-medium px-3 py-1 rounded-full bg-gray-100 text-gray-700 hover:bg-[#617500] hover:text-white transition-colors inline-block"
+                >
+                  {categoryToDisplay}
+                </Link>
+              );
+            })()}
           </div>
         </div>
       </div>

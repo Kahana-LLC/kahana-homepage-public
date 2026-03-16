@@ -76,11 +76,11 @@ export async function signInWithEmail(email, password) {
 }
 
 /** Sign in/up with an OAuth provider. */
-export async function signInWithOAuthProvider(provider) {
+export async function signInWithOAuthProvider(provider, options = {}) {
   const supabase = createClient()
-  const redirectUrl = typeof window !== 'undefined'
-    ? `${window.location.origin}/oauth-callback`
-    : undefined
+  const redirectUrl =
+    options.redirectTo ||
+    (typeof window !== 'undefined' ? `${window.location.origin}/oauth-callback` : undefined)
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider,
     options: { redirectTo: redirectUrl },
