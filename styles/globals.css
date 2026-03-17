@@ -252,6 +252,19 @@ input[type="button"] {
   cursor: pointer;
   transition: background 0.2s;
 }
+
+/* FAQ accordion buttons: light gradient background, dark text (override global button styles) */
+#faq button {
+  background: linear-gradient(to bottom right, rgba(254, 243, 199, 0.3), rgba(125, 211, 252, 0.15)) !important;
+  color: #4A5745 !important;
+  font-weight: 600 !important;
+  border: none !important;
+  padding: 1.25rem 1.5rem !important;
+  border-radius: 0.75rem !important;
+}
+#faq button:hover {
+  background: linear-gradient(to bottom right, rgba(254, 243, 199, 0.4), rgba(125, 211, 252, 0.2)) !important;
+}
 button:hover,
 .btn:hover,
 input[type="submit"]:hover,
