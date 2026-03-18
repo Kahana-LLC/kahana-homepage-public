@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { getCloudinaryImageProps } from '../utils/cloudinary-mapper';
-import WaitlistButton from './WaitlistButton';
 import { trackButtonClick } from '../utils/analytics';
 
 const HERO_SIZES = '(max-width: 640px) 100vw, (max-width: 768px) 90vw, (max-width: 1024px) 80vw, 1200px';
@@ -62,16 +61,24 @@ export default function ProductSection() {
             <p className="text-lg text-[#4A5745] max-w-2xl">
               Enjoy a beautiful browsing experience designed for ergonomic work
             </p>
-            <div className="flex flex-col items-center gap-4">
-              <WaitlistButton
-                hasSeats={false}
-                waitlistUrl="/oasis-waitlist"
-                proUrl="/oasis-pricing"
-                onJoinWaitlist={() => {
-                  trackButtonClick('join_waitlist', 'hero_section');
+            <div className="hero-cta-buttons flex flex-col items-center justify-center gap-4 sm:gap-6">
+              <Link
+                href="/oasis-pricing"
+                onClick={() => trackButtonClick('get_instant_access', 'hero_section')}
+                className="btn-primary inline-flex items-center justify-center px-4 sm:px-8 py-2 sm:py-3 text-xs sm:text-base whitespace-nowrap no-underline hover:no-underline focus:no-underline rounded-[27.5px] font-bold scale-100 sm:scale-125 shrink-0"
+              >
+                Get Instant Access
+              </Link>
+              <button
+                type="button"
+                onClick={() => {
+                  const el = document.querySelector('.get-started-section');
+                  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }}
-                className="scale-110 sm:scale-125"
-              />
+                className="btn-secondary inline-flex items-center justify-center px-4 sm:px-8 py-2 sm:py-3 text-xs sm:text-base whitespace-nowrap no-underline hover:no-underline focus:no-underline rounded-[27.5px] font-bold scale-100 sm:scale-125 shrink-0"
+              >
+                Watch 4-min video
+              </button>
             </div>
           </div>
 
