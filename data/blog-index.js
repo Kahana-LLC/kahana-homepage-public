@@ -1,5 +1,16 @@
 const blogIndex = [
   {
+    title: "We need a secure enterprise browser for 1,000 employees: rollout checklist (Oasis rollout playbook)",
+    date: "2026-03-16T00:00:00.000Z",
+    authors: ["Pallavi M", "Ankit Sai Allam"],
+    category: ["Enterprise"],
+    excerpt: "Rolling out a secure enterprise browser to 1,000 employees is more than a technical deployment — it's an organizational transformation. This Oasis rollout playbook covers the full checklist: environment planning, pilot strategy, user training, integration, patch management, and compliance tracking.",
+    defaultImageQuery: "enterprise browser rollout checklist 1000 employees IT deployment 2026",
+    featuredImage: "https://www.macorva.com/hs-fs/hubfs/Blog%20Images/ai-rollout-plan-blog.jpeg?width=991&name=ai-rollout-plan-blog.jpg",
+    slug: "secure-enterprise-browser-1000-employees-rollout-checklist-oasis-rollout-playbook-2026",
+    readingTime: 14,
+  },
+  {
     title: "Enterprise browsing vs VDI: when each wins and why users hate one of them (Oasis buyer lens 2026)",
     date: "2026-03-15T00:00:00.000Z",
     authors: ["Pallavi M", "Ankit Sai Allam"],
