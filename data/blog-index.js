@@ -1,5 +1,16 @@
 const blogIndex = [
   {
+    title: "How to Sync Bookmarks Across Browsers (and Organize Them with Tab Groups) — Oasis Workflow (2026 Guide)",
+    date: "2026-03-12T00:00:00.000Z",
+    authors: ["Pallavi M", "Ankit Sai Allam"],
+    category: ["Productivity", "Tech Guides", "Browser Tools"],
+    excerpt: "Struggling to keep bookmarks in sync across Chrome, Edge, Firefox, and Safari? This 2026 guide covers the best tools to sync bookmarks across browsers and organize them with tab groups using the Oasis workflow system.",
+    defaultImageQuery: "sync bookmarks across browsers tab groups workflow productivity 2026",
+    featuredImage: "https://s.alicdn.com/@sc02/kf/Ab863e02af68d4420bae28391e0223b4fD.jpg",
+    slug: "how-to-sync-bookmarks-across-browsers-organize-tab-groups-oasis-workflow-2026",
+    readingTime: 10,
+  },
+  {
     title: "How to Enable Tab Groups in Chrome (and Run Them Like a System) - Oasis Workflow",
     date: "2026-03-11T00:00:00.000Z",
     authors: ["Pallavi M", "Ankit Sai Allam"],
