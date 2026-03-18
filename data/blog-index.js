@@ -1,5 +1,16 @@
 const blogIndex = [
   {
+    title: "Enterprise browsing vs VDI: when each wins and why users hate one of them (Oasis buyer lens 2026)",
+    date: "2026-03-15T00:00:00.000Z",
+    authors: ["Pallavi M", "Ankit Sai Allam"],
+    category: ["Enterprise"],
+    excerpt: "Enterprise browsers and VDI both promise secure remote access, but they solve different problems and come with very different tradeoffs. This 2026 buyer lens breaks down when each wins, where each fails, and why most enterprises will end up using both.",
+    defaultImageQuery: "enterprise browser vs VDI remote access security comparison 2026",
+    featuredImage: "https://www.surf.security/hubfs/3-2.png",
+    slug: "enterprise-browsing-vs-vdi-when-each-wins-why-users-hate-one-oasis-buyer-lens-2026",
+    readingTime: 12,
+  },
+  {
     title: "Enterprise browser adoption trends: why now (and what's changing) — Oasis market take (2026)",
     date: "2026-03-14T00:00:00.000Z",
     authors: ["Pallavi M", "Ankit Sai Allam"],
