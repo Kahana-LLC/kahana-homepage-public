@@ -1,5 +1,16 @@
 const blogIndex = [
   {
+    title: "Enterprise browser adoption trends: why now (and what's changing) — Oasis market take (2026)",
+    date: "2026-03-14T00:00:00.000Z",
+    authors: ["Pallavi M", "Ankit Sai Allam"],
+    category: ["Browser & Technology"],
+    excerpt: "Enterprise browser adoption is accelerating in 2026. This Oasis market take breaks down the key drivers, real-world challenges, and what the latest research says about where the market is heading.",
+    defaultImageQuery: "enterprise browser adoption trends security hybrid work 2026",
+    featuredImage: "https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/55300a8a-78ed-41e5-a9b8-9e6909ca432b/Screenshot_2024-10-02_221611.png?t=1727887630",
+    slug: "enterprise-browser-adoption-trends-why-now-whats-changing-oasis-market-take-2026",
+    readingTime: 11,
+  },
+  {
     title: "Enterprise browser market leaders: who's winning and why (2026) — Oasis market take",
     date: "2026-03-13T00:00:00.000Z",
     authors: ["Pallavi M", "Ankit Sai Allam"],
