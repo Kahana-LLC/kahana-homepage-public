@@ -1,5 +1,16 @@
 const blogIndex = [
   {
+    title: "Enterprise browser market leaders: who's winning and why (2026) — Oasis market take",
+    date: "2026-03-13T00:00:00.000Z",
+    authors: ["Pallavi M", "Ankit Sai Allam"],
+    category: ["Enterprise & Security"],
+    excerpt: "A deep dive into the enterprise browser market in 2026 — who is leading, why Chrome still dominates, and what the rise of purpose-built secure browsers means for IT teams and security leaders.",
+    defaultImageQuery: "enterprise browser market leaders security 2026 corporate browser comparison",
+    featuredImage: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&auto=format&fit=crop",
+    slug: "enterprise-browser-market-leaders-winning-why-2026-oasis-market-take",
+    readingTime: 12,
+  },
+  {
     title: "How to Sync Bookmarks Across Browsers (and Organize Them with Tab Groups) — Oasis Workflow (2026 Guide)",
     date: "2026-03-12T00:00:00.000Z",
     authors: ["Pallavi M", "Ankit Sai Allam"],
