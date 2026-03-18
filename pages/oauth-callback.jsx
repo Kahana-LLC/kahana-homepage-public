@@ -48,11 +48,19 @@ function readOasisOAuthMarker() {
   return null;
 }
 
+function clearOasisOAuthMarker() {
+  if (typeof document === 'undefined') {
+    return
+  }
+
+  document.cookie = `${FIREFOX_OAUTH_MARKER_COOKIE_NAME}=; Max-Age=0; Path=/; SameSite=Lax`
+}
+
 function getOAuthFlowId(urlParams, hashParams, markerPayload) {
   return (
     urlParams.get('flow_id') ||
     hashParams.get('flow_id') ||
-      markerPayload?.flowId ||
+    markerPayload?.flowId ||
     urlParams.get('state') ||
     hashParams.get('state') ||
     'unknown'
@@ -195,11 +203,22 @@ export default function OAuthCallback() {
     errorDescription,
     success,
   }) => {
+    let sanitizedUrl
+    try {
+      if (callbackUrl) {
+        const parsed = new URL(
+          callbackUrl,
+          typeof window !== 'undefined' ? window.location.origin : undefined
+        )
+        sanitizedUrl = `${parsed.origin}${parsed.pathname}`
+      }
+    } catch (error) {}
+
     const handoffPayload = {
       timestamp: Date.now(),
       target,
-      url: callbackUrl,
       flow_id: flowId,
+      ...(sanitizedUrl ? { url: sanitizedUrl } : {}),
     };
 
     if (code) handoffPayload.code = code;
@@ -246,6 +265,7 @@ export default function OAuthCallback() {
     const markerPayload = readOasisOAuthMarker();
     const assistantCallback = isAssistantCallback(urlParams, markerPayload);
     const handoffTarget = getAssistantHandoffTarget(urlParams, markerPayload);
+    clearOasisOAuthMarker();
     const callbackUrl = window.location.href;
     const hash = window.location.hash.substring(1);
     const hashParams = new URLSearchParams(hash);
@@ -488,7 +508,7 @@ export default function OAuthCallback() {
         }
         
         // No pending checkout - redirect back to the default auth success path
-        setDetails('Redirecting to downloads...');
+        setDetails('Redirecting to installations...');
         setTimeout(() => {
           window.location.href = '/installations';
         }, 1500);

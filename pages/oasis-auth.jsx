@@ -176,7 +176,7 @@ export default function OasisAuth() {
     return () => {
       isCancelled = true
     }
-  }, [router, plan, assistantFlow, assistantRedirectTo])
+  }, [router, plan, assistantFlow, assistantRedirectTo, assistantTarget, assistantProvider, assistantFlowId])
 
   useEffect(() => {
     if (!router.isReady || !assistantFlow || !assistantRedirectTo) {
@@ -294,11 +294,11 @@ export default function OasisAuth() {
 
   const beginOAuth = async (provider, options = {}) => {
     setStatus({ loading: true, error: '', success: '' })
+    const isAssistantFlow = !!options.assistantFlow
+    const flowId = options.flowId || assistantFlowId || null
     try {
       const redirectPath = getSafeRedirectPath(router?.query?.redirect)
       const redirectTo = options.redirectTo
-      const isAssistantFlow = !!options.assistantFlow
-      const flowId = options.flowId || assistantFlowId || null
 
       if (isAssistantFlow) {
         persistFirefoxOAuthMarker({
