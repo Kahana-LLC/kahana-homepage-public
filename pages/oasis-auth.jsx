@@ -1,8 +1,9 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { getSafeRedirectPath } from '@/utils/redirects'
+import { createClient } from '@/utils/supabase'
 import {
   requestPasswordReset,
   signupAndCreateProfile,
@@ -41,8 +42,46 @@ const plans = [
   },
 ]
 
+const FIREFOX_OAUTH_MARKER_COOKIE_NAME = 'oasis_firefox_oauth_target'
+
+function logAssistantOAuth(flowId, message, details) {
+  const prefix = flowId ? `[Oasis OAuth][${flowId}]` : '[Oasis OAuth]';
+  if (details !== undefined) {
+    console.log(`${prefix} ${message}`, details)
+    return
+  }
+  console.log(`${prefix} ${message}`)
+}
+
+function persistFirefoxOAuthMarker({ target, provider, flowId, callbackBaseUrl }) {
+  if (typeof document === 'undefined') {
+    return false
+  }
+
+  try {
+    const value = encodeURIComponent(
+      JSON.stringify({
+        target,
+        provider,
+        flowId,
+        timestamp: Date.now(),
+        callbackBaseUrl,
+      })
+    )
+    const secureAttr = window.location.protocol === 'https:' ? '; Secure' : ''
+    document.cookie =
+      `${FIREFOX_OAUTH_MARKER_COOKIE_NAME}=${value}; Max-Age=180; Path=/; SameSite=Lax${secureAttr}`
+    return true
+  } catch (error) {
+    console.error('Failed to persist Firefox OAuth marker cookie:', error)
+  }
+
+  return false
+}
+
 export default function OasisAuth() {
   const router = useRouter()
+  const assistantLaunchStartedRef = useRef(false)
   const [mode, setMode] = useState('signup')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -67,6 +106,127 @@ export default function OasisAuth() {
   }, [router?.query?.plan, router?.query?.mode])
 
   const plan = useMemo(() => plans.find((p) => p.id === selectedPlan) || plans[1], [selectedPlan])
+  const assistantFlow = router?.query?.flow === 'assistant'
+  const assistantTarget =
+    router?.query?.handoff_target === 'onboarding' ? 'onboarding' : 'assistant'
+  const assistantProvider =
+    typeof router?.query?.provider === 'string' ? router.query.provider.toLowerCase() : ''
+  const assistantFlowId =
+    typeof router?.query?.flow_id === 'string' ? router.query.flow_id : ''
+  const assistantRedirectTo =
+    typeof window !== 'undefined'
+      ? `${window.location.origin}/oauth-callback`
+      : undefined
+  const assistantLaunchKey =
+    assistantFlow && assistantProvider
+      ? `oasis_assistant_oauth_launch:${assistantTarget}:${assistantProvider}:${assistantFlowId || 'default'}`
+      : null
+
+  useEffect(() => {
+    if (!router.isReady) return
+
+    let isCancelled = false
+
+    const redirectAuthenticatedUser = async () => {
+      try {
+        const supabase = createClient()
+        const { data: { session }, error } = await supabase.auth.getSession()
+
+        if (error || !session || isCancelled) {
+          return
+        }
+
+        if (assistantFlow && assistantRedirectTo) {
+          persistFirefoxOAuthMarker({
+            target: assistantTarget,
+            provider: assistantProvider,
+            flowId: assistantFlowId,
+            callbackBaseUrl: window.location.origin,
+          })
+          logAssistantOAuth(assistantFlowId, 'Existing website session detected, redirecting to callback', {
+            target: assistantTarget,
+            redirectTo: assistantRedirectTo,
+          })
+          window.location.href = assistantRedirectTo
+          return
+        }
+
+        const redirectPath = getSafeRedirectPath(router?.query?.redirect)
+
+        setStatus({ loading: false, error: '', success: 'Signed in successfully. Redirecting…' })
+
+        if (redirectPath) {
+          window.location.href = redirectPath
+          return
+        }
+
+        if (plan.stripeCheckoutUrl) {
+          window.location.href = plan.stripeCheckoutUrl
+          return
+        }
+
+        window.location.href = '/installations'
+      } catch (err) {
+        console.error('Failed to restore authenticated session on auth page:', err)
+      }
+    }
+
+    redirectAuthenticatedUser()
+
+    return () => {
+      isCancelled = true
+    }
+  }, [router, plan, assistantFlow, assistantRedirectTo, assistantTarget, assistantProvider, assistantFlowId])
+
+  useEffect(() => {
+    if (!router.isReady || !assistantFlow || !assistantRedirectTo) {
+      return
+    }
+
+    if (!['google', 'apple', 'azure'].includes(assistantProvider)) {
+      if (assistantProvider) {
+        logAssistantOAuth(assistantFlowId, 'Ignoring unsupported assistant provider', {
+          provider: assistantProvider,
+        })
+      }
+      return
+    }
+
+    if (assistantLaunchStartedRef.current) {
+      logAssistantOAuth(assistantFlowId, 'Skipping duplicate assistant OAuth launch in current page instance')
+      return
+    }
+
+    if (typeof window !== 'undefined' && assistantLaunchKey) {
+      try {
+        if (sessionStorage.getItem(assistantLaunchKey) === 'started') {
+          logAssistantOAuth(assistantFlowId, 'Skipping duplicate assistant OAuth launch from sessionStorage guard', {
+            key: assistantLaunchKey,
+          })
+          return
+        }
+        sessionStorage.setItem(assistantLaunchKey, 'started')
+      } catch (err) {}
+    }
+
+    logAssistantOAuth(assistantFlowId, 'Starting assistant OAuth launcher flow', {
+      provider: assistantProvider,
+      target: assistantTarget,
+      redirectTo: assistantRedirectTo,
+    })
+    persistFirefoxOAuthMarker({
+      target: assistantTarget,
+      provider: assistantProvider,
+      flowId: assistantFlowId,
+      callbackBaseUrl: window.location.origin,
+    })
+    assistantLaunchStartedRef.current = true
+    beginOAuth(assistantProvider, {
+      redirectTo: assistantRedirectTo,
+      assistantFlow: true,
+      flowId: assistantFlowId,
+    })
+  }, [router.isReady, assistantFlow, assistantProvider, assistantRedirectTo, assistantLaunchKey, assistantFlowId, assistantTarget])
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -132,34 +292,64 @@ export default function OasisAuth() {
     }
   }
 
-  const beginOAuth = async (provider) => {
+  const beginOAuth = async (provider, options = {}) => {
     setStatus({ loading: true, error: '', success: '' })
+    const isAssistantFlow = !!options.assistantFlow
+    const flowId = options.flowId || assistantFlowId || null
     try {
       const redirectPath = getSafeRedirectPath(router?.query?.redirect)
+      const redirectTo = options.redirectTo
+
+      if (isAssistantFlow) {
+        persistFirefoxOAuthMarker({
+          target: assistantTarget,
+          provider,
+          flowId,
+          callbackBaseUrl: window.location.origin,
+        })
+        logAssistantOAuth(flowId, 'Launching provider OAuth from website origin', {
+          provider,
+          redirectTo,
+        })
+      }
 
       // Persist any post-auth redirect context before the OAuth handoff.
-      if (redirectPath) {
+      if (!isAssistantFlow && redirectPath) {
         sessionStorage.setItem('postAuthRedirect', redirectPath)
       } else {
         sessionStorage.removeItem('postAuthRedirect')
       }
 
-      if (plan.stripeCheckoutUrl) {
+      if (!isAssistantFlow && plan.stripeCheckoutUrl) {
         sessionStorage.setItem('pendingStripeCheckout', plan.stripeCheckoutUrl)
       } else {
         sessionStorage.removeItem('pendingStripeCheckout')
       }
 
       // Detect if opened from Firefox extension (window.opener exists)
-      const isFromExtension = window.opener && !window.opener.closed
+      const isFromExtension = !isAssistantFlow && window.opener && !window.opener.closed
       if (isFromExtension) {
         // Store flag so callback page knows to send postMessage
         sessionStorage.setItem('oauthFromExtension', 'true')
+      } else {
+        sessionStorage.removeItem('oauthFromExtension')
       }
 
-      await signInWithOAuthProvider(provider)
+      await signInWithOAuthProvider(
+        provider,
+        redirectTo ? { redirectTo } : undefined
+      )
+      if (isAssistantFlow) {
+        logAssistantOAuth(flowId, 'Supabase OAuth launch call completed, waiting for browser navigation')
+      }
       setStatus({ loading: false, error: '', success: 'Redirecting to sign-in…' })
     } catch (err) {
+      if (isAssistantFlow) {
+        logAssistantOAuth(flowId, 'Assistant OAuth launch failed', {
+          provider,
+          error: err.message || 'OAuth sign-in failed',
+        })
+      }
       setStatus({ loading: false, error: err.message || 'OAuth sign-in failed', success: '' })
     }
   }

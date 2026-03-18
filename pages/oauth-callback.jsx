@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { getSafeRedirectPath } from '@/utils/redirects';
@@ -21,7 +21,66 @@ const ASSISTANT_CONTEXT_VALUES = new Set([
   'firefox-oasis-assistant',
 ]);
 
-function isAssistantCallback(urlParams) {
+const ASSISTANT_HANDOFF_TARGETS = new Set(['assistant', 'onboarding']);
+const ASSISTANT_HANDOFF_COOKIE_NAME = 'oasis_assistant_handoff';
+const ASSISTANT_HANDOFF_COOKIE_MAX_AGE_SECONDS = 180;
+const FIREFOX_OAUTH_MARKER_COOKIE_NAME = 'oasis_firefox_oauth_target';
+
+function readOasisOAuthMarker() {
+  if (typeof document === 'undefined') {
+    return null;
+  }
+
+  const marker = document.cookie
+    .split('; ')
+    .find((entry) => entry.startsWith(`${FIREFOX_OAUTH_MARKER_COOKIE_NAME}=`));
+
+  if (!marker) {
+    return null;
+  }
+
+  try {
+    return JSON.parse(decodeURIComponent(marker.split('=').slice(1).join('=')));
+  } catch (error) {
+    console.error('Failed to parse Oasis OAuth marker cookie:', error);
+  }
+
+  return null;
+}
+
+function clearOasisOAuthMarker() {
+  if (typeof document === 'undefined') {
+    return
+  }
+
+  document.cookie = `${FIREFOX_OAUTH_MARKER_COOKIE_NAME}=; Max-Age=0; Path=/; SameSite=Lax`
+}
+
+function getOAuthFlowId(urlParams, hashParams, markerPayload) {
+  return (
+    urlParams.get('flow_id') ||
+    hashParams.get('flow_id') ||
+    markerPayload?.flowId ||
+    urlParams.get('state') ||
+    hashParams.get('state') ||
+    'unknown'
+  );
+}
+
+function logAssistantOAuth(flowId, message, details) {
+  const prefix = flowId ? `[Oasis OAuth][${flowId}]` : '[Oasis OAuth]';
+  if (details !== undefined) {
+    console.log(`${prefix} ${message}`, details);
+    return;
+  }
+  console.log(`${prefix} ${message}`);
+}
+
+function isAssistantCallback(urlParams, markerPayload) {
+  if (markerPayload?.target && ASSISTANT_HANDOFF_TARGETS.has(markerPayload.target)) {
+    return true;
+  }
+
   const assistantFlag = urlParams.get('assistant') || urlParams.get('assistant_oauth');
   if (assistantFlag && ASSISTANT_TRUE_VALUES.has(assistantFlag.toLowerCase())) {
     return true;
@@ -37,6 +96,19 @@ function isAssistantCallback(urlParams) {
   return Boolean(contextValue && ASSISTANT_CONTEXT_VALUES.has(contextValue.toLowerCase()));
 }
 
+function getAssistantHandoffTarget(urlParams, markerPayload) {
+  const handoffTarget = urlParams.get('handoff_target')?.toLowerCase();
+  if (handoffTarget && ASSISTANT_HANDOFF_TARGETS.has(handoffTarget)) {
+    return handoffTarget;
+  }
+
+  if (markerPayload?.target && ASSISTANT_HANDOFF_TARGETS.has(markerPayload.target)) {
+    return markerPayload.target;
+  }
+
+  return 'assistant';
+}
+
 function getAssistantMarkerEntries(urlParams) {
   const preservedEntries = [];
 
@@ -48,13 +120,16 @@ function getAssistantMarkerEntries(urlParams) {
       lowerKey === 'assistant_oauth' ||
       lowerKey === 'auth_context' ||
       lowerKey === 'handoff' ||
+      lowerKey === 'handoff_target' ||
       lowerKey === 'flow' ||
+      lowerKey === 'flow_id' ||
       lowerKey === 'source' ||
       lowerKey === 'origin';
 
     const isAssistantValue =
       ASSISTANT_TRUE_VALUES.has(lowerValue) ||
-      ASSISTANT_CONTEXT_VALUES.has(lowerValue);
+      ASSISTANT_CONTEXT_VALUES.has(lowerValue) ||
+      ASSISTANT_HANDOFF_TARGETS.has(lowerValue);
 
     if (isAssistantKey && isAssistantValue) {
       preservedEntries.push([key, value]);
@@ -82,26 +157,119 @@ export default function OAuthCallback() {
   const [details, setDetails] = useState('');
   const [showRetry, setShowRetry] = useState(false);
   const [assistantMode, setAssistantMode] = useState(false);
-  const [handoffPayload, setHandoffPayload] = useState('');
-  const [copyStatus, setCopyStatus] = useState('');
+  const hasProcessedRef = useRef(false);
 
-  const persistAuthError = useCallback((error, description) => {
+  const persistAuthError = useCallback((error, description, flowId = null) => {
     if (typeof window === 'undefined') return;
 
     localStorage.setItem('oasis_auth_error', JSON.stringify({
       error,
       description,
+      flowId,
       timestamp: Date.now(),
       source: 'kahana-callback'
     }));
   }, []);
 
+  const persistAssistantHandoffCookie = useCallback((payload) => {
+    if (typeof document === 'undefined') {
+      return false;
+    }
+
+    try {
+      const value = encodeURIComponent(JSON.stringify(payload));
+      const secureAttr = window.location.protocol === 'https:' ? '; Secure' : '';
+      document.cookie =
+        `${ASSISTANT_HANDOFF_COOKIE_NAME}=${value}; ` +
+        `Max-Age=${ASSISTANT_HANDOFF_COOKIE_MAX_AGE_SECONDS}; ` +
+        `Path=/; SameSite=Lax${secureAttr}`;
+      return true;
+    } catch (error) {
+      console.error('Failed to persist assistant handoff cookie:', error);
+    }
+
+    return false;
+  }, []);
+
+  const startAssistantHandoff = useCallback(({
+    target,
+    callbackUrl,
+    code,
+    accessToken,
+    refreshToken,
+    state,
+    flowId,
+    error,
+    errorDescription,
+    success,
+  }) => {
+    let sanitizedUrl
+    try {
+      if (callbackUrl) {
+        const parsed = new URL(
+          callbackUrl,
+          typeof window !== 'undefined' ? window.location.origin : undefined
+        )
+        sanitizedUrl = `${parsed.origin}${parsed.pathname}`
+      }
+    } catch (error) {}
+
+    const handoffPayload = {
+      timestamp: Date.now(),
+      target,
+      flow_id: flowId,
+      ...(sanitizedUrl ? { url: sanitizedUrl } : {}),
+    };
+
+    if (code) handoffPayload.code = code;
+    if (accessToken) handoffPayload.access_token = accessToken;
+    if (refreshToken) handoffPayload.refresh_token = refreshToken;
+    if (state) handoffPayload.state = state;
+    if (error) handoffPayload.error = error;
+    if (errorDescription) handoffPayload.description = errorDescription;
+
+    const handoffStored = persistAssistantHandoffCookie(handoffPayload);
+    logAssistantOAuth(flowId, 'Prepared Oasis handoff payload', {
+      target,
+      success,
+      stored: handoffStored,
+      hasCode: !!code,
+      hasAccessToken: !!accessToken,
+      hasRefreshToken: !!refreshToken,
+      error: error || null,
+    });
+
+    setAssistantMode(true);
+    setShowRetry(false);
+    setStatus(success ? 'success' : 'error');
+    setStatusMessage(
+      success
+        ? target === 'onboarding'
+          ? 'Onboarding Sign-In Complete'
+          : 'Assistant Sign-In Complete'
+        : 'Assistant Sign-In Failed'
+    );
+    setDetails(
+      success
+        ? handoffStored
+          ? 'OAuth succeeded. Oasis should finish sign-in automatically.\nYou can return to Oasis now.'
+          : 'OAuth succeeded, but Oasis handoff storage could not be prepared.\nPlease return to Oasis and retry sign-in.'
+        : handoffStored
+          ? 'OAuth could not be completed.\nReturn to Oasis to see the error and retry.'
+          : 'OAuth could not be completed and Oasis handoff storage failed.\nPlease return to Oasis and retry sign-in.'
+    );
+  }, [persistAssistantHandoffCookie]);
+
   const processOAuthCallback = useCallback(async () => {
     const urlParams = new URLSearchParams(window.location.search);
-    const assistantCallback = isAssistantCallback(urlParams);
+    const markerPayload = readOasisOAuthMarker();
+    const assistantCallback = isAssistantCallback(urlParams, markerPayload);
+    const handoffTarget = getAssistantHandoffTarget(urlParams, markerPayload);
+    clearOasisOAuthMarker();
     const callbackUrl = window.location.href;
     const hash = window.location.hash.substring(1);
     const hashParams = new URLSearchParams(hash);
+    const flowId = getOAuthFlowId(urlParams, hashParams, markerPayload);
 
     setAssistantMode(assistantCallback);
 
@@ -119,7 +287,10 @@ export default function OAuthCallback() {
     const code = urlParams.get('code') || hashParams.get('code');
     const state = urlParams.get('state') || hashParams.get('state');
     
-    console.log('OAuth callback received:', {
+    logAssistantOAuth(flowId, 'OAuth callback received', {
+      assistantCallback,
+      handoffTarget,
+      markerPayload,
       error, errorDescription, accessToken: accessToken ? 'present' : 'missing', refreshToken: refreshToken ? 'present' : 'missing', code, state,
       hashLength: hash.length,
       url: window.location.href
@@ -127,18 +298,29 @@ export default function OAuthCallback() {
     
     if (error) {
       // Handle OAuth error
-      setStatus('error');
-      setStatusMessage(assistantCallback ? 'Assistant Sign-In Failed' : 'Authentication Failed');
-      setDetails(
-        assistantCallback
-          ? `OAuth could not be completed for Oasis Assistant.\nStart the sign-in flow again from the assistant.\nError: ${error}${errorDescription ? `\nDescription: ${errorDescription}` : ''}`
-          : `Error: ${error}${errorDescription ? `\nDescription: ${errorDescription}` : ''}`
-      );
-      setShowRetry(!assistantCallback);
-      
       // Store error in localStorage for the assistant to pick up
-      persistAuthError(error, errorDescription);
-      
+      persistAuthError(error, errorDescription, flowId);
+
+      if (assistantCallback) {
+        startAssistantHandoff({
+          target: handoffTarget,
+          callbackUrl,
+          code,
+          accessToken,
+          refreshToken,
+          state,
+          flowId,
+          error,
+          errorDescription,
+          success: false,
+        });
+        return;
+      }
+
+      setStatus('error');
+      setStatusMessage('Authentication Failed');
+      setDetails(`Error: ${error}${errorDescription ? `\nDescription: ${errorDescription}` : ''}`);
+      setShowRetry(true);
     } else if (code || accessToken || hash.length === 0) {
       // Success - we have authorization code, tokens, or hash was already processed (empty hash)
       try {
@@ -146,7 +328,7 @@ export default function OAuthCallback() {
         try {
           supabase = createClient();
         } catch (clientError) {
-          console.error('Failed to create Supabase client:', clientError);
+          console.error(`[Oasis OAuth][${flowId}] Failed to create Supabase client:`, clientError);
           throw new Error(`Failed to initialize Supabase client. Please check NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY are set correctly in production.`);
         }
         
@@ -154,7 +336,7 @@ export default function OAuthCallback() {
         
         // If hash is empty (just #), Supabase has already processed it - just get the session
         if (hash.length === 0 || (!accessToken && !refreshToken)) {
-          console.log('Hash is empty or no tokens in hash - Supabase should have already processed it');
+          logAssistantOAuth(flowId, 'Waiting for Supabase to finish processing callback state');
           // Wait a moment for Supabase to finish processing
           await new Promise(resolve => setTimeout(resolve, 300));
         }
@@ -162,7 +344,7 @@ export default function OAuthCallback() {
         // If we have tokens in the hash, explicitly set the session
         if (accessToken && refreshToken) {
           try {
-            console.log('Setting session explicitly with tokens from hash');
+            logAssistantOAuth(flowId, 'Setting session explicitly from hash tokens');
             // Set the session using the tokens from the hash
             const { data: sessionData, error: sessionError } = await supabase.auth.setSession({
               access_token: accessToken,
@@ -170,17 +352,17 @@ export default function OAuthCallback() {
             });
             
             if (sessionError) {
-              console.error('Error setting session:', sessionError);
+              console.error(`[Oasis OAuth][${flowId}] Error setting session:`, sessionError);
               if (sessionError.message?.includes('Invalid API key') || sessionError.message?.includes('JWT')) {
                 throw new Error(`Supabase API key is invalid or incorrect. Error: ${sessionError.message}. Please verify NEXT_PUBLIC_SUPABASE_ANON_KEY is set correctly in Heroku config vars.`);
               }
               // Don't throw for other errors - fall through to try getSession
             } else if (sessionData?.session) {
               session = sessionData.session;
-              console.log('Session set successfully from hash tokens');
+              logAssistantOAuth(flowId, 'Session set successfully from hash tokens');
             }
           } catch (setSessionError) {
-            console.error('Error in setSession:', setSessionError);
+            console.error(`[Oasis OAuth][${flowId}] Error in setSession:`, setSessionError);
             // If it's an API key error, throw it so user sees the real issue
             if (setSessionError.message?.includes('Invalid API key') || setSessionError.message?.includes('API key')) {
               throw setSessionError;
@@ -191,27 +373,27 @@ export default function OAuthCallback() {
         
         // Try getting the session (Supabase might have parsed hash automatically or hash was already processed)
         if (!session) {
-          console.log('Getting session from Supabase...');
+          logAssistantOAuth(flowId, 'Reading session from Supabase after callback');
           const { data: sessionData, error: sessionError } = await supabase.auth.getSession();
           if (sessionError) {
-            console.error('Error getting session:', sessionError);
+            console.error(`[Oasis OAuth][${flowId}] Error getting session:`, sessionError);
           } else if (sessionData?.session) {
             session = sessionData.session;
-            console.log('Session retrieved successfully');
+            logAssistantOAuth(flowId, 'Session retrieved successfully');
           } else {
-            console.log('No session found in getSession');
+            logAssistantOAuth(flowId, 'No session found in getSession');
           }
         }
         
-        console.log('Getting user directly...');
+        logAssistantOAuth(flowId, 'Loading authenticated user from Supabase');
         const { data: userData, error: userError } = await supabase.auth.getUser();
         if (userError) {
-          console.error('Error getting user:', userError);
+          console.error(`[Oasis OAuth][${flowId}] Error getting user:`, userError);
           throw new Error(`Auth session missing! ${userError.message || 'Failed to get user'}`);
         }
         const user = userData?.user;
         if (user) {
-          console.log('User retrieved successfully');
+          logAssistantOAuth(flowId, 'User retrieved successfully', { userId: user.id });
         }
         
         if (!user) {
@@ -227,19 +409,30 @@ export default function OAuthCallback() {
 
         if (!email) {
           const missingEmailMessage = 'Your account provider did not return an email address. Please try another sign-in method or contact support.';
-          persistAuthError('missing_email', missingEmailMessage);
+          persistAuthError('missing_email', missingEmailMessage, flowId);
+          if (assistantCallback) {
+            startAssistantHandoff({
+              target: handoffTarget,
+              callbackUrl,
+              code,
+              accessToken,
+              refreshToken,
+              state,
+              flowId,
+              error: 'missing_email',
+              errorDescription: missingEmailMessage,
+              success: false,
+            });
+            return;
+          }
           setStatus('error');
-          setStatusMessage(assistantCallback ? 'Assistant Sign-In Failed' : 'Authentication Error');
-          setDetails(
-            assistantCallback
-              ? `OAuth could not be completed for Oasis Assistant.\nStart the sign-in flow again from the assistant.\nError: ${missingEmailMessage}`
-              : missingEmailMessage
-          );
-          setShowRetry(!assistantCallback);
+          setStatusMessage('Authentication Error');
+          setDetails(missingEmailMessage);
+          setShowRetry(true);
           return;
         }
 
-        console.log('User authenticated:', email);
+        logAssistantOAuth(flowId, 'User authenticated', { email, userId: user.id });
 
         // Create user profile via API
         try {
@@ -260,13 +453,13 @@ export default function OAuthCallback() {
 
           if (!res.ok) {
             const body = await res.json().catch(() => ({}));
-            console.error('Failed to create profile:', body);
+            console.error(`[Oasis OAuth][${flowId}] Failed to create profile:`, body);
             // Don't throw - profile might already exist
           } else {
-            console.log('Profile created/updated successfully');
+            logAssistantOAuth(flowId, 'Profile created or updated successfully');
           }
         } catch (profileError) {
-          console.error('Error calling create-profile API:', profileError);
+          console.error(`[Oasis OAuth][${flowId}] Error calling create-profile API:`, profileError);
           // Don't throw - profile creation is not critical for OAuth flow
         }
 
@@ -276,8 +469,16 @@ export default function OAuthCallback() {
         if (assistantCallback) {
           sessionStorage.removeItem('postAuthRedirect');
           sessionStorage.removeItem('pendingStripeCheckout');
-          setHandoffPayload(callbackUrl);
-          setDetails('OAuth succeeded. Copy the callback payload below, then return to Oasis Assistant to finish sign-in.\nThis payload is sensitive and grants access to the signed-in account. Do not share or store it anywhere else.');
+          startAssistantHandoff({
+            target: handoffTarget,
+            callbackUrl,
+            code,
+            accessToken,
+            refreshToken,
+            state,
+            flowId,
+            success: true,
+          });
           return;
         }
 
@@ -307,64 +508,63 @@ export default function OAuthCallback() {
         }
         
         // No pending checkout - redirect back to the default auth success path
-        setDetails('Redirecting...');
+        setDetails('Redirecting to installations...');
         setTimeout(() => {
-          router.push('/oasis-auth?mode=login&plan=free');
+          window.location.href = '/installations';
         }, 1500);
         
       } catch (err) {
-        console.error('Error processing OAuth callback:', err);
-        persistAuthError('callback_error', err.message);
+        console.error(`[Oasis OAuth][${flowId}] Error processing OAuth callback:`, err);
+        persistAuthError('callback_error', err.message, flowId);
+        if (assistantCallback) {
+          startAssistantHandoff({
+            target: handoffTarget,
+            callbackUrl,
+            code,
+            accessToken,
+            refreshToken,
+            state,
+            flowId,
+            error: 'callback_error',
+            errorDescription: err.message,
+            success: false,
+          });
+          return;
+        }
         setStatus('error');
-        setStatusMessage(assistantCallback ? 'Assistant Sign-In Failed' : 'Authentication Error');
-        setDetails(
-          assistantCallback
-            ? `OAuth could not be completed for Oasis Assistant.\nStart the sign-in flow again from the assistant.\nError: ${err.message}`
-            : `An error occurred: ${err.message}`
-        );
-        setShowRetry(!assistantCallback);
+        setStatusMessage('Authentication Error');
+        setDetails(`An error occurred: ${err.message}`);
+        setShowRetry(true);
       }
       
     } else {
       // No auth parameters found
+      if (assistantCallback) {
+        startAssistantHandoff({
+          target: handoffTarget,
+          callbackUrl,
+          flowId,
+          error: 'missing_oauth_payload',
+          errorDescription: 'No OAuth payload was found on this callback.',
+          success: false,
+        });
+        return;
+      }
       setStatus('info');
-      setStatusMessage(assistantCallback ? 'Assistant Sign-In Incomplete' : 'No Authentication Data');
-      setDetails(
-        assistantCallback
-          ? 'No OAuth payload was found on this callback.\nStart the sign-in flow again from Oasis Assistant.'
-          : 'This page is used for OAuth callbacks.\nIf you reached this page by mistake, please return to the home page.'
-      );
-      setShowRetry(!assistantCallback);
+      setStatusMessage('No Authentication Data');
+      setDetails('This page is used for OAuth callbacks.\nIf you reached this page by mistake, please return to the home page.');
+      setShowRetry(true);
     }
-  }, [persistAuthError, router]);
+  }, [persistAuthError, startAssistantHandoff]);
 
   useEffect(() => {
+    if (hasProcessedRef.current) {
+      return;
+    }
+
+    hasProcessedRef.current = true;
     processOAuthCallback();
   }, [processOAuthCallback]);
-
-  const copyPayload = async () => {
-    if (!handoffPayload) return;
-
-    try {
-      if (navigator?.clipboard?.writeText) {
-        await navigator.clipboard.writeText(handoffPayload);
-      } else {
-        const input = document.createElement('textarea');
-        input.value = handoffPayload;
-        input.setAttribute('readonly', 'true');
-        input.style.position = 'absolute';
-        input.style.left = '-9999px';
-        document.body.appendChild(input);
-        input.select();
-        document.execCommand('copy');
-        document.body.removeChild(input);
-      }
-      setCopyStatus('Copied');
-    } catch (copyError) {
-      console.error('Failed to copy handoff payload:', copyError);
-      setCopyStatus('Copy failed');
-    }
-  };
 
   const retryAuth = () => {
     // Clear any existing auth data
@@ -402,28 +602,6 @@ export default function OAuthCallback() {
                   {index < details.split('\n').length - 1 && <br />}
                 </div>
               ))}
-            </div>
-          )}
-          {assistantMode && status === 'success' && handoffPayload && (
-            <div className="handoff-panel">
-              <label className="payload-label" htmlFor="assistant-handoff-payload">
-                Callback payload
-              </label>
-              <textarea
-                id="assistant-handoff-payload"
-                className="payload"
-                value={handoffPayload}
-                readOnly
-                onFocus={(event) => event.target.select()}
-              />
-              <button
-                type="button"
-                className="button"
-                onClick={copyPayload}
-              >
-                Copy Payload
-              </button>
-              {copyStatus && <div className="copy-status">{copyStatus}</div>}
             </div>
           )}
           {showRetry && (
@@ -514,6 +692,13 @@ export default function OAuthCallback() {
           text-align: left;
         }
 
+        .fallback-title {
+          margin-bottom: 0.85rem;
+          font-size: 0.95rem;
+          font-weight: 600;
+          color: #f8fafc;
+        }
+
         .payload-label {
           display: block;
           margin-bottom: 0.5rem;
@@ -541,6 +726,11 @@ export default function OAuthCallback() {
           margin-top: 0.75rem;
           font-size: 0.85rem;
           color: #d1fae5;
+        }
+
+        .secondary-button {
+          background: rgba(255, 255, 255, 0.14);
+          margin-top: 0.85rem;
         }
         
         .button {
