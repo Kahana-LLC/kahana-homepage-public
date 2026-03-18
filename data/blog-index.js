@@ -6,7 +6,7 @@ const blogIndex = [
     category: ["Enterprise & Security"],
     excerpt: "A deep dive into the enterprise browser market in 2026 — who is leading, why Chrome still dominates, and what the rise of purpose-built secure browsers means for IT teams and security leaders.",
     defaultImageQuery: "enterprise browser market leaders security 2026 corporate browser comparison",
-    featuredImage: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&auto=format&fit=crop",
+    featuredImage: "https://talmatic.com/wp-content/uploads/2023/01/browser-market-share.jpg",
     slug: "enterprise-browser-market-leaders-winning-why-2026-oasis-market-take",
     readingTime: 12,
   },
