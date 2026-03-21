@@ -19,6 +19,9 @@
     "fix-failed-blog-images": "node scripts/fix-and-upload-failed-blog-images.js",
     "normalize-blog-em-dashes": "node scripts/normalize-blog-em-dashes.js --write",
     "normalize-blog-em-dashes:dry-run": "node scripts/normalize-blog-em-dashes.js --verbose",
+    "analyze-blog-long-anchors": "node scripts/analyze-blog-long-anchor-text.js --verbose",
+    "analyze-blog-long-anchors:dry-run": "node scripts/analyze-blog-long-anchor-text.js",
+    "fix-blog-long-anchors": "node scripts/analyze-blog-long-anchor-text.js --write",
     "heroku-postbuild": "npm run clean && NODE_OPTIONS='--no-deprecation' next build"
   },
   "dependencies": {
