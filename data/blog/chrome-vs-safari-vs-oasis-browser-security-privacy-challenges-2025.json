@@ -29,7 +29,7 @@
     },
     {
       "type": "paragraph",
-      "text": "<p>The sophistication of these attacks has reached alarming levels. <a href='https://www.kaspersky.com/about/press-releases/kaspersky-discovers-sophisticated-chrome-zero-day-exploit-used-in-active-attacks'>Kaspersky's discovery of CVE-2025-2783</a> revealed a sandbox escape vulnerability that allowed attackers to bypass Chrome's security protections without performing obviously malicious operations. This represents a fundamental flaw in Chrome's security architecture—one that affects millions of enterprise users daily.</p>"
+      "text": "<p>The sophistication of these attacks has reached alarming levels. <a href='https://www.kaspersky.com/about/press-releases/kaspersky-discovers-sophisticated-chrome-zero-day-exploit-used-in-active-attacks'>Kaspersky's discovery of CVE-2025-2783</a> revealed a sandbox escape vulnerability that allowed attackers to bypass Chrome's security protections without performing obviously malicious operations. This represents a fundamental flaw in Chrome's security architecture, one that affects millions of enterprise users daily.</p>"
     },
     {
       "type": "heading",
@@ -124,7 +124,7 @@
     },
     {
       "type": "paragraph",
-      "text": "<p>The browser security crisis of 2025 demands a fundamental rethinking of how organizations approach web security. Consumer browsers—whether Chrome, Safari, or others—were designed for individual users, not enterprise security requirements. Their vulnerabilities are not bugs but features of their consumer-focused architecture.</p>"
+      "text": "<p>The browser security crisis of 2025 demands a fundamental rethinking of how organizations approach web security. Consumer browsers, whether Chrome, Safari, or others, were designed for individual users, not enterprise security requirements. Their vulnerabilities are not bugs but features of their consumer-focused architecture.</p>"
     },
     {
       "type": "paragraph",
@@ -136,7 +136,7 @@
     },
     {
       "type": "paragraph",
-      "text": "<p>The browser security landscape of 2025 marks the end of an era where organizations could rely on consumer browsers for enterprise security. Chrome's zero-day epidemic, Safari's privacy failures, and the rise of sophisticated browser-based attacks have created an environment where enterprise-specific solutions are not just preferable—they're essential.</p>"
+      "text": "<p>The browser security landscape of 2025 marks the end of an era where organizations could rely on consumer browsers for enterprise security. Chrome's zero-day epidemic, Safari's privacy failures, and the rise of sophisticated browser-based attacks have created an environment where enterprise-specific solutions are not just preferable, they're essential.</p>"
     },
     {
       "type": "paragraph",
