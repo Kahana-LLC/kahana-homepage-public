@@ -11,6 +11,17 @@ const blogIndex = [
     readingTime: 12,
   },
   {
+    title: "Managed browser policy enforcement: what IT can (and can't) control (Oasis IT lens)",
+    date: "2026-03-20T00:00:00.000Z",
+    authors: ["Pallavi M", "Ankit Sai Allam"],
+    category: ["Browser & Technology"],
+    excerpt: "Complete guide to managed browser policy enforcement: what IT teams can and can't control. Learn about policy enforcement blind spots, Zero Trust challenges, and enterprise browser limitations.",
+    defaultImageQuery: "managed browser policy enforcement IT control challenges",
+    featuredImage: "https://tse1.mm.bing.net/th/id/OIP.lpQzII8l0rnW4vwp0FE6xwHaDr?pid=Api&P=0&h=180",
+    slug: "managed-browser-policy-enforcement-what-it-can-cannot-control-oasis-it-lens-2026",
+    readingTime: 14,
+  },
+  {
     title: "Best Enterprise Browsers (2026 Buyer's Guide): What Actually Matters — Oasis Buyer Guide",
     date: "2026-03-17T00:00:00.000Z",
     authors: ["Pallavi M", "Ankit Sai Allam"],
