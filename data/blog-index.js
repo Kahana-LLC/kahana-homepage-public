@@ -1,5 +1,16 @@
 const blogIndex = [
   {
+    title: "Browser-based DLP explained: copy/paste, downloads, screenshots, printing (Oasis security lens)",
+    date: "2026-03-21T00:00:00.000Z",
+    authors: ["Pallavi M", "Ankit Sai Allam"],
+    category: ["Browser & Technology"],
+    excerpt: "Complete guide to browser-based DLP: how to control copy/paste, downloads, screenshots, and printing. Learn about enterprise data protection challenges and modern DLP solutions.",
+    defaultImageQuery: "browser based DLP copy paste downloads screenshots printing security",
+    featuredImage: "https://tse1.mm.bing.net/th/id/OIP.Vb4ZG9HelyMaRXOv5T2QxwHaD3?pid=Api&P=0&h=180",
+    slug: "browser-based-dlp-explained-copy-paste-downloads-screenshots-printing-oasis-security-lens-2026",
+    readingTime: 15,
+  },
+  {
     title: "SSO in the browser: Okta concepts, session controls, and common failure modes — Oasis troubleshooting lens",
     date: "2026-03-19T00:00:00.000Z",
     authors: ["Pallavi M", "Ankit Sai Allam"],
