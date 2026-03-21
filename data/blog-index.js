@@ -1,5 +1,16 @@
 const blogIndex = [
   {
+    title: "SSO in the browser: Okta concepts, session controls, and common failure modes — Oasis troubleshooting lens",
+    date: "2026-03-19T00:00:00.000Z",
+    authors: ["Pallavi M", "Ankit Sai Allam"],
+    category: ["Browser & Technology"],
+    excerpt: "Complete guide to Okta SSO in browsers: concepts, session controls, and troubleshooting common failure modes. Learn about Device-Bound SSO, third-party cookie issues, and security risks.",
+    defaultImageQuery: "Okta SSO browser troubleshooting session controls",
+    featuredImage: "https://sp-ao.shortpixel.ai/client/to_webp,q_lossless,ret_img,w_1024,h_663/http://blog.scalefusion.com/wp-content/uploads/Enable-SSO-with-Okta-1024x663.png",
+    slug: "sso-browser-okta-concepts-session-controls-common-failure-modes-oasis-troubleshooting-lens-2026",
+    readingTime: 12,
+  },
+  {
     title: "Best Enterprise Browsers (2026 Buyer's Guide): What Actually Matters — Oasis Buyer Guide",
     date: "2026-03-17T00:00:00.000Z",
     authors: ["Pallavi M", "Ankit Sai Allam"],
