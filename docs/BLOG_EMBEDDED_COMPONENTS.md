@@ -52,3 +52,19 @@ Implementation: `components/ThermalMaterialsComparisonTable.jsx`.
 ## `BlogBrowserComparison`
 
 Used in HTML-string posts via `<component name="BlogBrowserComparison" />`. See existing posts for examples.
+
+---
+
+## HTML-string posts: avoid “whole paragraph” links
+
+In `content` HTML, keep `<a href="...">` **short** (source name or a brief phrase). If the entire summary sentence is inside one anchor, the UI looks like a giant clickable block and reads as low-quality / AI-ish.
+
+**Analyze / fix (repo root):**
+
+- `npm run analyze-blog-long-anchors:dry-run` — count matches (default: visible text ≥ 100 chars **or** ≥ 22 words).
+- `npm run analyze-blog-long-anchors` — same with `--verbose` per hit.
+- `npm run fix-blog-long-anchors` — rewrite **safe** cases only: plain-text link bodies become `Plain text (<a>ShortLabel</a>)`. Skips anchors that contain nested links, images, or inline tags like `<strong>` (those need a manual edit).
+
+Flags: `--min-chars=80` `--min-words=15` to tighten or loosen the threshold.
+
+Script: `scripts/analyze-blog-long-anchor-text.js`.
