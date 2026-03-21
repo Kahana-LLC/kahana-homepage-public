@@ -1,7 +1,6 @@
 import React, { useState, useMemo, useRef, useEffect } from 'react';
 import { materialData, filterOptions } from '../data/materialComparisonData';
 
-// Helper: Responsive hook
 function useIsMobile() {
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
@@ -14,7 +13,11 @@ function useIsMobile() {
   return isMobile;
 }
 
-const MaterialComparisonTable = () => {
+/**
+ * Interactive thermal-materials explorer for the AR glasses post.
+ * Expects no headers/rows props — data comes from materialComparisonData.
+ */
+export default function ThermalMaterialsComparisonTable() {
   const [searchTerm, setSearchTerm] = useState('');
   const [filters, setFilters] = useState({
     name: [],
@@ -23,7 +26,7 @@ const MaterialComparisonTable = () => {
     weight: [],
     transparency: [],
     cost: [],
-    applicationArea: []
+    applicationArea: [],
   });
 
   const [isFilterOpen, setIsFilterOpen] = useState(false);
@@ -32,31 +35,29 @@ const MaterialComparisonTable = () => {
 
   const isMobile = useIsMobile();
 
-  // Filter presets
   const filterPresets = {
-    'structural': {
+    structural: {
       name: 'Structural Materials',
-      filters: { type: ['Structural Thermal Management'] }
+      filters: { type: ['Structural Thermal Management'] },
     },
     'ultra-thin': {
       name: 'Ultra-Thin Materials',
-      filters: { type: ['Ultra-Thin Thermal Management'] }
+      filters: { type: ['Ultra-Thin Thermal Management'] },
     },
-    'flexible': {
+    flexible: {
       name: 'Flexible Materials',
-      filters: { flexibility: ['Highly flexible'] }
+      filters: { flexibility: ['Highly flexible'] },
     },
-    'transparent': {
+    transparent: {
       name: 'Transparent Materials',
-      filters: { transparency: ['Transparent'] }
+      filters: { transparency: ['Transparent'] },
     },
     'cost-effective': {
       name: 'Cost-Effective',
-      filters: { cost: ['Medium–High'] }
-    }
+      filters: { cost: ['Medium–High'] },
+    },
   };
 
-  // Close filter dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (filterRef.current && !filterRef.current.contains(event.target)) {
@@ -70,10 +71,8 @@ const MaterialComparisonTable = () => {
     };
   }, []);
 
-  // Apply filters to data
   const filteredData = useMemo(() => {
-    return Object.values(materialData).filter(material => {
-      // Enhanced search: match against all fields
+    return Object.values(materialData).filter((material) => {
       if (searchTerm) {
         const term = searchTerm.toLowerCase();
         const searchableFields = [
@@ -87,57 +86,61 @@ const MaterialComparisonTable = () => {
           material.applicationArea,
           material.cost,
           material.uniqueStrength,
-          material.summary
+          material.summary,
         ];
-        const matches = searchableFields.some(field => field && typeof field === 'string' && field.toLowerCase().includes(term));
+        const matches = searchableFields.some(
+          (field) => field && typeof field === 'string' && field.toLowerCase().includes(term)
+        );
         if (!matches) return false;
       }
 
-      // Name filter
       if ((filters.name ?? []).length > 0 && !(filters.name ?? []).includes(material.name)) {
         return false;
       }
-      
-      // Type filter
+
       if ((filters.type ?? []).length > 0 && !(filters.type ?? []).includes(material.type)) {
         return false;
       }
-      
-      // Flexibility filter
-      if ((filters.flexibility ?? []).length > 0 && !(filters.flexibility ?? []).includes(material.flexibility)) {
+
+      if (
+        (filters.flexibility ?? []).length > 0 &&
+        !(filters.flexibility ?? []).includes(material.flexibility)
+      ) {
         return false;
       }
-      
-      // Weight filter
+
       if ((filters.weight ?? []).length > 0 && !(filters.weight ?? []).includes(material.weight)) {
         return false;
       }
-      
-      // Transparency filter
-      if ((filters.transparency ?? []).length > 0 && !(filters.transparency ?? []).includes(material.transparency)) {
+
+      if (
+        (filters.transparency ?? []).length > 0 &&
+        !(filters.transparency ?? []).includes(material.transparency)
+      ) {
         return false;
       }
-      
-      // Cost filter
+
       if ((filters.cost ?? []).length > 0 && !(filters.cost ?? []).includes(material.cost)) {
         return false;
       }
-      
-      // Application Area filter
-      if ((filters.applicationArea ?? []).length > 0 && !(filters.applicationArea ?? []).includes(material.applicationArea)) {
+
+      if (
+        (filters.applicationArea ?? []).length > 0 &&
+        !(filters.applicationArea ?? []).includes(material.applicationArea)
+      ) {
         return false;
       }
-      
+
       return true;
     });
   }, [filters, searchTerm]);
 
   const handleFilterChange = (filterType, value) => {
-    setFilters(prev => ({
+    setFilters((prev) => ({
       ...prev,
       [filterType]: (prev[filterType] || []).includes(value)
-        ? (prev[filterType] || []).filter(item => item !== value)
-        : [...(prev[filterType] || []), value]
+        ? (prev[filterType] || []).filter((item) => item !== value)
+        : [...(prev[filterType] || []), value],
     }));
   };
 
@@ -149,16 +152,16 @@ const MaterialComparisonTable = () => {
       weight: [],
       transparency: [],
       cost: [],
-      applicationArea: []
+      applicationArea: [],
     });
     setSearchTerm('');
   };
 
   const applyPreset = (presetKey) => {
     const preset = filterPresets[presetKey];
-    setFilters(prev => ({
+    setFilters((prev) => ({
       ...prev,
-      ...preset.filters
+      ...preset.filters,
     }));
   };
 
@@ -166,30 +169,44 @@ const MaterialComparisonTable = () => {
     if (filterType === 'search') {
       setSearchTerm('');
     } else {
-      setFilters(prev => ({
+      setFilters((prev) => ({
         ...prev,
-        [filterType]: (prev[filterType] || []).filter(item => item !== value)
+        [filterType]: (prev[filterType] || []).filter((item) => item !== value),
       }));
     }
   };
 
   const exportToCSV = () => {
-    const headers = ['Material', 'Type', 'Thermal Conductivity', 'Thickness', 'Flexibility', 'Weight', 'Transparency', 'Application Area', 'Cost', 'Unique Strength', 'Summary'];
+    const csvHeaders = [
+      'Material',
+      'Type',
+      'Thermal Conductivity',
+      'Thickness',
+      'Flexibility',
+      'Weight',
+      'Transparency',
+      'Application Area',
+      'Cost',
+      'Unique Strength',
+      'Summary',
+    ];
     const csvContent = [
-      headers.join(','),
-      ...filteredData.map(material => [
-        material.name,
-        material.type,
-        material.thermalConductivity,
-        material.thickness,
-        material.flexibility,
-        material.weight,
-        material.transparency,
-        material.applicationArea,
-        material.cost,
-        material.uniqueStrength,
-        material.summary
-      ].join(','))
+      csvHeaders.join(','),
+      ...filteredData.map((material) =>
+        [
+          material.name,
+          material.type,
+          material.thermalConductivity,
+          material.thickness,
+          material.flexibility,
+          material.weight,
+          material.transparency,
+          material.applicationArea,
+          material.cost,
+          material.uniqueStrength,
+          material.summary,
+        ].join(',')
+      ),
     ].join('\n');
 
     const blob = new Blob([csvContent], { type: 'text/csv' });
@@ -208,7 +225,7 @@ const MaterialComparisonTable = () => {
   const getActiveFilters = () => {
     const activeFilters = [];
     Object.entries(filters).forEach(([type, values]) => {
-      values.forEach(value => {
+      values.forEach((value) => {
         activeFilters.push({ type, value });
       });
     });
@@ -219,7 +236,7 @@ const MaterialComparisonTable = () => {
     <div className="mb-4">
       <h3 className="text-sm font-semibold text-gray-700 mb-2">{title}</h3>
       <div className="space-y-1 max-h-32 overflow-y-auto">
-        {options.map(option => (
+        {options.map((option) => (
           <label key={option} className="flex items-center space-x-2 text-sm">
             <input
               type="checkbox"
@@ -236,11 +253,15 @@ const MaterialComparisonTable = () => {
 
   const renderThermalConductivityCell = (conductivity) => (
     <div className="space-y-1">
-      <span className={`inline-block text-xs px-2 py-1 rounded font-semibold ${
-        conductivity.includes('>1000') ? 'bg-red-100 text-red-800' :
-        conductivity.includes('400–700') ? 'bg-orange-100 text-orange-800' :
-        'bg-gray-100 text-gray-800'
-      }`}>
+      <span
+        className={`inline-block text-xs px-2 py-1 rounded font-semibold ${
+          conductivity.includes('>1000')
+            ? 'bg-red-100 text-red-800'
+            : conductivity.includes('400–700')
+              ? 'bg-orange-100 text-orange-800'
+              : 'bg-gray-100 text-gray-800'
+        }`}
+      >
         {conductivity}
       </span>
     </div>
@@ -248,11 +269,15 @@ const MaterialComparisonTable = () => {
 
   const renderCostCell = (cost) => (
     <div className="space-y-1">
-      <span className={`inline-block text-xs px-2 py-1 rounded font-semibold ${
-        cost === 'High (but decreasing)' ? 'bg-red-100 text-red-800' :
-        cost === 'Medium–High' ? 'bg-yellow-100 text-yellow-800' :
-        'bg-gray-100 text-gray-800'
-      }`}>
+      <span
+        className={`inline-block text-xs px-2 py-1 rounded font-semibold ${
+          cost === 'High (but decreasing)'
+            ? 'bg-red-100 text-red-800'
+            : cost === 'Medium–High'
+              ? 'bg-yellow-100 text-yellow-800'
+              : 'bg-gray-100 text-gray-800'
+        }`}
+      >
         {cost}
       </span>
     </div>
@@ -260,17 +285,20 @@ const MaterialComparisonTable = () => {
 
   const renderFlexibilityCell = (flexibility) => (
     <div className="space-y-1">
-      <span className={`inline-block text-xs px-2 py-1 rounded font-semibold ${
-        flexibility === 'Highly flexible' ? 'bg-green-100 text-green-800' :
-        flexibility === 'Rigid' ? 'bg-blue-100 text-blue-800' :
-        'bg-gray-100 text-gray-800'
-      }`}>
+      <span
+        className={`inline-block text-xs px-2 py-1 rounded font-semibold ${
+          flexibility === 'Highly flexible'
+            ? 'bg-green-100 text-green-800'
+            : flexibility === 'Rigid'
+              ? 'bg-blue-100 text-blue-800'
+              : 'bg-gray-100 text-gray-800'
+        }`}
+      >
         {flexibility}
       </span>
     </div>
   );
 
-  // Card view for mobile
   const renderMobileCards = () => (
     <div className="space-y-4">
       {filteredData.map((material) => (
@@ -319,27 +347,26 @@ const MaterialComparisonTable = () => {
         </div>
       ))}
       {filteredData.length === 0 && (
-        <div className="text-center py-8 text-[#4A5745]">
-          No materials match the current filters
-        </div>
+        <div className="text-center py-8 text-[#4A5745]">No materials match the current filters</div>
       )}
     </div>
   );
 
   return (
     <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-      {/* Header with Actions */}
       <div className="bg-gray-50 px-6 py-4 border-b">
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-xl font-semibold text-gray-900">Material Comparison</h2>
           <div className="flex items-center space-x-2">
             <button
+              type="button"
               onClick={clearAllFilters}
               className="inline-flex items-center px-3 py-1.5 rounded-lg border border-gray-300 bg-white text-gray-700 text-sm font-medium shadow-sm hover:bg-gray-100 hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
             >
               Clear filters
             </button>
             <button
+              type="button"
               onClick={exportToCSV}
               className="inline-flex items-center px-3 py-1.5 rounded-lg border border-blue-600 bg-blue-50 text-blue-700 text-sm font-medium shadow-sm hover:bg-blue-100 hover:border-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
             >
@@ -347,6 +374,7 @@ const MaterialComparisonTable = () => {
             </button>
             <div className="relative" ref={filterRef}>
               <button
+                type="button"
                 onClick={() => setIsFilterOpen(!isFilterOpen)}
                 className={`inline-flex items-center px-4 py-1.5 rounded-lg border text-sm font-medium shadow-sm transition focus:outline-none focus:ring-2 focus:ring-blue-500 space-x-2 ${
                   getActiveFilterCount() > 0
@@ -355,7 +383,12 @@ const MaterialComparisonTable = () => {
                 }`}
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.207A1 1 0 013 6.5V4z" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.207A1 1 0 013 6.5V4z"
+                  />
                 </svg>
                 <span>Filters</span>
                 {getActiveFilterCount() > 0 && (
@@ -363,18 +396,23 @@ const MaterialComparisonTable = () => {
                     {getActiveFilterCount()}
                   </span>
                 )}
-                <svg className={`w-4 h-4 transition-transform ${isFilterOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg
+                  className={`w-4 h-4 transition-transform ${isFilterOpen ? 'rotate-180' : ''}`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
 
-              {/* Filter Dropdown */}
               {isFilterOpen && (
                 <div className="absolute right-0 mt-2 w-80 bg-white rounded-lg shadow-xl border border-gray-200 z-50 max-h-96 overflow-y-auto">
                   <div className="p-4">
                     <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4 gap-2">
                       <h3 className="text-lg font-semibold text-gray-900">Filters</h3>
                       <button
+                        type="button"
                         onClick={() => setIsFilterOpen(false)}
                         className="text-[#4A5745] hover:text-gray-600"
                       >
@@ -383,7 +421,7 @@ const MaterialComparisonTable = () => {
                         </svg>
                       </button>
                     </div>
-                    
+
                     {renderFilterSection('Material', 'name', filterOptions.name)}
                     {renderFilterSection('Type', 'type', filterOptions.type)}
                     {renderFilterSection('Flexibility', 'flexibility', filterOptions.flexibility)}
@@ -398,11 +436,11 @@ const MaterialComparisonTable = () => {
           </div>
         </div>
 
-        {/* Filter Presets */}
         <div className="flex flex-wrap gap-2 mt-3">
           {Object.entries(filterPresets).map(([key, preset]) => (
             <button
               key={key}
+              type="button"
               onClick={() => applyPreset(key)}
               className="px-3 py-1 text-xs font-medium bg-gray-100 text-gray-700 rounded-full hover:bg-gray-200 transition-colors"
             >
@@ -411,7 +449,6 @@ const MaterialComparisonTable = () => {
           ))}
         </div>
 
-        {/* Active Filter Chips */}
         {getActiveFilters().length > 0 && (
           <div className="flex flex-wrap gap-2 mt-3">
             {getActiveFilters().map((filter, index) => (
@@ -421,6 +458,7 @@ const MaterialComparisonTable = () => {
               >
                 {filter.value}
                 <button
+                  type="button"
                   onClick={() => removeFilter(filter.type, filter.value)}
                   className="ml-1 text-blue-600 hover:text-blue-800"
                 >
@@ -434,47 +472,89 @@ const MaterialComparisonTable = () => {
         )}
       </div>
 
-      {/* Table or Card View */}
       {isMobile ? (
         renderMobileCards()
       ) : (
-        // Table Container with Fixed Height
         <div className="relative overflow-x-auto overflow-y-auto max-h-96 border-b border-gray-200">
           <table className="w-full">
             <thead className="bg-gray-50 sticky top-0 z-10">
               <tr>
-                <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-[#4A5745] uppercase tracking-wider bg-gray-50 border-r border-gray-200 sticky left-0 z-20 min-w-[160px] whitespace-normal break-words">Material</th>
-                <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-[#4A5745] uppercase tracking-wider bg-white border-r border-gray-200 min-w-[140px] whitespace-normal break-words">Type</th>
-                <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-[#4A5745] uppercase tracking-wider bg-gray-50 border-r border-gray-200 min-w-[120px] whitespace-normal break-words">Thermal Conductivity</th>
-                <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-[#4A5745] uppercase tracking-wider bg-white border-r border-gray-200 min-w-[120px] whitespace-normal break-words">Thickness</th>
-                <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-[#4A5745] uppercase tracking-wider bg-gray-50 border-r border-gray-200 min-w-[100px] whitespace-normal break-words">Flexibility</th>
-                <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-[#4A5745] uppercase tracking-wider bg-white border-r border-gray-200 min-w-[80px] whitespace-normal break-words">Weight</th>
-                <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-[#4A5745] uppercase tracking-wider bg-gray-50 border-r border-gray-200 min-w-[100px] whitespace-normal break-words">Transparency</th>
-                <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-[#4A5745] uppercase tracking-wider bg-white border-r border-gray-200 min-w-[140px] whitespace-normal break-words">Application Area</th>
-                <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-[#4A5745] uppercase tracking-wider bg-gray-50 border-r border-gray-200 min-w-[100px] whitespace-normal break-words">Cost</th>
-                <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-[#4A5745] uppercase tracking-wider bg-white border-r border-gray-200 min-w-[160px] whitespace-normal break-words">Unique Strength</th>
-                <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-[#4A5745] uppercase tracking-wider bg-gray-50 min-w-[160px] whitespace-normal break-words">Summary</th>
+                <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-[#4A5745] uppercase tracking-wider bg-gray-50 border-r border-gray-200 sticky left-0 z-20 min-w-[160px] whitespace-normal break-words">
+                  Material
+                </th>
+                <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-[#4A5745] uppercase tracking-wider bg-white border-r border-gray-200 min-w-[140px] whitespace-normal break-words">
+                  Type
+                </th>
+                <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-[#4A5745] uppercase tracking-wider bg-gray-50 border-r border-gray-200 min-w-[120px] whitespace-normal break-words">
+                  Thermal Conductivity
+                </th>
+                <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-[#4A5745] uppercase tracking-wider bg-white border-r border-gray-200 min-w-[120px] whitespace-normal break-words">
+                  Thickness
+                </th>
+                <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-[#4A5745] uppercase tracking-wider bg-gray-50 border-r border-gray-200 min-w-[100px] whitespace-normal break-words">
+                  Flexibility
+                </th>
+                <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-[#4A5745] uppercase tracking-wider bg-white border-r border-gray-200 min-w-[80px] whitespace-normal break-words">
+                  Weight
+                </th>
+                <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-[#4A5745] uppercase tracking-wider bg-gray-50 border-r border-gray-200 min-w-[100px] whitespace-normal break-words">
+                  Transparency
+                </th>
+                <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-[#4A5745] uppercase tracking-wider bg-white border-r border-gray-200 min-w-[140px] whitespace-normal break-words">
+                  Application Area
+                </th>
+                <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-[#4A5745] uppercase tracking-wider bg-gray-50 border-r border-gray-200 min-w-[100px] whitespace-normal break-words">
+                  Cost
+                </th>
+                <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-[#4A5745] uppercase tracking-wider bg-white border-r border-gray-200 min-w-[160px] whitespace-normal break-words">
+                  Unique Strength
+                </th>
+                <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-[#4A5745] uppercase tracking-wider bg-gray-50 min-w-[160px] whitespace-normal break-words">
+                  Summary
+                </th>
               </tr>
             </thead>
             <tbody className="bg-white divide-y divide-gray-200">
-              {filteredData.map((material, index) => (
+              {filteredData.map((material) => (
                 <tr
                   key={material.name}
                   className={`transition-colors ${hoveredRow === material.name ? 'bg-blue-50' : ''}`}
                   onMouseEnter={() => setHoveredRow(material.name)}
                   onMouseLeave={() => setHoveredRow(null)}
                 >
-                  <td className="px-2 sm:px-4 py-2 sm:py-4 whitespace-normal break-words align-top bg-gray-50 border-r border-gray-200 sticky left-0 z-20 min-w-[160px] font-semibold">{material.name}</td>
-                  <td className="px-2 sm:px-4 py-2 sm:py-4 whitespace-normal break-words align-top bg-white border-r border-gray-200 min-w-[140px]">{material.type}</td>
-                  <td className="px-2 sm:px-4 py-2 sm:py-4 whitespace-normal break-words align-top bg-gray-50 border-r border-gray-200 min-w-[120px]">{renderThermalConductivityCell(material.thermalConductivity)}</td>
-                  <td className="px-2 sm:px-4 py-2 sm:py-4 whitespace-normal break-words align-top bg-white border-r border-gray-200 min-w-[120px]">{material.thickness}</td>
-                  <td className="px-2 sm:px-4 py-2 sm:py-4 whitespace-normal break-words align-top bg-gray-50 border-r border-gray-200 min-w-[100px]">{renderFlexibilityCell(material.flexibility)}</td>
-                  <td className="px-2 sm:px-4 py-2 sm:py-4 whitespace-normal break-words align-top bg-white border-r border-gray-200 min-w-[80px]">{material.weight}</td>
-                  <td className="px-2 sm:px-4 py-2 sm:py-4 whitespace-normal break-words align-top bg-gray-50 border-r border-gray-200 min-w-[100px]">{material.transparency}</td>
-                  <td className="px-2 sm:px-4 py-2 sm:py-4 whitespace-normal break-words align-top bg-white border-r border-gray-200 min-w-[140px]">{material.applicationArea}</td>
-                  <td className="px-2 sm:px-4 py-2 sm:py-4 whitespace-normal break-words align-top bg-gray-50 border-r border-gray-200 min-w-[100px]">{renderCostCell(material.cost)}</td>
-                  <td className="px-2 sm:px-4 py-2 sm:py-4 whitespace-normal break-words align-top bg-white border-r border-gray-200 min-w-[160px]">{material.uniqueStrength}</td>
-                  <td className="px-2 sm:px-4 py-2 sm:py-4 whitespace-normal break-words align-top bg-gray-50 min-w-[160px]">{material.summary}</td>
+                  <td className="px-2 sm:px-4 py-2 sm:py-4 whitespace-normal break-words align-top bg-gray-50 border-r border-gray-200 sticky left-0 z-20 min-w-[160px] font-semibold">
+                    {material.name}
+                  </td>
+                  <td className="px-2 sm:px-4 py-2 sm:py-4 whitespace-normal break-words align-top bg-white border-r border-gray-200 min-w-[140px]">
+                    {material.type}
+                  </td>
+                  <td className="px-2 sm:px-4 py-2 sm:py-4 whitespace-normal break-words align-top bg-gray-50 border-r border-gray-200 min-w-[120px]">
+                    {renderThermalConductivityCell(material.thermalConductivity)}
+                  </td>
+                  <td className="px-2 sm:px-4 py-2 sm:py-4 whitespace-normal break-words align-top bg-white border-r border-gray-200 min-w-[120px]">
+                    {material.thickness}
+                  </td>
+                  <td className="px-2 sm:px-4 py-2 sm:py-4 whitespace-normal break-words align-top bg-gray-50 border-r border-gray-200 min-w-[100px]">
+                    {renderFlexibilityCell(material.flexibility)}
+                  </td>
+                  <td className="px-2 sm:px-4 py-2 sm:py-4 whitespace-normal break-words align-top bg-white border-r border-gray-200 min-w-[80px]">
+                    {material.weight}
+                  </td>
+                  <td className="px-2 sm:px-4 py-2 sm:py-4 whitespace-normal break-words align-top bg-gray-50 border-r border-gray-200 min-w-[100px]">
+                    {material.transparency}
+                  </td>
+                  <td className="px-2 sm:px-4 py-2 sm:py-4 whitespace-normal break-words align-top bg-white border-r border-gray-200 min-w-[140px]">
+                    {material.applicationArea}
+                  </td>
+                  <td className="px-2 sm:px-4 py-2 sm:py-4 whitespace-normal break-words align-top bg-gray-50 border-r border-gray-200 min-w-[100px]">
+                    {renderCostCell(material.cost)}
+                  </td>
+                  <td className="px-2 sm:px-4 py-2 sm:py-4 whitespace-normal break-words align-top bg-white border-r border-gray-200 min-w-[160px]">
+                    {material.uniqueStrength}
+                  </td>
+                  <td className="px-2 sm:px-4 py-2 sm:py-4 whitespace-normal break-words align-top bg-gray-50 min-w-[160px]">
+                    {material.summary}
+                  </td>
                 </tr>
               ))}
               {filteredData.length === 0 && (
@@ -486,22 +566,19 @@ const MaterialComparisonTable = () => {
               )}
             </tbody>
           </table>
-          {/* Row Count Indicator */}
           {filteredData.length > 0 && (
             <div className="px-4 py-2 bg-gray-50 text-xs text-[#4A5745] border-t border-gray-200">
               Showing {filteredData.length} material{filteredData.length !== 1 ? 's' : ''}
-              {filteredData.length > 2 && (
-                <span className="ml-2">(scroll to see more)</span>
-              )}
+              {filteredData.length > 2 && <span className="ml-2">(scroll to see more)</span>}
             </div>
           )}
           {filteredData.length > 0 && (
-            <div className="block sm:hidden px-4 py-2 text-xs text-[#4A5745] text-center">↔️ Scroll horizontally to see more columns</div>
+            <div className="block sm:hidden px-4 py-2 text-xs text-[#4A5745] text-center">
+              ↔️ Scroll horizontally to see more columns
+            </div>
           )}
         </div>
       )}
     </div>
   );
-};
-
-export default MaterialComparisonTable;
+}
