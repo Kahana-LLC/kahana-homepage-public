@@ -1,5 +1,16 @@
 const blogIndex = [
   {
+    title: "Enterprise Browser Features Checklist (SSO, DLP, Clipboard, Downloads and Audit Logs) Oasis Guide 2026",
+    date: "2026-03-22T00:00:00.000Z",
+    authors: ["Pallavi M", "Ankit Sai Allam"],
+    category: ["Enterprise & Security"],
+    excerpt: "A comprehensive enterprise browser features checklist covering SSO, DLP, clipboard controls, download enforcement, and audit logs. Learn what actually matters for secure browser management in 2026.",
+    defaultImageQuery: "enterprise browser security SSO DLP clipboard controls",
+    featuredImage: "https://cdn.pseo.one/6853a4a8a2796a91bb994a76/687e6d61f6fe799d28851eff/topics/698db3a36410f3e0f849f71f/72086e5b-a541-4fae-961d-e43d229cabb5.webp",
+    slug: "enterprise-browser-features-checklist-sso-dlp-clipboard-downloads-audit-logs-oasis-guide-2026",
+    readingTime: 12,
+  },
+  {
     title: "Browser-based DLP explained: copy/paste, downloads, screenshots, printing (Oasis security lens)",
     date: "2026-03-21T00:00:00.000Z",
     authors: ["Pallavi M", "Ankit Sai Allam"],
