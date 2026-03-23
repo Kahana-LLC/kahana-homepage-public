@@ -13,7 +13,89 @@ export default function LearningInternship() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedArea, setSelectedArea] = useState('all');
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [openFaqId, setOpenFaqId] = useState(null);
   const MAX_RETRIES = 3;
+
+  const faqItems = [
+    {
+      id: 'stipend',
+      question: 'Is there a stipend?',
+      answer: 'This is an unpaid, educational internship focused on learning and gaining experience. There is no stipend or compensation.',
+      group: 'Compensation & expectations',
+    },
+    {
+      id: 'full-time',
+      question: 'Does the internship lead to a full-time role at Kahana?',
+      answer: 'No. The internship does not have an impact on getting a full-time role at Kahana. There is no expectation of a full-time role after completing the internship. This is a learning experience designed to help you build skills and gain exposure.',
+      group: 'Compensation & expectations',
+    },
+    {
+      id: 'apply',
+      question: 'How do I apply?',
+      answer: 'Click the "Apply Now" button on this page to open the application form. Fill it out and submit—we\'ll review your application and get back to you.',
+      group: 'Getting started',
+    },
+    {
+      id: 'eligibility',
+      question: 'Who can apply?',
+      answer: 'We welcome applicants from all backgrounds. There are no strict eligibility requirements—we look for curiosity, initiative, and a genuine interest in learning. The internship is remote and open globally.',
+      group: 'Getting started',
+    },
+    {
+      id: 'schedule',
+      question: 'How is it scheduled? What\'s the duration?',
+      answer: 'The internship is flexible and remote. Once accepted, you choose when you\'d like to officially start and go through onboarding. You work around your schedule—there\'s no fixed daily duration. You choose your hours per week (e.g., 5–10, 10–15, 15–20+) and complete tasks at your own pace. You can leave whenever you choose, or remain in it as long as it continues to be a good fit.',
+      group: 'Getting started',
+    },
+    {
+      id: 'start-date',
+      question: 'When can I start? How do I choose my start date?',
+      answer: 'Once you\'re accepted, you\'ll have the opportunity to complete a form to choose your start date. You decide when you\'d like to officially begin and go through onboarding—there\'s no fixed start date.',
+      group: 'Getting started',
+    },
+    {
+      id: 'communication',
+      question: 'How will I communicate with the team?',
+      answer: 'You\'ll join our intern community via WhatsApp or Slack (you\'ll receive the link after applying and being accepted). That\'s where you\'ll get tasks, ask questions, and connect with the team and other interns.',
+      group: 'Getting started',
+    },
+    {
+      id: 'training',
+      question: 'Is there training or mentorship?',
+      answer: 'Yes. You will receive training and be expected to learn—through structured learning plans, clear instructions for each task, and working alongside Kahana team members. You\'ll also have opportunities to connect with leadership for mentorship, guidance, and feedback. You\'ll join a community of other interns as well.',
+      group: 'Learning & support',
+    },
+    {
+      id: 'projects',
+      question: 'What kind of projects will I work on?',
+      answer: 'Projects vary by your function (Engineering, Product, Marketing, etc.). You\'ll receive a list of tasks every 2 weeks with instructions and learning objectives. See the "Examples of Direct Experience" and "Functional Areas" sections above for concrete examples of what you\'ll work with.',
+      group: 'Learning & support',
+    },
+    {
+      id: 'skills',
+      question: 'What skills should I focus on?',
+      answer: 'We welcome applicants at different skill levels. The internship is designed for learning—you\'ll develop skills through hands-on tasks in your chosen area (Engineering, Product, Marketing, etc.). Curiosity and willingness to learn matter more than prior experience.',
+      group: 'Learning & support',
+    },
+    {
+      id: 'ai',
+      question: 'Is this good for someone new to AI?',
+      answer: 'Yes. If you\'re interested in AI, engineering, or product work, you\'ll get exposure to real projects and tools. Prior AI experience is not required—the internship is a great way to build relevant skills as a fresher.',
+      group: 'Learning & support',
+    },
+    {
+      id: 'offer-letter',
+      question: 'Will I get an offer letter? Can I add this to LinkedIn?',
+      answer: 'Yes. If you are accepted and choose to enroll, you will receive official documentation—an offer letter—for your records. You can list this as an internship experience on your resume and LinkedIn.',
+      group: 'Career & credentials',
+    },
+    {
+      id: 'success',
+      question: 'What does success look like for an intern?',
+      answer: 'Success means completing your assigned tasks, engaging with the team, asking questions, and applying feedback. We look for reliability, a positive attitude, and genuine interest in learning. By the end, you\'ll have hands-on experience, new skills for your resume, and exposure to how a startup operates.',
+      group: 'Career & credentials',
+    },
+  ];
 
   const initializeTally = () => {
     if (window.Tally) {
@@ -1100,10 +1182,10 @@ export default function LearningInternship() {
                   </div>
                 </div>
                 
-                {/* Weekly Structure */}
+                {/* Task Structure */}
                 <div className="mb-8">
-                  <h3 className="text-xl font-semibold text-[#728552] mb-4">Weekly Structure</h3>
-                  <p className="text-[#4A5745] mb-4 text-sm">Each week, you receive:</p>
+                  <h3 className="text-xl font-semibold text-[#728552] mb-4">Task Structure</h3>
+                  <p className="text-[#4A5745] mb-4 text-sm">Every 2 weeks, you receive:</p>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl p-5 border-2 border-[#728552]/20 hover:border-[#728552]/40 transition-all duration-300">
                       <div className="flex items-start gap-3 mb-3">
@@ -1286,6 +1368,69 @@ export default function LearningInternship() {
                       </div>
                     </div>
                   </div>
+                </div>
+              </section>
+
+              {/* FAQ */}
+              <section className="mb-12" id="faq">
+                <h2 className="text-2xl font-semibold text-[#4A5745] mb-6">Frequently Asked Questions</h2>
+                {['Compensation & expectations', 'Getting started', 'Learning & support', 'Career & credentials'].map((group) => (
+                  <div key={group} className="mb-8">
+                    <h3 className="text-lg font-semibold text-[#728552] mb-4">{group}</h3>
+                    <div className="space-y-3">
+                      {faqItems
+                        .filter((item) => item.group === group)
+                        .map((item) => {
+                          const isOpen = openFaqId === item.id;
+                          return (
+                            <div
+                              key={item.id}
+                              id={`faq-${item.id}`}
+                              className="bg-gradient-to-br from-[#fef3c7]/30 to-[#7dd3fc]/15 rounded-xl border-2 border-[#728552]/20 hover:border-[#728552]/40 overflow-hidden transition-all duration-300"
+                            >
+                              <button
+                                type="button"
+                                onClick={() => setOpenFaqId(isOpen ? null : item.id)}
+                                className="w-full text-left px-6 py-5 flex items-start justify-between gap-4 hover:opacity-95 transition-opacity"
+                                aria-expanded={isOpen}
+                                aria-controls={`faq-${item.id}-answer`}
+                                id={`faq-${item.id}-question`}
+                              >
+                                <h4 className="font-semibold text-[#4A5745] pr-4">{item.question}</h4>
+                                <svg
+                                  className={`flex-shrink-0 w-5 h-5 text-[#728552] transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
+                                  fill="none"
+                                  stroke="currentColor"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                </svg>
+                              </button>
+                              <div
+                                id={`faq-${item.id}-answer`}
+                                role="region"
+                                aria-labelledby={`faq-${item.id}-question`}
+                                className={`transition-all duration-200 ease-in-out ${isOpen ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}
+                              >
+                                <div className="px-6 pt-5 pb-6 bg-white border-t border-[#728552]/15">
+                                  <p className="text-[15px] text-[#4A5745] leading-relaxed">{item.answer}</p>
+                                </div>
+                              </div>
+                            </div>
+                          );
+                        })}
+                    </div>
+                  </div>
+                ))}
+                <div className="mt-8 bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl p-6 border-2 border-[#728552]/20 text-center">
+                  <p className="text-[#4A5745] mb-4">Still have questions? Apply and we&apos;ll answer them, or <Link href="/contact" className="text-[#728552] font-semibold hover:underline">reach out through our contact form</Link>.</p>
+                  <button
+                    type="button"
+                    onClick={() => setIsModalOpen(true)}
+                    className="bg-gradient-to-r from-[#728552] to-[#788B59] text-white font-semibold py-2.5 px-6 rounded-lg hover:from-[#788B59] hover:to-[#728552] transition-all duration-300"
+                  >
+                    Apply Now
+                  </button>
                 </div>
               </section>
 

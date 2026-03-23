@@ -9,7 +9,7 @@ import { blogIndex } from '../../data/blog-index';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import AuthorCard from '../../components/AuthorCard';
 import BlogBrowserComparison from '../../components/BlogBrowserComparison';
-import MaterialComparisonTable from '../../components/MaterialComparisonTable';
+import ComparisonTable from '../../components/ComparisonTable';
 import BlogCard from '../../components/BlogCard';
 import { FaLinkedin, FaRegCalendarAlt, FaBookOpen, FaRegClock } from 'react-icons/fa';
 import SocialShare from '../../components/SocialShare';
@@ -49,8 +49,9 @@ function parseHtmlWithComponents(htmlContent) {
         case 'BlogBrowserComparison':
           elements.push(<BlogBrowserComparison key={key++} {...props} />);
           break;
+        case 'ComparisonTable':
         case 'MaterialComparisonTable':
-          elements.push(<MaterialComparisonTable key={key++} {...props} />);
+          elements.push(<ComparisonTable key={key++} {...props} />);
           break;
         default:
           // If component not found, render as HTML
@@ -378,9 +379,9 @@ export default function BlogPost({ post }) {
                           </div>
                         );
                       }
-                      if (block.name === 'MaterialComparisonTable') {
+                      if (block.name === 'ComparisonTable' || block.name === 'MaterialComparisonTable') {
                         return (
-                          <MaterialComparisonTable
+                          <ComparisonTable
                             key={index}
                             {...block.props}
                           />
