@@ -1,5 +1,16 @@
 const blogIndex = [
   {
+    title: "Chrome Gemini vs AI extensions: what's better for real work? (Oasis recommendation)",
+    date: "2026-03-25T00:00:00.000Z",
+    authors: ["Pallavi M", "Ankit Sai Allam"],
+    category: ["AI & Emerging Tech"],
+    excerpt: "Chrome Gemini vs AI extensions comparison for real work. Learn which is better for productivity, security, and enterprise workflows in 2026.",
+    defaultImageQuery: "Chrome Gemini AI extensions comparison productivity",
+    featuredImage: "https://tse2.mm.bing.net/th/id/OIP.HgNb23IwRE29i8fhG7H51gHaEM?pid=Api&P=0&h=180",
+    slug: "chrome-gemini-vs-ai-extensions-whats-better-real-work-2026",
+    readingTime: 16,
+  },
+  {
     title: "Zero Trust browsing explained: when the browser becomes the control plane (Oasis security lens)",
     date: "2026-03-24T00:00:00.000Z",
     authors: ["Pallavi M", "Ankit Sai Allam"],
