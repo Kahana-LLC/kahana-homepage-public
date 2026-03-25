@@ -1,5 +1,16 @@
 const blogIndex = [
   {
+    title: "Zero Trust browsing explained: when the browser becomes the control plane (Oasis security lens)",
+    date: "2026-03-24T00:00:00.000Z",
+    authors: ["Pallavi M", "Ankit Sai Allam"],
+    category: ["Browser & Technology"],
+    excerpt: "Zero Trust browsing explained: when the browser becomes the control plane. Learn how browsers evolve into policy enforcement points for SaaS security, DLP, and GenAI risk management.",
+    defaultImageQuery: "Zero Trust browsing control plane security browser",
+    featuredImage: "https://cdn.ssltrust.com.au/assets/images/blog/understanding-zero-trust/zerotrust-overview.png",
+    slug: "zero-trust-browsing-explained-browser-control-plane-2026",
+    readingTime: 18,
+  },
+  {
     title: "Enterprise Browser Features Checklist (SSO, DLP, Clipboard, Downloads and Audit Logs) Oasis Guide 2026",
     date: "2026-03-22T00:00:00.000Z",
     authors: ["Pallavi M", "Ankit Sai Allam"],
