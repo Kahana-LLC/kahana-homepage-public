@@ -22,6 +22,17 @@ const blogIndex = [
     readingTime: 18,
   },
   {
+    title: "The future of AI browsers: from chat to workflow automation (Oasis take)",
+    date: "2026-03-23T00:00:00.000Z",
+    authors: ["Pallavi M", "Ankit Sai Allam"],
+    category: ["AI & Emerging Tech"],
+    excerpt: "The future of AI browsers: from chat to workflow automation. Learn how AI browsers evolve from conversation to execution engines with agentic capabilities.",
+    defaultImageQuery: "future AI browsers workflow automation agentic",
+    featuredImage: "https://www.quytech.com/blog/wp-content/uploads/2025/12/benefits-of-ai-browsers-1024x571.webp",
+    slug: "future-ai-browsers-chat-workflow-automation-2026",
+    readingTime: 18,
+  },
+  {
     title: "Enterprise Browser Features Checklist (SSO, DLP, Clipboard, Downloads and Audit Logs) Oasis Guide 2026",
     date: "2026-03-22T00:00:00.000Z",
     authors: ["Pallavi M", "Ankit Sai Allam"],
