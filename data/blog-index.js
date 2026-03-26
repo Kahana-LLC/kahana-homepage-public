@@ -3595,6 +3595,17 @@ const blogIndex = [
     slug: "victorias-secret-cybersecurity-breach-2025",
     readingTime: 8,
   },
+  {
+    title: "Gemini in Chrome: how it works + how to enable it (and what it can't do yet) - Oasis take",
+    date: "2026-03-26T00:00:00.000Z",
+    authors: ["Pallavi M", "Ankit Sai Allam"],
+    category: ["AI & Browser Technology"],
+    excerpt: "Gemini in Chrome: How It Works, How to Enable It, and What It Still Cannot Do. AI is moving directly into the browser. With Gemini built into Chrome, Google is turning the browser into an intelligent assistant rather than just a viewing tool.",
+    defaultImageQuery: "Gemini Chrome AI browser integration",
+    featuredImage: "https://static.digit.in/Chrome-gemini.png",
+    slug: "gemini-chrome-how-it-works-enable-limitations-2026",
+    readingTime: 15,
+  },
 ];
 
 export { blogIndex };
