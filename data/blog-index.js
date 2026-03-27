@@ -1,5 +1,31 @@
 const blogIndex = [
   {
+    title: "Arc vs SigmaOS: the best 'project browser' (and what Oasis copies vs changes)",
+    date: "2026-03-27T00:00:00.000Z",
+    authors: ["Pallavi M", "Ankit Sai Allam"],
+    category: ["Browser & Technology"],
+    excerpt:
+      "Arc vs SigmaOS: The best project browser comparison and what Oasis copies vs changes. Learn which project-based browser wins for productivity workflows in 2026.",
+    defaultImageQuery: "Arc SigmaOS project browser comparison",
+    featuredImage:
+      "https://tse1.mm.bing.net/th/id/OIP._5TTroYBqEg8LZGRg_mFewHaFj?pid=Api&P=0&h=180",
+    slug: "arc-vs-sigmaos-best-project-browser-oasis-copies-changes-2026",
+    readingTime: 18,
+  },
+  {
+    title:
+      "Gemini in Chrome: how it works + how to enable it (and what it can't do yet) - Oasis take",
+    date: "2026-03-26T00:00:00.000Z",
+    authors: ["Pallavi M", "Ankit Sai Allam"],
+    category: ["AI & Browser Technology"],
+    excerpt:
+      "Gemini in Chrome: How It Works, How to Enable It, and What It Still Cannot Do. AI is moving directly into the browser. With Gemini built into Chrome, Google is turning the browser into an intelligent assistant rather than just a viewing tool.",
+    defaultImageQuery: "Gemini Chrome AI browser integration",
+    featuredImage: "https://static.digit.in/Chrome-gemini.png",
+    slug: "gemini-chrome-how-it-works-enable-limitations-2026",
+    readingTime: 15,
+  },
+  {
     title: "Chrome Gemini vs AI extensions: what's better for real work? (Oasis recommendation)",
     date: "2026-03-25T00:00:00.000Z",
     authors: ["Pallavi M", "Ankit Sai Allam"],
@@ -3594,17 +3620,6 @@ const blogIndex = [
     defaultImageQuery: "victorias secret cybersecurity breach retail industry",
     slug: "victorias-secret-cybersecurity-breach-2025",
     readingTime: 8,
-  },
-  {
-    title: "Arc vs SigmaOS: the best 'project browser' (and what Oasis copies vs changes)",
-    date: "2026-03-27T00:00:00.000Z",
-    authors: ["Pallavi M", "Ankit Sai Allam"],
-    category: ["Browser & Technology"],
-    excerpt: "Arc vs SigmaOS: The best project browser comparison and what Oasis copies vs changes. Learn which project-based browser wins for productivity workflows in 2026.",
-    defaultImageQuery: "Arc SigmaOS project browser comparison",
-    featuredImage: "https://tse1.mm.bing.net/th/id/OIP._5TTroYBqEg8LZGRg_mFewHaFj?pid=Api&P=0&h=180",
-    slug: "arc-vs-sigmaos-best-project-browser-oasis-copies-changes-2026",
-    readingTime: 18,
   },
 ];
 
