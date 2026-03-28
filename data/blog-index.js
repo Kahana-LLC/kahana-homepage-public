@@ -3647,6 +3647,28 @@ const blogIndex = [
     slug: "victorias-secret-cybersecurity-breach-2025",
     readingTime: 8,
   },
+  {
+    title: "Arc vs SigmaOS: the best 'project browser' (and what Oasis copies vs changes)",
+    date: "2026-03-27T00:00:00.000Z",
+    authors: ["Pallavi M", "Ankit Sai Allam"],
+    category: ["Browser & Technology"],
+    excerpt: "Arc vs SigmaOS: The best project browser comparison and what Oasis copies vs changes. Learn which project-based browser wins for productivity workflows in 2026.",
+    defaultImageQuery: "Arc SigmaOS project browser comparison",
+    featuredImage: "https://tse1.mm.bing.net/th/id/OIP._5TTroYBqEg8LZGRg_mFewHaFj?pid=Api&P=0&h=180",
+    slug: "arc-vs-sigmaos-best-project-browser-oasis-copies-changes-2026",
+    readingTime: 18,
+  },
+  {
+    title: "Opera browser AI features (Aria): what it does + what it misses (Oasis review)",
+    date: "2026-03-28T00:00:00.000Z",
+    authors: ["Pallavi M", "Ankit Sai Allam"],
+    category: ["AI & Emerging Tech"],
+    excerpt: "Opera browser AI features (Aria): what it does and what it misses. A comprehensive Oasis review of Opera's built-in AI assistant, its capabilities, limitations, and enterprise readiness.",
+    defaultImageQuery: "Opera Aria AI browser assistant review",
+    featuredImage: "https://tse1.mm.bing.net/th/id/OIP.xaRTX1sXRv_LJpd2I32b4gHaEK?pid=Api&P=0&h=180",
+    slug: "opera-browser-ai-features-aria-what-it-does-what-it-misses-oasis-review-2026",
+    readingTime: 15,
+  },
 ];
 
 export { blogIndex };
