@@ -3621,7 +3621,6 @@ const blogIndex = [
     slug: "victorias-secret-cybersecurity-breach-2025",
     readingTime: 8,
   },
-<<<<<<< HEAD
   {
     title: "Arc vs SigmaOS: the best 'project browser' (and what Oasis copies vs changes)",
     date: "2026-03-27T00:00:00.000Z",
