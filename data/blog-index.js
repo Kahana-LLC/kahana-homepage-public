@@ -1,5 +1,16 @@
 const blogIndex = [
   {
+    title: "Comet AI Browser Security Risks: Complete Safety Analysis & Vulnerability Report",
+    date: "2026-03-31T00:00:00.000Z",
+    authors: ["Pallavi M", "Ankit Sai Allam"],
+    category: ["AI & Emerging Tech"],
+    excerpt: "Comet AI Browser security risks: Complete safety analysis covering CometJacking, prompt injection vulnerabilities, privacy concerns, and enterprise security challenges in Perplexity's AI browser.",
+    defaultImageQuery: "Comet AI browser security risks vulnerability analysis",
+    featuredImage: "https://tse3.mm.bing.net/th/id/OIP.DpI_yFCI8opBab9kcZnxhQHaEE?pid=Api&P=0&h=180",
+    slug: "comet-ai-browser-security-risks-safety-analysis-vulnerability-report-2026",
+    readingTime: 18,
+  },
+  {
     title: "Brave Leo vs Opera Aria: workflow comparison (tabs, summaries, actions) — Oasis review",
     date: "2026-03-30T00:00:00.000Z",
     authors: ["Pallavi M", "Ankit Sai Allam"],
