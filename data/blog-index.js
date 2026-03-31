@@ -1,5 +1,16 @@
 const blogIndex = [
   {
+    title: "Brave Leo vs Opera Aria: workflow comparison (tabs, summaries, actions) — Oasis review",
+    date: "2026-03-30T00:00:00.000Z",
+    authors: ["Pallavi M", "Ankit Sai Allam"],
+    category: ["AI & Browser Technology"],
+    excerpt: "Brave Leo vs Opera Aria: workflow comparison (tabs, summaries, actions). A comprehensive Oasis review comparing AI browser assistants for productivity, privacy, and automation capabilities.",
+    defaultImageQuery: "Brave Leo vs Opera Aria comparison workflow AI browser",
+    featuredImage: "https://tse2.mm.bing.net/th/id/OIP.tT_9Nkr05y_imtH3AN0l3QHaEI?pid=Api&P=0&h=180",
+    slug: "brave-leo-vs-opera-aria-workflow-comparison-tabs-summaries-actions-oasis-review-2026",
+    readingTime: 16,
+  },
+  {
     title: "Opera browser AI features (Aria): what it does + what it misses (Oasis review)",
     date: "2026-03-29T00:00:00.000Z",
     authors: ["Pallavi M", "Ankit Sai Allam"],
