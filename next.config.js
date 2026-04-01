@@ -199,6 +199,13 @@ const nextConfig = {
         destination: "/products/free-agentic-browser",
         permanent: true,
       },
+      {
+        source:
+          "/blog/opera-browser-ai-features-aria-what-it-does-what-it-misses-oasis-review-2026",
+        destination:
+          "/blog/opera-browser-ai-features-aria-what-it-does-what-it-misses-oasis-review-march-29-2026",
+        permanent: true,
+      },
     ];
   },
 
