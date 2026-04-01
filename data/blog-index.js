@@ -1,5 +1,16 @@
 const blogIndex = [
   {
+    title: "Best AI browser extensions in 2026 (and the #1 reason they disappoint)",
+    date: "2026-04-01T00:00:00.000Z",
+    authors: ["Pallavi M", "Ankit Sai Allam"],
+    category: ["AI & Browser Technology"],
+    excerpt: "A comprehensive analysis of the best AI browser extensions in 2026, highlighting critical privacy, security, performance, and trust issues that make them disappointing despite their promising capabilities.",
+    defaultImageQuery: "AI browser extensions 2026",
+    featuredImage: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQzt8beKiFzsnwmvLoivIoBH3_r5S8QzjyQw&s",
+    slug: "best-ai-browser-extensions-2026-disappointing-reasons",
+    readingTime: 15,
+  },
+  {
     title: "Comet AI Browser Security Risks: Complete Safety Analysis & Vulnerability Report",
     date: "2026-03-31T00:00:00.000Z",
     authors: ["Pallavi M", "Ankit Sai Allam"],
