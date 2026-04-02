@@ -1,5 +1,16 @@
 const blogIndex = [
   {
+    title: "AI chat in browsers vs AI that does things: the execution gap (Oasis explanation)",
+    date: "2026-04-02T00:00:00.000Z",
+    authors: ["Pallavi M", "Ankit Sai Allam"],
+    category: ["AI & Browser Technology"],
+    excerpt: "A comprehensive analysis of the execution gap between AI chat interfaces and autonomous AI agents in browsers, highlighting security, privacy, reliability, and trust challenges.",
+    defaultImageQuery: "AI chat vs autonomous AI browser execution",
+    featuredImage: "https://tse2.mm.bing.net/th/id/OIP.tps0m5cKhPXNUvbpVUimRgHaE7?pid=Api&P=0&h=180",
+    slug: "ai-chat-browsers-vs-ai-execution-gap-oasis-explanation-2026",
+    readingTime: 18,
+  },
+  {
     title: "Best AI browser extensions in 2026 (and the #1 reason they disappoint)",
     date: "2026-04-01T00:00:00.000Z",
     authors: ["Pallavi M", "Ankit Sai Allam"],
