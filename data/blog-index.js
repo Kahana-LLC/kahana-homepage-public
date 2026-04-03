@@ -1,5 +1,16 @@
 const blogIndex = [
   {
+    title: "AI is breaking web search — what changes for browsing in 2026 (Oasis take)",
+    date: "2026-04-03T00:00:00.000Z",
+    authors: ["Pallavi M", "Ankit Sai Allam"],
+    category: ["AI & Browser Technology"],
+    excerpt: "A comprehensive analysis of how AI is disrupting traditional web search in 2026, examining declining traffic, bias issues, retrieval collapse, and the fundamental challenges facing web ecosystems.",
+    defaultImageQuery: "AI breaking web search transformation 2026",
+    featuredImage: "https://www.hakia.com/images/heroes/tech/tech-insights-ai-search-and-seo.webp",
+    slug: "ai-breaking-web-search-changes-browsing-2026-oasis-take",
+    readingTime: 20,
+  },
+  {
     title: "AI chat in browsers vs AI that does things: the execution gap (Oasis explanation)",
     date: "2026-04-02T00:00:00.000Z",
     authors: ["Pallavi M", "Ankit Sai Allam"],
