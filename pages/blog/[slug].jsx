@@ -342,6 +342,7 @@ export default function BlogPost({ post }) {
               )}
             </figure>
             */}
+
           </header>
 
           <div 
