@@ -1,6 +1,10 @@
 /** @type {import('next').NextConfig} */
 const path = require("path");
 
+const withBundleAnalyzer = require("@next/bundle-analyzer")({
+  enabled: process.env.ANALYZE === "true",
+});
+
 const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
@@ -63,6 +67,8 @@ const nextConfig = {
       "image-optimizer.cyberriskalliance.com",
       "files.cyberriskalliance.com",
     ],
+    // When false, Next optimizes <Image /> (requires sharp). This app uses many remote hosts;
+    // migrating to `loader: 'custom'` + Cloudinary is a follow-up. See docs/bundle-analysis.md.
     unoptimized: true,
   },
 
@@ -188,6 +194,25 @@ const nextConfig = {
           },
         ],
       },
+      {
+        source: "/fonts/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+      // Hashed build assets (Next defaults are good; explicit immutable helps CDNs)
+      {
+        source: "/_next/static/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
     ];
   },
 
@@ -219,8 +244,7 @@ const nextConfig = {
     },
   },
 
-  // Disable font optimization
-  optimizeFonts: false,
+  optimizeFonts: true,
 };
 
-module.exports = nextConfig;
+module.exports = withBundleAnalyzer(nextConfig);

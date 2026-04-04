@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import OasisYouTubeEmbed from './OasisYouTubeEmbed';
 
 export default function HowItWorks() {
   return (
@@ -27,15 +28,7 @@ export default function HowItWorks() {
           <div className="w-full rounded-[36px] bg-white/90 border border-white/80 shadow-[0_30px_120px_rgba(20,32,0,0.18)] p-4 sm:p-6 backdrop-blur">
             <div className="relative w-full overflow-hidden rounded-[32px] border border-white/80 bg-black">
               <div className="w-full aspect-[4/3]">
-                <iframe
-                  className="w-full h-full"
-                  src="https://www.youtube.com/embed/e4D1-cmBqCo"
-                  title="Oasis product demo video"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  allowFullScreen
-                ></iframe>
+                <OasisYouTubeEmbed wrapperClassName="w-full h-full" />
               </div>
             </div>
           </div>

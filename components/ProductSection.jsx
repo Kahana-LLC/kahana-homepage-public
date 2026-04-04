@@ -4,11 +4,18 @@ import Image from "next/image";
 import { getCloudinaryImageProps } from '../utils/cloudinary-mapper';
 import { trackButtonClick } from '../utils/analytics';
 
+/** Homepage hero — keep in sync with preload URL in pages/index.js */
+export const OASIS_HERO_IMAGE_PATH = '/images/Welcome to Oasis.webp';
+export const OASIS_HERO_WIDTHS = [640, 828, 1080, 1200, 1920];
+/** Default `src` width from getCloudinarySrcSet (middle index) — use for rel=preload */
+export const OASIS_HERO_LCP_WIDTH =
+  OASIS_HERO_WIDTHS[Math.floor(OASIS_HERO_WIDTHS.length / 2)];
+
 const HERO_SIZES = '(max-width: 640px) 100vw, (max-width: 768px) 90vw, (max-width: 1024px) 80vw, 1200px';
-const HERO_WIDTHS = [640, 828, 1080, 1200, 1920];
+const HERO_WIDTHS = OASIS_HERO_WIDTHS;
 
 function HeroImage() {
-  const heroProps = getCloudinaryImageProps('/images/Welcome to Oasis.webp', {
+  const heroProps = getCloudinaryImageProps(OASIS_HERO_IMAGE_PATH, {
     widths: HERO_WIDTHS,
     width: 1200,
     quality: 'auto:good',
@@ -28,7 +35,7 @@ function HeroImage() {
   }
   return (
     <Image
-      src={heroProps.src || '/images/Welcome to Oasis.webp'}
+      src={heroProps.src || OASIS_HERO_IMAGE_PATH}
       alt="Welcome to Oasis"
       fill
       priority

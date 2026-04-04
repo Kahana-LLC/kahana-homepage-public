@@ -13,21 +13,7 @@ export default function Document() {
         <link rel="dns-prefetch" href="https://api.mixpanel.com" />
         <link rel="dns-prefetch" href="https://api-eu.mixpanel.com" />
         
-        {/* Preload critical fonts */}
-        <link
-          rel="preload"
-          href="/fonts/BricolageGrotesque-VariableFont_opsz,wdth,wght.ttf"
-          as="font"
-          type="font/ttf"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          href="/fonts/Geist-VariableFont_wght.ttf"
-          as="font"
-          type="font/ttf"
-          crossOrigin="anonymous"
-        />
+        {/* Fonts: loaded via next/font in _app.js (lib/fonts.js) */}
         
         {/* Favicon - v3 cache-bust so Google fetches updated logo. Google recommends 48x48+ */}
         <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=3" sizes="any" />
