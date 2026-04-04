@@ -1,4 +1,5 @@
 import "../styles/globals.css";
+import { fontGeist, fontBricolage } from "../lib/fonts";
 import NavbarDup from "../components/NavbarDup";
 import GlobalBanner from "../components/GlobalBanner";
 import Footer from "../components/Footer";
@@ -367,9 +368,11 @@ function AppContent({ Component, pageProps }) {
 
 function MyApp({ Component, pageProps }) {
   return (
-    <ConsentProvider>
-      <AppContent Component={Component} pageProps={pageProps} />
-    </ConsentProvider>
+    <div className={`${fontGeist.variable} ${fontBricolage.variable}`}>
+      <ConsentProvider>
+        <AppContent Component={Component} pageProps={pageProps} />
+      </ConsentProvider>
+    </div>
   );
 }
 

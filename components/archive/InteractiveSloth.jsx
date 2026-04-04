@@ -375,7 +375,7 @@ const InteractiveSloth = () => {
           backdrop-filter: blur(10px);
           border-radius: 12px;
           box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-          font-family: 'Geist', system-ui, sans-serif;
+          font-family: var(--font-geist), system-ui, sans-serif;
           font-size: 13px;
           color: #374151;
           max-width: 200px;

@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import VideoSection from '../components/VideoSection';
 import Script from 'next/script';
+import OasisYouTubeEmbed from '../components/OasisYouTubeEmbed';
 
 const steps = [
   {
@@ -86,16 +87,7 @@ export default function OasisAugmentedReality() {
     <div className="w-full flex flex-col items-center mt-8">
       <h3 className="text-2xl font-semibold text-gray-900 mb-4 text-center lg:text-left w-full">See Oasis AR in action</h3>
       <div className="w-full h-56 sm:h-72 md:h-96 lg:h-[28rem] rounded-2xl overflow-hidden shadow-2xl flex items-center justify-center bg-black">
-        <iframe
-          className="w-full h-full min-h-[14rem]"
-          src="https://www.youtube.com/embed/e4D1-cmBqCo"
-          title="Oasis product demo video"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerPolicy="strict-origin-when-cross-origin"
-          allowFullScreen
-          style={{ minHeight: '14rem' }}
-        ></iframe>
+        <OasisYouTubeEmbed wrapperClassName="w-full h-full min-h-[14rem]" />
       </div>
     </div>
   );

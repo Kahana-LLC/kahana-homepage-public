@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import OasisYouTubeEmbed from './OasisYouTubeEmbed';
 
 export default function VideoSection() {
   return (
@@ -29,16 +30,7 @@ export default function VideoSection() {
           {/* Right side - Video */}
           <div className="lg:col-span-7 mt-16 lg:mt-0 flex items-center justify-center">
             <div className="w-full h-56 sm:h-72 md:h-96 lg:h-[28rem] rounded-2xl overflow-hidden shadow-2xl flex items-center justify-center bg-black">
-              <iframe
-                className="w-full h-full min-h-[14rem]"
-                src="https://www.youtube.com/embed/e4D1-cmBqCo"
-                title="Oasis product demo video"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
-                allowFullScreen
-                style={{ minHeight: '14rem' }}
-              ></iframe>
+              <OasisYouTubeEmbed wrapperClassName="w-full h-full min-h-[14rem]" />
             </div>
           </div>
         </div>

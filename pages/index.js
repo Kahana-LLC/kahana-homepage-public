@@ -1,15 +1,12 @@
 import Head from "next/head";
 import Script from "next/script";
-import HeroSection from "../components/HeroSection";
-import FeaturesShowcase from "../components/FeaturesShowcase";
-import HowItWorks from "../components/HowItWorks";
-import ProductTourCard from "../components/ProductTourCard";
-import TestimonialsCarousel from "../components/TestimonialsCarousel";
-import ProductSection from "../components/ProductSection";
-import VideoSection from "../components/VideoSection";
+import dynamic from "next/dynamic";
+import ProductSection, {
+  OASIS_HERO_IMAGE_PATH,
+  OASIS_HERO_LCP_WIDTH,
+} from "../components/ProductSection";
 import FadeInSection from "../components/FadeInSection";
 import SEO from "../components/SEO";
-import { getRandomPhoto, getOptimizedPhotoUrl } from "../utils/pexels";
 import { blogIndex } from "../data/blog-index";
 import Link from "next/link";
 import { getAuthorDetails } from "../utils/authorUtils";
@@ -17,12 +14,9 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { getCloudinaryImageUrl } from "../utils/cloudinary-mapper";
 
-// Default placeholder for failed image loads
-const DEFAULT_PLACEHOLDER =
-  'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%233C584A"%3E%3Cpath d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-1.96-2.36L6.5 17h11l-3.54-4.71z"%2F%3E%3C%2Fsvg%3E';
-
-// Simple cache for development
-const imageCache = new Map();
+const FeaturesShowcase = dynamic(() => import("../components/FeaturesShowcase"));
+const HowItWorks = dynamic(() => import("../components/HowItWorks"));
+const ProductTourCard = dynamic(() => import("../components/ProductTourCard"));
 
 export async function getStaticProps() {
   try {
@@ -195,7 +189,10 @@ export default function Home({ blogPosts }) {
         <link
           rel="preload"
           as="image"
-          href={getCloudinaryImageUrl("/images/Welcome to Oasis.webp", { width: 1200, quality: 'auto:good' })}
+          href={getCloudinaryImageUrl(OASIS_HERO_IMAGE_PATH, {
+            width: OASIS_HERO_LCP_WIDTH,
+            quality: "auto:good",
+          })}
           fetchPriority="high"
         />
       </Head>

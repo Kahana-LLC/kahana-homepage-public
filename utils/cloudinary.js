@@ -71,6 +71,8 @@ export function getCloudinaryUrl(publicId, options = {}) {
   if (gravity && resourceType === 'image') transformations.push(`g_${gravity}`);
   if (format) transformations.push(`f_${format}`);
   if (quality && resourceType === 'image') transformations.push(`q_${quality}`);
+  // Device pixel ratio — smaller payloads on 1x displays, sharper on retina
+  if (resourceType === 'image') transformations.push('dpr_auto');
 
   const transformationString = transformations.length > 0 
     ? transformations.join(',') + '/' 

@@ -7,6 +7,22 @@ export function normalizeBlogCategories(category) {
   return Array.isArray(category) ? category : [category];
 }
 
+/**
+ * Format post date for display in a way that matches server and client (avoids hydration errors).
+ * Uses UTC so ISO midnight dates don't shift to a different calendar day per timezone.
+ */
+export function formatBlogPostDate(isoString) {
+  if (!isoString) return "";
+  const d = new Date(isoString);
+  if (Number.isNaN(d.getTime())) return "";
+  return d.toLocaleDateString("en-US", {
+    timeZone: "UTC",
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  });
+}
+
 // Map of categories to nature-themed image queries
 const categoryImageMap = {
   Security: [

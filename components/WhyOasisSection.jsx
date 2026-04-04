@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import OasisYouTubeEmbed from './OasisYouTubeEmbed';
 
 export default function WhyOasisSection() {
   const features = [
@@ -135,15 +136,7 @@ export default function WhyOasisSection() {
         {/* YouTube Video - Centered like golden container */}
         <div className="w-full max-w-xl mx-auto px-4 mt-16">
           <div className="w-full mx-auto aspect-[4/3] overflow-hidden rounded-xl shadow-lg bg-black">
-            <iframe
-              className="w-full h-full"
-              src="https://www.youtube.com/embed/e4D1-cmBqCo"
-              title="Oasis product demo video"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-            ></iframe>
+            <OasisYouTubeEmbed wrapperClassName="w-full h-full" />
           </div>
         </div>
       </div>

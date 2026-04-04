@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { getRandomPhoto, getOptimizedPhotoUrl, getPlaceholderImageUrl } from '../utils/pexels';
-import { suggestNatureImageQuery, normalizeBlogCategories } from '../utils/blog-helpers';
+import { suggestNatureImageQuery, normalizeBlogCategories, formatBlogPostDate } from '../utils/blog-helpers';
 import { getAuthorDetails } from '../utils/authorUtils';
 
 // Individual blog post card with image loading
@@ -91,7 +91,7 @@ const FeaturedBlogCard = ({ post }) => {
             </span>
           </div>
           <div className="text-xs text-[#4A5745] mb-2">
-            {new Date(post.date).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })} • {post.readingTime || post.readingTime === 0 ? `${post.readingTime} min read` : ''}
+            {formatBlogPostDate(post.date)} • {post.readingTime || post.readingTime === 0 ? `${post.readingTime} min read` : ''}
           </div>
           <p className="text-[#4A5745] text-sm mb-4 line-clamp-3">{post.excerpt}</p>
           <div className="flex flex-wrap gap-2 mt-auto">

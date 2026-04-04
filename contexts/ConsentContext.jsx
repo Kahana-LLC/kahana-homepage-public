@@ -1,6 +1,9 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
 const CONSENT_STORAGE_KEY = 'kahana_consent_preferences';
+/** Session cache for ipapi.co region to reduce 429 rate limits */
+const REGION_SESSION_KEY = 'kahana_ipapi_region_v1';
+const REGION_CACHE_TTL_MS = 7 * 24 * 60 * 60 * 1000;
 
 export const ConsentContext = createContext(null);
 
@@ -91,56 +94,101 @@ export const ConsentProvider = ({ children }) => {
     loadConsent();
   }, []);
 
-  // Detect user region (California detection)
+  // Detect user region (California detection) — cached in sessionStorage to limit ipapi.co calls
   useEffect(() => {
-    const detectRegion = async () => {
-      if (userRegion) return; // Already detected
-      
+    const persistRegionToConsent = (region) => {
+      setUserRegion(region);
+      if (consent) {
+        const updated = { ...consent, region };
+        setConsentState(updated);
+        if (typeof window !== 'undefined') {
+          try {
+            localStorage.setItem(CONSENT_STORAGE_KEY, JSON.stringify(updated));
+          } catch (storageError) {
+            console.warn('Failed to save consent to localStorage:', storageError);
+          }
+        }
+      }
+    };
+
+    /** @returns {{ hit: true, region: string | null } | { hit: false }} */
+    const readCachedRegion = () => {
+      if (typeof window === 'undefined') return { hit: false };
       try {
-        // Try to detect region from IP with timeout
+        const raw = sessionStorage.getItem(REGION_SESSION_KEY);
+        if (!raw) return { hit: false };
+        const parsed = JSON.parse(raw);
+        if (
+          parsed &&
+          typeof parsed.t === 'number' &&
+          Date.now() - parsed.t < REGION_CACHE_TTL_MS
+        ) {
+          return { hit: true, region: parsed.region ?? null };
+        }
+      } catch (_) {
+        /* ignore */
+      }
+      return { hit: false };
+    };
+
+    const writeCachedRegion = (region) => {
+      if (typeof window === 'undefined') return;
+      try {
+        sessionStorage.setItem(
+          REGION_SESSION_KEY,
+          JSON.stringify({ region, t: Date.now() })
+        );
+      } catch (_) {
+        /* ignore */
+      }
+    };
+
+    const detectRegion = async () => {
+      if (userRegion) return;
+
+      const cached = readCachedRegion();
+      if (cached.hit) {
+        persistRegionToConsent(cached.region);
+        return;
+      }
+
+      try {
         const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 5000); // 5 second timeout
-        
+        const timeoutId = setTimeout(() => controller.abort(), 5000);
+
         const response = await fetch('https://ipapi.co/json/', {
           method: 'GET',
           headers: {
-            'Accept': 'application/json',
+            Accept: 'application/json',
           },
           signal: controller.signal,
         });
-        
+
         clearTimeout(timeoutId);
-        
+
+        if (response.status === 429) {
+          console.warn('IP detection rate limited, using fallback');
+          const fallback = 'CA';
+          writeCachedRegion(fallback);
+          setUserRegion(fallback);
+          return;
+        }
+
         if (response.ok) {
           const data = await response.json();
-          
-          // Handle rate limiting
-          if (response.status === 429) {
-            console.warn('IP detection rate limited, using fallback');
-            setUserRegion('CA'); // Default to strict
-            return;
-          }
-          
-          const region = data.region_code === 'CA' ? 'CA' : data.country_code === 'US' ? 'US' : null;
-          setUserRegion(region);
-          
-          // Update stored consent with region
-          if (consent) {
-            const updated = { ...consent, region };
-            setConsentState(updated);
-            if (typeof window !== 'undefined') {
-              try {
-                localStorage.setItem(CONSENT_STORAGE_KEY, JSON.stringify(updated));
-              } catch (storageError) {
-                // Handle quota exceeded or other storage errors
-                console.warn('Failed to save consent to localStorage:', storageError);
-              }
-            }
-          }
+          const region =
+            data.region_code === 'CA'
+              ? 'CA'
+              : data.country_code === 'US'
+                ? 'US'
+                : null;
+          writeCachedRegion(region);
+          persistRegionToConsent(region);
         } else {
-          // Non-OK response - use fallback
           console.warn('IP detection returned non-OK status, using fallback');
-          setUserRegion('CA'); // Default to strict
+          const fallback = 'CA';
+          writeCachedRegion(fallback);
+          setUserRegion(fallback);
         }
       } catch (error) {
         if (error.name === 'AbortError') {
@@ -148,8 +196,9 @@ export const ConsentProvider = ({ children }) => {
         } else {
           console.warn('Region detection failed, defaulting to strict behavior:', error);
         }
-        // Default to strict (assume California) if detection fails
-        setUserRegion('CA');
+        const fallback = 'CA';
+        writeCachedRegion(fallback);
+        setUserRegion(fallback);
       }
     };
 

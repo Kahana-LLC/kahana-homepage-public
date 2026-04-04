@@ -98,7 +98,7 @@ module.exports = {
       },
       fontFamily: {
         "bricolage": [
-          '"Briolage Grotesque"',
+          "var(--font-bricolage)",
           "system-ui",
           "-apple-system",
           "BlinkMacSystemFont",
@@ -107,7 +107,7 @@ module.exports = {
           "sans-serif",
         ],
         "geist": [
-          "Geist",
+          "var(--font-geist)",
           "system-ui",
           "-apple-system",
           "BlinkMacSystemFont",
