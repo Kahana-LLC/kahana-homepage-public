@@ -6,7 +6,7 @@ export default function HowItWorks() {
   return (
     <section className="relative overflow-hidden py-24 sm:py-32 get-started-section">
       <div className="mx-auto max-w-5xl px-6 lg:px-8 text-center">
-        <h2 className="text-xl font-semibold leading-8 text-[#978455] mb-2">
+        <h2 className="text-xl font-semibold leading-8 text-[#5C5F2E] mb-2">
           Get Started
         </h2>
         <h2 className="text-3xl font-semibold tracking-tight text-[#313A00] sm:text-4xl">

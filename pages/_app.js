@@ -248,15 +248,22 @@ function AppContent({ Component, pageProps }) {
       );
     }
 
-    // Warmly - requires marketing consent
+    // Warmly — defer until browser idle to reduce main-thread contention with first input (INP)
     if (hasConsent('marketing')) {
-      loadScriptIfConsented(
-        'warmly-script-loader', // Use original ID that Warmly expects
-        'https://opps-widget.getwarmly.com/warmly.js?clientId=855ddcba822be578ea36ad4ad5dca9fa',
-        'marketing',
-        { defer: true },
-        hasConsent
-      );
+      const loadWarmly = () => {
+        loadScriptIfConsented(
+          'warmly-script-loader',
+          'https://opps-widget.getwarmly.com/warmly.js?clientId=855ddcba822be578ea36ad4ad5dca9fa',
+          'marketing',
+          { defer: true },
+          hasConsent
+        );
+      };
+      if (typeof window !== 'undefined' && typeof window.requestIdleCallback === 'function') {
+        window.requestIdleCallback(loadWarmly, { timeout: 4000 });
+      } else {
+        window.setTimeout(loadWarmly, 2000);
+      }
     }
   }, [consent, hasConsent, isLoading]);
 
@@ -320,13 +327,20 @@ function AppContent({ Component, pageProps }) {
       }
       
       if (newConsent.marketing) {
-        loadScriptIfConsented(
-          'warmly-script-loader', // Use original ID that Warmly expects
-          'https://opps-widget.getwarmly.com/warmly.js?clientId=855ddcba822be578ea36ad4ad5dca9fa',
-          'marketing',
-          { defer: true },
-          () => newConsent.marketing
-        );
+        const loadWarmly = () => {
+          loadScriptIfConsented(
+            'warmly-script-loader',
+            'https://opps-widget.getwarmly.com/warmly.js?clientId=855ddcba822be578ea36ad4ad5dca9fa',
+            'marketing',
+            { defer: true },
+            () => newConsent.marketing
+          );
+        };
+        if (typeof window !== 'undefined' && typeof window.requestIdleCallback === 'function') {
+          window.requestIdleCallback(loadWarmly, { timeout: 4000 });
+        } else {
+          window.setTimeout(loadWarmly, 2000);
+        }
       }
       
       // Note: We don't remove scripts when consent is revoked to avoid breaking functionality

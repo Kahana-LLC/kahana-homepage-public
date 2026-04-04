@@ -3,7 +3,7 @@ import Script from "next/script";
 import dynamic from "next/dynamic";
 import ProductSection, {
   OASIS_HERO_IMAGE_PATH,
-  OASIS_HERO_LCP_WIDTH,
+  OASIS_HERO_PRELOAD_WIDTH,
 } from "../components/ProductSection";
 import FadeInSection from "../components/FadeInSection";
 import SEO from "../components/SEO";
@@ -12,7 +12,14 @@ import Link from "next/link";
 import { getAuthorDetails } from "../utils/authorUtils";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import { getCloudinaryImageUrl } from "../utils/cloudinary-mapper";
+import {
+  getCloudinaryImageUrl,
+  getCloudinaryImageProps,
+} from "../utils/cloudinary-mapper";
+
+const WHY_OASIS_CARD_WIDTHS = [340, 480, 640, 828];
+const WHY_OASIS_CARD_SIZES =
+  "(max-width: 640px) 340px, (max-width: 1024px) 340px, 340px";
 
 const FeaturesShowcase = dynamic(() => import("../components/FeaturesShowcase"));
 const HowItWorks = dynamic(() => import("../components/HowItWorks"));
@@ -130,21 +137,18 @@ export default function Home({ blogPosts }) {
   const whyOasisCards = [
     {
       title: "Created to bring calm and focus back to browsing",
-      image: getCloudinaryImageUrl("/figma-imports/er.webp", { width: 1000, quality: 'auto:good' }),
+      imagePath: "/figma-imports/er.webp",
       imageAlt: "Serene illustration representing focused Oasis browsing",
-      loading: "lazy",
     },
     {
       title: "Makes browsing beautiful and natural",
-      image: getCloudinaryImageUrl("/figma-imports/Frame 1321315005.webp", { width: 1000, quality: 'auto:good' }),
+      imagePath: "/figma-imports/Frame 1321315005.webp",
       imageAlt: "Screenshot showcasing clutter-free Oasis browsing",
-      loading: "lazy",
     },
     {
       title: "Artificial Intelligence (AI) browser that adapts to you",
-      image: getCloudinaryImageUrl("/figma-imports/Summarize with AI 3.webp", { width: 1000, quality: 'auto:good' }),
+      imagePath: "/figma-imports/Summarize with AI 3.webp",
       imageAlt: "Illustration of Oasis adapting to the user",
-      loading: "lazy",
     },
   ];
 
@@ -185,12 +189,12 @@ export default function Home({ blogPosts }) {
           name="description"
           content="Kahana's Oasis Enterprise Browser helps teams stay organized, focused on ideas, and increase productivity while maintaining enterprise-grade security."
         />
-        {/* Preload critical hero image for faster LCP (matches Cloudinary src in ProductSection) */}
+        {/* Preload hero LCP candidate — width aligned with mobile column + OASIS_HERO_PRELOAD_WIDTH */}
         <link
           rel="preload"
           as="image"
           href={getCloudinaryImageUrl(OASIS_HERO_IMAGE_PATH, {
-            width: OASIS_HERO_LCP_WIDTH,
+            width: OASIS_HERO_PRELOAD_WIDTH,
             quality: "auto:good",
           })}
           fetchPriority="high"
@@ -282,7 +286,7 @@ export default function Home({ blogPosts }) {
                 <div className="absolute bottom-0 right-6 h-96 w-96 rounded-full bg-[#617500]/20 blur-[250px]" />
               </div>
               <div className="relative z-10 w-full max-w-5xl mx-auto px-6 sm:px-8 text-center">
-                <p className="text-xl font-semibold leading-8 text-[#978455] mb-4" role="doc-subtitle">
+                <p className="text-xl font-semibold leading-8 text-[#5C5F2E] mb-4" role="doc-subtitle">
                   Personalize Your Experience
                 </p>
                 <h2 className="text-3xl sm:text-4xl font-semibold leading-tight text-[#313A00] mb-10">
@@ -305,7 +309,7 @@ export default function Home({ blogPosts }) {
             >
               <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-12">
-                  <p className="text-xl font-semibold leading-8 text-[#978455] mb-2" role="doc-subtitle">
+                  <p className="text-xl font-semibold leading-8 text-[#5C5F2E] mb-2" role="doc-subtitle">
                     Rediscover Browsing
                   </p>
                   <h2 className="text-3xl font-semibold tracking-tight text-[#313A00] sm:text-4xl">
@@ -313,21 +317,41 @@ export default function Home({ blogPosts }) {
                   </h2>
                 </div>
                 <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 md:justify-items-center">
-                  {whyOasisCards.map((card) => (
+                  {whyOasisCards.map((card) => {
+                    const oasisImg = getCloudinaryImageProps(card.imagePath, {
+                      widths: WHY_OASIS_CARD_WIDTHS,
+                      quality: "auto:good",
+                    });
+                    return (
                     <div
                       key={card.title}
                       className="relative bg-white/90 border border-white/80 rounded-[26px] px-5 py-6 shadow-[0_25px_70px_rgba(32,47,0,0.14)] flex flex-col gap-5 w-full max-w-[340px] mx-auto backdrop-blur-lg"
                     >
                       <div className="relative w-full aspect-[4/3] overflow-hidden rounded-[18px] border border-[#F6F3E7] bg-white/70 shadow-[0_25px_70px_rgba(27,33,0,0.18)]">
-                        <Image
-                          src={card.image}
-                          alt={card.imageAlt || `${card.title} illustration`}
-                          fill
-                          sizes="(max-width: 640px) 340px, (max-width: 1024px) 340px, 340px"
-                          className="object-cover"
-                          loading="lazy"
-                          quality={85}
-                        />
+                        {oasisImg.srcSet && oasisImg.src ? (
+                          <img
+                            src={oasisImg.src}
+                            srcSet={oasisImg.srcSet}
+                            sizes={WHY_OASIS_CARD_SIZES}
+                            alt={card.imageAlt || `${card.title} illustration`}
+                            className="absolute inset-0 h-full w-full object-cover"
+                            loading="lazy"
+                            decoding="async"
+                          />
+                        ) : (
+                          <Image
+                            src={getCloudinaryImageUrl(card.imagePath, {
+                              width: 640,
+                              quality: "auto:good",
+                            })}
+                            alt={card.imageAlt || `${card.title} illustration`}
+                            fill
+                            sizes={WHY_OASIS_CARD_SIZES}
+                            className="object-cover"
+                            loading="lazy"
+                            quality={85}
+                          />
+                        )}
                       </div>
                       <div className="flex flex-col gap-3 text-left">
                        
@@ -341,7 +365,8 @@ export default function Home({ blogPosts }) {
                         )}
                       </div>
                     </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </div>
             </section>

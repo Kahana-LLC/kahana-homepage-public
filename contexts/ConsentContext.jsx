@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
 const CONSENT_STORAGE_KEY = 'kahana_consent_preferences';
-/** Session cache for ipapi.co region to reduce 429 rate limits */
+/** Session cache for ipapi.co — avoids repeat requests and reduces 429s (Best Practices / INP noise) */
 const REGION_SESSION_KEY = 'kahana_ipapi_region_v1';
 const REGION_CACHE_TTL_MS = 7 * 24 * 60 * 60 * 1000;
 
