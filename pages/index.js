@@ -17,7 +17,8 @@ import {
   getCloudinaryImageProps,
 } from "../utils/cloudinary-mapper";
 
-const WHY_OASIS_CARD_WIDTHS = [340, 480, 640, 828];
+/** Default src = 480w (middle) — closer to 341×222 × DPR than 640w */
+const WHY_OASIS_CARD_WIDTHS = [340, 400, 480, 560, 640];
 const WHY_OASIS_CARD_SIZES =
   "(max-width: 640px) 340px, (max-width: 1024px) 340px, 340px";
 

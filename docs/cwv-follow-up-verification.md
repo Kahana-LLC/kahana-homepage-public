@@ -1,18 +1,32 @@
-# CWV follow-up — how to verify (post–Apr 2026)
+# CWV follow-up — how to verify (mobile-first)
 
-After deploying the follow-up changes (responsive Cloudinary `srcset`, hero `sizes` + preload, navbar `prefetch={false}` on heavy routes, Warmly idle-defer, contrast):
+After deploying mobile CWV improvements (tighter Cloudinary `srcset` defaults, footer `prefetch={false}`, `browserslist`, TTFB notes):
 
 ## Lab (immediate)
 
-1. Open Chrome DevTools → Lighthouse → **Mobile**, **Slow 4G**, **Navigate** to `https://kahana.co/`.
-2. Compare to the baseline in [cwv-report-kahana-co-2026-04-04.md](./cwv-report-kahana-co-2026-04-04.md): **LCP** (lab is stress-test), **Improve image delivery**, **Reduce unused JavaScript** (white paper / buyer guide chunks should not load on cold homepage if nav links are not prefetching).
-3. Optional: Network tab → filter `white-paper` / `enterprise-buyer` — should not appear on first paint without navigation.
+1. **PageSpeed Insights** — **Mobile** tab, URL `https://kahana.co/`.
+2. **Desktop** tab — confirm scores stay **~90+** on Performance / no regression vs prior baseline.
+3. Chrome DevTools → Lighthouse → **Mobile**, **Slow 4G** — check **LCP**, **Improve image delivery**, **Reduce unused JavaScript** (`about` / `privacy-policy` should not prefetch from footer on cold load the same way).
+4. Optional: Network → filter `about-` / `privacy-policy` — fewer early requests after footer `prefetch={false}`.
 
 ## Field (4–28 days)
 
-- **CrUX** in PageSpeed Insights updates on a **rolling 28-day** window; expect gradual movement on **LCP** and **INP**, not instant jumps.
-- Use **Search Console** Core Web Vitals report for trend lines.
+- **CrUX** updates on a **rolling 28-day** window — expect gradual movement on **LCP** and **INP** on **Mobile**.
+- **Search Console** → Core Web Vitals for trend lines.
+- Compare mobile vs desktop in PSI: mobile is the **priority** for remaining gaps; desktop already passed in the Apr 2026 snapshot.
+
+## Related docs
+
+- [cwv-report-kahana-co-2026-04-04-1828.md](./cwv-report-kahana-co-2026-04-04-1828.md) — baseline metrics and opportunities.
+- [cwv-ttfb-hosting-notes.md](./cwv-ttfb-hosting-notes.md) — TTFB / hosting levers (not code-only).
 
 ## Scripts checklist
 
-- Warmly (marketing consent) loads after **`requestIdleCallback`** (or `setTimeout` fallback) to reduce contention with first input.
+- Warmly (marketing consent) loads after **`requestIdleCallback`** (see [`pages/_app.js`](../pages/_app.js)).
+- **ipapi** region cache: [`contexts/ConsentContext.jsx`](../contexts/ConsentContext.jsx).
+
+## Build / polyfills
+
+- **`browserslist`** in [`package.json`](../package.json) targets **last 2** major browsers — may reduce **legacy JavaScript** polyfill bytes slightly; if a regression appears for older browsers, widen the query.
+
+**Unused CSS (~22 KiB)** in Lighthouse was left as a lower-priority follow-up (Tailwind/global bundle); revisit after LCP/INP trends improve.
