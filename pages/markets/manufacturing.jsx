@@ -6,6 +6,7 @@ import Link from 'next/link';
 import SEO from '../../components/SEO';
 import FeaturedBlogSection from '../../components/FeaturedBlogSection';
 import { blogIndex } from '../../data/blog-index';
+import { normalizeBlogCategories } from '../../utils/blog-helpers';
 
 const securityFeatures = [
   {
@@ -149,7 +150,7 @@ const manufacturingMetrics = [
 export async function getServerSideProps() {
   try {
     const manufacturingBlogs = blogIndex
-      .filter(post => post.category.some(cat => 
+      .filter(post => normalizeBlogCategories(post.category).some(cat => 
         cat.toLowerCase() === 'manufacturing' || 
       cat.toLowerCase() === 'security'
       ))
@@ -167,7 +168,7 @@ export async function getServerSideProps() {
     
     // Return fallback data if everything fails
     const fallbackBlogs = blogIndex
-      .filter(post => post.category.some(cat => 
+      .filter(post => normalizeBlogCategories(post.category).some(cat => 
         cat.toLowerCase() === 'manufacturing' || 
       cat.toLowerCase() === 'security'
       ))

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { getRandomPhoto, getOptimizedPhotoUrl, getPlaceholderImageUrl } from '../utils/pexels';
-import { suggestNatureImageQuery } from '../utils/blog-helpers';
+import { suggestNatureImageQuery, normalizeBlogCategories } from '../utils/blog-helpers';
 import { getAuthorDetails } from '../utils/authorUtils';
 
 // Individual blog post card with image loading
@@ -23,7 +23,8 @@ const FeaturedBlogCard = ({ post }) => {
           return;
         }
         
-        const primaryQuery = post.defaultImageQuery || suggestNatureImageQuery(post.category);
+        const primaryCategory = normalizeBlogCategories(post.category)[0] || 'Security';
+        const primaryQuery = post.defaultImageQuery || suggestNatureImageQuery(primaryCategory);
         // Use the post slug as unique identifier to prevent duplicate images
         const photo = await getRandomPhoto(primaryQuery, post.slug);
         
@@ -36,7 +37,8 @@ const FeaturedBlogCard = ({ post }) => {
       } catch (error) {
         console.error('Error fetching image:', error);
         // Use placeholder on error
-        const primaryQuery = post.defaultImageQuery || suggestNatureImageQuery(post.category);
+        const primaryCategory = normalizeBlogCategories(post.category)[0] || 'Security';
+        const primaryQuery = post.defaultImageQuery || suggestNatureImageQuery(primaryCategory);
         setImageUrl(getPlaceholderImageUrl(primaryQuery, post.slug));
       } finally {
         setIsLoadingImage(false);
@@ -93,7 +95,7 @@ const FeaturedBlogCard = ({ post }) => {
           </div>
           <p className="text-[#4A5745] text-sm mb-4 line-clamp-3">{post.excerpt}</p>
           <div className="flex flex-wrap gap-2 mt-auto">
-            {post.category.map((cat) => (
+            {normalizeBlogCategories(post.category).map((cat) => (
               <span key={cat} className="bg-[#F3F8E4] text-[#4A5745] px-3 py-1 rounded-full text-xs font-medium">
                 {cat}
               </span>

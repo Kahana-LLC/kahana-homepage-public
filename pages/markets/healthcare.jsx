@@ -8,6 +8,7 @@ import IndustryMetrics from '../../components/IndustryMetrics';
 import { parseIndustryMetrics, getIndustryData } from '../../utils/metricsParser';
 import FeaturedBlogSection from '../../components/FeaturedBlogSection';
 import { blogIndex } from '../../data/blog-index';
+import { normalizeBlogCategories } from '../../utils/blog-helpers';
 
 const securityFeatures = [
   {
@@ -161,7 +162,7 @@ const industryBenefits = [
 export async function getServerSideProps() {
   try {
     const healthcareBlogs = blogIndex
-      .filter(post => post.category.some(cat => 
+      .filter(post => normalizeBlogCategories(post.category).some(cat => 
         cat.toLowerCase() === 'healthcare' || 
       cat.toLowerCase() === 'security'
       ))
@@ -179,7 +180,7 @@ export async function getServerSideProps() {
     
     // Return fallback data if everything fails
     const fallbackBlogs = blogIndex
-      .filter(post => post.category.some(cat => 
+      .filter(post => normalizeBlogCategories(post.category).some(cat => 
         cat.toLowerCase() === 'healthcare' || 
       cat.toLowerCase() === 'security'
       ))

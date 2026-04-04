@@ -6,6 +6,7 @@ import Link from 'next/link';
 import SEO from '../../components/SEO';
 import FeaturedBlogSection from '../../components/FeaturedBlogSection';
 import { blogIndex } from '../../data/blog-index';
+import { normalizeBlogCategories } from '../../utils/blog-helpers';
 
 const retailFeatures = [
   {
@@ -180,7 +181,7 @@ const retailMetrics = [
 export async function getServerSideProps() {
   try {
     const retailBlogs = blogIndex
-      .filter(post => post.category.some(cat => 
+      .filter(post => normalizeBlogCategories(post.category).some(cat => 
         cat.toLowerCase() === 'retail' || 
       cat.toLowerCase() === 'security'
       ))
@@ -198,7 +199,7 @@ export async function getServerSideProps() {
     
     // Return fallback data if everything fails
     const fallbackBlogs = blogIndex
-      .filter(post => post.category.some(cat => 
+      .filter(post => normalizeBlogCategories(post.category).some(cat => 
         cat.toLowerCase() === 'retail' || 
       cat.toLowerCase() === 'security'
       ))
