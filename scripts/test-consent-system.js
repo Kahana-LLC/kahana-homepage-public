@@ -134,10 +134,6 @@
           'Google Analytics script not loaded without consent'
         );
         assert(
-          !isScriptLoadedBySrc('hotjar.com'),
-          'Hotjar script not loaded without consent'
-        );
-        assert(
           !isScriptLoadedBySrc('getwarmly.com'),
           'Warmly script not loaded without consent'
         );

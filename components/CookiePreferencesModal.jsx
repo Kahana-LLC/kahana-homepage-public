@@ -161,7 +161,7 @@ export default function CookiePreferencesModal() {
                     information anonymously. This helps us improve our website and user experience.
                   </p>
                   <p className="text-xs text-gray-500">
-                    <strong>Tools:</strong> Google Analytics, Hotjar
+                    <strong>Tools:</strong> Google Analytics, Google Tag Manager
                   </p>
                 </div>
                 <div className="ml-4">

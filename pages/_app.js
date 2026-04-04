@@ -6,13 +6,13 @@ import SEO from "../components/SEO";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { trackError } from "../utils/analytics";
-import Script from "next/script";
 import { ConsentProvider, useConsent } from "../contexts/ConsentContext";
 import ConsentBanner from "../components/ConsentBanner";
 import CookiePreferencesModal from "../components/CookiePreferencesModal";
 import ConsentErrorBoundary from "../components/ConsentErrorBoundary";
 import { loadScriptIfConsented, loadInlineScriptIfConsented } from "../utils/scriptLoader";
 import { trackMixpanelPageView } from "../utils/mixpanel";
+import { ensureMixpanelFromNpm } from "../utils/mixpanelNpmInit";
 
 // Inner component that uses consent
 function AppContent({ Component, pageProps }) {
@@ -149,40 +149,6 @@ function AppContent({ Component, pageProps }) {
     };
   }, [router.events, hasConsent, consent]);
 
-  // Mixpanel via npm (mixpanel-browser) – no CDN, works on localhost even when CDN is blocked
-  const initMixpanelFromNpm = async (token, opts) => {
-    const { debug = false, apiHost } = opts || {};
-    const sessionReplayPercent = parseInt(process.env.NEXT_PUBLIC_MIXPANEL_SESSION_REPLAY_PERCENT || '0', 10);
-    const enableHeatmaps = sessionReplayPercent > 0;
-    try {
-      const mod = await import('mixpanel-browser');
-      const mp = mod.default;
-      const initOpts = {
-        debug,
-        track_pageview: false,
-        persistence: 'localStorage',
-        api_host: apiHost || 'https://api.mixpanel.com',
-        loaded: (m) => {
-          m.track('Page View', {
-            page_path: typeof window !== 'undefined' ? window.location.pathname : '',
-            page_title: typeof document !== 'undefined' ? document.title : '',
-            url: typeof window !== 'undefined' ? window.location.href : '',
-            timestamp: new Date().toISOString(),
-          });
-        },
-      };
-      if (enableHeatmaps) {
-        initOpts.record_sessions_percent = Math.min(100, Math.max(1, sessionReplayPercent));
-        initOpts.record_heatmap_data = true;
-      }
-      mp.init(token, initOpts);
-      return mp;
-    } catch (e) {
-      console.error('[Mixpanel] init error:', e);
-      return null;
-    }
-  };
-
   // Load Mixpanel on localhost immediately (no consent wait)
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -196,7 +162,7 @@ function AppContent({ Component, pageProps }) {
     const apiHost = process.env.NEXT_PUBLIC_MIXPANEL_API_HOST
       || (process.env.NEXT_PUBLIC_MIXPANEL_EU === 'true' ? 'https://api-eu.mixpanel.com' : 'https://api.mixpanel.com');
     console.log('[Mixpanel] Localhost: init via npm (no CDN)…');
-    initMixpanelFromNpm(token, { debug: true, apiHost }).then((mp) => {
+    ensureMixpanelFromNpm(token, { debug: true, apiHost }).then((mp) => {
       if (mp) console.log('[Mixpanel] Localhost: initialized, Page View tracked');
     });
   }, []);
@@ -252,24 +218,6 @@ function AppContent({ Component, pageProps }) {
         hasConsent
       );
 
-      // Hotjar - requires analytics consent
-      loadInlineScriptIfConsented(
-        'hotjar-script-app',
-        `
-            (function(h,o,t,j,a,r){
-              h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-              h._hjSettings={hjid:2868036,hjsv:6};
-              a=o.getElementsByTagName('head')[0];
-              r=o.createElement('script');r.async=1;
-              r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-              a.appendChild(r);
-            })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-          `,
-        'analytics',
-        {},
-        hasConsent
-      );
-
     }
 
     // Mixpanel via npm – analytics consent OR localhost (no CDN)
@@ -281,7 +229,7 @@ function AppContent({ Component, pageProps }) {
       if (isMixpanelDebug && !isLocalhost) {
         console.log('[Mixpanel] Init via npm, host:', window.location.host, 'api_host:', mixpanelApiHost);
       }
-      initMixpanelFromNpm(mixpanelToken, { debug: isMixpanelDebug, apiHost: mixpanelApiHost }).then((mp) => {
+      ensureMixpanelFromNpm(mixpanelToken, { debug: isMixpanelDebug, apiHost: mixpanelApiHost }).then((mp) => {
         if (mp && isMixpanelDebug && !isLocalhost) console.log('[Mixpanel] Initialized, Page View tracked');
       });
     } else if (!mixpanelToken) {
@@ -357,31 +305,7 @@ function AppContent({ Component, pageProps }) {
           {},
           () => newConsent.analytics
         );
-        loadInlineScriptIfConsented(
-          'hotjar-script-app',
-          `
-            (function(h,o,t,j,a,r){
-              h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-              h._hjSettings={hjid:2868036,hjsv:6};
-              a=o.getElementsByTagName('head')[0];
-              r=o.createElement('script');r.async=1;
-              r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-              a.appendChild(r);
-            })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-          `,
-          'analytics',
-          {},
-          () => newConsent.analytics
-        );
-
-        // Mixpanel via npm when consent granted
-        const mixpanelToken = process.env.NEXT_PUBLIC_MIXPANEL_TOKEN;
-        if (mixpanelToken) {
-          const isMixpanelDebug = process.env.NODE_ENV === 'development' || process.env.NEXT_PUBLIC_MIXPANEL_DEBUG === 'true';
-          const mixpanelApiHost = process.env.NEXT_PUBLIC_MIXPANEL_API_HOST
-            || (process.env.NEXT_PUBLIC_MIXPANEL_EU === 'true' ? 'https://api-eu.mixpanel.com' : 'https://api.mixpanel.com');
-          initMixpanelFromNpm(mixpanelToken, { debug: isMixpanelDebug, apiHost: mixpanelApiHost });
-        }
+        // Mixpanel: initialized only from the consent useEffect via ensureMixpanelFromNpm (single-flight)
       }
       
       if (newConsent.advertising) {
