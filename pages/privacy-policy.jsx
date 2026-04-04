@@ -110,7 +110,7 @@ export default function PrivacyPolicy() {
                     These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously. This information helps us improve our website and user experience.
                   </p>
                   <p className="text-sm text-gray-600 mb-2">
-                    <strong>Tools we use:</strong> Google Analytics, Google Tag Manager, Hotjar, PostHog
+                    <strong>Tools we use:</strong> Google Analytics, Google Tag Manager, Mixpanel, PostHog
                   </p>
                   <p className="text-sm text-gray-600">
                     <strong>Data collected:</strong> Page views, user interactions, session duration, bounce rates, device and browser information, conversion events, funnel analytics
@@ -149,7 +149,7 @@ export default function PrivacyPolicy() {
               </p>
 
               <p className="text-gray-700 leading-relaxed mb-6">
-                <strong>Third-Party Sharing:</strong> When you consent to non-essential tracking technologies, we may share information collected through these technologies with third-party service providers, including Google (for Analytics and Ads), Hotjar, PostHog, and Warmly. These third parties may use this information for their own purposes in accordance with their privacy policies. PostHog is used for product analytics. For more information about PostHog's data practices, please visit <a href="https://posthog.com/privacy" target="_blank" rel="noopener noreferrer" className="text-[#4A6200] no-underline hover:no-underline font-semibold">PostHog's Privacy Policy</a>.
+                <strong>Third-Party Sharing:</strong> When you consent to non-essential tracking technologies, we may share information collected through these technologies with third-party service providers, including Google (for Analytics and Ads), Mixpanel, PostHog, and Warmly. These third parties may use this information for their own purposes in accordance with their privacy policies. PostHog is used for product analytics. For more information about PostHog's data practices, please visit <a href="https://posthog.com/privacy" target="_blank" rel="noopener noreferrer" className="text-[#4A6200] no-underline hover:no-underline font-semibold">PostHog's Privacy Policy</a>.
               </p>
 
               <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">Information collected from other sources</h3>

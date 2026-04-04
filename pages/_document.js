@@ -8,7 +8,6 @@ export default function Document() {
         {/* Resource Hints - DNS prefetch for external domains */}
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
-        <link rel="dns-prefetch" href="https://static.hotjar.com" />
         <link rel="dns-prefetch" href="https://client.crisp.chat" />
         <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
         <link rel="dns-prefetch" href="https://api.mixpanel.com" />
