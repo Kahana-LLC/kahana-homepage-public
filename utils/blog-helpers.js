@@ -1,3 +1,12 @@
+/**
+ * Normalize blog post category to an array of strings.
+ * `data/blog-index.js` uses both `category: "Security"` and `category: ["AI & Browser Technology"]`.
+ */
+export function normalizeBlogCategories(category) {
+  if (category == null || category === "") return [];
+  return Array.isArray(category) ? category : [category];
+}
+
 // Map of categories to nature-themed image queries
 const categoryImageMap = {
   Security: [
