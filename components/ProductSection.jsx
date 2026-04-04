@@ -6,18 +6,21 @@ import { trackButtonClick } from '../utils/analytics';
 
 /** Homepage hero — keep in sync with preload URL in pages/index.js */
 export const OASIS_HERO_IMAGE_PATH = '/images/Welcome to Oasis.webp';
-export const OASIS_HERO_WIDTHS = [640, 828, 1080, 1200, 1920];
-/** Default `src` width from getCloudinarySrcSet (middle index) — use for rel=preload */
-export const OASIS_HERO_LCP_WIDTH =
-  OASIS_HERO_WIDTHS[Math.floor(OASIS_HERO_WIDTHS.length / 2)];
+/** Srcset candidates — include smaller widths so mobile does not pull 640w+ when the box is ~360px CSS */
+export const OASIS_HERO_WIDTHS = [384, 640, 828, 1080, 1200, 1920];
+/**
+ * Preload width — mobile-first LCP (~360px CSS × 2 DPR ≈ 720; 640w is a close Cloudinary step).
+ * Must stay aligned with the hero column layout (max-w-3xl + padding), not 100vw.
+ */
+export const OASIS_HERO_PRELOAD_WIDTH = 640;
 
-const HERO_SIZES = '(max-width: 640px) 100vw, (max-width: 768px) 90vw, (max-width: 1024px) 80vw, 1200px';
-const HERO_WIDTHS = OASIS_HERO_WIDTHS;
+/** Matches rendered hero column width, not full viewport (avoids oversized srcset picks). */
+const HERO_SIZES =
+  '(max-width: 640px) 360px, (max-width: 768px) 680px, (max-width: 1024px) 720px, min(90vw, 1152px)';
 
 function HeroImage() {
   const heroProps = getCloudinaryImageProps(OASIS_HERO_IMAGE_PATH, {
-    widths: HERO_WIDTHS,
-    width: 1200,
+    widths: OASIS_HERO_WIDTHS,
     quality: 'auto:good',
   });
   if (heroProps.srcSet && heroProps.src) {
@@ -62,7 +65,7 @@ export default function ProductSection() {
             <h1 className="text-4xl font-semibold leading-tight text-[#313A00] sm:text-5xl mb-2">
               Meet Oasis, the Most Elegant Browser
             </h1>
-            <h2 className="text-xl font-semibold leading-8 text-[#978455]">
+            <h2 className="text-xl font-semibold leading-8 text-[#5C5F2E]">
               Fall in Love
             </h2>
             <p className="text-lg text-[#4A5745] max-w-2xl">

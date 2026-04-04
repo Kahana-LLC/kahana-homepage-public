@@ -107,25 +107,25 @@ h6 {
   color: #556600 !important;
 }
 
-/* Exception for ProductSection h2 */
+/* Exception for ProductSection h2 — WCAG AA on white (~4.5:1) */
 .product-container h2 {
-  color: #978455 !important;
+  color: #5c5f2e !important;
 }
 
 /* Exception for FeaturesShowcase h2 */
 .features-section h2 {
-  color: #978455 !important;
+  color: #5c5f2e !important;
 }
 
 /* Exception for HowItWorks h2 */
 .get-started-section h2 {
-  color: #978455 !important;
+  color: #5c5f2e !important;
 }
 
 /* Exceptions for homepage section headings */
 #video h2,
 #why-oasis h2 {
-  color: #978455 !important;
+  color: #5c5f2e !important;
 }
 
 /* High-contrast links */

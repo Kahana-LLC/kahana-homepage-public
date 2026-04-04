@@ -801,7 +801,7 @@ function NavBar() {
                     <Link href="/docs" className="dropdown-link" onClick={() => setOpenDropdown(null)}>
                       Docs
                     </Link>
-                    <Link href="/white-paper-future-of-ergonomic-work" className="dropdown-link" onClick={() => setOpenDropdown(null)}>
+                    <Link href="/white-paper-future-of-ergonomic-work" prefetch={false} className="dropdown-link" onClick={() => setOpenDropdown(null)}>
                       White Paper
                     </Link>
                     <Link href="/subscribe-to-insights" className="dropdown-link" onClick={() => setOpenDropdown(null)}>
@@ -813,7 +813,7 @@ function NavBar() {
                   </div>
                 </div>
                 <div className="dropdown-section">
-                  <Link href="/enterprise-buyer-guide" className="block p-4 bg-gradient-to-r from-[#66C2BE]/5 to-[#8CB7D0]/5 rounded-lg border border-[#66C2BE]/20 hover:from-[#66C2BE]/10 hover:to-[#8CB7D0]/10 hover:border-[#66C2BE]/30 transition-all duration-200 no-underline" onClick={() => setOpenDropdown(null)}>
+                  <Link href="/enterprise-buyer-guide" prefetch={false} className="block p-4 bg-gradient-to-r from-[#66C2BE]/5 to-[#8CB7D0]/5 rounded-lg border border-[#66C2BE]/20 hover:from-[#66C2BE]/10 hover:to-[#8CB7D0]/10 hover:border-[#66C2BE]/30 transition-all duration-200 no-underline" onClick={() => setOpenDropdown(null)}>
                     <div className="w-full h-32 rounded-lg overflow-hidden mb-3">
                       <img 
                         src={getCloudinaryImageUrl("/assets/pexels-kamo11235-667838.jpg", { width: 280, height: 160, quality: 'auto:good' })} 
@@ -952,10 +952,10 @@ function NavBar() {
             {/* Learn Section */}
             <Link href="/blog" className="mobile-link no-underline">Blog</Link>
             <Link href="/docs" className="mobile-link no-underline">Docs</Link>
-            <Link href="/white-paper-future-of-ergonomic-work" className="mobile-link no-underline">White Paper</Link>
+            <Link href="/white-paper-future-of-ergonomic-work" prefetch={false} className="mobile-link no-underline">White Paper</Link>
             <Link href="/subscribe-to-insights" className="mobile-link no-underline">Newsletter</Link>
             <Link href="/community" className="mobile-link no-underline">Join Discord</Link>
-            <Link href="/enterprise-buyer-guide" className="mobile-link flex items-center space-x-3 p-3 bg-gradient-to-r from-[#66C2BE]/5 to-[#8CB7D0]/5 rounded-lg border border-[#66C2BE]/20 hover:from-[#66C2BE]/10 hover:to-[#8CB7D0]/10 hover:border-[#66C2BE]/30 transition-all duration-200 no-underline">
+            <Link href="/enterprise-buyer-guide" prefetch={false} className="mobile-link flex items-center space-x-3 p-3 bg-gradient-to-r from-[#66C2BE]/5 to-[#8CB7D0]/5 rounded-lg border border-[#66C2BE]/20 hover:from-[#66C2BE]/10 hover:to-[#8CB7D0]/10 hover:border-[#66C2BE]/30 transition-all duration-200 no-underline">
               <div className="flex-shrink-0 w-12 h-12 rounded-lg overflow-hidden">
                 <img 
                   src={getCloudinaryImageUrl("/assets/pexels-kamo11235-667838.jpg", { width: 48, height: 48, quality: 'auto:good' })} 

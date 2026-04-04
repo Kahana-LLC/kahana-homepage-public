@@ -150,27 +150,30 @@ export function getCloudinaryImageProps(localPath, options = {}) {
   if (publicId) {
     const { getCloudinarySrcSet } = require('./cloudinary');
     const { widths, ...restOptions } = options;
-    
-    const src = getCloudinaryUrl(publicId, {
-      format: 'auto',
-      quality: 'auto:good',
-      ...restOptions,
-    });
-    
-    if (!src) {
-      return { src: localPath.startsWith('/') ? localPath : `/${localPath}` };
-    }
-    
-    if (widths) {
-      const { srcSet } = getCloudinarySrcSet(publicId, {
+
+    if (widths?.length) {
+      const { src, srcSet } = getCloudinarySrcSet(publicId, {
         format: 'auto',
         quality: 'auto:good',
         widths,
         ...restOptions,
       });
+      if (!src) {
+        return { src: localPath.startsWith('/') ? localPath : `/${localPath}` };
+      }
       return { src, srcSet };
     }
-    
+
+    const src = getCloudinaryUrl(publicId, {
+      format: 'auto',
+      quality: 'auto:good',
+      ...restOptions,
+    });
+
+    if (!src) {
+      return { src: localPath.startsWith('/') ? localPath : `/${localPath}` };
+    }
+
     return { src };
   }
   

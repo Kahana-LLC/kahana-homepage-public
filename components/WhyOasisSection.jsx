@@ -70,7 +70,7 @@ export default function WhyOasisSection() {
           line-height: 2rem;
         }
         .why-oasis-container h2 {
-          color: #978455 !important;
+          color: #5c5f2e !important;
         }
         .why-oasis-item {
           display: flex;
@@ -100,7 +100,7 @@ export default function WhyOasisSection() {
       <div className="why-oasis-container">
         {/* Section Title */}
         <div className="text-center mb-12">
-          <h2 className="text-xl font-semibold leading-8 text-[#978455] mb-4">Why Oasis ?</h2>
+          <h2 className="text-xl font-semibold leading-8 text-[#5C5F2E] mb-4">Why Oasis ?</h2>
         </div>
 
         {/* Alternating Image and Text Items */}
