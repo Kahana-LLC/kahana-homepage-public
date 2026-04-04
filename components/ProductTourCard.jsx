@@ -5,9 +5,11 @@ import {
   getCloudinaryImageUrl,
 } from "../utils/cloudinary-mapper";
 
-const TOUR_WIDTHS = [480, 640, 828, 1000];
+/** 5 slots — default src ~720w; avoid 828 on narrow viewports */
+const TOUR_WIDTHS = [480, 640, 720, 840, 1000];
+/** Match max-w-4xl column (~896px max) — not min(100vw,896px) which overstates mobile width */
 const TOUR_SIZES =
-  "(max-width: 640px) min(100vw, 896px), (max-width: 768px) 90vw, (max-width: 1024px) 80vw, 1000px";
+  "(max-width: 640px) min(calc(100vw - 3rem), 896px), (max-width: 768px) min(90vw, 896px), (max-width: 1024px) min(85vw, 896px), min(896px, 1000px)";
 
 export default function ProductTourCard() {
   const img = getCloudinaryImageProps("/figma-imports/Custom Themes.webp", {
@@ -31,7 +33,7 @@ export default function ProductTourCard() {
         ) : (
           <Image
             src={getCloudinaryImageUrl("/figma-imports/Custom Themes.webp", {
-              width: 828,
+              width: 720,
               quality: "auto:good",
             })}
             alt="Oasis Custom Themes"

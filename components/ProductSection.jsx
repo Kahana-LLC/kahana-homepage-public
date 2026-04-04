@@ -6,8 +6,11 @@ import { trackButtonClick } from '../utils/analytics';
 
 /** Homepage hero — keep in sync with preload URL in pages/index.js */
 export const OASIS_HERO_IMAGE_PATH = '/images/Welcome to Oasis.webp';
-/** Srcset candidates — include smaller widths so mobile does not pull 640w+ when the box is ~360px CSS */
-export const OASIS_HERO_WIDTHS = [384, 640, 828, 1080, 1200, 1920];
+/**
+ * Srcset — 7 widths so middle index (3) = 640w default `src`, not 1080w
+ * (getCloudinarySrcSet: width = widths[floor(length/2)]).
+ */
+export const OASIS_HERO_WIDTHS = [320, 384, 480, 640, 828, 1080, 1920];
 /**
  * Preload width — mobile-first LCP (~360px CSS × 2 DPR ≈ 720; 640w is a close Cloudinary step).
  * Must stay aligned with the hero column layout (max-w-3xl + padding), not 100vw.

@@ -3,10 +3,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { getCloudinaryImageProps, getCloudinaryImageUrl } from '../utils/cloudinary-mapper';
 
-/** Aligned with card column width — next/image unoptimized uses one URL; srcset fixes oversized w_800 on mobile */
-const FEATURE_CARD_WIDTHS = [320, 480, 640, 800];
+/** Middle index = 480w — matches ~246×160 CSS × ~2 DPR without jumping to 640w */
+const FEATURE_CARD_WIDTHS = [300, 400, 480, 560, 640];
 const FEATURE_CARD_SIZES =
-  '(max-width: 640px) min(calc(100vw - 8rem), 400px), (max-width: 768px) 45vw, 400px';
+  '(max-width: 640px) min(calc(100vw - 8rem), 260px), (max-width: 768px) 45vw, 400px';
 
 const conceptCards = [
   {

@@ -202,7 +202,7 @@ function FooterContent() {
               </button>
               <h3 className="text-[#617500] font-semibold mb-6 text-lg hidden md:block">About</h3>
               <ul className={`space-y-4 ${openSection === 'about' || !isMobile ? 'block' : 'hidden'}`}>
-                <li><Link href="/about" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 no-underline">About Kahana</Link></li>
+                <li><Link href="/about" prefetch={false} className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 no-underline">About Kahana</Link></li>
                 <li><Link href="/security" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 no-underline">Security</Link></li>
                 <li><Link href="/support" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 no-underline">Support</Link></li>
                 <li><Link href="/careers" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 no-underline">Careers</Link></li>
@@ -216,8 +216,8 @@ function FooterContent() {
               <div className="flex flex-col items-center space-y-4 mb-6">
                 <span className="text-[#4A5745] text-sm">&copy; Kahana Group Inc., 2026. All rights reserved</span>
                 <div className="flex flex-wrap items-center justify-center gap-4 md:gap-8">
-                  <Link href="/privacy-policy" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 text-sm no-underline">Privacy</Link>
-                  <Link href="/terms-and-conditions" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 text-sm no-underline">Terms</Link>
+                  <Link href="/privacy-policy" prefetch={false} className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 text-sm no-underline">Privacy</Link>
+                  <Link href="/terms-and-conditions" prefetch={false} className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 text-sm no-underline">Terms</Link>
                   {openCookieModal ? (
                     <button
                       onClick={openCookieModal}
@@ -227,7 +227,7 @@ function FooterContent() {
                       Cookie Settings
                     </button>
                   ) : (
-                    <Link href="/privacy-policy#cookie-settings" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 text-sm no-underline">Cookie Settings</Link>
+                    <Link href="/privacy-policy#cookie-settings" prefetch={false} className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 text-sm no-underline">Cookie Settings</Link>
                   )}
                   <Link href="/right-to-work" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 text-sm no-underline">Right to Work</Link>
                   <Link href="/sales" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 text-sm no-underline">Contact Sales</Link>
