@@ -1,9 +1,17 @@
 /** @type {import('next').NextConfig} */
 const path = require("path");
 
-const withBundleAnalyzer = require("@next/bundle-analyzer")({
-  enabled: process.env.ANALYZE === "true",
-});
+/**
+ * Only load @next/bundle-analyzer when ANALYZE=true.
+ * It is a devDependency; Heroku prunes devDependencies after build, so an
+ * unconditional require() breaks `next start` in production.
+ */
+function withBundleAnalyzer(config) {
+  if (process.env.ANALYZE === "true") {
+    return require("@next/bundle-analyzer")({ enabled: true })(config);
+  }
+  return config;
+}
 
 const nextConfig = {
   reactStrictMode: true,
