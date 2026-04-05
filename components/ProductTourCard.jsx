@@ -5,16 +5,19 @@ import {
   getCloudinaryImageUrl,
 } from "../utils/cloudinary-mapper";
 
-/** 7 slots — middle index = 400w default src; narrow steps for ~312–380px mobile columns */
-const TOUR_WIDTHS = [320, 360, 380, 400, 480, 560, 640];
-/** Cap mobile so srcset does not jump to 720w+ when the card is ~340–364px CSS wide */
+/**
+ * Width steps for Cloudinary srcset. Must extend past 640w: the card sits in `max-w-4xl` (896px CSS).
+ * At 2× DPR the browser needs ~1792px — capping at 640w caused visible blur on desktop/tablet.
+ */
+const TOUR_WIDTHS = [384, 640, 750, 828, 1080, 1200, 1536, 1920];
+/** Matches `max-w-4xl` hero column (~896px) on large screens; tighter on small viewports */
 const TOUR_SIZES =
-  "(max-width: 640px) min(calc(100vw - 3rem), 380px), (max-width: 768px) min(90vw, 896px), (max-width: 1024px) min(85vw, 896px), min(896px, 1000px)";
+  "(max-width: 640px) calc(100vw - 3rem), (max-width: 1024px) min(calc(100vw - 3rem), 896px), 896px";
 
 export default function ProductTourCard() {
   const img = getCloudinaryImageProps("/figma-imports/Custom Themes.webp", {
     widths: TOUR_WIDTHS,
-    quality: "auto:good",
+    quality: "auto:best",
   });
 
   return (
@@ -33,8 +36,8 @@ export default function ProductTourCard() {
         ) : (
           <Image
             src={getCloudinaryImageUrl("/figma-imports/Custom Themes.webp", {
-              width: 400,
-              quality: "auto:good",
+              width: 1080,
+              quality: "auto:best",
             })}
             alt="Oasis Custom Themes"
             fill
@@ -44,7 +47,7 @@ export default function ProductTourCard() {
             quality={85}
           />
         )}
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#091003]/35 via-transparent to-transparent opacity-60" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#091003]/25 via-transparent to-transparent opacity-50" />
       </div>
     </div>
   );
