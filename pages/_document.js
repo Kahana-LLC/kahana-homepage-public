@@ -12,6 +12,9 @@ export default function Document() {
         <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
         <link rel="dns-prefetch" href="https://api.mixpanel.com" />
         <link rel="dns-prefetch" href="https://api-eu.mixpanel.com" />
+        {/* LCP hero images — establish connection early (see homepage preload in pages/index.js) */}
+        <link rel="dns-prefetch" href="https://res.cloudinary.com" />
+        <link rel="preconnect" href="https://res.cloudinary.com" crossOrigin="anonymous" />
         
         {/* Fonts: loaded via next/font in _app.js (lib/fonts.js) */}
         

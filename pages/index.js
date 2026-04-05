@@ -4,6 +4,8 @@ import dynamic from "next/dynamic";
 import ProductSection, {
   OASIS_HERO_IMAGE_PATH,
   OASIS_HERO_PRELOAD_WIDTH,
+  OASIS_HERO_SIZES,
+  OASIS_HERO_WIDTHS,
 } from "../components/ProductSection";
 import FadeInSection from "../components/FadeInSection";
 import SEO from "../components/SEO";
@@ -11,20 +13,18 @@ import { blogIndex } from "../data/blog-index";
 import Link from "next/link";
 import { getAuthorDetails } from "../utils/authorUtils";
 import React, { useEffect, useState } from "react";
-import Image from "next/image";
 import {
   getCloudinaryImageUrl,
   getCloudinaryImageProps,
 } from "../utils/cloudinary-mapper";
 
-/** Middle index = 340w — matches max-w-[340px] cards on the grid */
-const WHY_OASIS_CARD_WIDTHS = [280, 320, 340, 400, 480];
-const WHY_OASIS_CARD_SIZES =
-  "(max-width: 640px) min(340px, calc(100vw - 2rem)), (max-width: 1024px) 340px, 340px";
-
 const FeaturesShowcase = dynamic(() => import("../components/FeaturesShowcase"));
 const HowItWorks = dynamic(() => import("../components/HowItWorks"));
 const ProductTourCard = dynamic(() => import("../components/ProductTourCard"));
+const HomeWhyOasisSection = dynamic(
+  () => import("../components/HomeWhyOasisSection"),
+  { ssr: true }
+);
 
 export async function getStaticProps() {
   try {
@@ -135,44 +135,42 @@ export default function Home({ blogPosts }) {
     ],
   };
 
-  const whyOasisCards = [
-    {
-      title: "Created to bring calm and focus back to browsing",
-      imagePath: "/figma-imports/er.webp",
-      imageAlt: "Serene illustration representing focused Oasis browsing",
-    },
-    {
-      title: "Makes browsing beautiful and natural",
-      imagePath: "/figma-imports/Frame 1321315005.webp",
-      imageAlt: "Screenshot showcasing clutter-free Oasis browsing",
-    },
-    {
-      title: "Artificial Intelligence (AI) browser that adapts to you",
-      imagePath: "/figma-imports/Summarize with AI 3.webp",
-      imageAlt: "Illustration of Oasis adapting to the user",
-    },
-  ];
-
   useEffect(() => {
+    const isMobileViewport = () => window.innerWidth < 768;
+
     const handleScroll = () => {
       setScrollY(window.scrollY);
     };
 
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
+    let scrollAttached = false;
+
+    const syncLayout = () => {
+      const mobile = isMobileViewport();
+      setIsMobile(mobile);
+      if (!mobile && !scrollAttached) {
+        window.addEventListener("scroll", handleScroll, { passive: true });
+        scrollAttached = true;
+        handleScroll();
+      } else if (mobile && scrollAttached) {
+        window.removeEventListener("scroll", handleScroll);
+        scrollAttached = false;
+        setScrollY(0);
+      }
     };
 
-    // Check on mount and resize
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
-    
+    syncLayout();
+    window.addEventListener("resize", syncLayout);
+
     return () => {
+      window.removeEventListener("resize", syncLayout);
       window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", checkMobile);
     };
   }, []);
+
+  const heroLcpPreload = getCloudinaryImageProps(OASIS_HERO_IMAGE_PATH, {
+    widths: OASIS_HERO_WIDTHS,
+    quality: "auto:good",
+  });
 
   return (
     <>
@@ -190,16 +188,27 @@ export default function Home({ blogPosts }) {
           name="description"
           content="Kahana's Oasis Enterprise Browser helps teams stay organized, focused on ideas, and increase productivity while maintaining enterprise-grade security."
         />
-        {/* Preload LCP hero: must match getCloudinarySrcSet default `src` (widths[floor(n/2)]) — OASIS_HERO_WIDTHS[3] === OASIS_HERO_PRELOAD_WIDTH (640) */}
-        <link
-          rel="preload"
-          as="image"
-          href={getCloudinaryImageUrl(OASIS_HERO_IMAGE_PATH, {
-            width: OASIS_HERO_PRELOAD_WIDTH,
-            quality: "auto:good",
-          })}
-          fetchPriority="high"
-        />
+        {/* LCP hero: responsive preload (imagesrcset + imagesizes) + href fallback — aligns with ProductSection HeroImage */}
+        {heroLcpPreload.srcSet && heroLcpPreload.src ? (
+          <link
+            rel="preload"
+            as="image"
+            href={heroLcpPreload.src}
+            imageSrcSet={heroLcpPreload.srcSet}
+            imageSizes={OASIS_HERO_SIZES}
+            fetchPriority="high"
+          />
+        ) : (
+          <link
+            rel="preload"
+            as="image"
+            href={getCloudinaryImageUrl(OASIS_HERO_IMAGE_PATH, {
+              width: OASIS_HERO_PRELOAD_WIDTH,
+              quality: "auto:good",
+            })}
+            fetchPriority="high"
+          />
+        )}
       </Head>
 
       {/* Load Crisp chat after page is idle to improve initial load (target &lt;5.3s interactive) */}
@@ -264,7 +273,7 @@ export default function Home({ blogPosts }) {
               id="products"
               className="relative overflow-hidden py-24 sm:py-32"
             >
-              <div className="pointer-events-none absolute inset-0">
+              <div className="pointer-events-none absolute inset-0 hidden md:block">
                 <div className="absolute top-[-50%] left-[-55%] h-[660px] w-[1080px] rounded-full bg-[#FCDD9F]/28 blur-[200px] md:blur-[420px] opacity-80 md:opacity-100" />
                 <div className="absolute bottom-[-55%] right-[-55%] h-[720px] w-[1120px] rounded-full bg-[#617500]/15 blur-[200px] md:blur-[420px] opacity-80 md:opacity-100" />
               </div>
@@ -304,73 +313,7 @@ export default function Home({ blogPosts }) {
           <div className="relative h-px bg-gradient-to-r from-transparent via-[#30400D]/20 to-transparent mx-auto max-w-4xl"></div>
 
           <FadeInSection delay={150}>
-            <section
-              id="why-oasis"
-              className="py-16 sm:py-24 bg-white relative"
-            >
-              <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-12">
-                  <p className="text-xl font-semibold leading-8 text-[#5C5F2E] mb-2" role="doc-subtitle">
-                    Rediscover Browsing
-                  </p>
-                  <h2 className="text-3xl font-semibold tracking-tight text-[#313A00] sm:text-4xl">
-                    Unlock a New Level of Browsing with Oasis
-                  </h2>
-                </div>
-                <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 md:justify-items-center">
-                  {whyOasisCards.map((card) => {
-                    const oasisImg = getCloudinaryImageProps(card.imagePath, {
-                      widths: WHY_OASIS_CARD_WIDTHS,
-                      quality: "auto:good",
-                    });
-                    return (
-                    <div
-                      key={card.title}
-                      className="relative bg-white/90 border border-white/80 rounded-[26px] px-5 py-6 shadow-[0_25px_70px_rgba(32,47,0,0.14)] flex flex-col gap-5 w-full max-w-[340px] mx-auto backdrop-blur-lg"
-                    >
-                      <div className="relative w-full aspect-[4/3] overflow-hidden rounded-[18px] border border-[#F6F3E7] bg-white/70 shadow-[0_25px_70px_rgba(27,33,0,0.18)]">
-                        {oasisImg.srcSet && oasisImg.src ? (
-                          <img
-                            src={oasisImg.src}
-                            srcSet={oasisImg.srcSet}
-                            sizes={WHY_OASIS_CARD_SIZES}
-                            alt={card.imageAlt || `${card.title} illustration`}
-                            className="absolute inset-0 h-full w-full object-cover"
-                            loading="lazy"
-                            decoding="async"
-                          />
-                        ) : (
-                          <Image
-                            src={getCloudinaryImageUrl(card.imagePath, {
-                              width: 640,
-                              quality: "auto:good",
-                            })}
-                            alt={card.imageAlt || `${card.title} illustration`}
-                            fill
-                            sizes={WHY_OASIS_CARD_SIZES}
-                            className="object-cover"
-                            loading="lazy"
-                            quality={85}
-                          />
-                        )}
-                      </div>
-                      <div className="flex flex-col gap-3 text-left">
-                       
-                        <h3 className="text-2xl font-semibold leading-tight text-[#1F2D00]">
-                          {card.title}
-                        </h3>
-                        {card.description && (
-                          <p className="text-base text-[#4E5534]">
-                            {card.description}
-                          </p>
-                        )}
-                      </div>
-                    </div>
-                    );
-                  })}
-                </div>
-              </div>
-            </section>
+            <HomeWhyOasisSection />
           </FadeInSection>
 
           {/* Elegant section divider */}
