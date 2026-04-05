@@ -190,7 +190,7 @@ export default function Home({ blogPosts }) {
           name="description"
           content="Kahana's Oasis Enterprise Browser helps teams stay organized, focused on ideas, and increase productivity while maintaining enterprise-grade security."
         />
-        {/* Preload hero LCP candidate — width aligned with mobile column + OASIS_HERO_PRELOAD_WIDTH */}
+        {/* Preload LCP hero: must match getCloudinarySrcSet default `src` (widths[floor(n/2)]) — OASIS_HERO_WIDTHS[3] === OASIS_HERO_PRELOAD_WIDTH (640) */}
         <link
           rel="preload"
           as="image"
@@ -265,8 +265,8 @@ export default function Home({ blogPosts }) {
               className="relative overflow-hidden py-24 sm:py-32"
             >
               <div className="pointer-events-none absolute inset-0">
-                <div className="absolute top-[-50%] left-[-55%] h-[660px] w-[1080px] rounded-full bg-[#FCDD9F]/28 blur-[420px]" />
-                <div className="absolute bottom-[-55%] right-[-55%] h-[720px] w-[1120px] rounded-full bg-[#617500]/15 blur-[420px]" />
+                <div className="absolute top-[-50%] left-[-55%] h-[660px] w-[1080px] rounded-full bg-[#FCDD9F]/28 blur-[200px] md:blur-[420px] opacity-80 md:opacity-100" />
+                <div className="absolute bottom-[-55%] right-[-55%] h-[720px] w-[1120px] rounded-full bg-[#617500]/15 blur-[200px] md:blur-[420px] opacity-80 md:opacity-100" />
               </div>
               <div className="relative z-10">
                 <ProductSection />
@@ -396,8 +396,8 @@ export default function Home({ blogPosts }) {
               className="relative overflow-hidden py-24 sm:py-32"
             >
               <div className="pointer-events-none absolute inset-0">
-                <div className="absolute top-[-50%] left-[-55%] h-[660px] w-[1080px] rounded-full bg-[#FCDD9F]/28 blur-[420px]" />
-                <div className="absolute bottom-[-55%] right-[-55%] h-[720px] w-[1120px] rounded-full bg-[#617500]/15 blur-[420px]" />
+                <div className="absolute top-[-50%] left-[-55%] h-[660px] w-[1080px] rounded-full bg-[#FCDD9F]/28 blur-[200px] md:blur-[420px] opacity-80 md:opacity-100" />
+                <div className="absolute bottom-[-55%] right-[-55%] h-[720px] w-[1120px] rounded-full bg-[#617500]/15 blur-[200px] md:blur-[420px] opacity-80 md:opacity-100" />
               </div>
               <div className="relative z-10">
                 <HowItWorks />

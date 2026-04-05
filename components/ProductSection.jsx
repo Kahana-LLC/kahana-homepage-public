@@ -35,7 +35,7 @@ function HeroImage() {
         alt="Welcome to Oasis"
         className="object-contain w-full h-full"
         fetchPriority="high"
-        decoding="async"
+        decoding="sync"
       />
     );
   }
@@ -89,8 +89,9 @@ export default function ProductSection() {
           </div>
 
           <div className="relative w-full max-w-3xl">
-            <div className="absolute inset-0 translate-x-4 translate-y-4 rounded-[34px] bg-gradient-to-br from-white/70 to-transparent blur-[160px]" />
-            <div className="relative overflow-hidden rounded-[36px] border border-white/80 bg-white/80 p-4 shadow-[0_35px_120px_rgba(20,32,0,0.18)] backdrop-blur">
+            {/* Lighter blur on narrow viewports — large blurs + backdrop-blur defer LCP paint on mobile */}
+            <div className="absolute inset-0 translate-x-4 translate-y-4 rounded-[34px] bg-gradient-to-br from-white/70 to-transparent blur-[72px] sm:blur-[160px] opacity-80 sm:opacity-100" />
+            <div className="relative overflow-hidden rounded-[36px] border border-white/80 bg-white/90 sm:bg-white/80 p-4 shadow-[0_20px_64px_rgba(20,32,0,0.12)] sm:shadow-[0_35px_120px_rgba(20,32,0,0.18)] backdrop-blur-none sm:backdrop-blur">
               <div className="relative w-full aspect-[16/10] rounded-[28px] overflow-hidden">
                 <HeroImage />
               </div>
