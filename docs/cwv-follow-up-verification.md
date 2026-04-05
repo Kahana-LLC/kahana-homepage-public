@@ -6,6 +6,7 @@ After deploying mobile CWV improvements (tighter Cloudinary `srcset` defaults, f
 - **Images:** Narrower `widths` / `sizes` for product tour, feature cards, and Why Oasis — see [`ProductTourCard`](../components/ProductTourCard.jsx), [`FeaturesShowcase`](../components/FeaturesShowcase.jsx), [`pages/index.js`](../pages/index.js).
 - **YouTube:** [`OasisYouTubeEmbed`](../components/OasisYouTubeEmbed.jsx) uses **`hqdefault`** poster (smaller than `maxresdefault`).
 - **sf-syn badge:** [`Footer`](../components/Footer.jsx) injects after **`window.load`**, then **`requestIdleCallback`** (max **2.5 s**).
+- **CLS (Apr 2026 beta rerun):** homepage gradient wrapper used **`fixed` until `useEffect` set mobile** → reflow. Fixed by **`absolute md:fixed`** on the background layer in [`pages/index.js`](../pages/index.js) (see [cwv-report-kahana-beta-2026-04-04-1912.md](./cwv-report-kahana-beta-2026-04-04-1912.md)).
 - **Bundles:** [`next.config.js`](../next.config.js) `experimental.optimizePackageImports` for icon / motion packages. Run **`ANALYZE=true npm run build`** to inspect treemaps locally.
 
 ## Lab (immediate)
@@ -24,7 +25,8 @@ After deploying mobile CWV improvements (tighter Cloudinary `srcset` defaults, f
 ## Related docs
 
 - [cwv-report-kahana-co-2026-04-04-1828.md](./cwv-report-kahana-co-2026-04-04-1828.md) — baseline metrics and opportunities.
-- [cwv-report-kahana-beta-2026-04-04-1850.md](./cwv-report-kahana-beta-2026-04-04-1850.md) — beta Lighthouse (consent LCP, Cloudinary, legacy JS).
+- [cwv-report-kahana-beta-2026-04-04-1850.md](./cwv-report-kahana-beta-2026-04-04-1850.md) — beta Lighthouse before CLS fix (consent LCP, Cloudinary, legacy JS).
+- [cwv-report-kahana-beta-2026-04-04-1912.md](./cwv-report-kahana-beta-2026-04-04-1912.md) — beta Lighthouse after perf pass (LCP/SI gains, CLS regression + mitigation).
 - [cwv-ttfb-hosting-notes.md](./cwv-ttfb-hosting-notes.md) — TTFB / hosting levers (not code-only).
 
 ## Scripts checklist
