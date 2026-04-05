@@ -18,7 +18,7 @@ export const OASIS_HERO_WIDTHS = [320, 384, 480, 640, 828, 1080, 1920];
 export const OASIS_HERO_PRELOAD_WIDTH = 640;
 
 /** Matches rendered hero column width, not full viewport (avoids oversized srcset picks). */
-const HERO_SIZES =
+export const OASIS_HERO_SIZES =
   '(max-width: 640px) 360px, (max-width: 768px) 680px, (max-width: 1024px) 720px, min(90vw, 1152px)';
 
 function HeroImage() {
@@ -31,7 +31,7 @@ function HeroImage() {
       <img
         src={heroProps.src}
         srcSet={heroProps.srcSet}
-        sizes={HERO_SIZES}
+        sizes={OASIS_HERO_SIZES}
         alt="Welcome to Oasis"
         className="object-contain w-full h-full"
         fetchPriority="high"
@@ -45,7 +45,7 @@ function HeroImage() {
       alt="Welcome to Oasis"
       fill
       priority
-      sizes={HERO_SIZES}
+      sizes={OASIS_HERO_SIZES}
       className="object-contain"
       quality={90}
     />
@@ -89,10 +89,10 @@ export default function ProductSection() {
           </div>
 
           <div className="relative w-full max-w-3xl">
-            {/* Lighter blur on narrow viewports — large blurs + backdrop-blur defer LCP paint on mobile */}
-            <div className="absolute inset-0 translate-x-4 translate-y-4 rounded-[34px] bg-gradient-to-br from-white/70 to-transparent blur-[72px] sm:blur-[160px] opacity-80 sm:opacity-100" />
-            <div className="relative overflow-hidden rounded-[36px] border border-white/80 bg-white/90 sm:bg-white/80 p-4 shadow-[0_20px_64px_rgba(20,32,0,0.12)] sm:shadow-[0_35px_120px_rgba(20,32,0,0.18)] backdrop-blur-none sm:backdrop-blur">
-              <div className="relative w-full aspect-[16/10] rounded-[28px] overflow-hidden">
+            {/* Decorative glow — omitted on small screens to reduce LCP compositing cost */}
+            <div className="hidden md:block absolute inset-0 translate-x-4 translate-y-4 rounded-[34px] bg-gradient-to-br from-white/70 to-transparent blur-[160px] opacity-100" />
+            <div className="relative overflow-hidden rounded-2xl border border-gray-200/90 bg-white p-3 shadow-md md:rounded-[36px] md:border-white/80 md:bg-white/80 md:p-4 md:shadow-[0_35px_120px_rgba(20,32,0,0.18)] md:backdrop-blur">
+              <div className="relative w-full aspect-[16/10] rounded-xl overflow-hidden md:rounded-[28px]">
                 <HeroImage />
               </div>
             </div>
