@@ -14,7 +14,7 @@ export default function OasisYouTubeEmbed({
       <LiteYouTubeEmbed
         id={OASIS_DEMO_VIDEO_ID}
         title={title}
-        poster="maxresdefault"
+        poster="hqdefault"
         webp
       />
     </div>

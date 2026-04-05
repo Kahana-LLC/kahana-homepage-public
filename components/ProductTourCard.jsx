@@ -5,11 +5,11 @@ import {
   getCloudinaryImageUrl,
 } from "../utils/cloudinary-mapper";
 
-/** 5 slots — default src ~720w; avoid 828 on narrow viewports */
-const TOUR_WIDTHS = [480, 640, 720, 840, 1000];
-/** Match max-w-4xl column (~896px max) — not min(100vw,896px) which overstates mobile width */
+/** 7 slots — middle index = 400w default src; narrow steps for ~312–380px mobile columns */
+const TOUR_WIDTHS = [320, 360, 380, 400, 480, 560, 640];
+/** Cap mobile so srcset does not jump to 720w+ when the card is ~340–364px CSS wide */
 const TOUR_SIZES =
-  "(max-width: 640px) min(calc(100vw - 3rem), 896px), (max-width: 768px) min(90vw, 896px), (max-width: 1024px) min(85vw, 896px), min(896px, 1000px)";
+  "(max-width: 640px) min(calc(100vw - 3rem), 380px), (max-width: 768px) min(90vw, 896px), (max-width: 1024px) min(85vw, 896px), min(896px, 1000px)";
 
 export default function ProductTourCard() {
   const img = getCloudinaryImageProps("/figma-imports/Custom Themes.webp", {
@@ -33,7 +33,7 @@ export default function ProductTourCard() {
         ) : (
           <Image
             src={getCloudinaryImageUrl("/figma-imports/Custom Themes.webp", {
-              width: 720,
+              width: 400,
               quality: "auto:good",
             })}
             alt="Oasis Custom Themes"
