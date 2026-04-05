@@ -120,9 +120,13 @@ export default function CookiePreferencesModal() {
 
           {/* Content */}
           <div className="px-6 py-6">
-            <p className="text-gray-700 mb-6">
-              We use cookies and similar technologies to enhance your browsing experience. You can choose which categories 
-              you want to allow. Note that blocking some types of cookies may impact your experience on our website.
+            <p className="text-gray-700 mb-4">
+              We use cookies and similar technologies to enhance your browsing experience, analyze site traffic, and personalize content.
+              By choosing &quot;Accept All&quot; on the banner, you consent to optional categories where applicable. You can change your preferences at any time
+              by using Manage Preferences on the banner or Cookie Settings in the footer.
+            </p>
+            <p className="text-gray-700 mb-6 text-sm">
+              Below you can choose which categories to allow. Note that blocking some types of cookies may impact your experience on our website.
             </p>
 
             {/* Strictly Necessary */}

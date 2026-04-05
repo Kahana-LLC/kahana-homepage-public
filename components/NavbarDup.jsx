@@ -833,7 +833,7 @@ function NavBar() {
             </li>
 
             <li className={`dropdown ${openDropdown === 'about' ? 'active' : ''}`}>
-              <Link href="/about" className="nav-link">
+              <Link href="/about" prefetch={false} className="nav-link">
                 <span className="nav-link-text">About</span>
                 <button
                   type="button"
@@ -852,7 +852,7 @@ function NavBar() {
                 <div className="dropdown-section">
                   <h3 className="font-semibold text-gray-600 mb-4 uppercase tracking-wider">About Kahana</h3>
                   <div className="flex flex-col space-y-4">
-                    <Link href="/about" className="dropdown-link" onClick={() => setOpenDropdown(null)}>
+                    <Link href="/about" prefetch={false} className="dropdown-link" onClick={() => setOpenDropdown(null)}>
                       About
                     </Link>
                   </div>
@@ -975,7 +975,7 @@ function NavBar() {
             </Link>
             
             {/* About Section */}
-            <Link href="/about" className="mobile-link no-underline">About Kahana</Link>
+            <Link href="/about" prefetch={false} className="mobile-link no-underline">About Kahana</Link>
             <Link href="/support" className="mobile-link no-underline">Support</Link>
             <Link href="/careers" className="mobile-link no-underline">Careers</Link>
           </div>

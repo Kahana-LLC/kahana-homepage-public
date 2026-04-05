@@ -1,16 +1,19 @@
 import "../styles/globals.css";
 import { fontGeist, fontBricolage } from "../lib/fonts";
-import NavbarDup from "../components/NavbarDup";
+import dynamic from "next/dynamic";
 import GlobalBanner from "../components/GlobalBanner";
-import Footer from "../components/Footer";
 import SEO from "../components/SEO";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { trackError } from "../utils/analytics";
 import { ConsentProvider, useConsent } from "../contexts/ConsentContext";
 import ConsentBanner from "../components/ConsentBanner";
-import CookiePreferencesModal from "../components/CookiePreferencesModal";
 import ConsentErrorBoundary from "../components/ConsentErrorBoundary";
+
+/** Code-split global chrome + modal to reduce main-thread work during hydration (desktop TBT). */
+const NavbarDup = dynamic(() => import("../components/NavbarDup"), { ssr: true });
+const Footer = dynamic(() => import("../components/Footer"), { ssr: true });
+const CookiePreferencesModal = dynamic(() => import("../components/CookiePreferencesModal"), { ssr: false });
 import { loadScriptIfConsented, loadInlineScriptIfConsented } from "../utils/scriptLoader";
 import { trackMixpanelPageView } from "../utils/mixpanel";
 import { ensureMixpanelFromNpm } from "../utils/mixpanelNpmInit";

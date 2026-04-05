@@ -3,29 +3,38 @@ import Link from 'next/link';
 import { useConsent } from '../contexts/ConsentContext';
 
 /** Max wait before showing banner if the browser never goes idle (Safari falls back to timer). */
-const DEFER_BANNER_IDLE_TIMEOUT_MS = 400;
+const DEFER_BANNER_IDLE_TIMEOUT_MS = 650;
 
 export default function ConsentBanner() {
   const { showBanner, acceptAll, declineAll, openModal, isLoading } = useConsent();
   const [deferPaint, setDeferPaint] = useState(false);
 
-  // Yield first paint to above-the-fold hero (LCP) before painting the fixed consent UI.
+  // Yield first paint to above-the-fold hero (LCP): two animation frames, then idle (or timeout).
   useEffect(() => {
     if (isLoading || !showBanner) {
       setDeferPaint(false);
       return;
     }
     let cancelled = false;
+    let idleId = null;
+    let raf2 = null;
+    const ric = window.requestIdleCallback || ((cb, opts) => window.setTimeout(cb, opts?.timeout ?? 200));
+    const cancelRic = window.cancelIdleCallback || window.clearTimeout;
     const run = () => {
       if (cancelled) return;
       setDeferPaint(true);
     };
-    const ric = window.requestIdleCallback || ((cb, opts) => window.setTimeout(cb, opts?.timeout ?? 200));
-    const cancelRic = window.cancelIdleCallback || window.clearTimeout;
-    const id = ric(run, { timeout: DEFER_BANNER_IDLE_TIMEOUT_MS });
+    const raf1 = requestAnimationFrame(() => {
+      raf2 = requestAnimationFrame(() => {
+        if (cancelled) return;
+        idleId = ric(run, { timeout: DEFER_BANNER_IDLE_TIMEOUT_MS });
+      });
+    });
     return () => {
       cancelled = true;
-      cancelRic(id);
+      cancelAnimationFrame(raf1);
+      if (raf2 != null) cancelAnimationFrame(raf2);
+      if (idleId != null) cancelRic(idleId);
     };
   }, [isLoading, showBanner]);
 
@@ -45,14 +54,27 @@ export default function ConsentBanner() {
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <div className="flex-1">
             <h2 id="consent-banner-title" className="text-lg font-semibold mb-2">
-              <Link href="/privacy-policy" className="text-[#3D4A00] hover:text-[#313A00] hover:underline font-semibold">
+              <Link href="/privacy-policy" prefetch={false} className="text-[#3D4A00] hover:text-[#313A00] hover:underline font-semibold">
                 We Value Your Privacy
               </Link>
             </h2>
-            <p id="consent-banner-description" className="text-sm text-gray-700 mb-0">
-              We use cookies and similar technologies to enhance your browsing experience, analyze site traffic, and personalize content. 
-              By clicking "Accept All", you consent to our use of these technologies. You can change your preferences at any time 
-              by clicking "Manage Preferences" or visiting our Cookie Settings in the footer.
+            <p id="consent-banner-description" className="text-sm text-gray-700 mb-0 max-w-prose">
+              We use cookies for essential site features, analytics, and optional personalization. Use the buttons below to accept or decline non-essential cookies, or open Manage Preferences for category details.
+            </p>
+            <p className="text-xs text-gray-600 mt-2 mb-0">
+              <button
+                type="button"
+                onClick={openModal}
+                className="underline hover:text-[#313A00] font-medium text-left"
+              >
+                Full cookie notice
+              </button>
+              <span className="mx-1.5" aria-hidden>
+                ·
+              </span>
+              <Link href="/privacy-policy" prefetch={false} className="underline hover:text-[#313A00]">
+                Privacy Policy
+              </Link>
             </p>
           </div>
           
