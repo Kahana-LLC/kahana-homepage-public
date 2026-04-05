@@ -16,6 +16,15 @@ function withBundleAnalyzer(config) {
 const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
+  experimental: {
+    // Tree-shake barrel imports (smaller client bundles; helps LCP/FCP parse cost)
+    optimizePackageImports: [
+      "@heroicons/react",
+      "@tabler/icons-react",
+      "framer-motion",
+      "react-icons",
+    ],
+  },
   eslint: {
     ignoreDuringBuilds: true, // This will prevent ESLint errors from failing the build
   },

@@ -17,10 +17,10 @@ import {
   getCloudinaryImageProps,
 } from "../utils/cloudinary-mapper";
 
-/** Default src = 480w (middle) — closer to 341×222 × DPR than 640w */
-const WHY_OASIS_CARD_WIDTHS = [340, 400, 480, 560, 640];
+/** Middle index = 340w — matches max-w-[340px] cards on the grid */
+const WHY_OASIS_CARD_WIDTHS = [280, 320, 340, 400, 480];
 const WHY_OASIS_CARD_SIZES =
-  "(max-width: 640px) 340px, (max-width: 1024px) 340px, 340px";
+  "(max-width: 640px) min(340px, calc(100vw - 2rem)), (max-width: 1024px) 340px, 340px";
 
 const FeaturesShowcase = dynamic(() => import("../components/FeaturesShowcase"));
 const HowItWorks = dynamic(() => import("../components/HowItWorks"));

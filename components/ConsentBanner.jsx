@@ -1,16 +1,42 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useConsent } from '../contexts/ConsentContext';
 
+/** Max wait before showing banner if the browser never goes idle (Safari falls back to timer). */
+const DEFER_BANNER_IDLE_TIMEOUT_MS = 400;
+
 export default function ConsentBanner() {
   const { showBanner, acceptAll, declineAll, openModal, isLoading } = useConsent();
+  const [deferPaint, setDeferPaint] = useState(false);
+
+  // Yield first paint to above-the-fold hero (LCP) before painting the fixed consent UI.
+  useEffect(() => {
+    if (isLoading || !showBanner) {
+      setDeferPaint(false);
+      return;
+    }
+    let cancelled = false;
+    const run = () => {
+      if (cancelled) return;
+      setDeferPaint(true);
+    };
+    const ric = window.requestIdleCallback || ((cb, opts) => window.setTimeout(cb, opts?.timeout ?? 200));
+    const cancelRic = window.cancelIdleCallback || window.clearTimeout;
+    const id = ric(run, { timeout: DEFER_BANNER_IDLE_TIMEOUT_MS });
+    return () => {
+      cancelled = true;
+      cancelRic(id);
+    };
+  }, [isLoading, showBanner]);
 
   // Don't show banner while loading or if user has already interacted
   if (isLoading || !showBanner) return null;
+  if (!deferPaint) return null;
 
   return (
     <div 
       className="fixed bottom-0 left-0 right-0 z-50 bg-white border-t-2 border-[#728552] shadow-lg"
+      style={{ contain: 'layout paint' }}
       role="dialog"
       aria-labelledby="consent-banner-title"
       aria-describedby="consent-banner-description"

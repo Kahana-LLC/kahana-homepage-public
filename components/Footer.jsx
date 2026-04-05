@@ -37,26 +37,48 @@ function FooterContent() {
 
   useEffect(() => {
     let scriptElement = null;
-    
-    try {
-      // Check if script is already loaded
-      if (!document.querySelector('script[src*="sf-syn.com"]')) {
-        scriptElement = document.createElement('script');
-        scriptElement.async = true;
-        scriptElement.src = 'https://b.sf-syn.com/badge_js?sf_id=3652674&variant_id=sf';
-        
-        // Add error handling
-        scriptElement.onerror = (error) => {
-          console.warn('Non-critical script failed to load:', error);
-        };
-        
-        document.body.appendChild(scriptElement);
+    let cancelled = false;
+
+    const inject = () => {
+      if (cancelled) return;
+      try {
+        if (!document.querySelector('script[src*="sf-syn.com"]')) {
+          scriptElement = document.createElement('script');
+          scriptElement.async = true;
+          scriptElement.src = 'https://b.sf-syn.com/badge_js?sf_id=3652674&variant_id=sf';
+          scriptElement.onerror = (error) => {
+            console.warn('Non-critical script failed to load:', error);
+          };
+          document.body.appendChild(scriptElement);
+        }
+      } catch (error) {
+        console.warn('Non-critical script error:', error);
       }
-    } catch (error) {
-      console.warn('Non-critical script error:', error);
+    };
+
+    const schedule = () => {
+      if (cancelled) return;
+      const ric = window.requestIdleCallback || ((cb) => window.setTimeout(cb, 1));
+      const cancelRic = window.cancelIdleCallback || window.clearTimeout;
+      const id = ric(inject, { timeout: 2500 });
+      return () => cancelRic(id);
+    };
+
+    let cleanupIdle = () => {};
+    const onLoad = () => {
+      cleanupIdle = schedule();
+    };
+
+    if (document.readyState === 'complete') {
+      cleanupIdle = schedule();
+    } else {
+      window.addEventListener('load', onLoad, { once: true });
     }
 
     return () => {
+      cancelled = true;
+      window.removeEventListener('load', onLoad);
+      cleanupIdle();
       if (scriptElement && document.body.contains(scriptElement)) {
         document.body.removeChild(scriptElement);
       }
