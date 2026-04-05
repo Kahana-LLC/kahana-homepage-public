@@ -54,25 +54,29 @@ export default function ConsentBanner() {
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <div className="flex-1">
             <h2 id="consent-banner-title" className="text-lg font-semibold mb-2">
-              <Link href="/privacy-policy" prefetch={false} className="text-[#3D4A00] hover:text-[#313A00] hover:underline font-semibold">
+              <Link
+                href="/privacy-policy"
+                prefetch={false}
+                className="text-gray-900 hover:text-gray-950 hover:underline font-semibold"
+              >
                 We Value Your Privacy
               </Link>
             </h2>
-            <p id="consent-banner-description" className="text-sm text-gray-700 mb-0 max-w-prose">
+            <p id="consent-banner-description" className="text-sm text-gray-800 mb-0 max-w-prose">
               We use cookies for essential site features, analytics, and optional personalization. Use the buttons below to accept or decline non-essential cookies, or open Manage Preferences for category details.
             </p>
-            <p className="text-xs text-gray-600 mt-2 mb-0">
+            <p className="text-xs text-gray-800 mt-2 mb-0">
               <button
                 type="button"
                 onClick={openModal}
-                className="underline hover:text-[#313A00] font-medium text-left"
+                className="underline text-gray-900 hover:text-gray-950 font-medium text-left"
               >
                 Full cookie notice
               </button>
               <span className="mx-1.5" aria-hidden>
                 ·
               </span>
-              <Link href="/privacy-policy" prefetch={false} className="underline hover:text-[#313A00]">
+              <Link href="/privacy-policy" prefetch={false} className="underline text-gray-900 hover:text-gray-950">
                 Privacy Policy
               </Link>
             </p>

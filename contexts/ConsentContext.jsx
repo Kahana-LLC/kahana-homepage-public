@@ -4,6 +4,8 @@ const CONSENT_STORAGE_KEY = 'kahana_consent_preferences';
 /** Session cache for ipapi.co — avoids repeat requests and reduces 429s (Best Practices / INP noise) */
 const REGION_SESSION_KEY = 'kahana_ipapi_region_v1';
 const REGION_CACHE_TTL_MS = 7 * 24 * 60 * 60 * 1000;
+/** After a 429, skip further ipapi network calls this session (reduces failed-request noise in lab tools). */
+const IPAPI_SKIP_NETWORK_KEY = 'kahana_ipapi_skip_network_v1';
 
 export const ConsentContext = createContext(null);
 
@@ -152,6 +154,25 @@ export const ConsentProvider = ({ children }) => {
         return;
       }
 
+      if (typeof window !== 'undefined') {
+        try {
+          if (sessionStorage.getItem(IPAPI_SKIP_NETWORK_KEY) === '1') {
+            const fallback = 'CA';
+            writeCachedRegion(fallback);
+            persistRegionToConsent(fallback);
+            return;
+          }
+        } catch (_) {
+          /* ignore */
+        }
+      }
+
+      // Defer geo fetch until idle so LCP / first paint are not competing with ipapi on the network stack.
+      await new Promise((resolve) => {
+        const ric = window.requestIdleCallback || ((cb, opts) => window.setTimeout(cb, opts?.timeout ?? 2000));
+        ric(resolve, { timeout: 5000 });
+      });
+
       try {
         const controller = new AbortController();
         const timeoutId = setTimeout(() => controller.abort(), 5000);
@@ -167,8 +188,14 @@ export const ConsentProvider = ({ children }) => {
         clearTimeout(timeoutId);
 
         if (response.status === 429) {
-          console.warn('IP detection rate limited, using fallback');
           const fallback = 'CA';
+          try {
+            if (typeof window !== 'undefined') {
+              sessionStorage.setItem(IPAPI_SKIP_NETWORK_KEY, '1');
+            }
+          } catch (_) {
+            /* ignore */
+          }
           writeCachedRegion(fallback);
           setUserRegion(fallback);
           return;

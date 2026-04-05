@@ -41,6 +41,7 @@ Use **median of 3–5** PageSpeed Insights runs per form factor after each deplo
 - [cwv-report-kahana-beta-2026-04-04-1850.md](./cwv-report-kahana-beta-2026-04-04-1850.md) — beta Lighthouse before CLS fix (consent LCP, Cloudinary, legacy JS).
 - [cwv-report-kahana-beta-2026-04-04-1912.md](./cwv-report-kahana-beta-2026-04-04-1912.md) — beta Lighthouse after perf pass (LCP/SI gains, CLS regression + mitigation).
 - [cwv-report-kahana-beta-2026-04-04-1921.md](./cwv-report-kahana-beta-2026-04-04-1921.md) — beta PSI after CLS fix deploy (**CLS 0**, Performance **75**).
+- [cwv-report-kahana-beta-2026-04-04-1935.md](./cwv-report-kahana-beta-2026-04-04-1935.md) — beta **7:35 PM** after PSI 90+ deploy: mobile **Performance 74** (LCP still consent); **desktop Performance 96**; Accessibility notes (contrast / nav / YouTube embed).
 - [cwv-ttfb-hosting-notes.md](./cwv-ttfb-hosting-notes.md) — TTFB / hosting levers (not code-only).
 
 ## Scripts checklist
@@ -54,3 +55,46 @@ Use **median of 3–5** PageSpeed Insights runs per form factor after each deplo
 - **`browserslist`** in [`package.json`](../package.json) targets **last 2** major browsers — may reduce **legacy JavaScript** polyfill bytes slightly; if a regression appears for older browsers, widen the query.
 
 **Unused CSS (~22 KiB)** in Lighthouse was left as a lower-priority follow-up (Tailwind/global bundle); revisit after LCP/INP trends improve.
+
+## Post–Apr 4, 2026 PSI plan (implementation notes)
+
+Aligned with the **Core Web Vitals enhancement plan** (mobile LCP first, desktop regression guard).
+
+### Mobile LCP render delay (lab)
+
+- **Hero card** ([`components/ProductSection.jsx`](../components/ProductSection.jsx)): On small viewports, **lighter** decorative blur, **no `backdrop-blur`** on the card (`backdrop-blur-none sm:backdrop-blur`), softer shadow, slightly more opaque background so the hero stays readable without glass blur.
+- **Homepage `#products` (and `#how-it-works`)** ([`pages/index.js`](../pages/index.js)): Large background orbs use **`blur-[200px] md:blur-[420px]`** and reduced opacity on narrow breakpoints to cut compositing cost during scroll/paint.
+- **Preload ↔ `src` alignment:** [`pages/index.js`](../pages/index.js) documents that **`OASIS_HERO_PRELOAD_WIDTH` (640)** must match [`getCloudinarySrcSet`](../utils/cloudinary.js) default `src` for [`OASIS_HERO_WIDTHS`](../components/ProductSection.jsx) (middle index = 640).
+
+After deploy, re-run PSI Mobile (Slow 4G) and compare **LCP breakdown → element render delay** (median of 3–5 runs).
+
+### Bundle analysis (legacy JS / bytes)
+
+From a production build, **First Load JS shared by all** is typically **~141 kB** (framework **~45 kB**, `main` **~45 kB**, `_app` **~22 kB**, CSS **~26 kB**, other **~2.6 kB**). Lighthouse **“Legacy JavaScript”** on `main-*.js` is largely **Next.js runtime + core polyfills**; [`package.json`](../package.json) **`browserslist`** already targets current evergreen browsers.
+
+- Run **`ANALYZE=true npm run build`** (or **`npm run analyze`**) locally; open **`.next/analyze/client.html`** for an interactive treemap (not committed).
+- **Unused CSS:** The main CSS chunk is mostly **Tailwind utilities + [`styles/globals.css`](../styles/globals.css)**. Next steps when prioritized: audit **globals** for dead rules; avoid broad selectors that pull rarely used utilities; do **not** blanket PurgeCSS without testing all routes.
+
+### Third parties (load order, no LCP regression)
+
+- [`OasisYouTubeEmbed`](../components/OasisYouTubeEmbed.jsx): Documented as **below-the-fold** on LCP-critical pages; **lite-youtube** loads the iframe **on click**; poster uses **`hqdefault`**.
+- [`Footer`](../components/Footer.jsx): **sf-syn** badge remains **`load` → `requestIdleCallback`** (comment in file).
+
+### Accessibility / Best Practices
+
+- **Nav:** Removed redundant **`role="list"`** on a native **`<ul>`** in [`NavbarDup`](../components/NavbarDup.jsx) (fixes “ARIA roles only on compatible elements” style issues in automated audits).
+- **Consent:** [`ConsentBanner`](../components/ConsentBanner.jsx) uses **high-contrast** grays for links/body (`text-gray-900` / `text-gray-800`).
+- **ipapi.co:** [`ConsentContext`](../contexts/ConsentContext.jsx) **defers** the geo `fetch` until **`requestIdleCallback`** (timeout cap), sets **`sessionStorage`** skip flag on **HTTP 429** so the same tab does not retry the network call; still uses **CA** fallback for compliance when unknown.
+
+### Verification checklist (post-deploy)
+
+| Step | Action |
+| --- | --- |
+| 1 | Deploy to beta/production URL used in PSI |
+| 2 | **PageSpeed Insights** — **Mobile** (Slow 4G), **median 3–5 runs** — record **Performance**, **LCP**, **LCP element**, **LCP subparts** (esp. **element render delay**) |
+| 3 | **Desktop** tab — median 3–5 runs — confirm **Performance** and **LCP** do not regress vs ~99 / ~1 s (Apr 2026 baseline) |
+| 4 | Optional: Chrome DevTools **Performance** trace on mobile emulation — confirm hero paints without long blur/compositor blocks |
+
+### Desktop regression
+
+After mobile-focused CSS changes, desktop layout should match prior design at **`sm`+** breakpoints; spot-check **navbar** dropdown hit targets (min **44×44** px) and **hero** glass card on **tablet/desktop**.

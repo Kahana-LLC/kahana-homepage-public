@@ -313,11 +313,15 @@ function NavBar() {
             display: block;
           }
 
+          /* Min 44×44px hit target (WCAG 2.2 touch) — icon stays 12px, padding expands tap area */
           .dropdown-icon-button {
             background: none !important;
             border: none !important;
-            padding: 0 !important;
-            margin: 0 0 0 0.5rem !important;
+            padding: 0.5rem !important;
+            margin: 0 0 0 0.25rem !important;
+            min-width: 44px !important;
+            min-height: 44px !important;
+            box-sizing: border-box !important;
             cursor: pointer;
             display: inline-flex;
             align-items: center;
@@ -709,7 +713,7 @@ function NavBar() {
           </Link>
 
           {/* Navigation Links */}
-          <ul className="nav-links hidden md:flex items-center gap-1" role="list">
+          <ul className="nav-links hidden md:flex items-center gap-1">
             <li className={`dropdown ${openDropdown === 'products' ? 'active' : ''}`}>
               <Link href="/products" className="nav-link">
                 <span className="nav-link-text">Products</span>

@@ -35,6 +35,7 @@ function FooterContent() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  // sf-syn badge: after window `load` + requestIdleCallback — must not run during LCP window (see CWV docs).
   useEffect(() => {
     let scriptElement = null;
     let cancelled = false;

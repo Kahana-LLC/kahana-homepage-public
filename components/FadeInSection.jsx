@@ -38,10 +38,19 @@ export default function FadeInSection({ children, delay = 0, isImage = false, ea
   }, [isImage, eager]);
 
   const baseClasses = 'transition-all duration-1000 ease-out';
-  const visibilityClasses = isVisible 
-    ? 'opacity-100 translate-y-0' 
+  const visibilityClasses = isVisible
+    ? 'opacity-100 translate-y-0'
     : 'opacity-0 translate-y-10';
   const imageClasses = isImage ? 'aspect-auto object-cover' : '';
+
+  // Eager: no transition or delay — avoids compositor work and keeps LCP paint from waiting on CSS transitions.
+  if (eager) {
+    return (
+      <div ref={domRef} className={`opacity-100 translate-y-0 ${imageClasses}`}>
+        {children}
+      </div>
+    );
+  }
 
   return (
     <div

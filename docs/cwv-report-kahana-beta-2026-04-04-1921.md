@@ -218,6 +218,7 @@ Same **Legacy JavaScript ~13 KiB**, **cache TTL** (YouTube `hqdefault`, sf-syn),
 | 6:50 PM | 74 | 6.8 s | 0 | 4.4 s | Pre–perf-pass baseline [1850](./cwv-report-kahana-beta-2026-04-04-1850.md) |
 | 7:12 PM | 62 | 5.0 s | **0.37** | 3.5 s | CLS regression [1912](./cwv-report-kahana-beta-2026-04-04-1912.md) |
 | **7:21 PM** | **75** | 6.2 s | **0** | 4.7 s | Mobile — CLS fix verified |
+| **7:35 PM** | **74** | 6.2 s | **0** | 4.8 s | Post–PSI 90+ deploy — [1935](./cwv-report-kahana-beta-2026-04-04-1935.md) |
 
 ---
 
