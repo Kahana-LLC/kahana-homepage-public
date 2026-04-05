@@ -229,8 +229,8 @@ export default function Home({ blogPosts }) {
       />
 
       <div className="relative bg-white shadow-[0_0_40px_rgba(0,0,0,0.08)] overflow-x-hidden w-full overflow-y-visible">
-        {/* Background gradients - fixed on desktop, absolute on mobile for better performance */}
-        <div className={`${isMobile ? 'absolute' : 'fixed'} inset-0 overflow-hidden pointer-events-none z-0`}>
+        {/* Background gradients — absolute below md, fixed on desktop. Use CSS breakpoints only (no isMobile flip) to avoid CLS from fixed→absolute after hydration. */}
+        <div className="absolute md:fixed inset-0 overflow-hidden pointer-events-none z-0">
           <div
             className="absolute top-20 -left-20 w-[600px] h-[600px] rounded-full filter blur-[220px] opacity-40 animate-pulse"
             style={{
