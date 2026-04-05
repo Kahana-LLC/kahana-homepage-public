@@ -1,10 +1,16 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-export default function FadeInSection({ children, delay = 0, isImage = false }) {
-  const [isVisible, setVisible] = useState(false);
+/**
+ * @param {object} props
+ * @param {boolean} [props.eager] - If true, render visible immediately (no opacity-0 first paint). Use for above-the-fold hero so FCP/LCP are not delayed by JS.
+ */
+export default function FadeInSection({ children, delay = 0, isImage = false, eager = false }) {
+  const [isVisible, setVisible] = useState(!!eager);
   const domRef = useRef();
 
   useEffect(() => {
+    if (eager) return;
+
     const currentElement = domRef.current;
     
     const observer = new IntersectionObserver(entries => {
@@ -29,7 +35,7 @@ export default function FadeInSection({ children, delay = 0, isImage = false }) 
       }
       observer.disconnect();
     };
-  }, [isImage]);
+  }, [isImage, eager]);
 
   const baseClasses = 'transition-all duration-1000 ease-out';
   const visibilityClasses = isVisible 

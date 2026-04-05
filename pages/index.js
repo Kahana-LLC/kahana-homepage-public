@@ -259,7 +259,7 @@ export default function Home({ blogPosts }) {
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#30400D] to-transparent opacity-20 z-10"></div>
         
         <div className="scroll-smooth bg-white relative z-10">
-          <FadeInSection>
+          <FadeInSection eager>
             <section
               id="products"
               className="relative overflow-hidden py-24 sm:py-32"
