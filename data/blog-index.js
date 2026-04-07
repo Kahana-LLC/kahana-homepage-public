@@ -1,5 +1,16 @@
 const blogIndex = [
   {
+    title: "7 AI browser features you'll actually use (summaries, commands, organization, security) Oasis playbook",
+    date: "2026-04-04T00:00:00.000Z",
+    authors: ["Pallavi M", "Ankit Sai Allam"],
+    category: ["AI & Browser Technology"],
+    excerpt: "A comprehensive guide to 7 practical AI browser features you'll actually use in 2026, focusing on summaries, commands, organization, and security with real-world challenges and trade-offs.",
+    defaultImageQuery: "AI browser features summaries commands organization security 2026",
+    featuredImage: "https://itdigest.com/wp-content/uploads/2025/04/Oasis-Security-Launches-Automated-Provisioning-For-Non-Human-Identities.webp",
+    slug: "7-ai-browser-features-youll-actually-use-summaries-commands-organization-security-oasis-playbook-2026",
+    readingTime: 15,
+  },
+  {
     title: "AI is breaking web search — what changes for browsing in 2026 (Oasis take)",
     date: "2026-04-03T00:00:00.000Z",
     authors: ["Pallavi M", "Ankit Sai Allam"],
