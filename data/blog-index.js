@@ -1,5 +1,16 @@
 const blogIndex = [
   {
+    title: "Securing the Modern Workspace: Why DNS Rebinding Protection is the Next Essential for Enterprise Browsing",
+    date: "2026-04-07T00:00:00.000Z",
+    authors: ["Pallavi M"],
+    category: ["Enterprise & Security"],
+    excerpt: "A comprehensive analysis of DNS Rebinding attacks as the next critical threat vector in enterprise browsing, and why browser-native protection is essential for completing the Zero Trust security model.",
+    defaultImageQuery: "DNS rebinding protection enterprise browser security zero trust",
+    featuredImage: "https://tse1.mm.bing.net/th/id/OIP.gSK8pP6hgDIw3-owRWAdmwHaFO?pid=Api&P=0&h=180",
+    slug: "securing-modern-workspace-dns-rebinding-protection-enterprise-browsing-2026",
+    readingTime: 8,
+  },
+  {
     title: "Enterprise browser vs Remote Browser Isolation (RBI): which stops SaaS data leaks better? (Oasis security lens)",
     date: "2026-04-06T00:00:00.000Z",
     authors: ["Pallavi M", "Ankit Sai Allam"],
