@@ -1,5 +1,16 @@
 const blogIndex = [
   {
+    title: "Chrome AI vs Edge AI in 2026: real differences + what Oasis does instead",
+    date: "2026-04-05T00:00:00.000Z",
+    authors: ["Pallavi M", "Ankit Sai Allam"],
+    category: ["AI & Browser Technology"],
+    excerpt: "A comprehensive comparison of Chrome AI vs Edge AI in 2026, highlighting real differences in privacy, automation, security, and user experience, plus what Oasis does instead to address these challenges.",
+    defaultImageQuery: "Chrome AI vs Edge AI comparison 2026 browser privacy security",
+    featuredImage: "https://tse4.mm.bing.net/th/id/OIP.G6kZX3TO19tezB_Per1CxgHaDt?pid=Api&P=0&h=180",
+    slug: "chrome-ai-vs-edge-ai-2026-real-differences-oasis-playbook-2026",
+    readingTime: 12,
+  },
+  {
     title: "7 AI browser features you'll actually use (summaries, commands, organization, security) Oasis playbook",
     date: "2026-04-04T00:00:00.000Z",
     authors: ["Pallavi M", "Ankit Sai Allam"],
