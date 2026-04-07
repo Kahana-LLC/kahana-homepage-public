@@ -1,5 +1,16 @@
 const blogIndex = [
   {
+    title: "Enterprise browser vs Remote Browser Isolation (RBI): which stops SaaS data leaks better? (Oasis security lens)",
+    date: "2026-04-06T00:00:00.000Z",
+    authors: ["Pallavi M", "Ankit Sai Allam"],
+    category: ["Enterprise"],
+    excerpt: "A comprehensive security analysis comparing Enterprise browsers vs Remote Browser Isolation (RBI) for stopping SaaS data leaks, examining attack surfaces, threat containment, performance, and deployment challenges.",
+    defaultImageQuery: "Enterprise browser vs remote browser isolation SaaS security comparison",
+    featuredImage: "https://cradlepoint.com/wp-content/uploads/2023/12/Remote-Browser-Isolation-1200x628-1.jpeg",
+    slug: "enterprise-browser-vs-remote-browser-isolation-rbi-saas-data-leaks-oasis-security-lens-2026",
+    readingTime: 15,
+  },
+  {
     title: "Chrome AI vs Edge AI in 2026: real differences + what Oasis does instead",
     date: "2026-04-05T00:00:00.000Z",
     authors: ["Pallavi M", "Ankit Sai Allam"],
