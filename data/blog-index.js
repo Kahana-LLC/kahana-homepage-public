@@ -1,5 +1,16 @@
 const blogIndex = [
   {
+    title: "Enterprise browser vs consumer browser: policies, isolation, and why it exists (Oasis buyer lens)",
+    date: "2026-04-08T00:00:00.000Z",
+    authors: ["Pallavi M", "Ankit Sai Allam"],
+    category: ["Enterprise"],
+    excerpt: "A comprehensive Oasis buyer lens analysis comparing enterprise browsers vs consumer browsers, focusing on policy enforcement gaps, isolation capabilities, and why organizations are shifting away from consumer browsers for security.",
+    defaultImageQuery: "enterprise browser vs consumer browser policies isolation security",
+    featuredImage: "https://tse3.mm.bing.net/th/id/OIP.pMcQqT8_AxpDziuMYUZtigHaDt?pid=Api&P=0&h=180",
+    slug: "enterprise-browser-vs-consumer-browser-policies-isolation-oasis-buyer-lens-2026",
+    readingTime: 15,
+  },
+  {
     title: "Securing the Modern Workspace: Why DNS Rebinding Protection is the Next Essential for Enterprise Browsing",
     date: "2026-04-07T00:00:00.000Z",
     authors: ["Pallavi M"],
