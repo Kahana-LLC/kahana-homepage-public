@@ -1,5 +1,16 @@
 const blogIndex = [
   {
+    title: "Secure DNS is disabled by your organization: what it means on managed browsers (Oasis IT lens)",
+    date: "2026-04-09T00:00:00.000Z",
+    authors: ["Pallavi M", "Ankit Sai Allam"],
+    category: ["Security"],
+    excerpt: "A comprehensive IT lens analysis of why Secure DNS is disabled on managed browsers, covering policy enforcement challenges, enterprise monitoring vs privacy trade-offs, and DNS governance complexity in corporate environments.",
+    defaultImageQuery: "secure DNS disabled managed browsers enterprise policy DNS control",
+    featuredImage: "https://tse4.mm.bing.net/th/id/OIP.xkVo6lrUnH8LkTcZeFXRWQHaE7?pid=Api&P=0&h=180",
+    slug: "secure-dns-disabled-by-organization-managed-browsers-oasis-it-lens-2026",
+    readingTime: 12,
+  },
+  {
     title: "Enterprise browser vs consumer browser: policies, isolation, and why it exists (Oasis buyer lens)",
     date: "2026-04-08T00:00:00.000Z",
     authors: ["Pallavi M", "Ankit Sai Allam"],
