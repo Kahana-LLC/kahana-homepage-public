@@ -1,5 +1,16 @@
 const blogIndex = [
   {
+    title: "Browser summarization that matters: research to notes to next steps (Oasis workflow)",
+    date: "2026-04-10T00:00:00.000Z",
+    authors: ["Pallavi M", "Ankit Sai Allam"],
+    category: ["Browser and technology"],
+    excerpt: "A comprehensive workflow guide for browser-based AI summarization, covering research challenges, practical limitations, and next steps for creating reliable, accurate summaries in research-heavy workflows.",
+    defaultImageQuery: "browser summarization research notes AI workflow accuracy",
+    featuredImage: "https://tse4.mm.bing.net/th/id/OIP.8f24k4dkA2qA_S2g6W-5lwHaDt?pid=Api&P=0&h=180",
+    slug: "browser-summarization-research-notes-next-steps-oasis-workflow-2026",
+    readingTime: 15,
+  },
+  {
     title: "Secure DNS is disabled by your organization: what it means on managed browsers (Oasis IT lens)",
     date: "2026-04-09T00:00:00.000Z",
     authors: ["Pallavi M", "Ankit Sai Allam"],
