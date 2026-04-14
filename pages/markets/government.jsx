@@ -1,7 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
 import Script from 'next/script';
-import Image from 'next/image';
 import Link from 'next/link';
 import SEO from '../../components/SEO';
 import FeaturedBlogSection from '../../components/FeaturedBlogSection';
@@ -10,171 +9,124 @@ import { normalizeBlogCategories } from '../../utils/blog-helpers';
 
 const securityFeatures = [
   {
-    title: 'FedRAMP Authorization',
-    description: 'FedRAMP High Authorization for critical infrastructure.',
+    title: 'Governance where public-sector work happens',
+    description:
+      'Agency and program teams live in SaaS: case management, grants, HR and finance systems, collaboration, and citizen-facing service tools in the browser. Oasis puts policy enforcement in that session, not only on managed government-furnished equipment.',
     details: [
-      'FedRAMP High compliance',
-      'Critical infrastructure protection',
-      'Zero Trust architecture',
-      'Secure BYOD support'
-    ]
+      'Consistent controls across GFE, contractor, and partner devices where policy allows',
+      'Visibility into browser-level activity tied to identity',
+      'Reduce reliance on unmanaged consumer browsers for sensitive workflows',
+      'Close gaps when integrators and field teams use machines you do not manage',
+    ],
   },
   {
-    title: 'Data Isolation',
-    description: '100% data isolation for BYOD environments.',
+    title: 'Secure access for contractors, SIs, and grantees',
+    description:
+      'Public-sector delivery depends on vendors, systems integrators, and external partners. Oasis helps you grant SaaS access without defaulting to shipping laptops or standing up VDI for every engagement, within your authorization boundary.',
     details: [
-      'Complete data separation',
-      'Secure BYOD implementation',
-      'Container isolation',
-      'Data loss prevention'
-    ]
+      'Managed browser sessions on partner-owned devices where permitted',
+      'Corporate-grade identity, session, and data policy in the browser',
+      'Faster paths to productive access with less hardware logistics',
+      'Operational model shifts toward identity-driven access management',
+    ],
   },
   {
-    title: 'Zero Trust Security',
-    description: 'Zero Trust implementation for classified environments.',
+    title: 'Unified browser policies across programs and locations',
+    description:
+      'Apply the same browser governance story across headquarters, field offices, and hybrid teams. Policies follow the session, not only the endpoint.',
     details: [
-      'Classified data protection',
-      'Access control',
-      'Continuous monitoring',
-      'Threat detection'
-    ]
+      'Single control plane for browser-level enforcement',
+      'DLP and usage policy aligned to how SaaS is actually used',
+      'Consistent posture for controlled unclassified and sensitive workflows in web apps',
+      'Less exception sprawl across bureaus and programs',
+    ],
   },
   {
-    title: 'AI-Powered Protection',
-    description: 'AI-ready threat detection and response.',
+    title: 'Plugs into identity and data protection you already use',
+    description:
+      'Oasis integrates with existing identity providers and enterprise DLP so access rules and data policies extend into SaaS workflows without asking security to rip and replace the stack. Your ATO, FedRAMP, or agency path still drives what you deploy.',
     details: [
-      'Advanced threat detection',
-      'Real-time monitoring',
-      'Automated response',
-      'Security analytics'
-    ]
-  }
-];
-
-const governmentFeatures = [
-  {
-    title: 'Secure BYOD',
-    description: 'Enterprise-grade security for personal devices.',
-    details: [
-      'Device isolation',
-      'Secure access',
-      'Policy enforcement',
-      'Compliance management'
-    ]
+      'IdP-driven authentication and access patterns',
+      'Enterprise DLP and data controls in the browsing layer',
+      'Builds on your security investments without duplicating them',
+      'Built for adoption: modern browser experience with governance',
+    ],
   },
-  {
-    title: 'Threat Protection',
-    description: 'Comprehensive threat protection and monitoring.',
-    details: [
-      'Real-time monitoring',
-      'Threat intelligence',
-      'Incident response',
-      'Security analytics'
-    ]
-  },
-  {
-    title: 'Compliance Management',
-    description: 'Streamlined compliance and audit processes.',
-    details: [
-      'FedRAMP compliance',
-      'Audit automation',
-      'Policy management',
-      'Documentation'
-    ]
-  },
-  {
-    title: 'Operational Efficiency',
-    description: 'Enhanced productivity and reduced overhead.',
-    details: [
-      'Workflow automation',
-      'Resource optimization',
-      'Process management',
-      'Performance analytics'
-    ]
-  }
 ];
 
 const industryBenefits = [
   {
-    title: 'Efficiency Gain',
-    description: 'Streamlined workflows and reduced admin overhead with digital tools.',
+    title: 'Mission and service velocity',
+    description:
+      'Keep programs, grants, and service delivery moving with less time lost to hardware provisioning when external teams need SaaS access.',
     icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
       </svg>
     ),
-    stat: '34%',
-    statLabel: 'Fewer Support Tickets',
-    source: {
-      url: 'https://cloud.google.com/blog/products/chrome-enterprise/forrester-study-finds-managing-chrome-brings-enterprises-cost-savings-and-major-productivity-gains',
-      label: 'Google, 2024'
-    }
+    stat: null,
+    statLabel: null,
+    source: null,
   },
   {
-    title: 'Threat Reduction',
-    description: 'Significant reduction in credential-based attacks and vulnerabilities.',
+    title: 'Cost structure',
+    description:
+      'Reduce the operational tax of purchasing, shipping, tracking, and recovering devices for surge staff, contractors, and multi-year integrators.',
     icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+      <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
     ),
-    stat: '95%',
-    statLabel: 'Attack Reduction',
-    source: {
-      url: 'https://www.menlosecurity.com/blog/4-evasive-web-browser-attacks-targeting-federal-agencies',
-      label: 'Menlo Security, 2024'
-    }
+    stat: null,
+    statLabel: null,
+    source: null,
   },
   {
-    title: 'Compliance Success',
-    description: '60% reduction in compliance costs through automated evidence collection.',
+    title: 'Governance confidence',
+    description:
+      'Sensitive agency and citizen-service data in web applications stay governed when work happens in the browser on GFE and authorized partner devices.',
     icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
       </svg>
     ),
-    stat: '60%',
-    statLabel: 'Cost Reduction',
-    source: {
-      url: 'https://nordlayer.com/learn/soc/soc-2-audit-checklist/',
-      label: 'NordLayer, 2024'
-    }
+    stat: null,
+    statLabel: null,
+    source: null,
   },
   {
-    title: 'Onboarding Speed',
-    description: 'Rapid, secure onboarding for contractors and third parties.',
+    title: 'Operational scalability',
+    description:
+      'Support contractor-heavy programs and multi-site rollouts without scaling laptop logistics and one-off exceptions linearly.',
     icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+      <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
       </svg>
     ),
-    stat: '45d → 1h',
-    statLabel: 'Onboarding Time',
-    source: {
-      url: '/products/enterprise-browser',
-      label: 'Oasis Enterprise Browser, 2025'
-    }
-  }
+    stat: null,
+    statLabel: null,
+    source: null,
+  },
 ];
 
 const governmentMetrics = [
   {
-    label: 'Mobile/IoT Incidents',
+    label: 'Mobile and IoT pressure',
     value: '70%',
-    insight: 'Of public sector organizations experience mobile/IoT security incidents.',
+    insight: 'Of public sector organizations report mobile or IoT-related security incidents.',
     source: { url: 'https://www.verizon.com/about/sites/default/files/2024-mobile-security-index-public-sector.pdf', label: 'Verizon, 2024' }
   },
   {
-    label: 'Credential Attacks',
-    value: '95%',
-    insight: 'Reduction in credential-based attacks with enterprise browsers.',
-    source: { url: 'https://www.menlosecurity.com/blog/4-evasive-web-browser-attacks-targeting-federal-agencies', label: 'Menlo Security, 2024' }
+    label: 'Browser-related IR',
+    value: '44%',
+    insight: 'Share of incidents where browser-related factors appear in industry incident research.',
+    source: { url: 'https://www.paloaltonetworks.com/resources/research/unit-42-incident-response-report', label: 'Palo Alto Networks, 2024' }
   },
   {
-    label: 'Security Updates',
-    value: '63%',
-    insight: 'Of personal devices lack critical security updates.',
-    source: { url: 'https://www.indusface.com/news/it-managers-must-watchout-for-web-apps-related-security-breaches-report/', label: 'Indusface, 2024' }
+    label: 'Federal browser threats',
+    value: '4',
+    insight: 'Evasive browser attack patterns called out in vendor analysis of federal-facing campaigns.',
+    source: { url: 'https://www.menlosecurity.com/blog/4-evasive-web-browser-attacks-targeting-federal-agencies', label: 'Menlo Security, 2024' }
   }
 ];
 
@@ -188,7 +140,6 @@ export async function getServerSideProps() {
       .sort((a, b) => new Date(b.date) - new Date(a.date))
       .slice(0, 3);
 
-    // Don't fetch images during build - let them load on-demand
     return {
       props: {
         governmentBlogs: governmentBlogs,
@@ -197,7 +148,6 @@ export async function getServerSideProps() {
   } catch (error) {
     console.error('Error in getServerSideProps for government page:', error);
     
-    // Return fallback data if everything fails
     const fallbackBlogs = blogIndex
       .filter(post => normalizeBlogCategories(post.category).some(cat => 
         cat.toLowerCase() === 'government' || 
@@ -218,30 +168,32 @@ export default function Government({ governmentBlogs }) {
   const governmentSchema = {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
-    name: 'Government & Public Sector Solutions | Kahana',
-    description: 'Enterprise-grade security and productivity solutions for government and public sector organizations. Features include government compliance, data protection, and comprehensive analytics.',
+    name: 'Government & public sector: Oasis managed enterprise browser | Kahana',
+    description:
+      'Oasis helps government and public-sector organizations secure SaaS and browser-centric work for employees, contractors, and partners, with governance in the browser, unified policies, identity and DLP integration, and less laptop and VDI drag.',
     mainEntity: {
       '@type': 'Organization',
       name: 'Kahana',
-      description: 'Kahana provides enterprise-grade security and productivity solutions for government and public sector organizations'
-    }
+      description:
+        'Kahana builds Oasis, a managed enterprise browser for secure SaaS access in government and public-sector environments.',
+    },
   };
 
   return (
     <>
       <SEO 
-        title="Government & Public Sector Solutions | Kahana"
-        description="Enterprise-grade security and productivity solutions for government and public sector organizations. Features include government compliance, data protection, and comprehensive analytics."
+        title="Government & public sector: Secure SaaS access with Oasis | Kahana"
+        description="Managed enterprise browser for government: governance in the browser for agency SaaS, contractor and integrator access, with unified policies, identity and DLP integration, within your authorization and compliance path."
         image="https://kahana.co/assets/government-preview.png"
         url="https://kahana.co/markets/government"
         type="webpage"
         schema={governmentSchema}
       />
       <Head>
-        <title>Government & Public Sector Solutions | Kahana</title>
+        <title>Government & public sector: Secure SaaS access with Oasis | Kahana</title>
         <meta
           name="description"
-          content="Kahana's government and public sector solutions help organizations enhance security, improve operations, and maintain compliance with government standards."
+          content="Oasis is a managed enterprise browser for public-sector teams: session-level governance, consistent browser policies across GFE and authorized partner devices, and integration with identity and enterprise DLP, so contractors and partners get productive without hardware logistics as the default gate."
         />
       </Head>
       <Script
@@ -260,78 +212,115 @@ export default function Government({ governmentBlogs }) {
         `}
       </Script>
 
-      {/* Hero Section - Problem Statement */}
-      <section className="bg-white py-20">
+      <section className="bg-gradient-to-b from-[#E3DFF1]/20 via-[#8CB7D0]/10 to-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h2 className="text-base font-semibold leading-7 text-[#728552] mb-3">Government & Public Sector</h2>
+            <h2 className="text-base font-semibold leading-7 text-[#66C2BE] mb-3">Government & public sector</h2>
             <h1 className="text-5xl font-bold text-[#4A5745] mb-6">
-              Secure Government Operations
+              Secure SaaS access for government teams
             </h1>
-            <p className="text-xl text-[#4A5745] max-w-3xl mx-auto mb-8">
-              Transform your government operations with enterprise-grade security, enhanced productivity, and comprehensive analytics.
+            <p className="text-xl text-[#4A5745] max-w-3xl mx-auto mb-8 leading-relaxed">
+              Public-sector apps are web-first while contractors and integrators sit off your standard image. Oasis is a managed enterprise browser: governed sessions align to your IdP, DLP, and authorization path instead of defaulting to device logistics alone.
             </p>
-            <div className="flex justify-center">
-              <Link href="/buyers-guide" className="btn-secondary inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline">
-                  Read Buyer's Guide
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Link href="/schedule-demo" className="btn-primary inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline">
+                Schedule a demo
+              </Link>
+              <Link href="/contact" className="btn-secondary inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline">
+                Get in touch
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Government Industry Metrics Section - Proof Points */}
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-[#4A5745] text-center mb-12">
-            Government Industry Metrics
+            Why browser governance matters in the public sector
           </h2>
-          <p className="text-[#4A5745] text-center mb-8 max-w-3xl mx-auto">
-            Key metrics that matter to government IT and security leaders evaluating enterprise browsers.
+          <p className="text-[#4A5745] text-center mb-8 max-w-3xl mx-auto leading-relaxed">
+            Industry reporting highlights mobile and IoT pressure and sustained web and credential risk. The pattern behind it is familiar: sensitive work happens in the browser on a mix of agency and third-party devices. Governing the session closes gaps that endpoint-only approaches often leave open.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {governmentMetrics.map((metric, idx) => (
-              <div key={idx} className="bg-white rounded-xl shadow-lg p-6 flex flex-col hover:shadow-2xl transition-shadow">
-                <div className="text-2xl font-bold text-[#728552] mb-2">{metric.value}</div>
-                <div className="text-lg font-semibold text-[#4A5745] mb-1">{metric.label}</div>
-                <div className="text-sm text-[#4A5745] mb-3">{metric.insight}</div>
-                {metric.source && (
-                  <a href={metric.source.url} target="_blank" rel="noopener noreferrer" className="block text-xs text-gray-400 underline mt-auto">{metric.source.label}</a>
-                )}
-              </div>
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto">
+            {governmentMetrics.map((metric, idx) => {
+              const isLastOdd =
+                governmentMetrics.length % 2 === 1 &&
+                idx === governmentMetrics.length - 1;
+              return (
+                <div
+                  key={idx}
+                  className={[
+                    'font-sans bg-white rounded-xl border border-[#4A5745]/10 shadow-sm p-6 flex flex-col transition-colors hover:border-[#66C2BE]/35 hover:shadow-md',
+                    isLastOdd ? 'md:col-span-2 md:max-w-md md:mx-auto' : '',
+                  ]
+                    .filter(Boolean)
+                    .join(' ')}
+                >
+                  <div className="text-3xl font-bold tracking-tight text-[#4A5745] mb-2 tabular-nums">
+                    {metric.value}
+                  </div>
+                  <div className="text-sm font-semibold uppercase tracking-wide text-[#4A5745]/85 mb-1">
+                    {metric.label}
+                  </div>
+                  <div className="text-sm text-[#4A5745]/90 leading-relaxed mb-3">
+                    {metric.insight}
+                  </div>
+                  {metric.source && (
+                    <a
+                      href={metric.source.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-auto text-xs text-[#4A5745]/65 no-underline underline-offset-2 hover:text-[#66C2BE] hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#66C2BE]"
+                    >
+                      Source: {metric.source.label}
+                    </a>
+                  )}
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* Security Features Section - Core Solution */}
-      <section className="bg-white py-16">
+      <section className="bg-[#f8faf9] py-16 md:py-20 border-y border-[#4A5745]/8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-[#4A5745] text-center mb-12">
-            Government Security
+          <h2 className="text-3xl font-bold text-[#4A5745] text-center mb-12 tracking-tight">
+            What Oasis delivers for government and public sector
           </h2>
-          <p className="text-[#4A5745] text-center mb-8 max-w-3xl mx-auto">
-            Discover how our solutions deliver enterprise-grade security for government operations. Our security-first approach helps organizations protect sensitive data and maintain compliance.
+          <p className="text-[#4A5745]/95 text-center mb-10 max-w-3xl mx-auto leading-relaxed">
+            Oasis is a managed enterprise browser, a control layer for SaaS-centric work. Policies travel with the session, connect to your identity and DLP stack, and keep contractor and partner access practical without leaning on laptops or VDI for every rollout, within your security and compliance boundary.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
             {securityFeatures.map((feature, index) => (
-              <div key={index} className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl overflow-hidden p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-                <div className="flex items-center mb-4">
-                  <div className="w-10 h-10 bg-gradient-to-br from-kahana-primary via-kahana-secondary-300 to-kahana-accent-sky rounded-full flex items-center justify-center mr-3 shadow-md shadow-kahana-accent-sky/20">
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div
+                key={index}
+                className="bg-white rounded-xl border border-[#4A5745]/10 p-6 md:p-7 shadow-sm transition-all duration-200 hover:border-kahana-primary-800/30 hover:shadow-md"
+              >
+                <div className="flex gap-4 mb-4">
+                  <div
+                    className="flex-shrink-0 w-11 h-11 rounded-lg bg-kahana-primary-800 flex items-center justify-center ring-1 ring-kahana-primary-900/20"
+                    aria-hidden
+                  >
+                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                     </svg>
                   </div>
-                  <h3 className="text-lg font-semibold text-[#4A5745]">{feature.title}</h3>
+                  <h3 className="text-base md:text-lg font-semibold text-[#4A5745] leading-snug tracking-tight pt-1.5">
+                    {feature.title}
+                  </h3>
                 </div>
-                <p className="text-[#4A5745] text-sm mb-4">{feature.description}</p>
-                <ul className="space-y-2">
+                <p className="text-sm text-[#4A5745]/90 leading-relaxed mb-5 border-l-2 border-kahana-primary-800/25 pl-4">
+                  {feature.description}
+                </p>
+                <ul className="space-y-2.5">
                   {feature.details.map((detail, dIndex) => (
-                    <li key={dIndex} className="flex items-center text-[#4A5745] text-sm">
-                      <svg className="w-4 h-4 mr-2 text-[#728552]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                      {detail}
+                    <li key={dIndex} className="flex gap-3 text-sm text-[#4A5745]/95 leading-relaxed">
+                      <span
+                        className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-kahana-primary-700"
+                        aria-hidden
+                      />
+                      <span>{detail}</span>
                     </li>
                   ))}
                 </ul>
@@ -341,72 +330,82 @@ export default function Government({ governmentBlogs }) {
         </div>
       </section>
 
-      {/* Industry Benefits Section - ROI */}
-      <section className="bg-white py-16">
+      <section className="bg-white py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-[#4A5745] text-center mb-12">
-            Government Benefits
+          <h2 className="text-3xl font-bold text-[#4A5745] text-center mb-10 tracking-tight">
+            Outcomes security and public-sector IT leaders care about
           </h2>
-          <p className="text-[#4A5745] text-center mb-8 max-w-3xl mx-auto">
-            See how government organizations are transforming their operations and improving service delivery with our solutions.
+          <p className="text-[#4A5745]/95 text-center mb-10 max-w-3xl mx-auto leading-relaxed">
+            Directional themes aligned to how agencies scale people and partners without letting device logistics become the bottleneck. Specific timelines and savings depend on your environment, authority to operate, and scope.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-8">
             {industryBenefits.map((benefit, index) => (
-              <div key={index} className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl overflow-hidden p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-                <div className="flex items-center mb-4">
-                  <div className="w-10 h-10 bg-gradient-to-br from-kahana-primary via-kahana-secondary-300 to-kahana-accent-sky rounded-full flex items-center justify-center mr-3 shadow-md shadow-kahana-accent-sky/20">
-                    <div className="text-white">
-                      {benefit.icon}
-                    </div>
+              <div
+                key={index}
+                className="bg-white rounded-xl border border-[#4A5745]/10 p-6 md:p-7 shadow-sm transition-all duration-200 hover:border-kahana-primary-800/30 hover:shadow-md"
+              >
+                <div className="flex gap-4 mb-4">
+                  <div
+                    className="flex-shrink-0 w-11 h-11 rounded-lg bg-kahana-primary-800 flex items-center justify-center ring-1 ring-kahana-primary-900/20"
+                    aria-hidden
+                  >
+                    {benefit.icon}
                   </div>
-                  <h3 className="text-lg font-semibold text-[#4A5745]">
+                  <h3 className="text-base md:text-lg font-semibold text-[#4A5745] leading-snug tracking-tight pt-1.5">
                     {benefit.title}
                   </h3>
                 </div>
-                <div className="mb-4">
-                  <div className="text-2xl font-bold text-[#728552] mb-1">
-                    {benefit.stat}
+                {benefit.stat != null && benefit.statLabel != null && (
+                  <div className="mb-4">
+                    <div className="text-2xl font-bold tracking-tight text-[#4A5745] tabular-nums mb-1">
+                      {benefit.stat}
+                    </div>
+                    <div className="text-sm text-[#4A5745]/85">
+                      {benefit.statLabel}
+                    </div>
                   </div>
-                  <div className="text-sm text-[#4A5745]">
-                    {benefit.statLabel}
-                  </div>
-                </div>
-                <p className="text-[#4A5745] text-sm">
+                )}
+                {benefit.source && (
+                  <a
+                    href={benefit.source.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mb-3 block text-xs text-[#4A5745]/65 no-underline underline-offset-2 hover:text-kahana-primary-700 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-kahana-primary-700"
+                  >
+                    Source: {benefit.source.label}
+                  </a>
+                )}
+                <p className="text-sm text-[#4A5745]/90 leading-relaxed border-l-2 border-kahana-primary-800/25 pl-4">
                   {benefit.description}
                 </p>
-                {benefit.source && (
-                  <a href={benefit.source.url} target="_blank" rel="noopener noreferrer" className="block text-xs text-gray-400 underline mt-1">{benefit.source.label}</a>
-                )}
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Featured Blog Section - Social Proof */}
       <FeaturedBlogSection posts={governmentBlogs} />
 
-      {/* CTA Section - Next Steps */}
       <section 
         className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] py-12 sm:py-16 md:py-20 lg:py-28 mb-0 bg-[#F8FAF2]"
       >
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4 sm:mb-6">
-            Ready to Transform Your Government Operations?
+            Mission delivery and partner collaboration without operational drag
           </h2>
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 lg:mb-10 max-w-3xl mx-auto leading-relaxed font-bold" style={{ color: '#313A00' }}>
-            Schedule a demo to see how our solutions can enhance security, improve operations, and streamline your government processes.
+          <p className="text-xl text-[#4A5745] mb-6 sm:mb-8 lg:mb-10 max-w-3xl mx-auto leading-relaxed">
+            Put governance back in the browser for public-sector SaaS, with secure access from any device, policy enforcement, and visibility your security and IT teams can stand behind.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
             <Link href="/schedule-demo" className="btn-primary inline-flex items-center justify-center px-6 sm:px-8 lg:px-10 py-3 sm:py-4 text-sm sm:text-base lg:text-lg font-bold no-underline hover:no-underline focus:no-underline w-full sm:w-auto">
-              Schedule a Demo
+              Schedule a demo
             </Link>
             <Link href="/contact" className="btn-secondary inline-flex items-center justify-center px-6 sm:px-8 lg:px-10 py-3 sm:py-4 text-sm sm:text-base lg:text-lg font-bold no-underline hover:no-underline focus:no-underline w-full sm:w-auto">
-              Get in Touch
+              Get in touch
             </Link>
           </div>
         </div>
       </section>
     </>
   );
-} 
+}

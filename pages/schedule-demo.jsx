@@ -50,6 +50,16 @@ const steps = [
 
 const supportLinks = [
   {
+    name: 'Contact us',
+    description: 'Send a message or question through our contact form.',
+    href: '/contact',
+    icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+      </svg>
+    ),
+  },
+  {
     name: 'Support',
     description: 'Get help with deployment and technical assistance.',
     href: '/support',
@@ -146,52 +156,54 @@ export default function ScheduleDemo() {
         <meta name="description" content="Schedule a demo of Oasis - the secure enterprise browser that transforms how organizations explore and organize knowledge" />
       </Head>
 
-      <main className="min-h-screen bg-white pt-24 pb-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="lg:grid lg:grid-cols-12 lg:gap-16">
-            {/* Left Column - Content */}
-            <div className="lg:col-span-7">
-              <div className="text-center lg:text-left mb-12">
-                <h2 className="text-base font-semibold leading-7 text-[#66C2BE] mb-3">Get Started with Oasis</h2>
-                <h1 className="text-4xl font-bold text-gray-900 sm:text-5xl">
-                  Deploy Oasis Across Your Enterprise
+      <main className="min-h-screen bg-white pb-16">
+        <div className="bg-gradient-to-b from-[#E3DFF1]/20 via-[#8CB7D0]/10 to-white pt-24 pb-10 lg:pb-14">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="lg:grid lg:grid-cols-12 lg:gap-16 lg:items-start">
+              {/* Left Column - Content */}
+              <div className="lg:col-span-7">
+              <div className="text-center lg:text-left mb-10 lg:mb-12">
+                <h2 className="text-base font-semibold leading-7 text-[#66C2BE] mb-3">Get started with Oasis</h2>
+                <h1 className="text-4xl font-bold text-[#4A5745] sm:text-5xl tracking-tight">
+                  Deploy Oasis across your enterprise
                 </h1>
-                <p className="mt-6 text-xl text-gray-600">
-                  Ready to transform your organization's digital workspace? Schedule a demo to see Oasis in action and learn how we'll help you deploy it securely across your organization.
+                <p className="mt-6 text-xl text-[#4A5745] leading-relaxed max-w-2xl lg:max-w-none mx-auto lg:mx-0">
+                  Ready to transform your organization&apos;s digital workspace? Schedule a demo to see Oasis in action and learn how we&apos;ll help you deploy it securely across your organization.
                 </p>
               </div>
 
               {/* Form Section - Now appears first on mobile */}
               <div className="lg:hidden mb-12">
-                <div className="bg-white rounded-xl shadow-xl border border-[#A5DAD8]/30 p-8">
+                <div className="bg-white rounded-xl shadow-md border border-[#4A5745]/10 p-6 sm:p-8">
                   <div className="text-center mb-8">
-                    <h3 className="text-2xl font-semibold text-gray-900">Schedule Your Demo</h3>
-                    <p className="mt-3 text-gray-600">
+                    <h3 className="text-2xl font-semibold text-[#4A5745] tracking-tight">Schedule your demo</h3>
+                    <p className="mt-3 text-[#4A5745]/90 leading-relaxed">
                       Book a personalized demo to see how Oasis can transform your enterprise.
                     </p>
                   </div>
                   <div className="relative min-h-[500px]">
                     {!isFormLoaded && !loadError && (
                       <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#66C2BE]"></div>
+                        <div className="animate-spin rounded-full h-12 w-12 border-2 border-[#66C2BE]/30 border-t-[#66C2BE]" />
                       </div>
                     )}
 
                     {loadError && retryCount < MAX_RETRIES && (
                       <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center">
-                        <p className="text-gray-600 mb-4">Having trouble loading the form? We'll try again automatically.</p>
-                        <p className="text-sm text-[#4A5745]">Attempt {retryCount + 1} of {MAX_RETRIES}</p>
+                        <p className="text-[#4A5745]/95 mb-4 leading-relaxed">Having trouble loading the form? We&apos;ll try again automatically.</p>
+                        <p className="text-sm text-[#4A5745]/80">Attempt {retryCount + 1} of {MAX_RETRIES}</p>
                       </div>
                     )}
 
                     {loadError && retryCount >= MAX_RETRIES && (
                       <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center">
-                        <p className="text-gray-600 mb-4">We're having trouble loading the form. Please try refreshing the page.</p>
+                        <p className="text-[#4A5745]/95 mb-4 leading-relaxed">We&apos;re having trouble loading the form. Please try refreshing the page.</p>
                         <button
+                          type="button"
                           onClick={() => window.location.reload()}
-                          className="px-4 py-2 bg-[#66C2BE] text-white rounded-md hover:bg-[#4A9E9A] transition-colors"
+                          className="btn-primary px-5 py-2.5 text-sm font-semibold"
                         >
-                          Refresh Page
+                          Refresh page
                         </button>
                       </div>
                     )}
@@ -215,37 +227,41 @@ export default function ScheduleDemo() {
               </div>
 
               {/* Steps Section */}
-              <div className="mb-12 lg:mb-0">
+              <div className="mb-12 lg:mb-0 -mx-4 px-4 sm:mx-0 sm:px-0 py-10 sm:py-0 sm:pb-0 bg-[#f8faf9] sm:bg-transparent rounded-xl sm:rounded-none border border-[#4A5745]/8 sm:border-0">
                 <div className="mx-auto">
+                  <h2 className="text-xl font-bold text-[#4A5745] mb-2 text-center sm:text-left tracking-tight">
+                    What happens next
+                  </h2>
+                  <p className="text-sm text-[#4A5745]/85 mb-8 text-center sm:text-left max-w-xl">
+                    After you submit the form, our team follows a simple path to get Oasis in your environment.
+                  </p>
                   {/* Progress Bar */}
-                  <div className="relative h-1 bg-gray-100 rounded-full mb-12">
-                    <div 
+                  <div className="relative h-1.5 bg-[#4A5745]/10 rounded-full mb-10">
+                    <div
                       className="absolute h-full bg-gradient-to-r from-[#E3DFF1] via-[#8CB7D0] to-[#66C2BE] rounded-full transition-all duration-300 ease-in-out"
                       style={{ width: `${(hoveredStep / (steps.length - 1)) * 100}%` }}
                     />
                   </div>
-                  
-                  <div className="grid grid-cols-1 gap-6">
+
+                  <div className="grid grid-cols-1 gap-4 sm:gap-6">
                     {steps.map((step, index) => (
-                      <div 
-                        key={step.id} 
-                        className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl overflow-hidden p-6 shadow-lg hover:shadow-xl transition-all duration-300"
+                      <div
+                        key={step.id}
+                        className="bg-white rounded-xl border border-[#4A5745]/10 p-5 sm:p-6 shadow-sm transition-all duration-200 hover:border-[#66C2BE]/35 hover:shadow-md"
                         onMouseEnter={() => setHoveredStep(index)}
                         onMouseLeave={() => setHoveredStep(0)}
                       >
                         <div className="flex items-start">
                           <div className="flex-shrink-0">
-                            <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-[#66C2BE] via-[#8CB7D0] to-[#E3DFF1] shadow-md shadow-[#E3DFF1]/20">
-                              <div className="text-white">
-                                {step.icon}
-                              </div>
+                            <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-kahana-primary-800 ring-1 ring-kahana-primary-900/20 shadow-sm">
+                              <div className="text-white">{step.icon}</div>
                             </div>
                           </div>
-                          <div className="ml-4">
-                            <div className="text-lg font-semibold leading-7 text-gray-900">
+                          <div className="ml-4 min-w-0">
+                            <div className="text-lg font-semibold leading-snug text-[#4A5745]">
                               {step.name}
                             </div>
-                            <div className="mt-2 text-base leading-7 text-gray-600">
+                            <div className="mt-2 text-base leading-relaxed text-[#4A5745]/90">
                               {step.description}
                             </div>
                           </div>
@@ -255,25 +271,23 @@ export default function ScheduleDemo() {
                   </div>
 
                   {/* Support Links */}
-                  <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2">
+                  <div className="mt-10 grid grid-cols-1 gap-4 sm:gap-6 sm:grid-cols-2">
                     {supportLinks.map((link) => (
                       <Link
                         key={link.name}
                         href={link.href}
-                        className="group flex items-center p-4 bg-white rounded-lg border border-[#A5DAD8]/30 shadow-sm hover:shadow-md transition-all duration-300"
+                        className="group flex items-center p-4 bg-white rounded-xl border border-[#4A5745]/10 shadow-sm transition-all duration-200 hover:border-[#66C2BE]/35 hover:shadow-md no-underline hover:no-underline focus:no-underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#66C2BE]"
                       >
                         <div className="flex-shrink-0">
-                          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-[#66C2BE]/10 via-[#8CB7D0]/10 to-[#E3DFF1]/10 group-hover:from-[#66C2BE]/20 group-hover:via-[#8CB7D0]/20 group-hover:to-[#E3DFF1]/20 transition-all duration-300">
-                            <div className="text-[#66C2BE]">
-                              {link.icon}
-                            </div>
+                          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#f8faf9] ring-1 ring-[#4A5745]/10 group-hover:bg-[#E3DFF1]/40 transition-colors duration-200">
+                            <div className="text-kahana-primary-800">{link.icon}</div>
                           </div>
                         </div>
-                        <div className="ml-4">
-                          <p className="text-base font-medium text-gray-900 group-hover:text-[#66C2BE] transition-colors duration-300">
+                        <div className="ml-4 min-w-0 text-left">
+                          <p className="text-base font-semibold text-[#4A5745] group-hover:text-[#66C2BE] transition-colors duration-200">
                             {link.name}
                           </p>
-                          <p className="mt-1 text-sm text-[#4A5745]">
+                          <p className="mt-1 text-sm text-[#4A5745]/85 leading-relaxed">
                             {link.description}
                           </p>
                         </div>
@@ -286,35 +300,36 @@ export default function ScheduleDemo() {
 
             {/* Right Column - Form (Desktop only) */}
             <div className="hidden lg:block lg:col-span-5 lg:sticky lg:top-24">
-              <div className="bg-white rounded-xl shadow-xl border border-[#A5DAD8]/30 p-8">
+              <div className="bg-white rounded-xl shadow-md border border-[#4A5745]/10 p-8">
                 <div className="text-center mb-8">
-                  <h3 className="text-2xl font-semibold text-gray-900">Schedule Your Demo</h3>
-                  <p className="mt-3 text-gray-600">
+                  <h3 className="text-2xl font-semibold text-[#4A5745] tracking-tight">Schedule your demo</h3>
+                  <p className="mt-3 text-[#4A5745]/90 leading-relaxed">
                     Book a personalized demo to see how Oasis can transform your enterprise.
                   </p>
                 </div>
                 <div className="relative min-h-[500px]">
                   {!isFormLoaded && !loadError && (
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#66C2BE]"></div>
+                      <div className="animate-spin rounded-full h-12 w-12 border-2 border-[#66C2BE]/30 border-t-[#66C2BE]" />
                     </div>
                   )}
 
                   {loadError && retryCount < MAX_RETRIES && (
                     <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center">
-                      <p className="text-gray-600 mb-4">Having trouble loading the form? We'll try again automatically.</p>
-                      <p className="text-sm text-[#4A5745]">Attempt {retryCount + 1} of {MAX_RETRIES}</p>
+                      <p className="text-[#4A5745]/95 mb-4 leading-relaxed">Having trouble loading the form? We&apos;ll try again automatically.</p>
+                      <p className="text-sm text-[#4A5745]/80">Attempt {retryCount + 1} of {MAX_RETRIES}</p>
                     </div>
                   )}
 
                   {loadError && retryCount >= MAX_RETRIES && (
                     <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center">
-                      <p className="text-gray-600 mb-4">We're having trouble loading the form. Please try refreshing the page.</p>
+                      <p className="text-[#4A5745]/95 mb-4 leading-relaxed">We&apos;re having trouble loading the form. Please try refreshing the page.</p>
                       <button
+                        type="button"
                         onClick={() => window.location.reload()}
-                        className="px-4 py-2 bg-[#66C2BE] text-white rounded-md hover:bg-[#4A9E9A] transition-colors"
+                        className="btn-primary px-5 py-2.5 text-sm font-semibold"
                       >
-                        Refresh Page
+                        Refresh page
                       </button>
                     </div>
                   )}
@@ -335,6 +350,7 @@ export default function ScheduleDemo() {
                   />
                 </div>
               </div>
+            </div>
             </div>
           </div>
         </div>

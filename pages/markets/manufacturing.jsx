@@ -1,7 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
 import Script from 'next/script';
-import Image from 'next/image';
 import Link from 'next/link';
 import SEO from '../../components/SEO';
 import FeaturedBlogSection from '../../components/FeaturedBlogSection';
@@ -10,108 +9,104 @@ import { normalizeBlogCategories } from '../../utils/blog-helpers';
 
 const securityFeatures = [
   {
-    title: 'Attack Prevention',
-    description: 'Block 95% of browser-based attacks through granular controls.',
+    title: 'Governance where manufacturing work happens',
+    description:
+      'Plants, engineering, and HQ teams live in SaaS: MES notifications, ERP, supplier portals, collaboration, and AI-assisted workflows in the browser. Oasis puts policy enforcement in that session, not only on corporate-owned PCs.',
     details: [
-      'Phishing protection',
-      'Malicious extension blocking',
-      'Isolation technology',
-      'Traffic monitoring'
-    ]
+      'Consistent controls across corporate and partner devices',
+      'Visibility into browser-level activity tied to identity',
+      'Reduce reliance on unmanaged consumer browsers for critical apps',
+      'Close gaps when contractors use machines you do not manage',
+    ],
   },
   {
-    title: 'Compliance Management',
-    description: 'Achieve 99.8% audit success with built-in controls.',
+    title: 'Secure access for contractors, integrators, and suppliers',
+    description:
+      'Manufacturing runs on external specialists: line upgrades, OT/IT integrators, and vendor support. Oasis helps you grant SaaS access without defaulting to shipping laptops or standing up VDI for every engagement.',
     details: [
-      'SOC 2 compliance',
-      'GDPR compliance',
-      'Industrial standards',
-      'Zero Trust access'
-    ]
+      'Managed browser sessions on their own devices',
+      'Corporate-grade identity, session, and data policy in the browser',
+      'Faster paths to productive access with less hardware logistics',
+      'Operational model shifts toward identity-driven access management',
+    ],
   },
   {
-    title: 'Incident Response',
-    description: '80% faster response through centralized monitoring.',
+    title: 'Unified browser policies across sites and teams',
+    description:
+      'Apply the same browser governance story at HQ, remote engineering, and third-party environments. Policies follow the session, not only the endpoint.',
     details: [
-      'Real-time alerts',
-      'Traffic visibility',
-      'Encrypted analysis',
-      'Rapid investigation'
-    ]
+      'Single control plane for browser-level enforcement',
+      'DLP and usage policy aligned to how SaaS is actually used',
+      'Consistent posture for high-value manufacturing data flows',
+      'Less exception sprawl across plants and partners',
+    ],
   },
   {
-    title: 'Credential Protection',
-    description: 'Counter 71% of attacks using valid credentials.',
+    title: 'Plugs into identity and data protection you already use',
+    description:
+      'Oasis integrates with existing identity providers and enterprise DLP so access rules and data policies extend into SaaS workflows without asking security to rip and replace the stack.',
     details: [
-      'MFA enforcement',
-      'Access controls',
-      'Session monitoring',
-      'Risk assessment'
-    ]
-  }
+      'IdP-driven authentication and access patterns',
+      'Enterprise DLP and data controls in the browsing layer',
+      'Builds on your security investments without duplicating them',
+      'Built for adoption: modern browser experience with governance',
+    ],
+  },
 ];
 
 const industryBenefits = [
   {
-    title: 'Operational Efficiency',
-    description: 'Streamlined workflows and reduced admin overhead.',
+    title: 'Project velocity',
+    description:
+      'Keep line upgrades, supplier projects, and engineering work moving with less time lost to hardware provisioning when external teams need SaaS access.',
     icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
       </svg>
     ),
-    stat: '34%',
-    statLabel: 'Fewer Support Tickets',
-    source: {
-      url: 'https://cloud.google.com/blog/products/chrome-enterprise/forrester-study-finds-managing-chrome-brings-enterprises-cost-savings-and-major-productivity-gains',
-      label: 'Google, 2023'
-    }
+    stat: null,
+    statLabel: null,
+    source: null,
   },
   {
-    title: 'Cost Savings',
-    description: 'Reduced operational costs through automation and consolidation.',
+    title: 'Cost structure',
+    description:
+      'Reduce the operational tax of purchasing, shipping, tracking, and recovering laptops for short-term workers, integrators, and plant support.',
     icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
     ),
-    stat: '18%',
-    statLabel: 'Lower IT Overhead',
-    source: {
-      url: 'https://www.bankinfosecurity.com/how-enterprise-browsers-enhance-security-efficiency-a-25416',
-      label: 'BankInfoSecurity, 2024'
-    }
+    stat: null,
+    statLabel: null,
+    source: null,
   },
   {
-    title: 'Compliance Success',
-    description: '60% reduction in compliance costs through automated evidence collection.',
+    title: 'Governance confidence',
+    description:
+      'Sensitive manufacturing data and processes stay governed when work happens in the browser on corporate and third-party devices.',
     icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
       </svg>
     ),
-    stat: '60%',
-    statLabel: 'Cost Reduction',
-    source: {
-      url: 'https://nordlayer.com/learn/soc/soc-2-audit-checklist/',
-      label: 'NordLayer, 2024'
-    }
+    stat: null,
+    statLabel: null,
+    source: null,
   },
   {
-    title: 'Onboarding Speed',
-    description: 'Rapid, secure onboarding for contractors and third parties.',
+    title: 'Operational scalability',
+    description:
+      'Support contractor-heavy programs and multi-site rollouts without scaling laptop logistics and one-off exceptions linearly.',
     icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+      <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
       </svg>
     ),
-    stat: '45d → 1h',
-    statLabel: 'Onboarding Time',
-    source: {
-      url: '/products/enterprise-browser',
-      label: 'Oasis Enterprise Browser, 2025'
-    }
-  }
+    stat: null,
+    statLabel: null,
+    source: null,
+  },
 ];
 
 const manufacturingMetrics = [
@@ -187,30 +182,32 @@ export default function Manufacturing({ manufacturingBlogs }) {
   const manufacturingSchema = {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
-    name: 'Manufacturing Solutions | Kahana',
-    description: 'Enterprise-grade security and productivity solutions for the manufacturing industry. Features include supply chain security, industrial IoT protection, and comprehensive manufacturing analytics.',
+    name: 'Manufacturing: Oasis managed enterprise browser | Kahana',
+    description:
+      'Oasis helps manufacturers secure SaaS and browser-centric work for employees, contractors, and partners, with governance in the browser, unified policies, identity and DLP integration, and less laptop and VDI drag.',
     mainEntity: {
       '@type': 'Organization',
       name: 'Kahana',
-      description: 'Kahana provides enterprise-grade security and productivity solutions for manufacturing organizations'
-    }
+      description:
+        'Kahana builds Oasis, a managed enterprise browser for secure SaaS access in manufacturing and industrial environments.',
+    },
   };
 
   return (
     <>
       <SEO 
-        title="Manufacturing Solutions | Kahana"
-        description="Enterprise-grade security and productivity solutions for the manufacturing industry. Features include supply chain security, industrial IoT protection, and comprehensive manufacturing analytics."
+        title="Manufacturing: Secure SaaS access with Oasis | Kahana"
+        description="Managed enterprise browser for manufacturers: governance in the browser for ERP, supplier portals, and plant IT, with unified policies, identity and DLP integration, and secure contractor and partner access without default laptop shipping."
         image="https://kahana.co/assets/manufacturing-preview.png"
         url="https://kahana.co/markets/manufacturing"
         type="webpage"
         schema={manufacturingSchema}
       />
       <Head>
-        <title>Manufacturing Solutions | Kahana</title>
+        <title>Manufacturing: Secure SaaS access with Oasis | Kahana</title>
         <meta
           name="description"
-          content="Kahana's manufacturing solutions help organizations enhance security, improve productivity, and maintain compliance in the manufacturing industry."
+          content="Oasis is a managed enterprise browser for manufacturing teams: session-level governance, consistent browser policies across corporate and third-party devices, and integration with identity and enterprise DLP, so contractors and suppliers get productive without hardware logistics as the default gate."
         />
       </Head>
       <Script
@@ -235,14 +232,17 @@ export default function Manufacturing({ manufacturingBlogs }) {
           <div className="text-center">
             <h2 className="text-base font-semibold leading-7 text-[#66C2BE] mb-3">Manufacturing</h2>
             <h1 className="text-5xl font-bold text-[#4A5745] mb-6">
-              Secure Manufacturing Solutions
+              Secure SaaS access for modern manufacturing
             </h1>
-            <p className="text-xl text-[#4A5745] max-w-3xl mx-auto mb-8">
-              Manufacturing operations face unprecedented cyber threats as digitization accelerates. Enterprise browsers provide critical protection for your digital factory floor, ensuring secure access to IoT systems, cloud workflows, and AI-driven analytics while maintaining compliance with industrial standards.
+            <p className="text-xl text-[#4A5745] max-w-3xl mx-auto mb-8 leading-relaxed">
+              Plant, supply chain, and partner workflows increasingly run as web apps on endpoints outside your standard build. Oasis is a managed enterprise browser: govern that access in the session with your IdP and DLP instead of defaulting to shipped devices or VDI.
             </p>
-            <div className="flex justify-center">
-              <Link href="/buyers-guide" className="btn-secondary inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline">
-                  Read Buyer's Guide
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Link href="/schedule-demo" className="btn-primary inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline">
+                Schedule a demo
+              </Link>
+              <Link href="/contact" className="btn-secondary inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline">
+                Get in touch
               </Link>
             </div>
           </div>
@@ -253,54 +253,91 @@ export default function Manufacturing({ manufacturingBlogs }) {
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-[#4A5745] text-center mb-12">
-            Manufacturing Security Risks
+            Why browser governance matters in manufacturing
           </h2>
-          <p className="text-[#4A5745] text-center mb-8 max-w-3xl mx-auto">
-            The manufacturing sector faces escalating cyber threats as digitization accelerates. These key metrics highlight the critical need for enterprise-grade security solutions.
+          <p className="text-[#4A5745] text-center mb-8 max-w-3xl mx-auto leading-relaxed">
+            Industry numbers highlight rising risk. The pattern is familiar: sensitive work happens in the browser on corporate and partner devices alike. Governing the session closes gaps that endpoint-only approaches often leave open.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {manufacturingMetrics.map((metric, idx) => (
-              <div key={idx} className="bg-white rounded-xl shadow-lg p-6 flex flex-col hover:shadow-2xl transition-shadow">
-                <div className="text-2xl font-bold text-[#66C2BE] mb-2">{metric.value}</div>
-                <div className="text-lg font-semibold text-[#4A5745] mb-1">{metric.label}</div>
-                <div className="text-sm text-[#4A5745] mb-3">{metric.insight}</div>
-                {metric.source && (
-                  <a href={metric.source.url} target="_blank" rel="noopener noreferrer" className="block text-xs text-gray-400 underline mt-auto">{metric.source.label}</a>
-                )}
-              </div>
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto">
+            {manufacturingMetrics.map((metric, idx) => {
+              const isLastOdd =
+                manufacturingMetrics.length % 2 === 1 &&
+                idx === manufacturingMetrics.length - 1;
+              return (
+                <div
+                  key={idx}
+                  className={[
+                    'font-sans bg-white rounded-xl border border-[#4A5745]/10 shadow-sm p-6 flex flex-col transition-colors hover:border-[#66C2BE]/35 hover:shadow-md',
+                    isLastOdd ? 'md:col-span-2 md:max-w-md md:mx-auto' : '',
+                  ]
+                    .filter(Boolean)
+                    .join(' ')}
+                >
+                  <div className="text-3xl font-bold tracking-tight text-[#4A5745] mb-2 tabular-nums">
+                    {metric.value}
+                  </div>
+                  <div className="text-sm font-semibold uppercase tracking-wide text-[#4A5745]/85 mb-1">
+                    {metric.label}
+                  </div>
+                  <div className="text-sm text-[#4A5745]/90 leading-relaxed mb-3">
+                    {metric.insight}
+                  </div>
+                  {metric.source && (
+                    <a
+                      href={metric.source.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-auto text-xs text-[#4A5745]/65 no-underline underline-offset-2 hover:text-[#66C2BE] hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#66C2BE]"
+                    >
+                      Source: {metric.source.label}
+                    </a>
+                  )}
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
 
       {/* Security Features Section - Core Solution */}
-      <section className="bg-white py-16">
+      <section className="bg-[#f8faf9] py-16 md:py-20 border-y border-[#4A5745]/8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-[#4A5745] text-center mb-12">
-            Enterprise Browser Effectiveness
+          <h2 className="text-3xl font-bold text-[#4A5745] text-center mb-12 tracking-tight">
+            What Oasis delivers for manufacturers
           </h2>
-          <p className="text-[#4A5745] text-center mb-8 max-w-3xl mx-auto">
-            Enterprise browsers address manufacturing's unique vulnerabilities with proven results. Our security-first approach helps organizations protect operations and maintain compliance.
+          <p className="text-[#4A5745]/95 text-center mb-10 max-w-3xl mx-auto leading-relaxed">
+            Oasis is a managed enterprise browser, a control layer for SaaS-centric work. Policies travel with the session, connect to your identity and DLP stack, and keep contractor and partner access practical without leaning on laptops or VDI for every rollout.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
             {securityFeatures.map((feature, index) => (
-              <div key={index} className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl overflow-hidden p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-                <div className="flex items-center mb-4">
-                  <div className="w-10 h-10 bg-gradient-to-br from-[#66C2BE] via-[#8CB7D0] to-[#E3DFF1] rounded-full flex items-center justify-center mr-3 shadow-md shadow-[#E3DFF1]/20">
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div
+                key={index}
+                className="bg-white rounded-xl border border-[#4A5745]/10 p-6 md:p-7 shadow-sm transition-all duration-200 hover:border-kahana-primary-800/30 hover:shadow-md"
+              >
+                <div className="flex gap-4 mb-4">
+                  <div
+                    className="flex-shrink-0 w-11 h-11 rounded-lg bg-kahana-primary-800 flex items-center justify-center ring-1 ring-kahana-primary-900/20"
+                    aria-hidden
+                  >
+                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                     </svg>
                   </div>
-                  <h3 className="text-lg font-semibold text-[#4A5745]">{feature.title}</h3>
+                  <h3 className="text-base md:text-lg font-semibold text-[#4A5745] leading-snug tracking-tight pt-1.5">
+                    {feature.title}
+                  </h3>
                 </div>
-                <p className="text-[#4A5745] text-sm mb-4">{feature.description}</p>
-                <ul className="space-y-2">
+                <p className="text-sm text-[#4A5745]/90 leading-relaxed mb-5 border-l-2 border-kahana-primary-800/25 pl-4">
+                  {feature.description}
+                </p>
+                <ul className="space-y-2.5">
                   {feature.details.map((detail, dIndex) => (
-                    <li key={dIndex} className="flex items-center text-[#4A5745] text-sm">
-                      <svg className="w-4 h-4 mr-2 text-[#66C2BE]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                      {detail}
+                    <li key={dIndex} className="flex gap-3 text-sm text-[#4A5745]/95 leading-relaxed">
+                      <span
+                        className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-kahana-primary-700"
+                        aria-hidden
+                      />
+                      <span>{detail}</span>
                     </li>
                   ))}
                 </ul>
@@ -311,39 +348,52 @@ export default function Manufacturing({ manufacturingBlogs }) {
       </section>
 
       {/* Industry Benefits Section - ROI */}
-      <section className="bg-white py-16">
+      <section className="bg-white py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-[#4A5745] text-center mb-12">
-            Productivity and Cost Savings
+          <h2 className="text-3xl font-bold text-[#4A5745] text-center mb-10 tracking-tight">
+            Outcomes security and plant IT leaders care about
           </h2>
-          <p className="text-[#4A5745] text-center mb-8 max-w-3xl mx-auto">
-            Enterprise browsers deliver measurable improvements in security, efficiency, and cost reduction for manufacturing organizations.
+          <p className="text-[#4A5745]/95 text-center mb-10 max-w-3xl mx-auto leading-relaxed">
+            Directional themes aligned to how manufacturers scale people and partners without letting device logistics become the bottleneck. Specific timelines and savings depend on your environment and scope.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-8">
             {industryBenefits.map((benefit, index) => (
-              <div key={index} className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl overflow-hidden p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-                <div className="flex items-center mb-4">
-                  <div className="w-10 h-10 bg-gradient-to-br from-[#66C2BE] via-[#8CB7D0] to-[#E3DFF1] rounded-full flex items-center justify-center mr-3 shadow-md shadow-[#E3DFF1]/20">
-                    <div className="text-white">
-                      {benefit.icon}
-                    </div>
+              <div
+                key={index}
+                className="bg-white rounded-xl border border-[#4A5745]/10 p-6 md:p-7 shadow-sm transition-all duration-200 hover:border-kahana-primary-800/30 hover:shadow-md"
+              >
+                <div className="flex gap-4 mb-4">
+                  <div
+                    className="flex-shrink-0 w-11 h-11 rounded-lg bg-kahana-primary-800 flex items-center justify-center ring-1 ring-kahana-primary-900/20"
+                    aria-hidden
+                  >
+                    {benefit.icon}
                   </div>
-                  <h3 className="text-lg font-semibold text-[#4A5745]">
+                  <h3 className="text-base md:text-lg font-semibold text-[#4A5745] leading-snug tracking-tight pt-1.5">
                     {benefit.title}
                   </h3>
                 </div>
-                <div className="mb-4">
-                  <div className="text-2xl font-bold text-[#66C2BE] mb-1">
-                    {benefit.stat}
+                {benefit.stat != null && benefit.statLabel != null && (
+                  <div className="mb-4">
+                    <div className="text-2xl font-bold tracking-tight text-[#4A5745] tabular-nums mb-1">
+                      {benefit.stat}
+                    </div>
+                    <div className="text-sm text-[#4A5745]/85">
+                      {benefit.statLabel}
+                    </div>
                   </div>
-                  <div className="text-sm text-[#4A5745]">
-                    {benefit.statLabel}
-                  </div>
-                </div>
-                {benefit.source && (
-                  <a href={benefit.source.url} target="_blank" rel="noopener noreferrer" className="block text-xs text-gray-400 underline mt-1">{benefit.source.label}</a>
                 )}
-                <p className="text-[#4A5745] text-sm">
+                {benefit.source && (
+                  <a
+                    href={benefit.source.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mb-3 block text-xs text-[#4A5745]/65 no-underline underline-offset-2 hover:text-kahana-primary-700 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-kahana-primary-700"
+                  >
+                    Source: {benefit.source.label}
+                  </a>
+                )}
+                <p className="text-sm text-[#4A5745]/90 leading-relaxed border-l-2 border-kahana-primary-800/25 pl-4">
                   {benefit.description}
                 </p>
               </div>
@@ -361,17 +411,17 @@ export default function Manufacturing({ manufacturingBlogs }) {
       >
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4 sm:mb-6">
-            Ready to Transform Your Manufacturing Operations?
+            External collaboration without operational drag
           </h2>
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 lg:mb-10 max-w-3xl mx-auto leading-relaxed font-bold" style={{ color: '#313A00' }}>
-            Join leading manufacturers that trust Kahana for their digital transformation needs. Protect your operations and drive efficiency with enterprise-grade security.
+          <p className="text-xl text-[#4A5745] mb-6 sm:mb-8 lg:mb-10 max-w-3xl mx-auto leading-relaxed">
+            Put governance back in the browser for manufacturing SaaS, with secure access from any device, policy enforcement, and visibility your security and plant IT teams can stand behind.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
             <Link href="/schedule-demo" className="btn-primary inline-flex items-center justify-center px-6 sm:px-8 lg:px-10 py-3 sm:py-4 text-sm sm:text-base lg:text-lg font-bold no-underline hover:no-underline focus:no-underline w-full sm:w-auto">
-              Schedule a Demo
+              Schedule a demo
             </Link>
             <Link href="/contact" className="btn-secondary inline-flex items-center justify-center px-6 sm:px-8 lg:px-10 py-3 sm:py-4 text-sm sm:text-base lg:text-lg font-bold no-underline hover:no-underline focus:no-underline w-full sm:w-auto">
-              Get in Touch
+              Get in touch
             </Link>
           </div>
         </div>

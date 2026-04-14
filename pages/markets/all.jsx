@@ -83,8 +83,8 @@ export default function AllIndustries() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h1 className="text-5xl font-bold text-[#011910] mb-4">All Industries</h1>
-            <p className="text-xl text-[#4A5745] max-w-2xl mx-auto">
-              Discover how Kahana empowers organizations across every industry with secure, modern solutions.
+            <p className="text-xl text-[#4A5745] max-w-2xl mx-auto leading-relaxed">
+              Every sector now runs enterprise work through the browser, often on devices you do not control. Oasis is Kahana&apos;s managed enterprise browser: governance in the session with your IdP and DLP, without laptop shipping or VDI as the default answer for SaaS access.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
