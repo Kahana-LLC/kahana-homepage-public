@@ -1,4 +1,4 @@
-const { authors } = require("../config/authors");
+const authors = require("../config/authors");
 
 // Import headshot images
 const headshots = {
@@ -17,6 +17,7 @@ const headshots = {
   fahiza_syed: "/assets/headshots/fahiza_syed.jpg",
   mohammed_muneebuddin: "/assets/headshots/mohammed_muneebuddin.jpg",
   durgesh_tiwari: "/assets/headshots/durgesh_tiwari.jpg",
+  abhinav_chandra: "/assets/headshots/Abhinav.jpg",
 };
 
 // Default avatar placeholder

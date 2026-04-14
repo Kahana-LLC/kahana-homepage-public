@@ -180,6 +180,14 @@ const authors = {
     linkedinProfile: "https://www.linkedin.com/in/ravi-chandra-dasari/",
     avatar: "/assets/headshots/ravi_chandra_dasari.png",
   },
+  "Abhinav Chandra": {
+    name: "Abhinav Chandra",
+    role: "Product Marketing Manager",
+    bio: "I'm Abhinav Chandra, a pragmatic, execution-focused Product Marketing Manager with over 5 years of hands-on B2B SaaS experience. Throughout my career across all my roles in recent years I am someone who has owned end-to-end GTM strategies of multiple product suites, worked on refining ideal customer profiles to attract, acquire and retain end users delivering PLG motion and PLS motion and driving lifecycle and growth marketing initiatives, accelerated demand generation and shaped product positioning and messaging. I have led 0-to-1 MVP launches that transform complex AI-powered platforms into compelling, high-ROI customer value propositions and predictable revenue engines along with leading ABM initiatives, I live in Voice of the Customer changelog and user data. I like to be seen like an evangelist between Product, Sales and Customer Success, living in the roadmap while driving business and revenue impact.",
+    linkedinProfile: "https://www.linkedin.com/in/abhinav--chandra/",
+    avatar: "/assets/headshots/Abhinav.jpg",
+  },
+  
 };
 
-module.exports = { authors };
+module.exports = authors;
