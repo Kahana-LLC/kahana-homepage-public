@@ -221,6 +221,16 @@ const nextConfig = {
         ],
       },
       // Hashed build assets (Next defaults are good; explicit immutable helps CDNs)
+      // Exclude webpack HMR hot-update files — they must never be cached immutably
+      {
+        source: "/_next/static/webpack/:path*.hot-update.:ext*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "no-store",
+          },
+        ],
+      },
       {
         source: "/_next/static/:path*",
         headers: [
