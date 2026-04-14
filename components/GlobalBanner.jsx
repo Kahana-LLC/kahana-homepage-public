@@ -6,8 +6,8 @@ export default function GlobalBanner() {
   const [isVisible, setIsVisible] = useState(true);
   const router = useRouter();
 
-  // Hide banner on specific pages
-  if (router.pathname === '/oasis-waitlist' || router.pathname === '/white-paper-future-of-ergonomic-work' || router.pathname === '/oasis-auth' || router.pathname === '/oasis-pricing' || router.pathname === '/pricing' || !isVisible) return null;
+  // Only show on main landing page for now
+  if (router.pathname !== '/' || !isVisible) return null;
 
   return (
     <div className="GlobalBanner fixed top-16 left-0 right-0 shadow-md w-full z-40" style={{ background: 'linear-gradient(90deg, #d6e3f4 0%, #e5efd8 100%)' }}>

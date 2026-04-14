@@ -25,9 +25,9 @@ export default function Careers() {
           <div className="mt-12">
             {/* Learning Internship Card */}
             <div className="mb-8">
-              <Link 
+              <Link
                 href="/learning-internship"
-                className="block bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 p-8 rounded-lg hover:shadow-lg transition-all duration-300 group"
+                className="block no-underline hover:no-underline focus:no-underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#728552] bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 p-8 rounded-lg hover:shadow-lg transition-all duration-300 group"
               >
                 <div className="flex items-start justify-between">
                   <div className="flex-1">

@@ -113,8 +113,6 @@ function FooterContent() {
               <ul className={`space-y-4 ${openSection === 'product' || !isMobile ? 'block' : 'hidden'}`}>
                 <li><Link href="/products/free-agentic-browser" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 no-underline">Oasis Agentic Browser</Link></li>
                 <li><Link href="/products/enterprise-browser" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 no-underline">Oasis Enterprise Browser</Link></li>
-                <li><Link href="/oasis-mobile" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 no-underline">Oasis Mobile</Link></li>
-                <li><Link href="/oasis-augmented-reality" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 no-underline">Oasis AR</Link></li>
                 <li><Link href="/products/web-application" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 no-underline">Web Application</Link></li>
               </ul>
             </div>
@@ -170,7 +168,6 @@ function FooterContent() {
                 <li><Link href="/blog" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 no-underline">Blog</Link></li>
                 <li><Link href="/docs" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 no-underline">Docs</Link></li>
                 <li><Link href="/white-paper-future-of-ergonomic-work" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 no-underline">White Paper</Link></li>
-                <li><Link href="/buyers-guide" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 no-underline">Buyer Guide</Link></li>
                 <li><Link href="/subscribe-to-insights" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 no-underline">Newsletter</Link></li>
                 <li><Link href="/community" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 no-underline">Join Discord</Link></li>
               </ul>
@@ -226,6 +223,7 @@ function FooterContent() {
               <h3 className="text-[#617500] font-semibold mb-6 text-lg hidden md:block">About</h3>
               <ul className={`space-y-4 ${openSection === 'about' || !isMobile ? 'block' : 'hidden'}`}>
                 <li><Link href="/about" prefetch={false} className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 no-underline">About Kahana</Link></li>
+                <li><Link href="/contact" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 no-underline">Contact</Link></li>
                 <li><Link href="/security" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 no-underline">Security</Link></li>
                 <li><Link href="/support" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 no-underline">Support</Link></li>
                 <li><Link href="/careers" className="text-[#4A5745] hover:text-[#728552] transition-colors duration-200 no-underline">Careers</Link></li>

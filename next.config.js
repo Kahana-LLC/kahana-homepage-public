@@ -158,6 +158,8 @@ const nextConfig = {
 
   // Configure headers for specific routes
   async headers() {
+    const isProd = process.env.NODE_ENV === "production";
+
     return [
       {
         source: "/oauth-callback",
@@ -220,8 +222,7 @@ const nextConfig = {
           },
         ],
       },
-      // Hashed build assets (Next defaults are good; explicit immutable helps CDNs)
-      // Exclude webpack HMR hot-update files — they must never be cached immutably
+      // Webpack HMR manifests must never be cached (dev); rule kept in prod too (harmless).
       {
         source: "/_next/static/webpack/:path*.hot-update.:ext*",
         headers: [
@@ -231,15 +232,31 @@ const nextConfig = {
           },
         ],
       },
-      {
-        source: "/_next/static/:path*",
-        headers: [
-          {
-            key: "Cache-Control",
-            value: "public, max-age=31536000, immutable",
-          },
-        ],
-      },
+      // Production: long-cache hashed build assets. Development: no-store so webpack runtime
+      // (e.g. chunks/webpack.js) is not served from cache with a stale hot-update hash (404 loop).
+      ...(isProd
+        ? [
+            {
+              source: "/_next/static/:path*",
+              headers: [
+                {
+                  key: "Cache-Control",
+                  value: "public, max-age=31536000, immutable",
+                },
+              ],
+            },
+          ]
+        : [
+            {
+              source: "/_next/static/:path*",
+              headers: [
+                {
+                  key: "Cache-Control",
+                  value: "no-store",
+                },
+              ],
+            },
+          ]),
     ];
   },
 

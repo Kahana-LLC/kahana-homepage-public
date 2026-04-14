@@ -150,6 +150,72 @@ function scrubAssistantCallbackUrl(urlParams) {
   window.history.replaceState(null, '', cleanUrl);
 }
 
+function OAuthStatusGlyph({ status }) {
+  const shell = 'w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-5 ring-2';
+
+  if (status === 'loading') {
+    return (
+      <div
+        className={`${shell} bg-[#f8faf9] ring-[#66C2BE]/35`}
+        role="status"
+        aria-live="polite"
+        aria-label="Signing you in"
+      >
+        <svg
+          className="h-8 w-8 text-[#66C2BE] animate-spin"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          aria-hidden
+        >
+          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+          <path
+            className="opacity-90"
+            fill="currentColor"
+            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+          />
+        </svg>
+      </div>
+    );
+  }
+
+  if (status === 'success') {
+    return (
+      <div className={`${shell} bg-[#728552]/12 ring-[#728552]/35`} aria-hidden>
+        <svg className="h-8 w-8 text-[#728552]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+        </svg>
+      </div>
+    );
+  }
+
+  if (status === 'error') {
+    return (
+      <div className={`${shell} bg-[#9B2C2C]/8 ring-[#9B2C2C]/25`} aria-hidden>
+        <svg className="h-8 w-8 text-[#9B2C2C]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+          />
+        </svg>
+      </div>
+    );
+  }
+
+  return (
+    <div className={`${shell} bg-[#f8faf9] ring-[#66C2BE]/30`} aria-hidden>
+      <svg className="h-8 w-8 text-[#66C2BE]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+        />
+      </svg>
+    </div>
+  );
+}
+
 export default function OAuthCallback() {
   const router = useRouter();
   const [status, setStatus] = useState('loading');
@@ -577,6 +643,15 @@ export default function OAuthCallback() {
     }
   };
 
+  const statusClass =
+    status === 'loading'
+      ? 'text-[#66C2BE]'
+      : status === 'success'
+        ? 'text-[#728552]'
+        : status === 'error'
+          ? 'text-[#9B2C2C]'
+          : 'text-[#66C2BE]';
+
   return (
     <>
       <Head>
@@ -588,173 +663,32 @@ export default function OAuthCallback() {
         <meta httpEquiv="Expires" content="0" />
       </Head>
 
-      <div className="oauth-container">
-        <div className="container">
-          <div className="logo">K</div>
-          <div id="status" className={`status ${status}`}>
+      <div className="min-h-screen bg-white text-[#4A5745] flex items-center justify-center px-4 py-12">
+        <div className="w-full max-w-md text-center rounded-xl border border-[#4A5745]/12 bg-white p-8 shadow-md shadow-[#4A5745]/5">
+          <OAuthStatusGlyph status={status} />
+          <div id="status" className={`text-lg font-semibold mb-2 leading-snug ${statusClass}`}>
             {statusMessage}
           </div>
           {details && (
-            <div id="details" className="details">
-              {details.split('\n').map((line, index) => (
-                <div key={index}>
-                  {line}
-                  {index < details.split('\n').length - 1 && <br />}
-                </div>
-              ))}
+            <div
+              id="details"
+              className="mt-4 text-sm text-[#4A5745]/85 whitespace-pre-line break-words leading-relaxed text-left rounded-lg bg-[#f8faf9] border border-[#4A5745]/8 px-4 py-3"
+            >
+              {details}
             </div>
           )}
           {showRetry && (
-            <button 
-              id="retryBtn" 
-              className="button" 
+            <button
+              id="retryBtn"
+              type="button"
+              className="btn-primary mt-6 inline-flex items-center justify-center px-6 py-3 text-base font-semibold"
               onClick={retryAuth}
             >
-              Try Again
+              Try again
             </button>
           )}
         </div>
       </div>
-
-      <style jsx>{`
-        .oauth-container {
-          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-          margin: 0;
-          padding: 0;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          min-height: 100vh;
-          color: white;
-        }
-        
-        .container {
-          text-align: center;
-          background: rgba(255, 255, 255, 0.1);
-          padding: 2rem;
-          border-radius: 1rem;
-          backdrop-filter: blur(10px);
-          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-          max-width: 500px;
-          width: 90%;
-        }
-        
-        .logo {
-          width: 60px;
-          height: 60px;
-          background: #10b981;
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          margin: 0 auto 1rem;
-          font-size: 24px;
-          font-weight: bold;
-          color: white;
-        }
-        
-        .status {
-          font-size: 1.1rem;
-          margin-bottom: 1rem;
-        }
-        
-        .status.loading {
-          color: #74c0fc;
-          font-weight: 500;
-        }
-        
-        .status.success {
-          color: #51cf66;
-          font-weight: 600;
-        }
-        
-        .status.error {
-          color: #ff6b6b;
-          font-weight: 600;
-        }
-        
-        .status.info {
-          color: #74c0fc;
-          font-weight: 500;
-        }
-        
-        .details {
-          margin-top: 1rem;
-          font-size: 0.9rem;
-          opacity: 0.8;
-          word-break: break-all;
-          line-height: 1.4;
-        }
-
-        .handoff-panel {
-          margin-top: 1.5rem;
-          text-align: left;
-        }
-
-        .fallback-title {
-          margin-bottom: 0.85rem;
-          font-size: 0.95rem;
-          font-weight: 600;
-          color: #f8fafc;
-        }
-
-        .payload-label {
-          display: block;
-          margin-bottom: 0.5rem;
-          font-size: 0.85rem;
-          font-weight: 600;
-          color: #dbeafe;
-          text-transform: uppercase;
-          letter-spacing: 0.08em;
-        }
-
-        .payload {
-          width: 100%;
-          min-height: 140px;
-          border: 1px solid rgba(255, 255, 255, 0.2);
-          border-radius: 10px;
-          background: rgba(15, 23, 42, 0.45);
-          color: #f8fafc;
-          padding: 0.85rem;
-          resize: vertical;
-          font-size: 0.85rem;
-          line-height: 1.5;
-        }
-
-        .copy-status {
-          margin-top: 0.75rem;
-          font-size: 0.85rem;
-          color: #d1fae5;
-        }
-
-        .secondary-button {
-          background: rgba(255, 255, 255, 0.14);
-          margin-top: 0.85rem;
-        }
-        
-        .button {
-          background: #10b981;
-          color: white;
-          border: none;
-          padding: 12px 24px;
-          border-radius: 6px;
-          font-size: 14px;
-          font-weight: 500;
-          cursor: pointer;
-          margin-top: 1rem;
-          transition: background-color 0.2s;
-        }
-        
-        .button:hover {
-          background: #059669;
-        }
-        
-        .button:disabled {
-          background: #6b7280;
-          cursor: not-allowed;
-        }
-      `}</style>
     </>
   );
 }

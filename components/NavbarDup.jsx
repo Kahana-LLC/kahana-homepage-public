@@ -70,10 +70,27 @@ function NavBar() {
       <div className="h-16 w-full"></div>
       
       {/* Fixed navbar */}
-      <nav className={`fixed top-0 left-0 w-full h-16 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-[#FFFFFF]/95 backdrop-blur-md shadow-md' : 'bg-[#FFFFFF]'
+      <nav className={`nav-shell fixed top-0 left-0 w-full h-16 z-50 transition-all duration-300 ${
+        isScrolled ? 'bg-[#FFFFFF]' : 'bg-[#FFFFFF]'
       }`}>
         <style jsx>{`
+          .nav-shell {
+            position: fixed;
+          }
+
+          /* Masks any hairline seam/underline artifact at the navbar edge */
+          .nav-shell::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 1px;
+            background: #fff;
+            pointer-events: none;
+            z-index: 2;
+          }
+
           .font-style {
             font-family: sans-serif;
           }
