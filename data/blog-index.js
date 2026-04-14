@@ -1,5 +1,16 @@
 const blogIndex = [
   {
+    title: "How Healthcare CISOs Can Safely Scale AI Without Slowing Innovation",
+    date: "2026-04-14T00:00:00.000Z",
+    authors: ["Abhinav Chandra"],
+    category: ["AI & Emerging Tech"],
+    excerpt: "With real-world scenarios, measurable impact, and a browser-first security model, this guide explores how CISOs can enable AI at scale without introducing unmanageable risk through interaction-level governance and browser-native controls.",
+    defaultImageQuery: "healthcare cybersecurity AI security governance",
+    featuredImage: "https://www.cio.com/wp-content/uploads/2024/10/3544575-0-03904300-1728485431-iStock-1299152059.jpg?quality=50&strip=all&w=1024",
+    slug: "healthcare-cisos-ai-security-scaling-2026",
+    readingTime: 15,
+  },
+  {
     title: "Browser summarization that matters: research to notes to next steps (Oasis workflow)",
     date: "2026-04-10T00:00:00.000Z",
     authors: ["Pallavi M", "Ankit Sai Allam"],
