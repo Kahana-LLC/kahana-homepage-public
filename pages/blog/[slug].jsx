@@ -261,7 +261,7 @@ export default function BlogPost({ post }) {
       <div className="fixed top-16 left-0 w-full h-2 bg-[#F3F8E4] z-40">
         <div 
           id="scroll-progress-bar"
-          className="h-full bg-gradient-to-r from-[#E0D48C] via-[#728552] to-[#788B59] transition-all duration-150 ease-out"
+          className="h-full bg-gradient-to-r from-desert-yellow-300 via-oasis-green-600 to-oasis-green-500 transition-all duration-150 ease-out"
           style={{ width: '0%' }}
         ></div>
       </div>
@@ -282,14 +282,14 @@ export default function BlogPost({ post }) {
             </nav>
 
             {/* Main title */}
-            <h1 className="text-4xl font-bold mb-6 text-[#4A5745]">{post.title}</h1>
+            <h1 className="text-4xl font-bold mb-6 text-oasis-green-800">{post.title}</h1>
 
             {/* Article metadata */}
             <div className="flex flex-wrap items-center gap-3 mb-8">
               {isClient && hasAuthors && <AuthorCard authors={postAuthors} variant="header" />}
               <time 
                 dateTime={post.date}
-                className="inline-flex items-center px-3 py-1.5 text-[#4A5745] text-sm"
+                className="inline-flex items-center px-3 py-1.5 text-oasis-green-800 text-sm"
               >
                 <FaRegCalendarAlt className="w-4 h-4 mr-2" />
                 <span className="mr-1">Published:</span>
@@ -298,20 +298,20 @@ export default function BlogPost({ post }) {
               {postCategory && (
                 <Link 
                   href={`/blog?category=${encodeURIComponent(postCategory)}`}
-                  className="inline-flex items-center px-3 py-1.5 text-[#4A5745] text-sm hover:text-[#617500] transition-colors rounded-md hover:bg-[#F3F8E4]"
+                  className="inline-flex items-center px-3 py-1.5 text-oasis-green-800 text-sm hover:text-oasis-green-700 transition-colors rounded-md hover:bg-oasis-green-50"
                 >
                   <FaBookOpen className="w-4 h-4 mr-2" />
                   <span>{postCategory}</span>
                 </Link>
               )}
-              <div className="inline-flex items-center px-3 py-1.5 text-[#4A5745] text-sm">
+              <div className="inline-flex items-center px-3 py-1.5 text-oasis-green-800 text-sm">
                 <FaRegClock className="w-4 h-4 mr-2" />
                 <span>{post.readingTime} min read</span>
               </div>
             </div>
 
             {/* Article excerpt */}
-            <p className="text-xl text-[#4A5745] mb-8 leading-relaxed">{post.excerpt}</p>
+            <p className="text-xl text-oasis-green-800 mb-8 leading-relaxed">{post.excerpt}</p>
 
             {/* Cover Image */}
             {/*
@@ -413,9 +413,9 @@ export default function BlogPost({ post }) {
             />
           )}
 
-          <div className="mt-16 p-8 bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl shadow-lg">
-            <h2 className="text-2xl font-bold text-[#011910] mb-4">Ready to Elevate Your Work Experience?</h2>
-            <p className="text-lg text-[#4A5745] mb-6">
+          <div className="mt-16 p-8 bg-gradient-to-br from-desert-yellow-100/20 to-oasis-blue-300/10 rounded-xl shadow-lg">
+            <h2 className="text-2xl font-bold text-oasis-green-900 mb-4">Ready to Elevate Your Work Experience?</h2>
+            <p className="text-lg text-oasis-green-800 mb-6">
               We'd love to understand your unique challenges and explore how our solutions can help you achieve a more fluid way of working now and in the future. Let's discuss your specific needs and see how we can work together to create a more ergonomic future of work.
             </p>
             <Link 
@@ -432,11 +432,11 @@ export default function BlogPost({ post }) {
           {/* Related Blogs Section */}
           {relatedBlogs.length > 0 && (
             <div className="mt-16 pt-12 border-t border-gray-200">
-              <h2 style={{fontWeight: 'bold', fontSize: '2rem', marginTop: '2rem', marginBottom: '1rem'}} className="text-2xl font-bold text-[#4A5745] mb-6">
+              <h2 style={{fontWeight: 'bold', fontSize: '2rem', marginTop: '2rem', marginBottom: '1rem'}} className="text-2xl font-bold text-oasis-green-800 mb-6">
                 <strong>More {postCategory} articles</strong>
               </h2>
-              <p className="text-lg text-[#4A5745] mb-6">
-                Explore more articles about <Link href={`/blog?category=${encodeURIComponent(postCategory)}`} className="text-[#617500] hover:text-[#4A5F00] font-semibold underline">{postCategory}</Link>
+              <p className="text-lg text-oasis-green-800 mb-6">
+                Explore more articles about <Link href={`/blog?category=${encodeURIComponent(postCategory)}`} className="text-[#617500] hover:text-oasis-green-800 font-semibold underline">{postCategory}</Link>
               </p>
               <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mt-8">
                 {relatedBlogs.map((relatedPost) => (
@@ -464,7 +464,7 @@ export default function BlogPost({ post }) {
           {/* Author Bio Section */}
           {hasAuthors && (
             <div className="mt-12">
-              <h2 className="text-2xl font-bold text-[#4A5745] mb-6">About the Authors</h2>
+              <h2 className="text-2xl font-bold text-oasis-green-800 mb-6">About the Authors</h2>
               {isClient && (
                 <AuthorCard 
                   authors={postAuthors}

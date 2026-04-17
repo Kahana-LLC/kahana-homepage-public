@@ -98,21 +98,21 @@ export default function Sales() {
             {/* Left Column - Content */}
             <div className="lg:col-span-7">
               <div className="text-center lg:text-left mb-12">
-                <h2 className="text-base font-semibold leading-7 text-[#66C2BE] mb-3">Talk to Sales</h2>
-                <h1 className="text-4xl font-bold text-[#011910] sm:text-5xl">
+                <h2 className="text-base font-semibold leading-7 text-brand-link mb-3">Talk to Sales</h2>
+                <h1 className="text-4xl font-bold text-oasis-green-900 sm:text-5xl">
                   Transform Your Enterprise Browsing Experience
                 </h1>
-                <p className="mt-6 text-xl text-[#4A5745]">
+                <p className="mt-6 text-xl text-oasis-green-800">
                   Ready to enhance your organization's digital workspace? Connect with our sales team to learn how Kahana can transform your enterprise browsing experience.
                 </p>
               </div>
 
               {/* Form Section - Now appears first on mobile */}
               <div className="lg:hidden mb-12">
-                <div className="bg-white rounded-xl shadow-xl border border-[#A5DAD8]/30 p-8">
+                <div className="bg-white rounded-xl shadow-xl border border-oasis-blue-200/30 p-8">
                   <div className="text-center mb-8">
-                    <h3 className="text-2xl font-semibold text-[#011910]">Contact Sales</h3>
-                    <p className="mt-3 text-[#4A5745]">
+                    <h3 className="text-2xl font-semibold text-oasis-green-900">Contact Sales</h3>
+                    <p className="mt-3 text-oasis-green-800">
                       Get in touch with our sales team to learn about enterprise solutions.
                     </p>
                   </div>
@@ -135,7 +135,7 @@ export default function Sales() {
                   {/* Progress Bar */}
                   <div className="relative h-1 bg-gray-100 rounded-full mb-12">
                     <div 
-                      className="absolute h-full bg-gradient-to-r from-[#E3DFF1] via-[#8CB7D0] to-[#66C2BE] rounded-full transition-all duration-300 ease-in-out"
+                      className="absolute h-full bg-gradient-to-r from-oasis-blue-100 via-oasis-blue-300 to-brand-link rounded-full transition-all duration-300 ease-in-out"
                       style={{ width: `${(hoveredStep / (steps.length - 1)) * 100}%` }}
                     />
                   </div>
@@ -144,23 +144,23 @@ export default function Sales() {
                     {steps.map((step, index) => (
                       <div 
                         key={step.id} 
-                        className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl overflow-hidden p-6 shadow-lg hover:shadow-xl transition-all duration-300"
+                        className="bg-gradient-to-br from-desert-yellow-100/20 to-oasis-blue-300/10 rounded-xl overflow-hidden p-6 shadow-lg hover:shadow-xl transition-all duration-300"
                         onMouseEnter={() => setHoveredStep(index)}
                         onMouseLeave={() => setHoveredStep(0)}
                       >
                         <div className="flex items-start">
                           <div className="flex-shrink-0">
-                            <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-[#66C2BE] via-[#8CB7D0] to-[#E3DFF1] shadow-md shadow-[#E3DFF1]/20">
+                            <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-brand-link via-oasis-blue-300 to-oasis-blue-100 shadow-md shadow-oasis-blue-100/20">
                               <div className="text-white">
                                 {step.icon}
                               </div>
                             </div>
                           </div>
                           <div className="ml-4">
-                            <div className="text-lg font-semibold leading-7 text-[#011910]">
+                            <div className="text-lg font-semibold leading-7 text-oasis-green-900">
                               {step.name}
                             </div>
-                            <div className="mt-2 text-base leading-7 text-[#4A5745]">
+                            <div className="mt-2 text-base leading-7 text-oasis-green-800">
                               {step.description}
                             </div>
                           </div>
@@ -175,20 +175,20 @@ export default function Sales() {
                       <Link
                         key={link.name}
                         href={link.href}
-                        className="group flex items-center p-4 bg-white rounded-lg border border-[#A5DAD8]/30 shadow-sm hover:shadow-md transition-all duration-300"
+                        className="group flex items-center p-4 bg-white rounded-lg border border-oasis-blue-200/30 shadow-sm hover:shadow-md transition-all duration-300"
                       >
                         <div className="flex-shrink-0">
-                          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-[#66C2BE]/10 via-[#8CB7D0]/10 to-[#E3DFF1]/10 group-hover:from-[#66C2BE]/20 group-hover:via-[#8CB7D0]/20 group-hover:to-[#E3DFF1]/20 transition-all duration-300">
-                            <div className="text-[#66C2BE]">
+                          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-brand-link/10 via-oasis-blue-300/10 to-oasis-blue-100/10 group-hover:from-brand-link/20 group-hover:via-oasis-blue-300/20 group-hover:to-oasis-blue-100/20 transition-all duration-300">
+                            <div className="text-brand-link">
                               {link.icon}
                             </div>
                           </div>
                         </div>
                         <div className="ml-4">
-                          <p className="text-base font-medium text-[#011910] group-hover:text-[#66C2BE] transition-colors duration-300">
+                          <p className="text-base font-medium text-oasis-green-900 group-hover:text-brand-link-hover transition-colors duration-300">
                             {link.name}
                           </p>
-                          <p className="mt-1 text-sm text-[#4A5745]">
+                          <p className="mt-1 text-sm text-oasis-green-800">
                             {link.description}
                           </p>
                         </div>
@@ -201,10 +201,10 @@ export default function Sales() {
 
             {/* Right Column - Form (Desktop only) */}
             <div className="hidden lg:block lg:col-span-5 lg:sticky lg:top-24">
-              <div className="bg-white rounded-xl shadow-xl border border-[#A5DAD8]/30 p-8">
+              <div className="bg-white rounded-xl shadow-xl border border-oasis-blue-200/30 p-8">
                 <div className="text-center mb-8">
-                  <h3 className="text-2xl font-semibold text-[#011910]">Contact Sales</h3>
-                  <p className="mt-3 text-[#4A5745]">
+                  <h3 className="text-2xl font-semibold text-oasis-green-900">Contact Sales</h3>
+                  <p className="mt-3 text-oasis-green-800">
                     Get in touch with our sales team to learn about enterprise solutions.
                   </p>
                 </div>

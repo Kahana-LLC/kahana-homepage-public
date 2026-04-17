@@ -41,8 +41,8 @@ export default function Events() {
       <div className="bg-white">
         <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl font-bold text-[#4A5745]">Upcoming Events</h1>
-            <p className="mt-4 text-xl text-[#4A5745]">
+            <h1 className="text-4xl font-bold text-oasis-green-800">Upcoming Events</h1>
+            <p className="mt-4 text-xl text-oasis-green-800">
               Join us at our events to learn about enterprise browsing solutions and connect with experts.
             </p>
           </div>
@@ -50,12 +50,12 @@ export default function Events() {
           <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {upcomingEvents.map((event, index) => (
               <div key={index} className="bg-[#F3F8E4] p-6 rounded-lg">
-                <h3 className="text-xl font-semibold text-[#4A5745] mb-2">{event.title}</h3>
-                <p className="text-[#728552] mb-2">{event.date}</p>
-                <p className="text-[#4A5745] mb-2">{event.location}</p>
-                <p className="text-[#4A5745] mb-4">{event.description}</p>
+                <h3 className="text-xl font-semibold text-oasis-green-800 mb-2">{event.title}</h3>
+                <p className="text-oasis-green-600 mb-2">{event.date}</p>
+                <p className="text-oasis-green-800 mb-2">{event.location}</p>
+                <p className="text-oasis-green-800 mb-4">{event.description}</p>
                 <Link href={event.link}>
-                  <button className="bg-[#788B59] text-white font-bold px-6 py-3 rounded-md hover:bg-[#728552] transition-colors">
+                  <button className="bg-oasis-green-500 text-white font-bold px-6 py-3 rounded-md hover:bg-oasis-green-700 transition-colors">
                     Learn More About {event.title}
                   </button>
                 </Link>

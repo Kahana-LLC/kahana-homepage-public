@@ -46,8 +46,8 @@ export default function TestimonialsCarousel() {
     <div className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-xl text-center">
-          <h2 className="text-lg font-semibold leading-8 tracking-tight text-[#4A5745]">Testimonials</h2>
-          <p className="mt-2 text-3xl font-bold tracking-tight text-[#4A5745] sm:text-4xl">
+          <h2 className="text-lg font-semibold leading-8 tracking-tight text-oasis-green-800">Testimonials</h2>
+          <p className="mt-2 text-3xl font-bold tracking-tight text-oasis-green-800 sm:text-4xl">
             Loved by professionals worldwide
           </p>
         </div>
@@ -57,7 +57,7 @@ export default function TestimonialsCarousel() {
               <div className="relative w-full max-w-3xl">
                 <div className="relative bg-white px-6 py-8 shadow-xl sm:rounded-xl sm:px-8 border border-gray-200">
                   <div className="text-center">
-                    <p className="text-lg leading-8 text-[#4A5745]">
+                    <p className="text-lg leading-8 text-oasis-green-800">
                       "{testimonials[currentIndex].quote}"
                     </p>
                     <div className="mt-6 flex items-center justify-center gap-x-4">
@@ -70,8 +70,8 @@ export default function TestimonialsCarousel() {
                         />
                       </div>
                       <div>
-                        <div className="font-semibold text-[#4A5745]">{testimonials[currentIndex].author.name}</div>
-                        <div className="text-sm leading-6 text-[#4A5745]">
+                        <div className="font-semibold text-oasis-green-800">{testimonials[currentIndex].author.name}</div>
+                        <div className="text-sm leading-6 text-oasis-green-800">
                           {testimonials[currentIndex].author.role}
                         </div>
                       </div>
@@ -83,14 +83,14 @@ export default function TestimonialsCarousel() {
             <div className="mt-8 flex justify-center gap-4">
               <button
                 onClick={prevTestimonial}
-                className="rounded-full bg-[#788B59] text-white font-bold p-2 hover:bg-[#728552] transition-colors"
+                className="rounded-full bg-oasis-green-500 text-white font-bold p-2 hover:bg-oasis-green-700 transition-colors"
               >
                 <span className="sr-only">Previous testimonial</span>
                 ←
               </button>
               <button
                 onClick={nextTestimonial}
-                className="rounded-full bg-[#788B59] text-white font-bold p-2 hover:bg-[#728552] transition-colors"
+                className="rounded-full bg-oasis-green-500 text-white font-bold p-2 hover:bg-oasis-green-700 transition-colors"
               >
                 <span className="sr-only">Next testimonial</span>
                 →

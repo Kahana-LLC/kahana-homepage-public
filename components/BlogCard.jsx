@@ -89,7 +89,7 @@ export default function BlogCard({ post }) {
           <div className="relative h-52 md:h-56 lg:h-48 w-full block">
             {isLoadingImage ? (
               <div className="w-full h-full bg-gray-100 flex items-center justify-center block" style={{ minHeight: '13rem' }}>
-                <span className="text-[#4A5745]">Loading...</span>
+                <span className="text-oasis-green-800">Loading...</span>
               </div>
             ) : (
               <Image
@@ -130,7 +130,7 @@ export default function BlogCard({ post }) {
             </div>
 
             {/* Date and Read Time */}
-            <div className="flex items-center gap-2 text-sm text-[#4A5745] mb-2">
+            <div className="flex items-center gap-2 text-sm text-oasis-green-800 mb-2">
               <time dateTime={post.date}>{new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</time>
               <span>•</span>
               <span>{post.readingTime} min read</span>

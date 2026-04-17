@@ -24,21 +24,21 @@ export default function RightToWork() {
           </div>
 
           <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            <div className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 p-6 rounded-lg border border-kahana-primary/30">
+            <div className="bg-gradient-to-br from-desert-yellow-100/20 to-oasis-blue-300/10 p-6 rounded-lg border border-kahana-primary/30">
               <h3 className="text-xl font-semibold text-gray-900 mb-4">E-Verify Participation</h3>
               <p className="text-gray-600">
                 Kahana is enrolled in the federal E-Verify program and verifies employment eligibility for all new hires.
               </p>
             </div>
 
-            <div className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 p-6 rounded-lg border border-kahana-primary/30">
+            <div className="bg-gradient-to-br from-desert-yellow-100/20 to-oasis-blue-300/10 p-6 rounded-lg border border-kahana-primary/30">
               <h3 className="text-xl font-semibold text-gray-900 mb-4">I-9 Form Requirements</h3>
               <p className="text-gray-600">
                 All new employees must complete Form I-9 and provide appropriate documentation to verify identity and work authorization.
               </p>
             </div>
 
-            <div className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 p-6 rounded-lg border border-kahana-primary/30">
+            <div className="bg-gradient-to-br from-desert-yellow-100/20 to-oasis-blue-300/10 p-6 rounded-lg border border-kahana-primary/30">
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Documentation Needed</h3>
               <p className="text-gray-600">
                 You'll need to provide original documents such as a passport, driver's license, or Social Security card during the hiring process.

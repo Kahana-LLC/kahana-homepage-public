@@ -154,7 +154,7 @@ const AppendixPage = () => {
         <link rel="canonical" href="https://kahana.co/appendix-future-of-ergonomic-work-white-paper" />
       </Head>
       
-      <div className="min-h-screen bg-gradient-to-br from-[#E3DFF1] via-white to-[#8CB7D0]">
+      <div className="min-h-screen bg-gradient-to-br from-oasis-blue-100 via-white to-oasis-blue-300">
         <div className="container mx-auto px-4 py-12 max-w-6xl">
           {/* Header */}
           <div className="text-center mb-12">
@@ -166,7 +166,7 @@ const AppendixPage = () => {
             </p>
                                <Link
                      href="/white-papers/the-future-of-ergonomic-work"
-                     className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white !text-white bg-[#66C2BE] hover:bg-[#4A9E9A] transition-colors no-underline"
+                     className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white !text-white bg-brand-link hover:bg-brand-link-hover transition-colors no-underline"
                      style={{ color: 'white' }}
                    >
                      Download Whitepaper
@@ -174,7 +174,7 @@ const AppendixPage = () => {
                    <div className="mt-4">
                      <Link
                        href="/blog/the-future-of-ergonomic-work-improving-health-2025"
-                       className="text-[#66C2BE] hover:text-[#4A9E9A] font-medium underline"
+                       className="text-brand-link hover:text-brand-link-hover font-medium underline"
                      >
                        Read the full paper →
                      </Link>
@@ -186,7 +186,7 @@ const AppendixPage = () => {
             {technologies.map((tech, index) => (
               <div key={index} className="bg-white rounded-xl shadow-lg p-8 border border-gray-200">
                 <div className="flex items-start mb-6">
-                  <div className="flex-shrink-0 w-12 h-12 bg-[#66C2BE] rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
+                  <div className="flex-shrink-0 w-12 h-12 bg-brand-link rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
                     {index + 1}
                   </div>
                   <div className="flex-1">
@@ -252,13 +252,13 @@ const AppendixPage = () => {
 
           {/* Navigation Links */}
           <div className="mt-12 flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-8">
-            <Link href="/references-future-of-ergonomic-work-white-paper" className="text-[#66C2BE] hover:text-[#4A9E9A] font-medium">
+            <Link href="/references-future-of-ergonomic-work-white-paper" className="text-brand-link hover:text-brand-link-hover font-medium">
               View References
             </Link>
-                               <Link href="/blog/the-future-of-ergonomic-work-improving-health-2025" className="text-[#66C2BE] hover:text-[#4A9E9A] font-medium">
+                               <Link href="/blog/the-future-of-ergonomic-work-improving-health-2025" className="text-brand-link hover:text-brand-link-hover font-medium">
                      Read Blog Series
                    </Link>
-            <Link href="/white-papers/the-future-of-ergonomic-work" className="text-[#66C2BE] hover:text-[#4A9E9A] font-medium">
+            <Link href="/white-papers/the-future-of-ergonomic-work" className="text-brand-link hover:text-brand-link-hover font-medium">
               Download White Paper
             </Link>
           </div>

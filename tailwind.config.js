@@ -1,4 +1,45 @@
 /** @type {import('tailwindcss').Config} */
+/**
+ * Brand palettes (primary oasis-green, secondary desert-yellow + oasis-blue).
+ * `kahana.*` is remapped to these scales for backward compatibility with existing utilities.
+ */
+const oasisGreen = {
+  50: "#F8FAF2",
+  100: "#F2F4E5",
+  200: "#E4E9CC",
+  300: "#CAD399",
+  400: "#AFBE66",
+  500: "#94A833",
+  600: "#7A9200",
+  700: "#617500",
+  800: "#495800",
+  900: "#313A00",
+};
+
+const desertYellow = {
+  50: "#FFFBF4",
+  100: "#FEF8E8",
+  200: "#FDF1D2",
+  300: "#FDEABB",
+  400: "#FCE3A5",
+  500: "#FBDC8E",
+  600: "#C9B072",
+  700: "#978455",
+  800: "#645839",
+};
+
+const oasisBlue = {
+  50: "#EDF5F8",
+  100: "#DAEBF0",
+  200: "#B6D7E1",
+  300: "#91C3D3",
+  400: "#6DAFC4",
+  500: "#489CB5",
+  600: "#3A7C91",
+  700: "#2B5D6D",
+  800: "#1D3E48",
+};
+
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
@@ -42,62 +83,53 @@ module.exports = {
         },
       },
       colors: {
+        "oasis-green": { ...oasisGreen },
+        "desert-yellow": { ...desertYellow },
+        "oasis-blue": { ...oasisBlue },
+        brand: {
+          text: oasisGreen[800],
+          "text-strong": oasisGreen[900],
+          link: oasisBlue[500],
+          "link-hover": oasisBlue[600],
+          accent: oasisGreen[600],
+          "accent-hover": oasisGreen[700],
+          surface: oasisGreen[50],
+          border: `${oasisGreen[800]}1a`,
+        },
         kahana: {
-          // Main brand colors from new logo
           primary: {
-            DEFAULT: "#0d9488", // Primary teal from logo transition
-            light: "#14b8a6", // Lighter teal
-            dark: "#0f766e", // Darker teal
-            50: "#f0fdfa",
-            100: "#ccfbf1",
-            200: "#99f6e4",
-            300: "#5eead4",
-            400: "#2dd4bf",
-            500: "#0d9488",
-            600: "#0d9488",
-            700: "#0f766e",
-            800: "#115e59",
-            900: "#134e4a",
+            DEFAULT: oasisGreen[600],
+            light: oasisGreen[500],
+            dark: oasisGreen[800],
+            ...oasisGreen,
           },
-          // Secondary colors from logo gradient
           secondary: {
-            DEFAULT: "#0ea5e9", // Cerulean blue from logo
-            light: "#38bdf8", // Light blue
-            dark: "#0284c7", // Dark blue
-            50: "#f0f9ff",
-            100: "#e0f2fe",
-            200: "#bae6fd",
-            300: "#7dd3fc", // Bright lime from logo
-            400: "#38bdf8",
-            500: "#0ea5e9",
-            600: "#0284c7",
-            700: "#0369a1",
-            800: "#075985",
-            900: "#0c4a6e", // Deep navy from logo
+            DEFAULT: oasisBlue[500],
+            light: oasisBlue[300],
+            dark: oasisBlue[700],
+            ...oasisBlue,
           },
-          // Accent colors from logo elements
           accent: {
-            green: "#059669", // Forest green from logo
-            lime: "#7dd3fc", // Bright lime from logo
-            navy: "#0c4a6e", // Deep navy from logo
-            sand: "#fbbf24", // Sandy yellow from seascape
-            sky: "#fef3c7", // Sky cream from seascape
-            ocean: "#0ea5e9", // Ocean blue
-            warm: "#92400e", // Warm brown from ocean
-            coral: "#f97316", // Coral accent color
+            green: oasisGreen[700],
+            lime: oasisGreen[400],
+            navy: oasisBlue[800],
+            sand: desertYellow[600],
+            sky: desertYellow[100],
+            ocean: oasisBlue[500],
+            warm: desertYellow[800],
+            coral: "#f97316",
           },
-          // UI colors inspired by logo's natural theme
           ui: {
-            background: "#f8fafc", // Clean, minimal background
-            surface: "#ffffff", // Pure white surface
-            border: "#e2e8f0", // Subtle border
-            hover: "#f0f9ff", // Light blue hover
-            highlight: "#ccfbf1", // Light teal highlight
+            background: oasisGreen[50],
+            surface: "#ffffff",
+            border: `${oasisGreen[800]}26`,
+            hover: oasisBlue[50],
+            highlight: oasisGreen[200],
           },
         },
       },
       fontFamily: {
-        "bricolage": [
+        bricolage: [
           "var(--font-bricolage)",
           "system-ui",
           "-apple-system",
@@ -106,7 +138,7 @@ module.exports = {
           "Roboto",
           "sans-serif",
         ],
-        "geist": [
+        geist: [
           "var(--font-geist)",
           "system-ui",
           "-apple-system",
@@ -131,7 +163,6 @@ module.exports = {
     },
   },
   plugins: [
-    // ...
     require("@tailwindcss/forms"),
     require("@tailwindcss/aspect-ratio"),
     require("@tailwindcss/typography"),

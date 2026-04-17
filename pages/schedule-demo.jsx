@@ -157,47 +157,47 @@ export default function ScheduleDemo() {
       </Head>
 
       <main className="min-h-screen bg-white pb-16">
-        <div className="bg-gradient-to-b from-[#E3DFF1]/20 via-[#8CB7D0]/10 to-white pt-24 pb-10 lg:pb-14">
+        <div className="bg-gradient-to-b from-oasis-blue-100/20 via-oasis-blue-300/10 to-white pt-24 pb-10 lg:pb-14">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="lg:grid lg:grid-cols-12 lg:gap-16 lg:items-start">
               {/* Left Column - Content */}
               <div className="lg:col-span-7">
               <div className="text-center lg:text-left mb-10 lg:mb-12">
-                <h2 className="text-base font-semibold leading-7 text-[#66C2BE] mb-3">Get started with Oasis</h2>
-                <h1 className="text-4xl font-bold text-[#4A5745] sm:text-5xl tracking-tight">
+                <h2 className="text-base font-semibold leading-7 text-brand-link mb-3">Get started with Oasis</h2>
+                <h1 className="text-4xl font-bold text-oasis-green-800 sm:text-5xl tracking-tight">
                   Deploy Oasis across your enterprise
                 </h1>
-                <p className="mt-6 text-xl text-[#4A5745] leading-relaxed max-w-2xl lg:max-w-none mx-auto lg:mx-0">
+                <p className="mt-6 text-xl text-oasis-green-800 leading-relaxed max-w-2xl lg:max-w-none mx-auto lg:mx-0">
                   Ready to transform your organization&apos;s digital workspace? Schedule a demo to see Oasis in action and learn how we&apos;ll help you deploy it securely across your organization.
                 </p>
               </div>
 
               {/* Form Section - Now appears first on mobile */}
               <div className="lg:hidden mb-12">
-                <div className="bg-white rounded-xl shadow-md border border-[#4A5745]/10 p-6 sm:p-8">
+                <div className="bg-white rounded-xl shadow-md border border-oasis-green-800/10 p-6 sm:p-8">
                   <div className="text-center mb-8">
-                    <h3 className="text-2xl font-semibold text-[#4A5745] tracking-tight">Schedule your demo</h3>
-                    <p className="mt-3 text-[#4A5745]/90 leading-relaxed">
+                    <h3 className="text-2xl font-semibold text-oasis-green-800 tracking-tight">Schedule your demo</h3>
+                    <p className="mt-3 text-oasis-green-800/90 leading-relaxed">
                       Book a personalized demo to see how Oasis can transform your enterprise.
                     </p>
                   </div>
                   <div className="relative min-h-[500px]">
                     {!isFormLoaded && !loadError && (
                       <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="animate-spin rounded-full h-12 w-12 border-2 border-[#66C2BE]/30 border-t-[#66C2BE]" />
+                        <div className="animate-spin rounded-full h-12 w-12 border-2 border-brand-link/30 border-t-brand-link" />
                       </div>
                     )}
 
                     {loadError && retryCount < MAX_RETRIES && (
                       <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center">
-                        <p className="text-[#4A5745]/95 mb-4 leading-relaxed">Having trouble loading the form? We&apos;ll try again automatically.</p>
-                        <p className="text-sm text-[#4A5745]/80">Attempt {retryCount + 1} of {MAX_RETRIES}</p>
+                        <p className="text-oasis-green-800/95 mb-4 leading-relaxed">Having trouble loading the form? We&apos;ll try again automatically.</p>
+                        <p className="text-sm text-oasis-green-800/80">Attempt {retryCount + 1} of {MAX_RETRIES}</p>
                       </div>
                     )}
 
                     {loadError && retryCount >= MAX_RETRIES && (
                       <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center">
-                        <p className="text-[#4A5745]/95 mb-4 leading-relaxed">We&apos;re having trouble loading the form. Please try refreshing the page.</p>
+                        <p className="text-oasis-green-800/95 mb-4 leading-relaxed">We&apos;re having trouble loading the form. Please try refreshing the page.</p>
                         <button
                           type="button"
                           onClick={() => window.location.reload()}
@@ -227,18 +227,18 @@ export default function ScheduleDemo() {
               </div>
 
               {/* Steps Section */}
-              <div className="mb-12 lg:mb-0 -mx-4 px-4 sm:mx-0 sm:px-0 py-10 sm:py-0 sm:pb-0 bg-[#f8faf9] sm:bg-transparent rounded-xl sm:rounded-none border border-[#4A5745]/8 sm:border-0">
+              <div className="mb-12 lg:mb-0 -mx-4 px-4 sm:mx-0 sm:px-0 py-10 sm:py-0 sm:pb-0 bg-oasis-green-50 sm:bg-transparent rounded-xl sm:rounded-none border border-oasis-green-800/8 sm:border-0">
                 <div className="mx-auto">
-                  <h2 className="text-xl font-bold text-[#4A5745] mb-2 text-center sm:text-left tracking-tight">
+                  <h2 className="text-xl font-bold text-oasis-green-800 mb-2 text-center sm:text-left tracking-tight">
                     What happens next
                   </h2>
-                  <p className="text-sm text-[#4A5745]/85 mb-8 text-center sm:text-left max-w-xl">
+                  <p className="text-sm text-oasis-green-800/85 mb-8 text-center sm:text-left max-w-xl">
                     After you submit the form, our team follows a simple path to get Oasis in your environment.
                   </p>
                   {/* Progress Bar */}
-                  <div className="relative h-1.5 bg-[#4A5745]/10 rounded-full mb-10">
+                  <div className="relative h-1.5 bg-oasis-green-800/10 rounded-full mb-10">
                     <div
-                      className="absolute h-full bg-gradient-to-r from-[#E3DFF1] via-[#8CB7D0] to-[#66C2BE] rounded-full transition-all duration-300 ease-in-out"
+                      className="absolute h-full bg-gradient-to-r from-oasis-blue-100 via-oasis-blue-300 to-brand-link rounded-full transition-all duration-300 ease-in-out"
                       style={{ width: `${(hoveredStep / (steps.length - 1)) * 100}%` }}
                     />
                   </div>
@@ -247,7 +247,7 @@ export default function ScheduleDemo() {
                     {steps.map((step, index) => (
                       <div
                         key={step.id}
-                        className="bg-white rounded-xl border border-[#4A5745]/10 p-5 sm:p-6 shadow-sm transition-all duration-200 hover:border-[#66C2BE]/35 hover:shadow-md"
+                        className="bg-white rounded-xl border border-oasis-green-800/10 p-5 sm:p-6 shadow-sm transition-all duration-200 hover:border-brand-link/35 hover:shadow-md"
                         onMouseEnter={() => setHoveredStep(index)}
                         onMouseLeave={() => setHoveredStep(0)}
                       >
@@ -258,10 +258,10 @@ export default function ScheduleDemo() {
                             </div>
                           </div>
                           <div className="ml-4 min-w-0">
-                            <div className="text-lg font-semibold leading-snug text-[#4A5745]">
+                            <div className="text-lg font-semibold leading-snug text-oasis-green-800">
                               {step.name}
                             </div>
-                            <div className="mt-2 text-base leading-relaxed text-[#4A5745]/90">
+                            <div className="mt-2 text-base leading-relaxed text-oasis-green-800/90">
                               {step.description}
                             </div>
                           </div>
@@ -276,18 +276,18 @@ export default function ScheduleDemo() {
                       <Link
                         key={link.name}
                         href={link.href}
-                        className="group flex items-center p-4 bg-white rounded-xl border border-[#4A5745]/10 shadow-sm transition-all duration-200 hover:border-[#66C2BE]/35 hover:shadow-md no-underline hover:no-underline focus:no-underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#66C2BE]"
+                        className="group flex items-center p-4 bg-white rounded-xl border border-oasis-green-800/10 shadow-sm transition-all duration-200 hover:border-brand-link/35 hover:shadow-md no-underline hover:no-underline focus:no-underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-link"
                       >
                         <div className="flex-shrink-0">
-                          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#f8faf9] ring-1 ring-[#4A5745]/10 group-hover:bg-[#E3DFF1]/40 transition-colors duration-200">
+                          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-oasis-green-50 ring-1 ring-oasis-green-800/10 group-hover:bg-oasis-blue-100/40 transition-colors duration-200">
                             <div className="text-kahana-primary-800">{link.icon}</div>
                           </div>
                         </div>
                         <div className="ml-4 min-w-0 text-left">
-                          <p className="text-base font-semibold text-[#4A5745] group-hover:text-[#66C2BE] transition-colors duration-200">
+                          <p className="text-base font-semibold text-oasis-green-800 group-hover:text-brand-link-hover transition-colors duration-200">
                             {link.name}
                           </p>
-                          <p className="mt-1 text-sm text-[#4A5745]/85 leading-relaxed">
+                          <p className="mt-1 text-sm text-oasis-green-800/85 leading-relaxed">
                             {link.description}
                           </p>
                         </div>
@@ -300,30 +300,30 @@ export default function ScheduleDemo() {
 
             {/* Right Column - Form (Desktop only) */}
             <div className="hidden lg:block lg:col-span-5 lg:sticky lg:top-24">
-              <div className="bg-white rounded-xl shadow-md border border-[#4A5745]/10 p-8">
+              <div className="bg-white rounded-xl shadow-md border border-oasis-green-800/10 p-8">
                 <div className="text-center mb-8">
-                  <h3 className="text-2xl font-semibold text-[#4A5745] tracking-tight">Schedule your demo</h3>
-                  <p className="mt-3 text-[#4A5745]/90 leading-relaxed">
+                  <h3 className="text-2xl font-semibold text-oasis-green-800 tracking-tight">Schedule your demo</h3>
+                  <p className="mt-3 text-oasis-green-800/90 leading-relaxed">
                     Book a personalized demo to see how Oasis can transform your enterprise.
                   </p>
                 </div>
                 <div className="relative min-h-[500px]">
                   {!isFormLoaded && !loadError && (
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="animate-spin rounded-full h-12 w-12 border-2 border-[#66C2BE]/30 border-t-[#66C2BE]" />
+                      <div className="animate-spin rounded-full h-12 w-12 border-2 border-brand-link/30 border-t-brand-link" />
                     </div>
                   )}
 
                   {loadError && retryCount < MAX_RETRIES && (
                     <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center">
-                      <p className="text-[#4A5745]/95 mb-4 leading-relaxed">Having trouble loading the form? We&apos;ll try again automatically.</p>
-                      <p className="text-sm text-[#4A5745]/80">Attempt {retryCount + 1} of {MAX_RETRIES}</p>
+                      <p className="text-oasis-green-800/95 mb-4 leading-relaxed">Having trouble loading the form? We&apos;ll try again automatically.</p>
+                      <p className="text-sm text-oasis-green-800/80">Attempt {retryCount + 1} of {MAX_RETRIES}</p>
                     </div>
                   )}
 
                   {loadError && retryCount >= MAX_RETRIES && (
                     <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center">
-                      <p className="text-[#4A5745]/95 mb-4 leading-relaxed">We&apos;re having trouble loading the form. Please try refreshing the page.</p>
+                      <p className="text-oasis-green-800/95 mb-4 leading-relaxed">We&apos;re having trouble loading the form. Please try refreshing the page.</p>
                       <button
                         type="button"
                         onClick={() => window.location.reload()}

@@ -49,7 +49,7 @@ export default function GlobalBanner() {
           font-weight: 700 !important;
         }
         .GlobalBanner .banner-discord-link:hover {
-          color: #4A5F00 !important;
+          color: var(--oasis-green-800) !important;
           font-weight: 700 !important;
         }
       `}</style>
@@ -57,15 +57,15 @@ export default function GlobalBanner() {
         <div className="flex items-center justify-between py-3 gap-4 md:gap-8">
           <div className="flex items-center">
             <div className="flex-shrink-0">
-              <svg className="h-5 w-5 text-[#4A5745]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="h-5 w-5 text-oasis-green-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 2a3 3 0 100 6 3 3 0 000-6zM12 16a3 3 0 100 6 3 3 0 000-6zM2 12a3 3 0 106 0 3 3 0 00-6 0zM16 12a3 3 0 106 0 3 3 0 00-6 0zM5 5l14 14M5 19l14-14" />
               </svg>
             </div>
             <div className="ml-3">
-              <p className="text-sm font-medium text-[#4A5745]">
+              <p className="text-sm font-medium text-oasis-green-800">
                 <span className="md:hidden">
                   Oasis is now available!{' '}
-                  <Link href="/oasis-pricing" className="no-underline hover:no-underline hover:!text-[#7A9200] transition-colors text-[#4A5745] font-bold">
+                  <Link href="/oasis-pricing" className="no-underline hover:no-underline hover:!text-[#7A9200] transition-colors text-oasis-green-800 font-bold">
                     Download →
                   </Link>
                 </span>

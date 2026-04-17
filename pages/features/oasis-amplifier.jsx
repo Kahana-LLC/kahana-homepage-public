@@ -7,7 +7,7 @@ const OasisAmplifierStory = dynamic(
   {
     ssr: false,
     loading: () => (
-      <div className="min-h-[100px] max-w-md rounded-xl border border-[#4A5745]/10 bg-[#f8faf9] animate-pulse" aria-hidden />
+      <div className="min-h-[100px] max-w-md rounded-xl border border-oasis-green-800/10 bg-oasis-green-50 animate-pulse" aria-hidden />
     ),
   }
 );
@@ -17,7 +17,7 @@ const OasisAmplifierVisuals = dynamic(
   {
     ssr: false,
     loading: () => (
-      <div className="min-h-[280px] w-full rounded-xl border border-[#4A5745]/10 bg-[#f8faf9] animate-pulse" aria-hidden />
+      <div className="min-h-[280px] w-full rounded-xl border border-oasis-green-800/10 bg-oasis-green-50 animate-pulse" aria-hidden />
     ),
   }
 );
@@ -51,8 +51,8 @@ export default function OasisAmplifierFeaturePage() {
       backHref="/products/oasis-browser#amplifier"
       backLabel="← Back to Oasis Browser (Amplifier)"
     >
-      <section className="border-b border-[#4A5745]/8 bg-white py-12 md:py-16">
-        <div className="mx-auto max-w-3xl px-4 space-y-5 text-[#4A5745]/95 leading-relaxed sm:px-6 lg:px-8">
+      <section className="border-b border-oasis-green-800/8 bg-white py-12 md:py-16">
+        <div className="mx-auto max-w-3xl px-4 space-y-5 text-oasis-green-800/95 leading-relaxed sm:px-6 lg:px-8">
           <p className="text-xs font-semibold uppercase tracking-wide text-[#7a9200]">Planned capability</p>
           <p>
             Until we ship and document Amplifier in release notes, treat everything here as intent, not inventory. The
@@ -65,13 +65,13 @@ export default function OasisAmplifierFeaturePage() {
             <em> shape</em> of the idea: feedback compounding over weeks, not a promise that a slope will match your org on
             day one.
           </p>
-          <p className="text-sm text-[#4A5745]/80">
+          <p className="text-sm text-oasis-green-800/80">
             Privacy and minimization still matter: anything cross-user would be designed around aggregation and consent,
             not raw replay of individual sessions. Final policy will ship with the feature.
           </p>
         </div>
       </section>
-      <section className="bg-[#f8faf9] py-12 md:py-16">
+      <section className="bg-oasis-green-50 py-12 md:py-16">
         <div className="mx-auto max-w-7xl space-y-10 px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl">
             <OasisAmplifierStory />

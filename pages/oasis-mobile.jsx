@@ -105,7 +105,7 @@ export default function OasisMobile() {
               {/* Left Column - Content */}
               <div className="lg:col-span-7">
                 <div className="text-center lg:text-left mb-12">
-                  <h2 className="text-base font-semibold leading-7 text-[#66C2BE] mb-3">Your story deserves an Oasis</h2>
+                  <h2 className="text-base font-semibold leading-7 text-brand-link mb-3">Your story deserves an Oasis</h2>
                   <h1 className="text-4xl font-bold text-gray-900 sm:text-5xl">
                     Start your next chapter with Oasis Mobile
                   </h1>
@@ -135,7 +135,7 @@ export default function OasisMobile() {
                     {/* Progress Bar */}
                     <div className="relative h-1 bg-gray-100 rounded-full mb-12">
                       <div 
-                        className="absolute h-full bg-gradient-to-r from-[#E3DFF1] via-[#8CB7D0] to-[#66C2BE] rounded-full transition-all duration-300 ease-in-out"
+                        className="absolute h-full bg-gradient-to-r from-oasis-blue-100 via-oasis-blue-300 to-brand-link rounded-full transition-all duration-300 ease-in-out"
                         style={{ width: `${(hoveredStep / (steps.length - 1)) * 100}%` }}
                       />
                     </div>
@@ -144,13 +144,13 @@ export default function OasisMobile() {
                       {steps.map((step, index) => (
                         <div 
                           key={step.id} 
-                          className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl overflow-hidden p-6 shadow-lg transition-all duration-300 hover:shadow-xl"
+                          className="bg-gradient-to-br from-desert-yellow-100/20 to-oasis-blue-300/10 rounded-xl overflow-hidden p-6 shadow-lg transition-all duration-300 hover:shadow-xl"
                           onMouseEnter={() => setHoveredStep(index)}
                           onMouseLeave={() => setHoveredStep(0)}
                         >
                           <div className="flex items-start">
                             <div className="flex-shrink-0">
-                              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-[#66C2BE] via-[#8CB7D0] to-[#E3DFF1] shadow-md shadow-[#E3DFF1]/20">
+                              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-brand-link via-oasis-blue-300 to-oasis-blue-100 shadow-md shadow-oasis-blue-100/20">
                                 <div className="text-white">
                                   {step.icon}
                                 </div>
@@ -170,7 +170,7 @@ export default function OasisMobile() {
                     </div>
 
                     {/* Oasis Features Section */}
-                    <div className="mt-16 bg-white rounded-xl shadow-xl border border-[#A5DAD8]/30 p-8">
+                    <div className="mt-16 bg-white rounded-xl shadow-xl border border-oasis-blue-200/30 p-8">
                       <h3 className="text-2xl font-semibold text-gray-900 mb-6">The Oasis Mobile Advantage</h3>
                       <p className="text-lg text-gray-600 mb-8">
                         Oasis Mobile isn't just another mobile browser—it's a productivity powerhouse built from the ground up with AI at its core. Experience unprecedented control over your digital workspace while maintaining lightning-fast performance on your mobile device.
@@ -181,19 +181,19 @@ export default function OasisMobile() {
                           <h4 className="text-xl font-semibold text-gray-900">AI-Powered Intelligence</h4>
                           <ul className="space-y-3 text-gray-600">
                             <li className="flex items-start">
-                              <svg className="h-6 w-6 text-[#66C2BE] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <svg className="h-6 w-6 text-brand-link mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                               </svg>
                               <span>Patented AI assistant integrated into the mobile browser core</span>
                             </li>
                             <li className="flex items-start">
-                              <svg className="h-6 w-6 text-[#66C2BE] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <svg className="h-6 w-6 text-brand-link mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                               </svg>
                               <span>Seamless link organization and retrieval on mobile</span>
                             </li>
                             <li className="flex items-start">
-                              <svg className="h-6 w-6 text-[#66C2BE] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <svg className="h-6 w-6 text-brand-link mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                               </svg>
                               <span>Dynamic layout manipulation optimized for mobile screens</span>
@@ -204,19 +204,19 @@ export default function OasisMobile() {
                           <h4 className="text-xl font-semibold text-gray-900">Designed for Mobile Productivity</h4>
                           <ul className="space-y-3 text-gray-600">
                             <li className="flex items-start">
-                              <svg className="h-6 w-6 text-[#66C2BE] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <svg className="h-6 w-6 text-brand-link mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                               </svg>
                               <span>Ask your AI to find anything you've ever saved on mobile</span>
                             </li>
                             <li className="flex items-start">
-                              <svg className="h-6 w-6 text-[#66C2BE] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <svg className="h-6 w-6 text-brand-link mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                               </svg>
                               <span>Perfect mobile layouts automatically organized for efficiency</span>
                             </li>
                             <li className="flex items-start">
-                              <svg className="h-6 w-6 text-[#66C2BE] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <svg className="h-6 w-6 text-brand-link mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                               </svg>
                               <span>No more tab hunting or search history digging on mobile</span>
@@ -231,7 +231,7 @@ export default function OasisMobile() {
 
               {/* Right Column - Form (Desktop only) */}
               <div className="hidden lg:block lg:col-span-5 lg:sticky lg:top-24">
-                <div className="bg-white rounded-xl shadow-xl border border-[#A5DAD8]/30 p-8">
+                <div className="bg-white rounded-xl shadow-xl border border-oasis-blue-200/30 p-8">
                   {renderForm()}
                 </div>
               </div>

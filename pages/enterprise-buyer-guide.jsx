@@ -8,6 +8,7 @@ import SolutionFeatureWithVisual from '../components/solutions/visuals/SolutionF
 import MainIncidentDashboardPreview from '../components/solutions/visuals/MainIncidentDashboardPreview';
 import RelatedEnterpriseFeatureLinks from '../components/features/RelatedEnterpriseFeatureLinks';
 import OasisBrowserFeatureVisuals from '../components/products/oasis/OasisBrowserFeatureVisuals';
+import SharedCTA from '../components/SharedCTA';
 import { oasisCapabilities } from '../data/oasisEnterpriseCapabilities';
 import {
   deviceVsBrowserBandProps,
@@ -39,7 +40,7 @@ const COLORS = {
   accent: '#4A6200', // Accent color
   bgPage: '#FFFFFF', // White background (matching homepage)
   bgCard: '#FFFFFF', // White cards
-  muted: '#4A5745', // Muted text
+  muted: '#495800', // Muted text
 };
 
 const MAX_WIDTH = 1100;
@@ -598,13 +599,13 @@ export default function EnterpriseBuyerGuidePage() {
               </p>
               <p className="text-lg md:text-xl leading-relaxed text-left">
                 Below you will see the same session-governance visuals and capability blocks we use on the{' '}
-                <Link href="/products/oasis-enterprise-browser" className="text-[#66C2BE] font-semibold no-underline hover:underline">
+                <Link href="/products/oasis-enterprise-browser" className="text-brand-link font-semibold no-underline hover:underline">
                   Oasis Enterprise Browser
                 </Link>{' '}
                 product page, plus evaluation topics for your team: benefits, deployment, UX, and FAQs framed with honest
                 limits (what belongs in a browser vs what still needs other delivery models). For the personal AI browser
                 experience, see{' '}
-                <Link href="/products/oasis-browser" className="text-[#66C2BE] font-semibold no-underline hover:underline">
+                <Link href="/products/oasis-browser" className="text-brand-link font-semibold no-underline hover:underline">
                   Oasis Browser
                 </Link>
                 .
@@ -633,12 +634,12 @@ export default function EnterpriseBuyerGuidePage() {
               <MainIncidentDashboardPreview pageKey="oasis-enterprise-browser" />
               <RelatedEnterpriseFeatureLinks pageKey="oasis-enterprise-browser" />
               <DeviceVsBrowserBand {...deviceVsBrowserBandProps} />
-              <div className="bg-[#f8faf9] py-16 md:py-20 border-y border-[#4A5745]/8">
+              <div className="bg-oasis-green-50 py-16 md:py-20 border-y border-oasis-green-800/8">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                  <h3 className="text-3xl font-bold text-[#4A5745] text-center mb-12 tracking-tight">
+                  <h3 className="text-3xl font-bold text-oasis-green-800 text-center mb-12 tracking-tight">
                     {enterpriseCapabilitiesSectionIntro.title}
                   </h3>
-                  <p className="text-[#4A5745]/95 text-center mb-10 max-w-3xl mx-auto leading-relaxed">
+                  <p className="text-oasis-green-800/95 text-center mb-10 max-w-3xl mx-auto leading-relaxed">
                     {enterpriseCapabilitiesSectionIntro.body}
                   </p>
                   <div className="grid grid-cols-1 gap-6 lg:gap-8">
@@ -652,7 +653,7 @@ export default function EnterpriseBuyerGuidePage() {
                         <p className="text-center">
                           <Link
                             href={`/features/${feature.slug}`}
-                            className="text-sm font-semibold text-[#66C2BE] no-underline hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#66C2BE]"
+                            className="text-sm font-semibold text-brand-link no-underline hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-link"
                           >
                             Learn more: {feature.title} →
                           </Link>
@@ -670,11 +671,11 @@ export default function EnterpriseBuyerGuidePage() {
               kicker="Buying-committee lenses for managed browser programs"
               centered={true}
             >
-              <p className="text-lg text-[#4A5745] mb-8 max-w-3xl mx-auto text-center">
+              <p className="text-lg text-oasis-green-800 mb-8 max-w-3xl mx-auto text-center">
                 This page is written for teams evaluating{' '}
                 <strong>secure SaaS access</strong> on corporate and third-party devices. End-user productivity
                 features for the personal browser live on{' '}
-                <Link href="/products/oasis-browser" className="text-[#66C2BE] font-semibold no-underline hover:underline">
+                <Link href="/products/oasis-browser" className="text-brand-link font-semibold no-underline hover:underline">
                   Oasis Browser
                 </Link>
                 ; the sections below map common questions by stakeholder.
@@ -736,7 +737,7 @@ export default function EnterpriseBuyerGuidePage() {
                 {valuePillars.map((pillar, index) => (
                   <div
                     key={index}
-                    className="bg-white rounded-xl border border-[#4A5745]/10 p-6 shadow-sm text-left"
+                    className="bg-white rounded-xl border border-oasis-green-800/10 p-6 shadow-sm text-left"
                   >
                     <div className="flex gap-3 mb-3">
                       <div
@@ -746,9 +747,9 @@ export default function EnterpriseBuyerGuidePage() {
                       >
                         {pillar.icon}
                       </div>
-                      <h4 className="text-base font-semibold text-[#4A5745] leading-snug pt-1.5">{pillar.title}</h4>
+                      <h4 className="text-base font-semibold text-oasis-green-800 leading-snug pt-1.5">{pillar.title}</h4>
                     </div>
-                    <p className="text-sm text-[#4A5745]/90 leading-relaxed border-l-2 border-[#4A6200]/25 pl-3">
+                    <p className="text-sm text-oasis-green-800/90 leading-relaxed border-l-2 border-[#4A6200]/25 pl-3">
                       {pillar.description}
                     </p>
                   </div>
@@ -893,7 +894,7 @@ export default function EnterpriseBuyerGuidePage() {
                 <h3 className="text-2xl font-bold text-center mb-4" style={{ color: COLORS.primary }}>
                   Why the browser belongs in the security conversation
                 </h3>
-                <p className="text-center text-[#4A5745] mb-8 max-w-2xl mx-auto leading-relaxed">
+                <p className="text-center text-oasis-green-800 mb-8 max-w-2xl mx-auto leading-relaxed">
                   Third-party reporting continues to tie incidents to browser factors, phishing, and supply-chain paths.
                   Use these as directional context in your own risk reviews, not as vendor-specific promises.
                 </p>
@@ -906,25 +907,25 @@ export default function EnterpriseBuyerGuidePage() {
                       <div
                         key={idx}
                         className={[
-                          'bg-white rounded-xl border border-[#4A5745]/10 shadow-sm p-6 flex flex-col',
+                          'bg-white rounded-xl border border-oasis-green-800/10 shadow-sm p-6 flex flex-col',
                           isLastOdd ? 'md:col-span-2 md:max-w-md md:mx-auto' : '',
                         ]
                           .filter(Boolean)
                           .join(' ')}
                       >
-                        <div className="text-3xl font-bold tracking-tight text-[#4A5745] mb-2 tabular-nums">
+                        <div className="text-3xl font-bold tracking-tight text-oasis-green-800 mb-2 tabular-nums">
                           {metric.value}
                         </div>
-                        <div className="text-sm font-semibold uppercase tracking-wide text-[#4A5745]/85 mb-1">
+                        <div className="text-sm font-semibold uppercase tracking-wide text-oasis-green-800/85 mb-1">
                           {metric.label}
                         </div>
-                        <p className="text-sm text-[#4A5745]/90 leading-relaxed mb-3">{metric.insight}</p>
+                        <p className="text-sm text-oasis-green-800/90 leading-relaxed mb-3">{metric.insight}</p>
                         {metric.source && (
                           <a
                             href={metric.source.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="mt-auto text-xs text-[#4A5745]/65 no-underline underline-offset-2 hover:text-[#66C2BE] hover:underline"
+                            className="mt-auto text-xs text-oasis-green-800/65 no-underline underline-offset-2 hover:text-brand-link-hover hover:underline"
                           >
                             Source: {metric.source.label}
                           </a>
@@ -965,7 +966,7 @@ export default function EnterpriseBuyerGuidePage() {
                       <h3 className="text-2xl md:text-3xl font-bold text-[#313A00] mb-4 leading-tight">
                         Integrate with your existing identity infrastructure
                       </h3>
-                      <p className="text-lg text-[#4A5745] leading-relaxed">
+                      <p className="text-lg text-oasis-green-800 leading-relaxed">
                       Oasis seamlessly connects with your current identity provider using industry-standard 
                         protocols including <abbr title="Security Assertion Markup Language" className="underline decoration-dotted cursor-help">SAML</abbr>, OAuth, and <abbr title="System for Cross-domain Identity Management" className="underline decoration-dotted cursor-help">SCIM</abbr> for user provisioning and authentication.
                     </p>
@@ -983,7 +984,7 @@ export default function EnterpriseBuyerGuidePage() {
                       <h3 className="text-2xl md:text-3xl font-bold text-[#313A00] mb-4 leading-tight">
                         Distribute Oasis to your team
                       </h3>
-                      <p className="text-lg text-[#4A5745] leading-relaxed">
+                      <p className="text-lg text-oasis-green-800 leading-relaxed">
                       Deploy through your existing device management platform (VMware Workspace ONE, Citrix Endpoint Management, 
                       etc.) or provide a secure download link for self-service installation. The process 
                       is straightforward: download, install, and start using.
@@ -1002,7 +1003,7 @@ export default function EnterpriseBuyerGuidePage() {
                       <h3 className="text-2xl md:text-3xl font-bold text-[#313A00] mb-4 leading-tight">
                         Users get up and running immediately
                       </h3>
-                      <p className="text-lg text-[#4A5745] leading-relaxed">
+                      <p className="text-lg text-oasis-green-800 leading-relaxed">
                       Team members authenticate through your existing identity system and can instantly 
                       import their bookmarks, saved passwords, and browser preferences for a familiar experience.
                       </p>
@@ -1020,7 +1021,7 @@ export default function EnterpriseBuyerGuidePage() {
                       <h3 className="text-2xl md:text-3xl font-bold text-[#313A00] mb-4 leading-tight">
                         Gradually implement security policies
                       </h3>
-                      <p className="text-lg text-[#4A5745] leading-relaxed">
+                      <p className="text-lg text-oasis-green-800 leading-relaxed">
                       Begin with a pilot group and specific applications to develop policies that match 
                       your workflows. As you gain experience, expand to additional teams and use cases 
                       to build comprehensive security coverage.
@@ -1033,7 +1034,7 @@ export default function EnterpriseBuyerGuidePage() {
             <React.Fragment>
               <section
                 id="user-experience"
-                className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] scroll-mt-28 bg-white border-y border-[#4A5745]/10 py-12 md:py-16"
+                className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] scroll-mt-28 bg-white border-y border-oasis-green-800/10 py-12 md:py-16"
               >
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                   <p className="tracking-wider mb-3 font-semibold text-base lg:text-lg capitalize" style={{ color: '#978455' }}>
@@ -1042,9 +1043,9 @@ export default function EnterpriseBuyerGuidePage() {
                   <h2 className="text-3xl lg:text-4xl font-bold mb-4" style={{ color: COLORS.primary }}>
                     User experience
                   </h2>
-                  <p className="text-lg text-[#4A5745] max-w-3xl mx-auto leading-relaxed">
+                  <p className="text-lg text-oasis-green-800 max-w-3xl mx-auto leading-relaxed">
                     The same client experience as{' '}
-                    <Link href="/products/oasis-browser" className="text-[#66C2BE] font-semibold no-underline hover:underline">
+                    <Link href="/products/oasis-browser" className="text-brand-link font-semibold no-underline hover:underline">
                       Oasis Browser
                     </Link>
                     —voice, assistant, confirmations, onboarding, import, and planned Amplifier feedback—ships in{' '}
@@ -1152,36 +1153,15 @@ export default function EnterpriseBuyerGuidePage() {
             
             
             
-            {/* Full-Width CTA Banner */}
-            <section 
-              id="getting-started-with-oasis" 
-              className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] py-20 md:py-28 mb-0"
-              style={{
-                backgroundImage: `url(${getCloudinaryImageUrl('/images/desert-background-5.webp')})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                backgroundRepeat: 'no-repeat'
-              }}
-            >
-              {/* Overlay for text readability */}
-              <div className="absolute inset-0 bg-white/90"></div>
-              <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-6">
-                  Next step: see Oasis with your stack
-                </h2>
-                <p className="text-xl md:text-2xl mb-10 max-w-3xl mx-auto leading-relaxed font-bold" style={{ color: '#313A00' }}>
-                  Walk through managed browser sessions, policy design, and how Oasis sits next to your IdP and DLP programs.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                  <Link href="/schedule-demo" className="btn-primary inline-flex items-center justify-center px-10 py-4 text-lg font-bold no-underline hover:no-underline focus:no-underline">
-                    Schedule a Demo
-                  </Link>
-                  <Link href="/contact" className="btn-secondary inline-flex items-center justify-center px-10 py-4 text-lg font-bold no-underline hover:no-underline focus:no-underline">
-                    Get in Touch
-                </Link>
-              </div>
-              </div>
-            </section>
+            <SharedCTA
+              sectionId="getting-started-with-oasis"
+              title="Next step: see Oasis with your stack"
+              description="Walk through managed browser sessions, policy design, and how Oasis sits next to your IdP and DLP programs."
+              primaryLabel="Schedule a Demo"
+              primaryHref="/schedule-demo"
+              secondaryLabel="Get in Touch"
+              secondaryHref="/contact"
+            />
           </main>
         </div>
 
@@ -1243,7 +1223,7 @@ export default function EnterpriseBuyerGuidePage() {
                 <Link href="/community" className="block py-2.5 text-[#617500] font-medium no-underline hover:no-underline" style={{ fontSize: '1rem' }} onClick={() => setIsTocOpen(false)}>Community</Link>
 
                 {/* Enterprise Browser Buyer Guide - highlighted card */}
-                <Link href="/enterprise-buyer-guide" className="flex items-start gap-3 p-3 mt-2 mb-2 rounded-lg border border-[#66C2BE]/20 bg-gradient-to-r from-[#66C2BE]/5 to-[#8CB7D0]/5 hover:from-[#66C2BE]/10 hover:to-[#8CB7D0]/10 hover:border-[#66C2BE]/30 transition-all no-underline" onClick={() => setIsTocOpen(false)}>
+                <Link href="/enterprise-buyer-guide" className="flex items-start gap-3 p-3 mt-2 mb-2 rounded-lg border border-brand-link/20 bg-gradient-to-r from-brand-link/5 to-oasis-blue-300/5 hover:from-brand-link/10 hover:to-oasis-blue-300/10 hover:border-brand-link/30 transition-all no-underline" onClick={() => setIsTocOpen(false)}>
                   <div className="flex-shrink-0 w-12 h-12 rounded-lg overflow-hidden">
                     <img
                       src={getCloudinaryImageUrl("/assets/pexels-kamo11235-667838.jpg", { width: 48, height: 48, quality: 'auto:good' })}
@@ -1256,7 +1236,7 @@ export default function EnterpriseBuyerGuidePage() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="font-medium text-gray-900 no-underline">Enterprise Browser Buyer Guide</div>
-                    <div className="text-xs mt-1" style={{ color: '#4A5745' }}>Comprehensive guide for enterprise decision makers</div>
+                    <div className="text-xs mt-1" style={{ color: '#495800' }}>Comprehensive guide for enterprise decision makers</div>
                   </div>
                 </Link>
 

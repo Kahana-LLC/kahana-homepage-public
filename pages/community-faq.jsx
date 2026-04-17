@@ -54,10 +54,10 @@ export default function CommunityFAQ() {
       <main className="min-h-screen bg-white pt-24 pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-[#011910] sm:text-5xl mb-6">
+            <h1 className="text-4xl font-bold text-oasis-green-900 sm:text-5xl mb-6">
               Frequently Asked Questions
             </h1>
-            <p className="text-xl text-[#4A5745]">
+            <p className="text-xl text-oasis-green-800">
               Find answers to common questions about our community, membership, and resources.
             </p>
           </div>
@@ -68,18 +68,18 @@ export default function CommunityFAQ() {
               {faqs.map((faq, index) => (
                 <div
                   key={index}
-                  className="bg-white rounded-xl shadow-lg border border-[#A5DAD8]/30 overflow-hidden"
+                  className="bg-white rounded-xl shadow-lg border border-oasis-blue-200/30 overflow-hidden"
                 >
                   <button
                     className="w-full px-6 py-4 text-left focus:outline-none"
                     onClick={() => toggleFAQ(index)}
                   >
                     <div className="flex items-center justify-between">
-                      <h3 className="text-lg font-semibold text-[#011910]">
+                      <h3 className="text-lg font-semibold text-oasis-green-900">
                         {faq.question}
                       </h3>
                       <svg
-                        className={`w-6 h-6 text-[#66C2BE] transform transition-transform duration-200 ${
+                        className={`w-6 h-6 text-brand-link transform transition-transform duration-200 ${
                           openIndex === index ? 'rotate-180' : ''
                         }`}
                         fill="none"
@@ -100,7 +100,7 @@ export default function CommunityFAQ() {
                       openIndex === index ? 'pb-4' : 'h-0 overflow-hidden'
                     }`}
                   >
-                    <p className="text-[#4A5745]">{faq.answer}</p>
+                    <p className="text-oasis-green-800">{faq.answer}</p>
                   </div>
                 </div>
               ))}
@@ -108,21 +108,21 @@ export default function CommunityFAQ() {
           </div>
 
           {/* Contact Section */}
-          <div className="bg-[#E3DFF1]/10 rounded-xl p-8 border border-[#A5DAD8]/30">
-            <h2 className="text-2xl font-semibold text-[#011910] mb-4">Still Have Questions?</h2>
-            <p className="text-[#4A5745] mb-6">
+          <div className="bg-oasis-blue-100/10 rounded-xl p-8 border border-oasis-blue-200/30">
+            <h2 className="text-2xl font-semibold text-oasis-green-900 mb-4">Still Have Questions?</h2>
+            <p className="text-oasis-green-800 mb-6">
               If you couldn't find the answer you're looking for, our community team is here to help.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#66C2BE] hover:bg-[#4A9E9A] transition-colors"
+                className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-brand-link hover:bg-brand-link-hover transition-colors"
               >
                 Contact Us
               </Link>
               <Link
                 href="/community"
-                className="inline-flex items-center justify-center px-6 py-3 border border-[#66C2BE] text-base font-medium rounded-md text-[#66C2BE] bg-white hover:bg-[#66C2BE]/5 transition-colors"
+                className="inline-flex items-center justify-center px-6 py-3 border border-brand-link text-base font-medium rounded-md text-brand-link bg-white hover:bg-brand-link/5 transition-colors"
               >
                 Join Our Community
               </Link>

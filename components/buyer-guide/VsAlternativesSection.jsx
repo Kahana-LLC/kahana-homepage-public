@@ -172,7 +172,7 @@ const VsAlternativesSection = () => {
         </p>
         <Link
           href="/schedule-demo"
-          className="inline-block bg-[#788B59] text-white px-8 py-4 rounded-lg font-medium hover:bg-[#728552] transition-colors"
+          className="inline-block bg-oasis-green-500 text-white px-8 py-4 rounded-lg font-medium hover:bg-oasis-green-700 transition-colors"
         >
           Schedule a Demo
         </Link>

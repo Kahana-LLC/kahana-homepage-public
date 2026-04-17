@@ -1,8 +1,13 @@
 import React from 'react';
 import FeatureDeepDiveShell from '../../components/features/FeatureDeepDiveShell';
+import EnterpriseFeatureVisual from '../../components/features/EnterpriseFeatureVisual';
+import EnterpriseFeatureExplainerDiagram from '../../components/features/diagrams/EnterpriseFeatureExplainerDiagram';
 import { oasisCapabilities } from '../../data/oasisEnterpriseCapabilities';
+import { getEnterpriseFeatureNarrative } from '../../data/enterpriseFeatureNarrative';
+import EnterpriseFeatureNarrativeBand from '../../components/features/EnterpriseFeatureNarrativeBand';
 
 const feature = oasisCapabilities.find((c) => c.slug === 'oasis-enterprise-faster-paths');
+const narrative = getEnterpriseFeatureNarrative(feature.slug);
 const CANONICAL = 'https://kahana.co/features/oasis-enterprise-faster-paths';
 
 export default function OasisEnterpriseFasterPathsPage() {
@@ -21,7 +26,7 @@ export default function OasisEnterpriseFasterPathsPage() {
       seoDescription={feature.description}
       url={CANONICAL}
       schema={schema}
-      heroEyebrow="Oasis Enterprise Browser"
+      heroEyebrow={narrative.heroEyebrow}
       heroTitle={feature.title}
       heroDescription={feature.description}
       primaryHref="/schedule-demo"
@@ -31,8 +36,9 @@ export default function OasisEnterpriseFasterPathsPage() {
       backHref="/products/oasis-enterprise-browser"
       backLabel="← Back to Oasis Enterprise Browser"
     >
-      <section className="border-b border-[#4A5745]/8 bg-white py-12 md:py-16">
-        <div className="mx-auto max-w-3xl px-4 space-y-6 text-[#4A5745]/95 leading-relaxed sm:px-6 lg:px-8">
+      <section className="border-b border-oasis-green-800/8 bg-white py-12 md:py-16">
+        <div className="mx-auto max-w-3xl px-4 space-y-6 text-oasis-green-800/95 leading-relaxed sm:px-6 lg:px-8">
+          <EnterpriseFeatureNarrativeBand slug={feature.slug} />
           <p>
             Contractor access has a way of becoming the slowest line on the Gantt chart, not because people drag their
             feet, but because the default playbook still imagines every contributor behind your standard issue laptop or
@@ -56,6 +62,8 @@ export default function OasisEnterpriseFasterPathsPage() {
           </ul>
         </div>
       </section>
+      <EnterpriseFeatureExplainerDiagram variant="faster" />
+      <EnterpriseFeatureVisual slug="oasis-enterprise-faster-paths" />
     </FeatureDeepDiveShell>
   );
 }

@@ -17,7 +17,7 @@ export default function BlogDataComparisonTable({ headers, rows, title }) {
     <div className="my-8 overflow-x-auto rounded-xl border border-gray-200 bg-white shadow-sm">
       {title ? (
         <div className="border-b border-gray-100 bg-[#F3F8E4]/40 px-4 py-3">
-          <p className="text-sm font-semibold text-[#011910]">{title}</p>
+          <p className="text-sm font-semibold text-oasis-green-900">{title}</p>
         </div>
       ) : null}
       <table className="w-full min-w-[520px] text-left text-sm">
@@ -27,7 +27,7 @@ export default function BlogDataComparisonTable({ headers, rows, title }) {
               <th
                 key={i}
                 scope="col"
-                className="px-4 py-3 font-semibold text-[#4A5745] whitespace-normal"
+                className="px-4 py-3 font-semibold text-oasis-green-800 whitespace-normal"
               >
                 {h}
               </th>
@@ -36,9 +36,9 @@ export default function BlogDataComparisonTable({ headers, rows, title }) {
         </thead>
         <tbody className="divide-y divide-gray-100">
           {rows.map((row, ri) => (
-            <tr key={ri} className="hover:bg-[#F3F8E4]/20">
+            <tr key={ri} className="hover:bg-oasis-green-50/20">
               {row.map((cell, ci) => (
-                <td key={ci} className="px-4 py-3 text-[#4A5745] align-top whitespace-normal">
+                <td key={ci} className="px-4 py-3 text-oasis-green-800 align-top whitespace-normal">
                   {cell}
                 </td>
               ))}

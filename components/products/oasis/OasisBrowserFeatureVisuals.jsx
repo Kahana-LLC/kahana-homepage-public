@@ -28,10 +28,10 @@ function FeatureSplit({ id, eyebrow, title, body, children, imageFirst = false }
       {eyebrow && (
         <p className="text-xs font-semibold uppercase tracking-wide text-[#7a9200] mb-2">{eyebrow}</p>
       )}
-      <h2 id={id} className="text-2xl md:text-3xl font-bold text-[#4A5745] mb-4 tracking-tight">
+      <h2 id={id} className="text-2xl md:text-3xl font-bold text-oasis-green-800 mb-4 tracking-tight">
         {title}
       </h2>
-      <div className="text-[#4A5745]/95 leading-relaxed space-y-4">{body}</div>
+      <div className="text-oasis-green-800/95 leading-relaxed space-y-4">{body}</div>
     </div>
   );
   const visual = <div className={imageFirst ? 'lg:order-1' : ''}>{children}</div>;
@@ -56,7 +56,7 @@ function FeatureSplit({ id, eyebrow, title, body, children, imageFirst = false }
 export default function OasisBrowserFeatureVisuals() {
   return (
     <>
-      <section className="bg-[#f8faf9] py-16 md:py-20 border-b border-[#4A5745]/8">
+      <section className="bg-oasis-green-50 py-16 md:py-20 border-b border-oasis-green-800/8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FeatureSplit
             id="voice"
@@ -70,18 +70,18 @@ export default function OasisBrowserFeatureVisuals() {
                   visualization, capture modes (Continuous vs Precise), and whether replies are spoken or streamed into
                   chat. Voice and typing share the same assistant thread.
                 </p>
-                <p className="text-sm text-[#4A5745]/85">
+                <p className="text-sm text-oasis-green-800/85">
                   Voice is available in supported builds and may require device permissions. Unavailable builds show a
                   clear in-product message.
                 </p>
-                <p className="text-sm text-[#4A5745]/80 italic">
+                <p className="text-sm text-oasis-green-800/80 italic">
                   Status hints like &quot;Listening&quot; and &quot;Pause briefly after you speak&quot; mirror what you
                   see in the product during capture.
                 </p>
                 <p className="pt-1">
                   <Link
                     href="/features/oasis-voice"
-                    className="text-sm font-semibold text-[#66C2BE] no-underline hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#66C2BE]"
+                    className="text-sm font-semibold text-brand-link no-underline hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-link"
                   >
                     Read the full Voice guide →
                   </Link>
@@ -96,16 +96,16 @@ export default function OasisBrowserFeatureVisuals() {
 
       <section
         id="assistant"
-        className="bg-white py-16 md:py-20 border-b border-[#4A5745]/8"
+        className="bg-white py-16 md:py-20 border-b border-oasis-green-800/8"
         aria-labelledby="assistant-heading"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-10">
             <p className="text-xs font-semibold uppercase tracking-wide text-[#7a9200] mb-2">Assistant</p>
-            <h2 id="assistant-heading" className="text-3xl font-bold text-[#4A5745] mb-4 tracking-tight">
+            <h2 id="assistant-heading" className="text-3xl font-bold text-oasis-green-800 mb-4 tracking-tight">
               Actions grounded in your browser
             </h2>
-            <p className="text-[#4A5745]/95 leading-relaxed">
+            <p className="text-oasis-green-800/95 leading-relaxed">
               The panel combines a chat timeline, a composer with &quot;Ask Oasis…&quot;, read-aloud and feedback on the
               latest AI message, and readable busy states when a tool is running (for example, summarizing a page).
               Search and filter below to explore commands and skills: illustrative prompts, not an exhaustive list.
@@ -113,7 +113,7 @@ export default function OasisBrowserFeatureVisuals() {
             <p className="mt-3">
               <Link
                 href="/features/oasis-assistant"
-                className="text-sm font-semibold text-[#66C2BE] no-underline hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#66C2BE]"
+                className="text-sm font-semibold text-brand-link no-underline hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-link"
               >
                 Read the full Assistant guide →
               </Link>
@@ -123,7 +123,7 @@ export default function OasisBrowserFeatureVisuals() {
         </div>
       </section>
 
-      <section className="bg-white py-16 md:py-20 border-b border-[#4A5745]/8">
+      <section className="bg-white py-16 md:py-20 border-b border-oasis-green-800/8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FeatureSplit
             id="confirmations"
@@ -135,13 +135,13 @@ export default function OasisBrowserFeatureVisuals() {
                   When a command could change your browsing state in a meaningful way, Oasis can ask you to confirm. You
                   see plain-language copy plus a highlighted command line so you know exactly what will run.
                 </p>
-                <p className="text-sm text-[#4A5745]/85">
+                <p className="text-sm text-oasis-green-800/85">
                   Illustrative modal below. Real copy and icons may vary slightly by version.
                 </p>
                 <p className="pt-1">
                   <Link
                     href="/features/oasis-confirmations"
-                    className="text-sm font-semibold text-[#66C2BE] no-underline hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#66C2BE]"
+                    className="text-sm font-semibold text-brand-link no-underline hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-link"
                   >
                     Read the full Confirmations guide →
                   </Link>
@@ -154,7 +154,7 @@ export default function OasisBrowserFeatureVisuals() {
         </div>
       </section>
 
-      <section className="bg-[#f8faf9] py-16 md:py-20 border-b border-[#4A5745]/8">
+      <section className="bg-oasis-green-50 py-16 md:py-20 border-b border-oasis-green-800/8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FeatureSplit
             id="onboarding"
@@ -170,7 +170,7 @@ export default function OasisBrowserFeatureVisuals() {
                 <p className="pt-1">
                   <Link
                     href="/features/oasis-onboarding"
-                    className="text-sm font-semibold text-[#66C2BE] no-underline hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#66C2BE]"
+                    className="text-sm font-semibold text-brand-link no-underline hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-link"
                   >
                     Read the full Onboarding guide →
                   </Link>
@@ -183,7 +183,7 @@ export default function OasisBrowserFeatureVisuals() {
         </div>
       </section>
 
-      <section className="bg-white py-16 md:py-20 border-b border-[#4A5745]/8">
+      <section className="bg-white py-16 md:py-20 border-b border-oasis-green-800/8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FeatureSplit
             id="import"
@@ -198,7 +198,7 @@ export default function OasisBrowserFeatureVisuals() {
                 </p>
                 <ul className="space-y-2.5 pt-2">
                   {oasisBrowserImportItems.map((item) => (
-                    <li key={item} className="flex gap-3 text-sm text-[#4A5745]/95 leading-relaxed">
+                    <li key={item} className="flex gap-3 text-sm text-oasis-green-800/95 leading-relaxed">
                       <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#7a9200]" aria-hidden />
                       <span>{item}</span>
                     </li>
@@ -207,7 +207,7 @@ export default function OasisBrowserFeatureVisuals() {
                 <p className="pt-2">
                   <Link
                     href="/features/oasis-import"
-                    className="text-sm font-semibold text-[#66C2BE] no-underline hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#66C2BE]"
+                    className="text-sm font-semibold text-brand-link no-underline hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-link"
                   >
                     Read the full Import guide →
                   </Link>
@@ -222,7 +222,7 @@ export default function OasisBrowserFeatureVisuals() {
 
       <section
         id="amplifier"
-        className="bg-[#f8faf9] py-16 md:py-20 border-b border-[#4A5745]/8"
+        className="bg-oasis-green-50 py-16 md:py-20 border-b border-oasis-green-800/8"
         aria-labelledby="amplifier-heading"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -231,18 +231,18 @@ export default function OasisBrowserFeatureVisuals() {
               <p className="text-xs font-semibold uppercase tracking-wide text-[#7a9200] mb-2">Coming soon</p>
               <h2
                 id="amplifier-heading"
-                className="text-3xl font-bold text-[#4A5745] mb-3 tracking-tight max-w-3xl"
+                className="text-3xl font-bold text-oasis-green-800 mb-3 tracking-tight max-w-3xl"
               >
                 Amplifier: learn from real feedback
               </h2>
-              <p className="text-[#4A5745]/95 leading-relaxed text-base">
+              <p className="text-oasis-green-800/95 leading-relaxed text-base">
                 Planned feature: tags, notes, and thumbs become the loop that steadies the assistant over time. Preview
                 below.
               </p>
               <p className="mt-2">
                 <Link
                   href="/features/oasis-amplifier"
-                  className="text-sm font-semibold text-[#66C2BE] no-underline hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#66C2BE]"
+                  className="text-sm font-semibold text-brand-link no-underline hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-link"
                 >
                   Read the full Amplifier guide →
                 </Link>

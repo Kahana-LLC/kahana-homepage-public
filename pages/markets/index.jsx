@@ -121,7 +121,7 @@ export default function MarketsIndex() {
 
       <div className="bg-white">
         {/* Hero Section */}
-        <div className="relative bg-gradient-to-br from-[#728552] via-[#788B59] to-[#E0D48C]">
+        <div className="relative bg-gradient-to-br from-oasis-green-600 via-oasis-green-500 to-desert-yellow-300">
           <div className="absolute inset-0 bg-black/10"></div>
           <div className="relative mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
             <div className="mx-auto max-w-2xl text-center">
@@ -138,10 +138,10 @@ export default function MarketsIndex() {
         {/* Markets Grid */}
         <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
           <div className="mx-auto max-w-2xl text-center mb-16">
-            <h2 className="text-3xl font-bold tracking-tight text-[#4A5745] sm:text-4xl">
+            <h2 className="text-3xl font-bold tracking-tight text-oasis-green-800 sm:text-4xl">
               Tailored for Your Industry
             </h2>
-            <p className="mt-4 text-lg leading-8 text-[#4A5745]">
+            <p className="mt-4 text-lg leading-8 text-oasis-green-800">
               Each market has unique challenges and opportunities. Our solutions are designed to address the specific needs of your industry.
             </p>
           </div>
@@ -151,23 +151,23 @@ export default function MarketsIndex() {
               <Link
                 key={index}
                 href={market.href}
-                className="group relative bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:border-[#788B59]/30 overflow-hidden"
+                className="group relative bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:border-oasis-green-500/30 overflow-hidden"
               >
                 <div className="p-8">
                   <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#788B59] to-[#728552] rounded-lg flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-12 h-12 bg-gradient-to-br from-oasis-green-500 to-oasis-green-600 rounded-lg flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
                       <div className="text-white">
                         {market.icon}
                       </div>
                     </div>
-                    <h3 className="text-xl font-semibold text-[#4A5745] group-hover:text-[#728552] transition-colors duration-300">
+                    <h3 className="text-xl font-semibold text-oasis-green-800 group-hover:text-oasis-green-600 transition-colors duration-300">
                       {market.title}
                     </h3>
                   </div>
-                  <p className="text-[#4A5745] text-sm leading-relaxed">
+                  <p className="text-oasis-green-800 text-sm leading-relaxed">
                     {market.description}
                   </p>
-                  <div className="mt-6 flex items-center text-[#728552] font-medium text-sm group-hover:translate-x-1 transition-transform duration-300">
+                  <div className="mt-6 flex items-center text-oasis-green-600 font-medium text-sm group-hover:translate-x-1 transition-transform duration-300">
                     View {market.title} solutions
                     <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -180,11 +180,11 @@ export default function MarketsIndex() {
 
           {/* CTA Section */}
           <div className="mt-24 text-center">
-            <div className="bg-gradient-to-r from-kahana-accent-sky/10 to-kahana-secondary-300/10 rounded-2xl p-12">
-              <h3 className="text-2xl font-bold text-[#4A5745] mb-4">
+            <div className="bg-gradient-to-r from-desert-yellow-100/10 to-oasis-blue-300/10 rounded-2xl p-12">
+              <h3 className="text-2xl font-bold text-oasis-green-800 mb-4">
                 Ready to Transform Your Workflow?
               </h3>
-              <p className="text-[#4A5745] mb-8 max-w-2xl mx-auto">
+              <p className="text-oasis-green-800 mb-8 max-w-2xl mx-auto">
                 Join thousands of professionals who are already using Kahana to streamline their operations and boost productivity.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">

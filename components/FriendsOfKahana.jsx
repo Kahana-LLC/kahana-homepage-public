@@ -85,7 +85,7 @@ export default function FriendsOfKahana() {
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
               Friends of Kahana
             </h2>
-            {/* <p className="text-xl text-[#4A5745]">
+            {/* <p className="text-xl text-oasis-green-800">
               Risus velit condimentum vitae tincidunt tincidunt. Mauris
               ridiculus fusce amet urna nunc. Ut nisl ornare diam in.
             </p> */}

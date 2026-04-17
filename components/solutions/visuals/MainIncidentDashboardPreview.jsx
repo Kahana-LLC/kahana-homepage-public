@@ -138,48 +138,48 @@ export default function MainIncidentDashboardPreview({ pageKey = 'secure-browsin
   }, [incidents.length, prefersReducedMotion, pageKey]);
 
   return (
-    <section className="bg-white py-12 md:py-16 border-b border-[#4A5745]/8">
+    <section className="bg-white py-12 md:py-16 border-b border-oasis-green-800/8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto rounded-xl border border-[#4A5745]/12 bg-[#f8faf9] p-3 md:p-4 shadow-sm">
-          <div className="rounded-lg border border-[#4A5745]/10 bg-white">
-            <div className="border-b border-[#4A5745]/10 px-4 py-3 flex items-center justify-between">
+        <div className="max-w-6xl mx-auto rounded-xl border border-oasis-green-800/12 bg-oasis-green-50 p-3 md:p-4 shadow-sm">
+          <div className="rounded-lg border border-oasis-green-800/10 bg-white">
+            <div className="border-b border-oasis-green-800/10 px-4 py-3 flex items-center justify-between">
               <div>
-                <div className="text-sm font-semibold text-[#4A5745]">{config.title}</div>
-                <div className="text-xs text-[#4A5745]/65">{config.subtitle}</div>
+                <div className="text-sm font-semibold text-oasis-green-800">{config.title}</div>
+                <div className="text-xs text-oasis-green-800/65">{config.subtitle}</div>
               </div>
               <div className="flex gap-2">
-                <span className="inline-flex cursor-default select-none rounded-md border border-[#4A5745]/15 bg-[#f8faf9] px-2.5 py-1 text-xs text-[#4A5745]/80">
+                <span className="inline-flex cursor-default select-none rounded-md border border-oasis-green-800/15 bg-oasis-green-50 px-2.5 py-1 text-xs text-oasis-green-800/80">
                   Export CSV
                 </span>
-                <span className="inline-flex cursor-default select-none rounded-md border border-[#4A5745]/15 bg-[#f8faf9] px-2.5 py-1 text-xs text-[#4A5745]/80">
+                <span className="inline-flex cursor-default select-none rounded-md border border-oasis-green-800/15 bg-oasis-green-50 px-2.5 py-1 text-xs text-oasis-green-800/80">
                   Create automation
                 </span>
               </div>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-[260px_1fr]">
-              <aside className="border-r border-[#4A5745]/10 p-3 space-y-3 bg-[#fcfdfd]">
+              <aside className="border-r border-oasis-green-800/10 p-3 space-y-3 bg-[#fcfdfd]">
                 <div>
-                  <label className="text-[11px] font-semibold text-[#4A5745]/70">Search</label>
-                  <div className="mt-1 rounded border border-[#4A5745]/15 px-2 py-1.5 text-xs text-[#4A5745]/50">
+                  <label className="text-[11px] font-semibold text-oasis-green-800/70">Search</label>
+                  <div className="mt-1 rounded border border-oasis-green-800/15 px-2 py-1.5 text-xs text-oasis-green-800/50">
                     Search incidents by user, app, policy...
                   </div>
                 </div>
                 <div>
-                  <div className="text-[11px] font-semibold text-[#4A5745]/70 mb-1">Severity</div>
+                  <div className="text-[11px] font-semibold text-oasis-green-800/70 mb-1">Severity</div>
                   <div className="flex flex-wrap gap-1.5">
                     {['Critical', 'High', 'Medium', 'Low'].map((chip) => (
-                      <span key={chip} className="rounded border border-[#4A5745]/15 px-2 py-0.5 text-[11px] text-[#4A5745]/75">
+                      <span key={chip} className="rounded border border-oasis-green-800/15 px-2 py-0.5 text-[11px] text-oasis-green-800/75">
                         {chip}
                       </span>
                     ))}
                   </div>
                 </div>
                 <div>
-                  <div className="text-[11px] font-semibold text-[#4A5745]/70 mb-1">Status</div>
+                  <div className="text-[11px] font-semibold text-oasis-green-800/70 mb-1">Status</div>
                   <div className="flex flex-wrap gap-1.5">
                     {['New', 'In progress', 'Resolved', 'Muted'].map((chip) => (
-                      <span key={chip} className="rounded border border-[#4A5745]/15 px-2 py-0.5 text-[11px] text-[#4A5745]/75">
+                      <span key={chip} className="rounded border border-oasis-green-800/15 px-2 py-0.5 text-[11px] text-oasis-green-800/75">
                         {chip}
                       </span>
                     ))}
@@ -189,16 +189,16 @@ export default function MainIncidentDashboardPreview({ pageKey = 'secure-browsin
 
               <div className="overflow-x-auto">
                 <table className="w-full">
-                  <thead className="bg-[#f8faf9] border-b border-[#4A5745]/10">
+                  <thead className="bg-oasis-green-50 border-b border-oasis-green-800/10">
                     <tr className="text-left">
-                      <th className="px-3 py-2 text-[11px] font-semibold text-[#4A5745]/70">Severity</th>
-                      <th className="px-3 py-2 text-[11px] font-semibold text-[#4A5745]/70">Title</th>
-                      <th className="px-3 py-2 text-[11px] font-semibold text-[#4A5745]/70">User</th>
-                      <th className="px-3 py-2 text-[11px] font-semibold text-[#4A5745]/70">App</th>
-                      <th className="px-3 py-2 text-[11px] font-semibold text-[#4A5745]/70">Status</th>
+                      <th className="px-3 py-2 text-[11px] font-semibold text-oasis-green-800/70">Severity</th>
+                      <th className="px-3 py-2 text-[11px] font-semibold text-oasis-green-800/70">Title</th>
+                      <th className="px-3 py-2 text-[11px] font-semibold text-oasis-green-800/70">User</th>
+                      <th className="px-3 py-2 text-[11px] font-semibold text-oasis-green-800/70">App</th>
+                      <th className="px-3 py-2 text-[11px] font-semibold text-oasis-green-800/70">Status</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-[#4A5745]/10">
+                  <tbody className="divide-y divide-oasis-green-800/10">
                     {incidents.map((incident, idx) => {
                       const rowKey = `${incident.title}-${incident.user}-${idx}`;
                       const isActive = idx === activeRowIndex;
@@ -244,12 +244,12 @@ export default function MainIncidentDashboardPreview({ pageKey = 'secure-browsin
                               {incident.severity}
                             </motion.span>
                           </td>
-                          <td className="px-3 py-2.5 text-xs text-[#4A5745]">{incident.title}</td>
-                          <td className="px-3 py-2.5 text-xs text-[#4A5745]/85">{incident.user}</td>
-                          <td className="px-3 py-2.5 text-xs text-[#4A5745]/85">{incident.app}</td>
+                          <td className="px-3 py-2.5 text-xs text-oasis-green-800">{incident.title}</td>
+                          <td className="px-3 py-2.5 text-xs text-oasis-green-800/85">{incident.user}</td>
+                          <td className="px-3 py-2.5 text-xs text-oasis-green-800/85">{incident.app}</td>
                           <td className="px-3 py-2.5">
                             <motion.span
-                              className="inline-flex rounded border border-[#4A5745]/15 bg-[#f8faf9] px-1.5 py-0.5 text-[10px] text-[#4A5745]/80"
+                              className="inline-flex rounded border border-oasis-green-800/15 bg-oasis-green-50 px-1.5 py-0.5 text-[10px] text-oasis-green-800/80"
                               animate={
                                 prefersReducedMotion || !isActive
                                   ? { opacity: 1 }

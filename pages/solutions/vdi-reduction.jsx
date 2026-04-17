@@ -6,6 +6,7 @@ import SEO from '../../components/SEO';
 import SolutionsExploreGrid from '../../components/solutions/SolutionsExploreGrid';
 import MainIncidentDashboardPreview from '../../components/solutions/visuals/MainIncidentDashboardPreview';
 import RelatedEnterpriseFeatureLinks from '../../components/features/RelatedEnterpriseFeatureLinks';
+import SharedCTA from '../../components/SharedCTA';
 
 const securityFeatures = [
   {
@@ -184,12 +185,12 @@ export default function VdiReduction() {
         `}
       </Script>
 
-      <section className="bg-gradient-to-b from-[#E3DFF1]/20 via-[#8CB7D0]/10 to-white py-20">
+      <section className="bg-gradient-to-b from-oasis-blue-100/20 via-oasis-blue-300/10 to-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h2 className="text-base font-semibold leading-7 text-[#66C2BE] mb-3">VDI reduction</h2>
-            <h1 className="text-5xl font-bold text-[#4A5745] mb-6">Right-size virtual desktops for how work runs today</h1>
-            <p className="text-xl text-[#4A5745] max-w-3xl mx-auto mb-8 leading-relaxed">
+            <h2 className="text-base font-semibold leading-7 text-brand-link mb-3">VDI reduction</h2>
+            <h1 className="text-5xl font-bold text-oasis-green-800 mb-6">Right-size virtual desktops for how work runs today</h1>
+            <p className="text-xl text-oasis-green-800 max-w-3xl mx-auto mb-8 leading-relaxed">
               Hosted desktops still fit full desktops and legacy apps, but browser-first roles do not always need another seat in the farm. Oasis is a managed enterprise browser: govern SaaS and internal web work in the session with your IdP and DLP instead of expanding VDI by default.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -214,18 +215,18 @@ export default function VdiReduction() {
 
       <RelatedEnterpriseFeatureLinks pageKey="vdi-reduction" />
 
-      <section className="bg-white py-16 md:py-20 border-b border-[#4A5745]/8">
+      <section className="bg-white py-16 md:py-20 border-b border-oasis-green-800/8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-[#4A5745] text-center mb-4 tracking-tight">
+          <h2 className="text-3xl font-bold text-oasis-green-800 text-center mb-4 tracking-tight">
             Not every workload needs the same remote access pattern
           </h2>
-          <p className="text-[#4A5745]/95 text-center mb-10 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-oasis-green-800/95 text-center mb-10 max-w-3xl mx-auto leading-relaxed">
             Organizations often default to one tool for all remote access. That can mean expensive virtual desktop capacity for users who only open a handful of SaaS apps. Separating browser-governed SaaS from full desktop virtualization lets architecture, risk, and finance align on what each population actually needs.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
-            <div className="rounded-xl border border-[#4A5745]/10 bg-[#f8faf9] p-6 md:p-7 shadow-sm">
-              <h3 className="text-lg font-semibold text-[#4A5745] mb-3">Where VDI still earns its place</h3>
-              <ul className="space-y-2.5 text-sm text-[#4A5745]/95 leading-relaxed">
+            <div className="rounded-xl border border-oasis-green-800/10 bg-oasis-green-50 p-6 md:p-7 shadow-sm">
+              <h3 className="text-lg font-semibold text-oasis-green-800 mb-3">Where VDI still earns its place</h3>
+              <ul className="space-y-2.5 text-sm text-oasis-green-800/95 leading-relaxed">
                 <li className="flex gap-3">
                   <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-kahana-primary-700" aria-hidden />
                   <span>Fat clients, legacy Win32 apps, or workflows that assume a full corporate desktop.</span>
@@ -240,9 +241,9 @@ export default function VdiReduction() {
                 </li>
               </ul>
             </div>
-            <div className="rounded-xl border border-[#4A5745]/10 bg-white p-6 md:p-7 shadow-sm">
-              <h3 className="text-lg font-semibold text-[#4A5745] mb-3">Where a managed browser can pull weight</h3>
-              <ul className="space-y-2.5 text-sm text-[#4A5745]/95 leading-relaxed">
+            <div className="rounded-xl border border-oasis-green-800/10 bg-white p-6 md:p-7 shadow-sm">
+              <h3 className="text-lg font-semibold text-oasis-green-800 mb-3">Where a managed browser can pull weight</h3>
+              <ul className="space-y-2.5 text-sm text-oasis-green-800/95 leading-relaxed">
                 <li className="flex gap-3">
                   <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-kahana-primary-700" aria-hidden />
                   <span>SaaS, collaboration, and internal web applications as the primary job.</span>
@@ -263,10 +264,10 @@ export default function VdiReduction() {
 
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-[#4A5745] text-center mb-12">
+          <h2 className="text-3xl font-bold text-oasis-green-800 text-center mb-12">
             Why browser governance still matters if you run VDI
           </h2>
-          <p className="text-[#4A5745] text-center mb-8 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-oasis-green-800 text-center mb-8 max-w-3xl mx-auto leading-relaxed">
             Even with hosted desktops, users still browse and authenticate in complex ways. Industry reporting points to browser involvement in incidents, phishing, and third-party breach paths. A managed browser layer supports SaaS-centric access and strengthens the story for users who never touch a virtual desktop.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto">
@@ -276,25 +277,25 @@ export default function VdiReduction() {
                 <div
                   key={idx}
                   className={[
-                    'font-sans bg-white rounded-xl border border-[#4A5745]/10 shadow-sm p-6 flex flex-col transition-colors hover:border-[#66C2BE]/35 hover:shadow-md',
+                    'font-sans bg-white rounded-xl border border-oasis-green-800/10 shadow-sm p-6 flex flex-col transition-colors hover:border-brand-link/35 hover:shadow-md',
                     isLastOdd ? 'md:col-span-2 md:max-w-md md:mx-auto' : '',
                   ]
                     .filter(Boolean)
                     .join(' ')}
                 >
-                  <div className="text-3xl font-bold tracking-tight text-[#4A5745] mb-2 tabular-nums">
+                  <div className="text-3xl font-bold tracking-tight text-oasis-green-800 mb-2 tabular-nums">
                     {metric.value}
                   </div>
-                  <div className="text-sm font-semibold uppercase tracking-wide text-[#4A5745]/85 mb-1">
+                  <div className="text-sm font-semibold uppercase tracking-wide text-oasis-green-800/85 mb-1">
                     {metric.label}
                   </div>
-                  <div className="text-sm text-[#4A5745]/90 leading-relaxed mb-3">{metric.insight}</div>
+                  <div className="text-sm text-oasis-green-800/90 leading-relaxed mb-3">{metric.insight}</div>
                   {metric.source && (
                     <a
                       href={metric.source.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-auto text-xs text-[#4A5745]/65 no-underline underline-offset-2 hover:text-[#66C2BE] hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#66C2BE]"
+                      className="mt-auto text-xs text-oasis-green-800/65 no-underline underline-offset-2 hover:text-brand-link-hover hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-link"
                     >
                       Source: {metric.source.label}
                     </a>
@@ -306,19 +307,19 @@ export default function VdiReduction() {
         </div>
       </section>
 
-      <section className="bg-[#f8faf9] py-16 md:py-20 border-y border-[#4A5745]/8">
+      <section className="bg-oasis-green-50 py-16 md:py-20 border-y border-oasis-green-800/8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-[#4A5745] text-center mb-12 tracking-tight">
+          <h2 className="text-3xl font-bold text-oasis-green-800 text-center mb-12 tracking-tight">
             What Oasis delivers on the path to less VDI sprawl
           </h2>
-          <p className="text-[#4A5745]/95 text-center mb-10 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-oasis-green-800/95 text-center mb-10 max-w-3xl mx-auto leading-relaxed">
             Session governance for SaaS, integration with identity and DLP, and a way to serve eligible users without automatically adding another hosted desktop session. Your architecture team still decides which apps stay on VDI.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
             {securityFeatures.map((feature, index) => (
               <div
                 key={index}
-                className="bg-white rounded-xl border border-[#4A5745]/10 p-6 md:p-7 shadow-sm transition-all duration-200 hover:border-kahana-primary-800/30 hover:shadow-md"
+                className="bg-white rounded-xl border border-oasis-green-800/10 p-6 md:p-7 shadow-sm transition-all duration-200 hover:border-kahana-primary-800/30 hover:shadow-md"
               >
                 <div className="flex gap-4 mb-4">
                   <div
@@ -334,16 +335,16 @@ export default function VdiReduction() {
                       />
                     </svg>
                   </div>
-                  <h3 className="text-base md:text-lg font-semibold text-[#4A5745] leading-snug tracking-tight pt-1.5">
+                  <h3 className="text-base md:text-lg font-semibold text-oasis-green-800 leading-snug tracking-tight pt-1.5">
                     {feature.title}
                   </h3>
                 </div>
-                <p className="text-sm text-[#4A5745]/90 leading-relaxed mb-5 border-l-2 border-kahana-primary-800/25 pl-4">
+                <p className="text-sm text-oasis-green-800/90 leading-relaxed mb-5 border-l-2 border-kahana-primary-800/25 pl-4">
                   {feature.description}
                 </p>
                 <ul className="space-y-2.5">
                   {feature.details.map((detail, dIndex) => (
-                    <li key={dIndex} className="flex gap-3 text-sm text-[#4A5745]/95 leading-relaxed">
+                    <li key={dIndex} className="flex gap-3 text-sm text-oasis-green-800/95 leading-relaxed">
                       <span
                         className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-kahana-primary-700"
                         aria-hidden
@@ -360,17 +361,17 @@ export default function VdiReduction() {
 
       <section className="bg-white py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-[#4A5745] text-center mb-10 tracking-tight">
+          <h2 className="text-3xl font-bold text-oasis-green-800 text-center mb-10 tracking-tight">
             Outcomes architecture and IT leaders care about
           </h2>
-          <p className="text-[#4A5745]/95 text-center mb-10 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-oasis-green-800/95 text-center mb-10 max-w-3xl mx-auto leading-relaxed">
             Lower pressure on hosted desktop scale, better fit between control model and workload, improved experience for browser-heavy users, and a clearer split between VDI and session governance. Quantify with your own capacity and finance data.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-8">
             {industryBenefits.map((benefit, index) => (
               <div
                 key={index}
-                className="bg-white rounded-xl border border-[#4A5745]/10 p-6 md:p-7 shadow-sm transition-all duration-200 hover:border-kahana-primary-800/30 hover:shadow-md"
+                className="bg-white rounded-xl border border-oasis-green-800/10 p-6 md:p-7 shadow-sm transition-all duration-200 hover:border-kahana-primary-800/30 hover:shadow-md"
               >
                 <div className="flex gap-4 mb-4">
                   <div
@@ -379,16 +380,16 @@ export default function VdiReduction() {
                   >
                     {benefit.icon}
                   </div>
-                  <h3 className="text-base md:text-lg font-semibold text-[#4A5745] leading-snug tracking-tight pt-1.5">
+                  <h3 className="text-base md:text-lg font-semibold text-oasis-green-800 leading-snug tracking-tight pt-1.5">
                     {benefit.title}
                   </h3>
                 </div>
                 {benefit.stat != null && benefit.statLabel != null && (
                   <div className="mb-4">
-                    <div className="text-2xl font-bold tracking-tight text-[#4A5745] tabular-nums mb-1">
+                    <div className="text-2xl font-bold tracking-tight text-oasis-green-800 tabular-nums mb-1">
                       {benefit.stat}
                     </div>
-                    <div className="text-sm text-[#4A5745]/85">{benefit.statLabel}</div>
+                    <div className="text-sm text-oasis-green-800/85">{benefit.statLabel}</div>
                   </div>
                 )}
                 {benefit.source && (
@@ -396,12 +397,12 @@ export default function VdiReduction() {
                     href={benefit.source.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mb-3 block text-xs text-[#4A5745]/65 no-underline underline-offset-2 hover:text-kahana-primary-700 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-kahana-primary-700"
+                    className="mb-3 block text-xs text-oasis-green-800/65 no-underline underline-offset-2 hover:text-kahana-primary-700 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-kahana-primary-700"
                   >
                     Source: {benefit.source.label}
                   </a>
                 )}
-                <p className="text-sm text-[#4A5745]/90 leading-relaxed border-l-2 border-kahana-primary-800/25 pl-4">
+                <p className="text-sm text-oasis-green-800/90 leading-relaxed border-l-2 border-kahana-primary-800/25 pl-4">
                   {benefit.description}
                 </p>
               </div>
@@ -412,30 +413,14 @@ export default function VdiReduction() {
 
       <SolutionsExploreGrid currentHref="/solutions/vdi-reduction" />
 
-      <section className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] py-12 sm:py-16 md:py-20 lg:py-28 mb-0 bg-[#F8FAF2]">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4 sm:mb-6">
-            Less VDI sprawl for SaaS-heavy access
-          </h2>
-          <p className="text-xl text-[#4A5745] mb-6 sm:mb-8 lg:mb-10 max-w-3xl mx-auto leading-relaxed">
-            Put governance in the browser for eligible workloads, integrate with identity and DLP, and give teams a modern path that does not default to another virtual desktop for every user story.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
-            <Link
-              href="/schedule-demo"
-              className="btn-primary inline-flex items-center justify-center px-6 sm:px-8 lg:px-10 py-3 sm:py-4 text-sm sm:text-base lg:text-lg font-bold no-underline hover:no-underline focus:no-underline w-full sm:w-auto"
-            >
-              Schedule a demo
-            </Link>
-            <Link
-              href="/contact"
-              className="btn-secondary inline-flex items-center justify-center px-6 sm:px-8 lg:px-10 py-3 sm:py-4 text-sm sm:text-base lg:text-lg font-bold no-underline hover:no-underline focus:no-underline w-full sm:w-auto"
-            >
-              Get in touch
-            </Link>
-          </div>
-        </div>
-      </section>
+      <SharedCTA
+        title="Less VDI sprawl for SaaS-heavy access"
+        description="Put governance in the browser for eligible workloads, integrate with identity and DLP, and give teams a modern path that does not default to another virtual desktop for every user story."
+        primaryLabel="Schedule a demo"
+        primaryHref="/schedule-demo"
+        secondaryLabel="Get in touch"
+        secondaryHref="/contact"
+      />
     </>
   );
 }

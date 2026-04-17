@@ -45,7 +45,7 @@ export default function TermsAndConditions() {
         <div className="bg-gradient-to-b from-[#F3F8E4] to-white py-16 sm:py-24">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-8">
-              <p className="text-sm font-semibold text-[#4A5745] uppercase tracking-wide mb-4">
+              <p className="text-sm font-semibold text-oasis-green-800 uppercase tracking-wide mb-4">
                 Terms of Service
               </p>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#313A00] mb-6">
@@ -75,7 +75,7 @@ export default function TermsAndConditions() {
             {/* Important Notice */}
             <section id="important-notice" className="mb-16 scroll-mt-8">
               <div className="mb-4">
-                <span className="inline-block px-3 py-1 text-xs font-semibold text-[#4A5745] bg-[#F3F8E4] rounded-md mb-2">
+                <span className="inline-block px-3 py-1 text-xs font-semibold text-oasis-green-800 bg-[#F3F8E4] rounded-md mb-2">
                   Important Notice
                 </span>
               </div>
@@ -91,7 +91,7 @@ export default function TermsAndConditions() {
             {/* Section 1: Service Overview */}
             <section id="service-overview" className="mb-16 scroll-mt-8">
               <div className="mb-4">
-                <span className="inline-block px-3 py-1 text-xs font-semibold text-[#4A5745] bg-[#F3F8E4] rounded-md mb-2">
+                <span className="inline-block px-3 py-1 text-xs font-semibold text-oasis-green-800 bg-[#F3F8E4] rounded-md mb-2">
                   Section 1
                 </span>
               </div>
@@ -104,7 +104,7 @@ export default function TermsAndConditions() {
             {/* Section 2: Eligibility */}
             <section id="eligibility" className="mb-16 scroll-mt-8">
               <div className="mb-4">
-                <span className="inline-block px-3 py-1 text-xs font-semibold text-[#4A5745] bg-[#F3F8E4] rounded-md mb-2">
+                <span className="inline-block px-3 py-1 text-xs font-semibold text-oasis-green-800 bg-[#F3F8E4] rounded-md mb-2">
                   Section 2
                 </span>
               </div>
@@ -117,7 +117,7 @@ export default function TermsAndConditions() {
             {/* Section 3: Accounts and Registration */}
             <section id="accounts-registration" className="mb-16 scroll-mt-8">
               <div className="mb-4">
-                <span className="inline-block px-3 py-1 text-xs font-semibold text-[#4A5745] bg-[#F3F8E4] rounded-md mb-2">
+                <span className="inline-block px-3 py-1 text-xs font-semibold text-oasis-green-800 bg-[#F3F8E4] rounded-md mb-2">
                   Section 3
                 </span>
               </div>
@@ -139,7 +139,7 @@ export default function TermsAndConditions() {
             {/* Section 4: General Payment Terms */}
             <section id="payment-terms" className="mb-16 scroll-mt-8">
               <div className="mb-4">
-                <span className="inline-block px-3 py-1 text-xs font-semibold text-[#4A5745] bg-[#F3F8E4] rounded-md mb-2">
+                <span className="inline-block px-3 py-1 text-xs font-semibold text-oasis-green-800 bg-[#F3F8E4] rounded-md mb-2">
                   Section 4
                 </span>
               </div>
@@ -191,7 +191,7 @@ export default function TermsAndConditions() {
             {/* Section 5: Licenses */}
             <section id="licenses" className="mb-16 scroll-mt-8">
               <div className="mb-4">
-                <span className="inline-block px-3 py-1 text-xs font-semibold text-[#4A5745] bg-[#F3F8E4] rounded-md mb-2">
+                <span className="inline-block px-3 py-1 text-xs font-semibold text-oasis-green-800 bg-[#F3F8E4] rounded-md mb-2">
                   Section 5
                 </span>
               </div>
@@ -216,7 +216,7 @@ export default function TermsAndConditions() {
             {/* Section 6: Ownership; Proprietary Rights */}
             <section id="ownership" className="mb-16 scroll-mt-8">
               <div className="mb-4">
-                <span className="inline-block px-3 py-1 text-xs font-semibold text-[#4A5745] bg-[#F3F8E4] rounded-md mb-2">
+                <span className="inline-block px-3 py-1 text-xs font-semibold text-oasis-green-800 bg-[#F3F8E4] rounded-md mb-2">
                   Section 6
                 </span>
               </div>
@@ -232,7 +232,7 @@ export default function TermsAndConditions() {
             {/* Section 7: Third-Party Terms */}
             <section id="third-party-terms" className="mb-16 scroll-mt-8">
               <div className="mb-4">
-                <span className="inline-block px-3 py-1 text-xs font-semibold text-[#4A5745] bg-[#F3F8E4] rounded-md mb-2">
+                <span className="inline-block px-3 py-1 text-xs font-semibold text-oasis-green-800 bg-[#F3F8E4] rounded-md mb-2">
                   Section 7
                 </span>
               </div>
@@ -252,7 +252,7 @@ export default function TermsAndConditions() {
             {/* Section 8: User Content */}
             <section id="user-content" className="mb-16 scroll-mt-8">
               <div className="mb-4">
-                <span className="inline-block px-3 py-1 text-xs font-semibold text-[#4A5745] bg-[#F3F8E4] rounded-md mb-2">
+                <span className="inline-block px-3 py-1 text-xs font-semibold text-oasis-green-800 bg-[#F3F8E4] rounded-md mb-2">
                   Section 8
                 </span>
               </div>
@@ -292,7 +292,7 @@ export default function TermsAndConditions() {
             {/* Section 9: Communications */}
             <section id="communications" className="mb-16 scroll-mt-8">
               <div className="mb-4">
-                <span className="inline-block px-3 py-1 text-xs font-semibold text-[#4A5745] bg-[#F3F8E4] rounded-md mb-2">
+                <span className="inline-block px-3 py-1 text-xs font-semibold text-oasis-green-800 bg-[#F3F8E4] rounded-md mb-2">
                   Section 9
                 </span>
               </div>
@@ -308,7 +308,7 @@ export default function TermsAndConditions() {
             {/* Section 10: Prohibited Conduct */}
             <section id="prohibited-conduct" className="mb-16 scroll-mt-8">
               <div className="mb-4">
-                <span className="inline-block px-3 py-1 text-xs font-semibold text-[#4A5745] bg-[#F3F8E4] rounded-md mb-2">
+                <span className="inline-block px-3 py-1 text-xs font-semibold text-oasis-green-800 bg-[#F3F8E4] rounded-md mb-2">
                   Section 10
                 </span>
               </div>
@@ -347,7 +347,7 @@ export default function TermsAndConditions() {
             {/* Section 11: Modification of Terms */}
             <section id="modification-terms" className="mb-16 scroll-mt-8">
               <div className="mb-4">
-                <span className="inline-block px-3 py-1 text-xs font-semibold text-[#4A5745] bg-[#F3F8E4] rounded-md mb-2">
+                <span className="inline-block px-3 py-1 text-xs font-semibold text-oasis-green-800 bg-[#F3F8E4] rounded-md mb-2">
                   Section 11
                 </span>
               </div>
@@ -363,7 +363,7 @@ export default function TermsAndConditions() {
             {/* Section 12: Trial Period */}
             <section id="trial-period" className="mb-16 scroll-mt-8">
               <div className="mb-4">
-                <span className="inline-block px-3 py-1 text-xs font-semibold text-[#4A5745] bg-[#F3F8E4] rounded-md mb-2">
+                <span className="inline-block px-3 py-1 text-xs font-semibold text-oasis-green-800 bg-[#F3F8E4] rounded-md mb-2">
                   Section 12
                 </span>
               </div>
@@ -383,7 +383,7 @@ export default function TermsAndConditions() {
             {/* Section 13: Term, Termination, and Modification of the Service */}
             <section id="term-termination" className="mb-16 scroll-mt-8">
               <div className="mb-4">
-                <span className="inline-block px-3 py-1 text-xs font-semibold text-[#4A5745] bg-[#F3F8E4] rounded-md mb-2">
+                <span className="inline-block px-3 py-1 text-xs font-semibold text-oasis-green-800 bg-[#F3F8E4] rounded-md mb-2">
                   Section 13
                 </span>
               </div>
@@ -413,7 +413,7 @@ export default function TermsAndConditions() {
             {/* Section 14: Indemnity */}
             <section id="indemnity" className="mb-16 scroll-mt-8">
               <div className="mb-4">
-                <span className="inline-block px-3 py-1 text-xs font-semibold text-[#4A5745] bg-[#F3F8E4] rounded-md mb-2">
+                <span className="inline-block px-3 py-1 text-xs font-semibold text-oasis-green-800 bg-[#F3F8E4] rounded-md mb-2">
                   Section 14
                 </span>
               </div>
@@ -429,7 +429,7 @@ export default function TermsAndConditions() {
             {/* Section 15: Disclaimers; No Warranties */}
             <section id="disclaimers" className="mb-16 scroll-mt-8">
               <div className="mb-4">
-                <span className="inline-block px-3 py-1 text-xs font-semibold text-[#4A5745] bg-[#F3F8E4] rounded-md mb-2">
+                <span className="inline-block px-3 py-1 text-xs font-semibold text-oasis-green-800 bg-[#F3F8E4] rounded-md mb-2">
                   Section 15
                 </span>
               </div>
@@ -457,7 +457,7 @@ export default function TermsAndConditions() {
             {/* Section 16: Limitation of Liability */}
             <section id="limitation-liability" className="mb-16 scroll-mt-8">
               <div className="mb-4">
-                <span className="inline-block px-3 py-1 text-xs font-semibold text-[#4A5745] bg-[#F3F8E4] rounded-md mb-2">
+                <span className="inline-block px-3 py-1 text-xs font-semibold text-oasis-green-800 bg-[#F3F8E4] rounded-md mb-2">
                   Section 16
                 </span>
               </div>
@@ -482,7 +482,7 @@ export default function TermsAndConditions() {
             {/* Section 17: Dispute Resolution and Arbitration */}
             <section id="dispute-resolution" className="mb-16 scroll-mt-8">
               <div className="mb-4">
-                <span className="inline-block px-3 py-1 text-xs font-semibold text-[#4A5745] bg-[#F3F8E4] rounded-md mb-2">
+                <span className="inline-block px-3 py-1 text-xs font-semibold text-oasis-green-800 bg-[#F3F8E4] rounded-md mb-2">
                   Section 17
                 </span>
               </div>
@@ -545,7 +545,7 @@ export default function TermsAndConditions() {
             {/* Section 18: Miscellaneous */}
             <section id="miscellaneous" className="mb-16 scroll-mt-8">
               <div className="mb-4">
-                <span className="inline-block px-3 py-1 text-xs font-semibold text-[#4A5745] bg-[#F3F8E4] rounded-md mb-2">
+                <span className="inline-block px-3 py-1 text-xs font-semibold text-oasis-green-800 bg-[#F3F8E4] rounded-md mb-2">
                   Section 18
                 </span>
               </div>

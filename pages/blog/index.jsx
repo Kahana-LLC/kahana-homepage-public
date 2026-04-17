@@ -192,10 +192,10 @@ export default function BlogIndex({ posts = [] }) {
 
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-[#011910] mb-4">
+          <h1 className="text-4xl font-bold text-oasis-green-900 mb-4">
             Kahana Blog
           </h1>
-          <p className="text-xl text-[#4A5745] max-w-2xl mx-auto">
+          <p className="text-xl text-oasis-green-800 max-w-2xl mx-auto">
             Insights and updates on enterprise browser security, productivity, and technology trends
           </p>
         </div>
@@ -295,10 +295,10 @@ export default function BlogIndex({ posts = [] }) {
           </>
         ) : (
           <div className="text-center py-12">
-            <h3 className="text-lg font-medium text-[#011910] mb-2">
+            <h3 className="text-lg font-medium text-oasis-green-900 mb-2">
               No articles found
             </h3>
-            <p className="text-[#4A5745]">
+            <p className="text-oasis-green-800">
               Try adjusting your search or filter to find what you're looking for.
             </p>
           </div>

@@ -30,10 +30,10 @@ export default function SolutionsExploreGrid({
   const current = normalizeHref(currentHref);
 
   return (
-    <section className="bg-[#f8faf9] py-16 md:py-20 border-y border-[#4A5745]/8">
+    <section className="bg-oasis-green-50 py-16 md:py-20 border-y border-oasis-green-800/8">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-[#4A5745] text-center mb-3 tracking-tight">{heading}</h2>
-        <p className="text-[#4A5745]/90 text-center max-w-2xl mx-auto mb-10 leading-relaxed text-sm sm:text-base">
+        <h2 className="text-3xl font-bold text-oasis-green-800 text-center mb-3 tracking-tight">{heading}</h2>
+        <p className="text-oasis-green-800/90 text-center max-w-2xl mx-auto mb-10 leading-relaxed text-sm sm:text-base">
           {intro}
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
@@ -59,13 +59,13 @@ export default function SolutionsExploreGrid({
             );
 
             const shell =
-              'group relative block overflow-hidden rounded-2xl sm:rounded-3xl border border-white/30 shadow-md outline-none transition-shadow hover:shadow-lg focus-visible:ring-2 focus-visible:ring-[#66C2BE] focus-visible:ring-offset-2 focus-visible:ring-offset-[#f8faf9]';
+              'group relative block overflow-hidden rounded-2xl sm:rounded-3xl border border-white/30 shadow-md outline-none transition-shadow hover:shadow-lg focus-visible:ring-2 focus-visible:ring-brand-link focus-visible:ring-offset-2 focus-visible:ring-offset-[#f8faf9]';
 
             if (isActive) {
               return (
                 <div
                   key={tile.href}
-                  className={`${shell} cursor-default ring-2 ring-[#66C2BE] ring-offset-2 ring-offset-[#f8faf9]`}
+                  className={`${shell} cursor-default ring-2 ring-brand-link ring-offset-2 ring-offset-[#f8faf9]`}
                   aria-current="page"
                   title="Current page"
                 >

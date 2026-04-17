@@ -48,10 +48,10 @@ function FeatureSceneIncidentTriaging({ pageKey }) {
   return (
     <ProductVisualFrame title="Incident triage">
       <div className="p-3">
-        <div className="mb-2 text-[11px] text-[#4A5745]/65">
+        <div className="mb-2 text-[11px] text-oasis-green-800/65">
           Scope: {ctx.app} - Owner: {ctx.persona}
         </div>
-        <div className="mb-2 grid grid-cols-[1fr_auto] border-b border-[#4A5745]/10 pb-1 text-[11px] font-semibold text-[#4A5745]/70">
+        <div className="mb-2 grid grid-cols-[1fr_auto] border-b border-oasis-green-800/10 pb-1 text-[11px] font-semibold text-oasis-green-800/70">
           <span>Incident</span>
           <span>State</span>
         </div>
@@ -62,7 +62,7 @@ function FeatureSceneIncidentTriaging({ pageKey }) {
             return (
               <motion.div
                 key={row.id}
-                className="grid grid-cols-[1fr_auto] gap-2 rounded-md border border-[#4A5745]/10 p-2"
+                className="grid grid-cols-[1fr_auto] gap-2 rounded-md border border-oasis-green-800/10 p-2"
                 initial={prefersReducedMotion ? false : { opacity: 0, y: 2 }}
                 animate={
                   prefersReducedMotion
@@ -84,11 +84,11 @@ function FeatureSceneIncidentTriaging({ pageKey }) {
                 }}
               >
                 <div>
-                  <div className="text-xs font-medium text-[#4A5745]">{row.title}</div>
-                  <div className="mt-1 text-[11px] text-[#4A5745]/70">#{row.id} - {row.severity}</div>
+                  <div className="text-xs font-medium text-oasis-green-800">{row.title}</div>
+                  <div className="mt-1 text-[11px] text-oasis-green-800/70">#{row.id} - {row.severity}</div>
                 </div>
                 <motion.span
-                  className="h-fit rounded border border-[#4A5745]/15 bg-[#f7faf9] px-2 py-0.5 text-[10px] font-medium text-[#4A5745]/80"
+                  className="h-fit rounded border border-oasis-green-800/15 bg-[#f7faf9] px-2 py-0.5 text-[10px] font-medium text-oasis-green-800/80"
                   animate={
                     prefersReducedMotion || !isActive
                       ? { opacity: 1, scale: 1 }
@@ -125,14 +125,14 @@ function FeatureSceneSessionGovernance({ pageKey }) {
   return (
     <ProductVisualFrame title="Session governance">
       <div className="space-y-2 p-3">
-        <div className="text-[11px] text-[#4A5745]/65">Active profile: {ctx.policy}</div>
+        <div className="text-[11px] text-oasis-green-800/65">Active profile: {ctx.policy}</div>
         {timeline.map((item, idx) => {
           const isGlow = idx === glowStep;
 
           return (
             <div key={item} className="flex items-start gap-2">
               <motion.span
-                className="mt-1 inline-flex h-2.5 w-2.5 flex-shrink-0 rounded-full border border-[#4A5745]/20 bg-[#d9eeea]"
+                className="mt-1 inline-flex h-2.5 w-2.5 flex-shrink-0 rounded-full border border-oasis-green-800/20 bg-[#d9eeea]"
                 animate={
                   prefersReducedMotion || !isGlow
                     ? { scale: 1, boxShadow: '0 0 0 0 rgba(102, 194, 190, 0)' }
@@ -152,7 +152,7 @@ function FeatureSceneSessionGovernance({ pageKey }) {
                 }
               />
               <motion.div
-                className="flex-1 rounded-md border border-[#4A5745]/10 px-2 py-1.5"
+                className="flex-1 rounded-md border border-oasis-green-800/10 px-2 py-1.5"
                 initial={prefersReducedMotion ? false : { opacity: 0, y: 2 }}
                 animate={
                   prefersReducedMotion
@@ -173,8 +173,8 @@ function FeatureSceneSessionGovernance({ pageKey }) {
                   boxShadow: { duration: 1.3, ease: subtleTransition.ease },
                 }}
               >
-                <div className="text-[11px] text-[#4A5745]/60">Step {idx + 1}</div>
-                <div className="text-xs text-[#4A5745]">{item}</div>
+                <div className="text-[11px] text-oasis-green-800/60">Step {idx + 1}</div>
+                <div className="text-xs text-oasis-green-800">{item}</div>
               </motion.div>
             </div>
           );
@@ -191,24 +191,24 @@ function FeatureSceneIdentityDlp({ pageKey }) {
   return (
     <ProductVisualFrame title="Identity + DLP">
       <div className="grid grid-cols-2 gap-2 p-3">
-        <div className="rounded-md border border-[#4A5745]/10 p-2">
-          <div className="text-[11px] font-semibold text-[#4A5745]/75">Identity gate</div>
-          <ul className="mt-1 space-y-1 text-[11px] text-[#4A5745]/80">
+        <div className="rounded-md border border-oasis-green-800/10 p-2">
+          <div className="text-[11px] font-semibold text-oasis-green-800/75">Identity gate</div>
+          <ul className="mt-1 space-y-1 text-[11px] text-oasis-green-800/80">
             <li>Okta SSO</li>
             <li>MFA verified</li>
             <li>Role: {ctx.persona}</li>
           </ul>
         </div>
-        <div className="rounded-md border border-[#4A5745]/10 p-2">
-          <div className="text-[11px] font-semibold text-[#4A5745]/75">Data policy</div>
-          <ul className="mt-1 space-y-1 text-[11px] text-[#4A5745]/80">
+        <div className="rounded-md border border-oasis-green-800/10 p-2">
+          <div className="text-[11px] font-semibold text-oasis-green-800/75">Data policy</div>
+          <ul className="mt-1 space-y-1 text-[11px] text-oasis-green-800/80">
             <li>Paste: inspect</li>
             <li>Download: restricted</li>
             <li>Upload: allowed</li>
           </ul>
         </div>
         <motion.div
-          className="col-span-2 rounded-md border border-[#4A5745]/10 bg-[#f8fbfa] p-2 text-[11px] text-[#4A5745]/80"
+          className="col-span-2 rounded-md border border-oasis-green-800/10 bg-[#f8fbfa] p-2 text-[11px] text-oasis-green-800/80"
           animate={
             prefersReducedMotion
               ? undefined
@@ -233,10 +233,10 @@ function FeatureScenePolicyAutomation({ pageKey }) {
   return (
     <ProductVisualFrame title="Policy automation">
       <div className="space-y-2 p-3">
-        <div className="rounded-md border border-[#4A5745]/10 bg-white p-2 text-xs text-[#4A5745]">
+        <div className="rounded-md border border-oasis-green-800/10 bg-white p-2 text-xs text-oasis-green-800">
           IF app scope = {ctx.app} AND data class = Confidential
         </div>
-        <div className="rounded-md border border-[#4A5745]/10 bg-white p-2 text-xs text-[#4A5745]">
+        <div className="rounded-md border border-oasis-green-800/10 bg-white p-2 text-xs text-oasis-green-800">
           THEN enforce {ctx.policy.toLowerCase()} + notify security
         </div>
         <motion.div
@@ -282,7 +282,7 @@ function FeatureSceneContractorAccess({ pageKey }) {
           return (
             <motion.div
               key={step}
-              className="rounded-md border border-[#4A5745]/10 bg-white p-2"
+              className="rounded-md border border-oasis-green-800/10 bg-white p-2"
               initial={prefersReducedMotion ? false : { opacity: 0, y: 2 }}
               animate={
                 prefersReducedMotion
@@ -316,9 +316,9 @@ function FeatureSceneContractorAccess({ pageKey }) {
                       : { duration: isCurrent ? 2.8 : 0.6, repeat: isCurrent ? Infinity : 0, ease: 'easeInOut' }
                   }
                 />
-                <div className="text-[10px] uppercase tracking-wide text-[#4A5745]/55">Step {index + 1}</div>
+                <div className="text-[10px] uppercase tracking-wide text-oasis-green-800/55">Step {index + 1}</div>
               </div>
-              <div className="text-xs text-[#4A5745]">{step}</div>
+              <div className="text-xs text-oasis-green-800">{step}</div>
             </motion.div>
           );
         })}

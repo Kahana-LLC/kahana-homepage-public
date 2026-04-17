@@ -281,7 +281,7 @@ function Section({ id, title, kicker, eyebrow, children, right }) {
               {title}
             </h2>
             {kicker && (
-              <p className="text-xl text-[#4A5745] mb-8 leading-relaxed font-medium">
+              <p className="text-xl text-oasis-green-800 mb-8 leading-relaxed font-medium">
                 {kicker}
               </p>
             )}
@@ -384,7 +384,7 @@ export default function SecurityRoadmapPage() {
                       alt="Oasis Enterprise Browser" 
                       className="w-full h-auto mb-4"
                     />
-                    <p className="text-sm text-[#4A5745] text-center">
+                    <p className="text-sm text-oasis-green-800 text-center">
                       Modern enterprise browser with integrated security
                     </p>
                   </div>
@@ -439,8 +439,8 @@ export default function SecurityRoadmapPage() {
                         <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
                       </svg>
                     </div>
-                    <h3 className="font-semibold text-[#011910] mb-2">Chromium Engine</h3>
-                    <p className="text-sm text-[#4A5745]">
+                    <h3 className="font-semibold text-oasis-green-900 mb-2">Chromium Engine</h3>
+                    <p className="text-sm text-oasis-green-800">
                       Built on the same foundation as Chrome and Edge, ensuring compatibility and performance
                     </p>
                   </div>
@@ -490,8 +490,8 @@ export default function SecurityRoadmapPage() {
                           <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
                         </svg>
                       </div>
-                      <h3 className="font-semibold text-[#011910] mb-2">Single Sign-On</h3>
-                      <p className="text-sm text-[#4A5745]">
+                      <h3 className="font-semibold text-oasis-green-900 mb-2">Single Sign-On</h3>
+                      <p className="text-sm text-oasis-green-800">
                         Seamless authentication with your existing identity providers
                       </p>
                     </div>
@@ -547,8 +547,8 @@ export default function SecurityRoadmapPage() {
                         <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
                       </svg>
                     </div>
-                    <h3 className="font-semibold text-[#011910] mb-2">Policy Management</h3>
-                    <p className="text-sm text-[#4A5745]">
+                    <h3 className="font-semibold text-oasis-green-900 mb-2">Policy Management</h3>
+                    <p className="text-sm text-oasis-green-800">
                       Granular controls for data loss prevention and access management
                     </p>
                   </div>
@@ -581,7 +581,7 @@ export default function SecurityRoadmapPage() {
               <div className="mt-4">
                 <Accordion title="Read more">
                   <div className="space-y-4">
-                    <h4 className="font-semibold text-[#011910]">Advanced Policy Management Features:</h4>
+                    <h4 className="font-semibold text-oasis-green-900">Advanced Policy Management Features:</h4>
                     <ul className="space-y-2 text-sm text-gray-700">
                       <li><strong>Policy Staging:</strong> Test policies in a controlled environment before deployment to ensure they work as expected without disrupting user workflows.</li>
                       <li><strong>Version Control:</strong> Track all policy changes with complete audit trails, allowing rollback to previous versions if issues arise.</li>
@@ -617,8 +617,8 @@ export default function SecurityRoadmapPage() {
                         <line x1="10" y1="9" x2="8" y2="9"/>
                       </svg>
                     </div>
-                    <h3 className="font-semibold text-[#011910] mb-2">Audit Logging</h3>
-                    <p className="text-sm text-[#4A5745]">
+                    <h3 className="font-semibold text-oasis-green-900 mb-2">Audit Logging</h3>
+                    <p className="text-sm text-oasis-green-800">
                       Comprehensive tracking of all user activities and security events
                     </p>
                   </div>
@@ -652,7 +652,7 @@ export default function SecurityRoadmapPage() {
                     <p className="text-sm text-gray-700">
                       Configurable retention policies ensure audit logs are maintained for the appropriate duration based on regulatory requirements and organizational needs. Support for both hot storage (immediate access) and cold storage (archived) with automated lifecycle management.
                     </p>
-                    <ul className="text-sm text-[#4A5745] space-y-1 ml-4">
+                    <ul className="text-sm text-oasis-green-800 space-y-1 ml-4">
                       <li>Flexible retention periods (30 days to 7+ years)</li>
                       <li>Automated archival and deletion policies</li>
                       <li>Compliance with GDPR, SOX, HIPAA requirements</li>
@@ -666,7 +666,7 @@ export default function SecurityRoadmapPage() {
                     <p className="text-sm text-gray-700">
                       Seamless integration with leading SIEM platforms including Splunk, QRadar, ArcSight, and Sentinel. Real-time log streaming and batch export capabilities ensure security teams have immediate access to audit data.
                     </p>
-                    <ul className="text-sm text-[#4A5745] space-y-1 ml-4">
+                    <ul className="text-sm text-oasis-green-800 space-y-1 ml-4">
                       <li>Real-time log streaming via syslog, API, or message queues</li>
                       <li>Standard formats: CEF, LEEF, JSON, CSV</li>
                       <li>Custom field mapping and data transformation</li>
@@ -680,7 +680,7 @@ export default function SecurityRoadmapPage() {
                     <p className="text-sm text-gray-700">
                       Comprehensive forensic capabilities enable detailed investigation of security incidents with complete user session reconstruction, timeline analysis, and evidence preservation for legal proceedings.
                     </p>
-                    <ul className="text-sm text-[#4A5745] space-y-1 ml-4">
+                    <ul className="text-sm text-oasis-green-800 space-y-1 ml-4">
                       <li>Complete user session reconstruction</li>
                       <li>Timeline analysis with millisecond precision</li>
                       <li>Immutable log storage with cryptographic integrity</li>
@@ -694,7 +694,7 @@ export default function SecurityRoadmapPage() {
                     <p className="text-sm text-gray-700">
                       Automated generation of compliance reports for various regulatory frameworks with customizable templates and scheduled delivery to stakeholders and auditors.
                     </p>
-                    <ul className="text-sm text-[#4A5745] space-y-1 ml-4">
+                    <ul className="text-sm text-oasis-green-800 space-y-1 ml-4">
                       <li>Pre-built templates for SOX, GDPR, HIPAA, PCI DSS</li>
                       <li>Custom report builder with drag-and-drop interface</li>
                       <li>Scheduled and on-demand report generation</li>
@@ -708,7 +708,7 @@ export default function SecurityRoadmapPage() {
                     <p className="text-sm text-gray-700">
                       Advanced timeline visualization tools help security teams understand the sequence of events during incidents, identify attack patterns, and correlate activities across multiple users and systems.
                     </p>
-                    <ul className="text-sm text-[#4A5745] space-y-1 ml-4">
+                    <ul className="text-sm text-oasis-green-800 space-y-1 ml-4">
                       <li>Interactive timeline visualization</li>
                       <li>Event correlation and pattern detection</li>
                       <li>Multi-user session analysis</li>
@@ -732,8 +732,8 @@ export default function SecurityRoadmapPage() {
                         <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 7.82 4 1.65 1.65 0 0 0 9 2.49V2a2 2 0 1 1 4 0v.09c0 .66.38 1.26 1 1.51.56.24 1.22.14 1.68-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06c-.47.47-.57 1.12-.33 1.68.25.62.85 1 1.51 1H21a2 2 0 1 1 0 4h-.09c-.66 0-1.26.38-1.51 1z"/>
                       </svg>
                     </div>
-                    <h3 className="font-semibold text-[#011910] mb-2">Centralized Control</h3>
-                    <p className="text-sm text-[#4A5745]">
+                    <h3 className="font-semibold text-oasis-green-900 mb-2">Centralized Control</h3>
+                    <p className="text-sm text-oasis-green-800">
                       Unified management console for enterprise-wide deployment
                     </p>
                   </div>
@@ -769,8 +769,8 @@ export default function SecurityRoadmapPage() {
                         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/>
                       </svg>
                     </div>
-                    <h3 className="font-semibold text-[#011910] mb-2">Zero Trust Security</h3>
-                    <p className="text-sm text-[#4A5745]">
+                    <h3 className="font-semibold text-oasis-green-900 mb-2">Zero Trust Security</h3>
+                    <p className="text-sm text-oasis-green-800">
                       Never trust, always verify - comprehensive security architecture
                     </p>
                   </div>
@@ -816,10 +816,10 @@ export default function SecurityRoadmapPage() {
               <h3 id="enhanced-csp-details" style={{ marginTop: 20, color: COLORS.primary, fontSize: '1.25rem', fontWeight: 600 }}>Enhanced CSP (Details + Examples)</h3>
               <Accordion title="Read more">
                 <div className="space-y-4">
-                  <h4 className="font-semibold text-[#011910]">Content Security Policy (CSP) Implementation:</h4>
+                  <h4 className="font-semibold text-oasis-green-900">Content Security Policy (CSP) Implementation:</h4>
                   <div className="space-y-3">
                     <div>
-                      <h5 className="font-medium text-[#011910]">Default CSP Directives:</h5>
+                      <h5 className="font-medium text-oasis-green-900">Default CSP Directives:</h5>
                       <div className="bg-gray-100 p-3 rounded text-sm font-mono">
                         <div>default-src 'self';</div>
                         <div>script-src 'self' 'unsafe-inline' https://trusted-cdn.com;</div>
@@ -829,11 +829,11 @@ export default function SecurityRoadmapPage() {
                       </div>
                     </div>
                     <div>
-                      <h5 className="font-medium text-[#011910]">Per-Application Overlays:</h5>
+                      <h5 className="font-medium text-oasis-green-900">Per-Application Overlays:</h5>
                       <p className="text-sm text-gray-700">Different CSP rules for different applications - banking apps get stricter policies than general web browsing.</p>
                     </div>
                     <div>
-                      <h5 className="font-medium text-[#011910]">Report-Only Mode:</h5>
+                      <h5 className="font-medium text-oasis-green-900">Report-Only Mode:</h5>
                       <p className="text-sm text-gray-700">Test CSP policies without blocking content, collecting violation reports to fine-tune rules before enforcement.</p>
                     </div>
                     <div className="bg-yellow-50 p-3 rounded-lg">
@@ -848,14 +848,14 @@ export default function SecurityRoadmapPage() {
               <h3 id="advanced-certificate-management-details" style={{ marginTop: 20, color: COLORS.primary, fontSize: '1.25rem', fontWeight: 600 }}>Advanced Certificate Management (Details)</h3>
               <Accordion title="Read more">
                 <div className="space-y-4">
-                  <h4 className="font-semibold text-[#011910]">Certificate Security Features:</h4>
+                  <h4 className="font-semibold text-oasis-green-900">Certificate Security Features:</h4>
                   <div className="space-y-3">
                     <div>
-                      <h5 className="font-medium text-[#011910]">Chain Validation:</h5>
+                      <h5 className="font-medium text-oasis-green-900">Chain Validation:</h5>
                       <p className="text-sm text-gray-700">Complete certificate chain validation from end-entity certificate to trusted root CA, ensuring no intermediate certificates are compromised.</p>
                     </div>
                     <div>
-                      <h5 className="font-medium text-[#011910]">Certificate Pinning Strategies:</h5>
+                      <h5 className="font-medium text-oasis-green-900">Certificate Pinning Strategies:</h5>
                       <ul className="text-sm text-gray-700 space-y-1 ml-4">
                         <li>Public key pinning for critical domains</li>
                         <li>SPKI pinning for enhanced security</li>
@@ -863,11 +863,11 @@ export default function SecurityRoadmapPage() {
                       </ul>
                     </div>
                     <div>
-                      <h5 className="font-medium text-[#011910]">Root Certificate Injection:</h5>
+                      <h5 className="font-medium text-oasis-green-900">Root Certificate Injection:</h5>
                       <p className="text-sm text-gray-700">Deploy custom root certificates for internal PKI infrastructure, ensuring seamless access to internal applications.</p>
                     </div>
                     <div>
-                      <h5 className="font-medium text-[#011910]">Certificate Transparency (CT) Monitoring:</h5>
+                      <h5 className="font-medium text-oasis-green-900">Certificate Transparency (CT) Monitoring:</h5>
                       <p className="text-sm text-gray-700">Monitor CT logs for unauthorized certificate issuance, detecting potential certificate-based attacks or misconfigurations.</p>
                     </div>
                     <div className="bg-green-50 p-3 rounded-lg">
@@ -892,8 +892,8 @@ export default function SecurityRoadmapPage() {
                         <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
                       </svg>
                     </div>
-                    <h3 className="font-semibold text-[#011910] mb-2">Productivity Focused</h3>
-                    <p className="text-sm text-[#4A5745]">
+                    <h3 className="font-semibold text-oasis-green-900 mb-2">Productivity Focused</h3>
+                    <p className="text-sm text-oasis-green-800">
                       Enhanced user experience without compromising security
                     </p>
                   </div>
@@ -930,8 +930,8 @@ export default function SecurityRoadmapPage() {
                         <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
                       </svg>
                     </div>
-                    <h3 className="font-semibold text-[#011910] mb-2">Hub Organization</h3>
-                    <p className="text-sm text-[#4A5745]">
+                    <h3 className="font-semibold text-oasis-green-900 mb-2">Hub Organization</h3>
+                    <p className="text-sm text-oasis-green-800">
                       Organized workspaces for different teams and projects
                     </p>
                   </div>
@@ -968,8 +968,8 @@ export default function SecurityRoadmapPage() {
                         <rect x="3" y="14" width="7" height="7"/>
                       </svg>
                     </div>
-                    <h3 className="font-semibold text-[#011910] mb-2">Multi-View</h3>
-                    <p className="text-sm text-[#4A5745]">
+                    <h3 className="font-semibold text-oasis-green-900 mb-2">Multi-View</h3>
+                    <p className="text-sm text-oasis-green-800">
                       Work with multiple applications simultaneously
                     </p>
                   </div>
@@ -1002,8 +1002,8 @@ export default function SecurityRoadmapPage() {
                         <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
                       </svg>
                     </div>
-                    <h3 className="font-semibold text-[#011910] mb-2">Smart Navigation</h3>
-                    <p className="text-sm text-[#4A5745]">
+                    <h3 className="font-semibold text-oasis-green-900 mb-2">Smart Navigation</h3>
+                    <p className="text-sm text-oasis-green-800">
                       Intelligent shortcuts and context-aware features
                     </p>
                   </div>
@@ -1036,8 +1036,8 @@ export default function SecurityRoadmapPage() {
                         <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
                       </svg>
                     </div>
-                    <h3 className="font-semibold text-[#011910] mb-2">AI Assistant</h3>
-                    <p className="text-sm text-[#4A5745]">
+                    <h3 className="font-semibold text-oasis-green-900 mb-2">AI Assistant</h3>
+                    <p className="text-sm text-oasis-green-800">
                       Privacy-aware intelligent assistance for productivity
                     </p>
                   </div>
@@ -1069,8 +1069,8 @@ export default function SecurityRoadmapPage() {
                         <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
                       </svg>
                     </div>
-                    <h3 className="font-semibold text-[#011910] mb-2">Technical Foundation</h3>
-                    <p className="text-sm text-[#4A5745]">
+                    <h3 className="font-semibold text-oasis-green-900 mb-2">Technical Foundation</h3>
+                    <p className="text-sm text-oasis-green-800">
                       Robust architecture built for enterprise scale
                     </p>
                   </div>
@@ -1110,8 +1110,8 @@ export default function SecurityRoadmapPage() {
                           <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
                         </svg>
                       </div>
-                      <h3 className="font-semibold text-[#011910] mb-2">Enterprise Use Cases</h3>
-                      <p className="text-sm text-[#4A5745]">
+                      <h3 className="font-semibold text-oasis-green-900 mb-2">Enterprise Use Cases</h3>
+                      <p className="text-sm text-oasis-green-800">
                         Real-world applications across industries
                       </p>
                     </div>
@@ -1134,7 +1134,7 @@ export default function SecurityRoadmapPage() {
               </p>
               <Accordion title="SaaS/Web Access">
                 <div className="space-y-4">
-                  <h4 className="font-semibold text-[#011910]">Secure SaaS Application Access:</h4>
+                  <h4 className="font-semibold text-oasis-green-900">Secure SaaS Application Access:</h4>
                   <div className="space-y-3">
                     <p className="text-sm text-gray-700">
                       <strong>Implementation:</strong> Deploy Oasis across your organization to provide secure access to cloud applications like Salesforce, Office 365, and custom web apps.
@@ -1149,7 +1149,7 @@ export default function SecurityRoadmapPage() {
               </Accordion>
               <Accordion title="Remote/Hybrid Protection">
                 <div className="space-y-4">
-                  <h4 className="font-semibold text-[#011910]">Browser-Native Security for Distributed Workforce:</h4>
+                  <h4 className="font-semibold text-oasis-green-900">Browser-Native Security for Distributed Workforce:</h4>
                   <div className="space-y-3">
                     <p className="text-sm text-gray-700">
                       Replace heavy endpoint agents and VDI solutions with browser-native security controls that work regardless of device or location.
@@ -1170,7 +1170,7 @@ export default function SecurityRoadmapPage() {
               </Accordion>
               <Accordion title="M&A and Third-Party Access">
                 <div className="space-y-4">
-                  <h4 className="font-semibold text-[#011910]">Rapid, Secure Access for Mergers and Third Parties:</h4>
+                  <h4 className="font-semibold text-oasis-green-900">Rapid, Secure Access for Mergers and Third Parties:</h4>
                   <div className="space-y-3">
                     <p className="text-sm text-gray-700">
                       Quickly provision secure access for acquired companies, contractors, and partners without complex network changes or trust relationships.
@@ -1198,8 +1198,8 @@ export default function SecurityRoadmapPage() {
                         <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
                       </svg>
                     </div>
-                    <h3 className="font-semibold text-[#011910] mb-2">Implementation</h3>
-                    <p className="text-sm text-[#4A5745]">
+                    <h3 className="font-semibold text-oasis-green-900 mb-2">Implementation</h3>
+                    <p className="text-sm text-oasis-green-800">
                       Structured deployment from planning to rollout
                     </p>
                   </div>
@@ -1236,8 +1236,8 @@ export default function SecurityRoadmapPage() {
                         <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
                       </svg>
                     </div>
-                    <h3 className="font-semibold text-[#011910] mb-2">ROI & Value</h3>
-                    <p className="text-sm text-[#4A5745]">
+                    <h3 className="font-semibold text-oasis-green-900 mb-2">ROI & Value</h3>
+                    <p className="text-sm text-oasis-green-800">
                       Measurable business impact and return on investment
                     </p>
                   </div>
@@ -1275,8 +1275,8 @@ export default function SecurityRoadmapPage() {
                           <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
                         </svg>
                       </div>
-                      <h3 className="font-semibold text-[#011910] mb-2">Competitive Edge</h3>
-                      <p className="text-sm text-[#4A5745]">
+                      <h3 className="font-semibold text-oasis-green-900 mb-2">Competitive Edge</h3>
+                      <p className="text-sm text-oasis-green-800">
                         Superior features and capabilities vs. competitors
                       </p>
                     </div>
@@ -1313,8 +1313,8 @@ export default function SecurityRoadmapPage() {
                         <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
                       </svg>
                     </div>
-                    <h3 className="font-semibold text-[#011910] mb-2">Compliance</h3>
-                    <p className="text-sm text-[#4A5745]">
+                    <h3 className="font-semibold text-oasis-green-900 mb-2">Compliance</h3>
+                    <p className="text-sm text-oasis-green-800">
                       Industry certifications and regulatory compliance
                     </p>
                   </div>
@@ -1354,8 +1354,8 @@ export default function SecurityRoadmapPage() {
                         <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
                       </svg>
                     </div>
-                    <h3 className="font-semibold text-[#011910] mb-2">Future Innovation</h3>
-                    <p className="text-sm text-[#4A5745]">
+                    <h3 className="font-semibold text-oasis-green-900 mb-2">Future Innovation</h3>
+                    <p className="text-sm text-oasis-green-800">
                       Continuous innovation and strategic R&D roadmap
                     </p>
                   </div>
@@ -1394,8 +1394,8 @@ export default function SecurityRoadmapPage() {
                         <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
                       </svg>
                     </div>
-                    <h3 className="font-semibold text-[#011910] mb-2">Buyer's Guide</h3>
-                    <p className="text-sm text-[#4A5745]">
+                    <h3 className="font-semibold text-oasis-green-900 mb-2">Buyer's Guide</h3>
+                    <p className="text-sm text-oasis-green-800">
                       Key questions to ask when evaluating solutions
                     </p>
                   </div>
@@ -1434,8 +1434,8 @@ export default function SecurityRoadmapPage() {
                         <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
                       </svg>
                     </div>
-                    <h3 className="font-semibold text-[#011910] mb-2">Pricing</h3>
-                    <p className="text-sm text-[#4A5745]">
+                    <h3 className="font-semibold text-oasis-green-900 mb-2">Pricing</h3>
+                    <p className="text-sm text-oasis-green-800">
                       Flexible pricing models that scale with your needs
                     </p>
                   </div>
@@ -1473,8 +1473,8 @@ export default function SecurityRoadmapPage() {
                           <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
                         </svg>
                       </div>
-                      <h3 className="font-semibold text-[#011910] mb-2">Take Action</h3>
-                      <p className="text-sm text-[#4A5745]">
+                      <h3 className="font-semibold text-oasis-green-900 mb-2">Take Action</h3>
+                      <p className="text-sm text-oasis-green-800">
                         Schedule a demo or get in touch to begin
                       </p>
                     </div>

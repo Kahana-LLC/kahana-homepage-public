@@ -208,7 +208,7 @@ export function OasisMockAssistantHero() {
           </div>
         </div>
       </div>
-      <div className="border-t border-black/5 bg-[#f8faf9] px-3 py-2">
+      <div className="border-t border-black/5 bg-oasis-green-50 px-3 py-2">
         <div
           className="flex items-center gap-2 rounded-[20px] border border-black/8 bg-white px-2 py-1.5 shadow-sm"
           style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.06)' }}
@@ -320,7 +320,7 @@ export function OasisMockConfirmModal() {
   const prefersReducedMotion = usePrefersReducedMotion();
 
   return (
-    <div className="relative rounded-2xl border border-[#4A5745]/15 bg-black/5 p-6 sm:p-8">
+    <div className="relative rounded-2xl border border-oasis-green-800/15 bg-black/5 p-6 sm:p-8">
       <motion.div
         className="mx-auto max-w-sm rounded-xl bg-white p-5 shadow-xl"
         style={{ fontFamily: 'system-ui, sans-serif' }}

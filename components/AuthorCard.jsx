@@ -22,7 +22,7 @@ export function AuthorHeader({ author, imageClassName, index }) {
         />
       </div>
       <div className="flex items-center gap-1.5">
-        <span className="text-sm font-medium text-[#4A5745]">
+        <span className="text-sm font-medium text-oasis-green-800">
           {author.name}
         </span>
         {author.linkedinProfile && (
@@ -30,14 +30,14 @@ export function AuthorHeader({ author, imageClassName, index }) {
             href={author.linkedinProfile}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[#728552] hover:text-[#788B59] transition-colors"
+            className="text-oasis-green-600 hover:text-oasis-green-500 transition-colors"
             title={`Connect with ${author.name} on LinkedIn`}
           >
             <FaLinkedin className="w-[14px] h-[14px]" />
           </a>
         )}
         {author.role && (
-          <span className="text-sm text-[#4A5745]">
+          <span className="text-sm text-oasis-green-800">
             • {author.role}
           </span>
         )}
@@ -105,7 +105,7 @@ export function AuthorBioCard({ author, imageClassName, index }) {
         </div>
         <div className="flex-1">
           <div className="flex items-center gap-2 mb-2">
-            <span className="font-bold text-lg text-[#4A5745]">
+            <span className="font-bold text-lg text-oasis-green-800">
               {author.name}
             </span>
             {author.linkedinProfile && (
@@ -113,7 +113,7 @@ export function AuthorBioCard({ author, imageClassName, index }) {
                 href={author.linkedinProfile}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#728552] hover:text-[#788B59] transition-colors"
+                className="text-oasis-green-600 hover:text-oasis-green-500 transition-colors"
                 title={`Connect with ${author.name} on LinkedIn`}
               >
                 <FaLinkedin className="w-4 h-4" />
@@ -121,12 +121,12 @@ export function AuthorBioCard({ author, imageClassName, index }) {
             )}
           </div>
           {author.role && (
-            <div className="text-sm font-medium text-[#4A5745] mb-4">
+            <div className="text-sm font-medium text-oasis-green-800 mb-4">
               {author.role}
             </div>
           )}
           {author.bio && (
-            <p className="text-[#4A5745] text-base leading-relaxed">
+            <p className="text-oasis-green-800 text-base leading-relaxed">
               {author.bio}
             </p>
           )}
@@ -180,7 +180,7 @@ export function AuthorReference({ author, imageClassName }) {
         style={{ width: '24px', height: '24px', objectFit: 'cover' }}
         priority
       />
-      <span className="text-sm text-[#4A5745]">
+      <span className="text-sm text-oasis-green-800">
         {author.name}
       </span>
     </div>

@@ -96,8 +96,8 @@ const CoreArchitectureSection = () => {
 
               {/* Security Layer */}
               <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-[#66C2BE]/10 rounded-lg flex items-center justify-center">
-                  <svg className="w-6 h-6 text-[#66C2BE]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-12 h-12 bg-brand-link/10 rounded-lg flex items-center justify-center">
+                  <svg className="w-6 h-6 text-brand-link" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                   </svg>
                 </div>
@@ -109,8 +109,8 @@ const CoreArchitectureSection = () => {
 
               {/* Data Layer */}
               <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-[#66C2BE]/10 rounded-lg flex items-center justify-center">
-                  <svg className="w-6 h-6 text-[#66C2BE]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-12 h-12 bg-brand-link/10 rounded-lg flex items-center justify-center">
+                  <svg className="w-6 h-6 text-brand-link" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
                   </svg>
                 </div>

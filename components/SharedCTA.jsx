@@ -7,45 +7,85 @@ const SharedCTA = ({
   buttonText = "Get in Touch", 
   buttonLink = "/contact",
   buttonVariant = "primary", // primary or secondary
-  className = "" // Additional classes for the section
+  className = "", // Additional classes for the section
+  sectionId,
+  primaryLabel,
+  primaryHref,
+  secondaryLabel,
+  secondaryHref,
+  primaryOnClick,
+  secondaryOnClick,
+  buttonOnClick,
 }) => {
-  const buttonStyles = {
-    primary: 'btn-primary no-underline hover:no-underline focus:no-underline',
-    secondary: 'btn-secondary no-underline hover:no-underline focus:no-underline',
+  const pillVariantClass = {
+    primary: 'shared-cta-pill--primary',
+    secondary: 'shared-cta-pill--secondary',
   };
 
-  const buttonInlineStyles = {
-    primary: {},
-    secondary: {}
-  };
+  const hasExplicitButtons = Boolean(primaryHref || secondaryHref);
 
   return (
-    <section 
-      className={`w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] py-12 sm:py-16 md:py-20 lg:py-28 mb-0 bg-[#F8FAF2] ${className}`}
+    <section
+      id={sectionId}
+      className={`shared-cta-section w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] py-10 sm:py-14 md:py-18 lg:py-24 mb-0 bg-white ${className}`}
     >
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4 sm:mb-6">
+      <div className="shared-cta-frame mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
+        <div className="shared-cta-card mx-auto text-center">
+          <h2 className="shared-cta-title">
           {title}
-        </h2>
-        <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 lg:mb-10 max-w-3xl mx-auto leading-relaxed font-bold" style={{ color: '#313A00' }}>
+          </h2>
+          <p className="shared-cta-description">
           {description}
-        </p>
-        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
-          {buttonLink && (
-            <Link href={buttonLink} className={`${buttonStyles[buttonVariant]} w-full sm:w-auto`}>
-              {buttonText}
-            </Link>
-          )}
-          {!buttonLink && (
-            <>
-              <Link href="/schedule-demo" className="btn-primary btn-lg no-underline hover:no-underline focus:no-underline w-full sm:w-auto">
-                Schedule a Demo
+          </p>
+          <div className="shared-cta-actions">
+            {hasExplicitButtons ? (
+              <>
+                {primaryHref && (
+                  <Link
+                    href={primaryHref}
+                    onClick={primaryOnClick}
+                    className="shared-cta-pill shared-cta-pill--primary w-full sm:w-auto no-underline hover:no-underline focus:no-underline"
+                  >
+                    {primaryLabel || "Schedule a Demo"}
+                  </Link>
+                )}
+                {secondaryHref && (
+                  <Link
+                    href={secondaryHref}
+                    onClick={secondaryOnClick}
+                    className="shared-cta-pill shared-cta-pill--secondary w-full sm:w-auto no-underline hover:no-underline focus:no-underline"
+                  >
+                    {secondaryLabel || "Get in Touch"}
+                  </Link>
+                )}
+              </>
+            ) : buttonLink ? (
+              <Link
+                href={buttonLink}
+                onClick={buttonOnClick}
+                className={`shared-cta-pill ${pillVariantClass[buttonVariant] || pillVariantClass.primary} w-full sm:w-auto no-underline hover:no-underline focus:no-underline`}
+              >
+                {buttonText}
               </Link>
-              <Link href="/contact" className="btn-secondary btn-lg no-underline hover:no-underline focus:no-underline w-full sm:w-auto">
-                Get in Touch
-              </Link>
-            </>
-          )}
+            ) : (
+              <>
+                <Link
+                  href="/schedule-demo"
+                  onClick={primaryOnClick}
+                  className="shared-cta-pill shared-cta-pill--primary w-full sm:w-auto no-underline hover:no-underline focus:no-underline"
+                >
+                  Schedule a Demo
+                </Link>
+                <Link
+                  href="/contact"
+                  onClick={secondaryOnClick}
+                  className="shared-cta-pill shared-cta-pill--secondary w-full sm:w-auto no-underline hover:no-underline focus:no-underline"
+                >
+                  Get in Touch
+                </Link>
+              </>
+            )}
+          </div>
         </div>
       </div>
     </section>

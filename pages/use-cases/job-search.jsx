@@ -34,10 +34,10 @@ export default function JobSearchWaitlist() {
     <div className="w-full">
       <div className="bg-white rounded-xl p-8 md:p-12 text-center shadow-xl" style={{ border: '2px solid #7A9200' }}>
         <div className="max-w-2xl mx-auto">
-          <h3 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: '#4A5745' }}>
+          <h3 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: '#495800' }}>
             Join the Beta Program
           </h3>
-          <p className="text-xl mb-8" style={{ color: '#4A5745' }}>
+          <p className="text-xl mb-8" style={{ color: '#495800' }}>
             Get early access to Oasis before everyone else.
           </p>
           <Link
@@ -73,10 +73,10 @@ export default function JobSearchWaitlist() {
               {/* Hero Section */}
               <div className="text-center mb-12">
                 <h2 className="text-base font-semibold leading-7 mb-3" style={{ color: '#7A9200' }}>Elevate your job search experience</h2>
-                <h1 className="text-4xl font-bold sm:text-5xl" style={{ color: '#4A5745' }}>
+                <h1 className="text-4xl font-bold sm:text-5xl" style={{ color: '#495800' }}>
                   Oasis for Job Seeking
                 </h1>
-                <p className="mt-6 text-xl" style={{ color: '#4A5745' }}>
+                <p className="mt-6 text-xl" style={{ color: '#495800' }}>
                   Experience an elegant and calming environment designed to help you navigate your job search with ease. Oasis creates a beautiful, ergonomic browsing experience that brings focus and clarity to your career journey.
                 </p>
               </div>

@@ -7,7 +7,7 @@ const OasisMockConfirmModal = dynamic(
   {
     ssr: false,
     loading: () => (
-      <div className="mx-auto min-h-[280px] max-w-lg rounded-xl border border-[#4A5745]/10 bg-[#f8faf9] animate-pulse" aria-hidden />
+      <div className="mx-auto min-h-[280px] max-w-lg rounded-xl border border-oasis-green-800/10 bg-oasis-green-50 animate-pulse" aria-hidden />
     ),
   }
 );
@@ -41,8 +41,8 @@ export default function OasisConfirmationsFeaturePage() {
       backHref="/products/oasis-browser#confirmations"
       backLabel="← Back to Oasis Browser (Confirmations)"
     >
-      <section className="border-b border-[#4A5745]/8 bg-white py-12 md:py-16">
-        <div className="mx-auto max-w-3xl px-4 space-y-5 text-[#4A5745]/95 leading-relaxed sm:px-6 lg:px-8">
+      <section className="border-b border-oasis-green-800/8 bg-white py-12 md:py-16">
+        <div className="mx-auto max-w-3xl px-4 space-y-5 text-oasis-green-800/95 leading-relaxed sm:px-6 lg:px-8">
           <p>
             When a suggestion graduates from chat into action (closing tabs, changing settings, or anything else you would
             care about if it happened while you looked away), Oasis can ask in plain language first. You get the human
@@ -53,13 +53,13 @@ export default function OasisConfirmationsFeaturePage() {
             That pairing is intentional: narrative for speed-reading, syntax for precision. Approve, cancel, or ask for
             a different approach without playing whack-a-mole with silent failures.
           </p>
-          <p className="text-sm text-[#4A5745]/80">
+          <p className="text-sm text-oasis-green-800/80">
             The modal below is a mock. Real copy, icons, and which actions require confirmation evolve with product and
             policy, and some environments may route certain actions through your org&apos;s tooling instead.
           </p>
         </div>
       </section>
-      <section className="flex justify-center bg-[#f8faf9] py-12 md:py-16">
+      <section className="flex justify-center bg-oasis-green-50 py-12 md:py-16">
         <div className="w-full max-w-xl px-4 sm:px-6 lg:px-8">
           <OasisMockConfirmModal />
         </div>

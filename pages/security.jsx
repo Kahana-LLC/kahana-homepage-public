@@ -31,7 +31,7 @@ export default function Security() {
         <div className="bg-gradient-to-b from-[#F3F8E4] to-white py-16 sm:py-24">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-8">
-              <p className="text-sm font-semibold text-[#4A5745] uppercase tracking-wide mb-4">
+              <p className="text-sm font-semibold text-oasis-green-800 uppercase tracking-wide mb-4">
                 Security @ Kahana
               </p>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#313A00] mb-6">

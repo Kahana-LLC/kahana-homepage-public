@@ -17,7 +17,7 @@ const PRODUCT_LINKS = [
   { href: '/oasis-pricing', label: 'Pricing' },
   { href: '/products/oasis-browser', label: 'Oasis Browser' },
   { href: '/products/oasis-enterprise-browser', label: 'Oasis Enterprise Browser' },
-  { href: '/products/oasis-browser', label: 'Features' },
+  { href: '/features', label: 'Features' },
 ];
 
 const COMPANY_LINKS = [
@@ -238,7 +238,7 @@ function FooterContent() {
                   onClick={() => toggleSection('product')}
                   aria-expanded={openSection === 'product'}
                 >
-                  <span className="text-base font-semibold text-[#011910]">Product</span>
+                  <span className="text-base font-semibold text-oasis-green-900">Product</span>
                   <AccordionChevron open={openSection === 'product'} />
                 </button>
                 {sectionOpen('product') && (
@@ -255,7 +255,7 @@ function FooterContent() {
                   onClick={() => toggleSection('company')}
                   aria-expanded={openSection === 'company'}
                 >
-                  <span className="text-base font-semibold text-[#011910]">Company</span>
+                  <span className="text-base font-semibold text-oasis-green-900">Company</span>
                   <AccordionChevron open={openSection === 'company'} />
                 </button>
                 {sectionOpen('company') && (
@@ -272,7 +272,7 @@ function FooterContent() {
                   onClick={() => toggleSection('resources')}
                   aria-expanded={openSection === 'resources'}
                 >
-                  <span className="text-base font-semibold text-[#011910]">Resources</span>
+                  <span className="text-base font-semibold text-oasis-green-900">Resources</span>
                   <AccordionChevron open={openSection === 'resources'} />
                 </button>
                 {sectionOpen('resources') && (
@@ -289,7 +289,7 @@ function FooterContent() {
                   onClick={() => toggleSection('useCases')}
                   aria-expanded={openSection === 'useCases'}
                 >
-                  <span className="text-base font-semibold text-[#011910]">Use cases</span>
+                  <span className="text-base font-semibold text-oasis-green-900">Use cases</span>
                   <AccordionChevron open={openSection === 'useCases'} />
                 </button>
                 {sectionOpen('useCases') && (
@@ -306,7 +306,7 @@ function FooterContent() {
                   onClick={() => toggleSection('learn')}
                   aria-expanded={openSection === 'learn'}
                 >
-                  <span className="text-base font-semibold text-[#011910]">Learn</span>
+                  <span className="text-base font-semibold text-oasis-green-900">Learn</span>
                   <AccordionChevron open={openSection === 'learn'} />
                 </button>
                 {sectionOpen('learn') && (
@@ -323,7 +323,7 @@ function FooterContent() {
                   onClick={() => toggleSection('markets')}
                   aria-expanded={openSection === 'markets'}
                 >
-                  <span className="text-base font-semibold text-[#011910]">Markets</span>
+                  <span className="text-base font-semibold text-oasis-green-900">Markets</span>
                   <AccordionChevron open={openSection === 'markets'} />
                 </button>
                 {sectionOpen('markets') && (
@@ -340,7 +340,7 @@ function FooterContent() {
                   onClick={() => toggleSection('legal')}
                   aria-expanded={openSection === 'legal'}
                 >
-                  <span className="text-base font-semibold text-[#011910]">Legal &amp; social</span>
+                  <span className="text-base font-semibold text-oasis-green-900">Legal &amp; social</span>
                   <AccordionChevron open={openSection === 'legal'} />
                 </button>
                 {sectionOpen('legal') && (

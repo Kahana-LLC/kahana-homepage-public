@@ -274,11 +274,11 @@ export default function WebApplication() {
       <section className="bg-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h2 className="text-base font-semibold leading-7 text-[#728552] mb-3">Web Application</h2>
-            <h1 className="text-5xl font-bold text-[#4A5745] mb-6">
+            <h2 className="text-base font-semibold leading-7 text-oasis-green-600 mb-3">Web Application</h2>
+            <h1 className="text-5xl font-bold text-oasis-green-800 mb-6">
               Organize Your Best Ideas
             </h1>
-            <p className="text-xl text-[#4A5745] max-w-3xl mx-auto mb-8">
+            <p className="text-xl text-oasis-green-800 max-w-3xl mx-auto mb-8">
               A simple platform to help you stay organized, productive, and grow your projects. Keep your hubs private, share them publicly, or monetize - it's your space to bring your ideas to life.
             </p>
             <Link href="/pricing" className="btn-primary inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline">
@@ -291,7 +291,7 @@ export default function WebApplication() {
       {/* Step Flow Chart Section */}
       <section className="bg-gradient-to-br from-[#F8FAF2] via-white to-[#F0F4E8] py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-[#4A5745] text-center mb-12">
+          <h2 className="text-3xl font-bold text-oasis-green-800 text-center mb-12">
             How It Works
           </h2>
           <div className="max-w-6xl mx-auto">
@@ -366,7 +366,7 @@ export default function WebApplication() {
                     </h3>
                     
                     {/* Description */}
-                    <p className="text-sm text-[#4A5745] flex-grow">
+                    <p className="text-sm text-oasis-green-800 flex-grow">
                       {item.description}
                     </p>
                   </div>
@@ -380,7 +380,7 @@ export default function WebApplication() {
       {/* Features Section */}
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-[#4A5745] text-center mb-12">
+          <h2 className="text-3xl font-bold text-oasis-green-800 text-center mb-12">
             Key Features
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
@@ -439,14 +439,14 @@ export default function WebApplication() {
                   {feature.details.map((detail, dIndex) => (
                     <div 
                       key={dIndex} 
-                      className="text-sm text-[#4A5745] text-left py-2 px-3 rounded-lg bg-[#F8FAF2]"
+                      className="text-sm text-oasis-green-800 text-left py-2 px-3 rounded-lg bg-[#F8FAF2]"
                     >
                       {detail}
                     </div>
                   ))}
                   {feature.stripePowered && (
                     <div className="mt-3 pt-3 border-t border-gray-200">
-                      <div className="flex items-center gap-2 text-xs text-[#4A5745]">
+                      <div className="flex items-center gap-2 text-xs text-oasis-green-800">
                         <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
                           <path d="M13.976 9.15c-2.172-.806-3.356-1.426-3.356-2.409 0-.831.683-1.305 1.901-1.305 2.227 0 4.515.858 6.09 1.631l.89-5.494C18.252.975 15.697 0 12.165 0 9.667 0 7.589.654 6.104 1.872 4.56 3.147 3.757 4.992 3.757 7.218c0 2.462 1.899 4.635 5.303 6.076 2.449.92 3.63 1.574 3.63 2.583 0 .98-.84 1.545-2.354 1.545-1.875 0-4.965-.921-6.99-2.109l-.9 5.555C3.394 22.99 6.309 24 9.705 24c2.42 0 4.366-.624 5.79-1.688 1.613-1.18 2.404-3.01 2.404-5.234 0-2.52-1.893-4.717-5.323-6.128z"/>
                         </svg>
@@ -464,7 +464,7 @@ export default function WebApplication() {
       {/* Benefits Section - Animated Carousel */}
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-[#4A5745] text-center mb-12">
+          <h2 className="text-3xl font-bold text-oasis-green-800 text-center mb-12">
             Why Choose Kahana?
           </h2>
           
@@ -529,7 +529,7 @@ export default function WebApplication() {
                       
                       {/* Description */}
                       <p className={`text-base md:text-lg mb-6 text-left leading-relaxed transition-all duration-500 ${
-                        index === currentBenefitIndex ? 'text-[#4A5745]' : 'text-gray-400'
+                        index === currentBenefitIndex ? 'text-oasis-green-800' : 'text-gray-400'
                       }`}>
                         {benefit.description}
                       </p>
@@ -541,7 +541,7 @@ export default function WebApplication() {
                             key={dIndex} 
                             className={`text-base md:text-lg text-left py-3 px-4 rounded-lg transition-all duration-500 ${
                               index === currentBenefitIndex 
-                                ? 'bg-[#F8FAF2] text-[#4A5745]' 
+                                ? 'bg-[#F8FAF2] text-oasis-green-800' 
                                 : 'bg-gray-50 text-gray-400'
                             }`}
                           >
@@ -553,7 +553,7 @@ export default function WebApplication() {
                             index === currentBenefitIndex ? 'border-gray-200' : 'border-gray-100'
                           }`}>
                             <div className={`flex items-center gap-2 text-sm transition-all duration-500 ${
-                              index === currentBenefitIndex ? 'text-[#4A5745]' : 'text-gray-400'
+                              index === currentBenefitIndex ? 'text-oasis-green-800' : 'text-gray-400'
                             }`}>
                               <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M13.976 9.15c-2.172-.806-3.356-1.426-3.356-2.409 0-.831.683-1.305 1.901-1.305 2.227 0 4.515.858 6.09 1.631l.89-5.494C18.252.975 15.697 0 12.165 0 9.667 0 7.589.654 6.104 1.872 4.56 3.147 3.757 4.992 3.757 7.218c0 2.462 1.899 4.635 5.303 6.076 2.449.92 3.63 1.574 3.63 2.583 0 .98-.84 1.545-2.354 1.545-1.875 0-4.965-.921-6.99-2.109l-.9 5.555C3.394 22.99 6.309 24 9.705 24c2.42 0 4.366-.624 5.79-1.688 1.613-1.18 2.404-3.01 2.404-5.234 0-2.52-1.893-4.717-5.323-6.128z"/>
@@ -591,7 +591,7 @@ export default function WebApplication() {
       {/* Use Cases Section */}
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-[#4A5745] text-center mb-12">
+          <h2 className="text-3xl font-bold text-oasis-green-800 text-center mb-12">
             Perfect For
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
@@ -653,7 +653,7 @@ export default function WebApplication() {
       {/* Technical Features Section */}
       <section className="bg-gradient-to-br from-[#F8FAF2] via-white to-[#F0F4E8] py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-[#4A5745] text-center mb-12">
+          <h2 className="text-3xl font-bold text-oasis-green-800 text-center mb-12">
             Built For You
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">

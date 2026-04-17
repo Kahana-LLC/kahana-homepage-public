@@ -6,6 +6,7 @@ import SEO from '../../components/SEO';
 import { getCloudinaryImageUrl } from '../../utils/cloudinary-mapper';
 import OasisProductHero from '../../components/products/OasisProductHero';
 import OasisBrowserFeatureVisuals from '../../components/products/oasis/OasisBrowserFeatureVisuals';
+import SharedCTA from '../../components/SharedCTA';
 
 const heroDescription =
   'Oasis is a browser with a built-in AI assistant that can plan, search, and take action on your tabs, history, and pages, not just chat beside them. Use your voice when you want speed, and import from your old browser so switching takes seconds, not a weekend.';
@@ -97,30 +98,14 @@ export default function OasisBrowser() {
 
       <OasisBrowserFeatureVisuals />
 
-      <section className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] py-12 sm:py-16 md:py-20 lg:py-28 mb-0 bg-[#F8FAF2]">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4 sm:mb-6">
-            Ready to try Oasis?
-          </h2>
-          <p className="text-xl text-[#4A5745] mb-6 sm:mb-8 lg:mb-10 max-w-3xl mx-auto leading-relaxed">
-            Download via pricing, or reach out if you have questions about Oasis for personal use.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
-            <Link
-              href="/oasis-pricing"
-              className="btn-primary inline-flex items-center justify-center px-6 sm:px-8 lg:px-10 py-3 sm:py-4 text-sm sm:text-base lg:text-lg font-bold no-underline hover:no-underline focus:no-underline w-full sm:w-auto"
-            >
-              Download
-            </Link>
-            <Link
-              href="/contact"
-              className="btn-secondary inline-flex items-center justify-center px-6 sm:px-8 lg:px-10 py-3 sm:py-4 text-sm sm:text-base lg:text-lg font-bold no-underline hover:no-underline focus:no-underline w-full sm:w-auto"
-            >
-              Get in touch
-            </Link>
-          </div>
-        </div>
-      </section>
+      <SharedCTA
+        title="Ready to try Oasis?"
+        description="Download via pricing, or reach out if you have questions about Oasis for personal use."
+        primaryLabel="Download"
+        primaryHref="/oasis-pricing"
+        secondaryLabel="Get in touch"
+        secondaryHref="/contact"
+      />
     </>
   );
 }

@@ -4,6 +4,7 @@ import Script from 'next/script';
 import Link from 'next/link';
 import SEO from '../../components/SEO';
 import FeaturedBlogSection from '../../components/FeaturedBlogSection';
+import SharedCTA from '../../components/SharedCTA';
 import { blogIndex } from '../../data/blog-index';
 import { normalizeBlogCategories } from '../../utils/blog-helpers';
 
@@ -226,14 +227,14 @@ export default function Finance({ financeBlogs }) {
         `}
       </Script>
 
-      <section className="bg-gradient-to-b from-[#E3DFF1]/20 via-[#8CB7D0]/10 to-white py-20">
+      <section className="bg-gradient-to-b from-oasis-blue-100/20 via-oasis-blue-300/10 to-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h2 className="text-base font-semibold leading-7 text-[#66C2BE] mb-3">Financial services</h2>
-            <h1 className="text-5xl font-bold text-[#4A5745] mb-6">
+            <h2 className="text-base font-semibold leading-7 text-brand-link mb-3">Financial services</h2>
+            <h1 className="text-5xl font-bold text-oasis-green-800 mb-6">
               Secure SaaS access for financial services
             </h1>
-            <p className="text-xl text-[#4A5745] max-w-3xl mx-auto mb-8 leading-relaxed">
+            <p className="text-xl text-oasis-green-800 max-w-3xl mx-auto mb-8 leading-relaxed">
               Client and back-office workflows move through SaaS in the browser on mixed endpoints. Oasis is a managed enterprise browser: session-level access and data rules align to your IdP and DLP without laptop provisioning as the only trusted pattern.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -250,10 +251,10 @@ export default function Finance({ financeBlogs }) {
 
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-[#4A5745] text-center mb-12">
+          <h2 className="text-3xl font-bold text-oasis-green-800 text-center mb-12">
             Why browser governance matters in financial services
           </h2>
-          <p className="text-[#4A5745] text-center mb-8 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-oasis-green-800 text-center mb-8 max-w-3xl mx-auto leading-relaxed">
             Industry data highlights ransomware, browser risk, and breach cost pressure. The pattern behind it is familiar: sensitive work happens in the browser on a mix of firm-owned and third-party devices. Governing the session closes gaps that endpoint-only approaches often leave open.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto">
@@ -265,19 +266,19 @@ export default function Finance({ financeBlogs }) {
                 <div
                   key={idx}
                   className={[
-                    'font-sans bg-white rounded-xl border border-[#4A5745]/10 shadow-sm p-6 flex flex-col transition-colors hover:border-[#66C2BE]/35 hover:shadow-md',
+                    'font-sans bg-white rounded-xl border border-oasis-green-800/10 shadow-sm p-6 flex flex-col transition-colors hover:border-brand-link/35 hover:shadow-md',
                     isLastOdd ? 'md:col-span-2 md:max-w-md md:mx-auto' : '',
                   ]
                     .filter(Boolean)
                     .join(' ')}
                 >
-                  <div className="text-3xl font-bold tracking-tight text-[#4A5745] mb-2 tabular-nums">
+                  <div className="text-3xl font-bold tracking-tight text-oasis-green-800 mb-2 tabular-nums">
                     {metric.value}
                   </div>
-                  <div className="text-sm font-semibold uppercase tracking-wide text-[#4A5745]/85 mb-1">
+                  <div className="text-sm font-semibold uppercase tracking-wide text-oasis-green-800/85 mb-1">
                     {metric.label}
                   </div>
-                  <div className="text-sm text-[#4A5745]/90 leading-relaxed mb-3">
+                  <div className="text-sm text-oasis-green-800/90 leading-relaxed mb-3">
                     {metric.insight}
                   </div>
                   {metric.source && (
@@ -285,7 +286,7 @@ export default function Finance({ financeBlogs }) {
                       href={metric.source.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-auto text-xs text-[#4A5745]/65 no-underline underline-offset-2 hover:text-[#66C2BE] hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#66C2BE]"
+                      className="mt-auto text-xs text-oasis-green-800/65 no-underline underline-offset-2 hover:text-brand-link-hover hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-link"
                     >
                       Source: {metric.source.label}
                     </a>
@@ -297,19 +298,19 @@ export default function Finance({ financeBlogs }) {
         </div>
       </section>
 
-      <section className="bg-[#f8faf9] py-16 md:py-20 border-y border-[#4A5745]/8">
+      <section className="bg-oasis-green-50 py-16 md:py-20 border-y border-oasis-green-800/8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-[#4A5745] text-center mb-12 tracking-tight">
+          <h2 className="text-3xl font-bold text-oasis-green-800 text-center mb-12 tracking-tight">
             What Oasis delivers for financial services
           </h2>
-          <p className="text-[#4A5745]/95 text-center mb-10 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-oasis-green-800/95 text-center mb-10 max-w-3xl mx-auto leading-relaxed">
             Oasis is a managed enterprise browser, a control layer for SaaS-centric work. Policies travel with the session, connect to your identity and DLP stack, and keep contractor and partner access practical without leaning on laptops or VDI for every rollout.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
             {securityFeatures.map((feature, index) => (
               <div
                 key={index}
-                className="bg-white rounded-xl border border-[#4A5745]/10 p-6 md:p-7 shadow-sm transition-all duration-200 hover:border-kahana-primary-800/30 hover:shadow-md"
+                className="bg-white rounded-xl border border-oasis-green-800/10 p-6 md:p-7 shadow-sm transition-all duration-200 hover:border-kahana-primary-800/30 hover:shadow-md"
               >
                 <div className="flex gap-4 mb-4">
                   <div
@@ -320,16 +321,16 @@ export default function Finance({ financeBlogs }) {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                     </svg>
                   </div>
-                  <h3 className="text-base md:text-lg font-semibold text-[#4A5745] leading-snug tracking-tight pt-1.5">
+                  <h3 className="text-base md:text-lg font-semibold text-oasis-green-800 leading-snug tracking-tight pt-1.5">
                     {feature.title}
                   </h3>
                 </div>
-                <p className="text-sm text-[#4A5745]/90 leading-relaxed mb-5 border-l-2 border-kahana-primary-800/25 pl-4">
+                <p className="text-sm text-oasis-green-800/90 leading-relaxed mb-5 border-l-2 border-kahana-primary-800/25 pl-4">
                   {feature.description}
                 </p>
                 <ul className="space-y-2.5">
                   {feature.details.map((detail, dIndex) => (
-                    <li key={dIndex} className="flex gap-3 text-sm text-[#4A5745]/95 leading-relaxed">
+                    <li key={dIndex} className="flex gap-3 text-sm text-oasis-green-800/95 leading-relaxed">
                       <span
                         className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-kahana-primary-700"
                         aria-hidden
@@ -346,17 +347,17 @@ export default function Finance({ financeBlogs }) {
 
       <section className="bg-white py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-[#4A5745] text-center mb-10 tracking-tight">
+          <h2 className="text-3xl font-bold text-oasis-green-800 text-center mb-10 tracking-tight">
             Outcomes security and technology leaders care about
           </h2>
-          <p className="text-[#4A5745]/95 text-center mb-10 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-oasis-green-800/95 text-center mb-10 max-w-3xl mx-auto leading-relaxed">
             Directional themes aligned to how institutions scale people and partners without letting device logistics become the bottleneck. Specific timelines and savings depend on your environment and scope.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-8">
             {industryBenefits.map((benefit, index) => (
               <div
                 key={index}
-                className="bg-white rounded-xl border border-[#4A5745]/10 p-6 md:p-7 shadow-sm transition-all duration-200 hover:border-kahana-primary-800/30 hover:shadow-md"
+                className="bg-white rounded-xl border border-oasis-green-800/10 p-6 md:p-7 shadow-sm transition-all duration-200 hover:border-kahana-primary-800/30 hover:shadow-md"
               >
                 <div className="flex gap-4 mb-4">
                   <div
@@ -365,16 +366,16 @@ export default function Finance({ financeBlogs }) {
                   >
                     {benefit.icon}
                   </div>
-                  <h3 className="text-base md:text-lg font-semibold text-[#4A5745] leading-snug tracking-tight pt-1.5">
+                  <h3 className="text-base md:text-lg font-semibold text-oasis-green-800 leading-snug tracking-tight pt-1.5">
                     {benefit.title}
                   </h3>
                 </div>
                 {benefit.stat != null && benefit.statLabel != null && (
                   <div className="mb-4">
-                    <div className="text-2xl font-bold tracking-tight text-[#4A5745] tabular-nums mb-1">
+                    <div className="text-2xl font-bold tracking-tight text-oasis-green-800 tabular-nums mb-1">
                       {benefit.stat}
                     </div>
-                    <div className="text-sm text-[#4A5745]/85">
+                    <div className="text-sm text-oasis-green-800/85">
                       {benefit.statLabel}
                     </div>
                   </div>
@@ -384,12 +385,12 @@ export default function Finance({ financeBlogs }) {
                     href={benefit.source.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mb-3 block text-xs text-[#4A5745]/65 no-underline underline-offset-2 hover:text-kahana-primary-700 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-kahana-primary-700"
+                    className="mb-3 block text-xs text-oasis-green-800/65 no-underline underline-offset-2 hover:text-kahana-primary-700 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-kahana-primary-700"
                   >
                     Source: {benefit.source.label}
                   </a>
                 )}
-                <p className="text-sm text-[#4A5745]/90 leading-relaxed border-l-2 border-kahana-primary-800/25 pl-4">
+                <p className="text-sm text-oasis-green-800/90 leading-relaxed border-l-2 border-kahana-primary-800/25 pl-4">
                   {benefit.description}
                 </p>
               </div>
@@ -400,26 +401,14 @@ export default function Finance({ financeBlogs }) {
 
       <FeaturedBlogSection posts={financeBlogs} />
 
-      <section 
-        className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] py-12 sm:py-16 md:py-20 lg:py-28 mb-0 bg-[#F8FAF2]"
-      >
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4 sm:mb-6">
-            Client and operations collaboration without operational drag
-          </h2>
-          <p className="text-xl text-[#4A5745] mb-6 sm:mb-8 lg:mb-10 max-w-3xl mx-auto leading-relaxed">
-            Put governance back in the browser for financial SaaS, with secure access from any device, policy enforcement, and visibility your security and technology teams can stand behind.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
-            <Link href="/schedule-demo" className="btn-primary inline-flex items-center justify-center px-6 sm:px-8 lg:px-10 py-3 sm:py-4 text-sm sm:text-base lg:text-lg font-bold no-underline hover:no-underline focus:no-underline w-full sm:w-auto">
-              Schedule a demo
-            </Link>
-            <Link href="/contact" className="btn-secondary inline-flex items-center justify-center px-6 sm:px-8 lg:px-10 py-3 sm:py-4 text-sm sm:text-base lg:text-lg font-bold no-underline hover:no-underline focus:no-underline w-full sm:w-auto">
-              Get in touch
-            </Link>
-          </div>
-        </div>
-      </section>
+      <SharedCTA
+        title="Client and operations collaboration without operational drag"
+        description="Put governance back in the browser for financial SaaS, with secure access from any device, policy enforcement, and visibility your security and technology teams can stand behind."
+        primaryLabel="Schedule a demo"
+        primaryHref="/schedule-demo"
+        secondaryLabel="Get in touch"
+        secondaryHref="/contact"
+      />
     </>
   );
 }

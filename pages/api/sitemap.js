@@ -53,6 +53,11 @@ function generateSiteMap() {
        <priority>0.9</priority>
      </url>
      <url>
+       <loc>${EXTERNAL_DATA_URL}/features</loc>
+       <changefreq>weekly</changefreq>
+       <priority>0.85</priority>
+     </url>
+     <url>
        <loc>${EXTERNAL_DATA_URL}/features/oasis-voice</loc>
        <changefreq>monthly</changefreq>
        <priority>0.75</priority>
@@ -99,6 +104,11 @@ function generateSiteMap() {
      </url>
      <url>
        <loc>${EXTERNAL_DATA_URL}/features/oasis-enterprise-faster-paths</loc>
+       <changefreq>monthly</changefreq>
+       <priority>0.75</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/features/user-analytics</loc>
        <changefreq>monthly</changefreq>
        <priority>0.75</priority>
      </url>

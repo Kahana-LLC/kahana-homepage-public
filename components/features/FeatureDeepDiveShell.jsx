@@ -3,9 +3,17 @@ import Script from 'next/script';
 import Link from 'next/link';
 import SEO from '../SEO';
 import OasisProductHero from '../products/OasisProductHero';
+import FeatureDiscoveryGrid from './FeatureDiscoveryGrid';
 import { getCloudinaryImageUrl } from '../../utils/cloudinary-mapper';
 
 const defaultImage = getCloudinaryImageUrl('/assets/oasis-browser-preview.png', { width: 1200, quality: 'auto:good' });
+
+function parseFeatureSlugFromCanonicalUrl(canonicalUrl) {
+  if (!canonicalUrl || typeof canonicalUrl !== 'string') return null;
+  const path = canonicalUrl.replace(/^https?:\/\/[^/]+/i, '');
+  const match = path.match(/\/features\/([^/?#]+)/);
+  return match ? match[1].replace(/\/$/, '') : null;
+}
 
 /**
  * Shared layout for /features/oasis-* deep-dive pages.
@@ -27,6 +35,8 @@ export default function FeatureDeepDiveShell({
   backLabel,
   children,
 }) {
+  const featureSlug = parseFeatureSlugFromCanonicalUrl(url);
+
   return (
     <>
       <SEO title={seoTitle} description={seoDescription} image={image} url={url} type="article" schema={schema} />
@@ -52,12 +62,14 @@ export default function FeatureDeepDiveShell({
 
       {children}
 
-      <section className="border-t border-[#4A5745]/8 bg-[#f8faf9] py-12 md:py-14">
+      <FeatureDiscoveryGrid currentSlug={featureSlug} />
+
+      <section className="border-t border-oasis-green-800/8 bg-oasis-green-50 py-12 md:py-14">
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
-          <p className="text-sm text-[#4A5745]/85">
+          <p className="text-sm text-oasis-green-800/85">
             <Link
               href={backHref}
-              className="font-semibold text-[#66C2BE] no-underline hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#66C2BE]"
+              className="font-semibold text-brand-link no-underline hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-link"
             >
               {backLabel}
             </Link>

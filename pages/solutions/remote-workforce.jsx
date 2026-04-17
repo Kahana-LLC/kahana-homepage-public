@@ -7,6 +7,7 @@ import SolutionsExploreGrid from '../../components/solutions/SolutionsExploreGri
 import MainIncidentDashboardPreview from '../../components/solutions/visuals/MainIncidentDashboardPreview';
 import SolutionFeatureWithVisual from '../../components/solutions/visuals/SolutionFeatureWithVisual';
 import RelatedEnterpriseFeatureLinks from '../../components/features/RelatedEnterpriseFeatureLinks';
+import SharedCTA from '../../components/SharedCTA';
 
 const securityFeatures = [
   {
@@ -185,12 +186,12 @@ export default function RemoteWorkforce() {
         `}
       </Script>
 
-      <section className="bg-gradient-to-b from-[#E3DFF1]/20 via-[#8CB7D0]/10 to-white py-20">
+      <section className="bg-gradient-to-b from-oasis-blue-100/20 via-oasis-blue-300/10 to-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h2 className="text-base font-semibold leading-7 text-[#66C2BE] mb-3">Remote workforce</h2>
-            <h1 className="text-5xl font-bold text-[#4A5745] mb-6">Secure SaaS access for distributed teams</h1>
-            <p className="text-xl text-[#4A5745] max-w-3xl mx-auto mb-8 leading-relaxed">
+            <h2 className="text-base font-semibold leading-7 text-brand-link mb-3">Remote workforce</h2>
+            <h1 className="text-5xl font-bold text-oasis-green-800 mb-6">Secure SaaS access for distributed teams</h1>
+            <p className="text-xl text-oasis-green-800 max-w-3xl mx-auto mb-8 leading-relaxed">
               Distributed teams reach corporate SaaS from home networks and endpoints you do not own. Governance moves with Oasis: a managed enterprise browser that carries policy, visibility, and data rules in the session through your IdP and DLP.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -215,18 +216,18 @@ export default function RemoteWorkforce() {
 
       <RelatedEnterpriseFeatureLinks pageKey="remote-workforce" />
 
-      <section className="bg-white py-16 md:py-20 border-b border-[#4A5745]/8">
+      <section className="bg-white py-16 md:py-20 border-b border-oasis-green-800/8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-[#4A5745] text-center mb-4 tracking-tight">
+          <h2 className="text-3xl font-bold text-oasis-green-800 text-center mb-4 tracking-tight">
             The office perimeter is not where work happens anymore
           </h2>
-          <p className="text-[#4A5745]/95 text-center mb-10 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-oasis-green-800/95 text-center mb-10 max-w-3xl mx-auto leading-relaxed">
             VPNs, managed laptops, and network boundaries still matter, but most day-to-day work is web sessions on laptops and networks IT does not own end to end. When policies stop at the device or the tunnel, browser activity on SaaS and AI tools can outpace what those models see. Oasis adds a control layer where the work actually occurs.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
-            <div className="rounded-xl border border-[#4A5745]/10 bg-[#f8faf9] p-6 md:p-7 shadow-sm">
-              <h3 className="text-lg font-semibold text-[#4A5745] mb-3">Office-centric assumptions</h3>
-              <ul className="space-y-2.5 text-sm text-[#4A5745]/95 leading-relaxed">
+            <div className="rounded-xl border border-oasis-green-800/10 bg-oasis-green-50 p-6 md:p-7 shadow-sm">
+              <h3 className="text-lg font-semibold text-oasis-green-800 mb-3">Office-centric assumptions</h3>
+              <ul className="space-y-2.5 text-sm text-oasis-green-800/95 leading-relaxed">
                 <li className="flex gap-3">
                   <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-kahana-primary-700" aria-hidden />
                   <span>Most users were on corporate networks and managed desktops most of the time.</span>
@@ -241,9 +242,9 @@ export default function RemoteWorkforce() {
                 </li>
               </ul>
             </div>
-            <div className="rounded-xl border border-[#4A5745]/10 bg-white p-6 md:p-7 shadow-sm">
-              <h3 className="text-lg font-semibold text-[#4A5745] mb-3">Distributed reality</h3>
-              <ul className="space-y-2.5 text-sm text-[#4A5745]/95 leading-relaxed">
+            <div className="rounded-xl border border-oasis-green-800/10 bg-white p-6 md:p-7 shadow-sm">
+              <h3 className="text-lg font-semibold text-oasis-green-800 mb-3">Distributed reality</h3>
+              <ul className="space-y-2.5 text-sm text-oasis-green-800/95 leading-relaxed">
                 <li className="flex gap-3">
                   <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-kahana-primary-700" aria-hidden />
                   <span>SaaS, collaboration, and internal tools are one click away in the browser.</span>
@@ -264,10 +265,10 @@ export default function RemoteWorkforce() {
 
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-[#4A5745] text-center mb-12">
+          <h2 className="text-3xl font-bold text-oasis-green-800 text-center mb-12">
             Why browser governance matters for remote work
           </h2>
-          <p className="text-[#4A5745] text-center mb-8 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-oasis-green-800 text-center mb-8 max-w-3xl mx-auto leading-relaxed">
             Industry reporting highlights browser involvement in incidents, fast-moving phishing, and breaches with a third-party dimension. For distributed teams, governing the browsing layer helps close gaps that office-only mental models often miss.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto">
@@ -277,25 +278,25 @@ export default function RemoteWorkforce() {
                 <div
                   key={idx}
                   className={[
-                    'font-sans bg-white rounded-xl border border-[#4A5745]/10 shadow-sm p-6 flex flex-col transition-colors hover:border-[#66C2BE]/35 hover:shadow-md',
+                    'font-sans bg-white rounded-xl border border-oasis-green-800/10 shadow-sm p-6 flex flex-col transition-colors hover:border-brand-link/35 hover:shadow-md',
                     isLastOdd ? 'md:col-span-2 md:max-w-md md:mx-auto' : '',
                   ]
                     .filter(Boolean)
                     .join(' ')}
                 >
-                  <div className="text-3xl font-bold tracking-tight text-[#4A5745] mb-2 tabular-nums">
+                  <div className="text-3xl font-bold tracking-tight text-oasis-green-800 mb-2 tabular-nums">
                     {metric.value}
                   </div>
-                  <div className="text-sm font-semibold uppercase tracking-wide text-[#4A5745]/85 mb-1">
+                  <div className="text-sm font-semibold uppercase tracking-wide text-oasis-green-800/85 mb-1">
                     {metric.label}
                   </div>
-                  <div className="text-sm text-[#4A5745]/90 leading-relaxed mb-3">{metric.insight}</div>
+                  <div className="text-sm text-oasis-green-800/90 leading-relaxed mb-3">{metric.insight}</div>
                   {metric.source && (
                     <a
                       href={metric.source.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-auto text-xs text-[#4A5745]/65 no-underline underline-offset-2 hover:text-[#66C2BE] hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#66C2BE]"
+                      className="mt-auto text-xs text-oasis-green-800/65 no-underline underline-offset-2 hover:text-brand-link-hover hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-link"
                     >
                       Source: {metric.source.label}
                     </a>
@@ -307,12 +308,12 @@ export default function RemoteWorkforce() {
         </div>
       </section>
 
-      <section className="bg-[#f8faf9] py-16 md:py-20 border-y border-[#4A5745]/8">
+      <section className="bg-oasis-green-50 py-16 md:py-20 border-y border-oasis-green-800/8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-[#4A5745] text-center mb-12 tracking-tight">
+          <h2 className="text-3xl font-bold text-oasis-green-800 text-center mb-12 tracking-tight">
             What Oasis delivers for remote and hybrid teams
           </h2>
-          <p className="text-[#4A5745]/95 text-center mb-10 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-oasis-green-800/95 text-center mb-10 max-w-3xl mx-auto leading-relaxed">
             Session-level governance, policies that follow people across locations, integration with your identity and DLP stack, and a practical way to onboard and support workers without treating every remote scenario as a custom exception.
           </p>
           <div className="grid grid-cols-1 gap-6 lg:gap-8">
@@ -325,17 +326,17 @@ export default function RemoteWorkforce() {
 
       <section className="bg-white py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-[#4A5745] text-center mb-10 tracking-tight">
+          <h2 className="text-3xl font-bold text-oasis-green-800 text-center mb-10 tracking-tight">
             Outcomes security and IT leaders care about
           </h2>
-          <p className="text-[#4A5745]/95 text-center mb-10 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-oasis-green-800/95 text-center mb-10 max-w-3xl mx-auto leading-relaxed">
             Themes for hybrid and remote programs: speed to productive access, sustainable cost, governance off campus, and scale without unmanaged sprawl. Your results depend on policy, rollout, and risk appetite.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-8">
             {industryBenefits.map((benefit, index) => (
               <div
                 key={index}
-                className="bg-white rounded-xl border border-[#4A5745]/10 p-6 md:p-7 shadow-sm transition-all duration-200 hover:border-kahana-primary-800/30 hover:shadow-md"
+                className="bg-white rounded-xl border border-oasis-green-800/10 p-6 md:p-7 shadow-sm transition-all duration-200 hover:border-kahana-primary-800/30 hover:shadow-md"
               >
                 <div className="flex gap-4 mb-4">
                   <div
@@ -344,16 +345,16 @@ export default function RemoteWorkforce() {
                   >
                     {benefit.icon}
                   </div>
-                  <h3 className="text-base md:text-lg font-semibold text-[#4A5745] leading-snug tracking-tight pt-1.5">
+                  <h3 className="text-base md:text-lg font-semibold text-oasis-green-800 leading-snug tracking-tight pt-1.5">
                     {benefit.title}
                   </h3>
                 </div>
                 {benefit.stat != null && benefit.statLabel != null && (
                   <div className="mb-4">
-                    <div className="text-2xl font-bold tracking-tight text-[#4A5745] tabular-nums mb-1">
+                    <div className="text-2xl font-bold tracking-tight text-oasis-green-800 tabular-nums mb-1">
                       {benefit.stat}
                     </div>
-                    <div className="text-sm text-[#4A5745]/85">{benefit.statLabel}</div>
+                    <div className="text-sm text-oasis-green-800/85">{benefit.statLabel}</div>
                   </div>
                 )}
                 {benefit.source && (
@@ -361,12 +362,12 @@ export default function RemoteWorkforce() {
                     href={benefit.source.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mb-3 block text-xs text-[#4A5745]/65 no-underline underline-offset-2 hover:text-kahana-primary-700 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-kahana-primary-700"
+                    className="mb-3 block text-xs text-oasis-green-800/65 no-underline underline-offset-2 hover:text-kahana-primary-700 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-kahana-primary-700"
                   >
                     Source: {benefit.source.label}
                   </a>
                 )}
-                <p className="text-sm text-[#4A5745]/90 leading-relaxed border-l-2 border-kahana-primary-800/25 pl-4">
+                <p className="text-sm text-oasis-green-800/90 leading-relaxed border-l-2 border-kahana-primary-800/25 pl-4">
                   {benefit.description}
                 </p>
               </div>
@@ -377,30 +378,14 @@ export default function RemoteWorkforce() {
 
       <SolutionsExploreGrid currentHref="/solutions/remote-workforce" />
 
-      <section className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] py-12 sm:py-16 md:py-20 lg:py-28 mb-0 bg-[#F8FAF2]">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4 sm:mb-6">
-            Distributed work with consistent browser governance
-          </h2>
-          <p className="text-xl text-[#4A5745] mb-6 sm:mb-8 lg:mb-10 max-w-3xl mx-auto leading-relaxed">
-            Put policy and visibility in the browser for remote and hybrid SaaS, with secure access from authorized devices and controls your security and IT teams can stand behind.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
-            <Link
-              href="/schedule-demo"
-              className="btn-primary inline-flex items-center justify-center px-6 sm:px-8 lg:px-10 py-3 sm:py-4 text-sm sm:text-base lg:text-lg font-bold no-underline hover:no-underline focus:no-underline w-full sm:w-auto"
-            >
-              Schedule a demo
-            </Link>
-            <Link
-              href="/contact"
-              className="btn-secondary inline-flex items-center justify-center px-6 sm:px-8 lg:px-10 py-3 sm:py-4 text-sm sm:text-base lg:text-lg font-bold no-underline hover:no-underline focus:no-underline w-full sm:w-auto"
-            >
-              Get in touch
-            </Link>
-          </div>
-        </div>
-      </section>
+      <SharedCTA
+        title="Distributed work with consistent browser governance"
+        description="Put policy and visibility in the browser for remote and hybrid SaaS, with secure access from authorized devices and controls your security and IT teams can stand behind."
+        primaryLabel="Schedule a demo"
+        primaryHref="/schedule-demo"
+        secondaryLabel="Get in touch"
+        secondaryHref="/contact"
+      />
     </>
   );
 }
