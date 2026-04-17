@@ -577,7 +577,7 @@ export default function ReferencesPage() {
       <main className="min-h-screen bg-white pt-20 sm:pt-24 pb-12 sm:pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 sm:mb-12">
-            <h2 className="text-sm sm:text-base font-semibold leading-7 text-[#66C2BE] mb-2 sm:mb-3">White Paper References</h2>
+            <h2 className="text-sm sm:text-base font-semibold leading-7 text-brand-link mb-2 sm:mb-3">White Paper References</h2>
             <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 lg:text-5xl mb-4 sm:mb-6">
               References
             </h1>
@@ -586,12 +586,12 @@ export default function ReferencesPage() {
             </p>
           </div>
 
-          <div className="bg-white rounded-xl shadow-xl border border-[#A5DAD8]/30 p-4 sm:p-6 lg:p-8">
+          <div className="bg-white rounded-xl shadow-xl border border-oasis-blue-200/30 p-4 sm:p-6 lg:p-8">
             <div className="space-y-4 sm:space-y-6">
               {references.map((ref, index) => (
                 <div key={index} className="border-b border-gray-200 pb-4 sm:pb-4 last:border-b-0">
                   <div className="flex items-start">
-                    <span className="flex-shrink-0 w-6 h-6 sm:w-8 sm:h-8 bg-[#66C2BE] text-white rounded-full flex items-center justify-center text-xs sm:text-sm font-medium mr-3 sm:mr-4 mt-0.5 sm:mt-1">
+                    <span className="flex-shrink-0 w-6 h-6 sm:w-8 sm:h-8 bg-brand-link text-white rounded-full flex items-center justify-center text-xs sm:text-sm font-medium mr-3 sm:mr-4 mt-0.5 sm:mt-1">
                       {index + 1}
                     </span>
                     <div className="flex-1 min-w-0">
@@ -602,7 +602,7 @@ export default function ReferencesPage() {
                         href={ref.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-[#66C2BE] hover:text-[#4A9E9A] text-xs sm:text-sm mt-2 inline-block transition-colors break-all"
+                        className="text-brand-link hover:text-brand-link-hover text-xs sm:text-sm mt-2 inline-block transition-colors break-all"
                       >
                         {ref.url}
                       </a>
@@ -616,7 +616,7 @@ export default function ReferencesPage() {
           <div className="mt-8 sm:mt-12 text-center px-4">
             <Link
               href="/white-papers/the-future-of-ergonomic-work"
-              className="inline-flex items-center px-4 sm:px-6 py-3 border border-transparent text-sm sm:text-base font-medium rounded-md text-white !text-white bg-[#66C2BE] hover:bg-[#4A9E9A] transition-colors no-underline w-full sm:w-auto justify-center"
+              className="inline-flex items-center px-4 sm:px-6 py-3 border border-transparent text-sm sm:text-base font-medium rounded-md text-white !text-white bg-brand-link hover:bg-brand-link-hover transition-colors no-underline w-full sm:w-auto justify-center"
               style={{ color: 'white' }}
             >
               Read Full White Paper

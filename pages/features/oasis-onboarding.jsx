@@ -7,7 +7,7 @@ const OasisMockOnboardingChecklist = dynamic(
   {
     ssr: false,
     loading: () => (
-      <div className="mx-auto min-h-[200px] max-w-md rounded-xl border border-[#4A5745]/10 bg-[#f8faf9] animate-pulse" aria-hidden />
+      <div className="mx-auto min-h-[200px] max-w-md rounded-xl border border-oasis-green-800/10 bg-oasis-green-50 animate-pulse" aria-hidden />
     ),
   }
 );
@@ -41,8 +41,8 @@ export default function OasisOnboardingFeaturePage() {
       backHref="/products/oasis-browser#onboarding"
       backLabel="← Back to Oasis Browser (Onboarding)"
     >
-      <section className="border-b border-[#4A5745]/8 bg-white py-12 md:py-16">
-        <div className="mx-auto max-w-3xl px-4 space-y-5 text-[#4A5745]/95 leading-relaxed sm:px-6 lg:px-8">
+      <section className="border-b border-oasis-green-800/8 bg-white py-12 md:py-16">
+        <div className="mx-auto max-w-3xl px-4 space-y-5 text-oasis-green-800/95 leading-relaxed sm:px-6 lg:px-8">
           <p>
             The checklist is deliberately short. Each row is a single meaningful action: sign in, send a first prompt, try
             voice, so momentum beats scrolling through a tour you will never finish. Completion states are lightweight
@@ -55,7 +55,7 @@ export default function OasisOnboardingFeaturePage() {
           </p>
         </div>
       </section>
-      <section className="flex justify-center bg-[#f8faf9] py-12 md:py-16">
+      <section className="flex justify-center bg-oasis-green-50 py-12 md:py-16">
         <div className="w-full max-w-md px-4 sm:px-6 lg:px-8">
           <OasisMockOnboardingChecklist />
         </div>

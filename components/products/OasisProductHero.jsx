@@ -11,12 +11,12 @@ export default function OasisProductHero({
   secondaryLabel = 'Get in touch',
 }) {
   return (
-    <section className="bg-gradient-to-b from-[#E3DFF1]/20 via-[#8CB7D0]/10 to-white py-20">
+    <section className="bg-gradient-to-b from-oasis-blue-100/20 via-oasis-blue-300/10 to-white py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h2 className="text-base font-semibold leading-7 text-[#66C2BE] mb-3">{eyebrow}</h2>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#4A5745] mb-6 break-words">{title}</h1>
-          <p className="text-lg sm:text-xl text-[#4A5745] max-w-3xl mx-auto mb-8 break-words leading-relaxed">
+          <h2 className="text-base font-semibold leading-7 text-brand-link mb-3">{eyebrow}</h2>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-oasis-green-800 mb-6 break-words">{title}</h1>
+          <p className="text-lg sm:text-xl text-oasis-green-800 max-w-3xl mx-auto mb-8 break-words leading-relaxed">
             {description}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

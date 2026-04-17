@@ -2,12 +2,22 @@ import React from 'react';
 import dynamic from 'next/dynamic';
 import FeatureDeepDiveShell from '../../components/features/FeatureDeepDiveShell';
 
+const OasisMockAssistantHero = dynamic(
+  () => import('../../components/products/oasis/OasisUiMocks').then((m) => m.OasisMockAssistantHero),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="min-h-[280px] w-full rounded-xl border border-oasis-green-800/10 bg-oasis-green-50 animate-pulse" aria-hidden />
+    ),
+  }
+);
+
 const OasisSkillsGallery = dynamic(
   () => import('../../components/products/oasis/OasisUiMocks').then((m) => m.OasisSkillsGallery),
   {
     ssr: false,
     loading: () => (
-      <div className="min-h-[320px] w-full rounded-xl border border-[#4A5745]/10 bg-[#f8faf9] animate-pulse" aria-hidden />
+      <div className="min-h-[320px] w-full rounded-xl border border-oasis-green-800/10 bg-oasis-green-50 animate-pulse" aria-hidden />
     ),
   }
 );
@@ -41,25 +51,33 @@ export default function OasisAssistantFeaturePage() {
       backHref="/products/oasis-browser#assistant"
       backLabel="← Back to Oasis Browser (Assistant)"
     >
-      <section className="border-b border-[#4A5745]/8 bg-white py-12 md:py-16">
-        <div className="mx-auto max-w-3xl px-4 space-y-5 text-[#4A5745]/95 leading-relaxed sm:px-6 lg:px-8">
+      <section className="border-b border-oasis-green-800/8 bg-white py-12 md:py-16">
+        <div className="mx-auto max-w-3xl px-4 space-y-5 text-oasis-green-800/95 leading-relaxed sm:px-6 lg:px-8">
           <p>
             The panel is deliberately boring in the good way: a timeline you can skim, a composer that stays put, busy
             states when a tool is actually running, and read-aloud plus feedback on the latest reply when you want the
             answer in your ears, or want to thumbs-down a miss without breaking flow.
           </p>
           <p>
-            The skills gallery is a <span className="font-medium text-[#4A5745]">tasting menu</span>, not a contract.
+            The skills gallery is a <span className="font-medium text-oasis-green-800">tasting menu</span>, not a contract.
             Search and filters show how we think about discoverability; your catalog, labels, and guardrails will follow
             what ships in your build and what your admins allow.
           </p>
-          <p className="text-sm text-[#4A5745]/80">
+          <p className="text-sm text-oasis-green-800/80">
             If a command would do something sensitive in the browser, confirmations (covered on their own page) are the
             other half of the story: speed when it is safe, friction when it is not.
           </p>
         </div>
       </section>
-      <section className="bg-[#f8faf9] py-12 md:py-16">
+      <section className="border-b border-oasis-green-800/8 bg-white py-12 md:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <p className="mb-6 text-center text-xs font-semibold uppercase tracking-wide text-[#7a9200]">
+            Looping demo (illustrative UI—not a full skills catalog)
+          </p>
+          <OasisMockAssistantHero />
+        </div>
+      </section>
+      <section className="bg-oasis-green-50 py-12 md:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <OasisSkillsGallery />
         </div>

@@ -19,10 +19,10 @@ export default function HeroSection() {
                 {/* Elegant accent dot */}
                 <div className="hidden lg:block absolute top-8 -left-4 w-2 h-2 rounded-full bg-[#30400D]/40"></div>
                 <div>
-                  <h1 className="py-4 bg-clip-text text-transparent bg-gradient-to-r from-[#728552] to-[#788B59] text-4xl font-bold tracking-tight sm:text-5xl md:text-5xl text-center sm:text-left">
+                  <h1 className="py-4 bg-clip-text text-transparent bg-gradient-to-r from-oasis-green-600 to-oasis-green-500 text-4xl font-bold tracking-tight sm:text-5xl md:text-5xl text-center sm:text-left">
                     Bringing Ideas to Life
                   </h1>
-                  <p className="mt-3 text-base text-[#4A5745] sm:mt-5 sm:text-xl lg:text-lg xl:text-xl text-center sm:text-left">
+                  <p className="mt-3 text-base text-oasis-green-800 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl text-center sm:text-left">
                     We believe the world is better off when your best ideas become reality. We create tools that help you get closer to your ideas and bring them into the world.
                   </p>
                   <div className="mt-8 flex justify-center sm:justify-start">

@@ -12,7 +12,7 @@ export default function HowItWorks() {
         <h2 className="text-3xl font-semibold tracking-tight text-[#313A00] sm:text-4xl">
           Bring Oasis to your organization
         </h2>
-        <p className="mt-4 text-lg text-[#4A5745]">
+        <p className="mt-4 text-lg text-oasis-green-800">
           Learn how Oasis can help you and your organization.
         </p>
         <div className="mt-8">

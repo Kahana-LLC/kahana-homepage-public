@@ -74,7 +74,7 @@ function BrowserChrome({ sceneIndex }) {
               opacity="0.85"
             />
           </svg>
-          <span className="truncate font-mono text-[10px] text-[#4A5745]/90 sm:text-[11px]">{url}</span>
+          <span className="truncate font-mono text-[10px] text-oasis-green-800/90 sm:text-[11px]">{url}</span>
         </div>
       </div>
     </div>
@@ -157,7 +157,7 @@ function AssistantPanelSummarize({ prefersReducedMotion }) {
         Summarize this page
       </div>
       {showBusy && (
-        <div className="rounded-xl border border-[#d4d9c8] bg-white px-2.5 py-2 text-[11px] text-[#4A5745] shadow-sm">
+        <div className="rounded-xl border border-[#d4d9c8] bg-white px-2.5 py-2 text-[11px] text-oasis-green-800 shadow-sm">
           <div className="flex items-center gap-2">
             <span className="relative flex h-4 w-4" aria-hidden>
               {!prefersReducedMotion && (

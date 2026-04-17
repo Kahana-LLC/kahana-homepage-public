@@ -72,7 +72,7 @@ export default function PressPage() {
               <div className="space-y-8">
                 {pressReleases.map((release, index) => (
                   <div key={index} className="border-b pb-8 last:border-b-0">
-                    <div className="text-sm text-[#4A5745] mb-2">{release.date}</div>
+                    <div className="text-sm text-oasis-green-800 mb-2">{release.date}</div>
                     <h3 className="text-xl font-semibold mb-2">
                       <a href={release.link} className="text-[#0B3B2D] no-underline hover:no-underline">
                         {release.title}

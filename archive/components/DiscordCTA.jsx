@@ -81,18 +81,18 @@ const DiscordCTA = ({
                 </svg>
               </Link>
             )}
-            <div className="flex items-center text-sm text-[#4A5745]">
+            <div className="flex items-center text-sm text-oasis-green-800">
               <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
               <span>Always free to join</span>
             </div>
           </div>
-          <div className="mt-4 text-sm text-[#4A5745]">
+          <div className="mt-4 text-sm text-oasis-green-800">
             <span>Having trouble with Discord? </span>
             <Link 
               href="/contact" 
-              className="text-[#66C2BE] hover:text-[#55B3AF] no-underline transition-colors"
+              className="text-brand-link hover:text-brand-link-hover no-underline transition-colors"
             >
               Contact us directly
             </Link>

@@ -1,7 +1,13 @@
 /* Nav bar and dropdown link color - used by Products, Pricing, Learn, About (all pages) */
 :root {
+  /* Brand palette: oasis-green / oasis-blue / desert-yellow (see tailwind.config.js) */
+  --oasis-green-50: #f8faf2;
+  --oasis-green-800: #495800;
+  --oasis-green-900: #313a00;
+  --oasis-blue-400: #6dafc4;
+  --oasis-blue-500: #489cb5;
   --nav-link-color: #617500;
-  /* Figma button tokens (Basic Button) */
+  /* Figma button tokens (Basic Button) — oasis-green 600 / 700 */
   --btn-primary-bg: #7a9200;
   --btn-primary-border: #7a9200;
   --btn-primary-hover-bg: #617500;
@@ -57,7 +63,7 @@
 .site-nav-wrapper .nav-link:hover,
 .site-nav-wrapper .nav-link:hover .nav-link-text,
 .site-nav-wrapper .nav-link:hover .dropdown-icon-button {
-  color: #4A5F00 !important;
+  color: var(--oasis-green-800) !important;
 }
 
 /* Fonts: next/font local (see lib/fonts.js) — variables --font-geist, --font-bricolage */
@@ -93,7 +99,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: #011910 !important;
+  color: var(--oasis-green-900) !important;
 }
 
 /* Hero CTA buttons — same Figma system as global .btn-* */
@@ -146,14 +152,14 @@ h6 {
 }
 
 /* High-contrast links */
-a:not(.no-underline):not(.mobile-link):not(.nav-link):not(.btn-primary):not(.btn-secondary):not(.btn-tertiary):not(.dropdown-link):not(.blog-card-link):not(.doc-card-link) {
+a:not(.no-underline):not(.mobile-link):not(.nav-link):not(.btn-primary):not(.btn-secondary):not(.btn-tertiary):not(.dropdown-link):not(.blog-card-link):not(.doc-card-link):not(.shared-cta-pill) {
   color: var(--bg-action) !important;
   text-decoration: underline !important;
   font-weight: bold !important;
   transition: color 0.2s;
 }
-a:hover,
-a:focus {
+a:hover:not(.shared-cta-pill),
+a:focus:not(.shared-cta-pill) {
   color: var(--bg-surface) !important;
 }
 
@@ -170,7 +176,7 @@ a.nav-link:focus,
 }
 a.nav-link:hover,
 .nav-link:hover {
-  color: #4A5F00 !important;
+  color: var(--oasis-green-800) !important;
 }
 
 /* Buyer's guide: same olive #617500 as rest of site (matches mobile menu image) */
@@ -209,7 +215,7 @@ a.nav-link:hover,
 }
 .buyer-guide-layout .GlobalBanner .banner-discord-link:hover,
 .buyer-guide-layout .GlobalBanner a.banner-discord-link:hover {
-  color: #4A5F00 !important;
+  color: var(--oasis-green-800) !important;
   font-weight: 700 !important;
 }
 
@@ -257,7 +263,7 @@ input[type="button"] {
 /* FAQ accordion buttons: light gradient background, dark text (override global button styles) */
 #faq button {
   background: linear-gradient(to bottom right, rgba(254, 243, 199, 0.3), rgba(125, 211, 252, 0.15)) !important;
-  color: #4A5745 !important;
+  color: var(--oasis-green-800) !important;
   font-weight: 600 !important;
   border: none !important;
   padding: 1.25rem 1.5rem !important;
@@ -276,7 +282,7 @@ input[type="button"]:hover {
 /* Undo legacy global `button` styles for footer / nav controls (contrast + layout) */
 footer[aria-labelledby='footer-heading'] button.footer-accordion-trigger {
   background-color: transparent !important;
-  color: #011910 !important;
+  color: var(--oasis-green-900) !important;
   font-weight: 600 !important;
   border: none !important;
   border-radius: 0 !important;
@@ -790,17 +796,17 @@ section.bg-gradient-to-r h2.text-white {
 }
 
 :root {
-  /* Strict 5-color palette */
-  --text-base: #4A5745;         /* Dark Green/Text Base */
-  --bg-action: #728552;         /* Medium Olive Green/Primary/Buttons */
-  --bg-highlight: #E0D48C;      /* Light Khaki/Accent/Hover */
-  --bg-body: #F3F8E4;           /* Very Light Pale Yellow/Background */
-  --bg-surface: #788B59;        /* Medium Olive Green/Secondary/Darker Surface */
+  /* Semantic text + link tokens (body links: oasis-blue per brand palette) */
+  --text-base: #495800;         /* oasis-green-800 / marketing body */
+  --bg-action: #489cb5;         /* oasis-blue-500 / inline links */
+  --bg-highlight: #fdeabb;    /* desert-yellow-300 / soft accent */
+  --bg-body: #f8faf2; /* oasis-green-50 */
+  --bg-surface: #3a7c91;       /* oasis-blue-600 / link hover */
 
   /* Derived variables for usage */
   --border-light: var(--bg-highlight);
-  --text-subtle: #4A5745A0;
-  --shadow-color: #4A574520;
+  --text-subtle: #495800a0;
+  --shadow-color: #49580020;
 
   /* Unified grid spacing - consistent left margin for all sections */
   --container-padding-mobile: 1rem;    /* 16px - mobile */
@@ -1632,7 +1638,7 @@ footer button.text-sm.no-underline {
   text-decoration: none !important;
   font-weight: normal !important;
   font-size: 0.875rem !important;
-  color: #4A5745 !important;
+  color: var(--oasis-green-800) !important;
   background: transparent !important;
   border: none !important;
   padding: 0 !important;
@@ -1641,7 +1647,7 @@ footer button.text-sm.no-underline {
 }
 
 footer button.text-sm.no-underline:hover {
-  color: #728552 !important;
+  color: var(--oasis-blue-500) !important;
   text-decoration: none !important;
 }
 
@@ -1832,4 +1838,156 @@ nav .dropdown-content a.dropdown-link:focus,
 .buyer-guide-layout .dropdown-section a.dropdown-link,
 .buyer-guide-layout .dropdown-section .dropdown-link {
   color: #617500 !important;
+}
+
+/* ==========================================================================
+   SharedCTA (gradient card) — placed after @tailwind utilities so CTA pill
+   text stays dark on white (beats Tailwind utilities + global anchor rules).
+   Buttons use shared-cta-pill--primary / --secondary only (no .btn-*).
+   ========================================================================== */
+
+.shared-cta-card {
+  width: 100%;
+  max-width: 1438px;
+  min-height: 320px;
+  border-radius: 20px;
+  background: linear-gradient(98.92deg, #617500 -17.23%, #fcdd9f 106.64%);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 64px 24px;
+}
+
+.shared-cta-title {
+  margin: 0 auto;
+  max-width: 452px;
+  color: #ffffff !important;
+  font-family: var(--font-bricolage), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  text-align: center;
+}
+
+.shared-cta-description {
+  margin: 20px auto 0;
+  max-width: 517px;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+}
+
+.shared-cta-actions {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.shared-cta-card .shared-cta-actions a.shared-cta-pill,
+.shared-cta-card .shared-cta-actions a.shared-cta-pill.shared-cta-pill--primary,
+.shared-cta-card .shared-cta-actions a.shared-cta-pill.shared-cta-pill--secondary {
+  box-sizing: border-box !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  min-height: 55px !important;
+  min-width: 182px;
+  padding: 10px 24px !important;
+  border-radius: 50px !important;
+  border: 3px solid rgba(255, 255, 255, 0.38) !important;
+  background: #ffffff !important;
+  color: #7a9200 !important;
+  -webkit-text-fill-color: #7a9200 !important;
+  font-size: 16px !important;
+  line-height: 24px !important;
+  font-weight: 400 !important;
+  text-decoration: none !important;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease !important;
+}
+
+.shared-cta-card .shared-cta-actions a.shared-cta-pill *,
+.shared-cta-card .shared-cta-actions a.shared-cta-pill.shared-cta-pill--primary *,
+.shared-cta-card .shared-cta-actions a.shared-cta-pill.shared-cta-pill--secondary * {
+  color: inherit !important;
+  -webkit-text-fill-color: inherit !important;
+}
+
+.shared-cta-card .shared-cta-actions a.shared-cta-pill svg,
+.shared-cta-card .shared-cta-actions a.shared-cta-pill.shared-cta-pill--primary svg,
+.shared-cta-card .shared-cta-actions a.shared-cta-pill.shared-cta-pill--secondary svg {
+  fill: currentColor !important;
+  stroke: currentColor !important;
+}
+
+.shared-cta-card .shared-cta-actions a.shared-cta-pill:hover,
+.shared-cta-card .shared-cta-actions a.shared-cta-pill.shared-cta-pill--primary:hover,
+.shared-cta-card .shared-cta-actions a.shared-cta-pill.shared-cta-pill--secondary:hover,
+.shared-cta-card .shared-cta-actions a.shared-cta-pill:focus,
+.shared-cta-card .shared-cta-actions a.shared-cta-pill.shared-cta-pill--primary:focus,
+.shared-cta-card .shared-cta-actions a.shared-cta-pill.shared-cta-pill--secondary:focus,
+.shared-cta-card .shared-cta-actions a.shared-cta-pill:active,
+.shared-cta-card .shared-cta-actions a.shared-cta-pill.shared-cta-pill--primary:active,
+.shared-cta-card .shared-cta-actions a.shared-cta-pill.shared-cta-pill--secondary:active {
+  background: #f8fbe8 !important;
+  border-color: rgba(255, 255, 255, 0.55) !important;
+  color: #617500 !important;
+  -webkit-text-fill-color: #617500 !important;
+}
+
+.shared-cta-card .shared-cta-actions a.shared-cta-pill:hover *,
+.shared-cta-card .shared-cta-actions a.shared-cta-pill:focus *,
+.shared-cta-card .shared-cta-actions a.shared-cta-pill:active * {
+  color: inherit !important;
+  -webkit-text-fill-color: inherit !important;
+}
+
+.shared-cta-card .shared-cta-actions a.shared-cta-pill:focus-visible {
+  outline: 2px solid #ffffff !important;
+  outline-offset: 3px !important;
+}
+
+@media (min-width: 640px) {
+  .shared-cta-card {
+    min-height: 380px;
+    padding: 76px 40px;
+  }
+
+  .shared-cta-actions {
+    gap: 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .shared-cta-card {
+    min-height: 508px;
+    padding: 131px 60px 90px;
+  }
+
+  .shared-cta-title {
+    font-size: 40px;
+    line-height: 48px;
+  }
+
+  .shared-cta-actions {
+    margin-top: 38px;
+    gap: 32px;
+  }
+}
+
+/* Enterprise feature explainer diagrams — subtle flow hint (respect reduced motion) */
+@media (prefers-reduced-motion: no-preference) {
+  .explainer-flow-line {
+    stroke-dasharray: 5 6;
+    animation: explainer-flow-dash 2.4s linear infinite;
+  }
+}
+
+@keyframes explainer-flow-dash {
+  to {
+    stroke-dashoffset: -44;
+  }
 }

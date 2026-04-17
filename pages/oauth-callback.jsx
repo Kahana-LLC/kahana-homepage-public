@@ -156,13 +156,13 @@ function OAuthStatusGlyph({ status }) {
   if (status === 'loading') {
     return (
       <div
-        className={`${shell} bg-[#f8faf9] ring-[#66C2BE]/35`}
+        className={`${shell} bg-oasis-green-50 ring-brand-link/35`}
         role="status"
         aria-live="polite"
         aria-label="Signing you in"
       >
         <svg
-          className="h-8 w-8 text-[#66C2BE] animate-spin"
+          className="h-8 w-8 text-brand-link animate-spin"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
@@ -181,8 +181,8 @@ function OAuthStatusGlyph({ status }) {
 
   if (status === 'success') {
     return (
-      <div className={`${shell} bg-[#728552]/12 ring-[#728552]/35`} aria-hidden>
-        <svg className="h-8 w-8 text-[#728552]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+      <div className={`${shell} bg-oasis-green-600/12 ring-oasis-green-600/35`} aria-hidden>
+        <svg className="h-8 w-8 text-oasis-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
           <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
         </svg>
       </div>
@@ -204,8 +204,8 @@ function OAuthStatusGlyph({ status }) {
   }
 
   return (
-    <div className={`${shell} bg-[#f8faf9] ring-[#66C2BE]/30`} aria-hidden>
-      <svg className="h-8 w-8 text-[#66C2BE]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+    <div className={`${shell} bg-oasis-green-50 ring-brand-link/30`} aria-hidden>
+      <svg className="h-8 w-8 text-brand-link" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -645,12 +645,12 @@ export default function OAuthCallback() {
 
   const statusClass =
     status === 'loading'
-      ? 'text-[#66C2BE]'
+      ? 'text-brand-link'
       : status === 'success'
-        ? 'text-[#728552]'
+        ? 'text-oasis-green-600'
         : status === 'error'
           ? 'text-[#9B2C2C]'
-          : 'text-[#66C2BE]';
+          : 'text-brand-link';
 
   return (
     <>
@@ -663,8 +663,8 @@ export default function OAuthCallback() {
         <meta httpEquiv="Expires" content="0" />
       </Head>
 
-      <div className="min-h-screen bg-white text-[#4A5745] flex items-center justify-center px-4 py-12">
-        <div className="w-full max-w-md text-center rounded-xl border border-[#4A5745]/12 bg-white p-8 shadow-md shadow-[#4A5745]/5">
+      <div className="min-h-screen bg-white text-oasis-green-800 flex items-center justify-center px-4 py-12">
+        <div className="w-full max-w-md text-center rounded-xl border border-oasis-green-800/12 bg-white p-8 shadow-md shadow-[#495800]/5">
           <OAuthStatusGlyph status={status} />
           <div id="status" className={`text-lg font-semibold mb-2 leading-snug ${statusClass}`}>
             {statusMessage}
@@ -672,7 +672,7 @@ export default function OAuthCallback() {
           {details && (
             <div
               id="details"
-              className="mt-4 text-sm text-[#4A5745]/85 whitespace-pre-line break-words leading-relaxed text-left rounded-lg bg-[#f8faf9] border border-[#4A5745]/8 px-4 py-3"
+              className="mt-4 text-sm text-oasis-green-800/85 whitespace-pre-line break-words leading-relaxed text-left rounded-lg bg-oasis-green-50 border border-oasis-green-800/8 px-4 py-3"
             >
               {details}
             </div>

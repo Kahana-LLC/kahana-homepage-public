@@ -23,7 +23,7 @@ const WorldMap = ({ highlightedRegions = [], height = 220 }) => {
         {/* South America - highlighted */}
         <path
           d="M200 250 L250 220 L280 280 L220 300 L200 280 Z"
-          fill={highlightedRegions.includes('south-america') ? '#06b6d4' : '#f3f4f6'}
+          fill={highlightedRegions.includes('south-america') ? '#489CB5' : '#f3f4f6'}
           stroke="#d1d5db"
           strokeWidth="1"
         />

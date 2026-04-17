@@ -21,10 +21,10 @@ export default function ThankYouDemo() {
 
       <main className="min-h-screen bg-white pt-24 pb-16">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="bg-white rounded-xl shadow-xl border border-[#A5DAD8]/30 p-8 md:p-12">
+          <div className="bg-white rounded-xl shadow-xl border border-oasis-blue-200/30 p-8 md:p-12">
             {/* Success Icon */}
-            <div className="mx-auto w-16 h-16 flex items-center justify-center rounded-full bg-[#66C2BE]/10 mb-6">
-              <svg className="w-8 h-8 text-[#66C2BE]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="mx-auto w-16 h-16 flex items-center justify-center rounded-full bg-brand-link/10 mb-6">
+              <svg className="w-8 h-8 text-brand-link" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
             </div>
@@ -41,20 +41,20 @@ export default function ThankYouDemo() {
               <h2 className="text-lg font-semibold text-gray-900 mb-4">What happens next?</h2>
               <ul className="text-left space-y-4">
                 <li className="flex items-start">
-                  <span className="flex-shrink-0 w-6 h-6 flex items-center justify-center rounded-full bg-[#66C2BE]/10 mr-3 mt-1">
-                    <span className="text-[#66C2BE] text-sm font-medium">1</span>
+                  <span className="flex-shrink-0 w-6 h-6 flex items-center justify-center rounded-full bg-brand-link/10 mr-3 mt-1">
+                    <span className="text-brand-link text-sm font-medium">1</span>
                   </span>
                   <span className="text-gray-600">Our team will review your request within 1 business day</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="flex-shrink-0 w-6 h-6 flex items-center justify-center rounded-full bg-[#66C2BE]/10 mr-3 mt-1">
-                    <span className="text-[#66C2BE] text-sm font-medium">2</span>
+                  <span className="flex-shrink-0 w-6 h-6 flex items-center justify-center rounded-full bg-brand-link/10 mr-3 mt-1">
+                    <span className="text-brand-link text-sm font-medium">2</span>
                   </span>
                   <span className="text-gray-600">You'll receive an email to schedule your demo at a convenient time</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="flex-shrink-0 w-6 h-6 flex items-center justify-center rounded-full bg-[#66C2BE]/10 mr-3 mt-1">
-                    <span className="text-[#66C2BE] text-sm font-medium">3</span>
+                  <span className="flex-shrink-0 w-6 h-6 flex items-center justify-center rounded-full bg-brand-link/10 mr-3 mt-1">
+                    <span className="text-brand-link text-sm font-medium">3</span>
                   </span>
                   <span className="text-gray-600">We'll prepare a customized demo based on your requirements</span>
                 </li>
@@ -64,7 +64,7 @@ export default function ThankYouDemo() {
             <div className="space-y-4">
               <Link 
                 href="/products/oasis-enterprise-browser"
-                className="block w-full bg-[#66C2BE] text-white rounded-lg px-6 py-3 text-center font-medium hover:bg-[#66C2BE]/90 transition-colors duration-200"
+                className="block w-full bg-brand-link text-white rounded-lg px-6 py-3 text-center font-medium hover:bg-brand-link-hover transition-colors duration-200"
               >
                 Learn More About Oasis
               </Link>

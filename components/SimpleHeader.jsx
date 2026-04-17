@@ -6,7 +6,7 @@ export default function SimpleHeader() {
           <p className="mt-1 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
             Where the Creator Economy meets the Knowledge Economy
           </p>
-          <p className="mx-auto mt-5 max-w-xl text-xl text-[#4A5745]">
+          <p className="mx-auto mt-5 max-w-xl text-xl text-oasis-green-800">
             Over 200M people worldwide are trying to make a living from sharing 
             their passions and expertise, but...
           </p>

@@ -79,22 +79,22 @@ export default function AllIndustries() {
         <title>All Industries | Kahana</title>
         <meta name="description" content="Explore Kahana's solutions for every industry: manufacturing, healthcare, financial, government, technology, and more." />
       </Head>
-      <section className="bg-gradient-to-b from-[#E3DFF1]/20 via-[#8CB7D0]/10 to-white py-20 min-h-screen">
+      <section className="bg-gradient-to-b from-oasis-blue-100/20 via-oasis-blue-300/10 to-white py-20 min-h-screen">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h1 className="text-5xl font-bold text-[#011910] mb-4">All Industries</h1>
-            <p className="text-xl text-[#4A5745] max-w-2xl mx-auto leading-relaxed">
+            <h1 className="text-5xl font-bold text-oasis-green-900 mb-4">All Industries</h1>
+            <p className="text-xl text-oasis-green-800 max-w-2xl mx-auto leading-relaxed">
               Every sector now runs enterprise work through the browser, often on devices you do not control. Oasis is Kahana&apos;s managed enterprise browser: governance in the session with your IdP and DLP, without laptop shipping or VDI as the default answer for SaaS access.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {industries.map((industry) => (
-              <div key={industry.key} className="bg-white rounded-xl border border-[#A5DAD8]/30 shadow-lg shadow-[#E3DFF1]/20 hover:shadow-xl hover:shadow-[#E3DFF1]/30 transition-all duration-300 p-8 flex flex-col justify-between">
+              <div key={industry.key} className="bg-white rounded-xl border border-oasis-blue-200/30 shadow-lg shadow-oasis-blue-100/20 hover:shadow-xl hover:shadow-oasis-blue-100/30 transition-all duration-300 p-8 flex flex-col justify-between">
                 <div>
-                  <h2 className="text-2xl font-semibold text-[#66C2BE] mb-2">{industry.name}</h2>
-                  <p className="text-[#4A5745] mb-6">{industry.description}</p>
+                  <h2 className="text-2xl font-semibold text-brand-link mb-2">{industry.name}</h2>
+                  <p className="text-oasis-green-800 mb-6">{industry.description}</p>
                 </div>
-                <Link href={industry.href} className="inline-block mt-auto text-[#66C2BE] hover:text-[#55B3AF] font-semibold underline">Explore {industry.name}</Link>
+                <Link href={industry.href} className="inline-block mt-auto text-brand-link hover:text-brand-link-hover font-semibold underline">Explore {industry.name}</Link>
               </div>
             ))}
           </div>

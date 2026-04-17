@@ -24,7 +24,7 @@ const SocialShare = ({ title, url, excerpt }) => {
 
   return (
     <div className="flex items-center justify-start space-x-4 my-8 border-t border-b border-gray-100 py-6">
-      <span className="text-sm text-[#4A5745] font-medium">Share:</span>
+      <span className="text-sm text-oasis-green-800 font-medium">Share:</span>
       <div className="flex items-center space-x-3">
         <button
           onClick={handleLinkedInShare}

@@ -189,11 +189,11 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({
             block w-full text-left px-4 py-3 transition-all duration-200 ease-in-out
             ${isChild ? 'pl-8 text-sm' : 'text-base font-medium'}
             ${isActive 
-              ? 'bg-[#F3F8E4] text-[#4A5745] border-l-4 border-[#788B59] font-semibold shadow-sm' 
-              : 'text-gray-700 hover:bg-[#F3F8E4] hover:text-[#4A5745] hover:border-l-2 hover:border-[#728552]'
+              ? 'bg-oasis-green-50 text-oasis-green-800 border-l-4 border-oasis-green-500 font-semibold shadow-sm' 
+              : 'text-gray-700 hover:bg-oasis-green-50 hover:text-oasis-green-800 hover:border-l-2 hover:border-oasis-green-600'
             }
-            ${isFocused ? 'ring-2 ring-[#788B59] ring-offset-2 bg-[#F3F8E4]' : ''}
-            rounded-r-lg focus:outline-none focus:ring-2 focus:ring-[#788B59] focus:ring-offset-2
+            ${isFocused ? 'ring-2 ring-oasis-green-500 ring-offset-2 bg-oasis-green-50' : ''}
+            rounded-r-lg focus:outline-none focus:ring-2 focus:ring-oasis-green-500 focus:ring-offset-2
             border-l-2 border-transparent
           `}
           aria-current={isActive ? 'page' : undefined}
@@ -261,7 +261,7 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({
             <>
               <div className="w-full bg-gray-200 rounded-full h-2">
                 <div 
-                  className="bg-[#788B59] h-2 rounded-full transition-all duration-300"
+                  className="bg-oasis-green-500 h-2 rounded-full transition-all duration-300"
                   style={{ 
                     width: `${Math.min(100, Math.max(0, (flatItems.findIndex(item => item.id === activeId) + 1) / flatItems.length * 100))}%` 
                   }}
@@ -299,10 +299,10 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({
         onClick={toggleMobileNav}
         className={`
           lg:hidden fixed left-4 z-50
-          bg-[#788B59] text-white p-3 rounded-lg shadow-lg
+          bg-oasis-green-500 text-white p-3 rounded-lg shadow-lg
           transition-all duration-200 ease-in-out
           ${isScrolling ? 'scale-95' : 'scale-100'}
-          hover:bg-[#728552] focus:outline-none focus:ring-2 focus:ring-[#788B59] focus:ring-offset-2
+          hover:bg-oasis-green-700 focus:outline-none focus:ring-2 focus:ring-oasis-green-500 focus:ring-offset-2
         `}
         style={{ top: '80px' }} // Position below navbar (64px) + some margin
         aria-label="Toggle table of contents"
@@ -361,7 +361,7 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({
             <div className="text-xs text-gray-500 mb-2">Reading Progress</div>
             <div className="w-full bg-gray-200 rounded-full h-2">
               <div 
-                className="bg-[#788B59] h-2 rounded-full transition-all duration-300"
+                className="bg-oasis-green-500 h-2 rounded-full transition-all duration-300"
                 style={{ 
                   width: `${Math.min(100, Math.max(0, (flatItems.findIndex(item => item.id === activeId) + 1) / flatItems.length * 100))}%` 
                 }}

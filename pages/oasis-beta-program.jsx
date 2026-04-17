@@ -153,13 +153,13 @@ export default function EarlyBirdDiscount() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header Section */}
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: '#4A5745' }}>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: '#495800' }}>
               Get Early Access to Oasis
             </h1>
-            <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-6 leading-relaxed" style={{ color: '#4A5745' }}>
+            <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-6 leading-relaxed" style={{ color: '#495800' }}>
               The most elegant and ergonomic browser experience.
             </p>
-            <p className="text-lg max-w-2xl mx-auto mb-8 leading-relaxed" style={{ color: '#4A5745' }}>
+            <p className="text-lg max-w-2xl mx-auto mb-8 leading-relaxed" style={{ color: '#495800' }}>
               An elegant and ergonomic browser designed for researching, job seeking, and learning. Built for how your mind works naturally.
             </p>
           </div>
@@ -167,14 +167,14 @@ export default function EarlyBirdDiscount() {
           {/* Payment Section */}
           <div id="deposit-form" className="bg-white rounded-2xl shadow-2xl p-8 md:p-12 mb-12" style={{ border: '2px solid #7A9200' }}>
             <div className="text-center mb-8">
-              <h2 className="text-2xl md:text-3xl font-bold mb-4" style={{ color: '#4A5745' }}>
+              <h2 className="text-2xl md:text-3xl font-bold mb-4" style={{ color: '#495800' }}>
                 Join the Beta Program
               </h2>
-              <p className="mb-6" style={{ color: '#4A5745' }}>
+              <p className="mb-6" style={{ color: '#495800' }}>
                 Join the Beta Program with a $80 deposit and get <span className="relative inline-block group">
                   <a href="#pricing-tiers" className="underline font-semibold" style={{ color: '#7A9200' }}>20% off forever</a>
                   <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-72 p-3 bg-white rounded-lg shadow-lg border-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50" style={{ borderColor: '#7A9200' }}>
-                    <p className="text-sm mb-2" style={{ color: '#4A5745' }}>
+                    <p className="text-sm mb-2" style={{ color: '#495800' }}>
                       If you don't request a refund after 30 days, and you let us keep the $80, then you'll get a 20% lifetime discount.
                     </p>
                     <div className="absolute top-full left-1/2 transform -translate-x-1/2 -mt-1">
@@ -184,7 +184,7 @@ export default function EarlyBirdDiscount() {
                 </span>. Your deposit is <span className="relative inline-block group">
                   <Link href="/early-bird-discount-refund-policy" className="underline font-semibold" style={{ color: '#7A9200' }}>100% refundable</Link>
                   <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-64 p-3 bg-white rounded-lg shadow-lg border-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50" style={{ borderColor: '#7A9200' }}>
-                    <p className="text-sm mb-2" style={{ color: '#4A5745' }}>
+                    <p className="text-sm mb-2" style={{ color: '#495800' }}>
                       You can get a full refund within 30 days of using Oasis. <Link href="/early-bird-discount-refund-policy" className="underline font-semibold" style={{ color: '#7A9200' }}>View full refund policy</Link>.
                     </p>
                     <div className="absolute top-full left-1/2 transform -translate-x-1/2 -mt-1">
@@ -194,7 +194,7 @@ export default function EarlyBirdDiscount() {
                 </span> within 30 days of using Oasis.
               </p>
               <div className="bg-gray-50 rounded-lg p-4 max-w-xl mx-auto mb-6" style={{ border: '1px solid #7A9200' }}>
-                <ol className="text-sm text-left space-y-1 ml-4" style={{ color: '#4A5745', listStyleType: 'decimal' }}>
+                <ol className="text-sm text-left space-y-1 ml-4" style={{ color: '#495800', listStyleType: 'decimal' }}>
                   <li>Submit your name and email below</li>
                   <li>Receive secure payment link via email</li>
                   <li>Complete your $80 deposit</li>
@@ -214,7 +214,7 @@ export default function EarlyBirdDiscount() {
 
               {loadError && (
                 <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center">
-                  <p className="mb-4" style={{ color: '#4A5745' }}>We're having trouble loading the form. Please try refreshing the page.</p>
+                  <p className="mb-4" style={{ color: '#495800' }}>We're having trouble loading the form. Please try refreshing the page.</p>
                   <button
                     onClick={() => window.location.reload()}
                     className="px-4 py-2.5 text-sm font-bold rounded-full transition-colors"
@@ -248,14 +248,14 @@ export default function EarlyBirdDiscount() {
 
           {/* Pricing Tiers Section */}
           <div id="pricing-tiers" className="bg-white rounded-xl p-8 shadow-lg mb-12" style={{ border: '2px solid #7A9200' }}>
-            <h2 className="text-2xl font-bold mb-4 text-center" style={{ color: '#4A5745' }}>Oasis Pricing Tiers</h2>
-            <p className="text-center mb-6" style={{ color: '#4A5745' }}>
+            <h2 className="text-2xl font-bold mb-4 text-center" style={{ color: '#495800' }}>Oasis Pricing Tiers</h2>
+            <p className="text-center mb-6" style={{ color: '#495800' }}>
               20% off forever when you <a href="#deposit-form" className="underline font-semibold" style={{ color: '#7A9200' }}>join our paid Beta Program</a>.
             </p>
             
             {/* Discount Toggle - Above both columns */}
             <div className="flex justify-center items-center gap-4 mb-8">
-              <span className="text-sm font-medium" style={{ color: '#4A5745' }}>With 20% Discount</span>
+              <span className="text-sm font-medium" style={{ color: '#495800' }}>With 20% Discount</span>
               <button
                 onClick={() => setShowDiscount(!showDiscount)}
                 className="relative inline-flex h-7 w-12 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2"
@@ -273,15 +273,15 @@ export default function EarlyBirdDiscount() {
                   }`}
                 />
               </button>
-              <span className="text-sm font-medium" style={{ color: '#4A5745' }}>Standard Pricing</span>
+              <span className="text-sm font-medium" style={{ color: '#495800' }}>Standard Pricing</span>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Free Tier */}
               <div className="bg-white rounded-xl p-6" style={{ border: '2px solid #7A9200' }}>
-                <h3 className="text-xl font-bold mb-2" style={{ color: '#4A5745' }}>Free</h3>
-                <p className="text-3xl font-bold mb-4" style={{ color: '#4A5745' }}>$0</p>
-                <ul className="space-y-2 mb-6" style={{ color: '#4A5745' }}>
+                <h3 className="text-xl font-bold mb-2" style={{ color: '#495800' }}>Free</h3>
+                <p className="text-3xl font-bold mb-4" style={{ color: '#495800' }}>$0</p>
+                <ul className="space-y-2 mb-6" style={{ color: '#495800' }}>
                   <li className="flex items-start">
                     <svg className="w-5 h-5 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: '#7A9200' }}>
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -293,11 +293,11 @@ export default function EarlyBirdDiscount() {
 
               {/* Premium Tier */}
               <div className="bg-white rounded-xl p-6 relative" style={{ border: showDiscount ? '3px solid #7A9200' : '2px solid #7A9200' }}>
-                <h3 className="text-xl font-bold mb-2" style={{ color: '#4A5745' }}>Premium</h3>
+                <h3 className="text-xl font-bold mb-2" style={{ color: '#495800' }}>Premium</h3>
                 
                 {/* Monthly/Yearly Toggle - Only on Premium */}
                 <div className="flex justify-start items-center gap-3 mb-4">
-                  <span className="text-sm font-medium" style={{ color: '#4A5745' }}>Monthly</span>
+                  <span className="text-sm font-medium" style={{ color: '#495800' }}>Monthly</span>
                   <button
                     onClick={() => setBillingPeriod(billingPeriod === 'monthly' ? 'yearly' : 'monthly')}
                     className="relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2"
@@ -315,7 +315,7 @@ export default function EarlyBirdDiscount() {
                       }`}
                     />
                   </button>
-                  <span className="text-sm font-medium" style={{ color: '#4A5745' }}>Yearly</span>
+                  <span className="text-sm font-medium" style={{ color: '#495800' }}>Yearly</span>
                 </div>
 
                 {/* Pricing Display */}
@@ -329,7 +329,7 @@ export default function EarlyBirdDiscount() {
                         <span className="text-3xl font-bold" style={{ color: '#7A9200' }}>
                           {billingPeriod === 'monthly' ? '$8' : '$80'}
                         </span>
-                        <span className="text-lg" style={{ color: '#4A5745' }}>
+                        <span className="text-lg" style={{ color: '#495800' }}>
                           /{billingPeriod === 'monthly' ? 'month' : 'year'}
                         </span>
                       </div>
@@ -341,17 +341,17 @@ export default function EarlyBirdDiscount() {
                     </>
                   ) : (
                     <div className="mb-2">
-                      <span className="text-3xl font-bold" style={{ color: '#4A5745' }}>
+                      <span className="text-3xl font-bold" style={{ color: '#495800' }}>
                         {billingPeriod === 'monthly' ? '$10' : '$100'}
                       </span>
-                      <span className="text-lg" style={{ color: '#4A5745' }}>
+                      <span className="text-lg" style={{ color: '#495800' }}>
                         /{billingPeriod === 'monthly' ? 'month' : 'year'}
                       </span>
                     </div>
                   )}
                 </div>
 
-                <ul className="space-y-2 mb-6" style={{ color: '#4A5745' }}>
+                <ul className="space-y-2 mb-6" style={{ color: '#495800' }}>
                   <li className="flex items-start">
                     <svg className="w-5 h-5 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: '#7A9200' }}>
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -366,7 +366,7 @@ export default function EarlyBirdDiscount() {
 
           {/* FAQ Section */}
           <div className="mt-12 bg-white rounded-xl p-8 shadow-lg" style={{ border: '2px solid #7A9200' }}>
-            <h2 className="text-2xl font-bold mb-6 text-center" style={{ color: '#4A5745' }}>Frequently Asked Questions</h2>
+            <h2 className="text-2xl font-bold mb-6 text-center" style={{ color: '#495800' }}>Frequently Asked Questions</h2>
             <div className="space-y-3">
               {[
                 {
@@ -448,7 +448,7 @@ export default function EarlyBirdDiscount() {
                         padding: '16px 20px',
                         background: 'transparent',
                         border: 'none',
-                        color: '#4A5745',
+                        color: '#495800',
                         fontWeight: 600,
                         cursor: 'pointer',
                         display: 'flex',
@@ -477,7 +477,7 @@ export default function EarlyBirdDiscount() {
                         id={`faq-answer-${faq.id}`}
                         style={{ 
                           padding: '0 20px 20px 20px',
-                          color: '#788B59',
+                          color: '#495800',
                           lineHeight: 1.7,
                           borderTop: '1px solid #e5e7eb',
                           marginTop: '8px'
@@ -506,7 +506,7 @@ export default function EarlyBirdDiscount() {
         /* Accordion styling to match enterprise-buyer-guide */
         .accordion-container .accordion-button {
           background-color: transparent !important;
-          color: #4A5745 !important;
+          color: #495800 !important;
           font-weight: 600 !important;
           border: none !important;
           border-radius: 6px !important;
@@ -516,8 +516,8 @@ export default function EarlyBirdDiscount() {
         }
         
         .accordion-container .accordion-button:hover {
-          background-color: #E0D48C !important;
-          color: #4A5745 !important;
+          background-color: #FDEABB !important;
+          color: #495800 !important;
         }
       `}</style>
     </>

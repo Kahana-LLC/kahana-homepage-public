@@ -55,10 +55,10 @@ export default function DocsIndex({ docs, categories }) {
 
           {/* Header - same as blog */}
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-[#011910] mb-4">
+            <h1 className="text-4xl font-bold text-oasis-green-900 mb-4">
               Documentation
             </h1>
-            <p className="text-xl text-[#4A5745] max-w-2xl mx-auto">
+            <p className="text-xl text-oasis-green-800 max-w-2xl mx-auto">
               Learn how to use Kahana&apos;s features, understand our security measures, and follow best practices for your team.
             </p>
           </div>
@@ -119,8 +119,8 @@ export default function DocsIndex({ docs, categories }) {
             </>
           ) : (
             <div className="text-center py-12">
-              <h3 className="text-lg font-medium text-[#011910] mb-2">No documentation found</h3>
-              <p className="text-[#4A5745]">
+              <h3 className="text-lg font-medium text-oasis-green-900 mb-2">No documentation found</h3>
+              <p className="text-oasis-green-800">
                 Try adjusting your search or filter to find what you&apos;re looking for.
               </p>
             </div>

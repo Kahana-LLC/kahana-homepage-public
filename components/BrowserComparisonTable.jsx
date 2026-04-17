@@ -198,7 +198,7 @@ const BrowserComparisonTable = () => {
               onChange={() => handleFilterChange(filterType, option)}
                             className="rounded border-[#4A6200] text-[#4A6200] focus:ring-[#4A6200]"
             />
-            <span className="text-[#4A5745]">{option}</span>
+            <span className="text-oasis-green-800">{option}</span>
           </label>
         ))}
       </div>
@@ -236,15 +236,15 @@ const BrowserComparisonTable = () => {
                                     onChange={() => toggleSelectedBrowser(key)}
                                     className="rounded border-[#4A6200] text-[#4A6200] focus:ring-[#4A6200]"
                                 />
-                                <span className="font-semibold" style={{color: isChecked ? '#313A00' : '#4A5745'}}>{browser.name}</span>
+                                <span className="font-semibold" style={{color: isChecked ? '#313A00' : '#495800'}}>{browser.name}</span>
                             </label>
                         );
                     })
                 ) : (
-                    <div className="text-center text-[#4A5745] py-4 text-xs">No browsers match the current filters or search.</div>
+                    <div className="text-center text-oasis-green-800 py-4 text-xs">No browsers match the current filters or search.</div>
                 )}
     </div>
-            <div className="text-xs text-[#4A5745] mt-2">Filter the list using the sections below.</div>
+            <div className="text-xs text-oasis-green-800 mt-2">Filter the list using the sections below.</div>
     </div>
   );
 
@@ -269,14 +269,14 @@ const BrowserComparisonTable = () => {
                         {ALL_FEATURES.map(featureTitle => (
                             <div key={featureTitle} className="mb-3 border-b last:border-b-0 pb-3 last:pb-0" style={{borderColor:'rgba(74, 98, 0, 0.1)'}}>
                                 <div className="text-xs font-bold text-[#313A00] mb-1.5 uppercase tracking-wide">{featureTitle}</div>
-                                <div className="text-sm text-[#4A5745] leading-relaxed">{browser[FEATURE_MAP[featureTitle]]}</div>
+                                <div className="text-sm text-oasis-green-800 leading-relaxed">{browser[FEATURE_MAP[featureTitle]]}</div>
         </div>
       ))}
                     </div>
                 ))
             ) : (
         <div className="text-center py-12 px-4">
-                    <p className="text-[#4A5745] text-base mb-2">Select browsers in the <strong className="text-[#313A00]">Controls</strong> dropdown to start comparing.</p>
+                    <p className="text-oasis-green-800 text-base mb-2">Select browsers in the <strong className="text-[#313A00]">Controls</strong> dropdown to start comparing.</p>
         </div>
       )}
     </div>
@@ -362,14 +362,14 @@ const BrowserComparisonTable = () => {
                  <div className="relative overflow-x-auto overflow-y-auto max-h-96 border-t" style={{borderColor:'rgba(74, 98, 0, 0.1)'}}>
                     {comparisonData.length === 0 ? (
                         <div className="text-center py-16">
-                            <p className="text-[#4A5745] text-base mb-2">Use the <strong className="text-[#313A00]">Controls</strong> button to pin browsers for side-by-side comparison.</p>
+                            <p className="text-oasis-green-800 text-base mb-2">Use the <strong className="text-[#313A00]">Controls</strong> button to pin browsers for side-by-side comparison.</p>
                         </div>
                     ) : (
                          <table className="min-w-full" style={{borderCollapse:'separate', borderSpacing:0}}>
                             {/* Browser Names as Column Headers */}
                             <thead className="sticky top-0 z-30 bg-white/95 backdrop-blur-sm">
                                 <tr>
-                                    <th className="px-5 py-4 text-left text-xs font-bold uppercase tracking-wider sticky left-0 z-30 min-w-[200px] bg-white/95 backdrop-blur-sm" style={{color:'#4A5745', borderRight:'1px solid rgba(74, 98, 0, 0.1)', borderBottom:'2px solid rgba(74, 98, 0, 0.2)'}}>
+                                    <th className="px-5 py-4 text-left text-xs font-bold uppercase tracking-wider sticky left-0 z-30 min-w-[200px] bg-white/95 backdrop-blur-sm" style={{color:'#495800', borderRight:'1px solid rgba(74, 98, 0, 0.1)', borderBottom:'2px solid rgba(74, 98, 0, 0.2)'}}>
                                         Feature
                                     </th>
                                     {comparisonData.map((browser) => (
@@ -411,7 +411,7 @@ const BrowserComparisonTable = () => {
                                                 className={`px-5 py-4 whitespace-normal break-words align-top min-w-[180px] transition-colors text-sm ${
                                                     hoveredColumn === browser.name ? 'bg-[#F8FAF2]' : ''
                                                 }`}
-                                                style={{borderRight:'1px solid rgba(74, 98, 0, 0.1)', color:'#4A5745'}}
+                                                style={{borderRight:'1px solid rgba(74, 98, 0, 0.1)', color:'#495800'}}
                                                 onMouseEnter={() => setHoveredColumn(browser.name)}
                                                 onMouseLeave={() => setHoveredColumn(null)}
                                             >
@@ -425,7 +425,7 @@ const BrowserComparisonTable = () => {
                     )}
           {/* Row Count Indicator */}
                     {comparisonData.length > 0 && (
-            <div className="px-6 py-3 bg-[#F8FAF2]/50 text-xs text-[#4A5745] border-t" style={{borderColor:'rgba(74, 98, 0, 0.1)'}}>
+            <div className="px-6 py-3 bg-[#F8FAF2]/50 text-xs text-oasis-green-800 border-t" style={{borderColor:'rgba(74, 98, 0, 0.1)'}}>
                             Comparing <strong className="text-[#313A00]">{comparisonData.length}</strong> browser{comparisonData.length !== 1 ? 's' : ''}.
                             <span className="ml-2">↔️ Scroll horizontally to see all selected browsers.</span>
             </div>
@@ -649,7 +649,7 @@ export default BrowserComparisonTable;
 //               type="checkbox"
 //               checked={(filters[filterType] || []).includes(option)}
 //               onChange={() => handleFilterChange(filterType, option)}
-//               className="rounded border-gray-300 text-[#788B59] focus:ring-[#788B59]"
+//               className="rounded border-gray-300 text-oasis-green-500 focus:ring-oasis-green-500"
 //             />
 //             <span className="text-gray-600">{option}</span>
 //           </label>
@@ -660,9 +660,9 @@ export default BrowserComparisonTable;
 
 //   const renderProductivityCell = (productivity) => (
 //     <div className="space-y-1">
-//       {productivity.tabsGroups && <span className="inline-block bg-[#F3F8E4] text-[#4A5745] text-xs px-2 py-1 rounded">Tab groups</span>}
-//       {productivity.extensions && <span className="inline-block bg-[#E0D48C] text-[#4A5745] text-xs px-2 py-1 rounded">Extensions</span>}
-//       {productivity.ai && <span className="inline-block bg-[#F3F8E4] text-[#728552] text-xs px-2 py-1 rounded">AI</span>}
+//       {productivity.tabsGroups && <span className="inline-block bg-[#F3F8E4] text-oasis-green-800 text-xs px-2 py-1 rounded">Tab groups</span>}
+//       {productivity.extensions && <span className="inline-block bg-[#E0D48C] text-oasis-green-800 text-xs px-2 py-1 rounded">Extensions</span>}
+//       {productivity.ai && <span className="inline-block bg-[#F3F8E4] text-oasis-green-600 text-xs px-2 py-1 rounded">AI</span>}
 //     </div>
 //   );
 
@@ -680,9 +680,9 @@ export default BrowserComparisonTable;
 //     <div className="space-y-1">
 //       {prices.map(price => (
 //         <span key={price} className={`inline-block text-xs px-2 py-1 rounded mr-1 mb-1 font-semibold ${
-//           price === 'Free' ? 'bg-[#F3F8E4] text-[#4A5745]' :
-//           price === 'Enterprise' ? 'bg-[#728552] text-white' :
-//           price === 'Paid-only' ? 'bg-[#E0D48C] text-[#4A5745]' :
+//           price === 'Free' ? 'bg-[#F3F8E4] text-oasis-green-800' :
+//           price === 'Enterprise' ? 'bg-oasis-green-600 text-white' :
+//           price === 'Paid-only' ? 'bg-[#E0D48C] text-oasis-green-800' :
 //           'bg-gray-100 text-gray-800'
 //         }`}>
 //           {price}
@@ -698,41 +698,41 @@ export default BrowserComparisonTable;
 //         <div key={browser.name} className="bg-white rounded-lg shadow border border-gray-200 p-4">
 //           <div className="text-lg font-bold mb-2">{browser.name}</div>
 //           <div className="mb-2">
-//             <div className="text-xs font-semibold text-[#4A5745] mb-1">Type</div>
+//             <div className="text-xs font-semibold text-oasis-green-800 mb-1">Type</div>
 //             <div>{browser.type}</div>
 //           </div>
 //           <div className="mb-2">
-//             <div className="text-xs font-semibold text-[#4A5745] mb-1">Who Uses It</div>
+//             <div className="text-xs font-semibold text-oasis-green-800 mb-1">Who Uses It</div>
 //             <div>{browser.whoUsesIt}</div>
 //           </div>
 //           <div className="mb-2">
-//             <div className="text-xs font-semibold text-[#4A5745] mb-1">Privacy</div>
+//             <div className="text-xs font-semibold text-oasis-green-800 mb-1">Privacy</div>
 //             <div>{browser.privacy}</div>
 //           </div>
 //           <div className="mb-2">
-//             <div className="text-xs font-semibold text-[#4A5745] mb-1">Security</div>
+//             <div className="text-xs font-semibold text-oasis-green-800 mb-1">Security</div>
 //             <div>{browser.security}</div>
 //           </div>
 //           <div className="mb-2">
-//             <div className="text-xs font-semibold text-[#4A5745] mb-1">AI Features</div>
+//             <div className="text-xs font-semibold text-oasis-green-800 mb-1">AI Features</div>
 //             <div>{browser.aiFeatures}</div>
 //           </div>
 //           <div className="mb-2">
-//             <div className="text-xs font-semibold text-[#4A5745] mb-1">Platforms</div>
+//             <div className="text-xs font-semibold text-oasis-green-800 mb-1">Platforms</div>
 //             <div>{browser.platforms}</div>
 //           </div>
 //           <div className="mb-2">
-//             <div className="text-xs font-semibold text-[#4A5745] mb-1">Unique Strength</div>
+//             <div className="text-xs font-semibold text-oasis-green-800 mb-1">Unique Strength</div>
 //             <div>{browser.uniqueStrength}</div>
 //           </div>
 //           <div>
-//             <div className="text-xs font-semibold text-[#4A5745] mb-1">Summary/Verdict</div>
+//             <div className="text-xs font-semibold text-oasis-green-800 mb-1">Summary/Verdict</div>
 //             <div>{browser.summary}</div>
 //           </div>
 //         </div>
 //       ))}
 //       {filteredData.length === 0 && (
-//         <div className="text-center py-8 text-[#4A5745]">
+//         <div className="text-center py-8 text-oasis-green-800">
 //           No browsers match the current filters
 //         </div>
 //       )}
@@ -748,23 +748,23 @@ export default BrowserComparisonTable;
 //           <div className="flex items-center space-x-2">
 //             <button
 //               onClick={clearAllFilters}
-//               className="inline-flex items-center px-3 py-1.5 rounded-lg border border-gray-300 bg-white text-gray-700 text-sm font-medium shadow-sm hover:bg-[#F3F8E4] hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-[#788B59] transition"
+//               className="inline-flex items-center px-3 py-1.5 rounded-lg border border-gray-300 bg-white text-gray-700 text-sm font-medium shadow-sm hover:bg-oasis-green-50 hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-oasis-green-500 transition"
 //             >
 //               Clear filters
 //             </button>
 //             <button
 //               onClick={exportToCSV}
-//               className="inline-flex items-center px-3 py-1.5 rounded-lg border border-[#788B59] bg-[#F3F8E4] text-[#4A5745] text-sm font-medium shadow-sm hover:bg-[#E0D48C] hover:border-[#728552] focus:outline-none focus:ring-2 focus:ring-[#788B59] transition"
+//               className="inline-flex items-center px-3 py-1.5 rounded-lg border border-[#788B59] bg-[#F3F8E4] text-oasis-green-800 text-sm font-medium shadow-sm hover:bg-[#E0D48C] hover:border-oasis-green-600 focus:outline-none focus:ring-2 focus:ring-oasis-green-500 transition"
 //             >
 //               Export CSV
 //             </button>
 //             <div className="relative" ref={filterRef}>
 //               <button
 //                 onClick={() => setIsFilterOpen(!isFilterOpen)}
-//                 className={`inline-flex items-center px-4 py-1.5 rounded-lg border text-sm font-medium shadow-sm transition focus:outline-none focus:ring-2 focus:ring-[#788B59] space-x-2 ${
+//                 className={`inline-flex items-center px-4 py-1.5 rounded-lg border text-sm font-medium shadow-sm transition focus:outline-none focus:ring-2 focus:ring-oasis-green-500 space-x-2 ${
 //                   getActiveFilterCount() > 0
-//                     ? 'bg-[#788B59] border-[#728552] text-white hover:bg-[#728552] hover:border-[#4A5745]'
-//                     : 'bg-white border-gray-300 text-gray-700 hover:bg-[#F3F8E4] hover:border-gray-400'
+//                     ? 'bg-oasis-green-500 border-oasis-green-600 text-white hover:bg-oasis-green-700 hover:border-oasis-green-800'
+//                     : 'bg-white border-gray-300 text-gray-700 hover:bg-oasis-green-50 hover:border-gray-400'
 //                 }`}
 //               >
 //                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -772,7 +772,7 @@ export default BrowserComparisonTable;
 //                 </svg>
 //                 <span>Filters</span>
 //                 {getActiveFilterCount() > 0 && (
-//                   <span className="bg-white text-[#4A5745] text-xs rounded-full px-2 py-0.5 ml-1 border border-[#788B59]">
+//                   <span className="bg-white text-oasis-green-800 text-xs rounded-full px-2 py-0.5 ml-1 border border-[#788B59]">
 //                     {getActiveFilterCount()}
 //                   </span>
 //                 )}
@@ -789,7 +789,7 @@ export default BrowserComparisonTable;
 //                       <h3 className="text-lg font-semibold text-gray-900">Filters</h3>
 //                       <button
 //                         onClick={() => setIsFilterOpen(false)}
-//                         className="text-[#4A5745] hover:text-gray-600"
+//                         className="text-oasis-green-800 hover:text-gray-600"
 //                       >
 //                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 //                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -830,12 +830,12 @@ export default BrowserComparisonTable;
 //             {getActiveFilters().map((filter, index) => (
 //               <span
 //                 key={index}
-//                 className="inline-flex items-center px-2 py-1 text-xs font-medium bg-[#F3F8E4] text-[#4A5745] rounded-full"
+//                 className="inline-flex items-center px-2 py-1 text-xs font-medium bg-[#F3F8E4] text-oasis-green-800 rounded-full"
 //               >
 //                 {filter.value}
 //                 <button
 //                   onClick={() => removeFilter(filter.type, filter.value)}
-//                   className="ml-1 text-[#788B59] hover:text-[#728552]"
+//                   className="ml-1 text-oasis-green-500 hover:text-oasis-green-600"
 //                 >
 //                   <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 //                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -856,15 +856,15 @@ export default BrowserComparisonTable;
 //           <table className="w-full">
 //             <thead className="bg-gray-50 sticky top-0 z-10">
 //               <tr>
-//                 <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-[#4A5745] uppercase tracking-wider bg-gray-50 border-r border-gray-200 sticky left-0 z-20 min-w-[140px] whitespace-normal break-words">Browser</th>
-//                 <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-[#4A5745] uppercase tracking-wider bg-white border-r border-gray-200 min-w-[120px] whitespace-normal break-words">Type</th>
-//                 <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-[#4A5745] uppercase tracking-wider bg-gray-50 border-r border-gray-200 min-w-[140px] whitespace-normal break-words">Who Uses It</th>
-//                 <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-[#4A5745] uppercase tracking-wider bg-white border-r border-gray-200 min-w-[140px] whitespace-normal break-words">Privacy</th>
-//                 <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-[#4A5745] uppercase tracking-wider bg-gray-50 border-r border-gray-200 min-w-[140px] whitespace-normal break-words">Security</th>
-//                 <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-[#4A5745] uppercase tracking-wider bg-white border-r border-gray-200 min-w-[140px] whitespace-normal break-words">AI Features</th>
-//                 <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-[#4A5745] uppercase tracking-wider bg-gray-50 border-r border-gray-200 min-w-[140px] whitespace-normal break-words">Platforms</th>
-//                 <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-[#4A5745] uppercase tracking-wider bg-white border-r border-gray-200 min-w-[140px] whitespace-normal break-words">Unique Strength</th>
-//                 <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-[#4A5745] uppercase tracking-wider bg-gray-50 min-w-[140px] whitespace-normal break-words">Summary/Verdict</th>
+//                 <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-oasis-green-800 uppercase tracking-wider bg-gray-50 border-r border-gray-200 sticky left-0 z-20 min-w-[140px] whitespace-normal break-words">Browser</th>
+//                 <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-oasis-green-800 uppercase tracking-wider bg-white border-r border-gray-200 min-w-[120px] whitespace-normal break-words">Type</th>
+//                 <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-oasis-green-800 uppercase tracking-wider bg-gray-50 border-r border-gray-200 min-w-[140px] whitespace-normal break-words">Who Uses It</th>
+//                 <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-oasis-green-800 uppercase tracking-wider bg-white border-r border-gray-200 min-w-[140px] whitespace-normal break-words">Privacy</th>
+//                 <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-oasis-green-800 uppercase tracking-wider bg-gray-50 border-r border-gray-200 min-w-[140px] whitespace-normal break-words">Security</th>
+//                 <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-oasis-green-800 uppercase tracking-wider bg-white border-r border-gray-200 min-w-[140px] whitespace-normal break-words">AI Features</th>
+//                 <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-oasis-green-800 uppercase tracking-wider bg-gray-50 border-r border-gray-200 min-w-[140px] whitespace-normal break-words">Platforms</th>
+//                 <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-oasis-green-800 uppercase tracking-wider bg-white border-r border-gray-200 min-w-[140px] whitespace-normal break-words">Unique Strength</th>
+//                 <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-oasis-green-800 uppercase tracking-wider bg-gray-50 min-w-[140px] whitespace-normal break-words">Summary/Verdict</th>
 //               </tr>
 //             </thead>
 //             <tbody className="bg-white divide-y divide-gray-200">
@@ -888,7 +888,7 @@ export default BrowserComparisonTable;
 //               ))}
 //               {filteredData.length === 0 && (
 //                 <tr>
-//                   <td colSpan={9} className="text-center py-8 text-[#4A5745]">
+//                   <td colSpan={9} className="text-center py-8 text-oasis-green-800">
 //                     No browsers match the current filters
 //                   </td>
 //                 </tr>
@@ -897,7 +897,7 @@ export default BrowserComparisonTable;
 //           </table>
 //           {/* Row Count Indicator */}
 //           {filteredData.length > 0 && (
-//             <div className="px-4 py-2 bg-gray-50 text-xs text-[#4A5745] border-t border-gray-200">
+//             <div className="px-4 py-2 bg-gray-50 text-xs text-oasis-green-800 border-t border-gray-200">
 //               Showing {filteredData.length} browser{filteredData.length !== 1 ? 's' : ''}
 //               {filteredData.length > 6 && (
 //                 <span className="ml-2">(scroll to see more)</span>
@@ -905,7 +905,7 @@ export default BrowserComparisonTable;
 //             </div>
 //           )}
 //           {filteredData.length > 0 && (
-//             <div className="block sm:hidden px-4 py-2 text-xs text-[#4A5745] text-center">↔️ Scroll horizontally to see more columns</div>
+//             <div className="block sm:hidden px-4 py-2 text-xs text-oasis-green-800 text-center">↔️ Scroll horizontally to see more columns</div>
 //           )}
 //         </div>
 //       )}

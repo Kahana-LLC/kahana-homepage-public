@@ -140,8 +140,8 @@ const Resources = ({
 
       <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h1 className="text-4xl font-bold text-[#4A5745]">Resources</h1>
-          <p className="mt-4 text-xl text-[#4A5745]">
+          <h1 className="text-4xl font-bold text-oasis-green-800">Resources</h1>
+          <p className="mt-4 text-xl text-oasis-green-800">
             Explore our comprehensive collection of resources designed to help you succeed in monetizing your digital content.
           </p>
         </div>
@@ -162,7 +162,7 @@ const Resources = ({
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6">
                   <div className="text-white">
-                    <span className="inline-block bg-[#788B59] px-3 py-1 rounded-full text-sm mb-2">
+                    <span className="inline-block bg-oasis-green-500 px-3 py-1 rounded-full text-sm mb-2">
                       {featuredResource.category}
                     </span>
                     <h2 className="text-2xl font-bold mb-2">{featuredResource.title}</h2>
@@ -177,7 +177,7 @@ const Resources = ({
         {/* Recent Resources */}
         {recentResources.length > 0 ? (
           <div className="mt-12">
-            <h2 className="text-2xl font-bold text-[#4A5745] mb-6">Recent Resources</h2>
+            <h2 className="text-2xl font-bold text-oasis-green-800 mb-6">Recent Resources</h2>
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
               {recentResources.map((resource) => (
                 <Link key={resource.slug} href={resource.downloadUrl || resource.videoUrl}>
@@ -192,11 +192,11 @@ const Resources = ({
                       />
                     </div>
                     <div className="p-6">
-                      <span className="inline-block bg-[#788B59] text-white px-3 py-1 rounded-full text-sm mb-2">
+                      <span className="inline-block bg-oasis-green-500 text-white px-3 py-1 rounded-full text-sm mb-2">
                         {resource.category}
                       </span>
-                      <h3 className="text-xl font-semibold text-[#4A5745] mb-2">{resource.title}</h3>
-                      <p className="text-[#4A5745]">{resource.excerpt}</p>
+                      <h3 className="text-xl font-semibold text-oasis-green-800 mb-2">{resource.title}</h3>
+                      <p className="text-oasis-green-800">{resource.excerpt}</p>
                     </div>
                   </div>
                 </Link>
@@ -205,8 +205,8 @@ const Resources = ({
           </div>
         ) : (
           <div className="mt-12 text-center py-12">
-            <h2 className="text-2xl font-bold text-[#4A5745] mb-4">No Resources Available</h2>
-            <p className="text-[#4A5745]">We're currently updating our resource library. Check back soon for new content!</p>
+            <h2 className="text-2xl font-bold text-oasis-green-800 mb-4">No Resources Available</h2>
+            <p className="text-oasis-green-800">We're currently updating our resource library. Check back soon for new content!</p>
           </div>
         )}
 
@@ -248,11 +248,11 @@ const Resources = ({
                     />
                   </div>
                   <div className="p-6">
-                    <span className="inline-block bg-[#788B59] text-white px-3 py-1 rounded-full text-sm mb-2">
+                    <span className="inline-block bg-oasis-green-500 text-white px-3 py-1 rounded-full text-sm mb-2">
                       {resource.category}
                     </span>
-                    <h3 className="text-xl font-semibold text-[#4A5745] mb-2">{resource.title}</h3>
-                    <p className="text-[#4A5745]">{resource.excerpt}</p>
+                    <h3 className="text-xl font-semibold text-oasis-green-800 mb-2">{resource.title}</h3>
+                    <p className="text-oasis-green-800">{resource.excerpt}</p>
                   </div>
                 </div>
               </Link>
@@ -262,7 +262,7 @@ const Resources = ({
           {/* No Results Message */}
           {showNoResults && (
             <div className="text-center py-12">
-              <p className="text-[#4A5745]">No resources found matching your criteria.</p>
+              <p className="text-oasis-green-800">No resources found matching your criteria.</p>
             </div>
           )}
 

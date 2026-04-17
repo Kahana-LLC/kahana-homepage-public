@@ -31,10 +31,10 @@ export default function BlogListing({ post }) {
       <div className="flex items-center space-x-4">
         {isClient && (
           <>
-            <time dateTime={post.date} className="text-sm text-[#4A5745]">
+            <time dateTime={post.date} className="text-sm text-oasis-green-800">
               {formatDate(post.date)}
             </time>
-            <span className="text-sm text-[#4A5745]">{post.readingTime} min read</span>
+            <span className="text-sm text-oasis-green-800">{post.readingTime} min read</span>
           </>
         )}
       </div>

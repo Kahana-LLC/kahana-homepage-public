@@ -80,9 +80,9 @@ const supportLinks = [
 
 function ConnectCard() {
   return (
-    <div className="rounded-2xl border border-[#4A5745]/15 bg-gradient-to-br from-[#f8faf9] to-white p-8 shadow-lg">
-      <h2 className="text-xl font-bold text-[#011910] mb-2">Connect with Kahana</h2>
-      <p className="text-[#4A5745] text-sm leading-relaxed mb-6">
+    <div className="rounded-2xl border border-oasis-green-800/15 bg-gradient-to-br from-oasis-green-50 to-white p-8 shadow-lg">
+      <h2 className="text-xl font-bold text-oasis-green-900 mb-2">Connect with Kahana</h2>
+      <p className="text-oasis-green-800 text-sm leading-relaxed mb-6">
         Use the channels below for documentation, updates, and direct help from the team.
       </p>
       <ul className="space-y-3">
@@ -97,7 +97,7 @@ function ConnectCard() {
         <li>
           <Link
             href="/docs"
-            className="flex w-full items-center justify-center rounded-xl border-2 border-[#4A6200] px-4 py-3 text-sm font-semibold text-[#4A6200] no-underline hover:bg-[#f8faf9]"
+            className="flex w-full items-center justify-center rounded-xl border-2 border-[#4A6200] px-4 py-3 text-sm font-semibold text-[#4A6200] no-underline hover:bg-oasis-green-50"
           >
             Browse documentation
           </Link>
@@ -105,7 +105,7 @@ function ConnectCard() {
         <li>
           <Link
             href="/support"
-            className="flex w-full items-center justify-center rounded-xl border-2 border-[#4A6200] px-4 py-3 text-sm font-semibold text-[#4A6200] no-underline hover:bg-[#f8faf9]"
+            className="flex w-full items-center justify-center rounded-xl border-2 border-[#4A6200] px-4 py-3 text-sm font-semibold text-[#4A6200] no-underline hover:bg-oasis-green-50"
           >
             Support
           </Link>
@@ -113,7 +113,7 @@ function ConnectCard() {
         <li>
           <Link
             href="/contact"
-            className="flex w-full items-center justify-center rounded-xl border-2 border-[#66C2BE] px-4 py-3 text-sm font-semibold text-[#0d3d3a] no-underline hover:bg-[#66C2BE]/10"
+            className="flex w-full items-center justify-center rounded-xl border-2 border-brand-link px-4 py-3 text-sm font-semibold text-[#0d3d3a] no-underline hover:bg-brand-link/10"
           >
             Contact us
           </Link>
@@ -141,9 +141,9 @@ export default function Community() {
           <div className="lg:grid lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-7">
               <div className="text-center lg:text-left mb-12">
-                <h2 className="text-base font-semibold leading-7 text-[#66C2BE] mb-3">Community</h2>
-                <h1 className="text-4xl font-bold text-[#011910] sm:text-5xl">Stay close to the product</h1>
-                <p className="mt-6 text-xl text-[#4A5745]">
+                <h2 className="text-base font-semibold leading-7 text-brand-link mb-3">Community</h2>
+                <h1 className="text-4xl font-bold text-oasis-green-900 sm:text-5xl">Stay close to the product</h1>
+                <p className="mt-6 text-xl text-oasis-green-800">
                   We publish updates and deep dives on the blog, keep how-tos in docs, and route questions through support
                   and contact. Read the guidelines and FAQ if you participate in programs or events we run.
                 </p>
@@ -157,7 +157,7 @@ export default function Community() {
                 <div className="mx-auto">
                   <div className="relative h-1 bg-gray-100 rounded-full mb-12">
                     <div
-                      className="absolute h-full bg-gradient-to-r from-[#E3DFF1] via-[#8CB7D0] to-[#66C2BE] rounded-full transition-all duration-300 ease-in-out"
+                      className="absolute h-full bg-gradient-to-r from-oasis-blue-100 via-oasis-blue-300 to-brand-link rounded-full transition-all duration-300 ease-in-out"
                       style={{ width: `${(hoveredStep / (steps.length - 1)) * 100}%` }}
                     />
                   </div>
@@ -166,19 +166,19 @@ export default function Community() {
                     {steps.map((step, index) => (
                       <div
                         key={step.id}
-                        className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl overflow-hidden p-6 shadow-lg shadow-[#E3DFF1]/20 hover:shadow-xl hover:shadow-[#E3DFF1]/30 transition-all duration-300"
+                        className="bg-gradient-to-br from-desert-yellow-100/20 to-oasis-blue-300/10 rounded-xl overflow-hidden p-6 shadow-lg shadow-oasis-blue-100/20 hover:shadow-xl hover:shadow-oasis-blue-100/30 transition-all duration-300"
                         onMouseEnter={() => setHoveredStep(index)}
                         onMouseLeave={() => setHoveredStep(0)}
                       >
                         <div className="flex items-start">
                           <div className="flex-shrink-0">
-                            <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-[#66C2BE] via-[#8CB7D0] to-[#E3DFF1] shadow-md shadow-[#E3DFF1]/20">
+                            <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-brand-link via-oasis-blue-300 to-oasis-blue-100 shadow-md shadow-oasis-blue-100/20">
                               <div className="text-white">{step.icon}</div>
                             </div>
                           </div>
                           <div className="ml-4">
-                            <div className="text-lg font-semibold leading-7 text-[#011910]">{step.name}</div>
-                            <div className="mt-2 text-base leading-7 text-[#4A5745]">{step.description}</div>
+                            <div className="text-lg font-semibold leading-7 text-oasis-green-900">{step.name}</div>
+                            <div className="mt-2 text-base leading-7 text-oasis-green-800">{step.description}</div>
                           </div>
                         </div>
                       </div>
@@ -186,28 +186,28 @@ export default function Community() {
                   </div>
 
                   <div className="mt-16 bg-white rounded-xl shadow-xl p-8">
-                    <h3 className="text-2xl font-semibold text-[#011910] mb-6">What you will find</h3>
-                    <p className="text-lg text-[#4A5745] mb-8">
+                    <h3 className="text-2xl font-semibold text-oasis-green-900 mb-6">What you will find</h3>
+                    <p className="text-lg text-oasis-green-800 mb-8">
                       Product news and essays on the blog; operational detail in docs; human help via support and contact.
                     </p>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
                       <div className="space-y-4">
-                        <h4 className="text-xl font-semibold text-[#011910]">Help and clarity</h4>
-                        <ul className="space-y-3 text-[#4A5745]">
+                        <h4 className="text-xl font-semibold text-oasis-green-900">Help and clarity</h4>
+                        <ul className="space-y-3 text-oasis-green-800">
                           <li className="flex items-start">
-                            <svg className="h-6 w-6 text-[#66C2BE] mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg className="h-6 w-6 text-brand-link mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
                             <span>Support for account and product issues</span>
                           </li>
                           <li className="flex items-start">
-                            <svg className="h-6 w-6 text-[#66C2BE] mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg className="h-6 w-6 text-brand-link mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
                             <span>Documentation for features and security</span>
                           </li>
                           <li className="flex items-start">
-                            <svg className="h-6 w-6 text-[#66C2BE] mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg className="h-6 w-6 text-brand-link mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
                             <span>Contact for partnerships and press</span>
@@ -215,22 +215,22 @@ export default function Community() {
                         </ul>
                       </div>
                       <div className="space-y-4">
-                        <h4 className="text-xl font-semibold text-[#011910]">Updates</h4>
-                        <ul className="space-y-3 text-[#4A5745]">
+                        <h4 className="text-xl font-semibold text-oasis-green-900">Updates</h4>
+                        <ul className="space-y-3 text-oasis-green-800">
                           <li className="flex items-start">
-                            <svg className="h-6 w-6 text-[#66C2BE] mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg className="h-6 w-6 text-brand-link mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
                             <span>Release and roadmap context on the blog</span>
                           </li>
                           <li className="flex items-start">
-                            <svg className="h-6 w-6 text-[#66C2BE] mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg className="h-6 w-6 text-brand-link mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
                             <span>Guidelines and FAQ for community programs</span>
                           </li>
                           <li className="flex items-start">
-                            <svg className="h-6 w-6 text-[#66C2BE] mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg className="h-6 w-6 text-brand-link mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
                             <span>Oasis product pages for features and pricing</span>
@@ -247,15 +247,15 @@ export default function Community() {
                           className="group flex items-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300"
                         >
                           <div className="flex-shrink-0">
-                            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-[#66C2BE]/10 via-[#8CB7D0]/10 to-[#E3DFF1]/10 group-hover:from-[#66C2BE]/20 group-hover:via-[#8CB7D0]/20 group-hover:to-[#E3DFF1]/20 transition-all duration-300">
-                              <div className="text-[#66C2BE]">{link.icon}</div>
+                            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-brand-link/10 via-oasis-blue-300/10 to-oasis-blue-100/10 group-hover:from-brand-link/20 group-hover:via-oasis-blue-300/20 group-hover:to-oasis-blue-100/20 transition-all duration-300">
+                              <div className="text-brand-link">{link.icon}</div>
                             </div>
                           </div>
                           <div className="ml-4">
-                            <p className="text-base font-medium text-[#011910] group-hover:text-[#66C2BE] transition-colors duration-300">
+                            <p className="text-base font-medium text-oasis-green-900 group-hover:text-brand-link-hover transition-colors duration-300">
                               {link.name}
                             </p>
-                            <p className="mt-1 text-sm text-[#4A5745]">{link.description}</p>
+                            <p className="mt-1 text-sm text-oasis-green-800">{link.description}</p>
                           </div>
                         </Link>
                       ))}

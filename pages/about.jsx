@@ -99,13 +99,13 @@ export default function About() {
       <div className="relative bg-white">
         <div className="mx-auto max-w-7xl px-4 pb-16 pt-10 sm:px-6 sm:pb-24 lg:px-8 lg:pt-16">
           <div className="max-w-3xl">
-            <p className="text-sm font-semibold uppercase tracking-wide text-[#728552]">
+            <p className="text-sm font-semibold uppercase tracking-wide text-oasis-green-600">
               Oasis
             </p>
-            <h1 className="mt-2 bg-gradient-to-r from-[#728552] to-[#788B59] bg-clip-text text-4xl font-bold tracking-tight text-transparent sm:text-5xl">
+            <h1 className="mt-2 bg-gradient-to-r from-oasis-green-600 to-oasis-green-500 bg-clip-text text-4xl font-bold tracking-tight text-transparent sm:text-5xl">
               Managed enterprise browser for secure SaaS access
             </h1>
-            <p className="mt-4 text-lg text-[#4A5745] sm:text-xl">
+            <p className="mt-4 text-lg text-oasis-green-800 sm:text-xl">
               Governance belongs in the browser—where SaaS, internal tools, and AI workflows run—not only on devices you own. Oasis helps security teams secure contractor and partner access without treating laptop shipping or VDI as the default answer.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
@@ -130,31 +130,31 @@ export default function About() {
       <section className="bg-[#F3F8E4] py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl font-bold text-[#4A5745] sm:text-4xl">
+            <h2 className="text-3xl font-bold text-oasis-green-800 sm:text-4xl">
               Work moved into the browser. Many access models did not.
             </h2>
-            <p className="mt-4 text-lg text-[#4A5745]">
+            <p className="mt-4 text-lg text-oasis-green-800">
               Employees, contractors, and partners increasingly work directly in SaaS—often from devices the organization does not manage. Traditional models built around corporate laptops, VPNs, and rigid network boundaries struggle to govern how SaaS is actually used.
             </p>
           </div>
 
-          <div className="mt-12 overflow-hidden rounded-2xl border border-[#728552]/20 bg-white shadow-sm">
+          <div className="mt-12 overflow-hidden rounded-2xl border border-oasis-green-600/20 bg-white shadow-sm">
             <div className="grid md:grid-cols-2">
-              <div className="border-b border-[#728552]/15 p-6 md:border-b-0 md:border-r">
-                <h3 className="text-lg font-semibold text-[#4A5745]">
+              <div className="border-b border-oasis-green-600/15 p-6 md:border-b-0 md:border-r">
+                <h3 className="text-lg font-semibold text-oasis-green-800">
                   Device-centric assumptions
                 </h3>
-                <ul className="mt-4 list-disc space-y-2 pl-5 text-[#4A5745]">
+                <ul className="mt-4 list-disc space-y-2 pl-5 text-oasis-green-800">
                   <li>Access tied heavily to corporate endpoints</li>
                   <li>Contractors often need shipped hardware or virtual desktops</li>
                   <li>Policy enforcement anchored to device ownership and network edges</li>
                 </ul>
               </div>
               <div className="p-6">
-                <h3 className="text-lg font-semibold text-[#4A5745]">
+                <h3 className="text-lg font-semibold text-oasis-green-800">
                   Browser-centric reality
                 </h3>
-                <ul className="mt-4 list-disc space-y-2 pl-5 text-[#4A5745]">
+                <ul className="mt-4 list-disc space-y-2 pl-5 text-oasis-green-800">
                   <li>SaaS accessed directly through the browser</li>
                   <li>External collaborators work from their own machines</li>
                   <li>Sensitive activity happens inside browser sessions</li>
@@ -164,27 +164,27 @@ export default function About() {
           </div>
 
           <div className="mt-12 grid gap-8 md:grid-cols-2">
-            <div className="rounded-2xl bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 p-8">
-              <h3 className="text-xl font-semibold text-[#4A5745]">
+            <div className="rounded-2xl bg-gradient-to-br from-desert-yellow-100/20 to-oasis-blue-300/10 p-8">
+              <h3 className="text-xl font-semibold text-oasis-green-800">
                 Why contractor access breaks down
               </h3>
-              <p className="mt-3 text-[#4A5745]">
+              <p className="mt-3 text-oasis-green-800">
                 Security teams face recurring trade-offs between speed, cost, and control. Onboarding stalls, gaps appear on third-party devices, and contractor-heavy programs become hard to scale.
               </p>
-              <ul className="mt-4 list-disc space-y-2 pl-5 text-[#4A5745]">
+              <ul className="mt-4 list-disc space-y-2 pl-5 text-oasis-green-800">
                 <li>Hardware and VDI paths are often slow and expensive to operate at scale</li>
                 <li>Unmanaged consumer browsers struggle to enforce enterprise policy consistently</li>
                 <li>SaaS sprawl—apps, extensions, and AI tools in the browser—widens the attack surface</li>
               </ul>
             </div>
-            <div className="rounded-2xl bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 p-8">
-              <h3 className="text-xl font-semibold text-[#4A5745]">
+            <div className="rounded-2xl bg-gradient-to-br from-desert-yellow-100/20 to-oasis-blue-300/10 p-8">
+              <h3 className="text-xl font-semibold text-oasis-green-800">
                 Cost of sticking with hardware-first defaults
               </h3>
-              <p className="mt-3 text-[#4A5745]">
+              <p className="mt-3 text-oasis-green-800">
                 If access stays anchored to devices alone, onboarding drag and operational load tend to grow while unmanaged SaaS activity expands in the browser.
               </p>
-              <ul className="mt-4 list-disc space-y-2 pl-5 text-[#4A5745]">
+              <ul className="mt-4 list-disc space-y-2 pl-5 text-oasis-green-800">
                 <li>Projects wait on logistics instead of policy and identity</li>
                 <li>Inconsistent browser enforcement increases risk of gaps and incidents</li>
                 <li>Security spends cycles managing exceptions instead of governing sessions</li>
@@ -197,10 +197,10 @@ export default function About() {
       {/* Why old approaches fall short */}
       <section className="bg-white py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center text-3xl font-bold text-[#4A5745] sm:text-4xl">
+          <h2 className="text-center text-3xl font-bold text-oasis-green-800 sm:text-4xl">
             Why the old trade-off persists
           </h2>
-          <p className="mx-auto mt-4 max-w-3xl text-center text-lg text-[#4A5745]">
+          <p className="mx-auto mt-4 max-w-3xl text-center text-lg text-oasis-green-800">
             Many organizations still choose between heavy infrastructure and friction—or looser access on unmanaged browsers. Oasis is built for a third path: govern SaaS where it runs, in the browser session, with integrations that meet enterprise expectations.
           </p>
         </div>
@@ -210,13 +210,13 @@ export default function About() {
       <section className="bg-[#F3F8E4] py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl font-bold text-[#4A5745] sm:text-4xl">
+            <h2 className="text-3xl font-bold text-oasis-green-800 sm:text-4xl">
               A browser designed as the enterprise control layer
             </h2>
-            <p className="mt-4 text-lg text-[#4A5745]">
+            <p className="mt-4 text-lg text-oasis-green-800">
               Oasis is a managed enterprise browser for modern SaaS access. Instead of relying on device ownership alone, it places governance in the browser—integrating with identity and data protection systems you already use so policies extend into SaaS workflows.
             </p>
-            <p className="mt-6 text-base font-medium text-[#728552]">
+            <p className="mt-6 text-base font-medium text-oasis-green-600">
               No device shipping by default. No VDI sprawl as the only answer. No unmanaged sessions without an enforcement story.
             </p>
           </div>
@@ -226,20 +226,20 @@ export default function About() {
       {/* Pillars / capabilities */}
       <section className="bg-white py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center text-3xl font-bold text-[#4A5745] sm:text-4xl">
+          <h2 className="text-center text-3xl font-bold text-oasis-green-800 sm:text-4xl">
             What Oasis enables
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-center text-lg text-[#4A5745]">
+          <p className="mx-auto mt-4 max-w-2xl text-center text-lg text-oasis-green-800">
             Policies that follow the session—not only the endpoint—so governance stays consistent when work leaves the corporate laptop.
           </p>
           <div className="mt-12 grid gap-8 sm:grid-cols-2">
             {PILLARS.map((item) => (
               <div
                 key={item.title}
-                className="rounded-2xl bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 p-8"
+                className="rounded-2xl bg-gradient-to-br from-desert-yellow-100/20 to-oasis-blue-300/10 p-8"
               >
-                <h3 className="text-xl font-semibold text-[#4A5745]">{item.title}</h3>
-                <p className="mt-3 text-[#4A5745]">{item.body}</p>
+                <h3 className="text-xl font-semibold text-oasis-green-800">{item.title}</h3>
+                <p className="mt-3 text-oasis-green-800">{item.body}</p>
               </div>
             ))}
           </div>
@@ -250,10 +250,10 @@ export default function About() {
       <section className="bg-[#F3F8E4] py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl">
-            <h2 className="text-3xl font-bold text-[#4A5745] sm:text-4xl">
+            <h2 className="text-3xl font-bold text-oasis-green-800 sm:text-4xl">
               Session-level security, enterprise integrations
             </h2>
-            <p className="mt-4 text-lg text-[#4A5745]">
+            <p className="mt-4 text-lg text-oasis-green-800">
               Many approaches extend legacy device-centric models. Oasis focuses on the environment where modern work happens: the browser session—pairing that focus with identity and DLP integration and a browser experience teams can adopt.
             </p>
           </div>
@@ -263,20 +263,20 @@ export default function About() {
       {/* Outcomes */}
       <section className="bg-white py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center text-3xl font-bold text-[#4A5745] sm:text-4xl">
+          <h2 className="text-center text-3xl font-bold text-oasis-green-800 sm:text-4xl">
             Outcomes security and IT leaders care about
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-center text-sm text-[#4A5745]/90">
+          <p className="mx-auto mt-4 max-w-2xl text-center text-sm text-oasis-green-800/90">
             Specific timelines and savings depend on your environment; use these as directional themes, not guarantees.
           </p>
           <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {OUTCOMES.map((item) => (
               <div
                 key={item.title}
-                className="rounded-2xl border border-[#728552]/15 bg-[#F8FAF2] p-6"
+                className="rounded-2xl border border-oasis-green-600/15 bg-[#F8FAF2] p-6"
               >
-                <h3 className="text-lg font-semibold text-[#4A5745]">{item.title}</h3>
-                <p className="mt-2 text-sm text-[#4A5745]">{item.body}</p>
+                <h3 className="text-lg font-semibold text-oasis-green-800">{item.title}</h3>
+                <p className="mt-2 text-sm text-oasis-green-800">{item.body}</p>
               </div>
             ))}
           </div>
@@ -286,10 +286,10 @@ export default function About() {
       {/* Use cases + ICP */}
       <section className="bg-[#F3F8E4] py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center text-3xl font-bold text-[#4A5745] sm:text-4xl">
+          <h2 className="text-center text-3xl font-bold text-oasis-green-800 sm:text-4xl">
             Built for enterprise security and IT architecture leaders
           </h2>
-          <p className="mx-auto mt-4 max-w-3xl text-center text-lg text-[#4A5745]">
+          <p className="mx-auto mt-4 max-w-3xl text-center text-lg text-oasis-green-800">
             Especially in SaaS-heavy organizations that rely on contractors, partners, and distributed teams—and need fast, governable access without defaulting to hardware logistics.
           </p>
           <div className="mt-12 grid gap-8 md:grid-cols-3">
@@ -298,8 +298,8 @@ export default function About() {
                 key={item.title}
                 className="rounded-2xl bg-white p-8 shadow-sm"
               >
-                <h3 className="text-lg font-semibold text-[#4A5745]">{item.title}</h3>
-                <p className="mt-3 text-[#4A5745]">{item.body}</p>
+                <h3 className="text-lg font-semibold text-oasis-green-800">{item.title}</h3>
+                <p className="mt-3 text-oasis-green-800">{item.body}</p>
               </div>
             ))}
           </div>
@@ -309,10 +309,10 @@ export default function About() {
       {/* Point of view */}
       <section className="bg-white py-16 sm:py-20">
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-[#4A5745] sm:text-4xl">
+          <h2 className="text-3xl font-bold text-oasis-green-800 sm:text-4xl">
             Security should live where work actually happens
           </h2>
-          <p className="mt-4 text-lg text-[#4A5745]">
+          <p className="mt-4 text-lg text-oasis-green-800">
             The browser is the workspace for SaaS-centric work. Organizations need a control layer that integrates with the existing security stack, enforces consistent policies across users and devices, and reduces the operational overhead of purely device-centric access models—without forcing a false choice between usability and control.
           </p>
         </div>
@@ -321,17 +321,17 @@ export default function About() {
       {/* Objections */}
       <section className="bg-[#F3F8E4] py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center text-3xl font-bold text-[#4A5745] sm:text-4xl">
+          <h2 className="text-center text-3xl font-bold text-oasis-green-800 sm:text-4xl">
             Common questions
           </h2>
           <div className="mt-12 space-y-6">
             {OBJECTIONS.map((row) => (
               <div
                 key={row.objection}
-                className="rounded-2xl border border-[#728552]/20 bg-white p-6 sm:p-8"
+                className="rounded-2xl border border-oasis-green-600/20 bg-white p-6 sm:p-8"
               >
-                <p className="font-semibold text-[#4A5745]">{row.objection}</p>
-                <p className="mt-3 text-[#4A5745]">{row.response}</p>
+                <p className="font-semibold text-oasis-green-800">{row.objection}</p>
+                <p className="mt-3 text-oasis-green-800">{row.response}</p>
               </div>
             ))}
           </div>

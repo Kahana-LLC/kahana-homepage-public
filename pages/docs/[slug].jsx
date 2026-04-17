@@ -128,20 +128,20 @@ export default function DocPage({ doc, relatedDocs }) {
 
             <div className="flex flex-col space-y-6">
               {/* Title */}
-              <h1 className="text-4xl font-bold text-[#4A5745]">{doc.title}</h1>
+              <h1 className="text-4xl font-bold text-oasis-green-800">{doc.title}</h1>
 
               {/* Metadata */}
               <div className="flex flex-wrap items-center gap-3">
                 <AuthorCard authors={docAuthors} variant="header" />
                 <time 
                   dateTime={doc.date}
-                  className="inline-flex items-center px-3 py-1.5 text-[#4A5745] text-sm"
+                  className="inline-flex items-center px-3 py-1.5 text-oasis-green-800 text-sm"
                 >
                   <FaRegCalendarAlt className="w-4 h-4 mr-2" />
                   <span className="mr-1">Last updated:</span>
                   {formatDate(doc.date)}
                 </time>
-                <div className="inline-flex items-center px-3 py-1.5 text-[#4A5745] text-sm">
+                <div className="inline-flex items-center px-3 py-1.5 text-oasis-green-800 text-sm">
                   <FaRegClock className="w-4 h-4 mr-2" />
                   <span>{readingTime} min read</span>
                 </div>
@@ -158,8 +158,8 @@ export default function DocPage({ doc, relatedDocs }) {
 
           {/* Related Docs */}
           {relatedDocs.length > 0 && (
-            <div className="mt-16 pt-8 border-t border-[#728552]/30">
-              <h2 className="text-2xl font-bold text-[#4A5745] mb-6">Related Documentation</h2>
+            <div className="mt-16 pt-8 border-t border-oasis-green-600/30">
+              <h2 className="text-2xl font-bold text-oasis-green-800 mb-6">Related Documentation</h2>
               <div className="grid gap-6 md:grid-cols-3">
                 {relatedDocs.map((relatedDoc) => (
                   <Link
@@ -168,7 +168,7 @@ export default function DocPage({ doc, relatedDocs }) {
                     className="block group doc-card-link no-underline"
                   >
                     <div className="bg-white rounded-xl shadow-lg hover:shadow-xl p-6 transition-all duration-200">
-                      <h3 className="text-lg font-semibold text-gray-900 group-hover:text-[#728552]">
+                      <h3 className="text-lg font-semibold text-gray-900 group-hover:text-oasis-green-600">
                         {relatedDoc.title}
                       </h3>
                       <p className="mt-2 text-sm text-gray-600 line-clamp-2">
@@ -183,7 +183,7 @@ export default function DocPage({ doc, relatedDocs }) {
 
           {/* Author Bio Section */}
           <div className="mt-12">
-            <h2 className="text-2xl font-bold text-[#4A5745] mb-6">About the Author</h2>
+            <h2 className="text-2xl font-bold text-oasis-green-800 mb-6">About the Author</h2>
             <AuthorCard 
               authors={docAuthors}
               variant="bio" 

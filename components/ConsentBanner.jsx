@@ -44,7 +44,7 @@ export default function ConsentBanner() {
 
   return (
     <div 
-      className="fixed bottom-0 left-0 right-0 z-50 bg-white border-t-2 border-[#728552] shadow-lg"
+      className="fixed bottom-0 left-0 right-0 z-50 bg-white border-t-2 border-oasis-green-600 shadow-lg"
       style={{ contain: 'layout paint' }}
       role="dialog"
       aria-labelledby="consent-banner-title"

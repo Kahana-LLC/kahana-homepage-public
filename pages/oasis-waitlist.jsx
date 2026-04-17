@@ -87,13 +87,13 @@ export default function OasisWaitlist() {
         <div className="text-center">
           <p className="text-sm text-gray-600 mb-3">
             <strong>Contact us</strong> - for an immediate response, contact us directly at{' '}
-            <Link href="/contact" className="text-[#66C2BE] hover:text-[#4A9E9A] no-underline hover:no-underline">
+            <Link href="/contact" className="text-brand-link hover:text-brand-link-hover no-underline hover:no-underline">
               contact us
             </Link>
           </p>
-          <p className="text-xs text-[#4A5745]">
+          <p className="text-xs text-oasis-green-800">
             By submitting this form you consent to be contacted by Kahana, and acknowledge our{' '}
-            <Link href="/privacy-policy" className="text-[#66C2BE] hover:text-[#4A9E9A] no-underline hover:no-underline">
+            <Link href="/privacy-policy" className="text-brand-link hover:text-brand-link-hover no-underline hover:no-underline">
               Privacy Policy
             </Link>
             .
@@ -126,7 +126,7 @@ export default function OasisWaitlist() {
               {/* Left Column - Content */}
               <div className="lg:col-span-7">
                 <div className="text-center lg:text-left mb-12">
-                  <h2 className="text-base font-semibold leading-7 text-[#66C2BE] mb-3">Your story deserves an Oasis</h2>
+                  <h2 className="text-base font-semibold leading-7 text-brand-link mb-3">Your story deserves an Oasis</h2>
                   <h1 className="text-4xl font-bold text-gray-900 sm:text-5xl">
                     Start your next chapter with Oasis
                   </h1>
@@ -167,7 +167,7 @@ export default function OasisWaitlist() {
                     {/* Progress Bar */}
                     <div className="relative h-1 bg-gray-100 rounded-full mb-12">
                       <div 
-                        className="absolute h-full bg-gradient-to-r from-[#E3DFF1] via-[#8CB7D0] to-[#66C2BE] rounded-full transition-all duration-300 ease-in-out"
+                        className="absolute h-full bg-gradient-to-r from-oasis-blue-100 via-oasis-blue-300 to-brand-link rounded-full transition-all duration-300 ease-in-out"
                         style={{ width: `${(hoveredStep / (steps.length - 1)) * 100}%` }}
                       />
                     </div>
@@ -176,13 +176,13 @@ export default function OasisWaitlist() {
                       {steps.map((step, index) => (
                         <div 
                           key={step.id} 
-                          className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl overflow-hidden p-6 shadow-lg shadow-[#E3DFF1]/20 hover:shadow-xl hover:shadow-[#E3DFF1]/30 transition-all duration-300"
+                          className="bg-gradient-to-br from-desert-yellow-100/20 to-oasis-blue-300/10 rounded-xl overflow-hidden p-6 shadow-lg shadow-oasis-blue-100/20 hover:shadow-xl hover:shadow-oasis-blue-100/30 transition-all duration-300"
                           onMouseEnter={() => setHoveredStep(index)}
                           onMouseLeave={() => setHoveredStep(0)}
                         >
                           <div className="flex items-start">
                             <div className="flex-shrink-0">
-                              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-[#66C2BE] via-[#8CB7D0] to-[#E3DFF1] shadow-md shadow-[#E3DFF1]/20">
+                              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-brand-link via-oasis-blue-300 to-oasis-blue-100 shadow-md shadow-oasis-blue-100/20">
                                 <div className="text-white">
                                   {step.icon}
                                 </div>
@@ -213,19 +213,19 @@ export default function OasisWaitlist() {
                           <h4 className="text-xl font-semibold text-gray-900">AI-Powered Intelligence</h4>
                           <ul className="space-y-3 text-gray-600">
                             <li className="flex items-start">
-                              <svg className="h-6 w-6 text-[#66C2BE] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <svg className="h-6 w-6 text-brand-link mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                               </svg>
                               <span>Patented AI assistant integrated into the browser core</span>
                             </li>
                             <li className="flex items-start">
-                              <svg className="h-6 w-6 text-[#66C2BE] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <svg className="h-6 w-6 text-brand-link mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                               </svg>
                               <span>Seamless link organization and retrieval</span>
                             </li>
                             <li className="flex items-start">
-                              <svg className="h-6 w-6 text-[#66C2BE] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <svg className="h-6 w-6 text-brand-link mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                               </svg>
                               <span>Dynamic layout manipulation to meet your needs</span>
@@ -236,19 +236,19 @@ export default function OasisWaitlist() {
                           <h4 className="text-xl font-semibold text-gray-900">Designed for Productivity</h4>
                           <ul className="space-y-3 text-gray-600">
                             <li className="flex items-start">
-                              <svg className="h-6 w-6 text-[#66C2BE] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <svg className="h-6 w-6 text-brand-link mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                               </svg>
                               <span>Ask your AI to find anything you've ever saved</span>
                             </li>
                             <li className="flex items-start">
-                              <svg className="h-6 w-6 text-[#66C2BE] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <svg className="h-6 w-6 text-brand-link mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                               </svg>
                               <span>Perfect layouts automatically organized for efficiency</span>
                             </li>
                             <li className="flex items-start">
-                              <svg className="h-6 w-6 text-[#66C2BE] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <svg className="h-6 w-6 text-brand-link mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                               </svg>
                               <span>No more tab hunting or search history digging</span>

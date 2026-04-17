@@ -47,7 +47,7 @@ function NavDropdownPanelSection({ section, splitColumns, sectionIndex, onPick }
         <Link
           href={section.href}
           prefetch={section.prefetch}
-          className="block rounded-lg border border-[#66C2BE]/20 bg-gradient-to-r from-[#66C2BE]/5 to-[#8CB7D0]/5 p-4 no-underline transition-all hover:border-[#66C2BE]/30 hover:from-[#66C2BE]/10 hover:to-[#8CB7D0]/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#617500] focus-visible:ring-offset-2"
+          className="block rounded-lg border border-brand-link/20 bg-gradient-to-r from-brand-link/5 to-oasis-blue-300/5 p-4 no-underline transition-all hover:border-brand-link/30 hover:from-brand-link/10 hover:to-oasis-blue-300/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-oasis-green-700 focus-visible:ring-offset-2"
           onClick={onPick}
         >
           <div className="mb-3 h-32 w-full overflow-hidden rounded-lg">
@@ -72,7 +72,7 @@ function NavDropdownPanelSection({ section, splitColumns, sectionIndex, onPick }
 
   return (
     <div className={`dropdown-section ${dividerClass}`}>
-      <h3 className="mb-4 text-xs font-bold uppercase tracking-wider text-[#026400]">{section.heading}</h3>
+      <h3 className="mb-4 text-xs font-bold uppercase tracking-wider text-oasis-green-900">{section.heading}</h3>
       <div className="flex flex-col space-y-4">
         {section.links.map((item) => (
           <Link
@@ -433,7 +433,7 @@ export default function NavbarDup() {
                   <li key={item.id}>
                     <Link
                       href={item.href}
-                      className="nav-link relative z-[2] inline-flex items-center gap-0.5 whitespace-nowrap rounded-md px-2 py-2 font-sans text-[0.9375rem] font-normal !text-[#617500] no-underline focus:outline-none"
+                      className="nav-link relative z-[2] inline-flex items-center gap-0.5 whitespace-nowrap rounded-md px-2 py-2 font-sans text-[0.9375rem] font-normal !text-oasis-green-700 no-underline focus:outline-none"
                     >
                       <span className="nav-link-text">{item.label}</span>
                     </Link>
@@ -449,7 +449,7 @@ export default function NavbarDup() {
                   <Link
                     href={item.href}
                     prefetch={item.prefetchTop !== false}
-                    className="nav-link relative z-[2] inline-flex items-center gap-0.5 whitespace-nowrap rounded-md px-2 py-2 font-sans text-[0.9375rem] font-normal !text-[#617500] no-underline focus:outline-none"
+                    className="nav-link relative z-[2] inline-flex items-center gap-0.5 whitespace-nowrap rounded-md px-2 py-2 font-sans text-[0.9375rem] font-normal !text-oasis-green-700 no-underline focus:outline-none"
                     aria-haspopup="true"
                     aria-expanded={isOpen}
                   >
@@ -552,7 +552,7 @@ export default function NavbarDup() {
                     key={row.href}
                     href={row.href}
                     prefetch={row.prefetch}
-                    className="mobile-link flex items-center space-x-3 bg-gradient-to-r from-[#66C2BE]/5 to-[#8CB7D0]/5 p-3 no-underline hover:from-[#66C2BE]/10 hover:to-[#8CB7D0]/10"
+                    className="mobile-link flex items-center space-x-3 bg-gradient-to-r from-brand-link/5 to-oasis-blue-300/5 p-3 no-underline hover:from-brand-link/10 hover:to-oasis-blue-300/10"
                     onClick={closeMobile}
                   >
                     <div className="h-12 w-12 flex-shrink-0 overflow-hidden rounded-lg">
@@ -569,7 +569,7 @@ export default function NavbarDup() {
                     </div>
                     <div className="flex-1">
                       <div className="font-medium text-gray-900">{row.label}</div>
-                      <div className="mt-1 text-xs text-[#4A5745]">{row.subtitle}</div>
+                      <div className="mt-1 text-xs text-oasis-green-800">{row.subtitle}</div>
                     </div>
                   </Link>
                 );

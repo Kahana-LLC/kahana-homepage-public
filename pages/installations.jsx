@@ -240,21 +240,21 @@ export default function Installations() {
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link 
                   href="/terms-and-conditions" 
-                  className="text-[#4A6200] hover:text-[#728552] font-semibold underline transition-colors duration-200"
+                  className="text-[#4A6200] hover:text-oasis-green-600 font-semibold underline transition-colors duration-200"
                 >
                   Terms and Conditions
                 </Link>
                 <span className="text-gray-400 hidden sm:inline">•</span>
                 <Link 
                   href="/privacy-policy" 
-                  className="text-[#4A6200] hover:text-[#728552] font-semibold underline transition-colors duration-200"
+                  className="text-[#4A6200] hover:text-oasis-green-600 font-semibold underline transition-colors duration-200"
                 >
                   Privacy Policy
                 </Link>
                 <span className="text-gray-400 hidden sm:inline">•</span>
                 <Link 
                   href="/security" 
-                  className="text-[#4A6200] hover:text-[#728552] font-semibold underline transition-colors duration-200"
+                  className="text-[#4A6200] hover:text-oasis-green-600 font-semibold underline transition-colors duration-200"
                 >
                   Security
                 </Link>

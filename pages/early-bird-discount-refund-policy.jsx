@@ -35,50 +35,50 @@ export default function EarlyBirdDiscountRefundPolicy() {
               </svg>
               Back to Beta Program
             </Link>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ color: '#4A5745' }}>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ color: '#495800' }}>
               Oasis Early Access Deposit & Refund Policy
             </h1>
-            <p className="text-xl max-w-2xl mx-auto" style={{ color: '#4A5745' }}>
+            <p className="text-xl max-w-2xl mx-auto" style={{ color: '#495800' }}>
               Complete transparency about your deposit, refund eligibility, and what happens if you request a refund.
             </p>
           </div>
 
           {/* Purpose of Deposit Section */}
           <div className="bg-white rounded-xl p-8 shadow-lg mb-8" style={{ border: '2px solid #7A9200' }}>
-            <h2 className="text-2xl font-bold mb-4" style={{ color: '#4A5745' }}>Purpose of Deposit</h2>
-            <p style={{ color: '#4A5745' }}>
+            <h2 className="text-2xl font-bold mb-4" style={{ color: '#495800' }}>Purpose of Deposit</h2>
+            <p style={{ color: '#495800' }}>
               Your $80 deposit secures your reserved spot for early access to Oasis, an AI-powered browser, and guarantees a lifetime discount of $80/year (20% off the standard $100/year pricing) if you continue your subscription after your 30-day trial period.
             </p>
           </div>
 
           {/* FAQ Section */}
           <div className="bg-white rounded-xl p-8 shadow-lg mb-8" style={{ border: '2px solid #7A9200' }}>
-            <h2 className="text-2xl font-bold mb-6" style={{ color: '#4A5745' }}>Frequently Asked Questions</h2>
+            <h2 className="text-2xl font-bold mb-6" style={{ color: '#495800' }}>Frequently Asked Questions</h2>
             <div className="space-y-6">
               <div>
-                <h3 className="text-lg font-semibold mb-2" style={{ color: '#4A5745' }}>Lifetime discount? How does this work?</h3>
-                <p className="mb-2" style={{ color: '#4A5745' }}>
+                <h3 className="text-lg font-semibold mb-2" style={{ color: '#495800' }}>Lifetime discount? How does this work?</h3>
+                <p className="mb-2" style={{ color: '#495800' }}>
                   Oasis will be a freemium platform. There will be a free tier with limitations (for example, 1,000 tokens per month). There will be a paid tier with more tokens available per month. This paid tier will be $10/month or $100/year.
                 </p>
-                <p style={{ color: '#4A5745' }}>
+                <p style={{ color: '#495800' }}>
                   If you pay the $80 deposit and continue to use it after 30 days of trying, then you will gain special tiered pricing: you only pay $80/year forever (or $8/month). You can downgrade to free anytime with the same account, but if you ever upgrade again, it won't be for $10/month or $100/year, it would be for $80/year (or $8/month).
                 </p>
               </div>
               <div>
-                <h3 className="text-lg font-semibold mb-2" style={{ color: '#4A5745' }}>Is Oasis being released immediately to people on the waitlist?</h3>
-                <p style={{ color: '#4A5745' }}>
+                <h3 className="text-lg font-semibold mb-2" style={{ color: '#495800' }}>Is Oasis being released immediately to people on the waitlist?</h3>
+                <p style={{ color: '#495800' }}>
                   No. Oasis is currently in pre-release and is scheduled for launch by May 17, 2026 (could be ready sooner). Early access will be made available to deposit holders by this date.
                 </p>
               </div>
               <div>
-                <h3 className="text-lg font-semibold mb-2" style={{ color: '#4A5745' }}>When will people receive early-bird access?</h3>
-                <p style={{ color: '#4A5745' }}>
+                <h3 className="text-lg font-semibold mb-2" style={{ color: '#495800' }}>When will people receive early-bird access?</h3>
+                <p style={{ color: '#495800' }}>
                   Early access will be available by May 17, 2026 (could be ready sooner). We will notify all deposit holders as soon as early access is ready.
                 </p>
               </div>
               <div>
-                <h3 className="text-lg font-semibold mb-2" style={{ color: '#4A5745' }}>Is there a specific number of people who will get the discount?</h3>
-                <p style={{ color: '#4A5745' }}>
+                <h3 className="text-lg font-semibold mb-2" style={{ color: '#495800' }}>Is there a specific number of people who will get the discount?</h3>
+                <p style={{ color: '#495800' }}>
                   Not right now. We're accepting early bird deposits without a specific limit at this time.
                 </p>
               </div>
@@ -87,26 +87,26 @@ export default function EarlyBirdDiscountRefundPolicy() {
 
           {/* Refund Eligibility Section */}
           <div className="bg-white rounded-xl p-8 shadow-lg mb-8" style={{ border: '2px solid #7A9200' }}>
-            <h2 className="text-2xl font-bold mb-6" style={{ color: '#4A5745' }}>Refund Eligibility</h2>
+            <h2 className="text-2xl font-bold mb-6" style={{ color: '#495800' }}>Refund Eligibility</h2>
             <div className="space-y-6">
               <div>
-                <h3 className="text-lg font-semibold mb-3" style={{ color: '#4A5745' }}>Pre-Launch Refunds</h3>
-                <p className="mb-2" style={{ color: '#4A5745' }}>
+                <h3 className="text-lg font-semibold mb-3" style={{ color: '#495800' }}>Pre-Launch Refunds</h3>
+                <p className="mb-2" style={{ color: '#495800' }}>
                   The product is currently in pre-release and is scheduled for launch by May 17, 2026 (could be ready sooner).
                 </p>
-                <p className="mb-2" style={{ color: '#4A5745' }}>
+                <p className="mb-2" style={{ color: '#495800' }}>
                   <strong>You may request a full refund of your deposit at any time before early access is made available.</strong>
                 </p>
-                <p style={{ color: '#4A5745' }}>
+                <p style={{ color: '#495800' }}>
                   If you request a refund before early access begins, you will forfeit your reserved spot and any associated benefits, including early access and the guaranteed lifetime discount.
                 </p>
               </div>
               <div className="pt-4" style={{ borderTop: '1px solid #7A9200' }}>
-                <h3 className="text-lg font-semibold mb-3" style={{ color: '#4A5745' }}>Post-Launch Refunds</h3>
-                <p className="mb-2" style={{ color: '#4A5745' }}>
+                <h3 className="text-lg font-semibold mb-3" style={{ color: '#495800' }}>Post-Launch Refunds</h3>
+                <p className="mb-2" style={{ color: '#495800' }}>
                   Once early access is available, you will have an additional <strong>30-day window</strong> to request a refund and cancel your reservation after experiencing the product.
                 </p>
-                <p style={{ color: '#4A5745' }}>
+                <p style={{ color: '#495800' }}>
                   After this 30-day period, deposits are non-refundable.
                 </p>
               </div>
@@ -115,8 +115,8 @@ export default function EarlyBirdDiscountRefundPolicy() {
 
           {/* Requesting a Refund Section */}
           <div className="bg-white rounded-xl p-8 shadow-lg mb-8" style={{ border: '2px solid #7A9200' }}>
-            <h2 className="text-2xl font-bold mb-6" style={{ color: '#4A5745' }}>Requesting a Refund</h2>
-            <div className="space-y-4" style={{ color: '#4A5745' }}>
+            <h2 className="text-2xl font-bold mb-6" style={{ color: '#495800' }}>Requesting a Refund</h2>
+            <div className="space-y-4" style={{ color: '#495800' }}>
               <p>
                 To request a refund, you must fill out a brief form and select from a list of options for why you are requesting a refund. Contact our customer support team at <a href="mailto:info@kahana.co" className="underline font-semibold" style={{ color: '#7A9200' }}>info@kahana.co</a> to receive the refund request form.
               </p>
@@ -137,8 +137,8 @@ export default function EarlyBirdDiscountRefundPolicy() {
 
           {/* Additional Notes Section */}
           <div className="bg-white rounded-xl p-8 shadow-lg mb-8" style={{ border: '2px solid #7A9200' }}>
-            <h2 className="text-2xl font-bold mb-6" style={{ color: '#4A5745' }}>Additional Notes</h2>
-            <div className="space-y-4" style={{ color: '#4A5745' }}>
+            <h2 className="text-2xl font-bold mb-6" style={{ color: '#495800' }}>Additional Notes</h2>
+            <div className="space-y-4" style={{ color: '#495800' }}>
               <p>
                 By paying the deposit, you agree to these terms.
               </p>
@@ -153,8 +153,8 @@ export default function EarlyBirdDiscountRefundPolicy() {
 
           {/* CTA Section */}
           <div className="bg-white rounded-xl p-8 shadow-lg text-center" style={{ border: '2px solid #7A9200' }}>
-            <h2 className="text-2xl font-bold mb-4" style={{ color: '#4A5745' }}>Ready to Join the Beta Program?</h2>
-            <p className="mb-6" style={{ color: '#4A5745' }}>
+            <h2 className="text-2xl font-bold mb-4" style={{ color: '#495800' }}>Ready to Join the Beta Program?</h2>
+            <p className="mb-6" style={{ color: '#495800' }}>
               Get early access to Oasis and help us build the future of browsing.
             </p>
             <Link

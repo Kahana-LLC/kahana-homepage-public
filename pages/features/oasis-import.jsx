@@ -7,7 +7,7 @@ const OasisMockImportBrowser = dynamic(
   {
     ssr: false,
     loading: () => (
-      <div className="min-h-[260px] w-full rounded-xl border border-[#4A5745]/10 bg-[#f8faf9] animate-pulse" aria-hidden />
+      <div className="min-h-[260px] w-full rounded-xl border border-oasis-green-800/10 bg-oasis-green-50 animate-pulse" aria-hidden />
     ),
   }
 );
@@ -50,8 +50,8 @@ export default function OasisImportFeaturePage() {
       backHref="/products/oasis-browser#import"
       backLabel="← Back to Oasis Browser (Import)"
     >
-      <section className="border-b border-[#4A5745]/8 bg-white py-12 md:py-16">
-        <div className="mx-auto max-w-3xl px-4 space-y-5 text-[#4A5745]/95 leading-relaxed sm:px-6 lg:px-8">
+      <section className="border-b border-oasis-green-800/8 bg-white py-12 md:py-16">
+        <div className="mx-auto max-w-3xl px-4 space-y-5 text-oasis-green-800/95 leading-relaxed sm:px-6 lg:px-8">
           <p>
             Oasis treats import like a migration conversation: what matters to you first, what can move automatically,
             what needs an OS prompt, and what simply cannot cross because the source browser never offered a handle.
@@ -73,7 +73,7 @@ export default function OasisImportFeaturePage() {
           </ul>
         </div>
       </section>
-      <section className="bg-[#f8faf9] py-12 md:py-16">
+      <section className="bg-oasis-green-50 py-12 md:py-16">
         <div className="mx-auto max-w-5xl overflow-x-auto px-4 sm:px-6 lg:px-8">
           <OasisMockImportBrowser />
         </div>

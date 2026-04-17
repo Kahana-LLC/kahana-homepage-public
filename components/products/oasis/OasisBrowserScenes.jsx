@@ -41,9 +41,9 @@ export function OasisSceneHistoryBody() {
   return (
     <div className="flex h-full flex-col overflow-hidden bg-[#fafbf8] px-3 py-3 sm:px-4">
       <p className="text-[10px] font-medium uppercase tracking-wide text-[#7a9200]">History</p>
-      <div className="mt-2 rounded-lg border border-[#4A5745]/12 bg-white px-2.5 py-2 shadow-sm">
-        <label className="text-[10px] font-semibold text-[#4A5745]/70">Semantic search</label>
-        <div className="mt-1 rounded-md border border-[#4A5745]/15 bg-[#f8faf9] px-2 py-1.5 text-[11px] text-[#2f3a20]">
+      <div className="mt-2 rounded-lg border border-oasis-green-800/12 bg-white px-2.5 py-2 shadow-sm">
+        <label className="text-[10px] font-semibold text-oasis-green-800/70">Semantic search</label>
+        <div className="mt-1 rounded-md border border-oasis-green-800/15 bg-oasis-green-50 px-2 py-1.5 text-[11px] text-[#2f3a20]">
           that article about async remote work
         </div>
       </div>
@@ -54,8 +54,8 @@ export function OasisSceneHistoryBody() {
           <div className="mt-0.5 text-[10px] text-[#666]">Visited Tue · workfutures.example</div>
           <div className="mt-1 text-[10px] text-[#7a9200]">Why it matched: async, remote work, meetings</div>
         </li>
-        <li className="rounded-lg border border-[#4A5745]/10 bg-white/80 px-2.5 py-2">
-          <div className="text-[11px] font-medium text-[#4A5745]/90">Quarterly planning: fewer syncs, clearer owners</div>
+        <li className="rounded-lg border border-oasis-green-800/10 bg-white/80 px-2.5 py-2">
+          <div className="text-[11px] font-medium text-oasis-green-800/90">Quarterly planning: fewer syncs, clearer owners</div>
           <div className="mt-0.5 text-[10px] text-[#999]">Visited Mon</div>
         </li>
       </ul>

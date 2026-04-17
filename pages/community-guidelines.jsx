@@ -67,36 +67,36 @@ export default function CommunityGuidelines() {
       <main className="min-h-screen bg-white pt-24 pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-[#011910] sm:text-5xl mb-6">
+            <h1 className="text-4xl font-bold text-oasis-green-900 sm:text-5xl mb-6">
               Community Guidelines
             </h1>
-            <p className="text-xl text-[#4A5745]">
+            <p className="text-xl text-oasis-green-800">
               Our community is built on trust, respect, and shared knowledge. These guidelines help us maintain a positive and productive environment for everyone.
             </p>
           </div>
 
           {/* Core Guidelines */}
           <div className="mb-16">
-            <h2 className="text-2xl font-semibold text-[#011910] mb-8">Core Guidelines</h2>
+            <h2 className="text-2xl font-semibold text-oasis-green-900 mb-8">Core Guidelines</h2>
             <div className="grid gap-6">
               {guidelines.map((guideline, index) => (
                 <div
                   key={index}
-                  className="bg-white rounded-xl shadow-lg border border-[#A5DAD8]/30 p-6 hover:shadow-xl transition-all duration-300"
+                  className="bg-white rounded-xl shadow-lg border border-oasis-blue-200/30 p-6 hover:shadow-xl transition-all duration-300"
                 >
                   <div className="flex items-start">
                     <div className="flex-shrink-0">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-[#66C2BE] via-[#8CB7D0] to-[#E3DFF1] shadow-md shadow-[#E3DFF1]/20">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-brand-link via-oasis-blue-300 to-oasis-blue-100 shadow-md shadow-oasis-blue-100/20">
                         <div className="text-white">
                           {guideline.icon}
                         </div>
                       </div>
                     </div>
                     <div className="ml-4">
-                      <h3 className="text-lg font-semibold text-[#011910]">
+                      <h3 className="text-lg font-semibold text-oasis-green-900">
                         {guideline.title}
                       </h3>
-                      <p className="mt-2 text-[#4A5745]">
+                      <p className="mt-2 text-oasis-green-800">
                         {guideline.description}
                       </p>
                     </div>
@@ -108,21 +108,21 @@ export default function CommunityGuidelines() {
 
           {/* Enforcement */}
           <div className="mb-16">
-            <h2 className="text-2xl font-semibold text-[#011910] mb-8">Enforcement</h2>
-            <div className="bg-white rounded-xl shadow-lg border border-[#A5DAD8]/30 p-8">
+            <h2 className="text-2xl font-semibold text-oasis-green-900 mb-8">Enforcement</h2>
+            <div className="bg-white rounded-xl shadow-lg border border-oasis-blue-200/30 p-8">
               <div className="grid gap-6">
                 {enforcement.map((item, index) => (
                   <div key={index} className="flex items-start">
                     <div className="flex-shrink-0">
-                      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#66C2BE]/10">
-                        <span className="text-[#66C2BE] font-semibold">{index + 1}</span>
+                      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-brand-link/10">
+                        <span className="text-brand-link font-semibold">{index + 1}</span>
                       </div>
                     </div>
                     <div className="ml-4">
-                      <h3 className="text-lg font-semibold text-[#011910]">
+                      <h3 className="text-lg font-semibold text-oasis-green-900">
                         {item.title}
                       </h3>
-                      <p className="mt-1 text-[#4A5745]">
+                      <p className="mt-1 text-oasis-green-800">
                         {item.description}
                       </p>
                     </div>
@@ -133,14 +133,14 @@ export default function CommunityGuidelines() {
           </div>
 
           {/* Contact Section */}
-          <div className="bg-[#E3DFF1]/10 rounded-xl p-8 border border-[#A5DAD8]/30">
-            <h2 className="text-2xl font-semibold text-[#011910] mb-4">Need Help?</h2>
-            <p className="text-[#4A5745] mb-6">
+          <div className="bg-oasis-blue-100/10 rounded-xl p-8 border border-oasis-blue-200/30">
+            <h2 className="text-2xl font-semibold text-oasis-green-900 mb-4">Need Help?</h2>
+            <p className="text-oasis-green-800 mb-6">
               If you have any questions about these guidelines or need to report a violation, please contact our community team.
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#66C2BE] hover:bg-[#4A9E9A] transition-colors"
+              className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-brand-link hover:bg-brand-link-hover transition-colors"
             >
               Contact Community Team
             </Link>

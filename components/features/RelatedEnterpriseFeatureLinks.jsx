@@ -11,7 +11,7 @@ export default function RelatedEnterpriseFeatureLinks({ pageKey }) {
   if (!links.length) return null;
 
   return (
-    <section className="border-b border-[#4A5745]/8 bg-white py-8 md:py-10" aria-label="Related Oasis enterprise capabilities">
+    <section className="border-b border-oasis-green-800/8 bg-white py-8 md:py-10" aria-label="Related Oasis enterprise capabilities">
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <p className="text-center text-xs font-semibold uppercase tracking-wide text-[#7a9200] mb-3">
           Go deeper on Oasis Enterprise
@@ -21,18 +21,18 @@ export default function RelatedEnterpriseFeatureLinks({ pageKey }) {
             <li key={href}>
               <Link
                 href={href}
-                className="text-sm font-semibold text-[#66C2BE] no-underline hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#66C2BE]"
+                className="text-sm font-semibold text-brand-link no-underline hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-link"
               >
                 {label} →
               </Link>
             </li>
           ))}
         </ul>
-        <p className="mt-4 text-center text-xs text-[#4A5745]/70">
+        <p className="mt-4 text-center text-xs text-oasis-green-800/70">
           Prefer the full story?{' '}
           <Link
             href="/products/oasis-enterprise-browser"
-            className="font-semibold text-[#66C2BE] no-underline hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#66C2BE]"
+            className="font-semibold text-brand-link no-underline hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-link"
           >
             Oasis Enterprise Browser overview
           </Link>

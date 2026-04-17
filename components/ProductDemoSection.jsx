@@ -66,16 +66,16 @@ export default function ProductDemoSection() {
     <div className="relative bg-white">
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-[#E0D48C] rounded-full filter blur-3xl opacity-20"></div>
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-desert-yellow-300 rounded-full filter blur-3xl opacity-20"></div>
         <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-[#F3F8E4] rounded-full filter blur-3xl opacity-20"></div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
         <div className="text-center mb-8 sm:mb-12">
-          <h2 className="text-2xl sm:text-3xl font-bold text-[#4A5745]">
+          <h2 className="text-2xl sm:text-3xl font-bold text-oasis-green-800">
             Enterprise Browser Features
           </h2>
-          <p className="mt-3 text-base sm:text-lg text-[#4A5745]">
+          <p className="mt-3 text-base sm:text-lg text-oasis-green-800">
             A comprehensive solution designed for modern enterprise needs
           </p>
         </div>
@@ -90,20 +90,20 @@ export default function ProductDemoSection() {
               >
                 {features.map((feature, index) => (
                   <div key={index} className="w-full flex-shrink-0 px-2">
-                    <div className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 p-6 rounded-xl shadow-sm">
+                    <div className="bg-gradient-to-br from-desert-yellow-100/20 to-oasis-blue-300/10 p-6 rounded-xl shadow-sm">
                       <div className="flex items-center mb-4">
                         <div className="flex-shrink-0">
-                          <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-gradient-to-br from-[#788B59] to-[#728552] text-white">
+                          <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-gradient-to-br from-oasis-green-500 to-oasis-green-600 text-white">
                             {feature.icon}
                           </div>
                         </div>
                         <div className="ml-4">
-                          <h3 className="text-lg font-medium text-[#4A5745]">
+                          <h3 className="text-lg font-medium text-oasis-green-800">
                             {feature.title}
                           </h3>
                         </div>
                       </div>
-                      <p className="text-[#4A5745] text-sm leading-relaxed">
+                      <p className="text-oasis-green-800 text-sm leading-relaxed">
                         {feature.description}
                       </p>
                     </div>
@@ -120,8 +120,8 @@ export default function ProductDemoSection() {
                   onClick={() => setActiveFeature(index)}
                   className={`h-2 w-2 rounded-full transition-all duration-300 ${
                     index === activeFeature 
-                      ? 'bg-[#788B59] w-4' 
-                      : 'bg-[#788B59]/20'
+                      ? 'bg-oasis-green-500 w-4' 
+                      : 'bg-oasis-green-500/20'
                   }`}
                   aria-label={`Go to feature ${index + 1}`}
                 />
@@ -133,20 +133,20 @@ export default function ProductDemoSection() {
         {/* Desktop View */}
         <div className="hidden lg:grid lg:grid-cols-3 lg:gap-6">
           {features.map((feature, index) => (
-            <div key={index} className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
+            <div key={index} className="bg-gradient-to-br from-desert-yellow-100/20 to-oasis-blue-300/10 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
               <div className="flex items-center mb-4">
                 <div className="flex-shrink-0">
-                  <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-gradient-to-br from-[#788B59] to-[#728552] text-white">
+                  <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-gradient-to-br from-oasis-green-500 to-oasis-green-600 text-white">
                     {feature.icon}
                   </div>
                 </div>
                 <div className="ml-4">
-                  <h3 className="text-lg font-medium text-[#4A5745]">
+                  <h3 className="text-lg font-medium text-oasis-green-800">
                     {feature.title}
                   </h3>
                 </div>
               </div>
-              <p className="text-[#4A5745] text-sm leading-relaxed">
+              <p className="text-oasis-green-800 text-sm leading-relaxed">
                 {feature.description}
               </p>
             </div>

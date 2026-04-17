@@ -109,7 +109,7 @@ export default function CookiePreferencesModal() {
             </h2>
             <button
               onClick={closeModal}
-              className="text-gray-400 hover:text-gray-600 transition-colors focus:outline-none focus:ring-2 focus:ring-[#728552] rounded-full p-1"
+              className="text-gray-400 hover:text-gray-600 transition-colors focus:outline-none focus:ring-2 focus:ring-oasis-green-600 rounded-full p-1"
               aria-label="Close modal"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -135,7 +135,7 @@ export default function CookiePreferencesModal() {
                 <div className="flex-1">
                   <div className="flex items-center gap-3 mb-2">
                     <h3 className="text-lg font-semibold text-[#313A00]">Strictly Necessary</h3>
-                    <span className="px-2 py-1 text-xs font-semibold text-[#4A5745] bg-[#F3F8E4] rounded">
+                    <span className="px-2 py-1 text-xs font-semibold text-oasis-green-800 bg-[#F3F8E4] rounded">
                       Always Active
                     </span>
                   </div>
@@ -148,7 +148,7 @@ export default function CookiePreferencesModal() {
                   </p>
                 </div>
                 <div className="ml-4">
-                  <div className="relative inline-block w-14 h-8 bg-[#728552] rounded-full opacity-50 cursor-not-allowed">
+                  <div className="relative inline-block w-14 h-8 bg-oasis-green-600 rounded-full opacity-50 cursor-not-allowed">
                     <div className="absolute right-1 top-1 w-6 h-6 bg-white rounded-full"></div>
                   </div>
                 </div>
@@ -171,8 +171,8 @@ export default function CookiePreferencesModal() {
                 <div className="ml-4">
                   <button
                     onClick={() => handleToggle('analytics')}
-                    className={`relative inline-flex h-8 w-14 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-[#728552] focus:ring-offset-2 ${
-                      localConsent.analytics ? 'bg-[#728552]' : 'bg-gray-200 border-2 border-gray-300'
+                    className={`relative inline-flex h-8 w-14 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-oasis-green-600 focus:ring-offset-2 ${
+                      localConsent.analytics ? 'bg-oasis-green-600' : 'bg-gray-200 border-2 border-gray-300'
                     }`}
                     role="switch"
                     aria-checked={localConsent.analytics}
@@ -206,8 +206,8 @@ export default function CookiePreferencesModal() {
                 <div className="ml-4">
                   <button
                     onClick={() => handleToggle('advertising')}
-                    className={`relative inline-flex h-8 w-14 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-[#728552] focus:ring-offset-2 ${
-                      localConsent.advertising ? 'bg-[#728552]' : 'bg-gray-200 border-2 border-gray-300'
+                    className={`relative inline-flex h-8 w-14 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-oasis-green-600 focus:ring-offset-2 ${
+                      localConsent.advertising ? 'bg-oasis-green-600' : 'bg-gray-200 border-2 border-gray-300'
                     }`}
                     role="switch"
                     aria-checked={localConsent.advertising}
@@ -241,8 +241,8 @@ export default function CookiePreferencesModal() {
                 <div className="ml-4">
                   <button
                     onClick={() => handleToggle('marketing')}
-                    className={`relative inline-flex h-8 w-14 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-[#728552] focus:ring-offset-2 ${
-                      localConsent.marketing ? 'bg-[#728552]' : 'bg-gray-200 border-2 border-gray-300'
+                    className={`relative inline-flex h-8 w-14 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-oasis-green-600 focus:ring-offset-2 ${
+                      localConsent.marketing ? 'bg-oasis-green-600' : 'bg-gray-200 border-2 border-gray-300'
                     }`}
                     role="switch"
                     aria-checked={localConsent.marketing}
@@ -265,19 +265,19 @@ export default function CookiePreferencesModal() {
           <div className="sticky bottom-0 bg-gray-50 border-t border-gray-200 px-6 py-4 flex flex-col sm:flex-row gap-3 justify-end">
             <button
               onClick={handleDeclineAll}
-              className="px-6 py-2.5 text-sm font-semibold text-[#4A5745] bg-white border-2 border-[#728552] rounded-md hover:bg-[#F3F8E4] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#728552] focus:ring-offset-2"
+              className="px-6 py-2.5 text-sm font-semibold text-oasis-green-800 bg-white border-2 border-oasis-green-600 rounded-md hover:bg-oasis-green-50 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-oasis-green-600 focus:ring-offset-2"
             >
               Decline All
             </button>
             <button
               onClick={handleAcceptAll}
-              className="px-6 py-2.5 text-sm font-semibold text-white bg-[#728552] rounded-md hover:bg-[#5a6b44] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#728552] focus:ring-offset-2"
+              className="px-6 py-2.5 text-sm font-semibold text-white bg-oasis-green-600 rounded-md hover:bg-oasis-green-800 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-oasis-green-600 focus:ring-offset-2"
             >
               Accept All
             </button>
             <button
               onClick={handleSave}
-              className="px-6 py-2.5 text-sm font-semibold text-white bg-[#4A5745] rounded-md hover:bg-[#3a4535] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#728552] focus:ring-offset-2"
+              className="px-6 py-2.5 text-sm font-semibold text-white bg-oasis-green-800 rounded-md hover:bg-oasis-green-900 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-oasis-green-600 focus:ring-offset-2"
             >
               Save Preferences
             </button>

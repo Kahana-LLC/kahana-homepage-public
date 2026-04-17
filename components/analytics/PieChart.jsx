@@ -26,7 +26,7 @@ const PieChart = ({ data = [], height = 220 }) => {
           labels: data.map(item => item.label),
           datasets: [{
             data: data.map(item => item.value),
-            backgroundColor: data.map(item => item.color || '#3b82f6'),
+            backgroundColor: data.map(item => item.color || '#489CB5'),
             borderWidth: 0,
           }],
         },

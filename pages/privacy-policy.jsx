@@ -35,7 +35,7 @@ export default function PrivacyPolicy() {
         <div className="bg-gradient-to-b from-[#F3F8E4] to-white py-16 sm:py-24">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-8">
-              <p className="text-sm font-semibold text-[#4A5745] uppercase tracking-wide mb-4">
+              <p className="text-sm font-semibold text-oasis-green-800 uppercase tracking-wide mb-4">
                 Privacy Policy
               </p>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#313A00] mb-6">
@@ -54,7 +54,7 @@ export default function PrivacyPolicy() {
             {/* 1. Personal Data Collection */}
             <section id="personal-data-collect" className="mb-16 scroll-mt-8">
               <div className="mb-4">
-                <span className="inline-block px-3 py-1 text-xs font-semibold text-[#4A5745] bg-[#F3F8E4] rounded-md mb-2">
+                <span className="inline-block px-3 py-1 text-xs font-semibold text-oasis-green-800 bg-[#F3F8E4] rounded-md mb-2">
                   1. Personal Data Collection
                 </span>
               </div>
@@ -164,7 +164,7 @@ export default function PrivacyPolicy() {
             {/* 2. How We Use Your Personal Data */}
             <section id="how-we-use" className="mb-16 scroll-mt-8">
               <div className="mb-4">
-                <span className="inline-block px-3 py-1 text-xs font-semibold text-[#4A5745] bg-[#F3F8E4] rounded-md mb-2">
+                <span className="inline-block px-3 py-1 text-xs font-semibold text-oasis-green-800 bg-[#F3F8E4] rounded-md mb-2">
                   2. How We Use Your Personal Data
                 </span>
               </div>
@@ -189,7 +189,7 @@ export default function PrivacyPolicy() {
             {/* 3. How We Share Your Information */}
             <section id="how-we-share" className="mb-16 scroll-mt-8">
               <div className="mb-4">
-                <span className="inline-block px-3 py-1 text-xs font-semibold text-[#4A5745] bg-[#F3F8E4] rounded-md mb-2">
+                <span className="inline-block px-3 py-1 text-xs font-semibold text-oasis-green-800 bg-[#F3F8E4] rounded-md mb-2">
                   3. How We Share Your Information
                 </span>
               </div>
@@ -228,7 +228,7 @@ export default function PrivacyPolicy() {
             {/* 4. Data Storage and Security */}
             <section id="data-storage-security" className="mb-16 scroll-mt-8">
               <div className="mb-4">
-                <span className="inline-block px-3 py-1 text-xs font-semibold text-[#4A5745] bg-[#F3F8E4] rounded-md mb-2">
+                <span className="inline-block px-3 py-1 text-xs font-semibold text-oasis-green-800 bg-[#F3F8E4] rounded-md mb-2">
                   4. Data Storage and Security
                 </span>
               </div>
@@ -251,7 +251,7 @@ export default function PrivacyPolicy() {
             {/* 5. Legal Basis for Processing Personal Data */}
             <section id="lawful-basis" className="mb-16 scroll-mt-8">
               <div className="mb-4">
-                <span className="inline-block px-3 py-1 text-xs font-semibold text-[#4A5745] bg-[#F3F8E4] rounded-md mb-2">
+                <span className="inline-block px-3 py-1 text-xs font-semibold text-oasis-green-800 bg-[#F3F8E4] rounded-md mb-2">
                   5. Legal Basis for Processing Personal Data
                 </span>
               </div>
@@ -292,7 +292,7 @@ export default function PrivacyPolicy() {
             {/* 6. Your Privacy Rights and Choices */}
             <section id="your-choices-rights" className="mb-16 scroll-mt-8">
               <div className="mb-4">
-                <span className="inline-block px-3 py-1 text-xs font-semibold text-[#4A5745] bg-[#F3F8E4] rounded-md mb-2">
+                <span className="inline-block px-3 py-1 text-xs font-semibold text-oasis-green-800 bg-[#F3F8E4] rounded-md mb-2">
                   6. Your Privacy Rights and Choices
                 </span>
               </div>
@@ -381,7 +381,7 @@ export default function PrivacyPolicy() {
             {/* 7. Third-Party Services */}
             <section id="third-party-services" className="mb-16 scroll-mt-8">
               <div className="mb-4">
-                <span className="inline-block px-3 py-1 text-xs font-semibold text-[#4A5745] bg-[#F3F8E4] rounded-md mb-2">
+                <span className="inline-block px-3 py-1 text-xs font-semibold text-oasis-green-800 bg-[#F3F8E4] rounded-md mb-2">
                   7. Third-Party Services
                 </span>
               </div>
@@ -395,7 +395,7 @@ export default function PrivacyPolicy() {
             {/* 8. International Data Transfers */}
             <section id="international-transfers" className="mb-16 scroll-mt-8">
               <div className="mb-4">
-                <span className="inline-block px-3 py-1 text-xs font-semibold text-[#4A5745] bg-[#F3F8E4] rounded-md mb-2">
+                <span className="inline-block px-3 py-1 text-xs font-semibold text-oasis-green-800 bg-[#F3F8E4] rounded-md mb-2">
                   8. International Data Transfers
                 </span>
               </div>
@@ -412,7 +412,7 @@ export default function PrivacyPolicy() {
             {/* 9. Privacy for Children */}
             <section id="children-privacy" className="mb-16 scroll-mt-8">
               <div className="mb-4">
-                <span className="inline-block px-3 py-1 text-xs font-semibold text-[#4A5745] bg-[#F3F8E4] rounded-md mb-2">
+                <span className="inline-block px-3 py-1 text-xs font-semibold text-oasis-green-800 bg-[#F3F8E4] rounded-md mb-2">
                   9. Privacy for Children
                 </span>
               </div>
@@ -432,7 +432,7 @@ export default function PrivacyPolicy() {
             {/* 10. Changes to This Privacy Policy */}
             <section id="changes-policy" className="mb-16 scroll-mt-8">
               <div className="mb-4">
-                <span className="inline-block px-3 py-1 text-xs font-semibold text-[#4A5745] bg-[#F3F8E4] rounded-md mb-2">
+                <span className="inline-block px-3 py-1 text-xs font-semibold text-oasis-green-800 bg-[#F3F8E4] rounded-md mb-2">
                   10. Changes to This Privacy Policy
                 </span>
               </div>
@@ -446,7 +446,7 @@ export default function PrivacyPolicy() {
               </p>
 
               <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">Recent Updates</h3>
-              <div className="bg-[#F3F8E4] border-l-4 border-[#728552] p-4 mb-6">
+              <div className="bg-[#F3F8E4] border-l-4 border-oasis-green-600 p-4 mb-6">
                 <p className="text-sm font-semibold text-[#313A00] mb-2">January 2025</p>
                 <ul className="list-disc list-inside text-gray-700 space-y-2 text-sm ml-4">
                   <li><strong>PostHog Analytics Integration:</strong> We have integrated PostHog, a product analytics platform, to better understand how visitors interact with our website. PostHog helps us analyze user behavior, track conversion funnels, and segment our audience. PostHog only collects data after you have provided consent for analytics cookies.</li>
@@ -461,7 +461,7 @@ export default function PrivacyPolicy() {
             {/* 11. Contact Us */}
             <section id="contact-us" className="mb-16 scroll-mt-8">
               <div className="mb-4">
-                <span className="inline-block px-3 py-1 text-xs font-semibold text-[#4A5745] bg-[#F3F8E4] rounded-md mb-2">
+                <span className="inline-block px-3 py-1 text-xs font-semibold text-oasis-green-800 bg-[#F3F8E4] rounded-md mb-2">
                   11. Contact Us
                 </span>
               </div>

@@ -105,7 +105,7 @@ export default function OasisAugmentedReality() {
               {/* Left Column - Content */}
               <div className="lg:col-span-7">
                 <div className="text-center lg:text-left mb-12">
-                  <h2 className="text-base font-semibold leading-7 text-[#66C2BE] mb-3">Your story deserves an Oasis</h2>
+                  <h2 className="text-base font-semibold leading-7 text-brand-link mb-3">Your story deserves an Oasis</h2>
                   <h1 className="text-4xl font-bold text-gray-900 sm:text-5xl">
                     Start your next chapter with Oasis AR
                   </h1>
@@ -135,7 +135,7 @@ export default function OasisAugmentedReality() {
                     {/* Progress Bar */}
                     <div className="relative h-1 bg-gray-100 rounded-full mb-12">
                       <div 
-                        className="absolute h-full bg-gradient-to-r from-[#E3DFF1] via-[#8CB7D0] to-[#66C2BE] rounded-full transition-all duration-300 ease-in-out"
+                        className="absolute h-full bg-gradient-to-r from-oasis-blue-100 via-oasis-blue-300 to-brand-link rounded-full transition-all duration-300 ease-in-out"
                         style={{ width: `${(hoveredStep / (steps.length - 1)) * 100}%` }}
                       />
                     </div>
@@ -144,13 +144,13 @@ export default function OasisAugmentedReality() {
                       {steps.map((step, index) => (
                         <div 
                           key={step.id} 
-                          className="bg-gradient-to-br from-kahana-accent-sky/20 to-kahana-secondary-300/10 rounded-xl overflow-hidden p-6 shadow-lg shadow-[#E3DFF1]/20 hover:shadow-xl hover:shadow-[#E3DFF1]/30 transition-all duration-300"
+                          className="bg-gradient-to-br from-desert-yellow-100/20 to-oasis-blue-300/10 rounded-xl overflow-hidden p-6 shadow-lg shadow-oasis-blue-100/20 hover:shadow-xl hover:shadow-oasis-blue-100/30 transition-all duration-300"
                           onMouseEnter={() => setHoveredStep(index)}
                           onMouseLeave={() => setHoveredStep(0)}
                         >
                           <div className="flex items-start">
                             <div className="flex-shrink-0">
-                              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-[#66C2BE] via-[#8CB7D0] to-[#E3DFF1] shadow-md shadow-[#E3DFF1]/20">
+                              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-brand-link via-oasis-blue-300 to-oasis-blue-100 shadow-md shadow-oasis-blue-100/20">
                                 <div className="text-white">
                                   {step.icon}
                                 </div>
@@ -181,19 +181,19 @@ export default function OasisAugmentedReality() {
                           <h4 className="text-xl font-semibold text-gray-900">Spatial AI Intelligence</h4>
                           <ul className="space-y-3 text-gray-600">
                             <li className="flex items-start">
-                              <svg className="h-6 w-6 text-[#66C2BE] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <svg className="h-6 w-6 text-brand-link mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                               </svg>
                               <span>AI assistant that understands your physical environment</span>
                             </li>
                             <li className="flex items-start">
-                              <svg className="h-6 w-6 text-[#66C2BE] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <svg className="h-6 w-6 text-brand-link mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                               </svg>
                               <span>Gesture and voice-controlled web navigation</span>
                             </li>
                             <li className="flex items-start">
-                              <svg className="h-6 w-6 text-[#66C2BE] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <svg className="h-6 w-6 text-brand-link mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                               </svg>
                               <span>3D spatial organization of digital content</span>
@@ -204,19 +204,19 @@ export default function OasisAugmentedReality() {
                           <h4 className="text-xl font-semibold text-gray-900">Immersive AR Experience</h4>
                           <ul className="space-y-3 text-gray-600">
                             <li className="flex items-start">
-                              <svg className="h-6 w-6 text-[#66C2BE] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <svg className="h-6 w-6 text-brand-link mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                               </svg>
                               <span>Web content projected into your physical space</span>
                             </li>
                             <li className="flex items-start">
-                              <svg className="h-6 w-6 text-[#66C2BE] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <svg className="h-6 w-6 text-brand-link mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                               </svg>
                               <span>Multi-dimensional workspace layouts</span>
                             </li>
                             <li className="flex items-start">
-                              <svg className="h-6 w-6 text-[#66C2BE] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <svg className="h-6 w-6 text-brand-link mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                               </svg>
                               <span>Context-aware information overlay</span>
