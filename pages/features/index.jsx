@@ -1,8 +1,9 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import Script from 'next/script';
 import SEO from '../../components/SEO';
+import GalleryPaginationControls from '../../components/features/GalleryPaginationControls';
 import { FeatureCatalogCard } from '../../components/features/FeatureDiscoveryGrid';
-import { oasisFeaturesCatalog } from '../../data/oasisFeaturesCatalog';
+import { GALLERY_PAGE_SIZE, oasisFeaturesCatalog } from '../../data/oasisFeaturesCatalog';
 
 const CANONICAL = 'https://kahana.co/features';
 
@@ -15,6 +16,7 @@ const FILTER_OPTIONS = [
 export default function FeaturesIndexPage() {
   const [query, setQuery] = useState('');
   const [productLine, setProductLine] = useState('all');
+  const [page, setPage] = useState(1);
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -28,6 +30,21 @@ export default function FeaturesIndexPage() {
       );
     });
   }, [query, productLine]);
+
+  const totalPages = Math.max(1, Math.ceil(filtered.length / GALLERY_PAGE_SIZE));
+
+  useEffect(() => {
+    setPage(1);
+  }, [query, productLine]);
+
+  useEffect(() => {
+    if (page > totalPages) setPage(totalPages);
+  }, [page, totalPages]);
+
+  const pageItems = useMemo(() => {
+    const start = (page - 1) * GALLERY_PAGE_SIZE;
+    return filtered.slice(start, start + GALLERY_PAGE_SIZE);
+  }, [filtered, page]);
 
   const pageSchema = {
     '@context': 'https://schema.org',
@@ -97,8 +114,8 @@ export default function FeaturesIndexPage() {
                   aria-pressed={pressed}
                   className={`rounded-full border px-4 py-2 text-sm font-semibold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-link ${
                     pressed
-                      ? 'border-[#617500] bg-[#617500] text-white'
-                      : 'border-oasis-green-800/25 bg-white text-oasis-green-800 hover:border-[#617500]/50'
+                      ? 'border-oasis-green-700 bg-oasis-green-700 text-white'
+                      : 'border-oasis-green-800/25 bg-white text-oasis-green-800 hover:border-oasis-green-700/50'
                   }`}
                 >
                   {opt.label}
@@ -112,13 +129,24 @@ export default function FeaturesIndexPage() {
               No features match that search. Try different keywords or clear the filter.
             </p>
           ) : (
-            <ul className="mt-12 grid list-none grid-cols-1 gap-4 p-0 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3 lg:gap-6">
-              {filtered.map((item) => (
-                <li key={item.slug}>
-                  <FeatureCatalogCard item={item} />
-                </li>
-              ))}
-            </ul>
+            <>
+              <p className="mt-10 text-center text-sm text-oasis-green-800/75" aria-live="polite">
+                {filtered.length} {filtered.length === 1 ? 'feature' : 'features'}
+              </p>
+              <ul className="mt-6 grid list-none grid-cols-1 gap-4 p-0 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3 lg:gap-6">
+                {pageItems.map((item) => (
+                  <li key={item.slug}>
+                    <FeatureCatalogCard item={item} />
+                  </li>
+                ))}
+              </ul>
+              <GalleryPaginationControls
+                page={page}
+                totalPages={totalPages}
+                onPrev={() => setPage((p) => Math.max(1, p - 1))}
+                onNext={() => setPage((p) => Math.min(totalPages, p + 1))}
+              />
+            </>
           )}
         </div>
       </div>

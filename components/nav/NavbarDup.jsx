@@ -405,7 +405,7 @@ export default function NavbarDup() {
         <div className="nav-content mx-auto flex h-full max-w-[1280px] items-center justify-between gap-2 px-4 sm:px-6 lg:px-8">
           <Link
             href="/"
-            className="flex shrink-0 items-center gap-1 no-underline"
+            className="flex shrink-0 items-center no-underline"
             style={{ lineHeight: 0 }}
           >
             <Image
@@ -417,12 +417,6 @@ export default function NavbarDup() {
               sizes="(max-width: 768px) 160px, 200px"
               priority
             />
-            <span
-              className="inline-flex shrink-0 translate-y-px items-center rounded-md bg-neutral-100 px-1.5 py-px text-[0.625rem] font-medium uppercase tracking-wide text-neutral-500"
-              title="Public beta"
-            >
-              BETA
-            </span>
           </Link>
 
           <nav className="hidden min-w-0 flex-1 justify-center lg:flex" aria-label="Main navigation">

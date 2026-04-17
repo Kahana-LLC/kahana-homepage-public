@@ -1847,6 +1847,9 @@ nav .dropdown-content a.dropdown-link:focus,
    ========================================================================== */
 
 .shared-cta-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   width: 100%;
   max-width: 1438px;
   min-height: 320px;
@@ -1854,6 +1857,43 @@ nav .dropdown-content a.dropdown-link:focus,
   background: linear-gradient(98.92deg, #617500 -17.23%, #fcdd9f 106.64%);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   padding: 64px 24px;
+}
+
+/* Warm sand wash + fine grain (aligned with gallery promo tiles) */
+.shared-cta-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.38;
+  mix-blend-mode: soft-light;
+  background: linear-gradient(
+    165deg,
+    rgba(255, 251, 244, 0.28) 0%,
+    rgba(253, 234, 187, 0.16) 38%,
+    rgba(202, 211, 153, 0.1) 68%,
+    rgba(237, 245, 248, 0.08) 100%
+  );
+}
+
+.shared-cta-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.24;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)' opacity='0.6'/%3E%3C/svg%3E");
+  background-size: 140px 140px;
+}
+
+.shared-cta-card > * {
+  position: relative;
+  z-index: 1;
 }
 
 .shared-cta-title {
@@ -1990,4 +2030,26 @@ nav .dropdown-content a.dropdown-link:focus,
   to {
     stroke-dashoffset: -44;
   }
+}
+
+/* Feature / solution promo tiles — fine noise + warm “sand” wash (homepage-adjacent feel) */
+.gallery-card-grain {
+  pointer-events: none;
+  opacity: 0.28;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)' opacity='0.6'/%3E%3C/svg%3E");
+  background-size: 140px 140px;
+}
+
+.gallery-card-sand-wash {
+  pointer-events: none;
+  opacity: 0.35;
+  mix-blend-mode: soft-light;
+  background: linear-gradient(
+    165deg,
+    rgba(255, 251, 244, 0.22) 0%,
+    rgba(253, 234, 187, 0.12) 38%,
+    rgba(202, 211, 153, 0.08) 68%,
+    rgba(237, 245, 248, 0.06) 100%
+  );
 }
