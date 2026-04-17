@@ -1,14 +1,27 @@
 import { oasisCapabilities } from './oasisEnterpriseCapabilities';
 
+/** Page size for feature/solution gallery grids (3×3). */
+export const GALLERY_PAGE_SIZE = 9;
+
 /**
- * Background gradients for feature discovery cards (slate / tan / olive families).
+ * Abstract multi-brand gradients (oasis-blue + desert-yellow + oasis-green).
+ * Inline CSS so tiles match across browsers and avoid “flat gray” Tailwind purge issues.
  * @type {string[]}
  */
-export const FEATURE_CARD_GRADIENTS = [
-  'linear-gradient(142deg, #5c6678 0%, #c4b5a0 100%)',
-  'linear-gradient(142deg, #a68b5b 0%, #3d2a1f 100%)',
-  'linear-gradient(142deg, #5a6b35 0%, #1e2a16 100%)',
+const GALLERY_ABSTRACT_GRADIENTS = [
+  'linear-gradient(140deg, #1d3e48 0%, #3a7c91 22%, #617500 48%, #978455 72%, #313a00 100%)',
+  'linear-gradient(155deg, #313a00 0%, #489cb5 32%, #645839 55%, #495800 78%, #2b5d6d 100%)',
+  'linear-gradient(128deg, #645839 0%, #7a9200 28%, #6dafc4 52%, #94a833 76%, #1d3e48 100%)',
 ];
+
+/**
+ * @param {number} variantIndex
+ * @returns {{ backgroundImage: string }}
+ */
+export function getGalleryGradientStyle(variantIndex) {
+  const i = Number(variantIndex) % GALLERY_ABSTRACT_GRADIENTS.length;
+  return { backgroundImage: GALLERY_ABSTRACT_GRADIENTS[i] };
+}
 
 /** Short grid labels for enterprise slugs (titles come from oasisEnterpriseCapabilities). */
 const ENTERPRISE_CARD_LABEL = {

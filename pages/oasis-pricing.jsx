@@ -4,6 +4,7 @@ import Script from 'next/script';
 import Link from 'next/link';
 import SEO from '../components/SEO';
 import FadeInSection from '../components/FadeInSection';
+import SharedCTA from '../components/SharedCTA';
 import { getCloudinaryImageUrl } from '../utils/cloudinary-mapper';
 
 const pricingTiers = [
@@ -230,6 +231,14 @@ export default function OasisPricing() {
                   key={tier.name}
                   className="relative bg-white border-2 border-gray-200 rounded-2xl p-4 sm:p-5 lg:p-6 transition-all duration-300 hover:shadow-lg"
                 >
+                  {tier.name === 'Zen plan' && (
+                    <span
+                      className="absolute right-3 top-3 z-10 inline-flex items-center rounded-md bg-[#EDF5F8] px-2 py-0.5 text-[0.625rem] font-semibold uppercase tracking-wide text-[#1D3E48] sm:right-4 sm:top-4"
+                      title="Public beta"
+                    >
+                      Beta
+                    </span>
+                  )}
                   <div className="mb-3">
                     <h3 className="text-base sm:text-lg font-semibold mb-2 text-gray-800">
                       {tier.name}
@@ -405,28 +414,16 @@ export default function OasisPricing() {
         </section>
       </FadeInSection>
 
-      {/* CTA Section */}
+      {/* CTA Section — gradient card + white pills (SharedCTA) */}
       <FadeInSection>
-        <section 
-          className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] py-12 sm:py-16 md:py-20 lg:py-28 mb-0 bg-[#F8FAF2]"
-        >
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4 sm:mb-6">
-              Need More Than These Plans?
-            </h2>
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 lg:mb-10 max-w-3xl mx-auto leading-relaxed font-bold" style={{ color: '#313A00' }}>
-              For enterprises with larger teams, custom requirements, or advanced security needs, we offer tailored solutions designed to scale with your organization.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
-              <Link href="/schedule-demo" className="btn-primary inline-flex items-center justify-center px-6 sm:px-8 lg:px-10 py-3 sm:py-4 text-sm sm:text-base lg:text-lg font-bold no-underline hover:no-underline focus:no-underline w-full sm:w-auto">
-                Schedule a Demo
-              </Link>
-              <Link href="/contact" className="btn-secondary inline-flex items-center justify-center px-6 sm:px-8 lg:px-10 py-3 sm:py-4 text-sm sm:text-base lg:text-lg font-bold no-underline hover:no-underline focus:no-underline w-full sm:w-auto">
-                Get in Touch
-              </Link>
-            </div>
-          </div>
-        </section>
+        <SharedCTA
+          title="Need More Than These Plans?"
+          description="For enterprises with larger teams, custom requirements, or advanced security needs, we offer tailored solutions designed to scale with your organization."
+          primaryHref="/schedule-demo"
+          primaryLabel="Schedule a Demo"
+          secondaryHref="/contact"
+          secondaryLabel="Get in Touch"
+        />
       </FadeInSection>
     </>
   );
