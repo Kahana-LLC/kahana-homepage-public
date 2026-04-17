@@ -5,7 +5,7 @@ import whiteKahanaLogo from '../../assets/kahana_logo_transparent.svg';
 import { getCloudinaryImageUrl } from '../../utils/cloudinary-mapper';
 import { desktopNavItems, mobileNavRows } from './navConfig';
 
-const MD_BREAKPOINT = 768;
+const MD_BREAKPOINT = 1024;
 
 function AppleLogoIcon({ className }) {
   return (
@@ -349,7 +349,7 @@ export default function NavbarDup() {
             align-items: center;
             gap: 0.5rem;
           }
-          @media (min-width: 768px) {
+          @media (min-width: 1024px) {
             .nav-buttons {
               display: flex;
             }
@@ -425,7 +425,7 @@ export default function NavbarDup() {
             </span>
           </Link>
 
-          <nav className="hidden min-w-0 flex-1 justify-center md:flex" aria-label="Main navigation">
+          <nav className="hidden min-w-0 flex-1 justify-center lg:flex" aria-label="Main navigation">
           <ul className="nav-links">
             {desktopNavItems.map((item) => {
               if (!item.dropdown) {
@@ -488,7 +488,7 @@ export default function NavbarDup() {
           </ul>
           </nav>
 
-          <div className="flex shrink-0 items-center gap-2 md:gap-3">
+          <div className="flex shrink-0 items-center gap-2 lg:gap-3">
             <div className="nav-buttons">
               <Link href="/schedule-demo" className={ctaScheduleClass}>
                 Schedule Demo
@@ -506,7 +506,7 @@ export default function NavbarDup() {
             <button
               type="button"
               onClick={() => setIsMobileMenuOpen((v) => !v)}
-              className="nav-hamburger-toggle inline-flex items-center justify-center md:hidden"
+              className="nav-hamburger-toggle inline-flex items-center justify-center lg:hidden"
               aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={isMobileMenuOpen}
             >
