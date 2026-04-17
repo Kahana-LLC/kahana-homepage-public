@@ -27,8 +27,8 @@ export default function ProductSection() {
               Oasis
             </h1>
             <p className="text-lg sm:text-xl text-[#4A5745] max-w-2xl mb-0 text-pretty leading-relaxed">
-              Welcome to the most ergonomic browser user experience on Earth.
-              <br />
+              Welcome to the most ergonomic browser user experience on Earth.{' '}
+              <br className="hidden sm:block" aria-hidden />
               Use your voice. Use natural language. Let Oasis do the work for you.
             </p>
             <div className="hero-cta-buttons flex flex-row flex-wrap items-center justify-start gap-4">
