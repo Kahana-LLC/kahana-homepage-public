@@ -1,5 +1,16 @@
 const blogIndex = [
   {
+    title: "Get AI to Control Your Browser: The Execution Gap (Oasis Demo)",
+    date: "2026-04-17T00:00:00.000Z",
+    authors: ["Pallavi M", "Ankit Sai Allam"],
+    category: ["AI & Browser Technology"],
+    excerpt: "Analysis of the critical execution gap between AI chat capabilities and reliable browser automation. Examines reliability, safety, prompt injection, hallucinated actions, UX friction, and governance challenges in AI browser control.",
+    defaultImageQuery: "AI browser control automation execution gap reliability safety",
+    featuredImage: "https://tse3.mm.bing.net/th/id/OIP.bqQ1CMIj0Zx1KClqArqdTAHaC9?pid=Api&P=0&h=180",
+    slug: "get-ai-to-control-your-browser-execution-gap-oasis-demo-2026",
+    readingTime: 18,
+  },
+  {
     title: "Browser AI & Privacy: What Gets Logged, What Leaks, and What to Demand (Oasis Privacy Lens)",
     date: "2026-04-16T00:00:00.000Z",
     authors: ["Pallavi M", "Ankit Sai Allam"],
