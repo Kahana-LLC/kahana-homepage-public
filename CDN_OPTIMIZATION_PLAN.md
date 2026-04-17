@@ -50,8 +50,8 @@
 3. **CSS Background Images**: 6 instances
    - `pages/oasis-pricing.jsx`: 2 instances
    - `pages/enterprise-buyer-guide.jsx`: 2 instances
-   - `pages/products/enterprise-browser.jsx`: 1 instance
-   - `pages/products/free-agentic-browser.jsx`: 1 instance
+   - `pages/products/oasis-enterprise-browser.jsx`: 1 instance
+   - `pages/products/oasis-browser.jsx`: 1 instance
 
 4. **External CDNs** (keep as-is):
    - Pexels API (blog images)
@@ -220,8 +220,8 @@ backgroundImage: getCloudinaryBgUrl('/images/desert-background-5.jpg', {
 **Files to update:**
 - [ ] `pages/oasis-pricing.jsx` (2 instances)
 - [ ] `pages/enterprise-buyer-guide.jsx` (2 instances)
-- [ ] `pages/products/enterprise-browser.jsx` (1 instance)
-- [ ] `pages/products/free-agentic-browser.jsx` (1 instance)
+- [ ] `pages/products/oasis-enterprise-browser.jsx` (1 instance)
+- [ ] `pages/products/oasis-browser.jsx` (1 instance)
 
 #### Step 3.4: Update Inline img Tags (if any)
 - [ ] Search for `<img` tags (grep found none, but verify)

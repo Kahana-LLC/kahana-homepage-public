@@ -179,7 +179,7 @@ function generateBlogPost(input) {
       oasisAngle: 'Enterprise security, Most reliable, Privacy-focused',
       cta: 'Try Oasis',
       internalLinks: [
-        { slug: '/products/enterprise-browser', anchor: 'enterprise browser' },
+        { slug: '/products/oasis-enterprise-browser', anchor: 'enterprise browser' },
         { slug: '/solutions/zero-trust-security', anchor: 'zero-trust security' },
         { slug: '/buyers-guide', anchor: 'Enterprise Browser Buyer\'s Guide' }
       ]

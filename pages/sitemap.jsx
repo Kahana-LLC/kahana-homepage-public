@@ -18,7 +18,7 @@ const sitemapSections = [
     title: 'Products',
     links: [
       { text: 'Products Overview', href: '/products' },
-      { text: 'Enterprise Browser', href: '/products/enterprise-browser' },
+      { text: 'Enterprise Browser', href: '/products/oasis-enterprise-browser' },
       { text: 'Web Application', href: '/products/web-application' },
       { text: "Buyer's Guide", href: '/buyers-guide' }
     ]

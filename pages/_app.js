@@ -2,6 +2,9 @@ import "../styles/globals.css";
 import { fontGeist, fontBricolage } from "../lib/fonts";
 import dynamic from "next/dynamic";
 import GlobalBanner from "../components/GlobalBanner";
+
+/** Set true to show the top promo banner again. */
+const SHOW_GLOBAL_BANNER = false;
 import SEO from "../components/SEO";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
@@ -368,7 +371,7 @@ function AppContent({ Component, pageProps }) {
         />
         <div style={{ zIndex: "100" }} className={`sticky top-0 site-nav-wrapper${isBuyerGuide ? ' buyer-guide-layout' : ''}`}>
           <NavbarDup />
-          <GlobalBanner />
+          {SHOW_GLOBAL_BANNER ? <GlobalBanner /> : null}
         </div>
         <main className="flex-grow">
           <Component {...pageProps} />

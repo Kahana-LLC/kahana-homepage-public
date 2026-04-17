@@ -615,7 +615,7 @@ export default function ReferencesPage() {
 
           <div className="mt-8 sm:mt-12 text-center px-4">
             <Link
-              href="/white-paper-future-of-ergonomic-work"
+              href="/white-papers/the-future-of-ergonomic-work"
               className="inline-flex items-center px-4 sm:px-6 py-3 border border-transparent text-sm sm:text-base font-medium rounded-md text-white !text-white bg-[#66C2BE] hover:bg-[#4A9E9A] transition-colors no-underline w-full sm:w-auto justify-center"
               style={{ color: 'white' }}
             >

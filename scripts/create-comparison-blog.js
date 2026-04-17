@@ -138,7 +138,7 @@ async function collectInput() {
   
   console.log('\n🔗 Internal Links (format: "/slug" → "anchor text"):');
   const internalLinks = [];
-  let link = await askQuestion(rl, 'Internal link (e.g., "/products/enterprise-browser" → "enterprise browser"): ');
+  let link = await askQuestion(rl, 'Internal link (e.g., "/products/oasis-enterprise-browser" → "enterprise browser"): ');
   while (link) {
     if (link.includes('→')) {
       const [slug, anchor] = link.split('→').map(s => s.trim());

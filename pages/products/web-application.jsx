@@ -473,7 +473,7 @@ export default function WebApplication() {
             {/* Navigation Arrows */}
             <button
               onClick={prevBenefit}
-              className="btn-primary absolute left-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 group"
+              className="btn-primary btn-icon-circle absolute left-4 top-1/2 -translate-y-1/2 z-10 transition-all duration-300 group"
               aria-label="Previous benefit"
             >
               <svg className="w-6 h-6 text-white group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -483,7 +483,7 @@ export default function WebApplication() {
             
             <button
               onClick={nextBenefit}
-              className="btn-primary absolute right-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 group"
+              className="btn-primary btn-icon-circle absolute right-4 top-1/2 -translate-y-1/2 z-10 transition-all duration-300 group"
               aria-label="Next benefit"
             >
               <svg className="w-6 h-6 text-white group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">

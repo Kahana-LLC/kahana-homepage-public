@@ -34,7 +34,7 @@ function getPriority(url) {
 
   // Primary pages
   if (
-    ["/about", "/products", "/solutions", "/enterprise-browser"].some(
+    ["/about", "/products", "/solutions", "/products/oasis-enterprise-browser"].some(
       (p) => path === p
     )
   ) {

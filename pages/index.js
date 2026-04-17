@@ -1,30 +1,17 @@
 import Head from "next/head";
 import Script from "next/script";
 import dynamic from "next/dynamic";
-import ProductSection, {
-  OASIS_HERO_IMAGE_PATH,
-  OASIS_HERO_PRELOAD_WIDTH,
-  OASIS_HERO_SIZES,
-  OASIS_HERO_WIDTHS,
-} from "../components/ProductSection";
+import ProductSection from "../components/ProductSection";
 import FadeInSection from "../components/FadeInSection";
 import SEO from "../components/SEO";
 import { blogIndex } from "../data/blog-index";
-import Link from "next/link";
 import { getAuthorDetails } from "../utils/authorUtils";
 import React, { useEffect, useState } from "react";
-import {
-  getCloudinaryImageUrl,
-  getCloudinaryImageProps,
-} from "../utils/cloudinary-mapper";
+import { getCloudinaryImageUrl } from "../utils/cloudinary-mapper";
 
-const FeaturesShowcase = dynamic(() => import("../components/FeaturesShowcase"));
-const HowItWorks = dynamic(() => import("../components/HowItWorks"));
-const ProductTourCard = dynamic(() => import("../components/ProductTourCard"));
-const HomeWhyOasisSection = dynamic(
-  () => import("../components/HomeWhyOasisSection"),
-  { ssr: true }
-);
+const HomeProductLanes = dynamic(() => import("../components/home/HomeProductLanes"), {
+  ssr: true,
+});
 
 export async function getStaticProps() {
   try {
@@ -81,9 +68,9 @@ export default function Home({ blogPosts }) {
   const homepageSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "Kahana - Enterprise Browser & Productivity Tools",
+    name: "Oasis Browser: Calm, secure browsing with AI",
     description:
-      "Kahana's Oasis Enterprise Browser helps teams stay organized, focused on ideas, and increase productivity while maintaining enterprise-grade security.",
+      "Oasis Browser by Kahana is a calm, secure browser with built-in AI that understands your tabs and workflow, with focused work and enterprise-grade protection.",
     url: "https://kahana.co",
     publisher: {
       "@type": "Organization",
@@ -101,11 +88,11 @@ export default function Home({ blogPosts }) {
     },
     mainEntity: {
       "@type": "SoftwareApplication",
-      name: "Kahana Oasis",
+      name: "Oasis Browser",
       applicationCategory: "BusinessApplication",
       operatingSystem: "Cross-platform",
       description:
-        "Enterprise browser with enhanced security, organization tools, and collaboration features for modern teams",
+        "Calm, secure browser with AI in your real browsing context, plus organization and collaboration for modern teams",
       offers: {
         "@type": "Offer",
         price: "0",
@@ -167,48 +154,22 @@ export default function Home({ blogPosts }) {
     };
   }, []);
 
-  const heroLcpPreload = getCloudinaryImageProps(OASIS_HERO_IMAGE_PATH, {
-    widths: OASIS_HERO_WIDTHS,
-    quality: "auto:good",
-  });
-
   return (
     <>
       <SEO
-        title="Kahana Oasis – Agentic Browser & Productivity | Kahana"
-        description="Stay organized and focused with Kahana's Oasis Enterprise Browser. Features enterprise-grade security, organization tools, and collaboration features for modern teams."
+        title="Oasis Browser: Calm, secure browsing with AI | Kahana"
+        description="Oasis Browser by Kahana offers calm, secure browsing with AI that understands your tabs and workflow, with focused work and enterprise-grade protection."
         image="https://kahana.co/assets/oasis-browser-preview.png"
         url="https://kahana.co"
         type="website"
         schema={homepageSchema}
       />
       <Head>
-        <title>Kahana Oasis – Agentic Browser & Productivity | Kahana</title>
+        <title>Oasis Browser: Calm, secure browsing with AI | Kahana</title>
         <meta
           name="description"
-          content="Kahana's Oasis Enterprise Browser helps teams stay organized, focused on ideas, and increase productivity while maintaining enterprise-grade security."
+          content="Oasis Browser by Kahana offers calm, secure browsing with AI that understands your tabs and workflow, with focused work and enterprise-grade protection."
         />
-        {/* LCP hero: responsive preload (imagesrcset + imagesizes) + href fallback — aligns with ProductSection HeroImage */}
-        {heroLcpPreload.srcSet && heroLcpPreload.src ? (
-          <link
-            rel="preload"
-            as="image"
-            href={heroLcpPreload.src}
-            imageSrcSet={heroLcpPreload.srcSet}
-            imageSizes={OASIS_HERO_SIZES}
-            fetchPriority="high"
-          />
-        ) : (
-          <link
-            rel="preload"
-            as="image"
-            href={getCloudinaryImageUrl(OASIS_HERO_IMAGE_PATH, {
-              width: OASIS_HERO_PRELOAD_WIDTH,
-              quality: "auto:good",
-            })}
-            fetchPriority="high"
-          />
-        )}
       </Head>
 
       {/* Load Crisp chat after page is idle to improve initial load (target &lt;5.3s interactive) */}
@@ -238,7 +199,7 @@ export default function Home({ blogPosts }) {
       />
 
       <div className="relative bg-white shadow-[0_0_40px_rgba(0,0,0,0.08)] overflow-x-hidden w-full overflow-y-visible">
-        {/* Background gradients — absolute below md, fixed on desktop. Use CSS breakpoints only (no isMobile flip) to avoid CLS from fixed→absolute after hydration. */}
+        {/* Background gradients: absolute below md, fixed on desktop. Use CSS breakpoints only (no isMobile flip) to avoid CLS from fixed→absolute after hydration. */}
         <div className="absolute md:fixed inset-0 overflow-hidden pointer-events-none z-0">
           <div
             className="absolute top-20 -left-20 w-[600px] h-[600px] rounded-full filter blur-[220px] opacity-40 animate-pulse"
@@ -287,65 +248,7 @@ export default function Home({ blogPosts }) {
           <div className="relative h-px bg-gradient-to-r from-transparent via-[#30400D]/20 to-transparent mx-auto max-w-4xl"></div>
 
           <FadeInSection delay={100}>
-            <section
-              id="video"
-              className="relative overflow-hidden bg-white py-20 sm:py-28"
-            >
-              <div className="pointer-events-none absolute inset-0">
-                <div className="absolute top-0 left-0 h-72 w-72 rounded-full bg-[#FCDD9F]/40 blur-[220px]" />
-                <div className="absolute bottom-0 right-6 h-96 w-96 rounded-full bg-[#617500]/20 blur-[250px]" />
-              </div>
-              <div className="relative z-10 w-full max-w-5xl mx-auto px-6 sm:px-8 text-center">
-                <p className="text-xl font-semibold leading-8 text-[#5C5F2E] mb-4" role="doc-subtitle">
-                  Personalize Your Experience
-                </p>
-                <h2 className="text-3xl sm:text-4xl font-semibold leading-tight text-[#313A00] mb-10">
-                  Oasis adapts to your unique way of working
-                </h2>
-                <div className="relative mx-auto max-w-4xl">
-                  <ProductTourCard />
-                </div>
-              </div>
-            </section>
-          </FadeInSection>
-
-          {/* Elegant section divider */}
-          <div className="relative h-px bg-gradient-to-r from-transparent via-[#30400D]/20 to-transparent mx-auto max-w-4xl"></div>
-
-          <FadeInSection delay={150}>
-            <HomeWhyOasisSection />
-          </FadeInSection>
-
-          {/* Elegant section divider */}
-          <div className="relative h-px bg-gradient-to-r from-transparent via-[#30400D]/20 to-transparent mx-auto max-w-4xl"></div>
-
-          <FadeInSection delay={200}>
-            <section
-              id="features"
-              className="min-h-screen flex items-center justify-center p-4 md:p-8 bg-white relative"
-            >
-              {/* Subtle decorative corner accent */}
-              <div className="hidden lg:block absolute top-0 left-0 w-24 h-24 border-l-2 border-t-2 border-[#30400D]/15"></div>
-              <FeaturesShowcase />
-            </section>
-          </FadeInSection>
-
-          {/* Elegant section divider */}
-          <div className="relative h-px bg-gradient-to-r from-transparent via-[#30400D]/20 to-transparent mx-auto max-w-4xl"></div>
-
-          <FadeInSection delay={400}>
-            <section
-              id="how-it-works"
-              className="relative overflow-hidden py-24 sm:py-32"
-            >
-              <div className="pointer-events-none absolute inset-0">
-                <div className="absolute top-[-50%] left-[-55%] h-[660px] w-[1080px] rounded-full bg-[#FCDD9F]/28 blur-[200px] md:blur-[420px] opacity-80 md:opacity-100" />
-                <div className="absolute bottom-[-55%] right-[-55%] h-[720px] w-[1120px] rounded-full bg-[#617500]/15 blur-[200px] md:blur-[420px] opacity-80 md:opacity-100" />
-              </div>
-              <div className="relative z-10">
-                <HowItWorks />
-              </div>
-            </section>
+            <HomeProductLanes />
           </FadeInSection>
 
           {/* Elegant section divider */}

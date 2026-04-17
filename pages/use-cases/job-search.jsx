@@ -2,7 +2,6 @@ import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import VideoSection from '../../components/VideoSection';
-import DiscordCTA from '../../components/DiscordCTA';
 import Script from 'next/script';
 import { getCloudinaryImageUrl } from '../../utils/cloudinary-mapper';
 
@@ -10,7 +9,7 @@ const supportLinks = [
   {
     name: 'Learn More About Oasis',
     description: 'Discover what makes Oasis the future of browsing.',
-    href: '/products/free-agentic-browser',
+    href: '/products/oasis-browser',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -100,15 +99,6 @@ export default function JobSearchWaitlist() {
               <div className="max-w-4xl mx-auto mb-12">
                 {renderCTASection()}
               </div>
-
-              {/* Discord CTA Section */}
-              <DiscordCTA 
-                title="Join the Community Building Oasis"
-                description="Connect with the community building Oasis and stay updated on the latest features and announcements."
-                buttonText="Join Discord"
-                directDiscordLink={true}
-                className="mt-16"
-              />
             </div>
             </div>
         </main>

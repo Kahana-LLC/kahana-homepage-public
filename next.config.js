@@ -265,7 +265,17 @@ const nextConfig = {
     return [
       {
         source: "/products/consumer-browser",
-        destination: "/products/free-agentic-browser",
+        destination: "/products/oasis-browser",
+        permanent: true,
+      },
+      {
+        source: "/products/free-agentic-browser",
+        destination: "/products/oasis-browser",
+        permanent: true,
+      },
+      {
+        source: "/products/enterprise-browser",
+        destination: "/products/oasis-enterprise-browser",
         permanent: true,
       },
       {

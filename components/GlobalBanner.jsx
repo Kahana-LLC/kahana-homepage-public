@@ -66,13 +66,13 @@ export default function GlobalBanner() {
                 <span className="md:hidden">
                   Oasis is now available!{' '}
                   <Link href="/oasis-pricing" className="no-underline hover:no-underline hover:!text-[#7A9200] transition-colors text-[#4A5745] font-bold">
-                    Get Instant Access →
+                    Download →
                   </Link>
                 </span>
                 <span className="hidden md:inline">
                   🎉 Oasis is now available!{' '}
                   <Link href="/oasis-pricing" className="banner-discord-link no-underline hover:no-underline transition-colors font-bold" style={{ textDecoration: 'none', color: 'rgba(97, 117, 0, 1)', fontWeight: 700 }}>
-                    Get Instant Access →
+                    Download →
                   </Link>
                 </span>
               </p>
@@ -81,9 +81,9 @@ export default function GlobalBanner() {
           <div className="flex items-center gap-2">
             <Link
               href="/oasis-pricing"
-              className="btn-primary hidden md:inline-flex items-center justify-center px-4 py-2.5 text-sm no-underline hover:no-underline focus:no-underline gap-2 whitespace-nowrap font-bold"
+              className="btn-primary btn-sm hidden md:inline-flex whitespace-nowrap no-underline hover:no-underline focus:no-underline gap-2"
             >
-              Get Instant Access
+              Download
             </Link>
             <button
               onClick={() => setIsVisible(false)}

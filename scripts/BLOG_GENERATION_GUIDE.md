@@ -57,7 +57,7 @@ Then just paste sources and internal links when prompted.
 
 ### 2. Use Default Internal Links
 Common internal links you'll use:
-- `/products/enterprise-browser` → "enterprise browser"
+- `/products/oasis-enterprise-browser` → "enterprise browser"
 - `/solutions/zero-trust-security` → "zero-trust security"
 - `/buyers-guide` → "Enterprise Browser Buyer's Guide"
 - `/blog/[related-post]` → "[related topic]"
@@ -106,7 +106,7 @@ Example batch file structure:
     "date": "2026-01-21",
     "sources": ["url1", "url2"],
     "imageUrl": "https://...",
-    "internalLinks": [{"slug": "/products/enterprise-browser", "anchor": "enterprise browser"}]
+    "internalLinks": [{"slug": "/products/oasis-enterprise-browser", "anchor": "enterprise browser"}]
   }
 ]
 ```

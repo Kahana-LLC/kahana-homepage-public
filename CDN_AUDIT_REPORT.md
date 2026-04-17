@@ -28,7 +28,7 @@ These pages have been migrated and optimized:
 - **Images:** 21+ images including in-action.webp, ai.webp, spatial.webp, etc.
 - **Optimization:** Width/quality parameters applied
 
-### 3. `pages/products/enterprise-browser.jsx`
+### 3. `pages/products/oasis-enterprise-browser.jsx`
 - **Status:** ✅ Migrated & Optimized
 - **Images:** 
   - Schema screenshot: `/assets/oasis-browser-preview.png` (1200px)
@@ -152,7 +152,7 @@ The following pages may contain images but need manual review:
 - `pages/solutions/zero-trust-security.jsx`
 
 ### Product Pages (3 pages)
-- `pages/products/free-agentic-browser.jsx`
+- `pages/products/oasis-browser.jsx`
 - `pages/products/index.jsx`
 - `pages/products/web-application.jsx`
 
@@ -176,7 +176,7 @@ The following pages may contain images but need manual review:
 
 ### Priority 1: Critical Pages (High Traffic)
 1. ✅ **COMPLETED:** `pages/index.js` (Homepage)
-2. ✅ **COMPLETED:** `pages/products/enterprise-browser.jsx`
+2. ✅ **COMPLETED:** `pages/products/oasis-enterprise-browser.jsx`
 3. ✅ **COMPLETED:** `pages/oasis-pricing.jsx`
 4. ✅ **COMPLETED:** `pages/enterprise-buyer-guide.jsx`
 5. ✅ **COMPLETED:** `pages/white-paper-future-of-ergonomic-work.jsx`

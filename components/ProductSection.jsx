@@ -1,101 +1,78 @@
 import React from "react";
-import Link from "next/link";
 import Image from "next/image";
-import { getCloudinaryImageProps } from '../utils/cloudinary-mapper';
+import Link from "next/link";
 import { trackButtonClick } from '../utils/analytics';
 
-/** Homepage hero — keep in sync with preload URL in pages/index.js */
-export const OASIS_HERO_IMAGE_PATH = '/images/Welcome to Oasis.webp';
-/**
- * Srcset — 7 widths so middle index (3) = 640w default `src`, not 1080w
- * (getCloudinarySrcSet: width = widths[floor(length/2)]).
- */
-export const OASIS_HERO_WIDTHS = [320, 384, 480, 640, 828, 1080, 1920];
-/**
- * Preload width — mobile-first LCP (~360px CSS × 2 DPR ≈ 720; 640w is a close Cloudinary step).
- * Must stay aligned with the hero column layout (max-w-3xl + padding), not 100vw.
- */
-export const OASIS_HERO_PRELOAD_WIDTH = 640;
+/** Line-art sloth mascot (background removed) shown beside the homepage hero. */
+export const OASIS_HERO_MASCOT_PATH = "/images/oasis-hero-mascot.svg";
 
-/** Matches rendered hero column width, not full viewport (avoids oversized srcset picks). */
+/** Legacy hero image path — kept for any external references; hero no longer renders this asset. */
+export const OASIS_HERO_IMAGE_PATH = '/images/Welcome to Oasis.webp';
+export const OASIS_HERO_WIDTHS = [320, 384, 480, 640, 828, 1080, 1920];
+export const OASIS_HERO_PRELOAD_WIDTH = 640;
 export const OASIS_HERO_SIZES =
   '(max-width: 640px) 360px, (max-width: 768px) 680px, (max-width: 1024px) 720px, min(90vw, 1152px)';
-
-function HeroImage() {
-  const heroProps = getCloudinaryImageProps(OASIS_HERO_IMAGE_PATH, {
-    widths: OASIS_HERO_WIDTHS,
-    quality: 'auto:good',
-  });
-  if (heroProps.srcSet && heroProps.src) {
-    return (
-      <img
-        src={heroProps.src}
-        srcSet={heroProps.srcSet}
-        sizes={OASIS_HERO_SIZES}
-        alt="Welcome to Oasis"
-        className="object-contain w-full h-full"
-        fetchPriority="high"
-        decoding="sync"
-      />
-    );
-  }
-  return (
-    <Image
-      src={heroProps.src || OASIS_HERO_IMAGE_PATH}
-      alt="Welcome to Oasis"
-      fill
-      priority
-      sizes={OASIS_HERO_SIZES}
-      className="object-contain"
-      quality={90}
-    />
-  );
-}
 
 export default function ProductSection() {
   return (
     <section className="relative overflow-hidden py-24 sm:py-32 product-container">
-      <div className="relative mx-auto max-w-5xl px-6 lg:px-10 text-center">
-        <div className="flex flex-col items-center gap-8">
-          <div className="flex flex-col items-center gap-6 max-w-3xl">
-            <h1 className="text-4xl font-semibold leading-tight text-[#313A00] sm:text-5xl mb-2">
-              Meet Oasis, the Most Elegant Browser
+      <div className="relative mx-auto max-w-6xl px-6 lg:px-10">
+        <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between md:gap-8">
+          <div className="flex min-w-0 max-w-xl flex-1 flex-col items-start gap-6 text-left lg:max-w-2xl">
+            <h1 className="text-4xl font-semibold leading-tight text-[#313A00] sm:text-5xl mb-0 text-balance">
+              Relax, you discovered Oasis
             </h1>
-            <h2 className="text-xl font-semibold leading-8 text-[#5C5F2E]">
-              Fall in Love
-            </h2>
-            <p className="text-lg text-[#4A5745] max-w-2xl">
-              Enjoy a beautiful browsing experience designed for ergonomic work
+            <p className="text-lg sm:text-xl text-[#4A5745] max-w-2xl mb-0 text-pretty leading-relaxed">
+              Welcome to the most ergonomic browser user experience on Earth.
+              <br />
+              Use your voice. Use natural language. Let Oasis do the work for you.
             </p>
-            <div className="hero-cta-buttons flex flex-col items-center justify-center gap-4 sm:gap-6">
+            <div className="hero-cta-buttons flex flex-row flex-wrap items-center justify-start gap-4">
               <Link
                 href="/oasis-pricing"
-                onClick={() => trackButtonClick('get_instant_access', 'hero_section')}
-                className="btn-primary inline-flex items-center justify-center px-4 sm:px-8 py-2 sm:py-3 text-xs sm:text-base whitespace-nowrap no-underline hover:no-underline focus:no-underline rounded-[27.5px] font-bold scale-100 sm:scale-125 shrink-0"
+                onClick={() => trackButtonClick('oasis_download', 'hero_section')}
+                className="btn-primary inline-flex items-center justify-center whitespace-nowrap no-underline hover:no-underline focus:no-underline shrink-0"
               >
-                Get Instant Access
+                Download
               </Link>
-              <button
-                type="button"
-                onClick={() => {
-                  const el = document.querySelector('.get-started-section');
-                  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }}
-                className="btn-secondary inline-flex items-center justify-center px-4 sm:px-8 py-2 sm:py-3 text-xs sm:text-base whitespace-nowrap no-underline hover:no-underline focus:no-underline rounded-[27.5px] font-bold scale-100 sm:scale-125 shrink-0"
+              <Link
+                href="/schedule-demo"
+                onClick={() => trackButtonClick('hero_schedule_demo', 'hero_section')}
+                className="btn-secondary inline-flex items-center justify-center whitespace-nowrap no-underline hover:no-underline focus:no-underline shrink-0"
               >
-                Watch 4-min video
-              </button>
+                Schedule a demo
+              </Link>
             </div>
+            <p className="text-sm text-[#4A5745] max-w-xl mt-1 flex flex-wrap items-center justify-start gap-x-2 gap-y-1">
+              <Link
+                href="/products/oasis-browser"
+                onClick={() => trackButtonClick('hero_link_product_details', 'hero_section')}
+                className="font-medium text-[#617500] underline decoration-[#617500]/40 underline-offset-2 hover:text-[#4A5745] hover:decoration-[#4A5745] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#617500]"
+              >
+                Product details
+              </Link>
+              <span className="text-[#4A5745]/50" aria-hidden>
+                ·
+              </span>
+              <Link
+                href="/products/oasis-enterprise-browser"
+                onClick={() => trackButtonClick('hero_link_enterprise', 'hero_section')}
+                className="font-medium text-[#617500] underline decoration-[#617500]/40 underline-offset-2 hover:text-[#4A5745] hover:decoration-[#4A5745] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#617500]"
+              >
+                For IT &amp; teams
+              </Link>
+            </p>
           </div>
-
-          <div className="relative w-full max-w-3xl">
-            {/* Decorative glow — omitted on small screens to reduce LCP compositing cost */}
-            <div className="hidden md:block absolute inset-0 translate-x-4 translate-y-4 rounded-[34px] bg-gradient-to-br from-white/70 to-transparent blur-[160px] opacity-100" />
-            <div className="relative overflow-hidden rounded-2xl border border-gray-200/90 bg-white p-3 shadow-md md:rounded-[36px] md:border-white/80 md:bg-white/80 md:p-4 md:shadow-[0_35px_120px_rgba(20,32,0,0.18)] md:backdrop-blur">
-              <div className="relative w-full aspect-[16/10] rounded-xl overflow-hidden md:rounded-[28px]">
-                <HeroImage />
-              </div>
-            </div>
+          <div className="flex w-full shrink-0 justify-end pointer-events-none select-none md:w-auto">
+            <Image
+              src={OASIS_HERO_MASCOT_PATH}
+              alt="Oasis sloth mascot resting in a hammock between palm trees"
+              width={199}
+              height={136}
+              sizes="(max-width: 768px) 220px, 280px"
+              className="h-auto w-[220px] max-w-[min(90vw,280px)] flex-none object-contain md:w-[280px] md:max-w-none"
+              priority
+            />
           </div>
         </div>
       </div>

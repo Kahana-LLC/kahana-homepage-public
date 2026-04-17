@@ -18,7 +18,7 @@ You can't force "instant" Google traffic, but you can **increase how many people
 - **Meta description** – Comes from `excerpt` (or optional **`metaDescription`**). Automatically truncated to ~155 characters so it displays fully in Google.
 - **URL** – Derived from **`slug`**. Keep it short, readable, and keyword-relevant (e.g. `fastest-web-browser-2026-benchmarks-caveats`).
 - **Headings** – Use clear `<h2>` and `<h3>` in the post `content`; they help Google understand structure and give readers scannable sections.
-- **Internal links** – Link to other blog posts and key site pages (e.g. `/products/enterprise-browser`, `/blog`) where it fits naturally. The "Related Blogs" block on each post helps too.
+- **Internal links** – Link to other blog posts and key site pages (e.g. `/products/oasis-enterprise-browser`, `/blog`) where it fits naturally. The "Related Blogs" block on each post helps too.
 - **Canonical URL** – Set automatically per post; no action needed.
 
 ---

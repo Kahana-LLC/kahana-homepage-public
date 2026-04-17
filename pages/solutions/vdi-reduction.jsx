@@ -4,6 +4,8 @@ import Script from 'next/script';
 import Link from 'next/link';
 import SEO from '../../components/SEO';
 import SolutionsExploreGrid from '../../components/solutions/SolutionsExploreGrid';
+import MainIncidentDashboardPreview from '../../components/solutions/visuals/MainIncidentDashboardPreview';
+import RelatedEnterpriseFeatureLinks from '../../components/features/RelatedEnterpriseFeatureLinks';
 
 const securityFeatures = [
   {
@@ -207,6 +209,10 @@ export default function VdiReduction() {
           </div>
         </div>
       </section>
+
+      <MainIncidentDashboardPreview pageKey="vdi-reduction" />
+
+      <RelatedEnterpriseFeatureLinks pageKey="vdi-reduction" />
 
       <section className="bg-white py-16 md:py-20 border-b border-[#4A5745]/8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -37,8 +37,8 @@ Migrate only CDN/image/video related updates from `Konika-December-updates` to `
 
 **Pages that use Cloudinary:**
 - ✅ `pages/index.js` - Homepage images
-- ✅ `pages/products/enterprise-browser.jsx` - Background images
-- ✅ `pages/products/free-agentic-browser.jsx` - Background images
+- ✅ `pages/products/oasis-enterprise-browser.jsx` - Background images
+- ✅ `pages/products/oasis-browser.jsx` - Background images
 - ✅ `pages/use-cases/job-search.jsx` - Images
 - ✅ `pages/security-guide.jsx` - Logo
 - ⚠️ `pages/oasis-pricing.jsx` - Check if CDN-related changes

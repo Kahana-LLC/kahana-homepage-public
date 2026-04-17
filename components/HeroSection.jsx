@@ -26,9 +26,9 @@ export default function HeroSection() {
                     We believe the world is better off when your best ideas become reality. We create tools that help you get closer to your ideas and bring them into the world.
                   </p>
                   <div className="mt-8 flex justify-center sm:justify-start">
-                    <Link
+                                       <Link
                       href="/contact"  
-                      className="btn-primary inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline"
+                      className="btn-primary no-underline hover:no-underline focus:no-underline"
                     >
                       <span>
                         Get in Touch

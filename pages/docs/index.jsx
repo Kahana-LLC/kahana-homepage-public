@@ -3,9 +3,7 @@ import Head from 'next/head';
 import { getAllDocsMetadata } from '../../utils/docsUtils';
 import DocCard from '../../components/DocCard';
 import Breadcrumbs from '../../components/Breadcrumbs';
-import DiscordCTA from '../../components/DiscordCTA';
 import SEO from '../../components/SEO';
-import { docsConfig, isUniversalComponentEnabled, getUniversalComponent } from '../../config/docsConfig';
 
 export async function getStaticProps() {
   const docs = await getAllDocsMetadata();
@@ -87,8 +85,9 @@ export default function DocsIndex({ docs, categories }) {
           <div className="mb-8">
             <div className="flex flex-wrap gap-2">
               <button
+                type="button"
                 onClick={() => setActiveCategory('all')}
-                className={`px-4 py-2 text-sm font-medium transition-colors ${
+                className={`btn-sm transition-colors ${
                   activeCategory === 'all' ? 'btn-primary' : 'btn-secondary'
                 }`}
               >
@@ -97,8 +96,9 @@ export default function DocsIndex({ docs, categories }) {
               {categories.map((category) => (
                 <button
                   key={category}
+                  type="button"
                   onClick={() => setActiveCategory(category)}
-                  className={`px-4 py-2 text-sm font-medium transition-colors capitalize ${
+                  className={`btn-sm transition-colors capitalize ${
                     activeCategory === category ? 'btn-primary' : 'btn-secondary'
                   }`}
                 >
@@ -116,13 +116,6 @@ export default function DocsIndex({ docs, categories }) {
                   <DocCard key={doc.slug} doc={doc} />
                 ))}
               </div>
-
-              {/* Discord CTA */}
-              {isUniversalComponentEnabled('discordCTA') && (
-                <DiscordCTA 
-                  {...getUniversalComponent('discordCTA')}
-                />
-              )}
             </>
           ) : (
             <div className="text-center py-12">
