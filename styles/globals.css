@@ -628,11 +628,19 @@ a.btn-secondary.btn-nav svg {
 .mobile-menu a.nav-mobile-download-cta.btn-primary.btn-nav {
   background-color: var(--btn-primary-hover-bg) !important;
   border-color: var(--btn-primary-hover-bg) !important;
+  color: #ffffff !important;
+}
+
+.mobile-menu a.nav-mobile-download-cta.btn-primary.btn-nav *,
+.mobile-menu a.nav-mobile-download-cta.btn-primary.btn-nav span,
+.mobile-menu a.nav-mobile-download-cta.btn-primary.btn-nav svg {
+  color: #ffffff !important;
 }
 
 .mobile-menu a.nav-mobile-download-cta.btn-primary.btn-nav:hover {
   background-color: #4a5f00 !important;
   border-color: #4a5f00 !important;
+  color: #ffffff !important;
 }
 
 .btn-lg {
