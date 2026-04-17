@@ -5,11 +5,10 @@ import { useRouter } from 'next/router';
 import { getDocBySlug, getAllDocs } from '../../utils/docsUtils';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import AuthorCard from '../../components/AuthorCard';
-import DiscordCTA from '../../components/DiscordCTA';
 import { FaRegCalendarAlt, FaBookOpen, FaRegClock } from 'react-icons/fa';
 import { getAuthorDetails } from '../../utils/authorUtils';
 import SEO from '../../components/SEO';
-import { docsConfig, isUniversalComponentEnabled, getUniversalComponent } from '../../config/docsConfig';
+import { docsConfig } from '../../config/docsConfig';
 import fs from 'fs';
 import path from 'path';
 
@@ -156,13 +155,6 @@ export default function DocPage({ doc, relatedDocs }) {
             dangerouslySetInnerHTML={{ __html: doc.content }}
             suppressHydrationWarning={true}
           />
-
-          {/* Discord CTA */}
-          {isUniversalComponentEnabled('discordCTA') && (
-            <DiscordCTA 
-              {...getUniversalComponent('discordCTA')}
-            />
-          )}
 
           {/* Related Docs */}
           {relatedDocs.length > 0 && (

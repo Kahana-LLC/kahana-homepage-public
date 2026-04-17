@@ -4,6 +4,9 @@ import Script from 'next/script';
 import Link from 'next/link';
 import SEO from '../../components/SEO';
 import SolutionsExploreGrid from '../../components/solutions/SolutionsExploreGrid';
+import MainIncidentDashboardPreview from '../../components/solutions/visuals/MainIncidentDashboardPreview';
+import SolutionFeatureWithVisual from '../../components/solutions/visuals/SolutionFeatureWithVisual';
+import RelatedEnterpriseFeatureLinks from '../../components/features/RelatedEnterpriseFeatureLinks';
 
 const enablementFeatures = [
   {
@@ -208,6 +211,10 @@ export default function WorkplaceEnablement() {
         </div>
       </section>
 
+      <MainIncidentDashboardPreview pageKey="workplace-enablement" />
+
+      <RelatedEnterpriseFeatureLinks pageKey="workplace-enablement" />
+
       <section className="bg-white py-16 md:py-20 border-b border-[#4A5745]/8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-[#4A5745] text-center mb-4 tracking-tight">
@@ -308,45 +315,9 @@ export default function WorkplaceEnablement() {
           <p className="text-[#4A5745]/95 text-center mb-10 max-w-3xl mx-auto leading-relaxed">
             Oasis is not a magic portal to every app. It is the managed client where governed web work happens: consistent for users, accountable for IT, and compatible with the identity and security tools you already run.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 gap-6 lg:gap-8">
             {enablementFeatures.map((feature, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-xl border border-[#4A5745]/10 p-6 md:p-7 shadow-sm transition-all duration-200 hover:border-kahana-primary-800/30 hover:shadow-md"
-              >
-                <div className="flex gap-4 mb-4">
-                  <div
-                    className="flex-shrink-0 w-11 h-11 rounded-lg bg-kahana-primary-800 flex items-center justify-center ring-1 ring-kahana-primary-900/20"
-                    aria-hidden
-                  >
-                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                      />
-                    </svg>
-                  </div>
-                  <h3 className="text-base md:text-lg font-semibold text-[#4A5745] leading-snug tracking-tight pt-1.5">
-                    {feature.title}
-                  </h3>
-                </div>
-                <p className="text-sm text-[#4A5745]/90 leading-relaxed mb-5 border-l-2 border-kahana-primary-800/25 pl-4">
-                  {feature.description}
-                </p>
-                <ul className="space-y-2.5">
-                  {feature.details.map((detail, dIndex) => (
-                    <li key={dIndex} className="flex gap-3 text-sm text-[#4A5745]/95 leading-relaxed">
-                      <span
-                        className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-kahana-primary-700"
-                        aria-hidden
-                      />
-                      <span>{detail}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <SolutionFeatureWithVisual key={index} pageKey="workplace-enablement" feature={feature} index={index} />
             ))}
           </div>
         </div>

@@ -4,6 +4,9 @@ import Script from 'next/script';
 import Link from 'next/link';
 import SEO from '../../components/SEO';
 import SolutionsExploreGrid from '../../components/solutions/SolutionsExploreGrid';
+import MainIncidentDashboardPreview from '../../components/solutions/visuals/MainIncidentDashboardPreview';
+import SolutionFeatureWithVisual from '../../components/solutions/visuals/SolutionFeatureWithVisual';
+import RelatedEnterpriseFeatureLinks from '../../components/features/RelatedEnterpriseFeatureLinks';
 
 const securityFeatures = [
   {
@@ -208,6 +211,10 @@ export default function RemoteWorkforce() {
         </div>
       </section>
 
+      <MainIncidentDashboardPreview pageKey="remote-workforce" />
+
+      <RelatedEnterpriseFeatureLinks pageKey="remote-workforce" />
+
       <section className="bg-white py-16 md:py-20 border-b border-[#4A5745]/8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-[#4A5745] text-center mb-4 tracking-tight">
@@ -308,45 +315,9 @@ export default function RemoteWorkforce() {
           <p className="text-[#4A5745]/95 text-center mb-10 max-w-3xl mx-auto leading-relaxed">
             Session-level governance, policies that follow people across locations, integration with your identity and DLP stack, and a practical way to onboard and support workers without treating every remote scenario as a custom exception.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 gap-6 lg:gap-8">
             {securityFeatures.map((feature, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-xl border border-[#4A5745]/10 p-6 md:p-7 shadow-sm transition-all duration-200 hover:border-kahana-primary-800/30 hover:shadow-md"
-              >
-                <div className="flex gap-4 mb-4">
-                  <div
-                    className="flex-shrink-0 w-11 h-11 rounded-lg bg-kahana-primary-800 flex items-center justify-center ring-1 ring-kahana-primary-900/20"
-                    aria-hidden
-                  >
-                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                      />
-                    </svg>
-                  </div>
-                  <h3 className="text-base md:text-lg font-semibold text-[#4A5745] leading-snug tracking-tight pt-1.5">
-                    {feature.title}
-                  </h3>
-                </div>
-                <p className="text-sm text-[#4A5745]/90 leading-relaxed mb-5 border-l-2 border-kahana-primary-800/25 pl-4">
-                  {feature.description}
-                </p>
-                <ul className="space-y-2.5">
-                  {feature.details.map((detail, dIndex) => (
-                    <li key={dIndex} className="flex gap-3 text-sm text-[#4A5745]/95 leading-relaxed">
-                      <span
-                        className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-kahana-primary-700"
-                        aria-hidden
-                      />
-                      <span>{detail}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <SolutionFeatureWithVisual key={index} pageKey="remote-workforce" feature={feature} index={index} />
             ))}
           </div>
         </div>

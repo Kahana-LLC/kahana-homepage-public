@@ -227,7 +227,7 @@ https://example.com/source2
 https://example.com/source3
 
 INTERNAL_LINKS:
-/products/enterprise-browser → enterprise browser
+/products/oasis-enterprise-browser → enterprise browser
 /solutions/zero-trust-security → zero-trust security
 /buyers-guide → Enterprise Browser Buyer's Guide
 `;

@@ -19,8 +19,8 @@ export default function VideoSection() {
                 In this video, you'll see a demo of Oasis's core features and get a glimpse of the future we're building—where your browser is not just a tool, but a companion ready at the sound of your voice.
               </p>
               <div className="text-center lg:text-left">
-                <Link href="/products/free-agentic-browser" className="btn-primary inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline">
-                    Oasis Free Browser
+                <Link href="/products/oasis-browser" className="btn-primary no-underline hover:no-underline focus:no-underline">
+                    Oasis Browser
                 </Link>
               </div>
             

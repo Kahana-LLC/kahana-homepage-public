@@ -22,7 +22,7 @@ Use the template at `prompts/comparison-blog.md` to generate the full HTML conte
 8. https://www.slant.co/topics/17892/~tabs-management-addons-for-web-browsers - Comparison of tab management addons; keywords: Edge tab manager alternatives, best session savers 2026, workona browser workspace
 
 **Internal Links:**
-- /products/enterprise-browser → "enterprise browser"
+- /products/oasis-enterprise-browser → "enterprise browser"
 - /solutions/zero-trust-security → "zero-trust security"
 - /buyers-guide → "Enterprise Browser Buyer's Guide"
 - /blog/ai-browsers-enterprise-ready → "AI browsers for enterprise readiness"

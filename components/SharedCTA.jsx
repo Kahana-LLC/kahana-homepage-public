@@ -10,8 +10,8 @@ const SharedCTA = ({
   className = "" // Additional classes for the section
 }) => {
   const buttonStyles = {
-    primary: "btn-primary inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline",
-    secondary: "btn-secondary inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline"
+    primary: 'btn-primary no-underline hover:no-underline focus:no-underline',
+    secondary: 'btn-secondary no-underline hover:no-underline focus:no-underline',
   };
 
   const buttonInlineStyles = {
@@ -38,10 +38,10 @@ const SharedCTA = ({
           )}
           {!buttonLink && (
             <>
-              <Link href="/schedule-demo" className="btn-primary inline-flex items-center justify-center px-6 sm:px-8 lg:px-10 py-3 sm:py-4 text-sm sm:text-base lg:text-lg font-bold no-underline hover:no-underline focus:no-underline w-full sm:w-auto">
+              <Link href="/schedule-demo" className="btn-primary btn-lg no-underline hover:no-underline focus:no-underline w-full sm:w-auto">
                 Schedule a Demo
               </Link>
-              <Link href="/contact" className="btn-secondary inline-flex items-center justify-center px-6 sm:px-8 lg:px-10 py-3 sm:py-4 text-sm sm:text-base lg:text-lg font-bold no-underline hover:no-underline focus:no-underline w-full sm:w-auto">
+              <Link href="/contact" className="btn-secondary btn-lg no-underline hover:no-underline focus:no-underline w-full sm:w-auto">
                 Get in Touch
               </Link>
             </>

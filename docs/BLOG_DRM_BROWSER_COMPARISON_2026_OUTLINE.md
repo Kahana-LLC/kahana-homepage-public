@@ -98,7 +98,7 @@
 
 - [7 Ways DRM Must Evolve for Zero Trust and Enterprise Browsers](/blog/drm-zero-trust-enterprise-browser-2026) — strategy/evolution
 - [Understanding DRM Content in Browsers](/docs/drm-content) — user-level DRM explanation
-- [Oasis Enterprise Browser](/products/enterprise-browser)
+- [Oasis Enterprise Browser](/products/oasis-enterprise-browser)
 - [Zero Trust Security](/solutions/zero-trust-security)
 - [Enterprise Browser vs VDI vs VPN](/blog/enterprise-browser-vs-vdi-vpn-modern-access-2026) — if relevant to access model
 

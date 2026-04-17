@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
+import DownloadOasisLink from './buttons/DownloadOasisLink';
 
 const features = [
   {
@@ -154,15 +155,18 @@ export default function ProductDemoSection() {
 
         {/* CTA Buttons */}
         <div className="mt-8 sm:mt-12 text-center space-y-3 sm:space-y-0 sm:space-x-4">
-          <Link href="/schedule-demo" className="btn-primary w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline scale-110 sm:scale-125" style={{ color: '#FFFFFF' }}>
-            <span style={{ color: '#FFFFFF' }}>Schedule a Demo</span>
+          <Link href="/schedule-demo" className="btn-primary w-full sm:w-auto no-underline hover:no-underline focus:no-underline scale-110 sm:scale-125">
+            Schedule a Demo
           </Link>
-          <Link href="/products/enterprise-browser" className="btn-secondary w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline scale-110 sm:scale-125">
+          <Link href="/products/oasis-enterprise-browser" className="btn-secondary w-full sm:w-auto no-underline hover:no-underline focus:no-underline scale-110 sm:scale-125">
               Learn more about Oasis Enterprise Browser
           </Link>
-          <Link href="/download" className="btn-secondary w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline scale-110 sm:scale-125">
-              Download Browser
-          </Link>
+          <DownloadOasisLink
+            variant="secondary"
+            className="w-full sm:w-auto scale-110 sm:scale-125"
+          >
+            Download Browser
+          </DownloadOasisLink>
         </div>
       </div>
     </div>

@@ -43,7 +43,7 @@ export default function WaitlistButton({
         <Link
           href={waitlistUrl}
           onClick={onJoinWaitlist}
-          className="btn-primary flex items-center justify-center px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-200 no-underline hover:no-underline focus:no-underline"
+          className="btn-primary btn-sm transition-all duration-200 no-underline hover:no-underline focus:no-underline"
         >
           Join waitlist
         </Link>

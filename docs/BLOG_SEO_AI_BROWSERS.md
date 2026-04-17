@@ -24,7 +24,7 @@ Rank in the top 10 for searches like **AI browsers**, **best AI browser**, **ent
    Set `focusKeyword` to a primary phrase that includes “AI browsers” or “enterprise AI browser” when the post is about AI browsers, enterprise browsers, or Oasis.
 
 3. **Content**  
-   Use natural phrases like “AI browsers,” “enterprise AI browser,” “best AI browser for enterprise” and link to `/blog`, `/products/enterprise-browser`, or specific comparison posts (e.g. Perplexity Comet vs Oasis).
+   Use natural phrases like “AI browsers,” “enterprise AI browser,” “best AI browser for enterprise” and link to `/blog`, `/products/oasis-enterprise-browser`, or specific comparison posts (e.g. Perplexity Comet vs Oasis).
 
 4. **Internal links**  
    Link from security/enterprise posts to Oasis and to AI-browser comparison posts so “AI browsers” and “Oasis” are well connected.

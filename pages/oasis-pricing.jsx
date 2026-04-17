@@ -13,8 +13,14 @@ const pricingTiers = [
     price: '$0',
     priceLabel: 'per month',
     features: [
-      'Perfect for getting started',
-      '50 AI commands per month'
+      'No credit card required',
+      '50 AI commands / month',
+      'AI assistant with real tab, bookmark & history context',
+      'Voice & dictation (where supported)',
+      'Confirmations before sensitive actions',
+      'Starter prompts, read-aloud & message feedback',
+      'Import bookmarks, passwords, history & autofill from other browsers',
+      'Available for Mac (Apple Silicon & Intel)'
     ],
     creditNote: '',
     cta: 'Join waitlist',
@@ -27,31 +33,31 @@ const pricingTiers = [
     price: '$20',
     priceLabel: 'per month',
     features: [
-      'Ideal for regular use',
-      '1,500 AI commands per month',
-      'Priority support',
-      'Available for Mac'
+      '1,500 AI commands / month',
+      'Everything in Free',
+      'Priority support'
     ],
     creditNote: '',
-    cta: 'Get instant access',
+    cta: 'Download',
     ctaLink: '/oasis-auth?plan=zen',
     buttonStyle: 'primary',
     highlight: true
   },
   {
-    name: 'Nirvana plan',
-    tagline: 'Built for power users',
-    price: '$250',
-    priceLabel: 'per month',
+    name: 'Enterprise',
+    tagline: 'For organizations at scale',
+    price: 'Custom',
+    priceLabel: '',
     features: [
-      'Built for power users',
-      '18,750 AI commands per month',
-      'Dedicated support',
-      'Available for Mac'
+      'Volume licensing & centralized billing',
+      'SSO, security & compliance options',
+      'Dedicated onboarding & success',
+      'Custom usage limits & SLAs',
+      'Org-wide priority support'
     ],
     creditNote: '',
-    cta: 'Get instant access',
-    ctaLink: '/oasis-auth?plan=nirvana',
+    cta: 'Schedule a demo',
+    ctaLink: '/schedule-demo',
     buttonStyle: 'primary'
   }
 ];
@@ -90,7 +96,7 @@ const faqs = [
   },
   {
     question: 'What does Oasis cost?',
-    answer: 'Oasis offers flexible pricing starting with a free plan that includes 50 AI commands per month. Paid plans range from $20/month for Zen users (1,500 AI commands per month) to $250/month for Nirvana power users (18,750 AI commands per month). Team plans feature per-seat pricing starting at $40/month with custom options for larger organizations.'
+    answer: 'Oasis offers flexible pricing starting with a free plan that includes 50 AI commands per month. The Zen plan is $20/month with 1,500 AI commands per month. Enterprise offers custom pricing, volume licensing, and advanced requirements—contact us via Schedule a demo. Team plans feature per-seat pricing starting at $40/month with custom options for larger organizations.'
   },
   {
     question: 'Can I change plans or cancel anytime?',
@@ -125,7 +131,7 @@ export default function OasisPricing() {
     '@context': 'https://schema.org',
     '@type': 'Product',
     name: 'Oasis Pricing',
-    description: 'Flexible pricing plans for Oasis AI-powered workspace. Choose from Free, Pro, Ultra, or Team plans to match your workflow needs.',
+    description: 'Flexible pricing plans for Oasis AI-powered workspace. Choose from Free, Zen, Enterprise, or Team plans to match your workflow needs.',
     offers: [
       {
         '@type': 'Offer',
@@ -136,16 +142,17 @@ export default function OasisPricing() {
       },
       {
         '@type': 'Offer',
-        name: 'Pro',
+        name: 'Zen',
         price: '20',
         priceCurrency: 'USD',
         availability: 'https://schema.org/InStock'
       },
       {
         '@type': 'Offer',
-        name: 'Ultra',
-        price: '250',
+        name: 'Enterprise',
+        description: 'Custom pricing. Schedule a demo for a quote.',
         priceCurrency: 'USD',
+        url: 'https://kahana.co/schedule-demo',
         availability: 'https://schema.org/InStock'
       }
     ]
@@ -186,7 +193,7 @@ export default function OasisPricing() {
       />
 
       {/* Hero Section */}
-      <section className="relative min-h-[30vh] flex items-center justify-center overflow-hidden">
+      <section className="relative overflow-hidden pb-0">
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -199,17 +206,14 @@ export default function OasisPricing() {
           <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-white/80 to-white"></div>
         </div>
         
-        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10 py-12">
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10 pt-6 sm:pt-8 pb-4 sm:pb-5">
           <h1 
-            className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-tight mb-4"
+            className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-tight mb-2"
             style={{ color: '#313A00' }}
           >
             Oasis Pricing
           </h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto mt-4 mb-4">
-            Oasis is currently in beta. By subscribing, you acknowledge that you're using beta software that may contain bugs or incomplete features.
-          </p>
-          <div className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium mb-4" style={{ backgroundColor: '#EDF5F8', color: '#1D3E48' }}>
+          <div className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium mt-2" style={{ backgroundColor: '#EDF5F8', color: '#1D3E48' }}>
             <span className="mr-2">💻</span>
             Currently available for Mac (Apple Silicon & Intel) only. Windows and Linux coming soon.
           </div>
@@ -218,23 +222,19 @@ export default function OasisPricing() {
 
       {/* Pricing Tiers Section */}
       <FadeInSection>
-        <section className="py-8 sm:py-10 px-4 sm:px-6 lg:px-8 bg-white">
+        <section className="pt-2 pb-6 sm:pt-3 sm:pb-8 px-4 sm:px-6 lg:px-8 bg-white">
           <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 md:items-start gap-4 lg:gap-6 max-w-5xl mx-auto">
               {pricingTiers.map((tier, index) => (
                 <div
                   key={tier.name}
-                  className="relative bg-white border-2 border-gray-200 rounded-2xl p-5 sm:p-6 lg:p-8 transition-all duration-300 hover:shadow-lg"
+                  className="relative bg-white border-2 border-gray-200 rounded-2xl p-4 sm:p-5 lg:p-6 transition-all duration-300 hover:shadow-lg"
                 >
-                  {/* Beta Badge */}
-                  <div className="absolute -top-2 -right-2 text-white text-xs font-bold px-3 py-1 rounded-full z-10" style={{ backgroundColor: '#489CB5' }}>
-                    Beta
-                  </div>
-                  <div className="mb-4">
-                    <h3 className="text-base sm:text-lg font-semibold mb-3 text-gray-800">
+                  <div className="mb-3">
+                    <h3 className="text-base sm:text-lg font-semibold mb-2 text-gray-800">
                       {tier.name}
                     </h3>
-                    <div className="mb-6">
+                    <div className="mb-4">
                       <span className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900">
                         {tier.price}
                       </span>
@@ -244,7 +244,7 @@ export default function OasisPricing() {
                         </span>
                       )}
                     </div>
-                    <div className="mb-6">
+                    <div className="mb-4">
                       <Link
                         href={tier.ctaLink}
                         className={`btn-${tier.buttonStyle} w-full inline-flex items-center justify-center px-4 py-2.5 sm:py-3 text-sm sm:text-base font-normal rounded-full no-underline hover:no-underline focus:no-underline transition-all`}
@@ -254,9 +254,9 @@ export default function OasisPricing() {
                     </div>
                   </div>
 
-                  <ul className="space-y-2 sm:space-y-3">
+                  <ul className="space-y-1.5 sm:space-y-2">
                     {tier.features.map((feature, featureIndex) => {
-                      const isMacOnly = feature === 'Available for Mac';
+                      const isMacOnly = typeof feature === 'string' && feature.startsWith('Available for Mac');
                       return (
                         <li 
                           key={featureIndex} 
@@ -286,7 +286,7 @@ export default function OasisPricing() {
             </div>
 
             {/* Legal Links */}
-            <div className="max-w-5xl mx-auto mt-6 sm:mt-8 text-center">
+            <div className="max-w-5xl mx-auto mt-4 sm:mt-5 text-center">
               <p className="text-xs sm:text-sm text-gray-600">
                 By using Oasis, you agree to our{' '}
                 <Link href="/terms-and-conditions" className="text-[#4A6200] no-underline hover:no-underline font-semibold">
@@ -300,13 +300,13 @@ export default function OasisPricing() {
             </div>
 
             {/* Existing User Card */}
-            <div className="max-w-md mx-auto mt-8 sm:mt-10">
-              <div className="relative bg-gradient-to-br from-[#F8FAF2] to-white border-2 border-gray-300 rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:shadow-lg">
+            <div className="max-w-md mx-auto mt-5 sm:mt-6">
+              <div className="relative bg-gradient-to-br from-[#F8FAF2] to-white border-2 border-gray-300 rounded-2xl p-5 sm:p-6 transition-all duration-300 hover:shadow-lg">
                 <div className="text-center">
-                  <h3 className="text-lg sm:text-xl font-semibold mb-3 text-gray-800">
+                  <h3 className="text-lg sm:text-xl font-semibold mb-2 text-gray-800">
                     Existing Customer?
                   </h3>
-                  <p className="text-sm sm:text-base text-gray-700 mb-6 leading-relaxed">
+                  <p className="text-sm sm:text-base text-gray-700 mb-4 leading-relaxed">
                     Manage your billing, subscription, and payment methods
                   </p>
                   <Link

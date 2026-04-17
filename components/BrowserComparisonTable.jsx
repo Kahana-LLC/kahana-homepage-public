@@ -291,10 +291,10 @@ const BrowserComparisonTable = () => {
           <div className="flex items-center flex-wrap gap-3">
             <button
               onClick={exportToCSV}
-              className="btn-secondary inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+              className="btn-secondary btn-sm transition-all disabled:opacity-50 disabled:cursor-not-allowed"
               disabled={comparisonData.length === 0}
             >
-              <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
               </svg>
               Export CSV ({comparisonData.length})
@@ -302,9 +302,12 @@ const BrowserComparisonTable = () => {
             <div className="relative" ref={filterRef}>
               <button
                 onClick={() => setIsFilterOpen(!isFilterOpen)}
-                                className={`inline-flex items-center px-5 py-2 rounded-full text-sm font-semibold transition-all focus:outline-none space-x-2 ${
-                                  (getActiveFilterCount() > 0 || searchTerm || selectedBrowsers.length > 0) ? 'btn-primary' : 'btn-secondary'
-                                }`}
+                type="button"
+                className={`btn-sm transition-all focus:outline-none ${
+                  getActiveFilterCount() > 0 || searchTerm || selectedBrowsers.length > 0
+                    ? 'btn-primary'
+                    : 'btn-secondary'
+                }`}
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.207A1 1 0 013 6.5V4z" />

@@ -36,7 +36,7 @@ https://source1.com
 https://source2.com
 
 INTERNAL_LINKS:
-/products/enterprise-browser → enterprise browser
+/products/oasis-enterprise-browser → enterprise browser
 /buyers-guide → Enterprise Browser Buyer's Guide
 ```
 

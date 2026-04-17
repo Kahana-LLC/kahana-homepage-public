@@ -32,7 +32,7 @@ export default function Products() {
                 A secure, isolated browser environment designed for enterprise needs, protecting your organization's data and users with advanced security features and compliance controls.
               </p>
               <div className="space-y-4">
-                <Link href="/products/enterprise-browser" className="btn-primary w-full inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline">
+                <Link href="/products/oasis-enterprise-browser" className="btn-primary w-full inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline">
                     Learn More
                 </Link>
               </div>

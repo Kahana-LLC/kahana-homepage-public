@@ -43,9 +43,64 @@ function generateSiteMap() {
        <priority>1.0</priority>
      </url>
      <url>
-       <loc>${EXTERNAL_DATA_URL}/products/enterprise-browser</loc>
+       <loc>${EXTERNAL_DATA_URL}/products/oasis-browser</loc>
        <changefreq>weekly</changefreq>
        <priority>0.9</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/products/oasis-enterprise-browser</loc>
+       <changefreq>weekly</changefreq>
+       <priority>0.9</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/features/oasis-voice</loc>
+       <changefreq>monthly</changefreq>
+       <priority>0.75</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/features/oasis-assistant</loc>
+       <changefreq>monthly</changefreq>
+       <priority>0.75</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/features/oasis-confirmations</loc>
+       <changefreq>monthly</changefreq>
+       <priority>0.75</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/features/oasis-onboarding</loc>
+       <changefreq>monthly</changefreq>
+       <priority>0.75</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/features/oasis-import</loc>
+       <changefreq>monthly</changefreq>
+       <priority>0.75</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/features/oasis-amplifier</loc>
+       <changefreq>monthly</changefreq>
+       <priority>0.75</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/features/oasis-enterprise-external-access</loc>
+       <changefreq>monthly</changefreq>
+       <priority>0.75</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/features/oasis-enterprise-governance</loc>
+       <changefreq>monthly</changefreq>
+       <priority>0.75</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/features/oasis-enterprise-identity-dlp</loc>
+       <changefreq>monthly</changefreq>
+       <priority>0.75</priority>
+     </url>
+     <url>
+       <loc>${EXTERNAL_DATA_URL}/features/oasis-enterprise-faster-paths</loc>
+       <changefreq>monthly</changefreq>
+       <priority>0.75</priority>
      </url>
      <url>
        <loc>${EXTERNAL_DATA_URL}/products/web-application</loc>

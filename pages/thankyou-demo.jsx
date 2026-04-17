@@ -63,7 +63,7 @@ export default function ThankYouDemo() {
 
             <div className="space-y-4">
               <Link 
-                href="/product/enterprise-browser"
+                href="/products/oasis-enterprise-browser"
                 className="block w-full bg-[#66C2BE] text-white rounded-lg px-6 py-3 text-center font-medium hover:bg-[#66C2BE]/90 transition-colors duration-200"
               >
                 Learn More About Oasis

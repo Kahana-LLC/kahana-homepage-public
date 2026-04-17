@@ -165,7 +165,7 @@ const AppendixPage = () => {
               This Appendix is dedicated to a more in-depth, technical breakdown of some of the most prominent AR technologies introduced to the world thus far, from prototypes to commercially available products.
             </p>
                                <Link
-                     href="/white-paper-future-of-ergonomic-work"
+                     href="/white-papers/the-future-of-ergonomic-work"
                      className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white !text-white bg-[#66C2BE] hover:bg-[#4A9E9A] transition-colors no-underline"
                      style={{ color: 'white' }}
                    >
@@ -238,7 +238,7 @@ const AppendixPage = () => {
                 Download our comprehensive white paper to discover the full technical analysis, market insights, and future roadmap for AR glasses technology.
               </p>
               <Link
-                href="/white-paper-future-of-ergonomic-work"
+                href="/white-papers/the-future-of-ergonomic-work"
                 className="inline-flex items-center px-6 py-3 border border-transparent text-base font-bold rounded-md shadow-sm text-white bg-[#21706c] hover:bg-[#15514f] transition-colors no-underline"
                 style={{ color: 'white' }}
               >
@@ -258,7 +258,7 @@ const AppendixPage = () => {
                                <Link href="/blog/the-future-of-ergonomic-work-improving-health-2025" className="text-[#66C2BE] hover:text-[#4A9E9A] font-medium">
                      Read Blog Series
                    </Link>
-            <Link href="/white-paper-future-of-ergonomic-work" className="text-[#66C2BE] hover:text-[#4A9E9A] font-medium">
+            <Link href="/white-papers/the-future-of-ergonomic-work" className="text-[#66C2BE] hover:text-[#4A9E9A] font-medium">
               Download White Paper
             </Link>
           </div>

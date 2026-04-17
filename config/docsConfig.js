@@ -10,13 +10,6 @@
 export const docsConfig = {
   // Universal components that appear on all documentation pages
   universalComponents: {
-    discordCTA: {
-      enabled: true,
-      title: "Need Help with Oasis Browser?",
-      description: "Join our Discord community to get support, ask questions, and connect with other Oasis users and the Kahana team.",
-      buttonText: "Join Discord Community",
-      className: "mt-16"
-    },
     feedback: {
       enabled: false, // Set to true to enable feedback component
       title: "Was this documentation helpful?",

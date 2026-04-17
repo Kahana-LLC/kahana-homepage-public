@@ -169,10 +169,10 @@ const SearchPage = () => {
                 <button
                   onClick={() => handlePageChange(currentPage - 1)}
                   disabled={!pagination.hasPreviousPage}
-                  className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                  className={`transition-colors ${
                     pagination.hasPreviousPage
-                      ? 'btn-primary'
-                      : 'bg-gray-100 text-gray-400 border border-gray-200 cursor-not-allowed'
+                      ? 'btn-primary btn-compact-control'
+                      : 'bg-gray-100 text-gray-400 border border-gray-200 cursor-not-allowed px-3 py-2 rounded-md text-sm font-medium'
                   }`}
                 >
                   Previous
@@ -196,10 +196,10 @@ const SearchPage = () => {
                       <button
                         key={pageNum}
                         onClick={() => handlePageChange(pageNum)}
-                        className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                        className={`transition-colors ${
                           currentPage === pageNum
-                            ? 'btn-primary'
-                            : 'btn-secondary'
+                            ? 'btn-primary btn-compact-control'
+                            : 'btn-secondary btn-compact-control'
                         }`}
                       >
                         {pageNum}
@@ -212,10 +212,10 @@ const SearchPage = () => {
                 <button
                   onClick={() => handlePageChange(currentPage + 1)}
                   disabled={!pagination.hasNextPage}
-                  className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                  className={`transition-colors ${
                     pagination.hasNextPage
-                      ? 'btn-primary'
-                      : 'bg-gray-100 text-gray-400 border border-gray-200 cursor-not-allowed'
+                      ? 'btn-primary btn-compact-control'
+                      : 'bg-gray-100 text-gray-400 border border-gray-200 cursor-not-allowed px-3 py-2 rounded-md text-sm font-medium'
                   }`}
                 >
                   Next
