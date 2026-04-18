@@ -1,5 +1,16 @@
 const blogIndex = [
   {
+    title: "Built-in Browser AI vs Extensions: Speed, Reliability, Privacy (Oasis Breakdown)",
+    date: "2026-04-18T00:00:00.000Z",
+    authors: ["Pallavi M", "Ankit Sai Allam"],
+    category: ["AI & Emerging Tech"],
+    excerpt: "Comprehensive comparison of built-in browser AI versus extension-based AI tools. Analysis of performance differences, reliability, privacy risks, and enterprise concerns in the AI browser ecosystem.",
+    defaultImageQuery: "built-in browser AI vs extensions speed reliability privacy comparison",
+    featuredImage: "https://tse1.mm.bing.net/th/id/OIP.v6aJrm1O7RiTKqH1fPLPmwHaEK?pid=Api&P=0&h=180",
+    slug: "built-in-browser-ai-vs-extensions-speed-reliability-privacy-oasis-breakdown-2026",
+    readingTime: 16,
+  },
+  {
     title: "Get AI to Control Your Browser: The Execution Gap (Oasis Demo)",
     date: "2026-04-17T00:00:00.000Z",
     authors: ["Pallavi M", "Ankit Sai Allam"],
