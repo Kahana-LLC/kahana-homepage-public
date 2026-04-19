@@ -1,5 +1,16 @@
 const blogIndex = [
   {
+    title: "AI Assistants in Browsers: What's Real vs Hype (and Why Commands Matter) (Oasis Field Guide)",
+    date: "2026-04-19T00:00:00.000Z",
+    authors: ["Pallavi M", "Ankit Sai Allam"],
+    category: ["AI & Browsing Technology"],
+    excerpt: "Field guide analyzing what browser AI assistants actually do versus marketing claims. Examines reliability gaps, execution failures, privacy risks, and why structured commands outperform vague chat prompts.",
+    defaultImageQuery: "AI browser assistants real vs hype commands reliability privacy",
+    featuredImage: "https://tse3.mm.bing.net/th/id/OIP.-8-Wuky4g9Ka5mbM-D8MywHaEO?pid=Api&P=0&h=180",
+    slug: "ai-assistants-browsers-real-vs-hype-commands-matter-oasis-field-guide-2026",
+    readingTime: 17,
+  },
+  {
     title: "Built-in Browser AI vs Extensions: Speed, Reliability, Privacy (Oasis Breakdown)",
     date: "2026-04-18T00:00:00.000Z",
     authors: ["Pallavi M", "Ankit Sai Allam"],
