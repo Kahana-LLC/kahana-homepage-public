@@ -160,7 +160,7 @@ const SectionDropdown: React.FC<SectionDropdownProps> = ({
                 onMouseEnter={() => setFocusedIndex(index)}
               >
                 <span className="block truncate">
-                  {option.label.replace(/^—\s/, '')}
+                  {option.label.replace(/^[·—]\s/, '')}
                 </span>
               </li>
             ))}

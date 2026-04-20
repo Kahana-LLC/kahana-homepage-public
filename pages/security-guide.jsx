@@ -338,7 +338,7 @@ export default function SecurityRoadmapPage() {
 
   const anchors = useMemo(() => structure.flatMap(s => [
     { href: `#${s.id}`, label: s.label },
-    ...(s.children ? s.children.map(c => ({ href: `#${c.id}`, label: `— ${c.label}` })) : []),
+    ...(s.children ? s.children.map(c => ({ href: `#${c.id}`, label: `· ${c.label}` })) : []),
   ]), [structure]);
 
   const sectionIds = useMemo(() => structure.flatMap(s => [s.id, ...(s.children ? s.children.map(c => c.id) : [])]), [structure]);
@@ -353,7 +353,7 @@ export default function SecurityRoadmapPage() {
   return (
     <ErrorBoundary>
       <Head>
-        <title>Security Road Map — Oasis</title>
+        <title>Security Road Map | Oasis</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <div style={{ background: COLORS.bgPage, color: COLORS.primary, minHeight: '100vh' }}>

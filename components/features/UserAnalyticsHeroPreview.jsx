@@ -40,7 +40,7 @@ export default function UserAnalyticsHeroPreview() {
           </div>
         ))}
       </div>
-      <p className="mt-4 text-center text-xs text-oasis-green-800/65">Illustrative preview—not live data</p>
+      <p className="mt-4 text-center text-xs text-oasis-green-800/65">Illustrative preview, not live data</p>
     </div>
   );
 }

@@ -205,7 +205,7 @@ export default function OasisWaitlist() {
                     <div className="mt-16 bg-white rounded-xl shadow-xl p-8">
                       <h3 className="text-2xl font-semibold text-gray-900 mb-6">The Oasis Advantage</h3>
                       <p className="text-lg text-gray-600 mb-8">
-                        Oasis isn't just another browser—it's a productivity powerhouse built from the ground up with AI at its core. Experience unprecedented control over your digital workspace while maintaining lightning-fast performance.
+                        Oasis isn&apos;t just another browser. It&apos;s a productivity powerhouse built from the ground up with AI at its core. Experience unprecedented control over your digital workspace while maintaining lightning-fast performance.
                       </p>
                       
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">

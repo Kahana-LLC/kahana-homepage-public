@@ -3,7 +3,7 @@ import React from 'react';
 const VARIANT_META = {
   external: {
     title: 'Access follows the session',
-    caption: 'Contractors and partners reach sanctioned SaaS through a governed browser session—not only through devices you image.',
+    caption: 'Contractors and partners reach sanctioned SaaS through a governed browser session, not only through devices you image.',
     label: 'Concept: external access',
   },
   governance: {

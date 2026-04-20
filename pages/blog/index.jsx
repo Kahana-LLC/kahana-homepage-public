@@ -136,7 +136,7 @@ export default function BlogIndex({ posts = [] }) {
     <>
       <Head>
         <title>Enterprise Browser Blog | Top Browser Comparisons & Security Insights – Kahana</title>
-        <meta name="description" content="Compare top browsers, get expert takes on enterprise browser security, and learn how Oasis solves real-world speed and privacy problems. Actionable insights—updated regularly." />
+        <meta name="description" content="Compare top browsers, get expert takes on enterprise browser security, and learn how Oasis solves real-world speed and privacy problems. Actionable insights, updated regularly." />
         <meta name="keywords" content="enterprise browser, top browser, best browser, browser comparison, Oasis browser, browser security, enterprise security, browser productivity" />
         <link rel="canonical" href="https://kahana.co/blog" />
         <meta property="og:url" content="https://kahana.co/blog" />

@@ -1048,7 +1048,7 @@ export default function EnterpriseBuyerGuidePage() {
                     <Link href="/products/oasis-browser" className="text-brand-link font-semibold no-underline hover:underline">
                       Oasis Browser
                     </Link>
-                    —voice, assistant, confirmations, onboarding, import, and planned Amplifier feedback—ships in{' '}
+                    {', including voice, assistant, confirmations, onboarding, import, and planned Amplifier feedback, ships in '}
                     <strong>Oasis Enterprise Browser</strong>. What follows are the live product mocks from the consumer
                     page; enterprise wraps them with policy, identity, and data controls.
                   </p>

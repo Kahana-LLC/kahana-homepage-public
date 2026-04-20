@@ -12,7 +12,7 @@ const PILLARS = [
   {
     title: 'Unified browser governance',
     body:
-      'Apply consistent browser-level policies across corporate and third-party environments—policies follow the session, not only the device.',
+      'Apply consistent browser-level policies across corporate and third-party environments: policies follow the session, not only the device.',
   },
   {
     title: 'Works with your identity and data protection stack',
@@ -40,7 +40,7 @@ const OUTCOMES = [
   {
     title: 'Governance confidence',
     body:
-      'Keep sensitive systems governed when work happens outside traditional corporate endpoints—in the browser where SaaS actually runs.',
+      'Keep sensitive systems governed when work happens outside traditional corporate endpoints: in the browser where SaaS actually runs.',
   },
   {
     title: 'Operational scalability',
@@ -76,7 +76,7 @@ const OBJECTIONS = [
   {
     objection: 'VDI or corporate laptops work for us today.',
     response:
-      'They can—but cost, time-to-access, and scale (especially for contractors) are common pressure points. Browser governance can reduce that tax where it fits your architecture.',
+      'They can, but cost, time-to-access, and scale (especially for contractors) are common pressure points. Browser governance can reduce that tax where it fits your architecture.',
   },
   {
     objection: 'Users will resist another browser or agent.',
@@ -89,8 +89,8 @@ export default function About() {
   return (
     <>
       <SEO
-        title="About Oasis — Managed enterprise browser for secure SaaS access"
-        description="Oasis is a managed enterprise browser that puts governance where work happens—in the browser—so teams can secure contractor and partner SaaS access without defaulting to laptops or VDI."
+        title="About Oasis: managed enterprise browser for secure SaaS access"
+        description="Oasis is a managed enterprise browser that puts governance where work happens in the browser, so teams can secure contractor and partner SaaS access without defaulting to laptops or VDI."
         url="https://kahana.co/about"
         type="website"
       />
@@ -106,7 +106,7 @@ export default function About() {
               Managed enterprise browser for secure SaaS access
             </h1>
             <p className="mt-4 text-lg text-oasis-green-800 sm:text-xl">
-              Governance belongs in the browser—where SaaS, internal tools, and AI workflows run—not only on devices you own. Oasis helps security teams secure contractor and partner access without treating laptop shipping or VDI as the default answer.
+              Governance belongs in the browser (where SaaS, internal tools, and AI workflows run), not only on devices you own. Oasis helps security teams secure contractor and partner access without treating laptop shipping or VDI as the default answer.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
@@ -122,6 +122,14 @@ export default function About() {
                 Join the waitlist
               </Link>
             </div>
+            <p className="mt-6 text-base text-oasis-green-800">
+              <Link
+                href="/team"
+                className="font-semibold text-brand-link underline decoration-brand-link/40 underline-offset-2 hover:text-oasis-green-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#617500]"
+              >
+                Meet the team
+              </Link>
+            </p>
           </div>
         </div>
       </div>
@@ -134,7 +142,7 @@ export default function About() {
               Work moved into the browser. Many access models did not.
             </h2>
             <p className="mt-4 text-lg text-oasis-green-800">
-              Employees, contractors, and partners increasingly work directly in SaaS—often from devices the organization does not manage. Traditional models built around corporate laptops, VPNs, and rigid network boundaries struggle to govern how SaaS is actually used.
+              Employees, contractors, and partners increasingly work directly in SaaS, often from devices the organization does not manage. Traditional models built around corporate laptops, VPNs, and rigid network boundaries struggle to govern how SaaS is actually used.
             </p>
           </div>
 
@@ -174,7 +182,7 @@ export default function About() {
               <ul className="mt-4 list-disc space-y-2 pl-5 text-oasis-green-800">
                 <li>Hardware and VDI paths are often slow and expensive to operate at scale</li>
                 <li>Unmanaged consumer browsers struggle to enforce enterprise policy consistently</li>
-                <li>SaaS sprawl—apps, extensions, and AI tools in the browser—widens the attack surface</li>
+                <li>SaaS sprawl (apps, extensions, and AI tools in the browser) widens the attack surface</li>
               </ul>
             </div>
             <div className="rounded-2xl bg-gradient-to-br from-desert-yellow-100/20 to-oasis-blue-300/10 p-8">
@@ -201,7 +209,7 @@ export default function About() {
             Why the old trade-off persists
           </h2>
           <p className="mx-auto mt-4 max-w-3xl text-center text-lg text-oasis-green-800">
-            Many organizations still choose between heavy infrastructure and friction—or looser access on unmanaged browsers. Oasis is built for a third path: govern SaaS where it runs, in the browser session, with integrations that meet enterprise expectations.
+            Many organizations still choose between heavy infrastructure and friction, or looser access on unmanaged browsers. Oasis is built for a third path: govern SaaS where it runs, in the browser session, with integrations that meet enterprise expectations.
           </p>
         </div>
       </section>
@@ -214,7 +222,7 @@ export default function About() {
               A browser designed as the enterprise control layer
             </h2>
             <p className="mt-4 text-lg text-oasis-green-800">
-              Oasis is a managed enterprise browser for modern SaaS access. Instead of relying on device ownership alone, it places governance in the browser—integrating with identity and data protection systems you already use so policies extend into SaaS workflows.
+              Oasis is a managed enterprise browser for modern SaaS access. Instead of relying on device ownership alone, it places governance in the browser, integrating with identity and data protection systems you already use so policies extend into SaaS workflows.
             </p>
             <p className="mt-6 text-base font-medium text-oasis-green-600">
               No device shipping by default. No VDI sprawl as the only answer. No unmanaged sessions without an enforcement story.
@@ -230,7 +238,7 @@ export default function About() {
             What Oasis enables
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-center text-lg text-oasis-green-800">
-            Policies that follow the session—not only the endpoint—so governance stays consistent when work leaves the corporate laptop.
+            Policies that follow the session, not only the endpoint, so governance stays consistent when work leaves the corporate laptop.
           </p>
           <div className="mt-12 grid gap-8 sm:grid-cols-2">
             {PILLARS.map((item) => (
@@ -254,7 +262,7 @@ export default function About() {
               Session-level security, enterprise integrations
             </h2>
             <p className="mt-4 text-lg text-oasis-green-800">
-              Many approaches extend legacy device-centric models. Oasis focuses on the environment where modern work happens: the browser session—pairing that focus with identity and DLP integration and a browser experience teams can adopt.
+              Many approaches extend legacy device-centric models. Oasis focuses on the environment where modern work happens: the browser session, pairing that focus with identity and DLP integration and a browser experience teams can adopt.
             </p>
           </div>
         </div>
@@ -290,7 +298,7 @@ export default function About() {
             Built for enterprise security and IT architecture leaders
           </h2>
           <p className="mx-auto mt-4 max-w-3xl text-center text-lg text-oasis-green-800">
-            Especially in SaaS-heavy organizations that rely on contractors, partners, and distributed teams—and need fast, governable access without defaulting to hardware logistics.
+            Especially in SaaS-heavy organizations that rely on contractors, partners, and distributed teams, and need fast, governable access without defaulting to hardware logistics.
           </p>
           <div className="mt-12 grid gap-8 md:grid-cols-3">
             {USE_CASES.map((item) => (
@@ -313,7 +321,7 @@ export default function About() {
             Security should live where work actually happens
           </h2>
           <p className="mt-4 text-lg text-oasis-green-800">
-            The browser is the workspace for SaaS-centric work. Organizations need a control layer that integrates with the existing security stack, enforces consistent policies across users and devices, and reduces the operational overhead of purely device-centric access models—without forcing a false choice between usability and control.
+            The browser is the workspace for SaaS-centric work. Organizations need a control layer that integrates with the existing security stack, enforces consistent policies across users and devices, and reduces the operational overhead of purely device-centric access models, without forcing a false choice between usability and control.
           </p>
         </div>
       </section>
@@ -340,7 +348,7 @@ export default function About() {
 
       <SharedCTA
         title="External collaboration without operational drag"
-        description="If contractor access still means laptops, VDI, or unmanaged browser exceptions, it may be time to put governance back in the browser. Talk to us about secure SaaS access from any device—with policy enforcement and visibility your team can stand behind."
+        description="If contractor access still means laptops, VDI, or unmanaged browser exceptions, it may be time to put governance back in the browser. Talk to us about secure SaaS access from any device, with policy enforcement and visibility your team can stand behind."
         buttonText="Get in touch"
         buttonLink="/contact"
       />

@@ -52,7 +52,7 @@ const WhyOasisSection = () => {
           </div>
           <div className="space-y-4">
             <p className="text-gray-600">
-              Security isn&apos;t an afterthought in Oasis—it&apos;s built into the foundation. 
+              Security isn&apos;t an afterthought in Oasis. It&apos;s built into the foundation. 
               We understand that enterprise users need both powerful features and robust security.
             </p>
             <ul className="list-disc list-inside text-gray-600 space-y-2">
@@ -119,7 +119,7 @@ const WhyOasisSection = () => {
         <p className="text-xl text-gray-600">
           Oasis aims to transform the browser from a simple web viewer into a powerful 
           productivity platform that understands and adapts to how people work. We&apos;re 
-          building the browser that enterprise users deserve—one that makes work easier, 
+          building the browser that enterprise users deserve: one that makes work easier, 
           more secure, and more efficient.
         </p>
       </div>

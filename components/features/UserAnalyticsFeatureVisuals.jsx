@@ -121,7 +121,7 @@ export default function UserAnalyticsFeatureVisuals() {
             <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-oasis-green-600">What we are building</p>
             <p className="leading-relaxed text-oasis-green-800/95">
               Insights belong in the same product surface as{' '}
-              <span className="font-medium text-oasis-green-800">assistant, voice, and skills</span>—so you can adjust how you
+              <span className="font-medium text-oasis-green-800">assistant, voice, and skills</span>, so you can adjust how you
               work without leaving Oasis. The tabs below sketch the kinds of views we are exploring; names and metrics
               will change until release notes say otherwise.
             </p>

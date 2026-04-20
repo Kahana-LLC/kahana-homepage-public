@@ -72,7 +72,7 @@ export default function ReferencesPage() {
     {
       authors: "Centers for Disease Control and Prevention",
       year: "2012",
-      title: "Prevalence of doctor-diagnosed arthritis and arthritis-attributable activity limitation — United States, 2010–2012",
+      title: "Prevalence of doctor-diagnosed arthritis and arthritis-attributable activity limitation, United States, 2010–2012",
       url: "https://www.cdc.gov/pcd/issues/2012/11_0323.htm"
     },
     {

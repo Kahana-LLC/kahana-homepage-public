@@ -33,7 +33,7 @@ const AppendixPage = () => {
     },
     {
       name: "Xreal (One Pro)",
-      description: "The Xreal One Pro excels with its ultra-lightweight build (87g), consumer-friendly field of view (57° with Sony micro-OLED displays at 120Hz), and a passive magnesium alloy frame that stays cool on the head. Computing is handled on-device via the X1 chip for basic AR, with heavier workloads (apps, browser, AI) offloaded to a paired smartphone or PC connected by USB-C. Touchpads on the glasses support swipe, tap, and pinch—the company is developing advanced camera-based hand gesture input (\"Xreal Eye\").",
+      description: "The Xreal One Pro excels with its ultra-lightweight build (87g), consumer-friendly field of view (57° with Sony micro-OLED displays at 120Hz), and a passive magnesium alloy frame that stays cool on the head. Computing is handled on-device via the X1 chip for basic AR, with heavier workloads (apps, browser, AI) offloaded to a paired smartphone or PC connected by USB-C. Touchpads on the glasses support swipe, tap, and pinch. The company is developing advanced camera-based hand gesture input (\"Xreal Eye\").",
       strengths: [
         "Provides vivid, comfortable big-screen AR experiences for movies, gaming, and travel productivity.",
         "Lightweight and cool for long casual use.",
@@ -41,7 +41,7 @@ const AppendixPage = () => {
       ],
       limitations: [
         "Limited to 3DoF (rotational), lacks full spatial AR tracking and room anchoring.",
-        "No native, on-glasses AI voice assistant—relies on the host device for AI features.",
+        "No native, on-glasses AI voice assistant; relies on the host device for AI features.",
         "Not built for full desk-free laptop replacement or complex, standalone workflows."
       ]
     },
@@ -60,7 +60,7 @@ const AppendixPage = () => {
     },
     {
       name: "Snap (Spectacles 5)",
-      description: "Snap Spectacles 5 are built for expressive, always-on AR creativity—featuring an all-in-frame dual Snapdragon processor, full-color 46° waveguide displays, and a passive titanium vapor chamber for effective short-session heat management. The glasses stand out for multi-camera hand tracking, context-aware AI voice assistant (using Snap/OpenAI/Gemini), and no need for tethers or external compute.",
+      description: "Snap Spectacles 5 are built for expressive, always-on AR creativity, featuring an all-in-frame dual Snapdragon processor, full-color 46° waveguide displays, and a passive titanium vapor chamber for effective short-session heat management. The glasses stand out for multi-camera hand tracking, context-aware AI voice assistant (using Snap/OpenAI/Gemini), and no need for tethers or external compute.",
       strengths: [
         "Social, creative AR: real-time content creation, rapid AR lens prototyping, hands-free social sharing, and AI-augmented AR play.",
         "Lightweight AI-driven voice/context response, multi-language quick queries.",
@@ -88,12 +88,12 @@ const AppendixPage = () => {
       name: "RayNeo (X2 AR Glasses)",
       description: "RayNeo X2 AR Glasses are true standalone, all-in-one AR, using full-color micro-LED waveguides (1000–1500 nits) for daytime visibility, Snapdragon XR2 for on-glasses compute, and a suite of features including 6DoF head/gesture tracking, a touchpad, and an optional \"smart ring\" controller. The frame houses micro-heatsinks for heat management, efficiently keeping the 119g device comfortable for typical 2–3 hour sessions.",
       strengths: [
-        "Hands-free real-time translation, AR navigation, AI (ChatGPT-integrated) info access, object recognition, and scene context—directly on glasses.",
+        "Hands-free real-time translation, AR navigation, AI (ChatGPT-integrated) info access, object recognition, and scene context, directly on glasses.",
         "No tethers or external compute required for core features.",
         "Suited for on-the-go learning and smart navigation in cities, with robust AI voice support."
       ],
       limitations: [
-        "Not ideal for long desk-free workdays—battery lasts about 2–3 hours with intensive AR use.",
+        "Not ideal for long desk-free workdays; battery lasts about 2–3 hours with intensive AR use.",
         "Slightly bulkier/heavier than all-day-wear \"smart glasses,\"",
         "App ecosystem and pro productivity features are still nascent."
       ]

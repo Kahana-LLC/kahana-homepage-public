@@ -8,7 +8,7 @@ const WhatIsOasisSection = () => {
       {/* Overview */}
       <div className="prose prose-lg max-w-none">
         <p className="text-xl text-gray-600">
-          Oasis is more than just a browser—it&apos;s a complete workspace management platform 
+          Oasis is more than just a browser. It&apos;s a complete workspace management platform 
           designed specifically for enterprise users. Built on modern web standards, it 
           combines powerful features with enterprise-grade security to create a seamless 
           work experience.

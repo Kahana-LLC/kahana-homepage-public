@@ -97,7 +97,7 @@ const faqs = [
   },
   {
     question: 'What does Oasis cost?',
-    answer: 'Oasis offers flexible pricing starting with a free plan that includes 50 AI commands per month. The Zen plan is $20/month with 1,500 AI commands per month. Enterprise offers custom pricing, volume licensing, and advanced requirements—contact us via Schedule a demo. Team plans feature per-seat pricing starting at $40/month with custom options for larger organizations.'
+    answer: 'Oasis offers flexible pricing starting with a free plan that includes 50 AI commands per month. The Zen plan is $20/month with 1,500 AI commands per month. Enterprise offers custom pricing, volume licensing, and advanced requirements; contact us via Schedule a demo. Team plans feature per-seat pricing starting at $40/month with custom options for larger organizations.'
   },
   {
     question: 'Can I change plans or cancel anytime?',

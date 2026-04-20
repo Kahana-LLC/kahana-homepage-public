@@ -87,7 +87,7 @@ const ENTERPRISE_INTRO =
   "Enterprise work runs in the browser on corporate and third-party devices, but many controls still assume owned laptops and network perimeters. Oasis is a managed enterprise browser: governance in the session, integrated with your IdP and enterprise DLP, so you can scale SaaS access without treating hardware shipping or VDI as the only answer.";
 
 const ENTERPRISE_SUPPORTING =
-  "SaaS, internal web apps, and AI tools run in sessions beyond classic device-only assumptions—Oasis treats that session as a first-class place for policy.";
+  "SaaS, internal web apps, and AI tools run in sessions beyond classic device-only assumptions. Oasis treats that session as a first-class place for policy.";
 
 export default function HomeProductLanes() {
   return (
@@ -115,7 +115,7 @@ export default function HomeProductLanes() {
                 id="home-voice-heading"
                 className="text-2xl md:text-3xl font-bold text-oasis-green-800 mb-4 tracking-tight"
               >
-                Speak when it is faster—or go hands-free
+                Speak when it is faster, or go hands-free
               </h2>
               <div className="text-oasis-green-800/95 leading-relaxed space-y-4">
                 <p>
@@ -297,7 +297,7 @@ export default function HomeProductLanes() {
                 Amplifier: learn from real feedback
               </h2>
               <p className="text-oasis-green-800/95 leading-relaxed text-base">
-                Planned feature: your reactions train how the assistant improves for you—details in the preview below.
+                Planned feature: your reactions train how the assistant improves for you. Details are in the preview below.
               </p>
               <div className="mt-4">
                 <OasisAmplifierStory />
