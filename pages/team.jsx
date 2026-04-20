@@ -49,7 +49,7 @@ export default function Team() {
 
       <section className="border-b border-oasis-green-600/10 bg-white py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-oasis-green-800 sm:text-4xl">Leadership</h2>
+          <h2 className="text-3xl font-bold text-oasis-green-800 sm:text-4xl">Founder Story</h2>
           <div className="mt-10 grid gap-10 md:grid-cols-[minmax(0,320px)_1fr] md:items-start md:gap-12">
             <div className="flex justify-center md:justify-start">
               <Image
@@ -78,14 +78,33 @@ export default function Team() {
                 </a>
               </div>
               <p className="mt-1 text-sm font-medium text-oasis-green-600">CEO &amp; Founder</p>
-              <p className="mt-6 text-lg text-oasis-green-800 leading-relaxed">
+              <p className="mt-6 text-base text-oasis-green-800 leading-relaxed">
                 Adam built his career inside IT teams at a billion-dollar CPG company, where he first witnessed how
                 quickly security gaps compound when the tools people rely on aren&apos;t built with security in mind.
               </p>
-              <p className="mt-4 text-lg text-oasis-green-800 leading-relaxed">
-                That experience turned into a conviction that enterprise security shouldn&apos;t be an afterthought
-                bolted onto software. It should be the foundation. He founded Oasis to build exactly that.
-              </p>
+              <blockquote className="mt-6 border-l-4 border-oasis-green-600/35 bg-oasis-green-50/60 py-5 pl-5 pr-4 rounded-r-lg text-oasis-green-800 antialiased">
+                <div className="space-y-3.5 text-[0.9375rem] sm:text-[0.96875rem] leading-[1.65] italic font-normal">
+                  <p>
+                    I&apos;ll never forget the first time I saw a company get hacked and held hostage from the inside.
+                    Training and leadership commitment help, but they are not enough.
+                  </p>
+                  <p>
+                    Hackers are unpredictable, and exploitation keeps getting more advanced, especially in the age of
+                    AI. We are all human, and human error is still a common root cause of breaches. I have a healthy
+                    respect and fear of what capable attackers can do. We are in a long fight against a sophisticated
+                    adversary. Security has to stay proactive, and we cannot afford complacency.
+                  </p>
+                  <p>
+                    That mindset led me to build products that help creators monetize with stronger protection against
+                    piracy and unauthorized redistribution of premium content.
+                  </p>
+                  <p>
+                    Today I am focused on Oasis: a managed enterprise browser for how modern organizations access
+                    software. Instead of treating device ownership as the only control layer, Oasis puts governance in
+                    the browser, where work actually happens.
+                  </p>
+                </div>
+              </blockquote>
             </div>
           </div>
         </div>
