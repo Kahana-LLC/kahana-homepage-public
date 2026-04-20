@@ -1,5 +1,27 @@
 const blogIndex = [
   {
+    title: "Best AI Browser in 2026 (Tested): What Actually Helps You Work (Oasis Included)",
+    date: "2026-04-20T00:00:00.000Z",
+    authors: ["Pallavi M", "Ankit Sai Allam"],
+    category: ["AI & Browsing Technology"],
+    excerpt: "Comprehensive testing of AI browsers in 2026. Analysis of real productivity gains vs marketing hype, reliability gaps in automation, privacy concerns, and what meaningfully improves workflows.",
+    defaultImageQuery: "best AI browser 2026 tested productivity gains reliability privacy",
+    featuredImage: "https://tse3.mm.bing.net/th/id/OIP.PQIwU8qtFrb6PgpD02K2oAHaEK?pid=Api&P=0&h=180",
+    slug: "best-ai-browser-2026-tested-what-actually-helps-you-work-oasis-included-2026",
+    readingTime: 15,
+  },
+  {
+    title: "AI Assistants in Browsers: What's Real vs Hype (and Why Commands Matter) (Oasis Field Guide)",
+    date: "2026-04-19T00:00:00.000Z",
+    authors: ["Pallavi M", "Ankit Sai Allam"],
+    category: ["AI & Browsing Technology"],
+    excerpt: "Field guide analyzing what browser AI assistants actually do versus marketing claims. Examines reliability gaps, execution failures, privacy risks, and why structured commands outperform vague chat prompts.",
+    defaultImageQuery: "AI browser assistants real vs hype commands reliability privacy",
+    featuredImage: "https://tse3.mm.bing.net/th/id/OIP.-8-Wuky4g9Ka5mbM-D8MywHaEO?pid=Api&P=0&h=180",
+    slug: "ai-assistants-browsers-real-vs-hype-commands-matter-oasis-field-guide-2026",
+    readingTime: 17,
+  },
+  {
     title: "Built-in Browser AI vs Extensions: Speed, Reliability, Privacy (Oasis Breakdown)",
     date: "2026-04-18T00:00:00.000Z",
     authors: ["Pallavi M", "Ankit Sai Allam"],
