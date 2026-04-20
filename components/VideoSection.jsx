@@ -13,10 +13,10 @@ export default function VideoSection() {
               <h2 className="text-base font-semibold leading-7 text-oasis-green-800 text-center lg:text-left mb-2">See Oasis in Action</h2>
               <p className="text-lg text-oasis-green-800 mb-4 text-center lg:text-left">
                 <strong>Why Oasis?</strong><br />
-                We built Oasis because we were tired of the chaos of modern browsing—endless tabs, lost ideas, and scattered focus. Our team set out to create a browser that delivers an experience that can only be described as omnipotence.
+                We built Oasis because we were tired of the chaos of modern browsing: endless tabs, lost ideas, and scattered focus. Our team set out to create a browser that delivers an experience that can only be described as omnipotence.
               </p>
               <p className="text-lg text-oasis-green-800 mb-4 text-center lg:text-left">
-                In this video, you'll see a demo of Oasis's core features and get a glimpse of the future we're building—where your browser is not just a tool, but a companion ready at the sound of your voice.
+                In this video, you'll see a demo of Oasis's core features and get a glimpse of the future we're building, where your browser is not just a tool, but a companion ready at the sound of your voice.
               </p>
               <div className="text-center lg:text-left">
                 <Link href="/products/oasis-browser" className="btn-primary no-underline hover:no-underline focus:no-underline">

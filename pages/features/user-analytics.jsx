@@ -7,7 +7,7 @@ import SharedCTA from '../../components/SharedCTA';
 const CANONICAL = 'https://kahana.co/features/user-analytics';
 
 const seoDescription =
-  'Coming soon: personal usage insights in Oasis Browser—a preview of how you could see assistant activity, skills, tokens, and training signals in one place. Not available yet; illustrations only.';
+  'Coming soon: personal usage insights in Oasis Browser, a preview of how you could see assistant activity, skills, tokens, and training signals in one place. Not available yet; illustrations only.';
 
 export default function UserAnalyticsFeatures() {
   const schema = {
@@ -27,7 +27,7 @@ export default function UserAnalyticsFeatures() {
       schema={schema}
       heroEyebrow="Oasis Browser · Coming soon"
       heroTitle="Usage insights, inside the browser you already use"
-      heroDescription="A planned dashboard-style view so you can understand how you use the assistant, which skills you reach for, and how plan usage adds up—without exporting logs or stitching spreadsheets."
+      heroDescription="A planned dashboard-style view so you can understand how you use the assistant, which skills you reach for, and how plan usage adds up, without exporting logs or stitching spreadsheets."
       primaryHref="/oasis-pricing"
       primaryLabel="Download"
       secondaryHref="/contact"
@@ -47,7 +47,7 @@ export default function UserAnalyticsFeatures() {
             >
               Oasis Browser
             </Link>{' '}
-            clearer visibility into productivity—assistant activity, skills, and usage over time—when we are ready to
+            clearer visibility into productivity (assistant activity, skills, and usage over time) when we are ready to
             release it. Final metrics, privacy controls, and aggregation will ship with the feature.
           </p>
           <p>
@@ -58,7 +58,7 @@ export default function UserAnalyticsFeatures() {
             >
               Amplifier
             </Link>{' '}
-            (planned) describes that story; insights here would complement it once both exist—not everything below will
+            (planned) describes that story; insights here would complement it once both exist. Not everything below will
             map one-to-one until we document what actually lands in product.
           </p>
           <p className="text-sm text-oasis-green-800/80">
@@ -72,7 +72,7 @@ export default function UserAnalyticsFeatures() {
 
       <SharedCTA
         title="Try Oasis today"
-        description="Download from pricing, or get in touch. Usage insights will arrive in a future release—we will say so clearly in release notes when they do."
+        description="Download from pricing, or get in touch. Usage insights will arrive in a future release. We will say so clearly in release notes when they do."
         primaryLabel="Download"
         primaryHref="/oasis-pricing"
         secondaryLabel="Get in touch"

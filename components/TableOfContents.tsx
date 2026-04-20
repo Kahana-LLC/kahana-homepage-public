@@ -197,12 +197,12 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({
             border-l-2 border-transparent
           `}
           aria-current={isActive ? 'page' : undefined}
-          aria-label={`Navigate to ${item.label.replace(/^—\s/, '')} section`}
+          aria-label={`Navigate to ${item.label.replace(/^[·—]\s/, '')} section`}
           role="menuitem"
           tabIndex={0}
         >
           <span className="block truncate">
-            {item.label.replace(/^—\s/, '')}
+            {item.label.replace(/^[·—]\s/, '')}
           </span>
           {isActive && (
             <span className="sr-only">Currently viewing</span>

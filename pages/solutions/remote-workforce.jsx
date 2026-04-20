@@ -6,6 +6,7 @@ import SEO from '../../components/SEO';
 import SolutionsExploreGrid from '../../components/solutions/SolutionsExploreGrid';
 import MainIncidentDashboardPreview from '../../components/solutions/visuals/MainIncidentDashboardPreview';
 import SolutionFeatureWithVisual from '../../components/solutions/visuals/SolutionFeatureWithVisual';
+import ByodSavingsCalculator from '../../components/solutions/ByodSavingsCalculator';
 import RelatedEnterpriseFeatureLinks from '../../components/features/RelatedEnterpriseFeatureLinks';
 import SharedCTA from '../../components/SharedCTA';
 
@@ -27,6 +28,7 @@ const securityFeatures = [
       'When teams are distributed, security cannot assume everyone sits behind the same managed stack every day. Unified browser policies travel with the user so SaaS access stays governable across sites and time zones.',
     details: [
       'Single control plane for browser-level rules and data handling',
+      'Concrete workflow for IT teams: draft policy, validate on a pilot group, publish broadly, then monitor outcomes',
       'DLP and usage policy aligned to how remote teams use web apps',
       'Same posture for HQ, hybrid, and fully remote roles where you standardize on Oasis',
       'Complements VPN and endpoint tools instead of pretending one model fits every path',
@@ -49,7 +51,7 @@ const securityFeatures = [
       'Onboarding and org changes are harder when access is tied to shipping hardware or standing up VDI for every scenario. A managed browser session offers a faster path to productive SaaS access within your security boundary, especially for distributed timelines.',
     details: [
       'Fewer blocking dependencies when laptops are back-ordered or in transit',
-      'Useful pattern for contractors and vendors who work alongside remote staff',
+      'Useful pattern for Staff who do not need a purchased corporate laptop',
       'Operational model can shift toward identity-driven access management',
       'Exact timelines depend on your approvals, risk posture, and tooling',
     ],
@@ -141,6 +143,24 @@ const remoteMetrics = [
   },
 ];
 
+const byodBusinessCasePoints = [
+  {
+    title: 'Representative enterprise pattern',
+    description:
+      'A late-stage enterprise buyer wanted secure SaaS access for Staff and preferred to avoid shipping managed laptops for each engagement.',
+  },
+  {
+    title: 'Controls still required',
+    description:
+      'The team needed identity-driven access and DLP-aligned controls in the browsing session, including policy enforcement without local admin dependencies.',
+  },
+  {
+    title: 'Economic model',
+    description:
+      'Laptop-based access costs scaled with Staff volume. Oasis pricing follows a per-Staff annual model with a minimum spend floor, creating a clear breakeven point and expanding upside as eligible Staff volume rises.',
+  },
+];
+
 export default function RemoteWorkforce() {
   const pageSchema = {
     '@context': 'https://schema.org',
@@ -212,7 +232,61 @@ export default function RemoteWorkforce() {
         </div>
       </section>
 
+      <ByodSavingsCalculator />
+
+      <section className="bg-white py-12 md:py-14 border-b border-oasis-green-800/8">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-base font-semibold text-brand-link mb-2">From savings estimate to day-two operations</p>
+          <h2 className="text-2xl md:text-3xl font-bold text-oasis-green-800 tracking-tight mb-4">
+            Keep distributed browser sessions visible and governable
+          </h2>
+          <p className="text-oasis-green-800/95 leading-relaxed">
+            After you model the device-path savings above, the next question is how you keep remote access safe as you
+            scale. As you roll out Oasis, teams can monitor browser-level activity tied to identity, including
+            distributed-work incidents such as risky AI usage, policy bypass attempts, and unusual session exports, so
+            security can respond quickly instead of flying blind. When policies go live, that visibility shows up in
+            monitoring right away.
+          </p>
+        </div>
+      </section>
+
       <MainIncidentDashboardPreview pageKey="remote-workforce" />
+
+      <section className="bg-white py-12 md:py-14 border-b border-oasis-green-800/8">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl md:text-3xl font-bold text-oasis-green-800 text-center tracking-tight mb-4">
+            Less policy admin, faster enforcement for IT teams
+          </h2>
+          <p className="text-oasis-green-800/95 text-center max-w-4xl mx-auto leading-relaxed mb-8">
+            Many IT and security teams spend significant time manually configuring browser policies, rolling out
+            changes, and checking multiple places to confirm enforcement. Oasis is designed to cut down the
+            administrative overhead by centralizing policy workflows and monitoring in one operating model.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            <div className="rounded-xl border border-oasis-green-800/10 bg-white p-5 shadow-sm">
+              <h3 className="text-base font-semibold text-oasis-green-800 mb-2">Draft and validate faster</h3>
+              <p className="text-sm text-oasis-green-800/90 leading-relaxed">
+                Start from reusable policy templates, scope to pilot groups, and validate behavior before broad
+                rollout.
+              </p>
+            </div>
+            <div className="rounded-xl border border-oasis-green-800/10 bg-white p-5 shadow-sm">
+              <h3 className="text-base font-semibold text-oasis-green-800 mb-2">Publish with fewer exceptions</h3>
+              <p className="text-sm text-oasis-green-800/90 leading-relaxed">
+                Push policy updates through one control plane so enforcement can follow Staff sessions consistently
+                across remote locations and devices.
+              </p>
+            </div>
+            <div className="rounded-xl border border-oasis-green-800/10 bg-white p-5 shadow-sm">
+              <h3 className="text-base font-semibold text-oasis-green-800 mb-2">Monitor and iterate in one loop</h3>
+              <p className="text-sm text-oasis-green-800/90 leading-relaxed">
+                Use incident telemetry to tune policies quickly, reduce repetitive admin effort, and keep governance
+                aligned as risk patterns change.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <RelatedEnterpriseFeatureLinks pageKey="remote-workforce" />
 
@@ -321,6 +395,36 @@ export default function RemoteWorkforce() {
               <SolutionFeatureWithVisual key={index} pageKey="remote-workforce" feature={feature} index={index} />
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-16 md:py-20 border-b border-oasis-green-800/8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-oasis-green-800 text-center mb-4 tracking-tight">
+            BYOD access for distributed roles: security, operations, and economics
+          </h2>
+          <p className="text-oasis-green-800/95 text-center mb-10 max-w-4xl mx-auto leading-relaxed">
+            In remote programs, Staff access is where security controls and operating cost often collide. A managed
+            browser approach can let organizations support BYOD while keeping enterprise identity, session policy, and
+            DLP controls in place.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+            {byodBusinessCasePoints.map((item, index) => (
+              <div
+                key={index}
+                className="rounded-xl border border-oasis-green-800/10 bg-white p-6 md:p-7 shadow-sm transition-all duration-200 hover:border-kahana-primary-800/30 hover:shadow-md"
+              >
+                <h3 className="text-lg font-semibold text-oasis-green-800 mb-3 tracking-tight">{item.title}</h3>
+                <p className="text-sm text-oasis-green-800/90 leading-relaxed border-l-2 border-kahana-primary-800/25 pl-4">
+                  {item.description}
+                </p>
+              </div>
+            ))}
+          </div>
+          <p className="text-sm text-oasis-green-800/75 mt-8 max-w-4xl mx-auto leading-relaxed text-center">
+            The business case model in this calculator is directional and assumption-driven. Actual outcomes vary by Staff
+            mix, internal support model, rollout scope, and how much purchased-device path cost is truly avoidable.
+          </p>
         </div>
       </section>
 

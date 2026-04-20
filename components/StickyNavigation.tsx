@@ -156,7 +156,7 @@ const StickyNavigation: React.FC<StickyNavigationProps> = ({
           aria-current={isActive ? 'page' : undefined}
         >
           <span className="block truncate">
-            {item.label.replace(/^—\s/, '')}
+            {item.label.replace(/^[·—]\s/, '')}
           </span>
         </button>
         

@@ -74,7 +74,7 @@ export default function ForgotPassword() {
 
     if (error) {
       setPhase('error')
-      setMessage(`This reset link is not valid: ${error}${errorDescription ? ` — ${errorDescription}` : ''}`)
+      setMessage(`This reset link is not valid: ${error}${errorDescription ? `: ${errorDescription}` : ''}`)
       return
     }
 

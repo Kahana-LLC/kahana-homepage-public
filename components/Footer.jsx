@@ -22,7 +22,7 @@ const PRODUCT_LINKS = [
 
 const COMPANY_LINKS = [
   { href: '/about', label: 'About', prefetch: false },
-  { href: '/about', label: 'Team', prefetch: false },
+  { href: '/team', label: 'Team', prefetch: false },
   { href: '/careers', label: 'Careers' },
   { href: '/contact', label: 'Contact' },
   { href: '/security', label: 'Security' },
@@ -104,7 +104,7 @@ function Soc2InProgressBadge() {
     <Link
       href="/security"
       className="group inline-flex items-center gap-2.5 rounded-sm no-underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#617500]"
-      aria-label="Security and compliance — SOC 2 in progress"
+      aria-label="Security and compliance: SOC 2 in progress"
     >
       <div
         className="flex h-12 w-12 shrink-0 flex-col items-center justify-center rounded-full border-2 border-[#999999] bg-transparent px-1 text-center leading-none"

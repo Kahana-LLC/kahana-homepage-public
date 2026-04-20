@@ -39,7 +39,7 @@ export default function Security() {
               </h1>
               <h2 className="text-xl sm:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
                 Oasis is built with robust privacy and security as core principles, though it's important to understand that no system can guarantee absolute security. We continuously test and enhance Oasis to proactively address emerging digital threats, such as prompt injection attacks and other evolving risks (as an illustration - all data sent to AI partners undergoes sanitization and validation to reduce the risk of prompt injection and similar security vulnerabilities).{' '}
-                <strong>Your privacy isn't a feature—it's the foundation everything else is built on.</strong>
+                <strong>Your privacy isn&apos;t a feature. It&apos;s the foundation everything else is built on.</strong>
               </h2>
             </div>
           </div>
@@ -110,7 +110,7 @@ export default function Security() {
             <section id="browser-engine" className="mb-16 scroll-mt-8">
               <h2 className="text-3xl font-bold text-[#313A00] mb-6">Browser Engine</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
-                Building a browser from the ground up is really hard, which is why Oasis is built on Firefox — the same engine that powers Mozilla Firefox. So, Oasis benefits from the same foundation that makes Firefox reliable and secure. But since Firefox is open source, we can augment it to further protect your privacy.
+                Building a browser from the ground up is really hard, which is why Oasis is built on Firefox, the same engine that powers Mozilla Firefox. So, Oasis benefits from the same foundation that makes Firefox reliable and secure. But since Firefox is open source, we can augment it to further protect your privacy.
               </p>
               <p className="text-gray-700 leading-relaxed mb-6">
                 As for security, Firefox is constantly updated with security fixes for new vulnerabilities, and we take staying up to date with the newest version of Firefox very seriously. We even have a dedicated team of Firefox engineers! Our upgrade process guarantees that Oasis is always using the latest version of Firefox within 48 hours of a new version or hotfix being released.

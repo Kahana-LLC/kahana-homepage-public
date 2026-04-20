@@ -87,7 +87,7 @@ export default function FeaturesShowcase() {
             Everything You Need to Flow Effortlessly
           </h2>
           <p className="mt-4 text-base sm:text-lg text-oasis-green-800 break-words px-2 sm:px-0">
-            Managed browser sessions with your IdP and enterprise DLP—scale SaaS access beyond laptop-only paths. Oasis gives you the tools to simplify your workflow, stay focused, and work with calm precision.
+            Managed browser sessions with your IdP and enterprise DLP scale SaaS access beyond laptop-only paths. Oasis gives you the tools to simplify your workflow, stay focused, and work with calm precision.
           </p>
           <div className="mt-6 sm:mt-8">
             <Link href="/products/oasis-enterprise-browser">

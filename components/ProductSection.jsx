@@ -3,8 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { trackButtonClick } from '../utils/analytics';
 
-/** Line-art sloth mascot (background removed) shown beside the homepage hero. */
-export const OASIS_HERO_MASCOT_PATH = "/images/oasis-hero-mascot.svg";
+/** Sloth mascot (minimalist illustration) shown beside the homepage hero. */
+export const OASIS_HERO_MASCOT_PATH = "/images/oasis-hero-mascot.webp";
 
 /** Legacy hero image path — kept for any external references; hero no longer renders this asset. */
 export const OASIS_HERO_IMAGE_PATH = '/images/Welcome to Oasis.webp';
@@ -70,9 +70,9 @@ export default function ProductSection() {
           <div className="flex w-full shrink-0 justify-end pointer-events-none select-none md:w-auto">
             <Image
               src={OASIS_HERO_MASCOT_PATH}
-              alt="Oasis sloth mascot resting in a hammock between palm trees"
-              width={199}
-              height={136}
+              alt="Oasis sloth mascot sleeping in a hammock between palm trees over calm water, minimalist illustration on a dark background"
+              width={1024}
+              height={1024}
               sizes="(max-width: 768px) 220px, 280px"
               className="h-auto w-[220px] max-w-[min(90vw,280px)] flex-none object-contain md:w-[280px] md:max-w-none"
               priority

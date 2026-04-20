@@ -173,7 +173,7 @@ export default function OasisMobile() {
                     <div className="mt-16 bg-white rounded-xl shadow-xl border border-oasis-blue-200/30 p-8">
                       <h3 className="text-2xl font-semibold text-gray-900 mb-6">The Oasis Mobile Advantage</h3>
                       <p className="text-lg text-gray-600 mb-8">
-                        Oasis Mobile isn't just another mobile browser—it's a productivity powerhouse built from the ground up with AI at its core. Experience unprecedented control over your digital workspace while maintaining lightning-fast performance on your mobile device.
+                        Oasis Mobile isn&apos;t just another mobile browser. It&apos;s a productivity powerhouse built from the ground up with AI at its core. Experience unprecedented control over your digital workspace while maintaining lightning-fast performance on your mobile device.
                       </p>
                       
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">

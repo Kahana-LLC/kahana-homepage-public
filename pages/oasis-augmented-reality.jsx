@@ -173,7 +173,7 @@ export default function OasisAugmentedReality() {
                     <div className="mt-16 bg-white rounded-xl shadow-xl p-8">
                       <h3 className="text-2xl font-semibold text-gray-900 mb-6">The Oasis AR Advantage</h3>
                       <p className="text-lg text-gray-600 mb-8">
-                        Oasis AR isn't just another browser—it's a spatial computing revolution that brings the web into your physical world. Experience unprecedented immersion and control with AI-powered augmented reality that understands your environment and adapts to your needs.
+                        Oasis AR isn&apos;t just another browser. It&apos;s a spatial computing revolution that brings the web into your physical world. Experience unprecedented immersion and control with AI-powered augmented reality that understands your environment and adapts to your needs.
                       </p>
                       
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">

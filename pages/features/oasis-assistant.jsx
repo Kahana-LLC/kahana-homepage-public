@@ -72,7 +72,7 @@ export default function OasisAssistantFeaturePage() {
       <section className="border-b border-oasis-green-800/8 bg-white py-12 md:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <p className="mb-6 text-center text-xs font-semibold uppercase tracking-wide text-[#7a9200]">
-            Looping demo (illustrative UI—not a full skills catalog)
+            Looping demo (illustrative UI, not a full skills catalog)
           </p>
           <OasisMockAssistantHero />
         </div>

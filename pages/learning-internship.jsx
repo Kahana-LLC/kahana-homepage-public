@@ -32,25 +32,25 @@ export default function LearningInternship() {
     {
       id: 'apply',
       question: 'How do I apply?',
-      answer: 'Click the "Apply Now" button on this page to open the application form. Fill it out and submit—we\'ll review your application and get back to you.',
+      answer: 'Click the "Apply Now" button on this page to open the application form. Fill it out and submit. We\'ll review your application and get back to you.',
       group: 'Getting started',
     },
     {
       id: 'eligibility',
       question: 'Who can apply?',
-      answer: 'We welcome applicants from all backgrounds. There are no strict eligibility requirements—we look for curiosity, initiative, and a genuine interest in learning. The internship is remote and open globally.',
+      answer: 'We welcome applicants from all backgrounds. There are no strict eligibility requirements. We look for curiosity, initiative, and a genuine interest in learning. The internship is remote and open globally.',
       group: 'Getting started',
     },
     {
       id: 'schedule',
       question: 'How is it scheduled? What\'s the duration?',
-      answer: 'The internship is flexible and remote. Once accepted, you choose when you\'d like to officially start and go through onboarding. You work around your schedule—there\'s no fixed daily duration. You choose your hours per week (e.g., 5–10, 10–15, 15–20+) and complete tasks at your own pace. You can leave whenever you choose, or remain in it as long as it continues to be a good fit.',
+      answer: 'The internship is flexible and remote. Once accepted, you choose when you\'d like to officially start and go through onboarding. You work around your schedule. There\'s no fixed daily duration. You choose your hours per week (e.g., 5–10, 10–15, 15–20+) and complete tasks at your own pace. You can leave whenever you choose, or remain in it as long as it continues to be a good fit.',
       group: 'Getting started',
     },
     {
       id: 'start-date',
       question: 'When can I start? How do I choose my start date?',
-      answer: 'Once you\'re accepted, you\'ll have the opportunity to complete a form to choose your start date. You decide when you\'d like to officially begin and go through onboarding—there\'s no fixed start date.',
+      answer: 'Once you\'re accepted, you\'ll have the opportunity to complete a form to choose your start date. You decide when you\'d like to officially begin and go through onboarding. There\'s no fixed start date.',
       group: 'Getting started',
     },
     {
@@ -62,7 +62,7 @@ export default function LearningInternship() {
     {
       id: 'training',
       question: 'Is there training or mentorship?',
-      answer: 'Yes. You will receive training and be expected to learn—through structured learning plans, clear instructions for each task, and working alongside Kahana team members. You\'ll also have opportunities to connect with leadership for mentorship, guidance, and feedback. You\'ll join a community of other interns as well.',
+      answer: 'Yes. You will receive training and be expected to learn through structured learning plans, clear instructions for each task, and working alongside Kahana team members. You\'ll also have opportunities to connect with leadership for mentorship, guidance, and feedback. You\'ll join a community of other interns as well.',
       group: 'Learning & support',
     },
     {
@@ -74,19 +74,19 @@ export default function LearningInternship() {
     {
       id: 'skills',
       question: 'What skills should I focus on?',
-      answer: 'We welcome applicants at different skill levels. The internship is designed for learning—you\'ll develop skills through hands-on tasks in your chosen area (Engineering, Product, Marketing, etc.). Curiosity and willingness to learn matter more than prior experience.',
+      answer: 'We welcome applicants at different skill levels. The internship is designed for learning. You\'ll develop skills through hands-on tasks in your chosen area (Engineering, Product, Marketing, etc.). Curiosity and willingness to learn matter more than prior experience.',
       group: 'Learning & support',
     },
     {
       id: 'ai',
       question: 'Is this good for someone new to AI?',
-      answer: 'Yes. If you\'re interested in AI, engineering, or product work, you\'ll get exposure to real projects and tools. Prior AI experience is not required—the internship is a great way to build relevant skills as a fresher.',
+      answer: 'Yes. If you\'re interested in AI, engineering, or product work, you\'ll get exposure to real projects and tools. Prior AI experience is not required. The internship is a great way to build relevant skills as a fresher.',
       group: 'Learning & support',
     },
     {
       id: 'offer-letter',
       question: 'Will I get an offer letter? Can I add this to LinkedIn?',
-      answer: 'Yes. If you are accepted and choose to enroll, you will receive official documentation—an offer letter—for your records. You can list this as an internship experience on your resume and LinkedIn.',
+      answer: 'Yes. If you are accepted and choose to enroll, you will receive official documentation (an offer letter) for your records. You can list this as an internship experience on your resume and LinkedIn.',
       group: 'Career & credentials',
     },
     {
@@ -1153,7 +1153,7 @@ export default function LearningInternship() {
                         When you join, you'll become part of a community that includes <strong>other interns</strong> as well as <strong>Kahana team members and leadership</strong>. You'll collaborate, learn together, and get direct access to experienced professionals.
                       </p>
                       <p className="text-oasis-green-800">
-                        You'll receive <strong>structured learning plans and assigned tasks</strong> to complete, giving you clear direction while maintaining flexibility. It's not as rigid as traditional school—you have more autonomy and real-world context—but it's more structured than an unstructured community, with clear learning paths and objectives.
+                        You'll receive <strong>structured learning plans and assigned tasks</strong> to complete, giving you clear direction while maintaining flexibility. It's not as rigid as traditional school: you have more autonomy and real-world context, but it's more structured than an unstructured community, with clear learning paths and objectives.
                       </p>
                     </div>
                   </div>
@@ -1413,7 +1413,7 @@ export default function LearningInternship() {
 
               {/* Footer Note */}
               <div className="text-center text-oasis-green-800 italic mb-24">
-                <p>Kahana — Building in public, learning together.</p>
+                <p>Kahana: building in public, learning together.</p>
               </div>
           </div>
         </div>
