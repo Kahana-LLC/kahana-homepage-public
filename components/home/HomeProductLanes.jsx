@@ -11,7 +11,7 @@ const OasisMockVoiceOverlay = dynamic(
     ssr: false,
     loading: () => (
       <div
-        className="w-full min-h-[220px] rounded-xl bg-oasis-green-50 border border-oasis-green-800/10 animate-pulse"
+        className="w-full min-h-[220px] rounded-xl bg-oasis-green-50 border border-oasis-green-800/10"
         aria-hidden
       />
     ),
@@ -25,7 +25,7 @@ const OasisMockImportBrowser = dynamic(
     ssr: false,
     loading: () => (
       <div
-        className="w-full min-h-[260px] rounded-xl bg-oasis-green-50 border border-oasis-green-800/10 animate-pulse"
+        className="w-full min-h-[260px] rounded-xl bg-oasis-green-50 border border-oasis-green-800/10"
         aria-hidden
       />
     ),
@@ -39,7 +39,7 @@ const OasisAmplifierStory = dynamic(
     ssr: false,
     loading: () => (
       <div
-        className="w-full max-w-md min-h-[120px] rounded-xl bg-oasis-green-50 border border-oasis-green-800/10 animate-pulse"
+        className="w-full max-w-md min-h-[120px] rounded-xl bg-oasis-green-50 border border-oasis-green-800/10"
         aria-hidden
       />
     ),
@@ -53,7 +53,7 @@ const OasisAmplifierVisuals = dynamic(
     ssr: false,
     loading: () => (
       <div
-        className="w-full min-h-[280px] rounded-xl bg-oasis-green-50 border border-oasis-green-800/10 animate-pulse"
+        className="w-full min-h-[280px] rounded-xl bg-oasis-green-50 border border-oasis-green-800/10"
         aria-hidden
       />
     ),
@@ -66,7 +66,7 @@ const MainIncidentDashboardPreview = dynamic(
     ssr: false,
     loading: () => (
       <div
-        className="w-full min-h-[240px] rounded-xl bg-white border border-oasis-green-800/10 animate-pulse"
+        className="w-full min-h-[240px] rounded-xl bg-white border border-oasis-green-800/10"
         aria-hidden
       />
     ),

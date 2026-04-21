@@ -1,16 +1,16 @@
 import Head from "next/head";
 import Script from "next/script";
 import dynamic from "next/dynamic";
-import ProductSection from "../components/ProductSection";
+import ProductSection, { OASIS_HERO_MASCOT_PATH } from "../components/ProductSection";
 import FadeInSection from "../components/FadeInSection";
 import SEO from "../components/SEO";
 import { blogIndex } from "../data/blog-index";
 import { getAuthorDetails } from "../utils/authorUtils";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { getCloudinaryImageUrl } from "../utils/cloudinary-mapper";
 
 const HomeProductLanes = dynamic(() => import("../components/home/HomeProductLanes"), {
-  ssr: true,
+  ssr: false,
 });
 
 export async function getStaticProps() {
@@ -48,9 +48,6 @@ export async function getStaticProps() {
 }
 
 export default function Home({ blogPosts }) {
-  const [scrollY, setScrollY] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
-
   // Handle OAuth callback redirects from root URL
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -122,38 +119,6 @@ export default function Home({ blogPosts }) {
     ],
   };
 
-  useEffect(() => {
-    const isMobileViewport = () => window.innerWidth < 768;
-
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-
-    let scrollAttached = false;
-
-    const syncLayout = () => {
-      const mobile = isMobileViewport();
-      setIsMobile(mobile);
-      if (!mobile && !scrollAttached) {
-        window.addEventListener("scroll", handleScroll, { passive: true });
-        scrollAttached = true;
-        handleScroll();
-      } else if (mobile && scrollAttached) {
-        window.removeEventListener("scroll", handleScroll);
-        scrollAttached = false;
-        setScrollY(0);
-      }
-    };
-
-    syncLayout();
-    window.addEventListener("resize", syncLayout);
-
-    return () => {
-      window.removeEventListener("resize", syncLayout);
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   return (
     <>
       <SEO
@@ -169,6 +134,12 @@ export default function Home({ blogPosts }) {
         <meta
           name="description"
           content="Oasis Browser by Kahana offers calm, secure browsing with AI that understands your tabs and workflow, with focused work and enterprise-grade protection."
+        />
+        <link
+          rel="preload"
+          as="image"
+          href={OASIS_HERO_MASCOT_PATH}
+          imagesizes="(max-width: 768px) 220px, (max-width: 1024px) 240px, 280px"
         />
       </Head>
 
@@ -202,26 +173,21 @@ export default function Home({ blogPosts }) {
         {/* Background gradients: absolute below md, fixed on desktop. Use CSS breakpoints only (no isMobile flip) to avoid CLS from fixed→absolute after hydration. */}
         <div className="absolute md:fixed inset-0 overflow-hidden pointer-events-none z-0">
           <div
-            className="absolute top-20 -left-20 w-[600px] h-[600px] rounded-full filter blur-[220px] opacity-40 animate-pulse"
+            className="absolute top-20 -left-20 w-[600px] h-[600px] rounded-full filter blur-[220px] opacity-40"
             style={{
               background: "radial-gradient(circle, #FCDD9F 0%, transparent 70%)",
-              transform: isMobile ? 'none' : `translateY(${scrollY * 0.1}px)`,
             }}
           />
           <div
-            className="absolute top-60 right-0 w-[700px] h-[700px] rounded-full filter blur-[260px] opacity-30 animate-pulse"
+            className="absolute top-60 right-0 w-[700px] h-[700px] rounded-full filter blur-[260px] opacity-30"
             style={{
               background: "radial-gradient(circle, #617500 0%, transparent 70%)",
-              transform: isMobile ? 'none' : `translateY(${scrollY * 0.15}px)`,
-              animationDelay: "1s",
             }}
           />
           <div
-            className="absolute -bottom-20 left-1/3 w-[600px] h-[600px] rounded-full filter blur-[220px] opacity-35 animate-pulse"
+            className="absolute -bottom-20 left-1/3 w-[600px] h-[600px] rounded-full filter blur-[220px] opacity-35"
             style={{
               background: "radial-gradient(circle, #8BA500 0%, transparent 70%)",
-              transform: isMobile ? 'none' : `translateY(${scrollY * 0.05}px)`,
-              animationDelay: "2s",
             }}
           />
         </div>

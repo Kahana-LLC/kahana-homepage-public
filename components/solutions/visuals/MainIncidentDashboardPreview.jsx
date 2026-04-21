@@ -237,7 +237,7 @@ export default function MainIncidentDashboardPreview({ pageKey = 'secure-browsin
 
     const id = window.setInterval(() => {
       setActiveRowIndex((idx) => (idx + 1) % incidents.length);
-    }, 5200);
+    }, 9000);
 
     return () => window.clearInterval(id);
   }, [incidents.length, prefersReducedMotion, pageKey]);

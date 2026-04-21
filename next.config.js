@@ -84,9 +84,8 @@ const nextConfig = {
       "image-optimizer.cyberriskalliance.com",
       "files.cyberriskalliance.com",
     ],
-    // When false, Next optimizes <Image /> (requires sharp). This app uses many remote hosts;
-    // migrating to `loader: 'custom'` + Cloudinary is a follow-up. See docs/bundle-analysis.md.
-    unoptimized: true,
+    // Keep optimization enabled so <Image /> can serve right-sized variants.
+    unoptimized: false,
   },
 
   // Suppress build logs
