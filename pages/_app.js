@@ -1,6 +1,7 @@
 import "../styles/globals.css";
 import { fontGeist, fontBricolage } from "../lib/fonts";
 import dynamic from "next/dynamic";
+import Head from "next/head";
 import GlobalBanner from "../components/GlobalBanner";
 
 /** Set true to show the top promo banner again. */
@@ -21,6 +22,16 @@ import { loadScriptIfConsented, loadInlineScriptIfConsented } from "../utils/scr
 import { trackMixpanelPageView } from "../utils/mixpanel";
 import { ensureMixpanelFromNpm } from "../utils/mixpanelNpmInit";
 
+function scheduleIdle(fn, timeout = 3000) {
+  if (typeof window === "undefined") return () => {};
+  if (typeof window.requestIdleCallback === "function") {
+    const id = window.requestIdleCallback(fn, { timeout });
+    return () => window.cancelIdleCallback?.(id);
+  }
+  const timer = window.setTimeout(fn, Math.min(timeout, 1200));
+  return () => window.clearTimeout(timer);
+}
+
 // Inner component that uses consent
 function AppContent({ Component, pageProps }) {
   const router = useRouter();
@@ -28,6 +39,7 @@ function AppContent({ Component, pageProps }) {
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
+    if (process.env.NODE_ENV !== "development") return;
 
     // debugMixpanel() – run in console to diagnose. debugMixpanel.sendTest() to fire a test event.
     window.debugMixpanel = function () {
@@ -154,7 +166,7 @@ function AppContent({ Component, pageProps }) {
         handleUnhandledRejection
       );
     };
-  }, [router.events, hasConsent, consent]);
+  }, [router.asPath, router.events, hasConsent, consent]);
 
   // Load Mixpanel on localhost immediately (no consent wait)
   useEffect(() => {
@@ -179,36 +191,35 @@ function AppContent({ Component, pageProps }) {
     if (isLoading || !consent) return;
 
     const isLocalhost = typeof window !== 'undefined' && ['localhost', '127.0.0.1'].includes(window.location.hostname);
+    const cancelIdleTasks = [];
 
     // Google Analytics - requires analytics consent
     if (hasConsent('analytics')) {
-      // Load gtag.js
-      loadScriptIfConsented(
-        'gtag-js-app',
-        'https://www.googletagmanager.com/gtag/js?id=G-KQHFL9605P',
-        'analytics',
-        { async: true },
-        hasConsent
-      );
+      cancelIdleTasks.push(scheduleIdle(() => {
+        loadScriptIfConsented(
+          'gtag-js-app',
+          'https://www.googletagmanager.com/gtag/js?id=G-KQHFL9605P',
+          'analytics',
+          { async: true },
+          hasConsent
+        );
 
-      // Load gtag init
-      loadInlineScriptIfConsented(
-        'gtag-init-app',
-        `
+        loadInlineScriptIfConsented(
+          'gtag-init-app',
+          `
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'G-KQHFL9605P');
           `,
-        'analytics',
-        {},
-        hasConsent
-      );
+          'analytics',
+          {},
+          hasConsent
+        );
 
-      // Google Tag Manager - requires analytics consent
-      loadInlineScriptIfConsented(
-        'gtm-script-app',
-        `
+        loadInlineScriptIfConsented(
+          'gtm-script-app',
+          `
             (function(w,d,s,l,i){
               w[l]=w[l]||[];
               w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
@@ -220,11 +231,11 @@ function AppContent({ Component, pageProps }) {
               f.parentNode.insertBefore(j,f);
             })(window,document,'script','dataLayer','GTM-WBXNXKQ');
           `,
-        'analytics',
-        {},
-        hasConsent
-      );
-
+          'analytics',
+          {},
+          hasConsent
+        );
+      }, 4000));
     }
 
     // Mixpanel via npm – analytics consent OR localhost (no CDN)
@@ -236,9 +247,11 @@ function AppContent({ Component, pageProps }) {
       if (isMixpanelDebug && !isLocalhost) {
         console.log('[Mixpanel] Init via npm, host:', window.location.host, 'api_host:', mixpanelApiHost);
       }
-      ensureMixpanelFromNpm(mixpanelToken, { debug: isMixpanelDebug, apiHost: mixpanelApiHost }).then((mp) => {
-        if (mp && isMixpanelDebug && !isLocalhost) console.log('[Mixpanel] Initialized, Page View tracked');
-      });
+      cancelIdleTasks.push(scheduleIdle(() => {
+        ensureMixpanelFromNpm(mixpanelToken, { debug: isMixpanelDebug, apiHost: mixpanelApiHost }).then((mp) => {
+          if (mp && isMixpanelDebug && !isLocalhost) console.log('[Mixpanel] Initialized, Page View tracked');
+        });
+      }, 2500));
     } else if (!mixpanelToken) {
       console.warn('[Mixpanel] Token not found. Set NEXT_PUBLIC_MIXPANEL_TOKEN in env. For production (Heroku/Vercel), add it in the platform config and redeploy.');
     }
@@ -265,12 +278,11 @@ function AppContent({ Component, pageProps }) {
           hasConsent
         );
       };
-      if (typeof window !== 'undefined' && typeof window.requestIdleCallback === 'function') {
-        window.requestIdleCallback(loadWarmly, { timeout: 4000 });
-      } else {
-        window.setTimeout(loadWarmly, 2000);
-      }
+      cancelIdleTasks.push(scheduleIdle(loadWarmly, 4000));
     }
+    return () => {
+      cancelIdleTasks.forEach((cancel) => cancel());
+    };
   }, [consent, hasConsent, isLoading]);
 
   // Listen for consent changes and dynamically load/unload scripts
@@ -360,9 +372,18 @@ function AppContent({ Component, pageProps }) {
   }, [hasConsent]);
 
   const isBuyerGuide = router.pathname === '/buyers-guide' || router.pathname === '/enterprise-buyer-guide';
+  const needsDocsStyles =
+    router.pathname.startsWith("/docs") ||
+    router.pathname.startsWith("/white-paper") ||
+    isBuyerGuide;
 
   return (
     <>
+      {needsDocsStyles ? (
+        <Head>
+          <style>{'@import url("/styles/docs.css");'}</style>
+        </Head>
+      ) : null}
       <div className="flex flex-col min-h-screen" data-page={isBuyerGuide ? 'buyer-guide' : undefined}>
         <SEO
           url={`https://kahana.co${router.asPath}`}

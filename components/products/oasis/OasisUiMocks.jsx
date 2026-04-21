@@ -8,7 +8,7 @@ const primaryGreen = '#7a9200';
 const titleGreen = '#495800';
 const userBubble = 'linear-gradient(180deg, #f8faf2 0%, #f2f4e5 100%)';
 
-const ASSISTANT_STEP_MS = 2400;
+const ASSISTANT_STEP_MS = 3800;
 const THINKING_LABELS = [
   'Scanning this page…',
   'Pulling out the main arguments…',

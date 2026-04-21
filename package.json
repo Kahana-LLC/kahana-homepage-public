@@ -22,6 +22,8 @@
     "analyze-blog-long-anchors": "node scripts/analyze-blog-long-anchor-text.js --verbose",
     "analyze-blog-long-anchors:dry-run": "node scripts/analyze-blog-long-anchor-text.js",
     "fix-blog-long-anchors": "node scripts/analyze-blog-long-anchor-text.js --write",
+    "perf:budget": "node scripts/check-performance-budgets.js",
+    "perf:verify": "npm run build && npm run perf:budget",
     "analyze": "ANALYZE=true NODE_OPTIONS='--no-deprecation' next build",
     "heroku-postbuild": "npm run clean && NODE_OPTIONS='--no-deprecation' next build"
   },
