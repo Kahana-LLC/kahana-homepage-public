@@ -163,7 +163,7 @@ export default function Home({ blogPosts }) {
           rel="preload"
           as="image"
           href={OASIS_HERO_MASCOT_PATH}
-          imagesizes="(max-width: 768px) 220px, (max-width: 1024px) 240px, 280px"
+          imagesizes="(max-width: 768px) 180px, (max-width: 1024px) 220px, 260px"
         />
       </Head>
 
@@ -198,8 +198,8 @@ export default function Home({ blogPosts }) {
       ) : null}
 
       <div className="relative bg-white shadow-[0_0_40px_rgba(0,0,0,0.08)] overflow-x-hidden w-full overflow-y-visible">
-        {/* Background gradients: absolute below md, fixed on desktop. Use CSS breakpoints only (no isMobile flip) to avoid CLS from fixed→absolute after hydration. */}
-        <div className="absolute md:fixed inset-0 overflow-hidden pointer-events-none z-0">
+        {/* Keep heavy blur effects desktop-only to avoid mobile paint cost. */}
+        <div className="absolute md:fixed inset-0 overflow-hidden pointer-events-none z-0 hidden md:block">
           <div
             className="absolute top-20 -left-20 w-[600px] h-[600px] rounded-full filter blur-[220px] opacity-40"
             style={{
@@ -228,7 +228,7 @@ export default function Home({ blogPosts }) {
               id="products"
               className="relative overflow-hidden py-24 sm:py-32"
             >
-              <div className="pointer-events-none absolute inset-0 hidden md:block">
+              <div className="pointer-events-none absolute inset-0 hidden lg:block">
                 <div className="absolute top-[-50%] left-[-55%] h-[660px] w-[1080px] rounded-full bg-[#FCDD9F]/28 blur-[200px] md:blur-[420px] opacity-80 md:opacity-100" />
                 <div className="absolute bottom-[-55%] right-[-55%] h-[720px] w-[1120px] rounded-full bg-[#617500]/15 blur-[200px] md:blur-[420px] opacity-80 md:opacity-100" />
               </div>
