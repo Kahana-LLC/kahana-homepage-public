@@ -199,15 +199,16 @@ function FooterContent() {
           {/* Top: wordmark + CTA */}
           <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
             <Link href="/" className="inline-flex items-center no-underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#617500]">
-              <Image
-                src="/kahana_logo_transparent.svg"
-                alt="Kahana"
-                width={230}
-                height={77}
-                sizes="(max-width: 640px) 180px, (max-width: 1024px) 200px, 230px"
-                className="h-auto w-[180px] object-contain object-left sm:w-[200px] lg:w-[230px]"
-                priority={false}
-              />
+              <span className="relative block aspect-[230/77] w-[180px] shrink-0 sm:w-[200px] lg:w-[230px]">
+                <Image
+                  src="/kahana_logo_transparent.svg"
+                  alt="Kahana"
+                  fill
+                  sizes="(max-width: 640px) 180px, (max-width: 1024px) 200px, 230px"
+                  className="object-contain object-left"
+                  priority={false}
+                />
+              </span>
             </Link>
 
             <div className="flex flex-col items-stretch gap-4 lg:items-end">
