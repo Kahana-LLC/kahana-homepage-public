@@ -24,8 +24,9 @@
     "fix-blog-long-anchors": "node scripts/analyze-blog-long-anchor-text.js --write",
     "images:inventory-hosts": "node scripts/image-host-inventory.js",
     "images:validate-hosts": "node scripts/validate-image-hosts.js",
+    "lighthouse:check": "node scripts/check-lighthouse-thresholds.js",
     "perf:budget": "node scripts/check-performance-budgets.js",
-    "perf:verify": "npm run build && npm run perf:budget && npm run images:validate-hosts",
+    "perf:verify": "npm run build && npm run perf:budget && npm run images:validate-hosts && npm run lighthouse:check",
     "analyze": "ANALYZE=true NODE_OPTIONS='--no-deprecation' next build",
     "heroku-postbuild": "npm run clean && NODE_OPTIONS='--no-deprecation' next build && npm run images:validate-hosts"
   },

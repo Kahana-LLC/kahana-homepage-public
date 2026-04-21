@@ -383,12 +383,12 @@ function AppContent({ Component, pageProps }) {
     <>
       {needsDocsStyles ? (
         <Head>
-          <style>{'@import url("/styles/docs.css");'}</style>
+          <link rel="stylesheet" href="/styles/docs.css" />
         </Head>
       ) : null}
       {needsSearchStyles ? (
         <Head>
-          <style>{'@import url("/styles/search-ui.css");'}</style>
+          <link rel="stylesheet" href="/styles/search-ui.css" />
         </Head>
       ) : null}
       <div className="flex flex-col min-h-screen" data-page={isBuyerGuide ? 'buyer-guide' : undefined}>

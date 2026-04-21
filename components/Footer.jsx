@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ConsentContext } from '../contexts/ConsentContext';
@@ -170,7 +170,6 @@ function CookieSettingsControl({ consentContext, openCookieModal }) {
 
 function FooterContent() {
   const [openSection, setOpenSection] = useState(null);
-  const [isMobile, setIsMobile] = useState(false);
 
   const consentContext = useContext(ConsentContext);
 
@@ -184,16 +183,7 @@ function FooterContent() {
     setOpenSection((prev) => (prev === section ? null : section));
   };
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  const sectionOpen = (id) => openSection === id || !isMobile;
+  const sectionOpen = (id) => openSection === id;
 
   return (
     <footer

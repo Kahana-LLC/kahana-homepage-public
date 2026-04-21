@@ -71,10 +71,11 @@ export default function ProductSection() {
             <Image
               src={OASIS_HERO_MASCOT_PATH}
               alt="Oasis sloth mascot sleeping in a hammock between palm trees over calm water, minimalist illustration on a dark background"
-              width={280}
-              height={280}
-              sizes="(max-width: 768px) 220px, (max-width: 1024px) 240px, 280px"
-              className="h-auto w-[220px] max-w-[min(90vw,280px)] flex-none object-contain md:w-[280px] md:max-w-none"
+              width={260}
+              height={260}
+              sizes="(max-width: 768px) 180px, (max-width: 1024px) 220px, 260px"
+              className="h-auto w-[180px] max-w-[min(88vw,260px)] flex-none object-contain md:w-[220px] lg:w-[260px] md:max-w-none"
+              quality={60}
               priority
             />
           </div>
