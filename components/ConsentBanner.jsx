@@ -38,17 +38,19 @@ export default function ConsentBanner() {
     };
   }, [isLoading, showBanner]);
 
-  // Don't show banner while loading or if user has already interacted
-  if (isLoading || !showBanner) return null;
-  if (!deferPaint) return null;
+  if (isLoading) return null;
+  const isVisible = showBanner && deferPaint;
 
   return (
     <div 
-      className="fixed bottom-0 left-0 right-0 z-50 bg-white border-t-2 border-oasis-green-600 shadow-lg"
+      className={`fixed bottom-0 left-0 right-0 z-50 bg-white border-t-2 border-oasis-green-600 shadow-lg transition-opacity duration-300 ${
+        isVisible ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+      }`}
       style={{ contain: 'layout paint' }}
       role="dialog"
       aria-labelledby="consent-banner-title"
       aria-describedby="consent-banner-description"
+      aria-hidden={!isVisible}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">

@@ -84,6 +84,153 @@ const nextConfig = {
       "image-optimizer.cyberriskalliance.com",
       "files.cyberriskalliance.com",
     ],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "*.mm.bing.net",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "opengraph.githubassets.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "www.cio.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "beehiiv-images-production.s3.amazonaws.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "byteiota.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "cdn.pseo.one",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "cdn.ssltrust.com.au",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "cradlepoint.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "i.pcmag.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "itdigest.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "miro.medium.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "research.aimultiple.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "sp-ao.shortpixel.ai",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "static.digit.in",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "static0.anpoimages.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "talmatic.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "techlasi.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "thedigitalcauldron.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "vegavid.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "www-static-blogs.operacdn.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "www.blockchain-council.org",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "www.hakia.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "www.macorva.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "www.magiclasso.co",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "www.pcworld.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "www.quytech.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "www.surf.security",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "www.tenforums.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "www.themeasure.net",
+        pathname: "/**",
+      },
+    ],
     // Keep optimization enabled so <Image /> can serve right-sized variants.
     unoptimized: false,
   },

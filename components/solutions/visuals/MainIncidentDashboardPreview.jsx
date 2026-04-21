@@ -180,8 +180,8 @@ function severityClass(severity) {
   return 'border-[#fde68a] bg-[#fffbeb] text-[#b45309]';
 }
 
-export default function MainIncidentDashboardPreview({ pageKey = 'secure-browsing' }) {
-  const config = dashboardByPage[pageKey] || dashboardByPage['secure-browsing'];
+export default function MainIncidentDashboardPreview({ pageKey = 'secure-browsing', config: configOverride }) {
+  const config = configOverride || dashboardByPage[pageKey] || dashboardByPage['secure-browsing'];
   const baseIncidents = config.incidents;
   const policyLifecycle = config.policyLifecycle;
   const prefersReducedMotion = usePrefersReducedMotion();

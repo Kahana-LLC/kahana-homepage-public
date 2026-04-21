@@ -130,6 +130,50 @@ export function getCloudinaryImageProps(publicId, options = {}) {
 }
 
 /**
+ * Generate a Cloudinary fetch URL for external images.
+ *
+ * This lets us serve third-party blog images from a single trusted origin
+ * and avoids exploding next/image host allowlists.
+ *
+ * @param {string} sourceUrl - External image URL (http/https)
+ * @param {Object} options - Transformation options
+ * @returns {string} Cloudinary fetch URL or empty string if not configured/invalid
+ */
+export function getCloudinaryFetchUrl(sourceUrl, options = {}) {
+  if (!CLOUD_NAME || !sourceUrl || typeof sourceUrl !== "string") return "";
+
+  let parsed;
+  try {
+    parsed = new URL(sourceUrl);
+  } catch (_) {
+    return "";
+  }
+  if (!["http:", "https:"].includes(parsed.protocol)) return "";
+
+  const {
+    width,
+    height,
+    format = "auto",
+    quality = "auto:good",
+    crop = "fill",
+    gravity = "auto",
+  } = options;
+
+  const transformations = [];
+  if (width) transformations.push(`w_${width}`);
+  if (height) transformations.push(`h_${height}`);
+  if (crop) transformations.push(`c_${crop}`);
+  if (gravity) transformations.push(`g_${gravity}`);
+  if (format) transformations.push(`f_${format}`);
+  if (quality) transformations.push(`q_${quality}`);
+  transformations.push("dpr_auto");
+
+  const transformationString = transformations.length > 0 ? `${transformations.join(",")}/` : "";
+  const encodedSource = encodeURIComponent(sourceUrl);
+  return `https://res.cloudinary.com/${CLOUD_NAME}/image/fetch/${transformationString}${encodedSource}`;
+}
+
+/**
  * Diagnostic function to check Cloudinary configuration
  * Call this in browser console to verify setup
  */

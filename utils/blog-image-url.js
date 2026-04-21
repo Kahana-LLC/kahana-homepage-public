@@ -3,8 +3,11 @@
  * for local /blog/ paths, otherwise returns the URL as-is.
  */
 import { getCloudinaryImageUrl } from './cloudinary-mapper';
+import { getCloudinaryFetchUrl } from './cloudinary';
 
 const CLOUD_NAME = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME;
+const USE_CLOUDINARY_FETCH_FOR_EXTERNAL =
+  process.env.NEXT_PUBLIC_USE_CLOUDINARY_FETCH_FOR_EXTERNAL_IMAGES === 'true';
 
 /**
  * Get the resolved URL for a blog featured image.
@@ -23,6 +26,18 @@ export function getBlogImageUrl(featuredImage) {
 
   // Full URLs - use as-is
   if (trimmed.startsWith('http://') || trimmed.startsWith('https://')) {
+    // Cloudinary fetch is opt-in because some external origins block server-side fetches,
+    // which can cause runtime image failures. Keep original URL as the safe default.
+    if (CLOUD_NAME && USE_CLOUDINARY_FETCH_FOR_EXTERNAL) {
+      // Normalize third-party origins through Cloudinary fetch to reduce
+      // direct next/image host dependency.
+      const fetched = getCloudinaryFetchUrl(trimmed, {
+        width: 1200,
+        crop: 'fill',
+        gravity: 'auto',
+      });
+      if (fetched) return fetched;
+    }
     return trimmed;
   }
 

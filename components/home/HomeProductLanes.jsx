@@ -3,10 +3,10 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import { trackButtonClick } from "../../utils/analytics";
 import SharedCTA from "../SharedCTA";
+import { homepageIncidentConfig } from "../../data/homepageIncidentConfig";
 
 const OasisMockVoiceOverlay = dynamic(
-  () =>
-    import("../products/oasis/OasisUiMocks").then((m) => m.OasisMockVoiceOverlay),
+  () => import("../products/oasis/OasisUiMocks").then((m) => m.OasisMockVoiceOverlay),
   {
     ssr: false,
     loading: () => (
@@ -19,8 +19,7 @@ const OasisMockVoiceOverlay = dynamic(
 );
 
 const OasisMockImportBrowser = dynamic(
-  () =>
-    import("../products/oasis/OasisUiMocks").then((m) => m.OasisMockImportBrowser),
+  () => import("../products/oasis/OasisMockImportBrowser").then((m) => m.OasisMockImportBrowser),
   {
     ssr: false,
     loading: () => (
@@ -33,8 +32,7 @@ const OasisMockImportBrowser = dynamic(
 );
 
 const OasisAmplifierStory = dynamic(
-  () =>
-    import("../products/oasis/OasisUiMocks").then((m) => m.OasisAmplifierStory),
+  () => import("../products/oasis/OasisAmplifierVisual").then((m) => m.OasisAmplifierStory),
   {
     ssr: false,
     loading: () => (
@@ -47,8 +45,7 @@ const OasisAmplifierStory = dynamic(
 );
 
 const OasisAmplifierVisuals = dynamic(
-  () =>
-    import("../products/oasis/OasisUiMocks").then((m) => m.OasisAmplifierVisuals),
+  () => import("../products/oasis/OasisAmplifierVisual").then((m) => m.OasisAmplifierVisuals),
   {
     ssr: false,
     loading: () => (
@@ -237,7 +234,7 @@ export default function HomeProductLanes() {
           </div>
 
           <div className="mb-10 overflow-x-auto rounded-xl border border-oasis-green-800/10 bg-white shadow-sm p-2 sm:p-4">
-            <MainIncidentDashboardPreview pageKey="oasis-enterprise-browser" />
+            <MainIncidentDashboardPreview pageKey="oasis-enterprise-browser" config={homepageIncidentConfig} />
           </div>
 
           <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center justify-center gap-4">
