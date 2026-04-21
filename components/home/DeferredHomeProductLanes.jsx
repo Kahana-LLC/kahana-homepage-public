@@ -3,8 +3,8 @@ import dynamic from "next/dynamic";
 
 const HomeProductLanes = dynamic(() => import("./HomeProductLanes"), { ssr: false });
 
-/** Reserves vertical space close to loaded HomeProductLanes height so the footer does not jump (Lighthouse CLS). */
-const PLACEHOLDER_MIN_HEIGHT = "min-h-[3000px]";
+/** Matches post-mount wrapper so swapping placeholder → lanes does not change document height (footer CLS). */
+const LANES_REGION_MIN_HEIGHT = "min-h-[3600px]";
 
 export default function DeferredHomeProductLanes() {
   const rootRef = useRef(null);
@@ -38,11 +38,13 @@ export default function DeferredHomeProductLanes() {
     <div ref={rootRef} className="relative w-full">
       {!visible ? (
         <div
-          className={`mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 lg:px-8 ${PLACEHOLDER_MIN_HEIGHT} rounded-lg border border-oasis-green-800/8 bg-oasis-green-50/30`}
+          className={`mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 lg:px-8 ${LANES_REGION_MIN_HEIGHT} rounded-lg border border-oasis-green-800/8 bg-oasis-green-50/30`}
           aria-hidden
         />
       ) : (
-        <HomeProductLanes />
+        <div className={`mx-auto w-full max-w-7xl ${LANES_REGION_MIN_HEIGHT}`}>
+          <HomeProductLanes />
+        </div>
       )}
     </div>
   );

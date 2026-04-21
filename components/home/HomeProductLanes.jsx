@@ -4,16 +4,24 @@ import Link from "next/link";
 import { trackButtonClick } from "../../utils/analytics";
 import SharedCTA from "../SharedCTA";
 import { homepageIncidentConfig } from "../../data/homepageIncidentConfig";
+import DeferredDynamicSlot from "./DeferredDynamicSlot";
+
+const VOICE_SLOT = "w-full min-h-[480px]";
+const IMPORT_SLOT = "w-full min-h-[300px]";
+const DASH_SLOT = "w-full min-h-[300px]";
+const AMP_STORY_SLOT = "w-full max-w-md min-h-[160px]";
+const AMP_VIS_SLOT = "w-full min-h-[360px]";
+
+const skeletonTone =
+  "rounded-xl border border-oasis-green-800/10 bg-oasis-green-50";
+const skeletonWhite = "rounded-xl border border-oasis-green-800/10 bg-white";
 
 const OasisMockVoiceOverlay = dynamic(
   () => import("../products/oasis/OasisUiMocks").then((m) => m.OasisMockVoiceOverlay),
   {
     ssr: false,
     loading: () => (
-      <div
-        className="w-full min-h-[220px] rounded-xl bg-oasis-green-50 border border-oasis-green-800/10"
-        aria-hidden
-      />
+      <div className={`${VOICE_SLOT} ${skeletonTone}`} aria-hidden />
     ),
   }
 );
@@ -23,10 +31,7 @@ const OasisMockImportBrowser = dynamic(
   {
     ssr: false,
     loading: () => (
-      <div
-        className="w-full min-h-[260px] rounded-xl bg-oasis-green-50 border border-oasis-green-800/10"
-        aria-hidden
-      />
+      <div className={`${IMPORT_SLOT} ${skeletonTone}`} aria-hidden />
     ),
   }
 );
@@ -36,10 +41,7 @@ const OasisAmplifierStory = dynamic(
   {
     ssr: false,
     loading: () => (
-      <div
-        className="w-full max-w-md min-h-[120px] rounded-xl bg-oasis-green-50 border border-oasis-green-800/10"
-        aria-hidden
-      />
+      <div className={`${AMP_STORY_SLOT} ${skeletonTone}`} aria-hidden />
     ),
   }
 );
@@ -49,10 +51,7 @@ const OasisAmplifierVisuals = dynamic(
   {
     ssr: false,
     loading: () => (
-      <div
-        className="w-full min-h-[280px] rounded-xl bg-oasis-green-50 border border-oasis-green-800/10"
-        aria-hidden
-      />
+      <div className={`${AMP_VIS_SLOT} ${skeletonTone}`} aria-hidden />
     ),
   }
 );
@@ -62,10 +61,7 @@ const MainIncidentDashboardPreview = dynamic(
   {
     ssr: false,
     loading: () => (
-      <div
-        className="w-full min-h-[240px] rounded-xl bg-white border border-oasis-green-800/10"
-        aria-hidden
-      />
+      <div className={`${DASH_SLOT} ${skeletonWhite}`} aria-hidden />
     ),
   }
 );
@@ -96,8 +92,14 @@ export default function HomeProductLanes() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
-            <div className="lg:order-1 overflow-x-auto">
-              <OasisMockVoiceOverlay />
+            <div className="lg:order-1 min-h-[480px] min-w-0 overflow-x-auto">
+              <DeferredDynamicSlot
+                minHeightClass={VOICE_SLOT}
+                skeletonClassName={`${VOICE_SLOT} rounded-2xl border border-oasis-green-800/15 bg-oasis-green-50/80`}
+                rootMargin="200px 0px"
+              >
+                <OasisMockVoiceOverlay />
+              </DeferredDynamicSlot>
             </div>
             <div className="lg:order-2">
               <div className="mb-2 flex flex-wrap items-center gap-2">
@@ -197,8 +199,14 @@ export default function HomeProductLanes() {
               <p className="text-xs font-semibold uppercase tracking-wide text-[#7a9200] mb-2">
                 Import from other browsers
               </p>
-              <div className="overflow-x-auto rounded-xl border border-oasis-green-800/10 bg-oasis-green-50 shadow-sm p-2 sm:p-4">
-                <OasisMockImportBrowser />
+              <div className="min-h-[300px] overflow-x-auto rounded-xl border border-oasis-green-800/10 bg-oasis-green-50 shadow-sm p-2 sm:p-4">
+                <DeferredDynamicSlot
+                  minHeightClass={IMPORT_SLOT}
+                  skeletonClassName={`${IMPORT_SLOT} rounded-lg ${skeletonTone}`}
+                  rootMargin="200px 0px"
+                >
+                  <OasisMockImportBrowser />
+                </DeferredDynamicSlot>
               </div>
               <p className="mt-3 text-center text-sm text-oasis-green-800/80 lg:text-left">
                 Guided import for bookmarks, passwords, history, and more, so you are not stuck
@@ -233,8 +241,14 @@ export default function HomeProductLanes() {
             </p>
           </div>
 
-          <div className="mb-10 overflow-x-auto rounded-xl border border-oasis-green-800/10 bg-white shadow-sm p-2 sm:p-4">
-            <MainIncidentDashboardPreview pageKey="oasis-enterprise-browser" config={homepageIncidentConfig} />
+          <div className="mb-10 min-h-[300px] overflow-x-auto rounded-xl border border-oasis-green-800/10 bg-white shadow-sm p-2 sm:p-4">
+            <DeferredDynamicSlot
+              minHeightClass={DASH_SLOT}
+              skeletonClassName={`${DASH_SLOT} rounded-lg ${skeletonWhite}`}
+              rootMargin="200px 0px"
+            >
+              <MainIncidentDashboardPreview pageKey="oasis-enterprise-browser" config={homepageIncidentConfig} />
+            </DeferredDynamicSlot>
           </div>
 
           <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center justify-center gap-4">
@@ -296,12 +310,24 @@ export default function HomeProductLanes() {
               <p className="text-oasis-green-800/95 leading-relaxed text-base">
                 Planned feature: your reactions train how the assistant improves for you. Details are in the preview below.
               </p>
-              <div className="mt-4">
-                <OasisAmplifierStory />
+              <div className="mt-4 min-h-[160px]">
+                <DeferredDynamicSlot
+                  minHeightClass={AMP_STORY_SLOT}
+                  skeletonClassName={`${AMP_STORY_SLOT} rounded-xl ${skeletonTone}`}
+                  rootMargin="160px 0px"
+                >
+                  <OasisAmplifierStory />
+                </DeferredDynamicSlot>
               </div>
             </div>
-            <div className="min-w-0 -mx-1 overflow-x-auto lg:mx-0 lg:overflow-visible lg:pt-0">
-              <OasisAmplifierVisuals />
+            <div className="min-h-[360px] min-w-0 -mx-1 overflow-x-auto lg:mx-0 lg:overflow-visible lg:pt-0">
+              <DeferredDynamicSlot
+                minHeightClass={AMP_VIS_SLOT}
+                skeletonClassName={`${AMP_VIS_SLOT} rounded-xl ${skeletonTone}`}
+                rootMargin="200px 0px"
+              >
+                <OasisAmplifierVisuals />
+              </DeferredDynamicSlot>
             </div>
           </div>
         </div>
