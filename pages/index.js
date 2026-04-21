@@ -1,17 +1,16 @@
 import Head from "next/head";
 import Script from "next/script";
-import dynamic from "next/dynamic";
-import ProductSection, { OASIS_HERO_MASCOT_PATH } from "../components/ProductSection";
+import ProductSection, {
+  OASIS_HERO_MASCOT_PATH,
+  OASIS_HERO_MASCOT_PATH_SM,
+} from "../components/ProductSection";
+import DeferredHomeProductLanes from "../components/home/DeferredHomeProductLanes";
 import FadeInSection from "../components/FadeInSection";
 import SEO from "../components/SEO";
 import { blogIndex } from "../data/blog-index";
 import { getAuthorDetails } from "../utils/authorUtils";
 import React, { useEffect, useState } from "react";
 import { getCloudinaryImageUrl } from "../utils/cloudinary-mapper";
-
-const HomeProductLanes = dynamic(() => import("../components/home/HomeProductLanes"), {
-  ssr: false,
-});
 
 export async function getStaticProps() {
   try {
@@ -162,8 +161,16 @@ export default function Home({ blogPosts }) {
         <link
           rel="preload"
           as="image"
+          href={OASIS_HERO_MASCOT_PATH_SM}
+          imageSizes="180px"
+          media="(max-width: 767px)"
+        />
+        <link
+          rel="preload"
+          as="image"
           href={OASIS_HERO_MASCOT_PATH}
-          imagesizes="(max-width: 768px) 180px, (max-width: 1024px) 220px, 260px"
+          imageSizes="(max-width: 1024px) 220px, 260px"
+          media="(min-width: 768px)"
         />
       </Head>
 
@@ -241,9 +248,7 @@ export default function Home({ blogPosts }) {
           {/* Elegant section divider */}
           <div className="relative h-px bg-gradient-to-r from-transparent via-[#30400D]/20 to-transparent mx-auto max-w-4xl"></div>
 
-          <FadeInSection delay={100}>
-            <HomeProductLanes />
-          </FadeInSection>
+          <DeferredHomeProductLanes />
 
           {/* Elegant section divider */}
           <div className="relative h-px bg-gradient-to-r from-transparent via-[#30400D]/20 to-transparent mx-auto max-w-4xl"></div>

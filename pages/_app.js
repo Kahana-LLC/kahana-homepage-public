@@ -14,9 +14,10 @@ import { ConsentProvider, useConsent } from "../contexts/ConsentContext";
 import ConsentBanner from "../components/ConsentBanner";
 import ConsentErrorBoundary from "../components/ConsentErrorBoundary";
 
-/** Code-split global chrome + modal to reduce main-thread work during hydration (desktop TBT). */
+import Footer from "../components/Footer";
+
+/** Code-split nav + modal; footer stays in the main graph to avoid late paint CLS on the wordmark block. */
 const NavbarDup = dynamic(() => import("../components/NavbarDup"), { ssr: true });
-const Footer = dynamic(() => import("../components/Footer"), { ssr: true });
 const CookiePreferencesModal = dynamic(() => import("../components/CookiePreferencesModal"), { ssr: false });
 import { loadScriptIfConsented, loadInlineScriptIfConsented } from "../utils/scriptLoader";
 import { trackMixpanelPageView } from "../utils/mixpanel";
@@ -193,9 +194,12 @@ function AppContent({ Component, pageProps }) {
     const isLocalhost = typeof window !== 'undefined' && ['localhost', '127.0.0.1'].includes(window.location.hostname);
     const cancelIdleTasks = [];
 
-    // Google Analytics - requires analytics consent
+    // Google Analytics - requires analytics consent (deduped by script id / src in scriptLoader)
     if (hasConsent('analytics')) {
       cancelIdleTasks.push(scheduleIdle(() => {
+        if (typeof document !== "undefined" && document.getElementById("gtag-js-app")) {
+          return;
+        }
         loadScriptIfConsented(
           'gtag-js-app',
           'https://www.googletagmanager.com/gtag/js?id=G-KQHFL9605P',
@@ -292,30 +296,32 @@ function AppContent({ Component, pageProps }) {
       
       // Dynamically load scripts based on new consent
       if (newConsent.analytics) {
-        // Load analytics scripts
-        loadScriptIfConsented(
-          'gtag-js-app',
-          'https://www.googletagmanager.com/gtag/js?id=G-KQHFL9605P',
-          'analytics',
-          { async: true },
-          () => newConsent.analytics
-        );
-        
-        loadInlineScriptIfConsented(
-          'gtag-init-app',
-          `
+        const analyticsAlreadyLoaded =
+          typeof document !== "undefined" && document.getElementById("gtag-js-app");
+        if (!analyticsAlreadyLoaded) {
+          loadScriptIfConsented(
+            'gtag-js-app',
+            'https://www.googletagmanager.com/gtag/js?id=G-KQHFL9605P',
+            'analytics',
+            { async: true },
+            () => newConsent.analytics
+          );
+
+          loadInlineScriptIfConsented(
+            'gtag-init-app',
+            `
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'G-KQHFL9605P');
           `,
-          'analytics',
-          {},
-          () => newConsent.analytics
-        );
-        loadInlineScriptIfConsented(
-          'gtm-script-app',
-          `
+            'analytics',
+            {},
+            () => newConsent.analytics
+          );
+          loadInlineScriptIfConsented(
+            'gtm-script-app',
+            `
             (function(w,d,s,l,i){
               w[l]=w[l]||[];
               w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
@@ -327,10 +333,11 @@ function AppContent({ Component, pageProps }) {
               f.parentNode.insertBefore(j,f);
             })(window,document,'script','dataLayer','GTM-WBXNXKQ');
           `,
-          'analytics',
-          {},
-          () => newConsent.analytics
-        );
+            'analytics',
+            {},
+            () => newConsent.analytics
+          );
+        }
         // Mixpanel: initialized only from the consent useEffect via ensureMixpanelFromNpm (single-flight)
       }
       

@@ -5,6 +5,8 @@ import { trackButtonClick } from '../utils/analytics';
 
 /** Sloth mascot (minimalist illustration) shown beside the homepage hero. */
 export const OASIS_HERO_MASCOT_PATH = "/images/oasis-hero-mascot.webp";
+/** Smaller asset for narrow viewports — faster LCP on mobile / Slow 4G. */
+export const OASIS_HERO_MASCOT_PATH_SM = "/images/oasis-hero-mascot-sm.webp";
 
 /** Legacy hero image path — kept for any external references; hero no longer renders this asset. */
 export const OASIS_HERO_IMAGE_PATH = '/images/Welcome to Oasis.webp';
@@ -17,7 +19,8 @@ export default function ProductSection() {
   return (
     <section className="relative overflow-hidden py-24 sm:py-32 product-container">
       <div className="relative mx-auto max-w-6xl px-6 lg:px-10">
-        <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between md:gap-8">
+        {/* items-start + reserved mascot column prevents CLS when the image paints */}
+        <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between md:gap-8">
           <div className="flex min-w-0 max-w-xl flex-1 flex-col items-start gap-6 text-left lg:max-w-2xl">
             <h1 className="text-4xl font-semibold leading-tight text-[#313A00] sm:text-5xl mb-0 text-balance">
               Relax, you found{' '}
@@ -68,16 +71,37 @@ export default function ProductSection() {
             </p>
           </div>
           <div className="flex w-full shrink-0 justify-end pointer-events-none select-none md:w-auto">
-            <Image
-              src={OASIS_HERO_MASCOT_PATH}
-              alt="Oasis sloth mascot sleeping in a hammock between palm trees over calm water, minimalist illustration on a dark background"
-              width={260}
-              height={260}
-              sizes="(max-width: 768px) 180px, (max-width: 1024px) 220px, 260px"
-              className="h-auto w-[180px] max-w-[min(88vw,260px)] flex-none object-contain md:w-[220px] lg:w-[260px] md:max-w-none"
-              quality={60}
-              priority
-            />
+            <div
+              className="flex w-[180px] max-w-[min(88vw,260px)] flex-none items-center justify-center md:w-[220px] lg:w-[260px] md:max-w-none aspect-square"
+              aria-hidden
+            >
+              {/* Mobile: small file for LCP. md+: full-resolution asset. */}
+              <div className="relative h-full w-full md:hidden">
+                <Image
+                  src={OASIS_HERO_MASCOT_PATH_SM}
+                  alt="Oasis sloth mascot sleeping in a hammock between palm trees over calm water, minimalist illustration on a dark background"
+                  width={220}
+                  height={220}
+                  sizes="180px"
+                  className="h-full w-full object-contain"
+                  quality={68}
+                  priority
+                  fetchPriority="high"
+                />
+              </div>
+              <div className="relative hidden h-full w-full md:block">
+                <Image
+                  src={OASIS_HERO_MASCOT_PATH}
+                  alt="Oasis sloth mascot sleeping in a hammock between palm trees over calm water, minimalist illustration on a dark background"
+                  width={260}
+                  height={260}
+                  sizes="(max-width: 1024px) 220px, 260px"
+                  className="h-full w-full object-contain"
+                  quality={60}
+                  priority
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
