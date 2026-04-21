@@ -253,6 +253,7 @@ export function OasisMockVoiceOverlay() {
       <motion.div
         className="pointer-events-none absolute inset-0"
         aria-hidden
+        initial={false}
         animate={
           prefersReducedMotion
             ? undefined
@@ -268,6 +269,7 @@ export function OasisMockVoiceOverlay() {
           <motion.div
             className="absolute inset-x-4 top-1/2 h-32 -translate-y-1/2 rounded-full opacity-90 sm:h-36"
             aria-hidden
+            initial={false}
             style={{
               background: 'radial-gradient(ellipse at center, rgba(122,146,0,0.28) 0%, transparent 68%)',
             }}
@@ -306,6 +308,7 @@ export function OasisMockVoiceOverlay() {
             boxShadow: '0 0 24px rgba(122,146,0,0.45)',
           }}
           aria-hidden
+          initial={false}
           animate={prefersReducedMotion ? undefined : { scale: [1, 1.06, 1], boxShadow: ['0 0 24px rgba(122,146,0,0.45)', '0 0 32px rgba(122,146,0,0.55)', '0 0 24px rgba(122,146,0,0.45)'] }}
           transition={prefersReducedMotion ? undefined : { duration: 2.8, repeat: Infinity, ease: 'easeInOut' }}
         >
