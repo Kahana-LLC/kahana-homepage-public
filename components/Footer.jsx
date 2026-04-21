@@ -214,7 +214,8 @@ function FooterContent() {
                 alt="Kahana"
                 width={230}
                 height={77}
-                className="h-[52px] w-auto object-contain object-left sm:h-[62px] lg:h-[72px]"
+                sizes="(max-width: 640px) 180px, (max-width: 1024px) 200px, 230px"
+                className="h-auto w-[180px] object-contain object-left sm:w-[200px] lg:w-[230px]"
                 priority={false}
               />
             </Link>

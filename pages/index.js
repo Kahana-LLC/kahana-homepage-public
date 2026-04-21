@@ -6,7 +6,7 @@ import FadeInSection from "../components/FadeInSection";
 import SEO from "../components/SEO";
 import { blogIndex } from "../data/blog-index";
 import { getAuthorDetails } from "../utils/authorUtils";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { getCloudinaryImageUrl } from "../utils/cloudinary-mapper";
 
 const HomeProductLanes = dynamic(() => import("../components/home/HomeProductLanes"), {
@@ -48,6 +48,7 @@ export async function getStaticProps() {
 }
 
 export default function Home({ blogPosts }) {
+  const [loadAuxScripts, setLoadAuxScripts] = useState(false);
   // Handle OAuth callback redirects from root URL
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -60,6 +61,29 @@ export default function Home({ blogPosts }) {
         return;
       }
     }
+  }, []);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return undefined;
+    let done = false;
+    const onIntent = () => {
+      if (done) return;
+      done = true;
+      setLoadAuxScripts(true);
+      window.removeEventListener("pointerdown", onIntent);
+      window.removeEventListener("keydown", onIntent);
+      window.removeEventListener("scroll", onIntent);
+    };
+    const timer = window.setTimeout(onIntent, 6000);
+    window.addEventListener("pointerdown", onIntent, { once: true, passive: true });
+    window.addEventListener("keydown", onIntent, { once: true });
+    window.addEventListener("scroll", onIntent, { once: true, passive: true });
+    return () => {
+      window.clearTimeout(timer);
+      window.removeEventListener("pointerdown", onIntent);
+      window.removeEventListener("keydown", onIntent);
+      window.removeEventListener("scroll", onIntent);
+    };
   }, []);
   // Homepage-specific schema
   const homepageSchema = {
@@ -144,11 +168,12 @@ export default function Home({ blogPosts }) {
       </Head>
 
       {/* Load Crisp chat after page is idle to improve initial load (target &lt;5.3s interactive) */}
-      <Script
-        id="crisp-script"
-        strategy="lazyOnLoad"
-        dangerouslySetInnerHTML={{
-          __html: `
+      {loadAuxScripts ? (
+        <Script
+          id="crisp-script"
+          strategy="lazyOnLoad"
+          dangerouslySetInnerHTML={{
+            __html: `
             window.$crisp=[];
             window.CRISP_WEBSITE_ID="711b6e27-0210-4313-9ea3-75009495e3ec";
             (function(){
@@ -159,15 +184,18 @@ export default function Home({ blogPosts }) {
               d.getElementsByTagName("head")[0].appendChild(s);
             })();
           `,
-        }}
-      />
+          }}
+        />
+      ) : null}
 
       {/* Load Stripe button after page is idle to improve initial load (target &lt;5.3s interactive) */}
-      <Script
-        id="stripe-button"
-        src="https://js.stripe.com/v3/buy-button.js"
-        strategy="lazyOnLoad"
-      />
+      {loadAuxScripts ? (
+        <Script
+          id="stripe-button"
+          src="https://js.stripe.com/v3/buy-button.js"
+          strategy="lazyOnLoad"
+        />
+      ) : null}
 
       <div className="relative bg-white shadow-[0_0_40px_rgba(0,0,0,0.08)] overflow-x-hidden w-full overflow-y-visible">
         {/* Background gradients: absolute below md, fixed on desktop. Use CSS breakpoints only (no isMobile flip) to avoid CLS from fixed→absolute after hydration. */}

@@ -376,6 +376,8 @@ function AppContent({ Component, pageProps }) {
     router.pathname.startsWith("/docs") ||
     router.pathname.startsWith("/white-paper") ||
     isBuyerGuide;
+  const needsSearchStyles =
+    router.pathname.startsWith("/explore");
 
   return (
     <>
@@ -384,13 +386,18 @@ function AppContent({ Component, pageProps }) {
           <style>{'@import url("/styles/docs.css");'}</style>
         </Head>
       ) : null}
+      {needsSearchStyles ? (
+        <Head>
+          <style>{'@import url("/styles/search-ui.css");'}</style>
+        </Head>
+      ) : null}
       <div className="flex flex-col min-h-screen" data-page={isBuyerGuide ? 'buyer-guide' : undefined}>
         <SEO
           url={`https://kahana.co${router.asPath}`}
           type={router.pathname === "/" ? "website" : "article"}
           skipCanonical
         />
-        <div style={{ zIndex: "100" }} className={`sticky top-0 site-nav-wrapper${isBuyerGuide ? ' buyer-guide-layout' : ''}`}>
+        <div style={{ zIndex: "100" }} className={`site-nav-wrapper h-16${isBuyerGuide ? ' buyer-guide-layout' : ''}`}>
           <NavbarDup />
           {SHOW_GLOBAL_BANNER ? <GlobalBanner /> : null}
         </div>

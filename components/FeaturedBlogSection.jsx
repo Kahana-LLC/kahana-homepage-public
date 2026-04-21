@@ -4,11 +4,15 @@ import Image from 'next/image';
 import { getRandomPhoto, getOptimizedPhotoUrl, getPlaceholderImageUrl } from '../utils/pexels';
 import { suggestNatureImageQuery, normalizeBlogCategories, formatBlogPostDate } from '../utils/blog-helpers';
 import { getAuthorDetails } from '../utils/authorUtils';
+import { getBlogImageUrl } from '../utils/blog-image-url';
+
+const DEFAULT_PLACEHOLDER = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%233C584A"%3E%3Cpath d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-1.96-2.36L6.5 17h11l-3.54-4.71z"%2F%3E%3C%2Fsvg%3E';
 
 // Individual blog post card with image loading
 const FeaturedBlogCard = ({ post }) => {
   const [imageUrl, setImageUrl] = useState(null);
   const [isLoadingImage, setIsLoadingImage] = useState(true);
+  const [imageError, setImageError] = useState(false);
 
   // Fetch image on-demand when component mounts
   useEffect(() => {
@@ -16,9 +20,9 @@ const FeaturedBlogCard = ({ post }) => {
       try {
         setIsLoadingImage(true);
         
-        // Check if post has a featuredImage URL - use it directly
+        // Check if post has a featuredImage URL - resolve through policy helper
         if (post.featuredImage) {
-          setImageUrl(post.featuredImage);
+          setImageUrl(getBlogImageUrl(post.featuredImage));
           setIsLoadingImage(false);
           return;
         }
@@ -45,6 +49,7 @@ const FeaturedBlogCard = ({ post }) => {
       }
     };
 
+    setImageError(false);
     fetchImage();
   }, [post.defaultImageQuery, post.category, post.slug, post.featuredImage]);
 
@@ -58,11 +63,13 @@ const FeaturedBlogCard = ({ post }) => {
             </div>
           ) : (
             <Image
-              src={imageUrl}
+              src={imageError || !imageUrl || imageUrl.trim() === '' ? DEFAULT_PLACEHOLDER : imageUrl}
               alt={post.title}
               fill
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 33vw"
+              unoptimized={imageUrl?.startsWith('data:') === true}
+              onError={() => setImageError(true)}
             />
           )}
         </div>
