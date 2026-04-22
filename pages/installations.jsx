@@ -104,7 +104,7 @@ export default function Installations() {
     return (
       <>
         <Head>
-          <title>Download Kahana Browser | Installations</title>
+          <title>Download Oasis Browser | Installations</title>
         </Head>
         <main className="min-h-screen bg-gradient-to-br from-gray-50 to-white flex items-center justify-center">
           <Container>
@@ -122,10 +122,10 @@ export default function Installations() {
   return (
     <>
       <Head>
-        <title>Download Kahana Browser | Installations</title>
-        <meta name="description" content="Download Kahana Browser for Mac, Windows, and Linux. Experience the future of web browsing with our innovative browser technology." />
-        <meta property="og:title" content="Download Kahana Browser | Installations" />
-        <meta property="og:description" content="Download Kahana Browser for Mac, Windows, and Linux. Experience the future of web browsing with our innovative browser technology." />
+        <title>Download Oasis Browser | Installations</title>
+        <meta name="description" content="Download Oasis Browser for Mac, Windows, and Linux. Experience the future of web browsing with our innovative browser technology." />
+        <meta property="og:title" content="Download Oasis Browser | Installations" />
+        <meta property="og:description" content="Download Oasis Browser for Mac, Windows, and Linux. Experience the future of web browsing with our innovative browser technology." />
         <meta property="og:type" content="website" />
       </Head>
 
@@ -144,7 +144,7 @@ export default function Installations() {
           {/* Header Section */}
           <div className="text-center py-16">
             <h1 className="text-5xl font-bold text-gray-900 mb-6">
-              Install Kahana Browser
+              Install Oasis Browser
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
               Get ready for a revolutionary browsing experience. Our next-generation browser 
@@ -159,7 +159,7 @@ export default function Installations() {
                 ⚠️ Beta Software Notice
               </p>
               <p className="text-sm text-yellow-800">
-                All downloads are currently in <strong>beta</strong>. By downloading and installing Kahana Browser, you acknowledge that you have read and agree to our{' '}
+                All downloads are currently in <strong>beta</strong>. By downloading and installing Oasis Browser, you acknowledge that you have read and agree to our{' '}
                 <Link href="/terms-and-conditions" className="text-[#4A6200] no-underline hover:no-underline font-semibold">Terms and Conditions</Link>
                 {', '}
                 <Link href="/privacy-policy" className="text-[#4A6200] no-underline hover:no-underline font-semibold">Privacy Policy</Link>
@@ -235,7 +235,7 @@ export default function Installations() {
             {/* Legal Notice Section */}
             <div className="mt-12 max-w-3xl mx-auto px-6 py-6 bg-gray-50 border-2 border-gray-200 rounded-lg">
               <p className="text-sm text-gray-700 text-center mb-4">
-                <strong>By downloading Kahana Browser, you agree to our:</strong>
+                <strong>By downloading Oasis Browser, you agree to our:</strong>
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link 
@@ -272,7 +272,7 @@ export default function Installations() {
                 What to Expect
               </h2>
               <p className="text-lg text-gray-600">
-                Kahana Browser is being built with cutting-edge technology to revolutionize your browsing experience.
+                Oasis Browser is being built with cutting-edge technology to revolutionize your browsing experience.
               </p>
             </div>
 
