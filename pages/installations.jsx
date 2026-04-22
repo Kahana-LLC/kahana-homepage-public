@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { FaApple, FaWindows, FaLinux, FaDownload, FaClock } from 'react-icons/fa';
+import { FaApple, FaClock, FaDownload, FaLinux, FaWindows } from 'react-icons/fa';
 import { Container } from '../components/Container';
 import Breadcrumbs from '../components/Breadcrumbs';
 import { createClient } from '@/utils/supabase';
@@ -19,87 +19,105 @@ export default function Installations() {
   const checkAuthentication = async () => {
     try {
       const supabase = createClient();
-      const { data: { session }, error } = await supabase.auth.getSession();
-      
-      if (error) {
-        console.error('Error checking authentication:', error);
-        // Redirect to auth page on error - use free plan to avoid Stripe redirect
+      const {
+        data: { session },
+        error,
+      } = await supabase.auth.getSession();
+
+      if (error || !session) {
         router.push('/oasis-auth?mode=login&plan=free&redirect=/installations');
         return;
       }
-      
-      if (!session) {
-        // Not authenticated - redirect to auth page - use free plan to avoid Stripe redirect
-        router.push('/oasis-auth?mode=login&plan=free&redirect=/installations');
-        return;
-      }
-      
+
       setIsAuthenticated(true);
     } catch (err) {
       console.error('Failed to check authentication:', err);
-      // Redirect to auth page on error - use free plan to avoid Stripe redirect
       router.push('/oasis-auth?mode=login&plan=free&redirect=/installations');
     } finally {
       setIsLoading(false);
     }
   };
+
   const downloadButtons = [
     {
-      platform: 'Mac',
+      platform: 'Mac (Apple Silicon)',
       icon: FaApple,
-      description: 'macOS 10.15 or later (Apple Silicon)',
+      description: 'Latest beta build for Apple Silicon Macs.',
       status: 'available',
-      size: 'Install the latest version',
+      actionLabel: 'Download for Mac',
       downloadUrl: 'https://app.box.com/s/4x605cd3ehhxbzyaqunquw5pp40vau9r',
-      color: 'bg-[#4A6200] hover:bg-[#3E5300] border-[#4A6200]',
-      textColor: 'text-white'
+      cardColor: 'bg-oasis-green-100 hover:bg-oasis-green-200 border-oasis-green-300',
+      textColor: 'text-black',
+      bgHex: '#F2F4E5',
+      hoverBgHex: '#E4E9CC',
+      borderHex: '#CAD399',
+      textHex: '#000000',
+      badgeColor: 'bg-kahana-primary-800 text-white',
+      badgeLabel: 'Beta',
     },
     {
       platform: 'Mac Intel',
       icon: FaApple,
-      description: 'macOS 10.15 or later (Intel)',
+      description: 'Stable beta build for Intel-based Macs.',
       status: 'available',
-      size: 'Install the latest version',
+      actionLabel: 'Download for Intel Mac',
       downloadUrl: 'https://app.box.com/s/wumbootmyp4qkxlkdqg7vqwwbdk70kqx',
-      color: 'bg-[#4A6200] hover:bg-[#3E5300] border-[#4A6200]',
-      textColor: 'text-white'
+      cardColor: 'bg-oasis-green-100 hover:bg-oasis-green-200 border-oasis-green-300',
+      textColor: 'text-black',
+      bgHex: '#F2F4E5',
+      hoverBgHex: '#E4E9CC',
+      borderHex: '#CAD399',
+      textHex: '#000000',
+      badgeColor: 'bg-kahana-primary-900 text-white',
+      badgeLabel: 'Beta',
     },
     {
       platform: 'Windows',
       icon: FaWindows,
-      description: 'Windows 10 or later',
+      description: 'Windows support is in active development.',
       status: 'coming-soon',
-      size: 'Coming Soon',
-      color: 'bg-gray-100 hover:bg-gray-200 border-gray-300',
-      textColor: 'text-gray-600'
+      actionLabel: 'Coming Soon',
+      cardColor: 'bg-gray-200 hover:bg-gray-300 border-gray-300',
+      textColor: 'text-gray-700',
+      bgHex: '#E5E7EB',
+      hoverBgHex: '#D1D5DB',
+      borderHex: '#D1D5DB',
+      textHex: '#374151',
+      badgeColor: 'bg-gray-600 text-white',
+      badgeLabel: 'Coming Soon',
     },
     {
       platform: 'Linux',
       icon: FaLinux,
-      description: 'Ubuntu 18.04+ / Debian 10+',
+      description: 'Linux beta is planned after Windows release.',
       status: 'coming-soon',
-      size: 'Coming Soon',
-      color: 'bg-gray-100 hover:bg-gray-200 border-gray-300',
-      textColor: 'text-gray-600'
-    }
+      actionLabel: 'Coming Soon',
+      cardColor: 'bg-gray-200 hover:bg-gray-300 border-gray-300',
+      textColor: 'text-gray-700',
+      bgHex: '#E5E7EB',
+      hoverBgHex: '#D1D5DB',
+      borderHex: '#D1D5DB',
+      textHex: '#374151',
+      badgeColor: 'bg-gray-600 text-white',
+      badgeLabel: 'Coming Soon',
+    },
   ];
 
   const handleDownload = (button) => {
     if (button.status === 'coming-soon') {
-      alert(`${button.platform} version coming soon! We're working hard to bring you the best browsing experience.`);
+      alert(`${button.platform} is not available yet. Join the waitlist and we will announce it as soon as downloads open.`);
       return;
     }
-    
+
     if (button.downloadUrl) {
-      // Open download URL in new tab (Box.com will handle the download)
       window.open(button.downloadUrl, '_blank');
-    } else {
-      console.error('Download URL not configured');
-      alert('Download URL not configured. Please contact support.');
+      return;
     }
+
+    console.error('Download URL not configured');
+    alert('Download URL not configured. Please contact support.');
   };
 
-  // Show loading state while checking authentication or redirecting
   if (isLoading || !isAuthenticated) {
     return (
       <>
@@ -109,7 +127,7 @@ export default function Installations() {
         <main className="min-h-screen bg-gradient-to-br from-gray-50 to-white flex items-center justify-center">
           <Container>
             <div className="text-center">
-              <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-[#4A6200] mb-4"></div>
+              <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-kahana-primary-700 mb-4" />
               <p className="text-gray-600">Redirecting to authentication...</p>
             </div>
           </Container>
@@ -118,205 +136,131 @@ export default function Installations() {
     );
   }
 
-  // Show normal content if authenticated
   return (
     <>
       <Head>
-        <title>Download Oasis Browser | Installations</title>
-        <meta name="description" content="Download Oasis Browser for Mac, Windows, and Linux. Experience the future of web browsing with our innovative browser technology." />
-        <meta property="og:title" content="Download Oasis Browser | Installations" />
-        <meta property="og:description" content="Download Oasis Browser for Mac, Windows, and Linux. Experience the future of web browsing with our innovative browser technology." />
+        <title>Download Oasis Browser for Mac | Installations</title>
+        <meta
+          name="description"
+          content="Choose your Oasis Browser build and download in one click. Mac beta downloads are live, with Windows and Linux coming soon."
+        />
+        <meta property="og:title" content="Download Oasis Browser for Mac | Installations" />
+        <meta
+          property="og:description"
+          content="Pick your platform and install Oasis Browser quickly. Apple Silicon and Intel Mac builds are available now."
+        />
         <meta property="og:type" content="website" />
       </Head>
 
-      <main className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
+      <main className="relative min-h-screen bg-gradient-to-br from-gray-50 via-white to-oasis-green-50">
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-kahana-primary-700 to-transparent opacity-30" />
+
         <Container>
-          {/* Breadcrumbs */}
           <nav aria-label="Breadcrumb" className="pt-8 pb-4">
-            <Breadcrumbs 
+            <Breadcrumbs
               items={[
-                { name: "Home", url: "/" },
-                { name: "Installations", url: "/installations" },
-              ]} 
+                { name: 'Home', url: '/' },
+                { name: 'Installations', url: '/installations' },
+              ]}
             />
           </nav>
 
-          {/* Header Section */}
-          <div className="text-center py-16">
-            <h1 className="text-5xl font-bold text-gray-900 mb-6">
-              Install Oasis Browser
-            </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              Get ready for a revolutionary browsing experience. Our next-generation browser 
-              is designed to transform how you work and explore the web.
+          <section className="pt-2 pb-6">
+            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">Choose your Oasis Browser build</h1>
+            <p className="text-base md:text-lg text-gray-600 max-w-3xl">
+              Download the version that matches your machine. Mac beta builds are ready now, and we are actively shipping Windows and Linux next.
             </p>
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-800 text-sm font-medium mb-4">
-              <FaDownload className="w-4 h-4 mr-2" />
-              Beta Version - Mac (Apple Silicon & Intel) now available for download!
-            </div>
-            <div className="max-w-2xl mx-auto px-4 py-3 bg-yellow-50 border-2 border-yellow-200 rounded-lg">
-              <p className="text-sm text-yellow-900 font-semibold mb-2">
-                ⚠️ Beta Software Notice
-              </p>
-              <p className="text-sm text-yellow-800">
-                All downloads are currently in <strong>beta</strong>. By downloading and installing Oasis Browser, you acknowledge that you have read and agree to our{' '}
-                <Link href="/terms-and-conditions" className="text-[#4A6200] no-underline hover:no-underline font-semibold">Terms and Conditions</Link>
-                {', '}
-                <Link href="/privacy-policy" className="text-[#4A6200] no-underline hover:no-underline font-semibold">Privacy Policy</Link>
-                {', and '}
-                <Link href="/security" className="text-[#4A6200] no-underline hover:no-underline font-semibold">Security</Link>.
-              </p>
-            </div>
-          </div>
+          </section>
 
-          {/* Download Buttons Grid */}
-          <div className="max-w-5xl mx-auto pb-8">
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {downloadButtons.map((button, index) => {
+          <section className="max-w-6xl mx-auto pb-10">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {downloadButtons.map((button) => {
                 const IconComponent = button.icon;
+
                 return (
-                  <div
-                    key={button.platform}
-                    className="relative"
-                  >
+                  <div key={button.platform} className="relative">
                     <button
                       onClick={() => handleDownload(button)}
-                      className={`w-full p-8 rounded-2xl border-2 transition-all duration-200 ${button.color} ${button.textColor} group ${
-                        button.status === 'available' 
-                          ? 'cursor-pointer hover:shadow-lg transform hover:scale-[1.02]' 
-                          : 'cursor-not-allowed opacity-75'
+                      className={`installations-card-button w-full p-7 rounded-2xl border-2 transition-all duration-200 ${button.cardColor} ${button.textColor} ${
+                        button.status === 'available'
+                          ? 'cursor-pointer hover:shadow-xl transform hover:-translate-y-1'
+                          : 'cursor-not-allowed opacity-95 is-disabled'
                       }`}
                       disabled={button.status === 'coming-soon'}
+                      style={{
+                        '--card-bg': button.bgHex,
+                        '--card-hover-bg': button.hoverBgHex,
+                        '--card-border': button.borderHex,
+                        '--card-text': button.textHex,
+                      }}
                     >
-                      <div className="text-center">
-                        <div className="mb-4">
-                          <IconComponent className="w-16 h-16 mx-auto mb-4" />
-                        </div>
-                        <h3 className="text-2xl font-bold mb-2">
-                          {button.platform}
-                        </h3>
-                        <p className="text-sm mb-4 opacity-75">
-                          {button.description}
-                        </p>
-                        <div className="flex items-center justify-center space-x-2">
-                          {button.status === 'coming-soon' ? (
-                            <>
-                              <FaClock className="w-4 h-4" />
-                              <span className="font-medium">{button.size}</span>
-                            </>
+                      <div className="text-left">
+                        <IconComponent className="w-10 h-10 mb-4" />
+                        <h2 className="text-xl font-bold mb-2">{button.platform}</h2>
+                        <p className="text-sm mb-5 opacity-95">{button.description}</p>
+                        <div
+                          className={`inline-flex items-center gap-2 text-sm font-semibold rounded-md px-3 py-2 ${
+                            button.status === 'available' ? 'bg-black text-white' : ''
+                          }`}
+                        >
+                          {button.status === 'available' ? (
+                            <FaDownload className="w-4 h-4" />
                           ) : (
-                            <>
-                              <FaDownload className="w-4 h-4" />
-                              <span className="font-medium">{button.size}</span>
-                            </>
+                            <FaClock className="w-4 h-4" />
                           )}
+                          <span>{button.actionLabel}</span>
                         </div>
                       </div>
                     </button>
-                    
-                    {/* Coming Soon Badge */}
-                    {button.status === 'coming-soon' && (
-                      <div className="absolute -top-2 -right-2 bg-yellow-500 text-white text-xs font-bold px-3 py-1 rounded-full">
-                        Coming Soon
-                      </div>
-                    )}
-                    
-                    {/* Beta Badge - Show on all available downloads */}
-                    {button.status === 'available' && (
-                      <div className="absolute -top-2 -right-2 bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-full">
-                        Beta
-                      </div>
-                    )}
+
+                    <div className={`absolute -top-2 -right-2 text-xs font-bold px-3 py-1 rounded-full ${button.badgeColor}`}>
+                      {button.badgeLabel}
+                    </div>
                   </div>
                 );
               })}
             </div>
-            
-            {/* Legal Notice Section */}
-            <div className="mt-12 max-w-3xl mx-auto px-6 py-6 bg-gray-50 border-2 border-gray-200 rounded-lg">
-              <p className="text-sm text-gray-700 text-center mb-4">
-                <strong>By downloading Oasis Browser, you agree to our:</strong>
+          </section>
+
+          <section className="max-w-4xl mx-auto pb-16">
+            <div className="rounded-2xl border border-oasis-green-200 bg-oasis-green-50 px-6 py-5">
+              <p className="text-sm text-oasis-green-900 mb-3">
+                Mac downloads are beta releases. Use them for evaluation and feedback while we continue improving performance and compatibility.
               </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Link 
-                  href="/terms-and-conditions" 
-                  className="text-[#4A6200] hover:text-oasis-green-600 font-semibold underline transition-colors duration-200"
-                >
+              <p className="text-sm text-oasis-green-800">
+                By downloading Oasis Browser, you agree to our{' '}
+                <Link href="/terms-and-conditions" className="font-semibold underline hover:text-kahana-primary-700">
                   Terms and Conditions
                 </Link>
-                <span className="text-gray-400 hidden sm:inline">•</span>
-                <Link 
-                  href="/privacy-policy" 
-                  className="text-[#4A6200] hover:text-oasis-green-600 font-semibold underline transition-colors duration-200"
-                >
+                {', '}
+                <Link href="/privacy-policy" className="font-semibold underline hover:text-kahana-primary-700">
                   Privacy Policy
                 </Link>
-                <span className="text-gray-400 hidden sm:inline">•</span>
-                <Link 
-                  href="/security" 
-                  className="text-[#4A6200] hover:text-oasis-green-600 font-semibold underline transition-colors duration-200"
-                >
+                {', and '}
+                <Link href="/security" className="font-semibold underline hover:text-kahana-primary-700">
                   Security
                 </Link>
-              </div>
-              <p className="text-xs text-gray-600 text-center mt-4">
-                Please review these documents before installing. All versions are currently in beta and may contain bugs or incomplete features.
+                .
               </p>
             </div>
-          </div>
-
-          {/* Features Section */}
-          <div className="max-w-6xl mx-auto py-16">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                What to Expect
-              </h2>
-              <p className="text-lg text-gray-600">
-                Oasis Browser is being built with cutting-edge technology to revolutionize your browsing experience.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-center p-6">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">Lightning Fast</h3>
-                <p className="text-gray-600">
-                  Built for speed with optimized performance and minimal resource usage.
-                </p>
-              </div>
-
-              <div className="text-center p-6">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">Privacy First</h3>
-                <p className="text-gray-600">
-                  Your privacy is our priority with built-in protection and secure browsing.
-                </p>
-              </div>
-
-              <div className="text-center p-6">
-                <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">Innovative Features</h3>
-                <p className="text-gray-600">
-                  Experience next-generation browsing with AI-powered features and smart tools.
-                </p>
-              </div>
-            </div>
-          </div>
-
+          </section>
         </Container>
       </main>
+      <style jsx global>{`
+        .installations-card-button {
+          background-color: var(--card-bg) !important;
+          border-color: var(--card-border) !important;
+          color: var(--card-text) !important;
+        }
+
+        .installations-card-button:hover {
+          background-color: var(--card-hover-bg) !important;
+        }
+
+        .installations-card-button.is-disabled:hover {
+          background-color: var(--card-bg) !important;
+        }
+      `}</style>
     </>
   );
 }
