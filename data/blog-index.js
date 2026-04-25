@@ -1,5 +1,16 @@
 const blogIndex = [
   {
+    title: "Widevine, PlayReady, FairPlay: What Actually Changes for Enterprise Security?",
+    date: "2026-04-21T00:00:00.000Z",
+    authors: ["Pallavi M", "Ankit Sai Allam"],
+    category: ["Enterprise & Security"],
+    excerpt: "Comprehensive analysis of DRM systems (Widevine, PlayReady, FairPlay) and their actual impact on enterprise security. Examines architecture differences, key management risks, browser trust models, and compliance challenges.",
+    defaultImageQuery: "Widevine PlayReady FairPlay DRM enterprise security browser trust models",
+    featuredImage: "https://tse2.mm.bing.net/th/id/OIP.ovQ6ICzVymz9B1mp4kra5AHaF7?pid=Api&P=0&h=180",
+    slug: "widevine-playready-fairplay-enterprise-security-2026",
+    readingTime: 12,
+  },
+  {
     title: "Best AI Browser in 2026 (Tested): What Actually Helps You Work (Oasis Included)",
     date: "2026-04-20T00:00:00.000Z",
     authors: ["Pallavi M", "Ankit Sai Allam"],
