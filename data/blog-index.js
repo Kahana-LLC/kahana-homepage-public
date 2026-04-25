@@ -6,7 +6,7 @@ const blogIndex = [
     category: ["Engineering"],
     excerpt: "Analysis of DRM vs Enterprise DLP intersection. Examines where browser DRM ends and data protection begins, architectural blind spots, and integration challenges for enterprise security.",
     defaultImageQuery: "DRM vs enterprise DLP browser data protection security",
-    featuredImage: "https://tse4.mm.bing.net/th/id/OIP.9jcmFBvRLN-27VK7NznYbQHaCz?pid=Api&P=0&h=180",
+    featuredImage: "https://tse2.mm.bing.net/th/id/OIP.JmdUdKlLY396ipGeMjaAAwHaD4?pid=Api&P=0&h=180",
     slug: "drm-vs-enterprise-dlp-browser-data-protection-2026",
     readingTime: 13,
   },
