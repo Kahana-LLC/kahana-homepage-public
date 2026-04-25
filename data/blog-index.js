@@ -1,5 +1,16 @@
 const blogIndex = [
   {
+    title: "DRM Telemetry, Device IDs, and Shadow Tracking: What Your Browser Vendor Knows",
+    date: "2026-04-23T00:00:00.000Z",
+    authors: ["Pallavi M", "Ankit Sai Allam"],
+    category: ["Security"],
+    excerpt: "Comprehensive analysis of DRM telemetry, device IDs, and shadow tracking in browsers. Examines privacy implications, tracking vectors, and what browser vendors know about users through DRM systems.",
+    defaultImageQuery: "DRM telemetry device IDs shadow tracking browser privacy security",
+    featuredImage: "https://tse4.mm.bing.net/th/id/OIP.nW9yCzKs0GMYLkkNHNOIiQHaE8?pid=Api&P=0&h=180",
+    slug: "drm-telemetry-device-ids-shadow-tracking-browser-vendor-2026",
+    readingTime: 15,
+  },
+  {
     title: "Detecting EME and CDM Support in the Wild: What Developers Get Wrong",
     date: "2026-04-22T00:00:00.000Z",
     authors: ["Pallavi M", "Ankit Sai Allam"],
