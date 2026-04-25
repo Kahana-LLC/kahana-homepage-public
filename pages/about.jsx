@@ -11,9 +11,9 @@ const PREVIEW_IMAGE = getCloudinaryImageUrl('/assets/oasis-browser-preview.png',
 
 const productB2C = {
   title: 'Oasis Browser',
-  subtitle: 'For individuals, creators, and teams who want faster, more private browsing.',
+  subtitle: 'For you.',
   description:
-    'Oasis is a personal browser with a built-in AI assistant that understands your real browser context — tabs, history, bookmarks, and the page you are on. Use natural language or voice to search, plan, and take action across the web. Import your bookmarks, passwords, and extensions in seconds from any browser.',
+    'Oasis is a personal browser with a built-in AI assistant that understands your real browser context: tabs, history, bookmarks, and the page you are on. Use natural language or voice to search, plan, and take action across the web. Import your bookmarks, passwords, and extensions in seconds from any browser.',
   features: [
     'Built-in AI assistant with full browser context',
     'Voice input and dictation for hands-free browsing',
@@ -29,7 +29,7 @@ const productB2B = {
   title: 'Oasis Enterprise Browser',
   subtitle: 'For security and IT teams governing SaaS access.',
   description:
-    'Oasis is a managed enterprise browser that puts governance where work happens — in the browser session. Extend identity, policy, and data protection to employees, contractors, and partners on any device, without defaulting to laptop shipping or VDI sprawl.',
+    'Oasis is a managed enterprise browser that puts governance where work happens. Governance follows every browser session, not just your device. Extend identity, policy, and data protection to employees, contractors, and partners on any device. No laptop shipping. No VDI sprawl.',
   features: [
     'Browser-level governance that follows the session, not the device',
     'Integration with enterprise identity providers (IdP)',
@@ -49,27 +49,27 @@ const userStats = [
 const problemProductivity = {
   title: 'Browsing should feel effortless',
   description:
-    'The browser is the workspace for everyone — creators, employees, contractors. Yet navigating the web is still clunky, fragmented, and time-consuming. We believe natural language and voice should make browsing feel as simple as having a conversation.',
+    'The browser is the workspace for everyone: creators, employees, contractors. Yet navigating the web is still clunky, fragmented, and time-consuming. We believe natural language and voice should make browsing feel as simple as having a conversation.',
 };
 
 const problemSecurity = {
   title: 'Security can\'t stop at the device anymore',
   description:
-    'SaaS is everywhere, devices are diverse, and browser-based attack surfaces keep growing. Endpoint control alone can\'t protect how work actually happens. If governance lives in the browser instead, you can secure contractor access, enforce policy consistently, and protect data — without shipping laptops.',
+    'SaaS is everywhere. Devices are diverse. Browser-based attack surfaces keep growing. Endpoint control alone can\'t protect how work actually happens. If governance lives in the browser instead, you can secure contractor access, enforce policy consistently, and protect data. No laptop shipping required.',
 };
 
 const pillars = [
   {
     title: 'Natural, effortless browsing',
-    description: 'AI and voice that work alongside you in the browser — not as a chat window you have to switch to.',
+    description: 'AI and voice that work alongside you in the browser instead of as a chat window you have to switch to.',
   },
   {
     title: 'Privacy for individuals',
-    description: 'Your browsing data stays yours. No tracking, no selling, no third-party ads built into the browser.',
+    description: 'Your browsing data stays yours. No tracking. No selling. No third-party ads built into the browser.',
   },
   {
     title: 'Governance in the session',
-    description: 'Enterprise policy that follows every browser session — so IT can enforce rules wherever work happens.',
+    description: 'Enterprise policy that follows every browser session. IT can enforce rules wherever work happens.',
   },
   {
     title: 'Integration-first design',
@@ -92,7 +92,7 @@ const audiences = [
   },
 ];
 
-const founderBio = `Adam built his career inside IT teams at a billion-dollar CPG company, where he first witnessed how quickly security gaps compound when the tools people rely on aren't built with security in mind. That experience shaped everything Kahana builds next.`;
+const founderBio = `Adam built his career inside IT teams at a billion-dollar CPG company. He first witnessed how quickly security gaps compound when the tools people rely on aren't built with security in mind. That experience shaped everything Kahana builds next.`;
 
 export default function About() {
   const organizationSchema = {
@@ -103,7 +103,7 @@ export default function About() {
         '@id': 'https://kahana.co/#organization',
         name: 'Kahana',
         url: 'https://kahana.co',
-        description: 'Kahana builds Oasis — a personal browser and a managed enterprise browser — to make browsing faster, more private, and more secure.',
+        description: 'Kahana builds Oasis: a personal browser and a managed enterprise browser. Kahana makes browsing faster, more private, and more secure.',
         logo: PREVIEW_IMAGE,
         sameAs: ['https://www.linkedin.com/company/kahana-llc'],
       },
@@ -118,10 +118,10 @@ export default function About() {
         '@type': 'WebPage',
         '@id': 'https://kahana.co/about#webpage',
         url: 'https://kahana.co/about',
-        name: 'About Kahana — Oasis: named for a refuge. Built for productivity and security.',
+        name: 'About Kahana: Oasis, named for a refuge. Built for productivity and security.',
         isPartOf: { '@id': 'https://kahana.co/#website' },
         about: { '@id': 'https://kahana.co/#organization' },
-        description: 'Kahana builds two products under the Oasis name: a personal browser with AI assistant and a managed enterprise browser. 7,000+ users across 108+ countries.',
+        description: 'Kahana builds two products under the Oasis name. One is a personal browser with AI assistant. The other is a managed enterprise browser. 7,000+ users across 108+ countries.',
       },
       {
         '@type': 'SoftwareApplication',
@@ -149,7 +149,7 @@ export default function About() {
   return (
     <>
       <SEO
-        title="About Kahana — Oasis: named for a refuge. Built for productivity and security."
+        title="About Kahana: Oasis, named for a refuge. Built for productivity and security."
         description="Kahana builds two products under the Oasis name: a personal browser with AI assistant for individuals, and a managed enterprise browser for organizations. 7,000+ users across 108+ countries."
         image={PREVIEW_IMAGE}
         url="https://kahana.co/about"
@@ -157,7 +157,7 @@ export default function About() {
         schema={organizationSchema}
       />
       <Head>
-        <title>About Kahana — Oasis | Kahana</title>
+        <title>About Kahana: Oasis | Kahana</title>
         <meta name="description" content="Kahana builds two products under the Oasis name: a personal browser with AI assistant for individuals, and a managed enterprise browser for organizations. 7,000+ users across 108+ countries." />
       </Head>
       <Script src="https://www.googletagmanager.com/gtag/js?id=G-KQHFL9605P" strategy="afterInteractive" />
@@ -179,7 +179,7 @@ export default function About() {
               Oasis: named for a refuge. Built for productivity and security.
             </h1>
             <p className="mt-6 text-lg text-oasis-green-800 leading-relaxed">
-              Kahana builds two products under the Oasis name — a personal browser with a built-in AI assistant for individuals, and a managed enterprise browser for organizations. Both share one mission: make browsing faster, more private, and more secure.
+              Kahana builds two products under the Oasis name. One is a personal browser with a built-in AI assistant for individuals. The other is a managed enterprise browser for organizations. Both share one mission: make browsing faster, more private, and more secure.
             </p>
             <p className="mt-4 text-base text-oasis-green-700 italic">
               7,000+ users trust our products across 108+ countries. Yes, we counted because we're curious.
@@ -238,7 +238,7 @@ export default function About() {
               It's called Oasis for a reason
             </h2>
             <p className="mt-4 text-lg text-oasis-green-800 leading-relaxed">
-              An oasis is a refuge — a place of shelter and calm in the middle of a harsh landscape. That's exactly what the modern web needs. Fragmentation, spyware, data leaks, and AI-driven threats have turned browsing into a gauntlet. We built Kahana — and named our products Oasis — because we believe the browser should be a safe place to work, create, and explore.
+              An oasis is a refuge: a place of shelter and calm in the middle of a harsh landscape. That's exactly what the modern web needs. Fragmentation, spyware, data leaks, and AI-driven threats have turned browsing into a gauntlet. We built Kahana. We named our products Oasis. We believe the browser should be a safe place to work, create, and explore.
             </p>
             <blockquote className="mt-8 border-l-4 border-oasis-green-600/35 bg-oasis-green-50/60 py-5 pl-5 pr-4 rounded-r-lg text-oasis-green-800 italic">
               <p className="text-[0.96875rem] leading-relaxed">
@@ -246,7 +246,7 @@ export default function About() {
               </p>
             </blockquote>
             <p className="mt-6 text-base text-oasis-green-700 leading-relaxed">
-              That's why every product we build puts security and privacy at the core — not as an afterthought or a toggle you flip on.
+              That's why every product we build puts security and privacy at the core. Not as an afterthought. Not as a toggle you flip on.
             </p>
           </div>
         </div>
@@ -419,7 +419,7 @@ export default function About() {
       {/* ===== Final CTA ===== */}
       <SharedCTA
         title="Explore both products"
-        description="Whether you want faster, more private personal browsing — or enterprise-grade browser governance for your organization — we built Oasis for that."
+        description="Whether you want faster, more private personal browsing. Or enterprise-grade browser governance for your organization. We built Oasis for that."
         primaryLabel="Download Oasis"
         primaryHref="/oasis-pricing"
         secondaryLabel="Schedule a demo"
