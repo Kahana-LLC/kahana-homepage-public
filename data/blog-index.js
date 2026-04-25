@@ -1,5 +1,16 @@
 const blogIndex = [
   {
+    title: "Detecting EME and CDM Support in the Wild: What Developers Get Wrong",
+    date: "2026-04-22T00:00:00.000Z",
+    authors: ["Pallavi M", "Ankit Sai Allam"],
+    category: ["Security"],
+    excerpt: "Comprehensive analysis of EME and CDM support detection challenges. Examines privacy implications, security vulnerabilities, implementation inconsistencies, and common developer mistakes in DRM detection.",
+    defaultImageQuery: "EME CDM support detection browser DRM privacy security",
+    featuredImage: "https://tse1.mm.bing.net/th/id/OIP.lU3kyXCc_CXPzcLSrv2-gQHaEK?pid=Api&P=0&h=180",
+    slug: "detecting-eme-cdm-support-wild-developers-mistakes-2026",
+    readingTime: 14,
+  },
+  {
     title: "Widevine, PlayReady, FairPlay: What Actually Changes for Enterprise Security?",
     date: "2026-04-21T00:00:00.000Z",
     authors: ["Pallavi M", "Ankit Sai Allam"],
