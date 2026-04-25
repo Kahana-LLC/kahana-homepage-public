@@ -11,9 +11,9 @@ const PREVIEW_IMAGE = getCloudinaryImageUrl('/assets/oasis-browser-preview.png',
 
 const productB2C = {
   title: 'Oasis Browser',
-  subtitle: 'For you.',
+  subtitle: 'Get started here.',
   description:
-    'Oasis is a personal browser with a built-in AI assistant that understands your real browser context: tabs, history, bookmarks, and the page you are on. Use natural language or voice to search, plan, and take action across the web. Import your bookmarks, passwords, and extensions in seconds from any browser.',
+    'Experience fully secure, private browsing with a modern, elegant AI assistant that connects deeply into the browser core — not just sitting on top as a summarization tool. Natural language, voice, and AI that actually understand your tabs, history, and pages.',
   features: [
     'Built-in AI assistant with full browser context',
     'Voice input and dictation for hands-free browsing',
@@ -27,9 +27,9 @@ const productB2C = {
 
 const productB2B = {
   title: 'Oasis Enterprise Browser',
-  subtitle: 'For security and IT teams governing SaaS access.',
+  subtitle: 'Includes everything in Oasis, plus policy management for IT.',
   description:
-    'Oasis is a managed enterprise browser that puts governance where work happens. Governance follows every browser session, not just your device. Extend identity, policy, and data protection to employees, contractors, and partners on any device. No laptop shipping. No VDI sprawl.',
+    'Oasis Enterprise Browser includes every capability of the consumer browser, extended with enterprise policy management. IT teams can govern sessions, identity, and data protection for employees, contractors, and partners on any device.',
   features: [
     'Browser-level governance that follows the session, not the device',
     'Integration with enterprise identity providers (IdP)',
@@ -206,10 +206,10 @@ export default function About() {
                 Why Oasis?
               </Link>
               <Link
-                href="#team"
+                href="#founder"
                 className="font-semibold text-brand-link underline decoration-brand-link/40 underline-offset-2 hover:text-oasis-green-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#617500]"
               >
-                The team
+                The founder
               </Link>
             </div>
           </div>
@@ -252,18 +252,23 @@ export default function About() {
         </div>
       </section>
 
-      {/* ===== Two Products ===== */}
+      {/* ===== One Mission. Every Option. ===== */}
       <section className="bg-[#F3F8E4] py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center text-3xl font-bold text-oasis-green-800 sm:text-4xl">Two products, one mission</h2>
-          <p className="mt-4 text-center text-lg text-oasis-green-700 max-w-2xl mx-auto">
-            Both products share the same DNA: make the browser faster, more private, and more secure. But they serve different people and problems.
-          </p>
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl font-bold text-oasis-green-800 sm:text-4xl">One mission. Every option.</h2>
+            <p className="mt-4 text-lg text-oasis-green-800 leading-relaxed">
+              We built Oasis as a refuge from the chaos of the modern web. From that single vision, we've expanded to serve everyone: individuals who want private browsing, teams who want better UX, and organizations who need enterprise policy control.
+            </p>
+            <p className="mt-4 text-base text-oasis-green-700 leading-relaxed">
+              Whether you're browsing personally, working with a team, or governing enterprise access, Oasis meets you where you are.
+            </p>
+          </div>
           <div className="mt-12 grid gap-8 lg:grid-cols-2">
             {/* B2C */}
             <div className="rounded-2xl bg-white p-8 shadow-sm border border-oasis-green-800/10 flex flex-col">
               <div>
-                <p className="text-xs font-semibold uppercase tracking-wider text-brand-link mb-2">Personal</p>
+                <p className="text-xs font-semibold uppercase tracking-wider text-brand-link mb-2">Flagship</p>
                 <h3 className="text-2xl font-bold text-oasis-green-800">{productB2C.title}</h3>
                 <p className="mt-2 text-sm font-medium text-oasis-green-600">{productB2C.subtitle}</p>
               </div>
@@ -364,10 +369,10 @@ export default function About() {
         </div>
       </section>
 
-      {/* ===== The Team (compact founder story) ===== */}
-      <section id="team" className="bg-[#F3F8E4] py-16 sm:py-20">
+      {/* ===== The Founder ===== */}
+      <section id="founder" className="bg-[#F3F8E4] py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center text-3xl font-bold text-oasis-green-800 sm:text-4xl">The team</h2>
+          <h2 className="text-center text-3xl font-bold text-oasis-green-800 sm:text-4xl">The founder</h2>
           <div className="mt-10 grid gap-10 md:grid-cols-[minmax(0,300px)_1fr] md:items-start md:gap-12">
             <div className="flex justify-center md:justify-start">
               <Image
@@ -404,7 +409,7 @@ export default function About() {
               href="/team"
               className="font-semibold text-brand-link underline decoration-brand-link/40 underline-offset-2 hover:text-oasis-green-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#617500]"
             >
-              Founder story
+              Full story
             </Link>
             <Link
               href="/careers"
