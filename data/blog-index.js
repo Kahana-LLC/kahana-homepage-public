@@ -1,5 +1,16 @@
 const blogIndex = [
   {
+    title: "Practical Checklist: When Your Enterprise App Depends on Browser DRM",
+    date: "2026-04-25T00:00:00.000Z",
+    authors: ["Pallavi M", "Ankit Sai Allam"],
+    category: ["Browser & Technology"],
+    excerpt: "Practical checklist for enterprise apps that depend on browser DRM. Covers cross-browser fragmentation, opaque execution, privacy risks, API quirks, authentication flows, performance, and security integration challenges.",
+    defaultImageQuery: "enterprise app browser DRM checklist practical guide",
+    featuredImage: "https://tse4.mm.bing.net/th/id/OIP.FJGndlZc-blqqD_VtQJrtAHaDF?pid=Api&P=0&h=180",
+    slug: "practical-checklist-enterprise-app-browser-drm-2026",
+    readingTime: 12,
+  },
+  {
     title: "DRM vs. Enterprise DLP: Where Browser DRM Ends and Data Protection Begins",
     date: "2026-04-24T00:00:00.000Z",
     authors: ["Pallavi M", "Ankit Sai Allam"],
