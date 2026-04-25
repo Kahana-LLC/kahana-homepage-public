@@ -1,5 +1,16 @@
 const blogIndex = [
   {
+    title: "DRM vs. Enterprise DLP: Where Browser DRM Ends and Data Protection Begins",
+    date: "2026-04-24T00:00:00.000Z",
+    authors: ["Pallavi M", "Ankit Sai Allam"],
+    category: ["Engineering"],
+    excerpt: "Analysis of DRM vs Enterprise DLP intersection. Examines where browser DRM ends and data protection begins, architectural blind spots, and integration challenges for enterprise security.",
+    defaultImageQuery: "DRM vs enterprise DLP browser data protection security",
+    featuredImage: "https://tse4.mm.bing.net/th/id/OIP.9jcmFBvRLN-27VK7NznYbQHaCz?pid=Api&P=0&h=180",
+    slug: "drm-vs-enterprise-dlp-browser-data-protection-2026",
+    readingTime: 13,
+  },
+  {
     title: "DRM Telemetry, Device IDs, and Shadow Tracking: What Your Browser Vendor Knows",
     date: "2026-04-23T00:00:00.000Z",
     authors: ["Pallavi M", "Ankit Sai Allam"],
