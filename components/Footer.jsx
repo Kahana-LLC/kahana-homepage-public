@@ -30,6 +30,7 @@ const COMPANY_LINKS = [
 
 const RESOURCE_LINKS = [
   { href: '/enterprise-buyer-guide', label: 'Buyers Guide' },
+  { href: '/data-leakage-consortium', label: 'Data Leakage Consortium' },
   { href: '/blog', label: 'Newsletter' },
   { href: '/blog', label: 'Blog' },
   { href: '/docs', label: 'Docs' },

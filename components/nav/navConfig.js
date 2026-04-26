@@ -42,7 +42,8 @@ export const desktopNavItems = [
           links: [
             { label: 'Blog', href: '/blog' },
             { label: 'Docs', href: '/docs' },
-            { label: 'Community', href: '/community' },
+            { label: 'Events', href: '/events' },
+            { label: 'Data Leakage Consortium', href: '/data-leakage-consortium' },
           ],
         },
         buyerGuidePromo,
@@ -89,7 +90,8 @@ export const mobileNavRows = [
   { label: 'Enterprise Browser', href: '/products/oasis-enterprise-browser' },
   { label: 'Blog', href: '/blog' },
   { label: 'Docs', href: '/docs' },
-  { label: 'Community', href: '/community' },
+  { label: 'Events', href: '/events' },
+  { label: 'Data Leakage Consortium', href: '/data-leakage-consortium' },
   {
     variant: 'buyer-guide',
     label: 'Enterprise Browser Buyer Guide',
