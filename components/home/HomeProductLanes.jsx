@@ -131,7 +131,7 @@ export default function HomeProductLanes() {
                 <Link
                   href="/products/oasis-browser#voice"
                   onClick={() => trackButtonClick("home_voice_learn_more", "home_voice_section")}
-                  className="text-brand-link font-semibold text-sm no-underline hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-link"
+                  className="text-brand-link font-semibold text-sm underline decoration-2 underline-offset-2 hover:opacity-85 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-link"
                 >
                   More on Oasis Browser →
                 </Link>

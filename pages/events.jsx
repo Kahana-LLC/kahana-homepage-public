@@ -1,76 +1,75 @@
-import React from 'react';
-import Head from 'next/head';
-import Link from 'next/link';
-import SharedCTA from '../components/SharedCTA';
+import Link from "next/link";
+import SEO from "../components/SEO";
+import { EVENTS } from "../data/events";
 
-const upcomingEvents = [
-  {
-    title: 'Enterprise Security Summit 2024',
-    date: 'March 15-16, 2024',
-    location: 'San Francisco, CA',
-    description: 'Join us for discussions on the latest trends in enterprise browsing security.',
-    link: '/contact'
-  },
-  {
-    title: 'Kahana Partner Conference',
-    date: 'April 20-21, 2024',
-    location: 'New York, NY',
-    description: 'Connect with Kahana partners and learn about our latest solutions.',
-    link: '/contact'
-  },
-  {
-    title: 'Enterprise Browser Workshop',
-    date: 'May 10, 2024',
-    location: 'Virtual Event',
-    description: 'Learn how to optimize your enterprise browsing experience.',
-    link: '/contact'
-  }
-];
-
-export default function Events() {
+export default function EventsPage() {
   return (
     <>
-      <Head>
-        <title>Events | Kahana</title>
-        <meta
-          name="description"
-          content="Join Kahana's events to learn about enterprise browsing solutions and connect with industry experts."
-        />
-      </Head>
+      <SEO
+        title="Events | Kahana"
+        description="Explore upcoming Kahana events and live sessions on AI productivity, security, and data control."
+        url="https://kahana.co/events"
+        type="website"
+      />
 
-      <div className="bg-white">
-        <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl font-bold text-oasis-green-800">Upcoming Events</h1>
-            <p className="mt-4 text-xl text-oasis-green-800">
-              Join us at our events to learn about enterprise browsing solutions and connect with experts.
+      <main className="min-h-screen bg-white">
+        <section className="relative overflow-hidden bg-gradient-to-b from-[#F3F8E4] via-[#FAFCEE] to-white py-20 sm:py-24">
+          <div className="pointer-events-none absolute inset-0 hidden lg:block">
+            <div className="absolute top-[-32%] left-[-15%] h-[520px] w-[760px] rounded-full bg-[#FCDD9F]/18 blur-[180px]" />
+            <div className="absolute bottom-[-35%] right-[-15%] h-[560px] w-[760px] rounded-full bg-[#8BA500]/16 blur-[180px]" />
+          </div>
+
+          <div className="relative z-10 mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
+            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.14em] text-[#617500]">
+              Kahana Events
+            </p>
+            <h1 className="text-4xl font-bold tracking-tight text-[#30400D] sm:text-5xl lg:text-6xl">
+              Upcoming Events
+            </h1>
+            <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-[#30400D]/80 sm:text-xl">
+              Join practical sessions built for leaders and operators navigating AI productivity,
+              policy, and security in real business environments.
             </p>
           </div>
+        </section>
 
-          <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {upcomingEvents.map((event, index) => (
-              <div key={index} className="bg-[#F3F8E4] p-6 rounded-lg">
-                <h3 className="text-xl font-semibold text-oasis-green-800 mb-2">{event.title}</h3>
-                <p className="text-oasis-green-600 mb-2">{event.date}</p>
-                <p className="text-oasis-green-800 mb-2">{event.location}</p>
-                <p className="text-oasis-green-800 mb-4">{event.description}</p>
-                <Link href={event.link}>
-                  <button className="bg-oasis-green-500 text-white font-bold px-6 py-3 rounded-md hover:bg-oasis-green-700 transition-colors">
-                    Learn More About {event.title}
-                  </button>
-                </Link>
-              </div>
-            ))}
+        <section className="pb-16 sm:pb-20">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+            <div className="grid gap-6 md:grid-cols-2">
+              {EVENTS.map((event) => (
+                <article
+                  key={event.slug}
+                  className="rounded-2xl border border-[#30400D]/12 bg-[#F8FAF2] p-7 shadow-[0_12px_28px_rgba(48,64,13,0.08)]"
+                >
+                  <p className="text-sm font-semibold uppercase tracking-[0.08em] text-[#617500]">
+                    {event.eventType} · {event.dateLabel}
+                  </p>
+                  <h2 className="mt-3 text-2xl font-bold leading-tight text-[#30400D]">
+                    {event.title}
+                  </h2>
+                  <p className="mt-2 text-lg font-medium leading-snug text-[#30400D]/85">
+                    {event.subtitle}
+                  </p>
+                  <p className="mt-4 text-sm leading-relaxed text-[#30400D]/78">
+                    {event.description}
+                  </p>
+                  <div className="mt-6">
+                    <Link
+                      href={`/events/${event.slug}`}
+                      className="btn-primary inline-flex items-center justify-center rounded-[27.5px] px-6 py-3 text-base font-bold no-underline hover:no-underline focus:no-underline"
+                    >
+                      View Event & Register
+                    </Link>
+                  </div>
+                </article>
+              ))}
+            </div>
+            <p className="mt-6 text-center text-sm font-medium text-[#30400D]/70">
+              More events coming soon.
+            </p>
           </div>
-        </div>
-      </div>
-
-      <SharedCTA
-        title="Can't Make It to an Event?"
-        description="Contact us to schedule a personalized demo of our solutions."
-        buttonText="Schedule Demo"
-        buttonLink="/contact"
-      />
+        </section>
+      </main>
     </>
   );
-} 
+}
