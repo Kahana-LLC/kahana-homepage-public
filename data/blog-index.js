@@ -1,5 +1,16 @@
 const blogIndex = [
   {
+    title: "What Island's $250M Series E Really Signals for CISOs and IT Leaders",
+    date: "2026-04-26T00:00:00.000Z",
+    authors: ["Pallavi M", "Ankit Sai Allam"],
+    category: ["Security"],
+    excerpt: "Analysis of Island's $250M Series E funding and what it signals for CISOs and IT leaders. Examines enterprise browser security trends, market shifts, and strategic implications for security leadership.",
+    defaultImageQuery: "Island $250M Series E funding enterprise browser security CISO strategy",
+    featuredImage: "https://tse2.mm.bing.net/th/id/OIP.4rFikp39HI1SgsBIc9R4ZwHaD3?pid=Api&P=0&h=180",
+    slug: "islands-250m-series-e-ciso-it-leaders-2026",
+    readingTime: 14,
+  },
+  {
     title: "Practical Checklist: When Your Enterprise App Depends on Browser DRM",
     date: "2026-04-25T00:00:00.000Z",
     authors: ["Pallavi M", "Ankit Sai Allam"],
