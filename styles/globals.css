@@ -272,6 +272,148 @@ input[type="button"] {
 #faq button:hover {
   background: linear-gradient(to bottom right, rgba(254, 243, 199, 0.4), rgba(125, 211, 252, 0.2)) !important;
 }
+
+/* Data Leakage Consortium: interactive tiles/chips/pagination (override global `button` teal) */
+.consortium-metric-surfaces button.consortium-tile-button {
+  background-color: #fef8e8 !important;
+  color: var(--oasis-green-900) !important;
+  font-weight: 600 !important;
+  border: 1px solid rgba(48, 64, 13, 0.14) !important;
+  border-radius: 0.75rem !important;
+  padding: 1.25rem 1.5rem !important;
+  box-shadow: 0 1px 2px rgba(48, 64, 13, 0.06) !important;
+  cursor: pointer !important;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease !important;
+}
+
+.consortium-metric-surfaces button.consortium-tile-button:hover:not(:disabled) {
+  background-color: #fdf1d2 !important;
+  border-color: rgba(72, 156, 181, 0.35) !important;
+}
+
+.consortium-metric-surfaces button.consortium-tile-button--selected {
+  background-color: #f2f4e5 !important;
+  border-color: rgba(48, 64, 13, 0.45) !important;
+}
+
+.consortium-metric-surfaces button.consortium-tile-button--selected:hover:not(:disabled) {
+  background-color: #e4e9cc !important;
+}
+
+.consortium-metric-surfaces button.consortium-tile-button:focus {
+  outline: none !important;
+}
+
+.consortium-metric-surfaces button.consortium-tile-button:focus-visible {
+  outline: 2px solid var(--btn-focus-ring) !important;
+  outline-offset: 2px !important;
+}
+
+.consortium-metric-surfaces button.consortium-page-button {
+  background-color: #fef8e8 !important;
+  color: var(--oasis-green-900) !important;
+  font-weight: 600 !important;
+  border: 1px solid rgba(48, 64, 13, 0.18) !important;
+  border-radius: 0.5rem !important;
+  padding: 0.5rem 1rem !important;
+  box-shadow: 0 1px 2px rgba(48, 64, 13, 0.05) !important;
+  cursor: pointer !important;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease !important;
+}
+
+.consortium-metric-surfaces button.consortium-page-button:hover:not(:disabled) {
+  background-color: var(--oasis-green-50) !important;
+  border-color: rgba(48, 64, 13, 0.28) !important;
+}
+
+.consortium-metric-surfaces button.consortium-page-button:focus {
+  outline: none !important;
+}
+
+.consortium-metric-surfaces button.consortium-page-button:focus-visible {
+  outline: 2px solid var(--btn-focus-ring) !important;
+  outline-offset: 2px !important;
+}
+
+.consortium-metric-surfaces button.consortium-page-button:disabled {
+  opacity: 0.45 !important;
+  cursor: not-allowed !important;
+}
+
+.consortium-metric-surfaces button.consortium-chip-button {
+  background-color: #fef8e8 !important;
+  color: var(--oasis-green-900) !important;
+  font-weight: 600 !important;
+  border: 1px solid rgba(48, 64, 13, 0.2) !important;
+  border-radius: 9999px !important;
+  padding: 0.375rem 0.75rem !important;
+  font-size: 0.75rem !important;
+  line-height: 1.25rem !important;
+  cursor: pointer !important;
+  box-shadow: none !important;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease !important;
+}
+
+.consortium-metric-surfaces button.consortium-chip-button:hover:not(:disabled) {
+  background-color: var(--oasis-green-50) !important;
+  border-color: rgba(48, 64, 13, 0.28) !important;
+}
+
+.consortium-metric-surfaces button.consortium-chip-button:focus {
+  outline: none !important;
+}
+
+.consortium-metric-surfaces button.consortium-chip-button:focus-visible {
+  outline: 2px solid var(--btn-focus-ring) !important;
+  outline-offset: 2px !important;
+}
+
+.consortium-metric-surfaces button.consortium-chip-button--active {
+  background-color: #30400d !important;
+  color: #ffffff !important;
+  border-color: #30400d !important;
+}
+
+.consortium-metric-surfaces button.consortium-chip-button--active:hover:not(:disabled) {
+  background-color: #263209 !important;
+  border-color: #263209 !important;
+  color: #ffffff !important;
+}
+
+/* Stat detail modal close: override global pill button (same page) */
+button.consortium-modal-dismiss {
+  background-color: transparent !important;
+  color: var(--oasis-green-900) !important;
+  font-weight: 600 !important;
+  border: 1px solid rgba(48, 64, 13, 0.15) !important;
+  border-radius: 9999px !important;
+  padding: 0 !important;
+  min-width: 2.25rem !important;
+  min-height: 2.25rem !important;
+  box-shadow: none !important;
+}
+
+button.consortium-modal-dismiss:hover:not(:disabled) {
+  background-color: var(--oasis-green-50) !important;
+}
+
+button.consortium-modal-dismiss:focus {
+  outline: none !important;
+}
+
+button.consortium-modal-dismiss:focus-visible {
+  outline: 2px solid var(--btn-focus-ring) !important;
+  outline-offset: 2px !important;
+}
+
 button:hover,
 .btn:hover,
 input[type="submit"]:hover,
