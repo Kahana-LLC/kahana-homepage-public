@@ -1,5 +1,16 @@
 const blogIndex = [
   {
+    title: "Battery Life Showdown 2026: Which Browser Kills Your Laptop the Fastest?",
+    date: "2026-04-29T00:00:00.000Z",
+    authors: ["Pallavi M", "Ankit Sai Allam"],
+    category: ["Browser & Technology"],
+    excerpt: "Comprehensive 2026 browser battery life comparison testing Chrome, Edge, Firefox, Safari, and others. Real-world power consumption analysis reveals which browsers drain laptop battery fastest and which save energy.",
+    defaultImageQuery: "browser battery life comparison 2026 laptop power drain Chrome Edge Firefox Safari",
+    featuredImage: "https://tse1.mm.bing.net/th/id/OIP.d3ihEuVPIwZ-OWrMUqYs3AHaHa?pid=Api&P=0&h=180",
+    slug: "battery-life-showdown-2026-browser-laptop-drain-2026",
+    readingTime: 12,
+  },
+  {
     title: "Dark-Web Browsers vs Private Browsers: When Tor Is Overkill (and When It's Not)",
     date: "2026-04-28T00:00:00.000Z",
     authors: ["Pallavi M", "Ankit Sai Allam"],
