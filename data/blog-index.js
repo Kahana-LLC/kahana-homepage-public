@@ -1,5 +1,16 @@
 const blogIndex = [
   {
+    title: "The Rise of Enterprise Browsers: Transforming Corporate Security in 2026",
+    date: "2026-04-30T00:00:00.000Z",
+    authors: ["Pallavi M", "Ankit Sai Allam"],
+    category: ["Enterprise Security"],
+    excerpt: "Analysis of enterprise browser adoption trends in 2026. Examines how secure browsers are transforming corporate security, addressing traditional browser gaps, and driving the shift toward managed browser solutions.",
+    defaultImageQuery: "enterprise browser security 2026 corporate security transformation secure browsers",
+    featuredImage: "https://tse2.mm.bing.net/th/id/OIP.y8_Ax_lpLweUimiuqx_rQQHaEp?pid=Api&P=0&h=180",
+    slug: "rise-enterprise-browsers-corporate-security-2026",
+    readingTime: 14,
+  },
+  {
     title: "Battery Life Showdown 2026: Which Browser Kills Your Laptop the Fastest?",
     date: "2026-04-29T00:00:00.000Z",
     authors: ["Pallavi M", "Ankit Sai Allam"],
