@@ -42,8 +42,8 @@ export default function ConsentBanner() {
   const isVisible = showBanner && deferPaint;
 
   return (
-    <div 
-      className={`fixed bottom-0 left-0 right-0 z-50 bg-white border-t-2 border-oasis-green-600 shadow-lg transition-opacity duration-300 ${
+    <div
+      className={`consent-banner fixed bottom-0 left-0 right-0 z-50 bg-white border-t-2 border-oasis-green-600 shadow-lg transition-opacity duration-300 ${
         isVisible ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
       }`}
       style={{ contain: 'layout paint' }}
@@ -59,7 +59,7 @@ export default function ConsentBanner() {
               <Link
                 href="/privacy-policy"
                 prefetch={false}
-                className="text-gray-900 hover:text-gray-950 hover:underline font-semibold"
+                className="focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-oasis-green-600"
               >
                 We Value Your Privacy
               </Link>
@@ -67,18 +67,22 @@ export default function ConsentBanner() {
             <p id="consent-banner-description" className="text-sm text-gray-800 mb-0 max-w-prose">
               We use cookies for essential site features, analytics, and optional personalization. Use the buttons below to accept or decline non-essential cookies, or open Manage Preferences for category details.
             </p>
-            <p className="text-xs text-gray-800 mt-2 mb-0">
+            <p className="text-xs text-gray-800 mt-2 mb-0 flex flex-wrap items-baseline gap-x-1 gap-y-1">
               <button
                 type="button"
                 onClick={openModal}
-                className="underline text-gray-900 hover:text-gray-950 font-medium text-left"
+                className="consent-banner-inline-link"
               >
                 Full cookie notice
               </button>
-              <span className="mx-1.5" aria-hidden>
+              <span className="text-gray-500 select-none" aria-hidden>
                 ·
               </span>
-              <Link href="/privacy-policy" prefetch={false} className="underline text-gray-900 hover:text-gray-950">
+              <Link
+                href="/privacy-policy"
+                prefetch={false}
+                className="focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-oasis-green-600"
+              >
                 Privacy Policy
               </Link>
             </p>

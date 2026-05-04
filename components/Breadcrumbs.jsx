@@ -25,7 +25,7 @@ export default function Breadcrumbs({ items }) {
               ) : (
                 <Link
                   href={item.url}
-                  className="text-sm font-medium text-kahana-accent-water hover:text-kahana-accent-flower no-underline"
+                  className="text-sm font-medium text-oasis-green-700 hover:text-oasis-green-800 no-underline"
                 >
                   {item.name}
                 </Link>

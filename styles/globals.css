@@ -151,16 +151,16 @@ h6 {
   color: #5c5f2e !important;
 }
 
-/* High-contrast links */
+/* High-contrast links (oasis green — matches secondary / outlined CTA label) */
 a:not(.no-underline):not(.mobile-link):not(.nav-link):not(.btn-primary):not(.btn-secondary):not(.btn-tertiary):not(.dropdown-link):not(.blog-card-link):not(.doc-card-link):not(.shared-cta-pill) {
-  color: var(--bg-action) !important;
+  color: var(--link-color) !important;
   text-decoration: underline !important;
   font-weight: bold !important;
   transition: color 0.2s;
 }
 a:hover:not(.shared-cta-pill),
 a:focus:not(.shared-cta-pill) {
-  color: var(--bg-surface) !important;
+  color: var(--link-hover) !important;
 }
 
 /* Exception for navbar links - same as enterprise-browser/blog (--nav-link-color) */
@@ -938,12 +938,14 @@ section.bg-gradient-to-r h2.text-white {
 }
 
 :root {
-  /* Semantic text + link tokens (body links: oasis-blue per brand palette) */
+  /* Semantic tokens: body + inline links (greens match outlined CTA / Figma tokens above) */
   --text-base: #495800;         /* oasis-green-800 / marketing body */
-  --bg-action: #489cb5;         /* oasis-blue-500 / inline links */
+  --link-color: var(--btn-outlined-text); /* #7a9200 — inline links */
+  --link-hover: var(--btn-outlined-hover-text); /* #617500 */
+  --bg-action: #489cb5;         /* oasis-blue-500 / legacy default button fill + accents */
   --bg-highlight: #fdeabb;    /* desert-yellow-300 / soft accent */
   --bg-body: #f8faf2; /* oasis-green-50 */
-  --bg-surface: #3a7c91;       /* oasis-blue-600 / link hover */
+  --bg-surface: #3a7c91;       /* oasis-blue-600 / default button hover */
 
   /* Derived variables for usage */
   --border-light: var(--bg-highlight);
@@ -1335,8 +1337,42 @@ footer button.text-sm.no-underline {
 }
 
 footer button.text-sm.no-underline:hover {
-  color: var(--oasis-blue-500) !important;
+  color: var(--link-hover) !important;
   text-decoration: none !important;
+}
+
+/* Cookie consent banner: inline “Full cookie notice” must not use global `button` teal pill */
+.consent-banner button.consent-banner-inline-link {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  background-color: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  color: var(--link-color) !important;
+  display: inline !important;
+  font-size: inherit !important;
+  font-weight: 700 !important;
+  line-height: inherit !important;
+  margin: 0 !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  text-align: inherit !important;
+  text-decoration: underline !important;
+  text-underline-offset: 0.15em !important;
+  vertical-align: baseline !important;
+  cursor: pointer !important;
+  transition: color 0.2s ease !important;
+}
+.consent-banner button.consent-banner-inline-link:hover {
+  background-color: transparent !important;
+  color: var(--link-hover) !important;
+}
+.consent-banner button.consent-banner-inline-link:focus-visible {
+  background-color: transparent !important;
+  color: var(--link-hover) !important;
+  outline: 2px solid var(--btn-focus-ring) !important;
+  outline-offset: 2px !important;
 }
 
 /* Mobile menu links - match Products/Pricing nav color #617500 */
@@ -1376,10 +1412,14 @@ footer button.text-sm.no-underline:hover {
 
 /* Keep the "Read More" link styled as a link */
 .doc-card-link .text-kahana-primary,
-.doc-card-link .text-kahana-primary:visited,
+.doc-card-link .text-kahana-primary:visited {
+  color: var(--link-color) !important;
+  text-decoration: none !important;
+  font-weight: bold !important;
+}
 .doc-card-link .text-kahana-primary:hover,
 .doc-card-link .text-kahana-primary:active {
-  color: var(--bg-action) !important;
+  color: var(--link-hover) !important;
   text-decoration: none !important;
   font-weight: bold !important;
 }
