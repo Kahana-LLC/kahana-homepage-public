@@ -331,7 +331,7 @@ export default function BlogPost({ post }) {
                   />
                   {coverImage.photographer && (
                     <figcaption className="absolute bottom-4 right-4 text-sm text-white bg-black/70 px-3 py-2 rounded-md backdrop-blur-sm">
-                      Photo by <a href={coverImage.photographer_url} target="_blank" rel="noopener noreferrer" className="text-white hover:text-kahana-accent-water transition-colors">{coverImage.photographer}</a> on Pexels
+                      Photo by <a href={coverImage.photographer_url} target="_blank" rel="noopener noreferrer" className="text-white hover:text-oasis-green-200 transition-colors">{coverImage.photographer}</a> on Pexels
                     </figcaption>
                   )}
                 </>

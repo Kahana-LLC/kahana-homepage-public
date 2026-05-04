@@ -89,8 +89,8 @@ module.exports = {
         brand: {
           text: oasisGreen[800],
           "text-strong": oasisGreen[900],
-          link: oasisBlue[500],
-          "link-hover": oasisBlue[600],
+          link: oasisGreen[600],
+          "link-hover": oasisGreen[700],
           accent: oasisGreen[600],
           "accent-hover": oasisGreen[700],
           surface: oasisGreen[50],

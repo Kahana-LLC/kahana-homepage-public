@@ -65,13 +65,13 @@
 }
 
 .doc-content a {
-  color: var(--bg-action);
+  color: var(--link-color);
   text-decoration: none;
   transition: color 0.2s;
 }
 
 .doc-content a:hover {
-  color: var(--bg-surface);
+  color: var(--link-hover);
   text-decoration: underline;
 }
 

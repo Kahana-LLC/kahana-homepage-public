@@ -208,7 +208,7 @@ export default function BlogIndex({ posts = [] }) {
               placeholder="Search articles..."
               value={searchQuery}
               onChange={handleSearchChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-kahana-accent-water focus:border-transparent"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-oasis-green-600 focus:border-transparent"
             />
             <div className="absolute inset-y-0 right-0 flex items-center pr-3">
               <svg className="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
