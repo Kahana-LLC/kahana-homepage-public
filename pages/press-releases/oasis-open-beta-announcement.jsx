@@ -34,7 +34,7 @@ export default function OasisOpenBetaPressRelease() {
               <Link href="/products/oasis-browser" className={linkClass}>
                 Oasis
               </Link>{' '}
-              as a refuge from that pattern—a sanctuary where privacy comes first, data stays closer to the user, and people can
+              as a refuge from that pattern, a sanctuary where privacy comes first, data stays closer to the user, and people can
               focus on projects, work, and life instead of constantly wondering what is leaking out. After an extended closed beta
               with waitlist users and teams, Kahana is moving toward open beta and will spotlight the launch on{' '}
               <a href="https://www.producthunt.com/" rel="noopener noreferrer" target="_blank" className={linkClass}>
@@ -51,7 +51,7 @@ export default function OasisOpenBetaPressRelease() {
             <div className="mt-6 space-y-6 text-base leading-relaxed text-oasis-green-900">
               <p>
                 <strong>Kahana</strong> today announced that <strong>Oasis</strong>, its privacy-first web browser with AI
-                woven into the browsing experience—not bolted on as a disconnected chat window—has completed an extended{' '}
+                woven into the browsing experience (not bolted on as a disconnected chat window) has completed an extended{' '}
                 <strong>closed beta</strong>. The company is now moving toward <strong>open beta</strong> distribution while
                 keeping the product&apos;s north star intact: give people transparency, peace of mind, and control over their
                 data so their focus can return to what actually matters.
@@ -60,7 +60,7 @@ export default function OasisOpenBetaPressRelease() {
                 On the public web, the default experience is often noisy: ads, trackers, and opaque data flows that make it hard
                 to know what is being collected, by whom, and for what purpose. Oasis is designed to push back on that status
                 quo with ad-blocking controls, privacy-first defaults, and a clear posture that Kahana does not sell users&apos;
-                browsing data—collecting only what people explicitly permit, in line with the promises surfaced on Kahana&apos;s
+                browsing data, collecting only what people explicitly permit, in line with the promises surfaced on Kahana&apos;s
                 homepage and in its policies.
               </p>
               <p>
@@ -75,15 +75,15 @@ export default function OasisOpenBetaPressRelease() {
 
               <h2 className="mt-12 text-2xl font-bold text-oasis-green-950">Why &quot;Oasis&quot;: a refuge, not another noisy tab</h2>
               <p>
-                Kahana&apos;s mission language is deliberate: an oasis is a refuge—shelter and calm in a harsh landscape. The
+                Kahana&apos;s mission language is deliberate: an oasis is a refuge, shelter and calm in a harsh landscape. The
                 modern web can feel like a gauntlet of fragmentation, spyware, data leaks, and fast-moving AI-driven threats. The
                 company believes the browser itself should be a safe place to work, create, and explore, with security and privacy
-                at the core—not as an afterthought, not as a toggle you flip on after the fact.
+                at the core, not as an afterthought, not as a toggle you flip on after the fact.
               </p>
               <p>
                 That framing mirrors what visitors see in Kahana&apos;s public story:{' '}
                 <strong>Your Online Refuge. Your Terms.</strong> In practice, Kahana describes Oasis as a sanctuary where
-                privacy is paramount, focus is protected, and data remains yours—so browsing can stay calm, secure, and private.
+                privacy is paramount, focus is protected, and data remains yours, so browsing can stay calm, secure, and private.
               </p>
               <blockquote className="border-l-4 border-oasis-green-600/35 bg-oasis-green-50/60 py-5 pl-5 pr-4 text-oasis-green-800 italic">
                 <p className="text-[0.96875rem] leading-relaxed">
@@ -93,7 +93,7 @@ export default function OasisOpenBetaPressRelease() {
                   breaches.
                 </p>
                 <p className="mt-3 text-sm not-italic text-oasis-green-700">
-                  — <strong>Adam Kershner</strong>, CEO and Founder, Kahana
+                  <strong>Adam Kershner</strong>, CEO and Founder, Kahana
                 </p>
               </blockquote>
               <p>
@@ -105,7 +105,7 @@ export default function OasisOpenBetaPressRelease() {
               <h2 className="mt-12 text-2xl font-bold text-oasis-green-950">AI that works where your work already lives</h2>
               <p>
                 Oasis pairs privacy-first browsing with an assistant meant to meet you in the same &quot;room&quot; as your
-                tabs—not a blank-slate chat that ignores the page in front of you. Deep dives on the{' '}
+                tabs, not a blank-slate chat that ignores the page in front of you. Deep dives on the{' '}
                 <Link href="/features/oasis-assistant" className={linkClass}>
                   Oasis Assistant
                 </Link>{' '}
@@ -122,7 +122,7 @@ export default function OasisOpenBetaPressRelease() {
                 <Link href="/features/oasis-confirmations" className={linkClass}>
                   confirmations for sensitive actions
                 </Link>
-                —trust beats surprise.
+                . Trust beats surprise.
               </p>
               <p>
                 The full catalog of capability write-ups lives on the{' '}
@@ -137,8 +137,8 @@ export default function OasisOpenBetaPressRelease() {
                 Even strong models miss tone, speed, and risk in real tabs. Kahana is developing{' '}
                 <Link href="/features/oasis-amplifier" className={linkClass}>
                   Oasis Amplifier
-                </Link>
-                —a planned capability—so structured feedback (what felt slow, wrong, unsafe, or great) can steer the assistant
+                </Link>{' '}
+                (a planned capability) so structured feedback (what felt slow, wrong, unsafe, or great) can steer the assistant
                 over time, without turning browsing history into a free-for-all data grab. Until Amplifier ships, treat the
                 public materials as intent and product direction, not a guarantee of shipped metrics.
               </p>
@@ -146,16 +146,16 @@ export default function OasisOpenBetaPressRelease() {
               <h2 className="mt-12 text-2xl font-bold text-oasis-green-950">From closed beta to a broader audience</h2>
               <p>
                 Kahana kept the beta intentionally limited so it could listen closely, iterate quickly, and validate reliability
-                across real machines and usage patterns. Completing closed beta is not a claim that software is
-                &quot;finished&quot;—it is a statement that privacy defaults, performance, and trust signals are ready for a
+                across real machines and usage patterns. Completing closed beta is not a claim that the software is finished.
+                It is a statement that privacy defaults, performance, and trust signals are ready for a
                 wider set of people to try Oasis in daily life.
               </p>
 
               <h2 className="mt-12 text-2xl font-bold text-oasis-green-950">Organizations: the same risks, inside the session</h2>
               <p>
                 Enterprises face a parallel problem: work has moved into SaaS and the browser, but many access models still
-                behave as if control ends at the corporate laptop. When sensitive activity happens in browser sessions—often on
-                devices the company does not own—data can leak through gaps that traditional perimeter tools were not built to
+                behave as if control ends at the corporate laptop. When sensitive activity happens in browser sessions, often on
+                contractor or third-party devices the company does not own, data can leak through gaps that traditional perimeter tools were not built to
                 see. Kahana contributes to industry-wide learning through the{' '}
                 <Link href="/data-leakage-consortium" className={linkClass}>
                   Data Leakage Consortium
@@ -167,9 +167,9 @@ export default function OasisOpenBetaPressRelease() {
                 <Link href="/products/oasis-enterprise-browser" className={linkClass}>
                   Oasis Enterprise Browser
                 </Link>
-                : governance that can follow the session where SaaS work actually happens—integrating with identity and data
-                protection stacks—rather than only extending legacy device-centric assumptions. As Kahana&apos;s enterprise
-                narrative puts it: when work moves into SaaS, governance must move into the browser.
+                , a managed enterprise browser approach where policies follow the session where SaaS work actually happens, with
+                integration into identity and DLP stacks, rather than only extending legacy device-centric assumptions. When work
+                moves into SaaS, governance must move into the browser.
               </p>
 
               <h2 className="mt-12 text-2xl font-bold text-oasis-green-950">What&apos;s next: Product Hunt on May 20, 2026</h2>
@@ -208,8 +208,9 @@ export default function OasisOpenBetaPressRelease() {
 
               <h2 className="mt-12 text-2xl font-bold text-oasis-green-950">About Kahana</h2>
               <p>
-                Kahana builds Oasis for individuals who want a calmer, more private web—and for organizations that need
-                session-level governance without pretending every collaborator ships a managed laptop. The company is
+                Kahana builds Oasis for individuals who want a calmer, more private web, and for organizations that need secure
+                SaaS access with governance in the browser for contractors, partners, and distributed teams, without defaulting to
+                hardware-first access paths alone. The company is
                 headquartered in <strong>St. Louis</strong>. For logos, colors, leadership photography, and press inquiries, use
                 the{' '}
                 <Link href="/press-kit" className={linkClass}>

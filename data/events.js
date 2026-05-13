@@ -1,3 +1,11 @@
+import { getCloudinaryImageUrl } from '../utils/cloudinary-mapper';
+
+const ADAM_HEADSHOT_URL = getCloudinaryImageUrl('/assets/headshots/adam_kershner.jpg', {
+  width: 800,
+  height: 800,
+  quality: 'auto:good',
+});
+
 export const EVENTS = [
   {
     slug: "where-productivity-and-security-collide-masterclass",
@@ -19,7 +27,7 @@ export const EVENTS = [
       {
         name: "Adam Kershner",
         role: "Kahana",
-        image: "/images/about/adam-kershner.jpg",
+        image: ADAM_HEADSHOT_URL,
         linkedin: "https://www.linkedin.com/in/adam-kershner/",
         website: null,
       },
@@ -47,7 +55,7 @@ export const EVENTS = [
     founderStory: {
       name: "Adam Kershner",
       role: "CEO & Founder, Kahana",
-      image: "/images/about/adam-kershner.jpg",
+      image: ADAM_HEADSHOT_URL,
       linkedin: "https://www.linkedin.com/in/adam-kershner/",
       intro:
         "Adam built his career inside IT teams at a billion-dollar CPG company, where he first witnessed how quickly security gaps compound when the tools people rely on are not built with security in mind.",

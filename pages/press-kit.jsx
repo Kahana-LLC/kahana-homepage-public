@@ -5,6 +5,14 @@ import SEO from '../components/SEO';
 import CopyHexButton from '../components/CopyHexButton';
 import PressInquiriesTally from '../components/PressInquiriesTally';
 import { brandPaletteFamilies } from '../data/brand-palette';
+import { getCloudinaryImageUrl } from '../utils/cloudinary-mapper';
+
+/** Canonical press headshot (matches config/authors.js avatar + cloudinary-mapping.json). */
+const ADAM_HEADSHOT_URL = getCloudinaryImageUrl('/assets/headshots/adam_kershner.jpg', {
+  width: 448,
+  height: 448,
+  quality: 'auto:good',
+});
 
 const LOGO_ASSETS = [
   {
@@ -124,7 +132,7 @@ export default function PressKitPage() {
             <div className="mt-8 flex flex-col gap-8 rounded-xl border border-oasis-green-100 bg-oasis-green-50/30 p-8 sm:flex-row sm:items-start">
               <div className="relative mx-auto h-48 w-48 shrink-0 overflow-hidden rounded-lg border border-oasis-green-100 bg-white shadow-sm sm:mx-0 sm:h-56 sm:w-56">
                 <Image
-                  src="/images/about/adam-kershner.jpg"
+                  src={ADAM_HEADSHOT_URL}
                   alt="Adam Kershner, CEO and Founder of Kahana"
                   width={224}
                   height={224}
@@ -141,7 +149,7 @@ export default function PressKitPage() {
                   specific event.
                 </p>
                 <a
-                  href="/images/about/adam-kershner.jpg"
+                  href={ADAM_HEADSHOT_URL}
                   download="adam-kershner-kahana.jpg"
                   className="mt-4 inline-flex items-center text-sm font-semibold text-oasis-green-700 hover:text-oasis-green-900"
                 >
