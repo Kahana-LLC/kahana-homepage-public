@@ -1,6 +1,7 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
 import FeatureDeepDiveShell from '../../components/features/FeatureDeepDiveShell';
+import { getFeatureRelatedDocsProps } from '../../utils/featurePageStaticProps';
 
 const OasisMockConfirmModal = dynamic(
   () => import('../../components/products/oasis/OasisUiMocks').then((m) => m.OasisMockConfirmModal),
@@ -14,7 +15,11 @@ const OasisMockConfirmModal = dynamic(
 
 const CANONICAL = 'https://kahana.co/features/oasis-confirmations';
 
-export default function OasisConfirmationsFeaturePage() {
+export async function getStaticProps() {
+  return getFeatureRelatedDocsProps('oasis-confirmations');
+}
+
+export default function OasisConfirmationsFeaturePage({ relatedDocs = [] }) {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
@@ -40,6 +45,7 @@ export default function OasisConfirmationsFeaturePage() {
       secondaryLabel="Get in touch"
       backHref="/products/oasis-browser#confirmations"
       backLabel="← Back to Oasis Browser (Confirmations)"
+      relatedDocs={relatedDocs}
     >
       <section className="border-b border-oasis-green-800/8 bg-white py-12 md:py-16">
         <div className="mx-auto max-w-3xl px-4 space-y-5 text-oasis-green-800/95 leading-relaxed sm:px-6 lg:px-8">

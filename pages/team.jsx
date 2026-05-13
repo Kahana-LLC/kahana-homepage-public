@@ -3,6 +3,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import SEO from '../components/SEO';
 import SharedCTA from '../components/SharedCTA';
+import { getCloudinaryImageUrl } from '../utils/cloudinary-mapper';
+
+const ADAM_HEADSHOT_URL = getCloudinaryImageUrl('/assets/headshots/adam_kershner.jpg', {
+  width: 800,
+  height: 800,
+  quality: 'auto:good',
+});
 
 export default function Team() {
   return (
@@ -53,7 +60,7 @@ export default function Team() {
           <div className="mt-10 grid gap-10 md:grid-cols-[minmax(0,320px)_1fr] md:items-start md:gap-12">
             <div className="flex justify-center md:justify-start">
               <Image
-                src="/images/about/adam-kershner.jpg"
+                src={ADAM_HEADSHOT_URL}
                 alt="Adam Kershner, CEO and Founder of Oasis"
                 width={1024}
                 height={1024}

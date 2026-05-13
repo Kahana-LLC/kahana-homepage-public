@@ -1,0 +1,12 @@
+{
+  "title": "Long-session memory (Railroad)",
+  "description": "Optional **structured memory** extracted over time and re-injected into prompts so follow-up turns stay coherent (user-facing: “remembers details within your session/product limits”).",
+  "slug": "long-session-memory-railroad",
+  "category": "guides",
+  "date": "2026-05-14",
+  "authors": [
+    "Adam Kershner"
+  ],
+  "content": "<div class='doc-content'><article class='prose prose-slate max-w-none'><h1>Long-session memory (Railroad)</h1>\n<p>Optional <strong>structured memory</strong> extracted over time and re-injected into prompts so follow-up turns stay coherent (user-facing: “remembers details within your session/product limits”).</p>\n<h2>What this is</h2>\n<p><strong>Session memory</strong> (product nickname “Railroad”) stores structured facts the assistant extracts across turns so long chats stay coherent—within privacy and retention rules for your plan.</p>\n<h2>How to use it</h2>\n<ul>\n<li>You do not manage memory manually; it updates as you chat.</li>\n<li>Ask the assistant to “forget” sensitive details if the product exposes that control in your build.</li>\n<li>Start a <strong>New chat</strong> for a clean memory scope.</li>\n</ul>\n<h2>Notes and limits</h2>\n<p>Memory is not a full backup of pages; it is distilled text used to steer replies.</p>\n<h2>Related topics</h2>\n<ul>\n<li><a href=\"/docs/multi-step-agent-loop\">Multi Step Agent Loop</a></li>\n<li><a href=\"/docs/assistant-and-cloud-data\">Assistant And Cloud Data</a></li>\n<li><a href=\"/docs/chat-history-indexeddb\">Chat History Indexeddb</a></li>\n</ul>\n</article></div>",
+  "generatedFrom": "help-center-migrate"
+}

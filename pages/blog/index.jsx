@@ -270,7 +270,7 @@ export default function BlogIndex({ posts = [] }) {
                         pageNum === currentPage
                           ? 'btn-primary'
                           : pageNum === '...'
-                          ? 'cursor-default'
+                          ? 'btn-tertiary btn-sm !rounded-md cursor-default pointer-events-none'
                           : 'btn-secondary'
                       }`}
                     >

@@ -1,0 +1,12 @@
+{
+  "title": "Reduced motion",
+  "description": "Assistant UI respects **prefers-reduced-motion** for typewriter and motion-heavy affordances where implemented.",
+  "slug": "reduced-motion",
+  "category": "guides",
+  "date": "2026-05-14",
+  "authors": [
+    "Adam Kershner"
+  ],
+  "content": "<div class='doc-content'><article class='prose prose-slate max-w-none'><h1>Reduced motion</h1>\n<p>Assistant UI respects <strong>prefers-reduced-motion</strong> for typewriter and motion-heavy affordances where implemented.</p>\n<h2>What this is</h2>\n<p>If your OS enables <strong>prefers-reduced-motion</strong>, Oasis reduces non-essential animations (for example typewriter suggestion cycling) while keeping functionality.</p>\n<h2>How to use it</h2>\n<ul>\n<li>Toggle the OS setting in <strong>Accessibility</strong> to see the calmer UI.</li>\n<li>Critical progress spinners still animate enough to be visible.</li>\n<li>No per-Oasis toggle is required in most builds.</li>\n</ul>\n<h2>Notes and limits</h2>\n<p>Some third-party OS themes ignore reduced-motion; results vary.</p>\n<h2>Related topics</h2>\n<ul>\n<li><a href=\"/docs/assistant-themes\">Assistant Themes</a></li>\n<li><a href=\"/docs/composer-and-follow-ups\">Composer And Follow Ups</a></li>\n<li><a href=\"/docs/voice-orb-hands-free\">Voice Orb Hands Free</a></li>\n</ul>\n</article></div>",
+  "generatedFrom": "help-center-migrate"
+}

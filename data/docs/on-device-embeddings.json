@@ -1,0 +1,12 @@
+{
+  "title": "On-device embeddings",
+  "description": "Optional **local** embedding pipeline (WASM + small model packaged with the browser) for semantic features without calling a remote model hub—explain privacy benefit and limitations.",
+  "slug": "on-device-embeddings",
+  "category": "guides",
+  "date": "2026-05-14",
+  "authors": [
+    "Adam Kershner"
+  ],
+  "content": "<div class='doc-content'><article class='prose prose-slate max-w-none'><h1>On-device embeddings</h1>\n<p>Optional <strong>local</strong> embedding pipeline (WASM + small model packaged with the browser) for semantic features without calling a remote model hub—explain privacy benefit and limitations.</p>\n<h2>What this is</h2>\n<p>Some builds ship a <strong>local embedding</strong> stack (WASM + small model) so semantic features can run <strong>without</strong> sending text to a remote model hub—improving privacy for supported flows.</p>\n<h2>How to use it</h2>\n<ul>\n<li>No user setup is required when packaged; features activate when enabled in that build.</li>\n<li>Expect larger download sizes on first install when embedding assets ship.</li>\n<li>Quality differs from cloud-scale models; use cloud features when you need maximum recall.</li>\n</ul>\n<h2>Notes and limits</h2>\n<p>Embedding coverage does not replace full-page understanding for arbitrary PDFs.</p>\n<h2>Related topics</h2>\n<ul>\n<li><a href=\"/docs/assistant-and-cloud-data\">Assistant And Cloud Data</a></li>\n<li><a href=\"/docs/first-run-data-policy-url\">First Run Data Policy Url</a></li>\n<li><a href=\"/docs/plain-english-browser-control\">Plain English Browser Control</a></li>\n</ul>\n</article></div>",
+  "generatedFrom": "help-center-migrate"
+}

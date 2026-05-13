@@ -1,0 +1,12 @@
+{
+  "title": "Kahana / Supabase sign-in",
+  "description": "Assistant features tied to billing, voice, and history use **signed-in** Kahana identity (OAuth/email through the in-panel **Auth** UI and Supabase session).",
+  "slug": "kahana-supabase-sign-in",
+  "category": "guides",
+  "date": "2026-05-14",
+  "authors": [
+    "Adam Kershner"
+  ],
+  "content": "<div class='doc-content'><article class='prose prose-slate max-w-none'><h1>Kahana / Supabase sign-in</h1>\n<p>Assistant features tied to billing, voice, and history use <strong>signed-in</strong> Kahana identity (OAuth/email through the in-panel <strong>Auth</strong> UI and Supabase session).</p>\n<h2>What this is</h2>\n<p>Oasis uses <strong>Kahana</strong> (backed by <strong>Supabase</strong>) for identity. Signing in unlocks cloud-backed assistant features: usage limits, voice transcription, chat sync to IndexedDB per user, and more.</p>\n<h2>How to use it</h2>\n<ul>\n<li>Open the assistant and choose <strong>Sign in</strong> or <strong>Create account</strong>.</li>\n<li>Prefer <strong>OAuth</strong> (Google, Apple, etc.) when offered for fewer passwords.</li>\n<li>Stay signed in for the best voice and quota experience; session refresh is automatic when possible.</li>\n</ul>\n<h2>Notes and limits</h2>\n<p>If cookies or storage are blocked aggressively, auth may fail—allow first-party storage for the profile.</p>\n<h2>Related topics</h2>\n<ul>\n<li><a href=\"/docs/guest-vs-signed-in\">Guest Vs Signed In</a></li>\n<li><a href=\"/docs/voice-and-sign-in\">Voice And Sign In</a></li>\n<li><a href=\"/docs/daily-token-usage-bar\">Daily Token Usage Bar</a></li>\n</ul>\n</article></div>",
+  "generatedFrom": "help-center-migrate"
+}

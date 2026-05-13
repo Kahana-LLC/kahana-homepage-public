@@ -4,12 +4,17 @@ import EnterpriseFeatureVisual from '../../components/features/EnterpriseFeature
 import { oasisCapabilities } from '../../data/oasisEnterpriseCapabilities';
 import { getEnterpriseFeatureNarrative } from '../../data/enterpriseFeatureNarrative';
 import EnterpriseFeatureNarrativeBand from '../../components/features/EnterpriseFeatureNarrativeBand';
+import { getFeatureRelatedDocsProps } from '../../utils/featurePageStaticProps';
 
 const feature = oasisCapabilities.find((c) => c.slug === 'oasis-enterprise-identity-dlp');
 const narrative = getEnterpriseFeatureNarrative(feature.slug);
 const CANONICAL = 'https://kahana.co/features/oasis-enterprise-identity-dlp';
 
-export default function OasisEnterpriseIdentityDlpPage() {
+export async function getStaticProps() {
+  return getFeatureRelatedDocsProps('oasis-enterprise-identity-dlp');
+}
+
+export default function OasisEnterpriseIdentityDlpPage({ relatedDocs = [] }) {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
@@ -34,6 +39,7 @@ export default function OasisEnterpriseIdentityDlpPage() {
       secondaryLabel="Get in touch"
       backHref="/products/oasis-enterprise-browser"
       backLabel="← Back to Oasis Enterprise Browser"
+      relatedDocs={relatedDocs}
     >
       <section className="border-b border-oasis-green-800/8 bg-white py-12 md:py-16">
         <div className="mx-auto max-w-3xl px-4 space-y-6 text-oasis-green-800/95 leading-relaxed sm:px-6 lg:px-8">

@@ -1,0 +1,12 @@
+{
+  "title": "Training gallery and milestones",
+  "description": "In-product **training** flow with badges/progress (currently backed by local storage with a path to server-side rewards—see engineering handoff docs).",
+  "slug": "training-gallery-and-milestones",
+  "category": "guides",
+  "date": "2026-05-14",
+  "authors": [
+    "Adam Kershner"
+  ],
+  "content": "<div class='doc-content'><article class='prose prose-slate max-w-none'><h1>Training gallery and milestones</h1>\n<p>In-product <strong>training</strong> flow with badges/progress (currently backed by local storage with a path to server-side rewards—see engineering handoff docs).</p>\n<h2>What this is</h2>\n<p>The <strong>training gallery</strong> tracks optional training tasks, badges, and milestones. Progress may live in local storage today with a path to server-backed rewards in future releases.</p>\n<h2>How to use it</h2>\n<ul>\n<li>Open the gallery from the assistant <strong>header menu</strong> when available.</li>\n<li>Complete suggested training flows to unlock badges.</li>\n<li>Revisit after product updates; new tasks may appear.</li>\n</ul>\n<h2>Notes and limits</h2>\n<p>Uninstalling the profile clears local progress unless synced by a future server feature.</p>\n<h2>Related topics</h2>\n<ul>\n<li><a href=\"/docs/thumbs-and-structured-feedback\">Thumbs And Structured Feedback</a></li>\n<li><a href=\"/docs/earn-chip-hints\">Earn Chip Hints</a></li>\n<li><a href=\"/docs/external-feedback-links\">External Feedback Links</a></li>\n</ul>\n</article></div>",
+  "generatedFrom": "help-center-migrate"
+}

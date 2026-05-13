@@ -1,6 +1,8 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
+import Link from 'next/link';
 import FeatureDeepDiveShell from '../../components/features/FeatureDeepDiveShell';
+import { getFeatureRelatedDocsProps } from '../../utils/featurePageStaticProps';
 
 const OasisMockAssistantHero = dynamic(
   () => import('../../components/products/oasis/OasisUiMocks').then((m) => m.OasisMockAssistantHero),
@@ -24,7 +26,11 @@ const OasisSkillsGallery = dynamic(
 
 const CANONICAL = 'https://kahana.co/features/oasis-assistant';
 
-export default function OasisAssistantFeaturePage() {
+export async function getStaticProps() {
+  return getFeatureRelatedDocsProps('oasis-assistant');
+}
+
+export default function OasisAssistantFeaturePage({ relatedDocs = [] }) {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
@@ -50,6 +56,7 @@ export default function OasisAssistantFeaturePage() {
       secondaryLabel="Get in touch"
       backHref="/products/oasis-browser#assistant"
       backLabel="← Back to Oasis Browser (Assistant)"
+      relatedDocs={relatedDocs}
     >
       <section className="border-b border-oasis-green-800/8 bg-white py-12 md:py-16">
         <div className="mx-auto max-w-3xl px-4 space-y-5 text-oasis-green-800/95 leading-relaxed sm:px-6 lg:px-8">
@@ -57,6 +64,16 @@ export default function OasisAssistantFeaturePage() {
             The panel is deliberately boring in the good way: a timeline you can skim, a composer that stays put, busy
             states when a tool is actually running, and read-aloud plus feedback on the latest reply when you want the
             answer in your ears, or want to thumbs-down a miss without breaking flow.
+          </p>
+          <p className="text-sm text-oasis-green-800/90">
+            For how the conversation timeline behaves in the product, see the{' '}
+            <Link
+              href="/docs/chat-timeline"
+              className="font-semibold text-brand-link no-underline hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-link"
+            >
+              Chat timeline
+            </Link>{' '}
+            article in the documentation library.
           </p>
           <p>
             The skills gallery is a <span className="font-medium text-oasis-green-800">tasting menu</span>, not a contract.

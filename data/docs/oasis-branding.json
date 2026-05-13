@@ -1,0 +1,12 @@
+{
+  "title": "Oasis branding",
+  "description": "Custom Oasis/Firefox Oasis visuals and naming; Help and feedback links route to Kahana (`app.support.baseURL`, `app.feedback.baseURL`) instead of Mozilla defaults.",
+  "slug": "oasis-branding",
+  "category": "guides",
+  "date": "2026-05-14",
+  "authors": [
+    "Adam Kershner"
+  ],
+  "content": "<div class='doc-content'><article class='prose prose-slate max-w-none'><h1>Oasis branding</h1>\n<p>Custom Oasis/Firefox Oasis visuals and naming; Help and feedback links route to Kahana (<code>app.support.baseURL</code>, <code>app.feedback.baseURL</code>) instead of Mozilla defaults.</p>\n<h2>What this is</h2>\n<p>Oasis is a customized Firefox-based browser. Help, feedback, and some policy links point to Kahana instead of Mozilla’s default pages so support matches your Oasis subscription and product.</p>\n<h2>How to use it</h2>\n<ul>\n<li>Use <strong>Help</strong> from the application menu to open Kahana documentation.</li>\n<li>Use <strong>Submit feedback</strong> (or the feedback survey link in the product) for Oasis-specific issues.</li>\n<li>Expect Oasis naming and visuals (toolbar, assistant, welcome) rather than stock Firefox branding.</li>\n</ul>\n<h2>Notes and limits</h2>\n<p>Some deep links still reference Mozilla technology (engine, security). Oasis-specific policy text lives on Kahana.</p>\n<h2>Related topics</h2>\n<ul>\n<li><a href=\"/docs/oasis-toolbar-pill\">Oasis Toolbar Pill</a></li>\n<li><a href=\"/docs/kahana-supabase-sign-in\">Kahana Supabase Sign In</a></li>\n</ul>\n</article></div>",
+  "generatedFrom": "help-center-migrate"
+}

@@ -416,7 +416,7 @@ export default function BlogPost({ post }) {
           <div className="mt-16 p-8 bg-gradient-to-br from-desert-yellow-100/20 to-oasis-blue-300/10 rounded-xl shadow-lg">
             <h2 className="text-2xl font-bold text-oasis-green-900 mb-4">Ready to Elevate Your Work Experience?</h2>
             <p className="text-lg text-oasis-green-800 mb-6">
-              We'd love to understand your unique challenges and explore how our solutions can help you achieve a more fluid way of working now and in the future. Let's discuss your specific needs and see how we can work together to create a more ergonomic future of work.
+              We'd love to understand your unique challenges and explore how our solutions can help you achieve a more fluid way of working now and in the future. Let's discuss your specific needs and see how we can work together to create a more elegant future of work.
             </p>
             <Link 
               href="/contact"

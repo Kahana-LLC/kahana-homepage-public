@@ -29,16 +29,18 @@ export const docsConfig = {
   // Categories and their display names
   categories: {
     features: "Features",
-    security: "Security", 
+    security: "Security",
+    privacy: "Privacy",
     guides: "Guides",
     api: "API",
-    troubleshooting: "Troubleshooting"
+    troubleshooting: "Troubleshooting",
   },
 
   // SEO defaults
   seo: {
     titleTemplate: "%s | Documentation",
-    description: "Browse Kahana's documentation to learn about features, security, and best practices.",
+    description:
+      "Reference articles for Oasis Browser: what is available, how features behave, and where to look next.",
     baseUrl: "https://kahana.co/docs"
   }
 };

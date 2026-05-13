@@ -1,0 +1,12 @@
+{
+  "title": "Oasis Assistant in the sidebar",
+  "description": "A dedicated **sidebar panel** (`viewOasisAssistantSidebar` / “Oasis Assistant”) hosts the assistant UI; default layout prefs can open it on first run.",
+  "slug": "oasis-assistant-in-the-sidebar",
+  "category": "guides",
+  "date": "2026-05-14",
+  "authors": [
+    "Adam Kershner"
+  ],
+  "content": "<div class='doc-content'><article class='prose prose-slate max-w-none'><h1>Oasis Assistant in the sidebar</h1>\n<p>A dedicated <strong>sidebar panel</strong> (<code>viewOasisAssistantSidebar</code> / “Oasis Assistant”) hosts the assistant UI; default layout prefs can open it on first run.</p>\n<h2>What this is</h2>\n<p>Oasis Assistant lives in a <strong>sidebar panel</strong> named “Oasis Assistant,” like other Firefox sidebars (bookmarks, history). Your chat session stays in that panel while you browse.</p>\n<h2>How to use it</h2>\n<ul>\n<li>Open <strong>View → Oasis Assistant</strong> (wording may vary by locale) or use the <strong>toolbar pill</strong>.</li>\n<li>Drag the sidebar edge to resize. Use the sidebar switcher if you have multiple panels installed.</li>\n<li>The assistant loads in the same profile as the window; closing the sidebar does not delete saved chats (see chat history docs).</li>\n</ul>\n<h2>Notes and limits</h2>\n<p>Very small windows may collapse header controls; use the pill or menu if the sidebar button is overflowed.</p>\n<h2>Related topics</h2>\n<ul>\n<li><a href=\"/docs/docked-sidebar-vs-floating-overlay\">Docked Sidebar Vs Floating Overlay</a></li>\n<li><a href=\"/docs/chat-history-indexeddb\">Chat History Indexeddb</a></li>\n<li><a href=\"/docs/composer-and-follow-ups\">Composer And Follow Ups</a></li>\n</ul>\n</article></div>",
+  "generatedFrom": "help-center-migrate"
+}

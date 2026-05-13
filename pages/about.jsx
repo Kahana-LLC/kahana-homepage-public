@@ -8,6 +8,11 @@ import SharedCTA from '../components/SharedCTA';
 import { getCloudinaryImageUrl } from '../utils/cloudinary-mapper';
 
 const PREVIEW_IMAGE = getCloudinaryImageUrl('/assets/oasis-browser-preview.png', { width: 1200, quality: 'auto:good' });
+const ADAM_HEADSHOT_URL = getCloudinaryImageUrl('/assets/headshots/adam_kershner.jpg', {
+  width: 800,
+  height: 800,
+  quality: 'auto:good',
+});
 
 const productB2C = {
   title: 'Oasis Browser',
@@ -376,7 +381,7 @@ export default function About() {
           <div className="mt-10 grid gap-10 md:grid-cols-[minmax(0,300px)_1fr] md:items-start md:gap-12">
             <div className="flex justify-center md:justify-start">
               <Image
-                src="/images/about/adam-kershner.jpg"
+                src={ADAM_HEADSHOT_URL}
                 alt="Adam Kershner, CEO and Founder of Kahana"
                 width={1024}
                 height={1024}

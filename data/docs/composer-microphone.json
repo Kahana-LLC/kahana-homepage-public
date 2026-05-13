@@ -1,0 +1,12 @@
+{
+  "title": "Composer microphone",
+  "description": "**Push-to-talk** in the composer sends audio for transcription and fills the input (separate from the orb flow).",
+  "slug": "composer-microphone",
+  "category": "guides",
+  "date": "2026-05-14",
+  "authors": [
+    "Adam Kershner"
+  ],
+  "content": "<div class='doc-content'><article class='prose prose-slate max-w-none'><h1>Composer microphone</h1>\n<p><strong>Push-to-talk</strong> in the composer sends audio for transcription and fills the input (separate from the orb flow).</p>\n<h2>What this is</h2>\n<p><strong>Composer microphone</strong> is <strong>push-to-talk</strong>: hold or click the mic in the composer, speak, release to send audio for transcription; text lands in the input field for editing before send.</p>\n<h2>How to use it</h2>\n<ul>\n<li>Grant <strong>microphone</strong> permission when the browser prompts.</li>\n<li>Edit the transcript if words are wrong, then press send normally.</li>\n<li>This path is separate from the full-screen <strong>voice orb</strong> loop.</li>\n</ul>\n<h2>Notes and limits</h2>\n<p>Poor network drops uploads; watch for inline errors and retry.</p>\n<h2>Related topics</h2>\n<ul>\n<li><a href=\"/docs/voice-and-sign-in\">Voice And Sign In</a></li>\n<li><a href=\"/docs/voice-orb-hands-free\">Voice Orb Hands Free</a></li>\n<li><a href=\"/docs/composer-and-follow-ups\">Composer And Follow Ups</a></li>\n</ul>\n</article></div>",
+  "generatedFrom": "help-center-migrate"
+}

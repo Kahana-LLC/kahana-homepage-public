@@ -171,7 +171,7 @@ export default function DownloadWhitePaperPage() {
                   The Future of Ergonomic Work
                 </h1>
                 <p className="mt-6 text-xl text-oasis-green-800">
-                  Explore how AR/VR technology is revolutionizing workplace productivity and creating more ergonomic, efficient work environments. This comprehensive white paper examines the health crisis of sedentary work, technological solutions that could free us from desk-bound productivity, and the companies leading the AR glasses revolution.
+                  Explore how AR/VR technology is revolutionizing workplace productivity and creating more elegant, efficient work environments. This comprehensive white paper examines the health crisis of sedentary work, technological solutions that could free us from desk-bound productivity, and the companies leading the AR glasses revolution.
                 </p>
               </div>
 
@@ -209,7 +209,7 @@ export default function DownloadWhitePaperPage() {
                         ✓
                       </div>
                     </div>
-                    <p className="ml-3 text-gray-700">Implementation roadmap for the future of ergonomic work</p>
+                    <p className="ml-3 text-gray-700">Implementation roadmap for the future of desk-free work</p>
                   </div>
                 </div>
               </div>

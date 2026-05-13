@@ -1,0 +1,12 @@
+{
+  "title": "Chat history (IndexedDB)",
+  "description": "Conversations are stored **per user** in the browser (IndexedDB): list, open, start **new chat**, **delete** past threads, with debounced save.",
+  "slug": "chat-history-indexeddb",
+  "category": "guides",
+  "date": "2026-05-14",
+  "authors": [
+    "Adam Kershner"
+  ],
+  "content": "<div class='doc-content'><article class='prose prose-slate max-w-none'><h1>Chat history (IndexedDB)</h1>\n<p>Conversations are stored <strong>per user</strong> in the browser (IndexedDB): list, open, start <strong>new chat</strong>, <strong>delete</strong> past threads, with debounced save.</p>\n<h2>What this is</h2>\n<p><strong>Signed-in</strong> chats are stored in <strong>IndexedDB</strong> in this browser, keyed to your Kahana user. You can list threads, resume, start <strong>New chat</strong>, and <strong>delete</strong> old ones.</p>\n<h2>How to use it</h2>\n<ul>\n<li>Open <strong>chat history</strong> from the assistant header.</li>\n<li>Pick a thread to load messages into the timeline.</li>\n<li><strong>New chat</strong> clears the composer for a fresh session while keeping other threads on disk.</li>\n</ul>\n<h2>Notes and limits</h2>\n<p>Clearing site data for the profile can erase IndexedDB; export important answers separately if needed.</p>\n<h2>Related topics</h2>\n<ul>\n<li><a href=\"/docs/chat-history-popover\">Chat History Popover</a></li>\n<li><a href=\"/docs/kahana-supabase-sign-in\">Kahana Supabase Sign In</a></li>\n<li><a href=\"/docs/welcome-back-after-sign-out\">Welcome Back After Sign Out</a></li>\n</ul>\n</article></div>",
+  "generatedFrom": "help-center-migrate"
+}

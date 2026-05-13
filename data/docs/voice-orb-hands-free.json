@@ -1,0 +1,12 @@
+{
+  "title": "Voice orb (hands-free)",
+  "description": "Full-screen-style **voice session**: listen → transcribe → respond; states include idle, listening, transcribing, thinking, speaking.",
+  "slug": "voice-orb-hands-free",
+  "category": "guides",
+  "date": "2026-05-14",
+  "authors": [
+    "Adam Kershner"
+  ],
+  "content": "<div class='doc-content'><article class='prose prose-slate max-w-none'><h1>Voice orb (hands-free)</h1>\n<p>Full-screen-style <strong>voice session</strong>: listen → transcribe → respond; states include idle, listening, transcribing, thinking, speaking.</p>\n<h2>What this is</h2>\n<p>The <strong>voice orb</strong> starts a hands-free loop: listen, transcribe, think, then respond (spoken or in chat depending on your setting). Status text under the orb tells you which phase you are in.</p>\n<h2>How to use it</h2>\n<ul>\n<li>Open the orb from the composer or header control (per your build).</li>\n<li>Wait for <strong>Listening</strong>, then speak naturally; pause briefly to end a phrase.</li>\n<li>Tap the orb to <strong>cancel</strong> long transcribe/think/speak phases when shown.</li>\n</ul>\n<h2>Notes and limits</h2>\n<p>Bluetooth headsets add latency; if transcripts cut off, pause slightly longer between sentences.</p>\n<h2>Related topics</h2>\n<ul>\n<li><a href=\"/docs/echo-guard\">Echo Guard</a></li>\n<li><a href=\"/docs/spoken-vs-chat-replies-orb\">Spoken Vs Chat Replies Orb</a></li>\n<li><a href=\"/docs/voice-and-sign-in\">Voice And Sign In</a></li>\n</ul>\n</article></div>",
+  "generatedFrom": "help-center-migrate"
+}

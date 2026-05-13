@@ -77,7 +77,7 @@ export default function JobSearchWaitlist() {
                   Oasis for Job Seeking
                 </h1>
                 <p className="mt-6 text-xl" style={{ color: '#495800' }}>
-                  Experience an elegant and calming environment designed to help you navigate your job search with ease. Oasis creates a beautiful, ergonomic browsing experience that brings focus and clarity to your career journey.
+                  Experience an elegant and calming environment designed to help you navigate your job search with ease. Oasis creates a beautiful, elegant browsing experience that brings focus and clarity to your career journey.
                 </p>
               </div>
 

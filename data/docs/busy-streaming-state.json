@@ -1,0 +1,12 @@
+{
+  "title": "Busy / streaming state",
+  "description": "Visual feedback while the model or tools are working (`AssistantBusyBar`, streaming into the timeline).",
+  "slug": "busy-streaming-state",
+  "category": "guides",
+  "date": "2026-05-14",
+  "authors": [
+    "Adam Kershner"
+  ],
+  "content": "<div class='doc-content'><article class='prose prose-slate max-w-none'><h1>Busy / streaming state</h1>\n<p>Visual feedback while the model or tools are working (<code>AssistantBusyBar</code>, streaming into the timeline).</p>\n<h2>What this is</h2>\n<p><strong>Busy</strong> and <strong>streaming</strong> states show that the model or a tool is still running. The <strong>Assistant busy bar</strong> and inline spinners prevent duplicate sends while work is in flight.</p>\n<h2>How to use it</h2>\n<ul>\n<li>Wait for the busy bar or spinner to clear before resending the same request.</li>\n<li>If text is streaming, partial answers are normal; let the chunk stream finish.</li>\n<li>Use <strong>Stop</strong> or dismiss controls if the product surfaces them for long operations.</li>\n</ul>\n<h2>Notes and limits</h2>\n<p>Network loss mid-stream may leave a partial message; retry with a shorter prompt if needed.</p>\n<h2>Related topics</h2>\n<ul>\n<li><a href=\"/docs/active-tool-indicator\">Active Tool Indicator</a></li>\n<li><a href=\"/docs/chat-timeline\">Chat Timeline</a></li>\n<li><a href=\"/docs/destructive-action-confirmations\">Destructive Action Confirmations</a></li>\n</ul>\n</article></div>",
+  "generatedFrom": "help-center-migrate"
+}

@@ -1,0 +1,12 @@
+{
+  "title": "Guest vs signed-in",
+  "description": "Explain which actions work signed out vs require sign-in (e.g. voice transcription and cloud routing per product rules).",
+  "slug": "guest-vs-signed-in",
+  "category": "guides",
+  "date": "2026-05-14",
+  "authors": [
+    "Adam Kershner"
+  ],
+  "content": "<div class='doc-content'><article class='prose prose-slate max-w-none'><h1>Guest vs signed-in</h1>\n<p>Explain which actions work signed out vs require sign-in (e.g. voice transcription and cloud routing per product rules).</p>\n<h2>What this is</h2>\n<p><strong>Guests</strong> can try limited assistant flows. <strong>Signed-in</strong> users get full routing, voice, persisted chat history keyed to your user id, and plan-aware token display.</p>\n<h2>How to use it</h2>\n<ul>\n<li>Use the assistant signed out to read marketing copy or try constrained demos.</li>\n<li>Sign in from the <strong>Auth</strong> screen when you hit a paywall or “please sign in” message.</li>\n<li>Sign out returns you to auth; local-only artifacts may remain until cleared.</li>\n</ul>\n<h2>Notes and limits</h2>\n<p>Exact guest allowances change with product policy; trust in-product messages over static docs.</p>\n<h2>Related topics</h2>\n<ul>\n<li><a href=\"/docs/kahana-supabase-sign-in\">Kahana Supabase Sign In</a></li>\n<li><a href=\"/docs/welcome-back-after-sign-out\">Welcome Back After Sign Out</a></li>\n<li><a href=\"/docs/chat-history-indexeddb\">Chat History Indexeddb</a></li>\n</ul>\n</article></div>",
+  "generatedFrom": "help-center-migrate"
+}

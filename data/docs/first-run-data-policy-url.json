@@ -1,0 +1,12 @@
+{
+  "title": "First-run data policy URL",
+  "description": "Oasis points first-run / data reporting URLs at **Kahana’s** privacy policy section for personal data collection (distinct from Mozilla’s default URLs).",
+  "slug": "first-run-data-policy-url",
+  "category": "privacy",
+  "date": "2026-05-14",
+  "authors": [
+    "Adam Kershner"
+  ],
+  "content": "<div class='doc-content'><article class='prose prose-slate max-w-none'><h1>First-run data policy URL</h1>\n<p>Oasis points first-run / data reporting URLs at <strong>Kahana’s</strong> privacy policy section for personal data collection (distinct from Mozilla’s default URLs).</p>\n<h2>What this is</h2>\n<p>Oasis points <strong>first-run / data policy</strong> URLs at <strong>Kahana’s</strong> privacy documentation (including personal data collection) instead of Mozilla’s default pages, so expectations match the Oasis operator.</p>\n<h2>How to use it</h2>\n<ul>\n<li>Read the linked policy during first run.</li>\n<li>Use Kahana support if wording conflicts with your enterprise contract.</li>\n<li>Firefox engine security updates still come from Mozilla infrastructure.</li>\n</ul>\n<h2>Notes and limits</h2>\n<p>Regional translations may lag English policy text briefly after updates.</p>\n<h2>Related topics</h2>\n<ul>\n<li><a href=\"/docs/assistant-and-cloud-data\">Assistant And Cloud Data</a></li>\n<li><a href=\"/docs/oasis-branding\">Oasis Branding</a></li>\n<li><a href=\"/docs/kahana-supabase-sign-in\">Kahana Supabase Sign In</a></li>\n</ul>\n</article></div>",
+  "generatedFrom": "help-center-migrate"
+}

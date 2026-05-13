@@ -1,6 +1,7 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
 import FeatureDeepDiveShell from '../../components/features/FeatureDeepDiveShell';
+import { getFeatureRelatedDocsProps } from '../../utils/featurePageStaticProps';
 
 const OasisMockOnboardingChecklist = dynamic(
   () => import('../../components/products/oasis/OasisUiMocks').then((m) => m.OasisMockOnboardingChecklist),
@@ -14,7 +15,11 @@ const OasisMockOnboardingChecklist = dynamic(
 
 const CANONICAL = 'https://kahana.co/features/oasis-onboarding';
 
-export default function OasisOnboardingFeaturePage() {
+export async function getStaticProps() {
+  return getFeatureRelatedDocsProps('oasis-onboarding');
+}
+
+export default function OasisOnboardingFeaturePage({ relatedDocs = [] }) {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
@@ -40,6 +45,7 @@ export default function OasisOnboardingFeaturePage() {
       secondaryLabel="Get in touch"
       backHref="/products/oasis-browser#onboarding"
       backLabel="← Back to Oasis Browser (Onboarding)"
+      relatedDocs={relatedDocs}
     >
       <section className="border-b border-oasis-green-800/8 bg-white py-12 md:py-16">
         <div className="mx-auto max-w-3xl px-4 space-y-5 text-oasis-green-800/95 leading-relaxed sm:px-6 lg:px-8">

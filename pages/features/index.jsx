@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import Script from 'next/script';
+import Link from 'next/link';
 import SEO from '../../components/SEO';
 import GalleryPaginationControls from '../../components/features/GalleryPaginationControls';
 import { FeatureCatalogCard } from '../../components/features/FeatureDiscoveryGrid';
@@ -82,6 +83,14 @@ export default function FeaturesIndexPage() {
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-center text-lg text-oasis-green-800/90">
             Explore deep-dives on Oasis Browser and Oasis Enterprise. Search by name or topic, or filter by product line.
+            For shorter, reference-style articles on how capabilities behave in the product, see{' '}
+            <Link
+              href="/docs"
+              className="font-semibold text-brand-link no-underline hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-link"
+            >
+              Documentation
+            </Link>
+            .
           </p>
 
           <div className="mx-auto mt-10 max-w-xl">

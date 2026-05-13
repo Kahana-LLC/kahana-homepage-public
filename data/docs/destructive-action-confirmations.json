@@ -1,0 +1,12 @@
+{
+  "title": "Destructive action confirmations",
+  "description": "When the assistant proposes something irreversible, a **confirmation modal** blocks until the user approves or cancels.",
+  "slug": "destructive-action-confirmations",
+  "category": "guides",
+  "date": "2026-05-14",
+  "authors": [
+    "Adam Kershner"
+  ],
+  "content": "<div class='doc-content'><article class='prose prose-slate max-w-none'><h1>Destructive action confirmations</h1>\n<p>When the assistant proposes something irreversible, a <strong>confirmation modal</strong> blocks until the user approves or cancels.</p>\n<h2>What this is</h2>\n<p>When the assistant plans something <strong>destructive</strong> (closing many tabs, deleting data, etc.), a <strong>confirmation modal</strong> requires an explicit choice before the browser acts.</p>\n<h2>How to use it</h2>\n<ul>\n<li>Read the summary carefully; <strong>Cancel</strong> is always safe.</li>\n<li><strong>Confirm</strong> only if the listed scope matches what you intended.</li>\n<li>If unsure, narrow your request (“close only the tab titled …”).</li>\n</ul>\n<h2>Notes and limits</h2>\n<p>Non-destructive reads (list tabs, summarize page) usually do not need confirmation.</p>\n<h2>Related topics</h2>\n<ul>\n<li><a href=\"/docs/plain-english-browser-control\">Plain English Browser Control</a></li>\n<li><a href=\"/docs/split-view-for-assistant-actions\">Split View For Assistant Actions</a></li>\n<li><a href=\"/docs/busy-streaming-state\">Busy Streaming State</a></li>\n</ul>\n</article></div>",
+  "generatedFrom": "help-center-migrate"
+}

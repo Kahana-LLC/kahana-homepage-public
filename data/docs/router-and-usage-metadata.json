@@ -1,0 +1,12 @@
+{
+  "title": "Router and usage metadata",
+  "description": "Assistant routing calls can consume tokens; usage may affect **plan limits**—point users to the token bar and account docs.",
+  "slug": "router-and-usage-metadata",
+  "category": "guides",
+  "date": "2026-05-14",
+  "authors": [
+    "Adam Kershner"
+  ],
+  "content": "<div class='doc-content'><article class='prose prose-slate max-w-none'><h1>Router and usage metadata</h1>\n<p>Assistant routing calls can consume tokens; usage may affect <strong>plan limits</strong>—point users to the token bar and account docs.</p>\n<h2>What this is</h2>\n<p>Before or alongside the main reply, Oasis may run <strong>routing</strong> steps that also consume <strong>tokens</strong>. Those counts roll into the same <strong>usage</strong> surfaces as chat tokens so your <strong>daily bar</strong> stays accurate.</p>\n<h2>How to use it</h2>\n<ul>\n<li>Watch the <strong>token usage</strong> strip in the composer/header after long sessions.</li>\n<li>If you approach your plan cap, shorten prompts or disable voice-heavy loops.</li>\n<li>Router usage is expected for complex asks; simple chit-chat uses less.</li>\n</ul>\n<h2>Notes and limits</h2>\n<p>Exact weighting of router vs chat tokens is billing-side; trust the bar and account page.</p>\n<h2>Related topics</h2>\n<ul>\n<li><a href=\"/docs/daily-token-usage-bar\">Daily Token Usage Bar</a></li>\n<li><a href=\"/docs/multi-step-agent-loop\">Multi Step Agent Loop</a></li>\n<li><a href=\"/docs/subscription-refresh\">Subscription Refresh</a></li>\n</ul>\n</article></div>",
+  "generatedFrom": "help-center-migrate"
+}

@@ -5513,7 +5513,7 @@ export default function WhitePaperPDF() {
                 </p>
 
                 <p className="text-lg text-oasis-green-900 mb-8">
-                  At Kahana, we are obsessed with solving this problem and bringing this vision to life. We are Biomedical Engineering graduates who left our full-time corporate jobs to dedicate years of our lives to serve this goal. We built Oasis, our voice-first browser, to make information access and organization more ergonomic, and hopefully pave the way for what AR-native browsing can be.
+                  At Kahana, we are obsessed with solving this problem and bringing this vision to life. We are Biomedical Engineering graduates who left our full-time corporate jobs to dedicate years of our lives to serve this goal. We built Oasis, our voice-first browser, to make information access and organization more elegant, and hopefully pave the way for what AR-native browsing can be.
                 </p>
 
                 <div className="bg-gradient-to-r from-[#4A6200]/10 to-[#7F9E36]/10 rounded-2xl p-8">
@@ -5528,7 +5528,7 @@ export default function WhitePaperPDF() {
                     <div>
                       <h4 className="text-lg font-semibold text-oasis-green-900 mb-3">Our Solution</h4>
                       <p className="text-oasis-green-900 mb-4">
-                        Oasis, our voice-first browser, represents our first step toward creating more ergonomic, efficient work environments that free people from the constraints of traditional desk-bound productivity.
+                        Oasis, our voice-first browser, represents our first step toward creating more elegant, efficient work environments that free people from the constraints of traditional desk-bound productivity.
                       </p>
                     </div>
                   </div>

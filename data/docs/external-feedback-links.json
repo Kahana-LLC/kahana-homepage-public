@@ -1,0 +1,12 @@
+{
+  "title": "External feedback links",
+  "description": "Tally form and Kahana **features** page linked from capabilities copy and header help.",
+  "slug": "external-feedback-links",
+  "category": "guides",
+  "date": "2026-05-14",
+  "authors": [
+    "Adam Kershner"
+  ],
+  "content": "<div class='doc-content'><article class='prose prose-slate max-w-none'><h1>External feedback links</h1>\n<p>Tally form and Kahana <strong>features</strong> page linked from capabilities copy and header help.</p>\n<h2>What this is</h2>\n<p>Oasis links to <strong>Kahana features</strong> documentation and a <strong>Tally</strong> feedback form from capabilities text and header help so you can report gaps outside the thumbs flow.</p>\n<h2>How to use it</h2>\n<ul>\n<li>Use <strong>Send feedback</strong> for broad product ideas.</li>\n<li>Use <strong>thumbs</strong> for message-specific quality.</li>\n<li>Use Kahana <strong>docs</strong> for how-to articles maintained on the web.</li>\n</ul>\n<h2>Notes and limits</h2>\n<p>Links open in a normal tab; they require network access.</p>\n<h2>Related topics</h2>\n<ul>\n<li><a href=\"/docs/thumbs-and-structured-feedback\">Thumbs And Structured Feedback</a></li>\n<li><a href=\"/docs/insert-capabilities-overview\">Insert Capabilities Overview</a></li>\n<li><a href=\"/docs/header-help-menu\">Header Help Menu</a></li>\n</ul>\n</article></div>",
+  "generatedFrom": "help-center-migrate"
+}
