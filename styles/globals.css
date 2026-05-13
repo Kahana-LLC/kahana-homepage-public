@@ -250,8 +250,8 @@ button,
 .btn,
 input[type="submit"],
 input[type="button"] {
-  background-color: var(--bg-action) !important;
-  color: var(--bg-body) !important;
+  background-color: var(--btn-primary-bg) !important;
+  color: #ffffff !important;
   font-weight: bold !important;
   border: none;
   border-radius: 0.375rem;
@@ -942,7 +942,7 @@ section.bg-gradient-to-r h2.text-white {
   --text-base: #495800;         /* oasis-green-800 / marketing body */
   --link-color: var(--btn-outlined-text); /* #7a9200 — inline links */
   --link-hover: var(--btn-outlined-hover-text); /* #617500 */
-  --bg-action: #489cb5;         /* oasis-blue-500 / legacy default button fill + accents */
+  --bg-action: #7a9200;         /* oasis-green-600 — default bare button fill (was oasis-blue-500) */
   --bg-highlight: #fdeabb;    /* desert-yellow-300 / soft accent */
   --bg-body: #f8faf2; /* oasis-green-50 */
   --bg-surface: #3a7c91;       /* oasis-blue-600 / default button hover */

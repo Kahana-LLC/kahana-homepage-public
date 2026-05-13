@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { IconThumbDown, IconThumbUp } from '@tabler/icons-react';
 
 const FEEDBACK_TAGS = ["Didn't work", 'Wrong result', 'Too slow', 'Safety concern', 'Confusing', 'Suggestion', 'Other'];
@@ -18,7 +19,7 @@ function FeedbackMocks() {
       <div
         className="rounded-2xl border border-oasis-green-800/12 bg-white p-4 shadow-sm"
         role="img"
-        aria-label="Illustration: structured feedback dialog titled Help us improve Oasis with category chips"
+        aria-label="Illustration: simplified structured feedback dialog with category chips (conceptual; in-app Training uses flows such as Train on a good answer)"
       >
         <div className="flex items-start justify-between gap-2 mb-3">
           <p className="text-sm font-semibold text-[#2f3a20]">Help us improve Oasis</p>
@@ -178,14 +179,25 @@ function ChartDataTable() {
 export function OasisAmplifierStory() {
   return (
     <div className="max-w-md text-oasis-green-800/95">
-      <div className="leading-relaxed text-base">
+      <div className="leading-relaxed text-base space-y-4">
         <p>
-          Most assistants miss the mark on real work: too slow, too wrong, or built for demos.{' '}
-          <span className="font-semibold text-oasis-green-800">Amplifier</span> is our planned layer that learns from{' '}
-          <span className="font-semibold text-oasis-green-800">your</span> tags, notes, and thumbs: session signal, not hype,
-          so speed, accuracy, and quality can move the way you care about. Consistent feedback over{' '}
-          <span className="font-semibold text-[#7a9200]">30, 60, and 90 days</span> can compound; the chart is{' '}
-          <span className="font-semibold">illustrative only</span>, not a live metric or guarantee for your curves.
+          Most assistants miss the mark on real work: too slow, too wrong, or tuned for demos.{' '}
+          <span className="font-semibold text-oasis-green-800">Training</span> in Oasis is where you react in context—tags,
+          notes, thumbs, and flows like training on a specific reply—so we can steer quality toward{' '}
+          <span className="font-semibold text-oasis-green-800">smarter, more accurate, and faster</span> answers for you.
+          Qualifying training can also add bonus tokens to your daily balance; caps and rules follow your Oasis plan.
+        </p>
+        <p>
+          <span className="font-semibold text-oasis-green-800">Amplifier</span> is the name we use for that whole feedback
+          loop: signal grounded in real conversations, not vibes. Today that signal is tied to your account and the
+          interaction you rate. Later, we plan explicit <span className="font-semibold text-oasis-green-800">anonymous</span>{' '}
+          and <span className="font-semibold text-oasis-green-800">personalized</span> training modes so you can choose how
+          much identity rides with the payload—roadmap, not a promise of ship dates.
+        </p>
+        <p>
+          Consistent, specific feedback over <span className="font-semibold text-[#7a9200]">30, 60, and 90 days</span> is
+          the shape of the compounding story below. The chart is <span className="font-semibold">illustrative only</span>,
+          not a live dashboard or guarantee for your curves.
         </p>
       </div>
     </div>
@@ -197,15 +209,26 @@ export function OasisAmplifierVisuals() {
   return (
     <div className="space-y-4 lg:min-w-0">
       <div className="lg:min-w-0">
-        <p className="text-xs font-semibold uppercase tracking-wide text-[#7a9200] mb-2">Your signal</p>
+        <p className="text-xs font-semibold uppercase tracking-wide text-[#7a9200] mb-2">Train & react</p>
+        <p className="text-xs text-oasis-green-800/70 mb-3 leading-relaxed">
+          Simplified mock for layout; see the{' '}
+          <Link
+            href="/features/oasis-amplifier"
+            className="font-medium text-brand-link no-underline hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-link"
+          >
+            Amplifier &amp; Training feature page
+          </Link>{' '}
+          for real in-app captures.
+        </p>
         <FeedbackMocks />
       </div>
       <div className="rounded-2xl border border-oasis-green-800/10 bg-white p-4 sm:p-5 shadow-sm lg:min-w-0">
         <p className="text-xs font-semibold uppercase tracking-wide text-[#7a9200] mb-1">Illustrative trajectory</p>
-        <h3 className="text-lg font-bold text-oasis-green-800 mb-1">Training correlates with better outcomes</h3>
+        <h3 className="text-lg font-bold text-oasis-green-800 mb-1">Better speed, accuracy, and quality for you</h3>
         <p className="text-sm text-oasis-green-800/80 mb-2">
-          Concept only: tags, thumbs, and notes feed a loop we plan to turn into steadier answers over time. Three
-          dimensions rising here as feedback piles up. Not a guarantee, live dashboard, or your actual trajectory.
+          Concept only: as Training piles up, we expect the assistant to feel sharper, steadier, and quicker on the work
+          you actually do. The three lines are placeholders for speed, accuracy, and overall quality—not a guarantee, live
+          dashboard, or your measured trajectory.
         </p>
         <ChartDataTable />
         <GrowthChartSvg />

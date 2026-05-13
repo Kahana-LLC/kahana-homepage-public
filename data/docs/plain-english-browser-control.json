@@ -1,0 +1,12 @@
+{
+  "title": "Plain-English browser control",
+  "description": "Users describe goals in natural language; Oasis selects **browser tools** (tabs, windows, search, groups, split view, page summarize, etc.) instead of expecting slash commands.",
+  "slug": "plain-english-browser-control",
+  "category": "guides",
+  "date": "2026-05-14",
+  "authors": [
+    "Adam Kershner"
+  ],
+  "content": "<div class='doc-content'><article class='prose prose-slate max-w-none'><h1>Plain-English browser control</h1>\n<p>Users describe goals in natural language; Oasis selects <strong>browser tools</strong> (tabs, windows, search, groups, split view, page summarize, etc.) instead of expecting slash commands.</p>\n<h2>What this is</h2>\n<p>Describe what you want in <strong>plain English</strong>. Oasis maps your request to <strong>browser tools</strong> (tabs, windows, web search, tab groups, split view, summarize page, history search, etc.) instead of requiring slash commands.</p>\n<h2>How to use it</h2>\n<ul>\n<li>Name the outcome: “Open Wikipedia in a new tab,” “Summarize this page,” “What tabs do I have?”</li>\n<li>Mention constraints: “only pinned tabs,” “without closing my email tab.”</li>\n<li>If the assistant mis-routes, correct it in the next message with more context.</li>\n</ul>\n<h2>Notes and limits</h2>\n<p>Privileged pages and PDFs may limit what tools can see; try a normal HTML page.</p>\n<h2>Related topics</h2>\n<ul>\n<li><a href=\"/docs/what-can-oasis-do-faq\">What Can Oasis Do Faq</a></li>\n<li><a href=\"/docs/insert-capabilities-overview\">Insert Capabilities Overview</a></li>\n<li><a href=\"/docs/destructive-action-confirmations\">Destructive Action Confirmations</a></li>\n</ul>\n</article></div>",
+  "generatedFrom": "help-center-migrate"
+}

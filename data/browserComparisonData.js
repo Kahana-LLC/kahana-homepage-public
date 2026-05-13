@@ -7,7 +7,7 @@ export const browserData = {
     security: "Enterprise-grade",
     aiFeatures: "Built into the core",
     platforms: "Windows, macOS",
-    uniqueStrength: "Elegant and ergonomic user experience",
+    uniqueStrength: "Elegant user experience",
     summary: "Perfect for enterprises of all kinds",
     logo: null,
   },

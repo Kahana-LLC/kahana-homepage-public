@@ -4,7 +4,10 @@ import Link from 'next/link';
 import SEO from '../SEO';
 import OasisProductHero from '../products/OasisProductHero';
 import FeatureDiscoveryGrid from './FeatureDiscoveryGrid';
+import FeatureRelatedDocsSection from './FeatureRelatedDocsSection';
+import SharedCTA from '../SharedCTA';
 import { getCloudinaryImageUrl } from '../../utils/cloudinary-mapper';
+import { trackButtonClick } from '../../utils/analytics';
 
 const defaultImage = getCloudinaryImageUrl('/assets/oasis-browser-preview.png', { width: 1200, quality: 'auto:good' });
 
@@ -34,6 +37,8 @@ export default function FeatureDeepDiveShell({
   backHref,
   backLabel,
   children,
+  relatedDocs = [],
+  showContactCta = true,
 }) {
   const featureSlug = parseFeatureSlugFromCanonicalUrl(url);
 
@@ -62,7 +67,25 @@ export default function FeatureDeepDiveShell({
 
       {children}
 
+      <FeatureRelatedDocsSection docs={relatedDocs} />
+
       <FeatureDiscoveryGrid currentSlug={featureSlug} />
+
+      {showContactCta ? (
+        <SharedCTA
+          sectionId={featureSlug ? `feature-cta-${featureSlug}` : 'feature-contact-cta'}
+          title="Get in touch"
+          description="Have a question, feedback, or anything you would like to send our way? We read every message."
+          buttonText="Contact us"
+          buttonLink="/contact"
+          buttonOnClick={() =>
+            trackButtonClick(
+              featureSlug ? `feature_${featureSlug}_contact_us` : 'feature_page_contact_us',
+              'feature_deep_dive_cta'
+            )
+          }
+        />
+      ) : null}
 
       <section className="border-t border-oasis-green-800/8 bg-oasis-green-50 py-12 md:py-14">
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">

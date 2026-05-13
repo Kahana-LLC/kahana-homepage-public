@@ -6,7 +6,7 @@ const authors = {
   "Adam Kershner": {
     name: "Adam Kershner",
     role: "CEO",
-    bio: "I'm the CEO of Kahana, bringing a unique perspective from my management consulting experience at Clarkston Consulting and biomedical engineering background from Duke University. I'm focused on making the future of work more ergonomic through innovative technology solutions that prioritize user well-being and productivity.",
+    bio: "I'm the CEO of Kahana, bringing a unique perspective from my management consulting experience at Clarkston Consulting and biomedical engineering background from Duke University. I'm focused on making the future of work more elegant through innovative technology solutions that prioritize user well-being and productivity.",
     linkedinProfile: "https://www.linkedin.com/in/adam-kershner/",
     avatar: "/assets/headshots/adam_kershner.jpg",
   },
@@ -126,7 +126,7 @@ const authors = {
   "Jonathan Gans": {
     name: "Jonathan Gans",
     role: "CEO",
-    bio: "Biomedical Engineering graduate from Duke University, previously in Deloitte's corporate strategy practice, and renowned Dog Whisperer in the Windy City. Building an ergonomic future of work.",
+    bio: "Biomedical Engineering graduate from Duke University, previously in Deloitte's corporate strategy practice, and renowned Dog Whisperer in the Windy City. Building an elegant future of work.",
     linkedinProfile: "https://www.linkedin.com/in/jonathan-gans1/",
     avatar: "/assets/headshots/jonathan_gans.jpg",
 

@@ -1,0 +1,12 @@
+{
+  "title": "Hidden Firefox Account toolbar button",
+  "description": "By default the Sync/account avatar in the **toolbar** is hidden (`browser.oasis.hideFxAccountsNavbarButton`); Sync can still be reached from the app menu and settings—document where users should go instead.",
+  "slug": "hidden-firefox-account-toolbar-button",
+  "category": "guides",
+  "date": "2026-05-14",
+  "authors": [
+    "Adam Kershner"
+  ],
+  "content": "<div class='doc-content'><article class='prose prose-slate max-w-none'><h1>Hidden Firefox Account toolbar button</h1>\n<p>By default the Sync/account avatar in the <strong>toolbar</strong> is hidden (<code>browser.oasis.hideFxAccountsNavbarButton</code>); Sync can still be reached from the app menu and settings—document where users should go instead.</p>\n<h2>What this is</h2>\n<p>Oasis hides the <strong>Firefox Account / Sync avatar</strong> from the main toolbar by default so the strip stays focused on Oasis. Sync and Mozilla account features are still available elsewhere in the browser.</p>\n<h2>How to use it</h2>\n<ul>\n<li>Open the <strong>application menu</strong> (hamburger) and use <strong>Sign in to Sync</strong> or account items there.</li>\n<li>Open <strong>Settings</strong> and search for <strong>Sync</strong> to manage account and devices.</li>\n<li>The assistant’s own sign-in (Kahana) is separate from Firefox Sync.</li>\n</ul>\n<h2>Notes and limits</h2>\n<p>Enterprise or power users who want the toolbar avatar back need a build or policy that clears the Oasis default; consumer Oasis keeps it hidden.</p>\n<h2>Related topics</h2>\n<ul>\n<li><a href=\"/docs/kahana-supabase-sign-in\">Kahana Supabase Sign In</a></li>\n<li><a href=\"/docs/oasis-toolbar-pill\">Oasis Toolbar Pill</a></li>\n<li><a href=\"/docs/guest-vs-signed-in\">Guest Vs Signed In</a></li>\n</ul>\n</article></div>",
+  "generatedFrom": "help-center-migrate"
+}

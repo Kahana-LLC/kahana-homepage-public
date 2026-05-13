@@ -157,10 +157,10 @@ export default function EarlyBirdDiscount() {
               Get Early Access to Oasis
             </h1>
             <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-6 leading-relaxed" style={{ color: '#495800' }}>
-              The most elegant and ergonomic browser experience.
+              The most elegant browser experience.
             </p>
             <p className="text-lg max-w-2xl mx-auto mb-8 leading-relaxed" style={{ color: '#495800' }}>
-              An elegant and ergonomic browser designed for researching, job seeking, and learning. Built for how your mind works naturally.
+              An elegant browser designed for researching, job seeking, and learning. Built for how your mind works naturally.
             </p>
           </div>
 

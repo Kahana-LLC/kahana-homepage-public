@@ -1,0 +1,12 @@
+{
+  "title": "Docked sidebar vs floating overlay",
+  "description": "Users can switch the assistant between a **docked sidebar** layout and a **floating overlay** without losing the session (layout swap in `SidebarController`).",
+  "slug": "docked-sidebar-vs-floating-overlay",
+  "category": "guides",
+  "date": "2026-05-14",
+  "authors": [
+    "Adam Kershner"
+  ],
+  "content": "<div class='doc-content'><article class='prose prose-slate max-w-none'><h1>Docked sidebar vs floating overlay</h1>\n<p>Users can switch the assistant between a <strong>docked sidebar</strong> layout and a <strong>floating overlay</strong> without losing the session (layout swap in <code>SidebarController</code>).</p>\n<h2>What this is</h2>\n<p>You can use Oasis Assistant <strong>docked</strong> (attached to the window edge) or as a <strong>floating overlay</strong> over the page. The product swaps layout without unloading your session when possible.</p>\n<h2>How to use it</h2>\n<ul>\n<li>From the assistant header, use the <strong>layout toggle</strong> (when shown) or follow in-product hints.</li>\n<li><strong>Docked</strong> keeps a stable strip for long sessions; <strong>overlay</strong> gives more page width.</li>\n<li>If a swap fails, Oasis falls back to a legacy hide/show path; try toggling once more.</li>\n</ul>\n<h2>Notes and limits</h2>\n<p>Reduced-motion preferences may change transition animations but not the end state.</p>\n<h2>Related topics</h2>\n<ul>\n<li><a href=\"/docs/oasis-assistant-in-the-sidebar\">Oasis Assistant In The Sidebar</a></li>\n<li><a href=\"/docs/oasis-toolbar-pill\">Oasis Toolbar Pill</a></li>\n<li><a href=\"/docs/assistant-themes\">Assistant Themes</a></li>\n</ul>\n</article></div>",
+  "generatedFrom": "help-center-migrate"
+}

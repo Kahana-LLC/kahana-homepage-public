@@ -1,0 +1,12 @@
+{
+  "title": "Assistant and cloud data",
+  "description": "High-level: what leaves the device (chat to model, voice audio to transcribe endpoint, usage events) vs what stays local (IndexedDB chats, local training progress).",
+  "slug": "assistant-and-cloud-data",
+  "category": "privacy",
+  "date": "2026-05-14",
+  "authors": [
+    "Adam Kershner"
+  ],
+  "content": "<div class='doc-content'><article class='prose prose-slate max-w-none'><h1>Assistant and cloud data</h1>\n<p>High-level: what leaves the device (chat to model, voice audio to transcribe endpoint, usage events) vs what stays local (IndexedDB chats, local training progress).</p>\n<h2>What this is</h2>\n<p><strong>Chat prompts</strong>, <strong>model completions</strong>, <strong>voice audio</strong>, and <strong>usage telemetry</strong> may leave the device to Kahana-operated services. <strong>IndexedDB chats</strong> and some <strong>training progress</strong> stay local until synced by future features.</p>\n<h2>How to use it</h2>\n<ul>\n<li>Assume cloud processing for signed-in chat unless an in-product banner says otherwise.</li>\n<li>Voice audio is transmitted for transcription; do not dictate highly sensitive secrets.</li>\n<li>Clear browsing data to remove local IndexedDB threads.</li>\n</ul>\n<h2>Notes and limits</h2>\n<p>Exact data map evolves; trust the privacy policy and in-product disclosures over this summary.</p>\n<h2>Related topics</h2>\n<ul>\n<li><a href=\"/docs/first-run-data-policy-url\">First Run Data Policy Url</a></li>\n<li><a href=\"/docs/voice-and-sign-in\">Voice And Sign In</a></li>\n<li><a href=\"/docs/chat-history-indexeddb\">Chat History Indexeddb</a></li>\n</ul>\n</article></div>",
+  "generatedFrom": "help-center-migrate"
+}

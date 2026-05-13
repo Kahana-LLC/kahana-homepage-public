@@ -1,0 +1,12 @@
+{
+  "title": "Voice and sign-in",
+  "description": "Transcription and cloud voice endpoints expect an **authenticated** session; document the “please sign in” case.",
+  "slug": "voice-and-sign-in",
+  "category": "guides",
+  "date": "2026-05-14",
+  "authors": [
+    "Adam Kershner"
+  ],
+  "content": "<div class='doc-content'><article class='prose prose-slate max-w-none'><h1>Voice and sign-in</h1>\n<p>Transcription and cloud voice endpoints expect an <strong>authenticated</strong> session; document the “please sign in” case.</p>\n<h2>What this is</h2>\n<p><strong>Voice transcription</strong> and cloud voice endpoints expect you to be <strong>signed in to Kahana</strong>. Unsigned users see a sign-in prompt instead of results.</p>\n<h2>How to use it</h2>\n<ul>\n<li>Complete Kahana auth before testing voice.</li>\n<li>If you signed out mid-session, re-auth and reopen the mic.</li>\n<li>Enterprise proxies must allow the voice endpoint domain (see your admin guide).</li>\n</ul>\n<h2>Notes and limits</h2>\n<p>Local-only experimental features may exist in developer builds; production follows cloud rules.</p>\n<h2>Related topics</h2>\n<ul>\n<li><a href=\"/docs/kahana-supabase-sign-in\">Kahana Supabase Sign In</a></li>\n<li><a href=\"/docs/composer-microphone\">Composer Microphone</a></li>\n<li><a href=\"/docs/guest-vs-signed-in\">Guest Vs Signed In</a></li>\n</ul>\n</article></div>",
+  "generatedFrom": "help-center-migrate"
+}

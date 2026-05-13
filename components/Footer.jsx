@@ -35,6 +35,8 @@ const RESOURCE_LINKS = [
   { href: '/blog', label: 'Blog' },
   { href: '/docs', label: 'Docs' },
   { href: '/support', label: 'Help Center' },
+  { href: '/press-kit', label: 'Press kit' },
+  { href: '/press-releases', label: 'Press releases' },
   { href: '/oasis-feedback-survey', label: 'Share Feedback!' },
 ];
 
@@ -215,7 +217,7 @@ function FooterContent() {
             <div className="flex flex-col items-stretch gap-4 lg:items-end">
               <DownloadOasisLink layout="footer" className="transition-opacity hover:opacity-95" />
               <p className="text-left text-lg text-[#666666] lg:text-right lg:text-xl lg:leading-6">
-                And browse the ergonomic way.
+                And browse the elegant way.
               </p>
             </div>
           </div>

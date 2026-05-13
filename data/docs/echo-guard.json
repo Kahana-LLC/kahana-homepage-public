@@ -1,0 +1,12 @@
+{
+  "title": "Echo guard",
+  "description": "Short **quiet period** before capture so the mic does not pick up the assistant’s own speech.",
+  "slug": "echo-guard",
+  "category": "guides",
+  "date": "2026-05-14",
+  "authors": [
+    "Adam Kershner"
+  ],
+  "content": "<div class='doc-content'><article class='prose prose-slate max-w-none'><h1>Echo guard</h1>\n<p>Short <strong>quiet period</strong> before capture so the mic does not pick up the assistant’s own speech.</p>\n<h2>What this is</h2>\n<p><strong>Echo guard</strong> is a short quiet period before recording so your microphone does not capture the assistant’s own voice from speakers.</p>\n<h2>How to use it</h2>\n<ul>\n<li>After the assistant speaks, wait for <strong>Ready</strong> / listening phase before talking.</li>\n<li>Use headphones for best accuracy in small rooms.</li>\n<li>If you get false starts, reduce room noise or switch input device in system settings.</li>\n</ul>\n<h2>Notes and limits</h2>\n<p>Echo guard timing is automatic; there is no user slider in consumer builds.</p>\n<h2>Related topics</h2>\n<ul>\n<li><a href=\"/docs/voice-orb-hands-free\">Voice Orb Hands Free</a></li>\n<li><a href=\"/docs/composer-microphone\">Composer Microphone</a></li>\n<li><a href=\"/docs/spoken-vs-chat-replies-orb\">Spoken Vs Chat Replies Orb</a></li>\n</ul>\n</article></div>",
+  "generatedFrom": "help-center-migrate"
+}

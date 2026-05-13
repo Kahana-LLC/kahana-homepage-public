@@ -1,0 +1,12 @@
+{
+  "title": "New tab and assistant landing",
+  "description": "Optional landing on the new tab page introduces the docked assistant (`browser.oasis.welcome.shownNtpAssistantLanding` and related prefs).",
+  "slug": "new-tab-and-assistant-landing",
+  "category": "guides",
+  "date": "2026-05-14",
+  "authors": [
+    "Adam Kershner"
+  ],
+  "content": "<div class='doc-content'><article class='prose prose-slate max-w-none'><h1>New tab and assistant landing</h1>\n<p>Optional landing on the new tab page introduces the docked assistant (<code>browser.oasis.welcome.shownNtpAssistantLanding</code> and related prefs).</p>\n<h2>What this is</h2>\n<p>The <strong>new tab page</strong> can show a lightweight <strong>assistant landing</strong> once, so new users discover the docked assistant next to their start surface.</p>\n<h2>How to use it</h2>\n<ul>\n<li>Open a new tab during first week of use; dismiss or interact with any assistant tip shown.</li>\n<li>After you engage, the page behaves like a normal new tab again.</li>\n<li>You can still open the assistant from the toolbar pill anytime.</li>\n</ul>\n<h2>Notes and limits</h2>\n<p>The landing is controlled by Oasis welcome/onboarding prefs; resetting profile may show it again.</p>\n<h2>Related topics</h2>\n<ul>\n<li><a href=\"/docs/oasis-welcome-not-firefox-about-welcome\">Oasis Welcome Not Firefox About Welcome</a></li>\n<li><a href=\"/docs/post-sign-in-assistant\">Post Sign In Assistant</a></li>\n<li><a href=\"/docs/onboarding-checklist-assistant-panel\">Onboarding Checklist Assistant Panel</a></li>\n</ul>\n</article></div>",
+  "generatedFrom": "help-center-migrate"
+}

@@ -1,0 +1,12 @@
+{
+  "title": "Chat history popover",
+  "description": "Header control to search and browse threads (recency grouping, keyboard-friendly).",
+  "slug": "chat-history-popover",
+  "category": "guides",
+  "date": "2026-05-14",
+  "authors": [
+    "Adam Kershner"
+  ],
+  "content": "<div class='doc-content'><article class='prose prose-slate max-w-none'><h1>Chat history popover</h1>\n<p>Header control to search and browse threads (recency grouping, keyboard-friendly).</p>\n<h2>What this is</h2>\n<p>The <strong>history popover</strong> (clock or list icon in the header) shows recent conversations with <strong>search</strong> and <strong>recency</strong> grouping so you can jump back quickly.</p>\n<h2>How to use it</h2>\n<ul>\n<li>Click the control, type a few characters to filter by title or content preview.</li>\n<li>Select a row to load that conversation.</li>\n<li>Use <strong>delete</strong> (trash) on a row to remove one thread; confirm if asked.</li>\n</ul>\n<h2>Notes and limits</h2>\n<p>Very long histories may take a moment to index on first open after update.</p>\n<h2>Related topics</h2>\n<ul>\n<li><a href=\"/docs/chat-history-indexeddb\">Chat History Indexeddb</a></li>\n<li><a href=\"/docs/composer-and-follow-ups\">Composer And Follow Ups</a></li>\n<li><a href=\"/docs/kahana-supabase-sign-in\">Kahana Supabase Sign In</a></li>\n</ul>\n</article></div>",
+  "generatedFrom": "help-center-migrate"
+}

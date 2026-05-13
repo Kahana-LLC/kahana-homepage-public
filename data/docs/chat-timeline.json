@@ -1,0 +1,12 @@
+{
+  "title": "Chat timeline",
+  "description": "Conversation view with **Markdown** rendering for assistant replies (including legacy delimiter fallbacks where needed).",
+  "slug": "chat-timeline",
+  "category": "guides",
+  "date": "2026-05-14",
+  "authors": [
+    "Adam Kershner"
+  ],
+  "content": "<div class='doc-content'><article class='prose prose-slate max-w-none'><h1>Chat timeline</h1>\n<p>Conversation view with <strong>Markdown</strong> rendering for assistant replies (including legacy delimiter fallbacks where needed).</p>\n<h2>What this is</h2>\n<p>The <strong>chat timeline</strong> lists your messages and the assistant’s replies in order. Assistant replies support <strong>Markdown</strong> (headings, lists, links) with fallbacks for older delimiter formats.</p>\n<h2>How to use it</h2>\n<ul>\n<li>Scroll the main assistant column to read past turns.</li>\n<li>Long replies stream in; wait for the spinner row to finish before assuming the answer is complete.</li>\n<li>Use message-level actions (feedback, copy) from each bubble when available.</li>\n</ul>\n<h2>Notes and limits</h2>\n<p>Built-in Firefox pages (some <code>about:</code> URLs) behave differently from normal sites when the assistant summarizes or inspects tabs.</p>\n<h2>Related topics</h2>\n<ul>\n<li><a href=\"/docs/composer-and-follow-ups\">Composer And Follow Ups</a></li>\n<li><a href=\"/docs/busy-streaming-state\">Busy Streaming State</a></li>\n<li><a href=\"/docs/active-tool-indicator\">Active Tool Indicator</a></li>\n</ul>\n</article></div>",
+  "generatedFrom": "help-center-migrate"
+}

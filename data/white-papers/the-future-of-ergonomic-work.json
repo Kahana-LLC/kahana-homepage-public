@@ -1,7 +1,7 @@
 {
   "slug": "the-future-of-ergonomic-work",
   "title": "The Future of Ergonomic Work: A White Paper",
-  "excerpt": "Discover how AR/VR technology is revolutionizing the future of ergonomic work and productivity. This comprehensive analysis examines the progress made, obstacles that remain, and the key players leading the AR glasses revolution.",
+  "excerpt": "Discover how AR/VR technology is revolutionizing productivity and desk-free ways of working. This comprehensive analysis examines the progress made, obstacles that remain, and the key players leading the AR glasses revolution.",
   "description": "A comprehensive white paper exploring how AR/VR technology can transform workplace ergonomics and productivity. We examine the health crisis caused by sedentary work environments, technological solutions that could free us from desk-bound work, key players leading the AR glasses revolution, and implementation roadmaps for the future.",
   "category": "Technology",
   "tags": ["AR/VR", "Ergonomics", "Productivity", "Workplace", "Technology", "Health"],
@@ -16,6 +16,6 @@
   "seo": {
     "title": "The Future of Ergonomic Work: AR/VR Technology White Paper | Kahana",
     "description": "Comprehensive white paper on how AR/VR technology is revolutionizing workplace ergonomics and productivity. Learn about key players, technological solutions, and the future of desk-free work.",
-    "keywords": ["AR glasses", "VR technology", "ergonomic work", "productivity", "workplace health", "desk-free work", "AR/VR revolution"]
+    "keywords": ["AR glasses", "VR technology", "desk-free work", "productivity", "workplace health", "AR/VR revolution"]
   }
 }

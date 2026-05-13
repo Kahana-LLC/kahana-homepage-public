@@ -1,0 +1,12 @@
+{
+  "title": "Router assist usage",
+  "description": "Routing/classification steps may use tokens; explain how that relates to the same usage surfaces users see.",
+  "slug": "router-assist-usage",
+  "category": "guides",
+  "date": "2026-05-14",
+  "authors": [
+    "Adam Kershner"
+  ],
+  "content": "<div class='doc-content'><article class='prose prose-slate max-w-none'><h1>Router assist usage</h1>\n<p>Routing/classification steps may use tokens; explain how that relates to the same usage surfaces users see.</p>\n<h2>What this is</h2>\n<p><strong>Routing</strong> steps (classifying your ask, picking tools) can consume tokens even before the main answer streams. Those tokens count toward the same <strong>daily</strong> usage views as chat completions.</p>\n<h2>How to use it</h2>\n<ul>\n<li>Expect higher usage on “do everything” prompts than on a single factual question.</li>\n<li>Compare before/after on the token bar when experimenting.</li>\n<li>Provide shorter prompts if you need to conserve quota.</li>\n</ul>\n<h2>Notes and limits</h2>\n<p>Router details are not itemized per sub-call in the consumer UI—use aggregate numbers.</p>\n<h2>Related topics</h2>\n<ul>\n<li><a href=\"/docs/router-and-usage-metadata\">Router And Usage Metadata</a></li>\n<li><a href=\"/docs/daily-token-usage-bar\">Daily Token Usage Bar</a></li>\n<li><a href=\"/docs/multi-step-agent-loop\">Multi Step Agent Loop</a></li>\n</ul>\n</article></div>",
+  "generatedFrom": "help-center-migrate"
+}

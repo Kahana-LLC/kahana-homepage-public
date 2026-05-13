@@ -18,7 +18,7 @@ const WhitePaperSocialShare = ({ title, url, excerpt }) => {
   const shareData = {
     title: title || "The Future of Ergonomic Work: A White Paper",
     url: url || (typeof window !== 'undefined' ? window.location.href : 'https://kahana.co/white-papers/the-future-of-ergonomic-work'),
-    text: excerpt || "Discover how AR/VR technology is revolutionizing the future of ergonomic work and productivity."
+    text: excerpt || "Discover how AR/VR technology is revolutionizing productivity and desk-free ways of working."
   };
 
   // Handle click outside to close modal

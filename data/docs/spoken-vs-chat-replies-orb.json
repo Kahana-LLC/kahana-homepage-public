@@ -1,0 +1,12 @@
+{
+  "title": "Spoken vs chat replies (orb)",
+  "description": "Users can choose **spoken** replies (TTS) or **chat-only** (text streamed into the main timeline); preference is persisted locally.",
+  "slug": "spoken-vs-chat-replies-orb",
+  "category": "guides",
+  "date": "2026-05-14",
+  "authors": [
+    "Adam Kershner"
+  ],
+  "content": "<div class='doc-content'><article class='prose prose-slate max-w-none'><h1>Spoken vs chat replies (orb)</h1>\n<p>Users can choose <strong>spoken</strong> replies (TTS) or <strong>chat-only</strong> (text streamed into the main timeline); preference is persisted locally.</p>\n<h2>What this is</h2>\n<p>In the orb flow you can prefer <strong>spoken</strong> replies (text-to-speech) or <strong>chat-only</strong> replies (text streams into the main timeline). The choice is remembered in browser storage.</p>\n<h2>How to use it</h2>\n<ul>\n<li>Toggle the mode in the orb UI before starting a session.</li>\n<li><strong>Spoken</strong> still appends transcripts to chat after turns in most builds.</li>\n<li><strong>Chat</strong> is ideal in shared offices where audio would disturb others.</li>\n</ul>\n<h2>Notes and limits</h2>\n<p>Screen readers may double-read if OS TTS and Oasis TTS overlap; pick one audio source.</p>\n<h2>Related topics</h2>\n<ul>\n<li><a href=\"/docs/voice-orb-hands-free\">Voice Orb Hands Free</a></li>\n<li><a href=\"/docs/composer-microphone\">Composer Microphone</a></li>\n<li><a href=\"/docs/chat-timeline\">Chat Timeline</a></li>\n</ul>\n</article></div>",
+  "generatedFrom": "help-center-migrate"
+}

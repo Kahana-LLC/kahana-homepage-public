@@ -540,7 +540,7 @@ export default function OasisAuth() {
                     <button
                       type="button"
                       onClick={handleForgotPassword}
-                      className="text-sm font-semibold text-[#4A6200] no-underline hover:no-underline"
+                      className="btn-tertiary btn-sm !inline-flex !w-auto !min-h-0 !h-auto !px-0 !py-1 !rounded-md !border-0 text-sm font-semibold text-left justify-start hover:!bg-transparent"
                       disabled={status.loading || resetStatus.loading}
                     >
                       {resetStatus.loading ? 'Sending reset email…' : 'Forgot password?'}

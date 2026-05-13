@@ -1,0 +1,12 @@
+{
+  "title": "“What can Oasis do?” FAQ",
+  "description": "Built-in reply when users ask about capabilities in natural language (tabs, organization, history/bookmarks context, page help—aligned with in-product overview text).",
+  "slug": "what-can-oasis-do-faq",
+  "category": "guides",
+  "date": "2026-05-14",
+  "authors": [
+    "Adam Kershner"
+  ],
+  "content": "<div class='doc-content'><article class='prose prose-slate max-w-none'><h1>“What can Oasis do?” FAQ</h1>\n<p>Built-in reply when users ask about capabilities in natural language (tabs, organization, history/bookmarks context, page help—aligned with in-product overview text).</p>\n<h2>What this is</h2>\n<p>If you ask <strong>what Oasis or the assistant can do</strong> in natural language, Oasis can answer with a concise FAQ-style summary (tabs, organization, page help, general Q&amp;A).</p>\n<h2>How to use it</h2>\n<ul>\n<li>Try: “What can you help me with in this browser?”</li>\n<li>Compare with the <strong>capabilities overview</strong> insert for a longer, structured list.</li>\n<li>Use <strong>feedback</strong> if an expected capability is missing.</li>\n</ul>\n<h2>Notes and limits</h2>\n<p>The FAQ heuristic looks for questions about capabilities; very short or ambiguous prompts may not trigger it.</p>\n<h2>Related topics</h2>\n<ul>\n<li><a href=\"/docs/insert-capabilities-overview\">Insert Capabilities Overview</a></li>\n<li><a href=\"/docs/plain-english-browser-control\">Plain English Browser Control</a></li>\n<li><a href=\"/docs/external-feedback-links\">External Feedback Links</a></li>\n</ul>\n</article></div>",
+  "generatedFrom": "help-center-migrate"
+}

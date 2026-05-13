@@ -8,7 +8,7 @@ export default function Careers() {
     <>
       <SEO
         title="Careers at Kahana"
-        description="Join our team at Kahana and help make the future of work more ergonomic and productive."
+        description="Join our team at Kahana and help make the future of work more elegant and productive."
         url="https://kahana.co/careers"
         type="website"
       />
@@ -18,7 +18,7 @@ export default function Careers() {
           <div className="text-center">
             <h1 className="text-4xl font-bold text-oasis-green-800">Join Our Team</h1>
             <p className="mt-4 text-xl text-oasis-green-800">
-              Help us make the future of work more ergonomic and productive.
+              Help us make the future of work more elegant and productive.
             </p>
           </div>
 
@@ -63,7 +63,7 @@ export default function Careers() {
               <h2 className="text-2xl font-semibold text-oasis-green-800 mb-4">Open Positions</h2>
               <p className="text-oasis-green-800 mb-8">
                 We currently have no open positions, but we're always looking for talented individuals 
-                who are passionate about creating more ergonomic and productive work environments. 
+                who are passionate about creating more elegant and productive work environments. 
                 If you're excited about transforming how people work and making technology work better for humans, 
                 we'd love to hear from you.
               </p>

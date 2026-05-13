@@ -9,6 +9,8 @@
     "start": "next start -p $PORT",
     "lint": "next lint",
     "update-sitemap": "node scripts/update-sitemap.js",
+    "sync:oasis-help-stubs": "node scripts/sync-oasis-help-stubs.mjs",
+    "sync:oasis-help-migrate": "node scripts/sync-oasis-help-stubs.mjs --migrate",
     "upload-blog-images": "node scripts/upload-blog-images-to-cloudinary.js",
     "upload-external-blog-images": "node scripts/upload-external-blog-images-to-cloudinary.js",
     "upload-all-blog-images": "node scripts/upload-blog-images-to-cloudinary.js && node scripts/upload-external-blog-images-to-cloudinary.js",

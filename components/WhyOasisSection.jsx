@@ -5,10 +5,10 @@ import OasisYouTubeEmbed from './OasisYouTubeEmbed';
 export default function WhyOasisSection() {
   const features = [
     {
-      title: "Ergonomic Design",
+      title: "Elegant Design",
       description: "Created to bring calm and focus back to browsing",
       image: "/figma-imports/er.webp",
-      alt: "Ergonomic Design"
+      alt: "Elegant Design"
     },
     {
       title: "AI-Powered Focus",

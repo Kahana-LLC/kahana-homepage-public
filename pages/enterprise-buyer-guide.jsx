@@ -862,7 +862,7 @@ export default function EnterpriseBuyerGuidePage() {
                         </div>
                       </div>
                       <p className="text-base text-[#4E5534] leading-relaxed text-left pt-2 pl-10">
-                        New ergonomic workflows that adapt to how you work, with spatial organization and intuitive controls that reduce cognitive load and improve focus.
+                        New elegant workflows that adapt to how you work, with spatial organization and intuitive controls that reduce cognitive load and improve focus.
                       </p>
                     </div>
                     <div className="relative bg-white/90 border border-white/80 rounded-xl px-5 py-4 shadow-[0_25px_70px_rgba(32,47,0,0.14)] backdrop-blur-lg">

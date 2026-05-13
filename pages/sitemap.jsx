@@ -1,8 +1,9 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { getAllDocsMetadata } from '../utils/docsUtils';
 
-const sitemapSections = [
+const staticSitemapSections = [
   {
     title: 'Main Pages',
     links: [
@@ -11,8 +12,8 @@ const sitemapSections = [
       { text: 'Contact', href: '/contact' },
       { text: 'Blog', href: '/blog' },
       { text: 'Installations', href: '/installations' },
-      { text: 'Schedule Demo', href: '/schedule-demo' }
-    ]
+      { text: 'Schedule Demo', href: '/schedule-demo' },
+    ],
   },
   {
     title: 'Products',
@@ -20,8 +21,8 @@ const sitemapSections = [
       { text: 'Products Overview', href: '/products' },
       { text: 'Enterprise Browser', href: '/products/oasis-enterprise-browser' },
       { text: 'Web Application', href: '/products/web-application' },
-      { text: "Buyer's Guide", href: '/buyers-guide' }
-    ]
+      { text: "Buyer's Guide", href: '/buyers-guide' },
+    ],
   },
   {
     title: 'Solutions',
@@ -37,8 +38,8 @@ const sitemapSections = [
       { text: 'Secure Browsing', href: '/solutions/secure-browsing' },
       { text: 'Workplace Enablement', href: '/solutions/workplace-enablement' },
       { text: 'Healthcare', href: '/solutions/healthcare' },
-      { text: 'Government', href: '/solutions/government' }
-    ]
+      { text: 'Government', href: '/solutions/government' },
+    ],
   },
   {
     title: 'Resources',
@@ -46,30 +47,17 @@ const sitemapSections = [
       { text: 'Resources', href: '/resources' },
       { text: 'Events', href: '/events' },
       { text: 'Press', href: '/press' },
-      { text: 'Marketing Kit', href: '/marketing-kit' }
-    ]
-  },
-  {
-    title: 'Documentation',
-    links: [
-      { text: 'Documentation Home', href: '/docs' },
-      { text: 'Getting Started', href: '/docs/getting-started' },
-      { text: 'AI Assistant', href: '/docs/ai-assistant' },
-      { text: 'Multi-View', href: '/docs/multi-view' },
-      { text: 'Hubs', href: '/docs/hubs' },
-      { text: 'Settings', href: '/docs/settings' },
-      { text: 'Keyboard Shortcuts', href: '/docs/keyboard-shortcuts' },
-      { text: 'Advanced Features', href: '/docs/advanced-features' },
-      { text: 'Security Guide', href: '/docs/security-guide' },
-      { text: 'Troubleshooting', href: '/docs/troubleshooting' },
-    ]
+      { text: 'Press kit', href: '/press-kit' },
+      { text: 'Press releases', href: '/press-releases' },
+      { text: 'Marketing Kit', href: '/marketing-kit' },
+    ],
   },
   {
     title: 'Support',
     links: [
       { text: 'Support Center', href: '/support' },
       { text: 'Contact Sales', href: '/sales' },
-    ]
+    ],
   },
   {
     title: 'Company',
@@ -77,21 +65,43 @@ const sitemapSections = [
       { text: 'About Us', href: '/about' },
       { text: 'Careers', href: '/careers' },
       { text: 'Manifesto', href: '/manifesto' },
-      { text: 'Contact', href: '/contact' }
-    ]
+      { text: 'Contact', href: '/contact' },
+    ],
   },
   {
     title: 'Legal',
     links: [
       { text: 'Privacy Policy', href: '/privacy-policy' },
       { text: 'Terms & Conditions', href: '/terms-and-conditions' },
-      { text: 'Accessibility', href: '/docs/accessibility' },
-      { text: 'Right to Work', href: '/right-to-work' }
-    ]
-  }
+      { text: 'Right to Work', href: '/right-to-work' },
+    ],
+  },
 ];
 
-export default function Sitemap() {
+export async function getStaticProps() {
+  const docs = await getAllDocsMetadata();
+  const slugFor = (d) => d.slug || '';
+  const docLinks = [
+    { text: 'Documentation home', href: '/docs' },
+    ...docs
+      .filter((d) => slugFor(d))
+      .sort((a, b) => (a.title || '').localeCompare(b.title || '', undefined, { sensitivity: 'base' }))
+      .map((d) => ({
+        text: d.title || slugFor(d),
+        href: `/docs/${slugFor(d)}`,
+      })),
+  ];
+
+  const sitemapSections = [
+    ...staticSitemapSections.slice(0, 4),
+    { title: 'Documentation', links: docLinks },
+    ...staticSitemapSections.slice(4),
+  ];
+
+  return { props: { sitemapSections } };
+}
+
+export default function Sitemap({ sitemapSections }) {
   return (
     <>
       <Head>
@@ -108,17 +118,17 @@ export default function Sitemap() {
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold text-gray-900">Website Sitemap</h1>
             <p className="mt-4 text-xl text-gray-600">
-              A complete guide to Kahana's website structure and content
+              A complete guide to Kahana&apos;s website structure and content
             </p>
           </div>
 
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             {sitemapSections.map((section, index) => (
-              <div key={index} className="bg-gray-50 p-6 rounded-lg">
+              <div key={section.title || index} className="bg-gray-50 p-6 rounded-lg">
                 <h2 className="text-xl font-semibold text-gray-900 mb-4">{section.title}</h2>
                 <ul className="space-y-2">
                   {section.links.map((link, linkIndex) => (
-                    <li key={linkIndex}>
+                    <li key={`${link.href}-${linkIndex}`}>
                       <Link href={link.href}>
                         <span className="text-kahana-primary hover:text-kahana-primary-dark cursor-pointer">
                           {link.text}

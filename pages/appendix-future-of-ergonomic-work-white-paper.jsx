@@ -150,7 +150,7 @@ const AppendixPage = () => {
       <Head>
         <title>Appendix: Key AR Technologies - The Future of Ergonomic Work White Paper</title>
         <meta name="description" content="Detailed technical breakdown of key AR technologies and their capabilities for desk-free productivity." />
-        <meta name="keywords" content="AR glasses, augmented reality, ergonomic work, technology comparison, Meta Orion, Apple Vision Pro, Magic Leap" />
+        <meta name="keywords" content="AR glasses, augmented reality, desk-free work, technology comparison, Meta Orion, Apple Vision Pro, Magic Leap" />
         <link rel="canonical" href="https://kahana.co/appendix-future-of-ergonomic-work-white-paper" />
       </Head>
       

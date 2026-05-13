@@ -1,0 +1,12 @@
+{
+  "title": "Oasis toolbar pill",
+  "description": "Launcher next to the main toolbar controls opens the assistant; uses the Oasis launcher icon and can be auto-placed after the VPN / IP Protection control when that widget exists.",
+  "slug": "oasis-toolbar-pill",
+  "category": "guides",
+  "date": "2026-05-14",
+  "authors": [
+    "Adam Kershner"
+  ],
+  "content": "<div class='doc-content'><article class='prose prose-slate max-w-none'><h1>Oasis toolbar pill</h1>\n<p>Launcher next to the main toolbar controls opens the assistant; uses the Oasis launcher icon and can be auto-placed after the VPN / IP Protection control when that widget exists.</p>\n<h2>What this is</h2>\n<p>The <strong>Oasis</strong> control on the main toolbar opens the assistant. It uses the Oasis launcher icon. The browser may place it next to the VPN (IP Protection) control when that widget is available.</p>\n<h2>How to use it</h2>\n<ul>\n<li>Look for the Oasis icon on the right side of the main toolbar (near extensions and menu).</li>\n<li><strong>Click</strong> the pill to show or focus the Oasis Assistant (sidebar or overlay, depending on layout).</li>\n<li>If you use VPN controls, the pill may sit beside that button for a consistent “protection + AI” cluster.</li>\n</ul>\n<h2>Notes and limits</h2>\n<p>If the icon appears blank after an update, ensure you are on the latest build; the launcher is packaged as part of the browser skin.</p>\n<h2>Related topics</h2>\n<ul>\n<li><a href=\"/docs/oasis-assistant-in-the-sidebar\">Oasis Assistant In The Sidebar</a></li>\n<li><a href=\"/docs/docked-sidebar-vs-floating-overlay\">Docked Sidebar Vs Floating Overlay</a></li>\n<li><a href=\"/docs/hidden-firefox-account-toolbar-button\">Hidden Firefox Account Toolbar Button</a></li>\n</ul>\n</article></div>",
+  "generatedFrom": "help-center-migrate"
+}

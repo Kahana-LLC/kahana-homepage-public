@@ -30,7 +30,7 @@ export default function ProductSection() {
               Oasis
             </h1>
             <p className="text-lg sm:text-xl text-oasis-green-800 max-w-2xl mb-0 text-pretty leading-relaxed">
-              Welcome to the most ergonomic browser user experience on Earth.{' '}
+              Welcome to the most elegant browser user experience on Earth.{' '}
               <br className="hidden sm:block" aria-hidden />
               Use your voice. Use natural language. Let Oasis do the work for you.
             </p>

@@ -2301,7 +2301,7 @@ const blogIndex = [
     category: "AI & Emerging Tech",
     excerpt:
       "Exploring the technological solutions that could finally free us from desk-bound work, from AR glasses and voice technology to AI agents and the companies leading this revolution.",
-    defaultImageQuery: "AR glasses wearable technology voice gesture AI future of work ergonomic",
+    defaultImageQuery: "AR glasses wearable technology voice gesture AI future of work desk-free",
     slug: "the-future-of-ergonomic-work-solution-technology-2025",
     readingTime: 7,
   },
@@ -2323,7 +2323,7 @@ const blogIndex = [
     category: "AI & Emerging Tech",
     excerpt:
       "Exploring how AR, VR, voice, gesture, and AI technologies are transforming the way we work, moving us away from desk-bound productivity toward healthier, more mobile work environments.",
-    defaultImageQuery: "ergonomic work health technology AR VR future of work",
+    defaultImageQuery: "desk-free work health technology AR VR future of work",
     slug: "the-future-of-ergonomic-work-improving-health-2025",
     readingTime: 3,
   },

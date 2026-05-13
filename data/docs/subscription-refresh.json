@@ -1,0 +1,12 @@
+{
+  "title": "Subscription refresh",
+  "description": "UI refreshes usage and plan state after assistant calls that return usage metadata.",
+  "slug": "subscription-refresh",
+  "category": "guides",
+  "date": "2026-05-14",
+  "authors": [
+    "Adam Kershner"
+  ],
+  "content": "<div class='doc-content'><article class='prose prose-slate max-w-none'><h1>Subscription refresh</h1>\n<p>UI refreshes usage and plan state after assistant calls that return usage metadata.</p>\n<h2>What this is</h2>\n<p>After assistant responses that include <strong>usage metadata</strong>, Oasis <strong>refreshes</strong> subscription and quota state so the token bar and any badges stay current.</p>\n<h2>How to use it</h2>\n<ul>\n<li>No manual refresh button is required in normal use.</li>\n<li>If totals look wrong, send a short follow-up message to force another round trip.</li>\n<li>Sign out/in if account state disagrees with the website for more than a few minutes.</li>\n</ul>\n<h2>Notes and limits</h2>\n<p>Partial failures fall back to cached limits; the UI should indicate uncertainty when that happens.</p>\n<h2>Related topics</h2>\n<ul>\n<li><a href=\"/docs/daily-token-usage-bar\">Daily Token Usage Bar</a></li>\n<li><a href=\"/docs/router-assist-usage\">Router Assist Usage</a></li>\n<li><a href=\"/docs/kahana-supabase-sign-in\">Kahana Supabase Sign In</a></li>\n</ul>\n</article></div>",
+  "generatedFrom": "help-center-migrate"
+}

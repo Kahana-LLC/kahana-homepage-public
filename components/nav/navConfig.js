@@ -43,6 +43,7 @@ export const desktopNavItems = [
             { label: 'Blog', href: '/blog' },
             { label: 'Docs', href: '/docs' },
             { label: 'Events', href: '/events' },
+            { label: 'Press releases', href: '/press-releases' },
             { label: 'Data Leakage Consortium', href: '/data-leakage-consortium' },
           ],
         },
@@ -62,7 +63,10 @@ export const desktopNavItems = [
       sections: [
         {
           heading: 'About Kahana',
-          links: [{ label: 'About', href: '/about', prefetch: false }],
+          links: [
+            { label: 'About', href: '/about', prefetch: false },
+            { label: 'Press kit', href: '/press-kit' },
+          ],
         },
         {
           heading: 'Get Started',
@@ -91,6 +95,7 @@ export const mobileNavRows = [
   { label: 'Blog', href: '/blog' },
   { label: 'Docs', href: '/docs' },
   { label: 'Events', href: '/events' },
+  { label: 'Press releases', href: '/press-releases' },
   { label: 'Data Leakage Consortium', href: '/data-leakage-consortium' },
   {
     variant: 'buyer-guide',
@@ -101,6 +106,7 @@ export const mobileNavRows = [
     imagePath: '/assets/pexels-kamo11235-667838.jpg',
   },
   { label: 'About Kahana', href: '/about', prefetch: false },
+  { label: 'Press kit', href: '/press-kit' },
   { label: 'Support', href: '/support' },
   { label: 'Careers', href: '/careers' },
   { label: 'Pricing', href: '/oasis-pricing' },

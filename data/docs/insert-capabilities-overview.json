@@ -1,0 +1,12 @@
+{
+  "title": "Insert capabilities overview",
+  "description": "Action to paste the structured **“What Oasis can do in this build”** Markdown (sections for web search, Q&A, summarize, tabs, groups, split view, memory/history, support links).",
+  "slug": "insert-capabilities-overview",
+  "category": "guides",
+  "date": "2026-05-14",
+  "authors": [
+    "Adam Kershner"
+  ],
+  "content": "<div class='doc-content'><article class='prose prose-slate max-w-none'><h1>Insert capabilities overview</h1>\n<p>Action to paste the structured <strong>“What Oasis can do in this build”</strong> Markdown (sections for web search, Q&amp;A, summarize, tabs, groups, split view, memory/history, support links).</p>\n<h2>What this is</h2>\n<p>You can insert a structured <strong>capabilities overview</strong> into the chat: what Oasis can do in this build (web search, tabs, split view, memory, support links).</p>\n<h2>How to use it</h2>\n<ul>\n<li>Look for <strong>capabilities</strong> or <strong>what can you do</strong> affordance in the composer or header (wording varies).</li>\n<li>Confirm if a dialog asks; the insert is plain Markdown you can edit before sending.</li>\n<li>Read the <strong>Support and feedback</strong> section for Kahana feature list and Tally form.</li>\n</ul>\n<h2>Notes and limits</h2>\n<p>Capabilities reflect the tools compiled into your build; missing tools are called out in the overview text.</p>\n<h2>Related topics</h2>\n<ul>\n<li><a href=\"/docs/what-can-oasis-do-faq\">What Can Oasis Do Faq</a></li>\n<li><a href=\"/docs/plain-english-browser-control\">Plain English Browser Control</a></li>\n<li><a href=\"/docs/external-feedback-links\">External Feedback Links</a></li>\n</ul>\n</article></div>",
+  "generatedFrom": "help-center-migrate"
+}

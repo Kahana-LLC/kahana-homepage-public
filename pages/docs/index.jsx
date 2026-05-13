@@ -1,9 +1,12 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 import { getAllDocsMetadata } from '../../utils/docsUtils';
 import DocCard from '../../components/DocCard';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import SEO from '../../components/SEO';
+
+const DOCS_PER_PAGE = 9;
 
 export async function getStaticProps() {
   const docs = await getAllDocsMetadata();
@@ -20,23 +23,66 @@ export async function getStaticProps() {
 export default function DocsIndex({ docs, categories }) {
   const [activeCategory, setActiveCategory] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
+  const [currentPage, setCurrentPage] = useState(1);
 
-  // Filter docs based on category and search query
   const filteredDocs = useMemo(() => {
-    return docs.filter(doc => {
+    return docs.filter((doc) => {
       const matchesCategory = activeCategory === 'all' || doc.category === activeCategory;
-      const matchesSearch = searchQuery === '' || 
+      const matchesSearch =
+        searchQuery === '' ||
         (doc.title || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
         (doc.description || '').toLowerCase().includes(searchQuery.toLowerCase());
       return matchesCategory && matchesSearch;
     });
   }, [docs, activeCategory, searchQuery]);
 
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [activeCategory, searchQuery]);
+
+  useEffect(() => {
+    const tp = Math.max(1, Math.ceil(filteredDocs.length / DOCS_PER_PAGE));
+    setCurrentPage((p) => Math.min(p, tp));
+  }, [filteredDocs.length]);
+
+  const totalPages = Math.max(1, Math.ceil(filteredDocs.length / DOCS_PER_PAGE));
+  const startIndex = (currentPage - 1) * DOCS_PER_PAGE;
+  const paginatedDocs = filteredDocs.slice(startIndex, startIndex + DOCS_PER_PAGE);
+
+  const getPageNumbers = () => {
+    const delta = 2;
+    const range = [];
+    const rangeWithDots = [];
+    let l;
+
+    range.push(1);
+    for (let i = currentPage - delta; i <= currentPage + delta; i++) {
+      if (i < totalPages && i > 1) {
+        range.push(i);
+      }
+    }
+    if (totalPages > 1) {
+      range.push(totalPages);
+    }
+    for (const i of range) {
+      if (l) {
+        if (i - l === 2) {
+          rangeWithDots.push(l + 1);
+        } else if (i - l !== 1) {
+          rangeWithDots.push('...');
+        }
+      }
+      rangeWithDots.push(i);
+      l = i;
+    }
+    return rangeWithDots;
+  };
+
   return (
     <>
       <SEO
         title="Documentation"
-        description="Browse Kahana's documentation to learn about features, security, and best practices."
+        description="Reference articles for Oasis Browser: what is available, how features behave in the product, and where to look next. For narrative deep-dives, see Oasis features."
         url="https://kahana.co/docs"
         type="website"
       />
@@ -59,7 +105,15 @@ export default function DocsIndex({ docs, categories }) {
               Documentation
             </h1>
             <p className="text-xl text-oasis-green-800 max-w-2xl mx-auto">
-              Learn how to use Kahana&apos;s features, understand our security measures, and follow best practices for your team.
+              Browse short, product-grounded articles about Oasis Browser: what is available, how things work in the UI,
+              and how capabilities fit together. For story-style deep-dives, see{' '}
+              <Link
+                href="/features"
+                className="font-semibold text-brand-link no-underline hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-link"
+              >
+                Oasis features
+              </Link>
+              .
             </p>
           </div>
 
@@ -111,11 +165,68 @@ export default function DocsIndex({ docs, categories }) {
           {/* Documentation Grid - same gap as blog */}
           {filteredDocs.length > 0 ? (
             <>
-              <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mb-12">
-                {filteredDocs.map((doc) => (
-                  <DocCard key={doc.slug} doc={doc} />
+              <p className="text-sm text-oasis-green-800/90 mb-4 text-center sm:text-left">
+                Showing {startIndex + 1}–{Math.min(startIndex + DOCS_PER_PAGE, filteredDocs.length)} of{' '}
+                {filteredDocs.length} article{filteredDocs.length === 1 ? '' : 's'}
+              </p>
+              <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mb-8">
+                {paginatedDocs.map((doc) => (
+                  <DocCard key={doc.slug || doc.title} doc={doc} />
                 ))}
               </div>
+
+              {totalPages > 1 && (
+                <nav
+                  className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-4"
+                  aria-label="Documentation pages"
+                >
+                  <button
+                    type="button"
+                    onClick={() => setCurrentPage((p) => Math.max(p - 1, 1))}
+                    disabled={currentPage === 1}
+                    className={`px-4 py-2 rounded-md ${
+                      currentPage === 1
+                        ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                        : 'btn-primary'
+                    }`}
+                  >
+                    Previous
+                  </button>
+
+                  <div className="flex flex-wrap justify-center gap-2">
+                    {getPageNumbers().map((pageNum, index) => (
+                      <button
+                        key={`${pageNum}-${index}`}
+                        type="button"
+                        onClick={() => typeof pageNum === 'number' && setCurrentPage(pageNum)}
+                        disabled={pageNum === '...'}
+                        className={`px-4 py-2 rounded-md min-w-[2.5rem] ${
+                          pageNum === currentPage
+                            ? 'btn-primary'
+                            : pageNum === '...'
+                              ? 'btn-tertiary btn-sm !rounded-md cursor-default pointer-events-none !px-3 !py-2'
+                              : 'btn-secondary'
+                        }`}
+                      >
+                        {pageNum}
+                      </button>
+                    ))}
+                  </div>
+
+                  <button
+                    type="button"
+                    onClick={() => setCurrentPage((p) => Math.min(p + 1, totalPages))}
+                    disabled={currentPage === totalPages}
+                    className={`px-4 py-2 rounded-md ${
+                      currentPage === totalPages
+                        ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                        : 'btn-primary'
+                    }`}
+                  >
+                    Next
+                  </button>
+                </nav>
+              )}
             </>
           ) : (
             <div className="text-center py-12">

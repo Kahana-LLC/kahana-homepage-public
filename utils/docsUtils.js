@@ -7,6 +7,19 @@ const readdir = promisify(fs.readdir);
 
 const DOCS_DIR = path.join(process.cwd(), "data/docs");
 
+/** Strip common inline Markdown from manifest summaries (plain text for cards / meta). */
+export function stripInlineMarkdown(text) {
+  if (!text || typeof text !== "string") return "";
+  let s = text;
+  s = s.replace(/\*\*([^*]+)\*\*/g, "$1");
+  s = s.replace(/__([^_]+)__/g, "$1");
+  s = s.replace(/`([^`]+)`/g, "$1");
+  s = s.replace(/\[([^\]]+)\]\([^)]*\)/g, "$1");
+  s = s.replace(/\*([^*\n]+)\*/g, "$1");
+  s = s.replace(/_([^_\n]+)_/g, "$1");
+  return s.trim();
+}
+
 export async function getAllDocs() {
   try {
     const files = await readdir(DOCS_DIR);
@@ -21,6 +34,7 @@ export async function getAllDocs() {
           return {
             ...doc,
             slug,
+            description: stripInlineMarkdown(doc.description),
           };
         })
     );
@@ -43,11 +57,11 @@ export async function getAllDocsMetadata() {
           const filePath = path.join(DOCS_DIR, file);
           const fileContents = await readFile(filePath, "utf8");
           const doc = JSON.parse(fileContents);
-          
+
           // Return only the metadata needed for the index page
           return {
             title: doc.title,
-            description: doc.description,
+            description: stripInlineMarkdown(doc.description),
             date: doc.date,
             category: doc.category,
             slug: doc.slug,
@@ -78,14 +92,21 @@ export async function getDocBySlug(slug) {
       
       // Check if this file has the matching slug
       if (doc.slug === slug) {
-        return doc;
+        return {
+          ...doc,
+          description: stripInlineMarkdown(doc.description),
+        };
       }
     }
     
     // Fallback: try to find by filename (without .json extension)
     const filePath = path.join(DOCS_DIR, `${slug}.json`);
     const fileContents = await readFile(filePath, "utf8");
-    return JSON.parse(fileContents);
+    const doc = JSON.parse(fileContents);
+    return {
+      ...doc,
+      description: stripInlineMarkdown(doc.description),
+    };
   } catch (error) {
     console.error(`Error reading documentation file for slug ${slug}:`, error);
     return null;

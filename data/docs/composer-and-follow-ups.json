@@ -1,0 +1,12 @@
+{
+  "title": "Composer and follow-ups",
+  "description": "Text area for messages, **inline suggestion chips**, rotating **example prompts** (typewriter empty state), and “send follow-up” behavior.",
+  "slug": "composer-and-follow-ups",
+  "category": "guides",
+  "date": "2026-05-14",
+  "authors": [
+    "Adam Kershner"
+  ],
+  "content": "<div class='doc-content'><article class='prose prose-slate max-w-none'><h1>Composer and follow-ups</h1>\n<p>Text area for messages, <strong>inline suggestion chips</strong>, rotating <strong>example prompts</strong> (typewriter empty state), and “send follow-up” behavior.</p>\n<h2>What this is</h2>\n<p>The <strong>composer</strong> is the text box at the bottom. You send <strong>follow-up</strong> messages in the same thread. <strong>Inline chips</strong> and a <strong>typewriter</strong> hint cycle suggest things to try when the thread is empty.</p>\n<h2>How to use it</h2>\n<ul>\n<li>Type a request and press <strong>Enter</strong> (or use the send control).</li>\n<li>When chips appear under the field, click one to send that prompt immediately.</li>\n<li>Use <strong>Up arrow</strong> in the field to recall previous commands (when implemented for your build).</li>\n</ul>\n<h2>Notes and limits</h2>\n<p>Chips may retire after several sends to keep the UI calm; you can still type anything manually.</p>\n<h2>Related topics</h2>\n<ul>\n<li><a href=\"/docs/chat-timeline\">Chat Timeline</a></li>\n<li><a href=\"/docs/insert-capabilities-overview\">Insert Capabilities Overview</a></li>\n<li><a href=\"/docs/voice-orb-hands-free\">Voice Orb Hands Free</a></li>\n</ul>\n</article></div>",
+  "generatedFrom": "help-center-migrate"
+}

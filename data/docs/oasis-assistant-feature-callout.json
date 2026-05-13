@@ -1,0 +1,12 @@
+{
+  "title": "Oasis assistant feature callout",
+  "description": "Spotlight / pulse tour anchored to the **navbar pill** (replacing older “chat button” selectors) to teach first-time discovery.",
+  "slug": "oasis-assistant-feature-callout",
+  "category": "guides",
+  "date": "2026-05-14",
+  "authors": [
+    "Adam Kershner"
+  ],
+  "content": "<div class='doc-content'><article class='prose prose-slate max-w-none'><h1>Oasis assistant feature callout</h1>\n<p>Spotlight / pulse tour anchored to the <strong>navbar pill</strong> (replacing older “chat button” selectors) to teach first-time discovery.</p>\n<h2>What this is</h2>\n<p>A <strong>feature callout</strong> (ASRouter) can spotlight the <strong>Oasis toolbar pill</strong> with a short tour so new users discover how to open the assistant.</p>\n<h2>How to use it</h2>\n<ul>\n<li>Follow on-screen arrows; click <strong>Try</strong> steps when offered.</li>\n<li>Dismiss politely if you already know the flow; tours may respect frequency caps.</li>\n<li>Open the assistant from the pill if the tour hides the panel.</li>\n</ul>\n<h2>Notes and limits</h2>\n<p>Callouts require eligible channels and locales; some enterprise policies suppress them.</p>\n<h2>Related topics</h2>\n<ul>\n<li><a href=\"/docs/oasis-toolbar-pill\">Oasis Toolbar Pill</a></li>\n<li><a href=\"/docs/oasis-assistant-in-the-sidebar\">Oasis Assistant In The Sidebar</a></li>\n<li><a href=\"/docs/new-tab-and-assistant-landing\">New Tab And Assistant Landing</a></li>\n</ul>\n</article></div>",
+  "generatedFrom": "help-center-migrate"
+}

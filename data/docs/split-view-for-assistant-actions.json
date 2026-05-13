@@ -1,0 +1,12 @@
+{
+  "title": "Split view for assistant actions",
+  "description": "Oasis enables Mozilla’s split-view capability so the assistant can place two tabs side-by-side when users ask.",
+  "slug": "split-view-for-assistant-actions",
+  "category": "guides",
+  "date": "2026-05-14",
+  "authors": [
+    "Adam Kershner"
+  ],
+  "content": "<div class='doc-content'><article class='prose prose-slate max-w-none'><h1>Split view for assistant actions</h1>\n<p>Oasis enables Mozilla’s split-view capability so the assistant can place two tabs side-by-side when users ask.</p>\n<h2>What this is</h2>\n<p>Oasis enables Firefox’s <strong>split view</strong> so the assistant can place two tabs side by side—for example “compare this page with search results.”</p>\n<h2>How to use it</h2>\n<ul>\n<li>Ask in plain language, e.g. “Put this tab and Wikipedia side by side.”</li>\n<li>Confirm any prompt if the assistant offers a destructive or window-changing action.</li>\n<li>Drag the split divider like a normal split window.</li>\n</ul>\n<h2>Notes and limits</h2>\n<p>Split view requires supported tab types; some privileged pages cannot pair the same way as normal sites.</p>\n<h2>Related topics</h2>\n<ul>\n<li><a href=\"/docs/plain-english-browser-control\">Plain English Browser Control</a></li>\n<li><a href=\"/docs/destructive-action-confirmations\">Destructive Action Confirmations</a></li>\n<li><a href=\"/docs/oasis-assistant-in-the-sidebar\">Oasis Assistant In The Sidebar</a></li>\n</ul>\n</article></div>",
+  "generatedFrom": "help-center-migrate"
+}

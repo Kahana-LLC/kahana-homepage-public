@@ -1,0 +1,12 @@
+{
+  "title": "Oasis Welcome (not Firefox about:welcome)",
+  "description": "First-run flow uses Oasis’s own welcome experience (`chrome://browser/content/oasiswelcome/…`) instead of Firefox’s multistage `about:welcome`.",
+  "slug": "oasis-welcome-not-firefox-about-welcome",
+  "category": "guides",
+  "date": "2026-05-14",
+  "authors": [
+    "Adam Kershner"
+  ],
+  "content": "<div class='doc-content'><article class='prose prose-slate max-w-none'><h1>Oasis Welcome (not Firefox about:welcome)</h1>\n<p>First-run flow uses Oasis’s own welcome experience (<code>chrome://browser/content/oasiswelcome/…</code>) instead of Firefox’s multistage <code>about:welcome</code>.</p>\n<h2>What this is</h2>\n<p>Oasis replaces Firefox’s multistage <strong>about:welcome</strong> with a <strong>custom welcome</strong> experience that introduces Oasis features and gets you to the assistant faster.</p>\n<h2>How to use it</h2>\n<ul>\n<li>On first launch, complete or skip the welcome pages as offered.</li>\n<li>Preferences such as <code>browser.oasis.welcome.*</code> control whether the flow runs; defaults are set for Oasis.</li>\n<li>After welcome, you normally land on a normal browsing surface with the assistant available.</li>\n</ul>\n<h2>Notes and limits</h2>\n<p>Skipping welcome does not skip software updates or security; it only skips the marketing/education screens.</p>\n<h2>Related topics</h2>\n<ul>\n<li><a href=\"/docs/new-tab-and-assistant-landing\">New Tab And Assistant Landing</a></li>\n<li><a href=\"/docs/onboarding-checklist-assistant-panel\">Onboarding Checklist Assistant Panel</a></li>\n<li><a href=\"/docs/oasis-toolbar-pill\">Oasis Toolbar Pill</a></li>\n</ul>\n</article></div>",
+  "generatedFrom": "help-center-migrate"
+}

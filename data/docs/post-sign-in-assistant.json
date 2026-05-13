@@ -1,0 +1,12 @@
+{
+  "title": "Post-sign-in assistant",
+  "description": "After authentication, the product can automatically surface the assistant (`browser.oasis.postAuthOpenAssistant`).",
+  "slug": "post-sign-in-assistant",
+  "category": "guides",
+  "date": "2026-05-14",
+  "authors": [
+    "Adam Kershner"
+  ],
+  "content": "<div class='doc-content'><article class='prose prose-slate max-w-none'><h1>Post-sign-in assistant</h1>\n<p>After authentication, the product can automatically surface the assistant (<code>browser.oasis.postAuthOpenAssistant</code>).</p>\n<h2>What this is</h2>\n<p>After you <strong>sign in to Kahana</strong> inside Oasis, the product can automatically surface the assistant so you are not hunting for the panel.</p>\n<h2>How to use it</h2>\n<ul>\n<li>Complete OAuth or email sign-in from the assistant <strong>Auth</strong> view.</li>\n<li>On success, the sidebar or overlay may open or focus automatically (depending on build defaults).</li>\n<li>If you prefer a quieter flow, ignore the assistant until you need it; state is saved per account.</li>\n</ul>\n<h2>Notes and limits</h2>\n<p>This behavior is separate from Firefox Sync; Kahana sign-in does not log you into Mozilla’s sync servers.</p>\n<h2>Related topics</h2>\n<ul>\n<li><a href=\"/docs/kahana-supabase-sign-in\">Kahana Supabase Sign In</a></li>\n<li><a href=\"/docs/welcome-back-after-sign-out\">Welcome Back After Sign Out</a></li>\n<li><a href=\"/docs/guest-vs-signed-in\">Guest Vs Signed In</a></li>\n</ul>\n</article></div>",
+  "generatedFrom": "help-center-migrate"
+}
