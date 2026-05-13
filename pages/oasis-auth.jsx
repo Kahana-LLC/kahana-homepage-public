@@ -354,6 +354,13 @@ export default function OasisAuth() {
     }
   }
 
+  /** True while email/OAuth sign-in is working or right after OAuth before navigation away. */
+  const authTransitionHero =
+    status.loading ||
+    (Boolean(status.success) &&
+      !status.error &&
+      /redirecting|signed in successfully/i.test(status.success))
+
   const handleForgotPassword = async () => {
     setResetStatus({ loading: true, error: '', success: '' })
     try {
@@ -398,12 +405,19 @@ export default function OasisAuth() {
           <div className="w-full lg:w-5/12 space-y-6">
             <div className="space-y-3 text-left">
               <h1 className="text-4xl sm:text-5xl font-extrabold text-[#313A00] leading-tight">
-                {router?.query?.redirect === '/installations' && plan.id === 'free' 
-                  ? 'Sign in to Access Downloads'
-                  : `Get ${plan.name}`}
+                {authTransitionHero
+                  ? 'Verifying your account'
+                  : router?.query?.redirect === '/installations' && plan.id === 'free'
+                    ? 'Sign in to Access Downloads'
+                    : `Get ${plan.name}`}
               </h1>
               <p className="text-lg text-gray-700">
-                {router?.query?.redirect === '/installations' && plan.id === 'free' ? (
+                {authTransitionHero ? (
+                  <>
+                    Hang tight—you may be sent to Google, Apple, or Microsoft to confirm it&apos;s you, then returned
+                    here to finish signing in to Oasis.
+                  </>
+                ) : router?.query?.redirect === '/installations' && plan.id === 'free' ? (
                   <>
                     Create an account or sign in to access the Oasis Browser download page. You must be logged in to view and download the beta software.
                   </>
