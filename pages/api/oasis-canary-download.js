@@ -38,7 +38,7 @@ export default async function handler(req, res) {
         url: asset.browser_download_url,
       }));
 
-    const appleSilicon = findAsset(dmgAssets, [/arm64/, /aarch64/, /apple\s*silicon/, /m[1-4]/]);
+    const appleSilicon = findAsset(dmgAssets, [/arm64/, /aarch64/, /apple\s*silicon/, /m\d+/]);
     const intel = findAsset(dmgAssets, [/x86_64/, /amd64/, /x64/, /intel/]);
     const universal = findAsset(dmgAssets, [/universal/]);
     const fallback = dmgAssets[0] || null;
