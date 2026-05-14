@@ -50,21 +50,21 @@ export default function ProductSection() {
                 Schedule a demo
               </Link>
             </div>
-            <p className="text-sm text-oasis-green-800 max-w-xl mt-1 flex flex-wrap items-center justify-start gap-x-2 gap-y-1">
+            <p className="text-base text-oasis-green-800 max-w-xl mt-1 flex flex-wrap items-center justify-start gap-x-2 gap-y-1">
               <Link
                 href="/products/oasis-browser"
                 onClick={() => trackButtonClick('hero_link_product_details', 'hero_section')}
-                className="font-medium text-[#617500] underline decoration-[#617500]/40 underline-offset-2 hover:text-oasis-green-800 hover:decoration-[#495800] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#617500]"
+                className="font-semibold text-brand-link underline decoration-brand-link/40 underline-offset-2 hover:text-oasis-green-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#617500]"
               >
                 Product details
               </Link>
-              <span className="text-oasis-green-800/50" aria-hidden>
+              <span className="text-brand-link/50" aria-hidden>
                 ·
               </span>
               <Link
                 href="/products/oasis-enterprise-browser"
                 onClick={() => trackButtonClick('hero_link_enterprise', 'hero_section')}
-                className="font-medium text-[#617500] underline decoration-[#617500]/40 underline-offset-2 hover:text-oasis-green-800 hover:decoration-[#495800] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#617500]"
+                className="font-semibold text-brand-link underline decoration-brand-link/40 underline-offset-2 hover:text-oasis-green-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#617500]"
               >
                 For IT &amp; teams
               </Link>
