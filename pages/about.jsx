@@ -214,7 +214,7 @@ export default function About() {
                 href="#founder"
                 className="font-semibold text-brand-link underline decoration-brand-link/40 underline-offset-2 hover:text-oasis-green-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#617500]"
               >
-                The founder
+                Founder
               </Link>
             </div>
           </div>
@@ -374,10 +374,10 @@ export default function About() {
         </div>
       </section>
 
-      {/* ===== The Founder ===== */}
+      {/* ===== Founder ===== */}
       <section id="founder" className="bg-[#F3F8E4] py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center text-3xl font-bold text-oasis-green-800 sm:text-4xl">The founder</h2>
+          <h2 className="text-center text-3xl font-bold text-oasis-green-800 sm:text-4xl">Founder</h2>
           <div className="mt-10 grid gap-10 md:grid-cols-[minmax(0,300px)_1fr] md:items-start md:gap-12">
             <div className="flex justify-center md:justify-start">
               <Image
