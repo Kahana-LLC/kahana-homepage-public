@@ -181,7 +181,9 @@ export default function About() {
           <div className="max-w-4xl">
             <p className="text-sm font-semibold uppercase tracking-wide text-oasis-green-600">Kahana</p>
             <h1 className="mt-2 bg-gradient-to-r from-oasis-green-600 to-oasis-green-500 bg-clip-text text-5xl font-bold tracking-tight text-transparent sm:text-6xl">
-              Oasis: named for a refuge. Built for productivity and security.
+              Oasis: named for a refuge.
+              <br />
+              Built for productivity and security.
             </h1>
             <p className="mt-6 text-lg text-oasis-green-800 leading-relaxed">
               Kahana builds two products under the Oasis name. One is a personal browser with a built-in AI assistant for individuals. The other is a managed enterprise browser for organizations. Both share one mission: make browsing faster, more private, and more secure.
