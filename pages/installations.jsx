@@ -11,9 +11,57 @@ export default function Installations() {
   const router = useRouter();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [canaryDownload, setCanaryDownload] = useState({
+    appleSilicon: null,
+    intel: null,
+    universal: null,
+    fallback: null,
+    isLoading: true,
+    error: false,
+  });
 
   useEffect(() => {
     checkAuthentication();
+  }, []);
+
+  useEffect(() => {
+    let isActive = true;
+
+    const loadCanaryDownload = async () => {
+      try {
+        const response = await fetch('/api/oasis-canary-download');
+        if (!response.ok) {
+          throw new Error(`GitHub release request failed with ${response.status}`);
+        }
+
+        const data = await response.json();
+        if (isActive) {
+          setCanaryDownload({
+            appleSilicon: data.appleSilicon ?? null,
+            intel: data.intel ?? null,
+            universal: data.universal ?? null,
+            fallback: data.fallback ?? null,
+            isLoading: false,
+            error: false,
+          });
+        }
+      } catch (err) {
+        console.error('Failed to load canary download:', err);
+        if (isActive) {
+          setCanaryDownload((prev) => ({
+            ...prev,
+            isLoading: false,
+            error: true,
+          }));
+        }
+      }
+    };
+
+    loadCanaryDownload();
+
+    return () => {
+      isActive = false;
+    };
   }, []);
 
   const checkAuthentication = async () => {
@@ -38,14 +86,37 @@ export default function Installations() {
     }
   };
 
+  const resolveDownloadUrl = (preferredUrl) => {
+    return preferredUrl || canaryDownload.universal || canaryDownload.fallback;
+  };
+
+  const appleSiliconDownloadUrl = resolveDownloadUrl(canaryDownload.appleSilicon);
+  const intelDownloadUrl = resolveDownloadUrl(canaryDownload.intel);
+
+  const getDownloadStatus = (downloadUrl) => {
+    if (canaryDownload.isLoading) {
+      return 'loading';
+    }
+
+    return downloadUrl ? 'available' : 'unavailable';
+  };
+
+  const appleSiliconStatus = getDownloadStatus(appleSiliconDownloadUrl);
+  const intelStatus = getDownloadStatus(intelDownloadUrl);
+
   const downloadButtons = [
     {
       platform: 'Mac (Apple Silicon)',
       icon: FaApple,
       description: 'Latest beta build for Apple Silicon Macs.',
-      status: 'available',
-      actionLabel: 'Download for Mac',
-      downloadUrl: 'https://app.box.com/s/4x605cd3ehhxbzyaqunquw5pp40vau9r',
+      status: appleSiliconStatus,
+      actionLabel:
+        appleSiliconStatus === 'loading'
+          ? 'Preparing download...'
+          : appleSiliconStatus === 'available'
+          ? 'Download for Mac'
+          : 'Download unavailable',
+      downloadUrl: appleSiliconDownloadUrl,
       cardColor: 'bg-oasis-green-100 hover:bg-oasis-green-200 border-oasis-green-300',
       textColor: 'text-black',
       bgHex: '#F2F4E5',
@@ -59,9 +130,14 @@ export default function Installations() {
       platform: 'Mac Intel',
       icon: FaApple,
       description: 'Stable beta build for Intel-based Macs.',
-      status: 'available',
-      actionLabel: 'Download for Intel Mac',
-      downloadUrl: 'https://app.box.com/s/wumbootmyp4qkxlkdqg7vqwwbdk70kqx',
+      status: intelStatus,
+      actionLabel:
+        intelStatus === 'loading'
+          ? 'Preparing download...'
+          : intelStatus === 'available'
+          ? 'Download for Intel Mac'
+          : 'Download unavailable',
+      downloadUrl: intelDownloadUrl,
       cardColor: 'bg-oasis-green-100 hover:bg-oasis-green-200 border-oasis-green-300',
       textColor: 'text-black',
       bgHex: '#F2F4E5',
@@ -106,6 +182,16 @@ export default function Installations() {
   const handleDownload = (button) => {
     if (button.status === 'coming-soon') {
       alert(`${button.platform} is not available yet. Join the waitlist and we will announce it as soon as downloads open.`);
+      return;
+    }
+
+    if (button.status === 'loading') {
+      alert('Preparing the download. Please try again in a moment.');
+      return;
+    }
+
+    if (button.status === 'unavailable') {
+      alert('Download unavailable right now. Please try again later.');
       return;
     }
 
@@ -176,17 +262,18 @@ export default function Installations() {
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {downloadButtons.map((button) => {
                 const IconComponent = button.icon;
+                const isAvailable = button.status === 'available';
 
                 return (
                   <div key={button.platform} className="relative">
                     <button
                       onClick={() => handleDownload(button)}
                       className={`installations-card-button w-full p-7 rounded-2xl border-2 transition-all duration-200 ${button.cardColor} ${button.textColor} ${
-                        button.status === 'available'
+                        isAvailable
                           ? 'cursor-pointer hover:shadow-xl transform hover:-translate-y-1'
                           : 'cursor-not-allowed opacity-95 is-disabled'
                       }`}
-                      disabled={button.status === 'coming-soon'}
+                      disabled={!isAvailable}
                       style={{
                         '--card-bg': button.bgHex,
                         '--card-hover-bg': button.hoverBgHex,
@@ -200,10 +287,10 @@ export default function Installations() {
                         <p className="text-sm mb-5 opacity-95">{button.description}</p>
                         <div
                           className={`inline-flex items-center gap-2 text-sm font-semibold rounded-md px-3 py-2 ${
-                            button.status === 'available' ? 'bg-black text-white' : ''
+                            isAvailable ? 'bg-black text-white' : ''
                           }`}
                         >
-                          {button.status === 'available' ? (
+                          {isAvailable ? (
                             <FaDownload className="w-4 h-4" />
                           ) : (
                             <FaClock className="w-4 h-4" />
