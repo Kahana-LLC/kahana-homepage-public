@@ -180,21 +180,6 @@ export default function Installations() {
   ];
 
   const handleDownload = (button) => {
-    if (button.status === 'coming-soon') {
-      alert(`${button.platform} is not available yet. Join the waitlist and we will announce it as soon as downloads open.`);
-      return;
-    }
-
-    if (button.status === 'loading') {
-      alert('Preparing the download. Please try again in a moment.');
-      return;
-    }
-
-    if (button.status === 'unavailable') {
-      alert('Download unavailable right now. Please try again later.');
-      return;
-    }
-
     if (button.downloadUrl) {
       window.open(button.downloadUrl, '_blank');
       return;
