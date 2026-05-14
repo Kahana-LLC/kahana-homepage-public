@@ -38,9 +38,9 @@ export default async function handler(req, res) {
         url: asset.browser_download_url,
       }));
 
-    const appleSilicon = findAsset(dmgAssets, [/arm64/, /aarch64/, /apple\s*silicon/, /m1/, /m2/, /m3/, /m4/]);
-    const intel = findAsset(dmgAssets, [/x64/, /x86_64/, /intel/, /amd64/, /x86/]);
-    const universal = findAsset(dmgAssets, [/universal/, /all/]);
+    const appleSilicon = findAsset(dmgAssets, [/arm64/, /aarch64/, /apple\s*silicon/, /m[1-4]/]);
+    const intel = findAsset(dmgAssets, [/x86_64/, /amd64/, /x64/, /intel/]);
+    const universal = findAsset(dmgAssets, [/universal/]);
     const fallback = dmgAssets[0] || null;
 
     res.setHeader('Cache-Control', 's-maxage=300, stale-while-revalidate=3600');
