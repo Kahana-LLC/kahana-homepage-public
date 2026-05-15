@@ -15,6 +15,7 @@ export default function Installations() {
     appleSilicon: null,
     intel: null,
     universal: null,
+    latest: null,
     fallback: null,
     isLoading: true,
     error: false,
@@ -29,7 +30,7 @@ export default function Installations() {
 
     const loadCanaryDownload = async () => {
       try {
-        const response = await fetch('/api/oasis-canary-download');
+        const response = await fetch('/api/canary-release');
         if (!response.ok) {
           throw new Error(`GitHub release request failed with ${response.status}`);
         }
@@ -40,6 +41,7 @@ export default function Installations() {
             appleSilicon: data.appleSilicon ?? null,
             intel: data.intel ?? null,
             universal: data.universal ?? null,
+            latest: data.latest ?? null,
             fallback: data.fallback ?? null,
             isLoading: false,
             error: false,
@@ -87,7 +89,12 @@ export default function Installations() {
   };
 
   const resolveDownloadUrl = (preferredUrl) => {
-    return preferredUrl || canaryDownload.universal || canaryDownload.fallback;
+    return (
+      preferredUrl ||
+      canaryDownload.universal ||
+      canaryDownload.latest ||
+      canaryDownload.fallback
+    );
   };
 
   const appleSiliconDownloadUrl = resolveDownloadUrl(canaryDownload.appleSilicon);
