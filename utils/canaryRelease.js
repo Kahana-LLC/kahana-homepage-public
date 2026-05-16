@@ -2,19 +2,20 @@ const RELEASE_URL =
   "https://api.github.com/repos/Kahana-LLC/firefox-oasis/releases/tags/canary";
 const USER_AGENT = process.env.GITHUB_API_USER_AGENT || "kahana-homepage-public";
 
-const APPLE_SILICON_PATTERNS = [/arm64/, /aarch64/, /apple\s*silicon/];
-const INTEL_PATTERNS = [/x86_64/, /amd64/, /x64/, /intel/];
-const UNIVERSAL_PATTERNS = [/universal/];
+const OASIS_DMG_PATTERN = /^oasis-\d+\.\d+\.\d+\.\d+\..+\.dmg$/i;
+const APPLE_SILICON_PATTERNS = [/\.aarch64\.mac\.dmg$/i];
+const INTEL_PATTERNS = [/\.x86_64\.mac\.dmg$/i];
+const UNIVERSAL_PATTERNS = [/\.universal\.mac\.dmg$/i];
 
-const parseFirefoxVersion = (name) => {
-  const match = name.match(/firefox-(\d+\.\d+\.\d+\.\d+)/i);
+const parseOasisVersion = (name) => {
+  const match = name.match(/oasis-(\d+\.\d+\.\d+\.\d+)/i);
   if (!match) return null;
   return match[1].split(".").map((part) => Number.parseInt(part, 10));
 };
 
 const compareDmgAssets = (a, b) => {
-  const versionA = parseFirefoxVersion(a.name);
-  const versionB = parseFirefoxVersion(b.name);
+  const versionA = parseOasisVersion(a.name);
+  const versionB = parseOasisVersion(b.name);
 
   if (versionA && versionB) {
     for (let i = 0; i < Math.max(versionA.length, versionB.length); i += 1) {
@@ -40,7 +41,7 @@ export const normalizeCanaryRelease = (release) => {
     .filter(
       (asset) =>
         typeof asset?.name === "string" &&
-        asset.name.toLowerCase().endsWith(".dmg") &&
+        OASIS_DMG_PATTERN.test(asset.name) &&
         asset.state === "uploaded"
     )
     .map((asset) => ({
