@@ -5,7 +5,11 @@ import Link from 'next/link';
 import SEO from '../components/SEO';
 import FadeInSection from '../components/FadeInSection';
 import SharedCTA from '../components/SharedCTA';
+import ProductHuntLaunchSection from '../components/ProductHuntLaunchSection';
+import OasisPlatformLogos from '../components/OasisPlatformLogos';
 import { getCloudinaryImageUrl } from '../utils/cloudinary-mapper';
+
+const BILLING_PORTAL_URL = 'https://billing.stripe.com/p/login/bIYg16d6l3FqelieUU';
 
 const pricingTiers = [
   {
@@ -14,19 +18,16 @@ const pricingTiers = [
     price: '$0',
     priceLabel: 'per month',
     features: [
-      'No credit card required',
-      '50 AI commands / month',
-      'AI assistant with real tab, bookmark & history context',
-      'Voice & dictation (where supported)',
-      'Confirmations before sensitive actions',
-      'Starter prompts, read-aloud & message feedback',
-      'Import bookmarks, passwords, history & autofill from other browsers',
-      'Available for Mac (Apple Silicon & Intel)'
+      '100,000 tokens per day, plus bonuses',
+      'No data collected without your permission',
+      'Import data from your other browsers',
+      'AI assistant built into the core',
+      'Built-in ad-blocking',
     ],
-    creditNote: '',
-    cta: 'Join waitlist',
-    ctaLink: '/oasis-waitlist',
-    buttonStyle: 'secondary'
+    creditNote: 'No credit card required',
+    cta: 'Install on Mac',
+    ctaLink: '/installations',
+    buttonStyle: 'primary'
   },
   {
     name: 'Zen plan',
@@ -34,12 +35,12 @@ const pricingTiers = [
     price: '$20',
     priceLabel: 'per month',
     features: [
-      '1,500 AI commands / month',
+      '1,000,000 tokens per day',
       'Everything in Free',
       'Priority support'
     ],
     creditNote: '',
-    cta: 'Download',
+    cta: 'Install on Mac',
     ctaLink: '/oasis-auth?plan=zen',
     buttonStyle: 'primary',
     highlight: true
@@ -81,27 +82,28 @@ const teamPlan = {
 const faqs = [
   {
     question: 'What platforms does Oasis support?',
-    answer: 'Oasis is currently available for Mac (Apple Silicon and Intel). Windows and Linux versions are in development and coming soon.'
+    answer: (
+      <>
+        Oasis is currently available for Mac (Apple Silicon and Intel). Windows, Linux, and Chromium versions are in
+        development.{' '}
+        <Link href="/oasis-waitlist" className="text-[#4A6200] no-underline hover:no-underline font-semibold">
+          Get early access
+        </Link>{' '}
+        for early access.
+      </>
+    ),
   },
   {
-    question: 'How does Oasis integrate with my existing tools?',
-    answer: 'Oasis connects with popular productivity platforms, cloud storage services, and business applications through secure APIs. Our integration framework supports custom connections, allowing you to sync data and automate workflows across your entire tech stack.'
-  },
-  {
-    question: 'How is my data handled and protected?',
-    answer: 'We implement enterprise-grade encryption for data in transit and at rest. Your workspace data remains private and is never used to train our AI models. All processing happens in secure, isolated environments with strict access controls and regular security audits.'
-  },
-  {
-    question: 'How do AI commands work in Oasis?',
-    answer: 'AI commands are consumed when you use the AI assistant to execute actions like opening tabs, performing searches, organizing content, and running automated workflows. Core workspace access and basic navigation never require AI commands. You can monitor your usage in real-time and upgrade your plan when needed.'
+    question: 'How do AI tokens work in Oasis?',
+    answer: 'Tokens are consumed when you use the AI assistant for chat, actions like opening tabs, searches, organizing content, and automated workflows. Core workspace access and basic navigation do not use tokens. You can monitor your usage in real time and upgrade your plan when needed.'
   },
   {
     question: 'What does Oasis cost?',
-    answer: 'Oasis offers flexible pricing starting with a free plan that includes 50 AI commands per month. The Zen plan is $20/month with 1,500 AI commands per month. Enterprise offers custom pricing, volume licensing, and advanced requirements; contact us via Schedule a demo. Team plans feature per-seat pricing starting at $40/month with custom options for larger organizations.'
+    answer: 'Oasis offers flexible pricing starting with a free plan that includes 100,000 tokens per day. The Zen plan is $20/month with 1,000,000 tokens per day. Enterprise offers custom pricing, volume licensing, and advanced requirements; contact us via Schedule a demo. Team plans feature per-seat pricing starting at $40/month with custom options for larger organizations.'
   },
   {
     question: 'Can I change plans or cancel anytime?',
-    answer: 'Yes, you have complete flexibility to upgrade, downgrade, or cancel your plan at any time. Changes take effect at your next billing cycle, and unused AI commands from your current plan will reset at the start of each billing cycle.'
+    answer: 'Yes, you have complete flexibility to upgrade, downgrade, or cancel your plan at any time. Changes take effect at your next billing cycle. Daily token allowances reset each day; billing changes apply on your next renewal.'
   },
   {
     question: 'Where can I review the Terms and Conditions and Privacy Policy?',
@@ -208,16 +210,22 @@ export default function OasisPricing() {
         </div>
         
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10 pt-6 sm:pt-8 pb-4 sm:pb-5">
-          <h1 
+          <h1
             className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-tight mb-2"
             style={{ color: '#313A00' }}
           >
             Oasis Pricing
           </h1>
-          <div className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium mt-2" style={{ backgroundColor: '#EDF5F8', color: '#1D3E48' }}>
-            <span className="mr-2">💻</span>
-            Currently available for Mac (Apple Silicon & Intel) only. Windows and Linux coming soon.
-          </div>
+          <p className="mx-auto mt-3 max-w-2xl text-xs sm:text-sm text-gray-600">
+            By using Oasis, you agree to our{' '}
+            <Link href="/terms-and-conditions" className="text-[#4A6200] no-underline hover:no-underline font-semibold">
+              Terms and Conditions
+            </Link>
+            {' '}and{' '}
+            <Link href="/privacy-policy" className="text-[#4A6200] no-underline hover:no-underline font-semibold">
+              Privacy Policy
+            </Link>
+          </p>
         </div>
       </section>
 
@@ -225,11 +233,11 @@ export default function OasisPricing() {
       <FadeInSection>
         <section className="pt-2 pb-6 sm:pt-3 sm:pb-8 px-4 sm:px-6 lg:px-8 bg-white">
           <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-3 md:items-start gap-4 lg:gap-6 max-w-5xl mx-auto">
-              {pricingTiers.map((tier, index) => (
+            <div className="grid grid-cols-1 md:grid-cols-3 md:items-stretch gap-4 lg:gap-6 max-w-5xl mx-auto">
+              {pricingTiers.map((tier) => (
                 <div
                   key={tier.name}
-                  className="relative bg-white border-2 border-gray-200 rounded-2xl p-4 sm:p-5 lg:p-6 transition-all duration-300 hover:shadow-lg"
+                  className="relative flex flex-col h-full bg-white border-2 border-gray-200 rounded-2xl p-4 sm:p-5 lg:p-6 transition-all duration-300 hover:shadow-lg"
                 >
                   {tier.name === 'Zen plan' && (
                     <span
@@ -237,6 +245,14 @@ export default function OasisPricing() {
                       title="Public beta"
                     >
                       Beta
+                    </span>
+                  )}
+                  {tier.creditNote && (
+                    <span
+                      className="absolute right-3 top-3 z-10 inline-flex items-center rounded-md bg-[#EDF5F8] px-2 py-0.5 text-[0.625rem] font-semibold uppercase tracking-wide text-[#1D3E48] sm:right-4 sm:top-4"
+                      title={tier.creditNote}
+                    >
+                      {tier.creditNote}
                     </span>
                   )}
                   <div className="mb-3">
@@ -266,21 +282,23 @@ export default function OasisPricing() {
                   <ul className="space-y-1.5 sm:space-y-2">
                     {tier.features.map((feature, featureIndex) => {
                       const isMacOnly = typeof feature === 'string' && feature.startsWith('Available for Mac');
+                      const accentColor = isMacOnly ? '#489CB5' : '#495800';
+
                       return (
-                        <li 
-                          key={featureIndex} 
+                        <li
+                          key={featureIndex}
                           className={`flex items-start ${isMacOnly ? 'px-3 py-2 rounded-lg -mx-3' : ''}`}
                           style={isMacOnly ? { backgroundColor: '#EDF5F8', border: '1px solid #489CB5' } : {}}
                         >
                           <svg
                             className="w-3 h-3 mr-2 mt-0.5 sm:mt-1 flex-shrink-0"
-                            style={{ color: isMacOnly ? '#489CB5' : '#495800' }}
+                            style={{ color: accentColor }}
                             fill="currentColor"
                             viewBox="0 0 20 20"
                           >
                             <path d="M10 2L12 8L10 14L8 8L10 2Z" />
                           </svg>
-                          <span 
+                          <span
                             className={`text-xs sm:text-sm leading-relaxed ${isMacOnly ? 'font-semibold' : 'text-gray-800'}`}
                             style={isMacOnly ? { color: '#1D3E48' } : {}}
                           >
@@ -294,21 +312,33 @@ export default function OasisPricing() {
               ))}
             </div>
 
-            {/* Legal Links */}
-            <div className="max-w-5xl mx-auto mt-4 sm:mt-5 text-center">
-              <p className="text-xs sm:text-sm text-gray-600">
-                By using Oasis, you agree to our{' '}
-                <Link href="/terms-and-conditions" className="text-[#4A6200] no-underline hover:no-underline font-semibold">
-                  Terms and Conditions
-                </Link>
-                {' '}and{' '}
-                <Link href="/privacy-policy" className="text-[#4A6200] no-underline hover:no-underline font-semibold">
-                  Privacy Policy
-                </Link>
-              </p>
+            {/* Non-Mac waitlist */}
+            <div className="max-w-5xl mx-auto mt-5 sm:mt-6 w-full">
+              <div className="relative bg-gradient-to-br from-[#F8FAF2] to-white border-2 border-gray-300 rounded-2xl p-5 sm:p-6 lg:p-8 transition-all duration-300 hover:shadow-lg">
+                <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
+                  <div className="text-center sm:text-left sm:flex-1">
+                    <h3 className="text-lg sm:text-xl font-semibold mb-2 text-gray-800">
+                      Windows, Linux, and Chromium access
+                    </h3>
+                    <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+                      Get early access to Windows, Linux, and Chromium versions of Oasis.
+                    </p>
+                  </div>
+                  <OasisPlatformLogos
+                    className="sm:shrink-0"
+                    labelClassName="text-xs font-medium text-gray-700"
+                  />
+                  <Link
+                    href="/oasis-waitlist"
+                    className="btn-primary w-full sm:w-auto shrink-0 inline-flex items-center justify-center px-6 py-2.5 sm:py-3 text-sm sm:text-base font-normal rounded-full no-underline hover:no-underline focus:no-underline transition-all"
+                  >
+                    Get early access
+                  </Link>
+                </div>
+              </div>
             </div>
 
-            {/* Existing User Card */}
+            {/* Existing Customer */}
             <div className="max-w-md mx-auto mt-5 sm:mt-6">
               <div className="relative bg-gradient-to-br from-[#F8FAF2] to-white border-2 border-gray-300 rounded-2xl p-5 sm:p-6 transition-all duration-300 hover:shadow-lg">
                 <div className="text-center">
@@ -319,7 +349,7 @@ export default function OasisPricing() {
                     Manage your billing, subscription, and payment methods
                   </p>
                   <Link
-                    href="https://billing.stripe.com/p/login/bIYg16d6l3FqelieUU"
+                    href={BILLING_PORTAL_URL}
                     className="btn-secondary w-full inline-flex items-center justify-center px-4 py-2.5 sm:py-3 text-sm sm:text-base font-normal rounded-full no-underline hover:no-underline focus:no-underline transition-all"
                   >
                     Access Billing Portal
@@ -332,28 +362,28 @@ export default function OasisPricing() {
         </section>
       </FadeInSection>
 
-      {/* How AI Commands Work Section */}
+      {/* How AI tokens work */}
       <FadeInSection>
         <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-[#F8FAF2]">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-8 sm:mb-12">
               <div className="tracking-wider mb-3 sm:mb-4 font-semibold text-sm sm:text-base lg:text-lg capitalize" style={{ color: '#978455' }}>
-                Understanding AI Commands
+                Understanding AI tokens
               </div>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-3 sm:mb-4" style={{ color: '#313A00' }}>
-                How AI Commands Work
+                How AI tokens work
               </h2>
             </div>
 
             <div className="space-y-3 sm:space-y-4 text-left max-w-3xl mx-auto">
               <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-                Accessing your Oasis workspace and navigating through your content is completely free. No AI commands required. Your workspace, files, and basic organizational tools are always available without any usage limits.
+                Accessing your Oasis workspace and navigating through your content is completely free. No tokens required. Your workspace, files, and basic organizational tools are always available without usage limits.
               </p>
               <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-                AI commands are used when you interact with the AI assistant to execute actions like opening tabs, performing searches, organizing content, creating tab groups, and running automated workflows. Each command you give to the assistant counts toward your monthly allocation.
+                Tokens are used when you interact with the AI assistant—for chat, opening tabs, searches, organizing content, creating tab groups, and running automated workflows. Usage counts toward your plan&apos;s daily token allowance.
               </p>
               <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-                You maintain full control over your AI command usage with real-time monitoring. Each plan includes a monthly allocation of AI commands that reset at the start of each billing cycle. You can upgrade your plan at any time to ensure your productivity never gets interrupted.
+                You maintain full control with real-time monitoring. The Free plan includes 100,000 tokens per day; Zen includes 1,000,000 tokens per day. Allowances reset daily. Upgrade anytime if you need more capacity.
               </p>
             </div>
           </div>
@@ -411,6 +441,12 @@ export default function OasisPricing() {
               </div>
             </div>
           </div>
+        </section>
+      </FadeInSection>
+
+      <FadeInSection>
+        <section className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
+          <ProductHuntLaunchSection />
         </section>
       </FadeInSection>
 

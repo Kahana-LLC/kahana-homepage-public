@@ -408,7 +408,7 @@ export default function OasisAuth() {
                 {authTransitionHero
                   ? 'Verifying your account'
                   : router?.query?.redirect === '/installations' && plan.id === 'free'
-                    ? 'Sign in to Access Downloads'
+                    ? 'Create an account or sign in'
                     : `Get ${plan.name}`}
               </h1>
               <p className="text-lg text-gray-700">
@@ -419,7 +419,8 @@ export default function OasisAuth() {
                   </>
                 ) : router?.query?.redirect === '/installations' && plan.id === 'free' ? (
                   <>
-                    Create an account or sign in to access the Oasis Browser download page. You must be logged in to view and download the beta software.
+                    Create an account or sign in to access the Oasis Browser download page. You must be logged in to
+                    view and download the beta software.
                   </>
                 ) : (
                   <>

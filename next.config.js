@@ -87,6 +87,11 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
+        hostname: "ph-files.imgix.net",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
         hostname: "*.mm.bing.net",
         pathname: "/**",
       },

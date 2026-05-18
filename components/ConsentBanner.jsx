@@ -1,13 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { useConsent } from '../contexts/ConsentContext';
 
 /** Max wait before showing banner if the browser never goes idle (Safari falls back to timer). */
 const DEFER_BANNER_IDLE_TIMEOUT_MS = 650;
+export const CONSENT_BANNER_OFFSET_VAR = '--consent-banner-offset';
 
 export default function ConsentBanner() {
   const { showBanner, acceptAll, declineAll, openModal, isLoading } = useConsent();
   const [deferPaint, setDeferPaint] = useState(false);
+  const bannerRef = useRef(null);
 
   // Yield first paint to above-the-fold hero (LCP): two animation frames, then idle (or timeout).
   useEffect(() => {
@@ -38,11 +40,31 @@ export default function ConsentBanner() {
     };
   }, [isLoading, showBanner]);
 
+  const isVisible = !isLoading && showBanner && deferPaint;
+
+  useEffect(() => {
+    const root = document.documentElement;
+    if (!isVisible || !bannerRef.current) {
+      root.style.setProperty(CONSENT_BANNER_OFFSET_VAR, '0px');
+      return;
+    }
+    const updateOffset = () => {
+      root.style.setProperty(CONSENT_BANNER_OFFSET_VAR, `${bannerRef.current?.offsetHeight ?? 0}px`);
+    };
+    updateOffset();
+    const observer = new ResizeObserver(updateOffset);
+    observer.observe(bannerRef.current);
+    return () => {
+      observer.disconnect();
+      root.style.setProperty(CONSENT_BANNER_OFFSET_VAR, '0px');
+    };
+  }, [isVisible]);
+
   if (isLoading) return null;
-  const isVisible = showBanner && deferPaint;
 
   return (
     <div
+      ref={bannerRef}
       className={`consent-banner fixed bottom-0 left-0 right-0 z-50 bg-white border-t-2 border-oasis-green-600 shadow-lg transition-opacity duration-300 ${
         isVisible ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
       }`}

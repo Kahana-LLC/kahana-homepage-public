@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { FaApple, FaClock, FaDownload, FaLinux, FaWindows } from 'react-icons/fa';
+import { FaApple, FaBell, FaDownload, FaLinux, FaWindows } from 'react-icons/fa';
 import { Container } from '../components/Container';
 import Breadcrumbs from '../components/Breadcrumbs';
 import { createClient } from '@/utils/supabase';
@@ -158,8 +158,9 @@ export default function Installations() {
       platform: 'Windows',
       icon: FaWindows,
       description: 'Windows support is in active development.',
-      status: 'coming-soon',
-      actionLabel: 'Coming Soon',
+      status: 'waitlist',
+      actionLabel: 'Join waitlist',
+      waitlistUrl: '/oasis-waitlist',
       cardColor: 'bg-gray-200 hover:bg-gray-300 border-gray-300',
       textColor: 'text-gray-700',
       bgHex: '#E5E7EB',
@@ -173,8 +174,9 @@ export default function Installations() {
       platform: 'Linux',
       icon: FaLinux,
       description: 'Linux beta is planned after Windows release.',
-      status: 'coming-soon',
-      actionLabel: 'Coming Soon',
+      status: 'waitlist',
+      actionLabel: 'Join waitlist',
+      waitlistUrl: '/oasis-waitlist',
       cardColor: 'bg-gray-200 hover:bg-gray-300 border-gray-300',
       textColor: 'text-gray-700',
       bgHex: '#E5E7EB',
@@ -187,6 +189,11 @@ export default function Installations() {
   ];
 
   const handleDownload = (button) => {
+    if (button.status === 'waitlist' && button.waitlistUrl) {
+      router.push(button.waitlistUrl);
+      return;
+    }
+
     if (button.downloadUrl) {
       window.open(button.downloadUrl, '_blank');
       return;
@@ -255,17 +262,20 @@ export default function Installations() {
               {downloadButtons.map((button) => {
                 const IconComponent = button.icon;
                 const isAvailable = button.status === 'available';
+                const isWaitlist = button.status === 'waitlist';
+                const isClickable = isAvailable || isWaitlist;
 
                 return (
                   <div key={button.platform} className="relative">
                     <button
+                      type="button"
                       onClick={() => handleDownload(button)}
                       className={`installations-card-button w-full p-7 rounded-2xl border-2 transition-all duration-200 ${button.cardColor} ${button.textColor} ${
-                        isAvailable
+                        isClickable
                           ? 'cursor-pointer hover:shadow-xl transform hover:-translate-y-1'
                           : 'cursor-not-allowed opacity-95 is-disabled'
                       }`}
-                      disabled={!isAvailable}
+                      disabled={!isClickable}
                       style={{
                         '--card-bg': button.bgHex,
                         '--card-hover-bg': button.hoverBgHex,
@@ -279,14 +289,14 @@ export default function Installations() {
                         <p className="text-sm mb-5 opacity-95">{button.description}</p>
                         <div
                           className={`inline-flex items-center gap-2 text-sm font-semibold rounded-md px-3 py-2 ${
-                            isAvailable ? 'bg-black text-white' : ''
+                            isClickable ? 'bg-black text-white' : ''
                           }`}
                         >
                           {isAvailable ? (
                             <FaDownload className="w-4 h-4" />
-                          ) : (
-                            <FaClock className="w-4 h-4" />
-                          )}
+                          ) : isWaitlist ? (
+                            <FaBell className="w-4 h-4" />
+                          ) : null}
                           <span>{button.actionLabel}</span>
                         </div>
                       </div>

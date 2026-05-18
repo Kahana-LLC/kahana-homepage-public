@@ -16,6 +16,7 @@
     "upload-all-blog-images": "node scripts/upload-blog-images-to-cloudinary.js && node scripts/upload-external-blog-images-to-cloudinary.js",
     "upload-to-cloudinary-and-remove-local": "node scripts/upload-blog-images-to-cloudinary.js --remove-local && node scripts/upload-external-blog-images-to-cloudinary.js",
     "upload-author-headshots": "node scripts/upload-author-headshots-to-cloudinary.js",
+    "upload-team-cartoons": "node scripts/upload-team-cartoons-to-cloudinary.js",
     "upload-assets": "node scripts/upload-assets-to-cloudinary.js",
     "upload-all-project-images": "node scripts/upload-all-project-images-to-cloudinary.js",
     "fix-failed-blog-images": "node scripts/fix-and-upload-failed-blog-images.js",

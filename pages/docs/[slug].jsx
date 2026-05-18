@@ -8,6 +8,7 @@ import AuthorCard from '../../components/AuthorCard';
 import { FaRegCalendarAlt, FaBookOpen, FaRegClock } from 'react-icons/fa';
 import { getAuthorDetails } from '../../utils/authorUtils';
 import SEO from '../../components/SEO';
+import DocsSupportCTA from '../../components/DocsSupportCTA';
 import { docsConfig } from '../../config/docsConfig';
 import fs from 'fs';
 import path from 'path';
@@ -150,11 +151,13 @@ export default function DocPage({ doc, relatedDocs }) {
           </header>
 
           {/* Content */}
-          <div 
+          <div
             className="prose prose-lg max-w-none no-underline"
             dangerouslySetInnerHTML={{ __html: doc.content }}
             suppressHydrationWarning={true}
           />
+
+          <DocsSupportCTA className="mt-12 mb-4" showHelperText={false} />
 
           {/* Related Docs */}
           {relatedDocs.length > 0 && (

@@ -5,6 +5,7 @@ import { getAllDocsMetadata } from '../../utils/docsUtils';
 import DocCard from '../../components/DocCard';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import SEO from '../../components/SEO';
+import DocsSupportCTA from '../../components/DocsSupportCTA';
 
 const DOCS_PER_PAGE = 9;
 
@@ -116,6 +117,8 @@ export default function DocsIndex({ docs, categories }) {
               .
             </p>
           </div>
+
+          <DocsSupportCTA className="mb-10" showHelperText />
 
           {/* Search Bar - same full-width style as blog */}
           <div className="mb-8">
