@@ -172,7 +172,7 @@ export default function ContactPage() {
                     <Link
                       key={link.name}
                       href={link.href}
-                      className="group flex flex-col p-6 bg-gradient-to-br from-desert-yellow-100/20 to-oasis-blue-300/10 rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
+                      className="group flex flex-col p-6 bg-gradient-to-br from-desert-yellow-100/20 to-oasis-blue-300/10 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 no-underline hover:no-underline focus:no-underline"
                     >
                       <div className="flex-shrink-0 mb-4">
                         <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-oasis-green-500 to-oasis-green-600 transition-all duration-300">

@@ -3,9 +3,13 @@ import { fontGeist, fontBricolage } from "../lib/fonts";
 import dynamic from "next/dynamic";
 import Head from "next/head";
 import GlobalBanner from "../components/GlobalBanner";
+import {
+  isProductHuntGlobalBannerRoute,
+  isProductHuntLaunchActive,
+} from "../data/product-hunt-launch";
 
-/** Set true to show the top promo banner again. */
-const SHOW_GLOBAL_BANNER = false;
+/** Product Hunt launch banner on homepage, blog, and features (through May 20, 2026). */
+const SHOW_PRODUCT_HUNT_BANNER = true;
 import SEO from "../components/SEO";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
@@ -379,6 +383,10 @@ function AppContent({ Component, pageProps }) {
   }, [hasConsent]);
 
   const isBuyerGuide = router.pathname === '/buyers-guide' || router.pathname === '/enterprise-buyer-guide';
+  const showProductHuntBanner =
+    SHOW_PRODUCT_HUNT_BANNER &&
+    isProductHuntLaunchActive() &&
+    isProductHuntGlobalBannerRoute(router.pathname);
   const needsDocsStyles =
     router.pathname.startsWith("/docs") ||
     router.pathname.startsWith("/white-paper") ||
@@ -406,12 +414,18 @@ function AppContent({ Component, pageProps }) {
         />
         <div style={{ zIndex: "100" }} className={`site-nav-wrapper h-16${isBuyerGuide ? ' buyer-guide-layout' : ''}`}>
           <NavbarDup />
-          {SHOW_GLOBAL_BANNER ? <GlobalBanner /> : null}
         </div>
-        <main className="flex-grow">
+        <main
+          className={`flex-grow${
+            showProductHuntBanner
+              ? ' pb-[calc(7rem+var(--consent-banner-offset,0px))] sm:pb-[calc(6.5rem+var(--consent-banner-offset,0px))]'
+              : ''
+          }`}
+        >
           <Component {...pageProps} />
         </main>
         <Footer />
+        {showProductHuntBanner ? <GlobalBanner /> : null}
       </div>
       <ConsentErrorBoundary>
         <ConsentBanner />

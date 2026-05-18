@@ -6,6 +6,8 @@ import ProductSection, {
 } from "../components/ProductSection";
 import DeferredHomeProductLanes from "../components/home/DeferredHomeProductLanes";
 import FadeInSection from "../components/FadeInSection";
+import ProductHuntLaunchSection from "../components/ProductHuntLaunchSection";
+import { isProductHuntLaunchActive } from "../data/product-hunt-launch";
 import SEO from "../components/SEO";
 import { blogIndex } from "../data/blog-index";
 import { getAuthorDetails } from "../utils/authorUtils";
@@ -451,6 +453,16 @@ export default function Home({ blogPosts }) {
               </div>
             </section>
           </FadeInSection>
+
+          {isProductHuntLaunchActive() && (
+            <FadeInSection>
+              <section className="relative z-10 border-b border-[#30400D]/10 bg-white py-12 sm:py-16">
+                <div className="mx-auto flex max-w-5xl flex-col items-center px-4 sm:px-6 lg:px-8">
+                  <ProductHuntLaunchSection />
+                </div>
+              </section>
+            </FadeInSection>
+          )}
 
           {/* Refuge Mission Section */}
           <RefugeMissionSection />

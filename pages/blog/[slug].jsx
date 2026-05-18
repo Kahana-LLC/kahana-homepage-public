@@ -13,6 +13,8 @@ import ComparisonTable from '../../components/ComparisonTable';
 import BlogCard from '../../components/BlogCard';
 import { FaLinkedin, FaRegCalendarAlt, FaBookOpen, FaRegClock } from 'react-icons/fa';
 import SocialShare from '../../components/SocialShare';
+import ProductHuntLaunchEmbed from '../../components/ProductHuntLaunchEmbed';
+import { isProductHuntLaunchActive } from '../../data/product-hunt-launch';
 import { trackBlogPageViewDirect } from '../../utils/directMixpanel';
 import { getBlogPostSeo, getBlogKeywords } from '../../utils/blogSeo';
 import { getBlogImageUrl } from '../../utils/blog-image-url';
@@ -52,6 +54,9 @@ function parseHtmlWithComponents(htmlContent) {
         case 'ComparisonTable':
         case 'MaterialComparisonTable':
           elements.push(<ComparisonTable key={key++} {...props} />);
+          break;
+        case 'ProductHuntLaunchEmbed':
+          elements.push(<ProductHuntLaunchEmbed key={key++} />);
           break;
         default:
           // If component not found, render as HTML
@@ -388,6 +393,9 @@ export default function BlogPost({ post }) {
                           />
                         );
                       }
+                      if (block.name === 'ProductHuntLaunchEmbed') {
+                        return <ProductHuntLaunchEmbed key={index} />;
+                      }
                       return null;
                     default:
                       return null;
@@ -412,6 +420,8 @@ export default function BlogPost({ post }) {
               excerpt={post.excerpt}
             />
           )}
+
+          {isProductHuntLaunchActive() && <ProductHuntLaunchEmbed />}
 
           <div className="mt-16 p-8 bg-gradient-to-br from-desert-yellow-100/20 to-oasis-blue-300/10 rounded-xl shadow-lg">
             <h2 className="text-2xl font-bold text-oasis-green-900 mb-4">Ready to Elevate Your Work Experience?</h2>

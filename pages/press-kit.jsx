@@ -5,6 +5,7 @@ import SEO from '../components/SEO';
 import CopyHexButton from '../components/CopyHexButton';
 import PressInquiriesTally from '../components/PressInquiriesTally';
 import { brandPaletteFamilies } from '../data/brand-palette';
+import ProductHuntLaunchSection from '../components/ProductHuntLaunchSection';
 import { getCloudinaryImageUrl } from '../utils/cloudinary-mapper';
 
 /** Canonical press headshot (matches config/authors.js avatar + cloudinary-mapping.json). */
@@ -57,6 +58,8 @@ export default function PressKitPage() {
         </section>
 
         <div className="mx-auto max-w-5xl space-y-20 px-4 py-16 sm:px-6 lg:px-8">
+          <ProductHuntLaunchSection />
+
           <section aria-labelledby="logos-heading">
             <h2 id="logos-heading" className="text-2xl font-bold text-oasis-green-900">
               Logo assets
