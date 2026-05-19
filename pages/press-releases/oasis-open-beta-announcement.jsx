@@ -11,7 +11,7 @@ export default function OasisOpenBetaPressRelease() {
     <>
       <SEO
         title="Kahana completes Oasis closed beta; privacy-first browser opens next chapter (St. Louis)"
-        description="Kahana announces Oasis browser closed beta complete: a refuge-focused, privacy-first web experience with AI in the core, plus Product Hunt on May 20, 2026 for waitlist supporters. Based in St. Louis."
+        description="Kahana announces Oasis browser closed beta complete: a refuge-focused, privacy-first web experience with AI in the core, plus Product Hunt on May 27, 2026 for waitlist supporters. Based in St. Louis."
         url={CANONICAL}
         type="article"
       />
@@ -40,7 +40,7 @@ export default function OasisOpenBetaPressRelease() {
               <a href="https://www.producthunt.com/" rel="noopener noreferrer" target="_blank" className={linkClass}>
                 Product Hunt
               </a>{' '}
-              on May 20, 2026 for supporters who want a clear moment to follow along.
+              on May 27, 2026 for supporters who want a clear moment to follow along.
             </p>
           </div>
         </header>
@@ -172,13 +172,13 @@ export default function OasisOpenBetaPressRelease() {
                 moves into SaaS, governance must move into the browser.
               </p>
 
-              <h2 className="mt-12 text-2xl font-bold text-oasis-green-950">What&apos;s next: Product Hunt on May 20, 2026</h2>
+              <h2 className="mt-12 text-2xl font-bold text-oasis-green-950">What&apos;s next: Product Hunt on May 27, 2026</h2>
               <p>
                 Kahana will spotlight Oasis on{' '}
                 <a href="https://www.producthunt.com/" rel="noopener noreferrer" target="_blank" className={linkClass}>
                   Product Hunt
                 </a>{' '}
-                on <strong>May 20, 2026</strong>, aimed first at people on the waitlist and supporters who want a single calendar
+                on <strong>May 27, 2026</strong>, aimed first at people on the waitlist and supporters who want a single calendar
                 anchor for the public launch moment. Calendar desks should use that date for the Product Hunt spotlight.
               </p>
               <p>

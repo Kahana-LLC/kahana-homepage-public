@@ -1,5 +1,5 @@
-export const LAUNCH_BADGE_START = new Date('2026-05-20T00:01:00-07:00');
-export const LAUNCH_END = new Date('2026-05-21T00:00:00-07:00');
+export const LAUNCH_BADGE_START = new Date('2026-05-27T00:01:00-07:00');
+export const LAUNCH_END = new Date('2026-05-28T00:00:00-07:00');
 
 /** Set NEXT_PUBLIC_PH_LAUNCH_PREVIEW=true in .env.local to preview launch-day UI locally. */
 export const PRODUCT_HUNT_LAUNCH_DAY_PREVIEW =

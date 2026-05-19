@@ -135,7 +135,7 @@ export default function GlobalBanner() {
               {isPreLaunch ? (
                 <>
                   <span className="sm:hidden">
-                    Launching on Product Hunt May 20 —{' '}
+                    Launching on Product Hunt May 27 —{' '}
                     <a
                       href={ctaUrl}
                       target="_blank"
@@ -146,7 +146,7 @@ export default function GlobalBanner() {
                     </a>
                   </span>
                   <span className="hidden sm:inline">
-                    Oasis launches on Product Hunt May 20 —{' '}
+                    Oasis launches on Product Hunt May 27 —{' '}
                     <a
                       href={ctaUrl}
                       target="_blank"

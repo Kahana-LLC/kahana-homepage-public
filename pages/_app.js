@@ -8,7 +8,7 @@ import {
   isProductHuntLaunchActive,
 } from "../data/product-hunt-launch";
 
-/** Product Hunt launch banner on homepage, blog, and features (through May 20, 2026). */
+/** Product Hunt launch banner on homepage, blog, and features (through May 27, 2026). */
 const SHOW_PRODUCT_HUNT_BANNER = true;
 import SEO from "../components/SEO";
 import { useEffect } from "react";
