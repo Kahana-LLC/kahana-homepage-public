@@ -205,7 +205,7 @@ export default function BlogIndex({ posts = [] }) {
         {isProductHuntLaunchActive() && (
           <div className="mb-10 text-center">
             <p className="mb-4 text-lg font-medium text-oasis-green-800">
-              We&apos;re launching on Product Hunt May 20
+              We&apos;re launching on Product Hunt May 27
             </p>
             <ProductHuntLaunchEmbed className="mx-auto" />
           </div>

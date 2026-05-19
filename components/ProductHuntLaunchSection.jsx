@@ -10,7 +10,7 @@ export default function ProductHuntLaunchSection({ className = '' }) {
         Launching on Product Hunt
       </h2>
       <p className="mx-auto mt-2 max-w-xl text-oasis-green-800">
-        Follow our May 20 launch for updates and support.
+        Follow our May 27 launch for updates and support.
       </p>
       <ProductHuntLaunchEmbed className="mt-6" />
     </section>

@@ -9,6 +9,6 @@ export const pressReleases = [
     title: 'Kahana completes Oasis closed beta; privacy-first browser opens next chapter (St. Louis)',
     href: '/press-releases/oasis-open-beta-announcement',
     summary:
-      'Kahana positions Oasis as a consumer refuge from opaque web data extraction, with AI in the browser core; enterprise browser and Data Leakage Consortium tie-ins; Product Hunt spotlight May 20, 2026 for waitlist supporters.',
+      'Kahana positions Oasis as a consumer refuge from opaque web data extraction, with AI in the browser core; enterprise browser and Data Leakage Consortium tie-ins; Product Hunt spotlight May 27, 2026 for waitlist supporters.',
   },
 ];

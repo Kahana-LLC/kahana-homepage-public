@@ -417,7 +417,7 @@ export default function About() {
               href="/team"
               className="font-semibold text-brand-link underline decoration-brand-link/40 underline-offset-2 hover:text-oasis-green-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#617500]"
             >
-              Full story
+              Team
             </Link>
             <Link
               href="/careers"
