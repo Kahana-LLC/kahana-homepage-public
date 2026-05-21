@@ -1,10 +1,12 @@
 import Head from "next/head";
+import Link from "next/link";
 import Script from "next/script";
 import ProductSection, {
   OASIS_HERO_MASCOT_PATH,
   OASIS_HERO_MASCOT_PATH_SM,
 } from "../components/ProductSection";
 import DeferredHomeProductLanes from "../components/home/DeferredHomeProductLanes";
+import DeferredHomeDataTransparency from "../components/home/DeferredHomeDataTransparency";
 import FadeInSection from "../components/FadeInSection";
 import ProductHuntLaunchSection from "../components/ProductHuntLaunchSection";
 import { isProductHuntLaunchActive } from "../data/product-hunt-launch";
@@ -14,6 +16,7 @@ import { getAuthorDetails } from "../utils/authorUtils";
 import React, { useEffect, useState } from "react";
 import { getCloudinaryImageUrl } from "../utils/cloudinary-mapper";
 import { FaCheckCircle, FaGlobeAmericas, FaSmile } from "react-icons/fa";
+import { trackButtonClick } from "../utils/analytics";
 
 export async function getStaticProps() {
   try {
@@ -124,6 +127,25 @@ export default function Home({ blogPosts }) {
         >
           About Us
         </a>
+        <p className="mt-8 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-base text-[#30400D]/80">
+          <Link
+            href="/products/oasis-browser"
+            onClick={() => trackButtonClick("refuge_link_product_details", "refuge_section")}
+            className="font-semibold text-brand-link underline decoration-brand-link/40 underline-offset-2 hover:text-oasis-green-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#617500]"
+          >
+            Product details
+          </Link>
+          <span className="text-brand-link/50" aria-hidden>
+            ·
+          </span>
+          <Link
+            href="/products/oasis-enterprise-browser"
+            onClick={() => trackButtonClick("refuge_link_enterprise", "refuge_section")}
+            className="font-semibold text-brand-link underline decoration-brand-link/40 underline-offset-2 hover:text-oasis-green-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#617500]"
+          >
+            For IT &amp; teams
+          </Link>
+        </p>
       </div>
     </section>
   );
@@ -230,7 +252,11 @@ export default function Home({ blogPosts }) {
             Ad-free browsing, built-in protection, complete peace of mind.
           </h2>
           <p className="text-lg text-[#30400D]/75 max-w-3xl leading-relaxed">
-            Oasis includes built-in ad blocking and a privacy-first architecture that keeps your browsing behavior in your control. We do not sell your browsing data, and we only collect information when you explicitly permit it.
+            Oasis includes built-in ad blocking and a privacy-first architecture that keeps your
+            browsing behavior in your control. We do not sell your browsing data. We collect
+            minimal, anonymized interaction data by default to improve the assistant. Identifying
+            information (like email or user ID) is only included if you opt in to personalization in
+            Settings.
           </p>
           <p className="mt-5 text-base sm:text-lg text-[#30400D]/72 max-w-3xl leading-relaxed">
             When people ask whether Oasis is secure enough, our goal is to make the answer obvious through product behavior and clear policies: private by default, transparent by design, and always under your control.
@@ -247,6 +273,12 @@ export default function Home({ blogPosts }) {
               className="btn-primary inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline rounded-[27.5px] font-bold text-center"
             >
               Explore Security Approach
+            </a>
+            <a
+              href="/docs/technical-and-interaction-data"
+              className="btn-secondary inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline rounded-[27.5px] font-bold text-center"
+            >
+              What data we collect
             </a>
           </div>
           <p className="mt-4">
@@ -466,6 +498,10 @@ export default function Home({ blogPosts }) {
 
           {/* Refuge Mission Section */}
           <RefugeMissionSection />
+
+          <FadeInSection>
+            <DeferredHomeDataTransparency />
+          </FadeInSection>
 
           {/* Trust Section */}
           <TrustSection />

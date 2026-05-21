@@ -30,10 +30,16 @@ export default function ProductSection() {
               Oasis
             </h1>
             <p className="text-lg sm:text-xl text-oasis-green-800 max-w-2xl mb-0 text-pretty leading-relaxed">
-              Most ai browsers compete for your attention. Oasis protects it. Cut through the noise
-              with an experience that feels clean, focused, and intelligently adaptive. Your data
-              remains fully yours — always.
+              Fall in love with the privacy-first ai browser that you can train. Your personal data is sacred. By default,
+              all interaction data is anonymized. 
             </p>
+            <Link
+              href="/#data-transparency"
+              onClick={() => trackButtonClick("hero_data_transparency", "hero_section")}
+              className="block text-sm font-semibold text-brand-link underline decoration-brand-link/40 underline-offset-2 hover:text-oasis-green-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#617500]"
+            >
+              See exactly what we collect
+            </Link>
             <div className="hero-cta-buttons flex flex-row flex-wrap items-center justify-start gap-4">
               <Link
                 href="/oasis-pricing"
@@ -50,25 +56,6 @@ export default function ProductSection() {
                 Schedule a demo
               </Link>
             </div>
-            <p className="text-base text-oasis-green-800 max-w-xl mt-1 flex flex-wrap items-center justify-start gap-x-2 gap-y-1">
-              <Link
-                href="/products/oasis-browser"
-                onClick={() => trackButtonClick('hero_link_product_details', 'hero_section')}
-                className="font-semibold text-brand-link underline decoration-brand-link/40 underline-offset-2 hover:text-oasis-green-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#617500]"
-              >
-                Product details
-              </Link>
-              <span className="text-brand-link/50" aria-hidden>
-                ·
-              </span>
-              <Link
-                href="/products/oasis-enterprise-browser"
-                onClick={() => trackButtonClick('hero_link_enterprise', 'hero_section')}
-                className="font-semibold text-brand-link underline decoration-brand-link/40 underline-offset-2 hover:text-oasis-green-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#617500]"
-              >
-                For IT &amp; teams
-              </Link>
-            </p>
           </div>
           <div className="flex w-full shrink-0 justify-end pointer-events-none select-none md:w-auto">
             <div

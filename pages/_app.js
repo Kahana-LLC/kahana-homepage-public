@@ -390,6 +390,7 @@ function AppContent({ Component, pageProps }) {
   const needsDocsStyles =
     router.pathname.startsWith("/docs") ||
     router.pathname.startsWith("/white-paper") ||
+    router.pathname === "/" ||
     isBuyerGuide;
   const needsSearchStyles =
     router.pathname.startsWith("/explore");
