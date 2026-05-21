@@ -9,6 +9,7 @@ import { FaRegCalendarAlt, FaBookOpen, FaRegClock } from 'react-icons/fa';
 import { getAuthorDetails } from '../../utils/authorUtils';
 import SEO from '../../components/SEO';
 import DocsSupportCTA from '../../components/DocsSupportCTA';
+import TechnicalInteractionDataDoc from '../../components/docs/TechnicalInteractionDataDoc';
 import { docsConfig } from '../../config/docsConfig';
 import fs from 'fs';
 import path from 'path';
@@ -151,11 +152,15 @@ export default function DocPage({ doc, relatedDocs }) {
           </header>
 
           {/* Content */}
-          <div
-            className="prose prose-lg max-w-none no-underline"
-            dangerouslySetInnerHTML={{ __html: doc.content }}
-            suppressHydrationWarning={true}
-          />
+          {doc.slug === 'technical-and-interaction-data' ? (
+            <TechnicalInteractionDataDoc />
+          ) : (
+            <div
+              className="prose prose-lg max-w-none no-underline"
+              dangerouslySetInnerHTML={{ __html: doc.content }}
+              suppressHydrationWarning={true}
+            />
+          )}
 
           <DocsSupportCTA className="mt-12 mb-4" showHelperText={false} />
 
