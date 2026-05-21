@@ -1,9 +1,23 @@
 export const LAUNCH_BADGE_START = new Date('2026-05-27T00:01:00-07:00');
 export const LAUNCH_END = new Date('2026-05-28T00:00:00-07:00');
 
-/** Set NEXT_PUBLIC_PH_LAUNCH_PREVIEW=true in .env.local to preview launch-day UI locally. */
-export const PRODUCT_HUNT_LAUNCH_DAY_PREVIEW =
-  process.env.NEXT_PUBLIC_PH_LAUNCH_PREVIEW === 'true';
+/**
+ * Local preview override via NEXT_PUBLIC_PH_LAUNCH_PREVIEW in .env.local:
+ * - unset / false — use real schedule (pre-launch until May 27 12:01 AM PDT)
+ * - prelaunch — banner + sections on; "Launching May 27" copy
+ * - live (or legacy true) — launch-day badge + "We're live on Product Hunt" copy
+ */
+function resolveLaunchPreviewMode() {
+  const raw = (process.env.NEXT_PUBLIC_PH_LAUNCH_PREVIEW || '').trim().toLowerCase();
+  if (raw === 'prelaunch') return 'prelaunch';
+  if (raw === 'live' || raw === 'true') return 'live';
+  return 'off';
+}
+
+export const PRODUCT_HUNT_LAUNCH_PREVIEW_MODE = resolveLaunchPreviewMode();
+
+/** @deprecated Use PRODUCT_HUNT_LAUNCH_PREVIEW_MODE === 'live' */
+export const PRODUCT_HUNT_LAUNCH_DAY_PREVIEW = PRODUCT_HUNT_LAUNCH_PREVIEW_MODE === 'live';
 
 export const PRODUCT_HUNT_PRODUCT_URL = 'https://www.producthunt.com/products/kahana';
 export const PRODUCT_HUNT_EMBED_URL =
@@ -22,18 +36,19 @@ export const PRODUCT_HUNT_TITLE = 'Oasis Browser for Mac';
 export const PRODUCT_HUNT_TAGLINE = 'A privacy-first ai browser that you can train';
 
 export function isProductHuntFeaturedBadgeActive() {
-  if (PRODUCT_HUNT_LAUNCH_DAY_PREVIEW) return true;
+  if (PRODUCT_HUNT_LAUNCH_PREVIEW_MODE === 'live') return true;
   const now = new Date();
   return now >= LAUNCH_BADGE_START && now < LAUNCH_END;
 }
 
 export function isProductHuntLaunchActive() {
-  if (PRODUCT_HUNT_LAUNCH_DAY_PREVIEW) return true;
+  if (PRODUCT_HUNT_LAUNCH_PREVIEW_MODE !== 'off') return true;
   return new Date() < LAUNCH_END;
 }
 
 export function isProductHuntPreLaunchActive() {
-  if (PRODUCT_HUNT_LAUNCH_DAY_PREVIEW) return false;
+  if (PRODUCT_HUNT_LAUNCH_PREVIEW_MODE === 'prelaunch') return true;
+  if (PRODUCT_HUNT_LAUNCH_PREVIEW_MODE === 'live') return false;
   const now = new Date();
   return now < LAUNCH_BADGE_START && now < LAUNCH_END;
 }
