@@ -23,16 +23,16 @@ export default function ProductSection() {
         <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between md:gap-8">
           <div className="flex min-w-0 max-w-xl flex-1 flex-col items-start gap-6 text-left lg:max-w-2xl">
             <h1 className="text-4xl font-semibold leading-tight text-[#313A00] sm:text-5xl mb-0 text-balance">
-              Relax, you found{' '}
+              Relaaax, you found{' '}
               <span className="underline decoration-[#313A00]/55 underline-offset-[0.18em]">
                 the
               </span>{' '}
               Oasis
             </h1>
             <p className="text-lg sm:text-xl text-oasis-green-800 max-w-2xl mb-0 text-pretty leading-relaxed">
-              Welcome to the most elegant browser user experience on Earth.{' '}
-              <br className="hidden sm:block" aria-hidden />
-              Use your voice. Use natural language. Let Oasis do the work for you.
+              Most ai browsers compete for your attention. Oasis protects it. Cut through the noise
+              with an experience that feels clean, focused, and intelligently adaptive. Your data
+              remains fully yours — always.
             </p>
             <div className="hero-cta-buttons flex flex-row flex-wrap items-center justify-start gap-4">
               <Link
