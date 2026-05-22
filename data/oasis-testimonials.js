@@ -2,6 +2,8 @@ export const oasisTestimonials = [
   {
     id: "lokesh",
     name: "Lokesh",
+    avatarSrc: "/assets/testimonials/lokesh_nenavath.png",
+    avatarObjectPosition: "52% 28%",
     featured: true,
     excerpt:
       "Oasis is the first browser where things just clicked for me. Tried a bunch before, but none of them felt right. The UI, the overall experience genuinely on a different level.",
@@ -18,6 +20,8 @@ export const oasisTestimonials = [
   {
     id: "agrima",
     name: "Agrima",
+    avatarSrc: "/assets/testimonials/agrima_gupta.png",
+    avatarObjectPosition: "58% 24%",
     excerpt:
       "Oasis, the word itself reminds me of calm, peace, and serendipity, like finding a place of clarity in the middle of chaos. That's exactly how I felt when I first used the Oasis AI browser.",
     paragraphs: [
@@ -32,6 +36,8 @@ export const oasisTestimonials = [
   {
     id: "niraj",
     name: "Niraj",
+    avatarSrc: "/assets/testimonials/niraj_patil.png",
+    avatarObjectPosition: "50% 26%",
     excerpt:
       "Oasis is exactly what the Firefox platform has been missing. I love the privacy of Firefox, but I really missed having a built-in AI assistant right alongside my tabs like you see in Chrome.",
     paragraphs: [

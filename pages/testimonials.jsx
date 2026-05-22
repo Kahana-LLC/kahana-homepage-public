@@ -4,13 +4,13 @@ import SEO from "../components/SEO";
 import WallOfLove from "../components/testimonials/WallOfLove";
 import DownloadOasisLink from "../components/buttons/DownloadOasisLink";
 
-export default function WallOfLovePage() {
+export default function TestimonialsPage() {
   return (
     <>
       <SEO
-        title="Wall of Love"
-        description="Stories from Oasis users on privacy-first browsing, no ads, integrated AI, and a browser experience built with transparency in mind."
-        url="https://kahana.co/wall-of-love"
+        title="Oasis Browser Testimonials"
+        description="Read Oasis browser testimonials from real users on privacy-first browsing, no ads, integrated AI, tab organization, and transparent data collection."
+        url="https://kahana.co/testimonials"
         type="website"
       />
 
@@ -18,10 +18,10 @@ export default function WallOfLovePage() {
         <section className="border-b border-[#30400D]/10 bg-gradient-to-br from-[#30400D] via-[#3d5210] to-[#617500] text-white">
           <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
             <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[#FCDD9F]/90">
-              Wall of Love
+              Testimonials
             </p>
             <h1 className="mt-4 text-4xl font-bold tracking-tight sm:text-5xl">
-              What people are saying about Oasis
+              Oasis browser testimonials
             </h1>
             <p className="mt-4 max-w-2xl text-lg text-white/85">
               Unfiltered feedback from people who use Oasis every day—for privacy, productivity,

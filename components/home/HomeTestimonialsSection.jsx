@@ -3,10 +3,10 @@ import Link from "next/link";
 import WallOfLove from "../testimonials/WallOfLove";
 import { trackButtonClick } from "../../utils/analytics";
 
-export default function HomeWallOfLoveSection() {
+export default function HomeTestimonialsSection() {
   return (
     <section
-      id="wall-of-love"
+      id="testimonials"
       className="relative overflow-hidden py-24 sm:py-32"
     >
       <div className="pointer-events-none absolute inset-0 hidden lg:block">
@@ -16,7 +16,7 @@ export default function HomeWallOfLoveSection() {
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <p className="mb-4 text-sm font-semibold uppercase tracking-[0.16em] text-[#617500]">
-            Wall of Love
+            Testimonials
           </p>
           <h2 className="text-3xl font-bold tracking-tight text-[#30400D] sm:text-4xl">
             Built for people who take privacy seriously
@@ -31,13 +31,13 @@ export default function HomeWallOfLoveSection() {
         </div>
         <div className="mt-10 text-center">
           <Link
-            href="/wall-of-love"
+            href="/testimonials"
             onClick={() =>
-              trackButtonClick("wall_of_love_read_more", "home_wall_of_love")
+              trackButtonClick("testimonials_read_more", "home_testimonials")
             }
             className="btn-primary inline-flex items-center justify-center px-6 py-3 text-base font-bold no-underline hover:no-underline focus:no-underline rounded-[27.5px]"
           >
-            Read the full wall of love
+            Read all testimonials
           </Link>
         </div>
       </div>

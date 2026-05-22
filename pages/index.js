@@ -7,7 +7,7 @@ import ProductSection, {
 } from "../components/ProductSection";
 import DeferredHomeProductLanes from "../components/home/DeferredHomeProductLanes";
 import DeferredHomeDataTransparency from "../components/home/DeferredHomeDataTransparency";
-import HomeWallOfLoveSection from "../components/home/HomeWallOfLoveSection";
+import HomeTestimonialsSection from "../components/home/HomeTestimonialsSection";
 import FadeInSection from "../components/FadeInSection";
 import ProductHuntLaunchSection from "../components/ProductHuntLaunchSection";
 import { isProductHuntLaunchActive } from "../data/product-hunt-launch";
@@ -508,7 +508,7 @@ export default function Home({ blogPosts }) {
           <TrustSection />
 
           <FadeInSection>
-            <HomeWallOfLoveSection />
+            <HomeTestimonialsSection />
           </FadeInSection>
 
           {/* Privacy assurance section */}

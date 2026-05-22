@@ -415,6 +415,11 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: "/wall-of-love",
+        destination: "/testimonials",
+        permanent: true,
+      },
+      {
         source: "/products/consumer-browser",
         destination: "/products/oasis-browser",
         permanent: true,

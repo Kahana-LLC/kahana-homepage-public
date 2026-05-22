@@ -1,4 +1,9 @@
 import React from "react";
+import Image from "next/image";
+import { teamCartoonPath } from "../../data/team-gallery";
+import { getCloudinaryImageUrl } from "../../utils/cloudinary-mapper";
+
+const AVATAR_SIZE = 96;
 
 function QuoteMark({ className }) {
   return (
@@ -30,6 +35,12 @@ export default function TestimonialCard({
   const isPreview = variant === "preview";
   const isFeatured = testimonial.featured && !isPreview;
   const body = isPreview ? [testimonial.excerpt] : testimonial.paragraphs;
+  const avatarPath = testimonial.avatarSrc
+    ? testimonial.avatarSrc
+    : testimonial.avatarSlug
+      ? teamCartoonPath(testimonial.avatarSlug)
+      : null;
+  const isCartoonAvatar = Boolean(testimonial.avatarSlug && !testimonial.avatarSrc);
 
   return (
     <article
@@ -54,12 +65,38 @@ export default function TestimonialCard({
         ))}
       </blockquote>
       <footer className="mt-6 flex items-center gap-3 border-t border-[#30400D]/10 pt-5">
-        <div
-          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#617500]/15 text-sm font-bold text-[#617500]"
-          aria-hidden
-        >
-          {getInitials(testimonial.name)}
-        </div>
+        {avatarPath ? (
+          <div className="relative h-11 w-11 shrink-0 overflow-hidden rounded-full border border-[#30400D]/12 bg-[#F2F4E5]">
+            <Image
+              src={getCloudinaryImageUrl(avatarPath, {
+                width: AVATAR_SIZE,
+                height: AVATAR_SIZE,
+                quality: "auto:good",
+              })}
+              alt=""
+              width={AVATAR_SIZE}
+              height={AVATAR_SIZE}
+              className={
+                isCartoonAvatar
+                  ? "h-full w-full origin-top scale-[1.65] object-cover object-top"
+                  : "h-full w-full object-cover"
+              }
+              style={
+                isCartoonAvatar
+                  ? undefined
+                  : { objectPosition: testimonial.avatarObjectPosition || "center 28%" }
+              }
+              sizes="44px"
+            />
+          </div>
+        ) : (
+          <div
+            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#617500]/15 text-sm font-bold text-[#617500]"
+            aria-hidden
+          >
+            {getInitials(testimonial.name)}
+          </div>
+        )}
         <cite className="not-italic text-base font-semibold text-[#30400D]">
           {testimonial.name}
         </cite>
