@@ -18,7 +18,7 @@ export default function InteractionDataPayloadExplorer({ variant = "full", class
   return (
     <div className={`${explorerClass} ${className}`.trim()}>
       <div
-        className="payload-toggle flex flex-wrap gap-2"
+        className="payload-toggle inline-flex max-w-full flex-wrap rounded-full bg-[#F2F4E5] p-1 gap-1"
         role="tablist"
         aria-label="Payload mode"
       >
@@ -27,10 +27,8 @@ export default function InteractionDataPayloadExplorer({ variant = "full", class
           role="tab"
           aria-selected={!optedIn}
           onClick={() => setOptedIn(false)}
-          className={`rounded-full border px-4 py-2 text-sm font-semibold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#617500] ${
-            !optedIn
-              ? "border-[#617500] bg-[#617500] text-white"
-              : "border-[#30400D]/20 bg-white text-[#30400D] hover:border-[#617500]/50"
+          className={`payload-tab payload-tab--anonymized rounded-full px-4 py-2 text-sm font-semibold transition-[box-shadow,background-color,color] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#617500] ${
+            !optedIn ? "payload-tab--active" : "payload-tab--inactive"
           }`}
         >
           Default — anonymized
@@ -40,17 +38,19 @@ export default function InteractionDataPayloadExplorer({ variant = "full", class
           role="tab"
           aria-selected={optedIn}
           onClick={() => setOptedIn(true)}
-          className={`rounded-full border px-4 py-2 text-sm font-semibold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#617500] ${
-            optedIn
-              ? "border-[#617500] bg-[#617500] text-white"
-              : "border-[#30400D]/20 bg-white text-[#30400D] hover:border-[#617500]/50"
+          className={`payload-tab payload-tab--personalization rounded-full px-4 py-2 text-sm font-semibold transition-[box-shadow,background-color,color] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#617500] ${
+            optedIn ? "payload-tab--active" : "payload-tab--inactive"
           }`}
         >
           Personalization opted in
         </button>
       </div>
 
-      <p className="mt-4 text-sm font-medium text-[#617500]">
+      <p
+        className={`mt-4 text-sm font-medium ${
+          optedIn ? "text-[#30400D]" : "text-[#617500]"
+        }`}
+      >
         {optedIn
           ? "Includes user-identifying fields (email, user_id)."
           : "No user block — session is anonymous at the account level."}

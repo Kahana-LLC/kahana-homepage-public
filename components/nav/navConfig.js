@@ -41,6 +41,7 @@ export const desktopNavItems = [
           heading: 'Learn',
           links: [
             { label: 'Blog', href: '/blog' },
+            { label: 'Wall of Love', href: '/wall-of-love' },
             { label: 'Docs', href: '/docs' },
             { label: 'Events', href: '/events' },
             { label: 'Press releases', href: '/press-releases' },

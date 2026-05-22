@@ -22,6 +22,9 @@ export default function ProductSection() {
         {/* items-start + reserved mascot column prevents CLS when the image paints */}
         <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between md:gap-8">
           <div className="flex min-w-0 max-w-xl flex-1 flex-col items-start gap-6 text-left lg:max-w-2xl">
+            <span className="inline-flex items-center rounded-full border border-[#617500]/25 bg-[#F2F4E5] px-3 py-1 text-xs font-semibold tracking-wide text-[#617500] sm:text-sm">
+              Your online refuge
+            </span>
             <h1 className="text-4xl font-semibold leading-tight text-[#313A00] sm:text-5xl mb-0 text-balance">
               Relaaax, you found{' '}
               <span className="underline decoration-[#313A00]/55 underline-offset-[0.18em]">
