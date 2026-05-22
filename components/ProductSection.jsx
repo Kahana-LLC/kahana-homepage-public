@@ -15,6 +15,25 @@ export const OASIS_HERO_PRELOAD_WIDTH = 640;
 export const OASIS_HERO_SIZES =
   '(max-width: 640px) 360px, (max-width: 768px) 680px, (max-width: 1024px) 720px, min(90vw, 1152px)';
 
+function RefugeHutIcon({ className }) {
+  return (
+    <svg
+      aria-hidden
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.75"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M4 20h16" />
+      <path d="M12 3.5 20 12H4l8-8.5z" />
+      <path d="M10 20v-5h4v5" />
+    </svg>
+  );
+}
+
 export default function ProductSection() {
   return (
     <section className="relative overflow-hidden py-24 sm:py-32 product-container">
@@ -22,7 +41,8 @@ export default function ProductSection() {
         {/* items-start + reserved mascot column prevents CLS when the image paints */}
         <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between md:gap-8">
           <div className="flex min-w-0 max-w-xl flex-1 flex-col items-start gap-6 text-left lg:max-w-2xl">
-            <span className="inline-flex items-center rounded-full border border-[#617500]/25 bg-[#F2F4E5] px-3 py-1 text-xs font-semibold tracking-wide text-[#617500] sm:text-sm">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-[#617500]/25 bg-[#F2F4E5] px-3 py-1 text-xs font-semibold tracking-wide text-[#617500] sm:text-sm">
+              <RefugeHutIcon className="h-3.5 w-3.5 shrink-0 sm:h-4 sm:w-4" />
               Your online refuge
             </span>
             <h1 className="text-4xl font-semibold leading-tight text-[#313A00] sm:text-5xl mb-0 text-balance">
