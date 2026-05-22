@@ -135,8 +135,39 @@
   max-height: 20rem;
 }
 
-.payload-explorer .payload-toggle button {
+.payload-explorer .payload-toggle button.payload-tab {
   cursor: pointer;
+  border-radius: 9999px !important;
+  border: 1px solid transparent !important;
+  padding: 0.5rem 1rem !important;
+  font-weight: 600 !important;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s !important;
+}
+
+.payload-explorer .payload-toggle button.payload-tab--inactive {
+  background-color: #ffffff !important;
+  color: #30400d !important;
+  border-color: rgba(48, 64, 13, 0.2) !important;
+  box-shadow: none !important;
+}
+
+.payload-explorer .payload-toggle button.payload-tab--inactive:hover {
+  border-color: rgba(97, 117, 0, 0.45) !important;
+  background-color: #ffffff !important;
+}
+
+.payload-explorer .payload-toggle button.payload-tab--anonymized.payload-tab--active {
+  background-color: #617500 !important;
+  color: #ffffff !important;
+  border-color: #617500 !important;
+  box-shadow: 0 2px 8px rgba(48, 64, 13, 0.18) !important;
+}
+
+.payload-explorer .payload-toggle button.payload-tab--personalization.payload-tab--active {
+  background-color: #30400d !important;
+  color: #ffffff !important;
+  border-color: #30400d !important;
+  box-shadow: 0 2px 8px rgba(48, 64, 13, 0.22) !important;
 }
 
 .payload-explorer .payload-field-list code {
