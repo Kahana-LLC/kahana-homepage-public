@@ -3,10 +3,47 @@
   "description": "Multiple **light** and **dark** themes for the assistant chrome (not only system theme); choice syncs via prefs / bridge.",
   "slug": "assistant-themes",
   "category": "guides",
-  "date": "2026-05-14",
+  "date": "2026-05-23",
   "authors": [
     "Adam Kershner"
   ],
-  "content": "<div class='doc-content'><article class='prose prose-slate max-w-none'><h1>Assistant themes</h1>\n<p>Multiple <strong>light</strong> and <strong>dark</strong> themes for the assistant chrome (not only system theme); choice syncs via prefs / bridge.</p>\n<h2>What this is</h2>\n<p>Pick among several <strong>light</strong> and <strong>dark</strong> themes for assistant chrome. Your choice is stored and reapplied via the assistant bridge so the panel matches your taste—not only macOS light/dark.</p>\n<h2>How to use it</h2>\n<ul>\n<li>Open the <strong>theme</strong> picker from the assistant header menu.</li>\n<li>Preview schemes; pick one per appearance mode if offered.</li>\n<li>Themes do not change web page content colors—only the assistant UI chrome.</li>\n</ul>\n<h2>Notes and limits</h2>\n<p>Some high-contrast OS settings may still influence base colors.</p>\n<h2>Related topics</h2>\n<ul>\n<li><a href=\"/docs/header-help-menu\">Header Help Menu</a></li>\n<li><a href=\"/docs/reduced-motion\">Reduced Motion</a></li>\n<li><a href=\"/docs/docked-sidebar-vs-floating-overlay\">Docked Sidebar Vs Floating Overlay</a></li>\n</ul>\n</article></div>",
+  "content": "<div class='doc-content'><article class='prose prose-slate max-w-none'><h1>Assistant themes</h1>\n<p>Multiple <strong>light</strong> and <strong>dark</strong> themes for the assistant chrome (not only system theme); choice syncs via prefs / bridge.</p>\n<h2>What this is</h2>\n<p>Pick among several <strong>light</strong> and <strong>dark</strong> themes for assistant chrome. Your choice is stored and reapplied via the assistant bridge so the panel matches your taste—not only macOS light/dark.</p>\n<p>Scroll through assistant chrome themes in the gallery below.</p>\n<h2>How to use it</h2>\n<ul>\n<li>Open the <strong>theme</strong> picker from the assistant header menu.</li>\n<li>Preview schemes; pick one per appearance mode if offered.</li>\n<li>Themes do not change web page content colors—only the assistant UI chrome.</li>\n</ul>\n<h2>Notes and limits</h2>\n<p>Some high-contrast OS settings may still influence base colors.</p>\n<h2>Related topics</h2>\n<ul>\n<li><a href=\"/docs/header-help-menu\">Header Help Menu</a></li>\n<li><a href=\"/docs/reduced-motion\">Reduced Motion</a></li>\n<li><a href=\"/docs/docked-sidebar-vs-floating-overlay\">Docked Sidebar Vs Floating Overlay</a></li>\n</ul>\n</article></div>",
+  "gallery": [
+    {
+      "id": "stargazer",
+      "src": "/images/oasis/assistant-themes/01-stargazer.png",
+      "alt": "Oasis assistant with stargazer theme over new tab page"
+    },
+    {
+      "id": "sepia",
+      "src": "/images/oasis/assistant-themes/02-sepia.png",
+      "alt": "Oasis assistant with sepia theme summarizing an article"
+    },
+    {
+      "id": "workspace",
+      "src": "/images/oasis/assistant-themes/03-workspace.png",
+      "alt": "Oasis browser with light workspace sidebar and tab groups"
+    },
+    {
+      "id": "sky",
+      "src": "/images/oasis/assistant-themes/04-sky.png",
+      "alt": "Oasis assistant with sky theme on a Wikipedia page"
+    },
+    {
+      "id": "forest",
+      "src": "/images/oasis/assistant-themes/05-forest.png",
+      "alt": "Oasis assistant with forest theme creating a tab group"
+    },
+    {
+      "id": "amethyst",
+      "src": "/images/oasis/assistant-themes/06-amethyst.png",
+      "alt": "Oasis assistant with amethyst theme on Pinterest"
+    },
+    {
+      "id": "desert",
+      "src": "/images/oasis/assistant-themes/07-desert.png",
+      "alt": "Oasis assistant with desert theme summarizing news"
+    }
+  ],
   "generatedFrom": "help-center-migrate"
 }
