@@ -2,6 +2,8 @@ import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { subtleTransition, usePrefersReducedMotion } from '../../solutions/visuals/motion';
+import assistantThemesDoc from '../../../data/docs/assistant-themes.json';
+import AssistantThemesGallery from './AssistantThemesGallery';
 import {
   OasisAmplifierStory,
   OasisAmplifierVisuals,
@@ -120,6 +122,38 @@ export default function OasisBrowserFeatureVisuals() {
             </p>
           </div>
           <OasisSkillsGallery />
+        </div>
+      </section>
+
+      <section
+        id="assistant-themes"
+        className="bg-oasis-green-50 py-16 md:py-20 border-b border-oasis-green-800/8"
+        aria-labelledby="assistant-themes-heading"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mb-10">
+            <p className="text-xs font-semibold uppercase tracking-wide text-[#7a9200] mb-2">Personalization</p>
+              <h2 id="assistant-themes-heading" className="text-3xl font-bold text-oasis-green-800 mb-4 tracking-tight">
+                Assistant themes
+              </h2>
+              <p className="text-oasis-green-800/95 leading-relaxed">
+                Pick light or dark schemes for the assistant panel. Themes affect assistant chrome only—not the colors
+                of the web pages you browse.
+              </p>
+              <p className="mt-3">
+                <Link
+                  href="/docs/assistant-themes"
+                  className="text-sm font-semibold text-brand-link no-underline hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-link"
+                >
+                  Read the full Assistant themes guide →
+                </Link>
+              </p>
+          </div>
+          <AssistantThemesGallery
+            items={assistantThemesDoc.gallery || []}
+            edgeFadeFrom="from-oasis-green-50"
+            edgeFadeVia="via-oasis-green-50/70"
+          />
         </div>
       </section>
 
