@@ -1,10 +1,21 @@
 Hi {{ contact.FIRSTNAME }},
 
-You have been using Oasis for about a week. We are trying to understand who Oasis helps most, what is working, and what we should build next.
+Adam Kershner
+Founder, Oasis
 
-Would you take two minutes to share your experience? Your answers go directly to the product team.
+You have been using Oasis for about a week. I am trying to understand who Oasis helps most, what is working, and what we should build next.
+
+Would you take two minutes to share your experience? Your answers go directly to me and the product team.
 
 Take the survey: https://tally.so/r/EkNbXX
+
+Join Slack: https://kahanaworkspace.slack.com/archives/C0B3QDPLH4P
+
+I'm here if you have questions, feedback, or just want to talk about Oasis.
+
+Connect with me on social media, reply to this email, or DM me. Either way, I'll be there to help along the way.
+
+Connect with me: https://kahana.co/adam-kershner
 
 Browse docs: https://kahana.co/docs
 Join Slack: https://kahanaworkspace.slack.com/archives/C0B3QDPLH4P
