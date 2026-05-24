@@ -31,4 +31,9 @@ export const adamKershnerSocialLinks = [
     label: 'TikTok',
     href: 'https://www.tiktok.com/@adam_kershner',
   },
+  {
+    id: 'youtube',
+    label: 'YouTube',
+    href: 'https://www.youtube.com/@adam_kershner',
+  },
 ];
