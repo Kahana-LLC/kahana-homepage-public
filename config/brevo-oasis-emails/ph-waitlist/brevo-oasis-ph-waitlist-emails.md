@@ -28,7 +28,7 @@ Oasis waitlist contacts (Tally form `w8V8GA` → Brevo list).
 | [`brevo-oasis-ph-zen-gift-emails.md`](brevo-oasis-ph-zen-gift-emails.md) | Offer spec + redemption ops runbook |
 | [`brevo-oasis-ph-teaser-plain-text.txt`](brevo-oasis-ph-teaser-plain-text.txt) | Teaser plain-text tab paste |
 | [`brevo-oasis-ph-launch-plain-text.txt`](brevo-oasis-ph-launch-plain-text.txt) | Launch plain-text tab paste |
-| [`brevo-oasis-support-links-snippet.html`](brevo-oasis-support-links-snippet.html) | Docs · Slack · Contact footer row (both emails) |
+| [`brevo-oasis-support-links-snippet.html`](../shared/brevo-oasis-support-links-snippet.html) | Docs · Slack · Contact footer row (both emails) |
 
 ---
 
@@ -37,7 +37,7 @@ Oasis waitlist contacts (Tally form `w8V8GA` → Brevo list).
 Genuine comment on the Product Hunt launch page unlocks **6 months of Oasis Zen** (1,000,000 tokens per day, ~$120 value). Teaser hints only; launch email reveals full offer and claim steps (reply with screenshot).
 
 Ops runbook: [`brevo-oasis-ph-zen-gift-emails.md`](brevo-oasis-ph-zen-gift-emails.md)  
-Link constants: [`brevo-oasis-email-links.js`](brevo-oasis-email-links.js) (`productHuntSignup`, `productHuntLaunchComment`, `zenGiftTokensPerDay`, `zenGiftMonths`)
+Link constants: [`brevo-oasis-email-links.js`](../brevo-oasis-email-links.js) (`productHuntSignup`, `productHuntLaunchComment`, `zenGiftTokensPerDay`, `zenGiftMonths`)
 
 ---
 
@@ -142,7 +142,7 @@ Use this on launch day. Do **not** schedule the campaign in advance.
 | Join Slack | https://kahanaworkspace.slack.com/archives/C0B3QDPLH4P |
 | Contact | https://kahana.co/contact |
 
-Payload examples source: [`data/docs/interaction-payload-examples.js`](../data/docs/interaction-payload-examples.js)
+Payload examples source: [`data/docs/interaction-payload-examples.js`](../../data/docs/interaction-payload-examples.js)
 
 ---
 

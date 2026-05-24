@@ -55,4 +55,4 @@ Remove the old inline “Choose your version” text link if it duplicates the f
 
 The interactive buttons work in all email clients. Recipients who use **View in browser** get the same experience: still not a live iframe inside the email, but fully tappable.
 
-For a full inline form on the web, use [`pages/oasis-waitlist.jsx`](../pages/oasis-waitlist.jsx) (iframe embed on kahana.co/oasis-waitlist).
+For a full inline form on the web, use [`pages/oasis-waitlist.jsx`](../../pages/oasis-waitlist.jsx) (iframe embed on kahana.co/oasis-waitlist).

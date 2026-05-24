@@ -20,7 +20,7 @@ Thank-you for completing Oasis NPS or PMF surveys on the website.
 | NPS | https://kahana.co/oasis-nps | https://tally.so/r/ODoBz7 |
 | PMF | https://kahana.co/oasis-pmf | https://tally.so/r/EkNbXX |
 
-Config source: [`data/oasis-feedback-surveys.js`](../data/oasis-feedback-surveys.js)
+Config source: [`data/oasis-feedback-surveys.js`](../../data/oasis-feedback-surveys.js)
 
 ## Redemption runbook
 
@@ -49,4 +49,4 @@ PMF day 10 email: primary CTA links to https://kahana.co/oasis-pmf (shows Zen of
 - [ ] `/oasis-nps` and `/oasis-pmf` embed Tally and show Zen reward card
 - [ ] `?email=user@example.com` pre-fills Tally on both pages
 - [ ] Footer links: Refer a Friend Survey, Help Us Improve
-- [ ] Zen numbers match [`pages/oasis-pricing.jsx`](../pages/oasis-pricing.jsx) (1M tokens/day, $20/mo plan)
+- [ ] Zen numbers match [`pages/oasis-pricing.jsx`](../../pages/oasis-pricing.jsx) (1M tokens/day, $20/mo plan)

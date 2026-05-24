@@ -1,6 +1,6 @@
 # Oasis lifecycle emails (Brevo)
 
-HTML templates for signup, feedback, and paid-plan automations. All four emails use **Adam's founder voice** with headshot, Slack button, and Connect with me signoff. Same design system as Product Hunt waitlist emails in [`brevo-oasis-ph-waitlist-emails.md`](brevo-oasis-ph-waitlist-emails.md).
+HTML templates for signup, feedback, and paid-plan automations. All four emails use **Adam's founder voice** with headshot, Slack button, and Connect with me signoff. Same design system as Product Hunt waitlist emails in [`brevo-oasis-ph-waitlist-emails.md`](../ph-waitlist/brevo-oasis-ph-waitlist-emails.md).
 
 **From name (all campaigns):** `Adam from Oasis`
 
@@ -17,11 +17,11 @@ HTML templates for signup, feedback, and paid-plan automations. All four emails 
 
 | File | Purpose |
 |------|---------|
-| [`brevo-oasis-lifecycle-founder-header-snippet.html`](brevo-oasis-lifecycle-founder-header-snippet.html) | Adam headshot + Founder, Oasis |
-| [`brevo-oasis-lifecycle-founder-signoff-snippet.html`](brevo-oasis-lifecycle-founder-signoff-snippet.html) | Personal signoff + Connect with me |
-| [`brevo-oasis-slack-button-snippet.html`](brevo-oasis-slack-button-snippet.html) | Purple Join Slack button with icon |
-| [`brevo-oasis-support-links-snippet.html`](brevo-oasis-support-links-snippet.html) | Docs · Slack (icon) · Contact footer row |
-| [`brevo-oasis-email-links.js`](brevo-oasis-email-links.js) | Canonical URLs (site reference) |
+| [`brevo-oasis-lifecycle-founder-header-snippet.html`](../shared/brevo-oasis-lifecycle-founder-header-snippet.html) | Adam headshot + Founder, Oasis |
+| [`brevo-oasis-lifecycle-founder-signoff-snippet.html`](../shared/brevo-oasis-lifecycle-founder-signoff-snippet.html) | Personal signoff + Connect with me |
+| [`brevo-oasis-slack-button-snippet.html`](../shared/brevo-oasis-slack-button-snippet.html) | Purple Join Slack button with icon |
+| [`brevo-oasis-support-links-snippet.html`](../shared/brevo-oasis-support-links-snippet.html) | Docs · Slack (icon) · Contact footer row |
+| [`brevo-oasis-email-links.js`](../brevo-oasis-email-links.js) | Canonical URLs (site reference) |
 
 ---
 

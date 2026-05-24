@@ -17,10 +17,10 @@
 
 | Snippet | Use |
 |---------|-----|
-| [`brevo-oasis-lifecycle-founder-header-snippet.html`](brevo-oasis-lifecycle-founder-header-snippet.html) | After greeting |
-| [`brevo-oasis-slack-button-snippet.html`](brevo-oasis-slack-button-snippet.html) | After billing CTA |
-| [`brevo-oasis-lifecycle-founder-signoff-snippet.html`](brevo-oasis-lifecycle-founder-signoff-snippet.html) | Before footer |
-| [`brevo-oasis-support-links-snippet.html`](brevo-oasis-support-links-snippet.html) | Footer |
+| [`brevo-oasis-lifecycle-founder-header-snippet.html`](../shared/brevo-oasis-lifecycle-founder-header-snippet.html) | After greeting |
+| [`brevo-oasis-slack-button-snippet.html`](../shared/brevo-oasis-slack-button-snippet.html) | After billing CTA |
+| [`brevo-oasis-lifecycle-founder-signoff-snippet.html`](../shared/brevo-oasis-lifecycle-founder-signoff-snippet.html) | Before footer |
+| [`brevo-oasis-support-links-snippet.html`](../shared/brevo-oasis-support-links-snippet.html) | Footer |
 
 ## Block checklist
 
@@ -43,4 +43,4 @@ Fire from Stripe checkout webhook or Brevo automation when contact attribute `pl
 - [ ] Billing portal link works
 - [ ] Slack button and footer icon load
 - [ ] Connect with me link works
-- [ ] Zen benefits match [`pages/oasis-pricing.jsx`](../pages/oasis-pricing.jsx)
+- [ ] Zen benefits match [`pages/oasis-pricing.jsx`](../../pages/oasis-pricing.jsx)
