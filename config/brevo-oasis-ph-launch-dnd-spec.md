@@ -1,92 +1,214 @@
-# Brevo drag-and-drop spec — Product Hunt launch (May 27)
+# Brevo drag-and-drop spec: Product Hunt launch (May 27)
 
-**Prerequisite:** Teaser template updated per `brevo-oasis-ph-teaser-dnd-spec.md`.
+Edit by **duplicating** the saved May 26 teaser template in Brevo D&D v3.0.1. Do **not** paste full HTML into the raw-html block unless the block checklist fails.
 
-**How to start:** Duplicate the saved teaser template in Brevo, then apply changes below.
+**Audience:** Oasis waitlist (Tally `w8V8GA` → Brevo list)  
+**Send:** **Manual** once the Product Hunt listing is live (May 27, 2026)  
+**Prerequisite:** Teaser template saved per [`brevo-oasis-ph-teaser-dnd-spec.md`](brevo-oasis-ph-teaser-dnd-spec.md)
 
-**Full HTML reference:** `brevo-oasis-ph-launch-waitlist.html`  
-**Payload-only paste:** `brevo-oasis-ph-payload-snippets.html`
+**Reference files:**
+
+| File | Use |
+|------|-----|
+| [`brevo-oasis-ph-launch-waitlist.html`](brevo-oasis-ph-launch-waitlist.html) | Full table-only HTML |
+| [`brevo-oasis-ph-product-card-snippet.html`](brevo-oasis-ph-product-card-snippet.html) | PH product card (replaces hero image) |
+| [`brevo-oasis-ph-founder-intro-snippet.html`](brevo-oasis-ph-founder-intro-snippet.html) | Founder headshot + opening copy |
+| [`brevo-oasis-ph-founder-signoff-snippet.html`](brevo-oasis-ph-founder-signoff-snippet.html) | Parting remark + Connect with me link |
+| [`brevo-oasis-ph-theme-gallery-snippet.html`](brevo-oasis-ph-theme-gallery-snippet.html) | Bottom theme thumbnail grid |
+| [`brevo-oasis-ph-payload-snippets.html`](brevo-oasis-ph-payload-snippets.html) | Privacy + JSON section |
+| [`brevo-oasis-ph-launch-plain-text.txt`](brevo-oasis-ph-launch-plain-text.txt) | Plain-text tab paste |
 
 ---
 
-## Campaign setup
+## Campaign setup (Setup step)
 
 | Field | Value |
 |-------|--------|
-| Subject | `We're live on Product Hunt — Oasis for Mac` |
-| Preheader | `Mac desktop (Firefox) is live on Product Hunt. See the anonymized JSON we send by default.` |
+| Subject | `We're live on Product Hunt: Oasis for Mac` |
+| Preheader | `Privacy-first AI browser you can train. See assistant themes and the JSON we send by default.` |
 | From name | `Oasis by Kahana` |
+| Schedule | **Do not schedule**: save as draft; send manually when live |
 
 ---
 
-## Changes from teaser duplicate
+## Global styles (Styles panel)
 
-| Block | Change |
+| Style token | Property | Value |
+|-------------|----------|-------|
+| `default-button` | `background-color`, `border-color` | `#ff6154` (launch only, Product Hunt orange) |
+| `default-link` | `color` | `#4A6200` |
+| `default-heading2` | `color` | `#313A00` |
+| `default` | `color` | `#4A5745` |
+
+---
+
+## Block checklist
+
+### Keep as-is (from teaser duplicate)
+
+| Block | Notes |
+|-------|-------|
+| View in browser | Uses `{{ mirror }}` |
+| Logo | Brevo CDN Kahana logo |
+| Social | LinkedIn, YouTube, Instagram, website, Discord |
+| Footer | Waitlist disclaimer, contact, privacy, unsubscribe |
+| Theme gallery | Re-paste at **bottom** after signoff: `brevo-oasis-ph-theme-gallery-snippet.html` |
+| Payload Text block | Same JSON section as teaser, or re-paste `brevo-oasis-ph-payload-snippets.html` |
+
+### Update content
+
+| Block | Action |
 |-------|--------|
 | Title | `We're live on Product Hunt today` |
-| Body opening | “live today” wording (see below) |
-| Payload section | Same as teaser — `brevo-oasis-ph-payload-snippets.html` |
-| Button 1 | Follow us on Product Hunt → PH badge URL with UTM, `#ff6154` |
-| PH badge image | Optional, linked to badge URL |
-| Download button | **Delete** |
+| Image (hero) | **Add** PH product card at top (see below) |
+| Body opening | Replace teaser copy with launch founder intro (see below) |
+| Founder signoff | Paste after PH badge/Tally link: `brevo-oasis-ph-founder-signoff-snippet.html` |
+| Theme gallery | Paste at bottom after signoff, before fallback links |
+| Personal close | Feedback ask + thanks (see below) |
+| Closing line | Upvotes + comments ask (see below) |
+| Button 1 | Orange `#ff6154`, UTM PH URL (see below) |
+| Optional Image | PH featured badge SVG, linked to same UTM URL |
 
-**Body opening:**
+### Remove
+
+| Block | Action |
+|-------|--------|
+| Download for Mac button | **Delete**: no Mac download CTA |
+| Tally form card | **Delete** from body (keep Tally link in footer) |
+| raw-html block | **Delete** unless using full-HTML fallback |
+| Navigation placeholders | **Delete** |
+
+---
+
+## PH product card (replaces hero image)
+
+Paste into a **Text block** (source mode) or use two Image + Text blocks in D&D:
+
+[`brevo-oasis-ph-product-card-snippet.html`](brevo-oasis-ph-product-card-snippet.html)
+
+Or set Image block URL to:
+
+`https://ph-files.imgix.net/b83aefb0-b6c2-408e-b4b8-9e4a0360e1d6.png`
+
+…and add title/subtitle text beside it: **Oasis Browser for Mac** · Mac desktop · Firefox engine · Apple Silicon and Intel
+
+---
+
+## Body opening: paste into Text block
+
+Use the launch variant from [`brevo-oasis-ph-founder-intro-snippet.html`](brevo-oasis-ph-founder-intro-snippet.html). Or paste this after `Hi {{ contact.FIRSTNAME }},`:
 
 ```html
-<p>Hi {{ contact.FIRSTNAME }},</p>
-<p>Oasis is <strong>live on Product Hunt today</strong> — a privacy-first AI browser <strong>you can train</strong>, built to stay transparent about what leaves your device.</p>
-<p>The launch build is <strong>Oasis for Mac</strong> — <strong>desktop only</strong>, built on <strong>Firefox</strong>, for <strong>Apple Silicon and Intel</strong>.</p>
+<table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin: 0 0 16px;">
+  <tr>
+    <td width="56" valign="top" style="padding-right: 12px;">
+      <img src="https://kahana.co/images/about/adam-kershner.jpg" alt="Adam Kershner" width="56" height="56" style="display: block; width: 56px; height: 56px; border-radius: 50%; object-fit: cover;" />
+    </td>
+    <td valign="middle">
+      <p style="margin: 0; font-size: 15px; font-weight: 700; color: #313A00; line-height: 1.3;">Adam Kershner</p>
+      <p style="margin: 2px 0 0; font-size: 13px; color: #6b7355; line-height: 1.3;">Founder, Oasis</p>
+    </td>
+  </tr>
+</table>
+<p>We just launched Oasis on Product Hunt and I wanted to share it with you directly.</p>
+<p>Chrome was never built for privacy, and the AI in today's "private" browsers still lags behind. Oasis is a privacy-first AI browser <strong>you can train</strong>. Your personal data is sacred, and all interaction data is anonymized by default.</p>
+<p>The launch build is <strong>Oasis for Mac</strong>, <strong>desktop only</strong>, built on <strong>Firefox</strong>, for <strong>Apple Silicon and Intel</strong>.</p>
 <p><strong>Mobile</strong> and a <strong>Chromium</strong>-engine build for <strong>Windows, Mac, and Linux</strong> are coming soon. <a href="https://tally.so/r/w8V8GA">Choose your version</a> so we know what to notify you about.</p>
 ```
 
-**Closing before button:**
+**Founder signoff:** paste [`brevo-oasis-ph-founder-signoff-snippet.html`](brevo-oasis-ph-founder-signoff-snippet.html) after PH CTA and badge. Links to `https://kahana.co/adam-kershner`.
+
+**Theme gallery:** paste [`brevo-oasis-ph-theme-gallery-snippet.html`](brevo-oasis-ph-theme-gallery-snippet.html) at the bottom after signoff.
+
+---
+
+## Personal close (before PH CTA)
 
 ```html
-<p>To stay in the loop on new versions and new features, <strong>follow us on Product Hunt</strong> — upvotes and comments help more people discover Oasis.</p>
+<p>I would really love your thoughts and feedback if you get a chance to check it out. We are genuinely trying to build something meaningful that helps people with both privacy and productivity.</p>
+<p>Thanks so much for the consideration. It means a lot.</p>
+<p>To stay in the loop on new versions and new features, <strong>follow us on Product Hunt</strong>. Upvotes and comments help more people discover Oasis.</p>
 ```
 
-**Button 1:**
+---
+
+## Button 1 (only CTA)
 
 | Field | Value |
 |-------|--------|
 | Label | Follow us on Product Hunt |
 | URL | `https://www.producthunt.com/products/kahana?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-oasis-browser-for-mac` |
 | Background | `#ff6154` |
+| Text color | `#ffffff` |
+
+---
+
+## Optional PH badge image (below button)
+
+| Field | Value |
+|-------|--------|
+| Image URL | `https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1146179&theme=light` |
+| Link URL | Same UTM URL as button |
+| Alt | Oasis Browser for Mac on Product Hunt |
+
+---
+
+## Fallback links (optional Text block)
+
+```html
+<p style="font-size:14px;color:#6b7355;text-align:center;">
+  <a href="https://tally.so/r/w8V8GA" style="color:#4A6200;font-weight:600;text-decoration:underline;">Choose your version (Mac, Windows, Linux · Chromium or Firefox)</a>
+</p>
+<p style="font-size:14px;color:#6b7355;">If the button doesn't work: <a href="https://www.producthunt.com/products/kahana?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-oasis-browser-for-mac">Product Hunt</a> · <a href="https://kahana.co/adam-kershner">Connect with me</a> · <a href="https://kahana.co/docs/technical-and-interaction-data">Interaction data doc</a> · <a href="https://tally.so/r/w8V8GA">Choose your version</a></p>
+```
 
 ---
 
 ## Plain-text version
 
-```
-Hi {{ contact.FIRSTNAME }},
+Paste entire contents of [`brevo-oasis-ph-launch-plain-text.txt`](brevo-oasis-ph-launch-plain-text.txt) into Brevo **Plain-text** tab.
 
-Oasis is live on Product Hunt today — a privacy-first AI browser you can train, built to stay transparent about what leaves your device.
+---
 
-The launch build is Oasis for Mac — desktop only, built on Firefox, for Apple Silicon and Intel.
+## Full-HTML fallback
 
-Mobile and a Chromium-engine build for Windows, Mac, and Linux are coming soon. Choose your version: https://tally.so/r/w8V8GA
+If D&D blocks conflict, paste [`brevo-oasis-ph-launch-waitlist.html`](brevo-oasis-ph-launch-waitlist.html) into a single HTML block. Must start with `<table role="presentation"`: no `<!DOCTYPE>`, `<html>`, or sibling wrapper elements before the table.
 
-TRANSPARENT BY DEFAULT
+---
 
-(Same JSON examples as teaser — see brevo-oasis-ph-teaser-dnd-spec.md plain-text section)
+## Asset verification (May 23, 2026)
 
-How Oasis collects interaction data:
-https://kahana.co/docs/technical-and-interaction-data
+| Asset | URL | Status |
+|-------|-----|--------|
+| Adam headshot | `https://kahana.co/images/about/adam-kershner.jpg` | Re-check before send |
+| Adam linktree | `https://kahana.co/adam-kershner` | Re-check before send |
+| Theme images (01–07) | `https://kahana.co/images/oasis/assistant-themes/` | Re-check before send |
+| PH thumbnail | `https://ph-files.imgix.net/b83aefb0-b6c2-408e-b4b8-9e4a0360e1d6.png` | 200 OK |
+| PH badge SVG | `https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1146179&theme=light` | 200 OK |
+| Interaction data doc | `https://kahana.co/docs/technical-and-interaction-data` | 200 OK |
+| Assistant themes doc | `https://kahana.co/docs/assistant-themes` | Re-check before send |
+| PH product URL (UTM) | `https://www.producthunt.com/products/kahana?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-oasis-browser-for-mac` | Opens in browser (curl may 403) |
 
-Follow us on Product Hunt:
-https://www.producthunt.com/products/kahana?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-oasis-browser-for-mac
-
-You're receiving this because you joined the Oasis waitlist.
-Contact: https://kahana.co/contact
-Privacy: https://kahana.co/privacy-policy
-Unsubscribe: {{ unsubscribe }}
-```
+Re-check all assets on launch morning before send.
 
 ---
 
 ## QA before send
 
-- [ ] Single PH button only (orange on launch)
-- [ ] No Mac download links
-- [ ] Privacy section + JSON blocks present
-- [ ] Copy says “live today”
+- [ ] No em dashes in copy
+- [ ] Adam headshot loads in preview
+- [ ] All 7 theme thumbnails load and link to assistant themes doc
+- [ ] Copy says **"live today"**: not "tomorrow"
+- [ ] **One button only**: orange `#ff6154`, UTM PH URL
+- [ ] **No Mac download** links or `/oasis-pricing` CTAs
+- [ ] PH product card thumbnail loads in preview
+- [ ] PH badge image loads (if included)
+- [ ] Two JSON `<pre>` blocks readable on mobile preview
+- [ ] Doc link: `https://kahana.co/docs/technical-and-interaction-data`
+- [ ] Tally link: `https://tally.so/r/w8V8GA`
+- [ ] `{{ unsubscribe }}` and `{{ mirror }}` render in Brevo preview
+- [ ] Plain-text version pasted from `brevo-oasis-ph-launch-plain-text.txt`
+- [ ] No "acts on tabs/history/pages" phrasing
+- [ ] Test send to yourself before bulk send
+
+Payload source: [`data/docs/interaction-payload-examples.js`](../data/docs/interaction-payload-examples.js)
