@@ -1,0 +1,15 @@
+Hi {{ contact.FIRSTNAME }},
+
+You have been using Oasis for about a week. We are trying to understand who Oasis helps most, what is working, and what we should build next.
+
+Would you take two minutes to share your experience? Your answers go directly to the product team.
+
+Take the survey: https://tally.so/r/EkNbXX
+
+Browse docs: https://kahana.co/docs
+Join Slack: https://kahanaworkspace.slack.com/archives/C0B3QDPLH4P
+Contact us: https://kahana.co/contact
+
+View in browser: {{ mirror }}
+Unsubscribe: {{ unsubscribe }}
+Privacy: https://kahana.co/privacy-policy

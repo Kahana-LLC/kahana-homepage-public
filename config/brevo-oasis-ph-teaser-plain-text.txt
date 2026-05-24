@@ -66,8 +66,12 @@ MAKE OASIS YOUR OWN
 Assistant themes are a fan-favorite. Browse all 7 themes:
 https://kahana.co/docs/assistant-themes
 
+Questions?
+Browse docs: https://kahana.co/docs
+Join Slack: https://kahanaworkspace.slack.com/archives/C0B3QDPLH4P
+Contact us: https://kahana.co/contact
+
 You're receiving this because you joined the Oasis waitlist.
-Contact: https://kahana.co/contact
 Privacy: https://kahana.co/privacy-policy
 View in browser: {{ mirror }}
 Unsubscribe: {{ unsubscribe }}

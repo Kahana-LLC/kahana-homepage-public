@@ -24,6 +24,7 @@ Oasis waitlist contacts (Tally form `w8V8GA` → Brevo list).
 | [`brevo-oasis-ph-product-card-snippet.html`](brevo-oasis-ph-product-card-snippet.html) | PH product card for launch (replaces hero) |
 | [`brevo-oasis-ph-teaser-plain-text.txt`](brevo-oasis-ph-teaser-plain-text.txt) | Teaser plain-text tab paste |
 | [`brevo-oasis-ph-launch-plain-text.txt`](brevo-oasis-ph-launch-plain-text.txt) | Launch plain-text tab paste |
+| [`brevo-oasis-support-links-snippet.html`](brevo-oasis-support-links-snippet.html) | Docs · Slack · Contact footer row (both emails) |
 
 ---
 
@@ -120,6 +121,9 @@ Use this on launch day. Do **not** schedule the campaign in advance.
 | Theme images | https://kahana.co/images/oasis/assistant-themes/01-stargazer.png (through 07-desert.png) |
 | PH thumbnail (launch card) | https://ph-files.imgix.net/b83aefb0-b6c2-408e-b4b8-9e4a0360e1d6.png |
 | PH badge image | https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1146179&theme=light |
+| Docs | https://kahana.co/docs |
+| Join Slack | https://kahanaworkspace.slack.com/archives/C0B3QDPLH4P |
+| Contact | https://kahana.co/contact |
 
 Payload examples source: [`data/docs/interaction-payload-examples.js`](../data/docs/interaction-payload-examples.js)
 
@@ -137,6 +141,7 @@ Payload examples source: [`data/docs/interaction-payload-examples.js`](../data/d
 - [ ] Tally link: `https://tally.so/r/w8V8GA`
 - [ ] `{{ unsubscribe }}` and `{{ mirror }}` render in Brevo preview
 - [ ] Plain-text version matches HTML intent
+- [ ] Footer includes docs, Slack, and contact links
 - [ ] No "acts on tabs/history/pages" phrasing
 - [ ] Test send completed before bulk send
 
