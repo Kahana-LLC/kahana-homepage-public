@@ -383,8 +383,10 @@ function AppContent({ Component, pageProps }) {
   }, [hasConsent]);
 
   const isBuyerGuide = router.pathname === '/buyers-guide' || router.pathname === '/enterprise-buyer-guide';
+  const isLinktreePage = router.pathname === '/adam-kershner';
   const showProductHuntBanner =
     SHOW_PRODUCT_HUNT_BANNER &&
+    !isLinktreePage &&
     isProductHuntLaunchActive() &&
     isProductHuntGlobalBannerRoute(router.pathname);
   const needsDocsStyles =
@@ -413,8 +415,8 @@ function AppContent({ Component, pageProps }) {
           type={router.pathname === "/" ? "website" : "article"}
           skipCanonical
         />
-        <div style={{ zIndex: "100" }} className={`site-nav-wrapper h-16${isBuyerGuide ? ' buyer-guide-layout' : ''}`}>
-          <NavbarDup />
+        <div style={{ zIndex: "100" }} className={`site-nav-wrapper h-16${isBuyerGuide ? ' buyer-guide-layout' : ''}${isLinktreePage ? ' hidden' : ''}`}>
+          {!isLinktreePage ? <NavbarDup /> : null}
         </div>
         <main
           className={`flex-grow${
@@ -425,7 +427,7 @@ function AppContent({ Component, pageProps }) {
         >
           <Component {...pageProps} />
         </main>
-        <Footer />
+        {!isLinktreePage ? <Footer /> : null}
         {showProductHuntBanner ? <GlobalBanner /> : null}
       </div>
       <ConsentErrorBoundary>
