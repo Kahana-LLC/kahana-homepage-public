@@ -9,7 +9,8 @@ Edit your **existing** Brevo D&D template (v3.0.1) in the visual editor. Do **no
 **Founder intro:** `brevo-oasis-ph-founder-intro-snippet.html`  
 **Founder signoff:** `brevo-oasis-ph-founder-signoff-snippet.html`  
 **Theme gallery (bottom):** `brevo-oasis-ph-theme-gallery-snippet.html`  
-**Tally form (in-email):** `brevo-oasis-ph-tally-form-snippet.html`: see [`brevo-oasis-ph-tally-form-setup.md`](brevo-oasis-ph-tally-form-setup.md)
+**Tally form (in-email):** `brevo-oasis-ph-tally-form-snippet.html`: see [`brevo-oasis-ph-tally-form-setup.md`](brevo-oasis-ph-tally-form-setup.md)  
+**Zen gift teaser:** [`brevo-oasis-ph-zen-gift-teaser-snippet.html`](brevo-oasis-ph-zen-gift-teaser-snippet.html) (hint only; paste after platform paragraph, before Tally)
 
 ---
 
@@ -17,8 +18,8 @@ Edit your **existing** Brevo D&D template (v3.0.1) in the visual editor. Do **no
 
 | Field | Value |
 |-------|--------|
-| Subject | `Tomorrow on Product Hunt: Oasis Browser for Mac` |
-| Preheader | `Privacy-first AI browser you can train. See assistant themes and the JSON we send by default.` |
+| Subject | `Tomorrow on Product Hunt (+ a launch-day surprise)` |
+| Preheader | `Privacy-first AI browser. Something special for genuine launch-day feedback.` |
 | From name | `Oasis by Kahana` |
 
 ---
@@ -53,6 +54,7 @@ Edit your **existing** Brevo D&D template (v3.0.1) in the visual editor. Do **no
 | Image (hero) | **Delete** old hero screenshot and top theme gallery |
 | Body | Founder intro + platform + Tally + JSON + personal close + PH CTA + signoff + bottom theme gallery |
 | Founder intro | Paste [`brevo-oasis-ph-founder-intro-snippet.html`](brevo-oasis-ph-founder-intro-snippet.html) after `Hi {{ contact.FIRSTNAME }},` |
+| Zen gift teaser | Paste [`brevo-oasis-ph-zen-gift-teaser-snippet.html`](brevo-oasis-ph-zen-gift-teaser-snippet.html) after Mac platform paragraph, before Tally |
 | Founder signoff | Paste [`brevo-oasis-ph-founder-signoff-snippet.html`](brevo-oasis-ph-founder-signoff-snippet.html) after PH button |
 | Theme gallery | Paste [`brevo-oasis-ph-theme-gallery-snippet.html`](brevo-oasis-ph-theme-gallery-snippet.html) at bottom, before footer |
 | Tally form | Paste [`brevo-oasis-ph-tally-form-snippet.html`](brevo-oasis-ph-tally-form-snippet.html) after platform paragraph |

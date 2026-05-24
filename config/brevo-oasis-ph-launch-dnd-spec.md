@@ -12,6 +12,9 @@ Edit by **duplicating** the saved May 26 teaser template in Brevo D&D v3.0.1. Do
 |------|-----|
 | [`brevo-oasis-ph-launch-waitlist.html`](brevo-oasis-ph-launch-waitlist.html) | Full table-only HTML |
 | [`brevo-oasis-ph-product-card-snippet.html`](brevo-oasis-ph-product-card-snippet.html) | PH product card (replaces hero image) |
+| [`brevo-oasis-ph-zen-gift-launch-snippet.html`](brevo-oasis-ph-zen-gift-launch-snippet.html) | Full Zen gift offer + 3-step claim |
+| [`brevo-oasis-ph-zen-gift-terms-snippet.html`](brevo-oasis-ph-zen-gift-terms-snippet.html) | Gift fine print (included in launch snippet) |
+| [`brevo-oasis-ph-zen-gift-emails.md`](brevo-oasis-ph-zen-gift-emails.md) | Offer spec + redemption ops runbook |
 | [`brevo-oasis-ph-founder-intro-snippet.html`](brevo-oasis-ph-founder-intro-snippet.html) | Founder headshot + opening copy |
 | [`brevo-oasis-ph-founder-signoff-snippet.html`](brevo-oasis-ph-founder-signoff-snippet.html) | Parting remark + Connect with me link |
 | [`brevo-oasis-ph-theme-gallery-snippet.html`](brevo-oasis-ph-theme-gallery-snippet.html) | Bottom theme thumbnail grid |
@@ -24,8 +27,8 @@ Edit by **duplicating** the saved May 26 teaser template in Brevo D&D v3.0.1. Do
 
 | Field | Value |
 |-------|--------|
-| Subject | `We're live on Product Hunt: Oasis for Mac` |
-| Preheader | `Privacy-first AI browser you can train. See assistant themes and the JSON we send by default.` |
+| Subject | `We're live on Product Hunt: 6 months of Zen, on us` |
+| Preheader | `Upvote Oasis on Product Hunt and leave feedback. Reply with a screenshot to claim 1M tokens/day.` |
 | From name | `Oasis by Kahana` |
 | Schedule | **Do not schedule**: save as draft; send manually when live |
 
@@ -60,13 +63,16 @@ Edit by **duplicating** the saved May 26 teaser template in Brevo D&D v3.0.1. Do
 | Block | Action |
 |-------|--------|
 | Title | `We're live on Product Hunt today` |
-| Image (hero) | **Add** PH product card at top (see below) |
+| Image (hero) | **Add** PH upvote badge + linked product card at top (see below) |
 | Body opening | Replace teaser copy with launch founder intro (see below) |
-| Founder signoff | Paste after PH badge/Tally link: `brevo-oasis-ph-founder-signoff-snippet.html` |
+| Zen gift (full) | Paste [`brevo-oasis-ph-zen-gift-launch-snippet.html`](brevo-oasis-ph-zen-gift-launch-snippet.html) after platform paragraph, **before** privacy JSON |
+| Founder signoff | Paste after PH badge: `brevo-oasis-ph-founder-signoff-snippet.html` |
 | Theme gallery | Paste at bottom after signoff, before fallback links |
 | Personal close | Feedback ask + thanks (see below) |
 | Closing line | Upvotes + comments ask (see below) |
-| Button 1 | Orange `#ff6154`, UTM PH URL (see below) |
+| Button 1 | Orange `#ff6154`, label **Comment on Product Hunt**, UTM PH URL |
+| Button 2 | Green `#4A6200`, label **Create Product Hunt account**, `https://www.producthunt.com/` |
+| Zen gift | Full offer card before privacy JSON |
 | Optional Image | PH featured badge SVG, linked to same UTM URL |
 
 ### Remove
@@ -110,35 +116,56 @@ Use the launch variant from [`brevo-oasis-ph-founder-intro-snippet.html`](brevo-
     </td>
   </tr>
 </table>
-<p>We just launched Oasis on Product Hunt and I wanted to share it with you directly.</p>
+<p>We just launched Oasis on Product Hunt and I could not be more excited to share it with you directly.</p>
 <p>Chrome was never built for privacy, and the AI in today's "private" browsers still lags behind. Oasis is a privacy-first AI browser <strong>you can train</strong>. Your personal data is sacred, and all interaction data is anonymized by default.</p>
 <p>The launch build is <strong>Oasis for Mac</strong>, <strong>desktop only</strong>, built on <strong>Firefox</strong>, for <strong>Apple Silicon and Intel</strong>.</p>
 <p><strong>Mobile</strong> and a <strong>Chromium</strong>-engine build for <strong>Windows, Mac, and Linux</strong> are coming soon. <a href="https://tally.so/r/w8V8GA">Choose your version</a> so we know what to notify you about.</p>
 ```
 
-**Founder signoff:** paste [`brevo-oasis-ph-founder-signoff-snippet.html`](brevo-oasis-ph-founder-signoff-snippet.html) after PH CTA and badge. Links to `https://kahana.co/adam-kershner`.
+**Zen gift block:** paste [`brevo-oasis-ph-zen-gift-launch-snippet.html`](brevo-oasis-ph-zen-gift-launch-snippet.html) after the platform/Tally paragraph, before the privacy JSON section.
+
+**Founder signoff:** paste [`brevo-oasis-ph-founder-signoff-snippet.html`](brevo-oasis-ph-founder-signoff-snippet.html) after PH badge. Links to `https://kahana.co/adam-kershner`.
 
 **Theme gallery:** paste [`brevo-oasis-ph-theme-gallery-snippet.html`](brevo-oasis-ph-theme-gallery-snippet.html) at the bottom after signoff.
 
 ---
 
-## Personal close (before PH CTA)
+## PH CTAs (launch)
+
+| Priority | Button | URL |
+|----------|--------|-----|
+| Primary | Upvote and comment on Product Hunt | UTM launch URL (see [`brevo-oasis-email-links.js`](brevo-oasis-email-links.js) `productHuntLaunchComment`) |
+| Secondary | Create Product Hunt account | `https://www.producthunt.com/` |
+
+Place both buttons immediately after the Zen gift card. Remove the duplicate "Follow us on Product Hunt" button at the bottom; keep the PH featured badge image only.
+
+---
+
+## Personal close (after privacy JSON)
 
 ```html
 <p>I would really love your thoughts and feedback if you get a chance to check it out. We are genuinely trying to build something meaningful that helps people with both privacy and productivity.</p>
 <p>Thanks so much for the consideration. It means a lot.</p>
-<p>To stay in the loop on new versions and new features, <strong>follow us on Product Hunt</strong>. Upvotes and comments help more people discover Oasis.</p>
 ```
 
 ---
 
-## Button 1 (only CTA)
+## Button 1 (primary)
 
 | Field | Value |
 |-------|--------|
-| Label | Follow us on Product Hunt |
+| Label | Upvote and comment on Product Hunt |
 | URL | `https://www.producthunt.com/products/kahana?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-oasis-browser-for-mac` |
 | Background | `#ff6154` |
+| Text color | `#ffffff` |
+
+## Button 2 (secondary, optional)
+
+| Field | Value |
+|-------|--------|
+| Label | Create Product Hunt account |
+| URL | `https://www.producthunt.com/` |
+| Background | `#4A6200` |
 | Text color | `#ffffff` |
 
 ---
@@ -200,8 +227,14 @@ Re-check all assets on launch morning before send.
 - [ ] No em dashes in copy
 - [ ] Adam headshot loads in preview
 - [ ] All 7 theme thumbnails load and link to assistant themes doc
+- [ ] Zen gift card: 1M tokens/day, 6 months, $20/mo value line, 3 claim steps, screenshot reply
+- [ ] Teaser does **not** include full claim steps (hint only)
+- [ ] PH upvote badge at top links to UTM product page
+- [ ] Primary button: **Upvote and comment on Product Hunt** (orange, UTM URL)
+- [ ] Secondary button: **Create Product Hunt account** (green, producthunt.com)
+- [ ] No duplicate "Follow us" button at bottom
 - [ ] Copy says **"live today"**: not "tomorrow"
-- [ ] **One button only**: orange `#ff6154`, UTM PH URL
+- [ ] Orange `#ff6154` primary button with UTM PH URL
 - [ ] **No Mac download** links or `/oasis-pricing` CTAs
 - [ ] PH product card thumbnail loads in preview
 - [ ] PH badge image loads (if included)

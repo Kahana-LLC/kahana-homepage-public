@@ -6,6 +6,15 @@ Chrome was never built for privacy, and the AI in today's "private" browsers sti
 
 The version launching on Product Hunt is Oasis for Mac, desktop only, built on Firefox, for Apple Silicon and Intel.
 
+LAUNCH-DAY SURPRISE
+Something special for genuine feedback
+
+I wanted to do something a little unexpected for the people who have been with us from the waitlist. If you leave genuine feedback on our Product Hunt launch page tomorrow, there is a thank-you gift waiting for you.
+
+I will share the full details in tomorrow's email. For now, just know it is our way of saying thank you for helping us build Oasis in the open.
+
+No Product Hunt account yet? Create one now: https://www.producthunt.com/
+
 Mobile and a Chromium-engine build for Windows, Mac, and Linux are coming soon. Tell us what to notify you about:
 
 CHOOSE YOUR VERSION (tap in HTML email, opens pre-filled Tally form)

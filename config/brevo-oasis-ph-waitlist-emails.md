@@ -22,17 +22,30 @@ Oasis waitlist contacts (Tally form `w8V8GA` → Brevo list).
 | [`brevo-oasis-ph-tally-form-snippet.html`](brevo-oasis-ph-tally-form-snippet.html) | In-email Tally form buttons (teaser) |
 | [`brevo-oasis-ph-tally-form-setup.md`](brevo-oasis-ph-tally-form-setup.md) | Tally hidden-field setup for pre-fill |
 | [`brevo-oasis-ph-product-card-snippet.html`](brevo-oasis-ph-product-card-snippet.html) | PH product card for launch (replaces hero) |
+| [`brevo-oasis-ph-zen-gift-teaser-snippet.html`](brevo-oasis-ph-zen-gift-teaser-snippet.html) | Launch-day surprise hint (teaser only) |
+| [`brevo-oasis-ph-zen-gift-launch-snippet.html`](brevo-oasis-ph-zen-gift-launch-snippet.html) | Full Zen gift offer + claim steps (launch) |
+| [`brevo-oasis-ph-zen-gift-terms-snippet.html`](brevo-oasis-ph-zen-gift-terms-snippet.html) | Gift fine print |
+| [`brevo-oasis-ph-zen-gift-emails.md`](brevo-oasis-ph-zen-gift-emails.md) | Offer spec + redemption ops runbook |
 | [`brevo-oasis-ph-teaser-plain-text.txt`](brevo-oasis-ph-teaser-plain-text.txt) | Teaser plain-text tab paste |
 | [`brevo-oasis-ph-launch-plain-text.txt`](brevo-oasis-ph-launch-plain-text.txt) | Launch plain-text tab paste |
 | [`brevo-oasis-support-links-snippet.html`](brevo-oasis-support-links-snippet.html) | Docs · Slack · Contact footer row (both emails) |
 
 ---
 
+## Launch-day Zen gift (May 26–27)
+
+Genuine comment on the Product Hunt launch page unlocks **6 months of Oasis Zen** (1,000,000 tokens per day, ~$120 value). Teaser hints only; launch email reveals full offer and claim steps (reply with screenshot).
+
+Ops runbook: [`brevo-oasis-ph-zen-gift-emails.md`](brevo-oasis-ph-zen-gift-emails.md)  
+Link constants: [`brevo-oasis-email-links.js`](brevo-oasis-email-links.js) (`productHuntSignup`, `productHuntLaunchComment`, `zenGiftTokensPerDay`, `zenGiftMonths`)
+
+---
+
 ## Email 1: Teaser (May 26)
 
-**Subject:** `Tomorrow on Product Hunt: Oasis Browser for Mac`
+**Subject:** `Tomorrow on Product Hunt (+ a launch-day surprise)`
 
-**Preheader:** `Privacy-first AI browser you can train. See assistant themes and the JSON we send by default.`
+**Preheader:** `Privacy-first AI browser. Something special for genuine launch-day feedback.`
 
 **From name:** `Oasis by Kahana`
 
@@ -46,13 +59,15 @@ Paste [`brevo-oasis-ph-teaser-plain-text.txt`](brevo-oasis-ph-teaser-plain-text.
 
 ## Email 2: Launch (May 27)
 
-**Subject:** `We're live on Product Hunt: Oasis for Mac`
+**Subject:** `We're live on Product Hunt: 6 months of Zen, on us`
 
-**Preheader:** `Privacy-first AI browser you can train. See assistant themes and the JSON we send by default.`
+**Preheader:** `Leave genuine feedback on our launch page. Reply with a screenshot to claim 1M tokens/day.`
 
 **From name:** `Oasis by Kahana`
 
-**Single CTA button:** Follow us on Product Hunt (`#ff6154` on launch)
+**Primary CTA:** Comment on Product Hunt (orange `#ff6154`, UTM URL)
+
+**Secondary CTA:** Create Product Hunt account (`https://www.producthunt.com/`)
 
 **Send:** Manual once PH listing is live: see [Launch day runbook](#launch-day-runbook-may-27) below.
 
@@ -95,15 +110,16 @@ Use this on launch day. Do **not** schedule the campaign in advance.
 | Element | Teaser | Launch |
 |---------|--------|--------|
 | Headline | "tomorrow" | "live today" |
+| Zen gift | Hint only (no claim steps) | Full offer + 3 steps + screenshot reply |
 | Hero | None (founder intro leads) | PH product card |
 | Founder voice | Future tense ("launching tomorrow") | Present tense ("just launched") |
 | Theme gallery | Bottom toss-in after signoff | Bottom toss-in after signoff |
 | Signoff | Journey to the Oasis + Connect with me | Journey to the Oasis + Connect with me |
 | Tally form | In-email engine buttons | Footer link only |
-| Button color | `#4A6200` | `#ff6154` |
-| PH URL | Plain product URL | UTM badge URL |
+| Button color | `#4A6200` (Follow PH) | `#ff6154` comment + `#4A6200` PH signup |
+| PH URL | Plain product URL | UTM badge URL for comments |
 | Personal close | Feedback ask + thanks | Feedback ask + thanks |
-| Closing | "stay in the loop on launch day" | "upvotes and comments help discover Oasis" |
+| Closing | "stay in the loop on launch day" | PH badge only (no duplicate Follow button) |
 
 ---
 
@@ -111,8 +127,9 @@ Use this on launch day. Do **not** schedule the campaign in advance.
 
 | Label | URL |
 |-------|-----|
+| Product Hunt signup | https://www.producthunt.com/ |
 | Product Hunt (teaser) | https://www.producthunt.com/products/kahana |
-| Product Hunt (launch + UTM) | https://www.producthunt.com/products/kahana?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-oasis-browser-for-mac |
+| Product Hunt (launch comment + UTM) | https://www.producthunt.com/products/kahana?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-oasis-browser-for-mac |
 | Interaction data doc | https://kahana.co/docs/technical-and-interaction-data |
 | Assistant themes doc | https://kahana.co/docs/assistant-themes |
 | Choose your version (Tally) | https://tally.so/r/w8V8GA |
@@ -135,7 +152,7 @@ Payload examples source: [`data/docs/interaction-payload-examples.js`](../data/d
 - [ ] Adam headshot loads
 - [ ] Adam linktree loads: `https://kahana.co/adam-kershner`
 - [ ] All 7 theme thumbnails load and link to assistant themes doc
-- [ ] **One button only** (Product Hunt)
+- [ ] PH signup link works: `https://www.producthunt.com/`
 - [ ] Two JSON `<pre>` blocks readable on mobile preview
 - [ ] Doc link: `https://kahana.co/docs/technical-and-interaction-data`
 - [ ] Tally link: `https://tally.so/r/w8V8GA`
@@ -145,10 +162,15 @@ Payload examples source: [`data/docs/interaction-payload-examples.js`](../data/d
 - [ ] No "acts on tabs/history/pages" phrasing
 - [ ] Test send completed before bulk send
 
+## QA checklist (teaser only)
+
+- [ ] Zen gift hint present; **no** full claim steps or token numbers
+- [ ] PH account nudge links to producthunt.com
+- [ ] One green Follow PH button
+
 ## QA checklist (launch only)
 
-- [ ] Copy says **"live today"**: not "tomorrow"
-- [ ] Orange `#ff6154` button with UTM PH URL
-- [ ] **No Mac download** links or `/oasis-pricing` CTAs
-- [ ] PH product card thumbnail loads
-- [ ] PH badge image loads (if included)
+- [ ] Zen gift: 1M tokens/day, 6 months, $20/mo value, 3 steps, screenshot reply, 7-day window
+- [ ] Primary **Comment on Product Hunt** (orange, UTM URL)
+- [ ] Secondary **Create Product Hunt account** (green)
+- [ ] No duplicate Follow button at bottom

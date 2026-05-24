@@ -1,12 +1,37 @@
 Hi {{ contact.FIRSTNAME }},
 
-We just launched Oasis on Product Hunt and I wanted to share it with you directly.
+We're live on Product Hunt today. Oasis for Mac is available now.
 
-Chrome was never built for privacy, and the AI in today's "private" browsers still lags behind. Oasis is a privacy-first AI browser you can train. Your personal data is sacred, and all interaction data is anonymized by default.
+GET OASIS ON PRODUCT HUNT
+https://www.producthunt.com/products/kahana?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-oasis-browser-for-mac
 
-The launch build is Oasis for Mac, desktop only, built on Firefox, for Apple Silicon and Intel.
+We just launched Oasis on Product Hunt and I could not be more excited. You can get Oasis for Mac today through Product Hunt. Head to our Product Hunt page to download the browser, upvote our launch, and share your honest feedback in a comment.
 
-Mobile and a Chromium-engine build for Windows, Mac, and Linux are coming soon. Choose your version: https://tally.so/r/w8V8GA
+Oasis is a privacy-first AI browser you can train, available now for Mac (Firefox engine, Apple Silicon and Intel). Product Hunt is the place to get it today.
+
+6 MONTHS OF OASIS ZEN, ON US
+1,000,000 tokens per day for 6 months
+
+I wanted to do something unexpected for the people who have been with us from the waitlist. Upvote Oasis on Product Hunt and leave a genuine comment with your feedback. I will gift you 6 months of Oasis Zen: 1,000,000 tokens per day, essentially the paid version of Oasis, free for half a year.
+
+That is 6 months of our $20/mo Zen plan (~$120 value).
+
+HOW TO GET OASIS AND CLAIM YOUR GIFT
+
+1. Go to our Product Hunt page and download Oasis for Mac (create a Product Hunt account first if you need one):
+https://www.producthunt.com/products/kahana?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-oasis-browser-for-mac
+
+2. Upvote Oasis and leave a genuine comment on that same page with your honest feedback.
+
+3. Reply to this email with a screenshot of your comment so we can verify it and activate your 6 months of Zen.
+
+Offer valid for 7 days from launch. One gift per person. Comment must be genuine, original feedback (not spam or copy-paste). Reply email must match your Oasis account. We manually verify comments on Product Hunt; allow 2-3 business days to activate your gift.
+
+Get Oasis on Product Hunt:
+https://www.producthunt.com/products/kahana?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-oasis-browser-for-mac
+
+Create a Product Hunt account:
+https://www.producthunt.com/
 
 TRANSPARENT BY DEFAULT
 
@@ -45,10 +70,10 @@ https://kahana.co/docs/technical-and-interaction-data
 
 I would really love your thoughts and feedback if you get a chance to check it out. We are genuinely trying to build something meaningful that helps people with both privacy and productivity.
 
-Thanks so much for the consideration. It means a lot.
-
-To stay in the loop on new versions and new features, follow us on Product Hunt. Upvotes and comments help more people discover Oasis:
+Thanks so much for the consideration. It means a lot. If you have not yet, get Oasis on Product Hunt, upvote, and leave a comment:
 https://www.producthunt.com/products/kahana?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-oasis-browser-for-mac
+
+Mobile and a Chromium build for Windows, Mac, and Linux are coming soon.
 
 I'm hoping you'll join us on this journey to the Oasis :)
 

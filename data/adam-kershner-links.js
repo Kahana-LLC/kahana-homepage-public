@@ -17,6 +17,11 @@ export const adamKershnerSocialLinks = [
     href: 'https://www.linkedin.com/in/adam-kershner/',
   },
   {
+    id: 'producthunt',
+    label: 'Product Hunt',
+    href: 'https://www.producthunt.com/@adamthecreator',
+  },
+  {
     id: 'instagram',
     label: 'Instagram',
     href: 'https://www.instagram.com/adam_kershner/',
@@ -25,5 +30,10 @@ export const adamKershnerSocialLinks = [
     id: 'tiktok',
     label: 'TikTok',
     href: 'https://www.tiktok.com/@adam_kershner',
+  },
+  {
+    id: 'youtube',
+    label: 'YouTube',
+    href: 'https://www.youtube.com/@adam_kershner',
   },
 ];
