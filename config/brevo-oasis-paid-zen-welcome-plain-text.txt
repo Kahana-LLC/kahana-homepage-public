@@ -1,0 +1,18 @@
+Hi {{ contact.FIRSTNAME }},
+
+Thank you for upgrading to Oasis Zen. Your plan is active.
+
+What you get with Zen:
+- 1,000,000 tokens per day
+- Everything in Free
+- Priority support
+
+Manage billing: https://billing.stripe.com/p/login/bIYg16d6l3FqelieUU
+
+Browse docs: https://kahana.co/docs
+Join Slack: https://kahanaworkspace.slack.com/archives/C0B3QDPLH4P
+Contact us: https://kahana.co/contact
+
+View in browser: {{ mirror }}
+Unsubscribe: {{ unsubscribe }}
+Privacy: https://kahana.co/privacy-policy

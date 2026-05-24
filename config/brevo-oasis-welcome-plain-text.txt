@@ -1,0 +1,19 @@
+Hi {{ contact.FIRSTNAME }},
+
+Welcome to Oasis, a privacy-first AI browser you can train. We are glad you are here.
+
+Here are the best places to get help, learn the product, and connect with the team:
+
+Browse the docs: https://kahana.co/docs
+Join Slack: https://kahanaworkspace.slack.com/archives/C0B3QDPLH4P
+Contact us: https://kahana.co/contact
+
+Assistant themes: https://kahana.co/docs/assistant-themes
+
+Browse docs: https://kahana.co/docs
+
+You're receiving this because you signed up for Oasis.
+Contact: https://kahana.co/contact
+Privacy: https://kahana.co/privacy-policy
+View in browser: {{ mirror }}
+Unsubscribe: {{ unsubscribe }}

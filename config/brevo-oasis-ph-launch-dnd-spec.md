@@ -159,8 +159,10 @@ Use the launch variant from [`brevo-oasis-ph-founder-intro-snippet.html`](brevo-
 <p style="font-size:14px;color:#6b7355;text-align:center;">
   <a href="https://tally.so/r/w8V8GA" style="color:#4A6200;font-weight:600;text-decoration:underline;">Choose your version (Mac, Windows, Linux · Chromium or Firefox)</a>
 </p>
-<p style="font-size:14px;color:#6b7355;">If the button doesn't work: <a href="https://www.producthunt.com/products/kahana?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-oasis-browser-for-mac">Product Hunt</a> · <a href="https://kahana.co/adam-kershner">Connect with me</a> · <a href="https://kahana.co/docs/technical-and-interaction-data">Interaction data doc</a> · <a href="https://tally.so/r/w8V8GA">Choose your version</a></p>
+<p style="font-size:14px;color:#6b7355;">If the button doesn't work: <a href="https://www.producthunt.com/products/kahana?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-oasis-browser-for-mac">Product Hunt</a> · <a href="https://kahana.co/adam-kershner">Connect with me</a> · <a href="https://kahana.co/docs">Browse docs</a> · <a href="https://kahanaworkspace.slack.com/archives/C0B3QDPLH4P">Join Slack</a> · <a href="https://kahana.co/contact">Contact us</a> · <a href="https://kahana.co/docs/technical-and-interaction-data">Interaction data doc</a> · <a href="https://tally.so/r/w8V8GA">Choose your version</a></p>
 ```
+
+**Footer support links:** paste [`brevo-oasis-support-links-snippet.html`](brevo-oasis-support-links-snippet.html) in the footer area above Privacy Policy.
 
 ---
 

@@ -63,8 +63,12 @@ https://kahana.co/docs/assistant-themes
 Choose your version (Mac, Windows, Linux · Chromium or Firefox):
 https://tally.so/r/w8V8GA
 
+Questions?
+Browse docs: https://kahana.co/docs
+Join Slack: https://kahanaworkspace.slack.com/archives/C0B3QDPLH4P
+Contact us: https://kahana.co/contact
+
 You're receiving this because you joined the Oasis waitlist.
-Contact: https://kahana.co/contact
 Privacy: https://kahana.co/privacy-policy
 View in browser: {{ mirror }}
 Unsubscribe: {{ unsubscribe }}
