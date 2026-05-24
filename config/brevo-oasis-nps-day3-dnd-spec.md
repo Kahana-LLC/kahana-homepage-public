@@ -11,19 +11,32 @@
 |-------|--------|
 | Subject | `Quick question: how likely are you to recommend Oasis?` |
 | Preheader | `One question. Your feedback helps us improve.` |
-| From name | `Oasis by Kahana` |
+| From name | `Adam from Oasis` |
+
+## Snippets to paste
+
+| Snippet | Use |
+|---------|-----|
+| [`brevo-oasis-lifecycle-founder-header-snippet.html`](brevo-oasis-lifecycle-founder-header-snippet.html) | After greeting |
+| [`brevo-oasis-slack-button-snippet.html`](brevo-oasis-slack-button-snippet.html) | After survey CTA |
+| [`brevo-oasis-lifecycle-founder-signoff-snippet.html`](brevo-oasis-lifecycle-founder-signoff-snippet.html) | Before footer |
+| [`brevo-oasis-support-links-snippet.html`](brevo-oasis-support-links-snippet.html) | Footer |
 
 ## Block checklist
 
 | Block | Action |
 |-------|--------|
 | Title | `How are we doing so far?` |
-| Body | Short NPS ask (2 paragraphs) |
-| Button | Share your score → `https://tally.so/r/ODoBz7` |
-| Fallback link | Same Tally URL as text link |
+| Body | Adam headshot + first-person NPS ask |
+| Button 1 | Share your score → Tally URL |
+| Button 2 | Join Slack (purple `#4A154B`) |
+| Signoff | Connect with me → `https://kahana.co/adam-kershner` |
 | Footer | Support links snippet |
 
 ## QA
 
+- [ ] Adam headshot loads
 - [ ] Tally survey opens from button and fallback link
+- [ ] Slack button and footer icon load
+- [ ] Connect with me link works
 - [ ] Exclude unsubscribed users from automation

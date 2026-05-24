@@ -1,6 +1,8 @@
 # Oasis lifecycle emails (Brevo)
 
-HTML templates for signup, feedback, and paid-plan automations. Same design system as Product Hunt waitlist emails in [`brevo-oasis-ph-waitlist-emails.md`](brevo-oasis-ph-waitlist-emails.md).
+HTML templates for signup, feedback, and paid-plan automations. All four emails use **Adam's founder voice** with headshot, Slack button, and Connect with me signoff. Same design system as Product Hunt waitlist emails in [`brevo-oasis-ph-waitlist-emails.md`](brevo-oasis-ph-waitlist-emails.md).
+
+**From name (all campaigns):** `Adam from Oasis`
 
 ## Files
 
@@ -15,7 +17,10 @@ HTML templates for signup, feedback, and paid-plan automations. Same design syst
 
 | File | Purpose |
 |------|---------|
-| [`brevo-oasis-support-links-snippet.html`](brevo-oasis-support-links-snippet.html) | Docs · Slack · Contact footer row |
+| [`brevo-oasis-lifecycle-founder-header-snippet.html`](brevo-oasis-lifecycle-founder-header-snippet.html) | Adam headshot + Founder, Oasis |
+| [`brevo-oasis-lifecycle-founder-signoff-snippet.html`](brevo-oasis-lifecycle-founder-signoff-snippet.html) | Personal signoff + Connect with me |
+| [`brevo-oasis-slack-button-snippet.html`](brevo-oasis-slack-button-snippet.html) | Purple Join Slack button with icon |
+| [`brevo-oasis-support-links-snippet.html`](brevo-oasis-support-links-snippet.html) | Docs · Slack (icon) · Contact footer row |
 | [`brevo-oasis-email-links.js`](brevo-oasis-email-links.js) | Canonical URLs (site reference) |
 
 ---
@@ -28,8 +33,9 @@ HTML templates for signup, feedback, and paid-plan automations. Same design syst
 |-------|--------|
 | Subject | `Welcome to Oasis` |
 | Preheader | `Docs, Slack, and support links to get started.` |
-| From name | `Oasis by Kahana` |
+| From name | `Adam from Oasis` |
 | Trigger | Brevo automation: new Oasis user signup |
+| Hero image | `https://kahana.co/images/oasis-browser-assistant-screenshot.png` (desert midnight theme) |
 
 ### NPS (day 3)
 
@@ -37,7 +43,7 @@ HTML templates for signup, feedback, and paid-plan automations. Same design syst
 |-------|--------|
 | Subject | `Quick question: how likely are you to recommend Oasis?` |
 | Preheader | `One question. Your feedback helps us improve.` |
-| From name | `Oasis by Kahana` |
+| From name | `Adam from Oasis` |
 | Trigger | Brevo automation: 3 days after signup |
 | Primary CTA | https://tally.so/r/ODoBz7 |
 
@@ -47,7 +53,7 @@ HTML templates for signup, feedback, and paid-plan automations. Same design syst
 |-------|--------|
 | Subject | `Help us understand how Oasis fits your workflow` |
 | Preheader | `2-minute product survey. Your answers shape what we build next.` |
-| From name | `Oasis by Kahana` |
+| From name | `Adam from Oasis` |
 | Trigger | Brevo automation: 10 days after signup |
 | Primary CTA | https://tally.so/r/EkNbXX |
 
@@ -57,7 +63,7 @@ HTML templates for signup, feedback, and paid-plan automations. Same design syst
 |-------|--------|
 | Subject | `Welcome to Oasis Zen` |
 | Preheader | `1M tokens per day and priority support are now active.` |
-| From name | `Oasis by Kahana` |
+| From name | `Adam from Oasis` |
 | Trigger | Stripe checkout / Brevo when plan = Zen |
 | Primary CTA | https://billing.stripe.com/p/login/bIYg16d6l3FqelieUU |
 
@@ -83,6 +89,11 @@ Rules:
 
 | Label | URL |
 |-------|-----|
+| Adam linktree | https://kahana.co/adam-kershner |
+| Adam headshot | https://kahana.co/images/about/adam-kershner.jpg |
+| Welcome hero screenshot | https://kahana.co/images/oasis-browser-assistant-screenshot.png |
+| Slack icon (button) | https://kahana.co/images/icons/slack-mark-white.png |
+| Slack icon (footer) | https://kahana.co/images/icons/slack-mark-purple.png |
 | Docs | https://kahana.co/docs |
 | Contact | https://kahana.co/contact |
 | Join Slack | https://kahanaworkspace.slack.com/archives/C0B3QDPLH4P |
@@ -99,8 +110,13 @@ Rules:
 
 - [ ] Single root `<table>`; no DOCTYPE wrapper
 - [ ] No em dashes in copy
+- [ ] Adam headshot loads in all four emails
+- [ ] Welcome hero screenshot loads (desert midnight theme)
+- [ ] Slack button and footer icons load (deploy `public/images/icons/` first)
+- [ ] Connect with me link works: `https://kahana.co/adam-kershner`
 - [ ] All links open correctly (docs, contact, Slack, Tally, billing)
 - [ ] `{{ contact.FIRSTNAME }}`, `{{ mirror }}`, `{{ unsubscribe }}` render in Brevo preview
 - [ ] Plain-text tab pasted for each campaign
+- [ ] From name set to `Adam from Oasis` in Brevo
 - [ ] Mobile preview: buttons and link rows readable
 - [ ] Test send completed before enabling automations

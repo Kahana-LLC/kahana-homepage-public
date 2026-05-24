@@ -11,15 +11,26 @@
 |-------|--------|
 | Subject | `Welcome to Oasis Zen` |
 | Preheader | `1M tokens per day and priority support are now active.` |
-| From name | `Oasis by Kahana` |
+| From name | `Adam from Oasis` |
+
+## Snippets to paste
+
+| Snippet | Use |
+|---------|-----|
+| [`brevo-oasis-lifecycle-founder-header-snippet.html`](brevo-oasis-lifecycle-founder-header-snippet.html) | After greeting |
+| [`brevo-oasis-slack-button-snippet.html`](brevo-oasis-slack-button-snippet.html) | After billing CTA |
+| [`brevo-oasis-lifecycle-founder-signoff-snippet.html`](brevo-oasis-lifecycle-founder-signoff-snippet.html) | Before footer |
+| [`brevo-oasis-support-links-snippet.html`](brevo-oasis-support-links-snippet.html) | Footer |
 
 ## Block checklist
 
 | Block | Action |
 |-------|--------|
 | Title | `Welcome to Zen` |
-| Body | Thank you + Zen benefits list |
-| Button | Manage billing → Stripe portal URL |
+| Body | Adam headshot + thank you + Zen benefits list |
+| Button 1 | Manage billing → Stripe portal URL |
+| Button 2 | Join Slack (purple `#4A154B`) |
+| Signoff | Connect with me → `https://kahana.co/adam-kershner` |
 | Footer | Support links snippet |
 
 ## Brevo trigger note
@@ -28,5 +39,8 @@ Fire from Stripe checkout webhook or Brevo automation when contact attribute `pl
 
 ## QA
 
+- [ ] Adam headshot loads
 - [ ] Billing portal link works
+- [ ] Slack button and footer icon load
+- [ ] Connect with me link works
 - [ ] Zen benefits match [`pages/oasis-pricing.jsx`](../pages/oasis-pricing.jsx)

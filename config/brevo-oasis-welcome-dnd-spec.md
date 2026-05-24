@@ -2,8 +2,7 @@
 
 **Trigger:** On signup (all new Oasis users)  
 **Full HTML:** [`brevo-oasis-welcome.html`](brevo-oasis-welcome.html)  
-**Plain text:** [`brevo-oasis-welcome-plain-text.txt`](brevo-oasis-welcome-plain-text.txt)  
-**Support links snippet:** [`brevo-oasis-support-links-snippet.html`](brevo-oasis-support-links-snippet.html)
+**Plain text:** [`brevo-oasis-welcome-plain-text.txt`](brevo-oasis-welcome-plain-text.txt)
 
 ## Campaign setup
 
@@ -11,28 +10,33 @@
 |-------|--------|
 | Subject | `Welcome to Oasis` |
 | Preheader | `Docs, Slack, and support links to get started.` |
-| From name | `Oasis by Kahana` |
+| From name | `Adam from Oasis` |
 
-## Global styles
+## Snippets to paste
 
-| Token | Value |
-|-------|--------|
-| Button | `#4A6200` |
-| Links | `#4A6200` |
-| Body text | `#4A5745` |
-| Headings | `#313A00` |
+| Snippet | Use |
+|---------|-----|
+| [`brevo-oasis-lifecycle-founder-header-snippet.html`](brevo-oasis-lifecycle-founder-header-snippet.html) | After greeting |
+| Hero screenshot block | After founder intro (see HTML) |
+| [`brevo-oasis-slack-button-snippet.html`](brevo-oasis-slack-button-snippet.html) | After Browse docs button |
+| [`brevo-oasis-lifecycle-founder-signoff-snippet.html`](brevo-oasis-lifecycle-founder-signoff-snippet.html) | Before footer |
+| [`brevo-oasis-support-links-snippet.html`](brevo-oasis-support-links-snippet.html) | Footer |
 
 ## Block checklist
 
 | Block | Action |
 |-------|--------|
 | Title | `Welcome to Oasis` |
-| Body | Opening + 3-card support block (docs, Slack, contact) |
-| Button | Browse docs → `https://kahana.co/docs` |
-| Footer | Paste support links snippet + mirror/unsubscribe |
+| Body | Adam headshot + first-person welcome + hero screenshot + support block |
+| Button 1 | Browse docs → `https://kahana.co/docs` |
+| Button 2 | Join Slack (purple `#4A154B`) → Slack channel URL |
+| Signoff | Connect with me → `https://kahana.co/adam-kershner` |
+| Footer | Support links snippet + mirror/unsubscribe |
 
 ## QA
 
-- [ ] Docs, Slack, and contact links work
-- [ ] Single CTA button (Browse docs)
+- [ ] Adam headshot loads: `https://kahana.co/images/about/adam-kershner.jpg`
+- [ ] Hero screenshot loads: `https://kahana.co/images/oasis-browser-assistant-screenshot.png`
+- [ ] Slack icons load (white button, purple footer)
+- [ ] Connect with me link works: `https://kahana.co/adam-kershner`
 - [ ] Plain-text pasted from `brevo-oasis-welcome-plain-text.txt`

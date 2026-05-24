@@ -1,10 +1,21 @@
 Hi {{ contact.FIRSTNAME }},
 
-You have had a few days with Oasis. We would love your honest feedback.
+Adam Kershner
+Founder, Oasis
 
-How likely are you to recommend Oasis to a friend or colleague? It takes about one minute.
+You have had a few days with Oasis. I would love your honest feedback.
+
+How likely are you to recommend Oasis to a friend or colleague? It takes about one minute, and your answer goes straight to me.
 
 Share your score: https://tally.so/r/ODoBz7
+
+Join Slack: https://kahanaworkspace.slack.com/archives/C0B3QDPLH4P
+
+I'm here if you have questions, feedback, or just want to talk about Oasis.
+
+Connect with me on social media, reply to this email, or DM me. Either way, I'll be there to help along the way.
+
+Connect with me: https://kahana.co/adam-kershner
 
 Browse docs: https://kahana.co/docs
 Join Slack: https://kahanaworkspace.slack.com/archives/C0B3QDPLH4P
