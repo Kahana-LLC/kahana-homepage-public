@@ -3,7 +3,8 @@
 **Trigger:** 3 days after signup  
 **Full HTML:** [`brevo-oasis-nps-day3.html`](brevo-oasis-nps-day3.html)  
 **Plain text:** [`brevo-oasis-nps-day3-plain-text.txt`](brevo-oasis-nps-day3-plain-text.txt)  
-**Survey URL:** https://tally.so/r/ODoBz7
+**Survey page:** https://kahana.co/oasis-nps  
+**Tally embed (email score links):** https://tally.so/r/ODoBz7
 
 ## Campaign setup
 

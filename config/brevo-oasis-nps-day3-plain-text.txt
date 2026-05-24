@@ -20,7 +20,7 @@ Tap a score (opens pre-filled Tally form):
 9: https://tally.so/r/ODoBz7?linear_scale_37aadfce-8894-4772-9712-709dbb4cfdaf=9&email={{ contact.EMAIL }}
 10: https://tally.so/r/ODoBz7?linear_scale_37aadfce-8894-4772-9712-709dbb4cfdaf=10&email={{ contact.EMAIL }}
 
-Full survey: https://tally.so/r/ODoBz7?email={{ contact.EMAIL }}
+Full survey: https://kahana.co/oasis-nps?email={{ contact.EMAIL }}
 
 Join Slack: https://kahanaworkspace.slack.com/archives/C0B3QDPLH4P
 

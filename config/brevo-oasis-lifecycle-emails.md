@@ -45,7 +45,7 @@ HTML templates for signup, feedback, and paid-plan automations. All four emails 
 | Preheader | `One question. Your feedback helps us improve.` |
 | From name | `Adam from Oasis` |
 | Trigger | Brevo automation: 3 days after signup |
-| Primary CTA | https://tally.so/r/ODoBz7 |
+| Primary CTA | https://kahana.co/oasis-nps?email={{ contact.EMAIL }} |
 
 ### PMF (day 10)
 
@@ -55,7 +55,7 @@ HTML templates for signup, feedback, and paid-plan automations. All four emails 
 | Preheader | `2-minute product survey. Your answers shape what we build next.` |
 | From name | `Adam from Oasis` |
 | Trigger | Brevo automation: 10 days after signup |
-| Primary CTA | https://tally.so/r/EkNbXX |
+| Primary CTA | https://kahana.co/oasis-pmf?email={{ contact.EMAIL }} |
 
 ### Paid Zen welcome
 
@@ -97,8 +97,10 @@ Rules:
 | Docs | https://kahana.co/docs |
 | Contact | https://kahana.co/contact |
 | Join Slack | https://kahanaworkspace.slack.com/archives/C0B3QDPLH4P |
-| NPS survey | https://tally.so/r/ODoBz7 |
-| PMF survey | https://tally.so/r/EkNbXX |
+| NPS survey page | https://kahana.co/oasis-nps |
+| NPS Tally (email score links) | https://tally.so/r/ODoBz7 |
+| PMF survey page | https://kahana.co/oasis-pmf |
+| PMF Tally embed | https://tally.so/r/EkNbXX |
 | Zen billing portal | https://billing.stripe.com/p/login/bIYg16d6l3FqelieUU |
 | Install Mac | https://kahana.co/installations |
 | Assistant themes | https://kahana.co/docs/assistant-themes |
