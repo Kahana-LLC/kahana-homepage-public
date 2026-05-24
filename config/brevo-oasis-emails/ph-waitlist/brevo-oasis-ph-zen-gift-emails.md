@@ -42,5 +42,5 @@ Launch-day thank-you for waitlist subscribers who leave genuine feedback on Prod
 
 - [ ] Teaser hints only; no full claim steps
 - [ ] Launch has full offer, 3 steps, screenshot instructions
-- [ ] Zen numbers match [`pages/oasis-pricing.jsx`](../pages/oasis-pricing.jsx)
+- [ ] Zen numbers match [`pages/oasis-pricing.jsx`](../../pages/oasis-pricing.jsx)
 - [ ] No em dashes in copy

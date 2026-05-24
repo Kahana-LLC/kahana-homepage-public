@@ -3,7 +3,8 @@
 **Trigger:** 3 days after signup  
 **Full HTML:** [`brevo-oasis-nps-day3.html`](brevo-oasis-nps-day3.html)  
 **Plain text:** [`brevo-oasis-nps-day3-plain-text.txt`](brevo-oasis-nps-day3-plain-text.txt)  
-**Survey URL:** https://tally.so/r/ODoBz7
+**Survey page:** https://kahana.co/oasis-nps  
+**Tally embed (email score links):** https://tally.so/r/ODoBz7
 
 ## Campaign setup
 
@@ -17,11 +18,11 @@
 
 | Snippet | Use |
 |---------|-----|
-| [`brevo-oasis-lifecycle-founder-header-snippet.html`](brevo-oasis-lifecycle-founder-header-snippet.html) | After greeting |
+| [`brevo-oasis-lifecycle-founder-header-snippet.html`](../shared/brevo-oasis-lifecycle-founder-header-snippet.html) | After greeting |
 | [`brevo-oasis-nps-tally-form-snippet.html`](brevo-oasis-nps-tally-form-snippet.html) | Inline 0-10 NPS scale (replaces Share your score button) |
-| [`brevo-oasis-slack-button-snippet.html`](brevo-oasis-slack-button-snippet.html) | After NPS form |
-| [`brevo-oasis-lifecycle-founder-signoff-snippet.html`](brevo-oasis-lifecycle-founder-signoff-snippet.html) | Before footer |
-| [`brevo-oasis-support-links-snippet.html`](brevo-oasis-support-links-snippet.html) | Footer |
+| [`brevo-oasis-slack-button-snippet.html`](../shared/brevo-oasis-slack-button-snippet.html) | After NPS form |
+| [`brevo-oasis-lifecycle-founder-signoff-snippet.html`](../shared/brevo-oasis-lifecycle-founder-signoff-snippet.html) | Before footer |
+| [`brevo-oasis-support-links-snippet.html`](../shared/brevo-oasis-support-links-snippet.html) | Footer |
 
 Tally setup: [`brevo-oasis-nps-tally-form-setup.md`](brevo-oasis-nps-tally-form-setup.md)
 

@@ -7,7 +7,7 @@ You have been using Oasis for about a week. I am trying to understand who Oasis 
 
 Would you take two minutes to share your experience? Your answers go directly to me and the product team.
 
-Take the survey: https://tally.so/r/EkNbXX
+Take the survey: https://kahana.co/oasis-pmf?email={{ contact.EMAIL }}
 
 Join Slack: https://kahanaworkspace.slack.com/archives/C0B3QDPLH4P
 

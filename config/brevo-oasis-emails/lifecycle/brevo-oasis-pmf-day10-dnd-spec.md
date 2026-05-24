@@ -3,7 +3,8 @@
 **Trigger:** 10 days after signup  
 **Full HTML:** [`brevo-oasis-pmf-day10.html`](brevo-oasis-pmf-day10.html)  
 **Plain text:** [`brevo-oasis-pmf-day10-plain-text.txt`](brevo-oasis-pmf-day10-plain-text.txt)  
-**Survey URL:** https://tally.so/r/EkNbXX
+**Survey page:** https://kahana.co/oasis-pmf  
+**Tally embed:** https://tally.so/r/EkNbXX
 
 ## Campaign setup
 
@@ -17,10 +18,10 @@
 
 | Snippet | Use |
 |---------|-----|
-| [`brevo-oasis-lifecycle-founder-header-snippet.html`](brevo-oasis-lifecycle-founder-header-snippet.html) | After greeting |
-| [`brevo-oasis-slack-button-snippet.html`](brevo-oasis-slack-button-snippet.html) | After survey CTA |
-| [`brevo-oasis-lifecycle-founder-signoff-snippet.html`](brevo-oasis-lifecycle-founder-signoff-snippet.html) | Before footer |
-| [`brevo-oasis-support-links-snippet.html`](brevo-oasis-support-links-snippet.html) | Footer |
+| [`brevo-oasis-lifecycle-founder-header-snippet.html`](../shared/brevo-oasis-lifecycle-founder-header-snippet.html) | After greeting |
+| [`brevo-oasis-slack-button-snippet.html`](../shared/brevo-oasis-slack-button-snippet.html) | After survey CTA |
+| [`brevo-oasis-lifecycle-founder-signoff-snippet.html`](../shared/brevo-oasis-lifecycle-founder-signoff-snippet.html) | Before footer |
+| [`brevo-oasis-support-links-snippet.html`](../shared/brevo-oasis-support-links-snippet.html) | Footer |
 
 ## Block checklist
 
@@ -28,7 +29,7 @@
 |-------|--------|
 | Title | `We'd love your input` |
 | Body | Adam headshot + first-person PMF framing |
-| Button 1 | Take the survey → Tally URL |
+| Button 1 | Take the survey → `https://kahana.co/oasis-pmf?email={{ contact.EMAIL }}` |
 | Button 2 | Join Slack (purple `#4A154B`) |
 | Signoff | Connect with me → `https://kahana.co/adam-kershner` |
 | Footer | Support links snippet |

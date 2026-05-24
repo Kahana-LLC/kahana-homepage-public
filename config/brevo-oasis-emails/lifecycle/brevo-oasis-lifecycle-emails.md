@@ -1,6 +1,6 @@
 # Oasis lifecycle emails (Brevo)
 
-HTML templates for signup, feedback, and paid-plan automations. All four emails use **Adam's founder voice** with headshot, Slack button, and Connect with me signoff. Same design system as Product Hunt waitlist emails in [`brevo-oasis-ph-waitlist-emails.md`](brevo-oasis-ph-waitlist-emails.md).
+HTML templates for signup, feedback, and paid-plan automations. All four emails use **Adam's founder voice** with headshot, Slack button, and Connect with me signoff. Same design system as Product Hunt waitlist emails in [`brevo-oasis-ph-waitlist-emails.md`](../ph-waitlist/brevo-oasis-ph-waitlist-emails.md).
 
 **From name (all campaigns):** `Adam from Oasis`
 
@@ -17,11 +17,11 @@ HTML templates for signup, feedback, and paid-plan automations. All four emails 
 
 | File | Purpose |
 |------|---------|
-| [`brevo-oasis-lifecycle-founder-header-snippet.html`](brevo-oasis-lifecycle-founder-header-snippet.html) | Adam headshot + Founder, Oasis |
-| [`brevo-oasis-lifecycle-founder-signoff-snippet.html`](brevo-oasis-lifecycle-founder-signoff-snippet.html) | Personal signoff + Connect with me |
-| [`brevo-oasis-slack-button-snippet.html`](brevo-oasis-slack-button-snippet.html) | Purple Join Slack button with icon |
-| [`brevo-oasis-support-links-snippet.html`](brevo-oasis-support-links-snippet.html) | Docs · Slack (icon) · Contact footer row |
-| [`brevo-oasis-email-links.js`](brevo-oasis-email-links.js) | Canonical URLs (site reference) |
+| [`brevo-oasis-lifecycle-founder-header-snippet.html`](../shared/brevo-oasis-lifecycle-founder-header-snippet.html) | Adam headshot + Founder, Oasis |
+| [`brevo-oasis-lifecycle-founder-signoff-snippet.html`](../shared/brevo-oasis-lifecycle-founder-signoff-snippet.html) | Personal signoff + Connect with me |
+| [`brevo-oasis-slack-button-snippet.html`](../shared/brevo-oasis-slack-button-snippet.html) | Purple Join Slack button with icon |
+| [`brevo-oasis-support-links-snippet.html`](../shared/brevo-oasis-support-links-snippet.html) | Docs · Slack (icon) · Contact footer row |
+| [`brevo-oasis-email-links.js`](../brevo-oasis-email-links.js) | Canonical URLs (site reference) |
 
 ---
 
@@ -45,7 +45,7 @@ HTML templates for signup, feedback, and paid-plan automations. All four emails 
 | Preheader | `One question. Your feedback helps us improve.` |
 | From name | `Adam from Oasis` |
 | Trigger | Brevo automation: 3 days after signup |
-| Primary CTA | https://tally.so/r/ODoBz7 |
+| Primary CTA | https://kahana.co/oasis-nps?email={{ contact.EMAIL }} |
 
 ### PMF (day 10)
 
@@ -55,7 +55,7 @@ HTML templates for signup, feedback, and paid-plan automations. All four emails 
 | Preheader | `2-minute product survey. Your answers shape what we build next.` |
 | From name | `Adam from Oasis` |
 | Trigger | Brevo automation: 10 days after signup |
-| Primary CTA | https://tally.so/r/EkNbXX |
+| Primary CTA | https://kahana.co/oasis-pmf?email={{ contact.EMAIL }} |
 
 ### Paid Zen welcome
 
@@ -97,8 +97,10 @@ Rules:
 | Docs | https://kahana.co/docs |
 | Contact | https://kahana.co/contact |
 | Join Slack | https://kahanaworkspace.slack.com/archives/C0B3QDPLH4P |
-| NPS survey | https://tally.so/r/ODoBz7 |
-| PMF survey | https://tally.so/r/EkNbXX |
+| NPS survey page | https://kahana.co/oasis-nps |
+| NPS Tally (email score links) | https://tally.so/r/ODoBz7 |
+| PMF survey page | https://kahana.co/oasis-pmf |
+| PMF Tally embed | https://tally.so/r/EkNbXX |
 | Zen billing portal | https://billing.stripe.com/p/login/bIYg16d6l3FqelieUU |
 | Install Mac | https://kahana.co/installations |
 | Assistant themes | https://kahana.co/docs/assistant-themes |

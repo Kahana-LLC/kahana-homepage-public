@@ -116,7 +116,7 @@ Then paste [`brevo-oasis-ph-tally-form-snippet.html`](brevo-oasis-ph-tally-form-
 <p style="font-size:14px;color:#6b7355;">If the button doesn't work: <a href="https://www.producthunt.com/products/kahana">Product Hunt</a> · <a href="https://kahana.co/adam-kershner">Connect with me</a> · <a href="https://kahana.co/docs">Browse docs</a> · <a href="https://kahanaworkspace.slack.com/archives/C0B3QDPLH4P">Join Slack</a> · <a href="https://kahana.co/contact">Contact us</a> · <a href="https://kahana.co/docs/technical-and-interaction-data">Interaction data doc</a> · <a href="https://tally.so/r/w8V8GA">Choose your version</a></p>
 ```
 
-**Footer support links:** paste [`brevo-oasis-support-links-snippet.html`](brevo-oasis-support-links-snippet.html) in the footer area above Privacy Policy.
+**Footer support links:** paste [`brevo-oasis-support-links-snippet.html`](../shared/brevo-oasis-support-links-snippet.html) in the footer area above Privacy Policy.
 
 ---
 

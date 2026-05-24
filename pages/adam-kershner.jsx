@@ -32,9 +32,14 @@ function SocialIcon({ id }) {
 
   if (id === 'producthunt') {
     return (
-      <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5 fill-current">
-        <path d="M13.866 18V7.99a2.37 2.37 0 1 0-4.517-1.017l-5.28 8.947H2V5h5.227v5.976a2.37 2.37 0 0 0 4.517 1.017l5.28-8.947H16V18h-2.134z" />
-      </svg>
+      <Image
+        src="/images/icons/product-hunt.png"
+        alt=""
+        width={20}
+        height={20}
+        className="h-5 w-5 object-contain"
+        aria-hidden
+      />
     );
   }
 

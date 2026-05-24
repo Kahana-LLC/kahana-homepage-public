@@ -38,7 +38,8 @@ const RESOURCE_LINKS = [
   { href: '/support', label: 'Help Center' },
   { href: '/press-kit', label: 'Press kit' },
   { href: '/press-releases', label: 'Press releases' },
-  { href: '/oasis-feedback-survey', label: 'Share Feedback!' },
+  { href: '/oasis-nps', label: 'Refer a Friend Survey' },
+  { href: '/oasis-pmf', label: 'Help Us Improve' },
 ];
 
 const USE_CASE_LINKS = [
