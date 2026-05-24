@@ -11,7 +11,7 @@ import {
 
 function ZenRewardCard() {
   return (
-    <div className="mb-8 overflow-hidden rounded-xl border-2 border-[#4A6200] bg-[#F8FAF2]">
+    <div className="mt-10 mb-10 overflow-hidden rounded-xl border-2 border-[#4A6200] bg-[#F8FAF2]">
       <div className="bg-[#4A6200] px-5 py-4">
         <p className="text-xs font-bold uppercase tracking-wider text-[#e8ebe0]">Oasis Zen, on us</p>
         <p className="mt-1 text-xl font-extrabold text-white sm:text-2xl">
@@ -57,13 +57,15 @@ export default function OasisFeedbackSurveyPage({ surveyKey }) {
 
       <main className="min-h-screen bg-white pt-24 pb-16">
         <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8">
-          <h1 className="text-center text-4xl font-bold text-oasis-green-900 sm:text-5xl">
-            {survey.headline}
-          </h1>
+          <header className="text-center">
+            <h1 className="text-4xl font-bold text-oasis-green-900 sm:text-5xl">
+              {survey.headline}
+            </h1>
 
-          <p className="mx-auto mt-6 max-w-xl text-center text-base leading-relaxed text-oasis-green-800 sm:text-lg">
-            {survey.description}
-          </p>
+            <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-oasis-green-800 sm:text-lg">
+              {survey.description}
+            </p>
+          </header>
 
           <ZenRewardCard />
 
