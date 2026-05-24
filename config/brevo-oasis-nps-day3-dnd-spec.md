@@ -18,9 +18,12 @@
 | Snippet | Use |
 |---------|-----|
 | [`brevo-oasis-lifecycle-founder-header-snippet.html`](brevo-oasis-lifecycle-founder-header-snippet.html) | After greeting |
-| [`brevo-oasis-slack-button-snippet.html`](brevo-oasis-slack-button-snippet.html) | After survey CTA |
+| [`brevo-oasis-nps-tally-form-snippet.html`](brevo-oasis-nps-tally-form-snippet.html) | Inline 0-10 NPS scale (replaces Share your score button) |
+| [`brevo-oasis-slack-button-snippet.html`](brevo-oasis-slack-button-snippet.html) | After NPS form |
 | [`brevo-oasis-lifecycle-founder-signoff-snippet.html`](brevo-oasis-lifecycle-founder-signoff-snippet.html) | Before footer |
 | [`brevo-oasis-support-links-snippet.html`](brevo-oasis-support-links-snippet.html) | Footer |
+
+Tally setup: [`brevo-oasis-nps-tally-form-setup.md`](brevo-oasis-nps-tally-form-setup.md)
 
 ## Block checklist
 
@@ -28,15 +31,15 @@
 |-------|--------|
 | Title | `How are we doing so far?` |
 | Body | Adam headshot + first-person NPS ask |
-| Button 1 | Share your score → Tally URL |
-| Button 2 | Join Slack (purple `#4A154B`) |
+| NPS form card | Paste 0-10 score grid snippet |
+| Button | Join Slack (purple `#4A154B`) |
 | Signoff | Connect with me → `https://kahana.co/adam-kershner` |
 | Footer | Support links snippet |
 
 ## QA
 
 - [ ] Adam headshot loads
-- [ ] Tally survey opens from button and fallback link
+- [ ] Each score link opens Tally with score pre-selected (test 0, 5, 10)
 - [ ] Slack button and footer icon load
 - [ ] Connect with me link works
 - [ ] Exclude unsubscribed users from automation
