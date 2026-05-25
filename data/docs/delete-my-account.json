@@ -1,0 +1,9 @@
+{
+  "title": "Delete my account",
+  "description": "How to permanently delete your Oasis account and what happens to your data.",
+  "slug": "delete-my-account",
+  "category": "guides",
+  "date": "2026-05-24",
+  "authors": ["Adam Kershner"],
+  "content": "<div class='doc-content'><article class='prose prose-slate max-w-none'><p class='text-lg text-gray-600'>Use this page to request permanent deletion of your Oasis account. Deletion is irreversible.</p></article></div>"
+}

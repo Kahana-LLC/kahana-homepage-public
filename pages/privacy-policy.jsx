@@ -181,9 +181,19 @@ export default function PrivacyPolicy() {
                 <li>To analyze how the Service is used in order to improve features, functionality, and overall user experience.</li>
                 <li>To enable third-party integrations that you authorize and connect to your account.</li>
                 <li>To address your questions, respond to feedback, and provide customer support.</li>
-                <li>To send you service-related communications about how our Services function. You may unsubscribe from these communications at any time.</li>
+                <li>To send you optional product and onboarding communications (such as getting started, setup, and feature guidance). You may unsubscribe from these communications at any time.</li>
+                <li>To send you required account communications (such as billing confirmations when you upgrade or downgrade, security notices, and dormant-account warnings). These are sent as needed and are not subject to marketing unsubscribe while your account remains active.</li>
                 <li>To fulfill legal requirements and to safeguard the rights, property, and safety of Kahana Group Inc., our users, and third parties. This includes using your Personal Data to enforce our Terms of Service, detect and prevent fraudulent or abusive activity, and address trust and safety concerns.</li>
               </ul>
+
+              <h3 id="email-communications" className="text-2xl font-bold text-[#313A00] mb-4 mt-8 scroll-mt-8">Email communications</h3>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                We may email you after you create an account. Optional emails help you onboard and learn about Oasis features; you can opt out of those at any time using the unsubscribe link in the email or by contacting us.
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-6">
+                We also send required account emails when something specific happens to your account, including plan changes, security matters, and notices if your account has been inactive for six (6) months. For more detail, see Section 9 (Communications) of our{' '}
+                <Link href="/terms-and-conditions#communications" className="text-[#4A6200] no-underline hover:no-underline font-semibold">Terms and Conditions</Link>.
+              </p>
             </section>
 
             {/* 3. How We Share Your Information */}
@@ -364,9 +374,18 @@ export default function PrivacyPolicy() {
 
               <div className="space-y-4 mb-6">
                 <div>
+                  <h3 className="text-xl font-bold text-[#313A00] mb-2">Email preferences</h3>
+                  <p className="text-gray-700 leading-relaxed">
+                    You may unsubscribe from optional product and onboarding emails at any time using the unsubscribe link in those messages or by contacting us. Required account emails (such as billing confirmations, security notices, and dormant-account warnings) are not subject to marketing unsubscribe while your account remains active, as described in our{' '}
+                    <Link href="/terms-and-conditions#communications" className="text-[#4A6200] no-underline hover:no-underline font-semibold">Terms and Conditions</Link>.
+                  </p>
+                </div>
+                <div>
                   <h3 className="text-xl font-bold text-[#313A00] mb-2">Managing Your Account</h3>
                   <p className="text-gray-700 leading-relaxed">
-                    You may update or delete your account information at any time by accessing your account settings or by <Link href="/contact" className="text-[#4A6200] no-underline hover:no-underline font-semibold">contacting us through our contact form</Link>.
+                    You may update your account information at any time by accessing your account settings. To permanently delete your Oasis account, submit a request through our{' '}
+                    <Link href="/docs/delete-my-account" className="text-[#4A6200] no-underline hover:no-underline font-semibold">Delete my account</Link>{' '}
+                    page, or <Link href="/contact" className="text-[#4A6200] no-underline hover:no-underline font-semibold">contact us through our contact form</Link>.
                   </p>
                 </div>
                 <div>
@@ -387,8 +406,14 @@ export default function PrivacyPolicy() {
               </div>
               <h2 className="text-3xl font-bold text-[#313A00] mb-6">7. Third-Party Services</h2>
               
-              <p className="text-gray-700 leading-relaxed mb-6">
+              <p className="text-gray-700 leading-relaxed mb-4">
                 Our Service may include links to or integrations with third-party websites, services, or applications that are not owned, operated, or controlled by us. We are not responsible for the privacy practices, data collection, or content of these third-party services. We strongly encourage you to review the privacy policies and terms of service of any third-party services before connecting them to or using them in conjunction with our Service.
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-6">
+                When you submit an account deletion request through our embedded form on the{' '}
+                <Link href="/docs/delete-my-account" className="text-[#4A6200] no-underline hover:no-underline font-semibold">Delete my account</Link>{' '}
+                page, your submission is processed using Tally, a third-party form provider. Information you provide in that form is handled according to{' '}
+                <a href="https://tally.so/privacy" target="_blank" rel="noopener noreferrer" className="text-[#4A6200] no-underline hover:no-underline font-semibold">Tally&apos;s privacy policy</a>.
               </p>
             </section>
 
@@ -478,7 +503,7 @@ export default function PrivacyPolicy() {
                   If you are not satisfied with our response to your complaint, or if you believe that our processing of your Personal Data does not comply with applicable data protection laws, you have the right to lodge a complaint with your local data protection supervisory authority. However, we would appreciate the opportunity to address your concerns directly before you contact a supervisory authority, and we encourage you to reach out to us first so that we may attempt to resolve the matter.
                 </p>
                 <p className="mt-4">
-                  This Privacy Policy is effective as of January 1st, 2026. Last updated: January 2025.
+                  This Privacy Policy is effective as of January 1st, 2026. Last updated: May 24th, 2026.
                 </p>
               </div>
             </section>

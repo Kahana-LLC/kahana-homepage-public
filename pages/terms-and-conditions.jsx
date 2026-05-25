@@ -52,7 +52,7 @@ export default function TermsAndConditions() {
                 Terms and Conditions
               </h1>
               <p className="text-xl sm:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-                Last Updated: January 1st, 2026. Please read these Terms carefully before using the Service.
+                Last Updated: May 24th, 2026. Please read these Terms carefully before using the Service.
               </p>
             </div>
           </div>
@@ -65,7 +65,7 @@ export default function TermsAndConditions() {
             <section className="mb-16 scroll-mt-8">
               <h2 className="text-3xl font-bold text-[#313A00] mb-6">Kahana Group Inc. Terms of Service</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
-                Last Updated: January 1st, 2026
+                Last Updated: May 24th, 2026
               </p>
               <p className="text-gray-700 leading-relaxed mb-6">
                 We appreciate your interest in Kahana Group Inc. (referred to as "Kahana," "we," "our," or "us") and our website located at https://kahana.co/, together with our associated websites, downloadable applications, and additional services we provide (collectively referred to as the "Service"). These Terms of Service constitute a legally binding agreement between you and Kahana that governs your access to and use of the Service.
@@ -297,9 +297,37 @@ export default function TermsAndConditions() {
                 </span>
               </div>
               <h2 className="text-3xl font-bold text-[#313A00] mb-6">9. Communications</h2>
-              <p className="text-gray-700 leading-relaxed mb-4">
-                By creating an account, you consent to receive communications from Kahana, which may be sent via email or other electronic means. These communications may include account-related notices and information pertaining to the Service. You may unsubscribe from promotional communications by following the unsubscribe instructions contained in such communications.
+              <p className="text-gray-700 leading-relaxed mb-6">
+                By creating an account, you consent to receive communications from Kahana, which may be sent via email or other electronic means. The types of email you may receive are described below. See our{' '}
+                <Link href="/privacy-policy" className="text-[#4A6200] no-underline hover:no-underline font-semibold">Privacy Policy</Link>{' '}
+                for how we use your email address.
               </p>
+
+              <h3 id="communications-optional" className="text-2xl font-bold text-[#313A00] mb-4 mt-8 scroll-mt-8">9.1. Optional product and onboarding emails</h3>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                After you create an account, Kahana may send emails that help you get started with Oasis, including onboarding guidance, setup tips, feature explanations, and product updates. These emails are not required to use the Service.
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-6">
+                You may unsubscribe from these optional emails at any time by following the unsubscribe link in any such email or by contacting us at{' '}
+                <a href="mailto:info@kahana.co" className="text-[#4A6200] no-underline hover:no-underline font-semibold">info@kahana.co</a>.
+              </p>
+
+              <h3 id="communications-required" className="text-2xl font-bold text-[#313A00] mb-4 mt-8 scroll-mt-8">9.2. Required transactional and account emails</h3>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                Some emails are sent because they relate to your account or a specific event affecting your account. You will continue to receive these emails while your account remains active, even if you opt out of optional product and onboarding emails. Examples include:
+              </p>
+              <ul className="list-disc list-inside text-gray-700 space-y-2 mb-4 ml-4">
+                <li>Confirmations when you upgrade or downgrade your plan, and other billing-related notices</li>
+                <li>Security or account-integrity notices</li>
+                <li>
+                  Dormant account notices: if you have not signed in to your account for six (6) months, we may send you a one-off email notifying you that your account may be deleted if you do not sign in within the timeframe stated in that notice
+                </li>
+              </ul>
+              <p className="text-gray-700 leading-relaxed mb-6">
+                These are not marketing newsletters. They are sent only as needed for your account, and they generally do not include an unsubscribe option that would stop legally or operationally required notices while your account remains active.
+              </p>
+
+              <h3 id="communications-electronic" className="text-2xl font-bold text-[#313A00] mb-4 mt-8 scroll-mt-8">9.3. Electronic delivery</h3>
               <p className="text-gray-700 leading-relaxed mb-6">
                 You agree that all agreements, notices, disclosures, and other communications that Kahana delivers to you electronically will satisfy any legal requirement that such communications be provided in written form.
               </p>
@@ -396,7 +424,10 @@ export default function TermsAndConditions() {
 
               <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">13.2. Termination Rights</h3>
               <p className="text-gray-700 leading-relaxed mb-6">
-                Should you breach any provision of these Terms, your authorization to access the Service and these Terms shall automatically terminate. Furthermore, Kahana reserves the right, in its sole discretion, to terminate these Terms or your Service account, or to suspend or terminate your access to the Service, at any time, for any reason or no reason whatsoever, with or without prior notice, and Kahana shall have no liability to you in connection with such termination. You have the right to terminate your account and these Terms at any time by reaching out to customer service through <Link href="/contact" className="text-[#4A6200] no-underline hover:no-underline font-semibold">our contact form</Link> or by sending an email to info@kahana.co.
+                Should you breach any provision of these Terms, your authorization to access the Service and these Terms shall automatically terminate. Furthermore, Kahana reserves the right, in its sole discretion, to terminate these Terms or your Service account, or to suspend or terminate your access to the Service, at any time, for any reason or no reason whatsoever, with or without prior notice, and Kahana shall have no liability to you in connection with such termination. You have the right to terminate your account and these Terms at any time by submitting a{' '}
+                <Link href="/docs/delete-my-account" className="text-[#4A6200] no-underline hover:no-underline font-semibold">Delete Oasis Account</Link>{' '}
+                request through our account deletion form, by reaching out to customer service through{' '}
+                <Link href="/contact" className="text-[#4A6200] no-underline hover:no-underline font-semibold">our contact form</Link>, or by sending an email to info@kahana.co.
               </p>
 
               <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">13.3. Consequences of Termination</h3>
@@ -407,6 +438,19 @@ export default function TermsAndConditions() {
               <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">13.4. Service Modifications</h3>
               <p className="text-gray-700 leading-relaxed mb-6">
                 Kahana retains the right to alter or discontinue the Service in whole or in part at any time (including by restricting or eliminating specific features of the Service), whether on a temporary or permanent basis, and without providing notice to you. Kahana assumes no liability whatsoever for any modifications made to the Service, including changes to any paid features or functionalities of the Service, or for any suspension or termination of your ability to access or use the Service. It is recommended that you maintain backup copies of any User Content that you Post to the Service to ensure you have permanent copies should the Service be modified in a manner that results in you losing access to User Content you Posted to the Service.
+              </p>
+
+              <h3 id="dormant-accounts" className="text-2xl font-bold text-[#313A00] mb-4 mt-8 scroll-mt-8">13.5. Dormant accounts</h3>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                If you have not signed in to your Oasis account for six (6) months, your account may be considered dormant. We may send you a one-off email notifying you that your account may be deleted if you do not sign in within the timeframe stated in that notice.
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                Account deletion is irreversible. If your account is deleted, you will lose access to the Service and associated data will be destroyed in accordance with our Privacy Policy.
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-6">
+                If you wish to delete your account before any dormancy process applies, submit a request through our{' '}
+                <Link href="/docs/delete-my-account" className="text-[#4A6200] no-underline hover:no-underline font-semibold">Delete my account</Link>{' '}
+                documentation page.
               </p>
             </section>
 
