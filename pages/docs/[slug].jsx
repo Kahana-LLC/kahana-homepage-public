@@ -11,6 +11,7 @@ import SEO from '../../components/SEO';
 import DocsSupportCTA from '../../components/DocsSupportCTA';
 import TechnicalInteractionDataDoc from '../../components/docs/TechnicalInteractionDataDoc';
 import AssistantThemesDoc from '../../components/docs/AssistantThemesDoc';
+import DeleteAccountDoc from '../../components/docs/DeleteAccountDoc';
 import { docsConfig } from '../../config/docsConfig';
 import fs from 'fs';
 import path from 'path';
@@ -153,7 +154,9 @@ export default function DocPage({ doc, relatedDocs }) {
           </header>
 
           {/* Content */}
-          {doc.slug === 'assistant-themes' ? (
+          {doc.slug === 'delete-my-account' ? (
+            <DeleteAccountDoc />
+          ) : doc.slug === 'assistant-themes' ? (
             <AssistantThemesDoc gallery={doc.gallery || []} />
           ) : doc.slug === 'technical-and-interaction-data' ? (
             <TechnicalInteractionDataDoc />
