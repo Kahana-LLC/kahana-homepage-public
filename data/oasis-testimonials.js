@@ -44,4 +44,31 @@ export const oasisTestimonials = [
       "Oasis is exactly what the Firefox platform has been missing. I love the privacy of Firefox, but I really missed having a built-in AI assistant right alongside my tabs like you see in Chrome. Having that integrated AI chat window in Oasis has completely changed how I work, it keeps me in my flow, removes friction, and makes hitting peak productivity so much easier.",
     ],
   },
+  {
+    id: "pallavi",
+    name: "Pallavi",
+    avatarSrc: "/assets/testimonials/pallavi.png",
+    avatarObjectPosition: "50% 24%",
+    excerpt:
+      "What stood out to me most was the idea of making browsing feel more agentic and action-oriented instead of just passive searching. The direction feels fresh, especially with how AI tools are evolving right now.",
+    paragraphs: [
+      "What stood out to me most was the idea of making browsing feel more agentic and action-oriented instead of just passive searching. The direction feels fresh, especially with how AI tools are evolving right now.",
+      "I also liked that it doesn't feel like just another AI wrapper. The concept has actual potential if executed well, especially for people who multitask heavily or want workflows handled more intelligently inside the browser itself.",
+      "One thing I'd personally love to see over time is even deeper real-world productivity use cases and smoother onboarding for new users so people instantly \"get\" the value without needing much explanation.",
+      "Overall though, I think the vision is strong and definitely something I'd keep an eye on as it develops.",
+    ],
+  },
+  {
+    id: "saksham",
+    name: "Saksham",
+    avatarSrc: "/assets/testimonials/saksham.png",
+    avatarObjectPosition: "50% 30%",
+    excerpt:
+      "I've been using Oasis for a bit now and what stands out to me is that it feels built around how people actually work today.",
+    paragraphs: [
+      "I've been using Oasis for a bit now and what stands out to me is that it feels built around how people actually work today. A lot of my day involves moving across tabs, docs, dashboards, and different tools, and I like that Oasis focuses on reducing that friction and making browser workflows feel simpler and more natural.",
+      "The natural language interactions are especially interesting because they make working in the browser feel more intuitive instead of adding another layer of complexity.",
+      "I also appreciate the vision behind building a browser that thinks about both productivity and privacy together. It has been exciting to see the direction the team is taking and how Oasis is approaching a problem that feels increasingly relevant as more work moves into the browser.",
+    ],
+  },
 ];

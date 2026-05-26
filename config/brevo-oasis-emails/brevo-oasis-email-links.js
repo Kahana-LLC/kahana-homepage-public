@@ -5,6 +5,9 @@ export const oasisEmailLinks = {
   adamLinktree: 'https://kahana.co/adam-kershner',
   adamHeadshot: 'https://kahana.co/images/about/adam-kershner.jpg',
   welcomeHeroScreenshot: 'https://kahana.co/images/oasis-browser-assistant-screenshot.png',
+  phGalleryEarnTokensFeedback:
+    'https://kahana.co/images/oasis/ph-gallery-earn-tokens-feedback.png',
+  trainingDoc: 'https://kahana.co/docs/training',
   slackIcon: 'https://a.slack-edge.com/80588/marketing/img/icons/icon_slack_hash_colored.png',
   slackIconPurple: 'https://a.slack-edge.com/80588/marketing/img/icons/icon_slack_hash_colored.png',
   slackIconHosted: 'https://kahana.co/images/icons/slack-mark-purple.png',
