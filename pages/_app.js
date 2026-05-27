@@ -171,7 +171,7 @@ function AppContent({ Component, pageProps }) {
         handleUnhandledRejection
       );
     };
-  }, [router.asPath, router.events, hasConsent, consent]);
+  }, [router.asPath, router.events, hasConsent, consent?.analytics]);
 
   useEffect(() => {
     const onRouteChangeError = (err, url) => {
@@ -201,6 +201,9 @@ function AppContent({ Component, pageProps }) {
     });
   }, []);
 
+  const analyticsConsent = consent?.analytics === true;
+  const advertisingConsent = consent?.advertising === true;
+
   // Load scripts based on consent
   useEffect(() => {
     if (isLoading || !consent) return;
@@ -209,7 +212,7 @@ function AppContent({ Component, pageProps }) {
     const cancelIdleTasks = [];
 
     // Google Analytics - requires analytics consent (deduped by script id / src in scriptLoader)
-    if (hasConsent('analytics')) {
+    if (analyticsConsent) {
       cancelIdleTasks.push(scheduleIdle(() => {
         if (typeof document !== "undefined" && document.getElementById("gtag-js-app")) {
           return;
@@ -235,6 +238,7 @@ function AppContent({ Component, pageProps }) {
           hasConsent
         );
 
+        // Tawk and other chat widgets must be removed in GTM (container GTM-WBXNXKQ), not loaded here.
         loadInlineScriptIfConsented(
           'gtm-script-app',
           `
@@ -258,7 +262,7 @@ function AppContent({ Component, pageProps }) {
 
     // Mixpanel via npm – analytics consent OR localhost (no CDN)
     const mixpanelToken = process.env.NEXT_PUBLIC_MIXPANEL_TOKEN;
-    if ((hasConsent('analytics') || isLocalhost) && mixpanelToken) {
+    if ((analyticsConsent || isLocalhost) && mixpanelToken) {
       const isMixpanelDebug = process.env.NODE_ENV === 'development' || process.env.NEXT_PUBLIC_MIXPANEL_DEBUG === 'true';
       const mixpanelApiHost = process.env.NEXT_PUBLIC_MIXPANEL_API_HOST
         || (process.env.NEXT_PUBLIC_MIXPANEL_EU === 'true' ? 'https://api-eu.mixpanel.com' : 'https://api.mixpanel.com');
@@ -270,12 +274,12 @@ function AppContent({ Component, pageProps }) {
           if (mp && isMixpanelDebug && !isLocalhost) console.log('[Mixpanel] Initialized, Page View tracked');
         });
       }, 2500));
-    } else if (!mixpanelToken) {
-      console.warn('[Mixpanel] Token not found. Set NEXT_PUBLIC_MIXPANEL_TOKEN in env. For production (Heroku/Vercel), add it in the platform config and redeploy.');
+    } else if (!mixpanelToken && process.env.NODE_ENV === 'development') {
+      console.warn('[Mixpanel] Token not found. Set NEXT_PUBLIC_MIXPANEL_TOKEN in env.');
     }
 
     // Google Ads - requires advertising consent
-    if (hasConsent('advertising')) {
+    if (advertisingConsent) {
       loadScriptIfConsented(
         'adsbygoogle-script-app',
         'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5821697528846539',
@@ -288,7 +292,7 @@ function AppContent({ Component, pageProps }) {
     return () => {
       cancelIdleTasks.forEach((cancel) => cancel());
     };
-  }, [consent, hasConsent, isLoading]);
+  }, [isLoading, consent, analyticsConsent, advertisingConsent, hasConsent]);
 
   // Listen for consent changes and dynamically load/unload scripts
   useEffect(() => {

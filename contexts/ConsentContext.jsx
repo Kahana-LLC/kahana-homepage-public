@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect, useCallback, useMemo } from 'react';
 
 const CONSENT_STORAGE_KEY = 'kahana_consent_preferences';
 /** Session cache for ipapi.co — avoids repeat requests and reduces 429s (Best Practices / INP noise) */
@@ -244,7 +244,7 @@ export const ConsentProvider = ({ children }) => {
     }
   }, [isLoading, userRegion, consent]);
 
-  const saveConsent = (newConsent) => {
+  const saveConsent = useCallback((newConsent) => {
     const { marketing: _removed, ...rest } = newConsent || {};
     const consentData = {
       ...rest,
@@ -252,87 +252,97 @@ export const ConsentProvider = ({ children }) => {
       timestamp: new Date().toISOString(),
       region: userRegion || consent?.region || null,
     };
-    
+
     setConsentState(consentData);
-    
+
     if (typeof window !== 'undefined') {
       try {
         localStorage.setItem(CONSENT_STORAGE_KEY, JSON.stringify(consentData));
-        
-        // Dispatch custom event for script loading
         window.dispatchEvent(new CustomEvent('consentChanged', { detail: consentData }));
       } catch (error) {
-        // Handle localStorage quota exceeded or other errors
         console.error('Failed to save consent preferences:', error);
-        // Still update state even if localStorage fails
-        // User will see banner again on next visit, but functionality continues
       }
     }
-    
+
     setShowBanner(false);
     setShowModal(false);
-  };
+  }, [userRegion, consent?.region]);
 
-  const acceptAll = () => {
+  const acceptAll = useCallback(() => {
     saveConsent({
       strictlyNecessary: true,
       analytics: true,
       advertising: true,
     });
-  };
+  }, [saveConsent]);
 
-  const declineAll = () => {
+  const declineAll = useCallback(() => {
     saveConsent({
       strictlyNecessary: true,
       analytics: false,
       advertising: false,
     });
-  };
+  }, [saveConsent]);
 
-  const updateConsent = (category, value) => {
-    if (category === 'strictlyNecessary') return; // Cannot change
-    
-    const updated = {
+  const updateConsent = useCallback((category, value) => {
+    if (category === 'strictlyNecessary') return;
+
+    saveConsent({
       ...consent,
       [category]: value,
-    };
-    
-    saveConsent(updated);
-  };
+    });
+  }, [consent, saveConsent]);
 
-  const hasConsent = (category) => {
+  const hasConsent = useCallback((category) => {
     if (!consent) return false;
     if (category === 'strictlyNecessary') return true;
     return consent[category] === true;
-  };
+  }, [consent]);
 
-  const openModal = () => {
+  const openModal = useCallback(() => {
     setShowModal(true);
-  };
+  }, []);
 
-  const closeModal = () => {
+  const closeModal = useCallback(() => {
     setShowModal(false);
-  };
+  }, []);
 
-  const isCaliforniaUser = () => {
+  const isCaliforniaUser = useCallback(() => {
     return userRegion === 'CA' || (!userRegion && consent?.region === 'CA');
-  };
+  }, [userRegion, consent?.region]);
 
-  const value = {
-    consent,
-    isLoading,
-    showBanner,
-    showModal,
-    userRegion,
-    hasConsent,
-    acceptAll,
-    declineAll,
-    updateConsent,
-    saveConsent,
-    openModal,
-    closeModal,
-    isCaliforniaUser,
-  };
+  const value = useMemo(
+    () => ({
+      consent,
+      isLoading,
+      showBanner,
+      showModal,
+      userRegion,
+      hasConsent,
+      acceptAll,
+      declineAll,
+      updateConsent,
+      saveConsent,
+      openModal,
+      closeModal,
+      isCaliforniaUser,
+    }),
+    [
+      consent,
+      isLoading,
+      showBanner,
+      showModal,
+      userRegion,
+      hasConsent,
+      acceptAll,
+      declineAll,
+      updateConsent,
+      saveConsent,
+      openModal,
+      closeModal,
+      isCaliforniaUser,
+    ]
+  );
 
   return (
     <ConsentContext.Provider value={value}>

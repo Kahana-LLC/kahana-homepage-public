@@ -58,15 +58,23 @@ export default function WallOfLoveCarousel({
     const track = carouselRef.current;
     if (!track) return;
 
+    let rafId = null;
     const onScroll = () => {
-      const width = track.offsetWidth;
-      if (!width) return;
-      const page = Math.round(track.scrollLeft / width);
-      setActivePage(Math.max(0, Math.min(page, pageCount - 1)));
+      if (rafId != null) return;
+      rafId = requestAnimationFrame(() => {
+        rafId = null;
+        const width = track.offsetWidth;
+        if (!width) return;
+        const page = Math.max(0, Math.min(Math.round(track.scrollLeft / width), pageCount - 1));
+        setActivePage((prev) => (prev === page ? prev : page));
+      });
     };
 
     track.addEventListener("scroll", onScroll, { passive: true });
-    return () => track.removeEventListener("scroll", onScroll);
+    return () => {
+      track.removeEventListener("scroll", onScroll);
+      if (rafId != null) cancelAnimationFrame(rafId);
+    };
   }, [pageCount]);
 
   useEffect(() => {

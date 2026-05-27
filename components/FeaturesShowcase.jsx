@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useMemo, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { getCloudinaryImageProps, getCloudinaryImageUrl } from '../utils/cloudinary-mapper';
@@ -36,10 +36,18 @@ const conceptCards = [
 ];
 
 function FeatureCardImage({ imagePath, title }) {
-  const props = getCloudinaryImageProps(imagePath, {
-    widths: FEATURE_CARD_WIDTHS,
-    quality: 'auto:good',
-  });
+  const props = useMemo(
+    () =>
+      getCloudinaryImageProps(imagePath, {
+        widths: FEATURE_CARD_WIDTHS,
+        quality: 'auto:good',
+      }),
+    [imagePath]
+  );
+  const fallbackSrc = useMemo(
+    () => getCloudinaryImageUrl(imagePath, { width: 640, quality: 'auto:good' }),
+    [imagePath]
+  );
   if (props.srcSet && props.src) {
     return (
       <img
@@ -55,7 +63,7 @@ function FeatureCardImage({ imagePath, title }) {
   }
   return (
     <Image
-      src={getCloudinaryImageUrl(imagePath, { width: 640, quality: 'auto:good' })}
+      src={fallbackSrc}
       alt={title}
       fill
       sizes={FEATURE_CARD_SIZES}

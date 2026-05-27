@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import Image from "next/image";
 import { teamCartoonPath } from "../../data/team-gallery";
 import { getCloudinaryImageUrl } from "../../utils/cloudinary-mapper";
@@ -42,6 +42,15 @@ export default function TestimonialCard({
       : null;
   const isCartoonAvatar = Boolean(testimonial.avatarSlug && !testimonial.avatarSrc);
 
+  const avatarSrc = useMemo(() => {
+    if (!avatarPath) return null;
+    return getCloudinaryImageUrl(avatarPath, {
+      width: AVATAR_SIZE,
+      height: AVATAR_SIZE,
+      quality: "auto:good",
+    });
+  }, [avatarPath]);
+
   return (
     <article
       id={anchorId || testimonial.id}
@@ -65,14 +74,10 @@ export default function TestimonialCard({
         ))}
       </blockquote>
       <footer className="mt-6 flex items-center gap-3 border-t border-[#30400D]/10 pt-5">
-        {avatarPath ? (
+        {avatarSrc ? (
           <div className="relative h-11 w-11 shrink-0 overflow-hidden rounded-full border border-[#30400D]/12 bg-[#F2F4E5]">
             <Image
-              src={getCloudinaryImageUrl(avatarPath, {
-                width: AVATAR_SIZE,
-                height: AVATAR_SIZE,
-                quality: "auto:good",
-              })}
+              src={avatarSrc}
               alt=""
               width={AVATAR_SIZE}
               height={AVATAR_SIZE}

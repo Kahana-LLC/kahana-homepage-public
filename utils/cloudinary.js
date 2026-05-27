@@ -12,13 +12,17 @@
 
 const CLOUD_NAME = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME;
 
-// Log configuration status (only in browser console, not server logs)
-if (typeof window !== 'undefined') {
+const isCloudinaryDebug =
+  process.env.NODE_ENV === 'development' ||
+  process.env.NEXT_PUBLIC_CLOUDINARY_DEBUG === 'true';
+
+if (typeof window !== 'undefined' && isCloudinaryDebug) {
   if (CLOUD_NAME) {
     console.log(`[Cloudinary] Configured with cloud name: ${CLOUD_NAME}`);
   } else {
-    console.error('[Cloudinary] ⚠️ NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME is not set! Images will fallback to local paths.');
-    console.error('[Cloudinary] To fix: Set NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME in Heroku config vars');
+    console.warn(
+      '[Cloudinary] NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME is not set; images fall back to local paths.'
+    );
   }
 }
 
@@ -38,13 +42,6 @@ if (typeof window !== 'undefined') {
  */
 export function getCloudinaryUrl(publicId, options = {}) {
   if (!CLOUD_NAME) {
-    if (typeof window !== 'undefined') {
-      // Client-side: log warning
-      console.warn('[Cloudinary] Cloud name not configured. Set NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME environment variable.');
-    } else {
-      // Server-side: log error
-      console.error('[Cloudinary] NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME is not set in environment variables.');
-    }
     return '';
   }
 
