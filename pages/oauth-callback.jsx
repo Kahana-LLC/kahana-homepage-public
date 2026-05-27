@@ -3,6 +3,7 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { getSafeRedirectPath } from '@/utils/redirects';
 import { createClient } from '@/utils/supabase';
+import { logger } from '@/utils/logger';
 
 const ASSISTANT_TRUE_VALUES = new Set([
   '1',
@@ -42,7 +43,7 @@ function readOasisOAuthMarker() {
   try {
     return JSON.parse(decodeURIComponent(marker.split('=').slice(1).join('=')));
   } catch (error) {
-    console.error('Failed to parse Oasis OAuth marker cookie:', error);
+    logger.error('Failed to parse Oasis OAuth marker cookie:', error);
   }
 
   return null;
@@ -70,10 +71,10 @@ function getOAuthFlowId(urlParams, hashParams, markerPayload) {
 function logAssistantOAuth(flowId, message, details) {
   const prefix = flowId ? `[Oasis OAuth][${flowId}]` : '[Oasis OAuth]';
   if (details !== undefined) {
-    console.log(`${prefix} ${message}`, details);
+    logger.debug(`${prefix} ${message}`, details);
     return;
   }
-  console.log(`${prefix} ${message}`);
+  logger.debug(`${prefix} ${message}`);
 }
 
 function isAssistantCallback(urlParams, markerPayload) {
@@ -251,7 +252,7 @@ export default function OAuthCallback() {
         `Path=/; SameSite=Lax${secureAttr}`;
       return true;
     } catch (error) {
-      console.error('Failed to persist assistant handoff cookie:', error);
+      logger.error('Failed to persist assistant handoff cookie:', error);
     }
 
     return false;
@@ -394,7 +395,7 @@ export default function OAuthCallback() {
         try {
           supabase = createClient();
         } catch (clientError) {
-          console.error(`[Oasis OAuth][${flowId}] Failed to create Supabase client:`, clientError);
+          logger.error(`[Oasis OAuth][${flowId}] Failed to create Supabase client:`, clientError);
           throw new Error(`Failed to initialize Supabase client. Please check NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY are set correctly in production.`);
         }
         
@@ -418,7 +419,7 @@ export default function OAuthCallback() {
             });
             
             if (sessionError) {
-              console.error(`[Oasis OAuth][${flowId}] Error setting session:`, sessionError);
+              logger.error(`[Oasis OAuth][${flowId}] Error setting session:`, sessionError);
               if (sessionError.message?.includes('Invalid API key') || sessionError.message?.includes('JWT')) {
                 throw new Error(`Supabase API key is invalid or incorrect. Error: ${sessionError.message}. Please verify NEXT_PUBLIC_SUPABASE_ANON_KEY is set correctly in Heroku config vars.`);
               }
@@ -428,7 +429,7 @@ export default function OAuthCallback() {
               logAssistantOAuth(flowId, 'Session set successfully from hash tokens');
             }
           } catch (setSessionError) {
-            console.error(`[Oasis OAuth][${flowId}] Error in setSession:`, setSessionError);
+            logger.error(`[Oasis OAuth][${flowId}] Error in setSession:`, setSessionError);
             // If it's an API key error, throw it so user sees the real issue
             if (setSessionError.message?.includes('Invalid API key') || setSessionError.message?.includes('API key')) {
               throw setSessionError;
@@ -442,7 +443,7 @@ export default function OAuthCallback() {
           logAssistantOAuth(flowId, 'Reading session from Supabase after callback');
           const { data: sessionData, error: sessionError } = await supabase.auth.getSession();
           if (sessionError) {
-            console.error(`[Oasis OAuth][${flowId}] Error getting session:`, sessionError);
+            logger.error(`[Oasis OAuth][${flowId}] Error getting session:`, sessionError);
           } else if (sessionData?.session) {
             session = sessionData.session;
             logAssistantOAuth(flowId, 'Session retrieved successfully');
@@ -454,7 +455,7 @@ export default function OAuthCallback() {
         logAssistantOAuth(flowId, 'Loading authenticated user from Supabase');
         const { data: userData, error: userError } = await supabase.auth.getUser();
         if (userError) {
-          console.error(`[Oasis OAuth][${flowId}] Error getting user:`, userError);
+          logger.error(`[Oasis OAuth][${flowId}] Error getting user:`, userError);
           throw new Error(`Auth session missing! ${userError.message || 'Failed to get user'}`);
         }
         const user = userData?.user;
@@ -519,13 +520,13 @@ export default function OAuthCallback() {
 
           if (!res.ok) {
             const body = await res.json().catch(() => ({}));
-            console.error(`[Oasis OAuth][${flowId}] Failed to create profile:`, body);
+            logger.error(`[Oasis OAuth][${flowId}] Failed to create profile:`, body);
             // Don't throw - profile might already exist
           } else {
             logAssistantOAuth(flowId, 'Profile created or updated successfully');
           }
         } catch (profileError) {
-          console.error(`[Oasis OAuth][${flowId}] Error calling create-profile API:`, profileError);
+          logger.error(`[Oasis OAuth][${flowId}] Error calling create-profile API:`, profileError);
           // Don't throw - profile creation is not critical for OAuth flow
         }
 
@@ -580,7 +581,7 @@ export default function OAuthCallback() {
         }, 1500);
         
       } catch (err) {
-        console.error(`[Oasis OAuth][${flowId}] Error processing OAuth callback:`, err);
+        logger.error(`[Oasis OAuth][${flowId}] Error processing OAuth callback:`, err);
         persistAuthError('callback_error', err.message, flowId);
         if (assistantCallback) {
           startAssistantHandoff({

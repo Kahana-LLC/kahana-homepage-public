@@ -30,9 +30,6 @@ const DocFeedback = ({
     if (onFeedback) {
       onFeedback(isPositive);
     }
-    
-    // You could send this to analytics or a feedback service
-    console.log('Documentation feedback:', isPositive ? 'positive' : 'negative');
   };
 
   if (submitted) {

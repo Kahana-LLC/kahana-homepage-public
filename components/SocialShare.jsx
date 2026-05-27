@@ -17,8 +17,8 @@ const SocialShare = ({ title, url, excerpt }) => {
       await navigator.clipboard.writeText(url);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
-    } catch (err) {
-      console.error('Failed to copy text: ', err);
+    } catch {
+      // Clipboard unavailable; no console noise in production
     }
   };
 

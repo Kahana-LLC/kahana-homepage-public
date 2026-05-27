@@ -5,6 +5,7 @@
  */
 
 import { getCloudinaryUrl } from './cloudinary';
+import { logger } from './logger';
 
 let pathMapping = null;
 
@@ -27,7 +28,7 @@ function isLocalOnlyPath(normalizedPath) {
 function warnOnce(message) {
   if (!isCloudinaryDebug || warnedMessages.has(message)) return;
   warnedMessages.add(message);
-  console.warn(message);
+  logger.warn(message);
 }
 
 function getPathMapping() {
@@ -49,7 +50,7 @@ function getPathMapping() {
       });
 
       if (typeof window !== 'undefined' && isCloudinaryDebug) {
-        console.log(`[Cloudinary] Loaded ${Object.keys(pathMapping).length} image mappings`);
+        logger.debug(`[Cloudinary] Loaded ${Object.keys(pathMapping).length} image mappings`);
       }
     } catch (error) {
       warnOnce(`[Cloudinary] Could not load cloudinary-mapping.json: ${error.message}`);

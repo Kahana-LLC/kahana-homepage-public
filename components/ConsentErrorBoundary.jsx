@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { logger } from '../utils/logger';
 
 /**
  * Error boundary specifically for consent-related components
@@ -15,7 +16,7 @@ export default class ConsentErrorBoundary extends Component {
   }
 
   componentDidCatch(error, errorInfo) {
-    console.error('Consent system error:', error, errorInfo);
+    logger.error('Consent system error:', error, errorInfo);
   }
 
   render() {
