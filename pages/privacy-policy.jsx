@@ -129,27 +129,14 @@ export default function PrivacyPolicy() {
                     <strong>Data collected:</strong> Ad interactions, conversion tracking, audience segmentation
                   </p>
                 </div>
-
-                <div>
-                  <h4 className="text-xl font-semibold text-[#313A00] mb-2">Marketing / Personalization</h4>
-                  <p className="text-gray-700 leading-relaxed mb-2">
-                    These cookies are used to deliver personalized content and identify potential leads. They help us understand visitor behavior, improve our marketing efforts, and provide a more tailored experience.
-                  </p>
-                  <p className="text-sm text-gray-600 mb-2">
-                    <strong>Tools we use:</strong> Warmly, lead identification tools
-                  </p>
-                  <p className="text-sm text-gray-600">
-                    <strong>Data collected:</strong> Visitor identification, company information, browsing patterns, engagement metrics
-                  </p>
-                </div>
               </div>
 
               <p className="text-gray-700 leading-relaxed mb-4">
-                <strong>Consent and Your Choices:</strong> Non-essential tracking technologies (analytics, advertising, and marketing/personalization) are only activated after you provide explicit consent via our consent banner. You can withdraw or modify your consent at any time by clicking the "Cookie Settings" link in our website footer or by managing your browser settings.
+                <strong>Consent and Your Choices:</strong> Non-essential tracking technologies (analytics and advertising) are only activated after you provide explicit consent via our consent banner. You can withdraw or modify your consent at any time by clicking the "Cookie Settings" link in our website footer or by managing your browser settings.
               </p>
 
               <p className="text-gray-700 leading-relaxed mb-6">
-                <strong>Third-Party Sharing:</strong> When you consent to non-essential tracking technologies, we may share information collected through these technologies with third-party service providers, including Google (for Analytics and Ads), Mixpanel, PostHog, and Warmly. These third parties may use this information for their own purposes in accordance with their privacy policies. PostHog is used for product analytics. For more information about PostHog's data practices, please visit <a href="https://posthog.com/privacy" target="_blank" rel="noopener noreferrer" className="text-[#4A6200] no-underline hover:no-underline font-semibold">PostHog's Privacy Policy</a>.
+                <strong>Third-Party Sharing:</strong> When you consent to non-essential tracking technologies, we may share information collected through these technologies with third-party service providers, including Google (for Analytics and Ads), Mixpanel, and PostHog. These third parties may use this information for their own purposes in accordance with their privacy policies. PostHog is used for product analytics. For more information about PostHog's data practices, please visit <a href="https://posthog.com/privacy" target="_blank" rel="noopener noreferrer" className="text-[#4A6200] no-underline hover:no-underline font-semibold">PostHog's Privacy Policy</a>.
               </p>
 
               <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">Information collected from other sources</h3>
@@ -317,7 +304,7 @@ export default function PrivacyPolicy() {
                 You have control over how we use cookies and similar tracking technologies on our website. You can manage your preferences in the following ways:
               </p>
               <ul className="list-disc list-inside text-gray-700 space-y-2 mb-4 ml-4">
-                <li><strong>Cookie Settings:</strong> Click the "Cookie Settings" link in our website footer to access our cookie preferences center, where you can enable or disable specific categories of cookies (analytics, advertising, marketing/personalization).</li>
+                <li><strong>Cookie Settings:</strong> Click the "Cookie Settings" link in our website footer to access our cookie preferences center, where you can enable or disable specific categories of cookies (analytics and advertising).</li>
                 <li><strong>Browser Settings:</strong> Most web browsers allow you to control cookies through their settings preferences. However, limiting cookies may impact your experience on our website.</li>
                 <li><strong>Opt-Out of Sale/Sharing:</strong> If you are a California resident, you can opt-out of the sale or sharing of your personal information by clicking the "Do Not Sell or Share My Personal Information" link in our footer.</li>
                 <li><strong>Withdraw Consent:</strong> You can withdraw your consent for non-essential tracking technologies at any time by accessing the Cookie Settings and disabling the relevant categories.</li>

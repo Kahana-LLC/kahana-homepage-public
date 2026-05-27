@@ -60,11 +60,6 @@ if (documentContent.includes('gtag/js?id=G-KQHFL9605P') &&
   issues.push('❌ _document.js may still have unconditional Google Analytics');
 }
 
-if (documentContent.includes('warmly.js') && 
-    !documentContent.includes('Note: Analytics scripts')) {
-  issues.push('❌ _document.js may still have unconditional Warmly script');
-}
-
 if (issues.length > 0) {
   console.log('Issues found:');
   issues.forEach(issue => console.log(`  ${issue}`));

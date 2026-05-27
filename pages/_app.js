@@ -285,19 +285,6 @@ function AppContent({ Component, pageProps }) {
       );
     }
 
-    // Warmly — defer until browser idle to reduce main-thread contention with first input (INP)
-    if (hasConsent('marketing')) {
-      const loadWarmly = () => {
-        loadScriptIfConsented(
-          'warmly-script-loader',
-          'https://opps-widget.getwarmly.com/warmly.js?clientId=855ddcba822be578ea36ad4ad5dca9fa',
-          'marketing',
-          { defer: true },
-          hasConsent
-        );
-      };
-      cancelIdleTasks.push(scheduleIdle(loadWarmly, 4000));
-    }
     return () => {
       cancelIdleTasks.forEach((cancel) => cancel());
     };
@@ -363,23 +350,6 @@ function AppContent({ Component, pageProps }) {
           { async: true, crossOrigin: 'anonymous' },
           () => newConsent.advertising
         );
-      }
-      
-      if (newConsent.marketing) {
-        const loadWarmly = () => {
-          loadScriptIfConsented(
-            'warmly-script-loader',
-            'https://opps-widget.getwarmly.com/warmly.js?clientId=855ddcba822be578ea36ad4ad5dca9fa',
-            'marketing',
-            { defer: true },
-            () => newConsent.marketing
-          );
-        };
-        if (typeof window !== 'undefined' && typeof window.requestIdleCallback === 'function') {
-          window.requestIdleCallback(loadWarmly, { timeout: 4000 });
-        } else {
-          window.setTimeout(loadWarmly, 2000);
-        }
       }
       
       // Note: We don't remove scripts when consent is revoked to avoid breaking functionality

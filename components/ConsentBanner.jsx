@@ -87,7 +87,7 @@ export default function ConsentBanner() {
               </Link>
             </h2>
             <p id="consent-banner-description" className="text-sm text-gray-800 mb-0 max-w-prose">
-              We use cookies for essential site features, analytics, and optional personalization. Use the buttons below to accept or decline non-essential cookies, or open Manage Preferences for category details.
+              We use cookies for essential site features, analytics, and advertising. Use the buttons below to accept or decline non-essential cookies, or open Manage Preferences for category details.
             </p>
             <p className="text-xs text-gray-800 mt-2 mb-0 flex flex-wrap items-baseline gap-x-1 gap-y-1">
               <button
