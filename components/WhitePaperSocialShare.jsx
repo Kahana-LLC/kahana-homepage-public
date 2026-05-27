@@ -41,7 +41,6 @@ const WhitePaperSocialShare = ({ title, url, excerpt }) => {
   const handleLinkedInShare = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    console.log('LinkedIn share clicked');
     const linkedInUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareData.url)}`;
     window.open(linkedInUrl, '_blank', 'width=600,height=600,scrollbars=yes,resizable=yes');
   };
@@ -49,7 +48,6 @@ const WhitePaperSocialShare = ({ title, url, excerpt }) => {
   const handleTwitterShare = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    console.log('Twitter share clicked');
     const twitterText = encodeURIComponent(`${shareData.title} ${shareData.url}`);
     const twitterUrl = `https://twitter.com/intent/tweet?text=${twitterText}`;
     window.open(twitterUrl, '_blank', 'width=600,height=400,scrollbars=yes,resizable=yes');
@@ -58,7 +56,6 @@ const WhitePaperSocialShare = ({ title, url, excerpt }) => {
   const handleEmailShare = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    console.log('Email share clicked');
     const subject = encodeURIComponent(shareData.title);
     const body = encodeURIComponent(`${shareData.text}\n\nRead more: ${shareData.url}`);
     const emailUrl = `mailto:?subject=${subject}&body=${body}`;
@@ -68,7 +65,6 @@ const WhitePaperSocialShare = ({ title, url, excerpt }) => {
   const handleSMSShare = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    console.log('SMS share clicked');
     const smsText = encodeURIComponent(`${shareData.title} - ${shareData.url}`);
     const smsUrl = `sms:?body=${smsText}`;
     window.open(smsUrl);
@@ -77,7 +73,6 @@ const WhitePaperSocialShare = ({ title, url, excerpt }) => {
   const handleRedditShare = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    console.log('Reddit share clicked');
     const redditUrl = `https://reddit.com/submit?url=${encodeURIComponent(shareData.url)}&title=${encodeURIComponent(shareData.title)}`;
     window.open(redditUrl, '_blank', 'width=800,height=600,scrollbars=yes,resizable=yes');
   };
@@ -85,7 +80,6 @@ const WhitePaperSocialShare = ({ title, url, excerpt }) => {
   const copyToClipboard = async (e) => {
     e.preventDefault();
     e.stopPropagation();
-    console.log('Copy link clicked');
     try {
       if (navigator.clipboard && window.isSecureContext) {
         await navigator.clipboard.writeText(shareData.url);
@@ -105,7 +99,8 @@ const WhitePaperSocialShare = ({ title, url, excerpt }) => {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch (err) {
-      console.error('Failed to copy text: ', err);
+      // Copy failed silently; UI still shows brief confirmation
+      void err;
       // Show user feedback even if copy fails
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);

@@ -5,6 +5,7 @@
  */
 
 import { getMixpanelInstance } from './mixpanel';
+import { logger } from './logger';
 
 function getMixpanel() {
   const instance = getMixpanelInstance();
@@ -31,7 +32,7 @@ export function trackHomepageView() {
       initial_referrer: document.referrer || '',
     });
   } catch (e) {
-    console.warn('[directMixpanel] trackHomepageView:', e);
+    logger.debug('[directMixpanel] trackHomepageView:', e);
   }
 }
 
@@ -51,7 +52,7 @@ export function trackPricingPageView() {
       initial_referrer: document.referrer || '',
     });
   } catch (e) {
-    console.warn('[directMixpanel] trackPricingPageView:', e);
+    logger.debug('[directMixpanel] trackPricingPageView:', e);
   }
 }
 
@@ -79,6 +80,6 @@ export function trackBlogPageViewDirect(opts = {}) {
       initial_referrer: document.referrer || '',
     });
   } catch (e) {
-    console.warn('[directMixpanel] trackBlogPageViewDirect:', e);
+    logger.debug('[directMixpanel] trackBlogPageViewDirect:', e);
   }
 }

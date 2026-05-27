@@ -1,3 +1,5 @@
+import { logger } from './logger';
+
 /**
  * Single-flight Mixpanel init via mixpanel-browser (npm).
  * Prevents duplicate mp.init() when consent updates trigger both consentChanged and useEffect,
@@ -57,7 +59,7 @@ export async function ensureMixpanelFromNpm(token, opts = {}) {
       mp.init(token, initOpts);
       return mp;
     } catch (e) {
-      console.error('[Mixpanel] init error:', e);
+      logger.error('[Mixpanel] init error:', e);
       initPromise = null;
       return null;
     }

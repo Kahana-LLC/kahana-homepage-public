@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useEffect, useCallback, useMemo } from 'react';
+import { logger } from '../utils/logger';
 
 const CONSENT_STORAGE_KEY = 'kahana_consent_preferences';
 /** Session cache for ipapi.co — avoids repeat requests and reduces 429s (Best Practices / INP noise) */
@@ -76,19 +77,19 @@ export const ConsentProvider = ({ children }) => {
           } catch (storageError) {
             // Handle localStorage errors (quota exceeded, disabled, etc.)
             if (storageError.name === 'QuotaExceededError') {
-              console.error('localStorage quota exceeded, clearing old data');
+              logger.error('localStorage quota exceeded, clearing old data');
               try {
                 // Try to clear and retry
                 localStorage.removeItem(CONSENT_STORAGE_KEY);
               } catch (clearError) {
-                console.error('Failed to clear localStorage:', clearError);
+                logger.error('Failed to clear localStorage:', clearError);
               }
             }
             throw storageError; // Re-throw to be caught by outer catch
           }
         }
       } catch (error) {
-        console.error('Error loading consent preferences:', error);
+        logger.error('Error loading consent preferences:', error);
         // Default to no consent if there's an error - show banner
         setConsentState({
           strictlyNecessary: true,
@@ -117,7 +118,7 @@ export const ConsentProvider = ({ children }) => {
           try {
             localStorage.setItem(CONSENT_STORAGE_KEY, JSON.stringify(updated));
           } catch (storageError) {
-            console.warn('Failed to save consent to localStorage:', storageError);
+            logger.warn('Failed to save consent to localStorage:', storageError);
           }
         }
       }
@@ -222,16 +223,16 @@ export const ConsentProvider = ({ children }) => {
           writeCachedRegion(region);
           persistRegionToConsent(region);
         } else {
-          console.warn('IP detection returned non-OK status, using fallback');
+          logger.debug('IP detection returned non-OK status, using fallback');
           const fallback = 'CA';
           writeCachedRegion(fallback);
           setUserRegion(fallback);
         }
       } catch (error) {
         if (error.name === 'AbortError') {
-          console.warn('Region detection timed out, defaulting to strict behavior');
+          logger.debug('Region detection timed out, defaulting to strict behavior');
         } else {
-          console.warn('Region detection failed, defaulting to strict behavior:', error);
+          logger.debug('Region detection failed, defaulting to strict behavior:', error);
         }
         const fallback = 'CA';
         writeCachedRegion(fallback);
@@ -260,7 +261,7 @@ export const ConsentProvider = ({ children }) => {
         localStorage.setItem(CONSENT_STORAGE_KEY, JSON.stringify(consentData));
         window.dispatchEvent(new CustomEvent('consentChanged', { detail: consentData }));
       } catch (error) {
-        console.error('Failed to save consent preferences:', error);
+        logger.error('Failed to save consent preferences:', error);
       }
     }
 

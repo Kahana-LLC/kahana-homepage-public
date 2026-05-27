@@ -10,6 +10,8 @@
  * - Copy .env.example to .env.local and set your cloud name from https://cloudinary.com/console
  */
 
+import { logger } from './logger';
+
 const CLOUD_NAME = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME;
 
 const isCloudinaryDebug =
@@ -18,9 +20,9 @@ const isCloudinaryDebug =
 
 if (typeof window !== 'undefined' && isCloudinaryDebug) {
   if (CLOUD_NAME) {
-    console.log(`[Cloudinary] Configured with cloud name: ${CLOUD_NAME}`);
+    logger.debug(`[Cloudinary] Configured with cloud name: ${CLOUD_NAME}`);
   } else {
-    console.warn(
+    logger.warn(
       '[Cloudinary] NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME is not set; images fall back to local paths.'
     );
   }
@@ -182,12 +184,11 @@ export function checkCloudinaryConfig() {
   };
   
   if (typeof window !== 'undefined') {
-    console.log('[Cloudinary] Configuration check:', config);
+    logger.debug('[Cloudinary] Configuration check:', config);
     if (!CLOUD_NAME) {
-      console.error('[Cloudinary] ❌ Configuration issue: NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME is missing');
-      console.error('[Cloudinary] Set it in Heroku: heroku config:set NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=dlhpqrucv');
+      logger.error('[Cloudinary] Configuration issue: NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME is missing');
     } else {
-      console.log('[Cloudinary] ✅ Configuration looks good!');
+      logger.debug('[Cloudinary] Configuration looks good');
     }
   }
   

@@ -10,6 +10,7 @@ import {
   signInWithEmail,
   signInWithOAuthProvider,
 } from '@/utils/auth'
+import { logger } from '@/utils/logger'
 
 const modes = {
   signup: 'Create Account',
@@ -47,10 +48,10 @@ const FIREFOX_OAUTH_MARKER_COOKIE_NAME = 'oasis_firefox_oauth_target'
 function logAssistantOAuth(flowId, message, details) {
   const prefix = flowId ? `[Oasis OAuth][${flowId}]` : '[Oasis OAuth]';
   if (details !== undefined) {
-    console.log(`${prefix} ${message}`, details)
-    return
+    logger.debug(`${prefix} ${message}`, details);
+    return;
   }
-  console.log(`${prefix} ${message}`)
+  logger.debug(`${prefix} ${message}`);
 }
 
 function persistFirefoxOAuthMarker({ target, provider, flowId, callbackBaseUrl }) {
@@ -73,7 +74,7 @@ function persistFirefoxOAuthMarker({ target, provider, flowId, callbackBaseUrl }
       `${FIREFOX_OAUTH_MARKER_COOKIE_NAME}=${value}; Max-Age=180; Path=/; SameSite=Lax${secureAttr}`
     return true
   } catch (error) {
-    console.error('Failed to persist Firefox OAuth marker cookie:', error)
+    logger.error('Failed to persist Firefox OAuth marker cookie:', error)
   }
 
   return false
@@ -167,7 +168,7 @@ export default function OasisAuth() {
 
         window.location.href = '/installations'
       } catch (err) {
-        console.error('Failed to restore authenticated session on auth page:', err)
+        logger.error('Failed to restore authenticated session on auth page:', err)
       }
     }
 

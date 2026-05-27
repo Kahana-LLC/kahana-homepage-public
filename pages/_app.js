@@ -26,6 +26,7 @@ const CookiePreferencesModal = dynamic(() => import("../components/CookiePrefere
 import { loadScriptIfConsented, loadInlineScriptIfConsented } from "../utils/scriptLoader";
 import { trackMixpanelPageView } from "../utils/mixpanel";
 import { ensureMixpanelFromNpm } from "../utils/mixpanelNpmInit";
+import { logger } from "../utils/logger";
 
 function scheduleIdle(fn, timeout = 3000) {
   if (typeof window === "undefined") return () => {};
@@ -266,16 +267,14 @@ function AppContent({ Component, pageProps }) {
       const isMixpanelDebug = process.env.NODE_ENV === 'development' || process.env.NEXT_PUBLIC_MIXPANEL_DEBUG === 'true';
       const mixpanelApiHost = process.env.NEXT_PUBLIC_MIXPANEL_API_HOST
         || (process.env.NEXT_PUBLIC_MIXPANEL_EU === 'true' ? 'https://api-eu.mixpanel.com' : 'https://api.mixpanel.com');
-      if (isMixpanelDebug && !isLocalhost) {
-        console.log('[Mixpanel] Init via npm, host:', window.location.host, 'api_host:', mixpanelApiHost);
-      }
+      logger.debug('[Mixpanel] Init via npm, host:', window.location.host, 'api_host:', mixpanelApiHost);
       cancelIdleTasks.push(scheduleIdle(() => {
         ensureMixpanelFromNpm(mixpanelToken, { debug: isMixpanelDebug, apiHost: mixpanelApiHost }).then((mp) => {
-          if (mp && isMixpanelDebug && !isLocalhost) console.log('[Mixpanel] Initialized, Page View tracked');
+          if (mp) logger.debug('[Mixpanel] Initialized, Page View tracked');
         });
       }, 2500));
     } else if (!mixpanelToken && process.env.NODE_ENV === 'development') {
-      console.warn('[Mixpanel] Token not found. Set NEXT_PUBLIC_MIXPANEL_TOKEN in env.');
+      logger.warn('[Mixpanel] Token not found. Set NEXT_PUBLIC_MIXPANEL_TOKEN in env.');
     }
 
     // Google Ads - requires advertising consent
