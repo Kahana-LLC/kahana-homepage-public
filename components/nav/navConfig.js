@@ -56,7 +56,6 @@ export const desktopNavItems = [
     id: 'about',
     label: 'About',
     href: '/about',
-    prefetchTop: false,
     dropdown: {
       panelWidth: 280,
       gridTemplateColumns: '1fr 1fr',
@@ -65,7 +64,7 @@ export const desktopNavItems = [
         {
           heading: 'About Kahana',
           links: [
-            { label: 'About', href: '/about', prefetch: false },
+            { label: 'About', href: '/about' },
             { label: 'Press kit', href: '/press-kit' },
           ],
         },
