@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useMemo, useRef } from 'react';
 import { getCloudinaryImageProps, getCloudinaryImageUrl } from '../../../utils/cloudinary-mapper';
 import { usePrefersReducedMotion } from '../../solutions/visuals/motion';
 
@@ -7,10 +7,19 @@ const THEME_CARD_SIZES =
   '(max-width: 640px) min(calc(100vw - 4rem), 280px), (max-width: 768px) min(70vw, 360px), 480px';
 
 function ThemeScreenshot({ src, alt }) {
-  const props = getCloudinaryImageProps(src, {
-    widths: THEME_CARD_WIDTHS,
-    quality: 'auto:good',
-  });
+  const props = useMemo(
+    () =>
+      getCloudinaryImageProps(src, {
+        widths: THEME_CARD_WIDTHS,
+        quality: 'auto:good',
+      }),
+    [src]
+  );
+
+  const fallbackSrc = useMemo(
+    () => getCloudinaryImageUrl(src, { width: 640, quality: 'auto:good' }),
+    [src]
+  );
 
   if (props.srcSet && props.src) {
     return (
@@ -28,7 +37,7 @@ function ThemeScreenshot({ src, alt }) {
 
   return (
     <img
-      src={getCloudinaryImageUrl(src, { width: 640, quality: 'auto:good' })}
+      src={fallbackSrc}
       alt={alt}
       className="block h-full w-full object-contain"
       loading="lazy"

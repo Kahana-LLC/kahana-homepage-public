@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import { getCloudinaryImageUrl } from '../utils/cloudinary-mapper';
 
+const DEFAULT_ORG_LOGO = getCloudinaryImageUrl('/assets/kahana_logo_transparent.svg');
+
 const SEO = ({
   title = 'Kahana - Enterprise Browser & Productivity Tools',
   description = 'Stay organized and focused with Kahana\'s Oasis Enterprise Browser. Features enterprise-grade security, organization tools, and collaboration features for enhanced productivity.',
@@ -19,7 +21,7 @@ const SEO = ({
     '@type': 'Organization',
     name: 'Kahana',
     url: 'https://kahana.co',
-    logo: getCloudinaryImageUrl("/assets/kahana_logo_transparent.svg"),
+    logo: DEFAULT_ORG_LOGO,
     sameAs: [
       'https://www.linkedin.com/company/kahana-co',
       'https://twitter.com/kahanaHQ',

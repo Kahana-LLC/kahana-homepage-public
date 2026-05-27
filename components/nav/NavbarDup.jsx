@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useRef } from 'react';
+import React, { useState, useEffect, useCallback, useRef, useMemo } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -51,12 +51,17 @@ function collectDropdownHrefs(dropdown) {
 }
 
 function NavDropdownPanelSection({ section, splitColumns, sectionIndex, onPick }) {
-  if (section.type === 'promo') {
-    const src = getCloudinaryImageUrl(section.imagePath, {
+  const promoSrc = useMemo(() => {
+    if (section.type !== 'promo' || !section.imagePath) return null;
+    return getCloudinaryImageUrl(section.imagePath, {
       width: section.imageWidth,
       height: section.imageHeight,
       quality: 'auto:good',
     });
+  }, [section.type, section.imagePath, section.imageWidth, section.imageHeight]);
+
+  if (section.type === 'promo') {
+    const src = promoSrc;
     return (
       <div className="dropdown-section">
         <Link
@@ -102,6 +107,44 @@ function NavDropdownPanelSection({ section, splitColumns, sectionIndex, onPick }
         ))}
       </div>
     </div>
+  );
+}
+
+function MobileBuyerGuideNavRow({ row, onNavigate }) {
+  const src = useMemo(
+    () =>
+      getCloudinaryImageUrl(row.imagePath, {
+        width: 48,
+        height: 48,
+        quality: 'auto:good',
+      }),
+    [row.imagePath]
+  );
+
+  return (
+    <Link
+      href={row.href}
+      prefetch={row.prefetch}
+      className="mobile-link flex items-center space-x-3 bg-gradient-to-r from-brand-link/5 to-oasis-blue-300/5 p-3 no-underline hover:from-brand-link/10 hover:to-oasis-blue-300/10"
+      onClick={onNavigate}
+    >
+      <div className="h-12 w-12 flex-shrink-0 overflow-hidden rounded-lg">
+        <img
+          src={src}
+          alt=""
+          className="h-full w-full object-cover"
+          width={48}
+          height={48}
+          loading="lazy"
+          decoding="async"
+          fetchPriority="low"
+        />
+      </div>
+      <div className="flex-1">
+        <div className="font-medium text-gray-900">{row.label}</div>
+        <div className="mt-1 text-xs text-oasis-green-800">{row.subtitle}</div>
+      </div>
+    </Link>
   );
 }
 
@@ -581,32 +624,8 @@ export default function NavbarDup() {
 
             {mobileNavRows.map((row) => {
               if (row.variant === 'buyer-guide') {
-                const src = getCloudinaryImageUrl(row.imagePath, { width: 48, height: 48, quality: 'auto:good' });
                 return (
-                  <Link
-                    key={row.href}
-                    href={row.href}
-                    prefetch={row.prefetch}
-                    className="mobile-link flex items-center space-x-3 bg-gradient-to-r from-brand-link/5 to-oasis-blue-300/5 p-3 no-underline hover:from-brand-link/10 hover:to-oasis-blue-300/10"
-                    onClick={closeMobile}
-                  >
-                    <div className="h-12 w-12 flex-shrink-0 overflow-hidden rounded-lg">
-                      <img
-                        src={src}
-                        alt=""
-                        className="h-full w-full object-cover"
-                        width={48}
-                        height={48}
-                        loading="lazy"
-                        decoding="async"
-                        fetchPriority="low"
-                      />
-                    </div>
-                    <div className="flex-1">
-                      <div className="font-medium text-gray-900">{row.label}</div>
-                      <div className="mt-1 text-xs text-oasis-green-800">{row.subtitle}</div>
-                    </div>
-                  </Link>
+                  <MobileBuyerGuideNavRow key={row.href} row={row} onNavigate={closeMobile} />
                 );
               }
               return (

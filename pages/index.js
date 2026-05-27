@@ -400,44 +400,9 @@ export default function Home({ blogPosts }) {
           name="description"
           content="Oasis Browser by Kahana offers calm, secure browsing with AI that understands your tabs and workflow, with focused work and enterprise-grade protection."
         />
-        <link
-          rel="preload"
-          as="image"
-          href={OASIS_HERO_MASCOT_PATH_SM}
-          imageSizes="180px"
-          media="(max-width: 767px)"
-        />
-        <link
-          rel="preload"
-          as="image"
-          href={OASIS_HERO_MASCOT_PATH}
-          imageSizes="(max-width: 1024px) 220px, 260px"
-          media="(min-width: 768px)"
-        />
       </Head>
 
-      {/* Load Crisp chat after page is idle to improve initial load (target <5.3s interactive) */}
-      {loadAuxScripts ? (
-        <Script
-          id="crisp-script"
-          strategy="lazyOnLoad"
-          dangerouslySetInnerHTML={{
-            __html: `
-            window.$crisp=[];
-            window.CRISP_WEBSITE_ID="711b6e27-0210-4313-9ea3-75009495e3ec";
-            (function(){
-              var d=document;
-              var s=d.createElement("script");
-              s.src="https://client.crisp.chat/l.js";
-              s.async=1;
-              d.getElementsByTagName("head")[0].appendChild(s);
-            })();
-          `,
-          }}
-        />
-      ) : null}
-
-      {/* Load Stripe button after page is idle to improve initial load (target <5.3s interactive) */}
+      {/* Load Stripe buy button after first interaction (keeps initial load lighter) */}
       {loadAuxScripts ? (
         <Script
           id="stripe-button"

@@ -1481,15 +1481,6 @@ a[href="/resources"]:hover * {
   font-weight: 500 !important;
 }
 
-/* Hide Crisp chat notification badge/triangle */
-.crisp-client .crisp-cuf-vz-1,
-.crisp-client .crisp-cuf-1-badge,
-.crisp-client [class*="badge"],
-.crisp-client .crisp-1ucm7b4,
-.crisp-1ucm7b4 {
-  display: none !important;
-}
-
 /* Force nav dropdown links to match Products/Pricing/Learn/About styling - #617500 same as nav text */
 /* Prevent white blink on hover/click - use subtle tint instead of white background */
 .site-nav-wrapper nav .dropdown-content a.dropdown-link,
