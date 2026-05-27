@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { trackButtonClick } from '../utils/analytics';
+import HeroTransparencyLinks from "./HeroTransparencyLinks";
 
 /** Sloth mascot (minimalist illustration) shown beside the homepage hero. */
 export const OASIS_HERO_MASCOT_PATH = "/images/oasis-hero-mascot.webp";
@@ -56,13 +57,7 @@ export default function ProductSection() {
               Fall in love with the privacy-first ai browser that you can train. Your personal data is sacred. By default,
               all interaction data is anonymized. 
             </p>
-            <Link
-              href="/#data-transparency"
-              onClick={() => trackButtonClick("hero_data_transparency", "hero_section")}
-              className="block text-sm font-semibold text-brand-link underline decoration-brand-link/40 underline-offset-2 hover:text-oasis-green-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#617500]"
-            >
-              See exactly what we collect
-            </Link>
+            <HeroTransparencyLinks />
             <div className="hero-cta-buttons flex flex-row flex-wrap items-center justify-start gap-4">
               <Link
                 href="/oasis-pricing"
