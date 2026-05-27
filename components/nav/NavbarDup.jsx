@@ -1,6 +1,7 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import whiteKahanaLogo from '../../assets/kahana_logo_transparent.svg';
 import { getCloudinaryImageUrl } from '../../utils/cloudinary-mapper';
 import { desktopNavItems, mobileNavRows } from './navConfig';
@@ -34,6 +35,20 @@ const ctaScheduleClass =
 
 const ctaDownloadClass =
   'btn-primary btn-nav no-underline hover:no-underline focus:no-underline';
+
+function collectDropdownHrefs(dropdown) {
+  const hrefs = [];
+  for (const section of dropdown.sections) {
+    if (section.type === 'promo') {
+      if (section.href && section.prefetch !== false) hrefs.push(section.href);
+    } else if (section.links) {
+      for (const link of section.links) {
+        if (link.href && link.prefetch !== false) hrefs.push(link.href);
+      }
+    }
+  }
+  return hrefs;
+}
 
 function NavDropdownPanelSection({ section, splitColumns, sectionIndex, onPick }) {
   if (section.type === 'promo') {
@@ -91,11 +106,30 @@ function NavDropdownPanelSection({ section, splitColumns, sectionIndex, onPick }
 }
 
 export default function NavbarDup() {
+  const router = useRouter();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
+  const prefetchedDropdowns = useRef(new Set());
+
+  const prefetchDropdown = useCallback(
+    (dropdown, id) => {
+      if (!dropdown || prefetchedDropdowns.current.has(id)) return;
+      prefetchedDropdowns.current.add(id);
+      for (const href of collectDropdownHrefs(dropdown)) {
+        router.prefetch(href).catch(() => {});
+      }
+    },
+    [router]
+  );
 
   const closeDropdown = useCallback(() => setOpenDropdown(null), []);
   const closeMobile = useCallback(() => setIsMobileMenuOpen(false), []);
+
+  useEffect(() => {
+    if (!openDropdown) return;
+    const item = desktopNavItems.find((entry) => entry.id === openDropdown);
+    if (item?.dropdown) prefetchDropdown(item.dropdown, openDropdown);
+  }, [openDropdown, prefetchDropdown]);
 
   useEffect(() => {
     const onResize = () => {
@@ -439,15 +473,22 @@ export default function NavbarDup() {
               const isOpen = openDropdown === item.id;
 
               return (
-                <li key={item.id} className={`dropdown ${isOpen ? 'active' : ''}`}>
-                  <Link
-                    href={item.href}
-                    prefetch={item.prefetchTop !== false}
-                    className="nav-link relative z-[2] inline-flex items-center gap-0.5 whitespace-nowrap rounded-md px-2 py-2 font-sans text-[0.9375rem] font-normal !text-oasis-green-700 no-underline focus:outline-none"
+                <li
+                  key={item.id}
+                  className={`dropdown ${isOpen ? 'active' : ''}`}
+                  onMouseEnter={() => prefetchDropdown(dropdown, item.id)}
+                >
+                  <div
+                    className="nav-link relative z-[2] inline-flex items-center gap-0.5 whitespace-nowrap rounded-md px-2 py-2 font-sans text-[0.9375rem] font-normal !text-oasis-green-700"
                     aria-haspopup="true"
-                    aria-expanded={isOpen}
                   >
-                    <span className="nav-link-text">{item.label}</span>
+                    <Link
+                      href={item.href}
+                      prefetch={item.prefetchTop !== false}
+                      className="inline-flex items-center rounded-md no-underline !text-oasis-green-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-oasis-green-700 focus-visible:ring-offset-2"
+                    >
+                      <span className="nav-link-text">{item.label}</span>
+                    </Link>
                     <button
                       type="button"
                       className="dropdown-icon-button"
@@ -457,7 +498,7 @@ export default function NavbarDup() {
                     >
                       <ChevronDownIcon />
                     </button>
-                  </Link>
+                  </div>
                   <div className="dropdown-overlay" aria-hidden="true" />
                   <div
                     className="dropdown-content"

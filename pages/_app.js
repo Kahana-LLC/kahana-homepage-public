@@ -173,6 +173,16 @@ function AppContent({ Component, pageProps }) {
     };
   }, [router.asPath, router.events, hasConsent, consent]);
 
+  useEffect(() => {
+    const onRouteChangeError = (err, url) => {
+      if (process.env.NODE_ENV === 'development') {
+        console.error('[routeChangeError]', url, err);
+      }
+    };
+    router.events.on('routeChangeError', onRouteChangeError);
+    return () => router.events.off('routeChangeError', onRouteChangeError);
+  }, [router.events]);
+
   // Load Mixpanel on localhost immediately (no consent wait)
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -425,7 +435,7 @@ function AppContent({ Component, pageProps }) {
               : ''
           }`}
         >
-          <Component {...pageProps} />
+          <Component key={router.asPath} {...pageProps} />
         </main>
         {!isLinktreePage ? <Footer /> : null}
         {showProductHuntBanner ? <GlobalBanner /> : null}
