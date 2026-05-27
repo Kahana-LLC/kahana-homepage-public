@@ -127,15 +127,14 @@
     setTimeout(() => {
       const consent = getConsent();
       
-      if (!consent || (!consent.analytics && !consent.advertising && !consent.marketing)) {
-        // No consent granted - scripts should not be loaded
+      if (!consent || (!consent.analytics && !consent.advertising)) {
         assert(
           !isScriptLoadedBySrc('googletagmanager.com/gtag/js'),
           'Google Analytics script not loaded without consent'
         );
         assert(
           !isScriptLoadedBySrc('getwarmly.com'),
-          'Warmly script not loaded without consent'
+          'Third-party marketing scripts not loaded without consent'
         );
         assert(
           !isScriptLoadedBySrc('adsbygoogle'),
@@ -143,30 +142,15 @@
         );
       }
       
-      // Test 2: Scripts should load with consent
-      // This would require simulating consent acceptance
-      // For now, we'll check if scripts can be found when consent exists
       const hasAnalyticsConsent = consent?.analytics === true;
-      const hasAdvertisingConsent = consent?.advertising === true;
-      const hasMarketingConsent = consent?.marketing === true;
       
       if (hasAnalyticsConsent) {
-        // Check if analytics scripts are loaded (they might be loaded dynamically)
-        const gtagLoaded = isScriptLoadedBySrc('googletagmanager.com/gtag/js') || 
+        const gtagLoaded = isScriptLoadedBySrc('googletagmanager.com/gtag/js') ||
                           window.dataLayer !== undefined;
         if (gtagLoaded) {
           log('Google Analytics appears to be loaded (with consent)', 'pass');
         } else {
           warn('Google Analytics not found but consent granted - may be loading asynchronously');
-        }
-      }
-      
-      if (hasMarketingConsent) {
-        const warmlyLoaded = isScriptLoadedBySrc('getwarmly.com');
-        if (warmlyLoaded) {
-          log('Warmly appears to be loaded (with consent)', 'pass');
-        } else {
-          warn('Warmly not found but consent granted - may be loading asynchronously');
         }
       }
       
@@ -190,7 +174,7 @@
           assert(modal !== null, 'Cookie preferences modal opens');
           
           const toggles = modal.querySelectorAll('button[role="switch"]');
-          assert(toggles.length >= 3, 'Modal has category toggles (analytics, advertising, marketing)');
+          assert(toggles.length >= 2, 'Modal has category toggles (analytics, advertising)');
           
           const saveButton = Array.from(modal.querySelectorAll('button')).find(
             btn => btn.textContent.includes('Save')
@@ -246,7 +230,6 @@
       assert(consent.strictlyNecessary === true, 'Strictly necessary is always true');
       assert(typeof consent.analytics === 'boolean', 'Analytics consent is boolean');
       assert(typeof consent.advertising === 'boolean', 'Advertising consent is boolean');
-      assert(typeof consent.marketing === 'boolean', 'Marketing consent is boolean');
       assert(consent.timestamp !== undefined, 'Consent has timestamp');
       
       log(`Consent state: ${JSON.stringify(consent, null, 2)}`, 'info');

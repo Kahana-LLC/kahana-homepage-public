@@ -727,7 +727,7 @@ export default function LearningInternship() {
                         items: [
                           { title: 'Lead generation', description: 'Identify prospects, build lists, outreach via Apollo and email' },
                           { title: 'CRM', description: 'HubSpot setup, lead enrichment (Clay), pipeline management' },
-                          { title: 'Website intelligence', description: 'Warmly for visitor identification and intent signals' },
+                          { title: 'Pipeline reporting', description: 'Track outreach and demo activity in HubSpot and Clay' },
                           { title: 'Outreach', description: 'Enterprise solutions architect connections, meeting requests, demo scheduling' }
                         ]
                       },
@@ -1021,16 +1021,6 @@ export default function LearningInternship() {
                         </tr>
                         <tr>
                           <td className="px-4 py-3 text-sm font-semibold text-oasis-green-800">Clay</td>
-                          <td className="px-2 py-3 text-center"></td>
-                          <td className="px-2 py-3 text-center text-oasis-green-600">✓</td>
-                          <td className="px-2 py-3 text-center"></td>
-                          <td className="px-2 py-3 text-center"></td>
-                          <td className="px-2 py-3 text-center"></td>
-                          <td className="px-2 py-3 text-center"></td>
-                          <td className="px-2 py-3 text-center"></td>
-                        </tr>
-                        <tr>
-                          <td className="px-4 py-3 text-sm font-semibold text-oasis-green-800">Warmly</td>
                           <td className="px-2 py-3 text-center"></td>
                           <td className="px-2 py-3 text-center text-oasis-green-600">✓</td>
                           <td className="px-2 py-3 text-center"></td>

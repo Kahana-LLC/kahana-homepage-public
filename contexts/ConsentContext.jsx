@@ -7,6 +7,18 @@ const REGION_CACHE_TTL_MS = 7 * 24 * 60 * 60 * 1000;
 /** After a 429, skip further ipapi network calls this session (reduces failed-request noise in lab tools). */
 const IPAPI_SKIP_NETWORK_KEY = 'kahana_ipapi_skip_network_v1';
 
+function normalizeConsent(parsed) {
+  if (!parsed || typeof parsed !== 'object') return null;
+  const { marketing: _removed, ...rest } = parsed;
+  return {
+    strictlyNecessary: true,
+    analytics: rest.analytics === true,
+    advertising: rest.advertising === true,
+    timestamp: rest.timestamp ?? null,
+    region: rest.region ?? null,
+  };
+}
+
 export const ConsentContext = createContext(null);
 
 export const useConsent = () => {
@@ -36,7 +48,7 @@ export const ConsentProvider = ({ children }) => {
               
               // Validate consent structure
               if (parsed && typeof parsed === 'object') {
-                setConsentState(parsed);
+                setConsentState(normalizeConsent(parsed));
                 
                 // Only hide banner if user has explicitly interacted (has timestamp)
                 // This ensures banner persists until user takes action
@@ -53,10 +65,9 @@ export const ConsentProvider = ({ children }) => {
             } else {
               // No consent record exists - show banner
               setConsentState({
-                strictlyNecessary: true, // Always true
+                strictlyNecessary: true,
                 analytics: false,
                 advertising: false,
-                marketing: false,
                 timestamp: null,
                 region: null,
               });
@@ -83,7 +94,6 @@ export const ConsentProvider = ({ children }) => {
           strictlyNecessary: true,
           analytics: false,
           advertising: false,
-          marketing: false,
           timestamp: null,
           region: null,
         });
@@ -235,9 +245,10 @@ export const ConsentProvider = ({ children }) => {
   }, [isLoading, userRegion, consent]);
 
   const saveConsent = (newConsent) => {
+    const { marketing: _removed, ...rest } = newConsent || {};
     const consentData = {
-      ...newConsent,
-      strictlyNecessary: true, // Always true
+      ...rest,
+      strictlyNecessary: true,
       timestamp: new Date().toISOString(),
       region: userRegion || consent?.region || null,
     };
@@ -267,7 +278,6 @@ export const ConsentProvider = ({ children }) => {
       strictlyNecessary: true,
       analytics: true,
       advertising: true,
-      marketing: true,
     });
   };
 
@@ -276,7 +286,6 @@ export const ConsentProvider = ({ children }) => {
       strictlyNecessary: true,
       analytics: false,
       advertising: false,
-      marketing: false,
     });
   };
 

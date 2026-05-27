@@ -3,36 +3,27 @@ import { useConsent } from '../contexts/ConsentContext';
 
 export default function CookiePreferencesModal() {
   const { showModal, closeModal, consent, acceptAll, declineAll, saveConsent } = useConsent();
-  // Initialize with all false (except strictly necessary)
   const [localConsent, setLocalConsent] = useState({
     strictlyNecessary: true,
     analytics: false,
     advertising: false,
-    marketing: false,
   });
 
-  // Sync local consent state with actual consent whenever modal opens or consent changes
-  // Always start with all false (except strictly necessary), then show saved state if it exists
   useEffect(() => {
     if (showModal) {
-      // Default to all false initially
       const defaultState = {
         strictlyNecessary: true,
         analytics: false,
         advertising: false,
-        marketing: false,
       };
-      
-      // If consent exists and has explicit true values, use those
+
       if (consent && typeof consent === 'object') {
         setLocalConsent({
           strictlyNecessary: true,
-          analytics: consent.analytics === true, // Only true if explicitly true
-          advertising: consent.advertising === true, // Only true if explicitly true
-          marketing: consent.marketing === true, // Only true if explicitly true
+          analytics: consent.analytics === true,
+          advertising: consent.advertising === true,
         });
       } else {
-        // No consent saved yet, use defaults (all false)
         setLocalConsent(defaultState);
       }
     }
@@ -41,68 +32,54 @@ export default function CookiePreferencesModal() {
   if (!showModal) return null;
 
   const handleToggle = (category) => {
-    if (category === 'strictlyNecessary') return; // Cannot toggle
-    setLocalConsent(prev => ({
+    if (category === 'strictlyNecessary') return;
+    setLocalConsent((prev) => ({
       ...prev,
       [category]: !prev[category],
     }));
   };
 
   const handleSave = () => {
-    // Save all preferences together via context
-    const consentData = {
+    saveConsent({
       strictlyNecessary: true,
       analytics: localConsent.analytics,
       advertising: localConsent.advertising,
-      marketing: localConsent.marketing,
-    };
-    
-    // Use saveConsent from context which handles localStorage, state updates, and script loading
-    saveConsent(consentData);
+    });
   };
 
   const handleAcceptAll = () => {
-    // Update local state immediately for visual feedback
     setLocalConsent({
       strictlyNecessary: true,
       analytics: true,
       advertising: true,
-      marketing: true,
     });
-    // Then save to context and localStorage
     acceptAll();
   };
 
   const handleDeclineAll = () => {
-    // Update local state immediately for visual feedback
     setLocalConsent({
       strictlyNecessary: true,
       analytics: false,
       advertising: false,
-      marketing: false,
     });
-    // Then save to context and localStorage
     declineAll();
   };
 
   return (
-    <div 
+    <div
       className="fixed inset-0 z-50 overflow-y-auto"
       role="dialog"
       aria-modal="true"
       aria-labelledby="modal-title"
     >
-      {/* Backdrop */}
-      <div 
+      <div
         className="fixed inset-0 bg-black bg-opacity-50 transition-opacity"
         onClick={closeModal}
         aria-hidden="true"
       />
-      
-      {/* Modal */}
+
       <div className="flex min-h-full items-center justify-center p-4">
         <div className="relative bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-          {/* Header */}
           <div className="sticky top-0 bg-white border-b border-gray-200 px-6 py-4 flex items-center justify-between">
             <h2 id="modal-title" className="text-2xl font-bold text-[#313A00]">
               Cookie Preferences
@@ -118,10 +95,9 @@ export default function CookiePreferencesModal() {
             </button>
           </div>
 
-          {/* Content */}
           <div className="px-6 py-6">
             <p className="text-gray-700 mb-4">
-              We use cookies and similar technologies to enhance your browsing experience, analyze site traffic, and personalize content.
+              We use cookies and similar technologies to enhance your browsing experience and analyze site traffic.
               By choosing &quot;Accept All&quot; on the banner, you consent to optional categories where applicable. You can change your preferences at any time
               by using Manage Preferences on the banner or Cookie Settings in the footer.
             </p>
@@ -129,7 +105,6 @@ export default function CookiePreferencesModal() {
               Below you can choose which categories to allow. Note that blocking some types of cookies may impact your experience on our website.
             </p>
 
-            {/* Strictly Necessary */}
             <div className="mb-6 pb-6 border-b border-gray-200">
               <div className="flex items-start justify-between">
                 <div className="flex-1">
@@ -140,7 +115,7 @@ export default function CookiePreferencesModal() {
                     </span>
                   </div>
                   <p className="text-sm text-gray-600 mb-2">
-                    These cookies are essential for the website to function properly. They enable core functionality such as 
+                    These cookies are essential for the website to function properly. They enable core functionality such as
                     security, network management, and accessibility.
                   </p>
                   <p className="text-xs text-gray-500">
@@ -155,13 +130,12 @@ export default function CookiePreferencesModal() {
               </div>
             </div>
 
-            {/* Analytics */}
             <div className="mb-6 pb-6 border-b border-gray-200">
               <div className="flex items-start justify-between">
                 <div className="flex-1">
                   <h3 className="text-lg font-semibold text-[#313A00] mb-2">Analytics</h3>
                   <p className="text-sm text-gray-600 mb-2">
-                    These cookies help us understand how visitors interact with our website by collecting and reporting 
+                    These cookies help us understand how visitors interact with our website by collecting and reporting
                     information anonymously. This helps us improve our website and user experience.
                   </p>
                   <p className="text-xs text-gray-500">
@@ -180,8 +154,8 @@ export default function CookiePreferencesModal() {
                   >
                     <span
                       className={`inline-block h-5 w-5 transform rounded-full transition-transform shadow-sm ${
-                        localConsent.analytics 
-                          ? 'translate-x-7 bg-white' 
+                        localConsent.analytics
+                          ? 'translate-x-7 bg-white'
                           : 'translate-x-1 bg-gray-400'
                       }`}
                     />
@@ -190,13 +164,12 @@ export default function CookiePreferencesModal() {
               </div>
             </div>
 
-            {/* Advertising */}
-            <div className="mb-6 pb-6 border-b border-gray-200">
+            <div className="mb-6">
               <div className="flex items-start justify-between">
                 <div className="flex-1">
                   <h3 className="text-lg font-semibold text-[#313A00] mb-2">Advertising</h3>
                   <p className="text-sm text-gray-600 mb-2">
-                    These cookies are used to deliver advertisements that are more relevant to you and your interests. 
+                    These cookies are used to deliver advertisements that are more relevant to you and your interests.
                     They may also be used to limit the number of times you see an advertisement.
                   </p>
                   <p className="text-xs text-gray-500">
@@ -215,43 +188,8 @@ export default function CookiePreferencesModal() {
                   >
                     <span
                       className={`inline-block h-5 w-5 transform rounded-full transition-transform shadow-sm ${
-                        localConsent.advertising 
-                          ? 'translate-x-7 bg-white' 
-                          : 'translate-x-1 bg-gray-400'
-                      }`}
-                    />
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            {/* Marketing/Personalization */}
-            <div className="mb-6">
-              <div className="flex items-start justify-between">
-                <div className="flex-1">
-                  <h3 className="text-lg font-semibold text-[#313A00] mb-2">Marketing / Personalization</h3>
-                  <p className="text-sm text-gray-600 mb-2">
-                    These cookies are used to deliver personalized content and identify potential leads. They help us 
-                    understand visitor behavior and improve our marketing efforts.
-                  </p>
-                  <p className="text-xs text-gray-500">
-                    <strong>Tools:</strong> Warmly, lead identification tools
-                  </p>
-                </div>
-                <div className="ml-4">
-                  <button
-                    onClick={() => handleToggle('marketing')}
-                    className={`relative inline-flex h-8 w-14 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-oasis-green-600 focus:ring-offset-2 ${
-                      localConsent.marketing ? 'bg-oasis-green-600' : 'bg-gray-200 border-2 border-gray-300'
-                    }`}
-                    role="switch"
-                    aria-checked={localConsent.marketing}
-                    aria-label="Toggle marketing cookies"
-                  >
-                    <span
-                      className={`inline-block h-5 w-5 transform rounded-full transition-transform shadow-sm ${
-                        localConsent.marketing 
-                          ? 'translate-x-7 bg-white' 
+                        localConsent.advertising
+                          ? 'translate-x-7 bg-white'
                           : 'translate-x-1 bg-gray-400'
                       }`}
                     />
@@ -261,7 +199,6 @@ export default function CookiePreferencesModal() {
             </div>
           </div>
 
-          {/* Footer */}
           <div className="sticky bottom-0 bg-gray-50 border-t border-gray-200 px-6 py-4 flex flex-col sm:flex-row gap-3 justify-end">
             <button
               onClick={handleDeclineAll}
@@ -287,4 +224,3 @@ export default function CookiePreferencesModal() {
     </div>
   );
 }
-
