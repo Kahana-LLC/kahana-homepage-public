@@ -61,6 +61,20 @@ export default function TechnicalInteractionDataDoc() {
           variant="full"
           className="mt-6 rounded-xl border border-[#30400D]/15 bg-[#FAFCF7] p-4 sm:p-6"
         />
+        <p className="mt-6 text-[#30400D]/85 leading-relaxed">
+          <strong>Training feedback</strong> is separate from these default interaction telemetry
+          payloads. When you submit training on a reply, you send a structured training object
+          (thumbs, badges, comment, and related fields).{" "}
+          <strong>Anonymous training</strong> still uploads on Submit; it does not attach your user
+          ID to that training record. See{" "}
+          <a
+            href="/docs/training#does-data-leave-device"
+            className="font-semibold text-[#4A6200] no-underline hover:underline"
+          >
+            Training — does data leave the device?
+          </a>
+          .
+        </p>
       </section>
 
       <section className="my-12">
@@ -93,11 +107,25 @@ export default function TechnicalInteractionDataDoc() {
           <li>Location history or precise geo tracking for advertising</li>
           <li>Search or browsing history sold to data brokers</li>
           <li>Social likes, purchase graphs, or interest profiles for third-party ads</li>
-          <li>Bulk exfiltration of files, passwords, or credentials stored on your device</li>
+          <li>
+            Your saved-password vault, imported logins, or autofill store (these stay in your local
+            profile; see{" "}
+            <a
+              href="/docs/import-from-other-browsers#imported-passwords"
+              className="font-semibold text-[#4A6200] no-underline hover:underline"
+            >
+              imported passwords
+            </a>
+            )
+          </li>
+          <li>Bookmark and history databases as bulk exports in assistant telemetry</li>
+          <li>On-device semantic embedding indexes (local pipeline when enabled)</li>
         </ul>
         <p className="mt-4 text-[#30400D]/85 leading-relaxed">
           Productivity and AI features are built so sensitive information can remain local; the
           payloads above are limited to what is needed to run and improve the assistant experience.
+          Anything you type into the composer—including a password you paste—may be processed like
+          any other prompt.
         </p>
       </section>
 

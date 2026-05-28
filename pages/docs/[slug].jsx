@@ -10,6 +10,7 @@ import { getAuthorDetails } from '../../utils/authorUtils';
 import SEO from '../../components/SEO';
 import DocsSupportCTA from '../../components/DocsSupportCTA';
 import TechnicalInteractionDataDoc from '../../components/docs/TechnicalInteractionDataDoc';
+import TrainingDoc from '../../components/docs/TrainingDoc';
 import AssistantThemesDoc from '../../components/docs/AssistantThemesDoc';
 import DeleteAccountDoc from '../../components/docs/DeleteAccountDoc';
 import { docsConfig } from '../../config/docsConfig';
@@ -158,6 +159,8 @@ export default function DocPage({ doc, relatedDocs }) {
             <DeleteAccountDoc />
           ) : doc.slug === 'assistant-themes' ? (
             <AssistantThemesDoc gallery={doc.gallery || []} />
+          ) : doc.slug === 'training' ? (
+            <TrainingDoc doc={doc} />
           ) : doc.slug === 'technical-and-interaction-data' ? (
             <TechnicalInteractionDataDoc />
           ) : (
