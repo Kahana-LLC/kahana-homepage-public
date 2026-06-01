@@ -4,7 +4,6 @@ import Link from 'next/link';
 import SEO from '../components/SEO';
 import SharedCTA from '../components/SharedCTA';
 import TeamGallery from '../components/TeamGallery';
-import ProductHuntLaunchSection from '../components/ProductHuntLaunchSection';
 import { getCloudinaryImageUrl } from '../utils/cloudinary-mapper';
 
 const ADAM_HEADSHOT_URL = getCloudinaryImageUrl('/assets/headshots/adam_kershner.jpg', {
@@ -127,7 +126,6 @@ export default function Team() {
 
       <section className="border-b border-oasis-green-600/10 bg-white py-12 sm:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <ProductHuntLaunchSection />
         </div>
       </section>
 
