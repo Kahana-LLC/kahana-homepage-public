@@ -7,8 +7,6 @@ import { getRandomPhoto, getOptimizedPhotoUrl, getPlaceholderImageUrl } from '..
 import { suggestNatureImageQuery } from '../../utils/blog-helpers';
 import { getAuthorDetails } from '../../utils/authorUtils';
 import { trackCategoryFilter, trackBrowserSearchIntent } from '../../utils/userIntentTracking';
-import ProductHuntLaunchEmbed from '../../components/ProductHuntLaunchEmbed';
-import { isProductHuntLaunchActive } from '../../data/product-hunt-launch';
 
 // Default placeholder for failed image loads
 const DEFAULT_PLACEHOLDER = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%233C584A"%3E%3Cpath d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-1.96-2.36L6.5 17h11l-3.54-4.71z"%2F%3E%3C%2Fsvg%3E';
@@ -201,15 +199,6 @@ export default function BlogIndex({ posts = [] }) {
             Insights and updates on enterprise browser security, productivity, and technology trends
           </p>
         </div>
-
-        {isProductHuntLaunchActive() && (
-          <div className="mb-10 text-center">
-            <p className="mb-4 text-lg font-medium text-oasis-green-800">
-              We&apos;re launching on Product Hunt May 27
-            </p>
-            <ProductHuntLaunchEmbed className="mx-auto" />
-          </div>
-        )}
 
         {/* Search Bar */}
         <div className="mb-8">

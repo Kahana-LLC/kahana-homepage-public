@@ -2,7 +2,6 @@ import React from 'react';
 import Link from 'next/link';
 import SEO from '../components/SEO';
 import PressInquiriesTally from '../components/PressInquiriesTally';
-import ProductHuntLaunchSection from '../components/ProductHuntLaunchSection';
 
 const hubLinks = [
   {
@@ -46,7 +45,6 @@ export default function PressPage() {
         </section>
 
         <section className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
-          <ProductHuntLaunchSection className="mb-16" />
 
           <ul className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {hubLinks.map((item) => (

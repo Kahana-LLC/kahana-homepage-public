@@ -10,7 +10,6 @@ import SolutionFeatureWithVisual from '../../components/solutions/visuals/Soluti
 import MainIncidentDashboardPreview from '../../components/solutions/visuals/MainIncidentDashboardPreview';
 import RelatedEnterpriseFeatureLinks from '../../components/features/RelatedEnterpriseFeatureLinks';
 import SharedCTA from '../../components/SharedCTA';
-import ProductHuntLaunchSection from '../../components/ProductHuntLaunchSection';
 import { oasisCapabilities } from '../../data/oasisEnterpriseCapabilities';
 import {
   enterpriseHeroDescription,
@@ -272,7 +271,6 @@ export default function EnterpriseBrowser() {
       </section>
 
       <section className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
-        <ProductHuntLaunchSection />
       </section>
 
       <SharedCTA

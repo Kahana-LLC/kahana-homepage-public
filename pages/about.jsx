@@ -5,7 +5,6 @@ import Head from 'next/head';
 import Script from 'next/script';
 import SEO from '../components/SEO';
 import SharedCTA from '../components/SharedCTA';
-import ProductHuntLaunchSection from '../components/ProductHuntLaunchSection';
 import { getCloudinaryImageUrl } from '../utils/cloudinary-mapper';
 
 const PREVIEW_IMAGE = getCloudinaryImageUrl('/assets/oasis-browser-preview.png', { width: 1200, quality: 'auto:good' });
@@ -430,7 +429,6 @@ export default function About() {
       </section>
 
       <section className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
-        <ProductHuntLaunchSection />
       </section>
 
       {/* ===== Final CTA ===== */}

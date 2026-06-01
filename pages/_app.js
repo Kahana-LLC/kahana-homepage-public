@@ -5,11 +5,12 @@ import Head from "next/head";
 import GlobalBanner from "../components/GlobalBanner";
 import {
   isProductHuntGlobalBannerRoute,
-  isProductHuntLaunchActive,
+  isProductHuntCelebrationActive,
+  SHOW_PRODUCT_HUNT_CELEBRATION,
 } from "../data/product-hunt-launch";
 
-/** Product Hunt launch banner on homepage, blog, and features (through May 27, 2026). */
-const SHOW_PRODUCT_HUNT_BANNER = true;
+/** Product Hunt #4 celebration banner on homepage, blog, products, and features. Set SHOW_PRODUCT_HUNT_CELEBRATION false in product-hunt-launch.js to disable. */
+const SHOW_PRODUCT_HUNT_BANNER = SHOW_PRODUCT_HUNT_CELEBRATION;
 import SEO from "../components/SEO";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
@@ -370,7 +371,7 @@ function AppContent({ Component, pageProps }) {
   const showProductHuntBanner =
     SHOW_PRODUCT_HUNT_BANNER &&
     !isLinktreePage &&
-    isProductHuntLaunchActive() &&
+    isProductHuntCelebrationActive() &&
     isProductHuntGlobalBannerRoute(router.pathname);
   const needsDocsStyles =
     router.pathname.startsWith("/docs") ||

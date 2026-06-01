@@ -5,7 +5,6 @@ import Link from 'next/link';
 import SEO from '../components/SEO';
 import FadeInSection from '../components/FadeInSection';
 import SharedCTA from '../components/SharedCTA';
-import ProductHuntLaunchSection from '../components/ProductHuntLaunchSection';
 import OasisPlatformLogos from '../components/OasisPlatformLogos';
 import { getCloudinaryImageUrl } from '../utils/cloudinary-mapper';
 
@@ -446,7 +445,6 @@ export default function OasisPricing() {
 
       <FadeInSection>
         <section className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
-          <ProductHuntLaunchSection />
         </section>
       </FadeInSection>
 
