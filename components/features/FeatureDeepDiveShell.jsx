@@ -4,6 +4,7 @@ import Link from 'next/link';
 import SEO from '../SEO';
 import OasisProductHero from '../products/OasisProductHero';
 import FeatureDiscoveryGrid from './FeatureDiscoveryGrid';
+import FeatureExternalReviewQuote from './FeatureExternalReviewQuote';
 import FeatureRelatedDocsSection from './FeatureRelatedDocsSection';
 import SharedCTA from '../SharedCTA';
 import { getCloudinaryImageUrl } from '../../utils/cloudinary-mapper';
@@ -66,6 +67,8 @@ export default function FeatureDeepDiveShell({
       />
 
       {children}
+
+      <FeatureExternalReviewQuote featureSlug={featureSlug} />
 
       <FeatureRelatedDocsSection docs={relatedDocs} />
 

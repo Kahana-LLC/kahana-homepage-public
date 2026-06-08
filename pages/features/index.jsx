@@ -5,6 +5,7 @@ import SEO from '../../components/SEO';
 import GalleryPaginationControls from '../../components/features/GalleryPaginationControls';
 import { FeatureCatalogCard } from '../../components/features/FeatureDiscoveryGrid';
 import { GALLERY_PAGE_SIZE, oasisFeaturesCatalog } from '../../data/oasisFeaturesCatalog';
+import { YTC_OASIS_REVIEW } from '../../data/oasis-external-reviews';
 
 const CANONICAL = 'https://kahana.co/features';
 
@@ -89,6 +90,27 @@ export default function FeaturesIndexPage() {
               className="font-semibold text-brand-link no-underline hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-link"
             >
               Documentation
+            </Link>
+            .
+          </p>
+
+          <p className="mx-auto mt-5 max-w-2xl text-center text-sm text-oasis-green-800/85">
+            Independently reviewed by{' '}
+            <a
+              href={YTC_OASIS_REVIEW.reviewUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-brand-link no-underline hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-link"
+            >
+              {YTC_OASIS_REVIEW.publication}
+            </a>{' '}
+            ({YTC_OASIS_REVIEW.score}/{YTC_OASIS_REVIEW.scoreMax}{' '}
+            {YTC_OASIS_REVIEW.scoreSystemName}).{' '}
+            <Link
+              href="/products/oasis-browser#external-review"
+              className="font-semibold text-brand-link no-underline hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-link"
+            >
+              See review highlights
             </Link>
             .
           </p>

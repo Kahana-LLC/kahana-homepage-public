@@ -6,7 +6,9 @@ import SEO from '../../components/SEO';
 import { getCloudinaryImageUrl } from '../../utils/cloudinary-mapper';
 import OasisProductHero from '../../components/products/OasisProductHero';
 import OasisBrowserFeatureVisuals from '../../components/products/oasis/OasisBrowserFeatureVisuals';
+import OasisExternalReviewSection from '../../components/products/OasisExternalReviewSection';
 import SharedCTA from '../../components/SharedCTA';
+import { getYtcReviewSchema } from '../../data/oasis-external-reviews';
 
 const heroDescription =
   'Oasis is a browser with a built-in AI assistant that can plan, search, and take action on your tabs, history, and pages, not just chat beside them. Use your voice when you want speed, and import from your old browser so switching takes seconds, not a weekend.';
@@ -55,7 +57,9 @@ export default function OasisBrowser() {
       {
         ...softwareSchema,
         '@id': 'https://kahana.co/products/oasis-browser#software',
+        review: { '@id': 'https://kahana.co/products/oasis-browser#ytc-review' },
       },
+      getYtcReviewSchema(),
     ],
   };
 
@@ -98,8 +102,7 @@ export default function OasisBrowser() {
 
       <OasisBrowserFeatureVisuals />
 
-      <section className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
-      </section>
+      <OasisExternalReviewSection />
 
       <SharedCTA
         title="Ready to try Oasis?"

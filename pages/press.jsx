@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import SEO from '../components/SEO';
 import PressInquiriesTally from '../components/PressInquiriesTally';
+import { YTC_OASIS_REVIEW } from '../data/oasis-external-reviews';
 
 const hubLinks = [
   {
@@ -60,6 +61,58 @@ export default function PressPage() {
               </li>
             ))}
           </ul>
+
+          <div className="mt-16 rounded-xl border border-oasis-green-100 bg-oasis-green-50/40 p-8 shadow-sm">
+            <h2 className="text-2xl font-bold text-oasis-green-900">Third-party coverage</h2>
+            <p className="mt-2 text-oasis-green-800">
+              Independent reviews and analysis from publications outside Kahana.
+            </p>
+            <ul className="mt-8 space-y-6">
+              <li className="rounded-xl border border-oasis-green-100 bg-white p-6">
+                <div className="flex flex-wrap items-start justify-between gap-4">
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-wide text-oasis-green-600">
+                      {YTC_OASIS_REVIEW.publication}
+                    </p>
+                    <h3 className="mt-1 text-lg font-semibold text-oasis-green-900">{YTC_OASIS_REVIEW.reviewTitle}</h3>
+                    <p className="mt-2 text-sm text-oasis-green-800">
+                      {YTC_OASIS_REVIEW.excerpt}
+                    </p>
+                    <p className="mt-3 text-xs text-oasis-green-700">
+                      {YTC_OASIS_REVIEW.scoreSystemName}: {YTC_OASIS_REVIEW.score}/{YTC_OASIS_REVIEW.scoreMax} (
+                      {YTC_OASIS_REVIEW.scoreLabel}) · Reviewed {YTC_OASIS_REVIEW.reviewedAt} by {YTC_OASIS_REVIEW.author}
+                    </p>
+                    <p className="mt-2 text-xs text-oasis-green-700/90">{YTC_OASIS_REVIEW.independenceNote}</p>
+                  </div>
+                  <p className="shrink-0 rounded-lg bg-oasis-green-50 px-4 py-3 text-center text-2xl font-bold text-oasis-green-900">
+                    {YTC_OASIS_REVIEW.score}
+                    <span className="text-sm font-semibold text-oasis-green-700">/{YTC_OASIS_REVIEW.scoreMax}</span>
+                  </p>
+                </div>
+                <div className="mt-5 flex flex-wrap gap-4 text-sm font-semibold">
+                  <a
+                    href={YTC_OASIS_REVIEW.reviewUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-oasis-green-700 hover:text-oasis-green-900"
+                  >
+                    Read full review →
+                  </a>
+                  <a
+                    href={YTC_OASIS_REVIEW.methodologyUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-oasis-green-700 hover:text-oasis-green-900"
+                  >
+                    Review methodology →
+                  </a>
+                  <Link href={`/blog/${YTC_OASIS_REVIEW.blogSummarySlug}`} className="text-oasis-green-700 hover:text-oasis-green-900">
+                    Kahana summary →
+                  </Link>
+                </div>
+              </li>
+            </ul>
+          </div>
 
           <div id="press-inquiries" className="mt-16 rounded-xl border border-oasis-green-100 bg-white p-8 shadow-sm">
             <h2 className="text-2xl font-bold text-oasis-green-900">Press inquiries</h2>

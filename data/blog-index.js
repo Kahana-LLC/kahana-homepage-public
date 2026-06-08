@@ -1,5 +1,16 @@
 const blogIndex = [
   {
+    title: "Your Tech Compass Reviews Oasis Browser: 87/100 Independent Score",
+    date: "2026-06-03T00:00:00.000Z",
+    authors: ["Adam Kershner"],
+    category: ["Browser & Technology"],
+    excerpt: "Your Tech Compass published an independent hands-on review of Oasis Browser, awarding an 87/100 YTC Tool Intelligence Score. Summary of what they tested, what they praised, and what they flagged honestly.",
+    defaultImageQuery: "independent browser review privacy AI Oasis Browser Your Tech Compass",
+    featuredImage: "https://tse3.mm.bing.net/th/id/OIP.PQIwU8qtFrb6PgpD02K2oAHaEK?pid=Api&P=0&h=180",
+    slug: "your-tech-compass-oasis-browser-review-87-2026",
+    readingTime: 5,
+  },
+  {
     title: "The Rise of Enterprise Browsers: Transforming Corporate Security in 2026",
     date: "2026-04-30T00:00:00.000Z",
     authors: ["Pallavi M", "Ankit Sai Allam"],
