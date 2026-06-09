@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import SEO from '../components/SEO';
 import PressInquiriesTally from '../components/PressInquiriesTally';
+import ExternalReviewerAttribution from '../components/reviews/ExternalReviewerAttribution';
 import { YTC_OASIS_REVIEW } from '../data/oasis-external-reviews';
 
 const hubLinks = [
@@ -36,10 +37,11 @@ export default function PressPage() {
       />
 
       <div className="min-h-screen bg-white">
-        <section className="border-b border-oasis-green-100 bg-gradient-to-br from-oasis-green-800 via-oasis-green-900 to-oasis-green-950 text-white">
+        <section className="border-b border-oasis-green-100 bg-gradient-to-br from-oasis-green-50 via-white to-oasis-blue-50">
           <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
-            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">Press &amp; Media</h1>
-            <p className="mt-4 max-w-2xl text-lg text-oasis-green-100">
+            <p className="text-sm font-semibold uppercase tracking-wide text-oasis-green-600">Media</p>
+            <h1 className="mt-2 text-4xl font-bold tracking-tight text-oasis-green-900 sm:text-5xl">Press &amp; Media</h1>
+            <p className="mt-4 max-w-2xl text-lg text-oasis-green-800">
               Resources and contacts for journalists, analysts, and partners covering Kahana.
             </p>
           </div>
@@ -69,6 +71,7 @@ export default function PressPage() {
             </p>
             <ul className="mt-8 space-y-6">
               <li className="rounded-xl border border-oasis-green-100 bg-white p-6">
+                <ExternalReviewerAttribution variant="full" className="mb-6" />
                 <div className="flex flex-wrap items-start justify-between gap-4">
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-wide text-oasis-green-600">
@@ -80,7 +83,7 @@ export default function PressPage() {
                     </p>
                     <p className="mt-3 text-xs text-oasis-green-700">
                       {YTC_OASIS_REVIEW.scoreSystemName}: {YTC_OASIS_REVIEW.score}/{YTC_OASIS_REVIEW.scoreMax} (
-                      {YTC_OASIS_REVIEW.scoreLabel}) · Reviewed {YTC_OASIS_REVIEW.reviewedAt} by {YTC_OASIS_REVIEW.author}
+                      {YTC_OASIS_REVIEW.scoreLabel}) · Reviewed {YTC_OASIS_REVIEW.reviewedAt}
                     </p>
                     <p className="mt-2 text-xs text-oasis-green-700/90">{YTC_OASIS_REVIEW.independenceNote}</p>
                   </div>

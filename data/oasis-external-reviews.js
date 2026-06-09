@@ -1,7 +1,11 @@
+import { getCloudinaryImageUrl } from '../utils/cloudinary-mapper';
+
 export const YTC_OASIS_REVIEW = {
   publication: 'Your Tech Compass',
   author: 'Diana Nadim',
   authorRole: 'Co-Founder & Senior Tech Writer',
+  authorLinkedIn: 'https://www.linkedin.com/in/nadim-diana/',
+  authorImagePath: '/assets/headshots/diana_nadim.png',
   reviewUrl: 'https://yourtechcompass.com/oasis-browser-review/',
   methodologyUrl: 'https://yourtechcompass.com/review-methodology/',
   reviewTitle: 'Oasis Browser by Kahana: The Privacy-First AI Browser That Understands Your Tabs',
@@ -75,8 +79,18 @@ export function getFeatureReviewQuote(slug) {
 export const YTC_BLOG_CALLOUT_HTML = `<hr>
 <p><em>Independent review:</em> Your Tech Compass scored Oasis Browser <strong>87/100 (Excellent)</strong> after hands-on testing. <a href="/blog/your-tech-compass-oasis-browser-review-87-2026">Read our summary</a> or the <a href="https://yourtechcompass.com/oasis-browser-review/" target="_blank" rel="noopener noreferrer">full review on Your Tech Compass</a>. Kahana did not pay for this coverage.</p>`;
 
+export function getReviewerImageUrl(options = {}) {
+  return getCloudinaryImageUrl(YTC_OASIS_REVIEW.authorImagePath, {
+    width: 448,
+    height: 448,
+    quality: 'auto:good',
+    ...options,
+  });
+}
+
 export function getYtcReviewSchema() {
-  const { reviewUrl, author, publication, score, scoreMax, reviewTitle, reviewedAt } = YTC_OASIS_REVIEW;
+  const { reviewUrl, author, authorLinkedIn, publication, score, scoreMax, reviewTitle, reviewedAt } =
+    YTC_OASIS_REVIEW;
   return {
     '@type': 'Review',
     '@id': 'https://kahana.co/products/oasis-browser#ytc-review',
@@ -86,6 +100,8 @@ export function getYtcReviewSchema() {
     author: {
       '@type': 'Person',
       name: author,
+      sameAs: authorLinkedIn,
+      image: getReviewerImageUrl(),
     },
     publisher: {
       '@type': 'Organization',
