@@ -9,6 +9,7 @@ import { blogIndex } from '../../data/blog-index';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import AuthorCard from '../../components/AuthorCard';
 import BlogBrowserComparison from '../../components/BlogBrowserComparison';
+import YtcReviewerCallout from '../../components/blog/YtcReviewerCallout';
 import ComparisonTable from '../../components/ComparisonTable';
 import BlogCard from '../../components/BlogCard';
 import { FaLinkedin, FaRegCalendarAlt, FaBookOpen, FaRegClock } from 'react-icons/fa';
@@ -52,6 +53,9 @@ function parseHtmlWithComponents(htmlContent) {
         case 'ComparisonTable':
         case 'MaterialComparisonTable':
           elements.push(<ComparisonTable key={key++} {...props} />);
+          break;
+        case 'YtcReviewerCallout':
+          elements.push(<YtcReviewerCallout key={key++} {...props} />);
           break;
         default:
           // If component not found, render as HTML

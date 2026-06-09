@@ -919,6 +919,12 @@ section.bg-gradient-to-r h2.text-white {
   color: var(--bg-body) !important;
 }
 
+/* Dark hero sections: override global heading color */
+section.text-white h1,
+section.text-white h2 {
+  color: #fff !important;
+}
+
 /* Tailwind CSS setup */
 @tailwind base;
 @tailwind components;

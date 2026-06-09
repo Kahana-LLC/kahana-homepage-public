@@ -1,17 +1,18 @@
 import Link from 'next/link';
+import ExternalReviewerAttribution from '../reviews/ExternalReviewerAttribution';
 import { YTC_OASIS_REVIEW } from '../../data/oasis-external-reviews';
 
 export default function OasisExternalReviewSection() {
   const {
     publication,
     author,
+    authorLinkedIn,
     reviewUrl,
     methodologyUrl,
     score,
     scoreMax,
     scoreLabel,
     scoreSystemName,
-    reviewedAt,
     independenceNote,
     pullQuote,
     testedHighlights,
@@ -42,6 +43,8 @@ export default function OasisExternalReviewSection() {
           .
         </p>
 
+        <ExternalReviewerAttribution variant="full" className="mt-8" />
+
         <div className="mt-10 grid gap-8 lg:grid-cols-[minmax(0,220px)_1fr] lg:items-start">
           <div className="rounded-2xl border border-oasis-green-800/12 bg-oasis-green-50 p-6 text-center lg:text-left">
             <p className="text-xs font-semibold uppercase tracking-wide text-oasis-green-800/70">{scoreSystemName}</p>
@@ -50,9 +53,6 @@ export default function OasisExternalReviewSection() {
               <span className="text-lg font-semibold text-oasis-green-800/60"> / {scoreMax}</span>
             </p>
             <p className="mt-1 text-sm font-semibold text-[#7a9200]">{scoreLabel}</p>
-            <p className="mt-3 text-xs text-oasis-green-800/70">
-              Reviewed {reviewedAt} by {author}
-            </p>
             <a
               href={reviewUrl}
               target="_blank"
@@ -67,7 +67,16 @@ export default function OasisExternalReviewSection() {
             <blockquote className="rounded-xl border border-oasis-green-800/10 bg-oasis-green-50/60 p-5">
               <p className="text-oasis-green-800 leading-relaxed">&ldquo;{pullQuote}&rdquo;</p>
               <footer className="mt-3 text-sm text-oasis-green-800/75">
-                — {author}, {publication}
+                —{' '}
+                <a
+                  href={authorLinkedIn}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-brand-link no-underline hover:underline"
+                >
+                  {author}
+                </a>
+                , {publication}
               </footer>
             </blockquote>
 
