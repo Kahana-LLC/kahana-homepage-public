@@ -24,7 +24,7 @@ export default function PrivacyPolicy() {
       <SEO 
         title="Privacy Policy"
         description="Kahana's privacy policy outlines how we protect and handle your data while using our enterprise browsing platform."
-        url="https://kahana.co/privacy-policy"
+        url="https://kahana.io/privacy-policy"
         type="website"
       />
 

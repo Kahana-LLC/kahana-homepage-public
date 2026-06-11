@@ -29,7 +29,7 @@ export default function EventDetailPage({ event }) {
       <SEO
         title={`${event.title} | Kahana Events`}
         description={event.description}
-        url={`https://kahana.co/events/${event.slug}`}
+        url={`https://kahana.io/events/${event.slug}`}
         type="website"
       />
 

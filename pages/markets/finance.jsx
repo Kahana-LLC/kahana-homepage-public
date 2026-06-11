@@ -199,8 +199,8 @@ export default function Finance({ financeBlogs }) {
       <SEO 
         title="Financial services: Secure SaaS access with Oasis | Kahana"
         description="Managed enterprise browser for financial services: governance in the browser for banking and markets SaaS, client and operations tools, with unified policies, identity and DLP integration, and secure contractor access without default laptop shipping."
-        image="https://kahana.co/assets/finance-preview.png"
-        url="https://kahana.co/markets/finance"
+        image="https://kahana.io/assets/finance-preview.png"
+        url="https://kahana.io/markets/finance"
         type="webpage"
         schema={financeSchema}
       />

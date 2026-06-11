@@ -8,7 +8,7 @@ import { getFeatureRelatedDocsProps } from '../../utils/featurePageStaticProps';
 
 const feature = oasisCapabilities.find((c) => c.slug === 'oasis-enterprise-identity-dlp');
 const narrative = getEnterpriseFeatureNarrative(feature.slug);
-const CANONICAL = 'https://kahana.co/features/oasis-enterprise-identity-dlp';
+const CANONICAL = 'https://kahana.io/features/oasis-enterprise-identity-dlp';
 
 export async function getStaticProps() {
   return getFeatureRelatedDocsProps('oasis-enterprise-identity-dlp');
@@ -21,7 +21,7 @@ export default function OasisEnterpriseIdentityDlpPage({ relatedDocs = [] }) {
     name: feature.title,
     url: CANONICAL,
     description: feature.description,
-    isPartOf: { '@type': 'WebSite', name: 'Kahana', url: 'https://kahana.co' },
+    isPartOf: { '@type': 'WebSite', name: 'Kahana', url: 'https://kahana.io' },
   };
 
   return (

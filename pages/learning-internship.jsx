@@ -262,7 +262,7 @@ export default function LearningInternship() {
       <SEO
         title="Kahana Learning Internship"
         description="Join our educational internship program designed for individuals who want to learn and gain hands-on experience in a fast-paced, innovative startup environment."
-        url="https://kahana.co/learning-internship"
+        url="https://kahana.io/learning-internship"
         type="website"
       />
 

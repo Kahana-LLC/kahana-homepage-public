@@ -1,3 +1,4 @@
+import { absoluteUrl } from '../config/site';
 import { getCloudinaryImageUrl } from '../utils/cloudinary-mapper';
 
 export const YTC_OASIS_REVIEW = {
@@ -93,7 +94,7 @@ export function getYtcReviewSchema() {
     YTC_OASIS_REVIEW;
   return {
     '@type': 'Review',
-    '@id': 'https://kahana.co/products/oasis-browser#ytc-review',
+    '@id': absoluteUrl('/products/oasis-browser#ytc-review'),
     name: reviewTitle,
     reviewBody: YTC_OASIS_REVIEW.excerpt,
     datePublished: '2026-06-01',
@@ -116,7 +117,7 @@ export function getYtcReviewSchema() {
     },
     url: reviewUrl,
     itemReviewed: {
-      '@id': 'https://kahana.co/products/oasis-browser#software',
+      '@id': absoluteUrl('/products/oasis-browser#software'),
     },
   };
 }

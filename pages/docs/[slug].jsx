@@ -112,7 +112,7 @@ export default function DocPage({ doc, relatedDocs }) {
       <SEO
         title={`${doc.title} | Documentation`}
         description={doc.description}
-        url={`https://kahana.co/docs/${doc.slug}`}
+        url={`https://kahana.io/docs/${doc.slug}`}
         type="article"
       />
 

@@ -20,7 +20,7 @@ export default function Security() {
       <SEO 
         title="Security"
         description="Learn about Kahana's commitment to security and how we protect your data while using our enterprise browsing platform."
-        url="https://kahana.co/security"
+        url="https://kahana.io/security"
         type="website"
       />
 

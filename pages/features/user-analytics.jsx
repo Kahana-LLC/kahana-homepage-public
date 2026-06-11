@@ -5,7 +5,7 @@ import UserAnalyticsFeatureVisuals from '../../components/features/UserAnalytics
 import SharedCTA from '../../components/SharedCTA';
 import { getFeatureRelatedDocsProps } from '../../utils/featurePageStaticProps';
 
-const CANONICAL = 'https://kahana.co/features/user-analytics';
+const CANONICAL = 'https://kahana.io/features/user-analytics';
 
 const seoDescription =
   'Coming soon: personal usage insights in Oasis Browser, a preview of how you could see assistant activity, skills, tokens, and training signals in one place. Not available yet; illustrations only.';
@@ -21,7 +21,7 @@ export default function UserAnalyticsFeatures({ relatedDocs = [] }) {
     name: 'Oasis Browser: Usage insights (coming soon)',
     url: CANONICAL,
     description: seoDescription,
-    isPartOf: { '@type': 'WebSite', name: 'Kahana', url: 'https://kahana.co' },
+    isPartOf: { '@type': 'WebSite', name: 'Kahana', url: 'https://kahana.io' },
   };
 
   return (

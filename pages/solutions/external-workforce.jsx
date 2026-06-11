@@ -161,8 +161,8 @@ export default function ExternalWorkforce() {
       <SEO
         title="External workforce: Secure SaaS access with Oasis | Kahana"
         description="Managed enterprise browser for contractors and partners: governance in the browser, unified policies across devices, IdP and DLP integration, and secure access without default laptop or VDI programs."
-        image="https://kahana.co/assets/oasis-browser-preview.png"
-        url="https://kahana.co/solutions/external-workforce"
+        image="https://kahana.io/assets/oasis-browser-preview.png"
+        url="https://kahana.io/solutions/external-workforce"
         type="webpage"
         schema={pageSchema}
       />

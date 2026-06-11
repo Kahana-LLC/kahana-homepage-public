@@ -37,7 +37,7 @@ export default function PressKitPage() {
       <SEO
         title="Press kit"
         description="Official Kahana logos, brand colors, leadership imagery, and a press inquiries form for journalists and partners."
-        url="https://kahana.co/press-kit"
+        url="https://kahana.io/press-kit"
         type="website"
       />
 

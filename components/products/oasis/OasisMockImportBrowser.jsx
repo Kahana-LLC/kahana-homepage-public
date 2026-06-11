@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { subtleTransition, usePrefersReducedMotion } from '../../solutions/visuals/motion';
 
 const BROWSER_ROWS = [
-  { id: 'c1', label: 'Chrome: kahana.co', icon: 'chrome', selected: true },
+  { id: 'c1', label: 'Chrome: kahana.io', icon: 'chrome', selected: true },
   { id: 'c2', label: 'Chrome: Kahana', icon: 'chrome' },
   { id: 'c3', label: 'Chrome: Adam', icon: 'chrome' },
   { id: 'b1', label: 'Brave: Personal', icon: 'brave' },

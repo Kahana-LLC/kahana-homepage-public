@@ -24,7 +24,7 @@ const OasisSkillsGallery = dynamic(
   }
 );
 
-const CANONICAL = 'https://kahana.co/features/oasis-assistant';
+const CANONICAL = 'https://kahana.io/features/oasis-assistant';
 
 export async function getStaticProps() {
   return getFeatureRelatedDocsProps('oasis-assistant');
@@ -38,7 +38,7 @@ export default function OasisAssistantFeaturePage({ relatedDocs = [] }) {
     url: CANONICAL,
     description:
       'Oasis assistant: chat, tools, and illustrative skills grounded in tabs, history, and the page you are on, not a generic side chat.',
-    isPartOf: { '@type': 'WebSite', name: 'Kahana', url: 'https://kahana.co' },
+    isPartOf: { '@type': 'WebSite', name: 'Kahana', url: 'https://kahana.io' },
   };
 
   return (

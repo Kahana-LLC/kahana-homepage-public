@@ -161,8 +161,8 @@ export default function ZeroTrustSecurity() {
       <SEO
         title="Zero trust: Browser session governance with Oasis | Kahana"
         description="Managed enterprise browser for zero trust programs: extend identity and DLP into SaaS sessions, reduce implicit trust in the browser, and govern contractor and hybrid access alongside your broader architecture."
-        image="https://kahana.co/assets/oasis-browser-preview.png"
-        url="https://kahana.co/solutions/zero-trust-security"
+        image="https://kahana.io/assets/oasis-browser-preview.png"
+        url="https://kahana.io/solutions/zero-trust-security"
         type="webpage"
         schema={pageSchema}
       />

@@ -7,8 +7,8 @@ export default function DocMeta({ doc }) {
 
   // Generate breadcrumb schema for documentation
   const breadcrumbItems = [
-    { name: "Documentation", url: "https://kahana.co/docs" },
-    { name: doc.title, url: `https://kahana.co/docs/${doc.slug}` },
+    { name: "Documentation", url: "https://kahana.io/docs" },
+    { name: doc.title, url: `https://kahana.io/docs/${doc.slug}` },
   ];
   const schema = generateBreadcrumbSchema(breadcrumbItems);
 
@@ -20,7 +20,7 @@ export default function DocMeta({ doc }) {
         "Learn how to use Kahana's products and features with our comprehensive documentation."
       }
       image={doc.featuredImage || "/images/docs-hero.jpg"}
-      url={`https://kahana.co/docs/${doc.slug}`}
+      url={`https://kahana.io/docs/${doc.slug}`}
       type="article"
       twitterHandle="@kahana"
       schema={schema}

@@ -34,7 +34,7 @@ export default function TermsAndConditions() {
       <SEO 
         title="Terms and Conditions"
         description="Read Kahana's terms and conditions for using our enterprise browsing solutions."
-        url="https://kahana.co/terms-and-conditions"
+        url="https://kahana.io/terms-and-conditions"
         type="website"
       />
 
@@ -68,7 +68,7 @@ export default function TermsAndConditions() {
                 Last Updated: May 24th, 2026
               </p>
               <p className="text-gray-700 leading-relaxed mb-6">
-                We appreciate your interest in Kahana Group Inc. (referred to as "Kahana," "we," "our," or "us") and our website located at https://kahana.co/, together with our associated websites, downloadable applications, and additional services we provide (collectively referred to as the "Service"). These Terms of Service constitute a legally binding agreement between you and Kahana that governs your access to and use of the Service.
+                We appreciate your interest in Kahana Group Inc. (referred to as "Kahana," "we," "our," or "us") and our website located at https://kahana.io/, together with our associated websites, downloadable applications, and additional services we provide (collectively referred to as the "Service"). These Terms of Service constitute a legally binding agreement between you and Kahana that governs your access to and use of the Service.
               </p>
             </section>
 
@@ -152,7 +152,7 @@ export default function TermsAndConditions() {
 
               <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">4.2. Pricing</h3>
               <p className="text-gray-700 leading-relaxed mb-6">
-                Kahana retains the exclusive right to establish pricing for the Service. Your usage of the Service will be tracked and deducted from your purchased credit balance. Kahana will use commercially reasonable efforts to alert you when your purchased credits are nearing depletion. Should your usage exceed your purchased credits, Kahana may restrict your access to the Service until you purchase additional credits. Kahana will make reasonable efforts to maintain current pricing information on the Service and on Kahana's pricing page located at kahana.co/pricing. We recommend that you periodically review our website for the most current pricing information. Kahana may modify fees for any Service feature, including implementing new fees or charges, provided that Kahana gives you advance notice of such changes before they become effective. Kahana may, in its sole discretion, extend promotional offers with varying features and pricing to any of its customers. Such promotional offers, unless specifically extended to you, do not apply to your subscription or these Terms.
+                Kahana retains the exclusive right to establish pricing for the Service. Your usage of the Service will be tracked and deducted from your purchased credit balance. Kahana will use commercially reasonable efforts to alert you when your purchased credits are nearing depletion. Should your usage exceed your purchased credits, Kahana may restrict your access to the Service until you purchase additional credits. Kahana will make reasonable efforts to maintain current pricing information on the Service and on Kahana's pricing page located at kahana.io/pricing. We recommend that you periodically review our website for the most current pricing information. Kahana may modify fees for any Service feature, including implementing new fees or charges, provided that Kahana gives you advance notice of such changes before they become effective. Kahana may, in its sole discretion, extend promotional offers with varying features and pricing to any of its customers. Such promotional offers, unless specifically extended to you, do not apply to your subscription or these Terms.
               </p>
 
               <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">4.3. Payment Authorization</h3>

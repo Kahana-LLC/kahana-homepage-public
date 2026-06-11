@@ -141,7 +141,7 @@ export default function ContactPage() {
       <SEO
         title="Let's Connect"
         description="We'd love to hear from you and explore how Kahana can enhance your browsing experience."
-        url="https://kahana.co/contact"
+        url="https://kahana.io/contact"
         type="website"
       />
 

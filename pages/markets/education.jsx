@@ -187,8 +187,8 @@ export default function Education({ educationBlogs }) {
       <SEO
         title="Education: Secure SaaS access with Oasis | Kahana"
         description="Managed enterprise browser for education: governance in the browser for LMS, SIS, and campus SaaS, with unified policies, identity and DLP integration, and secure access for adjuncts and partners without default laptop shipping."
-        image="https://kahana.co/assets/oasis-browser-preview.png"
-        url="https://kahana.co/markets/education"
+        image="https://kahana.io/assets/oasis-browser-preview.png"
+        url="https://kahana.io/markets/education"
         type="webpage"
         schema={educationSchema}
       />

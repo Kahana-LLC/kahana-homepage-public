@@ -24,7 +24,7 @@ const OasisAmplifierVisuals = dynamic(
   }
 );
 
-const CANONICAL = 'https://kahana.co/features/oasis-amplifier';
+const CANONICAL = 'https://kahana.io/features/oasis-amplifier';
 
 /** Mirrors in-app copy; single source for token claims on this page. */
 const QUALIFYING_TRAINING_BONUS_TOKENS = 1000;
@@ -57,7 +57,7 @@ export default function OasisAmplifierFeaturePage({ relatedDocs = [] }) {
     url: CANONICAL,
     description:
       'Amplifier is Oasis structured Training: tags, notes, and thumbs tied to real conversations. Qualifying training can earn bonus daily tokens (limits vary by plan). Feedback improves product quality and your experience; deeper interaction logging and training modes are evolving.',
-    isPartOf: { '@type': 'WebSite', name: 'Kahana', url: 'https://kahana.co' },
+    isPartOf: { '@type': 'WebSite', name: 'Kahana', url: 'https://kahana.io' },
   };
 
   return (

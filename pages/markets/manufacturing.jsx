@@ -199,8 +199,8 @@ export default function Manufacturing({ manufacturingBlogs }) {
       <SEO 
         title="Manufacturing: Secure SaaS access with Oasis | Kahana"
         description="Managed enterprise browser for manufacturers: governance in the browser for ERP, supplier portals, and plant IT, with unified policies, identity and DLP integration, and secure contractor and partner access without default laptop shipping."
-        image="https://kahana.co/assets/manufacturing-preview.png"
-        url="https://kahana.co/markets/manufacturing"
+        image="https://kahana.io/assets/manufacturing-preview.png"
+        url="https://kahana.io/markets/manufacturing"
         type="webpage"
         schema={manufacturingSchema}
       />

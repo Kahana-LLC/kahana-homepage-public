@@ -72,7 +72,7 @@ export default function AllIndustries() {
       <SEO 
         title="All Industries | Kahana"
         description="Explore Kahana's solutions for every industry: manufacturing, healthcare, financial, government, technology, and more."
-        url="https://kahana.co/markets/all"
+        url="https://kahana.io/markets/all"
         type="webpage"
       />
       <Head>

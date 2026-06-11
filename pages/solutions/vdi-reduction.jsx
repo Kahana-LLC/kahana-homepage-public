@@ -160,8 +160,8 @@ export default function VdiReduction() {
       <SEO
         title="VDI reduction: Governed SaaS access with Oasis | Kahana"
         description="Managed enterprise browser to reduce VDI sprawl for SaaS-heavy roles: session policies, IdP and DLP integration, and practical access without a full virtual desktop for every user."
-        image="https://kahana.co/assets/oasis-browser-preview.png"
-        url="https://kahana.co/solutions/vdi-reduction"
+        image="https://kahana.io/assets/oasis-browser-preview.png"
+        url="https://kahana.io/solutions/vdi-reduction"
         type="webpage"
         schema={pageSchema}
       />

@@ -1,3 +1,5 @@
+import { absoluteUrl } from './site';
+
 /**
  * Documentation Configuration
  * 
@@ -41,7 +43,7 @@ export const docsConfig = {
     titleTemplate: "%s | Documentation",
     description:
       "Reference articles for Oasis Browser: what is available, how features behave, and where to look next.",
-    baseUrl: "https://kahana.co/docs"
+    baseUrl: absoluteUrl('/docs')
   }
 };
 

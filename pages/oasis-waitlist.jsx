@@ -10,7 +10,7 @@ export default function OasisWaitlist() {
       <SEO
         title="Get Early Access"
         description="Join the Oasis browser waitlist and be among the first to get early access."
-        url="https://kahana.co/oasis-waitlist"
+        url="https://kahana.io/oasis-waitlist"
         type="website"
       />
       <Head>

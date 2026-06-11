@@ -83,7 +83,7 @@ export default function WhitePaperPDF() {
       {/* Social Share Component - Hidden floating button, we'll add inline sharing instead */}
       {/* <WhitePaperSocialShare 
         title="The Future of Ergonomic Work: A White Paper"
-        url={typeof window !== 'undefined' ? window.location.href : 'https://kahana.com/white-paper-future-of-ergonomic-work'}
+        url={typeof window !== 'undefined' ? window.location.href : 'https://kahana.iom/white-paper-future-of-ergonomic-work'}
         excerpt="Discover how AR/VR technology is revolutionizing the future of ergonomic work and productivity."
       /> */}
 
@@ -5712,7 +5712,7 @@ export default function WhitePaperPDF() {
             {/* LinkedIn */}
             <button
               onClick={() => {
-                const url = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(typeof window !== 'undefined' ? window.location.href : 'https://kahana.com/white-paper-future-of-ergonomic-work')}`;
+                const url = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(typeof window !== 'undefined' ? window.location.href : 'https://kahana.iom/white-paper-future-of-ergonomic-work')}`;
                 window.open(url, '_blank', 'width=600,height=600,scrollbars=yes,resizable=yes');
               }}
               className="flex items-center justify-center w-8 h-8 btn-secondary rounded-md transition-colors duration-200"
@@ -5727,7 +5727,7 @@ export default function WhitePaperPDF() {
             <button
               onClick={() => {
                 const title = "The Future of Ergonomic Work: A White Paper";
-                const url = typeof window !== 'undefined' ? window.location.href : 'https://kahana.com/white-paper-future-of-ergonomic-work';
+                const url = typeof window !== 'undefined' ? window.location.href : 'https://kahana.iom/white-paper-future-of-ergonomic-work';
                 const twitterText = encodeURIComponent(`${title} ${url}`);
                 const twitterUrl = `https://twitter.com/intent/tweet?text=${twitterText}`;
                 window.open(twitterUrl, '_blank', 'width=600,height=400,scrollbars=yes,resizable=yes');
@@ -5744,7 +5744,7 @@ export default function WhitePaperPDF() {
             <button
               onClick={() => {
                 const title = "The Future of Ergonomic Work: A White Paper";
-                const url = typeof window !== 'undefined' ? window.location.href : 'https://kahana.com/white-paper-future-of-ergonomic-work';
+                const url = typeof window !== 'undefined' ? window.location.href : 'https://kahana.iom/white-paper-future-of-ergonomic-work';
                 const text = "Discover how AR/VR technology is revolutionizing the future of ergonomic work and productivity.";
                 const subject = encodeURIComponent(title);
                 const body = encodeURIComponent(`${text}\n\nRead more: ${url}`);
@@ -5763,7 +5763,7 @@ export default function WhitePaperPDF() {
             <button
               onClick={() => {
                 const title = "The Future of Ergonomic Work: A White Paper";
-                const url = typeof window !== 'undefined' ? window.location.href : 'https://kahana.com/white-paper-future-of-ergonomic-work';
+                const url = typeof window !== 'undefined' ? window.location.href : 'https://kahana.iom/white-paper-future-of-ergonomic-work';
                 const smsText = encodeURIComponent(`${title} - ${url}`);
                 const smsUrl = `sms:?body=${smsText}`;
                 window.open(smsUrl);
@@ -5782,7 +5782,7 @@ export default function WhitePaperPDF() {
                 e.preventDefault();
                 e.stopPropagation();
                 
-                const url = typeof window !== 'undefined' ? window.location.href : 'https://kahana.com/white-paper-future-of-ergonomic-work';
+                const url = typeof window !== 'undefined' ? window.location.href : 'https://kahana.iom/white-paper-future-of-ergonomic-work';
                 const button = e.currentTarget;
                 
                 try {

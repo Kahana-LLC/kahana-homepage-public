@@ -185,8 +185,8 @@ export default function Retail({ retailBlogs }) {
       <SEO 
         title="Retail & e-commerce: Secure SaaS access with Oasis | Kahana"
         description="Managed enterprise browser for retail: governance in the browser for store and HQ SaaS, franchise and vendor portals, with unified policies, identity and DLP integration, and secure seasonal access without default laptop shipping."
-        image="https://kahana.co/assets/oasis-browser-preview.png"
-        url="https://kahana.co/markets/retail"
+        image="https://kahana.io/assets/oasis-browser-preview.png"
+        url="https://kahana.io/markets/retail"
         type="webpage"
         schema={retailSchema}
       />

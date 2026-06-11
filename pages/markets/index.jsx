@@ -115,8 +115,8 @@ export default function MarketsIndex() {
         <meta property="og:title" content="Markets - Kahana" />
         <meta property="og:description" content="Discover how Kahana's AI browser solutions are tailored for different industries and market segments." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://kahana.co/markets" />
-        <link rel="canonical" href="https://kahana.co/markets" />
+        <meta property="og:url" content="https://kahana.io/markets" />
+        <link rel="canonical" href="https://kahana.io/markets" />
       </Head>
 
       <div className="bg-white">

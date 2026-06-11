@@ -111,7 +111,7 @@ export default function EarlyBirdDiscount() {
       <SEO
         title="Early Access Deposit - Oasis AI Browser | Kahana"
         description="Reserve your spot for early access to Oasis with a $80 deposit. Get lifetime discount of $80/year and full refund option. Early access available within 6 months."
-        url="https://kahana.co/oasis-beta-program"
+        url="https://kahana.io/oasis-beta-program"
         type="website"
       />
       <Head>

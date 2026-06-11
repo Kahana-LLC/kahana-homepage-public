@@ -161,8 +161,8 @@ export default function WorkplaceEnablement() {
       <SEO
         title="Workplace enablement: Managed enterprise browser | Kahana"
         description="Standardize corporate web and SaaS access with Oasis: a managed enterprise browser for digital workplace programs, identity-backed sessions, and IT-operationalized policy without consumer-browser sprawl."
-        image="https://kahana.co/assets/oasis-browser-preview.png"
-        url="https://kahana.co/solutions/workplace-enablement"
+        image="https://kahana.io/assets/oasis-browser-preview.png"
+        url="https://kahana.io/solutions/workplace-enablement"
         type="webpage"
         schema={pageSchema}
       />

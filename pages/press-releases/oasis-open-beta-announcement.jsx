@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import SEO from '../../components/SEO';
 
-const CANONICAL = 'https://kahana.co/press-releases/oasis-open-beta-announcement';
+const CANONICAL = 'https://kahana.io/press-releases/oasis-open-beta-announcement';
 
 const linkClass = 'font-semibold text-oasis-green-700 no-underline hover:text-oasis-green-900 hover:underline';
 

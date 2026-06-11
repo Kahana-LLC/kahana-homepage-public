@@ -9,7 +9,7 @@ import { getFeatureRelatedDocsProps } from '../../utils/featurePageStaticProps';
 
 const feature = oasisCapabilities.find((c) => c.slug === 'oasis-enterprise-faster-paths');
 const narrative = getEnterpriseFeatureNarrative(feature.slug);
-const CANONICAL = 'https://kahana.co/features/oasis-enterprise-faster-paths';
+const CANONICAL = 'https://kahana.io/features/oasis-enterprise-faster-paths';
 
 export async function getStaticProps() {
   return getFeatureRelatedDocsProps('oasis-enterprise-faster-paths');
@@ -22,7 +22,7 @@ export default function OasisEnterpriseFasterPathsPage({ relatedDocs = [] }) {
     name: feature.title,
     url: CANONICAL,
     description: feature.description,
-    isPartOf: { '@type': 'WebSite', name: 'Kahana', url: 'https://kahana.co' },
+    isPartOf: { '@type': 'WebSite', name: 'Kahana', url: 'https://kahana.io' },
   };
 
   return (

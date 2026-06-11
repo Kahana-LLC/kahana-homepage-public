@@ -13,7 +13,7 @@ const OasisMockOnboardingChecklist = dynamic(
   }
 );
 
-const CANONICAL = 'https://kahana.co/features/oasis-onboarding';
+const CANONICAL = 'https://kahana.io/features/oasis-onboarding';
 
 export async function getStaticProps() {
   return getFeatureRelatedDocsProps('oasis-onboarding');
@@ -27,7 +27,7 @@ export default function OasisOnboardingFeaturePage({ relatedDocs = [] }) {
     url: CANONICAL,
     description:
       'Oasis onboarding: a short docked checklist so new users sign in, send a first prompt, and try voice without guessing what “done” means.',
-    isPartOf: { '@type': 'WebSite', name: 'Kahana', url: 'https://kahana.co' },
+    isPartOf: { '@type': 'WebSite', name: 'Kahana', url: 'https://kahana.io' },
   };
 
   return (

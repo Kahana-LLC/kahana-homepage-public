@@ -197,8 +197,8 @@ export default function Healthcare({ healthcareBlogs }) {
       <SEO 
         title="Healthcare: Secure SaaS access with Oasis | Kahana"
         description="Managed enterprise browser for healthcare: governance in the browser for EHR-adjacent apps, patient portals, and health IT, with unified policies, identity and DLP integration, and secure vendor and locum access without default laptop shipping."
-        image="https://kahana.co/assets/healthcare-preview.png"
-        url="https://kahana.co/markets/healthcare"
+        image="https://kahana.io/assets/healthcare-preview.png"
+        url="https://kahana.io/markets/healthcare"
         type="webpage"
         schema={healthcareSchema}
       />

@@ -1,4 +1,4 @@
-const EXTERNAL_DATA_URL = "https://kahana.co";
+const { SITE_URL: EXTERNAL_DATA_URL } = require("../../config/site");
 
 export default function handler(req, res) {
   res.setHeader("Content-Type", "text/xml");
