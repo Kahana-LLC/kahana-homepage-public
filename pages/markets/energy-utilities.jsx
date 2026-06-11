@@ -187,8 +187,8 @@ export default function EnergyUtilities({ energyBlogs }) {
       <SEO 
         title="Energy & utilities: Secure SaaS access with Oasis | Kahana"
         description="Managed enterprise browser for energy and utilities: governance in the browser for operations SaaS, vendor portals, and field IT, with unified policies, identity and DLP integration, and secure contractor access without default laptop shipping."
-        image="https://kahana.co/assets/energy-utilities-preview.png"
-        url="https://kahana.co/markets/energy-utilities"
+        image="https://kahana.io/assets/energy-utilities-preview.png"
+        url="https://kahana.io/markets/energy-utilities"
         type="webpage"
         schema={energyUtilitiesSchema}
       />

@@ -41,7 +41,7 @@ const nextConfig = {
       "images.unsplash.com",
       "firebasestorage.googleapis.com",
       "images.pexels.com",
-      "kahana.co",
+      "kahana.io",
       "res.cloudinary.com",
       "www.thedailystar.net",
       "media.licdn.com",
@@ -91,6 +91,11 @@ const nextConfig = {
       "files.cyberriskalliance.com",
     ],
     remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "kahana.co",
+        pathname: "/**",
+      },
       {
         protocol: "https",
         hostname: "ph-files.imgix.net",

@@ -10,7 +10,7 @@ export default function TestimonialsPage() {
       <SEO
         title="Oasis Browser Testimonials"
         description="Read Oasis browser testimonials from real users on privacy-first browsing, no ads, integrated AI, tab organization, and transparent data collection."
-        url="https://kahana.co/testimonials"
+        url="https://kahana.io/testimonials"
         type="website"
       />
 

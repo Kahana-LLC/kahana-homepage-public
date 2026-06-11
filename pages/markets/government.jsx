@@ -185,8 +185,8 @@ export default function Government({ governmentBlogs }) {
       <SEO 
         title="Government & public sector: Secure SaaS access with Oasis | Kahana"
         description="Managed enterprise browser for government: governance in the browser for agency SaaS, contractor and integrator access, with unified policies, identity and DLP integration, within your authorization and compliance path."
-        image="https://kahana.co/assets/government-preview.png"
-        url="https://kahana.co/markets/government"
+        image="https://kahana.io/assets/government-preview.png"
+        url="https://kahana.io/markets/government"
         type="webpage"
         schema={governmentSchema}
       />

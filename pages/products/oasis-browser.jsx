@@ -36,7 +36,7 @@ export default function OasisBrowser() {
     publisher: {
       '@type': 'Organization',
       name: 'Kahana',
-      url: 'https://kahana.co',
+      url: 'https://kahana.io',
       description: 'Kahana develops Oasis and enterprise browser products.',
     },
   };
@@ -46,18 +46,18 @@ export default function OasisBrowser() {
     '@graph': [
       {
         '@type': 'WebPage',
-        '@id': 'https://kahana.co/products/oasis-browser#webpage',
+        '@id': 'https://kahana.io/products/oasis-browser#webpage',
         name: 'Oasis Browser',
         description:
           'Oasis: browser-native AI assistant, voice, and quick import from other browsers.',
-        url: 'https://kahana.co/products/oasis-browser',
-        isPartOf: { '@type': 'WebSite', name: 'Kahana', url: 'https://kahana.co' },
-        about: { '@id': 'https://kahana.co/products/oasis-browser#software' },
+        url: 'https://kahana.io/products/oasis-browser',
+        isPartOf: { '@type': 'WebSite', name: 'Kahana', url: 'https://kahana.io' },
+        about: { '@id': 'https://kahana.io/products/oasis-browser#software' },
       },
       {
         ...softwareSchema,
-        '@id': 'https://kahana.co/products/oasis-browser#software',
-        review: { '@id': 'https://kahana.co/products/oasis-browser#ytc-review' },
+        '@id': 'https://kahana.io/products/oasis-browser#software',
+        review: { '@id': 'https://kahana.io/products/oasis-browser#ytc-review' },
       },
       getYtcReviewSchema(),
     ],
@@ -72,7 +72,7 @@ export default function OasisBrowser() {
         title="Oasis Browser | AI in your real browser context"
         description={seoDescription}
         image={previewImageUrl}
-        url="https://kahana.co/products/oasis-browser"
+        url="https://kahana.io/products/oasis-browser"
         type="product"
         schema={pageSchema}
       />

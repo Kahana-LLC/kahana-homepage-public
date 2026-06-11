@@ -4,7 +4,7 @@ import {
   getDocsForSitemap,
 } from "../utils/sitemapUtils";
 
-const EXTERNAL_DATA_URL = "https://kahana.co";
+const { SITE_URL: EXTERNAL_DATA_URL } = require("../config/site");
 
 // Define priority levels for different types of pages with a more logical hierarchy
 const PRIORITIES = {

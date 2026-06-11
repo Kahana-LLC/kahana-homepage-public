@@ -154,7 +154,7 @@ export default function OasisPricing() {
         name: 'Enterprise',
         description: 'Custom pricing. Schedule a demo for a quote.',
         priceCurrency: 'USD',
-        url: 'https://kahana.co/schedule-demo',
+        url: 'https://kahana.io/schedule-demo',
         availability: 'https://schema.org/InStock'
       }
     ]
@@ -166,7 +166,7 @@ export default function OasisPricing() {
         title="Oasis Pricing - Choose Your Plan"
         description="Select the perfect Oasis plan for your workflow. From free exploration to enterprise-scale solutions, find the right fit for your AI-powered workspace needs."
         image={getCloudinaryImageUrl('/assets/oasis-browser-preview.png', { width: 1200, quality: 'auto:good' })}
-        url="https://kahana.co/oasis-pricing"
+        url="https://kahana.io/oasis-pricing"
         type="website"
         schema={pricingSchema}
       />

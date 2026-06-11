@@ -32,7 +32,7 @@ export default function PressPage() {
       <SEO
         title="Press & Media"
         description="Press kit, official press releases, and media contact information for Kahana."
-        url="https://kahana.co/press"
+        url="https://kahana.io/press"
         type="website"
       />
 

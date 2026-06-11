@@ -161,8 +161,8 @@ export default function SaasAndWebApps() {
       <SEO
         title="SaaS and web apps: Secure access with Oasis | Kahana"
         description="Managed enterprise browser for SaaS: governance in the browser where work happens, unified policies across devices, IdP and DLP integration, and secure contractor access without default laptop or VDI programs."
-        image="https://kahana.co/assets/oasis-browser-preview.png"
-        url="https://kahana.co/solutions/saas-and-web-apps"
+        image="https://kahana.io/assets/oasis-browser-preview.png"
+        url="https://kahana.io/solutions/saas-and-web-apps"
         type="webpage"
         schema={pageSchema}
       />

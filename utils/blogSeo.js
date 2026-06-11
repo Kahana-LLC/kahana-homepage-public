@@ -4,7 +4,7 @@
  * use seoTitle and metaDescription in blog JSON for CTR-optimized snippets when needed.
  */
 
-const DEFAULT_BASE_URL = 'https://kahana.co';
+const { SITE_URL: DEFAULT_BASE_URL } = require('../config/site');
 const META_DESCRIPTION_MAX = 155; // Google typically shows ~155–160 chars
 const TITLE_TAG_MAX = 60;         // Title tag ~50–60 chars for full display in SERPs
 
@@ -26,7 +26,7 @@ function truncateForMeta(text, maxLen = META_DESCRIPTION_MAX) {
 /**
  * Get SEO values for a blog post. Supports optional CTR overrides in post JSON.
  * @param {object} post - Blog post (title, excerpt, slug; optional: seoTitle, metaDescription, focusKeyword)
- * @param {string} baseUrl - Site base URL (default https://kahana.co)
+ * @param {string} baseUrl - Site base URL (default https://kahana.io)
  * @returns {{ titleTag: string, metaDescription: string, canonicalUrl: string, focusKeyword: string }}
  */
 function getBlogPostSeo(post, baseUrl = DEFAULT_BASE_URL) {

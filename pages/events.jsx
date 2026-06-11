@@ -8,7 +8,7 @@ export default function EventsPage() {
       <SEO
         title="Events | Kahana"
         description="Explore upcoming Kahana events and live sessions on AI productivity, security, and data control."
-        url="https://kahana.co/events"
+        url="https://kahana.io/events"
         type="website"
       />
 

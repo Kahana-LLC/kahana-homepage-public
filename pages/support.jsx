@@ -9,7 +9,7 @@ export default function Support() {
       <SEO
         title="Support"
         description="Access documentation and resources for Kahana's enterprise browsing solutions."
-        url="https://kahana.co/support"
+        url="https://kahana.io/support"
         type="website"
       />
 

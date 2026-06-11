@@ -181,8 +181,8 @@ export default function RemoteWorkforce() {
       <SEO
         title="Remote workforce: Secure SaaS access with Oasis | Kahana"
         description="Managed enterprise browser for remote and hybrid teams: governance in the browser, unified policies across sites and devices, IdP and DLP integration, and secure work without defaulting to office-centric access only."
-        image="https://kahana.co/assets/oasis-browser-preview.png"
-        url="https://kahana.co/solutions/remote-workforce"
+        image="https://kahana.io/assets/oasis-browser-preview.png"
+        url="https://kahana.io/solutions/remote-workforce"
         type="webpage"
         schema={pageSchema}
       />

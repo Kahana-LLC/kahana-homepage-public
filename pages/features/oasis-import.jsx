@@ -22,7 +22,7 @@ const importItems = [
   'Extensions (where the platform can transfer them)',
 ];
 
-const CANONICAL = 'https://kahana.co/features/oasis-import';
+const CANONICAL = 'https://kahana.io/features/oasis-import';
 
 export async function getStaticProps() {
   return getFeatureRelatedDocsProps('oasis-import');
@@ -36,7 +36,7 @@ export default function OasisImportFeaturePage({ relatedDocs = [] }) {
     url: CANONICAL,
     description:
       'Guided import in Oasis: migration-style flow for bookmarks, passwords, history, autofill, payments, and extensions where the OS and source browser allow.',
-    isPartOf: { '@type': 'WebSite', name: 'Kahana', url: 'https://kahana.co' },
+    isPartOf: { '@type': 'WebSite', name: 'Kahana', url: 'https://kahana.io' },
   };
 
   return (

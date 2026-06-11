@@ -7,7 +7,7 @@ import { FeatureCatalogCard } from '../../components/features/FeatureDiscoveryGr
 import { GALLERY_PAGE_SIZE, oasisFeaturesCatalog } from '../../data/oasisFeaturesCatalog';
 import { YTC_OASIS_REVIEW } from '../../data/oasis-external-reviews';
 
-const CANONICAL = 'https://kahana.co/features';
+const CANONICAL = 'https://kahana.io/features';
 
 const FILTER_OPTIONS = [
   { id: 'all', label: 'All' },
@@ -55,7 +55,7 @@ export default function FeaturesIndexPage() {
     url: CANONICAL,
     description:
       'Search and browse Oasis Browser and Oasis Enterprise feature deep-dives: assistant, voice, import, governance, identity, DLP, and more.',
-    isPartOf: { '@type': 'WebSite', name: 'Kahana', url: 'https://kahana.co' },
+    isPartOf: { '@type': 'WebSite', name: 'Kahana', url: 'https://kahana.io' },
   };
 
   return (

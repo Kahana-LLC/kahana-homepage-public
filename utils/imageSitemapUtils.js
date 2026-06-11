@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const { SITE_URL } = require("../config/site");
 const { getAllPages } = require("./sitemapUtils");
 
 const IMAGE_EXTENSIONS = [".jpg", ".jpeg", ".png", ".gif", ".webp"];
@@ -22,7 +23,7 @@ function findImagesInDirectory(dir) {
         }
       } else if (IMAGE_EXTENSIONS.includes(path.extname(file).toLowerCase())) {
         const relativePath = path.relative(process.cwd(), filePath);
-        const url = `https://kahana.co/${relativePath.replace(/\\/g, "/")}`;
+        const url = `${SITE_URL}/${relativePath.replace(/\\/g, "/")}`;
 
         // Get image dimensions
         const dimensions = getImageDimensions(filePath);

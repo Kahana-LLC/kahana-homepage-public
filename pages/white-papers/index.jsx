@@ -43,7 +43,7 @@ export default function WhitePapersIndex({ whitePapers, categories }) {
       <SEO
         title="White Papers"
         description="Explore Kahana's comprehensive white papers on enterprise browser security, productivity, and technology trends. In-depth research and analysis for business leaders."
-        url="https://kahana.com/white-papers"
+        url="https://kahana.iom/white-papers"
         type="website"
       />
 

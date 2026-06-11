@@ -18,7 +18,7 @@ export default function Team() {
       <SEO
         title="Team | Kahana"
         description="Meet the people building Oasis: a managed enterprise browser that puts governance where work happens in the browser."
-        url="https://kahana.co/team"
+        url="https://kahana.io/team"
         type="website"
       />
 

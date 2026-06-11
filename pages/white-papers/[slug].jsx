@@ -65,7 +65,7 @@ export default function WhitePaperPage({ whitePaper, relatedWhitePapers }) {
       <SEO
         title={whitePaper.seo?.title || whitePaper.title}
         description={whitePaper.seo?.description || whitePaper.description}
-        url={`https://kahana.com/white-papers/${whitePaper.slug}`}
+        url={`https://kahana.iom/white-papers/${whitePaper.slug}`}
         type="article"
         keywords={whitePaper.seo?.keywords}
       />

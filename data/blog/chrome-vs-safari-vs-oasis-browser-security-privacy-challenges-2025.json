@@ -65,7 +65,7 @@
     },
     {
       "type": "paragraph",
-      "text": "<p>As consumer browser vulnerabilities mount, enterprise browsers are emerging as the only viable solution for organizations serious about security. <a href='https://kahana.co/blog/enterprise-browsers-security-and-trends-2025'>Recent analysis shows</a> a 40% year-over-year increase in browser-based attacks in 2024, driving enterprise adoption of secure browsers with 52% of enterprises planning deployment by 2025.</p>"
+      "text": "<p>As consumer browser vulnerabilities mount, enterprise browsers are emerging as the only viable solution for organizations serious about security. <a href='https://kahana.io/blog/enterprise-browsers-security-and-trends-2025'>Recent analysis shows</a> a 40% year-over-year increase in browser-based attacks in 2024, driving enterprise adoption of secure browsers with 52% of enterprises planning deployment by 2025.</p>"
     },
     {
       "type": "paragraph",
@@ -77,11 +77,11 @@
     },
     {
       "type": "paragraph",
-      "text": "<p>The consequences of browser vulnerabilities extend far beyond theoretical risks. In healthcare, where regulatory compliance is non-negotiable, <a href='https://kahana.co/blog/securing-healthcare-frontline-oasis-browser'>traditional browsers like Chrome and Internet Explorer fail to meet requirements</a>. The healthcare sector faces unique challenges where browser vulnerabilities can directly impact patient safety and regulatory compliance.</p>"
+      "text": "<p>The consequences of browser vulnerabilities extend far beyond theoretical risks. In healthcare, where regulatory compliance is non-negotiable, <a href='https://kahana.io/blog/securing-healthcare-frontline-oasis-browser'>traditional browsers like Chrome and Internet Explorer fail to meet requirements</a>. The healthcare sector faces unique challenges where browser vulnerabilities can directly impact patient safety and regulatory compliance.</p>"
     },
     {
       "type": "paragraph",
-      "text": "<p>Financial services face similar challenges, with <a href='https://kahana.co/blog/browser-security-threats-finance-oasis'>real-world breaches caused by browser vulnerabilities</a> demonstrating how consumer browsers create unacceptable security gaps. The financial sector's zero-trust requirements cannot be met by browsers designed for consumer convenience rather than enterprise security.</p>"
+      "text": "<p>Financial services face similar challenges, with <a href='https://kahana.io/blog/browser-security-threats-finance-oasis'>real-world breaches caused by browser vulnerabilities</a> demonstrating how consumer browsers create unacceptable security gaps. The financial sector's zero-trust requirements cannot be met by browsers designed for consumer convenience rather than enterprise security.</p>"
     },
     {
       "type": "heading",

@@ -237,7 +237,7 @@ export default function DataLeakageConsortiumPage() {
       <SEO
         title="Data Leakage Consortium"
         description="Invitation-only consortium for security leaders: trust-based membership on Signal, practical work on AI-in-browser leakage, governance, and incident response—aligned with IBM Cost of a Data Breach findings."
-        url="https://kahana.co/data-leakage-consortium"
+        url="https://kahana.io/data-leakage-consortium"
         type="website"
       />
 

@@ -196,8 +196,8 @@ export default function Hospitality({ hospitalityBlogs }) {
       <SEO
         title="Hospitality & travel: Secure SaaS access with Oasis | Kahana"
         description="Managed enterprise browser for hospitality: governance in the browser for PMS, CRS, and corporate SaaS, with unified policies, identity and DLP integration, and secure access for seasonal staff and franchise partners without default laptop shipping."
-        image="https://kahana.co/assets/oasis-browser-preview.png"
-        url="https://kahana.co/markets/hospitality"
+        image="https://kahana.io/assets/oasis-browser-preview.png"
+        url="https://kahana.io/markets/hospitality"
         type="webpage"
         schema={hospitalitySchema}
       />

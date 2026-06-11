@@ -3,7 +3,7 @@ const { promises: fs } = require("fs");
 const { execSync } = require("child_process");
 import { getAllDocs } from "./docsUtils";
 
-const EXTERNAL_DATA_URL = "https://kahana.co";
+const { SITE_URL: EXTERNAL_DATA_URL } = require("../config/site");
 
 // Function to get last modified date from git
 async function getLastModifiedDate(filePath) {

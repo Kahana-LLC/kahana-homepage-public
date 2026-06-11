@@ -14,7 +14,7 @@ export default function AboutMeta({ about }) {
         "Learn about Kahana's mission to revolutionize enterprise browsing and security. Discover our story, values, and commitment to innovation."
       }
       image={about.featuredImage || "/images/about-hero.jpg"}
-      url="https://kahana.co/about"
+      url="https://kahana.io/about"
       type="website"
       twitterHandle="@kahana"
       schema={schema}

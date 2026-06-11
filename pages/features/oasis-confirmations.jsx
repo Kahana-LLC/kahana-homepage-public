@@ -13,7 +13,7 @@ const OasisMockConfirmModal = dynamic(
   }
 );
 
-const CANONICAL = 'https://kahana.co/features/oasis-confirmations';
+const CANONICAL = 'https://kahana.io/features/oasis-confirmations';
 
 export async function getStaticProps() {
   return getFeatureRelatedDocsProps('oasis-confirmations');
@@ -27,7 +27,7 @@ export default function OasisConfirmationsFeaturePage({ relatedDocs = [] }) {
     url: CANONICAL,
     description:
       'Oasis confirmations: plain-language prompts and a visible command preview before meaningful browser changes.',
-    isPartOf: { '@type': 'WebSite', name: 'Kahana', url: 'https://kahana.co' },
+    isPartOf: { '@type': 'WebSite', name: 'Kahana', url: 'https://kahana.io' },
   };
 
   return (

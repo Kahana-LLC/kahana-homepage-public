@@ -196,8 +196,8 @@ export default function Technology({ technologyBlogs }) {
       <SEO
         title="Technology & SaaS: Secure SaaS access with Oasis | Kahana"
         description="Managed enterprise browser for technology teams: governance in the browser for engineering tools, cloud apps, and AI-assisted workflows, with unified policies, identity and DLP integration, and secure contractor access without default laptop shipping."
-        image="https://kahana.co/assets/oasis-browser-preview.png"
-        url="https://kahana.co/markets/technology"
+        image="https://kahana.io/assets/oasis-browser-preview.png"
+        url="https://kahana.io/markets/technology"
         type="webpage"
         schema={techSchema}
       />

@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { SITE_URL, absoluteUrl } from '../config/site';
 import { getCloudinaryImageUrl } from '../utils/cloudinary-mapper';
 
 const DEFAULT_ORG_LOGO = getCloudinaryImageUrl('/assets/kahana_logo_transparent.svg');
@@ -6,8 +7,8 @@ const DEFAULT_ORG_LOGO = getCloudinaryImageUrl('/assets/kahana_logo_transparent.
 const SEO = ({
   title = 'Kahana - Enterprise Browser & Productivity Tools',
   description = 'Stay organized and focused with Kahana\'s Oasis Enterprise Browser. Features enterprise-grade security, organization tools, and collaboration features for enhanced productivity.',
-  image = 'https://kahana.co/assets/oasis-browser-preview.png',
-  url = 'https://kahana.co',
+  image = absoluteUrl('/assets/oasis-browser-preview.png'),
+  url = SITE_URL,
   type = 'website',
   schema = null,
   noindex = false,
@@ -20,7 +21,7 @@ const SEO = ({
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'Kahana',
-    url: 'https://kahana.co',
+    url: SITE_URL,
     logo: DEFAULT_ORG_LOGO,
     sameAs: [
       'https://www.linkedin.com/company/kahana-co',

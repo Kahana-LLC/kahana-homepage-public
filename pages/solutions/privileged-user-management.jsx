@@ -161,8 +161,8 @@ export default function PrivilegedUserManagement() {
       <SEO
         title="Privileged user management: Secure admin sessions with Oasis | Kahana"
         description="Managed enterprise browser for privileged SaaS and web admin work: session governance, IdP and DLP integration, and visibility for elevated roles without relying on consumer browsers alone."
-        image="https://kahana.co/assets/oasis-browser-preview.png"
-        url="https://kahana.co/solutions/privileged-user-management"
+        image="https://kahana.io/assets/oasis-browser-preview.png"
+        url="https://kahana.io/solutions/privileged-user-management"
         type="webpage"
         schema={pageSchema}
       />

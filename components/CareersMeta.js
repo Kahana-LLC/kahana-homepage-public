@@ -14,7 +14,7 @@ export default function CareersMeta({ careers }) {
         "Join Kahana's team of innovators. We're looking for talented individuals to help us shape the future of enterprise security."
       }
       image={careers.featuredImage || "/images/careers-hero.jpg"}
-      url="https://kahana.co/careers"
+      url="https://kahana.io/careers"
       type="website"
       twitterHandle="@kahana"
       schema={schema}

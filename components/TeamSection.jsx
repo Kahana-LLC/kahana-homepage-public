@@ -61,7 +61,7 @@ export default function TeamSection() {
         <meta property="og:title" content="Kahana HQ Team" />
         <meta property="og:description" content="Meet the Kahana team, the hungry avengers driving our mission forward." />
         <meta property="og:image" content="/path/to/og-image.jpg" />
-        <meta property="og:url" content="https://www.kahana.co/team" />
+        <meta property="og:url" content="https://kahana.io/team" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Kahana HQ Team" />
         <meta name="twitter:description" content="Meet the Kahana team, the hungry avengers driving our mission forward." />

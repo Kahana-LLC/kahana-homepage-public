@@ -247,7 +247,7 @@ export default function BlogPost({ post }) {
                 name: 'Kahana',
                 logo: {
                   '@type': 'ImageObject',
-                  url: 'https://kahana.co/assets/kahana_logo_transparent.svg',
+                  url: 'https://kahana.io/assets/kahana_logo_transparent.svg',
                 },
               },
               mainEntityOfPage: {
@@ -412,7 +412,7 @@ export default function BlogPost({ post }) {
           {isClient && (
             <SocialShare 
               title={post.title} 
-              url={`https://kahana.co/blog/${post.slug}`}
+              url={`https://kahana.io/blog/${post.slug}`}
               excerpt={post.excerpt}
             />
           )}

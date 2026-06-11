@@ -161,8 +161,8 @@ export default function MergerIntegration() {
       <SEO
         title="Merger integration: Secure SaaS access with Oasis | Kahana"
         description="Managed enterprise browser for M&A: governance in the browser during integration, unified session policies, IdP and DLP integration, and governed access for acquired teams without default laptop programs for every user."
-        image="https://kahana.co/assets/oasis-browser-preview.png"
-        url="https://kahana.co/solutions/merger-integration"
+        image="https://kahana.io/assets/oasis-browser-preview.png"
+        url="https://kahana.io/solutions/merger-integration"
         type="webpage"
         schema={pageSchema}
       />

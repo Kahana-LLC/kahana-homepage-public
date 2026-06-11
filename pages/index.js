@@ -378,10 +378,10 @@ export default function Home({ blogPosts }) {
     "@context": "https://schema.org",
     "@type": "WebPage",
     name: "Oasis Browser: Calm, secure browsing with AI",
-    url: "https://kahana.co",
+    url: "https://kahana.io",
     description:
       "Oasis Browser by Kahana offers calm, secure browsing with AI that understands your tabs and workflow, with focused work and enterprise-grade protection.",
-    isPartOf: { "@type": "WebSite", name: "Kahana", url: "https://kahana.co" },
+    isPartOf: { "@type": "WebSite", name: "Kahana", url: "https://kahana.io" },
   };
 
   return (
@@ -389,8 +389,8 @@ export default function Home({ blogPosts }) {
       <SEO
         title="Oasis Browser: Calm, secure browsing with AI | Kahana"
         description="Oasis Browser by Kahana offers calm, secure browsing with AI that understands your tabs and workflow, with focused work and enterprise-grade protection."
-        image="https://kahana.co/assets/oasis-browser-preview.png"
-        url="https://kahana.co"
+        image="https://kahana.io/assets/oasis-browser-preview.png"
+        url="https://kahana.io"
         type="website"
         schema={homepageSchema}
       />

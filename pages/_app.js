@@ -395,7 +395,7 @@ function AppContent({ Component, pageProps }) {
       ) : null}
       <div className="flex flex-col min-h-screen" data-page={isBuyerGuide ? 'buyer-guide' : undefined}>
         <SEO
-          url={`https://kahana.co${router.asPath}`}
+          url={`https://kahana.io${router.asPath}`}
           type={router.pathname === "/" ? "website" : "article"}
           skipCanonical
         />

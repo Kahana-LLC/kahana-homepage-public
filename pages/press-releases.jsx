@@ -11,7 +11,7 @@ export default function PressReleasesPage() {
       <SEO
         title="Press releases"
         description="Official Kahana press releases and announcements. Curated links for journalists and partners."
-        url="https://kahana.co/press-releases"
+        url="https://kahana.io/press-releases"
         type="website"
       />
 

@@ -7,9 +7,9 @@ import Link from 'next/link'
  * Users land here after clicking "Confirm your email" in the Supabase confirmation email.
  *
  * Supabase Dashboard: Authentication > URL Configuration
- * - Site URL: Production = https://kahana.co, Local = http://localhost:3000
+ * - Site URL: Production = https://kahana.io, Local = http://localhost:3000
  * - Redirect URLs: Add both:
- *   - https://kahana.co/confirm-success
+ *   - https://kahana.io/confirm-success
  *   - http://localhost:3000/confirm-success
  */
 export default function ConfirmSuccess() {

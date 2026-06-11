@@ -42,7 +42,7 @@ export default function EnterpriseBrowser() {
     publisher: {
       '@type': 'Organization',
       name: 'Kahana',
-      url: 'https://kahana.co',
+      url: 'https://kahana.io',
       description:
         'Kahana builds Oasis, a managed enterprise browser so organizations can govern SaaS and web work in the session.',
     },
@@ -53,17 +53,17 @@ export default function EnterpriseBrowser() {
     '@graph': [
       {
         '@type': 'WebPage',
-        '@id': 'https://kahana.co/products/oasis-enterprise-browser#webpage',
+        '@id': 'https://kahana.io/products/oasis-enterprise-browser#webpage',
         name: 'Oasis: Managed enterprise browser for secure SaaS access',
         description:
           'Oasis is a managed enterprise browser. Extend identity, session, and data policy into browser work so teams access SaaS with governance on corporate and third-party devices.',
-        url: 'https://kahana.co/products/oasis-enterprise-browser',
-        isPartOf: { '@type': 'WebSite', name: 'Kahana', url: 'https://kahana.co' },
-        about: { '@id': 'https://kahana.co/products/oasis-enterprise-browser#software' },
+        url: 'https://kahana.io/products/oasis-enterprise-browser',
+        isPartOf: { '@type': 'WebSite', name: 'Kahana', url: 'https://kahana.io' },
+        about: { '@id': 'https://kahana.io/products/oasis-enterprise-browser#software' },
       },
       {
         ...softwareSchema,
-        '@id': 'https://kahana.co/products/oasis-enterprise-browser#software',
+        '@id': 'https://kahana.io/products/oasis-enterprise-browser#software',
       },
     ],
   };
@@ -77,7 +77,7 @@ export default function EnterpriseBrowser() {
         title="Oasis: Managed enterprise browser for secure SaaS access"
         description={seoDescription}
         image={previewImageUrl}
-        url="https://kahana.co/products/oasis-enterprise-browser"
+        url="https://kahana.io/products/oasis-enterprise-browser"
         type="product"
         schema={pageSchema}
       />

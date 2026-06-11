@@ -16,7 +16,7 @@ const OasisMockVoiceOverlay = dynamic(
   }
 );
 
-const CANONICAL = 'https://kahana.co/features/oasis-voice';
+const CANONICAL = 'https://kahana.io/features/oasis-voice';
 
 export async function getStaticProps() {
   return getFeatureRelatedDocsProps('oasis-voice');
@@ -30,7 +30,7 @@ export default function OasisVoiceFeaturePage({ relatedDocs = [] }) {
     url: CANONICAL,
     description:
       'Voice in Oasis: same assistant thread as typing, focused capture modes, and clear listening states, built for when talking is faster than typing.',
-    isPartOf: { '@type': 'WebSite', name: 'Kahana', url: 'https://kahana.co' },
+    isPartOf: { '@type': 'WebSite', name: 'Kahana', url: 'https://kahana.io' },
   };
 
   return (

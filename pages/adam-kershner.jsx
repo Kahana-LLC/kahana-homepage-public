@@ -66,7 +66,7 @@ export default function AdamKershnerLinksPage() {
       <SEO
         title={name}
         description="Connect with Adam Kershner, Founder of Oasis. DMs open on X, LinkedIn, Product Hunt, Instagram, TikTok, and YouTube."
-        url="https://kahana.co/adam-kershner"
+        url="https://kahana.io/adam-kershner"
         type="website"
       />
       <div className="min-h-screen bg-[#F8FAF2] px-4 py-10 sm:py-14">

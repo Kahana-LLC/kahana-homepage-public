@@ -84,7 +84,7 @@ export default function DocsIndex({ docs, categories }) {
       <SEO
         title="Documentation"
         description="Reference articles for Oasis Browser: what is available, how features behave in the product, and where to look next. For narrative deep-dives, see Oasis features."
-        url="https://kahana.co/docs"
+        url="https://kahana.io/docs"
         type="website"
       />
 

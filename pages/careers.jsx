@@ -9,7 +9,7 @@ export default function Careers() {
       <SEO
         title="Careers at Kahana"
         description="Join our team at Kahana and help make the future of work more elegant and productive."
-        url="https://kahana.co/careers"
+        url="https://kahana.io/careers"
         type="website"
       />
 

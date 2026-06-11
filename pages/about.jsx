@@ -105,48 +105,48 @@ export default function About() {
     '@graph': [
       {
         '@type': 'Organization',
-        '@id': 'https://kahana.co/#organization',
+        '@id': 'https://kahana.io/#organization',
         name: 'Kahana',
-        url: 'https://kahana.co',
+        url: 'https://kahana.io',
         description: 'Kahana builds Oasis: a personal browser and a managed enterprise browser. Kahana makes browsing faster, more private, and more secure.',
         logo: PREVIEW_IMAGE,
         sameAs: ['https://www.linkedin.com/company/kahana-llc'],
       },
       {
         '@type': 'WebSite',
-        '@id': 'https://kahana.co/#website',
-        url: 'https://kahana.co',
+        '@id': 'https://kahana.io/#website',
+        url: 'https://kahana.io',
         name: 'Kahana',
-        publisher: { '@id': 'https://kahana.co/#organization' },
+        publisher: { '@id': 'https://kahana.io/#organization' },
       },
       {
         '@type': 'WebPage',
-        '@id': 'https://kahana.co/about#webpage',
-        url: 'https://kahana.co/about',
+        '@id': 'https://kahana.io/about#webpage',
+        url: 'https://kahana.io/about',
         name: 'About Kahana: Oasis, named for a refuge. Built for productivity and security.',
-        isPartOf: { '@id': 'https://kahana.co/#website' },
-        about: { '@id': 'https://kahana.co/#organization' },
+        isPartOf: { '@id': 'https://kahana.io/#website' },
+        about: { '@id': 'https://kahana.io/#organization' },
         description: 'Kahana builds two products under the Oasis name. One is a personal browser with AI assistant. The other is a managed enterprise browser. 7,000+ users across 108+ countries.',
       },
       {
         '@type': 'SoftwareApplication',
-        '@id': 'https://kahana.co/about#software-b2c',
+        '@id': 'https://kahana.io/about#software-b2c',
         name: 'Oasis Browser',
         description: productB2C.description,
         applicationCategory: 'WebApplication',
         operatingSystem: 'Cross-platform',
         featureList: productB2C.features.join('; '),
-        publisher: { '@id': 'https://kahana.co/#organization' },
+        publisher: { '@id': 'https://kahana.io/#organization' },
       },
       {
         '@type': 'SoftwareApplication',
-        '@id': 'https://kahana.co/about#software-b2b',
+        '@id': 'https://kahana.io/about#software-b2b',
         name: 'Oasis Enterprise Browser',
         description: productB2B.description,
         applicationCategory: 'BusinessApplication',
         operatingSystem: 'Cross-platform',
         featureList: productB2B.features.join('; '),
-        publisher: { '@id': 'https://kahana.co/#organization' },
+        publisher: { '@id': 'https://kahana.io/#organization' },
       },
     ],
   };
@@ -157,7 +157,7 @@ export default function About() {
         title="About Kahana: Oasis, named for a refuge. Built for productivity and security."
         description="Kahana builds two products under the Oasis name: a personal browser with AI assistant for individuals, and a managed enterprise browser for organizations. 7,000+ users across 108+ countries."
         image={PREVIEW_IMAGE}
-        url="https://kahana.co/about"
+        url="https://kahana.io/about"
         type="website"
         schema={organizationSchema}
       />

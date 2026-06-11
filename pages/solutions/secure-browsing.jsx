@@ -161,8 +161,8 @@ export default function SecureBrowsing() {
       <SEO
         title="Secure browsing: Enterprise browser with Oasis | Kahana"
         description="Managed enterprise browser for secure work on the web: policy in the session, SaaS and data controls, IdP and DLP integration, and visibility without relying on consumer browsers alone."
-        image="https://kahana.co/assets/oasis-browser-preview.png"
-        url="https://kahana.co/solutions/secure-browsing"
+        image="https://kahana.io/assets/oasis-browser-preview.png"
+        url="https://kahana.io/solutions/secure-browsing"
         type="webpage"
         schema={pageSchema}
       />

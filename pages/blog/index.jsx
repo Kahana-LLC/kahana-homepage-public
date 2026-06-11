@@ -138,8 +138,8 @@ export default function BlogIndex({ posts = [] }) {
         <title>Enterprise Browser Blog | Top Browser Comparisons & Security Insights – Kahana</title>
         <meta name="description" content="Compare top browsers, get expert takes on enterprise browser security, and learn how Oasis solves real-world speed and privacy problems. Actionable insights, updated regularly." />
         <meta name="keywords" content="enterprise browser, top browser, best browser, browser comparison, Oasis browser, browser security, enterprise security, browser productivity" />
-        <link rel="canonical" href="https://kahana.co/blog" />
-        <meta property="og:url" content="https://kahana.co/blog" />
+        <link rel="canonical" href="https://kahana.io/blog" />
+        <meta property="og:url" content="https://kahana.io/blog" />
         <meta property="og:title" content="Enterprise Browser Blog | Top Browser Comparisons & Security – Kahana" />
         <meta property="og:description" content="Compare top browsers, get expert takes on enterprise browser security, and learn how Oasis solves real-world speed and privacy problems." />
         <meta property="og:type" content="website" />
@@ -156,20 +156,20 @@ export default function BlogIndex({ posts = [] }) {
               '@type': 'Blog',
               name: 'Kahana Blog',
               description: 'Latest insights on enterprise browser security, productivity, and technology trends',
-              url: 'https://kahana.co/blog',
+              url: 'https://kahana.io/blog',
               publisher: {
                 '@type': 'Organization',
                 name: 'Kahana',
                 logo: {
                   '@type': 'ImageObject',
-                  url: 'https://kahana.co/assets/kahana_logo_transparent.svg',
+                  url: 'https://kahana.io/assets/kahana_logo_transparent.svg',
                 },
               },
               blogPost: sortedPosts.slice(0, 10).map(post => ({
                 '@type': 'BlogPosting',
                 headline: post.title,
                 description: post.excerpt,
-                url: `https://kahana.co/blog/${post.slug}`,
+                url: `https://kahana.io/blog/${post.slug}`,
                 datePublished: post.date,
                 articleSection: post.category,
               })),
