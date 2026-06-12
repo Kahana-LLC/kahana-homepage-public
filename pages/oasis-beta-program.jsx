@@ -397,7 +397,7 @@ export default function EarlyBirdDiscount() {
                 {
                   id: 'refund',
                   question: 'Can I get a refund?',
-                  answer: 'Yes! You may request a full refund of your deposit at any time before Beta access is made available. Once Beta access begins, you\'ll have an additional 30-day window to request a refund after experiencing the product. After this 30-day period, deposits are non-refundable. To request a refund, contact us at <a href="mailto:info@kahana.co" class="underline" style="color: #7A9200">info@kahana.co</a> with your name, email, and deposit confirmation.'
+                  answer: 'Yes! You may request a full refund of your deposit at any time before Beta access is made available. Once Beta access begins, you\'ll have an additional 30-day window to request a refund after experiencing the product. After this 30-day period, deposits are non-refundable. To request a refund, <a href="/contact" class="underline" style="color: #7A9200">contact us through our contact form</a> with your name, email, and deposit confirmation.'
                 },
                 {
                   id: 'refund-consequences',

@@ -111,7 +111,7 @@ const SearchPage = () => {
                   {searchResults.map((hit) => (
                     <a
                       key={hit.objectID}
-                      href={`https://app.kahana.co/hub/${hit.objectID}`}
+                      href={`https://app.kahana.io/hub/${hit.objectID}`}
                       target="_self"
                       rel="noopener noreferrer"
                       className="block hover:no-underline transform transition-transform duration-200 hover:scale-102"

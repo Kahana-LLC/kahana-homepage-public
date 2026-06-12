@@ -69,7 +69,7 @@ export default function PrivacyPolicy() {
                 <li>Account creation and registration. During account creation and sign-up for our Services, we may gather basic account information, including your name, email address, and profile picture (if you choose to provide one).</li>
                 <li>Service usage and invitations. Information regarding your subscription plan and payment method is processed when you use or invite others to use our Services. Additionally, we process invitation history when you invite others to use the Service.</li>
                 <li>Newsletter subscriptions. From time to time, we may offer email newsletters through our Services. When you subscribe to receive a newsletter, we may request Personal Data such as your email address.</li>
-                <li>Contact and feedback. When you reach out to us with feedback, suggestions, or inquiries (e.g., via <a href="mailto:info@kahana.co" className="text-[#4A6200] no-underline hover:no-underline font-semibold">info@kahana.co</a>), we may gather the information you provide, which includes your contact information and the content of your message.</li>
+                <li>Contact and feedback. When you reach out to us with feedback, suggestions, or inquiries (e.g., via <Link href="/contact" className="text-[#4A6200] no-underline hover:no-underline font-semibold">our contact form</Link>), we may gather the information you provide, which includes your contact information and the content of your message.</li>
               </ul>
 
               <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">Information collected when you use our Services</h3>
@@ -325,7 +325,7 @@ export default function PrivacyPolicy() {
                 <li><strong>Right to Non-Discrimination:</strong> We will not discriminate against you for exercising your privacy rights.</li>
               </ul>
               <p className="text-gray-700 leading-relaxed mb-6">
-                To exercise these rights, please contact us at <a href="mailto:info@kahana.co" className="text-[#4A6200] no-underline hover:no-underline font-semibold">info@kahana.co</a> or use the "Do Not Sell or Share My Personal Information" link in our footer. We will respond to your request within the timeframes required by applicable law.
+                To exercise these rights, please <Link href="/contact" className="text-[#4A6200] no-underline hover:no-underline font-semibold">contact us through our contact form</Link> or use the "Do Not Sell or Share My Personal Information" link in our footer. We will respond to your request within the timeframes required by applicable law.
               </p>
 
               <div className="space-y-4 mb-6">
@@ -484,7 +484,7 @@ export default function PrivacyPolicy() {
               </p>
               <div className="text-gray-700 leading-relaxed mb-6">
                 <p className="mb-4">
-                  <strong>Email:</strong> <a href="mailto:info@kahana.co" className="text-[#4A6200] no-underline hover:no-underline font-semibold">info@kahana.co</a> or <Link href="/contact" className="text-[#4A6200] no-underline hover:no-underline font-semibold">through our contact form</Link>
+                  <strong>Contact:</strong> <Link href="/contact" className="text-[#4A6200] no-underline hover:no-underline font-semibold">our contact form</Link>
                 </p>
                 <p className="mb-4">
                   If you are not satisfied with our response to your complaint, or if you believe that our processing of your Personal Data does not comply with applicable data protection laws, you have the right to lodge a complaint with your local data protection supervisory authority. However, we would appreciate the opportunity to address your concerns directly before you contact a supervisory authority, and we encourage you to reach out to us first so that we may attempt to resolve the matter.

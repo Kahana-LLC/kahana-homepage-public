@@ -5,7 +5,7 @@ import FadeInSection from './FadeInSection';
 const tiers = [
   {
     name: 'Free (forever)',
-    href: 'https://app.kahana.co/signup',
+    href: 'https://app.kahana.io/signup',
     priceMonthly: 0,
     description: 'Everything you need to get started',
     includedFeatures: [
@@ -20,7 +20,7 @@ const tiers = [
   },
   {
     name: 'Growth',
-    href: 'https://app.kahana.co/billing',
+    href: 'https://app.kahana.io/billing',
     priceMonthly: 9.99,
     description: 'For power users who want to do more.',
     includedFeatures: [

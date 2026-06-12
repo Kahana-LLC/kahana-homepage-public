@@ -93,7 +93,7 @@ const useAlgoliaSearch = (selectedCategory) => {
               item(hit, { html }) {
                 return html`
                   <a
-                    href="https://app.kahana.co/hub/${hit.objectID}"
+                    href="https://app.kahana.io/hub/${hit.objectID}"
                     target="_self"
                     rel="noopener noreferrer"
                     class="block hover:no-underline transform transition-transform duration-200 hover:scale-102"

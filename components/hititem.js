@@ -12,7 +12,7 @@ const HitItem = ({ hit }) => {
   const imageUrl = hit.url || defaultImageUrl;
 
   // Construct the URL for the hit
-  const hitUrl = `https://app.kahana.co/hub/${hit.objectID}`;
+  const hitUrl = `https://app.kahana.io/hub/${hit.objectID}`;
 
   return (
     <a
