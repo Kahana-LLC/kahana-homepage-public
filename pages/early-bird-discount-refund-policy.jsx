@@ -118,7 +118,7 @@ export default function EarlyBirdDiscountRefundPolicy() {
             <h2 className="text-2xl font-bold mb-6" style={{ color: '#495800' }}>Requesting a Refund</h2>
             <div className="space-y-4" style={{ color: '#495800' }}>
               <p>
-                To request a refund, you must fill out a brief form and select from a list of options for why you are requesting a refund. Contact our customer support team at <a href="mailto:info@kahana.co" className="underline font-semibold" style={{ color: '#7A9200' }}>info@kahana.co</a> to receive the refund request form.
+                To request a refund, you must fill out a brief form and select from a list of options for why you are requesting a refund. <Link href="/contact" className="underline font-semibold" style={{ color: '#7A9200' }}>Contact us through our contact form</Link> to receive the refund request form.
               </p>
               <p>
                 The refund request form will require the following information:

@@ -81,7 +81,7 @@ function NavBarExplore() {
         `}</style>
         <div className="nav-content">
           {/* Logo */}
-          <Link href="https://app.kahana.co/" aria-label="Kahana">
+          <Link href="https://app.kahana.io/" aria-label="Kahana">
             <span className="sr-only">Home</span>
             <Image
               src={whiteKahanaLogo}
@@ -135,8 +135,8 @@ function NavBarExplore() {
         {/* Mobile Menu Content */}
         <div className={`mobile-menu ${isMobileMenuOpen ? 'open' : ''}`}>
           <div className="menu-links">
-            <Link href="https://app.kahana.co" className="mobile-link">Dashboard</Link>
-            <Link href="https://app.kahana.co/billing" className="mobile-link">Billing</Link>
+            <Link href="https://app.kahana.io" className="mobile-link">Dashboard</Link>
+            <Link href="https://app.kahana.io/billing" className="mobile-link">Billing</Link>
             <Link href="/blog" className="mobile-link">Blog</Link>
             <Link href="/pricing" className="mobile-link">Pricing</Link>
             <Link href="/terms-and-conditions" className="mobile-link">Terms & Conditions</Link>

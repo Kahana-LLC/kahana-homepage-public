@@ -165,7 +165,7 @@ export default function TermsAndConditions() {
                 The Service may offer subscription-based plans that include automatically recurring payments for periodic charges (referred to as "Subscription Service"). Your "Subscription Billing Date" is the date on which you first purchase a subscription to the Service. The Subscription Service commences on the Subscription Billing Date and continues for the subscription period you choose in your account (the "Initial Subscription Period"). The Subscription Service will automatically renew for successive periods of equal duration to the Initial Subscription Period (each such period, together with the Initial Subscription Period, constituting a "Subscription Period") unless you cancel your subscription or we terminate it.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
-                To avoid being charged for the next Subscription Period, you must cancel your subscription prior to its renewal date. The periodic Subscription Fee will be charged to the payment method you provided during registration (or to an updated payment method if you modify your payment information). You may cancel your Subscription Service at any time via Stripe, from the Oasis pricing page, by <Link href="/contact" className="text-[#4A6200] no-underline hover:no-underline font-semibold">contacting us through our contact form</Link>, or by emailing us at info@kahana.co.
+                To avoid being charged for the next Subscription Period, you must cancel your subscription prior to its renewal date. The periodic Subscription Fee will be charged to the payment method you provided during registration (or to an updated payment method if you modify your payment information). You may cancel your Subscription Service at any time via Stripe, from the Oasis pricing page, or by <Link href="/contact" className="text-[#4A6200] no-underline hover:no-underline font-semibold">contacting us through our contact form</Link>.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
                 Kahana reserves the right to modify the Subscription Fee for any Subscription Service or to introduce new fees or charges at any time, provided that Kahana gives you advance notice of such changes. If you do not wish to continue your subscription after any such change, you may cancel your subscription in the manner described above.
@@ -308,8 +308,7 @@ export default function TermsAndConditions() {
                 After you create an account, Kahana may send emails that help you get started with Oasis, including onboarding guidance, setup tips, feature explanations, and product updates. These emails are not required to use the Service.
               </p>
               <p className="text-gray-700 leading-relaxed mb-6">
-                You may unsubscribe from these optional emails at any time by following the unsubscribe link in any such email or by contacting us at{' '}
-                <a href="mailto:info@kahana.co" className="text-[#4A6200] no-underline hover:no-underline font-semibold">info@kahana.co</a>.
+                You may unsubscribe from these optional emails at any time by following the unsubscribe link in any such email or by <Link href="/contact" className="text-[#4A6200] no-underline hover:no-underline font-semibold">contacting us through our contact form</Link>.
               </p>
 
               <h3 id="communications-required" className="text-2xl font-bold text-[#313A00] mb-4 mt-8 scroll-mt-8">9.2. Required transactional and account emails</h3>
@@ -427,7 +426,7 @@ export default function TermsAndConditions() {
                 Should you breach any provision of these Terms, your authorization to access the Service and these Terms shall automatically terminate. Furthermore, Kahana reserves the right, in its sole discretion, to terminate these Terms or your Service account, or to suspend or terminate your access to the Service, at any time, for any reason or no reason whatsoever, with or without prior notice, and Kahana shall have no liability to you in connection with such termination. You have the right to terminate your account and these Terms at any time by submitting a{' '}
                 <Link href="/docs/delete-my-account" className="text-[#4A6200] no-underline hover:no-underline font-semibold">Delete Oasis Account</Link>{' '}
                 request through our account deletion form, by reaching out to customer service through{' '}
-                <Link href="/contact" className="text-[#4A6200] no-underline hover:no-underline font-semibold">our contact form</Link>, or by sending an email to info@kahana.co.
+                <Link href="/contact" className="text-[#4A6200] no-underline hover:no-underline font-semibold">our contact form</Link>.
               </p>
 
               <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">13.3. Consequences of Termination</h3>
@@ -622,7 +621,7 @@ export default function TermsAndConditions() {
 
               <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">18.6. How to Contact Us</h3>
               <p className="text-gray-700 leading-relaxed mb-6">
-                The Service is provided by Kahana Group Inc., with offices located at 1550 North Lakeshore Drive, Apt 19E, Chicago, Illinois, 60610. You may reach us by sending correspondence to that address, by <Link href="/contact" className="text-[#4A6200] no-underline hover:no-underline font-semibold">contacting us through our contact form</Link>, or by emailing us at info@kahana.co.
+                The Service is provided by Kahana Group Inc., with offices located at 1550 North Lakeshore Drive, Apt 19E, Chicago, Illinois, 60610. You may reach us by sending correspondence to that address or by <Link href="/contact" className="text-[#4A6200] no-underline hover:no-underline font-semibold">contacting us through our contact form</Link>.
               </p>
 
               <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">18.7. California Residents' Rights</h3>
