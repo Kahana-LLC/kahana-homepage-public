@@ -4,17 +4,9 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import whiteKahanaLogo from '../../assets/kahana_logo_transparent.svg';
 import { getCloudinaryImageUrl } from '../../utils/cloudinary-mapper';
-import { desktopNavItems, mobileNavRows } from './navConfig';
+import { APP_URL, desktopNavItems, mobileNavRows } from './navConfig';
 
 const MD_BREAKPOINT = 1024;
-
-function AppleLogoIcon({ className }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
-    </svg>
-  );
-}
 
 function ChevronDownIcon({ className }) {
   return (
@@ -30,10 +22,10 @@ function ChevronDownIcon({ className }) {
 }
 
 /* Compact header CTAs — see .btn-nav in globals (tighter than Figma sm; not used sitewide) */
-const ctaScheduleClass =
+const ctaSecondaryClass =
   'btn-secondary btn-nav no-underline hover:no-underline focus:no-underline';
 
-const ctaDownloadClass =
+const ctaPrimaryClass =
   'btn-primary btn-nav no-underline hover:no-underline focus:no-underline';
 
 function collectDropdownHrefs(dropdown) {
@@ -107,44 +99,6 @@ function NavDropdownPanelSection({ section, splitColumns, sectionIndex, onPick }
         ))}
       </div>
     </div>
-  );
-}
-
-function MobileBuyerGuideNavRow({ row, onNavigate }) {
-  const src = useMemo(
-    () =>
-      getCloudinaryImageUrl(row.imagePath, {
-        width: 48,
-        height: 48,
-        quality: 'auto:good',
-      }),
-    [row.imagePath]
-  );
-
-  return (
-    <Link
-      href={row.href}
-      prefetch={row.prefetch}
-      className="mobile-link flex items-center space-x-3 bg-gradient-to-r from-brand-link/5 to-oasis-blue-300/5 p-3 no-underline hover:from-brand-link/10 hover:to-oasis-blue-300/10"
-      onClick={onNavigate}
-    >
-      <div className="h-12 w-12 flex-shrink-0 overflow-hidden rounded-lg">
-        <img
-          src={src}
-          alt=""
-          className="h-full w-full object-cover"
-          width={48}
-          height={48}
-          loading="lazy"
-          decoding="async"
-          fetchPriority="low"
-        />
-      </div>
-      <div className="flex-1">
-        <div className="font-medium text-gray-900">{row.label}</div>
-        <div className="mt-1 text-xs text-oasis-green-800">{row.subtitle}</div>
-      </div>
-    </Link>
   );
 }
 
@@ -500,14 +454,19 @@ export default function NavbarDup() {
           <ul className="nav-links">
             {desktopNavItems.map((item) => {
               if (!item.dropdown) {
+                const linkClass =
+                  'nav-link relative z-[2] inline-flex items-center gap-0.5 whitespace-nowrap rounded-md px-2 py-2 font-sans text-[0.9375rem] font-normal !text-oasis-green-700 no-underline focus:outline-none';
                 return (
                   <li key={item.id}>
-                    <Link
-                      href={item.href}
-                      className="nav-link relative z-[2] inline-flex items-center gap-0.5 whitespace-nowrap rounded-md px-2 py-2 font-sans text-[0.9375rem] font-normal !text-oasis-green-700 no-underline focus:outline-none"
-                    >
-                      <span className="nav-link-text">{item.label}</span>
-                    </Link>
+                    {item.external || item.href.startsWith('http') ? (
+                      <a href={item.href} className={linkClass}>
+                        <span className="nav-link-text">{item.label}</span>
+                      </a>
+                    ) : (
+                      <Link href={item.href} className={linkClass}>
+                        <span className="nav-link-text">{item.label}</span>
+                      </Link>
+                    )}
                   </li>
                 );
               }
@@ -568,17 +527,22 @@ export default function NavbarDup() {
 
           <div className="flex shrink-0 items-center gap-2 lg:gap-3">
             <div className="nav-buttons">
-              <Link href="/schedule-demo" className={ctaScheduleClass}>
-                Schedule Demo
-              </Link>
-              <Link
-                href="/oasis-pricing"
-                className={ctaDownloadClass}
-                aria-label="Download Oasis for Mac"
+              <a
+                href={APP_URL}
+                className={ctaSecondaryClass}
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <AppleLogoIcon className="h-3.5 w-3.5 shrink-0" />
-                Download for Mac
-              </Link>
+                Log in
+              </a>
+              <a
+                href={APP_URL}
+                className={ctaPrimaryClass}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Create a hub
+              </a>
             </div>
 
             <button
@@ -604,36 +568,48 @@ export default function NavbarDup() {
         <div className={`mobile-menu ${isMobileMenuOpen ? 'open' : ''}`}>
           <div className="menu-links">
             <div className="mb-4 flex flex-col gap-2">
-              <Link
-                href="/schedule-demo"
-                className={`${ctaScheduleClass} w-full justify-center`}
+              <a
+                href={APP_URL}
+                className={`${ctaSecondaryClass} w-full justify-center`}
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={closeMobile}
               >
-                Schedule Demo
-              </Link>
-              <Link
-                href="/oasis-pricing"
-                className={`${ctaDownloadClass} nav-mobile-download-cta w-full justify-center`}
-                aria-label="Download Oasis for Mac"
+                Log in
+              </a>
+              <a
+                href={APP_URL}
+                className={`${ctaPrimaryClass} w-full justify-center`}
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={closeMobile}
               >
-                <AppleLogoIcon className="h-3.5 w-3.5 shrink-0" />
-                Download for Mac
-              </Link>
+                Create a hub
+              </a>
             </div>
 
-            {mobileNavRows.map((row) => {
-              if (row.variant === 'buyer-guide') {
-                return (
-                  <MobileBuyerGuideNavRow key={row.href} row={row} onNavigate={closeMobile} />
-                );
-              }
-              return (
-                <Link key={row.href} href={row.href} className="mobile-link no-underline" onClick={closeMobile}>
+            {mobileNavRows.map((row) =>
+              row.external || row.href.startsWith('http') ? (
+                <a
+                  key={row.href}
+                  href={row.href}
+                  className="mobile-link no-underline"
+                  onClick={closeMobile}
+                >
+                  {row.label}
+                </a>
+              ) : (
+                <Link
+                  key={row.href}
+                  href={row.href}
+                  prefetch={row.prefetch !== false}
+                  className="mobile-link no-underline"
+                  onClick={closeMobile}
+                >
                   {row.label}
                 </Link>
-              );
-            })}
+              )
+            )}
           </div>
         </div>
       </nav>

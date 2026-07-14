@@ -13,6 +13,10 @@ export const HELP_ORIGIN = 'https://help.kahana.io';
 /** Hosts that should run apex → subdomain 301s */
 export const APEX_MARKETING_HOSTS = new Set(['kahana.io', 'www.kahana.io']);
 
+export function isApexMarketingHost(host) {
+  return Boolean(host) && APEX_MARKETING_HOSTS.has(host);
+}
+
 /**
  * Path-preserving prefix rules (longest match wins).
  * destinationPath = pathname (unchanged) on target origin.

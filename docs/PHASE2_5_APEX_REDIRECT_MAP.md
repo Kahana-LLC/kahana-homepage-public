@@ -1,7 +1,7 @@
 # Phase 2.5 — Apex → subdomain redirect map
 
 **Status:** Implemented in [`config/apexRedirects.js`](../config/apexRedirects.js) + [`middleware.js`](../middleware.js).  
-**Rule:** 301 only when `Host` is `kahana.io` (or `www.kahana.io` before apex canonicalize). Never redirect when already on `about.` / `newsroom.` / `careers.` / `help.` (or `*-beta`).
+**Rule:** 301 only when `Host` is `kahana.io` (or `www.kahana.io` before apex canonicalize). Never redirect when already on `about.` / `newsroom.` / `careers.` / `help.` (or `*-beta`). QA: Host-header against local/beta slug, or deploy to prod apex when ready.
 
 Until Phase 3, `https://kahana.io` (Discover) 301s to **about.kahana.io**. Product explore remains on **app.kahana.io**.
 

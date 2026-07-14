@@ -97,7 +97,9 @@ Order: **subdomains → product links → marketing off apex → then apex = pro
 - [x] Marketing **home** at `about.kahana.io` (`/` → about)
 - [x] Sitemap / robots prefer subdomain hosts
 - [ ] Search Console: subdomain properties updated (ops; note for Phase 3 change-of-address)
-- [ ] Prod spot-check after deploy (see §8)
+- [x] Deployed + QA on **kahana-public-beta** (v168): subdomain sitemap locs live; beta app still 200 for browsing
+- [x] Local Host=`kahana.io` curl matrix → 301 (see §8)
+- [ ] Prod (`kahana-public`) deploy + curl gate — **held until explicitly approved**
 
 Until prod curl gate is green, **do not** rebind `kahana.io` to `kahana-alpha`.
 

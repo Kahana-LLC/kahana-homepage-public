@@ -1,5 +1,5 @@
 /** Kill switch — set false to hide all Product Hunt celebration UI site-wide. */
-export const SHOW_PRODUCT_HUNT_CELEBRATION = true;
+export const SHOW_PRODUCT_HUNT_CELEBRATION = false;
 
 /**
  * Local preview override via NEXT_PUBLIC_PH_LAUNCH_PREVIEW in .env.local:

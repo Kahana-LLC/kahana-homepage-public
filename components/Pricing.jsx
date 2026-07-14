@@ -1,44 +1,47 @@
 import Link from 'next/link';
-import { getCloudinaryImageUrl } from '../utils/cloudinary-mapper';
 import FadeInSection from './FadeInSection';
 
 const tiers = [
   {
-    name: 'Free (forever)',
-    href: 'https://app.kahana.io/signup',
-    priceMonthly: 0,
-    description: 'Everything you need to get started',
+    name: 'Free',
+    href: 'https://app.kahana.io',
+    priceLabel: '$0',
+    priceSuffix: 'forever',
+    featuresHeading: 'What you get',
     includedFeatures: [
       '3 hubs',
-      'Monetize with Stripe',
+      'Up to 10 uploads per hub',
+      'Unlimited collaborators',
+      'Integrate with Stripe to monetize hubs',
       'Upload files up to 5 MB',
-      'Upload up to 10 resources per hub',
     ],
-    additionalLinkText: '',
-    additionalLinkHref: '',
+    cta: 'Start free',
     buttonStyle: 'secondary',
   },
   {
     name: 'Growth',
     href: 'https://app.kahana.io/billing',
-    priceMonthly: 9.99,
-    description: 'For power users who want to do more.',
+    priceLabel: '$9.99',
+    priceSuffix: 'per month',
+    featuresHeading: 'Everything in Free, plus...',
     includedFeatures: [
       'Unlimited hubs',
-      'Live Chat Support',
+      'Unlimited uploads per hub',
+      'Priority support',
       '100 GB cloud storage',
       'Upload files up to 5 GB',
-      'Upload unlimited resources per hub',
     ],
-    additionalLinkText: '',
-    additionalLinkHref: '',
+    annualNote: 'Save 17% with annual billing',
+    cta: 'Get Growth',
     buttonStyle: 'primary',
+    highlighted: true,
   },
   {
     name: 'Enterprise',
     href: '/contact',
-    priceMonthly: 99.99,
-    description: 'For organizations.',
+    priceLabel: 'Custom',
+    priceSuffix: 'pricing for teams',
+    featuresHeading: 'Everything in Growth, plus...',
     includedFeatures: [
       'Unified administration and billing',
       'Flexible storage as needed',
@@ -46,108 +49,82 @@ const tiers = [
       'Custom branding and white-labeling',
       'Custom integrations',
       'Onboarding and migration support',
-      'Hub engagement analytics',
-      'Built-in AI & ML tools <span class="inline-block bg-yellow-300 text-yellow-800 px-2 py-0.5 rounded-full text-xs">new</span>',
+      'Analytics (Beta)',
     ],
-    additionalLinkText: 'Request a Live Demo',
-    additionalLinkHref: '/contact',
+    cta: 'Contact us',
     buttonStyle: 'secondary',
   },
 ];
 
 export default function Pricing() {
   return (
-    <div className="bg-white">
-      {/* Hero Section - match Oasis */}
-      <section className="relative min-h-[30vh] flex items-center justify-center overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url(${getCloudinaryImageUrl('/images/desert-background-5.webp', { width: 1920, quality: 'auto:good' })})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-          }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-white/80 to-white"></div>
-        </div>
-        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10 py-12">
-          <h1
-            className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-tight mb-4"
-            style={{ color: '#313A00' }}
-          >
-            Hubs Pricing
-          </h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto mt-4 mb-4">
-            Flexible plans for creators and teams. Start for free and scale as you grow.
-          </p>
-        </div>
+    <div className="bg-[#F8FAF2]">
+      <section className="px-4 pb-6 pt-8 text-center sm:px-6 sm:pt-12 lg:px-8">
+        <h1 className="text-4xl font-extrabold tracking-tight text-[#313A00] sm:text-5xl">
+          Plans &amp; billing
+        </h1>
+        <p className="mx-auto mt-4 max-w-2xl text-lg text-[#666666]">
+          Choose the plan that fits your hubs
+        </p>
       </section>
 
-      {/* Pricing Tiers - Oasis-style cards */}
       <FadeInSection>
-        <section className="py-8 sm:py-10 px-4 sm:px-6 lg:px-8 bg-white">
-          <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto md:items-stretch">
+        <section className="px-4 pb-16 sm:px-6 sm:pb-20 lg:px-8">
+          <div className="mx-auto max-w-7xl">
+            <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-3 md:items-stretch lg:gap-8">
               {tiers.map((tier) => (
                 <div
                   key={tier.name}
-                  className="relative bg-white border-2 border-gray-200 rounded-2xl p-5 sm:p-6 lg:p-8 transition-all duration-300 hover:shadow-lg flex flex-col"
+                  className={`relative flex flex-col rounded-2xl border-2 bg-white p-5 transition-all duration-300 hover:shadow-lg sm:p-6 lg:p-8 ${
+                    tier.highlighted ? 'border-[#617500]' : 'border-[#E0E8D4]'
+                  }`}
                 >
-                  {/* Fixed-height header so price + button align across cards */}
-                  <div className="mb-4 min-h-[220px] flex flex-col">
-                    <h3 className="text-base sm:text-lg font-semibold mb-3 text-gray-800">
+                  <div className="mb-4 flex min-h-[200px] flex-col">
+                    <h3 className="mb-3 text-base font-semibold text-[#313A00] sm:text-lg">
                       {tier.name}
                     </h3>
-                    <p className="text-sm text-gray-600 mb-4 line-clamp-2">{tier.description}</p>
-                    <div className="mb-4 flex items-baseline">
-                      <span className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900">
-                        {tier.priceMonthly === 0 ? '$0' : `$${tier.priceMonthly}`}
+                    <div className="mb-4 flex flex-wrap items-baseline gap-x-1">
+                      <span className="text-3xl font-bold text-[#313A00] sm:text-4xl lg:text-5xl">
+                        {tier.priceLabel}
                       </span>
-                      {tier.name === 'Enterprise' ? (
-                        <span className="text-xs sm:text-sm text-gray-600 ml-1">/mo/seat</span>
-                      ) : (
-                        tier.priceMonthly !== 0 && (
-                          <span className="text-xs sm:text-sm text-gray-600 ml-1">/mo</span>
-                        )
-                      )}
+                      <span className="text-sm text-[#666666]">{tier.priceSuffix}</span>
                     </div>
+                    {tier.annualNote ? (
+                      <p className="mb-3 text-sm font-medium text-[#495800]">{tier.annualNote}</p>
+                    ) : (
+                      <p className="mb-3 h-5" aria-hidden="true" />
+                    )}
                     <div className="mt-auto min-h-[44px] flex items-center">
                       {tier.href.startsWith('/') ? (
                         <Link
                           href={tier.href}
-                          className={`btn-${tier.buttonStyle} w-full inline-flex items-center justify-center px-4 py-2.5 sm:py-3 text-sm sm:text-base font-normal rounded-full no-underline hover:no-underline focus:no-underline transition-all`}
+                          className={`btn-${tier.buttonStyle} inline-flex w-full items-center justify-center rounded-full px-4 py-2.5 text-sm font-normal no-underline transition-all hover:no-underline focus:no-underline sm:py-3 sm:text-base`}
                         >
-                          Choose {tier.name.replace(' (forever)', '')}
+                          {tier.cta}
                         </Link>
                       ) : (
                         <a
                           href={tier.href}
-                          className={`btn-${tier.buttonStyle} w-full inline-flex items-center justify-center px-4 py-2.5 sm:py-3 text-sm sm:text-base font-normal rounded-full no-underline hover:no-underline focus:no-underline transition-all`}
+                          className={`btn-${tier.buttonStyle} inline-flex w-full items-center justify-center rounded-full px-4 py-2.5 text-sm font-normal no-underline transition-all hover:no-underline focus:no-underline sm:py-3 sm:text-base`}
                         >
-                          Choose {tier.name.replace(' (forever)', '')}
+                          {tier.cta}
                         </a>
                       )}
                     </div>
                   </div>
 
                   <ul className="space-y-2 sm:space-y-3">
-                    {tier.name === 'Free' && (
-                      <li className="text-sm font-semibold mb-2 h-5 invisible" aria-hidden="true">Placeholder</li>
-                    )}
-                    {tier.name === 'Growth' && (
-                      <li className="text-sm text-gray-600 font-semibold mb-2 h-5">Everything in Free, plus...</li>
-                    )}
-                    {tier.name === 'Enterprise' && (
-                      <li className="text-sm text-gray-600 font-semibold mb-2 h-5">Everything in Growth, plus...</li>
-                    )}
-                    {tier.includedFeatures.map((feature, index) => (
-                      <li key={index} className="flex items-start">
+                    <li className="mb-2 h-5 text-sm font-semibold text-[#666666]">
+                      {tier.featuresHeading}
+                    </li>
+                    {tier.includedFeatures.map((feature) => (
+                      <li key={feature} className="flex items-start">
                         <svg
-                          className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0"
+                          className="mr-2 mt-0.5 h-4 w-4 flex-shrink-0"
                           style={{ color: '#495800' }}
                           fill="currentColor"
                           viewBox="0 0 20 20"
+                          aria-hidden
                         >
                           <path
                             fillRule="evenodd"
@@ -155,30 +132,19 @@ export default function Pricing() {
                             clipRule="evenodd"
                           />
                         </svg>
-                        <span
-                          className="text-xs sm:text-sm leading-relaxed text-gray-800"
-                          dangerouslySetInnerHTML={{ __html: feature }}
-                        />
+                        <span className="text-xs leading-relaxed text-[#333333] sm:text-sm">
+                          {feature}
+                        </span>
                       </li>
                     ))}
                   </ul>
-
-                  {tier.additionalLinkHref && (
-                    <p className="mt-4 text-center">
-                      <Link
-                        href={tier.additionalLinkHref}
-                        className="text-sm text-[#4A6200] no-underline hover:no-underline font-semibold"
-                      >
-                        {tier.additionalLinkText}
-                      </Link>
-                    </p>
-                  )}
                 </div>
               ))}
             </div>
 
-            <p className="mt-12 text-center text-sm sm:text-base text-gray-600 max-w-2xl mx-auto">
-              Prices are in $ USD. To be transparent, Kahana earns 5% whenever anyone pays to access any monetized hub.
+            <p className="mx-auto mt-12 max-w-2xl text-center text-sm text-[#666666] sm:text-base">
+              Prices are in $ USD. To be transparent, Kahana earns 5% whenever anyone pays to access
+              any monetized hub.
             </p>
           </div>
         </section>

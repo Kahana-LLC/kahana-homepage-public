@@ -6,10 +6,10 @@ export default function PricingPage() {
   return (
     <>
       <Head>
-        <title>Pricing Plans - Kahana</title>
+        <title>Plans &amp; billing - Kahana</title>
         <meta
           name="description"
-          content="Explore Kahana's flexible pricing plans designed for a variety of use cases. Start for free today!" 
+          content="Choose the Kahana plan that fits your hubs. Start free, upgrade to Growth for unlimited hubs and storage, or contact us for Enterprise."
         />
       </Head>
       <div>

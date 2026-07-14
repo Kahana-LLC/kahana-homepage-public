@@ -3,7 +3,7 @@
 > **Purpose:** Source of truth for moving Kahana onto a clean host map: corporate content on dedicated subdomains, product app on the apex (`kahana.io`), and safe redirects from the legacy app host (`app.kahana.io`) — without breaking marketing, auth, or hub SEO.  
 > **Audience:** Product, growth, engineering, ops.  
 > **Last updated:** 2026-07-14  
-> **Status:** Planning ✅ · Phase 1 (subdomains) ✅ · Phase 2 (sidebar) ✅ · Phase 2.5 (apex 301s) ✅ (confirm prod curl) · Phase 3 (apex cutover) ⬜  
+> **Status:** Planning ✅ · Phase 1 (subdomains) ✅ · Phase 2 (sidebar) ✅ · Phase 2.5 (apex 301s) ✅ on beta + local Host QA (prod deploy held) · Phase 3 (apex cutover) ⬜  
 > **Related:** [`HUB_SEO_CHARTER.md`](HUB_SEO_CHARTER.md), [`KAHANA_PLATFORM.md`](KAHANA_PLATFORM.md), marketing site [`kahana-homepage-public`](https://github.com/Kahana-LLC/kahana-homepage-public), Phase 1 runbook [`docs/PHASE1_CORPORATE_SUBDOMAINS.md`](docs/PHASE1_CORPORATE_SUBDOMAINS.md), Phase 2.5 map [`docs/PHASE2_5_APEX_REDIRECT_MAP.md`](docs/PHASE2_5_APEX_REDIRECT_MAP.md)
 
 ---

@@ -75,24 +75,18 @@ curl -sSI "$BASE/?kahana_surface=newsroom" | head
 
 ## Ops: DNS + Heroku (production custom domains)
 
-Replace `APP_NAME` with the Heroku app that serves this repo (production marketing).
+Production app: **`kahana-public`** (ACM enabled). Domains were added 2026-07-14; release **v435** includes Phase 1 middleware (`512bede`).
 
-```bash
-# 1) Add custom domains on the Heroku app
-heroku domains:add about.kahana.io --app APP_NAME
-heroku domains:add newsroom.kahana.io --app APP_NAME
-heroku domains:add careers.kahana.io --app APP_NAME
-heroku domains:add help.kahana.io --app APP_NAME
+Namecheap **CNAME** records for `kahana.io` (do not change apex/`www`):
 
-# 2) Note DNS targets
-heroku domains --app APP_NAME
-```
+| Host | Value |
+|------|--------|
+| `about` | `dimensional-seahorse-wdtil1rtnsvhxgias5a8oaxl.herokudns.com` |
+| `newsroom` | `shielded-pandsy-t3y8gipjue7w8yuzac52zmo7.herokudns.com` |
+| `careers` | `tranquil-moose-ivv1n2zohkoopxwz2wn54wc8.herokudns.com` |
+| `help` | `serene-rook-0wr60vlgjdgb4zpi755sd8ft.herokudns.com` |
 
-At your DNS provider for `kahana.io`, create **CNAME** records (or ALIAS) for each subdomain → the Heroku DNS target shown above.
-
-Preferred TLS: ACM wildcard `*.kahana.io` / automated certs once domains are verified (Heroku ACM: `heroku certs:auto:enable --app APP_NAME` if not already on).
-
-Deploy a build that includes the updated `middleware.js` **before** or **with** DNS going live.
+Also see [`PHASE1_PRODUCTION_DNS.md`](./PHASE1_PRODUCTION_DNS.md).
 
 ---
 

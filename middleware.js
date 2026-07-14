@@ -5,9 +5,9 @@ import {
   resolveCorporateSurface,
 } from './config/corporateHosts';
 import {
-  APEX_MARKETING_HOSTS,
   apexMarketingRedirectsEnabled,
   buildApexRedirectUrl,
+  isApexMarketingHost,
 } from './config/apexRedirects';
 
 const CANONICAL_HOST = 'kahana.io';
@@ -46,7 +46,7 @@ export function middleware(request) {
   // Phase 2.5: apex marketing → corporate subdomains (hard 301)
   if (
     apexMarketingRedirectsEnabled() &&
-    APEX_MARKETING_HOSTS.has(host) &&
+    isApexMarketingHost(host) &&
     !pathname.startsWith('/api/')
   ) {
     const location = buildApexRedirectUrl(pathname, search);

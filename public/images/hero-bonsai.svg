@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 190" fill="none" aria-hidden="true">
+  <g stroke="#313A00" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
+    <!-- pot body -->
+    <path d="M38 148h84l-7 24H45l-7-24z" />
+    <!-- feet -->
+    <path d="M50 172v8M110 172v8" />
+    <!-- soil -->
+    <path d="M48 148c10-20 28-30 32-30s22 10 32 30" />
+    <!-- trunk -->
+    <path d="M76 128c-4-16 0-34 14-48 10-10 22-16 34-20" />
+    <!-- branch -->
+    <path d="M96 100c12-2 22 4 28 14" />
+    <!-- small canopy -->
+    <ellipse cx="128" cy="96" rx="18" ry="14" />
+    <!-- main canopy -->
+    <path d="M108 72c-18 2-34-8-36-24-2-14 10-28 26-28 6-12 22-18 36-12 14-8 32-2 38 12 12 0 22 12 20 24-2 12-12 20-24 22-4 10-16 16-28 14-8 6-20 6-32-8z" />
+  </g>
+</svg>
