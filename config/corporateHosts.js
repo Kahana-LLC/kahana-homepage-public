@@ -71,10 +71,16 @@ export const SURFACE_BY_HOST = Object.fromEntries(
   Object.values(CORPORATE_SURFACES).map((surface) => [surface.host, surface])
 );
 
-/**
- * @param {string | null | undefined} hostHeader
- * @returns {typeof CORPORATE_SURFACES[CorporateSurfaceId] | null}
- */
+/** Beta hosts for kahana-public-beta QA (same surfaces as production). */
+export const BETA_HOST_SUFFIX = `-beta.${PRODUCTION_SUFFIX}`;
+
+export const SURFACE_BY_BETA_HOST = Object.fromEntries(
+  Object.values(CORPORATE_SURFACES).map((surface) => [
+    `${surface.id}${BETA_HOST_SUFFIX}`,
+    surface,
+  ])
+);
+
 /**
  * @param {string | null | undefined} surfaceId
  * @returns {typeof CORPORATE_SURFACES[CorporateSurfaceId] | null}
@@ -85,12 +91,20 @@ export function getCorporateSurfaceById(surfaceId) {
   return CORPORATE_SURFACES[id] ?? null;
 }
 
+/**
+ * @param {string | null | undefined} hostHeader
+ * @returns {typeof CORPORATE_SURFACES[CorporateSurfaceId] | null}
+ */
 export function resolveCorporateSurface(hostHeader) {
   if (!hostHeader) return null;
   const host = hostHeader.split(':')[0].toLowerCase();
 
   if (SURFACE_BY_HOST[host]) {
     return SURFACE_BY_HOST[host];
+  }
+
+  if (SURFACE_BY_BETA_HOST[host]) {
+    return SURFACE_BY_BETA_HOST[host];
   }
 
   // Local / preview: about.localhost, newsroom.localhost:3000, etc.
@@ -120,4 +134,8 @@ export function isPreviewHost(hostHeader) {
 
 export function listCorporateHosts() {
   return Object.values(CORPORATE_SURFACES).map((s) => s.host);
+}
+
+export function listBetaCorporateHosts() {
+  return Object.keys(SURFACE_BY_BETA_HOST);
 }

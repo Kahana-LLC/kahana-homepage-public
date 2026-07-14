@@ -32,30 +32,44 @@ Routing: [`middleware.js`](../middleware.js) (`x-kahana-surface` response header
 
 ---
 
-## Beta / Heroku preview testing (`kahana-public-beta`)
+## Beta subdomain testing (`kahana-public-beta`)
 
-`newsroom.<app>.herokuapp.com` does **not** work — Heroku does not nest custom subdomains under `*.herokuapp.com`.
+Nested hosts like `newsroom.<app>.herokuapp.com` **do not work**. Use real DNS on `kahana.io` pointed at the beta app.
 
-After this middleware is deployed to [kahana-public-beta](https://dashboard.heroku.com/apps/kahana-public-beta), use the **preview surface override** on the normal Heroku URL:
+| Host | Role | `/` serves |
+|------|------|------------|
+| `about-beta.kahana.io` | Marketing home | Homepage |
+| `newsroom-beta.kahana.io` | Newsroom | `/blog` |
+| `careers-beta.kahana.io` | Careers | `/careers` |
+| `help-beta.kahana.io` | Help | `/docs` |
+| `kahana-public-beta-….herokuapp.com` | Beta “apex” | Unchanged full site |
+
+```bash
+heroku domains:add about-beta.kahana.io --app kahana-public-beta
+heroku domains:add newsroom-beta.kahana.io --app kahana-public-beta
+heroku domains:add careers-beta.kahana.io --app kahana-public-beta
+heroku domains:add help-beta.kahana.io --app kahana-public-beta
+heroku domains --app kahana-public-beta
+```
+
+Create matching **CNAME** records at your DNS provider → the Heroku DNS targets.
+
+### Fallback without DNS (query override)
+
+Only on `*.herokuapp.com` / localhost:
 
 | Surface | Browser URL |
 |---------|-------------|
-| About (homepage) | https://kahana-public-beta-c1ed93018879.herokuapp.com/?kahana_surface=about |
-| Newsroom → blog | https://kahana-public-beta-c1ed93018879.herokuapp.com/?kahana_surface=newsroom |
+| About | https://kahana-public-beta-c1ed93018879.herokuapp.com/?kahana_surface=about |
+| Newsroom | https://kahana-public-beta-c1ed93018879.herokuapp.com/?kahana_surface=newsroom |
 | Careers | https://kahana-public-beta-c1ed93018879.herokuapp.com/?kahana_surface=careers |
-| Help → docs | https://kahana-public-beta-c1ed93018879.herokuapp.com/?kahana_surface=help |
-
-Or curl:
+| Help | https://kahana-public-beta-c1ed93018879.herokuapp.com/?kahana_surface=help |
 
 ```bash
 BASE=https://kahana-public-beta-c1ed93018879.herokuapp.com
 curl -sSI "$BASE/?kahana_surface=newsroom" | head
 # Expect: x-kahana-surface: newsroom
 ```
-
-Override is only honored on preview hosts (`*.herokuapp.com`, localhost) — not on production `kahana.io`.
-
-For true subdomain QA later: CNAME `newsroom-beta.kahana.io` (etc.) → this Heroku app and add those hostnames with `heroku domains:add`.
 
 ---
 
