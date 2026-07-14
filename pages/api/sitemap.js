@@ -1,219 +1,80 @@
-const { SITE_URL: EXTERNAL_DATA_URL } = require("../../config/site");
+const {
+  ABOUT_ORIGIN,
+  NEWSROOM_ORIGIN,
+  CAREERS_ORIGIN,
+  HELP_ORIGIN,
+  absoluteCorporateUrl,
+} = require('../../config/site');
 
 export default function handler(req, res) {
-  res.setHeader("Content-Type", "text/xml");
+  res.setHeader('Content-Type', 'text/xml');
   res.write(generateSiteMap());
   res.end();
 }
 
+function urlEntry(loc, changefreq, priority) {
+  return `     <url>
+       <loc>${loc}</loc>
+       <changefreq>${changefreq}</changefreq>
+       <priority>${priority}</priority>
+     </url>`;
+}
+
 function generateSiteMap() {
+  const aboutPages = [
+    ['/', 'daily', '1.0'],
+    ['/about', 'weekly', '0.8'],
+    ['/team', 'weekly', '0.7'],
+    ['/manifesto', 'monthly', '0.7'],
+    ['/contact', 'monthly', '0.8'],
+    ['/security', 'monthly', '0.7'],
+    ['/pricing', 'weekly', '0.8'],
+    ['/press-kit', 'monthly', '0.6'],
+    ['/privacy-policy', 'monthly', '0.5'],
+    ['/terms-and-conditions', 'monthly', '0.5'],
+  ].map(([path, freq, pri]) =>
+    urlEntry(absoluteCorporateUrl(path), freq, pri)
+  );
+
+  const newsroomPages = [
+    ['/blog', 'daily', '0.9'],
+    ['/press', 'weekly', '0.8'],
+    ['/events', 'weekly', '0.7'],
+  ].map(([path, freq, pri]) =>
+    urlEntry(absoluteCorporateUrl(path), freq, pri)
+  );
+
+  const careersPages = [['/careers', 'weekly', '0.8']].map(([path, freq, pri]) =>
+    urlEntry(absoluteCorporateUrl(path), freq, pri)
+  );
+
+  const helpPages = [
+    ['/docs', 'weekly', '0.9'],
+    ['/support', 'weekly', '0.8'],
+    ['/community', 'weekly', '0.7'],
+  ].map(([path, freq, pri]) =>
+    urlEntry(absoluteCorporateUrl(path), freq, pri)
+  );
+
   return `<?xml version="1.0" encoding="UTF-8"?>
    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-     <!-- Main Pages -->
-     <url>
-       <loc>${EXTERNAL_DATA_URL}</loc>
-       <changefreq>daily</changefreq>
-       <priority>1.0</priority>
-     </url>
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/about</loc>
-       <changefreq>weekly</changefreq>
-       <priority>0.8</priority>
-     </url>
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/contact</loc>
-       <changefreq>monthly</changefreq>
-       <priority>0.8</priority>
-     </url>
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/blog</loc>
-       <changefreq>daily</changefreq>
-       <priority>0.9</priority>
-     </url>
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/schedule-demo</loc>
-       <changefreq>monthly</changefreq>
-       <priority>1.0</priority>
-     </url>
+     <!-- about.kahana.io -->
+${aboutPages.join('\n')}
 
-     <!-- Products -->
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/products</loc>
-       <changefreq>weekly</changefreq>
-       <priority>1.0</priority>
-     </url>
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/products/oasis-browser</loc>
-       <changefreq>weekly</changefreq>
-       <priority>0.9</priority>
-     </url>
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/products/oasis-enterprise-browser</loc>
-       <changefreq>weekly</changefreq>
-       <priority>0.9</priority>
-     </url>
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/features</loc>
-       <changefreq>weekly</changefreq>
-       <priority>0.85</priority>
-     </url>
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/features/oasis-voice</loc>
-       <changefreq>monthly</changefreq>
-       <priority>0.75</priority>
-     </url>
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/features/oasis-assistant</loc>
-       <changefreq>monthly</changefreq>
-       <priority>0.75</priority>
-     </url>
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/features/oasis-confirmations</loc>
-       <changefreq>monthly</changefreq>
-       <priority>0.75</priority>
-     </url>
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/features/oasis-onboarding</loc>
-       <changefreq>monthly</changefreq>
-       <priority>0.75</priority>
-     </url>
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/features/oasis-import</loc>
-       <changefreq>monthly</changefreq>
-       <priority>0.75</priority>
-     </url>
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/features/oasis-amplifier</loc>
-       <changefreq>monthly</changefreq>
-       <priority>0.75</priority>
-     </url>
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/features/oasis-enterprise-external-access</loc>
-       <changefreq>monthly</changefreq>
-       <priority>0.75</priority>
-     </url>
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/features/oasis-enterprise-governance</loc>
-       <changefreq>monthly</changefreq>
-       <priority>0.75</priority>
-     </url>
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/features/oasis-enterprise-identity-dlp</loc>
-       <changefreq>monthly</changefreq>
-       <priority>0.75</priority>
-     </url>
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/features/oasis-enterprise-faster-paths</loc>
-       <changefreq>monthly</changefreq>
-       <priority>0.75</priority>
-     </url>
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/features/user-analytics</loc>
-       <changefreq>monthly</changefreq>
-       <priority>0.75</priority>
-     </url>
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/products/web-application</loc>
-       <changefreq>weekly</changefreq>
-       <priority>0.9</priority>
-     </url>
-     <url>
-               <loc>${EXTERNAL_DATA_URL}/buyers-guide</loc>
-       <changefreq>monthly</changefreq>
-       <priority>0.8</priority>
-     </url>
+     <!-- newsroom.kahana.io -->
+${newsroomPages.join('\n')}
 
-     <!-- Solutions -->
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/solutions</loc>
-       <changefreq>weekly</changefreq>
-       <priority>1.0</priority>
-     </url>
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/solutions/saas-and-web-apps</loc>
-       <changefreq>monthly</changefreq>
-       <priority>0.8</priority>
-     </url>
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/solutions/remote-workforce</loc>
-       <changefreq>monthly</changefreq>
-       <priority>0.8</priority>
-     </url>
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/solutions/merger-integration</loc>
-       <changefreq>monthly</changefreq>
-       <priority>0.8</priority>
-     </url>
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/solutions/external-workforce</loc>
-       <changefreq>monthly</changefreq>
-       <priority>0.8</priority>
-     </url>
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/solutions/vdi-reduction</loc>
-       <changefreq>monthly</changefreq>
-       <priority>0.8</priority>
-     </url>
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/solutions/zero-trust-security</loc>
-       <changefreq>monthly</changefreq>
-       <priority>0.8</priority>
-     </url>
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/solutions/privileged-user-management</loc>
-       <changefreq>monthly</changefreq>
-       <priority>0.8</priority>
-     </url>
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/solutions/secure-browsing</loc>
-       <changefreq>monthly</changefreq>
-       <priority>0.8</priority>
-     </url>
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/solutions/workplace-enablement</loc>
-       <changefreq>monthly</changefreq>
-       <priority>0.8</priority>
-     </url>
+     <!-- careers.kahana.io -->
+${careersPages.join('\n')}
 
-     <!-- Documentation -->
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/docs</loc>
-       <changefreq>weekly</changefreq>
-       <priority>0.9</priority>
-     </url>
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/docs/getting-started</loc>
-       <changefreq>weekly</changefreq>
-       <priority>0.8</priority>
-     </url>
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/docs/ai-assistant</loc>
-       <changefreq>weekly</changefreq>
-       <priority>0.8</priority>
-     </url>
+     <!-- help.kahana.io -->
+${helpPages.join('\n')}
 
-     <!-- Support -->
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/support</loc>
-       <changefreq>weekly</changefreq>
-       <priority>0.8</priority>
-     </url>
-     <url>
-       <changefreq>weekly</changefreq>
-       <priority>0.7</priority>
-     </url>
-
-     <!-- Legal -->
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/privacy-policy</loc>
-       <changefreq>monthly</changefreq>
-       <priority>0.5</priority>
-     </url>
-     <url>
-       <loc>${EXTERNAL_DATA_URL}/terms-and-conditions</loc>
-       <changefreq>monthly</changefreq>
-       <priority>0.5</priority>
-     </url>
+     <!-- Hub loc origins (for crawlers discovering company hosts) -->
+${urlEntry(`${ABOUT_ORIGIN}/`, 'daily', '1.0')}
+${urlEntry(`${NEWSROOM_ORIGIN}/`, 'daily', '0.9')}
+${urlEntry(`${CAREERS_ORIGIN}/`, 'weekly', '0.8')}
+${urlEntry(`${HELP_ORIGIN}/`, 'weekly', '0.9')}
    </urlset>
  `;
 }

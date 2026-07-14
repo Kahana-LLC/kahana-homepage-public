@@ -2,6 +2,8 @@
 
 **Use the source of truth:** [`DOMAIN_CONSOLIDATION_CHARTER.md`](../DOMAIN_CONSOLIDATION_CHARTER.md)
 
-**Phase 1 runbook + URL inventory:** [`PHASE1_CORPORATE_SUBDOMAINS.md`](./PHASE1_CORPORATE_SUBDOMAINS.md)
+**Phase 1 runbook:** [`PHASE1_CORPORATE_SUBDOMAINS.md`](./PHASE1_CORPORATE_SUBDOMAINS.md)  
+**Phase 2.5 redirect map:** [`PHASE2_5_APEX_REDIRECT_MAP.md`](./PHASE2_5_APEX_REDIRECT_MAP.md)  
+**Phase 3 readiness (ops checklist):** [`DOMAIN_PHASE3_READINESS.md`](../DOMAIN_PHASE3_READINESS.md)
 
-This file previously held a draft that conflicted with the consolidation charter (e.g. overly narrow `about.` scope, Supabase vs Firebase for the product app). Do not use it for planning.
+This file previously held a draft that conflicted with the consolidation charter. Do not use it for planning.

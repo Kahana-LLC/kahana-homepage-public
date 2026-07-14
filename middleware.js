@@ -4,6 +4,11 @@ import {
   isPreviewHost,
   resolveCorporateSurface,
 } from './config/corporateHosts';
+import {
+  APEX_MARKETING_HOSTS,
+  apexMarketingRedirectsEnabled,
+  buildApexRedirectUrl,
+} from './config/apexRedirects';
 
 const CANONICAL_HOST = 'kahana.io';
 const REDIRECT_HOSTS = new Set(['kahana.co', 'www.kahana.co', 'www.kahana.io']);
@@ -26,7 +31,10 @@ function resolveSurface(request, host) {
 
 export function middleware(request) {
   const host = request.headers.get('host')?.split(':')[0] ?? '';
+  const { pathname, search } = request.nextUrl;
 
+  // Legacy aliases → apex (path preserved). www then hits Phase 2.5 map on next request,
+  // or we redirect www straight through canonicalization below.
   if (REDIRECT_HOSTS.has(host)) {
     const url = request.nextUrl.clone();
     url.hostname = CANONICAL_HOST;
@@ -35,15 +43,24 @@ export function middleware(request) {
     return NextResponse.redirect(url, 301);
   }
 
+  // Phase 2.5: apex marketing → corporate subdomains (hard 301)
+  if (
+    apexMarketingRedirectsEnabled() &&
+    APEX_MARKETING_HOSTS.has(host) &&
+    !pathname.startsWith('/api/')
+  ) {
+    const location = buildApexRedirectUrl(pathname, search);
+    if (location) {
+      return NextResponse.redirect(location, 301);
+    }
+  }
+
   const surface = resolveSurface(request, host);
   if (!surface) {
     return NextResponse.next();
   }
 
-  const { pathname } = request.nextUrl;
-
-  // Phase 1: map subdomain root to the surface home; leave other paths as-is
-  // so shared nav/footer still work on the same host.
+  // Corporate subdomains: map `/` to surface home; leave other paths as-is
   if (surface.homePath && (pathname === '/' || pathname === '')) {
     const url = request.nextUrl.clone();
     url.pathname = surface.homePath;
@@ -56,9 +73,6 @@ export function middleware(request) {
 
 export const config = {
   matcher: [
-    /*
-     * Skip static assets and Next internals; still run for pages + API.
-     */
     '/((?!_next/static|_next/image|favicon.ico|robots.txt|.*\\..*).*)',
   ],
 };

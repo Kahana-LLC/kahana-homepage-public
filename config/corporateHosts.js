@@ -5,7 +5,8 @@
  * to the surface home; all other paths work as on kahana.io so nav/footer
  * keep working during the additive phase.
  *
- * Canonical URLs stay on https://kahana.io until Phase 2.5 / 3.
+ * Phase 2.5: apex Host=kahana.io 301s marketing paths to these hosts
+ * (see config/apexRedirects.js). Preferred sitemap locs use subdomain origins.
  */
 
 export const PRODUCTION_SUFFIX = 'kahana.io';

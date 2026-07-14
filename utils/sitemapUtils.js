@@ -3,7 +3,10 @@ const { promises: fs } = require("fs");
 const { execSync } = require("child_process");
 import { getAllDocs } from "./docsUtils";
 
-const { SITE_URL: EXTERNAL_DATA_URL } = require("../config/site");
+const {
+  SITE_URL: EXTERNAL_DATA_URL,
+  absoluteCorporateUrl,
+} = require("../config/site");
 
 // Function to get last modified date from git
 async function getLastModifiedDate(filePath) {
@@ -28,7 +31,7 @@ async function getLastModifiedDate(filePath) {
 async function getDocsForSitemap() {
   const docs = await getAllDocs();
   return docs.map((doc) => ({
-    url: `${EXTERNAL_DATA_URL}/docs/${doc.slug}`,
+    url: absoluteCorporateUrl(`/docs/${doc.slug}`),
     lastmod: doc.date || new Date().toISOString(),
     changefreq: "weekly",
     priority: "0.8",
@@ -53,7 +56,7 @@ async function getAllBlogPosts() {
         // Only include posts that have required fields
         if (content.date) {
           blogPosts.push({
-            url: `${EXTERNAL_DATA_URL}/blog/${slug}`,
+            url: absoluteCorporateUrl(`/blog/${slug}`),
             lastmod: content.date,
             changefreq: "weekly",
             priority: "0.8",
@@ -103,7 +106,7 @@ async function getAllPages() {
             .replace(/index$/, "");
 
         pages.push({
-          url: `${EXTERNAL_DATA_URL}${route}`,
+          url: absoluteCorporateUrl(route || '/'),
           lastmod: await getLastModifiedDate(filePath),
           changefreq: determineChangeFrequency(route),
           priority: determinePriority(route),

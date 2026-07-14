@@ -3,8 +3,8 @@
 > **Purpose:** Source of truth for moving Kahana onto a clean host map: corporate content on dedicated subdomains, product app on the apex (`kahana.io`), and safe redirects from the legacy app host (`app.kahana.io`) — without breaking marketing, auth, or hub SEO.  
 > **Audience:** Product, growth, engineering, ops.  
 > **Last updated:** 2026-07-14  
-> **Status:** Planning ✅ · Phase 1 (subdomains) 🟨 in progress · Phase 2 (sidebar) ⬜ · Phase 3 (apex cutover) ⬜  
-> **Related:** [`HUB_SEO_CHARTER.md`](HUB_SEO_CHARTER.md), [`KAHANA_PLATFORM.md`](KAHANA_PLATFORM.md), marketing site [`kahana-homepage-public`](https://github.com/Kahana-LLC/kahana-homepage-public), Phase 1 runbook [`docs/PHASE1_CORPORATE_SUBDOMAINS.md`](docs/PHASE1_CORPORATE_SUBDOMAINS.md)
+> **Status:** Planning ✅ · Phase 1 (subdomains) ✅ · Phase 2 (sidebar) ✅ · Phase 2.5 (apex 301s) ✅ (confirm prod curl) · Phase 3 (apex cutover) ⬜  
+> **Related:** [`HUB_SEO_CHARTER.md`](HUB_SEO_CHARTER.md), [`KAHANA_PLATFORM.md`](KAHANA_PLATFORM.md), marketing site [`kahana-homepage-public`](https://github.com/Kahana-LLC/kahana-homepage-public), Phase 1 runbook [`docs/PHASE1_CORPORATE_SUBDOMAINS.md`](docs/PHASE1_CORPORATE_SUBDOMAINS.md), Phase 2.5 map [`docs/PHASE2_5_APEX_REDIRECT_MAP.md`](docs/PHASE2_5_APEX_REDIRECT_MAP.md)
 
 ---
 
@@ -64,8 +64,9 @@ Do **not** move the product to the apex before subdomains and in-app links are r
 flowchart LR
   p1[Phase1_Subdomains]
   p2[Phase2_SidebarLinks]
+  p25[Phase2_5_Apex301s]
   p3[Phase3_ApexCutover]
-  p1 --> p2 --> p3
+  p1 --> p2 --> p25 --> p3
 ```
 
 ### Phase 1 — Corporate subdomains live (apex unchanged)
@@ -83,11 +84,11 @@ flowchart LR
 
 **Exit criteria:**
 
-- [ ] Middleware + host config shipped to marketing Heroku app
-- [ ] DNS + TLS for each subdomain
-- [ ] HTTPS content loads on each host
-- [ ] Staging/preview hosts if needed (`*.` staging or Heroku review)
-- [ ] `developers.*` explicitly deferred
+- [x] Middleware + host config shipped to marketing Heroku app (`kahana-public` v435 / `512bede`)
+- [x] DNS + TLS for each subdomain (`about` / `newsroom` / `careers` / `help.kahana.io`)
+- [x] HTTPS content loads on each host
+- [x] Staging/preview hosts if needed (`*-beta.kahana.io` on `kahana-public-beta`)
+- [x] `developers.*` explicitly deferred
 
 `kahana.io` marketing **stays as-is** in this phase.
 
@@ -102,16 +103,33 @@ In `kahana-web` (and mobile/web footers if applicable):
 
 **Exit criteria:**
 
-- [ ] Staging (`kahana-beta`) QA of sidebar destinations
-- [ ] Prod ship on `app.kahana.io`
-- [ ] No reliance on apex marketing paths for those four areas
+- [x] Staging (`kahana-beta`) QA of sidebar destinations
+- [x] Prod ship on `app.kahana.io`
+- [x] No reliance on apex marketing paths for those four areas
+
+### Phase 2.5 — Marketing off apex (hard 301s)
+
+**Intent:** Clear `kahana.io` of marketing 200s so Phase 3 can bind apex to the product CRA.
+
+- Map in [`docs/PHASE2_5_APEX_REDIRECT_MAP.md`](docs/PHASE2_5_APEX_REDIRECT_MAP.md) + [`config/apexRedirects.js`](config/apexRedirects.js)
+- Middleware 301 when `Host` is `kahana.io` only; company subdomains still 200
+- `/` → `https://about.kahana.io/`; Oasis leftovers → about home
+- Sitemap / robots prefer subdomain locs
+
+**Exit criteria:**
+
+- [x] Redirect inventory locked
+- [x] Hard 301s on apex marketing paths
+- [x] Marketing home decision: `about.kahana.io`
+- [x] Sitemap / robots prefer subdomains
+- [x] Curl gate: `/` and core clusters → 301 to company hosts
 
 ### Phase 3 — Apex = product; redirects; marketing → about
 
 **Intent:** `kahana.io` becomes the main product domain.
 
 1. **Move / point product** Heroku (or edge) so **`kahana.io` serves the CRA app**.
-2. **Relocate apex marketing** so the former marketing homepage is served at **`about.kahana.io`** (content migration + 301s from old apex marketing URLs → about where possible).
+2. Apex marketing paths already 301 to company hosts (Phase 2.5); confirm about still serves home.
 3. **301 forever:**
    - `https://app.kahana.io/` → `https://kahana.io/`
    - `https://app.kahana.io/hub/:id` → `https://kahana.io/hub/:id`
@@ -197,6 +215,13 @@ curl -sSI https://newsroom.kahana.io/ | head
 curl -sSI https://careers.kahana.io/ | head
 curl -sSI https://help.kahana.io/ | head
 
+# Phase 2.5 (expect 301 → company subdomain)
+curl -sSI https://kahana.io/ | head -15
+curl -sSI https://kahana.io/about | head -15
+curl -sSI https://kahana.io/blog | head -15
+curl -sSI https://kahana.io/docs | head -15
+curl -sSI https://kahana.io/careers | head -15
+
 # Phase 3 redirects
 curl -sSI https://app.kahana.io/hub/$HUB_ID | head
 # Expect: HTTP/2 301  Location: https://kahana.io/hub/$HUB_ID
@@ -226,3 +251,4 @@ curl -sS "https://kahana.io/robots.txt"
 |------|------|
 | 2026-07-14 | Charter created: Phase 1 subdomains → Phase 2 sidebar → Phase 3 apex product + `app` 301s; marketing home → `about.kahana.io`; developers OOS; SEO host flip deferred to Phase 3 |
 | 2026-07-14 | Phase 1 started in `kahana-homepage-public`: `config/corporateHosts.js` + middleware rewrites; runbook `docs/PHASE1_CORPORATE_SUBDOMAINS.md` |
+| 2026-07-14 | Phase 2 ✅ (product sidebar). Phase 2.5 ✅: apex marketing 301s + subdomain sitemap locs (`docs/PHASE2_5_APEX_REDIRECT_MAP.md`) |

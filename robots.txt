@@ -9,9 +9,13 @@ Disallow: /api/
 Disallow: /_next/
 Disallow: /static/
 
-# Specify the location of the sitemaps
+# Phase 2.5: primary sitemaps on corporate hosts (apex marketing 301s off)
+Sitemap: https://about.kahana.io/sitemap.xml
+Sitemap: https://newsroom.kahana.io/sitemap.xml
+Sitemap: https://careers.kahana.io/sitemap.xml
+Sitemap: https://help.kahana.io/sitemap.xml
+# Apex still serves the same sitemap payload (locs are subdomain URLs)
 Sitemap: https://kahana.io/sitemap.xml
-Sitemap: https://kahana.io/sitemap-image.xml
 
 # Add crawl-delay for better server resource management
 Crawl-delay: 1

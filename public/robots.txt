@@ -2,5 +2,9 @@
 User-agent: *
 Allow: /
 
-# Sitemap location
+# Phase 2.5: company surfaces are canonical; apex sitemap lists subdomain locs
+Sitemap: https://about.kahana.io/sitemap.xml
+Sitemap: https://newsroom.kahana.io/sitemap.xml
+Sitemap: https://careers.kahana.io/sitemap.xml
+Sitemap: https://help.kahana.io/sitemap.xml
 Sitemap: https://kahana.io/sitemap.xml
