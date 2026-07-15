@@ -27,7 +27,7 @@
 
 You get one place to contribute what you know, get discovered, and help others learn.
 
-**As a contributor:** publish curated hubs (files, links, notes), list them on Explore, collaborate, earn Aura when people value your work, and turn on paid access later if you want.
+**As a contributor:** publish curated hubs of digital artifacts (files, videos, images, PDFs, documents, links, and more), list them on Explore, collaborate, earn Aura when people value your work, and turn on paid access later if you want.
 
 **As a seeker:** browse high-signal hubs in one catalog, save what matters, and learn without chasing scattered links or DMs.
 
@@ -85,7 +85,7 @@ Kahana also has **Aura**: community endorsement on Explore (see below). It is no
 
 ### What is a hub?
 
-A hub is a curated container for your digital product—files, notes, and optional collaborators. You can keep it private, make it public, list it on Explore, and sell access with Stripe.
+A hub is a curated place for digital artifacts: files, videos, images, PDFs, documents, links, and more, plus optional collaborators. You can keep it private, make it public, list it on Explore, and sell access with Stripe.
 
 ### How do I sell on Kahana?
 
@@ -181,13 +181,13 @@ Aura is **not** money and not crypto. It is endorsement: give it to lift hubs yo
 
 ### What is Aura?
 
-**Aura is limited.** You can give up to **5 Aura per day**. Put it all on one hub or split it across a few. It replenishes at **midnight UTC**.
+**Aura is limited.** You can give up to **5 Aura per day**. Put it all on one contribution or split it across a few. It replenishes at **midnight UTC**.
 
 Aura is not money and not crypto. It is endorsement for contributions you value. See who gave it. Because it is scarce, people give it carefully, which helps the best work rise and makes the library a place you can trust to learn. You cannot give Aura to your own contributions. Counts appear on Explore cards.
 
 ### How much Aura can I give?
 
-**Aura is limited** to **5 Aura per day**. You can put it all on one hub or split it across a few. It replenishes at **midnight UTC**. You can redistribute or adjust within product rules (for example, removing Aura given today to free budget). You cannot give Aura to your own contributions.
+**Aura is limited** to **5 Aura per day**. You can put it all on one contribution or split it across a few. It replenishes at **midnight UTC**. You can redistribute or adjust within product rules (for example, removing Aura given today to free budget). You cannot give Aura to your own contributions.
 
 ### What is an Aura streak?
 

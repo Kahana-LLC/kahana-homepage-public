@@ -14,7 +14,7 @@ const CAPABILITIES = [
   },
   {
     title: 'Hubs',
-    body: 'Files, notes, and collaborators in one curated place. Easy to open and easy to find.',
+    body: 'Digital artifacts (files, videos, images, PDFs, documents, links, and more) plus collaborators in one curated place. Easy to open and easy to find.',
   },
   {
     title: 'Profiles',

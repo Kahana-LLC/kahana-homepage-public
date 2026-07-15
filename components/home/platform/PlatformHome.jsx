@@ -70,7 +70,7 @@ const HOW_IT_WORKS = [
   {
     step: '01',
     title: 'Contribute',
-    body: 'Upload files and links into a hub on any topic. You gain exposure, get discovered, help others learn, and earn recognition through Aura.',
+    body: 'Upload and curate digital artifacts into a hub on any topic: files, videos, images, PDFs, documents, links, and more. You gain exposure, get discovered, help others learn, and earn recognition through Aura.',
     Icon: FolderPlusIcon,
   },
   {
@@ -95,7 +95,7 @@ const AURA_RULES = [
   },
   {
     title: 'Spend freely',
-    body: 'All on one hub, or split across a few',
+    body: 'All on one contribution, or split across a few',
     Icon: ArrowsRightLeftIcon,
   },
   {
@@ -137,7 +137,7 @@ const OPTIMIZE_STEPS = [
   {
     step: '01',
     title: 'Contribute a hub',
-    body: 'Fill it with real content: files, links, and notes worth opening.',
+    body: 'Fill it with digital artifacts: files, videos, images, PDFs, documents, links, and more.',
     Icon: FolderPlusIcon,
   },
   {
@@ -169,17 +169,17 @@ const OPTIMIZE_STEPS = [
 const SEEKER_BENEFITS = [
   {
     title: 'Easy access',
-    body: 'Save hubs into collections you can open on your phone or computer. You are one click away from the knowledge in Kahana.',
+    body: 'Save hubs of digital artifacts into collections you can open on your phone or computer. You are one click away from the knowledge in Kahana.',
     Icon: Squares2X2Icon,
   },
   {
     title: 'Credibility',
-    body: 'See who contributed and their track record before you dive in. Profiles with a check mark have completed Stripe Identity verification. Aura on a hub is community proof that others found it worth noticing.',
+    body: 'See who contributed and their track record before you dive in. Profiles with a check mark have completed Stripe Identity verification. Aura is community proof that others found a contribution worth noticing.',
     Icon: ShieldCheckIcon,
   },
   {
     title: 'Flexibility',
-    body: 'Hubs are not rigid online courses. Their flexibility lets contributors enhance your learning with curated files and links in the right order.',
+    body: 'One-size doesn\'t fit all. Hubs are not rigid online courses or data dumps. Their flexibility lets contributors adapt and curate digital artifacts in strategic ways to enhance your learning and understanding.',
     Icon: AdjustmentsHorizontalIcon,
   },
 ];
@@ -353,7 +353,8 @@ export default function PlatformHome() {
           <h2 className="text-3xl font-semibold sm:text-4xl">How to optimize</h2>
           <p className="mt-3 max-w-2xl text-lg text-[#666666]">
             Don&apos;t overthink it. Share what you know. Clear names, tags, and descriptions help
-            people find niche expertise when they search. Then watch analytics and improve.
+            people find your hubs and digital artifacts when they search. Then watch analytics and
+            improve.
           </p>
           <ol className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {OPTIMIZE_STEPS.map((item) => {
@@ -390,8 +391,8 @@ export default function PlatformHome() {
           <div className="mx-auto w-full max-w-6xl px-6 sm:px-10 lg:px-16">
             <h2 className="text-3xl font-semibold sm:text-4xl">Browse by category</h2>
             <p className="mt-3 max-w-2xl text-lg text-[#666666]">
-              Niche expertise across Kahana. Pick a topic and explore hubs people have
-              contributed.
+              Discover niche expertise across Kahana. Pick a topic and explore hubs of digital
+              artifacts people have contributed.
             </p>
           </div>
           <div className="mt-10 w-full overflow-hidden">
@@ -407,10 +408,10 @@ export default function PlatformHome() {
         <FadeInSection>
           <h2 className="text-3xl font-semibold sm:text-4xl">Mission &amp; Philosophy</h2>
           <p className="mt-4 max-w-3xl text-lg leading-relaxed text-[#666666]">
-            Our core belief is that people are naturally curious and creative. We created a space
-            where people can easily connect with others and get rewarded for being themselves. When
-            you feel like you could spend an eternity creating and exploring in Kahana, our mission
-            will be complete.
+            Our core belief is that people are naturally curious and creative. With our time on
+            Earth, we wanted to create a space where people can easily connect with each other and
+            get             rewarded for being themselves. When you feel like you could spend an eternity learning,
+            creating, and connecting with people in Kahana, our mission will be complete.
           </p>
         </FadeInSection>
       </SectionShell>

@@ -17,7 +17,7 @@ export const FAQ_SECTIONS = [
         id: 'benefits',
         question: 'What are the benefits of Kahana?',
         answer:
-          'You get one place to contribute what you know, get discovered, and help others learn.\n\nAs a contributor: publish curated hubs (files, links, notes), list them on Explore, collaborate, earn Aura when people value your work, and turn on paid access later if you want.\n\nAs a seeker: browse high-signal hubs in one catalog, save what matters, and learn without chasing scattered links or DMs.\n\nAura is the community signal that lifts quality so the best contributions rise.',
+          'You get one place to contribute what you know, get discovered, and help others learn.\n\nAs a contributor: publish curated hubs of digital artifacts (files, videos, images, PDFs, documents, links, and more), list them on Explore, collaborate, earn Aura when people value your work, and turn on paid access later if you want.\n\nAs a seeker: browse high-signal hubs in one catalog, save what matters, and learn without chasing scattered links or DMs.\n\nAura is the community signal that lifts quality so the best contributions rise.',
       },
       {
         id: 'value-prop',
@@ -35,7 +35,7 @@ export const FAQ_SECTIONS = [
         id: 'what-is-kahana',
         question: 'What is Kahana?',
         answer:
-          'Kahana is a library for curated digital knowledge.\n\nYou contribute hubs of files and links, get discovered on Explore, and earn Aura when people value your work. Seekers browse and learn in one place.\n\nPaid access is optional. We added it later, after users asked to earn from their best hubs.',
+          'Kahana is a library for curated digital knowledge.\n\nYou contribute hubs of digital artifacts (files, videos, images, PDFs, documents, links, and more), get discovered on Explore, and earn Aura when people value your work. Seekers browse and learn in one place.\n\nPaid access is optional. We added it later, after users asked to earn from their best hubs.',
       },
       {
         id: 'who-operates',
@@ -76,7 +76,7 @@ export const FAQ_SECTIONS = [
         id: 'what-is-hub',
         question: 'What is a hub?',
         answer:
-          'A hub is a curated place for your knowledge: files, links, notes, and optional collaborators.\n\nYou can leave it private, make it public, list it on Explore, and charge for access later if you want.',
+          'A hub is a curated place for digital artifacts: files, videos, images, PDFs, documents, links, and more, plus optional collaborators.\n\nYou can leave it private, make it public, list it on Explore, and charge for access later if you want.',
       },
       {
         id: 'how-sell',
@@ -196,13 +196,13 @@ export const FAQ_SECTIONS = [
         id: 'what-is-aura',
         question: 'What is Aura?',
         answer:
-          'Aura is limited. You can give up to 5 Aura per day. Put it all on one hub or split it across a few. It replenishes at midnight UTC.\n\nAura is not money and not crypto. It is endorsement for contributions you value. See who gave it. Because it is scarce, people give it carefully, which helps the best work rise and makes Kahana a place you can trust to learn.\n\nYou cannot give Aura to your own contributions.',
+          'Aura is limited. You can give up to 5 Aura per day. Put it all on one contribution or split it across a few. It replenishes at midnight UTC.\n\nAura is not money and not crypto. It is endorsement for contributions you value. See who gave it. Because it is scarce, people give it carefully, which helps the best work rise and makes Kahana a place you can trust to learn.\n\nYou cannot give Aura to your own contributions.',
       },
       {
         id: 'aura-budget',
         question: 'How much Aura can I give?',
         answer:
-          'Aura is limited to 5 Aura per day.\n\nYou can put it all on one hub or split it across a few. It replenishes at midnight UTC. You cannot give Aura to your own contributions.',
+          'Aura is limited to 5 Aura per day.\n\nYou can put it all on one contribution or split it across a few. It replenishes at midnight UTC. You cannot give Aura to your own contributions.',
       },
       {
         id: 'aura-streak',
