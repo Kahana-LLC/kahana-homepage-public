@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback, useRef, useMemo } from 'react'
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { FolderPlusIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 import whiteKahanaLogo from '../../assets/kahana_logo_transparent.svg';
 import { getCloudinaryImageUrl } from '../../utils/cloudinary-mapper';
 import { APP_URL, EXPLORE_URL, desktopNavItems, mobileNavRows } from './navConfig';
@@ -23,17 +24,17 @@ function ChevronDownIcon({ className }) {
 
 /* Compact header CTAs — see .btn-nav in globals (tighter than Figma sm; not used sitewide) */
 const ctaSecondaryClass =
-  'btn-secondary btn-nav no-underline hover:no-underline focus:no-underline';
+  'btn-secondary btn-nav inline-flex items-center gap-1.5 no-underline hover:no-underline focus:no-underline';
 
 const ctaPrimaryClass =
-  'btn-primary btn-nav no-underline hover:no-underline focus:no-underline';
+  'btn-primary btn-nav inline-flex items-center gap-1.5 no-underline hover:no-underline focus:no-underline';
 
 /* Full-size site CTAs for mobile drawer (match homepage pills) */
 const mobileCtaSecondaryClass =
-  'btn-secondary no-underline hover:no-underline focus:no-underline';
+  'btn-secondary inline-flex items-center gap-2 no-underline hover:no-underline focus:no-underline';
 
 const mobileCtaPrimaryClass =
-  'btn-primary no-underline hover:no-underline focus:no-underline';
+  'btn-primary inline-flex items-center gap-2 no-underline hover:no-underline focus:no-underline';
 
 function collectDropdownHrefs(dropdown) {
   const hrefs = [];
@@ -554,6 +555,7 @@ export default function NavbarDup() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
+                <MagnifyingGlassIcon className="h-4 w-4 shrink-0" aria-hidden />
                 Explore
               </a>
               <a
@@ -562,27 +564,38 @@ export default function NavbarDup() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Contribute
+                <FolderPlusIcon className="h-4 w-4 shrink-0" aria-hidden />
+                Create
               </a>
             </div>
 
-            <button
-              type="button"
-              onClick={() => setIsMobileMenuOpen((v) => !v)}
-              className="nav-hamburger-toggle inline-flex items-center justify-center lg:hidden"
-              aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
-              aria-expanded={isMobileMenuOpen}
-            >
-              {isMobileMenuOpen ? (
-                <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              ) : (
-                <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              )}
-            </button>
+            <div className="nav-mobile-actions flex items-center gap-2 lg:hidden">
+              <a
+                href={APP_URL}
+                className="nav-mobile-login no-underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Log in
+              </a>
+              <button
+                type="button"
+                onClick={() => setIsMobileMenuOpen((v) => !v)}
+                className="nav-hamburger-toggle inline-flex items-center justify-center"
+                aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+                aria-expanded={isMobileMenuOpen}
+              >
+                {isMobileMenuOpen ? (
+                  <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                ) : (
+                  <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+                  </svg>
+                )}
+              </button>
+            </div>
           </div>
         </div>
 
@@ -596,6 +609,7 @@ export default function NavbarDup() {
                 rel="noopener noreferrer"
                 onClick={closeMobile}
               >
+                <MagnifyingGlassIcon className="h-5 w-5 shrink-0" aria-hidden />
                 Explore
               </a>
               <a
@@ -605,7 +619,8 @@ export default function NavbarDup() {
                 rel="noopener noreferrer"
                 onClick={closeMobile}
               >
-                Contribute
+                <FolderPlusIcon className="h-5 w-5 shrink-0" aria-hidden />
+                Create
               </a>
               <a
                 href={APP_URL}

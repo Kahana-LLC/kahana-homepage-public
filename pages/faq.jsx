@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { FolderPlusIcon } from '@heroicons/react/24/outline';
 import SEO from '../components/SEO';
 import FadeInSection from '../components/FadeInSection';
 import FaqBrowse from '../components/faq/FaqBrowse';
@@ -59,10 +60,11 @@ export default function FaqPage() {
                   href={APP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-primary inline-flex items-center justify-center no-underline"
-                  onClick={() => trackButtonClick('faq_contribute')}
+                  className="btn-primary inline-flex items-center justify-center gap-2 no-underline"
+                  onClick={() => trackButtonClick('faq_create')}
                 >
-                  Contribute
+                  <FolderPlusIcon className="h-5 w-5 shrink-0" aria-hidden />
+                  Create
                 </a>
                 <a
                   href={SUPPORT_URL}

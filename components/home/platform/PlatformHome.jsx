@@ -7,13 +7,15 @@ import {
   BanknotesIcon,
   BookOpenIcon,
   ChartBarIcon,
-  ClockIcon,
   CurrencyDollarIcon,
   EyeIcon,
   FolderPlusIcon,
   GlobeAltIcon,
+  LockClosedIcon,
+  MagnifyingGlassIcon,
   MegaphoneIcon,
   NoSymbolIcon,
+  RectangleStackIcon,
   ShieldCheckIcon,
   SparklesIcon,
   Squares2X2Icon,
@@ -33,28 +35,30 @@ const HeroOwlLottie = dynamic(() => import('./HeroOwlLottie'), { ssr: false });
 /** Public Explore (marketing host) — not app.kahana.io */
 const EXPLORE_URL = 'https://kahana.io/explore';
 
-function PrimaryCta({ children = 'Contribute', className = '', trackingId }) {
+function PrimaryCta({ children = 'Create', className = '', trackingId }) {
   return (
     <a
       href={APP_URL}
       target="_blank"
       rel="noopener noreferrer"
-      className={`btn-primary inline-flex items-center justify-center no-underline ${className}`}
+      className={`btn-primary inline-flex items-center justify-center gap-2 no-underline ${className}`}
       onClick={() => trackingId && trackButtonClick(trackingId)}
     >
+      <FolderPlusIcon className="h-5 w-5 shrink-0" aria-hidden />
       {children}
     </a>
   );
 }
 
-function SecondaryCta({ children, className = '' }) {
+function SecondaryCta({ children = 'Explore', className = '' }) {
   return (
     <a
       href={EXPLORE_URL}
       target="_blank"
       rel="noopener noreferrer"
-      className={`btn-secondary inline-flex items-center justify-center no-underline ${className}`}
+      className={`btn-secondary inline-flex items-center justify-center gap-2 no-underline ${className}`}
     >
+      <MagnifyingGlassIcon className="h-5 w-5 shrink-0" aria-hidden />
       {children}
     </a>
   );
@@ -70,49 +74,51 @@ function SectionShell({ id, children, className = '' }) {
 
 const HOW_IT_WORKS = [
   {
-    step: '01',
-    title: 'Contribute',
-    body: 'Upload digital artifacts into a hub on any topic: files, videos, images, PDFs, documents, links, and more. Contributing takes seconds, not hours. It\'s fast and simple.',
-    Icon: FolderPlusIcon,
-  },
-  {
-    step: '02',
     title: 'Learn',
     body: 'Explore Kahana and access knowledge others have shared, curated and easy to reach in one place. When you like a contribution, give it Aura.',
     Icon: EyeIcon,
   },
   {
-    step: '03',
+    title: 'Create',
+    body: 'Create a hub. It starts private so you can add digital artifacts (files, videos, images, PDFs, documents, links, and more) and get it ready. When you want to contribute it to the public feed, flip a switch to list it on Explore. Invite editors or admins if you want to collaborate.',
+    Icon: FolderPlusIcon,
+  },
+  {
     title: 'Grow',
-    body: 'You grow from learning and the exposure you earn by contributing: views, saves, purchases, followers, and Aura. Gain exposure as people discover what you contribute.',
+    body: 'You grow from learning and the exposure you earn by contributing: views, saves, purchases, followers, and Aura. Gain exposure as people discover what you create.',
     Icon: ArrowTrendingUpIcon,
   },
 ];
 
 const AURA_RULES = [
   {
-    title: 'Daily budget',
-    body: '5 Aura to give each day',
+    title: 'Your daily budget',
+    body: '5 Aura to give each day. Your Aura replenishes at midnight UTC.',
     Icon: SparklesIcon,
   },
   {
-    title: 'Spend freely',
-    body: 'All on one contribution, or split across a few',
+    title: 'Give your way',
+    body: 'Give all your Aura to one hub, or split it across a few',
     Icon: ArrowsRightLeftIcon,
   },
   {
-    title: 'Resets overnight',
-    body: 'Replenishes at midnight UTC',
-    Icon: ClockIcon,
+    title: 'Yours to give and take',
+    body: 'Aura you give stays on a hub until you remove it. You control it.',
+    Icon: LockClosedIcon,
+  },
+  {
+    title: 'Hubs only',
+    body: 'Give your Aura to hubs, not to people or profiles',
+    Icon: RectangleStackIcon,
   },
   {
     title: 'No self-Aura',
-    body: 'You cannot give Aura to your own contributions',
+    body: 'You cannot give your Aura to your own hubs',
     Icon: NoSymbolIcon,
   },
   {
     title: 'Not money',
-    body: 'Endorsement only. Not crypto. Not payment.',
+    body: 'Promotion only. Not crypto. Not payment.',
     Icon: BanknotesIcon,
   },
 ];
@@ -138,8 +144,8 @@ const CREATOR_BENEFITS = [
 const OPTIMIZE_STEPS = [
   {
     step: '01',
-    title: 'Contribute a hub',
-    body: 'Fill it with digital artifacts: files, videos, images, PDFs, documents, links, and more.',
+    title: 'Create a hub',
+    body: 'Your hub starts private. Fill it with digital artifacts: files, videos, images, PDFs, documents, links, and more. Invite editors or admins if you want help.',
     Icon: FolderPlusIcon,
   },
   {
@@ -151,7 +157,7 @@ const OPTIMIZE_STEPS = [
   {
     step: '03',
     title: 'List on Explore',
-    body: 'Make the hub public and turn on Explore listing so people can find you.',
+    body: 'When you are ready to contribute to the public feed, flip a switch to make the hub public and list it on Explore.',
     Icon: GlobeAltIcon,
   },
   {
@@ -222,11 +228,11 @@ export default function PlatformHome() {
               The Digital Library With Aura
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#495800] sm:text-xl">
-              You learn. You contribute. You give your Aura to recognize the greatest contributions
-              to preserve quality.
+              You learn. You create. You give your Aura to recognize the greatest contributions
+              to promote quality.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <PrimaryCta trackingId="platform_hero_contribute">Contribute</PrimaryCta>
+              <PrimaryCta trackingId="platform_hero_create">Create</PrimaryCta>
               <SecondaryCta>Explore</SecondaryCta>
             </div>
           </FadeInSection>
@@ -236,62 +242,28 @@ export default function PlatformHome() {
         </div>
       </section>
 
-      <SectionShell id="how-it-works">
-        <FadeInSection>
-          <h2 className="text-center text-3xl font-semibold sm:text-4xl">How it works</h2>
-          <p className="mx-auto mt-3 max-w-2xl text-center text-lg text-[#666666]">
-            Kahana integrates learning, teaching, and growth into daily life.
-          </p>
-          <ol className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {HOW_IT_WORKS.map((item) => {
-              const { Icon } = item;
-              return (
-                <li key={item.step}>
-                  <RainbowHoverCard
-                    className="h-full"
-                    innerClassName="bg-white px-6 py-7 sm:px-8"
-                  >
-                    <div className="flex items-start gap-4">
-                      <span className="rainbow-hover-icon flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#EEF3D8] text-[#495800]">
-                        <Icon className="h-6 w-6" aria-hidden />
-                      </span>
-                      <div>
-                        <p className="text-sm font-semibold tracking-widest text-[#7A9200]">
-                          {item.step}
-                        </p>
-                        <h3 className="mt-1 text-xl font-semibold">{item.title}</h3>
-                        <p className="mt-2 text-[#666666]">{item.body}</p>
-                      </div>
-                    </div>
-                  </RainbowHoverCard>
-                </li>
-              );
-            })}
-          </ol>
-          <p className="mt-8 text-center">
-            <Link
-              href="/features"
-              className="text-base font-medium text-[#617500] no-underline underline-offset-4 hover:underline"
-            >
-              See features
-            </Link>
-          </p>
-        </FadeInSection>
-      </SectionShell>
-
       <SectionShell id="aura" className="border-t border-[#E0E8D4]">
         <FadeInSection>
           <div>
-            <h2 className="text-3xl font-semibold sm:text-4xl">Aura</h2>
+            <h2 className="text-3xl font-semibold sm:text-4xl">What is Aura?</h2>
 
             <RainbowHoverCard
               className="mt-8"
               innerClassName="bg-[#EEF3D8] px-6 py-5 sm:px-8"
             >
-              <p className="text-xl font-semibold text-[#313A00]">Aura is limited.</p>
-              <p className="mt-1 text-base text-[#495800]">
-                5 Aura per day · replenishes midnight UTC
-              </p>
+              <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:gap-10">
+                <AuraLikeAnimation />
+                <div>
+                  <p className="text-xl font-semibold text-[#313A00]">
+                    Aura is energy you give to recognize great contributions and promote quality.
+                  </p>
+                  <p className="mt-2 text-base leading-relaxed text-[#495800] sm:text-lg">
+                    Aura is limited. Giving and taking Aura is your power to influence and regulate
+                    quality across the library. It is not money, not crypto, and not a star rating.
+                    Aura is meant to signal the wisdom of the crowd.
+                  </p>
+                </div>
+              </div>
             </RainbowHoverCard>
 
             <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -318,15 +290,55 @@ export default function PlatformHome() {
               })}
             </ul>
 
-            <div className="mt-12 grid items-center gap-10 lg:grid-cols-[auto_1fr] lg:gap-16">
-              <AuraLikeAnimation />
-              <p className="max-w-xl text-lg text-[#666666]">
-                Because Aura is scarce, people give it carefully. That is why Kahana is different from
-                online courses, marketplaces, and creator monetization platforms, and why you can
-                trust Kahana as a place to learn.
-              </p>
-            </div>
+            <p className="mt-8">
+              <Link
+                href="/aura"
+                className="text-base font-medium text-[#617500] no-underline underline-offset-4 hover:underline"
+              >
+                Learn more about Aura
+              </Link>
+            </p>
           </div>
+        </FadeInSection>
+      </SectionShell>
+
+      <SectionShell id="how-it-works" className="border-t border-[#E0E8D4]">
+        <FadeInSection>
+          <h2 className="text-center text-3xl font-semibold sm:text-4xl">How to use Kahana</h2>
+          <p className="mx-auto mt-3 max-w-2xl text-center text-lg text-[#666666]">
+            Kahana integrates learning, teaching, and growth into daily life.
+          </p>
+          <ul className="mt-14 grid list-none gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {HOW_IT_WORKS.map((item) => {
+              const { Icon } = item;
+              return (
+                <li key={item.title}>
+                  <RainbowHoverCard
+                    className="h-full"
+                    innerClassName="bg-white px-6 py-7 sm:px-8"
+                  >
+                    <div className="flex items-start gap-4">
+                      <span className="rainbow-hover-icon flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#EEF3D8] text-[#495800]">
+                        <Icon className="h-6 w-6" aria-hidden />
+                      </span>
+                      <div>
+                        <h3 className="text-xl font-semibold">{item.title}</h3>
+                        <p className="mt-2 text-[#666666]">{item.body}</p>
+                      </div>
+                    </div>
+                  </RainbowHoverCard>
+                </li>
+              );
+            })}
+          </ul>
+          <p className="mt-8 text-center">
+            <Link
+              href="/features"
+              className="text-base font-medium text-[#617500] no-underline underline-offset-4 hover:underline"
+            >
+              See features
+            </Link>
+          </p>
         </FadeInSection>
       </SectionShell>
 
@@ -351,7 +363,7 @@ export default function PlatformHome() {
           </p>
           <BenefitTiles items={CREATOR_BENEFITS} />
           <p className="mt-8">
-            <PrimaryCta trackingId="platform_creators_contribute">Contribute</PrimaryCta>
+            <PrimaryCta trackingId="platform_creators_create">Create</PrimaryCta>
           </p>
         </FadeInSection>
       </SectionShell>
@@ -391,7 +403,7 @@ export default function PlatformHome() {
             })}
           </ol>
           <p className="mt-8">
-            <PrimaryCta trackingId="platform_optimize_contribute">Contribute</PrimaryCta>
+            <PrimaryCta trackingId="platform_optimize_create">Create</PrimaryCta>
           </p>
         </FadeInSection>
       </SectionShell>
@@ -446,7 +458,7 @@ export default function PlatformHome() {
             Share on any topic. Get discovered. Help others learn from curated hubs in one place.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-3">
-            <PrimaryCta trackingId="platform_closing_contribute">Contribute</PrimaryCta>
+            <PrimaryCta trackingId="platform_closing_create">Create</PrimaryCta>
             <a
               href={EXPLORE_URL}
               target="_blank"

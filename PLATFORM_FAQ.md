@@ -39,9 +39,9 @@ Aura is how the community shows what is worth your time, so the best work can ri
 
 The difference is quality. Kahana is built so the best contributions can rise, and people can trust what they find.
 
-We do that with Aura. Aura is how the community marks work worth learning from. It is not money and not crypto. You get a small daily budget: up to 5 Aura per day, replenished at midnight UTC. You can put it all on one contribution or split it across a few. You cannot give Aura to your own work.
+We do that with Aura, not another pile of star ratings and written reviews. Those systems often fail both sides: one negative review can drown out many careful positive ones, people chase review counts more than the score, and a perfect rating with almost no reviews (or a flood of glowing ones) can feel untrustworthy.
 
-Because Aura is limited, people give it carefully. That careful signal is what lifts quality across the library.
+Aura is different on purpose. You automatically have a small daily budget (up to 5 Aura per day) that is yours to give and take. Your Aura renews daily: at midnight UTC you get 5 Aura again, even if you gave all 5 already. You can put it all on one hub or split it across a few. You cannot give Aura to your own work. Because your Aura is scarce, you give it carefully. That careful signal is what lifts quality across the library.
 
 ### How do I optimize the benefits of Kahana?
 
@@ -200,9 +200,9 @@ On Explore, filter by free or paid, price range, or category. You can also searc
 
 ### What is Aura? Do I pay for it?
 
-Aura is limited. You can give up to **5 Aura per day**. It replenishes at **midnight UTC**.
+Aura is limited. You can give up to **5 Aura per day**. Your Aura renews daily: at **midnight UTC** you get 5 Aura again.
 
-Aura is not money and not crypto. It is a way to endorse hubs you value, see who gave Aura, and help the best work rise. You cannot give Aura to your own contributions.
+Aura is not money and not crypto. It is a way to endorse hubs you value, see who gave Aura, and help the best work rise. You cannot give Aura to your own hubs. Full explainer: [about.kahana.io/aura](https://about.kahana.io/aura).
 
 ---
 
@@ -210,17 +210,43 @@ Aura is not money and not crypto. It is a way to endorse hubs you value, see who
 
 ### What is Aura?
 
-Aura is limited. You can give up to **5 Aura per day**. Put it all on one contribution, or split it across a few. It replenishes at **midnight UTC**.
+Aura is how Kahana promotes quality. You automatically have up to **5 Aura per day** to endorse hubs worth learning from. Give it all to one hub, or split it across a few.
 
-Aura is not money and not crypto. It is endorsement for work you value. You can see who gave it. Because it is scarce, people give it carefully. That helps the best work rise, and makes Kahana a place you can trust to learn.
+Aura is not money and not crypto. You can see who gave it. Because your Aura is scarce, you give it carefully. That helps the best work rise.
 
-You cannot give Aura to your own contributions. Counts appear on Explore cards.
+You cannot give Aura to your own hubs. Counts appear on Explore cards. Full details: [about.kahana.io/aura](https://about.kahana.io/aura).
+
+### How is Aura different from star ratings or written reviews?
+
+Star ratings and written reviews often fail both sides. One negative review can outweigh many careful positive ones. People chase review counts more than the score. A perfect 5.0 with one review feels thin. Too many glowing reviews can feel fake.
+
+Aura is different on purpose. You have a small daily budget that is yours to give and take. Scarcity makes each endorsement mean more. You can see who gave Aura. You cannot endorse your own hubs. We wanted a signal built for quality, not another messy review pile.
 
 ### How much Aura can I give?
 
-You get **5 Aura per day**.
+You automatically have **5 Aura** to give each day.
 
-You can put it all on one contribution, or split it across a few. It replenishes at **midnight UTC**. You can redistribute or adjust within product rules (for example, removing Aura given today to free budget). You cannot give Aura to your own contributions.
+Give all of your Aura to one hub, or split it across a few. At **midnight UTC** you get 5 Aura again, even if you used all 5 already. You can remove Aura you gave within product rules. You cannot give Aura to your own hubs.
+
+### Does the Aura I already gave reset every day?
+
+No. Daily renewal is a fresh budget of 5 Aura to give. Aura you already placed on a hub stays there. It does not vanish overnight.
+
+You control it. If you change your mind later, you can remove Aura you gave.
+
+### Do I need to create a hub to give Aura?
+
+No. Anyone with an account can give Aura. Creating a hub is how you add knowledge to the library. It is not required to endorse hubs you find on Explore.
+
+### Can I give Aura to a person or creator?
+
+No. Aura can only be given to hubs of digital artifacts. You cannot give Aura directly to profiles, hub owners, or other users as people.
+
+### How do I create and contribute on Kahana?
+
+Create a hub, add digital artifacts (files, videos, images, PDFs, documents, links, and more), then optimize with clear names, tags, and a description. List it on Explore when you are ready.
+
+You can invite editors and admins to collaborate. Turn on paid access later if you want.
 
 ### What is an Aura streak?
 
@@ -358,3 +384,4 @@ Lead with **marketplace + discovery + payments in one stack**, then Aura as cult
 |------|------|
 | 2026-07-14 | Initial FAQ pack expanded from platform FAQ seed + Aura / Explore / billing Q&As for website and Cyndee review. |
 | 2026-07-15 | Friendly language pass: shorter sentences, clearer voice; synced with `data/platformFaq.js` on-page answers. |
+| 2026-07-15 | Aura permanence, hubs-only, Create-a-hub path; link to `/aura` explainer. |

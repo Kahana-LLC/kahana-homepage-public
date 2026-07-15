@@ -38,6 +38,7 @@ const PATH_PRESERVE_PREFIXES = [
   { prefix: '/careers', origin: CAREERS_ORIGIN },
   { prefix: '/pricing', origin: ABOUT_ORIGIN },
   { prefix: '/faq', origin: ABOUT_ORIGIN },
+  { prefix: '/aura', origin: ABOUT_ORIGIN },
   { prefix: '/contact', origin: ABOUT_ORIGIN },
   { prefix: '/support', origin: HELP_ORIGIN },
   { prefix: '/community', origin: HELP_ORIGIN },

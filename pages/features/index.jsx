@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { FolderPlusIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 import SEO from '../../components/SEO';
 import FadeInSection from '../../components/FadeInSection';
 import { APP_URL } from '../../components/nav/navConfig';
@@ -46,10 +47,11 @@ function PrimaryCta() {
       href={APP_URL}
       target="_blank"
       rel="noopener noreferrer"
-      className="btn-primary inline-flex items-center justify-center no-underline"
-      onClick={() => trackButtonClick('features_contribute')}
+      className="btn-primary inline-flex items-center justify-center gap-2 no-underline"
+      onClick={() => trackButtonClick('features_create')}
     >
-      Contribute
+      <FolderPlusIcon className="h-5 w-5 shrink-0" aria-hidden />
+      Create
     </a>
   );
 }
@@ -60,8 +62,9 @@ function ExploreCta() {
       href={EXPLORE_URL}
       target="_blank"
       rel="noopener noreferrer"
-      className="btn-secondary inline-flex items-center justify-center no-underline"
+      className="btn-secondary inline-flex items-center justify-center gap-2 no-underline"
     >
+      <MagnifyingGlassIcon className="h-5 w-5 shrink-0" aria-hidden />
       Explore
     </a>
   );

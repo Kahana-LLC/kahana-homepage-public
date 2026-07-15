@@ -532,6 +532,40 @@ footer[aria-labelledby='footer-heading'] button.footer-legal-text-button:focus-v
   outline-offset: 2px !important;
 }
 
+.nav-shell a.nav-mobile-login,
+.nav-shell a.nav-mobile-login:visited,
+.nav-shell a.nav-mobile-login:hover,
+.nav-shell a.nav-mobile-login:active,
+.nav-shell a.nav-mobile-login:focus {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0.5rem 0.35rem !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  color: #617500 !important;
+  font-size: 0.9375rem !important;
+  font-weight: 500 !important;
+  line-height: 1.25 !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+}
+
+.nav-shell a.nav-mobile-login:hover {
+  color: #495800 !important;
+}
+
+.nav-shell a.nav-mobile-login:focus {
+  outline: none !important;
+}
+
+.nav-shell a.nav-mobile-login:focus-visible {
+  outline: 2px solid var(--btn-focus-ring) !important;
+  outline-offset: 2px !important;
+  border-radius: 0.25rem !important;
+}
+
 .nav-shell button.nav-hamburger-toggle {
   background-color: #ffffff !important;
   color: #617500 !important;
