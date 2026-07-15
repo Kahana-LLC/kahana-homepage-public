@@ -72,7 +72,7 @@ export default function FeaturesPage() {
     <>
       <SEO
         title="Features | Kahana"
-        description="Contribute curated hubs, get discovered on Explore, and help seekers learn. Optional earning from access came later, after users asked for it."
+        description="Explore hubs, contribute digital artifacts, give Aura so quality rises, and turn on paid access later if you want."
         url={CANONICAL}
         type="website"
       />

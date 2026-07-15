@@ -12,6 +12,7 @@ import {
 /** Product Hunt #4 celebration banner on homepage, blog, products, and features. Set SHOW_PRODUCT_HUNT_CELEBRATION false in product-hunt-launch.js to disable. */
 const SHOW_PRODUCT_HUNT_BANNER = SHOW_PRODUCT_HUNT_CELEBRATION;
 import SEO from "../components/SEO";
+import { absoluteCorporateUrl } from "../config/site";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { trackError } from "../utils/analytics";
@@ -395,7 +396,7 @@ function AppContent({ Component, pageProps }) {
       ) : null}
       <div className="flex flex-col min-h-screen" data-page={isBuyerGuide ? 'buyer-guide' : undefined}>
         <SEO
-          url={`https://kahana.io${router.asPath}`}
+          url={absoluteCorporateUrl((router.asPath || "/").split("?")[0].split("#")[0] || "/")}
           type={router.pathname === "/" ? "website" : "article"}
           skipCanonical
         />

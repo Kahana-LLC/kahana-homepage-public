@@ -1,7 +1,12 @@
 import Head from 'next/head';
 import Script from 'next/script';
 import React, { useEffect, useState } from 'react';
-import SEO from '../components/SEO';
+import SEO, {
+  DEFAULT_OG_IMAGE,
+  DEFAULT_SEO_DESCRIPTION,
+  DEFAULT_SEO_TITLE,
+} from '../components/SEO';
+import { ABOUT_ORIGIN } from '../config/site';
 import PlatformHome from '../components/home/platform/PlatformHome';
 
 export default function Home() {
@@ -54,9 +59,10 @@ export default function Home() {
         />
       </Head>
       <SEO
-        title="Kahana | The online library you deserve"
-        description="Contribute curated knowledge, get discovered on Explore, and help seekers learn. Optional earning from access came later, after users asked for it."
-        url="https://kahana.io/"
+        title={DEFAULT_SEO_TITLE}
+        description={DEFAULT_SEO_DESCRIPTION}
+        image={DEFAULT_OG_IMAGE}
+        url={`${ABOUT_ORIGIN}/`}
         type="website"
       />
       <PlatformHome />

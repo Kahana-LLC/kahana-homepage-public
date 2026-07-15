@@ -18,7 +18,8 @@ export default function Meta({
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://kahana.is";
   const fullTitle = title ? `${title} | Kahana` : "Kahana";
   const fullDescription =
-    description || "Kahana - Enterprise Browser Solutions";
+    description ||
+    "Contribute what you know, learn from curated hubs on Explore, and give Aura so quality rises.";
   const canonical = canonicalUrl
     ? `${siteUrl}${canonicalUrl}`
     : `${siteUrl}${router.asPath}`;

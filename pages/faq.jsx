@@ -19,7 +19,7 @@ export default function FaqPage() {
     <>
       <SEO
         title="FAQ | Kahana"
-        description="Answers about Kahana hubs, Explore, Aura, optional earning (added after users asked), creator plans, and how seekers unlock curated knowledge."
+        description="Answers about Kahana hubs, Explore, Aura, plans, and how to learn and contribute. Paid access is optional."
         url={CANONICAL}
         type="website"
         schema={schema}
@@ -33,7 +33,7 @@ export default function FaqPage() {
                 Frequently asked questions
               </h1>
               <p className="mt-5 text-lg leading-relaxed text-[#495800] sm:text-xl">
-                Common questions for creators, seekers, and anyone exploring Kahana.
+                Common questions for learners, contributors, and anyone exploring Kahana.
               </p>
             </FadeInSection>
           </div>

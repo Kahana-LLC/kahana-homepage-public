@@ -1,17 +1,16 @@
-import Head from 'next/head';
-import Script from 'next/script';
+import SEO from '../components/SEO';
+import { ABOUT_ORIGIN } from '../config/site';
 import Pricing from '../components/Pricing';
 
 export default function PricingPage() {
   return (
     <>
-      <Head>
-        <title>Plans &amp; billing - Kahana</title>
-        <meta
-          name="description"
-          content="Choose the Kahana plan that fits your hubs. Start free, upgrade to Growth for unlimited hubs and storage, or contact us for Enterprise."
-        />
-      </Head>
+      <SEO
+        title="Plans & billing | Kahana"
+        description="Choose the Kahana plan that fits your hubs. Start free, upgrade to Growth for unlimited hubs and storage, or contact us for Enterprise."
+        url={`${ABOUT_ORIGIN}/pricing`}
+        type="website"
+      />
       <div>
         <main className="py-10 px-4">
           <Pricing />
