@@ -11,7 +11,7 @@ export const blogIndex = [
     excerpt:
       'Notion and Drive excel at organizing files for you and your team. Kahana is a public library for curated hubs—Explore discovery, Aura, and optional Stripe paywalls. An honest look at a Notion alternative marketplace for knowledge you want found.',
     defaultImageQuery: 'Private cloud drive workspace versus public digital library marketplace',
-    featuredImage: '/assets/kahana_blog_image.jpg',
+    featuredImage: '/assets/blog/blog-kahana-vs-notion-drive.jpg',
     slug: 'kahana-vs-notion-google-drive',
     readingTime: 7,
   },
@@ -23,7 +23,7 @@ export const blogIndex = [
     excerpt:
       'Linktree answers “where should they click?” Kahana answers “what do they open, find, and pay for?”—profiles, hubs, Explore, and optional paywalls. An honest Linktree / link-in-bio alternative for creators packaging knowledge.',
     defaultImageQuery: 'Creator link in bio profile catalog digital library',
-    featuredImage: '/assets/kahana_blog_image.jpg',
+    featuredImage: '/assets/blog/blog-kahana-vs-linktree.jpg',
     slug: 'kahana-vs-linktree',
     readingTime: 6,
   },
@@ -35,7 +35,7 @@ export const blogIndex = [
     excerpt:
       'Gumroad and Stan-style tools are strong at checkout links. Kahana is built for curated hubs inside an Explore marketplace—with Aura as community signal and optional paid access. An honest comparison for creators weighing a Gumroad or Stan Store alternative.',
     defaultImageQuery: 'Creator marketplace library discovery digital products comparison',
-    featuredImage: '/assets/kahana_blog_image.jpg',
+    featuredImage: '/assets/blog/blog-kahana-vs-gumroad-stan.jpg',
     slug: 'kahana-vs-gumroad-stan',
     readingTime: 7,
   },
