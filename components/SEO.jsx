@@ -5,7 +5,7 @@ import { getCloudinaryImageUrl } from '../utils/cloudinary-mapper';
 const DEFAULT_ORG_LOGO = getCloudinaryImageUrl('/assets/kahana_logo_transparent.svg');
 
 /** Marketing home copy — keep in sync with homepage hero / PLATFORM_FAQ voice. */
-export const DEFAULT_SEO_TITLE = 'Kahana | The Digital Library With Aura';
+export const DEFAULT_SEO_TITLE = 'The Digital Library With Aura';
 export const DEFAULT_SEO_DESCRIPTION =
   'Contribute what you know, learn from curated hubs on Explore, and give Aura so quality rises. Paid access is optional.';
 /**
@@ -14,6 +14,8 @@ export const DEFAULT_SEO_DESCRIPTION =
  */
 export const DEFAULT_OG_IMAGE =
   'https://res.cloudinary.com/dlhpqrucv/image/upload/w_1200,h_630,c_pad,b_rgb:F8FAF2,f_png,q_auto:good/kahana-homepage/public/kahana_logo_transparent';
+export const DEFAULT_OG_IMAGE_WIDTH = 1200;
+export const DEFAULT_OG_IMAGE_HEIGHT = 630;
 
 const SEO = ({
   title = DEFAULT_SEO_TITLE,
@@ -25,7 +27,11 @@ const SEO = ({
   noindex = false,
   skipCanonical = false,
 }) => {
-  const siteTitle = title.includes('Kahana') ? title : `${title} | Kahana`;
+  // Keep DEFAULT_SEO_TITLE exact for Messages/OG; brand other titles with "| Kahana".
+  const siteTitle =
+    title === DEFAULT_SEO_TITLE || title.includes('Kahana')
+      ? title
+      : `${title} | Kahana`;
 
   // Default schema for organization
   const defaultSchema = {
@@ -57,6 +63,12 @@ const SEO = ({
       <meta property="og:title" content={siteTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={image} />
+      {image === DEFAULT_OG_IMAGE && (
+        <>
+          <meta property="og:image:width" content={String(DEFAULT_OG_IMAGE_WIDTH)} />
+          <meta property="og:image:height" content={String(DEFAULT_OG_IMAGE_HEIGHT)} />
+        </>
+      )}
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
