@@ -18,17 +18,17 @@ function Heart({ size = 14 }) {
 }
 
 /**
- * Product Aura chip: balance climbs as floating hearts pulse outward (likes / endorsements).
+ * Product Aura chip: daily budget meter (5 → 1 → 5) with give pulses.
  */
 export default function AuraLikeAnimation() {
   const reduceMotion = useReducedMotion();
-  const [count, setCount] = useState(2);
+  const [count, setCount] = useState(5);
   const [burstId, setBurstId] = useState(0);
 
   useEffect(() => {
     if (reduceMotion) return undefined;
     const id = window.setInterval(() => {
-      setCount((n) => (n >= 48 ? 2 : n + 1));
+      setCount((n) => (n <= 1 ? 5 : n - 1));
       setBurstId((b) => b + 1);
     }, 1400);
     return () => window.clearInterval(id);
@@ -36,7 +36,7 @@ export default function AuraLikeAnimation() {
 
   return (
     <div
-      className="relative mx-auto flex h-[160px] w-[200px] items-center justify-center lg:mx-0"
+      className="relative mx-auto flex h-[180px] w-[220px] flex-col items-center justify-center lg:mx-0"
       aria-hidden
     >
       <AnimatePresence>
@@ -76,6 +76,7 @@ export default function AuraLikeAnimation() {
           {count}
         </motion.span>
       </div>
+      <p className="relative z-10 mt-2 text-sm font-medium tracking-wide text-[#666666]">today</p>
     </div>
   );
 }

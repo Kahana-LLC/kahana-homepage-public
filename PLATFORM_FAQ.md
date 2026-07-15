@@ -171,7 +171,9 @@ Use Explore filters for monetization (free vs paid), price range, category, and 
 
 ### What is Aura? Do I pay for it?
 
-Aura is **not** a purchase currency. Members get a daily budget to **Give Aura** to hubs they think are worth noticing. It is social proof and discovery signal—not cryptocurrency and not payment for content.
+**Aura is limited.** You can give up to **5 Aura per day**. It replenishes at **midnight UTC**.
+
+Aura is **not** money and not crypto. It is endorsement: give it to lift hubs you value, see who gave it, and help the best contributions rise. You cannot give Aura to your own hub.
 
 ---
 
@@ -179,11 +181,13 @@ Aura is **not** a purchase currency. Members get a daily budget to **Give Aura**
 
 ### What is Aura?
 
-Aura is Kahana’s light endorsement system on Explore. You give limited Aura each day to hubs you value. Counts and social proof appear on marketplace cards.
+**Aura is limited.** You can give up to **5 Aura per day**. Put it all on one hub or split it across a few. It replenishes at **midnight UTC**.
+
+Aura is not money and not crypto. It is endorsement for contributions you value. See who gave it. Because it is scarce, people give it carefully, which helps the best work rise and makes the library a place you can trust to learn. You cannot give Aura to your own hub. Counts appear on Explore cards.
 
 ### How much Aura can I give?
 
-There is a **daily budget** (currently **5** Aura per day). You can redistribute or adjust within product rules (for example, removing Aura given today to free budget). You cannot give Aura to your own hub.
+**Aura is limited** to **5 Aura per day**. You can put it all on one hub or split it across a few. It replenishes at **midnight UTC**. You can redistribute or adjust within product rules (for example, removing Aura given today to free budget). You cannot give Aura to your own hub.
 
 ### What is an Aura streak?
 

@@ -3,14 +3,19 @@ import Link from 'next/link';
 import {
   AdjustmentsHorizontalIcon,
   ArrowTrendingUpIcon,
+  ArrowsRightLeftIcon,
+  BanknotesIcon,
   BookOpenIcon,
   ChartBarIcon,
+  ClockIcon,
   CurrencyDollarIcon,
   EyeIcon,
   FolderPlusIcon,
   GlobeAltIcon,
   MegaphoneIcon,
+  NoSymbolIcon,
   ShieldCheckIcon,
+  SparklesIcon,
   Squares2X2Icon,
   TagIcon,
 } from '@heroicons/react/24/outline';
@@ -69,14 +74,42 @@ const HOW_IT_WORKS = [
   {
     step: '02',
     title: 'Learn',
-    body: 'Explore the library and access knowledge others have shared, curated and easy to reach in one place.',
+    body: 'Explore the library and access knowledge others have shared, curated and easy to reach in one place. When you like a contribution, give it Aura.',
     Icon: EyeIcon,
   },
   {
     step: '03',
     title: 'Grow',
-    body: 'You grow from learning, and you grow from the exposure you earn by contributing: views, saves, and purchases.',
+    body: 'You grow from learning, and you grow from the exposure you earn by contributing: views, saves, purchases, and Aura. Growth happens through Aura, not just views.',
     Icon: ArrowTrendingUpIcon,
+  },
+];
+
+const AURA_RULES = [
+  {
+    title: 'Daily budget',
+    body: '5 Aura to give each day',
+    Icon: SparklesIcon,
+  },
+  {
+    title: 'Spend freely',
+    body: 'All on one hub, or split across a few',
+    Icon: ArrowsRightLeftIcon,
+  },
+  {
+    title: 'Resets overnight',
+    body: 'Replenishes at midnight UTC',
+    Icon: ClockIcon,
+  },
+  {
+    title: 'No self-Aura',
+    body: 'You cannot give Aura to your own hub',
+    Icon: NoSymbolIcon,
+  },
+  {
+    title: 'Not money',
+    body: 'Endorsement only. Not crypto. Not payment.',
+    Icon: BanknotesIcon,
   },
 ];
 
@@ -180,7 +213,7 @@ export default function PlatformHome() {
         <div className="relative mx-auto grid w-full max-w-6xl items-center gap-10 px-6 py-16 sm:px-10 sm:py-20 lg:grid-cols-[1fr_minmax(240px,360px)] lg:gap-16 lg:px-16 lg:py-24">
           <FadeInSection eager>
             <h1 className="max-w-xl text-3xl font-semibold leading-tight tracking-tight text-[#313A00] sm:text-4xl md:text-5xl">
-              The online library you deserve
+              The Digital Library With Aura
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#495800] sm:text-xl">
               You learn. You contribute. You give your Aura to recognize the greatest contributions
@@ -240,21 +273,49 @@ export default function PlatformHome() {
 
       <SectionShell id="aura" className="border-t border-[#E0E8D4]">
         <FadeInSection>
-          <div className="grid items-center gap-12 lg:grid-cols-[1fr_auto] lg:gap-16">
-            <div>
-              <h2 className="text-3xl font-semibold sm:text-4xl">Aura</h2>
-              <p className="mt-4 max-w-xl text-lg text-[#666666]">
-                Aura is the spirit of this library. Give it to lift contributions you love. See who
-                gave it. Crowd wisdom helps the best work rise instead of getting buried.
-              </p>
-              <p className="mt-4 max-w-xl text-lg text-[#666666]">
-                Aura is also what makes Kahana different from online courses, digital product
-                marketplaces, and creator monetization platforms. Those tools host or sell content.
-                Kahana adds a living community signal so quality can rise with people, not only ads,
-                algorithms, or paywalls.
+          <div>
+            <h2 className="text-3xl font-semibold sm:text-4xl">Aura</h2>
+            <p className="mt-3 max-w-2xl text-lg text-[#666666]">
+              Give carefully. Lift what belongs in the library.
+            </p>
+
+            <div className="mt-8 rounded-2xl border border-[#E0E8D4] bg-[#EEF3D8]/60 px-6 py-5 sm:px-8">
+              <p className="text-xl font-semibold text-[#313A00]">Aura is limited.</p>
+              <p className="mt-1 text-base text-[#495800]">
+                5 Aura per day · replenishes midnight UTC
               </p>
             </div>
-            <AuraLikeAnimation />
+
+            <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {AURA_RULES.map((rule) => {
+                const { Icon } = rule;
+                return (
+                  <li
+                    key={rule.title}
+                    className="rounded-2xl border border-[#E0E8D4] bg-white/80 px-5 py-5 sm:px-6"
+                  >
+                    <div className="flex items-start gap-3">
+                      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#EEF3D8] text-[#495800]">
+                        <Icon className="h-5 w-5" aria-hidden />
+                      </span>
+                      <div>
+                        <h3 className="text-lg font-semibold text-[#313A00]">{rule.title}</h3>
+                        <p className="mt-1 text-[#666666]">{rule.body}</p>
+                      </div>
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
+
+            <div className="mt-12 grid items-center gap-10 lg:grid-cols-[auto_1fr] lg:gap-16">
+              <AuraLikeAnimation />
+              <p className="max-w-xl text-lg text-[#666666]">
+                Because Aura is scarce, people give it carefully. That is why Kahana is different from
+                online courses, marketplaces, and creator monetization platforms, and why you can
+                trust this library as a place to learn.
+              </p>
+            </div>
           </div>
         </FadeInSection>
       </SectionShell>
