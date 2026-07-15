@@ -408,10 +408,10 @@ export default function PlatformHome() {
         <FadeInSection>
           <h2 className="text-3xl font-semibold sm:text-4xl">Mission &amp; Philosophy</h2>
           <p className="mt-4 max-w-3xl text-lg leading-relaxed text-[#666666]">
-            Our core belief is that people are naturally curious and creative. With our time on
-            Earth, we wanted to create a space where people can easily connect with each other and
-            get             rewarded for being themselves. When you feel like you could spend an eternity learning,
-            creating, and connecting with people in Kahana, our mission will be complete.
+            Our core belief is that people are naturally curious and creative. Leveraging our lives,
+            we wanted to create a special space where people can easily connect with each other and
+            get rewarded for being themselves. If there comes a day when you feel like you could spend
+            an eternity in Kahana, let us know. We&apos;ll be happy to hear it :)
           </p>
         </FadeInSection>
       </SectionShell>

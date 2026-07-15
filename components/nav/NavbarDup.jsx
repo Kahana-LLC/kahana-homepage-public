@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import whiteKahanaLogo from '../../assets/kahana_logo_transparent.svg';
 import { getCloudinaryImageUrl } from '../../utils/cloudinary-mapper';
-import { APP_URL, desktopNavItems, mobileNavRows } from './navConfig';
+import { APP_URL, EXPLORE_URL, desktopNavItems, mobileNavRows } from './navConfig';
 
 const MD_BREAKPOINT = 1024;
 
@@ -530,6 +530,16 @@ export default function NavbarDup() {
                     </li>
                   );
                 })}
+                <li>
+                  <a
+                    href={APP_URL}
+                    className="nav-link relative z-[2] inline-flex items-center gap-0.5 whitespace-nowrap rounded-md px-2 py-2 font-sans text-[0.9375rem] font-normal !text-oasis-green-700 no-underline focus:outline-none"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span className="nav-link-text">Log in</span>
+                  </a>
+                </li>
               </ul>
               <span
                 className="mx-3 h-5 w-px shrink-0 bg-[#313A00]/20"
@@ -539,12 +549,12 @@ export default function NavbarDup() {
 
             <div className="nav-buttons">
               <a
-                href={APP_URL}
+                href={EXPLORE_URL}
                 className={ctaSecondaryClass}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Log in
+                Explore
               </a>
               <a
                 href={APP_URL}
@@ -580,7 +590,7 @@ export default function NavbarDup() {
           <div className="menu-links">
             <div className="mb-4 flex flex-col gap-2">
               <a
-                href={`${APP_URL}/explore`}
+                href={EXPLORE_URL}
                 className={`${mobileCtaSecondaryClass} w-full justify-center`}
                 target="_blank"
                 rel="noopener noreferrer"
