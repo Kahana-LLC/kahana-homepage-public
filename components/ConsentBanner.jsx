@@ -74,10 +74,10 @@ export default function ConsentBanner() {
       aria-describedby="consent-banner-description"
       aria-hidden={!isVisible}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-          <div className="flex-1">
-            <h2 id="consent-banner-title" className="text-lg font-semibold mb-2">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-3">
+          <div className="flex-1 min-w-0">
+            <h2 id="consent-banner-title" className="text-sm font-semibold mb-0.5">
               <Link
                 href="/privacy-policy"
                 prefetch={false}
@@ -86,10 +86,7 @@ export default function ConsentBanner() {
                 We Value Your Privacy
               </Link>
             </h2>
-            <p id="consent-banner-description" className="text-sm text-gray-800 mb-0 max-w-prose">
-              We use cookies for essential site features, analytics, and advertising. Use the buttons below to accept or decline non-essential cookies, or open Manage Preferences for category details.
-            </p>
-            <p className="text-xs text-gray-800 mt-2 mb-0 flex flex-wrap items-baseline gap-x-1 gap-y-1">
+            <p id="consent-banner-description" className="text-xs text-gray-800 mb-0 flex flex-wrap items-baseline gap-x-1 gap-y-1">
               <button
                 type="button"
                 onClick={openModal}
@@ -109,12 +106,12 @@ export default function ConsentBanner() {
               </Link>
             </p>
           </div>
-          
-          <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+
+          <div className="flex flex-row flex-wrap gap-2 shrink-0 w-auto">
             <button
               type="button"
               onClick={acceptAll}
-              className="btn-primary btn-sm"
+              className="btn-primary btn-nav"
               aria-label="Accept all cookies"
             >
               Accept All
@@ -122,7 +119,7 @@ export default function ConsentBanner() {
             <button
               type="button"
               onClick={openModal}
-              className="btn-primary btn-sm"
+              className="btn-primary btn-nav"
               aria-label="Manage cookie preferences"
             >
               Manage Preferences
@@ -130,7 +127,7 @@ export default function ConsentBanner() {
             <button
               type="button"
               onClick={declineAll}
-              className="btn-primary btn-sm"
+              className="btn-primary btn-nav"
               aria-label="Decline all non-essential cookies"
             >
               Decline All
