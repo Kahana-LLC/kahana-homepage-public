@@ -143,10 +143,15 @@ export default function Security() {
             <section id="infrastructure" className="mb-16 scroll-mt-8">
               <h2 className="text-3xl font-bold text-[#313A00] mb-6">Infrastructure</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
-                Oasis uses Supabase for user authentication and database storage. All data stored in Supabase is encrypted-at-rest by default.
+                Kahana uses Firebase for user authentication and backend database storage for the Service. Data stored in Firebase is encrypted at rest by default as part of Google Cloud / Firebase platform controls.
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                We also use GitHub for software development, source control, and release infrastructure. GitHub is not used to sell Personal Data.
               </p>
               <p className="text-gray-700 leading-relaxed">
-                Direct access to any production data is limited to a few select teams based on their roles. Access is logged and reviewed at regular intervals. We store as little PII as possible and routinely audit our data to ensure we're not storing anything sensitive. Please see the privacy policy for a list of what user data is stored.
+                Direct access to any production data is limited to a few select teams based on their roles. Access is logged and reviewed at regular intervals. We store as little PII as possible and routinely audit our data to ensure we're not storing anything sensitive. Please see the{' '}
+                <Link href="/privacy-policy" className="text-[#4A6200] no-underline hover:no-underline font-semibold">privacy policy</Link>{' '}
+                for a list of what user data is stored.
               </p>
             </section>
 
@@ -154,7 +159,7 @@ export default function Security() {
             <section id="logging-analytics" className="mb-16 scroll-mt-8">
               <h2 className="text-3xl font-bold text-[#313A00] mb-6">Logging & Analytics</h2>
               <p className="text-gray-700 leading-relaxed mb-6">
-                This browser uses privacy‑preserving analytics to understand product usage patterns without collecting information that directly identifies you.
+                We use privacy‑preserving analytics (including Mixpanel, where consent applies) to understand product and website usage patterns without collecting more information about you than needed for that purpose.
               </p>
 
               <h3 className="text-2xl font-bold text-[#313A00] mb-4">Overview of analytics</h3>
@@ -248,8 +253,8 @@ export default function Security() {
                     <div>
                       <strong className="text-[#313A00]">What are you doing to prepare for SOC 2?</strong>
                       <ul className="list-disc list-inside ml-4 mt-2 space-y-1">
-                        <li>Core infrastructure (Supabase, AWS, and related backend services) is being managed with strong access control, encryption, change management, and monitoring practices, which are key elements of SOC 2.</li>
-                        <li>Third-party providers such as Gemini, Deepgram, Mixpanel, and Stripe are being reviewed and governed as critical vendors, with clear documentation of what data they receive and why.</li>
+                        <li>Core infrastructure (Firebase, Google Cloud, GitHub, and related backend services) is being managed with strong access control, encryption, change management, and monitoring practices, which are key elements of SOC 2.</li>
+                        <li>Third-party providers such as Mixpanel, Stripe, and other critical vendors are being reviewed and governed with clear documentation of what data they receive and why.</li>
                       </ul>
                     </div>
 
@@ -274,7 +279,7 @@ export default function Security() {
                   <strong className="text-[#313A00]">How will you monetize without selling user data?</strong>
                   <br />
                   <span className="text-gray-700">
-                    We don't plan to ever monetize by selling data. We currently don't monetize with ads. We currently monetize from paid subscriptions which allow users to leverage AI features. We are also coming out with Bring Your Own Key features, which will let you use AI features without paying a subscription to Kahana, but by using an existing subscription to services like Gemini or Anthropic, so you can use your own API key.
+                    We don't plan to ever monetize by selling data. We currently don't monetize by selling Personal Data to third parties. Our business model is based on paid access to the Service—for example subscriptions and, where offered, paid hub access or other paid features—not by selling your information.
                   </span>
                 </li>
                 <li>

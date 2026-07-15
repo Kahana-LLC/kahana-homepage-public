@@ -110,7 +110,7 @@ export default function PrivacyPolicy() {
                     These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously. This information helps us improve our website and user experience.
                   </p>
                   <p className="text-sm text-gray-600 mb-2">
-                    <strong>Tools we use:</strong> Google Analytics, Google Tag Manager, Mixpanel, PostHog
+                    <strong>Tools we use:</strong> Google Analytics, Google Tag Manager, Mixpanel
                   </p>
                   <p className="text-sm text-gray-600">
                     <strong>Data collected:</strong> Page views, user interactions, session duration, bounce rates, device and browser information, conversion events, funnel analytics
@@ -136,7 +136,8 @@ export default function PrivacyPolicy() {
               </p>
 
               <p className="text-gray-700 leading-relaxed mb-6">
-                <strong>Third-Party Sharing:</strong> When you consent to non-essential tracking technologies, we may share information collected through these technologies with third-party service providers, including Google (for Analytics and Ads), Mixpanel, and PostHog. These third parties may use this information for their own purposes in accordance with their privacy policies. PostHog is used for product analytics. For more information about PostHog's data practices, please visit <a href="https://posthog.com/privacy" target="_blank" rel="noopener noreferrer" className="text-[#4A6200] no-underline hover:no-underline font-semibold">PostHog's Privacy Policy</a>.
+                <strong>Third-Party Sharing:</strong> When you consent to non-essential tracking technologies, we may share information collected through these technologies with third-party service providers, including Google (for Analytics and Ads) and Mixpanel. These third parties may use this information for their own purposes in accordance with their privacy policies. Mixpanel is used for product and website analytics and only processes analytics data after you have provided consent for analytics cookies where consent is required. For more information about Mixpanel's data practices, please visit{' '}
+                <a href="https://mixpanel.com/legal/privacy-policy/" target="_blank" rel="noopener noreferrer" className="text-[#4A6200] no-underline hover:no-underline font-semibold">Mixpanel's Privacy Policy</a>.
               </p>
 
               <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">Information collected from other sources</h3>
@@ -193,13 +194,20 @@ export default function PrivacyPolicy() {
               <h2 className="text-3xl font-bold text-[#313A00] mb-6">3. How We Share Your Information</h2>
               
               <p className="text-gray-700 leading-relaxed mb-6">
-                We do not sell your Personal Data. Your information may be shared with third parties only in the circumstances described below:
+                We do not sell your Personal Data, and we do not sell or rent it to data brokers or advertisers. Providing Personal Data to service providers who process it on our behalf to operate the Service (as described below) is not a sale. Your information may be shared with third parties only in the circumstances described below:
               </p>
 
               <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">With third-party service providers</h3>
-              <p className="text-gray-700 leading-relaxed mb-6">
-                We may share your information with trusted service providers that help us operate the Service. These providers assist with functions such as hosting, payment processing (for example, Stripe), and analytics (for example, Mixpanel).
+              <p className="text-gray-700 leading-relaxed mb-4">
+                We may share your information with trusted service providers that help us operate the Service. These providers assist with functions such as:
               </p>
+              <ul className="list-disc list-inside text-gray-700 space-y-3 mb-6 ml-4">
+                <li><strong>Firebase (Google):</strong> backend database, authentication, and related infrastructure used to store and operate account and platform data.</li>
+                <li><strong>Stripe:</strong> payment processing for paid features, subscriptions, and purchases.</li>
+                <li><strong>Mixpanel:</strong> product and website analytics (where analytics consent applies).</li>
+                <li><strong>GitHub:</strong> software development, source control, issue tracking, and release/distribution infrastructure. GitHub is not used to sell your Personal Data or build advertising profiles about you.</li>
+                <li>Other hosting, security, and operational providers as reasonably necessary to run and protect the Service.</li>
+              </ul>
 
               <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">With third-party integrations and AI partners</h3>
               <p className="text-gray-700 leading-relaxed mb-6">
@@ -240,8 +248,12 @@ export default function PrivacyPolicy() {
               </p>
 
               <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">Security Measures</h3>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                We implement reasonable physical, technical, and administrative safeguards designed to protect the security and confidentiality of your Personal Data. Platform and account data for the Service are hosted using Firebase and related Google Cloud infrastructure with encryption and access controls appropriate to the processing. However, please be aware that no method of electronic transmission or storage is completely secure, and we cannot guarantee absolute security or privacy of your information.
+              </p>
               <p className="text-gray-700 leading-relaxed mb-6">
-                We implement reasonable physical, technical, and administrative safeguards designed to protect the security and confidentiality of your Personal Data. However, please be aware that no method of electronic transmission or storage is completely secure, and we cannot guarantee absolute security or privacy of your information.
+                For additional information about our security practices, see our{' '}
+                <Link href="/security" className="text-[#4A6200] no-underline hover:no-underline font-semibold">Security</Link> page.
               </p>
             </section>
 
@@ -459,9 +471,9 @@ export default function PrivacyPolicy() {
 
               <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">Recent Updates</h3>
               <div className="bg-[#F3F8E4] border-l-4 border-oasis-green-600 p-4 mb-6">
-                <p className="text-sm font-semibold text-[#313A00] mb-2">January 2025</p>
+                <p className="text-sm font-semibold text-[#313A00] mb-2">July 14, 2026</p>
                 <ul className="list-disc list-inside text-gray-700 space-y-2 text-sm ml-4">
-                  <li><strong>PostHog Analytics Integration:</strong> We have integrated PostHog, a product analytics platform, to better understand how visitors interact with our website. PostHog helps us analyze user behavior, track conversion funnels, and segment our audience. PostHog only collects data after you have provided consent for analytics cookies.</li>
+                  <li><strong>Vendor accuracy:</strong> Removed PostHog. Clarified that we use Firebase for backend data infrastructure, Mixpanel for analytics, GitHub for development and release infrastructure, and Stripe for payments. Reaffirmed that we do not sell Personal Data.</li>
                 </ul>
               </div>
 
@@ -490,7 +502,7 @@ export default function PrivacyPolicy() {
                   If you are not satisfied with our response to your complaint, or if you believe that our processing of your Personal Data does not comply with applicable data protection laws, you have the right to lodge a complaint with your local data protection supervisory authority. However, we would appreciate the opportunity to address your concerns directly before you contact a supervisory authority, and we encourage you to reach out to us first so that we may attempt to resolve the matter.
                 </p>
                 <p className="mt-4">
-                  This Privacy Policy is effective as of January 1st, 2026. Last updated: May 24th, 2026.
+                  This Privacy Policy is effective as of July 14, 2026. Last updated: July 14, 2026.
                 </p>
               </div>
             </section>

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
+import RainbowHoverCard from './RainbowHoverCard';
 
 const HEARTS = [
   { x: -48, delay: 0, size: 14 },
@@ -18,7 +19,8 @@ function Heart({ size = 14 }) {
 }
 
 /**
- * Product Aura chip: daily budget meter (5 → 1 → 5) with give pulses.
+ * Product Aura chip: daily budget meter (5 → 1 → 5) with give pulses
+ * and a spinning rainbow rim.
  */
 export default function AuraLikeAnimation() {
   const reduceMotion = useReducedMotion();
@@ -55,7 +57,11 @@ export default function AuraLikeAnimation() {
           ))}
       </AnimatePresence>
 
-      <div className="relative z-10 flex items-center gap-3 rounded-2xl bg-[#1a1a1a] px-6 py-5 shadow-lg">
+      <RainbowHoverCard
+        alwaysOn
+        className="rainbow-hover-card--aura relative z-10"
+        innerClassName="flex items-center gap-3 px-6 py-5"
+      >
         <motion.img
           src="/images/aura-mark.png"
           alt=""
@@ -75,7 +81,7 @@ export default function AuraLikeAnimation() {
         >
           {count}
         </motion.span>
-      </div>
+      </RainbowHoverCard>
       <p className="relative z-10 mt-2 text-sm font-medium tracking-wide text-[#666666]">today</p>
     </div>
   );

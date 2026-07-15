@@ -11,7 +11,7 @@ const LEGAL_LINK_CLASS =
   'text-base font-normal text-[#666666] no-underline transition-colors hover:text-[#617500] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#617500]';
 
 const PRODUCT_LINKS = [
-  { href: 'https://kahana.io', label: 'Discover', external: true },
+  { href: 'https://kahana.io/explore', label: 'Explore', external: true },
   { href: '/features', label: 'Features' },
   { href: '/pricing', label: 'Pricing' },
 ];

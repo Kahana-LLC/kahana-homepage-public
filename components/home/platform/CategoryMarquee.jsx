@@ -1,9 +1,15 @@
 /**
  * Dual-row horizontal category marquee (CSS-driven; pauses on hover/focus).
- * @param {{ categories: { label: string, Icon: import('react').ComponentType<{ className?: string }> }[], href: string }} props
+ * Each chip links to Explore filtered by that topic tag.
+ *
+ * @param {{
+ *   categories: { label: string, tag: string, Icon: import('react').ComponentType<{ className?: string }> }[],
+ *   baseHref: string
+ * }} props
  */
-export default function CategoryMarquee({ categories, href }) {
+export default function CategoryMarquee({ categories, baseHref }) {
   const track = [...categories, ...categories];
+  const exploreBase = baseHref.replace(/\?.*$/, '').replace(/\/$/, '');
 
   return (
     <div className="category-marquee" role="group" aria-label="Browse categories">
@@ -11,6 +17,7 @@ export default function CategoryMarquee({ categories, href }) {
         <div className="category-marquee__track">
           {track.map((item, i) => {
             const { Icon } = item;
+            const href = `${exploreBase}?tags=${encodeURIComponent(item.tag)}`;
             return (
               <a
                 key={`left-${item.label}-${i}`}
@@ -31,6 +38,7 @@ export default function CategoryMarquee({ categories, href }) {
         <div className="category-marquee__track">
           {track.map((item, i) => {
             const { Icon } = item;
+            const href = `${exploreBase}?tags=${encodeURIComponent(item.tag)}`;
             return (
               <a
                 key={`right-${item.label}-${i}`}

@@ -24,12 +24,14 @@ import { APP_URL } from '../../nav/navConfig';
 import { trackButtonClick } from '../../../utils/analytics';
 import AuraLikeAnimation from './AuraLikeAnimation';
 import CategoryMarquee from './CategoryMarquee';
+import RainbowHoverCard from './RainbowHoverCard';
 import FaqBrowse from '../../faq/FaqBrowse';
 import { EXPLORE_CATEGORIES } from '../../../data/exploreCategories';
 
 const HeroOwlLottie = dynamic(() => import('./HeroOwlLottie'), { ssr: false });
 
-const EXPLORE_URL = `${APP_URL}/explore`;
+/** Public Explore (marketing host) — not app.kahana.io */
+const EXPLORE_URL = 'https://kahana.io/explore';
 
 function PrimaryCta({ children = 'Contribute', className = '', trackingId }) {
   return (
@@ -70,7 +72,7 @@ const HOW_IT_WORKS = [
   {
     step: '01',
     title: 'Contribute',
-    body: 'Upload and curate digital artifacts into a hub on any topic: files, videos, images, PDFs, documents, links, and more. You gain exposure, get discovered, help others learn, and earn recognition through Aura.',
+    body: 'Upload digital artifacts into a hub on any topic: files, videos, images, PDFs, documents, links, and more. Contributing takes seconds, not hours. It\'s fast and simple.',
     Icon: FolderPlusIcon,
   },
   {
@@ -82,7 +84,7 @@ const HOW_IT_WORKS = [
   {
     step: '03',
     title: 'Grow',
-    body: 'You grow from learning and exposure you earn by contributing (views, saves, purchases, and Aura).',
+    body: 'You grow from learning and the exposure you earn by contributing: views, saves, purchases, followers, and Aura. Gain exposure as people discover what you contribute.',
     Icon: ArrowTrendingUpIcon,
   },
 ];
@@ -168,18 +170,18 @@ const OPTIMIZE_STEPS = [
 
 const SEEKER_BENEFITS = [
   {
-    title: 'Easy access',
+    title: 'Easy to access',
     body: 'Save hubs of digital artifacts into collections you can open on your phone or computer. You are one click away from the knowledge in Kahana.',
     Icon: Squares2X2Icon,
   },
   {
-    title: 'Credibility',
+    title: 'Verifiable credibility',
     body: 'See who contributed and their track record before you dive in. Profiles with a check mark have completed Stripe Identity verification. Aura is community proof that others found a contribution worth noticing.',
     Icon: ShieldCheckIcon,
   },
   {
-    title: 'Flexibility',
-    body: 'One-size doesn\'t fit all. Hubs are not rigid online courses or data dumps. Their flexibility lets contributors adapt and curate digital artifacts in strategic ways to enhance your learning and understanding.',
+    title: 'Tailored for understanding',
+    body: 'One-size doesn\'t fit all. Hubs are not rigid online courses. Their flexibility lets contributors adapt and curate digital artifacts in strategic ways to enhance your learning and understanding.',
     Icon: AdjustmentsHorizontalIcon,
   },
 ];
@@ -190,17 +192,19 @@ function BenefitTiles({ items }) {
       {items.map((item) => {
         const { Icon } = item;
         return (
-          <li
-            key={item.title}
-            className="flex flex-1 flex-row items-start gap-4 rounded-2xl border border-[#E0E8D4] bg-white/80 px-6 py-7 sm:px-8"
-          >
-            <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#EEF3D8] text-[#495800]">
-              <Icon className="h-6 w-6" aria-hidden />
-            </span>
-            <div className="min-w-0">
-              <h3 className="text-xl font-semibold">{item.title}</h3>
-              <p className="mt-2 text-[#666666]">{item.body}</p>
-            </div>
+          <li key={item.title} className="flex flex-1">
+            <RainbowHoverCard
+              className="h-full w-full"
+              innerClassName="flex flex-row items-start gap-4 bg-white px-6 py-7 sm:px-8"
+            >
+              <span className="rainbow-hover-icon flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#EEF3D8] text-[#495800]">
+                <Icon className="h-6 w-6" aria-hidden />
+              </span>
+              <div className="min-w-0">
+                <h3 className="text-xl font-semibold">{item.title}</h3>
+                <p className="mt-2 text-[#666666]">{item.body}</p>
+              </div>
+            </RainbowHoverCard>
           </li>
         );
       })}
@@ -211,7 +215,7 @@ function BenefitTiles({ items }) {
 export default function PlatformHome() {
   return (
     <div className="bg-[#F8FAF2] text-[#313A00]">
-      <section className="relative overflow-hidden bg-white">
+      <section className="relative overflow-x-hidden overflow-y-visible bg-white">
         <div className="relative mx-auto grid w-full max-w-6xl items-center gap-10 px-6 py-16 sm:px-10 sm:py-20 lg:grid-cols-[1fr_minmax(240px,360px)] lg:gap-16 lg:px-16 lg:py-24">
           <FadeInSection eager>
             <h1 className="max-w-xl text-3xl font-semibold leading-tight tracking-tight text-[#313A00] sm:text-4xl md:text-5xl">
@@ -242,22 +246,24 @@ export default function PlatformHome() {
             {HOW_IT_WORKS.map((item) => {
               const { Icon } = item;
               return (
-                <li
-                  key={item.step}
-                  className="rounded-2xl border border-[#E0E8D4] bg-white/80 px-6 py-7 sm:px-8"
-                >
-                  <div className="flex items-start gap-4">
-                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#EEF3D8] text-[#495800]">
-                      <Icon className="h-6 w-6" aria-hidden />
-                    </span>
-                    <div>
-                      <p className="text-sm font-semibold tracking-widest text-[#7A9200]">
-                        {item.step}
-                      </p>
-                      <h3 className="mt-1 text-xl font-semibold">{item.title}</h3>
-                      <p className="mt-2 text-[#666666]">{item.body}</p>
+                <li key={item.step}>
+                  <RainbowHoverCard
+                    className="h-full"
+                    innerClassName="bg-white px-6 py-7 sm:px-8"
+                  >
+                    <div className="flex items-start gap-4">
+                      <span className="rainbow-hover-icon flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#EEF3D8] text-[#495800]">
+                        <Icon className="h-6 w-6" aria-hidden />
+                      </span>
+                      <div>
+                        <p className="text-sm font-semibold tracking-widest text-[#7A9200]">
+                          {item.step}
+                        </p>
+                        <h3 className="mt-1 text-xl font-semibold">{item.title}</h3>
+                        <p className="mt-2 text-[#666666]">{item.body}</p>
+                      </div>
                     </div>
-                  </div>
+                  </RainbowHoverCard>
                 </li>
               );
             })}
@@ -277,34 +283,36 @@ export default function PlatformHome() {
         <FadeInSection>
           <div>
             <h2 className="text-3xl font-semibold sm:text-4xl">Aura</h2>
-            <p className="mt-3 max-w-2xl text-lg text-[#666666]">
-              Give carefully. Lift what belongs in Kahana.
-            </p>
 
-            <div className="mt-8 rounded-2xl border border-[#E0E8D4] bg-[#EEF3D8]/60 px-6 py-5 sm:px-8">
+            <RainbowHoverCard
+              className="mt-8"
+              innerClassName="bg-[#EEF3D8] px-6 py-5 sm:px-8"
+            >
               <p className="text-xl font-semibold text-[#313A00]">Aura is limited.</p>
               <p className="mt-1 text-base text-[#495800]">
                 5 Aura per day · replenishes midnight UTC
               </p>
-            </div>
+            </RainbowHoverCard>
 
             <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {AURA_RULES.map((rule) => {
                 const { Icon } = rule;
                 return (
-                  <li
-                    key={rule.title}
-                    className="rounded-2xl border border-[#E0E8D4] bg-white/80 px-5 py-5 sm:px-6"
-                  >
-                    <div className="flex items-start gap-3">
-                      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#EEF3D8] text-[#495800]">
-                        <Icon className="h-5 w-5" aria-hidden />
-                      </span>
-                      <div>
-                        <h3 className="text-lg font-semibold text-[#313A00]">{rule.title}</h3>
-                        <p className="mt-1 text-[#666666]">{rule.body}</p>
+                  <li key={rule.title}>
+                    <RainbowHoverCard
+                      className="h-full"
+                      innerClassName="bg-white px-5 py-5 sm:px-6"
+                    >
+                      <div className="flex items-start gap-3">
+                        <span className="rainbow-hover-icon flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#EEF3D8] text-[#495800]">
+                          <Icon className="h-5 w-5" aria-hidden />
+                        </span>
+                        <div>
+                          <h3 className="text-lg font-semibold text-[#313A00]">{rule.title}</h3>
+                          <p className="mt-1 text-[#666666]">{rule.body}</p>
+                        </div>
                       </div>
-                    </div>
+                    </RainbowHoverCard>
                   </li>
                 );
               })}
@@ -326,7 +334,7 @@ export default function PlatformHome() {
         <FadeInSection>
           <h2 className="text-3xl font-semibold sm:text-4xl">Benefits for learners</h2>
           <p className="mt-3 max-w-2xl text-lg text-[#666666]">
-            Find curated knowledge because experts chose to contribute it.
+            Explore curated hubs of digital artifacts because people chose to share them.
           </p>
           <BenefitTiles items={SEEKER_BENEFITS} />
           <p className="mt-8">
@@ -350,7 +358,7 @@ export default function PlatformHome() {
 
       <SectionShell id="optimize" className="border-t border-[#E0E8D4]">
         <FadeInSection>
-          <h2 className="text-3xl font-semibold sm:text-4xl">How to optimize</h2>
+          <h2 className="text-3xl font-semibold sm:text-4xl">How to Optimize on Kahana</h2>
           <p className="mt-3 max-w-2xl text-lg text-[#666666]">
             Don&apos;t overthink it. Share what you know. Clear names, tags, and descriptions help
             people find your hubs and digital artifacts when they search. Then watch analytics and
@@ -360,22 +368,24 @@ export default function PlatformHome() {
             {OPTIMIZE_STEPS.map((item) => {
               const { Icon } = item;
               return (
-                <li
-                  key={item.step}
-                  className="rounded-2xl border border-[#E0E8D4] bg-white/80 px-6 py-7 sm:px-8"
-                >
-                  <div className="flex items-start gap-4">
-                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#EEF3D8] text-[#495800]">
-                      <Icon className="h-6 w-6" aria-hidden />
-                    </span>
-                    <div>
-                      <p className="text-sm font-semibold tracking-widest text-[#7A9200]">
-                        {item.step}
-                      </p>
-                      <h3 className="mt-1 text-xl font-semibold">{item.title}</h3>
-                      <p className="mt-2 text-[#666666]">{item.body}</p>
+                <li key={item.step}>
+                  <RainbowHoverCard
+                    className="h-full"
+                    innerClassName="bg-white px-6 py-7 sm:px-8"
+                  >
+                    <div className="flex items-start gap-4">
+                      <span className="rainbow-hover-icon flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#EEF3D8] text-[#495800]">
+                        <Icon className="h-6 w-6" aria-hidden />
+                      </span>
+                      <div>
+                        <p className="text-sm font-semibold tracking-widest text-[#7A9200]">
+                          {item.step}
+                        </p>
+                        <h3 className="mt-1 text-xl font-semibold">{item.title}</h3>
+                        <p className="mt-2 text-[#666666]">{item.body}</p>
+                      </div>
                     </div>
-                  </div>
+                  </RainbowHoverCard>
                 </li>
               );
             })}
@@ -396,7 +406,7 @@ export default function PlatformHome() {
             </p>
           </div>
           <div className="mt-10 w-full overflow-hidden">
-            <CategoryMarquee categories={EXPLORE_CATEGORIES} href={EXPLORE_URL} />
+            <CategoryMarquee categories={EXPLORE_CATEGORIES} baseHref={EXPLORE_URL} />
           </div>
           <p className="mx-auto mt-10 w-full max-w-6xl px-6 sm:px-10 lg:px-16">
             <SecondaryCta>Explore</SecondaryCta>
@@ -408,10 +418,9 @@ export default function PlatformHome() {
         <FadeInSection>
           <h2 className="text-3xl font-semibold sm:text-4xl">Mission &amp; Philosophy</h2>
           <p className="mt-4 max-w-3xl text-lg leading-relaxed text-[#666666]">
-            Our core belief is that people are naturally curious and creative. Leveraging our lives,
-            we wanted to create a special space where people can easily connect with each other and
-            get rewarded for being themselves. If there comes a day when you feel like you could spend
-            an eternity in Kahana, let us know. We&apos;ll be happy to hear it :)
+            Our core belief is that people are naturally curious and creative. We wanted to create a
+            special space where people can easily connect with each other and get rewarded for being
+            themselves.
           </p>
         </FadeInSection>
       </SectionShell>

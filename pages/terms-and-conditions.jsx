@@ -11,7 +11,7 @@ const tocStructure = [
   { id: 'service-overview', label: '1. Oasis Service Overview' },
   { id: 'eligibility', label: '2. Eligibility' },
   { id: 'accounts-registration', label: '3. Accounts and Registration' },
-  { id: 'payment-terms', label: '4. Payment Terms' },
+  { id: 'payment-terms', label: '4. Payment Terms (No Refunds)' },
   { id: 'licenses', label: '5. Licenses' },
   { id: 'ownership', label: '6. Ownership and Proprietary Rights' },
   { id: 'third-party-terms', label: '7. Third-Party Terms' },
@@ -52,7 +52,7 @@ export default function TermsAndConditions() {
                 Terms and Conditions
               </h1>
               <p className="text-xl sm:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-                Last Updated: May 24th, 2026. Please read these Terms carefully before using the Service.
+                Last Updated: July 14, 2026. Please read these Terms carefully before using the Service.
               </p>
             </div>
           </div>
@@ -65,7 +65,7 @@ export default function TermsAndConditions() {
             <section className="mb-16 scroll-mt-8">
               <h2 className="text-3xl font-bold text-[#313A00] mb-6">Kahana Group Inc. Terms of Service</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
-                Last Updated: May 24th, 2026
+                Last Updated: July 14, 2026
               </p>
               <p className="text-gray-700 leading-relaxed mb-6">
                 We appreciate your interest in Kahana Group Inc. (referred to as "Kahana," "we," "our," or "us") and our website located at https://kahana.io/, together with our associated websites, downloadable applications, and additional services we provide (collectively referred to as the "Service"). These Terms of Service constitute a legally binding agreement between you and Kahana that governs your access to and use of the Service.
@@ -147,7 +147,7 @@ export default function TermsAndConditions() {
               
               <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">4.1. Payment Terms Generally</h3>
               <p className="text-gray-700 leading-relaxed mb-6">
-                Some features of the Service may be subject to fees. Prior to making any payment, you will be presented with the applicable fees and given the opportunity to review and accept them before being charged. All fees are denominated in U.S. Dollars and, unless otherwise expressly stated in these Terms, are non-refundable, except where required by applicable law or as Kahana may determine in its sole discretion.
+                Some features of the Service may be subject to fees. Prior to making any payment, you will be presented with the applicable fees and given the opportunity to review and accept them before being charged. All fees are denominated in U.S. Dollars. Except where a non-waivable provision of applicable law requires otherwise, all fees are final and non-refundable as further described in Section 4.7 (No Refunds).
               </p>
 
               <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">4.2. Pricing</h3>
@@ -185,6 +185,31 @@ export default function TermsAndConditions() {
               <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">4.6. Account Delinquency</h3>
               <p className="text-gray-700 leading-relaxed mb-6">
                 Kahana reserves the right to suspend or terminate your access to the Service, including all fee-based features and functionality, for any account that has outstanding unpaid amounts. In addition to the principal amount owed for the Service, accounts that become delinquent may be subject to additional fees and charges incurred in connection with chargebacks, payment disputes, or collection efforts, including but not limited to collection agency fees and administrative costs. In the event that your designated payment method becomes invalid, expired, or otherwise fails at the time a Subscription Fee renewal is attempted, Kahana reserves the right, in its sole discretion, to delete your account and permanently remove all information and User Content (as defined in Section 8) associated with your account, and Kahana shall have no liability to you for such deletion or removal.
+              </p>
+
+              <h3 id="no-refunds" className="text-2xl font-bold text-[#313A00] mb-4 mt-8 scroll-mt-8">4.7. No Refunds</h3>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                <strong>All fees paid in connection with the Service are final and non-refundable</strong>, including without limitation fees for subscriptions, credits, paid access to hubs or other User Content, one-time purchases, upgrades, and any other paid features. Kahana does not provide refunds, credits, or prorated reimbursements for unused time, unused access, dissatisfaction with content or features, accidental purchases, changes in your circumstances, or loss of access for any reason, <strong>except where a non-waivable provision of applicable law requires otherwise</strong>.
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                Any courtesy credit, goodwill adjustment, or similar accommodation Kahana may choose to provide in a particular case is discretionary, does not create an obligation to do so in any other case, and does not waive Kahana's no-refund policy.
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-6">
+                Initiating a chargeback, payment dispute, or similar reversal without a legally required basis may result in suspension or termination of your account and other remedies available to Kahana, without limiting Section 4.6 (Account Delinquency).
+              </p>
+
+              <h3 id="purchased-hub-access" className="text-2xl font-bold text-[#313A00] mb-4 mt-8 scroll-mt-8">4.8. Purchased Hub Access and Creator Content</h3>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                The Service may allow you to purchase access to hubs, digital artifacts, collections, or other content made available by creators or other users ("Purchased Access"). Purchased Access is a limited license to access the applicable content through the Service under these Terms and any additional terms displayed at checkout. It is not a transfer of ownership of the underlying content, and it is not a guarantee of perpetual availability.
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                Creators and other users may unpublish, delete, edit, restrict, or otherwise change hubs and content at any time. Kahana does not control all User Content and does not guarantee that Purchased Access content will remain available, complete, accurate, or unchanged. Kahana is not responsible for the quality, legality, usefulness, or permanence of creator-provided content.
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                <strong>To the maximum extent permitted by applicable law, if you purchase access to a hub or other content and that content is later removed, taken down, restricted, or made unavailable—including because the creator removes it—you are not entitled to a refund, credit, or other compensation, and Kahana has no liability to you for such unavailability or for any resulting loss of access.</strong> Your sole remedy, except where non-waivable law requires otherwise, is to stop using the affected content.
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-6">
+                Without limiting Section 15 (Disclaimers and No Warranties) or Section 16 (Limitation of Liability), Kahana will not be liable for any claim arising from Purchased Access, including claims based on inability to access purchased hubs or content, creator removal or modification of content, or dissatisfaction with purchased materials.
               </p>
             </section>
 
@@ -508,7 +533,7 @@ export default function TermsAndConditions() {
               
               <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">16.1. Exclusion of Indirect Damages</h3>
               <p className="text-gray-700 leading-relaxed mb-6">
-                TO THE MAXIMUM EXTENT ALLOWED BY APPLICABLE LAW, UNDER NO CIRCUMSTANCES SHALL THE KAHANA ENTITIES BE HELD LIABLE TO YOU FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES (INCLUDING WITHOUT LIMITATION DAMAGES FOR LOSS OF PROFITS, GOODWILL, OR ANY OTHER INTANGIBLE LOSS) THAT ARISE FROM OR ARE CONNECTED TO YOUR ACCESS TO OR USE OF, OR YOUR INABILITY TO ACCESS OR USE, THE SERVICE OR ANY MATERIALS OR CONTENT AVAILABLE THROUGH THE SERVICE, REGARDLESS OF WHETHER SUCH DAMAGES ARE BASED ON WARRANTY, CONTRACT, TORT (INCLUDING NEGLIGENCE), STATUTE, OR ANY OTHER LEGAL THEORY, AND REGARDLESS OF WHETHER ANY KAHANA ENTITY HAS BEEN ADVISED OF THE POTENTIAL FOR SUCH DAMAGE.
+                TO THE MAXIMUM EXTENT ALLOWED BY APPLICABLE LAW, UNDER NO CIRCUMSTANCES SHALL THE KAHANA ENTITIES BE HELD LIABLE TO YOU FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES (INCLUDING WITHOUT LIMITATION DAMAGES FOR LOSS OF PROFITS, GOODWILL, OR ANY OTHER INTANGIBLE LOSS) THAT ARISE FROM OR ARE CONNECTED TO YOUR ACCESS TO OR USE OF, OR YOUR INABILITY TO ACCESS OR USE, THE SERVICE OR ANY MATERIALS OR CONTENT AVAILABLE THROUGH THE SERVICE (INCLUDING PURCHASED ACCESS TO HUBS OR OTHER USER CONTENT THAT IS REMOVED, MODIFIED, OR MADE UNAVAILABLE BY A CREATOR OR OTHERWISE), REGARDLESS OF WHETHER SUCH DAMAGES ARE BASED ON WARRANTY, CONTRACT, TORT (INCLUDING NEGLIGENCE), STATUTE, OR ANY OTHER LEGAL THEORY, AND REGARDLESS OF WHETHER ANY KAHANA ENTITY HAS BEEN ADVISED OF THE POTENTIAL FOR SUCH DAMAGE.
               </p>
 
               <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">16.2. Cap on Aggregate Liability</h3>

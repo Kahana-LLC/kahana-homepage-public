@@ -1,52 +1,51 @@
 import {
   AcademicCapIcon,
   BanknotesIcon,
-  BeakerIcon,
   BoltIcon,
-  CakeIcon,
-  ComputerDesktopIcon,
-  CpuChipIcon,
-  DevicePhoneMobileIcon,
-  FaceSmileIcon,
+  BriefcaseIcon,
+  BuildingLibraryIcon,
   FilmIcon,
-  GlobeAmericasIcon,
-  GlobeEuropeAfricaIcon,
   HeartIcon,
-  HomeIcon,
+  LightBulbIcon,
   MegaphoneIcon,
   PaintBrushIcon,
+  PencilSquareIcon,
   PuzzlePieceIcon,
   ShoppingBagIcon,
   SparklesIcon,
-  StarIcon,
   SunIcon,
   TrophyIcon,
-  UserGroupIcon,
 } from '@heroicons/react/24/outline';
 
-/** Homepage Explore category chips (label + icon). */
+/**
+ * Official Explore topics → `?tags=` slug.
+ * Labels with "&" use only the first word (e.g. Beauty & Skincare → beauty).
+ * @example https://kahana.io/explore?tags=business
+ */
+export function exploreTagSlug(label) {
+  const primary = label.split(/\s*&\s*/)[0].trim().split(/\s+/)[0];
+  return primary.toLowerCase().replace(/[^a-z0-9]/g, '');
+}
+
+/** Homepage Explore category chips (label + icon + tag slug). */
 export const EXPLORE_CATEGORIES = [
-  { label: 'AI', Icon: CpuChipIcon },
-  { label: 'Beauty', Icon: SparklesIcon },
-  { label: 'Design', Icon: PaintBrushIcon },
-  { label: 'Eco', Icon: GlobeEuropeAfricaIcon },
-  { label: 'Education', Icon: AcademicCapIcon },
-  { label: 'Fashion', Icon: ShoppingBagIcon },
+  { label: 'Beauty & Skincare', Icon: SparklesIcon },
+  { label: 'Fashion & Style', Icon: ShoppingBagIcon },
+  { label: 'Health & Wellness', Icon: HeartIcon },
+  { label: 'Sports & Fitness', Icon: TrophyIcon },
   { label: 'Finance', Icon: BanknotesIcon },
-  { label: 'Fitness', Icon: BoltIcon },
-  { label: 'Food', Icon: CakeIcon },
-  { label: 'Gaming', Icon: PuzzlePieceIcon },
-  { label: 'Health', Icon: HeartIcon },
-  { label: 'Home', Icon: HomeIcon },
+  { label: 'Business', Icon: BriefcaseIcon },
   { label: 'Lifestyle', Icon: SunIcon },
-  { label: 'Luxury', Icon: StarIcon },
+  { label: 'Education', Icon: AcademicCapIcon },
+  { label: 'Technology', Icon: BoltIcon },
+  { label: 'Creative & Design', Icon: PaintBrushIcon },
   { label: 'Marketing', Icon: MegaphoneIcon },
-  { label: 'Media', Icon: FilmIcon },
-  { label: 'Pets', Icon: FaceSmileIcon },
-  { label: 'Science', Icon: BeakerIcon },
-  { label: 'Social', Icon: UserGroupIcon },
-  { label: 'Software', Icon: ComputerDesktopIcon },
-  { label: 'Sports', Icon: TrophyIcon },
-  { label: 'Technology', Icon: DevicePhoneMobileIcon },
-  { label: 'Travel', Icon: GlobeAmericasIcon },
-];
+  { label: 'Productivity', Icon: LightBulbIcon },
+  { label: 'Entertainment', Icon: FilmIcon },
+  { label: 'Spirituality', Icon: BuildingLibraryIcon },
+  { label: 'Writing & Publishing', Icon: PencilSquareIcon },
+  { label: 'Other', Icon: PuzzlePieceIcon },
+].map((item) => ({
+  ...item,
+  tag: exploreTagSlug(item.label),
+}));
