@@ -5,8 +5,6 @@ import { getAllDocsMetadata } from '../../utils/docsUtils';
 import DocCard from '../../components/DocCard';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import SEO from '../../components/SEO';
-import DocsSupportCTA from '../../components/DocsSupportCTA';
-
 const DOCS_PER_PAGE = 9;
 
 export async function getStaticProps() {
@@ -119,8 +117,6 @@ export default function DocsIndex({ docs = [], categories = [] }) {
               meanwhile—new docs land here as they ship.
             </p>
           </div>
-
-          <DocsSupportCTA className="mb-10" showHelperText />
 
           {docList.length === 0 ? (
             <div className="text-center py-12">

@@ -8,7 +8,7 @@ import TableOfContents from '../components/TableOfContents';
 
 const tocStructure = [
   { id: 'important-notice', label: 'Important Notice' },
-  { id: 'service-overview', label: '1. Oasis Service Overview' },
+  { id: 'service-overview', label: '1. Service Overview' },
   { id: 'eligibility', label: '2. Eligibility' },
   { id: 'accounts-registration', label: '3. Accounts and Registration' },
   { id: 'payment-terms', label: '4. Payment Terms (No Refunds)' },
@@ -33,8 +33,8 @@ export default function TermsAndConditions() {
     <>
       <SEO 
         title="Terms and Conditions"
-        description="Read Kahana's terms and conditions for using our enterprise browsing solutions."
-        url="https://kahana.io/terms-and-conditions"
+        description="Terms of Service for Kahana, the Digital Library of curated hubs, Explore, Aura, and optional paid access."
+        url="https://about.kahana.io/terms-and-conditions"
         type="website"
       />
 
@@ -52,7 +52,7 @@ export default function TermsAndConditions() {
                 Terms and Conditions
               </h1>
               <p className="text-xl sm:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-                Last Updated: July 14, 2026. Please read these Terms carefully before using the Service.
+                Last Updated: July 15, 2026. Please read these Terms carefully before using the Service.
               </p>
             </div>
           </div>
@@ -65,10 +65,10 @@ export default function TermsAndConditions() {
             <section className="mb-16 scroll-mt-8">
               <h2 className="text-3xl font-bold text-[#313A00] mb-6">Kahana Group Inc. Terms of Service</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
-                Last Updated: July 14, 2026
+                Last Updated: July 15, 2026
               </p>
               <p className="text-gray-700 leading-relaxed mb-6">
-                We appreciate your interest in Kahana Group Inc. (referred to as "Kahana," "we," "our," or "us") and our website located at https://kahana.io/, together with our associated websites, downloadable applications, and additional services we provide (collectively referred to as the "Service"). These Terms of Service constitute a legally binding agreement between you and Kahana that governs your access to and use of the Service.
+                We appreciate your interest in Kahana Group Inc. (referred to as "Kahana," "we," "our," or "us") and the Kahana Service. The "Service" means our websites and web applications—including surfaces on kahana.io (such as about.kahana.io and related corporate properties), the product application at app.kahana.io, and additional related services we provide—that together offer Kahana&apos;s Digital Library of curated hubs. These Terms of Service constitute a legally binding agreement between you and Kahana that governs your access to and use of the Service.
               </p>
             </section>
 
@@ -81,7 +81,7 @@ export default function TermsAndConditions() {
               </div>
               <h2 className="text-3xl font-bold text-[#313A00] mb-6">Please read carefully</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
-                BY CLICKING "I ACCEPT" OR BY DOWNLOADING, INSTALLING, ACCESSING, OR OTHERWISE USING THE SERVICE, YOU ACKNOWLEDGE THAT YOU HAVE READ AND UNDERSTOOD THESE TERMS AND CONDITIONS, INCLUDING KAHANA'S PRIVACY POLICY (COLLECTIVELY, THESE "TERMS"), AND YOU AGREE TO BE BOUND BY THEM AS A CONDITION OF YOUR USE OF THE SERVICE. IF YOU DO NOT MEET THE ELIGIBILITY REQUIREMENTS OR DO NOT AGREE TO THESE TERMS, YOU ARE NOT AUTHORIZED TO USE THE SERVICE. YOUR USE OF THE SERVICE, COUPLED WITH KAHANA'S PROVISION OF THE SERVICE TO YOU, ESTABLISHES A MUTUAL AGREEMENT BETWEEN YOU AND KAHANA TO BE BOUND BY THESE TERMS.
+                BY CLICKING "I ACCEPT" OR BY CREATING AN ACCOUNT, ACCESSING, OR OTHERWISE USING THE SERVICE, YOU ACKNOWLEDGE THAT YOU HAVE READ AND UNDERSTOOD THESE TERMS AND CONDITIONS, INCLUDING KAHANA'S PRIVACY POLICY (COLLECTIVELY, THESE "TERMS"), AND YOU AGREE TO BE BOUND BY THEM AS A CONDITION OF YOUR USE OF THE SERVICE. IF YOU DO NOT MEET THE ELIGIBILITY REQUIREMENTS OR DO NOT AGREE TO THESE TERMS, YOU ARE NOT AUTHORIZED TO USE THE SERVICE. YOUR USE OF THE SERVICE, COUPLED WITH KAHANA'S PROVISION OF THE SERVICE TO YOU, ESTABLISHES A MUTUAL AGREEMENT BETWEEN YOU AND KAHANA TO BE BOUND BY THESE TERMS.
               </p>
               <p className="text-gray-700 leading-relaxed mb-6">
                 ARBITRATION NOTICE. Subject to certain exceptions set forth in Section 17 (Dispute Resolution and Arbitration), you agree that any disputes arising under these Terms shall be resolved through binding, individual arbitration. BY ACCEPTING THESE TERMS, YOU AND KAHANA EACH WAIVE THE RIGHT TO A TRIAL BY JURY AND THE RIGHT TO PARTICIPATE IN ANY CLASS ACTION OR REPRESENTATIVE PROCEEDING.
@@ -95,9 +95,20 @@ export default function TermsAndConditions() {
                   Section 1
                 </span>
               </div>
-              <h2 className="text-3xl font-bold text-[#313A00] mb-6">1. Oasis Service Overview</h2>
+              <h2 className="text-3xl font-bold text-[#313A00] mb-6">1. Service Overview</h2>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                Kahana is a Digital Library where people contribute and learn from curated hubs of digital artifacts (such as files, videos, images, PDFs, documents, links, and related materials). Through the Service, you may, among other things:
+              </p>
+              <ul className="list-disc list-inside text-gray-700 space-y-2 mb-4 ml-4">
+                <li>Create, organize, and collaborate on hubs with roles and invites;</li>
+                <li>Make hubs private or public, and list eligible hubs on Explore for discovery;</li>
+                <li>Maintain a creator profile and engage with follows, saves, and related social features;</li>
+                <li>Give and receive Aura—a scarce community endorsement signal for hubs (Aura is not money, crypto, or payment);</li>
+                <li>Optionally monetize access to a hub through paid checkout powered by Stripe Connect, subject to fees published on our pricing page or displayed at checkout; and</li>
+                <li>Subscribe to paid Kahana plans (such as Growth) for additional capacity or support where offered.</li>
+              </ul>
               <p className="text-gray-700 leading-relaxed mb-6">
-                Oasis is an enterprise-grade browser solution that incorporates artificial intelligence assistants designed to enhance research workflows and support elegant, focused work in the browser. The Service enables you to use natural language commands to control your browsing experience, such as opening new tabs, performing searches, creating tab groups, accessing your saved memory and context, and organizing tabs in split-view layouts. These features are designed to improve context switching, preserve focus, and reduce cognitive load during research and work activities. Oasis helps streamline research workflows by allowing you to manage multiple information sources simultaneously, maintain context across different websites and applications, and automate repetitive browsing tasks across enterprise dashboards and commonly used business tools.
+                Features, availability, and pricing may change as we improve the Service. Adult-designated hubs may require additional in-product age verification before access, as described in the Service and related policies.
               </p>
             </section>
 
@@ -110,7 +121,7 @@ export default function TermsAndConditions() {
               </div>
               <h2 className="text-3xl font-bold text-[#313A00] mb-6">2. Eligibility</h2>
               <p className="text-gray-700 leading-relaxed mb-6">
-                The Service is available only to individuals who are at least 18 years of age. By accepting these Terms, you represent and warrant that: (a) you have reached the age of 18; (b) you have not been previously suspended or removed from the Service; and (c) your registration and use of the Service comply with all applicable laws and regulations. If you are accepting these Terms on behalf of an entity, organization, or company, the individual accepting these Terms on your behalf represents and warrants that they possess the necessary authority to bind such entity, organization, or company to these Terms, and you agree to be bound by these Terms.
+                The Service is available only to individuals who are at least 18 years of age. By accepting these Terms, you represent and warrant that: (a) you have reached the age of 18; (b) you have not been previously suspended or removed from the Service; and (c) your registration and use of the Service comply with all applicable laws and regulations. Accessing adult-designated hubs may additionally require that you complete Kahana&apos;s age verification process in the Service. If you are accepting these Terms on behalf of an entity, organization, or company, the individual accepting these Terms on your behalf represents and warrants that they possess the necessary authority to bind such entity, organization, or company to these Terms, and you agree to be bound by these Terms.
               </p>
             </section>
 
@@ -152,7 +163,7 @@ export default function TermsAndConditions() {
 
               <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">4.2. Pricing</h3>
               <p className="text-gray-700 leading-relaxed mb-6">
-                Kahana retains the exclusive right to establish pricing for the Service. Your usage of the Service will be tracked and deducted from your purchased credit balance. Kahana will use commercially reasonable efforts to alert you when your purchased credits are nearing depletion. Should your usage exceed your purchased credits, Kahana may restrict your access to the Service until you purchase additional credits. Kahana will make reasonable efforts to maintain current pricing information on the Service and on Kahana's pricing page located at kahana.io/pricing. We recommend that you periodically review our website for the most current pricing information. Kahana may modify fees for any Service feature, including implementing new fees or charges, provided that Kahana gives you advance notice of such changes before they become effective. Kahana may, in its sole discretion, extend promotional offers with varying features and pricing to any of its customers. Such promotional offers, unless specifically extended to you, do not apply to your subscription or these Terms.
+                Kahana retains the exclusive right to establish pricing for the Service. Fees may include, without limitation: (a) subscriptions to Kahana plans (such as Growth) billed on a recurring basis; (b) amounts you pay for Purchased Access to hubs or other User Content offered by creators; and (c) platform or processing fees disclosed at checkout or on our pricing page. Kahana will make reasonable efforts to maintain current pricing information on the Service and on Kahana&apos;s pricing page located at kahana.io/pricing (and related in-app billing surfaces). We recommend that you periodically review our website and checkout screens for the most current pricing information. Kahana may modify fees for any Service feature, including implementing new fees or charges, provided that Kahana gives you advance notice of such changes before they become effective where required. Kahana may, in its sole discretion, extend promotional offers with varying features and pricing to any of its customers. Such promotional offers, unless specifically extended to you, do not apply to your subscription or these Terms.
               </p>
 
               <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">4.3. Payment Authorization</h3>
@@ -165,7 +176,7 @@ export default function TermsAndConditions() {
                 The Service may offer subscription-based plans that include automatically recurring payments for periodic charges (referred to as "Subscription Service"). Your "Subscription Billing Date" is the date on which you first purchase a subscription to the Service. The Subscription Service commences on the Subscription Billing Date and continues for the subscription period you choose in your account (the "Initial Subscription Period"). The Subscription Service will automatically renew for successive periods of equal duration to the Initial Subscription Period (each such period, together with the Initial Subscription Period, constituting a "Subscription Period") unless you cancel your subscription or we terminate it.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
-                To avoid being charged for the next Subscription Period, you must cancel your subscription prior to its renewal date. The periodic Subscription Fee will be charged to the payment method you provided during registration (or to an updated payment method if you modify your payment information). You may cancel your Subscription Service at any time via Stripe, from the Oasis pricing page, or by <Link href="/contact" className="text-[#4A6200] no-underline hover:no-underline font-semibold">contacting us through our contact form</Link>.
+                To avoid being charged for the next Subscription Period, you must cancel your subscription prior to its renewal date. The periodic Subscription Fee will be charged to the payment method you provided during registration (or to an updated payment method if you modify your payment information). You may cancel your Subscription Service at any time via Stripe, through billing settings in the Service (including surfaces linked from kahana.io/pricing), or by <Link href="/contact" className="text-[#4A6200] no-underline hover:no-underline font-semibold">contacting us through our contact form</Link> or <a href="https://kahana.io/support" className="text-[#4A6200] no-underline hover:no-underline font-semibold">Support</a>.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
                 Kahana reserves the right to modify the Subscription Fee for any Subscription Service or to introduce new fees or charges at any time, provided that Kahana gives you advance notice of such changes. If you do not wish to continue your subscription after any such change, you may cancel your subscription in the manner described above.
@@ -189,7 +200,7 @@ export default function TermsAndConditions() {
 
               <h3 id="no-refunds" className="text-2xl font-bold text-[#313A00] mb-4 mt-8 scroll-mt-8">4.7. No Refunds</h3>
               <p className="text-gray-700 leading-relaxed mb-4">
-                <strong>All fees paid in connection with the Service are final and non-refundable</strong>, including without limitation fees for subscriptions, credits, paid access to hubs or other User Content, one-time purchases, upgrades, and any other paid features. Kahana does not provide refunds, credits, or prorated reimbursements for unused time, unused access, dissatisfaction with content or features, accidental purchases, changes in your circumstances, or loss of access for any reason, <strong>except where a non-waivable provision of applicable law requires otherwise</strong>.
+                <strong>All fees paid in connection with the Service are final and non-refundable</strong>, including without limitation fees for subscriptions, paid access to hubs or other User Content, one-time purchases, upgrades, and any other paid features. Kahana does not provide refunds, account credits, or prorated reimbursements for unused time, unused access, dissatisfaction with content or features, accidental purchases, changes in your circumstances, or loss of access for any reason, <strong>except where a non-waivable provision of applicable law requires otherwise</strong>.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
                 Any courtesy credit, goodwill adjustment, or similar accommodation Kahana may choose to provide in a particular case is discretionary, does not create an obligation to do so in any other case, and does not waive Kahana's no-refund policy.
@@ -224,7 +235,7 @@ export default function TermsAndConditions() {
               
               <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">5.1. License Grant</h3>
               <p className="text-gray-700 leading-relaxed mb-6">
-                Provided that you fully and continuously comply with these Terms, Kahana hereby grants to you, for your personal use only, a limited, non-exclusive, non-transferable, non-sublicensable, revocable license to: install and use a single object code copy of any downloadable application that is part of or associated with the Service; and to access and utilize the Service.
+                Provided that you fully and continuously comply with these Terms, Kahana hereby grants to you, for your personal use only, a limited, non-exclusive, non-transferable, non-sublicensable, revocable license to access and use the Service. If Kahana makes a downloadable application available as part of or associated with the Service, the same license grant includes installing and using a single object code copy of that application solely to access and use the Service.
               </p>
 
               <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">5.2. Restrictions on License</h3>
@@ -330,7 +341,7 @@ export default function TermsAndConditions() {
 
               <h3 id="communications-optional" className="text-2xl font-bold text-[#313A00] mb-4 mt-8 scroll-mt-8">9.1. Optional product and onboarding emails</h3>
               <p className="text-gray-700 leading-relaxed mb-4">
-                After you create an account, Kahana may send emails that help you get started with Oasis, including onboarding guidance, setup tips, feature explanations, and product updates. These emails are not required to use the Service.
+                After you create an account, Kahana may send emails that help you get started with the Kahana Digital Library and related product features, including onboarding guidance, setup tips, feature explanations, and product updates. These emails are not required to use the Service.
               </p>
               <p className="text-gray-700 leading-relaxed mb-6">
                 You may unsubscribe from these optional emails at any time by following the unsubscribe link in any such email or by <Link href="/contact" className="text-[#4A6200] no-underline hover:no-underline font-semibold">contacting us through our contact form</Link>.
@@ -423,7 +434,7 @@ export default function TermsAndConditions() {
               
               <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">12.1. Terms of Trial</h3>
               <p className="text-gray-700 leading-relaxed mb-6">
-                If you are granted access to the Service or any features thereof on a free, trial, pilot, evaluation, alpha, beta, or early access basis (referred to as the "Trial"), you may use the Trial solely for your internal evaluation purposes during the time period specified by Kahana. The Trial is provided at Kahana's discretion, and either you or Kahana may terminate the Trial at any time, for any reason, with or without notice. The Trial may be non-functional, incomplete, or contain features that Kahana may never release to the general public, and all features and performance information related to the Trial constitute Kahana's confidential and proprietary information.
+                From time to time, Kahana may offer free trials, promotional trials, pilot, evaluation, alpha, beta, or early access to the Service, a Kahana plan (such as Growth), hub features, or other capabilities, as described in the product, at checkout, or in a specific offer (each, a &quot;Trial&quot;). You may use a Trial solely for evaluation during the period Kahana specifies. Trials are provided at Kahana&apos;s discretion; either you or Kahana may terminate a Trial at any time, for any reason, with or without notice. A Trial may be non-functional, incomplete, or contain features that Kahana may never release generally, and related features and performance information constitute Kahana&apos;s confidential and proprietary information. Unless otherwise stated in the offer, at the end of a paid-plan Trial, billing may begin under Section 4 (Payment Terms) if you do not cancel before the Trial ends.
               </p>
 
               <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">12.2. Disclaimer for Trial</h3>
@@ -443,14 +454,14 @@ export default function TermsAndConditions() {
               
               <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">13.1. Term of Agreement</h3>
               <p className="text-gray-700 leading-relaxed mb-6">
-                These Terms commence when you accept them or when you first download, install, access, or use the Service, and continue in effect until they are terminated in accordance with Section 13.2 (Termination).
+                These Terms commence when you accept them or when you first create an account, access, or use the Service, and continue in effect until they are terminated in accordance with Section 13.2 (Termination).
               </p>
 
               <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">13.2. Termination Rights</h3>
               <p className="text-gray-700 leading-relaxed mb-6">
-                Should you breach any provision of these Terms, your authorization to access the Service and these Terms shall automatically terminate. Furthermore, Kahana reserves the right, in its sole discretion, to terminate these Terms or your Service account, or to suspend or terminate your access to the Service, at any time, for any reason or no reason whatsoever, with or without prior notice, and Kahana shall have no liability to you in connection with such termination. You have the right to terminate your account and these Terms at any time by submitting a{' '}
-                <Link href="/support" className="text-[#4A6200] no-underline hover:no-underline font-semibold">Delete Oasis Account</Link>{' '}
-                request through our account deletion form, by reaching out to customer service through{' '}
+                Should you breach any provision of these Terms, your authorization to access the Service and these Terms shall automatically terminate. Furthermore, Kahana reserves the right, in its sole discretion, to terminate these Terms or your Service account, or to suspend or terminate your access to the Service, at any time, for any reason or no reason whatsoever, with or without prior notice, and Kahana shall have no liability to you in connection with such termination. You have the right to terminate your account and these Terms at any time by submitting a delete-account request through{' '}
+                <a href="https://kahana.io/support" className="text-[#4A6200] no-underline hover:no-underline font-semibold">Support</a>
+                , through available account settings, or by reaching out through{' '}
                 <Link href="/contact" className="text-[#4A6200] no-underline hover:no-underline font-semibold">our contact form</Link>.
               </p>
 
@@ -466,15 +477,15 @@ export default function TermsAndConditions() {
 
               <h3 id="dormant-accounts" className="text-2xl font-bold text-[#313A00] mb-4 mt-8 scroll-mt-8">13.5. Dormant accounts</h3>
               <p className="text-gray-700 leading-relaxed mb-4">
-                If you have not signed in to your Oasis account for six (6) months, your account may be considered dormant. We may send you a one-off email notifying you that your account may be deleted if you do not sign in within the timeframe stated in that notice.
+                If you have not signed in to your Kahana account for six (6) months, your account may be considered dormant. We may send you a one-off email notifying you that your account may be deleted if you do not sign in within the timeframe stated in that notice.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
                 Account deletion is irreversible. If your account is deleted, you will lose access to the Service and associated data will be destroyed in accordance with our Privacy Policy.
               </p>
               <p className="text-gray-700 leading-relaxed mb-6">
-                If you wish to delete your account before any dormancy process applies, submit a request through our{' '}
-                <Link href="/support" className="text-[#4A6200] no-underline hover:no-underline font-semibold">Delete my account</Link>{' '}
-                documentation page.
+                If you wish to delete your account before any dormancy process applies, submit a request through{' '}
+                <a href="https://kahana.io/support" className="text-[#4A6200] no-underline hover:no-underline font-semibold">Support</a>
+                {' '}or available account settings.
               </p>
             </section>
 
