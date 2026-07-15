@@ -449,7 +449,7 @@ export default function TermsAndConditions() {
               <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">13.2. Termination Rights</h3>
               <p className="text-gray-700 leading-relaxed mb-6">
                 Should you breach any provision of these Terms, your authorization to access the Service and these Terms shall automatically terminate. Furthermore, Kahana reserves the right, in its sole discretion, to terminate these Terms or your Service account, or to suspend or terminate your access to the Service, at any time, for any reason or no reason whatsoever, with or without prior notice, and Kahana shall have no liability to you in connection with such termination. You have the right to terminate your account and these Terms at any time by submitting a{' '}
-                <Link href="/docs/delete-my-account" className="text-[#4A6200] no-underline hover:no-underline font-semibold">Delete Oasis Account</Link>{' '}
+                <Link href="/support" className="text-[#4A6200] no-underline hover:no-underline font-semibold">Delete Oasis Account</Link>{' '}
                 request through our account deletion form, by reaching out to customer service through{' '}
                 <Link href="/contact" className="text-[#4A6200] no-underline hover:no-underline font-semibold">our contact form</Link>.
               </p>
@@ -473,7 +473,7 @@ export default function TermsAndConditions() {
               </p>
               <p className="text-gray-700 leading-relaxed mb-6">
                 If you wish to delete your account before any dormancy process applies, submit a request through our{' '}
-                <Link href="/docs/delete-my-account" className="text-[#4A6200] no-underline hover:no-underline font-semibold">Delete my account</Link>{' '}
+                <Link href="/support" className="text-[#4A6200] no-underline hover:no-underline font-semibold">Delete my account</Link>{' '}
                 documentation page.
               </p>
             </section>

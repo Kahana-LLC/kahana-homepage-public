@@ -16,6 +16,13 @@ import { absoluteCorporateUrl } from "../config/site";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { trackError } from "../utils/analytics";
+import {
+  getGaMeasurementId,
+  getGtmId,
+  buildGtagConfigSnippet,
+  buildGtmSnippet,
+  trackGaPageView,
+} from "../utils/googleAnalytics";
 import { ConsentProvider, useConsent } from "../contexts/ConsentContext";
 import ConsentBanner from "../components/ConsentBanner";
 import ConsentErrorBoundary from "../components/ConsentErrorBoundary";
@@ -125,15 +132,21 @@ function AppContent({ Component, pageProps }) {
     const isLocalhost = typeof window !== 'undefined' && ['localhost', '127.0.0.1'].includes(window.location.hostname);
     const mixpanelOk = (hasConsent('analytics') || isLocalhost) && process.env.NEXT_PUBLIC_MIXPANEL_TOKEN;
 
-    // Track initial page view (localhost: always; production: with analytics consent)
+    // Track initial page view (localhost: always for Mixpanel; GA needs analytics consent)
     if (mixpanelOk) {
       trackMixpanelPageView(router.asPath, document.title);
+    }
+    if (hasConsent('analytics')) {
+      trackGaPageView(router.asPath, document.title);
     }
 
     // Track route changes
     const handleRouteChange = (url) => {
       if (mixpanelOk) {
         trackMixpanelPageView(url, document.title);
+      }
+      if (hasConsent('analytics')) {
+        trackGaPageView(url, document.title);
       }
     };
 
@@ -214,52 +227,33 @@ function AppContent({ Component, pageProps }) {
     const isLocalhost = typeof window !== 'undefined' && ['localhost', '127.0.0.1'].includes(window.location.hostname);
     const cancelIdleTasks = [];
 
-    // Google Analytics - requires analytics consent (deduped by script id / src in scriptLoader)
+    // GA4 via gtag (canonical). GTM only if NEXT_PUBLIC_GTM_ID is set — never also put GA4 Config in GTM.
     if (analyticsConsent) {
+      const measurementId = getGaMeasurementId();
       cancelIdleTasks.push(scheduleIdle(() => {
         if (typeof document !== "undefined" && document.getElementById("gtag-js-app")) {
           return;
         }
-        loadScriptIfConsented(
-          'gtag-js-app',
-          'https://www.googletagmanager.com/gtag/js?id=G-KQHFL9605P',
-          'analytics',
-          { async: true },
-          hasConsent
-        );
+        if (measurementId) {
+          loadScriptIfConsented(
+            'gtag-js-app',
+            `https://www.googletagmanager.com/gtag/js?id=${measurementId}`,
+            'analytics',
+            { async: true },
+            hasConsent
+          );
 
-        loadInlineScriptIfConsented(
-          'gtag-init-app',
-          `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-KQHFL9605P');
-          `,
-          'analytics',
-          {},
-          hasConsent
-        );
+          loadInlineScriptIfConsented(
+            'gtag-init-app',
+            buildGtagConfigSnippet(measurementId),
+            'analytics',
+            {},
+            hasConsent
+          );
 
-        // Tawk and other chat widgets must be removed in GTM (container GTM-WBXNXKQ), not loaded here.
-        loadInlineScriptIfConsented(
-          'gtm-script-app',
-          `
-            (function(w,d,s,l,i){
-              w[l]=w[l]||[];
-              w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
-              var f=d.getElementsByTagName(s)[0],
-              j=d.createElement(s),
-              dl=l!='dataLayer'?'&l='+l:'';
-              j.async=true;
-              j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-              f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-WBXNXKQ');
-          `,
-          'analytics',
-          {},
-          hasConsent
-        );
+          trackGaPageView(router.asPath, typeof document !== 'undefined' ? document.title : undefined);
+        }
+
       }, 4000));
     }
 
@@ -279,7 +273,8 @@ function AppContent({ Component, pageProps }) {
       logger.warn('[Mixpanel] Token not found. Set NEXT_PUBLIC_MIXPANEL_TOKEN in env.');
     }
 
-    // Google Ads - requires advertising consent
+    // Google Ads + optional GTM (Ads tags) — advertising consent only.
+    // Do not put GA4 Config for G-KQHFL9605P in GTM; gtag owns that ID.
     if (advertisingConsent) {
       loadScriptIfConsented(
         'adsbygoogle-script-app',
@@ -288,12 +283,22 @@ function AppContent({ Component, pageProps }) {
         { async: true, crossOrigin: 'anonymous' },
         hasConsent
       );
+      const gtmId = getGtmId();
+      if (gtmId && typeof document !== 'undefined' && !document.getElementById('gtm-script-app')) {
+        loadInlineScriptIfConsented(
+          'gtm-script-app',
+          buildGtmSnippet(gtmId),
+          'advertising',
+          {},
+          hasConsent
+        );
+      }
     }
 
     return () => {
       cancelIdleTasks.forEach((cancel) => cancel());
     };
-  }, [isLoading, consent, analyticsConsent, advertisingConsent, hasConsent]);
+  }, [isLoading, consent, analyticsConsent, advertisingConsent, hasConsent, router.asPath]);
 
   // Listen for consent changes and dynamically load/unload scripts
   useEffect(() => {
@@ -305,44 +310,25 @@ function AppContent({ Component, pageProps }) {
         const analyticsAlreadyLoaded =
           typeof document !== "undefined" && document.getElementById("gtag-js-app");
         if (!analyticsAlreadyLoaded) {
-          loadScriptIfConsented(
-            'gtag-js-app',
-            'https://www.googletagmanager.com/gtag/js?id=G-KQHFL9605P',
-            'analytics',
-            { async: true },
-            () => newConsent.analytics
-          );
+          const measurementId = getGaMeasurementId();
+          if (measurementId) {
+            loadScriptIfConsented(
+              'gtag-js-app',
+              `https://www.googletagmanager.com/gtag/js?id=${measurementId}`,
+              'analytics',
+              { async: true },
+              () => newConsent.analytics
+            );
 
-          loadInlineScriptIfConsented(
-            'gtag-init-app',
-            `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-KQHFL9605P');
-          `,
-            'analytics',
-            {},
-            () => newConsent.analytics
-          );
-          loadInlineScriptIfConsented(
-            'gtm-script-app',
-            `
-            (function(w,d,s,l,i){
-              w[l]=w[l]||[];
-              w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
-              var f=d.getElementsByTagName(s)[0],
-              j=d.createElement(s),
-              dl=l!='dataLayer'?'&l='+l:'';
-              j.async=true;
-              j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-              f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-WBXNXKQ');
-          `,
-            'analytics',
-            {},
-            () => newConsent.analytics
-          );
+            loadInlineScriptIfConsented(
+              'gtag-init-app',
+              buildGtagConfigSnippet(measurementId),
+              'analytics',
+              {},
+              () => newConsent.analytics
+            );
+            trackGaPageView(router.asPath, typeof document !== 'undefined' ? document.title : undefined);
+          }
         }
         // Mixpanel: initialized only from the consent useEffect via ensureMixpanelFromNpm (single-flight)
       }
@@ -355,6 +341,16 @@ function AppContent({ Component, pageProps }) {
           { async: true, crossOrigin: 'anonymous' },
           () => newConsent.advertising
         );
+        const gtmId = getGtmId();
+        if (gtmId && typeof document !== 'undefined' && !document.getElementById('gtm-script-app')) {
+          loadInlineScriptIfConsented(
+            'gtm-script-app',
+            buildGtmSnippet(gtmId),
+            'advertising',
+            {},
+            () => newConsent.advertising
+          );
+        }
       }
       
       // Note: We don't remove scripts when consent is revoked to avoid breaking functionality
@@ -365,7 +361,7 @@ function AppContent({ Component, pageProps }) {
     return () => {
       window.removeEventListener('consentChanged', handleConsentChange);
     };
-  }, [hasConsent]);
+  }, [hasConsent, router.asPath]);
 
   const isBuyerGuide = router.pathname === '/buyers-guide' || router.pathname === '/enterprise-buyer-guide';
   const isLinktreePage = router.pathname === '/adam-kershner';

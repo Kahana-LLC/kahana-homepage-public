@@ -48,10 +48,16 @@ export default function TestimonialsPage() {
             <div className="flex flex-wrap items-center justify-center gap-3">
               <DownloadOasisLink />
               <Link
-                href="/products/oasis-browser"
+                href="/oasis-pricing"
                 className="btn-secondary inline-flex items-center justify-center px-6 py-3 text-base font-bold no-underline hover:no-underline focus:no-underline rounded-[27.5px]"
               >
-                Product details
+                Pricing &amp; download
+              </Link>
+              <Link
+                href="/installations"
+                className="btn-secondary inline-flex items-center justify-center px-6 py-3 text-base font-bold no-underline hover:no-underline focus:no-underline rounded-[27.5px]"
+              >
+                Installations
               </Link>
             </div>
           </div>

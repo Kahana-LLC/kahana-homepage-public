@@ -135,17 +135,17 @@ export default function BlogIndex({ posts = [] }) {
   return (
     <>
       <Head>
-        <title>Enterprise Browser Blog | Top Browser Comparisons & Security Insights – Kahana</title>
-        <meta name="description" content="Compare top browsers, get expert takes on enterprise browser security, and learn how Oasis solves real-world speed and privacy problems. Actionable insights, updated regularly." />
-        <meta name="keywords" content="enterprise browser, top browser, best browser, browser comparison, Oasis browser, browser security, enterprise security, browser productivity" />
-        <link rel="canonical" href="https://kahana.io/blog" />
-        <meta property="og:url" content="https://kahana.io/blog" />
-        <meta property="og:title" content="Enterprise Browser Blog | Top Browser Comparisons & Security – Kahana" />
-        <meta property="og:description" content="Compare top browsers, get expert takes on enterprise browser security, and learn how Oasis solves real-world speed and privacy problems." />
+        <title>Kahana Blog | Library, creators, and product updates</title>
+        <meta name="description" content="News and guides for the Kahana platform—hubs, Explore, Aura, and creators. New articles land here as they ship." />
+        <meta name="keywords" content="Kahana, hubs, Explore, Aura, creators, knowledge sharing, digital artifacts" />
+        <link rel="canonical" href="https://about.kahana.io/blog" />
+        <meta property="og:url" content="https://about.kahana.io/blog" />
+        <meta property="og:title" content="Kahana Blog | Library, creators, and product updates" />
+        <meta property="og:description" content="News and guides for the Kahana platform—hubs, Explore, Aura, and creators." />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Enterprise Browser Blog | Top Browser Comparisons & Security – Kahana" />
-        <meta name="twitter:description" content="Compare top browsers, get expert takes on enterprise browser security, and learn how Oasis solves real-world speed and privacy problems." />
+        <meta name="twitter:title" content="Kahana Blog | Library, creators, and product updates" />
+        <meta name="twitter:description" content="News and guides for the Kahana platform—hubs, Explore, Aura, and creators." />
 
         {/* Structured Data for Blog Index */}
         <script
@@ -155,8 +155,8 @@ export default function BlogIndex({ posts = [] }) {
               '@context': 'https://schema.org',
               '@type': 'Blog',
               name: 'Kahana Blog',
-              description: 'Latest insights on enterprise browser security, productivity, and technology trends',
-              url: 'https://kahana.io/blog',
+              description: 'News and guides for the Kahana platform—hubs, Explore, Aura, and creators.',
+              url: 'https://about.kahana.io/blog',
               publisher: {
                 '@type': 'Organization',
                 name: 'Kahana',
@@ -169,7 +169,7 @@ export default function BlogIndex({ posts = [] }) {
                 '@type': 'BlogPosting',
                 headline: post.title,
                 description: post.excerpt,
-                url: `https://kahana.io/blog/${post.slug}`,
+                url: `https://about.kahana.io/blog/${post.slug}`,
                 datePublished: post.date,
                 articleSection: post.category,
               })),
@@ -196,10 +196,29 @@ export default function BlogIndex({ posts = [] }) {
             Kahana Blog
           </h1>
           <p className="text-xl text-oasis-green-800 max-w-2xl mx-auto">
-            Insights and updates on enterprise browser security, productivity, and technology trends
+            Insights and updates for the Kahana library—hubs, Explore, Aura, and creators.
           </p>
         </div>
 
+        {sortedPosts.length === 0 ? (
+          <div className="text-center py-12">
+            <h3 className="text-lg font-medium text-oasis-green-900 mb-2">
+              New Kahana platform articles coming soon
+            </h3>
+            <p className="text-oasis-green-800 max-w-xl mx-auto">
+              We’re starting fresh with blog posts about the Kahana platform. Meanwhile, explore{' '}
+              <a href="/features" className="font-semibold text-brand-link no-underline hover:underline">
+                Features
+              </a>
+              {' '}or the{' '}
+              <a href="/faq" className="font-semibold text-brand-link no-underline hover:underline">
+                FAQ
+              </a>
+              .
+            </p>
+          </div>
+        ) : (
+          <>
         {/* Search Bar */}
         <div className="mb-8">
           <div className="relative w-full">
@@ -302,6 +321,8 @@ export default function BlogIndex({ posts = [] }) {
               Try adjusting your search or filter to find what you're looking for.
             </p>
           </div>
+        )}
+          </>
         )}
       </main>
       </div>

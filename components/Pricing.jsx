@@ -146,6 +146,38 @@ export default function Pricing() {
               Prices are in $ USD. To be transparent, Kahana earns 5% whenever anyone pays to access
               any monetized hub.
             </p>
+
+            <div
+              id="when-to-upgrade"
+              className="mx-auto mt-14 max-w-2xl scroll-mt-24 rounded-2xl border border-[#E0E8D4] bg-white px-6 py-8 text-left sm:px-8"
+            >
+              <h2 className="text-xl font-semibold text-[#313A00] sm:text-2xl">
+                When to upgrade
+              </h2>
+              <p className="mt-3 text-base leading-relaxed text-[#666666]">
+                Stay on Free until you hit a limit (4th hub, upload cap, files over ~5&nbsp;MB) or
+                want live chat. You can list on Explore and sell with Stripe on Free—Growth is
+                capacity and support, not permission to monetize. The 5% marketplace fee is the
+                same on Free and Growth.
+              </p>
+              <p className="mt-4 text-base">
+                <Link
+                  href="/docs/when-to-upgrade"
+                  className="font-medium text-[#617500] no-underline underline-offset-4 hover:underline"
+                >
+                  Plans: when to upgrade
+                </Link>
+                {' · '}
+                <a
+                  href="https://app.kahana.io/billing"
+                  className="font-medium text-[#617500] no-underline underline-offset-4 hover:underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Open Billing
+                </a>
+              </p>
+            </div>
           </div>
         </section>
       </FadeInSection>

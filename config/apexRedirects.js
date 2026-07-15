@@ -55,7 +55,7 @@ const PATH_PRESERVE_PREFIXES = [
  */
 const OASIS_LEFTOVER_PREFIXES = [
   '/products',
-  // /features exact path-preserved above; /features/* → about home
+  // Oasis /features/* leftovers redirected in resolveApexRedirect (not path-preserved)
   '/markets',
   '/solutions',
   '/use-cases',
@@ -118,12 +118,15 @@ export function resolveApexRedirect(pathname) {
     return null;
   }
 
-  // Kahana Features index (exact) → about; Oasis feature deep-dives → about home
-  if (path === '/features') {
-    return { origin: ABOUT_ORIGIN, pathname: '/features' };
-  }
-  if (path.startsWith('/features/')) {
-    return { origin: ABOUT_ORIGIN, pathname: '/' };
+  // Kahana Features (/features, /features/explore, …) → about, path-preserved.
+  // Oasis feature deep-dives → about home until those surfaces move.
+  if (path === '/features' || path.startsWith('/features/')) {
+    const isOasisFeature =
+      path.startsWith('/features/oasis') || path === '/features/user-analytics';
+    if (isOasisFeature) {
+      return { origin: ABOUT_ORIGIN, pathname: '/' };
+    }
+    return { origin: ABOUT_ORIGIN, pathname: path };
   }
 
   // Longest prefix among path-preserving rules

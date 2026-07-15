@@ -42,7 +42,7 @@ export const docsConfig = {
   seo: {
     titleTemplate: "%s | Documentation",
     description:
-      "Reference articles for Oasis Browser: what is available, how features behave, and where to look next.",
+      "Guides and reference for the Kahana platform—hubs, Explore, Aura, and more. New articles are added as product docs ship.",
     baseUrl: absoluteUrl('/docs')
   }
 };

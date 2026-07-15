@@ -21,13 +21,16 @@ export async function getStaticProps() {
   };
 }
 
-export default function DocsIndex({ docs, categories }) {
+export default function DocsIndex({ docs = [], categories = [] }) {
   const [activeCategory, setActiveCategory] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
 
+  const docList = Array.isArray(docs) ? docs : [];
+  const categoryList = Array.isArray(categories) ? categories : [];
+
   const filteredDocs = useMemo(() => {
-    return docs.filter((doc) => {
+    return docList.filter((doc) => {
       const matchesCategory = activeCategory === 'all' || doc.category === activeCategory;
       const matchesSearch =
         searchQuery === '' ||
@@ -35,7 +38,7 @@ export default function DocsIndex({ docs, categories }) {
         (doc.description || '').toLowerCase().includes(searchQuery.toLowerCase());
       return matchesCategory && matchesSearch;
     });
-  }, [docs, activeCategory, searchQuery]);
+  }, [docList, activeCategory, searchQuery]);
 
   useEffect(() => {
     setCurrentPage(1);
@@ -83,8 +86,8 @@ export default function DocsIndex({ docs, categories }) {
     <>
       <SEO
         title="Documentation"
-        description="Reference articles for Oasis Browser: what is available, how features behave in the product, and where to look next. For narrative deep-dives, see Oasis features."
-        url="https://kahana.io/docs"
+        description="Guides and reference for the Kahana platform—hubs, Explore, Aura, and more. New articles are added as product docs ship."
+        url="https://about.kahana.io/docs"
         type="website"
       />
 
@@ -106,20 +109,45 @@ export default function DocsIndex({ docs, categories }) {
               Documentation
             </h1>
             <p className="text-xl text-oasis-green-800 max-w-2xl mx-auto">
-              Browse short, product-grounded articles about Oasis Browser: what is available, how things work in the UI,
-              and how capabilities fit together. For story-style deep-dives, see{' '}
+              Product guides for Kahana: hubs, Explore, Aura, profiles, and more. Browse{' '}
               <Link
                 href="/features"
                 className="font-semibold text-brand-link no-underline hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-link"
               >
-                Oasis features
-              </Link>
-              .
+                Features
+              </Link>{' '}
+              meanwhile—new docs land here as they ship.
             </p>
           </div>
 
           <DocsSupportCTA className="mb-10" showHelperText />
 
+          {docList.length === 0 ? (
+            <div className="text-center py-12">
+              <h3 className="text-lg font-medium text-oasis-green-900 mb-2">
+                New Kahana platform docs coming soon
+              </h3>
+              <p className="text-oasis-green-800 max-w-xl mx-auto">
+                We’re rebuilding documentation around the Kahana library. For now, see{' '}
+                <Link
+                  href="/features"
+                  className="font-semibold text-brand-link no-underline hover:underline"
+                >
+                  Features
+                </Link>
+                ,{' '}
+                <Link href="/faq" className="font-semibold text-brand-link no-underline hover:underline">
+                  FAQ
+                </Link>
+                , or{' '}
+                <Link href="/support" className="font-semibold text-brand-link no-underline hover:underline">
+                  Support
+                </Link>
+                .
+              </p>
+            </div>
+          ) : (
+            <>
           {/* Search Bar - same full-width style as blog */}
           <div className="mb-8">
             <div className="relative w-full">
@@ -150,7 +178,7 @@ export default function DocsIndex({ docs, categories }) {
               >
                 All
               </button>
-              {categories.map((category) => (
+              {categoryList.map((category) => (
                 <button
                   key={category}
                   type="button"
@@ -238,6 +266,8 @@ export default function DocsIndex({ docs, categories }) {
                 Try adjusting your search or filter to find what you&apos;re looking for.
               </p>
             </div>
+          )}
+            </>
           )}
         </main>
       </div>

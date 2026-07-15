@@ -41,7 +41,7 @@ export default function HomeDataTransparencySection() {
 
           <div className="mt-8">
             <Link
-              href="/docs/technical-and-interaction-data"
+              href="/privacy-policy"
               onClick={() =>
                 trackButtonClick("home_data_transparency_full_doc", "data_transparency_section")
               }

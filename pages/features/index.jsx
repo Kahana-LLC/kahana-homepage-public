@@ -1,45 +1,29 @@
-import Link from 'next/link';
+import React, { useEffect, useMemo, useState } from 'react';
 import { FolderPlusIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 import SEO from '../../components/SEO';
 import FadeInSection from '../../components/FadeInSection';
+import KahanaFeatureCard from '../../components/features/KahanaFeatureCard';
 import { APP_URL } from '../../components/nav/navConfig';
+import {
+  FEATURES_PER_PAGE,
+  getKahanaFeatureCategories,
+  getKahanaFeaturesSorted,
+} from '../../data/kahanaFeaturesCatalog';
 import { trackButtonClick } from '../../utils/analytics';
 
 const EXPLORE_URL = `${APP_URL}/explore`;
 const CANONICAL = 'https://about.kahana.io/features';
+const DEFAULT_FEATURES = getKahanaFeaturesSorted();
+const DEFAULT_CATEGORIES = getKahanaFeatureCategories();
 
-const CAPABILITIES = [
-  {
-    title: 'Explore',
-    body: 'Public discovery with search and categories. Find hubs contributed by experts worldwide.',
-  },
-  {
-    title: 'Hubs',
-    body: 'Digital artifacts (files, videos, images, PDFs, documents, links, and more) plus collaborators in one curated place. Easy to open and easy to find.',
-  },
-  {
-    title: 'Profiles',
-    body: 'One link for your presence: hubs you have shared and the reputation you grow.',
-  },
-  {
-    title: 'Aura',
-    body: 'The spirit of the library. Give Aura, see who gave it, and help the best contributions rise.',
-  },
-  {
-    title: 'Optional earning',
-    body: 'Kahana began as knowledge sharing. Paid access came later, after a user asked for it. When your hubs earn demand, you can charge for access if you want. 5% platform take rate.',
-  },
-  {
-    title: 'Plans',
-    body: 'Start free so you can contribute. Growth removes hub and upload limits when you need more room.',
-    href: '/pricing',
-    linkLabel: 'See pricing',
-  },
-  {
-    title: 'Trust',
-    body: 'Adult content flags, age verification, and verified creators via Stripe Identity.',
-  },
-];
+export async function getStaticProps() {
+  return {
+    props: {
+      features: DEFAULT_FEATURES,
+      categories: DEFAULT_CATEGORIES,
+    },
+  };
+}
 
 function PrimaryCta() {
   return (
@@ -70,7 +54,72 @@ function ExploreCta() {
   );
 }
 
-export default function FeaturesPage() {
+export default function FeaturesPage({
+  features = DEFAULT_FEATURES,
+  categories = DEFAULT_CATEGORIES,
+}) {
+  const [activeCategory, setActiveCategory] = useState('all');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const featureList = Array.isArray(features) ? features : DEFAULT_FEATURES;
+  const categoryList = Array.isArray(categories) ? categories : DEFAULT_CATEGORIES;
+
+  const filteredFeatures = useMemo(() => {
+    const q = searchQuery.trim().toLowerCase();
+    return featureList.filter((feature) => {
+      const matchesCategory = activeCategory === 'all' || feature.category === activeCategory;
+      const matchesSearch =
+        q === '' ||
+        (feature.title || '').toLowerCase().includes(q) ||
+        (feature.excerpt || '').toLowerCase().includes(q) ||
+        (feature.searchText || '').toLowerCase().includes(q);
+      return matchesCategory && matchesSearch;
+    });
+  }, [featureList, activeCategory, searchQuery]);
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [activeCategory, searchQuery]);
+
+  useEffect(() => {
+    const total = Math.max(1, Math.ceil(filteredFeatures.length / FEATURES_PER_PAGE));
+    setCurrentPage((p) => Math.min(p, total));
+  }, [filteredFeatures.length]);
+
+  const totalPages = Math.max(1, Math.ceil(filteredFeatures.length / FEATURES_PER_PAGE));
+  const startIndex = (currentPage - 1) * FEATURES_PER_PAGE;
+  const paginatedFeatures = filteredFeatures.slice(startIndex, startIndex + FEATURES_PER_PAGE);
+
+  const getPageNumbers = () => {
+    const delta = 2;
+    const range = [];
+    const rangeWithDots = [];
+    let l;
+
+    range.push(1);
+    for (let i = currentPage - delta; i <= currentPage + delta; i++) {
+      if (i < totalPages && i > 1) {
+        range.push(i);
+      }
+    }
+    if (totalPages > 1) {
+      range.push(totalPages);
+    }
+    for (const i of range) {
+      if (l) {
+        if (i - l === 2) {
+          rangeWithDots.push(l + 1);
+        } else if (i - l !== 1) {
+          rangeWithDots.push('...');
+        }
+      }
+      rangeWithDots.push(i);
+      l = i;
+    }
+    return rangeWithDots;
+  };
+
   return (
     <>
       <SEO
@@ -99,27 +148,126 @@ export default function FeaturesPage() {
           </div>
         </section>
 
-        <section className="px-6 py-20 sm:px-10 lg:px-16">
-          <div className="mx-auto max-w-3xl">
+        <section className="px-6 py-16 sm:px-10 lg:px-16">
+          <div className="mx-auto max-w-7xl">
             <FadeInSection>
-              <ul className="flex flex-col gap-12">
-                {CAPABILITIES.map((item) => (
-                  <li key={item.title}>
-                    <h2 className="text-2xl font-semibold sm:text-3xl">{item.title}</h2>
-                    <p className="mt-3 text-lg text-[#666666]">{item.body}</p>
-                    {item.href ? (
-                      <p className="mt-3">
-                        <Link
-                          href={item.href}
-                          className="font-medium text-[#617500] no-underline underline-offset-4 hover:underline"
-                        >
-                          {item.linkLabel}
-                        </Link>
-                      </p>
-                    ) : null}
-                  </li>
-                ))}
-              </ul>
+              <div className="mb-8">
+                <div className="relative w-full">
+                  <input
+                    type="text"
+                    placeholder="Search features..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="w-full rounded-lg border border-[#313A00]/20 bg-white px-4 py-3 shadow-sm focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#7a9200]"
+                    aria-label="Search features"
+                  />
+                  <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
+                    <MagnifyingGlassIcon className="h-5 w-5 text-[#666666]" aria-hidden />
+                  </div>
+                </div>
+              </div>
+
+              <div className="mb-8">
+                <div className="flex flex-wrap gap-2" role="group" aria-label="Feature categories">
+                  <button
+                    type="button"
+                    onClick={() => setActiveCategory('all')}
+                    className={`btn-sm transition-colors ${
+                      activeCategory === 'all' ? 'btn-primary' : 'btn-secondary'
+                    }`}
+                  >
+                    All
+                  </button>
+                  {categoryList.map((category) => (
+                    <button
+                      key={category}
+                      type="button"
+                      onClick={() => setActiveCategory(category)}
+                      className={`btn-sm transition-colors ${
+                        activeCategory === category ? 'btn-primary' : 'btn-secondary'
+                      }`}
+                    >
+                      {category}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {filteredFeatures.length > 0 ? (
+                <>
+                  <p className="mb-4 text-center text-sm text-[#495800] sm:text-left">
+                    Showing {startIndex + 1}–
+                    {Math.min(startIndex + FEATURES_PER_PAGE, filteredFeatures.length)} of{' '}
+                    {filteredFeatures.length} feature
+                    {filteredFeatures.length === 1 ? '' : 's'}
+                  </p>
+                  <div className="mb-8 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                    {paginatedFeatures.map((feature) => (
+                      <KahanaFeatureCard key={feature.slug} feature={feature} />
+                    ))}
+                  </div>
+
+                  {totalPages > 1 ? (
+                    <nav
+                      className="mt-4 flex flex-col items-center justify-center gap-4 sm:flex-row"
+                      aria-label="Feature pages"
+                    >
+                      <button
+                        type="button"
+                        onClick={() => setCurrentPage((p) => Math.max(p - 1, 1))}
+                        disabled={currentPage === 1}
+                        className={`rounded-md px-4 py-2 ${
+                          currentPage === 1
+                            ? 'cursor-not-allowed bg-white/60 text-[#666666]/50'
+                            : 'btn-primary'
+                        }`}
+                      >
+                        Previous
+                      </button>
+
+                      <div className="flex flex-wrap justify-center gap-2">
+                        {getPageNumbers().map((pageNum, index) => (
+                          <button
+                            key={`${pageNum}-${index}`}
+                            type="button"
+                            onClick={() => typeof pageNum === 'number' && setCurrentPage(pageNum)}
+                            disabled={pageNum === '...'}
+                            className={`min-w-[2.5rem] rounded-md px-4 py-2 ${
+                              pageNum === currentPage
+                                ? 'btn-primary'
+                                : pageNum === '...'
+                                  ? 'btn-tertiary btn-sm pointer-events-none !rounded-md !px-3 !py-2 cursor-default'
+                                  : 'btn-secondary'
+                            }`}
+                          >
+                            {pageNum}
+                          </button>
+                        ))}
+                      </div>
+
+                      <button
+                        type="button"
+                        onClick={() => setCurrentPage((p) => Math.min(p + 1, totalPages))}
+                        disabled={currentPage === totalPages}
+                        className={`rounded-md px-4 py-2 ${
+                          currentPage === totalPages
+                            ? 'cursor-not-allowed bg-white/60 text-[#666666]/50'
+                            : 'btn-primary'
+                        }`}
+                      >
+                        Next
+                      </button>
+                    </nav>
+                  ) : null}
+                </>
+              ) : (
+                <div className="py-12 text-center">
+                  <h3 className="mb-2 text-lg font-medium text-[#313A00]">No features found</h3>
+                  <p className="text-[#666666]">
+                    Try adjusting your search or filter to find what you&apos;re looking for.
+                  </p>
+                </div>
+              )}
             </FadeInSection>
           </div>
         </section>

@@ -109,8 +109,14 @@ export default function PressPage() {
                   >
                     Review methodology →
                   </a>
-                  <Link href={`/blog/${YTC_OASIS_REVIEW.blogSummarySlug}`} className="text-oasis-green-700 hover:text-oasis-green-900">
-                    Kahana summary →
+                  <Link href="/oasis-pricing" className="text-oasis-green-700 hover:text-oasis-green-900">
+                    Pricing &amp; download →
+                  </Link>
+                  <Link href="/installations" className="text-oasis-green-700 hover:text-oasis-green-900">
+                    Installations →
+                  </Link>
+                  <Link href="/press-kit" className="text-oasis-green-700 hover:text-oasis-green-900">
+                    Press kit →
                   </Link>
                 </div>
               </li>

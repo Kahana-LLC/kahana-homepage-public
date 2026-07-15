@@ -90,12 +90,14 @@ export default function OasisExternalReviewSection() {
             </div>
 
             <p className="text-sm text-oasis-green-800/80">
-              <Link
-                href={`/blog/${YTC_OASIS_REVIEW.blogSummarySlug}`}
+              <a
+                href={YTC_OASIS_REVIEW.reviewUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="font-semibold text-brand-link no-underline hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-link"
               >
-                Read Kahana&apos;s summary of the review
-              </Link>
+                Read the full external review
+              </a>
             </p>
           </div>
         </div>

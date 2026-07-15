@@ -383,7 +383,7 @@ export default function PrivacyPolicy() {
                   <h3 className="text-xl font-bold text-[#313A00] mb-2">Managing Your Account</h3>
                   <p className="text-gray-700 leading-relaxed">
                     You may update your account information at any time by accessing your account settings. To permanently delete your Oasis account, submit a request through our{' '}
-                    <Link href="/docs/delete-my-account" className="text-[#4A6200] no-underline hover:no-underline font-semibold">Delete my account</Link>{' '}
+                    <Link href="/support" className="text-[#4A6200] no-underline hover:no-underline font-semibold">Delete my account</Link>{' '}
                     page, or <Link href="/contact" className="text-[#4A6200] no-underline hover:no-underline font-semibold">contact us through our contact form</Link>.
                   </p>
                 </div>
@@ -410,7 +410,7 @@ export default function PrivacyPolicy() {
               </p>
               <p className="text-gray-700 leading-relaxed mb-6">
                 When you submit an account deletion request through our embedded form on the{' '}
-                <Link href="/docs/delete-my-account" className="text-[#4A6200] no-underline hover:no-underline font-semibold">Delete my account</Link>{' '}
+                <Link href="/support" className="text-[#4A6200] no-underline hover:no-underline font-semibold">Delete my account</Link>{' '}
                 page, your submission is processed using Tally, a third-party form provider. Information you provide in that form is handled according to{' '}
                 <a href="https://tally.so/privacy" target="_blank" rel="noopener noreferrer" className="text-[#4A6200] no-underline hover:no-underline font-semibold">Tally&apos;s privacy policy</a>.
               </p>

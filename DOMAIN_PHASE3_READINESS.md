@@ -96,7 +96,7 @@ Order: **subdomains → product links → marketing off apex → then apex = pro
 - [x] **301** from apex paths → subdomain URLs (`middleware.js`, Host=`kahana.io` only; skip `/api`)
 - [x] Marketing **home** at `about.kahana.io` (`/` → about)
 - [x] Sitemap / robots prefer subdomain hosts
-- [ ] Search Console: subdomain properties updated (ops; note for Phase 3 change-of-address)
+- [ ] Search Console: Domain property `kahana.io` verified + corporate/app sitemaps submitted — `docs/GOOGLE_ANALYTICS_AND_SEARCH_CONSOLE.md`
 - [x] Deployed + QA on **kahana-public-beta** (v168): subdomain sitemap locs live; beta app still 200 for browsing
 - [x] Local Host=`kahana.io` curl matrix → 301 (see §8)
 - [x] Prod (`kahana-public`) deploy + curl gate — **v436 / `e144cb2`** (2026-07-14)
@@ -129,7 +129,7 @@ Only after Phase 2.5 prod curl is green:
 - [ ] Flip `APP_CANONICAL_URL` / `APP_CANONICAL_ORIGIN` → `https://kahana.io`
 - [ ] Prod Functions SEO sitemap / canonical / `llms.txt` → `kahana.io`
 - [ ] `public/robots.txt` Sitemap line → `https://kahana.io/sitemap.xml`
-- [ ] Search Console: property for `kahana.io`, submit sitemap; monitor `app.` 301s
+- [ ] Search Console: Domain property already live; after cutover monitor `app.` → apex 301s — `docs/GOOGLE_ANALYTICS_AND_SEARCH_CONSOLE.md`
 
 ### Regression
 

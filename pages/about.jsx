@@ -2,7 +2,6 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Head from 'next/head';
-import Script from 'next/script';
 import SEO from '../components/SEO';
 import SharedCTA from '../components/SharedCTA';
 import { getCloudinaryImageUrl } from '../utils/cloudinary-mapper';
@@ -26,7 +25,7 @@ const productB2C = {
     'One-click import from Chrome, Edge, Firefox, and more',
     'Privacy-first: your browsing data stays yours',
   ],
-  href: '/products/oasis-browser',
+  href: '/oasis-pricing',
   cta: 'Download Oasis',
 };
 
@@ -42,8 +41,8 @@ const productB2B = {
     'Centralized policy management for IT and security teams',
     'Works on corporate and third-party devices',
   ],
-  href: '/products/oasis-enterprise-browser',
-  cta: 'Schedule a demo',
+  href: '/oasis-pricing',
+  cta: 'See pricing',
 };
 
 const userStats = [
@@ -165,15 +164,6 @@ export default function About() {
         <title>About Kahana: Oasis | Kahana</title>
         <meta name="description" content="Kahana builds two products under the Oasis name: a personal browser with AI assistant for individuals, and a managed enterprise browser for organizations. 7,000+ users across 108+ countries." />
       </Head>
-      <Script src="https://www.googletagmanager.com/gtag/js?id=G-KQHFL9605P" strategy="afterInteractive" />
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-KQHFL9605P');
-        `}
-      </Script>
 
       {/* ===== Hero ===== */}
       <div className="relative bg-white">
@@ -199,7 +189,7 @@ export default function About() {
                 Download Oasis
               </Link>
               <Link
-                href="/schedule-demo"
+                href="/contact"
                 className="btn-secondary inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline"
               >
                 Schedule a demo
@@ -438,7 +428,7 @@ export default function About() {
         primaryLabel="Download Oasis"
         primaryHref="/oasis-pricing"
         secondaryLabel="Schedule a demo"
-        secondaryHref="/schedule-demo"
+        secondaryHref="/contact"
       />
     </>
   );

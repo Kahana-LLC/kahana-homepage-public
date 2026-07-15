@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { subtleTransition, usePrefersReducedMotion } from '../../solutions/visuals/motion';
-import assistantThemesDoc from '../../../data/docs/assistant-themes.json';
+import assistantThemesDoc from '../../../archive/data/docs/assistant-themes.json';
 import AssistantThemesGallery from './AssistantThemesGallery';
 import {
   OasisAmplifierStory,
@@ -142,7 +142,7 @@ export default function OasisBrowserFeatureVisuals() {
               </p>
               <p className="mt-3">
                 <Link
-                  href="/docs/assistant-themes"
+                  href="/docs"
                   className="text-sm font-semibold text-brand-link no-underline hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-link"
                 >
                   Read the full Assistant themes guide →

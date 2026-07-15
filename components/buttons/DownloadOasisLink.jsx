@@ -18,7 +18,7 @@ export function DownloadIcon({ className = 'h-4 w-4 shrink-0' }) {
  * Download CTA with dual icons (Figma library pattern). Use only for explicit download actions.
  */
 export default function DownloadOasisLink({
-  href = '/download',
+  href = '/oasis-pricing',
   children = 'Download Oasis',
   className,
   variant = 'primary',

@@ -173,7 +173,7 @@ const AppendixPage = () => {
                    </Link>
                    <div className="mt-4">
                      <Link
-                       href="/blog/the-future-of-ergonomic-work-improving-health-2025"
+                       href="/blog"
                        className="text-brand-link hover:text-brand-link-hover font-medium underline"
                      >
                        Read the full paper →
@@ -255,7 +255,7 @@ const AppendixPage = () => {
             <Link href="/references-future-of-ergonomic-work-white-paper" className="text-brand-link hover:text-brand-link-hover font-medium">
               View References
             </Link>
-                               <Link href="/blog/the-future-of-ergonomic-work-improving-health-2025" className="text-brand-link hover:text-brand-link-hover font-medium">
+                               <Link href="/blog" className="text-brand-link hover:text-brand-link-hover font-medium">
                      Read Blog Series
                    </Link>
             <Link href="/white-papers/the-future-of-ergonomic-work" className="text-brand-link hover:text-brand-link-hover font-medium">

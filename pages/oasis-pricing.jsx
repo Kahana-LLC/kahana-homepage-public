@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
-import Script from 'next/script';
 import Link from 'next/link';
 import SEO from '../components/SEO';
 import FadeInSection from '../components/FadeInSection';
@@ -58,7 +57,7 @@ const pricingTiers = [
     ],
     creditNote: '',
     cta: 'Schedule a demo',
-    ctaLink: '/schedule-demo',
+    ctaLink: '/contact',
     buttonStyle: 'primary'
   }
 ];
@@ -75,7 +74,7 @@ const teamPlan = {
     'Dedicated onboarding'
   ],
   cta: 'Join waitlist',
-  ctaLink: '/oasis-waitlist'
+  ctaLink: '/oasis-pricing'
 };
 
 const faqs = [
@@ -85,7 +84,7 @@ const faqs = [
       <>
         Oasis is currently available for Mac (Apple Silicon and Intel). Windows, Linux, and Chromium versions are in
         development.{' '}
-        <Link href="/oasis-waitlist" className="text-[#4A6200] no-underline hover:no-underline font-semibold">
+        <Link href="/contact" className="text-[#4A6200] no-underline hover:no-underline font-semibold">
           Get early access
         </Link>{' '}
         for early access.
@@ -152,9 +151,9 @@ export default function OasisPricing() {
       {
         '@type': 'Offer',
         name: 'Enterprise',
-        description: 'Custom pricing. Schedule a demo for a quote.',
+        description: 'Custom pricing. Contact us for a quote.',
         priceCurrency: 'USD',
-        url: 'https://kahana.io/schedule-demo',
+        url: 'https://kahana.io/contact',
         availability: 'https://schema.org/InStock'
       }
     ]
@@ -177,22 +176,6 @@ export default function OasisPricing() {
           content="Select the perfect Oasis plan for your workflow. From free exploration to enterprise-scale solutions, find the right fit for your AI-powered workspace needs."
         />
       </Head>
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-KQHFL9605P"
-        strategy="afterInteractive"
-      />
-      <Script
-        id="google-analytics"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-KQHFL9605P');
-          `,
-        }}
-      />
 
       {/* Hero Section */}
       <section className="relative overflow-hidden pb-0">
@@ -328,7 +311,7 @@ export default function OasisPricing() {
                     labelClassName="text-xs font-medium text-gray-700"
                   />
                   <Link
-                    href="/oasis-waitlist"
+                    href="/contact"
                     className="btn-primary w-full sm:w-auto shrink-0 inline-flex items-center justify-center px-6 py-2.5 sm:py-3 text-sm sm:text-base font-normal rounded-full no-underline hover:no-underline focus:no-underline transition-all"
                   >
                     Get early access
@@ -453,7 +436,7 @@ export default function OasisPricing() {
         <SharedCTA
           title="Need More Than These Plans?"
           description="For enterprises with larger teams, custom requirements, or advanced security needs, we offer tailored solutions designed to scale with your organization."
-          primaryHref="/schedule-demo"
+          primaryHref="/contact"
           primaryLabel="Schedule a Demo"
           secondaryHref="/contact"
           secondaryLabel="Get in Touch"

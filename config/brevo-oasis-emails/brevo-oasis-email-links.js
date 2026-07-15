@@ -8,7 +8,7 @@ export const oasisEmailLinks = {
   adamHeadshot: absoluteUrl('/images/about/adam-kershner.jpg'),
   welcomeHeroScreenshot: absoluteUrl('/images/oasis-browser-assistant-screenshot.png'),
   phGalleryEarnTokensFeedback: absoluteUrl('/images/oasis/ph-gallery-earn-tokens-feedback.png'),
-  trainingDoc: absoluteUrl('/docs/training'),
+  trainingDoc: absoluteUrl('/docs'),
   slackIcon: 'https://a.slack-edge.com/80588/marketing/img/icons/icon_slack_hash_colored.png',
   slackIconPurple: 'https://a.slack-edge.com/80588/marketing/img/icons/icon_slack_hash_colored.png',
   slackIconHosted: absoluteUrl('/images/icons/slack-mark-purple.png'),
@@ -20,7 +20,7 @@ export const oasisEmailLinks = {
   zenBillingPortal: 'https://billing.stripe.com/p/login/bIYg16d6l3FqelieUU',
   installations: absoluteUrl('/installations'),
   privacyPolicy: absoluteUrl('/privacy-policy'),
-  assistantThemes: absoluteUrl('/docs/assistant-themes'),
+  assistantThemes: absoluteUrl('/docs'),
   productHuntSignup: 'https://www.producthunt.com/',
   productHuntLaunchComment:
     'https://www.producthunt.com/products/kahana?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-oasis-browser-for-mac',

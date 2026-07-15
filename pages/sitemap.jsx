@@ -9,43 +9,24 @@ const staticSitemapSections = [
     links: [
       { text: 'Home', href: '/' },
       { text: 'About', href: '/about' },
+      { text: 'Features', href: '/features' },
       { text: 'Contact', href: '/contact' },
-      { text: 'Adam Kershner', href: '/adam-kershner' },
       { text: 'Blog', href: '/blog' },
+      { text: 'FAQ', href: '/faq' },
+      { text: 'Pricing', href: '/pricing' },
+    ],
+  },
+  {
+    title: 'Oasis Browser (legacy download)',
+    links: [
+      { text: 'Oasis pricing & download', href: '/oasis-pricing' },
       { text: 'Installations', href: '/installations' },
-      { text: 'Schedule Demo', href: '/schedule-demo' },
-    ],
-  },
-  {
-    title: 'Products',
-    links: [
-      { text: 'Products Overview', href: '/products' },
-      { text: 'Enterprise Browser', href: '/products/oasis-enterprise-browser' },
-      { text: 'Web Application', href: '/products/web-application' },
-      { text: "Buyer's Guide", href: '/buyers-guide' },
-    ],
-  },
-  {
-    title: 'Solutions',
-    links: [
-      { text: 'Solutions Overview', href: '/solutions' },
-      { text: 'SaaS & Web Apps', href: '/solutions/saas-and-web-apps' },
-      { text: 'Remote Workforce', href: '/solutions/remote-workforce' },
-      { text: 'Merger Integration', href: '/solutions/merger-integration' },
-      { text: 'External Workforce', href: '/solutions/external-workforce' },
-      { text: 'VDI Reduction', href: '/solutions/vdi-reduction' },
-      { text: 'Zero Trust Security', href: '/solutions/zero-trust-security' },
-      { text: 'Privileged User Management', href: '/solutions/privileged-user-management' },
-      { text: 'Secure Browsing', href: '/solutions/secure-browsing' },
-      { text: 'Workplace Enablement', href: '/solutions/workplace-enablement' },
-      { text: 'Healthcare', href: '/solutions/healthcare' },
-      { text: 'Government', href: '/solutions/government' },
+      { text: 'Press', href: '/press' },
     ],
   },
   {
     title: 'Resources',
     links: [
-      { text: 'Resources', href: '/resources' },
       { text: 'Events', href: '/events' },
       { text: 'Press', href: '/press' },
       { text: 'Press kit', href: '/press-kit' },
@@ -57,7 +38,7 @@ const staticSitemapSections = [
     title: 'Support',
     links: [
       { text: 'Support Center', href: '/support' },
-      { text: 'Contact Sales', href: '/sales' },
+      { text: 'Contact', href: '/contact' },
     ],
   },
   {

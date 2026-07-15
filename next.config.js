@@ -1,5 +1,12 @@
 /** @type {import('next').NextConfig} */
 const path = require("path");
+const {
+  blogRedirects: archivedBlogRedirects,
+  docsRedirects: archivedDocsRedirects,
+} = require("./config/archivedContentRedirects");
+const {
+  pageRedirects: archivedOasisPageRedirects,
+} = require("./config/archivedOasisPageRedirects");
 
 /**
  * Only load @next/bundle-analyzer when ANALYZE=true.
@@ -432,26 +439,24 @@ const nextConfig = {
       },
       {
         source: "/products/consumer-browser",
-        destination: "/products/oasis-browser",
+        destination: "/oasis-pricing",
         permanent: true,
       },
       {
         source: "/products/free-agentic-browser",
-        destination: "/products/oasis-browser",
+        destination: "/oasis-pricing",
         permanent: true,
       },
       {
         source: "/products/enterprise-browser",
-        destination: "/products/oasis-enterprise-browser",
+        destination: "/oasis-pricing",
         permanent: true,
       },
-      {
-        source:
-          "/blog/opera-browser-ai-features-aria-what-it-does-what-it-misses-oasis-review-2026",
-        destination:
-          "/blog/opera-browser-ai-features-aria-what-it-does-what-it-misses-oasis-review-march-29-2026",
-        permanent: true,
-      },
+      // Oasis marketing pages archived (pricing + installations kept live)
+      ...archivedOasisPageRedirects,
+      // Oasis-era blog/docs archived → indexes
+      ...archivedBlogRedirects,
+      ...archivedDocsRedirects,
     ];
   },
 
