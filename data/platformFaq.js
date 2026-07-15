@@ -184,7 +184,7 @@ export const FAQ_SECTIONS = [
         id: 'aura-pay',
         question: 'What is Aura? Do I pay for it?',
         answer:
-          'Aura is limited. You can give up to 5 Aura per day. It replenishes at midnight UTC.\n\nAura is not money and not crypto. It is endorsement: give it to lift hubs you value, see who gave it, and help the best contributions rise. You cannot give Aura to your own hub.',
+          'Aura is limited. You can give up to 5 Aura per day. It replenishes at midnight UTC.\n\nAura is not money and not crypto. It is endorsement: give it to lift hubs you value, see who gave it, and help the best contributions rise. You cannot give Aura to your own contributions.',
       },
     ],
   },
@@ -196,13 +196,13 @@ export const FAQ_SECTIONS = [
         id: 'what-is-aura',
         question: 'What is Aura?',
         answer:
-          'Aura is limited. You can give up to 5 Aura per day. Put it all on one hub or split it across a few. It replenishes at midnight UTC.\n\nAura is not money and not crypto. It is endorsement for contributions you value. See who gave it. Because it is scarce, people give it carefully, which helps the best work rise and makes the library a place you can trust to learn.\n\nYou cannot give Aura to your own hub.',
+          'Aura is limited. You can give up to 5 Aura per day. Put it all on one hub or split it across a few. It replenishes at midnight UTC.\n\nAura is not money and not crypto. It is endorsement for contributions you value. See who gave it. Because it is scarce, people give it carefully, which helps the best work rise and makes Kahana a place you can trust to learn.\n\nYou cannot give Aura to your own contributions.',
       },
       {
         id: 'aura-budget',
         question: 'How much Aura can I give?',
         answer:
-          'Aura is limited to 5 Aura per day.\n\nYou can put it all on one hub or split it across a few. It replenishes at midnight UTC. You cannot give Aura to your own hub.',
+          'Aura is limited to 5 Aura per day.\n\nYou can put it all on one hub or split it across a few. It replenishes at midnight UTC. You cannot give Aura to your own contributions.',
       },
       {
         id: 'aura-streak',

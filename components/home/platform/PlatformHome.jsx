@@ -23,7 +23,9 @@ import FadeInSection from '../../FadeInSection';
 import { APP_URL } from '../../nav/navConfig';
 import { trackButtonClick } from '../../../utils/analytics';
 import AuraLikeAnimation from './AuraLikeAnimation';
+import CategoryMarquee from './CategoryMarquee';
 import FaqBrowse from '../../faq/FaqBrowse';
+import { EXPLORE_CATEGORIES } from '../../../data/exploreCategories';
 
 const HeroOwlLottie = dynamic(() => import('./HeroOwlLottie'), { ssr: false });
 
@@ -74,13 +76,13 @@ const HOW_IT_WORKS = [
   {
     step: '02',
     title: 'Learn',
-    body: 'Explore the library and access knowledge others have shared, curated and easy to reach in one place. When you like a contribution, give it Aura.',
+    body: 'Explore Kahana and access knowledge others have shared, curated and easy to reach in one place. When you like a contribution, give it Aura.',
     Icon: EyeIcon,
   },
   {
     step: '03',
     title: 'Grow',
-    body: 'You grow from learning, and you grow from the exposure you earn by contributing: views, saves, purchases, and Aura. Growth happens through Aura, not just views.',
+    body: 'You grow from learning and exposure you earn by contributing (views, saves, purchases, and Aura).',
     Icon: ArrowTrendingUpIcon,
   },
 ];
@@ -103,7 +105,7 @@ const AURA_RULES = [
   },
   {
     title: 'No self-Aura',
-    body: 'You cannot give Aura to your own hub',
+    body: 'You cannot give Aura to your own contributions',
     Icon: NoSymbolIcon,
   },
   {
@@ -121,7 +123,7 @@ const CREATOR_BENEFITS = [
   },
   {
     title: 'Help others learn',
-    body: 'Teaching what you know builds mastery, reputation, and relationships with people who need you.',
+    body: 'Teaching what you know builds mastery, reputation, and relationships with people.',
     Icon: BookOpenIcon,
   },
   {
@@ -167,12 +169,12 @@ const OPTIMIZE_STEPS = [
 const SEEKER_BENEFITS = [
   {
     title: 'Easy access',
-    body: 'Save hubs into collections you can open on your phone or computer. You are one click away from the knowledge in the library.',
+    body: 'Save hubs into collections you can open on your phone or computer. You are one click away from the knowledge in Kahana.',
     Icon: Squares2X2Icon,
   },
   {
     title: 'Credibility',
-    body: 'See who contributed and their track record before you dive in.',
+    body: 'See who contributed and their track record before you dive in. Profiles with a check mark have completed Stripe Identity verification. Aura on a hub is community proof that others found it worth noticing.',
     Icon: ShieldCheckIcon,
   },
   {
@@ -217,7 +219,7 @@ export default function PlatformHome() {
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#495800] sm:text-xl">
               You learn. You contribute. You give your Aura to recognize the greatest contributions
-              and preserve quality.
+              to preserve quality.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <PrimaryCta trackingId="platform_hero_contribute">Contribute</PrimaryCta>
@@ -234,7 +236,7 @@ export default function PlatformHome() {
         <FadeInSection>
           <h2 className="text-center text-3xl font-semibold sm:text-4xl">How it works</h2>
           <p className="mx-auto mt-3 max-w-2xl text-center text-lg text-[#666666]">
-            The library helps you integrate learning, teaching, and growth into daily life.
+            Kahana integrates learning, teaching, and growth into daily life.
           </p>
           <ol className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {HOW_IT_WORKS.map((item) => {
@@ -276,7 +278,7 @@ export default function PlatformHome() {
           <div>
             <h2 className="text-3xl font-semibold sm:text-4xl">Aura</h2>
             <p className="mt-3 max-w-2xl text-lg text-[#666666]">
-              Give carefully. Lift what belongs in the library.
+              Give carefully. Lift what belongs in Kahana.
             </p>
 
             <div className="mt-8 rounded-2xl border border-[#E0E8D4] bg-[#EEF3D8]/60 px-6 py-5 sm:px-8">
@@ -313,7 +315,7 @@ export default function PlatformHome() {
               <p className="max-w-xl text-lg text-[#666666]">
                 Because Aura is scarce, people give it carefully. That is why Kahana is different from
                 online courses, marketplaces, and creator monetization platforms, and why you can
-                trust this library as a place to learn.
+                trust Kahana as a place to learn.
               </p>
             </div>
           </div>
@@ -383,6 +385,36 @@ export default function PlatformHome() {
         </FadeInSection>
       </SectionShell>
 
+      <section id="categories" className="border-t border-[#E0E8D4] py-20">
+        <FadeInSection>
+          <div className="mx-auto w-full max-w-6xl px-6 sm:px-10 lg:px-16">
+            <h2 className="text-3xl font-semibold sm:text-4xl">Browse by category</h2>
+            <p className="mt-3 max-w-2xl text-lg text-[#666666]">
+              Niche expertise across Kahana. Pick a topic and explore hubs people have
+              contributed.
+            </p>
+          </div>
+          <div className="mt-10 w-full overflow-hidden">
+            <CategoryMarquee categories={EXPLORE_CATEGORIES} href={EXPLORE_URL} />
+          </div>
+          <p className="mx-auto mt-10 w-full max-w-6xl px-6 sm:px-10 lg:px-16">
+            <SecondaryCta>Explore</SecondaryCta>
+          </p>
+        </FadeInSection>
+      </section>
+
+      <SectionShell id="philosophy" className="border-t border-[#E0E8D4]">
+        <FadeInSection>
+          <h2 className="text-3xl font-semibold sm:text-4xl">Mission &amp; Philosophy</h2>
+          <p className="mt-4 max-w-3xl text-lg leading-relaxed text-[#666666]">
+            Our core belief is that people are naturally curious and creative. We created a space
+            where people can easily connect with others and get rewarded for being themselves. When
+            you feel like you could spend an eternity creating and exploring in Kahana, our mission
+            will be complete.
+          </p>
+        </FadeInSection>
+      </SectionShell>
+
       <SectionShell id="faq-teaser">
         <FadeInSection>
           <h2 className="text-3xl font-semibold sm:text-4xl">FAQ</h2>
@@ -398,7 +430,7 @@ export default function PlatformHome() {
       <SectionShell className="bg-[#313A00] pb-24 pt-20 text-[#F8FAF2]">
         <FadeInSection>
           <h2 className="mx-auto max-w-2xl text-center text-3xl font-semibold leading-tight !text-[#F8FAF2] sm:text-4xl">
-            Contribute what you know. Let the library carry it further.
+            Contribute what you know. Let Kahana carry it further.
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-center text-lg leading-relaxed text-[#F8FAF2]/85">
             Share on any topic. Get discovered. Help others learn from curated hubs in one place.

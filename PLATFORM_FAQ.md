@@ -173,7 +173,7 @@ Use Explore filters for monetization (free vs paid), price range, category, and 
 
 **Aura is limited.** You can give up to **5 Aura per day**. It replenishes at **midnight UTC**.
 
-Aura is **not** money and not crypto. It is endorsement: give it to lift hubs you value, see who gave it, and help the best contributions rise. You cannot give Aura to your own hub.
+Aura is **not** money and not crypto. It is endorsement: give it to lift hubs you value, see who gave it, and help the best contributions rise. You cannot give Aura to your own contributions.
 
 ---
 
@@ -183,11 +183,11 @@ Aura is **not** money and not crypto. It is endorsement: give it to lift hubs yo
 
 **Aura is limited.** You can give up to **5 Aura per day**. Put it all on one hub or split it across a few. It replenishes at **midnight UTC**.
 
-Aura is not money and not crypto. It is endorsement for contributions you value. See who gave it. Because it is scarce, people give it carefully, which helps the best work rise and makes the library a place you can trust to learn. You cannot give Aura to your own hub. Counts appear on Explore cards.
+Aura is not money and not crypto. It is endorsement for contributions you value. See who gave it. Because it is scarce, people give it carefully, which helps the best work rise and makes the library a place you can trust to learn. You cannot give Aura to your own contributions. Counts appear on Explore cards.
 
 ### How much Aura can I give?
 
-**Aura is limited** to **5 Aura per day**. You can put it all on one hub or split it across a few. It replenishes at **midnight UTC**. You can redistribute or adjust within product rules (for example, removing Aura given today to free budget). You cannot give Aura to your own hub.
+**Aura is limited** to **5 Aura per day**. You can put it all on one hub or split it across a few. It replenishes at **midnight UTC**. You can redistribute or adjust within product rules (for example, removing Aura given today to free budget). You cannot give Aura to your own contributions.
 
 ### What is an Aura streak?
 

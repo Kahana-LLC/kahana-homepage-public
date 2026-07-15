@@ -156,7 +156,7 @@ Open a hub row for deeper per-hub stats.
 
 **Saves:** Buyers can **save** hubs; save counts show on Explore cards and creator surfaces as social proof. Use them as a demand signal alongside views and Aura — they reflect wishlist interest, not necessarily a purchase.
 
-**Aura reminder:** Members get a small **daily Aura budget** to endorse hubs they value. You cannot Aura your own hub. Aura is endorsement / discovery signal — **not** payment currency or crypto.
+**Aura reminder:** Members get a small **daily Aura budget** to endorse hubs they value. You cannot give Aura to your own contributions. Aura is endorsement / discovery signal — **not** payment currency or crypto.
 
 Revenue and payout detail: use **Stripe** (linked from Monetization). Kahana analytics is for product/discovery performance.
 
