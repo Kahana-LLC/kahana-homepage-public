@@ -27,6 +27,7 @@ const RESOURCE_LINKS = [
   { href: '/blog', label: 'Blog' },
   { href: '/docs', label: 'Docs' },
   { href: '/faq', label: 'FAQ' },
+  { href: 'https://kahana.io/support', label: 'Support', external: true },
 ];
 
 function FooterColumnHeading({ children }) {
@@ -43,7 +44,7 @@ function LinkList({ links, linkClass = LINK_CLASS }) {
       {links.map((item) => (
         <li key={`${item.href}-${item.label}`}>
           {item.external || item.href.startsWith('http') ? (
-            <a href={item.href} className={linkClass}>
+            <a href={item.href} className={linkClass} target="_blank" rel="noopener noreferrer">
               {item.label}
             </a>
           ) : (
@@ -151,11 +152,6 @@ function LegalLinkList({ consentContext, openCookieModal }) {
       <li>
         <Link href="/right-to-work" className={LEGAL_LINK_CLASS}>
           Right to Work
-        </Link>
-      </li>
-      <li>
-        <Link href="/contact" className={LEGAL_LINK_CLASS}>
-          Contact
         </Link>
       </li>
     </ul>
