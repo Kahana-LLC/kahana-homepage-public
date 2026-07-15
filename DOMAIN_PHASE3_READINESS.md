@@ -2,9 +2,9 @@
 
 > **Purpose:** Ops checklist living in the **marketing** repo for Phase 2.5 / pre–Phase 3 gates. Product cutover steps (§7) still execute in **`kahana-web`** + Heroku/Firebase.  
 > **Audience:** Product, engineering, ops.  
-> **Verified:** 2026-07-14  
-> **Verdict:** **Phase 2.5 implemented in marketing;** re-curl prod after deploy. Phase 3 remains ops + `kahana-web` cutover.  
-> **Charters:** [`DOMAIN_ARCHITECTURE_PROJECT_CHARTER.md`](docs/DOMAIN_ARCHITECTURE_PROJECT_CHARTER.md) (pointer), [`DOMAIN_CONSOLIDATION_CHARTER.md`](DOMAIN_CONSOLIDATION_CHARTER.md), redirect map [`docs/PHASE2_5_APEX_REDIRECT_MAP.md`](docs/PHASE2_5_APEX_REDIRECT_MAP.md)
+> **Verified:** 2026-07-14 (prod curl after `kahana-public` v436)  
+> **Verdict:** **Phase 2.5 live on prod.** Phase 3 remains ops + `kahana-web` cutover.  
+> **Charters:** [`DOMAIN_ARCHITECTURE_PROJECT_CHARTER.md`](docs/DOMAIN_ARCHITECTURE_PROJECT_CHARTER.md) (pointer), [`DOMAIN_CONSOLIDATION_CHARTER.md`](DOMAIN_CONSOLIDATION_CHARTER.md), redirect map [`docs/PHASE2_5_APEX_REDIRECT_MAP.md`](docs/PHASE2_5_APEX_REDIRECT_MAP.md), product handoff [`docs/PHASE3_KAHANA_WEB_HANDOFF.md`](docs/PHASE3_KAHANA_WEB_HANDOFF.md)
 
 ---
 
@@ -12,8 +12,8 @@
 
 | Ready? | Why |
 |--------|-----|
-| **Phase 2.5 (code)** | Apex Host=`kahana.io` hard-301s marketing paths via [`middleware.js`](middleware.js) + [`config/apexRedirects.js`](config/apexRedirects.js). `/` → `about.kahana.io/`. |
-| **Phase 3** | Still **ops + product**: rebind `kahana.io` → `kahana-alpha`, `app.` 301s, Firebase/CORS/hub SEO. Not blocked by marketing path 200s once prod curl gate passes. |
+| **Phase 2.5 (prod)** | Apex Host=`kahana.io` hard-301s marketing paths via [`middleware.js`](middleware.js) + [`config/apexRedirects.js`](config/apexRedirects.js). `/` → `about.kahana.io/`. Confirmed on `kahana-public` v436. |
+| **Phase 3** | Still **ops + product**: rebind `kahana.io` → `kahana-alpha`, `app.` 301s, Firebase/CORS/hub SEO. Marketing apex gate is green; cutover not started. |
 
 **Discover** may keep linking `https://kahana.io` for post–Phase 3 product entry; until Phase 3 that URL 301s to **about.** — product explore remains **`app.kahana.io`**.
 
@@ -39,7 +39,7 @@ app.kahana.io          → 301 → kahana.io (path-preserving, incl. /hub)
 |-------|--------|--------|----------|
 | **1** Corporate subdomains | `about` / `newsroom` / `careers` / `help` live over TLS | **Done** | Each host returns **HTTP 200** on `kahana-public`. |
 | **2** Product → subdomains | In-app Resources open subdomain URLs | **Done** | Product `COMPANY_RESOURCE_LINKS` on `kahana-alpha` / `app.kahana.io`. |
-| **2.5** Marketing off apex | Apex marketing paths **301** to subdomains; home at `about.` | **Code done — confirm prod curl** | Map + middleware + subdomain sitemap locs. See §6. |
+| **2.5** Marketing off apex | Apex marketing paths **301** to subdomains; home at `about.` | **Done on prod (v436)** | Map + middleware + subdomain sitemap locs. See §6. |
 | **3** Apex = product | `kahana.io` → CRA; `app.` → apex 301; auth + hub SEO flip | **Blocked until ops cutover** | Heroku still: **`kahana.io` → `kahana-public`**; **`app.kahana.io` → `kahana-alpha`**. |
 
 ```mermaid
@@ -99,9 +99,9 @@ Order: **subdomains → product links → marketing off apex → then apex = pro
 - [ ] Search Console: subdomain properties updated (ops; note for Phase 3 change-of-address)
 - [x] Deployed + QA on **kahana-public-beta** (v168): subdomain sitemap locs live; beta app still 200 for browsing
 - [x] Local Host=`kahana.io` curl matrix → 301 (see §8)
-- [ ] Prod (`kahana-public`) deploy + curl gate — **held until explicitly approved**
+- [x] Prod (`kahana-public`) deploy + curl gate — **v436 / `e144cb2`** (2026-07-14)
 
-Until prod curl gate is green, **do not** rebind `kahana.io` to `kahana-alpha`.
+Prod curl gate is green. Phase 3 ops (§7) can proceed when ready; still do not rebind apex until §7 checklist is executed intentionally.
 
 ---
 

@@ -101,7 +101,18 @@ export default function HeroOwlLottie({ className = '' }) {
   const [tick, setTick] = useState(0);
   const [patternIndex, setPatternIndex] = useState(0);
   const [hovered, setHovered] = useState(false);
+  /** True when the device has real hover (desktop). Avoids sticky :hover after touch. */
+  const [fineHover, setFineHover] = useState(false);
   const pattern = PATTERNS[patternIndex];
+
+  useEffect(() => {
+    if (typeof window === 'undefined' || !window.matchMedia) return undefined;
+    const mq = window.matchMedia('(hover: hover) and (pointer: fine)');
+    const update = () => setFineHover(mq.matches);
+    update();
+    mq.addEventListener('change', update);
+    return () => mq.removeEventListener('change', update);
+  }, []);
 
   useEffect(() => {
     if (reduceMotion) return undefined;
@@ -120,13 +131,21 @@ export default function HeroOwlLottie({ className = '' }) {
     return () => window.clearInterval(patternId);
   }, [reduceMotion, hovered]);
 
+  const activate = () => {
+    if (!reduceMotion) setHovered(true);
+  };
+  const deactivate = () => setHovered(false);
+
   return (
     <div
-      className={`relative mx-auto w-full max-w-[220px] cursor-default overflow-visible sm:max-w-[260px] lg:ml-auto lg:mr-0 lg:max-w-[300px] ${className}`}
-      onMouseEnter={() => !reduceMotion && setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      onFocus={() => !reduceMotion && setHovered(true)}
-      onBlur={() => setHovered(false)}
+      className={`relative mx-auto w-full max-w-[220px] cursor-pointer touch-manipulation overflow-visible sm:max-w-[260px] lg:ml-auto lg:mr-0 lg:max-w-[300px] ${className}`}
+      onMouseEnter={() => fineHover && activate()}
+      onMouseLeave={() => fineHover && deactivate()}
+      onFocus={activate}
+      onBlur={deactivate}
+      onTouchStart={activate}
+      onTouchEnd={deactivate}
+      onTouchCancel={deactivate}
       tabIndex={0}
       role="img"
       aria-label="Kahana owl with Aura"
