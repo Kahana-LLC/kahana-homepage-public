@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 220" fill="none" aria-hidden="true">
+  <!-- Abstract library threshold: shelves + arch doorway into knowledge -->
+  <g stroke="#313A00" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Floor line -->
+    <path d="M28 188h144" />
+
+    <!-- Left shelf wall -->
+    <path d="M40 188V52" />
+    <path d="M40 72h48" />
+    <path d="M40 108h48" />
+    <path d="M40 144h48" />
+    <!-- Left volumes -->
+    <path d="M48 72v-28" />
+    <path d="M62 72v-22" />
+    <path d="M76 72v-30" />
+    <path d="M52 108v-24" />
+    <path d="M68 108v-18" />
+    <path d="M48 144v-22" />
+    <path d="M64 144v-28" />
+    <path d="M80 144v-16" />
+
+    <!-- Right shelf wall -->
+    <path d="M160 188V52" />
+    <path d="M112 72h48" />
+    <path d="M112 108h48" />
+    <path d="M112 144h48" />
+    <!-- Right volumes -->
+    <path d="M124 72v-26" />
+    <path d="M138 72v-20" />
+    <path d="M152 72v-32" />
+    <path d="M120 108v-20" />
+    <path d="M136 108v-28" />
+    <path d="M128 144v-18" />
+    <path d="M144 144v-26" />
+
+    <!-- Arch doorway (threshold into the library) -->
+    <path d="M88 188V108c0-22 10-36 12-36s12 14 12 36v80" />
+    <!-- Inner arch highlight -->
+    <path d="M96 188V116c0-12 4-20 4-20s4 8 4 20v72" stroke-width="5" opacity="0.55" />
+
+    <!-- Pediment / roof suggestion over shelves -->
+    <path d="M36 52h128" />
+    <path d="M36 52l64-28 64 28" />
+  </g>
+</svg>

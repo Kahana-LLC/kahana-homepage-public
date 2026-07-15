@@ -260,17 +260,71 @@ input[type="button"] {
   transition: background 0.2s;
 }
 
-/* FAQ accordion buttons: light gradient background, dark text (override global button styles) */
-#faq button {
-  background: linear-gradient(to bottom right, rgba(254, 243, 199, 0.3), rgba(125, 211, 252, 0.15)) !important;
-  color: var(--oasis-green-800) !important;
+/* Platform FAQ accordion: beat global button olive fill + reset padding */
+.faq-accordion-trigger {
+  background-color: #313a00 !important;
+  color: #f8faf2 !important;
   font-weight: 600 !important;
   border: none !important;
-  padding: 1.25rem 1.5rem !important;
   border-radius: 0.75rem !important;
+  padding: 1rem 1.25rem !important;
+  cursor: pointer !important;
+  box-shadow: none !important;
+  text-align: left !important;
+  width: 100% !important;
 }
-#faq button:hover {
-  background: linear-gradient(to bottom right, rgba(254, 243, 199, 0.4), rgba(125, 211, 252, 0.2)) !important;
+
+@media (min-width: 640px) {
+  .faq-accordion-trigger {
+    padding: 1.125rem 1.5rem !important;
+  }
+}
+
+.faq-accordion-trigger:hover {
+  background-color: #3a4500 !important;
+  color: #f8faf2 !important;
+}
+
+.faq-accordion-trigger *,
+.faq-accordion-trigger span,
+.faq-accordion-trigger-label,
+.faq-accordion-trigger-icon {
+  color: #f8faf2 !important;
+}
+
+.faq-accordion-answer {
+  padding: 1rem 1.25rem 1.25rem !important;
+}
+
+@media (min-width: 640px) {
+  .faq-accordion-answer {
+    padding: 1rem 1.5rem 1.375rem !important;
+  }
+}
+
+.faq-topic-chip {
+  background-color: #eef3d8 !important;
+  color: #495800 !important;
+  border: none !important;
+  box-shadow: none !important;
+  font-weight: 500 !important;
+}
+
+.faq-topic-chip:hover {
+  background-color: #e0e8d4 !important;
+  color: #495800 !important;
+}
+
+.faq-topic-chip--active,
+.faq-topic-chip.faq-topic-chip--active {
+  background-color: #313a00 !important;
+  color: #f8faf2 !important;
+}
+
+.faq-topic-chip--active:hover,
+.faq-topic-chip.faq-topic-chip--active:hover {
+  background-color: #3a4500 !important;
+  color: #f8faf2 !important;
 }
 
 /* Data Leakage Consortium: interactive tiles/chips/pagination (override global `button` teal) */
@@ -770,6 +824,45 @@ a.btn-secondary.btn-nav svg {
   .mobile-menu a.btn-secondary.btn-nav {
     min-height: 44px !important;
   }
+}
+
+/* Mobile drawer CTAs: keep primary white / secondary outlined (beat .menu-links a olive) */
+.mobile-menu .menu-links a.btn-primary,
+.mobile-menu .menu-links a.btn-primary:visited,
+.mobile-menu .menu-links a.btn-primary:hover,
+.mobile-menu .menu-links a.btn-primary:active,
+.mobile-menu .menu-links a.btn-primary:focus {
+  background-color: var(--btn-primary-bg) !important;
+  border-color: var(--btn-primary-border) !important;
+  color: #ffffff !important;
+  font-weight: 400 !important;
+}
+
+.mobile-menu .menu-links a.btn-primary *,
+.mobile-menu .menu-links a.btn-primary span {
+  color: #ffffff !important;
+}
+
+.mobile-menu .menu-links a.btn-primary:hover {
+  background-color: var(--btn-primary-hover-bg) !important;
+  border-color: var(--btn-primary-hover-border) !important;
+  color: #ffffff !important;
+}
+
+.mobile-menu .menu-links a.btn-secondary,
+.mobile-menu .menu-links a.btn-secondary:visited,
+.mobile-menu .menu-links a.btn-secondary:hover,
+.mobile-menu .menu-links a.btn-secondary:active,
+.mobile-menu .menu-links a.btn-secondary:focus {
+  background-color: #ffffff !important;
+  border-color: var(--btn-outlined-border) !important;
+  color: var(--btn-outlined-text) !important;
+  font-weight: 400 !important;
+}
+
+.mobile-menu .menu-links a.btn-secondary:hover {
+  border-color: var(--btn-outlined-hover-border) !important;
+  color: var(--btn-outlined-hover-text) !important;
 }
 
 /* Mobile drawer: download CTA uses darker olive so white 13px label + icon meet stronger contrast */
@@ -1392,14 +1485,37 @@ footer button.text-sm.no-underline:hover {
   font-weight: 500 !important;
   box-sizing: content-box !important;
 }
-.menu-links a,
-.menu-links a:visited,
-.menu-links a:hover,
-.menu-links a:active,
-.menu-links a:focus {
+.menu-links a:not(.btn-primary):not(.btn-secondary),
+.menu-links a:not(.btn-primary):not(.btn-secondary):visited,
+.menu-links a:not(.btn-primary):not(.btn-secondary):hover,
+.menu-links a:not(.btn-primary):not(.btn-secondary):active,
+.menu-links a:not(.btn-primary):not(.btn-secondary):focus {
   text-decoration: none !important;
   color: #617500 !important;
   font-weight: 500 !important;
+}
+
+/* Mobile drawer: Log in as plain text (not a button) */
+.mobile-menu .menu-links a.mobile-login-link,
+.mobile-menu .menu-links a.mobile-login-link:visited,
+.mobile-menu .menu-links a.mobile-login-link:hover,
+.mobile-menu .menu-links a.mobile-login-link:active,
+.mobile-menu .menu-links a.mobile-login-link:focus {
+  display: block !important;
+  width: 100% !important;
+  text-align: center !important;
+  padding: 0.5rem 0 !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  color: #617500 !important;
+  font-size: 1rem !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+}
+
+.mobile-menu .menu-links a.mobile-login-link:hover {
+  color: var(--oasis-green-800) !important;
 }
 
 /* Documentation card links - remove underlines from card content */

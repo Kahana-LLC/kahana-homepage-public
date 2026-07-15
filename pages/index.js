@@ -54,8 +54,8 @@ export default function Home() {
         />
       </Head>
       <SEO
-        title="Kahana — Put your knowledge in hubs"
-        description="Kahana is the knowledge marketplace for hubs, experts, and digital products. Publish what you know, get discovered with Aura, and earn when people unlock your work."
+        title="Kahana | The online library you deserve"
+        description="Contribute curated knowledge, get discovered on Explore, and help seekers learn. Optional earning from access came later, after users asked for it."
         url="https://kahana.io/"
         type="website"
       />

@@ -40,6 +40,8 @@ function absoluteCorporateUrl(path = '/') {
     '/security-guide',
     '/press-kit',
     '/pricing',
+    '/features',
+    '/faq',
     '/testimonials',
     '/privacy-policy',
     '/terms-and-conditions',

@@ -37,6 +37,7 @@ const PATH_PRESERVE_PREFIXES = [
   { prefix: '/security', origin: ABOUT_ORIGIN },
   { prefix: '/careers', origin: CAREERS_ORIGIN },
   { prefix: '/pricing', origin: ABOUT_ORIGIN },
+  { prefix: '/faq', origin: ABOUT_ORIGIN },
   { prefix: '/contact', origin: ABOUT_ORIGIN },
   { prefix: '/support', origin: HELP_ORIGIN },
   { prefix: '/community', origin: HELP_ORIGIN },
@@ -53,7 +54,7 @@ const PATH_PRESERVE_PREFIXES = [
  */
 const OASIS_LEFTOVER_PREFIXES = [
   '/products',
-  '/features',
+  // /features exact path-preserved above; /features/* → about home
   '/markets',
   '/solutions',
   '/use-cases',
@@ -114,6 +115,14 @@ export function resolveApexRedirect(pathname) {
   // Never redirect API from this table (middleware should skip /api first)
   if (path === '/api' || path.startsWith('/api/')) {
     return null;
+  }
+
+  // Kahana Features index (exact) → about; Oasis feature deep-dives → about home
+  if (path === '/features') {
+    return { origin: ABOUT_ORIGIN, pathname: '/features' };
+  }
+  if (path.startsWith('/features/')) {
+    return { origin: ABOUT_ORIGIN, pathname: '/' };
   }
 
   // Longest prefix among path-preserving rules

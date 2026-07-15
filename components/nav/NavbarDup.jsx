@@ -28,6 +28,13 @@ const ctaSecondaryClass =
 const ctaPrimaryClass =
   'btn-primary btn-nav no-underline hover:no-underline focus:no-underline';
 
+/* Full-size site CTAs for mobile drawer (match homepage pills) */
+const mobileCtaSecondaryClass =
+  'btn-secondary no-underline hover:no-underline focus:no-underline';
+
+const mobileCtaPrimaryClass =
+  'btn-primary no-underline hover:no-underline focus:no-underline';
+
 function collectDropdownHrefs(dropdown) {
   const hrefs = [];
   for (const section of dropdown.sections) {
@@ -450,82 +457,86 @@ export default function NavbarDup() {
             />
           </Link>
 
-          <nav className="hidden min-w-0 flex-1 justify-center lg:flex" aria-label="Main navigation">
-          <ul className="nav-links">
-            {desktopNavItems.map((item) => {
-              if (!item.dropdown) {
-                const linkClass =
-                  'nav-link relative z-[2] inline-flex items-center gap-0.5 whitespace-nowrap rounded-md px-2 py-2 font-sans text-[0.9375rem] font-normal !text-oasis-green-700 no-underline focus:outline-none';
-                return (
-                  <li key={item.id}>
-                    {item.external || item.href.startsWith('http') ? (
-                      <a href={item.href} className={linkClass}>
-                        <span className="nav-link-text">{item.label}</span>
-                      </a>
-                    ) : (
-                      <Link href={item.href} className={linkClass}>
-                        <span className="nav-link-text">{item.label}</span>
-                      </Link>
-                    )}
-                  </li>
-                );
-              }
-
-              const { dropdown } = item;
-              const isOpen = openDropdown === item.id;
-
-              return (
-                <li
-                  key={item.id}
-                  className={`dropdown ${isOpen ? 'active' : ''}`}
-                  onMouseEnter={() => prefetchDropdown(dropdown, item.id)}
-                >
-                  <div
-                    className="nav-link relative z-[2] inline-flex items-center gap-0.5 whitespace-nowrap rounded-md px-2 py-2 font-sans text-[0.9375rem] font-normal !text-oasis-green-700"
-                    aria-haspopup="true"
-                  >
-                    <Link
-                      href={item.href}
-                      prefetch={item.prefetchTop !== false}
-                      className="inline-flex items-center rounded-md no-underline !text-oasis-green-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-oasis-green-700 focus-visible:ring-offset-2"
-                    >
-                      <span className="nav-link-text">{item.label}</span>
-                    </Link>
-                    <button
-                      type="button"
-                      className="dropdown-icon-button"
-                      onClick={(e) => toggleDropdown(item.id, e)}
-                      aria-label={`Toggle ${item.label} menu`}
-                      aria-expanded={isOpen}
-                    >
-                      <ChevronDownIcon />
-                    </button>
-                  </div>
-                  <div className="dropdown-overlay" aria-hidden="true" />
-                  <div
-                    className="dropdown-content"
-                    style={{
-                      width: dropdown.panelWidth,
-                      gridTemplateColumns: dropdown.gridTemplateColumns,
-                    }}
-                  >
-                    {dropdown.sections.map((section, idx) => (
-                      <NavDropdownPanelSection
-                        key={section.type === 'promo' ? `promo-${item.id}` : section.heading}
-                        section={section}
-                        splitColumns={dropdown.splitColumns}
-                        sectionIndex={idx}
-                        onPick={closeDropdown}
-                      />
-                    ))}
-                  </div>
-                </li>
-              );
-            })}
-          </ul>
-          </nav>
-
           <div className="flex shrink-0 items-center gap-2 lg:gap-3">
+            <nav className="hidden items-center lg:flex" aria-label="Main navigation">
+              <ul className="nav-links !mr-0 flex items-center gap-1">
+                {desktopNavItems.map((item) => {
+                  if (!item.dropdown) {
+                    const linkClass =
+                      'nav-link relative z-[2] inline-flex items-center gap-0.5 whitespace-nowrap rounded-md px-2 py-2 font-sans text-[0.9375rem] font-normal !text-oasis-green-700 no-underline focus:outline-none';
+                    return (
+                      <li key={item.id}>
+                        {item.external || item.href.startsWith('http') ? (
+                          <a href={item.href} className={linkClass}>
+                            <span className="nav-link-text">{item.label}</span>
+                          </a>
+                        ) : (
+                          <Link href={item.href} className={linkClass}>
+                            <span className="nav-link-text">{item.label}</span>
+                          </Link>
+                        )}
+                      </li>
+                    );
+                  }
+
+                  const { dropdown } = item;
+                  const isOpen = openDropdown === item.id;
+
+                  return (
+                    <li
+                      key={item.id}
+                      className={`dropdown ${isOpen ? 'active' : ''}`}
+                      onMouseEnter={() => prefetchDropdown(dropdown, item.id)}
+                    >
+                      <div
+                        className="nav-link relative z-[2] inline-flex items-center gap-0.5 whitespace-nowrap rounded-md px-2 py-2 font-sans text-[0.9375rem] font-normal !text-oasis-green-700"
+                        aria-haspopup="true"
+                      >
+                        <Link
+                          href={item.href}
+                          prefetch={item.prefetchTop !== false}
+                          className="inline-flex items-center rounded-md no-underline !text-oasis-green-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-oasis-green-700 focus-visible:ring-offset-2"
+                        >
+                          <span className="nav-link-text">{item.label}</span>
+                        </Link>
+                        <button
+                          type="button"
+                          className="dropdown-icon-button"
+                          onClick={(e) => toggleDropdown(item.id, e)}
+                          aria-label={`Toggle ${item.label} menu`}
+                          aria-expanded={isOpen}
+                        >
+                          <ChevronDownIcon />
+                        </button>
+                      </div>
+                      <div className="dropdown-overlay" aria-hidden="true" />
+                      <div
+                        className="dropdown-content"
+                        style={{
+                          width: dropdown.panelWidth,
+                          gridTemplateColumns: dropdown.gridTemplateColumns,
+                        }}
+                      >
+                        {dropdown.sections.map((section, idx) => (
+                          <NavDropdownPanelSection
+                            key={section.type === 'promo' ? `promo-${item.id}` : section.heading}
+                            section={section}
+                            splitColumns={dropdown.splitColumns}
+                            sectionIndex={idx}
+                            onPick={closeDropdown}
+                          />
+                        ))}
+                      </div>
+                    </li>
+                  );
+                })}
+              </ul>
+              <span
+                className="mx-3 h-5 w-px shrink-0 bg-[#313A00]/20"
+                aria-hidden
+              />
+            </nav>
+
             <div className="nav-buttons">
               <a
                 href={APP_URL}
@@ -541,7 +552,7 @@ export default function NavbarDup() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Create a hub
+                Contribute
               </a>
             </div>
 
@@ -569,22 +580,31 @@ export default function NavbarDup() {
           <div className="menu-links">
             <div className="mb-4 flex flex-col gap-2">
               <a
+                href={`${APP_URL}/explore`}
+                className={`${mobileCtaSecondaryClass} w-full justify-center`}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={closeMobile}
+              >
+                Explore
+              </a>
+              <a
                 href={APP_URL}
-                className={`${ctaSecondaryClass} w-full justify-center`}
+                className={`${mobileCtaPrimaryClass} w-full justify-center`}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={closeMobile}
+              >
+                Contribute
+              </a>
+              <a
+                href={APP_URL}
+                className="mobile-login-link no-underline"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={closeMobile}
               >
                 Log in
-              </a>
-              <a
-                href={APP_URL}
-                className={`${ctaPrimaryClass} w-full justify-center`}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={closeMobile}
-              >
-                Create a hub
               </a>
             </div>
 

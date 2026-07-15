@@ -3,6 +3,7 @@
 > **Purpose:** GTM / website copy brief for updating kahana.io marketing pages and for review with Cyndee England.  
 > **Audience:** Marketing site, media talking points, internal GTM  
 > **Product facts SoT:** [`KAHANA_PLATFORM.md`](KAHANA_PLATFORM.md)  
+> **Library story / website project SoT:** [`WEBSITE_LIBRARY_VISION_CHARTER.md`](WEBSITE_LIBRARY_VISION_CHARTER.md) (Wan Shi Tong–inspired narrative + site placement phasing)  
 > **Primary product URL (today):** https://app.kahana.io  
 > **Company surfaces:** https://about.kahana.io · https://newsroom.kahana.io · https://careers.kahana.io · https://help.kahana.io  
 > **Last updated:** 2026-07-14  
@@ -91,11 +92,11 @@ Lead with marketplace + get paid; use Aura as the **culture / engagement layer**
 
 ## 5. Cyndee fill-in sentence
 
-> To optimize the benefits of Kahana, this is what you do **create a hub, list it on Explore, connect Stripe, and monetize it** — then stay visible by earning Aura from the community.
+> To optimize the benefits of Kahana, this is what you do **share without overthinking it**. Filenames, hub names, tags, and descriptions feed search (similar to YouTube), so niche expertise becomes more discoverable. The more context you give, the more exposure you get. Then use analytics to watch views, saves, and purchases.
 
 Short form for homepage CTAs:
 
-> Create a hub → list it → enable payments → share your profile.
+> Share → name and tag clearly → check analytics → keep adding context.
 
 ---
 

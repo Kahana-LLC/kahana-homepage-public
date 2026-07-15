@@ -12,14 +12,14 @@ Until Phase 3, `https://kahana.io` (Discover) 301s to **about.kahana.io**. Produ
 | Apex | → |
 |------|---|
 | `/` | `https://about.kahana.io/` |
-| `/about`, `/team`, `/manifesto`, `/contact`, `/security`, `/security-guide`, `/press-kit`, `/pricing`, `/testimonials`, legal | `https://about.kahana.io{path}` |
+| `/about`, `/team`, `/manifesto`, `/contact`, `/security`, `/security-guide`, `/press-kit`, `/pricing`, `/testimonials`, `/features` (index), legal | `https://about.kahana.io{path}` |
 | `/blog`, `/blog/*`, `/press`, `/press-releases`, `/events`, `/white-papers` | `https://newsroom.kahana.io{path}` |
 | `/docs`, `/docs/*`, `/support`, `/community*` | `https://help.kahana.io{path}` |
 | `/careers`, `/learning-internship`, `/right-to-work` | `https://careers.kahana.io{path}` |
 
 ## Oasis / leftovers → about home
 
-`/products/*`, `/features/*`, `/markets/*`, `/solutions/*`, `/oasis-*`, buyer guides, consortium, installations, schedule-demo, sales, explore, Oasis auth helpers, etc. → `https://about.kahana.io/`
+`/products/*`, `/features/*` (Oasis deep-dives, not the Features index), `/markets/*`, `/solutions/*`, `/oasis-*`, buyer guides, consortium, installations, schedule-demo, sales, explore, Oasis auth helpers, etc. → `https://about.kahana.io/`
 
 ## Excluded
 

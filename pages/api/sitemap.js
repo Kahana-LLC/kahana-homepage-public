@@ -29,6 +29,7 @@ function generateSiteMap() {
     ['/contact', 'monthly', '0.8'],
     ['/security', 'monthly', '0.7'],
     ['/pricing', 'weekly', '0.8'],
+    ['/features', 'weekly', '0.9'],
     ['/press-kit', 'monthly', '0.6'],
     ['/privacy-policy', 'monthly', '0.5'],
     ['/terms-and-conditions', 'monthly', '0.5'],

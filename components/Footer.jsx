@@ -12,24 +12,21 @@ const LEGAL_LINK_CLASS =
 
 const PRODUCT_LINKS = [
   { href: 'https://kahana.io', label: 'Discover', external: true },
+  { href: '/features', label: 'Features' },
   { href: '/pricing', label: 'Pricing' },
 ];
 
+/** About / Team / Careers hidden from footer for now (pages still exist). */
 const COMPANY_LINKS = [
-  { href: '/about', label: 'About', prefetch: false },
-  { href: '/team', label: 'Team', prefetch: false },
-  { href: '/careers', label: 'Careers' },
   { href: '/contact', label: 'Contact' },
   { href: '/security', label: 'Security' },
 ];
 
+/** Help Center / Testimonials / Press kit / Press releases hidden for now. */
 const RESOURCE_LINKS = [
   { href: '/blog', label: 'Blog' },
   { href: '/docs', label: 'Docs' },
-  { href: '/support', label: 'Help Center' },
-  { href: '/#testimonials', label: 'Testimonials' },
-  { href: '/press-kit', label: 'Press kit' },
-  { href: '/press-releases', label: 'Press releases' },
+  { href: '/faq', label: 'FAQ' },
 ];
 
 function FooterColumnHeading({ children }) {
@@ -57,27 +54,6 @@ function LinkList({ links, linkClass = LINK_CLASS }) {
         </li>
       ))}
     </ul>
-  );
-}
-
-function Soc2InProgressBadge() {
-  return (
-    <Link
-      href="/security"
-      className="group inline-flex items-center gap-2.5 rounded-sm no-underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#617500]"
-      aria-label="Security and compliance: SOC 2 in progress"
-    >
-      <div
-        className="flex h-12 w-12 shrink-0 flex-col items-center justify-center rounded-full border-2 border-[#999999] bg-transparent px-1 text-center leading-none"
-        aria-hidden
-      >
-        <span className="w-full border-b border-[#999999] pb-0.5 text-[8px] font-semibold text-[#999999]">
-          AICPA
-        </span>
-        <span className="pt-0.5 text-[8px] font-semibold text-[#999999]">SOC 2</span>
-        <span className="mt-0.5 text-[7px] italic text-[#999999]">in progress</span>
-      </div>
-    </Link>
   );
 }
 
@@ -243,10 +219,10 @@ function FooterContent() {
                 rel="noopener noreferrer"
                 className="btn-primary inline-flex items-center justify-center no-underline transition-opacity hover:opacity-95"
               >
-                Create a hub
+                Contribute
               </a>
               <p className="text-left text-lg text-[#666666] lg:text-right lg:text-xl lg:leading-6">
-                Put what you know in a hub. Get discovered.
+                Share what you know. Get discovered. Help others learn.
               </p>
             </div>
           </div>
@@ -287,9 +263,6 @@ function FooterContent() {
                     <LegalLinkList consentContext={consentContext} openCookieModal={openCookieModal} />
                     <p className="mb-2 mt-6 text-base font-semibold text-[#333333]">Social</p>
                     <SocialLinks />
-                    <div className="mt-6">
-                      <Soc2InProgressBadge />
-                    </div>
                   </div>
                 )}
               </div>
@@ -320,13 +293,6 @@ function FooterContent() {
                 <div>
                   <FooterColumnHeading>Social</FooterColumnHeading>
                   <SocialLinks />
-                </div>
-
-                <div>
-                  <p className="mb-3 text-base font-semibold text-[#333333]" role="heading" aria-level={3}>
-                    Certifications
-                  </p>
-                  <Soc2InProgressBadge />
                 </div>
               </div>
             </div>
