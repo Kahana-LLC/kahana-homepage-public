@@ -1,6 +1,5 @@
 import React, { useState, useContext } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import {
   BookOpenIcon,
   BuildingOffice2Icon,
@@ -21,7 +20,11 @@ import {
   TagIcon,
 } from '@heroicons/react/24/outline';
 import { ConsentContext } from '../contexts/ConsentContext';
+import { useMarketingI18n } from '../contexts/MarketingI18n';
 import { APP_URL, CONTACT_URL } from './nav/navConfig';
+import KahanaWordmark from './brand/KahanaWordmark';
+import LanguageMenu from './brand/LanguageMenu';
+import { withAppLanguageParam } from '../lib/contentLanguage';
 
 const LINK_CLASS =
   'inline-flex items-center gap-2 text-base font-normal text-[#666666] no-underline transition-colors hover:text-[#617500] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#617500]';
@@ -35,19 +38,19 @@ const ICON_HEADING = 'h-4 w-4 shrink-0 text-[#617500]';
 const PRODUCT_LINKS = [
   {
     href: 'https://kahana.io/explore',
-    label: 'Explore',
+    labelKey: 'footer.explore',
     external: true,
     icon: MagnifyingGlassIcon,
   },
-  { href: '/pricing', label: 'Pricing', icon: TagIcon },
+  { href: '/pricing', labelKey: 'footer.pricing', icon: TagIcon },
 ];
 
 /** About / Team / Careers hidden from footer for now (pages still exist). */
 const COMPANY_LINKS = [
-  { href: CONTACT_URL, label: 'Contact', icon: EnvelopeIcon, external: true },
+  { href: CONTACT_URL, labelKey: 'footer.contact', icon: EnvelopeIcon, external: true },
   {
     href: 'https://kahana.io/support',
-    label: 'Support',
+    labelKey: 'footer.support',
     external: true,
     icon: LifebuoyIcon,
   },
@@ -55,9 +58,9 @@ const COMPANY_LINKS = [
 
 /** Testimonials / Press kit / Press releases hidden for now. */
 const RESOURCE_LINKS = [
-  { href: '/blog', label: 'Blog', icon: NewspaperIcon },
-  { href: '/help', label: 'Help', icon: QuestionMarkCircleIcon },
-  { href: '/faq', label: 'FAQ', icon: ChatBubbleLeftRightIcon },
+  { href: '/blog', labelKey: 'footer.blog', icon: NewspaperIcon },
+  { href: '/help', labelKey: 'footer.help', icon: QuestionMarkCircleIcon },
+  { href: '/faq', labelKey: 'footer.faq', icon: ChatBubbleLeftRightIcon },
 ];
 
 const SECTION_ICONS = {
@@ -80,19 +83,20 @@ function FooterColumnHeading({ icon: Icon, children }) {
   );
 }
 
-function LinkList({ links, linkClass = LINK_CLASS }) {
+function LinkList({ links, t, linkClass = LINK_CLASS }) {
   return (
     <ul className="flex flex-col gap-[17px]">
       {links.map((item) => {
         const Icon = item.icon;
+        const label = item.labelKey ? t(item.labelKey) : item.label;
         const content = (
           <>
             {Icon ? <Icon className={ICON_LINK} aria-hidden /> : null}
-            {item.label}
+            {label}
           </>
         );
         return (
-          <li key={`${item.href}-${item.label}`}>
+          <li key={`${item.href}-${item.labelKey || item.label}`}>
             {item.external || item.href.startsWith('http') ? (
               <a href={item.href} className={linkClass} target="_blank" rel="noopener noreferrer">
                 {content}
@@ -138,11 +142,11 @@ function AccordionChevron({ open }) {
   );
 }
 
-function CookieSettingsControl({ consentContext, openCookieModal }) {
+function CookieSettingsControl({ consentContext, openCookieModal, t }) {
   const content = (
     <>
       <Cog6ToothIcon className={ICON_LINK} aria-hidden />
-      Cookie Settings
+      {t('footer.cookieSettings')}
     </>
   );
 
@@ -191,34 +195,38 @@ function SocialLinks() {
   );
 }
 
-function LegalLinkList({ consentContext, openCookieModal }) {
+function LegalLinkList({ consentContext, openCookieModal, t }) {
   return (
     <ul className="flex flex-col gap-[17px]">
       <li>
         <Link href="/terms-and-conditions" prefetch={false} className={LEGAL_LINK_CLASS}>
           <DocumentTextIcon className={ICON_LINK} aria-hidden />
-          Terms
+          {t('footer.terms')}
         </Link>
       </li>
       <li>
         <Link href="/privacy-policy" prefetch={false} className={LEGAL_LINK_CLASS}>
           <LockClosedIcon className={ICON_LINK} aria-hidden />
-          Privacy
+          {t('footer.privacy')}
         </Link>
       </li>
       <li>
         <Link href="/security" className={LEGAL_LINK_CLASS}>
           <ShieldCheckIcon className={ICON_LINK} aria-hidden />
-          Security
+          {t('footer.security')}
         </Link>
       </li>
       <li>
-        <CookieSettingsControl consentContext={consentContext} openCookieModal={openCookieModal} />
+        <CookieSettingsControl
+          consentContext={consentContext}
+          openCookieModal={openCookieModal}
+          t={t}
+        />
       </li>
       <li>
         <Link href="/right-to-work" className={LEGAL_LINK_CLASS}>
           <IdentificationIcon className={ICON_LINK} aria-hidden />
-          Right to Work
+          {t('footer.rightToWork')}
         </Link>
       </li>
     </ul>
@@ -227,8 +235,11 @@ function LegalLinkList({ consentContext, openCookieModal }) {
 
 function FooterContent() {
   const [openSection, setOpenSection] = useState(null);
+  const { preference: langPreference, t } = useMarketingI18n();
 
   const consentContext = useContext(ConsentContext);
+
+  const contributeUrl = withAppLanguageParam(APP_URL, langPreference);
 
   const openCookieModal =
     consentContext?.openModal ||
@@ -245,47 +256,41 @@ function FooterContent() {
   const sectionOpen = (id) => openSection === id;
 
   const accordionSections = [
-    { id: 'product', label: 'Product', links: PRODUCT_LINKS, icon: SECTION_ICONS.product },
-    { id: 'company', label: 'Company', links: COMPANY_LINKS, icon: SECTION_ICONS.company },
-    { id: 'resources', label: 'Resources', links: RESOURCE_LINKS, icon: SECTION_ICONS.resources },
+    { id: 'product', labelKey: 'footer.product', links: PRODUCT_LINKS, icon: SECTION_ICONS.product },
+    { id: 'company', labelKey: 'footer.company', links: COMPANY_LINKS, icon: SECTION_ICONS.company },
+    {
+      id: 'resources',
+      labelKey: 'footer.resources',
+      links: RESOURCE_LINKS,
+      icon: SECTION_ICONS.resources,
+    },
   ];
 
   return (
     <footer className="relative bg-[#F8FAF2] text-[#333333]" aria-labelledby="footer-heading">
       <div className="mx-auto w-full max-w-[1282px] px-6 pb-[97px] pt-[69px] sm:px-10 lg:px-16 xl:px-[115px]">
         <h2 id="footer-heading" className="sr-only">
-          Footer
+          {t('footer.label')}
         </h2>
 
         <div className="flex flex-col gap-16 md:gap-[120px]">
           <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
-            <Link
-              href="/"
-              className="inline-flex items-center no-underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#617500]"
-            >
-              <span className="relative block aspect-[230/77] w-[180px] shrink-0 sm:w-[200px] lg:w-[230px]">
-                <Image
-                  src="/kahana_logo_transparent.svg"
-                  alt="Kahana"
-                  fill
-                  sizes="(max-width: 640px) 180px, (max-width: 1024px) 200px, 230px"
-                  className="object-contain object-left"
-                  priority={false}
-                />
-              </span>
-            </Link>
+            <div className="flex flex-wrap items-center gap-3">
+              <KahanaWordmark size={30} />
+              <LanguageMenu align="start" openUpward />
+            </div>
 
             <div className="flex flex-col items-stretch gap-4 lg:items-end">
               <a
-                href={APP_URL}
+                href={contributeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary inline-flex items-center justify-center no-underline transition-opacity hover:opacity-95"
               >
-                Contribute
+                {t('footer.contribute')}
               </a>
               <p className="text-left text-lg text-[#666666] lg:text-right lg:text-xl lg:leading-6">
-                Share what you know. Get discovered. Help others learn.
+                {t('footer.tagline')}
               </p>
             </div>
           </div>
@@ -304,13 +309,13 @@ function FooterContent() {
                     >
                       <span className="inline-flex items-center gap-2 text-base font-semibold text-oasis-green-900">
                         {SectionIcon ? <SectionIcon className={ICON_HEADING} aria-hidden /> : null}
-                        {section.label}
+                        {t(section.labelKey)}
                       </span>
                       <AccordionChevron open={openSection === section.id} />
                     </button>
                     {sectionOpen(section.id) && (
                       <div className="border-t border-[#E0E8D4] px-4 py-4">
-                        <LinkList links={section.links} />
+                        <LinkList links={section.links} t={t} />
                       </div>
                     )}
                   </div>
@@ -326,16 +331,20 @@ function FooterContent() {
                 >
                   <span className="inline-flex items-center gap-2 text-base font-semibold text-oasis-green-900">
                     <ScaleIcon className={ICON_HEADING} aria-hidden />
-                    Legal &amp; social
+                    {t('footer.legalSocial')}
                   </span>
                   <AccordionChevron open={openSection === 'legal'} />
                 </button>
                 {sectionOpen('legal') && (
                   <div className="border-t border-[#E0E8D4] px-4 py-4">
-                    <LegalLinkList consentContext={consentContext} openCookieModal={openCookieModal} />
+                    <LegalLinkList
+                      consentContext={consentContext}
+                      openCookieModal={openCookieModal}
+                      t={t}
+                    />
                     <p className="mb-2 mt-6 inline-flex items-center gap-2 text-base font-semibold text-[#333333]">
                       <ShareIcon className={ICON_HEADING} aria-hidden />
-                      Social
+                      {t('footer.social')}
                     </p>
                     <SocialLinks />
                   </div>
@@ -345,28 +354,34 @@ function FooterContent() {
 
             <div className="hidden md:grid md:grid-cols-2 md:items-start md:gap-x-8 md:gap-y-12 lg:grid-cols-4 lg:gap-x-10">
               <div>
-                <FooterColumnHeading icon={CubeIcon}>Product</FooterColumnHeading>
-                <LinkList links={PRODUCT_LINKS} />
+                <FooterColumnHeading icon={CubeIcon}>{t('footer.product')}</FooterColumnHeading>
+                <LinkList links={PRODUCT_LINKS} t={t} />
               </div>
 
               <div>
-                <FooterColumnHeading icon={BuildingOffice2Icon}>Company</FooterColumnHeading>
-                <LinkList links={COMPANY_LINKS} />
+                <FooterColumnHeading icon={BuildingOffice2Icon}>
+                  {t('footer.company')}
+                </FooterColumnHeading>
+                <LinkList links={COMPANY_LINKS} t={t} />
               </div>
 
               <div>
-                <FooterColumnHeading icon={BookOpenIcon}>Resources</FooterColumnHeading>
-                <LinkList links={RESOURCE_LINKS} />
+                <FooterColumnHeading icon={BookOpenIcon}>{t('footer.resources')}</FooterColumnHeading>
+                <LinkList links={RESOURCE_LINKS} t={t} />
               </div>
 
               <div className="flex flex-col gap-8">
                 <div>
-                  <FooterColumnHeading icon={ScaleIcon}>Legal</FooterColumnHeading>
-                  <LegalLinkList consentContext={consentContext} openCookieModal={openCookieModal} />
+                  <FooterColumnHeading icon={ScaleIcon}>{t('footer.legal')}</FooterColumnHeading>
+                  <LegalLinkList
+                    consentContext={consentContext}
+                    openCookieModal={openCookieModal}
+                    t={t}
+                  />
                 </div>
 
                 <div>
-                  <FooterColumnHeading icon={ShareIcon}>Social</FooterColumnHeading>
+                  <FooterColumnHeading icon={ShareIcon}>{t('footer.social')}</FooterColumnHeading>
                   <SocialLinks />
                 </div>
               </div>
@@ -374,7 +389,7 @@ function FooterContent() {
           </div>
 
           <p className="text-left text-base font-normal leading-6 text-[#999999]">
-            © 2026 Kahana Group Inc. All rights reserved.
+            {t('footer.copyright', { year: 2026 })}
           </p>
         </div>
       </div>

@@ -22,6 +22,7 @@ import {
   trackGaPageView,
 } from "../utils/googleAnalytics";
 import { ConsentProvider, useConsent } from "../contexts/ConsentContext";
+import { MarketingI18nProvider } from "../contexts/MarketingI18n";
 import ConsentBanner from "../components/ConsentBanner";
 import ConsentErrorBoundary from "../components/ConsentErrorBoundary";
 
@@ -378,7 +379,9 @@ function MyApp({ Component, pageProps }) {
   return (
     <div className={`${fontGeist.variable} ${fontBricolage.variable}`}>
       <ConsentProvider>
-        <AppContent Component={Component} pageProps={pageProps} />
+        <MarketingI18nProvider>
+          <AppContent Component={Component} pageProps={pageProps} />
+        </MarketingI18nProvider>
       </ConsentProvider>
     </div>
   );

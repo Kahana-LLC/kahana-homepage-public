@@ -1,5 +1,6 @@
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
+import { useMemo } from 'react';
 import {
   AdjustmentsHorizontalIcon,
   ArrowTrendingUpIcon,
@@ -29,16 +30,18 @@ import CategoryMarquee from './CategoryMarquee';
 import RainbowHoverCard from './RainbowHoverCard';
 import FaqBrowse from '../../faq/FaqBrowse';
 import { EXPLORE_CATEGORIES } from '../../../data/exploreCategories';
+import { useMarketingI18n } from '../../../contexts/MarketingI18n';
+import { withAppLanguageParam } from '../../../lib/contentLanguage';
 
 const HeroOwlLottie = dynamic(() => import('./HeroOwlLottie'), { ssr: false });
 
 /** Public Explore (marketing host) — not app.kahana.io */
 const EXPLORE_URL = 'https://kahana.io/explore';
 
-function PrimaryCta({ children = 'Create', className = '', trackingId }) {
+function PrimaryCta({ children, className = '', trackingId, href }) {
   return (
     <a
-      href={APP_URL}
+      href={href}
       target="_blank"
       rel="noopener noreferrer"
       className={`btn-primary inline-flex items-center justify-center gap-2 no-underline ${className}`}
@@ -50,10 +53,10 @@ function PrimaryCta({ children = 'Create', className = '', trackingId }) {
   );
 }
 
-function SecondaryCta({ children = 'Explore', className = '' }) {
+function SecondaryCta({ children, className = '', href }) {
   return (
     <a
-      href={EXPLORE_URL}
+      href={href}
       target="_blank"
       rel="noopener noreferrer"
       className={`btn-secondary inline-flex items-center justify-center gap-2 no-underline ${className}`}
@@ -71,126 +74,6 @@ function SectionShell({ id, children, className = '' }) {
     </section>
   );
 }
-
-const HOW_IT_WORKS = [
-  {
-    title: 'Learn',
-    body: 'Explore Kahana and access knowledge others have shared—ebooks, videos, and more—curated and easy to reach in one place. When you like a contribution, give it Aura.',
-    Icon: EyeIcon,
-  },
-  {
-    title: 'Create',
-    body: 'Create a hub. It starts private so you can add digital artifacts (ebooks, videos, files, images, PDFs, documents, links, and more) and get it ready. When you want to contribute it to the public feed, flip a switch to list it on Explore. Invite editors or admins if you want to collaborate.',
-    Icon: FolderPlusIcon,
-  },
-  {
-    title: 'Grow',
-    body: 'You grow from learning and the exposure you earn by contributing: views, saves, purchases, followers, and Aura. Gain exposure as people discover what you create.',
-    Icon: ArrowTrendingUpIcon,
-  },
-];
-
-const AURA_RULES = [
-  {
-    title: 'Your daily budget',
-    body: '5 Aura to give each day. Your Aura replenishes at midnight UTC.',
-    Icon: SparklesIcon,
-  },
-  {
-    title: 'Give your way',
-    body: 'Give all your Aura to one hub, or split it across a few',
-    Icon: ArrowsRightLeftIcon,
-  },
-  {
-    title: 'Yours to give and take',
-    body: 'Aura you give stays on a hub until you remove it. You control it.',
-    Icon: LockClosedIcon,
-  },
-  {
-    title: 'Hubs only',
-    body: 'Give your Aura to hubs, not to people or profiles',
-    Icon: RectangleStackIcon,
-  },
-  {
-    title: 'No self-Aura',
-    body: 'You cannot give your Aura to your own hubs',
-    Icon: NoSymbolIcon,
-  },
-  {
-    title: 'Not money',
-    body: 'Promotion only. Not crypto. Not payment.',
-    Icon: BanknotesIcon,
-  },
-];
-
-const CREATOR_BENEFITS = [
-  {
-    title: 'Gain exposure',
-    body: 'Get views, saves, follows, and Aura when people discover what you share.',
-    Icon: MegaphoneIcon,
-  },
-  {
-    title: 'Help others learn',
-    body: 'Teaching what you know builds mastery, reputation, and relationships with people.',
-    Icon: BookOpenIcon,
-  },
-  {
-    title: 'Earn money',
-    body: 'Make money if you choose to monetize access to your hubs.',
-    Icon: CurrencyDollarIcon,
-  },
-];
-
-const OPTIMIZE_STEPS = [
-  {
-    step: '01',
-    title: 'Create a hub',
-    body: 'Your hub starts private. Fill it with digital artifacts: ebooks, videos, files, images, PDFs, documents, links, and more. Invite editors or admins if you want help.',
-    Icon: FolderPlusIcon,
-  },
-  {
-    step: '02',
-    title: 'Add context',
-    body: 'Title, cover, description, category, and tags help search surface niche expertise.',
-    Icon: TagIcon,
-  },
-  {
-    step: '03',
-    title: 'List on Explore',
-    body: 'When you are ready to contribute to the public feed, flip a switch to make the hub public and list it on Explore.',
-    Icon: GlobeAltIcon,
-  },
-  {
-    step: '04',
-    title: 'Check analytics',
-    body: 'Watch views, saves, and purchases, then iterate on what is landing.',
-    Icon: ChartBarIcon,
-  },
-  {
-    step: '05',
-    title: 'Optionally monetize',
-    body: 'Connect Stripe and set a price when you want to earn from access.',
-    Icon: CurrencyDollarIcon,
-  },
-];
-
-const SEEKER_BENEFITS = [
-  {
-    title: 'Easy to access',
-    body: 'Save hubs of digital artifacts—ebooks, videos, and more—into collections you can open on your phone or computer. You are one click away from the knowledge in Kahana.',
-    Icon: Squares2X2Icon,
-  },
-  {
-    title: 'Verifiable credibility',
-    body: 'See who contributed and their track record before you dive in. Profiles with a check mark have completed Stripe Identity verification. Aura is community proof that others found a contribution worth noticing.',
-    Icon: ShieldCheckIcon,
-  },
-  {
-    title: 'Tailored for understanding',
-    body: 'One-size doesn\'t fit all. Hubs are not rigid online courses. Their flexibility lets contributors adapt and curate digital artifacts in strategic ways to enhance your learning and understanding.',
-    Icon: AdjustmentsHorizontalIcon,
-  },
-];
 
 function BenefitTiles({ items }) {
   return (
@@ -219,21 +102,119 @@ function BenefitTiles({ items }) {
 }
 
 export default function PlatformHome() {
+  const { t, preference } = useMarketingI18n();
+  const createUrl = useMemo(() => withAppLanguageParam(APP_URL, preference), [preference]);
+  const exploreUrl = useMemo(() => withAppLanguageParam(EXPLORE_URL, preference), [preference]);
+
+  const howItWorks = useMemo(
+    () => [
+      { title: t('home.howLearnTitle'), body: t('home.howLearnBody'), Icon: EyeIcon },
+      { title: t('home.howCreateTitle'), body: t('home.howCreateBody'), Icon: FolderPlusIcon },
+      { title: t('home.howGrowTitle'), body: t('home.howGrowBody'), Icon: ArrowTrendingUpIcon },
+    ],
+    [t],
+  );
+
+  const auraRules = useMemo(
+    () => [
+      {
+        title: t('home.auraRuleBudgetTitle'),
+        body: t('home.auraRuleBudgetBody'),
+        Icon: SparklesIcon,
+      },
+      { title: t('home.auraRuleGiveTitle'), body: t('home.auraRuleGiveBody'), Icon: ArrowsRightLeftIcon },
+      {
+        title: t('home.auraRuleControlTitle'),
+        body: t('home.auraRuleControlBody'),
+        Icon: LockClosedIcon,
+      },
+      { title: t('home.auraRuleHubsTitle'), body: t('home.auraRuleHubsBody'), Icon: RectangleStackIcon },
+      { title: t('home.auraRuleSelfTitle'), body: t('home.auraRuleSelfBody'), Icon: NoSymbolIcon },
+      { title: t('home.auraRuleMoneyTitle'), body: t('home.auraRuleMoneyBody'), Icon: BanknotesIcon },
+    ],
+    [t],
+  );
+
+  const creatorBenefits = useMemo(
+    () => [
+      {
+        title: t('home.creatorExposureTitle'),
+        body: t('home.creatorExposureBody'),
+        Icon: MegaphoneIcon,
+      },
+      { title: t('home.creatorHelpTitle'), body: t('home.creatorHelpBody'), Icon: BookOpenIcon },
+      {
+        title: t('home.creatorEarnTitle'),
+        body: t('home.creatorEarnBody'),
+        Icon: CurrencyDollarIcon,
+      },
+    ],
+    [t],
+  );
+
+  const seekerBenefits = useMemo(
+    () => [
+      {
+        title: t('home.seekerAccessTitle'),
+        body: t('home.seekerAccessBody'),
+        Icon: Squares2X2Icon,
+      },
+      {
+        title: t('home.seekerCredibilityTitle'),
+        body: t('home.seekerCredibilityBody'),
+        Icon: ShieldCheckIcon,
+      },
+      {
+        title: t('home.seekerTailoredTitle'),
+        body: t('home.seekerTailoredBody'),
+        Icon: AdjustmentsHorizontalIcon,
+      },
+    ],
+    [t],
+  );
+
+  const optimizeSteps = useMemo(
+    () => [
+      {
+        step: '01',
+        title: t('home.optimize1Title'),
+        body: t('home.optimize1Body'),
+        Icon: FolderPlusIcon,
+      },
+      { step: '02', title: t('home.optimize2Title'), body: t('home.optimize2Body'), Icon: TagIcon },
+      { step: '03', title: t('home.optimize3Title'), body: t('home.optimize3Body'), Icon: GlobeAltIcon },
+      {
+        step: '04',
+        title: t('home.optimize4Title'),
+        body: t('home.optimize4Body'),
+        Icon: ChartBarIcon,
+      },
+      {
+        step: '05',
+        title: t('home.optimize5Title'),
+        body: t('home.optimize5Body'),
+        Icon: CurrencyDollarIcon,
+      },
+    ],
+    [t],
+  );
+
   return (
     <div className="bg-[#F8FAF2] text-[#313A00]">
       <section className="relative overflow-x-hidden overflow-y-visible bg-white">
         <div className="relative mx-auto grid w-full max-w-6xl items-center gap-10 px-6 py-16 sm:px-10 sm:py-20 lg:grid-cols-[1fr_minmax(240px,360px)] lg:gap-16 lg:px-16 lg:py-24">
           <FadeInSection eager>
             <h1 className="max-w-xl text-3xl font-semibold leading-tight tracking-tight text-[#313A00] sm:text-4xl md:text-5xl">
-              The Digital Library With Aura
+              {t('home.heroTitle')}
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#495800] sm:text-xl">
-              You learn. You create. You give your Aura to recognize the greatest contributions
-              to promote quality.
+              {t('home.heroBody')}
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <PrimaryCta trackingId="platform_hero_create">Create</PrimaryCta>
-              <SecondaryCta>Explore</SecondaryCta>
+              <PrimaryCta href={createUrl} trackingId="platform_hero_create">
+                {t('home.create')}
+              </PrimaryCta>
+              <SecondaryCta href={exploreUrl}>{t('home.explore')}</SecondaryCta>
             </div>
           </FadeInSection>
           <FadeInSection eager delay={120} isImage>
@@ -245,36 +226,26 @@ export default function PlatformHome() {
       <SectionShell id="aura" className="border-t border-[#E0E8D4]">
         <FadeInSection>
           <div>
-            <h2 className="text-3xl font-semibold sm:text-4xl">What is Aura?</h2>
+            <h2 className="text-3xl font-semibold sm:text-4xl">{t('home.auraTitle')}</h2>
 
-            <RainbowHoverCard
-              className="mt-8"
-              innerClassName="bg-[#EEF3D8] px-6 py-5 sm:px-8"
-            >
+            <RainbowHoverCard className="mt-8" innerClassName="bg-[#EEF3D8] px-6 py-5 sm:px-8">
               <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:gap-10">
                 <AuraLikeAnimation />
                 <div>
-                  <p className="text-xl font-semibold text-[#313A00]">
-                    Aura is positive energy you give to recognize great contributions and promote quality.
-                  </p>
+                  <p className="text-xl font-semibold text-[#313A00]">{t('home.auraLead')}</p>
                   <p className="mt-2 text-base leading-relaxed text-[#495800] sm:text-lg">
-                    Aura is limited. Giving and taking Aura is your power to influence and regulate
-                    quality across the library. It is not money, not crypto, and not a star rating.
-                    Aura is meant to signal the wisdom of the crowd.
+                    {t('home.auraBody')}
                   </p>
                 </div>
               </div>
             </RainbowHoverCard>
 
             <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {AURA_RULES.map((rule) => {
+              {auraRules.map((rule) => {
                 const { Icon } = rule;
                 return (
                   <li key={rule.title}>
-                    <RainbowHoverCard
-                      className="h-full"
-                      innerClassName="bg-white px-5 py-5 sm:px-6"
-                    >
+                    <RainbowHoverCard className="h-full" innerClassName="bg-white px-5 py-5 sm:px-6">
                       <div className="flex items-start gap-3">
                         <span className="rainbow-hover-icon flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#EEF3D8] text-[#495800]">
                           <Icon className="h-5 w-5" aria-hidden />
@@ -295,7 +266,7 @@ export default function PlatformHome() {
                 href="/aura"
                 className="text-base font-medium text-[#617500] no-underline underline-offset-4 hover:underline"
               >
-                Learn more about Aura
+                {t('home.auraLearnMore')}
               </Link>
             </p>
           </div>
@@ -304,19 +275,14 @@ export default function PlatformHome() {
 
       <SectionShell id="how-it-works" className="border-t border-[#E0E8D4]">
         <FadeInSection>
-          <h2 className="text-3xl font-semibold sm:text-4xl">How to use Kahana</h2>
-          <p className="mx-auto mt-3 max-w-2xl text-center text-lg text-[#666666]">
-            Kahana integrates learning, teaching, and growth into daily life.
-          </p>
+          <h2 className="text-3xl font-semibold sm:text-4xl">{t('home.howTitle')}</h2>
+          <p className="mt-3 max-w-2xl text-lg text-[#666666]">{t('home.howLead')}</p>
           <ul className="mt-14 grid list-none gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {HOW_IT_WORKS.map((item) => {
+            {howItWorks.map((item) => {
               const { Icon } = item;
               return (
                 <li key={item.title}>
-                  <RainbowHoverCard
-                    className="h-full"
-                    innerClassName="bg-white px-6 py-7 sm:px-8"
-                  >
+                  <RainbowHoverCard className="h-full" innerClassName="bg-white px-6 py-7 sm:px-8">
                     <div className="flex items-start gap-4">
                       <span className="rainbow-hover-icon flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#EEF3D8] text-[#495800]">
                         <Icon className="h-6 w-6" aria-hidden />
@@ -331,12 +297,12 @@ export default function PlatformHome() {
               );
             })}
           </ul>
-          <p className="mt-8 text-center">
+          <p className="mt-8">
             <Link
               href="/help"
               className="text-base font-medium text-[#617500] no-underline underline-offset-4 hover:underline"
             >
-              Browse Help
+              {t('home.browseHelp')}
             </Link>
           </p>
         </FadeInSection>
@@ -344,47 +310,38 @@ export default function PlatformHome() {
 
       <SectionShell id="for-learners" className="bg-white/60">
         <FadeInSection>
-          <h2 className="text-3xl font-semibold sm:text-4xl">Benefits for learners</h2>
-          <p className="mt-3 max-w-2xl text-lg text-[#666666]">
-            Explore curated hubs of ebooks, videos, and other digital artifacts people chose to share.
-          </p>
-          <BenefitTiles items={SEEKER_BENEFITS} />
+          <h2 className="text-3xl font-semibold sm:text-4xl">{t('home.learnersTitle')}</h2>
+          <p className="mt-3 max-w-2xl text-lg text-[#666666]">{t('home.learnersLead')}</p>
+          <BenefitTiles items={seekerBenefits} />
           <p className="mt-8">
-            <SecondaryCta>Explore</SecondaryCta>
+            <SecondaryCta href={exploreUrl}>{t('home.explore')}</SecondaryCta>
           </p>
         </FadeInSection>
       </SectionShell>
 
       <SectionShell id="for-creators">
         <FadeInSection>
-          <h2 className="text-3xl font-semibold sm:text-4xl">Benefits for creators and experts</h2>
-          <p className="mt-3 max-w-2xl text-lg text-[#666666]">
-            Share ebooks, videos, and what you know so more people can benefit from it.
-          </p>
-          <BenefitTiles items={CREATOR_BENEFITS} />
+          <h2 className="text-3xl font-semibold sm:text-4xl">{t('home.creatorsTitle')}</h2>
+          <p className="mt-3 max-w-2xl text-lg text-[#666666]">{t('home.creatorsLead')}</p>
+          <BenefitTiles items={creatorBenefits} />
           <p className="mt-8">
-            <PrimaryCta trackingId="platform_creators_create">Create</PrimaryCta>
+            <PrimaryCta href={createUrl} trackingId="platform_creators_create">
+              {t('home.create')}
+            </PrimaryCta>
           </p>
         </FadeInSection>
       </SectionShell>
 
       <SectionShell id="optimize" className="border-t border-[#E0E8D4]">
         <FadeInSection>
-          <h2 className="text-3xl font-semibold sm:text-4xl">How to Optimize on Kahana</h2>
-          <p className="mt-3 max-w-2xl text-lg text-[#666666]">
-            Don&apos;t overthink it. Share what you know. Clear names, tags, and descriptions help
-            people find your hubs and digital artifacts when they search. Then watch analytics and
-            improve.
-          </p>
+          <h2 className="text-3xl font-semibold sm:text-4xl">{t('home.optimizeTitle')}</h2>
+          <p className="mt-3 max-w-2xl text-lg text-[#666666]">{t('home.optimizeLead')}</p>
           <ol className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {OPTIMIZE_STEPS.map((item) => {
+            {optimizeSteps.map((item) => {
               const { Icon } = item;
               return (
                 <li key={item.step}>
-                  <RainbowHoverCard
-                    className="h-full"
-                    innerClassName="bg-white px-6 py-7 sm:px-8"
-                  >
+                  <RainbowHoverCard className="h-full" innerClassName="bg-white px-6 py-7 sm:px-8">
                     <div className="flex items-start gap-4">
                       <span className="rainbow-hover-icon flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#EEF3D8] text-[#495800]">
                         <Icon className="h-6 w-6" aria-hidden />
@@ -403,7 +360,9 @@ export default function PlatformHome() {
             })}
           </ol>
           <p className="mt-8">
-            <PrimaryCta trackingId="platform_optimize_create">Create</PrimaryCta>
+            <PrimaryCta href={createUrl} trackingId="platform_optimize_create">
+              {t('home.create')}
+            </PrimaryCta>
           </p>
         </FadeInSection>
       </SectionShell>
@@ -411,38 +370,31 @@ export default function PlatformHome() {
       <section id="categories" className="border-t border-[#E0E8D4] py-20">
         <FadeInSection>
           <div className="mx-auto w-full max-w-6xl px-6 sm:px-10 lg:px-16">
-            <h2 className="text-3xl font-semibold sm:text-4xl">Browse by topic</h2>
-            <p className="mt-3 max-w-2xl text-lg text-[#666666]">
-              Pick a topic and explore ebooks, videos, knowledge, files, assets, people, and authors
-              across Kahana.
-            </p>
+            <h2 className="text-3xl font-semibold sm:text-4xl">{t('home.topicsTitle')}</h2>
+            <p className="mt-3 max-w-2xl text-lg text-[#666666]">{t('home.topicsLead')}</p>
           </div>
           <div className="mt-10 w-full overflow-hidden">
-            <CategoryMarquee categories={EXPLORE_CATEGORIES} baseHref={EXPLORE_URL} />
+            <CategoryMarquee categories={EXPLORE_CATEGORIES} baseHref={exploreUrl} />
           </div>
           <p className="mx-auto mt-10 w-full max-w-6xl px-6 sm:px-10 lg:px-16">
-            <SecondaryCta>Explore</SecondaryCta>
+            <SecondaryCta href={exploreUrl}>{t('home.explore')}</SecondaryCta>
           </p>
         </FadeInSection>
       </section>
 
       <SectionShell id="philosophy" className="border-t border-[#E0E8D4]">
         <FadeInSection>
-          <h2 className="text-3xl font-semibold sm:text-4xl">Mission &amp; Philosophy</h2>
+          <h2 className="text-3xl font-semibold sm:text-4xl">{t('home.missionTitle')}</h2>
           <p className="mt-4 max-w-3xl text-lg leading-relaxed text-[#666666]">
-            Our core belief is that people are naturally curious and creative. We wanted to create a
-            special space where people can easily connect with each other and get rewarded for being
-            themselves.
+            {t('home.missionBody')}
           </p>
         </FadeInSection>
       </SectionShell>
 
       <SectionShell id="faq-teaser">
         <FadeInSection>
-          <h2 className="text-3xl font-semibold sm:text-4xl">FAQ</h2>
-          <p className="mt-3 max-w-2xl text-lg text-[#666666]">
-            Benefits, what makes Kahana different, and how to get the most from it.
-          </p>
+          <h2 className="text-3xl font-semibold sm:text-4xl">{t('home.faqTitle')}</h2>
+          <p className="mt-3 max-w-2xl text-lg text-[#666666]">{t('home.faqLead')}</p>
           <div className="mt-8">
             <FaqBrowse variant="home" />
           </div>
@@ -452,21 +404,22 @@ export default function PlatformHome() {
       <SectionShell className="bg-[#313A00] pb-24 pt-20 text-[#F8FAF2]">
         <FadeInSection>
           <h2 className="mx-auto max-w-2xl text-center text-3xl font-semibold leading-tight !text-[#F8FAF2] sm:text-4xl">
-            Contribute what you know. Let Kahana carry it further.
+            {t('home.closingTitle')}
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-center text-lg leading-relaxed text-[#F8FAF2]/85">
-            Share on any topic—ebooks, videos, and more. Get discovered. Help others learn from
-            curated hubs in one place.
+            {t('home.closingBody')}
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-3">
-            <PrimaryCta trackingId="platform_closing_create">Create</PrimaryCta>
+            <PrimaryCta href={createUrl} trackingId="platform_closing_create">
+              {t('home.create')}
+            </PrimaryCta>
             <a
-              href={EXPLORE_URL}
+              href={exploreUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-secondary inline-flex items-center justify-center !border-[#F8FAF2]/40 !bg-transparent no-underline !text-[#F8FAF2] hover:!border-[#F8FAF2] hover:!bg-white/10 hover:!text-[#F8FAF2]"
             >
-              Explore
+              {t('home.explore')}
             </a>
           </div>
         </FadeInSection>

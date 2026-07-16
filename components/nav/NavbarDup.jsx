@@ -7,11 +7,20 @@ import {
   FolderPlusIcon,
   MagnifyingGlassIcon,
 } from '@heroicons/react/24/outline';
-import whiteKahanaLogo from '../../assets/kahana_logo_transparent.svg';
 import { getCloudinaryImageUrl } from '../../utils/cloudinary-mapper';
 import { APP_URL, EXPLORE_URL, desktopNavItems, mobileNavRows } from './navConfig';
+import KahanaWordmark from '../brand/KahanaWordmark';
+import LanguageMenu from '../brand/LanguageMenu';
+import { withAppLanguageParam } from '../../lib/contentLanguage';
+import { useMarketingI18n } from '../../contexts/MarketingI18n';
 
 const MD_BREAKPOINT = 1024;
+
+const NAV_LABEL_KEYS = {
+  help: 'nav.help',
+  support: 'nav.support',
+  contact: 'nav.contact',
+};
 
 function ChevronDownIcon({ className }) {
   return (
@@ -119,9 +128,19 @@ function NavDropdownPanelSection({ section, splitColumns, sectionIndex, onPick }
 
 export default function NavbarDup() {
   const router = useRouter();
+  const { preference: langPreference, t } = useMarketingI18n();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
   const prefetchedDropdowns = useRef(new Set());
+
+  const appUrl = useMemo(
+    () => withAppLanguageParam(APP_URL, langPreference),
+    [langPreference],
+  );
+  const exploreUrl = useMemo(
+    () => withAppLanguageParam(EXPLORE_URL, langPreference),
+    [langPreference],
+  );
 
   const prefetchDropdown = useCallback(
     (dropdown, id) => {
@@ -204,27 +223,32 @@ export default function NavbarDup() {
             pointer-events: none;
             z-index: 2;
           }
-          .nav-content > a:first-child {
+          .nav-content > .nav-brand {
             margin-left: 1.45rem !important;
-            padding-left: 0 !important;
-            margin-right: 0;
-            padding-right: 0;
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
+            gap: 0.5rem;
+          }
+          @media (min-width: 640px) {
+            .nav-content > .nav-brand {
+              margin-left: 1.45rem !important;
+            }
+          }
+          @media (min-width: 1024px) {
+            .nav-content > .nav-brand {
+              margin-left: 1.75rem !important;
+            }
+          }
+          .nav-content > .nav-brand a {
+            margin: 0 !important;
+            padding: 0 !important;
             display: flex;
             align-items: center;
             line-height: 0;
             flex-shrink: 0;
           }
-          @media (min-width: 640px) {
-            .nav-content > a:first-child {
-              margin-left: 1.45rem !important;
-            }
-          }
-          @media (min-width: 1024px) {
-            .nav-content > a:first-child {
-              margin-left: 1.75rem !important;
-            }
-          }
-          .nav-content > a:first-child img {
+          .nav-content > .nav-brand img {
             margin: 0 !important;
             padding: 0 !important;
             display: block;
@@ -449,38 +473,28 @@ export default function NavbarDup() {
         `}</style>
 
         <div className="nav-content mx-auto flex h-full max-w-[1280px] items-center justify-between gap-2 px-4 sm:px-6 lg:px-8">
-          <Link
-            href="/"
-            className="flex shrink-0 items-center no-underline"
-            style={{ lineHeight: 0 }}
-          >
-            <Image
-              src={whiteKahanaLogo}
-              alt="Kahana"
-              width={200}
-              height={56}
-              className="h-14 w-auto shrink-0 object-contain object-left"
-              sizes="(max-width: 768px) 160px, 200px"
-              priority
-            />
-          </Link>
+          <div className="nav-brand flex shrink-0 items-center gap-2">
+            <KahanaWordmark size={28} />
+            <LanguageMenu align="start" />
+          </div>
 
           <div className="flex shrink-0 items-center gap-2 lg:gap-3">
-            <nav className="hidden items-center lg:flex" aria-label="Main navigation">
+            <nav className="hidden items-center lg:flex" aria-label={t('nav.mainNav')}>
               <ul className="nav-links !mr-0 flex items-center gap-1">
                 {desktopNavItems.map((item) => {
                   if (!item.dropdown) {
                     const linkClass =
                       'nav-link relative z-[2] inline-flex items-center gap-0.5 whitespace-nowrap rounded-md px-2 py-2 font-sans text-[0.9375rem] font-normal !text-oasis-green-700 no-underline focus:outline-none';
+                    const label = NAV_LABEL_KEYS[item.id] ? t(NAV_LABEL_KEYS[item.id]) : item.label;
                     return (
                       <li key={item.id}>
                         {item.external || item.href.startsWith('http') ? (
                           <a href={item.href} className={linkClass}>
-                            <span className="nav-link-text">{item.label}</span>
+                            <span className="nav-link-text">{label}</span>
                           </a>
                         ) : (
                           <Link href={item.href} className={linkClass}>
-                            <span className="nav-link-text">{item.label}</span>
+                            <span className="nav-link-text">{label}</span>
                           </Link>
                         )}
                       </li>
@@ -547,48 +561,48 @@ export default function NavbarDup() {
 
             <div className="nav-buttons">
               <a
-                href={APP_URL}
+                href={appUrl}
                 className={ctaLoginClass}
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <ArrowRightOnRectangleIcon className="h-4 w-4 shrink-0" aria-hidden />
-                <span className="nav-link-text">Log in</span>
+                <span className="nav-link-text">{t('nav.login')}</span>
               </a>
               <a
-                href={EXPLORE_URL}
+                href={exploreUrl}
                 className={ctaSecondaryClass}
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <MagnifyingGlassIcon className="h-4 w-4 shrink-0" aria-hidden />
-                Explore
+                {t('nav.explore')}
               </a>
               <a
-                href={APP_URL}
+                href={appUrl}
                 className={ctaPrimaryClass}
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <FolderPlusIcon className="h-4 w-4 shrink-0" aria-hidden />
-                Create
+                {t('nav.create')}
               </a>
             </div>
 
             <div className="nav-mobile-actions flex items-center gap-2 lg:hidden">
               <a
-                href={APP_URL}
+                href={appUrl}
                 className="nav-mobile-login no-underline"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Log in
+                {t('nav.login')}
               </a>
               <button
                 type="button"
                 onClick={() => setIsMobileMenuOpen((v) => !v)}
                 className="nav-hamburger-toggle inline-flex items-center justify-center"
-                aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+                aria-label={isMobileMenuOpen ? t('nav.closeMenu') : t('nav.openMenu')}
                 aria-expanded={isMobileMenuOpen}
               >
                 {isMobileMenuOpen ? (
@@ -609,36 +623,45 @@ export default function NavbarDup() {
           <div className="menu-links">
             <div className="mb-4 flex flex-col gap-2">
               <a
-                href={EXPLORE_URL}
+                href={exploreUrl}
                 className={`${mobileCtaSecondaryClass} w-full justify-center`}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={closeMobile}
               >
                 <MagnifyingGlassIcon className="h-5 w-5 shrink-0" aria-hidden />
-                Explore
+                {t('nav.explore')}
               </a>
               <a
-                href={APP_URL}
+                href={appUrl}
                 className={`${mobileCtaPrimaryClass} w-full justify-center`}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={closeMobile}
               >
                 <FolderPlusIcon className="h-5 w-5 shrink-0" aria-hidden />
-                Create
+                {t('nav.create')}
               </a>
             </div>
 
-            {mobileNavRows.map((row) =>
-              row.external || row.href.startsWith('http') ? (
+            {mobileNavRows.map((row) => {
+              const labelKey =
+                row.label === 'Help'
+                  ? 'nav.help'
+                  : row.label === 'Support'
+                    ? 'nav.support'
+                    : row.label === 'Contact'
+                      ? 'nav.contact'
+                      : null;
+              const label = labelKey ? t(labelKey) : row.label;
+              return row.external || row.href.startsWith('http') ? (
                 <a
                   key={row.href}
                   href={row.href}
                   className="mobile-link no-underline"
                   onClick={closeMobile}
                 >
-                  {row.label}
+                  {label}
                 </a>
               ) : (
                 <Link
@@ -648,10 +671,10 @@ export default function NavbarDup() {
                   className="mobile-link no-underline"
                   onClick={closeMobile}
                 >
-                  {row.label}
+                  {label}
                 </Link>
-              )
-            )}
+              );
+            })}
           </div>
         </div>
       </nav>
