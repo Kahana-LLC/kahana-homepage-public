@@ -75,12 +75,12 @@ function SectionShell({ id, children, className = '' }) {
 const HOW_IT_WORKS = [
   {
     title: 'Learn',
-    body: 'Explore Kahana and access knowledge others have shared, curated and easy to reach in one place. When you like a contribution, give it Aura.',
+    body: 'Explore Kahana and access knowledge others have shared—ebooks, videos, and more—curated and easy to reach in one place. When you like a contribution, give it Aura.',
     Icon: EyeIcon,
   },
   {
     title: 'Create',
-    body: 'Create a hub. It starts private so you can add digital artifacts (files, videos, images, PDFs, documents, links, and more) and get it ready. When you want to contribute it to the public feed, flip a switch to list it on Explore. Invite editors or admins if you want to collaborate.',
+    body: 'Create a hub. It starts private so you can add digital artifacts (ebooks, videos, files, images, PDFs, documents, links, and more) and get it ready. When you want to contribute it to the public feed, flip a switch to list it on Explore. Invite editors or admins if you want to collaborate.',
     Icon: FolderPlusIcon,
   },
   {
@@ -145,7 +145,7 @@ const OPTIMIZE_STEPS = [
   {
     step: '01',
     title: 'Create a hub',
-    body: 'Your hub starts private. Fill it with digital artifacts: files, videos, images, PDFs, documents, links, and more. Invite editors or admins if you want help.',
+    body: 'Your hub starts private. Fill it with digital artifacts: ebooks, videos, files, images, PDFs, documents, links, and more. Invite editors or admins if you want help.',
     Icon: FolderPlusIcon,
   },
   {
@@ -177,7 +177,7 @@ const OPTIMIZE_STEPS = [
 const SEEKER_BENEFITS = [
   {
     title: 'Easy to access',
-    body: 'Save hubs of digital artifacts into collections you can open on your phone or computer. You are one click away from the knowledge in Kahana.',
+    body: 'Save hubs of digital artifacts—ebooks, videos, and more—into collections you can open on your phone or computer. You are one click away from the knowledge in Kahana.',
     Icon: Squares2X2Icon,
   },
   {
@@ -346,7 +346,7 @@ export default function PlatformHome() {
         <FadeInSection>
           <h2 className="text-3xl font-semibold sm:text-4xl">Benefits for learners</h2>
           <p className="mt-3 max-w-2xl text-lg text-[#666666]">
-            Explore curated hubs of digital artifacts because people chose to share them.
+            Explore curated hubs of ebooks, videos, and other digital artifacts people chose to share.
           </p>
           <BenefitTiles items={SEEKER_BENEFITS} />
           <p className="mt-8">
@@ -359,7 +359,7 @@ export default function PlatformHome() {
         <FadeInSection>
           <h2 className="text-3xl font-semibold sm:text-4xl">Benefits for creators and experts</h2>
           <p className="mt-3 max-w-2xl text-lg text-[#666666]">
-            Share what you know so more people can benefit from it.
+            Share ebooks, videos, and what you know so more people can benefit from it.
           </p>
           <BenefitTiles items={CREATOR_BENEFITS} />
           <p className="mt-8">
@@ -411,10 +411,10 @@ export default function PlatformHome() {
       <section id="categories" className="border-t border-[#E0E8D4] py-20">
         <FadeInSection>
           <div className="mx-auto w-full max-w-6xl px-6 sm:px-10 lg:px-16">
-            <h2 className="text-3xl font-semibold sm:text-4xl">Browse by category</h2>
+            <h2 className="text-3xl font-semibold sm:text-4xl">Browse by topic</h2>
             <p className="mt-3 max-w-2xl text-lg text-[#666666]">
-              Discover niche expertise across Kahana. Pick a topic and explore hubs of digital
-              artifacts people have contributed.
+              Pick a topic and explore ebooks, videos, knowledge, files, assets, people, and authors
+              across Kahana.
             </p>
           </div>
           <div className="mt-10 w-full overflow-hidden">
@@ -455,7 +455,8 @@ export default function PlatformHome() {
             Contribute what you know. Let Kahana carry it further.
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-center text-lg leading-relaxed text-[#F8FAF2]/85">
-            Share on any topic. Get discovered. Help others learn from curated hubs in one place.
+            Share on any topic—ebooks, videos, and more. Get discovered. Help others learn from
+            curated hubs in one place.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-3">
             <PrimaryCta trackingId="platform_closing_create">Create</PrimaryCta>
