@@ -106,27 +106,27 @@ export default function OasisOpenBetaPressRelease() {
               <p>
                 Oasis pairs privacy-first browsing with an assistant meant to meet you in the same &quot;room&quot; as your
                 tabs, not a blank-slate chat that ignores the page in front of you. Deep dives on the{' '}
-                <Link href="/features/oasis-assistant" className={linkClass}>
+                <Link href="/help" className={linkClass}>
                   Oasis Assistant
                 </Link>{' '}
                 and{' '}
-                <Link href="/features/oasis-voice" className={linkClass}>
+                <Link href="/help" className={linkClass}>
                   voice in the assistant
                 </Link>{' '}
                 explain how context from real browsing informs help, while{' '}
-                <Link href="/features/oasis-import" className={linkClass}>
+                <Link href="/help" className={linkClass}>
                   guided import from other browsers
                 </Link>{' '}
                 covers how Kahana respects platform limits on switching. For sensitive moments when the browser acts on your
                 behalf, see{' '}
-                <Link href="/features/oasis-confirmations" className={linkClass}>
+                <Link href="/help" className={linkClass}>
                   confirmations for sensitive actions
                 </Link>
                 . Trust beats surprise.
               </p>
               <p>
                 The full catalog of capability write-ups lives on the{' '}
-                <Link href="/features" className={linkClass}>
+                <Link href="/help" className={linkClass}>
                   Oasis features
                 </Link>{' '}
                 hub, which links to every browser and enterprise deep dive Kahana publishes for reviewers and technical readers.
@@ -135,7 +135,7 @@ export default function OasisOpenBetaPressRelease() {
               <h2 className="mt-12 text-2xl font-bold text-oasis-green-950">Teach Oasis to fit your workflows (Amplifier)</h2>
               <p>
                 Even strong models miss tone, speed, and risk in real tabs. Kahana is developing{' '}
-                <Link href="/features/oasis-amplifier" className={linkClass}>
+                <Link href="/help" className={linkClass}>
                   Oasis Amplifier
                 </Link>{' '}
                 (a planned capability) so structured feedback (what felt slow, wrong, unsafe, or great) can steer the assistant
@@ -200,7 +200,7 @@ export default function OasisOpenBetaPressRelease() {
                   Oasis Enterprise Browser
                 </Link>
                 . Explore the full feature library on{' '}
-                <Link href="/features" className={linkClass}>
+                <Link href="/help" className={linkClass}>
                   Oasis features
                 </Link>
                 . Join the waitlist for launch timing via the link above.

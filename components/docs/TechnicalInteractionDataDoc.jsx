@@ -68,7 +68,7 @@ export default function TechnicalInteractionDataDoc() {
           <strong>Anonymous training</strong> still uploads on Submit; it does not attach your user
           ID to that training record. See{" "}
           <a
-            href="/docs/training#does-data-leave-device"
+            href="/help/training#does-data-leave-device"
             className="font-semibold text-[#4A6200] no-underline hover:underline"
           >
             Training — does data leave the device?
@@ -111,7 +111,7 @@ export default function TechnicalInteractionDataDoc() {
             Your saved-password vault, imported logins, or autofill store (these stay in your local
             profile; see{" "}
             <a
-              href="/docs/import-from-other-browsers#imported-passwords"
+              href="/help/import-from-other-browsers#imported-passwords"
               className="font-semibold text-[#4A6200] no-underline hover:underline"
             >
               imported passwords

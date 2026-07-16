@@ -6,7 +6,6 @@ export default function CookiePreferencesModal() {
   const [localConsent, setLocalConsent] = useState({
     strictlyNecessary: true,
     analytics: false,
-    advertising: false,
   });
 
   useEffect(() => {
@@ -14,14 +13,12 @@ export default function CookiePreferencesModal() {
       const defaultState = {
         strictlyNecessary: true,
         analytics: false,
-        advertising: false,
       };
 
       if (consent && typeof consent === 'object') {
         setLocalConsent({
           strictlyNecessary: true,
           analytics: consent.analytics === true,
-          advertising: consent.advertising === true,
         });
       } else {
         setLocalConsent(defaultState);
@@ -43,7 +40,7 @@ export default function CookiePreferencesModal() {
     saveConsent({
       strictlyNecessary: true,
       analytics: localConsent.analytics,
-      advertising: localConsent.advertising,
+      advertising: false,
     });
   };
 
@@ -51,7 +48,6 @@ export default function CookiePreferencesModal() {
     setLocalConsent({
       strictlyNecessary: true,
       analytics: true,
-      advertising: true,
     });
     acceptAll();
   };
@@ -60,26 +56,30 @@ export default function CookiePreferencesModal() {
     setLocalConsent({
       strictlyNecessary: true,
       analytics: false,
-      advertising: false,
     });
     declineAll();
   };
 
   return (
     <div
-      className="fixed inset-0 z-50 overflow-y-auto"
+      className="fixed inset-0 z-[1100] overflow-y-auto"
       role="dialog"
       aria-modal="true"
       aria-labelledby="modal-title"
     >
       <div
-        className="fixed inset-0 bg-black bg-opacity-50 transition-opacity"
-        onClick={closeModal}
+        className="fixed inset-0 z-[1100] bg-black bg-opacity-50 transition-opacity"
         aria-hidden="true"
       />
 
-      <div className="flex min-h-full items-center justify-center p-4">
-        <div className="relative bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+      <div
+        className="relative z-[1101] flex min-h-full items-center justify-center p-4"
+        onClick={closeModal}
+      >
+        <div
+          className="relative bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+          onClick={(e) => e.stopPropagation()}
+        >
           <div className="sticky top-0 bg-white border-b border-gray-200 px-6 py-4 flex items-center justify-between">
             <h2 id="modal-title" className="text-2xl font-bold text-[#313A00]">
               Cookie Preferences
@@ -97,12 +97,20 @@ export default function CookiePreferencesModal() {
 
           <div className="px-6 py-6">
             <p className="text-gray-700 mb-4">
-              We use cookies and similar technologies to enhance your browsing experience and analyze site traffic.
-              By choosing &quot;Accept All&quot; on the banner, you consent to optional categories where applicable. You can change your preferences at any time
-              by using Manage Preferences on the banner or Cookie Settings in the footer.
+              We use cookies and similar technologies to operate the site and analyze traffic with Google Analytics, Mixpanel, and Firebase.
+              We do not use advertising cookies or retargeting pixels. You can change analytics preferences anytime via Cookie Settings in the footer.
+              See our{' '}
+              <a href="/privacy-policy" className="text-[#4A6200] font-semibold no-underline hover:underline">
+                Privacy Policy
+              </a>{' '}
+              and{' '}
+              <a href="/terms-and-conditions" className="text-[#4A6200] font-semibold no-underline hover:underline">
+                Terms
+              </a>{' '}
+              for details.
             </p>
             <p className="text-gray-700 mb-6 text-sm">
-              Below you can choose which categories to allow. Note that blocking some types of cookies may impact your experience on our website.
+              Below you can choose whether to allow analytics. Blocking analytics may limit how we improve the site, but core features still work.
             </p>
 
             <div className="mb-6 pb-6 border-b border-gray-200">
@@ -139,7 +147,7 @@ export default function CookiePreferencesModal() {
                     information anonymously. This helps us improve our website and user experience.
                   </p>
                   <p className="text-xs text-gray-500">
-                    <strong>Tools:</strong> Google Analytics, Google Tag Manager
+                    <strong>Tools:</strong> Google Analytics, Mixpanel, Firebase
                   </p>
                 </div>
                 <div className="ml-4">
@@ -155,40 +163,6 @@ export default function CookiePreferencesModal() {
                     <span
                       className={`inline-block h-5 w-5 transform rounded-full transition-transform shadow-sm ${
                         localConsent.analytics
-                          ? 'translate-x-7 bg-white'
-                          : 'translate-x-1 bg-gray-400'
-                      }`}
-                    />
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div className="mb-6">
-              <div className="flex items-start justify-between">
-                <div className="flex-1">
-                  <h3 className="text-lg font-semibold text-[#313A00] mb-2">Advertising</h3>
-                  <p className="text-sm text-gray-600 mb-2">
-                    These cookies are used to deliver advertisements that are more relevant to you and your interests.
-                    They may also be used to limit the number of times you see an advertisement.
-                  </p>
-                  <p className="text-xs text-gray-500">
-                    <strong>Tools:</strong> Google Ads, retargeting pixels
-                  </p>
-                </div>
-                <div className="ml-4">
-                  <button
-                    onClick={() => handleToggle('advertising')}
-                    className={`relative inline-flex h-8 w-14 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-oasis-green-600 focus:ring-offset-2 ${
-                      localConsent.advertising ? 'bg-oasis-green-600' : 'bg-gray-200 border-2 border-gray-300'
-                    }`}
-                    role="switch"
-                    aria-checked={localConsent.advertising}
-                    aria-label="Toggle advertising cookies"
-                  >
-                    <span
-                      className={`inline-block h-5 w-5 transform rounded-full transition-transform shadow-sm ${
-                        localConsent.advertising
                           ? 'translate-x-7 bg-white'
                           : 'translate-x-1 bg-gray-400'
                       }`}

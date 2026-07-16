@@ -25,11 +25,11 @@ for (const file of fs.readdirSync(ARCHIVE_PAGES).filter((f) => f.endsWith('.jsx'
   add(`/${base}`, dest);
 }
 
-// Features → /features
+// Features → /help (Features surface retired)
 const featuresDir = path.join(ARCHIVE_PAGES, 'features');
 if (fs.existsSync(featuresDir)) {
   for (const file of fs.readdirSync(featuresDir).filter((f) => f.endsWith('.jsx'))) {
-    add(`/features/${file.replace(/\.jsx$/, '')}`, '/features');
+    add(`/features/${file.replace(/\.jsx$/, '')}`, '/help');
   }
 }
 

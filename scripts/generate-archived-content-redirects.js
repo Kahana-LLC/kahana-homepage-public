@@ -33,7 +33,7 @@ const blogRedirects = blog.map((slug) => ({
 
 const docsRedirects = docs.map((slug) => ({
   source: `/docs/${slug}`,
-  destination: '/docs',
+  destination: '/help',
   permanent: true,
 }));
 

@@ -9,7 +9,7 @@ const staticSitemapSections = [
     links: [
       { text: 'Home', href: '/' },
       { text: 'About', href: '/about' },
-      { text: 'Features', href: '/features' },
+      { text: 'Help', href: '/help' },
       { text: 'Contact', href: '/contact' },
       { text: 'Blog', href: '/blog' },
       { text: 'FAQ', href: '/faq' },
@@ -64,19 +64,19 @@ export async function getStaticProps() {
   const docs = await getAllDocsMetadata();
   const slugFor = (d) => d.slug || '';
   const docLinks = [
-    { text: 'Documentation home', href: '/docs' },
+    { text: 'Help home', href: '/help' },
     ...docs
       .filter((d) => slugFor(d))
       .sort((a, b) => (a.title || '').localeCompare(b.title || '', undefined, { sensitivity: 'base' }))
       .map((d) => ({
         text: d.title || slugFor(d),
-        href: `/docs/${slugFor(d)}`,
+        href: `/help/${slugFor(d)}`,
       })),
   ];
 
   const sitemapSections = [
     ...staticSitemapSections.slice(0, 4),
-    { title: 'Documentation', links: docLinks },
+    { title: 'Help', links: docLinks },
     ...staticSitemapSections.slice(4),
   ];
 

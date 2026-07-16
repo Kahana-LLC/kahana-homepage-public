@@ -12,22 +12,20 @@ const LEGAL_LINK_CLASS =
 
 const PRODUCT_LINKS = [
   { href: 'https://kahana.io/explore', label: 'Explore', external: true },
-  { href: '/features', label: 'Features' },
   { href: '/pricing', label: 'Pricing' },
 ];
 
 /** About / Team / Careers hidden from footer for now (pages still exist). */
 const COMPANY_LINKS = [
   { href: '/contact', label: 'Contact' },
-  { href: '/security', label: 'Security' },
+  { href: 'https://kahana.io/support', label: 'Support', external: true },
 ];
 
-/** Help Center / Testimonials / Press kit / Press releases hidden for now. */
+/** Testimonials / Press kit / Press releases hidden for now. */
 const RESOURCE_LINKS = [
   { href: '/blog', label: 'Blog' },
-  { href: '/docs', label: 'Docs' },
+  { href: '/help', label: 'Help' },
   { href: '/faq', label: 'FAQ' },
-  { href: 'https://kahana.io/support', label: 'Support', external: true },
 ];
 
 function FooterColumnHeading({ children }) {
@@ -144,6 +142,11 @@ function LegalLinkList({ consentContext, openCookieModal }) {
       <li>
         <Link href="/privacy-policy" prefetch={false} className={LEGAL_LINK_CLASS}>
           Privacy
+        </Link>
+      </li>
+      <li>
+        <Link href="/security" className={LEGAL_LINK_CLASS}>
+          Security
         </Link>
       </li>
       <li>

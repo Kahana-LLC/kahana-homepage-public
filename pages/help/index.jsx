@@ -5,6 +5,7 @@ import { getAllDocsMetadata } from '../../utils/docsUtils';
 import DocCard from '../../components/DocCard';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import SEO from '../../components/SEO';
+import { getCategoryDisplayName } from '../../config/docsConfig';
 const DOCS_PER_PAGE = 9;
 
 export async function getStaticProps() {
@@ -19,7 +20,7 @@ export async function getStaticProps() {
   };
 }
 
-export default function DocsIndex({ docs = [], categories = [] }) {
+export default function HelpIndex({ docs = [], categories = [] }) {
   const [activeCategory, setActiveCategory] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
@@ -83,9 +84,9 @@ export default function DocsIndex({ docs = [], categories = [] }) {
   return (
     <>
       <SEO
-        title="Documentation"
-        description="Guides and reference for the Kahana platform—hubs, Explore, Aura, and more. New articles are added as product docs ship."
-        url="https://about.kahana.io/docs"
+        title="Help"
+        description="Guides and answers for the Kahana platform—hubs, Explore, Aura, and more. New articles are added as product help ships."
+        url="https://help.kahana.io/help"
         type="website"
       />
 
@@ -96,7 +97,7 @@ export default function DocsIndex({ docs = [], categories = [] }) {
             <Breadcrumbs 
               items={[
                 { name: "Home", url: "/" },
-                { name: "Documentation", url: "/docs" },
+                { name: "Help", url: "/help" },
               ]} 
             />
           </div>
@@ -104,38 +105,24 @@ export default function DocsIndex({ docs = [], categories = [] }) {
           {/* Header - same as blog */}
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold text-oasis-green-900 mb-4">
-              Documentation
+              Help
             </h1>
             <p className="text-xl text-oasis-green-800 max-w-2xl mx-auto">
-              Product guides for Kahana: hubs, Explore, Aura, profiles, and more. Browse{' '}
-              <Link
-                href="/features"
-                className="font-semibold text-brand-link no-underline hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-link"
-              >
-                Features
-              </Link>{' '}
-              meanwhile—new docs land here as they ship.
+              Search guides for Kahana: hubs, Explore, Aura, profiles, earning, and trust. New articles land here as they ship.
             </p>
           </div>
 
           {docList.length === 0 ? (
             <div className="text-center py-12">
               <h3 className="text-lg font-medium text-oasis-green-900 mb-2">
-                New Kahana platform docs coming soon
+                New Kahana platform help coming soon
               </h3>
               <p className="text-oasis-green-800 max-w-xl mx-auto">
-                We’re rebuilding documentation around the Kahana library. For now, see{' '}
-                <Link
-                  href="/features"
-                  className="font-semibold text-brand-link no-underline hover:underline"
-                >
-                  Features
-                </Link>
-                ,{' '}
+                We’re adding more Kahana library guides. For now, see{' '}
                 <Link href="/faq" className="font-semibold text-brand-link no-underline hover:underline">
                   FAQ
                 </Link>
-                , or{' '}
+                {' '}or{' '}
                 <Link href="/support" className="font-semibold text-brand-link no-underline hover:underline">
                   Support
                 </Link>
@@ -149,7 +136,7 @@ export default function DocsIndex({ docs = [], categories = [] }) {
             <div className="relative w-full">
               <input
                 type="text"
-                placeholder="Search documentation..."
+                placeholder="Search help..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-oasis-green-600 focus:border-transparent"
@@ -174,7 +161,7 @@ export default function DocsIndex({ docs = [], categories = [] }) {
               >
                 All
               </button>
-              {categoryList.map((category) => (
+                  {categoryList.map((category) => (
                 <button
                   key={category}
                   type="button"
@@ -183,13 +170,13 @@ export default function DocsIndex({ docs = [], categories = [] }) {
                     activeCategory === category ? 'btn-primary' : 'btn-secondary'
                   }`}
                 >
-                  {category}
+                  {getCategoryDisplayName(category)}
                 </button>
               ))}
             </div>
           </div>
 
-          {/* Documentation Grid - same gap as blog */}
+          {/* Help Grid - same gap as blog */}
           {filteredDocs.length > 0 ? (
             <>
               <p className="text-sm text-oasis-green-800/90 mb-4 text-center sm:text-left">
@@ -205,7 +192,7 @@ export default function DocsIndex({ docs = [], categories = [] }) {
               {totalPages > 1 && (
                 <nav
                   className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-4"
-                  aria-label="Documentation pages"
+                  aria-label="Help pages"
                 >
                   <button
                     type="button"
@@ -257,7 +244,7 @@ export default function DocsIndex({ docs = [], categories = [] }) {
             </>
           ) : (
             <div className="text-center py-12">
-              <h3 className="text-lg font-medium text-oasis-green-900 mb-2">No documentation found</h3>
+              <h3 className="text-lg font-medium text-oasis-green-900 mb-2">No help articles found</h3>
               <p className="text-oasis-green-800">
                 Try adjusting your search or filter to find what you&apos;re looking for.
               </p>
@@ -269,4 +256,4 @@ export default function DocsIndex({ docs = [], categories = [] }) {
       </div>
     </>
   );
-} 
+}

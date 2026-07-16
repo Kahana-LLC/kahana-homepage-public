@@ -142,7 +142,7 @@ export default function OasisBrowserFeatureVisuals() {
               </p>
               <p className="mt-3">
                 <Link
-                  href="/docs"
+                  href="/help"
                   className="text-sm font-semibold text-brand-link no-underline hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-link"
                 >
                   Read the full Assistant themes guide →

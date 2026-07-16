@@ -642,7 +642,7 @@ export default function TermsAndConditions() {
 
               <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">18.3. Privacy Policy Incorporation</h3>
               <p className="text-gray-700 leading-relaxed mb-6">
-                Please review the Kahana Privacy Policy <Link href="/privacy-policy" className="text-[#4A6200] no-underline hover:no-underline font-semibold">(the "Privacy Policy")</Link> carefully for information concerning our collection, use, storage, and disclosure of your personal information. The Kahana Privacy Policy is incorporated by reference herein and forms a part of these Terms.
+                Please review the Kahana Privacy Policy <Link href="/privacy-policy" className="text-[#4A6200] no-underline hover:no-underline font-semibold">(the "Privacy Policy")</Link> carefully for information concerning our collection, use, storage, and disclosure of your personal information, including cookies and analytics. As described in the Privacy Policy, our website analytics tools are Google Analytics, Mixpanel, and Firebase; we do not use advertising cookies or retargeting pixels on this site. The Kahana Privacy Policy is incorporated by reference herein and forms a part of these Terms.
               </p>
 
               <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">18.4. Incorporation of Additional Terms</h3>

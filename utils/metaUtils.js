@@ -94,12 +94,12 @@ function generatePageMetaTags(page) {
 
 function generateDocMetaTags(doc) {
   return generateMetaTags({
-    title: `${doc.title} | Kahana Documentation`,
+    title: `${doc.title} | Kahana Help`,
     description:
       doc.description ||
-      "Learn how to use Kahana's products and features with our comprehensive documentation.",
+      "Learn how to use Kahana's products and features.",
     image: doc.featuredImage || "/images/docs-hero.jpg",
-    url: `${EXTERNAL_DATA_URL}/docs/${doc.slug}`,
+    url: `${EXTERNAL_DATA_URL}/help/${doc.slug}`,
     type: "article",
     twitterHandle: "@kahana",
   });

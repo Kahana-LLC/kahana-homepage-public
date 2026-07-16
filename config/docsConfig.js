@@ -28,22 +28,27 @@ export const docsConfig = {
     authorFallback: "Adam Kershner"
   },
 
-  // Categories and their display names
+  // Categories and their display names (Help index filters)
   categories: {
-    features: "Features",
+    discovery: "Discovery",
+    knowledge: "Knowledge",
+    presence: "Presence",
+    quality: "Quality",
+    monetization: "Monetization",
+    trust: "Trust",
+    guides: "Guides",
     security: "Security",
     privacy: "Privacy",
-    guides: "Guides",
     api: "API",
     troubleshooting: "Troubleshooting",
   },
 
   // SEO defaults
   seo: {
-    titleTemplate: "%s | Documentation",
+    titleTemplate: "%s | Help",
     description:
-      "Guides and reference for the Kahana platform—hubs, Explore, Aura, and more. New articles are added as product docs ship.",
-    baseUrl: absoluteUrl('/docs')
+      "Guides and answers for the Kahana platform—hubs, Explore, Aura, and more. New articles are added as product help ships.",
+    baseUrl: absoluteUrl('/help')
   }
 };
 

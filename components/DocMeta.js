@@ -5,22 +5,21 @@ import Meta from "./Meta";
 export default function DocMeta({ doc }) {
   const metaTags = generateDocMetaTags(doc);
 
-  // Generate breadcrumb schema for documentation
   const breadcrumbItems = [
-    { name: "Documentation", url: "https://kahana.io/docs" },
-    { name: doc.title, url: `https://kahana.io/docs/${doc.slug}` },
+    { name: "Help", url: "https://help.kahana.io/help" },
+    { name: doc.title, url: `https://help.kahana.io/help/${doc.slug}` },
   ];
   const schema = generateBreadcrumbSchema(breadcrumbItems);
 
   return (
     <Meta
-      title={`${doc.title} | Kahana Documentation`}
+      title={`${doc.title} | Kahana Help`}
       description={
         doc.description ||
-        "Learn how to use Kahana's products and features with our comprehensive documentation."
+        "Learn how to use Kahana's products and features."
       }
       image={doc.featuredImage || "/images/docs-hero.jpg"}
-      url={`https://kahana.io/docs/${doc.slug}`}
+      url={`https://help.kahana.io/help/${doc.slug}`}
       type="article"
       twitterHandle="@kahana"
       schema={schema}

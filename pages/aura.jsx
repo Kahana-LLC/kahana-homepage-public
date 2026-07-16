@@ -81,10 +81,10 @@ export default function AuraPage() {
               </div>
               <p className="mt-8 text-sm text-[#F8FAF2]/70">
                 <Link
-                  href="/features/aura"
+                  href="/help/how-aura-works"
                   className="underline decoration-[#F8FAF2]/40 underline-offset-2 hover:decoration-[#F8FAF2]"
                 >
-                  Features: Aura
+                  How Aura works
                 </Link>
                 {' · '}
                 <Link
@@ -95,10 +95,10 @@ export default function AuraPage() {
                 </Link>
                 {' · '}
                 <Link
-                  href="/features"
+                  href="/help"
                   className="underline decoration-[#F8FAF2]/40 underline-offset-2 hover:decoration-[#F8FAF2]"
                 >
-                  All features
+                  Help center
                 </Link>
               </p>
             </FadeInSection>

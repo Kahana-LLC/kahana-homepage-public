@@ -65,7 +65,7 @@ export default function ConsentBanner() {
   return (
     <div
       ref={bannerRef}
-      className={`consent-banner fixed bottom-0 left-0 right-0 z-50 bg-white border-t-2 border-oasis-green-600 shadow-lg transition-opacity duration-300 ${
+      className={`consent-banner fixed bottom-0 left-0 right-0 z-[1050] bg-white border-t-2 border-oasis-green-600 shadow-lg transition-opacity duration-300 ${
         isVisible ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
       }`}
       style={{ contain: 'layout paint' }}

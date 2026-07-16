@@ -51,7 +51,7 @@ export default function Security() {
                 <Link href="/privacy-policy" className={linkClass}>
                   Privacy
                 </Link>
-                <Link href="/features/trust" className={linkClass}>
+                <Link href="/help/trust" className={linkClass}>
                   Trust
                 </Link>
                 <Link href="/contact" className={linkClass}>
@@ -101,7 +101,7 @@ export default function Security() {
                 </li>
                 <li>
                   Collaborators use roles (OWNER, ADMIN, WRITE, COMMENT, READ).{' '}
-                  <Link href="/docs/collaborators-and-roles" className={linkClass}>
+                  <Link href="/help/collaborators-and-roles" className={linkClass}>
                     Roles guide
                   </Link>
                 </li>
@@ -130,7 +130,7 @@ export default function Security() {
                 <li>Hubs start private.</li>
                 <li>
                   Public + listed on Explore is how work joins the library catalog.{' '}
-                  <Link href="/docs/list-hub-on-explore" className={linkClass}>
+                  <Link href="/help/list-hub-on-explore" className={linkClass}>
                     Listing checklist
                   </Link>
                 </li>
@@ -150,11 +150,11 @@ export default function Security() {
                 <li>Access requires sign-in and a date of birth proving 18+.</li>
               </ul>
               <p className="text-gray-700">
-                <Link href="/docs/adult-content-and-age-verification" className={linkClass}>
+                <Link href="/help/adult-content-and-age-verification" className={linkClass}>
                   Full guide
                 </Link>
                 {' · '}
-                <Link href="/features/trust" className={linkClass}>
+                <Link href="/help/trust" className={linkClass}>
                   Trust
                 </Link>
               </p>
@@ -176,11 +176,11 @@ export default function Security() {
                 </li>
               </ul>
               <p className="text-gray-700">
-                <Link href="/docs/buying-and-access" className={linkClass}>
+                <Link href="/help/buying-and-access" className={linkClass}>
                   Buying
                 </Link>
                 {' · '}
-                <Link href="/docs/turn-on-paid-access" className={linkClass}>
+                <Link href="/help/turn-on-paid-access" className={linkClass}>
                   Selling
                 </Link>
               </p>
@@ -274,7 +274,7 @@ export default function Security() {
 
           <hr className="my-10 border-gray-200" />
           <footer className="py-6 text-center text-gray-700">
-            <Link href="/features/trust" className={linkClass}>
+            <Link href="/help/trust" className={linkClass}>
               Trust
             </Link>
             {' · '}

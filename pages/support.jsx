@@ -8,7 +8,7 @@ export default function Support() {
     <>
       <SEO
         title="Support"
-        description="Access documentation and resources for Kahana's enterprise browsing solutions."
+        description="Access help articles and resources for Kahana."
         url="https://kahana.io/support"
         type="website"
       />
@@ -18,12 +18,12 @@ export default function Support() {
           <div className="text-center">
             <h1 className="text-4xl font-bold text-oasis-green-800">Support</h1>
             <p className="mt-4 text-xl text-oasis-green-800">
-              Access our comprehensive documentation and resources to help you get the most out of your Kahana solutions.
+              Find answers in Help, or reach out when you need a person.
             </p>
           </div>
 
           <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {/* Documentation CTA */}
+            {/* Help CTA */}
             <div className="bg-gradient-to-br from-desert-yellow-100/20 to-oasis-blue-300/10 rounded-xl p-8">
               <div className="flex items-center mb-4">
                 <svg
@@ -39,17 +39,17 @@ export default function Support() {
                     d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
                   />
                 </svg>
-                <h3 className="text-2xl font-bold text-oasis-green-800">Documentation</h3>
+                <h3 className="text-2xl font-bold text-oasis-green-800">Help</h3>
               </div>
               <p className="text-oasis-green-800 mb-6">
-                Access our comprehensive documentation and user guides to help you get started and master Kahana's features.
+                Guides for hubs, Explore, Aura, profiles, and paid access.
               </p>
-              <Link href="/docs">
+              <Link href="/help">
                 <button className="bg-oasis-green-500 text-white font-bold px-6 py-3 rounded-md hover:bg-oasis-green-700 transition-colors"
                   
                 >
                   <span >
-                    View Documentation
+                    Browse Help
                   </span>
                 </button>
               </Link>

@@ -1809,442 +1809,442 @@ module.exports = {
   "docsRedirects": [
     {
       "source": "/docs/active-tool-indicator",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/assistant-and-cloud-data",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/assistant-themes",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/autofill",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/busy-streaming-state",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/chat-history-indexeddb",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/chat-history-popover",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/chat-timeline",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/composer-and-follow-ups",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/composer-microphone",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/connection-settings",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/connection-upgrades",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/containers",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/crash-report",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/daily-token-usage-bar",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/deceptive-content-protection",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/default-protection",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/delete-my-account",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/destructive-action-confirmations",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/dns-over-https",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/docked-sidebar-vs-floating-overlay",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/drm-content",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/earn-chip-hints",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/echo-guard",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/enhanced-tracking-protection",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/extension-recommendations",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/external-feedback-links",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/feature-recommendations",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/firefox-relay-integration",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/first-run-data-policy-url",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/global-privacy-control",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/google-trending-search-firefox-address-bar",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/guest-vs-signed-in",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/header-help-menu",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/hidden-firefox-account-toolbar-button",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/https-only-mode",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/import-from-other-browsers",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/import-opt-out",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/improve-oasis-suggest",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/insert-capabilities-overview",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/kahana-supabase-sign-in",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/lockwise-alerts",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/long-session-memory-railroad",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/media-keyboard-control",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/multi-step-agent-loop",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/new-tab-and-assistant-landing",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/notifications",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/oasis-assistant-feature-callout",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/oasis-assistant-in-the-sidebar",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/oasis-branding",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/oasis-suggest",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/oasis-toolbar-pill",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/oasis-turn-off-secure-dns",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/oasis-welcome-not-firefox-about-welcome",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/on-device-embeddings",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/onboarding-checklist-assistant-panel",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/payment-methods",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/performance",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/personalized-extension-recommendations",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/picture-in-picture",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/plain-english-browser-control",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/post-sign-in-assistant",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/primary-password",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/profile-management",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/quick-actions",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/reduced-motion",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/resource-usage",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/router-and-usage-metadata",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/router-assist-usage",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/split-view-for-assistant-actions",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/spoken-vs-chat-replies-orb",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/sponsor-privacy",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/storage-permissions",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/subscription-refresh",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/technical-and-interaction-data",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/third-party-certificates",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/thumbs-and-structured-feedback",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/total-cookie-protection",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/tracking-protection-settings",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/training",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/training-gallery-and-milestones",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/trending-search-suggestions",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/usage-ping-settings",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/voice-and-sign-in",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/voice-orb-hands-free",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/weather-customization",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/welcome-back-after-sign-out",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/docs/what-can-oasis-do-faq",
-      "destination": "/docs",
+      "destination": "/help",
       "permanent": true
     }
   ]

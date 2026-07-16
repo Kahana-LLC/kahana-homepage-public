@@ -29,7 +29,7 @@ export const FAQ_SECTIONS = [
         id: 'optimize-benefits',
         question: 'How do I optimize the benefits of Kahana?',
         answer:
-          'It depends on whether you are learning or contributing.\n\nFor learners: open Explore, search and filter, open hubs you care about, then save or follow after you sign in. Give Aura carefully (up to 5/day). Step-by-step: /docs/get-started-learners.\n\nFor contributors: share what you know. Don\'t overthink the first publish. Use clear hub names, filenames, tags, and descriptions so people can find your work. List public hubs on Explore. Check analytics for views, saves, Aura, and purchases (/docs/creator-analytics), then keep improving. Turn on paid access later if you want.',
+          'It depends on whether you are learning or contributing.\n\nFor learners: open Explore, search and filter, open hubs you care about, then save or follow after you sign in. Give Aura carefully (up to 5/day). Step-by-step: /help/get-started-learners.\n\nFor contributors: share what you know. Don\'t overthink the first publish. Use clear hub names, filenames, tags, and descriptions so people can find your work. List public hubs on Explore. Check analytics for views, saves, Aura, and purchases (/help/creator-analytics), then keep improving. Turn on paid access later if you want.',
       },
       {
         id: 'what-is-kahana',
@@ -46,7 +46,7 @@ export const FAQ_SECTIONS = [
         id: 'where-start',
         question: 'Where do I start?',
         answer:
-          'Want to learn? Open Explore at app.kahana.io/explore, or follow /docs/get-started-learners.\n\nWant to share? Sign up and follow /docs/get-started-creators: create a hub, add content, then list on Explore when ready. You can turn on paid access later if you want.',
+          'Want to learn? Open Explore at app.kahana.io/explore, or follow /help/get-started-learners.\n\nWant to share? Sign up and follow /help/get-started-creators: create a hub, add content, then list on Explore when ready. You can turn on paid access later if you want.',
       },
       {
         id: 'about-info',
@@ -82,13 +82,13 @@ export const FAQ_SECTIONS = [
         id: 'how-sell',
         question: 'How do I turn on paid access for a hub?',
         answer:
-          'Contribute a hub and add your content. Make it public and list it on Explore when it is ready.\n\nTo earn from access, connect Stripe, turn on monetization, and set a one-time or monthly price. Step-by-step: /docs/turn-on-paid-access. Then share your link, or let people find you on Explore.',
+          'Contribute a hub and add your content. Make it public and list it on Explore when it is ready.\n\nTo earn from access, connect Stripe, turn on monetization, and set a one-time or monthly price. Step-by-step: /help/turn-on-paid-access. Then share your link, or let people find you on Explore.',
       },
       {
         id: 'creator-cost',
         question: 'How much does Kahana cost for creators?',
         answer:
-          'Free is $0. You get up to 3 hubs, unlimited collaborators, and files up to about 5 MB. You can still charge for access if you want.\n\nGrowth is $9.99 a month or $99.99 a year. You get unlimited hubs and uploads, live chat support, 100 GB of storage, and files up to 5 GB.\n\nEnterprise is custom, with white-glove support and flexible limits if you need them.\n\nWhen to upgrade (vs stay Free): /docs/when-to-upgrade. Full table: /pricing. Open Billing in the app for the latest plan details.',
+          'Free is $0. You get up to 3 hubs, unlimited collaborators, and files up to about 5 MB. You can still charge for access if you want.\n\nGrowth is $9.99 a month or $99.99 a year. You get unlimited hubs and uploads, live chat support, 100 GB of storage, and files up to 5 GB.\n\nEnterprise is custom, with white-glove support and flexible limits if you need them.\n\nWhen to upgrade (vs stay Free): /help/when-to-upgrade. Full table: /pricing. Open Billing in the app for the latest plan details.',
       },
       {
         id: 'platform-fee',
@@ -112,25 +112,25 @@ export const FAQ_SECTIONS = [
         id: 'collaborate',
         question: 'Can I collaborate with others on a hub?',
         answer:
-          'Yes. Invite collaborators and give them roles (OWNER, ADMIN, WRITE, COMMENT, READ). Unlimited collaborators are included on Free and Growth. Collaborators are not the same as paywall buyers. How-to: /docs/collaborators-and-roles.',
+          'Yes. Invite collaborators and give them roles (OWNER, ADMIN, WRITE, COMMENT, READ). Unlimited collaborators are included on Free and Growth. Collaborators are not the same as paywall buyers. How-to: /help/collaborators-and-roles.',
       },
       {
         id: 'get-discovered',
         question: 'How do I get discovered?',
         answer:
-          'List a public hub on Explore. Keep your creator profile up to date. Share your profile or hub link.\n\nProfile setup: /docs/profile-and-sharing. You can also earn Aura when people endorse your hub.',
+          'List a public hub on Explore. Keep your creator profile up to date. Share your profile or hub link.\n\nProfile setup: /help/profile-and-sharing. You can also earn Aura when people endorse your hub.',
       },
       {
         id: 'verified-badge',
         question: 'What is a verified creator badge?',
         answer:
-          'Creators with Stripe Connect charge-ready (charges_enabled) may show a verified badge on their profile or paywall. Connect setup may include identity checks Stripe requires.\n\nIt helps buyers trust who you are. It does not boost Explore ranking. How-to: /docs/profile-and-sharing and /docs/turn-on-paid-access.',
+          'Creators with Stripe Connect charge-ready (charges_enabled) may show a verified badge on their profile or paywall. Connect setup may include identity checks Stripe requires.\n\nIt helps buyers trust who you are. It does not boost Explore ranking. How-to: /help/profile-and-sharing and /help/turn-on-paid-access.',
       },
       {
         id: 'adult-content',
         question: 'Is adult content allowed?',
         answer:
-          'Yes, you can flag a hub as adult content. Those hubs are filtered on Explore by default and are not SEO-indexed like general listed hubs.\n\nBuyers must be logged in and confirm they are 18+ with their date of birth before they can open them. How-to: /docs/adult-content-and-age-verification.',
+          'Yes, you can flag a hub as adult content. Those hubs are filtered on Explore by default and are not SEO-indexed like general listed hubs.\n\nBuyers must be logged in and confirm they are 18+ with their date of birth before they can open them. How-to: /help/adult-content-and-age-verification.',
       },
       {
         id: 'fork-hub',
@@ -148,7 +148,7 @@ export const FAQ_SECTIONS = [
         id: 'how-buy',
         question: 'How do I buy a digital product on Kahana?',
         answer:
-          'Browse Explore or a creator’s profile, open a hub, and check out on the paywall.\n\nWhen payment goes through, the hub unlocks in your account. Step-by-step: /docs/buying-and-access.',
+          'Browse Explore or a creator’s profile, open a hub, and check out on the paywall.\n\nWhen payment goes through, the hub unlocks in your account. Step-by-step: /help/buying-and-access.',
       },
       {
         id: 'browse-without-account',
@@ -160,13 +160,13 @@ export const FAQ_SECTIONS = [
         id: 'after-pay',
         question: 'What do I get after I pay?',
         answer:
-          'You get access to that hub’s content in your Kahana account.\n\nOne-time purchases usually keep access going. Monthly products need an active subscription. Open the same hub URL while logged into the account that paid. Details: /docs/buying-and-access.',
+          'You get access to that hub’s content in your Kahana account.\n\nOne-time purchases usually keep access going. Monthly products need an active subscription. Open the same hub URL while logged into the account that paid. Details: /help/buying-and-access.',
       },
       {
         id: 'refunds',
         question: 'How do refunds work?',
         answer:
-          'Payments and disputes follow Stripe and Kahana’s terms / published refund policy.\n\nFor help, use in-app Support (/support) or the channels listed in product settings. Buyer guide: /docs/buying-and-access.',
+          'Payments and disputes follow Stripe and Kahana’s terms / published refund policy.\n\nFor help, use in-app Support (/support) or the channels listed in product settings. Buyer guide: /help/buying-and-access.',
       },
       {
         id: 'payment-secure',
@@ -184,7 +184,7 @@ export const FAQ_SECTIONS = [
         id: 'aura-pay',
         question: 'What is Aura? Do I pay for it?',
         answer:
-          'Aura is limited. You can give up to 5 Aura per day. Your Aura renews daily: at midnight UTC you get 5 Aura again.\n\nAura is not money and not crypto. It is a way to endorse hubs you value, see who gave Aura, and help the best work rise. You cannot give Aura to your own hubs. How-to: /docs/how-aura-works. Longer story: about.kahana.io/aura.',
+          'Aura is limited. You can give up to 5 Aura per day. Your Aura renews daily: at midnight UTC you get 5 Aura again.\n\nAura is not money and not crypto. It is a way to endorse hubs you value, see who gave Aura, and help the best work rise. You cannot give Aura to your own hubs. How-to: /help/how-aura-works. Longer story: about.kahana.io/aura.',
       },
     ],
   },
@@ -196,7 +196,7 @@ export const FAQ_SECTIONS = [
         id: 'what-is-aura',
         question: 'What is Aura?',
         answer:
-          'Aura is how Kahana promotes quality. You automatically have up to 5 Aura to give each day. Give it all to one hub, or split it across a few.\n\nAura is not money and not crypto. You can see who gave it. Because your Aura is scarce, you give it carefully. That helps the best work rise.\n\nYou cannot give Aura to your own hubs. Rules and steps: /docs/how-aura-works. Philosophy: about.kahana.io/aura.',
+          'Aura is how Kahana promotes quality. You automatically have up to 5 Aura to give each day. Give it all to one hub, or split it across a few.\n\nAura is not money and not crypto. You can see who gave it. Because your Aura is scarce, you give it carefully. That helps the best work rise.\n\nYou cannot give Aura to your own hubs. Rules and steps: /help/how-aura-works. Philosophy: about.kahana.io/aura.',
       },
       {
         id: 'aura-vs-reviews',
@@ -208,7 +208,7 @@ export const FAQ_SECTIONS = [
         id: 'aura-budget',
         question: 'How much Aura can I give?',
         answer:
-          'You automatically have 5 Aura to give each day.\n\nGive all of your Aura to one hub, or split it across a few. At midnight UTC you get 5 Aura again, even if you used all 5 already. You cannot give Aura to your own hubs. Full how-to: /docs/how-aura-works.',
+          'You automatically have 5 Aura to give each day.\n\nGive all of your Aura to one hub, or split it across a few. At midnight UTC you get 5 Aura again, even if you used all 5 already. You cannot give Aura to your own hubs. Full how-to: /help/how-aura-works.',
       },
       {
         id: 'aura-given-stays',
@@ -268,7 +268,7 @@ export const FAQ_SECTIONS = [
         id: 'hub-not-on-explore',
         question: 'Why isn’t my hub on Explore?',
         answer:
-          'Often the hub is not public yet, not listed yet, missing listing details (title, cover, description, category, profile pic, adult yes/no), or filtered by adult settings. Sometimes there is a short delay while it indexes.\n\nSelf-check the readiness table: /docs/list-hub-on-explore.',
+          'Often the hub is not public yet, not listed yet, missing listing details (title, cover, description, category, profile pic, adult yes/no), or filtered by adult settings. Sometimes there is a short delay while it indexes.\n\nSelf-check the readiness table: /help/list-hub-on-explore.',
       },
     ],
   },
@@ -298,7 +298,7 @@ export const FAQ_SECTIONS = [
         id: 'age-verification',
         question: 'How does age verification work for adult hubs?',
         answer:
-          'You must be logged in and enter your date of birth. If you are 18+, verification is recorded.\n\nThere is no anonymous “I’m 18” unlock. Details: /docs/adult-content-and-age-verification.',
+          'You must be logged in and enter your date of birth. If you are 18+, verification is recorded.\n\nThere is no anonymous “I’m 18” unlock. Details: /help/adult-content-and-age-verification.',
       },
     ],
   },
@@ -310,7 +310,7 @@ export const FAQ_SECTIONS = [
         id: 'upgrade-growth',
         question: 'When should I upgrade to Growth?',
         answer:
-          'Upgrade when you need a 4th hub, Free upload limits feel tight, you need larger files, or you want live chat support.\n\nYou do not need Growth to list on Explore or sell with Stripe. Growth does not remove the 5% marketplace fee.\n\nHow-to: /docs/when-to-upgrade. Compare plans on /pricing or Billing in the app.',
+          'Upgrade when you need a 4th hub, Free upload limits feel tight, you need larger files, or you want live chat support.\n\nYou do not need Growth to list on Explore or sell with Stripe. Growth does not remove the 5% marketplace fee.\n\nHow-to: /help/when-to-upgrade. Compare plans on /pricing or Billing in the app.',
       },
       {
         id: 'cancel-growth',
@@ -322,7 +322,7 @@ export const FAQ_SECTIONS = [
         id: 'free-still-fee',
         question: 'Do Free creators still pay the 5% marketplace fee?',
         answer:
-          'Yes. The 5% fee applies to hub sales on Free and Growth.\n\nGrowth gives you higher limits and support. It does not remove the marketplace fee. When to upgrade: /docs/when-to-upgrade.',
+          'Yes. The 5% fee applies to hub sales on Free and Growth.\n\nGrowth gives you higher limits and support. It does not remove the marketplace fee. When to upgrade: /help/when-to-upgrade.',
       },
     ],
   },

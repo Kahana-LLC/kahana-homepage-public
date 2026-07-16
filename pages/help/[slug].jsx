@@ -16,7 +16,7 @@ import { docsConfig } from '../../config/docsConfig';
 import fs from 'fs';
 import path from 'path';
 
-// Generate static paths for documentation
+// Generate static paths for help articles
 export async function getStaticPaths() {
   const docsDir = path.join(process.cwd(), "data/docs");
   const files = fs.readdirSync(docsDir);
@@ -88,7 +88,7 @@ function formatDate(dateString) {
   return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
 }
 
-export default function DocPage({ doc, relatedDocs }) {
+export default function HelpArticlePage({ doc, relatedDocs }) {
   const router = useRouter();
   const [readingTime, setReadingTime] = useState(5);
 
@@ -100,7 +100,7 @@ export default function DocPage({ doc, relatedDocs }) {
   }, [doc]);
 
   if (!doc) {
-    return <div>Document not found</div>;
+    return <div>Article not found</div>;
   }
 
   // Get authors for this document, default to Adam Kershner if no authors specified
@@ -109,9 +109,9 @@ export default function DocPage({ doc, relatedDocs }) {
   return (
     <>
       <SEO
-        title={`${doc.title} | Documentation`}
+        title={`${doc.title} | Help`}
         description={doc.description}
-        url={`https://kahana.io/docs/${doc.slug}`}
+        url={`https://help.kahana.io/help/${doc.slug}`}
         type="article"
       />
 
@@ -124,8 +124,8 @@ export default function DocPage({ doc, relatedDocs }) {
               <Breadcrumbs 
                 items={[
                   { name: "Home", url: "/" },
-                  { name: "Documentation", url: "/docs" },
-                  { name: doc.title, url: `/docs/${doc.slug}` },
+                  { name: "Help", url: "/help" },
+                  { name: doc.title, url: `/help/${doc.slug}` },
                 ]} 
               />
             </nav>
@@ -170,15 +170,15 @@ export default function DocPage({ doc, relatedDocs }) {
             />
           )}
 
-          {/* Related Docs */}
+          {/* Related Help */}
           {relatedDocs.length > 0 && (
             <div className="mt-16 pt-8 border-t border-oasis-green-600/30">
-              <h2 className="text-2xl font-bold text-oasis-green-800 mb-6">Related Documentation</h2>
+              <h2 className="text-2xl font-bold text-oasis-green-800 mb-6">Related Help</h2>
               <div className="grid gap-6 md:grid-cols-3">
                 {relatedDocs.map((relatedDoc) => (
                   <Link
                     key={relatedDoc.slug}
-                    href={`/docs/${relatedDoc.slug}`}
+                    href={`/help/${relatedDoc.slug}`}
                     className="block group doc-card-link no-underline"
                   >
                     <div className="bg-white rounded-xl shadow-lg hover:shadow-xl p-6 transition-all duration-200">
@@ -207,4 +207,4 @@ export default function DocPage({ doc, relatedDocs }) {
       </div>
     </>
   );
-} 
+}

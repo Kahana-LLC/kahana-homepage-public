@@ -14,17 +14,16 @@ export default function FeatureRelatedDocsSection({ docs }) {
           id="feature-related-docs-heading"
           className="text-center text-2xl font-bold tracking-tight text-oasis-green-900 md:text-3xl"
         >
-          In the documentation
+          In the Help center
         </h2>
         <p className="mx-auto mt-3 max-w-2xl text-center text-base text-oasis-green-800/90">
-          Short reference articles that mirror how these capabilities show up in Oasis—timelines, prefs, and product
-          behavior—not marketing fluff.
+          Short reference articles that mirror how these capabilities work in Kahana—not marketing fluff.
         </p>
         <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {docs.map((doc) => (
             <li key={doc.slug}>
               <Link
-                href={`/docs/${doc.slug}`}
+                href={`/help/${doc.slug}`}
                 className="group flex h-full flex-col rounded-xl border border-oasis-green-800/15 bg-white p-5 shadow-sm transition-shadow hover:shadow-md no-underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-link"
               >
                 <span className="text-xs font-semibold uppercase tracking-wide text-oasis-green-600 capitalize">
@@ -43,10 +42,10 @@ export default function FeatureRelatedDocsSection({ docs }) {
         </ul>
         <p className="mt-8 text-center text-sm text-oasis-green-800/85">
           <Link
-            href="/docs"
+            href="/help"
             className="font-semibold text-brand-link no-underline hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-link"
           >
-            Browse all documentation
+            Browse all Help
           </Link>
         </p>
       </div>

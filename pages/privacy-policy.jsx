@@ -77,16 +77,16 @@ export default function PrivacyPolicy() {
                 <li>Location information. Your location information is received by us when you use our Services. For instance, we may determine your location by analyzing your IP address.</li>
                 <li>Device information. Information about the device and software you utilize to access our Services is received by us, which encompasses IP address, device type, device identifiers, web browser type and version, and operating system version.</li>
                 <li>Usage information. Information about your interactions with our Services is automatically received by us. This encompasses usage data, visit timestamps, feature interactions, and the pages or other content you view. Additionally, it may include larger chats and files that you upload, as well as the frequency and type of AI tasks performed.</li>
-                <li>Cookies and other tracking technologies. Information about your activities on our Services is collected by us and our third-party partners through cookies or other tracking technologies. These same technologies may also be used by our third-party partners, including analytics, advertising, and security partners, to gather information about your online activities across time and different services. For detailed information about our use of cookies and tracking technologies, including how to manage your preferences, please see Section 1.4 below.</li>
+                <li>Cookies and other tracking technologies. Information about your activities on our Services may be collected by us and our analytics providers through cookies or similar technologies. For detailed information about our use of cookies and tracking technologies, including how to manage your preferences, please see Section 1.4 below.</li>
               </ul>
 
-              <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">Cookies, Pixels, and Similar Technologies</h3>
+              <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">Cookies and Similar Technologies</h3>
               <p className="text-gray-700 leading-relaxed mb-4">
-                We use cookies, pixels, tags, beacons, and similar tracking technologies (collectively, "Tracking Technologies") to collect and store information about your interactions with our Services. These technologies help us understand how you use our Services, improve your experience, and provide personalized content and advertisements.
+                We use cookies and similar technologies (collectively, &quot;Tracking Technologies&quot;) to operate the Service, remember preferences, and understand how you use our websites. We do not use advertising cookies, retargeting pixels, or third-party ad networks on this site.
               </p>
               
               <p className="text-gray-700 leading-relaxed mb-4">
-                <strong>What are Tracking Technologies?</strong> Tracking Technologies are small text files, pixels, scripts, or other data files that are placed on your device when you visit our website. They enable us to recognize your device and remember information about your visit, such as your preferences and actions.
+                <strong>What are Tracking Technologies?</strong> Tracking Technologies are small text files, scripts, or other data stored on your device when you visit our website. They help us recognize your device and remember information about your visit, such as your preferences and actions.
               </p>
 
               <p className="text-gray-700 leading-relaxed mb-4">
@@ -100,44 +100,31 @@ export default function PrivacyPolicy() {
                     These cookies are essential for the website to function properly. They enable core functionality such as security, network management, and accessibility. These cookies cannot be disabled as they are necessary for the basic operation of our Services.
                   </p>
                   <p className="text-sm text-gray-600">
-                    <strong>Examples:</strong> Session management, security features, load balancing
+                    <strong>Examples:</strong> Session management, security features, load balancing. Firebase may also support account authentication and related infrastructure needed to run the Service.
                   </p>
                 </div>
 
                 <div>
                   <h4 className="text-xl font-semibold text-[#313A00] mb-2">Analytics</h4>
                   <p className="text-gray-700 leading-relaxed mb-2">
-                    These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously. This information helps us improve our website and user experience.
+                    These cookies and related technologies help us understand how visitors interact with our website by collecting and reporting information. This information helps us improve our website and user experience.
                   </p>
                   <p className="text-sm text-gray-600 mb-2">
-                    <strong>Tools we use:</strong> Google Analytics, Google Tag Manager, Mixpanel
+                    <strong>Tools we use:</strong> Google Analytics, Mixpanel, and Firebase
                   </p>
                   <p className="text-sm text-gray-600">
-                    <strong>Data collected:</strong> Page views, user interactions, session duration, bounce rates, device and browser information, conversion events, funnel analytics
-                  </p>
-                </div>
-
-                <div>
-                  <h4 className="text-xl font-semibold text-[#313A00] mb-2">Advertising</h4>
-                  <p className="text-gray-700 leading-relaxed mb-2">
-                    These cookies are used to deliver advertisements that are more relevant to you and your interests. They may also be used to limit the number of times you see an advertisement and measure the effectiveness of advertising campaigns.
-                  </p>
-                  <p className="text-sm text-gray-600 mb-2">
-                    <strong>Tools we use:</strong> Google Ads, retargeting pixels
-                  </p>
-                  <p className="text-sm text-gray-600">
-                    <strong>Data collected:</strong> Ad interactions, conversion tracking, audience segmentation
+                    <strong>Data collected:</strong> Page views, user interactions, session duration, bounce rates, device and browser information, conversion events, and product usage analytics
                   </p>
                 </div>
               </div>
 
               <p className="text-gray-700 leading-relaxed mb-4">
-                <strong>Consent and Your Choices:</strong> Non-essential tracking technologies (analytics and advertising) are only activated after you provide explicit consent via our consent banner. You can withdraw or modify your consent at any time by clicking the "Cookie Settings" link in our website footer or by managing your browser settings.
+                <strong>Consent and Your Choices:</strong> Non-essential analytics technologies are only activated after you provide consent via our consent banner or Cookie Settings, where required. You can withdraw or modify your consent at any time by clicking the &quot;Cookie Settings&quot; link in our website footer or by managing your browser settings.
               </p>
 
               <p className="text-gray-700 leading-relaxed mb-6">
-                <strong>Third-Party Sharing:</strong> When you consent to non-essential tracking technologies, we may share information collected through these technologies with third-party service providers, including Google (for Analytics and Ads) and Mixpanel. These third parties may use this information for their own purposes in accordance with their privacy policies. Mixpanel is used for product and website analytics and only processes analytics data after you have provided consent for analytics cookies where consent is required. For more information about Mixpanel's data practices, please visit{' '}
-                <a href="https://mixpanel.com/legal/privacy-policy/" target="_blank" rel="noopener noreferrer" className="text-[#4A6200] no-underline hover:no-underline font-semibold">Mixpanel's Privacy Policy</a>.
+                <strong>Third-Party Sharing:</strong> When you consent to analytics, we may share information collected through these technologies with Google (for Google Analytics and Firebase) and Mixpanel. These providers process data in accordance with their privacy policies. Mixpanel is used for product and website analytics and only processes analytics data after you have provided consent for analytics where consent is required. For more information about Mixpanel&apos;s data practices, please visit{' '}
+                <a href="https://mixpanel.com/legal/privacy-policy/" target="_blank" rel="noopener noreferrer" className="text-[#4A6200] no-underline hover:no-underline font-semibold">Mixpanel&apos;s Privacy Policy</a>.
               </p>
 
               <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">Information collected from other sources</h3>
@@ -203,8 +190,9 @@ export default function PrivacyPolicy() {
               </p>
               <ul className="list-disc list-inside text-gray-700 space-y-3 mb-6 ml-4">
                 <li><strong>Firebase (Google):</strong> backend database, authentication, and related infrastructure used to store and operate account and platform data.</li>
-                <li><strong>Stripe:</strong> payment processing for paid features, subscriptions, and purchases.</li>
+                <li><strong>Google Analytics:</strong> website analytics (where analytics consent applies).</li>
                 <li><strong>Mixpanel:</strong> product and website analytics (where analytics consent applies).</li>
+                <li><strong>Stripe:</strong> payment processing for paid features, subscriptions, and purchases.</li>
                 <li><strong>GitHub:</strong> software development, source control, issue tracking, and release/distribution infrastructure. GitHub is not used to sell your Personal Data or build advertising profiles about you.</li>
                 <li>Other hosting, security, and operational providers as reasonably necessary to run and protect the Service.</li>
               </ul>
@@ -316,7 +304,7 @@ export default function PrivacyPolicy() {
                 You have control over how we use cookies and similar tracking technologies on our website. You can manage your preferences in the following ways:
               </p>
               <ul className="list-disc list-inside text-gray-700 space-y-2 mb-4 ml-4">
-                <li><strong>Cookie Settings:</strong> Click the "Cookie Settings" link in our website footer to access our cookie preferences center, where you can enable or disable specific categories of cookies (analytics and advertising).</li>
+                <li><strong>Cookie Settings:</strong> Click the &quot;Cookie Settings&quot; link in our website footer to access our cookie preferences center, where you can enable or disable analytics cookies. We do not use an advertising cookie category.</li>
                 <li><strong>Browser Settings:</strong> Most web browsers allow you to control cookies through their settings preferences. However, limiting cookies may impact your experience on our website.</li>
                 <li><strong>Opt-Out of Sale/Sharing:</strong> If you are a California resident, you can opt-out of the sale or sharing of your personal information by clicking the "Do Not Sell or Share My Personal Information" link in our footer.</li>
                 <li><strong>Withdraw Consent:</strong> You can withdraw your consent for non-essential tracking technologies at any time by accessing the Cookie Settings and disabling the relevant categories.</li>
@@ -471,6 +459,12 @@ export default function PrivacyPolicy() {
 
               <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">Recent Updates</h3>
               <div className="bg-[#F3F8E4] border-l-4 border-oasis-green-600 p-4 mb-6">
+                <p className="text-sm font-semibold text-[#313A00] mb-2">July 16, 2026</p>
+                <ul className="list-disc list-inside text-gray-700 space-y-2 text-sm ml-4">
+                  <li><strong>Cookies &amp; analytics:</strong> Removed advertising cookies, Google Ads, and retargeting pixels. Documented analytics tools as Google Analytics, Mixpanel, and Firebase. Cookie Settings and Accept All no longer enable an advertising category.</li>
+                </ul>
+              </div>
+              <div className="bg-[#F3F8E4] border-l-4 border-oasis-green-600 p-4 mb-6">
                 <p className="text-sm font-semibold text-[#313A00] mb-2">July 14, 2026</p>
                 <ul className="list-disc list-inside text-gray-700 space-y-2 text-sm ml-4">
                   <li><strong>Vendor accuracy:</strong> Removed PostHog. Clarified that we use Firebase for backend data infrastructure, Mixpanel for analytics, GitHub for development and release infrastructure, and Stripe for payments. Reaffirmed that we do not sell Personal Data.</li>
@@ -502,7 +496,7 @@ export default function PrivacyPolicy() {
                   If you are not satisfied with our response to your complaint, or if you believe that our processing of your Personal Data does not comply with applicable data protection laws, you have the right to lodge a complaint with your local data protection supervisory authority. However, we would appreciate the opportunity to address your concerns directly before you contact a supervisory authority, and we encourage you to reach out to us first so that we may attempt to resolve the matter.
                 </p>
                 <p className="mt-4">
-                  This Privacy Policy is effective as of July 14, 2026. Last updated: July 14, 2026.
+                  This Privacy Policy is effective as of July 14, 2026. Last updated: July 16, 2026.
                 </p>
               </div>
             </section>

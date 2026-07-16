@@ -454,9 +454,61 @@ const nextConfig = {
       },
       // Oasis marketing pages archived (pricing + installations kept live)
       ...archivedOasisPageRedirects,
-      // Oasis-era blog/docs archived → indexes
+      // Oasis-era blog/docs archived → indexes (specific /docs/:slug before catch-all)
       ...archivedBlogRedirects,
       ...archivedDocsRedirects,
+      // Docs surface renamed to Help
+      {
+        source: '/docs',
+        destination: '/help',
+        permanent: true,
+      },
+      {
+        source: '/docs/:path*',
+        destination: '/help/:path*',
+        permanent: true,
+      },
+      // Features retired → Help topic articles
+      {
+        source: '/features/explore',
+        destination: '/help/explore',
+        permanent: true,
+      },
+      {
+        source: '/features/hubs',
+        destination: '/help/hubs',
+        permanent: true,
+      },
+      {
+        source: '/features/profiles',
+        destination: '/help/profiles',
+        permanent: true,
+      },
+      {
+        source: '/features/aura',
+        destination: '/help/how-aura-works',
+        permanent: true,
+      },
+      {
+        source: '/features/earning',
+        destination: '/help/earning',
+        permanent: true,
+      },
+      {
+        source: '/features/trust',
+        destination: '/help/trust',
+        permanent: true,
+      },
+      {
+        source: '/features',
+        destination: '/help',
+        permanent: true,
+      },
+      {
+        source: '/features/:path*',
+        destination: '/help',
+        permanent: true,
+      },
     ];
   },
 

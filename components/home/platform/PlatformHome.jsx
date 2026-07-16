@@ -333,10 +333,10 @@ export default function PlatformHome() {
           </ul>
           <p className="mt-8 text-center">
             <Link
-              href="/features"
+              href="/help"
               className="text-base font-medium text-[#617500] no-underline underline-offset-4 hover:underline"
             >
-              See features
+              Browse Help
             </Link>
           </p>
         </FadeInSection>

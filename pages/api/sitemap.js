@@ -29,13 +29,13 @@ function generateSiteMap() {
     ['/contact', 'monthly', '0.8'],
     ['/security', 'monthly', '0.7'],
     ['/pricing', 'weekly', '0.8'],
-    ['/features', 'weekly', '0.9'],
-    ['/features/explore', 'weekly', '0.8'],
-    ['/features/hubs', 'weekly', '0.8'],
-    ['/features/profiles', 'weekly', '0.8'],
-    ['/features/aura', 'weekly', '0.8'],
-    ['/features/earning', 'weekly', '0.8'],
-    ['/features/trust', 'weekly', '0.8'],
+    ['/help', 'weekly', '0.9'],
+    ['/help/explore', 'weekly', '0.8'],
+    ['/help/hubs', 'weekly', '0.8'],
+    ['/help/profiles', 'weekly', '0.8'],
+    ['/help/how-aura-works', 'weekly', '0.8'],
+    ['/help/earning', 'weekly', '0.8'],
+    ['/help/trust', 'weekly', '0.8'],
     ['/aura', 'weekly', '0.7'],
     ['/press-kit', 'monthly', '0.6'],
     ['/privacy-policy', 'monthly', '0.5'],
@@ -57,7 +57,7 @@ function generateSiteMap() {
   );
 
   const helpPages = [
-    ['/docs', 'weekly', '0.9'],
+    ['/help', 'weekly', '0.9'],
     ['/support', 'weekly', '0.8'],
     ['/community', 'weekly', '0.7'],
   ].map(([path, freq, pri]) =>

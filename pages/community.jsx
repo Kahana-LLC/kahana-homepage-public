@@ -96,7 +96,7 @@ function ConnectCard() {
         </li>
         <li>
           <Link
-            href="/docs"
+            href="/help"
             className="flex w-full items-center justify-center rounded-xl border-2 border-[#4A6200] px-4 py-3 text-sm font-semibold text-[#4A6200] no-underline hover:bg-oasis-green-50"
           >
             Browse documentation
@@ -204,7 +204,7 @@ export default function Community() {
                             <svg className="h-6 w-6 text-brand-link mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
-                            <span>Documentation for features and security</span>
+                            <span>Help for features and security</span>
                           </li>
                           <li className="flex items-start">
                             <svg className="h-6 w-6 text-brand-link mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">

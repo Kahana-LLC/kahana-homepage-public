@@ -273,7 +273,7 @@ export const ConsentProvider = ({ children }) => {
     saveConsent({
       strictlyNecessary: true,
       analytics: true,
-      advertising: true,
+      advertising: false,
     });
   }, [saveConsent]);
 

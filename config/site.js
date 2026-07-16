@@ -30,7 +30,7 @@ function absoluteCorporateUrl(path = '/') {
 
   const newsroom = ['/blog', '/press', '/press-releases', '/events', '/white-papers'];
   const careers = ['/careers', '/learning-internship', '/right-to-work'];
-  const help = ['/docs', '/support', '/community', '/community-guidelines', '/community-faq'];
+  const help = ['/help', '/docs', '/support', '/community', '/community-guidelines', '/community-faq'];
   const about = [
     '/about',
     '/team',
@@ -40,8 +40,7 @@ function absoluteCorporateUrl(path = '/') {
     '/security-guide',
     '/press-kit',
     '/pricing',
-    '/features',
-    '/faq',
+        '/faq',
     '/aura',
     '/testimonials',
     '/privacy-policy',

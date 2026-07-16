@@ -1,31 +1,37 @@
 /**
- * Maps /features/:slug pages to related /docs/:slug articles (curated).
+ * Maps legacy feature keys to related help article slugs.
+ * Live /features pages were retired; kept for archived FeatureDeepDiveShell props.
  */
 export const FEATURE_RELATED_DOC_SLUGS = {
   explore: [
+    'explore',
     'get-started-learners',
-    'buying-and-access',
     'list-hub-on-explore',
-    'get-started-creators',
     'how-aura-works',
   ],
-  hubs: ['get-started-creators', 'collaborators-and-roles', 'list-hub-on-explore', 'creator-analytics'],
-  profiles: ['profile-and-sharing', 'get-started-creators', 'list-hub-on-explore', 'creator-analytics'],
+  hubs: [
+    'hubs',
+    'get-started-creators',
+    'collaborators-and-roles',
+    'list-hub-on-explore',
+    'creator-analytics',
+  ],
+  profiles: [
+    'profiles',
+    'profile-and-sharing',
+    'list-hub-on-explore',
+  ],
   earning: [
+    'earning',
     'turn-on-paid-access',
     'buying-and-access',
     'creator-analytics',
     'when-to-upgrade',
-    'profile-and-sharing',
-    'get-started-creators',
-    'list-hub-on-explore',
   ],
-  aura: ['how-aura-works', 'creator-analytics', 'buying-and-access', 'get-started-learners'],
+  aura: ['how-aura-works', 'get-started-learners', 'creator-analytics'],
   trust: [
+    'trust',
     'adult-content-and-age-verification',
-    'list-hub-on-explore',
-    'buying-and-access',
     'profile-and-sharing',
-    'get-started-learners',
   ],
 };

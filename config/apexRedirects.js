@@ -47,6 +47,7 @@ const PATH_PRESERVE_PREFIXES = [
   { prefix: '/about', origin: ABOUT_ORIGIN },
   { prefix: '/team', origin: ABOUT_ORIGIN },
   { prefix: '/blog', origin: NEWSROOM_ORIGIN },
+  { prefix: '/help', origin: HELP_ORIGIN },
   { prefix: '/docs', origin: HELP_ORIGIN },
 ];
 
@@ -118,15 +119,15 @@ export function resolveApexRedirect(pathname) {
     return null;
   }
 
-  // Kahana Features (/features, /features/explore, …) → about, path-preserved.
-  // Oasis feature deep-dives → about home until those surfaces move.
+  // Legacy /features URLs → help host (Next redirects path to /help topics).
+  // Oasis feature deep-dives → about home.
   if (path === '/features' || path.startsWith('/features/')) {
     const isOasisFeature =
       path.startsWith('/features/oasis') || path === '/features/user-analytics';
     if (isOasisFeature) {
       return { origin: ABOUT_ORIGIN, pathname: '/' };
     }
-    return { origin: ABOUT_ORIGIN, pathname: path };
+    return { origin: HELP_ORIGIN, pathname: path };
   }
 
   // Longest prefix among path-preserving rules

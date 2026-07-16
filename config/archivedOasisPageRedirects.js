@@ -22,57 +22,57 @@ module.exports = {
     },
     {
       "source": "/features/oasis-amplifier",
-      "destination": "/features",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/features/oasis-assistant",
-      "destination": "/features",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/features/oasis-confirmations",
-      "destination": "/features",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/features/oasis-enterprise-external-access",
-      "destination": "/features",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/features/oasis-enterprise-faster-paths",
-      "destination": "/features",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/features/oasis-enterprise-governance",
-      "destination": "/features",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/features/oasis-enterprise-identity-dlp",
-      "destination": "/features",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/features/oasis-import",
-      "destination": "/features",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/features/oasis-onboarding",
-      "destination": "/features",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/features/oasis-voice",
-      "destination": "/features",
+      "destination": "/help",
       "permanent": true
     },
     {
       "source": "/features/user-analytics",
-      "destination": "/features",
+      "destination": "/help",
       "permanent": true
     },
     {

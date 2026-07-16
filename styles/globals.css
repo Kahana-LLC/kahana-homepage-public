@@ -1582,18 +1582,22 @@ footer button.text-sm.no-underline:hover {
 
 /* Related Resources cards - remove underlines */
 a[href="/blog"],
+a[href="/help"],
 a[href="/docs"],
 a[href="/resources"] {
   text-decoration: none !important;
 }
 
 a[href="/blog"] *,
+a[href="/help"] *,
 a[href="/docs"] *,
 a[href="/resources"] *,
 a[href="/blog"]:visited *,
+a[href="/help"]:visited *,
 a[href="/docs"]:visited *,
 a[href="/resources"]:visited *,
 a[href="/blog"]:hover *,
+a[href="/help"]:hover *,
 a[href="/docs"]:hover *,
 a[href="/resources"]:hover * {
   text-decoration: none !important;

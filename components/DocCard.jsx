@@ -22,7 +22,7 @@ export default function DocCard({ doc }) {
 
   return (
     <article className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-200 overflow-hidden flex flex-col h-full">
-      <Link href={`/docs/${doc.slug}`} className="flex flex-col h-full doc-card-link no-underline">
+      <Link href={`/help/${doc.slug}`} className="flex flex-col h-full doc-card-link no-underline">
         <div className="p-6">
           <div className="flex items-center justify-between mb-4">
             <span className="text-sm font-medium text-oasis-green-600 capitalize">

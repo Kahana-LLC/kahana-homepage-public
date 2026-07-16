@@ -31,7 +31,7 @@ async function getLastModifiedDate(filePath) {
 async function getDocsForSitemap() {
   const docs = await getAllDocs();
   return docs.map((doc) => ({
-    url: absoluteCorporateUrl(`/docs/${doc.slug}`),
+    url: absoluteCorporateUrl(`/help/${doc.slug}`),
     lastmod: doc.date || new Date().toISOString(),
     changefreq: "weekly",
     priority: "0.8",
@@ -125,7 +125,7 @@ function determineChangeFrequency(route) {
     "/blog": "daily",
     "/products": "weekly",
     "/solutions": "weekly",
-    "/docs": "weekly",
+    "/help": "weekly",
     "/about": "monthly",
     "/contact": "monthly",
     "/privacy-policy": "monthly",
@@ -148,7 +148,7 @@ function determinePriority(route) {
     "/solutions": "1.0",
     "/schedule-demo": "1.0",
     "/blog": "0.9",
-    "/docs": "0.9",
+    "/help": "0.9",
     "/about": "0.8",
     "/contact": "0.8",
     "/support": "0.8",

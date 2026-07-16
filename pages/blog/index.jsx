@@ -207,8 +207,8 @@ export default function BlogIndex({ posts = [] }) {
             </h3>
             <p className="text-oasis-green-800 max-w-xl mx-auto">
               We’re starting fresh with blog posts about the Kahana platform. Meanwhile, explore{' '}
-              <a href="/features" className="font-semibold text-brand-link no-underline hover:underline">
-                Features
+              <a href="/help" className="font-semibold text-brand-link no-underline hover:underline">
+                Help
               </a>
               {' '}or the{' '}
               <a href="/faq" className="font-semibold text-brand-link no-underline hover:underline">

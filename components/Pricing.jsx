@@ -162,7 +162,7 @@ export default function Pricing() {
               </p>
               <p className="mt-4 text-base">
                 <Link
-                  href="/docs/when-to-upgrade"
+                  href="/help/when-to-upgrade"
                   className="font-medium text-[#617500] no-underline underline-offset-4 hover:underline"
                 >
                   Plans: when to upgrade

@@ -49,17 +49,17 @@ export default function AssistantThemesDoc({ gallery = [] }) {
         <h2 className="text-2xl font-bold text-oasis-green-800">Related topics</h2>
         <ul className="mt-4 list-disc space-y-2 pl-5 text-[#30400D]/85">
           <li>
-            <Link href="/docs/header-help-menu" className="text-brand-link no-underline hover:underline">
+            <Link href="/help/header-help-menu" className="text-brand-link no-underline hover:underline">
               Header Help Menu
             </Link>
           </li>
           <li>
-            <Link href="/docs/reduced-motion" className="text-brand-link no-underline hover:underline">
+            <Link href="/help/reduced-motion" className="text-brand-link no-underline hover:underline">
               Reduced Motion
             </Link>
           </li>
           <li>
-            <Link href="/docs/docked-sidebar-vs-floating-overlay" className="text-brand-link no-underline hover:underline">
+            <Link href="/help/docked-sidebar-vs-floating-overlay" className="text-brand-link no-underline hover:underline">
               Docked Sidebar Vs Floating Overlay
             </Link>
           </li>
