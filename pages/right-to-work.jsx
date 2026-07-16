@@ -52,7 +52,7 @@ export default function RightToWork() {
         title="Questions About Our Hiring Process?"
         description="If you have questions about our employment verification process or need assistance, please contact us."
         buttonText="Contact Us"
-        buttonLink="/contact"
+        buttonLink="https://kahana.io/contact"
       />
     </>
   );

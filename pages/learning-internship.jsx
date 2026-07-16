@@ -1390,7 +1390,7 @@ export default function LearningInternship() {
                   </div>
                 ))}
                 <div className="mt-8 bg-gradient-to-br from-desert-yellow-100/20 to-oasis-blue-300/10 rounded-xl p-6 border-2 border-oasis-green-600/20 text-center">
-                  <p className="text-oasis-green-800 mb-4">Still have questions? Apply and we&apos;ll answer them, or <Link href="/contact" className="text-oasis-green-600 font-semibold hover:underline">reach out through our contact form</Link>.</p>
+                  <p className="text-oasis-green-800 mb-4">Still have questions? Apply and we&apos;ll answer them, or <Link href="https://kahana.io/contact" className="text-oasis-green-600 font-semibold hover:underline">reach out through our contact form</Link>.</p>
                   <button
                     type="button"
                     onClick={() => setIsModalOpen(true)}

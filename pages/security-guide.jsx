@@ -1498,7 +1498,7 @@ export default function SecurityRoadmapPage() {
               </div>
               
               <div className="mt-12">
-                <Link href="/contact">
+                <Link href="https://kahana.io/contact">
                   <button className="nav-button get-in-touch bg-[#21706c] text-white font-bold hover:bg-[#15514f] px-4 py-2 text-sm rounded-md">
                     Get in Touch
                   </button>

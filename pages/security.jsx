@@ -54,7 +54,7 @@ export default function Security() {
                 <Link href="/help/trust" className={linkClass}>
                   Trust
                 </Link>
-                <Link href="/contact" className={linkClass}>
+                <Link href="https://kahana.io/contact" className={linkClass}>
                   Contact
                 </Link>
               </p>
@@ -220,7 +220,7 @@ export default function Security() {
               <h2 className="mb-4 text-3xl font-bold text-[#313A00]">Report an issue</h2>
               <p className="mb-3 leading-relaxed text-gray-700">
                 Found a security or privacy problem? Use the{' '}
-                <Link href="/contact" className={linkClass}>
+                <Link href="https://kahana.io/contact" className={linkClass}>
                   contact form
                 </Link>{' '}
                 with steps to reproduce. Act in good faith, avoid harm, and give us time to fix
@@ -278,7 +278,7 @@ export default function Security() {
               Trust
             </Link>
             {' · '}
-            <Link href="/contact" className={linkClass}>
+            <Link href="https://kahana.io/contact" className={linkClass}>
               Report an issue
             </Link>
           </footer>

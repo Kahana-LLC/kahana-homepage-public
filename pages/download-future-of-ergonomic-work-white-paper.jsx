@@ -137,7 +137,7 @@ export default function DownloadWhitePaperPage() {
         <div className="text-center">
           <p className="text-sm text-oasis-green-800 mb-3">
             <strong>Contact us</strong> - for an immediate response, contact us directly at{' '}
-            <Link href="/contact" className="text-brand-link hover:text-brand-link-hover no-underline hover:no-underline">
+            <Link href="https://kahana.io/contact" className="text-brand-link hover:text-brand-link-hover no-underline hover:no-underline">
               contact us
             </Link>
           </p>

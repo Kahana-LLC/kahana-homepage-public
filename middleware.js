@@ -60,6 +60,16 @@ export function middleware(request) {
     return NextResponse.next();
   }
 
+  // Retire about.kahana.io/contact → canonical apex contact
+  if (
+    surface.id === 'about' &&
+    (pathname === '/contact' || pathname.startsWith('/contact/'))
+  ) {
+    const target = new URL(`https://${CANONICAL_HOST}/contact`);
+    target.search = search;
+    return NextResponse.redirect(target, 301);
+  }
+
   // Corporate subdomains: map `/` to surface home; leave other paths as-is
   if (surface.homePath && (pathname === '/' || pathname === '')) {
     const url = request.nextUrl.clone();

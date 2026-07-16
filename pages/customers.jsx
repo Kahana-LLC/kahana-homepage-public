@@ -29,7 +29,7 @@ export default function Customers() {
                   Customer success stories coming soon. Contact us to learn how Kahana can help your organization.
                 </p>
                 <div className="mt-6">
-                  <Link href="/contact">
+                  <Link href="https://kahana.io/contact">
                     <button className="bg-oasis-green-500 text-white font-bold px-6 py-3 rounded-md hover:bg-oasis-green-700 transition-colors">
                       Contact Us
                     </button>

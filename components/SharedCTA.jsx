@@ -5,7 +5,7 @@ const SharedCTA = ({
   title, 
   description, 
   buttonText = "Get in Touch", 
-  buttonLink = "/contact",
+  buttonLink = "https://kahana.io/contact",
   buttonVariant = "primary", // primary or secondary
   className = "", // Additional classes for the section
   sectionId,
@@ -77,7 +77,7 @@ const SharedCTA = ({
                   Schedule a Demo
                 </Link>
                 <Link
-                  href="/contact"
+                  href="https://kahana.io/contact"
                   onClick={secondaryOnClick}
                   className="shared-cta-pill shared-cta-pill--secondary w-full sm:w-auto no-underline hover:no-underline focus:no-underline"
                 >

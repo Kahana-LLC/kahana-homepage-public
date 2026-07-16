@@ -338,7 +338,7 @@ export default function HomeProductLanes() {
         title="Get in touch"
         description="Have a question, feedback, or anything you would like to send our way? We read every message."
         buttonText="Contact us"
-        buttonLink="/contact"
+        buttonLink="https://kahana.io/contact"
         buttonOnClick={() =>
           trackButtonClick("home_post_amplifier_contact_us", "home_post_amplifier_cta")
         }

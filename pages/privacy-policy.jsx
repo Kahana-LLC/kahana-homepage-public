@@ -69,7 +69,7 @@ export default function PrivacyPolicy() {
                 <li>Account creation and registration. During account creation and sign-up for our Services, we may gather basic account information, including your name, email address, and profile picture (if you choose to provide one).</li>
                 <li>Service usage and invitations. Information regarding your subscription plan and payment method is processed when you use or invite others to use our Services. Additionally, we process invitation history when you invite others to use the Service.</li>
                 <li>Newsletter subscriptions. From time to time, we may offer email newsletters through our Services. When you subscribe to receive a newsletter, we may request Personal Data such as your email address.</li>
-                <li>Contact and feedback. When you reach out to us with feedback, suggestions, or inquiries (e.g., via <Link href="/contact" className="text-[#4A6200] no-underline hover:no-underline font-semibold">our contact form</Link>), we may gather the information you provide, which includes your contact information and the content of your message.</li>
+                <li>Contact and feedback. When you reach out to us with feedback, suggestions, or inquiries (e.g., via <Link href="https://kahana.io/contact" className="text-[#4A6200] no-underline hover:no-underline font-semibold">our contact form</Link>), we may gather the information you provide, which includes your contact information and the content of your message.</li>
               </ul>
 
               <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">Information collected when you use our Services</h3>
@@ -325,7 +325,7 @@ export default function PrivacyPolicy() {
                 <li><strong>Right to Non-Discrimination:</strong> We will not discriminate against you for exercising your privacy rights.</li>
               </ul>
               <p className="text-gray-700 leading-relaxed mb-6">
-                To exercise these rights, please <Link href="/contact" className="text-[#4A6200] no-underline hover:no-underline font-semibold">contact us through our contact form</Link> or use the "Do Not Sell or Share My Personal Information" link in our footer. We will respond to your request within the timeframes required by applicable law.
+                To exercise these rights, please <Link href="https://kahana.io/contact" className="text-[#4A6200] no-underline hover:no-underline font-semibold">contact us through our contact form</Link> or use the "Do Not Sell or Share My Personal Information" link in our footer. We will respond to your request within the timeframes required by applicable law.
               </p>
 
               <div className="space-y-4 mb-6">
@@ -372,7 +372,7 @@ export default function PrivacyPolicy() {
                   <p className="text-gray-700 leading-relaxed">
                     You may update your account information at any time by accessing your account settings. To permanently delete your Oasis account, submit a request through our{' '}
                     <Link href="/support" className="text-[#4A6200] no-underline hover:no-underline font-semibold">Delete my account</Link>{' '}
-                    page, or <Link href="/contact" className="text-[#4A6200] no-underline hover:no-underline font-semibold">contact us through our contact form</Link>.
+                    page, or <Link href="https://kahana.io/contact" className="text-[#4A6200] no-underline hover:no-underline font-semibold">contact us through our contact form</Link>.
                   </p>
                 </div>
                 <div>
@@ -434,7 +434,7 @@ export default function PrivacyPolicy() {
                 Our Service is not directed to children under the age of 13, and we do not knowingly collect Personal Data from children under 13 years of age.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
-                If you are a parent or guardian and believe that your child under the age of 13 has provided us with Personal Data without your consent, please <Link href="/contact" className="text-[#4A6200] no-underline hover:no-underline font-semibold">contact us</Link> so that we can address your concerns.
+                If you are a parent or guardian and believe that your child under the age of 13 has provided us with Personal Data without your consent, please <Link href="https://kahana.io/contact" className="text-[#4A6200] no-underline hover:no-underline font-semibold">contact us</Link> so that we can address your concerns.
               </p>
               <p className="text-gray-700 leading-relaxed mb-6">
                 If we discover that we have collected Personal Data from a child under 13 without obtaining verifiable parental consent, we will take prompt action to delete such information from our systems.
@@ -490,7 +490,7 @@ export default function PrivacyPolicy() {
               </p>
               <div className="text-gray-700 leading-relaxed mb-6">
                 <p className="mb-4">
-                  <strong>Contact:</strong> <Link href="/contact" className="text-[#4A6200] no-underline hover:no-underline font-semibold">our contact form</Link>
+                  <strong>Contact:</strong> <Link href="https://kahana.io/contact" className="text-[#4A6200] no-underline hover:no-underline font-semibold">our contact form</Link>
                 </p>
                 <p className="mb-4">
                   If you are not satisfied with our response to your complaint, or if you believe that our processing of your Personal Data does not comply with applicable data protection laws, you have the right to lodge a complaint with your local data protection supervisory authority. However, we would appreciate the opportunity to address your concerns directly before you contact a supervisory authority, and we encourage you to reach out to us first so that we may attempt to resolve the matter.

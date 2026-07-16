@@ -10,7 +10,7 @@ const staticSitemapSections = [
       { text: 'Home', href: '/' },
       { text: 'About', href: '/about' },
       { text: 'Help', href: '/help' },
-      { text: 'Contact', href: '/contact' },
+      { text: 'Contact', href: 'https://kahana.io/contact' },
       { text: 'Blog', href: '/blog' },
       { text: 'FAQ', href: '/faq' },
       { text: 'Pricing', href: '/pricing' },
@@ -38,7 +38,7 @@ const staticSitemapSections = [
     title: 'Support',
     links: [
       { text: 'Support Center', href: '/support' },
-      { text: 'Contact', href: '/contact' },
+      { text: 'Contact', href: 'https://kahana.io/contact' },
     ],
   },
   {
@@ -47,7 +47,7 @@ const staticSitemapSections = [
       { text: 'About Us', href: '/about' },
       { text: 'Careers', href: '/careers' },
       { text: 'Manifesto', href: '/manifesto' },
-      { text: 'Contact', href: '/contact' },
+      { text: 'Contact', href: 'https://kahana.io/contact' },
     ],
   },
   {

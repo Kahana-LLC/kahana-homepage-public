@@ -38,7 +38,7 @@ const tiers = [
   },
   {
     name: 'Enterprise',
-    href: '/contact',
+    href: 'https://kahana.io/contact',
     priceLabel: 'Custom',
     priceSuffix: 'pricing for teams',
     featuresHeading: 'Everything in Growth, plus...',

@@ -57,7 +57,7 @@ const pricingTiers = [
     ],
     creditNote: '',
     cta: 'Schedule a demo',
-    ctaLink: '/contact',
+    ctaLink: 'https://kahana.io/contact',
     buttonStyle: 'primary'
   }
 ];
@@ -84,7 +84,7 @@ const faqs = [
       <>
         Oasis is currently available for Mac (Apple Silicon and Intel). Windows, Linux, and Chromium versions are in
         development.{' '}
-        <Link href="/contact" className="text-[#4A6200] no-underline hover:no-underline font-semibold">
+        <Link href="https://kahana.io/contact" className="text-[#4A6200] no-underline hover:no-underline font-semibold">
           Get early access
         </Link>{' '}
         for early access.
@@ -311,7 +311,7 @@ export default function OasisPricing() {
                     labelClassName="text-xs font-medium text-gray-700"
                   />
                   <Link
-                    href="/contact"
+                    href="https://kahana.io/contact"
                     className="btn-primary w-full sm:w-auto shrink-0 inline-flex items-center justify-center px-6 py-2.5 sm:py-3 text-sm sm:text-base font-normal rounded-full no-underline hover:no-underline focus:no-underline transition-all"
                   >
                     Get early access
@@ -386,7 +386,7 @@ export default function OasisPricing() {
                   Have questions? We'd love to hear from you.
                 </p>
                 <Link 
-                  href="/contact" 
+                  href="https://kahana.io/contact" 
                   className="btn-primary inline-block px-5 sm:px-6 py-2.5 sm:py-3 rounded-full text-sm sm:text-base font-semibold no-underline hover:no-underline focus:no-underline"
                 >
                   Get in touch
@@ -436,9 +436,9 @@ export default function OasisPricing() {
         <SharedCTA
           title="Need More Than These Plans?"
           description="For enterprises with larger teams, custom requirements, or advanced security needs, we offer tailored solutions designed to scale with your organization."
-          primaryHref="/contact"
+          primaryHref="https://kahana.io/contact"
           primaryLabel="Schedule a Demo"
-          secondaryHref="/contact"
+          secondaryHref="https://kahana.io/contact"
           secondaryLabel="Get in Touch"
         />
       </FadeInSection>

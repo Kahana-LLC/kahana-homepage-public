@@ -21,7 +21,7 @@ const hubLinks = [
   {
     title: 'Contact',
     description: 'General company inquiries and demo requests.',
-    href: '/contact',
+    href: 'https://kahana.io/contact',
     cta: 'Contact us',
   },
 ];

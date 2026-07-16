@@ -139,7 +139,7 @@ export default function CommunityGuidelines() {
               If you have any questions about these guidelines or need to report a violation, please contact our community team.
             </p>
             <Link
-              href="/contact"
+              href="https://kahana.io/contact"
               className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-brand-link hover:bg-brand-link-hover transition-colors"
             >
               Contact Community Team

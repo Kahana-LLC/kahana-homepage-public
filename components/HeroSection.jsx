@@ -27,7 +27,7 @@ export default function HeroSection() {
                   </p>
                   <div className="mt-8 flex justify-center sm:justify-start">
                                        <Link
-                      href="/contact"  
+                      href="https://kahana.io/contact"  
                       className="btn-primary no-underline hover:no-underline focus:no-underline"
                     >
                       <span>

@@ -80,7 +80,7 @@ export default function FeatureDeepDiveShell({
           title="Get in touch"
           description="Have a question, feedback, or anything you would like to send our way? We read every message."
           buttonText="Contact us"
-          buttonLink="/contact"
+          buttonLink="https://kahana.io/contact"
           buttonOnClick={() =>
             trackButtonClick(
               featureSlug ? `feature_${featureSlug}_contact_us` : 'feature_page_contact_us',

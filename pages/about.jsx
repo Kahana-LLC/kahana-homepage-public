@@ -189,7 +189,7 @@ export default function About() {
                 Download Oasis
               </Link>
               <Link
-                href="/contact"
+                href="https://kahana.io/contact"
                 className="btn-secondary inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline"
               >
                 Schedule a demo
@@ -428,7 +428,7 @@ export default function About() {
         primaryLabel="Download Oasis"
         primaryHref="/oasis-pricing"
         secondaryLabel="Schedule a demo"
-        secondaryHref="/contact"
+        secondaryHref="https://kahana.io/contact"
       />
     </>
   );

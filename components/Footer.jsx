@@ -1,36 +1,80 @@
 import React, { useState, useContext } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import {
+  BookOpenIcon,
+  BuildingOffice2Icon,
+  ChatBubbleLeftRightIcon,
+  Cog6ToothIcon,
+  CubeIcon,
+  DocumentTextIcon,
+  EnvelopeIcon,
+  IdentificationIcon,
+  LifebuoyIcon,
+  LockClosedIcon,
+  MagnifyingGlassIcon,
+  NewspaperIcon,
+  QuestionMarkCircleIcon,
+  ScaleIcon,
+  ShareIcon,
+  ShieldCheckIcon,
+  TagIcon,
+} from '@heroicons/react/24/outline';
 import { ConsentContext } from '../contexts/ConsentContext';
-import { APP_URL } from './nav/navConfig';
+import { APP_URL, CONTACT_URL } from './nav/navConfig';
 
 const LINK_CLASS =
-  'text-base font-normal text-[#666666] no-underline transition-colors hover:text-[#617500] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#617500]';
+  'inline-flex items-center gap-2 text-base font-normal text-[#666666] no-underline transition-colors hover:text-[#617500] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#617500]';
 
 const LEGAL_LINK_CLASS =
-  'text-base font-normal text-[#666666] no-underline transition-colors hover:text-[#617500] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#617500]';
+  'inline-flex items-center gap-2 text-base font-normal text-[#666666] no-underline transition-colors hover:text-[#617500] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#617500]';
+
+const ICON_LINK = 'h-4 w-4 shrink-0 text-current';
+const ICON_HEADING = 'h-4 w-4 shrink-0 text-[#617500]';
 
 const PRODUCT_LINKS = [
-  { href: 'https://kahana.io/explore', label: 'Explore', external: true },
-  { href: '/pricing', label: 'Pricing' },
+  {
+    href: 'https://kahana.io/explore',
+    label: 'Explore',
+    external: true,
+    icon: MagnifyingGlassIcon,
+  },
+  { href: '/pricing', label: 'Pricing', icon: TagIcon },
 ];
 
 /** About / Team / Careers hidden from footer for now (pages still exist). */
 const COMPANY_LINKS = [
-  { href: '/contact', label: 'Contact' },
-  { href: 'https://kahana.io/support', label: 'Support', external: true },
+  { href: CONTACT_URL, label: 'Contact', icon: EnvelopeIcon, external: true },
+  {
+    href: 'https://kahana.io/support',
+    label: 'Support',
+    external: true,
+    icon: LifebuoyIcon,
+  },
 ];
 
 /** Testimonials / Press kit / Press releases hidden for now. */
 const RESOURCE_LINKS = [
-  { href: '/blog', label: 'Blog' },
-  { href: '/help', label: 'Help' },
-  { href: '/faq', label: 'FAQ' },
+  { href: '/blog', label: 'Blog', icon: NewspaperIcon },
+  { href: '/help', label: 'Help', icon: QuestionMarkCircleIcon },
+  { href: '/faq', label: 'FAQ', icon: ChatBubbleLeftRightIcon },
 ];
 
-function FooterColumnHeading({ children }) {
+const SECTION_ICONS = {
+  product: CubeIcon,
+  company: BuildingOffice2Icon,
+  resources: BookOpenIcon,
+  legal: ScaleIcon,
+};
+
+function FooterColumnHeading({ icon: Icon, children }) {
   return (
-    <p role="heading" aria-level={3} className="mb-[19px] text-base font-semibold text-[#333333]">
+    <p
+      role="heading"
+      aria-level={3}
+      className="mb-[19px] inline-flex items-center gap-2 text-base font-semibold text-[#333333]"
+    >
+      {Icon ? <Icon className={ICON_HEADING} aria-hidden /> : null}
       {children}
     </p>
   );
@@ -39,19 +83,28 @@ function FooterColumnHeading({ children }) {
 function LinkList({ links, linkClass = LINK_CLASS }) {
   return (
     <ul className="flex flex-col gap-[17px]">
-      {links.map((item) => (
-        <li key={`${item.href}-${item.label}`}>
-          {item.external || item.href.startsWith('http') ? (
-            <a href={item.href} className={linkClass} target="_blank" rel="noopener noreferrer">
-              {item.label}
-            </a>
-          ) : (
-            <Link href={item.href} prefetch={item.prefetch} className={linkClass}>
-              {item.label}
-            </Link>
-          )}
-        </li>
-      ))}
+      {links.map((item) => {
+        const Icon = item.icon;
+        const content = (
+          <>
+            {Icon ? <Icon className={ICON_LINK} aria-hidden /> : null}
+            {item.label}
+          </>
+        );
+        return (
+          <li key={`${item.href}-${item.label}`}>
+            {item.external || item.href.startsWith('http') ? (
+              <a href={item.href} className={linkClass} target="_blank" rel="noopener noreferrer">
+                {content}
+              </a>
+            ) : (
+              <Link href={item.href} prefetch={item.prefetch} className={linkClass}>
+                {content}
+              </Link>
+            )}
+          </li>
+        );
+      })}
     </ul>
   );
 }
@@ -86,6 +139,13 @@ function AccordionChevron({ open }) {
 }
 
 function CookieSettingsControl({ consentContext, openCookieModal }) {
+  const content = (
+    <>
+      <Cog6ToothIcon className={ICON_LINK} aria-hidden />
+      Cookie Settings
+    </>
+  );
+
   if (consentContext) {
     return (
       <button
@@ -93,13 +153,13 @@ function CookieSettingsControl({ consentContext, openCookieModal }) {
         onClick={openCookieModal}
         className={`${LEGAL_LINK_CLASS} footer-legal-text-button w-fit cursor-pointer text-left`}
       >
-        Cookie Settings
+        {content}
       </button>
     );
   }
   return (
     <Link href="/privacy-policy#cookie-settings" prefetch={false} className={LEGAL_LINK_CLASS}>
-      Cookie Settings
+      {content}
     </Link>
   );
 }
@@ -136,16 +196,19 @@ function LegalLinkList({ consentContext, openCookieModal }) {
     <ul className="flex flex-col gap-[17px]">
       <li>
         <Link href="/terms-and-conditions" prefetch={false} className={LEGAL_LINK_CLASS}>
+          <DocumentTextIcon className={ICON_LINK} aria-hidden />
           Terms
         </Link>
       </li>
       <li>
         <Link href="/privacy-policy" prefetch={false} className={LEGAL_LINK_CLASS}>
+          <LockClosedIcon className={ICON_LINK} aria-hidden />
           Privacy
         </Link>
       </li>
       <li>
         <Link href="/security" className={LEGAL_LINK_CLASS}>
+          <ShieldCheckIcon className={ICON_LINK} aria-hidden />
           Security
         </Link>
       </li>
@@ -154,6 +217,7 @@ function LegalLinkList({ consentContext, openCookieModal }) {
       </li>
       <li>
         <Link href="/right-to-work" className={LEGAL_LINK_CLASS}>
+          <IdentificationIcon className={ICON_LINK} aria-hidden />
           Right to Work
         </Link>
       </li>
@@ -181,9 +245,9 @@ function FooterContent() {
   const sectionOpen = (id) => openSection === id;
 
   const accordionSections = [
-    { id: 'product', label: 'Product', links: PRODUCT_LINKS },
-    { id: 'company', label: 'Company', links: COMPANY_LINKS },
-    { id: 'resources', label: 'Resources', links: RESOURCE_LINKS },
+    { id: 'product', label: 'Product', links: PRODUCT_LINKS, icon: SECTION_ICONS.product },
+    { id: 'company', label: 'Company', links: COMPANY_LINKS, icon: SECTION_ICONS.company },
+    { id: 'resources', label: 'Resources', links: RESOURCE_LINKS, icon: SECTION_ICONS.resources },
   ];
 
   return (
@@ -228,24 +292,30 @@ function FooterContent() {
 
           <div className="flex flex-col gap-10 md:gap-0">
             <div className="flex flex-col gap-3 md:hidden">
-              {accordionSections.map((section) => (
-                <div key={section.id} className="rounded-lg border border-[#E0E8D4] bg-white/40">
-                  <button
-                    type="button"
-                    className="footer-accordion-trigger flex w-full items-center justify-between px-4 py-3 text-left"
-                    onClick={() => toggleSection(section.id)}
-                    aria-expanded={openSection === section.id}
-                  >
-                    <span className="text-base font-semibold text-oasis-green-900">{section.label}</span>
-                    <AccordionChevron open={openSection === section.id} />
-                  </button>
-                  {sectionOpen(section.id) && (
-                    <div className="border-t border-[#E0E8D4] px-4 py-4">
-                      <LinkList links={section.links} />
-                    </div>
-                  )}
-                </div>
-              ))}
+              {accordionSections.map((section) => {
+                const SectionIcon = section.icon;
+                return (
+                  <div key={section.id} className="rounded-lg border border-[#E0E8D4] bg-white/40">
+                    <button
+                      type="button"
+                      className="footer-accordion-trigger flex w-full items-center justify-between px-4 py-3 text-left"
+                      onClick={() => toggleSection(section.id)}
+                      aria-expanded={openSection === section.id}
+                    >
+                      <span className="inline-flex items-center gap-2 text-base font-semibold text-oasis-green-900">
+                        {SectionIcon ? <SectionIcon className={ICON_HEADING} aria-hidden /> : null}
+                        {section.label}
+                      </span>
+                      <AccordionChevron open={openSection === section.id} />
+                    </button>
+                    {sectionOpen(section.id) && (
+                      <div className="border-t border-[#E0E8D4] px-4 py-4">
+                        <LinkList links={section.links} />
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
 
               <div className="rounded-lg border border-[#E0E8D4] bg-white/40">
                 <button
@@ -254,13 +324,19 @@ function FooterContent() {
                   onClick={() => toggleSection('legal')}
                   aria-expanded={openSection === 'legal'}
                 >
-                  <span className="text-base font-semibold text-oasis-green-900">Legal &amp; social</span>
+                  <span className="inline-flex items-center gap-2 text-base font-semibold text-oasis-green-900">
+                    <ScaleIcon className={ICON_HEADING} aria-hidden />
+                    Legal &amp; social
+                  </span>
                   <AccordionChevron open={openSection === 'legal'} />
                 </button>
                 {sectionOpen('legal') && (
                   <div className="border-t border-[#E0E8D4] px-4 py-4">
                     <LegalLinkList consentContext={consentContext} openCookieModal={openCookieModal} />
-                    <p className="mb-2 mt-6 text-base font-semibold text-[#333333]">Social</p>
+                    <p className="mb-2 mt-6 inline-flex items-center gap-2 text-base font-semibold text-[#333333]">
+                      <ShareIcon className={ICON_HEADING} aria-hidden />
+                      Social
+                    </p>
                     <SocialLinks />
                   </div>
                 )}
@@ -269,28 +345,28 @@ function FooterContent() {
 
             <div className="hidden md:grid md:grid-cols-2 md:items-start md:gap-x-8 md:gap-y-12 lg:grid-cols-4 lg:gap-x-10">
               <div>
-                <FooterColumnHeading>Product</FooterColumnHeading>
+                <FooterColumnHeading icon={CubeIcon}>Product</FooterColumnHeading>
                 <LinkList links={PRODUCT_LINKS} />
               </div>
 
               <div>
-                <FooterColumnHeading>Company</FooterColumnHeading>
+                <FooterColumnHeading icon={BuildingOffice2Icon}>Company</FooterColumnHeading>
                 <LinkList links={COMPANY_LINKS} />
               </div>
 
               <div>
-                <FooterColumnHeading>Resources</FooterColumnHeading>
+                <FooterColumnHeading icon={BookOpenIcon}>Resources</FooterColumnHeading>
                 <LinkList links={RESOURCE_LINKS} />
               </div>
 
               <div className="flex flex-col gap-8">
                 <div>
-                  <FooterColumnHeading>Legal</FooterColumnHeading>
+                  <FooterColumnHeading icon={ScaleIcon}>Legal</FooterColumnHeading>
                   <LegalLinkList consentContext={consentContext} openCookieModal={openCookieModal} />
                 </div>
 
                 <div>
-                  <FooterColumnHeading>Social</FooterColumnHeading>
+                  <FooterColumnHeading icon={ShareIcon}>Social</FooterColumnHeading>
                   <SocialLinks />
                 </div>
               </div>

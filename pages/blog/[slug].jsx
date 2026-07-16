@@ -423,7 +423,7 @@ export default function BlogPost({ post }) {
               We'd love to understand your unique challenges and explore how our solutions can help you achieve a more fluid way of working now and in the future. Let's discuss your specific needs and see how we can work together to create a more elegant future of work.
             </p>
             <Link 
-              href="/contact"
+              href="https://kahana.io/contact"
               className="btn-primary inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline"
             >
               <span>Contact us</span>

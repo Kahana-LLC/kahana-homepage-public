@@ -208,7 +208,7 @@ export default function Manifesto() {
           <h2 className="text-4xl font-bold text-white mb-6">
             Want to learn more?
           </h2>
-          <Link href="/contact">
+          <Link href="https://kahana.io/contact">
             <button className="bg-white text-brand-link px-8 py-3 rounded-md font-semibold hover:bg-gray-50 transition-colors duration-300 shadow-sm hover:shadow-md">
               Contact Us
             </button>

@@ -2,7 +2,11 @@ import React, { useState, useEffect, useCallback, useRef, useMemo } from 'react'
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { FolderPlusIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline';
+import {
+  ArrowRightOnRectangleIcon,
+  FolderPlusIcon,
+  MagnifyingGlassIcon,
+} from '@heroicons/react/24/outline';
 import whiteKahanaLogo from '../../assets/kahana_logo_transparent.svg';
 import { getCloudinaryImageUrl } from '../../utils/cloudinary-mapper';
 import { APP_URL, EXPLORE_URL, desktopNavItems, mobileNavRows } from './navConfig';
@@ -28,6 +32,9 @@ const ctaSecondaryClass =
 
 const ctaPrimaryClass =
   'btn-primary btn-nav inline-flex items-center gap-1.5 no-underline hover:no-underline focus:no-underline';
+
+const ctaLoginClass =
+  'nav-link relative z-[2] inline-flex items-center gap-1.5 whitespace-nowrap rounded-md px-2 py-2 font-sans text-[0.9375rem] font-normal !text-oasis-green-700 no-underline focus:outline-none';
 
 /* Full-size site CTAs for mobile drawer (match homepage pills) */
 const mobileCtaSecondaryClass =
@@ -531,16 +538,6 @@ export default function NavbarDup() {
                     </li>
                   );
                 })}
-                <li>
-                  <a
-                    href={APP_URL}
-                    className="nav-link relative z-[2] inline-flex items-center gap-0.5 whitespace-nowrap rounded-md px-2 py-2 font-sans text-[0.9375rem] font-normal !text-oasis-green-700 no-underline focus:outline-none"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <span className="nav-link-text">Log in</span>
-                  </a>
-                </li>
               </ul>
               <span
                 className="mx-3 h-5 w-px shrink-0 bg-[#313A00]/20"
@@ -549,6 +546,15 @@ export default function NavbarDup() {
             </nav>
 
             <div className="nav-buttons">
+              <a
+                href={APP_URL}
+                className={ctaLoginClass}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <ArrowRightOnRectangleIcon className="h-4 w-4 shrink-0" aria-hidden />
+                <span className="nav-link-text">Log in</span>
+              </a>
               <a
                 href={EXPLORE_URL}
                 className={ctaSecondaryClass}
@@ -621,15 +627,6 @@ export default function NavbarDup() {
               >
                 <FolderPlusIcon className="h-5 w-5 shrink-0" aria-hidden />
                 Create
-              </a>
-              <a
-                href={APP_URL}
-                className="mobile-login-link no-underline"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={closeMobile}
-              >
-                Log in
               </a>
             </div>
 

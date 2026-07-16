@@ -255,7 +255,7 @@ export default function PlatformHome() {
                 <AuraLikeAnimation />
                 <div>
                   <p className="text-xl font-semibold text-[#313A00]">
-                    Aura is energy you give to recognize great contributions and promote quality.
+                    Aura is positive energy you give to recognize great contributions and promote quality.
                   </p>
                   <p className="mt-2 text-base leading-relaxed text-[#495800] sm:text-lg">
                     Aura is limited. Giving and taking Aura is your power to influence and regulate
@@ -304,7 +304,7 @@ export default function PlatformHome() {
 
       <SectionShell id="how-it-works" className="border-t border-[#E0E8D4]">
         <FadeInSection>
-          <h2 className="text-center text-3xl font-semibold sm:text-4xl">How to use Kahana</h2>
+          <h2 className="text-3xl font-semibold sm:text-4xl">How to use Kahana</h2>
           <p className="mx-auto mt-3 max-w-2xl text-center text-lg text-[#666666]">
             Kahana integrates learning, teaching, and growth into daily life.
           </p>

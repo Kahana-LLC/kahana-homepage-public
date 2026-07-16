@@ -67,7 +67,7 @@ export default function Careers() {
                 If you're excited about transforming how people work and making technology work better for humans, 
                 we'd love to hear from you.
               </p>
-              <Link href="/contact" className="btn-primary inline-flex items-center justify-center px-6 py-3 text-base font-bold no-underline hover:no-underline focus:no-underline">
+              <Link href="https://kahana.io/contact" className="btn-primary inline-flex items-center justify-center px-6 py-3 text-base font-bold no-underline hover:no-underline focus:no-underline">
                 Contact Us
               </Link>
             </div>

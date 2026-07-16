@@ -35,7 +35,6 @@ function absoluteCorporateUrl(path = '/') {
     '/about',
     '/team',
     '/manifesto',
-    '/contact',
     '/security',
     '/security-guide',
     '/press-kit',
@@ -55,6 +54,11 @@ function absoluteCorporateUrl(path = '/') {
     }
     return null;
   };
+
+  // Contact is canonical on apex, not about.kahana.io
+  if (pathname === '/contact' || pathname.startsWith('/contact/')) {
+    return `${SITE_URL}${pathname}`;
+  }
 
   return (
     matchPrefix(newsroom, NEWSROOM_ORIGIN) ||

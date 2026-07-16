@@ -1529,29 +1529,6 @@ footer button.text-sm.no-underline:hover {
   font-weight: 500 !important;
 }
 
-/* Mobile drawer: Log in as plain text (not a button) */
-.mobile-menu .menu-links a.mobile-login-link,
-.mobile-menu .menu-links a.mobile-login-link:visited,
-.mobile-menu .menu-links a.mobile-login-link:hover,
-.mobile-menu .menu-links a.mobile-login-link:active,
-.mobile-menu .menu-links a.mobile-login-link:focus {
-  display: block !important;
-  width: 100% !important;
-  text-align: center !important;
-  padding: 0.5rem 0 !important;
-  background: transparent !important;
-  border: none !important;
-  border-radius: 0 !important;
-  color: #617500 !important;
-  font-size: 1rem !important;
-  font-weight: 500 !important;
-  text-decoration: none !important;
-}
-
-.mobile-menu .menu-links a.mobile-login-link:hover {
-  color: var(--oasis-green-800) !important;
-}
-
 /* Documentation card links - remove underlines from card content */
 .doc-card-link,
 .doc-card-link:visited,

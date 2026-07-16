@@ -7,7 +7,7 @@ export default function OasisProductHero({
   description,
   primaryHref = '/schedule-demo',
   primaryLabel = 'Schedule a demo',
-  secondaryHref = '/contact',
+  secondaryHref = 'https://kahana.io/contact',
   secondaryLabel = 'Get in touch',
 }) {
   return (

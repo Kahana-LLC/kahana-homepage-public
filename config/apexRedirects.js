@@ -39,7 +39,7 @@ const PATH_PRESERVE_PREFIXES = [
   { prefix: '/pricing', origin: ABOUT_ORIGIN },
   { prefix: '/faq', origin: ABOUT_ORIGIN },
   { prefix: '/aura', origin: ABOUT_ORIGIN },
-  { prefix: '/contact', origin: ABOUT_ORIGIN },
+  // /contact stays on apex (kahana.io/contact) — do not send to about
   { prefix: '/support', origin: HELP_ORIGIN },
   { prefix: '/community', origin: HELP_ORIGIN },
   { prefix: '/events', origin: NEWSROOM_ORIGIN },
@@ -116,6 +116,11 @@ export function resolveApexRedirect(pathname) {
 
   // Never redirect API from this table (middleware should skip /api first)
   if (path === '/api' || path.startsWith('/api/')) {
+    return null;
+  }
+
+  // Contact lives on apex (kahana.io/contact), not about.kahana.io
+  if (path === '/contact' || path.startsWith('/contact/')) {
     return null;
   }
 

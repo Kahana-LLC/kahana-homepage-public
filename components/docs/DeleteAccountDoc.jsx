@@ -70,7 +70,7 @@ export default function DeleteAccountDoc() {
             </Link>
           </li>
           <li>
-            <Link href="/contact" className="text-brand-link no-underline hover:no-underline">
+            <Link href="https://kahana.io/contact" className="text-brand-link no-underline hover:no-underline">
               Contact support
             </Link>{' '}
             if you cannot use this form

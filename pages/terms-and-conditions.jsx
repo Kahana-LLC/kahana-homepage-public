@@ -143,7 +143,7 @@ export default function TermsAndConditions() {
                 You bear sole responsibility for maintaining the security and confidentiality of your Login credentials, and you accept full responsibility for all activities that occur under your Login, regardless of whether such activities are authorized by you. You are also responsible for all activities conducted through your account. Kahana reserves the right, in its sole discretion, to disable or suspend your Login at any time and for any reason.
               </p>
               <p className="text-gray-700 leading-relaxed mb-6">
-                You acknowledge and agree that your use of third-party Login services is also governed by the terms of service and privacy policies of the applicable third-party provider. Kahana does not make any representations or warranties regarding the security or privacy practices of any third-party identity providers. If you suspect that your account has been compromised or is no longer secure, you must immediately notify us by <Link href="/contact" className="text-[#4A6200] no-underline hover:no-underline font-semibold">contacting us through our contact form</Link>.
+                You acknowledge and agree that your use of third-party Login services is also governed by the terms of service and privacy policies of the applicable third-party provider. Kahana does not make any representations or warranties regarding the security or privacy practices of any third-party identity providers. If you suspect that your account has been compromised or is no longer secure, you must immediately notify us by <Link href="https://kahana.io/contact" className="text-[#4A6200] no-underline hover:no-underline font-semibold">contacting us through our contact form</Link>.
               </p>
             </section>
 
@@ -176,7 +176,7 @@ export default function TermsAndConditions() {
                 The Service may offer subscription-based plans that include automatically recurring payments for periodic charges (referred to as "Subscription Service"). Your "Subscription Billing Date" is the date on which you first purchase a subscription to the Service. The Subscription Service commences on the Subscription Billing Date and continues for the subscription period you choose in your account (the "Initial Subscription Period"). The Subscription Service will automatically renew for successive periods of equal duration to the Initial Subscription Period (each such period, together with the Initial Subscription Period, constituting a "Subscription Period") unless you cancel your subscription or we terminate it.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
-                To avoid being charged for the next Subscription Period, you must cancel your subscription prior to its renewal date. The periodic Subscription Fee will be charged to the payment method you provided during registration (or to an updated payment method if you modify your payment information). You may cancel your Subscription Service at any time via Stripe, through billing settings in the Service (including surfaces linked from kahana.io/pricing), or by <Link href="/contact" className="text-[#4A6200] no-underline hover:no-underline font-semibold">contacting us through our contact form</Link> or <a href="https://kahana.io/support" className="text-[#4A6200] no-underline hover:no-underline font-semibold">Support</a>.
+                To avoid being charged for the next Subscription Period, you must cancel your subscription prior to its renewal date. The periodic Subscription Fee will be charged to the payment method you provided during registration (or to an updated payment method if you modify your payment information). You may cancel your Subscription Service at any time via Stripe, through billing settings in the Service (including surfaces linked from kahana.io/pricing), or by <Link href="https://kahana.io/contact" className="text-[#4A6200] no-underline hover:no-underline font-semibold">contacting us through our contact form</Link> or <a href="https://kahana.io/support" className="text-[#4A6200] no-underline hover:no-underline font-semibold">Support</a>.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
                 Kahana reserves the right to modify the Subscription Fee for any Subscription Service or to introduce new fees or charges at any time, provided that Kahana gives you advance notice of such changes. If you do not wish to continue your subscription after any such change, you may cancel your subscription in the manner described above.
@@ -344,7 +344,7 @@ export default function TermsAndConditions() {
                 After you create an account, Kahana may send emails that help you get started with the Kahana Digital Library and related product features, including onboarding guidance, setup tips, feature explanations, and product updates. These emails are not required to use the Service.
               </p>
               <p className="text-gray-700 leading-relaxed mb-6">
-                You may unsubscribe from these optional emails at any time by following the unsubscribe link in any such email or by <Link href="/contact" className="text-[#4A6200] no-underline hover:no-underline font-semibold">contacting us through our contact form</Link>.
+                You may unsubscribe from these optional emails at any time by following the unsubscribe link in any such email or by <Link href="https://kahana.io/contact" className="text-[#4A6200] no-underline hover:no-underline font-semibold">contacting us through our contact form</Link>.
               </p>
 
               <h3 id="communications-required" className="text-2xl font-bold text-[#313A00] mb-4 mt-8 scroll-mt-8">9.2. Required transactional and account emails</h3>
@@ -462,7 +462,7 @@ export default function TermsAndConditions() {
                 Should you breach any provision of these Terms, your authorization to access the Service and these Terms shall automatically terminate. Furthermore, Kahana reserves the right, in its sole discretion, to terminate these Terms or your Service account, or to suspend or terminate your access to the Service, at any time, for any reason or no reason whatsoever, with or without prior notice, and Kahana shall have no liability to you in connection with such termination. You have the right to terminate your account and these Terms at any time by submitting a delete-account request through{' '}
                 <a href="https://kahana.io/support" className="text-[#4A6200] no-underline hover:no-underline font-semibold">Support</a>
                 , through available account settings, or by reaching out through{' '}
-                <Link href="/contact" className="text-[#4A6200] no-underline hover:no-underline font-semibold">our contact form</Link>.
+                <Link href="https://kahana.io/contact" className="text-[#4A6200] no-underline hover:no-underline font-semibold">our contact form</Link>.
               </p>
 
               <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">13.3. Consequences of Termination</h3>
@@ -657,7 +657,7 @@ export default function TermsAndConditions() {
 
               <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">18.6. How to Contact Us</h3>
               <p className="text-gray-700 leading-relaxed mb-6">
-                The Service is provided by Kahana Group Inc., with offices located at 1550 North Lakeshore Drive, Apt 19E, Chicago, Illinois, 60610. You may reach us by sending correspondence to that address or by <Link href="/contact" className="text-[#4A6200] no-underline hover:no-underline font-semibold">contacting us through our contact form</Link>.
+                The Service is provided by Kahana Group Inc., with offices located at 1550 North Lakeshore Drive, Apt 19E, Chicago, Illinois, 60610. You may reach us by sending correspondence to that address or by <Link href="https://kahana.io/contact" className="text-[#4A6200] no-underline hover:no-underline font-semibold">contacting us through our contact form</Link>.
               </p>
 
               <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">18.7. California Residents' Rights</h3>

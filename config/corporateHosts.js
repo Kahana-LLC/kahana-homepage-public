@@ -33,7 +33,7 @@ export const CORPORATE_SURFACES = {
     // Marketing homepage (same as today’s apex `/`)
     homePath: null,
     description: 'Company / marketing home (current kahana.io homepage experience)',
-    primaryPaths: ['/', '/about', '/team', '/manifesto', '/products', '/contact', '/help', '/faq'],
+    primaryPaths: ['/', '/about', '/team', '/manifesto', '/products', '/help', '/faq'],
   },
   newsroom: {
     id: 'newsroom',
