@@ -552,6 +552,7 @@ export default function NavbarDup() {
                   );
                 })}
               </ul>
+              <LanguageMenu align="end" className="ml-1" />
               <span
                 className="mx-3 h-5 w-px shrink-0 bg-[#313A00]/20"
                 aria-hidden
@@ -559,7 +560,6 @@ export default function NavbarDup() {
             </nav>
 
             <div className="nav-buttons">
-              <LanguageMenu align="end" />
               <a
                 href={appUrl}
                 className={ctaLoginClass}
