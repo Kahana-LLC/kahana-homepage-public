@@ -12,6 +12,7 @@ import { APP_URL, EXPLORE_URL, desktopNavItems, mobileNavRows } from './navConfi
 import KahanaWordmark from '../brand/KahanaWordmark';
 import LanguageMenu from '../brand/LanguageMenu';
 import { withAppLanguageParam } from '../../lib/contentLanguage';
+import { readAuthHintCookie } from '../../lib/authHint';
 import { useMarketingI18n } from '../../contexts/MarketingI18n';
 
 const MD_BREAKPOINT = 1024;
@@ -131,6 +132,7 @@ export default function NavbarDup() {
   const { preference: langPreference, t } = useMarketingI18n();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
+  const [isAppSignedIn, setIsAppSignedIn] = useState(false);
   const prefetchedDropdowns = useRef(new Set());
 
   const appUrl = useMemo(
@@ -141,6 +143,17 @@ export default function NavbarDup() {
     () => withAppLanguageParam(EXPLORE_URL, langPreference),
     [langPreference],
   );
+
+  useEffect(() => {
+    const syncAuthHint = () => setIsAppSignedIn(readAuthHintCookie());
+    syncAuthHint();
+    window.addEventListener('focus', syncAuthHint);
+    document.addEventListener('visibilitychange', syncAuthHint);
+    return () => {
+      window.removeEventListener('focus', syncAuthHint);
+      document.removeEventListener('visibilitychange', syncAuthHint);
+    };
+  }, []);
 
   const prefetchDropdown = useCallback(
     (dropdown, id) => {
@@ -561,13 +574,15 @@ export default function NavbarDup() {
 
             <div className="nav-buttons">
               <a
-                href={appUrl}
+                href={isAppSignedIn ? exploreUrl : appUrl}
                 className={ctaLoginClass}
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <ArrowRightOnRectangleIcon className="h-4 w-4 shrink-0" aria-hidden />
-                <span className="nav-link-text">{t('nav.login')}</span>
+                <span className="nav-link-text">
+                  {isAppSignedIn ? t('nav.openApp') : t('nav.login')}
+                </span>
               </a>
               <a
                 href={exploreUrl}
@@ -592,12 +607,12 @@ export default function NavbarDup() {
             <div className="nav-mobile-actions flex items-center gap-2 lg:hidden">
               <LanguageMenu align="end" />
               <a
-                href={appUrl}
+                href={isAppSignedIn ? exploreUrl : appUrl}
                 className="nav-mobile-login no-underline"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {t('nav.login')}
+                {isAppSignedIn ? t('nav.openApp') : t('nav.login')}
               </a>
               <button
                 type="button"
