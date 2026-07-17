@@ -473,9 +473,8 @@ export default function NavbarDup() {
         `}</style>
 
         <div className="nav-content mx-auto flex h-full max-w-[1280px] items-center justify-between gap-2 px-4 sm:px-6 lg:px-8">
-          <div className="nav-brand flex shrink-0 items-center gap-2">
+          <div className="nav-brand flex shrink-0 items-center">
             <KahanaWordmark size={28} />
-            <LanguageMenu align="start" />
           </div>
 
           <div className="flex shrink-0 items-center gap-2 lg:gap-3">
@@ -560,6 +559,7 @@ export default function NavbarDup() {
             </nav>
 
             <div className="nav-buttons">
+              <LanguageMenu align="end" />
               <a
                 href={appUrl}
                 className={ctaLoginClass}
@@ -590,6 +590,7 @@ export default function NavbarDup() {
             </div>
 
             <div className="nav-mobile-actions flex items-center gap-2 lg:hidden">
+              <LanguageMenu align="end" />
               <a
                 href={appUrl}
                 className="nav-mobile-login no-underline"

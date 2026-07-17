@@ -536,14 +536,14 @@ footer[aria-labelledby='footer-heading'] button.footer-legal-text-button:focus-v
 button.language-menu-trigger {
   display: inline-flex !important;
   align-items: center !important;
-  gap: 6px !important;
-  height: 28px !important;
-  padding: 0 8px !important;
-  border-radius: 8px !important;
+  gap: 4px !important;
+  height: 22px !important;
+  padding: 0 6px !important;
+  border-radius: 6px !important;
   border: 1px solid #d8dece !important;
   background-color: #ffffff !important;
   color: #313a00 !important;
-  font-size: 0.75rem !important;
+  font-size: 0.625rem !important;
   font-weight: 700 !important;
   line-height: 1 !important;
   cursor: pointer !important;

@@ -275,7 +275,7 @@ function FooterContent() {
 
         <div className="flex flex-col gap-16 md:gap-[120px]">
           <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
-            <div className="flex flex-wrap items-center gap-3">
+            <div className="flex flex-wrap items-center gap-4 sm:gap-5">
               <KahanaWordmark size={30} />
               <LanguageMenu align="start" openUpward />
             </div>

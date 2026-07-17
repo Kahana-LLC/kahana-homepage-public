@@ -75,7 +75,7 @@ export default function LanguageMenu({
         title={t('language.titleHint')}
         onClick={() => setOpen((prev) => !prev)}
       >
-        <LanguageGlyph className="h-[15px] w-[15px] shrink-0" />
+        <LanguageGlyph className="h-3 w-3 shrink-0" />
         {shortLabel ? <span>{shortLabel}</span> : null}
       </button>
 

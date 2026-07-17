@@ -27,9 +27,9 @@ import ConsentBanner from "../components/ConsentBanner";
 import ConsentErrorBoundary from "../components/ConsentErrorBoundary";
 
 import Footer from "../components/Footer";
+import NavbarDup from "../components/NavbarDup";
 
-/** Code-split nav + modal; footer stays in the main graph to avoid late paint CLS on the wordmark block. */
-const NavbarDup = dynamic(() => import("../components/NavbarDup"), { ssr: true });
+/** Code-split cookie modal only; nav stays in the main graph with footer/wordmark. */
 const CookiePreferencesModal = dynamic(() => import("../components/CookiePreferencesModal"), { ssr: false });
 import { loadScriptIfConsented, loadInlineScriptIfConsented } from "../utils/scriptLoader";
 import { trackMixpanelPageView } from "../utils/mixpanel";
