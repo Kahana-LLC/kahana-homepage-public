@@ -25,10 +25,10 @@ If you only have a PNG of the new logo:
 
 ## 2. Cache-bust version
 
-In `pages/_document.js`, favicon URLs currently use `?v=4`. When you change the logo:
+In `pages/_document.js`, favicon URLs currently use `?v=8`. When you change the logo:
 
 1. Replace `favicon.svg`, `favicon.ico`, and/or `apple-touch-icon.png` in `public/` as above.
-2. Bump the version (e.g. `?v=5`) in `_document.js` so browsers, Apple, and Google refetch.
+2. Bump the version (e.g. `?v=8`) in `_document.js` so browsers, Apple, and Google refetch.
 
 ## 3. Deploy
 
@@ -68,11 +68,11 @@ Google supports SVG; if you want to be explicit about size, you can add a 48×48
 2. Save as `public/favicon-48.png`.
 3. In `pages/_document.js`, add:
    ```html
-   <link rel="icon" type="image/png" href="/favicon-48.png?v=4" sizes="48x48" />
+   <link rel="icon" type="image/png" href="/favicon-48.png?v=8" sizes="48x48" />
    ```
 
 ## Summary
 
 - **Old logo in Google** → Replace `public/favicon.svg`, `public/favicon.ico`, and `public/apple-touch-icon.png` with the new logo, deploy, then request indexing for `https://about.kahana.io` in Search Console.
-- **Cache-bust** → Currently `?v=4`; bump higher when you change the logo again.
+- **Cache-bust** → Currently `?v=8`; bump higher when you change the logo again.
 - **Sizes** → Favicon is square; 48×48 px minimum for Google; 180×180 PNG for Apple touch.
