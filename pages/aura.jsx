@@ -24,8 +24,8 @@ export default function AuraPage() {
                 Aura is how Kahana promotes quality
               </h1>
               <p className="mt-5 text-lg leading-relaxed text-[#495800] sm:text-xl">
-                Each day you get a small Aura budget to endorse hubs worth learning from. Scarcity
-                keeps the signal careful, so the best work can rise.
+                Each day you get a small Aura budget to endorse hubs and noteworthy files inside
+                them. Scarcity keeps the signal careful, so the best work can rise.
               </p>
             </FadeInSection>
           </div>
@@ -55,7 +55,8 @@ export default function AuraPage() {
                 Ready to explore?
               </h2>
               <p className="mt-4 text-lg text-[#F8FAF2]/85">
-                Find hubs on Explore, give Aura carefully, or Create a hub to share what you know.
+                Find hubs on Explore, give Aura to strong hubs or files, or Create a hub to share
+                what you know.
               </p>
               <div className="mt-10 flex flex-wrap justify-center gap-3">
                 <a

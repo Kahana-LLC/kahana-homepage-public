@@ -202,7 +202,7 @@ On Explore, filter by free or paid, price range, or category. You can also searc
 
 Aura is limited. You can give up to **5 Aura per day**. Your Aura renews daily: at **midnight UTC** you get 5 Aura again.
 
-Aura is not money and not crypto. It is a way to endorse hubs you value, see who gave Aura, and help the best work rise. You cannot give Aura to your own hubs. Full explainer: [about.kahana.io/aura](https://about.kahana.io/aura).
+Aura is not money and not crypto. It is a way to endorse hubs and files inside hubs that you value, see who gave Aura, and help the best work rise. When you give Aura to a file, that hub also receives 1 Aura. You cannot give Aura to your own hubs or files. Full explainer: [about.kahana.io/aura](https://about.kahana.io/aura).
 
 ---
 
@@ -210,37 +210,37 @@ Aura is not money and not crypto. It is a way to endorse hubs you value, see who
 
 ### What is Aura?
 
-Aura is how Kahana promotes quality. You automatically have up to **5 Aura per day** to endorse hubs worth learning from. Give it all to one hub, or split it across a few.
+Aura is how Kahana promotes quality. You automatically have up to **5 Aura per day** to endorse hubs or files inside hubs. Give it all to one target, or split it across a few.
 
-Aura is not money and not crypto. You can see who gave it. Because your Aura is scarce, you give it carefully. That helps the best work rise.
+Aura is not money and not crypto. You can see who gave it. Because your Aura is scarce, you give it carefully. That helps the best work rise. File Aura also lifts the hub by +1 and surfaces noteworthy files in search and ranking; hub Aura does not roll down to files.
 
-You cannot give Aura to your own hubs. Counts appear on Explore cards. Full details: [about.kahana.io/aura](https://about.kahana.io/aura).
+You cannot give Aura to your own hubs or files. Counts appear on Explore cards and file surfaces. Full details: [about.kahana.io/aura](https://about.kahana.io/aura).
 
 ### How is Aura different from star ratings or written reviews?
 
 Star ratings and written reviews often fail both sides. One negative review can outweigh many careful positive ones. People chase review counts more than the score. A perfect 5.0 with one review feels thin. Too many glowing reviews can feel fake.
 
-Aura is different on purpose. You have a small daily budget that is yours to give and take. Scarcity makes each endorsement mean more. You can see who gave Aura. You cannot endorse your own hubs. We wanted a signal built for quality, not another messy review pile.
+Aura is different on purpose. You have a small daily budget that is yours to give and take. Scarcity makes each endorsement mean more. You can see who gave Aura. You cannot endorse your own hubs or files. We wanted a signal built for quality, not another messy review pile.
 
 ### How much Aura can I give?
 
 You automatically have **5 Aura** to give each day.
 
-Give all of your Aura to one hub, or split it across a few. At **midnight UTC** you get 5 Aura again, even if you used all 5 already. You can remove Aura you gave within product rules. You cannot give Aura to your own hubs.
+Give all of your Aura to one hub or file, or split it across a few. At **midnight UTC** you get 5 Aura again, even if you used all 5 already. You can remove Aura you gave within product rules. You cannot give Aura to your own hubs or files.
 
 ### Does the Aura I already gave reset every day?
 
-No. Daily renewal is a fresh budget of 5 Aura to give. Aura you already placed on a hub stays there. It does not vanish overnight.
+No. Daily renewal is a fresh budget of 5 Aura to give. Aura you already placed on a hub or file stays there. It does not vanish overnight.
 
 You control it. If you change your mind later, you can remove Aura you gave.
 
 ### Do I need to create a hub to give Aura?
 
-No. Anyone with an account can give Aura. Creating a hub is how you add knowledge to the library. It is not required to endorse hubs you find on Explore.
+No. Anyone with an account can give Aura. Creating a hub is how you add knowledge to the library. It is not required to endorse hubs or files you find on Explore.
 
 ### Can I give Aura to a person or creator?
 
-No. Aura can only be given to hubs of digital artifacts. You cannot give Aura directly to profiles, hub owners, or other users as people.
+No. You cannot give Aura directly to profiles, hub owners, or other users as people. You can give Aura to hubs of digital artifacts, and to files inside those hubs. When you give Aura to a file, that hub also receives 1 Aura; giving Aura to a hub does not add Aura to the files inside it.
 
 ### How do I create and contribute on Kahana?
 
@@ -385,3 +385,4 @@ Lead with **marketplace + discovery + payments in one stack**, then Aura as cult
 | 2026-07-14 | Initial FAQ pack expanded from platform FAQ seed + Aura / Explore / billing Q&As for website and Cyndee review. |
 | 2026-07-15 | Friendly language pass: shorter sentences, clearer voice; synced with `data/platformFaq.js` on-page answers. |
 | 2026-07-15 | Aura permanence, hubs-only, Create-a-hub path; link to `/aura` explainer. |
+| 2026-07-18 | Aura targets: files + hubs; one-way file→hub rollup; not people/profiles. |
