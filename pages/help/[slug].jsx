@@ -99,8 +99,20 @@ export default function HelpArticlePage({ doc, relatedDocs }) {
     }
   }, [doc]);
 
+  if (router.isFallback) {
+    return (
+      <div className="min-h-screen bg-white px-4 py-12 text-center text-oasis-green-800">
+        Loading…
+      </div>
+    );
+  }
+
   if (!doc) {
-    return <div>Article not found</div>;
+    return (
+      <div className="min-h-screen bg-white px-4 py-12 text-center text-oasis-green-800">
+        Article not found
+      </div>
+    );
   }
 
   // Get authors for this document, default to Adam Kershner if no authors specified
