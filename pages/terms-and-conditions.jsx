@@ -313,6 +313,13 @@ export default function TermsAndConditions() {
                 <li>(b) your User Content, and the Posting or other use of your User Content as contemplated by these Terms, does not and will not: infringe upon, violate, misappropriate, or otherwise breach any third party's rights, including any copyright, trademark, patent, trade secret, moral right, privacy right, right of publicity, or any other intellectual property, contract, or proprietary right; slander, defame, libel, or infringe upon the right of privacy, publicity, or other property rights of any other person; or cause Kahana to violate any law or regulation or require Kahana to obtain additional licenses from or pay royalties, fees, compensation, or other amounts to, or provide attribution to, any third parties; and</li>
                 <li>(c) a reasonable person would not consider your User Content to be objectionable, profane, indecent, pornographic, harassing, threatening, embarrassing, hateful, or otherwise inappropriate.</li>
               </ul>
+              <p className="text-gray-700 leading-relaxed mb-6">
+                Before a hub is made unlisted, listed on Explore, or monetized (or when you upload into a hub that already is), you must confirm that you have the right to share—and, if monetizing, to sell access to—the content in that hub, including any required attribution or license notices. Practical guidance on public domain works, open licenses, trusted sources, and reporting suspected infringement is available in our{' '}
+                <Link href="/help/content-rights" className="text-[#4A6200] no-underline hover:no-underline font-semibold">
+                  Content Rights guide
+                </Link>
+                {' '}(also available in-app at app.kahana.io/legal/content-rights). That guide is educational Additional Terms context and does not replace or limit the representations and warranties in this Section 8.3.
+              </p>
 
               <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">8.4. Disclaimer Regarding User Content</h3>
               <p className="text-gray-700 leading-relaxed mb-6">
@@ -647,7 +654,15 @@ export default function TermsAndConditions() {
 
               <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">18.4. Incorporation of Additional Terms</h3>
               <p className="text-gray-700 leading-relaxed mb-6">
-                Your use of the Service is subject to all additional terms, policies, rules, or guidelines that apply to the Service or certain features of the Service that we may post on or link to from the Service (the "Additional Terms"). All Additional Terms are incorporated by reference herein and form a part of these Terms.
+                Your use of the Service is subject to all additional terms, policies, rules, or guidelines that apply to the Service or certain features of the Service that we may post on or link to from the Service (the &quot;Additional Terms&quot;). All Additional Terms are incorporated by reference herein and form a part of these Terms. Additional Terms include, without limitation, our{' '}
+                <Link href="/help/content-rights" className="text-[#4A6200] no-underline hover:no-underline font-semibold">
+                  Content Rights guide
+                </Link>
+                {' '}and{' '}
+                <Link href="/community-guidelines" className="text-[#4A6200] no-underline hover:no-underline font-semibold">
+                  Community Guidelines
+                </Link>
+                , as well as related in-app legal pages under app.kahana.io/legal.
               </p>
 
               <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">18.5. Electronic Communication Consent</h3>

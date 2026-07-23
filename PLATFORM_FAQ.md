@@ -105,6 +105,12 @@ A hub is a curated place for digital artifacts: files, videos, images, PDFs, doc
 
 Keep it private, make it public, list it on Explore, and charge for access later if you choose.
 
+### Can I upload public-domain ebooks or openly licensed files?
+
+Yes, when the work is public domain or under a license that allows redistribution on platforms like Kahana. Include any required attribution. Before a hub is unlisted, listed on Explore, or monetized, you must confirm you have the right to share (and, if monetizing, sell access to) all content in it.
+
+Finding a file online is not permission. Full guide: [/help/content-rights](/help/content-rights). Binding rules: Terms §8 (User Content).
+
 ### How do I turn on paid access for a hub?
 
 Contribute a hub and add your content. Make it public and list it on Explore when it is ready.
@@ -386,3 +392,4 @@ Lead with **marketplace + discovery + payments in one stack**, then Aura as cult
 | 2026-07-15 | Friendly language pass: shorter sentences, clearer voice; synced with `data/platformFaq.js` on-page answers. |
 | 2026-07-15 | Aura permanence, hubs-only, Create-a-hub path; link to `/aura` explainer. |
 | 2026-07-18 | Aura targets: files + hubs; one-way file→hub rollup; not people/profiles. |
+| 2026-07-23 | Content rights FAQ; link to `/help/content-rights`. |

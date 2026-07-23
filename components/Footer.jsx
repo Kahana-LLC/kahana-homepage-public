@@ -217,6 +217,12 @@ function LegalLinkList({ consentContext, openCookieModal, t }) {
         </Link>
       </li>
       <li>
+        <Link href="/content-rights" prefetch={false} className={LEGAL_LINK_CLASS}>
+          <BookOpenIcon className={ICON_LINK} aria-hidden />
+          {t('footer.contentRights')}
+        </Link>
+      </li>
+      <li>
         <CookieSettingsControl
           consentContext={consentContext}
           openCookieModal={openCookieModal}

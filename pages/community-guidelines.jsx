@@ -137,13 +137,26 @@ export default function CommunityGuidelines() {
             <h2 className="text-2xl font-semibold text-oasis-green-900 mb-4">Need Help?</h2>
             <p className="text-oasis-green-800 mb-6">
               If you have any questions about these guidelines or need to report a violation, please contact our community team.
+              For uploading and publishing hubs, also read the{' '}
+              <Link href="/help/content-rights" className="font-semibold text-brand-link underline">
+                Content rights guide
+              </Link>
+              .
             </p>
-            <Link
-              href="https://kahana.io/contact"
-              className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-brand-link hover:bg-brand-link-hover transition-colors"
-            >
-              Contact Community Team
-            </Link>
+            <div className="flex flex-wrap gap-4">
+              <Link
+                href="https://kahana.io/contact"
+                className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-brand-link hover:bg-brand-link-hover transition-colors"
+              >
+                Contact Community Team
+              </Link>
+              <Link
+                href="/help/content-rights"
+                className="inline-flex items-center px-6 py-3 border border-oasis-blue-200/50 text-base font-medium rounded-md text-oasis-green-900 bg-white hover:bg-oasis-blue-100/20 transition-colors"
+              >
+                Content rights guide
+              </Link>
+            </div>
           </div>
         </div>
       </main>

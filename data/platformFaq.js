@@ -79,6 +79,12 @@ export const FAQ_SECTIONS = [
           'A hub is a curated place for digital artifacts: files, videos, images, PDFs, documents, links, and more. You can invite collaborators if you want.\n\nKeep it private, make it public, list it on Explore, and charge for access later if you choose.',
       },
       {
+        id: 'content-rights',
+        question: 'Can I upload public-domain ebooks or openly licensed files?',
+        answer:
+          'Yes, when the work is public domain or under a license that allows redistribution on platforms like Kahana. Include any required attribution. Before a hub is unlisted, listed on Explore, or monetized, you must confirm you have the right to share (and, if monetizing, sell access to) all content in it.\n\nFinding a file online is not permission. Full guide: /help/content-rights. Binding rules: Terms §8 (User Content).',
+      },
+      {
         id: 'how-sell',
         question: 'How do I turn on paid access for a hub?',
         answer:

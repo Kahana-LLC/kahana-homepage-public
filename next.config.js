@@ -468,6 +468,11 @@ const nextConfig = {
         destination: '/help/:path*',
         permanent: true,
       },
+      {
+        source: '/content-rights',
+        destination: '/help/content-rights',
+        permanent: true,
+      },
       // Features retired → Help topic articles
       {
         source: '/features/explore',
