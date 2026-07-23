@@ -217,10 +217,15 @@ function LegalLinkList({ consentContext, openCookieModal, t }) {
         </Link>
       </li>
       <li>
-        <Link href="/help/content-rights" prefetch={false} className={LEGAL_LINK_CLASS}>
+        <a
+          href="https://kahana.io/legal/content-rights"
+          className={LEGAL_LINK_CLASS}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <BookOpenIcon className={ICON_LINK} aria-hidden />
           {t('footer.contentRights')}
-        </Link>
+        </a>
       </li>
       <li>
         <CookieSettingsControl
