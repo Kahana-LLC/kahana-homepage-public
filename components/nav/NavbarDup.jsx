@@ -487,7 +487,7 @@ export default function NavbarDup() {
 
         <div className="nav-content mx-auto flex h-full max-w-[1280px] items-center justify-between gap-2 px-4 sm:px-6 lg:px-8">
           <div className="nav-brand flex shrink-0 items-center">
-            <KahanaWordmark size={28} />
+            <KahanaWordmark size={36} />
           </div>
 
           <div className="flex shrink-0 items-center gap-2 lg:gap-3">
