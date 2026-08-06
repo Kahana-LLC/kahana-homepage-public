@@ -2,14 +2,20 @@
  * Phase 1 corporate subdomain map (DOMAIN_CONSOLIDATION_CHARTER.md).
  *
  * Each host serves this same Next app (apex unchanged). Only `/` is rewritten
- * to the surface home; all other paths work as on kahana.io so nav/footer
+ * to the surface home; all other paths work as on the apex so nav/footer
  * keep working during the additive phase.
  *
- * Phase 2.5: apex Host=kahana.io 301s marketing paths to these hosts
- * (see config/apexRedirects.js). Preferred sitemap locs use subdomain origins.
+ * Phase 2.5: apex Host=kahana.io (and auralibrary.org) 301s marketing paths
+ * to these hosts (see config/apexRedirects.js). Preferred sitemap locs stay on
+ * kahana.io corporate origins.
  */
 
 export const PRODUCTION_SUFFIX = 'kahana.io';
+
+/** Additional production brand suffix (same surfaces / routes). */
+export const ALT_PRODUCTION_SUFFIX = 'auralibrary.org';
+
+export const PRODUCTION_SUFFIXES = [PRODUCTION_SUFFIX, ALT_PRODUCTION_SUFFIX];
 
 /**
  * @typedef {'about' | 'newsroom' | 'careers' | 'help'} CorporateSurfaceId
@@ -72,6 +78,14 @@ export const SURFACE_BY_HOST = Object.fromEntries(
   Object.values(CORPORATE_SURFACES).map((surface) => [surface.host, surface])
 );
 
+/** Map alternate brand hosts (e.g. about.auralibrary.org) → same surfaces. */
+for (const surface of Object.values(CORPORATE_SURFACES)) {
+  for (const suffix of PRODUCTION_SUFFIXES) {
+    if (suffix === PRODUCTION_SUFFIX) continue;
+    SURFACE_BY_HOST[`${surface.id}.${suffix}`] = surface;
+  }
+}
+
 /** Beta hosts for kahana-public-beta QA (same surfaces as production). */
 export const BETA_HOST_SUFFIX = `-beta.${PRODUCTION_SUFFIX}`;
 
@@ -82,6 +96,13 @@ export const SURFACE_BY_BETA_HOST = Object.fromEntries(
   ])
 );
 
+for (const surface of Object.values(CORPORATE_SURFACES)) {
+  for (const suffix of PRODUCTION_SUFFIXES) {
+    if (suffix === PRODUCTION_SUFFIX) continue;
+    SURFACE_BY_BETA_HOST[`${surface.id}-beta.${suffix}`] = surface;
+  }
+}
+
 /**
  * @param {string | null | undefined} surfaceId
  * @returns {typeof CORPORATE_SURFACES[CorporateSurfaceId] | null}
@@ -90,6 +111,22 @@ export function getCorporateSurfaceById(surfaceId) {
   if (!surfaceId) return null;
   const id = String(surfaceId).toLowerCase();
   return CORPORATE_SURFACES[id] ?? null;
+}
+
+/**
+ * Apex host (no subdomain) for a request host on a known brand suffix.
+ * @param {string | null | undefined} hostHeader
+ * @returns {string} e.g. kahana.io | auralibrary.org
+ */
+export function resolveApexHostname(hostHeader) {
+  if (!hostHeader) return PRODUCTION_SUFFIX;
+  const host = hostHeader.split(':')[0].toLowerCase();
+  for (const suffix of PRODUCTION_SUFFIXES) {
+    if (host === suffix || host === `www.${suffix}` || host.endsWith(`.${suffix}`)) {
+      return suffix;
+    }
+  }
+  return PRODUCTION_SUFFIX;
 }
 
 /**
@@ -134,7 +171,7 @@ export function isPreviewHost(hostHeader) {
 }
 
 export function listCorporateHosts() {
-  return Object.values(CORPORATE_SURFACES).map((s) => s.host);
+  return Object.keys(SURFACE_BY_HOST);
 }
 
 export function listBetaCorporateHosts() {

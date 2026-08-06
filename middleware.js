@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import {
   getCorporateSurfaceById,
   isPreviewHost,
+  resolveApexHostname,
   resolveCorporateSurface,
 } from './config/corporateHosts';
 import {
@@ -10,8 +11,13 @@ import {
   isApexMarketingHost,
 } from './config/apexRedirects';
 
-const CANONICAL_HOST = 'kahana.io';
-const REDIRECT_HOSTS = new Set(['kahana.co', 'www.kahana.co', 'www.kahana.io']);
+/** www / legacy aliases → brand apex (path preserved). */
+const REDIRECT_TO_APEX = {
+  'kahana.co': 'kahana.io',
+  'www.kahana.co': 'kahana.io',
+  'www.kahana.io': 'kahana.io',
+  'www.auralibrary.org': 'auralibrary.org',
+};
 
 function withSurfaceHeader(response, surfaceId) {
   response.headers.set('x-kahana-surface', surfaceId);
@@ -33,11 +39,12 @@ export function middleware(request) {
   const host = request.headers.get('host')?.split(':')[0] ?? '';
   const { pathname, search } = request.nextUrl;
 
-  // Legacy aliases → apex (path preserved). www then hits Phase 2.5 map on next request,
-  // or we redirect www straight through canonicalization below.
-  if (REDIRECT_HOSTS.has(host)) {
+  // Legacy / www aliases → brand apex (path preserved). www then hits Phase 2.5
+  // on the next request (or we redirect www straight through canonicalization).
+  const apexAlias = REDIRECT_TO_APEX[host];
+  if (apexAlias) {
     const url = request.nextUrl.clone();
-    url.hostname = CANONICAL_HOST;
+    url.hostname = apexAlias;
     url.port = '';
     url.protocol = 'https';
     return NextResponse.redirect(url, 301);
@@ -49,7 +56,7 @@ export function middleware(request) {
     isApexMarketingHost(host) &&
     !pathname.startsWith('/api/')
   ) {
-    const location = buildApexRedirectUrl(pathname, search);
+    const location = buildApexRedirectUrl(pathname, search, host);
     if (location) {
       return NextResponse.redirect(location, 301);
     }
@@ -60,12 +67,13 @@ export function middleware(request) {
     return NextResponse.next();
   }
 
-  // Retire about.kahana.io/contact → canonical apex contact
+  // Retire about.*/contact → canonical apex contact for that brand
   if (
     surface.id === 'about' &&
     (pathname === '/contact' || pathname.startsWith('/contact/'))
   ) {
-    const target = new URL(`https://${CANONICAL_HOST}/contact`);
+    const apex = resolveApexHostname(host);
+    const target = new URL(`https://${apex}/contact`);
     target.search = search;
     return NextResponse.redirect(target, 301);
   }
