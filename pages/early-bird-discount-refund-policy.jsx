@@ -7,13 +7,13 @@ export default function EarlyBirdDiscountRefundPolicy() {
   return (
     <>
       <SEO
-        title="Early Access Deposit Refund Policy - Oasis | Kahana"
+        title="Early Access Deposit Refund Policy - Oasis | Aura Library"
         description="Complete refund policy for Oasis early access deposits. Learn about refund eligibility, timelines, and how to request a refund."
         url="https://kahana.io/early-bird-discount-refund-policy"
         type="website"
       />
       <Head>
-        <title>Early Access Deposit Refund Policy - Oasis | Kahana</title>
+        <title>Early Access Deposit Refund Policy - Oasis | Aura Library</title>
         <meta
           name="description"
           content="Complete refund policy for Oasis early access deposits. Learn about refund eligibility, timelines, and how to request a refund."

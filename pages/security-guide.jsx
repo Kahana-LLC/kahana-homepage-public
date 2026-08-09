@@ -90,7 +90,7 @@ function StickyHeader({ anchors }) {
         <Link href="/" legacyBehavior>
           <a style={{ display: 'inline-flex', alignItems: 'center', textDecoration: 'none' }}>
             <span style={{ width: 28, height: 28, borderRadius: 6, background: COLORS.primary, display: 'inline-block', marginRight: 10 }} />
-            <span style={{ color: COLORS.primary, fontWeight: 700 }}>Kahana</span>
+            <span style={{ color: COLORS.primary, fontWeight: 700 }}>Kahana Group Inc.</span>
           </a>
         </Link>
         <nav className="hide-on-mobile" role="navigation" aria-label="Primary" style={{ display: 'none' }}>

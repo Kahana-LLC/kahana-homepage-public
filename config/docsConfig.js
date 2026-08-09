@@ -47,7 +47,7 @@ export const docsConfig = {
   seo: {
     titleTemplate: "%s | Help",
     description:
-      "Guides and answers for the Kahana platform—hubs, Explore, Aura, and more. New articles are added as product help ships.",
+      "Guides and answers for the Aura Library platform—hubs, Explore, Aura, and more. New articles are added as product help ships.",
     baseUrl: absoluteUrl('/help')
   }
 };

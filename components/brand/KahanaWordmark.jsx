@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { APP_NAME } from '../../config/brand';
 
 /** Corne bonsai path — same vector as the product app lockup. */
 const BONSAI_PATH =
@@ -9,7 +10,7 @@ const BRAND_OLIVE = '#3D4F2A';
 
 /**
  * Product-parity lockup: bonsai ~78% of size, word ~62%, weight 500.
- * Matches kahana-web KahanaLogoMark wordmark.
+ * Matches kahana-web KahanaLogoMark wordmark (APP_NAME).
  */
 export default function KahanaWordmark({
   href = '/',
@@ -39,7 +40,7 @@ export default function KahanaWordmark({
         className="font-bricolage whitespace-nowrap font-medium leading-none tracking-[0.01em]"
         style={{ fontSize, color: BRAND_OLIVE }}
       >
-        Kahana
+        {APP_NAME}
       </span>
     </span>
   );
@@ -49,7 +50,7 @@ export default function KahanaWordmark({
   }
 
   return (
-    <Link href={href} className="inline-flex shrink-0 no-underline" aria-label="Kahana home">
+    <Link href={href} className="inline-flex shrink-0 no-underline" aria-label={`${APP_NAME} home`}>
       {content}
     </Link>
   );

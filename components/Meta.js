@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { generateMetaTags } from "../utils/metaUtils";
 import { useRouter } from "next/router";
+import { APP_NAME, APP_TAGLINE, pageTitle } from "../config/brand";
 
 export default function Meta({
   title,
@@ -8,18 +9,16 @@ export default function Meta({
   image,
   url,
   type = "website",
-  siteName = "Kahana",
+  siteName = APP_NAME,
   twitterHandle = "@kahana",
   noindex = false,
   canonicalUrl = null,
   schema = null,
 }) {
   const router = useRouter();
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://kahana.is";
-  const fullTitle = title ? `${title} | Kahana` : "Kahana";
-  const fullDescription =
-    description ||
-    "Contribute what you know, learn from curated hubs on Explore, and give Aura so quality rises.";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://kahana.io";
+  const fullTitle = title ? pageTitle(title) : APP_NAME;
+  const fullDescription = description || APP_TAGLINE;
   const canonical = canonicalUrl
     ? `${siteUrl}${canonicalUrl}`
     : `${siteUrl}${router.asPath}`;

@@ -154,7 +154,7 @@ export default function ForgotPassword() {
   return (
     <>
       <Head>
-        <title>Reset password · Kahana</title>
+        <title>Reset password · Aura Library</title>
         <meta name="robots" content="noindex, nofollow" />
       </Head>
 
@@ -162,7 +162,7 @@ export default function ForgotPassword() {
         <div className="mx-auto w-full max-w-xl">
           <div className="rounded-2xl border border-neutral-200 bg-white p-6 sm:p-8 shadow-[0_25px_80px_rgba(9,12,0,0.08)]">
             <p className="text-xs font-semibold tracking-wide uppercase text-[#978455] mb-2">
-              Oasis by Kahana
+              Oasis by Aura Library
             </p>
             <h1 className="text-3xl font-extrabold text-[#313A00] mb-2">Reset your password</h1>
             <p className="text-base text-neutral-700 mb-6">{message}</p>

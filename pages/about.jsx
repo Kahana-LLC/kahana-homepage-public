@@ -96,7 +96,7 @@ const audiences = [
   },
 ];
 
-const founderBio = `Adam built his career inside IT teams at a billion-dollar CPG company. He first witnessed how quickly security gaps compound when the tools people rely on aren't built with security in mind. That experience shaped everything Kahana builds next.`;
+const founderBio = `Adam built his career inside IT teams at a billion-dollar CPG company. He first witnessed how quickly security gaps compound when the tools people rely on aren't built with security in mind. That experience shaped everything Aura Library builds next.`;
 
 export default function About() {
   const organizationSchema = {
@@ -105,9 +105,9 @@ export default function About() {
       {
         '@type': 'Organization',
         '@id': 'https://kahana.io/#organization',
-        name: 'Kahana',
+        name: 'Aura Library',
         url: 'https://kahana.io',
-        description: 'Kahana builds Oasis: a personal browser and a managed enterprise browser. Kahana makes browsing faster, more private, and more secure.',
+        description: 'Aura Library builds Oasis: a personal browser and a managed enterprise browser. Aura Library makes browsing faster, more private, and more secure.',
         logo: PREVIEW_IMAGE,
         sameAs: ['https://www.linkedin.com/company/kahana-llc'],
       },
@@ -115,17 +115,17 @@ export default function About() {
         '@type': 'WebSite',
         '@id': 'https://kahana.io/#website',
         url: 'https://kahana.io',
-        name: 'Kahana',
+        name: 'Aura Library',
         publisher: { '@id': 'https://kahana.io/#organization' },
       },
       {
         '@type': 'WebPage',
         '@id': 'https://kahana.io/about#webpage',
         url: 'https://kahana.io/about',
-        name: 'About Kahana: Oasis, named for a refuge. Built for productivity and security.',
+        name: 'About Aura Library: Oasis, named for a refuge. Built for productivity and security.',
         isPartOf: { '@id': 'https://kahana.io/#website' },
         about: { '@id': 'https://kahana.io/#organization' },
-        description: 'Kahana builds two products under the Oasis name. One is a personal browser with AI assistant. The other is a managed enterprise browser. 7,000+ users across 108+ countries.',
+        description: 'Aura Library builds two products under the Oasis name. One is a personal browser with AI assistant. The other is a managed enterprise browser. 7,000+ users across 108+ countries.',
       },
       {
         '@type': 'SoftwareApplication',
@@ -153,30 +153,30 @@ export default function About() {
   return (
     <>
       <SEO
-        title="About Kahana: Oasis, named for a refuge. Built for productivity and security."
-        description="Kahana builds two products under the Oasis name: a personal browser with AI assistant for individuals, and a managed enterprise browser for organizations. 7,000+ users across 108+ countries."
+        title="About Aura Library: Oasis, named for a refuge. Built for productivity and security."
+        description="Aura Library builds two products under the Oasis name: a personal browser with AI assistant for individuals, and a managed enterprise browser for organizations. 7,000+ users across 108+ countries."
         image={PREVIEW_IMAGE}
         url="https://kahana.io/about"
         type="website"
         schema={organizationSchema}
       />
       <Head>
-        <title>About Kahana: Oasis | Kahana</title>
-        <meta name="description" content="Kahana builds two products under the Oasis name: a personal browser with AI assistant for individuals, and a managed enterprise browser for organizations. 7,000+ users across 108+ countries." />
+        <title>About Aura Library: Oasis | Aura Library</title>
+        <meta name="description" content="Aura Library builds two products under the Oasis name: a personal browser with AI assistant for individuals, and a managed enterprise browser for organizations. 7,000+ users across 108+ countries." />
       </Head>
 
       {/* ===== Hero ===== */}
       <div className="relative bg-white">
         <div className="mx-auto max-w-7xl px-4 pb-20 pt-12 sm:px-6 sm:pb-28 lg:px-8 lg:pt-20">
           <div className="max-w-4xl">
-            <p className="text-sm font-semibold uppercase tracking-wide text-oasis-green-600">Kahana</p>
+            <p className="text-sm font-semibold uppercase tracking-wide text-oasis-green-600">Aura Library</p>
             <h1 className="mt-2 bg-gradient-to-r from-oasis-green-600 to-oasis-green-500 bg-clip-text text-5xl font-bold tracking-tight text-transparent sm:text-6xl">
               Oasis: named for a refuge.
               <br />
               Built for productivity and security.
             </h1>
             <p className="mt-6 text-lg text-oasis-green-800 leading-relaxed">
-              Kahana builds two products under the Oasis name. One is a personal browser with a built-in AI assistant for individuals. The other is a managed enterprise browser for organizations. Both share one mission: make browsing faster, more private, and more secure.
+              Aura Library builds two products under the Oasis name. One is a personal browser with a built-in AI assistant for individuals. The other is a managed enterprise browser for organizations. Both share one mission: make browsing faster, more private, and more secure.
             </p>
             <p className="mt-4 text-base text-oasis-green-700 italic">
               7,000+ users trust our products across 108+ countries. Yes, we counted because we're curious.
@@ -235,7 +235,7 @@ export default function About() {
               It's called Oasis for a reason
             </h2>
             <p className="mt-4 text-lg text-oasis-green-800 leading-relaxed">
-              An oasis is a refuge: a place of shelter and calm in the middle of a harsh landscape. That's exactly what the modern web needs. Fragmentation, spyware, data leaks, and AI-driven threats have turned browsing into a gauntlet. We built Kahana. We named our products Oasis. We believe the browser should be a safe place to work, create, and explore.
+              An oasis is a refuge: a place of shelter and calm in the middle of a harsh landscape. That's exactly what the modern web needs. Fragmentation, spyware, data leaks, and AI-driven threats have turned browsing into a gauntlet. We built Aura Library. We named our products Oasis. We believe the browser should be a safe place to work, create, and explore.
             </p>
             <blockquote className="mt-8 border-l-4 border-oasis-green-600/35 bg-oasis-green-50/60 py-5 pl-5 pr-4 rounded-r-lg text-oasis-green-800 italic">
               <p className="text-[0.96875rem] leading-relaxed">
@@ -374,7 +374,7 @@ export default function About() {
             <div className="flex justify-center md:justify-start">
               <Image
                 src={ADAM_HEADSHOT_URL}
-                alt="Adam Kershner, CEO and Founder of Kahana"
+                alt="Adam Kershner, CEO and Founder of Aura Library"
                 width={1024}
                 height={1024}
                 className="h-auto w-full max-w-[280px] rounded-2xl border border-oasis-green-600/20 object-cover shadow-sm md:max-w-[300px]"

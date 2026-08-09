@@ -148,7 +148,7 @@ export default function HeroOwlLottie({ className = '' }) {
       onTouchCancel={deactivate}
       tabIndex={0}
       role="img"
-      aria-label="Kahana owl with Aura"
+      aria-label="Aura Library owl with Aura"
     >
       {/* Soft color wash behind the owl — brightens on hover */}
       <div

@@ -80,10 +80,10 @@ export default function ConfirmSuccess() {
   return (
     <>
       <Head>
-        <title>Email confirmed · Kahana</title>
+        <title>Email confirmed · Aura Library</title>
         <meta
           name="description"
-          content="Your email is confirmed. You're all set to use Oasis by Kahana."
+          content="Your email is confirmed. You're all set to use Oasis by Aura Library."
         />
       </Head>
       <main className="min-h-screen bg-white px-4 py-12 sm:py-16 flex items-center justify-center">
@@ -100,7 +100,7 @@ export default function ConfirmSuccess() {
             </svg>
           </div>
           <p className="text-sm font-semibold uppercase tracking-wider text-[#978455] mb-2">
-            Oasis by Kahana
+            Oasis by Aura Library
           </p>
           <h1 className="text-3xl sm:text-4xl font-extrabold text-[#313A00] mb-4">
             {oasisRedirecting ? 'Completing sign-in' : 'Email confirmed'}

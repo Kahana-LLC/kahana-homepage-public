@@ -13,7 +13,7 @@ export const platformTestimonials = [
     name: 'Amy',
     role: 'Creator',
     content:
-      'Kahana made it feel possible to put my expertise out there without building a whole company first. One hub was enough to start.',
+      'Aura Library made it feel possible to put my expertise out there without building a whole company first. One hub was enough to start.',
     image: avatarOlivia,
   },
   {
@@ -21,7 +21,7 @@ export const platformTestimonials = [
     name: 'Kelsey Vetter',
     role: 'CEO & Pinterest Marketing Expert',
     content:
-      "Kahana has the most user-friendly interface I've come across in a platform of its kind. I love how easy it is to set up, make changes, add value, and connect with your audience. It's allowed me to monetize my knowledge and add a passive revenue stream to my small business.",
+      "Aura Library has the most user-friendly interface I've come across in a platform of its kind. I love how easy it is to set up, make changes, add value, and connect with your audience. It's allowed me to monetize my knowledge and add a passive revenue stream to my small business.",
     image: avatarKelsey,
     highlight: 'Creators like Kelsey turn expertise into hubs people pay for',
   },
@@ -30,7 +30,7 @@ export const platformTestimonials = [
     name: 'Benjamin St-Juste',
     role: 'NFL Player & Brand Owner',
     content:
-      "Kahana allows me to go so much more in-depth and share all the knowledge I've learned on and off the field - I can only scratch the surface on Instagram and TikTok.",
+      "Aura Library allows me to go so much more in-depth and share all the knowledge I've learned on and off the field - I can only scratch the surface on Instagram and TikTok.",
     image: avatarBenjamin,
   },
   {

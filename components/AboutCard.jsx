@@ -53,7 +53,7 @@ export default function AboutCard() {
                   <Image
                     className="absolute inset-0 h-full w-full object-cover"
                     src={KahanaBrandImage}
-                    alt="Kahana Brand"
+                    alt="Aura Library Brand"
                     width={1440}
                     height={1440}
                   />
@@ -76,7 +76,7 @@ export default function AboutCard() {
                       </div>
                       <footer className="mt-4">
                         <p className="text-base text-white">
-                          Jonathan, Co-Founder &amp; CEO at Kahana
+                          Jonathan, Co-Founder &amp; CEO at Aura Library
                         </p>
                       </footer>
                     </blockquote>
@@ -93,7 +93,7 @@ export default function AboutCard() {
                 </h2>
                 <div className="mt-6 space-y-6 text-oasis-green-800">
                   <p className="text-lg">
-                    Kahana is a platform for everyday experts to build hubs of information to be discovered and explored by knowledge seekers.
+                    Aura Library is a platform for everyday experts to build hubs of information to be discovered and explored by knowledge seekers.
                   </p>
                   <ul className="space-y-4 pl-8 list-disc text-lg">
                     <li>

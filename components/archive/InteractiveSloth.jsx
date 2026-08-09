@@ -99,7 +99,7 @@ const InteractiveSloth = () => {
           
           // Show welcome message
           setTimeout(() => {
-            setMessage('Welcome to Kahana!');
+            setMessage('Welcome to Aura Library!');
             setShowMessage(true);
             setTimeout(() => {
               setShowMessage(false);
@@ -495,7 +495,7 @@ const InteractiveSloth = () => {
           <div className={`sloth-wrapper ${!isAwake ? 'waking' : ''} ${isWalking ? (isWaving ? 'waving' : 'walking') : ''}`}>
             <Image
               src={imageSrc}
-              alt="Kahana Oasis sloth mascot"
+              alt="Aura Library Oasis sloth mascot"
               width={180}
               height={180}
               className="sloth-image"

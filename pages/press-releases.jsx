@@ -10,7 +10,7 @@ export default function PressReleasesPage() {
     <>
       <SEO
         title="Press releases"
-        description="Official Kahana press releases and announcements. Curated links for journalists and partners."
+        description="Official Aura Library press releases and announcements. Curated links for journalists and partners."
         url="https://kahana.io/press-releases"
         type="website"
       />
@@ -21,7 +21,7 @@ export default function PressReleasesPage() {
             <p className="text-sm font-semibold uppercase tracking-wide text-oasis-green-600">Media</p>
             <h1 className="mt-2 text-4xl font-bold tracking-tight text-oasis-green-900 sm:text-5xl">Press releases</h1>
             <p className="mt-4 text-lg text-oasis-green-800">
-              Official announcements from Kahana. For logos, colors, and imagery, see the{' '}
+              Official announcements from Aura Library. For logos, colors, and imagery, see the{' '}
               <Link href="/press-kit" className="font-semibold text-oasis-green-700 underline decoration-oasis-green-300 underline-offset-2 hover:text-oasis-green-900">
                 press kit
               </Link>

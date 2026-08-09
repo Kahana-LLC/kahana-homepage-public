@@ -13,10 +13,10 @@ export default function DocMeta({ doc }) {
 
   return (
     <Meta
-      title={`${doc.title} | Kahana Help`}
+      title={`${doc.title} | Aura Library Help`}
       description={
         doc.description ||
-        "Learn how to use Kahana's products and features."
+        "Learn how to use Aura Library's products and features."
       }
       image={doc.featuredImage || "/images/docs-hero.jpg"}
       url={`https://help.kahana.io/help/${doc.slug}`}

@@ -5,8 +5,8 @@ export default function MarketingKit() {
   return (
     <>
       <Head>
-        <title>Marketing Kit | Kahana</title>
-        <meta name="description" content="Access our collection of social media assets and content to help promote Kahana." />
+        <title>Marketing Kit | Aura Library</title>
+        <meta name="description" content="Access our collection of social media assets and content to help promote Aura Library." />
       </Head>
 
       <div className="min-h-screen bg-white">
@@ -18,7 +18,7 @@ export default function MarketingKit() {
                 Marketing Kit
               </h1>
               <p className="mt-3 max-w-md mx-auto text-base text-blue-100 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-                Everything you need to promote Kahana on social media and beyond
+                Everything you need to promote Aura Library on social media and beyond
               </p>
             </div>
           </div>
@@ -66,7 +66,7 @@ export default function MarketingKit() {
               {/* Logos */}
               <div className="bg-white rounded-lg shadow-lg p-6">
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">Logos</h3>
-                <p className="text-gray-600 mb-4">Official Kahana logos in various formats</p>
+                <p className="text-gray-600 mb-4">Official Aura Library logos in various formats</p>
                 <Link href="/marketing-kit/logos" className="text-blue-600 hover:text-blue-800">
                   Download Logos →
                 </Link>
@@ -108,7 +108,7 @@ export default function MarketingKit() {
               {/* Product Screenshots */}
               <div className="bg-white rounded-lg shadow-lg p-6">
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">Product Screenshots</h3>
-                <p className="text-gray-600 mb-4">High-quality screenshots of Kahana features</p>
+                <p className="text-gray-600 mb-4">High-quality screenshots of Aura Library features</p>
                 <Link href="/marketing-kit/screenshots" className="text-blue-600 hover:text-blue-800">
                   Download Screenshots →
                 </Link>

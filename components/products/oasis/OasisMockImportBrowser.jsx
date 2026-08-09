@@ -4,7 +4,7 @@ import { subtleTransition, usePrefersReducedMotion } from '../../solutions/visua
 
 const BROWSER_ROWS = [
   { id: 'c1', label: 'Chrome: kahana.io', icon: 'chrome', selected: true },
-  { id: 'c2', label: 'Chrome: Kahana', icon: 'chrome' },
+  { id: 'c2', label: 'Chrome: Aura Library', icon: 'chrome' },
   { id: 'c3', label: 'Chrome: Adam', icon: 'chrome' },
   { id: 'b1', label: 'Brave: Personal', icon: 'brave' },
   { id: 's1', label: 'Safari', icon: 'safari' },

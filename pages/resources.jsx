@@ -131,7 +131,7 @@ const Resources = ({
   return (
     <div className="bg-white">
       <Head>
-        <title>Resources | Kahana</title>
+        <title>Resources | Aura Library</title>
         <meta
           name="description"
           content="Access our comprehensive collection of resources to help you succeed in monetizing your digital content."

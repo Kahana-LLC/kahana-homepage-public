@@ -8,10 +8,10 @@ export default function CareersMeta({ careers }) {
 
   return (
     <Meta
-      title="Careers at Kahana | Join Our Team"
+      title="Careers at Aura Library | Join Our Team"
       description={
         careers.description ||
-        "Join Kahana's team of innovators. We're looking for talented individuals to help us shape the future of enterprise security."
+        "Join Aura Library's team of innovators. We're looking for talented individuals to help us shape the future of enterprise security."
       }
       image={careers.featuredImage || "/images/careers-hero.jpg"}
       url="https://kahana.io/careers"

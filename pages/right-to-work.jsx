@@ -7,10 +7,10 @@ export default function RightToWork() {
   return (
     <>
       <Head>
-        <title>E-Verify & Right to Work | Kahana</title>
+        <title>E-Verify & Right to Work | Kahana Group Inc.</title>
         <meta
           name="description"
-          content="Kahana participates in E-Verify and follows federal employment eligibility verification requirements for all new hires."
+          content="Kahana Group Inc. participates in E-Verify and follows federal employment eligibility verification requirements for all new hires."
         />
       </Head>
 
@@ -19,7 +19,7 @@ export default function RightToWork() {
           <div className="text-center">
             <h1 className="text-4xl font-bold text-gray-900">E-Verify & Right to Work</h1>
             <p className="mt-4 text-xl text-gray-600">
-              Kahana participates in E-Verify and follows federal employment eligibility verification requirements.
+              Kahana Group Inc. participates in E-Verify and follows federal employment eligibility verification requirements.
             </p>
           </div>
 
@@ -27,7 +27,7 @@ export default function RightToWork() {
             <div className="bg-gradient-to-br from-desert-yellow-100/20 to-oasis-blue-300/10 p-6 rounded-lg border border-kahana-primary/30">
               <h3 className="text-xl font-semibold text-gray-900 mb-4">E-Verify Participation</h3>
               <p className="text-gray-600">
-                Kahana is enrolled in the federal E-Verify program and verifies employment eligibility for all new hires.
+                Kahana Group Inc. is enrolled in the federal E-Verify program and verifies employment eligibility for all new hires.
               </p>
             </div>
 

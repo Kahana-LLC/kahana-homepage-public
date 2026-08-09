@@ -52,7 +52,7 @@ export default function OasisFeedbackSurveyPage({ surveyKey }) {
         type="website"
       />
       <Head>
-        <title>{survey.title} | Kahana</title>
+        <title>{survey.title} | Aura Library</title>
       </Head>
 
       <main className="min-h-screen bg-white pt-24 pb-16">
@@ -97,7 +97,7 @@ export default function OasisFeedbackSurveyPage({ surveyKey }) {
                 </Link>
               </p>
               <p className="text-center text-xs text-oasis-green-800">
-                By submitting this form you consent to be contacted by Kahana, and acknowledge our{' '}
+                By submitting this form you consent to be contacted by Aura Library, and acknowledge our{' '}
                 <Link
                   href="/privacy-policy"
                   className="text-brand-link no-underline hover:text-brand-link-hover hover:no-underline"

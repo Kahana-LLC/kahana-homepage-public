@@ -15,7 +15,7 @@ export const EVENTS = [
     eventType: "Live masterclass",
     dateLabel: "May 2026",
     durationLabel: "~60 minutes",
-    presenters: "Presented by Everyday Business Leaders & Kahana",
+    presenters: "Presented by Everyday Business Leaders & Aura Library",
     speakers: [
       {
         name: "Gregory Gray",
@@ -26,7 +26,7 @@ export const EVENTS = [
       },
       {
         name: "Adam Kershner",
-        role: "Kahana",
+        role: "Aura Library",
         image: ADAM_HEADSHOT_URL,
         linkedin: "https://www.linkedin.com/in/adam-kershner/",
         website: null,
@@ -54,7 +54,7 @@ export const EVENTS = [
     ],
     founderStory: {
       name: "Adam Kershner",
-      role: "CEO & Founder, Kahana",
+      role: "CEO & Founder, Aura Library",
       image: ADAM_HEADSHOT_URL,
       linkedin: "https://www.linkedin.com/in/adam-kershner/",
       intro:

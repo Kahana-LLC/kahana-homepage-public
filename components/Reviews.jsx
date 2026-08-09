@@ -12,7 +12,7 @@ import { Container } from './Container';
 const testimonials = [
   {
     content:
-      "I can honestly say that I've never worked with a team that was as helpful and dedicated as the team at Kahana. If you're a digital creator looking for a platform that not only supports your content creation but also helps you achieve your goals, then Kahana is the answer.",
+      "I can honestly say that I've never worked with a team that was as helpful and dedicated as the team at Aura Library. If you're a digital creator looking for a platform that not only supports your content creation but also helps you achieve your goals, then Aura Library is the answer.",
     author: {
       name: 'Olivia Mancuso',
       role: 'Manifestation Coach & Brand Consultant',
@@ -21,7 +21,7 @@ const testimonials = [
   },
   {
     content:
-      "You took my brain and turned it into a phenomenal asset. I could not do this at all without Kahana - I wouldn't even know where to start.",
+      "You took my brain and turned it into a phenomenal asset. I could not do this at all without Aura Library - I wouldn't even know where to start.",
     author: {
       name: 'Tay Ladd',
       role: 'Corporate Lawyer, Creator & Brand Deal Expert',
@@ -30,7 +30,7 @@ const testimonials = [
   },
   {
     content:
-      "Kahana allows me to go so much more in-depth and share all the knowledge I've learned on and off the field - I can only scratch the surface on Instagram and TikTok.",
+      "Aura Library allows me to go so much more in-depth and share all the knowledge I've learned on and off the field - I can only scratch the surface on Instagram and TikTok.",
     author: {
       name: 'Benjamin St-Juste',
       role: 'NFL Player & Brand Owner',
@@ -39,7 +39,7 @@ const testimonials = [
   },
   {
     content:
-      "I have had a lot of different software companies reach out to me, but there was something about Kahana that really intrigued me. To be able to have people follow along my journey and see what's working for me can make such a greater impact for my audience.",
+      "I have had a lot of different software companies reach out to me, but there was something about Aura Library that really intrigued me. To be able to have people follow along my journey and see what's working for me can make such a greater impact for my audience.",
     author: {
       name: 'Eden Gold',
       role: 'Adulting Coach',
@@ -48,7 +48,7 @@ const testimonials = [
   },
   {
     content:
-      "Kahana has the most user-friendly interface I've come across in a platform of its kind. I love how easy it is to set up, make changes, add value, and connect with your audience. It's allowed me to monetize my knowledge and add a passive revenue stream to my small business.",
+      "Aura Library has the most user-friendly interface I've come across in a platform of its kind. I love how easy it is to set up, make changes, add value, and connect with your audience. It's allowed me to monetize my knowledge and add a passive revenue stream to my small business.",
     author: {
       name: 'Kelsey Vetter',
       role: 'CEO & Pinterest Marketing Expert',
@@ -57,7 +57,7 @@ const testimonials = [
   },
   {
     content:
-      "It's finally out of my head! I've been wanting to build digital products for months and couldn't make any progress; Kahana streamlined it and made it so much easier.",
+      "It's finally out of my head! I've been wanting to build digital products for months and couldn't make any progress; Aura Library streamlined it and made it so much easier.",
     author: {
       name: 'Gregory Gray',
       role: 'Fractional CEO & Executive Coach',

@@ -7,7 +7,7 @@ import { trackError } from '../utils/analytics';
 const resourceLinks = [
   {
     name: 'Help',
-    description: 'Browse guides and answers for the Kahana platform.',
+    description: 'Browse guides and answers for the Aura Library platform.',
     href: '/help',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -142,7 +142,7 @@ export default function DownloadWhitePaperPage() {
             </Link>
           </p>
           <p className="text-xs text-oasis-green-800">
-            By submitting this form you consent to be contacted by Kahana, and acknowledge our{' '}
+            By submitting this form you consent to be contacted by Aura Library, and acknowledge our{' '}
             <Link href="/privacy-policy" className="text-brand-link hover:text-brand-link-hover no-underline hover:no-underline">
               Privacy Policy
             </Link>
@@ -156,7 +156,7 @@ export default function DownloadWhitePaperPage() {
   return (
     <>
       <Head>
-        <title>Download: The Future of Ergonomic Work | Kahana Browser</title>
+        <title>Download: The Future of Ergonomic Work | Aura Library Browser</title>
         <meta name="description" content="Download our comprehensive white paper exploring how AR/VR technology can transform workplace ergonomics and productivity, addressing the health crisis of sedentary work." />
       </Head>
 

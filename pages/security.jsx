@@ -25,8 +25,8 @@ export default function Security() {
   return (
     <>
       <SEO
-        title="Security | Kahana"
-        description="How Kahana protects accounts, hubs, and payments in the Digital Library."
+        title="Security | Aura Library"
+        description="How Aura Library protects accounts, hubs, and payments in the Digital Library."
         url={CANONICAL}
         type="website"
       />
@@ -44,7 +44,7 @@ export default function Security() {
                 Security for the Digital Library
               </h1>
               <p className="mx-auto max-w-2xl text-xl leading-relaxed text-gray-700 sm:text-2xl">
-                Kahana is a Digital Library of curated hubs. We protect accounts, who can open what,
+                Aura Library is a Digital Library of curated hubs. We protect accounts, who can open what,
                 and how payments work.
               </p>
               <p className="mt-8 flex flex-wrap justify-center gap-x-4 gap-y-2 text-base">
@@ -64,7 +64,7 @@ export default function Security() {
 
         <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
           <div className="mb-12 flex flex-col border-b border-gray-200 pb-8 sm:flex-row sm:items-center sm:justify-between">
-            <h2 className="mb-2 text-2xl font-bold text-[#313A00] sm:mb-0">Security @ Kahana</h2>
+            <h2 className="mb-2 text-2xl font-bold text-[#313A00] sm:mb-0">Security @ Aura Library</h2>
             <p className="text-sm text-gray-600">
               Effective <span className="font-semibold text-[#313A00]">July 15, 2026</span>
             </p>
@@ -105,7 +105,7 @@ export default function Security() {
                     Roles guide
                   </Link>
                 </li>
-                <li>Paid access unlocks under the Kahana account that completed checkout.</li>
+                <li>Paid access unlocks under the Aura Library account that completed checkout.</li>
                 <li>
                   Adult hubs need login and age verification. No anonymous &ldquo;I&apos;m 18&rdquo;
                   unlock.
@@ -164,7 +164,7 @@ export default function Security() {
               <h2 className="mb-4 text-3xl font-bold text-[#313A00]">Payments</h2>
               <ul className="mb-3 list-disc space-y-2 pl-6 text-gray-700">
                 <li>
-                  Checkout runs on <strong className="text-[#313A00]">Stripe Connect</strong>. Kahana
+                  Checkout runs on <strong className="text-[#313A00]">Stripe Connect</strong>. Kahana Group Inc.
                   does not store full card numbers.
                 </li>
                 <li>
@@ -232,13 +232,14 @@ export default function Security() {
               <h2 className="mb-4 text-3xl font-bold text-[#313A00]">FAQ</h2>
               <ul className="space-y-6">
                 <li>
-                  <strong className="text-[#313A00]">Is Kahana a browser?</strong>
+                  <strong className="text-[#313A00]">Is Aura Library a browser?</strong>
                   <p className="mt-1 text-gray-700">
-                    No. Kahana is the Digital Library at{' '}
+                    No. Aura Library is the Digital Library at{' '}
                     <a href={APP_URL} target="_blank" rel="noopener noreferrer" className={linkClass}>
                       app.kahana.io
                     </a>
-                    . Older Oasis browser materials are not the current product.
+                    , operated by Kahana Group Inc. Older Oasis browser materials are not the current
+                    product.
                   </p>
                 </li>
                 <li>

@@ -48,7 +48,7 @@ const steps = [
 const supportLinks = [
   {
     name: 'Community Guidelines',
-    description: 'How we expect people to engage respectfully around Kahana and Oasis.',
+    description: 'How we expect people to engage respectfully around Aura Library and Oasis.',
     href: '/community-guidelines',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -58,7 +58,7 @@ const supportLinks = [
   },
   {
     name: 'FAQ',
-    description: 'Common questions about the Kahana community and programs.',
+    description: 'Common questions about the Aura Library community and programs.',
     href: '/community-faq',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -81,7 +81,7 @@ const supportLinks = [
 function ConnectCard() {
   return (
     <div className="rounded-2xl border border-oasis-green-800/15 bg-gradient-to-br from-oasis-green-50 to-white p-8 shadow-lg">
-      <h2 className="text-xl font-bold text-oasis-green-900 mb-2">Connect with Kahana</h2>
+      <h2 className="text-xl font-bold text-oasis-green-900 mb-2">Connect with Aura Library</h2>
       <p className="text-oasis-green-800 text-sm leading-relaxed mb-6">
         Use the channels below for documentation, updates, and direct help from the team.
       </p>
@@ -129,10 +129,10 @@ export default function Community() {
   return (
     <>
       <Head>
-        <title>Community | Kahana</title>
+        <title>Community | Aura Library</title>
         <meta
           name="description"
-          content="Connect with Kahana through our blog, documentation, support, and contact channels."
+          content="Connect with Aura Library through our blog, documentation, support, and contact channels."
         />
       </Head>
 

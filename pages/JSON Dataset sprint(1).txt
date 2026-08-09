@@ -1,0 +1,316 @@
+﻿Sprint: Enhanced Interaction Telemetry & Training Data Pipeline
+Goal: Implement a robust data collection layer to capture rich context for every assistant interaction, creating a "gold standard" dataset for future model training and performance optimization.
+This exchange between Ashwin and Adam converges on how Oasis should structure and use feedback data for product improvement, not just basic telemetry. It also privacy concerns originally raised by Archit. 
+Note: Likhitha believes we should expand implicit feedback and captures internal information about the tools that were called and how the system handled it. Currently, Supabase data only includes explicit feedback. 
+Note: Likhitha also believes we need to track the amount of time that the system takes to handle a prompt from input to output. We should use this data to address ways to improve the speed of the system. 
+Core alignment
+* Everyone agrees the current setup (feedback_events + llm_usage) is sufficient for manual retention analysis today.
+* There is also agreement that moving to a JSON-based interaction log is the right long-term direction.
+Ashwin’s main argument
+* Feedback (thumbs up/down, comments) should be directly tied to the full interaction record, not stored as a separate, shallow schema.
+* The interaction should be the source of truth, containing:
+   * Prompt, response, tool usage
+   * Metadata (browser version, context, etc.)
+   * Feedback (e.g., negative_rating)
+* A boolean field can still exist, but only as a derived/indexed field, not the primary data structure.
+* Key reason: without rich, structured context, you can’t answer:
+   * What caused a failure?
+   * Which version introduced/fixed it?
+   * Whether updates actually improved outcomes
+* It’s cheaper to design this correctly now than retrofit after scale.
+Adam’s perspective
+* Focus is on improving retention quickly, using:
+   * Thumbs up/down signals
+   * User-written feedback (root cause)
+* Current data is already useful for manual debugging and iteration.
+* Open question: exact JSON schema for future “model/amplifier” use is still being defined by others (Likhitha, Sushma).
+* Agrees with Ashwin after clarification, especially on:
+   * Attaching feedback to interaction logs
+   * Including versioning data as critical context
+Additional considerations raised
+* Telemetry vs “training” messaging: current wording implies users are actively training the model, which may not match reality.
+* Legal/licensing: need disclaimers (especially with MPL / Firefox open-source components).
+* Client expectations: must accept partial open-source exposure.
+* Anonymization strategy:
+   * Two future modes:
+      * Anonymous training (no identity)
+      * Personalized training (with identity)
+Bottom line
+They align on evolving from basic telemetry to a structured, JSON-based interaction + feedback system, where:
+* Feedback is embedded or tightly linked to each interaction
+* Data includes enough context (especially versioning) to evaluate product changes
+* The system supports both short-term retention improvements and long-term learning/optimization without needing painful re-architecture later
+A simple way to think about it:
+Right now you know “users didn’t like this answer.”
+The proposed system lets you know “users didn’t like this answer on v1.0.0.4, when the agent used tool X on page Y—and the fix in v1.0.0.5 improved it.”
+An anonymized payload should capture full interaction + feedback context without anything that can identify the user; a personalized payload adds stable user identifiers and optional profile fields on top of the same core structure.
+Below is a concrete JSON-oriented data model you could give Archit as a target “shape” (names are illustrative; you can tighten to your conventions).
+________________
+
+
+Core interaction schema (common to both)
+This is the canonical interaction record; both anonymized and personalized payloads share this structure.
+json
+{
+  "interaction_id": "uuid",
+  "session_id": "uuid-or-random",
+  "timestamp": "2026-05-08T20:10:00Z",
+
+
+  "app_version": "v1.0.0.4",
+  "client": {
+    "browser_name": "Oasis",
+    "browser_version": "1.0.0.4",
+    "os": "macOS",
+    "platform": "desktop"
+  },
+
+
+  "context": {
+    "active_tab_url": "https://example.com/page",
+    "active_tab_title": "Example Page",
+    "workspace_id": "workspace-123",
+    "org_tier": "paid" 
+  },
+
+
+  "prompt": {
+    "text": "Summarize this PDF.",
+    "input_tokens": 234,
+    "language": "en-US"
+  },
+
+
+  "response": {
+    "text": "Here is a summary...",
+    "output_tokens": 512,
+    "latency_ms": 1430,
+    "completion_model": "gemini-3-flash"
+  },
+
+
+  "tool_trace": [
+    {
+      "tool_name": "web_search",
+      "invocation_index": 0,
+      "status": "success",
+      "latency_ms": 320,
+      "input": { "query": "example" },
+      "output_summary": "3 results, top domain example.com"
+    }
+  ],
+
+
+  "feedback": {
+    "rating": "negative",          // "positive" | "negative" | "neutral"
+    "thumbs_down": true,
+    "thumbs_up": false,
+    "reason_free_text": "The result ignored the PDF content.",
+    "feedback_source": "user",     // "user" | "system" | "qa"
+    "feedback_timestamp": "2026-05-08T20:10:10Z"
+  }
+}
+Notes:
+* Interaction + feedback are bound together via interaction_id and co-resident fields, making this the source of truth.
+* You can still index feedback.rating or feedback.thumbs_down into separate columns for Supabase querying, but they are derived from this payload, not the primary schema.
+________________
+
+
+Anonymized training payload
+Goal: rich product + model signal, no PII or stable user identifiers that let you re-identify a person.
+You can implement this as either:
+* A separate “anonymized view” over the same canonical JSON, or
+* A transformed export pipeline that strips/obfuscates identity fields before training.
+Example (what the training system sees):
+json
+{
+  "interaction_id": "uuid",
+  "session_id": "anon-session-9f32a7",
+  "timestamp": "2026-05-08T20:10:00Z",
+
+
+  "app_version": "v1.0.0.4",
+  "client": {
+    "browser_name": "Oasis",
+    "browser_version": "1.0.0.4",
+    "os": "macOS",
+    "platform": "desktop"
+  },
+
+
+  "context": {
+    "active_tab_url": "https://example.com/page",
+    "active_tab_title": "Example Page",
+    "workspace_tier": "paid"
+    // no org_name, no email domains, no raw workspace_id if that is linkable
+  },
+
+
+  "prompt": {
+    "text": "Summarize this PDF.",
+    "input_tokens": 234,
+    "language": "en-US"
+  },
+
+
+  "response": {
+    "text": "Here is a summary...",
+    "output_tokens": 512,
+    "latency_ms": 1430,
+    "completion_model": "gemini-3-flash"
+  },
+
+
+  "tool_trace": [
+    {
+      "tool_name": "web_search",
+      "invocation_index": 0,
+      "status": "success",
+      "latency_ms": 320
+      // avoid copying raw URLs that include account numbers / emails
+    }
+  ],
+
+
+  "feedback": {
+    "rating": "negative",
+    "thumbs_down": true,
+    "reason_free_text": "The result ignored the PDF content."
+  }
+}
+Key characteristics:
+* Excluded / transformed:
+   * No user_id, email, name, or IP address.
+   * Any workspace_id that directly maps to a specific company may be hashed or replaced with a non-reversible cluster label if you’re concerned about re-identification.
+   * No free-text fields that contain PII (you may want a PII scrubber for reason_free_text, URLs, etc.).
+* Retained:
+   * Versioning (app_version, browser_version) so you can compare pre/post release behavior.
+   * Context necessary for root-cause and product analysis (tool paths, prompts, responses, performance metrics).
+This supports “Anonymous training” messaging: “Your feedback and interactions train the system, but we don’t attach your identity to this data.”
+________________
+
+
+Personalized training payload
+Goal: same interaction JSON, plus stable user identifiers and possibly profile traits so you can learn per-user preferences and trajectories.
+You can think of this as adding a user block and leaving some identifiers un-hashed.
+json
+{
+  "interaction_id": "uuid",
+  "session_id": "session-abc123",
+  "timestamp": "2026-05-08T20:10:00Z",
+
+
+  "app_version": "v1.0.0.4",
+  "client": {
+    "browser_name": "Oasis",
+    "browser_version": "1.0.0.4",
+    "os": "macOS",
+    "platform": "desktop"
+  },
+
+
+  "context": {
+    "active_tab_url": "https://example.com/page",
+    "active_tab_title": "Example Page",
+    "workspace_id": "workspace-123",
+    "workspace_name": "Acme Health Inc",
+    "org_tier": "enterprise"
+  },
+
+
+  "user": {
+    "user_id": "user-789",
+    "email": "jane.doe@acmehealth.com",
+    "role": "Solutions Architect",
+    "locale": "en-US",
+    "opt_in_personalized_training": true
+  },
+
+
+  "prompt": {
+    "text": "Summarize this PDF.",
+    "input_tokens": 234,
+    "language": "en-US"
+  },
+
+
+  "response": {
+    "text": "Here is a summary...",
+    "output_tokens": 512,
+    "latency_ms": 1430,
+    "completion_model": "gemini-3-flash"
+  },
+
+
+  "tool_trace": [
+    {
+      "tool_name": "web_search",
+      "invocation_index": 0,
+      "status": "success",
+      "latency_ms": 320,
+      "input": { "query": "example" },
+      "output_summary": "3 results, top domain example.com"
+    }
+  ],
+
+
+  "feedback": {
+    "rating": "negative",
+    "thumbs_down": true,
+    "reason_free_text": "The result ignored the PDF content.",
+    "feedback_timestamp": "2026-05-08T20:10:10Z"
+  }
+}
+Key characteristics:
+* Additional fields vs. anonymized:
+   * user.user_id, user.email, and possibly workspace_id and workspace_name are present and stable.
+   * Optional preference fields you might later use in models: role, locale, plan type, team size.
+* Use cases:
+   * Per-user or per-account models (“Jane gets better answers over time because we know her history”).
+   * Longitudinal analysis of how a specific customer’s issues evolve with releases.
+This supports “Personalized training” messaging: “If you opt in, we attach your identity so we can adapt the assistant specifically to you / your team.”
+________________
+
+
+Side-by-side field differences
+Area
+	Anonymized payload
+	Personalized payload
+	
+
+Area
+	Anonymized payload
+	Personalized payload
+	Canonical interaction (prompt, response, tools, feedback)
+	Included; same structure
+	Included; same structure
+	App / browser version
+	Included
+	Included
+	Session ID
+	Non-identifying / rotated token
+	Stable per user session OK
+	User ID
+	Excluded or irreversibly hashed
+	Included as stable identifier
+	Email / name
+	Excluded
+	Included (or pseudonymized if you prefer)
+	Workspace / org identifiers
+	Possibly hashed or bucketed
+	Included as real IDs/names
+	PII in free text
+	Scrubbed / masked where possible
+	May be retained, but should still be governed by your data policy
+	Opt-in flag
+	Not required (implicit in “anonymous” path)
+	Required: opt_in_personalized_training = true
+	________________
+
+
+Implementation notes for Oasis
+* Treat the interaction JSON as the single source of truth, and have:
+   * A “training export: anonymized” view (strip/scrub identity).
+   * A “training export: personalized” view (only from users/orgs with explicit opt-in).
+* Keep a simple boolean column (e.g. negative_rating) in Supabase as a denormalized index into the JSON for querying and dashboards, but never as the primary representation of feedback.
+* When you implement the UI toggle between “Anonymous training” and “Personalized training,” it should map directly to whether the user block and stable identifiers are included in the training payload.

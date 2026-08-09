@@ -6,8 +6,8 @@ export default function EventsPage() {
   return (
     <>
       <SEO
-        title="Events | Kahana"
-        description="Explore upcoming Kahana events and live sessions on AI productivity, security, and data control."
+        title="Events | Aura Library"
+        description="Explore upcoming Aura Library events and live sessions on AI productivity, security, and data control."
         url="https://kahana.io/events"
         type="website"
       />
@@ -21,7 +21,7 @@ export default function EventsPage() {
 
           <div className="relative z-10 mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
             <p className="mb-4 text-sm font-semibold uppercase tracking-[0.14em] text-[#617500]">
-              Kahana Events
+              Aura Library Events
             </p>
             <h1 className="text-4xl font-bold tracking-tight text-[#30400D] sm:text-5xl lg:text-6xl">
               Upcoming Events

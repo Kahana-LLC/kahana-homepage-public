@@ -19,7 +19,7 @@ export default function HomeDataTransparencySection() {
             Respectful data collection that still makes Oasis better
           </h2>
           <p className="mt-5 max-w-3xl text-lg leading-relaxed text-[#30400D]/78">
-            Oasis sends minimal interaction data to Kahana so we can improve the assistant—fix
+            Oasis sends minimal interaction data to Aura Library so we can improve the assistant—fix
             bugs, measure latency, and understand what helps. By default, personalization is{" "}
             <strong>off</strong>: payloads are anonymized with no email or account ID. You only
             share identifying fields if you opt in from Settings.
@@ -31,7 +31,7 @@ export default function HomeDataTransparencySection() {
           </p>
 
           <p className="mt-6 text-sm text-[#30400D]/70">
-            Toggle to compare the JSON Kahana receives for one assistant interaction (illustrative
+            Toggle to compare the JSON Aura Library receives for one assistant interaction (illustrative
             example):
           </p>
           <InteractionDataPayloadExplorer

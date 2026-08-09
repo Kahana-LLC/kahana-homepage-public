@@ -55,10 +55,10 @@ const SearchPage = () => {
   return (
     <>
       <Head>
-        <title>Explore Kahana</title>
+        <title>Explore Aura Library</title>
         <meta
           name="description"
-          content="Search Kahana workspaces and explore public profiles."
+          content="Search Aura Library workspaces and explore public profiles."
         />
       </Head>
       <div className="min-h-screen bg-gray-50">
@@ -68,7 +68,7 @@ const SearchPage = () => {
               <div className="mb-3">
                 <input
                   type="text"
-                  placeholder="Explore Kahana..."
+                  placeholder="Explore Aura Library..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="search-input w-full max-w-[300px] md:max-w-[400px] px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -155,7 +155,7 @@ const SearchPage = () => {
                 </div>
               ) : (
                 <div className="text-center py-8 text-gray-500">
-                  <p>Loading Kahana workspaces...</p>
+                  <p>Loading Aura Library workspaces...</p>
                 </div>
               )}
             </div>

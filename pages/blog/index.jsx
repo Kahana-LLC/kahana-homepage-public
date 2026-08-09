@@ -135,17 +135,17 @@ export default function BlogIndex({ posts = [] }) {
   return (
     <>
       <Head>
-        <title>Kahana Blog | Library, creators, and product updates</title>
-        <meta name="description" content="News and guides for the Kahana platform—hubs, Explore, Aura, and creators. New articles land here as they ship." />
-        <meta name="keywords" content="Kahana, hubs, Explore, Aura, creators, knowledge sharing, digital artifacts" />
+        <title>Aura Library Blog | Library, creators, and product updates</title>
+        <meta name="description" content="News and guides for the Aura Library platform—hubs, Explore, Aura, and creators. New articles land here as they ship." />
+        <meta name="keywords" content="Aura Library, hubs, Explore, Aura, creators, knowledge sharing, digital artifacts" />
         <link rel="canonical" href="https://about.kahana.io/blog" />
         <meta property="og:url" content="https://about.kahana.io/blog" />
-        <meta property="og:title" content="Kahana Blog | Library, creators, and product updates" />
-        <meta property="og:description" content="News and guides for the Kahana platform—hubs, Explore, Aura, and creators." />
+        <meta property="og:title" content="Aura Library Blog | Library, creators, and product updates" />
+        <meta property="og:description" content="News and guides for the Aura Library platform—hubs, Explore, Aura, and creators." />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Kahana Blog | Library, creators, and product updates" />
-        <meta name="twitter:description" content="News and guides for the Kahana platform—hubs, Explore, Aura, and creators." />
+        <meta name="twitter:title" content="Aura Library Blog | Library, creators, and product updates" />
+        <meta name="twitter:description" content="News and guides for the Aura Library platform—hubs, Explore, Aura, and creators." />
 
         {/* Structured Data for Blog Index */}
         <script
@@ -154,12 +154,12 @@ export default function BlogIndex({ posts = [] }) {
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'Blog',
-              name: 'Kahana Blog',
-              description: 'News and guides for the Kahana platform—hubs, Explore, Aura, and creators.',
+              name: 'Aura Library Blog',
+              description: 'News and guides for the Aura Library platform—hubs, Explore, Aura, and creators.',
               url: 'https://about.kahana.io/blog',
               publisher: {
                 '@type': 'Organization',
-                name: 'Kahana',
+                name: 'Aura Library',
                 logo: {
                   '@type': 'ImageObject',
                   url: 'https://kahana.io/assets/kahana_logo_transparent.svg',
@@ -193,20 +193,20 @@ export default function BlogIndex({ posts = [] }) {
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-oasis-green-900 mb-4">
-            Kahana Blog
+            Aura Library Blog
           </h1>
           <p className="text-xl text-oasis-green-800 max-w-2xl mx-auto">
-            Insights and updates for the Kahana library—hubs, Explore, Aura, and creators.
+            Insights and updates for the Aura Library library—hubs, Explore, Aura, and creators.
           </p>
         </div>
 
         {sortedPosts.length === 0 ? (
           <div className="text-center py-12">
             <h3 className="text-lg font-medium text-oasis-green-900 mb-2">
-              New Kahana platform articles coming soon
+              New Aura Library platform articles coming soon
             </h3>
             <p className="text-oasis-green-800 max-w-xl mx-auto">
-              We’re starting fresh with blog posts about the Kahana platform. Meanwhile, explore{' '}
+              We’re starting fresh with blog posts about the Aura Library platform. Meanwhile, explore{' '}
               <a href="/help" className="font-semibold text-brand-link no-underline hover:underline">
                 Help
               </a>

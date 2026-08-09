@@ -15,31 +15,31 @@ export const FAQ_SECTIONS = [
     items: [
       {
         id: 'benefits',
-        question: 'What are the benefits of Kahana?',
+        question: 'What are the benefits of Aura Library?',
         answer:
-          'Kahana gives you one place to share what you know, help others learn, and get found.\n\nIf you contribute, you publish hubs of digital artifacts (files, videos, images, PDFs, documents, links, and more). You can list them on Explore, invite collaborators, earn Aura when people value your work, and turn on paid access later if you want.\n\nIf you are here to learn, you browse careful, curated hubs in one catalog. Save what matters. Skip chasing scattered links or DMs.\n\nAura is how the community shows what is worth your time, so the best work can rise.',
+          'Aura Library gives you one place to share what you know, help others learn, and get found.\n\nIf you contribute, you publish hubs of digital artifacts (files, videos, images, PDFs, documents, links, and more). You can list them on Explore, invite collaborators, earn Aura when people value your work, and turn on paid access later if you want.\n\nIf you are here to learn, you browse careful, curated hubs in one catalog. Save what matters. Skip chasing scattered links or DMs.\n\nAura is how the community shows what is worth your time, so the best work can rise.',
       },
       {
         id: 'value-prop',
-        question: 'What makes Kahana different from everything else?',
+        question: 'What makes Aura Library different from everything else?',
         answer:
-          'The difference is quality. Kahana is built so the best contributions can rise, and people can trust what they find.\n\nWe do that with Aura, not another pile of star ratings and written reviews. Those systems often fail both sides: one negative review can drown out many careful positive ones, people chase review counts more than the score, and a perfect rating with almost no reviews (or a flood of glowing ones) can feel untrustworthy.\n\nAura is different on purpose. You automatically have a small daily budget (up to 5 Aura per day) that is yours to give and take. Your Aura renews daily: at midnight UTC you get 5 Aura again, even if you gave all 5 already. You can put it all on one hub or split it across a few. You cannot give Aura to your own work. Because your Aura is scarce, you give it carefully. That careful signal is what lifts quality across the library.',
+          'The difference is quality. Aura Library is built so the best contributions can rise, and people can trust what they find.\n\nWe do that with Aura, not another pile of star ratings and written reviews. Those systems often fail both sides: one negative review can drown out many careful positive ones, people chase review counts more than the score, and a perfect rating with almost no reviews (or a flood of glowing ones) can feel untrustworthy.\n\nAura is different on purpose. You automatically have a small daily budget (up to 5 Aura per day) that is yours to give and take. Your Aura renews daily: at midnight UTC you get 5 Aura again, even if you gave all 5 already. You can put it all on one hub or split it across a few. You cannot give Aura to your own work. Because your Aura is scarce, you give it carefully. That careful signal is what lifts quality across the library.',
       },
       {
         id: 'optimize-benefits',
-        question: 'How do I optimize the benefits of Kahana?',
+        question: 'How do I optimize the benefits of Aura Library?',
         answer:
           'It depends on whether you are learning or contributing.\n\nFor learners: open Explore, search and filter, open hubs you care about, then save or follow after you sign in. Give Aura carefully (up to 5/day). Step-by-step: /help/get-started-learners.\n\nFor contributors: share what you know. Don\'t overthink the first publish. Use clear hub names, filenames, tags, and descriptions so people can find your work. List public hubs on Explore. Check analytics for views, saves, Aura, and purchases (/help/creator-analytics), then keep improving. Turn on paid access later if you want.',
       },
       {
         id: 'what-is-kahana',
-        question: 'What is Kahana?',
+        question: 'What is Aura Library?',
         answer:
-          'Kahana is a library for curated digital knowledge.\n\nYou contribute hubs of digital artifacts (files, videos, images, PDFs, documents, links, and more). People can find them on Explore. You earn Aura when someone values your work. Learners browse and learn in one place.\n\nPaid access is optional. We added it later, after people asked to earn from their best hubs.',
+          'Aura Library is a library for curated digital knowledge.\n\nYou contribute hubs of digital artifacts (files, videos, images, PDFs, documents, links, and more). People can find them on Explore. You earn Aura when someone values your work. Learners browse and learn in one place.\n\nPaid access is optional. We added it later, after people asked to earn from their best hubs.',
       },
       {
         id: 'who-operates',
-        question: 'Who operates Kahana?',
+        question: 'Who operates Aura Library?',
         answer: 'Kahana Group Inc.',
       },
       {
@@ -56,15 +56,15 @@ export const FAQ_SECTIONS = [
       },
       {
         id: 'vs-tools',
-        question: 'How is Kahana different from Gumroad, Linktree, or Notion?',
+        question: 'How is Aura Library different from Gumroad, Linktree, or Notion?',
         answer:
-          'Gumroad is built around selling. Linktree is light on finding hubs. Notion and Drive are great for private work, but they are not a public library with community signal.\n\nKahana starts with contribution and Explore, plus Aura. Optional earning came later because contributors asked for it.\n\nLonger comparisons: /blog/kahana-vs-gumroad-stan · /blog/kahana-vs-linktree · /blog/kahana-vs-notion-google-drive.',
+          'Gumroad is built around selling. Linktree is light on finding hubs. Notion and Drive are great for private work, but they are not a public library with community signal.\n\nAura Library starts with contribution and Explore, plus Aura. Optional earning came later because contributors asked for it.\n\nLonger comparisons: /blog/kahana-vs-gumroad-stan · /blog/kahana-vs-linktree · /blog/kahana-vs-notion-google-drive.',
       },
       {
         id: 'can-earn',
         question: 'Can I earn money when people access my hubs?',
         answer:
-          'Yes, if you want to.\n\nKahana started as knowledge sharing only. After someone asked to earn when others accessed their top hubs, we added paid access.\n\nWhen you are ready, connect Stripe, set a price, and charge for access. Sharing and discovery still come first.',
+          'Yes, if you want to.\n\nAura Library started as knowledge sharing only. After someone asked to earn when others accessed their top hubs, we added paid access.\n\nWhen you are ready, connect Stripe, set a price, and charge for access. Sharing and discovery still come first.',
       },
     ],
   },
@@ -82,7 +82,7 @@ export const FAQ_SECTIONS = [
         id: 'content-rights',
         question: 'Can I upload public-domain ebooks or openly licensed files?',
         answer:
-          'Yes, when the work is public domain or under a license that allows redistribution on platforms like Kahana. Include any required attribution. Before a hub is unlisted, listed on Explore, or monetized, you must confirm you have the right to share (and, if monetizing, sell access to) all content in it.\n\nFinding a file online is not permission. Full guide: /help/content-rights. Binding rules: Terms §8 (User Content).',
+          'Yes, when the work is public domain or under a license that allows redistribution on platforms like Aura Library. Include any required attribution. Before a hub is unlisted, listed on Explore, or monetized, you must confirm you have the right to share (and, if monetizing, sell access to) all content in it.\n\nFinding a file online is not permission. Full guide: /help/content-rights. Binding rules: Terms §8 (User Content).',
       },
       {
         id: 'how-sell',
@@ -92,15 +92,15 @@ export const FAQ_SECTIONS = [
       },
       {
         id: 'creator-cost',
-        question: 'How much does Kahana cost for creators?',
+        question: 'How much does Aura Library cost for creators?',
         answer:
           'Free is $0. You get up to 3 hubs, unlimited collaborators, and files up to about 5 MB. You can still charge for access if you want.\n\nGrowth is $9.99 a month or $99.99 a year. You get unlimited hubs and uploads, live chat support, 100 GB of storage, and files up to 5 GB.\n\nEnterprise is custom, with white-glove support and flexible limits if you need them.\n\nWhen to upgrade (vs stay Free): /help/when-to-upgrade. Full table: /pricing. Open Billing in the app for the latest plan details.',
       },
       {
         id: 'platform-fee',
-        question: 'What fee does Kahana take on sales?',
+        question: 'What fee does Aura Library take on sales?',
         answer:
-          'Kahana takes 5% on hub sales processed through Stripe Connect.\n\nStripe also charges its usual processing fees (often about 2.9% + $0.30 for US cards). Kahana does not hold your funds. Stripe handles payouts.',
+          'Aura Library takes 5% on hub sales processed through Stripe Connect.\n\nStripe also charges its usual processing fees (often about 2.9% + $0.30 for US cards). Aura Library does not hold your funds. Stripe handles payouts.',
       },
       {
         id: 'need-stripe',
@@ -152,7 +152,7 @@ export const FAQ_SECTIONS = [
     items: [
       {
         id: 'how-buy',
-        question: 'How do I buy a digital product on Kahana?',
+        question: 'How do I buy a digital product on Aura Library?',
         answer:
           'Browse Explore or a creator’s profile, open a hub, and check out on the paywall.\n\nWhen payment goes through, the hub unlocks in your account. Step-by-step: /help/buying-and-access.',
       },
@@ -166,19 +166,19 @@ export const FAQ_SECTIONS = [
         id: 'after-pay',
         question: 'What do I get after I pay?',
         answer:
-          'You get access to that hub’s content in your Kahana account.\n\nOne-time purchases usually keep access going. Monthly products need an active subscription. Open the same hub URL while logged into the account that paid. Details: /help/buying-and-access.',
+          'You get access to that hub’s content in your Aura Library account.\n\nOne-time purchases usually keep access going. Monthly products need an active subscription. Open the same hub URL while logged into the account that paid. Details: /help/buying-and-access.',
       },
       {
         id: 'refunds',
         question: 'How do refunds work?',
         answer:
-          'Payments and disputes follow Stripe and Kahana’s terms / published refund policy.\n\nFor help, use in-app Support (/support) or the channels listed in product settings. Buyer guide: /help/buying-and-access.',
+          'Payments and disputes follow Stripe and Aura Library’s terms / published refund policy.\n\nFor help, use in-app Support (/support) or the channels listed in product settings. Buyer guide: /help/buying-and-access.',
       },
       {
         id: 'payment-secure',
         question: 'Is my payment secure?',
         answer:
-          'Checkout runs on Stripe. Kahana does not store your full card number.',
+          'Checkout runs on Stripe. Aura Library does not store your full card number.',
       },
       {
         id: 'free-vs-paid',
@@ -202,7 +202,7 @@ export const FAQ_SECTIONS = [
         id: 'what-is-aura',
         question: 'What is Aura?',
         answer:
-          'Aura is how Kahana promotes quality. You automatically have up to 5 Aura to give each day. Give it to hubs or to files inside hubs—all on one target, or split across a few.\n\nAura is not money and not crypto. You can see who gave it. Because your Aura is scarce, you give it carefully. That helps the best work rise. File Aura also lifts the hub by +1 and surfaces noteworthy files in search and ranking; hub Aura does not roll down to files.\n\nYou cannot give Aura to your own hubs or files. Rules and steps: /help/how-aura-works. Philosophy: about.kahana.io/aura.',
+          'Aura is how Aura Library promotes quality. You automatically have up to 5 Aura to give each day. Give it to hubs or to files inside hubs—all on one target, or split across a few.\n\nAura is not money and not crypto. You can see who gave it. Because your Aura is scarce, you give it carefully. That helps the best work rise. File Aura also lifts the hub by +1 and surfaces noteworthy files in search and ranking; hub Aura does not roll down to files.\n\nYou cannot give Aura to your own hubs or files. Rules and steps: /help/how-aura-works. Philosophy: about.kahana.io/aura.',
       },
       {
         id: 'aura-vs-reviews',
@@ -236,7 +236,7 @@ export const FAQ_SECTIONS = [
       },
       {
         id: 'how-create',
-        question: 'How do I create and contribute on Kahana?',
+        question: 'How do I create and contribute on Aura Library?',
         answer:
           'Create a hub, add digital artifacts (files, videos, images, PDFs, documents, links, and more), then optimize with clear names, tags, and a description. List it on Explore when you are ready.\n\nYou can invite editors and admins to collaborate. Turn on paid access later if you want.',
       },
@@ -248,9 +248,9 @@ export const FAQ_SECTIONS = [
       },
       {
         id: 'aura-official',
-        question: 'Does Aura mean a hub is officially recommended by Kahana?',
+        question: 'Does Aura mean a hub is officially recommended by Aura Library?',
         answer:
-          'No. Aura comes from the community. Kahana may still curate or moderate listings on its own.',
+          'No. Aura comes from the community. Aura Library may still curate or moderate listings on its own.',
       },
     ],
   },
@@ -345,13 +345,13 @@ export const FAQ_SECTIONS = [
       {
         id: 'mobile-app',
         question: 'Is there a native mobile app?',
-        answer: 'Kahana is a web app that works well in mobile browsers.',
+        answer: 'Aura Library is a web app that works well in mobile browsers.',
       },
       {
         id: 'embed',
-        question: 'Can I embed Kahana on my own site?',
+        question: 'Can I embed Aura Library on my own site?',
         answer:
-          'The usual path is linking your Kahana profile or hub URL. Deeper embeds and white-label options are aimed at Enterprise.',
+          'The usual path is linking your Aura Library profile or hub URL. Deeper embeds and white-label options are aimed at Enterprise.',
       },
     ],
   },

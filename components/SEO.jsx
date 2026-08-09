@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import { ABOUT_ORIGIN, SITE_URL } from '../config/site';
+import { APP_NAME, COMPANY_NAME } from '../config/brand';
 import { getCloudinaryImageUrl } from '../utils/cloudinary-mapper';
 
 const DEFAULT_ORG_LOGO = getCloudinaryImageUrl('/assets/kahana_logo_transparent.svg');
@@ -9,11 +10,9 @@ export const DEFAULT_SEO_TITLE = 'The Digital Library With Aura';
 export const DEFAULT_SEO_DESCRIPTION =
   'Contribute what you know, learn from curated hubs on Explore, and give Aura so quality rises. Paid access is optional.';
 /**
- * Kahana wordmark as a padded PNG (1200×630). SVG is unreliable for OG/Twitter;
- * Cloudinary converts the mapped transparent logo.
+ * Aura Library lockup as a padded PNG (1200×630). Prefer same-origin asset for OG/Twitter.
  */
-export const DEFAULT_OG_IMAGE =
-  'https://res.cloudinary.com/dlhpqrucv/image/upload/w_1200,h_630,c_pad,b_rgb:F8FAF2,f_png,q_auto:good/kahana-homepage/public/kahana_logo_transparent';
+export const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.png`;
 export const DEFAULT_OG_IMAGE_WIDTH = 1200;
 export const DEFAULT_OG_IMAGE_HEIGHT = 630;
 
@@ -27,17 +26,18 @@ const SEO = ({
   noindex = false,
   skipCanonical = false,
 }) => {
-  // Keep DEFAULT_SEO_TITLE exact for Messages/OG; brand other titles with "| Kahana".
+  // Keep DEFAULT_SEO_TITLE exact for Messages/OG; brand other titles with APP_NAME.
   const siteTitle =
-    title === DEFAULT_SEO_TITLE || title.includes('Kahana')
+    title === DEFAULT_SEO_TITLE || title.includes(APP_NAME) || title.includes('Aura Library')
       ? title
-      : `${title} | Kahana`;
+      : `${title} | ${APP_NAME}`;
 
   // Default schema for organization
   const defaultSchema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'Kahana',
+    name: APP_NAME,
+    legalName: COMPANY_NAME,
     url: ABOUT_ORIGIN,
     logo: DEFAULT_ORG_LOGO,
     sameAs: [
@@ -58,7 +58,7 @@ const SEO = ({
 
       {/* Open Graph / Facebook */}
       <meta property="og:type" content={type} />
-      <meta property="og:site_name" content="Kahana" />
+      <meta property="og:site_name" content={APP_NAME} />
       <meta property="og:url" content={url} />
       <meta property="og:title" content={siteTitle} />
       <meta property="og:description" content={description} />
@@ -91,4 +91,4 @@ const SEO = ({
   );
 };
 
-export default SEO; 
+export default SEO;

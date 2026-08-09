@@ -1,4 +1,5 @@
 const { SITE_URL: EXTERNAL_DATA_URL } = require("../config/site");
+const { APP_NAME } = require("../config/brand");
 
 function generateMetaTags({
   title,
@@ -6,7 +7,7 @@ function generateMetaTags({
   image,
   url,
   type = "website",
-  siteName = "Kahana",
+  siteName = APP_NAME,
   twitterHandle = "@kahana",
   noindex = false,
   canonicalUrl = null,
