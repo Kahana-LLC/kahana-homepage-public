@@ -14,10 +14,10 @@ export default function JobPostingMeta({ job }) {
 
   return (
     <Meta
-      title={`${job.title} | Careers at Aura Library`}
+      title={`${job.title} | Careers at Kahana`}
       description={
         job.description ||
-        `Join Aura Library as a ${job.title}. ${
+        `Join Kahana as a ${job.title}. ${
           job.location ? `Based in ${job.location}.` : ""
         } Help us build the future of enterprise security.`
       }

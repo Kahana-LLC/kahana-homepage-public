@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const faqs = [
   {
-    question: 'How do I join the Aura Library community?',
+    question: 'How do I join the Kahana community?',
     answer: 'To join our community, simply fill out the application form on our community page. We review each application to ensure we maintain a high-quality community of cybersecurity and AI professionals.',
   },
   {
@@ -33,7 +33,7 @@ const faqs = [
   },
   {
     question: 'Is there a cost to join the community?',
-    answer: 'No, membership in the Aura Library community is free. We believe in making cybersecurity knowledge and networking accessible to all professionals in the field.',
+    answer: 'No, membership in the Kahana community is free. We believe in making cybersecurity knowledge and networking accessible to all professionals in the field.',
   },
 ];
 
@@ -47,8 +47,8 @@ export default function CommunityFAQ() {
   return (
     <>
       <Head>
-        <title>Community FAQ | Aura Library</title>
-        <meta name="description" content="Frequently asked questions about the Aura Library community" />
+        <title>Community FAQ | Kahana</title>
+        <meta name="description" content="Frequently asked questions about the Kahana community" />
       </Head>
 
       <main className="min-h-screen bg-white pt-24 pb-16">

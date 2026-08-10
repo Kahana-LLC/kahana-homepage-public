@@ -5,10 +5,10 @@ export default function ThankYou() {
   return (
     <>
       <Head>
-        <title>Thank You | Aura Library</title>
+        <title>Thank You | Kahana</title>
         <meta
           name="description"
-          content="Thank you for your interest in Aura Library's enterprise browsing solutions."
+          content="Thank you for your interest in Kahana's enterprise browsing solutions."
         />
       </Head>
       <main>

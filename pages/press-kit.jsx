@@ -17,7 +17,7 @@ const ADAM_HEADSHOT_URL = getCloudinaryImageUrl('/assets/headshots/adam_kershner
 const LOGO_ASSETS = [
   {
     title: 'Wordmark (transparent)',
-    description: 'Bonsai mark + Aura Library wordmark on transparent background. Use on light surfaces or over imagery with sufficient contrast.',
+    description: 'Bonsai mark + Kahana wordmark on transparent background. Use on light surfaces or over imagery with sufficient contrast.',
     href: '/kahana_logo_transparent.svg',
     previewSrc: '/kahana_logo_transparent.svg',
     fileLabel: 'kahana_logo_transparent.svg',
@@ -43,7 +43,7 @@ export default function PressKitPage() {
     <>
       <SEO
         title="Press kit"
-        description="Official Aura Library logos, brand colors, leadership imagery, and a press inquiries form for journalists and partners."
+        description="Official Kahana logos, brand colors, leadership imagery, and a press inquiries form for journalists and partners."
         url="https://kahana.io/press-kit"
         type="website"
       />
@@ -54,7 +54,7 @@ export default function PressKitPage() {
             <p className="text-sm font-semibold uppercase tracking-wide text-oasis-green-600">Media</p>
             <h1 className="mt-2 text-4xl font-bold tracking-tight text-oasis-green-900 sm:text-5xl">Press kit</h1>
             <p className="mt-4 max-w-2xl text-lg text-oasis-green-800">
-              Logos, colors, and assets for accurate coverage of Aura Library. For official announcements, see our{' '}
+              Logos, colors, and assets for accurate coverage of Kahana. For official announcements, see our{' '}
               <Link href="/press-releases" className="font-semibold text-oasis-green-700 underline decoration-oasis-green-300 underline-offset-2 hover:text-oasis-green-900">
                 press releases
               </Link>
@@ -104,7 +104,7 @@ export default function PressKitPage() {
               Brand color palette
             </h2>
             <p className="mt-2 text-oasis-green-800">
-              Representative stops from Aura Library&apos;s primary palettes. Click a swatch to copy its hex value.
+              Representative stops from Kahana&apos;s primary palettes. Click a swatch to copy its hex value.
             </p>
             <div className="mt-10 space-y-12">
               {brandPaletteFamilies.map((family) => (
@@ -141,7 +141,7 @@ export default function PressKitPage() {
               <div className="relative mx-auto h-48 w-48 shrink-0 overflow-hidden rounded-lg border border-oasis-green-100 bg-white shadow-sm sm:mx-0 sm:h-56 sm:w-56">
                 <Image
                   src={ADAM_HEADSHOT_URL}
-                  alt="Adam Kershner, CEO and Founder of Aura Library"
+                  alt="Adam Kershner, CEO and Founder of Kahana"
                   width={224}
                   height={224}
                   className="h-full w-full object-cover object-top"
@@ -151,7 +151,7 @@ export default function PressKitPage() {
               </div>
               <div>
                 <h3 className="text-xl font-semibold text-oasis-green-900">Adam Kershner</h3>
-                <p className="mt-1 text-oasis-green-700">CEO &amp; Founder, Aura Library</p>
+                <p className="mt-1 text-oasis-green-700">CEO &amp; Founder, Kahana</p>
                 <p className="mt-4 text-sm text-oasis-green-800">
                   Use this photo for articles, speaker bios, and partner announcements unless we provide an alternate asset for a
                   specific event.
@@ -175,7 +175,7 @@ export default function PressKitPage() {
               Press releases
             </h2>
             <p className="mt-2 text-oasis-green-800">
-              Official statements and announcements from Aura Library (separate from our blog).
+              Official statements and announcements from Kahana (separate from our blog).
             </p>
             <Link
               href="/press-releases"

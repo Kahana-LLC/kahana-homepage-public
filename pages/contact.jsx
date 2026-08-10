@@ -28,7 +28,7 @@ const supportLinks = [
   },
   {
     name: 'Help',
-    description: 'Browse guides and answers for the Aura Library platform.',
+    description: 'Browse guides and answers for the Kahana platform.',
     href: '/help',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -140,7 +140,7 @@ export default function ContactPage() {
     <>
       <SEO
         title="Let's Connect"
-        description="We'd love to hear from you and explore how Aura Library can enhance your browsing experience."
+        description="We'd love to hear from you and explore how Kahana can enhance your browsing experience."
         url="https://kahana.io/contact"
         type="website"
       />
@@ -156,7 +156,7 @@ export default function ContactPage() {
                   Contact us
                 </h1>
                 <p className="mt-6 text-xl text-oasis-green-800">
-                  We're excited to learn more about your needs and show you how Aura Library can transform your browsing experience. Share your thoughts with us, and we'll get back to you soon!
+                  We're excited to learn more about your needs and show you how Kahana can transform your browsing experience. Share your thoughts with us, and we'll get back to you soon!
                 </p>
               </div>
 

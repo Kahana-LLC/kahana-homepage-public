@@ -8,7 +8,7 @@ export default function ProductMeta({ product }) {
 
   return (
     <Meta
-      title={`${product.name} | Aura Library`}
+      title={`${product.name} | Kahana`}
       description={product.description}
       image={product.featuredImage}
       url={`https://kahana.io/products/${product.slug}`}

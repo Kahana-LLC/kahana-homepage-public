@@ -21,7 +21,7 @@ export default function AuraPage() {
           <div className="mx-auto max-w-3xl text-center">
             <FadeInSection eager>
               <h1 className="text-3xl font-semibold leading-tight tracking-tight sm:text-4xl md:text-5xl">
-                Aura is how Aura Library promotes quality
+                Aura is how Kahana promotes quality
               </h1>
               <p className="mt-5 text-lg leading-relaxed text-[#495800] sm:text-xl">
                 Each day you get a small Aura budget to endorse hubs and noteworthy files inside

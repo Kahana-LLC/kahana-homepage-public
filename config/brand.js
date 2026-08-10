@@ -1,5 +1,5 @@
 /** Product vs company brand — keep in sync with kahana-web `src/constants/brand.js`. */
-const APP_NAME = 'Aura Library';
+const APP_NAME = 'Kahana';
 const COMPANY_NAME = 'Kahana Group Inc.';
 const APP_TAGLINE =
   'Contribute what you know, learn from curated hubs on Explore, and give Aura so quality rises.';

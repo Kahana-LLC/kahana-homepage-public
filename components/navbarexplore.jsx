@@ -81,11 +81,11 @@ function NavBarExplore() {
         `}</style>
         <div className="nav-content">
           {/* Logo */}
-          <Link href="https://app.kahana.io/" aria-label="Aura Library">
+          <Link href="https://app.kahana.io/" aria-label="Kahana">
             <span className="sr-only">Home</span>
             <Image
               src={whiteKahanaLogo}
-              alt="Aura Library Logo"
+              alt="Kahana Logo"
               width={24}
               height={24}
               className="logo"

@@ -16,7 +16,7 @@ export default function Team() {
   return (
     <>
       <SEO
-        title="Team | Aura Library"
+        title="Team | Kahana"
         description="Meet the people building Oasis: a managed enterprise browser that puts governance where work happens in the browser."
         url="https://kahana.io/team"
         type="website"
@@ -25,7 +25,7 @@ export default function Team() {
       <div className="relative bg-white">
         <div className="mx-auto max-w-7xl px-4 pb-16 pt-10 sm:px-6 sm:pb-24 lg:px-8 lg:pt-16">
           <div className="max-w-3xl">
-            <p className="text-sm font-semibold uppercase tracking-wide text-oasis-green-600">Aura Library</p>
+            <p className="text-sm font-semibold uppercase tracking-wide text-oasis-green-600">Kahana</p>
             <h1 className="mt-2 bg-gradient-to-r from-oasis-green-600 to-oasis-green-500 bg-clip-text text-4xl font-bold tracking-tight text-transparent sm:text-5xl">
               Team
             </h1>

@@ -1,4 +1,4 @@
-# Aura Library brand — corporate CNAMEs (kahana-public)
+# auralibrary.org brand hosts (alias) — corporate CNAMEs (kahana-public)
 
 Mirror of Kahana Phase 1 corporate hosts on **auralibrary.org**, served by the same Heroku app `kahana-public`.
 

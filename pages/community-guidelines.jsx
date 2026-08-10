@@ -60,8 +60,8 @@ export default function CommunityGuidelines() {
   return (
     <>
       <Head>
-        <title>Community Guidelines | Aura Library</title>
-        <meta name="description" content="Learn about our community standards and best practices for the Aura Library community" />
+        <title>Community Guidelines | Kahana</title>
+        <meta name="description" content="Learn about our community standards and best practices for the Kahana community" />
       </Head>
 
       <main className="min-h-screen bg-white pt-24 pb-16">

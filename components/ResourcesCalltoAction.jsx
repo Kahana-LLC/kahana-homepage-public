@@ -9,7 +9,7 @@ const ResourcesCallToAction = () => {
           Want to start monetizing your knowledge?
         </h2>
         <p className="text-gray-600 my-4 px-4">
-          Start charging for access to your best assets in minutes with Aura Library.
+          Start charging for access to your best assets in minutes with Kahana.
         </p>
         <div className="mt-4">
           <Link href="/schedule-demo" className="btn-primary inline-block px-6 py-3 no-underline hover:no-underline focus:no-underline">

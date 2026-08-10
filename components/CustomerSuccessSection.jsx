@@ -110,7 +110,7 @@ export default function CustomerSuccessSection() {
               <Image src="/logos/softmotive.svg" alt="Softmotive" width={158} height={48} />
             </div>
             <div className="col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1 opacity-50 hover:opacity-100 transition-opacity">
-              <Image src="/logos/kahana.svg" alt="Aura Library" width={158} height={48} />
+              <Image src="/logos/kahana.svg" alt="Kahana" width={158} height={48} />
             </div>
           </div>
         </div>

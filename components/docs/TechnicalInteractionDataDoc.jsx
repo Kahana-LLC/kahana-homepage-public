@@ -7,7 +7,7 @@ export default function TechnicalInteractionDataDoc() {
   return (
     <div className="doc-content technical-interaction-data-doc max-w-none px-0 py-0">
       <p className="text-lg text-[#30400D]/85 leading-relaxed">
-        Oasis sends minimal interaction data to Aura Library so we can improve the product—fix bugs,
+        Oasis sends minimal interaction data to Kahana so we can improve the product—fix bugs,
         measure latency, and understand which features help. By default, personalization is{" "}
         <strong>off</strong>: payloads are anonymized and do not include your account email or user
         ID. You can opt in from Settings if you want a more personalized experience.
@@ -29,7 +29,7 @@ export default function TechnicalInteractionDataDoc() {
         <p className="text-[#30400D]/85 leading-relaxed">
           In Oasis, open <strong>Settings → Privacy</strong> (
           <code className="rounded bg-[#F2F4E5] px-1.5 py-0.5 text-sm">about:preferences#privacy</code>
-          ). The personalization / data collection checkbox controls whether Aura Library receives
+          ). The personalization / data collection checkbox controls whether Kahana receives
           identifying user fields. It maps to{" "}
           <code className="rounded bg-[#F2F4E5] px-1.5 py-0.5 text-sm">
             opt_in_data_collection_use
@@ -53,7 +53,7 @@ export default function TechnicalInteractionDataDoc() {
           Interactive payload explorer
         </h2>
         <p className="text-[#30400D]/85 leading-relaxed">
-          Toggle below to see the JSON Aura Library receives for a single assistant interaction. This is
+          Toggle below to see the JSON Kahana receives for a single assistant interaction. This is
           a real-shaped example; field values are illustrative.
         </p>
 
@@ -130,7 +130,7 @@ export default function TechnicalInteractionDataDoc() {
       </section>
 
       <section className="my-12">
-        <h2 className="text-2xl font-bold text-oasis-green-800">How Aura Library uses this data</h2>
+        <h2 className="text-2xl font-bold text-oasis-green-800">How Kahana uses this data</h2>
         <ul className="list-disc space-y-2 pl-5 text-[#30400D]/85">
           <li>Improve assistant quality, latency, and reliability</li>
           <li>Debug issues and prioritize fixes</li>

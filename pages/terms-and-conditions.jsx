@@ -33,7 +33,7 @@ export default function TermsAndConditions() {
     <>
       <SEO 
         title="Terms and Conditions"
-        description="Terms of Service for Aura Library, the Digital Library of curated hubs, Explore, Aura, and optional paid access."
+        description="Terms of Service for Kahana, the Digital Library of curated hubs, Explore, Aura, and optional paid access."
         url="https://about.kahana.io/terms-and-conditions"
         type="website"
       />
@@ -68,7 +68,7 @@ export default function TermsAndConditions() {
                 Last Updated: July 15, 2026
               </p>
               <p className="text-gray-700 leading-relaxed mb-6">
-                We appreciate your interest in Kahana Group Inc. ("we," "our," or "us") and the Aura Library Service. The "Service" means our websites and web applications—including surfaces on kahana.io (such as about.kahana.io and related corporate properties), the product application at app.kahana.io, and additional related services we provide—that together offer Aura Library&apos;s Digital Library of curated hubs. These Terms of Service constitute a legally binding agreement between you and Kahana Group Inc. that governs your access to and use of the Service.
+                We appreciate your interest in Kahana Group Inc. ("we," "our," or "us") and the Kahana Service. The "Service" means our websites and web applications—including surfaces on kahana.io (such as about.kahana.io and related corporate properties), the product application at app.kahana.io, and additional related services we provide—that together offer Kahana&apos;s Digital Library of curated hubs. These Terms of Service constitute a legally binding agreement between you and Kahana Group Inc. that governs your access to and use of the Service.
               </p>
             </section>
 
@@ -97,7 +97,7 @@ export default function TermsAndConditions() {
               </div>
               <h2 className="text-3xl font-bold text-[#313A00] mb-6">1. Service Overview</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
-                Aura Library is a Digital Library where people contribute and learn from curated hubs of digital artifacts (such as files, videos, images, PDFs, documents, links, and related materials). Through the Service, you may, among other things:
+                Kahana is a Digital Library where people contribute and learn from curated hubs of digital artifacts (such as files, videos, images, PDFs, documents, links, and related materials). Through the Service, you may, among other things:
               </p>
               <ul className="list-disc list-inside text-gray-700 space-y-2 mb-4 ml-4">
                 <li>Create, organize, and collaborate on hubs with roles and invites;</li>
@@ -105,7 +105,7 @@ export default function TermsAndConditions() {
                 <li>Maintain a creator profile and engage with follows, saves, and related social features;</li>
                 <li>Give and receive Aura—a scarce community endorsement signal for hubs (Aura is not money, crypto, or payment);</li>
                 <li>Optionally monetize access to a hub through paid checkout powered by Stripe Connect, subject to fees published on our pricing page or displayed at checkout; and</li>
-                <li>Subscribe to paid Aura Library plans (such as Growth) for additional capacity or support where offered.</li>
+                <li>Subscribe to paid Kahana plans (such as Growth) for additional capacity or support where offered.</li>
               </ul>
               <p className="text-gray-700 leading-relaxed mb-6">
                 Features, availability, and pricing may change as we improve the Service. Adult-designated hubs may require additional in-product age verification before access, as described in the Service and related policies.
@@ -121,7 +121,7 @@ export default function TermsAndConditions() {
               </div>
               <h2 className="text-3xl font-bold text-[#313A00] mb-6">2. Eligibility</h2>
               <p className="text-gray-700 leading-relaxed mb-6">
-                The Service is available only to individuals who are at least 18 years of age. By accepting these Terms, you represent and warrant that: (a) you have reached the age of 18; (b) you have not been previously suspended or removed from the Service; and (c) your registration and use of the Service comply with all applicable laws and regulations. Accessing adult-designated hubs may additionally require that you complete Aura Library&apos;s age verification process in the Service. If you are accepting these Terms on behalf of an entity, organization, or company, the individual accepting these Terms on your behalf represents and warrants that they possess the necessary authority to bind such entity, organization, or company to these Terms, and you agree to be bound by these Terms.
+                The Service is available only to individuals who are at least 18 years of age. By accepting these Terms, you represent and warrant that: (a) you have reached the age of 18; (b) you have not been previously suspended or removed from the Service; and (c) your registration and use of the Service comply with all applicable laws and regulations. Accessing adult-designated hubs may additionally require that you complete Kahana&apos;s age verification process in the Service. If you are accepting these Terms on behalf of an entity, organization, or company, the individual accepting these Terms on your behalf represents and warrants that they possess the necessary authority to bind such entity, organization, or company to these Terms, and you agree to be bound by these Terms.
               </p>
             </section>
 
@@ -163,7 +163,7 @@ export default function TermsAndConditions() {
 
               <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">4.2. Pricing</h3>
               <p className="text-gray-700 leading-relaxed mb-6">
-                Kahana Group Inc. retains the exclusive right to establish pricing for the Service. Fees may include, without limitation: (a) subscriptions to Aura Library plans (such as Growth) billed on a recurring basis; (b) amounts you pay for Purchased Access to hubs or other User Content offered by creators; and (c) platform or processing fees disclosed at checkout or on our pricing page. Kahana Group Inc. will make reasonable efforts to maintain current pricing information on the Service and on Aura Library&apos;s pricing page located at kahana.io/pricing (and related in-app billing surfaces). We recommend that you periodically review our website and checkout screens for the most current pricing information. Kahana Group Inc. may modify fees for any Service feature, including implementing new fees or charges, provided that Kahana Group Inc. gives you advance notice of such changes before they become effective where required. Kahana Group Inc. may, in its sole discretion, extend promotional offers with varying features and pricing to any of its customers. Such promotional offers, unless specifically extended to you, do not apply to your subscription or these Terms.
+                Kahana Group Inc. retains the exclusive right to establish pricing for the Service. Fees may include, without limitation: (a) subscriptions to Kahana plans (such as Growth) billed on a recurring basis; (b) amounts you pay for Purchased Access to hubs or other User Content offered by creators; and (c) platform or processing fees disclosed at checkout or on our pricing page. Kahana Group Inc. will make reasonable efforts to maintain current pricing information on the Service and on Kahana&apos;s pricing page located at kahana.io/pricing (and related in-app billing surfaces). We recommend that you periodically review our website and checkout screens for the most current pricing information. Kahana Group Inc. may modify fees for any Service feature, including implementing new fees or charges, provided that Kahana Group Inc. gives you advance notice of such changes before they become effective where required. Kahana Group Inc. may, in its sole discretion, extend promotional offers with varying features and pricing to any of its customers. Such promotional offers, unless specifically extended to you, do not apply to your subscription or these Terms.
               </p>
 
               <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">4.3. Payment Authorization</h3>
@@ -203,7 +203,7 @@ export default function TermsAndConditions() {
                 <strong>All fees paid in connection with the Service are final and non-refundable</strong>, including without limitation fees for subscriptions, paid access to hubs or other User Content, one-time purchases, upgrades, and any other paid features. Kahana Group Inc. does not provide refunds, account credits, or prorated reimbursements for unused time, unused access, dissatisfaction with content or features, accidental purchases, changes in your circumstances, or loss of access for any reason, <strong>except where a non-waivable provision of applicable law requires otherwise</strong>.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
-                Any courtesy credit, goodwill adjustment, or similar accommodation Kahana Group Inc. may choose to provide in a particular case is discretionary, does not create an obligation to do so in any other case, and does not waive Aura Library's no-refund policy.
+                Any courtesy credit, goodwill adjustment, or similar accommodation Kahana Group Inc. may choose to provide in a particular case is discretionary, does not create an obligation to do so in any other case, and does not waive Kahana's no-refund policy.
               </p>
               <p className="text-gray-700 leading-relaxed mb-6">
                 Initiating a chargeback, payment dispute, or similar reversal without a legally required basis may result in suspension or termination of your account and other remedies available to Kahana Group Inc., without limiting Section 4.6 (Account Delinquency).
@@ -348,7 +348,7 @@ export default function TermsAndConditions() {
 
               <h3 id="communications-optional" className="text-2xl font-bold text-[#313A00] mb-4 mt-8 scroll-mt-8">9.1. Optional product and onboarding emails</h3>
               <p className="text-gray-700 leading-relaxed mb-4">
-                After you create an account, Kahana Group Inc. may send emails that help you get started with Aura Library and related product features, including onboarding guidance, setup tips, feature explanations, and product updates. These emails are not required to use the Service.
+                After you create an account, Kahana Group Inc. may send emails that help you get started with Kahana and related product features, including onboarding guidance, setup tips, feature explanations, and product updates. These emails are not required to use the Service.
               </p>
               <p className="text-gray-700 leading-relaxed mb-6">
                 You may unsubscribe from these optional emails at any time by following the unsubscribe link in any such email or by <Link href="https://kahana.io/contact" className="text-[#4A6200] no-underline hover:no-underline font-semibold">contacting us through our contact form</Link>.
@@ -441,7 +441,7 @@ export default function TermsAndConditions() {
               
               <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">12.1. Terms of Trial</h3>
               <p className="text-gray-700 leading-relaxed mb-6">
-                From time to time, Kahana Group Inc. may offer free trials, promotional trials, pilot, evaluation, alpha, beta, or early access to the Service, an Aura Library plan (such as Growth), hub features, or other capabilities, as described in the product, at checkout, or in a specific offer (each, a &quot;Trial&quot;). You may use a Trial solely for evaluation during the period Kahana Group Inc. specifies. Trials are provided at Aura Library&apos;s discretion; either you or Kahana Group Inc. may terminate a Trial at any time, for any reason, with or without notice. A Trial may be non-functional, incomplete, or contain features that Kahana Group Inc. may never release generally, and related features and performance information constitute Aura Library&apos;s confidential and proprietary information. Unless otherwise stated in the offer, at the end of a paid-plan Trial, billing may begin under Section 4 (Payment Terms) if you do not cancel before the Trial ends.
+                From time to time, Kahana Group Inc. may offer free trials, promotional trials, pilot, evaluation, alpha, beta, or early access to the Service, a Kahana plan (such as Growth), hub features, or other capabilities, as described in the product, at checkout, or in a specific offer (each, a &quot;Trial&quot;). You may use a Trial solely for evaluation during the period Kahana Group Inc. specifies. Trials are provided at Kahana&apos;s discretion; either you or Kahana Group Inc. may terminate a Trial at any time, for any reason, with or without notice. A Trial may be non-functional, incomplete, or contain features that Kahana Group Inc. may never release generally, and related features and performance information constitute Kahana&apos;s confidential and proprietary information. Unless otherwise stated in the offer, at the end of a paid-plan Trial, billing may begin under Section 4 (Payment Terms) if you do not cancel before the Trial ends.
               </p>
 
               <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">12.2. Disclaimer for Trial</h3>
@@ -484,7 +484,7 @@ export default function TermsAndConditions() {
 
               <h3 id="dormant-accounts" className="text-2xl font-bold text-[#313A00] mb-4 mt-8 scroll-mt-8">13.5. Dormant accounts</h3>
               <p className="text-gray-700 leading-relaxed mb-4">
-                If you have not signed in to your Aura Library account for six (6) months, your account may be considered dormant. We may send you a one-off email notifying you that your account may be deleted if you do not sign in within the timeframe stated in that notice.
+                If you have not signed in to your Kahana account for six (6) months, your account may be considered dormant. We may send you a one-off email notifying you that your account may be deleted if you do not sign in within the timeframe stated in that notice.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
                 Account deletion is irreversible. If your account is deleted, you will lose access to the Service and associated data will be destroyed in accordance with our Privacy Policy.
@@ -619,7 +619,7 @@ export default function TermsAndConditions() {
 
               <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">17.9. Changes to Arbitration Provision</h3>
               <p className="text-gray-700 leading-relaxed mb-6">
-                If Kahana Group Inc. makes any material change to this arbitration provision, you may reject the change by sending us written notice within 30 days following the change to Kahana Group Inc.'s address for Notice of Arbitration, in which case your Aura Library account shall be immediately terminated and this arbitration provision, as in effect immediately before the changes you rejected, shall remain in effect.
+                If Kahana Group Inc. makes any material change to this arbitration provision, you may reject the change by sending us written notice within 30 days following the change to Kahana Group Inc.'s address for Notice of Arbitration, in which case your Kahana account shall be immediately terminated and this arbitration provision, as in effect immediately before the changes you rejected, shall remain in effect.
               </p>
 
               <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">17.10. Enforceability of Arbitration</h3>
@@ -649,7 +649,7 @@ export default function TermsAndConditions() {
 
               <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">18.3. Privacy Policy Incorporation</h3>
               <p className="text-gray-700 leading-relaxed mb-6">
-                Please review the Aura Library Privacy Policy <Link href="/privacy-policy" className="text-[#4A6200] no-underline hover:no-underline font-semibold">(the "Privacy Policy")</Link> carefully for information concerning our collection, use, storage, and disclosure of your personal information, including cookies and analytics. As described in the Privacy Policy, our website analytics tools are Google Analytics, Mixpanel, and Firebase; we do not use advertising cookies or retargeting pixels on this site. The Aura Library Privacy Policy is incorporated by reference herein and forms a part of these Terms.
+                Please review the Kahana Privacy Policy <Link href="/privacy-policy" className="text-[#4A6200] no-underline hover:no-underline font-semibold">(the "Privacy Policy")</Link> carefully for information concerning our collection, use, storage, and disclosure of your personal information, including cookies and analytics. As described in the Privacy Policy, our website analytics tools are Google Analytics, Mixpanel, and Firebase; we do not use advertising cookies or retargeting pixels on this site. The Kahana Privacy Policy is incorporated by reference herein and forms a part of these Terms.
               </p>
 
               <h3 className="text-2xl font-bold text-[#313A00] mb-4 mt-8">18.4. Incorporation of Additional Terms</h3>

@@ -85,7 +85,7 @@ export default function HelpIndex({ docs = [], categories = [] }) {
     <>
       <SEO
         title="Help"
-        description="Guides and answers for the Aura Library platform—hubs, Explore, Aura, and more. New articles are added as product help ships."
+        description="Guides and answers for the Kahana platform—hubs, Explore, Aura, and more. New articles are added as product help ships."
         url="https://help.kahana.io/help"
         type="website"
       />
@@ -108,17 +108,17 @@ export default function HelpIndex({ docs = [], categories = [] }) {
               Help
             </h1>
             <p className="text-xl text-oasis-green-800 max-w-2xl mx-auto">
-              Search guides for Aura Library: hubs, Explore, Aura, profiles, earning, and trust. New articles land here as they ship.
+              Search guides for Kahana: hubs, Explore, Aura, profiles, earning, and trust. New articles land here as they ship.
             </p>
           </div>
 
           {docList.length === 0 ? (
             <div className="text-center py-12">
               <h3 className="text-lg font-medium text-oasis-green-900 mb-2">
-                New Aura Library platform help coming soon
+                New Kahana platform help coming soon
               </h3>
               <p className="text-oasis-green-800 max-w-xl mx-auto">
-                We’re adding more Aura Library library guides. For now, see{' '}
+                We’re adding more Kahana library guides. For now, see{' '}
                 <Link href="/faq" className="font-semibold text-brand-link no-underline hover:underline">
                   FAQ
                 </Link>

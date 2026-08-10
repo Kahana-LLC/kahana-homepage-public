@@ -115,7 +115,7 @@ export const TRAINING_PAYLOAD_FIELD_REFERENCE = [
   {
     path: "training_mode",
     description:
-      "anonymous (payload uploaded on Submit; no Aura Library user ID on the training record) or personalized (same upload, linked to your account for personalization)",
+      "anonymous (payload uploaded on Submit; no Kahana user ID on the training record) or personalized (same upload, linked to your account for personalization)",
     when: "Chosen per submission; neither mode keeps feedback only on-device",
   },
   {
@@ -130,7 +130,7 @@ export const TRAINING_PAYLOAD_FIELD_REFERENCE = [
   },
   {
     path: "contact_me",
-    description: "Whether you want Aura Library to follow up about this feedback",
+    description: "Whether you want Kahana to follow up about this feedback",
     when: "Optional",
   },
   {

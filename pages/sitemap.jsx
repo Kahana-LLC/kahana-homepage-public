@@ -87,10 +87,10 @@ export default function Sitemap({ sitemapSections }) {
   return (
     <>
       <Head>
-        <title>Sitemap | Aura Library - Navigate Our Website</title>
+        <title>Sitemap | Kahana - Navigate Our Website</title>
         <meta
           name="description"
-          content="Browse Aura Library's complete website structure. Find information about our enterprise browser, web applications, solutions, documentation, support resources, and more."
+          content="Browse Kahana's complete website structure. Find information about our enterprise browser, web applications, solutions, documentation, support resources, and more."
         />
         <meta name="robots" content="noindex, follow" />
       </Head>
@@ -100,7 +100,7 @@ export default function Sitemap({ sitemapSections }) {
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold text-gray-900">Website Sitemap</h1>
             <p className="mt-4 text-xl text-gray-600">
-              A complete guide to Aura Library&apos;s website structure and content
+              A complete guide to Kahana&apos;s website structure and content
             </p>
           </div>
 

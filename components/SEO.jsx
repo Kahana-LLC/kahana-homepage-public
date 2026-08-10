@@ -10,7 +10,7 @@ export const DEFAULT_SEO_TITLE = 'The Digital Library With Aura';
 export const DEFAULT_SEO_DESCRIPTION =
   'Contribute what you know, learn from curated hubs on Explore, and give Aura so quality rises. Paid access is optional.';
 /**
- * Aura Library lockup as a padded PNG (1200×630). Prefer same-origin asset for OG/Twitter.
+ * Kahana lockup as a padded PNG (1200×630). Prefer same-origin asset for OG/Twitter.
  */
 export const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.png`;
 export const DEFAULT_OG_IMAGE_WIDTH = 1200;
@@ -28,7 +28,7 @@ const SEO = ({
 }) => {
   // Keep DEFAULT_SEO_TITLE exact for Messages/OG; brand other titles with APP_NAME.
   const siteTitle =
-    title === DEFAULT_SEO_TITLE || title.includes(APP_NAME) || title.includes('Aura Library')
+    title === DEFAULT_SEO_TITLE || title.includes(APP_NAME) || title.includes('Kahana')
       ? title
       : `${title} | ${APP_NAME}`;
 

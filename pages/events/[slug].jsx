@@ -27,7 +27,7 @@ export default function EventDetailPage({ event }) {
   return (
     <>
       <SEO
-        title={`${event.title} | Aura Library Events`}
+        title={`${event.title} | Kahana Events`}
         description={event.description}
         url={`https://kahana.io/events/${event.slug}`}
         type="website"

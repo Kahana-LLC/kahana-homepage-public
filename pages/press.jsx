@@ -14,7 +14,7 @@ const hubLinks = [
   },
   {
     title: 'Press releases',
-    description: 'Official Aura Library announcements and statements (separate from our blog).',
+    description: 'Official Kahana announcements and statements (separate from our blog).',
     href: '/press-releases',
     cta: 'View releases',
   },
@@ -31,7 +31,7 @@ export default function PressPage() {
     <>
       <SEO
         title="Press & Media"
-        description="Press kit, official press releases, and media contact information for Aura Library."
+        description="Press kit, official press releases, and media contact information for Kahana."
         url="https://kahana.io/press"
         type="website"
       />
@@ -42,7 +42,7 @@ export default function PressPage() {
             <p className="text-sm font-semibold uppercase tracking-wide text-oasis-green-600">Media</p>
             <h1 className="mt-2 text-4xl font-bold tracking-tight text-oasis-green-900 sm:text-5xl">Press &amp; Media</h1>
             <p className="mt-4 max-w-2xl text-lg text-oasis-green-800">
-              Resources and contacts for journalists, analysts, and partners covering Aura Library.
+              Resources and contacts for journalists, analysts, and partners covering Kahana.
             </p>
           </div>
         </section>
@@ -67,7 +67,7 @@ export default function PressPage() {
           <div className="mt-16 rounded-xl border border-oasis-green-100 bg-oasis-green-50/40 p-8 shadow-sm">
             <h2 className="text-2xl font-bold text-oasis-green-900">Third-party coverage</h2>
             <p className="mt-2 text-oasis-green-800">
-              Independent reviews and analysis from publications outside Aura Library.
+              Independent reviews and analysis from publications outside Kahana.
             </p>
             <ul className="mt-8 space-y-6">
               <li className="rounded-xl border border-oasis-green-100 bg-white p-6">

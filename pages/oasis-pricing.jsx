@@ -170,7 +170,7 @@ export default function OasisPricing() {
         schema={pricingSchema}
       />
       <Head>
-        <title>Oasis Pricing | Aura Library</title>
+        <title>Oasis Pricing | Kahana</title>
         <meta
           name="description"
           content="Select the perfect Oasis plan for your workflow. From free exploration to enterprise-scale solutions, find the right fit for your AI-powered workspace needs."

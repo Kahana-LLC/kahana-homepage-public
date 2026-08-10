@@ -656,8 +656,8 @@ export default function OAuthCallback() {
   return (
     <>
       <Head>
-        <title>OAuth Callback - Aura Library</title>
-        <meta name="description" content="OAuth callback for Aura Library Oasis Browser" />
+        <title>OAuth Callback - Kahana</title>
+        <meta name="description" content="OAuth callback for Kahana Oasis Browser" />
         <meta name="robots" content="noindex, nofollow" />
         <meta httpEquiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
         <meta httpEquiv="Pragma" content="no-cache" />

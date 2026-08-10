@@ -24,10 +24,10 @@ export default function Manifesto() {
   return (
     <>
       <Head>
-        <title>Our Manifesto | Aura Library</title>
+        <title>Our Manifesto | Kahana</title>
         <meta
           name="description"
-          content="Read Aura Library's manifesto about enabling your creativity and helping you find meaning through seamless and immersive creative experiences."
+          content="Read Kahana's manifesto about enabling your creativity and helping you find meaning through seamless and immersive creative experiences."
         />
         <style>{`
           .fade-in-section {
@@ -57,7 +57,7 @@ export default function Manifesto() {
               <div className="bg-white p-6 rounded-2xl shadow-lg">
                 <Image
                   src={getCloudinaryImageUrl("/images/kahana_mascot.png", { width: 300, height: 300, quality: 'auto:good' })}
-                  alt="Aura Library Sloth Mascot"
+                  alt="Kahana Sloth Mascot"
                   width={300}
                   height={300}
                   className="rounded-lg"
@@ -80,7 +80,7 @@ export default function Manifesto() {
                 We Are Committed to Your Productivity
               </h2>
               <p className="text-gray-600 mb-6">
-                In our daily lives, we navigate a complex world of ideas, tasks, and dreams. We strive to be more productive, to bring our visions to life, and to make meaningful progress in our work and personal lives. At Aura Library, we understand that technology should enhance, not hinder, this journey.
+                In our daily lives, we navigate a complex world of ideas, tasks, and dreams. We strive to be more productive, to bring our visions to life, and to make meaningful progress in our work and personal lives. At Kahana, we understand that technology should enhance, not hinder, this journey.
               </p>
             </section>
 

@@ -8,7 +8,7 @@ export default function Support() {
     <>
       <SEO
         title="Support"
-        description="Access help articles and resources for Aura Library."
+        description="Access help articles and resources for Kahana."
         url="https://kahana.io/support"
         type="website"
       />

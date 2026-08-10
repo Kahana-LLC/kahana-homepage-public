@@ -45,7 +45,7 @@ export default function TrainingDoc({ doc }) {
       <aside className="my-8 scroll-mt-24 rounded-r-lg border-l-4 border-[#8BA500] bg-[#F3F8E4] p-6 not-prose">
         <strong className="mb-2 block text-[#30400D]">At a glance</strong>
         <p className="m-0 text-[#30400D]/85 leading-relaxed">
-          <strong>Anonymous training still uploads feedback to Aura Library</strong> when you submit—the
+          <strong>Anonymous training still uploads feedback to Kahana</strong> when you submit—the
           difference is that your <strong>user ID is not attached to that training record</strong>.
           This is not on-device-only model training. Details:{" "}
           <a
@@ -62,7 +62,7 @@ export default function TrainingDoc({ doc }) {
           Example training payloads (JSON)
         </h2>
         <p className="mt-4 text-[#30400D]/85 leading-relaxed">
-          Real-shaped submission objects sent to Aura Library when you submit training—not stored only
+          Real-shaped submission objects sent to Kahana when you submit training—not stored only
           on your device. Fields include <code className="rounded bg-[#F2F4E5] px-1 text-sm">category</code>,{" "}
           <code className="rounded bg-[#F2F4E5] px-1 text-sm">badges</code>, required{" "}
           <code className="rounded bg-[#F2F4E5] px-1 text-sm">comment</code>, and{" "}

@@ -25,8 +25,8 @@ export default function LearningInternship() {
     },
     {
       id: 'full-time',
-      question: 'Does the internship lead to a full-time role at Aura Library?',
-      answer: 'No. The internship does not have an impact on getting a full-time role at Aura Library. There is no expectation of a full-time role after completing the internship. This is a learning experience designed to help you build skills and gain exposure.',
+      question: 'Does the internship lead to a full-time role at Kahana?',
+      answer: 'No. The internship does not have an impact on getting a full-time role at Kahana. There is no expectation of a full-time role after completing the internship. This is a learning experience designed to help you build skills and gain exposure.',
       group: 'Compensation & expectations',
     },
     {
@@ -62,7 +62,7 @@ export default function LearningInternship() {
     {
       id: 'training',
       question: 'Is there training or mentorship?',
-      answer: 'Yes. You will receive training and be expected to learn through structured learning plans, clear instructions for each task, and working alongside Aura Library team members. You\'ll also have opportunities to connect with leadership for mentorship, guidance, and feedback. You\'ll join a community of other interns as well.',
+      answer: 'Yes. You will receive training and be expected to learn through structured learning plans, clear instructions for each task, and working alongside Kahana team members. You\'ll also have opportunities to connect with leadership for mentorship, guidance, and feedback. You\'ll join a community of other interns as well.',
       group: 'Learning & support',
     },
     {
@@ -192,7 +192,7 @@ export default function LearningInternship() {
           >
             {/* Modal Header */}
             <div className="flex items-center justify-between p-6 border-b border-oasis-green-600/20">
-              <h2 className="text-2xl font-bold text-oasis-green-800">Apply to Aura Library Learning Internship</h2>
+              <h2 className="text-2xl font-bold text-oasis-green-800">Apply to Kahana Learning Internship</h2>
               <button
                 onClick={() => setIsModalOpen(false)}
                 className="text-oasis-green-800 hover:text-oasis-green-600 transition-colors"
@@ -241,7 +241,7 @@ export default function LearningInternship() {
                     frameBorder="0"
                     marginHeight="0"
                     marginWidth="0"
-                    title="Aura Library Learning Internship Application"
+                    title="Kahana Learning Internship Application"
                     style={{ 
                       border: 'none',
                       opacity: isFormLoaded ? 1 : 0,
@@ -260,7 +260,7 @@ export default function LearningInternship() {
   return (
     <>
       <SEO
-        title="Aura Library Learning Internship"
+        title="Kahana Learning Internship"
         description="Join our educational internship program designed for individuals who want to learn and gain hands-on experience in a fast-paced, innovative startup environment."
         url="https://kahana.io/learning-internship"
         type="website"
@@ -270,7 +270,7 @@ export default function LearningInternship() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-oasis-green-800 mb-4">Aura Library Learning Internship</h1>
+            <h1 className="text-4xl font-bold text-oasis-green-800 mb-4">Kahana Learning Internship</h1>
             <p className="text-xl text-oasis-green-800 max-w-3xl mx-auto">
               An educational internship designed for individuals who want to learn and gain hands-on experience in a fast-paced, innovative startup environment.
             </p>
@@ -289,7 +289,7 @@ export default function LearningInternship() {
                     </div>
                     <div className="flex-1">
                       <p className="text-oasis-green-800 leading-relaxed text-lg">
-                        The Aura Library Learning Internship is an <strong>educational internship</strong> designed for individuals who want to learn and gain hands-on experience in a fast-paced, innovative startup environment.
+                        The Kahana Learning Internship is an <strong>educational internship</strong> designed for individuals who want to learn and gain hands-on experience in a fast-paced, innovative startup environment.
                       </p>
                     </div>
                   </div>
@@ -308,7 +308,7 @@ export default function LearningInternship() {
                     </div>
                     <div className="flex-1">
                       <p className="text-oasis-green-800 mb-4 leading-relaxed">
-                        Aura Library has received <strong>hundreds of emails and messages</strong> from people asking for opportunities to volunteer, learn, and contribute while gaining experience. Rather than say "no" or "we don't have an internship," we decided to create one that we feel combines <strong>flexibility, community, collaboration, and problem-solving</strong> in an innovative environment that is <strong>not too rigid and not too unstructured</strong>.
+                        Kahana has received <strong>hundreds of emails and messages</strong> from people asking for opportunities to volunteer, learn, and contribute while gaining experience. Rather than say "no" or "we don't have an internship," we decided to create one that we feel combines <strong>flexibility, community, collaboration, and problem-solving</strong> in an innovative environment that is <strong>not too rigid and not too unstructured</strong>.
                       </p>
                       <p className="text-oasis-green-800 mb-4 leading-relaxed">
                         The result is an environment where you can <strong>gain exposure to new tools, contribute to projects, and learn skills quickly and efficiently</strong>. Our single guarantee is that when you join, you will have <strong>plenty of opportunities given to you to learn</strong>.
@@ -711,7 +711,7 @@ export default function LearningInternship() {
                         ),
                         items: [
                           { title: 'LinkedIn', description: 'Update profile, post about your work, engage with team content, participate in the LinkedIn focus group, connect with team members' },
-                          { title: 'Social media', description: 'Follow Aura Library channels (LinkedIn, X, Instagram, YouTube, TikTok), engage with content, support campaigns' },
+                          { title: 'Social media', description: 'Follow Kahana channels (LinkedIn, X, Instagram, YouTube, TikTok), engage with content, support campaigns' },
                           { title: 'Product Hunt', description: 'Create profile, follow the team, participate in launch preparation and supporter outreach' },
                           { title: 'Content pipeline', description: 'Blog planning, YouTube video production, content calendars' },
                           { title: 'SEO & analytics', description: 'Looker reports, Google Trends, traffic and performance analysis' }
@@ -1140,7 +1140,7 @@ export default function LearningInternship() {
                     <div className="flex-1">
                       <h3 className="text-xl font-semibold text-oasis-green-600 mb-3">Join a Learning Community</h3>
                       <p className="text-oasis-green-800 mb-3">
-                        When you join, you'll become part of a community that includes <strong>other interns</strong> as well as <strong>Aura Library team members and leadership</strong>. You'll collaborate, learn together, and get direct access to experienced professionals.
+                        When you join, you'll become part of a community that includes <strong>other interns</strong> as well as <strong>Kahana team members and leadership</strong>. You'll collaborate, learn together, and get direct access to experienced professionals.
                       </p>
                       <p className="text-oasis-green-800">
                         You'll receive <strong>structured learning plans and assigned tasks</strong> to complete, giving you clear direction while maintaining flexibility. It's not as rigid as traditional school: you have more autonomy and real-world context, but it's more structured than an unstructured community, with clear learning paths and objectives.
@@ -1403,7 +1403,7 @@ export default function LearningInternship() {
 
               {/* Footer Note */}
               <div className="text-center text-oasis-green-800 italic mb-24">
-                <p>Aura Library: building in public, learning together.</p>
+                <p>Kahana: building in public, learning together.</p>
               </div>
           </div>
         </div>

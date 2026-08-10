@@ -7,8 +7,8 @@ export default function Careers() {
   return (
     <>
       <SEO
-        title="Careers at Aura Library"
-        description="Join our team at Aura Library and help make the future of work more elegant and productive."
+        title="Careers at Kahana"
+        description="Join our team at Kahana and help make the future of work more elegant and productive."
         url="https://kahana.io/careers"
         type="website"
       />

@@ -20,7 +20,7 @@ const features = [
   {
     title: 'Collaborate',
     description:
-      'Add anyone from your team to a Aura Library hub, choose their permission level, and work together with the exact same view of all relevant materials in a single window.',
+      'Add anyone from your team to a Kahana hub, choose their permission level, and work together with the exact same view of all relevant materials in a single window.',
     image: collaboration,
   },
   {

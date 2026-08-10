@@ -10,7 +10,7 @@ export default function PasswordResetSuccess() {
   return (
     <>
       <Head>
-        <title>Password updated · Aura Library</title>
+        <title>Password updated · Kahana</title>
         <meta name="robots" content="noindex, nofollow" />
       </Head>
       <main className="min-h-screen bg-white px-4 py-12 sm:py-16 flex items-center justify-center">
@@ -27,7 +27,7 @@ export default function PasswordResetSuccess() {
             </svg>
           </div>
           <p className="text-sm font-semibold uppercase tracking-wider text-[#978455] mb-2">
-            Oasis by Aura Library
+            Oasis by Kahana
           </p>
           <h1 className="text-3xl sm:text-4xl font-extrabold text-[#313A00] mb-4">
             Password updated

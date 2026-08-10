@@ -27,7 +27,7 @@ export default function OasisFeedbackSurvey() {
   return (
     <>
       <Head>
-        <title>Oasis Feedback Survey | Help Us Improve | Aura Library</title>
+        <title>Oasis Feedback Survey | Help Us Improve | Kahana</title>
         <meta name="description" content="Share your feedback about Oasis to help us improve the product. Your insights are valuable to us." />
         <meta name="robots" content="noindex, nofollow" />
       </Head>

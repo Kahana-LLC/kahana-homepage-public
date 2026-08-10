@@ -9,7 +9,7 @@ export const YTC_OASIS_REVIEW = {
   authorImagePath: '/assets/headshots/diana_nadim.png',
   reviewUrl: 'https://yourtechcompass.com/oasis-browser-review/',
   methodologyUrl: 'https://yourtechcompass.com/review-methodology/',
-  reviewTitle: 'Oasis Browser by Aura Library: The Privacy-First AI Browser That Understands Your Tabs',
+  reviewTitle: 'Oasis Browser by Kahana: The Privacy-First AI Browser That Understands Your Tabs',
   score: 87,
   scoreMax: 100,
   scoreLabel: 'Excellent',
@@ -55,7 +55,7 @@ export const YTC_FEATURE_QUOTES = {
   },
   'oasis-amplifier': {
     quote:
-      'Amplifier is Oasis planned feedback loop. Aura Library explicitly states this is a roadmap, not a promise of ship dates, and the product page is admirably transparent about its current status.',
+      'Amplifier is Oasis planned feedback loop. Kahana explicitly states this is a roadmap, not a promise of ship dates, and the product page is admirably transparent about its current status.',
     context: 'From Your Tech Compass review of Oasis Amplifier',
   },
   'oasis-onboarding': {
@@ -78,7 +78,7 @@ export function getFeatureReviewQuote(slug) {
 }
 
 export const YTC_BLOG_CALLOUT_HTML = `<hr>
-<p><em>Independent review:</em> Your Tech Compass scored Oasis Browser <strong>87/100 (Excellent)</strong> after hands-on testing. <a href="/blog/your-tech-compass-oasis-browser-review-87-2026">Read our summary</a> or the <a href="https://yourtechcompass.com/oasis-browser-review/" target="_blank" rel="noopener noreferrer">full review on Your Tech Compass</a>. Aura Library did not pay for this coverage.</p>`;
+<p><em>Independent review:</em> Your Tech Compass scored Oasis Browser <strong>87/100 (Excellent)</strong> after hands-on testing. <a href="/blog/your-tech-compass-oasis-browser-review-87-2026">Read our summary</a> or the <a href="https://yourtechcompass.com/oasis-browser-review/" target="_blank" rel="noopener noreferrer">full review on Your Tech Compass</a>. Kahana did not pay for this coverage.</p>`;
 
 export function getReviewerImageUrl(options = {}) {
   return getCloudinaryImageUrl(YTC_OASIS_REVIEW.authorImagePath, {

@@ -570,7 +570,7 @@ export default function ReferencesPage() {
   return (
     <>
       <Head>
-        <title>References: The Future of Ergonomic Work | Aura Library Browser</title>
+        <title>References: The Future of Ergonomic Work | Kahana Browser</title>
         <meta name="description" content="Complete references and citations for The Future of Ergonomic Work white paper." />
       </Head>
 

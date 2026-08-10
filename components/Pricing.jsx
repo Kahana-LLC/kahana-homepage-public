@@ -143,7 +143,7 @@ export default function Pricing() {
             </div>
 
             <p className="mx-auto mt-12 max-w-2xl text-center text-sm text-[#666666] sm:text-base">
-              Prices are in $ USD. To be transparent, Aura Library earns 5% whenever anyone pays to access
+              Prices are in $ USD. To be transparent, Kahana earns 5% whenever anyone pays to access
               any monetized hub.
             </p>
 

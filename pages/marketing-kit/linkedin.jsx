@@ -15,29 +15,29 @@ export default function LinkedInPosts() {
   const posts = {
     brandOverview: [
       {
-        title: "What is Aura Library? (Visual Post)",
+        title: "What is Kahana? (Visual Post)",
         content: `WHAT IS AURA LIBRARY?
 
-Aura Library is a collaborative SAAS platform that streamlines the way people share and consume information.
+Kahana is a collaborative SAAS platform that streamlines the way people share and consume information.
 
 #SaaS #Collaboration #KnowledgeSharing #Innovation #FutureOfWork`,
         category: "Brand Overview",
         visualTemplate: {
-          description: "A modern, clean design with the Aura Library logo in the top right, featuring:",
+          description: "A modern, clean design with the Kahana logo in the top right, featuring:",
           elements: [
             "- Background: Soft green curved shape (#4F8173)",
             "- Text: Large 'WHAT IS AURA LIBRARY?' heading in white",
             "- Subtext: Value proposition in white, clean font",
             "- Bottom: Team collaboration image showing diverse workplace"
           ],
-          designNotes: "The visual follows Aura Library's brand guidelines with the signature green color and modern, clean aesthetic. The curved shape creates visual interest while maintaining professionalism."
+          designNotes: "The visual follows Kahana's brand guidelines with the signature green color and modern, clean aesthetic. The curved shape creates visual interest while maintaining professionalism."
         }
       },
       {
-        title: "What is Aura Library? (Text Only)",
+        title: "What is Kahana? (Text Only)",
         content: `WHAT IS AURA LIBRARY?
 
-Aura Library is a collaborative SAAS platform that streamlines the way people share and consume information.
+Kahana is a collaborative SAAS platform that streamlines the way people share and consume information.
 
 #SaaS #Collaboration #KnowledgeSharing #Innovation #FutureOfWork`,
         category: "Brand Overview"
@@ -46,7 +46,7 @@ Aura Library is a collaborative SAAS platform that streamlines the way people sh
     productUpdates: [
       {
         title: "New Feature Announcement",
-        content: `🎉 Exciting news! We've just launched [Feature Name] in Aura Library, making it easier than ever to [benefit].
+        content: `🎉 Exciting news! We've just launched [Feature Name] in Kahana, making it easier than ever to [benefit].
 
 Key improvements:
 • [Benefit 1]
@@ -58,7 +58,7 @@ Try it out today and let us know what you think! #ProductUpdate #Innovation`,
       },
       {
         title: "Platform Enhancement",
-        content: `🚀 We're constantly improving Aura Library to serve you better!
+        content: `🚀 We're constantly improving Kahana to serve you better!
 
 Just released:
 • Enhanced [Feature 1]
@@ -74,7 +74,7 @@ These updates will help you [benefit]. Stay tuned for more! #ProductDevelopment`
         title: "Customer Success Story",
         content: `🌟 Success Story Spotlight 🌟
 
-We're thrilled to share how [Company Name] transformed their [process] using Aura Library.
+We're thrilled to share how [Company Name] transformed their [process] using Kahana.
 
 Key results:
 • [Result 1]
@@ -86,7 +86,7 @@ Read the full story: [Link] #CustomerSuccess #CaseStudy`,
       },
       {
         title: "Testimonial Share",
-        content: `💡 "The impact Aura Library has had on our [process] is incredible. We've seen [metric] improve by [percentage]." - [Customer Name], [Title] at [Company]
+        content: `💡 "The impact Kahana has had on our [process] is incredible. We've seen [metric] improve by [percentage]." - [Customer Name], [Title] at [Company]
 
 Hear more from our customers: [Link] #CustomerTestimonial #SuccessStory`,
         category: "Customer Success"
@@ -123,8 +123,8 @@ What best practices have you found most valuable? Let's discuss! #BestPractices 
   return (
     <>
       <Head>
-        <title>LinkedIn Posts | Aura Library Marketing Kit</title>
-        <meta name="description" content="Ready-to-use LinkedIn posts for promoting Aura Library." />
+        <title>LinkedIn Posts | Kahana Marketing Kit</title>
+        <meta name="description" content="Ready-to-use LinkedIn posts for promoting Kahana." />
       </Head>
 
       <div className="min-h-screen bg-gray-50">

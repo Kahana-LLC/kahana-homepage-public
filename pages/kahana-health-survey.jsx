@@ -12,7 +12,7 @@ export default function KahanaHealthSurvey() {
         frameBorder="0"
         marginHeight="0"
         marginWidth="0"
-        title="Aura Library Health Survey"
+        title="Kahana Health Survey"
         style={{ 
           border: 0,
           borderRadius: '12px',
@@ -27,7 +27,7 @@ export default function KahanaHealthSurvey() {
   return (
     <>
       <Head>
-        <title>Movement & Steps Survey | How Many Steps Do You Get In? | Aura Library</title>
+        <title>Movement & Steps Survey | How Many Steps Do You Get In? | Kahana</title>
         <meta name="description" content="Share your experience with getting steps in during work hours. Help us understand how sedentary work impacts daily movement and health." />
         <meta name="robots" content="noindex, nofollow" />
       </Head>

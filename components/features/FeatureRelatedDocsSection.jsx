@@ -17,7 +17,7 @@ export default function FeatureRelatedDocsSection({ docs }) {
           In the Help center
         </h2>
         <p className="mx-auto mt-3 max-w-2xl text-center text-base text-oasis-green-800/90">
-          Short reference articles that mirror how these capabilities work in Aura Library—not marketing fluff.
+          Short reference articles that mirror how these capabilities work in Kahana—not marketing fluff.
         </p>
         <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {docs.map((doc) => (

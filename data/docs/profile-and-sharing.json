@@ -1,6 +1,6 @@
 {
   "title": "Your profile & sharing",
-  "description": "Set up your Aura Library profile, share /profile/:userId, understand what guests see, and know when the verified badge appears.",
+  "description": "Set up your Kahana profile, share /profile/:userId, understand what guests see, and know when the verified badge appears.",
   "slug": "profile-and-sharing",
   "category": "guides",
   "product": "kahana",

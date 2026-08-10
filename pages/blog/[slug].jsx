@@ -204,7 +204,7 @@ export default function BlogPost({ post }) {
         {isBrowserPost && <meta name="robots" content="index, follow" />}
 
         {/* Open Graph — CTR-friendly title/description, full URL, image dimensions */}
-        <meta property="og:title" content={titleTag.replace(/\s*\|\s*Aura Library Blog$/, '')} />
+        <meta property="og:title" content={titleTag.replace(/\s*\|\s*Kahana Blog$/, '')} />
         <meta property="og:description" content={metaDescription} />
         <meta property="og:type" content="article" />
         <meta property="og:url" content={canonicalUrl} />
@@ -221,7 +221,7 @@ export default function BlogPost({ post }) {
 
         {/* Twitter Card — same as OG for consistent social CTR */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={titleTag.replace(/\s*\|\s*Aura Library Blog$/, '')} />
+        <meta name="twitter:title" content={titleTag.replace(/\s*\|\s*Kahana Blog$/, '')} />
         <meta name="twitter:description" content={metaDescription} />
         {post.featuredImage && getBlogImageUrl(post.featuredImage) && <meta name="twitter:image" content={getBlogImageUrl(post.featuredImage)} />}
 
@@ -244,7 +244,7 @@ export default function BlogPost({ post }) {
               })) : [],
               publisher: {
                 '@type': 'Organization',
-                name: 'Aura Library',
+                name: 'Kahana',
                 logo: {
                   '@type': 'ImageObject',
                   url: 'https://kahana.io/assets/kahana_logo_transparent.svg',

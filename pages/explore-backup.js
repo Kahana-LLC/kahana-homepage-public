@@ -74,7 +74,7 @@ const useAlgoliaSearch = (selectedCategory) => {
           }),
           searchBox({
             container: "#searchbox",
-            placeholder: "Explore Aura Library...",
+            placeholder: "Explore Kahana...",
             cssClasses: {
               input: "search-input w-full max-w-[300px] md:max-w-[400px]",
             },
@@ -190,10 +190,10 @@ const SearchPage = () => {
   return (
     <>
       <Head>
-        <title>Explore Aura Library</title>
+        <title>Explore Kahana</title>
         <meta
           name="description"
-          content="Search Aura Library workspaces and explore public profiles."
+          content="Search Kahana workspaces and explore public profiles."
         />
       </Head>
       <div className="min-h-screen bg-gray-50">

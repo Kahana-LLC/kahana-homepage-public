@@ -7,10 +7,10 @@ export default function Customers() {
   return (
     <>
       <Head>
-        <title>Our Customers | Aura Library</title>
+        <title>Our Customers | Kahana</title>
         <meta
           name="description"
-          content="See how organizations are using Aura Library to transform their enterprise browsing experience."
+          content="See how organizations are using Kahana to transform their enterprise browsing experience."
         />
       </Head>
       <div className="bg-white">
@@ -18,7 +18,7 @@ export default function Customers() {
           <div className="text-center">
             <h1 className="text-4xl font-bold text-oasis-green-800">Customer Success Stories</h1>
             <p className="mt-4 text-xl text-oasis-green-800">
-              Discover how leading organizations are using Aura Library to enhance security and productivity.
+              Discover how leading organizations are using Kahana to enhance security and productivity.
             </p>
           </div>
           <div className="mt-12">
@@ -26,7 +26,7 @@ export default function Customers() {
               {/* Customer success stories will be added here */}
               <div className="bg-[#F3F8E4] p-6 rounded-lg">
                 <p className="text-lg text-oasis-green-800">
-                  Customer success stories coming soon. Contact us to learn how Aura Library can help your organization.
+                  Customer success stories coming soon. Contact us to learn how Kahana can help your organization.
                 </p>
                 <div className="mt-6">
                   <Link href="https://kahana.io/contact">
