@@ -1,0 +1,159 @@
+{
+  "slug": "kahana-vs-curios",
+  "title": "Kahana vs Curios: When the Door Is Not the Product",
+  "date": "2026-07-23T18:30:00.000Z",
+  "authors": [
+    {
+      "name": "Adam Kershner",
+      "role": "Founder",
+      "bio": "",
+      "linkedinProfile": "https://www.linkedin.com/in/adam-kershner/",
+      "avatar": "/assets/headshots/adam_kershner.jpg"
+    }
+  ],
+  "category": [
+    "Comparisons",
+    "Creators",
+    "Product"
+  ],
+  "excerpt": "Curios is direct-to-fan author storefronts, ebook/audio delivery, and reader apps. Kahana is clubs, library engagement, and optional hub paywalls beside author tooling.",
+  "defaultImageQuery": "Curios Clubs, library engagement, and optional hub paywalls beside author tooling.",
+  "featuredImage": "/assets/blog/kahana-vs-curios.jpg",
+  "readingTime": 3,
+  "seoTitle": "Kahana vs Curios | When the Door Is Not the Product",
+  "metaDescription": "Curios is direct-to-fan author storefronts, ebook/audio delivery, and reader apps. Kahana is clubs, library engagement, and optional hub paywalls beside…",
+  "focusKeyword": "Curios alternative",
+  "landscapeRole": "storefront-commerce",
+  "coverage": {
+    "companyName": "Curios",
+    "columns": [
+      {
+        "fragmentId": "ebook-reading",
+        "label": "Ebook",
+        "definition": "Yes if you can easily get and consume ebooks on the platform (free or paid) as a first-class product, open, buy, borrow, or read without hunting.",
+        "kahana": "yes",
+        "company": "yes"
+      },
+      {
+        "fragmentId": "short-form-video",
+        "label": "Short-form video",
+        "definition": "Yes if you can easily consume short-form video as a first-class surface (For You, Reels, Shorts).",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "long-form-video",
+        "label": "Long-form video",
+        "definition": "Yes if you can easily watch creator / UGC long-form video (or specialty long video) as a core surface. Course lectures belong under Courses. Hollywood catalogs belong under Series/Films.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "series-films-streaming",
+        "label": "Series/Films",
+        "definition": "Yes if you can easily watch series and films as an SVOD / catalog entertainment product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "courses-learning",
+        "label": "Courses",
+        "definition": "Yes if you can easily take or browse structured courses as a first-class product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "newsletters-written",
+        "label": "Newsletters",
+        "definition": "Yes if you can easily read or subscribe to newsletters / creator writing as a first-class product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "audio-listening",
+        "label": "Audio",
+        "definition": "Yes if you can easily listen to music, podcasts, or audiobooks as a first-class product.",
+        "kahana": "yes",
+        "company": "yes"
+      },
+      {
+        "fragmentId": "creator-monetization",
+        "label": "Memberships",
+        "definition": "Yes if a creator or seller can accept payments from others and make money through the platform, checkout, fan subscriptions, tips, ads, shop, or creator funds. Not only a classic Patreon-style membership product.",
+        "kahana": "yes",
+        "company": "yes"
+      },
+      {
+        "fragmentId": "messaging-community",
+        "label": "Community & Messaging",
+        "definition": "Yes if you can create or join a group, community, or club, including group chats, Groups, subreddits, community tabs, discussion boards, or community feeds. A one-off comment on a single video or listing is not the bar; a durable place for the group to talk is.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "online-storefront",
+        "label": "Storefronts",
+        "definition": "Yes if the product gives a creator a custom storefront or site that can take the place of building their own website (bio page, creator site, branded shop). Not a shop tab on someone else’s multi-seller marketplace.",
+        "kahana": "yes",
+        "company": "yes"
+      },
+      {
+        "fragmentId": "digital-marketplaces",
+        "label": "Marketplaces",
+        "definition": "Yes if a typical person can search and shop a catalog of offerings from many sellers, courses, books, digital goods, etc. Storefront software (Shopify, WooCommerce) is not a marketplace unless shoppers browse many sellers there.",
+        "kahana": "yes",
+        "company": "yes"
+      }
+    ]
+  },
+  "researchInsights": {
+    "companyName": "Curios",
+    "scaleFacts": [
+      "Positioned as a direct-to-fan sales platform/marketplace for creators, authors sell directly while keeping 100% of list price and IP ownership.",
+      "Creator Studio: free signup, upload ebooks/audiobooks/music/video, set pricing, bundle formats, publish shareable links; storefront pages, checkout, giveaways, and anonymized analytics on paid plans.",
+      "Creators get 100% of purchase price; Curios monetizes via ~8% buyer-side payment/platform fee and author plan thresholds (free plan: USD 0.50/sale after the 10th sale in a month unless upgraded).",
+      "iOS/Android apps for reading, listening, and watching purchased content from favorite authors/creators."
+    ],
+    "strengths": [
+      {
+        "title": "Full revenue to creators, minimal middlemen",
+        "detail": "Creators receive 100% of list price, positioned as simpler than multi-middleman retailer/aggregator stacks."
+      },
+      {
+        "title": "Direct customer relationships and data",
+        "detail": "Authors get buyer emails and engagement analytics (downloads, listening progress) on paid plans, strong for community and repeat sales."
+      },
+      {
+        "title": "Bundling and flexible storefronts",
+        "detail": "Bundle ebook + audiobook, custom storefront pages, and direct checkout links that feel seamless from an author’s site."
+      },
+      {
+        "title": "Curated consumer app for discovery and consumption",
+        "detail": "Reader apps offer a streaming-like experience for books and audio, supports recurring engagement beyond one-off purchases."
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Smaller audience vs major retailers",
+        "detail": "Discovery and scale lag Amazon, Audible, or Kobo, creators must drive their own traffic."
+      },
+      {
+        "title": "Platform fees and plan thresholds can be confusing",
+        "detail": "Mix of buyer-side fees (~8%) and author-side thresholds is more complex than simple royalty-rate models."
+      },
+      {
+        "title": "Ecosystem still emerging",
+        "detail": "Fewer third-party tools, tutorials, and integrations than legacy self-publishing platforms."
+      }
+    ],
+    "sources": [
+      "https://studio.curios.com/",
+      "https://janefriedman.com/selling-audio-direct-curios-is-worth-a-look/",
+      "https://play.google.com/store/apps/details?id=com.curios.stream&hl=en_US",
+      "https://www.instagram.com/joincurios/"
+    ]
+  },
+  "content": "<p class=\"lead\">Kahana is a library of curated hubs, Explore, Clubs, and optional Stripe. Curios is direct-to-fan author storefronts, ebook/audio delivery, and reader apps. They overlap in places and diverge in others.</p>\n\n<h2>What each one is</h2>\n<p>Kahana is built around <a href=\"/help/hubs\">hubs</a> people can open, <a href=\"/help/explore\">Explore</a> so strangers can find them, <a href=\"/help/how-aura-works\">Aura</a> as scarce daily recognition, and Clubs so discussion outlives a feed. Selling stays optional.</p>\n<p>Curios is a direct-to-fan sales and streaming platform that lets authors, artists, and creators build storefronts, sell ebooks and audio, and deliver content to readers via the Curios apps while keeping 100% of list price. <a href=\"https://studio.curios.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Official site</a>.</p>\n\n<h2>Why this comparison</h2>\n<p>This article puts Kahana and Curios side by side. It covers what each supports as a first-class product job, key features, and a few research notes so you have a clearer picture of what they are, how they compare, and what you can actually do on each one. It is not a teardown, and it is not a switch-tomorrow pitch.</p>\n<p>One naming note: Kahana was previously called Curio. This article compares Kahana to Curios (curios.com / studio.curios.com), a separate direct-to-fan author platform. They are not the same product.</p>\n",
+  "contentAfter": "<h2>What you can do on each</h2>\n<p>On Kahana you can publish a hub, list it on Explore, discuss it in a Club, grant Aura, and turn on a Stripe paywall when you are ready to charge.</p>\n<p>On Curios you can use Ebook, Audio, Memberships, Storefronts, and Marketplaces as first-class product jobs. You only need niche author tooling: studio uploads, 100% of list price, bundles, and a consumer app for purchased books and audio.</p>\n\n<h2>Using Kahana with Curios</h2>\n<p>You can use both. Curios keeps doing what it already does well. Kahana is another place to package the work, get discovered, and grow an audience.</p>\n<p>Keep Curios for author storefronts and in-app reading if that tooling is useful. Run clubs, discussion, and library discovery on Kahana so the book is a shared shelf, not only a checkout and a reader.</p>\n\n",
+  "landscapeCompanyId": "curios"
+}

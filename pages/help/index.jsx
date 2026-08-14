@@ -85,7 +85,7 @@ export default function HelpIndex({ docs = [], categories = [] }) {
     <>
       <SEO
         title="Help"
-        description="Guides and answers for the Kahana platform—hubs, Explore, Aura, and more. New articles are added as product help ships."
+        description="Guides and answers for Kahana: hubs, Library, Clubs, Aura, and more. New articles are added as product help ships."
         url="https://help.kahana.io/help"
         type="website"
       />
@@ -108,7 +108,7 @@ export default function HelpIndex({ docs = [], categories = [] }) {
               Help
             </h1>
             <p className="text-xl text-oasis-green-800 max-w-2xl mx-auto">
-              Search guides for Kahana: hubs, Explore, Aura, profiles, earning, and trust. New articles land here as they ship.
+              Search guides for Kahana: hubs, Library, Clubs, Aura, files, and trust. New articles land here as they ship.
             </p>
           </div>
 

@@ -1,0 +1,158 @@
+{
+  "slug": "kahana-vs-netflix",
+  "title": "Kahana vs Netflix: Watch Party Syllabus",
+  "date": "2026-05-21T17:47:00.000Z",
+  "authors": [
+    {
+      "name": "Adam Kershner",
+      "role": "Founder",
+      "bio": "",
+      "linkedinProfile": "https://www.linkedin.com/in/adam-kershner/",
+      "avatar": "/assets/headshots/adam_kershner.jpg"
+    }
+  ],
+  "category": [
+    "Comparisons",
+    "Creators",
+    "Product"
+  ],
+  "excerpt": "Netflix is series and films streaming (SVOD). Kahana is clubs around titles, not another SVOD app.",
+  "defaultImageQuery": "Netflix Clubs around titles, not another SVOD app.",
+  "featuredImage": "/assets/blog/kahana-vs-netflix.jpg",
+  "readingTime": 2,
+  "seoTitle": "Kahana vs Netflix | Watch Party Syllabus",
+  "metaDescription": "Netflix is series and films streaming (SVOD). Kahana is clubs around titles, not another SVOD app.",
+  "focusKeyword": "Netflix alternative",
+  "landscapeRole": "streaming",
+  "coverage": {
+    "companyName": "Netflix",
+    "columns": [
+      {
+        "fragmentId": "ebook-reading",
+        "label": "Ebook",
+        "definition": "Yes if you can easily get and consume ebooks on the platform (free or paid) as a first-class product, open, buy, borrow, or read without hunting.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "short-form-video",
+        "label": "Short-form video",
+        "definition": "Yes if you can easily consume short-form video as a first-class surface (For You, Reels, Shorts).",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "long-form-video",
+        "label": "Long-form video",
+        "definition": "Yes if you can easily watch creator / UGC long-form video (or specialty long video) as a core surface. Course lectures belong under Courses. Hollywood catalogs belong under Series/Films.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "series-films-streaming",
+        "label": "Series/Films",
+        "definition": "Yes if you can easily watch series and films as an SVOD / catalog entertainment product.",
+        "kahana": "yes",
+        "company": "yes"
+      },
+      {
+        "fragmentId": "courses-learning",
+        "label": "Courses",
+        "definition": "Yes if you can easily take or browse structured courses as a first-class product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "newsletters-written",
+        "label": "Newsletters",
+        "definition": "Yes if you can easily read or subscribe to newsletters / creator writing as a first-class product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "audio-listening",
+        "label": "Audio",
+        "definition": "Yes if you can easily listen to music, podcasts, or audiobooks as a first-class product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "creator-monetization",
+        "label": "Memberships",
+        "definition": "Yes if a creator or seller can accept payments from others and make money through the platform, checkout, fan subscriptions, tips, ads, shop, or creator funds. Not only a classic Patreon-style membership product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "messaging-community",
+        "label": "Community & Messaging",
+        "definition": "Yes if you can create or join a group, community, or club, including group chats, Groups, subreddits, community tabs, discussion boards, or community feeds. A one-off comment on a single video or listing is not the bar; a durable place for the group to talk is.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "online-storefront",
+        "label": "Storefronts",
+        "definition": "Yes if the product gives a creator a custom storefront or site that can take the place of building their own website (bio page, creator site, branded shop). Not a shop tab on someone else’s multi-seller marketplace.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "digital-marketplaces",
+        "label": "Marketplaces",
+        "definition": "Yes if a typical person can search and shop a catalog of offerings from many sellers, courses, books, digital goods, etc. Storefront software (Shopify, WooCommerce) is not a marketplace unless shoppers browse many sellers there.",
+        "kahana": "yes",
+        "company": "no"
+      }
+    ]
+  },
+  "researchInsights": {
+    "companyName": "Netflix",
+    "scaleFacts": [
+      "325M paid memberships in 190+ countries (as of Jan 20, 2026), the most-subscribed video-on-demand streaming service.",
+      "US catalog: 3,600+ movies and 1,800+ TV shows.",
+      "US plans (examples): ad-supported ≈USD 9/mo; Standard (HD, 2 screens) ≈USD 20/mo; Premium (4K UHD, 4 screens) ≈USD 27/mo."
+    ],
+    "strengths": [
+      {
+        "title": "Massive global catalog and originals",
+        "detail": "Wide variety of genres and languages; strong Netflix Originals slate (series and films) plus licensed content."
+      },
+      {
+        "title": "Highly polished UX and device support",
+        "detail": "Apps on smart TVs, consoles, mobile, web, and streaming devices, easy to use with strong playback quality and profiles."
+      },
+      {
+        "title": "Strong recommendation system",
+        "detail": "Personalized rows, Top 10, and algorithmic suggestions; new titles added weekly."
+      },
+      {
+        "title": "Global reach and localization",
+        "detail": "Content and UI localized across many languages; regional catalogs tailored to local tastes."
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Rising prices and ad tiers",
+        "detail": "Subscription costs have risen; ad-supported tiers create a more complex pricing landscape."
+      },
+      {
+        "title": "Content licensing churn",
+        "detail": "Titles regularly leave due to licensing windows, favorites often disappear."
+      },
+      {
+        "title": "Algorithm bias and discovery complaints",
+        "detail": "Some viewers feel recommendations overemphasize certain genres or originals, making niche or older content harder to find."
+      }
+    ],
+    "sources": [
+      "https://www.netflix.com/",
+      "https://about.netflix.com/",
+      "https://en.wikipedia.org/wiki/Netflix",
+      "https://www.justwatch.com/us/provider/netflix"
+    ]
+  },
+  "content": "<p class=\"lead\">Kahana is a library of curated hubs, Explore, Clubs, and optional Stripe. Netflix is series and films streaming (SVOD). They overlap in places and diverge in others.</p>\n\n<h2>What each one is</h2>\n<p>Kahana is built around <a href=\"/help/hubs\">hubs</a> people can open, <a href=\"/help/explore\">Explore</a> so strangers can find them, <a href=\"/help/how-aura-works\">Aura</a> as scarce daily recognition, and Clubs so discussion outlives a feed. Selling stays optional.</p>\n<p>Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries, and more on thousands of internet-connected devices.</p>\n\n<h2>Why this comparison</h2>\n<p>This article puts Kahana and Netflix side by side. It covers what each supports as a first-class product job, key features, and a few research notes so you have a clearer picture of what they are, how they compare, and what you can actually do on each one. It is not a teardown, and it is not a switch-tomorrow pitch.</p>\n\n",
+  "contentAfter": "<h2>What you can do on each</h2>\n<p>On Kahana you can publish a hub, list it on Explore, discuss it in a Club, grant Aura, and turn on a Stripe paywall when you are ready to charge.</p>\n<p>On Netflix you can use Series/Films as a first-class product job. You want the licensed catalog, apps, and living-room playback those services are built for.</p>\n\n",
+  "landscapeCompanyId": "netflix"
+}

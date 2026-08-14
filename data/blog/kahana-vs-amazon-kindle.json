@@ -1,0 +1,163 @@
+{
+  "slug": "kahana-vs-amazon-kindle",
+  "title": "Kahana vs Amazon Kindle: Shared Reading, Not a Private Progress Bar",
+  "date": "2026-08-14T15:13:00.000Z",
+  "authors": [
+    {
+      "name": "Adam Kershner",
+      "role": "Founder",
+      "bio": "",
+      "linkedinProfile": "https://www.linkedin.com/in/adam-kershner/",
+      "avatar": "/assets/headshots/adam_kershner.jpg"
+    }
+  ],
+  "category": [
+    "Comparisons",
+    "Creators",
+    "Product"
+  ],
+  "excerpt": "Amazon Kindle is reading, catalogs, tracking, or ebook storefronts. Kahana is clubs and hubs around the books you actually read together.",
+  "defaultImageQuery": "Amazon Kindle Clubs and hubs around the books you actually read together.",
+  "featuredImage": "/assets/blog/kahana-vs-amazon-kindle.jpg",
+  "readingTime": 3,
+  "seoTitle": "Kahana vs Amazon Kindle | Shared Reading, Not a Private…",
+  "metaDescription": "Amazon Kindle is reading, catalogs, tracking, or ebook storefronts. Kahana is clubs and hubs around the books you actually read together.",
+  "focusKeyword": "Amazon Kindle alternative",
+  "landscapeRole": "ebook",
+  "coverage": {
+    "companyName": "Amazon Kindle",
+    "columns": [
+      {
+        "fragmentId": "ebook-reading",
+        "label": "Ebook",
+        "definition": "Yes if you can easily get and consume ebooks on the platform (free or paid) as a first-class product, open, buy, borrow, or read without hunting.",
+        "kahana": "yes",
+        "company": "yes"
+      },
+      {
+        "fragmentId": "short-form-video",
+        "label": "Short-form video",
+        "definition": "Yes if you can easily consume short-form video as a first-class surface (For You, Reels, Shorts).",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "long-form-video",
+        "label": "Long-form video",
+        "definition": "Yes if you can easily watch creator / UGC long-form video (or specialty long video) as a core surface. Course lectures belong under Courses. Hollywood catalogs belong under Series/Films.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "series-films-streaming",
+        "label": "Series/Films",
+        "definition": "Yes if you can easily watch series and films as an SVOD / catalog entertainment product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "courses-learning",
+        "label": "Courses",
+        "definition": "Yes if you can easily take or browse structured courses as a first-class product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "newsletters-written",
+        "label": "Newsletters",
+        "definition": "Yes if you can easily read or subscribe to newsletters / creator writing as a first-class product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "audio-listening",
+        "label": "Audio",
+        "definition": "Yes if you can easily listen to music, podcasts, or audiobooks as a first-class product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "creator-monetization",
+        "label": "Memberships",
+        "definition": "Yes if a creator or seller can accept payments from others and make money through the platform, checkout, fan subscriptions, tips, ads, shop, or creator funds. Not only a classic Patreon-style membership product.",
+        "kahana": "yes",
+        "company": "yes"
+      },
+      {
+        "fragmentId": "messaging-community",
+        "label": "Community & Messaging",
+        "definition": "Yes if you can create or join a group, community, or club, including group chats, Groups, subreddits, community tabs, discussion boards, or community feeds. A one-off comment on a single video or listing is not the bar; a durable place for the group to talk is.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "online-storefront",
+        "label": "Storefronts",
+        "definition": "Yes if the product gives a creator a custom storefront or site that can take the place of building their own website (bio page, creator site, branded shop). Not a shop tab on someone else’s multi-seller marketplace.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "digital-marketplaces",
+        "label": "Marketplaces",
+        "definition": "Yes if a typical person can search and shop a catalog of offerings from many sellers, courses, books, digital goods, etc. Storefront software (Shopify, WooCommerce) is not a marketplace unless shoppers browse many sellers there.",
+        "kahana": "yes",
+        "company": "yes"
+      }
+    ]
+  },
+  "researchInsights": {
+    "companyName": "Amazon Kindle",
+    "scaleFacts": [
+      "72M+ Kindle devices sold globally as of 2024.",
+      "27M active Kindle users in North America; 20M+ daily active readers worldwide.",
+      "Global Kindle market value ≈ USD 658M in 2026, projected ≈ USD 951M by 2035.",
+      "Kindle Unlimited estimated ~4.5–5M active subscribers, reading ≈9 books per month on average."
+    ],
+    "strengths": [
+      {
+        "title": "Lightweight and portable",
+        "detail": "Extremely light and compact; easy to carry and use anywhere without physical book bulk."
+      },
+      {
+        "title": "Strong reading experience",
+        "detail": "E-ink is easy on the eyes; adjustable fonts and backlighting support reading in varied light."
+      },
+      {
+        "title": "Massive library and lower prices",
+        "detail": "Access to millions of titles; many books cheaper than print; free/discounted paths via Prime and library lending (Libby)."
+      },
+      {
+        "title": "Battery life and convenience",
+        "detail": "Long battery life (especially in airplane mode); carry an entire library on one device."
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Amazon lock-in",
+        "detail": "Tightly tied to Amazon’s store and DRM; some readers dislike ecosystem dependency."
+      },
+      {
+        "title": "Loaning and sharing limits",
+        "detail": "Harder to loan or share titles like physical books; sharing is constrained by platform rules."
+      },
+      {
+        "title": "Weak diagrams and graphics",
+        "detail": "Tables, diagrams, and photos are often hard to read on e-ink, especially older models."
+      },
+      {
+        "title": "Print preference gap",
+        "detail": "Does not replace the tactile feel and aesthetics some readers want from physical books."
+      }
+    ],
+    "sources": [
+      "https://www.historyoasis.com/post/amazon-slogans",
+      "https://www.marketgrowthreports.com/market-reports/amazon-kindle-market-112950",
+      "https://www.writtenwordmedia.com/kindle-unlimited-subscribers/",
+      "https://www.kouya.net/?p=13180"
+    ]
+  },
+  "content": "<p class=\"lead\">Kahana is a library of curated hubs, Explore, Clubs, and optional Stripe. Amazon Kindle is reading, catalogs, tracking, or ebook storefronts. They overlap in places and diverge in others.</p>\n\n<h2>What each one is</h2>\n<p>Kahana is built around <a href=\"/help/hubs\">hubs</a> people can open, <a href=\"/help/explore\">Explore</a> so strangers can find them, <a href=\"/help/how-aura-works\">Aura</a> as scarce daily recognition, and Clubs so discussion outlives a feed. Selling stays optional.</p>\n<p>Amazon’s personal reading platform, Kindle devices, Kindle Store, Kindle Unlimited, and sync across devices.</p>\n\n<h2>Why this comparison</h2>\n<p>This article puts Kahana and Amazon Kindle side by side. It covers what each supports as a first-class product job, key features, and a few research notes so you have a clearer picture of what they are, how they compare, and what you can actually do on each one. It is not a teardown, and it is not a switch-tomorrow pitch.</p>\n\n",
+  "contentAfter": "<h2>What you can do on each</h2>\n<p>On Kahana you can publish a hub, list it on Explore, discuss it in a Club, grant Aura, and turn on a Stripe paywall when you are ready to charge.</p>\n<p>On Amazon Kindle you can use Ebook, Memberships, and Marketplaces as first-class product jobs. You need a dedicated reader, a giant store, or social tracking of everything you have ever read.</p>\n\n<h2>Using Kahana with Amazon Kindle</h2>\n<p>You can use both. Amazon Kindle keeps doing what it already does well. Kahana is another place to package the work, get discovered, and grow an audience.</p>\n<p>Keep the reader or tracker you already use. Put the Club pick, discussion questions, and related files on Kahana so the book is a shared library item, not only a private progress bar.</p>\n\n",
+  "landscapeCompanyId": "amazon-kindle"
+}

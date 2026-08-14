@@ -1,0 +1,163 @@
+{
+  "slug": "kahana-vs-mighty-networks",
+  "title": "Kahana vs Mighty Networks: A Room That Survives the Thread",
+  "date": "2026-05-26T15:49:00.000Z",
+  "authors": [
+    {
+      "name": "Adam Kershner",
+      "role": "Founder",
+      "bio": "",
+      "linkedinProfile": "https://www.linkedin.com/in/adam-kershner/",
+      "avatar": "/assets/headshots/adam_kershner.jpg"
+    }
+  ],
+  "category": [
+    "Comparisons",
+    "Creators",
+    "Product"
+  ],
+  "excerpt": "Mighty Networks is real-time chat, groups, and community velocity. Kahana is the shelf and reading list beside the chat, not another inbox.",
+  "defaultImageQuery": "Mighty Networks The shelf and reading list beside the chat, not another inbox.",
+  "featuredImage": "/assets/blog/kahana-vs-mighty-networks.jpg",
+  "readingTime": 3,
+  "seoTitle": "Kahana vs Mighty Networks | A Room That Survives the Thread",
+  "metaDescription": "Mighty Networks is real-time chat, groups, and community velocity. Kahana is the shelf and reading list beside the chat, not another inbox.",
+  "focusKeyword": "Mighty Networks alternative",
+  "landscapeRole": "community-messaging",
+  "coverage": {
+    "companyName": "Mighty Networks",
+    "columns": [
+      {
+        "fragmentId": "ebook-reading",
+        "label": "Ebook",
+        "definition": "Yes if you can easily get and consume ebooks on the platform (free or paid) as a first-class product, open, buy, borrow, or read without hunting.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "short-form-video",
+        "label": "Short-form video",
+        "definition": "Yes if you can easily consume short-form video as a first-class surface (For You, Reels, Shorts).",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "long-form-video",
+        "label": "Long-form video",
+        "definition": "Yes if you can easily watch creator / UGC long-form video (or specialty long video) as a core surface. Course lectures belong under Courses. Hollywood catalogs belong under Series/Films.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "series-films-streaming",
+        "label": "Series/Films",
+        "definition": "Yes if you can easily watch series and films as an SVOD / catalog entertainment product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "courses-learning",
+        "label": "Courses",
+        "definition": "Yes if you can easily take or browse structured courses as a first-class product.",
+        "kahana": "yes",
+        "company": "yes"
+      },
+      {
+        "fragmentId": "newsletters-written",
+        "label": "Newsletters",
+        "definition": "Yes if you can easily read or subscribe to newsletters / creator writing as a first-class product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "audio-listening",
+        "label": "Audio",
+        "definition": "Yes if you can easily listen to music, podcasts, or audiobooks as a first-class product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "creator-monetization",
+        "label": "Memberships",
+        "definition": "Yes if a creator or seller can accept payments from others and make money through the platform, checkout, fan subscriptions, tips, ads, shop, or creator funds. Not only a classic Patreon-style membership product.",
+        "kahana": "yes",
+        "company": "yes"
+      },
+      {
+        "fragmentId": "messaging-community",
+        "label": "Community & Messaging",
+        "definition": "Yes if you can create or join a group, community, or club, including group chats, Groups, subreddits, community tabs, discussion boards, or community feeds. A one-off comment on a single video or listing is not the bar; a durable place for the group to talk is.",
+        "kahana": "yes",
+        "company": "yes"
+      },
+      {
+        "fragmentId": "online-storefront",
+        "label": "Storefronts",
+        "definition": "Yes if the product gives a creator a custom storefront or site that can take the place of building their own website (bio page, creator site, branded shop). Not a shop tab on someone else’s multi-seller marketplace.",
+        "kahana": "yes",
+        "company": "yes"
+      },
+      {
+        "fragmentId": "digital-marketplaces",
+        "label": "Marketplaces",
+        "definition": "Yes if a typical person can search and shop a catalog of offerings from many sellers, courses, books, digital goods, etc. Storefront software (Shopify, WooCommerce) is not a marketplace unless shoppers browse many sellers there.",
+        "kahana": "yes",
+        "company": "no"
+      }
+    ]
+  },
+  "researchInsights": {
+    "companyName": "Mighty Networks",
+    "scaleFacts": [
+      "Founded in 2011; headquartered in Palo Alto, CA.",
+      "2024 estimated revenue ≈USD 8.6M ARR (up from USD 6.8M in 2023); total funding ≈USD 66M; ~133 employees as of 2026.",
+      "Claims more USD 1M communities than any other platform, emphasis on monetized communities.",
+      "Pricing (2025–2026): Launch ≈USD 79/month; Scale ≈USD 215/month; Mighty Pro custom for branded apps; platform fees ~2%/1%/0.5%."
+    ],
+    "strengths": [
+      {
+        "title": "Beginner-friendly and community-rich",
+        "detail": "Helps creators grow online communities quickly; more community features than many competitors."
+      },
+      {
+        "title": "Multiple monetization options",
+        "detail": "Memberships, courses, paid events, bundles, and branded apps via Mighty Pro."
+      },
+      {
+        "title": "Integrated courses and content",
+        "detail": "Community, courses, events, and subscriptions in one place, supports cohort-based experiences."
+      },
+      {
+        "title": "Branded mobile app potential",
+        "detail": "Mighty Pro offers fully branded (white-label) apps, a unique advantage for larger brands."
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Limited high-end course features",
+        "detail": "Weaker than dedicated LMS tools on complex assessments, SCORM, and certificates."
+      },
+      {
+        "title": "No native video hosting",
+        "detail": "Requires external hosting (Vimeo, YouTube, etc.) and integrations."
+      },
+      {
+        "title": "Integration dependence",
+        "detail": "Email, advanced analytics, and some payment flows often need external tools, a more complex stack."
+      },
+      {
+        "title": "No PayPal support",
+        "detail": "Payments via Stripe; lack of PayPal is a limitation for some creators."
+      }
+    ],
+    "sources": [
+      "https://www.mightynetworks.com/",
+      "https://getlatka.com/companies/mighty-networks",
+      "https://www.dreamgrow.com/mighty-networks-review/",
+      "https://www.group.app/blog/mighty-networks-review/"
+    ]
+  },
+  "content": "<p class=\"lead\">Kahana is a library of curated hubs, Explore, Clubs, and optional Stripe. Mighty Networks is real-time chat, groups, and community velocity. They overlap in places and diverge in others.</p>\n\n<h2>What each one is</h2>\n<p>Kahana is built around <a href=\"/help/hubs\">hubs</a> people can open, <a href=\"/help/explore\">Explore</a> so strangers can find them, <a href=\"/help/how-aura-works\">Aura</a> as scarce daily recognition, and Clubs so discussion outlives a feed. Selling stays optional.</p>\n<p>Mighty is where creators, entrepreneurs, and brands build digital communities with cultural software.</p>\n\n<h2>Why this comparison</h2>\n<p>This article puts Kahana and Mighty Networks side by side. It covers what each supports as a first-class product job, key features, and a few research notes so you have a clearer picture of what they are, how they compare, and what you can actually do on each one. It is not a teardown, and it is not a switch-tomorrow pitch.</p>\n\n",
+  "contentAfter": "<h2>What you can do on each</h2>\n<p>On Kahana you can publish a hub, list it on Explore, discuss it in a Club, grant Aura, and turn on a Stripe paywall when you are ready to charge.</p>\n<p>On Mighty Networks you can use Courses, Memberships, Community &amp; Messaging, and Storefronts as first-class product jobs. The job is hanging out, announcements, and live conversation, not packaging knowledge into something strangers can browse later.</p>\n\n<h2>Using Kahana with Mighty Networks</h2>\n<p>You can use both. Mighty Networks keeps doing what it already does well. Kahana is another place to package the work, get discovered, and grow an audience.</p>\n<p>Keep live conversation on Mighty Networks. Pin a Kahana hub or Club link in a channel, discuss live there, and assign the next ebook, video, or course from Kahana so the syllabus is not buried in the thread.</p>\n\n",
+  "landscapeCompanyId": "mighty-networks"
+}

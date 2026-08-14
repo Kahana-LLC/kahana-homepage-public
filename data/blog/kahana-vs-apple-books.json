@@ -1,0 +1,161 @@
+{
+  "slug": "kahana-vs-apple-books",
+  "title": "Kahana vs Apple Books: A Stack for the Club, Not a Lifetime Catalog",
+  "date": "2026-08-12T18:32:00.000Z",
+  "authors": [
+    {
+      "name": "Adam Kershner",
+      "role": "Founder",
+      "bio": "",
+      "linkedinProfile": "https://www.linkedin.com/in/adam-kershner/",
+      "avatar": "/assets/headshots/adam_kershner.jpg"
+    }
+  ],
+  "category": [
+    "Comparisons",
+    "Creators",
+    "Product"
+  ],
+  "excerpt": "Apple Books is reading, catalogs, tracking, or ebook storefronts. Kahana is clubs and hubs around the books you actually read together.",
+  "defaultImageQuery": "Apple Books Clubs and hubs around the books you actually read together.",
+  "featuredImage": "/assets/blog/kahana-vs-apple-books.jpg",
+  "readingTime": 3,
+  "seoTitle": "Kahana vs Apple Books | A Stack for the Club, Not a…",
+  "metaDescription": "Apple Books is reading, catalogs, tracking, or ebook storefronts. Kahana is clubs and hubs around the books you actually read together.",
+  "focusKeyword": "Apple Books alternative",
+  "landscapeRole": "ebook",
+  "coverage": {
+    "companyName": "Apple Books",
+    "columns": [
+      {
+        "fragmentId": "ebook-reading",
+        "label": "Ebook",
+        "definition": "Yes if you can easily get and consume ebooks on the platform (free or paid) as a first-class product, open, buy, borrow, or read without hunting.",
+        "kahana": "yes",
+        "company": "yes"
+      },
+      {
+        "fragmentId": "short-form-video",
+        "label": "Short-form video",
+        "definition": "Yes if you can easily consume short-form video as a first-class surface (For You, Reels, Shorts).",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "long-form-video",
+        "label": "Long-form video",
+        "definition": "Yes if you can easily watch creator / UGC long-form video (or specialty long video) as a core surface. Course lectures belong under Courses. Hollywood catalogs belong under Series/Films.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "series-films-streaming",
+        "label": "Series/Films",
+        "definition": "Yes if you can easily watch series and films as an SVOD / catalog entertainment product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "courses-learning",
+        "label": "Courses",
+        "definition": "Yes if you can easily take or browse structured courses as a first-class product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "newsletters-written",
+        "label": "Newsletters",
+        "definition": "Yes if you can easily read or subscribe to newsletters / creator writing as a first-class product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "audio-listening",
+        "label": "Audio",
+        "definition": "Yes if you can easily listen to music, podcasts, or audiobooks as a first-class product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "creator-monetization",
+        "label": "Memberships",
+        "definition": "Yes if a creator or seller can accept payments from others and make money through the platform, checkout, fan subscriptions, tips, ads, shop, or creator funds. Not only a classic Patreon-style membership product.",
+        "kahana": "yes",
+        "company": "yes"
+      },
+      {
+        "fragmentId": "messaging-community",
+        "label": "Community & Messaging",
+        "definition": "Yes if you can create or join a group, community, or club, including group chats, Groups, subreddits, community tabs, discussion boards, or community feeds. A one-off comment on a single video or listing is not the bar; a durable place for the group to talk is.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "online-storefront",
+        "label": "Storefronts",
+        "definition": "Yes if the product gives a creator a custom storefront or site that can take the place of building their own website (bio page, creator site, branded shop). Not a shop tab on someone else’s multi-seller marketplace.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "digital-marketplaces",
+        "label": "Marketplaces",
+        "definition": "Yes if a typical person can search and shop a catalog of offerings from many sellers, courses, books, digital goods, etc. Storefront software (Shopify, WooCommerce) is not a marketplace unless shoppers browse many sellers there.",
+        "kahana": "yes",
+        "company": "yes"
+      }
+    ]
+  },
+  "researchInsights": {
+    "companyName": "Apple Books",
+    "scaleFacts": [
+      "Roughly 10–14% share of the global ebook market, second only to Amazon (≈38%).",
+      "In the U.S., ≈10% market share, having overtaken Barnes & Noble for second place.",
+      "In Australia, around 30% of the ebook market.",
+      "In some analyses, ≈21% of sales and ≈11% of downloads, with Amazon dominating at 53–66%."
+    ],
+    "strengths": [
+      {
+        "title": "Seamless Apple ecosystem integration",
+        "detail": "Native across iPhone, iPad, and Mac; syncs reading position, notes, and highlights via iCloud."
+      },
+      {
+        "title": "Unified ebooks + audiobooks",
+        "detail": "One app for reading and listening; curated collections and charts across genres."
+      },
+      {
+        "title": "High-quality reading UX",
+        "detail": "Attractive typography, page layouts, and accessibility features tuned for Apple devices."
+      },
+      {
+        "title": "Simple self-publishing tools",
+        "detail": "Free tools like Pages to create EPUBs and publish to Apple Books, plus preferred partners for distribution."
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Smaller catalog and share vs Amazon",
+        "detail": "Significantly behind Kindle in global ebook share and title availability (typically ~10–14% vs Amazon’s ~38%)."
+      },
+      {
+        "title": "iOS / macOS lock-in",
+        "detail": "Best experience requires Apple devices; no native Apple Books app for Android or non-Apple e-readers."
+      },
+      {
+        "title": "In-app purchase friction",
+        "detail": "Apple’s ~30% IAP cut can make competing bookstore apps less attractive and confuse users choosing reading apps."
+      },
+      {
+        "title": "Less community / social",
+        "detail": "Focused on reading and discovery; lacks social reading or community depth on par with Goodreads or Wattpad."
+      }
+    ],
+    "sources": [
+      "https://www.apple.com/apple-books/",
+      "https://www.apple.com/pages/"
+    ]
+  },
+  "content": "<p class=\"lead\">Kahana is a library of curated hubs, Explore, Clubs, and optional Stripe. Apple Books is reading, catalogs, tracking, or ebook storefronts. They overlap in places and diverge in others.</p>\n\n<h2>What each one is</h2>\n<p>Kahana is built around <a href=\"/help/hubs\">hubs</a> people can open, <a href=\"/help/explore\">Explore</a> so strangers can find them, <a href=\"/help/how-aura-works\">Aura</a> as scarce daily recognition, and Clubs so discussion outlives a feed. Selling stays optional.</p>\n<p>Apple Books is the single destination to find, buy, and dive into audiobooks and ebooks.</p>\n\n<h2>Why this comparison</h2>\n<p>This article puts Kahana and Apple Books side by side. It covers what each supports as a first-class product job, key features, and a few research notes so you have a clearer picture of what they are, how they compare, and what you can actually do on each one. It is not a teardown, and it is not a switch-tomorrow pitch.</p>\n\n",
+  "contentAfter": "<h2>What you can do on each</h2>\n<p>On Kahana you can publish a hub, list it on Explore, discuss it in a Club, grant Aura, and turn on a Stripe paywall when you are ready to charge.</p>\n<p>On Apple Books you can use Ebook, Memberships, and Marketplaces as first-class product jobs. You need a dedicated reader, a giant store, or social tracking of everything you have ever read.</p>\n\n<h2>Using Kahana with Apple Books</h2>\n<p>You can use both. Apple Books keeps doing what it already does well. Kahana is another place to package the work, get discovered, and grow an audience.</p>\n<p>Keep the reader or tracker you already use. Put the Club pick, discussion questions, and related files on Kahana so the book is a shared library item, not only a private progress bar.</p>\n\n",
+  "landscapeCompanyId": "apple-books"
+}

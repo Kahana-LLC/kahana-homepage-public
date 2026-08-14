@@ -1,0 +1,12 @@
+{
+  "title": "Delete my account",
+  "description": "How to start Kahana account deletion from Settings \u2192 Danger Zone, what happens in 30 days, and how to cancel.",
+  "slug": "delete-my-account",
+  "category": "trust",
+  "product": "kahana",
+  "date": "2026-08-14",
+  "authors": [
+    "Adam Kershner"
+  ],
+  "content": "<p class=\"lead\">You can deactivate your Kahana account from Settings. Permanent deletion follows in 30 days unless you sign in and cancel.</p>\n\n<p><strong>Primary action:</strong> <a href=\"https://app.kahana.io/settings/danger\" target=\"_blank\" rel=\"noopener noreferrer\">Open Danger Zone</a></p>\n\n<h2>How to start deletion</h2>\n<ol>\n<li>Sign in and open <a href=\"https://app.kahana.io/settings/danger\" target=\"_blank\" rel=\"noopener noreferrer\">app.kahana.io/settings/danger</a>.</li>\n<li>Read the facts. Type <strong>DELETE</strong> to confirm.</li>\n<li>If your account uses a password, enter it. Google-only accounts follow the on-screen confirm path.</li>\n</ol>\n\n<h2>What happens</h2>\n<ul>\n<li>Your account is deactivated immediately (hidden from Library and public profiles).</li>\n<li>Subscriptions are cancelled now so you are not charged during the waiting period.</li>\n<li>After 30 days, hubs you own and account data are permanently deleted.</li>\n<li>Sign in anytime before then to cancel deletion. You\u2019ll land on an account-deletion status page with a cancel control.</li>\n</ul>\n\n<h2>What this is not</h2>\n<p>This is Kahana product account deletion. It is not a browser-data wipe and not an Oasis / Firefox account flow.</p>\n\n<h2>What\u2019s next</h2>\n<ul>\n<li><a href=\"/help/trust\">Trust</a></li>\n<li><a href=\"/help/profile-and-sharing\">Your profile &amp; sharing</a></li>\n<li>Need a human first? <a href=\"https://app.kahana.io/support\" target=\"_blank\" rel=\"noopener noreferrer\">Support</a></li>\n</ul>\n"
+}

@@ -1,0 +1,159 @@
+{
+  "slug": "kahana-vs-pinterest",
+  "title": "Kahana vs Pinterest: A Room That Survives the Thread",
+  "date": "2026-05-13T19:21:00.000Z",
+  "authors": [
+    {
+      "name": "Adam Kershner",
+      "role": "Founder",
+      "bio": "",
+      "linkedinProfile": "https://www.linkedin.com/in/adam-kershner/",
+      "avatar": "/assets/headshots/adam_kershner.jpg"
+    }
+  ],
+  "category": [
+    "Comparisons",
+    "Creators",
+    "Product"
+  ],
+  "excerpt": "Pinterest is visual search and discovery platform for inspiration, planning, and shopping via Pins, boards, and shoppable product catalogs. Kahana is the shelf and reading list beside the chat, not another inbox.",
+  "defaultImageQuery": "Pinterest The shelf and reading list beside the chat, not another inbox.",
+  "featuredImage": "/assets/blog/kahana-vs-pinterest.jpg",
+  "readingTime": 3,
+  "seoTitle": "Kahana vs Pinterest | A Room That Survives the Thread",
+  "metaDescription": "Pinterest is visual search and discovery platform for inspiration, planning, and shopping via Pins, boards, and shoppable product catalogs. Kahana is the…",
+  "focusKeyword": "Pinterest alternative",
+  "landscapeRole": "community-messaging",
+  "coverage": {
+    "companyName": "Pinterest",
+    "columns": [
+      {
+        "fragmentId": "ebook-reading",
+        "label": "Ebook",
+        "definition": "Yes if you can easily get and consume ebooks on the platform (free or paid) as a first-class product, open, buy, borrow, or read without hunting.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "short-form-video",
+        "label": "Short-form video",
+        "definition": "Yes if you can easily consume short-form video as a first-class surface (For You, Reels, Shorts).",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "long-form-video",
+        "label": "Long-form video",
+        "definition": "Yes if you can easily watch creator / UGC long-form video (or specialty long video) as a core surface. Course lectures belong under Courses. Hollywood catalogs belong under Series/Films.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "series-films-streaming",
+        "label": "Series/Films",
+        "definition": "Yes if you can easily watch series and films as an SVOD / catalog entertainment product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "courses-learning",
+        "label": "Courses",
+        "definition": "Yes if you can easily take or browse structured courses as a first-class product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "newsletters-written",
+        "label": "Newsletters",
+        "definition": "Yes if you can easily read or subscribe to newsletters / creator writing as a first-class product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "audio-listening",
+        "label": "Audio",
+        "definition": "Yes if you can easily listen to music, podcasts, or audiobooks as a first-class product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "creator-monetization",
+        "label": "Memberships",
+        "definition": "Yes if a creator or seller can accept payments from others and make money through the platform, checkout, fan subscriptions, tips, ads, shop, or creator funds. Not only a classic Patreon-style membership product.",
+        "kahana": "yes",
+        "company": "yes"
+      },
+      {
+        "fragmentId": "messaging-community",
+        "label": "Community & Messaging",
+        "definition": "Yes if you can create or join a group, community, or club, including group chats, Groups, subreddits, community tabs, discussion boards, or community feeds. A one-off comment on a single video or listing is not the bar; a durable place for the group to talk is.",
+        "kahana": "yes",
+        "company": "yes"
+      },
+      {
+        "fragmentId": "online-storefront",
+        "label": "Storefronts",
+        "definition": "Yes if the product gives a creator a custom storefront or site that can take the place of building their own website (bio page, creator site, branded shop). Not a shop tab on someone else’s multi-seller marketplace.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "digital-marketplaces",
+        "label": "Marketplaces",
+        "definition": "Yes if a typical person can search and shop a catalog of offerings from many sellers, courses, books, digital goods, etc. Storefront software (Shopify, WooCommerce) is not a marketplace unless shoppers browse many sellers there.",
+        "kahana": "yes",
+        "company": "yes"
+      }
+    ]
+  },
+  "researchInsights": {
+    "companyName": "Pinterest",
+    "scaleFacts": [
+      "Founded December 2009 (launched 2010) by Ben Silbermann, Paul Sciarra, and Evan Sharp; HQ San Francisco; public on NYSE (PINS).",
+      "≈518M MAUs in Q1 2024; other cites ~578M–640M MAUs worldwide; ~1.5B Pins saved every week; 5B+ Pins saved overall.",
+      "Visual pinboards for recipes, home décor, DIY, fashion, beauty, art, education, entertainment, and event planning, users search, save, and shop with planning/purchase intent.",
+      "Primarily ad-supported: ≈USD 3.1B FY2023 / ≈USD 3.65B FY2024 revenue; roughly ~80% Sponsored Pins, ~15% ecommerce/shoppable Pins, ~5% other services."
+    ],
+    "strengths": [
+      {
+        "title": "Visual discovery engine with high commercial intent",
+        "detail": "Sits at the intersection of social, search, and commerce, people discover and plan purchases, so ads often feel like helpful ideas."
+      },
+      {
+        "title": "Strong for planning and inspiration",
+        "detail": "Boards and Pins structure long-term projects (remodels, weddings, wardrobes, learning) beyond a scroll feed."
+      },
+      {
+        "title": "Shopping and product discovery built-in",
+        "detail": "Shoppable Pins, catalogs, visual search, and merchant tools connect inspiration to checkout."
+      },
+      {
+        "title": "Positive brand positioning and lower toxicity",
+        "detail": "Emphasizes a “positive place online”, content skews toward inspiration rather than outrage."
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Less real-time, conversational community",
+        "detail": "Strong for discovery and planning; weaker for sync chat or threaded conversation vs Reddit, Discord, or Facebook Groups."
+      },
+      {
+        "title": "Algorithm and ad dependence",
+        "detail": "Visibility depends heavily on search and recommendations, creators/merchants need pin SEO and optimization."
+      },
+      {
+        "title": "Category skew (lifestyle-heavy)",
+        "detail": "Home décor, DIY, fashion, food, and beauty dominate; some professional/technical topics are less represented."
+      }
+    ],
+    "sources": [
+      "https://newsroom.pinterest.com/company/",
+      "https://umbrex.com/resources/company-profiles/pinterest/",
+      "https://en.wikipedia.org/wiki/Pinterest",
+      "https://www.pinterest.com/"
+    ]
+  },
+  "content": "<p class=\"lead\">Kahana is a library of curated hubs, Explore, Clubs, and optional Stripe. Pinterest is visual search and discovery platform for inspiration, planning, and shopping via Pins, boards, and shoppable product catalogs. They overlap in places and diverge in others.</p>\n\n<h2>What each one is</h2>\n<p>Kahana is built around <a href=\"/help/hubs\">hubs</a> people can open, <a href=\"/help/explore\">Explore</a> so strangers can find them, <a href=\"/help/how-aura-works\">Aura</a> as scarce daily recognition, and Clubs so discussion outlives a feed. Selling stays optional.</p>\n<p>Pinterest is a visual search and discovery platform where people find inspiration, curate ideas, and shop products, all in a positive place online. <a href=\"https://www.pinterest.com\" target=\"_blank\" rel=\"noopener noreferrer\">Official site</a>.</p>\n\n<h2>Why this comparison</h2>\n<p>This article puts Kahana and Pinterest side by side. It covers what each supports as a first-class product job, key features, and a few research notes so you have a clearer picture of what they are, how they compare, and what you can actually do on each one. It is not a teardown, and it is not a switch-tomorrow pitch.</p>\n\n",
+  "contentAfter": "<h2>What you can do on each</h2>\n<p>On Kahana you can publish a hub, list it on Explore, discuss it in a Club, grant Aura, and turn on a Stripe paywall when you are ready to charge.</p>\n<p>On Pinterest you can use Memberships, Community &amp; Messaging, and Marketplaces as first-class product jobs. The job is hanging out, announcements, and live conversation, not packaging knowledge into something strangers can browse later.</p>\n\n<h2>Using Kahana with Pinterest</h2>\n<p>You can use both. Pinterest keeps doing what it already does well. Kahana is another place to package the work, get discovered, and grow an audience.</p>\n<p>Keep live conversation on Pinterest. Pin a Kahana hub or Club link in a channel, discuss live there, and assign the next ebook, video, or course from Kahana so the syllabus is not buried in the thread.</p>\n\n",
+  "landscapeCompanyId": "pinterest"
+}

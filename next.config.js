@@ -475,6 +475,11 @@ const nextConfig = {
       },
       // Features retired → Help topic articles
       {
+        source: '/help/library',
+        destination: '/help/explore',
+        permanent: true,
+      },
+      {
         source: '/features/explore',
         destination: '/help/explore',
         permanent: true,

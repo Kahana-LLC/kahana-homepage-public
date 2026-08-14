@@ -17,7 +17,7 @@ export const FAQ_SECTIONS = [
         id: 'benefits',
         question: 'What are the benefits of Kahana?',
         answer:
-          'Kahana gives you one place to share what you know, help others learn, and get found.\n\nIf you contribute, you publish hubs of digital artifacts (files, videos, images, PDFs, documents, links, and more). You can list them on Explore, invite collaborators, earn Aura when people value your work, and turn on paid access later if you want.\n\nIf you are here to learn, you browse careful, curated hubs in one catalog. Save what matters. Skip chasing scattered links or DMs.\n\nAura is how the community shows what is worth your time, so the best work can rise.',
+          'Kahana gives you one place to share what you know, help others learn, and get found.\n\nIf you contribute, you publish hubs of digital artifacts (files, videos, images, PDFs, documents, links, and more). You can list them on Library, invite collaborators, earn Aura when people value your work, and turn on paid access later if you want.\n\nIf you are here to learn, you browse careful, curated hubs in one catalog. Save what matters. Skip chasing scattered links or DMs.\n\nAura is how the community shows what is worth your time, so the best work can rise.',
       },
       {
         id: 'value-prop',
@@ -29,13 +29,13 @@ export const FAQ_SECTIONS = [
         id: 'optimize-benefits',
         question: 'How do I optimize the benefits of Kahana?',
         answer:
-          'It depends on whether you are learning or contributing.\n\nFor learners: open Explore, search and filter, open hubs you care about, then save or follow after you sign in. Give Aura carefully (up to 5/day). Step-by-step: /help/get-started-learners.\n\nFor contributors: share what you know. Don\'t overthink the first publish. Use clear hub names, filenames, tags, and descriptions so people can find your work. List public hubs on Explore. Check analytics for views, saves, Aura, and purchases (/help/creator-analytics), then keep improving. Turn on paid access later if you want.',
+          'It depends on whether you are learning or contributing.\n\nFor learners: open Library, search and filter, open hubs you care about, then save or follow after you sign in. Give Aura carefully (up to 5/day). Step-by-step: /help/get-started-learners.\n\nFor contributors: share what you know. Don\'t overthink the first publish. Use clear hub names, filenames, tags, and descriptions so people can find your work. List public hubs on Library. Check analytics for views, saves, Aura, and purchases (/help/creator-analytics), then keep improving. Turn on paid access later if you want.',
       },
       {
         id: 'what-is-kahana',
         question: 'What is Kahana?',
         answer:
-          'Kahana is a library for curated digital knowledge.\n\nYou contribute hubs of digital artifacts (files, videos, images, PDFs, documents, links, and more). People can find them on Explore. You earn Aura when someone values your work. Learners browse and learn in one place.\n\nPaid access is optional. We added it later, after people asked to earn from their best hubs.',
+          'Kahana is a library for curated digital knowledge.\n\nYou contribute hubs of digital artifacts (files, videos, images, PDFs, documents, links, and more). People can find them on Library. You earn Aura when someone values your work. Learners browse and learn in one place.\n\nPaid access is optional. We added it later, after people asked to earn from their best hubs.',
       },
       {
         id: 'who-operates',
@@ -46,7 +46,7 @@ export const FAQ_SECTIONS = [
         id: 'where-start',
         question: 'Where do I start?',
         answer:
-          'Want to learn? Open Explore at app.kahana.io/explore, or follow /help/get-started-learners.\n\nWant to share? Sign up and follow /help/get-started-creators: create a hub, add content, then list on Explore when ready. You can turn on paid access later if you want.',
+          'Want to learn? Open Library at app.kahana.io/library, or follow /help/get-started-learners.\n\nWant to share? Sign up and follow /help/get-started-creators: create a hub, add content, then list on Library when ready. You can turn on paid access later if you want.',
       },
       {
         id: 'about-info',
@@ -58,7 +58,7 @@ export const FAQ_SECTIONS = [
         id: 'vs-tools',
         question: 'How is Kahana different from Gumroad, Linktree, or Notion?',
         answer:
-          'Gumroad is built around selling. Linktree is light on finding hubs. Notion and Drive are great for private work, but they are not a public library with community signal.\n\nKahana starts with contribution and Explore, plus Aura. Optional earning came later because contributors asked for it.\n\nLonger comparisons: /blog/kahana-vs-gumroad-stan · /blog/kahana-vs-linktree · /blog/kahana-vs-notion-google-drive.',
+          'Gumroad is built around selling. Linktree is light on finding hubs. Notion and Drive are great for private work, but they are not a public library with community signal.\n\nKahana starts with contribution and Library, plus Aura. Optional earning came later because contributors asked for it.\n\nLonger comparisons: /blog/kahana-vs-gumroad-stan · /blog/kahana-vs-linktree · /blog/kahana-vs-notion-google-drive.',
       },
       {
         id: 'can-earn',
@@ -76,19 +76,19 @@ export const FAQ_SECTIONS = [
         id: 'what-is-hub',
         question: 'What is a hub?',
         answer:
-          'A hub is a curated place for digital artifacts: files, videos, images, PDFs, documents, links, and more. You can invite collaborators if you want.\n\nKeep it private, make it public, list it on Explore, and charge for access later if you choose.',
+          'A hub is a curated place for digital artifacts: files, videos, images, PDFs, documents, links, and more. You can invite collaborators if you want.\n\nKeep it private, make it public, list it on Library, and charge for access later if you choose.',
       },
       {
         id: 'content-rights',
         question: 'Can I upload public-domain ebooks or openly licensed files?',
         answer:
-          'Yes, when the work is public domain or under a license that allows redistribution on platforms like Kahana. Include any required attribution. Before a hub is unlisted, listed on Explore, or monetized, you must confirm you have the right to share (and, if monetizing, sell access to) all content in it.\n\nFinding a file online is not permission. Full guide: /help/content-rights. Binding rules: Terms §8 (User Content).',
+          'Yes, when the work is public domain or under a license that allows redistribution on platforms like Kahana. Include any required attribution. Before a hub is unlisted, listed on Library, or monetized, you must confirm you have the right to share (and, if monetizing, sell access to) all content in it.\n\nFinding a file online is not permission. Full guide: /help/content-rights. Binding rules: Terms §8 (User Content).',
       },
       {
         id: 'how-sell',
         question: 'How do I turn on paid access for a hub?',
         answer:
-          'Contribute a hub and add your content. Make it public and list it on Explore when it is ready.\n\nTo earn from access, connect Stripe, turn on monetization, and set a one-time or monthly price. Step-by-step: /help/turn-on-paid-access. Then share your link, or let people find you on Explore.',
+          'Contribute a hub and add your content. Make it public and list it on Library when it is ready.\n\nTo earn from access, connect Stripe, turn on monetization, and set a one-time or monthly price. Step-by-step: /help/turn-on-paid-access. Then share your link, or let people find you on Library.',
       },
       {
         id: 'creator-cost',
@@ -106,7 +106,7 @@ export const FAQ_SECTIONS = [
         id: 'need-stripe',
         question: 'Do I need Stripe?',
         answer:
-          'Only if you want to charge for hub access.\n\nBrowsing, contributing free hubs, and finding work on Explore do not need Stripe.',
+          'Only if you want to charge for hub access.\n\nBrowsing, contributing free hubs, and finding work on Library do not need Stripe.',
       },
       {
         id: 'subscription',
@@ -124,19 +124,19 @@ export const FAQ_SECTIONS = [
         id: 'get-discovered',
         question: 'How do I get discovered?',
         answer:
-          'List a public hub on Explore. Keep your creator profile up to date. Share your profile or hub link.\n\nProfile setup: /help/profile-and-sharing. You can also earn Aura when people endorse your hub.',
+          'List a public hub on Library. Keep your creator profile up to date. Share your profile or hub link.\n\nProfile setup: /help/profile-and-sharing. You can also earn Aura when people endorse your hub.',
       },
       {
         id: 'verified-badge',
         question: 'What is a verified creator badge?',
         answer:
-          'Creators with Stripe Connect charge-ready (charges_enabled) may show a verified badge on their profile or paywall. Connect setup may include identity checks Stripe requires.\n\nIt helps buyers trust who you are. It does not boost Explore ranking. How-to: /help/profile-and-sharing and /help/turn-on-paid-access.',
+          'Creators with Stripe Connect charge-ready (charges_enabled) may show a verified badge on their profile or paywall. Connect setup may include identity checks Stripe requires.\n\nIt helps buyers trust who you are. It does not boost Library ranking. How-to: /help/profile-and-sharing and /help/turn-on-paid-access.',
       },
       {
         id: 'adult-content',
         question: 'Is adult content allowed?',
         answer:
-          'Yes, you can flag a hub as adult content. Those hubs are filtered on Explore by default and are not SEO-indexed like general listed hubs.\n\nBuyers must be logged in and confirm they are 18+ with their date of birth before they can open them. How-to: /help/adult-content-and-age-verification.',
+          'Yes, you can flag a hub as adult content. Those hubs are filtered on Library by default and are not SEO-indexed like general listed hubs.\n\nBuyers must be logged in and confirm they are 18+ with their date of birth before they can open them. How-to: /help/adult-content-and-age-verification.',
       },
       {
         id: 'fork-hub',
@@ -154,13 +154,13 @@ export const FAQ_SECTIONS = [
         id: 'how-buy',
         question: 'How do I buy a digital product on Kahana?',
         answer:
-          'Browse Explore or a creator’s profile, open a hub, and check out on the paywall.\n\nWhen payment goes through, the hub unlocks in your account. Step-by-step: /help/buying-and-access.',
+          'Browse Library or a creator’s profile, open a hub, and check out on the paywall.\n\nWhen payment goes through, the hub unlocks in your account. Step-by-step: /help/buying-and-access.',
       },
       {
         id: 'browse-without-account',
         question: 'Can I browse without an account?',
         answer:
-          'Yes, for most public hubs on Explore. Adult content and some purchases need you to log in.',
+          'Yes, for most public hubs on Library. Adult content and some purchases need you to log in.',
       },
       {
         id: 'after-pay',
@@ -184,7 +184,7 @@ export const FAQ_SECTIONS = [
         id: 'free-vs-paid',
         question: 'How do I find free vs paid hubs?',
         answer:
-          'On Explore, filter by free or paid, price range, or category. You can also search.',
+          'On Library, filter by free or paid, price range, or category. You can also search.',
       },
       {
         id: 'aura-pay',
@@ -226,7 +226,7 @@ export const FAQ_SECTIONS = [
         id: 'aura-need-hub',
         question: 'Do I need to create a hub to give Aura?',
         answer:
-          'No. Anyone with an account can give Aura. Creating a hub is how you add knowledge to the library. It is not required to endorse hubs or files you find on Explore.',
+          'No. Anyone with an account can give Aura. Creating a hub is how you add knowledge to the library. It is not required to endorse hubs or files you find on Library.',
       },
       {
         id: 'aura-to-person',
@@ -238,7 +238,7 @@ export const FAQ_SECTIONS = [
         id: 'how-create',
         question: 'How do I create and contribute on Kahana?',
         answer:
-          'Create a hub, add digital artifacts (files, videos, images, PDFs, documents, links, and more), then optimize with clear names, tags, and a description. List it on Explore when you are ready.\n\nYou can invite editors and admins to collaborate. Turn on paid access later if you want.',
+          'Create a hub, add digital artifacts (files, videos, images, PDFs, documents, links, and more), then optimize with clear names, tags, and a description. List it on Library when you are ready.\n\nYou can invite editors and admins to collaborate. Turn on paid access later if you want.',
       },
       {
         id: 'aura-streak',
@@ -256,25 +256,37 @@ export const FAQ_SECTIONS = [
   },
   {
     id: 'explore',
-    title: 'Explore and discovery',
+    title: 'Library and discovery',
     items: [
       {
         id: 'what-is-explore',
-        question: 'What is Explore?',
+        question: 'What is Library?',
         answer:
-          'Explore is the public marketplace at /explore.\n\nBrowse hubs or creators. Search and filter by category, price, free or paid, and more.',
+          'Library is the public catalog at /library.\n\nBrowse hubs or creators. Search and filter by category, price, free or paid, and more.',
       },
       {
         id: 'listing-fee',
-        question: 'Do I need to pay to list on Explore?',
+        question: 'Do I need to pay to list on Library?',
         answer:
           'No separate listing fee. You just need to meet the public listing requirements.\n\nPlatform and Stripe fees only apply when someone buys a paid hub. Free hubs can still appear when listed.',
       },
       {
         id: 'hub-not-on-explore',
-        question: 'Why isn’t my hub on Explore?',
+        question: 'Why isn’t my hub on Library?',
         answer:
           'Often the hub is not public yet, not listed yet, missing listing details (title, cover, description, category, profile pic, adult yes/no), or filtered by adult settings. Sometimes there is a short delay while it indexes.\n\nSelf-check the readiness table: /help/list-hub-on-explore.',
+      },
+      {
+        id: 'what-is-for-you',
+        question: 'What is For You?',
+        answer:
+          'For You is a Library tab that ranks hubs from your Aura, saves, follows, and For you / Not for you marks. You can change signal weights in the tab.\n\nGuide: /help/for-you-and-taste.',
+      },
+      {
+        id: 'what-are-clubs',
+        question: 'What are Clubs?',
+        answer:
+          'Clubs are groups that read and list together. A new club always starts private. You can later make it unlisted or listed on the public Clubs page, with auto-join or request-to-join.\n\nMembers share a wish list, feed, events, and optional current focus. Guide: /help/clubs.',
       },
     ],
   },
@@ -306,6 +318,12 @@ export const FAQ_SECTIONS = [
         answer:
           'You must be logged in and enter your date of birth. If you are 18+, verification is recorded.\n\nThere is no anonymous “I’m 18” unlock. Details: /help/adult-content-and-age-verification.',
       },
+      {
+        id: 'delete-account',
+        question: 'How do I delete my Kahana account?',
+        answer:
+          'Open Settings → Danger Zone at /settings/danger. Type DELETE to confirm. Your account is deactivated immediately. Permanent deletion follows in 30 days unless you sign in and cancel.\n\nGuide: /help/delete-my-account.',
+      },
     ],
   },
   {
@@ -316,7 +334,7 @@ export const FAQ_SECTIONS = [
         id: 'upgrade-growth',
         question: 'When should I upgrade to Growth?',
         answer:
-          'Upgrade when you need a 4th hub, Free upload limits feel tight, you need larger files, or you want live chat support.\n\nYou do not need Growth to list on Explore or sell with Stripe. Growth does not remove the 5% marketplace fee.\n\nHow-to: /help/when-to-upgrade. Compare plans on /pricing or Billing in the app.',
+          'Upgrade when you need a 4th hub, Free upload limits feel tight, you need larger files, or you want live chat support.\n\nYou do not need Growth to list on Library or sell with Stripe. Growth does not remove the 5% marketplace fee.\n\nHow-to: /help/when-to-upgrade. Compare plans on /pricing or Billing in the app.',
       },
       {
         id: 'cancel-growth',

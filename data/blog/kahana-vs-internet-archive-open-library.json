@@ -1,0 +1,163 @@
+{
+  "slug": "kahana-vs-internet-archive-open-library",
+  "title": "Kahana vs Internet Archive / Open Library: A Stack for the Club, Not a Lifetime Catalog",
+  "date": "2026-06-17T18:28:00.000Z",
+  "authors": [
+    {
+      "name": "Adam Kershner",
+      "role": "Founder",
+      "bio": "",
+      "linkedinProfile": "https://www.linkedin.com/in/adam-kershner/",
+      "avatar": "/assets/headshots/adam_kershner.jpg"
+    }
+  ],
+  "category": [
+    "Comparisons",
+    "Creators",
+    "Product"
+  ],
+  "excerpt": "Internet Archive / Open Library is nonprofit digital library with Open Library ebook lending, public-domain downloads and controlled digital lending of scanned books. Kahana is clubs and hubs around the books you actually read together.",
+  "defaultImageQuery": "Internet Archive / Open Library Clubs and hubs around the books you actually read together.",
+  "featuredImage": "/assets/blog/kahana-vs-internet-archive-open-library.jpg",
+  "readingTime": 3,
+  "seoTitle": "Kahana vs Internet Archive / Open Library | A Stack for…",
+  "metaDescription": "Internet Archive / Open Library is nonprofit digital library with Open Library ebook lending, public-domain downloads and controlled digital lending of…",
+  "focusKeyword": "Internet Archive / Open Library alternative",
+  "landscapeRole": "ebook",
+  "coverage": {
+    "companyName": "Internet Archive / Open Library",
+    "columns": [
+      {
+        "fragmentId": "ebook-reading",
+        "label": "Ebook",
+        "definition": "Yes if you can easily get and consume ebooks on the platform (free or paid) as a first-class product, open, buy, borrow, or read without hunting.",
+        "kahana": "yes",
+        "company": "yes"
+      },
+      {
+        "fragmentId": "short-form-video",
+        "label": "Short-form video",
+        "definition": "Yes if you can easily consume short-form video as a first-class surface (For You, Reels, Shorts).",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "long-form-video",
+        "label": "Long-form video",
+        "definition": "Yes if you can easily watch creator / UGC long-form video (or specialty long video) as a core surface. Course lectures belong under Courses. Hollywood catalogs belong under Series/Films.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "series-films-streaming",
+        "label": "Series/Films",
+        "definition": "Yes if you can easily watch series and films as an SVOD / catalog entertainment product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "courses-learning",
+        "label": "Courses",
+        "definition": "Yes if you can easily take or browse structured courses as a first-class product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "newsletters-written",
+        "label": "Newsletters",
+        "definition": "Yes if you can easily read or subscribe to newsletters / creator writing as a first-class product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "audio-listening",
+        "label": "Audio",
+        "definition": "Yes if you can easily listen to music, podcasts, or audiobooks as a first-class product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "creator-monetization",
+        "label": "Memberships",
+        "definition": "Yes if a creator or seller can accept payments from others and make money through the platform, checkout, fan subscriptions, tips, ads, shop, or creator funds. Not only a classic Patreon-style membership product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "messaging-community",
+        "label": "Community & Messaging",
+        "definition": "Yes if you can create or join a group, community, or club, including group chats, Groups, subreddits, community tabs, discussion boards, or community feeds. A one-off comment on a single video or listing is not the bar; a durable place for the group to talk is.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "online-storefront",
+        "label": "Storefronts",
+        "definition": "Yes if the product gives a creator a custom storefront or site that can take the place of building their own website (bio page, creator site, branded shop). Not a shop tab on someone else’s multi-seller marketplace.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "digital-marketplaces",
+        "label": "Marketplaces",
+        "definition": "Yes if a typical person can search and shop a catalog of offerings from many sellers, courses, books, digital goods, etc. Storefront software (Shopify, WooCommerce) is not a marketplace unless shoppers browse many sellers there.",
+        "kahana": "yes",
+        "company": "no"
+      }
+    ]
+  },
+  "researchInsights": {
+    "companyName": "Internet Archive / Open Library",
+    "scaleFacts": [
+      "Millions of ebooks (fiction, popular, children’s, historical, academic) plus movies, audio, software, and web archives.",
+      "Controlled digital lending: one copy per owned physical book; in-copyright works borrowable for 1 hour (browse) or 14 days (full); up to 10 books at a time with a free account.",
+      "Public domain works viewable online or downloadable without time limits; some titles need Adobe Digital Editions or compatible apps.",
+      "Hachette v. Internet Archive: 500,000+ books removed from general lending; print-disabled access and public domain unchanged."
+    ],
+    "strengths": [
+      {
+        "title": "Huge multi-type digital library",
+        "detail": "Ebooks, movies, audio, software, and archived web pages, more than just books."
+      },
+      {
+        "title": "Controlled digital lending of in-copyright works",
+        "detail": "Borrow scanned copies of in-copyright books the Archive has purchased and digitized."
+      },
+      {
+        "title": "Public domain access and downloads",
+        "detail": "Public domain titles can be viewed online or downloaded without time limits."
+      },
+      {
+        "title": "Free accounts and generous borrowing limits",
+        "detail": "Free account; borrow up to 10 ebooks for 14 days each."
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Borrowing friction and DRM",
+        "detail": "Many in-copyright titles need Adobe Digital Editions or similar; borrow/return is more complex than consumer stores."
+      },
+      {
+        "title": "Mixed scan quality and metadata",
+        "detail": "Older scans, OCR errors, and incomplete/inconsistent metadata are common."
+      },
+      {
+        "title": "Legal and access volatility",
+        "detail": "Hachette case reduced access to many titles; future legal developments could further impact lending."
+      },
+      {
+        "title": "Not optimized for casual reading UX",
+        "detail": "Library/catalog-oriented UI; reading experience and device sync less polished than Kindle or commercial apps."
+      }
+    ],
+    "sources": [
+      "https://archive.org/",
+      "https://openlibrary.org/",
+      "https://libanswers.macalester.edu/faq/379775",
+      "https://library.kzoo.edu/blog/free-ebooks-on-the-internet-archive-open-library/"
+    ]
+  },
+  "content": "<p class=\"lead\">Kahana is a library of curated hubs, Explore, Clubs, and optional Stripe. Internet Archive / Open Library is nonprofit digital library with Open Library ebook lending, public-domain downloads and controlled digital lending of scanned books. They overlap in places and diverge in others.</p>\n\n<h2>What each one is</h2>\n<p>Kahana is built around <a href=\"/help/hubs\">hubs</a> people can open, <a href=\"/help/explore\">Explore</a> so strangers can find them, <a href=\"/help/how-aura-works\">Aura</a> as scarce daily recognition, and Clubs so discussion outlives a feed. Selling stays optional.</p>\n<p>Internet Archive is a non-profit digital library offering free universal access to books, movies, music, &amp; computer software, as well as 514 billion archived web pages. <a href=\"https://archive.org\" target=\"_blank\" rel=\"noopener noreferrer\">Official site</a>.</p>\n\n<h2>Why this comparison</h2>\n<p>This article puts Kahana and Internet Archive / Open Library side by side. It covers what each supports as a first-class product job, key features, and a few research notes so you have a clearer picture of what they are, how they compare, and what you can actually do on each one. It is not a teardown, and it is not a switch-tomorrow pitch.</p>\n\n",
+  "contentAfter": "<h2>What you can do on each</h2>\n<p>On Kahana you can publish a hub, list it on Explore, discuss it in a Club, grant Aura, and turn on a Stripe paywall when you are ready to charge.</p>\n<p>On Internet Archive / Open Library you can use Ebook as a first-class product job. You need a dedicated reader, a giant store, or social tracking of everything you have ever read.</p>\n\n<h2>Using Kahana with Internet Archive / Open Library</h2>\n<p>You can use both. Internet Archive / Open Library keeps doing what it already does well. Kahana is another place to package the work, get discovered, and grow an audience.</p>\n<p>Keep the reader or tracker you already use. Put the Club pick, discussion questions, and related files on Kahana so the book is a shared library item, not only a private progress bar.</p>\n\n",
+  "landscapeCompanyId": "internet-archive"
+}

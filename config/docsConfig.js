@@ -32,6 +32,7 @@ export const docsConfig = {
   categories: {
     discovery: "Discovery",
     knowledge: "Knowledge",
+    community: "Community",
     presence: "Presence",
     quality: "Quality",
     monetization: "Monetization",
@@ -47,7 +48,7 @@ export const docsConfig = {
   seo: {
     titleTemplate: "%s | Help",
     description:
-      "Guides and answers for the Kahana platform—hubs, Explore, Aura, and more. New articles are added as product help ships.",
+      "Guides and answers for Kahana: hubs, Library, Clubs, Aura, and more. New articles are added as product help ships.",
     baseUrl: absoluteUrl('/help')
   }
 };

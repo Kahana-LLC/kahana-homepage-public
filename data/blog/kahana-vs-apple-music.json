@@ -1,0 +1,158 @@
+{
+  "slug": "kahana-vs-apple-music",
+  "title": "Kahana vs Apple Music: Curriculum Beside the Stream",
+  "date": "2026-08-11T19:29:00.000Z",
+  "authors": [
+    {
+      "name": "Adam Kershner",
+      "role": "Founder",
+      "bio": "",
+      "linkedinProfile": "https://www.linkedin.com/in/adam-kershner/",
+      "avatar": "/assets/headshots/adam_kershner.jpg"
+    }
+  ],
+  "category": [
+    "Comparisons",
+    "Creators",
+    "Product"
+  ],
+  "excerpt": "Apple Music is audio streaming / listening at scale. Kahana is a library shelf for the audio you actually assign, plus Clubs to talk about it.",
+  "defaultImageQuery": "Apple Music A library shelf for the audio you actually assign, plus Clubs to talk about it.",
+  "featuredImage": "/assets/blog/kahana-vs-apple-music.jpg",
+  "readingTime": 3,
+  "seoTitle": "Kahana vs Apple Music | Curriculum Beside the Stream",
+  "metaDescription": "Apple Music is audio streaming / listening at scale. Kahana is a library shelf for the audio you actually assign, plus Clubs to talk about it.",
+  "focusKeyword": "Apple Music alternative",
+  "landscapeRole": "audio",
+  "coverage": {
+    "companyName": "Apple Music",
+    "columns": [
+      {
+        "fragmentId": "ebook-reading",
+        "label": "Ebook",
+        "definition": "Yes if you can easily get and consume ebooks on the platform (free or paid) as a first-class product, open, buy, borrow, or read without hunting.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "short-form-video",
+        "label": "Short-form video",
+        "definition": "Yes if you can easily consume short-form video as a first-class surface (For You, Reels, Shorts).",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "long-form-video",
+        "label": "Long-form video",
+        "definition": "Yes if you can easily watch creator / UGC long-form video (or specialty long video) as a core surface. Course lectures belong under Courses. Hollywood catalogs belong under Series/Films.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "series-films-streaming",
+        "label": "Series/Films",
+        "definition": "Yes if you can easily watch series and films as an SVOD / catalog entertainment product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "courses-learning",
+        "label": "Courses",
+        "definition": "Yes if you can easily take or browse structured courses as a first-class product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "newsletters-written",
+        "label": "Newsletters",
+        "definition": "Yes if you can easily read or subscribe to newsletters / creator writing as a first-class product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "audio-listening",
+        "label": "Audio",
+        "definition": "Yes if you can easily listen to music, podcasts, or audiobooks as a first-class product.",
+        "kahana": "yes",
+        "company": "yes"
+      },
+      {
+        "fragmentId": "creator-monetization",
+        "label": "Memberships",
+        "definition": "Yes if a creator or seller can accept payments from others and make money through the platform, checkout, fan subscriptions, tips, ads, shop, or creator funds. Not only a classic Patreon-style membership product.",
+        "kahana": "yes",
+        "company": "yes"
+      },
+      {
+        "fragmentId": "messaging-community",
+        "label": "Community & Messaging",
+        "definition": "Yes if you can create or join a group, community, or club, including group chats, Groups, subreddits, community tabs, discussion boards, or community feeds. A one-off comment on a single video or listing is not the bar; a durable place for the group to talk is.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "online-storefront",
+        "label": "Storefronts",
+        "definition": "Yes if the product gives a creator a custom storefront or site that can take the place of building their own website (bio page, creator site, branded shop). Not a shop tab on someone else’s multi-seller marketplace.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "digital-marketplaces",
+        "label": "Marketplaces",
+        "definition": "Yes if a typical person can search and shop a catalog of offerings from many sellers, courses, books, digital goods, etc. Storefront software (Shopify, WooCommerce) is not a marketplace unless shoppers browse many sellers there.",
+        "kahana": "yes",
+        "company": "no"
+      }
+    ]
+  },
+  "researchInsights": {
+    "companyName": "Apple Music",
+    "scaleFacts": [
+      "100M+ songs and 30,000+ playlists, plus music videos and Apple Music Classical.",
+      "US plans (2026): Voice USD 4.99/mo, Student USD 5.99/mo, Individual USD 10.99/mo, Family USD 16.99/mo (up to 6 people).",
+      "Available on iOS, macOS, HomePod, Apple TV, Watch, CarPlay, PC, Android, Sonos, Amazon Echo, Samsung Smart TV, Google Nest, PS5, and web."
+    ],
+    "strengths": [
+      {
+        "title": "High audio quality",
+        "detail": "Lossless audio up to 24-bit/192 kHz and Spatial Audio with Dolby Atmos at no extra cost, often cited as superior to standard Spotify streams."
+      },
+      {
+        "title": "Deep Apple ecosystem integration",
+        "detail": "Seamless across iPhone, Mac, Watch, TV, HomePod, and CarPlay with Siri and Apple One bundles."
+      },
+      {
+        "title": "Curated and exclusive content",
+        "detail": "Exclusive albums, artist interviews, live concerts, radio shows, and Apple Music 1 with strong editorial curation."
+      },
+      {
+        "title": "Apple Music Classical",
+        "detail": "Dedicated classical app with curated recordings and richer metadata."
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "No permanent free tier",
+        "detail": "Unlike Spotify, no ongoing free tier, subscribe after the trial."
+      },
+      {
+        "title": "Best experience requires Apple hardware",
+        "detail": "Available on Android and PC, but the most integrated experience and some perks skew toward Apple device owners."
+      },
+      {
+        "title": "Less social discovery than Spotify",
+        "detail": "Fewer social features and public playlists; Spotify’s community and discovery aspects are generally stronger."
+      }
+    ],
+    "sources": [
+      "https://www.apple.com/apple-music/",
+      "https://9to5mac.com/guides/apple-music/",
+      "https://freeyourmusic.com/blog/how-much-is-apple-music",
+      "https://www.pcmag.com/comparisons/apple-music-vs-spotify-which-streaming-music-platform-reigns-supreme"
+    ]
+  },
+  "content": "<p class=\"lead\">Kahana is a library of curated hubs, Explore, Clubs, and optional Stripe. Apple Music is audio streaming / listening at scale. They overlap in places and diverge in others.</p>\n\n<h2>What each one is</h2>\n<p>Kahana is built around <a href=\"/help/hubs\">hubs</a> people can open, <a href=\"/help/explore\">Explore</a> so strangers can find them, <a href=\"/help/how-aura-works\">Aura</a> as scarce daily recognition, and Clubs so discussion outlives a feed. Selling stays optional.</p>\n<p>Apple Music is an ad-free streaming music service with over 100 million songs, immersive Spatial Audio, lossless audio, and exclusive content.</p>\n\n<h2>Why this comparison</h2>\n<p>This article puts Kahana and Apple Music side by side. It covers what each supports as a first-class product job, key features, and a few research notes so you have a clearer picture of what they are, how they compare, and what you can actually do on each one. It is not a teardown, and it is not a switch-tomorrow pitch.</p>\n\n",
+  "contentAfter": "<h2>What you can do on each</h2>\n<p>On Kahana you can publish a hub, list it on Explore, discuss it in a Club, grant Aura, and turn on a Stripe paywall when you are ready to charge.</p>\n<p>On Apple Music you can use Audio and Memberships as first-class product jobs. You want a dedicated listening app, playlists, and the catalog people already pay a subscription for.</p>\n\n<h2>Using Kahana with Apple Music</h2>\n<p>You can use both. Apple Music keeps doing what it already does well. Kahana is another place to package the work, get discovered, and grow an audience.</p>\n<p>Keep listening on Apple Music, where the catalog and players are strongest. Put episode lists, companion notes, and Club discussion on Kahana so assigned audio is a library item, not only a For You row.</p>\n\n",
+  "landscapeCompanyId": "apple-music"
+}

@@ -1,0 +1,162 @@
+{
+  "slug": "kahana-vs-beehiiv",
+  "title": "Kahana vs beehiiv: A Home for the Archive",
+  "date": "2026-08-05T13:23:00.000Z",
+  "authors": [
+    {
+      "name": "Adam Kershner",
+      "role": "Founder",
+      "bio": "",
+      "linkedinProfile": "https://www.linkedin.com/in/adam-kershner/",
+      "avatar": "/assets/headshots/adam_kershner.jpg"
+    }
+  ],
+  "category": [
+    "Comparisons",
+    "Creators",
+    "Product"
+  ],
+  "excerpt": "beehiiv is newsletter growth, email delivery, referrals, and monetization for publishers who live in the inbox. Kahana is a durable library home for writing you already publish.",
+  "defaultImageQuery": "beehiiv A durable library home for writing you already publish.",
+  "featuredImage": "/assets/blog/kahana-vs-beehiiv.jpg",
+  "readingTime": 3,
+  "seoTitle": "Kahana vs beehiiv | A Home for the Archive",
+  "metaDescription": "beehiiv is newsletter growth, email delivery, referrals, and monetization for publishers who live in the inbox. Kahana is a durable library home for writing…",
+  "focusKeyword": "beehiiv alternative",
+  "landscapeRole": "newsletter-writing",
+  "coverage": {
+    "companyName": "beehiiv",
+    "columns": [
+      {
+        "fragmentId": "ebook-reading",
+        "label": "Ebook",
+        "definition": "Yes if you can easily get and consume ebooks on the platform (free or paid) as a first-class product, open, buy, borrow, or read without hunting.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "short-form-video",
+        "label": "Short-form video",
+        "definition": "Yes if you can easily consume short-form video as a first-class surface (For You, Reels, Shorts).",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "long-form-video",
+        "label": "Long-form video",
+        "definition": "Yes if you can easily watch creator / UGC long-form video (or specialty long video) as a core surface. Course lectures belong under Courses. Hollywood catalogs belong under Series/Films.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "series-films-streaming",
+        "label": "Series/Films",
+        "definition": "Yes if you can easily watch series and films as an SVOD / catalog entertainment product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "courses-learning",
+        "label": "Courses",
+        "definition": "Yes if you can easily take or browse structured courses as a first-class product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "newsletters-written",
+        "label": "Newsletters",
+        "definition": "Yes if you can easily read or subscribe to newsletters / creator writing as a first-class product.",
+        "kahana": "yes",
+        "company": "yes"
+      },
+      {
+        "fragmentId": "audio-listening",
+        "label": "Audio",
+        "definition": "Yes if you can easily listen to music, podcasts, or audiobooks as a first-class product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "creator-monetization",
+        "label": "Memberships",
+        "definition": "Yes if a creator or seller can accept payments from others and make money through the platform, checkout, fan subscriptions, tips, ads, shop, or creator funds. Not only a classic Patreon-style membership product.",
+        "kahana": "yes",
+        "company": "yes"
+      },
+      {
+        "fragmentId": "messaging-community",
+        "label": "Community & Messaging",
+        "definition": "Yes if you can create or join a group, community, or club, including group chats, Groups, subreddits, community tabs, discussion boards, or community feeds. A one-off comment on a single video or listing is not the bar; a durable place for the group to talk is.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "online-storefront",
+        "label": "Storefronts",
+        "definition": "Yes if the product gives a creator a custom storefront or site that can take the place of building their own website (bio page, creator site, branded shop). Not a shop tab on someone else’s multi-seller marketplace.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "digital-marketplaces",
+        "label": "Marketplaces",
+        "definition": "Yes if a typical person can search and shop a catalog of offerings from many sellers, courses, books, digital goods, etc. Storefront software (Shopify, WooCommerce) is not a marketplace unless shoppers browse many sellers there.",
+        "kahana": "yes",
+        "company": "no"
+      }
+    ]
+  },
+  "researchInsights": {
+    "companyName": "beehiiv",
+    "scaleFacts": [
+      "Free plan up to ≈2,500 subscribers with unlimited sending and limited features.",
+      "Paid plans roughly USD 32–49/month depending on subscribers and monetization features.",
+      "Native ad network for monetization beyond subscriptions; advanced analytics, segmentation, and growth tools."
+    ],
+    "strengths": [
+      {
+        "title": "No revenue share on subscriptions",
+        "detail": "No Beehiiv cut of subscription revenue, only Stripe/processor fees. On USD 120k gross, creators often keep more than on Substack’s 10% model."
+      },
+      {
+        "title": "Ad network and affiliate options",
+        "detail": "Additional revenue via newsletter ads and affiliate tools beyond paid subs."
+      },
+      {
+        "title": "Advanced growth and analytics",
+        "detail": "Segmentation, polls, surveys, referrals, SEO tools, and richer analytics than Substack basics."
+      },
+      {
+        "title": "Better integrations and automations",
+        "detail": "API, native integrations, app marketplace, and custom workflows for CRMs and larger stacks."
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Smaller built-in audience and ecosystem",
+        "detail": "Weaker native reader app and social discovery than Substack."
+      },
+      {
+        "title": "No centralized social feed like Notes",
+        "detail": "More traditional email + blog/archive; community conversation lives on external channels."
+      },
+      {
+        "title": "More complex for non-technical writers",
+        "detail": "Advanced features mean more configuration vs Substack’s simple write/send/paywall flow."
+      },
+      {
+        "title": "Paid plans required for serious monetization",
+        "detail": "Ad network, advanced features, and higher subscriber limits need upgrades; free plan is generous but limited for growth businesses."
+      }
+    ],
+    "sources": [
+      "https://www.beehiiv.com/",
+      "https://www.beehiiv.com/comparisons/substack",
+      "https://expressionbytes.com/substack-vs-beehiiv/",
+      "https://mattgiaro.com/beehiiv-vs-substack/"
+    ]
+  },
+  "content": "<p class=\"lead\">Kahana is a library of curated hubs, Explore, Clubs, and optional Stripe. beehiiv is newsletter growth, email delivery, referrals, and monetization for publishers who live in the inbox. They overlap in places and diverge in others.</p>\n\n<h2>What each one is</h2>\n<p>Kahana is built around <a href=\"/help/hubs\">hubs</a> people can open, <a href=\"/help/explore\">Explore</a> so strangers can find them, <a href=\"/help/how-aura-works\">Aura</a> as scarce daily recognition, and Clubs so discussion outlives a feed. Selling stays optional.</p>\n<p>beehiiv is a dynamic, modern alternative to Substack focused on newsletter growth and monetization, best for newsletter businesses with a generous free plan and advanced tools.</p>\n\n<h2>Why this comparison</h2>\n<p>This article puts Kahana and beehiiv side by side. It covers what each supports as a first-class product job, key features, and a few research notes so you have a clearer picture of what they are, how they compare, and what you can actually do on each one. It is not a teardown, and it is not a switch-tomorrow pitch.</p>\n\n",
+  "contentAfter": "<h2>What you can do on each</h2>\n<p>On Kahana you can publish a hub, list it on Explore, discuss it in a Club, grant Aura, and turn on a Stripe paywall when you are ready to charge.</p>\n<p>On beehiiv you can use Newsletters and Memberships as first-class product jobs. The inbox is the product: essays, archives, and paid subscriptions you already send on a cadence.</p>\n\n<h2>Using Kahana with beehiiv</h2>\n<p>You can use both. beehiiv keeps doing what it already does well. Kahana is another place to package the work, get discovered, and grow an audience.</p>\n<p>Keep beehiiv as distribution. Link a Kahana hub or Club as the deep destination: archives, files, and discussion that survive a missed email.</p>\n\n",
+  "landscapeCompanyId": "beehiiv"
+}

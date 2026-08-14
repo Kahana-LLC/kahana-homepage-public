@@ -1,0 +1,155 @@
+{
+  "slug": "kahana-vs-weibo",
+  "title": "Kahana vs Weibo: Keep the Chat, Add the Shelf",
+  "date": "2026-04-06T13:05:00.000Z",
+  "authors": [
+    {
+      "name": "Adam Kershner",
+      "role": "Founder",
+      "bio": "",
+      "linkedinProfile": "https://www.linkedin.com/in/adam-kershner/",
+      "avatar": "/assets/headshots/adam_kershner.jpg"
+    }
+  ],
+  "category": [
+    "Comparisons",
+    "Creators",
+    "Product"
+  ],
+  "excerpt": "Weibo is china’s major microblogging social network (Sina Weibo), short posts, media, live streams, and public conversation at scale. Kahana is the shelf and reading list beside the chat, not another inbox.",
+  "defaultImageQuery": "Weibo The shelf and reading list beside the chat, not another inbox.",
+  "featuredImage": "/assets/blog/kahana-vs-weibo.jpg",
+  "readingTime": 3,
+  "seoTitle": "Kahana vs Weibo | Keep the Chat, Add the Shelf",
+  "metaDescription": "Weibo is china’s major microblogging social network (Sina Weibo), short posts, media, live streams, and public conversation at scale. Kahana is the shelf and…",
+  "focusKeyword": "Weibo alternative",
+  "landscapeRole": "community-messaging",
+  "coverage": {
+    "companyName": "Weibo",
+    "columns": [
+      {
+        "fragmentId": "ebook-reading",
+        "label": "Ebook",
+        "definition": "Yes if you can easily get and consume ebooks on the platform (free or paid) as a first-class product, open, buy, borrow, or read without hunting.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "short-form-video",
+        "label": "Short-form video",
+        "definition": "Yes if you can easily consume short-form video as a first-class surface (For You, Reels, Shorts).",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "long-form-video",
+        "label": "Long-form video",
+        "definition": "Yes if you can easily watch creator / UGC long-form video (or specialty long video) as a core surface. Course lectures belong under Courses. Hollywood catalogs belong under Series/Films.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "series-films-streaming",
+        "label": "Series/Films",
+        "definition": "Yes if you can easily watch series and films as an SVOD / catalog entertainment product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "courses-learning",
+        "label": "Courses",
+        "definition": "Yes if you can easily take or browse structured courses as a first-class product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "newsletters-written",
+        "label": "Newsletters",
+        "definition": "Yes if you can easily read or subscribe to newsletters / creator writing as a first-class product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "audio-listening",
+        "label": "Audio",
+        "definition": "Yes if you can easily listen to music, podcasts, or audiobooks as a first-class product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "creator-monetization",
+        "label": "Memberships",
+        "definition": "Yes if a creator or seller can accept payments from others and make money through the platform, checkout, fan subscriptions, tips, ads, shop, or creator funds. Not only a classic Patreon-style membership product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "messaging-community",
+        "label": "Community & Messaging",
+        "definition": "Yes if you can create or join a group, community, or club, including group chats, Groups, subreddits, community tabs, discussion boards, or community feeds. A one-off comment on a single video or listing is not the bar; a durable place for the group to talk is.",
+        "kahana": "yes",
+        "company": "yes"
+      },
+      {
+        "fragmentId": "online-storefront",
+        "label": "Storefronts",
+        "definition": "Yes if the product gives a creator a custom storefront or site that can take the place of building their own website (bio page, creator site, branded shop). Not a shop tab on someone else’s multi-seller marketplace.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "digital-marketplaces",
+        "label": "Marketplaces",
+        "definition": "Yes if a typical person can search and shop a catalog of offerings from many sellers, courses, books, digital goods, etc. Storefront software (Shopify, WooCommerce) is not a marketplace unless shoppers browse many sellers there.",
+        "kahana": "yes",
+        "company": "no"
+      }
+    ]
+  },
+  "researchInsights": {
+    "companyName": "Weibo",
+    "scaleFacts": [
+      "Launched 14 August 2009 by Sina Corporation; operated as Sina Weibo within China’s social media ecosystem.",
+      "≈582M monthly active users and 252M daily active users as of Q1 2022; earlier figures include ~550M MAUs (2020) and 450M MAUs / 203M DAUs (March 2020).",
+      "Microblogging with text, photos, GIFs, and videos; comments, hashtags, DMs, and multimedia instant messaging.",
+      "Live streaming (via partner Yizhibo), Stories-like short visual posts, and e-commerce integrations."
+    ],
+    "strengths": [
+      {
+        "title": "Massive reach in China’s public conversation",
+        "detail": "With hundreds of millions of users, Weibo is central to news dissemination, celebrity culture, and brand awareness in China."
+      },
+      {
+        "title": "Hybrid of Twitter + Facebook + commerce",
+        "detail": "Combines microblogging, social features, live video, and e-commerce, versatile for content and campaigns."
+      },
+      {
+        "title": "Strong for brand and institution presence",
+        "detail": "Recommended for publishers, universities, and research societies wanting to reach Chinese audiences."
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "China-specific ecosystem and regulations",
+        "detail": "Subject to Chinese censorship and regulations; foreign brands must align content with local requirements."
+      },
+      {
+        "title": "Different norms vs Western social platforms",
+        "detail": "Content formats, trends, and user expectations differ from X/Twitter, requires localized strategy and language."
+      },
+      {
+        "title": "Algorithmic and moderation opacity",
+        "detail": "Ranking and enforcement decisions can be opaque, as on many large platforms."
+      }
+    ],
+    "sources": [
+      "https://en.wikipedia.org/wiki/Weibo",
+      "https://cactusglobal.com/media-center/using-weibo-to-build-your-presence-in-china-an-introduction-for-research-societies-publishers-and-universities/",
+      "https://www.eviom.com/en/china-marketing/china-social-media/sina-weibo-weibo/",
+      "https://www.chinafy.com/china-tech/what-is-weibo-and-how-to-get-started"
+    ]
+  },
+  "content": "<p class=\"lead\">Kahana is a library of curated hubs, Explore, Clubs, and optional Stripe. Weibo is china’s major microblogging social network (Sina Weibo), short posts, media, live streams, and public conversation at scale. They overlap in places and diverge in others.</p>\n\n<h2>What each one is</h2>\n<p>Kahana is built around <a href=\"/help/hubs\">hubs</a> people can open, <a href=\"/help/explore\">Explore</a> so strangers can find them, <a href=\"/help/how-aura-works\">Aura</a> as scarce daily recognition, and Clubs so discussion outlives a feed. Selling stays optional.</p>\n<p>Weibo (Sina Weibo) is one of China’s largest social media platforms, a microblogging service akin to a combination of Twitter and Facebook where users share short posts, images, videos, and live streams with hundreds of millions of followers. <a href=\"https://weibo.com\" target=\"_blank\" rel=\"noopener noreferrer\">Official site</a>.</p>\n\n<h2>Why this comparison</h2>\n<p>This article puts Kahana and Weibo side by side. It covers what each supports as a first-class product job, key features, and a few research notes so you have a clearer picture of what they are, how they compare, and what you can actually do on each one. It is not a teardown, and it is not a switch-tomorrow pitch.</p>\n\n",
+  "contentAfter": "<h2>What you can do on each</h2>\n<p>On Kahana you can publish a hub, list it on Explore, discuss it in a Club, grant Aura, and turn on a Stripe paywall when you are ready to charge.</p>\n<p>On Weibo you can use Community &amp; Messaging as a first-class product job. The job is hanging out, announcements, and live conversation, not packaging knowledge into something strangers can browse later.</p>\n\n<h2>Using Kahana with Weibo</h2>\n<p>You can use both. Weibo keeps doing what it already does well. Kahana is another place to package the work, get discovered, and grow an audience.</p>\n<p>Keep live conversation on Weibo. Pin a Kahana hub or Club link in a channel, discuss live there, and assign the next ebook, video, or course from Kahana so the syllabus is not buried in the thread.</p>\n\n",
+  "landscapeCompanyId": "weibo"
+}

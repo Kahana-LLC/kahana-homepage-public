@@ -1,0 +1,159 @@
+{
+  "slug": "kahana-vs-librarything",
+  "title": "Kahana vs LibraryThing: The Book You Assign Together",
+  "date": "2026-06-08T16:28:00.000Z",
+  "authors": [
+    {
+      "name": "Adam Kershner",
+      "role": "Founder",
+      "bio": "",
+      "linkedinProfile": "https://www.linkedin.com/in/adam-kershner/",
+      "avatar": "/assets/headshots/adam_kershner.jpg"
+    }
+  ],
+  "category": [
+    "Comparisons",
+    "Creators",
+    "Product"
+  ],
+  "excerpt": "LibraryThing is social cataloging for personal and institutional book collections, deep metadata, library Z39. Kahana is clubs and hubs around the books you actually read together.",
+  "defaultImageQuery": "LibraryThing Clubs and hubs around the books you actually read together.",
+  "featuredImage": "/assets/blog/kahana-vs-librarything.jpg",
+  "readingTime": 3,
+  "seoTitle": "Kahana vs LibraryThing | The Book You Assign Together",
+  "metaDescription": "LibraryThing is social cataloging for personal and institutional book collections, deep metadata, library Z39. Kahana is clubs and hubs around the books you…",
+  "focusKeyword": "LibraryThing alternative",
+  "landscapeRole": "ebook",
+  "coverage": {
+    "companyName": "LibraryThing",
+    "columns": [
+      {
+        "fragmentId": "ebook-reading",
+        "label": "Ebook",
+        "definition": "Yes if you can easily get and consume ebooks on the platform (free or paid) as a first-class product, open, buy, borrow, or read without hunting.",
+        "kahana": "yes",
+        "company": "yes"
+      },
+      {
+        "fragmentId": "short-form-video",
+        "label": "Short-form video",
+        "definition": "Yes if you can easily consume short-form video as a first-class surface (For You, Reels, Shorts).",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "long-form-video",
+        "label": "Long-form video",
+        "definition": "Yes if you can easily watch creator / UGC long-form video (or specialty long video) as a core surface. Course lectures belong under Courses. Hollywood catalogs belong under Series/Films.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "series-films-streaming",
+        "label": "Series/Films",
+        "definition": "Yes if you can easily watch series and films as an SVOD / catalog entertainment product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "courses-learning",
+        "label": "Courses",
+        "definition": "Yes if you can easily take or browse structured courses as a first-class product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "newsletters-written",
+        "label": "Newsletters",
+        "definition": "Yes if you can easily read or subscribe to newsletters / creator writing as a first-class product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "audio-listening",
+        "label": "Audio",
+        "definition": "Yes if you can easily listen to music, podcasts, or audiobooks as a first-class product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "creator-monetization",
+        "label": "Memberships",
+        "definition": "Yes if a creator or seller can accept payments from others and make money through the platform, checkout, fan subscriptions, tips, ads, shop, or creator funds. Not only a classic Patreon-style membership product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "messaging-community",
+        "label": "Community & Messaging",
+        "definition": "Yes if you can create or join a group, community, or club, including group chats, Groups, subreddits, community tabs, discussion boards, or community feeds. A one-off comment on a single video or listing is not the bar; a durable place for the group to talk is.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "online-storefront",
+        "label": "Storefronts",
+        "definition": "Yes if the product gives a creator a custom storefront or site that can take the place of building their own website (bio page, creator site, branded shop). Not a shop tab on someone else’s multi-seller marketplace.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "digital-marketplaces",
+        "label": "Marketplaces",
+        "definition": "Yes if a typical person can search and shop a catalog of offerings from many sellers, courses, books, digital goods, etc. Storefront software (Shopify, WooCommerce) is not a marketplace unless shoppers browse many sellers there.",
+        "kahana": "yes",
+        "company": "no"
+      }
+    ]
+  },
+  "researchInsights": {
+    "companyName": "LibraryThing",
+    "scaleFacts": [
+      "Launched August 29, 2005, two years before Goodreads.",
+      "As of February 2021: ≈2.6M users and 155M+ books cataloged, drawing data from Amazon and thousands of libraries via Z39.50.",
+      "Users catalog personal libraries, track editions, and share metadata; libraries use LibraryThing for Libraries™ to enrich OPACs with social data, tags, and recommendations.",
+      "Import from Amazon and 65M+ library records; add by search or ISBN barcode scan; high-res covers and cover editor."
+    ],
+    "strengths": [
+      {
+        "title": "Unmatched cataloging depth for serious readers",
+        "detail": "Designed for collectors, academics, and librarians who want precise records, far richer cataloging than most consumer reading apps."
+      },
+      {
+        "title": "Strong for obscure and academic titles",
+        "detail": "Draws from Library of Congress and many library catalogs; reliable for out-of-print, rare, and scholarly works."
+      },
+      {
+        "title": "Social layer around serious collections",
+        "detail": "Connects book lovers via shared libraries, tags, and forums; discover others with similar collections and tastes."
+      },
+      {
+        "title": "Lifetime pricing",
+        "detail": "≈ USD $25 lifetime membership remains attractive for heavy users who prefer one-time payment over subscriptions."
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Less modern UX and mobile experience",
+        "detail": "Interfaces feel older and more utilitarian compared to StoryGraph, Literal, or Fable."
+      },
+      {
+        "title": "Collection focus vs mainstream social",
+        "detail": "Optimized for cataloging, not modern feed-based social interactions, less appealing for casual social readers."
+      },
+      {
+        "title": "Smaller current user base than newer platforms",
+        "detail": "Still significant, but mindshare has declined relative to Goodreads and newer alternatives."
+      }
+    ],
+    "sources": [
+      "https://www.librarything.com/",
+      "https://en.wikipedia.org/wiki/LibraryThing",
+      "https://play.google.com/store/apps/details?id=com.librarything.librarything",
+      "https://about.proquest.com/en/products-services/library-thing-for-libraries/"
+    ]
+  },
+  "content": "<p class=\"lead\">Kahana is a library of curated hubs, Explore, Clubs, and optional Stripe. LibraryThing is social cataloging for personal and institutional book collections, deep metadata, library Z39. They overlap in places and diverge in others.</p>\n\n<h2>What each one is</h2>\n<p>Kahana is built around <a href=\"/help/hubs\">hubs</a> people can open, <a href=\"/help/explore\">Explore</a> so strangers can find them, <a href=\"/help/how-aura-works\">Aura</a> as scarce daily recognition, and Clubs so discussion outlives a feed. Selling stays optional.</p>\n<p>LibraryThing is a social cataloging platform for storing, organizing, and sharing book collections and metadata, used by individual readers, authors, libraries, and publishers. <a href=\"https://www.librarything.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Official site</a>.</p>\n\n<h2>Why this comparison</h2>\n<p>This article puts Kahana and LibraryThing side by side. It covers what each supports as a first-class product job, key features, and a few research notes so you have a clearer picture of what they are, how they compare, and what you can actually do on each one. It is not a teardown, and it is not a switch-tomorrow pitch.</p>\n\n",
+  "contentAfter": "<h2>What you can do on each</h2>\n<p>On Kahana you can publish a hub, list it on Explore, discuss it in a Club, grant Aura, and turn on a Stripe paywall when you are ready to charge.</p>\n<p>On LibraryThing you can use Ebook as a first-class product job. You need a dedicated reader, a giant store, or social tracking of everything you have ever read.</p>\n\n<h2>Using Kahana with LibraryThing</h2>\n<p>You can use both. LibraryThing keeps doing what it already does well. Kahana is another place to package the work, get discovered, and grow an audience.</p>\n<p>Keep the reader or tracker you already use. Put the Club pick, discussion questions, and related files on Kahana so the book is a shared library item, not only a private progress bar.</p>\n\n",
+  "landscapeCompanyId": "librarything"
+}

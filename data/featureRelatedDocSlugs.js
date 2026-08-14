@@ -7,6 +7,7 @@ export const FEATURE_RELATED_DOC_SLUGS = {
     'explore',
     'get-started-learners',
     'list-hub-on-explore',
+    'for-you-and-taste',
     'how-aura-works',
   ],
   hubs: [

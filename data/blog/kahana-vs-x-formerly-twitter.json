@@ -1,0 +1,159 @@
+{
+  "slug": "kahana-vs-x-formerly-twitter",
+  "title": "Kahana vs X (formerly Twitter): Living Room vs Library",
+  "date": "2026-03-30T14:20:00.000Z",
+  "authors": [
+    {
+      "name": "Adam Kershner",
+      "role": "Founder",
+      "bio": "",
+      "linkedinProfile": "https://www.linkedin.com/in/adam-kershner/",
+      "avatar": "/assets/headshots/adam_kershner.jpg"
+    }
+  ],
+  "category": [
+    "Comparisons",
+    "Creators",
+    "Product"
+  ],
+  "excerpt": "X (formerly Twitter) is global microblogging and social network for short posts, media, and live public conversation across news, entertainment, sports, and politics. Kahana is the shelf and reading list beside the chat, not another inbox.",
+  "defaultImageQuery": "X (formerly Twitter) The shelf and reading list beside the chat, not another inbox.",
+  "featuredImage": "/assets/blog/kahana-vs-x-formerly-twitter.jpg",
+  "readingTime": 3,
+  "seoTitle": "Kahana vs X (formerly Twitter) | Living Room vs Library",
+  "metaDescription": "X (formerly Twitter) is global microblogging and social network for short posts, media, and live public conversation across news, entertainment, sports, and…",
+  "focusKeyword": "X (formerly Twitter) alternative",
+  "landscapeRole": "community-messaging",
+  "coverage": {
+    "companyName": "X (formerly Twitter)",
+    "columns": [
+      {
+        "fragmentId": "ebook-reading",
+        "label": "Ebook",
+        "definition": "Yes if you can easily get and consume ebooks on the platform (free or paid) as a first-class product, open, buy, borrow, or read without hunting.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "short-form-video",
+        "label": "Short-form video",
+        "definition": "Yes if you can easily consume short-form video as a first-class surface (For You, Reels, Shorts).",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "long-form-video",
+        "label": "Long-form video",
+        "definition": "Yes if you can easily watch creator / UGC long-form video (or specialty long video) as a core surface. Course lectures belong under Courses. Hollywood catalogs belong under Series/Films.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "series-films-streaming",
+        "label": "Series/Films",
+        "definition": "Yes if you can easily watch series and films as an SVOD / catalog entertainment product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "courses-learning",
+        "label": "Courses",
+        "definition": "Yes if you can easily take or browse structured courses as a first-class product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "newsletters-written",
+        "label": "Newsletters",
+        "definition": "Yes if you can easily read or subscribe to newsletters / creator writing as a first-class product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "audio-listening",
+        "label": "Audio",
+        "definition": "Yes if you can easily listen to music, podcasts, or audiobooks as a first-class product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "creator-monetization",
+        "label": "Memberships",
+        "definition": "Yes if a creator or seller can accept payments from others and make money through the platform, checkout, fan subscriptions, tips, ads, shop, or creator funds. Not only a classic Patreon-style membership product.",
+        "kahana": "yes",
+        "company": "yes"
+      },
+      {
+        "fragmentId": "messaging-community",
+        "label": "Community & Messaging",
+        "definition": "Yes if you can create or join a group, community, or club, including group chats, Groups, subreddits, community tabs, discussion boards, or community feeds. A one-off comment on a single video or listing is not the bar; a durable place for the group to talk is.",
+        "kahana": "yes",
+        "company": "yes"
+      },
+      {
+        "fragmentId": "online-storefront",
+        "label": "Storefronts",
+        "definition": "Yes if the product gives a creator a custom storefront or site that can take the place of building their own website (bio page, creator site, branded shop). Not a shop tab on someone else’s multi-seller marketplace.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "digital-marketplaces",
+        "label": "Marketplaces",
+        "definition": "Yes if a typical person can search and shop a catalog of offerings from many sellers, courses, books, digital goods, etc. Storefront software (Shopify, WooCommerce) is not a marketplace unless shoppers browse many sellers there.",
+        "kahana": "yes",
+        "company": "no"
+      }
+    ]
+  },
+  "researchInsights": {
+    "companyName": "X (formerly Twitter)",
+    "scaleFacts": [
+      "Founded March 21, 2006 in San Francisco by Jack Dorsey, Noah Glass, Biz Stone, and Evan Williams.",
+      "Acquired by Elon Musk in October 2022 for USD 44B; merged into X Corp. April 2023; rebranded Twitter → X on July 23, 2023.",
+      "Microblogging with short posts (historically 140, now 280 characters) plus images, video, and audio, among the world’s largest social platforms and most-visited sites for real-time news and culture.",
+      "Monetizes via promoted ads, follower ads, and takeover ads (trend and timeline); operates globally across major regions."
+    ],
+    "strengths": [
+      {
+        "title": "Real-time public conversation",
+        "detail": "Strong for breaking news, live events (sports, politics), and commentary, posts spread quickly via reposts and quotes."
+      },
+      {
+        "title": "Global reach and influence",
+        "detail": "Used by journalists, politicians, brands, and creators; posts can shape discourse and media narratives."
+      },
+      {
+        "title": "Simple, text-first format",
+        "detail": "Low friction to publish short posts and threads, easy for creators and communities to share updates."
+      },
+      {
+        "title": "Advertising and brand tools",
+        "detail": "Promoted posts, follower campaigns, and takeovers offer high-visibility placements for brands."
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Content risk and moderation challenges",
+        "detail": "Open conversation brings spam, harassment, misinformation, and polarization; moderation policy and enforcement remain contentious."
+      },
+      {
+        "title": "Algorithm opacity and engagement incentives",
+        "detail": "Engagement-driven ranking can favor outrage and sensational content over nuance."
+      },
+      {
+        "title": "Platform volatility and policy changes",
+        "detail": "Frequent ownership and product changes raise platform risk and uncertainty for creators and brands."
+      }
+    ],
+    "sources": [
+      "https://en.wikipedia.org/wiki/X_(social_network)",
+      "https://www.britannica.com/money/Twitter",
+      "https://about.x.com/en",
+      "https://x.com/"
+    ]
+  },
+  "content": "<p class=\"lead\">Kahana is a library of curated hubs, Explore, Clubs, and optional Stripe. X (formerly Twitter) is global microblogging and social network for short posts, media, and live public conversation across news, entertainment, sports, and politics. They overlap in places and diverge in others.</p>\n\n<h2>What each one is</h2>\n<p>Kahana is built around <a href=\"/help/hubs\">hubs</a> people can open, <a href=\"/help/explore\">Explore</a> so strangers can find them, <a href=\"/help/how-aura-works\">Aura</a> as scarce daily recognition, and Clubs so discussion outlives a feed. Selling stays optional.</p>\n<p>X (formerly Twitter) is a global microblogging and social networking platform where people share short posts, media, and live commentary, serving the public conversation across news, entertainment, sports, and politics. <a href=\"https://x.com\" target=\"_blank\" rel=\"noopener noreferrer\">Official site</a>.</p>\n\n<h2>Why this comparison</h2>\n<p>This article puts Kahana and X (formerly Twitter) side by side. It covers what each supports as a first-class product job, key features, and a few research notes so you have a clearer picture of what they are, how they compare, and what you can actually do on each one. It is not a teardown, and it is not a switch-tomorrow pitch.</p>\n\n",
+  "contentAfter": "<h2>What you can do on each</h2>\n<p>On Kahana you can publish a hub, list it on Explore, discuss it in a Club, grant Aura, and turn on a Stripe paywall when you are ready to charge.</p>\n<p>On X (formerly Twitter) you can use Memberships and Community &amp; Messaging as first-class product jobs. The job is hanging out, announcements, and live conversation, not packaging knowledge into something strangers can browse later.</p>\n\n<h2>Using Kahana with X (formerly Twitter)</h2>\n<p>You can use both. X (formerly Twitter) keeps doing what it already does well. Kahana is another place to package the work, get discovered, and grow an audience.</p>\n<p>Keep live conversation on X (formerly Twitter). Pin a Kahana hub or Club link in a channel, discuss live there, and assign the next ebook, video, or course from Kahana so the syllabus is not buried in the thread.</p>\n\n",
+  "landscapeCompanyId": "x"
+}

@@ -13,6 +13,7 @@ import TrainingDoc from '../../components/docs/TrainingDoc';
 import AssistantThemesDoc from '../../components/docs/AssistantThemesDoc';
 import DeleteAccountDoc from '../../components/docs/DeleteAccountDoc';
 import { docsConfig } from '../../config/docsConfig';
+import { HELP_RELATED_DOC_SLUGS } from '../../data/helpRelatedDocSlugs';
 import fs from 'fs';
 import path from 'path';
 
@@ -61,10 +62,17 @@ export async function getStaticProps({ params }) {
       };
     }
 
-    // Get related docs from the same category
-    const relatedDocs = allDocs
-      .filter(d => d.category === doc.category && d.slug !== doc.slug)
-      .slice(0, docsConfig.defaults.relatedDocsCount);
+    const mappedRelated = (HELP_RELATED_DOC_SLUGS[doc.slug] || [])
+      .map((slug) => allDocs.find((d) => d.slug === slug))
+      .filter(Boolean);
+    const categoryRelated = allDocs.filter(
+      (d) => d.category === doc.category && d.slug !== doc.slug,
+    );
+    const seen = new Set(mappedRelated.map((d) => d.slug));
+    const relatedDocs = [
+      ...mappedRelated,
+      ...categoryRelated.filter((d) => !seen.has(d.slug)),
+    ].slice(0, docsConfig.defaults.relatedDocsCount);
 
     return {
       props: {
@@ -166,7 +174,13 @@ export default function HelpArticlePage({ doc, relatedDocs }) {
           </header>
 
           {/* Content */}
-          {doc.slug === 'delete-my-account' ? (
+          {doc.content ? (
+            <div
+              className="prose prose-lg max-w-none no-underline"
+              dangerouslySetInnerHTML={{ __html: doc.content }}
+              suppressHydrationWarning={true}
+            />
+          ) : doc.slug === 'delete-my-account' ? (
             <DeleteAccountDoc />
           ) : doc.slug === 'assistant-themes' ? (
             <AssistantThemesDoc gallery={doc.gallery || []} />

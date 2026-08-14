@@ -1,0 +1,12 @@
+{
+  "title": "Messages and privacy",
+  "description": "Direct messages on Kahana: allow messages on your profile, Off / Open / Followers privacy, and the founder welcome thread.",
+  "slug": "messages-and-privacy",
+  "category": "community",
+  "product": "kahana",
+  "date": "2026-08-14",
+  "authors": [
+    "Adam Kershner"
+  ],
+  "content": "<p class=\"lead\">Messages let people write you from your profile. They are off until you allow them. You choose who can start a conversation.</p>\n\n<p><strong>Primary action:</strong> <a href=\"https://app.kahana.io/messages\" target=\"_blank\" rel=\"noopener noreferrer\">Open Messages</a> \u00b7 Settings: <a href=\"https://app.kahana.io/settings/communication\" target=\"_blank\" rel=\"noopener noreferrer\">Communication</a></p>\n\n<h2>Allow messages to you</h2>\n<p>Turn on <strong>Allow messages to you</strong> in Messages or Communication settings. A Message button appears on your profile so people who discover you can write to you. You also need this on to send.</p>\n\n<h2>Who can message you</h2>\n<table>\n<thead>\n<tr><th>Mode</th><th>Who can start a DM</th></tr>\n</thead>\n<tbody>\n<tr><td>Off</td><td>Nobody</td></tr>\n<tr><td>Open</td><td>Anyone</td></tr>\n<tr><td>Followers only</td><td>People who follow you</td></tr>\n</tbody>\n</table>\n<p>There is no separate \u201cmessage request\u201d inbox. Choose Open or Followers if you want inbound mail.</p>\n\n<h2>Welcome from Adam</h2>\n<p>New accounts may see an automatic welcome thread from Adam (the founder). It is not a live chat. You can\u2019t reply there. Use <a href=\"https://app.kahana.io/support\" target=\"_blank\" rel=\"noopener noreferrer\">Support</a> if you need a human.</p>\n\n<h2>What\u2019s next</h2>\n<ul>\n<li><a href=\"/help/notifications\">Notifications</a></li>\n<li><a href=\"/help/profile-and-sharing\">Your profile &amp; sharing</a></li>\n<li><a href=\"/help/clubs\">Clubs</a></li>\n</ul>\n\n<p><a href=\"https://app.kahana.io/messages\" target=\"_blank\" rel=\"noopener noreferrer\"><strong>Open Messages \u2192</strong></a></p>\n"
+}

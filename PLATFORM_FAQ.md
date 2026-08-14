@@ -7,9 +7,9 @@
 > **On-page FAQ data:** [`data/platformFaq.js`](data/platformFaq.js)  
 > **Primary product URL:** https://app.kahana.io  
 > **Company:** https://about.kahana.io · Support tickets in-app at `/support`  
-> **Last updated:** 2026-07-15  
+> **Last updated:** 2026-08-14  
 > **Guardrail:** Do not invent metrics. Mark `[FILL IN]` where numbers are still internal.  
-> **Voice:** Short, friendly sentences. Lead with the plain answer. Contribute / Explore first; paid access optional. No em dashes in on-page copy.
+> **Voice:** Short, friendly sentences. Lead with the plain answer. Contribute / Library first; paid access optional. No em dashes in on-page copy.
 
 ---
 
@@ -29,7 +29,7 @@
 
 Kahana gives you one place to share what you know, help others learn, and get found.
 
-If you contribute, you publish hubs of digital artifacts (files, videos, images, PDFs, documents, links, and more). You can list them on Explore, invite collaborators, earn Aura when people value your work, and turn on paid access later if you want.
+If you contribute, you publish hubs of digital artifacts (files, videos, images, PDFs, documents, links, and more). You can list them on Library, invite collaborators, earn Aura when people value your work, and turn on paid access later if you want.
 
 If you are here to learn, you browse careful, curated hubs in one catalog. Save what matters. Skip chasing scattered links or DMs.
 
@@ -49,13 +49,13 @@ It depends on whether you are learning or contributing.
 
 For learners: search by Aura to find work the community values. Save hubs to collections. Follow contributors you respect. Pin or bookmark Kahana in your browser so you are one click away. Help other learners by carefully giving Aura to contributions that deserve it.
 
-For contributors: share what you know. Don't overthink the first publish. Use clear hub names, filenames, tags, and descriptions so people can find your work. List public hubs on Explore. Check analytics for views, saves, Aura, and purchases, then keep improving. Turn on paid access later if you want.
+For contributors: share what you know. Don't overthink the first publish. Use clear hub names, filenames, tags, and descriptions so people can find your work. List public hubs on Library. Check analytics for views, saves, Aura, and purchases, then keep improving. Turn on paid access later if you want.
 
 ### What is Kahana?
 
 Kahana is a library for curated digital knowledge.
 
-You contribute hubs of digital artifacts (files, videos, images, PDFs, documents, links, and more). People can find them on Explore. You earn Aura when someone values your work. Learners browse and learn in one place.
+You contribute hubs of digital artifacts (files, videos, images, PDFs, documents, links, and more). People can find them on Library. You earn Aura when someone values your work. Learners browse and learn in one place.
 
 Paid access is optional. We added it later, after people asked to earn from their best hubs.
 
@@ -67,7 +67,7 @@ Paid access is optional. We added it later, after people asked to earn from thei
 
 Go to [app.kahana.io](https://app.kahana.io).
 
-Want to learn? Open **Explore**. Want to share? Sign up, contribute a hub, and list it when you are ready. You can turn on paid access later if you want.
+Want to learn? Open **Library**. Want to share? Sign up, contribute a hub, and list it when you are ready. You can turn on paid access later if you want.
 
 ### Where is company / About information?
 
@@ -79,13 +79,13 @@ In the app, open **About** from the guest header. Or go to **Settings & support*
 
 Gumroad is built around selling. Linktree is light on finding hubs. Notion and Drive are great for private work, but they are not a public library with community signal.
 
-Kahana starts with contribution and Explore, plus Aura. Optional earning came later because contributors asked for it.
+Kahana starts with contribution and Library, plus Aura. Optional earning came later because contributors asked for it.
 
 | Tool | Gap Kahana closes |
 |------|-------------------|
 | Gumroad / checkout links | Adds a **browseable marketplace** and a hub as the product |
 | Stan / Linktree | Adds **category discovery** and a richer product container |
-| Notion / Drive | Adds **commerce and public Explore** as core, not an afterthought |
+| Notion / Drive | Adds **commerce and public Library** as core, not an afterthought |
 
 ### Can I earn money when people access my hubs?
 
@@ -103,19 +103,19 @@ When you are ready, connect Stripe, set a price, and charge for access. Sharing 
 
 A hub is a curated place for digital artifacts: files, videos, images, PDFs, documents, links, and more. You can invite collaborators if you want.
 
-Keep it private, make it public, list it on Explore, and charge for access later if you choose.
+Keep it private, make it public, list it on Library, and charge for access later if you choose.
 
 ### Can I upload public-domain ebooks or openly licensed files?
 
-Yes, when the work is public domain or under a license that allows redistribution on platforms like Kahana. Include any required attribution. Before a hub is unlisted, listed on Explore, or monetized, you must confirm you have the right to share (and, if monetizing, sell access to) all content in it.
+Yes, when the work is public domain or under a license that allows redistribution on platforms like Kahana. Include any required attribution. Before a hub is unlisted, listed on Library, or monetized, you must confirm you have the right to share (and, if monetizing, sell access to) all content in it.
 
 Finding a file online is not permission. Full guide: [/help/content-rights](/help/content-rights). Binding rules: Terms §8 (User Content).
 
 ### How do I turn on paid access for a hub?
 
-Contribute a hub and add your content. Make it public and list it on Explore when it is ready.
+Contribute a hub and add your content. Make it public and list it on Library when it is ready.
 
-To earn from access, connect Stripe, turn on monetization, and set a one-time or monthly price. Then share your link, or let people find you on Explore.
+To earn from access, connect Stripe, turn on monetization, and set a one-time or monthly price. Then share your link, or let people find you on Library.
 
 ### How much does Kahana cost for creators?
 
@@ -137,7 +137,7 @@ Stripe also charges its usual processing fees (often about 2.9% + $0.30 for US c
 
 Only if you want to charge for hub access.
 
-Browsing, contributing free hubs, and finding work on Explore do not need Stripe.
+Browsing, contributing free hubs, and finding work on Library do not need Stripe.
 
 ### Can I charge a subscription?
 
@@ -149,7 +149,7 @@ Yes. Invite collaborators and give them roles. Unlimited collaborators are inclu
 
 ### How do I get discovered?
 
-List a public hub on **Explore**. Keep your creator profile up to date. Share your profile or hub link.
+List a public hub on **Library**. Keep your creator profile up to date. Share your profile or hub link.
 
 You can also earn **Aura** when people endorse your hub.
 
@@ -161,7 +161,7 @@ It helps buyers trust who you are. It does not guarantee better ranking.
 
 ### Is adult content allowed?
 
-Yes, you can flag a hub as adult content. Those hubs are filtered on Explore.
+Yes, you can flag a hub as adult content. Those hubs are filtered on Library.
 
 Buyers must be logged in and confirm they are 18+ with their date of birth before they can open them.
 
@@ -175,13 +175,13 @@ When permissions allow, you can duplicate or fork a hub’s structure. What you 
 
 ### How do I buy a digital product on Kahana?
 
-Browse **Explore** or a creator’s profile, open a hub, and check out on the paywall.
+Browse **Library** or a creator’s profile, open a hub, and check out on the paywall.
 
 When payment goes through, the hub unlocks in your account.
 
 ### Can I browse without an account?
 
-Yes, for most public hubs on Explore. Adult content and some purchases need you to log in.
+Yes, for most public hubs on Library. Adult content and some purchases need you to log in.
 
 ### What do I get after I pay?
 
@@ -202,7 +202,7 @@ Checkout runs on **Stripe**. Kahana does not store your full card number.
 
 ### How do I find free vs paid hubs?
 
-On Explore, filter by free or paid, price range, or category. You can also search.
+On Library, filter by free or paid, price range, or category. You can also search.
 
 ### What is Aura? Do I pay for it?
 
@@ -220,7 +220,7 @@ Aura is how Kahana promotes quality. You automatically have up to **5 Aura per d
 
 Aura is not money and not crypto. You can see who gave it. Because your Aura is scarce, you give it carefully. That helps the best work rise. File Aura also lifts the hub by +1 and surfaces noteworthy files in search and ranking; hub Aura does not roll down to files.
 
-You cannot give Aura to your own hubs or files. Counts appear on Explore cards and file surfaces. Full details: [about.kahana.io/aura](https://about.kahana.io/aura).
+You cannot give Aura to your own hubs or files. Counts appear on Library cards and file surfaces. Full details: [about.kahana.io/aura](https://about.kahana.io/aura).
 
 ### How is Aura different from star ratings or written reviews?
 
@@ -242,7 +242,7 @@ You control it. If you change your mind later, you can remove Aura you gave.
 
 ### Do I need to create a hub to give Aura?
 
-No. Anyone with an account can give Aura. Creating a hub is how you add knowledge to the library. It is not required to endorse hubs or files you find on Explore.
+No. Anyone with an account can give Aura. Creating a hub is how you add knowledge to the library. It is not required to endorse hubs or files you find on Library.
 
 ### Can I give Aura to a person or creator?
 
@@ -250,7 +250,7 @@ No. You cannot give Aura directly to profiles, hub owners, or other users as peo
 
 ### How do I create and contribute on Kahana?
 
-Create a hub, add digital artifacts (files, videos, images, PDFs, documents, links, and more), then optimize with clear names, tags, and a description. List it on Explore when you are ready.
+Create a hub, add digital artifacts (files, videos, images, PDFs, documents, links, and more), then optimize with clear names, tags, and a description. List it on Library when you are ready.
 
 You can invite editors and admins to collaborate. Turn on paid access later if you want.
 
@@ -264,25 +264,25 @@ No. Aura comes from the community. Kahana may still curate or moderate listings 
 
 ---
 
-## Explore and discovery
+## Library and discovery
 
-### What is Explore?
+### What is Library?
 
-Explore (`/explore`) is the public marketplace.
+Library (`/library`) is the public marketplace.
 
 Browse hubs or creators. Search and filter by category, price, free or paid, and more.
 
-### Do I need to pay to list on Explore?
+### Do I need to pay to list on Library?
 
 No separate listing fee. You just need to meet the public listing requirements.
 
 Platform and Stripe fees only apply when someone buys a paid hub. Free hubs can still appear when listed.
 
-### Why isn’t my hub on Explore?
+### Why isn’t my hub on Library?
 
 Often the hub is not public yet, not listed yet, missing listing details, or filtered by visibility or adult settings. Sometimes there is a short delay while it indexes.
 
-Check hub settings for Explore readiness.
+Check hub settings for Library readiness.
 
 ---
 
@@ -357,7 +357,7 @@ The usual path is linking your Kahana profile or hub URL. Deeper embeds and whit
 
 ### One sentence for media
 
-Kahana is the marketplace for curated digital products: creators publish hubs, get found on Explore, get paid with Stripe, and earn Aura when the community endorses their work.
+Kahana is the marketplace for curated digital products: creators publish hubs, get found on Library, get paid with Stripe, and earn Aura when the community endorses their work.
 
 ### How do I pitch Kahana vs “another creator tool”?
 
@@ -388,7 +388,7 @@ Lead with **marketplace + discovery + payments in one stack**, then Aura as cult
 
 | Date | Note |
 |------|------|
-| 2026-07-14 | Initial FAQ pack expanded from platform FAQ seed + Aura / Explore / billing Q&As for website and Cyndee review. |
+| 2026-07-14 | Initial FAQ pack expanded from platform FAQ seed + Aura / Library / billing Q&As for website and Cyndee review. |
 | 2026-07-15 | Friendly language pass: shorter sentences, clearer voice; synced with `data/platformFaq.js` on-page answers. |
 | 2026-07-15 | Aura permanence, hubs-only, Create-a-hub path; link to `/aura` explainer. |
 | 2026-07-18 | Aura targets: files + hubs; one-way file→hub rollup; not people/profiles. |

@@ -1,0 +1,12 @@
+{
+  "title": "Import from Internet Archive",
+  "description": "Paste an Archive.org details or download URL. Kahana fetches the PDF, suggests tags and rights, and adds it as an ebook in your hub.",
+  "slug": "import-from-internet-archive",
+  "category": "knowledge",
+  "product": "kahana",
+  "date": "2026-08-14",
+  "authors": [
+    "Adam Kershner"
+  ],
+  "content": "<p class=\"lead\">Import an ebook PDF from archive.org into a hub you own. Kahana fetches the file on the server, suggests tags and a rights status, and adds it as an artifact.</p>\n\n<p><strong>Primary action:</strong> Open a hub \u2192 Add content \u2192 Import from Internet Archive</p>\n\n<h2>How to import</h2>\n<ol>\n<li>Open a hub you can edit.</li>\n<li>Choose <strong>Import from Internet Archive</strong>.</li>\n<li>Paste a details URL (for example <code>https://archive.org/details/\u2026</code>) or a download link.</li>\n<li>Look up the item. Confirm title, cover, PDF size, tags, and rights.</li>\n<li>Confirm you have the right to share, then import.</li>\n</ol>\n<p>If that Archive.org item is already in the hub, the dialog tells you instead of duplicating it.</p>\n\n<h2>Rights hints</h2>\n<p>The preview may hint that an item looks <strong>likely public domain</strong>, <strong>uncertain</strong>, or <strong>looks copyrighted</strong>. Treat hints as help, not legal advice. You still attest before import.</p>\n<ul>\n<li>Prefer works you know you may redistribute (public domain or a license that allows it).</li>\n<li>Include attribution when a license requires it.</li>\n<li>Do not import something that looks copyrighted unless you have a clear right to share it on Kahana.</li>\n</ul>\n<p>Full rules: <a href=\"/help/content-rights\">Content rights</a>.</p>\n\n<h2>Plan limits</h2>\n<p>Imported PDFs count as uploads and must fit your plan\u2019s file-size cap (Free: 5 MB; Growth: up to 5 GB). If the PDF is too large, pick a smaller edition or upgrade.</p>\n\n<h2>After import</h2>\n<ul>\n<li>The PDF opens in the hub reader.</li>\n<li>To help people find the hub, complete listing and turn on Visible on Library. Guide: <a href=\"/help/list-hub-on-explore\">List a hub on Library</a>.</li>\n</ul>\n\n<h2>What\u2019s next</h2>\n<ul>\n<li><a href=\"/help/adding-files-and-embeds\">Adding files and embeds</a></li>\n<li><a href=\"/help/hubs\">Hubs</a></li>\n</ul>\n"
+}

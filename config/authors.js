@@ -5,8 +5,8 @@ const DEFAULT_AVATAR =
 const authors = {
   "Adam Kershner": {
     name: "Adam Kershner",
-    role: "CEO",
-    bio: "I'm the CEO of Kahana, bringing a unique perspective from my management consulting experience at Clarkston Consulting and biomedical engineering background from Duke University. I'm focused on making the future of work more elegant through innovative technology solutions that prioritize user well-being and productivity.",
+    role: "Founder",
+    bio: "",
     linkedinProfile: "https://www.linkedin.com/in/adam-kershner/",
     avatar: "/assets/headshots/adam_kershner.jpg",
   },

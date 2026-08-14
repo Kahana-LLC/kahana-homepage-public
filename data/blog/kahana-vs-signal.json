@@ -1,0 +1,163 @@
+{
+  "slug": "kahana-vs-signal",
+  "title": "Kahana vs Signal: Keep the Chat, Add the Shelf",
+  "date": "2026-05-01T13:53:00.000Z",
+  "authors": [
+    {
+      "name": "Adam Kershner",
+      "role": "Founder",
+      "bio": "",
+      "linkedinProfile": "https://www.linkedin.com/in/adam-kershner/",
+      "avatar": "/assets/headshots/adam_kershner.jpg"
+    }
+  ],
+  "category": [
+    "Comparisons",
+    "Creators",
+    "Product"
+  ],
+  "excerpt": "Signal is real-time chat, groups, and community velocity. Kahana is the shelf and reading list beside the chat, not another inbox.",
+  "defaultImageQuery": "Signal The shelf and reading list beside the chat, not another inbox.",
+  "featuredImage": "/assets/blog/kahana-vs-signal.jpg",
+  "readingTime": 3,
+  "seoTitle": "Kahana vs Signal | Keep the Chat, Add the Shelf",
+  "metaDescription": "Signal is real-time chat, groups, and community velocity. Kahana is the shelf and reading list beside the chat, not another inbox.",
+  "focusKeyword": "Signal alternative",
+  "landscapeRole": "community-messaging",
+  "coverage": {
+    "companyName": "Signal",
+    "columns": [
+      {
+        "fragmentId": "ebook-reading",
+        "label": "Ebook",
+        "definition": "Yes if you can easily get and consume ebooks on the platform (free or paid) as a first-class product, open, buy, borrow, or read without hunting.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "short-form-video",
+        "label": "Short-form video",
+        "definition": "Yes if you can easily consume short-form video as a first-class surface (For You, Reels, Shorts).",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "long-form-video",
+        "label": "Long-form video",
+        "definition": "Yes if you can easily watch creator / UGC long-form video (or specialty long video) as a core surface. Course lectures belong under Courses. Hollywood catalogs belong under Series/Films.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "series-films-streaming",
+        "label": "Series/Films",
+        "definition": "Yes if you can easily watch series and films as an SVOD / catalog entertainment product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "courses-learning",
+        "label": "Courses",
+        "definition": "Yes if you can easily take or browse structured courses as a first-class product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "newsletters-written",
+        "label": "Newsletters",
+        "definition": "Yes if you can easily read or subscribe to newsletters / creator writing as a first-class product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "audio-listening",
+        "label": "Audio",
+        "definition": "Yes if you can easily listen to music, podcasts, or audiobooks as a first-class product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "creator-monetization",
+        "label": "Memberships",
+        "definition": "Yes if a creator or seller can accept payments from others and make money through the platform, checkout, fan subscriptions, tips, ads, shop, or creator funds. Not only a classic Patreon-style membership product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "messaging-community",
+        "label": "Community & Messaging",
+        "definition": "Yes if you can create or join a group, community, or club, including group chats, Groups, subreddits, community tabs, discussion boards, or community feeds. A one-off comment on a single video or listing is not the bar; a durable place for the group to talk is.",
+        "kahana": "yes",
+        "company": "yes"
+      },
+      {
+        "fragmentId": "online-storefront",
+        "label": "Storefronts",
+        "definition": "Yes if the product gives a creator a custom storefront or site that can take the place of building their own website (bio page, creator site, branded shop). Not a shop tab on someone else’s multi-seller marketplace.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "digital-marketplaces",
+        "label": "Marketplaces",
+        "definition": "Yes if a typical person can search and shop a catalog of offerings from many sellers, courses, books, digital goods, etc. Storefront software (Shopify, WooCommerce) is not a marketplace unless shoppers browse many sellers there.",
+        "kahana": "yes",
+        "company": "no"
+      }
+    ]
+  },
+  "researchInsights": {
+    "companyName": "Signal",
+    "scaleFacts": [
+      "Free E2EE messaging and calls; app and Signal Protocol are open source (Signal Foundation nonprofit).",
+      "Co-founded by Moxie Marlinspike; Brian Acton donated ~USD 50M to start the foundation. Operating needs estimated ≈USD 50M/year by 2025 (~USD 14M infrastructure today).",
+      "Voice/video outbound bandwidth ~20 petabytes/year (~USD 1.7M/year bandwidth for calls alone).",
+      "Tens of millions of users; widely adopted by privacy-conscious individuals, journalists, and activists."
+    ],
+    "strengths": [
+      {
+        "title": "Strong privacy and security guarantees",
+        "detail": "E2EE by default; foundation states it has no data to sell, no advertisers, and no shareholders."
+      },
+      {
+        "title": "Open-source protocol and app",
+        "detail": "Public verification of code; Signal Protocol underpins encryption in other major apps as well."
+      },
+      {
+        "title": "Simple, free, cross-platform UX",
+        "detail": "Secure messaging plus voice and video calls; no ads; limited distractions."
+      },
+      {
+        "title": "Reliable messaging over data",
+        "detail": "Often more reliable than SMS, with clear message status and strong media support."
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Phone-number identity and onboarding friction",
+        "detail": "Requires phone number registration, harder for full pseudonymity and multi-device flows."
+      },
+      {
+        "title": "Limited social discovery and communities",
+        "detail": "Great for private groups and 1:1; lacks feeds, discovery, and community management vs Discord or Facebook Groups."
+      },
+      {
+        "title": "Funding and sustainability pressures",
+        "detail": "Nonprofit model (~USD 50M/year need) depends on donations and grants rather than commercial revenue."
+      },
+      {
+        "title": "Smaller user base vs WhatsApp/Telegram",
+        "detail": "Harder to reach large communities when not everyone has Signal installed."
+      }
+    ],
+    "sources": [
+      "https://signal.org/",
+      "https://signal.org/blog/signal-is-expensive/",
+      "https://proton.me/blog/is-signal-safe",
+      "https://www.consumerreports.org/electronics-computers/privacy/how-to-use-signal-app-secure-messaging-a4159663583/"
+    ]
+  },
+  "content": "<p class=\"lead\">Kahana is a library of curated hubs, Explore, Clubs, and optional Stripe. Signal is real-time chat, groups, and community velocity. They overlap in places and diverge in others.</p>\n\n<h2>What each one is</h2>\n<p>Kahana is built around <a href=\"/help/hubs\">hubs</a> people can open, <a href=\"/help/explore\">Explore</a> so strangers can find them, <a href=\"/help/how-aura-works\">Aura</a> as scarce daily recognition, and Clubs so discussion outlives a feed. Selling stays optional.</p>\n<p>Signal is a free, open-source, end-to-end encrypted messaging app for private messaging and calls, developed by the nonprofit Signal Foundation with no ads and no data to sell.</p>\n\n<h2>Why this comparison</h2>\n<p>This article puts Kahana and Signal side by side. It covers what each supports as a first-class product job, key features, and a few research notes so you have a clearer picture of what they are, how they compare, and what you can actually do on each one. It is not a teardown, and it is not a switch-tomorrow pitch.</p>\n\n",
+  "contentAfter": "<h2>What you can do on each</h2>\n<p>On Kahana you can publish a hub, list it on Explore, discuss it in a Club, grant Aura, and turn on a Stripe paywall when you are ready to charge.</p>\n<p>On Signal you can use Community &amp; Messaging as a first-class product job. The job is hanging out, announcements, and live conversation, not packaging knowledge into something strangers can browse later.</p>\n\n<h2>Using Kahana with Signal</h2>\n<p>You can use both. Signal keeps doing what it already does well. Kahana is another place to package the work, get discovered, and grow an audience.</p>\n<p>Keep live conversation on Signal. Pin a Kahana hub or Club link in a channel, discuss live there, and assign the next ebook, video, or course from Kahana so the syllabus is not buried in the thread.</p>\n\n",
+  "landscapeCompanyId": "signal"
+}

@@ -1,0 +1,158 @@
+{
+  "slug": "kahana-vs-heartbeat",
+  "title": "Kahana vs Heartbeat: Keep the Chat, Add the Shelf",
+  "date": "2026-06-25T17:45:00.000Z",
+  "authors": [
+    {
+      "name": "Adam Kershner",
+      "role": "Founder",
+      "bio": "",
+      "linkedinProfile": "https://www.linkedin.com/in/adam-kershner/",
+      "avatar": "/assets/headshots/adam_kershner.jpg"
+    }
+  ],
+  "category": [
+    "Comparisons",
+    "Creators",
+    "Product"
+  ],
+  "excerpt": "Heartbeat is community platform for cohort-based and branded online communities, chat, events, and memberships. Kahana is the shelf and reading list beside the chat, not another inbox.",
+  "defaultImageQuery": "Heartbeat The shelf and reading list beside the chat, not another inbox.",
+  "featuredImage": "/assets/blog/kahana-vs-heartbeat.jpg",
+  "readingTime": 3,
+  "seoTitle": "Kahana vs Heartbeat | Keep the Chat, Add the Shelf",
+  "metaDescription": "Heartbeat is community platform for cohort-based and branded online communities, chat, events, and memberships. Kahana is the shelf and reading list beside…",
+  "focusKeyword": "Heartbeat alternative",
+  "landscapeRole": "community-messaging",
+  "coverage": {
+    "companyName": "Heartbeat",
+    "columns": [
+      {
+        "fragmentId": "ebook-reading",
+        "label": "Ebook",
+        "definition": "Yes if you can easily get and consume ebooks on the platform (free or paid) as a first-class product, open, buy, borrow, or read without hunting.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "short-form-video",
+        "label": "Short-form video",
+        "definition": "Yes if you can easily consume short-form video as a first-class surface (For You, Reels, Shorts).",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "long-form-video",
+        "label": "Long-form video",
+        "definition": "Yes if you can easily watch creator / UGC long-form video (or specialty long video) as a core surface. Course lectures belong under Courses. Hollywood catalogs belong under Series/Films.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "series-films-streaming",
+        "label": "Series/Films",
+        "definition": "Yes if you can easily watch series and films as an SVOD / catalog entertainment product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "courses-learning",
+        "label": "Courses",
+        "definition": "Yes if you can easily take or browse structured courses as a first-class product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "newsletters-written",
+        "label": "Newsletters",
+        "definition": "Yes if you can easily read or subscribe to newsletters / creator writing as a first-class product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "audio-listening",
+        "label": "Audio",
+        "definition": "Yes if you can easily listen to music, podcasts, or audiobooks as a first-class product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "creator-monetization",
+        "label": "Memberships",
+        "definition": "Yes if a creator or seller can accept payments from others and make money through the platform, checkout, fan subscriptions, tips, ads, shop, or creator funds. Not only a classic Patreon-style membership product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "messaging-community",
+        "label": "Community & Messaging",
+        "definition": "Yes if you can create or join a group, community, or club, including group chats, Groups, subreddits, community tabs, discussion boards, or community feeds. A one-off comment on a single video or listing is not the bar; a durable place for the group to talk is.",
+        "kahana": "yes",
+        "company": "yes"
+      },
+      {
+        "fragmentId": "online-storefront",
+        "label": "Storefronts",
+        "definition": "Yes if the product gives a creator a custom storefront or site that can take the place of building their own website (bio page, creator site, branded shop). Not a shop tab on someone else’s multi-seller marketplace.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "digital-marketplaces",
+        "label": "Marketplaces",
+        "definition": "Yes if a typical person can search and shop a catalog of offerings from many sellers, courses, books, digital goods, etc. Storefront software (Shopify, WooCommerce) is not a marketplace unless shoppers browse many sellers there.",
+        "kahana": "yes",
+        "company": "no"
+      }
+    ]
+  },
+  "researchInsights": {
+    "companyName": "Heartbeat",
+    "scaleFacts": [
+      "Built for online schools, accelerators, incubators, paid communities, innovation hubs, support groups, and similar community businesses.",
+      "Core stack: real-time chat + threaded discussions, static and cohort courses, in-person/virtual events, content library, member directory, matchups, access groups, payments (subscriptions + digital products), landing pages, automated workflows, affiliates, email/DM sequences.",
+      "Communities run under your own domain; Heartbeat provides the underlying communication and community stack.",
+      "Multiple paid tiers unlock payments, workflows, affiliates, and other advanced features."
+    ],
+    "strengths": [
+      {
+        "title": "Comprehensive community business stack",
+        "detail": "Chat, courses, events, content, payments, landing pages, and workflows in one product, less tool sprawl."
+      },
+      {
+        "title": "Real-time interactions plus structured content",
+        "detail": "Live chat alongside courses and libraries, ongoing community and curriculum together."
+      },
+      {
+        "title": "Built-in payments and automation",
+        "detail": "Native subscriptions, digital products, affiliates, and email/DM workflows for monetization and ops."
+      },
+      {
+        "title": "Own-domain presence and branding",
+        "detail": "Runs on your domain, positions the community as a standalone property, not a social-network subspace."
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Heavier than pure chat apps",
+        "detail": "Rich feature set can be overkill for small informal groups that only need messaging."
+      },
+      {
+        "title": "Learning curve for complex setups",
+        "detail": "Courses, events, workflows, and payments need more setup and ongoing management than simpler platforms."
+      },
+      {
+        "title": "Less mainstream than incumbents",
+        "detail": "Smaller ecosystem and fewer third-party resources than Slack, Discord, or Facebook Groups."
+      }
+    ],
+    "sources": [
+      "https://appsumo.com/products/heartbeat/",
+      "https://www.heartbeat.chat",
+      "https://apps.apple.com/us/app/heartbeat-chat/id1540206041"
+    ]
+  },
+  "content": "<p class=\"lead\">Kahana is a library of curated hubs, Explore, Clubs, and optional Stripe. Heartbeat is community platform for cohort-based and branded online communities, chat, events, and memberships. They overlap in places and diverge in others.</p>\n\n<h2>What each one is</h2>\n<p>Kahana is built around <a href=\"/help/hubs\">hubs</a> people can open, <a href=\"/help/explore\">Explore</a> so strangers can find them, <a href=\"/help/how-aura-works\">Aura</a> as scarce daily recognition, and Clubs so discussion outlives a feed. Selling stays optional.</p>\n<p>Heartbeat is an all-in-one platform for community businesses that lets you host chats, live events, courses, content, payments, and workflows under your own domain. <a href=\"https://www.heartbeat.chat\" target=\"_blank\" rel=\"noopener noreferrer\">Official site</a>.</p>\n\n<h2>Why this comparison</h2>\n<p>This article puts Kahana and Heartbeat side by side. It covers what each supports as a first-class product job, key features, and a few research notes so you have a clearer picture of what they are, how they compare, and what you can actually do on each one. It is not a teardown, and it is not a switch-tomorrow pitch.</p>\n\n",
+  "contentAfter": "<h2>What you can do on each</h2>\n<p>On Kahana you can publish a hub, list it on Explore, discuss it in a Club, grant Aura, and turn on a Stripe paywall when you are ready to charge.</p>\n<p>On Heartbeat you can use Community &amp; Messaging as a first-class product job. The job is hanging out, announcements, and live conversation, not packaging knowledge into something strangers can browse later.</p>\n\n<h2>Using Kahana with Heartbeat</h2>\n<p>You can use both. Heartbeat keeps doing what it already does well. Kahana is another place to package the work, get discovered, and grow an audience.</p>\n<p>Keep live conversation on Heartbeat. Pin a Kahana hub or Club link in a channel, discuss live there, and assign the next ebook, video, or course from Kahana so the syllabus is not buried in the thread.</p>\n\n",
+  "landscapeCompanyId": "heartbeat"
+}

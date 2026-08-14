@@ -1,0 +1,163 @@
+{
+  "slug": "kahana-vs-the-storygraph",
+  "title": "Kahana vs The StoryGraph: The Book You Assign Together",
+  "date": "2026-04-21T20:52:00.000Z",
+  "authors": [
+    {
+      "name": "Adam Kershner",
+      "role": "Founder",
+      "bio": "",
+      "linkedinProfile": "https://www.linkedin.com/in/adam-kershner/",
+      "avatar": "/assets/headshots/adam_kershner.jpg"
+    }
+  ],
+  "category": [
+    "Comparisons",
+    "Creators",
+    "Product"
+  ],
+  "excerpt": "The StoryGraph is independent, Amazon-free book tracking and discovery, log books, visualize reading habits, and get mood/pace/genre-based recommendations. Kahana is clubs and hubs around the books you actually read together.",
+  "defaultImageQuery": "The StoryGraph Clubs and hubs around the books you actually read together.",
+  "featuredImage": "/assets/blog/kahana-vs-the-storygraph.jpg",
+  "readingTime": 3,
+  "seoTitle": "Kahana vs The StoryGraph | The Book You Assign Together",
+  "metaDescription": "The StoryGraph is independent, Amazon-free book tracking and discovery, log books, visualize reading habits, and get mood/pace/genre-based recommendations.…",
+  "focusKeyword": "The StoryGraph alternative",
+  "landscapeRole": "ebook",
+  "coverage": {
+    "companyName": "The StoryGraph",
+    "columns": [
+      {
+        "fragmentId": "ebook-reading",
+        "label": "Ebook",
+        "definition": "Yes if you can easily get and consume ebooks on the platform (free or paid) as a first-class product, open, buy, borrow, or read without hunting.",
+        "kahana": "yes",
+        "company": "yes"
+      },
+      {
+        "fragmentId": "short-form-video",
+        "label": "Short-form video",
+        "definition": "Yes if you can easily consume short-form video as a first-class surface (For You, Reels, Shorts).",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "long-form-video",
+        "label": "Long-form video",
+        "definition": "Yes if you can easily watch creator / UGC long-form video (or specialty long video) as a core surface. Course lectures belong under Courses. Hollywood catalogs belong under Series/Films.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "series-films-streaming",
+        "label": "Series/Films",
+        "definition": "Yes if you can easily watch series and films as an SVOD / catalog entertainment product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "courses-learning",
+        "label": "Courses",
+        "definition": "Yes if you can easily take or browse structured courses as a first-class product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "newsletters-written",
+        "label": "Newsletters",
+        "definition": "Yes if you can easily read or subscribe to newsletters / creator writing as a first-class product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "audio-listening",
+        "label": "Audio",
+        "definition": "Yes if you can easily listen to music, podcasts, or audiobooks as a first-class product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "creator-monetization",
+        "label": "Memberships",
+        "definition": "Yes if a creator or seller can accept payments from others and make money through the platform, checkout, fan subscriptions, tips, ads, shop, or creator funds. Not only a classic Patreon-style membership product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "messaging-community",
+        "label": "Community & Messaging",
+        "definition": "Yes if you can create or join a group, community, or club, including group chats, Groups, subreddits, community tabs, discussion boards, or community feeds. A one-off comment on a single video or listing is not the bar; a durable place for the group to talk is.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "online-storefront",
+        "label": "Storefronts",
+        "definition": "Yes if the product gives a creator a custom storefront or site that can take the place of building their own website (bio page, creator site, branded shop). Not a shop tab on someone else’s multi-seller marketplace.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "digital-marketplaces",
+        "label": "Marketplaces",
+        "definition": "Yes if a typical person can search and shop a catalog of offerings from many sellers, courses, books, digital goods, etc. Storefront software (Shopify, WooCommerce) is not a marketplace unless shoppers browse many sellers there.",
+        "kahana": "yes",
+        "company": "no"
+      }
+    ]
+  },
+  "researchInsights": {
+    "companyName": "The StoryGraph",
+    "scaleFacts": [
+      "Founded in 2019 by CEO Nadia Odunayo; independent, Black woman–owned alternative to Amazon-owned Goodreads.",
+      "Reportedly 4M+ users, driven by readers seeking a cleaner, more data-centric way to track and discover books.",
+      "Core tracker workflow: import Goodreads data; track read / currently reading / owned / DNF; reading goals; reviews; To-Read Pile.",
+      "Differentiation via structured metadata, mood, pacing, genre, page count, themes, content warnings, and character/story tags that feed recommendations and analytics."
+    ],
+    "strengths": [
+      {
+        "title": "Personalized discovery beyond star ratings",
+        "detail": "Readers can seek books by how they want a book to feel, hopeful, dark, emotional, fast-paced, character-driven, not only by broad genre or popularity."
+      },
+      {
+        "title": "Excellent reading analytics",
+        "detail": "Visual graphs and reports reveal reading patterns over time: genres, moods, formats, page counts, rating behavior, and reading pace."
+      },
+      {
+        "title": "Independent and ad-free alternative",
+        "detail": "Black woman–owned, Amazon-free, no-ad positioning appeals to readers who want an alternative to Goodreads and a less commercially driven reading space."
+      },
+      {
+        "title": "Granular tracking tools",
+        "detail": "Statuses for DNF and owned, quarter-star ratings, edition/format tracking, and reader- or author-submitted content warnings, more precision than a basic shelf model."
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Smaller social layer than Goodreads",
+        "detail": "Primarily personal tracking and recommendation; less-developed public discussion, groups, author-following, quote-sharing, review replies, and messaging than Goodreads."
+      },
+      {
+        "title": "Limited author and publisher tooling",
+        "detail": "No formal Author Program or author-controlled profile management; authors generally cannot directly edit author or book pages."
+      },
+      {
+        "title": "Recommendation depth partly paywalled",
+        "detail": "Free users get the core tracker and some recommendations; unlimited personalized recommendations and several advanced tools require StoryGraph Plus."
+      },
+      {
+        "title": "Smaller network effects",
+        "detail": "About 4M+ users is substantial but far smaller than Goodreads, fewer friend connections, reviews, and social signals for obscure titles."
+      }
+    ],
+    "sources": [
+      "https://app.thestorygraph.com/",
+      "https://authornews.penguinrandomhouse.com/a-spotlight-on-the-storygraph/",
+      "https://bookriot.com/storygraph-review/",
+      "https://makeheadway.com/blog/goodreads-alternatives/"
+    ]
+  },
+  "content": "<p class=\"lead\">Kahana is a library of curated hubs, Explore, Clubs, and optional Stripe. The StoryGraph is independent, Amazon-free book tracking and discovery, log books, visualize reading habits, and get mood/pace/genre-based recommendations. They overlap in places and diverge in others.</p>\n\n<h2>What each one is</h2>\n<p>Kahana is built around <a href=\"/help/hubs\">hubs</a> people can open, <a href=\"/help/explore\">Explore</a> so strangers can find them, <a href=\"/help/how-aura-works\">Aura</a> as scarce daily recognition, and Clubs so discussion outlives a feed. Selling stays optional.</p>\n<p>The StoryGraph is an independent, Amazon-free book tracking and discovery platform that helps readers log books, visualize reading habits, and find personalized recommendations based on mood, pace, genre, and other detailed attributes. <a href=\"https://app.thestorygraph.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Official site</a>.</p>\n\n<h2>Why this comparison</h2>\n<p>This article puts Kahana and The StoryGraph side by side. It covers what each supports as a first-class product job, key features, and a few research notes so you have a clearer picture of what they are, how they compare, and what you can actually do on each one. It is not a teardown, and it is not a switch-tomorrow pitch.</p>\n\n",
+  "contentAfter": "<h2>What you can do on each</h2>\n<p>On Kahana you can publish a hub, list it on Explore, discuss it in a Club, grant Aura, and turn on a Stripe paywall when you are ready to charge.</p>\n<p>On The StoryGraph you can use Ebook as a first-class product job. You need a dedicated reader, a giant store, or social tracking of everything you have ever read.</p>\n\n<h2>Using Kahana with The StoryGraph</h2>\n<p>You can use both. The StoryGraph keeps doing what it already does well. Kahana is another place to package the work, get discovered, and grow an audience.</p>\n<p>Keep the reader or tracker you already use. Put the Club pick, discussion questions, and related files on Kahana so the book is a shared library item, not only a private progress bar.</p>\n\n",
+  "landscapeCompanyId": "storygraph"
+}

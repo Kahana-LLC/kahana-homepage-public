@@ -1,0 +1,157 @@
+{
+  "slug": "kahana-vs-youtube-music",
+  "title": "Kahana vs YouTube Music: Not Another For You Row",
+  "date": "2026-03-26T14:34:00.000Z",
+  "authors": [
+    {
+      "name": "Adam Kershner",
+      "role": "Founder",
+      "bio": "",
+      "linkedinProfile": "https://www.linkedin.com/in/adam-kershner/",
+      "avatar": "/assets/headshots/adam_kershner.jpg"
+    }
+  ],
+  "category": [
+    "Comparisons",
+    "Creators",
+    "Product"
+  ],
+  "excerpt": "YouTube Music is audio streaming / listening at scale. Kahana is a library shelf for the audio you actually assign, plus Clubs to talk about it.",
+  "defaultImageQuery": "YouTube Music A library shelf for the audio you actually assign, plus Clubs to talk about it.",
+  "featuredImage": "/assets/blog/kahana-vs-youtube-music.jpg",
+  "readingTime": 3,
+  "seoTitle": "Kahana vs YouTube Music | Not Another For You Row",
+  "metaDescription": "YouTube Music is audio streaming / listening at scale. Kahana is a library shelf for the audio you actually assign, plus Clubs to talk about it.",
+  "focusKeyword": "YouTube Music alternative",
+  "landscapeRole": "audio",
+  "coverage": {
+    "companyName": "YouTube Music",
+    "columns": [
+      {
+        "fragmentId": "ebook-reading",
+        "label": "Ebook",
+        "definition": "Yes if you can easily get and consume ebooks on the platform (free or paid) as a first-class product, open, buy, borrow, or read without hunting.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "short-form-video",
+        "label": "Short-form video",
+        "definition": "Yes if you can easily consume short-form video as a first-class surface (For You, Reels, Shorts).",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "long-form-video",
+        "label": "Long-form video",
+        "definition": "Yes if you can easily watch creator / UGC long-form video (or specialty long video) as a core surface. Course lectures belong under Courses. Hollywood catalogs belong under Series/Films.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "series-films-streaming",
+        "label": "Series/Films",
+        "definition": "Yes if you can easily watch series and films as an SVOD / catalog entertainment product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "courses-learning",
+        "label": "Courses",
+        "definition": "Yes if you can easily take or browse structured courses as a first-class product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "newsletters-written",
+        "label": "Newsletters",
+        "definition": "Yes if you can easily read or subscribe to newsletters / creator writing as a first-class product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "audio-listening",
+        "label": "Audio",
+        "definition": "Yes if you can easily listen to music, podcasts, or audiobooks as a first-class product.",
+        "kahana": "yes",
+        "company": "yes"
+      },
+      {
+        "fragmentId": "creator-monetization",
+        "label": "Memberships",
+        "definition": "Yes if a creator or seller can accept payments from others and make money through the platform, checkout, fan subscriptions, tips, ads, shop, or creator funds. Not only a classic Patreon-style membership product.",
+        "kahana": "yes",
+        "company": "yes"
+      },
+      {
+        "fragmentId": "messaging-community",
+        "label": "Community & Messaging",
+        "definition": "Yes if you can create or join a group, community, or club, including group chats, Groups, subreddits, community tabs, discussion boards, or community feeds. A one-off comment on a single video or listing is not the bar; a durable place for the group to talk is.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "online-storefront",
+        "label": "Storefronts",
+        "definition": "Yes if the product gives a creator a custom storefront or site that can take the place of building their own website (bio page, creator site, branded shop). Not a shop tab on someone else’s multi-seller marketplace.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "digital-marketplaces",
+        "label": "Marketplaces",
+        "definition": "Yes if a typical person can search and shop a catalog of offerings from many sellers, courses, books, digital goods, etc. Storefront software (Shopify, WooCommerce) is not a marketplace unless shoppers browse many sellers there.",
+        "kahana": "yes",
+        "company": "no"
+      }
+    ]
+  },
+  "researchInsights": {
+    "companyName": "YouTube Music",
+    "scaleFacts": [
+      "300M+ tracks ad-free for Premium subscribers, plus music videos, live performances, covers, and rare tracks from the YouTube catalog.",
+      "Free tier: ad-supported on-demand songs, music videos, and podcasts; background play and downloads primarily for podcasts.",
+      "Premium: background play for music, ad-free tracks, audio-only mode, offline downloads, and Ask Music (AI mix suggestions)."
+    ],
+    "strengths": [
+      {
+        "title": "Unique access to YouTube’s music universe",
+        "detail": "Music videos, live performances, and rare uploads can live in playlists, unmatched content diversity vs pure audio catalogs."
+      },
+      {
+        "title": "Integrated short-form discovery",
+        "detail": "Samples tab offers personalized short video clips to discover new songs via immersive previews."
+      },
+      {
+        "title": "Strong recommendation algorithms",
+        "detail": "Personalized mixes, radio stations, and smart downloads powered by YouTube’s recommendation engine."
+      },
+      {
+        "title": "Multi-device flexibility",
+        "detail": "Web, mobile, smart TVs, speakers, and Google ecosystem; upload your own library (up to 100,000 files) for ad-free playback."
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Free tier limitations for music",
+        "detail": "Background play and offline downloads for music require Premium; free tier is more limited than Spotify’s free offering."
+      },
+      {
+        "title": "UX complexity vs dedicated music apps",
+        "detail": "Blend of video, audio, and discovery can feel less straightforward than pure audio apps."
+      },
+      {
+        "title": "Less audiophile focus",
+        "detail": "Huge catalog, but not positioned as a Hi-Res audiophile service compared to Amazon Music HD or Qobuz."
+      }
+    ],
+    "sources": [
+      "https://support.google.com/youtubemusic/answer/6313529?hl=en",
+      "https://lifehacker.com/tech/best-youtube-music-settings",
+      "https://blog.youtube/news-and-events/youtube-music-app-2023-guide/"
+    ]
+  },
+  "content": "<p class=\"lead\">Kahana is a library of curated hubs, Explore, Clubs, and optional Stripe. YouTube Music is audio streaming / listening at scale. They overlap in places and diverge in others.</p>\n\n<h2>What each one is</h2>\n<p>Kahana is built around <a href=\"/help/hubs\">hubs</a> people can open, <a href=\"/help/explore\">Explore</a> so strangers can find them, <a href=\"/help/how-aura-works\">Aura</a> as scarce daily recognition, and Clubs so discussion outlives a feed. Selling stays optional.</p>\n<p>With the YouTube Music app, you can watch music videos, stay connected to artists you love, and discover music and podcasts to enjoy on all your devices.</p>\n\n<h2>Why this comparison</h2>\n<p>This article puts Kahana and YouTube Music side by side. It covers what each supports as a first-class product job, key features, and a few research notes so you have a clearer picture of what they are, how they compare, and what you can actually do on each one. It is not a teardown, and it is not a switch-tomorrow pitch.</p>\n\n",
+  "contentAfter": "<h2>What you can do on each</h2>\n<p>On Kahana you can publish a hub, list it on Explore, discuss it in a Club, grant Aura, and turn on a Stripe paywall when you are ready to charge.</p>\n<p>On YouTube Music you can use Audio and Memberships as first-class product jobs. You want a dedicated listening app, playlists, and the catalog people already pay a subscription for.</p>\n\n<h2>Using Kahana with YouTube Music</h2>\n<p>You can use both. YouTube Music keeps doing what it already does well. Kahana is another place to package the work, get discovered, and grow an audience.</p>\n<p>Keep listening on YouTube Music, where the catalog and players are strongest. Put episode lists, companion notes, and Club discussion on Kahana so assigned audio is a library item, not only a For You row.</p>\n\n",
+  "landscapeCompanyId": "youtube-music"
+}

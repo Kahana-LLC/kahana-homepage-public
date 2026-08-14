@@ -1,0 +1,156 @@
+{
+  "slug": "kahana-vs-ghost",
+  "title": "Kahana vs Ghost: When the Cadence Needs a Shelf",
+  "date": "2026-07-07T14:06:00.000Z",
+  "authors": [
+    {
+      "name": "Adam Kershner",
+      "role": "Founder",
+      "bio": "",
+      "linkedinProfile": "https://www.linkedin.com/in/adam-kershner/",
+      "avatar": "/assets/headshots/adam_kershner.jpg"
+    }
+  ],
+  "category": [
+    "Comparisons",
+    "Creators",
+    "Product"
+  ],
+  "excerpt": "Ghost is writing, email, and subscriber publishing. Kahana is a durable library home for writing you already publish.",
+  "defaultImageQuery": "Ghost A durable library home for writing you already publish.",
+  "featuredImage": "/assets/blog/kahana-vs-ghost.jpg",
+  "readingTime": 2,
+  "seoTitle": "Kahana vs Ghost | When the Cadence Needs a Shelf",
+  "metaDescription": "Ghost is writing, email, and subscriber publishing. Kahana is a durable library home for writing you already publish.",
+  "focusKeyword": "Ghost alternative",
+  "landscapeRole": "newsletter-writing",
+  "coverage": {
+    "companyName": "Ghost",
+    "columns": [
+      {
+        "fragmentId": "ebook-reading",
+        "label": "Ebook",
+        "definition": "Yes if you can easily get and consume ebooks on the platform (free or paid) as a first-class product, open, buy, borrow, or read without hunting.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "short-form-video",
+        "label": "Short-form video",
+        "definition": "Yes if you can easily consume short-form video as a first-class surface (For You, Reels, Shorts).",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "long-form-video",
+        "label": "Long-form video",
+        "definition": "Yes if you can easily watch creator / UGC long-form video (or specialty long video) as a core surface. Course lectures belong under Courses. Hollywood catalogs belong under Series/Films.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "series-films-streaming",
+        "label": "Series/Films",
+        "definition": "Yes if you can easily watch series and films as an SVOD / catalog entertainment product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "courses-learning",
+        "label": "Courses",
+        "definition": "Yes if you can easily take or browse structured courses as a first-class product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "newsletters-written",
+        "label": "Newsletters",
+        "definition": "Yes if you can easily read or subscribe to newsletters / creator writing as a first-class product.",
+        "kahana": "yes",
+        "company": "yes"
+      },
+      {
+        "fragmentId": "audio-listening",
+        "label": "Audio",
+        "definition": "Yes if you can easily listen to music, podcasts, or audiobooks as a first-class product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "creator-monetization",
+        "label": "Memberships",
+        "definition": "Yes if a creator or seller can accept payments from others and make money through the platform, checkout, fan subscriptions, tips, ads, shop, or creator funds. Not only a classic Patreon-style membership product.",
+        "kahana": "yes",
+        "company": "yes"
+      },
+      {
+        "fragmentId": "messaging-community",
+        "label": "Community & Messaging",
+        "definition": "Yes if you can create or join a group, community, or club, including group chats, Groups, subreddits, community tabs, discussion boards, or community feeds. A one-off comment on a single video or listing is not the bar; a durable place for the group to talk is.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "online-storefront",
+        "label": "Storefronts",
+        "definition": "Yes if the product gives a creator a custom storefront or site that can take the place of building their own website (bio page, creator site, branded shop). Not a shop tab on someone else’s multi-seller marketplace.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "digital-marketplaces",
+        "label": "Marketplaces",
+        "definition": "Yes if a typical person can search and shop a catalog of offerings from many sellers, courses, books, digital goods, etc. Storefront software (Shopify, WooCommerce) is not a marketplace unless shoppers browse many sellers there.",
+        "kahana": "yes",
+        "company": "no"
+      }
+    ]
+  },
+  "researchInsights": {
+    "companyName": "Ghost",
+    "scaleFacts": [
+      "Open-source software used by thousands of publishers and writers.",
+      "Hosted Ghost(Pro) plans starting around USD 15/month, scaling by audience size."
+    ],
+    "strengths": [
+      {
+        "title": "Full control and ownership",
+        "detail": "Open source; self-host or use Ghost(Pro), you own site, data, and content."
+      },
+      {
+        "title": "Custom design and domain",
+        "detail": "Full custom themes and domains, better for serious publishing brands."
+      },
+      {
+        "title": "Integrated memberships and native payments",
+        "detail": "Built-in memberships and Stripe for paid subscriptions, can run a full membership/newsletter business."
+      },
+      {
+        "title": "Modern editor and performance",
+        "detail": "Medium-like editor that’s extensible; fast, modern, SEO-friendly."
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Higher setup and maintenance overhead",
+        "detail": "Self-hosting or deep customization needs technical skill or developer budget, more complex than Medium/Substack."
+      },
+      {
+        "title": "No built-in reader app or social feed",
+        "detail": "No Substack-style app or Notes; discovery relies on SEO, social, and direct marketing."
+      },
+      {
+        "title": "Paid hosting vs free platforms",
+        "detail": "Ghost(Pro) is paid; writers pay for hosting or run their own infrastructure, unlike free Medium/Substack writer accounts."
+      }
+    ],
+    "sources": [
+      "https://ghost.org/",
+      "https://ghost.org/vs/medium/",
+      "https://hooshmand.net/ghost-vs-medium/"
+    ]
+  },
+  "content": "<p class=\"lead\">Kahana is a library of curated hubs, Explore, Clubs, and optional Stripe. Ghost is writing, email, and subscriber publishing. They overlap in places and diverge in others.</p>\n\n<h2>What each one is</h2>\n<p>Kahana is built around <a href=\"/help/hubs\">hubs</a> people can open, <a href=\"/help/explore\">Explore</a> so strangers can find them, <a href=\"/help/how-aura-works\">Aura</a> as scarce daily recognition, and Clubs so discussion outlives a feed. Selling stays optional.</p>\n<p>Ghost is the independent publishing platform that lets you create a modern online publication, own your content, and build a sustainable membership business.</p>\n\n<h2>Why this comparison</h2>\n<p>This article puts Kahana and Ghost side by side. It covers what each supports as a first-class product job, key features, and a few research notes so you have a clearer picture of what they are, how they compare, and what you can actually do on each one. It is not a teardown, and it is not a switch-tomorrow pitch.</p>\n\n",
+  "contentAfter": "<h2>What you can do on each</h2>\n<p>On Kahana you can publish a hub, list it on Explore, discuss it in a Club, grant Aura, and turn on a Stripe paywall when you are ready to charge.</p>\n<p>On Ghost you can use Newsletters and Memberships as first-class product jobs. The inbox is the product: essays, archives, and paid subscriptions you already send on a cadence.</p>\n\n<h2>Using Kahana with Ghost</h2>\n<p>You can use both. Ghost keeps doing what it already does well. Kahana is another place to package the work, get discovered, and grow an audience.</p>\n<p>Keep Ghost as distribution. Link a Kahana hub or Club as the deep destination: archives, files, and discussion that survive a missed email.</p>\n\n",
+  "landscapeCompanyId": "ghost"
+}

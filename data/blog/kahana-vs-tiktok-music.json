@@ -1,0 +1,151 @@
+{
+  "slug": "kahana-vs-tiktok-music",
+  "title": "Kahana vs TikTok Music: Keep the Player, Add the Shelf",
+  "date": "2026-04-16T13:35:00.000Z",
+  "authors": [
+    {
+      "name": "Adam Kershner",
+      "role": "Founder",
+      "bio": "",
+      "linkedinProfile": "https://www.linkedin.com/in/adam-kershner/",
+      "avatar": "/assets/headshots/adam_kershner.jpg"
+    }
+  ],
+  "category": [
+    "Comparisons",
+    "Creators",
+    "Product"
+  ],
+  "excerpt": "TikTok Music is former standalone TikTok music streaming app (2023–2024); strategy now centers on in-app music tools rather than a separate streamer. Kahana is a library shelf for the audio you actually assign, plus Clubs to talk about it.",
+  "defaultImageQuery": "TikTok Music A library shelf for the audio you actually assign, plus Clubs to talk about it.",
+  "featuredImage": "/assets/blog/kahana-vs-tiktok-music.jpg",
+  "readingTime": 3,
+  "seoTitle": "Kahana vs TikTok Music | Keep the Player, Add the Shelf",
+  "metaDescription": "TikTok Music is former standalone TikTok music streaming app (2023–2024); strategy now centers on in-app music tools rather than a separate streamer. Kahana…",
+  "focusKeyword": "TikTok Music alternative",
+  "landscapeRole": "audio",
+  "coverage": {
+    "companyName": "TikTok Music",
+    "columns": [
+      {
+        "fragmentId": "ebook-reading",
+        "label": "Ebook",
+        "definition": "Yes if you can easily get and consume ebooks on the platform (free or paid) as a first-class product, open, buy, borrow, or read without hunting.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "short-form-video",
+        "label": "Short-form video",
+        "definition": "Yes if you can easily consume short-form video as a first-class surface (For You, Reels, Shorts).",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "long-form-video",
+        "label": "Long-form video",
+        "definition": "Yes if you can easily watch creator / UGC long-form video (or specialty long video) as a core surface. Course lectures belong under Courses. Hollywood catalogs belong under Series/Films.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "series-films-streaming",
+        "label": "Series/Films",
+        "definition": "Yes if you can easily watch series and films as an SVOD / catalog entertainment product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "courses-learning",
+        "label": "Courses",
+        "definition": "Yes if you can easily take or browse structured courses as a first-class product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "newsletters-written",
+        "label": "Newsletters",
+        "definition": "Yes if you can easily read or subscribe to newsletters / creator writing as a first-class product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "audio-listening",
+        "label": "Audio",
+        "definition": "Yes if you can easily listen to music, podcasts, or audiobooks as a first-class product.",
+        "kahana": "yes",
+        "company": "yes"
+      },
+      {
+        "fragmentId": "creator-monetization",
+        "label": "Memberships",
+        "definition": "Yes if a creator or seller can accept payments from others and make money through the platform, checkout, fan subscriptions, tips, ads, shop, or creator funds. Not only a classic Patreon-style membership product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "messaging-community",
+        "label": "Community & Messaging",
+        "definition": "Yes if you can create or join a group, community, or club, including group chats, Groups, subreddits, community tabs, discussion boards, or community feeds. A one-off comment on a single video or listing is not the bar; a durable place for the group to talk is.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "online-storefront",
+        "label": "Storefronts",
+        "definition": "Yes if the product gives a creator a custom storefront or site that can take the place of building their own website (bio page, creator site, branded shop). Not a shop tab on someone else’s multi-seller marketplace.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "digital-marketplaces",
+        "label": "Marketplaces",
+        "definition": "Yes if a typical person can search and shop a catalog of offerings from many sellers, courses, books, digital goods, etc. Storefront software (Shopify, WooCommerce) is not a marketplace unless shoppers browse many sellers there.",
+        "kahana": "yes",
+        "company": "no"
+      }
+    ]
+  },
+  "researchInsights": {
+    "companyName": "TikTok Music",
+    "scaleFacts": [
+      "Launched July 2023 as a separate app tied to TikTok; shut down November 28, 2024, with users advised to migrate playlists elsewhere.",
+      "Catalogs from Universal Music Group, Warner Music Group, and Sony Music while active.",
+      "Subscription-only model (no free tier like Spotify / YouTube Music).",
+      "Features included collaborative playlists, lyric search, personalized suggestions, offline listening, synced lyrics, and song comments/reactions shared back into TikTok."
+    ],
+    "strengths": [
+      {
+        "title": "Tight integration with TikTok discovery (while active)",
+        "detail": "Built to make saving and streaming full songs seen on TikTok seamless, bridging short-form discovery and full-length listening."
+      },
+      {
+        "title": "Full-featured streaming experience (while active)",
+        "detail": "Standard streaming features (playlists, offline, lyrics, personalization) plus social reactions back to TikTok."
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Limited regional rollout and short lifespan",
+        "detail": "Never widely launched globally; shut down after ~1.5 years, limiting adoption."
+      },
+      {
+        "title": "Subscription-only model",
+        "detail": "No free tier made it harder to compete against freemium incumbents like Spotify and YouTube Music."
+      },
+      {
+        "title": "Strategic pivot to in-app tools, not a full streamer",
+        "detail": "TikTok now leans into music tools inside the main app rather than competing as a standalone subscription music service."
+      }
+    ],
+    "sources": [
+      "https://en.wikipedia.org/wiki/TikTok_Music",
+      "https://www.midiaresearch.com/blog/tiktok-may-be-shutting-down-its-music-service-but-it-will-still-compete-with-streaming",
+      "https://soundiiz.com/blog/what-is-tiktok-music-and-can-it-be-a-serious-streaming-service/",
+      "https://revelator.com/blog/tiktok-music-tools-guide-for-artists-and-labels"
+    ]
+  },
+  "content": "<p class=\"lead\">Kahana is a library of curated hubs, Explore, Clubs, and optional Stripe. TikTok Music is former standalone TikTok music streaming app (2023–2024); strategy now centers on in-app music tools rather than a separate streamer. They overlap in places and diverge in others.</p>\n\n<h2>What each one is</h2>\n<p>Kahana is built around <a href=\"/help/hubs\">hubs</a> people can open, <a href=\"/help/explore\">Explore</a> so strangers can find them, <a href=\"/help/how-aura-works\">Aura</a> as scarce daily recognition, and Clubs so discussion outlives a feed. Selling stays optional.</p>\n<p>TikTok Music was a standalone music streaming app that combined TikTok’s discovery with a full-featured subscription music service, offering catalog streaming, playlist tools, and social song reactions before shutting down in November 2024. <a href=\"https://www.tiktok.com\" target=\"_blank\" rel=\"noopener noreferrer\">Official site</a>.</p>\n\n<h2>Why this comparison</h2>\n<p>This article puts Kahana and TikTok Music side by side. It covers what each supports as a first-class product job, key features, and a few research notes so you have a clearer picture of what they are, how they compare, and what you can actually do on each one. It is not a teardown, and it is not a switch-tomorrow pitch.</p>\n\n",
+  "contentAfter": "<h2>What you can do on each</h2>\n<p>On Kahana you can publish a hub, list it on Explore, discuss it in a Club, grant Aura, and turn on a Stripe paywall when you are ready to charge.</p>\n<p>On TikTok Music you can use Audio as a first-class product job. You want a dedicated listening app, playlists, and the catalog people already pay a subscription for.</p>\n\n<h2>Using Kahana with TikTok Music</h2>\n<p>You can use both. TikTok Music keeps doing what it already does well. Kahana is another place to package the work, get discovered, and grow an audience.</p>\n<p>Keep listening on TikTok Music, where the catalog and players are strongest. Put episode lists, companion notes, and Club discussion on Kahana so assigned audio is a library item, not only a For You row.</p>\n\n",
+  "landscapeCompanyId": "tiktok-music"
+}

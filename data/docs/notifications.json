@@ -1,0 +1,12 @@
+{
+  "title": "Notifications",
+  "description": "Activity in the app, email and badge prefs for messages and hub events, and where to change them.",
+  "slug": "notifications",
+  "category": "community",
+  "product": "kahana",
+  "date": "2026-08-14",
+  "authors": [
+    "Adam Kershner"
+  ],
+  "content": "<p class=\"lead\">Kahana notifies you in Activity and, if you opt in, by email. You control message badges, message email, and activity email from Communication settings.</p>\n\n<p><strong>Primary action:</strong> <a href=\"https://app.kahana.io/activity\" target=\"_blank\" rel=\"noopener noreferrer\">Open Activity</a> \u00b7 Prefs: <a href=\"https://app.kahana.io/settings/communication\" target=\"_blank\" rel=\"noopener noreferrer\">Communication</a></p>\n\n<h2>Activity</h2>\n<p><a href=\"https://app.kahana.io/activity\" target=\"_blank\" rel=\"noopener noreferrer\">/activity</a> is the in-app inbox for things like hub access requests, club join requests, and other account events. Open an item to act on it (for example, grant hub access from a club list request).</p>\n\n<h2>What you can tune</h2>\n<ul>\n<li>Message badges in the app chrome</li>\n<li>Email when someone messages you</li>\n<li>Email for activity events</li>\n<li>Aura streak reminder email (hours before midnight UTC), from the Aura streak modal</li>\n</ul>\n<p>Older <code>/settings/notifications</code> links redirect to Communication.</p>\n\n<h2>What\u2019s next</h2>\n<ul>\n<li><a href=\"/help/messages-and-privacy\">Messages and privacy</a></li>\n<li><a href=\"/help/clubs\">Clubs</a></li>\n<li><a href=\"/help/how-aura-works\">How Aura works</a></li>\n</ul>\n"
+}

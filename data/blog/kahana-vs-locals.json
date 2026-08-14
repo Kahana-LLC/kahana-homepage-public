@@ -1,0 +1,161 @@
+{
+  "slug": "kahana-vs-locals",
+  "title": "Kahana vs Locals: Library Beside Patronage",
+  "date": "2026-06-01T17:49:00.000Z",
+  "authors": [
+    {
+      "name": "Adam Kershner",
+      "role": "Founder",
+      "bio": "",
+      "linkedinProfile": "https://www.linkedin.com/in/adam-kershner/",
+      "avatar": "/assets/headshots/adam_kershner.jpg"
+    }
+  ],
+  "category": [
+    "Comparisons",
+    "Creators",
+    "Product"
+  ],
+  "excerpt": "Locals is creator memberships with community features, subscriptions and exclusive content. Kahana is library discovery and flexible hub pricing beside patronage.",
+  "defaultImageQuery": "Locals Library discovery and flexible hub pricing beside patronage.",
+  "featuredImage": "/assets/blog/kahana-vs-locals.jpg",
+  "readingTime": 3,
+  "seoTitle": "Kahana vs Locals | Library Beside Patronage",
+  "metaDescription": "Locals is creator memberships with community features, subscriptions and exclusive content. Kahana is library discovery and flexible hub pricing beside…",
+  "focusKeyword": "Locals alternative",
+  "landscapeRole": "membership-fan",
+  "coverage": {
+    "companyName": "Locals",
+    "columns": [
+      {
+        "fragmentId": "ebook-reading",
+        "label": "Ebook",
+        "definition": "Yes if you can easily get and consume ebooks on the platform (free or paid) as a first-class product, open, buy, borrow, or read without hunting.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "short-form-video",
+        "label": "Short-form video",
+        "definition": "Yes if you can easily consume short-form video as a first-class surface (For You, Reels, Shorts).",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "long-form-video",
+        "label": "Long-form video",
+        "definition": "Yes if you can easily watch creator / UGC long-form video (or specialty long video) as a core surface. Course lectures belong under Courses. Hollywood catalogs belong under Series/Films.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "series-films-streaming",
+        "label": "Series/Films",
+        "definition": "Yes if you can easily watch series and films as an SVOD / catalog entertainment product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "courses-learning",
+        "label": "Courses",
+        "definition": "Yes if you can easily take or browse structured courses as a first-class product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "newsletters-written",
+        "label": "Newsletters",
+        "definition": "Yes if you can easily read or subscribe to newsletters / creator writing as a first-class product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "audio-listening",
+        "label": "Audio",
+        "definition": "Yes if you can easily listen to music, podcasts, or audiobooks as a first-class product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "creator-monetization",
+        "label": "Memberships",
+        "definition": "Yes if a creator or seller can accept payments from others and make money through the platform, checkout, fan subscriptions, tips, ads, shop, or creator funds. Not only a classic Patreon-style membership product.",
+        "kahana": "yes",
+        "company": "yes"
+      },
+      {
+        "fragmentId": "messaging-community",
+        "label": "Community & Messaging",
+        "definition": "Yes if you can create or join a group, community, or club, including group chats, Groups, subreddits, community tabs, discussion boards, or community feeds. A one-off comment on a single video or listing is not the bar; a durable place for the group to talk is.",
+        "kahana": "yes",
+        "company": "yes"
+      },
+      {
+        "fragmentId": "online-storefront",
+        "label": "Storefronts",
+        "definition": "Yes if the product gives a creator a custom storefront or site that can take the place of building their own website (bio page, creator site, branded shop). Not a shop tab on someone else’s multi-seller marketplace.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "digital-marketplaces",
+        "label": "Marketplaces",
+        "definition": "Yes if a typical person can search and shop a catalog of offerings from many sellers, courses, books, digital goods, etc. Storefront software (Shopify, WooCommerce) is not a marketplace unless shoppers browse many sellers there.",
+        "kahana": "yes",
+        "company": "no"
+      }
+    ]
+  },
+  "researchInsights": {
+    "companyName": "Locals",
+    "scaleFacts": [
+      "Focused on independent creators who want to be their own publishers and run subscription communities.",
+      "Hosts 7,500+ Clubs (creator communities) as of 2026.",
+      "Free version available to start; platform fees / revenue share details vary (Locals is part of Rumble’s ecosystem in some reports)."
+    ],
+    "strengths": [
+      {
+        "title": "All-in-one for creator communities",
+        "detail": "Content publishing, discussions, events, memberships, and digital subscriptions in one platform."
+      },
+      {
+        "title": "Subscription-based revenue model",
+        "detail": "Creators set tier prices; supporters pay for exclusive content and community access, recurring revenue."
+      },
+      {
+        "title": "Community and content tools",
+        "detail": "Discussions/forums, groups, events, member directory, moderation, social feed, blogs, and media library."
+      },
+      {
+        "title": "Strong focus on creator independence",
+        "detail": "Emphasizes that creators should be their own publishers, less sole reliance on big social platforms."
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Smaller user base vs Patreon/OnlyFans",
+        "detail": "Less widely known; creators often work harder to bring audience than on more established membership brands."
+      },
+      {
+        "title": "Platform and ecosystem lock-in",
+        "detail": "Communities live inside Locals; portability of subscribers and content elsewhere can be challenging."
+      },
+      {
+        "title": "Potential reputational / political skew",
+        "detail": "Strong adoption among certain political and commentary creators, association may affect brand perception for some audiences."
+      },
+      {
+        "title": "Less transparent fee structure",
+        "detail": "Fee tables are less prominent than Patreon or Memberful; creators must dig into docs to understand full costs."
+      }
+    ],
+    "sources": [
+      "https://locals.com/",
+      "https://support.locals.com/en/article/locals-101-introduction-1-of-5-14cesqd/",
+      "https://sourceforge.net/software/product/Locals/"
+    ]
+  },
+  "content": "<p class=\"lead\">Kahana is a library of curated hubs, Explore, Clubs, and optional Stripe. Locals is creator memberships with community features, subscriptions and exclusive content. They overlap in places and diverge in others.</p>\n\n<h2>What each one is</h2>\n<p>Kahana is built around <a href=\"/help/hubs\">hubs</a> people can open, <a href=\"/help/explore\">Explore</a> so strangers can find them, <a href=\"/help/how-aura-works\">Aura</a> as scarce daily recognition, and Clubs so discussion outlives a feed. Selling stays optional.</p>\n<p>Locals makes it simple for creators to start a subscription-based community and make money directly from their supporters. <a href=\"https://locals.com\" target=\"_blank\" rel=\"noopener noreferrer\">Official site</a>.</p>\n\n<h2>Why this comparison</h2>\n<p>This article puts Kahana and Locals side by side. It covers what each supports as a first-class product job, key features, and a few research notes so you have a clearer picture of what they are, how they compare, and what you can actually do on each one. It is not a teardown, and it is not a switch-tomorrow pitch.</p>\n\n",
+  "contentAfter": "<h2>What you can do on each</h2>\n<p>On Kahana you can publish a hub, list it on Explore, discuss it in a Club, grant Aura, and turn on a Stripe paywall when you are ready to charge.</p>\n<p>On Locals you can use Memberships and Community &amp; Messaging as first-class product jobs. Fans already live on that membership surface and prefer tiers, posts, or patronage-native extras.</p>\n\n<h2>Using Kahana with Locals</h2>\n<p>You can use both. Locals keeps doing what it already does well. Kahana is another place to package the work, get discovered, and grow an audience.</p>\n<p>Keep patronage-native fans on Locals. Dual-list related work on Kahana so people who browse libraries can find it, join a Club, and pay there too without rebuilding your whole fan stack.</p>\n\n",
+  "landscapeCompanyId": "locals"
+}

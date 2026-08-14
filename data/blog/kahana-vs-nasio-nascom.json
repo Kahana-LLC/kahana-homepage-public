@@ -1,0 +1,163 @@
+{
+  "slug": "kahana-vs-nasio-nascom",
+  "title": "Kahana vs Nas.io / Nas.com: A Room That Survives the Thread",
+  "date": "2026-05-25T15:45:00.000Z",
+  "authors": [
+    {
+      "name": "Adam Kershner",
+      "role": "Founder",
+      "bio": "",
+      "linkedinProfile": "https://www.linkedin.com/in/adam-kershner/",
+      "avatar": "/assets/headshots/adam_kershner.jpg"
+    }
+  ],
+  "category": [
+    "Comparisons",
+    "Creators",
+    "Product"
+  ],
+  "excerpt": "Nas.io / Nas.com is aI-powered platform for creators to launch and monetize communities, memberships, courses, events, and digital products, often layered on WhatsApp, Discord, and Telegram. Kahana is the shelf and reading list beside…",
+  "defaultImageQuery": "Nas.io / Nas.com The shelf and reading list beside the chat, not another inbox.",
+  "featuredImage": "/assets/blog/kahana-vs-nasio-nascom.jpg",
+  "readingTime": 3,
+  "seoTitle": "Kahana vs Nas.io / Nas.com | A Room That Survives the Thread",
+  "metaDescription": "Nas.io / Nas.com is aI-powered platform for creators to launch and monetize communities, memberships, courses, events, and digital products, often layered on…",
+  "focusKeyword": "Nas.io / Nas.com alternative",
+  "landscapeRole": "community-messaging",
+  "coverage": {
+    "companyName": "Nas.io / Nas.com",
+    "columns": [
+      {
+        "fragmentId": "ebook-reading",
+        "label": "Ebook",
+        "definition": "Yes if you can easily get and consume ebooks on the platform (free or paid) as a first-class product, open, buy, borrow, or read without hunting.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "short-form-video",
+        "label": "Short-form video",
+        "definition": "Yes if you can easily consume short-form video as a first-class surface (For You, Reels, Shorts).",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "long-form-video",
+        "label": "Long-form video",
+        "definition": "Yes if you can easily watch creator / UGC long-form video (or specialty long video) as a core surface. Course lectures belong under Courses. Hollywood catalogs belong under Series/Films.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "series-films-streaming",
+        "label": "Series/Films",
+        "definition": "Yes if you can easily watch series and films as an SVOD / catalog entertainment product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "courses-learning",
+        "label": "Courses",
+        "definition": "Yes if you can easily take or browse structured courses as a first-class product.",
+        "kahana": "yes",
+        "company": "yes"
+      },
+      {
+        "fragmentId": "newsletters-written",
+        "label": "Newsletters",
+        "definition": "Yes if you can easily read or subscribe to newsletters / creator writing as a first-class product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "audio-listening",
+        "label": "Audio",
+        "definition": "Yes if you can easily listen to music, podcasts, or audiobooks as a first-class product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "creator-monetization",
+        "label": "Memberships",
+        "definition": "Yes if a creator or seller can accept payments from others and make money through the platform, checkout, fan subscriptions, tips, ads, shop, or creator funds. Not only a classic Patreon-style membership product.",
+        "kahana": "yes",
+        "company": "yes"
+      },
+      {
+        "fragmentId": "messaging-community",
+        "label": "Community & Messaging",
+        "definition": "Yes if you can create or join a group, community, or club, including group chats, Groups, subreddits, community tabs, discussion boards, or community feeds. A one-off comment on a single video or listing is not the bar; a durable place for the group to talk is.",
+        "kahana": "yes",
+        "company": "yes"
+      },
+      {
+        "fragmentId": "online-storefront",
+        "label": "Storefronts",
+        "definition": "Yes if the product gives a creator a custom storefront or site that can take the place of building their own website (bio page, creator site, branded shop). Not a shop tab on someone else’s multi-seller marketplace.",
+        "kahana": "yes",
+        "company": "yes"
+      },
+      {
+        "fragmentId": "digital-marketplaces",
+        "label": "Marketplaces",
+        "definition": "Yes if a typical person can search and shop a catalog of offerings from many sellers, courses, books, digital goods, etc. Storefront software (Shopify, WooCommerce) is not a marketplace unless shoppers browse many sellers there.",
+        "kahana": "yes",
+        "company": "no"
+      }
+    ]
+  },
+  "researchInsights": {
+    "companyName": "Nas.io / Nas.com",
+    "scaleFacts": [
+      "Part of Nas Company (Nas Daily, Nas.com, Nas House, etc.), ecosystem reaching ≈300M people globally each month.",
+      "Materials cite 200K+ users building digital businesses and ≈350K people across 150+ countries selling on Nas.com.",
+      "Positioned as the “fastest way to build a digital business using AI”, memberships, courses, events, challenges, storefront/checkout (Stripe), AI ideation, email/marketing automation, WhatsApp/Discord/Telegram integrations.",
+      "Pricing: Free Basic USD 0/mo with ≈7.9% transaction fee; Pro ≈USD 29–30/mo with ≈4.9% fee and priority support, no upfront cost; pay when you sell."
+    ],
+    "strengths": [
+      {
+        "title": "All-in-one creator business stack",
+        "detail": "Community, memberships, courses, events, digital products, and marketing automation in one place, less multi-tool sprawl."
+      },
+      {
+        "title": "AI-powered launch and marketing",
+        "detail": "AI suggests offers from social presence, helps ideate products, and automates content, ads, upsells, and abandoned-cart flows."
+      },
+      {
+        "title": "Community-first on existing chat apps",
+        "detail": "Monetization layered over WhatsApp, Discord, and Telegram, communities stay where members already are."
+      },
+      {
+        "title": "Low barrier to entry and global payments",
+        "detail": "Free basic plan and simple setup (describe offer + photo); worldwide payments with clear revenue tracking."
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Transaction-fee heavy model at scale",
+        "detail": "≈7.9% (Basic) / ≈4.9% (Pro) can feel expensive vs low-fee gateways or fixed-fee platforms for high-revenue creators."
+      },
+      {
+        "title": "Complex product surface for new users",
+        "detail": "AI, communities, courses, events, storefronts, and campaigns can overwhelm beginners with a simple product to sell."
+      },
+      {
+        "title": "Still emerging vs incumbents",
+        "detail": "Competes with Kajabi, Circle, Patreon, Shopify, etc., ecosystem and tutorials are growing but smaller."
+      },
+      {
+        "title": "Reliance on external messaging apps",
+        "detail": "Deep WhatsApp/Discord/Telegram ties mean UX and retention partly depend on those platforms."
+      }
+    ],
+    "sources": [
+      "https://nas.com/",
+      "https://www.nas.co/",
+      "https://withhimanshu.com/nas-io-review/",
+      "https://www.capterra.com/p/10011181/Nas-io/"
+    ]
+  },
+  "content": "<p class=\"lead\">Kahana is a library of curated hubs, Explore, Clubs, and optional Stripe. Nas.io / Nas.com is aI-powered platform for creators to launch and monetize communities, memberships, courses, events, and digital products, often layered on WhatsApp, Discord, and Telegram. They overlap in places and diverge in others.</p>\n\n<h2>What each one is</h2>\n<p>Kahana is built around <a href=\"/help/hubs\">hubs</a> people can open, <a href=\"/help/explore\">Explore</a> so strangers can find them, <a href=\"/help/how-aura-works\">Aura</a> as scarce daily recognition, and Clubs so discussion outlives a feed. Selling stays optional.</p>\n<p>Nas. <a href=\"https://nas.com\" target=\"_blank\" rel=\"noopener noreferrer\">Official site</a>.</p>\n\n<h2>Why this comparison</h2>\n<p>This article puts Kahana and Nas.io / Nas.com side by side. It covers what each supports as a first-class product job, key features, and a few research notes so you have a clearer picture of what they are, how they compare, and what you can actually do on each one. It is not a teardown, and it is not a switch-tomorrow pitch.</p>\n\n",
+  "contentAfter": "<h2>What you can do on each</h2>\n<p>On Kahana you can publish a hub, list it on Explore, discuss it in a Club, grant Aura, and turn on a Stripe paywall when you are ready to charge.</p>\n<p>On Nas.io / Nas.com you can use Courses, Memberships, Community &amp; Messaging, and Storefronts as first-class product jobs. The job is hanging out, announcements, and live conversation, not packaging knowledge into something strangers can browse later.</p>\n\n<h2>Using Kahana with Nas.io / Nas.com</h2>\n<p>You can use both. Nas.io / Nas.com keeps doing what it already does well. Kahana is another place to package the work, get discovered, and grow an audience.</p>\n<p>Keep live conversation on Nas.io / Nas.com. Pin a Kahana hub or Club link in a channel, discuss live there, and assign the next ebook, video, or course from Kahana so the syllabus is not buried in the thread.</p>\n\n",
+  "landscapeCompanyId": "nas-io"
+}

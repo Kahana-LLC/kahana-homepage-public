@@ -1,0 +1,158 @@
+{
+  "slug": "kahana-vs-apple-tv",
+  "title": "Kahana vs Apple TV+: Clubs Around Titles",
+  "date": "2026-08-10T20:38:00.000Z",
+  "authors": [
+    {
+      "name": "Adam Kershner",
+      "role": "Founder",
+      "bio": "",
+      "linkedinProfile": "https://www.linkedin.com/in/adam-kershner/",
+      "avatar": "/assets/headshots/adam_kershner.jpg"
+    }
+  ],
+  "category": [
+    "Comparisons",
+    "Creators",
+    "Product"
+  ],
+  "excerpt": "Apple TV+ is apple’s SVOD service for original series and films. Kahana is clubs around titles, not another SVOD app.",
+  "defaultImageQuery": "Apple TV+ Clubs around titles, not another SVOD app.",
+  "featuredImage": "/assets/blog/kahana-vs-apple-tv.jpg",
+  "readingTime": 2,
+  "seoTitle": "Kahana vs Apple TV+ | Clubs Around Titles",
+  "metaDescription": "Apple TV+ is apple’s SVOD service for original series and films. Kahana is clubs around titles, not another SVOD app.",
+  "focusKeyword": "Apple TV+ alternative",
+  "landscapeRole": "streaming",
+  "coverage": {
+    "companyName": "Apple TV+",
+    "columns": [
+      {
+        "fragmentId": "ebook-reading",
+        "label": "Ebook",
+        "definition": "Yes if you can easily get and consume ebooks on the platform (free or paid) as a first-class product, open, buy, borrow, or read without hunting.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "short-form-video",
+        "label": "Short-form video",
+        "definition": "Yes if you can easily consume short-form video as a first-class surface (For You, Reels, Shorts).",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "long-form-video",
+        "label": "Long-form video",
+        "definition": "Yes if you can easily watch creator / UGC long-form video (or specialty long video) as a core surface. Course lectures belong under Courses. Hollywood catalogs belong under Series/Films.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "series-films-streaming",
+        "label": "Series/Films",
+        "definition": "Yes if you can easily watch series and films as an SVOD / catalog entertainment product.",
+        "kahana": "yes",
+        "company": "yes"
+      },
+      {
+        "fragmentId": "courses-learning",
+        "label": "Courses",
+        "definition": "Yes if you can easily take or browse structured courses as a first-class product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "newsletters-written",
+        "label": "Newsletters",
+        "definition": "Yes if you can easily read or subscribe to newsletters / creator writing as a first-class product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "audio-listening",
+        "label": "Audio",
+        "definition": "Yes if you can easily listen to music, podcasts, or audiobooks as a first-class product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "creator-monetization",
+        "label": "Memberships",
+        "definition": "Yes if a creator or seller can accept payments from others and make money through the platform, checkout, fan subscriptions, tips, ads, shop, or creator funds. Not only a classic Patreon-style membership product.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "messaging-community",
+        "label": "Community & Messaging",
+        "definition": "Yes if you can create or join a group, community, or club, including group chats, Groups, subreddits, community tabs, discussion boards, or community feeds. A one-off comment on a single video or listing is not the bar; a durable place for the group to talk is.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "online-storefront",
+        "label": "Storefronts",
+        "definition": "Yes if the product gives a creator a custom storefront or site that can take the place of building their own website (bio page, creator site, branded shop). Not a shop tab on someone else’s multi-seller marketplace.",
+        "kahana": "yes",
+        "company": "no"
+      },
+      {
+        "fragmentId": "digital-marketplaces",
+        "label": "Marketplaces",
+        "definition": "Yes if a typical person can search and shop a catalog of offerings from many sellers, courses, books, digital goods, etc. Storefront software (Shopify, WooCommerce) is not a marketplace unless shoppers browse many sellers there.",
+        "kahana": "yes",
+        "company": "no"
+      }
+    ]
+  },
+  "researchInsights": {
+    "companyName": "Apple TV+",
+    "scaleFacts": [
+      "Owned by Apple Inc.; launched November 1, 2019 (initially Apple TV+).",
+      "US pricing: USD 12.99/month or USD 99.99/year, ad-free, with a 7-day free trial; also via Apple One (USD 19.95–37.95/month) and Apple TV + Peacock bundles.",
+      "Catalog focuses on prestige Apple Original series, films, documentaries, kids shows, and live sports add-ons (e.g. MLB Friday Night Baseball, MLS Season Pass) rather than a giant back catalog."
+    ],
+    "strengths": [
+      {
+        "title": "High-quality original programming",
+        "detail": "Strong prestige slate (Ted Lasso, Severance, The Morning Show, CODA) with heavy investment in production quality."
+      },
+      {
+        "title": "Simple, ad-free pricing",
+        "detail": "One plan, no ad tiers, easier to explain than multi-tier streamers."
+      },
+      {
+        "title": "Device integration and UX",
+        "detail": "Deep Apple ecosystem integration (Apple TV app, iOS, macOS, tvOS) with unified Up Next and cross-service aggregation."
+      },
+      {
+        "title": "Bundling value",
+        "detail": "Apple One and Apple TV + Peacock bundles add value for multi-service households."
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Smaller catalog vs legacy streamers",
+        "detail": "More originals-focused and narrower than Netflix, Disney+, or Amazon, less older TV/film breadth."
+      },
+      {
+        "title": "Perceived as “extra” vs core utility",
+        "detail": "Often treated as a nice-to-have for a few shows rather than a primary streaming home."
+      },
+      {
+        "title": "Limited non-Apple ecosystem draw",
+        "detail": "Available on non-Apple devices, but branding skews Apple, less central for Android / non-Apple households."
+      }
+    ],
+    "sources": [
+      "https://en.wikipedia.org/wiki/Apple_TV_(streaming_service)",
+      "https://www.cinemablend.com/streaming-news/apple-tv-subscription-the-plan-the-price-and-whats-included",
+      "https://www.ign.com/wikis/apple-tv/Plans_and_Pricing",
+      "https://tv.apple.com"
+    ]
+  },
+  "content": "<p class=\"lead\">Kahana is a library of curated hubs, Explore, Clubs, and optional Stripe. Apple TV+ is apple’s SVOD service for original series and films. They overlap in places and diverge in others.</p>\n\n<h2>What each one is</h2>\n<p>Kahana is built around <a href=\"/help/hubs\">hubs</a> people can open, <a href=\"/help/explore\">Explore</a> so strangers can find them, <a href=\"/help/how-aura-works\">Aura</a> as scarce daily recognition, and Clubs so discussion outlives a feed. Selling stays optional.</p>\n<p>Apple TV is a subscription streaming service that offers award-winning original series and films, live sports, and premium entertainment across devices. <a href=\"https://tv.apple.com\" target=\"_blank\" rel=\"noopener noreferrer\">Official site</a>.</p>\n\n<h2>Why this comparison</h2>\n<p>This article puts Kahana and Apple TV+ side by side. It covers what each supports as a first-class product job, key features, and a few research notes so you have a clearer picture of what they are, how they compare, and what you can actually do on each one. It is not a teardown, and it is not a switch-tomorrow pitch.</p>\n\n",
+  "contentAfter": "<h2>What you can do on each</h2>\n<p>On Kahana you can publish a hub, list it on Explore, discuss it in a Club, grant Aura, and turn on a Stripe paywall when you are ready to charge.</p>\n<p>On Apple TV+ you can use Series/Films as a first-class product job. You want the licensed catalog, apps, and living-room playback those services are built for.</p>\n\n",
+  "landscapeCompanyId": "apple-tv"
+}

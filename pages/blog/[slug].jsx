@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { getRandomPhoto, getOptimizedPhotoUrl, getPlaceholderImageUrl } from '../../utils/pexels';
-import { suggestNatureImageQuery } from '../../utils/blog-helpers';
+import { suggestNatureImageQuery, normalizeBlogCategories } from '../../utils/blog-helpers';
 import { blogIndex } from '../../data/blog-index';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import AuthorCard from '../../components/AuthorCard';
@@ -12,6 +12,8 @@ import BlogBrowserComparison from '../../components/BlogBrowserComparison';
 import YtcReviewerCallout from '../../components/blog/YtcReviewerCallout';
 import ComparisonTable from '../../components/ComparisonTable';
 import BlogCard from '../../components/BlogCard';
+import KahanaCoverageChart from '../../components/KahanaCoverageChart';
+import ResearchInsights from '../../components/ResearchInsights';
 import { FaLinkedin, FaRegCalendarAlt, FaBookOpen, FaRegClock } from 'react-icons/fa';
 import SocialShare from '../../components/SocialShare';
 import { trackBlogPageViewDirect } from '../../utils/directMixpanel';
@@ -87,6 +89,75 @@ function parseProps(propsString) {
   }
   
   return props;
+}
+
+function BlogHtmlBody({ content, emptyFallback = false }) {
+  if (!content) {
+    if (!emptyFallback) return null;
+    return (
+      <div className="prose prose-lg max-w-none">
+        <div className="text-gray-600">
+          <p>No content available for this post.</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (Array.isArray(content)) {
+    return (
+      <div className="prose prose-lg max-w-none">
+        {content.map((block, index) => {
+          if (!block || !block.type) return null;
+
+          switch (block.type) {
+            case 'heading':
+              return block.text ? (
+                <h2 key={index} className="text-2xl font-bold mt-8 mb-4">{block.text}</h2>
+              ) : null;
+            case 'paragraph':
+              return block.text ? (
+                <p key={index} className="mb-4" dangerouslySetInnerHTML={{ __html: block.text }} />
+              ) : null;
+            case 'list':
+              return block.items && Array.isArray(block.items) ? (
+                <ul key={index} className="list-disc pl-6 mb-4">
+                  {block.items.map((item, itemIndex) => (
+                    <li key={itemIndex} className="mb-2">{item}</li>
+                  ))}
+                </ul>
+              ) : null;
+            case 'component':
+              if (block.name === 'BlogBrowserComparison') {
+                return (
+                  <div key={index}>
+                    <BlogBrowserComparison
+                      {...block.props}
+                    />
+                  </div>
+                );
+              }
+              if (block.name === 'ComparisonTable' || block.name === 'MaterialComparisonTable') {
+                return (
+                  <ComparisonTable
+                    key={index}
+                    {...block.props}
+                  />
+                );
+              }
+              return null;
+            default:
+              return null;
+          }
+        })}
+      </div>
+    );
+  }
+
+  return (
+    <div className="prose prose-lg max-w-none">
+      {parseHtmlWithComponents(content)}
+    </div>
+  );
 }
 
 // Add default avatar and placeholder image
@@ -170,13 +241,16 @@ export default function BlogPost({ post }) {
   const postAuthors = post?.authors ? getAuthorDetails(post.authors) : [];
   const hasAuthors = postAuthors && postAuthors.length > 0;
 
-  // Format category for display (now single string)
-  const categoryDisplay = post?.category || '';
-  const postCategory = categoryDisplay;
+  const categories = normalizeBlogCategories(post?.category);
+  const postCategory = categories[0] || '';
 
-  // Get related blogs from the same category (excluding current post)
+  // Get related blogs that share any category (excluding current post)
   const relatedBlogs = blogIndex
-    .filter(blog => blog.slug !== post.slug && blog.category === postCategory)
+    .filter((blog) => {
+      if (blog.slug === post.slug) return false;
+      const other = normalizeBlogCategories(blog.category);
+      return categories.some((cat) => other.includes(cat));
+    })
     .sort((a, b) => new Date(b.date) - new Date(a.date))
     .slice(0, 3);
 
@@ -299,14 +373,19 @@ export default function BlogPost({ post }) {
                 <span className="mr-1">Published:</span>
                 {isClient ? new Date(post.date).toLocaleDateString('en-US', { month: 'numeric', day: 'numeric', year: 'numeric' }).replace(/\//g, '/') : ''}
               </time>
-              {postCategory && (
-                <Link 
-                  href={`/blog?category=${encodeURIComponent(postCategory)}`}
-                  className="inline-flex items-center px-3 py-1.5 text-oasis-green-800 text-sm hover:text-oasis-green-700 transition-colors rounded-md hover:bg-oasis-green-50"
-                >
-                  <FaBookOpen className="w-4 h-4 mr-2" />
-                  <span>{postCategory}</span>
-                </Link>
+              {categories.length > 0 && (
+                <div className="inline-flex flex-wrap items-center gap-2">
+                  {categories.map((cat) => (
+                    <Link
+                      key={cat}
+                      href={`/blog?category=${encodeURIComponent(cat)}`}
+                      className="inline-flex items-center px-3 py-1.5 text-oasis-green-800 text-sm hover:text-oasis-green-700 transition-colors rounded-full border border-oasis-green-100 hover:bg-oasis-green-50"
+                    >
+                      <FaBookOpen className="w-3.5 h-3.5 mr-1.5" />
+                      <span>{cat}</span>
+                    </Link>
+                  ))}
+                </div>
               )}
               <div className="inline-flex items-center px-3 py-1.5 text-oasis-green-800 text-sm">
                 <FaRegClock className="w-4 h-4 mr-2" />
@@ -349,65 +428,42 @@ export default function BlogPost({ post }) {
 
           </header>
 
-          <div 
-            className="prose prose-lg max-w-none"
-          >
-            {post.content ? (
-              Array.isArray(post.content) ? (
-                post.content.map((block, index) => {
-                  if (!block || !block.type) return null;
-                  
-                  switch (block.type) {
-                    case 'heading':
-                      return block.text ? (
-                        <h2 key={index} className="text-2xl font-bold mt-8 mb-4">{block.text}</h2>
-                      ) : null;
-                    case 'paragraph':
-                      return block.text ? (
-                        <p key={index} className="mb-4" dangerouslySetInnerHTML={{ __html: block.text }} />
-                      ) : null;
-                    case 'list':
-                      return block.items && Array.isArray(block.items) ? (
-                        <ul key={index} className="list-disc pl-6 mb-4">
-                          {block.items.map((item, itemIndex) => (
-                            <li key={itemIndex} className="mb-2">{item}</li>
-                          ))}
-                        </ul>
-                      ) : null;
-                    case 'component':
-                      if (block.name === 'BlogBrowserComparison') {
-                        return (
-                          <div key={index}>
-                            <BlogBrowserComparison
-                              {...block.props}
-                            />
-                          </div>
-                        );
-                      }
-                      if (block.name === 'ComparisonTable' || block.name === 'MaterialComparisonTable') {
-                        return (
-                          <ComparisonTable
-                            key={index}
-                            {...block.props}
-                          />
-                        );
-                      }
-                      return null;
-                    default:
-                      return null;
-                  }
-                })
-              ) : (
-                <div className="prose prose-lg max-w-none">
-                  {parseHtmlWithComponents(post.content)}
-                </div>
-              )
-            ) : (
-              <div className="text-gray-600">
-                <p>No content available for this post.</p>
-              </div>
-            )}
-          </div>
+          <BlogHtmlBody content={post.content} emptyFallback />
+
+          {post.coverage && (
+            <KahanaCoverageChart
+              coverage={post.coverage}
+              companyName={post.coverageCompanyName}
+            />
+          )}
+
+          <BlogHtmlBody content={post.contentAfter} />
+
+          {post.researchInsights && (
+            <ResearchInsights insights={post.researchInsights} />
+          )}
+
+          {(post.coverage || post.researchInsights) && (
+            <p className="mt-8 text-base text-oasis-green-800">
+              <a
+                href="https://app.kahana.io/explore"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-[#617500] underline hover:text-oasis-green-800"
+              >
+                Open Explore →
+              </a>
+              {' · '}
+              <a
+                href="https://app.kahana.io"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-[#617500] underline hover:text-oasis-green-800"
+              >
+                Create a hub →
+              </a>
+            </p>
+          )}
           
           {isClient && (
             <SocialShare 
@@ -416,69 +472,46 @@ export default function BlogPost({ post }) {
               excerpt={post.excerpt}
             />
           )}
-
-          <div className="mt-16 p-8 bg-gradient-to-br from-desert-yellow-100/20 to-oasis-blue-300/10 rounded-xl shadow-lg">
-            <h2 className="text-2xl font-bold text-oasis-green-900 mb-4">Ready to Elevate Your Work Experience?</h2>
-            <p className="text-lg text-oasis-green-800 mb-6">
-              We'd love to understand your unique challenges and explore how our solutions can help you achieve a more fluid way of working now and in the future. Let's discuss your specific needs and see how we can work together to create a more elegant future of work.
-            </p>
-            <Link 
-              href="https://kahana.io/contact"
-              className="btn-primary inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline"
-            >
-              <span>Contact us</span>
-              <svg className="ml-2 -mr-1 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
-            </Link>
-          </div>
-
-          {/* Related Blogs Section */}
-          {relatedBlogs.length > 0 && (
-            <div className="mt-16 pt-12 border-t border-gray-200">
-              <h2 style={{fontWeight: 'bold', fontSize: '2rem', marginTop: '2rem', marginBottom: '1rem'}} className="text-2xl font-bold text-oasis-green-800 mb-6">
-                <strong>More {postCategory} articles</strong>
-              </h2>
-              <p className="text-lg text-oasis-green-800 mb-6">
-                Explore more articles about <Link href={`/blog?category=${encodeURIComponent(postCategory)}`} className="text-[#617500] hover:text-oasis-green-800 font-semibold underline">{postCategory}</Link>
-              </p>
-              <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mt-8">
-                {relatedBlogs.map((relatedPost) => (
-                  <div key={relatedPost.slug}>
-                    <BlogCard 
-                      post={{ ...relatedPost, authors: getAuthorDetails(relatedPost.authors) }} 
-                    />
-                  </div>
-                ))}
-              </div>
-              <div className="mt-8 text-center">
-                <Link 
-                  href={`/blog?category=${encodeURIComponent(postCategory)}`}
-                  className="btn-secondary inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline"
-                >
-                  <span>View All {postCategory} Articles</span>
-                  <svg className="ml-2 -mr-1 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
-                </Link>
-              </div>
-            </div>
-          )}
-
-          {/* Author Bio Section */}
-          {hasAuthors && (
-            <div className="mt-12">
-              <h2 className="text-2xl font-bold text-oasis-green-800 mb-6">About the Authors</h2>
-              {isClient && (
-                <AuthorCard 
-                  authors={postAuthors}
-                  variant="bio" 
-                />
-              )}
-            </div>
-          )}
         </article>
       </main>
+
+      {relatedBlogs.length > 0 && (
+        <section className="not-prose border-t border-gray-200 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <h2 className="text-2xl font-bold text-oasis-green-800 mb-2">
+              More {postCategory} articles
+            </h2>
+            <p className="text-oasis-green-800 mb-8">
+              Explore more articles about{' '}
+              <Link
+                href={`/blog?category=${encodeURIComponent(postCategory)}`}
+                className="text-[#617500] hover:text-oasis-green-800 font-semibold underline"
+              >
+                {postCategory}
+              </Link>
+            </p>
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+              {relatedBlogs.map((relatedPost) => (
+                <BlogCard
+                  key={relatedPost.slug}
+                  post={{ ...relatedPost, authors: getAuthorDetails(relatedPost.authors) }}
+                />
+              ))}
+            </div>
+            <div className="mt-8 text-center">
+              <Link
+                href={`/blog?category=${encodeURIComponent(postCategory)}`}
+                className="btn-secondary inline-flex items-center justify-center px-6 py-3 text-base no-underline hover:no-underline focus:no-underline"
+              >
+                <span>View All {postCategory} Articles</span>
+                <svg className="ml-2 -mr-1 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </Link>
+            </div>
+          </div>
+        </section>
+      )}
       </div>
 
       {/* Scroll Progress Script */}
