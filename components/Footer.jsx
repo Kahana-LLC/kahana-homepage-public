@@ -44,6 +44,7 @@ const PRODUCT_LINKS = [
     icon: MagnifyingGlassIcon,
   },
   { href: '/pricing', labelKey: 'footer.pricing', icon: TagIcon },
+  { href: '/success-stories', labelKey: 'footer.useCases', icon: BookOpenIcon },
 ];
 
 /** About / Team / Careers hidden from footer for now (pages still exist). */

@@ -72,6 +72,8 @@ function pathPreservePrefixes(origins) {
     { prefix: '/pricing', origin: origins.about },
     { prefix: '/faq', origin: origins.about },
     { prefix: '/aura', origin: origins.about },
+    { prefix: '/success-stories', origin: origins.about },
+    { prefix: '/use-cases', origin: origins.about },
     // /contact stays on apex — do not send to about
     { prefix: '/support', origin: origins.help },
     { prefix: '/community', origin: origins.help },
@@ -93,7 +95,6 @@ const OASIS_LEFTOVER_PREFIXES = [
   // Oasis /features/* leftovers redirected in resolveApexRedirect (not path-preserved)
   '/markets',
   '/solutions',
-  '/use-cases',
   '/oasis-',
   '/oasis-auth',
   '/oasis-pricing',

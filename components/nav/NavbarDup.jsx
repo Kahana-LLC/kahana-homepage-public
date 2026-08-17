@@ -21,6 +21,7 @@ const NAV_LABEL_KEYS = {
   help: 'nav.help',
   support: 'nav.support',
   contact: 'nav.contact',
+  useCases: 'nav.useCases',
 };
 
 function ChevronDownIcon({ className }) {
@@ -668,7 +669,9 @@ export default function NavbarDup() {
                     ? 'nav.support'
                     : row.label === 'Contact'
                       ? 'nav.contact'
-                      : null;
+                      : row.label === 'Success stories'
+                        ? 'nav.useCases'
+                        : null;
               const label = labelKey ? t(labelKey) : row.label;
               return row.external || row.href.startsWith('http') ? (
                 <a

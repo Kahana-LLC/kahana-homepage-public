@@ -438,6 +438,11 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: "/use-cases",
+        destination: "/success-stories",
+        permanent: true,
+      },
+      {
         source: "/products/consumer-browser",
         destination: "/oasis-pricing",
         permanent: true,

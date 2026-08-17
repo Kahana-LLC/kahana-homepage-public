@@ -60,10 +60,9 @@ if (fs.existsSync(solutionsDir)) {
   }
 }
 
-// Use-cases → /
+// Use-cases: keep Oasis child pages redirected; /use-cases is a live Kahana page.
 const useCasesDir = path.join(ARCHIVE_PAGES, 'use-cases');
 if (fs.existsSync(useCasesDir)) {
-  add('/use-cases', '/');
   for (const file of fs.readdirSync(useCasesDir).filter((f) => f.endsWith('.jsx'))) {
     add(`/use-cases/${file.replace(/\.jsx$/, '')}`, '/');
   }

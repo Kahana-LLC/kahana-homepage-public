@@ -41,6 +41,7 @@ function generateSiteMap() {
     ['/help/trust', 'weekly', '0.8'],
     ['/help/delete-my-account', 'weekly', '0.6'],
     ['/aura', 'weekly', '0.7'],
+    ['/success-stories', 'weekly', '0.8'],
     ['/press-kit', 'monthly', '0.6'],
     ['/privacy-policy', 'monthly', '0.5'],
     ['/terms-and-conditions', 'monthly', '0.5'],

@@ -29,6 +29,7 @@ import AuraLikeAnimation from './AuraLikeAnimation';
 import CategoryMarquee from './CategoryMarquee';
 import RainbowHoverCard from './RainbowHoverCard';
 import FaqBrowse from '../../faq/FaqBrowse';
+import UseCaseStoryCards from '../../use-cases/UseCaseStoryCards';
 import { EXPLORE_CATEGORIES } from '../../../data/exploreCategories';
 import { useMarketingI18n } from '../../../contexts/MarketingI18n';
 import { withAppLanguageParam } from '../../../lib/contentLanguage';
@@ -387,6 +388,22 @@ export default function PlatformHome() {
           <h2 className="text-3xl font-semibold sm:text-4xl">{t('home.missionTitle')}</h2>
           <p className="mt-4 max-w-3xl text-lg leading-relaxed text-[#666666]">
             {t('home.missionBody')}
+          </p>
+        </FadeInSection>
+      </SectionShell>
+
+      <SectionShell id="success-stories" className="border-t border-[#E0E8D4] bg-white/60">
+        <FadeInSection>
+          <h2 className="text-3xl font-semibold sm:text-4xl">{t('home.storiesTitle')}</h2>
+          <p className="mt-3 max-w-2xl text-lg text-[#666666]">{t('home.storiesLead')}</p>
+          <UseCaseStoryCards t={t} compact />
+          <p className="mt-8">
+            <Link
+              href="/success-stories"
+              className="text-base font-medium text-[#617500] no-underline underline-offset-4 hover:underline"
+            >
+              {t('home.storiesSeeAll')}
+            </Link>
           </p>
         </FadeInSection>
       </SectionShell>

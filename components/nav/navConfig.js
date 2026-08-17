@@ -6,6 +6,11 @@ export const CONTACT_URL = 'https://kahana.io/contact';
 /** Desktop primary nav text links (Explore is a CTA button on the right). */
 export const desktopNavItems = [
   {
+    id: 'useCases',
+    label: 'Success stories',
+    href: '/success-stories',
+  },
+  {
     id: 'help',
     label: 'Help',
     href: '/help',
@@ -20,6 +25,7 @@ export const EXPLORE_URL = `${APP_URL}/explore`;
  * Learn / About cluster links hidden for now.
  */
 export const mobileNavRows = [
+  { label: 'Success stories', href: '/success-stories' },
   { label: 'Help', href: '/help' },
   { label: 'Support', href: '/support' },
   { label: 'Contact', href: CONTACT_URL, external: true },
