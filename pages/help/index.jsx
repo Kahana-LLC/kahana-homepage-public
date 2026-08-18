@@ -1,47 +1,107 @@
-import React, { useState, useMemo, useEffect } from 'react';
-import Head from 'next/head';
+import React, { useState, useMemo, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { getAllDocsMetadata } from '../../utils/docsUtils';
 import DocCard from '../../components/DocCard';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import SEO from '../../components/SEO';
-import { getCategoryDisplayName } from '../../config/docsConfig';
+import HelpFilterBar from '../../components/help/HelpFilterBar';
+import {
+  FEATURES,
+  getPersona,
+  helpDocMatchesQuery,
+  parseTaxonomyTag,
+  personaChipLabel,
+} from '../../data/marketingTaxonomy';
+
 const DOCS_PER_PAGE = 9;
+
+function tagFromQuery(query) {
+  if (typeof query.for === 'string' && query.for) return `persona:${query.for}`;
+  if (typeof query.use === 'string' && query.use) return `use-case:${query.use}`;
+  if (typeof query.feature === 'string' && query.feature) return `feature:${query.feature}`;
+  return '';
+}
 
 export async function getStaticProps() {
   const docs = await getAllDocsMetadata();
-  const categories = [...new Set(docs.map(doc => doc.category))].sort();
-  
   return {
     props: {
       docs,
-      categories,
     },
   };
 }
 
-export default function HelpIndex({ docs = [], categories = [] }) {
-  const [activeCategory, setActiveCategory] = useState('all');
+export default function HelpIndex({ docs = [] }) {
+  const router = useRouter();
+  const [activeSection, setActiveSection] = useState('all');
+  const [activeTag, setActiveTag] = useState('');
   const [searchQuery, setSearchQuery] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
+  const didInitQuery = useRef(false);
+  const skipNextQueryWrite = useRef(true);
 
   const docList = Array.isArray(docs) ? docs : [];
-  const categoryList = Array.isArray(categories) ? categories : [];
+  const parsedTag = parseTaxonomyTag(activeTag);
+  const selectedPersona = parsedTag?.kind === 'persona' ? getPersona(parsedTag.slug) : null;
+
+  useEffect(() => {
+    if (!router.isReady || didInitQuery.current) return;
+    didInitQuery.current = true;
+    skipNextQueryWrite.current = true;
+    const { q, section } = router.query;
+    if (typeof q === 'string') setSearchQuery(q);
+    if (typeof section === 'string' && section) setActiveSection(section);
+    const nextTag = tagFromQuery(router.query);
+    if (nextTag) setActiveTag(nextTag);
+  }, [router.isReady, router.query]);
+
+  useEffect(() => {
+    if (!didInitQuery.current || !router.isReady) return undefined;
+    if (skipNextQueryWrite.current) {
+      skipNextQueryWrite.current = false;
+      return undefined;
+    }
+    const handle = window.setTimeout(() => {
+      const nextTag = parseTaxonomyTag(activeTag);
+      const query = {};
+      if (searchQuery.trim()) query.q = searchQuery.trim();
+      if (activeSection !== 'all') query.section = activeSection;
+      if (nextTag?.kind === 'persona') query.for = nextTag.slug;
+      if (nextTag?.kind === 'use-case') query.use = nextTag.slug;
+      if (nextTag?.kind === 'feature') query.feature = nextTag.slug;
+      const current = {
+        q: typeof router.query.q === 'string' ? router.query.q : undefined,
+        section: typeof router.query.section === 'string' ? router.query.section : undefined,
+        for: typeof router.query.for === 'string' ? router.query.for : undefined,
+        use: typeof router.query.use === 'string' ? router.query.use : undefined,
+        feature: typeof router.query.feature === 'string' ? router.query.feature : undefined,
+      };
+      const same =
+        current.q === query.q &&
+        current.section === query.section &&
+        current.for === query.for &&
+        current.use === query.use &&
+        current.feature === query.feature;
+      if (same) return;
+      router.replace({ pathname: '/help', query }, undefined, { shallow: true });
+    }, searchQuery ? 350 : 0);
+    return () => window.clearTimeout(handle);
+  }, [activeSection, activeTag, router, searchQuery]);
 
   const filteredDocs = useMemo(() => {
     return docList.filter((doc) => {
-      const matchesCategory = activeCategory === 'all' || doc.category === activeCategory;
-      const matchesSearch =
-        searchQuery === '' ||
-        (doc.title || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
-        (doc.description || '').toLowerCase().includes(searchQuery.toLowerCase());
-      return matchesCategory && matchesSearch;
+      const section = doc.section || doc.category;
+      const matchesSection = activeSection === 'all' || section === activeSection;
+      const matchesTag = !activeTag || (doc.tags || []).includes(activeTag);
+      const matchesSearch = helpDocMatchesQuery(doc, searchQuery);
+      return matchesSection && matchesTag && matchesSearch;
     });
-  }, [docList, activeCategory, searchQuery]);
+  }, [docList, activeSection, activeTag, searchQuery]);
 
   useEffect(() => {
     setCurrentPage(1);
-  }, [activeCategory, searchQuery]);
+  }, [activeSection, activeTag, searchQuery]);
 
   useEffect(() => {
     const tp = Math.max(1, Math.ceil(filteredDocs.length / DOCS_PER_PAGE));
@@ -51,6 +111,7 @@ export default function HelpIndex({ docs = [], categories = [] }) {
   const totalPages = Math.max(1, Math.ceil(filteredDocs.length / DOCS_PER_PAGE));
   const startIndex = (currentPage - 1) * DOCS_PER_PAGE;
   const paginatedDocs = filteredDocs.slice(startIndex, startIndex + DOCS_PER_PAGE);
+  const hasFilters = activeSection !== 'all' || Boolean(activeTag) || Boolean(searchQuery.trim());
 
   const getPageNumbers = () => {
     const delta = 2;
@@ -81,6 +142,10 @@ export default function HelpIndex({ docs = [], categories = [] }) {
     return rangeWithDots;
   };
 
+  const relatedFeatureLinks = (selectedPersona?.features || [])
+    .map((slug) => FEATURES.find((feature) => feature.slug === slug))
+    .filter(Boolean);
+
   return (
     <>
       <SEO
@@ -92,23 +157,21 @@ export default function HelpIndex({ docs = [], categories = [] }) {
 
       <div className="min-h-screen bg-white">
         <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          {/* Breadcrumbs - same as blog */}
           <div className="mb-8">
-            <Breadcrumbs 
+            <Breadcrumbs
               items={[
                 { name: "Home", url: "/" },
                 { name: "Help", url: "/help" },
-              ]} 
+              ]}
             />
           </div>
 
-          {/* Header - same as blog */}
-          <div className="text-center mb-12">
+          <div className="text-center mb-10">
             <h1 className="text-4xl font-bold text-oasis-green-900 mb-4">
               Help
             </h1>
             <p className="text-xl text-oasis-green-800 max-w-2xl mx-auto">
-              Search guides for Kahana: hubs, Library, Clubs, Aura, files, and trust. New articles land here as they ship.
+              Search guides, then filter by who you are or what you are trying to do.
             </p>
           </div>
 
@@ -131,61 +194,74 @@ export default function HelpIndex({ docs = [], categories = [] }) {
             </div>
           ) : (
             <>
-          {/* Search Bar - same full-width style as blog */}
-          <div className="mb-8">
-            <div className="relative w-full">
-              <input
-                type="text"
-                placeholder="Search help..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-oasis-green-600 focus:border-transparent"
-              />
-              <div className="absolute inset-y-0 right-0 flex items-center pr-3">
-                <svg className="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
-              </div>
-            </div>
-          </div>
+          <HelpFilterBar
+            section={activeSection}
+            onSectionChange={setActiveSection}
+            tag={activeTag}
+            onTagChange={setActiveTag}
+            searchQuery={searchQuery}
+            onSearchChange={setSearchQuery}
+          />
 
-          {/* Filters - same button style as blog */}
-          <div className="mb-8">
-            <div className="flex flex-wrap gap-2">
-              <button
-                type="button"
-                onClick={() => setActiveCategory('all')}
-                className={`btn-sm transition-colors ${
-                  activeCategory === 'all' ? 'btn-primary' : 'btn-secondary'
-                }`}
-              >
-                All
-              </button>
-                  {categoryList.map((category) => (
-                <button
-                  key={category}
-                  type="button"
-                  onClick={() => setActiveCategory(category)}
-                  className={`btn-sm transition-colors capitalize ${
-                    activeCategory === category ? 'btn-primary' : 'btn-secondary'
-                  }`}
-                >
-                  {getCategoryDisplayName(category)}
-                </button>
+          {selectedPersona ? (
+            <p className="help-for-you">
+              Guides for {personaChipLabel(selectedPersona).toLowerCase()}. Start with{' '}
+              {relatedFeatureLinks.map((feature, index) => (
+                <span key={feature.slug}>
+                  {index > 0 ? ' · ' : null}
+                  <Link href={`/features/${feature.slug}`} className="font-semibold text-brand-link no-underline hover:underline">
+                    {feature.title}
+                  </Link>
+                </span>
               ))}
-            </div>
-          </div>
+              {relatedFeatureLinks.length ? ' · ' : null}
+              <Link href={`/for/${selectedPersona.slug}`} className="font-semibold text-brand-link no-underline hover:underline">
+                {selectedPersona.title}
+              </Link>
+            </p>
+          ) : (
+            <p className="help-for-you">
+              Also see{' '}
+              <Link href="/features" className="font-semibold text-brand-link no-underline hover:underline">
+                Features
+              </Link>
+              {', '}
+              <Link href="/for" className="font-semibold text-brand-link no-underline hover:underline">
+                who Kahana is for
+              </Link>
+              {', and '}
+              <Link href="/use-cases" className="font-semibold text-brand-link no-underline hover:underline">
+                use cases
+              </Link>
+              .
+            </p>
+          )}
 
-          {/* Help Grid - same gap as blog */}
           {filteredDocs.length > 0 ? (
             <>
               <p className="text-sm text-oasis-green-800/90 mb-4 text-center sm:text-left">
                 Showing {startIndex + 1}–{Math.min(startIndex + DOCS_PER_PAGE, filteredDocs.length)} of{' '}
                 {filteredDocs.length} article{filteredDocs.length === 1 ? '' : 's'}
+                {hasFilters ? (
+                  <>
+                    {' · '}
+                    <button
+                      type="button"
+                      className="help-clear-filters"
+                      onClick={() => {
+                        setActiveSection('all');
+                        setActiveTag('');
+                        setSearchQuery('');
+                      }}
+                    >
+                      Clear filters
+                    </button>
+                  </>
+                ) : null}
               </p>
-              <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mb-8">
+              <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3 mb-8">
                 {paginatedDocs.map((doc) => (
-                  <DocCard key={doc.slug || doc.title} doc={doc} />
+                  <DocCard key={doc.slug || doc.title} doc={doc} compact />
                 ))}
               </div>
 
@@ -211,7 +287,6 @@ export default function HelpIndex({ docs = [], categories = [] }) {
                     {getPageNumbers().map((pageNum, index) => (
                       <button
                         key={`${pageNum}-${index}`}
-                        type="button"
                         onClick={() => typeof pageNum === 'number' && setCurrentPage(pageNum)}
                         disabled={pageNum === '...'}
                         className={`px-4 py-2 rounded-md min-w-[2.5rem] ${
@@ -246,7 +321,19 @@ export default function HelpIndex({ docs = [], categories = [] }) {
             <div className="text-center py-12">
               <h3 className="text-lg font-medium text-oasis-green-900 mb-2">No help articles found</h3>
               <p className="text-oasis-green-800">
-                Try adjusting your search or filter to find what you&apos;re looking for.
+                Try a different search, or{' '}
+                <button
+                  type="button"
+                  className="help-clear-filters"
+                  onClick={() => {
+                    setActiveSection('all');
+                    setActiveTag('');
+                    setSearchQuery('');
+                  }}
+                >
+                  clear filters
+                </button>
+                .
               </p>
             </div>
           )}

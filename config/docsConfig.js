@@ -28,20 +28,14 @@ export const docsConfig = {
     authorFallback: "Adam Kershner"
   },
 
-  // Categories and their display names (Help index filters)
+  // Help index section filters (ids match data/marketingTaxonomy HELP_SECTIONS)
   categories: {
-    discovery: "Discovery",
-    knowledge: "Knowledge",
-    community: "Community",
-    presence: "Presence",
-    quality: "Quality",
-    monetization: "Monetization",
-    trust: "Trust",
-    guides: "Guides",
-    security: "Security",
-    privacy: "Privacy",
-    api: "API",
-    troubleshooting: "Troubleshooting",
+    'get-started': 'Get started',
+    library: 'Library',
+    'hubs-and-files': 'Hubs and files',
+    clubs: 'Clubs',
+    selling: 'Selling',
+    'trust-and-account': 'Trust and account',
   },
 
   // SEO defaults
@@ -79,4 +73,8 @@ export function isUniversalComponentEnabled(componentName) {
  */
 export function getCategoryDisplayName(category) {
   return docsConfig.categories[category] || category;
+}
+
+export function getSectionDisplayName(section) {
+  return getCategoryDisplayName(section);
 }

@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import Link from 'next/link';
 import {
+  BookmarkIcon,
   BookOpenIcon,
   BuildingOffice2Icon,
   ChatBubbleLeftRightIcon,
@@ -17,6 +18,7 @@ import {
   ScaleIcon,
   ShareIcon,
   ShieldCheckIcon,
+  Squares2X2Icon,
   TagIcon,
 } from '@heroicons/react/24/outline';
 import { ConsentContext } from '../contexts/ConsentContext';
@@ -44,6 +46,8 @@ const PRODUCT_LINKS = [
     icon: MagnifyingGlassIcon,
   },
   { href: '/pricing', labelKey: 'footer.pricing', icon: TagIcon },
+  { href: '/features', labelKey: 'footer.features', icon: Squares2X2Icon },
+  { href: '/use-cases', labelKey: 'footer.jobs', icon: BookmarkIcon },
   { href: '/success-stories', labelKey: 'footer.useCases', icon: BookOpenIcon },
 ];
 

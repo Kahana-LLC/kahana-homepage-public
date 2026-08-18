@@ -12,8 +12,9 @@ import TechnicalInteractionDataDoc from '../../components/docs/TechnicalInteract
 import TrainingDoc from '../../components/docs/TrainingDoc';
 import AssistantThemesDoc from '../../components/docs/AssistantThemesDoc';
 import DeleteAccountDoc from '../../components/docs/DeleteAccountDoc';
-import { docsConfig } from '../../config/docsConfig';
+import { docsConfig, getSectionDisplayName } from '../../config/docsConfig';
 import { HELP_RELATED_DOC_SLUGS } from '../../data/helpRelatedDocSlugs';
+import { parseTaxonomyTag } from '../../data/marketingTaxonomy';
 import fs from 'fs';
 import path from 'path';
 
@@ -62,16 +63,17 @@ export async function getStaticProps({ params }) {
       };
     }
 
+    const docSection = doc.section || doc.category;
     const mappedRelated = (HELP_RELATED_DOC_SLUGS[doc.slug] || [])
       .map((slug) => allDocs.find((d) => d.slug === slug))
       .filter(Boolean);
-    const categoryRelated = allDocs.filter(
-      (d) => d.category === doc.category && d.slug !== doc.slug,
+    const sectionRelated = allDocs.filter(
+      (d) => (d.section || d.category) === docSection && d.slug !== doc.slug,
     );
     const seen = new Set(mappedRelated.map((d) => d.slug));
     const relatedDocs = [
       ...mappedRelated,
-      ...categoryRelated.filter((d) => !seen.has(d.slug)),
+      ...sectionRelated.filter((d) => !seen.has(d.slug)),
     ].slice(0, docsConfig.defaults.relatedDocsCount);
 
     return {
@@ -153,6 +155,26 @@ export default function HelpArticlePage({ doc, relatedDocs }) {
             <div className="flex flex-col space-y-6">
               {/* Title */}
               <h1 className="text-4xl font-bold text-oasis-green-800">{doc.title}</h1>
+              <p className="text-sm font-medium text-oasis-green-700">
+                {getSectionDisplayName(doc.section || doc.category)}
+              </p>
+              {(doc.tags || []).length > 0 ? (
+                <div className="flex flex-wrap gap-2">
+                  {(doc.tags || []).map((tag) => {
+                    const parsed = parseTaxonomyTag(tag);
+                    if (!parsed) return null;
+                    return (
+                      <Link
+                        key={tag}
+                        href={parsed.href}
+                        className="rounded-full bg-[#EEF3D8] px-3 py-1 text-sm text-[#495800] no-underline hover:underline"
+                      >
+                        {parsed.label}
+                      </Link>
+                    );
+                  })}
+                </div>
+              ) : null}
 
               {/* Metadata */}
               <div className="flex flex-wrap items-center gap-3">

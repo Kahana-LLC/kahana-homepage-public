@@ -7,6 +7,22 @@ const readdir = promisify(fs.readdir);
 
 const DOCS_DIR = path.join(process.cwd(), "data/docs");
 
+function stripHtmlToSearchText(html, maxLength = 2500) {
+  if (!html || typeof html !== "string") return "";
+  return html
+    .replace(/<script[\s\S]*?<\/script>/gi, " ")
+    .replace(/<style[\s\S]*?<\/style>/gi, " ")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/&nbsp;/gi, " ")
+    .replace(/&amp;/gi, "&")
+    .replace(/&lt;/gi, "<")
+    .replace(/&gt;/gi, ">")
+    .replace(/&quot;/gi, '"')
+    .replace(/\s+/g, " ")
+    .trim()
+    .slice(0, maxLength);
+}
+
 /** Strip common inline Markdown from manifest summaries (plain text for cards / meta). */
 export function stripInlineMarkdown(text) {
   if (!text || typeof text !== "string") return "";
@@ -63,9 +79,12 @@ export async function getAllDocsMetadata() {
             title: doc.title,
             description: stripInlineMarkdown(doc.description),
             date: doc.date,
-            category: doc.category,
+            section: doc.section || doc.category,
+            category: doc.section || doc.category,
+            tags: Array.isArray(doc.tags) ? doc.tags : [],
             slug: doc.slug,
             authors: doc.authors,
+            searchText: stripHtmlToSearchText(doc.content),
             // Include a word count for reading time calculation
             wordCount: doc.content ? doc.content.replace(/<[^>]*>/g, '').split(/\s+/).length : 0
           };

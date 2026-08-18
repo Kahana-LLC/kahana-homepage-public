@@ -2316,3 +2316,197 @@ nav .dropdown-content a.dropdown-link:focus,
     transform: none;
   }
 }
+
+/* Help index: Exploding Topics-style compact filter bar + chips (Kahana olive) */
+.help-filter-wrap {
+  margin-bottom: 0.75rem;
+}
+
+.help-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 10px;
+}
+
+.help-filter-kicker {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #495800;
+  flex-shrink: 0;
+}
+
+button.help-filter-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  max-width: 100%;
+  padding: 8px 12px !important;
+  background: #ffffff !important;
+  border: 1px solid #d4d4d4 !important;
+  border-radius: 4px !important;
+  color: #313a00 !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  line-height: 20px !important;
+  box-shadow: none !important;
+}
+
+button.help-filter-trigger:hover {
+  background: #ffffff !important;
+  border-color: #7a9200 !important;
+  color: #313a00 !important;
+}
+
+button.help-filter-trigger.is-open {
+  border-color: #7a9200 !important;
+}
+
+.help-filter-trigger-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 14rem;
+}
+
+.help-filter-chevron {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  color: #495800;
+  transition: transform 0.15s ease;
+}
+
+button.help-filter-trigger.is-open .help-filter-chevron {
+  transform: rotate(180deg);
+}
+
+.help-filter-search {
+  position: relative;
+  flex: 1 1 220px;
+  min-width: 180px;
+}
+
+.help-filter-search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  width: 16px;
+  height: 16px;
+  transform: translateY(-50%);
+  color: #8a9470;
+  pointer-events: none;
+}
+
+.help-filter-search input {
+  width: 100%;
+  min-height: 40px;
+  padding: 8px 12px 8px 36px;
+  border: 1px solid #d4d4d4;
+  border-radius: 4px;
+  background: #ffffff;
+  color: #313a00;
+  font-size: 14px;
+  line-height: 20px;
+  box-shadow: none;
+}
+
+.help-filter-search input:focus {
+  outline: none;
+  border-color: #7a9200;
+  box-shadow: 0 0 0 3px rgba(122, 146, 0, 0.18);
+}
+
+.help-filter-panel {
+  margin-top: 8px;
+  padding: 12px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  box-shadow: 0 12px 32px rgba(49, 58, 0, 0.1);
+}
+
+.help-chip-group + .help-chip-group {
+  margin-top: 12px;
+}
+
+.help-chip-group-label {
+  margin: 0 0 6px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #495800;
+}
+
+.help-chip-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+button.help-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px !important;
+  border: none !important;
+  border-radius: 4px !important;
+  background: #eef3d8 !important;
+  color: #495800 !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  line-height: 16px !important;
+  box-shadow: none !important;
+}
+
+button.help-chip:hover {
+  background: #e4e9cc !important;
+  color: #495800 !important;
+}
+
+button.help-chip.is-active,
+button.help-chip.is-active:hover {
+  background: #7a9200 !important;
+  color: #ffffff !important;
+}
+
+button.help-chip:focus,
+button.help-filter-trigger:focus {
+  outline: none !important;
+}
+
+button.help-chip:focus-visible,
+button.help-filter-trigger:focus-visible {
+  outline: 2px solid #7a9200 !important;
+  outline-offset: 2px !important;
+}
+
+.help-for-you {
+  margin: 0 0 1.25rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: #495800;
+}
+
+button.help-clear-filters {
+  display: inline;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  color: #7a9200 !important;
+  font-size: inherit !important;
+  font-weight: 600 !important;
+  line-height: inherit !important;
+  box-shadow: none !important;
+  text-decoration: none;
+}
+
+button.help-clear-filters:hover {
+  background: transparent !important;
+  color: #617500 !important;
+  text-decoration: underline;
+}

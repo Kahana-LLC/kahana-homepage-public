@@ -1,0 +1,18 @@
+{
+  "title": "Preview reels",
+  "description": "Optional image and video trailers that play as a carousel on Library cards when someone hovers or swipes.",
+  "slug": "preview-reels",
+  "section": "library",
+  "category": "library",
+  "tags": [
+    "feature:preview-reels",
+    "persona:creators",
+    "persona:buyers"
+  ],
+  "product": "kahana",
+  "date": "2026-08-17",
+  "authors": [
+    "Adam Kershner"
+  ],
+  "content": "<p class=\"lead\">A preview reel is a short trailer for your hub. On Library, it shows as a carousel when someone hovers or swipes the card, so they can sample the hub before they open it.</p>\n\n<p><strong>Primary action:</strong> Open a hub you own → Hub settings → Preview reel</p>\n\n<h2>What it is</h2>\n<p>Preview reels are optional. They do not replace a cover image, title, or description. They give Library visitors a few clips: images or short videos: before they decide to open or buy.</p>\n\n<h2>Limits</h2>\n<ul>\n<li>Up to <strong>eight</strong> clips per hub</li>\n<li>Images or video (MP4 or WebM)</li>\n<li>Videos should stay around <strong>30 seconds</strong> or less</li>\n<li>You can upload a new clip or pick a file already in the hub</li>\n</ul>\n\n<h2>How to add one</h2>\n<ol>\n<li>Open the hub and go to settings.</li>\n<li>Open the Preview reel studio.</li>\n<li>Add clips. Put the strongest trailer first: that is what people see first on the card.</li>\n<li>For images, you can reposition the crop so the important part stays in the carousel frame.</li>\n<li>Save. Check the listing preview before you list the hub on Library.</li>\n</ol>\n\n<h2>How visitors see it</h2>\n<ul>\n<li><strong>Desktop:</strong> hover a Library card.</li>\n<li><strong>Touch:</strong> swipe the card preview.</li>\n</ul>\n<p>If a hub has no reel, the cover image is what people see.</p>\n\n<h2>Tips</h2>\n<ul>\n<li>Lead with a clip that shows the actual work: a page, a slide, a short clip from the session: not only a logo.</li>\n<li>Keep motion calm. This is a sample, not an ad bumper.</li>\n<li>If you monetize, match the reel to what buyers get after checkout.</li>\n</ul>\n\n<h2>What’s next</h2>\n<ul>\n<li><a href=\"/help/list-hub-on-explore\">List a hub on Library</a></li>\n<li><a href=\"/help/hubs\">Hubs</a></li>\n<li><a href=\"/help/creator-analytics\">Analytics for creators</a></li>\n<li><a href=\"/features/preview-reels\">Preview reels (overview)</a></li>\n</ul>\n"
+}

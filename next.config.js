@@ -438,11 +438,6 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: "/use-cases",
-        destination: "/success-stories",
-        permanent: true,
-      },
-      {
         source: "/products/consumer-browser",
         destination: "/oasis-pricing",
         permanent: true,
@@ -478,50 +473,9 @@ const nextConfig = {
         destination: '/help/content-rights',
         permanent: true,
       },
-      // Features retired → Help topic articles
       {
         source: '/help/library',
         destination: '/help/explore',
-        permanent: true,
-      },
-      {
-        source: '/features/explore',
-        destination: '/help/explore',
-        permanent: true,
-      },
-      {
-        source: '/features/hubs',
-        destination: '/help/hubs',
-        permanent: true,
-      },
-      {
-        source: '/features/profiles',
-        destination: '/help/profiles',
-        permanent: true,
-      },
-      {
-        source: '/features/aura',
-        destination: '/help/how-aura-works',
-        permanent: true,
-      },
-      {
-        source: '/features/earning',
-        destination: '/help/earning',
-        permanent: true,
-      },
-      {
-        source: '/features/trust',
-        destination: '/help/trust',
-        permanent: true,
-      },
-      {
-        source: '/features',
-        destination: '/help',
-        permanent: true,
-      },
-      {
-        source: '/features/:path*',
-        destination: '/help',
         permanent: true,
       },
     ];

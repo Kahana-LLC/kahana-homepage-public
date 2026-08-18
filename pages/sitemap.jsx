@@ -14,6 +14,10 @@ const staticSitemapSections = [
       { text: 'Blog', href: '/blog' },
       { text: 'FAQ', href: '/faq' },
       { text: 'Pricing', href: '/pricing' },
+      { text: 'Features', href: '/features' },
+      { text: 'Use cases', href: '/use-cases' },
+      { text: 'Who it is for', href: '/for' },
+      { text: 'Success stories', href: '/success-stories' },
     ],
   },
   {

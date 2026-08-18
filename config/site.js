@@ -43,6 +43,8 @@ function absoluteCorporateUrl(path = '/') {
     '/aura',
     '/success-stories',
     '/use-cases',
+    '/features',
+    '/for',
     '/testimonials',
     '/privacy-policy',
     '/terms-and-conditions',

@@ -3,7 +3,8 @@
  * Falls back to same-category articles when a slug is missing here.
  */
 export const HELP_RELATED_DOC_SLUGS = {
-  explore: ['for-you-and-taste', 'list-hub-on-explore', 'get-started-learners'],
+  explore: ['for-you-and-taste', 'list-hub-on-explore', 'preview-reels'],
+  'preview-reels': ['list-hub-on-explore', 'hubs', 'creator-analytics'],
   'for-you-and-taste': ['explore', 'how-aura-works', 'saving-and-collections'],
   'list-hub-on-explore': ['hubs', 'explore', 'content-rights'],
   hubs: ['adding-files-and-embeds', 'list-hub-on-explore', 'get-started-creators'],
