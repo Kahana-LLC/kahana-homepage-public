@@ -331,19 +331,12 @@ function AppContent({ Component, pageProps }) {
     router.pathname.startsWith("/white-paper") ||
     router.pathname === "/" ||
     isBuyerGuide;
-  const needsSearchStyles =
-    router.pathname.startsWith("/explore");
 
   return (
     <>
       {needsDocsStyles ? (
         <Head>
           <link rel="stylesheet" href="/styles/docs.css" />
-        </Head>
-      ) : null}
-      {needsSearchStyles ? (
-        <Head>
-          <link rel="stylesheet" href="/styles/search-ui.css" />
         </Head>
       ) : null}
       <div className="flex flex-col min-h-screen" data-page={isBuyerGuide ? 'buyer-guide' : undefined}>

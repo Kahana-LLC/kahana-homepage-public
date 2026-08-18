@@ -122,7 +122,6 @@ const OASIS_LEFTOVER_PREFIXES = [
   '/early-bird',
   '/marketing-kit',
   '/kahana-health-survey',
-  '/explore',
   '/confirm-success',
   '/forgot-password',
   '/update-password',
@@ -160,6 +159,11 @@ export function resolveApexRedirect(pathname, host = 'kahana.io') {
 
   // Contact lives on apex, not about.*
   if (path === '/contact' || path.startsWith('/contact/')) {
+    return null;
+  }
+
+  // Product Library is kahana-web (kahana.io/explore), not this marketing app.
+  if (path === '/explore' || path.startsWith('/explore/')) {
     return null;
   }
 

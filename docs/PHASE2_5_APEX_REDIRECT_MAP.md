@@ -3,7 +3,7 @@
 **Status:** Implemented in [`config/apexRedirects.js`](../config/apexRedirects.js) + [`middleware.js`](../middleware.js).  
 **Rule:** 301 only when `Host` is `kahana.io` (or `www.kahana.io` before apex canonicalize). Never redirect when already on `about.` / `newsroom.` / `careers.` / `help.` (or `*-beta`). QA: Host-header against local/beta slug, or deploy to prod apex when ready.
 
-Until Phase 3, `https://kahana.io` (Discover) 301s to **about.kahana.io**. Product explore remains on **app.kahana.io**.
+Until Phase 3, leftover `https://kahana.io` marketing paths 301 to **about.kahana.io**. Product Library is **kahana-web** at `https://kahana.io/explore` (Heroku `kahana-alpha`; this marketing app does not serve Explore).
 
 ---
 
@@ -19,7 +19,9 @@ Until Phase 3, `https://kahana.io` (Discover) 301s to **about.kahana.io**. Produ
 
 ## Oasis / leftovers → about home
 
-`/products/*`, `/features/*` (Oasis deep-dives, not the Features index), `/markets/*`, `/solutions/*`, `/oasis-*`, buyer guides, consortium, installations, schedule-demo, sales, explore, Oasis auth helpers, etc. → `https://about.kahana.io/`
+`/products/*`, `/features/*` (Oasis deep-dives, not the Features index), `/markets/*`, `/solutions/*`, `/oasis-*`, buyer guides, consortium, installations, schedule-demo, sales, Oasis auth helpers, etc. → `https://about.kahana.io/`
+
+`https://kahana.io/explore` is already kahana-web (`kahana-alpha`). Leftover marketing-app hits (`about.kahana.io/explore`, Heroku app URL) 301 to `https://app.kahana.io/explore`.
 
 ## Excluded
 

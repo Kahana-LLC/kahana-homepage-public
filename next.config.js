@@ -478,6 +478,23 @@ const nextConfig = {
         destination: '/help/explore',
         permanent: true,
       },
+      // Leftover marketing hosts only (about.kahana.io, herokuapp). kahana.io/explore
+      // is already kahana-web (kahana-alpha) and never hits this app.
+      {
+        source: '/explore',
+        destination: 'https://app.kahana.io/explore',
+        permanent: true,
+      },
+      {
+        source: '/explore-backup',
+        destination: 'https://app.kahana.io/explore',
+        permanent: true,
+      },
+      {
+        source: '/api/search',
+        destination: 'https://app.kahana.io/explore',
+        permanent: true,
+      },
     ];
   },
 
