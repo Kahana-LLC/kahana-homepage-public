@@ -1572,7 +1572,9 @@ footer button.text-sm.no-underline:hover {
   outline-offset: 2px !important;
 }
 
-/* Mobile menu links - match Products/Pricing nav color #617500 */
+/* Mobile menu links — tappable rows (do not rely on styled-jsx; Next.js Link
+   does not receive the jsx hash). Keep ≥44px height for touch. */
+.mobile-menu a.mobile-link,
 .mobile-link,
 .mobile-link:visited,
 .mobile-link:hover,
@@ -1581,7 +1583,22 @@ footer button.text-sm.no-underline:hover {
   text-decoration: none !important;
   color: #617500 !important;
   font-weight: 500 !important;
-  box-sizing: content-box !important;
+  box-sizing: border-box !important;
+}
+.mobile-menu a.mobile-link {
+  display: flex !important;
+  align-items: center !important;
+  width: 100% !important;
+  min-height: 44px !important;
+  padding: 1rem 1.25rem !important;
+  border-radius: 0.75rem !important;
+  border: 1px solid #edf0f2 !important;
+  background-color: #f8f9fa !important;
+  font-size: 1.125rem !important;
+  text-align: left !important;
+}
+.mobile-menu a.mobile-link:hover {
+  background-color: #d0ede6 !important;
 }
 .menu-links a:not(.btn-primary):not(.btn-secondary),
 .menu-links a:not(.btn-primary):not(.btn-secondary):visited,

@@ -462,11 +462,13 @@ export default function NavbarDup() {
             flex-direction: column;
             gap: 0.75rem;
           }
-          .mobile-link {
+          /* :global so Next.js <Link> (className on inner <a>) still gets a 44px row */
+          :global(.mobile-menu a.mobile-link) {
             color: #617500 !important;
             box-sizing: border-box !important;
             transition: background-color 0.2s ease;
             padding: 1rem 1.25rem;
+            min-height: 44px;
             border-radius: 0.75rem;
             width: 100%;
             text-align: left;
@@ -478,11 +480,11 @@ export default function NavbarDup() {
             border: 1px solid #edf0f2;
             text-decoration: none !important;
           }
-          .mobile-link:hover {
+          :global(.mobile-menu a.mobile-link:hover) {
             background-color: #d0ede6;
             color: #617500 !important;
           }
-          .mobile-link:focus-visible {
+          :global(.mobile-menu a.mobile-link:focus-visible) {
             box-shadow: 0 0 0 2px #fff, 0 0 0 4px #617500;
           }
         `}</style>
@@ -676,7 +678,8 @@ export default function NavbarDup() {
                           ? 'nav.features'
                           : null;
               const label = labelKey ? t(labelKey) : row.label;
-              return row.external || row.href.startsWith('http') ? (
+              // Native <a>: Next.js Link's inner <a> never gets styled-jsx .mobile-link.
+              return (
                 <a
                   key={row.href}
                   href={row.href}
@@ -685,16 +688,6 @@ export default function NavbarDup() {
                 >
                   {label}
                 </a>
-              ) : (
-                <Link
-                  key={row.href}
-                  href={row.href}
-                  prefetch={row.prefetch !== false}
-                  className="mobile-link no-underline"
-                  onClick={closeMobile}
-                >
-                  {label}
-                </Link>
               );
             })}
           </div>
