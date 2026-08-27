@@ -7,7 +7,7 @@ export default function PricingPage() {
     <>
       <SEO
         title="Plans & billing | Kahana"
-        description="Choose the Kahana plan that fits your hubs. Start free, upgrade to Growth for unlimited hubs and storage, or contact us for Enterprise."
+        description="Compare Kahana Free and Growth. See every feature on Free, and what Growth adds for hubs, storage, file size, and live chat."
         url={`${ABOUT_ORIGIN}/pricing`}
         type="website"
       />

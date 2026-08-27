@@ -94,7 +94,7 @@ export const FAQ_SECTIONS = [
         id: 'creator-cost',
         question: 'How much does Kahana cost for creators?',
         answer:
-          'Free is $0. You get up to 3 hubs, unlimited collaborators, and files up to about 5 MB. You can still charge for access if you want.\n\nGrowth is $9.99 a month or $99.99 a year. You get unlimited hubs and uploads, live chat support, 100 GB of storage, and files up to 5 GB.\n\nEnterprise is custom, with white-glove support and flexible limits if you need them.\n\nWhen to upgrade (vs stay Free): /help/when-to-upgrade. Full table: /pricing. Open Billing in the app for the latest plan details.',
+          'Free is $0. You get up to 3 hubs, unlimited collaborators, and files up to about 5 MB. You can still charge for access if you want.\n\nGrowth is $9.99 a month or $99.99 a year. You get unlimited hubs and uploads, live chat support, 100 GB of storage, and files up to 5 GB.\n\nWhen to upgrade (vs stay Free): /help/when-to-upgrade. Full comparison: /pricing. Open Billing in the app for the latest plan details.',
       },
       {
         id: 'platform-fee',
@@ -369,7 +369,7 @@ export const FAQ_SECTIONS = [
         id: 'embed',
         question: 'Can I embed Kahana on my own site?',
         answer:
-          'The usual path is linking your Kahana profile or hub URL. Deeper embeds and white-label options are aimed at Enterprise.',
+          'The usual path is linking your Kahana profile or hub URL.',
       },
     ],
   },
