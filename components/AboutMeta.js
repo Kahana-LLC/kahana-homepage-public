@@ -8,10 +8,10 @@ export default function AboutMeta({ about }) {
 
   return (
     <Meta
-      title="About Kahana | Our Mission and Story"
+      title="About Kahana | Digital library"
       description={
         about.description ||
-        "Learn about Kahana's mission to revolutionize enterprise browsing and security. Discover our story, values, and commitment to innovation."
+        "Kahana is a digital library for ebooks, videos, and files in curated hubs. Learn about Kahana Group Inc. at kahana.io."
       }
       image={about.featuredImage || "/images/about-hero.jpg"}
       url="https://kahana.io/about"

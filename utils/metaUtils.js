@@ -135,7 +135,7 @@ function generateAboutMetaTags(about) {
     title: "About Kahana | Our Mission and Story",
     description:
       about.description ||
-      "Learn about Kahana's mission to revolutionize enterprise browsing and security. Discover our story, values, and commitment to innovation.",
+      "Kahana is a digital library for ebooks, videos, and files in curated hubs. Learn about Kahana Group Inc. at kahana.io.",
     image: about.featuredImage || "/images/about-hero.jpg",
     url: `${EXTERNAL_DATA_URL}/about`,
     type: "website",

@@ -6,9 +6,9 @@ import { getCloudinaryImageUrl } from '../utils/cloudinary-mapper';
 const DEFAULT_ORG_LOGO = getCloudinaryImageUrl('/assets/kahana_logo_transparent.svg');
 
 /** Marketing home copy — keep in sync with homepage hero / PLATFORM_FAQ voice. */
-export const DEFAULT_SEO_TITLE = 'The Digital Library With Aura';
+export const DEFAULT_SEO_TITLE = 'Kahana — digital library for ebooks, hubs, and clubs';
 export const DEFAULT_SEO_DESCRIPTION =
-  'Contribute what you know, learn from curated hubs on Explore, and give Aura so quality rises. Paid access is optional.';
+  'Kahana is a digital library for ebooks, videos, and files in curated hubs. Create, share, and discover on kahana.io.';
 /**
  * Kahana lockup as a padded PNG (1200×630). Prefer same-origin asset for OG/Twitter.
  */
@@ -41,7 +41,7 @@ const SEO = ({
     url: ABOUT_ORIGIN,
     logo: DEFAULT_ORG_LOGO,
     sameAs: [
-      'https://www.linkedin.com/company/kahana-co',
+      'https://www.linkedin.com/company/kahana-llc',
       'https://twitter.com/kahanaHQ',
       SITE_URL,
       'https://app.kahana.io',

@@ -8,14 +8,14 @@ function generateOrganizationSchema() {
     url: EXTERNAL_DATA_URL,
     logo: `${EXTERNAL_DATA_URL}/images/logo.png`,
     sameAs: [
-      "https://twitter.com/kahana",
-      "https://www.linkedin.com/company/kahana-co",
-      "https://github.com/kahana",
+      "https://twitter.com/kahanaHQ",
+      "https://www.linkedin.com/company/kahana-llc",
+      "https://app.kahana.io",
     ],
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: "+1-XXX-XXX-XXXX",
       contactType: "customer service",
+      url: `${EXTERNAL_DATA_URL}/contact`,
       areaServed: "Worldwide",
     },
   };
