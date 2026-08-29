@@ -7,7 +7,7 @@
 > **On-page FAQ data:** [`data/platformFaq.js`](data/platformFaq.js)  
 > **Primary product URL:** https://app.kahana.io  
 > **Company:** https://about.kahana.io · Support tickets in-app at `/support`  
-> **Last updated:** 2026-08-14  
+> **Last updated:** 2026-08-29  
 > **Guardrail:** Do not invent metrics. Mark `[FILL IN]` where numbers are still internal.  
 > **Voice:** Short, friendly sentences. Lead with the plain answer. Contribute / Library first; paid access optional. No em dashes in on-page copy.
 
@@ -58,6 +58,20 @@ Kahana is a library for curated digital knowledge.
 You contribute hubs of digital artifacts (files, videos, images, PDFs, documents, links, and more). People can find them on Library. You earn Aura when someone values your work. Learners browse and learn in one place.
 
 Paid access is optional. We added it later, after people asked to earn from their best hubs.
+
+### Why is it called Kahana?
+
+It started as a typo. Adam, our founder, texted his friend Jonathan: this was the Big Kahuna of ideas. Autocorrect turned Kahuna into Kahana. The word was so beautiful we made it the company name.
+
+We later learned that kahana can mean turning point in ancient Hawaiian, and that Kahani means story in Hindi. We felt we could not have picked a better name. It felt like destiny. The rest is history. We love to pay homage to that namesake.
+
+### What was Oasis Browser?
+
+Oasis Browser was an earlier Kahana product for Mac. We launched it on Product Hunt and ran a beta. After user feedback, we ceased development because we could not make it sustainable at this time. It is not the Aura Library.
+
+The current product is the digital library at kahana.io. Product Hunt launch: https://www.producthunt.com/products/kahana/launches/oasis-browser-for-mac
+
+If you want to use Oasis Browser, reach out through the contact form: https://kahana.io/contact
 
 ### Who operates Kahana?
 

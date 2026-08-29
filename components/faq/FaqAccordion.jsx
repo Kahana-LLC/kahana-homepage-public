@@ -1,5 +1,25 @@
 import { useState } from 'react';
 
+const FAQ_URL_RE = /(https?:\/\/[^\s]+)/g;
+
+function linkifyFaqText(text) {
+  const parts = text.split(FAQ_URL_RE);
+  return parts.map((part, index) => {
+    if (!/^https?:\/\//.test(part)) return part;
+    return (
+      <a
+        key={`${part}-${index}`}
+        href={part}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="font-medium text-[#617500] underline decoration-[#617500]/40 underline-offset-2 hover:text-[#495800]"
+      >
+        {part}
+      </a>
+    );
+  });
+}
+
 /**
  * Single-open FAQ accordion in library olive style.
  * Uses .faq-accordion-trigger to beat global button !important styles.
@@ -60,7 +80,7 @@ export default function FaqAccordion({ items = [], className = '' }) {
                       key={para.slice(0, 48)}
                       className="text-base leading-relaxed text-[#495800] sm:leading-[1.7]"
                     >
-                      {para}
+                      {linkifyFaqText(para)}
                     </p>
                   ))}
                 </div>
