@@ -44,6 +44,12 @@ export const FAQ_SECTIONS = [
           'It started as a typo. Adam, our founder, texted his friend Jonathan: this was the Big Kahuna of ideas. Autocorrect turned Kahuna into Kahana. The word was so beautiful we made it the company name.\n\nWe later learned that kahana can mean turning point in ancient Hawaiian, and that Kahani means story in Hindi. We felt we could not have picked a better name. It felt like destiny. The rest is history. We love to pay homage to that namesake.',
       },
       {
+        id: 'not-hawaii-or-kahana-co',
+        question: 'Is Kahana the same as Kahana Bay, Hawaii, or kahana.co?',
+        answer:
+          'No. This Kahana is a digital library at kahana.io. We publish hubs of ebooks, files, and clubs. Aura Library is the product.\n\nWe are not Kahana Bay, Kahana Valley, or other Hawaii places that share the name.\n\nWe do not own or operate kahana.co. That site is unrelated.\n\nOasis Browser was an earlier Kahana product. It is not the library. See “What was Oasis Browser?”',
+      },
+      {
         id: 'oasis-browser',
         question: 'What was Oasis Browser?',
         answer:
@@ -58,7 +64,7 @@ export const FAQ_SECTIONS = [
         id: 'where-start',
         question: 'Where do I start?',
         answer:
-          'Want to learn? Open Library at app.kahana.io/library, or follow /help/get-started-learners.\n\nWant to share? Sign up and follow /help/get-started-creators: create a hub, add content, then list on Library when ready. You can turn on paid access later if you want.',
+          'Want to learn? Open Library at kahana.io/library, or follow /help/get-started-learners.\n\nWant to share? Sign up and follow /help/get-started-creators: create a hub, add content, then list on Library when ready. You can turn on paid access later if you want.',
       },
       {
         id: 'about-info',
@@ -310,7 +316,7 @@ export const FAQ_SECTIONS = [
         id: 'sign-up',
         question: 'How do I sign up?',
         answer:
-          'Use email or Google at app.kahana.io/signup. Or open Sign in, then Create account.',
+          'Use email or Google at kahana.io/signup. Or open Sign in, then Create account.',
       },
       {
         id: 'get-help',

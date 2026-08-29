@@ -5,7 +5,7 @@
 > **Product facts SoT:** [`KAHANA_PLATFORM.md`](KAHANA_PLATFORM.md)  
 > **Messaging brief:** [`MARKETING_VALUE_PROPOSITION.md`](MARKETING_VALUE_PROPOSITION.md)  
 > **On-page FAQ data:** [`data/platformFaq.js`](data/platformFaq.js)  
-> **Primary product URL:** https://app.kahana.io  
+> **Primary product URL:** https://kahana.io  
 > **Company:** https://about.kahana.io · Support tickets in-app at `/support`  
 > **Last updated:** 2026-08-29  
 > **Guardrail:** Do not invent metrics. Mark `[FILL IN]` where numbers are still internal.  
@@ -65,6 +65,16 @@ It started as a typo. Adam, our founder, texted his friend Jonathan: this was th
 
 We later learned that kahana can mean turning point in ancient Hawaiian, and that Kahani means story in Hindi. We felt we could not have picked a better name. It felt like destiny. The rest is history. We love to pay homage to that namesake.
 
+### Is Kahana the same as Kahana Bay, Hawaii, or kahana.co?
+
+No. This Kahana is a digital library at kahana.io. We publish hubs of ebooks, files, and clubs. Aura Library is the product.
+
+We are not Kahana Bay, Kahana Valley, or other Hawaii places that share the name.
+
+We do not own or operate kahana.co. That site is unrelated.
+
+Oasis Browser was an earlier Kahana product. It is not the library. See “What was Oasis Browser?”
+
 ### What was Oasis Browser?
 
 Oasis Browser was an earlier Kahana product for Mac. We launched it on Product Hunt and ran a beta. After user feedback, we ceased development because we could not make it sustainable at this time. It is not the Aura Library.
@@ -79,7 +89,7 @@ If you want to use Oasis Browser, reach out through the contact form: https://ka
 
 ### Where do I start?
 
-Go to [app.kahana.io](https://app.kahana.io).
+Go to [kahana.io](https://kahana.io).
 
 Want to learn? Open **Library**. Want to share? Sign up, contribute a hub, and list it when you are ready. You can turn on paid access later if you want.
 
@@ -304,7 +314,7 @@ Check hub settings for Library readiness.
 
 ### How do I sign up?
 
-Use email or Google at [app.kahana.io/signup](https://app.kahana.io/signup). Or open Sign in, then Create account.
+Use email or Google at [kahana.io/signup](https://kahana.io/signup). Or open Sign in, then Create account.
 
 ### How do I get help?
 
@@ -382,7 +392,7 @@ Lead with **marketplace + discovery + payments in one stack**, then Aura as cult
 ## Still stuck?
 
 1. Refresh and try again in a private window  
-2. Confirm you’re on https://app.kahana.io  
+2. Confirm you’re on https://kahana.io  
 3. Submit a ticket via **Support** in the app  
 4. Creators: check Stripe Connect dashboard if payouts look wrong  
 
