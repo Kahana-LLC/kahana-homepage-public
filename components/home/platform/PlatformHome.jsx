@@ -83,7 +83,7 @@ function SectionShell({ id, children, className = '' }) {
 function PhilosophyMark({ Icon, wellClass, iconClass }) {
   return (
     <span
-      className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl ${wellClass}`}
+      className={`rainbow-hover-icon flex h-9 w-9 shrink-0 items-center justify-center rounded-xl ${wellClass}`}
       aria-hidden
     >
       <Icon className={`h-4 w-4 ${iconClass}`} strokeWidth={1.75} />
@@ -278,7 +278,11 @@ export default function PlatformHome() {
             {t('home.missionBody')}
           </p>
           <div className="mt-6 grid gap-4 md:grid-cols-3 md:items-stretch">
-            <article className="flex h-full flex-col rounded-2xl bg-[#EDE6D2] px-5 py-5 sm:px-6 sm:py-6">
+            <RainbowHoverCard
+              as="article"
+              className="h-full"
+              innerClassName="flex h-full flex-col !bg-[#EDE6D2] px-5 py-5 sm:px-6 sm:py-6"
+            >
               <div className="flex items-start justify-between gap-3">
                 <h3 className="text-[0.65rem] font-semibold tracking-[0.16em] !text-[#A67C2A] uppercase">
                   {t('home.missionCardTitle')}
@@ -301,8 +305,12 @@ export default function PlatformHome() {
               <p className="mt-4 text-[#666666]">
                 {t('home.missionCardBody')}
               </p>
-            </article>
-            <article className="flex h-full flex-col rounded-2xl bg-[#E8DCC4] px-5 py-5 sm:px-6 sm:py-6">
+            </RainbowHoverCard>
+            <RainbowHoverCard
+              as="article"
+              className="h-full"
+              innerClassName="flex h-full flex-col !bg-[#E8DCC4] px-5 py-5 sm:px-6 sm:py-6"
+            >
               <div className="flex items-start justify-between gap-3">
                 <h3 className="text-[0.65rem] font-semibold tracking-[0.16em] !text-[#8A6622] uppercase">
                   {t('home.visionCardTitle')}
@@ -325,8 +333,12 @@ export default function PlatformHome() {
               <p className="mt-4 text-[#666666]">
                 {t('home.visionCardBody')}
               </p>
-            </article>
-            <article className="flex h-full flex-col rounded-2xl bg-[#D9DACB] px-5 py-5 sm:px-6 sm:py-6">
+            </RainbowHoverCard>
+            <RainbowHoverCard
+              as="article"
+              className="h-full"
+              innerClassName="flex h-full flex-col !bg-[#D9DACB] px-5 py-5 sm:px-6 sm:py-6"
+            >
               <div className="flex items-start justify-between gap-3">
                 <h3 className="text-[0.65rem] font-semibold tracking-[0.16em] !text-[#4F5140] uppercase">
                   {t('home.innovationCardTitle')}
@@ -349,7 +361,7 @@ export default function PlatformHome() {
               <p className="mt-4 text-[#666666]">
                 {t('home.innovationCardBody')}
               </p>
-            </article>
+            </RainbowHoverCard>
           </div>
         </FadeInSection>
       </SectionShell>
