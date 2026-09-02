@@ -105,6 +105,10 @@ p.hero-slogan .hero-slogan-heart {
   font-family: var(--font-geist), system-ui, sans-serif !important;
 }
 
+p.philosophy-word {
+  font-stretch: condensed;
+}
+
 /* High-contrast headings */
 h1,
 h2,

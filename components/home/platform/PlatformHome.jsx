@@ -83,10 +83,10 @@ function SectionShell({ id, children, className = '' }) {
 function PhilosophyMark({ Icon, wellClass, iconClass }) {
   return (
     <span
-      className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl ${wellClass}`}
+      className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl ${wellClass}`}
       aria-hidden
     >
-      <Icon className={`h-7 w-7 ${iconClass}`} strokeWidth={1.6} />
+      <Icon className={`h-4 w-4 ${iconClass}`} strokeWidth={1.75} />
     </span>
   );
 }
@@ -271,6 +271,89 @@ export default function PlatformHome() {
         </div>
       </section>
 
+      <SectionShell id="philosophy" className="scroll-mt-24 border-t border-[#E4D9C4] !py-12 sm:!py-14">
+        <FadeInSection>
+          <h2 className="text-2xl font-semibold sm:text-3xl">{t('home.missionTitle')}</h2>
+          <p className="mt-2 max-w-3xl text-sm leading-snug tracking-tight text-[#666666] sm:text-base">
+            {t('home.missionBody')}
+          </p>
+          <div className="mt-6 grid gap-4 md:grid-cols-3 md:items-stretch">
+            <article className="flex h-full flex-col rounded-2xl bg-[#EDE6D2] px-5 py-5 sm:px-6 sm:py-6">
+              <div className="flex items-start justify-between gap-3">
+                <h3 className="text-[0.65rem] font-semibold tracking-[0.16em] !text-[#A67C2A] uppercase">
+                  {t('home.missionCardTitle')}
+                </h3>
+                <PhilosophyMark
+                  Icon={AcademicCapIcon}
+                  wellClass="bg-white/70 text-[#A67C2A]"
+                  iconClass="text-[#A67C2A]"
+                />
+              </div>
+              <p
+                className="philosophy-word mt-3 font-bricolage text-xl italic leading-none tracking-tight !text-[#A67C2A]"
+                title={t('home.missionPhilomathEtymology')}
+              >
+                {t('home.missionPhilomathWord')}
+              </p>
+              <p className="mt-1.5 text-xs tracking-tight text-[#3B2F1A]/70">
+                {t('home.missionPhilomathGloss')}
+              </p>
+              <p className="mt-4 text-[#666666]">
+                {t('home.missionCardBody')}
+              </p>
+            </article>
+            <article className="flex h-full flex-col rounded-2xl bg-[#E8DCC4] px-5 py-5 sm:px-6 sm:py-6">
+              <div className="flex items-start justify-between gap-3">
+                <h3 className="text-[0.65rem] font-semibold tracking-[0.16em] !text-[#8A6622] uppercase">
+                  {t('home.visionCardTitle')}
+                </h3>
+                <PhilosophyMark
+                  Icon={ChatBubbleLeftRightIcon}
+                  wellClass="bg-white/70 text-[#8A6622]"
+                  iconClass="text-[#8A6622]"
+                />
+              </div>
+              <p
+                className="philosophy-word mt-3 font-bricolage text-xl italic leading-none tracking-tight !text-[#8A6622]"
+                title={t('home.visionDialecticEtymology')}
+              >
+                {t('home.visionDialecticWord')}
+              </p>
+              <p className="mt-1.5 text-xs tracking-tight text-[#3B2F1A]/70">
+                {t('home.visionDialecticGloss')}
+              </p>
+              <p className="mt-4 text-[#666666]">
+                {t('home.visionCardBody')}
+              </p>
+            </article>
+            <article className="flex h-full flex-col rounded-2xl bg-[#D9DACB] px-5 py-5 sm:px-6 sm:py-6">
+              <div className="flex items-start justify-between gap-3">
+                <h3 className="text-[0.65rem] font-semibold tracking-[0.16em] !text-[#4F5140] uppercase">
+                  {t('home.innovationCardTitle')}
+                </h3>
+                <PhilosophyMark
+                  Icon={LightBulbIcon}
+                  wellClass="bg-white/70 text-[#4F5140]"
+                  iconClass="text-[#4F5140]"
+                />
+              </div>
+              <p
+                className="philosophy-word mt-3 font-bricolage text-xl italic leading-none tracking-tight !text-[#4F5140]"
+                title={t('home.innovationCardEtymology')}
+              >
+                {t('home.innovationCardWord')}
+              </p>
+              <p className="mt-1.5 text-xs tracking-tight text-[#3B2F1A]/70">
+                {t('home.innovationCardGloss')}
+              </p>
+              <p className="mt-4 text-[#666666]">
+                {t('home.innovationCardBody')}
+              </p>
+            </article>
+          </div>
+        </FadeInSection>
+      </SectionShell>
+
       <SectionShell id="aura" className="border-t border-[#E4D9C4]">
         <FadeInSection>
           <div>
@@ -425,89 +508,6 @@ export default function PlatformHome() {
           </p>
         </FadeInSection>
       </section>
-
-      <SectionShell id="philosophy" className="scroll-mt-24 border-t border-[#E4D9C4]">
-        <FadeInSection>
-          <h2 className="text-3xl font-semibold sm:text-4xl">{t('home.missionTitle')}</h2>
-          <p className="mt-4 max-w-3xl text-lg leading-relaxed text-[#666666]">
-            {t('home.missionBody')}
-          </p>
-          <div className="mt-10 grid gap-6 lg:grid-cols-2 lg:items-stretch">
-            <article className="flex h-full flex-col rounded-[28px] bg-[#EDE6D2] px-7 py-8 sm:px-9 sm:py-10">
-              <div className="flex items-start justify-between gap-4">
-                <h3 className="text-sm font-semibold tracking-[0.2em] !text-[#A67C2A] uppercase">
-                  {t('home.missionCardTitle')}
-                </h3>
-                <PhilosophyMark
-                  Icon={AcademicCapIcon}
-                  wellClass="bg-white/70 text-[#A67C2A]"
-                  iconClass="text-[#A67C2A]"
-                />
-              </div>
-              <p
-                className="mt-5 font-bricolage text-3xl italic leading-none !text-[#A67C2A] sm:text-4xl"
-                title={t('home.missionPhilomathEtymology')}
-              >
-                {t('home.missionPhilomathWord')}
-              </p>
-              <p className="mt-2 text-sm tracking-wide text-[#3B2F1A]/70">
-                {t('home.missionPhilomathGloss')}
-              </p>
-              <p className="mt-6 text-xl font-medium leading-relaxed text-[#3B2F1A] sm:text-2xl">
-                {t('home.missionCardBody')}
-              </p>
-            </article>
-            <article className="flex h-full flex-col rounded-[28px] bg-[#E8DCC4] px-7 py-8 sm:px-9 sm:py-10">
-              <div className="flex items-start justify-between gap-4">
-                <h3 className="text-sm font-semibold tracking-[0.2em] !text-[#8A6622] uppercase">
-                  {t('home.visionCardTitle')}
-                </h3>
-                <PhilosophyMark
-                  Icon={ChatBubbleLeftRightIcon}
-                  wellClass="bg-white/70 text-[#8A6622]"
-                  iconClass="text-[#8A6622]"
-                />
-              </div>
-              <p
-                className="mt-5 font-bricolage text-3xl italic leading-none !text-[#8A6622] sm:text-4xl"
-                title={t('home.visionDialecticEtymology')}
-              >
-                {t('home.visionDialecticWord')}
-              </p>
-              <p className="mt-2 text-sm tracking-wide text-[#3B2F1A]/70">
-                {t('home.visionDialecticGloss')}
-              </p>
-              <p className="mt-6 text-xl font-medium leading-relaxed text-[#3B2F1A] sm:text-2xl">
-                {t('home.visionCardBody')}
-              </p>
-            </article>
-          </div>
-          <article className="mt-6 flex flex-col rounded-[28px] bg-[#D9DACB] px-7 py-8 sm:px-9 sm:py-10">
-            <div className="flex items-start justify-between gap-4">
-              <h3 className="text-sm font-semibold tracking-[0.2em] !text-[#4F5140] uppercase">
-                {t('home.innovationCardTitle')}
-              </h3>
-              <PhilosophyMark
-                Icon={LightBulbIcon}
-                wellClass="bg-white/70 text-[#4F5140]"
-                iconClass="text-[#4F5140]"
-              />
-            </div>
-            <p
-              className="mt-5 font-bricolage text-3xl italic leading-none !text-[#4F5140] sm:text-4xl"
-              title={t('home.innovationCardEtymology')}
-            >
-              {t('home.innovationCardWord')}
-            </p>
-            <p className="mt-2 text-sm tracking-wide text-[#3B2F1A]/70">
-              {t('home.innovationCardGloss')}
-            </p>
-            <p className="mt-6 max-w-4xl text-xl font-medium leading-relaxed text-[#3B2F1A] sm:text-2xl">
-              {t('home.innovationCardBody')}
-            </p>
-          </article>
-        </FadeInSection>
-      </SectionShell>
 
       <SectionShell id="success-stories" className="border-t border-[#E4D9C4] bg-white/60">
         <FadeInSection>
