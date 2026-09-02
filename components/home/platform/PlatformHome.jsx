@@ -22,6 +22,7 @@ import {
   Squares2X2Icon,
   TagIcon,
 } from '@heroicons/react/24/outline';
+import { HeartIcon } from '@heroicons/react/24/solid';
 import FadeInSection from '../../FadeInSection';
 import { APP_URL } from '../../nav/navConfig';
 import { trackButtonClick } from '../../../utils/analytics';
@@ -243,6 +244,12 @@ export default function PlatformHome() {
               </PrimaryCta>
               <SecondaryCta href={exploreUrl}>{t('home.explore')}</SecondaryCta>
             </div>
+            <p className="hero-slogan mt-7 max-w-xl text-[0.9375rem] leading-snug tracking-[0.02em] text-[#8A6622]">
+              {t('home.heroSlogan')}
+              <span className="hero-slogan-heart" aria-hidden>
+                <HeartIcon className="h-[0.92em] w-[0.92em] text-[#A67C2A]" />
+              </span>
+            </p>
           </FadeInSection>
           <FadeInSection eager delay={120} isImage>
             <HeroOwlLottie />
