@@ -43,10 +43,10 @@ export default function LibraryStats({ stats, t }) {
                 className="h-full w-full"
                 innerClassName="flex h-full flex-col items-center bg-white px-6 py-8 text-center sm:px-8"
               >
-                <span className="rainbow-hover-icon flex h-12 w-12 items-center justify-center rounded-xl bg-[#EEF3D8] text-[#495800]">
+                <span className="rainbow-hover-icon flex h-12 w-12 items-center justify-center rounded-xl bg-[#EDE6D2] text-[#5C4520]">
                   <Icon className="h-6 w-6" aria-hidden />
                 </span>
-                <p className="mt-5 text-4xl font-semibold tracking-tight text-[#313A00]">
+                <p className="mt-5 text-4xl font-semibold tracking-tight text-[#3B2F1A]">
                   {item.value}
                 </p>
                 <p className="mt-2 text-base text-[#666666]">{item.label}</p>

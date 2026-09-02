@@ -51,7 +51,7 @@ export default function DeferredHomeDataTransparency() {
     <div ref={rootRef} id="data-transparency" className="relative w-full scroll-mt-24">
       {!visible ? (
         <div
-          className={`mx-auto w-full ${SECTION_MIN_HEIGHT} rounded-lg border border-[#30400D]/8 bg-[#FAFCF7]/50`}
+          className={`mx-auto w-full ${SECTION_MIN_HEIGHT} rounded-lg border border-[#3B2F1A]/8 bg-[#F7F3EA]/50`}
           aria-hidden
         />
       ) : (

@@ -89,7 +89,7 @@ function ConnectCard() {
         <li>
           <Link
             href="/blog"
-            className="flex w-full items-center justify-center rounded-xl bg-[#4A6200] px-4 py-3 text-sm font-semibold text-white no-underline hover:opacity-95"
+            className="flex w-full items-center justify-center rounded-xl bg-[#8A6622] px-4 py-3 text-sm font-semibold text-white no-underline hover:opacity-95"
           >
             Visit the blog
           </Link>
@@ -97,7 +97,7 @@ function ConnectCard() {
         <li>
           <Link
             href="/help"
-            className="flex w-full items-center justify-center rounded-xl border-2 border-[#4A6200] px-4 py-3 text-sm font-semibold text-[#4A6200] no-underline hover:bg-oasis-green-50"
+            className="flex w-full items-center justify-center rounded-xl border-2 border-[#8A6622] px-4 py-3 text-sm font-semibold text-[#8A6622] no-underline hover:bg-oasis-green-50"
           >
             Browse documentation
           </Link>
@@ -105,7 +105,7 @@ function ConnectCard() {
         <li>
           <Link
             href="/support"
-            className="flex w-full items-center justify-center rounded-xl border-2 border-[#4A6200] px-4 py-3 text-sm font-semibold text-[#4A6200] no-underline hover:bg-oasis-green-50"
+            className="flex w-full items-center justify-center rounded-xl border-2 border-[#8A6622] px-4 py-3 text-sm font-semibold text-[#8A6622] no-underline hover:bg-oasis-green-50"
           >
             Support
           </Link>
@@ -136,7 +136,7 @@ export default function Community() {
         />
       </Head>
 
-      <main className="min-h-screen bg-white pt-24 pb-16">
+      <main className="min-h-screen bg-[#F7F3EA] pt-24 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:grid lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-7">

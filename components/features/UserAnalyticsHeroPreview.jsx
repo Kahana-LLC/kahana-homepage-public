@@ -3,8 +3,8 @@ import React from 'react';
 const BAR_TONES = [
   'bg-brand-link/55',
   'bg-brand-link/40',
-  'bg-[#7a9200]/45',
-  'bg-[#7a9200]/30',
+  'bg-[#8A6622]/45',
+  'bg-[#8A6622]/30',
   'bg-oasis-green-800/25',
   'bg-oasis-green-800/18',
 ];

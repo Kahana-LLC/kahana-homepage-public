@@ -5,19 +5,19 @@ export default function HeroSection() {
   return (
     <div className="relative bg-white">
       {/* Subtle top accent line */}
-      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-px bg-gradient-to-r from-transparent via-[#30400D]/30 to-transparent"></div>
+      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-px bg-gradient-to-r from-transparent via-[#3B2F1A]/30 to-transparent"></div>
       
       <div className="pt-1 pb-16 sm:pb-24">
         <main className="mt-10 sm:mt-24">
           <div className="mx-auto max-w-7xl relative">
             {/* Subtle decorative corner accent */}
-            <div className="hidden lg:block absolute top-0 left-0 w-16 h-16 border-l border-t border-[#30400D]/10"></div>
+            <div className="hidden lg:block absolute top-0 left-0 w-16 h-16 border-l border-t border-[#3B2F1A]/10"></div>
             
             <div className="lg:grid lg:grid-cols-12 lg:gap-8 lg:items-center">
               <div className="lg:col-span-7 px-4 sm:px-6 sm:text-center md:mx-auto md:max-w-2xl lg:flex lg:items-center lg:text-left relative">
                 <div className="invisible md:visible absolute top-15 -left-7 w-40 h-40 bg-[#98CFE3]/50 rounded-full filter blur-3xl opacity-50 animate-blob"></div>
                 {/* Elegant accent dot */}
-                <div className="hidden lg:block absolute top-8 -left-4 w-2 h-2 rounded-full bg-[#30400D]/40"></div>
+                <div className="hidden lg:block absolute top-8 -left-4 w-2 h-2 rounded-full bg-[#3B2F1A]/40"></div>
                 <div>
                   <h1 className="py-4 bg-clip-text text-transparent bg-gradient-to-r from-oasis-green-600 to-oasis-green-500 text-4xl font-bold tracking-tight sm:text-5xl md:text-5xl text-center sm:text-left">
                     Bringing Ideas to Life

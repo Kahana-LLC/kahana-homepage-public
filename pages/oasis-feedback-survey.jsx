@@ -32,7 +32,7 @@ export default function OasisFeedbackSurvey() {
         <meta name="robots" content="noindex, nofollow" />
       </Head>
       
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-[#F7F3EA]">
         <main className="pt-24 pb-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="lg:grid lg:grid-cols-12 lg:gap-16">

@@ -14,8 +14,8 @@ export default function TestimonialsPage() {
         type="website"
       />
 
-      <main className="min-h-screen bg-white pt-24 pb-16">
-        <section className="border-b border-[#30400D]/10 bg-gradient-to-br from-[#30400D] via-[#3d5210] to-[#617500] text-white">
+      <main className="min-h-screen bg-[#F7F3EA] pt-24 pb-16">
+        <section className="border-b border-[#3B2F1A]/10 bg-gradient-to-br from-[#3B2F1A] via-[#3d5210] to-[#8A6622] text-white">
           <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
             <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[#FCDD9F]/90">
               Testimonials
@@ -40,9 +40,9 @@ export default function TestimonialsPage() {
           </div>
         </section>
 
-        <section className="border-t border-[#30400D]/10 bg-[#FAFCF7]/80 py-14">
+        <section className="border-t border-[#3B2F1A]/10 bg-[#F7F3EA]/80 py-14">
           <div className="mx-auto flex max-w-3xl flex-col items-center gap-4 px-4 text-center sm:px-6 lg:px-8">
-            <p className="text-lg text-[#30400D]/80">
+            <p className="text-lg text-[#3B2F1A]/80">
               Ready to see why people are switching?
             </p>
             <div className="flex flex-wrap items-center justify-center gap-3">

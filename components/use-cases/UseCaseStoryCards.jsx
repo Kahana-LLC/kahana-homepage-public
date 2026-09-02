@@ -18,7 +18,7 @@ function Avatar({ story }) {
   }
   return (
     <span
-      className="flex h-14 w-14 items-center justify-center rounded-full bg-[#EEF3D8] text-base font-semibold text-[#495800]"
+      className="flex h-14 w-14 items-center justify-center rounded-full bg-[#D9DACB] text-base font-semibold text-[#4F5140]"
       aria-hidden
     >
       {story.initials}
@@ -33,7 +33,7 @@ function HubCover({ story, compact }) {
       href={story.hubUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className={`relative block overflow-hidden bg-[#EEF3D8] no-underline ${
+      className={`relative block overflow-hidden bg-[#EDE6D2] no-underline ${
         compact ? 'aspect-[16/9] w-full' : 'aspect-[16/10] w-full rounded-xl'
       }`}
       aria-label={`${story.hubTitle} hub cover`}
@@ -57,28 +57,28 @@ function StoryBody({ story, t, compact }) {
       <div className="flex items-center gap-4">
         <Avatar story={story} />
         <div className="min-w-0">
-          <h3 className="text-xl font-semibold text-[#313A00]">
+          <h3 className="text-xl font-semibold text-[#3B2F1A]">
             {story.name}
             {story.aka ? (
               <span className="ml-2 text-base font-normal text-[#666666]">({story.aka})</span>
             ) : null}
           </h3>
-          <p className="mt-0.5 text-sm text-[#495800]">{story.persona}</p>
+          <p className="mt-0.5 text-sm text-[#5C4520]">{story.persona}</p>
         </div>
       </div>
-      <p className="mt-4 text-sm font-semibold tracking-wide text-[#7A9200]">{story.kind}</p>
-      <p className="mt-2 text-lg font-semibold text-[#313A00]">{story.hubTitle}</p>
+      <p className="mt-4 text-sm font-semibold tracking-wide text-[#8A6622]">{story.kind}</p>
+      <p className="mt-2 text-lg font-semibold text-[#3B2F1A]">{story.hubTitle}</p>
       <p className="mt-2 text-[#666666]">{compact ? story.summary : story.story}</p>
       <div className="mt-4 flex flex-wrap gap-2">
-        <span className="rounded-full bg-[#EEF3D8] px-3 py-1 text-sm text-[#495800]">{story.price}</span>
+        <span className="rounded-full bg-[#D9DACB] px-3 py-1 text-sm text-[#4F5140]">{story.price}</span>
         {story.stats.map((stat) => (
-          <span key={stat} className="rounded-full bg-[#F8FAF2] px-3 py-1 text-sm text-[#666666]">
+          <span key={stat} className="rounded-full bg-[#F7F3EA] px-3 py-1 text-sm text-[#666666]">
             {stat}
           </span>
         ))}
       </div>
       {story.quote && !compact ? (
-        <blockquote className="mt-6 border-l-2 border-[#7A9200] pl-4 text-[#495800]">
+        <blockquote className="mt-6 border-l-2 border-[#8A6622] pl-4 text-[#5C4520]">
           <p className="text-base leading-relaxed">“{story.quote}”</p>
         </blockquote>
       ) : null}
@@ -87,7 +87,7 @@ function StoryBody({ story, t, compact }) {
           href={story.hubUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 text-base font-medium text-[#617500] no-underline underline-offset-4 hover:underline"
+          className="inline-flex items-center gap-2 text-base font-medium text-[#8A6622] no-underline underline-offset-4 hover:underline"
           onClick={() => trackButtonClick(`success_story_open_${story.id}`)}
         >
           {t('home.storiesOpenHub')}
@@ -121,7 +121,7 @@ export default function UseCaseStoryCards({ t, compact = false }) {
                 <StoryBody story={story} t={t} compact={false} />
                 <div>
                   <HubCover story={story} compact={false} />
-                  <h4 className="mt-6 text-sm font-semibold uppercase tracking-wide text-[#7A9200]">
+                  <h4 className="mt-6 text-sm font-semibold uppercase tracking-wide text-[#8A6622]">
                     {t('home.storiesInside')}
                   </h4>
                   <ul className="mt-3 list-disc space-y-2 pl-5 text-[#666666]">

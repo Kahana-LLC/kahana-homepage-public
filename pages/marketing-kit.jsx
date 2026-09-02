@@ -9,7 +9,7 @@ export default function MarketingKit() {
         <meta name="description" content="Access our collection of social media assets and content to help promote Kahana." />
       </Head>
 
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-[#F7F3EA]">
         {/* Hero Section */}
         <div className="bg-gradient-to-r from-blue-600 to-blue-800">
           <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">

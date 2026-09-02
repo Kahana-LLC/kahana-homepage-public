@@ -82,7 +82,7 @@ export function AuthorBioCard({ author, imageClassName, index }) {
     <>
       <style jsx>{`
         .author-bio-card {
-          background: linear-gradient(90deg, #F8FAF2 0%, #d6e3f4 100%);
+          background: linear-gradient(90deg, #F7F3EA 0%, #d6e3f4 100%);
           border-radius: 1rem;
           padding: 2rem;
           box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);

@@ -84,7 +84,7 @@ const faqs = [
       <>
         Oasis is currently available for Mac (Apple Silicon and Intel). Windows, Linux, and Chromium versions are in
         development.{' '}
-        <Link href="https://kahana.io/contact" className="text-[#4A6200] no-underline hover:no-underline font-semibold">
+        <Link href="https://kahana.io/contact" className="text-[#8A6622] no-underline hover:no-underline font-semibold">
           Get early access
         </Link>{' '}
         for early access.
@@ -108,11 +108,11 @@ const faqs = [
     answer: (
       <>
         You can review our{' '}
-        <Link href="/terms-and-conditions" className="text-[#4A6200] no-underline hover:no-underline font-semibold">
+        <Link href="/terms-and-conditions" className="text-[#8A6622] no-underline hover:no-underline font-semibold">
           Terms and Conditions
         </Link>
         {' '}and{' '}
-        <Link href="/privacy-policy" className="text-[#4A6200] no-underline hover:no-underline font-semibold">
+        <Link href="/privacy-policy" className="text-[#8A6622] no-underline hover:no-underline font-semibold">
           Privacy Policy
         </Link>
         {' '}at any time. These documents outline how we handle your data, your rights as a user, and the terms of service for using Oasis.
@@ -194,17 +194,17 @@ export default function OasisPricing() {
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10 pt-6 sm:pt-8 pb-4 sm:pb-5">
           <h1
             className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-tight mb-2"
-            style={{ color: '#313A00' }}
+            style={{ color: '#3B2F1A' }}
           >
             Oasis Pricing
           </h1>
           <p className="mx-auto mt-3 max-w-2xl text-xs sm:text-sm text-gray-600">
             By using Oasis, you agree to our{' '}
-            <Link href="/terms-and-conditions" className="text-[#4A6200] no-underline hover:no-underline font-semibold">
+            <Link href="/terms-and-conditions" className="text-[#8A6622] no-underline hover:no-underline font-semibold">
               Terms and Conditions
             </Link>
             {' '}and{' '}
-            <Link href="/privacy-policy" className="text-[#4A6200] no-underline hover:no-underline font-semibold">
+            <Link href="/privacy-policy" className="text-[#8A6622] no-underline hover:no-underline font-semibold">
               Privacy Policy
             </Link>
           </p>
@@ -264,7 +264,7 @@ export default function OasisPricing() {
                   <ul className="space-y-1.5 sm:space-y-2">
                     {tier.features.map((feature, featureIndex) => {
                       const isMacOnly = typeof feature === 'string' && feature.startsWith('Available for Mac');
-                      const accentColor = isMacOnly ? '#489CB5' : '#495800';
+                      const accentColor = isMacOnly ? '#489CB5' : '#5C4520';
 
                       return (
                         <li
@@ -296,7 +296,7 @@ export default function OasisPricing() {
 
             {/* Non-Mac waitlist */}
             <div className="max-w-5xl mx-auto mt-5 sm:mt-6 w-full">
-              <div className="relative bg-gradient-to-br from-[#F8FAF2] to-white border-2 border-gray-300 rounded-2xl p-5 sm:p-6 lg:p-8 transition-all duration-300 hover:shadow-lg">
+              <div className="relative bg-gradient-to-br from-[#F7F3EA] to-white border-2 border-gray-300 rounded-2xl p-5 sm:p-6 lg:p-8 transition-all duration-300 hover:shadow-lg">
                 <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
                   <div className="text-center sm:text-left sm:flex-1">
                     <h3 className="text-lg sm:text-xl font-semibold mb-2 text-gray-800">
@@ -322,7 +322,7 @@ export default function OasisPricing() {
 
             {/* Existing Customer */}
             <div className="max-w-md mx-auto mt-5 sm:mt-6">
-              <div className="relative bg-gradient-to-br from-[#F8FAF2] to-white border-2 border-gray-300 rounded-2xl p-5 sm:p-6 transition-all duration-300 hover:shadow-lg">
+              <div className="relative bg-gradient-to-br from-[#F7F3EA] to-white border-2 border-gray-300 rounded-2xl p-5 sm:p-6 transition-all duration-300 hover:shadow-lg">
                 <div className="text-center">
                   <h3 className="text-lg sm:text-xl font-semibold mb-2 text-gray-800">
                     Existing Customer?
@@ -346,13 +346,13 @@ export default function OasisPricing() {
 
       {/* How AI tokens work */}
       <FadeInSection>
-        <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-[#F8FAF2]">
+        <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-[#F7F3EA]">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-8 sm:mb-12">
               <div className="tracking-wider mb-3 sm:mb-4 font-semibold text-sm sm:text-base lg:text-lg capitalize" style={{ color: '#978455' }}>
                 Understanding AI tokens
               </div>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-3 sm:mb-4" style={{ color: '#313A00' }}>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-3 sm:mb-4" style={{ color: '#3B2F1A' }}>
                 How AI tokens work
               </h2>
             </div>
@@ -379,7 +379,7 @@ export default function OasisPricing() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
               {/* Left Side - FAQ Heading and CTA */}
               <div className="mb-8 lg:mb-0">
-                <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6" style={{ color: '#313A00' }}>
+                <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6" style={{ color: '#3B2F1A' }}>
                   FAQ
                 </h2>
                 <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8">

@@ -664,8 +664,8 @@ export default function OAuthCallback() {
         <meta httpEquiv="Expires" content="0" />
       </Head>
 
-      <div className="min-h-screen bg-white text-oasis-green-800 flex items-center justify-center px-4 py-12">
-        <div className="w-full max-w-md text-center rounded-xl border border-oasis-green-800/12 bg-white p-8 shadow-md shadow-[#495800]/5">
+      <div className="min-h-screen bg-[#F7F3EA] text-oasis-green-800 flex items-center justify-center px-4 py-12">
+        <div className="w-full max-w-md text-center rounded-xl border border-oasis-green-800/12 bg-white p-8 shadow-md shadow-[#5C4520]/5">
           <OAuthStatusGlyph status={status} />
           <div id="status" className={`text-lg font-semibold mb-2 leading-snug ${statusClass}`}>
             {statusMessage}

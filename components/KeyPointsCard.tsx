@@ -12,7 +12,7 @@ const KeyPointsCard: React.FC<KeyPointsCardProps> = ({
   return (
     <aside 
       className={`
-        bg-[#F3F8E4] border border-oasis-green-600 rounded-lg shadow-sm p-6
+        bg-[#EDE6D2] border border-oasis-green-600 rounded-lg shadow-sm p-6
         ${className}
       `}
       role="complementary"

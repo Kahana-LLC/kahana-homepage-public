@@ -1,19 +1,20 @@
 /** @type {import('tailwindcss').Config} */
 /**
- * Brand palettes (primary oasis-green, secondary desert-yellow + oasis-blue).
+ * Brand palettes (primary beige/bronze, still named oasis-green for existing utilities).
+ * Grounded in Mission & Philosophy: page beige, Mission card, Philomaths bronze.
  * `kahana.*` is remapped to these scales for backward compatibility with existing utilities.
  */
 const oasisGreen = {
-  50: "#F8FAF2",
-  100: "#F2F4E5",
-  200: "#E4E9CC",
-  300: "#CAD399",
-  400: "#AFBE66",
-  500: "#94A833",
-  600: "#7A9200",
-  700: "#617500",
-  800: "#495800",
-  900: "#313A00",
+  50: "#F7F3EA",
+  100: "#F1EBE0",
+  200: "#EDE6D2",
+  300: "#E0D4BA",
+  400: "#D9DACB",
+  500: "#A67C2A",
+  600: "#8A6622",
+  700: "#6F5428",
+  800: "#5C4520",
+  900: "#3B2F1A",
 };
 
 const desertYellow = {

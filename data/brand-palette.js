@@ -5,14 +5,14 @@
 export const brandPaletteFamilies = [
   {
     id: 'oasis-green',
-    name: 'Oasis green',
-    description: 'Primary brand and UI emphasis.',
+    name: 'Mission beige',
+    description: 'Primary brand and UI emphasis. Beige surfaces, bronze actions, warm ink.',
     shades: [
-      { token: '50', hex: '#F8FAF2' },
-      { token: '200', hex: '#E4E9CC' },
-      { token: '400', hex: '#AFBE66' },
-      { token: '600', hex: '#7A9200' },
-      { token: '800', hex: '#495800' },
+      { token: '50', hex: '#F7F3EA' },
+      { token: '200', hex: '#EDE6D2' },
+      { token: '400', hex: '#D9DACB' },
+      { token: '600', hex: '#8A6622' },
+      { token: '800', hex: '#5C4520' },
     ],
   },
   {

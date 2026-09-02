@@ -11,8 +11,8 @@ import {
 
 function ZenRewardCard() {
   return (
-    <div className="mt-10 mb-10 overflow-hidden rounded-xl border-2 border-[#4A6200] bg-[#F8FAF2]">
-      <div className="bg-[#4A6200] px-5 py-4">
+    <div className="mt-10 mb-10 overflow-hidden rounded-xl border-2 border-[#8A6622] bg-[#F7F3EA]">
+      <div className="bg-[#8A6622] px-5 py-4">
         <p className="text-xs font-bold uppercase tracking-wider text-[#e8ebe0]">Oasis Zen, on us</p>
         <p className="mt-1 text-xl font-extrabold text-white sm:text-2xl">
           1 month free for completing this survey

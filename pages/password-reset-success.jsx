@@ -13,11 +13,11 @@ export default function PasswordResetSuccess() {
         <title>Password updated · Kahana</title>
         <meta name="robots" content="noindex, nofollow" />
       </Head>
-      <main className="min-h-screen bg-white px-4 py-12 sm:py-16 flex items-center justify-center">
+      <main className="min-h-screen bg-[#F7F3EA] px-4 py-12 sm:py-16 flex items-center justify-center">
         <div className="mx-auto w-full max-w-md text-center">
-          <div className="mb-6 inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#F8FAF2] border-2 border-[#7F9E36]">
+          <div className="mb-6 inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#F7F3EA] border-2 border-[#8A6622]">
             <svg
-              className="w-8 h-8 text-[#4A6200]"
+              className="w-8 h-8 text-[#8A6622]"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -29,7 +29,7 @@ export default function PasswordResetSuccess() {
           <p className="text-sm font-semibold uppercase tracking-wider text-[#978455] mb-2">
             Oasis by Kahana
           </p>
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-[#313A00] mb-4">
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-[#3B2F1A] mb-4">
             Password updated
           </h1>
           <p className="text-lg text-gray-700 mb-8">
@@ -44,7 +44,7 @@ export default function PasswordResetSuccess() {
             </Link>
           </div>
           <p className="mt-8 text-sm text-gray-500">
-            <Link href="/" className="text-[#4A6200] font-semibold hover:underline">
+            <Link href="/" className="text-[#8A6622] font-semibold hover:underline">
               Back to home
             </Link>
           </p>

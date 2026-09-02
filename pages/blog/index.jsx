@@ -178,7 +178,7 @@ export default function BlogIndex({ posts = [] }) {
         />
       </Head>
 
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-[#F7F3EA]">
         <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Breadcrumbs */}
         <div className="mb-8">
@@ -227,7 +227,7 @@ export default function BlogIndex({ posts = [] }) {
               placeholder="Search articles..."
               value={searchQuery}
               onChange={handleSearchChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-oasis-green-600 focus:border-transparent"
+              className="w-full px-4 py-3 border border-[#E4D9C4] bg-white rounded-lg shadow-sm focus:ring-2 focus:ring-oasis-green-600 focus:border-transparent"
             />
             <div className="absolute inset-y-0 right-0 flex items-center pr-3">
               <svg className="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">

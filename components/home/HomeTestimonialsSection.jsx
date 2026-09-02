@@ -15,13 +15,13 @@ export default function HomeTestimonialsSection() {
       </div>
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.16em] text-[#617500]">
+          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.16em] text-[#8A6622]">
             Testimonials
           </p>
-          <h2 className="text-3xl font-bold tracking-tight text-[#30400D] sm:text-4xl">
+          <h2 className="text-3xl font-bold tracking-tight text-[#3B2F1A] sm:text-4xl">
             Built for people who take privacy seriously
           </h2>
-          <p className="mt-5 text-lg leading-relaxed text-[#30400D]/75">
+          <p className="mt-5 text-lg leading-relaxed text-[#3B2F1A]/75">
             Real stories from Oasis users on productivity, transparency, and a browser
             experience that finally feels right.
           </p>

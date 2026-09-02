@@ -160,7 +160,7 @@ export default function DownloadWhitePaperPage() {
         <meta name="description" content="Download our comprehensive white paper exploring how AR/VR technology can transform workplace ergonomics and productivity, addressing the health crisis of sedentary work." />
       </Head>
 
-      <main className="min-h-screen bg-white pt-24 pb-16">
+      <main className="min-h-screen bg-[#F7F3EA] pt-24 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:grid lg:grid-cols-12 lg:gap-16">
             {/* Left Column - Content */}

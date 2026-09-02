@@ -26,7 +26,7 @@ export default function OasisExternalReviewSection() {
       aria-labelledby="external-review-heading"
     >
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-        <p className="text-xs font-semibold uppercase tracking-wide text-[#7a9200]">Independent review</p>
+        <p className="text-xs font-semibold uppercase tracking-wide text-[#8A6622]">Independent review</p>
         <h2 id="external-review-heading" className="mt-2 text-2xl font-bold tracking-tight text-oasis-green-800 md:text-3xl">
           Reviewed by {publication}
         </h2>
@@ -52,7 +52,7 @@ export default function OasisExternalReviewSection() {
               {score}
               <span className="text-lg font-semibold text-oasis-green-800/60"> / {scoreMax}</span>
             </p>
-            <p className="mt-1 text-sm font-semibold text-[#7a9200]">{scoreLabel}</p>
+            <p className="mt-1 text-sm font-semibold text-[#8A6622]">{scoreLabel}</p>
             <a
               href={reviewUrl}
               target="_blank"

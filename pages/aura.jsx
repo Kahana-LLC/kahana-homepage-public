@@ -16,14 +16,14 @@ export default function AuraPage() {
         type="website"
       />
 
-      <div className="bg-[#F8FAF2] text-[#313A00]">
-        <section className="bg-white px-6 py-20 sm:px-10 sm:py-24 lg:px-16">
+      <div className="bg-[#F7F3EA] text-[#3B2F1A]">
+        <section className="px-6 py-20 sm:px-10 sm:py-24 lg:px-16">
           <div className="mx-auto max-w-3xl text-center">
             <FadeInSection eager>
               <h1 className="text-3xl font-semibold leading-tight tracking-tight sm:text-4xl md:text-5xl">
                 Aura is how Kahana promotes quality
               </h1>
-              <p className="mt-5 text-lg leading-relaxed text-[#495800] sm:text-xl">
+              <p className="mt-5 text-lg leading-relaxed text-[#5C4520] sm:text-xl">
                 Each day you get a small Aura budget to endorse hubs and noteworthy files inside
                 them. Scarcity keeps the signal careful, so the best work can rise.
               </p>
@@ -48,13 +48,13 @@ export default function AuraPage() {
           </div>
         </section>
 
-        <section className="bg-[#313A00] px-6 py-20 text-[#F8FAF2] sm:px-10 lg:px-16">
+        <section className="bg-[#3B2F1A] px-6 py-20 text-[#F7F3EA] sm:px-10 lg:px-16">
           <div className="mx-auto max-w-2xl text-center">
             <FadeInSection>
-              <h2 className="text-3xl font-semibold leading-tight !text-[#F8FAF2] sm:text-4xl">
+              <h2 className="text-3xl font-semibold leading-tight !text-[#F7F3EA] sm:text-4xl">
                 Ready to explore?
               </h2>
-              <p className="mt-4 text-lg text-[#F8FAF2]/85">
+              <p className="mt-4 text-lg text-[#F7F3EA]/85">
                 Find hubs on Explore, give Aura to strong hubs or files, or Create a hub to share
                 what you know.
               </p>
@@ -63,7 +63,7 @@ export default function AuraPage() {
                   href={EXPLORE_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-secondary inline-flex items-center justify-center gap-2 !border-[#F8FAF2]/40 !bg-transparent no-underline !text-[#F8FAF2] hover:!border-[#F8FAF2] hover:!bg-white/10 hover:!text-[#F8FAF2]"
+                  className="btn-secondary inline-flex items-center justify-center gap-2 !border-[#F7F3EA]/40 !bg-transparent no-underline !text-[#F7F3EA] hover:!border-[#F7F3EA] hover:!bg-white/10 hover:!text-[#F7F3EA]"
                   onClick={() => trackButtonClick('aura_page_explore')}
                 >
                   <MagnifyingGlassIcon className="h-5 w-5 shrink-0" aria-hidden />
@@ -80,24 +80,24 @@ export default function AuraPage() {
                   Create
                 </a>
               </div>
-              <p className="mt-8 text-sm text-[#F8FAF2]/70">
+              <p className="mt-8 text-sm text-[#F7F3EA]/70">
                 <Link
                   href="/help/how-aura-works"
-                  className="underline decoration-[#F8FAF2]/40 underline-offset-2 hover:decoration-[#F8FAF2]"
+                  className="underline decoration-[#F7F3EA]/40 underline-offset-2 hover:decoration-[#F7F3EA]"
                 >
                   How Aura works
                 </Link>
                 {' · '}
                 <Link
                   href="/faq"
-                  className="underline decoration-[#F8FAF2]/40 underline-offset-2 hover:decoration-[#F8FAF2]"
+                  className="underline decoration-[#F7F3EA]/40 underline-offset-2 hover:decoration-[#F7F3EA]"
                 >
                   FAQ
                 </Link>
                 {' · '}
                 <Link
                   href="/help"
-                  className="underline decoration-[#F8FAF2]/40 underline-offset-2 hover:decoration-[#F8FAF2]"
+                  className="underline decoration-[#F7F3EA]/40 underline-offset-2 hover:decoration-[#F7F3EA]"
                 >
                   Help center
                 </Link>

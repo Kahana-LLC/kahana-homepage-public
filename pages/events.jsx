@@ -12,21 +12,21 @@ export default function EventsPage() {
         type="website"
       />
 
-      <main className="min-h-screen bg-white">
-        <section className="relative overflow-hidden bg-gradient-to-b from-[#F3F8E4] via-[#FAFCEE] to-white py-20 sm:py-24">
+      <main className="min-h-screen bg-[#F7F3EA]">
+        <section className="relative overflow-hidden bg-gradient-to-b from-[#EDE6D2] via-[#FAFCEE] to-white py-20 sm:py-24">
           <div className="pointer-events-none absolute inset-0 hidden lg:block">
             <div className="absolute top-[-32%] left-[-15%] h-[520px] w-[760px] rounded-full bg-[#FCDD9F]/18 blur-[180px]" />
             <div className="absolute bottom-[-35%] right-[-15%] h-[560px] w-[760px] rounded-full bg-[#8BA500]/16 blur-[180px]" />
           </div>
 
           <div className="relative z-10 mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
-            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.14em] text-[#617500]">
+            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.14em] text-[#8A6622]">
               Kahana Events
             </p>
-            <h1 className="text-4xl font-bold tracking-tight text-[#30400D] sm:text-5xl lg:text-6xl">
+            <h1 className="text-4xl font-bold tracking-tight text-[#3B2F1A] sm:text-5xl lg:text-6xl">
               Upcoming Events
             </h1>
-            <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-[#30400D]/80 sm:text-xl">
+            <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-[#3B2F1A]/80 sm:text-xl">
               Join practical sessions built for leaders and operators navigating AI productivity,
               policy, and security in real business environments.
             </p>
@@ -39,18 +39,18 @@ export default function EventsPage() {
               {EVENTS.map((event) => (
                 <article
                   key={event.slug}
-                  className="rounded-2xl border border-[#30400D]/12 bg-[#F8FAF2] p-7 shadow-[0_12px_28px_rgba(48,64,13,0.08)]"
+                  className="rounded-2xl border border-[#3B2F1A]/12 bg-[#F7F3EA] p-7 shadow-[0_12px_28px_rgba(59,47,26,0.08)]"
                 >
-                  <p className="text-sm font-semibold uppercase tracking-[0.08em] text-[#617500]">
+                  <p className="text-sm font-semibold uppercase tracking-[0.08em] text-[#8A6622]">
                     {event.eventType} · {event.dateLabel}
                   </p>
-                  <h2 className="mt-3 text-2xl font-bold leading-tight text-[#30400D]">
+                  <h2 className="mt-3 text-2xl font-bold leading-tight text-[#3B2F1A]">
                     {event.title}
                   </h2>
-                  <p className="mt-2 text-lg font-medium leading-snug text-[#30400D]/85">
+                  <p className="mt-2 text-lg font-medium leading-snug text-[#3B2F1A]/85">
                     {event.subtitle}
                   </p>
-                  <p className="mt-4 text-sm leading-relaxed text-[#30400D]/78">
+                  <p className="mt-4 text-sm leading-relaxed text-[#3B2F1A]/78">
                     {event.description}
                   </p>
                   <div className="mt-6">
@@ -64,7 +64,7 @@ export default function EventsPage() {
                 </article>
               ))}
             </div>
-            <p className="mt-6 text-center text-sm font-medium text-[#30400D]/70">
+            <p className="mt-6 text-center text-sm font-medium text-[#3B2F1A]/70">
               More events coming soon.
             </p>
           </div>

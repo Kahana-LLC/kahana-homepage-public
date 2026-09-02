@@ -81,7 +81,7 @@ export default function CookiePreferencesModal() {
           onClick={(e) => e.stopPropagation()}
         >
           <div className="sticky top-0 bg-white border-b border-gray-200 px-6 py-4 flex items-center justify-between">
-            <h2 id="modal-title" className="text-2xl font-bold text-[#313A00]">
+            <h2 id="modal-title" className="text-2xl font-bold text-[#3B2F1A]">
               Cookie Preferences
             </h2>
             <button
@@ -100,11 +100,11 @@ export default function CookiePreferencesModal() {
               We use cookies and similar technologies to operate the site and analyze traffic with Google Analytics, Mixpanel, and Firebase.
               We do not use advertising cookies or retargeting pixels. You can change analytics preferences anytime via Cookie Settings in the footer.
               See our{' '}
-              <a href="/privacy-policy" className="text-[#4A6200] font-semibold no-underline hover:underline">
+              <a href="/privacy-policy" className="text-[#8A6622] font-semibold no-underline hover:underline">
                 Privacy Policy
               </a>{' '}
               and{' '}
-              <a href="/terms-and-conditions" className="text-[#4A6200] font-semibold no-underline hover:underline">
+              <a href="/terms-and-conditions" className="text-[#8A6622] font-semibold no-underline hover:underline">
                 Terms
               </a>{' '}
               for details.
@@ -117,8 +117,8 @@ export default function CookiePreferencesModal() {
               <div className="flex items-start justify-between">
                 <div className="flex-1">
                   <div className="flex items-center gap-3 mb-2">
-                    <h3 className="text-lg font-semibold text-[#313A00]">Strictly Necessary</h3>
-                    <span className="px-2 py-1 text-xs font-semibold text-oasis-green-800 bg-[#F3F8E4] rounded">
+                    <h3 className="text-lg font-semibold text-[#3B2F1A]">Strictly Necessary</h3>
+                    <span className="px-2 py-1 text-xs font-semibold text-oasis-green-800 bg-[#EDE6D2] rounded">
                       Always Active
                     </span>
                   </div>
@@ -141,7 +141,7 @@ export default function CookiePreferencesModal() {
             <div className="mb-6 pb-6 border-b border-gray-200">
               <div className="flex items-start justify-between">
                 <div className="flex-1">
-                  <h3 className="text-lg font-semibold text-[#313A00] mb-2">Analytics</h3>
+                  <h3 className="text-lg font-semibold text-[#3B2F1A] mb-2">Analytics</h3>
                   <p className="text-sm text-gray-600 mb-2">
                     These cookies help us understand how visitors interact with our website by collecting and reporting
                     information anonymously. This helps us improve our website and user experience.

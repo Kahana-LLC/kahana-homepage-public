@@ -15,7 +15,7 @@ export default function PressReleasesPage() {
         type="website"
       />
 
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-[#F7F3EA]">
         <section className="border-b border-oasis-green-100 bg-gradient-to-br from-oasis-green-50 via-white to-oasis-blue-50">
           <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
             <p className="text-sm font-semibold uppercase tracking-wide text-oasis-green-600">Media</p>

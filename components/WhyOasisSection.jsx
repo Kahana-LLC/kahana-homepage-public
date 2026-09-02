@@ -46,7 +46,7 @@ export default function WhyOasisSection() {
           }
         }
         .why-oasis-image-card {
-          background: #F8FAF2;
+          background: #F7F3EA;
           border-radius: 1rem;
           padding: 1.5rem;
           box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
@@ -64,7 +64,7 @@ export default function WhyOasisSection() {
           border-radius: 0.5rem;
         }
         .why-oasis-text-content p {
-          color: #495800;
+          color: #5C4520;
           font-size: 1.25rem;
           font-weight: 600;
           line-height: 2rem;

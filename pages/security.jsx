@@ -19,7 +19,7 @@ const tocStructure = [
 ];
 
 const linkClass =
-  'font-semibold text-[#4A6200] no-underline underline-offset-4 hover:underline';
+  'font-semibold text-[#8A6622] no-underline underline-offset-4 hover:underline';
 
 export default function Security() {
   return (
@@ -33,14 +33,14 @@ export default function Security() {
 
       <TableOfContents items={tocStructure} />
 
-      <div className="min-h-screen bg-white lg:ml-80">
-        <div className="bg-gradient-to-b from-[#F3F8E4] to-white py-16 sm:py-24">
+      <div className="min-h-screen bg-[#F7F3EA] lg:ml-80">
+        <div className="bg-gradient-to-b from-[#EDE6D2] to-white py-16 sm:py-24">
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
             <div className="mb-8 text-center">
-              <p className="mb-4 text-sm font-semibold uppercase tracking-wide text-[#617500]">
+              <p className="mb-4 text-sm font-semibold uppercase tracking-wide text-[#8A6622]">
                 Security
               </p>
-              <h1 className="mb-6 text-4xl font-extrabold text-[#313A00] sm:text-5xl lg:text-6xl">
+              <h1 className="mb-6 text-4xl font-extrabold text-[#3B2F1A] sm:text-5xl lg:text-6xl">
                 Security for the Digital Library
               </h1>
               <p className="mx-auto max-w-2xl text-xl leading-relaxed text-gray-700 sm:text-2xl">
@@ -64,26 +64,26 @@ export default function Security() {
 
         <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
           <div className="mb-12 flex flex-col border-b border-gray-200 pb-8 sm:flex-row sm:items-center sm:justify-between">
-            <h2 className="mb-2 text-2xl font-bold text-[#313A00] sm:mb-0">Security @ Kahana</h2>
+            <h2 className="mb-2 text-2xl font-bold text-[#3B2F1A] sm:mb-0">Security @ Kahana</h2>
             <p className="text-sm text-gray-600">
-              Effective <span className="font-semibold text-[#313A00]">July 15, 2026</span>
+              Effective <span className="font-semibold text-[#3B2F1A]">July 15, 2026</span>
             </p>
           </div>
 
           <article className="prose prose-lg max-w-none">
             <section id="how-we-think" className="mb-14 scroll-mt-8">
-              <h2 className="mb-4 text-3xl font-bold text-[#313A00]">How we think about security</h2>
+              <h2 className="mb-4 text-3xl font-bold text-[#3B2F1A]">How we think about security</h2>
               <p className="mb-3 leading-relaxed text-gray-700">Three surfaces matter:</p>
               <ul className="list-disc space-y-2 pl-6 text-gray-700">
                 <li>
-                  <strong className="text-[#313A00]">Identity:</strong> sign-in and sessions
+                  <strong className="text-[#3B2F1A]">Identity:</strong> sign-in and sessions
                 </li>
                 <li>
-                  <strong className="text-[#313A00]">Access:</strong> private hubs, roles, paywalls,
+                  <strong className="text-[#3B2F1A]">Access:</strong> private hubs, roles, paywalls,
                   adult gates
                 </li>
                 <li>
-                  <strong className="text-[#313A00]">Payments:</strong> Stripe Connect
+                  <strong className="text-[#3B2F1A]">Payments:</strong> Stripe Connect
                 </li>
               </ul>
               <p className="mt-4 leading-relaxed text-gray-700">
@@ -93,10 +93,10 @@ export default function Security() {
             </section>
 
             <section id="accounts-access" className="mb-14 scroll-mt-8">
-              <h2 className="mb-4 text-3xl font-bold text-[#313A00]">Accounts &amp; access</h2>
+              <h2 className="mb-4 text-3xl font-bold text-[#3B2F1A]">Accounts &amp; access</h2>
               <ul className="list-disc space-y-2 pl-6 text-gray-700">
                 <li>
-                  Sign-in via <strong className="text-[#313A00]">Firebase Authentication</strong>{' '}
+                  Sign-in via <strong className="text-[#3B2F1A]">Firebase Authentication</strong>{' '}
                   (email and supported providers).
                 </li>
                 <li>
@@ -125,7 +125,7 @@ export default function Security() {
             </section>
 
             <section id="hubs-visibility" className="mb-14 scroll-mt-8">
-              <h2 className="mb-4 text-3xl font-bold text-[#313A00]">Hubs &amp; visibility</h2>
+              <h2 className="mb-4 text-3xl font-bold text-[#3B2F1A]">Hubs &amp; visibility</h2>
               <ul className="list-disc space-y-2 pl-6 text-gray-700">
                 <li>Hubs start private.</li>
                 <li>
@@ -143,7 +143,7 @@ export default function Security() {
             </section>
 
             <section id="adult-age" className="mb-14 scroll-mt-8">
-              <h2 className="mb-4 text-3xl font-bold text-[#313A00]">Adult content &amp; age</h2>
+              <h2 className="mb-4 text-3xl font-bold text-[#3B2F1A]">Adult content &amp; age</h2>
               <ul className="mb-3 list-disc space-y-2 pl-6 text-gray-700">
                 <li>Creators set adult yes or no before listing.</li>
                 <li>Adult hubs are hidden from default Explore and are not SEO-indexed like the rest of the library.</li>
@@ -161,17 +161,17 @@ export default function Security() {
             </section>
 
             <section id="payments" className="mb-14 scroll-mt-8">
-              <h2 className="mb-4 text-3xl font-bold text-[#313A00]">Payments</h2>
+              <h2 className="mb-4 text-3xl font-bold text-[#3B2F1A]">Payments</h2>
               <ul className="mb-3 list-disc space-y-2 pl-6 text-gray-700">
                 <li>
-                  Checkout runs on <strong className="text-[#313A00]">Stripe Connect</strong>. Kahana Group Inc.
+                  Checkout runs on <strong className="text-[#3B2F1A]">Stripe Connect</strong>. Kahana Group Inc.
                   does not store full card numbers.
                 </li>
                 <li>
                   Creators connect Stripe for payouts. A verified badge means charge-ready Connect, not Explore ranking.
                 </li>
                 <li>
-                  Platform fee: <strong className="text-[#313A00]">5%</strong>, plus Stripe
+                  Platform fee: <strong className="text-[#3B2F1A]">5%</strong>, plus Stripe
                   processing.
                 </li>
               </ul>
@@ -187,15 +187,15 @@ export default function Security() {
             </section>
 
             <section id="infrastructure" className="mb-14 scroll-mt-8">
-              <h2 className="mb-4 text-3xl font-bold text-[#313A00]">Infrastructure</h2>
+              <h2 className="mb-4 text-3xl font-bold text-[#3B2F1A]">Infrastructure</h2>
               <ul className="mb-3 list-disc space-y-2 pl-6 text-gray-700">
                 <li>Web app over HTTPS</li>
                 <li>
-                  <strong className="text-[#313A00]">Firebase</strong> for Auth, data, functions, and
+                  <strong className="text-[#3B2F1A]">Firebase</strong> for Auth, data, functions, and
                   storage
                 </li>
                 <li>
-                  <strong className="text-[#313A00]">Stripe</strong> for payments
+                  <strong className="text-[#3B2F1A]">Stripe</strong> for payments
                 </li>
               </ul>
               <p className="leading-relaxed text-gray-700">
@@ -205,7 +205,7 @@ export default function Security() {
             </section>
 
             <section id="analytics-logging" className="mb-14 scroll-mt-8">
-              <h2 className="mb-4 text-3xl font-bold text-[#313A00]">Analytics</h2>
+              <h2 className="mb-4 text-3xl font-bold text-[#3B2F1A]">Analytics</h2>
               <p className="leading-relaxed text-gray-700">
                 Product analytics (for example Mixpanel when enabled) help us improve the library.
                 On this website, non-essential analytics follow your cookie choices. See the{' '}
@@ -217,7 +217,7 @@ export default function Security() {
             </section>
 
             <section id="responsible-disclosure" className="mb-14 scroll-mt-8">
-              <h2 className="mb-4 text-3xl font-bold text-[#313A00]">Report an issue</h2>
+              <h2 className="mb-4 text-3xl font-bold text-[#3B2F1A]">Report an issue</h2>
               <p className="mb-3 leading-relaxed text-gray-700">
                 Found a security or privacy problem? Use the{' '}
                 <Link href="https://kahana.io/contact" className={linkClass}>
@@ -229,10 +229,10 @@ export default function Security() {
             </section>
 
             <section id="faq" className="mb-14 scroll-mt-8">
-              <h2 className="mb-4 text-3xl font-bold text-[#313A00]">FAQ</h2>
+              <h2 className="mb-4 text-3xl font-bold text-[#3B2F1A]">FAQ</h2>
               <ul className="space-y-6">
                 <li>
-                  <strong className="text-[#313A00]">Is Kahana a browser?</strong>
+                  <strong className="text-[#3B2F1A]">Is Kahana a browser?</strong>
                   <p className="mt-1 text-gray-700">
                     No. Kahana is the Digital Library at{' '}
                     <a href={APP_URL} target="_blank" rel="noopener noreferrer" className={linkClass}>
@@ -243,20 +243,20 @@ export default function Security() {
                   </p>
                 </li>
                 <li>
-                  <strong className="text-[#313A00]">Do you sell personal data?</strong>
+                  <strong className="text-[#3B2F1A]">Do you sell personal data?</strong>
                   <p className="mt-1 text-gray-700">
                     No. We earn from optional Growth plans and a fee on paid hub access, not by
                     selling Personal Data.
                   </p>
                 </li>
                 <li>
-                  <strong className="text-[#313A00]">SOC 2 / ISO?</strong>
+                  <strong className="text-[#3B2F1A]">SOC 2 / ISO?</strong>
                   <p className="mt-1 text-gray-700">
                     Not claimed here. We&apos;ll update this page if we publish certifications.
                   </p>
                 </li>
                 <li>
-                  <strong className="text-[#313A00]">Policies</strong>
+                  <strong className="text-[#3B2F1A]">Policies</strong>
                   <p className="mt-1 text-gray-700">
                     <Link href="/privacy-policy" className={linkClass}>
                       Privacy

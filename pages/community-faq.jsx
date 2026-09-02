@@ -51,7 +51,7 @@ export default function CommunityFAQ() {
         <meta name="description" content="Frequently asked questions about the Kahana community" />
       </Head>
 
-      <main className="min-h-screen bg-white pt-24 pb-16">
+      <main className="min-h-screen bg-[#F7F3EA] pt-24 pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold text-oasis-green-900 sm:text-5xl mb-6">

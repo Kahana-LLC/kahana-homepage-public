@@ -13,7 +13,7 @@ export default function RelatedEnterpriseFeatureLinks({ pageKey }) {
   return (
     <section className="border-b border-oasis-green-800/8 bg-white py-8 md:py-10" aria-label="Related Oasis enterprise capabilities">
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-        <p className="text-center text-xs font-semibold uppercase tracking-wide text-[#7a9200] mb-3">
+        <p className="text-center text-xs font-semibold uppercase tracking-wide text-[#8A6622] mb-3">
           Go deeper on Oasis Enterprise
         </p>
         <ul className="flex flex-col items-center justify-center gap-2 sm:flex-row sm:flex-wrap sm:gap-x-4 sm:gap-y-2">

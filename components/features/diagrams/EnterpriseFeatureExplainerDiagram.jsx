@@ -25,7 +25,7 @@ const VARIANT_META = {
 
 const FONT = 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif';
 
-function SvgText({ x, y, children, size = 10, fill = '#495800', weight = '600', anchor = 'middle', opacity = 1 }) {
+function SvgText({ x, y, children, size = 10, fill = '#5C4520', weight = '600', anchor = 'middle', opacity = 1 }) {
   return (
     <text
       x={x}
@@ -63,7 +63,7 @@ export default function EnterpriseFeatureExplainerDiagram({ variant }) {
       aria-label={meta.label}
     >
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-        <p className="mb-4 text-center text-xs font-semibold uppercase tracking-wide text-[#7a9200]">
+        <p className="mb-4 text-center text-xs font-semibold uppercase tracking-wide text-[#8A6622]">
           At a glance
         </p>
         <figure className="mx-auto max-w-lg md:max-w-2xl">
@@ -81,9 +81,9 @@ export default function EnterpriseFeatureExplainerDiagram({ variant }) {
 }
 
 function ExplainerSvg({ variant }) {
-  const stroke = '#495800';
+  const stroke = '#5C4520';
   const accent = '#489CB5';
-  const olive = '#7a9200';
+  const olive = '#8A6622';
   const muted = 'rgba(74, 87, 69, 0.72)';
 
   if (variant === 'identity') {
@@ -91,7 +91,7 @@ function ExplainerSvg({ variant }) {
       <svg viewBox="0 0 440 178" className="explainer-diagram-svg h-auto w-full" aria-hidden>
         <defs>
           <filter id="explainer-shadow-idn-oasis" x="-25%" y="-25%" width="150%" height="150%">
-            <feDropShadow dx="0" dy="2" stdDeviation="3" floodColor="#495800" floodOpacity="0.14" />
+            <feDropShadow dx="0" dy="2" stdDeviation="3" floodColor="#5C4520" floodOpacity="0.14" />
           </filter>
           <ArrowMarker id="explainer-m-idn-a" color={accent} />
         </defs>
@@ -289,13 +289,13 @@ function ExplainerSvg({ variant }) {
       <path d="M36 98 L184 98" stroke={stroke} strokeOpacity="0.32" strokeWidth="3.5" strokeLinecap="round" />
       <circle cx="36" cy="98" r="6" fill={stroke} fillOpacity="0.38" />
       <circle cx="184" cy="98" r="6" fill={stroke} fillOpacity="0.38" />
-      <SvgText x={110} y={124} size={9} weight="600" fill="#495800" opacity={0.82}>
+      <SvgText x={110} y={124} size={9} weight="600" fill="#5C4520" opacity={0.82}>
         Image, ship, reclaim device…
       </SvgText>
       <path d="M216 98 L364 98" stroke={olive} strokeWidth="3.5" strokeLinecap="round" />
       <circle cx="216" cy="98" r="6" fill={olive} />
       <circle cx="364" cy="98" r="6" fill={olive} />
-      <SvgText x={290} y={124} size={9} weight="700" fill="#495800">
+      <SvgText x={290} y={124} size={9} weight="700" fill="#5C4520">
         Identity + governed browser session
       </SvgText>
     </svg>

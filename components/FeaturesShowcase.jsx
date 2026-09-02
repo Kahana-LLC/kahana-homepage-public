@@ -201,7 +201,7 @@ export default function FeaturesShowcase() {
               <button
                 type="button"
                 onClick={() => handleScroll('prev')}
-                className="pointer-events-auto hidden h-11 w-11 items-center justify-center rounded-full border !border-[#7F9E36] !bg-[#4A6200] text-white shadow-lg transition hover:!bg-[#3E5300] md:flex z-20"
+                className="pointer-events-auto hidden h-11 w-11 items-center justify-center rounded-full border !border-[#E4D9C4] !bg-[#8A6622] text-white shadow-lg transition hover:!bg-[#6F5428] md:flex z-20"
                 aria-label="Scroll previous feature"
               >
                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -211,7 +211,7 @@ export default function FeaturesShowcase() {
               <button
                 type="button"
                 onClick={() => handleScroll('next')}
-                className="pointer-events-auto hidden h-11 w-11 items-center justify-center rounded-full border !border-[#7F9E36] !bg-[#4A6200] text-white shadow-lg transition hover:!bg-[#3E5300] md:flex z-20"
+                className="pointer-events-auto hidden h-11 w-11 items-center justify-center rounded-full border !border-[#E4D9C4] !bg-[#8A6622] text-white shadow-lg transition hover:!bg-[#6F5428] md:flex z-20"
                 aria-label="Scroll next feature"
               >
                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

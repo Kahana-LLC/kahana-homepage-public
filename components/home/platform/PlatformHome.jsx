@@ -85,15 +85,25 @@ function BenefitTiles({ items }) {
           <li key={item.title} className="flex flex-1">
             <RainbowHoverCard
               className="h-full w-full"
-              innerClassName="flex flex-row items-start gap-4 bg-white px-6 py-7 sm:px-8"
+              innerClassName="flex flex-col bg-white px-6 py-7 sm:px-8"
             >
-              <span className="rainbow-hover-icon flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#EEF3D8] text-[#495800]">
-                <Icon className="h-6 w-6" aria-hidden />
-              </span>
-              <div className="min-w-0">
+              <div className="flex items-center gap-4">
+                <span className="rainbow-hover-icon flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#D9DACB] text-[#4F5140]">
+                  <Icon className="h-6 w-6" aria-hidden />
+                </span>
                 <h3 className="text-xl font-semibold">{item.title}</h3>
-                <p className="mt-2 text-[#666666]">{item.body}</p>
               </div>
+              <p className="mt-4 text-[#666666]">{item.body}</p>
+              {item.learnMoreHref && item.learnMoreLabel ? (
+                <p className="mt-3">
+                  <Link
+                    href={item.learnMoreHref}
+                    className="text-base font-medium text-[#8A6622] no-underline underline-offset-4 hover:underline"
+                  >
+                    {item.learnMoreLabel}
+                  </Link>
+                </p>
+              ) : null}
             </RainbowHoverCard>
           </li>
         );
@@ -142,12 +152,22 @@ export default function PlatformHome() {
         title: t('home.creatorExposureTitle'),
         body: t('home.creatorExposureBody'),
         Icon: MegaphoneIcon,
+        learnMoreHref: '/gain-exposure',
+        learnMoreLabel: t('home.creatorExposureLearnMore'),
       },
-      { title: t('home.creatorHelpTitle'), body: t('home.creatorHelpBody'), Icon: BookOpenIcon },
+      {
+        title: t('home.creatorHelpTitle'),
+        body: t('home.creatorHelpBody'),
+        Icon: BookOpenIcon,
+        learnMoreHref: '/help-others-learn',
+        learnMoreLabel: t('home.creatorHelpLearnMore'),
+      },
       {
         title: t('home.creatorEarnTitle'),
         body: t('home.creatorEarnBody'),
         Icon: CurrencyDollarIcon,
+        learnMoreHref: '/earn-money',
+        learnMoreLabel: t('home.creatorEarnLearnMore'),
       },
     ],
     [t],
@@ -159,16 +179,22 @@ export default function PlatformHome() {
         title: t('home.seekerAccessTitle'),
         body: t('home.seekerAccessBody'),
         Icon: Squares2X2Icon,
+        learnMoreHref: '/one-place',
+        learnMoreLabel: t('home.seekerAccessLearnMore'),
       },
       {
         title: t('home.seekerCredibilityTitle'),
         body: t('home.seekerCredibilityBody'),
         Icon: ShieldCheckIcon,
+        learnMoreHref: '/verifiable-credibility',
+        learnMoreLabel: t('home.seekerCredibilityLearnMore'),
       },
       {
         title: t('home.seekerTailoredTitle'),
         body: t('home.seekerTailoredBody'),
         Icon: AdjustmentsHorizontalIcon,
+        learnMoreHref: '/tailored-for-understanding',
+        learnMoreLabel: t('home.seekerTailoredLearnMore'),
       },
     ],
     [t],
@@ -201,14 +227,14 @@ export default function PlatformHome() {
   );
 
   return (
-    <div className="bg-[#F8FAF2] text-[#313A00]">
-      <section className="relative overflow-x-hidden overflow-y-visible bg-white">
+    <div className="bg-[#F7F3EA] text-[#3B2F1A]">
+      <section className="relative overflow-x-hidden overflow-y-visible">
         <div className="relative mx-auto grid w-full max-w-6xl items-center gap-10 px-6 py-16 sm:px-10 sm:py-20 lg:grid-cols-[1fr_minmax(240px,360px)] lg:gap-16 lg:px-16 lg:py-24">
           <FadeInSection eager>
-            <h1 className="max-w-xl text-3xl font-semibold leading-tight tracking-tight text-[#313A00] sm:text-4xl md:text-5xl">
+            <h1 className="max-w-xl text-3xl font-semibold leading-tight tracking-tight text-[#3B2F1A] sm:text-4xl md:text-5xl">
               {t('home.heroTitle')}
             </h1>
-            <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#495800] sm:text-xl">
+            <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#5C4520] sm:text-xl">
               {t('home.heroBody')}
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
@@ -224,17 +250,17 @@ export default function PlatformHome() {
         </div>
       </section>
 
-      <SectionShell id="aura" className="border-t border-[#E0E8D4]">
+      <SectionShell id="aura" className="border-t border-[#E4D9C4]">
         <FadeInSection>
           <div>
             <h2 className="text-3xl font-semibold sm:text-4xl">{t('home.auraTitle')}</h2>
 
-            <RainbowHoverCard className="mt-8" innerClassName="bg-[#EEF3D8] px-6 py-5 sm:px-8">
+            <RainbowHoverCard className="mt-8" innerClassName="bg-[#EDE6D2] px-6 py-5 sm:px-8">
               <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:gap-10">
                 <AuraLikeAnimation />
                 <div>
-                  <p className="text-xl font-semibold text-[#313A00]">{t('home.auraLead')}</p>
-                  <p className="mt-2 text-base leading-relaxed text-[#495800] sm:text-lg">
+                  <p className="text-xl font-semibold text-[#3B2F1A]">{t('home.auraLead')}</p>
+                  <p className="mt-2 text-base leading-relaxed text-[#5C4520] sm:text-lg">
                     {t('home.auraBody')}
                   </p>
                 </div>
@@ -246,16 +272,14 @@ export default function PlatformHome() {
                 const { Icon } = rule;
                 return (
                   <li key={rule.title}>
-                    <RainbowHoverCard className="h-full" innerClassName="bg-white px-5 py-5 sm:px-6">
-                      <div className="flex items-start gap-3">
-                        <span className="rainbow-hover-icon flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#EEF3D8] text-[#495800]">
+                    <RainbowHoverCard className="h-full" innerClassName="flex flex-col bg-white px-5 py-5 sm:px-6">
+                      <div className="flex items-center gap-3">
+                        <span className="rainbow-hover-icon flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#D9DACB] text-[#4F5140]">
                           <Icon className="h-5 w-5" aria-hidden />
                         </span>
-                        <div>
-                          <h3 className="text-lg font-semibold text-[#313A00]">{rule.title}</h3>
-                          <p className="mt-1 text-[#666666]">{rule.body}</p>
-                        </div>
+                        <h3 className="text-lg font-semibold text-[#3B2F1A]">{rule.title}</h3>
                       </div>
+                      <p className="mt-3 text-[#666666]">{rule.body}</p>
                     </RainbowHoverCard>
                   </li>
                 );
@@ -265,7 +289,7 @@ export default function PlatformHome() {
             <p className="mt-8">
               <Link
                 href="/aura"
-                className="text-base font-medium text-[#617500] no-underline underline-offset-4 hover:underline"
+                className="text-base font-medium text-[#8A6622] no-underline underline-offset-4 hover:underline"
               >
                 {t('home.auraLearnMore')}
               </Link>
@@ -274,7 +298,7 @@ export default function PlatformHome() {
         </FadeInSection>
       </SectionShell>
 
-      <SectionShell id="how-it-works" className="border-t border-[#E0E8D4]">
+      <SectionShell id="how-it-works" className="border-t border-[#E4D9C4]">
         <FadeInSection>
           <h2 className="text-3xl font-semibold sm:text-4xl">{t('home.howTitle')}</h2>
           <p className="mt-3 max-w-2xl text-lg text-[#666666]">{t('home.howLead')}</p>
@@ -283,16 +307,14 @@ export default function PlatformHome() {
               const { Icon } = item;
               return (
                 <li key={item.title}>
-                  <RainbowHoverCard className="h-full" innerClassName="bg-white px-6 py-7 sm:px-8">
-                    <div className="flex items-start gap-4">
-                      <span className="rainbow-hover-icon flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#EEF3D8] text-[#495800]">
+                  <RainbowHoverCard className="h-full" innerClassName="flex flex-col bg-white px-6 py-7 sm:px-8">
+                    <div className="flex items-center gap-4">
+                      <span className="rainbow-hover-icon flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#D9DACB] text-[#4F5140]">
                         <Icon className="h-6 w-6" aria-hidden />
                       </span>
-                      <div>
-                        <h3 className="text-xl font-semibold">{item.title}</h3>
-                        <p className="mt-2 text-[#666666]">{item.body}</p>
-                      </div>
+                      <h3 className="text-xl font-semibold">{item.title}</h3>
                     </div>
+                    <p className="mt-4 text-[#666666]">{item.body}</p>
                   </RainbowHoverCard>
                 </li>
               );
@@ -301,7 +323,7 @@ export default function PlatformHome() {
           <p className="mt-8">
             <Link
               href="/help"
-              className="text-base font-medium text-[#617500] no-underline underline-offset-4 hover:underline"
+              className="text-base font-medium text-[#8A6622] no-underline underline-offset-4 hover:underline"
             >
               {t('home.browseHelp')}
             </Link>
@@ -320,7 +342,7 @@ export default function PlatformHome() {
         </FadeInSection>
       </SectionShell>
 
-      <SectionShell id="for-creators">
+      <SectionShell id="for-creators" className="bg-[#B8B9A6]/20">
         <FadeInSection>
           <h2 className="text-3xl font-semibold sm:text-4xl">{t('home.creatorsTitle')}</h2>
           <p className="mt-3 max-w-2xl text-lg text-[#666666]">{t('home.creatorsLead')}</p>
@@ -333,7 +355,7 @@ export default function PlatformHome() {
         </FadeInSection>
       </SectionShell>
 
-      <SectionShell id="optimize" className="border-t border-[#E0E8D4]">
+      <SectionShell id="optimize" className="border-t border-[#E4D9C4]">
         <FadeInSection>
           <h2 className="text-3xl font-semibold sm:text-4xl">{t('home.optimizeTitle')}</h2>
           <p className="mt-3 max-w-2xl text-lg text-[#666666]">{t('home.optimizeLead')}</p>
@@ -342,19 +364,19 @@ export default function PlatformHome() {
               const { Icon } = item;
               return (
                 <li key={item.step}>
-                  <RainbowHoverCard className="h-full" innerClassName="bg-white px-6 py-7 sm:px-8">
-                    <div className="flex items-start gap-4">
-                      <span className="rainbow-hover-icon flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#EEF3D8] text-[#495800]">
+                  <RainbowHoverCard className="h-full" innerClassName="flex flex-col bg-white px-6 py-7 sm:px-8">
+                    <div className="flex items-center gap-4">
+                      <span className="rainbow-hover-icon flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#D9DACB] text-[#4F5140]">
                         <Icon className="h-6 w-6" aria-hidden />
                       </span>
                       <div>
-                        <p className="text-sm font-semibold tracking-widest text-[#7A9200]">
+                        <p className="text-sm font-semibold tracking-widest text-[#8A6622]">
                           {item.step}
                         </p>
                         <h3 className="mt-1 text-xl font-semibold">{item.title}</h3>
-                        <p className="mt-2 text-[#666666]">{item.body}</p>
                       </div>
                     </div>
+                    <p className="mt-4 text-[#666666]">{item.body}</p>
                   </RainbowHoverCard>
                 </li>
               );
@@ -368,7 +390,7 @@ export default function PlatformHome() {
         </FadeInSection>
       </SectionShell>
 
-      <section id="categories" className="border-t border-[#E0E8D4] py-20">
+      <section id="categories" className="border-t border-[#E4D9C4] bg-[#B8B9A6]/20 py-20">
         <FadeInSection>
           <div className="mx-auto w-full max-w-6xl px-6 sm:px-10 lg:px-16">
             <h2 className="text-3xl font-semibold sm:text-4xl">{t('home.topicsTitle')}</h2>
@@ -383,16 +405,69 @@ export default function PlatformHome() {
         </FadeInSection>
       </section>
 
-      <SectionShell id="philosophy" className="border-t border-[#E0E8D4]">
+      <SectionShell id="philosophy" className="scroll-mt-24 border-t border-[#E4D9C4]">
         <FadeInSection>
           <h2 className="text-3xl font-semibold sm:text-4xl">{t('home.missionTitle')}</h2>
           <p className="mt-4 max-w-3xl text-lg leading-relaxed text-[#666666]">
             {t('home.missionBody')}
           </p>
+          <div className="mt-10 grid gap-6 lg:grid-cols-2 lg:items-stretch">
+            <article className="flex h-full flex-col rounded-[28px] bg-[#EDE6D2] px-7 py-8 sm:px-9 sm:py-10">
+              <h3 className="text-sm font-semibold tracking-[0.2em] !text-[#A67C2A] uppercase">
+                {t('home.missionCardTitle')}
+              </h3>
+              <p
+                className="mt-5 font-bricolage text-3xl italic leading-none !text-[#A67C2A] sm:text-4xl"
+                title={t('home.missionPhilomathEtymology')}
+              >
+                {t('home.missionPhilomathWord')}
+              </p>
+              <p className="mt-2 text-sm tracking-wide text-[#3B2F1A]/70">
+                {t('home.missionPhilomathGloss')}
+              </p>
+              <p className="mt-6 text-xl font-medium leading-relaxed text-[#3B2F1A] sm:text-2xl">
+                {t('home.missionCardBody')}
+              </p>
+            </article>
+            <article className="flex h-full flex-col rounded-[28px] bg-[#E8DCC4] px-7 py-8 sm:px-9 sm:py-10">
+              <h3 className="text-sm font-semibold tracking-[0.2em] !text-[#8A6622] uppercase">
+                {t('home.visionCardTitle')}
+              </h3>
+              <p
+                className="mt-5 font-bricolage text-3xl italic leading-none !text-[#8A6622] sm:text-4xl"
+                title={t('home.visionDialecticEtymology')}
+              >
+                {t('home.visionDialecticWord')}
+              </p>
+              <p className="mt-2 text-sm tracking-wide text-[#3B2F1A]/70">
+                {t('home.visionDialecticGloss')}
+              </p>
+              <p className="mt-6 text-xl font-medium leading-relaxed text-[#3B2F1A] sm:text-2xl">
+                {t('home.visionCardBody')}
+              </p>
+            </article>
+          </div>
+          <article className="mt-6 flex flex-col rounded-[28px] bg-[#D9DACB] px-7 py-8 sm:px-9 sm:py-10">
+            <h3 className="text-sm font-semibold tracking-[0.2em] !text-[#4F5140] uppercase">
+              {t('home.innovationCardTitle')}
+            </h3>
+            <p
+              className="mt-5 font-bricolage text-3xl italic leading-none !text-[#4F5140] sm:text-4xl"
+              title={t('home.innovationCardEtymology')}
+            >
+              {t('home.innovationCardWord')}
+            </p>
+            <p className="mt-2 text-sm tracking-wide text-[#3B2F1A]/70">
+              {t('home.innovationCardGloss')}
+            </p>
+            <p className="mt-6 max-w-4xl text-xl font-medium leading-relaxed text-[#3B2F1A] sm:text-2xl">
+              {t('home.innovationCardBody')}
+            </p>
+          </article>
         </FadeInSection>
       </SectionShell>
 
-      <SectionShell id="success-stories" className="border-t border-[#E0E8D4] bg-white/60">
+      <SectionShell id="success-stories" className="border-t border-[#E4D9C4] bg-white/60">
         <FadeInSection>
           <h2 className="text-3xl font-semibold sm:text-4xl">{t('home.storiesTitle')}</h2>
           <p className="mt-3 max-w-2xl text-lg text-[#666666]">{t('home.storiesLead')}</p>
@@ -400,7 +475,7 @@ export default function PlatformHome() {
           <p className="mt-8">
             <Link
               href="/success-stories"
-              className="text-base font-medium text-[#617500] no-underline underline-offset-4 hover:underline"
+              className="text-base font-medium text-[#8A6622] no-underline underline-offset-4 hover:underline"
             >
               {t('home.storiesSeeAll')}
             </Link>
@@ -408,7 +483,7 @@ export default function PlatformHome() {
         </FadeInSection>
       </SectionShell>
 
-      <SectionShell id="faq-teaser">
+      <SectionShell id="faq-teaser" className="bg-[#B8B9A6]/15">
         <FadeInSection>
           <h2 className="text-3xl font-semibold sm:text-4xl">{t('home.faqTitle')}</h2>
           <p className="mt-3 max-w-2xl text-lg text-[#666666]">{t('home.faqLead')}</p>
@@ -418,12 +493,12 @@ export default function PlatformHome() {
         </FadeInSection>
       </SectionShell>
 
-      <SectionShell className="bg-[#313A00] pb-24 pt-20 text-[#F8FAF2]">
+      <SectionShell className="bg-[#3B2F1A] pb-24 pt-20 text-[#F7F3EA]">
         <FadeInSection>
-          <h2 className="mx-auto max-w-2xl text-center text-3xl font-semibold leading-tight !text-[#F8FAF2] sm:text-4xl">
+          <h2 className="mx-auto max-w-2xl text-center text-3xl font-semibold leading-tight !text-[#F7F3EA] sm:text-4xl">
             {t('home.closingTitle')}
           </h2>
-          <p className="mx-auto mt-5 max-w-xl text-center text-lg leading-relaxed text-[#F8FAF2]/85">
+          <p className="mx-auto mt-5 max-w-xl text-center text-lg leading-relaxed text-[#F7F3EA]/85">
             {t('home.closingBody')}
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-3">
@@ -434,7 +509,7 @@ export default function PlatformHome() {
               href={exploreUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-secondary inline-flex items-center justify-center !border-[#F8FAF2]/40 !bg-transparent no-underline !text-[#F8FAF2] hover:!border-[#F8FAF2] hover:!bg-white/10 hover:!text-[#F8FAF2]"
+              className="btn-secondary inline-flex items-center justify-center !border-[#F7F3EA]/40 !bg-transparent no-underline !text-[#F7F3EA] hover:!border-[#F7F3EA] hover:!bg-white/10 hover:!text-[#F7F3EA]"
             >
               {t('home.explore')}
             </a>

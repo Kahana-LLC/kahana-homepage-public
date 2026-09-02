@@ -39,7 +39,7 @@ export default function GlobalBanner() {
 
   return (
     <div
-      className="GlobalBanner fixed left-0 right-0 z-[55] w-full border-t border-[#c5d4b8] shadow-[0_-4px_24px_rgba(48,64,13,0.12)]"
+      className="GlobalBanner fixed left-0 right-0 z-[55] w-full border-t border-[#E4D9C4] shadow-[0_-4px_24px_rgba(59,47,26,0.12)]"
       style={{
         background: 'linear-gradient(90deg, #d6e3f4 0%, #e5efd8 100%)',
         bottom: `var(${CONSENT_BANNER_OFFSET_VAR}, 0px)`,
@@ -70,7 +70,7 @@ export default function GlobalBanner() {
         .banner-close-button {
           background: transparent !important;
           border: none !important;
-          color: #7a9200 !important;
+          color: #8A6622 !important;
           border-radius: 32px !important;
           font-weight: bold !important;
           cursor: pointer;
@@ -82,7 +82,7 @@ export default function GlobalBanner() {
           text-decoration: none !important;
         }
         .GlobalBanner .banner-cta-link {
-          color: #617500 !important;
+          color: #8A6622 !important;
           font-weight: 700 !important;
         }
         .GlobalBanner .banner-cta-link:hover {
@@ -136,7 +136,7 @@ export default function GlobalBanner() {
               className="banner-close-button inline-flex min-w-[2.5rem] items-center justify-center px-2.5 py-2.5 text-sm no-underline hover:no-underline focus:no-underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-oasis-green-600"
               aria-label="Close banner"
             >
-              <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: '#7A9200' }} aria-hidden>
+              <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: '#8A6622' }} aria-hidden>
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>

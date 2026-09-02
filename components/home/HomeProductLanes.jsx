@@ -103,10 +103,10 @@ export default function HomeProductLanes() {
             </div>
             <div className="lg:order-2">
               <div className="mb-2 flex flex-wrap items-center gap-2">
-                <p className="text-xs font-semibold uppercase tracking-wide text-[#7a9200] mb-0">
+                <p className="text-xs font-semibold uppercase tracking-wide text-[#8A6622] mb-0">
                   Voice
                 </p>
-                <span className="inline-flex items-center rounded-full border border-[#7a9200]/30 bg-[#f2f4e5] px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-[#495800]">
+                <span className="inline-flex items-center rounded-full border border-[#8A6622]/30 bg-[#EDE6D2] px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-[#5C4520]">
                   New feature
                 </span>
               </div>
@@ -149,7 +149,7 @@ export default function HomeProductLanes() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:items-start lg:gap-12 xl:gap-14">
             <div className="min-w-0 max-w-3xl">
-              <p className="text-xs font-semibold uppercase tracking-wide text-[#7a9200] mb-2">
+              <p className="text-xs font-semibold uppercase tracking-wide text-[#8A6622] mb-2">
                 For individuals
               </p>
               <h2
@@ -165,7 +165,7 @@ export default function HomeProductLanes() {
                 {PERSONAL_BULLETS.map((item) => (
                   <li key={item} className="flex gap-3 text-sm sm:text-base leading-relaxed">
                     <span
-                      className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#7a9200]"
+                      className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#8A6622]"
                       aria-hidden
                     />
                     <span>{item}</span>
@@ -196,7 +196,7 @@ export default function HomeProductLanes() {
             </div>
 
             <div className="min-w-0 lg:pt-1">
-              <p className="text-xs font-semibold uppercase tracking-wide text-[#7a9200] mb-2">
+              <p className="text-xs font-semibold uppercase tracking-wide text-[#8A6622] mb-2">
                 Import from other browsers
               </p>
               <div className="min-h-[300px] overflow-x-auto rounded-xl border border-oasis-green-800/10 bg-oasis-green-50 shadow-sm p-2 sm:p-4">
@@ -224,7 +224,7 @@ export default function HomeProductLanes() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-10">
-            <p className="text-xs font-semibold uppercase tracking-wide text-[#7a9200] mb-2">
+            <p className="text-xs font-semibold uppercase tracking-wide text-[#8A6622] mb-2">
               For IT &amp; teams
             </p>
             <h2
@@ -298,7 +298,7 @@ export default function HomeProductLanes() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-x-8 lg:items-start">
             <div className="min-w-0 max-w-2xl lg:max-w-none">
-              <p className="text-xs font-semibold uppercase tracking-wide text-[#7a9200] mb-2">
+              <p className="text-xs font-semibold uppercase tracking-wide text-[#8A6622] mb-2">
                 Coming soon
               </p>
               <h2

@@ -111,7 +111,7 @@ export default function HelpArticlePage({ doc, relatedDocs }) {
 
   if (router.isFallback) {
     return (
-      <div className="min-h-screen bg-white px-4 py-12 text-center text-oasis-green-800">
+      <div className="min-h-screen bg-[#F7F3EA] px-4 py-12 text-center text-oasis-green-800">
         Loading…
       </div>
     );
@@ -119,7 +119,7 @@ export default function HelpArticlePage({ doc, relatedDocs }) {
 
   if (!doc) {
     return (
-      <div className="min-h-screen bg-white px-4 py-12 text-center text-oasis-green-800">
+      <div className="min-h-screen bg-[#F7F3EA] px-4 py-12 text-center text-oasis-green-800">
         Article not found
       </div>
     );
@@ -137,7 +137,7 @@ export default function HelpArticlePage({ doc, relatedDocs }) {
         type="article"
       />
 
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-[#F7F3EA]">
         <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           {/* Header */}
           <header className="mb-12">
@@ -167,7 +167,7 @@ export default function HelpArticlePage({ doc, relatedDocs }) {
                       <Link
                         key={tag}
                         href={parsed.href}
-                        className="rounded-full bg-[#EEF3D8] px-3 py-1 text-sm text-[#495800] no-underline hover:underline"
+                        className="rounded-full bg-[#EDE6D2] px-3 py-1 text-sm text-[#5C4520] no-underline hover:underline"
                       >
                         {parsed.label}
                       </Link>

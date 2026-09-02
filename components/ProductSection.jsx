@@ -42,13 +42,13 @@ export default function ProductSection() {
         {/* items-start + reserved mascot column prevents CLS when the image paints */}
         <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between md:gap-8">
           <div className="flex min-w-0 max-w-xl flex-1 flex-col items-start gap-6 text-left lg:max-w-2xl">
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-[#617500]/25 bg-[#F2F4E5] px-3 py-1 text-xs font-semibold tracking-wide text-[#617500] sm:text-sm">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-[#8A6622]/25 bg-[#EDE6D2] px-3 py-1 text-xs font-semibold tracking-wide text-[#8A6622] sm:text-sm">
               <RefugeHutIcon className="h-3.5 w-3.5 shrink-0 sm:h-4 sm:w-4" />
               Your online refuge
             </span>
-            <h1 className="text-4xl font-semibold leading-tight text-[#313A00] sm:text-5xl mb-0 text-balance">
+            <h1 className="text-4xl font-semibold leading-tight text-[#3B2F1A] sm:text-5xl mb-0 text-balance">
               Relaaax, you found{' '}
-              <span className="underline decoration-[#313A00]/55 underline-offset-[0.18em]">
+              <span className="underline decoration-[#3B2F1A]/55 underline-offset-[0.18em]">
                 the
               </span>{' '}
               Oasis

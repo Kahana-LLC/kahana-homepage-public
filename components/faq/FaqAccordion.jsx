@@ -12,7 +12,7 @@ function linkifyFaqText(text) {
         href={part}
         target="_blank"
         rel="noopener noreferrer"
-        className="font-medium text-[#617500] underline decoration-[#617500]/40 underline-offset-2 hover:text-[#495800]"
+        className="font-medium text-[#8A6622] underline decoration-[#8A6622]/40 underline-offset-2 hover:text-[#5C4520]"
       >
         {part}
       </a>
@@ -21,7 +21,7 @@ function linkifyFaqText(text) {
 }
 
 /**
- * Single-open FAQ accordion in library olive style.
+ * Single-open FAQ accordion in library bronze style.
  * Uses .faq-accordion-trigger to beat global button !important styles.
  * @param {{ items: { id?: string, question: string, answer: string }[], className?: string }} props
  */
@@ -37,14 +37,14 @@ export default function FaqAccordion({ items = [], className = '' }) {
         const buttonId = `${id}-button`;
 
         return (
-          <div key={id} className="overflow-hidden rounded-xl bg-[#313A00]">
+          <div key={id} className="overflow-hidden rounded-xl bg-[#4F5140]">
             <h3 className="m-0">
               <button
                 type="button"
                 id={buttonId}
                 aria-expanded={isOpen}
                 aria-controls={panelId}
-                className="faq-accordion-trigger flex w-full items-center justify-between gap-4 text-left font-semibold leading-snug transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#617500]"
+                className="faq-accordion-trigger flex w-full items-center justify-between gap-4 text-left font-semibold leading-snug transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8A6622]"
                 onClick={() => setOpenId(isOpen ? null : id)}
               >
                 <span className="faq-accordion-trigger-label">{item.question}</span>
@@ -71,14 +71,14 @@ export default function FaqAccordion({ items = [], className = '' }) {
               role="region"
               aria-labelledby={buttonId}
               hidden={!isOpen}
-              className={isOpen ? 'faq-accordion-answer bg-[#F8FAF2]' : ''}
+              className={isOpen ? 'faq-accordion-answer bg-[#F7F3EA]' : ''}
             >
               {isOpen && (
                 <div className="space-y-3">
                   {item.answer.split(/\n\n+/).map((para) => (
                     <p
                       key={para.slice(0, 48)}
-                      className="text-base leading-relaxed text-[#495800] sm:leading-[1.7]"
+                      className="text-base leading-relaxed text-[#5C4520] sm:leading-[1.7]"
                     >
                       {linkifyFaqText(para)}
                     </p>

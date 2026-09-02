@@ -20,7 +20,7 @@ export default function WaitlistButton({
       {/* Segmented Control */}
       <div className="relative inline-flex rounded-full bg-gray-100 p-1 border border-gray-200 shadow-sm">
         {/* Left Segment - Status */}
-        <div className="flex items-center px-4 py-2.5 rounded-full bg-white transition-all duration-200" style={{ color: '#617500' }}>
+        <div className="flex items-center px-4 py-2.5 rounded-full bg-white transition-all duration-200" style={{ color: '#8A6622' }}>
           <svg 
             className="w-4 h-4 mr-2" 
             fill="none" 
@@ -53,7 +53,7 @@ export default function WaitlistButton({
       <Link
         href={proUrl}
         className="text-sm transition-colors hover:opacity-80 no-underline"
-        style={{ color: '#4A6200' }}
+        style={{ color: '#8A6622' }}
       >
         <span className="ml-1">Get Zen for uninterrupted work</span>
       </Link>

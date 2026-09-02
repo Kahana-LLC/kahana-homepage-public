@@ -14,7 +14,7 @@ export default function DeleteAccountDoc() {
 
   return (
     <div className="doc-content delete-account-doc max-w-none">
-      <p className="text-lg text-[#30400D]/85 leading-relaxed">
+      <p className="text-lg text-[#3B2F1A]/85 leading-relaxed">
         Use the form below to request permanent deletion of your Oasis account. This action cannot be undone.
       </p>
 
@@ -33,7 +33,7 @@ export default function DeleteAccountDoc() {
 
       <section className="my-12">
         <h2 className="text-2xl font-bold text-oasis-green-800">Delete Oasis Account request</h2>
-        <p className="mt-4 text-[#30400D]/85 leading-relaxed">
+        <p className="mt-4 text-[#3B2F1A]/85 leading-relaxed">
           Complete the form with your account email and sign to confirm you understand that deletion is
           permanent. We will process your request after verification.
         </p>
@@ -58,7 +58,7 @@ export default function DeleteAccountDoc() {
 
       <section className="my-12">
         <h2 className="text-2xl font-bold text-oasis-green-800">Related policies</h2>
-        <ul className="mt-4 list-disc space-y-2 pl-5 text-[#30400D]/85">
+        <ul className="mt-4 list-disc space-y-2 pl-5 text-[#3B2F1A]/85">
           <li>
             <Link href="/terms-and-conditions#term-termination" className="text-brand-link no-underline hover:no-underline">
               Terms and Conditions: Termination and dormant accounts

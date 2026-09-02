@@ -27,21 +27,21 @@ export default function SuccessStoriesPage({ stats = KAHANA_STATS_FALLBACK }) {
         type="website"
       />
 
-      <div className="bg-[#F8FAF2] text-[#313A00]">
-        <section className="bg-white px-6 py-20 sm:px-10 sm:py-24 lg:px-16">
+      <div className="bg-[#F7F3EA] text-[#3B2F1A]">
+        <section className="px-6 py-20 sm:px-10 sm:py-24 lg:px-16">
           <div className="mx-auto max-w-3xl text-center">
             <FadeInSection eager>
               <h1 className="text-3xl font-semibold leading-tight tracking-tight sm:text-4xl md:text-5xl">
                 {t('home.storiesPageTitle')}
               </h1>
-              <p className="mt-5 text-lg leading-relaxed text-[#495800] sm:text-xl">
+              <p className="mt-5 text-lg leading-relaxed text-[#5C4520] sm:text-xl">
                 {t('home.storiesPageLead')}
               </p>
             </FadeInSection>
           </div>
         </section>
 
-        <section className="border-t border-[#E0E8D4] px-6 py-16 sm:px-10 lg:px-16">
+        <section className="border-t border-[#E4D9C4] px-6 py-16 sm:px-10 lg:px-16">
           <div className="mx-auto w-full max-w-6xl">
             <FadeInSection eager>
               <LibraryStats stats={stats} t={t} />
@@ -57,13 +57,13 @@ export default function SuccessStoriesPage({ stats = KAHANA_STATS_FALLBACK }) {
           </div>
         </section>
 
-        <section className="bg-[#313A00] px-6 py-20 text-[#F8FAF2] sm:px-10 lg:px-16">
+        <section className="bg-[#3B2F1A] px-6 py-20 text-[#F7F3EA] sm:px-10 lg:px-16">
           <div className="mx-auto max-w-2xl text-center">
             <FadeInSection>
-              <h2 className="text-3xl font-semibold leading-tight !text-[#F8FAF2] sm:text-4xl">
+              <h2 className="text-3xl font-semibold leading-tight !text-[#F7F3EA] sm:text-4xl">
                 {t('home.storiesClosingTitle')}
               </h2>
-              <p className="mt-4 text-lg text-[#F8FAF2]/85">{t('home.storiesClosingBody')}</p>
+              <p className="mt-4 text-lg text-[#F7F3EA]/85">{t('home.storiesClosingBody')}</p>
               <div className="mt-10 flex flex-wrap justify-center gap-3">
                 <a
                   href={APP_URL}
@@ -77,7 +77,7 @@ export default function SuccessStoriesPage({ stats = KAHANA_STATS_FALLBACK }) {
                 </a>
                 <Link
                   href="/faq"
-                  className="btn-secondary inline-flex items-center justify-center !border-[#F8FAF2]/40 !bg-transparent no-underline !text-[#F8FAF2] hover:!border-[#F8FAF2] hover:!bg-white/10 hover:!text-[#F8FAF2]"
+                  className="btn-secondary inline-flex items-center justify-center !border-[#F7F3EA]/40 !bg-transparent no-underline !text-[#F7F3EA] hover:!border-[#F7F3EA] hover:!bg-white/10 hover:!text-[#F7F3EA]"
                 >
                   {t('footer.faq')}
                 </Link>

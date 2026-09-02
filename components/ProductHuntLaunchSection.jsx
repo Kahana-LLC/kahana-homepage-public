@@ -20,7 +20,7 @@ export default function ProductHuntLaunchSection({ className = '' }) {
           href={PRODUCT_HUNT_PRODUCT_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="font-semibold text-[#4A6200] no-underline hover:underline"
+          className="font-semibold text-[#8A6622] no-underline hover:underline"
         >
           See the launch page
         </a>

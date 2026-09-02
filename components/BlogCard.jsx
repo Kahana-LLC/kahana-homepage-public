@@ -8,7 +8,7 @@ import { trackBlogEngagement, trackCategoryClick } from '../utils/userIntentTrac
 const { getAuthorDetails } = require('../utils/authorUtils');
 
 // Default placeholder for failed image loads
-const DEFAULT_PLACEHOLDER = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%233C584A"%3E%3Cpath d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-1.96-2.36L6.5 17h11l-3.54-4.71z"%2F%3E%3C%2Fsvg%3E';
+const DEFAULT_PLACEHOLDER = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%233B2F1A"%3E%3Cpath d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-1.96-2.36L6.5 17h11l-3.54-4.71z"%2F%3E%3C%2Fsvg%3E';
 
 // Format date helper
 function formatDate(dateString) {
@@ -76,7 +76,7 @@ export default function BlogCard({ post }) {
   const postAuthors = getAuthorDetails(post.authors ?? []);
 
   return (
-    <article className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-200 overflow-hidden flex flex-col h-full">
+    <article className="bg-white rounded-xl border border-[#E4D9C4] shadow-[0_10px_28px_rgba(59,47,26,0.08)] hover:shadow-[0_16px_40px_rgba(59,47,26,0.12)] transition-shadow duration-200 overflow-hidden flex flex-col h-full">
       <div className="flex flex-col h-full">
         <Link
           href={`/blog/${post.slug}`}
@@ -105,7 +105,7 @@ export default function BlogCard({ post }) {
 
           <div className="flex flex-col flex-grow px-6 pt-6 pb-4 gap-4">
             {/* Title */}
-            <h3 className="text-xl font-semibold text-gray-900 hover:text-kahana-accent-sunset transition-colors line-clamp-2 mb-2">
+            <h3 className="text-xl font-semibold text-[#3B2F1A] hover:text-[#8A6622] transition-colors line-clamp-2 mb-2">
               {post.title}
             </h3>
 
@@ -124,7 +124,7 @@ export default function BlogCard({ post }) {
                   </div>
                 ))}
               </div>
-              <div className="text-sm text-gray-600">
+              <div className="text-sm text-[#8A6622]">
                 {postAuthors.map(author => author.name).join(', ')}
               </div>
             </div>
@@ -161,7 +161,7 @@ export default function BlogCard({ post }) {
                     e.stopPropagation();
                     trackCategoryClick(categoryForUrl, post.slug);
                   }}
-                  className="text-sm font-medium px-3 py-1 rounded-full bg-gray-100 text-gray-700 hover:bg-[#617500] hover:text-white transition-colors inline-block"
+                  className="text-sm font-medium px-3 py-1 rounded-full bg-[#EDE6D2] text-[#8A6622] border border-[#E4D9C4] hover:bg-[#8A6622] hover:text-white hover:border-[#8A6622] transition-colors inline-block"
                 >
                   {categoryToDisplay}
                 </Link>

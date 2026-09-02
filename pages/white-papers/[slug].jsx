@@ -70,7 +70,7 @@ export default function WhitePaperPage({ whitePaper, relatedWhitePapers }) {
         keywords={whitePaper.seo?.keywords}
       />
 
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-[#F7F3EA]">
         <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           {/* Header */}
           <header className="mb-12">
@@ -88,7 +88,7 @@ export default function WhitePaperPage({ whitePaper, relatedWhitePapers }) {
             <div className="flex flex-col space-y-6">
               {/* Category and Featured Badge */}
               <div className="flex items-center gap-3">
-                <span className="inline-block bg-[#F3F8E4] text-oasis-green-800 px-3 py-1 rounded-full text-sm font-medium">
+                <span className="inline-block bg-[#EDE6D2] text-oasis-green-800 px-3 py-1 rounded-full text-sm font-medium">
                   {whitePaper.category}
                 </span>
                 {whitePaper.featured && (
@@ -131,7 +131,7 @@ export default function WhitePaperPage({ whitePaper, relatedWhitePapers }) {
                   {whitePaper.tags.map((tag, index) => (
                     <span
                       key={index}
-                      className="bg-[#F3F8E4] text-oasis-green-800 px-3 py-1 rounded-full text-sm"
+                      className="bg-[#EDE6D2] text-oasis-green-800 px-3 py-1 rounded-full text-sm"
                     >
                       #{tag}
                     </span>

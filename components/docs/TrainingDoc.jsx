@@ -42,15 +42,15 @@ export default function TrainingDoc({ doc }) {
         suppressHydrationWarning
       />
 
-      <aside className="my-8 scroll-mt-24 rounded-r-lg border-l-4 border-[#8BA500] bg-[#F3F8E4] p-6 not-prose">
-        <strong className="mb-2 block text-[#30400D]">At a glance</strong>
-        <p className="m-0 text-[#30400D]/85 leading-relaxed">
+      <aside className="my-8 scroll-mt-24 rounded-r-lg border-l-4 border-[#8BA500] bg-[#EDE6D2] p-6 not-prose">
+        <strong className="mb-2 block text-[#3B2F1A]">At a glance</strong>
+        <p className="m-0 text-[#3B2F1A]/85 leading-relaxed">
           <strong>Anonymous training still uploads feedback to Kahana</strong> when you submit—the
           difference is that your <strong>user ID is not attached to that training record</strong>.
           This is not on-device-only model training. Details:{" "}
           <a
             href="#does-data-leave-device"
-            className="font-semibold text-[#4A6200] no-underline hover:underline"
+            className="font-semibold text-[#8A6622] no-underline hover:underline"
           >
             Does data leave the device?
           </a>
@@ -61,18 +61,18 @@ export default function TrainingDoc({ doc }) {
         <h2 className="text-2xl font-bold text-oasis-green-800">
           Example training payloads (JSON)
         </h2>
-        <p className="mt-4 text-[#30400D]/85 leading-relaxed">
+        <p className="mt-4 text-[#3B2F1A]/85 leading-relaxed">
           Real-shaped submission objects sent to Kahana when you submit training—not stored only
-          on your device. Fields include <code className="rounded bg-[#F2F4E5] px-1 text-sm">category</code>,{" "}
-          <code className="rounded bg-[#F2F4E5] px-1 text-sm">badges</code>, required{" "}
-          <code className="rounded bg-[#F2F4E5] px-1 text-sm">comment</code>, and{" "}
-          <code className="rounded bg-[#F2F4E5] px-1 text-sm">training_mode</code> (anonymous vs
+          on your device. Fields include <code className="rounded bg-[#EDE6D2] px-1 text-sm">category</code>,{" "}
+          <code className="rounded bg-[#EDE6D2] px-1 text-sm">badges</code>, required{" "}
+          <code className="rounded bg-[#EDE6D2] px-1 text-sm">comment</code>, and{" "}
+          <code className="rounded bg-[#EDE6D2] px-1 text-sm">training_mode</code> (anonymous vs
           personalized).
         </p>
 
-        <aside className="my-6 rounded-r-lg border-l-4 border-[#8BA500] bg-[#F3F8E4] p-6">
-          <strong className="mb-2 block text-[#30400D]">How this maps to the UI</strong>
-          <ul className="m-0 list-disc space-y-1.5 pl-5 text-[#30400D]/85">
+        <aside className="my-6 rounded-r-lg border-l-4 border-[#8BA500] bg-[#EDE6D2] p-6">
+          <strong className="mb-2 block text-[#3B2F1A]">How this maps to the UI</strong>
+          <ul className="m-0 list-disc space-y-1.5 pl-5 text-[#3B2F1A]/85">
             <li>
               Thumbs up/down → <code className="rounded bg-white/80 px-1 text-sm">sentiment</code>
             </li>
@@ -95,13 +95,13 @@ export default function TrainingDoc({ doc }) {
         <h3 className="mt-8 text-lg font-bold text-oasis-green-800">
           Example 1 — answer quality (anonymous)
         </h3>
-        <p className="mt-2 text-sm text-[#30400D]/85">
+        <p className="mt-2 text-sm text-[#3B2F1A]/85">
           Helpful + Fast describe this reply. The comment states the reason in plain language.{" "}
-          <code className="rounded bg-[#F2F4E5] px-1 text-sm">training_mode: &quot;anonymous&quot;</code>{" "}
+          <code className="rounded bg-[#EDE6D2] px-1 text-sm">training_mode: &quot;anonymous&quot;</code>{" "}
           means no user ID on the training record—the payload is still uploaded on Submit.
         </p>
         <div className="payload-explorer mt-4">
-          <pre className="payload-json m-0 max-h-[28rem] min-w-0 overflow-x-hidden overflow-y-auto rounded-lg border border-[#30400D]/12 bg-[#1e2410] p-4 text-xs leading-relaxed text-[#e8f0dc] sm:text-sm">
+          <pre className="payload-json m-0 max-h-[28rem] min-w-0 overflow-x-hidden overflow-y-auto rounded-lg border border-[#3B2F1A]/12 bg-[#1e2410] p-4 text-xs leading-relaxed text-[#e8f0dc] sm:text-sm">
             <code className="payload-json-code block whitespace-pre-wrap break-words">
               {formattedRecipeJson}
             </code>
@@ -111,38 +111,38 @@ export default function TrainingDoc({ doc }) {
         <h3 className="mt-10 text-lg font-bold text-oasis-green-800">
           Example 2 — behavior preference (personalized, illustrative)
         </h3>
-        <p className="mt-2 text-sm text-[#30400D]/85">
-          Same JSON shape. <code className="rounded bg-[#F2F4E5] px-1 text-sm">category</code> and
-          a longer <code className="rounded bg-[#F2F4E5] px-1 text-sm">comment</code> carry source,
+        <p className="mt-2 text-sm text-[#3B2F1A]/85">
+          Same JSON shape. <code className="rounded bg-[#EDE6D2] px-1 text-sm">category</code> and
+          a longer <code className="rounded bg-[#EDE6D2] px-1 text-sm">comment</code> carry source,
           format, and research-mode intent that badges alone do not capture.
         </p>
         <div className="payload-explorer mt-4">
-          <pre className="payload-json m-0 max-h-[28rem] min-w-0 overflow-x-hidden overflow-y-auto rounded-lg border border-[#30400D]/12 bg-[#1e2410] p-4 text-xs leading-relaxed text-[#e8f0dc] sm:text-sm">
+          <pre className="payload-json m-0 max-h-[28rem] min-w-0 overflow-x-hidden overflow-y-auto rounded-lg border border-[#3B2F1A]/12 bg-[#1e2410] p-4 text-xs leading-relaxed text-[#e8f0dc] sm:text-sm">
             <code className="payload-json-code block whitespace-pre-wrap break-words">
               {formattedWorkflowJson}
             </code>
           </pre>
         </div>
 
-        <p className="mt-3 text-sm text-[#30400D]/70">
-          <code className="rounded bg-[#F2F4E5] px-1">assistant_reply</code> values are truncated
+        <p className="mt-3 text-sm text-[#3B2F1A]/70">
+          <code className="rounded bg-[#EDE6D2] px-1">assistant_reply</code> values are truncated
           for readability; production stores the full reply text.
         </p>
 
-        <p className="mt-4 text-sm text-[#30400D]/85">
-          A dedicated <code className="rounded bg-[#F2F4E5] px-1 text-sm">preference_type</code>{" "}
+        <p className="mt-4 text-sm text-[#3B2F1A]/85">
+          A dedicated <code className="rounded bg-[#EDE6D2] px-1 text-sm">preference_type</code>{" "}
           field is not in the payload yet—use{" "}
-          <a href="#preference-type" className="font-semibold text-[#4A6200] no-underline hover:underline">
+          <a href="#preference-type" className="font-semibold text-[#8A6622] no-underline hover:underline">
             Preference type and scope
           </a>{" "}
           for how to encode that in comments today. See{" "}
-          <a href="#train-anonymously" className="font-semibold text-[#4A6200] no-underline hover:underline">
+          <a href="#train-anonymously" className="font-semibold text-[#8A6622] no-underline hover:underline">
             Train anonymously
           </a>{" "}
           for persistence and account linkage, and{" "}
           <a
             href="#does-data-leave-device"
-            className="font-semibold text-[#4A6200] no-underline hover:underline"
+            className="font-semibold text-[#8A6622] no-underline hover:underline"
           >
             Does data leave the device?
           </a>{" "}
@@ -150,21 +150,21 @@ export default function TrainingDoc({ doc }) {
         </p>
 
         <h3 className="mt-10 text-xl font-bold text-oasis-green-800">Field reference</h3>
-        <div className="mt-4 overflow-x-auto rounded-xl border border-[#30400D]/12">
+        <div className="mt-4 overflow-x-auto rounded-xl border border-[#3B2F1A]/12">
           <table className="w-full min-w-[520px] border-collapse text-left text-sm">
             <thead>
-              <tr className="border-b border-[#30400D]/12 bg-[#F3F8E4]">
-                <th className="px-4 py-3 font-semibold text-[#30400D]">Field</th>
-                <th className="px-4 py-3 font-semibold text-[#30400D]">Description</th>
-                <th className="px-4 py-3 font-semibold text-[#30400D]">Sent when</th>
+              <tr className="border-b border-[#3B2F1A]/12 bg-[#EDE6D2]">
+                <th className="px-4 py-3 font-semibold text-[#3B2F1A]">Field</th>
+                <th className="px-4 py-3 font-semibold text-[#3B2F1A]">Description</th>
+                <th className="px-4 py-3 font-semibold text-[#3B2F1A]">Sent when</th>
               </tr>
             </thead>
             <tbody>
               {TRAINING_PAYLOAD_FIELD_REFERENCE.map((row) => (
-                <tr key={row.path} className="border-b border-[#30400D]/8 last:border-0">
-                  <td className="px-4 py-2.5 font-mono text-xs text-[#30400D]">{row.path}</td>
-                  <td className="px-4 py-2.5 text-[#30400D]/85">{row.description}</td>
-                  <td className="px-4 py-2.5 text-[#30400D]/85">{row.when}</td>
+                <tr key={row.path} className="border-b border-[#3B2F1A]/8 last:border-0">
+                  <td className="px-4 py-2.5 font-mono text-xs text-[#3B2F1A]">{row.path}</td>
+                  <td className="px-4 py-2.5 text-[#3B2F1A]/85">{row.description}</td>
+                  <td className="px-4 py-2.5 text-[#3B2F1A]/85">{row.when}</td>
                 </tr>
               ))}
             </tbody>

@@ -23,7 +23,7 @@ export default function DocCard({ doc, compact = false }) {
 
   if (compact) {
     return (
-      <article className="bg-white rounded-lg border border-gray-200 hover:border-oasis-green-600/40 hover:shadow-md transition-shadow duration-200 overflow-hidden h-full">
+      <article className="bg-white rounded-lg border border-[#E4D9C4] hover:border-[#8A6622]/40 hover:shadow-md transition-shadow duration-200 overflow-hidden h-full">
         <Link href={`/help/${doc.slug}`} className="block p-4 h-full no-underline doc-card-link">
           <span className="text-xs font-medium text-oasis-green-700">
             {getSectionDisplayName(doc.section || doc.category)}
@@ -40,7 +40,7 @@ export default function DocCard({ doc, compact = false }) {
   }
 
   return (
-    <article className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-200 overflow-hidden flex flex-col h-full">
+    <article className="bg-white rounded-xl border border-[#E4D9C4] shadow-[0_10px_28px_rgba(59,47,26,0.08)] hover:shadow-[0_16px_40px_rgba(59,47,26,0.12)] transition-shadow duration-200 overflow-hidden flex flex-col h-full">
       <Link href={`/help/${doc.slug}`} className="flex flex-col h-full doc-card-link no-underline">
         <div className="p-6">
           <div className="flex items-center justify-between mb-4">
@@ -51,7 +51,7 @@ export default function DocCard({ doc, compact = false }) {
               {formatDate(doc.date)}
             </time>
           </div>
-          <h3 className="text-xl font-semibold mb-2 text-gray-900 hover:text-oasis-green-600 transition-colors line-clamp-2">
+          <h3 className="text-xl font-semibold mb-2 text-[#3B2F1A] hover:text-[#8A6622] transition-colors line-clamp-2">
             {doc.title}
           </h3>
           <p className="text-gray-600 mb-4 line-clamp-2">

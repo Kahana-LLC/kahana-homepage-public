@@ -43,7 +43,7 @@ export default function HomeWhyOasisSection() {
           >
             Rediscover Browsing
           </p>
-          <h2 className="text-3xl font-semibold tracking-tight text-[#313A00] sm:text-4xl">
+          <h2 className="text-3xl font-semibold tracking-tight text-[#3B2F1A] sm:text-4xl">
             Unlock a New Level of Browsing with Oasis
           </h2>
         </div>

@@ -30,13 +30,13 @@ import { withAppLanguageParam } from '../lib/contentLanguage';
 import { APP_NAME } from '../config/brand';
 
 const LINK_CLASS =
-  'inline-flex items-center gap-2 text-base font-normal text-[#666666] no-underline transition-colors hover:text-[#617500] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#617500]';
+  'inline-flex items-center gap-2 text-base font-normal text-[#666666] no-underline transition-colors hover:text-[#8A6622] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8A6622]';
 
 const LEGAL_LINK_CLASS =
-  'inline-flex items-center gap-2 text-base font-normal text-[#666666] no-underline transition-colors hover:text-[#617500] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#617500]';
+  'inline-flex items-center gap-2 text-base font-normal text-[#666666] no-underline transition-colors hover:text-[#8A6622] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8A6622]';
 
 const ICON_LINK = 'h-4 w-4 shrink-0 text-current';
-const ICON_HEADING = 'h-4 w-4 shrink-0 text-[#617500]';
+const ICON_HEADING = 'h-4 w-4 shrink-0 text-[#8A6622]';
 
 const PRODUCT_LINKS = [
   {
@@ -125,7 +125,7 @@ function SocialIconLink({ href, label, children }) {
       href={href}
       target="_blank"
       rel="noopener noreferrer nofollow"
-      className="text-[#7A9200] transition-opacity hover:opacity-85 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#617500] no-underline"
+      className="text-[#8A6622] transition-opacity hover:opacity-85 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8A6622] no-underline"
       aria-label={label}
     >
       <span className="sr-only">{label}</span>
@@ -137,7 +137,7 @@ function SocialIconLink({ href, label, children }) {
 function AccordionChevron({ open }) {
   return (
     <svg
-      className={`h-5 w-5 shrink-0 text-[#617500] transition-transform ${open ? 'rotate-180' : ''}`}
+      className={`h-5 w-5 shrink-0 text-[#8A6622] transition-transform ${open ? 'rotate-180' : ''}`}
       fill="none"
       stroke="currentColor"
       viewBox="0 0 24 24"
@@ -284,7 +284,7 @@ function FooterContent() {
   ];
 
   return (
-    <footer className="relative bg-[#F8FAF2] text-[#333333]" aria-labelledby="footer-heading">
+    <footer className="relative bg-[#F7F3EA] text-[#333333]" aria-labelledby="footer-heading">
       <div className="mx-auto w-full max-w-[1282px] px-6 pb-[97px] pt-[69px] sm:px-10 lg:px-16 xl:px-[115px]">
         <h2 id="footer-heading" className="sr-only">
           {t('footer.label')}
@@ -317,7 +317,7 @@ function FooterContent() {
               {accordionSections.map((section) => {
                 const SectionIcon = section.icon;
                 return (
-                  <div key={section.id} className="rounded-lg border border-[#E0E8D4] bg-white/40">
+                  <div key={section.id} className="rounded-lg border border-[#E4D9C4] bg-white/40">
                     <button
                       type="button"
                       className="footer-accordion-trigger flex w-full items-center justify-between px-4 py-3 text-left"
@@ -331,7 +331,7 @@ function FooterContent() {
                       <AccordionChevron open={openSection === section.id} />
                     </button>
                     {sectionOpen(section.id) && (
-                      <div className="border-t border-[#E0E8D4] px-4 py-4">
+                      <div className="border-t border-[#E4D9C4] px-4 py-4">
                         <LinkList links={section.links} t={t} />
                       </div>
                     )}
@@ -339,7 +339,7 @@ function FooterContent() {
                 );
               })}
 
-              <div className="rounded-lg border border-[#E0E8D4] bg-white/40">
+              <div className="rounded-lg border border-[#E4D9C4] bg-white/40">
                 <button
                   type="button"
                   className="footer-accordion-trigger flex w-full items-center justify-between px-4 py-3 text-left"
@@ -353,7 +353,7 @@ function FooterContent() {
                   <AccordionChevron open={openSection === 'legal'} />
                 </button>
                 {sectionOpen('legal') && (
-                  <div className="border-t border-[#E0E8D4] px-4 py-4">
+                  <div className="border-t border-[#E4D9C4] px-4 py-4">
                     <LegalLinkList
                       consentContext={consentContext}
                       openCookieModal={openCookieModal}

@@ -17,7 +17,7 @@ function CardLink({ href, title, summary }) {
     <li className="flex flex-1 min-w-[16rem]">
       <Link href={href} className="flex h-full w-full no-underline">
         <RainbowHoverCard className="h-full w-full" innerClassName="h-full bg-white px-6 py-6">
-          <h3 className="text-lg font-semibold text-[#313A00]">{title}</h3>
+          <h3 className="text-lg font-semibold text-[#3B2F1A]">{title}</h3>
           <p className="mt-2 text-sm text-[#666666]">{summary}</p>
         </RainbowHoverCard>
       </Link>
@@ -38,17 +38,17 @@ export function CatalogIndex({
   return (
     <>
       <SEO title={seoTitle} description={seoDescription} url={canonical} type="website" />
-      <div className="bg-[#F8FAF2] text-[#313A00]">
-        <section className="bg-white px-6 py-20 sm:px-10 sm:py-24 lg:px-16">
+      <div className="bg-[#F7F3EA] text-[#3B2F1A]">
+        <section className="px-6 py-20 sm:px-10 sm:py-24 lg:px-16">
           <div className="mx-auto max-w-3xl text-center">
             <FadeInSection eager>
               {eyebrow ? (
-                <p className="text-sm font-semibold tracking-wide text-[#7A9200]">{eyebrow}</p>
+                <p className="text-sm font-semibold tracking-wide text-[#8A6622]">{eyebrow}</p>
               ) : null}
               <h1 className="mt-2 text-3xl font-semibold leading-tight tracking-tight sm:text-4xl md:text-5xl">
                 {title}
               </h1>
-              <p className="mt-5 text-lg leading-relaxed text-[#495800] sm:text-xl">{lead}</p>
+              <p className="mt-5 text-lg leading-relaxed text-[#5C4520] sm:text-xl">{lead}</p>
             </FadeInSection>
           </div>
         </section>
@@ -98,15 +98,15 @@ export default function MarketingLanding({
   return (
     <>
       <SEO title={seoTitle} description={seoDescription} url={canonical} type="website" />
-      <div className="bg-[#F8FAF2] text-[#313A00]">
-        <section className="bg-white px-6 py-20 sm:px-10 sm:py-24 lg:px-16">
+      <div className="bg-[#F7F3EA] text-[#3B2F1A]">
+        <section className="px-6 py-20 sm:px-10 sm:py-24 lg:px-16">
           <div className="mx-auto max-w-3xl">
             <FadeInSection eager>
-              <p className="text-sm font-semibold tracking-wide text-[#7A9200]">{item.eyebrow}</p>
+              <p className="text-sm font-semibold tracking-wide text-[#8A6622]">{item.eyebrow}</p>
               <h1 className="mt-2 text-3xl font-semibold leading-tight tracking-tight sm:text-4xl md:text-5xl">
                 {item.title}
               </h1>
-              <p className="mt-5 text-lg leading-relaxed text-[#495800] sm:text-xl">{item.lead}</p>
+              <p className="mt-5 text-lg leading-relaxed text-[#5C4520] sm:text-xl">{item.lead}</p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
                   href={item.appHref || APP_URL}
@@ -127,7 +127,7 @@ export default function MarketingLanding({
                 </Link>
               </div>
               {helpFilterHref !== '/help' ? (
-                <p className="mt-4 mb-0 text-sm text-[#495800]">
+                <p className="mt-4 mb-0 text-sm text-[#5C4520]">
                   <Link href={helpFilterHref} className="font-semibold text-brand-link no-underline hover:underline">
                     Browse matching help guides
                   </Link>
@@ -144,18 +144,18 @@ export default function MarketingLanding({
               <ul className="mt-6 space-y-3 text-lg text-[#666666]">
                 {(item.bullets || []).map((bullet) => (
                   <li key={bullet} className="flex gap-3">
-                    <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#7A9200]" aria-hidden />
+                    <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#8A6622]" aria-hidden />
                     <span>{bullet}</span>
                   </li>
                 ))}
               </ul>
-              {item.note ? <p className="mt-8 text-base text-[#495800]">{item.note}</p> : null}
+              {item.note ? <p className="mt-8 text-base text-[#5C4520]">{item.note}</p> : null}
             </FadeInSection>
           </div>
         </section>
 
         {stories.length > 0 ? (
-          <section className="border-t border-[#E0E8D4] px-6 py-16 sm:px-10 lg:px-16">
+          <section className="border-t border-[#E4D9C4] px-6 py-16 sm:px-10 lg:px-16">
             <div className="mx-auto max-w-3xl">
               <h2 className="text-2xl font-semibold">Live examples</h2>
               <ul className="mt-6 space-y-4">
@@ -165,7 +165,7 @@ export default function MarketingLanding({
                       href={story.hubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-lg font-medium text-[#617500] no-underline underline-offset-4 hover:underline"
+                      className="text-lg font-medium text-[#8A6622] no-underline underline-offset-4 hover:underline"
                     >
                       {story.hubTitle}
                     </a>
@@ -179,7 +179,7 @@ export default function MarketingLanding({
               <p className="mt-6">
                 <Link
                   href="/success-stories"
-                  className="text-base font-medium text-[#617500] no-underline underline-offset-4 hover:underline"
+                  className="text-base font-medium text-[#8A6622] no-underline underline-offset-4 hover:underline"
                 >
                   More success stories
                 </Link>
@@ -188,7 +188,7 @@ export default function MarketingLanding({
           </section>
         ) : null}
 
-        <section className="border-t border-[#E0E8D4] px-6 py-16 sm:px-10 lg:px-16">
+        <section className="border-t border-[#E4D9C4] px-6 py-16 sm:px-10 lg:px-16">
           <div className="mx-auto max-w-6xl space-y-12">
             {featureLinks.length > 0 ? (
               <div>
@@ -237,19 +237,19 @@ export default function MarketingLanding({
             ) : null}
             <p className="text-[#666666]">
               Browse all{' '}
-              <Link href="/features" className="font-medium text-[#617500] no-underline hover:underline">
+              <Link href="/features" className="font-medium text-[#8A6622] no-underline hover:underline">
                 features
               </Link>
               {', '}
-              <Link href="/for" className="font-medium text-[#617500] no-underline hover:underline">
+              <Link href="/for" className="font-medium text-[#8A6622] no-underline hover:underline">
                 who it is for
               </Link>
               {', '}
-              <Link href="/use-cases" className="font-medium text-[#617500] no-underline hover:underline">
+              <Link href="/use-cases" className="font-medium text-[#8A6622] no-underline hover:underline">
                 use cases
               </Link>
               {', or '}
-              <Link href="/help" className="font-medium text-[#617500] no-underline hover:underline">
+              <Link href="/help" className="font-medium text-[#8A6622] no-underline hover:underline">
                 Help
               </Link>
               .

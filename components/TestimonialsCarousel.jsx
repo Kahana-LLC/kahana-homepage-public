@@ -61,7 +61,7 @@ export default function TestimonialsCarousel() {
                       "{testimonials[currentIndex].quote}"
                     </p>
                     <div className="mt-6 flex items-center justify-center gap-x-4">
-                      <div className="relative h-10 w-10 overflow-hidden rounded-full bg-[#F3F8E4]">
+                      <div className="relative h-10 w-10 overflow-hidden rounded-full bg-[#EDE6D2]">
                         <Image
                           src={testimonials[currentIndex].author.image}
                           alt={testimonials[currentIndex].author.name}

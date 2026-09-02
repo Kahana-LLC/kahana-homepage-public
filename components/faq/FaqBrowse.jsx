@@ -25,7 +25,7 @@ function FaqHomeTeaser() {
       <p className="mt-6">
         <Link
           href="/faq"
-          className="text-base font-medium text-[#617500] no-underline hover:text-[#495800]"
+          className="text-base font-medium text-[#8A6622] no-underline hover:text-[#5C4520]"
         >
           See all FAQs
         </Link>
@@ -98,17 +98,17 @@ function FaqBrowsePage() {
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         placeholder="Search questions and answers"
-        className="w-full rounded-full border border-[#E0E8D4] bg-white px-5 py-3 text-base text-[#313A00] placeholder:text-[#495800]/60 focus:border-[#617500] focus:outline-none focus:ring-2 focus:ring-[#617500]/30"
+        className="w-full rounded-full border border-[#E4D9C4] bg-white px-5 py-3 text-base text-[#3B2F1A] placeholder:text-[#5C4520]/60 focus:border-[#8A6622] focus:outline-none focus:ring-2 focus:ring-[#8A6622]/30"
       />
 
       <div className="mt-5 flex flex-wrap gap-2" role="group" aria-label="FAQ topics">
         <button
           type="button"
           onClick={() => selectTopic('all')}
-          className={`faq-topic-chip rounded-full px-3.5 py-1.5 text-sm font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#617500] ${
+          className={`faq-topic-chip rounded-full px-3.5 py-1.5 text-sm font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8A6622] ${
             topicId === 'all'
-              ? 'faq-topic-chip--active bg-[#313A00] text-[#F8FAF2]'
-              : 'bg-[#EEF3D8] text-[#495800] hover:bg-[#E0E8D4]'
+              ? 'faq-topic-chip--active bg-[#3B2F1A] text-[#F7F3EA]'
+              : 'bg-[#D9DACB] text-[#4F5140] hover:bg-[#C5C6B5]'
           }`}
         >
           All
@@ -118,10 +118,10 @@ function FaqBrowsePage() {
             key={section.id}
             type="button"
             onClick={() => selectTopic(section.id)}
-            className={`faq-topic-chip rounded-full px-3.5 py-1.5 text-sm font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#617500] ${
+            className={`faq-topic-chip rounded-full px-3.5 py-1.5 text-sm font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8A6622] ${
               topicId === section.id
-                ? 'faq-topic-chip--active bg-[#313A00] text-[#F8FAF2]'
-                : 'bg-[#EEF3D8] text-[#495800] hover:bg-[#E0E8D4]'
+                ? 'faq-topic-chip--active bg-[#3B2F1A] text-[#F7F3EA]'
+                : 'bg-[#D9DACB] text-[#4F5140] hover:bg-[#C5C6B5]'
             }`}
           >
             {section.title}
@@ -129,14 +129,14 @@ function FaqBrowsePage() {
         ))}
       </div>
 
-      <p className="mt-6 text-sm text-[#495800]" aria-live="polite">
+      <p className="mt-6 text-sm text-[#5C4520]" aria-live="polite">
         {filtered.length === 0
           ? 'No matches'
           : `${filtered.length} result${filtered.length === 1 ? '' : 's'}`}
       </p>
 
       {filtered.length === 0 ? (
-        <p className="mt-6 text-base text-[#495800]">
+        <p className="mt-6 text-base text-[#5C4520]">
           No matches. Try another term or clear filters.
         </p>
       ) : (
@@ -158,7 +158,7 @@ function FaqBrowsePage() {
               >
                 Previous
               </button>
-              <p className="text-sm font-medium text-[#495800]">
+              <p className="text-sm font-medium text-[#5C4520]">
                 Page {safePage} of {totalPages}
               </p>
               <button

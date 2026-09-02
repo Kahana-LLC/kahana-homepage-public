@@ -58,7 +58,7 @@ export default function ExternalReviewerAttribution({ variant = 'full', classNam
       >
         <ReviewerPhoto size={size} className="shrink-0" />
         <div className="min-w-0">
-          <p className="text-xs font-semibold uppercase tracking-wide text-[#7a9200]">Independent reviewer</p>
+          <p className="text-xs font-semibold uppercase tracking-wide text-[#8A6622]">Independent reviewer</p>
           <p className="mt-1 text-sm text-oasis-green-800">
             Reviewed by{' '}
             <a

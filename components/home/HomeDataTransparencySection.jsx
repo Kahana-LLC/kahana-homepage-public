@@ -11,32 +11,32 @@ export default function HomeDataTransparencySection() {
         <div className="absolute bottom-[-25%] left-[-15%] h-[480px] w-[680px] rounded-full bg-[#FCDD9F]/18 blur-[200px] md:blur-[340px] opacity-65" />
       </div>
       <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-        <div className="rounded-3xl border border-[#30400D]/12 bg-white/85 p-8 shadow-[0_18px_80px_rgba(48,64,13,0.08)] backdrop-blur-sm sm:p-12">
-          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.16em] text-[#617500]">
+        <div className="rounded-3xl border border-[#3B2F1A]/12 bg-white/85 p-8 shadow-[0_18px_80px_rgba(59,47,26,0.08)] backdrop-blur-sm sm:p-12">
+          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.16em] text-[#8A6622]">
             Transparent by default
           </p>
-          <h2 className="text-3xl font-bold tracking-tight text-[#30400D] sm:text-4xl">
+          <h2 className="text-3xl font-bold tracking-tight text-[#3B2F1A] sm:text-4xl">
             Respectful data collection that still makes Oasis better
           </h2>
-          <p className="mt-5 max-w-3xl text-lg leading-relaxed text-[#30400D]/78">
+          <p className="mt-5 max-w-3xl text-lg leading-relaxed text-[#3B2F1A]/78">
             Oasis sends minimal interaction data to Kahana so we can improve the assistant—fix
             bugs, measure latency, and understand what helps. By default, personalization is{" "}
             <strong>off</strong>: payloads are anonymized with no email or account ID. You only
             share identifying fields if you opt in from Settings.
           </p>
-          <p className="mt-4 max-w-3xl text-base leading-relaxed text-[#30400D]/72 sm:text-lg">
+          <p className="mt-4 max-w-3xl text-base leading-relaxed text-[#3B2F1A]/72 sm:text-lg">
             Unlike Chromium browsers that can gather broad behavioral signals in the background,
             Oasis is explicit about what leaves your device. We do not build ad profiles from your
             location, searches, likes, or purchases—sensitive context stays local.
           </p>
 
-          <p className="mt-6 text-sm text-[#30400D]/70">
+          <p className="mt-6 text-sm text-[#3B2F1A]/70">
             Toggle to compare the JSON Kahana receives for one assistant interaction (illustrative
             example):
           </p>
           <InteractionDataPayloadExplorer
             variant="compact"
-            className="mt-4 rounded-xl border border-[#30400D]/15 bg-[#FAFCF7] p-4 sm:p-6"
+            className="mt-4 rounded-xl border border-[#3B2F1A]/15 bg-[#F7F3EA] p-4 sm:p-6"
           />
 
           <div className="mt-8">

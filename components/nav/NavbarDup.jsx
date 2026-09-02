@@ -222,7 +222,7 @@ export default function NavbarDup() {
     <div className="relative">
       <div className="h-16 w-full" aria-hidden="true" />
 
-      <nav className="nav-shell fixed left-0 top-0 z-50 h-16 w-full bg-white transition-all duration-300">
+      <nav className="nav-shell fixed left-0 top-0 z-50 h-16 w-full bg-[#F7F3EA] transition-all duration-300">
         <style jsx>{`
           .nav-shell {
             position: fixed;
@@ -234,7 +234,7 @@ export default function NavbarDup() {
             right: 0;
             bottom: 0;
             height: 1px;
-            background: #fff;
+            background: #E4D9C4;
             pointer-events: none;
             z-index: 2;
           }
@@ -362,7 +362,7 @@ export default function NavbarDup() {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            color: var(--nav-link-color, #617500) !important;
+            color: var(--nav-link-color, #8A6622) !important;
             transition: transform 0.2s ease, color 0.2s ease;
             pointer-events: auto;
           }
@@ -370,12 +370,12 @@ export default function NavbarDup() {
             outline: none;
           }
           .dropdown-icon-button:focus-visible {
-            box-shadow: 0 0 0 2px #fff, 0 0 0 4px #617500;
+            box-shadow: 0 0 0 2px #fff, 0 0 0 4px #8A6622;
             border-radius: 4px;
           }
           .nav-link:focus-visible,
           .dropdown-link:focus-visible {
-            box-shadow: 0 0 0 2px #fff, 0 0 0 4px #617500;
+            box-shadow: 0 0 0 2px #fff, 0 0 0 4px #8A6622;
             border-radius: 8px;
           }
           .nav-link:hover .dropdown-icon-button,
@@ -398,7 +398,7 @@ export default function NavbarDup() {
           }
           .dropdown-link {
             display: block;
-            color: var(--nav-link-color, #617500) !important;
+            color: var(--nav-link-color, #8A6622) !important;
             text-decoration: none !important;
             font-weight: 500 !important;
             font-size: 1rem;
@@ -412,7 +412,7 @@ export default function NavbarDup() {
             background-color: transparent;
           }
           .dropdown-link:hover {
-            background-color: rgba(97, 117, 0, 0.06);
+            background-color: rgba(138, 102, 34, 0.06);
           }
           .dropdown-link + .dropdown-link {
             margin-top: 1rem;
@@ -464,7 +464,7 @@ export default function NavbarDup() {
           }
           /* :global so Next.js <Link> (className on inner <a>) still gets a 44px row */
           :global(.mobile-menu a.mobile-link) {
-            color: #617500 !important;
+            color: #8A6622 !important;
             box-sizing: border-box !important;
             transition: background-color 0.2s ease;
             padding: 1rem 1.25rem;
@@ -482,10 +482,10 @@ export default function NavbarDup() {
           }
           :global(.mobile-menu a.mobile-link:hover) {
             background-color: #d0ede6;
-            color: #617500 !important;
+            color: #8A6622 !important;
           }
           :global(.mobile-menu a.mobile-link:focus-visible) {
-            box-shadow: 0 0 0 2px #fff, 0 0 0 4px #617500;
+            box-shadow: 0 0 0 2px #fff, 0 0 0 4px #8A6622;
           }
         `}</style>
 
@@ -571,7 +571,7 @@ export default function NavbarDup() {
               </ul>
               <LanguageMenu align="end" className="ml-1" />
               <span
-                className="mx-3 h-5 w-px shrink-0 bg-[#313A00]/20"
+                className="mx-3 h-5 w-px shrink-0 bg-[#3B2F1A]/20"
                 aria-hidden
               />
             </nav>

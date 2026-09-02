@@ -574,7 +574,7 @@ export default function ReferencesPage() {
         <meta name="description" content="Complete references and citations for The Future of Ergonomic Work white paper." />
       </Head>
 
-      <main className="min-h-screen bg-white pt-20 sm:pt-24 pb-12 sm:pb-16">
+      <main className="min-h-screen bg-[#F7F3EA] pt-20 sm:pt-24 pb-12 sm:pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 sm:mb-12">
             <h2 className="text-sm sm:text-base font-semibold leading-7 text-brand-link mb-2 sm:mb-3">White Paper References</h2>

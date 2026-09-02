@@ -137,7 +137,7 @@ function CheckIcon({ className }) {
 function PlanValue({ value, included, emphasize }) {
   if (included) {
     return (
-      <span className="inline-flex items-center gap-1.5 text-[#495800]">
+      <span className="inline-flex items-center gap-1.5 text-[#5C4520]">
         <CheckIcon className="h-4 w-4 flex-shrink-0" />
         <span className="sr-only">Included</span>
         <span className="text-sm font-medium" aria-hidden>
@@ -150,7 +150,7 @@ function PlanValue({ value, included, emphasize }) {
   return (
     <span
       className={`text-sm leading-snug ${
-        emphasize ? 'font-semibold text-[#313A00]' : 'text-[#333333]'
+        emphasize ? 'font-semibold text-[#3B2F1A]' : 'text-[#333333]'
       }`}
     >
       {value}
@@ -160,9 +160,9 @@ function PlanValue({ value, included, emphasize }) {
 
 export default function Pricing() {
   return (
-    <div className="bg-[#F8FAF2]">
+    <div className="bg-[#F7F3EA]">
       <section className="px-4 pb-6 pt-8 text-center sm:px-6 sm:pt-12 lg:px-8">
-        <h1 className="text-4xl font-extrabold tracking-tight text-[#313A00] sm:text-5xl">
+        <h1 className="text-4xl font-extrabold tracking-tight text-[#3B2F1A] sm:text-5xl">
           Plans &amp; billing
         </h1>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-[#666666]">
@@ -179,26 +179,26 @@ export default function Pricing() {
                 <div
                   key={tier.name}
                   className={`relative flex flex-col rounded-2xl border-2 bg-white p-5 transition-all duration-300 hover:shadow-lg sm:p-6 lg:p-8 ${
-                    tier.highlighted ? 'border-[#617500]' : 'border-[#E0E8D4]'
+                    tier.highlighted ? 'border-[#8A6622]' : 'border-[#E4D9C4]'
                   }`}
                 >
                   {tier.highlighted ? (
-                    <p className="mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-[#617500]">
+                    <p className="mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-[#8A6622]">
                       Recommended when you hit a limit
                     </p>
                   ) : null}
                   <div className="mb-4 flex min-h-[180px] flex-col">
-                    <h2 className="mb-3 text-base font-semibold text-[#313A00] sm:text-lg">
+                    <h2 className="mb-3 text-base font-semibold text-[#3B2F1A] sm:text-lg">
                       {tier.name}
                     </h2>
                     <div className="mb-4 flex flex-wrap items-baseline gap-x-1">
-                      <span className="text-3xl font-bold text-[#313A00] sm:text-4xl lg:text-5xl">
+                      <span className="text-3xl font-bold text-[#3B2F1A] sm:text-4xl lg:text-5xl">
                         {tier.priceLabel}
                       </span>
                       <span className="text-sm text-[#666666]">{tier.priceSuffix}</span>
                     </div>
                     {tier.annualNote ? (
-                      <p className="mb-3 text-sm font-medium text-[#495800]">{tier.annualNote}</p>
+                      <p className="mb-3 text-sm font-medium text-[#5C4520]">{tier.annualNote}</p>
                     ) : (
                       <p className="mb-3 h-5" aria-hidden="true" />
                     )}
@@ -218,7 +218,7 @@ export default function Pricing() {
                     </li>
                     {tier.includedFeatures.map((feature) => (
                       <li key={feature} className="flex items-start">
-                        <CheckIcon className="mr-2 mt-0.5 h-4 w-4 flex-shrink-0 text-[#495800]" />
+                        <CheckIcon className="mr-2 mt-0.5 h-4 w-4 flex-shrink-0 text-[#5C4520]" />
                         <span className="text-xs leading-relaxed text-[#333333] sm:text-sm">
                           {feature}
                         </span>
@@ -244,25 +244,25 @@ export default function Pricing() {
         >
           <div className="mx-auto max-w-5xl">
             <div className="mb-6 text-center sm:mb-8">
-              <h2 className="text-2xl font-extrabold tracking-tight text-[#313A00] sm:text-3xl">
+              <h2 className="text-2xl font-extrabold tracking-tight text-[#3B2F1A] sm:text-3xl">
                 Every feature, side by side
               </h2>
               <p className="mx-auto mt-3 max-w-2xl text-base text-[#666666]">
-                The olive column is what changes on Growth. Everything else is
+                The highlighted column is what changes on Growth. Everything else is
                 already on Free.
               </p>
             </div>
 
-            <div className="overflow-x-auto rounded-2xl border border-[#E0E8D4] bg-white shadow-sm">
+            <div className="overflow-x-auto rounded-2xl border border-[#E4D9C4] bg-white shadow-sm">
               <table className="w-full min-w-[36rem] border-collapse text-left">
                 <caption className="sr-only">
                   Comparison of Kahana Free and Growth plans
                 </caption>
                 <thead>
-                  <tr className="border-b border-[#E0E8D4] bg-[#F8FAF2]">
+                  <tr className="border-b border-[#E4D9C4] bg-[#F7F3EA]">
                     <th
                       scope="col"
-                      className="sticky left-0 z-10 bg-[#F8FAF2] px-4 py-3.5 text-sm font-semibold text-[#313A00] sm:px-6"
+                      className="sticky left-0 z-10 bg-[#F7F3EA] px-4 py-3.5 text-sm font-semibold text-[#3B2F1A] sm:px-6"
                     >
                       Feature
                     </th>
@@ -274,7 +274,7 @@ export default function Pricing() {
                     </th>
                     <th
                       scope="col"
-                      className="bg-[#EEF3D8] px-4 py-3.5 text-sm font-semibold text-[#313A00] sm:w-[28%] sm:px-6"
+                      className="bg-[#EDE6D2] px-4 py-3.5 text-sm font-semibold text-[#3B2F1A] sm:w-[28%] sm:px-6"
                     >
                       Growth
                     </th>
@@ -286,10 +286,10 @@ export default function Pricing() {
                       <th
                         scope="colgroup"
                         colSpan={3}
-                        className={`border-t border-[#E0E8D4] px-4 py-3 text-left text-xs font-semibold uppercase tracking-[0.12em] sm:px-6 ${
+                        className={`border-t border-[#E4D9C4] px-4 py-3 text-left text-xs font-semibold uppercase tracking-[0.12em] sm:px-6 ${
                           group.differs
-                            ? 'bg-[#E7EED0] text-[#495800]'
-                            : 'bg-[#F8FAF2] text-[#666666]'
+                            ? 'bg-[#EDE6D2] text-[#5C4520]'
+                            : 'bg-[#F7F3EA] text-[#666666]'
                         }`}
                       >
                         {group.heading}
@@ -302,7 +302,7 @@ export default function Pricing() {
                       >
                         <th
                           scope="row"
-                          className="sticky left-0 z-10 bg-white px-4 py-3.5 text-sm font-medium text-[#313A00] sm:px-6"
+                          className="sticky left-0 z-10 bg-white px-4 py-3.5 text-sm font-medium text-[#3B2F1A] sm:px-6"
                         >
                           {row.feature}
                           {row.hint ? (
@@ -319,7 +319,7 @@ export default function Pricing() {
                         </td>
                         <td
                           className={`px-4 py-3.5 sm:px-6 ${
-                            group.differs ? 'bg-[#F4F7E6]' : 'bg-[#F8FAF2]'
+                            group.differs ? 'bg-[#EDE6D2]' : 'bg-[#F7F3EA]'
                           }`}
                         >
                           <PlanValue
@@ -337,9 +337,9 @@ export default function Pricing() {
 
             <div
               id="when-to-upgrade"
-              className="mx-auto mt-14 max-w-2xl scroll-mt-24 rounded-2xl border border-[#E0E8D4] bg-white px-6 py-8 text-left sm:px-8"
+              className="mx-auto mt-14 max-w-2xl scroll-mt-24 rounded-2xl border border-[#E4D9C4] bg-white px-6 py-8 text-left sm:px-8"
             >
-              <h2 className="text-xl font-semibold text-[#313A00] sm:text-2xl">
+              <h2 className="text-xl font-semibold text-[#3B2F1A] sm:text-2xl">
                 When to upgrade
               </h2>
               <p className="mt-3 text-base leading-relaxed text-[#666666]">
@@ -352,14 +352,14 @@ export default function Pricing() {
               <p className="mt-4 text-base">
                 <Link
                   href="/help/when-to-upgrade"
-                  className="font-medium text-[#617500] no-underline underline-offset-4 hover:underline"
+                  className="font-medium text-[#8A6622] no-underline underline-offset-4 hover:underline"
                 >
                   Plans: when to upgrade
                 </Link>
                 {' · '}
                 <a
                   href="https://app.kahana.io/billing"
-                  className="font-medium text-[#617500] no-underline underline-offset-4 hover:underline"
+                  className="font-medium text-[#8A6622] no-underline underline-offset-4 hover:underline"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

@@ -39,7 +39,7 @@ export default function BlogListing({ post }) {
         )}
       </div>
       <Link href={`/blog/${post.slug}`}>
-        <h3 className="text-xl font-semibold hover:text-kahana-accent-sunset transition-colors">
+        <h3 className="text-xl font-semibold text-[#3B2F1A] hover:text-[#8A6622] transition-colors">
           {post.title}
         </h3>
       </Link>
@@ -59,7 +59,7 @@ export default function BlogListing({ post }) {
               </div>
             ))}
           </div>
-          <div className="text-sm text-gray-600">
+          <div className="text-sm text-[#8A6622]">
             {postAuthors.map(author => author.name).join(', ')}
           </div>
         </div>

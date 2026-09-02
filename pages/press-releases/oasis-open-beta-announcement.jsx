@@ -16,7 +16,7 @@ export default function OasisOpenBetaPressRelease() {
         type="article"
       />
 
-      <article className="min-h-screen bg-white">
+      <article className="min-h-screen bg-[#F7F3EA]">
         <header className="border-b border-oasis-green-100 bg-oasis-green-50/40">
           <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6 lg:px-8">
             <p className="text-sm font-semibold uppercase tracking-wide text-oasis-green-600">Press release</p>

@@ -16,7 +16,7 @@ export default function BlogDataComparisonTable({ headers, rows, title }) {
   return (
     <div className="my-8 overflow-x-auto rounded-xl border border-gray-200 bg-white shadow-sm">
       {title ? (
-        <div className="border-b border-gray-100 bg-[#F3F8E4]/40 px-4 py-3">
+        <div className="border-b border-gray-100 bg-[#EDE6D2]/40 px-4 py-3">
           <p className="text-sm font-semibold text-oasis-green-900">{title}</p>
         </div>
       ) : null}

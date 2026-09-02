@@ -158,13 +158,13 @@ export default function ForgotPassword() {
         <meta name="robots" content="noindex, nofollow" />
       </Head>
 
-      <main className="min-h-screen bg-white px-4 py-12 sm:py-16">
+      <main className="min-h-screen bg-[#F7F3EA] px-4 py-12 sm:py-16">
         <div className="mx-auto w-full max-w-xl">
           <div className="rounded-2xl border border-neutral-200 bg-white p-6 sm:p-8 shadow-[0_25px_80px_rgba(9,12,0,0.08)]">
             <p className="text-xs font-semibold tracking-wide uppercase text-[#978455] mb-2">
               Oasis by Kahana
             </p>
-            <h1 className="text-3xl font-extrabold text-[#313A00] mb-2">Reset your password</h1>
+            <h1 className="text-3xl font-extrabold text-[#3B2F1A] mb-2">Reset your password</h1>
             <p className="text-base text-neutral-700 mb-6">{message}</p>
 
             {phase === 'gate' && (
@@ -189,7 +189,7 @@ export default function ForgotPassword() {
                     value={newPassword}
                     onChange={(e) => setNewPassword(e.target.value)}
                     placeholder="At least 8 characters"
-                    className="w-full rounded-lg border border-neutral-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#4A6200]"
+                    className="w-full rounded-lg border border-neutral-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#8A6622]"
                     autoComplete="new-password"
                     minLength={8}
                     required
@@ -205,7 +205,7 @@ export default function ForgotPassword() {
                     value={confirmPassword}
                     onChange={(e) => setConfirmPassword(e.target.value)}
                     placeholder="Re-enter your new password"
-                    className="w-full rounded-lg border border-neutral-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#4A6200]"
+                    className="w-full rounded-lg border border-neutral-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#8A6622]"
                     autoComplete="new-password"
                     minLength={8}
                     required
@@ -233,7 +233,7 @@ export default function ForgotPassword() {
               <div className="mt-2">
                 <Link
                   href="/oasis-auth?mode=login"
-                  className="text-sm font-semibold text-[#4A6200] no-underline hover:no-underline"
+                  className="text-sm font-semibold text-[#8A6622] no-underline hover:no-underline"
                 >
                   Back to sign in
                 </Link>

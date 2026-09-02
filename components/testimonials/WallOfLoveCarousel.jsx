@@ -113,7 +113,7 @@ export default function WallOfLoveCarousel({
   return (
     <div className="relative w-full overflow-x-hidden" id={id}>
       {isSingleSlide && (
-        <div className="absolute -top-6 right-0 z-10 flex items-center gap-1 text-xs text-[#30400D]/60 md:hidden">
+        <div className="absolute -top-6 right-0 z-10 flex items-center gap-1 text-xs text-[#3B2F1A]/60 md:hidden">
           <span>Swipe</span>
           <svg
             className="h-4 w-4"
@@ -184,7 +184,7 @@ export default function WallOfLoveCarousel({
           type="button"
           onClick={() => handleScroll("prev")}
           disabled={activePage === 0}
-          className="pointer-events-auto hidden h-10 w-10 items-center justify-center rounded-full border border-[#7F9E36] bg-[#4A6200] text-white shadow-lg transition hover:bg-[#3E5300] disabled:cursor-not-allowed disabled:opacity-40 lg:flex"
+          className="pointer-events-auto hidden h-10 w-10 items-center justify-center rounded-full border border-[#E4D9C4] bg-[#8A6622] text-white shadow-lg transition hover:bg-[#6F5428] disabled:cursor-not-allowed disabled:opacity-40 lg:flex"
           aria-label="Previous testimonials"
         >
           <svg
@@ -206,7 +206,7 @@ export default function WallOfLoveCarousel({
           type="button"
           onClick={() => handleScroll("next")}
           disabled={activePage >= pageCount - 1}
-          className="pointer-events-auto ml-auto hidden h-10 w-10 items-center justify-center rounded-full border border-[#7F9E36] bg-[#4A6200] text-white shadow-lg transition hover:bg-[#3E5300] disabled:cursor-not-allowed disabled:opacity-40 lg:flex"
+          className="pointer-events-auto ml-auto hidden h-10 w-10 items-center justify-center rounded-full border border-[#E4D9C4] bg-[#8A6622] text-white shadow-lg transition hover:bg-[#6F5428] disabled:cursor-not-allowed disabled:opacity-40 lg:flex"
           aria-label="Next testimonials"
         >
           <svg
@@ -243,8 +243,8 @@ export default function WallOfLoveCarousel({
               onClick={() => scrollToPage(i)}
               className={`h-2.5 rounded-full transition-all ${
                 activePage === i
-                  ? "w-8 bg-[#617500]"
-                  : "w-2.5 bg-[#30400D]/25 hover:bg-[#30400D]/40"
+                  ? "w-8 bg-[#8A6622]"
+                  : "w-2.5 bg-[#3B2F1A]/25 hover:bg-[#3B2F1A]/40"
               }`}
             />
           ))}

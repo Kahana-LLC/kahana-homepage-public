@@ -76,7 +76,7 @@ export default function Team() {
                   href="https://www.linkedin.com/in/adam-kershner/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-sm font-medium text-oasis-green-700/70 no-underline transition-colors hover:text-oasis-green-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#617500]"
+                  className="inline-flex items-center gap-1.5 text-sm font-medium text-oasis-green-700/70 no-underline transition-colors hover:text-oasis-green-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8A6622]"
                   aria-label="Adam Kershner on LinkedIn (opens in a new tab)"
                 >
                   <svg className="h-4 w-4 shrink-0 opacity-80" fill="currentColor" viewBox="0 0 24 24" aria-hidden>

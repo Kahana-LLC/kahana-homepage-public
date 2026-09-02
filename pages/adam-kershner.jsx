@@ -69,7 +69,7 @@ export default function AdamKershnerLinksPage() {
         url="https://kahana.io/adam-kershner"
         type="website"
       />
-      <div className="min-h-screen bg-[#F8FAF2] px-4 py-10 sm:py-14">
+      <div className="min-h-screen bg-[#F7F3EA] px-4 py-10 sm:py-14">
         <div className="mx-auto w-full max-w-md overflow-hidden rounded-3xl border border-[#e8ebe0] bg-white shadow-[0_4px_24px_rgba(49,58,0,0.08)]">
           <div className="h-28 bg-[#B8D4C8]" />
           <div className="-mt-16 flex flex-col items-center px-6 pb-8 pt-0 text-center">
@@ -83,7 +83,7 @@ export default function AdamKershnerLinksPage() {
                 priority
               />
             </div>
-            <h1 className="mt-4 text-2xl font-bold text-[#313A00]">{name}</h1>
+            <h1 className="mt-4 text-2xl font-bold text-[#3B2F1A]">{name}</h1>
             <p className="mt-1 text-sm font-medium text-[#6b7355]">{role}</p>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-[#4A5745]">{tagline}</p>
             <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
@@ -94,7 +94,7 @@ export default function AdamKershnerLinksPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={link.label}
-                  className="flex h-11 w-11 items-center justify-center rounded-full border border-[#e8ebe0] bg-white text-[#313A00] transition-colors hover:border-[#4A6200] hover:text-[#4A6200]"
+                  className="flex h-11 w-11 items-center justify-center rounded-full border border-[#e8ebe0] bg-white text-[#3B2F1A] transition-colors hover:border-[#8A6622] hover:text-[#8A6622]"
                 >
                   <SocialIcon id={link.id} />
                 </a>

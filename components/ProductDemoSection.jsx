@@ -67,7 +67,7 @@ export default function ProductDemoSection() {
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-desert-yellow-300 rounded-full filter blur-3xl opacity-20"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-[#F3F8E4] rounded-full filter blur-3xl opacity-20"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-[#EDE6D2] rounded-full filter blur-3xl opacity-20"></div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">

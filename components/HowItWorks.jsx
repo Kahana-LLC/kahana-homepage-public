@@ -9,7 +9,7 @@ export default function HowItWorks() {
         <h2 className="text-xl font-semibold leading-8 text-[#5C5F2E] mb-2">
           Get Started
         </h2>
-        <h2 className="text-3xl font-semibold tracking-tight text-[#313A00] sm:text-4xl">
+        <h2 className="text-3xl font-semibold tracking-tight text-[#3B2F1A] sm:text-4xl">
           Bring Oasis to your organization
         </h2>
         <p className="mt-4 text-lg text-oasis-green-800">

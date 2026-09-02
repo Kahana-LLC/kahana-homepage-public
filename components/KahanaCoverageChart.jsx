@@ -37,7 +37,7 @@ export default function KahanaCoverageChart({ coverage, companyName: companyName
       className="not-prose my-10 overflow-hidden rounded-xl border border-oasis-green-100 bg-white shadow-sm"
       aria-label={`Coverage: Kahana vs ${companyName}`}
     >
-      <div className="border-b border-oasis-green-100 bg-[#F3F8E4]/50 px-5 py-4">
+      <div className="border-b border-oasis-green-100 bg-[#EDE6D2]/50 px-5 py-4">
         <h2 className="m-0 text-lg font-semibold text-oasis-green-900">
           Coverage: Kahana vs {companyName}
         </h2>

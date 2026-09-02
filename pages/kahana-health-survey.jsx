@@ -32,7 +32,7 @@ export default function KahanaHealthSurvey() {
         <meta name="robots" content="noindex, nofollow" />
       </Head>
       
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-[#F7F3EA]">
         <main className="pt-24 pb-16">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* Header Section - Full Width */}

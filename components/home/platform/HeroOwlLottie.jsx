@@ -156,7 +156,7 @@ export default function HeroOwlLottie({ className = '' }) {
         className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-[120%] w-[120%] -translate-x-1/2 -translate-y-1/2 rounded-full transition-[filter,opacity] duration-500"
         style={{
           background:
-            'radial-gradient(circle at 50% 45%, rgba(123, 108, 255, 0.16) 0%, rgba(48, 112, 240, 0.12) 35%, rgba(16, 160, 128, 0.1) 55%, transparent 72%)',
+            'radial-gradient(circle at 50% 45%, rgba(196, 163, 90, 0.28) 0%, rgba(166, 124, 42, 0.16) 35%, rgba(59, 103, 94, 0.08) 55%, transparent 72%)',
           filter: hovered ? 'blur(14px) saturate(1.45) brightness(1.15)' : 'blur(16px)',
           opacity: hovered ? 1 : 0.95,
         }}
@@ -216,10 +216,10 @@ export default function HeroOwlLottie({ className = '' }) {
         className="relative z-10"
         style={{
           filter: reduceMotion
-            ? 'drop-shadow(0 0 8px rgba(48, 128, 240, 0.28)) drop-shadow(0 0 14px rgba(123, 108, 255, 0.18))'
+            ? 'sepia(0.55) saturate(0.7) hue-rotate(-18deg) drop-shadow(0 0 8px rgba(166, 124, 42, 0.28)) drop-shadow(0 0 14px rgba(138, 102, 34, 0.18))'
             : hovered
-              ? 'drop-shadow(0 0 12px rgba(48, 128, 240, 0.55)) drop-shadow(0 0 22px rgba(123, 108, 255, 0.4)) drop-shadow(0 0 18px rgba(0, 176, 96, 0.3))'
-              : 'drop-shadow(0 0 10px rgba(48, 128, 240, 0.4)) drop-shadow(0 0 18px rgba(123, 108, 255, 0.28)) drop-shadow(0 0 14px rgba(0, 176, 96, 0.22))',
+              ? 'sepia(0.45) saturate(0.8) hue-rotate(-12deg) drop-shadow(0 0 12px rgba(196, 163, 90, 0.5)) drop-shadow(0 0 22px rgba(166, 124, 42, 0.35)) drop-shadow(0 0 18px rgba(59, 103, 94, 0.22))'
+              : 'sepia(0.55) saturate(0.7) hue-rotate(-18deg) drop-shadow(0 0 10px rgba(166, 124, 42, 0.4)) drop-shadow(0 0 18px rgba(138, 102, 34, 0.28)) drop-shadow(0 0 14px rgba(59, 103, 94, 0.16))',
           transition: 'filter 400ms ease',
         }}
       >

@@ -20,10 +20,10 @@ function YouTubeIcon({ className }) {
 }
 
 const linkClassName =
-  "text-sm font-semibold text-brand-link underline decoration-brand-link/40 underline-offset-2 hover:text-oasis-green-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#617500]";
+  "text-sm font-semibold text-brand-link underline decoration-brand-link/40 underline-offset-2 hover:text-oasis-green-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8A6622]";
 
 const videoButtonClassName =
-  "inline-flex items-center gap-1.5 rounded-full border border-[#617500]/25 bg-[#F2F4E5] px-2.5 py-1 text-sm font-semibold text-[#617500] transition-colors hover:border-[#617500]/40 hover:bg-[#E8EDDA] hover:text-oasis-green-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#617500]";
+  "inline-flex items-center gap-1.5 rounded-full border border-[#8A6622]/25 bg-[#EDE6D2] px-2.5 py-1 text-sm font-semibold text-[#8A6622] transition-colors hover:border-[#8A6622]/40 hover:bg-[#E8EDDA] hover:text-oasis-green-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8A6622]";
 
 export default function HeroTransparencyLinks() {
   const [videoOpen, setVideoOpen] = useState(false);
@@ -40,7 +40,7 @@ export default function HeroTransparencyLinks() {
         >
           See exactly what we collect
         </Link>
-        <span className="hidden text-sm text-[#30400D]/35 sm:inline" aria-hidden>
+        <span className="hidden text-sm text-[#3B2F1A]/35 sm:inline" aria-hidden>
           ·
         </span>
         <button
@@ -55,7 +55,7 @@ export default function HeroTransparencyLinks() {
           className={videoButtonClassName}
           aria-label="Play 5-minute video: see what Oasis collects"
         >
-          <YouTubeIcon className="h-4 w-4 shrink-0 text-[#313A00]" />
+          <YouTubeIcon className="h-4 w-4 shrink-0 text-[#3B2F1A]" />
           <span>5-min video</span>
         </button>
       </div>

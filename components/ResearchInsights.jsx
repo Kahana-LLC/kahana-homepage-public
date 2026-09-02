@@ -51,7 +51,7 @@ export default function ResearchInsights({ insights }) {
       className="not-prose my-10 overflow-hidden rounded-xl border border-oasis-green-100 bg-white shadow-sm"
       aria-label={`Research notes on ${companyName}`}
     >
-      <div className="border-b border-oasis-green-100 bg-[#F3F8E4]/50 px-5 py-4">
+      <div className="border-b border-oasis-green-100 bg-[#EDE6D2]/50 px-5 py-4">
         <h2 className="m-0 text-lg font-semibold text-oasis-green-900">
           Research notes on {companyName}
         </h2>
@@ -102,7 +102,7 @@ export default function ResearchInsights({ insights }) {
                   href={url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#617500] underline hover:text-oasis-green-800"
+                  className="text-[#8A6622] underline hover:text-oasis-green-800"
                 >
                   {sourceHost(url)}
                 </a>

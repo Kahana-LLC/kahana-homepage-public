@@ -122,7 +122,7 @@ export default function Reviews() {
                       </div>
                     </div>
 
-                    <div className="overflow-hidden rounded-full bg-[#F3F8E4]">
+                    <div className="overflow-hidden rounded-full bg-[#EDE6D2]">
                       <Image
                         className="h-14 w-14 object-cover"
                         src={testimonial.author.image}

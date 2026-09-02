@@ -30,7 +30,7 @@ const plans = [
     name: 'Zen plan', 
     price: '$20', 
     cadence: 'per month',
-    // Stripe Payment Link (PRODUCTION) - customize brand color (#3E5300) in Stripe Dashboard > Payment Links
+    // Stripe Payment Link (PRODUCTION) - customize brand color (#6F5428) in Stripe Dashboard > Payment Links
     stripeCheckoutUrl: 'https://buy.stripe.com/cNi8wP0GN4aQgdX901gMw06'
   },
   { 
@@ -38,7 +38,7 @@ const plans = [
     name: 'Nirvana plan', 
     price: '$250', 
     cadence: 'per month',
-    // Stripe Payment Link - customize brand color (#3E5300) in Stripe Dashboard > Payment Links
+    // Stripe Payment Link - customize brand color (#6F5428) in Stripe Dashboard > Payment Links
     stripeCheckoutUrl: 'https://buy.stripe.com/eVqcN53SZePu8LvdghgMw07'
   },
 ]
@@ -400,12 +400,12 @@ export default function OasisAuth() {
       <Head>
         <title>Oasis Plans · Auth</title>
       </Head>
-      <main className="min-h-screen bg-white px-4 py-12 sm:py-16">
+      <main className="min-h-screen bg-[#F7F3EA] px-4 py-12 sm:py-16">
         <div className="mx-auto flex w-full max-w-5xl flex-col gap-8 lg:flex-row lg:items-center">
           {/* Left column: hero and plan summary */}
           <div className="w-full lg:w-5/12 space-y-6">
             <div className="space-y-3 text-left">
-              <h1 className="text-4xl sm:text-5xl font-extrabold text-[#313A00] leading-tight">
+              <h1 className="text-4xl sm:text-5xl font-extrabold text-[#3B2F1A] leading-tight">
                 {authTransitionHero
                   ? 'Verifying your account'
                   : router?.query?.redirect === '/installations' && plan.id === 'free'
@@ -525,7 +525,7 @@ export default function OasisAuth() {
                       value={fullName}
                       onChange={(e) => setFullName(e.target.value)}
                       placeholder="Ada Lovelace"
-                      className="w-full rounded-lg border border-neutral-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#4A6200]"
+                      className="w-full rounded-lg border border-neutral-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#8A6622]"
                     />
                   </div>
                 )}
@@ -537,7 +537,7 @@ export default function OasisAuth() {
                     onChange={(e) => setEmail(e.target.value)}
                     required
                     placeholder="you@example.com"
-                    className="w-full rounded-lg border border-neutral-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#4A6200]"
+                    className="w-full rounded-lg border border-neutral-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#8A6622]"
                   />
                 </div>
                 <div>
@@ -548,7 +548,7 @@ export default function OasisAuth() {
                     onChange={(e) => setPassword(e.target.value)}
                     required
                     placeholder="••••••••"
-                    className="w-full rounded-lg border border-neutral-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#4A6200]"
+                    className="w-full rounded-lg border border-neutral-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#8A6622]"
                   />
                 </div>
                 {mode === 'login' && (
@@ -572,7 +572,7 @@ export default function OasisAuth() {
                       onChange={(e) => setConfirmPassword(e.target.value)}
                       required
                       placeholder="••••••••"
-                      className="w-full rounded-lg border border-neutral-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#4A6200]"
+                      className="w-full rounded-lg border border-neutral-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#8A6622]"
                     />
                   </div>
                 )}
@@ -584,15 +584,15 @@ export default function OasisAuth() {
                       checked={acceptedTerms}
                       onChange={(e) => setAcceptedTerms(e.target.checked)}
                       required
-                      className="mt-1 mr-2 h-4 w-4 rounded border-neutral-300 text-[#4A6200] focus:ring-2 focus:ring-[#4A6200]"
+                      className="mt-1 mr-2 h-4 w-4 rounded border-neutral-300 text-[#8A6622] focus:ring-2 focus:ring-[#8A6622]"
                     />
                     <label htmlFor="accept-terms" className="text-sm text-neutral-700">
                       I have read and agree to the{' '}
-                      <Link href="/terms-and-conditions" target="_blank" rel="noopener noreferrer" className="text-[#4A6200] no-underline hover:no-underline font-semibold">
+                      <Link href="/terms-and-conditions" target="_blank" rel="noopener noreferrer" className="text-[#8A6622] no-underline hover:no-underline font-semibold">
                         Terms and Conditions
                       </Link>
                       {' '}and{' '}
-                      <Link href="/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-[#4A6200] no-underline hover:no-underline font-semibold">
+                      <Link href="/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-[#8A6622] no-underline hover:no-underline font-semibold">
                         Privacy Policy
                       </Link>
                     </label>

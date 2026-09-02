@@ -336,15 +336,15 @@ export default function BlogPost({ post }) {
       </Head>
 
       {/* Scroll Progress Bar */}
-      <div className="fixed top-16 left-0 w-full h-2 bg-[#F3F8E4] z-40">
+      <div className="fixed top-16 left-0 w-full h-2 bg-[#EDE6D2] z-40">
         <div 
           id="scroll-progress-bar"
-          className="h-full bg-gradient-to-r from-desert-yellow-300 via-oasis-green-600 to-oasis-green-500 transition-all duration-150 ease-out"
+          className="h-full bg-gradient-to-r from-oasis-green-200 via-oasis-green-600 to-oasis-green-800 transition-all duration-150 ease-out"
           style={{ width: '0%' }}
         ></div>
       </div>
 
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-[#F7F3EA]">
         <main className="max-w-4xl mx-auto px-4 py-8">
         <article className="prose prose-lg max-w-none">
           <header className="mb-12">
@@ -449,7 +449,7 @@ export default function BlogPost({ post }) {
                 href="https://app.kahana.io/explore"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-semibold text-[#617500] underline hover:text-oasis-green-800"
+                className="font-semibold text-[#8A6622] underline hover:text-oasis-green-800"
               >
                 Open Explore →
               </a>
@@ -458,7 +458,7 @@ export default function BlogPost({ post }) {
                 href="https://app.kahana.io"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-semibold text-[#617500] underline hover:text-oasis-green-800"
+                className="font-semibold text-[#8A6622] underline hover:text-oasis-green-800"
               >
                 Create a hub →
               </a>
@@ -485,7 +485,7 @@ export default function BlogPost({ post }) {
               Explore more articles about{' '}
               <Link
                 href={`/blog?category=${encodeURIComponent(postCategory)}`}
-                className="text-[#617500] hover:text-oasis-green-800 font-semibold underline"
+                className="text-[#8A6622] hover:text-oasis-green-800 font-semibold underline"
               >
                 {postCategory}
               </Link>

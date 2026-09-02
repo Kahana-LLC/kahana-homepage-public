@@ -6,7 +6,7 @@ import { suggestNatureImageQuery, normalizeBlogCategories, formatBlogPostDate } 
 import { getAuthorDetails } from '../utils/authorUtils';
 import { getBlogImageUrl } from '../utils/blog-image-url';
 
-const DEFAULT_PLACEHOLDER = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%233C584A"%3E%3Cpath d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-1.96-2.36L6.5 17h11l-3.54-4.71z"%2F%3E%3C%2Fsvg%3E';
+const DEFAULT_PLACEHOLDER = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%233B2F1A"%3E%3Cpath d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-1.96-2.36L6.5 17h11l-3.54-4.71z"%2F%3E%3C%2Fsvg%3E';
 
 // Individual blog post card with image loading
 const FeaturedBlogCard = ({ post }) => {
@@ -55,7 +55,7 @@ const FeaturedBlogCard = ({ post }) => {
 
   return (
     <Link href={`/blog/${post.slug}`} className="group no-underline">
-      <div className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-shadow overflow-hidden flex flex-col h-full">
+      <div className="bg-white rounded-xl border border-[#E4D9C4] shadow-[0_10px_28px_rgba(59,47,26,0.08)] hover:shadow-[0_16px_40px_rgba(59,47,26,0.12)] transition-shadow overflow-hidden flex flex-col h-full">
         <div className="relative h-48 w-full">
           {isLoadingImage ? (
             <div className="w-full h-full bg-gray-100 flex items-center justify-center">
@@ -103,7 +103,7 @@ const FeaturedBlogCard = ({ post }) => {
           <p className="text-oasis-green-800 text-sm mb-4 line-clamp-3">{post.excerpt}</p>
           <div className="flex flex-wrap gap-2 mt-auto">
             {normalizeBlogCategories(post.category).map((cat) => (
-              <span key={cat} className="bg-[#F3F8E4] text-oasis-green-800 px-3 py-1 rounded-full text-xs font-medium">
+              <span key={cat} className="bg-[#EDE6D2] text-[#8A6622] border border-[#E4D9C4] px-3 py-1 rounded-full text-xs font-medium">
                 {cat}
               </span>
             ))}
@@ -120,7 +120,7 @@ const FeaturedBlogSection = ({ posts = [] }) => {
   }
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-[#F7F3EA]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-oasis-green-800 text-center mb-12">Featured Blog Posts</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-10">

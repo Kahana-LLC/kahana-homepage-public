@@ -18,7 +18,7 @@ export default function EnterpriseFeatureNarrativeBand({ slug }) {
   return (
     <div className="space-y-4 border-b border-oasis-green-800/10 pb-8">
       <div>
-        <p className="text-xs font-semibold uppercase tracking-wide text-[#7a9200]">{narrative.deckBeat}</p>
+        <p className="text-xs font-semibold uppercase tracking-wide text-[#8A6622]">{narrative.deckBeat}</p>
         {narrative.pillarLabel && (
           <p className="mt-1 text-xs font-medium text-oasis-green-800/70">{narrative.pillarLabel}</p>
         )}

@@ -83,7 +83,7 @@ export default function LanguageMenu({
         <div
           role="menu"
           aria-label={t('language.menuTitle')}
-          className={`absolute z-[80] w-[220px] overflow-hidden rounded-lg border border-[#E0E8D4] bg-white py-1 shadow-lg ${
+          className={`absolute z-[80] w-[220px] overflow-hidden rounded-lg border border-[#E4D9C4] bg-white py-1 shadow-lg ${
             align === 'start' ? 'left-0' : 'right-0'
           } ${openUpward ? 'bottom-full mb-2' : 'top-full mt-2'}`}
         >
@@ -104,7 +104,7 @@ export default function LanguageMenu({
                     className="language-menu-option"
                     onClick={() => select(option.value)}
                   >
-                    <span className="inline-flex w-3.5 shrink-0 justify-center text-[#617500]" aria-hidden>
+                    <span className="inline-flex w-3.5 shrink-0 justify-center text-[#8A6622]" aria-hidden>
                       {selected ? <CheckGlyph /> : null}
                     </span>
                     <span>{option.label}</span>

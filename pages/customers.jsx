@@ -24,7 +24,7 @@ export default function Customers() {
           <div className="mt-12">
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
               {/* Customer success stories will be added here */}
-              <div className="bg-[#F3F8E4] p-6 rounded-lg">
+              <div className="bg-[#EDE6D2] p-6 rounded-lg">
                 <p className="text-lg text-oasis-green-800">
                   Customer success stories coming soon. Contact us to learn how Kahana can help your organization.
                 </p>

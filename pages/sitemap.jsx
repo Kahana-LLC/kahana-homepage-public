@@ -18,6 +18,12 @@ const staticSitemapSections = [
       { text: 'Use cases', href: '/use-cases' },
       { text: 'Who it is for', href: '/for' },
       { text: 'Success stories', href: '/success-stories' },
+      { text: 'One place', href: '/one-place' },
+      { text: 'Verifiable credibility', href: '/verifiable-credibility' },
+      { text: 'Tailored for understanding', href: '/tailored-for-understanding' },
+      { text: 'Gain exposure', href: '/gain-exposure' },
+      { text: 'Help others learn', href: '/help-others-learn' },
+      { text: 'Earn money', href: '/earn-money' },
     ],
   },
   {
