@@ -3,15 +3,18 @@ import Link from 'next/link';
 import { useMemo } from 'react';
 import {
   AdjustmentsHorizontalIcon,
+  AcademicCapIcon,
   ArrowTrendingUpIcon,
   ArrowsRightLeftIcon,
   BanknotesIcon,
   BookOpenIcon,
   ChartBarIcon,
+  ChatBubbleLeftRightIcon,
   CurrencyDollarIcon,
   EyeIcon,
   FolderPlusIcon,
   GlobeAltIcon,
+  LightBulbIcon,
   LockClosedIcon,
   MagnifyingGlassIcon,
   MegaphoneIcon,
@@ -74,6 +77,17 @@ function SectionShell({ id, children, className = '' }) {
     <section id={id} className={`px-6 py-20 sm:px-10 lg:px-16 ${className}`}>
       <div className="mx-auto w-full max-w-6xl">{children}</div>
     </section>
+  );
+}
+
+function PhilosophyMark({ Icon, wellClass, iconClass }) {
+  return (
+    <span
+      className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl ${wellClass}`}
+      aria-hidden
+    >
+      <Icon className={`h-7 w-7 ${iconClass}`} strokeWidth={1.6} />
+    </span>
   );
 }
 
@@ -420,9 +434,16 @@ export default function PlatformHome() {
           </p>
           <div className="mt-10 grid gap-6 lg:grid-cols-2 lg:items-stretch">
             <article className="flex h-full flex-col rounded-[28px] bg-[#EDE6D2] px-7 py-8 sm:px-9 sm:py-10">
-              <h3 className="text-sm font-semibold tracking-[0.2em] !text-[#A67C2A] uppercase">
-                {t('home.missionCardTitle')}
-              </h3>
+              <div className="flex items-start justify-between gap-4">
+                <h3 className="text-sm font-semibold tracking-[0.2em] !text-[#A67C2A] uppercase">
+                  {t('home.missionCardTitle')}
+                </h3>
+                <PhilosophyMark
+                  Icon={AcademicCapIcon}
+                  wellClass="bg-white/70 text-[#A67C2A]"
+                  iconClass="text-[#A67C2A]"
+                />
+              </div>
               <p
                 className="mt-5 font-bricolage text-3xl italic leading-none !text-[#A67C2A] sm:text-4xl"
                 title={t('home.missionPhilomathEtymology')}
@@ -437,9 +458,16 @@ export default function PlatformHome() {
               </p>
             </article>
             <article className="flex h-full flex-col rounded-[28px] bg-[#E8DCC4] px-7 py-8 sm:px-9 sm:py-10">
-              <h3 className="text-sm font-semibold tracking-[0.2em] !text-[#8A6622] uppercase">
-                {t('home.visionCardTitle')}
-              </h3>
+              <div className="flex items-start justify-between gap-4">
+                <h3 className="text-sm font-semibold tracking-[0.2em] !text-[#8A6622] uppercase">
+                  {t('home.visionCardTitle')}
+                </h3>
+                <PhilosophyMark
+                  Icon={ChatBubbleLeftRightIcon}
+                  wellClass="bg-white/70 text-[#8A6622]"
+                  iconClass="text-[#8A6622]"
+                />
+              </div>
               <p
                 className="mt-5 font-bricolage text-3xl italic leading-none !text-[#8A6622] sm:text-4xl"
                 title={t('home.visionDialecticEtymology')}
@@ -455,9 +483,16 @@ export default function PlatformHome() {
             </article>
           </div>
           <article className="mt-6 flex flex-col rounded-[28px] bg-[#D9DACB] px-7 py-8 sm:px-9 sm:py-10">
-            <h3 className="text-sm font-semibold tracking-[0.2em] !text-[#4F5140] uppercase">
-              {t('home.innovationCardTitle')}
-            </h3>
+            <div className="flex items-start justify-between gap-4">
+              <h3 className="text-sm font-semibold tracking-[0.2em] !text-[#4F5140] uppercase">
+                {t('home.innovationCardTitle')}
+              </h3>
+              <PhilosophyMark
+                Icon={LightBulbIcon}
+                wellClass="bg-white/70 text-[#4F5140]"
+                iconClass="text-[#4F5140]"
+              />
+            </div>
             <p
               className="mt-5 font-bricolage text-3xl italic leading-none !text-[#4F5140] sm:text-4xl"
               title={t('home.innovationCardEtymology')}
