@@ -1,0 +1,26 @@
+{
+  "slug": "organize-digital-files-without-folder-maze",
+  "title": "How to Organize Digital Files Without Creating a Folder Maze",
+  "date": "2026-08-23T15:00:00.000Z",
+  "authors": [
+    {
+      "name": "Adam Kershner",
+      "role": "Founder",
+      "bio": "",
+      "linkedinProfile": "https://www.linkedin.com/in/adam-kershner/",
+      "avatar": "/assets/headshots/adam_kershner.jpg"
+    }
+  ],
+  "category": [
+    "Guides",
+    "Research"
+  ],
+  "excerpt": "A folder system usually starts innocent: Work, Personal, Photos. Then comes Work > Clients > 2026 > Active > Important > Final > Final 2.",
+  "defaultImageQuery": "organized wooden desk folders archive boxes",
+  "featuredImage": "/assets/blog/organize-digital-files-without-folder-maze.jpg",
+  "readingTime": 3,
+  "seoTitle": "Organize Digital Files Without a Folder Maze | Kahana",
+  "metaDescription": "A simple file organization system based on projects, naming, search, and archiving, without endless nested folders.",
+  "focusKeyword": "organize digital files",
+  "content": "<p class=\"lead\">Six months later, finding a file requires remembering the exact logic you used on a Tuesday afternoon.</p>\n<p>The goal of file organization is not to create a perfect tree. It is to make retrieval predictable.</p>\n<h2>Organize around stable categories</h2>\n<p>Use top-level categories that are unlikely to change every month. For many people, four buckets are enough: Projects, Areas, Resources, and Archive, a structure popularized by the <a href=\"https://zettelkasten.de/posts/para/\" target=\"_blank\" rel=\"noopener noreferrer\">PARA method</a>. You do not need to follow PARA literally, but the underlying idea is useful: separate active work from ongoing responsibilities, reference material, and completed material.</p>\n<h2>Keep folder depth shallow</h2>\n<p>Every extra folder level creates another decision during saving and another memory test during retrieval. If you need six clicks to reach a file, the hierarchy is probably doing too much.</p>\n<p>Prefer a few broad folders plus descriptive filenames and strong search.</p>\n<h2>Name files for the moment you will search</h2>\n<p>A filename such as <code>report_final.pdf</code> is clear only while the report is open. Use names containing the information future-you is likely to remember: client or topic, document type, and date when useful.</p>\n<p>For example: <code>Kahana_creator-research_interviews_2026-08.docx</code> is far more retrievable than <code>notes_final2.docx</code>.</p>\n<h2>Separate working files from reference material</h2>\n<p>Files you edit daily and sources you consult occasionally behave differently. Keep the active project workspace lean. Put research, examples, videos, articles, and reference documents in a supporting collection rather than mixing them with drafts and deliverables.</p>\n<h2>Use the right system for mixed media</h2>\n<p>Traditional folders are excellent for files you own. They are less elegant when a project includes websites, YouTube videos, ebooks, PDFs, notes, and collaborators. For that, a digital library can act as a context layer. <a href=\"/help/hubs\">Kahana hubs</a>, for instance, can group those different artifacts together without requiring everything to become the same file type.</p>\n<h2>Archive aggressively</h2>\n<p>Completed projects should leave your active workspace. Archiving is not deleting; it is reducing the number of places you have to scan every day. When a project ends, move the whole project container into an archive with the final deliverables and essential context intact.</p>\n<h2>Run a quarterly retrieval test</h2>\n<p>Do not judge the system by how satisfying it feels to organize. Pick ten files you used months ago and try to find them without browsing every folder. Notice what you remember: project, person, date, topic, file type? Adjust naming and structure around that real retrieval behavior.</p>\n<p>The best file system is boring. You know where active work goes, you can search reference material, and finished work quietly gets out of the way.</p>\n<h2>Sources &amp; further reading</h2>\n<ul>\n<li><a href=\"https://zettelkasten.de/posts/para/\" target=\"_blank\" rel=\"noopener noreferrer\">Zettelkasten Method: PARA overview and comparison</a></li>\n<li><a href=\"/help/hubs\">Kahana: Hubs</a></li>\n</ul>\n<h2>Related guides</h2>\n<ul>\n<li><a href=\"/blog/organize-pdfs-for-research\">How to Organize PDFs for Research Without Losing Your Mind</a></li>\n<li><a href=\"/blog/organize-browser-bookmarks\">How to Organize Hundreds of Browser Bookmarks Without Building Another Graveyard</a></li>\n<li><a href=\"/blog/build-personal-knowledge-base\">How to Build a Personal Knowledge Base You Will Actually Use</a></li>\n</ul>"
+}

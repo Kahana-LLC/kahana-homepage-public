@@ -1,0 +1,26 @@
+{
+  "slug": "turn-workshop-into-resource-library",
+  "title": "How to Turn a Workshop Into a Resource People Keep Using",
+  "date": "2026-08-19T15:00:00.000Z",
+  "authors": [
+    {
+      "name": "Adam Kershner",
+      "role": "Founder",
+      "bio": "",
+      "linkedinProfile": "https://www.linkedin.com/in/adam-kershner/",
+      "avatar": "/assets/headshots/adam_kershner.jpg"
+    }
+  ],
+  "category": [
+    "Guides",
+    "Creators"
+  ],
+  "excerpt": "A workshop can take weeks to prepare and disappear the moment the Zoom call ends. The recording gets emailed once, the slides live in somebody's Drive, the worksheet becomes an attachment, and three months later participants ask for the same resources again.",
+  "defaultImageQuery": "workshop notes templates on wooden table",
+  "featuredImage": "/assets/blog/turn-workshop-into-resource-library.jpg",
+  "readingTime": 3,
+  "seoTitle": "Turn a Workshop Into a Resource Library | Kahana",
+  "metaDescription": "Turn a one-time workshop into a reusable post-event resource with the recording, slides, templates, examples, and a clear next-step path.",
+  "focusKeyword": "turn a workshop into a resource",
+  "content": "<p class=\"lead\">A better approach is to design the workshop as the live layer of a resource that continues to exist afterward.</p>\n<h2>Decide what should survive the session</h2>\n<p>Not every minute of a workshop deserves permanent storage. Keep the things participants are likely to need when they actually apply the material:</p>\n<ul>\n<li>the recording or selected clips</li>\n<li>slides</li>\n<li>templates</li>\n<li>checklists</li>\n<li>examples</li>\n<li>FAQs</li>\n<li>links</li>\n<li>a short summary of the process</li>\n</ul>\n<h2>Organize by the user's next action</h2>\n<p>After the workshop, participants are not asking “where is the PDF?” They are asking “what do I do next?” Structure the resource around implementation:</p>\n<ul>\n<li>Start Here</li>\n<li>Step 1</li>\n<li>Step 2</li>\n<li>Examples</li>\n<li>Templates</li>\n<li>Troubleshooting</li>\n<li>Further Learning</li>\n</ul>\n<h2>Add the missing context</h2>\n<p>Live workshops contain spoken context that slides often do not. Before publishing the resource, add short notes where a slide would be confusing without the instructor. Explain what the template is for. Label which examples are good and why. Add timestamps to important parts of the recording.</p>\n<h2>Do not make the replay the product</h2>\n<p>A two-hour video is difficult to revisit. Break the material into reusable pieces. Give people a summary and a map so they can jump directly to the part they need.</p>\n<h2>Use one persistent home</h2>\n<p>If the workshop produced mixed assets, a digital library is often cleaner than a folder of downloads. Kahana explicitly supports <a href=\"/use-cases/workshops\">workshop-style hubs</a> containing video, slides, worksheets, documents, links, notes, and other artifacts. A <a href=\"/help/hubs\">hub</a> can stay private, be shared with a defined audience, or be made public; creators can also choose <a href=\"/help/earning\">paid access</a> if the resource is part of a product.</p>\n<h2>Update the resource from real questions</h2>\n<p>The best post-workshop improvements come from participant friction. If three people ask the same question, add the answer. If nobody opens a 40-page guide, replace it with a one-page checklist. If people struggle with one step, add an example.</p>\n<h2>Let the event generate future discovery</h2>\n<p>A public workshop resource can also become an acquisition asset. A carefully curated free version can rank in search, be shared by participants, or demonstrate your expertise long after the event is over. A paid version can bundle deeper templates, recordings, and follow-up material.</p>\n<p>A workshop does not have to be a moment in time. Done well, it becomes the first edition of a resource that improves every time you teach it.</p>\n<h2>Sources &amp; further reading</h2>\n<ul>\n<li><a href=\"/use-cases\">Kahana: Use Cases</a></li>\n<li><a href=\"/use-cases/workshops\">Kahana: Workshops</a></li>\n<li><a href=\"/help/hubs\">Kahana: Hubs</a></li>\n<li><a href=\"/help/earning\">Kahana: Optional Earning</a></li>\n</ul>\n<h2>Related guides</h2>\n<ul>\n<li><a href=\"/blog/create-resource-library-for-your-audience\">How to Create a Resource Library Your Audience Will Actually Use</a></li>\n<li><a href=\"/blog/curate-resources-without-overwhelming-audience\">How to Curate Resources Without Overwhelming Your Audience</a></li>\n<li><a href=\"/blog/how-to-sell-a-pdf-online\">How to Sell a PDF Online Without Overcomplicating It</a></li>\n</ul>"
+}

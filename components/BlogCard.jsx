@@ -20,10 +20,22 @@ function formatDate(dateString) {
   })}`;
 }
 
+function resolveFeaturedImage(featuredImage) {
+  if (!featuredImage) return null;
+  return getBlogImageUrl(featuredImage) || null;
+}
+
+function isUnoptimizedSrc(src) {
+  if (!src) return false;
+  // Local public files skip /_next/image — fill + 100vw can request w=3840 and
+  // the optimizer hangs or returns an empty jpeg for these covers.
+  return src.startsWith('data:') || src.startsWith('/');
+}
+
 export default function BlogCard({ post }) {
   const [isClient, setIsClient] = useState(false);
-  const [imageUrl, setImageUrl] = useState(null);
-  const [isLoadingImage, setIsLoadingImage] = useState(true);
+  const [imageUrl, setImageUrl] = useState(() => resolveFeaturedImage(post.featuredImage));
+  const [isLoadingImage, setIsLoadingImage] = useState(() => !post.featuredImage);
   const [imageError, setImageError] = useState(false);
 
   useEffect(() => {
@@ -34,15 +46,14 @@ export default function BlogCard({ post }) {
   useEffect(() => {
     const fetchImage = async () => {
       try {
-        setIsLoadingImage(true);
-        
-        // Check if post has a featuredImage URL - resolve via Cloudinary for local paths
         if (post.featuredImage) {
-          setImageUrl(getBlogImageUrl(post.featuredImage));
+          setImageUrl(resolveFeaturedImage(post.featuredImage));
           setIsLoadingImage(false);
           return;
         }
-        
+
+        setIsLoadingImage(true);
+
         const primaryQuery = post.defaultImageQuery || suggestNatureImageQuery(post.category);
         // Use the post slug as unique identifier to prevent duplicate images
         const photo = await getRandomPhoto(primaryQuery, post.slug);
@@ -86,9 +97,9 @@ export default function BlogCard({ post }) {
           }}
         >
           {/* Image */}
-          <div className="relative h-52 md:h-56 lg:h-48 w-full block">
+          <div className="relative h-52 md:h-56 lg:h-48 w-full overflow-hidden bg-[#EDE6D2]">
             {isLoadingImage ? (
-              <div className="w-full h-full bg-gray-100 flex items-center justify-center block" style={{ minHeight: '13rem' }}>
+              <div className="w-full h-full bg-gray-100 flex items-center justify-center" style={{ minHeight: '13rem' }}>
                 <span className="text-oasis-green-800">Loading...</span>
               </div>
             ) : (
@@ -97,7 +108,8 @@ export default function BlogCard({ post }) {
                 alt={post.title ?? 'Blog post'}
                 fill
                 className="object-cover"
-                unoptimized={imageUrl?.startsWith('data:') === true}
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                unoptimized={isUnoptimizedSrc(imageUrl)}
                 onError={() => setImageError(true)}
               />
             )}

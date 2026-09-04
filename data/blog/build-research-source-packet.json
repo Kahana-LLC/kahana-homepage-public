@@ -1,0 +1,26 @@
+{
+  "slug": "build-research-source-packet",
+  "title": "How to Build a Research Source Packet Before You Start Writing",
+  "date": "2026-08-18T15:00:00.000Z",
+  "authors": [
+    {
+      "name": "Adam Kershner",
+      "role": "Founder",
+      "bio": "",
+      "linkedinProfile": "https://www.linkedin.com/in/adam-kershner/",
+      "avatar": "/assets/headshots/adam_kershner.jpg"
+    }
+  ],
+  "category": [
+    "Guides",
+    "Research"
+  ],
+  "excerpt": "Writers often begin drafting too early. The document opens, the first paragraph appears, and then every claim triggers a new search.",
+  "defaultImageQuery": "bound research packet papers folders desk",
+  "featuredImage": "/assets/blog/build-research-source-packet.jpg",
+  "readingTime": 3,
+  "seoTitle": "How to Build a Research Source Packet | Kahana",
+  "metaDescription": "A source-packet workflow that helps writers verify evidence, avoid citation chaos, and draft from a smaller set of trusted material.",
+  "focusKeyword": "research source packet",
+  "content": "<p class=\"lead\">The result is a writing session that keeps switching between thinking, browsing, fact-checking, downloading, and citation hunting.</p>\n<p>A research source packet solves a simple problem: decide what evidence you trust before asking the draft to carry it.</p>\n<h2>Define the questions first</h2>\n<p>Write the three to seven questions the piece must answer. A good question is specific enough to guide research but open enough to reveal disagreement. This prevents you from collecting vaguely related material just because it looks interesting.</p>\n<h2>Collect a small core before expanding</h2>\n<p>For each major question, find one strong overview and one or two primary or authoritative sources. Only expand the search when those sources reveal a genuine gap.</p>\n<p>The goal is not to maximize the number of tabs. It is to create enough coverage that you understand the evidence landscape.</p>\n<h2>Verify before the source enters the packet</h2>\n<p>Open the source. Confirm author, date, and provenance. Check the exact passage or dataset behind the claim you plan to use. If AI helped you discover the source, verify that the citation exists and says what the AI claimed.</p>\n<h2>Add a one-line role</h2>\n<p>Every source in the packet should have a job: foundational definition, primary statistic, counterargument, case study, historical context, expert explanation, or methodological caveat. If you cannot explain why a source is there, you probably do not need it.</p>\n<h2>Keep claims beside evidence</h2>\n<p>Create a short note for each major claim with the supporting source directly underneath it. This is dramatically safer than drafting claims from memory and trying to reconstruct citations at the end.</p>\n<h2>Keep the packet bounded</h2>\n<p>When the packet is good enough, stop searching and draft. New research should be triggered by a specific missing fact or unresolved question, not by the feeling that one more article might be better.</p>\n<h2>Use a container that matches the project</h2>\n<p>Academic writers may prefer a <a href=\"https://www.zotero.org/support/quick_start_guide\" target=\"_blank\" rel=\"noopener noreferrer\">Zotero</a> collection because formal citations are central. For editorial, market, policy, or multimedia research, a <a href=\"/help/hubs\">Kahana hub</a> can act as the packet itself by keeping PDFs, reports, web links, videos, documents, and notes in one bounded collection. The tool matters less than having one authoritative source set.</p>\n<h2>Draft from the packet, not the open web</h2>\n<p>Once the packet is verified, write with it open and the general internet closed as much as possible. This reduces distraction and makes your evidence trail auditable.</p>\n<p>The source packet does not eliminate research during writing. It changes the default from “search constantly” to “write from trusted material, then investigate only the gaps.”</p>\n<h2>Sources &amp; further reading</h2>\n<ul>\n<li><a href=\"https://cor.stanford.edu/curriculum/units/fact-checking-ai-search-results\" target=\"_blank\" rel=\"noopener noreferrer\">Stanford CRAFT: Fact-Checking AI Search Results</a></li>\n<li><a href=\"https://ed.stanford.edu/news/stanford-researchers-find-students-have-trouble-judging-credibility-information-online\" target=\"_blank\" rel=\"noopener noreferrer\">Stanford Graduate School of Education: Lateral reading / fact-checkers</a></li>\n<li><a href=\"https://www.zotero.org/support/quick_start_guide\" target=\"_blank\" rel=\"noopener noreferrer\">Zotero: The Basics</a></li>\n<li><a href=\"/help/hubs\">Kahana: Hubs</a></li>\n</ul>\n<h2>Related guides</h2>\n<ul>\n<li><a href=\"/blog/take-notes-from-multiple-sources\">How to Take Notes From Multiple Sources Without Losing Track of What Came From Where</a></li>\n<li><a href=\"/blog/use-ai-for-research-without-fake-citations\">How to Use AI for Research Without Getting Fake Citations</a></li>\n<li><a href=\"/blog/how-to-tell-if-a-source-is-credible\">How to Tell If a Source Is Credible Online</a></li>\n</ul>"
+}

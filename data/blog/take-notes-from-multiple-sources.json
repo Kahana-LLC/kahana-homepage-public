@@ -1,0 +1,26 @@
+{
+  "slug": "take-notes-from-multiple-sources",
+  "title": "How to Take Notes From Multiple Sources Without Losing Track of What Came From Where",
+  "date": "2026-08-22T15:00:00.000Z",
+  "authors": [
+    {
+      "name": "Adam Kershner",
+      "role": "Founder",
+      "bio": "",
+      "linkedinProfile": "https://www.linkedin.com/in/adam-kershner/",
+      "avatar": "/assets/headshots/adam_kershner.jpg"
+    }
+  ],
+  "category": [
+    "Guides",
+    "Research"
+  ],
+  "excerpt": "The hardest part of multi-source research is not always understanding the sources. It is remembering which idea came from which source after your notes have been combined.",
+  "defaultImageQuery": "open notebooks source papers on a desk",
+  "featuredImage": "/assets/blog/take-notes-from-multiple-sources.jpg",
+  "readingTime": 3,
+  "seoTitle": "How to Take Notes From Multiple Sources | Kahana",
+  "metaDescription": "A source-safe note-taking workflow for essays, research, reports, and content that keeps ideas, quotations, and your own thinking clearly separated.",
+  "focusKeyword": "take notes from multiple sources",
+  "content": "<p class=\"lead\">That confusion is how accidental plagiarism, missing citations, duplicated reading, and unsupported claims begin.</p>\n<h2>Keep source notes and synthesis notes separate</h2>\n<p>For every source, create a small source note containing its citation details, link, and the claims or evidence you might use. Then keep a separate synthesis note where you compare ideas across sources.</p>\n<p>This prevents your own conclusions from blending invisibly into copied language.</p>\n<h2>Label quotations immediately</h2>\n<p>Never paste a quotation into a general notes document and promise yourself you will find the source later. Record the source and page number at the moment you capture it. If it is a web source without stable pages, save the URL and access date where appropriate.</p>\n<h2>Paraphrase with the source closed</h2>\n<p>When you want to capture an idea rather than a quotation, read the passage, look away, and explain it in your own words. Then compare your version with the original for accuracy. This reduces the risk of creating a paraphrase that is only the original sentence with a few words swapped.</p>\n<h2>Write the role of each source</h2>\n<p>Add a one-line note such as “primary evidence for X,” “counterargument,” “historical background,” “methodological limitation,” or “example only.”</p>\n<p>This makes later writing much faster because you are not asking “what did this paper say?” from scratch. You already know what job it performs in your argument.</p>\n<h2>Build a claim-evidence table for important projects</h2>\n<p>Before drafting, list the major claims you expect to make. Under each claim, record the strongest supporting source, any contradictory evidence, and what remains uncertain. You will quickly notice sections where you have five sources saying the same thing and none supporting the next paragraph.</p>\n<h2>Use tools according to their strengths</h2>\n<p>For academic writing, reference managers such as <a href=\"https://www.zotero.org/support/quick_start_guide\" target=\"_blank\" rel=\"noopener noreferrer\">Zotero</a> are designed to keep bibliographic metadata and attachments together. If your project includes a broader mix of source types, you can pair a citation manager with a project library. A <a href=\"/help/hubs\">Kahana hub</a> can hold the PDFs, web links, videos, files, and project notes together, while the reference manager handles formal citations.</p>\n<h2>Do not ask one giant notes document to do everything</h2>\n<p>A single 60-page notes file feels convenient at first and becomes opaque later. Preserve source boundaries during collection, then deliberately synthesize across them.</p>\n<p>Good research notes let you answer two questions at any moment: Where did this come from? And what do I think about it? If your system keeps those answers visible, the writing stage becomes dramatically calmer.</p>\n<h2>Sources &amp; further reading</h2>\n<ul>\n<li><a href=\"https://www.zotero.org/support/quick_start_guide\" target=\"_blank\" rel=\"noopener noreferrer\">Zotero: The Basics</a></li>\n<li><a href=\"https://www.zotero.org/support/attaching_files\" target=\"_blank\" rel=\"noopener noreferrer\">Zotero: Adding Files to Your Library</a></li>\n<li><a href=\"/help/hubs\">Kahana: Hubs</a></li>\n</ul>\n<h2>Related guides</h2>\n<ul>\n<li><a href=\"/blog/how-to-tell-if-a-source-is-credible\">How to Tell If a Source Is Credible Online</a></li>\n<li><a href=\"/blog/use-ai-for-research-without-fake-citations\">How to Use AI for Research Without Getting Fake Citations</a></li>\n<li><a href=\"/blog/build-research-source-packet\">How to Build a Research Source Packet Before You Start Writing</a></li>\n</ul>"
+}

@@ -1,0 +1,26 @@
+{
+  "slug": "curate-resources-without-overwhelming-audience",
+  "title": "How to Curate Resources Without Overwhelming Your Audience",
+  "date": "2026-08-21T15:00:00.000Z",
+  "authors": [
+    {
+      "name": "Adam Kershner",
+      "role": "Founder",
+      "bio": "",
+      "linkedinProfile": "https://www.linkedin.com/in/adam-kershner/",
+      "avatar": "/assets/headshots/adam_kershner.jpg"
+    }
+  ],
+  "category": [
+    "Guides",
+    "Creators"
+  ],
+  "excerpt": "There is a point where a resource list stops being generous and starts becoming homework.",
+  "defaultImageQuery": "sparse curated bookshelf selected volumes",
+  "featuredImage": "/assets/blog/curate-resources-without-overwhelming-audience.jpg",
+  "readingTime": 3,
+  "seoTitle": "Curate Resources Without Overwhelming Anyone | Kahana",
+  "metaDescription": "A practical framework for curating articles, books, videos, tools, and guides so your audience gets direction instead of another overwhelming list.",
+  "focusKeyword": "curate resources without overwhelming your audience",
+  "content": "<p class=\"lead\">“Here are 75 links” may signal that you did a lot of research. It does not necessarily help someone decide what to open first.</p>\n<h2>Curation means exclusion</h2>\n<p>A search engine can already return thousands of results. The curator earns trust by removing options, not merely accumulating them.</p>\n<p>For each resource you include, be able to answer:</p>\n<ul>\n<li>Why this one?</li>\n<li>Why is it better or different from the alternatives?</li>\n<li>Who should use it?</li>\n</ul>\n<h2>Build paths, not piles</h2>\n<p>Organize resources into sequences or use cases. A beginner path might contain one overview, one practical tutorial, one example, and one tool. An advanced path can skip foundational explanations and focus on deeper research or edge cases.</p>\n<p>This makes a collection feel guided even when the reader is exploring asynchronously.</p>\n<h2>Use the “one best, two alternatives” rule</h2>\n<p>When several resources serve the same purpose, choose one default recommendation and at most two alternatives with a clear reason. For example: best for beginners, best if you prefer video, best for technical depth.</p>\n<h2>Annotate the recommendation</h2>\n<p>Links without context transfer the evaluation work back to the audience. Add a short annotation that states what the resource covers, how long it takes, and why it is worth attention.</p>\n<h2>Mix formats only when the formats add something</h2>\n<p>A video can demonstrate. A PDF can provide a printable reference. A spreadsheet can calculate. A discussion can surface exceptions. Do not add multiple formats just to make the collection look rich; use each format for the job it performs best.</p>\n<h2>Keep the collection maintainable</h2>\n<p>Every additional link is something that can become outdated or broken. Prefer 20 strong, maintained resources over 100 mediocre ones. Review high-traffic collections periodically and remove material that has been superseded.</p>\n<h2>Make the collection itself shareable</h2>\n<p>If you curate repeatedly, consider giving each collection a stable home rather than rebuilding lists in newsletters, documents, and social posts. Kahana lets creators put mixed digital artifacts into a <a href=\"/help/hubs\">hub</a>, add titles, descriptions, categories, and tags, and choose whether the hub stays private, is shared by link, or is listed publicly in the Library, as covered in <a href=\"/help/get-started-creators\">Get started for creators</a>.</p>\n<p>That is especially useful when the collection itself is part of your expertise. The audience can return to one living resource instead of searching old posts for the latest version.</p>\n<h2>The best test is subtraction</h2>\n<p>Before publishing, remove 20% of the list. Did the collection become worse? If not, remove more.</p>\n<p>Good curation leaves people with fewer decisions and better options. That is why a ten-item list can be more valuable than a hundred-item database.</p>\n<h2>Sources &amp; further reading</h2>\n<ul>\n<li><a href=\"/help/get-started-creators\">Kahana: Get Started for Creators</a></li>\n<li><a href=\"/help/hubs\">Kahana: Hubs</a></li>\n</ul>\n<h2>Related guides</h2>\n<ul>\n<li><a href=\"/blog/create-resource-library-for-your-audience\">How to Create a Resource Library Your Audience Will Actually Use</a></li>\n<li><a href=\"/blog/how-to-sell-a-pdf-online\">How to Sell a PDF Online Without Overcomplicating It</a></li>\n<li><a href=\"/blog/turn-workshop-into-resource-library\">How to Turn a Workshop Into a Resource People Keep Using</a></li>\n</ul>"
+}

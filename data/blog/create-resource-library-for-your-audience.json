@@ -1,0 +1,26 @@
+{
+  "slug": "create-resource-library-for-your-audience",
+  "title": "How to Create a Resource Library Your Audience Will Actually Use",
+  "date": "2026-08-27T15:00:00.000Z",
+  "authors": [
+    {
+      "name": "Adam Kershner",
+      "role": "Founder",
+      "bio": "",
+      "linkedinProfile": "https://www.linkedin.com/in/adam-kershner/",
+      "avatar": "/assets/headshots/adam_kershner.jpg"
+    }
+  ],
+  "category": [
+    "Guides",
+    "Creators"
+  ],
+  "excerpt": "A resource library sounds valuable until it becomes a page with 87 links and no obvious place to start.",
+  "defaultImageQuery": "curated bookshelf resource library",
+  "featuredImage": "/assets/blog/create-resource-library-for-your-audience.jpg",
+  "readingTime": 3,
+  "seoTitle": "Create a Resource Library for Your Audience | Kahana",
+  "metaDescription": "A practical guide for creators, educators, consultants, and communities who want to turn scattered links and files into a useful resource library.",
+  "focusKeyword": "create a resource library",
+  "content": "<p class=\"lead\">The difference between a useful library and a content dump is curation. Your audience does not need access to everything you have ever saved. They need help finding the right thing for the situation they are in.</p>\n<h2>Begin with the audience's jobs</h2>\n<p>Do not start with categories such as Videos, PDFs, Templates, and Links. Start with what people are trying to accomplish.</p>\n<ul>\n<li>Getting started</li>\n<li>Solving a common problem</li>\n<li>Choosing between options</li>\n<li>Going deeper</li>\n<li>Using a template or checklist</li>\n</ul>\n<p>A job-based structure turns the library into guidance rather than storage.</p>\n<h2>Curate aggressively</h2>\n<p>A library becomes less useful when every decent resource is included. If you have twelve guides that teach the same beginner concept, pick the best two and explain the difference between them.</p>\n<p>Curation is an editorial act. The value is not merely that you found a link. It is that you made a judgment about why this link deserves someone's time.</p>\n<h2>Add context to every important resource</h2>\n<p>A title and thumbnail rarely answer the questions readers actually have. Add one or two lines: who it is for, what it helps with, and whether it is beginner, intermediate, or advanced.</p>\n<p>For example: 'Use this 12-minute video if you understand the concept but keep getting stuck on implementation. Skip it if you need a basic introduction.' That sentence may be more valuable than the link itself.</p>\n<h2>Mix formats intentionally</h2>\n<p>People learn differently and situations demand different formats. A strong resource library can combine a short explanation, a detailed PDF, a template, a video walkthrough, examples, and a discussion space.</p>\n<p>This is one place where a platform built around mixed-media libraries can simplify the experience. In Kahana, a <a href=\"/help/hubs\">hub</a> can contain PDFs, videos, files, notes, documents, links, and other artifacts in the same collection. A creator can keep it private while building, share it by link, list it publicly in the Library, or optionally charge for access.</p>\n<h2>Design the first five minutes</h2>\n<p>Assume a new visitor will not explore everything. What should they see first? Create a 'Start here' note, a recommended path, or a small beginner collection. Do not make the audience reverse-engineer the library architecture.</p>\n<h2>Update by usefulness, not by calendar</h2>\n<p>A library does not need constant activity to feel alive. It needs current, trustworthy material. Remove broken links. Replace outdated recommendations. Add a resource when it improves an existing path, not simply because you feel pressure to publish something new.</p>\n<h2>Measure the right thing</h2>\n<p>Page views tell you reach. Saves, repeat visits, downloads, purchases, completion, replies, or questions tell you usefulness. If users repeatedly ignore a section, the solution may be better curation rather than more content.</p>\n<p>A great resource library reduces the reader's search cost. It says: I looked through the mess, made the hard choices, and organized the useful part for you.</p>\n<h2>Sources &amp; further reading</h2>\n<ul>\n<li><a href=\"/help/get-started-creators\">Kahana: Get Started for Creators</a></li>\n<li><a href=\"/help/hubs\">Kahana: Hubs</a></li>\n<li><a href=\"/use-cases\">Kahana: Use Cases</a></li>\n</ul>\n<h2>Related guides</h2>\n<ul>\n<li><a href=\"/blog/how-to-sell-a-pdf-online\">How to Sell a PDF Online Without Overcomplicating It</a></li>\n<li><a href=\"/blog/curate-resources-without-overwhelming-audience\">How to Curate Resources Without Overwhelming Your Audience</a></li>\n<li><a href=\"/blog/turn-workshop-into-resource-library\">How to Turn a Workshop Into a Resource People Keep Using</a></li>\n</ul>\n"
+}
