@@ -1,4 +1,9 @@
 const { SITE_URL: EXTERNAL_DATA_URL } = require("../config/site");
+const {
+  LINKEDIN_COMPANY_URL,
+  X_PROFILE_URL,
+  YOUTUBE_CHANNEL_URL,
+} = require("../config/brand");
 
 function generateOrganizationSchema() {
   return {
@@ -8,9 +13,10 @@ function generateOrganizationSchema() {
     url: EXTERNAL_DATA_URL,
     logo: `${EXTERNAL_DATA_URL}/images/logo.png`,
     sameAs: [
-      "https://twitter.com/kahanaHQ",
-      "https://www.linkedin.com/company/kahana-llc",
-      "https://app.kahana.io",
+      LINKEDIN_COMPANY_URL,
+      X_PROFILE_URL,
+      YOUTUBE_CHANNEL_URL,
+      EXTERNAL_DATA_URL,
     ],
     contactPoint: {
       "@type": "ContactPoint",

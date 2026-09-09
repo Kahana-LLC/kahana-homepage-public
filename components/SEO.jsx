@@ -1,6 +1,12 @@
 import Head from 'next/head';
 import { ABOUT_ORIGIN, SITE_URL } from '../config/site';
-import { APP_NAME, COMPANY_NAME } from '../config/brand';
+import {
+  APP_NAME,
+  COMPANY_NAME,
+  LINKEDIN_COMPANY_URL,
+  X_PROFILE_URL,
+  YOUTUBE_CHANNEL_URL,
+} from '../config/brand';
 import { getCloudinaryImageUrl } from '../utils/cloudinary-mapper';
 
 const DEFAULT_ORG_LOGO = getCloudinaryImageUrl('/assets/kahana_logo_transparent.svg');
@@ -38,13 +44,13 @@ const SEO = ({
     '@type': 'Organization',
     name: APP_NAME,
     legalName: COMPANY_NAME,
-    url: ABOUT_ORIGIN,
+    url: SITE_URL,
     logo: DEFAULT_ORG_LOGO,
     sameAs: [
-      'https://www.linkedin.com/company/kahana-llc',
-      'https://twitter.com/kahanaHQ',
+      LINKEDIN_COMPANY_URL,
+      X_PROFILE_URL,
+      YOUTUBE_CHANNEL_URL,
       SITE_URL,
-      'https://app.kahana.io',
     ],
   };
 
