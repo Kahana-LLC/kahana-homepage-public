@@ -111,6 +111,13 @@ export default function VerifiableCredibilityPage() {
                 >
                   How Aura works
                 </Link>
+                {' · '}
+                <Link
+                  href="/features/aura-and-trust"
+                  className="font-medium text-[#8A6622] underline decoration-[#8A6622]/40 underline-offset-2 hover:decoration-[#8A6622]"
+                >
+                  Aura, trust, and information quality
+                </Link>
               </p>
             </FadeInSection>
           </div>

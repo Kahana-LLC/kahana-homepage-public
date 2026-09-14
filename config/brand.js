@@ -8,6 +8,7 @@ const LINKEDIN_COMPANY_URL = 'https://www.linkedin.com/company/kahanahq';
 const X_PROFILE_URL = 'https://x.com/KahanaHQ';
 const YOUTUBE_CHANNEL_URL = 'https://www.youtube.com/@kahanaHQ';
 const INSTAGRAM_PROFILE_URL = 'https://www.instagram.com/kahanahq';
+const CRUNCHBASE_URL = 'https://www.crunchbase.com/organization/kahana-df68';
 
 function pageTitle(page) {
   return page ? `${page} | ${APP_NAME}` : APP_NAME;
@@ -21,6 +22,7 @@ const brand = {
   X_PROFILE_URL,
   YOUTUBE_CHANNEL_URL,
   INSTAGRAM_PROFILE_URL,
+  CRUNCHBASE_URL,
   pageTitle,
 };
 
@@ -35,6 +37,7 @@ module.exports.LINKEDIN_COMPANY_URL = LINKEDIN_COMPANY_URL;
 module.exports.X_PROFILE_URL = X_PROFILE_URL;
 module.exports.YOUTUBE_CHANNEL_URL = YOUTUBE_CHANNEL_URL;
 module.exports.INSTAGRAM_PROFILE_URL = INSTAGRAM_PROFILE_URL;
+module.exports.CRUNCHBASE_URL = CRUNCHBASE_URL;
 module.exports.pageTitle = pageTitle;
 module.exports.default = brand;
 module.exports.__esModule = true;

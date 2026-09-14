@@ -381,7 +381,8 @@ export const FAQ_SECTIONS = [
       {
         id: 'mobile-app',
         question: 'Is there a native mobile app?',
-        answer: 'Kahana is a web app that works well in mobile browsers.',
+        answer:
+          'Kahana is a web app that works well in mobile browsers. Native iOS and Android apps are in progress. Join the waitlist at https://about.kahana.io/app-waitlist and we will email you when they are ready.',
       },
       {
         id: 'embed',

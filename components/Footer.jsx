@@ -8,7 +8,10 @@ import {
   Cog6ToothIcon,
   CubeIcon,
   DocumentTextIcon,
+  GlobeAmericasIcon,
+  DevicePhoneMobileIcon,
   EnvelopeIcon,
+  NoSymbolIcon,
   IdentificationIcon,
   LifebuoyIcon,
   LockClosedIcon,
@@ -23,10 +26,10 @@ import {
 } from '@heroicons/react/24/outline';
 import { ConsentContext } from '../contexts/ConsentContext';
 import { useMarketingI18n } from '../contexts/MarketingI18n';
-import { APP_URL, CONTACT_URL } from './nav/navConfig';
+import { CONTACT_URL } from './nav/navConfig';
+import { EXPLORE_URL, productHref, withProductUtm } from '../lib/productLinks';
 import KahanaWordmark from './brand/KahanaWordmark';
 import LanguageMenu from './brand/LanguageMenu';
-import { withAppLanguageParam } from '../lib/contentLanguage';
 import {
   APP_NAME,
   INSTAGRAM_PROFILE_URL,
@@ -46,7 +49,7 @@ const ICON_HEADING = 'h-4 w-4 shrink-0 text-[#8A6622]';
 
 const PRODUCT_LINKS = [
   {
-    href: 'https://kahana.io/explore',
+    href: EXPLORE_URL,
     labelKey: 'footer.explore',
     external: true,
     icon: MagnifyingGlassIcon,
@@ -55,13 +58,24 @@ const PRODUCT_LINKS = [
   { href: '/features', labelKey: 'footer.features', icon: Squares2X2Icon },
   { href: '/use-cases', labelKey: 'footer.jobs', icon: BookmarkIcon },
   { href: '/success-stories', labelKey: 'footer.useCases', icon: BookOpenIcon },
+  { href: '/app-waitlist', labelKey: 'footer.appWaitlist', icon: DevicePhoneMobileIcon },
 ];
 
 /** About / Team / Careers hidden from footer for now (pages still exist). */
 const COMPANY_LINKS = [
   { href: CONTACT_URL, labelKey: 'footer.contact', icon: EnvelopeIcon, external: true },
   {
-    href: 'https://kahana.io/support',
+    href: '/climate-commitment',
+    labelKey: 'footer.climate',
+    icon: GlobeAmericasIcon,
+  },
+  {
+    href: '/ad-free-commitment',
+    labelKey: 'footer.adFree',
+    icon: NoSymbolIcon,
+  },
+  {
+    href: withProductUtm('https://kahana.io/support', { campaign: 'footer_support' }),
     labelKey: 'footer.support',
     external: true,
     icon: LifebuoyIcon,
@@ -262,7 +276,7 @@ function FooterContent() {
 
   const consentContext = useContext(ConsentContext);
 
-  const contributeUrl = withAppLanguageParam(APP_URL, langPreference);
+  const contributeUrl = productHref('/', 'footer_contribute', langPreference);
 
   const openCookieModal =
     consentContext?.openModal ||

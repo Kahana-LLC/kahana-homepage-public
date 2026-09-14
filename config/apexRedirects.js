@@ -72,6 +72,7 @@ function pathPreservePrefixes(origins) {
     { prefix: '/pricing', origin: origins.about },
     { prefix: '/faq', origin: origins.about },
     { prefix: '/aura', origin: origins.about },
+    { prefix: '/app-waitlist', origin: origins.about },
     { prefix: '/one-place', origin: origins.about },
     { prefix: '/verifiable-credibility', origin: origins.about },
     { prefix: '/tailored-for-understanding', origin: origins.about },

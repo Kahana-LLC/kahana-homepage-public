@@ -8,10 +8,10 @@ import {
   MagnifyingGlassIcon,
 } from '@heroicons/react/24/outline';
 import { getCloudinaryImageUrl } from '../../utils/cloudinary-mapper';
-import { APP_URL, EXPLORE_URL, desktopNavItems, mobileNavRows } from './navConfig';
+import { desktopNavItems, mobileNavRows } from './navConfig';
+import { productHref } from '../../lib/productLinks';
 import KahanaWordmark from '../brand/KahanaWordmark';
 import LanguageMenu from '../brand/LanguageMenu';
-import { withAppLanguageParam } from '../../lib/contentLanguage';
 import { readAuthHintCookie } from '../../lib/authHint';
 import { useMarketingI18n } from '../../contexts/MarketingI18n';
 
@@ -138,11 +138,11 @@ export default function NavbarDup() {
   const prefetchedDropdowns = useRef(new Set());
 
   const appUrl = useMemo(
-    () => withAppLanguageParam(APP_URL, langPreference),
+    () => productHref('/', 'nav_create', langPreference),
     [langPreference],
   );
   const exploreUrl = useMemo(
-    () => withAppLanguageParam(EXPLORE_URL, langPreference),
+    () => productHref('/library', 'nav_explore', langPreference),
     [langPreference],
   );
 

@@ -19,6 +19,7 @@ import {
   MagnifyingGlassIcon,
   MegaphoneIcon,
   NoSymbolIcon,
+  DevicePhoneMobileIcon,
   RectangleStackIcon,
   ShieldCheckIcon,
   SparklesIcon,
@@ -27,21 +28,85 @@ import {
 } from '@heroicons/react/24/outline';
 import { HeartIcon } from '@heroicons/react/24/solid';
 import FadeInSection from '../../FadeInSection';
-import { APP_URL } from '../../nav/navConfig';
+import { productHref } from '../../../lib/productLinks';
 import { trackButtonClick } from '../../../utils/analytics';
 import AuraLikeAnimation from './AuraLikeAnimation';
-import CategoryMarquee from './CategoryMarquee';
 import RainbowHoverCard from './RainbowHoverCard';
 import FaqBrowse from '../../faq/FaqBrowse';
 import UseCaseStoryCards from '../../use-cases/UseCaseStoryCards';
+import CategoryMarquee from './CategoryMarquee';
 import { EXPLORE_CATEGORIES } from '../../../data/exploreCategories';
 import { useMarketingI18n } from '../../../contexts/MarketingI18n';
-import { withAppLanguageParam } from '../../../lib/contentLanguage';
 
 const HeroOwlLottie = dynamic(() => import('./HeroOwlLottie'), { ssr: false });
 
-/** Public Explore (marketing host) — not app.kahana.io */
-const EXPLORE_URL = 'https://kahana.io/explore';
+function SeedlingIcon({ className, strokeWidth = 1.75 }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      aria-hidden
+    >
+      <path
+        d="M12 20.5v-8"
+        stroke="currentColor"
+        strokeWidth={strokeWidth}
+        strokeLinecap="round"
+      />
+      <path
+        d="M12 13.5c-1.6-3.2-4.4-5-7.5-5.25 0 4.4 2.4 7.1 7.5 8"
+        stroke="currentColor"
+        strokeWidth={strokeWidth}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M12 11c1.35-2.6 3.6-4.15 6.4-4.5-.15 3.7-2.05 6.2-6.4 7.35"
+        stroke="currentColor"
+        strokeWidth={strokeWidth}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function HeroCommitmentBadges({ t }) {
+  const badges = [
+    {
+      href: '/climate-commitment',
+      label: t('home.heroBadgeClimate'),
+      Icon: SeedlingIcon,
+    },
+    {
+      href: '/ad-free-commitment',
+      label: t('home.heroBadgeAdFree'),
+      Icon: NoSymbolIcon,
+    },
+    {
+      href: '/app-waitlist',
+      label: t('home.heroBadgeApps'),
+      Icon: DevicePhoneMobileIcon,
+    },
+  ];
+
+  return (
+    <ul className="mt-5 flex flex-wrap gap-2">
+      {badges.map(({ href, label, Icon }) => (
+        <li key={href}>
+          <Link
+            href={href}
+            className="inline-flex items-center gap-1.5 rounded-full border border-[#E4D9C4] bg-[#F7F3EA]/80 px-2.5 py-1 text-[0.6875rem] font-medium tracking-[0.04em] text-[#8A6622] no-underline transition-colors hover:border-[#C4B89A] hover:bg-white hover:text-[#3B2F1A]"
+          >
+            <Icon className="h-3 w-3 shrink-0" strokeWidth={1.75} aria-hidden />
+            {label}
+          </Link>
+        </li>
+      ))}
+    </ul>
+  );
+}
 
 function PrimaryCta({ children, className = '', trackingId, href }) {
   return (
@@ -129,8 +194,8 @@ function BenefitTiles({ items }) {
 
 export default function PlatformHome() {
   const { t, preference } = useMarketingI18n();
-  const createUrl = useMemo(() => withAppLanguageParam(APP_URL, preference), [preference]);
-  const exploreUrl = useMemo(() => withAppLanguageParam(EXPLORE_URL, preference), [preference]);
+  const createUrl = useMemo(() => productHref('/', 'hero_create', preference), [preference]);
+  const exploreUrl = useMemo(() => productHref('/library', 'hero_explore', preference), [preference]);
 
   const howItWorks = useMemo(
     () => [
@@ -264,6 +329,7 @@ export default function PlatformHome() {
                 <HeartIcon className="h-[0.92em] w-[0.92em] text-[#A67C2A]" />
               </span>
             </p>
+            <HeroCommitmentBadges t={t} />
           </FadeInSection>
           <FadeInSection eager delay={120} isImage>
             <HeroOwlLottie />

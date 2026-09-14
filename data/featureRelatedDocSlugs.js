@@ -29,7 +29,9 @@ export const FEATURE_RELATED_DOC_SLUGS = {
     'creator-analytics',
     'when-to-upgrade',
   ],
-  aura: ['how-aura-works', 'get-started-learners', 'creator-analytics'],
+    aura: ['how-aura-works', 'get-started-learners', 'creator-analytics'],
+    'aura-pathways': ['how-aura-works', 'for-you-and-taste', 'creator-analytics'],
+    'aura-and-trust': ['how-aura-works', 'trust', 'for-you-and-taste'],
   trust: [
     'trust',
     'adult-content-and-age-verification',

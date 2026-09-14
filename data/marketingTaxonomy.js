@@ -3,10 +3,14 @@
  * Help JSON `section` + `tags` must use these ids.
  */
 
-export const APP_CREATE_URL = 'https://app.kahana.io';
-export const APP_LIBRARY_URL = 'https://kahana.io/explore';
-export const APP_CLUBS_URL = 'https://app.kahana.io/clubs';
-export const APP_ANALYTICS_URL = 'https://app.kahana.io/analytics';
+import {
+  APP_ANALYTICS_URL,
+  APP_CLUBS_URL,
+  APP_CREATE_URL,
+  EXPLORE_URL as APP_LIBRARY_URL,
+} from '../lib/productLinks';
+
+export { APP_CREATE_URL, APP_LIBRARY_URL, APP_CLUBS_URL, APP_ANALYTICS_URL };
 
 export const HELP_SECTIONS = [
   { id: 'get-started', label: 'Get started' },
@@ -149,7 +153,47 @@ export const FEATURES = [
       'For You can weigh Aura as a signal',
       'Streaks are optional reminders, not a payout',
     ],
-    note: 'Aura does not replace purchases, saves, or follows.',
+    note: 'Aura does not replace purchases, saves, or follows. See also Aura, trust, and information quality.',
+  },
+  {
+    slug: 'aura-pathways',
+    title: 'Aura pathways',
+    eyebrow: 'Feature',
+    summary: 'See how Aura moves from a file to a hub, who gave it, and how that signal shows up in Library, For You, and analytics.',
+    lead: 'A pathway is the trail of an endorsement: where it landed, who spent scarce Aura, and how quality becomes visible—not a black-box like count.',
+    appHref: APP_LIBRARY_URL,
+    appLabel: 'Browse Library',
+    helpSlug: 'how-aura-works',
+    personas: ['learners', 'creators'],
+    useCases: ['book-clubs'],
+    bullets: [
+      'File Aura also lifts the hub by 1; hub Aura does not roll down to files',
+      'Open who gave Aura on hubs and files that show a count',
+      'Creators see Aura in hub and account analytics',
+      'For You can weigh Aura as one discovery signal',
+    ],
+    note: 'Aura is promotion, not payment. It does not unlock a paywall.',
+  },
+  {
+    slug: 'aura-and-trust',
+    title: 'Aura, trust, and information quality',
+    eyebrow: 'Feature',
+    summary:
+      'See who gave Aura, when they joined, and what else they endorsed—so Library quality and access come with named context, not a black-box like count.',
+    lead:
+      'Aura does not tell you what to think. It lets you inspect scarce, human recognition: who spent it, how long they have been a member, and other public hubs they carried forward.',
+    appHref: APP_LIBRARY_URL,
+    appLabel: 'Browse Library',
+    helpSlug: 'how-aura-works',
+    personas: ['learners', 'creators'],
+    useCases: ['book-clubs'],
+    bullets: [
+      'Open who gave Aura on a hub: name, avatar, and amount',
+      'Member since shows when that giver created their account',
+      'See other public hubs they gave Aura to, or open their profile history',
+      'For You can weigh Aura as one signal—not a ranking of truth',
+    ],
+    note: 'Aura is not a fact-checker. File Aura still opens the hub givers list.',
   },
   {
     slug: 'profiles',

@@ -6,6 +6,7 @@ import {
   LINKEDIN_COMPANY_URL,
   X_PROFILE_URL,
   YOUTUBE_CHANNEL_URL,
+  CRUNCHBASE_URL,
 } from '../config/brand';
 import { getCloudinaryImageUrl } from '../utils/cloudinary-mapper';
 
@@ -50,6 +51,7 @@ const SEO = ({
       LINKEDIN_COMPANY_URL,
       X_PROFILE_URL,
       YOUTUBE_CHANNEL_URL,
+      CRUNCHBASE_URL,
       SITE_URL,
     ],
   };

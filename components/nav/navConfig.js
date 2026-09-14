@@ -1,4 +1,6 @@
-export const APP_URL = 'https://app.kahana.io';
+import { APP_URL, EXPLORE_URL } from '../../lib/productLinks';
+
+export { APP_URL, EXPLORE_URL };
 
 /** Canonical contact form (apex — not about.kahana.io). */
 export const CONTACT_URL = 'https://kahana.io/contact';
@@ -11,8 +13,6 @@ export const desktopNavItems = [
     href: '/help',
   },
 ];
-
-export const EXPLORE_URL = `${APP_URL}/explore`;
 
 /**
  * Mobile drawer rows after CTAs (order preserved).

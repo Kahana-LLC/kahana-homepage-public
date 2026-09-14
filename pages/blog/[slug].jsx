@@ -446,7 +446,7 @@ export default function BlogPost({ post }) {
           {(post.coverage || post.researchInsights) && (
             <p className="mt-8 text-base text-oasis-green-800">
               <a
-                href="https://app.kahana.io/explore"
+                href="https://kahana.io/library"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-semibold text-[#8A6622] underline hover:text-oasis-green-800"
@@ -455,7 +455,7 @@ export default function BlogPost({ post }) {
               </a>
               {' · '}
               <a
-                href="https://app.kahana.io"
+                href="https://kahana.io/?utm_source=marketing&utm_medium=website&utm_campaign=blog_create"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-semibold text-[#8A6622] underline hover:text-oasis-green-800"

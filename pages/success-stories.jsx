@@ -4,7 +4,7 @@ import SEO from '../components/SEO';
 import FadeInSection from '../components/FadeInSection';
 import LibraryStats from '../components/use-cases/LibraryStats';
 import UseCaseStoryCards from '../components/use-cases/UseCaseStoryCards';
-import { APP_URL } from '../components/nav/navConfig';
+import { productHref } from '../lib/productLinks';
 import { ABOUT_ORIGIN } from '../config/site';
 import { trackButtonClick } from '../utils/analytics';
 import { useMarketingI18n } from '../contexts/MarketingI18n';
@@ -66,7 +66,7 @@ export default function SuccessStoriesPage({ stats = KAHANA_STATS_FALLBACK }) {
               <p className="mt-4 text-lg text-[#F7F3EA]/85">{t('home.storiesClosingBody')}</p>
               <div className="mt-10 flex flex-wrap justify-center gap-3">
                 <a
-                  href={APP_URL}
+                  href={productHref('/', 'success_stories_create')}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-primary inline-flex items-center justify-center gap-2 no-underline"

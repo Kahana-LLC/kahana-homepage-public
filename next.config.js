@@ -482,17 +482,17 @@ const nextConfig = {
       // is already kahana-web (kahana-alpha) and never hits this app.
       {
         source: '/explore',
-        destination: 'https://app.kahana.io/explore',
+        destination: 'https://kahana.io/library',
         permanent: true,
       },
       {
         source: '/explore-backup',
-        destination: 'https://app.kahana.io/explore',
+        destination: 'https://kahana.io/library',
         permanent: true,
       },
       {
         source: '/api/search',
-        destination: 'https://app.kahana.io/explore',
+        destination: 'https://kahana.io/library',
         permanent: true,
       },
     ];

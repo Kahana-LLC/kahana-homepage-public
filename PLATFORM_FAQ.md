@@ -369,7 +369,7 @@ Modern browsers like Chrome, Safari, Firefox, and Edge. Use a current desktop or
 
 ### Is there a native mobile app?
 
-Kahana is a web app that works well in mobile browsers. `[FILL IN: native app timeline if any]`
+Kahana is a web app that works well in mobile browsers. Native iOS and Android apps are in progress — join the waitlist at `/app-waitlist`.
 
 ### Can I embed Kahana on my own site?
 

@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { FolderPlusIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 import SEO from '../components/SEO';
 import FadeInSection from '../components/FadeInSection';
-import { APP_URL, EXPLORE_URL } from '../components/nav/navConfig';
+import { productHref } from '../lib/productLinks';
 import { AURA_PAGE_CANONICAL, AURA_SECTIONS, AURA_SEO } from '../data/auraCopy';
 import { trackButtonClick } from '../utils/analytics';
 
@@ -60,7 +60,7 @@ export default function AuraPage() {
               </p>
               <div className="mt-10 flex flex-wrap justify-center gap-3">
                 <a
-                  href={EXPLORE_URL}
+                  href={productHref('/library', 'aura_explore')}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-secondary inline-flex items-center justify-center gap-2 !border-[#F7F3EA]/40 !bg-transparent no-underline !text-[#F7F3EA] hover:!border-[#F7F3EA] hover:!bg-white/10 hover:!text-[#F7F3EA]"
@@ -70,7 +70,7 @@ export default function AuraPage() {
                   Explore
                 </a>
                 <a
-                  href={APP_URL}
+                  href={productHref('/', 'aura_create')}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-primary inline-flex items-center justify-center gap-2 no-underline"
@@ -81,6 +81,20 @@ export default function AuraPage() {
                 </a>
               </div>
               <p className="mt-8 text-sm text-[#F7F3EA]/70">
+                <Link
+                  href="/features/aura-pathways"
+                  className="underline decoration-[#F7F3EA]/40 underline-offset-2 hover:decoration-[#F7F3EA]"
+                >
+                  Aura pathways
+                </Link>
+                {' · '}
+                <Link
+                  href="/features/aura-and-trust"
+                  className="underline decoration-[#F7F3EA]/40 underline-offset-2 hover:decoration-[#F7F3EA]"
+                >
+                  Aura and trust
+                </Link>
+                {' · '}
                 <Link
                   href="/help/how-aura-works"
                   className="underline decoration-[#F7F3EA]/40 underline-offset-2 hover:decoration-[#F7F3EA]"

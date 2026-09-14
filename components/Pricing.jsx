@@ -6,7 +6,7 @@ const INCLUDED = { included: true };
 const tiers = [
   {
     name: 'Free',
-    href: 'https://app.kahana.io',
+    href: 'https://kahana.io/?utm_source=marketing&utm_medium=website&utm_campaign=pricing_free',
     priceLabel: '$0',
     priceSuffix: 'forever',
     featuresHeading: 'What you get',
@@ -23,7 +23,7 @@ const tiers = [
   },
   {
     name: 'Growth',
-    href: 'https://app.kahana.io/billing',
+    href: 'https://kahana.io/billing?utm_source=marketing&utm_medium=website&utm_campaign=pricing_growth',
     priceLabel: '$9.99',
     priceSuffix: 'per month',
     featuresHeading: 'Everything in Free, plus',
@@ -358,7 +358,7 @@ export default function Pricing() {
                 </Link>
                 {' · '}
                 <a
-                  href="https://app.kahana.io/billing"
+                  href="https://kahana.io/billing?utm_source=marketing&utm_medium=website&utm_campaign=pricing_billing"
                   className="font-medium text-[#8A6622] no-underline underline-offset-4 hover:underline"
                   target="_blank"
                   rel="noopener noreferrer"
