@@ -28,7 +28,7 @@ function FeeBar({ pct, highlight }) {
 }
 
 export default function MarketplaceFeeTable({ t }) {
-  const createUrl = productHref('/', 'compare_fees_create');
+  const trialUrl = productHref('/billing?intent=sell&trial=growth', 'compare_fees_trial');
   const rows = [...MARKETPLACE_FEE_PEERS, MARKETPLACE_FEE_KAHANA];
 
   return (
@@ -132,13 +132,13 @@ export default function MarketplaceFeeTable({ t }) {
 
       <div className="mt-8 flex flex-wrap justify-center gap-3">
         <a
-          href={createUrl}
+          href={trialUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="btn-primary inline-flex items-center justify-center no-underline"
-          onClick={() => trackButtonClick('compare_fees_create')}
+          onClick={() => trackButtonClick('compare_fees_trial')}
         >
-          {t('home.create')}
+          {t('compare.stackTrialCta')}
         </a>
         <Link
           href="/pricing"

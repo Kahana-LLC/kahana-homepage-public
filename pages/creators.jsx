@@ -62,7 +62,7 @@ export default function CreatorsPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-primary inline-flex items-center justify-center gap-2 no-underline"
-                  onClick={() => trackButtonClick('creators_hero_create')}
+                  onClick={() => trackButtonClick('creators_hero_trial')}
                 >
                   <FolderPlusIcon className="h-5 w-5 shrink-0" aria-hidden />
                   {t('creatorsPage.cta')}
@@ -127,7 +127,7 @@ export default function CreatorsPage() {
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary mt-10 inline-flex items-center justify-center gap-2 !bg-[#F7F3EA] !text-[#3B2F1A] no-underline hover:!bg-white"
-              onClick={() => trackButtonClick('creators_footer_create')}
+              onClick={() => trackButtonClick('creators_footer_trial')}
             >
               <FolderPlusIcon className="h-5 w-5 shrink-0" aria-hidden />
               {t('creatorsPage.cta')}
