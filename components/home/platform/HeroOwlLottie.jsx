@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useId, useRef, useState } from 'react';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import { useReducedMotion } from 'framer-motion';
 
@@ -11,23 +11,32 @@ const COLOR_CYCLE_IDLE_MS = 5600;
 const COLOR_CYCLE_HOVER_MS = 1100;
 
 const IDLE_COLORS = [
-  [166, 124, 42],
-  [217, 107, 4],
-  [138, 102, 34],
-  [79, 81, 64],
-  [92, 69, 32],
+  [255, 176, 48],
+  [255, 106, 16],
+  [220, 48, 32],
+  [190, 32, 28],
+  [255, 140, 32],
 ];
 
 const HOT_COLORS = [
-  [255, 246, 220],
-  [255, 148, 42],
-  [217, 107, 4],
-  [190, 48, 8],
-  [166, 124, 42],
+  [255, 246, 200],
+  [255, 176, 48],
+  [255, 106, 16],
+  [220, 40, 24],
+  [255, 148, 32],
+];
+
+/** Peak heat: real flame — white core, then blue (no cyan/lime). */
+const BLUE_HOT_COLORS = [
+  [255, 255, 255],
+  [240, 248, 255],
+  [170, 200, 255],
+  [70, 110, 230],
+  [40, 70, 200],
 ];
 
 const STATIC_GLOW =
-  'drop-shadow(0 -2px 8px rgba(166, 124, 42, 0.32)) drop-shadow(0 0 16px rgba(138, 102, 34, 0.2))';
+  'drop-shadow(0 -2px 8px rgba(255, 140, 32, 0.42)) drop-shadow(0 0 16px rgba(220, 48, 32, 0.24))';
 
 function lerp(a, b, t) {
   return a + (b - a) * t;
@@ -57,17 +66,189 @@ function rgba(c, a) {
   return `rgba(${c[0]}, ${c[1]}, ${c[2]}, ${a})`;
 }
 
+/** Recolor opaque pixels only (no square). t=0 identity, t=1 white-blue fire. */
+function blueWhiteMatrix(t) {
+  const i = 1 - t;
+  const lr = 0.2126 * t;
+  const lg = 0.7152 * t;
+  const lb = 0.0722 * t;
+  return [
+    i + lr * 0.88, lg * 0.88, lb * 0.88, 0, 0.22 * t,
+    lr * 0.94, i + lg * 0.94, lb * 0.94, 0, 0.28 * t,
+    lr * 1.12, lg * 1.12, i + lb * 1.12, 0, 0.48 * t,
+    0, 0, 0, 1, 0,
+  ]
+    .map((n) => n.toFixed(4))
+    .join(' ');
+}
+
+function rand(min, max) {
+  return min + Math.random() * (max - min);
+}
+
+/**
+ * Subtle Super-Saiyan-style rising streaks and cinders.
+ * Colors follow linger (ember → white-blue). Radial mask avoids a square.
+ */
+function RisingAuraCanvas({ lingerRef, reduceMotion }) {
+  const canvasRef = useRef(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas || reduceMotion) return undefined;
+    const ctx = canvas.getContext('2d', { alpha: true });
+    if (!ctx) return undefined;
+
+    const parent = canvas.parentElement;
+    let w = 0;
+    let h = 0;
+    let rafId = 0;
+    let last = performance.now();
+
+    const streaks = [];
+    const cinders = [];
+
+    const seedStreak = (warm) => {
+      const side = Math.random() < 0.5 ? -1 : 1;
+      const along = rand(0.08, 0.42);
+      return {
+        x: w * 0.5 + side * w * along,
+        y: rand(h * 0.38, h * 0.88),
+        len: rand(28, 86) * (0.75 + warm * 0.4),
+        width: rand(1.2, 2.6),
+        speed: rand(55, 130) * (0.9 + warm * 0.5),
+        wobble: rand(-18, 18),
+        phase: rand(0, Math.PI * 2),
+        life: rand(0, 0.85),
+        maxLife: rand(0.7, 1.35),
+      };
+    };
+
+    const seedCinder = (warm) => ({
+      x: w * 0.5 + rand(-w * 0.4, w * 0.4),
+      y: rand(h * 0.42, h * 0.92),
+      r: rand(1.1, 2.4),
+      speed: rand(50, 140) * (0.85 + warm * 0.6),
+      drift: rand(-22, 22),
+      life: rand(0, 0.85),
+      maxLife: rand(0.55, 1.2),
+    });
+
+    const resize = () => {
+      const rect = parent.getBoundingClientRect();
+      const dpr = Math.min(2, window.devicePixelRatio || 1);
+      const scale = 1.65;
+      w = Math.max(1, rect.width * scale);
+      h = Math.max(1, rect.height * scale);
+      canvas.width = Math.round(w * dpr);
+      canvas.height = Math.round(h * dpr);
+      canvas.style.width = `${w}px`;
+      canvas.style.height = `${h}px`;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    };
+
+    resize();
+    const ro = new ResizeObserver(resize);
+    ro.observe(parent);
+
+    const linger = () => easeOutCubic(lingerRef.current || 0);
+
+    const tick = (now) => {
+      const dt = Math.min(0.05, (now - last) / 1000);
+      last = now;
+      const heat = linger();
+      const toBlue = heat * heat * heat;
+      const intensity = 0.72 + heat * 0.28;
+
+      const ember = [255, 150, 48];
+      const white = [255, 255, 255];
+      const blue = [120, 170, 255];
+      const col = mixRgb(mixRgb(ember, white, heat), blue, toBlue * 0.85);
+
+      const streakTarget = Math.round(22 + heat * 14);
+      const cinderTarget = Math.round(26 + heat * 18);
+      while (streaks.length < streakTarget) streaks.push(seedStreak(heat));
+      while (cinders.length < cinderTarget) cinders.push(seedCinder(heat));
+      if (streaks.length > streakTarget) streaks.length = streakTarget;
+      if (cinders.length > cinderTarget) cinders.length = cinderTarget;
+
+      ctx.clearRect(0, 0, w, h);
+      ctx.globalCompositeOperation = 'lighter';
+
+      for (const s of streaks) {
+        s.life += dt / s.maxLife;
+        s.y -= s.speed * dt * (0.7 + heat);
+        s.x += Math.sin(now / 420 + s.phase) * s.wobble * dt;
+        if (s.life >= 1 || s.y < h * 0.04) Object.assign(s, seedStreak(heat), { y: h * 0.78 + rand(0, h * 0.16), life: 0 });
+
+        const fade = Math.sin(Math.min(1, s.life) * Math.PI) * intensity * 0.7;
+        const g = ctx.createLinearGradient(s.x, s.y + s.len, s.x, s.y);
+        g.addColorStop(0, `rgba(${col[0]},${col[1]},${col[2]},0)`);
+        g.addColorStop(0.45, `rgba(${col[0]},${col[1]},${col[2]},${fade})`);
+        g.addColorStop(1, `rgba(255,255,255,${fade * 0.35})`);
+        ctx.strokeStyle = g;
+        ctx.lineWidth = s.width;
+        ctx.lineCap = 'round';
+        ctx.beginPath();
+        ctx.moveTo(s.x, s.y + s.len);
+        ctx.lineTo(s.x, s.y);
+        ctx.stroke();
+      }
+
+      for (const c of cinders) {
+        c.life += dt / c.maxLife;
+        c.y -= c.speed * dt * (0.75 + heat);
+        c.x += c.drift * dt;
+        if (c.life >= 1 || c.y < h * 0.06) Object.assign(c, seedCinder(heat), { y: h * 0.82 + rand(0, h * 0.12), life: 0 });
+        const fade = Math.sin(Math.min(1, c.life) * Math.PI) * intensity * 0.85;
+        ctx.fillStyle = `rgba(${col[0]},${col[1]},${col[2]},${fade})`;
+        ctx.beginPath();
+        ctx.arc(c.x, c.y, c.r, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      ctx.globalCompositeOperation = 'source-over';
+      rafId = window.requestAnimationFrame(tick);
+    };
+
+    rafId = window.requestAnimationFrame(tick);
+    return () => {
+      window.cancelAnimationFrame(rafId);
+      ro.disconnect();
+    };
+  }, [lingerRef, reduceMotion]);
+
+  if (reduceMotion) return null;
+
+  return (
+    <canvas
+      ref={canvasRef}
+      className="pointer-events-none absolute left-1/2 top-1/2 z-20 h-[165%] w-[165%] -translate-x-1/2 -translate-y-[46%]"
+      style={{
+        mixBlendMode: 'screen',
+        maskImage: 'radial-gradient(ellipse 62% 72% at 50% 48%, black 12%, black 58%, transparent 82%)',
+        WebkitMaskImage:
+          'radial-gradient(ellipse 62% 72% at 50% 48%, black 12%, black 58%, transparent 82%)',
+      }}
+      aria-hidden
+    />
+  );
+}
+
 /**
  * Brand phoenix with a silhouette-hugging flame glow.
  * Idle: slow breath. Hover: hotter flame that grows and color-shifts
- * the longer you linger, then collapses on leave.
+ * the longer you linger — ember, white-hot, then blue — then collapses on leave.
  */
 export default function HeroOwlLottie({ className = '' }) {
   const reduceMotion = useReducedMotion();
   const [hovered, setHovered] = useState(false);
   /** True when the device has real hover (desktop). Avoids sticky :hover after touch. */
   const [fineHover, setFineHover] = useState(false);
+  const filterId = useId().replace(/:/g, '');
   const glowRef = useRef(null);
+  const birdRef = useRef(null);
+  const matrixRef = useRef(null);
   const hoveredRef = useRef(false);
   const lingerRef = useRef(0);
   const lastNowRef = useRef(null);
@@ -85,11 +266,15 @@ export default function HeroOwlLottie({ className = '' }) {
 
   useEffect(() => {
     const el = glowRef.current;
+    const bird = birdRef.current;
+    const matrixEl = matrixRef.current;
     if (!el) return undefined;
 
     if (reduceMotion) {
       el.style.filter = STATIC_GLOW;
       el.style.transform = 'scale(1)';
+      if (bird) bird.style.filter = '';
+      if (matrixEl) matrixEl.setAttribute('values', blueWhiteMatrix(0));
       lingerRef.current = 0;
       lastNowRef.current = null;
       return undefined;
@@ -121,29 +306,39 @@ export default function HeroOwlLottie({ className = '' }) {
       const idleB = colorAt(now + COLOR_CYCLE_IDLE_MS * 0.35, COLOR_CYCLE_IDLE_MS, IDLE_COLORS);
       const hotA = colorAt(now, COLOR_CYCLE_HOVER_MS, HOT_COLORS);
       const hotB = colorAt(now + COLOR_CYCLE_HOVER_MS * 0.35, COLOR_CYCLE_HOVER_MS, HOT_COLORS);
-      const c1 = mixRgb(idleA, hotA, linger);
-      const c2 = mixRgb(idleB, hotB, linger);
-      const white = [255, 246, 220];
+      const blueA = colorAt(now, COLOR_CYCLE_HOVER_MS, BLUE_HOT_COLORS);
+      const blueB = colorAt(now + COLOR_CYCLE_HOVER_MS * 0.35, COLOR_CYCLE_HOVER_MS, BLUE_HOT_COLORS);
+      // Ember through mid-hover, then white-hot into blue.
+      const toBlue = linger * linger * linger;
+      const fireA = mixRgb(idleA, hotA, linger);
+      const fireB = mixRgb(idleB, hotB, linger);
+      const c1 = mixRgb(fireA, blueA, toBlue);
+      const c2 = mixRgb(fireB, blueB, toBlue);
+      const white = mixRgb([255, 246, 220], [255, 255, 255], toBlue);
       const aCore = 0.42 + linger * 0.46;
       const aMid = 0.26 + linger * 0.34;
       const aHalo = 0.14 + linger * 0.22;
-      const aHot = linger * linger * 0.62;
+      const aHot = linger * linger * 0.72;
 
       el.style.filter = [
-        `brightness(${1 + linger * 0.22}) saturate(${1 + linger * 0.35})`,
         `drop-shadow(0 ${-rise * 1.15}px ${5 + linger * 12}px ${rgba(white, aHot)})`,
         `drop-shadow(0 ${-rise}px ${core}px ${rgba(c1, aCore)})`,
         `drop-shadow(0 ${-rise * 0.45}px ${mid}px ${rgba(c2, aMid)})`,
         `drop-shadow(0 4px ${halo}px ${rgba(c1, aHalo)})`,
       ].join(' ');
       el.style.transform = `translateX(${shimmer}px) scale(${scale})`;
+      if (bird) {
+        const bright = 1 + linger * 0.28 + toBlue * 0.22;
+        bird.style.filter = `url(#${filterId}) brightness(${bright})`;
+      }
+      if (matrixEl) matrixEl.setAttribute('values', blueWhiteMatrix(toBlue));
 
       rafId = window.requestAnimationFrame(tick);
     };
 
     rafId = window.requestAnimationFrame(tick);
     return () => window.cancelAnimationFrame(rafId);
-  }, [reduceMotion]);
+  }, [reduceMotion, filterId]);
 
   const activate = () => setHovered(true);
   const deactivate = () => setHovered(false);
@@ -164,13 +359,21 @@ export default function HeroOwlLottie({ className = '' }) {
       role="img"
       aria-label="Kahana phoenix with Aura"
     >
-      <div ref={glowRef} className="relative z-10 will-change-[filter,transform]">
-        <DotLottieReact
-          src="/images/hero-phoenix.json"
-          loop={!reduceMotion}
-          autoplay={!reduceMotion}
-          style={{ width: '100%', height: 'auto', aspectRatio: '1 / 1' }}
-        />
+      <svg className="absolute h-0 w-0 overflow-hidden" aria-hidden>
+        <filter id={filterId} colorInterpolationFilters="sRGB">
+          <feColorMatrix ref={matrixRef} type="matrix" values={blueWhiteMatrix(0)} />
+        </filter>
+      </svg>
+      <RisingAuraCanvas lingerRef={lingerRef} reduceMotion={reduceMotion} />
+      <div ref={glowRef} className="relative z-10 overflow-visible will-change-[filter,transform]">
+        <div ref={birdRef} className="overflow-visible will-change-[filter] [&_canvas]:bg-transparent">
+          <DotLottieReact
+            src="/images/hero-phoenix.json?v=fire"
+            loop={!reduceMotion}
+            autoplay={!reduceMotion}
+            style={{ width: '100%', height: 'auto', aspectRatio: '1 / 1', overflow: 'visible' }}
+          />
+        </div>
       </div>
     </div>
   );
