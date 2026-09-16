@@ -5,6 +5,7 @@
   "section": "library",
   "category": "library",
   "tags": [
+    "feature:saved",
     "feature:explore",
     "persona:learners"
   ],

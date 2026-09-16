@@ -4,6 +4,7 @@ import { useMemo } from 'react';
 import {
   AdjustmentsHorizontalIcon,
   AcademicCapIcon,
+  ArrowRightIcon,
   ArrowTrendingUpIcon,
   ArrowsRightLeftIcon,
   BanknotesIcon,
@@ -20,6 +21,7 @@ import {
   MegaphoneIcon,
   NoSymbolIcon,
   DevicePhoneMobileIcon,
+  NewspaperIcon,
   RectangleStackIcon,
   ShieldCheckIcon,
   SparklesIcon,
@@ -27,6 +29,7 @@ import {
   TagIcon,
 } from '@heroicons/react/24/outline';
 import { HeartIcon } from '@heroicons/react/24/solid';
+import { SiYoutube } from 'react-icons/si';
 import FadeInSection from '../../FadeInSection';
 import { productHref } from '../../../lib/productLinks';
 import { trackButtonClick } from '../../../utils/analytics';
@@ -35,8 +38,10 @@ import RainbowHoverCard from './RainbowHoverCard';
 import FaqBrowse from '../../faq/FaqBrowse';
 import UseCaseStoryCards from '../../use-cases/UseCaseStoryCards';
 import CategoryMarquee from './CategoryMarquee';
+import UseWithMarquee from '../../compare/UseWithMarquee';
 import { EXPLORE_CATEGORIES } from '../../../data/exploreCategories';
 import { useMarketingI18n } from '../../../contexts/MarketingI18n';
+import { YOUTUBE_CHANNEL_URL } from '../../../config/brand';
 
 const HeroOwlLottie = dynamic(() => import('./HeroOwlLottie'), { ssr: false });
 
@@ -480,6 +485,22 @@ export default function PlatformHome() {
         </FadeInSection>
       </SectionShell>
 
+      <SectionShell id="success-stories" className="border-t border-[#E4D9C4] bg-white/60">
+        <FadeInSection>
+          <h2 className="text-3xl font-semibold sm:text-4xl">{t('home.storiesTitle')}</h2>
+          <p className="mt-3 max-w-2xl text-lg text-[#666666]">{t('home.storiesLead')}</p>
+          <UseCaseStoryCards t={t} compact />
+          <p className="mt-8">
+            <Link
+              href="/success-stories"
+              className="text-base font-medium text-[#8A6622] no-underline underline-offset-4 hover:underline"
+            >
+              {t('home.storiesSeeAll')}
+            </Link>
+          </p>
+        </FadeInSection>
+      </SectionShell>
+
       <SectionShell id="how-it-works" className="border-t border-[#E4D9C4]">
         <FadeInSection>
           <h2 className="text-3xl font-semibold sm:text-4xl">{t('home.howTitle')}</h2>
@@ -502,12 +523,20 @@ export default function PlatformHome() {
               );
             })}
           </ul>
-          <p className="mt-8">
+          <p className="mt-8 flex flex-wrap items-center gap-3">
             <Link
-              href="/help"
-              className="text-base font-medium text-[#8A6622] no-underline underline-offset-4 hover:underline"
+              href="/features"
+              className="btn-secondary inline-flex items-center justify-center gap-2 no-underline"
             >
               {t('home.browseHelp')}
+              <ArrowRightIcon className="h-5 w-5 shrink-0" aria-hidden />
+            </Link>
+            <Link
+              href="/use-cases"
+              className="btn-secondary inline-flex items-center justify-center gap-2 no-underline"
+            >
+              {t('home.howUseCasesCta')}
+              <ArrowRightIcon className="h-5 w-5 shrink-0" aria-hidden />
             </Link>
           </p>
         </FadeInSection>
@@ -518,8 +547,15 @@ export default function PlatformHome() {
           <h2 className="text-3xl font-semibold sm:text-4xl">{t('home.learnersTitle')}</h2>
           <p className="mt-3 max-w-2xl text-lg text-[#666666]">{t('home.learnersLead')}</p>
           <BenefitTiles items={seekerBenefits} />
-          <p className="mt-8">
+          <p className="mt-8 flex flex-wrap items-center gap-3">
             <SecondaryCta href={exploreUrl}>{t('home.explore')}</SecondaryCta>
+            <Link
+              href="/learners"
+              className="btn-secondary inline-flex items-center justify-center gap-2 no-underline"
+            >
+              {t('home.learnersPageCta')}
+              <ArrowRightIcon className="h-5 w-5 shrink-0" aria-hidden />
+            </Link>
           </p>
         </FadeInSection>
       </SectionShell>
@@ -529,13 +565,40 @@ export default function PlatformHome() {
           <h2 className="text-3xl font-semibold sm:text-4xl">{t('home.creatorsTitle')}</h2>
           <p className="mt-3 max-w-2xl text-lg text-[#666666]">{t('home.creatorsLead')}</p>
           <BenefitTiles items={creatorBenefits} />
-          <p className="mt-8">
+          <p className="mt-8 flex flex-wrap items-center gap-3">
             <PrimaryCta href={createUrl} trackingId="platform_creators_create">
               {t('home.create')}
             </PrimaryCta>
+            <Link
+              href="/creators"
+              className="btn-secondary inline-flex items-center justify-center gap-2 no-underline"
+            >
+              {t('home.creatorsPageCta')}
+              <ArrowRightIcon className="h-5 w-5 shrink-0" aria-hidden />
+            </Link>
           </p>
         </FadeInSection>
       </SectionShell>
+
+      <section id="use-with" className="border-t border-[#E4D9C4] py-16">
+        <FadeInSection>
+          <div className="mx-auto w-full max-w-6xl px-6 sm:px-10 lg:px-16">
+            <h2 className="text-3xl font-semibold sm:text-4xl">{t('home.useWithTitle')}</h2>
+            <p className="mt-3 max-w-2xl text-lg text-[#666666]">{t('home.useWithLead')}</p>
+          </div>
+          <div className="mt-10 w-full overflow-hidden">
+            <UseWithMarquee label={t('home.useWithTitle')} />
+          </div>
+          <p className="mx-auto mt-10 w-full max-w-6xl px-6 sm:px-10 lg:px-16">
+            <Link
+              href="/compare"
+              className="btn-secondary inline-flex items-center justify-center no-underline"
+            >
+              {t('home.useWithCta')}
+            </Link>
+          </p>
+        </FadeInSection>
+      </section>
 
       <SectionShell id="optimize" className="border-t border-[#E4D9C4]">
         <FadeInSection>
@@ -564,10 +627,24 @@ export default function PlatformHome() {
               );
             })}
           </ol>
-          <p className="mt-8">
-            <PrimaryCta href={createUrl} trackingId="platform_optimize_create">
-              {t('home.create')}
-            </PrimaryCta>
+          <p className="mt-14 flex flex-wrap items-center gap-3">
+            <Link
+              href="/blog"
+              className="btn-secondary inline-flex items-center justify-center gap-2 no-underline"
+            >
+              <NewspaperIcon className="h-5 w-5 shrink-0" aria-hidden />
+              {t('home.optimizeBlogCta')}
+            </Link>
+            <a
+              href={YOUTUBE_CHANNEL_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary inline-flex items-center justify-center gap-2 no-underline"
+              onClick={() => trackButtonClick('platform_optimize_youtube')}
+            >
+              <SiYoutube className="h-5 w-5 shrink-0" aria-hidden />
+              {t('home.optimizeYoutubeCta')}
+            </a>
           </p>
         </FadeInSection>
       </SectionShell>
@@ -586,22 +663,6 @@ export default function PlatformHome() {
           </p>
         </FadeInSection>
       </section>
-
-      <SectionShell id="success-stories" className="border-t border-[#E4D9C4] bg-white/60">
-        <FadeInSection>
-          <h2 className="text-3xl font-semibold sm:text-4xl">{t('home.storiesTitle')}</h2>
-          <p className="mt-3 max-w-2xl text-lg text-[#666666]">{t('home.storiesLead')}</p>
-          <UseCaseStoryCards t={t} compact />
-          <p className="mt-8">
-            <Link
-              href="/success-stories"
-              className="text-base font-medium text-[#8A6622] no-underline underline-offset-4 hover:underline"
-            >
-              {t('home.storiesSeeAll')}
-            </Link>
-          </p>
-        </FadeInSection>
-      </SectionShell>
 
       <SectionShell id="faq-teaser" className="bg-[#B8B9A6]/15">
         <FadeInSection>

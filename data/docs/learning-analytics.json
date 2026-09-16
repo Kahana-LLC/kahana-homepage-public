@@ -1,0 +1,16 @@
+{
+  "title": "Learning analytics",
+  "description": "Private Learning tab on Analytics: time, Cognition streak, and email opt-ins. Not author revenue.",
+  "slug": "learning-analytics",
+  "section": "library",
+  "category": "library",
+  "tags": [
+    "feature:analytics",
+    "feature:cognition-streak",
+    "persona:learners"
+  ],
+  "product": "kahana",
+  "date": "2026-09-16",
+  "authors": ["Adam Kershner"],
+  "content": "<p class=\"lead\">The Learning tab on Analytics is private. It is about your time and streak, not how your hubs convert.</p>\n\n<p><strong>Primary action:</strong> <a href=\"https://kahana.io/analytics\" target=\"_blank\" rel=\"noopener noreferrer\">Open Analytics</a></p>\n\n<h2>What you see</h2>\n<ul>\n<li>Learning time and recent activity</li>\n<li><a href=\"/help/cognition-streak\">Cognition streak</a> for the week</li>\n<li>Links into Communication settings for learning emails</li>\n</ul>\n\n<h2>Author vs Learning</h2>\n<p>If you also create hubs, Analytics has an Author tab for views, members, purchasers, Aura, and saves. Guide: <a href=\"/help/creator-analytics\">Analytics for creators</a>. Stripe still holds payouts and dollar detail.</p>\n\n<h2>What’s next</h2>\n<ul>\n<li><a href=\"/help/cognition-streak\">Cognition streak</a></li>\n<li><a href=\"/help/explore\">Browse Library</a></li>\n<li><a href=\"/help/creator-analytics\">Analytics for creators</a></li>\n</ul>\n\n<p><a href=\"https://kahana.io/analytics\" target=\"_blank\" rel=\"noopener noreferrer\"><strong>Open Analytics →</strong></a></p>\n"
+}

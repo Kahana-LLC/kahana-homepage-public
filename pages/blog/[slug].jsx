@@ -14,6 +14,7 @@ import ComparisonTable from '../../components/ComparisonTable';
 import BlogCard from '../../components/BlogCard';
 import KahanaCoverageChart from '../../components/KahanaCoverageChart';
 import ResearchInsights from '../../components/ResearchInsights';
+import ComparisonFunnelCta from '../../components/blog/ComparisonFunnelCta';
 import { FaLinkedin, FaRegCalendarAlt, FaBookOpen, FaRegClock } from 'react-icons/fa';
 import SocialShare from '../../components/SocialShare';
 import { trackBlogPageViewDirect } from '../../utils/directMixpanel';
@@ -353,7 +354,7 @@ export default function BlogPost({ post }) {
               <Breadcrumbs 
                 items={[
                   { name: "Home", url: "/" },
-                  { name: "Blog", url: "/blog" },
+                  { name: "Guides", url: "/blog" },
                   { name: post.title, url: `/blog/${post.slug}` },
                 ]} 
               />
@@ -443,27 +444,7 @@ export default function BlogPost({ post }) {
             <ResearchInsights insights={post.researchInsights} />
           )}
 
-          {(post.coverage || post.researchInsights) && (
-            <p className="mt-8 text-base text-oasis-green-800">
-              <a
-                href="https://kahana.io/library"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-semibold text-[#8A6622] underline hover:text-oasis-green-800"
-              >
-                Open Explore →
-              </a>
-              {' · '}
-              <a
-                href="https://kahana.io/?utm_source=marketing&utm_medium=website&utm_campaign=blog_create"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-semibold text-[#8A6622] underline hover:text-oasis-green-800"
-              >
-                Create a hub →
-              </a>
-            </p>
-          )}
+          <ComparisonFunnelCta />
           
           {isClient && (
             <SocialShare 

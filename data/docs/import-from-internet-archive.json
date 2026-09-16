@@ -5,6 +5,7 @@
   "section": "hubs-and-files",
   "category": "hubs-and-files",
   "tags": [
+    "feature:archive-import",
     "feature:hubs",
     "use-case:selling-ebooks",
     "persona:authors"

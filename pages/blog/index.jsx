@@ -135,17 +135,17 @@ export default function BlogIndex({ posts = [] }) {
   return (
     <>
       <Head>
-        <title>Kahana Blog | Library, creators, and product updates</title>
-        <meta name="description" content="News and guides for the Kahana platform—hubs, Explore, Aura, and creators. New articles land here as they ship." />
-        <meta name="keywords" content="Kahana, hubs, Explore, Aura, creators, knowledge sharing, digital artifacts" />
+        <title>Kahana Guides | Set up, use cases, and your stack</title>
+        <meta name="description" content="Guides to set up Kahana, use it for book clubs, workshops, and selling digital packs, and sit it next to YouTube, Discord, Substack, and tools you already love." />
+        <meta name="keywords" content="Kahana guides, set up Kahana, use cases, YouTube, Discord, hubs, Library, Aura" />
         <link rel="canonical" href="https://about.kahana.io/blog" />
         <meta property="og:url" content="https://about.kahana.io/blog" />
-        <meta property="og:title" content="Kahana Blog | Library, creators, and product updates" />
-        <meta property="og:description" content="News and guides for the Kahana platform—hubs, Explore, Aura, and creators." />
+        <meta property="og:title" content="Kahana Guides | Set up, use cases, and your stack" />
+        <meta property="og:description" content="Optimize Kahana: setup, use cases, and how it sits with tools you already love." />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Kahana Blog | Library, creators, and product updates" />
-        <meta name="twitter:description" content="News and guides for the Kahana platform—hubs, Explore, Aura, and creators." />
+        <meta name="twitter:title" content="Kahana Guides | Set up, use cases, and your stack" />
+        <meta name="twitter:description" content="Optimize Kahana: setup, use cases, and how it sits with tools you already love." />
 
         {/* Structured Data for Blog Index */}
         <script
@@ -154,8 +154,8 @@ export default function BlogIndex({ posts = [] }) {
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'Blog',
-              name: 'Kahana Blog',
-              description: 'News and guides for the Kahana platform—hubs, Explore, Aura, and creators.',
+              name: 'Kahana Guides',
+              description: 'Set up Kahana, use it for real jobs, and sit it next to tools you already love.',
               url: 'https://about.kahana.io/blog',
               publisher: {
                 '@type': 'Organization',
@@ -185,7 +185,7 @@ export default function BlogIndex({ posts = [] }) {
           <Breadcrumbs 
             items={[
               { name: "Home", url: "/" },
-              { name: "Blog", url: "/blog" },
+              { name: "Guides", url: "/blog" },
             ]} 
           />
         </div>
@@ -193,11 +193,22 @@ export default function BlogIndex({ posts = [] }) {
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-oasis-green-900 mb-4">
-            Kahana Blog
+            Kahana guides
           </h1>
           <p className="text-xl text-oasis-green-800 max-w-2xl mx-auto">
-            Insights and updates for the Kahana library—hubs, Explore, Aura, and creators.
+            Optimize your stack. Set up Kahana, use it for book clubs, workshops, and selling digital packs, or see how it sits with YouTube, Discord, and tools you already love.
           </p>
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <a href="/blog/set-up-kahana-in-an-afternoon" className="btn-primary inline-flex items-center justify-center no-underline">
+              Set up Kahana
+            </a>
+            <a href="/use-cases" className="btn-secondary inline-flex items-center justify-center no-underline">
+              Use cases
+            </a>
+            <a href="/blog?category=Comparisons" className="btn-secondary inline-flex items-center justify-center no-underline">
+              Kahana with other platforms
+            </a>
+          </div>
         </div>
 
         {sortedPosts.length === 0 ? (

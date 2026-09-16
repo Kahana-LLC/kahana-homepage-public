@@ -11,7 +11,13 @@ export const AURA_SEO = {
     'Aura is how Kahana promotes quality: a scarce daily endorsement you control. Give it to hubs or to files inside hubs—file Aura rolls up to the hub and surfaces noteworthy work in search.',
 };
 
-/** Long-form sections for /aura (order locked). */
+/** How Aura works (shown above the live trail). */
+export const AURA_RULE_IDS = ['what', 'budget', 'stays', 'who', 'target', 'self'];
+
+/** Remaining Aura topics as a collapsible FAQ. */
+export const AURA_FAQ_IDS = ['why-not-reviews', 'create'];
+
+/** Long-form sections for /aura. */
 export const AURA_SECTIONS = [
   {
     id: 'what',
@@ -75,9 +81,23 @@ export const AURA_SECTIONS = [
     id: 'create',
     title: 'Create a hub, then earn Aura',
     paragraphs: [
-      'To contribute knowledge to the library, you Create a hub, add digital artifacts, and optimize it so people can find it (clear names, tags, description, Explore listing).',
+      'To contribute knowledge to the library, you Create a hub, add digital artifacts, and optimize it so people can find it (clear names, tags, description, Library listing).',
       'You can invite editors and admins to collaborate on a hub. Team contribution still starts with creating that hub.',
       'When others value your hub or a standout file inside it, they may give Aura. Creating is how you add knowledge. Creating is not required to give Aura.',
     ],
   },
 ];
+
+export const AURA_RULES = AURA_RULE_IDS.map((id) => AURA_SECTIONS.find((s) => s.id === id)).filter(
+  Boolean,
+);
+
+export const AURA_FAQ_ITEMS = AURA_FAQ_IDS.map((id) => {
+  const section = AURA_SECTIONS.find((s) => s.id === id);
+  if (!section) return null;
+  return {
+    id: section.id,
+    question: section.title,
+    answer: section.paragraphs.join('\n\n'),
+  };
+}).filter(Boolean);

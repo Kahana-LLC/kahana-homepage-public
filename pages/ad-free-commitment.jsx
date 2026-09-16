@@ -43,8 +43,8 @@ export default function AdFreeCommitmentPage() {
               <h2 className="text-2xl font-semibold sm:text-3xl">Why we refuse ads</h2>
               <div className="mt-4 space-y-4 text-lg leading-relaxed text-[#666666]">
                 <p>
-                  Many social and content platforms — Netflix, Pinterest, TikTok, Instagram, YouTube
-                  — monetize attention with ads. That model is built to interrupt you. A library
+                  Many social and content platforms (Netflix, Pinterest, TikTok, Instagram, YouTube)
+                  monetize attention with ads. That model is built to interrupt you. A library
                   should help you stay with a hub, a book, a club.
                 </p>
                 <p>
@@ -64,7 +64,7 @@ export default function AdFreeCommitmentPage() {
                   <strong className="font-semibold text-[#3B2F1A]">
                     facilitate a transaction
                   </strong>{' '}
-                  between a creator and a learner — paid hub access on the library. That is
+                  between a creator and a learner: paid hub access on the library. That is
                   optional for both sides. Free hubs stay first-class.
                 </p>
                 <p>

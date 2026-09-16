@@ -1,0 +1,15 @@
+{
+  "title": "Following",
+  "description": "Follow authors, reopen their public work from Following, and optionally weigh follows in For You.",
+  "slug": "following",
+  "section": "library",
+  "category": "library",
+  "tags": [
+    "feature:following",
+    "persona:learners"
+  ],
+  "product": "kahana",
+  "date": "2026-09-16",
+  "authors": ["Adam Kershner"],
+  "content": "<p class=\"lead\">Following is how you keep up with people whose public hubs you want to see again. It is not a club membership and it does not unlock a paywall.</p>\n\n<p><strong>Primary action:</strong> <a href=\"https://kahana.io/following\" target=\"_blank\" rel=\"noopener noreferrer\">Open Following</a></p>\n\n<h2>Where to find it</h2>\n<p>On a public profile, use Follow. Reopen the list at <a href=\"https://kahana.io/following\" target=\"_blank\" rel=\"noopener noreferrer\">kahana.io/following</a>. You need an account.</p>\n\n<h2>What it does</h2>\n<ul>\n<li>Keeps a list of authors you chose to follow.</li>\n<li>Can weigh followed authors in the <a href=\"/help/for-you-and-taste\">For You</a> feed if that signal is on.</li>\n<li>Does not grant paid hub access or club seats.</li>\n</ul>\n\n<h2>What’s next</h2>\n<ul>\n<li><a href=\"/help/profiles\">Profiles</a></li>\n<li><a href=\"/help/for-you-and-taste\">For You and taste</a></li>\n<li><a href=\"/help/saving-and-collections\">Saving and collections</a></li>\n</ul>\n\n<p><a href=\"https://kahana.io/following\" target=\"_blank\" rel=\"noopener noreferrer\"><strong>Open Following →</strong></a></p>\n"
+}

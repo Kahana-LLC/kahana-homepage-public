@@ -106,7 +106,7 @@ export default function OnePlacePage() {
                 One library, not five apps
               </h2>
               <p className="mt-4 text-lg text-[#F7F3EA]/85">
-                Explore hubs people have already shared, or create one of your own.
+                Browse hubs in the Library people have already shared, or create one of your own.
               </p>
               <div className="mt-10 flex flex-wrap justify-center gap-3">
                 <a
@@ -117,7 +117,7 @@ export default function OnePlacePage() {
                   onClick={() => trackButtonClick('one_place_explore')}
                 >
                   <MagnifyingGlassIcon className="h-5 w-5 shrink-0" aria-hidden />
-                  Explore
+                  Library
                 </a>
                 <a
                   href={APP_URL}

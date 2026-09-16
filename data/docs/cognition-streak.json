@@ -1,0 +1,15 @@
+{
+  "title": "Cognition streak",
+  "description": "UTC-day learning streak from visiting and opening material, optional email reminders. Not Aura and not a payout.",
+  "slug": "cognition-streak",
+  "section": "library",
+  "category": "library",
+  "tags": [
+    "feature:cognition-streak",
+    "persona:learners"
+  ],
+  "product": "kahana",
+  "date": "2026-09-16",
+  "authors": ["Adam Kershner"],
+  "content": "<p class=\"lead\">Cognition streak counts showing up to learn. It grows on UTC days you visit or open library material. It is not Aura, not money, and not a ranking of quality.</p>\n\n<p><strong>Primary action:</strong> <a href=\"https://kahana.io/analytics\" target=\"_blank\" rel=\"noopener noreferrer\">Open Analytics (Learning)</a></p>\n\n<h2>How the streak works</h2>\n<ul>\n<li>A day counts when you visit or open material — not when you give Aura.</li>\n<li>Days use <strong>UTC</strong>, not your local calendar.</li>\n<li>A chip in the app shows the current count. Rules also appear on the Learning analytics tab.</li>\n</ul>\n\n<h2>Email reminders</h2>\n<p>Under Communication settings you can opt in to:</p>\n<ul>\n<li>Same-day streak reminder</li>\n<li>Weekly snapshot</li>\n<li>Streak restart</li>\n</ul>\n<p>Hours-before and enable/disable are yours. Defaults stay off until you save them.</p>\n\n<h2>What it is not</h2>\n<ul>\n<li>Not an Aura grant. Aura has its own daily budget.</li>\n<li>Not a paywall unlock.</li>\n<li>Not a public leaderboard.</li>\n</ul>\n\n<h2>What’s next</h2>\n<ul>\n<li><a href=\"/help/learning-analytics\">Learning analytics</a></li>\n<li><a href=\"/help/how-aura-works\">How Aura works</a></li>\n<li><a href=\"/help/notifications\">Notifications</a></li>\n</ul>\n\n<p><a href=\"https://kahana.io/analytics\" target=\"_blank\" rel=\"noopener noreferrer\"><strong>Open Learning analytics →</strong></a></p>\n"
+}

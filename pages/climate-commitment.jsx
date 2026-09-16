@@ -67,7 +67,7 @@ export default function ClimateCommitmentPage() {
                   >
                     Frontier’s carbon-removal portfolio
                   </a>
-                  — early technologies that pull CO₂ out of the air and store it for the long term.
+                  . These are early technologies that pull CO₂ out of the air and store it for the long term.
                   Stripe Climate is built for this: a percentage of revenue, not a one-off offset
                   badge.
                 </p>
@@ -83,7 +83,7 @@ export default function ClimateCommitmentPage() {
               <h2 className="text-2xl font-semibold sm:text-3xl">Learning as a climate force</h2>
               <div className="mt-4 space-y-4 text-lg leading-relaxed text-[#666666]">
                 <p>
-                  We think learning can drive improvements across climate — clearer science, better
+                  We think learning can drive improvements across climate: clearer science, better
                   tools, people who can actually use them. The library exists to make that kind of
                   education accessible.
                 </p>

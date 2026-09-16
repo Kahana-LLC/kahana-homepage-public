@@ -106,7 +106,7 @@ export default function AboutCard() {
                       Monetize - start monetizing and earn recurring revenue for sharing access to your hubs.
                     </li>
                     <li>
-                      Explore - discover new hubs of knowledge built and modified every day.
+                      Library: discover new hubs of knowledge built and modified every day.
                     </li>
                   </ul>
                 </div>

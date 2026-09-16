@@ -5,7 +5,9 @@
   "section": "trust-and-account",
   "category": "trust-and-account",
   "tags": [
-    "persona:learners"
+    "feature:notifications",
+    "persona:learners",
+    "persona:creators"
   ],
   "product": "kahana",
   "date": "2026-08-14",

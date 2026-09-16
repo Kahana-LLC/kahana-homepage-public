@@ -7,6 +7,13 @@ export function normalizeBlogCategories(category) {
   return Array.isArray(category) ? category : [category];
 }
 
+/** Landscape “Kahana vs X” posts (generated or handmade). */
+export function isComparisonPost(post) {
+  if (!post) return false;
+  if (typeof post.slug === "string" && post.slug.startsWith("kahana-vs-")) return true;
+  return normalizeBlogCategories(post.category).includes("Comparisons");
+}
+
 /**
  * Format post date for display in a way that matches server and client (avoids hydration errors).
  * Uses UTC so ISO midnight dates don't shift to a different calendar day per timezone.

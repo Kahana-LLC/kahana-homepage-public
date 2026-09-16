@@ -1,0 +1,17 @@
+{
+  "title": "Notes",
+  "description": "Hub notes and personal notes: Blocks or Classic editor, smart links to hubs, files, authors, and clubs.",
+  "slug": "notes",
+  "section": "hubs-and-files",
+  "category": "hubs-and-files",
+  "tags": [
+    "feature:notes",
+    "feature:hubs",
+    "persona:creators",
+    "persona:learners"
+  ],
+  "product": "kahana",
+  "date": "2026-09-16",
+  "authors": ["Adam Kershner"],
+  "content": "<p class=\"lead\">Kahana has two note surfaces. Hub notes travel with the pack you share. Personal notes stay yours across hubs.</p>\n\n<p><strong>Primary action:</strong> <a href=\"https://kahana.io/notes\" target=\"_blank\" rel=\"noopener noreferrer\">Open Notes</a></p>\n\n<h2>Hub notes</h2>\n<p>Inside a hub you own or collaborate on, add notes for intros, reading guides, and curriculum. Members of that hub see them with the files.</p>\n<p>In <strong>Settings → Notes</strong> you can pick <strong>Blocks</strong> or <strong>Classic</strong> (TinyMCE) as the hub notes editor.</p>\n\n<h2>Personal notes</h2>\n<p>Open <a href=\"https://kahana.io/notes\" target=\"_blank\" rel=\"noopener noreferrer\">kahana.io/notes</a> for notes that are not tied to one hub listing. These are not a public blog.</p>\n\n<h2>Smart links</h2>\n<p>Insert or open links to a hub, file, author, or club from a note. That is how a reading guide points at the real artifact.</p>\n\n<h2>Limits</h2>\n<ul>\n<li>Listed hub notes are part of what people with access can read.</li>\n<li>Personal notes do not appear on Library.</li>\n<li>Notes generally do not count toward the counted-upload quota. Files still do.</li>\n</ul>\n\n<h2>What’s next</h2>\n<ul>\n<li><a href=\"/help/adding-files-and-embeds\">Adding files and embeds</a></li>\n<li><a href=\"/help/hubs\">Hubs</a></li>\n<li><a href=\"/help/saving-and-collections\">Saving and collections</a></li>\n</ul>\n\n<p><a href=\"https://kahana.io/notes\" target=\"_blank\" rel=\"noopener noreferrer\"><strong>Open Notes →</strong></a></p>\n"
+}

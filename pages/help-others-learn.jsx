@@ -155,7 +155,7 @@ export default function HelpOthersLearnPage() {
                   onClick={() => trackButtonClick('help_others_learn_explore')}
                 >
                   <MagnifyingGlassIcon className="h-5 w-5 shrink-0" aria-hidden />
-                  Explore
+                  Library
                 </a>
               </div>
               <p className="mt-8 text-sm text-[#F7F3EA]/70">

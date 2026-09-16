@@ -134,7 +134,7 @@ export default function GainExposurePage() {
                 Put it where people can find it
               </h2>
               <p className="mt-4 text-lg text-[#F7F3EA]/85">
-                Create a hub, or see how others have already listed theirs on Explore.
+                Create a hub, or see how others have already listed theirs in the Library.
               </p>
               <div className="mt-10 flex flex-wrap justify-center gap-3">
                 <a
@@ -155,7 +155,7 @@ export default function GainExposurePage() {
                   onClick={() => trackButtonClick('gain_exposure_explore')}
                 >
                   <MagnifyingGlassIcon className="h-5 w-5 shrink-0" aria-hidden />
-                  Explore
+                  Library
                 </a>
               </div>
               <p className="mt-8 text-sm text-[#F7F3EA]/70">

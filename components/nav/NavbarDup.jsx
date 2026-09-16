@@ -650,7 +650,7 @@ export default function NavbarDup() {
                 onClick={closeMobile}
               >
                 <MagnifyingGlassIcon className="h-5 w-5 shrink-0" aria-hidden />
-                {t('nav.explore')}
+                {t('nav.exploreLong')}
               </a>
               <a
                 href={appUrl}

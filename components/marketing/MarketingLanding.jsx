@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { FolderPlusIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 import SEO from '../SEO';
 import FadeInSection from '../FadeInSection';
-import RainbowHoverCard from '../home/platform/RainbowHoverCard';
+import FeatureCatalogCard from '../features/FeatureCatalogCard';
 import { USE_CASE_STORIES } from '../../data/use-case-stories';
 import { APP_URL } from '../nav/navConfig';
 import { trackButtonClick } from '../../utils/analytics';
@@ -12,16 +12,9 @@ import {
   getUseCase,
 } from '../../data/marketingTaxonomy';
 
-function CardLink({ href, title, summary }) {
+function CardLink({ href, title, summary, slug }) {
   return (
-    <li className="flex flex-1 min-w-[16rem]">
-      <Link href={href} className="flex h-full w-full no-underline">
-        <RainbowHoverCard className="h-full w-full" innerClassName="h-full bg-white px-6 py-6">
-          <h3 className="text-lg font-semibold text-[#3B2F1A]">{title}</h3>
-          <p className="mt-2 text-sm text-[#666666]">{summary}</p>
-        </RainbowHoverCard>
-      </Link>
-    </li>
+    <FeatureCatalogCard href={href} title={title} summary={summary} slug={slug} />
   );
 }
 
@@ -54,11 +47,12 @@ export function CatalogIndex({
         </section>
         <section className="px-6 py-16 sm:px-10 lg:px-16">
           <div className="mx-auto w-full max-w-6xl">
-            <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <ul className="grid list-none gap-6 p-0 sm:grid-cols-2 lg:grid-cols-3">
               {items.map((item) => (
                 <CardLink
                   key={item.slug}
                   href={`${hrefPrefix}/${item.slug}`}
+                  slug={item.slug}
                   title={item.title}
                   summary={item.summary}
                 />
@@ -198,6 +192,7 @@ export default function MarketingLanding({
                     <CardLink
                       key={feature.slug}
                       href={`/features/${feature.slug}`}
+                      slug={feature.slug}
                       title={feature.title}
                       summary={feature.summary}
                     />

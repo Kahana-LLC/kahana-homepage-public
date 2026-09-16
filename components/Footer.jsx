@@ -22,7 +22,11 @@ import {
   ShareIcon,
   ShieldCheckIcon,
   Squares2X2Icon,
+  RectangleStackIcon,
   TagIcon,
+  ArrowsRightLeftIcon,
+  AcademicCapIcon,
+  UserGroupIcon,
 } from '@heroicons/react/24/outline';
 import { ConsentContext } from '../contexts/ConsentContext';
 import { useMarketingI18n } from '../contexts/MarketingI18n';
@@ -56,8 +60,12 @@ const PRODUCT_LINKS = [
   },
   { href: '/pricing', labelKey: 'footer.pricing', icon: TagIcon },
   { href: '/features', labelKey: 'footer.features', icon: Squares2X2Icon },
+  { href: '/roadmap', labelKey: 'footer.roadmap', icon: RectangleStackIcon },
   { href: '/use-cases', labelKey: 'footer.jobs', icon: BookmarkIcon },
   { href: '/success-stories', labelKey: 'footer.useCases', icon: BookOpenIcon },
+  { href: '/compare', labelKey: 'footer.compare', icon: ArrowsRightLeftIcon },
+  { href: '/creators', labelKey: 'footer.creators', icon: UserGroupIcon },
+  { href: '/learners', labelKey: 'footer.learners', icon: AcademicCapIcon },
   { href: '/app-waitlist', labelKey: 'footer.appWaitlist', icon: DevicePhoneMobileIcon },
 ];
 

@@ -128,7 +128,7 @@ export default function EarnMoneyPage() {
                 Start with a hub. Charge later if you want.
               </h2>
               <p className="mt-4 text-lg text-[#F7F3EA]/85">
-                Create a hub, or browse what people already share on Explore.
+                Create a hub, or browse what people already share in the Library.
               </p>
               <div className="mt-10 flex flex-wrap justify-center gap-3">
                 <a
@@ -149,7 +149,7 @@ export default function EarnMoneyPage() {
                   onClick={() => trackButtonClick('earn_money_explore')}
                 >
                   <MagnifyingGlassIcon className="h-5 w-5 shrink-0" aria-hidden />
-                  Explore
+                  Library
                 </a>
               </div>
               <p className="mt-8 text-sm text-[#F7F3EA]/70">
