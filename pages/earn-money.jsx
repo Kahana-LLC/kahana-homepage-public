@@ -10,6 +10,7 @@ import SEO from '../components/SEO';
 import FadeInSection from '../components/FadeInSection';
 import ExplainerRelatedLinks from '../components/home/platform/ExplainerRelatedLinks';
 import { APP_URL, EXPLORE_URL } from '../components/nav/navConfig';
+import { productHref } from '../lib/productLinks';
 import { ABOUT_ORIGIN } from '../config/site';
 import { trackButtonClick } from '../utils/analytics';
 
@@ -39,6 +40,7 @@ const RELATED = [
   { kind: 'Feature', title: 'Hubs', href: '/features/hubs' },
   { kind: 'Pricing', title: 'Plans', href: '/pricing' },
   { kind: 'Help', title: 'Optional earning', href: '/help/earning' },
+  { kind: 'Help', title: 'Turn on paid access', href: '/help/turn-on-paid-access' },
   { kind: 'Help', title: 'Turn on paid access', href: '/help/turn-on-paid-access' },
   { kind: 'Help', title: 'When to upgrade', href: '/help/when-to-upgrade' },
   { kind: 'Help', title: 'Creator analytics', href: '/help/creator-analytics' },
@@ -111,6 +113,31 @@ export default function EarnMoneyPage() {
                 You can sell on the Free plan. Growth is about hub and storage limits, not permission
                 to charge. Kahana analytics shows views and purchasers. For the money itself, look
                 in Stripe.
+              </p>
+            </FadeInSection>
+          </div>
+        </section>
+
+        <section className="px-6 pb-16 sm:px-10 lg:px-16">
+          <div className="mx-auto max-w-3xl">
+            <FadeInSection>
+              <h2 className="text-2xl font-semibold sm:text-3xl">Share a link and earn too</h2>
+              <p className="mt-4 text-lg leading-relaxed text-[#666666]">
+                Anyone can copy an affiliate link in the app. If someone signs up through it and
+                pays for Growth, you earn 20% of that subscription. If they sell hubs, you earn
+                1% of those sales (20% of Kahana&apos;s 5% fee). Payouts use the same Stripe
+                Connect account as hub sales.
+              </p>
+              <p className="mt-6">
+                <a
+                  href={productHref('/earn', 'affiliate_earn_money')}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary inline-flex items-center justify-center no-underline"
+                  onClick={() => trackButtonClick('earn_money_affiliate')}
+                >
+                  Open affiliate Earn
+                </a>
               </p>
             </FadeInSection>
           </div>
