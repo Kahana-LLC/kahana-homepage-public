@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import FadeInSection from './FadeInSection';
+import CreatorStackLedger from './compare/CreatorStackLedger';
+import { useMarketingI18n } from '../contexts/MarketingI18n';
 
 const INCLUDED = { included: true };
 
@@ -159,6 +161,8 @@ function PlanValue({ value, included, emphasize }) {
 }
 
 export default function Pricing() {
+  const { t } = useMarketingI18n();
+
   return (
     <div className="bg-[#F7F3EA]">
       <section className="px-4 pb-6 pt-8 text-center sm:px-6 sm:pt-12 lg:px-8">
@@ -234,6 +238,12 @@ export default function Pricing() {
               a monetized hub — the same on Free and Growth.
             </p>
           </div>
+        </section>
+      </FadeInSection>
+
+      <FadeInSection>
+        <section className="px-4 pb-10 sm:px-6 lg:px-8">
+          <CreatorStackLedger t={t} showPricingLink={false} />
         </section>
       </FadeInSection>
 

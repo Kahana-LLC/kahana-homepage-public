@@ -26,7 +26,7 @@ function ReplacesLine({ names }) {
   );
 }
 
-export default function CreatorStackLedger({ t }) {
+export default function CreatorStackLedger({ t, showPricingLink = true }) {
   const otherwise = stackOtherwiseTotal();
   const trialUrl = productHref('/billing?intent=sell&trial=growth', 'compare_stack_trial');
 
@@ -99,13 +99,15 @@ export default function CreatorStackLedger({ t }) {
           {t('compare.stackTrialCta')}
           <ArrowRightIcon className="h-4 w-4" aria-hidden />
         </a>
-        <Link
-          href="/pricing"
-          className="btn-secondary inline-flex items-center justify-center no-underline"
-          onClick={() => trackButtonClick('compare_stack_pricing')}
-        >
-          {t('compare.stackPricingCta')}
-        </Link>
+        {showPricingLink ? (
+          <Link
+            href="/pricing"
+            className="btn-secondary inline-flex items-center justify-center no-underline"
+            onClick={() => trackButtonClick('compare_stack_pricing')}
+          >
+            {t('compare.stackPricingCta')}
+          </Link>
+        ) : null}
       </div>
     </div>
   );
