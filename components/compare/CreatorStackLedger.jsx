@@ -28,7 +28,7 @@ function ReplacesLine({ names }) {
 
 export default function CreatorStackLedger({ t }) {
   const otherwise = stackOtherwiseTotal();
-  const createUrl = productHref('/', 'compare_stack_create');
+  const trialUrl = productHref('/billing?intent=sell&trial=growth', 'compare_stack_trial');
 
   return (
     <div className="mx-auto max-w-xl text-center">
@@ -90,13 +90,13 @@ export default function CreatorStackLedger({ t }) {
 
       <div className="mt-8 flex flex-wrap justify-center gap-3">
         <a
-          href={createUrl}
+          href={trialUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="btn-primary inline-flex items-center justify-center gap-2 no-underline"
-          onClick={() => trackButtonClick('compare_stack_create')}
+          onClick={() => trackButtonClick('compare_stack_trial')}
         >
-          {t('home.create')}
+          {t('compare.stackTrialCta')}
           <ArrowRightIcon className="h-4 w-4" aria-hidden />
         </a>
         <Link
