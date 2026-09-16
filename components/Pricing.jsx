@@ -24,7 +24,7 @@ const tiers = [
   {
     name: 'Growth',
     href: 'https://kahana.io/billing?utm_source=marketing&utm_medium=website&utm_campaign=pricing_growth',
-    priceLabel: '$9.99',
+    priceLabel: '$29.99',
     priceSuffix: 'per month',
     featuresHeading: 'Everything in Free, plus',
     includedFeatures: [

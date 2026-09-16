@@ -112,7 +112,7 @@ export const FAQ_SECTIONS = [
         id: 'creator-cost',
         question: 'How much does Kahana cost for creators?',
         answer:
-          'Free is $0. You get up to 3 hubs, unlimited collaborators, and files up to about 5 MB. You can still charge for access if you want.\n\nGrowth is $9.99 a month or $99.99 a year. You get unlimited hubs and uploads, live chat support, 100 GB of storage, and files up to 5 GB.\n\nWhen to upgrade (vs stay Free): /help/when-to-upgrade. Full comparison: /pricing. Open Billing in the app for the latest plan details.',
+          'Free is $0. You get up to 3 hubs, unlimited collaborators, and files up to about 5 MB. You can still charge for access if you want.\n\nGrowth is $29.99 a month or $299.99 a year. You get unlimited hubs and uploads, live chat support, 100 GB of storage, and files up to 5 GB.\n\nWhen to upgrade (vs stay Free): /help/when-to-upgrade. Full comparison: /pricing. Open Billing in the app for the latest plan details.',
       },
       {
         id: 'platform-fee',

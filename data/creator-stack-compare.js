@@ -3,7 +3,7 @@
  * Prices are public list-plan round numbers for copy tweaking — not quotes.
  */
 
-export const KAHANA_STACK_PRICE_USD = 9.99;
+export const KAHANA_STACK_PRICE_USD = 29.99;
 export const KAHANA_STACK_PLAN = 'Growth';
 
 /** @typedef {{ id: string, emoji: string, title: string, replaces: string[], priceUsd: number }} StackLine */

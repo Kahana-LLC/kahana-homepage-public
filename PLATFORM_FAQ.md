@@ -146,7 +146,7 @@ To earn from access, connect Stripe, turn on monetization, and set a one-time or
 | Plan | Price | Highlights |
 |------|-------|------------|
 | **Free** | $0 | Up to 3 hubs, Stripe monetization, unlimited collaborators, ~5 MB max file size |
-| **Growth** | $9.99/mo or $99.99/yr | Unlimited hubs & uploads, live chat support, 100 GB storage, up to 5 GB files |
+| **Growth** | $29.99/mo or $299.99/yr | Unlimited hubs & uploads, live chat support, 100 GB storage, up to 5 GB files |
 | **Enterprise** | Custom | White-glove support, flexible limits, optional white-label / integrations |
 
 Open **Billing** in the app for current plan options.
