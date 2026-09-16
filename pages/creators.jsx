@@ -23,7 +23,7 @@ const GROWTH_TODAY = [
 ];
 
 const GROWTH_AHEAD = [
-  'Free trial of Growth for new creators',
+  'Advanced analytics',
   'Advanced analytics',
   'Email list export',
   'Newsletters and mass messaging',
@@ -32,7 +32,7 @@ const GROWTH_AHEAD = [
 
 export default function CreatorsPage() {
   const { t } = useMarketingI18n();
-  const createUrl = productHref('/', 'creators_page_create');
+  const createUrl = productHref('/billing?intent=sell&trial=growth', 'creators_page_create');
 
   return (
     <>
