@@ -10,16 +10,6 @@ import { logger } from './logger';
 
 export const DEFAULT_GA_MEASUREMENT_ID = 'G-KQHFL9605P';
 
-/** Product + corporate hosts for GA4 cross-domain linker. */
-export const GA_LINKER_DOMAINS = [
-  'kahana.io',
-  'app.kahana.io',
-  'about.kahana.io',
-  'newsroom.kahana.io',
-  'careers.kahana.io',
-  'help.kahana.io',
-];
-
 export function getGaMeasurementId() {
   return (
     process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ||
@@ -58,16 +48,19 @@ export function ensureGtag() {
 /**
  * GA4 config snippet for idle / consent loaders.
  * send_page_view false — we send SPA page_view on route changes.
+ * No cross-domain linker / url_passthrough: those stamp `_gl` (and nested
+ * `_ga` / `_gcl_au`) onto Explore → kahana.io/library. about.* and apex
+ * already share cookies via cookie_domain kahana.io.
  */
 export function buildGtagConfigSnippet(measurementId = getGaMeasurementId()) {
-  const domainsJson = JSON.stringify(GA_LINKER_DOMAINS);
   return `
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
+    gtag('set', 'url_passthrough', false);
     gtag('config', '${measurementId}', {
       send_page_view: false,
-      linker: { domains: ${domainsJson} }
+      cookie_domain: 'kahana.io'
     });
   `;
 }

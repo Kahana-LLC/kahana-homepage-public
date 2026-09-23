@@ -7,7 +7,8 @@
 - Consent-gated in `pages/_app.js` via `utils/googleAnalytics.js`
 - Measurement: `NEXT_PUBLIC_GA_MEASUREMENT_ID` (default `G-KQHFL9605P`)
 - SPA `page_view` on route changes after analytics consent
-- Cross-domain linker includes `app.kahana.io` + corporate hosts
+- Cookie domain is `kahana.io` so about / newsroom / help / apex share the same GA cookie **without** decorating Library links with `_gl` / `_ga` query junk
+- Do **not** enable the gtag cross-domain `linker` or `url_passthrough` — those append ugly `_gl=…` params on Explore → `kahana.io/library`
 - **GTM:** only if `NEXT_PUBLIC_GTM_ID` is set — never also put GA4 Config in GTM
 
 Per-page `<Script>` gtag blocks were removed so consent + a single config path own all pageviews.

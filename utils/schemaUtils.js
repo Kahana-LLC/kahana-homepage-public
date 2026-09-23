@@ -3,6 +3,7 @@ const {
   LINKEDIN_COMPANY_URL,
   X_PROFILE_URL,
   YOUTUBE_CHANNEL_URL,
+  CRUNCHBASE_URL,
 } = require("../config/brand");
 
 function generateOrganizationSchema() {
@@ -16,6 +17,7 @@ function generateOrganizationSchema() {
       LINKEDIN_COMPANY_URL,
       X_PROFILE_URL,
       YOUTUBE_CHANNEL_URL,
+      CRUNCHBASE_URL,
       EXTERNAL_DATA_URL,
     ],
     contactPoint: {
