@@ -30,7 +30,7 @@ export default function DarkLibraryCta({
       onClick={() => libraryTrack && trackButtonClick(libraryTrack)}
     >
       <MagnifyingGlassIcon className="h-5 w-5 shrink-0" aria-hidden />
-      Library
+      Explore the Library
     </a>
   );
 

@@ -24,7 +24,7 @@ const LOGO_ASSETS = [
   },
   {
     title: 'Bonsai mark (SVG)',
-    description: 'Vector bonsai mark — preferred for print, web, and any size. Scales without loss of quality.',
+ description: 'Vector bonsai mark, preferred for print, web, and any size. Scales without loss of quality.',
     href: '/kahana-bonsai.svg',
     previewSrc: '/kahana-bonsai.svg',
     fileLabel: 'kahana-bonsai.svg',

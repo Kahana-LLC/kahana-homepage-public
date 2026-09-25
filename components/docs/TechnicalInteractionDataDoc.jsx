@@ -7,7 +7,7 @@ export default function TechnicalInteractionDataDoc() {
   return (
     <div className="doc-content technical-interaction-data-doc max-w-none px-0 py-0">
       <p className="text-lg text-[#3B2F1A]/85 leading-relaxed">
-        Oasis sends minimal interaction data to Kahana so we can improve the product—fix bugs,
+ Oasis sends minimal interaction data to Kahana so we can improve the product, fix bugs,
         measure latency, and understand which features help. By default, personalization is{" "}
         <strong>off</strong>: payloads are anonymized and do not include your account email or user
         ID. You can opt in from Settings if you want a more personalized experience.
@@ -16,8 +16,8 @@ export default function TechnicalInteractionDataDoc() {
       <aside className="my-8 rounded-r-lg border-l-4 border-[#8BA500] bg-[#EDE6D2] p-6">
         <strong className="mb-2 block text-[#3B2F1A]">What sets Oasis apart</strong>
         <p className="m-0 text-[#3B2F1A]/85 leading-relaxed">
-          Compared to Chromium-based browsers like Chrome—which can quietly gather broad behavioral
-          signals in the background—Oasis collects only what we describe here, and we are explicit
+ Compared to Chromium-based browsers like Chrome, which can quietly gather broad behavioral
+ signals in the background, Oasis collects only what we describe here, and we are explicit
           about it. Oasis does not build ad profiles from your location, searches, likes, purchases,
           or interests. Sensitive context is designed to stay on your device; this page shows
           exactly what leaves the browser when you use the assistant.
@@ -38,7 +38,7 @@ export default function TechnicalInteractionDataDoc() {
         </p>
         <ul className="mt-4 list-disc space-y-2 pl-5 text-[#3B2F1A]/85">
           <li>
-            <strong>Default (unchecked):</strong> anonymized payload—no <code>user</code> object, no
+ <strong>Default (unchecked):</strong> anonymized payload, no <code>user</code> object, no
             email or account ID.
           </li>
           <li>
@@ -71,7 +71,7 @@ export default function TechnicalInteractionDataDoc() {
             href="/help/training#does-data-leave-device"
             className="font-semibold text-[#8A6622] no-underline hover:underline"
           >
-            Training — does data leave the device?
+ Training, does data leave the device?
           </a>
           .
         </p>
@@ -124,7 +124,7 @@ export default function TechnicalInteractionDataDoc() {
         <p className="mt-4 text-[#3B2F1A]/85 leading-relaxed">
           Productivity and AI features are built so sensitive information can remain local; the
           payloads above are limited to what is needed to run and improve the assistant experience.
-          Anything you type into the composer—including a password you paste—may be processed like
+ Anything you type into the composer (including a password you paste) may be processed like
           any other prompt.
         </p>
       </section>
@@ -134,7 +134,7 @@ export default function TechnicalInteractionDataDoc() {
         <ul className="list-disc space-y-2 pl-5 text-[#3B2F1A]/85">
           <li>Improve assistant quality, latency, and reliability</li>
           <li>Debug issues and prioritize fixes</li>
-          <li>Understand feature usage in aggregate—not to sell your data</li>
+ <li>Understand feature usage in aggregate. Not to sell your data</li>
         </ul>
         <p className="mt-4 text-[#3B2F1A]/85 leading-relaxed">
           If you turn personalization off, new interactions use the anonymized shape (no{" "}

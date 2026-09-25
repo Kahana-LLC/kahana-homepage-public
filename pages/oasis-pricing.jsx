@@ -362,7 +362,7 @@ export default function OasisPricing() {
                 Accessing your Oasis workspace and navigating through your content is completely free. No tokens required. Your workspace, files, and basic organizational tools are always available without usage limits.
               </p>
               <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-                Tokens are used when you interact with the AI assistant—for chat, opening tabs, searches, organizing content, creating tab groups, and running automated workflows. Usage counts toward your plan&apos;s daily token allowance.
+ Tokens are used when you interact with the AI assistant, for chat, opening tabs, searches, organizing content, creating tab groups, and running automated workflows. Usage counts toward your plan&apos;s daily token allowance.
               </p>
               <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
                 You maintain full control with real-time monitoring. The Free plan includes 100,000 tokens per day; Zen includes 1,000,000 tokens per day. Allowances reset daily. Upgrade anytime if you need more capacity.

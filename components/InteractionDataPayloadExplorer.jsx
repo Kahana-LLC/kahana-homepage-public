@@ -31,7 +31,7 @@ export default function InteractionDataPayloadExplorer({ variant = "full", class
             !optedIn ? "payload-tab--active" : "payload-tab--inactive"
           }`}
         >
-          Default — anonymized
+ Default, anonymized
         </button>
         <button
           type="button"
@@ -53,7 +53,7 @@ export default function InteractionDataPayloadExplorer({ variant = "full", class
       >
         {optedIn
           ? "Includes user-identifying fields (email, user_id)."
-          : "No user block — session is anonymous at the account level."}
+ : "No user block, session is anonymous at the account level."}
       </p>
 
       <div className="mt-4 grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,280px)]">

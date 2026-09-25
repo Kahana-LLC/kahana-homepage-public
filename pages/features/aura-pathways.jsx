@@ -29,7 +29,7 @@ export default function AuraPathwaysFeaturePage() {
               <p className="mt-5 text-lg leading-relaxed text-[#5C4520] sm:text-xl">
                 Aura is scarce on purpose: five to give each day. A pathway is how you{' '}
                 <strong className="font-semibold text-[#3B2F1A]">trace what happened</strong> after
-                someone spent it—not a mysterious like count.
+ someone spent it. Not a mysterious like count.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
@@ -71,7 +71,7 @@ export default function AuraPathwaysFeaturePage() {
                   >
                     analytics
                   </Link>
-                  — enough to tell “people found this worth a scarce vote” from “this hub has
+                  . That is enough to tell “people found this worth a scarce vote” from “this hub has
                   views but no conviction.”
                 </p>
               </div>
@@ -98,8 +98,8 @@ export default function AuraPathwaysFeaturePage() {
               <div className="mt-4 space-y-4 text-lg leading-relaxed text-[#666666]">
                 <p>
                   File Aura helps noteworthy files surface in search and ranking. Hub Aura does
-                  not roll down. For You can weigh Aura as one of several signals—alongside saves,
-                  follows, and taste—not as a paid boost.
+ not roll down. For You can weigh Aura as one of several signals, alongside saves,
+ follows, and taste. Not as a paid boost.
                 </p>
                 <p>
                   You cannot give Aura to your own hubs or files. Daily budget resets at midnight
@@ -113,7 +113,7 @@ export default function AuraPathwaysFeaturePage() {
               <h2 className="text-2xl font-semibold sm:text-3xl">What a pathway is not</h2>
               <p className="mt-4 text-lg leading-relaxed text-[#666666]">
                 Aura is not money, crypto, or a star rating. It does not unlock a paywall. A
-                pathway will not show you a secret ranking formula—it shows the human trail: who
+ pathway will not show you a secret ranking formula, it shows the human trail: who
                 spent scarce recognition, on which file or hub, and that the hub felt a +1 when a
                 file did.
               </p>

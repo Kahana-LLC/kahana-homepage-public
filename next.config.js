@@ -433,6 +433,11 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: "/collaborate",
+        destination: "/collabs",
+        permanent: true,
+      },
+      {
         source: "/wall-of-love",
         destination: "/testimonials",
         permanent: true,

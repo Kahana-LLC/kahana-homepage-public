@@ -48,9 +48,9 @@ export const PRODUCT_HUNT_CELEBRATION_HEADLINE = '#4 Product of the Day';
 export const PRODUCT_HUNT_CELEBRATION_SUBLINE =
   'Thank you to everyone who supported Oasis on Product Hunt.';
 export const PRODUCT_HUNT_CELEBRATION_BANNER_DESKTOP =
-  'Oasis finished #4 Product of the Day on Product Hunt — thank you for the support.';
+ 'Oasis finished #4 Product of the Day on Product Hunt, thank you for the support.';
 export const PRODUCT_HUNT_CELEBRATION_BANNER_MOBILE =
-  '#4 on Product Hunt — thank you!';
+ '#4 on Product Hunt, thank you!';
 
 export function isProductHuntCelebrationActive() {
   if (PRODUCT_HUNT_LAUNCH_PREVIEW_MODE === 'off') return false;

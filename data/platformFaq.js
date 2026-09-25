@@ -220,7 +220,7 @@ export const FAQ_SECTIONS = [
         id: 'what-is-aura',
         question: 'What is Aura?',
         answer:
-          'Aura is how Kahana promotes quality. You automatically have up to 5 Aura to give each day. Give it to hubs or to files inside hubs—all on one target, or split across a few.\n\nAura is not money and not crypto. You can see who gave it. Because your Aura is scarce, you give it carefully. That helps the best work rise. File Aura also lifts the hub by +1 and surfaces noteworthy files in search and ranking; hub Aura does not roll down to files.\n\nYou cannot give Aura to your own hubs or files. Rules and steps: /help/how-aura-works. Philosophy: about.kahana.io/aura.',
+ 'Aura is how Kahana promotes quality. You automatically have up to 5 Aura to give each day. Give it to hubs or to files inside hubs, all on one target, or split across a few.\n\nAura is not money and not crypto. You can see who gave it. Because your Aura is scarce, you give it carefully. That helps the best work rise. File Aura also lifts the hub by +1 and surfaces noteworthy files in search and ranking; hub Aura does not roll down to files.\n\nYou cannot give Aura to your own hubs or files. Rules and steps: /help/how-aura-works. Philosophy: about.kahana.io/aura.',
       },
       {
         id: 'aura-vs-reviews',

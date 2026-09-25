@@ -24,7 +24,7 @@ export default function TestimonialsPage() {
               Oasis browser testimonials
             </h1>
             <p className="mt-4 max-w-2xl text-lg text-white/85">
-              Unfiltered feedback from people who use Oasis every day—for privacy, productivity,
+ Unfiltered feedback from people who use Oasis every day, for privacy, productivity,
               and a calmer way to browse.
             </p>
           </div>

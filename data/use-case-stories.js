@@ -20,7 +20,7 @@ export const USE_CASE_STORIES = [
     summary:
       'She turned a Pinterest workshop into a hub: session video, slides, keyword research, pin uploads, and checklists in one place people can unlock.',
     story:
-      'Kelsey runs a small business teaching Pinterest marketing. Social posts only scratch the surface. On Kahana she put the full session in a hub — the presentation, how to research keywords, how to upload pins, trend tools, idea-pin workflows, and PDFs (setup checklist, FAQs, a pin plan tracker). Buyers open one hub instead of chasing a Drive folder or a Zoom replay. She listed it on Explore and charges for access.',
+ 'Kelsey runs a small business teaching Pinterest marketing. Social posts only scratch the surface. On Kahana she put the full session in a hub, the presentation, how to research keywords, how to upload pins, trend tools, idea-pin workflows, and PDFs (setup checklist, FAQs, a pin plan tracker). Buyers open one hub instead of chasing a Drive folder or a Zoom replay. She listed it on Explore and charges for access.',
     inside: [
       'Session video and slides',
       'Keyword research video and PDF',
@@ -45,9 +45,9 @@ export const USE_CASE_STORIES = [
     price: '$30',
     stats: ['28k views', '11 files'],
     summary:
-      'She gathered internship and research advice — process, networking, interviews, LinkedIn, plus email and resume templates — so peers are not drowning in scattered internet tips.',
+ 'She gathered internship and research advice (process, networking, interviews, LinkedIn, plus email and resume templates) so peers are not drowning in scattered internet tips.',
     story:
-      'Amy (wAmy) built a hub of what she learned getting internships, full-time roles, and a research seat in a Nobel Prize lab — plus tips from friends at Caltech, MIT, and similar schools. The hub is a guide and a kit: her process, networking and interview notes, LinkedIn setup, FAQs, and copy-ready templates (resume, thank-you email, research inquiry, offer-rejection note). It is listed on Explore at a low price so students can open the whole playbook in one place.',
+ 'Amy (wAmy) built a hub of what she learned getting internships, full-time roles, and a research seat in a Nobel Prize lab, plus tips from friends at Caltech, MIT, and similar schools. The hub is a guide and a kit: her process, networking and interview notes, LinkedIn setup, FAQs, and copy-ready templates (resume, thank-you email, research inquiry, offer-rejection note). It is listed on Explore at a low price so students can open the whole playbook in one place.',
     inside: [
       'Guides: process, networking, interviews, LinkedIn, FAQs',
       'Resume template',
@@ -63,6 +63,7 @@ export const USE_CASE_STORIES = [
     initials: 'RK',
     persona: 'Writer and journal author',
     kind: 'Guided journal',
+    hook: 'Interested in Inward?',
     hubTitle: 'Inward: A 30-Day Conversation With Yourself',
     hubUrl: 'https://kahana.io/hub/ncqkaConfukeopShys9r',
     price: 'Free',
@@ -70,7 +71,7 @@ export const USE_CASE_STORIES = [
     summary:
       'She built a 30-day guided journal as a hub: thirty questions, week by week, so people can meet themselves one honest page at a time.',
     story:
-      'Rashmi published Inward as a Kahana hub instead of a one-off PDF. It is a 30-day conversation with yourself — not a diary of what happened, but thirty questions across four weeks: noticing, looking back, the inner rooms, and becoming. Ten minutes is enough. The hub holds how to use the journal plus a day-by-day structure, listed free on Explore so anyone can open it and start on page one.',
+ 'Rashmi published Inward as a Kahana hub instead of a one-off PDF. It is a 30-day conversation with yourself. Not a diary of what happened, but thirty questions across four weeks: noticing, looking back, the inner rooms, and becoming. Ten minutes is enough. The hub holds how to use the journal plus a day-by-day structure, listed free on Explore so anyone can open it and start on page one.',
     inside: [
       'How to use this journal',
       'Week 1: Noticing',

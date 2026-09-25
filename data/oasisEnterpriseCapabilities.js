@@ -4,7 +4,7 @@ export const oasisCapabilities = [
     slug: 'oasis-enterprise-external-access',
     title: 'Secure access for external collaborators',
     description:
-      'Partner and contractor work keeps landing in the browser, often on third-party devices you never issued. Oasis is a managed enterprise browser so unified browser policies and SaaS access expectations can meet people where sessions actually run—without treating hardware logistics as the only answer for every web-first role.',
+ 'Partner and contractor work keeps landing in the browser, often on third-party devices you never issued. Oasis is a managed enterprise browser so unified browser policies and SaaS access expectations can meet people where sessions actually run, without treating hardware logistics as the only answer for every web-first role.',
     details: [
       'Let external users work from their own devices when your program allows, with session-level expectations they can see and follow',
       'Shrink the set of cases where shipping machines or standing up hosted desktops is the default for browser-centric work',
@@ -15,7 +15,7 @@ export const oasisCapabilities = [
     slug: 'oasis-enterprise-governance',
     title: 'Consistent browser governance',
     description:
-      'Governance in the browser matters because if policy only follows a managed endpoint image, SaaS on unmanaged or partner-owned devices quietly drifts outside the same enforcement plane. Oasis applies unified browser governance so policies follow the session—what “good” means for extensions, data handling, and app access travels with it.',
+ 'Governance in the browser matters because if policy only follows a managed endpoint image, SaaS on unmanaged or partner-owned devices quietly drifts outside the same enforcement plane. Oasis applies unified browser governance so policies follow the session, what “good” means for extensions, data handling, and app access travels with it.',
     details: [
       'Describe browser-level expectations once, then operationalize them instead of re-litigating them project by project',
       'Align extensions, sensitive flows, and app access to the risk tiers your security team already names in other forums',

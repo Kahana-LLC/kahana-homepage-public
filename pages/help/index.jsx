@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { getAllDocsMetadata } from '../../utils/docsUtils';
 import DocCard from '../../components/DocCard';
+import LibraryMission from '../../components/marketing/LibraryMission';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import SEO from '../../components/SEO';
 import HelpFilterBar from '../../components/help/HelpFilterBar';
@@ -340,6 +341,7 @@ export default function HelpIndex({ docs = [] }) {
             </>
           )}
         </main>
+        <LibraryMission />
       </div>
     </>
   );

@@ -113,7 +113,7 @@ export function getYtcReviewSchema() {
       '@type': 'Rating',
       ratingValue: String(score),
       bestRating: String(scoreMax),
-      ratingExplanation: `${YTC_OASIS_REVIEW.scoreSystemName} — ${YTC_OASIS_REVIEW.scoreLabel} (${reviewedAt})`,
+ ratingExplanation: `${YTC_OASIS_REVIEW.scoreSystemName}, ${YTC_OASIS_REVIEW.scoreLabel} (${reviewedAt})`,
     },
     url: reviewUrl,
     itemReviewed: {

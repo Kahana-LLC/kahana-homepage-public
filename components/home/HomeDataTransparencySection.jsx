@@ -19,7 +19,7 @@ export default function HomeDataTransparencySection() {
             Respectful data collection that still makes Oasis better
           </h2>
           <p className="mt-5 max-w-3xl text-lg leading-relaxed text-[#3B2F1A]/78">
-            Oasis sends minimal interaction data to Kahana so we can improve the assistant—fix
+ Oasis sends minimal interaction data to Kahana so we can improve the assistant, fix
             bugs, measure latency, and understand what helps. By default, personalization is{" "}
             <strong>off</strong>: payloads are anonymized with no email or account ID. You only
             share identifying fields if you opt in from Settings.
@@ -27,7 +27,7 @@ export default function HomeDataTransparencySection() {
           <p className="mt-4 max-w-3xl text-base leading-relaxed text-[#3B2F1A]/72 sm:text-lg">
             Unlike Chromium browsers that can gather broad behavioral signals in the background,
             Oasis is explicit about what leaves your device. We do not build ad profiles from your
-            location, searches, likes, or purchases—sensitive context stays local.
+ location, searches, likes, or purchases, sensitive context stays local.
           </p>
 
           <p className="mt-6 text-sm text-[#3B2F1A]/70">

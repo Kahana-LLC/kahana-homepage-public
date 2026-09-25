@@ -62,6 +62,16 @@ export default function RoadmapPage({ board }) {
               Send feedback
             </a>
             {' · '}
+            <a
+              href={productHref('/roadmap?source=marketing', 'roadmap_vote')}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline decoration-[#F7F3EA]/40 underline-offset-2 hover:decoration-[#F7F3EA]"
+              onClick={() => trackButtonClick('roadmap_vote_in_app')}
+            >
+              Vote in the app
+            </a>
+            {' · '}
             <Link
               href="/features"
               className="underline decoration-[#F7F3EA]/40 underline-offset-2 hover:decoration-[#F7F3EA]"

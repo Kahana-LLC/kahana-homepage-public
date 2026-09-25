@@ -66,7 +66,12 @@ function StoryBody({ story, t, compact }) {
           <p className="mt-0.5 text-sm text-[#5C4520]">{story.persona}</p>
         </div>
       </div>
-      <p className="mt-4 text-sm font-semibold tracking-wide text-[#8A6622]">{story.kind}</p>
+      {story.hook ? (
+        <p className="mt-4 text-sm font-semibold tracking-wide text-[#8A6622]">{story.hook}</p>
+      ) : null}
+      <p className={story.hook ? 'mt-1 text-sm font-semibold tracking-wide text-[#8A6622]' : 'mt-4 text-sm font-semibold tracking-wide text-[#8A6622]'}>
+        {story.kind}
+      </p>
       <p className="mt-2 text-lg font-semibold text-[#3B2F1A]">{story.hubTitle}</p>
       <p className="mt-2 text-[#666666]">{compact ? story.summary : story.story}</p>
       <div className="mt-4 flex flex-wrap gap-2">

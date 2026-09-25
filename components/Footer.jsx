@@ -20,7 +20,9 @@ import {
   QuestionMarkCircleIcon,
   ScaleIcon,
   ShareIcon,
+  UserPlusIcon,
   ShieldCheckIcon,
+  SparklesIcon,
   Squares2X2Icon,
   RectangleStackIcon,
   TagIcon,
@@ -95,6 +97,11 @@ const RESOURCE_LINKS = [
   { href: '/blog', labelKey: 'footer.blog', icon: NewspaperIcon },
   { href: '/help', labelKey: 'footer.help', icon: QuestionMarkCircleIcon },
   { href: '/faq', labelKey: 'footer.faq', icon: ChatBubbleLeftRightIcon },
+  { href: '/why-the-aura-library-matters', label: 'Why the Aura Library matters', icon: SparklesIcon },
+  { href: '/creator-benefits', label: 'Benefits for creators', icon: UserGroupIcon },
+  { href: '/do-well', label: 'How to do well', icon: AcademicCapIcon },
+  { href: '/story-gallery', label: 'Story gallery', icon: BookOpenIcon },
+  { href: '/collabs', label: 'Creator collabs', icon: UserPlusIcon },
 ];
 
 const SECTION_ICONS = {

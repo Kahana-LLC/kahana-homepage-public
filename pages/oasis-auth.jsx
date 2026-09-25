@@ -415,7 +415,7 @@ export default function OasisAuth() {
               <p className="text-lg text-gray-700">
                 {authTransitionHero ? (
                   <>
-                    Hang tight—you may be sent to Google, Apple, or Microsoft to confirm it&apos;s you, then returned
+ Hang tight, you may be sent to Google, Apple, or Microsoft to confirm it&apos;s you, then returned
                     here to finish signing in to Oasis.
                   </>
                 ) : router?.query?.redirect === '/installations' && plan.id === 'free' ? (

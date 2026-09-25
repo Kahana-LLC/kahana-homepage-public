@@ -13,7 +13,7 @@ export default function AuraAndTrustFeaturePage() {
     <>
       <SEO
         title="Aura, trust, and information quality | Kahana"
-        description="Aura is scarce, named recognition in the Library—not a like count. See who gave it, when they joined, and what else they endorsed, so quality and access come with context."
+ description="Aura is scarce, named recognition in the Library. Not a like count. See who gave it, when they joined, and what else they endorsed, so quality and access come with context."
         url={CANONICAL}
         type="website"
       />
@@ -29,7 +29,7 @@ export default function AuraAndTrustFeaturePage() {
               <p className="mt-5 text-lg leading-relaxed text-[#5C4520] sm:text-xl">
                 Kahana is a place to arrive, not another place to scroll. Aura is how people say{' '}
                 <strong className="font-semibold text-[#3B2F1A]">I found something here</strong>
-                —and how you can inspect that signal instead of trusting a black-box count.
+                , and how you can inspect that signal instead of trusting a black-box count.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
@@ -67,7 +67,7 @@ export default function AuraAndTrustFeaturePage() {
                   anyone’s time.
                 </p>
                 <p>
-                  A hub on Kahana is a path someone made with intention—not a pile of files. Aura
+ A hub on Kahana is a path someone made with intention. Not a pile of files. Aura
                   is the pause before carrying something forward: a scarce, named act of
                   recognition, not another anonymous heart.
                 </p>
@@ -98,7 +98,7 @@ export default function AuraAndTrustFeaturePage() {
                 </p>
                 <p>
                   In that full list you can also see <strong className="font-semibold text-[#3B2F1A]">Member since</strong>
-                  —when they created their account. That helps you tell a long-standing member from
+                  , which is when they created their account. That helps you tell a long-standing member from
                   a brand-new account that only showed up on one hub.
                 </p>
                 <p>
@@ -109,8 +109,8 @@ export default function AuraAndTrustFeaturePage() {
                 </p>
                 <p>
                   Aura given to a file also lifts that hub’s count. Opening who gave from a file
-                  currently shows the hub’s givers list—people who endorsed the hub or files inside
-                  it—not a separate file-only roster.
+ currently shows the hub’s givers list, people who endorsed the hub or files inside
+ it. Not a separate file-only roster.
                 </p>
               </div>
             </FadeInSection>
@@ -119,7 +119,7 @@ export default function AuraAndTrustFeaturePage() {
               <h2 className="text-2xl font-semibold sm:text-3xl">Quality and access</h2>
               <div className="mt-4 space-y-4 text-lg leading-relaxed text-[#666666]">
                 <p>
-                  Quality improves when endorsement is scarce, named, and cross-checkable—unlike
+ Quality improves when endorsement is scarce, named, and cross-checkable, unlike
                   fake stars, anonymous likes, or untraceable volume. You can still disagree with
                   a giver. You can see who they are.
                 </p>
@@ -141,8 +141,8 @@ export default function AuraAndTrustFeaturePage() {
                   sources, read context, and follow the hub as a path.
                 </p>
                 <p>
-                  Identity on a listing—who shared the hub, and a check mark if they finished Stripe
-                  Identity—is a different question.{' '}
+ Identity on a listing, who shared the hub, and a check mark if they finished Stripe
+ Identity, is a different question.{' '}
                   <Link
                     href="/verifiable-credibility"
                     className="font-medium text-[#8A6622] underline-offset-4 hover:underline"

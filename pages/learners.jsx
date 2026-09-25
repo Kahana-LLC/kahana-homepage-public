@@ -11,6 +11,7 @@ import FeaturesAudienceInvite from '../components/features/FeaturesAudienceInvit
 import UseCasesAudienceInvite from '../components/use-cases/UseCasesAudienceInvite';
 import FeatureCatalogCard from '../components/features/FeatureCatalogCard';
 import { FEATURES } from '../data/marketingTaxonomy';
+import LibraryMission from '../components/marketing/LibraryMission';
 
 const CANONICAL = `${ABOUT_ORIGIN}/learners`;
 
@@ -124,6 +125,7 @@ export default function LearnersPage() {
         <UseCasesAudienceInvite t={t} audience="learner" />
 
         <ComparePageInvite t={t} href="/compare?view=learner" />
+        <LibraryMission />
 
         <section className="bg-[#3B2F1A] px-6 py-20 text-[#F7F3EA] sm:px-10 lg:px-16">
           <div className="mx-auto max-w-2xl text-center">

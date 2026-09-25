@@ -1,4 +1,5 @@
 import UseCasesCatalog from '../../components/use-cases/UseCasesCatalog';
+import LibraryMission from '../../components/marketing/LibraryMission';
 import SEO from '../../components/SEO';
 import FadeInSection from '../../components/FadeInSection';
 import { ABOUT_ORIGIN } from '../../config/site';
@@ -37,6 +38,7 @@ export default function UseCasesIndexPage() {
             <UseCasesCatalog t={t} />
           </div>
         </section>
+        <LibraryMission />
       </div>
     </>
   );

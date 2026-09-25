@@ -67,7 +67,6 @@ export default function OasisExternalReviewSection() {
             <blockquote className="rounded-xl border border-oasis-green-800/10 bg-oasis-green-50/60 p-5">
               <p className="text-oasis-green-800 leading-relaxed">&ldquo;{pullQuote}&rdquo;</p>
               <footer className="mt-3 text-sm text-oasis-green-800/75">
-                —{' '}
                 <a
                   href={authorLinkedIn}
                   target="_blank"

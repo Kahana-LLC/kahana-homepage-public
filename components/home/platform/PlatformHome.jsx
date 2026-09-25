@@ -37,6 +37,7 @@ import AuraLikeAnimation from './AuraLikeAnimation';
 import RainbowHoverCard from './RainbowHoverCard';
 import FaqBrowse from '../../faq/FaqBrowse';
 import UseCaseStoryCards from '../../use-cases/UseCaseStoryCards';
+import LibraryMission from '../../marketing/LibraryMission';
 import CategoryMarquee from './CategoryMarquee';
 import UseWithMarquee from '../../compare/UseWithMarquee';
 import { EXPLORE_CATEGORIES } from '../../../data/exploreCategories';
@@ -490,16 +491,24 @@ export default function PlatformHome() {
           <h2 className="text-3xl font-semibold sm:text-4xl">{t('home.storiesTitle')}</h2>
           <p className="mt-3 max-w-2xl text-lg text-[#666666]">{t('home.storiesLead')}</p>
           <UseCaseStoryCards t={t} compact />
-          <p className="mt-8">
+          <p className="mt-8 flex flex-wrap gap-x-4 gap-y-2">
             <Link
-              href="/success-stories"
+              href="/story-gallery"
               className="text-base font-medium text-[#8A6622] no-underline underline-offset-4 hover:underline"
             >
               {t('home.storiesSeeAll')}
             </Link>
+            <Link
+              href="/success-stories"
+              className="text-base font-medium text-[#8A6622] no-underline underline-offset-4 hover:underline"
+            >
+              {t('home.storiesPageTitle')}
+            </Link>
           </p>
         </FadeInSection>
       </SectionShell>
+
+      <LibraryMission />
 
       <SectionShell id="how-it-works" className="border-t border-[#E4D9C4]">
         <FadeInSection>

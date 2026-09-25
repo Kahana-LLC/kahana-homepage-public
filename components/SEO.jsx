@@ -13,7 +13,7 @@ import { getCloudinaryImageUrl } from '../utils/cloudinary-mapper';
 const DEFAULT_ORG_LOGO = getCloudinaryImageUrl('/assets/kahana_logo_transparent.svg');
 
 /** Marketing home copy — keep in sync with homepage hero / PLATFORM_FAQ voice. */
-export const DEFAULT_SEO_TITLE = 'Kahana — digital library for ebooks, hubs, and clubs';
+export const DEFAULT_SEO_TITLE = 'Kahana, digital library for ebooks, hubs, and clubs';
 export const DEFAULT_SEO_DESCRIPTION =
   'Kahana is a digital library for ebooks, videos, and files in curated hubs. Create, share, and discover on kahana.io.';
 /**

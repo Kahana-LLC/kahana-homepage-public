@@ -45,7 +45,7 @@ export default function TrainingDoc({ doc }) {
       <aside className="my-8 scroll-mt-24 rounded-r-lg border-l-4 border-[#8BA500] bg-[#EDE6D2] p-6 not-prose">
         <strong className="mb-2 block text-[#3B2F1A]">At a glance</strong>
         <p className="m-0 text-[#3B2F1A]/85 leading-relaxed">
-          <strong>Anonymous training still uploads feedback to Kahana</strong> when you submit—the
+ <strong>Anonymous training still uploads feedback to Kahana</strong> when you submit, the
           difference is that your <strong>user ID is not attached to that training record</strong>.
           This is not on-device-only model training. Details:{" "}
           <a
@@ -62,7 +62,7 @@ export default function TrainingDoc({ doc }) {
           Example training payloads (JSON)
         </h2>
         <p className="mt-4 text-[#3B2F1A]/85 leading-relaxed">
-          Real-shaped submission objects sent to Kahana when you submit training—not stored only
+ Real-shaped submission objects sent to Kahana when you submit training. Not stored only
           on your device. Fields include <code className="rounded bg-[#EDE6D2] px-1 text-sm">category</code>,{" "}
           <code className="rounded bg-[#EDE6D2] px-1 text-sm">badges</code>, required{" "}
           <code className="rounded bg-[#EDE6D2] px-1 text-sm">comment</code>, and{" "}
@@ -93,12 +93,12 @@ export default function TrainingDoc({ doc }) {
         </aside>
 
         <h3 className="mt-8 text-lg font-bold text-oasis-green-800">
-          Example 1 — answer quality (anonymous)
+ Example 1, answer quality (anonymous)
         </h3>
         <p className="mt-2 text-sm text-[#3B2F1A]/85">
           Helpful + Fast describe this reply. The comment states the reason in plain language.{" "}
           <code className="rounded bg-[#EDE6D2] px-1 text-sm">training_mode: &quot;anonymous&quot;</code>{" "}
-          means no user ID on the training record—the payload is still uploaded on Submit.
+ means no user ID on the training record, the payload is still uploaded on Submit.
         </p>
         <div className="payload-explorer mt-4">
           <pre className="payload-json m-0 max-h-[28rem] min-w-0 overflow-x-hidden overflow-y-auto rounded-lg border border-[#3B2F1A]/12 bg-[#1e2410] p-4 text-xs leading-relaxed text-[#e8f0dc] sm:text-sm">
@@ -109,7 +109,7 @@ export default function TrainingDoc({ doc }) {
         </div>
 
         <h3 className="mt-10 text-lg font-bold text-oasis-green-800">
-          Example 2 — behavior preference (personalized, illustrative)
+ Example 2, behavior preference (personalized, illustrative)
         </h3>
         <p className="mt-2 text-sm text-[#3B2F1A]/85">
           Same JSON shape. <code className="rounded bg-[#EDE6D2] px-1 text-sm">category</code> and
@@ -131,7 +131,7 @@ export default function TrainingDoc({ doc }) {
 
         <p className="mt-4 text-sm text-[#3B2F1A]/85">
           A dedicated <code className="rounded bg-[#EDE6D2] px-1 text-sm">preference_type</code>{" "}
-          field is not in the payload yet—use{" "}
+ field is not in the payload yet, use{" "}
           <a href="#preference-type" className="font-semibold text-[#8A6622] no-underline hover:underline">
             Preference type and scope
           </a>{" "}

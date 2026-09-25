@@ -182,8 +182,8 @@ export function OasisAmplifierStory() {
       <div className="leading-relaxed text-base space-y-4">
         <p>
           Most assistants miss the mark on real work: too slow, too wrong, or tuned for demos.{' '}
-          <span className="font-semibold text-oasis-green-800">Training</span> in Oasis is where you react in context—tags,
-          notes, thumbs, and flows like training on a specific reply—so we can steer quality toward{' '}
+ <span className="font-semibold text-oasis-green-800">Training</span> in Oasis is where you react in context, tags,
+ notes, thumbs, and flows like training on a specific reply, so we can steer quality toward{' '}
           <span className="font-semibold text-oasis-green-800">smarter, more accurate, and faster</span> answers for you.
           Qualifying training can also add bonus tokens to your daily balance; caps and rules follow your Oasis plan.
         </p>
@@ -192,7 +192,7 @@ export function OasisAmplifierStory() {
           loop: signal grounded in real conversations, not vibes. Today that signal is tied to your account and the
           interaction you rate. Later, we plan explicit <span className="font-semibold text-oasis-green-800">anonymous</span>{' '}
           and <span className="font-semibold text-oasis-green-800">personalized</span> training modes so you can choose how
-          much identity rides with the payload—roadmap, not a promise of ship dates.
+ much identity rides with the payload, roadmap, not a promise of ship dates.
         </p>
         <p>
           Consistent, specific feedback over <span className="font-semibold text-[#7a9200]">30, 60, and 90 days</span> is
@@ -227,7 +227,7 @@ export function OasisAmplifierVisuals() {
         <h3 className="text-lg font-bold text-oasis-green-800 mb-1">Better speed, accuracy, and quality for you</h3>
         <p className="text-sm text-oasis-green-800/80 mb-2">
           Concept only: as Training piles up, we expect the assistant to feel sharper, steadier, and quicker on the work
-          you actually do. The three lines are placeholders for speed, accuracy, and overall quality—not a guarantee, live
+ you actually do. The three lines are placeholders for speed, accuracy, and overall quality. Not a guarantee, live
           dashboard, or your measured trajectory.
         </p>
         <ChartDataTable />

@@ -235,7 +235,7 @@ export default function Pricing() {
 
             <p className="mx-auto mt-10 max-w-2xl text-center text-sm text-[#666666] sm:text-base">
               Prices are in $ USD. Kahana earns 5% whenever anyone pays to access
-              a monetized hub — the same on Free and Growth.
+ a monetized hub, the same on Free and Growth.
             </p>
           </div>
         </section>
@@ -355,7 +355,7 @@ export default function Pricing() {
               <p className="mt-3 text-base leading-relaxed text-[#666666]">
                 Stay on Free until you hit a limit (4th hub, upload cap, files
                 over ~5&nbsp;MB) or want live chat. You can list on Library and
-                sell with Stripe on Free — Growth is capacity and support, not
+ sell with Stripe on Free, Growth is capacity and support, not
                 permission to monetize. The 5% marketplace fee is the same on
                 both plans.
               </p>

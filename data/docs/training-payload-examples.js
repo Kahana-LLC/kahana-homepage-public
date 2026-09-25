@@ -103,7 +103,7 @@ export const TRAINING_PAYLOAD_FIELD_REFERENCE = [
   {
     path: "badges",
     description:
-      "Quick reaction tags on this reply (e.g. Helpful, Fast). They say how the answer felt—not by themselves whether a rule should apply globally.",
+ "Quick reaction tags on this reply (e.g. Helpful, Fast). They say how the answer felt. Not by themselves whether a rule should apply globally.",
     when: "Always; at least one required to qualify for bonus tokens",
   },
   {

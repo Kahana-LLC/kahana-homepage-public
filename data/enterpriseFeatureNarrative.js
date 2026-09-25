@@ -12,7 +12,7 @@ export const enterpriseFeatureNarrativeBySlug = {
     marketTension:
       'Work and contractor access increasingly run in the browser, often from third-party devices. When controls are anchored mainly in corporate endpoints, those browser sessions can sit outside the same unified policy story.',
     promiseBridge:
-      'Oasis is a managed enterprise browser that extends unified browser policies into the session—so external collaborators can use their own devices when your program allows, without treating laptops or hosted desktops as the default for every web-first role.',
+ 'Oasis is a managed enterprise browser that extends unified browser policies into the session, so external collaborators can use their own devices when your program allows, without treating laptops or hosted desktops as the default for every web-first role.',
     relatedSlugs: [
       'oasis-enterprise-governance',
       'oasis-enterprise-identity-dlp',
@@ -40,7 +40,7 @@ export const enterpriseFeatureNarrativeBySlug = {
     marketTension:
       'Identity answers who is in the session; DLP and data-protection platforms describe what sensitive information is allowed to do. Those signals often stop short of SaaS and web work that lives in the tab.',
     promiseBridge:
-      'Oasis is designed so identity and DLP investments reach into browsing and SaaS access where your stack supports integration—keeping session behavior legible to security teams and auditors.',
+ 'Oasis is designed so identity and DLP investments reach into browsing and SaaS access where your stack supports integration, keeping session behavior legible to security teams and auditors.',
     relatedSlugs: [
       'oasis-enterprise-governance',
       'oasis-enterprise-external-access',
@@ -54,7 +54,7 @@ export const enterpriseFeatureNarrativeBySlug = {
     marketTension:
       'Onboarding still often defaults to shipping hardware or standing up virtual desktops, even when the real delay is simply reaching sanctioned SaaS through the browser.',
     promiseBridge:
-      'Identity-driven access and governed browser sessions can shift energy off linear device logistics for web-first roles—while other workloads may still need different delivery models.',
+ 'Identity-driven access and governed browser sessions can shift energy off linear device logistics for web-first roles, while other workloads may still need different delivery models.',
     relatedSlugs: [
       'oasis-enterprise-external-access',
       'oasis-enterprise-governance',

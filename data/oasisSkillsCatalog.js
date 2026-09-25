@@ -52,7 +52,7 @@ export const oasisSkillsCatalog = [
     id: 'semantic-history',
     name: 'Semantic search and history',
     category: 'History',
-    description: 'Find pages by meaning—not only exact keywords—when you half-remember a visit.',
+ description: 'Find pages by meaning (not only exact keywords) when you half-remember a visit.',
     examplePrompts: ['Find that article about…', 'What did I read about… last week?', 'Search my history for…'],
     aliases: ['browsing history', 'past visits', 'what did I read'],
     tags: ['history', 'search', 'semantic', 'recall'],

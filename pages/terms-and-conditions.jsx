@@ -68,7 +68,7 @@ export default function TermsAndConditions() {
                 Last Updated: July 15, 2026
               </p>
               <p className="text-gray-700 leading-relaxed mb-6">
-                We appreciate your interest in Kahana Group Inc. ("we," "our," or "us") and the Kahana Service. The "Service" means our websites and web applications—including surfaces on kahana.io (such as about.kahana.io and related corporate properties), the product application at app.kahana.io, and additional related services we provide—that together offer Kahana&apos;s Digital Library of curated hubs. These Terms of Service constitute a legally binding agreement between you and Kahana Group Inc. that governs your access to and use of the Service.
+ We appreciate your interest in Kahana Group Inc. ("we," "our," or "us") and the Kahana Service. The "Service" means our websites and web applications (including surfaces on kahana.io (such as about.kahana.io and related corporate properties), the product application at app.kahana.io, and additional related services we provide) that together offer Kahana&apos;s Digital Library of curated hubs. These Terms of Service constitute a legally binding agreement between you and Kahana Group Inc. that governs your access to and use of the Service.
               </p>
             </section>
 
@@ -103,7 +103,7 @@ export default function TermsAndConditions() {
                 <li>Create, organize, and collaborate on hubs with roles and invites;</li>
                 <li>Make hubs private or public, and list eligible hubs on Explore for discovery;</li>
                 <li>Maintain a creator profile and engage with follows, saves, and related social features;</li>
-                <li>Give and receive Aura—a scarce community endorsement signal for hubs (Aura is not money, crypto, or payment);</li>
+ <li>Give and receive Aura, a scarce community endorsement signal for hubs (Aura is not money, crypto, or payment);</li>
                 <li>Optionally monetize access to a hub through paid checkout powered by Stripe Connect, subject to fees published on our pricing page or displayed at checkout; and</li>
                 <li>Subscribe to paid Kahana plans (such as Growth) for additional capacity or support where offered.</li>
               </ul>
@@ -217,7 +217,7 @@ export default function TermsAndConditions() {
                 Creators and other users may unpublish, delete, edit, restrict, or otherwise change hubs and content at any time. Kahana Group Inc. does not control all User Content and does not guarantee that Purchased Access content will remain available, complete, accurate, or unchanged. Kahana Group Inc. is not responsible for the quality, legality, usefulness, or permanence of creator-provided content.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
-                <strong>To the maximum extent permitted by applicable law, if you purchase access to a hub or other content and that content is later removed, taken down, restricted, or made unavailable—including because the creator removes it—you are not entitled to a refund, credit, or other compensation, and Kahana Group Inc. has no liability to you for such unavailability or for any resulting loss of access.</strong> Your sole remedy, except where non-waivable law requires otherwise, is to stop using the affected content.
+ <strong>To the maximum extent permitted by applicable law, if you purchase access to a hub or other content and that content is later removed, taken down, restricted, or made unavailable (including because the creator removes it) you are not entitled to a refund, credit, or other compensation, and Kahana Group Inc. has no liability to you for such unavailability or for any resulting loss of access.</strong> Your sole remedy, except where non-waivable law requires otherwise, is to stop using the affected content.
               </p>
               <p className="text-gray-700 leading-relaxed mb-6">
                 Without limiting Section 15 (Disclaimers and No Warranties) or Section 16 (Limitation of Liability), Kahana Group Inc. will not be liable for any claim arising from Purchased Access, including claims based on inability to access purchased hubs or content, creator removal or modification of content, or dissatisfaction with purchased materials.
@@ -314,7 +314,7 @@ export default function TermsAndConditions() {
                 <li>(c) a reasonable person would not consider your User Content to be objectionable, profane, indecent, pornographic, harassing, threatening, embarrassing, hateful, or otherwise inappropriate.</li>
               </ul>
               <p className="text-gray-700 leading-relaxed mb-6">
-                Before a hub is made unlisted, listed on Explore, or monetized (or when you upload into a hub that already is), you must confirm that you have the right to share—and, if monetizing, to sell access to—the content in that hub, including any required attribution or license notices. Practical guidance on public domain works, open licenses, trusted sources, and reporting suspected infringement is available in our{' '}
+ Before a hub is made unlisted, listed on Explore, or monetized (or when you upload into a hub that already is), you must confirm that you have the right to share (and, if monetizing, to sell access to) the content in that hub, including any required attribution or license notices. Practical guidance on public domain works, open licenses, trusted sources, and reporting suspected infringement is available in our{' '}
                 <Link href="/help/content-rights" className="text-[#8A6622] no-underline hover:no-underline font-semibold">
                   Content Rights guide
                 </Link>

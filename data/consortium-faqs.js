@@ -107,7 +107,7 @@ export const CONSORTIUM_FAQS = [
     id: "why-signal-private-messaging",
     category: "Membership",
     question: "Why Signal for private group messaging?",
-    lead: "Signal is a free, nonprofit messaging app for private chats and small groups—not a public social network. The consortium uses it for intake and working discussions because it is built for confidential peer communication.",
+ lead: "Signal is a free, nonprofit messaging app for private chats and small groups. Not a public social network. The consortium uses it for intake and working discussions because it is built for confidential peer communication.",
     paragraphs: [
       "End-to-end encryption. Minimal metadata collection. No corporate infrastructure to breach. Members control their privacy and data. New to Signal? Download here and consider usernames and phone-number privacy settings before you reach out to join.",
     ],
@@ -166,7 +166,7 @@ export const CONSORTIUM_FAQS = [
           },
           {
             label: "Context without identifiers",
-            text: "Share context without identifiers—for example, “I'm at a mid-size healthcare company,” not “I'm at Memorial Hospital.”",
+ text: "Share context without identifiers, for example, “I'm at a mid-size healthcare company,” not “I'm at Memorial Hospital.”",
           },
           {
             label: "Role",
@@ -252,7 +252,7 @@ export const CONSORTIUM_FAQS = [
     id: "participation-confidential",
     category: "Participation",
     question: "Will my participation be confidential?",
-    lead: "Yes. Chatham House Rule applies—information can be used for learning, never attributed to individuals or organizations without permission. Signal provides end-to-end encryption. Anonymous usernames are strongly recommended. Phone numbers remain private. Member lists are not disclosed publicly.",
+ lead: "Yes. Chatham House Rule applies, information can be used for learning, never attributed to individuals or organizations without permission. Signal provides end-to-end encryption. Anonymous usernames are strongly recommended. Phone numbers remain private. Member lists are not disclosed publicly.",
     supplementaryLinks: [
       {
         label: "Chatham House: the Chatham House Rule",

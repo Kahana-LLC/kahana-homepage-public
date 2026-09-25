@@ -8,7 +8,7 @@ export const AURA_PAGE_CANONICAL = 'https://about.kahana.io/aura';
 export const AURA_SEO = {
   title: 'Aura | Kahana',
   description:
-    'Aura is how Kahana promotes quality: a scarce daily endorsement you control. Give it to hubs or to files inside hubs—file Aura rolls up to the hub and surfaces noteworthy work in search.',
+ 'Aura is how Kahana promotes quality: a scarce daily endorsement you control. Give it to hubs or to files inside hubs, file Aura rolls up to the hub and surfaces noteworthy work in search.',
 };
 
 /** How Aura works (shown above the live trail). */

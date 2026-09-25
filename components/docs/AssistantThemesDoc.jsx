@@ -14,7 +14,7 @@ export default function AssistantThemesDoc({ gallery = [] }) {
         <h2 className="text-2xl font-bold text-oasis-green-800">What this is</h2>
         <p className="text-[#3B2F1A]/85 leading-relaxed">
           Pick among several <strong>light</strong> and <strong>dark</strong> themes for assistant chrome. Your
-          choice is stored and reapplied via the assistant bridge so the panel matches your taste—not only macOS
+ choice is stored and reapplied via the assistant bridge so the panel matches your taste. Not only macOS
           light/dark.
         </p>
         <p className="text-[#3B2F1A]/85 leading-relaxed">
@@ -34,7 +34,7 @@ export default function AssistantThemesDoc({ gallery = [] }) {
             Open the <strong>theme</strong> picker from the assistant header menu.
           </li>
           <li>Preview schemes; pick one per appearance mode if offered.</li>
-          <li>Themes do not change web page content colors—only the assistant UI chrome.</li>
+ <li>Themes do not change web page content colors, only the assistant UI chrome.</li>
         </ul>
       </section>
 

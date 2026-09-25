@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import FeaturesCatalog from '../../components/features/FeaturesCatalog';
+import LibraryMission from '../../components/marketing/LibraryMission';
 import SEO from '../../components/SEO';
 import FadeInSection from '../../components/FadeInSection';
 import { ABOUT_ORIGIN } from '../../config/site';
@@ -69,6 +70,15 @@ export default function FeaturesIndexPage() {
                 >
                   {t('featuresPage.roadmap')}
                 </Link>
+                <a
+                  href={productHref('/roadmap?source=features', 'features_vote_roadmap')}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="compare-filter-chip compare-filter-chip--off no-underline"
+                  onClick={() => trackButtonClick('features_vote_roadmap')}
+                >
+                  {t('featuresPage.voteRoadmap')}
+                </a>
               </div>
             </FadeInSection>
           </div>
@@ -78,6 +88,7 @@ export default function FeaturesIndexPage() {
             <FeaturesCatalog t={t} />
           </div>
         </section>
+        <LibraryMission />
       </div>
     </>
   );

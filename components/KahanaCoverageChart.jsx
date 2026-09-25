@@ -13,7 +13,7 @@ function PresenceCell({ value }) {
       }`}
       title={supported ? 'Supported, first-class product job' : 'Not a first-class product job'}
     >
-      {supported ? 'Yes' : '—'}
+ {supported ? 'Yes' : 'No'}
     </span>
   );
 }

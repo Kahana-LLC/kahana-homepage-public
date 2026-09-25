@@ -137,7 +137,7 @@ export default function OasisBrowserFeatureVisuals() {
                 Assistant themes
               </h2>
               <p className="text-oasis-green-800/95 leading-relaxed">
-                Pick light or dark schemes for the assistant panel. Themes affect assistant chrome only—not the colors
+ Pick light or dark schemes for the assistant panel. Themes affect assistant chrome only. Not the colors
                 of the web pages you browse.
               </p>
               <p className="mt-3">

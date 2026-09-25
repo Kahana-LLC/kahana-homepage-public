@@ -33,6 +33,13 @@ const staticSitemapSections = [
       { text: 'Gain exposure', href: '/gain-exposure' },
       { text: 'Help others learn', href: '/help-others-learn' },
       { text: 'Earn money', href: '/earn-money' },
+      { text: 'Why the Aura Library matters', href: '/why-the-aura-library-matters' },
+      { text: 'Benefits for creators', href: '/creator-benefits' },
+      { text: 'How to do well', href: '/do-well' },
+      { text: 'Story gallery', href: '/story-gallery' },
+      { text: 'Creator collabs', href: '/collabs' },
+      { text: 'Discussions', href: '/features/discussions' },
+      { text: 'Talk beside the files', href: '/use-cases/hub-discussions' },
     ],
   },
   {

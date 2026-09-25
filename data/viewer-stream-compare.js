@@ -51,5 +51,5 @@ export const VIEWER_KAHANA = {
   name: 'Kahana',
   access: 'Free to browse the Library',
   ads: 'Zero ads. We do not sell your attention.',
-  catalog: 'Hubs, ebooks, files, clubs — a library, not a TV app',
+ catalog: 'Hubs, ebooks, files, clubs, a library, not a TV app',
 };
