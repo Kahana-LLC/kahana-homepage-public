@@ -29,6 +29,7 @@ import {
   ArrowsRightLeftIcon,
   AcademicCapIcon,
   UserGroupIcon,
+  BanknotesIcon,
 } from '@heroicons/react/24/outline';
 import { ConsentContext } from '../contexts/ConsentContext';
 import { useMarketingI18n } from '../contexts/MarketingI18n';
@@ -102,6 +103,7 @@ const RESOURCE_LINKS = [
   { href: '/do-well', label: 'How to do well', icon: AcademicCapIcon },
   { href: '/story-gallery', label: 'Story gallery', icon: BookOpenIcon },
   { href: '/collabs', label: 'Creator collabs', icon: UserPlusIcon },
+  { href: '/affiliates', label: 'Affiliates', icon: BanknotesIcon },
 ];
 
 const SECTION_ICONS = {

@@ -27,6 +27,7 @@ import ConsentBanner from "../components/ConsentBanner";
 import ConsentErrorBoundary from "../components/ConsentErrorBoundary";
 
 import Footer from "../components/Footer";
+import AffiliateNudge from "../components/marketing/AffiliateNudge";
 import NavbarDup from "../components/NavbarDup";
 
 /** Code-split cookie modal only; nav stays in the main graph with footer/wordmark. */
@@ -358,6 +359,7 @@ function AppContent({ Component, pageProps }) {
           <Component key={router.asPath} {...pageProps} />
         </main>
         {!isLinktreePage ? <Footer /> : null}
+        {!isLinktreePage ? <AffiliateNudge /> : null}
         {showProductHuntBanner ? <GlobalBanner /> : null}
       </div>
       <ConsentErrorBoundary>

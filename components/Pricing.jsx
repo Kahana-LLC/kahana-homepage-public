@@ -375,6 +375,13 @@ export default function Pricing() {
                 >
                   Open Billing
                 </a>
+                {' · '}
+                <Link
+                  href="/affiliates"
+                  className="font-medium text-[#8A6622] no-underline underline-offset-4 hover:underline"
+                >
+                  Earn 20% as an affiliate
+                </Link>
               </p>
             </div>
           </div>

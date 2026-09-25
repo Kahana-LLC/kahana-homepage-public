@@ -126,7 +126,11 @@ export default function EarnMoneyPage() {
                 Anyone can copy an affiliate link in the app. If someone signs up through it and
                 pays for Growth, you earn 20% of that subscription. If they sell hubs, you earn
                 1% of those sales (20% of Kahana&apos;s 5% fee). Payouts use the same Stripe
-                Connect account as hub sales.
+                Connect account as hub sales. The full steps are on the{' '}
+                <Link href="/affiliates" className="text-[#8A6622] underline underline-offset-2">
+                  affiliate page
+                </Link>
+                .
               </p>
               <p className="mt-6">
                 <a

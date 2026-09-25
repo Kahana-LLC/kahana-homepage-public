@@ -50,6 +50,7 @@ function absoluteCorporateUrl(path = '/') {
     '/gain-exposure',
     '/help-others-learn',
     '/earn-money',
+    '/affiliates',
     '/success-stories',
     '/compare',
     '/creators',

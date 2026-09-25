@@ -102,6 +102,10 @@ export default function CreatorBenefitsPage() {
             <Link href="/collabs" className="underline underline-offset-2">
               Creator collabs
             </Link>
+            {' · '}
+            <Link href="/affiliates" className="underline underline-offset-2">
+              Affiliates
+            </Link>
           </p>
         </DarkLibraryCta>
       </div>

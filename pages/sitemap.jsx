@@ -38,6 +38,7 @@ const staticSitemapSections = [
       { text: 'How to do well', href: '/do-well' },
       { text: 'Story gallery', href: '/story-gallery' },
       { text: 'Creator collabs', href: '/collabs' },
+      { text: 'Affiliates', href: '/affiliates' },
       { text: 'Discussions', href: '/features/discussions' },
       { text: 'Talk beside the files', href: '/use-cases/hub-discussions' },
     ],

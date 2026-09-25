@@ -79,6 +79,7 @@ function pathPreservePrefixes(origins) {
     { prefix: '/gain-exposure', origin: origins.about },
     { prefix: '/help-others-learn', origin: origins.about },
     { prefix: '/earn-money', origin: origins.about },
+    { prefix: '/affiliates', origin: origins.about },
     { prefix: '/success-stories', origin: origins.about },
     { prefix: '/compare', origin: origins.about },
     { prefix: '/creators', origin: origins.about },

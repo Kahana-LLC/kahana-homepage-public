@@ -71,6 +71,7 @@ function generateSiteMap() {
     ['/do-well', 'weekly', '0.7'],
     ['/story-gallery', 'weekly', '0.8'],
     ['/collabs', 'weekly', '0.8'],
+    ['/affiliates', 'weekly', '0.8'],
     ['/success-stories', 'weekly', '0.8'],
     ['/compare', 'weekly', '0.8'],
     ['/creators', 'weekly', '0.8'],
