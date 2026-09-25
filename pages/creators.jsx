@@ -77,6 +77,31 @@ export default function CreatorsPage() {
         </section>
 
         <section className="border-t border-[#E4D9C4] px-6 py-16 sm:px-10 lg:px-16">
+          <div className="mx-auto max-w-3xl">
+            <FadeInSection eager>
+              <h2 className="text-2xl font-semibold sm:text-3xl">{t('creatorsPage.besideTitle')}</h2>
+              <p className="mt-4 text-lg leading-relaxed text-[#666666]">{t('creatorsPage.besideBody')}</p>
+              <p className="mt-4 text-lg leading-relaxed text-[#666666]">
+                People who want the longer work can talk beside the files, gather in a club, and you
+                can see what they actually open.{' '}
+                <Link href="/features/discussions" className="text-[#8A6622] underline underline-offset-2">
+                  Discussion
+                </Link>
+                ,{' '}
+                <Link href="/features/clubs" className="text-[#8A6622] underline underline-offset-2">
+                  clubs
+                </Link>
+                , and{' '}
+                <Link href="/features/analytics" className="text-[#8A6622] underline underline-offset-2">
+                  analytics
+                </Link>{' '}
+                sit with the hub.
+              </p>
+            </FadeInSection>
+          </div>
+        </section>
+
+        <section className="border-t border-[#E4D9C4] px-6 py-16 sm:px-10 lg:px-16">
           <FadeInSection eager>
             <CreatorStackLedger t={t} />
           </FadeInSection>

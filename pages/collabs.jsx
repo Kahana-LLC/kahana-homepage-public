@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import SEO from '../components/SEO';
 import FadeInSection from '../components/FadeInSection';
 import EssaySeriesNav from '../components/marketing/EssaySeriesNav';
@@ -12,7 +13,7 @@ const CANONICAL = `${ABOUT_ORIGIN}/collabs`;
 const STEPS = [
   {
     title: 'You bring something only you know',
-    body: 'A process, a course, a body of research, a practice. Heady subjects welcome: ideas, craft, careers, science, writing, the kind of knowledge that takes a person to hold. Everyone has something unique. The library is looking for that, not a copy of what is already everywhere.',
+    body: 'A process, a course, a body of research, a practice. Ideas, craft, careers, science, writing: the kind of knowledge that takes a person to hold. Everyone has something unique. The library is looking for that, not a copy of what is already everywhere.',
   },
   {
     title: 'We help you shape the hub',
@@ -27,6 +28,36 @@ const STEPS = [
     body: 'Once it is up, we feature it and help it get extra views and extra traffic. Aura from readers is still what makes work rise. Featuring is a start, not a substitute for work people actually find useful.',
   },
 ];
+
+const READER_FLAGS = [
+  ['United States', '🇺🇸'],
+  ['Canada', '🇨🇦'],
+  ['Mexico', '🇲🇽'],
+  ['Brazil', '🇧🇷'],
+  ['Argentina', '🇦🇷'],
+  ['United Kingdom', '🇬🇧'],
+  ['France', '🇫🇷'],
+  ['Germany', '🇩🇪'],
+  ['Spain', '🇪🇸'],
+  ['Italy', '🇮🇹'],
+  ['Nigeria', '🇳🇬'],
+  ['Kenya', '🇰🇪'],
+  ['South Africa', '🇿🇦'],
+  ['Egypt', '🇪🇬'],
+  ['India', '🇮🇳'],
+  ['China', '🇨🇳'],
+  ['Japan', '🇯🇵'],
+  ['South Korea', '🇰🇷'],
+  ['Philippines', '🇵🇭'],
+  ['Indonesia', '🇮🇩'],
+  ['Australia', '🇦🇺'],
+  ['United Arab Emirates', '🇦🇪'],
+  ['Israel', '🇮🇱'],
+  ['Sweden', '🇸🇪'],
+];
+
+const AMY_HUB = 'https://kahana.io/hub/UMKtgp76MN1MvZuD6p7W';
+const AMY_YOUTUBE = 'https://www.youtube.com/@wamyy5';
 
 const READING = [
   {
@@ -59,10 +90,18 @@ export default function CollaboratePage() {
   return (
     <>
       <SEO
-        title="Creator collabs | Kahana"
-        description="The Library needs to be built with your help. Work with Kahana to set up a free or priced hub, publish it, and get help reaching readers in 110+ countries."
+        title="Creator collabs | Build a Kahana hub with us"
+        description="Work with Kahana to set up a free or priced hub, publish it yourself, and reach readers in 110+ countries. See Amy Wang’s internship hub as the example."
         url={CANONICAL}
         type="website"
+        schema={{
+          '@context': 'https://schema.org',
+          '@type': 'WebPage',
+          name: 'Creator collabs',
+          description:
+            'Work with Kahana to set up a free or priced hub and reach readers in 110+ countries.',
+          url: CANONICAL,
+        }}
       />
 
       <div className="bg-[#F7F3EA] text-[#3B2F1A]">
@@ -81,6 +120,16 @@ export default function CollaboratePage() {
                 countries. Joining means adding something only you can add, and helping the next
                 person find it.
               </p>
+              <ul
+                className="mx-auto mt-8 flex max-w-xl flex-wrap justify-center gap-2"
+                aria-label="A sample of countries readers already come from. Kahana reaches 110 or more."
+              >
+                {READER_FLAGS.map(([name, flag]) => (
+                  <li key={name} title={name} aria-label={name} className="text-2xl leading-none">
+                    <span aria-hidden>{flag}</span>
+                  </li>
+                ))}
+              </ul>
               <EssaySeriesNav current="/collabs" />
             </FadeInSection>
           </div>
@@ -129,8 +178,9 @@ export default function CollaboratePage() {
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-[#666666]">
                 Some creators want a free hub people can open immediately. Some want a priced hub
-                and a path to earnings. Both are welcome. The Kahana team helps you set up and
-                publish a hub that is ready for the library.
+                and a path to earnings. Both are welcome. A class, a workshop, or a tutorial series
+                you already share on social can become the hub. The Kahana team helps you set it up
+                and publish it so it is ready for the library.
               </p>
             </FadeInSection>
             <ol className="mt-12 flex flex-col gap-10">
@@ -188,23 +238,62 @@ export default function CollaboratePage() {
                 That is the kind of hub we help build. Format, files, and how it should read when
                 a stranger opens it. Then you post it, and we help it travel.
               </p>
-              <div className="mt-6 flex flex-wrap gap-4">
+              <div className="mt-6 overflow-hidden rounded-[20px] bg-white">
                 <a
-                  href="https://kahana.io/hub/UMKtgp76MN1MvZuD6p7W"
+                  href={AMY_HUB}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-base font-semibold text-[#8A6622] underline underline-offset-2"
+                  className="block no-underline"
                   onClick={() => trackButtonClick('collaborate_amy_hub')}
                 >
-                  Open Amy&apos;s hub
+                  <Image
+                    src="/images/success-stories/amy-cover.png"
+                    alt="Cover of Amy Wang’s Internship and research opportunities hub"
+                    width={1200}
+                    height={675}
+                    className="h-auto w-full"
+                  />
                 </a>
+                <div className="flex items-center gap-4 px-5 py-4">
+                  <Image
+                    src="/images/success-stories/amy-avatar.jpg"
+                    alt="Amy Wang"
+                    width={64}
+                    height={64}
+                    className="h-16 w-16 rounded-full object-cover"
+                  />
+                  <div>
+                    <p className="font-semibold">Amy Wang, wAmy</p>
+                    <div className="mt-1 flex flex-wrap gap-x-4 gap-y-1">
+                      <a
+                        href={AMY_HUB}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm font-semibold text-[#8A6622] underline underline-offset-2"
+                        onClick={() => trackButtonClick('collaborate_amy_hub')}
+                      >
+                        Open the hub
+                      </a>
+                      <a
+                        href={AMY_YOUTUBE}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm font-semibold text-[#8A6622] underline underline-offset-2"
+                      >
+                        YouTube
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <p className="mt-4">
                 <Link
                   href="/story-gallery"
                   className="text-base font-semibold text-[#8A6622] underline underline-offset-2"
                 >
                   More success stories
                 </Link>
-              </div>
+              </p>
             </FadeInSection>
             <FadeInSection>
               <div className="rounded-[20px] bg-white px-6 py-6">

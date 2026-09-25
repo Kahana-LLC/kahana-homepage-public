@@ -1,0 +1,23 @@
+{
+  "slug": "five-sparks",
+  "title": "Five Sparks",
+  "date": "2026-09-24T19:00:00.000Z",
+  "authors": [
+    {
+      "name": "Adam Kershner",
+      "role": "Founder",
+      "bio": "",
+      "linkedinProfile": "https://www.linkedin.com/in/adam-kershner/",
+      "avatar": "/assets/headshots/adam_kershner.jpg"
+    }
+  ],
+  "category": ["Guides", "Aura"],
+  "excerpt": "Every day you get five chances to say this should travel further. Not a like. A signal left for the next person.",
+  "defaultImageQuery": "five small candles on a wooden table",
+  "featuredImage": "/assets/blog/information-overload-saving-more-knowing-less.jpg",
+  "readingTime": 4,
+  "seoTitle": "Five Sparks | How Aura Works on Kahana",
+  "metaDescription": "Aura is five scarce daily signals, not a like count. Leave a light behind so the next person can find work that helped you.",
+  "focusKeyword": "Kahana Aura",
+  "content": "<p class=\"lead\">Every day, you get five chances to say: this should travel further. Not a like. Not a rating. A signal left for the next person.</p>\n<h2>Recognition is more meaningful when it is finite</h2>\n<p>A like costs nothing, so a feed fills with them. Aura replenishes at midnight UTC, five to give. You can put all of them on one hub or file, or split them. You cannot give Aura to your own work. The rules are on <a href=\"/aura\">the Aura page</a>.</p>\n<p>You found something here. Leave a light behind. The community does not issue a verdict. It leaves a map. Work that receives Aura becomes easier to find. That is how a library tells careful work from noise. More is on <a href=\"/why-the-aura-library-matters\">why the Aura Library matters</a>.</p>\n<h2>What the creator receives</h2>\n<p>Aura is not money. Money is separate: if you set a price, someone pays for access and Kahana takes 5%. Aura is the other half of the exchange. A seeker spends a scarce signal. A creator sees real people who thought the work was worth passing on, and the hub stays discoverable after the post is gone.</p>\n<p>Five sparks. Give them to what deserves to be found. Then read <a href=\"/blog/someone-left-you-a-path\">someone left you a path</a>.</p>\n<h2>Related guides</h2>\n<ul>\n<li><a href=\"/features/aura\">Aura</a></li>\n<li><a href=\"/blog/the-feed-ends-here\">The feed ends here</a></li>\n<li><a href=\"/creator-benefits\">Benefits for creators</a></li>\n</ul>\n"
+}

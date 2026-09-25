@@ -67,7 +67,8 @@ export default function EarnMoneyPage() {
                 You don't have to sell. You can later if you want.
               </h1>
               <p className="mt-5 text-lg leading-relaxed text-[#5C4520] sm:text-xl">
-                Make money if you choose to monetize access to your hubs.
+                Income does not have to be whatever the feed paid this week. Make money if you
+                choose to monetize access to your hubs.
               </p>
             </FadeInSection>
           </div>

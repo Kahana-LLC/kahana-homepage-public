@@ -30,10 +30,51 @@ export default function AffiliatesPage() {
   return (
     <>
       <SEO
-        title="Affiliate program | Kahana"
-        description="Copy your affiliate link on Earn. Earn 20% of Growth after the trial, and 1% of hub sales from people you invite. Payouts go to Stripe."
+        title="Kahana affiliate program: earn 20% of Growth"
+        description="How the Kahana affiliate program works. Copy your signup link on Earn, earn 20% of Growth after the free trial, and earn 1% when people you invite sell a hub. Payouts go to Stripe."
         url={CANONICAL}
         type="website"
+        schema={{
+          '@context': 'https://schema.org',
+          '@graph': [
+            {
+              '@type': 'WebPage',
+              name: 'Kahana affiliate program',
+              description:
+                'Copy your signup link on Earn. Earn 20% of Growth after the trial and 1% of hub sales from people you invite.',
+              url: CANONICAL,
+            },
+            {
+              '@type': 'FAQPage',
+              mainEntity: [
+                {
+                  '@type': 'Question',
+                  name: 'How do I get a Kahana affiliate link?',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'Sign in and open Earn. Kahana gives you a signup link. When someone creates an account from that link, they are tied to you.',
+                  },
+                },
+                {
+                  '@type': 'Question',
+                  name: 'How much do Kahana affiliates earn?',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'You earn 20% of what they pay for Growth. Growth is $29.99 a month, about $6 for each paid month. If they sell a hub, you earn 1% of that sale, which is 20% of Kahana’s 5% fee.',
+                  },
+                },
+                {
+                  '@type': 'Question',
+                  name: 'When do Kahana affiliates get paid?',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'You earn after they pay for Growth, not during the free trial, for as long as that subscription is paid. Hub earnings land when someone pays them for a hub. Connect Stripe on Earn. Once it is verified, Kahana sends earnings there. Until then, earnings stay pending.',
+                  },
+                },
+              ],
+            },
+          ],
+        }}
       />
 
       <div className="bg-[#F7F3EA] text-[#3B2F1A]">

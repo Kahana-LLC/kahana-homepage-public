@@ -14,7 +14,7 @@ const STEPS = [
   },
   {
     title: 'Skip the slop',
-    body: 'AI filler, repackaged listicles, and files you would not stand behind do not do well here. People can tell. They will not spend Aura on it, and Aura is what makes work rise.',
+    body: 'AI filler, repackaged listicles, and a repost of someone else’s reel do not do well here. People can tell. They will not spend Aura on it, and Aura is what makes work rise.',
   },
   {
     title: 'Let people find it',
@@ -22,7 +22,7 @@ const STEPS = [
   },
   {
     title: 'Aura is the rise',
-    body: 'If someone finds the work useful, helpful, noteworthy, or cool, they can give it Aura. That endorsement makes the hub and its noteworthy files more discoverable for the next person. You do not boost your own work. Other people do, because they meant it.',
+    body: 'If someone finds the work useful, helpful, noteworthy, or cool, they can give it Aura. That endorsement makes the hub easier to find for the next person. It does not depend on a platform algorithm. You do not boost your own work. Other people do, because they meant it.',
   },
 ];
 
@@ -30,10 +30,18 @@ export default function DoWellPage() {
   return (
     <>
       <SEO
-        title="How to do well on Kahana | Kahana"
-        description="Share unique, helpful work. If people find it useful, they give Aura, and that work becomes easier to discover."
+        title="How to do well on Kahana | Share work people give Aura"
+        description="How to get discovered on Kahana. Share unique, helpful work. When people find it useful, they give Aura, and that hub becomes easier to find."
         url={CANONICAL}
         type="website"
+        schema={{
+          '@context': 'https://schema.org',
+          '@type': 'WebPage',
+          name: 'How to do well on Kahana',
+          description:
+            'Share unique helpful work. Aura from readers is what makes a hub easier to discover.',
+          url: CANONICAL,
+        }}
       />
 
       <div className="bg-[#F7F3EA] text-[#3B2F1A]">

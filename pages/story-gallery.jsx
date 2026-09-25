@@ -23,10 +23,18 @@ export default function StoryGalleryPage() {
   return (
     <>
       <SEO
-        title="Success stories | Kahana"
-        description="A gallery of Kahana hubs that work, with the guides that explain how they were set up and why they hold up."
+        title="Kahana success stories | Hubs with views and earnings"
+        description="A gallery of Kahana hubs that already have views, including free and priced hubs, with the guides that explain how they were set up."
         url={CANONICAL}
         type="website"
+        schema={{
+          '@context': 'https://schema.org',
+          '@type': 'WebPage',
+          name: 'Kahana success stories',
+          description:
+            'Hubs already on Kahana, with the guides that explain how they were set up.',
+          url: CANONICAL,
+        }}
       />
 
       <div className="bg-[#F7F3EA] text-[#3B2F1A]">

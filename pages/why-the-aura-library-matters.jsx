@@ -27,9 +27,17 @@ export default function WhyTheAuraLibraryMattersPage() {
     <>
       <SEO
         title="Why the Aura Library matters | Kahana"
-        description="Aura is how Kahana tells careful work from noise. People endorse hubs and files they found useful, and that work becomes easier to find."
+        description="Aura is how Kahana tells careful work from noise. People endorse hubs and files they found useful, and that work becomes easier to find in the Library."
         url={CANONICAL}
         type="website"
+        schema={{
+          '@context': 'https://schema.org',
+          '@type': 'WebPage',
+          name: 'Why the Aura Library matters',
+          description:
+            'Aura is how Kahana tells careful work from noise so useful hubs and files become easier to find.',
+          url: CANONICAL,
+        }}
       />
 
       <div className="bg-[#F7F3EA] text-[#3B2F1A]">
