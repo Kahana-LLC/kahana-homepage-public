@@ -7,6 +7,17 @@
  */
 export const blogIndex = [
   {
+    title: "Not a Home for AI Slop",
+    date: "2026-09-25T15:00:00.000Z",
+    authors: ["Adam Kershner"],
+    category: ["Guides", "Aura", "Trust"],
+    excerpt: "The open internet is filling with generated filler. Kahana is built so careful human work can still be found: Aura rewards what people trust, and anyone can report what they believe is AI slop.",
+    defaultImageQuery: "clearing in a foggy forest with a single path of light",
+    featuredImage: "/assets/blog/use-ai-for-research-without-fake-citations.jpg",
+    slug: "against-ai-slop",
+    readingTime: 5,
+  },
+  {
     title: "Five Sparks",
     date: "2026-09-24T19:00:00.000Z",
     authors: ["Adam Kershner"],

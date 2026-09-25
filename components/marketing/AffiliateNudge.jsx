@@ -43,7 +43,7 @@ export default function AffiliateNudge() {
     >
       <div className="flex items-start justify-between gap-3">
         <p className="text-sm leading-relaxed">
-          Invite someone to Kahana and earn 20% when they pay for Growth.
+          Invite someone to Kahana. They get 30% off Growth forever. You earn 30% of what they pay.
         </p>
         <button
           type="button"

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 import FadeInSection from '../FadeInSection';
+import { GLOBAL_READER_FLAGS } from '../../data/globalReaderFlags';
 import { productHref } from '../../lib/productLinks';
 import { trackButtonClick } from '../../utils/analytics';
 
@@ -18,6 +19,16 @@ export default function LibraryMission() {
             Everyone has something unique to upload. People already come from 110+ countries and
             speak many languages. This is a place to create, learn, and research on a global scale.
           </p>
+          <ul
+            className="mt-8 flex max-w-xl flex-wrap gap-2"
+            aria-label="A sample of countries readers already come from. Kahana reaches 110 or more."
+          >
+            {GLOBAL_READER_FLAGS.map(([name, flag]) => (
+              <li key={name} title={name} aria-label={name} className="text-2xl leading-none">
+                <span aria-hidden>{flag}</span>
+              </li>
+            ))}
+          </ul>
           <div className="mt-8 flex flex-wrap gap-3">
             <a
               href={libraryHref}
@@ -33,6 +44,20 @@ export default function LibraryMission() {
               Creator collabs
             </Link>
           </div>
+          <p className="mt-4 text-base text-[#5C4520]">
+            Read{' '}
+            <Link href="/philosophy" className="text-[#8A6622] underline underline-offset-2">
+              our philosophy
+            </Link>{' '}
+            and{' '}
+            <Link
+              href="/why-the-aura-library-matters"
+              className="text-[#8A6622] underline underline-offset-2"
+            >
+              why the Aura Library matters
+            </Link>
+            .
+          </p>
         </FadeInSection>
       </div>
     </section>

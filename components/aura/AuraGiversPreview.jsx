@@ -100,7 +100,7 @@ function Avatar({ name, size = 32 }) {
   );
 }
 
-export default function AuraGiversPreview({ hubs = [] }) {
+export default function AuraGiversPreview({ hubs = [], omitIntro = false }) {
   const [hubId, setHubId] = useState(hubs[0]?.id || '');
   const currentRaw = hubs.find((hub) => hub.id === hubId) || hubs[0];
   const current = currentRaw
@@ -140,19 +140,26 @@ export default function AuraGiversPreview({ hubs = [] }) {
 
   const extraGivers = Math.max(0, (current.giverCount || current.givers.length) - sheetGivers.length);
 
-  return (
-    <section className="border-t border-[#E4D9C4] bg-[#EFE8D8] px-6 py-16 sm:px-10 lg:px-16">
-      <div className="mx-auto w-full max-w-6xl">
-        <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-semibold tracking-wide text-[#8A6622]">In the app</p>
-          <h2 className="mt-2 text-2xl font-semibold sm:text-3xl">Who gave this Aura</h2>
-          <p className="mt-4 text-base leading-relaxed text-[#5C4520] sm:text-lg">
-            A live Who gave Aura list from a Library hub. Names and portraits here are samples.
-            Member since, amounts, and packs they marked are from the real list.
-          </p>
-        </div>
+  const Wrapper = omitIntro ? 'div' : 'section';
+  const wrapperClass = omitIntro
+    ? 'w-full'
+    : 'border-t border-[#E4D9C4] bg-[#EFE8D8] px-6 py-16 sm:px-10 lg:px-16';
 
-        <div className="mt-8 grid items-start gap-6 lg:grid-cols-2">
+  return (
+    <Wrapper className={wrapperClass}>
+      <div className={omitIntro ? 'w-full' : 'mx-auto w-full max-w-6xl'}>
+        {!omitIntro ? (
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="text-sm font-semibold tracking-wide text-[#8A6622]">In the app</p>
+            <h2 className="mt-2 text-2xl font-semibold sm:text-3xl">Who gave this Aura</h2>
+            <p className="mt-4 text-base leading-relaxed text-[#5C4520] sm:text-lg">
+              A live Who gave Aura list from a Library hub. Names and portraits here are samples.
+              Member since, amounts, and packs they marked are from the real list.
+            </p>
+          </div>
+        ) : null}
+
+        <div className={`${omitIntro ? '' : 'mt-8 '}grid items-start gap-6 lg:grid-cols-2`}>
           <div
             className="overflow-hidden rounded-3xl border border-[#D8CCB4] bg-[#F7F3EA] shadow-[0_24px_60px_-28px_rgba(59,47,26,0.45)]"
             aria-label="Who gave Aura list"
@@ -347,33 +354,37 @@ export default function AuraGiversPreview({ hubs = [] }) {
           </div>
         </div>
 
-        <div className="mt-8 flex flex-wrap justify-center gap-3">
-          <a
-            href={productHref('/library', 'aura_preview_library')}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-secondary inline-flex items-center justify-center gap-2 no-underline"
-            onClick={() => trackButtonClick('aura_preview_library')}
-          >
-            <MagnifyingGlassIcon className="h-5 w-5 shrink-0" aria-hidden />
-            Library
-          </a>
-          <a
-            href={productHref('/', 'aura_preview_signup')}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary inline-flex items-center justify-center gap-2 no-underline"
-            onClick={() => trackButtonClick('aura_preview_signup')}
-          >
-            <FolderPlusIcon className="h-5 w-5 shrink-0" aria-hidden />
-            Create account
-          </a>
-        </div>
-        <p className="mt-3 text-center text-sm text-[#5C4520]">
-          Open the Library to find hubs, or create an account to give Aura.
-        </p>
+        {!omitIntro ? (
+          <>
+            <div className="mt-8 flex flex-wrap justify-center gap-3">
+              <a
+                href={productHref('/library', 'aura_preview_library')}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary inline-flex items-center justify-center gap-2 no-underline"
+                onClick={() => trackButtonClick('aura_preview_library')}
+              >
+                <MagnifyingGlassIcon className="h-5 w-5 shrink-0" aria-hidden />
+                Library
+              </a>
+              <a
+                href={productHref('/', 'aura_preview_signup')}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary inline-flex items-center justify-center gap-2 no-underline"
+                onClick={() => trackButtonClick('aura_preview_signup')}
+              >
+                <FolderPlusIcon className="h-5 w-5 shrink-0" aria-hidden />
+                Create account
+              </a>
+            </div>
+            <p className="mt-3 text-center text-sm text-[#5C4520]">
+              Open the Library to find hubs, or create an account to give Aura.
+            </p>
+          </>
+        ) : null}
       </div>
-    </section>
+    </Wrapper>
   );
 }
 

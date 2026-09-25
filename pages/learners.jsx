@@ -132,14 +132,48 @@ export default function LearnersPage() {
             <FadeInSection>
               <h2 className="text-2xl font-semibold sm:text-3xl">Someone left you a path</h2>
               <p className="mt-4 text-lg leading-relaxed text-[#666666]">
-                Search gives you results. A person can give you a path. You open what they
-                arranged, save it, and if it helped, leave Aura so the next person can find the
-                door. That signal is not a like. Creators can also charge for access. That money
-                is separate from Aura.
+                Search gives you results. A person can give you a path. You open what they arranged,
+                save it, and if it helped, leave Aura so the next person can find the door.
               </p>
-              <p className="mt-4 text-lg">
-                <Link href="/blog/someone-left-you-a-path" className="font-semibold text-[#8A6622] underline underline-offset-2">
+            </FadeInSection>
+            <FadeInSection>
+              <div className="mt-10 grid gap-4 sm:grid-cols-2">
+                <div className="rounded-[20px] bg-white px-5 py-6">
+                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#8A6622]">
+                    Search
+                  </p>
+                  <ul className="mt-4 space-y-2 text-sm text-[#666666]">
+                    <li className="rounded-xl bg-[#F7F3EA] px-3 py-2">Result · Result · Result</li>
+                    <li className="rounded-xl bg-[#F7F3EA] px-3 py-2">Result · Result · Result</li>
+                    <li className="rounded-xl bg-[#F7F3EA] px-3 py-2">Result · Result · Result</li>
+                  </ul>
+                  <p className="mt-3 text-sm text-[#666666]">A list. No order to start.</p>
+                </div>
+                <div className="rounded-[20px] bg-[#EDE6D2] px-5 py-6">
+                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#8A6622]">
+                    A path
+                  </p>
+                  <ol className="mt-4 list-decimal space-y-2 pl-5 text-sm text-[#666666]">
+                    <li>Open the first file they named</li>
+                    <li>Follow the notes in the hub</li>
+                    <li>Leave Aura if it helped</li>
+                  </ol>
+                  <p className="mt-3 text-sm text-[#666666]">Someone already chose the entrance.</p>
+                </div>
+              </div>
+              <p className="mt-6 text-base leading-relaxed text-[#5C4520]">
+                Aura is not a like. Creators can also charge for access. That money is separate from
+                Aura.{' '}
+                <Link href="/blog/someone-left-you-a-path" className="text-[#8A6622] underline underline-offset-2">
                   Read the guide
+                </Link>
+                {' · '}
+                <Link href="/blog/five-sparks" className="text-[#8A6622] underline underline-offset-2">
+                  Five sparks
+                </Link>
+                {' · '}
+                <Link href="/aura" className="text-[#8A6622] underline underline-offset-2">
+                  Learn more about Aura
                 </Link>
               </p>
             </FadeInSection>

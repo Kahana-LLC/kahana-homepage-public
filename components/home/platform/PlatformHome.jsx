@@ -435,6 +435,25 @@ export default function PlatformHome() {
               </p>
             </RainbowHoverCard>
           </div>
+          <p className="mt-6">
+            <Link
+              href="/philosophy"
+              className="inline-flex items-center gap-2 text-base font-semibold text-[#8A6622] no-underline underline-offset-4 hover:underline"
+            >
+              {t('home.missionReadMore')}
+              <ArrowRightIcon className="h-4 w-4" aria-hidden />
+            </Link>
+          </p>
+          <p className="mt-3 max-w-2xl text-base text-[#5C4520]">
+            Philomathy, dialectic, and innovation in one place. Also{' '}
+            <Link
+              href="/why-the-aura-library-matters"
+              className="text-[#8A6622] underline underline-offset-2"
+            >
+              why the Aura Library matters
+            </Link>
+            .
+          </p>
         </FadeInSection>
       </SectionShell>
 

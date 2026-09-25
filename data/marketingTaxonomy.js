@@ -121,10 +121,11 @@ export const FEATURES = [
   },
   {
     slug: 'discussions',
-    title: 'Discussions',
+    title: 'Discussions and forums',
     eyebrow: 'Feature',
-    summary: 'Talk beside a hub or a file. Comments, replies, and a watch so you hear when the thread moves.',
-    lead: 'A discussion sits on a hub or on a file inside it. It is not the club feed. People who can open the hub can read the thread, comment, reply, and watch it.',
+    summary:
+      'Forums beside hubs and files. Comments, replies, and a watch so you hear when the thread moves.',
+    lead: 'A discussion sits on a hub or on a file inside it. Think of it as a forum next to the work, not a separate social feed. It is not the club feed. People who can open the hub can read the thread, comment, reply, and watch it.',
     appHref: APP_LIBRARY_URL,
     appLabel: 'Explore the Library',
     helpSlug: 'hub-and-file-discussions',
@@ -132,12 +133,12 @@ export const FEATURES = [
     personas: ['learners', 'creators', 'clubs'],
     useCases: ['hub-discussions', 'book-clubs'],
     bullets: [
-      'Open the discussion from a hub or from a file',
+      'Open the discussion forum from a hub or from a file',
       'Comment, or reply to someone already in the thread',
       'Watch a thread and turn the watch off when you are done',
       'Separate from the club feed, which lives on the club',
     ],
-    note: 'Club posts, comments, and reactions stay on the club. Hub and file discussions stay on the work.',
+    note: 'Club posts, comments, and reactions stay on the club. Hub and file discussions stay on the work. That is how dialectic happens next to unique knowledge.',
   },
   {
     slug: 'analytics',
@@ -605,8 +606,9 @@ export const USE_CASES = [
     slug: 'hub-discussions',
     title: 'Talk beside the files',
     eyebrow: 'Use case',
-    summary: 'Keep a conversation on a hub or a file, next to the work, without starting a club.',
-    lead: 'When the point is the hub itself, open its discussion. Comment on the hub or on a single file, reply, and watch the thread. A club feed is a different room, for the group.',
+    summary:
+      'Keep a forum conversation on a hub or a file, next to the work, without starting a club.',
+    lead: 'When the point is the hub itself, open its discussion. Comment on the hub or on a single file, reply, and watch the thread. A club feed is a different room, for the group. This is how heady topics stay discussable without leaving the Library.',
     appHref: APP_LIBRARY_URL,
     appLabel: 'Explore the Library',
     helpSlug: 'hub-and-file-discussions',

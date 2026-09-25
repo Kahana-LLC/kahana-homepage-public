@@ -355,7 +355,7 @@ export default function Pricing() {
               <p className="mt-3 text-base leading-relaxed text-[#666666]">
                 Stay on Free until you hit a limit (4th hub, upload cap, files
                 over ~5&nbsp;MB) or want live chat. You can list on Library and
- sell with Stripe on Free, Growth is capacity and support, not
+                sell with Stripe on Free, Growth is capacity and support, not
                 permission to monetize. The 5% marketplace fee is the same on
                 both plans.
               </p>
@@ -380,8 +380,45 @@ export default function Pricing() {
                   href="/affiliates"
                   className="font-medium text-[#8A6622] no-underline underline-offset-4 hover:underline"
                 >
-                  Earn 20% as an affiliate
+                  Affiliate: 30% off forever for them, 30% for you
                 </Link>
+              </p>
+            </div>
+
+            <div className="mx-auto mt-10 max-w-2xl rounded-2xl border border-[#E4D9C4] bg-[#EDE6D2] px-6 py-8 text-left sm:px-8">
+              <h2 className="text-xl font-semibold text-[#3B2F1A] sm:text-2xl">
+                Invite Growth, share the savings
+              </h2>
+              <p className="mt-3 text-base leading-relaxed text-[#666666]">
+                People who upgrade through your affiliate link get 30% off Growth forever. You earn
+                30% of what they pay after the free trial.
+              </p>
+              <div className="mt-6 grid gap-3 sm:grid-cols-3">
+                <div className="rounded-xl bg-white px-4 py-4 text-center">
+                  <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[#8A6622]">
+                    Growth
+                  </p>
+                  <p className="mt-1 text-2xl font-semibold tabular-nums">$29.99</p>
+                </div>
+                <div className="rounded-xl bg-white px-4 py-4 text-center">
+                  <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[#8A6622]">
+                    They pay
+                  </p>
+                  <p className="mt-1 text-2xl font-semibold tabular-nums">~$20.99</p>
+                </div>
+                <div className="rounded-xl bg-[#3B2F1A] px-4 py-4 text-center text-[#F7F3EA]">
+                  <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[#EDE6D2]">
+                    You earn
+                  </p>
+                  <p className="mt-1 text-2xl font-semibold tabular-nums">~$6.30</p>
+                </div>
+              </div>
+              <p className="mt-4 text-base text-[#5C4520]">
+                Full program on{' '}
+                <Link href="/affiliates" className="text-[#8A6622] underline underline-offset-2">
+                  affiliates
+                </Link>
+                .
               </p>
             </div>
           </div>

@@ -108,12 +108,36 @@ export default function EarnMoneyPage() {
               <h2 className="text-2xl font-semibold sm:text-3xl">Charge when you want to</h2>
               <p className="mt-4 text-lg leading-relaxed text-[#666666]">
                 A hub can stay free. If you want to earn, connect Stripe, pick a one-time or monthly
-                price, and turn on paid access. Kahana takes 5%, plus Stripe's fee.
+                price, and turn on paid access.
               </p>
-              <p className="mt-4 text-lg leading-relaxed text-[#666666]">
-                You can sell on the Free plan. Growth is about hub and storage limits, not permission
-                to charge. Kahana analytics shows views and purchasers. For the money itself, look
-                in Stripe.
+            </FadeInSection>
+            <FadeInSection>
+              <div className="mt-10 grid gap-4 sm:grid-cols-3">
+                <div className="rounded-[20px] bg-white px-5 py-6 text-center">
+                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#8A6622]">
+                    Your price
+                  </p>
+                  <p className="mt-3 text-2xl font-semibold tabular-nums">$30</p>
+                  <p className="mt-2 text-sm text-[#666666]">Example hub access</p>
+                </div>
+                <div className="rounded-[20px] bg-[#EDE6D2] px-5 py-6 text-center">
+                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#8A6622]">
+                    Kahana
+                  </p>
+                  <p className="mt-3 text-2xl font-semibold tabular-nums">5%</p>
+                  <p className="mt-2 text-sm text-[#666666]">Plus Stripe&apos;s fee</p>
+                </div>
+                <div className="rounded-[20px] bg-white px-5 py-6 text-center">
+                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#8A6622]">
+                    You keep
+                  </p>
+                  <p className="mt-3 text-2xl font-semibold tabular-nums">~95%</p>
+                  <p className="mt-2 text-sm text-[#666666]">Before Stripe processing</p>
+                </div>
+              </div>
+              <p className="mt-6 text-base leading-relaxed text-[#5C4520]">
+                You can sell on Free. Growth is about hub and storage limits, not permission to
+                charge. Analytics shows views and purchasers. Money detail lives in Stripe.
               </p>
             </FadeInSection>
           </div>
@@ -124,21 +148,38 @@ export default function EarnMoneyPage() {
             <FadeInSection>
               <h2 className="text-2xl font-semibold sm:text-3xl">Share a link and earn too</h2>
               <p className="mt-4 text-lg leading-relaxed text-[#666666]">
-                Anyone can copy an affiliate link in the app. If someone signs up through it and
-                pays for Growth, you earn 20% of that subscription. If they sell hubs, you earn
-                1% of those sales (20% of Kahana&apos;s 5% fee). Payouts use the same Stripe
-                Connect account as hub sales. The full steps are on the{' '}
+                People who upgrade through your affiliate link get 30% off Growth forever. After the
+                trial, you earn 30% of what they actually pay.
+              </p>
+            </FadeInSection>
+            <FadeInSection>
+              <div className="mt-10 grid gap-4 sm:grid-cols-2">
+                <div className="rounded-[20px] bg-white px-5 py-6">
+                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#8A6622]">
+                    Invitee pays
+                  </p>
+                  <p className="mt-3 text-3xl font-semibold tabular-nums">~$20.99</p>
+                  <p className="mt-2 text-sm text-[#666666]">30% off $29.99 Growth</p>
+                </div>
+                <div className="rounded-[20px] bg-[#EDE6D2] px-5 py-6">
+                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#8A6622]">
+                    You earn
+                  </p>
+                  <p className="mt-3 text-3xl font-semibold tabular-nums">~$6.30</p>
+                  <p className="mt-2 text-sm text-[#666666]">30% of amount paid, each month</p>
+                </div>
+              </div>
+              <p className="mt-6 text-base leading-relaxed text-[#5C4520]">
+                Hub sales from people you invite still pay 1% of GMV. Full steps on the{' '}
                 <Link href="/affiliates" className="text-[#8A6622] underline underline-offset-2">
                   affiliate page
                 </Link>
-                .
-              </p>
-              <p className="mt-6">
+                .{' '}
                 <a
                   href={productHref('/earn', 'affiliate_earn_money')}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-primary inline-flex items-center justify-center no-underline"
+                  className="text-[#8A6622] underline underline-offset-2"
                   onClick={() => trackButtonClick('earn_money_affiliate')}
                 >
                   Open affiliate Earn

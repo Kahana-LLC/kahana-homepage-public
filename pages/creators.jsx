@@ -81,9 +81,33 @@ export default function CreatorsPage() {
             <FadeInSection eager>
               <h2 className="text-2xl font-semibold sm:text-3xl">{t('creatorsPage.besideTitle')}</h2>
               <p className="mt-4 text-lg leading-relaxed text-[#666666]">{t('creatorsPage.besideBody')}</p>
-              <p className="mt-4 text-lg leading-relaxed text-[#666666]">
+            </FadeInSection>
+            <FadeInSection>
+              <div className="mt-10 overflow-hidden rounded-[20px] bg-white px-5 py-6">
+                <div className="grid gap-4 sm:grid-cols-[0.9fr_1.1fr] sm:items-center">
+                  <div className="rounded-2xl bg-[#F7F3EA] px-4 py-5 text-center">
+                    <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#8A6622]">
+                      The reel
+                    </p>
+                    <div className="mx-auto mt-3 h-40 w-24 rounded-xl bg-[#E8DCC4]" />
+                    <p className="mt-3 text-sm text-[#666666]">A door on Instagram or YouTube</p>
+                  </div>
+                  <div className="rounded-2xl bg-[#EDE6D2] px-4 py-5">
+                    <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#8A6622]">
+                      The hub
+                    </p>
+                    <ul className="mt-3 space-y-2 text-sm text-[#666666]">
+                      <li className="rounded-xl bg-white/70 px-3 py-2">Tutorial video</li>
+                      <li className="rounded-xl bg-white/70 px-3 py-2">Files and templates</li>
+                      <li className="rounded-xl bg-white/70 px-3 py-2">Optional paid access</li>
+                    </ul>
+                    <p className="mt-3 text-sm text-[#666666]">The room behind the post</p>
+                  </div>
+                </div>
+              </div>
+              <p className="mt-6 text-base leading-relaxed text-[#5C4520]">
                 People who want the longer work can talk beside the files, gather in a club, and you
-                can see what they actually open.{' '}
+                can see what they open.{' '}
                 <Link href="/features/discussions" className="text-[#8A6622] underline underline-offset-2">
                   Discussion
                 </Link>
@@ -94,8 +118,11 @@ export default function CreatorsPage() {
                 , and{' '}
                 <Link href="/features/analytics" className="text-[#8A6622] underline underline-offset-2">
                   analytics
-                </Link>{' '}
-                sit with the hub.
+                </Link>
+                .{' '}
+                <Link href="/blog/the-feed-ends-here" className="text-[#8A6622] underline underline-offset-2">
+                  The feed ends here
+                </Link>
               </p>
             </FadeInSection>
           </div>

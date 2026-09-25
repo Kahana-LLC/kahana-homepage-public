@@ -5,7 +5,11 @@ import { ABOUT_ORIGIN } from '../../config/site';
 export async function getStaticPaths() {
   return {
     paths: FEATURES.filter(
-      (item) => item.slug !== 'aura-pathways' && item.slug !== 'aura-and-trust',
+      (item) =>
+        item.slug !== 'aura-pathways' &&
+        item.slug !== 'aura-and-trust' &&
+        item.slug !== 'discussions' &&
+        item.slug !== 'explore',
     ).map((item) => ({
       params: { slug: item.slug },
     })),

@@ -16,6 +16,7 @@ import {
   LifebuoyIcon,
   LockClosedIcon,
   MagnifyingGlassIcon,
+  MicrophoneIcon,
   NewspaperIcon,
   QuestionMarkCircleIcon,
   ScaleIcon,
@@ -30,6 +31,7 @@ import {
   AcademicCapIcon,
   UserGroupIcon,
   BanknotesIcon,
+  LightBulbIcon,
 } from '@heroicons/react/24/outline';
 import { ConsentContext } from '../contexts/ConsentContext';
 import { useMarketingI18n } from '../contexts/MarketingI18n';
@@ -99,10 +101,12 @@ const RESOURCE_LINKS = [
   { href: '/help', labelKey: 'footer.help', icon: QuestionMarkCircleIcon },
   { href: '/faq', labelKey: 'footer.faq', icon: ChatBubbleLeftRightIcon },
   { href: '/why-the-aura-library-matters', label: 'Why the Aura Library matters', icon: SparklesIcon },
+  { href: '/philosophy', label: 'Philosophy', icon: LightBulbIcon },
   { href: '/creator-benefits', label: 'Benefits for creators', icon: UserGroupIcon },
   { href: '/do-well', label: 'How to do well', icon: AcademicCapIcon },
   { href: '/story-gallery', label: 'Story gallery', icon: BookOpenIcon },
   { href: '/collabs', label: 'Creator collabs', icon: UserPlusIcon },
+  { href: '/podcast-guest', label: 'Podcast guest', icon: MicrophoneIcon },
   { href: '/affiliates', label: 'Affiliates', icon: BanknotesIcon },
 ];
 

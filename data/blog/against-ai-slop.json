@@ -1,0 +1,23 @@
+{
+  "slug": "against-ai-slop",
+  "title": "Not a Home for AI Slop",
+  "date": "2026-09-25T15:00:00.000Z",
+  "authors": [
+    {
+      "name": "Adam Kershner",
+      "role": "Founder",
+      "bio": "",
+      "linkedinProfile": "https://www.linkedin.com/in/adam-kershner/",
+      "avatar": "/assets/headshots/adam_kershner.jpg"
+    }
+  ],
+  "category": ["Guides", "Aura", "Trust"],
+  "excerpt": "The open internet is filling with generated filler. Kahana is built so careful human work can still be found: Aura rewards what people trust, and anyone can report what they believe is AI slop.",
+  "defaultImageQuery": "clearing in a foggy forest with a single path of light",
+  "featuredImage": "/assets/blog/use-ai-for-research-without-fake-citations.jpg",
+  "readingTime": 5,
+  "seoTitle": "Not a Home for AI Slop | Kahana's Commitment to Real Knowledge",
+  "metaDescription": "Kahana reduces AI slop with scarce Aura signals that reward careful work, and with reports when people believe content is low-effort generated filler. Real knowledge stays visible.",
+  "focusKeyword": "AI slop Kahana",
+  "content": "<p class=\"lead\">Someone asked us a fair question after reporting a post as AI slop elsewhere: does Kahana take generated content too, or is there room for real, organic knowledge to stay visible?</p>\n<p>Here is the short answer. We are not building another place for undifferentiated AI output to crowd out people who actually know something. Tools can help a careful creator. Flooding a library with filler cannot. Kahana’s structure is meant to starve that flood and lift work that earned trust.</p>\n<h2>The problem is not “AI existed”</h2>\n<p>Plenty of people use models the way they once used search, outline tools, or spellcheck. That is not the crisis. The crisis is a feed that rewards volume: same tone, same shape, same empty confidence, posted everywhere until the people with real craft cannot be found.</p>\n<p>We already wrote about using AI for research without inventing citations. The rule there is verification. The rule here is similar: the Library should prefer work someone stood behind, not text that only exists to occupy space.</p>\n<h2>Aura is how we reward what is not slop</h2>\n<p>Aura is scarce on purpose. Each day you get five chances to say this should travel further. You cannot give Aura to your own hubs or files. A like costs nothing, so a feed fills with them. Aura costs a finite signal, so people spend it on work they actually found useful, helpful, or cool.</p>\n<p>That is the first guardrail. AI slop can still be uploaded. It does not get the same path into discovery unless real people choose to endorse it, and careful readers rarely spend a scarce signal on filler. Work that receives Aura becomes easier to find. That is how a library tells careful work from noise. Read <a href=\"/blog/five-sparks\">how five sparks work</a> and <a href=\"/why-the-aura-library-matters\">why the Aura Library matters</a>.</p>\n<h2>Report what you believe is AI slop</h2>\n<p>The second guardrail is the community. You can report a hub, a file, or a profile. One of the reasons is AI slop: low-effort generated filler that should not sit in the Library as if it were knowledge. We review those reports. Reporting is not a pile-on contest. It is a way to flag what should not be rewarded or left unexamined.</p>\n<p>Aura says what deserves to rise. Reports say what should not pretend to belong. Together they lean the product toward genuine, knowledgeable people and away from places that are already full of generated content.</p>\n<h2>What we are optimizing for</h2>\n<p>Kahana is a home for unique knowledge and the paths people leave for each other. Hubs, clubs, and Aura are for that. We are not chasing engagement by flooding the surface with machine text. If something helps a real person learn, create, or teach, it belongs. If it only exists to look like content, it should not win.</p>\n<p>We will keep hardening this. Scarcity, taste, and reporting are product choices, not slogans. The people who put real work into the Library deserve a place where that work can still be seen.</p>\n<h2>Related guides</h2>\n<ul>\n<li><a href=\"/aura\">Aura</a></li>\n<li><a href=\"/blog/five-sparks\">Five sparks</a></li>\n<li><a href=\"/blog/use-ai-for-research-without-fake-citations\">Use AI for research without fake citations</a></li>\n<li><a href=\"/why-the-aura-library-matters\">Why the Aura Library matters</a></li>\n</ul>\n"
+}

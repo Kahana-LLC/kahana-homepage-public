@@ -105,6 +105,13 @@ export default function AuraPage({ trails = [] }) {
             </Link>
             {' · '}
             <Link
+              href="/blog/against-ai-slop"
+              className="underline decoration-[#F7F3EA]/40 underline-offset-2 hover:decoration-[#F7F3EA]"
+            >
+              Against AI slop
+            </Link>
+            {' · '}
+            <Link
               href="/faq"
               className="underline decoration-[#F7F3EA]/40 underline-offset-2 hover:decoration-[#F7F3EA]"
             >

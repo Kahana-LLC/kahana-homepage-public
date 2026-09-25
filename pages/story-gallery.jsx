@@ -8,6 +8,7 @@ import EssaySeriesNav from '../components/marketing/EssaySeriesNav';
 import { ABOUT_ORIGIN } from '../config/site';
 import { USE_CASE_STORIES } from '../data/use-case-stories';
 import { STORY_GALLERY } from '../data/storyGallery';
+import { productHref } from '../lib/productLinks';
 import { trackButtonClick } from '../utils/analytics';
 
 const CANONICAL = `${ABOUT_ORIGIN}/story-gallery`;
@@ -57,7 +58,17 @@ export default function StoryGalleryPage() {
         </section>
 
         <section className="border-t border-[#E4D9C4] px-6 py-16 sm:px-10 lg:px-16">
-          <div className="mx-auto flex max-w-5xl flex-col gap-16">
+          <div className="mx-auto max-w-5xl">
+            <FadeInSection>
+              <div className="mx-auto max-w-3xl text-center">
+                <h2 className="text-2xl font-semibold sm:text-3xl">Hubs already on the Library</h2>
+                <p className="mt-4 text-lg leading-relaxed text-[#666666]">
+                  Open each hub, then read the guide beside it. These are live listings with real
+                  views.
+                </p>
+              </div>
+            </FadeInSection>
+            <div className="mt-12 flex flex-col gap-16">
             {entries.map(({ story, whyItWorks, posts }) => (
               <FadeInSection key={story.id}>
                 <article className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:items-start">
@@ -119,6 +130,23 @@ export default function StoryGalleryPage() {
                 </article>
               </FadeInSection>
             ))}
+            </div>
+            <FadeInSection>
+              <p className="mt-12 text-center">
+                <a
+                  href={productHref('/library', 'story_gallery_mid_explore')}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary inline-flex items-center justify-center no-underline"
+                  onClick={() => trackButtonClick('story_gallery_mid_explore')}
+                >
+                  Explore the Library
+                </a>
+              </p>
+              <p className="mx-auto mt-4 max-w-2xl text-center text-base text-[#5C4520]">
+                More of the catalog is live. These three are the walkthroughs.
+              </p>
+            </FadeInSection>
           </div>
         </section>
 

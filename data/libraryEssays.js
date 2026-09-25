@@ -6,6 +6,11 @@ export const LIBRARY_ESSAYS = [
     title: 'Why the Aura Library matters',
   },
   {
+    href: '/philosophy',
+    label: 'Philosophy',
+    title: 'Kahana philosophy',
+  },
+  {
     href: '/creator-benefits',
     label: 'For creators',
     title: 'Benefits for creators',
@@ -24,5 +29,10 @@ export const LIBRARY_ESSAYS = [
     href: '/collabs',
     label: 'Creator collabs',
     title: 'Creator collabs',
+  },
+  {
+    href: '/podcast-guest',
+    label: 'Podcast guest',
+    title: 'Be a podcast guest on Kahana',
   },
 ];

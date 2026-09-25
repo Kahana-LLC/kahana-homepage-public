@@ -6,6 +6,7 @@ import EssaySeriesNav from '../components/marketing/EssaySeriesNav';
 import { ABOUT_ORIGIN } from '../config/site';
 import { CONTACT_URL } from '../components/nav/navConfig';
 import { withProductUtm } from '../lib/productLinks';
+import { GLOBAL_READER_FLAGS } from '../data/globalReaderFlags';
 import { trackButtonClick } from '../utils/analytics';
 
 const CANONICAL = `${ABOUT_ORIGIN}/collabs`;
@@ -27,33 +28,6 @@ const STEPS = [
     title: 'We help it get found',
     body: 'Once it is up, we feature it and help it get extra views and extra traffic. Aura from readers is still what makes work rise. Featuring is a start, not a substitute for work people actually find useful.',
   },
-];
-
-const READER_FLAGS = [
-  ['United States', '🇺🇸'],
-  ['Canada', '🇨🇦'],
-  ['Mexico', '🇲🇽'],
-  ['Brazil', '🇧🇷'],
-  ['Argentina', '🇦🇷'],
-  ['United Kingdom', '🇬🇧'],
-  ['France', '🇫🇷'],
-  ['Germany', '🇩🇪'],
-  ['Spain', '🇪🇸'],
-  ['Italy', '🇮🇹'],
-  ['Nigeria', '🇳🇬'],
-  ['Kenya', '🇰🇪'],
-  ['South Africa', '🇿🇦'],
-  ['Egypt', '🇪🇬'],
-  ['India', '🇮🇳'],
-  ['China', '🇨🇳'],
-  ['Japan', '🇯🇵'],
-  ['South Korea', '🇰🇷'],
-  ['Philippines', '🇵🇭'],
-  ['Indonesia', '🇮🇩'],
-  ['Australia', '🇦🇺'],
-  ['United Arab Emirates', '🇦🇪'],
-  ['Israel', '🇮🇱'],
-  ['Sweden', '🇸🇪'],
 ];
 
 const AMY_HUB = 'https://kahana.io/hub/UMKtgp76MN1MvZuD6p7W';
@@ -80,11 +54,19 @@ const READING = [
     title: 'Success stories',
     body: 'Hubs that are already up, and how they were built.',
   },
+  {
+    href: '/podcast-guest',
+    title: 'Be a podcast guest',
+    body: 'Open podcast opportunity: 8-minute recorded episode about your hub.',
+  },
 ];
 
 export default function CollaboratePage() {
   const contactHref = withProductUtm(`${CONTACT_URL}?source=creator_collabs`, {
     campaign: 'creator_collabs',
+  });
+  const podcastContactHref = withProductUtm(`${CONTACT_URL}?source=podcast_guest`, {
+    campaign: 'podcast_guest',
   });
 
   return (
@@ -124,7 +106,7 @@ export default function CollaboratePage() {
                 className="mx-auto mt-8 flex max-w-xl flex-wrap justify-center gap-2"
                 aria-label="A sample of countries readers already come from. Kahana reaches 110 or more."
               >
-                {READER_FLAGS.map(([name, flag]) => (
+                {GLOBAL_READER_FLAGS.map(([name, flag]) => (
                   <li key={name} title={name} aria-label={name} className="text-2xl leading-none">
                     <span aria-hidden>{flag}</span>
                   </li>
@@ -203,19 +185,59 @@ export default function CollaboratePage() {
               <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[#8A6622]">
                 After you publish
               </p>
-              <h2 className="mt-2 text-2xl font-semibold sm:text-3xl">Tell your story</h2>
+              <h2 className="mt-2 text-2xl font-semibold sm:text-3xl">Be a podcast guest</h2>
               <p className="mt-4 text-lg leading-relaxed text-[#666666]">
-                Once your first hub is on the Library, you can join us for an 8-minute podcast
-                inspired by How I Built This. Tell the story of the hub, why you shared the
-                knowledge, and what you hope happens next. The episode goes on YouTube, with short
-                clips on social.
+                Once your first hub is on the Library, you can join us for an 8-minute recorded
+                episode inspired by How I Built This. Tell the story of the hub, why you shared the
+                knowledge, and what you hope happens next.
               </p>
-              <p className="mt-4 text-lg leading-relaxed text-[#666666]">
-                The way to reach us is the{' '}
-                <a href={contactHref} className="text-[#8A6622] underline underline-offset-2">
-                  contact page
+              <div className="mt-8 overflow-hidden rounded-[20px] border border-[#E4D9C4] bg-white">
+                <div className="flex items-center gap-4 border-b border-[#E4D9C4] bg-[#EDE6D2] px-5 py-4">
+                  <span
+                    className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#3B2F1A] text-sm font-semibold text-[#F7F3EA]"
+                    aria-hidden
+                  >
+                    ▶
+                  </span>
+                  <div>
+                    <p className="font-semibold text-[#3B2F1A]">How I Built This Hub</p>
+                    <p className="text-sm text-[#666666]">8 min · YouTube + podcast platforms</p>
+                  </div>
+                </div>
+                <div className="grid gap-0 sm:grid-cols-3">
+                  {['Story of the hub', 'Why you shared it', 'What happens next'].map((label) => (
+                    <p
+                      key={label}
+                      className="border-t border-[#E4D9C4] px-5 py-4 text-sm text-[#5C4520] sm:border-t-0 sm:border-l sm:first:border-l-0"
+                    >
+                      {label}
+                    </p>
+                  ))}
+                </div>
+              </div>
+              <p className="mt-4 text-base text-[#5C4520]">
+                Full details on{' '}
+                <Link href="/podcast-guest" className="text-[#8A6622] underline underline-offset-2">
+                  podcast guest
+                </Link>
+                . Apply via{' '}
+                <a href={podcastContactHref} className="text-[#8A6622] underline underline-offset-2">
+                  contact
                 </a>
-                . Include your name, email, and hub link, and say you want to record.
+                {' · '}
+                <a href={contactHref} className="text-[#8A6622] underline underline-offset-2">
+                  creator collabs contact
+                </a>
+                .
+              </p>
+              <p className="mt-6">
+                <Link
+                  href="/podcast-guest"
+                  className="btn-secondary inline-flex items-center justify-center no-underline"
+                  onClick={() => trackButtonClick('collabs_podcast_guest')}
+                >
+                  Apply as a podcast guest
+                </Link>
               </p>
             </FadeInSection>
           </div>
@@ -344,8 +366,11 @@ export default function CollaboratePage() {
                 Reach us on the contact page
               </h2>
               <p className="mt-4 text-lg text-[#F7F3EA]/85">
-                That is how to start a creator collab or a Tell your story recording. Share your
-                name, email, and hub link. Say whether the hub should be free or priced.
+                That is how to start a creator collab. For the podcast guest opportunity, use{' '}
+                <Link href="/podcast-guest" className="underline underline-offset-2">
+                  Be a podcast guest
+                </Link>
+                . Share your name, email, hub link, and anything else you want us to know.
               </p>
               <a
                 href={contactHref}

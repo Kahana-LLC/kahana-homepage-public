@@ -15,7 +15,7 @@ export const AURA_SEO = {
 export const AURA_RULE_IDS = ['what', 'budget', 'stays', 'who', 'target', 'self'];
 
 /** Remaining Aura topics as a collapsible FAQ. */
-export const AURA_FAQ_IDS = ['why-not-reviews', 'create'];
+export const AURA_FAQ_IDS = ['why-not-reviews', 'create', 'ai-slop'];
 
 /** Long-form sections for /aura. */
 export const AURA_SECTIONS = [
@@ -84,6 +84,14 @@ export const AURA_SECTIONS = [
       'To contribute knowledge to the library, you Create a hub, add digital artifacts, and optimize it so people can find it (clear names, tags, description, Library listing).',
       'You can invite editors and admins to collaborate on a hub. Team contribution still starts with creating that hub.',
       'When others value your hub or a standout file inside it, they may give Aura. Creating is how you add knowledge. Creating is not required to give Aura.',
+    ],
+  },
+  {
+    id: 'ai-slop',
+    title: 'How does Aura help against AI slop?',
+    paragraphs: [
+      'Aura is scarce, so people tend to spend it on work they trust, not on low-effort generated filler. That keeps careful human knowledge easier to find.',
+      'You can also report hubs, files, or profiles you believe are AI slop. We review those reports. More on our commitment: Not a home for AI slop.',
     ],
   },
 ];

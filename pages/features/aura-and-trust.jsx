@@ -141,6 +141,19 @@ export default function AuraAndTrustFeaturePage() {
                   sources, read context, and follow the hub as a path.
                 </p>
                 <p>
+                  It is also how we lean against AI slop. Scarce endorsements go to work people
+                  trust. Anyone can report hubs or files they believe are low-effort generated
+                  filler. That is how careful knowledge stays visible when other places fill with
+                  noise. Read{' '}
+                  <Link
+                    href="/blog/against-ai-slop"
+                    className="font-medium text-[#8A6622] underline-offset-4 hover:underline"
+                  >
+                    Not a home for AI slop
+                  </Link>
+                  .
+                </p>
+                <p>
  Identity on a listing, who shared the hub, and a check mark if they finished Stripe
  Identity, is a different question.{' '}
                   <Link
@@ -172,6 +185,13 @@ export default function AuraAndTrustFeaturePage() {
                   className="font-medium text-[#8A6622] underline-offset-4 hover:underline"
                 >
                   Aura feature
+                </Link>
+                {' · '}
+                <Link
+                  href="/blog/against-ai-slop"
+                  className="font-medium text-[#8A6622] underline-offset-4 hover:underline"
+                >
+                  Against AI slop
                 </Link>
                 {' · '}
                 <Link
