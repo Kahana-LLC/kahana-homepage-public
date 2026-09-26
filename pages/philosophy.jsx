@@ -213,16 +213,7 @@ export default function PhilosophyPage() {
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-[#666666]">
                 Philosophy is only real if the shelves fill with unique knowledge. Explore what is
-                already endorsed. Upload what only you can share. Or{' '}
-                <a
-                  href={PARTNERSHIP_CONTACT_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[#8A6622] underline underline-offset-2"
-                >
-                  partner with us
-                </a>{' '}
-                as a creator.
+                already endorsed. Upload what only you can share.
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-3">
                 <ExploreLibraryButton
