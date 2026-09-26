@@ -71,7 +71,7 @@ const PROTOCOLS = [
     Icon: EyeSlashIcon,
     title: 'Adult content is flagged and gated',
     lead: 'Creators declare 18+. Library hides adult hubs by default. Access needs login and date of birth.',
-    body: 'There is no anonymous "I'm 18" unlock. Adult hubs can list, but they sit behind filters and are not SEO-indexed like general listings. Guests cannot complete the adult path. Paid adult hubs still need purchase on top of the age gate.',
+    body: "There is no anonymous \"I'm 18\" unlock. Adult hubs can list, but they sit behind filters and are not SEO-indexed like general listings. Guests cannot complete the adult path. Paid adult hubs still need purchase on top of the age gate.",
     links: [
       { href: '/help/adult-content-and-age-verification', label: 'Adult content & age verification' },
       { href: '/help/trust', label: 'Trust & intentional access' },
