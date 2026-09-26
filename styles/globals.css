@@ -262,6 +262,21 @@ a.pricing-button:focus {
   text-decoration: none !important;
 }
 
+button.billing-cadence-option {
+  background-color: transparent !important;
+  color: #111111 !important;
+  font-weight: 700 !important;
+  border: none !important;
+  border-radius: 9999px !important;
+  padding: 0.45rem 1.35rem !important;
+  box-shadow: none !important;
+}
+
+button.billing-cadence-option--on {
+  background-color: #ffffff !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12) !important;
+}
+
 /* High-contrast buttons */
 button,
 .btn,
@@ -363,6 +378,34 @@ button.compare-pager-btn:disabled {
 @media (prefers-reduced-motion: reduce) {
   .aura-mark.aura-mark-pulse {
     animation: none;
+  }
+}
+
+.affiliate-nudge-aura {
+  filter:
+    drop-shadow(0 0 6px rgba(255, 176, 48, 0.55))
+    drop-shadow(0 0 14px rgba(255, 106, 16, 0.35));
+  animation: affiliate-nudge-aura 2.8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .affiliate-nudge-aura {
+    animation: none;
+  }
+}
+
+@keyframes affiliate-nudge-aura {
+  0%,
+  100% {
+    filter:
+      drop-shadow(0 0 5px rgba(255, 176, 48, 0.4))
+      drop-shadow(0 0 12px rgba(220, 48, 32, 0.22));
+  }
+  50% {
+    filter:
+      drop-shadow(0 -2px 8px rgba(255, 246, 220, 0.7))
+      drop-shadow(0 0 10px rgba(255, 140, 32, 0.65))
+      drop-shadow(0 0 18px rgba(220, 48, 32, 0.38));
   }
 }
 

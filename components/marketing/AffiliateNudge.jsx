@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { SparklesIcon } from '@heroicons/react/24/outline';
 import { useConsent } from '../../contexts/ConsentContext';
 
 const STORAGE_KEY = 'kahana_affiliate_nudge_dismissed';
@@ -42,7 +43,11 @@ export default function AffiliateNudge() {
       aria-label="Affiliate program"
     >
       <div className="flex items-start justify-between gap-3">
-        <p className="text-sm leading-relaxed">
+        <SparklesIcon
+          className="affiliate-nudge-aura mt-0.5 h-5 w-5 shrink-0 text-[#C47A12]"
+          aria-hidden
+        />
+        <p className="min-w-0 flex-1 text-sm leading-relaxed">
           Invite someone to Kahana. They get 30% off Growth forever. You earn 30% of what they pay.
         </p>
         <button

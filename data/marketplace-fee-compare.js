@@ -62,7 +62,7 @@ export const MARKETPLACE_FEE_KAHANA = {
   name: 'Kahana',
   platformFeePct: 5,
   processing: 'Plus Stripe processing (~2.9% + $0.30 for US cards)',
-  note: 'Paid hub access, same on Free and Growth',
+  note: '5% on Free hub sales, 3% on Growth',
 };
 
 export function platformTakeUsd(pct, saleUsd = FEE_EXAMPLE_SALE_USD) {

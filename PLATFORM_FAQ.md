@@ -343,7 +343,7 @@ There is no anonymous “I’m 18” unlock for adult hubs.
 
 ### When should I upgrade to Growth?
 
-Upgrade when you need a 4th hub, Free upload limits feel tight, you need larger files, or you want live chat support.
+Upgrade when you need a 4th hub, more than 10 file uploads in a hub, files over 5 MB, custom hub or profile URLs, or live chat. Growth hub sales pay 3% instead of 5%.
 
 Compare plans in **Billing** in the app.
 
@@ -355,9 +355,7 @@ You keep access through the end of the paid period.
 
 ### Do Free creators still pay the 5% marketplace fee?
 
-Yes. The 5% fee applies to hub sales on Free and Growth.
-
-Growth gives you higher limits and support. It does not remove the marketplace fee.
+Yes. Free hub sales pay a 5% fee. Growth hub sales pay 3%.
 
 ---
 

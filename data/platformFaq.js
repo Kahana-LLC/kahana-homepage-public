@@ -352,7 +352,7 @@ export const FAQ_SECTIONS = [
         id: 'upgrade-growth',
         question: 'When should I upgrade to Growth?',
         answer:
-          'Upgrade when you need a 4th hub, Free upload limits feel tight, you need larger files, or you want live chat support.\n\nYou do not need Growth to list on Library or sell with Stripe. Growth does not remove the 5% marketplace fee.\n\nHow-to: /help/when-to-upgrade. Compare plans on /pricing or Billing in the app.',
+          'Upgrade when you need a 4th hub, more than 10 file uploads in a hub, files over 5 MB, custom hub or profile URLs, or live chat.\n\nYou do not need Growth to list on Library or sell with Stripe. Growth lowers the hub sales fee from 5% to 3%.\n\nHow-to: /help/when-to-upgrade. Compare plans on /pricing or Billing in the app.',
       },
       {
         id: 'cancel-growth',
@@ -364,7 +364,7 @@ export const FAQ_SECTIONS = [
         id: 'free-still-fee',
         question: 'Do Free creators still pay the 5% marketplace fee?',
         answer:
-          'Yes. The 5% fee applies to hub sales on Free and Growth.\n\nGrowth gives you higher limits and support. It does not remove the marketplace fee. When to upgrade: /help/when-to-upgrade.',
+          'Yes. Free hub sales pay a 5% fee. Growth hub sales pay 3%.\n\nWhen to upgrade: /help/when-to-upgrade.',
       },
     ],
   },

@@ -11,7 +11,7 @@ export const PHILOSOPHY_INTRO =
 export const PHILOSOPHY_PILLARS = [
   {
     id: 'philomaths',
-    role: 'Mission',
+    role: 'Community',
     word: 'Philomaths',
     gloss: 'support people who love to learn',
     etymology: 'From Greek: philos, loving, and manthanein, to learn',

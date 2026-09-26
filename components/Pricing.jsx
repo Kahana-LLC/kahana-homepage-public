@@ -1,48 +1,30 @@
+import { useState } from 'react';
 import Link from 'next/link';
 import FadeInSection from './FadeInSection';
 import CreatorStackLedger from './compare/CreatorStackLedger';
-import GrowthTrialPill from './marketing/GrowthTrialPill';
 import { useMarketingI18n } from '../contexts/MarketingI18n';
 
 const INCLUDED = { included: true };
 
-const tiers = [
-  {
-    name: 'Free',
-    href: 'https://kahana.io/?utm_source=marketing&utm_medium=website&utm_campaign=pricing_free',
-    priceLabel: '$0',
-    priceSuffix: 'forever',
-    featuresHeading: 'What you get',
-    includedFeatures: [
-      '3 hubs',
-      'Up to 10 counted uploads per hub',
-      'Upload files up to 5 MB',
-      'Unlimited collaborators',
-      'Monetize hubs with Stripe',
-      'List on Library, Clubs, Aura, and the rest of the product',
-    ],
-    cta: 'Start free',
-    buttonStyle: 'secondary',
-  },
-  {
-    name: 'Growth',
-    href: 'https://kahana.io/billing?intent=sell&trial=growth&utm_source=marketing&utm_medium=website&utm_campaign=pricing_growth_trial',
-    priceLabel: '$29.99',
-    priceSuffix: 'per month',
-    featuresHeading: 'Everything in Free, plus',
-    includedFeatures: [
-      'Unlimited hubs',
-      'Unlimited uploads per hub',
-      'Upload files up to 5 GB',
-      '100 GB cloud storage',
-      'Priority live chat',
-    ],
-    annualNote: 'Save 17% with annual billing',
-    trialNote: '14-day free trial · New',
-    cta: 'Start trial',
-    buttonStyle: 'primary',
-    highlighted: true,
-  },
+const FREE_HREF = 'https://kahana.io/?utm_source=marketing&utm_medium=website&utm_campaign=pricing_free';
+const GROWTH_HREF = 'https://kahana.io/billing?intent=sell&trial=growth&utm_source=marketing&utm_medium=website&utm_campaign=pricing_growth_trial';
+
+const FREE_FEATURES = [
+  { text: '3 hubs', included: true },
+  { text: '10 file uploads per hub', included: true },
+  { text: 'Unlimited members', included: true },
+  { text: 'Files up to 5 MB', included: 'muted' },
+  { text: '5% transaction fee', included: 'muted' },
+  { text: 'Custom hub and profile URLs', included: false },
+];
+
+const GROWTH_FEATURES = [
+  { text: 'Unlimited hubs', included: true },
+  { text: 'Unlimited file uploads', included: true },
+  { text: 'Unlimited members', included: true },
+  { text: 'Files up to 5 GB', included: true },
+  { text: '3% transaction fee', included: true },
+  { text: 'Custom hub and profile URLs', included: true },
 ];
 
 const comparisonGroups = [
@@ -50,7 +32,9 @@ const comparisonGroups = [
     heading: 'Where Growth is different',
     differs: true,
     rows: [
-      { feature: 'Hubs you can create', free: '3', growth: 'Unlimited' },
+      { feature: 'Hubs you can create', free: '3 hubs', growth: 'Unlimited' },
+      { feature: 'Custom hub link', free: 'Not included', growth: 'Included' },
+      { feature: 'Custom profile link', free: 'Not included', growth: 'Included' },
       {
         feature: 'Counted uploads per hub',
         hint: 'Notes, links, and many embeds do not count toward this cap.',
@@ -105,7 +89,7 @@ const comparisonGroups = [
       { feature: 'Optional free trial on paid hubs', ...INCLUDED },
       { feature: 'List paid or free hubs on Library', ...INCLUDED },
       { feature: 'Creator analytics', ...INCLUDED },
-      { feature: 'Marketplace fee on hub sales', free: '5%', growth: '5%' },
+      { feature: 'Transaction fee on hub sales', free: '5%', growth: '3%' },
     ],
   },
   {
@@ -123,18 +107,45 @@ const comparisonGroups = [
 
 function CheckIcon({ className }) {
   return (
-    <svg
-      className={className}
-      viewBox="0 0 20 20"
-      fill="currentColor"
-      aria-hidden
-    >
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden>
       <path
         fillRule="evenodd"
         d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
         clipRule="evenodd"
       />
     </svg>
+  );
+}
+
+function CrossIcon({ className }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden>
+      <path
+        fillRule="evenodd"
+        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+        clipRule="evenodd"
+      />
+    </svg>
+  );
+}
+
+function FeatureRow({ feature, emphasize }) {
+  const muted = feature.included === 'muted';
+  const included = feature.included === true || muted;
+  const iconClass = emphasize && feature.included === true
+    ? 'mt-0.5 h-5 w-5 flex-shrink-0 text-[#2b8a3e]'
+    : 'mt-0.5 h-[18px] w-[18px] flex-shrink-0 text-[#9aa0a6]';
+  const includedIconClass = feature.included === true && !emphasize
+    ? 'mt-0.5 h-[18px] w-[18px] flex-shrink-0 text-[#40c057]'
+    : iconClass;
+
+  return (
+    <li className="flex min-h-8 items-start gap-3">
+      {included ? <CheckIcon className={includedIconClass} /> : <CrossIcon className={iconClass} />}
+      <span className={`text-sm leading-snug ${muted ? 'text-[#666666]' : 'text-[#3B2F1A]'}`}>
+        {feature.text}
+      </span>
+    </li>
   );
 }
 
@@ -164,85 +175,84 @@ function PlanValue({ value, included, emphasize }) {
 
 export default function Pricing() {
   const { t } = useMarketingI18n();
+  const [yearly, setYearly] = useState(false);
+  const growthPrice = yearly ? '$299.99/year' : '$29.99/month';
 
   return (
     <div className="bg-[#F7F3EA]">
       <section className="px-4 pb-6 pt-8 text-center sm:px-6 sm:pt-12 lg:px-8">
-        <h1 className="text-4xl font-extrabold tracking-tight text-[#3B2F1A] sm:text-5xl">
-          Plans &amp; billing
+        <h1 className="text-xl font-bold text-[#3B2F1A]">
+          Simple pricing
         </h1>
-        <p className="mx-auto mt-4 max-w-2xl text-lg text-[#666666]">
-          Free includes the product. Growth raises hub, upload, and file limits,
-          and adds live chat.
-        </p>
+        <div className="relative mt-8 inline-flex">
+          <div className="inline-flex rounded-full bg-[#ececec] p-1">
+            <button
+              type="button"
+              className={`billing-cadence-option ${yearly ? '' : 'billing-cadence-option--on'}`}
+              onClick={() => setYearly(false)}
+            >
+              Monthly
+            </button>
+            <span className="relative">
+              <button
+                type="button"
+                className={`billing-cadence-option ${yearly ? 'billing-cadence-option--on' : ''}`}
+                onClick={() => setYearly(true)}
+              >
+                Yearly
+              </button>
+              <span className="pointer-events-none absolute right-0 top-0 -translate-y-1/2 translate-x-1/4 rounded bg-[#e7f6ec] px-1 py-px text-[10px] font-medium leading-tight text-[#2b8a3e]">
+                2 months free
+              </span>
+            </span>
+          </div>
+        </div>
       </section>
 
       <FadeInSection>
         <section className="px-4 pb-10 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-5xl">
-            <div className="mx-auto grid max-w-4xl grid-cols-1 gap-6 md:grid-cols-2 md:items-stretch lg:gap-8">
-              {tiers.map((tier) => (
-                <div
-                  key={tier.name}
-                  className={`relative flex flex-col rounded-2xl border-2 bg-white p-5 transition-all duration-300 hover:shadow-lg sm:p-6 lg:p-8 ${
-                    tier.highlighted ? 'border-[#8A6622]' : 'border-[#E4D9C4]'
-                  }`}
+            <div className="mx-auto grid max-w-4xl grid-cols-1 items-stretch gap-6 md:grid-cols-2">
+              <article className="flex min-h-[420px] flex-col rounded-md border border-[#E4D9C4] bg-[#FBF6EC] p-6 shadow-sm">
+                <h2 className="text-xl font-bold text-[#3B2F1A]">
+                  Free
+                  <span className="ml-2">$0</span>
+                </h2>
+                <p className="mb-4 min-h-6 text-sm text-[#666666]" />
+                <ul className="flex-1 space-y-1">
+                  {FREE_FEATURES.map((feature) => (
+                    <FeatureRow key={feature.text} feature={feature} />
+                  ))}
+                </ul>
+                <a
+                  href={FREE_HREF}
+                  className="mt-6 inline-flex w-full items-center justify-center rounded-md border-2 border-[#6B5420] bg-transparent px-5 py-3 text-base font-semibold text-[#6B5420] no-underline hover:bg-[#EDE6D2]"
                 >
-                  {tier.highlighted ? (
-                    <p className="mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-[#8A6622]">
-                      Recommended when you hit a limit
-                    </p>
-                  ) : null}
-                  <div className="mb-4 flex min-h-[180px] flex-col">
-                    <h2 className="mb-3 text-base font-semibold text-[#3B2F1A] sm:text-lg">
-                      {tier.name}
-                    </h2>
-                    <div className="mb-4 flex flex-wrap items-baseline gap-x-1">
-                      <span className="text-3xl font-bold text-[#3B2F1A] sm:text-4xl lg:text-5xl">
-                        {tier.priceLabel}
-                      </span>
-                      <span className="text-sm text-[#666666]">{tier.priceSuffix}</span>
-                    </div>
-                    {tier.annualNote ? (
-                      <p className="mb-3 text-sm font-medium text-[#5C4520]">{tier.annualNote}</p>
-                    ) : (
-                      <p className="mb-3 h-5" aria-hidden="true" />
-                    )}
-                    <div className="mt-auto min-h-[44px] flex flex-col items-stretch justify-center gap-2">
-                      <a
-                        href={tier.href}
-                        className={`btn-${tier.buttonStyle} inline-flex w-full items-center justify-center rounded-full px-4 py-2.5 text-sm font-normal no-underline transition-all hover:no-underline focus:no-underline sm:py-3 sm:text-base`}
-                      >
-                        {tier.cta}
-                      </a>
-                      {tier.trialNote ? (
-                        <div className="flex justify-center">
-                          <GrowthTrialPill href={tier.href} />
-                        </div>
-                      ) : null}
-                    </div>
-                  </div>
-
-                  <ul className="space-y-2 sm:space-y-3">
-                    <li className="mb-2 h-5 text-sm font-semibold text-[#666666]">
-                      {tier.featuresHeading}
-                    </li>
-                    {tier.includedFeatures.map((feature) => (
-                      <li key={feature} className="flex items-start">
-                        <CheckIcon className="mr-2 mt-0.5 h-4 w-4 flex-shrink-0 text-[#5C4520]" />
-                        <span className="text-xs leading-relaxed text-[#333333] sm:text-sm">
-                          {feature}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
+                  Start free
+                </a>
+              </article>
+              <article className="flex min-h-[420px] flex-col rounded-md border border-[#E4D9C4] bg-[#FBF6EC] p-6 shadow-sm">
+                <h2 className="text-xl font-bold text-[#3B2F1A]">
+                  Growth
+                  <span className="ml-2">{growthPrice}</span>
+                </h2>
+                <p className="mb-4 min-h-6 text-sm text-[#666666]">14-day free trial</p>
+                <ul className="flex-1 space-y-1">
+                  {GROWTH_FEATURES.map((feature) => (
+                    <FeatureRow key={feature.text} feature={feature} emphasize />
+                  ))}
+                </ul>
+                <a
+                  href={GROWTH_HREF}
+                  className="mt-6 inline-flex w-full items-center justify-center rounded-md border-2 border-transparent bg-[#6B5420] px-5 py-3 text-base font-semibold text-[#FBF6EC] no-underline hover:bg-[#5C4520]"
+                >
+                  Start 14-day trial
+                </a>
+              </article>
             </div>
 
             <p className="mx-auto mt-10 max-w-2xl text-center text-sm text-[#666666] sm:text-base">
-              Prices are in $ USD. Kahana earns 5% whenever anyone pays to access
- a monetized hub, the same on Free and Growth.
+              Prices are in $ USD. Kahana keeps 5% of hub sales on Free and 3% on Growth. That fee is separate from Stripe processing.
             </p>
           </div>
         </section>
@@ -362,9 +372,7 @@ export default function Pricing() {
               <p className="mt-3 text-base leading-relaxed text-[#666666]">
                 Stay on Free until you hit a limit (4th hub, upload cap, files
                 over ~5&nbsp;MB) or want live chat. You can list on Library and
-                sell with Stripe on Free, Growth is capacity and support, not
-                permission to monetize. The 5% marketplace fee is the same on
-                both plans.
+                sell with Stripe on Free. Growth adds higher limits, custom hub and profile URLs, live chat, and a 3% hub sales fee instead of 5%.
               </p>
               <p className="mt-4 text-base">
                 <Link
