@@ -855,9 +855,10 @@ export const USE_CASES = [
   },
   {
     slug: 'paid-memberships',
-    title: 'Sell monthly access',
+    title: 'Host premium subscriptions',
     eyebrow: 'Use case',
-    summary: 'Charge for ongoing hub access. Same 5% fee as a one-time unlock. Stripe handles the card.',
+    summary:
+      'Sell monthly access to a premium hub pack. Same 5% fee as a one-time unlock. Stripe handles the card.',
     lead: 'If your pack updates, a monthly price can fit better than a one-time file drop. Buyers unlock the hub while they are subscribed. You can still list free hubs next to paid ones.',
     appHref: APP_CREATE_URL,
     appLabel: 'Create a hub',

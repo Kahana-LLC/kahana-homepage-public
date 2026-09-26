@@ -135,16 +135,16 @@ export default function BlogIndex({ posts = [] }) {
   return (
     <>
       <Head>
-        <title>Kahana Guides | Set up, use cases, and your stack</title>
+        <title>Kahana Blog | Set up, use cases, and your stack</title>
         <meta name="description" content="Guides to set up Kahana, use it for book clubs, workshops, and selling digital packs, and sit it next to YouTube, Discord, Substack, and tools you already love." />
-        <meta name="keywords" content="Kahana guides, set up Kahana, use cases, YouTube, Discord, hubs, Library, Aura" />
+        <meta name="keywords" content="Kahana blog, set up Kahana, use cases, YouTube, Discord, hubs, Library, Aura" />
         <link rel="canonical" href="https://about.kahana.io/blog" />
         <meta property="og:url" content="https://about.kahana.io/blog" />
-        <meta property="og:title" content="Kahana Guides | Set up, use cases, and your stack" />
+        <meta property="og:title" content="Kahana Blog | Set up, use cases, and your stack" />
         <meta property="og:description" content="Optimize Kahana: setup, use cases, and how it sits with tools you already love." />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Kahana Guides | Set up, use cases, and your stack" />
+        <meta name="twitter:title" content="Kahana Blog | Set up, use cases, and your stack" />
         <meta name="twitter:description" content="Optimize Kahana: setup, use cases, and how it sits with tools you already love." />
 
         {/* Structured Data for Blog Index */}
@@ -185,7 +185,7 @@ export default function BlogIndex({ posts = [] }) {
           <Breadcrumbs 
             items={[
               { name: "Home", url: "/" },
-              { name: "Guides", url: "/blog" },
+              { name: "Blog", url: "/blog" },
             ]} 
           />
         </div>
@@ -193,7 +193,7 @@ export default function BlogIndex({ posts = [] }) {
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-oasis-green-900 mb-4">
-            Kahana guides
+            Kahana blog
           </h1>
           <p className="text-xl text-oasis-green-800 max-w-2xl mx-auto">
             Optimize your stack. Set up Kahana, use it for book clubs, workshops, and selling digital packs, or see how it sits with YouTube, Discord, and tools you already love.

@@ -71,6 +71,17 @@ export default function LearnersPage() {
                 </a>
               </div>
               <p className="mt-4 text-sm text-[#8A9378]">{t('learnersPage.ctaHint')}</p>
+              <p className="mt-3 text-sm text-[#5C4520]">
+                <Link
+                  href="/learner-benefits"
+                  className="font-semibold text-[#8A6622] underline underline-offset-2"
+                  onClick={() => trackButtonClick('learners_hero_benefits')}
+                >
+                  Benefits for learners
+                </Link>
+                {' · '}
+                Cognition streak, Learning analytics, and deep understanding.
+              </p>
             </FadeInSection>
           </div>
         </section>

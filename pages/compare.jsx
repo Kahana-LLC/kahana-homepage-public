@@ -8,6 +8,7 @@ import { productHref } from '../lib/productLinks';
 import { trackButtonClick } from '../utils/analytics';
 import { useMarketingI18n } from '../contexts/MarketingI18n';
 import UseWithMarquee from '../components/compare/UseWithMarquee';
+import { INTEGRATION_CONTACT_URL } from '../components/nav/navConfig';
 
 const CANONICAL = `${ABOUT_ORIGIN}/compare`;
 
@@ -80,6 +81,15 @@ export default function ComparePage() {
                 >
                   <MagnifyingGlassIcon className="h-5 w-5 shrink-0" aria-hidden />
                   {t('home.explore')}
+                </a>
+                <a
+                  href={INTEGRATION_CONTACT_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-secondary inline-flex items-center justify-center !border-[#F7F3EA]/40 !bg-transparent no-underline !text-[#F7F3EA] hover:!border-[#F7F3EA] hover:!bg-white/10 hover:!text-[#F7F3EA]"
+                  onClick={() => trackButtonClick('compare_integrations_contact')}
+                >
+                  {t('compare.integrateCta')}
                 </a>
                 <Link
                   href="/success-stories"

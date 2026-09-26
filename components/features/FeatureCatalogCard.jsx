@@ -30,6 +30,7 @@ import {
   UserGroupIcon,
   UserPlusIcon,
   UsersIcon,
+  ArrowPathRoundedSquareIcon,
 } from '@heroicons/react/24/outline';
 import RainbowHoverCard from '../home/platform/RainbowHoverCard';
 
@@ -68,7 +69,7 @@ const FEATURE_ICONS = {
   'newsletter-companion': EnvelopeIcon,
   'public-domain-ebooks': ArchiveBoxArrowDownIcon,
   'cohorts-and-communities': UsersIcon,
-  'paid-memberships': BanknotesIcon,
+  'paid-memberships': ArrowPathRoundedSquareIcon,
   'get-discovered': SparklesIcon,
   'collaborate-on-hubs': UserPlusIcon,
   'share-your-profile': IdentificationIcon,
@@ -79,10 +80,16 @@ const FEATURE_ICONS = {
   'learn-in-depth': DocumentTextIcon,
 };
 
-export default function FeatureCatalogCard({ href, title, summary, slug }) {
+export default function FeatureCatalogCard({ href, title, summary, slug, scrollItem = false }) {
   const Icon = FEATURE_ICONS[slug];
   return (
-    <li className="flex min-w-[16rem] flex-1">
+    <li
+      className={
+        scrollItem
+          ? 'flex w-[17.5rem] shrink-0 snap-start sm:w-[19rem]'
+          : 'flex min-w-[16rem] flex-1'
+      }
+    >
       <Link href={href} className="flex h-full w-full no-underline">
         <RainbowHoverCard
           className="h-full w-full"

@@ -6,7 +6,7 @@ import {
 } from '@heroicons/react/24/outline';
 import SEO from '../components/SEO';
 import FadeInSection from '../components/FadeInSection';
-import DarkLibraryCta from '../components/marketing/DarkLibraryCta';
+import GlobalReaderFlags from '../components/marketing/GlobalReaderFlags';
 import RainbowHoverCard from '../components/home/platform/RainbowHoverCard';
 import {
   PHILOSOPHY_INTRO,
@@ -14,9 +14,13 @@ import {
   PHILOSOPHY_PILLARS,
   PHILOSOPHY_TONE_STYLES,
 } from '../data/philosophyCopy';
-import { GLOBAL_READER_FLAGS } from '../data/globalReaderFlags';
 import { productHref } from '../lib/productLinks';
+import { PARTNERSHIP_CONTACT_URL } from '../components/nav/navConfig';
 import { trackButtonClick } from '../utils/analytics';
+import {
+  ExploreLibraryButton,
+  ShareUniqueKnowledgeButton,
+} from '../components/marketing/LibraryActionButtons';
 
 const ICONS = {
   philomaths: AcademicCapIcon,
@@ -36,6 +40,7 @@ function PhilosophyMark({ Icon, wellClass, iconClass }) {
 
 export default function PhilosophyPage() {
   const libraryHref = productHref('/library', 'philosophy_explore');
+  const createHref = productHref('/', 'philosophy_create');
 
   return (
     <>
@@ -67,19 +72,12 @@ export default function PhilosophyPage() {
               <p className="mt-5 text-lg leading-relaxed text-[#5C4520] sm:text-xl">
                 {PHILOSOPHY_INTRO}
               </p>
-              <ul
-                className="mx-auto mt-8 flex max-w-xl flex-wrap justify-center gap-2"
-                aria-label="A sample of countries readers already come from. Kahana reaches 110 or more."
-              >
-                {GLOBAL_READER_FLAGS.map(([name, flag]) => (
-                  <li key={name} title={name} aria-label={name} className="text-2xl leading-none">
-                    <span aria-hidden>{flag}</span>
-                  </li>
-                ))}
-              </ul>
+              <div className="mx-auto mt-8">
+                <GlobalReaderFlags />
+              </div>
               <p className="mt-4 text-sm text-[#666666]">
-                Create, learn, and research on a global scale. Readers already come from over 110
-                countries and speak many languages.
+                Create, learn, and research on a global scale. Our community comes from over 110+
+                countries and speaks many languages.
               </p>
             </FadeInSection>
           </div>
@@ -147,8 +145,68 @@ export default function PhilosophyPage() {
           </section>
         ))}
 
-        <section className="border-t border-[#E4D9C4] px-6 py-16 sm:px-10 lg:px-16">
+        <section
+          id="value-exchange"
+          className="border-t border-[#E4D9C4] px-6 py-16 sm:px-10 lg:px-16"
+        >
           <div className="mx-auto max-w-3xl">
+            <FadeInSection>
+              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[#8A6622]">
+                Value exchange
+              </p>
+              <h2 className="mt-2 text-2xl font-semibold sm:text-3xl">
+                Everyone is a creator and a learner
+              </h2>
+              <div className="mt-6 space-y-4 text-lg leading-relaxed text-[#666666]">
+                <p>
+                  Kahana is not a one-way transaction. Creators build pathways. Learners bring those
+                  pathways to life. The community makes value visible. The Library becomes alive
+                  when value moves in every direction.
+                </p>
+                <p>
+                  No one is only a creator. No one is only a learner. Creation is learning made
+                  visible. Learning is creation beginning. Aura helps meaningful work travel.
+                  Payment helps meaningful work continue.
+                </p>
+              </div>
+              <blockquote className="mt-8 border-l-2 border-[#8A6622] pl-5 text-[#5C4520]">
+                <p className="text-lg font-medium italic leading-relaxed sm:text-xl">
+                  The Library is not a pipeline from creator to consumer. It is a cycle of human
+                  becoming.
+                </p>
+              </blockquote>
+              <p className="mt-8 text-base leading-relaxed text-[#5C4520]">
+                Read the full manifesto on{' '}
+                <Link
+                  href="/value-exchange"
+                  className="font-semibold text-[#8A6622] underline underline-offset-2"
+                >
+                  Value exchange
+                </Link>
+                , the{' '}
+                <Link
+                  href="/blog/value-exchange"
+                  className="text-[#8A6622] underline underline-offset-2"
+                >
+                  companion guide
+                </Link>
+                , or the source note in the{' '}
+                <a
+                  href="https://kahana.io/hub/Rzl4UEbzVeym5xqtQ4ZS?resource=46uK8ckhVBPwnyZXVCj1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#8A6622] underline underline-offset-2"
+                >
+                  Kahana HQ hub
+                </a>
+                .
+              </p>
+            </FadeInSection>
+          </div>
+        </section>
+
+        <section className="border-t border-[#E4D9C4] bg-[#EDE6D2] px-6 py-16 sm:px-10 lg:px-16">
+          <div className="mx-auto max-w-3xl text-center">
             <FadeInSection>
               <h2 className="text-2xl font-semibold sm:text-3xl">
                 The Library needs to be built with your help
@@ -156,59 +214,62 @@ export default function PhilosophyPage() {
               <p className="mt-4 text-lg leading-relaxed text-[#666666]">
                 Philosophy is only real if the shelves fill with unique knowledge. Explore what is
                 already endorsed. Upload what only you can share. Or{' '}
-                <Link href="/collabs" className="text-[#8A6622] underline underline-offset-2">
-                  collab with us
-                </Link>{' '}
-                as a creator.
-              </p>
-              <div className="mt-8 flex flex-wrap gap-3">
                 <a
-                  href={libraryHref}
+                  href={PARTNERSHIP_CONTACT_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-primary inline-flex items-center justify-center no-underline"
-                  onClick={() => trackButtonClick('philosophy_explore')}
+                  className="text-[#8A6622] underline underline-offset-2"
                 >
-                  Explore the Library
-                </a>
+                  partner with us
+                </a>{' '}
+                as a creator.
+              </p>
+              <div className="mt-8 flex flex-wrap justify-center gap-3">
+                <ExploreLibraryButton
+                  href={libraryHref}
+                  onClick={() => trackButtonClick('philosophy_explore')}
+                />
+                <ShareUniqueKnowledgeButton
+                  href={createHref}
+                  onClick={() => trackButtonClick('philosophy_create')}
+                />
+              </div>
+              <p className="mt-8 text-base leading-relaxed text-[#5C4520]">
+                <Link href="/aura" className="text-[#8A6622] underline underline-offset-2">
+                  Aura
+                </Link>
+                {' · '}
+                <Link href="/value-exchange" className="text-[#8A6622] underline underline-offset-2">
+                  Value exchange
+                </Link>
+                {' · '}
                 <Link
                   href="/why-the-aura-library-matters"
-                  className="btn-secondary inline-flex items-center justify-center no-underline"
+                  className="text-[#8A6622] underline underline-offset-2"
                 >
-                  Why the Aura Library matters
+                  Our mission
                 </Link>
-              </div>
+                {' · '}
+                <Link href="/features/discussions" className="text-[#8A6622] underline underline-offset-2">
+                  Discussions
+                </Link>
+                {' · '}
+                <a
+                  href={PARTNERSHIP_CONTACT_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#8A6622] underline underline-offset-2"
+                >
+                  Partnerships
+                </a>
+                {' · '}
+                <Link href="/affiliates" className="text-[#8A6622] underline underline-offset-2">
+                  Become an affiliate
+                </Link>
+              </p>
             </FadeInSection>
           </div>
         </section>
-
-        <DarkLibraryCta
-          title="Contribute to the global library"
-          description="Open the Library, share unique knowledge, or read how Aura keeps quality visible."
-          libraryCampaign="philosophy_library"
-          createCampaign="philosophy_create"
-          libraryTrack="philosophy_library"
-          createTrack="philosophy_create"
-          createLabel="Share unique knowledge"
-        >
-          <p className="mt-8 text-sm text-[#F7F3EA]/70">
-            <Link href="/aura" className="underline underline-offset-2">
-              Aura
-            </Link>
-            {' · '}
-            <Link href="/features/discussions" className="underline underline-offset-2">
-              Discussions
-            </Link>
-            {' · '}
-            <Link href="/collabs" className="underline underline-offset-2">
-              Creator collabs
-            </Link>
-            {' · '}
-            <Link href="/affiliates" className="underline underline-offset-2">
-              Affiliates
-            </Link>
-          </p>
-        </DarkLibraryCta>
       </div>
     </>
   );

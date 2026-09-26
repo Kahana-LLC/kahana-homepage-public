@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ArrowRightIcon } from '@heroicons/react/24/outline';
 import BrandMark from './BrandMark';
+import GrowthTrialPill from '../marketing/GrowthTrialPill';
 import { productHref } from '../../lib/productLinks';
 import { trackButtonClick } from '../../utils/analytics';
 import {
@@ -109,6 +110,19 @@ export default function CreatorStackLedger({ t, showPricingLink = true }) {
           </Link>
         ) : null}
       </div>
+      <p className="mt-4 flex flex-wrap items-center justify-center gap-3">
+        <GrowthTrialPill
+          href={trialUrl}
+          onClick={() => trackButtonClick('compare_stack_trial_pill')}
+        />
+        <Link
+          href="/affiliates"
+          className="text-sm font-semibold text-[#8A6622] underline underline-offset-2"
+          onClick={() => trackButtonClick('compare_stack_affiliates')}
+        >
+          {t('compare.stackAffiliateCta')}
+        </Link>
+      </p>
     </div>
   );
 }

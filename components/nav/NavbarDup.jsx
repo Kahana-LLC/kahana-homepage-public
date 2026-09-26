@@ -8,7 +8,7 @@ import {
   MagnifyingGlassIcon,
 } from '@heroicons/react/24/outline';
 import { getCloudinaryImageUrl } from '../../utils/cloudinary-mapper';
-import { desktopNavItems, mobileNavRows } from './navConfig';
+import { desktopNavItems, mobileNavSections } from './navConfig';
 import { productHref } from '../../lib/productLinks';
 import KahanaWordmark from '../brand/KahanaWordmark';
 import LanguageMenu from '../brand/LanguageMenu';
@@ -18,11 +18,13 @@ import { useMarketingI18n } from '../../contexts/MarketingI18n';
 const MD_BREAKPOINT = 1024;
 
 const NAV_LABEL_KEYS = {
+  discover: 'nav.discover',
   help: 'nav.help',
   support: 'nav.support',
   contact: 'nav.contact',
   useCases: 'nav.useCases',
   features: 'nav.features',
+  philosophy: 'nav.philosophy',
 };
 
 function ChevronDownIcon({ className }) {
@@ -62,7 +64,14 @@ function collectDropdownHrefs(dropdown) {
       if (section.href && section.prefetch !== false) hrefs.push(section.href);
     } else if (section.links) {
       for (const link of section.links) {
-        if (link.href && link.prefetch !== false) hrefs.push(link.href);
+        if (
+          link.href &&
+          link.prefetch !== false &&
+          !link.external &&
+          !/^https?:\/\//.test(link.href)
+        ) {
+          hrefs.push(link.href);
+        }
       }
     }
   }
@@ -71,37 +80,50 @@ function collectDropdownHrefs(dropdown) {
 
 function NavDropdownPanelSection({ section, splitColumns, sectionIndex, onPick }) {
   const promoSrc = useMemo(() => {
-    if (section.type !== 'promo' || !section.imagePath) return null;
+    if (section.type !== 'promo') return null;
+    if (section.imageSrc) return section.imageSrc;
+    if (!section.imagePath) return null;
     return getCloudinaryImageUrl(section.imagePath, {
       width: section.imageWidth,
       height: section.imageHeight,
       quality: 'auto:good',
     });
-  }, [section.type, section.imagePath, section.imageWidth, section.imageHeight]);
+  }, [
+    section.type,
+    section.imageSrc,
+    section.imagePath,
+    section.imageWidth,
+    section.imageHeight,
+  ]);
 
   if (section.type === 'promo') {
     const src = promoSrc;
     return (
-      <div className="dropdown-section">
+      <div className="dropdown-section dropdown-section--promo">
         <Link
           href={section.href}
           prefetch={section.prefetch}
-          className="block rounded-lg border border-brand-link/20 bg-gradient-to-r from-brand-link/5 to-oasis-blue-300/5 p-4 no-underline transition-all hover:border-brand-link/30 hover:from-brand-link/10 hover:to-oasis-blue-300/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-oasis-green-700 focus-visible:ring-offset-2"
+          className="discover-promo-card"
           onClick={onPick}
         >
-          <div className="mb-3 h-32 w-full overflow-hidden rounded-lg">
-            <img
-              src={src}
-              alt={section.title}
-              className="h-full w-full object-cover"
-              width={section.imageWidth}
-              height={section.imageHeight}
-              loading="lazy"
-              decoding="async"
-              fetchPriority="low"
-            />
-          </div>
-          <div className="text-sm font-semibold leading-tight text-gray-900">{section.title}</div>
+          {src ? (
+            <div className="discover-promo-card__media">
+              <img
+                src={src}
+                alt={section.imageAlt || section.eyebrow || section.title || ''}
+                className="discover-promo-card__img"
+                width={section.imageWidth || 640}
+                height={section.imageHeight || 400}
+                loading="lazy"
+                decoding="async"
+                fetchPriority="low"
+              />
+            </div>
+          ) : null}
+          {section.eyebrow ? (
+            <p className="discover-promo-card__eyebrow">{section.eyebrow}</p>
+          ) : null}
+          <p className="discover-promo-card__title">{section.title}</p>
         </Link>
       </div>
     );
@@ -111,19 +133,37 @@ function NavDropdownPanelSection({ section, splitColumns, sectionIndex, onPick }
 
   return (
     <div className={`dropdown-section ${dividerClass}`}>
-      <h3 className="mb-4 text-xs font-bold uppercase tracking-wider text-oasis-green-900">{section.heading}</h3>
-      <div className="flex flex-col space-y-4">
-        {section.links.map((item) => (
-          <Link
-            key={item.href}
-            href={item.href}
-            prefetch={item.prefetch !== false}
-            className="dropdown-link"
-            onClick={onPick}
-          >
-            {item.label}
-          </Link>
-        ))}
+      <h3 className="dropdown-section__heading">{section.heading}</h3>
+      <div className="dropdown-section__links">
+        {section.links.map((item) => {
+          const isExternal = item.external || /^https?:\/\//.test(item.href);
+          const className = 'dropdown-link';
+          if (isExternal) {
+            return (
+              <a
+                key={`${item.href}-${item.label}`}
+                href={item.href}
+                className={className}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={onPick}
+              >
+                {item.label}
+              </a>
+            );
+          }
+          return (
+            <Link
+              key={`${item.href}-${item.label}`}
+              href={item.href}
+              prefetch={item.prefetch !== false}
+              className={className}
+              onClick={onPick}
+            >
+              {item.label}
+            </Link>
+          );
+        })}
       </div>
     </div>
   );
@@ -325,15 +365,17 @@ export default function NavbarDup() {
             top: 100%;
             left: 50%;
             transform: translateX(-50%) translateY(-10px);
-            background-color: white;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.06);
-            border-radius: 12px;
-            padding: 24px 20px;
+            background-color: #FFFEFA;
+            box-shadow: 0 8px 32px rgba(59, 47, 26, 0.1);
+            border: 1px solid #E4D9C4;
+            border-radius: 20px;
+            padding: 28px 24px;
             margin-top: -4px;
             transition: all 0.15s ease;
             display: grid;
-            gap: 40px;
+            gap: 0;
             pointer-events: none;
+            z-index: 50;
           }
           .dropdown-content::before {
             content: '';
@@ -349,6 +391,36 @@ export default function NavbarDup() {
             opacity: 1;
             transform: translateX(-50%) translateY(0);
             pointer-events: auto;
+          }
+          .dropdown-content--discover {
+            left: auto;
+            right: 0;
+            transform: translateY(-10px);
+            padding: 32px 8px;
+          }
+          .dropdown:hover .dropdown-content--discover,
+          .dropdown.active .dropdown-content--discover {
+            transform: translateY(0);
+          }
+          .dropdown-content--discover .dropdown-section {
+            padding: 0 28px;
+            border-right: 1px solid #E4D9C4;
+          }
+          .dropdown-content--discover .dropdown-section:last-child {
+            border-right: none;
+          }
+          .dropdown-section__heading {
+            margin: 0 0 1.25rem;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #3B2F1A;
+          }
+          .dropdown-section__links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.15rem;
           }
           .dropdown-icon-button {
             background: none !important;
@@ -374,7 +446,8 @@ export default function NavbarDup() {
             border-radius: 4px;
           }
           .nav-link:focus-visible,
-          .dropdown-link:focus-visible {
+          .dropdown-link:focus-visible,
+          .discover-promo-card:focus-visible {
             box-shadow: 0 0 0 2px #fff, 0 0 0 4px #8A6622;
             border-radius: 8px;
           }
@@ -395,39 +468,82 @@ export default function NavbarDup() {
           }
           .dropdown-section {
             padding: 0;
+            min-width: 0;
           }
           .dropdown-link {
             display: block;
             color: var(--nav-link-color, #8A6622) !important;
             text-decoration: none !important;
             font-weight: 500 !important;
-            font-size: 1rem;
+            font-size: 0.9375rem;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             letter-spacing: -0.01em;
-            line-height: 1.5;
-            padding: 8px 12px;
-            margin: 0 -12px;
+            line-height: 1.45;
+            padding: 0.55rem 0.75rem;
+            margin: 0 -0.75rem;
             border-radius: 8px;
             -webkit-tap-highlight-color: transparent;
             background-color: transparent;
           }
           .dropdown-link:hover {
-            background-color: rgba(138, 102, 34, 0.06);
+            background-color: rgba(138, 102, 34, 0.08);
           }
           .dropdown-link + .dropdown-link {
-            margin-top: 1rem;
+            margin-top: 0;
+          }
+          .discover-promo-card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            min-height: 100%;
+            padding: 0.85rem;
+            border-radius: 16px;
+            background: #fff;
+            border: 1px solid #E4D9C4;
+            text-decoration: none !important;
+            color: inherit;
+            transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+          }
+          .discover-promo-card:hover {
+            border-color: #C4B089;
+            box-shadow: 0 6px 18px rgba(59, 47, 26, 0.08);
+            transform: translateY(-1px);
+          }
+          .discover-promo-card__media {
+            position: relative;
+            aspect-ratio: 16 / 10;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 12px;
+            background: #EDE6D2;
+          }
+          .discover-promo-card__img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+          .discover-promo-card__eyebrow {
+            margin: 0.85rem 0 0;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #8A6622;
+          }
+          .discover-promo-card__title {
+            margin: 0.4rem 0 0;
+            font-size: 0.95rem;
+            font-weight: 600;
+            line-height: 1.35;
+            letter-spacing: -0.015em;
+            color: #3B2F1A;
           }
           .nav-dropdown-section--split-first {
             position: relative;
           }
           .nav-dropdown-section--split-first::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: -20px;
-            width: 1px;
-            height: 100%;
-            background: #f0f0f0;
+            content: none;
           }
           .nav-buttons {
             display: none;
@@ -497,13 +613,22 @@ export default function NavbarDup() {
           <div className="flex shrink-0 items-center gap-2 lg:gap-3">
             <nav className="hidden items-center lg:flex" aria-label={t('nav.mainNav')}>
               <ul className="nav-links !mr-0 flex items-center gap-1">
-                {desktopNavItems.map((item) => {
+                {desktopNavItems.map((item, index) => {
+                  const label = NAV_LABEL_KEYS[item.id] ? t(NAV_LABEL_KEYS[item.id]) : item.label;
+                  const divider =
+                    index > 0 ? (
+                      <span
+                        className="mx-1 h-5 w-px shrink-0 bg-[#3B2F1A]/20"
+                        aria-hidden
+                      />
+                    ) : null;
+
                   if (!item.dropdown) {
                     const linkClass =
                       'nav-link relative z-[2] inline-flex items-center gap-0.5 whitespace-nowrap rounded-md px-2 py-2 font-sans text-[0.9375rem] font-normal !text-oasis-green-700 no-underline focus:outline-none';
-                    const label = NAV_LABEL_KEYS[item.id] ? t(NAV_LABEL_KEYS[item.id]) : item.label;
                     return (
-                      <li key={item.id}>
+                      <li key={item.id} className="flex items-center gap-1">
+                        {divider}
                         {item.external || item.href.startsWith('http') ? (
                           <a href={item.href} className={linkClass}>
                             <span className="nav-link-text">{label}</span>
@@ -523,9 +648,10 @@ export default function NavbarDup() {
                   return (
                     <li
                       key={item.id}
-                      className={`dropdown ${isOpen ? 'active' : ''}`}
+                      className={`dropdown flex items-center gap-1 ${isOpen ? 'active' : ''}`}
                       onMouseEnter={() => prefetchDropdown(dropdown, item.id)}
                     >
+                      {divider}
                       <div
                         className="nav-link relative z-[2] inline-flex items-center gap-0.5 whitespace-nowrap rounded-md px-2 py-2 font-sans text-[0.9375rem] font-normal !text-oasis-green-700"
                         aria-haspopup="true"
@@ -535,13 +661,13 @@ export default function NavbarDup() {
                           prefetch={item.prefetchTop !== false}
                           className="inline-flex items-center rounded-md no-underline !text-oasis-green-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-oasis-green-700 focus-visible:ring-offset-2"
                         >
-                          <span className="nav-link-text">{item.label}</span>
+                          <span className="nav-link-text">{label}</span>
                         </Link>
                         <button
                           type="button"
                           className="dropdown-icon-button"
                           onClick={(e) => toggleDropdown(item.id, e)}
-                          aria-label={`Toggle ${item.label} menu`}
+                          aria-label={`Toggle ${label} menu`}
                           aria-expanded={isOpen}
                         >
                           <ChevronDownIcon />
@@ -549,7 +675,7 @@ export default function NavbarDup() {
                       </div>
                       <div className="dropdown-overlay" aria-hidden="true" />
                       <div
-                        className="dropdown-content"
+                        className={`dropdown-content ${dropdown.panelClassName || ''}`.trim()}
                         style={{
                           width: dropdown.panelWidth,
                           gridTemplateColumns: dropdown.gridTemplateColumns,
@@ -664,32 +790,26 @@ export default function NavbarDup() {
               </a>
             </div>
 
-            {mobileNavRows.map((row) => {
-              const labelKey =
-                row.label === 'Help'
-                  ? 'nav.help'
-                  : row.label === 'Support'
-                    ? 'nav.support'
-                    : row.label === 'Contact'
-                      ? 'nav.contact'
-                      : row.label === 'Success stories'
-                        ? 'nav.useCases'
-                        : row.label === 'Features'
-                          ? 'nav.features'
-                          : null;
-              const label = labelKey ? t(labelKey) : row.label;
-              // Native <a>: Next.js Link's inner <a> never gets styled-jsx .mobile-link.
-              return (
-                <a
-                  key={row.href}
-                  href={row.href}
-                  className="mobile-link no-underline"
-                  onClick={closeMobile}
-                >
-                  {label}
-                </a>
-              );
-            })}
+            {mobileNavSections.map((section) => (
+              <div key={section.heading} className="mb-4">
+                <p className="mb-2 px-1 text-xs font-bold uppercase tracking-wider text-[#8A6622]">
+                  {section.heading}
+                </p>
+                {section.links.map((row) => (
+                  <a
+                    key={`${section.heading}-${row.href}-${row.label}`}
+                    href={row.href}
+                    className="mobile-link no-underline"
+                    onClick={closeMobile}
+                    {...(row.external || row.href.startsWith('http')
+                      ? { target: '_blank', rel: 'noopener noreferrer' }
+                      : {})}
+                  >
+                    {row.label}
+                  </a>
+                ))}
+              </div>
+            ))}
           </div>
         </div>
       </nav>

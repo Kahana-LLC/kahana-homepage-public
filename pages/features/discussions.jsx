@@ -1,29 +1,35 @@
 import Link from 'next/link';
-import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
+import {
+  ArrowPathIcon,
+  ChatBubbleLeftRightIcon,
+  DocumentTextIcon,
+} from '@heroicons/react/24/outline';
 import SEO from '../../components/SEO';
 import FadeInSection from '../../components/FadeInSection';
 import DarkLibraryCta from '../../components/marketing/DarkLibraryCta';
+import DiscussionThreadMock from '../../components/marketing/DiscussionThreadMock';
+import { ExploreLibraryButton } from '../../components/marketing/LibraryActionButtons';
 import { ABOUT_ORIGIN } from '../../config/site';
 import { productHref } from '../../lib/productLinks';
 import { trackButtonClick } from '../../utils/analytics';
 
 const CANONICAL = `${ABOUT_ORIGIN}/features/discussions`;
 
-const THREAD = [
+const FEATURES = [
   {
-    name: 'Maya',
-    body: 'Where should I start if I only have an hour this week?',
-    meta: 'Hub discussion · 2h ago',
+    title: 'Upvotes and Best sorting',
+    body: 'Score comments like a forum. Sort by Best, Top, Newest, or Oldest so useful replies rise.',
+    Icon: ArrowPathIcon,
   },
   {
-    name: 'Jordan',
-    body: 'Open the Start here note, then the first PDF. Skip the appendix until you need it.',
-    meta: 'Reply · 1h ago',
+    title: 'Nested replies',
+    body: 'Reply in-thread with left-border nesting. Collapse long branches behind “more replies.”',
+    Icon: ChatBubbleLeftRightIcon,
   },
   {
-    name: 'Maya',
-    body: 'That path worked. Watching this thread for the next file drop.',
-    meta: 'Reply · 40m ago · watching',
+    title: 'Markdown beside the work',
+    body: 'Bold, lists, and links in the comment body—so people can point at a section or leave a clear path.',
+    Icon: DocumentTextIcon,
   },
 ];
 
@@ -34,7 +40,7 @@ export default function DiscussionsFeaturePage() {
     <>
       <SEO
         title="Discussions and forums | Kahana"
-        description="Forums beside hubs and files. Comments, replies, and a watch so you hear when the thread moves. Dialectic next to the work, not another empty feed."
+        description="Hub and file discussions with upvotes, nested replies, markdown, and watch—Reddit-style conversation beside the work, not another empty feed."
         url={CANONICAL}
         type="website"
       />
@@ -49,20 +55,14 @@ export default function DiscussionsFeaturePage() {
               </h1>
               <p className="mt-5 text-lg leading-relaxed text-[#5C4520] sm:text-xl">
                 A discussion sits on a hub or on a file inside it. Think of it as a forum next to
-                the work, not a separate social feed. People who can open the hub can read the
-                thread, comment, reply, and watch it.
+                the work: upvote what helps, reply in-thread, write in markdown, and watch the
+                conversation.
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-3">
-                <a
+                <ExploreLibraryButton
                   href={libraryHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-primary inline-flex items-center justify-center gap-2 no-underline"
                   onClick={() => trackButtonClick('feature_discussions_hero')}
-                >
-                  <MagnifyingGlassIcon className="h-5 w-5 shrink-0" aria-hidden />
-                  Explore the Library
-                </a>
+                />
                 <Link
                   href="/help/hub-and-file-discussions"
                   className="btn-secondary inline-flex items-center justify-center no-underline"
@@ -75,32 +75,37 @@ export default function DiscussionsFeaturePage() {
         </section>
 
         <section className="border-t border-[#E4D9C4] px-6 py-16 sm:px-10 lg:px-16">
-          <div className="mx-auto max-w-3xl">
+          <div className="mx-auto max-w-5xl">
             <FadeInSection>
               <h2 className="text-2xl font-semibold sm:text-3xl">Conversation beside the work</h2>
-              <p className="mt-4 text-lg leading-relaxed text-[#666666]">
-                Open the discussion from a hub or from a file. Comment, reply, or watch the thread
-                and turn the watch off when you are done. This is separate from the club feed, which
-                lives on the club.
+              <p className="mt-4 max-w-2xl text-lg leading-relaxed text-[#666666]">
+                Open discussion from a hub or a file. The thread looks like a familiar forum:
+                scores, nested replies, reactions, and a watch so you hear when it moves.
               </p>
-              <div className="mt-8 overflow-hidden rounded-[20px] border border-[#E4D9C4] bg-white">
-                <div className="flex items-center justify-between border-b border-[#E4D9C4] bg-[#EDE6D2] px-5 py-3">
-                  <p className="text-sm font-semibold text-[#3B2F1A]">Discussion · Start here</p>
-                  <p className="text-xs font-semibold text-[#8A6622]">Watching</p>
-                </div>
-                <ul className="divide-y divide-[#E4D9C4]">
-                  {THREAD.map((item) => (
-                    <li key={`${item.name}-${item.meta}`} className="px-5 py-4">
-                      <div className="flex items-baseline justify-between gap-3">
-                        <p className="font-semibold text-[#3B2F1A]">{item.name}</p>
-                        <p className="shrink-0 text-xs text-[#8A6622]">{item.meta}</p>
-                      </div>
-                      <p className="mt-2 text-base leading-relaxed text-[#666666]">{item.body}</p>
-                    </li>
-                  ))}
-                </ul>
+            </FadeInSection>
+            <FadeInSection>
+              <div className="mt-10">
+                <DiscussionThreadMock />
               </div>
-              <p className="mt-4 text-base text-[#5C4520]">
+            </FadeInSection>
+            <FadeInSection>
+              <ul className="mt-10 grid list-none gap-3 sm:grid-cols-3">
+                {FEATURES.map(({ title, body, Icon }) => (
+                  <li
+                    key={title}
+                    className="rounded-[20px] bg-white px-5 py-5 ring-1 ring-[#E4D9C4]"
+                  >
+                    <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#EDE6D2] text-[#5C4520]">
+                      <Icon className="h-5 w-5" aria-hidden />
+                    </span>
+                    <h3 className="mt-3 font-bricolage text-lg font-semibold tracking-tight text-[#3B2F1A]">
+                      {title}
+                    </h3>
+                    <p className="mt-1.5 text-sm leading-relaxed text-[#666666]">{body}</p>
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-6 text-base text-[#5C4520]">
                 Dialectic next to unique knowledge. More in{' '}
                 <Link href="/philosophy" className="text-[#8A6622] underline underline-offset-2">
                   philosophy
@@ -132,7 +137,9 @@ export default function DiscussionsFeaturePage() {
                     Hub / file
                   </p>
                   <p className="mt-2 font-semibold">Discussion forum</p>
-                  <p className="mt-2 text-sm text-[#666666]">Next to the files you can open</p>
+                  <p className="mt-2 text-sm text-[#666666]">
+                    Upvotes, nested replies, markdown next to the files
+                  </p>
                 </div>
                 <div className="rounded-[20px] border border-[#E4D9C4] bg-white px-5 py-5">
                   <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#8A6622]">

@@ -5,30 +5,17 @@ import FadeInSection from '../components/FadeInSection';
 import CreatorStackLedger from '../components/compare/CreatorStackLedger';
 import MarketplaceFeeTable from '../components/compare/MarketplaceFeeTable';
 import ComparePageInvite from '../components/compare/ComparePageInvite';
+import FaqAccordion from '../components/faq/FaqAccordion';
+import GrowthTrialPill from '../components/marketing/GrowthTrialPill';
 import { ABOUT_ORIGIN } from '../config/site';
 import { productHref } from '../lib/productLinks';
+import { CREATORS_PAGE_FAQS } from '../data/creatorPageFaqs';
 import { trackButtonClick } from '../utils/analytics';
 import { useMarketingI18n } from '../contexts/MarketingI18n';
 import FeaturesAudienceInvite from '../components/features/FeaturesAudienceInvite';
 import UseCasesAudienceInvite from '../components/use-cases/UseCasesAudienceInvite';
 
 const CANONICAL = `${ABOUT_ORIGIN}/creators`;
-
-const GROWTH_TODAY = [
-  'Unlimited hubs',
-  'Unlimited counted uploads per hub',
-  'Files up to 5 GB',
-  '100 GB cloud storage',
-  'Priority live chat',
-];
-
-const GROWTH_AHEAD = [
-  'Advanced analytics',
-  'Advanced analytics',
-  'Email list export',
-  'Newsletters and mass messaging',
-  'Advanced Kahana agent (create and update hubs)',
-];
 
 export default function CreatorsPage() {
   const { t } = useMarketingI18n();
@@ -38,9 +25,18 @@ export default function CreatorsPage() {
     <>
       <SEO
         title="Kahana for creators"
-        description="Upload to the Kahana library. Share it for free, or set a price and earn whenever someone pays to access it."
+        description="Upload to the Kahana library. Share it for free, or set a price and earn whenever someone pays to access it. 14-day Growth trial available."
         url={CANONICAL}
         type="website"
+        schema={{
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: CREATORS_PAGE_FAQS.map((item) => ({
+            '@type': 'Question',
+            name: item.question,
+            acceptedAnswer: { '@type': 'Answer', text: item.answer.replace(/\n\n/g, ' ') },
+          })),
+        }}
       />
 
       <div className="bg-[#F7F3EA] text-[#3B2F1A]">
@@ -56,7 +52,13 @@ export default function CreatorsPage() {
               <p className="mt-5 text-lg leading-relaxed text-[#5C4520] sm:text-xl">
                 {t('creatorsPage.lead')}
               </p>
-              <div className="mt-10 flex flex-wrap justify-center gap-3">
+              <div className="mt-6 flex justify-center">
+                <GrowthTrialPill
+                  href={createUrl}
+                  onClick={() => trackButtonClick('creators_hero_trial_pill')}
+                />
+              </div>
+              <div className="mt-8 flex flex-wrap justify-center gap-3">
                 <a
                   href={createUrl}
                   target="_blank"
@@ -70,60 +72,15 @@ export default function CreatorsPage() {
                 <Link href="/pricing" className="btn-secondary inline-flex items-center justify-center no-underline">
                   {t('compare.stackPricingCta')}
                 </Link>
+                <Link
+                  href="/affiliates"
+                  className="btn-secondary inline-flex items-center justify-center no-underline"
+                  onClick={() => trackButtonClick('creators_hero_affiliate')}
+                >
+                  Become an affiliate
+                </Link>
               </div>
               <p className="mt-4 text-sm text-[#8A9378]">{t('creatorsPage.ctaHint')}</p>
-            </FadeInSection>
-          </div>
-        </section>
-
-        <section className="border-t border-[#E4D9C4] px-6 py-16 sm:px-10 lg:px-16">
-          <div className="mx-auto max-w-3xl">
-            <FadeInSection eager>
-              <h2 className="text-2xl font-semibold sm:text-3xl">{t('creatorsPage.besideTitle')}</h2>
-              <p className="mt-4 text-lg leading-relaxed text-[#666666]">{t('creatorsPage.besideBody')}</p>
-            </FadeInSection>
-            <FadeInSection>
-              <div className="mt-10 overflow-hidden rounded-[20px] bg-white px-5 py-6">
-                <div className="grid gap-4 sm:grid-cols-[0.9fr_1.1fr] sm:items-center">
-                  <div className="rounded-2xl bg-[#F7F3EA] px-4 py-5 text-center">
-                    <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#8A6622]">
-                      The reel
-                    </p>
-                    <div className="mx-auto mt-3 h-40 w-24 rounded-xl bg-[#E8DCC4]" />
-                    <p className="mt-3 text-sm text-[#666666]">A door on Instagram or YouTube</p>
-                  </div>
-                  <div className="rounded-2xl bg-[#EDE6D2] px-4 py-5">
-                    <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#8A6622]">
-                      The hub
-                    </p>
-                    <ul className="mt-3 space-y-2 text-sm text-[#666666]">
-                      <li className="rounded-xl bg-white/70 px-3 py-2">Tutorial video</li>
-                      <li className="rounded-xl bg-white/70 px-3 py-2">Files and templates</li>
-                      <li className="rounded-xl bg-white/70 px-3 py-2">Optional paid access</li>
-                    </ul>
-                    <p className="mt-3 text-sm text-[#666666]">The room behind the post</p>
-                  </div>
-                </div>
-              </div>
-              <p className="mt-6 text-base leading-relaxed text-[#5C4520]">
-                People who want the longer work can talk beside the files, gather in a club, and you
-                can see what they open.{' '}
-                <Link href="/features/discussions" className="text-[#8A6622] underline underline-offset-2">
-                  Discussion
-                </Link>
-                ,{' '}
-                <Link href="/features/clubs" className="text-[#8A6622] underline underline-offset-2">
-                  clubs
-                </Link>
-                , and{' '}
-                <Link href="/features/analytics" className="text-[#8A6622] underline underline-offset-2">
-                  analytics
-                </Link>
-                .{' '}
-                <Link href="/blog/the-feed-ends-here" className="text-[#8A6622] underline underline-offset-2">
-                  The feed ends here
-                </Link>
-              </p>
             </FadeInSection>
           </div>
         </section>
@@ -140,33 +97,37 @@ export default function CreatorsPage() {
           </FadeInSection>
         </section>
 
-        <section className="border-t border-[#E4D9C4] px-6 py-16 sm:px-10 lg:px-16">
-          <div className="mx-auto grid max-w-5xl gap-8 lg:grid-cols-2">
-            <div className="rounded-[1.75rem] bg-white p-8 ring-1 ring-[#E4D9C4]">
-              <h2 className="text-2xl font-semibold">{t('creatorsPage.growthTodayTitle')}</h2>
-              <p className="mt-2 text-[#5C4520]">{t('creatorsPage.growthTodayLead')}</p>
-              <ul className="mt-6 list-disc space-y-2 pl-5 text-[#5C4520]">
-                {GROWTH_TODAY.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </div>
-            <div className="rounded-[1.75rem] bg-white p-8 ring-1 ring-[#E4D9C4]">
-              <h2 className="text-2xl font-semibold">{t('creatorsPage.growthAheadTitle')}</h2>
-              <p className="mt-2 text-[#5C4520]">{t('creatorsPage.growthAheadLead')}</p>
-              <ul className="mt-6 list-disc space-y-2 pl-5 text-[#5C4520]">
-                {GROWTH_AHEAD.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </section>
-
         <FeaturesAudienceInvite t={t} audience="creator" />
         <UseCasesAudienceInvite t={t} audience="creator" />
 
         <ComparePageInvite t={t} href="/compare?view=creator" />
+
+        <section className="border-t border-[#E4D9C4] px-6 py-16 sm:px-10 lg:px-16">
+          <div className="mx-auto max-w-3xl">
+            <FadeInSection>
+              <h2 className="text-2xl font-semibold sm:text-3xl">Creators FAQ</h2>
+              <p className="mt-3 text-lg text-[#666666]">
+                Growth trial, fees, Library listing, and becoming an affiliate.
+              </p>
+              <FaqAccordion className="mt-8" items={CREATORS_PAGE_FAQS} />
+              <p className="mt-8 text-base text-[#5C4520]">
+                More on{' '}
+                <Link href="/creator-benefits" className="text-[#8A6622] underline underline-offset-2">
+                  benefits for creators
+                </Link>
+                ,{' '}
+                <Link href="/affiliates" className="text-[#8A6622] underline underline-offset-2">
+                  becoming an affiliate
+                </Link>
+                , and{' '}
+                <Link href="/faq" className="text-[#8A6622] underline underline-offset-2">
+                  the full FAQ
+                </Link>
+                .
+              </p>
+            </FadeInSection>
+          </div>
+        </section>
 
         <section className="bg-[#3B2F1A] px-6 py-20 text-[#F7F3EA] sm:px-10 lg:px-16">
           <div className="mx-auto max-w-2xl text-center">
@@ -174,16 +135,32 @@ export default function CreatorsPage() {
               {t('creatorsPage.closingTitle')}
             </h2>
             <p className="mt-4 text-lg text-[#F7F3EA]/85">{t('creatorsPage.closingBody')}</p>
+            <div className="mt-6 flex justify-center">
+              <GrowthTrialPill
+                href={createUrl}
+                dark
+                onClick={() => trackButtonClick('creators_footer_trial_pill')}
+              />
+            </div>
             <a
               href={createUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary mt-10 inline-flex items-center justify-center gap-2 !bg-[#F7F3EA] !text-[#3B2F1A] no-underline hover:!bg-white"
+              className="btn-primary mt-8 inline-flex items-center justify-center gap-2 !bg-[#F7F3EA] !text-[#3B2F1A] no-underline hover:!bg-white"
               onClick={() => trackButtonClick('creators_footer_trial')}
             >
               <FolderPlusIcon className="h-5 w-5 shrink-0" aria-hidden />
               {t('creatorsPage.cta')}
             </a>
+            <p className="mt-6">
+              <Link
+                href="/affiliates"
+                className="text-sm font-semibold text-[#F7F3EA]/85 underline underline-offset-2 hover:text-[#F7F3EA]"
+                onClick={() => trackButtonClick('creators_footer_affiliate')}
+              >
+                Become an affiliate
+              </Link>
+            </p>
           </div>
         </section>
       </div>

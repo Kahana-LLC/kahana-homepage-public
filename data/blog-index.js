@@ -7,6 +7,156 @@
  */
 export const blogIndex = [
   {
+    "title": "Emilio Abelmann: Philosophy for the Young Adult in One Hub",
+    "date": "2026-09-26T13:00:00.000Z",
+    "authors": ["Adam Kershner"],
+    "category": ["Creator stories","Creators","Learners"],
+    "excerpt": "He gathered philosophy, stoicism, meditation, and classic texts into one free Library hub so young adults can start with a clear path instead of scattered PDFs.",
+    "defaultImageQuery": "philosophy library books and thinker statue",
+    "featuredImage": "/images/success-stories/emilio-cover.jpg",
+    "slug": "emilio-abelmann-philosophy-young-adult",
+    "readingTime": 4
+  },
+  {
+    "title": "Kelsey Vetter: A Pinterest Workshop That Lives in a Hub",
+    "date": "2026-09-26T12:00:00.000Z",
+    "authors": [
+      "Adam Kershner"
+    ],
+    "category": [
+      "Creator stories",
+      "Creators"
+    ],
+    "excerpt": "She turned a Pinterest workshop into a hub: session video, slides, keyword research, pin uploads, and checklists in one place people can unlock.",
+    "defaultImageQuery": "Kelsey Vetter Pinterest Success Session knowledge hub",
+    "featuredImage": "/images/success-stories/kelsey-cover.png",
+    "slug": "kelsey-vetter-pinterest-success-session",
+    "readingTime": 4
+  },
+  {
+    "title": "Amy Wang: Internship and Research Advice in One Playbook",
+    "date": "2026-09-26T11:00:00.000Z",
+    "authors": [
+      "Adam Kershner"
+    ],
+    "category": [
+      "Creator stories",
+      "Creators"
+    ],
+    "excerpt": "She gathered internship and research advice (process, networking, interviews, LinkedIn, plus email and resume templates) so peers are not drowning in scattered internet tips.",
+    "defaultImageQuery": "Amy Wang Internship & research opportunities knowledge hub",
+    "featuredImage": "/images/success-stories/amy-cover.png",
+    "slug": "amy-wang-internship-research-hub",
+    "readingTime": 4
+  },
+  {
+    "title": "Rashmi Kadwani: Inward, a 30-Day Journal Hub",
+    "date": "2026-09-26T10:00:00.000Z",
+    "authors": [
+      "Adam Kershner"
+    ],
+    "category": [
+      "Creator stories",
+      "Creators"
+    ],
+    "excerpt": "She built a 30-day guided journal as a hub: thirty questions, week by week, so people can meet themselves one honest page at a time.",
+    "defaultImageQuery": "Rashmi Kadwani Inward: A 30-Day Conversation With Yourself knowledge hub",
+    "featuredImage": "/images/success-stories/rashmi-cover.webp",
+    "slug": "rashmi-kadwani-inward-journal",
+    "readingTime": 4
+  },
+  {
+    "title": "Dhruthi Prakash: Dance and Comedy Beside the Reels",
+    "date": "2026-09-26T09:00:00.000Z",
+    "authors": [
+      "Adam Kershner"
+    ],
+    "category": [
+      "Creator stories",
+      "Creators"
+    ],
+    "excerpt": "She builds community around dance: teaching moves, sharing shows, and giving people a room next to the reels where they can learn together.",
+    "defaultImageQuery": "Dhruthi Prakash Dance & Comedy shows & fun knowledge hub",
+    "featuredImage": "/images/success-stories/dhruthi-cover.webp",
+    "slug": "dhruthi-prakash-dance-comedy-hub",
+    "readingTime": 4
+  },
+  {
+    "title": "Tay Ladd: Negotiate Brand Deals in One Paid Bundle",
+    "date": "2026-09-26T08:00:00.000Z",
+    "authors": [
+      "Adam Kershner"
+    ],
+    "category": [
+      "Creator stories",
+      "Creators"
+    ],
+    "excerpt": "She packaged brand-deal negotiation into a paid bundle: how to set prices, work with brands, and close with confidence.",
+    "defaultImageQuery": "Tay Ladd Negotiate Brand Deals Like A Pro Bundle knowledge hub",
+    "featuredImage": "/images/success-stories/tay-cover.jpg",
+    "slug": "tay-ladd-brand-deals-bundle",
+    "readingTime": 4
+  },
+  {
+    "title": "Benjamin St-Juste: What It Is Like Being an NFL Player",
+    "date": "2026-09-26T07:00:00.000Z",
+    "authors": [
+      "Adam Kershner"
+    ],
+    "category": [
+      "Creator stories",
+      "Creators"
+    ],
+    "excerpt": "He opened a hub on the year-round grind behind Sunday: training, prehab, and mental prep fans only glimpse on social.",
+    "defaultImageQuery": "Benjamin St-Juste What it's like being an NFL player | Benjamin St-Juste knowledge hub",
+    "featuredImage": "/images/success-stories/benjamin-cover.jpg",
+    "slug": "benjamin-st-juste-nfl-player-hub",
+    "readingTime": 4
+  },
+  {
+    "title": "Alex Klebasko: Summer Body Blueprint on the Library",
+    "date": "2026-09-26T06:00:00.000Z",
+    "authors": [
+      "Adam Kershner"
+    ],
+    "category": [
+      "Creator stories",
+      "Creators"
+    ],
+    "excerpt": "He listed a paid fitness blueprint on Explore: decisions, training, and nutrition for people chasing a stronger summer body.",
+    "defaultImageQuery": "Alex Klebasko SUMMER BODY BLUEPRINT knowledge hub",
+    "featuredImage": "/images/success-stories/alex-cover.jpg",
+    "slug": "alex-klebasko-summer-body-blueprint",
+    "readingTime": 4
+  },
+  {
+    "title": "Olivia Mancuso: A Guide to Manifesting Anything",
+    "date": "2026-09-26T05:00:00.000Z",
+    "authors": [
+      "Adam Kershner"
+    ],
+    "category": [
+      "Creator stories",
+      "Creators"
+    ],
+    "excerpt": "She put vision-boarding and manifestation techniques into a paid hub people can open when they want the full practice, not another reel.",
+    "defaultImageQuery": "Olivia Mancuso Your Guide to Manifesting Anything knowledge hub",
+    "featuredImage": "/images/success-stories/olivia-cover.jpg",
+    "slug": "olivia-mancuso-manifesting-guide",
+    "readingTime": 4
+  },
+  {
+    title: "Value Exchange",
+    date: "2026-09-26T01:00:00.000Z",
+    authors: ["Adam Kershner"],
+    category: ["Guides", "Philosophy", "Creators", "Learners"],
+    excerpt: "Kahana is a living exchange. Everyone is a creator and a learner. Aura, payment, and pathways—not a one-way feed.",
+    defaultImageQuery: "two people exchanging books across a wooden table in a library",
+    featuredImage: "/assets/blog/curate-resources-without-overwhelming-audience.jpg",
+    slug: "value-exchange",
+    readingTime: 7,
+  },
+  {
     title: "Not a Home for AI Slop",
     date: "2026-09-25T15:00:00.000Z",
     authors: ["Adam Kershner"],

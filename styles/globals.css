@@ -1688,14 +1688,24 @@ main {
   color: white !important;
 }
 
-/* Override for All Posts button to have white text (exclude nav dropdown and mobile menu so they keep #8A6622) */
-a[href="/blog"].text-white:not(.dropdown-link):not(.mobile-link),
-a[href="/blog"]:has(span):not(.dropdown-link):not(.mobile-link) {
+/* All Posts / dark CTAs with explicit .text-white — not footer or nav (those use spans too). */
+a[href="/blog"].text-white:not(.dropdown-link):not(.mobile-link) {
   color: white !important;
   text-decoration: none !important;
 }
-a[href="/blog"]:hover:not(.dropdown-link):not(.mobile-link) {
+a[href="/blog"].text-white:hover:not(.dropdown-link):not(.mobile-link) {
   color: white !important;
+}
+
+footer[aria-labelledby='footer-heading'] a[href='/blog'],
+footer[aria-labelledby='footer-heading'] a[href='/blog'] span,
+footer[aria-labelledby='footer-heading'] a[href='/blog'] svg {
+  color: #666666 !important;
+}
+footer[aria-labelledby='footer-heading'] a[href='/blog']:hover,
+footer[aria-labelledby='footer-heading'] a[href='/blog']:hover span,
+footer[aria-labelledby='footer-heading'] a[href='/blog']:hover svg {
+  color: #8A6622 !important;
 }
 
 /* Ensure Schedule Demo buttons have white text (only for dark backgrounds).

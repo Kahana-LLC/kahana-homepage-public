@@ -29,7 +29,7 @@ const FAQ_ITEMS = [
     id: 'who',
     question: 'Who can apply to be a podcast guest?',
     answer:
-      'Creators who have published at least one hub on the Kahana Library. If you are still building that first hub, start with a creator collab, then apply here when it is live.',
+      'Creators who have published at least one hub on the Kahana Library. If you are still building that first hub, start on Benefits for creators, then apply here when it is live.',
   },
   {
     id: 'length',
@@ -104,9 +104,9 @@ export default function PodcastGuestPage() {
                 on YouTube, podcast platforms, and Kahana social.
               </p>
               <p className="mt-4 text-base text-[#666666]">
-                Part of{' '}
-                <Link href="/collabs" className="text-[#8A6622] underline underline-offset-2">
-                  Creator collabs
+                Also see{' '}
+                <Link href="/creator-benefits" className="text-[#8A6622] underline underline-offset-2">
+                  Benefits for creators
                 </Link>
                 .
               </p>
@@ -121,10 +121,10 @@ export default function PodcastGuestPage() {
                   Apply to be a podcast guest
                 </a>
                 <Link
-                  href="/collabs"
+                  href="/creator-benefits"
                   className="btn-secondary inline-flex items-center justify-center no-underline"
                 >
-                  Creator collabs
+                  Benefits for creators
                 </Link>
               </div>
             </FadeInSection>
@@ -165,9 +165,9 @@ export default function PodcastGuestPage() {
               <p className="mt-4 text-lg leading-relaxed text-[#666666]">
                 You have published at least one hub on the Library. You can talk about the work
                 behind it: what you put in, what you left out, and who you hope finds it. If you are
-                still shaping that first hub, start with a{' '}
-                <Link href="/collabs" className="text-[#8A6622] underline underline-offset-2">
-                  creator collab
+                still shaping that first hub, start with{' '}
+                <Link href="/creator-benefits" className="text-[#8A6622] underline underline-offset-2">
+                  Benefits for creators
                 </Link>{' '}
                 first, then come back to apply as a podcast guest.
               </p>
@@ -231,16 +231,16 @@ export default function PodcastGuestPage() {
                 Apply to be a podcast guest
               </a>
               <p className="mt-8 text-sm text-[#F7F3EA]/70">
-                <Link href="/collabs" className="underline underline-offset-2">
-                  Creator collabs
-                </Link>
-                {' · '}
-                <Link href="/story-gallery" className="underline underline-offset-2">
-                  Success stories
-                </Link>
-                {' · '}
                 <Link href="/creator-benefits" className="underline underline-offset-2">
                   Benefits for creators
+                </Link>
+                {' · '}
+                <Link href="/success-stories" className="underline underline-offset-2">
+                  Creator stories
+                </Link>
+                {' · '}
+                <Link href="/affiliates" className="underline underline-offset-2">
+                  Become an affiliate
                 </Link>
               </p>
             </FadeInSection>

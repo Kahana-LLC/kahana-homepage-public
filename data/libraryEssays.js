@@ -2,8 +2,8 @@
 export const LIBRARY_ESSAYS = [
   {
     href: '/why-the-aura-library-matters',
-    label: 'Why it matters',
-    title: 'Why the Aura Library matters',
+    label: 'Our mission',
+    title: 'Our mission',
   },
   {
     href: '/philosophy',
@@ -17,18 +17,13 @@ export const LIBRARY_ESSAYS = [
   },
   {
     href: '/do-well',
-    label: 'Do well',
-    title: 'How to do well on Kahana',
+    label: 'What to post',
+    title: 'What to post on Kahana',
   },
   {
-    href: '/story-gallery',
-    label: 'Stories',
-    title: 'Success stories',
-  },
-  {
-    href: '/collabs',
-    label: 'Creator collabs',
-    title: 'Creator collabs',
+    href: '/success-stories',
+    label: 'Creator stories',
+    title: 'Creator stories',
   },
   {
     href: '/podcast-guest',

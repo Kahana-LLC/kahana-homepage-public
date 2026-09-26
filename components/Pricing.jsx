@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import FadeInSection from './FadeInSection';
 import CreatorStackLedger from './compare/CreatorStackLedger';
+import GrowthTrialPill from './marketing/GrowthTrialPill';
 import { useMarketingI18n } from '../contexts/MarketingI18n';
 
 const INCLUDED = { included: true };
@@ -25,7 +26,7 @@ const tiers = [
   },
   {
     name: 'Growth',
-    href: 'https://kahana.io/billing?utm_source=marketing&utm_medium=website&utm_campaign=pricing_growth',
+    href: 'https://kahana.io/billing?intent=sell&trial=growth&utm_source=marketing&utm_medium=website&utm_campaign=pricing_growth_trial',
     priceLabel: '$29.99',
     priceSuffix: 'per month',
     featuresHeading: 'Everything in Free, plus',
@@ -37,7 +38,8 @@ const tiers = [
       'Priority live chat',
     ],
     annualNote: 'Save 17% with annual billing',
-    cta: 'Get Growth',
+    trialNote: '14-day free trial · New',
+    cta: 'Start trial',
     buttonStyle: 'primary',
     highlighted: true,
   },
@@ -206,13 +208,18 @@ export default function Pricing() {
                     ) : (
                       <p className="mb-3 h-5" aria-hidden="true" />
                     )}
-                    <div className="mt-auto min-h-[44px] flex items-center">
+                    <div className="mt-auto min-h-[44px] flex flex-col items-stretch justify-center gap-2">
                       <a
                         href={tier.href}
                         className={`btn-${tier.buttonStyle} inline-flex w-full items-center justify-center rounded-full px-4 py-2.5 text-sm font-normal no-underline transition-all hover:no-underline focus:no-underline sm:py-3 sm:text-base`}
                       >
                         {tier.cta}
                       </a>
+                      {tier.trialNote ? (
+                        <div className="flex justify-center">
+                          <GrowthTrialPill href={tier.href} />
+                        </div>
+                      ) : null}
                     </div>
                   </div>
 
@@ -380,7 +387,7 @@ export default function Pricing() {
                   href="/affiliates"
                   className="font-medium text-[#8A6622] no-underline underline-offset-4 hover:underline"
                 >
-                  Affiliate: 30% off forever for them, 30% for you
+                  Affiliate: become an affiliate — 30% off forever for them, 30% for you
                 </Link>
               </p>
             </div>
@@ -416,7 +423,7 @@ export default function Pricing() {
               <p className="mt-4 text-base text-[#5C4520]">
                 Full program on{' '}
                 <Link href="/affiliates" className="text-[#8A6622] underline underline-offset-2">
-                  affiliates
+                  Become an affiliate
                 </Link>
                 .
               </p>

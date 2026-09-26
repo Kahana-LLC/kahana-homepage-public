@@ -65,7 +65,7 @@ export default function AffiliatesPage() {
           <div className="mx-auto max-w-3xl text-center">
             <FadeInSection eager>
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#8A6622]">
-                Affiliates
+                Become an affiliate
               </p>
               <h1 className="mt-4 text-3xl font-semibold leading-tight tracking-tight sm:text-4xl md:text-5xl">
                 Share Kahana. Earn 30%.

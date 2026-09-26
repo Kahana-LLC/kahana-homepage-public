@@ -1,12 +1,12 @@
 import Link from 'next/link';
-import { FolderPlusIcon } from '@heroicons/react/24/outline';
 import SEO from '../components/SEO';
 import FadeInSection from '../components/FadeInSection';
+import DarkLibraryCta from '../components/marketing/DarkLibraryCta';
+import EssaySeriesNav from '../components/marketing/EssaySeriesNav';
 import LibraryStats from '../components/use-cases/LibraryStats';
 import UseCaseStoryCards from '../components/use-cases/UseCaseStoryCards';
-import { productHref } from '../lib/productLinks';
 import { ABOUT_ORIGIN } from '../config/site';
-import { trackButtonClick } from '../utils/analytics';
+import { productHref } from '../lib/productLinks';
 import { useMarketingI18n } from '../contexts/MarketingI18n';
 import {
   fetchKahanaLibraryStats,
@@ -17,12 +17,13 @@ const CANONICAL = `${ABOUT_ORIGIN}/success-stories`;
 
 export default function SuccessStoriesPage({ stats = KAHANA_STATS_FALLBACK }) {
   const { t } = useMarketingI18n();
+  const exploreUrl = productHref('/library', 'success_stories_explore');
 
   return (
     <>
       <SEO
-        title="Success stories | Kahana"
-        description="Success stories from Kahana: live hubs from people who packaged what they know. Open them on Explore."
+        title="Creator stories | Kahana"
+        description="Live Kahana hubs with price and member stats. Open a card to read the creator story, then open the hub on the Library."
         url={CANONICAL}
         type="website"
       />
@@ -37,6 +38,7 @@ export default function SuccessStoriesPage({ stats = KAHANA_STATS_FALLBACK }) {
               <p className="mt-5 text-lg leading-relaxed text-[#5C4520] sm:text-xl">
                 {t('home.storiesPageLead')}
               </p>
+              <EssaySeriesNav current="/success-stories" />
             </FadeInSection>
           </div>
         </section>
@@ -49,42 +51,45 @@ export default function SuccessStoriesPage({ stats = KAHANA_STATS_FALLBACK }) {
           </div>
         </section>
 
-        <section className="px-6 py-16 sm:px-10 lg:px-16">
+        <section className="border-t border-[#E4D9C4] px-6 py-16 sm:px-10 lg:px-16">
           <div className="mx-auto w-full max-w-6xl">
             <FadeInSection eager>
-              <UseCaseStoryCards t={t} compact={false} />
+              <UseCaseStoryCards
+                t={t}
+                compact
+                exploreHref={exploreUrl}
+                exploreTrackId="success_stories_explore_nudge"
+              />
             </FadeInSection>
           </div>
         </section>
 
-        <section className="bg-[#3B2F1A] px-6 py-20 text-[#F7F3EA] sm:px-10 lg:px-16">
-          <div className="mx-auto max-w-2xl text-center">
-            <FadeInSection>
-              <h2 className="text-3xl font-semibold leading-tight !text-[#F7F3EA] sm:text-4xl">
-                {t('home.storiesClosingTitle')}
-              </h2>
-              <p className="mt-4 text-lg text-[#F7F3EA]/85">{t('home.storiesClosingBody')}</p>
-              <div className="mt-10 flex flex-wrap justify-center gap-3">
-                <a
-                  href={productHref('/', 'success_stories_create')}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-primary inline-flex items-center justify-center gap-2 no-underline"
-                  onClick={() => trackButtonClick('success_stories_create')}
-                >
-                  <FolderPlusIcon className="h-5 w-5 shrink-0" aria-hidden />
-                  {t('home.create')}
-                </a>
-                <Link
-                  href="/faq"
-                  className="btn-secondary inline-flex items-center justify-center !border-[#F7F3EA]/40 !bg-transparent no-underline !text-[#F7F3EA] hover:!border-[#F7F3EA] hover:!bg-white/10 hover:!text-[#F7F3EA]"
-                >
-                  {t('footer.faq')}
-                </Link>
-              </div>
-            </FadeInSection>
-          </div>
-        </section>
+        <DarkLibraryCta
+          title={t('home.storiesClosingTitle')}
+          description={t('home.storiesClosingBody')}
+          libraryCampaign="success_stories_library"
+          createCampaign="success_stories_create"
+          libraryTrack="success_stories_library"
+          createTrack="success_stories_create"
+          createFirst
+        >
+          <p className="mt-8 text-sm text-[#F7F3EA]/70">
+            <Link href="/do-well" className="underline underline-offset-2">
+              What to post
+            </Link>
+            {' · '}
+            <Link href="/creator-benefits" className="underline underline-offset-2">
+              Benefits for creators
+            </Link>
+            {' · '}
+            <Link
+              href="/blog?category=Creator%20stories"
+              className="underline underline-offset-2"
+            >
+              Creator story blogs
+            </Link>
+          </p>
+        </DarkLibraryCta>
       </div>
     </>
   );

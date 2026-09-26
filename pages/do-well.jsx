@@ -13,18 +13,19 @@ const CANONICAL = `${ABOUT_ORIGIN}/do-well`;
 
 export default function DoWellPage() {
   const libraryHref = productHref('/library', 'do_well_explore');
+  const createHref = productHref('/', 'do_well_create');
 
   return (
     <>
       <SEO
-        title="How to do well on Kahana | Share work people give Aura"
+        title="What to post on Kahana | Share work people give Aura"
         description="How to get discovered on Kahana. Share unique, helpful work. When people find it useful, they give Aura, and that hub becomes easier to find."
         url={CANONICAL}
         type="website"
         schema={{
           '@context': 'https://schema.org',
           '@type': 'WebPage',
-          name: 'How to do well on Kahana',
+          name: 'What to post on Kahana',
           description:
             'Share unique helpful work. Aura from readers is what makes a hub easier to discover.',
           url: CANONICAL,
@@ -39,7 +40,7 @@ export default function DoWellPage() {
                 Doing well
               </p>
               <h1 className="mt-4 text-3xl font-semibold leading-tight tracking-tight sm:text-4xl md:text-5xl">
-                How to do well on Kahana
+                What to post on Kahana
               </h1>
               <p className="mt-5 text-lg leading-relaxed text-[#5C4520] sm:text-xl">
                 Share unique, helpful work. If people feel it is useful, helpful, noteworthy, or
@@ -66,11 +67,17 @@ export default function DoWellPage() {
             </FadeInSection>
             <FadeInSection>
               <div className="mt-10">
-                <LibraryHubExamples omitIntro exploreHref={libraryHref} exploreTrack="do_well_unique_explore" />
+                <LibraryHubExamples
+                  omitIntro
+                  exploreHref={libraryHref}
+                  createHref={createHref}
+                  exploreTrack="do_well_unique_explore"
+                  createTrack="do_well_unique_create"
+                />
               </div>
               <p className="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-[#5C4520]">
                 Put the full piece in a hub. See{' '}
-                <Link href="/story-gallery" className="text-[#8A6622] underline underline-offset-2">
+                <Link href="/success-stories" className="text-[#8A6622] underline underline-offset-2">
                   hubs that did this
                 </Link>
                 .
@@ -201,14 +208,14 @@ export default function DoWellPage() {
         >
           <p className="mt-8 text-sm text-[#F7F3EA]/70">
             <Link href="/why-the-aura-library-matters" className="underline underline-offset-2">
-              Why the Aura Library matters
+              Our mission
             </Link>
             {' · '}
             <Link href="/aura" className="underline underline-offset-2">
               How Aura works
             </Link>
             {' · '}
-            <Link href="/story-gallery" className="underline underline-offset-2">
+            <Link href="/success-stories" className="underline underline-offset-2">
               See hubs that did this
             </Link>
           </p>

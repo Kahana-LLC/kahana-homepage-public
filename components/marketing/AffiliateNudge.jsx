@@ -59,7 +59,7 @@ export default function AffiliateNudge() {
         className="mt-3 inline-flex text-sm font-semibold text-[#8A6622] underline-offset-2 hover:underline"
         onClick={dismiss}
       >
-        See how the affiliate link works
+        See how to become an affiliate
       </Link>
     </aside>
   );

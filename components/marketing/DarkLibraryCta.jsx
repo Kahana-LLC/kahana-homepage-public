@@ -1,11 +1,10 @@
-import { FolderPlusIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 import FadeInSection from '../FadeInSection';
 import { productHref } from '../../lib/productLinks';
 import { trackButtonClick } from '../../utils/analytics';
-
-const libraryBtnClass =
-  'btn-secondary inline-flex items-center justify-center gap-2 !border-[#F7F3EA]/40 !bg-transparent no-underline !text-[#F7F3EA] hover:!border-[#F7F3EA] hover:!bg-white/10 hover:!text-[#F7F3EA]';
-const createBtnClass = 'btn-primary inline-flex items-center justify-center gap-2 no-underline';
+import {
+  ExploreLibraryButton,
+  ShareUniqueKnowledgeButton,
+} from './LibraryActionButtons';
 
 export default function DarkLibraryCta({
   title,
@@ -14,7 +13,7 @@ export default function DarkLibraryCta({
   createCampaign = 'site_create',
   libraryTrack,
   createTrack,
-  createLabel = 'Create',
+  createLabel = 'Share your unique knowledge',
   createFirst = false,
   children,
 }) {
@@ -22,29 +21,21 @@ export default function DarkLibraryCta({
   const createHref = productHref('/', createCampaign);
 
   const libraryBtn = (
-    <a
+    <ExploreLibraryButton
       href={libraryHref}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={libraryBtnClass}
+      className="btn-secondary !border-[#F7F3EA]/40 !bg-transparent !text-[#F7F3EA] hover:!border-[#F7F3EA] hover:!bg-white/10 hover:!text-[#F7F3EA]"
       onClick={() => libraryTrack && trackButtonClick(libraryTrack)}
-    >
-      <MagnifyingGlassIcon className="h-5 w-5 shrink-0" aria-hidden />
-      Explore the Library
-    </a>
+    />
   );
 
   const createBtn = (
-    <a
+    <ShareUniqueKnowledgeButton
       href={createHref}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={createBtnClass}
+      className="btn-primary"
       onClick={() => createTrack && trackButtonClick(createTrack)}
     >
-      <FolderPlusIcon className="h-5 w-5 shrink-0" aria-hidden />
       {createLabel}
-    </a>
+    </ShareUniqueKnowledgeButton>
   );
 
   return (

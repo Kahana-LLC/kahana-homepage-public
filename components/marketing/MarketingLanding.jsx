@@ -109,7 +109,10 @@ export default function MarketingLanding({
                   className="btn-primary inline-flex items-center justify-center gap-2 no-underline"
                   onClick={() => trackButtonClick(trackingId)}
                 >
-                  {item.appHref?.includes('explore') || item.appLabel === 'Browse Library' ? (
+                  {item.appHref?.includes('explore') ||
+                  item.appHref?.includes('/library') ||
+                  item.appLabel === 'Browse Library' ||
+                  item.appLabel === 'Explore the Library' ? (
                     <MagnifyingGlassIcon className="h-5 w-5 shrink-0" aria-hidden />
                   ) : (
                     <FolderPlusIcon className="h-5 w-5 shrink-0" aria-hidden />
@@ -175,7 +178,7 @@ export default function MarketingLanding({
                   href="/success-stories"
                   className="text-base font-medium text-[#8A6622] no-underline underline-offset-4 hover:underline"
                 >
-                  More success stories
+                  More creator stories
                 </Link>
               </p>
             </div>

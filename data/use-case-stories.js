@@ -1,38 +1,12 @@
-import avatarKelsey from '../assets/images/avatars/kelseyVetterHeadshot.png';
-
 /**
- * Success stories for marketing (homepage + /success-stories).
+ * Creator stories for marketing (hub facts for creator-benefits + story blogs).
  * Hub facts are from the public listings (Aug 2026). Quotes only where we have
  * a real creator line — do not invent testimonials.
  * Covers copied from the live hub listings.
+ * One blog per hub lives under data/blog/* and category "Creator stories".
+ * Order: Amy first; Kelsey next; Emilio philosophy hub after; Olivia before Rashmi; Benjamin and Alex before Dhruthi.
  */
 export const USE_CASE_STORIES = [
-  {
-    id: 'kelsey',
-    name: 'Kelsey Vetter',
-    initials: 'KV',
-    persona: 'Pinterest marketing expert',
-    kind: 'Paid workshop',
-    hubTitle: 'Pinterest Success Session',
-    hubUrl: 'https://kahana.io/hub/tHwAYvYPzqVwGPGzh10k',
-    price: '$97',
-    stats: ['3.5k views', '11 files'],
-    summary:
-      'She turned a Pinterest workshop into a hub: session video, slides, keyword research, pin uploads, and checklists in one place people can unlock.',
-    story:
- 'Kelsey runs a small business teaching Pinterest marketing. Social posts only scratch the surface. On Kahana she put the full session in a hub, the presentation, how to research keywords, how to upload pins, trend tools, idea-pin workflows, and PDFs (setup checklist, FAQs, a pin plan tracker). Buyers open one hub instead of chasing a Drive folder or a Zoom replay. She listed it on Explore and charges for access.',
-    inside: [
-      'Session video and slides',
-      'Keyword research video and PDF',
-      'Pin upload and Idea Pin tutorials',
-      'Business-account checklist, FAQs, and pin planner',
-    ],
-    quote:
-      "Kahana has the most user-friendly interface I've come across in a platform of its kind. I love how easy it is to set up, make changes, add value, and connect with your audience. It's allowed me to monetize my knowledge and add a passive revenue stream to my small business.",
-    image: avatarKelsey,
-    coverSrc: '/images/success-stories/kelsey-cover.png',
-    coverAlt: 'Pinterest Success Session hub cover',
-  },
   {
     id: 'amy',
     name: 'Amy Wang',
@@ -42,20 +16,237 @@ export const USE_CASE_STORIES = [
     kind: 'Playbook + templates',
     hubTitle: 'Internship & research opportunities',
     hubUrl: 'https://kahana.io/hub/UMKtgp76MN1MvZuD6p7W',
+    youtubeUrl: 'https://www.youtube.com/@wamyy5',
     price: '$30',
+    auraCount: 6,
+    views: '28k',
+    subscribers: '210',
+    categories: ['Careers', 'Students', 'Internships', 'Templates'],
     stats: ['28k views', '11 files'],
     summary:
- 'She gathered internship and research advice (process, networking, interviews, LinkedIn, plus email and resume templates) so peers are not drowning in scattered internet tips.',
+      'She gathered internship and research advice (process, networking, interviews, LinkedIn, plus email and resume templates) so peers are not drowning in scattered internet tips.',
+    hubDescription:
+      'Everything I learned getting internships, full-time roles, and a research seat in a Nobel Prize lab, plus tips from friends at Caltech, MIT, and similar schools. Process, networking, interviews, LinkedIn, FAQs, and copy-ready resume and email templates in one place.',
     story:
- 'Amy (wAmy) built a hub of what she learned getting internships, full-time roles, and a research seat in a Nobel Prize lab, plus tips from friends at Caltech, MIT, and similar schools. The hub is a guide and a kit: her process, networking and interview notes, LinkedIn setup, FAQs, and copy-ready templates (resume, thank-you email, research inquiry, offer-rejection note). It is listed on Explore at a low price so students can open the whole playbook in one place.',
+      'Amy (wAmy) built a hub of what she learned getting internships, full-time roles, and a research seat in a Nobel Prize lab, plus tips from friends at Caltech, MIT, and similar schools. The hub is a guide and a kit: her process, networking and interview notes, LinkedIn setup, FAQs, and copy-ready templates (resume, thank-you email, research inquiry, offer-rejection note). It is listed on Explore at a low price so students can open the whole playbook in one place.',
     inside: [
       'Guides: process, networking, interviews, LinkedIn, FAQs',
       'Resume template',
       'Thank-you, research-inquiry, and offer-rejection emails',
     ],
-    image: '/images/success-stories/amy-avatar.jpg',
+    image: '/images/success-stories/amy-avatar.png',
     coverSrc: '/images/success-stories/amy-cover.png',
-    coverAlt: 'Internship and research opportunities hub cover',
+    coverAlt: 'Amy Wang (wAmy) YouTube thumbnail: Almost cheating — I do well in school',
+  },
+  {
+    id: 'kelsey',
+    name: 'Kelsey Vetter',
+    initials: 'KV',
+    persona: 'Pinterest marketing expert',
+    kind: 'Paid workshop',
+    hubTitle: 'Pinterest Success Session',
+    hubUrl: 'https://kahana.io/hub/tHwAYvYPzqVwGPGzh10k',
+    websiteUrl: 'https://kelseyvetter.com/',
+    price: '$97',
+    auraCount: 7,
+    views: '3.5k',
+    subscribers: '27',
+    categories: ['Marketing', 'Pinterest', 'Workshops', 'Small business'],
+    stats: ['3.5k views', '11 files'],
+    summary:
+      'She turned a Pinterest workshop into a hub: session video, slides, keyword research, pin uploads, and checklists in one place people can unlock.',
+    story:
+      'Kelsey runs a small business teaching Pinterest marketing. Social posts only scratch the surface. On Kahana she put the full session in a hub, the presentation, how to research keywords, how to upload pins, trend tools, idea-pin workflows, and PDFs (setup checklist, FAQs, a pin plan tracker). Buyers open one hub instead of chasing a Drive folder or a Zoom replay. She listed it on Explore and charges for access.',
+    inside: [
+      'Session video and slides',
+      'Keyword research video and PDF',
+      'Pin upload and Idea Pin tutorials',
+      'Business-account checklist, FAQs, and pin planner',
+    ],
+    quote:
+      "Kahana has the most user-friendly interface I've come across in a platform of its kind. I love how easy it is to set up, make changes, add value, and connect with your audience. It's allowed me to monetize my knowledge and add a passive revenue stream to my small business.",
+    image: '/images/success-stories/kelsey-avatar.png',
+    coverSrc: '/images/success-stories/kelsey-cover.png',
+    coverAlt: 'Kelsey Vetter: Pinterest Marketing for service based businesses',
+    coverObjectPosition: 'object-top',
+  },
+  {
+    id: 'emilio',
+    name: 'Emilio Abelmann',
+    initials: 'EA',
+    persona: 'Philosophy curator for young adults',
+    kind: 'Curated philosophy library',
+    hubTitle: 'Philosophical and Religious Thoughts for the Young Adult',
+    hubUrl: 'https://kahana.io/hub/QnvQ8OTa3S1Qp7XWOXPZ',
+    price: 'Free',
+    views: '379',
+    categories: ['Philosophy', 'Spirituality', 'Stoicism', 'Meditation', 'Education'],
+    stats: ['379 views', '44 files'],
+    auraCount: 28,
+    summary:
+      'He gathered philosophy, stoicism, meditation, and classic texts into one free Library hub so young adults can start with a clear path instead of scattered PDFs.',
+    story:
+      'Emilio Abelmann built a dense, free hub on Kahana: Philosophical and Religious Thoughts for the Young Adult. Buddhism, stoicism, Confucianism, Abrahamic traditions, work, and personal favorites sit in one shelf with dozens of files. It is listed on the Library so anyone can open Marcus Aurelius, the Analects, or a meditation guide without hunting across tabs.',
+    inside: [
+      'Buddhism, stoicism, and Confucianism sections',
+      'Abrahamic traditions and personal favorites',
+      'Work, focus, and classic philosophy texts',
+      'Videos and podcasts beside the readings',
+    ],
+    photoStyle: 'avatar',
+    image: '/images/success-stories/emilio-avatar.png',
+    coverSrc: '/images/success-stories/emilio-cover.jpg',
+    coverAlt: 'Philosophical and Religious Thoughts for the Young Adult hub cover',
+  },
+
+  {
+    id: 'olivia',
+    name: 'Olivia Mancuso',
+    initials: 'OM',
+    persona: 'Manifestation coach & brand consultant',
+    kind: 'Manifestation guide',
+    hubTitle: 'Your Guide to Manifesting Anything',
+    hubUrl: 'https://kahana.io/hub/nHxv8vCZBv6i0bVPunyp',
+    price: '$50',
+    auraCount: 4,
+    views: '2.8k',
+    subscribers: '9',
+    categories: ['Manifestation', 'Mindset', 'Wellness', 'Personal growth'],
+    stats: ['2.8k views', '9 subscribers'],
+    summary:
+      'She put vision-boarding and manifestation techniques into a paid hub people can open when they want the full practice, not another reel.',
+    story:
+      'Olivia Mancuso coaches manifestation and brand. On Kahana she listed Your Guide to Manifesting Anything: vision boarding and techniques she used to grow income, change habits, and travel. Followers who want the method unlock one hub instead of hunting through scattered posts.',
+    inside: [
+      'Vision boarding practices',
+      'Manifestation techniques in one pack',
+      'A paid guide for deeper work',
+    ],
+    quote:
+      "I can honestly say that I've never worked with a team that was as helpful and dedicated as the team at Kahana. If you're a digital creator looking for a platform that not only supports your content creation but also helps you achieve your goals, then Kahana is the answer.",
+    photoStyle: 'avatar',
+    image: '/images/success-stories/olivia-avatar.png',
+    coverSrc: '/images/success-stories/olivia-cover.jpg',
+    coverAlt: 'Your Guide to Manifesting Anything hub cover',
+  },
+  {
+    id: 'benjamin',
+    name: 'Benjamin St-Juste',
+    initials: 'BS',
+    persona: 'NFL player & brand owner',
+    kind: 'Behind-the-scenes athlete hub',
+    hubTitle: "What it's like being an NFL player | Benjamin St-Juste",
+    hubUrl: 'https://kahana.io/hub/smGioNXlSDH9Kh9cjg0A',
+    price: '$14',
+    auraCount: 4,
+    views: '1.9k',
+    subscribers: '1',
+    categories: ['Sports', 'NFL', 'Training', 'Athletes'],
+    stats: ['1.9k views'],
+    summary:
+      'He opened a hub on the year-round grind behind Sunday: training, prehab, and mental prep fans only glimpse on social.',
+    story:
+      'Benjamin St-Juste plays in the NFL and builds a brand off the field. Instagram and TikTok only scratch the surface. On Kahana he put a hub about what it is actually like to be an NFL player: months of training, prehab, and mental prep that make the game possible. Fans who want depth unlock the hub.',
+    inside: [
+      'Training and prehab behind the season',
+      'Mental prep for game day',
+      'Depth beyond the Sunday highlight',
+    ],
+    quote:
+      "Kahana allows me to go so much more in-depth and share all the knowledge I've learned on and off the field - I can only scratch the surface on Instagram and TikTok.",
+    photoStyle: 'avatar',
+    image: '/images/success-stories/benjamin-avatar.png',
+    coverSrc: '/images/success-stories/benjamin-cover.jpg',
+    coverAlt: "What it's like being an NFL player hub cover",
+  },
+  {
+    id: 'alex',
+    name: 'Alex Klebasko',
+    initials: 'AK',
+    persona: 'Fitness creator',
+    kind: 'Paid fitness blueprint',
+    hubTitle: 'SUMMER BODY BLUEPRINT',
+    hubUrl: 'https://kahana.io/hub/wRbxEmrMRXbdENDl58d3',
+    price: '$75',
+    auraCount: 6,
+    views: '1.3k',
+    subscribers: '4',
+    categories: ['Fitness', 'Nutrition', 'Training', 'Health'],
+    stats: ['1.3k views', '4 subscribers'],
+    summary:
+      'He listed a paid fitness blueprint on Explore: decisions, training, and nutrition for people chasing a stronger summer body.',
+    story:
+      'Alex Klebasko published SUMMER BODY BLUEPRINT as a Kahana hub. The pack is built around a simple idea: growth comes from decisions. Buyers unlock the blueprint on Explore instead of piecing together random workout clips from a feed.',
+    inside: [
+      'Fitness and nutrition blueprint',
+      'A clear paid unlock on Explore',
+      'Training aimed at a stronger body',
+    ],
+    photoStyle: 'avatar',
+    image: '/images/success-stories/alex-avatar.jpg',
+    coverSrc: '/images/success-stories/alex-cover.jpg',
+    coverAlt: 'SUMMER BODY BLUEPRINT hub cover',
+  },
+  {
+    id: 'dhruthi',
+    name: 'Dhruthi Prakash',
+    aka: 'expecto_entertainum',
+    initials: 'DP',
+    persona: 'Dance and comedy creator',
+    kind: 'Dance community hub',
+    hubTitle: 'Dance & Comedy shows & fun',
+    hubUrl: 'https://kahana.io/hub/GogdzS0U8ZptNASIQm54',
+    instagramUrl: 'https://www.instagram.com/expecto_entertainum/',
+    socialFollowers: '13.6k',
+    socialFollowing: '516',
+    photoStyle: 'avatar',
+    compactAvatar: true,
+    price: 'Free',
+    auraCount: 5,
+    categories: ['Dance', 'Comedy', 'Community', 'Performance'],
+    stats: [],
+    summary:
+      'She builds community around dance: teaching moves, sharing shows, and giving people a room next to the reels where they can learn together.',
+    story:
+      'Dhruthi (expecto_entertainum) teaches dance and comedy on Instagram. On Kahana she put a hub around the work itself: dance and comedy shows, fun, and the moves people want to learn. The hub is a place to gather after a reel, not a replacement for Instagram. Followers who want more open the hub and stay in community around the steps.',
+    inside: [
+      'Dance moves and practice',
+      'Comedy and show energy',
+      'A room for the community beside the reels',
+    ],
+    image: '/images/success-stories/dhruthi-avatar.png',
+    coverSrc: '/images/success-stories/dhruthi-cover.webp',
+    coverAlt: 'Dance & Comedy shows & fun hub cover',
+  },
+  {
+    id: 'tay',
+    name: 'Tay Ladd',
+    initials: 'TL',
+    persona: 'Corporate lawyer, creator & brand deal expert',
+    kind: 'Creator playbook bundle',
+    hubTitle: 'Negotiate Brand Deals Like A Pro Bundle',
+    hubUrl: 'https://kahana.io/hub/1S2ZgD50xvU66TzfurF9',
+    price: '$199',
+    auraCount: 2,
+    views: '665',
+    subscribers: '1',
+    categories: ['Brand deals', 'Creators', 'Influencer marketing', 'Negotiation'],
+    stats: ['665 views'],
+    summary:
+      'She packaged brand-deal negotiation into a paid bundle: how to set prices, work with brands, and close with confidence.',
+    story:
+      'Tay Ladd is a corporate lawyer and creator who teaches brand deals. On Kahana she listed a toolkit for creators and influencers: guides for navigating brand partnerships, setting prices, and negotiating like a pro. Buyers unlock the pack in one hub instead of chasing scattered posts and DMs.',
+    inside: [
+      'Brand deal negotiation guides',
+      'Pricing and partnership playbooks',
+      'A paid bundle for creators and influencers',
+    ],
+    quote:
+      "You took my brain and turned it into a phenomenal asset. I could not do this at all without Kahana - I wouldn't even know where to start.",
+    photoStyle: 'avatar',
+    image: '/images/success-stories/tay-avatar.png',
+    coverSrc: '/images/success-stories/tay-cover.jpg',
+    coverAlt: 'Negotiate Brand Deals Like A Pro Bundle hub cover',
   },
   {
     id: 'rashmi',
@@ -67,11 +258,15 @@ export const USE_CASE_STORIES = [
     hubTitle: 'Inward: A 30-Day Conversation With Yourself',
     hubUrl: 'https://kahana.io/hub/ncqkaConfukeopShys9r',
     price: 'Free',
+    auraCount: 25,
+    views: '119',
+    subscribers: '14',
+    categories: ['Journals', 'Writing', 'Wellness', 'Personal growth'],
     stats: ['119 views', '38 files'],
     summary:
       'She built a 30-day guided journal as a hub: thirty questions, week by week, so people can meet themselves one honest page at a time.',
     story:
- 'Rashmi published Inward as a Kahana hub instead of a one-off PDF. It is a 30-day conversation with yourself. Not a diary of what happened, but thirty questions across four weeks: noticing, looking back, the inner rooms, and becoming. Ten minutes is enough. The hub holds how to use the journal plus a day-by-day structure, listed free on Explore so anyone can open it and start on page one.',
+      'Rashmi published Inward as a Kahana hub instead of a one-off PDF. It is a 30-day conversation with yourself. Not a diary of what happened, but thirty questions across four weeks: noticing, looking back, the inner rooms, and becoming. Ten minutes is enough. The hub holds how to use the journal plus a day-by-day structure, listed free on Explore so anyone can open it and start on page one.',
     inside: [
       'How to use this journal',
       'Week 1: Noticing',

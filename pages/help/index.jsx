@@ -1,12 +1,16 @@
 import React, { useState, useMemo, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { ChatBubbleLeftRightIcon, EnvelopeIcon } from '@heroicons/react/24/outline';
 import { getAllDocsMetadata } from '../../utils/docsUtils';
 import DocCard from '../../components/DocCard';
 import LibraryMission from '../../components/marketing/LibraryMission';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import SEO from '../../components/SEO';
 import HelpFilterBar from '../../components/help/HelpFilterBar';
+import { CONTACT_URL } from '../../components/nav/navConfig';
+import { withProductUtm } from '../../lib/productLinks';
+import { trackButtonClick } from '../../utils/analytics';
 import {
   FEATURES,
   getPersona,
@@ -14,6 +18,13 @@ import {
   parseTaxonomyTag,
   personaChipLabel,
 } from '../../data/marketingTaxonomy';
+
+const HELP_CONTACT_HREF = withProductUtm(`${CONTACT_URL}?source=help`, {
+  campaign: 'help_contact',
+});
+const HELP_SUPPORT_HREF = withProductUtm('https://kahana.io/support', {
+  campaign: 'help_support',
+});
 
 const DOCS_PER_PAGE = 9;
 
@@ -174,6 +185,28 @@ export default function HelpIndex({ docs = [] }) {
             <p className="text-xl text-oasis-green-800 max-w-2xl mx-auto">
               Search guides, then filter by who you are or what you are trying to do.
             </p>
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+              <a
+                href={HELP_CONTACT_HREF}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary inline-flex items-center justify-center gap-2 no-underline"
+                onClick={() => trackButtonClick('help_contact')}
+              >
+                <EnvelopeIcon className="h-5 w-5 shrink-0" aria-hidden />
+                Contact us
+              </a>
+              <a
+                href={HELP_SUPPORT_HREF}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary inline-flex items-center justify-center gap-2 no-underline"
+                onClick={() => trackButtonClick('help_support')}
+              >
+                <ChatBubbleLeftRightIcon className="h-5 w-5 shrink-0" aria-hidden />
+                Support
+              </a>
+            </div>
           </div>
 
           {docList.length === 0 ? (

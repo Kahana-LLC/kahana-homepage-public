@@ -354,7 +354,7 @@ export default function BlogPost({ post }) {
               <Breadcrumbs 
                 items={[
                   { name: "Home", url: "/" },
-                  { name: "Guides", url: "/blog" },
+                  { name: "Blog", url: "/blog" },
                   { name: post.title, url: `/blog/${post.slug}` },
                 ]} 
               />

@@ -1,7 +1,10 @@
 import Image from 'next/image';
-import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 import { USE_CASE_STORIES } from '../../data/use-case-stories';
 import { trackButtonClick } from '../../utils/analytics';
+import {
+  ExploreLibraryButton,
+  ShareUniqueKnowledgeButton,
+} from './LibraryActionButtons';
 
 const EXAMPLES = USE_CASE_STORIES.filter((s) => ['amy', 'kelsey', 'rashmi'].includes(s.id));
 
@@ -14,6 +17,9 @@ export default function LibraryHubExamples({
   heading = 'Unique work already on the Library',
   exploreHref,
   exploreTrack = 'why_aura_examples_explore',
+  createHref,
+  createTrack = 'why_aura_examples_create',
+  createLabel = 'Share your unique knowledge',
 }) {
   return (
     <div>
@@ -60,19 +66,23 @@ export default function LibraryHubExamples({
           </li>
         ))}
       </ul>
-      {exploreHref ? (
-        <p className="mt-8">
-          <a
-            href={exploreHref}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary inline-flex items-center justify-center gap-2 no-underline"
-            onClick={() => trackButtonClick(exploreTrack)}
-          >
-            <MagnifyingGlassIcon className="h-5 w-5 shrink-0" aria-hidden />
-            Explore the Library
-          </a>
-        </p>
+      {exploreHref || createHref ? (
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+          {exploreHref ? (
+            <ExploreLibraryButton
+              href={exploreHref}
+              onClick={() => trackButtonClick(exploreTrack)}
+            />
+          ) : null}
+          {createHref ? (
+            <ShareUniqueKnowledgeButton
+              href={createHref}
+              onClick={() => trackButtonClick(createTrack)}
+            >
+              {createLabel}
+            </ShareUniqueKnowledgeButton>
+          ) : null}
+        </div>
       ) : null}
     </div>
   );

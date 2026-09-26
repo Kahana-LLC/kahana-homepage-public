@@ -8,6 +8,7 @@ import {
   Cog6ToothIcon,
   CubeIcon,
   DocumentTextIcon,
+  FolderPlusIcon,
   GlobeAmericasIcon,
   DevicePhoneMobileIcon,
   EnvelopeIcon,
@@ -25,8 +26,8 @@ import {
   ShieldCheckIcon,
   SparklesIcon,
   Squares2X2Icon,
-  RectangleStackIcon,
   TagIcon,
+  TicketIcon,
   ArrowsRightLeftIcon,
   AcademicCapIcon,
   UserGroupIcon,
@@ -35,8 +36,8 @@ import {
 } from '@heroicons/react/24/outline';
 import { ConsentContext } from '../contexts/ConsentContext';
 import { useMarketingI18n } from '../contexts/MarketingI18n';
-import { CONTACT_URL } from './nav/navConfig';
-import { EXPLORE_URL, productHref, withProductUtm } from '../lib/productLinks';
+import { CONTACT_URL, INTEGRATION_CONTACT_URL, PARTNERSHIP_CONTACT_URL } from './nav/navConfig';
+import { productHref, withProductUtm } from '../lib/productLinks';
 import KahanaWordmark from './brand/KahanaWordmark';
 import LanguageMenu from './brand/LanguageMenu';
 import {
@@ -57,26 +58,40 @@ const ICON_LINK = 'h-4 w-4 shrink-0 text-current';
 const ICON_HEADING = 'h-4 w-4 shrink-0 text-[#8A6622]';
 
 const PRODUCT_LINKS = [
-  {
-    href: EXPLORE_URL,
-    labelKey: 'footer.explore',
-    external: true,
-    icon: MagnifyingGlassIcon,
-  },
   { href: '/pricing', labelKey: 'footer.pricing', icon: TagIcon },
+  {
+    href: productHref('/billing?intent=sell&trial=growth', 'footer_growth_trial'),
+    label: '14-day Growth trial',
+    badge: 'New',
+    icon: TicketIcon,
+    external: true,
+  },
   { href: '/features', labelKey: 'footer.features', icon: Squares2X2Icon },
-  { href: '/roadmap', labelKey: 'footer.roadmap', icon: RectangleStackIcon },
-  { href: '/use-cases', labelKey: 'footer.jobs', icon: BookmarkIcon },
-  { href: '/success-stories', labelKey: 'footer.useCases', icon: BookOpenIcon },
-  { href: '/compare', labelKey: 'footer.compare', icon: ArrowsRightLeftIcon },
-  { href: '/creators', labelKey: 'footer.creators', icon: UserGroupIcon },
   { href: '/learners', labelKey: 'footer.learners', icon: AcademicCapIcon },
+  { href: '/learner-benefits', label: 'Benefits for learners', icon: AcademicCapIcon },
+  { href: '/creators', labelKey: 'footer.creators', icon: UserGroupIcon },
+  { href: '/creator-benefits', label: 'Benefits for creators', icon: UserGroupIcon },
   { href: '/app-waitlist', labelKey: 'footer.appWaitlist', icon: DevicePhoneMobileIcon },
 ];
 
 /** About / Team / Careers hidden from footer for now (pages still exist). */
 const COMPANY_LINKS = [
   { href: CONTACT_URL, labelKey: 'footer.contact', icon: EnvelopeIcon, external: true },
+  {
+    href: PARTNERSHIP_CONTACT_URL,
+    labelKey: 'footer.partnerships',
+    icon: UserPlusIcon,
+    external: true,
+  },
+  {
+    href: INTEGRATION_CONTACT_URL,
+    labelKey: 'footer.integrations',
+    icon: Cog6ToothIcon,
+    external: true,
+  },
+  { href: '/why-the-aura-library-matters', label: 'Our mission', icon: SparklesIcon },
+  { href: '/philosophy', label: 'Philosophy', icon: LightBulbIcon },
+  { href: '/value-exchange', label: 'Value exchange', icon: ArrowsRightLeftIcon },
   {
     href: '/climate-commitment',
     labelKey: 'footer.climate',
@@ -100,14 +115,12 @@ const RESOURCE_LINKS = [
   { href: '/blog', labelKey: 'footer.blog', icon: NewspaperIcon },
   { href: '/help', labelKey: 'footer.help', icon: QuestionMarkCircleIcon },
   { href: '/faq', labelKey: 'footer.faq', icon: ChatBubbleLeftRightIcon },
-  { href: '/why-the-aura-library-matters', label: 'Why the Aura Library matters', icon: SparklesIcon },
-  { href: '/philosophy', label: 'Philosophy', icon: LightBulbIcon },
-  { href: '/creator-benefits', label: 'Benefits for creators', icon: UserGroupIcon },
-  { href: '/do-well', label: 'How to do well', icon: AcademicCapIcon },
-  { href: '/story-gallery', label: 'Story gallery', icon: BookOpenIcon },
-  { href: '/collabs', label: 'Creator collabs', icon: UserPlusIcon },
+  { href: '/use-cases', labelKey: 'footer.jobs', icon: BookmarkIcon },
+  { href: '/compare', labelKey: 'footer.compare', icon: ArrowsRightLeftIcon },
+  { href: '/success-stories', labelKey: 'footer.useCases', icon: BookOpenIcon },
+  { href: '/do-well', label: 'What to post', icon: AcademicCapIcon },
   { href: '/podcast-guest', label: 'Podcast guest', icon: MicrophoneIcon },
-  { href: '/affiliates', label: 'Affiliates', icon: BanknotesIcon },
+  { href: '/affiliates', label: 'Become an affiliate', icon: BanknotesIcon },
 ];
 
 const SECTION_ICONS = {
@@ -139,7 +152,14 @@ function LinkList({ links, t, linkClass = LINK_CLASS }) {
         const content = (
           <>
             {Icon ? <Icon className={ICON_LINK} aria-hidden /> : null}
-            {label}
+            <span className="inline-flex flex-wrap items-center gap-2">
+              {label}
+              {item.badge ? (
+                <span className="rounded-full bg-[#8A6622] px-1.5 py-0.5 text-[0.6rem] font-bold uppercase tracking-[0.08em] text-[#F7F3EA]">
+                  {item.badge}
+                </span>
+              ) : null}
+            </span>
           </>
         );
         return (
@@ -297,7 +317,8 @@ function FooterContent() {
 
   const consentContext = useContext(ConsentContext);
 
-  const contributeUrl = productHref('/', 'footer_contribute', langPreference);
+  const exploreUrl = productHref('/library', 'footer_explore', langPreference);
+  const createUrl = productHref('/', 'footer_create', langPreference);
 
   const openCookieModal =
     consentContext?.openModal ||
@@ -339,14 +360,26 @@ function FooterContent() {
             </div>
 
             <div className="flex flex-col items-stretch gap-4 lg:items-end">
-              <a
-                href={contributeUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary inline-flex items-center justify-center no-underline transition-opacity hover:opacity-95"
-              >
-                {t('footer.contribute')}
-              </a>
+              <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:justify-end">
+                <a
+                  href={exploreUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary inline-flex items-center justify-center gap-2 no-underline transition-opacity hover:opacity-95"
+                >
+                  <MagnifyingGlassIcon className="h-5 w-5 shrink-0" aria-hidden />
+                  {t('footer.explore')}
+                </a>
+                <a
+                  href={createUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-secondary inline-flex items-center justify-center gap-2 no-underline transition-opacity hover:opacity-95"
+                >
+                  <FolderPlusIcon className="h-5 w-5 shrink-0" aria-hidden />
+                  {t('footer.create')}
+                </a>
+              </div>
               <p className="text-left text-lg text-[#666666] lg:text-right lg:text-xl lg:leading-6">
                 {t('footer.tagline')}
               </p>

@@ -4,8 +4,9 @@ import SEO from '../../components/SEO';
 import FadeInSection from '../../components/FadeInSection';
 import LibraryHubExamples from '../../components/marketing/LibraryHubExamples';
 import DarkLibraryCta from '../../components/marketing/DarkLibraryCta';
+import { ExploreLibraryButton } from '../../components/marketing/LibraryActionButtons';
+import GlobalReaderFlags from '../../components/marketing/GlobalReaderFlags';
 import { ABOUT_ORIGIN } from '../../config/site';
-import { GLOBAL_READER_FLAGS } from '../../data/globalReaderFlags';
 import { productHref } from '../../lib/productLinks';
 import { trackButtonClick } from '../../utils/analytics';
 
@@ -13,6 +14,7 @@ const CANONICAL = `${ABOUT_ORIGIN}/features/explore`;
 
 export default function ExploreFeaturePage() {
   const libraryHref = productHref('/library', 'feature_explore');
+  const createHref = productHref('/', 'feature_explore_create');
 
   return (
     <>
@@ -36,35 +38,22 @@ export default function ExploreFeaturePage() {
                 artifacts. It is a library, not a feed like TikTok or Instagram. Guests can browse
                 most public, non-adult listings.
               </p>
-              <ul
-                className="mx-auto mt-8 flex max-w-xl flex-wrap justify-center gap-2"
-                aria-label="A sample of countries readers already come from. Kahana reaches 110 or more."
-              >
-                {GLOBAL_READER_FLAGS.map(([name, flag]) => (
-                  <li key={name} title={name} aria-label={name} className="text-2xl leading-none">
-                    <span aria-hidden>{flag}</span>
-                  </li>
-                ))}
-              </ul>
+              <div className="mx-auto mt-8">
+                <GlobalReaderFlags />
+              </div>
               <p className="mt-4 text-sm text-[#666666]">
                 People already create, learn, and research here from over 110 countries.
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-3">
-                <a
+                <ExploreLibraryButton
                   href={libraryHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-primary inline-flex items-center justify-center gap-2 no-underline"
                   onClick={() => trackButtonClick('feature_explore_hero')}
-                >
-                  <MagnifyingGlassIcon className="h-5 w-5 shrink-0" aria-hidden />
-                  Explore the Library
-                </a>
+                />
                 <Link
                   href="/why-the-aura-library-matters"
                   className="btn-secondary inline-flex items-center justify-center no-underline"
                 >
-                  Why the Aura Library matters
+                  Our mission
                 </Link>
               </div>
             </FadeInSection>
@@ -138,7 +127,9 @@ export default function ExploreFeaturePage() {
                 <LibraryHubExamples
                   omitIntro
                   exploreHref={libraryHref}
+                  createHref={createHref}
                   exploreTrack="feature_explore_hubs"
+                  createTrack="feature_explore_hubs_create"
                 />
               </div>
               <p className="mt-4 text-base text-[#5C4520]">
@@ -147,7 +138,7 @@ export default function ExploreFeaturePage() {
                   href="/why-the-aura-library-matters"
                   className="text-[#8A6622] underline underline-offset-2"
                 >
-                  why the Aura Library matters
+                  our mission
                 </Link>{' '}
                 and{' '}
                 <Link href="/aura" className="text-[#8A6622] underline underline-offset-2">

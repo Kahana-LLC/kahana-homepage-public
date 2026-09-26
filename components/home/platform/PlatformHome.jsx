@@ -38,8 +38,10 @@ import RainbowHoverCard from './RainbowHoverCard';
 import FaqBrowse from '../../faq/FaqBrowse';
 import UseCaseStoryCards from '../../use-cases/UseCaseStoryCards';
 import LibraryMission from '../../marketing/LibraryMission';
+import GrowthTrialPill from '../../marketing/GrowthTrialPill';
 import CategoryMarquee from './CategoryMarquee';
 import UseWithMarquee from '../../compare/UseWithMarquee';
+import { INTEGRATION_CONTACT_URL } from '../../nav/navConfig';
 import { EXPLORE_CATEGORIES } from '../../../data/exploreCategories';
 import { useMarketingI18n } from '../../../contexts/MarketingI18n';
 import { YOUTUBE_CHANNEL_URL } from '../../../config/brand';
@@ -324,10 +326,10 @@ export default function PlatformHome() {
               {t('home.heroBody')}
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
+              <SecondaryCta href={exploreUrl}>{t('home.explore')}</SecondaryCta>
               <PrimaryCta href={createUrl} trackingId="platform_hero_create">
                 {t('home.create')}
               </PrimaryCta>
-              <SecondaryCta href={exploreUrl}>{t('home.explore')}</SecondaryCta>
             </div>
             <p className="hero-slogan mt-7 max-w-xl text-[0.9375rem] leading-snug tracking-[0.02em] text-[#8A6622]">
               {t('home.heroSlogan')}
@@ -341,6 +343,275 @@ export default function PlatformHome() {
             <HeroOwlLottie />
           </FadeInSection>
         </div>
+      </section>
+
+
+      <SectionShell id="aura" className="border-t border-[#E4D9C4]">
+        <FadeInSection>
+          <div>
+            <h2 className="text-3xl font-semibold sm:text-4xl">{t('home.auraTitle')}</h2>
+
+            <RainbowHoverCard className="mt-8" innerClassName="bg-[#EDE6D2] px-6 py-5 sm:px-8">
+              <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:gap-10">
+                <AuraLikeAnimation />
+                <div>
+                  <p className="text-xl font-semibold text-[#3B2F1A]">{t('home.auraLead')}</p>
+                  <p className="mt-2 text-base leading-relaxed text-[#5C4520] sm:text-lg">
+                    {t('home.auraBody')}
+                  </p>
+                </div>
+              </div>
+            </RainbowHoverCard>
+
+            <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {auraRules.map((rule) => {
+                const { Icon } = rule;
+                return (
+                  <li key={rule.title}>
+                    <RainbowHoverCard className="h-full" innerClassName="flex flex-col bg-white px-5 py-5 sm:px-6">
+                      <div className="flex items-center gap-3">
+                        <span className="rainbow-hover-icon flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#D9DACB] text-[#4F5140]">
+                          <Icon className="h-5 w-5" aria-hidden />
+                        </span>
+                        <h3 className="text-lg font-semibold text-[#3B2F1A]">{rule.title}</h3>
+                      </div>
+                      <p className="mt-3 text-[#666666]">{rule.body}</p>
+                    </RainbowHoverCard>
+                  </li>
+                );
+              })}
+            </ul>
+
+            <p className="mt-8">
+              <Link
+                href="/aura"
+                className="text-base font-medium text-[#8A6622] no-underline underline-offset-4 hover:underline"
+              >
+                {t('home.auraLearnMore')}
+              </Link>
+            </p>
+          </div>
+        </FadeInSection>
+      </SectionShell>
+
+      <LibraryMission />
+
+      <SectionShell id="creator-stories" className="border-t border-[#E4D9C4] bg-white/60">
+        <FadeInSection>
+          <h2 className="text-3xl font-semibold sm:text-4xl">{t('home.storiesTitle')}</h2>
+          <p className="mt-3 max-w-2xl text-lg text-[#666666]">{t('home.storiesLead')}</p>
+          <UseCaseStoryCards
+            t={t}
+            compact
+            paginated
+            showExploreNudge={false}
+          />
+          <p className="mt-8 flex flex-wrap gap-x-4 gap-y-2">
+            <Link
+              href="/success-stories"
+              className="text-base font-medium text-[#8A6622] no-underline underline-offset-4 hover:underline"
+            >
+              {t('home.storiesSeeAll')}
+            </Link>
+          </p>
+        </FadeInSection>
+      </SectionShell>
+
+      <SectionShell id="how-it-works" className="border-t border-[#E4D9C4]">
+        <FadeInSection>
+          <h2 className="text-3xl font-semibold sm:text-4xl">{t('home.howTitle')}</h2>
+          <p className="mt-3 max-w-2xl text-lg text-[#666666]">{t('home.howLead')}</p>
+          <ul className="mt-14 grid list-none gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {howItWorks.map((item) => {
+              const { Icon } = item;
+              return (
+                <li key={item.title}>
+                  <RainbowHoverCard className="h-full" innerClassName="flex flex-col bg-white px-6 py-7 sm:px-8">
+                    <div className="flex items-center gap-4">
+                      <span className="rainbow-hover-icon flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#D9DACB] text-[#4F5140]">
+                        <Icon className="h-6 w-6" aria-hidden />
+                      </span>
+                      <h3 className="text-xl font-semibold">{item.title}</h3>
+                    </div>
+                    <p className="mt-4 text-[#666666]">{item.body}</p>
+                  </RainbowHoverCard>
+                </li>
+              );
+            })}
+          </ul>
+          <p className="mt-8 flex flex-wrap items-center gap-3">
+            <Link
+              href="/features"
+              className="btn-secondary inline-flex items-center justify-center gap-2 no-underline"
+            >
+              {t('home.browseHelp')}
+              <ArrowRightIcon className="h-5 w-5 shrink-0" aria-hidden />
+            </Link>
+            <Link
+              href="/use-cases"
+              className="btn-secondary inline-flex items-center justify-center gap-2 no-underline"
+            >
+              {t('home.howUseCasesCta')}
+              <ArrowRightIcon className="h-5 w-5 shrink-0" aria-hidden />
+            </Link>
+          </p>
+        </FadeInSection>
+      </SectionShell>
+
+      <SectionShell id="for-learners" className="bg-white/60">
+        <FadeInSection>
+          <h2 className="text-3xl font-semibold sm:text-4xl">{t('home.learnersTitle')}</h2>
+          <p className="mt-3 max-w-2xl text-lg text-[#666666]">{t('home.learnersLead')}</p>
+          <BenefitTiles items={seekerBenefits} />
+          <p className="mt-8 flex flex-wrap items-center gap-3">
+            <SecondaryCta href={exploreUrl}>{t('home.explore')}</SecondaryCta>
+            <Link
+              href="/learner-benefits"
+              className="btn-secondary inline-flex items-center justify-center gap-2 no-underline"
+              onClick={() => trackButtonClick('platform_learners_benefits')}
+            >
+              {t('home.learnersPageCta')}
+              <ArrowRightIcon className="h-5 w-5 shrink-0" aria-hidden />
+            </Link>
+          </p>
+        </FadeInSection>
+      </SectionShell>
+
+      <SectionShell id="for-creators" className="bg-[#B8B9A6]/20">
+        <FadeInSection>
+          <h2 className="text-3xl font-semibold sm:text-4xl">{t('home.creatorsTitle')}</h2>
+          <p className="mt-3 max-w-2xl text-lg text-[#666666]">{t('home.creatorsLead')}</p>
+          <BenefitTiles items={creatorBenefits} />
+          <div className="mt-8 flex flex-wrap items-center justify-between gap-x-4 gap-y-3">
+            <p className="flex flex-wrap items-center gap-3">
+              <PrimaryCta href={createUrl} trackingId="platform_creators_create">
+                {t('home.create')}
+              </PrimaryCta>
+              <Link
+                href="/creator-benefits"
+                className="btn-secondary inline-flex items-center justify-center gap-2 no-underline"
+                onClick={() => trackButtonClick('platform_creators_benefits')}
+              >
+                {t('home.creatorsPageCta')}
+                <ArrowRightIcon className="h-5 w-5 shrink-0" aria-hidden />
+              </Link>
+            </p>
+            <p className="flex flex-wrap items-center gap-3 sm:ml-auto">
+              <GrowthTrialPill
+                href={productHref('/billing?intent=sell&trial=growth', 'home_creators_trial')}
+                onClick={() => trackButtonClick('home_creators_trial_pill')}
+              />
+              <Link
+                href="/affiliates"
+                className="text-sm font-semibold text-[#8A6622] underline underline-offset-2"
+                onClick={() => trackButtonClick('home_creators_affiliate')}
+              >
+                Become an affiliate
+              </Link>
+            </p>
+          </div>
+        </FadeInSection>
+      </SectionShell>
+
+      <section id="use-with" className="border-t border-[#E4D9C4] py-16">
+        <FadeInSection>
+          <div className="mx-auto w-full max-w-6xl px-6 sm:px-10 lg:px-16">
+            <h2 className="text-3xl font-semibold sm:text-4xl">{t('home.useWithTitle')}</h2>
+            <p className="mt-3 max-w-2xl text-lg text-[#666666]">{t('home.useWithLead')}</p>
+          </div>
+          <div className="mt-10 w-full overflow-hidden">
+            <UseWithMarquee label={t('home.useWithTitle')} />
+          </div>
+          <p className="mx-auto mt-10 flex w-full max-w-6xl flex-wrap gap-3 px-6 sm:px-10 lg:px-16">
+            <Link
+              href="/compare"
+              className="btn-secondary inline-flex items-center justify-center no-underline"
+            >
+              {t('home.useWithCta')}
+            </Link>
+            <a
+              href={INTEGRATION_CONTACT_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary inline-flex items-center justify-center no-underline"
+              onClick={() => trackButtonClick('home_integrations_contact')}
+            >
+              {t('home.useWithIntegrateCta')}
+            </a>
+          </p>
+        </FadeInSection>
+      </section>
+
+      <SectionShell id="optimize" className="border-t border-[#E4D9C4]">
+        <FadeInSection>
+          <h2 className="text-3xl font-semibold sm:text-4xl">{t('home.optimizeTitle')}</h2>
+          <p className="mt-3 max-w-2xl text-lg text-[#666666]">{t('home.optimizeLead')}</p>
+          <ol className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {optimizeSteps.map((item) => {
+              const { Icon } = item;
+              return (
+                <li key={item.step}>
+                  <RainbowHoverCard className="h-full" innerClassName="flex flex-col bg-white px-6 py-7 sm:px-8">
+                    <div className="flex items-center gap-4">
+                      <span className="rainbow-hover-icon flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#D9DACB] text-[#4F5140]">
+                        <Icon className="h-6 w-6" aria-hidden />
+                      </span>
+                      <div>
+                        <p className="text-sm font-semibold tracking-widest text-[#8A6622]">
+                          {item.step}
+                        </p>
+                        <h3 className="mt-1 text-xl font-semibold">{item.title}</h3>
+                      </div>
+                    </div>
+                    <p className="mt-4 text-[#666666]">{item.body}</p>
+                  </RainbowHoverCard>
+                </li>
+              );
+            })}
+          </ol>
+          <p className="mt-14 flex flex-wrap items-center gap-3">
+            <Link
+              href="/do-well"
+              className="btn-secondary inline-flex items-center justify-center gap-2 no-underline"
+              onClick={() => trackButtonClick('platform_optimize_do_well')}
+            >
+              <AcademicCapIcon className="h-5 w-5 shrink-0" aria-hidden />
+              {t('home.optimizeDoWellCta')}
+            </Link>
+            <Link
+              href="/blog"
+              className="btn-secondary inline-flex items-center justify-center gap-2 no-underline"
+            >
+              <NewspaperIcon className="h-5 w-5 shrink-0" aria-hidden />
+              {t('home.optimizeBlogCta')}
+            </Link>
+            <a
+              href={YOUTUBE_CHANNEL_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary inline-flex items-center justify-center gap-2 no-underline"
+              onClick={() => trackButtonClick('platform_optimize_youtube')}
+            >
+              <SiYoutube className="h-5 w-5 shrink-0" aria-hidden />
+              {t('home.optimizeYoutubeCta')}
+            </a>
+          </p>
+        </FadeInSection>
+      </SectionShell>
+
+      <section id="categories" className="border-t border-[#E4D9C4] bg-[#B8B9A6]/20 py-20">
+        <FadeInSection>
+          <div className="mx-auto w-full max-w-6xl px-6 sm:px-10 lg:px-16">
+            <h2 className="text-3xl font-semibold sm:text-4xl">{t('home.topicsTitle')}</h2>
+            <p className="mt-3 max-w-2xl text-lg text-[#666666]">{t('home.topicsLead')}</p>
+          </div>
+          <div className="mt-10 w-full overflow-hidden">
+            <CategoryMarquee categories={EXPLORE_CATEGORIES} baseHref={exploreUrl} />
+          </div>
+          <p className="mx-auto mt-10 w-full max-w-6xl px-6 sm:px-10 lg:px-16">
+            <SecondaryCta href={exploreUrl}>{t('home.explore')}</SecondaryCta>
+          </p>
+        </FadeInSection>
       </section>
 
       <SectionShell id="philosophy" className="scroll-mt-24 border-t border-[#E4D9C4] !py-12 sm:!py-14">
@@ -450,247 +721,12 @@ export default function PlatformHome() {
               href="/why-the-aura-library-matters"
               className="text-[#8A6622] underline underline-offset-2"
             >
-              why the Aura Library matters
+              our mission
             </Link>
             .
           </p>
         </FadeInSection>
       </SectionShell>
-
-      <SectionShell id="aura" className="border-t border-[#E4D9C4]">
-        <FadeInSection>
-          <div>
-            <h2 className="text-3xl font-semibold sm:text-4xl">{t('home.auraTitle')}</h2>
-
-            <RainbowHoverCard className="mt-8" innerClassName="bg-[#EDE6D2] px-6 py-5 sm:px-8">
-              <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:gap-10">
-                <AuraLikeAnimation />
-                <div>
-                  <p className="text-xl font-semibold text-[#3B2F1A]">{t('home.auraLead')}</p>
-                  <p className="mt-2 text-base leading-relaxed text-[#5C4520] sm:text-lg">
-                    {t('home.auraBody')}
-                  </p>
-                </div>
-              </div>
-            </RainbowHoverCard>
-
-            <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {auraRules.map((rule) => {
-                const { Icon } = rule;
-                return (
-                  <li key={rule.title}>
-                    <RainbowHoverCard className="h-full" innerClassName="flex flex-col bg-white px-5 py-5 sm:px-6">
-                      <div className="flex items-center gap-3">
-                        <span className="rainbow-hover-icon flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#D9DACB] text-[#4F5140]">
-                          <Icon className="h-5 w-5" aria-hidden />
-                        </span>
-                        <h3 className="text-lg font-semibold text-[#3B2F1A]">{rule.title}</h3>
-                      </div>
-                      <p className="mt-3 text-[#666666]">{rule.body}</p>
-                    </RainbowHoverCard>
-                  </li>
-                );
-              })}
-            </ul>
-
-            <p className="mt-8">
-              <Link
-                href="/aura"
-                className="text-base font-medium text-[#8A6622] no-underline underline-offset-4 hover:underline"
-              >
-                {t('home.auraLearnMore')}
-              </Link>
-            </p>
-          </div>
-        </FadeInSection>
-      </SectionShell>
-
-      <SectionShell id="success-stories" className="border-t border-[#E4D9C4] bg-white/60">
-        <FadeInSection>
-          <h2 className="text-3xl font-semibold sm:text-4xl">{t('home.storiesTitle')}</h2>
-          <p className="mt-3 max-w-2xl text-lg text-[#666666]">{t('home.storiesLead')}</p>
-          <UseCaseStoryCards t={t} compact />
-          <p className="mt-8 flex flex-wrap gap-x-4 gap-y-2">
-            <Link
-              href="/story-gallery"
-              className="text-base font-medium text-[#8A6622] no-underline underline-offset-4 hover:underline"
-            >
-              {t('home.storiesSeeAll')}
-            </Link>
-            <Link
-              href="/success-stories"
-              className="text-base font-medium text-[#8A6622] no-underline underline-offset-4 hover:underline"
-            >
-              {t('home.storiesPageTitle')}
-            </Link>
-          </p>
-        </FadeInSection>
-      </SectionShell>
-
-      <LibraryMission />
-
-      <SectionShell id="how-it-works" className="border-t border-[#E4D9C4]">
-        <FadeInSection>
-          <h2 className="text-3xl font-semibold sm:text-4xl">{t('home.howTitle')}</h2>
-          <p className="mt-3 max-w-2xl text-lg text-[#666666]">{t('home.howLead')}</p>
-          <ul className="mt-14 grid list-none gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {howItWorks.map((item) => {
-              const { Icon } = item;
-              return (
-                <li key={item.title}>
-                  <RainbowHoverCard className="h-full" innerClassName="flex flex-col bg-white px-6 py-7 sm:px-8">
-                    <div className="flex items-center gap-4">
-                      <span className="rainbow-hover-icon flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#D9DACB] text-[#4F5140]">
-                        <Icon className="h-6 w-6" aria-hidden />
-                      </span>
-                      <h3 className="text-xl font-semibold">{item.title}</h3>
-                    </div>
-                    <p className="mt-4 text-[#666666]">{item.body}</p>
-                  </RainbowHoverCard>
-                </li>
-              );
-            })}
-          </ul>
-          <p className="mt-8 flex flex-wrap items-center gap-3">
-            <Link
-              href="/features"
-              className="btn-secondary inline-flex items-center justify-center gap-2 no-underline"
-            >
-              {t('home.browseHelp')}
-              <ArrowRightIcon className="h-5 w-5 shrink-0" aria-hidden />
-            </Link>
-            <Link
-              href="/use-cases"
-              className="btn-secondary inline-flex items-center justify-center gap-2 no-underline"
-            >
-              {t('home.howUseCasesCta')}
-              <ArrowRightIcon className="h-5 w-5 shrink-0" aria-hidden />
-            </Link>
-          </p>
-        </FadeInSection>
-      </SectionShell>
-
-      <SectionShell id="for-learners" className="bg-white/60">
-        <FadeInSection>
-          <h2 className="text-3xl font-semibold sm:text-4xl">{t('home.learnersTitle')}</h2>
-          <p className="mt-3 max-w-2xl text-lg text-[#666666]">{t('home.learnersLead')}</p>
-          <BenefitTiles items={seekerBenefits} />
-          <p className="mt-8 flex flex-wrap items-center gap-3">
-            <SecondaryCta href={exploreUrl}>{t('home.explore')}</SecondaryCta>
-            <Link
-              href="/learners"
-              className="btn-secondary inline-flex items-center justify-center gap-2 no-underline"
-            >
-              {t('home.learnersPageCta')}
-              <ArrowRightIcon className="h-5 w-5 shrink-0" aria-hidden />
-            </Link>
-          </p>
-        </FadeInSection>
-      </SectionShell>
-
-      <SectionShell id="for-creators" className="bg-[#B8B9A6]/20">
-        <FadeInSection>
-          <h2 className="text-3xl font-semibold sm:text-4xl">{t('home.creatorsTitle')}</h2>
-          <p className="mt-3 max-w-2xl text-lg text-[#666666]">{t('home.creatorsLead')}</p>
-          <BenefitTiles items={creatorBenefits} />
-          <p className="mt-8 flex flex-wrap items-center gap-3">
-            <PrimaryCta href={createUrl} trackingId="platform_creators_create">
-              {t('home.create')}
-            </PrimaryCta>
-            <Link
-              href="/creators"
-              className="btn-secondary inline-flex items-center justify-center gap-2 no-underline"
-            >
-              {t('home.creatorsPageCta')}
-              <ArrowRightIcon className="h-5 w-5 shrink-0" aria-hidden />
-            </Link>
-          </p>
-        </FadeInSection>
-      </SectionShell>
-
-      <section id="use-with" className="border-t border-[#E4D9C4] py-16">
-        <FadeInSection>
-          <div className="mx-auto w-full max-w-6xl px-6 sm:px-10 lg:px-16">
-            <h2 className="text-3xl font-semibold sm:text-4xl">{t('home.useWithTitle')}</h2>
-            <p className="mt-3 max-w-2xl text-lg text-[#666666]">{t('home.useWithLead')}</p>
-          </div>
-          <div className="mt-10 w-full overflow-hidden">
-            <UseWithMarquee label={t('home.useWithTitle')} />
-          </div>
-          <p className="mx-auto mt-10 w-full max-w-6xl px-6 sm:px-10 lg:px-16">
-            <Link
-              href="/compare"
-              className="btn-secondary inline-flex items-center justify-center no-underline"
-            >
-              {t('home.useWithCta')}
-            </Link>
-          </p>
-        </FadeInSection>
-      </section>
-
-      <SectionShell id="optimize" className="border-t border-[#E4D9C4]">
-        <FadeInSection>
-          <h2 className="text-3xl font-semibold sm:text-4xl">{t('home.optimizeTitle')}</h2>
-          <p className="mt-3 max-w-2xl text-lg text-[#666666]">{t('home.optimizeLead')}</p>
-          <ol className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {optimizeSteps.map((item) => {
-              const { Icon } = item;
-              return (
-                <li key={item.step}>
-                  <RainbowHoverCard className="h-full" innerClassName="flex flex-col bg-white px-6 py-7 sm:px-8">
-                    <div className="flex items-center gap-4">
-                      <span className="rainbow-hover-icon flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#D9DACB] text-[#4F5140]">
-                        <Icon className="h-6 w-6" aria-hidden />
-                      </span>
-                      <div>
-                        <p className="text-sm font-semibold tracking-widest text-[#8A6622]">
-                          {item.step}
-                        </p>
-                        <h3 className="mt-1 text-xl font-semibold">{item.title}</h3>
-                      </div>
-                    </div>
-                    <p className="mt-4 text-[#666666]">{item.body}</p>
-                  </RainbowHoverCard>
-                </li>
-              );
-            })}
-          </ol>
-          <p className="mt-14 flex flex-wrap items-center gap-3">
-            <Link
-              href="/blog"
-              className="btn-secondary inline-flex items-center justify-center gap-2 no-underline"
-            >
-              <NewspaperIcon className="h-5 w-5 shrink-0" aria-hidden />
-              {t('home.optimizeBlogCta')}
-            </Link>
-            <a
-              href={YOUTUBE_CHANNEL_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-secondary inline-flex items-center justify-center gap-2 no-underline"
-              onClick={() => trackButtonClick('platform_optimize_youtube')}
-            >
-              <SiYoutube className="h-5 w-5 shrink-0" aria-hidden />
-              {t('home.optimizeYoutubeCta')}
-            </a>
-          </p>
-        </FadeInSection>
-      </SectionShell>
-
-      <section id="categories" className="border-t border-[#E4D9C4] bg-[#B8B9A6]/20 py-20">
-        <FadeInSection>
-          <div className="mx-auto w-full max-w-6xl px-6 sm:px-10 lg:px-16">
-            <h2 className="text-3xl font-semibold sm:text-4xl">{t('home.topicsTitle')}</h2>
-            <p className="mt-3 max-w-2xl text-lg text-[#666666]">{t('home.topicsLead')}</p>
-          </div>
-          <div className="mt-10 w-full overflow-hidden">
-            <CategoryMarquee categories={EXPLORE_CATEGORIES} baseHref={exploreUrl} />
-          </div>
-          <p className="mx-auto mt-10 w-full max-w-6xl px-6 sm:px-10 lg:px-16">
-            <SecondaryCta href={exploreUrl}>{t('home.explore')}</SecondaryCta>
-          </p>
-        </FadeInSection>
-      </section>
 
       <SectionShell id="faq-teaser" className="bg-[#B8B9A6]/15">
         <FadeInSection>
@@ -711,17 +747,12 @@ export default function PlatformHome() {
             {t('home.closingBody')}
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-3">
+            <SecondaryCta href={exploreUrl} className="!border-[#F7F3EA]/40 !bg-transparent !text-[#F7F3EA] hover:!bg-[#F7F3EA]/10">
+              {t('home.explore')}
+            </SecondaryCta>
             <PrimaryCta href={createUrl} trackingId="platform_closing_create">
               {t('home.create')}
             </PrimaryCta>
-            <a
-              href={exploreUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-secondary inline-flex items-center justify-center !border-[#F7F3EA]/40 !bg-transparent no-underline !text-[#F7F3EA] hover:!border-[#F7F3EA] hover:!bg-white/10 hover:!text-[#F7F3EA]"
-            >
-              {t('home.explore')}
-            </a>
           </div>
         </FadeInSection>
       </SectionShell>

@@ -41,7 +41,7 @@ const RELATED = [
   { kind: 'Help', title: 'List a hub on Explore', href: '/help/list-hub-on-explore' },
   { kind: 'Help', title: 'How Aura works', href: '/help/how-aura-works' },
   { kind: 'Help', title: 'Get started for creators', href: '/help/get-started-creators' },
-  { kind: 'Stories', title: 'Success stories', href: '/success-stories' },
+  { kind: 'Stories', title: 'Creator stories', href: '/success-stories' },
 ];
 
 export default function GainExposurePage() {

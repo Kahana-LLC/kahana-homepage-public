@@ -1,41 +1,40 @@
 import Link from 'next/link';
 import SEO from '../components/SEO';
 import FadeInSection from '../components/FadeInSection';
-import DarkLibraryCta from '../components/marketing/DarkLibraryCta';
-import EssaySeriesNav from '../components/marketing/EssaySeriesNav';
 import LibraryHubExamples from '../components/marketing/LibraryHubExamples';
 import AuraQualityRisingMock from '../components/marketing/AuraQualityRisingMock';
 import AuraGiversPreview from '../components/aura/AuraGiversPreview';
+import {
+  ExploreLibraryButton,
+  ShareUniqueKnowledgeButton,
+} from '../components/marketing/LibraryActionButtons';
+import GlobalReaderFlags from '../components/marketing/GlobalReaderFlags';
 import { ABOUT_ORIGIN } from '../config/site';
-import { GLOBAL_READER_FLAGS } from '../data/globalReaderFlags';
-import { CONTACT_URL } from '../components/nav/navConfig';
-import { productHref, withProductUtm } from '../lib/productLinks';
+import { PARTNERSHIP_CONTACT_URL } from '../components/nav/navConfig';
+import { productHref } from '../lib/productLinks';
 import { fetchAuraTrails } from '../lib/auraTrails';
 import { trackButtonClick } from '../utils/analytics';
 
 const CANONICAL = `${ABOUT_ORIGIN}/why-the-aura-library-matters`;
 
-export default function WhyTheAuraLibraryMattersPage({ trails = [] }) {
-  const libraryHref = productHref('/library', 'why_aura_explore');
-  const createHref = productHref('/', 'why_aura_create_unique');
-  const affiliateHref = productHref('/earn', 'why_aura_affiliate');
-  const collabContactHref = withProductUtm(`${CONTACT_URL}?source=creator_collabs`, {
-    campaign: 'why_aura_collab',
-  });
-
+export default function OurMissionPage({ trails = [] }) {
+  const libraryHref = productHref('/library', 'our_mission_explore');
+  const createHref = productHref('/', 'our_mission_create');
+  const affiliateHref = productHref('/earn', 'our_mission_affiliate');
+  const partnershipHref = PARTNERSHIP_CONTACT_URL;
   return (
     <>
       <SEO
-        title="Why the Aura Library matters | Global library of highest quality knowledge"
-        description="Kahana is building a global Aura Library of unique, high-quality knowledge. Readers already come from 110+ countries. Aura helps careful work rise. Explore the Library, contribute, or collab with us."
+        title="Our mission | Accessible global library of human knowledge | Kahana"
+        description="Kahana's mission is to create an accessible global library of human knowledge. Unique work, Aura, and conversation beside the files so careful knowledge can travel."
         url={CANONICAL}
         type="website"
         schema={{
           '@context': 'https://schema.org',
           '@type': 'WebPage',
-          name: 'Why the Aura Library matters',
+          name: 'Our mission',
           description:
-            'A global library of the highest quality knowledge. Aura tells careful work from noise so unique hubs and files become easier to find.',
+            'Create an accessible global library of human knowledge: unique hubs, scarce Aura, and conversation beside the work.',
           url: CANONICAL,
         }}
       />
@@ -45,26 +44,21 @@ export default function WhyTheAuraLibraryMattersPage({ trails = [] }) {
           <div className="mx-auto max-w-3xl text-center">
             <FadeInSection eager>
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#8A6622]">
-                The Aura Library
+                Our mission
               </p>
               <h1 className="mt-4 text-3xl font-semibold leading-tight tracking-tight sm:text-4xl md:text-5xl">
-                Why the Aura Library matters
+                An accessible global library of human knowledge
               </h1>
               <p className="mt-5 text-lg leading-relaxed text-[#5C4520] sm:text-xl">
-                We are building a global library of the highest quality knowledge. The library only
-                works if the best work can be found. Aura is how people say &ldquo;this was worth
-                it,&rdquo; and how that choice makes unique content easier for the next person to open.
+                Kahana exists to build that library: a house for unique human knowledge that people
+                can find, reopen, talk about, and pass on. Not another feed. A living Mouseion for
+                the whole world.
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-3">
-                <a
+                <ExploreLibraryButton
                   href={libraryHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-primary inline-flex items-center justify-center no-underline"
-                  onClick={() => trackButtonClick('why_aura_hero_explore')}
-                >
-                  Explore the Library
-                </a>
+                  onClick={() => trackButtonClick('our_mission_hero_explore')}
+                />
                 <Link
                   href="/philosophy"
                   className="btn-secondary inline-flex items-center justify-center no-underline"
@@ -72,7 +66,6 @@ export default function WhyTheAuraLibraryMattersPage({ trails = [] }) {
                   Kahana philosophy
                 </Link>
               </div>
-              <EssaySeriesNav current="/why-the-aura-library-matters" />
             </FadeInSection>
           </div>
         </section>
@@ -81,32 +74,25 @@ export default function WhyTheAuraLibraryMattersPage({ trails = [] }) {
           <div className="mx-auto max-w-3xl">
             <FadeInSection>
               <h2 className="text-2xl font-semibold sm:text-3xl">
-                Heady topics. Heady subjects. Global scale.
+                Human knowledge, at global scale
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-[#666666]">
-                The Library is a place to challenge yourself. Bring work that asks something of the
-                reader: research, craft, careers, science, writing, practice. Unique knowledge travels
-                further when it has one front door.
+                The mission is not more posts. It is work that asks something of the reader:
+                research, craft, careers, science, writing, practice. Unique knowledge travels
+                further when it has one front door in a library people can trust.
               </p>
             </FadeInSection>
             <FadeInSection>
-              <ul
-                className="mt-10 flex flex-wrap justify-center gap-2"
-                aria-label="Readers already come from 110 or more countries"
-              >
-                {GLOBAL_READER_FLAGS.map(([name, flag]) => (
-                  <li key={name} title={name} aria-label={name} className="text-3xl leading-none">
-                    <span aria-hidden>{flag}</span>
-                  </li>
-                ))}
-              </ul>
+              <div className="mt-10 flex justify-center">
+                <GlobalReaderFlags size="lg" />
+              </div>
               <p className="mt-6 text-base leading-relaxed text-[#5C4520]">
-                That aim sits inside our{' '}
+                Readers already open hubs from 110+ countries. That reach only matters if the
+                shelf holds something worthy.{' '}
                 <Link href="/philosophy" className="text-[#8A6622] underline underline-offset-2">
-                  mission and philosophy
-                </Link>
-                : Philomaths who love to learn, Dialectic toward the truth, and a Mouseion where
-                great minds work together.
+                  Philomaths, Dialectic, and Mouseion
+                </Link>{' '}
+                are how we hold the mission steady.
               </p>
             </FadeInSection>
           </div>
@@ -120,17 +106,23 @@ export default function WhyTheAuraLibraryMattersPage({ trails = [] }) {
                   Unique work already on the Library
                 </h2>
                 <p className="mt-4 text-lg leading-relaxed text-[#666666]">
-                  Highlight unique content, not filler. These hubs are knowledge only their creators
-                  could package this way: the process they lived, the pack they assembled, the heady
-                  subject someone is ready to sit with.
+                  A global library of human knowledge is built hub by hub. These packs are knowledge
+                  only their creators could assemble: the process they lived, the files they
+                  gathered, the subject someone is ready to sit with.
                 </p>
               </div>
             </FadeInSection>
             <FadeInSection>
               <div className="mt-10">
-                <LibraryHubExamples omitIntro exploreHref={libraryHref} />
+                <LibraryHubExamples
+                  omitIntro
+                  exploreHref={libraryHref}
+                  createHref={createHref}
+                  exploreTrack="our_mission_examples_explore"
+                  createTrack="our_mission_examples_create"
+                />
               </div>
-              <p className="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-[#5C4520]">
+              <p className="mx-auto mt-6 max-w-3xl text-center text-base leading-relaxed text-[#5C4520]">
                 Upload what is yours. Aura and reports help keep low-effort AI slop from rising the
                 same way careful work does. More in{' '}
                 <Link href="/blog/against-ai-slop" className="text-[#8A6622] underline underline-offset-2">
@@ -146,11 +138,12 @@ export default function WhyTheAuraLibraryMattersPage({ trails = [] }) {
           <div className="mx-auto max-w-3xl">
             <FadeInSection>
               <h2 className="text-2xl font-semibold sm:text-3xl">
-                What rises is what people chose
+                Aura helps the best work rise
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-[#666666]">
-                A feed forgets yesterday. A library should not. When people give Aura, the count
-                grows and the work becomes easier to find. File Aura also lifts the hub it lives in.
+                A feed forgets yesterday. A library should not. When people give Aura, careful work
+                becomes easier to find. That is how a mission-scale library stays useful as it
+                grows: scarce human endorsement, not posting volume.
               </p>
             </FadeInSection>
             <FadeInSection>
@@ -158,7 +151,7 @@ export default function WhyTheAuraLibraryMattersPage({ trails = [] }) {
                 <AuraQualityRisingMock />
               </div>
               <p className="mt-6 text-base leading-relaxed text-[#5C4520]">
-                Quality rises with scarce endorsements, not posting volume.{' '}
+                Quality rises with scarce endorsements.{' '}
                 <Link href="/aura" className="text-[#8A6622] underline underline-offset-2">
                   Learn more about Aura
                 </Link>
@@ -173,7 +166,7 @@ export default function WhyTheAuraLibraryMattersPage({ trails = [] }) {
             <FadeInSection>
               <div className="mx-auto max-w-3xl text-center">
                 <h2 className="text-2xl font-semibold sm:text-3xl">
-                  A library needs a way to tell good work from noise
+                  Good work must be distinguishable from noise
                 </h2>
                 <p className="mt-4 text-lg leading-relaxed text-[#666666]">
                   Anyone can upload a file. That does not tell the next person whether it is worth
@@ -203,9 +196,9 @@ export default function WhyTheAuraLibraryMattersPage({ trails = [] }) {
             <FadeInSection>
               <h2 className="text-2xl font-semibold sm:text-3xl">Talk beside the files</h2>
               <p className="mt-4 text-lg leading-relaxed text-[#666666]">
-                The point is other people. Understanding deepens when discussion sits on a hub or a
-                file. That is dialectic on Kahana: conversation next to the work, not a separate
-                forum maze.
+                Human knowledge deepens in conversation. Discussion sits on a hub or a file so
+                dialectic stays next to the work, not buried in a separate forum maze. The library
+                is for minds meeting, not only files sitting still.
               </p>
             </FadeInSection>
             <FadeInSection>
@@ -248,33 +241,41 @@ export default function WhyTheAuraLibraryMattersPage({ trails = [] }) {
           <div className="mx-auto max-w-3xl text-center">
             <FadeInSection>
               <h2 className="text-2xl font-semibold sm:text-3xl">
-                The Library needs to be built with your help
+                This library is built with your help
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-[#5C4520]">
-                Unique knowledge only arrives when someone uploads it. Explore what is already here,
-                share what only you know, or work with us to shape a hub.
+                An accessible global library of human knowledge only arrives when people share what
+                only they know. Explore what is already here, contribute a hub, or work with us to
+                shape one.
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-3">
-                <a
+                <ExploreLibraryButton
                   href={libraryHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-primary inline-flex items-center justify-center no-underline"
-                  onClick={() => trackButtonClick('why_aura_mid_explore')}
-                >
-                  Explore the Library
-                </a>
-                <a
+                  onClick={() => trackButtonClick('our_mission_mid_explore')}
+                />
+                <ShareUniqueKnowledgeButton
                   href={createHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-secondary inline-flex items-center justify-center no-underline"
-                  onClick={() => trackButtonClick('why_aura_mid_create')}
-                >
-                  Share your unique knowledge
-                </a>
+                  onClick={() => trackButtonClick('our_mission_mid_create')}
+                />
               </div>
               <p className="mt-8 text-base leading-relaxed text-[#5C4520]">
+                <Link href="/aura" className="text-[#8A6622] underline underline-offset-2">
+                  Learn more about Aura
+                </Link>
+                {' · '}
+                <Link href="/philosophy" className="text-[#8A6622] underline underline-offset-2">
+                  Philosophy
+                </Link>
+                {' · '}
+                <a
+                  href={partnershipHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#8A6622] underline underline-offset-2"
+                >
+                  Partnerships
+                </a>
+                {' · '}
                 <Link href="/affiliates" className="text-[#8A6622] underline underline-offset-2">
                   Become an affiliate
                 </Link>
@@ -288,49 +289,18 @@ export default function WhyTheAuraLibraryMattersPage({ trails = [] }) {
                   Open Earn
                 </a>
                 {' · '}
-                <Link href="/creators" className="text-[#8A6622] underline underline-offset-2">
-                  Creators
-                </Link>
-                {' · '}
-                <Link href="/collabs" className="text-[#8A6622] underline underline-offset-2">
-                  Creator collab
-                </Link>
-                {' · '}
-                <a href={collabContactHref} className="text-[#8A6622] underline underline-offset-2">
+                <a
+                  href={partnershipHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#8A6622] underline underline-offset-2"
+                >
                   Contact
                 </a>
               </p>
             </FadeInSection>
           </div>
         </section>
-
-        <DarkLibraryCta
-          title="Explore the Library"
-          description="See what people have already endorsed. Then upload something unique, or ask us to help you build the hub."
-          libraryCampaign="why_aura_library"
-          createCampaign="why_aura_create"
-          libraryTrack="why_aura_library"
-          createTrack="why_aura_create"
-          createLabel="Share unique knowledge"
-        >
-          <p className="mt-8 text-sm text-[#F7F3EA]/70">
-            <Link href="/aura" className="underline underline-offset-2">
-              Learn more about Aura
-            </Link>
-            {' · '}
-            <Link href="/philosophy" className="underline underline-offset-2">
-              Philosophy
-            </Link>
-            {' · '}
-            <Link href="/collabs" className="underline underline-offset-2">
-              Creator collabs
-            </Link>
-            {' · '}
-            <Link href="/affiliates" className="underline underline-offset-2">
-              Affiliates
-            </Link>
-          </p>
-        </DarkLibraryCta>
       </div>
     </>
   );

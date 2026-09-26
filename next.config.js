@@ -434,12 +434,22 @@ const nextConfig = {
     return [
       {
         source: "/collaborate",
-        destination: "/collabs",
+        destination: "https://kahana.io/contact?source=partnerships",
+        permanent: true,
+      },
+      {
+        source: "/collabs",
+        destination: "https://kahana.io/contact?source=partnerships",
         permanent: true,
       },
       {
         source: "/wall-of-love",
         destination: "/testimonials",
+        permanent: true,
+      },
+      {
+        source: "/story-gallery",
+        destination: "/success-stories",
         permanent: true,
       },
       {

@@ -21,7 +21,7 @@ export const PHILOSOPHY_PILLARS = [
     expand: [
       'Philomaths are people who love to learn. Kahana exists for them first.',
       'The Aura Library is that one place: hubs of unique knowledge, files beside discussion, and a global catalog so you are not jumping platforms to find the next serious thing to open.',
-      'Create, learn, and research on a global scale. Readers already come from over 110 countries and speak many languages. The library is meant to hold heady topics and heady subjects, not only what is easy to scroll past.',
+      'Create, learn, and research on a global scale. Our community comes from over 110+ countries and speaks many languages. The library is meant to hold heady topics and heady subjects, not only what is easy to scroll past.',
     ],
   },
   {
