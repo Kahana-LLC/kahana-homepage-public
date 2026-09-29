@@ -66,9 +66,8 @@ export const USE_CASE_STORIES = [
     quote:
       "Kahana has the most user-friendly interface I've come across in a platform of its kind. I love how easy it is to set up, make changes, add value, and connect with your audience. It's allowed me to monetize my knowledge and add a passive revenue stream to my small business.",
     image: '/images/success-stories/kelsey-avatar.png',
-    coverSrc: '/images/success-stories/kelsey-cover.png',
-    coverAlt: 'Kelsey Vetter: Pinterest Marketing for service based businesses',
-    coverObjectPosition: 'object-top',
+    coverSrc: '/images/success-stories/kelsey-hub-cover.png',
+    coverAlt: 'Pinterest Success Session hub cover',
   },
   {
     id: 'emilio',
