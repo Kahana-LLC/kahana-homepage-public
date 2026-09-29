@@ -28,6 +28,7 @@ import DarkLibraryCta from '../components/marketing/DarkLibraryCta';
 import GrowthTrialPill from '../components/marketing/GrowthTrialPill';
 import ProfileSocialLinksMock from '../components/marketing/ProfileSocialLinksMock';
 import SuggestionEngineChatMock from '../components/marketing/SuggestionEngineChatMock';
+import AffiliateEarningsMock from '../components/marketing/AffiliateEarningsMock';
 import FaqAccordion from '../components/faq/FaqAccordion';
 import { ABOUT_ORIGIN } from '../config/site';
 import { PARTNERSHIP_CONTACT_URL } from '../components/nav/navConfig';
@@ -828,6 +829,88 @@ export default function CreatorBenefitsPage() {
                 >
                   How to list a hub on Library
                 </Link>
+              </p>
+            </FadeInSection>
+          </div>
+        </section>
+
+        <section
+          id="hub-affiliates"
+          className="border-t border-[#E4D9C4] px-6 py-14 sm:px-10 sm:py-16 lg:px-16"
+        >
+          <div className="mx-auto max-w-5xl">
+            <FadeInSection>
+              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#EDE6D2] text-[#5C4520]">
+                <UserPlusIcon className="h-5 w-5" aria-hidden />
+              </span>
+              <h2 className="mt-4 text-2xl font-semibold sm:text-3xl">
+                Affiliates for your own hubs
+              </h2>
+              <p className="mt-3 max-w-2xl text-lg leading-relaxed text-[#666666]">
+                Let your community share your work and earn a percentage. Everyone wins.
+              </p>
+            </FadeInSection>
+
+            <FadeInSection>
+              <div className="mt-10">
+                <AffiliateEarningsMock />
+              </div>
+            </FadeInSection>
+
+            <ul className="mt-10 grid gap-3 sm:grid-cols-2">
+              {[
+                {
+                  title: 'Your price, their share',
+                  body: 'The hub price stays yours to set. Affiliates earn a percent of what is left after fees, not a cut of the sticker price.',
+                },
+                {
+                  title: 'Open, or approval required',
+                  body: 'Anyone with a Kahana account can use an open link. Approval-required links stay pending until you say yes.',
+                },
+                {
+                  title: 'Drafts on Free, live on Growth',
+                  body: 'You can save a link on the free plan. It starts paying affiliates only after you are on Growth and the hub has a price.',
+                },
+                {
+                  title: 'Separate from the signup program',
+                  body: 'This is for hubs you already sell. The platform referral on Earn is a different program.',
+                },
+              ].map((item) => (
+                <li key={item.title}>
+                  <FadeInSection>
+                    <article className="flex h-full gap-3 rounded-[20px] bg-white px-4 py-5 sm:gap-4 sm:px-5">
+                      <CheckCircleIcon
+                        className="mt-0.5 h-6 w-6 shrink-0 text-[#8A6622]"
+                        aria-hidden
+                      />
+                      <div className="min-w-0">
+                        <h3 className="font-bricolage text-lg font-semibold tracking-tight text-[#3B2F1A]">
+                          {item.title}
+                        </h3>
+                        <p className="mt-1.5 text-sm leading-relaxed text-[#666666]">{item.body}</p>
+                      </div>
+                    </article>
+                  </FadeInSection>
+                </li>
+              ))}
+            </ul>
+
+            <FadeInSection>
+              <p className="mt-8 flex flex-wrap gap-x-4 gap-y-2 text-sm font-semibold">
+                <Link
+                  href="/help/hub-affiliate-links"
+                  className="text-[#8A6622] underline underline-offset-2"
+                  onClick={() => trackButtonClick('creator_benefits_hub_affiliates_help')}
+                >
+                  How hub affiliate links work
+                </Link>
+                <a
+                  href={productHref('/my-affiliates', 'creator_benefits_affiliates')}
+                  className="text-[#8A6622] underline underline-offset-2"
+                  onClick={() => trackButtonClick('creator_benefits_my_affiliates')}
+                >
+                  Open My affiliates
+                </a>
               </p>
             </FadeInSection>
           </div>
