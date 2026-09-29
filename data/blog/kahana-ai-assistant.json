@@ -1,0 +1,25 @@
+{
+  "title": "Kahana’s AI assistant is in beta",
+  "date": "2026-09-29T12:00:00.000Z",
+  "authors": [
+    {
+      "name": "Adam Kershner",
+      "role": "Founder",
+      "bio": "",
+      "linkedinProfile": "https://www.linkedin.com/in/adam-kershner/",
+      "avatar": "/assets/headshots/adam_kershner.jpg"
+    }
+  ],
+  "category": [
+    "Product",
+    "Guides"
+  ],
+  "excerpt": "A chatbot in the bottom-right corner, with a phoenix glowing around it. It can draft hubs, clubs, and affiliate links, and nothing is saved until you confirm.",
+  "defaultImageQuery": "small warm lantern glowing in a dark library corner",
+  "slug": "kahana-ai-assistant",
+  "readingTime": 6,
+  "seoTitle": "Kahana AI assistant beta",
+  "metaDescription": "How to open Kahana’s beta AI assistant, what the confirm cards do, and how to send feedback from the chat.",
+  "focusKeyword": "Kahana AI assistant",
+  "content": "<p class=\"lead\">The assistant is the chatbot in the bottom-right of Kahana, with a phoenix glowing around it. It is in beta. Try it, and tell us when an answer is off.</p>\n<p><a href=\"https://app.kahana.io\">Open Kahana</a> and look for that glow. You do not install a separate app.</p>\n\n<component name=\"AssistantLauncherPreview\" />\n<h2>Ask, or ask it to do the thing</h2>\n<p>“How do I list a hub?” gets steps. “Create a hub called Clear recipes” gets a card. The card is the part that can write. It stays a preview until you tap confirm.</p>\n\n<component name=\"AssistantGuideChat\" />\n<p>The same pattern covers clubs, profile text, setup goals, and <a href=\"/help/hub-affiliate-links\">affiliate links</a> for a hub you own. Uploads and cover photos need a file from the paperclip. Type @ when you mean a hub, club, or file you already have.</p>\n<h2>Train a good reply, or a bad one</h2>\n<component name=\"AssistantTrainPreview\" />\n\n<p>Under an assistant message, thumbs up opens <strong>Train Kahana assistant</strong> on <strong>Good response</strong>. Thumbs down opens the same sheet on <strong>Bad response</strong>. Pick a category, mark what stood out, and write at least 30 characters about what worked or what should change next time. Choose <strong>Personalized</strong> or <strong>Anonymous</strong>, then submit. That trains this reply. It does not change a hub until you confirm a card.</p>\n<p>The message icon in the header is still general feedback. The question mark is support, if you need a person. History keeps earlier threads.</p>\n<p>Full guide: <a href=\"/help/kahana-ai-assistant\">Kahana’s AI assistant</a>.</p>"
+}

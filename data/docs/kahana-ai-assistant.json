@@ -1,0 +1,18 @@
+{
+  "title": "Kahana’s AI assistant",
+  "description": "The beta chatbot in the bottom-right of the app. It answers how-to questions and can prepare hubs, clubs, profile updates, and affiliate links. Nothing is written until you confirm.",
+  "slug": "kahana-ai-assistant",
+  "section": "start",
+  "category": "start",
+  "tags": [
+    "feature:assistant",
+    "persona:creators",
+    "persona:learners"
+  ],
+  "product": "kahana",
+  "date": "2026-09-29",
+  "authors": [
+    "Adam Kershner"
+  ],
+  "content": "<p class=\"lead\">Kahana’s AI assistant is in beta. It sits in the bottom-right corner of the app, with a phoenix glowing around the chatbot. Ask how something works, or ask it to prepare a change. It does not save that change until you confirm the card.</p>\n<p><strong>Primary action:</strong> <a href=\"https://app.kahana.io\" target=\"_blank\" rel=\"noopener noreferrer\">Open Kahana</a>, then use the glowing chatbot in the bottom-right.</p>\n\n<component name=\"AssistantLauncherPreview\" />\n<h2>What you can ask</h2>\n<ul>\n<li><strong>How do I…</strong> gets a short step-by-step answer from Kahana’s help, not a save card.</li>\n<li><strong>Create or update something</strong> gets a confirm card. Examples: a hub, a club, a profile text update, setup goals, For You weights, or a hub affiliate link.</li>\n<li>Type <strong>@</strong> to point at a hub, club, or file you already have.</li>\n<li>The paperclip attaches files when you are asking to upload into a hub or set a cover or profile photo.</li>\n</ul>\n\n<component name=\"AssistantChatPreview\" />\n<h2>Confirm before anything is saved</h2>\n<p>A card such as <strong>Create hub</strong> or <strong>Save affiliate link</strong> is a proposal. Read the title, price, or visibility on the card, then tap the button. If you close the chat without confirming, nothing was written.</p>\n<p>Affiliate links saved from the assistant follow the same rule as <a href=\"/help/hub-affiliate-links\">My affiliates</a>: a free account keeps a draft. Growth is what makes an enabled link live.</p>\n<component name=\"AssistantGuideChat\" />\n<h2>Train a reply</h2>\n<component name=\"AssistantTrainPreview\" />\n\n<p>Thumbs up on a message opens <strong>Train Kahana assistant</strong> with <strong>Good response</strong> selected. Thumbs down opens it with <strong>Bad response</strong>. Choose a category, what stood out, and write at least 30 characters. <strong>Personalized</strong> keeps the feedback tied to you. <strong>Anonymous</strong> still sends the note for product improvement, without your user ID on the training record. Submit does not write hubs, clubs, or affiliate links. Those still need a confirm card.</p>\n<h2>Feedback and support</h2>\n<p>In the assistant header, <strong>Feedback</strong> is the message icon. Use it when an answer was useful or off. <strong>Support</strong> is the question mark, for a ticket. Chat history is the list icon, if you want an older thread.</p>\n<h2>What’s next</h2>\n<ul>\n<li><a href=\"https://app.kahana.io\">Open Kahana</a></li>\n<li><a href=\"/help/hubs\">Hubs</a></li>\n<li><a href=\"/help/hub-affiliate-links\">Affiliate links for your hubs</a></li>\n<li><a href=\"/blog/kahana-ai-assistant\">Blog: the assistant in beta</a></li>\n</ul>"
+}

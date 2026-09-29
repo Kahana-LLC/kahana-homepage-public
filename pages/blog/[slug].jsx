@@ -7,9 +7,11 @@ import { getRandomPhoto, getOptimizedPhotoUrl, getPlaceholderImageUrl } from '..
 import { suggestNatureImageQuery, normalizeBlogCategories } from '../../utils/blog-helpers';
 import { blogIndex } from '../../data/blog-index';
 import Breadcrumbs from '../../components/Breadcrumbs';
-import AuthorCard from '../../components/AuthorCard';
 import BlogBrowserComparison from '../../components/BlogBrowserComparison';
 import YtcReviewerCallout from '../../components/blog/YtcReviewerCallout';
+import { AssistantLauncherPreview, AssistantChatPreview } from '../../components/marketing/AssistantPreview';
+import AssistantGuideChat from '../../components/marketing/AssistantGuideChat';
+import AssistantTrainPreview from '../../components/marketing/AssistantTrainPreview';
 import ComparisonTable from '../../components/ComparisonTable';
 import BlogCard from '../../components/BlogCard';
 import KahanaCoverageChart from '../../components/KahanaCoverageChart';
@@ -59,6 +61,18 @@ function parseHtmlWithComponents(htmlContent) {
           break;
         case 'YtcReviewerCallout':
           elements.push(<YtcReviewerCallout key={key++} {...props} />);
+          break;
+        case 'AssistantLauncherPreview':
+          elements.push(<AssistantLauncherPreview key={key++} />);
+          break;
+        case 'AssistantChatPreview':
+          elements.push(<AssistantChatPreview key={key++} />);
+          break;
+        case 'AssistantGuideChat':
+          elements.push(<AssistantGuideChat key={key++} />);
+          break;
+        case 'AssistantTrainPreview':
+          elements.push(<AssistantTrainPreview key={key++} />);
           break;
         default:
           // If component not found, render as HTML
@@ -365,7 +379,6 @@ export default function BlogPost({ post }) {
 
             {/* Article metadata */}
             <div className="flex flex-wrap items-center gap-3 mb-8">
-              {isClient && hasAuthors && <AuthorCard authors={postAuthors} variant="header" />}
               <time 
                 dateTime={post.date}
                 className="inline-flex items-center px-3 py-1.5 text-oasis-green-800 text-sm"

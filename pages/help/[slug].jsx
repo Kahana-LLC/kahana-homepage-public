@@ -4,19 +4,52 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { getDocBySlug, getAllDocs } from '../../utils/docsUtils';
 import Breadcrumbs from '../../components/Breadcrumbs';
-import AuthorCard from '../../components/AuthorCard';
-import { FaRegCalendarAlt, FaBookOpen, FaRegClock } from 'react-icons/fa';
-import { getAuthorDetails } from '../../utils/authorUtils';
+import { FaRegCalendarAlt, FaRegClock } from 'react-icons/fa';
 import SEO from '../../components/SEO';
 import TechnicalInteractionDataDoc from '../../components/docs/TechnicalInteractionDataDoc';
 import TrainingDoc from '../../components/docs/TrainingDoc';
 import AssistantThemesDoc from '../../components/docs/AssistantThemesDoc';
 import DeleteAccountDoc from '../../components/docs/DeleteAccountDoc';
-import { docsConfig, getSectionDisplayName } from '../../config/docsConfig';
+import { AssistantLauncherPreview, AssistantChatPreview } from '../../components/marketing/AssistantPreview';
+import AssistantGuideChat from '../../components/marketing/AssistantGuideChat';
+import AssistantTrainPreview from '../../components/marketing/AssistantTrainPreview';
+import { docsConfig } from '../../config/docsConfig';
 import { HELP_RELATED_DOC_SLUGS } from '../../data/helpRelatedDocSlugs';
 import { parseTaxonomyTag } from '../../data/marketingTaxonomy';
 import fs from 'fs';
 import path from 'path';
+
+function HelpArticleBody({ html }) {
+  if (!html || !html.includes('<component ')) {
+    return (
+      <div
+        className="prose prose-lg max-w-none no-underline"
+        dangerouslySetInnerHTML={{ __html: html }}
+        suppressHydrationWarning
+      />
+    );
+  }
+  const parts = html.split(/<component name="([^"]+)"\s*\/>/g);
+  const nodes = [];
+  for (let i = 0; i < parts.length; i += 2) {
+    if (parts[i]) {
+      nodes.push(
+        <div
+          key={`html-${i}`}
+          className="prose prose-lg max-w-none no-underline"
+          dangerouslySetInnerHTML={{ __html: parts[i] }}
+          suppressHydrationWarning
+        />
+      );
+    }
+    const name = parts[i + 1];
+    if (name === 'AssistantLauncherPreview') nodes.push(<AssistantLauncherPreview key={name + i} />);
+    if (name === 'AssistantChatPreview') nodes.push(<AssistantChatPreview key={name + i} />);
+    if (name === 'AssistantGuideChat') nodes.push(<AssistantGuideChat key={name + i} />);
+    if (name === 'AssistantTrainPreview') nodes.push(<AssistantTrainPreview key={name + i} />);
+  }
+  return <div>{nodes}</div>;
+}
 
 // Generate static paths for help articles
 export async function getStaticPaths() {
@@ -125,9 +158,6 @@ export default function HelpArticlePage({ doc, relatedDocs }) {
     );
   }
 
-  // Get authors for this document, default to Adam Kershner if no authors specified
-  const docAuthors = doc.authors ? getAuthorDetails(doc.authors) : getAuthorDetails(['Adam Kershner']);
-
   return (
     <>
       <SEO
@@ -155,9 +185,6 @@ export default function HelpArticlePage({ doc, relatedDocs }) {
             <div className="flex flex-col space-y-6">
               {/* Title */}
               <h1 className="text-4xl font-bold text-oasis-green-800">{doc.title}</h1>
-              <p className="text-sm font-medium text-oasis-green-700">
-                {getSectionDisplayName(doc.section || doc.category)}
-              </p>
               {(doc.tags || []).length > 0 ? (
                 <div className="flex flex-wrap gap-2">
                   {(doc.tags || []).map((tag) => {
@@ -178,7 +205,6 @@ export default function HelpArticlePage({ doc, relatedDocs }) {
 
               {/* Metadata */}
               <div className="flex flex-wrap items-center gap-3">
-                <AuthorCard authors={docAuthors} variant="header" />
                 <time 
                   dateTime={doc.date}
                   className="inline-flex items-center px-3 py-1.5 text-oasis-green-800 text-sm"
@@ -197,11 +223,7 @@ export default function HelpArticlePage({ doc, relatedDocs }) {
 
           {/* Content */}
           {doc.content ? (
-            <div
-              className="prose prose-lg max-w-none no-underline"
-              dangerouslySetInnerHTML={{ __html: doc.content }}
-              suppressHydrationWarning={true}
-            />
+            <HelpArticleBody html={doc.content} />
           ) : doc.slug === 'delete-my-account' ? (
             <DeleteAccountDoc />
           ) : doc.slug === 'assistant-themes' ? (
@@ -243,14 +265,6 @@ export default function HelpArticlePage({ doc, relatedDocs }) {
             </div>
           )}
 
-          {/* Author Bio Section */}
-          <div className="mt-12">
-            <h2 className="text-2xl font-bold text-oasis-green-800 mb-6">About the Author</h2>
-            <AuthorCard 
-              authors={docAuthors}
-              variant="bio" 
-            />
-          </div>
         </article>
       </div>
     </>

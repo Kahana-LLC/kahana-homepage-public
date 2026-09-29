@@ -35,8 +35,8 @@ export const USE_CASE_STORIES = [
       'Thank-you, research-inquiry, and offer-rejection emails',
     ],
     image: '/images/success-stories/amy-avatar.png',
-    coverSrc: '/images/success-stories/amy-cover.png',
-    coverAlt: 'Amy Wang (wAmy) YouTube thumbnail: Almost cheating — I do well in school',
+    coverSrc: '/images/success-stories/amy-hub-cover.png',
+    coverAlt: 'The Ultimate Guide to Getting Internships/Research Opportunities hub cover',
   },
   {
     id: 'kelsey',

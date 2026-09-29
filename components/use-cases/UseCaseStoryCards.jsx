@@ -2,9 +2,7 @@
 
 import { useMemo, useState } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import {
-  ArrowRightIcon,
   ArrowTopRightOnSquareIcon,
   ChevronLeftIcon,
   ChevronRightIcon,
@@ -15,7 +13,6 @@ import { SiInstagram, SiYoutube } from 'react-icons/si';
 import RainbowHoverCard from '../home/platform/RainbowHoverCard';
 import AuraCountChip, { resolveStoryAuraCount } from '../marketing/AuraCountChip';
 import { USE_CASE_STORIES } from '../../data/use-case-stories';
-import { getStoryBlogHref } from '../../data/successStoryBlogs';
 import { trackButtonClick } from '../../utils/analytics';
 
 const PAGE_SIZE = 3;
@@ -97,7 +94,6 @@ function Avatar({ story }) {
 
 function HubCover({ story, compact }) {
   if (!story.coverSrc) return null;
-  const blogHref = getStoryBlogHref(story.id);
   const className = `relative block overflow-hidden bg-[#EDE6D2] no-underline ${
     compact ? 'aspect-[16/9] w-full' : 'aspect-[16/10] w-full rounded-xl'
   }`;
@@ -111,19 +107,6 @@ function HubCover({ story, compact }) {
       style={story.coverPosition ? { objectPosition: story.coverPosition } : undefined}
     />
   );
-
-  if (blogHref) {
-    return (
-      <Link
-        href={blogHref}
-        className={className}
-        aria-label={`${story.hubTitle} success story`}
-        onClick={() => trackButtonClick(`success_story_cover_${story.id}`)}
-      >
-        {image}
-      </Link>
-    );
-  }
 
   return (
     <a
@@ -140,7 +123,6 @@ function HubCover({ story, compact }) {
 }
 
 function StoryBody({ story, t, compact }) {
-  const blogHref = getStoryBlogHref(story.id);
   const akaCompact = Boolean(story.compactAvatar);
   const auraCount = resolveStoryAuraCount(story);
   const otherStats = (story.stats || []).filter(
@@ -206,20 +188,6 @@ function StoryBody({ story, t, compact }) {
         </blockquote>
       ) : null}
       <div className="mt-auto flex flex-wrap gap-2 pt-6">
-        {blogHref ? (
-          <Link
-            href={blogHref}
-            className="inline-flex min-h-[2.5rem] items-center gap-1.5 rounded-full bg-[#F7F3EA] px-3.5 py-2 text-sm font-semibold text-[#5C4520] no-underline ring-1 ring-[#E4D9C4] transition hover:bg-[#EDE6D2]"
-            onClick={() => trackButtonClick(`success_story_read_${story.id}`)}
-          >
-            {t('home.storiesReadStory')}
-            <ArrowRightIcon className="h-3.5 w-3.5 shrink-0" aria-hidden />
-          </Link>
-        ) : (
-          <span className="inline-flex min-h-[2.5rem] min-w-[8.5rem] items-center rounded-full px-3.5 py-2 opacity-0" aria-hidden>
-            {t('home.storiesReadStory')}
-          </span>
-        )}
         <a
           href={story.hubUrl}
           target="_blank"

@@ -23,7 +23,7 @@ export default function SuccessStoriesPage({ stats = KAHANA_STATS_FALLBACK }) {
     <>
       <SEO
         title="Creator stories | Kahana"
-        description="Live Kahana hubs with price and member stats. Open a card to read the creator story, then open the hub on the Library."
+        description="Hubs already on the Kahana Library. Open a card to see what is inside."
         url={CANONICAL}
         type="website"
       />
@@ -80,13 +80,6 @@ export default function SuccessStoriesPage({ stats = KAHANA_STATS_FALLBACK }) {
             {' · '}
             <Link href="/creator-benefits" className="underline underline-offset-2">
               Benefits for creators
-            </Link>
-            {' · '}
-            <Link
-              href="/blog?category=Creator%20stories"
-              className="underline underline-offset-2"
-            >
-              Creator story blogs
             </Link>
           </p>
         </DarkLibraryCta>

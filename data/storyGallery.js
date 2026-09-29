@@ -9,10 +9,6 @@ export const STORY_GALLERY = [
       'Dense libraries usually stay in Drive folders. Emilio gave the shelf a front door on Kahana: clear sections, classic texts, and room for meditation and work beside the philosophy so a young adult can start tonight.',
     posts: [
       {
-        href: '/blog/emilio-abelmann-philosophy-young-adult',
-        title: 'Emilio Abelmann: Philosophy for the Young Adult in One Hub',
-      },
-      {
         href: '/blog/someone-left-you-a-path',
         title: 'Someone left you a path',
       },
