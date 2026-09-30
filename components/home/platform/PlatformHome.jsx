@@ -32,6 +32,7 @@ import { HeartIcon } from '@heroicons/react/24/solid';
 import { SiYoutube } from 'react-icons/si';
 import FadeInSection from '../../FadeInSection';
 import { productHref } from '../../../lib/productLinks';
+import { GLOBAL_READER_FLAGS, flagImageUrl } from '../../../data/globalReaderFlags';
 import { trackButtonClick } from '../../../utils/analytics';
 import AuraLikeAnimation from './AuraLikeAnimation';
 import RainbowHoverCard from './RainbowHoverCard';
@@ -116,7 +117,7 @@ function HeroCommitmentBadges({ t }) {
   );
 }
 
-function PrimaryCta({ children, className = '', trackingId, href }) {
+function PrimaryCta({ children, className = '', trackingId, href, icon: Icon = FolderPlusIcon }) {
   return (
     <a
       href={href}
@@ -125,13 +126,13 @@ function PrimaryCta({ children, className = '', trackingId, href }) {
       className={`btn-primary inline-flex items-center justify-center gap-2 no-underline ${className}`}
       onClick={() => trackingId && trackButtonClick(trackingId)}
     >
-      <FolderPlusIcon className="h-5 w-5 shrink-0" aria-hidden />
+      <Icon className="h-5 w-5 shrink-0" aria-hidden />
       {children}
     </a>
   );
 }
 
-function SecondaryCta({ children, className = '', href }) {
+function SecondaryCta({ children, className = '', href, icon: Icon = MagnifyingGlassIcon }) {
   return (
     <a
       href={href}
@@ -139,7 +140,7 @@ function SecondaryCta({ children, className = '', href }) {
       rel="noopener noreferrer"
       className={`btn-secondary inline-flex items-center justify-center gap-2 no-underline ${className}`}
     >
-      <MagnifyingGlassIcon className="h-5 w-5 shrink-0" aria-hidden />
+      <Icon className="h-5 w-5 shrink-0" aria-hidden />
       {children}
     </a>
   );
@@ -197,6 +198,33 @@ function BenefitTiles({ items }) {
         );
       })}
     </ul>
+  );
+}
+
+function repeatItems(items, times) {
+  return Array.from({ length: times }, () => items).flat();
+}
+
+function HeroShelf() {
+  const flags = repeatItems(GLOBAL_READER_FLAGS, 8);
+
+  return (
+    <div className="hero-shelf" aria-hidden>
+      <div className="hero-shelf__row hero-shelf__row--left">
+        <div className="hero-shelf__track">
+          {flags.map((flag, index) => (
+            <img
+              key={`${flag.code}-${index}`}
+              src={flagImageUrl(flag.code)}
+              alt=""
+              width={22}
+              height={16}
+              className="hero-shelf__flag"
+            />
+          ))}
+        </div>
+      </div>
+    </div>
   );
 }
 
@@ -343,8 +371,32 @@ export default function PlatformHome() {
             <HeroOwlLottie />
           </FadeInSection>
         </div>
+        <HeroShelf />
+        <div className="hero-shelf__row w-full overflow-hidden">
+          <CategoryMarquee categories={EXPLORE_CATEGORIES} baseHref={exploreUrl} compact />
+        </div>
       </section>
 
+      <SectionShell id="creator-stories" className="border-t border-[#E4D9C4] bg-white/60">
+        <FadeInSection>
+          <h2 className="text-3xl font-semibold sm:text-4xl">{t('home.storiesTitle')}</h2>
+          <p className="mt-3 max-w-2xl text-lg text-[#666666]">{t('home.storiesLead')}</p>
+          <UseCaseStoryCards
+            t={t}
+            compact
+            paginated
+            showExploreNudge={false}
+          />
+          <p className="mt-8 flex flex-wrap gap-x-4 gap-y-2">
+            <Link
+              href={exploreUrl}
+              className="text-base font-medium text-[#8A6622] no-underline underline-offset-4 hover:underline"
+            >
+              {t('home.explore')}
+            </Link>
+          </p>
+        </FadeInSection>
+      </SectionShell>
 
       <SectionShell id="aura" className="border-t border-[#E4D9C4]">
         <FadeInSection>
@@ -395,27 +447,6 @@ export default function PlatformHome() {
       </SectionShell>
 
       <LibraryMission />
-
-      <SectionShell id="creator-stories" className="border-t border-[#E4D9C4] bg-white/60">
-        <FadeInSection>
-          <h2 className="text-3xl font-semibold sm:text-4xl">{t('home.storiesTitle')}</h2>
-          <p className="mt-3 max-w-2xl text-lg text-[#666666]">{t('home.storiesLead')}</p>
-          <UseCaseStoryCards
-            t={t}
-            compact
-            paginated
-            showExploreNudge={false}
-          />
-          <p className="mt-8 flex flex-wrap gap-x-4 gap-y-2">
-            <Link
-              href="/success-stories"
-              className="text-base font-medium text-[#8A6622] no-underline underline-offset-4 hover:underline"
-            >
-              {t('home.storiesSeeAll')}
-            </Link>
-          </p>
-        </FadeInSection>
-      </SectionShell>
 
       <SectionShell id="how-it-works" className="border-t border-[#E4D9C4]">
         <FadeInSection>
@@ -599,21 +630,6 @@ export default function PlatformHome() {
         </FadeInSection>
       </SectionShell>
 
-      <section id="categories" className="border-t border-[#E4D9C4] bg-[#B8B9A6]/20 py-20">
-        <FadeInSection>
-          <div className="mx-auto w-full max-w-6xl px-6 sm:px-10 lg:px-16">
-            <h2 className="text-3xl font-semibold sm:text-4xl">{t('home.topicsTitle')}</h2>
-            <p className="mt-3 max-w-2xl text-lg text-[#666666]">{t('home.topicsLead')}</p>
-          </div>
-          <div className="mt-10 w-full overflow-hidden">
-            <CategoryMarquee categories={EXPLORE_CATEGORIES} baseHref={exploreUrl} />
-          </div>
-          <p className="mx-auto mt-10 w-full max-w-6xl px-6 sm:px-10 lg:px-16">
-            <SecondaryCta href={exploreUrl}>{t('home.explore')}</SecondaryCta>
-          </p>
-        </FadeInSection>
-      </section>
-
       <SectionShell id="philosophy" className="scroll-mt-24 border-t border-[#E4D9C4] !py-12 sm:!py-14">
         <FadeInSection>
           <h2 className="text-2xl font-semibold sm:text-3xl">{t('home.missionTitle')}</h2>
@@ -734,6 +750,22 @@ export default function PlatformHome() {
           <p className="mt-3 max-w-2xl text-lg text-[#666666]">{t('home.faqLead')}</p>
           <div className="mt-8">
             <FaqBrowse variant="home" />
+          </div>
+        </FadeInSection>
+      </SectionShell>
+
+      <SectionShell id="talk" className="border-t border-[#E4D9C4]">
+        <FadeInSection>
+          <div className="mx-auto max-w-2xl rounded-2xl border border-[#E4D9C4] bg-[#EDE6D2] px-6 py-10 sm:px-10">
+            <h2 className="text-3xl font-semibold sm:text-4xl">{t('home.talkTitle')}</h2>
+            <p className="mt-4 text-lg leading-relaxed text-[#5C4520]">
+              {t('home.talkBody')}
+            </p>
+            <p className="mt-6">
+              <PrimaryCta href="https://kahana.io/contact?utm_source=marketing&utm_medium=website&utm_campaign=home_talk" trackingId="platform_talk" icon={ChatBubbleLeftRightIcon}>
+                {t('home.talkCta')}
+              </PrimaryCta>
+            </p>
           </div>
         </FadeInSection>
       </SectionShell>

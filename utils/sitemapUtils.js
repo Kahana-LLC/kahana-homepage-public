@@ -54,7 +54,7 @@ async function getAllBlogPosts() {
         const slug = file.replace(".json", "");
 
         // Only include posts that have required fields
-        if (content.date) {
+        if (content.date && !slug.startsWith("kahana-vs-")) {
           blogPosts.push({
             url: absoluteCorporateUrl(`/blog/${slug}`),
             lastmod: content.date,
@@ -104,6 +104,10 @@ async function getAllPages() {
             .replace(/\.(js|jsx)$/, "")
             .replace(/\\/g, "/")
             .replace(/index$/, "");
+
+        if (route.includes("[")) {
+          continue;
+        }
 
         pages.push({
           url: absoluteCorporateUrl(route || '/'),

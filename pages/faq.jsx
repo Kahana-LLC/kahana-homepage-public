@@ -19,8 +19,8 @@ export default function FaqPage() {
   return (
     <>
       <SEO
-        title="FAQ | Kahana"
-        description="Answers about Kahana hubs, Explore, Aura, plans, and how to learn and contribute. Paid access is optional."
+        title="Kahana FAQ: what it is, Aura, and plans"
+        description="Answers about what Kahana is, Aura, Free and Growth plans, and how to learn or contribute. For affiliates, ebooks, and selling hubs, start with the linked pages."
         url={CANONICAL}
         type="website"
         schema={schema}
@@ -37,6 +37,29 @@ export default function FaqPage() {
                 Common questions for learners, contributors, and anyone exploring Kahana.
               </p>
             </FadeInSection>
+          </div>
+        </section>
+
+        <section className="px-6 pb-4 pt-2 sm:px-10 lg:px-16">
+          <div className="mx-auto max-w-3xl text-base leading-relaxed text-[#5C4520]">
+            <p>
+              Looking for a program or a way to sell?{' '}
+              <Link href="/affiliates" className="font-medium text-[#8A6622] underline underline-offset-2">
+                Affiliate program
+              </Link>
+              {' · '}
+              <Link href="/use-cases/selling-digital-products" className="font-medium text-[#8A6622] underline underline-offset-2">
+                Sell digital products
+              </Link>
+              {' · '}
+              <Link href="/use-cases/selling-ebooks" className="font-medium text-[#8A6622] underline underline-offset-2">
+                Sell ebooks
+              </Link>
+              {' · '}
+              <Link href="/pricing" className="font-medium text-[#8A6622] underline underline-offset-2">
+                Pricing
+              </Link>
+            </p>
           </div>
         </section>
 

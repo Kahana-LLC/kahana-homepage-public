@@ -345,7 +345,7 @@ export async function getStaticProps() {
   // Don't fetch images during build - let them load on-demand
   return {
     props: {
-      posts: blogIndex
+      posts: blogIndex.filter((post) => !String(post.slug || "").startsWith("kahana-vs-"))
     },
     revalidate: 3600, // Revalidate every hour
   };

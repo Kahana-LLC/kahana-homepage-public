@@ -7,6 +7,7 @@ import {
   WrenchScrewdriverIcon,
 } from '@heroicons/react/24/outline';
 import SEO from '../components/SEO';
+import FaqAccordion from '../components/faq/FaqAccordion';
 import FadeInSection from '../components/FadeInSection';
 import ExplainerRelatedLinks from '../components/home/platform/ExplainerRelatedLinks';
 import { APP_URL, EXPLORE_URL } from '../components/nav/navConfig';
@@ -15,6 +16,27 @@ import { ABOUT_ORIGIN } from '../config/site';
 import { trackButtonClick } from '../utils/analytics';
 
 const CANONICAL = `${ABOUT_ORIGIN}/earn-money`;
+
+const EARN_FAQS = [
+  {
+    id: 'earn-must-charge',
+    question: 'Do I have to charge for my hubs?',
+    answer:
+      'No. Free hubs are the point. Paid access is optional. Turn it on when you want people to pay to open a hub.',
+  },
+  {
+    id: 'earn-how-paid',
+    question: 'How do I get paid on Kahana?',
+    answer:
+      'Connect Stripe, set a one-time or monthly price on a hub, and list it when you are ready. Buyers unlock access in the hub. Payouts go to the Stripe account you connect.',
+  },
+  {
+    id: 'earn-fee',
+    question: 'What fee does Kahana take?',
+    answer:
+      'Kahana takes 5% of paid hub access. Card processing is separate. You can sell on the Free plan. Growth raises hub, file, and storage limits. It is not required to charge.',
+  },
+];
 
 const FRICTION = [
   {
@@ -50,8 +72,17 @@ export default function EarnMoneyPage() {
   return (
     <>
       <SEO
-        title="You don't have to sell. You can later if you want. | Kahana"
-        description="Make money if you choose to monetize access to your hubs. Connect Stripe and set a price when you want to earn. Free hubs are still the point."
+        title="How creators get paid on Kahana"
+        description="You do not have to sell. When you want to, connect Stripe and set a price on a hub. Kahana takes 5% of paid access. Free hubs stay free."
+        schema={{
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: EARN_FAQS.map((item) => ({
+            '@type': 'Question',
+            name: item.question,
+            acceptedAnswer: { '@type': 'Answer', text: item.answer },
+          })),
+        }}
         url={CANONICAL}
         type="website"
       />
@@ -185,6 +216,15 @@ export default function EarnMoneyPage() {
                   Open affiliate Earn
                 </a>
               </p>
+            </FadeInSection>
+          </div>
+        </section>
+
+        <section className="border-t border-[#E4D9C4] px-6 py-16 sm:px-10 lg:px-16">
+          <div className="mx-auto max-w-3xl">
+            <FadeInSection>
+              <h2 className="text-2xl font-semibold sm:text-3xl">Questions</h2>
+              <FaqAccordion className="mt-8" items={EARN_FAQS} />
             </FadeInSection>
           </div>
         </section>

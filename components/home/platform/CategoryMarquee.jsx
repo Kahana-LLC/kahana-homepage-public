@@ -7,17 +7,26 @@
  *   baseHref: string
  * }} props
  */
-export default function CategoryMarquee({ categories, baseHref }) {
-  const track = [...categories, ...categories];
+export default function CategoryMarquee({ categories, baseHref, compact = false }) {
+  const copies = compact ? 8 : 2;
+  const track = Array.from({ length: copies }, () => categories).flat();
   const exploreBase = baseHref.replace(/\?.*$/, '').replace(/\/$/, '');
 
   return (
-    <div className="category-marquee" role="group" aria-label="Browse categories">
+    <div className={`category-marquee${compact ? ' category-marquee--compact' : ''}`} role="group" aria-label="Browse categories">
       <div className="category-marquee__row category-marquee__row--left">
         <div className="category-marquee__track">
           {track.map((item, i) => {
             const { Icon } = item;
             const href = `${exploreBase}?tags=${encodeURIComponent(item.tag)}`;
+            if (compact) {
+              return (
+                <span key={`left-${item.label}-${i}`} className="category-marquee__chip">
+                  <Icon className="category-marquee__icon" aria-hidden />
+                  {item.label}
+                </span>
+              );
+            }
             return (
               <a
                 key={`left-${item.label}-${i}`}
@@ -34,7 +43,7 @@ export default function CategoryMarquee({ categories, baseHref }) {
         </div>
       </div>
 
-      <div className="category-marquee__row category-marquee__row--right">
+      {compact ? null : <div className="category-marquee__row category-marquee__row--right">
         <div className="category-marquee__track">
           {track.map((item, i) => {
             const { Icon } = item;
@@ -53,7 +62,7 @@ export default function CategoryMarquee({ categories, baseHref }) {
             );
           })}
         </div>
-      </div>
+      </div>}
     </div>
   );
 }

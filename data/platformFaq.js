@@ -76,7 +76,7 @@ export const FAQ_SECTIONS = [
         id: 'vs-tools',
         question: 'How is Kahana different from Gumroad, Linktree, or Notion?',
         answer:
-          'Gumroad is built around selling. Linktree is light on finding hubs. Notion and Drive are great for private work, but they are not a public library with community signal.\n\nKahana starts with contribution and Library, plus Aura. Optional earning came later because contributors asked for it.\n\nLonger comparisons: /blog/kahana-vs-gumroad-stan · /blog/kahana-vs-linktree · /blog/kahana-vs-notion-google-drive.',
+          'Gumroad is built around selling. Linktree is light on finding hubs. Notion and Drive are great for private work, but they are not a public library with community signal.\n\nKahana starts with contribution and Library, plus Aura. Optional earning came later because contributors asked for it.\n\nLonger comparisons: /compare/gumroad · /compare/stan · /compare/linktree · /compare.',
       },
       {
         id: 'can-earn',
@@ -365,6 +365,30 @@ export const FAQ_SECTIONS = [
         question: 'Do Free creators still pay the 5% marketplace fee?',
         answer:
           'Yes. Free hub sales pay a 5% fee. Growth hub sales pay 3%.\n\nWhen to upgrade: /help/when-to-upgrade.',
+      },
+    ],
+  },
+  {
+    id: 'programs',
+    title: 'Programs and selling',
+    items: [
+      {
+        id: 'affiliate-program',
+        question: 'Does Kahana have an affiliate program?',
+        answer:
+          'Yes. People who upgrade through your link get 30% off Growth forever. You earn 30% of what they pay after the free trial, and 1% when they sell a hub. Get your link on Earn after you sign in.\n\nProgram: https://about.kahana.io/affiliates',
+      },
+      {
+        id: 'sell-ebooks',
+        question: 'Can I sell an ebook on Kahana?',
+        answer:
+          'Yes. An ebook is a hub with the file. List it free or paid. Only upload what you have the rights to share. Public-domain Internet Archive files can be imported when redistribution is allowed.\n\nHow it works: https://about.kahana.io/use-cases/selling-ebooks',
+      },
+      {
+        id: 'sell-digital-products',
+        question: 'Can I sell digital products on Kahana?',
+        answer:
+          'Yes. The product is access to a hub: files, videos, and notes. Connect Stripe, set a price, and list it on Library. Kahana takes 5% of paid access. You can sell on the Free plan.\n\nHow it works: https://about.kahana.io/use-cases/selling-digital-products',
       },
     ],
   },

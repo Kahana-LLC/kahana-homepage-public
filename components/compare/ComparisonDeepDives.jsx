@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { COMPARISONS_BLOG_INDEX, getBlogPostsBySlugs } from '../../data/platform-blog-links';
+import { COMPARISONS_BLOG_INDEX, getBlogPostsBySlugs, getComparisonHref } from '../../data/platform-blog-links';
 
 export default function ComparisonDeepDives({ t, slugs, title, lead }) {
   const posts = getBlogPostsBySlugs(slugs);
@@ -16,7 +16,7 @@ export default function ComparisonDeepDives({ t, slugs, title, lead }) {
           {posts.map((post) => (
             <li key={post.slug}>
               <Link
-                href={`/blog/${post.slug}`}
+                href={getComparisonHref(post.slug.replace(/^kahana-vs-/, ''))}
                 className="block rounded-2xl bg-white px-5 py-4 no-underline ring-1 ring-[#E4D9C4] hover:ring-[#8A6622]/40"
               >
                 <p className="font-semibold text-[#3B2F1A]">{post.title}</p>

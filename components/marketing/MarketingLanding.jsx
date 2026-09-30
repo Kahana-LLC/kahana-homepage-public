@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { FolderPlusIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 import SEO from '../SEO';
 import FadeInSection from '../FadeInSection';
+import FaqAccordion from '../faq/FaqAccordion';
 import FeatureCatalogCard from '../features/FeatureCatalogCard';
 import { USE_CASE_STORIES } from '../../data/use-case-stories';
 import { APP_URL } from '../nav/navConfig';
@@ -88,10 +89,29 @@ export default function MarketingLanding({
           ? `/help?feature=${item.slug}`
           : '/help';
   const trackingId = `${kind}_${item.slug}_cta`;
+  const faqs = item.faqs || [];
+  const schema =
+    faqs.length > 0
+      ? {
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: faqs.map((faq) => ({
+            '@type': 'Question',
+            name: faq.question,
+            acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+          })),
+        }
+      : null;
 
   return (
     <>
-      <SEO title={seoTitle} description={seoDescription} url={canonical} type="website" />
+      <SEO
+        title={seoTitle}
+        description={seoDescription}
+        url={canonical}
+        type="website"
+        schema={schema}
+      />
       <div className="bg-[#F7F3EA] text-[#3B2F1A]">
         <section className="px-6 py-20 sm:px-10 sm:py-24 lg:px-16">
           <div className="mx-auto max-w-3xl">
@@ -150,6 +170,17 @@ export default function MarketingLanding({
             </FadeInSection>
           </div>
         </section>
+
+        {faqs.length > 0 ? (
+          <section className="border-t border-[#E4D9C4] px-6 py-16 sm:px-10 lg:px-16">
+            <div className="mx-auto max-w-3xl">
+              <FadeInSection>
+                <h2 className="text-2xl font-semibold">Questions</h2>
+                <FaqAccordion className="mt-8" items={faqs} />
+              </FadeInSection>
+            </div>
+          </section>
+        ) : null}
 
         {stories.length > 0 ? (
           <section className="border-t border-[#E4D9C4] px-6 py-16 sm:px-10 lg:px-16">

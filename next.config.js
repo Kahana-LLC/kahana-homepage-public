@@ -7,6 +7,9 @@ const {
 const {
   pageRedirects: archivedOasisPageRedirects,
 } = require("./config/archivedOasisPageRedirects");
+const {
+  comparisonEssayRedirects,
+} = require("./config/comparisonEssayRedirects");
 
 /**
  * Only load @next/bundle-analyzer when ANALYZE=true.
@@ -471,6 +474,7 @@ const nextConfig = {
       ...archivedOasisPageRedirects,
       // Oasis-era blog/docs archived → indexes (specific /docs/:slug before catch-all)
       ...archivedBlogRedirects,
+      ...comparisonEssayRedirects,
       ...archivedDocsRedirects,
       // Docs surface renamed to Help
       {

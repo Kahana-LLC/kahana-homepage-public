@@ -5,6 +5,7 @@ const {
   HELP_ORIGIN,
   absoluteCorporateUrl,
 } = require('../../config/site');
+import { COMPARE_PLATFORMS } from '../../data/platform-compare';
 
 export default function handler(req, res) {
   res.setHeader('Content-Type', 'text/xml');
@@ -144,6 +145,10 @@ function generateSiteMap() {
     urlEntry(absoluteCorporateUrl(path), freq, pri)
   );
 
+  const comparePages = COMPARE_PLATFORMS.map((platform) =>
+    urlEntry(absoluteCorporateUrl(`/compare/${platform.id}`), 'weekly', '0.7')
+  );
+
   const newsroomPages = [
     ['/blog', 'daily', '0.9'],
     ['/press', 'weekly', '0.8'],
@@ -168,6 +173,7 @@ function generateSiteMap() {
    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
      <!-- about.kahana.io -->
 ${aboutPages.join('\n')}
+${comparePages.join('\n')}
 
      <!-- newsroom.kahana.io -->
 ${newsroomPages.join('\n')}

@@ -24,8 +24,8 @@ export default function CreatorsPage() {
   return (
     <>
       <SEO
-        title="Kahana for creators"
-        description="Upload to the Kahana library. Share it for free, or set a price and earn whenever someone pays to access it. 14-day Growth trial available."
+        title="Kahana for creators: publish hubs and get discovered"
+        description="For creators who want to publish hubs, get discovered in the Library, and earn when someone pays for access. Share free, or set a price. 14-day Growth trial available."
         url={CANONICAL}
         type="website"
         schema={{

@@ -665,8 +665,29 @@ export const USE_CASES = [
   {
     slug: 'selling-courses',
     title: 'Course-like hubs',
+    seoTitle: 'Sell a course as a hub, not a full LMS | Kahana',
     eyebrow: 'Use case',
     summary: 'Package videos, PDFs, and checklists in one hub. This is not a full LMS.',
+    faqs: [
+      {
+        id: 'courses-lms',
+        question: 'Is Kahana an online course platform?',
+        answer:
+          'No. Kahana is not a full LMS. A course-like hub is the videos, PDFs, slides, and notes in one library. There is no graded classroom, drip curriculum, or student dashboard.',
+      },
+      {
+        id: 'courses-charge',
+        question: 'Can I charge for access to a course-like hub?',
+        answer:
+          'Yes. Access can be free, a one-time price, or monthly. Buyers unlock the hub. Kahana takes 5% of paid hub access. Card processing is separate.',
+      },
+      {
+        id: 'courses-find',
+        question: 'How do people find a course-like hub?',
+        answer:
+          'List it on Library with a cover, title, description, and category. A preview reel lets visitors sample a clip before they open or buy.',
+      },
+    ],
     lead: 'People search for courses on Kahana. What they find is a hub: session recordings, slides, templates, and notes in a flexible library. There is no graded classroom, drip curriculum engine, or Teachable-style student dashboard.',
     appHref: APP_CREATE_URL,
     appLabel: 'Create a hub',
@@ -856,9 +877,30 @@ export const USE_CASES = [
   {
     slug: 'paid-memberships',
     title: 'Host premium subscriptions',
+    seoTitle: 'Monthly membership for a Kahana hub',
     eyebrow: 'Use case',
     summary:
       'Sell monthly access to a premium hub pack. Same 5% fee as a one-time unlock. Stripe handles the card.',
+    faqs: [
+      {
+        id: 'membership-what',
+        question: 'Can I sell a monthly membership on Kahana?',
+        answer:
+          'Yes. A membership here is monthly access to a hub. Buyers unlock the files, videos, and notes while they stay subscribed. It is hub access, not a social-feed membership.',
+      },
+      {
+        id: 'membership-fee',
+        question: 'What fee does Kahana take on a membership?',
+        answer:
+          'Kahana takes 5% of paid hub access, including monthly access. The same 5% applies on Free and Growth. Stripe’s card fee is separate.',
+      },
+      {
+        id: 'membership-trial',
+        question: 'Can a membership include a free trial?',
+        answer:
+          'Yes. You can offer a free trial on the hub paywall. Buyers still need to check out through Stripe. You can list free hubs next to the paid one.',
+      },
+    ],
     lead: 'If your pack updates, a monthly price can fit better than a one-time file drop. Buyers unlock the hub while they are subscribed. You can still list free hubs next to paid ones.',
     appHref: APP_CREATE_URL,
     appLabel: 'Create a hub',
@@ -876,8 +918,29 @@ export const USE_CASES = [
   {
     slug: 'get-discovered',
     title: 'Get discovered in Library',
+    seoTitle: 'How people find your work on Kahana',
     eyebrow: 'Use case',
     summary: 'List a hub so people can find it in search, For You, and preview reels. Aura is scarce endorsement, not a like count.',
+    faqs: [
+      {
+        id: 'discovered-how',
+        question: 'How do people find my work on Kahana?',
+        answer:
+          'List the hub on Library. Cover, title, description, category, and tags are what search and For You can use. A preview reel can show a clip on the Library card. Your public profile is the shelf of hubs you listed.',
+      },
+      {
+        id: 'discovered-ads',
+        question: 'Do I have to pay to get discovered?',
+        answer:
+          'No. Listing on Library is not a paid boost. For You can weigh Aura, saves, follows, and taste. You keep Instagram and YouTube for reach outside Kahana.',
+      },
+      {
+        id: 'discovered-google',
+        question: 'Can a listed hub show up on Google?',
+        answer:
+          'Public, non-adult hubs listed on Library can be crawled for Google and other search engines. AI indexing is optional and stays off until you opt in. Private, unlisted, and adult hubs stay off that search SEO.',
+      },
+    ],
     lead: 'Exposure on Kahana is a Library listing plus signals people can inspect: views, saves, Aura pathways, and a public profile. You keep YouTube and Instagram for reach. Kahana is where the pack can be found as a library.',
     appHref: APP_LIBRARY_URL,
     appLabel: 'Open Library',

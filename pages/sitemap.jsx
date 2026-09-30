@@ -2,6 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import { getAllDocsMetadata } from '../utils/docsUtils';
+import { COMPARE_PLATFORMS } from '../data/platform-compare';
 
 const staticSitemapSections = [
   {
@@ -110,7 +111,15 @@ export async function getStaticProps() {
   ];
 
   const sitemapSections = [
-    ...staticSitemapSections.slice(0, 4),
+    ...staticSitemapSections.slice(0, 1),
+    {
+      title: 'Kahana vs other platforms',
+      links: COMPARE_PLATFORMS.map((platform) => ({
+        text: `Kahana vs ${platform.name}`,
+        href: `/compare/${platform.id}`,
+      })),
+    },
+    ...staticSitemapSections.slice(1, 4),
     { title: 'Help', links: docLinks },
     ...staticSitemapSections.slice(4),
   ];

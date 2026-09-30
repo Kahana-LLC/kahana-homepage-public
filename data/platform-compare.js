@@ -1,7 +1,9 @@
+import { COMPARE_PLATFORM_ADDITIONS } from './compare-platform-additions.js';
+
 /**
  * Public platform compare — curated snapshot for kahana.io/compare.
  * Not the data-room advisor landscape. Tandem copy only; outbound homepages.
- * Skip adult-only peers. Every row has a website.
+ * Every row has a website. Adult-section peers are included with kind: 'adult'.
  */
 
 export const PLATFORM_COMPARE_CATEGORIES = [
@@ -14,6 +16,7 @@ export const PLATFORM_COMPARE_CATEGORIES = [
   { id: 'storefronts', label: 'Storefronts' },
   { id: 'memberships', label: 'Memberships' },
   { id: 'audio', label: 'Audio' },
+  { id: 'streaming', label: 'Streaming' },
 ];
 
 /** @typedef {{ id: string, name: string, website: string, category: string, blurb: string, withKahana: string }} ComparePlatform */
@@ -317,6 +320,7 @@ export const COMPARE_PLATFORMS = [
     withKahana:
       'Listen on Audible. Use Kahana for the club, companion notes, and extras the audiobook app does not hold.',
   },
+  ...COMPARE_PLATFORM_ADDITIONS,
 ];
 
 /** Creator vs learner/viewer use cases for the comparison table filters. */
@@ -385,4 +389,40 @@ export function filterComparePlatforms(platforms, { categoryId, query, audienceI
 
 export function categoryLabel(categoryId) {
   return PLATFORM_COMPARE_CATEGORIES.find((c) => c.id === categoryId)?.label ?? categoryId;
+}
+
+export function getComparePlatform(id) {
+  return COMPARE_PLATFORMS.find((platform) => platform.id === id) ?? null;
+}
+
+/** Paid creator-business tools Kahana can sit beside, and also stand in for on the Free plan. */
+const PAID_CREATOR_PEERS = new Set([
+  'stan',
+  'kajabi',
+  'skool',
+  'teachable',
+  'podia',
+  'gumroad',
+  'patreon',
+  'nas-io',
+  'beacons',
+  'circle',
+  'mighty-networks',
+  'thinkific',
+  'learnworlds',
+  'kartra',
+  'zenler',
+  'memberful',
+  'locals',
+  'ghost',
+  'pensight',
+  'shopify',
+]);
+
+export function comparisonKind(platform) {
+  return platform.kind || 'tandem';
+}
+
+export function isPaidCreatorPeer(id) {
+  return PAID_CREATOR_PEERS.has(id);
 }

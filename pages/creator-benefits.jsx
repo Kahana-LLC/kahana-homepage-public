@@ -497,7 +497,7 @@ export default function CreatorBenefitsPage() {
   return (
     <>
       <SEO
-        title="Benefits for Kahana creators | Reach, SEO, earnings"
+        title="Benefits for Kahana creators: get discovered and earn"
         description="What creators get on Kahana: Library discovery, SEO for Google and AI search, traffic from everywhere, followers, potential earnings, and a way to share knowledge that is yours."
         url={CANONICAL}
         type="website"

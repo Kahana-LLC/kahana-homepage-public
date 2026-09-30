@@ -1,4 +1,5 @@
 import { blogIndex } from './blog-index';
+import { getComparePlatform } from './platform-compare';
 
 /** Ids whose default `kahana-vs-${id}` slug does not match blog-index. */
 const BLOG_SLUG_BY_ID = {
@@ -31,9 +32,14 @@ export function getComparisonBlogPost(id) {
   return slug ? blogIndex.find((post) => post.slug === slug) ?? null : null;
 }
 
+/** Public comparison URL. Live platform pages win. Everyone else lands on the index. */
+export function getComparisonHref(id) {
+  if (id && getComparePlatform(id)) return `/compare/${id}`;
+  return '/compare';
+}
+
 export function getComparisonBlogHref(id) {
-  const slug = getComparisonBlogSlug(id);
-  return slug ? `/blog/${slug}` : null;
+  return getComparisonHref(id);
 }
 
 export function getBlogPostsBySlugs(slugs) {
@@ -61,4 +67,4 @@ export const LEARNER_DEEP_DIVE_SLUGS = [
   'kahana-vs-youtube',
 ];
 
-export const COMPARISONS_BLOG_INDEX = '/blog?category=Comparisons';
+export const COMPARISONS_BLOG_INDEX = '/compare';

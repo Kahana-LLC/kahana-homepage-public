@@ -576,7 +576,7 @@ export default function LearningInternship() {
                   {/* Product Testing */}
                   <div className="mb-6">
                     <h4 className="text-lg font-semibold text-oasis-green-800 mb-4">Product Testing</h4>
-                    <p className="text-oasis-green-800 mb-4 text-sm">Everyone contributes to testing and improving Oasis. This includes:</p>
+                    <p className="text-oasis-green-800 mb-4 text-sm">Everyone contributes to testing and improving Aura Library. This includes:</p>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                       <div className="bg-gradient-to-br from-desert-yellow-100/20 to-oasis-blue-300/10 rounded-xl p-4 border-2 border-oasis-green-600/20 hover:border-oasis-green-600/40 transition-all duration-300">
                         <div className="flex items-start gap-3">
@@ -586,8 +586,8 @@ export default function LearningInternship() {
                             </svg>
                           </div>
                           <div className="flex-1">
-                            <h5 className="font-semibold text-oasis-green-800 mb-1 text-sm">Oasis browser</h5>
-                            <p className="text-xs text-oasis-green-800/80">Install, use as your default browser, and test AI Assistant features (summarization, research, extraction, workflows)</p>
+                            <h5 className="font-semibold text-oasis-green-800 mb-1 text-sm">Aura Library</h5>
+                            <p className="text-xs text-oasis-green-800/80">Create an account, explore hubs, and use the product as a learner and creator (search, save, discuss, and share)</p>
                           </div>
                         </div>
                       </div>
@@ -613,7 +613,7 @@ export default function LearningInternship() {
                           </div>
                           <div className="flex-1">
                             <h5 className="font-semibold text-oasis-green-800 mb-1 text-sm">Feedback tracking</h5>
-                            <p className="text-xs text-oasis-green-800/80">Log structured feedback on what works, what's confusing, where Oasis saves time, and areas for improvement</p>
+                            <p className="text-xs text-oasis-green-800/80">Log structured feedback on what works, what's confusing, where Aura Library saves time, and areas for improvement</p>
                           </div>
                         </div>
                       </div>
@@ -753,10 +753,10 @@ export default function LearningInternship() {
                           </svg>
                         ),
                         items: [
-                          { title: 'Codebase', description: 'Local Oasis setup, GitHub, code review' },
+                          { title: 'Codebase', description: 'Local Aura Library setup, GitHub, code review' },
                           { title: 'Infrastructure', description: 'AWS (builds, versioning, CI/CD), Supabase (backend, analytics migration)' },
                           { title: 'Analytics', description: 'Mixpanel event tracking, dashboard migration, usage analytics' },
-                          { title: 'Product builds', description: 'Chromium, enterprise browser, OTA (over-the-air) updates' }
+                          { title: 'Product builds', description: 'Web app, Firebase, and shipping updates' }
                         ]
                       },
                       {
@@ -1270,14 +1270,14 @@ export default function LearningInternship() {
                         Once accepted, you'll join our <strong>WhatsApp</strong> and <strong>Slack</strong> channels for collaboration and communication with the team.
                       </p>
                       <p className="text-oasis-green-800">
-                        After joining WhatsApp and/or Slack, you'll receive a link to the <strong>interactive onboarding checklist</strong>. From there, you will be expected to complete the onboarding tasks, which include setting up your tools, creating your team profile, installing Oasis, and more.
+                        After joining WhatsApp and/or Slack, you'll receive a link to the <strong>interactive onboarding checklist</strong>. From there, you will be expected to complete the onboarding tasks, which include setting up your tools, creating your team profile, exploring Aura Library, and more.
                       </p>
                     </div>
                   </div>
                   <div className="mt-6 rounded-lg overflow-hidden border-2 border-oasis-green-600/20 shadow-lg">
                     <Image
                       src="/assets/onboarding-checklist.png"
-                      alt="Interactive onboarding checklist showing Day 1 tasks and progress tracking"
+                      alt="Interactive onboarding checklist showing Day 1 setup tasks, including joining Slack, reviewing the Kahana website, and exploring Kahana"
                       width={1200}
                       height={800}
                       className="w-full h-auto"

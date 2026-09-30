@@ -536,9 +536,11 @@ export default function BlogPost({ post }) {
 export async function getStaticPaths() {
   try {
     // Generate paths from blog-index.js
-    const paths = blogIndex.map((post) => ({
-      params: { slug: post.slug },
-    }));
+    const paths = blogIndex
+      .filter((post) => !String(post.slug || "").startsWith("kahana-vs-"))
+      .map((post) => ({
+        params: { slug: post.slug },
+      }));
 
     return {
       paths,

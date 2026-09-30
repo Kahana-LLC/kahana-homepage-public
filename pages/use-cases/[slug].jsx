@@ -23,7 +23,7 @@ export default function UseCasePage({ slug }) {
   return (
     <MarketingLanding
       canonical={`${ABOUT_ORIGIN}/use-cases/${item.slug}`}
-      seoTitle={`${item.title} | Kahana`}
+      seoTitle={item.seoTitle || `${item.title} | Kahana`}
       seoDescription={item.summary}
       item={item}
       kind="use-case"

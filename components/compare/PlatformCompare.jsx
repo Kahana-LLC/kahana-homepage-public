@@ -6,7 +6,6 @@ import RainbowHoverCard from '../home/platform/RainbowHoverCard';
 import BrandMark from './BrandMark';
 import { productHref } from '../../lib/productLinks';
 import { trackButtonClick } from '../../utils/analytics';
-import { getComparisonBlogHref } from '../../data/platform-blog-links';
 import {
   COMPARE_AUDIENCES,
   COMPARE_PLATFORMS,
@@ -174,7 +173,7 @@ export default function PlatformCompare({ t }) {
         <ul className="mt-8 grid list-none gap-5 lg:grid-cols-2">
           {pageItems.map((platform) => {
             const open = openId === platform.id;
-            const vsHref = getComparisonBlogHref(platform.id);
+            const vsHref = `/compare/${platform.id}`;
             return (
               <li key={platform.id}>
                 <RainbowHoverCard className="h-full" innerClassName="flex h-full flex-col bg-white px-6 py-6 sm:px-7">

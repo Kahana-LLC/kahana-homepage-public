@@ -359,6 +359,28 @@ Yes. Free hub sales pay a 5% fee. Growth hub sales pay 3%.
 
 ---
 
+## Programs and selling
+
+### Does Kahana have an affiliate program?
+
+Yes. People who upgrade through your link get 30% off Growth forever. You earn 30% of what they pay after the free trial, and 1% when they sell a hub. Get your link on Earn after you sign in.
+
+Program: https://about.kahana.io/affiliates
+
+### Can I sell an ebook on Kahana?
+
+Yes. An ebook is a hub with the file. List it free or paid. Only upload what you have the rights to share. Public-domain Internet Archive files can be imported when redistribution is allowed.
+
+How it works: https://about.kahana.io/use-cases/selling-ebooks
+
+### Can I sell digital products on Kahana?
+
+Yes. The product is access to a hub: files, videos, and notes. Connect Stripe, set a price, and list it on Library. Kahana takes 5% of paid access. You can sell on the Free plan.
+
+How it works: https://about.kahana.io/use-cases/selling-digital-products
+
+---
+
 ## Technical and compatibility
 
 ### What browsers are supported?
