@@ -79,6 +79,16 @@ export default function PhilosophyPage() {
                 Create, learn, and research on a global scale. Our community comes from over 110+
                 countries and speaks many languages.
               </p>
+              <p className="mt-6 text-base leading-relaxed text-[#5C4520]">
+                Written before a single line of code.{' '}
+                <Link
+                  href="/manifesto"
+                  className="font-semibold text-[#8A6622] underline underline-offset-2"
+                >
+                  Read the Kahana Manifesto
+                </Link>
+                .
+              </p>
             </FadeInSection>
           </div>
         </section>
@@ -226,6 +236,10 @@ export default function PhilosophyPage() {
                 />
               </div>
               <p className="mt-8 text-base leading-relaxed text-[#5C4520]">
+                <Link href="/manifesto" className="text-[#8A6622] underline underline-offset-2">
+                  Manifesto
+                </Link>
+                {' · '}
                 <Link href="/aura" className="text-[#8A6622] underline underline-offset-2">
                   Aura
                 </Link>

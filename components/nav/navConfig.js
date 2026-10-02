@@ -83,6 +83,7 @@ export const mobileNavSections = [
     heading: 'More',
     links: [
       { label: 'Philosophy', href: '/philosophy' },
+      { label: 'Manifesto', href: '/manifesto' },
       { label: 'Value exchange', href: '/value-exchange' },
       { label: 'Help', href: '/help' },
       { label: 'Partnerships', href: PARTNERSHIP_CONTACT_URL, external: true },

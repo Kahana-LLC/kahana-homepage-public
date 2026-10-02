@@ -91,6 +91,7 @@ const COMPANY_LINKS = [
   },
   { href: '/why-the-aura-library-matters', label: 'Our mission', icon: SparklesIcon },
   { href: '/philosophy', label: 'Philosophy', icon: LightBulbIcon },
+  { href: '/manifesto', label: 'Manifesto', icon: DocumentTextIcon },
   { href: '/value-exchange', label: 'Value exchange', icon: ArrowsRightLeftIcon },
   {
     href: '/climate-commitment',
