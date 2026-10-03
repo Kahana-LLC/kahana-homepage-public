@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { APP_NAME } from '../../config/brand';
+import { marketingHomeHref } from '../../lib/marketingHome';
 
 /** Corne bonsai path — same vector as the product app lockup. */
 const BONSAI_PATH =
@@ -13,10 +14,19 @@ const BRAND_INK = '#3B2F1A';
  * Matches kahana-web KahanaLogoMark wordmark (APP_NAME).
  */
 export default function KahanaWordmark({
-  href = '/',
+  href,
   size = 28,
   className = '',
 }) {
+  const [homeHref, setHomeHref] = useState(href || '/');
+
+  useEffect(() => {
+    if (href) {
+      setHomeHref(href);
+      return;
+    }
+    setHomeHref(marketingHomeHref(window.location.hostname));
+  }, [href]);
   const markSize = Math.max(16, Math.round(size * 0.78));
   const fontSize = Math.max(14, Math.round(size * 0.62));
   const gap = Math.max(5, Math.round(size * 0.16));
@@ -45,12 +55,8 @@ export default function KahanaWordmark({
     </span>
   );
 
-  if (!href) {
-    return content;
-  }
-
   return (
-    <Link href={href} className="inline-flex shrink-0 no-underline" aria-label={`${APP_NAME} home`}>
+    <Link href={homeHref} className="inline-flex shrink-0 no-underline" aria-label={`${APP_NAME} home`}>
       {content}
     </Link>
   );

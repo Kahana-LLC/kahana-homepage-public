@@ -16,6 +16,8 @@ import AssistantTrainPreview from '../../components/marketing/AssistantTrainPrev
 import { docsConfig } from '../../config/docsConfig';
 import { HELP_RELATED_DOC_SLUGS } from '../../data/helpRelatedDocSlugs';
 import { parseTaxonomyTag } from '../../data/marketingTaxonomy';
+import { MARKETING_HOME_URL } from '../../lib/marketingHome';
+import { ClubHelpPreview, ProfileHelpPreview } from '../../components/marketing/HelpProductPreview';
 import fs from 'fs';
 import path from 'path';
 
@@ -47,6 +49,8 @@ function HelpArticleBody({ html }) {
     if (name === 'AssistantChatPreview') nodes.push(<AssistantChatPreview key={name + i} />);
     if (name === 'AssistantGuideChat') nodes.push(<AssistantGuideChat key={name + i} />);
     if (name === 'AssistantTrainPreview') nodes.push(<AssistantTrainPreview key={name + i} />);
+    if (name === 'ProfileHelpPreview') nodes.push(<ProfileHelpPreview key={name + i} />);
+    if (name === 'ClubHelpPreview') nodes.push(<ClubHelpPreview key={name + i} />);
   }
   return <div>{nodes}</div>;
 }
@@ -172,15 +176,21 @@ export default function HelpArticlePage({ doc, relatedDocs }) {
           {/* Header */}
           <header className="mb-12">
             {/* Breadcrumbs */}
-            <nav aria-label="Breadcrumb" className="mb-8">
-              <Breadcrumbs 
+            <div className="mb-8 flex flex-wrap items-center justify-between gap-3">
+              <Breadcrumbs
                 items={[
-                  { name: "Home", url: "/" },
+                  { name: "Home", url: MARKETING_HOME_URL },
                   { name: "Help", url: "/help" },
                   { name: doc.title, url: `/help/${doc.slug}` },
-                ]} 
+                ]}
               />
-            </nav>
+              <a
+                href={MARKETING_HOME_URL}
+                className="text-sm font-semibold text-[#8A6622] no-underline hover:underline"
+              >
+                Kahana home
+              </a>
+            </div>
 
             <div className="flex flex-col space-y-6">
               {/* Title */}

@@ -21,6 +21,8 @@ import {
   ExploreLibraryButton,
   ShareUniqueKnowledgeButton,
 } from '../components/marketing/LibraryActionButtons';
+import Breadcrumbs from '../components/Breadcrumbs';
+import { MARKETING_HOME_URL } from '../lib/marketingHome';
 
 const ICONS = {
   philomaths: AcademicCapIcon,
@@ -60,7 +62,21 @@ export default function PhilosophyPage() {
       />
 
       <div className="bg-[#F7F3EA] text-[#3B2F1A]">
-        <section className="px-6 py-20 sm:px-10 sm:py-24 lg:px-16">
+        <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-3 px-6 pt-8 sm:px-10 lg:px-16">
+          <Breadcrumbs
+            items={[
+              { name: 'Home', url: MARKETING_HOME_URL },
+              { name: 'Philosophy', url: '/philosophy' },
+            ]}
+          />
+          <a
+            href={MARKETING_HOME_URL}
+            className="text-sm font-semibold text-[#8A6622] no-underline hover:underline"
+          >
+            Kahana home
+          </a>
+        </div>
+        <section className="px-6 py-12 sm:px-10 sm:py-16 lg:px-16">
           <div className="mx-auto max-w-3xl text-center">
             <FadeInSection eager>
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#8A6622]">

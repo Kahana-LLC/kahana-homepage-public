@@ -6,7 +6,8 @@
   "category": "library",
   "tags": [
     "feature:following",
-    "persona:learners"
+    "persona:learners",
+    "persona:authors"
   ],
   "product": "kahana",
   "date": "2026-09-16",

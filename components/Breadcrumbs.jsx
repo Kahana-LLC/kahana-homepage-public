@@ -22,6 +22,13 @@ export default function Breadcrumbs({ items }) {
                 <span className="text-sm font-medium text-oasis-green-800" aria-current="page">
                   {item.name}
                 </span>
+              ) : item.url.startsWith('http') ? (
+                <a
+                  href={item.url}
+                  className="text-sm font-medium text-oasis-green-700 hover:text-oasis-green-800 no-underline"
+                >
+                  {item.name}
+                </a>
               ) : (
                 <Link
                   href={item.url}

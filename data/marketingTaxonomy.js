@@ -1102,7 +1102,7 @@ export const HELP_ARTICLE_TAXONOMY = {
   },
   explore: {
     section: 'library',
-    tags: ['feature:explore', 'persona:learners', 'persona:buyers'],
+    tags: ['feature:explore', 'persona:learners', 'persona:buyers', 'persona:authors', 'use-case:book-clubs'],
   },
   'for-you-and-taste': {
     section: 'library',
@@ -1154,7 +1154,7 @@ export const HELP_ARTICLE_TAXONOMY = {
   },
   'profile-and-sharing': {
     section: 'library',
-    tags: ['feature:profiles', 'persona:creators'],
+    tags: ['feature:profiles', 'persona:creators', 'persona:authors'],
   },
   'how-aura-works': {
     section: 'library',
@@ -1213,7 +1213,7 @@ export const HELP_ARTICLE_TAXONOMY = {
   },
   following: {
     section: 'library',
-    tags: ['feature:following', 'persona:learners'],
+    tags: ['feature:following', 'persona:learners', 'persona:authors'],
   },
   'cognition-streak': {
     section: 'library',
@@ -1333,17 +1333,19 @@ export function helpSlugsForTag(tag) {
     .map(([slug]) => slug);
 }
 
-/** Extra search terms so “sell ebook” / “book club” still hit the right articles. */
+/** Extra search terms so “sell ebook” / “book clubs” / “authors” still hit the right articles. */
 export const HELP_SEARCH_SYNONYMS = {
-  'book club': ['clubs', 'reading group', 'book-clubs'],
-  ebook: ['e-book', 'pdf', 'digital product', 'selling-ebooks', 'public-domain-ebooks'],
+  'book clubs': ['book club', 'clubs', 'reading group', 'book-clubs'],
+  'book club': ['book clubs', 'clubs', 'reading group', 'book-clubs'],
+  authors: ['author', 'writer', 'writers', 'profile', 'profiles', 'following'],
+  author: ['authors', 'writer', 'writers', 'profile', 'profiles', 'following'],
+  ebook: ['e-book', 'ebooks', 'pdf', 'digital product', 'selling-ebooks', 'public-domain-ebooks'],
   course: ['workshop', 'playbook', 'selling-courses'],
   newsletter: ['substack', 'beehiiv', 'newsletter-companion'],
   youtube: ['video', 'video-companion'],
   research: ['pdf', 'study', 'study-and-research', 'notes'],
   cohort: ['community', 'club', 'cohorts-and-communities'],
   sell: ['monetize', 'paid hub', 'earning', 'digital product'],
-  author: ['writer', 'authors'],
   coach: ['creators', 'workshop'],
   student: ['learners', 'learner'],
   trailer: ['preview', 'carousel', 'reel'],
@@ -1351,17 +1353,149 @@ export const HELP_SEARCH_SYNONYMS = {
   analytics: ['insights', 'stats', 'learning'],
   streak: ['cognition', 'habit'],
   notes: ['notepad', 'smart link'],
-  follow: ['following', 'authors'],
+  follow: ['following', 'authors', 'author'],
   paywall: ['monetize', 'subscription', 'paid'],
 };
+
+const HELP_SEARCH_STOP = new Set(['the', 'a', 'an', 'and', 'or', 'for', 'to', 'of', 'in', 'on']);
+
+function helpSearchTokens(query) {
+  return String(query || '')
+    .toLowerCase()
+    .split(/[^a-z0-9]+/)
+    .filter((token) => token.length > 1 && !HELP_SEARCH_STOP.has(token));
+}
+
+function helpSearchStem(token) {
+  if (token.endsWith('ies') && token.length > 4) return `${token.slice(0, -3)}y`;
+  if (token.endsWith('s') && !token.endsWith('ss') && token.length > 3) return token.slice(0, -1);
+  return token;
+}
 
 export function expandHelpSearchQuery(query) {
   const raw = String(query || '').trim().toLowerCase();
   if (!raw) return [];
-  const extra = Object.entries(HELP_SEARCH_SYNONYMS)
-    .filter(([key]) => raw.includes(key))
-    .flatMap(([, terms]) => terms);
-  return Array.from(new Set([raw, ...extra]));
+  const tokens = helpSearchTokens(raw);
+  const stems = tokens.map(helpSearchStem);
+  const extra = [];
+  Object.entries(HELP_SEARCH_SYNONYMS).forEach(([key, terms]) => {
+    const keyTokens = helpSearchTokens(key);
+    const phraseHit = raw.includes(key);
+    const tokenHit = keyTokens.length > 0 && keyTokens.every((part) => (
+      tokens.includes(part) || stems.includes(helpSearchStem(part))
+    ));
+    if (phraseHit || tokenHit) extra.push(...terms);
+  });
+  return Array.from(new Set([raw, ...tokens, ...stems, ...extra]));
+}
+
+export function helpDocSearchHay(doc) {
+  const tagLabels = (doc.tags || [])
+    .map((tag) => parseTaxonomyTag(tag)?.label || tag)
+    .join(' ');
+  return [
+    doc.title,
+    doc.description,
+    doc.searchText,
+    tagLabels,
+    (doc.tags || []).join(' '),
+    getHelpSectionLabel(doc.section || doc.category),
+  ]
+    .filter(Boolean)
+    .join(' ')
+    .toLowerCase();
+}
+
+const HELP_QUERY_TAG_HINTS = [
+  { test: /author|writer/, tag: 'persona:authors' },
+  { test: /book[\s-]?club/, tag: 'use-case:book-clubs' },
+];
+
+export function helpQueryTagHints(query) {
+  const raw = String(query || '').toLowerCase();
+  return HELP_QUERY_TAG_HINTS
+    .filter((hint) => hint.test.test(raw))
+    .map((hint) => hint.tag);
+}
+
+export function helpDocMatchScore(doc, query) {
+  const terms = expandHelpSearchQuery(query);
+  if (!terms.length) return 1;
+  const hay = helpDocSearchHay(doc);
+  const title = String(doc.title || '').toLowerCase();
+  const description = String(doc.description || '').toLowerCase();
+  const strong = terms.filter((term) => String(term).length >= 5);
+  let score = 0;
+  if (hay.includes(terms[0])) score += 8;
+  strong.forEach((term) => {
+    if (title.includes(term)) score += 18;
+    else if (description.includes(term)) score += 8;
+    else if (hay.includes(term)) score += 3;
+  });
+  helpQueryTagHints(query).forEach((tag) => {
+    if ((doc.tags || []).includes(tag)) score += 24;
+  });
+  return score;
+}
+
+const HELP_STARTER_SLUGS = [
+  'explore',
+  'profiles',
+  'clubs',
+  'get-started-learners',
+  'get-started-creators',
+];
+
+/**
+ * Section, topic, and search together. If that intersection is empty, widen
+ * to the closest guides so authors / book clubs never land on a blank list.
+ */
+export function selectHelpDocs(docs = [], { section = 'all', tag = '', query = '' } = {}) {
+  const list = Array.isArray(docs) ? docs : [];
+  const inSection = (doc) => {
+    if (!section || section === 'all') return true;
+    return (doc.section || doc.category) === section;
+  };
+  const scoreOf = (doc) => {
+    let score = 0;
+    if (tag) {
+      if ((doc.tags || []).includes(tag)) score += 24;
+    }
+    const queryScore = String(query || '').trim() ? helpDocMatchScore(doc, query) : 0;
+    if (String(query || '').trim()) {
+      if (queryScore <= 1 && !(tag && score)) return 0;
+      score += queryScore;
+    } else if (tag) {
+      return score;
+    } else {
+      return inSection(doc) ? 1 : 0;
+    }
+    return score;
+  };
+
+  const ranked = (pool) => pool
+    .map((doc) => ({ doc, score: scoreOf(doc) }))
+    .filter((row) => row.score > 0)
+    .sort((a, b) => b.score - a.score || String(a.doc.title).localeCompare(String(b.doc.title)));
+
+  const strictPool = list.filter(inSection);
+  const strict = ranked(strictPool);
+  if (!tag && !String(query || '').trim()) {
+    return { docs: strictPool, relaxed: false };
+  }
+  if (strict.length) {
+    return { docs: strict.map((row) => row.doc), relaxed: false };
+  }
+
+  const widened = ranked(list);
+  if (widened.length) {
+    return { docs: widened.map((row) => row.doc), relaxed: true };
+  }
+
+  const starters = HELP_STARTER_SLUGS
+    .map((slug) => list.find((doc) => doc.slug === slug))
+    .filter(Boolean);
+  return { docs: starters.length ? starters : list.slice(0, 6), relaxed: true };
 }
 
 export function personaChipLabel(persona) {
@@ -1371,18 +1505,7 @@ export function personaChipLabel(persona) {
 export function helpDocMatchesQuery(doc, query) {
   const terms = expandHelpSearchQuery(query);
   if (!terms.length) return true;
-  const tagLabels = (doc.tags || [])
-    .map((tag) => parseTaxonomyTag(tag)?.label || tag)
-    .join(' ');
-  const hay = [
-    doc.title,
-    doc.description,
-    doc.searchText,
-    tagLabels,
-    getHelpSectionLabel(doc.section || doc.category),
-  ]
-    .filter(Boolean)
-    .join(' ')
-    .toLowerCase();
-  return terms.some((term) => hay.includes(String(term).toLowerCase()));
+  return helpDocMatchScore(doc, query) > 1 || terms.some((term) => (
+    helpDocSearchHay(doc).includes(String(term).toLowerCase())
+  ));
 }

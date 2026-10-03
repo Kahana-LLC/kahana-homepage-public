@@ -2732,6 +2732,7 @@ nav .dropdown-content a.dropdown-link:focus,
 button.help-filter-trigger {
   display: inline-flex;
   align-items: center;
+  cursor: pointer;
   gap: 8px;
   min-height: 40px;
   max-width: 100%;
@@ -2799,7 +2800,9 @@ button.help-filter-trigger.is-open .help-filter-chevron {
   border: 1px solid #d4d4d4;
   border-radius: 4px;
   background: #ffffff;
-  color: #3B2F1A;
+  color: #3B2F1A !important;
+  caret-color: #3B2F1A;
+  cursor: text;
   font-size: 14px;
   line-height: 20px;
   box-shadow: none;
@@ -2842,6 +2845,7 @@ button.help-filter-trigger.is-open .help-filter-chevron {
 button.help-chip {
   display: inline-flex;
   align-items: center;
+  cursor: pointer;
   padding: 4px 10px !important;
   border: none !important;
   border-radius: 4px !important;

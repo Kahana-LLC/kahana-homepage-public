@@ -7,7 +7,9 @@
   "tags": [
     "feature:explore",
     "persona:learners",
-    "persona:buyers"
+    "persona:buyers",
+    "persona:authors",
+    "use-case:book-clubs"
   ],
   "product": "kahana",
   "date": "2026-08-14",

@@ -14,10 +14,11 @@ import { trackButtonClick } from '../../utils/analytics';
 import {
   FEATURES,
   getPersona,
-  helpDocMatchesQuery,
   parseTaxonomyTag,
   personaChipLabel,
+  selectHelpDocs,
 } from '../../data/marketingTaxonomy';
+import { MARKETING_HOME_URL } from '../../lib/marketingHome';
 
 const HELP_CONTACT_HREF = withProductUtm(`${CONTACT_URL}?source=help`, {
   campaign: 'help_contact',
@@ -101,15 +102,15 @@ export default function HelpIndex({ docs = [] }) {
     return () => window.clearTimeout(handle);
   }, [activeSection, activeTag, router, searchQuery]);
 
-  const filteredDocs = useMemo(() => {
-    return docList.filter((doc) => {
-      const section = doc.section || doc.category;
-      const matchesSection = activeSection === 'all' || section === activeSection;
-      const matchesTag = !activeTag || (doc.tags || []).includes(activeTag);
-      const matchesSearch = helpDocMatchesQuery(doc, searchQuery);
-      return matchesSection && matchesTag && matchesSearch;
-    });
-  }, [docList, activeSection, activeTag, searchQuery]);
+  const helpSelection = useMemo(
+    () => selectHelpDocs(docList, {
+      section: activeSection,
+      tag: activeTag,
+      query: searchQuery,
+    }),
+    [docList, activeSection, activeTag, searchQuery],
+  );
+  const filteredDocs = helpSelection.docs;
 
   useEffect(() => {
     setCurrentPage(1);
@@ -169,13 +170,19 @@ export default function HelpIndex({ docs = [] }) {
 
       <div className="min-h-screen bg-[#F7F3EA]">
         <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="mb-8">
+          <div className="mb-8 flex flex-wrap items-center justify-between gap-3">
             <Breadcrumbs
               items={[
-                { name: "Home", url: "/" },
+                { name: "Home", url: MARKETING_HOME_URL },
                 { name: "Help", url: "/help" },
               ]}
             />
+            <a
+              href={MARKETING_HOME_URL}
+              className="text-sm font-semibold text-[#8A6622] no-underline hover:underline"
+            >
+              Kahana home
+            </a>
           </div>
 
           <div className="text-center mb-10">
@@ -274,6 +281,9 @@ export default function HelpIndex({ docs = [] }) {
           {filteredDocs.length > 0 ? (
             <>
               <p className="text-sm text-oasis-green-800/90 mb-4 text-center sm:text-left">
+                {helpSelection.relaxed
+                  ? 'Closest guides for that search. '
+                  : null}
                 Showing {startIndex + 1}–{Math.min(startIndex + DOCS_PER_PAGE, filteredDocs.length)} of{' '}
                 {filteredDocs.length} article{filteredDocs.length === 1 ? '' : 's'}
                 {hasFilters ? (
@@ -351,26 +361,7 @@ export default function HelpIndex({ docs = [] }) {
                 </nav>
               )}
             </>
-          ) : (
-            <div className="text-center py-12">
-              <h3 className="text-lg font-medium text-oasis-green-900 mb-2">No help articles found</h3>
-              <p className="text-oasis-green-800">
-                Try a different search, or{' '}
-                <button
-                  type="button"
-                  className="help-clear-filters"
-                  onClick={() => {
-                    setActiveSection('all');
-                    setActiveTag('');
-                    setSearchQuery('');
-                  }}
-                >
-                  clear filters
-                </button>
-                .
-              </p>
-            </div>
-          )}
+          ) : null}
             </>
           )}
         </main>
