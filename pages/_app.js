@@ -356,7 +356,7 @@ function AppContent({ Component, pageProps }) {
               : ''
           }`}
         >
-          <Component key={router.asPath} {...pageProps} />
+          <Component key={(router.asPath || "/").split("?")[0].split("#")[0]} {...pageProps} />
         </main>
         {!isLinktreePage ? <Footer /> : null}
         {!isLinktreePage ? <AffiliateNudge /> : null}

@@ -38,6 +38,7 @@ export default function HelpFilterBar({
   onTagChange,
   searchQuery = '',
   onSearchChange,
+  searchInputRef,
 }) {
   const [openMenu, setOpenMenu] = useState(null);
   const wrapRef = useRef(null);
@@ -128,11 +129,20 @@ export default function HelpFilterBar({
             />
           </svg>
           <input
-            type="search"
+            ref={searchInputRef}
+            type="text"
+            inputMode="search"
+            enterKeyHint="search"
+            role="searchbox"
+            aria-label="Search help"
+            autoComplete="off"
             placeholder="Search help"
             value={searchQuery}
             onChange={(event) => onSearchChange?.(event.target.value)}
             onFocus={() => setOpenMenu(null)}
+            onKeyDown={(event) => {
+              if (event.key === 'Enter') event.preventDefault();
+            }}
           />
         </label>
       </div>

@@ -85,6 +85,7 @@ export const mobileNavSections = [
       { label: 'Philosophy', href: '/philosophy' },
       { label: 'Manifesto', href: '/manifesto' },
       { label: 'Value exchange', href: '/value-exchange' },
+      { label: 'Historical creator earnings', href: '/company-stats' },
       { label: 'Help', href: '/help' },
       { label: 'Partnerships', href: PARTNERSHIP_CONTACT_URL, external: true },
       { label: 'Integrations', href: INTEGRATION_CONTACT_URL, external: true },

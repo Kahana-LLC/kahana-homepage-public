@@ -37,6 +37,7 @@ const staticSitemapSections = [
       { text: 'Our mission', href: '/why-the-aura-library-matters' },
       { text: 'Kahana philosophy', href: '/philosophy' },
       { text: 'Value exchange', href: '/value-exchange' },
+      { text: 'Historical creator earnings', href: '/company-stats' },
       { text: 'Benefits for creators', href: '/creator-benefits' },
       { text: 'Benefits for learners', href: '/learner-benefits' },
       { text: 'Content Safety Protocols', href: '/creator-safety' },

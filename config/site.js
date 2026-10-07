@@ -62,6 +62,7 @@ function absoluteCorporateUrl(path = '/') {
     '/why-the-aura-library-matters',
     '/philosophy',
     '/value-exchange',
+    '/company-stats',
     '/success-stories',
     '/compare',
     '/creators',

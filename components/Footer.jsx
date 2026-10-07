@@ -29,6 +29,7 @@ import {
   TagIcon,
   TicketIcon,
   ArrowsRightLeftIcon,
+  ChartBarIcon,
   AcademicCapIcon,
   UserGroupIcon,
   BanknotesIcon,
@@ -93,6 +94,7 @@ const COMPANY_LINKS = [
   { href: '/philosophy', label: 'Philosophy', icon: LightBulbIcon },
   { href: '/manifesto', label: 'Manifesto', icon: DocumentTextIcon },
   { href: '/value-exchange', label: 'Value exchange', icon: ArrowsRightLeftIcon },
+  { href: '/company-stats', label: 'Historical creator earnings', icon: ChartBarIcon },
   {
     href: '/climate-commitment',
     labelKey: 'footer.climate',

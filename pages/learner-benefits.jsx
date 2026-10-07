@@ -116,7 +116,7 @@ const LEARNERS_HUB_LINKS = [
   {
     href: '/features/analytics',
     title: 'Learning analytics',
-    body: 'Private time and streak on the Learning tab. Author analytics is separate if you also create.',
+    body: 'Private time and streak on the Learning tab. Creator analytics is separate if you also create.',
     Icon: ChartBarIcon,
     track: 'learner_benefits_analytics_feature',
   },

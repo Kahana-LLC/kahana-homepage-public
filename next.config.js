@@ -493,6 +493,11 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/in-numbers',
+        destination: '/company-stats',
+        permanent: true,
+      },
+      {
         source: '/help/library',
         destination: '/help/explore',
         permanent: true,

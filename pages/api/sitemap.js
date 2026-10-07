@@ -70,6 +70,7 @@ function generateSiteMap() {
     ['/why-the-aura-library-matters', 'weekly', '0.8'],
     ['/philosophy', 'weekly', '0.8'],
     ['/value-exchange', 'weekly', '0.8'],
+    ['/company-stats', 'weekly', '0.8'],
     ['/creator-benefits', 'weekly', '0.7'],
     ['/learner-benefits', 'weekly', '0.7'],
     ['/creator-safety', 'weekly', '0.7'],

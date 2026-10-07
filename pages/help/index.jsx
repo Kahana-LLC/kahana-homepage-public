@@ -53,24 +53,44 @@ export default function HelpIndex({ docs = [] }) {
   const [currentPage, setCurrentPage] = useState(1);
   const didInitQuery = useRef(false);
   const skipNextQueryWrite = useRef(true);
+  const allowUrlClear = useRef(false);
+  const searchInputRef = useRef(null);
+  const routerRef = useRef(router);
+  routerRef.current = router;
+
+  const handleSearchChange = (value) => {
+    allowUrlClear.current = true;
+    setSearchQuery(value);
+  };
 
   const docList = Array.isArray(docs) ? docs : [];
   const parsedTag = parseTaxonomyTag(activeTag);
   const selectedPersona = parsedTag?.kind === 'persona' ? getPersona(parsedTag.slug) : null;
 
   useEffect(() => {
-    if (!router.isReady || didInitQuery.current) return;
-    didInitQuery.current = true;
-    skipNextQueryWrite.current = true;
+    if (!router.isReady) return;
     const { q, section } = router.query;
-    if (typeof q === 'string') setSearchQuery(q);
-    if (typeof section === 'string' && section) setActiveSection(section);
+    const nextQuery = typeof q === 'string' ? q : '';
+    const nextSection = typeof section === 'string' && section ? section : 'all';
     const nextTag = tagFromQuery(router.query);
-    if (nextTag) setActiveTag(nextTag);
+    if (!didInitQuery.current) {
+      didInitQuery.current = true;
+      skipNextQueryWrite.current = true;
+      if (nextQuery) setSearchQuery(nextQuery);
+      if (nextSection !== 'all') setActiveSection(nextSection);
+      if (nextTag) setActiveTag(nextTag);
+      return;
+    }
+    const input = searchInputRef.current;
+    if (input && document.activeElement === input) return;
+    setSearchQuery((current) => (current === nextQuery ? current : nextQuery));
+    setActiveSection((current) => (current === nextSection ? current : nextSection));
+    setActiveTag((current) => (current === nextTag ? current : nextTag));
   }, [router.isReady, router.query]);
 
   useEffect(() => {
-    if (!didInitQuery.current || !router.isReady) return undefined;
+    const liveRouter = routerRef.current;
+    if (!didInitQuery.current || !liveRouter.isReady) return undefined;
     if (skipNextQueryWrite.current) {
       skipNextQueryWrite.current = false;
       return undefined;
@@ -83,12 +103,13 @@ export default function HelpIndex({ docs = [] }) {
       if (nextTag?.kind === 'persona') query.for = nextTag.slug;
       if (nextTag?.kind === 'use-case') query.use = nextTag.slug;
       if (nextTag?.kind === 'feature') query.feature = nextTag.slug;
+      const routeQuery = routerRef.current.query;
       const current = {
-        q: typeof router.query.q === 'string' ? router.query.q : undefined,
-        section: typeof router.query.section === 'string' ? router.query.section : undefined,
-        for: typeof router.query.for === 'string' ? router.query.for : undefined,
-        use: typeof router.query.use === 'string' ? router.query.use : undefined,
-        feature: typeof router.query.feature === 'string' ? router.query.feature : undefined,
+        q: typeof routeQuery.q === 'string' ? routeQuery.q : undefined,
+        section: typeof routeQuery.section === 'string' ? routeQuery.section : undefined,
+        for: typeof routeQuery.for === 'string' ? routeQuery.for : undefined,
+        use: typeof routeQuery.use === 'string' ? routeQuery.use : undefined,
+        feature: typeof routeQuery.feature === 'string' ? routeQuery.feature : undefined,
       };
       const same =
         current.q === query.q &&
@@ -97,10 +118,25 @@ export default function HelpIndex({ docs = [] }) {
         current.use === query.use &&
         current.feature === query.feature;
       if (same) return;
-      router.replace({ pathname: '/help', query }, undefined, { shallow: true });
+      if (!query.q && current.q && !allowUrlClear.current) return;
+      const input = searchInputRef.current;
+      const hadFocus = Boolean(input && document.activeElement === input);
+      const caret = hadFocus ? input.selectionStart : null;
+      routerRef.current.replace({ pathname: '/help', query }, undefined, {
+        shallow: true,
+        scroll: false,
+      }).finally(() => {
+        const node = searchInputRef.current;
+        if (!hadFocus || !node) return;
+        node.focus({ preventScroll: true });
+        if (typeof caret === 'number') {
+          const pos = Math.min(caret, node.value.length);
+          node.setSelectionRange(pos, pos);
+        }
+      });
     }, searchQuery ? 350 : 0);
     return () => window.clearTimeout(handle);
-  }, [activeSection, activeTag, router, searchQuery]);
+  }, [activeSection, activeTag, searchQuery]);
 
   const helpSelection = useMemo(
     () => selectHelpDocs(docList, {
@@ -241,7 +277,8 @@ export default function HelpIndex({ docs = [] }) {
             tag={activeTag}
             onTagChange={setActiveTag}
             searchQuery={searchQuery}
-            onSearchChange={setSearchQuery}
+            onSearchChange={handleSearchChange}
+            searchInputRef={searchInputRef}
           />
 
           {selectedPersona ? (
@@ -293,6 +330,7 @@ export default function HelpIndex({ docs = [] }) {
                       type="button"
                       className="help-clear-filters"
                       onClick={() => {
+                        allowUrlClear.current = true;
                         setActiveSection('all');
                         setActiveTag('');
                         setSearchQuery('');
