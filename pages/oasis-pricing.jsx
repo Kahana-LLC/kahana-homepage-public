@@ -8,6 +8,44 @@ import OasisPlatformLogos from '../components/OasisPlatformLogos';
 import { getCloudinaryImageUrl } from '../utils/cloudinary-mapper';
 
 const BILLING_PORTAL_URL = 'https://billing.stripe.com/p/login/bIYg16d6l3FqelieUU';
+const RETURN_POLICY_URL = 'https://kahana.io/terms-and-conditions#no-refunds';
+
+/** Digital plans: no package, immediate access, fees non-refundable (Terms §4.7). */
+const digitalOfferCommerce = {
+  hasMerchantReturnPolicy: {
+    '@type': 'MerchantReturnPolicy',
+    applicableCountry: 'US',
+    returnPolicyCategory: 'https://schema.org/MerchantReturnNotPermitted',
+    merchantReturnLink: RETURN_POLICY_URL,
+  },
+  shippingDetails: {
+    '@type': 'OfferShippingDetails',
+    shippingRate: {
+      '@type': 'MonetaryAmount',
+      value: 0,
+      currency: 'USD',
+    },
+    shippingDestination: {
+      '@type': 'DefinedRegion',
+      addressCountry: 'US',
+    },
+    deliveryTime: {
+      '@type': 'ShippingDeliveryTime',
+      handlingTime: {
+        '@type': 'QuantitativeValue',
+        minValue: 0,
+        maxValue: 0,
+        unitCode: 'DAY',
+      },
+      transitTime: {
+        '@type': 'QuantitativeValue',
+        minValue: 0,
+        maxValue: 0,
+        unitCode: 'DAY',
+      },
+    },
+  },
+};
 
 const pricingTiers = [
   {
@@ -139,14 +177,16 @@ export default function OasisPricing() {
         name: 'Free',
         price: '0',
         priceCurrency: 'USD',
-        availability: 'https://schema.org/InStock'
+        availability: 'https://schema.org/InStock',
+        ...digitalOfferCommerce,
       },
       {
         '@type': 'Offer',
         name: 'Zen',
         price: '20',
         priceCurrency: 'USD',
-        availability: 'https://schema.org/InStock'
+        availability: 'https://schema.org/InStock',
+        ...digitalOfferCommerce,
       },
       {
         '@type': 'Offer',
@@ -154,7 +194,8 @@ export default function OasisPricing() {
         description: 'Custom pricing. Contact us for a quote.',
         priceCurrency: 'USD',
         url: 'https://kahana.io/contact',
-        availability: 'https://schema.org/InStock'
+        availability: 'https://schema.org/InStock',
+        ...digitalOfferCommerce,
       }
     ]
   };
@@ -207,6 +248,7 @@ export default function OasisPricing() {
             <Link href="/privacy-policy" className="text-[#8A6622] no-underline hover:no-underline font-semibold">
               Privacy Policy
             </Link>
+            . Plans are delivered online. There is no shipping. Fees are final and non-refundable except where law requires otherwise.
           </p>
         </div>
       </section>

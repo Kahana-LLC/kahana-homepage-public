@@ -62,6 +62,7 @@ const PROTOCOLS = [
     lead: 'Listed hubs default to noai / noimageai signals. You choose if AI indexing is allowed.',
     body: 'When AI indexing is off, hub pages advertise noai and noimageai to reputable crawlers. Search indexing for Library-listed non-adult hubs is separate: you can be findable in search without opting into AI training scrapes. Opting in is an explicit setting with acknowledgment. These are signals, not a guarantee against every bot on the internet.',
     links: [
+      { href: '/ai-content-safety', label: 'AI indexing and scraping' },
       { href: '/help/list-hub-on-explore', label: 'Listing readiness' },
       { href: '/blog/against-ai-slop', label: 'Not a home for AI slop' },
     ],
@@ -114,6 +115,7 @@ const PROTOCOLS = [
 ];
 
 const RELATED = [
+  { kind: 'AI', title: 'AI indexing and content safety', href: '/ai-content-safety' },
   { kind: 'Benefits', title: 'Benefits for creators', href: '/creator-benefits' },
   { kind: 'Product', title: 'Suggestion engine', href: '/suggestion-engine' },
   { kind: 'Partnerships', title: 'Partnerships', href: PARTNERSHIP_CONTACT_URL, external: true },

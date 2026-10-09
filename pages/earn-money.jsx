@@ -4,12 +4,15 @@ import {
   FolderPlusIcon,
   LockClosedIcon,
   MagnifyingGlassIcon,
+  UserPlusIcon,
   WrenchScrewdriverIcon,
 } from '@heroicons/react/24/outline';
+import { CheckCircleIcon } from '@heroicons/react/24/solid';
 import SEO from '../components/SEO';
 import FaqAccordion from '../components/faq/FaqAccordion';
 import FadeInSection from '../components/FadeInSection';
 import ExplainerRelatedLinks from '../components/home/platform/ExplainerRelatedLinks';
+import AffiliateEarningsMock from '../components/marketing/AffiliateEarningsMock';
 import { APP_URL, EXPLORE_URL } from '../components/nav/navConfig';
 import { productHref } from '../lib/productLinks';
 import { ABOUT_ORIGIN } from '../config/site';
@@ -36,6 +39,12 @@ const EARN_FAQS = [
     answer:
       'Kahana takes 5% of paid hub access. Card processing is separate. You can sell on the Free plan. Growth raises hub, file, and storage limits. It is not required to charge.',
   },
+  {
+    id: 'earn-hub-affiliates',
+    question: 'Can other people earn when they share my hub?',
+    answer:
+      'Yes. My affiliates lets you give community members a link to a priced hub. They earn a percent of what you keep after fees. Drafts on Free; live links need Growth and a price. That is separate from the Earn signup program.',
+  },
 ];
 
 const FRICTION = [
@@ -60,12 +69,33 @@ const RELATED = [
   { kind: 'Feature', title: 'Paid access', href: '/features/earning' },
   { kind: 'Feature', title: 'Analytics', href: '/features/analytics' },
   { kind: 'Feature', title: 'Hubs', href: '/features/hubs' },
+  { kind: 'Affiliates', title: 'My affiliates', href: '/hub-affiliates' },
+  { kind: 'Program', title: 'Become an affiliate', href: '/affiliates' },
   { kind: 'Pricing', title: 'Plans', href: '/pricing' },
   { kind: 'Help', title: 'Optional earning', href: '/help/earning' },
   { kind: 'Help', title: 'Turn on paid access', href: '/help/turn-on-paid-access' },
-  { kind: 'Help', title: 'Turn on paid access', href: '/help/turn-on-paid-access' },
+  { kind: 'Help', title: 'Hub affiliate links', href: '/help/hub-affiliate-links' },
   { kind: 'Help', title: 'When to upgrade', href: '/help/when-to-upgrade' },
   { kind: 'Help', title: 'Creator analytics', href: '/help/creator-analytics' },
+];
+
+const HUB_AFFILIATE_POINTS = [
+  {
+    title: 'Your price, their share',
+    body: 'Affiliates earn a percent of what is left after Kahana and Stripe fees, not a cut of the sticker price.',
+  },
+  {
+    title: 'Open, or approval required',
+    body: 'Anyone with a Kahana account can use an open link. Approval-required links stay pending until you say yes.',
+  },
+  {
+    title: 'Drafts on Free, live on Growth',
+    body: 'Save a link on Free. It pays only after you are on Growth and the hub has a price.',
+  },
+  {
+    title: 'Watch the campaign',
+    body: 'Filter all links or one hub. Switch today, this month, and all time. Earnings or views.',
+  },
 ];
 
 export default function EarnMoneyPage() {
@@ -214,6 +244,78 @@ export default function EarnMoneyPage() {
                   onClick={() => trackButtonClick('earn_money_affiliate')}
                 >
                   Open affiliate Earn
+                </a>
+              </p>
+            </FadeInSection>
+          </div>
+        </section>
+
+        <section
+          id="hub-affiliates"
+          className="border-t border-[#E4D9C4] px-6 pb-16 pt-16 sm:px-10 lg:px-16"
+        >
+          <div className="mx-auto max-w-5xl">
+            <FadeInSection>
+              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#EDE6D2] text-[#5C4520]">
+                <UserPlusIcon className="h-5 w-5" aria-hidden />
+              </span>
+              <h2 className="mt-4 text-2xl font-semibold sm:text-3xl">
+                Affiliates for hubs you sell
+              </h2>
+              <p className="mt-3 max-w-2xl text-lg leading-relaxed text-[#666666]">
+                My affiliates is for your own priced hubs. Let your community share a link and earn
+                a percentage. Separate from the Earn signup program above.
+              </p>
+            </FadeInSection>
+            <FadeInSection>
+              <div className="mt-10">
+                <AffiliateEarningsMock />
+              </div>
+            </FadeInSection>
+            <ul className="mt-10 grid gap-3 sm:grid-cols-2">
+              {HUB_AFFILIATE_POINTS.map((item) => (
+                <li key={item.title}>
+                  <FadeInSection>
+                    <article className="flex h-full gap-3 rounded-[20px] bg-white px-4 py-5 sm:gap-4 sm:px-5">
+                      <CheckCircleIcon
+                        className="mt-0.5 h-6 w-6 shrink-0 text-[#8A6622]"
+                        aria-hidden
+                      />
+                      <div className="min-w-0">
+                        <h3 className="font-bricolage text-lg font-semibold tracking-tight text-[#3B2F1A]">
+                          {item.title}
+                        </h3>
+                        <p className="mt-1.5 text-sm leading-relaxed text-[#666666]">{item.body}</p>
+                      </div>
+                    </article>
+                  </FadeInSection>
+                </li>
+              ))}
+            </ul>
+            <FadeInSection>
+              <p className="mt-8 flex flex-wrap gap-x-4 gap-y-2 text-sm font-semibold">
+                <Link
+                  href="/hub-affiliates"
+                  className="text-[#8A6622] underline underline-offset-2"
+                  onClick={() => trackButtonClick('earn_money_hub_affiliates')}
+                >
+                  My affiliates page
+                </Link>
+                <Link
+                  href="/help/hub-affiliate-links"
+                  className="text-[#8A6622] underline underline-offset-2"
+                  onClick={() => trackButtonClick('earn_money_hub_affiliates_help')}
+                >
+                  How hub affiliate links work
+                </Link>
+                <a
+                  href={productHref('/my-affiliates', 'earn_money_my_affiliates')}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#8A6622] underline underline-offset-2"
+                  onClick={() => trackButtonClick('earn_money_open_my_affiliates')}
+                >
+                  Open My affiliates
                 </a>
               </p>
             </FadeInSection>

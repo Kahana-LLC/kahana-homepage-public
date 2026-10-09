@@ -16,6 +16,7 @@ const FREE_FEATURES = [
   { text: 'Files up to 5 MB', included: 'muted' },
   { text: '5% transaction fee', included: 'muted' },
   { text: 'Custom hub and profile URLs', included: false },
+  { text: 'Affiliate links for your hubs', included: false },
 ];
 
 const GROWTH_FEATURES = [
@@ -25,6 +26,7 @@ const GROWTH_FEATURES = [
   { text: 'Files up to 5 GB', included: true },
   { text: '3% transaction fee', included: true },
   { text: 'Custom hub and profile URLs', included: true },
+  { text: 'Affiliate links for your hubs', included: true },
 ];
 
 const comparisonGroups = [
@@ -35,6 +37,12 @@ const comparisonGroups = [
       { feature: 'Hubs you can create', free: '3 hubs', growth: 'Unlimited' },
       { feature: 'Custom hub link', free: 'Not included', growth: 'Included' },
       { feature: 'Custom profile link', free: 'Not included', growth: 'Included' },
+      {
+        feature: 'Affiliate links for your hubs',
+        hint: 'Let others earn a share when they send a buyer to a hub you price.',
+        free: 'Not included',
+        growth: 'Included',
+      },
       {
         feature: 'Counted uploads per hub',
         hint: 'Notes, links, and many embeds do not count toward this cap.',

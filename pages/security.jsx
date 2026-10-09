@@ -10,6 +10,7 @@ const tocStructure = [
   { id: 'how-we-think', label: 'How we think about security' },
   { id: 'accounts-access', label: 'Accounts & access' },
   { id: 'hubs-visibility', label: 'Hubs & visibility' },
+  { id: 'ai-indexing', label: 'AI indexing' },
   { id: 'adult-age', label: 'Adult content & age' },
   { id: 'payments', label: 'Payments' },
   { id: 'infrastructure', label: 'Infrastructure' },
@@ -140,6 +141,20 @@ export default function Security() {
                 </li>
                 <li>Private collaboration is by invite, not open to the internet.</li>
               </ul>
+            </section>
+
+            <section id="ai-indexing" className="mb-14 scroll-mt-8">
+              <h2 className="mb-4 text-3xl font-bold text-[#3B2F1A]">AI indexing</h2>
+              <p className="mb-3 leading-relaxed text-gray-700">
+                Listed hubs default to <code>noai</code> / <code>noimageai</code>. Creators opt in
+                from Hub settings → Policies → AI indexing if they want AI tools to find the hub.
+                Search listing and AI crawl are separate.
+              </p>
+              <p className="text-gray-700">
+                <Link href="/ai-content-safety" className={linkClass}>
+                  AI indexing and content safety
+                </Link>
+              </p>
             </section>
 
             <section id="adult-age" className="mb-14 scroll-mt-8">

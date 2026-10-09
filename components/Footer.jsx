@@ -72,6 +72,7 @@ const PRODUCT_LINKS = [
   { href: '/learner-benefits', label: 'Benefits for learners', icon: AcademicCapIcon },
   { href: '/creators', labelKey: 'footer.creators', icon: UserGroupIcon },
   { href: '/creator-benefits', label: 'Benefits for creators', icon: UserGroupIcon },
+  { href: '/ai-content-safety', label: 'AI indexing & content safety', icon: ShieldCheckIcon },
   { href: '/app-waitlist', labelKey: 'footer.appWaitlist', icon: DevicePhoneMobileIcon },
 ];
 
@@ -124,6 +125,7 @@ const RESOURCE_LINKS = [
   { href: '/do-well', label: 'What to post', icon: AcademicCapIcon },
   { href: '/podcast-guest', label: 'Podcast guest', icon: MicrophoneIcon },
   { href: '/affiliates', label: 'Become an affiliate', icon: BanknotesIcon },
+  { href: '/hub-affiliates', label: 'My affiliates', icon: UserPlusIcon },
 ];
 
 const SECTION_ICONS = {

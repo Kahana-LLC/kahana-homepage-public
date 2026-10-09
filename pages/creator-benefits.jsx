@@ -181,6 +181,13 @@ const CREATORS_HUB_LINKS = [
     badgeLabel: 'Earn 30%',
   },
   {
+    href: '/hub-affiliates',
+    title: 'My affiliates',
+    body: 'Let your community share a priced hub and earn a percentage. Same campaign chart as in the app.',
+    Icon: UserPlusIcon,
+    track: 'creator_benefits_hub_affiliates_card',
+  },
+  {
     href: PARTNERSHIP_CONTACT_URL,
     title: 'Partnerships',
     body: 'Brand deals, co-marketing, and creator partnerships. Reach out and tell us what you have in mind.',
@@ -897,6 +904,13 @@ export default function CreatorBenefitsPage() {
 
             <FadeInSection>
               <p className="mt-8 flex flex-wrap gap-x-4 gap-y-2 text-sm font-semibold">
+                <Link
+                  href="/hub-affiliates"
+                  className="text-[#8A6622] underline underline-offset-2"
+                  onClick={() => trackButtonClick('creator_benefits_hub_affiliates_page')}
+                >
+                  My affiliates page
+                </Link>
                 <Link
                   href="/help/hub-affiliate-links"
                   className="text-[#8A6622] underline underline-offset-2"

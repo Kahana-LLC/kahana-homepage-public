@@ -163,6 +163,10 @@ export default function AffiliatesPage() {
                 <Link href="/earn-money" className="text-[#8A6622] underline underline-offset-2">
                   earn money
                 </Link>
+                . To let other people share <em>your</em> paid hubs, see{' '}
+                <Link href="/hub-affiliates" className="text-[#8A6622] underline underline-offset-2">
+                  My affiliates
+                </Link>
                 .
               </p>
             </FadeInSection>

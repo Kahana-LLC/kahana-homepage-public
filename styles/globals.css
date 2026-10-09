@@ -308,6 +308,49 @@ input[type="button"] {
   transition: background 0.2s;
 }
 
+/* AI indexing mock on /ai-content-safety — beat global olive fill */
+button.ai-indexing-tile {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 8px !important;
+  min-height: 132px !important;
+  padding: 16px !important;
+  text-align: left !important;
+  font-weight: 400 !important;
+  background-color: #ffffff !important;
+  color: #3b2f1a !important;
+  border: 1px solid #e4d9c4 !important;
+  border-radius: 12px !important;
+  box-shadow: none !important;
+}
+button.ai-indexing-tile:hover {
+  background-color: #f7f3ea !important;
+  border-color: #c4a574 !important;
+  color: #3b2f1a !important;
+}
+button.ai-indexing-tile--on {
+  background-color: #f7f3ea !important;
+  border: 2px solid #5c4520 !important;
+  box-shadow: 0 0 0 1px #c4a574 !important;
+  color: #3b2f1a !important;
+}
+
+.ai-robots-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 6px;
+  border: 1px solid #e4d9c4;
+  background: #ffffff;
+  color: #3b2f1a;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1.4;
+}
+
 /* Compare Creators / Learners: beat global olive fill */
 button.compare-audience-btn {
   display: inline-flex !important;

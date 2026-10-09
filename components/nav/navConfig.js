@@ -61,7 +61,9 @@ export const mobileNavSections = [
         external: true,
       },
       { label: 'Become an affiliate', href: '/affiliates' },
+      { label: 'My affiliates', href: '/hub-affiliates' },
       { label: 'Content safety', href: '/creator-safety' },
+      { label: 'AI indexing & scraping', href: '/ai-content-safety' },
     ],
   },
   {

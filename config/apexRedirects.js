@@ -79,6 +79,7 @@ function pathPreservePrefixes(origins) {
     { prefix: '/gain-exposure', origin: origins.about },
     { prefix: '/help-others-learn', origin: origins.about },
     { prefix: '/earn-money', origin: origins.about },
+    { prefix: '/hub-affiliates', origin: origins.about },
     { prefix: '/affiliates', origin: origins.about },
     // Legacy; about next.config 301s /collabs → product contact?source=partnerships
     { prefix: '/collabs', origin: origins.about },
@@ -89,6 +90,7 @@ function pathPreservePrefixes(origins) {
     { prefix: '/creator-benefits', origin: origins.about },
     { prefix: '/learner-benefits', origin: origins.about },
     { prefix: '/creator-safety', origin: origins.about },
+    { prefix: '/ai-content-safety', origin: origins.about },
     { prefix: '/suggestion-engine', origin: origins.about },
     { prefix: '/do-well', origin: origins.about },
     { prefix: '/why-the-aura-library-matters', origin: origins.about },

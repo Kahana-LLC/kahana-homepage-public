@@ -8,7 +8,6 @@ import {
   ArrowTrendingUpIcon,
   ArrowsRightLeftIcon,
   BanknotesIcon,
-  BookOpenIcon,
   ChartBarIcon,
   ChatBubbleLeftRightIcon,
   CurrencyDollarIcon,
@@ -274,8 +273,8 @@ export default function PlatformHome() {
       {
         title: t('home.creatorHelpTitle'),
         body: t('home.creatorHelpBody'),
-        Icon: BookOpenIcon,
-        learnMoreHref: '/help-others-learn',
+        Icon: ShieldCheckIcon,
+        learnMoreHref: '/creator-safety',
         learnMoreLabel: t('home.creatorHelpLearnMore'),
       },
       {
