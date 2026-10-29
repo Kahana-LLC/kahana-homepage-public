@@ -20,7 +20,7 @@ export default function ExploreFeaturePage() {
     <>
       <SEO
         title="Library | Kahana"
-        description="Search and browse public hubs, authors, and clubs. A library of heady ebooks, videos, and knowledge, not a feed. Explore the Library."
+        description="Search and browse public hubs, authors, and communities. A library of heady ebooks, videos, and knowledge, not a feed. Explore the Library."
         url={CANONICAL}
         type="website"
       />
@@ -66,7 +66,7 @@ export default function ExploreFeaturePage() {
               <h2 className="text-2xl font-semibold sm:text-3xl">Search, filter, arrive</h2>
               <p className="mt-4 text-lg leading-relaxed text-[#666666]">
                 Search hubs, creators, and files. Filter by category, free or paid, price, and tags.
-                Creators and Clubs tabs sit next to hubs. For You personalizes from Aura, saves,
+                Creators and Communities tabs sit next to hubs. For You personalizes from Aura, saves,
                 follows, and taste.
               </p>
               <div className="mt-8 overflow-hidden rounded-[20px] border border-[#E4D9C4] bg-white">
@@ -75,7 +75,7 @@ export default function ExploreFeaturePage() {
                   <p className="text-sm text-[#5C4520]">Search the Library…</p>
                 </div>
                 <div className="flex flex-wrap gap-2 border-b border-[#E4D9C4] px-5 py-3">
-                  {['Hubs', 'Creators', 'Clubs', 'Free', 'Paid'].map((tab) => (
+                  {['Hubs', 'Creators', 'Communities', 'Free', 'Paid'].map((tab) => (
                     <span
                       key={tab}
                       className="rounded-full bg-[#F7F3EA] px-3 py-1 text-xs font-semibold text-[#5C4520]"
@@ -152,7 +152,7 @@ export default function ExploreFeaturePage() {
 
         <DarkLibraryCta
           title="Open the catalog"
-          description="Browse public hubs, authors, and clubs. Arrive somewhere worth staying."
+          description="Browse public hubs, authors, and communities. Arrive somewhere worth staying."
           libraryCampaign="feature_explore_library"
           createCampaign="feature_explore_create"
           libraryTrack="feature_explore_library"

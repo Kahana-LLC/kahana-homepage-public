@@ -35,7 +35,7 @@ export const PHILOSOPHY_PILLARS = [
     tone: 'vision',
     expand: [
       'Quality has to be visible. Aura is the scarce signal that says this hub or file was worth attention. It helps careful work rise and keeps low-effort filler from winning by volume alone.',
-      'Discussion belongs next to the work. Hub and file discussions (and clubs when a group needs a room) are how dialectic happens on Kahana: conversation toward the truth, not another empty feed.',
+      'Discussion belongs next to the work. Hub and file discussions (and communities when a group needs a room) are how dialectic happens on Kahana: conversation toward the truth, not another empty feed.',
       'Trust is communal. You endorse what helped you. Others see who gave Aura. The library gets a public record of what people found worthy.',
     ],
   },

@@ -232,7 +232,7 @@ export default function AssistantGuideChat() {
         <div className="border-t border-[#E4D9C4]/60 px-4 py-3">
           <div className="flex items-center gap-2 rounded-full border border-[#E4D9C4] bg-[#F7F3EA] px-3 py-2">
             <p className="min-w-0 flex-1 truncate text-xs text-[#8A9378]">
-              Message Kahana — @ for hubs, clubs &amp; files
+              Message Kahana — @ for hubs, communities &amp; files
             </p>
           </div>
           <p className="mt-2 text-center text-[10px] text-[#8A9378]">Illustrative demo. Not a live chat.</p>

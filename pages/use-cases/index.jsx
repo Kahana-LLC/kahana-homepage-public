@@ -14,7 +14,7 @@ export default function UseCasesIndexPage() {
     <>
       <SEO
         title="Use cases | Kahana"
-        description="Looking to learn? Looking to create? Browse Kahana use cases and find ways to get more out of hubs, clubs, and Library."
+        description="Looking to learn? Looking to create? Browse Kahana use cases and find ways to get more out of hubs, communities, and Library."
         url={CANONICAL}
         type="website"
       />

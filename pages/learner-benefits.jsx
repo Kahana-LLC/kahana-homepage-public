@@ -130,7 +130,7 @@ const LEARNERS_HUB_LINKS = [
   {
     href: '/features?for=learner',
     title: 'Features for learners',
-    body: 'Explore, Saved, For You, clubs, discussions, and the rest of the learner toolkit.',
+    body: 'Explore, Saved, For You, communities, discussions, and the rest of the learner toolkit.',
     Icon: Squares2X2Icon,
     track: 'learner_benefits_features',
   },

@@ -105,7 +105,7 @@ const comparisonGroups = [
     rows: [
       { feature: 'Public profile and follows', ...INCLUDED },
       { feature: 'Messages', ...INCLUDED },
-      { feature: 'Create and join Clubs', ...INCLUDED },
+      { feature: 'Create and join Communities', ...INCLUDED },
       { feature: 'Stripe Identity verified badge', ...INCLUDED },
       { feature: 'Adult flags, age checks, and reports', ...INCLUDED },
       { feature: 'Web app on desktop and mobile browsers', ...INCLUDED },

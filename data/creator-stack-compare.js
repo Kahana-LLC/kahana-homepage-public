@@ -41,7 +41,7 @@ export const CREATOR_STACK_LINES = [
   {
     id: 'community',
     emoji: '🔒',
-    title: 'Creator community and clubs',
+    title: 'Creator community and communities',
     replaces: ['Skool', 'Circle', 'Nas.io'],
     priceUsd: 99,
   },

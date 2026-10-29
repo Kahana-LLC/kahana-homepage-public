@@ -67,7 +67,7 @@ We later learned that kahana can mean turning point in ancient Hawaiian, and tha
 
 ### Is Kahana the same as Kahana Bay, Hawaii, or kahana.co?
 
-No. This Kahana is a digital library at kahana.io. We publish hubs of ebooks, files, and clubs. Aura Library is the product.
+No. This Kahana is a digital library at kahana.io. We publish hubs of ebooks, files, and communities. Aura Library is the product.
 
 We are not Kahana Bay, Kahana Valley, or other Hawaii places that share the name.
 

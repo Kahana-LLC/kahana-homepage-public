@@ -66,7 +66,7 @@ export function ClubHelpPreview() {
   return (
     <figure className="not-prose my-8 overflow-hidden rounded-2xl border border-[#E4D9C4] bg-white text-[#3B2F1A] shadow-sm">
       <figcaption className="border-b border-[#E4D9C4] bg-[#F7F3EA] px-4 py-2 text-xs font-semibold uppercase tracking-[0.08em] text-[#8A6622]">
-        Club in the app
+        Community in the app
       </figcaption>
       <div className="px-4 py-4">
         <div className="flex items-start justify-between gap-3">

@@ -502,6 +502,26 @@ const nextConfig = {
         destination: '/help/explore',
         permanent: true,
       },
+      {
+        source: '/help/clubs',
+        destination: '/help/communities',
+        permanent: true,
+      },
+      {
+        source: '/help/club-feed-and-events',
+        destination: '/help/community-feed-and-events',
+        permanent: true,
+      },
+      {
+        source: '/features/clubs',
+        destination: '/features/communities',
+        permanent: true,
+      },
+      {
+        source: '/for/clubs',
+        destination: '/for/communities',
+        permanent: true,
+      },
       // Leftover marketing hosts only (about.kahana.io, herokuapp). kahana.io/explore
       // is already kahana-web (kahana-alpha) and never hits this app.
       {

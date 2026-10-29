@@ -95,7 +95,7 @@ export function AssistantChatPreview() {
         <p className="mt-2 text-xs text-[#C4CE9A]">Nothing is saved until you confirm this card.</p>
       </div>
       <div className="mt-3 rounded-xl border border-[#4A4A46] px-3 py-2.5 text-sm text-[#C4CE9A]">
-        Message Kahana — @ for hubs, clubs &amp; files
+        Message Kahana — @ for hubs, communities &amp; files
       </div>
     </figure>
   );

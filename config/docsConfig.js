@@ -33,7 +33,7 @@ export const docsConfig = {
     'get-started': 'Get started',
     library: 'Library',
     'hubs-and-files': 'Hubs and files',
-    clubs: 'Clubs',
+    communities: 'Communities',
     selling: 'Selling',
     'trust-and-account': 'Trust and account',
   },
@@ -42,7 +42,7 @@ export const docsConfig = {
   seo: {
     titleTemplate: "%s | Help",
     description:
-      "Guides and answers for Kahana: hubs, Library, Clubs, Aura, and more. New articles are added as product help ships.",
+      "Guides and answers for Kahana: hubs, Library, Communities, Aura, and more. New articles are added as product help ships.",
     baseUrl: absoluteUrl('/help')
   }
 };

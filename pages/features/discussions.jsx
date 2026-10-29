@@ -126,9 +126,9 @@ export default function DiscussionsFeaturePage() {
         <section className="border-t border-[#E4D9C4] px-6 py-16 sm:px-10 lg:px-16">
           <div className="mx-auto max-w-3xl">
             <FadeInSection>
-              <h2 className="text-2xl font-semibold sm:text-3xl">Not the club feed</h2>
+              <h2 className="text-2xl font-semibold sm:text-3xl">Not the community feed</h2>
               <p className="mt-4 text-lg leading-relaxed text-[#666666]">
-                Club posts, comments, and reactions stay on the club. Hub and file discussions stay
+                Community posts, comments, and reactions stay on the community. Hub and file discussions stay
                 on the work. That split keeps conversation attached to what people actually opened.
               </p>
               <div className="mt-8 grid gap-4 sm:grid-cols-2">
@@ -143,9 +143,9 @@ export default function DiscussionsFeaturePage() {
                 </div>
                 <div className="rounded-[20px] border border-[#E4D9C4] bg-white px-5 py-5">
                   <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#8A6622]">
-                    Club
+                    Community
                   </p>
-                  <p className="mt-2 font-semibold">Club feed</p>
+                  <p className="mt-2 font-semibold">Community feed</p>
                   <p className="mt-2 text-sm text-[#666666]">Room for the group, not the catalog</p>
                 </div>
               </div>

@@ -1,0 +1,17 @@
+{
+  "title": "Community feed and events",
+  "description": "Community posts, comments, reactions, scheduled events, and current focus. Moderators run events; members talk in the feed.",
+  "slug": "community-feed-and-events",
+  "section": "communities",
+  "category": "communities",
+  "tags": [
+    "feature:clubs",
+    "use-case:book-clubs",
+    "persona:clubs",
+    "persona:learners"
+  ],
+  "product": "kahana",
+  "date": "2026-09-16",
+  "authors": ["Adam Kershner"],
+  "content": "<p class=\"lead\">A community is more than a list. Members post in the feed. Moderators can schedule events and set current focus reading.</p>\n\n<p><strong>Primary action:</strong> <a href=\"https://kahana.io/clubs\" target=\"_blank\" rel=\"noopener noreferrer\">Open Communities</a></p>\n\n<h2>Feed</h2>\n<ul>\n<li>Members publish posts, optionally linked to a hub, file, or list item.</li>\n<li>Comments and replies sit on the post.</li>\n<li>Reactions: like, love, insightful.</li>\n</ul>\n\n<h2>Events</h2>\n<ul>\n<li>Moderators schedule, update, or cancel events.</li>\n<li>Join links can point at Zoom, Meet, or another URL you paste.</li>\n<li>Reminder emails can go out before the start time.</li>\n</ul>\n\n<h2>Focus</h2>\n<p>Moderators set (or clear) current reading material: a hub or a file. That is the community’s “what we are on now,” not a paywall.</p>\n\n<h2>What’s next</h2>\n<ul>\n<li><a href=\"/help/communities\">Communities</a></li>\n<li><a href=\"/help/messages-and-privacy\">Messages and privacy</a></li>\n<li><a href=\"/help/notifications\">Notifications</a></li>\n</ul>\n\n<p><a href=\"https://kahana.io/clubs\" target=\"_blank\" rel=\"noopener noreferrer\"><strong>Open Communities →</strong></a></p>\n"
+}

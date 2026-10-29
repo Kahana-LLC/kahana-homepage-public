@@ -39,6 +39,7 @@ const FEATURE_ICONS = {
   hubs: RectangleStackIcon,
   'preview-reels': FilmIcon,
   clubs: UserGroupIcon,
+  communities: UserGroupIcon,
   analytics: ChartBarIcon,
   earning: BanknotesIcon,
   aura: SparklesIcon,

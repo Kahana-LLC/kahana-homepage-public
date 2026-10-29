@@ -161,7 +161,7 @@ const CREATORS_HUB_LINKS = [
   {
     href: '/features?for=creator',
     title: 'Features for creators',
-    body: 'Hubs, preview reels, paid access, analytics, clubs, and the rest of the toolkit.',
+    body: 'Hubs, preview reels, paid access, analytics, communities, and the rest of the toolkit.',
     Icon: Squares2X2Icon,
     track: 'creator_benefits_features',
   },
@@ -1043,14 +1043,14 @@ export default function CreatorBenefitsPage() {
                 </div>
               </div>
               <p className="mt-6 text-base leading-relaxed text-[#5C4520]">
-                People who want the longer work can talk beside the files, gather in a club, and you
+                People who want the longer work can talk beside the files, gather in a community, and you
                 can see what they open.{' '}
                 <Link href="/features/discussions" className="text-[#8A6622] underline underline-offset-2">
                   Discussion
                 </Link>
                 ,{' '}
-                <Link href="/features/clubs" className="text-[#8A6622] underline underline-offset-2">
-                  clubs
+                <Link href="/features/communities" className="text-[#8A6622] underline underline-offset-2">
+                  communities
                 </Link>
                 , and{' '}
                 <Link href="/features/analytics" className="text-[#8A6622] underline underline-offset-2">

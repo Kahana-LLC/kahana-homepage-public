@@ -47,7 +47,7 @@ const LEDGER = [
     id: 'catalog',
     kicker: 'In the Library',
     title: formatCount(N.libraryHubs),
-    body: `${formatCount(N.libraryHubs)} hubs are public and listed, holding ${formatCount(N.libraryFiles)} files, ${formatCount(N.libraryNotes)} notes, and ${formatCount(N.libraryLinks)} links. ${formatCount(N.allHubs)} hubs exist in all, including private ones. ${formatCount(N.freeLibraryHubs)} listed hubs are free and ${formatCount(N.pricedLibraryHubs)} have a price. ${formatCount(N.clubs)} clubs exist.`,
+    body: `${formatCount(N.libraryHubs)} hubs are public and listed, holding ${formatCount(N.libraryFiles)} files, ${formatCount(N.libraryNotes)} notes, and ${formatCount(N.libraryLinks)} links. ${formatCount(N.allHubs)} hubs exist in all, including private ones. ${formatCount(N.freeLibraryHubs)} listed hubs are free and ${formatCount(N.pricedLibraryHubs)} have a price. ${formatCount(N.clubs)} communities exist.`,
   },
 ];
 

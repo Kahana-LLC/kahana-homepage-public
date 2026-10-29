@@ -9,10 +9,10 @@ export default function ForIndexPage() {
     <CatalogIndex
       canonical={CANONICAL}
       seoTitle="Who Kahana is for"
-      seoDescription="Kahana for learners, buyers, creators, authors, and clubs. Same product, different starting points."
+      seoDescription="Kahana for learners, buyers, creators, authors, and communities. Same product, different starting points."
       eyebrow="People"
       title="Who Kahana is for"
-      lead="Kahana is one library. These pages match how people say they want to use it: browse, buy, sell, publish, or host a club."
+      lead="Kahana is one library. These pages match how people say they want to use it: browse, buy, sell, publish, or host a community."
       items={PERSONAS}
       hrefPrefix="/for"
     />

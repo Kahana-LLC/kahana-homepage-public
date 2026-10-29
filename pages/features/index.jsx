@@ -34,7 +34,7 @@ export default function FeaturesIndexPage() {
     <>
       <SEO
         title="Features | Kahana"
-        description="Kahana is a digital library for hubs, clubs, and files. Dive into features for creators and learners: Library, paid access, Aura, analytics, and more."
+        description="Kahana is a digital library for hubs, communities, and files. Dive into features for creators and learners: Library, paid access, Aura, analytics, and more."
         url={CANONICAL}
         type="website"
       />

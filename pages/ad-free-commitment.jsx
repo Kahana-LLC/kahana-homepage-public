@@ -45,7 +45,7 @@ export default function AdFreeCommitmentPage() {
                 <p>
                   Many social and content platforms (Netflix, Pinterest, TikTok, Instagram, YouTube)
                   monetize attention with ads. That model is built to interrupt you. A library
-                  should help you stay with a hub, a book, a club.
+                  should help you stay with a hub, a book, a community.
                 </p>
                 <p>
                   Kahana will not put display ads, sponsored slots, or tracking pixels in the

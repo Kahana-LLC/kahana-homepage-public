@@ -47,7 +47,7 @@ export const FAQ_SECTIONS = [
         id: 'not-hawaii-or-kahana-co',
         question: 'Is Kahana the same as Kahana Bay, Hawaii, or kahana.co?',
         answer:
-          'No. This Kahana is a digital library at kahana.io. We publish hubs of ebooks, files, and clubs. Aura Library is the product.\n\nWe are not Kahana Bay, Kahana Valley, or other Hawaii places that share the name.\n\nWe do not own or operate kahana.co. That site is unrelated.\n\nOasis Browser was an earlier Kahana product. It is not the library. See “What was Oasis Browser?”',
+          'No. This Kahana is a digital library at kahana.io. We publish hubs of ebooks, files, and communities. Aura Library is the product.\n\nWe are not Kahana Bay, Kahana Valley, or other Hawaii places that share the name.\n\nWe do not own or operate kahana.co. That site is unrelated.\n\nOasis Browser was an earlier Kahana product. It is not the library. See “What was Oasis Browser?”',
       },
       {
         id: 'oasis-browser',
@@ -302,9 +302,9 @@ export const FAQ_SECTIONS = [
       },
       {
         id: 'what-are-clubs',
-        question: 'What are Clubs?',
+        question: 'What are Communities?',
         answer:
-          'Clubs are groups that read and list together. A new club always starts private. You can later make it unlisted or listed on the public Clubs page, with auto-join or request-to-join.\n\nMembers share a wish list, feed, events, and optional current focus. Guide: /help/clubs.',
+          'Communities are groups that read and list together. A new community always starts private. You can later make it unlisted or listed on the public Communities page, with auto-join or request-to-join.\n\nMembers share a wish list, feed, events, and optional current focus. Guide: /help/communities.',
       },
     ],
   },

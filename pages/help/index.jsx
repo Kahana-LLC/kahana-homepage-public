@@ -199,7 +199,7 @@ export default function HelpIndex({ docs = [] }) {
     <>
       <SEO
         title="Help"
-        description="Guides and answers for Kahana: hubs, Library, Clubs, Aura, and more. New articles are added as product help ships."
+        description="Guides and answers for Kahana: hubs, Library, Communities, Aura, and more. New articles are added as product help ships."
         url="https://help.kahana.io/help"
         type="website"
       />

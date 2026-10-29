@@ -105,11 +105,11 @@ const PROTOCOLS = [
     id: 'community',
     Icon: UserGroupIcon,
     title: 'Discussion stays next to the work',
-    lead: 'Hub and file discussions, plus Clubs, so conversation does not leave your shelf.',
-    body: 'Comments live on the hub or file, not only in a disappearing feed. Clubs are separate rooms for groups. That keeps context with the knowledge people came for.',
+    lead: 'Hub and file discussions, plus Communities, so conversation does not leave your shelf.',
+    body: 'Comments live on the hub or file, not only in a disappearing feed. Communities are separate rooms for groups. That keeps context with the knowledge people came for.',
     links: [
       { href: '/features/discussions', label: 'Discussions' },
-      { href: '/help/clubs', label: 'Clubs' },
+      { href: '/help/communities', label: 'Communities' },
     ],
   },
 ];

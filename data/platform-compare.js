@@ -30,7 +30,7 @@ export const COMPARE_PLATFORMS = [
     category: 'video',
     blurb: 'Long-form video, search, subscriptions, and comments at scale.',
     withKahana:
-      'Keep videos on YouTube. Put them in a Kahana hub or club (embed when you can) so people watch with a library around them, discuss in the club, and give Aura to the ones worth finding.',
+      'Keep videos on YouTube. Put them in a Kahana hub or community (embed when you can) so people watch with a library around them, discuss in the community, and give Aura to the ones worth finding.',
   },
   {
     id: 'vimeo',
@@ -39,7 +39,7 @@ export const COMPARE_PLATFORMS = [
     category: 'video',
     blurb: 'Hosted video for creators and teams who want a quieter player than YouTube.',
     withKahana:
-      'Host on Vimeo if that is your player. List the same work in a Kahana hub so it sits next to ebooks and files, and so clubs can use it as shared curriculum.',
+      'Host on Vimeo if that is your player. List the same work in a Kahana hub so it sits next to ebooks and files, and so communities can use it as shared curriculum.',
   },
   {
     id: 'tiktok',
@@ -57,7 +57,7 @@ export const COMPARE_PLATFORMS = [
     category: 'video',
  blurb: 'Visual feed, Reels, and Stories, audience lives in the app.',
     withKahana:
-      'Keep posting on Instagram. Add a Kahana hub or club link in bio so followers who want depth land in the library instead of a scattered Drive folder.',
+      'Keep posting on Instagram. Add a Kahana hub or community link in bio so followers who want depth land in the library instead of a scattered Drive folder.',
   },
   {
     id: 'discord',
@@ -66,7 +66,7 @@ export const COMPARE_PLATFORMS = [
     category: 'community',
  blurb: 'Live chat, voice, and servers, the living-room conversation.',
     withKahana:
-      'Discord is the talk. Kahana is the shelf. Pin a club or hub link in a channel; read or watch on Kahana; discuss live on Discord; give Aura so the best material rises.',
+      'Discord is the talk. Kahana is the shelf. Pin a community or hub link in a channel; read or watch on Kahana; discuss live on Discord; give Aura so the best material rises.',
   },
   {
     id: 'slack',
@@ -75,7 +75,7 @@ export const COMPARE_PLATFORMS = [
     category: 'community',
     blurb: 'Workplace chat and channels for teams.',
     withKahana:
-      'Keep Slack for day-to-day work chat. Put the reading list, recordings, and files in a Kahana hub or club so the team has one library instead of lost threads.',
+      'Keep Slack for day-to-day work chat. Put the reading list, recordings, and files in a Kahana hub or community so the team has one library instead of lost threads.',
   },
   {
     id: 'telegram',
@@ -93,7 +93,7 @@ export const COMPARE_PLATFORMS = [
     category: 'community',
     blurb: 'Private chats and groups people already use every day.',
     withKahana:
-      'Keep the group chat on WhatsApp. Share a Kahana club or hub link so the materials live in one place people can reopen later.',
+      'Keep the group chat on WhatsApp. Share a Kahana community or hub link so the materials live in one place people can reopen later.',
   },
   {
     id: 'skool',
@@ -138,7 +138,7 @@ export const COMPARE_PLATFORMS = [
     category: 'reading',
     blurb: 'Book tracking, reviews, and reading lists.',
     withKahana:
-      'Track books on Goodreads. Run the club and the files (notes, PDFs, companion video) on Kahana so discussion sits next to the actual materials.',
+      'Track books on Goodreads. Run the community and the files (notes, PDFs, companion video) on Kahana so discussion sits next to the actual materials.',
   },
   {
     id: 'amazon-kindle',
@@ -147,7 +147,7 @@ export const COMPARE_PLATFORMS = [
     category: 'reading',
     blurb: 'Amazon’s ebook store, devices, and Kindle Unlimited.',
     withKahana:
- 'People can still buy and read on Kindle. On Kahana you can add notes, extras, and a club around the same book, and list companion files the Kindle store does not hold.',
+ 'People can still buy and read on Kindle. On Kahana you can add notes, extras, and a community around the same book, and list companion files the Kindle store does not hold.',
   },
   {
     id: 'storygraph',
@@ -156,7 +156,7 @@ export const COMPARE_PLATFORMS = [
     category: 'reading',
     blurb: 'Reading tracker with mood and genre stats.',
     withKahana:
-      'Keep your reading log on StoryGraph. Use Kahana for the club, the PDFs, and the discussion so tracking and the library stay complementary.',
+      'Keep your reading log on StoryGraph. Use Kahana for the community, the PDFs, and the discussion so tracking and the library stay complementary.',
   },
   {
     id: 'medium',
@@ -174,7 +174,7 @@ export const COMPARE_PLATFORMS = [
     category: 'reading',
     blurb: 'Public digital library of books, audio, and video.',
     withKahana:
- 'Archive.org holds the scan. Kahana is where you curate a hub around a public-domain work (notes, structure, and a club) when the rights allow.',
+ 'Archive.org holds the scan. Kahana is where you curate a hub around a public-domain work (notes, structure, and a community) when the rights allow.',
   },
   {
     id: 'substack',
@@ -183,7 +183,7 @@ export const COMPARE_PLATFORMS = [
     category: 'newsletters',
     blurb: 'Newsletter publishing, email, and paid subscriptions.',
     withKahana:
-      'Keep the inbox on Substack. Put the book-length work, extras, and club on Kahana, and link Substack from your Kahana profile so each surface sends people to the other.',
+      'Keep the inbox on Substack. Put the book-length work, extras, and community on Kahana, and link Substack from your Kahana profile so each surface sends people to the other.',
   },
   {
     id: 'beehiiv',
@@ -192,7 +192,7 @@ export const COMPARE_PLATFORMS = [
     category: 'newsletters',
     blurb: 'Newsletter infrastructure and monetization for publishers.',
     withKahana:
- 'Send email on beehiiv. Host the library (files, video, club) on Kahana so subscribers have a place to go after the issue, not only an archive of emails.',
+ 'Send email on beehiiv. Host the library (files, video, community) on Kahana so subscribers have a place to go after the issue, not only an archive of emails.',
   },
   {
     id: 'kit',
@@ -201,7 +201,7 @@ export const COMPARE_PLATFORMS = [
     category: 'newsletters',
     blurb: 'Creator email (formerly ConvertKit) for newsletters and automations.',
     withKahana:
-      'Keep email in Kit. Link issues to a Kahana hub when the work is a pack of files or a club, not a single post.',
+      'Keep email in Kit. Link issues to a Kahana hub when the work is a pack of files or a community, not a single post.',
   },
   {
     id: 'teachable',
@@ -210,7 +210,7 @@ export const COMPARE_PLATFORMS = [
     category: 'courses',
     blurb: 'Course hosting, enrollment, drip, and checkout.',
     withKahana:
- 'Run the course engine on Teachable. List a companion hub on Kahana for Explore, clubs, and Aura, students still enroll on Teachable; discussion and discovery can live in the library.',
+ 'Run the course engine on Teachable. List a companion hub on Kahana for Explore, communities, and Aura, students still enroll on Teachable; discussion and discovery can live in the library.',
   },
   {
     id: 'kajabi',
@@ -219,7 +219,7 @@ export const COMPARE_PLATFORMS = [
     category: 'courses',
     blurb: 'All-in-one courses, memberships, email, and landing pages.',
     withKahana:
-      'Keep Kajabi as the teaching business. Dual-list a hub on Kahana so the course sits in a public library next to books and video, with a club for the cohort.',
+      'Keep Kajabi as the teaching business. Dual-list a hub on Kahana so the course sits in a public library next to books and video, with a community for the cohort.',
   },
   {
     id: 'udemy',
@@ -228,7 +228,7 @@ export const COMPARE_PLATFORMS = [
     category: 'courses',
     blurb: 'Large course marketplace with search, ratings, and enrollment.',
     withKahana:
-      'Keep marketplace volume on Udemy. Put a companion hub or club on Kahana so the same teaching sits beside ebooks and long-form video, and so classmates can talk in a club.',
+      'Keep marketplace volume on Udemy. Put a companion hub or community on Kahana so the same teaching sits beside ebooks and long-form video, and so classmates can talk in a community.',
   },
   {
     id: 'coursera',
@@ -237,7 +237,7 @@ export const COMPARE_PLATFORMS = [
     category: 'courses',
     blurb: 'University-backed courses and certificates.',
     withKahana:
-      'Take or teach the formal course on Coursera. Use Kahana for the unofficial reading list, notes, and a club of people going through it together.',
+      'Take or teach the formal course on Coursera. Use Kahana for the unofficial reading list, notes, and a community of people going through it together.',
   },
   {
     id: 'podia',
@@ -246,7 +246,7 @@ export const COMPARE_PLATFORMS = [
     category: 'courses',
     blurb: 'Courses, digital downloads, and memberships for indie teachers.',
     withKahana:
-      'Sell and host on Podia if that is your school. List the same pack on Kahana when you want Explore discovery and a club around the materials.',
+      'Sell and host on Podia if that is your school. List the same pack on Kahana when you want Explore discovery and a community around the materials.',
   },
   {
     id: 'gumroad',
@@ -255,7 +255,7 @@ export const COMPARE_PLATFORMS = [
     category: 'storefronts',
     blurb: 'Simple digital checkout and file delivery from a link.',
     withKahana:
-      'Gumroad is fast link checkout. Kahana is the library listing: same product in a hub people can find on Explore, use in a club, and mark with Aura.',
+      'Gumroad is fast link checkout. Kahana is the library listing: same product in a hub people can find on Explore, use in a community, and mark with Aura.',
   },
   {
     id: 'stan',
@@ -264,7 +264,7 @@ export const COMPARE_PLATFORMS = [
     category: 'storefronts',
     blurb: 'Mobile creator storefront tuned for Instagram and TikTok traffic.',
     withKahana:
- 'Stan is the bio checkout. Add a Kahana hub or club link on Stan so people who want the full library (not only a one-tap product) have a place to land.',
+ 'Stan is the bio checkout. Add a Kahana hub or community link on Stan so people who want the full library (not only a one-tap product) have a place to land.',
   },
   {
     id: 'linktree',
@@ -273,7 +273,7 @@ export const COMPARE_PLATFORMS = [
     category: 'storefronts',
     blurb: 'One URL for a list of links from a social bio.',
     withKahana:
-      'Keep Linktree as the door. Feature your Kahana hub or club as a link so serious learners walk into the library, not only another outbound click.',
+      'Keep Linktree as the door. Feature your Kahana hub or community as a link so serious learners walk into the library, not only another outbound click.',
   },
   {
     id: 'etsy',
@@ -282,7 +282,7 @@ export const COMPARE_PLATFORMS = [
     category: 'storefronts',
     blurb: 'Marketplace for crafts and digital downloads.',
     withKahana:
- 'Sell crafts and printables on Etsy. Put knowledge packs (workshops, templates, guided journals) in Kahana hubs when you want a library listing and a club, not a craft stall.',
+ 'Sell crafts and printables on Etsy. Put knowledge packs (workshops, templates, guided journals) in Kahana hubs when you want a library listing and a community, not a craft stall.',
   },
   {
     id: 'patreon',
@@ -291,7 +291,7 @@ export const COMPARE_PLATFORMS = [
     category: 'memberships',
     blurb: 'Recurring membership, tiers, and posts for supporting a creator.',
     withKahana:
- 'Keep Patreon for fans who already live there. List related work on Kahana (one-time or monthly hub access) so it can be found in the library and used in clubs, dual listing, not either/or.',
+ 'Keep Patreon for fans who already live there. List related work on Kahana (one-time or monthly hub access) so it can be found in the library and used in communities, dual listing, not either/or.',
   },
   {
     id: 'kofi',
@@ -300,7 +300,7 @@ export const COMPARE_PLATFORMS = [
     category: 'memberships',
     blurb: 'Tips, memberships, and shop for creators.',
     withKahana:
- 'Take tips on Ko-fi. Put the actual library (files, video, club) on Kahana so supporters have something to open besides a tip jar.',
+ 'Take tips on Ko-fi. Put the actual library (files, video, community) on Kahana so supporters have something to open besides a tip jar.',
   },
   {
     id: 'spotify',
@@ -309,7 +309,7 @@ export const COMPARE_PLATFORMS = [
     category: 'audio',
     blurb: 'Music, podcasts, and audiobooks in one player.',
     withKahana:
- 'Listen on Spotify. Build a Kahana hub around a podcast season or playlist (show notes, PDFs, and a club) so audio is not stranded without the rest of the pack.',
+ 'Listen on Spotify. Build a Kahana hub around a podcast season or playlist (show notes, PDFs, and a community) so audio is not stranded without the rest of the pack.',
   },
   {
     id: 'audible',
@@ -318,7 +318,7 @@ export const COMPARE_PLATFORMS = [
     category: 'audio',
     blurb: 'Audiobook store and app, mostly Amazon’s catalog.',
     withKahana:
-      'Listen on Audible. Use Kahana for the club, companion notes, and extras the audiobook app does not hold.',
+      'Listen on Audible. Use Kahana for the community, companion notes, and extras the audiobook app does not hold.',
   },
   ...COMPARE_PLATFORM_ADDITIONS,
 ];
