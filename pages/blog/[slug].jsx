@@ -377,6 +377,45 @@ export default function BlogPost({ post }) {
             {/* Main title */}
             <h1 className="text-4xl font-bold mb-6 text-oasis-green-800">{post.title}</h1>
 
+            {hasAuthors ? (
+              <div className="mb-6 flex flex-wrap items-center gap-4 not-prose">
+                {postAuthors.map((author) => {
+                  const name = author.linkedinProfile ? (
+                    <a
+                      href={author.linkedinProfile}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-semibold text-oasis-green-800 no-underline hover:underline"
+                    >
+                      {author.name}
+                    </a>
+                  ) : (
+                    <span className="font-semibold text-oasis-green-800">{author.name}</span>
+                  );
+                  return (
+                    <div key={author.name} className="flex items-center gap-3">
+                      {author.avatar ? (
+                        <Image
+                          src={author.avatar}
+                          alt=""
+                          width={44}
+                          height={44}
+                          className="h-11 w-11 rounded-full object-cover"
+                          unoptimized={String(author.avatar).startsWith('/') || String(author.avatar).startsWith('data:')}
+                        />
+                      ) : null}
+                      <div className="text-sm leading-tight">
+                        {name}
+                        {author.role && author.role !== 'Unknown' ? (
+                          <div className="text-oasis-green-700">{author.role}</div>
+                        ) : null}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            ) : null}
+
             {/* Article metadata */}
             <div className="flex flex-wrap items-center gap-3 mb-8">
               <time 

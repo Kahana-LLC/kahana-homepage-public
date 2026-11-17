@@ -3,6 +3,7 @@ const authors = require("../config/authors");
 // Import headshot images
 const headshots = {
   adam_kershner: "/assets/headshots/adam_kershner.jpg",
+  zainab_mansoor_ali_siddique: "/assets/headshots/zainab_mansoor_ali_siddique.png",
   jordan_kern: "/assets/headshots/jordan_kern.jpg",
   jescetta_joy: "/assets/headshots/jescetta_joy.jpg",
   vruksha_joshi: "/assets/headshots/vruksha_joshi.jpg",

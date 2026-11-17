@@ -16,6 +16,7 @@
   ],
   "excerpt": "A chatbot in the bottom-right corner, with a phoenix glowing around it. It can draft hubs, communities, and affiliate links, and nothing is saved until you confirm.",
   "defaultImageQuery": "small warm lantern glowing in a dark library corner",
+  "featuredImage": "/assets/blog/kahana-ai-assistant.jpg",
   "slug": "kahana-ai-assistant",
   "readingTime": 6,
   "seoTitle": "Kahana AI assistant beta",

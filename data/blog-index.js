@@ -7,12 +7,24 @@
  */
 export const blogIndex = [
   {
+    title: "Medium vs. Substack vs. Kahana: Where Should Your Writing Live?",
+    date: "2026-11-17T15:00:00.000Z",
+    authors: ["Zainab Mansoor Ali Siddique"],
+    category: ["Comparisons", "Creators", "Product"],
+    excerpt: "Medium fits a standalone article. Substack fits an ongoing publication and subscriber list. Kahana fits when the useful unit is a collection people can return to together.",
+    defaultImageQuery: "three reading desks in a warm library, articles notes and a shared shelf",
+    featuredImage: "/assets/blog/medium-vs-substack-vs-kahana.jpg",
+    slug: "medium-vs-substack-vs-kahana",
+    readingTime: 12,
+  },
+  {
     title: "Kahana’s AI assistant is in beta",
     date: "2026-09-29T12:00:00.000Z",
     authors: ["Adam Kershner"],
     category: ["Product", "Guides"],
     excerpt: "A chatbot in the bottom-right corner, with a phoenix glowing around it. It can draft hubs, communities, and affiliate links, and nothing is saved until you confirm.",
     defaultImageQuery: "small warm lantern glowing in a dark library corner",
+    featuredImage: "/assets/blog/kahana-ai-assistant.jpg",
     slug: "kahana-ai-assistant",
     readingTime: 6,
   },
@@ -23,6 +35,7 @@ export const blogIndex = [
     category: ["Creators", "Product"],
     excerpt: "Let other Kahana members share a hub you charge for. They earn a percentage of what you keep after fees. Drafts work on Free. The link goes live on Growth.",
     defaultImageQuery: "quiet library table shared reading notes warm light",
+    featuredImage: "/assets/blog/hub-affiliate-links.jpg",
     slug: "hub-affiliate-links",
     readingTime: 5,
   },
