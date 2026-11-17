@@ -7,7 +7,7 @@ export default function PricingPage() {
     <>
       <SEO
         title="Plans & billing | Kahana"
-        description="Compare Kahana Free and Growth. See every feature on Free, and what Growth adds for hubs, storage, file size, and live chat."
+        description="Compare Kahana Free and Growth. Both plans keep a 5% hub sales fee and include 1 free collaborator per hub. Growth adds hubs, file size, custom URLs, and themes."
         url={`${ABOUT_ORIGIN}/pricing`}
         type="website"
       />

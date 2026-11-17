@@ -145,8 +145,8 @@ To earn from access, connect Stripe, turn on monetization, and set a one-time or
 
 | Plan | Price | Highlights |
 |------|-------|------------|
-| **Free** | $0 | Up to 3 hubs, Stripe monetization, unlimited collaborators, ~5 MB max file size |
-| **Growth** | $29.99/mo or $299.99/yr | Unlimited hubs & uploads, live chat support, 100 GB storage, up to 5 GB files |
+| **Free** | $0 | Up to 3 hubs, 10 uploads per hub, custom profile URL, ~5 MB max file size, 5% hub sales fee |
+| **Growth** | $29.99/mo or $299.99/yr | Unlimited hubs and uploads, custom hub and community URLs, Hide Kahana branding, premium themes, live chat, 100 GB storage, up to 5 GB files, same 5% fee |
 | **Enterprise** | Custom | White-glove support, flexible limits, optional white-label / integrations |
 
 Open **Billing** in the app for current plan options.
@@ -343,7 +343,7 @@ There is no anonymous “I’m 18” unlock for adult hubs.
 
 ### When should I upgrade to Growth?
 
-Upgrade when you need a 4th hub, more than 10 file uploads in a hub, files over 5 MB, custom hub or profile URLs, or live chat. Growth hub sales pay 3% instead of 5%.
+Upgrade when you need a 4th hub, more than 10 file uploads in a hub, files over 5 MB, a custom hub or community URL, Hide Kahana branding, premium themes, or live chat. A custom profile URL is included on Free. The hub sales fee stays 5% on both plans. Hub seats are separate from Growth.
 
 Compare plans in **Billing** in the app.
 
@@ -355,7 +355,13 @@ You keep access through the end of the paid period.
 
 ### Do Free creators still pay the 5% marketplace fee?
 
-Yes. Free hub sales pay a 5% fee. Growth hub sales pay 3%.
+Yes. Free and Growth hub sales both pay a 5% fee. Stripe’s card fee is separate.
+
+### How do hub seats work?
+
+The hub owner does not use a seat. Each hub includes 1 free collaborator. After that, seats are $1 per seat each month, or $10 per seat for the year.
+
+Seats stay on that hub. They do not transfer, and Growth does not include unlimited collaborators. Removing someone frees the seat for the rest of the paid period and does not refund it. A cancelled seat stays usable until the period ends, then drops off the next bill.
 
 ---
 

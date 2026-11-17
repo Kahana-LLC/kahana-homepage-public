@@ -112,7 +112,7 @@ export const FAQ_SECTIONS = [
         id: 'creator-cost',
         question: 'How much does Kahana cost for creators?',
         answer:
-          'Free is $0. You get up to 3 hubs, unlimited collaborators, and files up to about 5 MB. You can still charge for access if you want.\n\nGrowth is $29.99 a month or $299.99 a year. You get unlimited hubs and uploads, live chat support, 100 GB of storage, and files up to 5 GB.\n\nWhen to upgrade (vs stay Free): /help/when-to-upgrade. Full comparison: /pricing. Open Billing in the app for the latest plan details.',
+          'Free is $0. You get up to 3 hubs, 10 file uploads per hub, files up to 5 MB, and a custom profile URL. You can still charge for access.\n\nGrowth is $29.99 a month or $299.99 a year. You get unlimited hubs and uploads, files up to 5 GB, 100 GB of storage, custom hub and community URLs, Hide Kahana branding, premium themes, and live chat.\n\nBoth plans include 1 free collaborator per hub. The owner does not use a seat. More people are $1 per seat each month, or $10 per seat for the year. Seats stay on that hub. Kahana keeps 5% of hub sales on both plans.\n\nWhen to upgrade: /help/when-to-upgrade. Full comparison: /pricing.',
       },
       {
         id: 'platform-fee',
@@ -136,7 +136,7 @@ export const FAQ_SECTIONS = [
         id: 'collaborate',
         question: 'Can I collaborate with others on a hub?',
         answer:
-          'Yes. Invite collaborators and give them roles (OWNER, ADMIN, WRITE, COMMENT, READ). Unlimited collaborators are included on Free and Growth. Collaborators are not the same as paywall buyers. How-to: /help/collaborators-and-roles.',
+          'Yes. Invite collaborators and give them roles (OWNER, ADMIN, WRITE, COMMENT, READ). Each hub includes the owner plus 1 free collaborator. More people need a paid seat: $1 per seat each month, or $10 per seat for the year. Seats do not move to another hub. Growth does not add free seats. Collaborators are not the same as paywall buyers. How-to: /help/collaborators-and-roles.',
       },
       {
         id: 'get-discovered',
@@ -352,7 +352,7 @@ export const FAQ_SECTIONS = [
         id: 'upgrade-growth',
         question: 'When should I upgrade to Growth?',
         answer:
-          'Upgrade when you need a 4th hub, more than 10 file uploads in a hub, files over 5 MB, custom hub or profile URLs, or live chat.\n\nYou do not need Growth to list on Library or sell with Stripe. Growth lowers the hub sales fee from 5% to 3%.\n\nHow-to: /help/when-to-upgrade. Compare plans on /pricing or Billing in the app.',
+          'Upgrade when you need a 4th hub, more than 10 file uploads in a hub, files over 5 MB, a custom hub or community URL, Hide Kahana branding, premium themes, or live chat. A custom profile URL is included on Free. You can change it twice every 30 days.\n\nYou do not need Growth to list on Library, sell with Stripe, or add hub seats. The hub sales fee stays 5% on Free and Growth.\n\nHow-to: /help/when-to-upgrade. Compare plans on /pricing or Billing in the app.',
       },
       {
         id: 'cancel-growth',
@@ -361,10 +361,16 @@ export const FAQ_SECTIONS = [
           'Manage your subscription from Billing in settings.\n\nYou keep access through the end of the paid period.',
       },
       {
+        id: 'hub-seats',
+        question: 'How do hub seats work?',
+        answer:
+          'The hub owner does not use a seat. Each hub includes 1 free collaborator. After that, add seats for $1 per seat each month, or $10 per seat for the year.\n\nSeats belong to that hub. They do not transfer to another hub, and Growth does not include unlimited collaborators.\n\nIf you remove someone, that seat can be used by someone else for the rest of the paid period. Removing them does not refund the seat. If you cancel a seat, it stays usable until the period ends, then it drops off the next bill.\n\nBuy seats from the hub’s Seats settings or from Billing in the app.',
+      },
+      {
         id: 'free-still-fee',
         question: 'Do Free creators still pay the 5% marketplace fee?',
         answer:
-          'Yes. Free hub sales pay a 5% fee. Growth hub sales pay 3%.\n\nWhen to upgrade: /help/when-to-upgrade.',
+          'Yes. Free and Growth hub sales both pay a 5% fee. Stripe’s card fee is separate.\n\nWhen to upgrade: /help/when-to-upgrade.',
       },
     ],
   },

@@ -10,23 +10,29 @@ const FREE_HREF = 'https://kahana.io/?utm_source=marketing&utm_medium=website&ut
 const GROWTH_HREF = 'https://kahana.io/billing?intent=sell&trial=growth&utm_source=marketing&utm_medium=website&utm_campaign=pricing_growth_trial';
 
 const FREE_FEATURES = [
+  { text: '5% transaction fee', included: true },
   { text: '3 hubs', included: true },
   { text: '10 file uploads per hub', included: true },
-  { text: 'Unlimited members', included: true },
+  { text: '1 free collaborator per hub, add more seats for $1 per seat', included: true },
+  { text: 'Custom profile URL', included: true },
   { text: 'Files up to 5 MB', included: 'muted' },
-  { text: '5% transaction fee', included: 'muted' },
-  { text: 'Custom hub and profile URLs', included: false },
+  { text: 'Custom hub and community URLs', included: false },
   { text: 'Affiliate links for your hubs', included: false },
+  { text: 'Hide Kahana branding', included: false },
+  { text: 'Premium themes, colors, and fonts', included: false },
 ];
 
 const GROWTH_FEATURES = [
+  { text: '5% transaction fee', included: true },
   { text: 'Unlimited hubs', included: true },
   { text: 'Unlimited file uploads', included: true },
-  { text: 'Unlimited members', included: true },
+  { text: '1 free collaborator per hub, add more seats for $1 per seat', included: true },
+  { text: 'Custom profile URL', included: true },
   { text: 'Files up to 5 GB', included: true },
-  { text: '3% transaction fee', included: true },
-  { text: 'Custom hub and profile URLs', included: true },
+  { text: 'Custom hub and community URLs', included: true },
   { text: 'Affiliate links for your hubs', included: true },
+  { text: 'Hide Kahana branding', included: true },
+  { text: 'Premium themes, colors, and fonts', included: true },
 ];
 
 const comparisonGroups = [
@@ -36,7 +42,25 @@ const comparisonGroups = [
     rows: [
       { feature: 'Hubs you can create', free: '3 hubs', growth: 'Unlimited' },
       { feature: 'Custom hub link', free: 'Not included', growth: 'Included' },
-      { feature: 'Custom profile link', free: 'Not included', growth: 'Included' },
+      { feature: 'Custom community link', free: 'Not included', growth: 'Included' },
+      {
+        feature: 'Custom profile link',
+        hint: 'You can change it twice every 30 days.',
+        free: 'Included',
+        growth: 'Included',
+      },
+      {
+        feature: 'Hide Kahana branding',
+        hint: 'Remove the Kahana badge from public paywalls, profiles, and community pages.',
+        free: 'Not included',
+        growth: 'Included',
+      },
+      {
+        feature: 'Premium themes',
+        hint: 'Custom themes, colors, and fonts on paywalls, waitlists, profiles, and community pages. Free includes the basic font and black, white, and gray themes.',
+        free: 'Basic themes',
+        growth: 'Included',
+      },
       {
         feature: 'Affiliate links for your hubs',
         hint: 'Let others earn a share when they send a buyer to a hub you price.',
@@ -71,7 +95,13 @@ const comparisonGroups = [
       { feature: 'YouTube and webpage embeds', ...INCLUDED },
       { feature: 'Preview reels on Library cards', ...INCLUDED },
       { feature: 'Internet Archive ebook import', ...INCLUDED },
-      { feature: 'Unlimited collaborators with roles', ...INCLUDED },
+      {
+        feature: 'Hub seats',
+        hint: 'The owner does not use a seat. Each hub includes 1 free collaborator. More people are $1 per seat each month, or $10 per seat for the year. Seats stay on that hub.',
+        free: '1 free, then $1/seat',
+        growth: '1 free, then $1/seat',
+      },
+      { feature: 'Collaborator roles', ...INCLUDED },
       {
         feature: 'Private, invite-only, unlisted, or Library visibility',
         ...INCLUDED,
@@ -97,7 +127,7 @@ const comparisonGroups = [
       { feature: 'Optional free trial on paid hubs', ...INCLUDED },
       { feature: 'List paid or free hubs on Library', ...INCLUDED },
       { feature: 'Creator analytics', ...INCLUDED },
-      { feature: 'Transaction fee on hub sales', free: '5%', growth: '3%' },
+      { feature: 'Transaction fee on hub sales', free: '5%', growth: '5%' },
     ],
   },
   {
@@ -260,7 +290,7 @@ export default function Pricing() {
             </div>
 
             <p className="mx-auto mt-10 max-w-2xl text-center text-sm text-[#666666] sm:text-base">
-              Prices are in $ USD. Kahana keeps 5% of hub sales on Free and 3% on Growth. That fee is separate from Stripe processing.
+              Prices are in $ USD. Kahana keeps 5% of hub sales on Free and Growth. That fee is separate from Stripe processing. Extra hub seats are $1 each per month, or $10 each per year, on either plan.
             </p>
           </div>
         </section>
@@ -378,9 +408,7 @@ export default function Pricing() {
                 When to upgrade
               </h2>
               <p className="mt-3 text-base leading-relaxed text-[#666666]">
-                Stay on Free until you hit a limit (4th hub, upload cap, files
-                over ~5&nbsp;MB) or want live chat. You can list on Library and
-                sell with Stripe on Free. Growth adds higher limits, custom hub and profile URLs, live chat, and a 3% hub sales fee instead of 5%.
+                Stay on Free until you need a 4th hub, more than 10 file uploads in a hub, files over 5 MB, a custom hub or community URL, Hide Kahana branding, premium themes, or live chat. You can list on Library and sell with Stripe on Free. The hub sales fee stays 5% on both plans. Hub seats are separate: 1 free collaborator per hub, then $1 per seat.
               </p>
               <p className="mt-4 text-base">
                 <Link
